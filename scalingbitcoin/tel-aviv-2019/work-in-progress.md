@@ -1,0 +1,201 @@
+---
+title: Work In Progress
+TranscriptBy: Bryan Bishop
+---
+
+Work in progress sessions
+
+Scaling Bitcoin 2019 Tel Aviv "yesod"
+
+<https://twitter.com/kanzure/status/1172173183329476609>
+
+# Optical proof of work
+
+Mikael Dubrovsky
+
+I am working on optical proof-of-work. I'll try to pack a lot into the 10 minutes. I spent a year and a half at Techion.
+
+## Physical scaling limits
+
+Probably the three big ones are, there's first the demand for blockchain or wanting to use bitcoin more. I think more people want to use bitcoin. Most of the world does not have access to property rights. There's a lot of pent up demand for something like bitcoin. Bitcoin is $100 billion and offshore banking is $20 trillion. There is definitely demand, but that doesn't seem to be the bottleneck for now.
+
+Throughput seems like the bottleneck of this conference, so I won't address it.
+
+## Scalability of PoW
+
+The energy use of bitcoin has grown monotonically or even worse with the bitcoin market cap. Nobody really knows how much energy bitcoin is using. But we do know that we're getting centralization of miner often in countries where the governments are not ideal. People mine in some of these countries because they can make deals for better electricity.
+
+Part of the problem with electricity-based PoW is that it's centralized, open to partioning attacks, it's open to regulation in general since it's next to power plants and waterfalls. It's huge, it needs cooling, it can't be hidden. It's unfairly distributed especially geographically, and it excludes nearly all large cities which excludes most living people. Also you need a lot of electricity.
+
+## Redesigning the economics of PoW
+
+So instead of getting rid of PoW, can we change the economics for miners?
+
+Fundamentally what we want to do is just have for this conference, this is not an important slide to describe PoW. But looking at this problem creatively, there's nothing we know how to prove remotely other than computation. It might be ideal to just burn diamonds, but you can't prove you did it. So you're stuck proving some kind of computation. I think we're stuck with computation for now.
+
+We can try to pick a computation that the optimal hardware for this computation you get a better CAPEX/OPEX ratio where you pay more for the equipment and less for the energy. This ratio is just arbitrary. For ASICs, you're mostly paying for energy and much less for hardware.
+
+The benefits you would get of a high CAPEX proof-of-work would be that it would be hard to arbitrage compared to electricity. Access to capital is much more democratic. It scales better, it's geographically distributed, less partition attacks on the network, and the hashrate is more resilient to the coin price. This is a totally fake graph, but the hashrate follows the bitcoin price. The hashrate doens't grow all the time because people turn off their miners. If you buy a miner and it has a low operating cost, you wouldn't turn it off, so even if the price is volatile this hashrate wouldn't be volatile.
+
+## PoW algorithm design goals
+
+The high level goals for a new PoW would be to have an accelerated high energy-efficient hardware, let it be digitally verifiable even if the hardware is analog, and optimal on the hardware you're targeting, and have same or better security than we have now.
+
+## Silicon photonic co-processors
+
+There's a number of emerging platforms for analog computing, but this one is very promising because you can go to TMSC or Global Foundries. These kinds of chips are already commercial for processing data coming out of fiber. They do a fourier transform on the optical data in the silicon chip using waveguides made of silicon. This is already commercial and lots of companies are starting to do machine learning with this stack.
+
+The way a chip like this works is that you hvae a laser input, and there's multiple architectures for this, the light gets split, your bits are converted into light intensities, and then they go through a number of interferometers and you can set the tuning on interferometers to get a different transformation like a vector matrix multiplication, and you collect your output and convert it back to bits from light. If you have a good chip, you've saved a lot of energy in theory.
+
+We wanted to stick to something as close to hashcash as possible since it's easy to implement and people might use it. We didn't want to work with all-optical hashing because people probably wouldn't use it. We also didn't want to design a hash. We didn't want to use SGX or some trusted setup. And we wanted to use hardware that we can go to the foundry for.
+
+We composed a function that you can do on the optical chip with hashes. It's "HeavyHash" like = H(F(H(I))). It's more work to do this one hash, but it ends up being that the total hashrate of the system is lower so you're doing fewer sha hashes becaues you're doing vector matrix operations and instead of paying for those operations in electricity you're paying for them in chip space on the photonic chip.
+
+The requirement for the function F to be acceleratable on low-opex hardware like photonic chips, to preserve entropy, and be "minimal effective hard" property.
+
+## Progress
+
+We have some prototypes for these chips. Here's a bench prototype. We were going to bring this, but it got stuck in customs. We hope to publish a paper soon.
+
+## Feasibility for bitcoin
+
+Is it time to change bitcoin's PoW to optical proof-of-work? Probably not now, but these geographical centralization issues over time are going to be an issue and at some point bitcoin is going to hit a wall.
+
+# A lucas critique of the difficulty adjusmtent algorithm of the bitcoin system
+
+Yoshinori Hashimoto
+
+## Introduction
+
+I am going to talk about our research project about difficulty adjustment algorithm. BUIDL is my employer in Japan. This is joint work with my colleagues.
+
+## Difficulty adjustment
+
+The difficulty adjustment algorithm is used to adjust the difficulty of the bitcoin system to achieve one block every 10 minutes based on recent hashrate.
+
+## Policy goal
+
+There's a winning rate, a global hash rate, and the block time is an exponential distribution with intensity W x H. The current bitcoin DAA adjusts the difficulty every 2016 blocks (every 2 weeks), and adjusts so that the block time is about 10 minutes. If block generation is too slow, then the winning rate is increased, and if it is too fast, then the winning rate is decreased.
+
+## Sample analogue
+
+If the hashrate was directly observable, it would be easier to determine an ideal winning rate. Still we can compute an estimation of the hashrate. Bitcoin DAA achieves the policy goal by using the estimated historical hash rate.
+
+## Miners' incentive
+
+If we change the winning rate, then mining profitability will also change. If we increase the winning rate, then it is easier to get the mining reward and more hashrate will be provided. This increases the global hash rate. For miners, it is easy to adjust the hashrate because they can do it just by turning on and off their ASIC machines. Change in winning rate also changes the hash rate.
+
+((.. I think he's reading from his notes, can we just copy+paste the notes into this document? Thank you.))
+
+## Policy suggestions
+
+We suggest upgrading Bitcoin DAA to Bitcoin Cash DAA which is a good candidate. There might be some other better one.
+
+<https://ssrn.com/abstract=3410460>
+
+# Offline transactions
+
+Daniel Marquez
+
+## Introduction
+
+The inspiration for this work came from the concept of banking the unbanked, the open money inititaive introduced me to this, and then MIT DCI's sponsorship of the ethics course and blockchain ethics course this concept of banking the unbanked. This is a subset of that that I would like to talk about, which involves offline transactions.
+
+## Use cases
+
+I am interested in post-natural disasters or suboptimal infrastructure. Venezuela where the infrastructure might be down but I want to buy basic necessities or maybe a hurricane goes through Miami and I want things to work while everything is offline.
+
+## Possible solutions
+
+There are some possible solutions like the OpenDime wallet or other HSM wallets. There's layer 2 like the lightning network.
+
+## Lightning network
+
+Why LN? It's robust, it's getting better, a lot of the talks have focused on LN. What about payment channels when parties go offline? But this doesn't fit the use case, because how can two parties instantiate offline payments?
+
+## WIP
+
+This is very much a work in progress. Email me or tweet at me: dmarquez@mit.edu or tweet at bumangues92. The idea is to enable these transactions over WLAN or bluetooth or something.
+
+Q: What about trusted execution environments where you prove that you deleted the private key?
+
+A: I can't really talk about that, but I'll look into that.
+
+Q: I don't think they have attestations. I would want a proof that you are running the hardware you're claiming you're running. We can't do ...
+
+BB: You can do 2-of-2 multisig with the sender and the recipient and then delete the private key. But they can double spend it out from under you unfortunately. You can probably do offline transactions if you are willing to tolerate an on-chain delay of like 3 months.
+
+# Conditional transfer of tokens on top of bitcoin
+
+Thomas Eizinger (coblox.tech)
+
+I want to work on trustlessly rebalancing your LN channels with USDT. Let me tell you how lightning channels work. Just kidding ((laughter)). Does anyone remember omnilayer? It was originally called mastercoin. It has tokens on it like USDT. Omnilayer is a separate consensus layer on top of bitcoin, using OP\_RETURN to embed extra data into bitcoin transactions where this data is not validated by bitcoin nodes but is validated by omnilayer clients.
+
+Can we use HTLCs with omnilayer simple\_send? The answer is yes we can do that. It works just as you would expect it to work. You have an output, and the consensus rules require you to provide the redeem transaction with the HTLC. It provides the preimage to the hash.
+
+How is this useful? We've learned several things while doing this investigation. If you do assets on top of bitcoin that aren't bitcoin, you don't need to include any functionality that gives you conditional transfers. We can define assets on top of bitcoin and still use HTLCs and scripts to conditionally spend those assets. Omnilayer actually, is, it has a lot of commands to do all kinds of things. You can't directly buy tether with bitcoin-- you have to go through a weird omnicoin to buy tether, which I think just is there to make them money. But you can construct a transaction where within one transaction someone else sends bitcoin and you get tokens back. It's an atomic swap on the same chain.
+
+Omni can potentially be used with everything that uses HTLCs such as cross-chain atomic swaps or LN.
+
+Constructing these transactions is non-trivial. You can make a lot of mistakes if you put the wrong address in, the consensus layer may not recognize where it wants you to transfer it. This is where our WIP comes in. We want to avoid one-off implementations. We want to implement the use case of rebalancing your LN channel with USDT and we want to avoid the implementation where all you have to build upon is the blockchain node.
+
+We are working on COMIT, a framework for cryptographic protocols. We're trying to give you primitives that you will need when you build a cryptographic protocol so that you can actually focus on your work. Not just a prototype. Exchanging messages over a robust framework, or negotiating keys, or most cryptographic protocols have timeouts because parties can leave at any point so you need to watch the chain. You need some reusable pieces. You want to hide cryptographic complexity from users.
+
+# Storm: layer 2/3 storage and messaging
+
+Maxim Orlovsky (Pandora Core)
+
+This idea of economical incentives to do the storage of incentives. This is early work in progress.
+
+The problem we're trying to solve is storage. I am not going to describe why we have to store all this data like lightning network, scriptless scripts and single-use seals that all have off-chain data that we need to store remotely.
+
+Can it be trustless but also guaranteed? Yes. By using probabilistically checkable proofs, HTLCs and partially-signed bitcoin transactions.
+
+Basically the idea is to have users pay other users for data storage. Bob can prove the fact that he has the data in a succinct way both to Alice and on-chain with a bitcoin script. We use probabilistically checkable proofs for that. Alice gets obscured data from Bob encrypted with his yet unknown public key and is able to decrypt them only when Bob takes his payment for storage. Alice only learns this at that point.
+
+I won't have time to describe probabilistically checkable proofs. It's a kind of zero knowledge technology. You use the hash of a merkle root over some random oracle to select more pieces of the data, and then you provide those pieces together with a merkle path tree to demonstrate with some probability you can't assume this number upfront but for a small number of the data you have, you're still able to prove something on that and I'll show how we are using that for storage.
+
+Bob stores data for Alice. She puts a payment for that storage. Bob puts it under an escrow timelock contract. There's two inputs, coming from Alice and Bob. There are two options to be spent. If Alice forgets about her data (maybe she dies or whatever), Bob still takes the payment for storage and his stake back. After that, they sign a number of transactions but they don't publish them. Bob encrypts Alice data with some public and private key pair. Bob constructs a special PCP proof showing Alice that he has really encrypted the original data. If they close cooperatively, she signs pre-signed Bob's transaction. When bob claims funds, he reveals a decryption key that allows Alice to decrypt the data. Alice can verify that she has the correct encrypted blob through some mechanism. If Bob doesn't provide Alice with the key, and he doesn't take his money, Alice will be able to get her money back plus Bob's stake to compensate for the loss of the data.
+
+There are also two uncooperative cases. Maybe Alice is unhappy with Bob's proofs and he is trying to cheat. She signs another pre-signed transaction. After some delay, she will be able to get both her money back and Bob's stake again to compensate for Bob's negliglence. But if Alice is trying to cheat, Bob can appeal to that fact and provide another PCP proof showing on-chain that he really has this data and Alice is just not wanting to pay. In this case, Bob takes his stake back and the reward from Alice maybe not the full reward it depends on the agreement between the two parties when they setup the contract at the moment.
+
+How can Bob prove on chain that he has the data?
+
+At setup time, Alice uses her newly derived public key for both the funding transaction output and deterministic definition of some small portion of the source data. She puts into the funding transaction the hash of the public key she will be using later. She uses this public key to select some random portion of the data she has. This portion is double hashes by some hash, and included into HTLC fallback. This hash can be unlocked only if you have the source data and the public key of Alice. When Bob wants to prove he still has the data available, he sees that Alice has published a management transaction and he extracts the public key from that transaction, and now he knows what part of the source data to use, he hashes that, and then he .... to unlock his... output.
+
+Why is this important? This is tech for incentivized data storage. Alice only needs to store a seed phrase. This can potentially be done on top of the lightning network, and zero transactions will reach the blockchain.
+
+# Building ultra-light clients with SNARKs
+
+Noah Vesely (C-Labs)
+
+.....
+
+# Signet
+
+Karl-Johan Alm
+
+<https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/signet/>
+
+<https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/>
+
+# Miniscripts
+
+Andrew Poelstra
+
+<https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2019/miniscript/>
+
+<https://diyhpl.us/wiki/transcripts/noded-podcast/2019-05-11-andrew-poelstra-miniscript/>
+
+# Vaults
+
+Bryan Bishop
+
+oh wait that's me (who types for the typer?)
+
+<https://www.coindesk.com/the-vault-is-back-bitcoin-coder-to-revive-plan-to-shield-wallets-from-theft>
+
+<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html>
+
+<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html>
+

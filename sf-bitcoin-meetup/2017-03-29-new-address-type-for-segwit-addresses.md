@@ -1,0 +1,183 @@
+---
+title: New Address Type For Segwit Addresses (2017-03-29)
+TranscriptBy: Bryan Bishop
+---
+
+Name: Pieter Wuille
+
+Topic: Bech32 addresses for Bitcoin
+
+Location: SF Bitcoin Devs
+
+Date: March 27th 2017
+
+Video: <https://www.youtube.com/watch?v=NqiN9VFE4CU>
+
+Slides: <https://prezi.com/gwnjkqjqjjbz/bech32-a-base32-address-format/>
+
+Proposal: <https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki>
+
+Demo website: <http://bitcoin.sipa.be/bech32/demo/demo.html>
+
+Twitter announcement: <https://twitter.com/kanzure/status/847569047902273536>
+
+Transcript completed by: Bryan Bishop Edited by: Michael Folkson
+
+# Intro
+
+Can everyone hear me fine through this microphone? Anyone who can't hear me please raise your hand. Oh wait. All good now? Tonight I will be speaking on a project I've been working on on and off for the past year or so, which is the question of what kind of addresses we will be using in Bitcoin in the future. Recently I proposed a [BIP](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html) after several long discussions among some people. I think we have a great proposal. So today I will be talking about the proposal itself and how it came to be. This was joint work with several people, in particular Greg Maxwell who is here as well, and my colleagues at Blockstream. Most of this work was done thanks to the computation power of their computers. I'll talk about that more. So this is the outline of my talk. First I'll talk about why we need a new address type going forward. The decision to use [base32](https://en.wikipedia.org/wiki/Base32>) rather than [base58](https://en.bitcoin.it/wiki/Base58Check_encoding) as has been used historically. Once the choice for base32 has been made, there are a bunch of open design questions like what checksum to use, what character set to use, and what the address structure looks like. Optimal character set depends on optimal choice of checksum, which may be surprising. And then combining this into a new format, which I am calling [bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
+
+# Why?
+
+Segregated Witness is a proposal that I [presented](https://www.youtube.com/watch?v=zchzn7aPQjI&list=PLX1jlrc_KO1fDYsUsCeswSXIgzlXyh3sl&index=6) a bit over a year ago in Hong Kong for the first time. It is now in a state of perhaps being deployed on the Bitcoin network. Segregated Witness needs to encode new address types. They are described in [BIP 143](https://github.com/bitcoin/bips/blob/master/bip-0143.mediawiki) pay-to-witness-pubkey-hash (P2WPKH) and pay-to-witness-script-hash (P2WSH) and there are some possible extensions later. SegWit supports two ways of using these, either inside of [P2SH](https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki) which is an address type that has been supported for years on the Bitcoin network, making it backward and forward compatible with every wallet out there created in the past few years. However, going forward, we really want this to happen natively. This gives us better efficiency for spending as we don't need the overall backward compatibility layer of the redeem script that P2SH gives us. Secondly it gives us 128 bit security for script hashes. P2SH only delivers 80 bits which is becoming questionable. This proposal replaces [BIP 142](https://github.com/bitcoin/bips/blob/master/bip-0142.mediawiki) which was an older base58 based proposal and I think this one is much better.
+
+# Base32
+
+Why base32? First of all due to the more limited alphabet we can restrict ourselves to just lowercase or just uppercase making the address format case insensitive. This makes it much easier to read or write addresses down as anyone who has ever tried to write an address down or type it after someone reads it over the phone will easily confirm. To be clear, my hope is that in the long term Bitcoin doesn’t need addresses anymore. We will get a real solution where humans don’t need to interact with the cryptographic material at all anymore. There have been proposals going in that direction but it seems for the time being we are not there so we need a solution regardless. 32 being a power of 2 means it is much easier to convert. We can just take the bytes from the data, split them into bits, rearrange them into groups of 5, take these groups of 5 and those become your base32 characters. Compare this to base58 where you really need BigNum logic to turn the whole thing into a huge number and then convert to a new basis and so on which is a quadratic algorithm. For all of that we get a downside. It is 17 percent larger than base58 just due to being less information fitting in one character. That’s going to be the main topic of what I’ll be talking about. Due to 32 being a prime power we can support a mathematical field over the characters. We can use a lot of research on strong error detection codes which doesn’t exist something like base58. Due to being case insensitive it is also more compact to store in QR codes, which have a special mode for encoding alphanumeric data. But this only works for case insensitive things. Base32 is also being used for many cases already including onion addresses in Tor and I2P and several other projects.
+
+# Checksum
+
+We fix the idea that we are going to use base32 for all these reasons. What are we going to do about the checksum character set and structure? First I should point out a few design decisions we fix early on. All of this will be about the chance of misdetecting an invalid address as a valid address because when that happens you will be sending money into a black hole. That’s what we want to prevent. Six characters is the minimum we need to make the chance that a random string gets accepted as an address less than one in a billion. That’s just a design choice. Six characters, that is what we are going with. This means if this address type is going to be generic for every witness output which can have up to 320 bits of data, we really need 71 characters under the checksum. So we are looking for error detecting codes that detect as many errors as possible with a checksum of length fixed, with a total message of length 71. I am now going to look at a few of the design choices we went through ending up with the one we picked, the BCH code at the end.
+
+# Minimum distance of a code
+
+First I need to clarify the concept of distance. Anyone who knows something about coding theory will find this trivial but I’ll explain anyway. The distance of a code or the minimum distance of a code or the Hamming distance of a code is how many characters within a valid address you need to at least change to turn it into another valid address. The minimum number of different characters between two different addresses. This diagram gives a nice demonstration. All the lines are single character changes and all the black dots are valid addresses. The minimum distance of the code shown here is 4. You need to at least cross black lines between any two black dots. There is a very fundamental theorem that says if your distance is n you can detect up to n-1 errors. This is really obvious to see. If you start from any of these black dots and you make up to 3 errors, you follow up to 3 black lines, you never end up with another black dot. This shows you how a distance 4 code can detect 3 errors. There is also an equivalence. If you have a code that can detect n errors it can also correct n-2 errors. From any point in the diagram you go to the closest black dot. If you are on a black dot that is on an intersection point that is a distance 2 from a number of black dots, there are multiple choices you can make. You cannot correct 2 errors but you can correct 1. If they were all 5 apart you could correct 2. What we will be looking for is things that are 5 apart.
+
+# CRC codes
+
+The first thing to look at is [CRC codes](https://en.wikipedia.org/wiki/Cyclic_redundancy_check). They are the most traditional [checksum](https://en.wikipedia.org/wiki/Checksum) algorithm used in a wide variety of protocols. However, they are bit based. This makes sense because in most protocols what we care about are bit errors. However, here this is not the case. We don’t care directly about bit errors, we care about symbol errors or character errors. Whenever someone makes a mistake they will make an entire character error and every character is 5 bits. Here is an example where the B is turned into a J and the D is turned a V. Even though this is only two characters that are changed you can see that it is actually 9 bits that are changed. CRC codes are designed to optimize for detecting a number of bit errors. Which means that if we want something that can detect 4 errors we really need something that can detect 20 bit errors, which is a lot. It turns out that finding something that can detect 20 bit errors is impossible. But we don’t really care about that. We really care about these symbol errors which result in bit errors that are somewhat structured. They always occur in groups of 5 and we care about the number of groups that are wrong, not just the bits. It is in fact possible to find a CRC that gives us distance 4 but we can do better.
+
+# RS codes
+
+Probably the best known type of checksum algorithm that allows error correction are [Reed-Solomon codes](https://en.wikipedia.org/wiki/Reed%E2%80%93Solomon_error_correction). These work directly over symbols which is great. Unfortunately they are limited in length to the size of the alphabet minus 1. Typically Reed-Solomon codes are done over 8 bits of data which means that they can work over code words of length 255 which is `2^8 - 1`. But in our case our alphabet size is 32 using base32, which means we would be limited to doing error detection in strings of length 31. This is too short. We cannot fit enough data into that. So a possibility is to use an alphabet extension where you are really looking at two characters at once. You are really doing a size 1024 which is `2^10` alphabet. You see 2 characters in your code as one symbol. This is possible. However it is still limited to distance 4. We are really trying to see if there is nothing better we can get.
+
+# BCH codes
+
+About a year ago I found out about [BCH codes](https://en.wikipedia.org/wiki/BCH_code) which are a generalization of Reed-Solomon code that drop this restriction of being limited to the alphabet size minus 1. Most of the research on BCH code is actually about bits based ones but this is not necessary. A lot of research is applicable to larger ones as well. We are going to create a BCH code over our size 32 alphabet. In fact it turns out the theory that you can read about in nice articles on Wikipedia, if you do the math you can construct a BCH code with distance 5. Yay! I’ll soon show you a diagram for why this actually matters. It turns out there is still a huge design space, many parameters are free in this BCH class of codes. So we’ll need a way to figure out which one to use. 
+
+# BCH code selection
+
+Even if you fix the field size there are about 160,000 different ones. When confronted with this I thought how are we ever going to pick one? I started trying to do random sampling and see which ones are actually better even if you give it more errors than they are designed for. These are codes that are designed for having distance 4 or 5 meaning they will detect 3 or 4 errors. But what if you give them one more error? Probably if these are all different codes some of them are actually better if you go beyond their limit. I started on this project of trying to characterize all the different codes that are possible here.
+
+How do you characterize such a code because all 71 character addresses is that ridiculously large number that we need to go over to characterize them? This is about 2^350 so way, way, way beyond the number of atoms in the universe. However, BCH codes belong to a class called linear codes. Linear codes means if you have a valid code word and you look at the values that every character represents and pairwise add every character to another valid code word the sum will again be a valid code word. What you only need to look for if you want to see whether this code below distance 5, you need to check does there exist any pair of 4 non-zero values over these 71 positions whose checksum is zero. Because if that is the case you can add that to any valid code word and your result will be another valid code word. Now we have established two valid code words with distance 4. It turns out that is still 12 trillion combinations which is painfully large. Maybe not entirely impossible but more than we were able to do. The next realization is that you can use a collision search. Instead of looking for 4 errors what you do is you look for only 2. You build a table with all the results on 2 errors, compute what their checksum would be to correct it, sort that table and look whether there are any 2 identical ones. Now you have 2 code words that need the same checksum to correct it. If you XOR them, if you add them together, now you have 2 x 2 = 4 changes and the checksum cancels out. Through this collision search you can now find by only doing the square root of the amount of work which makes it feasible.
+
+There are a bunch of other optimizations on top which I may talk about later if there is interest. We are able to do some search. We start from this 159,605 codes, let’s require that they actually have distance 5 at length 71. There are 28,825 left. Which one to pick from now? What you want to do is look at how they behave at 1 beyond the limit. All of these codes, these 28,825 codes, they all detect 4 errors at length 71. But what if you give them 5 errors? What if you give them 5 errors that are only appearing in a burst very close together or you give them randomly distributed behaviors? It turns out if we pick some reasonable assumptions about how we weigh the random case versus the worst case there are 310 best ones that are identical. 
+
+# Effective error detecting power as a function of error rate (graph)
+
+To show you how much this matters I want to show this graph that contains a lot of information. What this graph shows you is the detecting power of a particular error detection code in a function of the chance that every character individually is wrong. This makes the assumption that every character is independent from every other. For example you can see that the 1 percent line, the red line is the error detection code we chose. You can see it is about 2^(-38) which means that it is 1 in 250 billion, the chance that an error you make would not be detected. The blue line is what the 32 bit hash function would do as the current address format, base58. You can see it doesn’t matter what your error rate is. Any error has exactly the same chance of being detected. We can reasonably assume that the average number of errors that would be expected within an address is not large. We can assume that it is maybe 1 in an address, hopefully less than 1 especially if we switch to case insensitive coding. It would become even less likely. The yellow line shows what we could have chosen if we didn’t do this exhaustive analysis to find the best one. The yellow line is actually the worst possible code. You can see that it has this annoying bump where its detection probability even goes below 1/(2^30). We don’t even guarantee this 1 in a billion chance for that code. This is just to show you how great optimizing for a low number of errors is because it gives you under these assumptions a much better model. But it also shows you how much it matters to do this analysis. It clearly makes a difference.
+
+# BCH code selection (continued)
+
+From those 310 we pick the codes with the best bit error rate behavior. We still have these 310 identical codes. For how many characters can be wrong they behave identically. No difference at all. We still need some criteria to pick one. We have all this analysis available anyway so what to pick? It will soon become clear why it is useful to optimize for low bit error rates. What this means is what if we are only looking at errors that change 1 bit in a character? How does the code behave then? For random errors they are identical anyway. Now we only have 2 left and we just pick one of them. This took many, many years of CPU time. I think we have something like 200 CPU cores available to do analysis on. This only took a couple of weeks. But in total it was more than ten years of computation time. Until we discovered that these 310 identical ones, it is a pattern. All codes appear in groups of 310 identical ones. A couple of weeks ago, when we identified what these exact changes were, suddenly a lot more became feasible to analyze. We were no longer restricted to those 160,000 BCH codes. We could in fact look at all the 3.6 million 6 character cyclic codes which is a much larger class of functions. It turns out that if you make the range of things you are looking for larger, you find better things. However we did not pick anything from this. The results from this search, which was now feasible after dividing by 310, because we could from each class test one. Instead of a billion codes there were only 3.6 million left. It turns out some of them were slightly better than what we had already found but we are not changing it for the reason that there are efficient error location algorithms available for these BCH codes. These aren’t available if you pick an arbitrary code. The difference isn’t much so we are sticking to it.
+
+# Character set
+
+Now the question of the character set. There exists various character sets for base32 already. There is the [RFC3548](https://tools.ietf.org/html/rfc3548) which is a standard. There’s the z based base32 standard, various other standards for base32 data that have been used in the past. We’re still going to pick a different one. The reason for this is we were able to select our code to optimize for low bit error rates. Wouldn’t it be great if we could choose the character set in such a way that 1 bit errors are more likely than non 1 bit errors. This character set is the result of another year of CPU time to optimize for this. We found a bunch of information on tables for similarity between various characters. What you can see on this slide, the z and the 2 are considered similar in some fonts or writing. As you can see they are 8 apart. One is 2 and the other is 10 so they are 1 bit apart. And r and t are 1 bit apart. And y and v are 1 bit apart. And x and k are 1 bit apart. And e and a are 1 bit apart. And s and 5 are 1 bit apart. And 4 and h are 1 bit apart. There are way more similar errors overlaid in this data that you can look for. It’s pretty cool. We made a character set that optimizes for 1 bit errors. As a result our code is distance 6 for 1 bit errors. If you just look at these 1 bit errors we guarantee 5 errors. If you only make errors like this you can detect 5.
+
+Q - Did you take into account QWERTY keyboard distance in that selection?
+
+A - We did not take QWERTY keyboard distance into account.
+
+Greg Maxwell: We considered it but the visual component is uniform. In formal testing it looked like the visual component was more commonly a source of errors. But the visual component is almost always in the single path whereas a QWERTY keyboard may not be in the single path.
+
+# Effective error detecting power as a function of error rate
+
+What this diagram shows you, the blue line is again what the 32 bit hash, the current address format, would do. The red line is for arbitrary errors using the checksum algorithm we’ve chosen. The purple line is the same thing for the checksum algorithm we chose but restricted to 1 bit errors. So if you only make this class of errors that we consider more likely, you can see that it’s even stronger. For 1 percent you can see you get another 5 bit of detection chance making it 32 times less likely for something like that to not be detected. Something else you can see on this diagram is the line for 1 expected error in the whole address. You can see that there is a crossover point at 3.53 (expected errors per address). What this means is that the checksum algorithm despite being shorter, it is only a 30 bit checksum, despite that for up to 3.53 expected errors in your whole address it is actually stronger than the 32 bit checksum that was being used in the base58. For only likely errors it is even up to 4.85 per address. A great win.
+
+# Structure
+
+One last thing, how do we combine all of that into a real address because we have a character set and we have a checksum algorithm. How are we going to structure SegWit addresses? It consists of three major parts. The first is the human readable part which for Bitcoin addresses in our proposal will be `bc` standing for Bitcoin. For testnet it is `tb` which is still only two characters but visually distinct from `bc`. Then there is the separator which is always `1`. `1` is a character that does not appear in your character set. This means that the human readable part is always unambiguously separated from the data that follows. Even if the human readable part itself contains a `1`. That makes it extra flexible. Then there is the data part which uses the character set as I described before. For SegWit addresses, but this is generic, in there is the data: the witness version, the witness program and the checksum which is the last 6 characters. The result of this for a pay-to-witness-pubkey-hash (P2WPKH) address would be 42 characters rather than 34 so it is a bit longer. Base32 is a bit less efficient, the checksum is longer and the prefix of two characters adds up. But I don’t expect this to be a big problem. It is slightly larger but it is more compact in QR codes. It is much easier to read and write. Only things that care about visual space does this matter. It is 62 for pay-to-witness-script-hash (P2WSH) because it uses 256 bit hashes rather than 160 for higher security. For future witness versions which support up to 320 bit hashes the length can go up to 74. Though I don’t expect that as 256 bit is a very reasonable security target.
+
+# Bech32
+
+All of this together gives bech32 which is a generic data format for things like addresses. One instance of it for the use of SegWit addresses but it could be used for various other things that have similar requirements. I don’t know what. It seems strange that most of the research on checksum human readable data uses 1 checksum character or 2 checksum characters. Think about bank account numbers or a few similar things. There seems to be very little research on how to make an actually strong checksum that is still designed for human consumption. I hope this can become perhaps a standard for how to do this. There is a link to the [BIP](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki). In all of this I have not mentioned one of the most important design goals, code simplicity. I’ve been talking about these error detection codes which are typically very complicated to deal with. However they are only complicated to deal with if you are actually interested in error correction. Error detection is trivial.
+
+# Checksum algorithm code
+
+https://github.com/sipa/bech32/blob/master/ref/python/segwit_addr.py#L27-L36
+
+Ta da. This is the checksum algorithm. It uses no bignum conversion, it has no SHA256 dependency. It is just these ten lines. Of course you need more for the character set conversion and converting to bytes for the witness program. But the mathematical part of the spec is just this. 
+
+# Demo website
+
+http://bitcoin.sipa.be/bech32/demo/demo.html
+
+We also made a small demo website. Because it is an actual error correction algorithm behind the scenes, even if we are not using it, you could optionally implement it to do error location. The spec allows this. It strongly advises against doing actual error correction because if someone types an address wrong you want to go complain and tell the user to go look what the address is and not try to correct it for them. They might end up with a valid address that is not the one they intended. Here is an example. If you change this `v` to a `x` it will point out that `x` is likely what you did wrong. This can even be inside the checksum. The algorithm can support up to 2. We have an algorithm that supports up to 3 but not most of the time but is still quite frequently wrong. There are ways to deal with this like showing multiple possibilities to the user. None of the contributors to this project are great UI people so we really didn’t know how to do this. Here’s a P2WSH [example](http://bitcoin.sipa.be/bech32/demo/demo.html) as well. This website is linked from the BIP. You can play with it if you are interested. That’s it. Thank you very much for your attention.
+
+# Q&A
+
+Q - Do you have any idea how many Bitcoin are lost per year due to human readable character mistakes that this corrects for?
+
+A - I have no idea. I expect it to be low but I also expect that we wouldn’t know about it. It is hard to quantify and it is very nice to just categorically improve the state of the art there.
+
+Q - In the error location code, can it suggest corrections there?
+
+A - Yes. The location code actually does full error correction. It knows what the likely error is but it intentionally does not show you because you should go back and look at what it should be rather than try things. Greg suggests I explain why this matters. A code with distance d can either detect d-1 errors or correct (d-1)/2. This means that our code which is distance 5 can detect 4 errors but can only correct 2. This is because you can be in the middle of two valid code words and then you don’t know which one to go to. So if you make 4 errors, which will never result in a valid code word, you may however have gotten closer to another valid code word than the one you started off from. This means that your ability to do error detection is eroded by trying to do correction. 
+
+Greg Maxwell: The key point to make here is that if you make 4 errors it will almost certainly correct it to a valid address which is not the address you intended. This is why you don’t want to correct the errors.
+
+As Greg points out, if you make 4 errors and run the error correction algorithm which can make up to 2, it will correct to the wrong thing with a very high probability. For 4 it is almost certain, with 3 it is likely, with 2 never. This is for example different when you are dealing with private keys. Maybe that is something I should mention as future work. We are also looking at a similar standard like the one here for encoding private keys. But for private keys telling the user “Sorry your private key is wrong”, that is not what you want. You really want to do the error correction there. There we are looking at something with a stronger checksum that has more than 6 characters extra but actually can correct a reasonable number of errors and not just detect them.
+
+Q - The private key thing made me wonder whether this could be used also for master keys at the root of BIP 32 or something similar to it?
+
+A - The checksum algorithm we chose here ends up being really good up to length 89. It was designed to be good up to 71. It turns out it is really good up to 89. Not more. This is approximately 450 bits of data. That is enough for a seed but not enough for a master key, which has 512 bits of entropy because it has a chaincode as well as a key. Future work is looking for a stronger checksum which can both correct a reasonable number of errors for short things like private keys, but also has good performance for longer things. Given that we are talking about longer strings there anyway you don’t care whether it adds 6 or 10 or 15 characters.
+
+Q - Could bech32 implicitly support SegWit in the practice of false signaling where miners are signaling for something other than Core while running Core in the background?
+
+A - That is completely orthogonal. All of what I have been talking about here is on the wallet implementation side. It has no relation at all to what is implemented in consensus rules, full nodes, peer-to-peer protocols, miners. None of this cares about it. This is just something that wallets need to implement if they want. So no.
+
+Q - At the beginning of your talk you mentioned that there were some proposals that would completely abstract Bitcoin addresses away from users. Can you talk briefly about what those might be?
+
+A - I wouldn’t say promising but the only proposal that had some traction in the past is [BIP 70](https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki). This is the payment protocol you may have heard about. Instead of having an address you have a file that is a payment descriptor. Your address becomes a URL to that file. In almost cases where a Bitcoin transaction is taking place the sender is already interacting with the recipient anyway so why do we need an address? They are on their website. They can just give the information through that to the software. This doesn’t solve any of the problems of what if your website is being intercepted? But neither do addresses. Complications with this is I think some mistakes that were made in the specification of this that makes it less useful than it could have been. There is not all that much software that implements it. It is hard to implement, it requires SSL certificates. Something in that direction I think would be great. If it were done with what we have learned so far but it may be very hard to get something adopted. I am not very hopeful unfortunately.
+
+Q - With this implementation does RIPEMD160 come into it?
+
+A - Yes it does because pay-to-witness-pubkey-hash (P2WPKH) addresses still contain a RIPEMD160 hash of the public key being sent to. That is part of the SegWit proposal. That doesn’t really have anything to do with this address type that abstracts over any data. The data being encoded in the address for a P2WPKH is RIPEMD160. It is no longer for P2WSH, it is just SHA256 there.
+
+Q - I am curious if you have done the optimization in terms of the classic spending error correction style. For example what if I miss one character and end up adding a second one at a later point?
+
+Greg Maxwell: What you are describing where someone drops a character and inserts a character, they end up with the correct length. What this results in is a burst of errors all confined within a short space between the span that they dropped them. Although Pieter didn’t talk about it the codes that we use are also selected by virtue of their construction to have very good properties for small bursts as well. They do detect them by chance more than you would expect from it being a 30 bit check. Although we haven’t implemented it, we could implement one that provides useful hints for the drop and insert case. There’s a table in the BIP that gives a breakdown of all the errors occurring in the window which is specifically interesting for this case because shorter windows are more common for burst errors, just from a counting argument.
+
+Q - With traditional Bitcoin addresses you have a 1 and a 3 that tells the wallet what type of scriptPubKey. In this case it is the length that determines…?
+
+A - No it isn’t. The q you see in red is the witness version. All of it is SegWit outputs. But SegWit outputs have a version number and a hash in combination with the length. Both P2WPKH and P2WSH use version 0 but one uses 20 bytes of hash and the other uses 32 bytes.
+
+Greg Maxwell: Commenting more on the length. Because future SegWit versions may use different lengths, the specification allows the lengths to be many possible lengths. There is some validation code on what lengths are allowed. Not every possible length is an allowed length as a result of the 8 bit to 5 bit conversion that occurs between the two sizes.
+
+It is also important that this address type intentionally makes an abstraction. While the former thing using the 1 or the 3 selected P2PKH or P2SH, someone implementing the address type does not really need to know about the existence of a witness pubkey hash or a witness script hash, just the version number and data. The sender even shouldn’t care about what is in there, it is the receiver’s business. There are some sanity checks if you know more.
+
+Greg Maxwell: We generally consider it a flaw that the sender knows anything about what kind of scheme the receiver is using. We try to abstract that away.
+
+Q - How does the probability change for address collisions from the old addresses to the new?
+
+A - What do you mean by address collision exactly?
+
+Q - The chances of you generating the same addresses on the old system are absolutely miniscule. Does this increase that probability that two people generate the same address?
+
+A - There is still 160 bits or 256 bits of data inside the address and that’s the only thing that matters. All of this is about the checksum, not about the data in the addresses which is still using traditional hash functions. Nothing changes there. If you are using a 160 bit one, it goes even dramatically down if you are using 256 bits because now you have something proportional to 2^(-128) rather than 2^(-80) for a collision.
+
+Q - Do you see any applications outside of Bitcoin for this? Maybe it will help with marketing.
+
+A - Anything where humans are dealing with small strings of cryptographic material. The example I gave already that uses base32 is onion addresses in Tor for example. I don’t know if they are interested but something similar could be applicable there. They have different requirements for error detection. I guess it isn’t all that bad if you accidentally…. Maybe it is also important to point out, this does not really prevent intentionally similar looking addresses. We have this guarantee that any two valid addresses differ in at least 5 characters which makes it somewhat hard for an attacker to generate two similar looking ones. But making that many characters similar is computationally due to the hash function already being very hard. Sorry that was not really an answer to your question.
+
+Q - Are most of the design decisions around things like the character map and the code generator, are they documented along with the BIP?
+
+A - Yes. They are briefly. There is a rationale section that explains why many of the decisions were made. 
+
+Q - Is there any way to use this scheme for traditional pay-to-pubkey or pay-to-script-hash?
+
+Intentionally not as I think it would be a very confusing thing if there were multiple encodings, multiple addresses that refer to the same output. You might get someone using one form of address because that is what their wallet does but then they go to a block explorer website which shows them another. They can’t tell which one was intended and this isn’t compatible with the software. I think we should think of addresses as the thing you are sending to. It happens to map to a particular scriptPubKey but we shouldn’t see it as just an encoding of some data. That could be confusing.
+
+Q - I know it is super early but have you talked to any wallet implementers about this yet?
+
+A - While designing this we talked to various people before publishing it. In particular, GreenAddress, Armory, Electrum. There have been comments by various others. Many of them gave suggestions.
+
+Q - I’m sure they appreciate the simplicity.
+
+A - I hope so. I had comments like “You are using an error detection algorithm. We need to implement new cryptography.” I’m like “These ten lines of code.” In practice you need to implement more than that of course. The whole reference implementation for encoding and decoding in Python is 120 lines.
+
+Q - What is your opinion on everyone not caring about Bitcoin anymore and flipping to Ethereum?
+
+A - People do what they want.
+

@@ -1,0 +1,140 @@
+---
+title: Statechains (2019-06-07)
+TranscriptBy: Bryan Bishop
+---
+
+Blind statechains: UTXO transfer with a blind signing server
+
+<https://twitter.com/kanzure/status/1136992734953299970>
+
+"Formalizing Blind Statechains as a minimalistic blind  signing server" <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017005.html>
+
+overview: <https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39>
+
+statechains paper: <https://github.com/RubenSomsen/rubensomsen.github.io/blob/master/img/statechains.pdf>
+
+previous transcript: <http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/statechains/>
+
+# Introduction
+
+I am going to talk casually through the whole statechains thing. If you want to interject, please do. I'll get started. The current idea is to make it completely blind. It's blinded statechains. The goal is to allow people to transfer a UTXO without changing anything on-chain. The concept I use to describe it is a blind signing server. The idea is that the server only has two functions: you can generate a new key for a user, which is kind of like generating a new keychain and it's a linear chain that only goes in one direction and you can't split up the coins, and you can request from the server a blind signature and point to the next user that gets the requested next user which is how it gets to be a chain.
+
+The heavylifting is done by the user. The server only signs things. There could be a user with a single key, but that key could be a threshold signature and be a federation. Instead of 2-of-3, it could be 3-of-5 plus one more person that always has to sign.
+
+# Example
+
+sigUserB(blindedMessageB, userC) is the user putting a signature on a blinded message and on the next user that will get to request the next message. The blinded message gets signed by the server, with the key. It returns blindSignatureB. Money goes from A to B. You repeat it to get from C to D by using sigUserC(blindedMessageC, userD). It's a simple server where you're creating-- it's just a chain of signatures. It's an ECC linked list, basically.
+
+It's like transfering signing rights. The key is how they request a signature with, and you get to transfer who gets to request the next signature. The server signs something on behalf of one user, then on behalf of another user.
+
+# Joint key ownership with the server
+
+If the second user creates another key, and we call it a transitory key because we're going to give it to someone else. You can use musig to create another key which is a 2-of-2 multisig between A and X. In order to sign with AX and utilizing this server, you request a blind signature from A, then you complete the signature by signing with this key X. If you want to transfer the ownership of key AX, you give X privkey to someone and tell the server to transfer the signing rights.
+
+# A more concrete example
+
+On the statechain, say we have user B who controls what the server gets to sign. User B requests an eltoo signature on this off-chain transaction. Say the money goes to AX or after a timeout to B. So this is basically a lightning basic in the sense that if there's a timeout then the money goes back to B. So now that B has that guarantee, he now sends money on the bitcoin blockchain to this. He already has the signature, so he's guaranteed to be able to redeem the money on-chain without the help of the server. If you want to transfer the money, you request another signature from the server. This is another eltoo update transaction with another state number. Instead of B getting to sign, it's now user C who gets to sign. We can keep going like this. You change the eltoo update transactions, and basically this is how you transfer money off-chain.
+
+In eltoo, you can spend an output with a transaction. Even this goes to a blockchain, you can send the updated transaction to the blockchain. This is because of NOINPUT and the sequence number enforcement and the timelocks in eltoo.
+
+It is still reactive security, yes. If you don't pay attention, it's the same as lightning. You have to pay attention to the blockchain and know when someone is broadcasting a transaction to close the channel.
+
+# Practical results
+
+We can change UTXO ownership without changing the key. The server doesn't know X, so has no full control. If the server disappears, you can redeem on-chain. Since you're doing blind signatures over everything, the server doesn't know it's signing anything like bitcoin. It just puts a blind signature on something, it doesn't verify any transaction data or anything. It's not aware of it. It's up to users to unblind and verify these transactions.
+
+Q: What does the server verify before making a blind signature?
+
+A: It doesn't verify anything. Give it a message, and it signs it. The user unblinds the signatures and can choose to not accept a transaction. This is similar to petertodd's client-side validation work.
+
+Q: Doesn't the server only need to enforce that it will not create a signature for B after it was transferred to C?
+
+A: Yes, it will only sign once for the user. It enforces who it signs for, and that it only signs once.
+
+Q: Does it need to enforce that the sequence numbers increase?
+
+A: The receiver checks that.
+
+Q: But she doesn't know what the previous sequence numbers were.
+
+A: All the blinded signatures that happened before that the server signed, will go to the user the receiver.
+
+Q: So you have a linearly growing ownership package?
+
+A: Yes, that's the same with petertodd's client-side validation proposals. The unblinding is the same secret that has been passed on from one user to the next. You can hash the private key and those are secrets you use for blinding. You need two secrets for blinding. You can pass on the unblinded versions of the transactions, that might be enough. It kind of depends on what you want to do. The blinded signatures could come from the server or the users could pass them on. Maybe you prefer the server to keep the blinded messages, you download them and unblind them. You pass on X and what you get from the server. Either method works.
+
+A user asks for a signature, and says the receiver gets it next time. When that next user asks for a blind signature, then the server knows the chain of transfers. That's correct. But it doesn't know the identity of the public key owners. But there is definitely history. The path is known, yes. It doesn't know what UTXO it is, though. But it does know that if it is a UTXO that now this next next recipient is the current owner. It's a one-time token. The receiver could be the same person as the spender, the server wouldn't really know.
+
+You could make the path not known if you use ecash tokens. You exchange the token for a signature and get a new token back, like chaumian ecash. Okay, we will talk about that.
+
+With eltoo you can do transaction cut-through to the final UTXO or whoever has the final transaction. All of this is blinded. The statechain just sees a chain of related user requests but it doesn't know what.
+
+# The role of the server
+
+You're trusting the server to only cooperate with the latest owner. The server promises to only cooperate with the latest owner. You're relying on the server to do this. The server is a federation, it's a Schnorr threshold signature using musig or something. It must publish all blind signature requests (the statechain). This way people could audit the server and see that it never signed twice. Make sure the server signs only for user requests, and make sure the server never signs twice for a user.
+
+This is a public blockchain or public statechains. It's centralized so not a big deal to just use HTTPS, json-rpc, whatever.
+
+# Atomicity via adapter signatures
+
+Once you see a signature, you learn a secret. The signature has to give either all of the signatures or none of the signatures. If it tries to give half, then that doesn't work because you would be able to complete the other signatures. We use this to make it possible to transfer multiple coins on multiples of these statechains. If you have a chain with one bitcoin and another chain with one bitcoin and another one with two bitcoin, you can swap them. These atomic swaps can also be done across coins.
+
+For swapping to smaller values... the server has all the signatures from everybody, except for the adaptor secrets. Once it receives all the secrets from everybody, it can complete all the signatures and can publish all of them. If they choose to only publish half of them, then the users also have their adaptor signatures.
+
+# Comparison to federated sidechains
+
+It's non-divisible, for full UTXOs only. It's nearly the same turst model as federated sidechains. It's non-custodial because 2-of-2 and off-chain eltoo. A watchtower or full node is needed to watch for close transactions. It's not a money transmitter because it's just blind signing which could be anything. Don't blame me, basically. It's still a federation. Lightning is more safe. If the federation really tried, they could get your private key by like doing the swap and they are one of the users. If they get one of the transient keys then they can get your money.
+
+Here, you can send people bitcoin on a statechain- they would need to trust the statechain, and they would need to like bitcoin, but there's no encumberence and it's not like lightning in that aspect.
+
+# Worst case scenarios
+
+Server obtains a bunch of transitory keys, unblinds the signatures, notices the bitcoin transactions, proceeds to provably steal the coins, all the other users (keys not stolen) withdraw on-chain as a result. But this is harmless without the transitory keys. Court order to freeze or confiscate coins, they can't really comply.
+
+# Microtransactions
+
+You can't send anything smaller than an economically viable UTXO. They would never be able to redeem it on-chain. So you're limited by transaction fees on-chain really. As a statechain, you want to charge fees, and this is needed when swapping between currencies. There will be some fractional amounts when swapping between altcoins. There needs to be some method to pay, that is smaller than the UTXOs that you're transferring. You could give the statechain one of these UTXOs, well, you could pay with lightning or a credit card. Or satellite API with chaumian tokens for payments, I guess that's not deployed yet.
+
+# Lightning on statechains: eltoo and channel factories
+
+If you have a channel factory, you could add and remove participants. Eltoo supports any number of participants. Doesn't that make it a factory? The idea of a factory is you have a secondary protocol running in addition to eltoo. But in eltoo it's this flat thing where you can rearrange funds between individual participants and you don't need this second layer of second layers all the way down. We should have called it turtle.
+
+The server can be inside a statechain itself without knowing.
+
+Channel updated together with multi atomic swap. Uncooperative close similar to regular eltoo. Statechains use a simplified version of eltoo, where you only have update transactions and you have settlement transactions another way. If you want to rebalance your channel, you can add a bitcoin into the channel by swapping and then moving over the channel. All of this is possible. We just talked about channel factories to add/remove members too.
+
+Lightning is limited in throughput; you have routes and you can only send so much money through it. It's divisible and you can send fractional amounts no problem. In statechains, there's infinite throughput, but it isn't divisible. If you combine the two, assuming you accept the trust assumptions, you have a perfect mix of being able to send anything frictionlessly.
+
+Nobody has to put up money to support the protocol. You could have a fixed fee. The eltoo fees are up to the users. In lightning, the only ones you pay are the intermediates and here are there are no intermediates. You onboard them into your own group and pay them directly. You all have to be online to do that. This doesn't apply without statechains, it allows us to have dynamic membership of instances of eltoo, which is really cool.
+
+You could make the server a party to the lightning channel and then pay them. Yes, sure. Let's assume we trust the server, then we're good. If one of the parties disappears and stops cooperating, you're forced on-chain. So you do add to your on-chain risk as you add more members. That's the tradeoff. But that's always the case, even with just eltoo, you sort of have to know they are online when it comes to signing time. If you add the server to your eltoo channel then they know the UTXO and it's still kind of blind but they have more information. You could have one channel to the server, expose that one channel to them and pay them fees through that channel. But not through the other channels.
+
+As the number of members in the statechain increases, cooperation becomes more expensive so maybe they want to earn fees for that.
+
+If you trust some servers, and another user trusts different servers in a different federation, is that something possible? You can't upgrade the security, you can only downgrade it. You can have threshold signatures to do this. But we could have an intermediate step that ends up on-chain, if you do it on-chain that's fine. We would need to replay that on-chain anyway, right. Well, that's unfortunate.
+
+# Use cases
+
+You could do off-chain value transfer, lightning channels (balancing), betting channels (using multisig or discreet log contracts), or non-fungible RGB tokens (using single use seals). You use pay-to-contract to put a colored coin into a UTXO and you put the UTXO on the statechain, and now you can move this non-fungible token off-chain. Kind of solves that.
+
+There are also non-bitcoin usecases that I haven't really thought of; the server is just a dumb blind signing server that doesn't know what it's doing. It's likely that it is used for other things, and it's better if that's the case because then you could argue that you're not a money transmitter or something. At the very least, it's a timestamp server. So we can timestamp stuff.
+
+It does require more trust because the off-chain transaction concept is not something you can emulate without blockchain. For non-bitcoin usecases, it's weird to think about, but up until now if someone had a private key then you would assume he couldn't give it to someone else without both of them having that, but the server lets them do that and the assumption breaks. If you see a private key, it can be given to someone else. The ownership can change by moving it through the statechain.
+
+# Further topics
+
+You could use hardware security modules to transfer transitory keys, like attestation. You have a private key inside of an HSM or hardware wallet. You have another hardware device and you want to transfer the private key over. As long as the private key doesn't go out of the device, you can do off-chain transfer of money. This is like teechan, yeah. HSMs are terrible, but the thing is, we're transferring the transitory key in a way that is even less secure than that. If you're adding an HSM then it's more secure, and if the HSM breaks then you're just back to the model we have now. The user could collude with the federation to steal money... Everyone would have their own hardware wallet device, and my device talks to your device, and my transitory key is inside of it, and it never comes out, or if it does come out then it refuses to transfer to your hardware device. This requires trust in the HSM of course. You could run a program by the server that attests that it doesn't sign old states. I don't know if that would be equivalent or better security, but yes that's a good point. You can at least share the trust- split the trust into the hardware developer and the server, instead of just trusting the server.
+
+What if the opendime had a transitory key, and it could sign. You could physically hand it off. Yeah let me think about that. I'm not sure. I think it should work as long as it can do partially-signed bitcoin transactions. I don't see how it doesn't work, so that's interesting. Very literally, that's the only copy of the key if it's an opendime. I'm sure you could design something like that with opendime-like properties where there's some security guarantees around nobody having actually seen the private key. The blinded information can be in that chip as well, and maybe a verification header. This adds an additional assumption that, if you don't go online at all, there's an additional thing. Yeah just trust me, plug this into USB. I'm giving you money, just trust me... sure, that's what's happening.
+
+You could also do graftroot withdrawal, which allows redeeming forks or an ETF. Instead of withdrawing from the statechain by-- the cooperative withdrawal would be a blind signature where the money just goes to you on-chain, without the eltoo nonsense and you throw that out. But if you can withdraw through graftroot, then assuming we had graftroot, assuming after graftroot some hard-fork occurs then you now have a graftroot key with which you could get all the hard-fork coins out. Because the assumption is there's some kind of replay protection but graftroot is the same. Your graftroot key will work on all hard-forked chains but you need to create a different transaction on that other chain. If you withdraw through graftroot, you can withdraw from all the chains. Assuming they support graftroot. The assumption is that it's a bitcoin fork and graftroot is already there and they just copy those features and soft-forks.
+
+This could also be used for an ETF. With an ETF, the problem with a hard-fork is which coins are you going to be given, well with graftroot you could be given all the coins without knowing the hard-forks or how many. You might have one utxo with more hard-forks and have a different value or something. But this can be the case right now anyway.
+
+An open problem is, you could verify only the history of the coins you own or receive. But you need some kind of guarantee that there aren't two histories. So you need to succinctly store and relay statechain history. You need to be able to know all the chains that exist and know that yours is uniquely... one key from the server that is only signing this. How do you prove a negative though? You throw a merkle tree in there. There are various ways. There was a proposal about preventing double spending by forcing signing with the same k twice, then if they ever sign something twice they lose money or something. I'm not sure if you detect that they signed with the same k. The punishment doesn't matter, it's already there- if they sign twice, the reputation is shattered. They are already punished, we just need to detect it. One way would be to know all the keys that are being signed with and get a list of them and make sure there's, you're only in there once. Another way is a sparse merkle tree which I haven't looked.
+
+At best you can make fraud proofs easier to make and prove, but why would they want to give enough data to prove that a fraud occured. How do you know there's not two histories? Well, on-chain there can only be one history. Once people find out, the whole reputation is shattered. Off-chain you can inflation, but once you go on-chain then only one of the histories gets written. The server signs a specific history of the statechain and gives it to you. If you have the whole list of keys it ever gave out, and your key is only in there once, I think that's enough evidence.
+
+# See also
+
+<https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/statechains/>

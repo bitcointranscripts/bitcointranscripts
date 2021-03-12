@@ -1,0 +1,97 @@
+---
+title: Onion Routing In Lightning
+TranscriptBy: Bryan Bishop
+---
+
+Onion routing in lightning network
+
+Olaoluwa Osuntokun (roasbeef)
+
+<http://lightning.network/>
+
+<https://twitter.com/kanzure/status/784742298089299969>
+
+video: <https://www.youtube.com/watch?v=Gzg_u9gHc5Q#t=2m44s>
+
+
+Privacy-preserving decentralized micropayments
+
+We're excited about lightning because the second layer could be an important opportunity to improve privacy and fungibility. Also, there might be timing information in the payments themselves.
+
+
+Distributed set of onion routers (OR, cite OG onionrouting paper). Users create circuits with sub-set of nodes. Difficult for oion routers to gain more info than predecessor+successor in path. Low latency - usable within greater internet. Notable success is tor, notable success of routing nodes.
+
+In lightning, we have some goals to make it private and censorship resistant. We use source-routing which means the source fully specifies the entire route. In lightning we want to know what the fees are. We want to know the entire route, the timelocks and the path itself.
+
+We use sphinx to make a provably secure mix format. It has various desirable capabilities. With encryption, the ciphertext -- the plaintext due to randomization. There's non-trivial shipping and mapping to make sure everything is fixed throughout the entire size. With fixed size, it gives no positional information. If you are the fifth person in the graph, then you might give away information about the graph or your position in the graph.
+
+In sphinx you can derive a shared secret. To achieve unlinkability, we need to randomize the base key of the diffie-hellman itself. You can have n-keys in the package itself, but you can do things like RSA and now you have kilobytes of a packet because you need all the shared secrets itself. It's the hoop element at each hop. It's a cool trick. This can be generalized to any protocol like elliptic curves, RSA, we can do LWE and other things like that.
+
+So you get a session key for the session and then a list of all the public nodes in the route. So a0 is the initial public key for the first hop and then it derives a shared secret as 0. It raises it to the power of its secret exponent and then there's a blinding factor. Each intermediate node uses the blinding factor to randomize the public key for the next hop. a1 is g^x^b0. So each node derives a blinding factor from the shared secret, and uses this to randomize for the next hop. We have a constant-size key with each hop and we achieve unlinkability.
+
+In sphinx, packet processing is simplified. ProcessSphinxPacket.... if the MAC is the .. then you tampered with the packet and it's rejected immediately. Also, you have to protect against replay attacks as well. You re-randomize the shared secret with a new blinding factor.
+
+One thing we've done is we've started to make some modifications to sphinx itself. We realized it's useful to ourselves but maybe we could add some features for lightning. cdecker from Blockstream has done some work with this to make it more lightning-like. We can add a version byte to the header itself so we can have new versions later on if we use different cryptosystems. We also added the public key and the MAC is now over the entire packet. Originally in sphinx it's not over the entire packet, it was made for mixnet rather than indistinguishable replies. So you can't have the MAC on it because if you have a MAC then it's not indistinguishable. We don't have that reply use-case in lightning itself. We switched from AES to chacha20 for speed optimality. We also have a payload that attaches instructions for the hop itself. If one link has several links, which one should be used? We have some information about which links to link on, and which ones, and some other information like timing information.
+
+We have this code and it's done. We could start a mixnet to have an alternative transaction propagation mechanism.
+
+# Performance considerations
+
+There were two asterisks on two lines of codes; those were the asymmetic crypto operations for forwarding the HLTC where you derive a shared secret and randomize a .... so this might be nice to eliminate or advertise that we do it only one time and avoid it otherwise. The onion routers themselves need to maintain a per-session state. This is the hash, the incoming link and hte actual link. They need to maintain this state and forward it down to next path. If you forget the state and you get the settle, you don't know who to send it to. If you forget the state you can't remember the HLTC. So this would be a DoS attack. It needs to be persisted to disk, too. If we could overcome those limitations we could have it be faster and the routers could be stateless.
+
+# Hornet
+
+It's an extension of Sphinx and overcomes some of the detrimental problems there. Hornet is a progression of sphinx and it is targeting internet-scale. They want to eliminate the asymmetric crypto operations. It does two important things. It gets the asymmetric operations out of the critical path of data forwarding. During initial setup, if we can get our symmetric keys and then only do fast symmetric crypto operations. Another nice part of hornet is that it creates a bidirectional circuit. Sphinx is setup and forget. But hornet has real-time.
+
+Hornet uses sphinx. Hornet uses sphinx initially to derive the shared secrets which then allows intermediate nodes to put a special key into a packet which they can use into data forwarding. The nice thing about hornet is that the nodes only need to maintain constant state. The packets carry all the state. The state is pushed to the endpoints rather than the intermediate nodes. The major parts is the anonymous header. A forwarding segment is encrypted by a node and can only be decrypted by itself, and it contains routing information like the next route to go to and some session information to avoid replay attacs.
+
+Nodes only need to maintain their own symmetric keys, they can decrypt the packets and then continue forwarding.
+
+Hornet can help with pyament flow of lightning itself. The payment flow is hypothesized to be out-of-band. Alice and Bob want to send payments through lightning. Maybe there's tor, maybe not. Maybe they exchange tor information so they can send money over lightning. Maybe they are doing several payments and need to talk back and forth. We can eliminate that out-bound communication and move it into the network. This assumes Alice and Bob have a route. Alice can create a hornet session to Bob and then they have a bi-directional link where they can exchange detail. I can get payment vaues and r values from Bob through the network itself.
+
+Maybe some of the links wont have sufficient capacity to send everything in one go; so I could fragment a payment through several routes in lightning at the same time.
+
+# Shared secret log
+
+The important part for maintaining a shared secret is that you need to reject a packet if it's sent again. An adversary could resend a packet, but we want to reject that. So you need a growing log of all the shared secrets, so if it's in the log then you need to reject it. If I need to maintain shared secrets for all my lifetime, I have unbound growth. So we need to garbage select part of the trees. So we can do that with key rotation. There are a few ways to do this. In tor, they have a central directory server and everyone uploads their keys and their new signed keys, but you know ideally we could do that and we would like to avoid that, there's a centarl point of authority so there's a few ways to do ad hoc key rotation. So let's assume that nodes have an identity key, and then they could authenticate hteir onion key with an identity key. So maybe each day they broadcast a new key to the network. So one subtletly of this is that the rotation has to be loosely synchronized. If you rotate keys and then someone sends you payment over the old key, then it looks like an invalid MAC, you would have to reject it. So there needs to be a grace period instead, where a few days after key rotation you still accept old packets maybe. So you check with the old key and check with the new key and maybe it works.
+
+Active key rotation actually encourages higher bandwidth and now we need to rotate keys 24 hours every 24 hours or something. So with a million node networks, that's a lot of data to download.
+
+# Passive key rotation
+
+You published a key. You use bip32 public key derivatio. The people at the edges have the blockhash and your master public key from bip32. Everyone can do key rotation by themselves on the edges. There's a gotcha, though. It's common knowledge that with public derivation on bip32 is that if you have the master pubkey and you leak the.... so.. with that new, you need forward secrecy if the private key is leaked. You can have an intermediate point, as to a step doing derivation and then leave that point later. If you use some crypto magic maybe you can solve that.
+
+So for passive key rotation, you could do pairing crypto and have passive non-interactive key rotation. Three cyclic groups. A bilinear pairing. We can have more meaningful identifiers like roasbeef@lightning.network and use that instead. So we have a three cyclic group and a pairing operation which takes elements from two groups and transmutes it to a third one. And the group is multiplicative. If you look at the pairing operation, ... that's the magical step that allows you to do a bunch of other cool stuff.
+
+Every node now advertises a master public key. With regular IBE, there's a trusted agent that distributes public keys to everyone else. We can have the nodes be the trusted agent to do the actual protocol. We need a novel primitive called a ... hash function.... we want the hash function to map directly to a point on a curve. You could do this iteratively where you have a string, you hash it, you get an output on the curve. What about mapping something to a point that isn't the identity point or the element at infinity? Everyone has an ID which is a blockhash. ID is a group element, a public key. So given a blockhash, they can then use this abstraction to derive another key that is a group element that matches that. If you remember in sphinx we had this g^r, we could do this to do non-interactive key rotation. Alice knows the key schedule of the other nodes. So then she uses that to basically, using g^r, to derive a shared secret. She uses bob's master key and then raises that to r which is the current session key with maybe some blinding factors. Bob takes r itself, does a pairing operation with n which is his private key. So it just goes out to the end where they both arrive at a shared secret which is the pairing of g, and the Bob's ID, and now they have a shared secret. So with this we can achieve passive key rotation from the edges-- but now there's a pairing operation cost as well. We can use this to do key rotation or just do a stop gap and do the other one.
+
+# Limitations in the scheme
+
+Assumes a high degree of path diversity. There are many ways to get from Alice to Bob. If there's only one path, then you know she's sending it to Bob. You can have some correlation with payment values where-- you know there's no other link could support a payment of this size, so therefore they are using this particular route.
+
+You can do timing attacks where you can see Bob and Alice are sending payments-- well you can see packet size correlation and so on.
+
+# Future directions
+
+Maybe we can gain capabilities ... and moving the asymmetric operation to the forwarding highlight. We could figure out the payload structure. How do I identify different chains? What is the timing? What about high-latency systems that give us more privacy guarantees? Maybe lightning is just for instantaneous payments, and maybe you could tolerate a minute and that's still okay.
+
+We can also look into non-source-routed privacy schemes. Since everyone has to give information about links, you lose some privacy. There's some ways you could do this but they involve trusted hardware at the node using obliviousRAM (oRAM) and doing shortest path search over the graph and that would require special hardware. We probably wont do that. It's a cool research direction to look into for the future.
+
+
+# Q&A
+
+Q: Statistical correlation in onion routing?
+
+A: Randomized delays. We could pad out the packet sizes so that every packet on matter if you were doing an opening or a forwarding is always the same size. All the packets would be encrypted. We could do other things like add some delay or move to higher-latency networks which could help us hiding some of this metadata.
+
+Q: What do you do about... network layer attackers?
+
+A: For the payment network problems, we could say all payments in lightning are a particular value, and then we fix the channels, and then everything is completely uniform. With sphinx we talked about unlinkability, the packets themselves are indistinguishable bu tbecause the r value is the same. Versioning-- same path, same r value. We could use some techniques to randomize the r value just like we do for the group value for sphinx. We could do a scheme where we randomize the r values, where we add generic point multiplication or use fancy signatures where you do single show signature which forces you to use a certain value for the r value in the signature. If oyu sign with the key then you reveal the r value. Without that, it's somewhat limited. Maybe we could do this at the end of v1.
+
+
+
+onion routing specification <https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-July/000557.html>
+
+onion routing protocol for lightning <https://github.com/cdecker/lightning-rfc/blob/master/bolts/onion-protocol.md>
+
+<https://github.com/lightningnetwork/lightning-onion> and <https://github.com/cdecker/lightning-onion/tree/chacha20>

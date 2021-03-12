@@ -1,0 +1,5 @@
+---
+title: Simons Institute
+---
+
+{{< childpages >}}
