@@ -1,11 +1,13 @@
 ---
-title: Christian Decker C Lightning Api (2018-10-22)
+title: Christian Decker C Lightning Api (2018-10-24)
 TranscriptBy: Bryan Bishop
 ---
 
 Christian Decker
 
 Developing on c-lightning
+
+Location: Chaincode Labs Lightning Residency 2018
 
 Video: <https://www.youtube.com/watch?v=l8OLD7or0DA>
 

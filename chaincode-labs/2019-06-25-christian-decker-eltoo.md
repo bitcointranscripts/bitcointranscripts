@@ -1,5 +1,5 @@
 ---
-title: Christian Decker Eltoo (2019-09-18)
+title: Christian Decker Eltoo (2019-06-25)
 TranscriptBy: Bryan Bishop
 ---
 
@@ -9,7 +9,7 @@ Topic: Eltoo: The (Far) Future of Lightning
 
 Location: Chaincode Labs
 
-Date: September 18th 2019
+Date: June 25th 2019
 
 Video: https://www.youtube.com/watch?v=3ZjymCOmn_A
 
