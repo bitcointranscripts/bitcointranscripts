@@ -1,11 +1,11 @@
 ---
-title: Lightning Network Topology
+title: Lightning network topology, its creation and maintenance
 TranscriptBy: Bryan Bishop
 ---
 
-Lightning network topology, its creation and maintenance
-
 Carla Kirk-Cohen
+
+video: <https://www.youtube.com/watch?v=j2l_Ut4k1qI>
 
 # Introduction
 
