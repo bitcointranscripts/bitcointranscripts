@@ -1,6 +1,6 @@
 ---
 title: Michael Flaxman (2019-08-08)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

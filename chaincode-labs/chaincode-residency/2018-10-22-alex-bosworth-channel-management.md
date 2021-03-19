@@ -1,6 +1,6 @@
 ---
-title: Alex Bosworth Channel Management (2018-10-22)
-transcript_by: Bryan Bishop
+title: Alex Bosworth - Channel Management (2018-10-22)
+transcript_by: Michael Folkson
 tags: ['lightning', 'routing']
 category: ['residency']
 ---

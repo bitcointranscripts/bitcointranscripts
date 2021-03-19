@@ -1,6 +1,6 @@
 ---
 title: Matt Corallo Rust Lightning (2019-02-07)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 tags: ['lightning']
 ---
 

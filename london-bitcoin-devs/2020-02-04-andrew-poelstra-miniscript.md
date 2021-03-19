@@ -1,5 +1,5 @@
 ---
-title: Andrew Poelstra Miniscript (2020-02-04)
+title: Andrew Poelstra - Miniscript (2020-02-04)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tag: ['miniscript']

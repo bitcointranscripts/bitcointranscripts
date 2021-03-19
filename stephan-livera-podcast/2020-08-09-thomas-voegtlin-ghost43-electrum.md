@@ -1,6 +1,6 @@
 ---
-title: Thomas Voegtlin Ghost43 Electrum (2020-08-09)
-transcript_by: Bryan Bishop
+title: Thomas Voegtlin, Ghost43 - Electrum (2020-08-09)
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

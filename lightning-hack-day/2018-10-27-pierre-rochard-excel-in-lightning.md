@@ -1,6 +1,6 @@
 ---
-title: Pierre Rochard Excel In Lightning (2018-10-27)
-transcript_by: Bryan Bishop
+title: Pierre Rochard - Excel In Lightning (2018-10-27)
+transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lnd']
 ---

@@ -1,6 +1,6 @@
 ---
-title: Jeremy Rubin CTV (2020-02-11)
-transcript_by: Bryan Bishop
+title: Jeremy Rubin - CTV (2020-02-11)
+transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['soft fork', 'forks']
 ---

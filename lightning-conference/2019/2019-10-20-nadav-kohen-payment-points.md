@@ -1,7 +1,8 @@
 ---
-title: Nadav Kohen Payment Points (2019-10-20)
-transcript_by: Bryan Bishop
+title: Nadav Kohen - Payment Points (2019-10-20)
+transcript_by: Michael Folkson
 categories: ['conference']
+tags: ['lightning', 'schnorr']
 ---
 
 Nadav Kohen

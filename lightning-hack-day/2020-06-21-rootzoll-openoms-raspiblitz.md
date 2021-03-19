@@ -1,6 +1,6 @@
 ---
-title: Rootzoll Openoms Raspiblitz (2020-06-21)
-transcript_by: Bryan Bishop
+title: Rootzoll, Openoms, Raspiblitz (2020-06-21)
+transcript_by: Michael Folkson
 categories: ['hackathon']
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Kevin Loaec Antoine Poinsot Revault (2020-04-24)
-transcript_by: Bryan Bishop
+title: Kevin Loaec, Antoine Poinsot - Revault (2020-04-24)
+transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['attacks', 'ux']
 ---

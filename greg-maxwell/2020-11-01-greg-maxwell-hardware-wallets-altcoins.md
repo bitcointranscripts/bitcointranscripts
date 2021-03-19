@@ -1,6 +1,6 @@
 ---
-title: Greg Maxwell Hardware Wallets Altcoins (2020-11-01)
-transcript_by: Bryan Bishop
+title: Greg Maxwell - Hardware Wallets Altcoins (2020-11-01)
+transcript_by: Michael Folkson
 speaker: Greg Maxwell
 tags: ['hardware wallet', 'altcoin', 'wallet']
 ---

@@ -1,6 +1,6 @@
 ---
-title: Andrew Poelstra Miniscript (2020-02-07)
-transcript_by: Bryan Bishop
+title: Andrew Poelstra - Miniscript (2020-02-07)
+transcript_by: Michael Folkson
 tags: ['miniscript']
 ---
 

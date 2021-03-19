@@ -1,6 +1,6 @@
 ---
-title: Christian Decker C-Lightning API (2018-10-24)
-transcript_by: Bryan Bishop
+title: Christian Decker - C-Lightning API (2018-10-24)
+transcript_by: Michael Folkson
 tags: ['lightning', 'c-lightning']
 category: ['residency']
 ---

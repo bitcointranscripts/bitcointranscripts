@@ -1,7 +1,7 @@
 ---
 title: Greg Maxwell - Multiple Implementations (2018-09-23)
 speaker: Greg Maxwell
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 ---
 
 Name: Greg Maxwell

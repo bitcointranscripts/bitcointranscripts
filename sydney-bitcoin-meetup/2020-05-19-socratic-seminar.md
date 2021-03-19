@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar (2020-05-19)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['multisig', 'mempool']
 ---

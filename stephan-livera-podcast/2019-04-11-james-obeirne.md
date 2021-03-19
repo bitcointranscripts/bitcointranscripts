@@ -1,6 +1,6 @@
 ---
-title: James Obeirne (2019-04-11)
-transcript_by: Bryan Bishop
+title: James O'Beirne (2019-04-11)
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

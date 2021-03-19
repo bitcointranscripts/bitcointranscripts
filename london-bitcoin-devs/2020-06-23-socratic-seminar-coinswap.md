@@ -1,7 +1,8 @@
 ---
-title: Socratic Seminar Coinswap (2020-06-23)
+title: Socratic Seminar - Coinswap (2020-06-23)
 transcript_by: Michael Folkson
 categories: ['meetup']
+tags: ['privacy']
 ---
 
 Name: Socratic Seminar

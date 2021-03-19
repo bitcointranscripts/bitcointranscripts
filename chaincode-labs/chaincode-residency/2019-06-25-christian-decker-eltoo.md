@@ -1,8 +1,8 @@
 ---
-title: Christian Decker Eltoo (2019-06-25)
-transcript_by: Bryan Bishop
-tags: ['eltoo', 'lightning']
+title: Christian Decker - Eltoo (2019-06-25)
+transcript_by: Michael Folkson
 category: ['residency']
+tags: ['eltoo', 'lightning']
 ---
 
 Name: Christian Decker

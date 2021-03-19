@@ -1,6 +1,6 @@
 ---
-title: Chris Stewart Private Key Management (2019-10-19)
-transcript_by: Bryan Bishop
+title: Chris Stewart - Private Key Management (2019-10-19)
+transcript_by: Michael Folkson
 categories: ['conference']
 ---
 

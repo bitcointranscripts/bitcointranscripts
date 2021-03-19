@@ -1,7 +1,7 @@
 ---
 title: Andrew Poelstra TFTC (2019-06-18)
 speaker: Andrew Poelstra
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

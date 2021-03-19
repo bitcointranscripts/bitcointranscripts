@@ -1,8 +1,8 @@
 ---
-title: Socratic Seminar Bip Schnorr (2020-06-16)
+title: Socratic Seminar - BIP Schnorr (2020-06-16)
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['ux']
+tags: ['schnorr']
 ---
 
 Name: Socratic Seminar

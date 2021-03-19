@@ -1,8 +1,8 @@
 ---
-title: Sergei Tikhomirov Lightning Privacy (2020-05-09)
-transcript_by: Bryan Bishop
+title: Sergei Tikhomirov - Lightning Privacy (2020-05-09)
+transcript_by: Michael Folkson
 categories: ['hackathon']
-tags: ['security', 'privacy', 'ux', 'scalability']
+tags: ['security', 'privacy', 'lightning', 'scalability']
 ---
 
 Name: Sergei Tikhomirov

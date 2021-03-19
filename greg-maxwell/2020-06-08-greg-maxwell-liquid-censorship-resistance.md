@@ -1,7 +1,7 @@
 ---
 title: Greg Maxwell - Liquid Censorship Resistance (2020-06-08)
 speaker: Greg Maxwell
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 ---
 
 Name: Greg Maxwell

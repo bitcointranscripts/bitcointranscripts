@@ -1,7 +1,8 @@
 ---
-title: Jonathan Metzman Structured Fuzzing (2019-08-07)
-transcript_by: Bryan Bishop
+title: Jonathan Metzman - Structured Fuzzing (2019-08-07)
+transcript_by: Michael Folkson
 categories: ['conference']
+tags: ['testing']
 ---
 
 Name: Jonathan Metzman

@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar Signet (2020-08-19)
+title: Socratic Seminar - Signet (2020-08-19)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['taproot', 'schnorr']

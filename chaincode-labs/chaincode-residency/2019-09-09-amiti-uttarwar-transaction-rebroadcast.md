@@ -1,6 +1,6 @@
 ---
-title: Amiti Uttarwar Transaction Rebroadcast (2019-09-09)
-transcript_by: Bryan Bishop
+title: Amiti Uttarwar - Transaction Rebroadcast (2019-09-09)
+transcript_by: Michael Folkson
 category: ['residency']
 tag: ['bitcoin core']
 ---

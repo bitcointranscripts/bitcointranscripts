@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell - Bitcoin Core Testing (2018-09-23)
-speaker: Greg Maxwell
+transcript_by: Michael Folkson
 transcript_by: Bryan Bishop
 tag: ['bitcoin core', 'testing']
 ---

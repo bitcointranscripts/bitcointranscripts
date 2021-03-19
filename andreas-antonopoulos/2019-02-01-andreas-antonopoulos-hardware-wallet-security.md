@@ -1,6 +1,6 @@
 ---
 title: Andreas Antonopoulos - Hardware Wallet Security (2019-02-01)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 speaker: Andreas Antonopoulos
 tags: ['hardware wallet', 'validation', 'wallet']
 ---

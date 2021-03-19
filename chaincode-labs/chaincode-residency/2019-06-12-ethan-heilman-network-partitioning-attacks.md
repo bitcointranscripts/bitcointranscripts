@@ -1,6 +1,6 @@
 ---
 title: Ethan Heilman Network Partitioning Attacks (2019-06-12)
-transcript_by: Bryan Bishop
+transcript_by: Adam Jonas
 tags: ['privacy', 'P2P', 'attacks']
 category: ['residency']
 ---
@@ -16,8 +16,6 @@ Video: <https://www.youtube.com/watch?v=StnOVBbIpD8>
 Slides: <https://residency.chaincode.com/presentations/bitcoin/ethan_heilman_p2p.pdf>
 
 Eclipse attack paper: <https://eprint.iacr.org/2015/263.pdf>
-
-Transcript completed by: Adam Jonas
 
 # Bitcoin’s P2P Network
 

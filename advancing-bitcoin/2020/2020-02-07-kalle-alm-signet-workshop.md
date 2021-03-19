@@ -1,6 +1,6 @@
 ---
 title: Kalle Alm Signet Workshop (2020-02-07)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 tags: ['taproot']
 ---
 

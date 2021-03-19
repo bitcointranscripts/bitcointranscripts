@@ -1,6 +1,6 @@
 ---
-title: Elichai Turkel Schnorr Signatures (2019-08-16)
-transcript_by: Bryan Bishop
+title: Elichai Turkel - Schnorr Signatures (2019-08-16)
+transcript_by: Michael Folkson
 category: ['residency']
 tag: ['schnorr']
 ---

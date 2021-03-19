@@ -1,6 +1,6 @@
 ---
-title: Sergi Delgado Watchtowers (2020-05-24)
-transcript_by: Bryan Bishop
+title: Sergi Delgado - Watchtowers (2020-05-24)
+transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
 ---

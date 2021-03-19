@@ -1,6 +1,6 @@
 ---
 title: Alekos Filini Magical Bitcoin (2020-05-21)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['miniscript', 'wallet']
 ---
