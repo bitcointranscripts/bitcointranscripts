@@ -1,6 +1,7 @@
 ---
 title: Journal Review
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 -- Disclaimer --

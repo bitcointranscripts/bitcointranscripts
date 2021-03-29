@@ -1,6 +1,8 @@
 ---
 title: Mining Firmware Security
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 Mining firmware security

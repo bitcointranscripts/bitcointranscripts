@@ -1,6 +1,8 @@
 ---
 title: Incentivizing Payment Channel Watchtowers
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['eltoo', 'lightning']
 ---
 
 Incentivizing payment channel watchtowers

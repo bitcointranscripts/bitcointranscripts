@@ -1,6 +1,7 @@
 ---
 title: Python Bitcoinlib
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Bryan Bishop

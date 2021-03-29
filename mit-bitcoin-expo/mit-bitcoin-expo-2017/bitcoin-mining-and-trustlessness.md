@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Mining And Trustlessness
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'research', 'mining', 'wallet']
 ---
 
 Bitcoin mining and security models

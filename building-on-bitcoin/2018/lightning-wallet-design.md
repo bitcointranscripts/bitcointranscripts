@@ -1,6 +1,8 @@
 ---
 title: Lightning Wallet Design
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'lightning', 'ux', 'wallet']
 ---
 
 Designing lightning wallets for the bitcoin user

@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Script
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks', 'taproot', 'covenants', 'segwit']
 ---
 
 Featuring roasbeef

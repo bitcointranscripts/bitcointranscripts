@@ -1,6 +1,8 @@
 ---
 title: P2P Encryption
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'p2p', 'cryptography']
 ---
 
 bip324: v2 message transport protocol

@@ -1,6 +1,7 @@
 ---
 title: Scriptless Scripts
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Scriptless scripts

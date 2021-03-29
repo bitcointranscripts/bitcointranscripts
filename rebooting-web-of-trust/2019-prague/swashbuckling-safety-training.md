@@ -1,6 +1,7 @@
 ---
 title: Swashbuckling Safety Training
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Swashbuckling safety training with decentralized identifiers and verifiable credentials

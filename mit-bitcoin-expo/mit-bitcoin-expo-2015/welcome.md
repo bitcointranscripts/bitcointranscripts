@@ -1,6 +1,7 @@
 ---
 title: Welcome
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Welcome session

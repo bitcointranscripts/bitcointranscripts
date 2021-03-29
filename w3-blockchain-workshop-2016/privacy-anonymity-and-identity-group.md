@@ -1,6 +1,8 @@
 ---
 title: Privacy Anonymity And Identity Group
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['security']
 ---
 
 Anonymous identity

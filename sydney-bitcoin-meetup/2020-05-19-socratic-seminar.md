@@ -1,6 +1,8 @@
 ---
 title: Socratic Seminar (2020-05-19)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['multisig', 'mempool']
 ---
 
 Name: Socratic Seminar

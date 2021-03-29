@@ -1,6 +1,8 @@
 ---
 title: Miniscript
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['miniscript']
 ---
 
 Miniscript

@@ -1,6 +1,8 @@
 ---
 title: Signmessage (2018-10-10)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['wallet']
 ---
 
 <https://twitter.com/kanzure/status/1049834659306061829>

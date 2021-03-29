@@ -1,6 +1,8 @@
 ---
 title: Coinjoinxt
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'fungibility']
 ---
 
 CoinjoinXT and other techniques for deniable transfers.

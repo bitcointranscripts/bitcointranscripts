@@ -1,6 +1,8 @@
 ---
 title: Fungibility Overview
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['fungibility']
 ---
 
 Fungibility overview

@@ -1,6 +1,7 @@
 ---
 title: Brick Async State Channels
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Brick: Asynchronous State Channels
@@ -89,6 +90,7 @@ We can change the way we close the channel and have one-off consensus. Before th
 
 We have proven Brick security but right now it only holds for two parties. The reason for this is that the closing of the channel with the incentives requires that if more than f fraud proofs are submitted to the Brick smart contract, then we close and we give all the channel balance to the counterparty. Doing this with multiple parties is difficult. We have to find a channel balance at a point, and we need watchtowers that behave honestly. That's left for future work.
 
+categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

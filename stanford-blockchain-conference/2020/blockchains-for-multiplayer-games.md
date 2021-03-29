@@ -1,6 +1,7 @@
 ---
 title: Blockchains For Multiplayer Games
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Blockchains for multiplayer games
@@ -75,6 +76,7 @@ In the reach past having that lens, having some tools to do more rigorous testin
 
 This has been a preview of what we're interested in contributing over the next few years. There's a lot of impressive work in this space, like modeling systems, modeling mechanisms, and taking a complex adaptive systems approach.... and also just thinking about automated market makers and considering how they can be parameterized and what still works on-chain and what's suitable to a market... This is a sample of some people that have helped informed our thinking and people we think are really contributing to understanding how to do this stuff better. It's a fantastic community, thank you for publishing your work and helping us think better ourselves. Alright.
 
+categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

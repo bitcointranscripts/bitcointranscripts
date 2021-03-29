@@ -1,6 +1,8 @@
 ---
 title: Proof Of Verification For Proof Of Work
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['validation']
 ---
 
 Proof of verification for proof of work: Miners must verify the signatures on bitcoin transactions

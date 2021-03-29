@@ -1,6 +1,7 @@
 ---
 title: Forward Blocks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Forward blocks: On-chain settlement capacity increases without the hard-fork

@@ -1,6 +1,7 @@
 ---
 title: Chainbreak
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 <div id="table-of-contents">

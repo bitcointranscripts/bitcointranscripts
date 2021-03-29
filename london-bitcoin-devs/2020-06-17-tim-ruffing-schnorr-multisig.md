@@ -1,6 +1,8 @@
 ---
 title: Tim Ruffing Schnorr Multisig (2020-06-17)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['schnorr', 'taproot', 'multisig']
 ---
 
 Name: Tim Ruffing

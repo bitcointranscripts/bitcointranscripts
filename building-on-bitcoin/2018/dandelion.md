@@ -1,6 +1,8 @@
 ---
 title: Dandelion
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'p2p', 'miners']
 ---
 
 Dandelion: Privacy-preserving transaction propagation in bitcoin's p2p network

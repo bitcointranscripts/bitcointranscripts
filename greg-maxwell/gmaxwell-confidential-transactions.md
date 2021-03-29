@@ -1,6 +1,7 @@
 ---
 title: Gmaxwell Confidential Transactions
 TranscriptBy: Bryan Bishop
+tags: ['altcoin']
 ---
 
 Confidential transactions

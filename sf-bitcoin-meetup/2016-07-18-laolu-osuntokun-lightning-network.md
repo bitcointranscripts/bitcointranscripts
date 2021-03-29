@@ -1,6 +1,8 @@
 ---
 title: Laolu Osuntokun Lightning Network (2016-07-18)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['lightning']
 ---
 
 Laolu Osuntokun

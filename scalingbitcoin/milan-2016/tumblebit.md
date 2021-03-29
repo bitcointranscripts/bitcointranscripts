@@ -1,6 +1,8 @@
 ---
 title: Tumblebit
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 TumbleBit

@@ -1,6 +1,8 @@
 ---
 title: The Bitcoin Standard
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 The bitcoin standard as a layered scaling solution

@@ -1,6 +1,7 @@
 ---
 title: Attacking Evm Resource Metering
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Broken Metre: Attacking resource metering in EVM
@@ -119,6 +120,7 @@ Let me talk about short-term and long-term fixes. For short-term fixes, it's two
 
 In the long-term, there's the idea of making stateless clients where the client do not need to keep track of all the state. The necessary data would be sent with the transaction. Alternatively, sharding isn't a direct solution but it does require less state per node.
 
+categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

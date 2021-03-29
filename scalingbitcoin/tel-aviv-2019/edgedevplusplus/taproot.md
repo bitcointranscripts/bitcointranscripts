@@ -1,6 +1,8 @@
 ---
 title: Taproot
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['taproot']
 ---
 
 Building Taproot

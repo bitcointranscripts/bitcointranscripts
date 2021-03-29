@@ -1,6 +1,7 @@
 ---
 title: Michael Flaxman (2019-08-08)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Name: Michael Flaxman

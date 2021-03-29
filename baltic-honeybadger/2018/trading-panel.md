@@ -1,6 +1,7 @@
 ---
 title: Trading Panel
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Trading panel

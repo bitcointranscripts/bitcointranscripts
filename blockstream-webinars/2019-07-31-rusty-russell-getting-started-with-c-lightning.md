@@ -1,6 +1,7 @@
 ---
 title: Rusty Russell Getting Started With C Lightning (2019-07-31)
 TranscriptBy: Bryan Bishop
+tags: ['lightning', 'c-lightning']
 ---
 
 Rusty Russell

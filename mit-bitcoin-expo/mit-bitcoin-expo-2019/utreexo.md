@@ -1,6 +1,8 @@
 ---
 title: Utreexo
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['accumulators', 'scalability']
 ---
 
 Utreexo: Reducing bitcoin nodes to 1 kilobyte

@@ -1,6 +1,8 @@
 ---
 title: Protecting Yourself And Your Business
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'ux']
 ---
 
 Exchange security: Protecting yourself and your business

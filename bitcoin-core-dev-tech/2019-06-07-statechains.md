@@ -1,6 +1,8 @@
 ---
 title: Statechains (2019-06-07)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['ux']
 ---
 
 Blind statechains: UTXO transfer with a blind signing server

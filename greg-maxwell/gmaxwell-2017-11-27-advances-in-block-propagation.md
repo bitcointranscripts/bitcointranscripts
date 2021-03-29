@@ -1,6 +1,7 @@
 ---
 title: Gmaxwell 2017 11 27 Advances In Block Propagation
 TranscriptBy: Bryan Bishop
+tags: ['mempool', 'segwit']
 ---
 
 Advances in block propagation
@@ -31,6 +32,7 @@ more history <https://www.reddit.com/r/btc/comments/6p076l/segwit_only_allows_17
 
 <https://twitter.com/kanzure/status/944656354307919873>
 
+tags: ['mempool', 'segwit']
 ----
 
 # Introduction
@@ -242,6 +244,7 @@ Q: I was wondering about transaction throughput on the bitcoin network. I have h
 
 A: The throughput depends on what transactions people are producing. Prior to segwit, people started to do batch sends, meaning that transaction throughput is a poor metric in terms of capacity of the network. The number of transactions can go down, but the number of UTXOs or the people using it goes up. Segwit is only  being used by about 10% of the transactions so far. If you're not using segwit and you care about transaction fees, you should use segwit, it's a massive decrease in fees. I haven't looked today-- but in the past couple of days, the fees were around 5 sat/byte... Part of the design of segwit was to avoid creating a system shock by adding lots of capacity and causing a fee market collapse or something. There's an incentive to use segwit that goes up when fees go higher, and we get more capacity when there's more demand.
 
+tags: ['mempool', 'segwit']
 ----
 
 forward erasure correction codes <https://en.bitcoin.it/wiki/User:Gmaxwell/block_network_coding>

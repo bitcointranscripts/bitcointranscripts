@@ -1,6 +1,7 @@
 ---
 title: Physical Assets
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
 ---
 
 Physical assets, archival science

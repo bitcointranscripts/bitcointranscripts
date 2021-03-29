@@ -1,6 +1,7 @@
 ---
 title: Bip Shamir.Mediawiki
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 <pre>

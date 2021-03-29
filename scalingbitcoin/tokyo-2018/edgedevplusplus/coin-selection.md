@@ -1,6 +1,7 @@
 ---
 title: Coin Selection
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Coin selection

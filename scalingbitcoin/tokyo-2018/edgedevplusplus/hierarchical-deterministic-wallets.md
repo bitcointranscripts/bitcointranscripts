@@ -1,6 +1,8 @@
 ---
 title: Hierarchical Deterministic Wallets
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['wallet']
 ---
 
 Hierarchical deterministic Wallets (bip32)

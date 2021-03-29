@@ -1,6 +1,8 @@
 ---
 title: Todo
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['cryptography', 'ux']
 ---
 
 * cryptography bootcamp <https://www.youtube.com/playlist?list=PLgKuh-lKre139cwM0pjuxMa_YVzMeCiTf>

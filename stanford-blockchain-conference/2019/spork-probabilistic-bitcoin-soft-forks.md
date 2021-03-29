@@ -1,6 +1,8 @@
 ---
 title: Spork Probabilistic Bitcoin Soft Forks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks', 'privacy']
 ---
 
 Spork: Probabilistic bitcoin soft-forks

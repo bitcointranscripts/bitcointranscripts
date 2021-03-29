@@ -1,6 +1,8 @@
 ---
 title: Libra Blockchain Intro
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['wallet']
 ---
 
 The Libra Blockchain & Move: A technical introduction
@@ -97,6 +99,8 @@ Unlike other types of linear types, you have to use a resource exactly once. Thi
 
 There's a paper on the libra blockchain and the MOVE language. Caliba is Facebook's digital wallet which will be able to hold libra. Then we would love people to join the discussion. We have a forum where you can go and discuss the libra blockchain. The code for all of libra and MOVE is all open-source. Happy to accept pull requests from people. The association is working on a more formal governance system to be able to accept libra improvement proposals.
 
+categories: ['conference']
+tags: ['wallet']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

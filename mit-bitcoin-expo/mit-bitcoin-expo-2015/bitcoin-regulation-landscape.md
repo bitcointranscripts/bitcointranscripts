@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Regulation Landscape
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['regulation']
 ---
 
 * Elizabeth Stark

@@ -1,6 +1,7 @@
 ---
 title: History of the Lightning Network
 TranscriptBy: Caralie Chrisco
+tags: ['lightning']
 ---
 
 Name: Dr. Christian Decker

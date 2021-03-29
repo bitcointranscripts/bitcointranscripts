@@ -1,6 +1,8 @@
 ---
 title: Implications
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['regulation']
 ---
 
 Implications on regulation and governance of blockchain-based finance

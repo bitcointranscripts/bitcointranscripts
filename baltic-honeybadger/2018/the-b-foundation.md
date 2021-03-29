@@ -1,6 +1,7 @@
 ---
 title: The B Foundation
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 The B Foundation

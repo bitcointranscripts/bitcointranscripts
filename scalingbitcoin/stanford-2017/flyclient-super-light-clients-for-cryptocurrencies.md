@@ -1,6 +1,8 @@
 ---
 title: Flyclient Super Light Clients For Cryptocurrencies
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['proof-of-work', 'miners']
 ---
 
 Flyclient Super light client for cryptocurrencies

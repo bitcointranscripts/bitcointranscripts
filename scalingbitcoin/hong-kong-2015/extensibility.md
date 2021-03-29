@@ -1,6 +1,8 @@
 ---
 title: Extensibility
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 Eric Lombrozo (CodeShark)

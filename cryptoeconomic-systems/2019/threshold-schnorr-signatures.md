@@ -1,6 +1,8 @@
 ---
 title: Threshold Schnorr Signatures
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'schnorr']
 ---
 
 Name: Tim Ruffing

@@ -1,6 +1,7 @@
 ---
 title: All About Decentralized Trust
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 -- Disclaimer --

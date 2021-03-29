@@ -1,6 +1,8 @@
 ---
 title: Light Clients During 2017 Interfork Period
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks', 'segwit', 'miners', 'wallet']
 ---
 
 Light clients during the 2017 interfork period

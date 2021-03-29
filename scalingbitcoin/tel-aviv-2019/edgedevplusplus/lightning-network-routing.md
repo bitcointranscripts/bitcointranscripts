@@ -1,6 +1,8 @@
 ---
 title: Lightning Network Routing
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['multisig', 'p2p', 'routing', 'fees']
 ---
 
 Lightning network routing: Operation, issues and expansions

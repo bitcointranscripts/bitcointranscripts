@@ -1,6 +1,8 @@
 ---
 title: Mixicles
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'smart contracts']
 ---
 
 Mixicles: Simple Private Decentralized Finance
@@ -101,6 +103,8 @@ When an oracle is invoked by a smart contract, what's called upon is generally n
 
 <https://chain.link/mixicles.pdf>
 
+categories: ['conference']
+tags: ['privacy', 'smart contracts']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

@@ -1,6 +1,8 @@
 ---
 title: Sybilquorum
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['attacks', 'proof-of-work']
 ---
 
 SybilQuorum: Open distributed ledgers through trust networks

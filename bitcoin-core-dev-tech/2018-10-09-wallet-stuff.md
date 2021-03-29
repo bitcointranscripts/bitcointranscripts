@@ -1,6 +1,8 @@
 ---
 title: Wallet Stuff (2018-10-09)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['consensus', 'wallet']
 ---
 
 

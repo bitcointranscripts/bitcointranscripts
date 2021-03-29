@@ -1,6 +1,7 @@
 ---
 title: Code Review (2019-06-05)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
 ---
 
 Code review survey and complaints

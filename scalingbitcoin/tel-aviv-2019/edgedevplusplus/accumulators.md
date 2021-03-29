@@ -1,6 +1,8 @@
 ---
 title: Accumulators
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['accumulators']
 ---
 
 Accumulators

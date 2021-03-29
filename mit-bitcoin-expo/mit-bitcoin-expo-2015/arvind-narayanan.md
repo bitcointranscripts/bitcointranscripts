@@ -1,6 +1,8 @@
 ---
 title: Arvind Narayanan
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'threshold signatures', 'multisig', 'wallet']
 ---
 
 Arvind Narayanan

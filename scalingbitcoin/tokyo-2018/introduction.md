@@ -1,6 +1,7 @@
 ---
 title: Introduction
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Anton Yemelyanov

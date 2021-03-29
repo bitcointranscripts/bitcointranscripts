@@ -1,6 +1,8 @@
 ---
 title: Block Synchronization Time
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 Initial Block Synchronization Time Complexity

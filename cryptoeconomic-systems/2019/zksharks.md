@@ -1,6 +1,8 @@
 ---
 title: Zksharks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['zero-knowledge']
 ---
 
 zkSHARKs

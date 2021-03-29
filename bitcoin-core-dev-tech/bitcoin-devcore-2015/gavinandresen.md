@@ -1,6 +1,8 @@
 ---
 title: Gavinandresen
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['multisig', 'wallet']
 ---
 
 <http://blog.circle.com/2015/02/10/devcore-livestream/>

@@ -1,6 +1,8 @@
 ---
 title: Multi Hop Locks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'privacy', 'lightning']
 ---
 
 Multi-hop locks for secure, privacy-preserving and interoperable payment-channel networks

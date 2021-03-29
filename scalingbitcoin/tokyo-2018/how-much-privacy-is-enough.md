@@ -1,6 +1,8 @@
 ---
 title: How Much Privacy Is Enough
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'scalability']
 ---
 
 How much privacy is enough? Threats, scaling, and trade-offs in blockchain privacy protocols

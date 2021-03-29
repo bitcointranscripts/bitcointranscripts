@@ -1,6 +1,7 @@
 ---
 title: Conner Fromknecht Stephan Livera (2019-06-24)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Stephan Livera podcast with Conner Fromknecht - June 24th 2019

@@ -1,6 +1,8 @@
 ---
 title: Future Of Spv Tech
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'wallet']
 ---
 
 Future of SPV tech

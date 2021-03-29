@@ -1,6 +1,8 @@
 ---
 title: On The Security And Performance Of Proof Of Work Blockchains
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'mining', 'proof-of-work']
 ---
 
 On the security and performance of proof-of-work blockchains

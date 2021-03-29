@@ -1,6 +1,8 @@
 ---
 title: How To Meme Bitcoin To The Moon
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['halving']
 ---
 
 How to meme bitcoin to the moon

@@ -1,6 +1,8 @@
 ---
 title: Trust And Blockchain Marketplaces
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining']
 ---
 
 David Vorick

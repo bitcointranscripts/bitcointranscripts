@@ -1,6 +1,7 @@
 ---
 title: Atomic Swaps
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 The state of atomic swaps

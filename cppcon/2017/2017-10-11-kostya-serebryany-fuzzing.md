@@ -1,6 +1,7 @@
 ---
 title: Kostya Serebryany Fuzzing (2017-10-11)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Kostya Serebryany

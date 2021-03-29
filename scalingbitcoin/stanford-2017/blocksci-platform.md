@@ -1,6 +1,8 @@
 ---
 title: Blocksci Platform
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 BlockSci: a Platform for Blockchain Science and Exploration

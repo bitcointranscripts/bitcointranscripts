@@ -1,6 +1,8 @@
 ---
 title: Scripts General And Simple
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['multisig', 'wallet']
 ---
 
 Scripts (general & simple)

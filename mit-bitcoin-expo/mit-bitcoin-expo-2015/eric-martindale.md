@@ -1,6 +1,7 @@
 ---
 title: Eric Martindale
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Open source: Beyond Bitcoin Core

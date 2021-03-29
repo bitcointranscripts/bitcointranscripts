@@ -1,6 +1,8 @@
 ---
 title: Proof Of Necessary Work
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['proof-of-work']
 ---
 
 Proof of necessary work: Succinct state verification with fairness guarantees

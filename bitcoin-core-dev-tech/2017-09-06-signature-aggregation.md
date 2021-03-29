@@ -1,6 +1,8 @@
 ---
 title: Signature Aggregation (2017-09-06)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['validation', 'multisig']
 ---
 
 ﻿<https://twitter.com/kanzure/status/907065194463072258>
@@ -69,6 +71,8 @@ Simultaneously with one unit of work, compute a reciprocal square root at the sa
 
 All the 32-byte things are reversed, and all the 20-byte things are the right way. The RPC returns it the other way. RPC writes 20-byte things the right way. Bitcoin displays them all backwards. Bitcoin interprets 32 byte sequences as bigint little-endian format, printed to the users as big-endian. Everything is little-endian.
 
+categories: ['core-dev-tech']
+tags: ['validation', 'multisig']
 ----
 
 <https://blockstream.com/2018/01/23/musig-key-aggregation-schnorr-signatures.html>

@@ -1,6 +1,7 @@
 ---
 title: Safecurves Choosing Safe Curves For Elliptic Curve Cryptography 2014
 TranscriptBy: Bryan Bishop
+tags: ['security', 'cryptography']
 ---
 
 SafeCurves: Choosing Safe Curves for Elliptic Curve Cryptography
@@ -28,6 +29,7 @@ These problems are exploitable by real attackers, taking advantage of the gaps b
 
 Most of these attacks would have been ruled out by better choices of curves that allow simple implementations to be secure implementations. This is the primary motivation for SafeCurves <https://safecurves.cr.yp.to/> ... The SafeCurves criteria are designed to ensure ECC security, not just ECDLP security.
 
+tags: ['security', 'cryptography']
 ----
 
 ... their new mechanism for choosing safe elliptic curve cryptographic curves. Thank you very much.

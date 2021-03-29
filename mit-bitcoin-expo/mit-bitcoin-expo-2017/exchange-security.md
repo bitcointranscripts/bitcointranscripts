@@ -1,6 +1,8 @@
 ---
 title: Exchange Security
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'wallet']
 ---
 
 Exchange security

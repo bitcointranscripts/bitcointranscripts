@@ -1,6 +1,7 @@
 ---
 title: Intro
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Introduction to Scaling Bitcoin Tel Aviv 2019

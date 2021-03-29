@@ -1,6 +1,7 @@
 ---
 title: Upgrading Capital Markets For Digital Asset Trading
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:
@@ -9,6 +10,7 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
+categories: ['conference']
 ----
 
 Upgrading capital markets for digital asset trading

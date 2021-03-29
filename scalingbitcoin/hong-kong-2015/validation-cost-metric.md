@@ -1,6 +1,8 @@
 ---
 title: Validation Cost Metric
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'scalability']
 ---
 
 Jonas Nick
@@ -43,6 +45,8 @@ As an example, the block cost could be represented by a weighted sum of block si
 When we have agreed on such a cost metric, we can get rid of the hard limits and instead introduce a new consensus rule that blocks need to cost less than a threshold to be valid.
 
 Validation cost
+categories: ['conference']
+tags: ['research', 'scalability']
 ---
 One aspect of a full cost function are validation-cost.
 We can view validation cost as the time it take to validate a block on a reference machine.
@@ -57,6 +61,8 @@ With this data it is possible to determine the effect or coefficient of hashing 
 This coefficient can then be used in a consensus rule.
 
 Experiments
+categories: ['conference']
+tags: ['research', 'scalability']
 ---
 Validation cost is affected first and foremost by OP\_CHECKSIG, that is signature verification and hashing the transaction.
 Bitcoin Core already limits the number of OP\_CHECKSIGs but this is insufficient for our case because what counts are the number of OP\_CHECKSIGs that are executed.
@@ -72,6 +78,8 @@ dbcache determines how much data is cached in memory
 We ran Bitcoin Core version 0.11.2 with libsecp validation and disabled checkpoints.
 
 Result
+categories: ['conference']
+tags: ['research', 'scalability']
 ---
 After estimating the coefficients using linear regression,
 we get useful information like for each kilobyte of hashing validation takes 0.005 millisecond longer
@@ -159,6 +167,8 @@ But as we showed we can build on existing blocksize proposals to get some of the
 * and setting the right incentives.
 
 
+categories: ['conference']
+tags: ['research', 'scalability']
 ----
 
 see also <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011662.html>

@@ -1,6 +1,8 @@
 ---
 title: Invertible Bloom Lookup Tables And Weak Block Propagation Performance
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 IBLT and weak block propagation performance
@@ -87,6 +89,8 @@ Q: Regarding different policies, can we have just one mempool with everything yo
 
 A: Yes. Your mempool can be conflicting transactions, anything you think someone might have. You can have something in your mempool that you would never include in a block yourself. You can do this in a trimming step and it works pretty damn well in practice. You could have an extra mempool of extra stuff, yeah.
 
+categories: ['conference']
+tags: ['privacy']
 ----
 
 rusty's bitcoin data corpus <https://github.com/rustyrussell/bitcoin-corpus> and <https://github.com/chr15m/bitcoin-notebook>

@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Maximalism Dissected
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Bitcoin maximalism dissected

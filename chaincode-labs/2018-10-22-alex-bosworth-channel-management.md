@@ -1,6 +1,7 @@
 ---
 title: Alex Bosworth Channel Management (2018-10-22)
 TranscriptBy: Bryan Bishop
+tags: ['lightning', 'routing']
 ---
 
 Alex Bosworth

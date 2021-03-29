@@ -1,6 +1,8 @@
 ---
 title: Playing With Fire Adjusting Bitcoin Block Subsidy
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['miners', 'fees']
 ---
 
 Playing with fire: Adjusting bitcoin's block subsidy

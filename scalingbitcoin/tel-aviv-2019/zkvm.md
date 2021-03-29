@@ -1,6 +1,8 @@
 ---
 title: Zkvm
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['smart contracts', 'zero-knowledge']
 ---
 
 ZkVM: zero-knowledge virtual machine for fast confidential smart contracts

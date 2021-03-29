@@ -1,6 +1,8 @@
 ---
 title: A Flexible Limit Trading Subsidy For Larger Blocks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['miners', 'fees']
 ---
 
 maaku
@@ -70,6 +72,8 @@ Q: Did you do any testing about miners growing the blocks to push smaller miners
 A: Yes, but it depends on what you set the initial parameter to. The ideal parameter should be set to approximately equal to the subsidy. You are trading a significant fraction of subsidy to increase the block size. So right now an order of magnitude increase in fees would be necessary to become greater than the subsidy. So what would have to happen is ... in the foreseeable future, if deployed soon, we would need a much smaller parameter. Fees have a lot more variane than block size. Fees would go in and out of phase of having an effect on block size. So to answer your question finally, did I do simulations? Yes, but it's not necessarily the simulations that would be useful for current block size data, because the transactions we're including right now don't really respond to mempool dynamics of increasing or decreasing fees. Also, the size of fees at the moment are not reflective of the important properties that the proposal is trying to capture.
 
 
+categories: ['conference']
+tags: ['miners', 'fees']
 ----
 
     21:25 <@maaku> also I didn't have time to go into it but obviously flexcap doesn't work well with CT...

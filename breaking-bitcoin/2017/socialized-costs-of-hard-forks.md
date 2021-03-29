@@ -1,6 +1,8 @@
 ---
 title: Socialized Costs Of Hard Forks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks']
 ---
 
 Socialized costs of hard-forks
@@ -13,6 +15,8 @@ video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s>
 
 KL: Can you hear me? Is it good? Okay. I hope you have practiced your French because.. no, the presentations are in English. Welcome and thank you very much for being here. This conference will very probably be the best we've had in the bitcoin sphere. The crowd is pretty crazy. I've had the ticket list and I can say the people in this room, not just the speakers, the attendees are all super amazing. I'm glad to be launching this event. We're a little late. I have a small joke. I hope you sold your bitcoin today, because we're breaking bitcoin. Thank you. Jimmy is going to start. Please welcome Jimmy Song.
 
+categories: ['conference']
+tags: ['forks']
 ----
 
 # Introduction

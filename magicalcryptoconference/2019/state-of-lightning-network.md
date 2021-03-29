@@ -1,6 +1,8 @@
 ---
 title: State Of Lightning Network
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Fireside chat on the state of the lightning network

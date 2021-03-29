@@ -1,6 +1,8 @@
 ---
 title: Erlay
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['p2p']
 ---
 
 Erlay: Bandwidth-efficient transaction relay for bitcoin

@@ -1,6 +1,8 @@
 ---
 title: Russell Oconnor Simplicity (2019-10-15)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['sidechains', 'soft fork']
 ---
 
 Name: Russell O’Connor

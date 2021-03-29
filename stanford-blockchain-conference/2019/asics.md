@@ -1,6 +1,8 @@
 ---
 title: Asics
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining']
 ---
 
 ASIC design for mining

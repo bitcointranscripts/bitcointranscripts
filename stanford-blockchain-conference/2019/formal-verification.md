@@ -1,6 +1,8 @@
 ---
 title: Formal Verification
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'smart contracts']
 ---
 
 Formal verification: The road to complete security of smart contracts

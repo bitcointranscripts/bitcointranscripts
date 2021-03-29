@@ -1,6 +1,8 @@
 ---
 title: Matsuo
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['security', 'research', 'cryptography']
 ---
 
 Shinichiro Matsuo

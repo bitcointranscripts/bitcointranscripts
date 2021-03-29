@@ -1,6 +1,8 @@
 ---
 title: There Can Only Be One
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'proof-of-work', 'altcoin']
 ---
 
 Bitcoin: There can only be one

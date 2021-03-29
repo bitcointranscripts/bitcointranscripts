@@ -1,6 +1,7 @@
 ---
 title: Andrew Chow Descriptor Wallets (2020-02-06)
 TranscriptBy: Bryan Bishop
+tags: ['wallet']
 ---
 
 Name: Andrew Chow

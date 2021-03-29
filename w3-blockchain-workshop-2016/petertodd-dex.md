@@ -1,6 +1,8 @@
 ---
 title: Petertodd Dex
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['multisig']
 ---
 
 petertodd

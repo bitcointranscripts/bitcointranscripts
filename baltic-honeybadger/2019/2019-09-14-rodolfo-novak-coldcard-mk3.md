@@ -1,6 +1,8 @@
 ---
 title: Rodolfo Novak Coldcard Mk3 (2019-09-14)
 TranscriptBy: Michael Folkson
+categories: ['conference']
+tags: ['security', 'hardware wallet', 'wallet']
 ---
 
 Name: Rodolfo Novak

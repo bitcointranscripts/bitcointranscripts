@@ -1,6 +1,8 @@
 ---
 title: Taproot activation and LOT=true vs LOT=false
 TranscriptBy: Michael Folkson
+categories: ['podcast']
+tags: ['taproot', 'ux']
 ---
 
 Name: Sjors Provoost and Aaron van Wirdum

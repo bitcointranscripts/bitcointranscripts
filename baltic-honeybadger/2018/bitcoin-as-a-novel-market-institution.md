@@ -1,6 +1,7 @@
 ---
 title: Bitcoin As A Novel Market Institution
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Bitcoin as a novel market institution

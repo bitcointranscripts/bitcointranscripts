@@ -1,6 +1,8 @@
 ---
 title: Sergi Delgado Watchtowers (2020-05-24)
 TranscriptBy: Bryan Bishop
+categories: ['hackathon']
+tags: ['lightning', 'c-lightning']
 ---
 
 Name: Sergi Delgado

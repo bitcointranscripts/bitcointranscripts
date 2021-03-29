@@ -1,6 +1,8 @@
 ---
 title: Socratic Seminar (2020-08-12)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['wallet']
 ---
 
 Name: Socratic Seminar

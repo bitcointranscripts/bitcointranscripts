@@ -1,6 +1,7 @@
 ---
 title: Snarks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 some setup motivating topics:

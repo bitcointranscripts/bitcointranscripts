@@ -1,6 +1,8 @@
 ---
 title: Cryptographic Hocus Pocus
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 Cryptographic hocus-pocus meaning nothing: The zcash trusted setup MPC

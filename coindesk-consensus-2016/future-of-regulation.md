@@ -1,6 +1,8 @@
 ---
 title: Future Of Regulation
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['regulation']
 ---
 
 Preliminary notes:
@@ -9,6 +11,8 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
+categories: ['conference']
+tags: ['regulation']
 ----
 
 The future of regulation

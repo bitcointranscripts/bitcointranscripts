@@ -1,6 +1,7 @@
 ---
 title: Fork Dynamics
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Fork dynamics

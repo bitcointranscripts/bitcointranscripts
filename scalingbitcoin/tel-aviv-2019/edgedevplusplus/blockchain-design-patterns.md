@@ -1,6 +1,8 @@
 ---
 title: Blockchain Design Patterns
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['taproot', 'mempool']
 ---
 
 Blockchain design patterns: Layers and scaling approaches

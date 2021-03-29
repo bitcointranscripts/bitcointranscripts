@@ -1,6 +1,8 @@
 ---
 title: Rebalancing Lightning
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'routing', 'fees']
 ---
 
 Rebalancing in the lightning network: Analysis and implications

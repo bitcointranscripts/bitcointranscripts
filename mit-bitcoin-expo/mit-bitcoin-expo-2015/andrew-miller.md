@@ -1,6 +1,8 @@
 ---
 title: Andrew Miller
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['smart contracts']
 ---
 
 Step by Step Towards Writing a Safe Contract: Insights from an Undergraduate Ethereum Lab

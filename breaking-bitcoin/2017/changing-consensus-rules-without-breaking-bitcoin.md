@@ -1,6 +1,8 @@
 ---
 title: Changing Consensus Rules Without Breaking Bitcoin
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'forks']
 ---
 
 Changing consensus rules without breaking bitcoin

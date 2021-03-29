@@ -1,6 +1,7 @@
 ---
 title: Aj Towns Schnorr Taproot (2019-12-27)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Name: AJ Towns

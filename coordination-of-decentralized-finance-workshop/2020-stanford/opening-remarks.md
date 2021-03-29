@@ -1,6 +1,8 @@
 ---
 title: Opening Remarks
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['research']
 ---
 
 Opening remarks
@@ -88,6 +90,8 @@ Proposed topics:
 * Stress testing
 
 
+categories: ['workshop']
+tags: ['research']
 ----
 
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

@@ -1,6 +1,7 @@
 ---
 title: Block Rewards
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 An Axiomatic Approach to Block Rewards
@@ -97,6 +98,7 @@ Interestingly, we can also think about implementing it in a deterministic way. S
 
 A reviewer pointed out to us that you could interpret a chain as a kind of implementation of this idea if you pick the parameters properly. I'm out of time, thank you.
 
+categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

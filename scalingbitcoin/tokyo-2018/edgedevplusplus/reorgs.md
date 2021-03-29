@@ -1,6 +1,8 @@
 ---
 title: Reorgs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks']
 ---
 
 Bryan Bishop

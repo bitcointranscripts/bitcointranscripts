@@ -1,6 +1,8 @@
 ---
 title: In Adversarial Environments Blockchains Dont Scale
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'incentives']
 ---
 
 petertodd

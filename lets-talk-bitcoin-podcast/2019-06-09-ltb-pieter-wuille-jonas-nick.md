@@ -1,6 +1,8 @@
 ---
 title: Ltb Pieter Wuille Jonas Nick (2019-06-09)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
+tags: ['taproot', 'schnorr']
 ---
 
 Let's Talk Bitcoin with Pieter Wuille and Jonas Nick - June 9th 2019

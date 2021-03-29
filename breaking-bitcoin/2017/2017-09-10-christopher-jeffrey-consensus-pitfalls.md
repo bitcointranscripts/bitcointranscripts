@@ -1,6 +1,7 @@
 ---
 title: Christopher Jeffrey Consensus Pitfalls (2017-09-10)
 TranscriptBy: Michael Folkson
+categories: ['conference']
 ---
 
 Name: Christopher Jeffrey (JJ)

@@ -1,6 +1,7 @@
 ---
 title: Intro
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
 ---
 
 Blockhains and standards

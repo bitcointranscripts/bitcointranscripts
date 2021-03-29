@@ -1,6 +1,7 @@
 ---
 title: Ethan Heilman Network Partitioning Attacks (2019-06-12)
 TranscriptBy: Bryan Bishop
+tags: ['privacy', 'p2p', 'attacks']
 ---
 
 Name: Ethan Heilman

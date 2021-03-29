@@ -1,6 +1,7 @@
 ---
 title: Andrew Poelstra Bulletproofs (2018-02-02)
 TranscriptBy: Bryan Bishop
+tags: ['consensus', 'zero-knowledge']
 ---
 
 Bulletproofs

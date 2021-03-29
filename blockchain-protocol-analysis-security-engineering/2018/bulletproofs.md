@@ -1,6 +1,8 @@
 ---
 title: Bulletproofs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['zero-knowledge']
 ---
 
 Bulletproofs
@@ -198,6 +200,8 @@ Q: From a proof system perspective, is there any case where it's more interestin
 
 A: Technically, I can talk about that in more detail in offline, but when you have complex statements on public commitments or public keys... if you're using different bases for your pedersen commitments, then bulletproofs are potentially still interesting. At least in theory, and perhaps specifically, you could apply this to arbitrary applications. It's a general proof system for arithmetic circuits just like SNARKs is a general proof system for arbitrary arithmetic circuits.
 
+categories: ['conference']
+tags: ['zero-knowledge']
 ----
 
 <https://joinmarket.me/blog/blog/bulletpoints-on-bulletproofs/>

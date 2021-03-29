@@ -1,6 +1,8 @@
 ---
 title: Laolu Osuntokun Neutrino (2017-06-06)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['lightning']
 ---
 
 Laolu Osuntokun

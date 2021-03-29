@@ -1,6 +1,8 @@
 ---
 title: Siacoin
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['wallet']
 ---
 
 Sia

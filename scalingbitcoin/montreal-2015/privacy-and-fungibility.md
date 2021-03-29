@@ -1,6 +1,8 @@
 ---
 title: Privacy And Fungibility
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'fungibility', 'lightning', 'scalability']
 ---
 
 Privacy and scalability

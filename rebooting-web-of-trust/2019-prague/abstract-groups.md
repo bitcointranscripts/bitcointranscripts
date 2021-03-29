@@ -1,6 +1,7 @@
 ---
 title: Abstract Groups
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 # Blockcert

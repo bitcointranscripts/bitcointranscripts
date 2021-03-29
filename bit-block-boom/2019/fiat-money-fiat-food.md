@@ -1,6 +1,8 @@
 ---
 title: Fiat Money Fiat Food
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['proof-of-work']
 ---
 
 Fiat money and fiat food

@@ -1,6 +1,7 @@
 ---
 title: Libbitcoin
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Libbitcoin: A practical introduction

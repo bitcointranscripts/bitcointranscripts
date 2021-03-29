@@ -1,6 +1,8 @@
 ---
 title: Fraud Proofs Petertodd
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['validation', 'miners', 'wallet']
 ---
 
 Fraud proofs

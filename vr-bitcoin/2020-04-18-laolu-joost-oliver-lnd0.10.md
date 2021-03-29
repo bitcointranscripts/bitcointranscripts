@@ -1,6 +1,8 @@
 ---
 title: Laolu Joost Oliver Lnd0.10 (2020-04-18)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lnd']
 ---
 
 Name: Laolu Osuntokun, Joost Jager and Oliver Gugger

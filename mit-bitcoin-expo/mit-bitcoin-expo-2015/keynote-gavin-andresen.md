@@ -1,6 +1,7 @@
 ---
 title: Keynote Gavin Andresen
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Gavin Andresen

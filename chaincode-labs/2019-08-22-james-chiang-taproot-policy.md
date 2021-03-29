@@ -1,6 +1,7 @@
 ---
 title: James Chiang Taproot Policy (2019-08-22)
 TranscriptBy: Bryan Bishop
+tags: ['mempool']
 ---
 
 James Chiang

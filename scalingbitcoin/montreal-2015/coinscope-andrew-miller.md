@@ -1,6 +1,8 @@
 ---
 title: Coinscope Andrew Miller
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining']
 ---
 
 Andrew Miller

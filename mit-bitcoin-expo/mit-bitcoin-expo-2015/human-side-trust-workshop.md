@@ -1,6 +1,7 @@
 ---
 title: Human Side Trust Workshop
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Human side of trust

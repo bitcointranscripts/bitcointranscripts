@@ -1,6 +1,7 @@
 ---
 title: Sidechains
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Sidechains
@@ -13,6 +14,7 @@ slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%209%20-%20Paul
 
 Before we begin, we will explain how the workshops will work upstairs. There will be some topics and room numbers. Now we will start the next presentation on sidechain scaling with Paul Sztorc. Thank you everyone.
 
+categories: ['conference']
 ----
 
 Thanks a lot. So this talk will be a little different. Scaling via strategy, not physics. This will not change the kilobytes sent over-- it will, just not in the literal sense. It's not going to reduce the information over the wire. It's not the focus. Appreciate this for what it is.

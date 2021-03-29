@@ -1,6 +1,8 @@
 ---
 title: Wallet Security
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'bitcoin core', 'wallet']
 ---
 
 Bryan Bishop

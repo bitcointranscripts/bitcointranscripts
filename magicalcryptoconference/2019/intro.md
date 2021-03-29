@@ -1,6 +1,7 @@
 ---
 title: Intro
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Intro

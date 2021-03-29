@@ -1,6 +1,8 @@
 ---
 title: Plasma Cash
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['covenants', 'lightning', 'sidechains', 'layer 2']
 ---
 
 Plasma Cash: Towards more efficient plasma constructions

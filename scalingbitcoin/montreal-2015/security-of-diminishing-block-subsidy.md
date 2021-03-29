@@ -1,6 +1,8 @@
 ---
 title: Security Of Diminishing Block Subsidy
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'miners', 'fees']
 ---
 
 Miles Carlsten

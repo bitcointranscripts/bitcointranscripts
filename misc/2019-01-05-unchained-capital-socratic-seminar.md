@@ -1,6 +1,7 @@
 ---
 title: Unchained Capital Socratic Seminar (2019-01-05)
 TranscriptBy: Bryan Bishop
+tags: ['research', 'taproot']
 ---
 
 Unchained Capital Bitcoin Socratic Seminar

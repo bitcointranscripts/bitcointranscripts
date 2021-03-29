@@ -1,6 +1,7 @@
 ---
 title: Mimblewimble
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Mimblewimble: private, massively-prunable public blockchains

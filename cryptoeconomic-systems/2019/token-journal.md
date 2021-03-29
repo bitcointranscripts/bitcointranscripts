@@ -1,6 +1,7 @@
 ---
 title: Token Journal
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 -- Disclaimer --

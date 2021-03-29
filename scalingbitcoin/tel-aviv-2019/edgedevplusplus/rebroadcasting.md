@@ -1,6 +1,8 @@
 ---
 title: Rebroadcasting
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mempool']
 ---
 
 Rebroadcasting

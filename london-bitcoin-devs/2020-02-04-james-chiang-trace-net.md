@@ -1,6 +1,7 @@
 ---
 title: James Chiang Trace Net (2020-02-04)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
 ---
 
 Name: James Chiang

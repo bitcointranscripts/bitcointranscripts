@@ -1,6 +1,8 @@
 ---
 title: Signature Scheme Security Properties
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'schnorr']
 ---
 
 Name: Andrew Poelstra

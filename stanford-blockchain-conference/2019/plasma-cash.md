@@ -1,6 +1,7 @@
 ---
 title: Plasma Cash
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Plasma Cash: Towards more efficient Plasma constructions

@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Script V2.0 And Strengthened Payment Channels
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['attacks', 'p2sh']
 ---
 
 Bitcoin script v2.0
@@ -33,6 +35,8 @@ There are some other useful functions like MAST which would allow for more compa
 
 Here are some related works in progress. If you are interested in this topic, I would like to encourage you to join our discussions because it's a very active topic. jl2012 bip114 MAST, maaku's MBV, luke-jr or version-1 witness program, Simplicity, etc.
 
+categories: ['conference']
+tags: ['attacks', 'p2sh']
 ---
 
 so you have your script template the amount value and there is a block impactor beause we have the sha chain whih allows you to hae the hashes.. we can hae that errortate constant beause you need the HTLC chashes, to properly reoke the prior states and if you an't do that then you can't onstruct the redeem script. Right now it ineeds a signature for eery state, you need all the HTLCs, it needs the netowrk erification state, and there's another cool thing you can do with which is like trap door erification and you can include it in the transaction itself and there can be a alsue where there is some margin for it.. Which make sit powerful, and then you can make it more private with these constructs. We only have a few minutes left, we can cover this.

@@ -1,6 +1,8 @@
 ---
 title: Changes Without Unanimous Consent
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'miners']
 ---
 
 Changes without unanimous consent

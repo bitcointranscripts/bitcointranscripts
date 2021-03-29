@@ -1,6 +1,7 @@
 ---
 title: John Newbery Security Models (2019-06-17)
 TranscriptBy: Caralie Chrisco
+tags: ['security', 'taproot', 'cryptography']
 ---
 
 Name: John Newbery

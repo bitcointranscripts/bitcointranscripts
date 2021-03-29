@@ -1,6 +1,7 @@
 ---
 title: Andreas Antonopoulos Schnorr Signatures (2018-10-07)
 TranscriptBy: Bryan Bishop
+categories: ['lectures']
 ---
 
 Andreas Antonopoulos

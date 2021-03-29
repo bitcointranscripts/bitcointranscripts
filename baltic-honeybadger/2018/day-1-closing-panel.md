@@ -1,6 +1,8 @@
 ---
 title: Day 1 Closing Panel
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Closing panel

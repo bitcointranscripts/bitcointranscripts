@@ -1,6 +1,8 @@
 ---
 title: Efficient P2P Transaction Relay (2018-10-08)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['p2p']
 ---
 
 # p2p transaction relay protocol improvements with set reconciliation

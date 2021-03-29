@@ -1,6 +1,7 @@
 ---
 title: Proof Of Necessary Work
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Proof of Necessary Work: Succinct State Verification with Fairness Guarantees
@@ -113,6 +114,7 @@ But then there's the issue of using incrementally verifiable proof systems which
 
 If people are interested in generating these kinds of things, then what kind of speed-ups can we get from hardware acceleration for SNARKs?
 
+categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

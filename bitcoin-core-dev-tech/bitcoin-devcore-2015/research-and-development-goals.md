@@ -1,6 +1,8 @@
 ---
 title: Research And Development Goals
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['consensus']
 ---
 
 11:45 am: Open Discussion - R&D Goals & Challenges – Patrick Murck, Gavin Andresen, Cory Fields 

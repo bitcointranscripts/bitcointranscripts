@@ -1,6 +1,8 @@
 ---
 title: Proof Of Stake
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'proof-of-work', 'proof-of-stake']
 ---
 
 Proof-of-stake longest chain protocols revisited
@@ -111,6 +113,8 @@ We have one more talk tomorrow about coded merkle trees which is a data availabi
 
 We're starting a startup called <https://www.trifectachain.com/> to commercialize these efforts. Independently, I need to advertise for my students as well. There's a paper tomorrow by Joachim Neu on a layer 2 solution called Boomerang which is completely separate from the company and the other projects, but still very interesting.
 
+categories: ['conference']
+tags: ['security', 'proof-of-work', 'proof-of-stake']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

@@ -1,6 +1,8 @@
 ---
 title: Overview Of Security Concerns
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'attacks', 'validation', 'scalability']
 ---
 
 petertodd

@@ -1,6 +1,7 @@
 ---
 title: James Gatto Marco Santori Bitcoin Law For Developers
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
 ---
 
 Bitcoin law for developers

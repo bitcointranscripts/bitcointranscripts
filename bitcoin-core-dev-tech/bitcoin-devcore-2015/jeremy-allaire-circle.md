@@ -1,6 +1,7 @@
 ---
 title: Jeremy Allaire Circle
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
 ---
 
 Circle

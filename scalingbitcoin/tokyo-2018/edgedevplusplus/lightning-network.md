@@ -1,6 +1,8 @@
 ---
 title: Lightning Network
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Lightning network overview, lightning channel factories, discreet log contracts

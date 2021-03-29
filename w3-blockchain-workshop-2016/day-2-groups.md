@@ -1,6 +1,7 @@
 ---
 title: Day 2 Groups
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
 ---
 
 # Browsers

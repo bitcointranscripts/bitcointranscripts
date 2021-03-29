@@ -1,6 +1,7 @@
 ---
 title: Signet
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Signet

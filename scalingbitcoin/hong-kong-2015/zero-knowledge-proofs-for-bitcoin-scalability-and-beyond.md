@@ -1,6 +1,8 @@
 ---
 title: Zero Knowledge Proofs For Bitcoin Scalability And Beyond
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['zero-knowledge', 'scalability']
 ---
 
 Madars Virza
@@ -91,6 +93,8 @@ Q: Is there any way to update the CRS?
 
 A: ...
 
+categories: ['conference']
+tags: ['zero-knowledge', 'scalability']
 ----
 
 <https://github.com/scipr-lab/libsnark>

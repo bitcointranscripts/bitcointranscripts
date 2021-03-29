@@ -1,6 +1,8 @@
 ---
 title: Atomic Multi Channel Updates
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['scalability']
 ---
 
 Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks
@@ -88,6 +90,8 @@ We can reduce the collateral to a constant, and synchronize multiple channels at
 <https://eprint.iacr.org/2019/583.pdf>
 
 
+categories: ['conference']
+tags: ['scalability']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

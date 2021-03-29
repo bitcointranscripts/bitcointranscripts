@@ -1,6 +1,8 @@
 ---
 title: Bloxroute
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['segwit']
 ---
 
 bloXroute: A network for tomorrow's blockchain

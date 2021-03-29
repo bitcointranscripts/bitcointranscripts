@@ -1,6 +1,8 @@
 ---
 title: Mempool Analysis Simulation
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'mempool']
 ---
 
 Mempool analysis and simulation

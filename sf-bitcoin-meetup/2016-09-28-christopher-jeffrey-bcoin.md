@@ -1,6 +1,8 @@
 ---
 title: Christopher Jeffrey Bcoin (2016-09-28)
 TranscriptBy: Michael Folkson
+categories: ['meetup']
+tags: ['consensus']
 ---
 
 Name: Christopher Jeffrey (JJ)

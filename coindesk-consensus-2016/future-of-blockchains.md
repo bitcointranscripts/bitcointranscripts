@@ -1,6 +1,7 @@
 ---
 title: Future Of Blockchains
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:
@@ -9,6 +10,7 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
+categories: ['conference']
 ----
 
 The future of blockchains

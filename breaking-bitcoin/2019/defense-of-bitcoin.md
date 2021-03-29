@@ -1,6 +1,8 @@
 ---
 title: Defense Of Bitcoin
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['ux']
 ---
 
 Five insights into the defense of bitcoin

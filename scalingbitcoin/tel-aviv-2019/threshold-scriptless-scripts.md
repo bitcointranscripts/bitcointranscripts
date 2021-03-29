@@ -1,6 +1,8 @@
 ---
 title: Threshold Scriptless Scripts
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'smart contracts', 'multisig']
 ---
 
 Threshold scriptless scripts

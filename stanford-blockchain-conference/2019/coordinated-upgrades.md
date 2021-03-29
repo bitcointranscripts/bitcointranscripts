@@ -1,6 +1,7 @@
 ---
 title: Coordinated Upgrades
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Blockchain upgrades as a coordination game

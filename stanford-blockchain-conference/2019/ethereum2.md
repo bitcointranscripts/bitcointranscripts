@@ -1,6 +1,8 @@
 ---
 title: Ethereum2
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'research', 'proof-of-work', 'proof-of-stake']
 ---
 
 Ethereum 2.0 and beyond

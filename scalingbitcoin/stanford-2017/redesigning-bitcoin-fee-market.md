@@ -1,6 +1,8 @@
 ---
 title: Redesigning Bitcoin Fee Market
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['ux', 'fees']
 ---
 
 Redesigning bitcoin's fee market

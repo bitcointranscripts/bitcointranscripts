@@ -1,6 +1,8 @@
 ---
 title: Sharding The Blockchain
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'proof-of-work', 'validation']
 ---
 
 Sharding the blockchain
@@ -35,6 +37,8 @@ Security problems, one problem is that outputs corralling. On every shard you ha
 
 Basically some of the takeaways are that we can do more transactions per second without changing the trust model; we count the total work from the genesis block. Instead of looking at the headers on the top-level chain, we also look at the headers from the shards as well. The work is non-outsourceable, and we need to do this to do sampling and assigning miners to shards. The protocol is complex, especially when we start talking about challenge-response. What happens if something goes wrong in a shard? More attention needs to be there. It's a bit complex. Another thing I should bmention si that if you find an invalid block, it needs to be reverted, and so do blocks that the other blocks spent. There could be a good amount of block reversions as a result of finding only one invalid block. It's very important that there is another block., not just the shard you are in here. I don't know, I hope that you guys can maybe have an opinion. And that you will talk to me about it. Thanks a lot.
 
+categories: ['conference']
+tags: ['research', 'proof-of-work', 'validation']
 ----
 
 <https://github.com/ethereum/wiki/wiki/Sharding-FAQ>

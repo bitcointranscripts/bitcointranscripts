@@ -1,6 +1,8 @@
 ---
 title: Reproducible Lightning Benchmark
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Reproducible lightning benchmark

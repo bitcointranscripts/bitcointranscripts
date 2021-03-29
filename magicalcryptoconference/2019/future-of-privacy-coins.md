@@ -1,6 +1,8 @@
 ---
 title: Future Of Privacy Coins
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'taproot', 'schnorr']
 ---
 
 Future of privacy coins

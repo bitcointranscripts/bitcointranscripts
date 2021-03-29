@@ -1,6 +1,8 @@
 ---
 title: Alternatives To Block Size As Aggregate Resource Limits
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['validation']
 ---
 
 

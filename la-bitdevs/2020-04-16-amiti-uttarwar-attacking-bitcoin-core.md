@@ -1,6 +1,8 @@
 ---
 title: Amiti Uttarwar Attacking Bitcoin Core (2020-04-16)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['consensus']
 ---
 
 Name: Amiti Uttarwar

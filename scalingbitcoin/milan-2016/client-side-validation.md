@@ -1,6 +1,8 @@
 ---
 title: Client Side Validation
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'validation']
 ---
 
 Progress on scaling via client-side validation

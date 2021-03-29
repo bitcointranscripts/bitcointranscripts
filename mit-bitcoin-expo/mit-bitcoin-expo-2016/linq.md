@@ -1,6 +1,7 @@
 ---
 title: Linq
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 NASDAQ Linq

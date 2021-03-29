@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Adam3Us Fungibility Privacy
 TranscriptBy: Bryan Bishop
+tags: ['privacy', 'fungibility']
 ---
 
 Adam Back (adam3us)
@@ -188,6 +189,7 @@ Q: One certain address and everyone uses the same address and the same ... it wo
 
 A: Maybe. There has been some move to use coinjoin, I think blockchain.info has implemented this. But apparently it's somewhat slow because you have to wait for transactions, perhaps that's because not many people are using it.
 
+tags: ['privacy', 'fungibility']
 ----
 
 <https://www.reddit.com/r/Bitcoin/comments/1qomqt/what_a_landmark_legal_case_from_mid1700s_scotland/>

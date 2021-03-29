@@ -1,6 +1,8 @@
 ---
 title: Partially Signed Bitcoin Transactions Bip174
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['segwit', 'wallet']
 ---
 
 Partially-signed bitcoin transactions (bip174)

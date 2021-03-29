@@ -1,6 +1,8 @@
 ---
 title: Accumulating Bitcoin
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['halving']
 ---
 
 Accumulating bitcoin

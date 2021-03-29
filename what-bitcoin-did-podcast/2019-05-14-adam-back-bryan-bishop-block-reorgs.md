@@ -1,6 +1,7 @@
 ---
 title: Adam Back Bryan Bishop Block Reorgs (2019-05-14)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Name: Adam Back and Bryan Bishop

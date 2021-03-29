@@ -1,6 +1,8 @@
 ---
 title: Selfish Mining
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining']
 ---
 
 Selfish mining and Dyck words

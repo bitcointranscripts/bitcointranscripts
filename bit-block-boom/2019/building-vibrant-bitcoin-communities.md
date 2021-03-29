@@ -1,6 +1,7 @@
 ---
 title: Building Vibrant Bitcoin Communities
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Building vibrant bitcoin communities

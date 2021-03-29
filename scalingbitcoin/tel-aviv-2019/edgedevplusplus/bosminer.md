@@ -1,6 +1,8 @@
 ---
 title: Bosminer
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining']
 ---
 
 Challenges of developing Bosminer from scratch in Rust

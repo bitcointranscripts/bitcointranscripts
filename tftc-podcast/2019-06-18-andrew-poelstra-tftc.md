@@ -1,6 +1,7 @@
 ---
 title: Andrew Poelstra Tftc (2019-06-18)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 TFTC podcast with Andrew Poelstra - June 18th 2019 (Abridged)

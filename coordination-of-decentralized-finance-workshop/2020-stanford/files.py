@@ -1,6 +1,7 @@
 ---
 title: Files.Py
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
 ---
 
 

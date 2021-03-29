@@ -1,6 +1,8 @@
 ---
 title: Fungibility And Scalability
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'privacy', 'fungibility']
 ---
 
 adam3us (Adam Back)

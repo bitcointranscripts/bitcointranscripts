@@ -1,6 +1,8 @@
 ---
 title: Motoko Language
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'research']
 ---
 
 Motoko, the language for the Internet Computer
@@ -47,6 +49,8 @@ Another safety feature is one you don't see in the code; but in the last talk th
 
 The next building block to make this language safe is good expressive data structures, and a type system to support them. For the next example, first we see that we define a value, it's a record that represents a customer. We have records, strings, tags, these hash things... What I am going to point out first is that you don't have to mention any types about defining this value.
 
+categories: ['conference']
+tags: ['consensus', 'research']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

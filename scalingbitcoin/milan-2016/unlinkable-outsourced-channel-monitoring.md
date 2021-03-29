@@ -1,6 +1,8 @@
 ---
 title: Unlinkable Outsourced Channel Monitoring
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'scalability', 'wallet']
 ---
 
 Unlinkable outsourced channel monitoring

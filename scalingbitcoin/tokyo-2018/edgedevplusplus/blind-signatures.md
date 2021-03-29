@@ -1,6 +1,7 @@
 ---
 title: Blind Signatures
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Blind signatures

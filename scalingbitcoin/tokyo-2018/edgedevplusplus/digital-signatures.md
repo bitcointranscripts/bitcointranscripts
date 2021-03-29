@@ -1,6 +1,7 @@
 ---
 title: Digital Signatures
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Finite fields, elliptic curves, ECDSA and Schnorr signatures

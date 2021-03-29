@@ -1,6 +1,7 @@
 ---
 title: Htc
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 HTC / Exodus

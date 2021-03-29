@@ -1,6 +1,7 @@
 ---
 title: Current State Of The Market And Institutional Investors
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 1 on 1: The current state of the market & institutional investors

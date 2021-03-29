@@ -1,6 +1,8 @@
 ---
 title: Joinmarket
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['fungibility']
 ---
 
 Joinmarket

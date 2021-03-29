@@ -1,6 +1,8 @@
 ---
 title: Transparent Dishonesty
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['attacks']
 ---
 
 Transparent dishonesty: frontrunning attacks on blockchain
@@ -79,6 +81,8 @@ Frontrunning is a pervasive issues in ethereum dapps. We need a way to talk abou
 
 With that, I will conclude my presentation.
 
+categories: ['conference']
+tags: ['attacks']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

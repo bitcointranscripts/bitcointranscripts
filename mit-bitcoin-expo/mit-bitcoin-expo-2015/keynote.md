@@ -1,6 +1,7 @@
 ---
 title: Keynote
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Charlie Lee

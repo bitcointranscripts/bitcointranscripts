@@ -1,6 +1,7 @@
 ---
 title: Alex Bosworth Building Lightning Applications (2018-10-22)
 TranscriptBy: Bryan Bishop
+tags: ['lightning', 'lnd', 'wallet']
 ---
 
 Alex Bosworth

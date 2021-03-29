@@ -1,6 +1,8 @@
 ---
 title: Network Topologies And Their Scalability Implications On Decentralized Off Chain Networks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'custody', 'lightning']
 ---
 
 Joseph Poon
@@ -77,6 +79,8 @@ Q: It's a matter of capital allocation. Faster channels would be more efficient 
 
 A: Yes, I think that's similar to the other argument where money is locked up, and you just close up. And then reopen later? By doing that, as a function, I think that's a decentralizing force. I don't think the hub model will work. I think you will have somewhat supernodes, but I don't think you will have a centralizing hub, because you will kick off users. And that helps with decentralization. Yeah, it's not profitable to be a hub, that makes it decentralized, yeah. If you have this type of model, you're going to face the same problem where it is going to be deeply unprofitable use of allocation of capital. It's going to be biased towards a system where you are going to want to connect to people within your supply chain and your geographic area, to keep track of velocity of money and time value of money and so on.
 
+categories: ['conference']
+tags: ['consensus', 'custody', 'lightning']
 ----
 
 Other lightning presentation from same day: <http://diyhpl.us/wiki/transcripts/scalingbitcoin/hong-kong/overview-of-bips-necessary-for-lightning/>

@@ -1,6 +1,7 @@
 ---
 title: Greg Maxwell Yubikey Security
 TranscriptBy: Bryan Bishop
+tags: ['security', 'hardware wallet', 'wallet']
 ---
 
 Name: Greg Maxwell

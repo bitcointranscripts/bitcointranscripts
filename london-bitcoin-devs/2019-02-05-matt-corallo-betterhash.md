@@ -1,6 +1,8 @@
 ---
 title: Matt Corallo Betterhash (2019-02-05)
 TranscriptBy: Michael Folkson
+categories: ['meetup']
+tags: ['mining', 'ux']
 ---
 
 Name: Matt Corallo

@@ -1,6 +1,7 @@
 ---
 title: Rusty Russell Joe Netti (2019-08-12)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Stephan Livera podcast with Rusty Russell and Joe Netti - August 12th 2019

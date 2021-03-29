@@ -1,6 +1,7 @@
 ---
 title: Hackathon Intro
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:

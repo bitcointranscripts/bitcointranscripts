@@ -1,6 +1,8 @@
 ---
 title: Elastic Block Caps
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['scalability', 'fees']
 ---
 
 Elastic block caps

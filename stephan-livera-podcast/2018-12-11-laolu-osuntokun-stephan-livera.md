@@ -1,6 +1,7 @@
 ---
 title: Laolu Osuntokun Stephan Livera (2018-12-11)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Stephan Livera podcast with Laolu Osuntokun - December 11th 2018

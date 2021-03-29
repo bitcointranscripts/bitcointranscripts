@@ -1,6 +1,7 @@
 ---
 title: Celo Ultralight Client
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 The Celo ultralight client
@@ -70,6 +71,7 @@ We also looked at performance for verification. In particular, we're verifying g
 In addition, we have come up with some estimates for what it would cost to do inter-chain interoperability. In particular, between Celo and ethereum using our Plumo lightclient. We estimate that it would take about 4 million gas to validate one of these proofs which would correspond to a given epoch and then about 20,000 gas afterwards for each transaction that we want to verify in that epoch. This would come out to about $6 dollars which is still pretty good.
 
 
+categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

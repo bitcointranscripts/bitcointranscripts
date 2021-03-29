@@ -1,6 +1,8 @@
 ---
 title: Wallet Architecture
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'wallet']
 ---
 
 Bitcoin Core wallet architecture

@@ -1,6 +1,7 @@
 ---
 title: Overview Bitcoin Core Architecture
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Bitcoin Core architecture overview

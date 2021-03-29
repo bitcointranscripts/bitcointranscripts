@@ -1,6 +1,8 @@
 ---
 title: Rootstock
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'research', 'smart contracts']
 ---
 
 Rootstock

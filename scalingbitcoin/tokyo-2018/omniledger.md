@@ -1,6 +1,7 @@
 ---
 title: Omniledger
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Omniledger: A secure, scale-out, decentralized ledger via sharding

@@ -1,6 +1,7 @@
 ---
 title: Alex Bosworth Major Limitations (2019-04-06)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Alex Bosworth

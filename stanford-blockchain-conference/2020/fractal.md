@@ -1,6 +1,8 @@
 ---
 title: Fractal
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'post-quantum']
 ---
 
 Fractal: Post-Quantum and Transparent Recursive Proofs from Holography
@@ -103,6 +105,8 @@ If you're interested in how to do holography, talk to me afterwards.
 
 We have three theorems: post-quantum recursion implies PCD, preprocessing implies efficient recursion, and Fractal is an efficient post-quantum preprocessing SNARK, and together these are a construction of efficient post-quantum PCD. The implementation is using algebraic hashes. Thank you very much.
 
+categories: ['conference']
+tags: ['security', 'post-quantum']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

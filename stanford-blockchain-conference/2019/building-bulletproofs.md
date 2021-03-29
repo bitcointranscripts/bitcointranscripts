@@ -1,6 +1,8 @@
 ---
 title: Building Bulletproofs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['zero-knowledge']
 ---
 
 Building bulletproofs

@@ -1,6 +1,7 @@
 ---
 title: Socratic Seminar Coinswap (2020-06-23)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
 ---
 
 Name: Socratic Seminar

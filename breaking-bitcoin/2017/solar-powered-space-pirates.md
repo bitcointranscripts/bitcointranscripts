@@ -1,6 +1,8 @@
 ---
 title: Solar Powered Space Pirates
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['cryptography']
 ---
 
 Solar powered space pirates: A threat to bitcoin?

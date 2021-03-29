@@ -1,6 +1,8 @@
 ---
 title: Hardware Wallets (2019-06-07)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['hardware wallet', 'wallet']
 ---
 
 Hardware wallets

@@ -1,6 +1,8 @@
 ---
 title: Validation Costs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'p2p', 'incentives']
 ---
 
 Validation costs and incentives

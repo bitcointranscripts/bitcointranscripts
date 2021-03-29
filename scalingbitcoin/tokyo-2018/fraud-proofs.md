@@ -1,6 +1,8 @@
 ---
 title: Fraud Proofs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'validation', 'miners']
 ---
 
 Improving SPV client validation and security with fraud proofs

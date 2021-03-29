@@ -1,6 +1,8 @@
 ---
 title: Taproot And Graftroot
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'fungibility']
 ---
 
 Taproot and graftroot

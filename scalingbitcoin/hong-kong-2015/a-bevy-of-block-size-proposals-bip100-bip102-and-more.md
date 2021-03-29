@@ -1,6 +1,8 @@
 ---
 title: A Bevy Of Block Size Proposals Bip100 Bip102 And More
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mempool']
 ---
 
 jgarzik
@@ -105,6 +107,8 @@ Q: Do you think increasing on-chain bandwidth will interfere with the value of b
 
 A: It will increase the value of bitcoin. It will signal that we are willing to enhance the system.
 
+categories: ['conference']
+tags: ['mempool']
 ----
 
 bip100 <http://gtf.org/garzik/bitcoin/BIP100-blocksizechangeproposal.pdf>

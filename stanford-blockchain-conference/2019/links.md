@@ -1,6 +1,7 @@
 ---
 title: Links
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 info: <https://cyber.stanford.edu/sbc19>

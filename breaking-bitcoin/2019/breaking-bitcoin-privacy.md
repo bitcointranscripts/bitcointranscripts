@@ -1,6 +1,8 @@
 ---
 title: Breaking Bitcoin Privacy
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'fungibility']
 ---
 
 Breaking bitcoin privacy

@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Custody
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['custody', 'regulation']
 ---
 
 Bryan Bishop

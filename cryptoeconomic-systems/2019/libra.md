@@ -1,6 +1,7 @@
 ---
 title: Libra
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 -- Disclaimer --

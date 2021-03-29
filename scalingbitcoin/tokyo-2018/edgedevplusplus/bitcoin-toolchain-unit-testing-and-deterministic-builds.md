@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Toolchain Unit Testing And Deterministic Builds
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['ux']
 ---
 
 Bitcoin toolchain, unit testing & deterministic builds

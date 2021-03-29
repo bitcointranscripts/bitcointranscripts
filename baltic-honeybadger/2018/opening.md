@@ -1,6 +1,7 @@
 ---
 title: Opening
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Opening remarks for Baltic Honeybadger 2018

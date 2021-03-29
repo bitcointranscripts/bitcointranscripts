@@ -1,6 +1,8 @@
 ---
 title: Scaling Oblivious Read Write
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 A tale of two trees: One writes, and other reads, scaling oblivious accesses to large-scale blockchains

@@ -1,6 +1,8 @@
 ---
 title: Pindar Wong
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks', 'miners']
 ---
 
 Pindar Wong

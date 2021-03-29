@@ -1,6 +1,8 @@
 ---
 title: Joost Jager Hodl Invoices (2019-06-13)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lnd']
 ---
 
 Joost Jager

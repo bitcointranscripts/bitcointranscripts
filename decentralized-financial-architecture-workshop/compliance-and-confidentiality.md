@@ -1,6 +1,8 @@
 ---
 title: Compliance And Confidentiality
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['regulation']
 ---
 
 Compliance and confidentiality: can they co-exist?

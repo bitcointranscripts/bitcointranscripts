@@ -1,6 +1,7 @@
 ---
 title: Journals As Clubs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 -- Disclaimer --

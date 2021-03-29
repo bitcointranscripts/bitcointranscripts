@@ -1,6 +1,7 @@
 ---
 title: Socratic Seminar 4 (2019-11-19)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
 ---
 
 Socratic seminar #4

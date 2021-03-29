@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Core Functional Test Framework
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Fabian Jahr

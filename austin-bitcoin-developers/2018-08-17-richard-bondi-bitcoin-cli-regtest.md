@@ -1,6 +1,7 @@
 ---
 title: Richard Bondi Bitcoin Cli Regtest (2018-08-17)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
 ---
 
 Richard Bondi

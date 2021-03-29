@@ -1,6 +1,7 @@
 ---
 title: Barnabas Bagyi Fuzzing Class Interfaces (2020-10-09)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Barnabás Bágyi

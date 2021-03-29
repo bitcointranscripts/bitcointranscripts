@@ -1,6 +1,8 @@
 ---
 title: Beyond Hashrate Majority Attacks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['attacks']
 ---
 
 Beyond 51% attacks
@@ -159,6 +161,8 @@ In general, the mapping to attacks, if the attacker publishes an unavailable cha
 
 There we go. We have a collection of tools that essentially lets us fear 51% attacks much less, and either ignore or recover from many kinds of them. So thank you.
 
+categories: ['conference']
+tags: ['attacks']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

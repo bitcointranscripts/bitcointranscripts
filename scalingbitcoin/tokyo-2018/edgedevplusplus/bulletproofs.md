@@ -1,6 +1,7 @@
 ---
 title: Bulletproofs
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Bulletproofs

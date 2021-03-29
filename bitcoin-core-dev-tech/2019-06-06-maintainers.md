@@ -1,6 +1,7 @@
 ---
 title: Maintainers (2019-06-06)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
 ---
 
 Maintainers view of the Bitcoin Core project

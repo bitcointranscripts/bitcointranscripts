@@ -1,6 +1,8 @@
 ---
 title: Texas Energy Market
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining']
 ---
 
 Gideon Powell

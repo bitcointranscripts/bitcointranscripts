@@ -1,6 +1,7 @@
 ---
 title: Zero Knowledge Probabilistic Proof Systems
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Zero knowledge probabilistic proof systems

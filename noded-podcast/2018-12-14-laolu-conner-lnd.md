@@ -1,6 +1,8 @@
 ---
 title: Laolu Conner Lnd (2018-12-14)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
+tags: ['lightning']
 ---
 
 Noded podcast with Laolu Osuntokun and Conner Fromknecht - December 14th 2018

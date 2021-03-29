@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Satellite Network
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Bitcoin satellite network

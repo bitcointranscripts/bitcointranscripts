@@ -1,6 +1,7 @@
 ---
 title: Andrew Poelstra Taproot (2020-03-07)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Andrew Poelstra

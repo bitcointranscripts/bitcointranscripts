@@ -1,6 +1,7 @@
 ---
 title: Shamir Secret Sharing
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 

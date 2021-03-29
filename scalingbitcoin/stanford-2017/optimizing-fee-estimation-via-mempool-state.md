@@ -1,6 +1,8 @@
 ---
 title: Optimizing Fee Estimation Via Mempool State
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mempool', 'fees']
 ---
 
 Optimizing fee estimation via the mempool state

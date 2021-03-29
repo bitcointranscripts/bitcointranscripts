@@ -1,6 +1,8 @@
 ---
 title: Laolu Osuntokun Exploring Lnd0.4 (2018-04-20)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['lnd']
 ---
 
 Laolu Osuntokun and Conner Fromknecht

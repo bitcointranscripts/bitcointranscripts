@@ -1,6 +1,8 @@
 ---
 title: Tooling
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['wallet']
 ---
 
 Tooling

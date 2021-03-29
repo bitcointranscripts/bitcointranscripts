@@ -1,6 +1,8 @@
 ---
 title: Privacy Preserving Multi Hop Locks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['scalability', 'layer 2']
 ---
 
 Privacy preserving multi-hop locks for blockchain scalability and interoperability

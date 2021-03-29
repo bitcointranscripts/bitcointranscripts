@@ -1,6 +1,8 @@
 ---
 title: Conner Fromknecht Lnd 0.6 Beta (2019-05-02)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['lnd']
 ---
 
 Conner Fromknecht

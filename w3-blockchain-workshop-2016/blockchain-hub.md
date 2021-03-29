@@ -1,6 +1,8 @@
 ---
 title: Blockchain Hub
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['consensus']
 ---
 
 Kenji Saito

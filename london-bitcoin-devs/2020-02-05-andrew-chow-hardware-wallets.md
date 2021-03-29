@@ -1,6 +1,8 @@
 ---
 title: Andrew Chow Hardware Wallets (2020-02-05)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['hardware wallet', 'PSBT', 'wallet']
 ---
 
 Andrew Chow

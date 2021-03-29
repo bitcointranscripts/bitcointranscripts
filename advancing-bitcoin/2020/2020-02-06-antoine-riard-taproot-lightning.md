@@ -1,6 +1,7 @@
 ---
 title: Antoine Riard Taproot Lightning (2020-02-06)
 TranscriptBy: Bryan Bishop
+tags: ['taproot', 'lightning', 'schnorr']
 ---
 
 Name: Antoine Riard

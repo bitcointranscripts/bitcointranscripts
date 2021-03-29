@@ -1,6 +1,8 @@
 ---
 title: Sighash Noinput
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['bitcoin core']
 ---
 
 Bryan Bishop

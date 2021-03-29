@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Optech (2018-10-09)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['lightning', 'segwit']
 ---
 
 <https://twitter.com/kanzure/status/1049527415767101440>

@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Without Internet
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Bitcoin without internet

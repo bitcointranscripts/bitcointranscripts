@@ -1,6 +1,8 @@
 ---
 title: Privacy Concepts
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 Privacy concepts for bitcoin application developers

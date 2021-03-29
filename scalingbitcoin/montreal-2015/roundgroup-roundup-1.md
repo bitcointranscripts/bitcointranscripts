@@ -1,6 +1,7 @@
 ---
 title: Roundgroup Roundup 1
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Roundtable roundup review 1

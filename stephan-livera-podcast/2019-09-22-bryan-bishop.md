@@ -1,6 +1,7 @@
 ---
 title: Bryan Bishop (2019-09-22)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Stephan Livera Podcast with Bryan Bishop - September 22nd 2019

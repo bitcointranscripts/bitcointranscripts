@@ -1,6 +1,7 @@
 ---
 title: Funding
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Tadge Dryja

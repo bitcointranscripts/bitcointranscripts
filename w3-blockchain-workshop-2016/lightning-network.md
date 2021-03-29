@@ -1,6 +1,8 @@
 ---
 title: Lightning Network
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['consensus', 'scalability']
 ---
 
 Lightning network

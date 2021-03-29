@@ -1,6 +1,7 @@
 ---
 title: Lightning - The Transfer Layer
 TranscriptBy: Will Clark
+tags: ['lightning']
 ---
 
 Name: Fabrice Drouin

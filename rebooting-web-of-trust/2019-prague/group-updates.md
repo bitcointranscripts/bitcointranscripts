@@ -1,6 +1,8 @@
 ---
 title: Group Updates.Md
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research']
 ---
 
 Group updates

@@ -1,6 +1,8 @@
 ---
 title: Braiding The Blockchain
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['miners']
 ---
 
 Braiding the blockchain

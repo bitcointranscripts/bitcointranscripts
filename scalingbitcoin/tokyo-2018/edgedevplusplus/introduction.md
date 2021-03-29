@@ -1,6 +1,7 @@
 ---
 title: Introduction
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Introduction to Bitcoin Edge Dev++ and Bc2

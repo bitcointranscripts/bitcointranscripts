@@ -1,6 +1,7 @@
 ---
 title: Day 2 Opening
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Pindar Wong

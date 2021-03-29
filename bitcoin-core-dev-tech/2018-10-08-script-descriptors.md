@@ -1,6 +1,8 @@
 ---
 title: Script Descriptors (2018-10-08)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['wallet']
 ---
 
 2018-10-08

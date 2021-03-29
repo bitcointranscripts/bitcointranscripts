@@ -1,6 +1,7 @@
 ---
 title: Stroem Payment Channels
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Stroem

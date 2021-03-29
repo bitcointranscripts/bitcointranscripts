@@ -1,6 +1,8 @@
 ---
 title: Mechanism Design
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'incentives']
 ---
 
 -- Disclaimer --

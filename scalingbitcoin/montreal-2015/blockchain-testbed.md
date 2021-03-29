@@ -1,6 +1,8 @@
 ---
 title: Blockchain Testbed
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['forks', 'miners', 'security']
 ---
 
 Ittay Eyal

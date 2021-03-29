@@ -1,6 +1,7 @@
 ---
 title: Matt Corallo Rust Lightning (2019-02-07)
 TranscriptBy: Bryan Bishop
+tags: ['lightning']
 ---
 
 Matt Corallo

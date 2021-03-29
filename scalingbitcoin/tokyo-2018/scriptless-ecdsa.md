@@ -1,6 +1,8 @@
 ---
 title: Scriptless Ecdsa
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['ux', 'lightning', 'multisig']
 ---
 
 Instantiating scriptless 2p-ECDSA: fungible 2-of-2 multisigs for bitcoin today

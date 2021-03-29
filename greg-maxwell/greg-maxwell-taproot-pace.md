@@ -1,6 +1,7 @@
 ---
 title: Greg Maxwell Taproot Pace
 TranscriptBy: Bryan Bishop
+tags: ['consensus', 'taproot', 'ux', 'wallet']
 ---
 
 Name: Greg Maxwell

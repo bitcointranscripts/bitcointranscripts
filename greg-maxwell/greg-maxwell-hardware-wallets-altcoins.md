@@ -1,6 +1,7 @@
 ---
 title: Greg Maxwell Hardware Wallets Altcoins
 TranscriptBy: Bryan Bishop
+tags: ['hardware wallet', 'altcoin', 'wallet']
 ---
 
 Name: Greg Maxwell

@@ -1,6 +1,7 @@
 ---
 title: Ideal Number Of Full Bitcoin Nodes
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Ideal number of full bitcoin nodes

@@ -1,6 +1,8 @@
 ---
 title: Antoine Riard Rust Lightning (2019-10-20)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Antoine Riard

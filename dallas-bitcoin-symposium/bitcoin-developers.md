@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Developers
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Justin Moon

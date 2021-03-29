@@ -1,6 +1,7 @@
 ---
 title: Scaling And Utxos
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Scaling and TXO commitments
@@ -41,6 +42,7 @@ If we implement TXO commitment schemes on the client-side without changing the c
 
 I setup some nodes on scaleway and it took about 5 days for them to get started. Maybe we could go implement this in Bitcoin Core in the next year or two. Thank you.
 
+categories: ['conference']
 ----
 
 <http://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2015/peter-todd-scalability/>

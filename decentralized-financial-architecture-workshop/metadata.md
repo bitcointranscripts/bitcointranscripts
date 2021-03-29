@@ -1,6 +1,7 @@
 ---
 title: Metadata
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
 ---
 
 website: <https://dfa2019.bitcoinedge.org/>

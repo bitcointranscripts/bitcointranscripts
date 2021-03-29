@@ -1,6 +1,7 @@
 ---
 title: Ipfs
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
 ---
 
 I will not have time to describe IPFS. We have multiformats that allow protocol agility, interop and avoid lock-in. Multihash, multiaddr, multibase, multicodec, multistream, multikey. What do you do with cryptographic hashes? When you have four different hashes all the same length that happen to be coming from different functions, what are those functions? sha256? sha512? sha3? blake2b? How do you know which hash type it is?

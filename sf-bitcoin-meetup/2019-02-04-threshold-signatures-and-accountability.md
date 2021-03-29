@@ -1,6 +1,8 @@
 ---
 title: Threshold Signatures And Accountability (2019-02-04)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
+tags: ['threshold signatures']
 ---
 
 Threshold signatures and accountability

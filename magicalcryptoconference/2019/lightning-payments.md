@@ -1,6 +1,8 @@
 ---
 title: Lightning Payments
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Lightning payments (and more) on the web

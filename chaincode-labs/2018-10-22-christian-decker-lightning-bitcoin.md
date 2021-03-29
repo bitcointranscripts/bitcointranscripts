@@ -1,6 +1,7 @@
 ---
 title: Lightning ≈ Bitcoin
 TranscriptBy: Anthony Ronning
+tags: ['lightning']
 ---
 
 Name: Dr. Christian Decker

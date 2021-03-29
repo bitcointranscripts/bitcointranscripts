@@ -1,6 +1,7 @@
 ---
 title: Jeremy Rubin Covenants (2017-01-26)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Jeremy Rubin

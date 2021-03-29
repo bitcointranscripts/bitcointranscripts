@@ -1,6 +1,7 @@
 ---
 title: Pierre Rochard Lightning Excel Plugin (2018-10-26)
 TranscriptBy: Bryan Bishop
+tags: ['ux', 'lightning', 'lnd']
 ---
 
 Pierre Rochard

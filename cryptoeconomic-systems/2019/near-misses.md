@@ -1,6 +1,8 @@
 ---
 title: Near Misses
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'research']
 ---
 
 Near misses: What could have gone wrong

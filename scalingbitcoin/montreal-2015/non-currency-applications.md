@@ -1,6 +1,8 @@
 ---
 title: Non Currency Applications
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['scalability']
 ---
 
 Scalability of non-currency applications

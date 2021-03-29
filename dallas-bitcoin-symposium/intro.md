@@ -1,6 +1,7 @@
 ---
 title: Intro
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 <https://twitter.com/kanzure/status/1162436437687623684>

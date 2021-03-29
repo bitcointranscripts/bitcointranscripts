@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Block Propagation Iblt Rusty Russell
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Rusty Russell

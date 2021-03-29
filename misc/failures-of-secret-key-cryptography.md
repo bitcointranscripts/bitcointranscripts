@@ -1,6 +1,7 @@
 ---
 title: Failures Of Secret Key Cryptography
 TranscriptBy: Bryan Bishop
+tags: ['attacks', 'cryptography']
 ---
 
 Failures of secret key cryptography
@@ -13,6 +14,7 @@ video: <https://www.youtube.com/watch?v=bT4cKwBROno&list=PLgO7JBj821uGZTXEXBLckC
 
 Welcome to the second invited talk, to be given by Dan Bernstein. Dan is one of the few members of our community who does not need an introduction. It's a great honor and pleasure that he has agreed to give a talk here. Dan comes from UC Berkeley and from Chicago. Just a few things you might know Dan from-- he sued the U.S. government about export controls. In 2004, .. in a class of his.. a lot of qmail, his work on factoring, ECC, and symmetric cryptology. Poly1305, .. and also he's... attacks.. So please join me in welcoming Dan Bernstein.
 
+tags: ['attacks', 'cryptography']
 ----
 
 # Introduction

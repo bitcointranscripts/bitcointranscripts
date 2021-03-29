@@ -1,6 +1,8 @@
 ---
 title: Notes
 TranscriptBy: Bryan Bishop
+categories: ['bitcoinops']
+tags: ['consensus', 'taproot', 'schnorr']
 ---
 
 Schnorr and taproot workshop 2019 NYC

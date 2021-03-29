@@ -1,6 +1,7 @@
 ---
 title: Elaine Ou Bootstrapping Lightning Node (2018-10-22)
 TranscriptBy: Bryan Bishop
+tags: ['lightning', 'routing']
 ---
 
 Elaine Ou

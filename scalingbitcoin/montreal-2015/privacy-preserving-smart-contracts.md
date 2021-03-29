@@ -1,6 +1,8 @@
 ---
 title: Privacy Preserving Smart Contracts
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'smart contracts', 'miners']
 ---
 
 Ranjit Kumaresan

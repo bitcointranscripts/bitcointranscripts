@@ -1,6 +1,8 @@
 ---
 title: Bitml
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'smart contracts']
 ---
 
 Developing secure bitcoin contracts using BitML

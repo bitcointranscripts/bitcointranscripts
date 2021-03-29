@@ -1,6 +1,8 @@
 ---
 title: Rusty Russell Json Interface (2019-04-06)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'c-lightning']
 ---
 
 Rusty Russell

@@ -1,6 +1,7 @@
 ---
 title: Mcf Episode
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 

@@ -1,6 +1,8 @@
 ---
 title: Smart Signatures
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['multisig']
 ---
 
 Christopher Allen

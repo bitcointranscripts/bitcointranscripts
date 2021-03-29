@@ -1,6 +1,8 @@
 ---
 title: Breaking Wasabi
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'wallet']
 ---
 
 Breaking wasabi and automated wallets

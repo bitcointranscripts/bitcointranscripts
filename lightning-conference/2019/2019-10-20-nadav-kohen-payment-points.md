@@ -1,6 +1,7 @@
 ---
 title: Nadav Kohen Payment Points (2019-10-20)
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Nadav Kohen

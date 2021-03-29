@@ -1,6 +1,8 @@
 ---
 title: Abstract Thinking About Consensus Systems
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus']
 ---
 
 Abstract thinking about consensus systems

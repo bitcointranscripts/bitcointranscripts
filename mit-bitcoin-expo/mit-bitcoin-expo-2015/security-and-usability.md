@@ -1,6 +1,8 @@
 ---
 title: Security And Usability
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'mining', 'regulation', 'wallet']
 ---
 
 * Melanie Shapiro

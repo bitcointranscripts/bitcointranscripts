@@ -1,6 +1,8 @@
 ---
 title: Lightning Network Layer By Layer
 TranscriptBy: Caralie Chrisco
+categories: ['conference']
+tags: ['fees']
 ---
 
 Name: Carla Kirk-Cohen

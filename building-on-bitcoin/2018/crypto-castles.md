@@ -1,6 +1,8 @@
 ---
 title: Crypto Castles
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 Building your own bank and constructing crypto castles

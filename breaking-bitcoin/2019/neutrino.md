@@ -1,6 +1,8 @@
 ---
 title: Neutrino
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'wallet']
 ---
 
 Neutrino bip158

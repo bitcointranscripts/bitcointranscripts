@@ -1,6 +1,8 @@
 ---
 title: Zerolink Sudoku
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research']
 ---
 
 ZeroLink sudoku: real vs perceived anonymity

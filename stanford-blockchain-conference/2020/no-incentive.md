@@ -1,6 +1,8 @@
 ---
 title: No Incentive
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['incentives']
 ---
 
 The best incentive is no incentive
@@ -103,6 +105,8 @@ You need something scarce ohterwise you have a sybil attack. You have two equall
 
 Natural incentives are better than artificial incentives. Gives you low fees, fast, censorship resistance. We built a decentralized exchange, we have off-ledger scaling. Come to xrpl.org and see what we built and Ripple is always hiring.
 
+categories: ['conference']
+tags: ['incentives']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

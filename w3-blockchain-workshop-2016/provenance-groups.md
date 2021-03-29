@@ -1,6 +1,8 @@
 ---
 title: Provenance Groups
 TranscriptBy: Bryan Bishop
+categories: ['workshop']
+tags: ['sidechains']
 ---
 
 Give the name of your tech topic table. You have three minutes to summarize. When you have one minute to summarize, I will give you the one minute warning. When you have zero minutes left, you will be thrown out the window.

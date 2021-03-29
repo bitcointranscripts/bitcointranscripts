@@ -1,6 +1,7 @@
 ---
 title: Opening Remarks
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Opening remarks

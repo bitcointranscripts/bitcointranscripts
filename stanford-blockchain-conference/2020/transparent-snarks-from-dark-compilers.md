@@ -1,6 +1,8 @@
 ---
 title: Transparent Snarks From Dark Compilers
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['accumulators']
 ---
 
 Transparent SNARKs from DARK compilers
@@ -126,6 +128,8 @@ If we look at DARK PLONK, we get a proof size that has 5 field elements, 4 commi
 It's really hard to do benchmarks between these systems and I don't want to give wrong numbers but here's a general picture of where things fit in. In terms of proof sizes, as I was saying over and over again, the universal setup and trusted setup SNARKs give you really small proof sizes like 3-4 kilobytes for universal setup and 0.2 kilobytes for Groth16. Bulletproofs are very small as well, but they have poor verifier time. If you look at the other end of the spectrum, then you're in the range of a few hundred kilobytes for STARKs. Jacobi DARK if it works will be exciting because it will be down in the range of universal setup SNARKs.
 
 
+categories: ['conference']
+tags: ['accumulators']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

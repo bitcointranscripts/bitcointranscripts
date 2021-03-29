@@ -1,6 +1,8 @@
 ---
 title: Andreas Antonopoulos Seed Splitting (2020-04-08)
 TranscriptBy: Bryan Bishop
+categories: ['lectures']
+tags: ['wallet']
 ---
 
 Name: Andreas Antonopoulos

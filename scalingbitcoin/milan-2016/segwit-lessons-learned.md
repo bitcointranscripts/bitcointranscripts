@@ -1,6 +1,8 @@
 ---
 title: Segwit Lessons Learned
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['segwit', 'consensus', 'forks', 'security', 'lightning']
 ---
 
 Lessons learned with segwit in Bitcoin
@@ -11,6 +13,8 @@ Greg Sanders (instagibbs)
 
 <https://www.youtube.com/watch?v=_Z0ID-0DOnc>
 
+categories: ['conference']
+tags: ['segwit', 'consensus', 'forks', 'security', 'lightning']
 ----
 
 Hi. My name is Greg Sanders. I will be giving a talk about segwit in bitcoin lessons learned. I will also give some takeaways that I think are important. A little bit about myself. I work on Elements Project at Blockstream. I was a reviewer on segwit for Bitcoin Core. How do we scale protocol development? How do we scale review and keep things safe?

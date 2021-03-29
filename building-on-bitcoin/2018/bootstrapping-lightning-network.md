@@ -1,6 +1,8 @@
 ---
 title: Bootstrapping Lightning Network
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Bootstrapping LN: What have we learned?

@@ -1,6 +1,8 @@
 ---
 title: Secure Protocols Bip Taproot
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'taproot', 'lightning', 'wallet', 'sidechains']
 ---
 
 Secure protocols on BIP-taproot

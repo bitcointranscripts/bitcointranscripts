@@ -1,6 +1,8 @@
 ---
 title: Christopher Jeffrey Consensus Barnacles (2016-12-25)
 TranscriptBy: Michael Folkson
+categories: ['podcast']
+tags: ['consensus']
 ---
 
 Name: Christopher Jeffrey (JJ)

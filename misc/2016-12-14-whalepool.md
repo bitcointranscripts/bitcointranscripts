@@ -1,6 +1,7 @@
 ---
 title: Whalepool (2016-12-14)
 TranscriptBy: Bryan Bishop
+tags: ['ux', 'segwit']
 ---
 
 Whalepool segwit transcript

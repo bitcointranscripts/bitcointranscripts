@@ -1,6 +1,7 @@
 ---
 title: Solving The Blockchain Trilemma
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 -- Disclaimer --

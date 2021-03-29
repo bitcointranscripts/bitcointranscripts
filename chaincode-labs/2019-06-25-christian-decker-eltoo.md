@@ -1,6 +1,7 @@
 ---
 title: Christian Decker Eltoo (2019-06-25)
 TranscriptBy: Bryan Bishop
+tags: ['eltoo', 'lightning']
 ---
 
 Name: Christian Decker

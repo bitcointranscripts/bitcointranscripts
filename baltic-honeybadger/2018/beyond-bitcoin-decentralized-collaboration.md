@@ -1,6 +1,7 @@
 ---
 title: Beyond Bitcoin Decentralized Collaboration
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Beyond bitcoin: Decentralized collaboration

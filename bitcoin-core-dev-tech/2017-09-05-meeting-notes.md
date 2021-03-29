@@ -1,6 +1,8 @@
 ---
 title: Meeting Notes (2017-09-05)
 TranscriptBy: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['privacy']
 ---
 
 ﻿2017-09-05 - 2017-09-07

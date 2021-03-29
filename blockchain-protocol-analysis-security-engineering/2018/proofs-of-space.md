@@ -1,6 +1,7 @@
 ---
 title: Proofs Of Space
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Beyond Hellman's time-memory trade-offs with applications to proofs of space

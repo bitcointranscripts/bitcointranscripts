@@ -1,6 +1,7 @@
 ---
 title: Everything Is Broken
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Everything is broken

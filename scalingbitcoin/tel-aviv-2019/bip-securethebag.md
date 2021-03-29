@@ -1,6 +1,8 @@
 ---
 title: Bip Securethebag
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'research']
 ---
 
 BIP: OP\_SECURETHEBAG

@@ -1,6 +1,7 @@
 ---
 title: Weak Signals
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Weak signals exercise

@@ -1,6 +1,7 @@
 ---
 title: Andrew Poelstra Miniscript (2020-02-04)
 TranscriptBy: Bryan Bishop
+categories: ['meetup']
 ---
 
 Andrew Poelstra

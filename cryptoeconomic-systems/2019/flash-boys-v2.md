@@ -1,6 +1,8 @@
 ---
 title: Flash Boys V2
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['research']
 ---
 
 -- Disclaimer --

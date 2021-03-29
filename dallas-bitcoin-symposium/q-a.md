@@ -1,6 +1,7 @@
 ---
 title: Q A
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Q&A session

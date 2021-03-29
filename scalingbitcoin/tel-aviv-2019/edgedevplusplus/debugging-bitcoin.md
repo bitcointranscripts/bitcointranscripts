@@ -1,6 +1,7 @@
 ---
 title: Debugging Bitcoin
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 Name: Fabian Jahr

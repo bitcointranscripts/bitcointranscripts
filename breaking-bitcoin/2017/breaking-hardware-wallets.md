@@ -1,6 +1,8 @@
 ---
 title: Breaking Hardware Wallets
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['attacks', 'hardware wallet', 'wallet']
 ---
 
 Breaking hardware wallets: Tales from the trenches and glimpses into the future

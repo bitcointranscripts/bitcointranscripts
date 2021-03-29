@@ -1,6 +1,8 @@
 ---
 title: Ghostdag
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'proof-of-work', 'miners', 'security']
 ---
 
 The GHOSTDAG protocol

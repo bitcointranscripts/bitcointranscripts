@@ -1,6 +1,7 @@
 ---
 title: Roy Sheinfeld Stephan Livera (2019-07-31)
 TranscriptBy: Bryan Bishop
+categories: ['podcast']
 ---
 
 Stephan Livera podcast with Roy Sheinfeld - July 31st 2019

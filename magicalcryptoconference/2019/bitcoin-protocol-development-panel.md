@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Protocol Development Panel
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'lightning']
 ---
 
 Bitcoin protocol development panel

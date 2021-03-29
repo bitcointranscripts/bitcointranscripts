@@ -1,6 +1,8 @@
 ---
 title: Hardening Lightning
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'lightning', 'fees']
 ---
 
 Hardening lightning network
@@ -209,6 +211,8 @@ A: There's a bunch of protocols that are enabled by OP\_CHECKSIGFROMSTACK where 
 
 Cool, thank you.
 
+categories: ['conference']
+tags: ['security', 'lightning', 'fees']
 ----
 
 <https://www.reddit.com/r/Bitcoin/comments/7u79l9/hardening_lightning_olaoluwa_osuntokun_roasbeef/>

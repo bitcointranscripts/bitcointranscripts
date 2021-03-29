@@ -1,6 +1,8 @@
 ---
 title: Amiko Pay
 TranscriptBy: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'lightning', 'routing']
 ---
 
 Amiko Pay

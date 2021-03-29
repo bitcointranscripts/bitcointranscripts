@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Financing And Trading
 TranscriptBy: Bryan Bishop
+categories: ['conference']
 ---
 
 * Joshua Lim (Circle, ex Goldman Sachs)

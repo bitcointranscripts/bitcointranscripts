@@ -1,6 +1,7 @@
 ---
 title: John Newbery Wallet Development (2019-06-19)
 TranscriptBy: Michael Folkson
+tags: ['consensus', 'wallet']
 ---
 
 Name: John Newbery
