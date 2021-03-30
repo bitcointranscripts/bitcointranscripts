@@ -1,5 +1,5 @@
 ---
-title: Taproot activation and LOT=true vs LOT=false
+title: Taproot activation and LOT=true vs LOT=false (2021-02-26)
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot']

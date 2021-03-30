@@ -1,6 +1,8 @@
 ---
-title: Taproot Activation with Speedy Trial
-TranscriptBy: Michael Folkson
+title: Taproot Activation with Speedy Trial (2021-03-12)
+transcript_by: Michael Folkson
+categories: ['podcast']
+tags: ['taproot']
 ---
 
 Name: Sjors Provoost and Aaron van Wirdum
