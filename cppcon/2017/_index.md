@@ -1,5 +1,5 @@
 ---
-title: Cppcon 2017
+title: CPPcon 2017
 ---
 
 {{< childpages >}}

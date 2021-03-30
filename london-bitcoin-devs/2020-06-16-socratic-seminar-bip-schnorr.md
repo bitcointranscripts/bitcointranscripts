@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar Bip Schnorr (2020-06-16)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['ux']
 ---

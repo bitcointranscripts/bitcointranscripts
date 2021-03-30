@@ -108,7 +108,6 @@ We implemented this. It's implemented and benchmarked in go.
 
 We want to see applications to this to smart contract based exchanges, and to see if timelock puzzles and verifiable delay functions could be applied to this area that would be really cool. Okay, that's it.
 
-categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

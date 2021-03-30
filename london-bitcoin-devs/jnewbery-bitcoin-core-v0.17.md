@@ -1,6 +1,6 @@
 ---
 title: Jnewbery Bitcoin Core V0.17
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research']
 ---

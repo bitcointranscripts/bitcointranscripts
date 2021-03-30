@@ -1,6 +1,7 @@
 ---
 title: Discreet Log Contracts
 transcript_by: Bryan Bishop
+speaker: Tadge Dryja
 ---
 
 Discreet log contracts

@@ -11,10 +11,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-tags: ['consensus', 'proof-of-work']
-----
-
 Law enforcement and anonymous transactions
 
 Jason Weinstein, Blockchain Alliance, moderator

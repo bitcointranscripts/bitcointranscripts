@@ -17,10 +17,6 @@ Eleftherios Kokoris Kogias
 
 We are starting the session called "breaking the chain". We will first have collective signing presentation. Thank you.
 
-categories: ['conference']
-tags: ['security']
-----
-
 This is joint work with some collaborators.
 
 What we have now is that real-time verification is not safe. What we managed to get is that we get transaction commitment in about 20-90 seconds at close to 1,000 transactions/second. In byzcoin, irrevocable transaction commitment in 20-90 second. Throughput up to 974 transactions per second.

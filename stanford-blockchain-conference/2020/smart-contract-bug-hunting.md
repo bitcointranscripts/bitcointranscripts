@@ -95,8 +95,7 @@ One of the holy grails of computer science is making formal specifications for s
 
 Code is law, but code is tricky and code is changing. You should specify the properties that you want. If you are a user and you use a token, you probably want to know what are the properties it has to satisfy.
 
-categories: ['conference']
-tags: ['security']
+
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar Coinswap (2020-06-23)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 ---
 

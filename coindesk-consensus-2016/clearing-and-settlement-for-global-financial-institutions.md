@@ -10,9 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 Clearing and settlement for global financial institutions
 
 Matthew Bishop, The Economist - Moderator

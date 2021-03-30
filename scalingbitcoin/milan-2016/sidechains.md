@@ -14,9 +14,6 @@ slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%209%20-%20Paul
 
 Before we begin, we will explain how the workshops will work upstairs. There will be some topics and room numbers. Now we will start the next presentation on sidechain scaling with Paul Sztorc. Thank you everyone.
 
-categories: ['conference']
-----
-
 Thanks a lot. So this talk will be a little different. Scaling via strategy, not physics. This will not change the kilobytes sent over-- it will, just not in the literal sense. It's not going to reduce the information over the wire. It's not the focus. Appreciate this for what it is.
 
 If we cut a pizza into more slices, does it weigh any less? And the answer may surprise you if you're very unintelligent, because the answer is no. Given that the answer is obviously no, then what is this talk about? It would appear to be about making copies of things that change properties of the whole. The agenda is that I am going to talk about the overview of what I'm talking about, and then I am going to talk about basic definitions associated with that. And then different ways that chains might harm each other, and that it's negligible.

@@ -13,10 +13,6 @@ Greg Sanders (instagibbs)
 
 <https://www.youtube.com/watch?v=_Z0ID-0DOnc>
 
-categories: ['conference']
-tags: ['segwit', 'consensus', 'forks', 'security', 'lightning']
-----
-
 Hi. My name is Greg Sanders. I will be giving a talk about segwit in bitcoin lessons learned. I will also give some takeaways that I think are important. A little bit about myself. I work on Elements Project at Blockstream. I was a reviewer on segwit for Bitcoin Core. How do we scale protocol development? How do we scale review and keep things safe?
 
 Segwit started as an element in elements alpha. It allows for safe chaining of pre-signed transactions, which is important for payment channels and lightning network. The version in elements just changed how we defined txids, which we can't do in bitcoin. It's hard to imagine doing hard-forks in bitcoin just for this. Non-security hard-forks are going to be very hard to get consensus on.

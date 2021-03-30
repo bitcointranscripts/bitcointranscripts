@@ -144,8 +144,6 @@ Then there's another way, "rollups". Then there's "semi-trusted committee for 'd
 I think more work on formalization and extensions of Plasma is definitely needed at this stage.
 
 
-categories: ['conference']
-tags: ['layer 2']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

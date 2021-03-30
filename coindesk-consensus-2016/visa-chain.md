@@ -10,9 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 Visa & Chain
 
 My name is Adam Ludwin. We are here to talk about blockchain database technology networks. Chain.com is a blockchain database technology company. We do one thing. We partner with financia leaders like Visa to launch blockchain database technology networks. I want to talk about why. There's a lot of hype in blockchain database technology. There's a lot of attention in blockchain database technology. But I think to understand why we are all in this room together, we have to go back in time to November 2008. If you refresh your memory, there were some interesting things in the news.

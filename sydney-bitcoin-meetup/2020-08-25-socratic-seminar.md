@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar (2020-08-25)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 ---
 
@@ -17,8 +17,6 @@ Video: No video posted online
 Last month’s Sydney Socratic: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-07-21-socratic-seminar/
 
 Google Doc of the resources discussed: https://docs.google.com/document/d/1rJxVznWaFHKe88s5GyrxOW-RFGTeD_GKdFzHNvhrq-c/
-
-Transcript completed by: Michael Folkson
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 

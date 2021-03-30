@@ -10,9 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 The future of blockchains
 
 Paul Vigna, WSJ - Moderator

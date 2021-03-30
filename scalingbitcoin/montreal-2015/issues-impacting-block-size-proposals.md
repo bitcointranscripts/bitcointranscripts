@@ -2,7 +2,7 @@
 title: Issues Impacting Block Size Proposals
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['p2p']
+tags: ['P2P']
 ---
 
 Issues impacting block size proposals

@@ -10,8 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
 
 Blockchain database technology in a global context
 

@@ -2,7 +2,7 @@
 title: Bitcoin Build System
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security']
+tags: ['security', 'build systems']
 ---
 
 Bitcoin build systems and bitcoin build system security

@@ -1,5 +1,5 @@
 ---
-title: Schnorr Signatures For Bitcoin Challenges Opportunities
+title: Schnorr Signatures For Bitcoin - Challenges and Opportunities
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'schnorr']
@@ -152,9 +152,5 @@ gmaxwell: An extra elaboration on the taproot point... you're not limited to hav
 Q: Does the Schnorr signature.. I'm wondering about its availability for open-source or widely available software like openssl? My business case would be just.. update.. signature, done by multiple parties.
 
 A: The most commonly deployed Schnorr-like signature is ed25519 which is very well known and used in a number of cases. I believe there are higher-level protocols that specify how to do aggregating multiple keys together and sign for them at once. You may want to look into a system called <a href="https://github.com/dedis/cosi">cosi</a>.
-
-categories: ['conference']
-tags: ['research', 'schnorr']
-----
 
 "<a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015696.html">Design approaches for cross-input signature aggregation</a>"

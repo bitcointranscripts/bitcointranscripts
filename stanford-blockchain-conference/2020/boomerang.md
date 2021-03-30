@@ -85,8 +85,6 @@ All of these routing protocols, it's nice to describe them in a setting assuming
 
 https://arxiv.org/abs/1910..... went by too fast.
 
-categories: ['conference']
-tags: ['routing']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

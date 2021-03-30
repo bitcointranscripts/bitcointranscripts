@@ -10,9 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 Why bitcoin still matters
 
 Hutchins, Founder of Silver Lake

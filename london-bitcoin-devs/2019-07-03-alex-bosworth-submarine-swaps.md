@@ -1,6 +1,6 @@
 ---
 title: Alex Bosworth Submarine Swaps (2019-07-03)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['submarine swaps']
 ---

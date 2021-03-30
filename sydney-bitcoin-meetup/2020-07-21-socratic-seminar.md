@@ -2,6 +2,7 @@
 title: Socratic Seminar (2020-07-21)
 transcript_by: Bryan Bishop
 categories: ['meetup']
+tag: ['taproot']
 ---
 
 Name: Socratic Seminar

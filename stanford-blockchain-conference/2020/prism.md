@@ -159,8 +159,6 @@ We found that prism is able to move the bottleneck from consensus to ledger keep
 
 Prism uses PoW. It enjoys the benefits of proof-of-work... we want to remove a deficiency. Happy to take questions.
 
-categories: ['conference']
-tags: ['consensus', 'mining', 'security']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

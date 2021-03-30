@@ -89,11 +89,6 @@ We can reduce the collateral to a constant, and synchronize multiple channels at
 
 <https://eprint.iacr.org/2019/583.pdf>
 
-
-categories: ['conference']
-tags: ['scalability']
-----
-
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 
 <i>Disclaimer</i>: These are unpaid transcriptions, performed in real-time and in-person during the actual source presentation. Due to personal time constraints they are usually not reviewed against the source material once published. Errors are possible. If the original author/speaker or anyone else finds errors of substance, please email me at kanzure@gmail.com for corrections or contribute online via github/git. I sometimes add annotations to the transcription text. These will always be denoted by a standard editor's note in parenthesis brackets ((like this)), or in a numbered footnote. I welcome feedback and discussion of these as well.

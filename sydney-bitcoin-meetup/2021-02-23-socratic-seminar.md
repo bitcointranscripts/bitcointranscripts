@@ -2,7 +2,7 @@
 title: Sydney Socratic Seminar (2021-02-23)
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['research', 'lightning', 'ux', 'attacks']
+tags: ['research', 'lightning', 'attacks', 'taproot']
 ---
 
 Name: Socratic Seminar

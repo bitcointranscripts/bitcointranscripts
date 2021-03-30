@@ -97,10 +97,6 @@ Some of the discussion topics can include: privacy vs traceability: are these in
 
 Maybe a regulator can operate a node on the blockchain and record transaction information themselves. This might take some time to change the regulatory mindset, but we should join the discussion and achieve regulatory goals that we want in the discussion together.
 
-categories: ['workshop']
-tags: ['research', 'regulation']
-----
-
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 
 

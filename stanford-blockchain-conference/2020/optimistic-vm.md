@@ -2,7 +2,7 @@
 title: Optimistic Vm
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['layer 2']
+tags: ['layer 2', 'ethereum']
 ---
 
 The optimistic VM
@@ -111,8 +111,6 @@ Last time I came here I was super excited about open-source and how these projec
 
 <https://optimism.io/>
 
-categories: ['conference']
-tags: ['layer 2']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

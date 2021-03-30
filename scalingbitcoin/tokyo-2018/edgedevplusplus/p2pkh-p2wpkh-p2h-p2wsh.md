@@ -2,7 +2,7 @@
 title: P2Pkh P2Wpkh P2H P2Wsh
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['p2pkh', 'p2p', 'p2sh']
+tags: ['p2pkh', 'P2P', 'p2sh']
 ---
 
 P2PKH/P2WPKH/P2H/P2WSH

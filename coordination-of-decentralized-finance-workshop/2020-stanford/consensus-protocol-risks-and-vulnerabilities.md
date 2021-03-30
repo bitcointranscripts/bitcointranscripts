@@ -131,10 +131,6 @@ Q: What if a regulator is a developer?
 
 A: There's no way that regulators are going to be signing off on code themselves, directly. No, that's not going to happen. I can tell you, if you go to the cryptography professors here at Stanford, that they can tell you who is for real in this space. They can give you some idea of what's real tech and what's garbage. Sometimes with some nuance and where things aren't clear, things like that... there are projects with real technical weight that are doing things that aren't a good idea, and then there's some pretty good ideas with small technical flaws, often the answers will be nuanced. To the extent that you want somebody to trust, I would say trust to use Stanford professors as the schilling point isn't a bad heuristic.
 
-categories: ['workshop']
-tags: ['cryptography']
-----
-
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 
 

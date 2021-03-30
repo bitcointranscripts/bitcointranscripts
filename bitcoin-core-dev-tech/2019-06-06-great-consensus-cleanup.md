@@ -2,7 +2,7 @@
 title: Great Consensus Cleanup (2019-06-06)
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['consensus', 'ux']
+tags: ['consensus', 'soft fork', 'forks']
 ---
 
 2019-06-06

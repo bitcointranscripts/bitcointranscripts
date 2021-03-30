@@ -10,17 +10,11 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 Opening remarks & state of blockchain
 
 Ryan Selkis, Coindesk
 
 Garrick Hileman, The Cambridge Centre for Alternative Finance
-
-categories: ['conference']
-----
 
 Ladies and gentlemen, the session will begin in 5 minutes. Please take your seats. The session is about to begin.
 

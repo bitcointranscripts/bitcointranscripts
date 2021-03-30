@@ -44,9 +44,6 @@ The production quota will fail because you can only enforce rules that people ag
 * Houman B. Shadab
 * vitalik buterin
 
-categories: ['conference']
-------
-
 Good afternoon.  Today I’m going to speak to you about my recent paper that shows how “a transaction fee market exists without a block size limit.” 
 
 There are a few provisos to this claim: 

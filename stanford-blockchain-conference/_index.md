@@ -1,5 +1,5 @@
 ---
-title: Stanford Blockchain Conference
+title: Stanford Blockchain
 ---
 
 {{< childpages >}}

@@ -125,8 +125,6 @@ DECO is a privacy-preserving oracle protocol that allows users to prove statemen
 
 <https://deco.works/>
 
-categories: ['conference']
-tags: ['privacy']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

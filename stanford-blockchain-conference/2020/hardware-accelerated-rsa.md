@@ -85,8 +85,6 @@ We looked at the VDF evaluator for a while. We  built an implementation of VDF-a
 
 
 
-categories: ['conference']
-tags: ['zero-knowledge', 'scalability']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

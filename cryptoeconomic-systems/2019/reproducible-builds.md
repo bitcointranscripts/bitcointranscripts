@@ -2,6 +2,7 @@
 title: Reproducible Builds
 transcript_by: Bryan Bishop
 categories: ['conference']
+tag: ['build systems']
 ---
 
 Reproducible builds, binaries and trust

@@ -10,9 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 Upgrading capital markets for digital asset trading
 
 Brian Kelly - Moderator

@@ -1,6 +1,6 @@
 ---
 title: Kalle Rosenbaum Grokking Bitcoin (2020-04-29)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 ---
 

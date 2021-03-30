@@ -129,10 +129,6 @@ Q: But the delegator and validator enter outside of the chain agreement, about h
 
 A: Yeah, I guess the difference is that on-chain contracts can be enforced by consensus. In newer staking networks, the staking primitive is represented as a smart contract itself. The consensus mechanism is upgradeable in the sense that the contract can be upgraded. The addres can point to another contract that points to another contract that replicates interest rate models.
 
-categories: ['workshop']
-tags: ['attacks']
-----
-
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 
 

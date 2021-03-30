@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar Payjoins (2020-05-05)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['privacy']
 ---

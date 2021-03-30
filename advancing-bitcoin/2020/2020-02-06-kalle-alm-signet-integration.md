@@ -1,7 +1,7 @@
 ---
 title: Kalle Alm Signet Integration (2020-02-06)
 transcript_by: Bryan Bishop
-tags: ['ux']
+tags: ['taproot']
 ---
 
 Name: Karl-Johan Alm

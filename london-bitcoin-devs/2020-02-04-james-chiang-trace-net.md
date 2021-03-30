@@ -1,6 +1,6 @@
 ---
 title: James Chiang Trace Net (2020-02-04)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 ---
 

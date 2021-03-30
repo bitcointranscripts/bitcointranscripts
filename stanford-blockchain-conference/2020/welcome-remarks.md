@@ -46,7 +46,6 @@ We will run from 9-5 the program will run 9-5. Lunch will be at 1230 served outs
 
 Overflow setaing with tables and power is located on the other side of the conference building. No smoking within 25 feet of the building. Hand sanitizer dispensers are provided throughout the conference venue. We put hand sanitizers around the whole room so that people can use them at their pleasure.
 
-categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

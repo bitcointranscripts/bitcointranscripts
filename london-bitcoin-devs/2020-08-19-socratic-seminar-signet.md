@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar Signet (2020-08-19)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['taproot', 'schnorr']
 ---

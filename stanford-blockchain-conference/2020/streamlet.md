@@ -103,9 +103,6 @@ If and only if it extends the longest chain.
 
 
 
-
-categories: ['conference']
-tags: ['consensus']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

@@ -1,5 +1,6 @@
 ---
-title: Andrew Poelstra Tftc (2019-06-18)
+title: Andrew Poelstra TFTC (2019-06-18)
+speaker: Andrew Poelstra
 transcript_by: Bryan Bishop
 categories: ['podcast']
 ---

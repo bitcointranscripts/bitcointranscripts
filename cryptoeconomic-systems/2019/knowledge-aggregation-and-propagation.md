@@ -29,8 +29,6 @@ your own. You don't need to be on the manuscript treadmill and go to a
 lab to do that work.
 
 Transcripts
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
 -----------
 
 All conferences should have them! This is a great way to respect your
@@ -64,9 +62,7 @@ post them. It’s fun to do. (hi Jim Carrey!) I use markdown, git, and
 Ikiwiki.
 
 Bookmarks, discovery, stats
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
----------------------------
+----------------
 
 I also do bookmarking from the commandline: using jotmuch/buku.
 
@@ -80,9 +76,7 @@ questions like “have any bitcoin devs considered how the fee market
 would work without a subsidy?” the answer is “yes”.
 
 How can we get more scribes?
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
-----------------------------
+-----------------
 
 I can’t go to all confs. Other people should do this; help fund people
 other than me to go to confs and type things (or commercial / court
@@ -92,9 +86,7 @@ Turns out that court stenos make a lot of money - similar to software
 developers (easily 200k/y).
 
 Open research questions
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
------------------------
+------------
 
 What about **machine learning for speech recognition**? First approach
 had a 20% error rate w/ word recognition. Mozilla later redid the same
@@ -112,9 +104,7 @@ attend the conf submit something relevant.
 Small improvements have large effects.
 
 Bridges/resources for academia
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
-------------------------------
+-------------------
 
 bitcoin-dev, IRC logs (bitcoin-wizards, bitcoin-core-dev), and
 bitcointalk.org
@@ -141,9 +131,7 @@ Use jotmuch/buku — back up your data! About 8 yrs ago I lost all my
 marks in a tragic boating accident.
 
 Alternatives to transcripts
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
----------------------------
+----------------
 
 **(Speculative) Meetlogs**— a homebrew crm, record all conversations,
 track who people are talking to and about what, trace the origin of
@@ -154,9 +142,7 @@ knowledge goes away. Track the sharding factor for ideas people care
 about.
 
 Alternatives to academia
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
-------------------------
+-------------
 
 Academia is broken. Publishing in particular. What to do?
 
@@ -177,9 +163,7 @@ should have copies but they all seem to have sold out to OCLC. I also
 have a rant against libraries, obviously!
 
 Increase connection from academics to bitcoin devs
-categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
---------------------------------------------------
+-----------------
 
 Old concepts posted on forums and lists only sometimes get cited; is
 often folklore but still a valuable source of knowledge.

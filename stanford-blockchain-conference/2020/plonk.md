@@ -79,7 +79,6 @@ I want to talk one minute about more recent stuff. Really, we don't need to thin
 I'll end by saying one more thing. This permutation check was a global check, but you can think of it as a randomized local constraint. So the verifier chose some random gomma, and then the prover committed to z, and what we checked on z was a local thing.... so it was a local randomized constraint allows you to do a global check, so now we're looking into what we can do with randomized constraints.
 
 
-categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

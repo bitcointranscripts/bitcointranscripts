@@ -107,11 +107,6 @@ The branch-and-prune approach to state management allows high performance and st
 
 Arbitrum Rollup is a commercial product. We have plugins for the standard front-end system so you can port existing applications to run in L2 and get those benefits. We have easy tooling for launching your dApp. This is the first roll-up for general contracts to be working on testnet. Also, we're hiring. Thank you.
 
-
-categories: ['conference']
-tags: ['smart contracts', 'layer 2']
-----
-
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 
 <i>Disclaimer</i>: These are unpaid transcriptions, performed in real-time and in-person during the actual source presentation. Due to personal time constraints they are usually not reviewed against the source material once published. Errors are possible. If the original author/speaker or anyone else finds errors of substance, please email me at kanzure@gmail.com for corrections or contribute online via github/git. I sometimes add annotations to the transcription text. These will always be denoted by a standard editor's note in parenthesis brackets ((like this)), or in a numbered footnote. I welcome feedback and discussion of these as well.

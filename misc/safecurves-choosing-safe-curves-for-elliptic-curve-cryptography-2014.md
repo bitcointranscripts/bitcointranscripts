@@ -1,5 +1,5 @@
 ---
-title: Safecurves Choosing Safe Curves For Elliptic Curve Cryptography 2014
+title: Safecurves - Choosing Safe Curves For Elliptic Curve Cryptography (2014)
 transcript_by: Bryan Bishop
 tags: ['security', 'cryptography']
 ---
@@ -28,9 +28,6 @@ Unfortunately, there is a gap between ECDLP difficulty and ECC security. None of
 These problems are exploitable by real attackers, taking advantage of the gaps between ECDLP and real-world ECC. Secure implementations of the standard curves are theoretically possible but very hard.
 
 Most of these attacks would have been ruled out by better choices of curves that allow simple implementations to be secure implementations. This is the primary motivation for SafeCurves <https://safecurves.cr.yp.to/> ... The SafeCurves criteria are designed to ensure ECC security, not just ECDLP security.
-
-tags: ['security', 'cryptography']
-----
 
 ... their new mechanism for choosing safe elliptic curve cryptographic curves. Thank you very much.
 

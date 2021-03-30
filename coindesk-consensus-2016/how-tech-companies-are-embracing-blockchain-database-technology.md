@@ -10,9 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-----
-
 How tech companies are embracing blockchain database technology
 
 Martha Bennett, Forrester - Moderator

@@ -93,10 +93,6 @@ Q: Is there any way to update the CRS?
 
 A: ...
 
-categories: ['conference']
-tags: ['zero-knowledge', 'scalability']
-----
-
 <https://github.com/scipr-lab/libsnark>
 
 <http://libsnark.org/help>

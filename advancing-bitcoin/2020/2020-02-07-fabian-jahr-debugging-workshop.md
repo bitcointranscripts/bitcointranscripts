@@ -1,6 +1,6 @@
 ---
 title: Fabian Jahr Debugging Workshop (2020-02-07)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 ---
 
 Name: Fabian Jahr
@@ -18,8 +18,6 @@ Fabian presentation at Bitcoin Edge Dev++ 2019: https://diyhpl.us/wiki/transcrip
 Debugging Bitcoin Core doc: https://github.com/fjahr/debugging_bitcoin
 
 Debugging Bitcoin Core Workshop: https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386
-
-Transcript completed by: Michael Folkson
 
 # Introduction
 

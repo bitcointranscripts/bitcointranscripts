@@ -1,5 +1,5 @@
 ---
-title: John Light Bitcoin Full Nodes (2018-07-23)
+title: John Light - Bitcoin Full Nodes (2018-07-23)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['forks', 'hard fork', 'soft fork']

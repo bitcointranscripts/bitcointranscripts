@@ -2,7 +2,7 @@
 title: Jonas Schenlli Bip150 Bip151 (2017-09-04)
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['p2p', 'bitcoin core']
+tags: ['P2P', 'bitcoin core']
 ---
 
 Jonas Schnelli

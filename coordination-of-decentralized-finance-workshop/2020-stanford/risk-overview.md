@@ -94,9 +94,6 @@ A: Good question. I know these conversations are happening in subcommunities. Th
 
 So I suggest long-term stability of decentralized system has two aspects: economic stability, and the other is technological stability. So let's divide the two groups that way. So one will talk about economic stability, and the other will talk about technological stability.
 
-categories: ['workshop']
-----
-
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 
 

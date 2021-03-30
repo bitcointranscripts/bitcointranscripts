@@ -1,5 +1,5 @@
 ---
-title: Cftc Bitcoin
+title: CFTC Bitcoin
 transcript_by: Bryan Bishop
 ---
 

@@ -93,8 +93,6 @@ The big lesson here is that anonymity is really, really hard. To get good anonym
 
 Another lesson we learned over the years while working on anonymous systems is that starting from a design that doesn't care about anonymity and privacy, and trying to add anonymity and privacy on top of it, which is kind of what happened with zcash which was originally forked from the original bitcoin implementation, is just a bad idea because you're always going to be plugging holes in a leaking ship and there will always be issues that the original design didn't account for. On that note, it's nice to see that zcash is working on a new grounds up implementation of their client with more careful thought being put into design.
 
-categories: ['conference']
-tags: ['attacks']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

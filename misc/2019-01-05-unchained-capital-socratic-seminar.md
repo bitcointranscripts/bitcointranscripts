@@ -1,6 +1,7 @@
 ---
 title: Unchained Capital Socratic Seminar (2019-01-05)
 transcript_by: Bryan Bishop
+category: ['meetup']
 tags: ['research', 'taproot']
 ---
 

@@ -2,7 +2,7 @@
 title: Ethcore
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['forks', 'p2p']
+tags: ['forks', 'P2P', 'ethereum']
 ---
 
 ethcore

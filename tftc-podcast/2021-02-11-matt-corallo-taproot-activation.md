@@ -1,7 +1,9 @@
 ---
-title: Matt Corallo Taproot Activation (2021-02-11)
+title: Matt Corallo - UASFs, BIP 148, BIP 91 and Taproot Activation (2021-02-11)
 transcript_by: Michael Folkson
+speaker: Matt Corallo
 categories: ['podcast']
+tag: ['taproot']
 ---
 
 Name: Matt Corallo

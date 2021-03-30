@@ -166,10 +166,5 @@ But as we showed we can build on existing blocksize proposals to get some of the
 * allowing to trade-off various block aspects
 * and setting the right incentives.
 
-
-categories: ['conference']
-tags: ['research', 'scalability']
-----
-
 see also <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011662.html>
 

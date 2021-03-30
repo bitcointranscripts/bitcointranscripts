@@ -57,9 +57,5 @@ Reputation systems
 
 Decentralized anonymous proof of uniqueness of identity. And proof-of-personhood.
 
-categories: ['conference']
-tags: ['security', 'multisig']
-----
-
 This doesn't have to be the final list. If someone wants to add something, but they needed someone to join as a coauthor but didn't know who to ask. Does everyone feel like one of these topics you might be able to work on?
 

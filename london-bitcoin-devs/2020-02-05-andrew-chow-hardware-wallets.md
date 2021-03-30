@@ -1,6 +1,6 @@
 ---
 title: Andrew Chow Hardware Wallets (2020-02-05)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'PSBT', 'wallet']
 ---

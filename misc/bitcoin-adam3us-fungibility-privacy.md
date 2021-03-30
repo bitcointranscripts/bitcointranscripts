@@ -1,6 +1,7 @@
 ---
-title: Bitcoin Adam3Us Fungibility Privacy
+title: Adam Back - Fungibility Privacy
 transcript_by: Bryan Bishop
+speaker: Adam Back
 tags: ['privacy', 'fungibility']
 ---
 
@@ -188,8 +189,5 @@ A: It tends to not be very effective. There was some large theft, and the guy wh
 Q: One certain address and everyone uses the same address and the same ... it would be .. just going through that address, and then that would solve it?
 
 A: Maybe. There has been some move to use coinjoin, I think blockchain.info has implemented this. But apparently it's somewhat slow because you have to wait for transactions, perhaps that's because not many people are using it.
-
-tags: ['privacy', 'fungibility']
-----
 
 <https://www.reddit.com/r/Bitcoin/comments/1qomqt/what_a_landmark_legal_case_from_mid1700s_scotland/>

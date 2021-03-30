@@ -2,6 +2,7 @@
 title: Taproot Schnorr Soft Fork
 transcript_by: Bryan Bishop
 categories: ['conference']
+tag: ['schnorr', 'taproot', 'soft fork', 'forks']
 ---
 
 Taproot, Schnorr, and the next soft-fork

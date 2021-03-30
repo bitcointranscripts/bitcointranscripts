@@ -121,8 +121,6 @@ PoS networks really look like central banks because they have to adjust their mo
 
 I'd like to improve the simulation to reflect more realistic conditions ,add in more models for transaction fees showing there's burstyness you need, and to get it to account for this. Add in other forms of leverage. In the bzx attack, there were a lot of tokens involved. One question is that if you have a PoS asset in a wrapped token and a significant supply is wrapped, can someone execute an attack? Also, we should add in the effects from sharding which is probably complicated.
 
-categories: ['conference']
-tags: ['attacks', 'proof-of-work']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

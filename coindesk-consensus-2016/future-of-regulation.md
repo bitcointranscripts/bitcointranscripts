@@ -11,10 +11,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-tags: ['regulation']
-----
-
 The future of regulation
 
 Jerry Brito, Coin Center

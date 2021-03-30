@@ -11,10 +11,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-categories: ['conference']
-tags: ['mining', 'proof-of-work']
-----
-
 Marco Santori
 
 Delaware initiative

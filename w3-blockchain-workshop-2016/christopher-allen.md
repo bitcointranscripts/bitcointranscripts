@@ -8,19 +8,14 @@ Christopher Allen
 
 Whta makes for a great wonderful magical calliberation? Collaboration? Grab one card randomly. Keep it with you. What is this particular pattern of greatness? See if you can't embody it or can't recommend it ofr find it in the next two days. I would like each of you to tell a story about a collaboration that was really meaningful to you. It could be a business effort, it could be another team in your company, or it could be a personal collaboration that you found really powerful. Please share three minutes about a story of collaboration that you found very powerful. The time is now 9:23. Let's do this for 15 minutes. It's a 5 person table, then 3 minutes each.
 
-categories: ['workshop']
------
+..
 
 Well, maybe the best way to collaborate with people is to not even see them.  You have to let people go sometimes. You can't force collaboration. You can't force people to work on things they're not interested in. Even assholes have rights. People with a common goal. Smear campaigns can be much more lucrative for journalists to write about.
 
-categories: ['workshop']
-----
-
+..
 Someone should be a scribe at each table. Someone should be a facilitator at each table. Someone needs to make sure the table is going to be on time. Your job is to put down on that sheet of paper, three bits of secret sauce, something that was just marvelous and wonderful and why it is was wonderful and what made it work that you think other people should know about. Just put the three of them on a sheet of paper. They should be in the form of a story that tells a lesson. My group did xyz and it was failing, and then we did this magic trick and then boom it worked. (That seems like an unreasonable requirement.) Something-- secret sauce. At my table, each story had something like "oh this was something we did that made this marvelous". We want each table to find three secret sauces. One story from the whole table. My card is "inquiry and synthesis". It has this spiral on the top of it. The idea is that you have this, you told some stories, you have some common things, you heard some different things, the table should decide what are the three most important things? The last thing you will do in the next 15 minutes is pick just one to present to everyone. You will pick one of those three and say this is what I think everyone in this room needs to hear. You will have 2 to 2.5 minutes to share that one one wonderful piece of trick or secret sauce of collaboration to everybody in the orom. Each table has to decide what is the story you want to present to everyone.
 
-categories: ['workshop']
-----
-
+..
 Find common ground. Have a vision that unites people. Let people brexit. There's nothing wrong with rational self-interest and selfishness. Aligned rational self-interest. The secret sauce is how do you mobilize a disparate group with a common goal?
 
 Some parts of XBRL are really well-known and popular because there are central groups that devote a lot of money who come together. My particular part of XBRL is something that has far more wide-spread huge potential value but it's spread over many more people. So the individual benefits of supporting that are, much less. In your case, the people who want to go after your friend are united in one fervert? The people who could support it, there's not enough uniting them in goal and they don't have enough individual interest to band together.
@@ -37,8 +32,7 @@ Aligned rational self-interest, common ground and common goals, and know when to
 
 You should put your table number on the right top-hand side of the page. Just so we know where each of the pages should go. Everyone stand up, stretch, wiggle your shoulders. We are on a tight time schedule. We have a lot to do today. Table 1, are you ready? Why don't you start?
 
-categories: ['workshop']
----------------------------
+...
 
 # Table 1: Summarization
 

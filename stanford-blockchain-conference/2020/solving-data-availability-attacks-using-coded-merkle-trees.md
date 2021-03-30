@@ -140,7 +140,6 @@ So we took data availability article, plugged it back into our original scheme, 
 
 I'll go to the main result. After including these ideas, you get a new sharding proposal based on coded merkle tree, and it's able to handle a fully adaptive adversary and guarantee you that the throughput is scaling almost linearly while imposing very minimal storage and communication overhead. With that, I conclude my talk thank you.
 
-categories: ['conference']
 ----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.

@@ -2,7 +2,7 @@
 title: Measuring Network Maximum Sustained Transaction Throughput
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['p2p', 'miners', 'fees']
+tags: ['P2P', 'miners', 'fees']
 ---
 
 Measuring maximum sustained transaction throughput on a global network of Bitcoin nodes
@@ -51,9 +51,7 @@ In terms of memory and disk IO, one weakness of our experiment is that we are ru
 
 I thought it was interesting that the bottlenecks we found were not related to the protocol or the infrastructure but they were bottlenecks in the implementation, namely inefficiencies in the Satoshi codebase. My hunch is that we can achieve VISA-level on standard midgrade machine on a bunch of work done to make better software.
 
-categories: ['conference']
-tags: ['p2p', 'miners', 'fees']
-----
+[SNIP...]
 
 Andrew
 

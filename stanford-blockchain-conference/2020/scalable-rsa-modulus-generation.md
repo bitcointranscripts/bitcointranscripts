@@ -15,10 +15,6 @@ Megan Chen
 
 Groups of unknown order are interesting cryptographic primitives. You can commit to integers. If you commit to a very large integer, you have to do a lot of work to do the commitment so you have a sequentiality assumption useful for VDFs. But then you have this compression property where if you take a large integer with a lot of information in it, you can compress it down to something small. It also has a nice additive homomorphic commitment property where the commitment of the sum is the sum of the commitments, and you can do accumulators and SNARKs with this property. We're having this little mini revolution in cryptography with this blossoming of research around groups of unknown order. There's this key idea like "proofs of exponentiation" which started with verifiable delay functions but now they're used with accumulators, vector commitments, polynomial commitments, SNARKs, etc. We're going to see a talk about a trusted setup for MPC which is super-exciting for this space because it's breaking a number of records.
 
-categories: ['conference']
-tags: ['research', 'cryptography', 'accumulators']
-----
-
 Diogenes: Lightweight scalable ...
 
 Thank you everyone for waking up early. I'm a researcher at Lehero. I'll be talking about diogenes, our protocol for scalable RSA modulus generation. This is joint work with my colleagues. Okay, great.
@@ -128,10 +124,6 @@ We got security with abort, but we didn't get identifiable abort. We would like 
 # Conclusion
 
 We're on track, but we had to increase our online communication per party to 200 MB. But otherwise this has been a really exciting project, thanks everyone.
-
-categories: ['conference']
-tags: ['research', 'cryptography', 'accumulators']
-----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

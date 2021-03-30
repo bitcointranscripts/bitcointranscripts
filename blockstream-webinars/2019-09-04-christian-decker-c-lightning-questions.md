@@ -1,6 +1,7 @@
 ---
-title: Christian Decker C Lightning Questions (2019-09-04)
+title: Christian Decker - C-Lightning Questions (2019-09-04)
 transcript_by: Bryan Bishop
+speaker: Christian Decker
 tags: ['lightning', 'lnd', 'c-lightning']
 ---
 
