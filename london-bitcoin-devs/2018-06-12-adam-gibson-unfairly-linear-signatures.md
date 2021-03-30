@@ -1,6 +1,6 @@
 ---
 title: Adam Gibson Unfairly Linear Signatures (2018-06-12)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['schnorr']
 ---

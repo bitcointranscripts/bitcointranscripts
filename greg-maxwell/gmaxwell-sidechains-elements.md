@@ -1,6 +1,6 @@
 ---
 title: Gmaxwell Sidechains Elements
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 

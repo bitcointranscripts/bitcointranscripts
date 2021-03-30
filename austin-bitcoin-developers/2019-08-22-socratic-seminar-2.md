@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar 2 (2019-08-22)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'hardware wallet', 'multisig', 'wallet']
 ---

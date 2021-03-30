@@ -1,6 +1,6 @@
 ---
 title: Attacking Evm Resource Metering
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

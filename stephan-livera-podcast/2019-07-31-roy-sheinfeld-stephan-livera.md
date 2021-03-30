@@ -1,6 +1,6 @@
 ---
 title: Roy Sheinfeld Stephan Livera (2019-07-31)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

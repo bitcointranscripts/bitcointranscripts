@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell Taproot Pace
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['consensus', 'taproot', 'ux', 'wallet']
 ---
 

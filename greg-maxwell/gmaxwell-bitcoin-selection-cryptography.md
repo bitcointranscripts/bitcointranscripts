@@ -1,6 +1,6 @@
 ---
 title: Gmaxwell Bitcoin Selection Cryptography
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Greg Maxwell (gmaxwell)

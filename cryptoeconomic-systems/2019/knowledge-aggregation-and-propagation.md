@@ -1,6 +1,6 @@
 ---
 title: Knowledge Aggregation And Propagation
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['academia', 'research', 'bitcoin core']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Failures Of Secret Key Cryptography
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['attacks', 'cryptography']
 ---
 

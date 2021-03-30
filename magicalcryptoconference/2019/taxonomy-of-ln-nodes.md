@@ -1,6 +1,6 @@
 ---
 title: Taxonomy Of Ln Nodes
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
 ---

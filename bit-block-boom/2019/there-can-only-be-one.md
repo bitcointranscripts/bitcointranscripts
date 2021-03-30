@@ -1,6 +1,6 @@
 ---
 title: There Can Only Be One
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'proof-of-work', 'altcoin']
 ---

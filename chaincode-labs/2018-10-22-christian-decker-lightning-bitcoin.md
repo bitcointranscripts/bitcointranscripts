@@ -1,6 +1,6 @@
 ---
 title: Lightning ≈ Bitcoin
-TranscriptBy: Anthony Ronning
+transcript_by: Anthony Ronning
 tags: ['lightning']
 ---
 

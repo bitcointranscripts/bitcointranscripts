@@ -1,6 +1,6 @@
 ---
 title: John Newbery Wallet Development (2019-06-19)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 tags: ['consensus', 'wallet']
 ---
 

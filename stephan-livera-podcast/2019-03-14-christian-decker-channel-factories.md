@@ -1,6 +1,6 @@
 ---
 title: Christian Decker Channel Factories (2019-03-14)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 tags: ['topology', 'fees']
 ---

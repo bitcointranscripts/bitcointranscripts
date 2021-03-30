@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Core Gui (2020-08-20)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['bitcoin-design']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Day 2 Groups
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['workshop']
 ---
 

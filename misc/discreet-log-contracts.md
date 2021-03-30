@@ -1,6 +1,6 @@
 ---
 title: Discreet Log Contracts
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Discreet log contracts

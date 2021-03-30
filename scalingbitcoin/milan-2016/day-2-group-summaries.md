@@ -1,6 +1,6 @@
 ---
 title: Day 2 Group Summaries
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'research', 'academia']
 ---

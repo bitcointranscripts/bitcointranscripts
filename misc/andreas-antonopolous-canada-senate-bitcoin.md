@@ -1,6 +1,6 @@
 ---
 title: Andreas Antonopolous Canada Senate Bitcoin
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['security']
 ---
 

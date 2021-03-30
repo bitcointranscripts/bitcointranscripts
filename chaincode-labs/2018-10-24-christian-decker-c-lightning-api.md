@@ -1,6 +1,6 @@
 ---
 title: Christian Decker C Lightning Api (2018-10-24)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['lightning', 'c-lightning']
 ---
 

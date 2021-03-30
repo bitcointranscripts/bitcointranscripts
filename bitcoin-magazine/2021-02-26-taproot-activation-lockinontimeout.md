@@ -1,6 +1,6 @@
 ---
 title: Taproot activation and LOT=true vs LOT=false
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'ux']
 ---

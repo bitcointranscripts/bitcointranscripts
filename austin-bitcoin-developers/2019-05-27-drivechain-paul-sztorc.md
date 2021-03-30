@@ -1,6 +1,6 @@
 ---
 title: Drivechain Paul Sztorc (2019-05-27)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'lightning', 'layer 2']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Andreas Antonopoulos Bitcoin Scripting (2017-04-03)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

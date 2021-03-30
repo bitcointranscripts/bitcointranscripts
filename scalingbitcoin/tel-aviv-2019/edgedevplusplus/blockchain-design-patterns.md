@@ -1,6 +1,6 @@
 ---
 title: Blockchain Design Patterns
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['taproot', 'mempool']
 ---

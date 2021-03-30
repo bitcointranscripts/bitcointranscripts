@@ -1,6 +1,6 @@
 ---
 title: Laolu Osuntokun Stephan Livera (2018-12-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

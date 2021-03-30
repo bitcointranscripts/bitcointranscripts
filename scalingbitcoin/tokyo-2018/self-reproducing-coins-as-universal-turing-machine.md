@@ -1,6 +1,6 @@
 ---
 title: Self Reproducing Coins As Universal Turing Machine
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'smart contracts', 'scalability']
 ---

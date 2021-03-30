@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Core Functional Test Framework
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

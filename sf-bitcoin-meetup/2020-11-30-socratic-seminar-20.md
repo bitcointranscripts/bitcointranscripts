@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar 20 (2020-11-30)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

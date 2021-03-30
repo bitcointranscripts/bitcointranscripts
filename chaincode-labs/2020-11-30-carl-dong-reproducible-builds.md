@@ -1,6 +1,6 @@
 ---
 title: Carl Dong Reproducible Builds (2020-11-30)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: Carl Dong

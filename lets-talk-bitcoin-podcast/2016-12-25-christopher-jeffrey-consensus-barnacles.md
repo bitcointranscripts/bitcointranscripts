@@ -1,6 +1,6 @@
 ---
 title: Christopher Jeffrey Consensus Barnacles (2016-12-25)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['consensus']
 ---

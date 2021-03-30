@@ -1,6 +1,6 @@
 ---
 title: Lightning - The Transfer Layer
-TranscriptBy: Will Clark
+transcript_by: Will Clark
 tags: ['lightning']
 ---
 

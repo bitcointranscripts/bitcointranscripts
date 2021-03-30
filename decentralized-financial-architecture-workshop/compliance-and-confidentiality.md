@@ -1,6 +1,6 @@
 ---
 title: Compliance And Confidentiality
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['regulation']
 ---

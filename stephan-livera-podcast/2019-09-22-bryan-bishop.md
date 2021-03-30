@@ -1,6 +1,6 @@
 ---
 title: Bryan Bishop (2019-09-22)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

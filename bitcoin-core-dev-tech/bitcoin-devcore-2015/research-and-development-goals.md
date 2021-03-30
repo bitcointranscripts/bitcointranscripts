@@ -1,6 +1,6 @@
 ---
 title: Research And Development Goals
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['consensus']
 ---

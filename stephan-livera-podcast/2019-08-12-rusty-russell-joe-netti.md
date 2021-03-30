@@ -1,6 +1,6 @@
 ---
 title: Rusty Russell Joe Netti (2019-08-12)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

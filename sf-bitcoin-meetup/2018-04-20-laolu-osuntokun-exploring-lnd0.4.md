@@ -1,6 +1,6 @@
 ---
 title: Laolu Osuntokun Exploring Lnd0.4 (2018-04-20)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['lnd']
 ---

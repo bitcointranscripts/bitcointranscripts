@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell Useful Proof Of Work
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: Greg Maxwell

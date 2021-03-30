@@ -1,6 +1,6 @@
 ---
 title: Proof Of Verification For Proof Of Work
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['validation']
 ---

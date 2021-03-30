@@ -1,6 +1,6 @@
 ---
 title: Jeremy Rubin Ctv (2020-02-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: Jeremy Rubin

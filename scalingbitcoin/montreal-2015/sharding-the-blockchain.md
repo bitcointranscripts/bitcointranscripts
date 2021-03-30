@@ -1,6 +1,6 @@
 ---
 title: Sharding The Blockchain
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'proof-of-work', 'validation']
 ---

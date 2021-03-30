@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Financing And Trading
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

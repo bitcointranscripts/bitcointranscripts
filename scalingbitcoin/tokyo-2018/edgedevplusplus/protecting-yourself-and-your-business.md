@@ -1,6 +1,6 @@
 ---
 title: Protecting Yourself And Your Business
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'ux']
 ---

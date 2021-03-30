@@ -1,6 +1,6 @@
 ---
 title: Signature Aggregation (2017-09-06)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['validation', 'multisig']
 ---

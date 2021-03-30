@@ -1,6 +1,6 @@
 ---
 title: Measuring Network Maximum Sustained Transaction Throughput
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['p2p', 'miners', 'fees']
 ---

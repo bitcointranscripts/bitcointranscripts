@@ -1,6 +1,6 @@
 ---
 title: Gmaxwell 2017 08 28 Deep Dive Bitcoin Core V0.15
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 A deep dive into Bitcoin Core v0.15

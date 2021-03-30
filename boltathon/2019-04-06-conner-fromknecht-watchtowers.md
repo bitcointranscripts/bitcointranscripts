@@ -1,6 +1,6 @@
 ---
 title: Conner Fromknecht Watchtowers (2019-04-06)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'lightning', 'lnd']
 ---

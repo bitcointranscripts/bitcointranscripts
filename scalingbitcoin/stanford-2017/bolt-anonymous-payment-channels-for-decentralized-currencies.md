@@ -1,6 +1,6 @@
 ---
 title: Bolt Anonymous Payment Channels For Decentralized Currencies
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
 ---

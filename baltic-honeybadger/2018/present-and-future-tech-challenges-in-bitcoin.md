@@ -1,6 +1,6 @@
 ---
 title: Present And Future Tech Challenges In Bitcoin
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts']
 ---

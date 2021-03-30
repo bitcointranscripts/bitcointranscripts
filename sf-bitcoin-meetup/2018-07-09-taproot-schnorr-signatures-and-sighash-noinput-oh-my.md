@@ -1,6 +1,6 @@
 ---
 title: Taproot Schnorr Signatures And Sighash Noinput Oh My (2018-07-09)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

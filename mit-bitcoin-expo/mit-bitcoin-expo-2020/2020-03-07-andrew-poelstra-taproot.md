@@ -1,6 +1,6 @@
 ---
 title: Andrew Poelstra Taproot (2020-03-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

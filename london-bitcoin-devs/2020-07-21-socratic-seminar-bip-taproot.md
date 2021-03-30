@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar Bip Taproot (2020-07-21)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['schnorr']
 ---

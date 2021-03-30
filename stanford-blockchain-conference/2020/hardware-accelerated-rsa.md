@@ -1,6 +1,6 @@
 ---
 title: Hardware Accelerated Rsa
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge', 'scalability']
 ---

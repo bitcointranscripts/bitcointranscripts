@@ -1,6 +1,6 @@
 ---
 title: Mcelrath On Chain Defense In Depth (2019-02-09)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['custody', 'wallet']
 ---
 

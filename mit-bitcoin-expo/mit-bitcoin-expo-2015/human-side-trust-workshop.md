@@ -1,6 +1,6 @@
 ---
 title: Human Side Trust Workshop
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

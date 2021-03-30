@@ -1,6 +1,6 @@
 ---
 title: Russell Oconnor Simplicity (2018-01-25)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'smart contracts']
 ---

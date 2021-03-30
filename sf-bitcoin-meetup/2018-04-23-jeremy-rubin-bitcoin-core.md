@@ -1,6 +1,6 @@
 ---
 title: Jeremy Rubin Bitcoin Core (2018-04-23)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

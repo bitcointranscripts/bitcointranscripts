@@ -1,6 +1,6 @@
 ---
 title: History Of Lattice Based Cryptography
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['cryptography']
 ---

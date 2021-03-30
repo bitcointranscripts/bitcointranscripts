@@ -1,6 +1,6 @@
 ---
 title: Priorities (2018-03-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 ---
 

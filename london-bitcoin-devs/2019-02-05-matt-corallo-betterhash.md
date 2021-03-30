@@ -1,6 +1,6 @@
 ---
 title: Matt Corallo Betterhash (2019-02-05)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['mining', 'ux']
 ---

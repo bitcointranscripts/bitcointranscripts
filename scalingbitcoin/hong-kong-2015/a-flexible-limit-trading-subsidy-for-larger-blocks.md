@@ -1,6 +1,6 @@
 ---
 title: A Flexible Limit Trading Subsidy For Larger Blocks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners', 'fees']
 ---

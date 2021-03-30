@@ -1,6 +1,6 @@
 ---
 title: Christopher Jeffrey Bcoin (2016-09-28)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']
 ---

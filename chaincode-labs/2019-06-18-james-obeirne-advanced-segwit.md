@@ -1,6 +1,6 @@
 ---
 title: James O'Beirne Advanced Segwit (2019-06-18)
-TranscriptBy: Caralie Chrisco
+transcript_by: Caralie Chrisco
 tags: ['segwit']
 ---
 

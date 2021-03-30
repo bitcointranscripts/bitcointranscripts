@@ -1,6 +1,6 @@
 ---
 title: Blockchains For Multiplayer Games
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

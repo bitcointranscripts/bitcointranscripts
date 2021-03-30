@@ -1,6 +1,6 @@
 ---
 title: Mimblewimble (2016-11-21)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['privacy', 'fungibility', 'scalability']
 ---

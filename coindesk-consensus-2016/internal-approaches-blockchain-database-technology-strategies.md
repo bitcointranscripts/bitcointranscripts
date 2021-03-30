@@ -1,6 +1,6 @@
 ---
 title: Internal Approaches Blockchain Database Technology Strategies
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

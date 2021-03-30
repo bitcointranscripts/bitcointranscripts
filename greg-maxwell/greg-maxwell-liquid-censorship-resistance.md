@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell Liquid Censorship Resistance
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: Greg Maxwell

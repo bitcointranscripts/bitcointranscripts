@@ -1,6 +1,6 @@
 ---
 title: Pieter Wuille (2020-01-28)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Chaincode Labs podcast with Pieter Wuille

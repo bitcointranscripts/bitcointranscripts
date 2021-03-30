@@ -1,6 +1,6 @@
 ---
 title: Noinput Etc (2019-06-06)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 ---
 

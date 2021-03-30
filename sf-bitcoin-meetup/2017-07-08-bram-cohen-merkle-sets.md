@@ -1,6 +1,6 @@
 ---
 title: Bram Cohen Merkle Sets (2017-07-08)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

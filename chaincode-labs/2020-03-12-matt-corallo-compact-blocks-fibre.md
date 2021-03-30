@@ -1,6 +1,6 @@
 ---
 title: Matt Corallo Compact Blocks Fibre (2020-03-12)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 tags: ['mining']
 ---
 

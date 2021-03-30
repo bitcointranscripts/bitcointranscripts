@@ -1,6 +1,6 @@
 ---
 title: Building Mimblewimble And Grin
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'scalability']
 ---

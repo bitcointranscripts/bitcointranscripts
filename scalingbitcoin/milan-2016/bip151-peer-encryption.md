@@ -1,6 +1,6 @@
 ---
 title: Bip151 Peer Encryption
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['p2p', 'wallet']
 ---

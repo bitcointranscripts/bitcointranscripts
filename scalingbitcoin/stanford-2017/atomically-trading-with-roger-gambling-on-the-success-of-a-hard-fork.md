@@ -1,6 +1,6 @@
 ---
 title: Atomically Trading With Roger Gambling On The Success Of A Hard Fork
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Andreas Antonopoulos Initial Blockchain Download (2018-10-23)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['lectures']
 tags: ['consensus']
 ---

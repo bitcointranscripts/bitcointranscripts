@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar Vaults (2020-05-19)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

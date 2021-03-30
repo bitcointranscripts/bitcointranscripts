@@ -1,6 +1,6 @@
 ---
 title: Kalle Alm Signet Integration (2020-02-06)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['ux']
 ---
 

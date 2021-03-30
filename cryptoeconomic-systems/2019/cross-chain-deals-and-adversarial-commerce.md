@@ -1,6 +1,6 @@
 ---
 title: Cross Chain Deals And Adversarial Commerce
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

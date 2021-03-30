@@ -1,6 +1,6 @@
 ---
 title: Christian Decker C Lightning Questions (2019-09-04)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['lightning', 'lnd', 'c-lightning']
 ---
 

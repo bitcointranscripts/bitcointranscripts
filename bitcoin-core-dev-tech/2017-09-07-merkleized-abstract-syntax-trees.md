@@ -1,6 +1,6 @@
 ---
 title: Merkleized Abstract Syntax Trees (2017-09-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['consensus', 'ux']
 ---

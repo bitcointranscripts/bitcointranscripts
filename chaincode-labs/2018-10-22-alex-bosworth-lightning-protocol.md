@@ -1,6 +1,6 @@
 ---
 title: Alex Bosworth Lightning Protocol (2018-10-22)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['lightning']
 ---
 

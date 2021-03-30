@@ -1,6 +1,6 @@
 ---
 title: Htlcs Considered Harmful
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
 ---

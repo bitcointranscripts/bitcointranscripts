@@ -1,6 +1,6 @@
 ---
 title: Gmaxwell 2015 11 09 Mining And Block Size Etc
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 

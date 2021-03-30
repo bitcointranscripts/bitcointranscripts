@@ -1,6 +1,6 @@
 ---
 title: Consensus Protocol Risks And Vulnerabilities
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['cryptography']
 ---

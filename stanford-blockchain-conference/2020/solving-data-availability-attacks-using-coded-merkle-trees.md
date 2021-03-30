@@ -1,6 +1,6 @@
 ---
 title: Solving Data Availability Attacks Using Coded Merkle Trees
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

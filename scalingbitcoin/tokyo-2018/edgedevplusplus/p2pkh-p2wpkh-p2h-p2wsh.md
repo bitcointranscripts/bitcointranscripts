@@ -1,6 +1,6 @@
 ---
 title: P2Pkh P2Wpkh P2H P2Wsh
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['p2pkh', 'p2p', 'p2sh']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Aj Towns Schnorr Taproot (2019-12-27)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

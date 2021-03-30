@@ -1,6 +1,6 @@
 ---
 title: James Obeirne (2019-04-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

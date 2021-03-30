@@ -1,6 +1,6 @@
 ---
 title: Matt Corallo Taproot Activation (2021-02-11)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

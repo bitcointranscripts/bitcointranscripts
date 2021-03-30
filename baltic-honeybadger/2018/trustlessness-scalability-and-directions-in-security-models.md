@@ -1,6 +1,6 @@
 ---
 title: Trustlessness Scalability And Directions In Security Models
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'scalability']
 ---

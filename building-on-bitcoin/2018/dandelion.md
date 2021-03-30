@@ -1,6 +1,6 @@
 ---
 title: Dandelion
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'p2p', 'miners']
 ---

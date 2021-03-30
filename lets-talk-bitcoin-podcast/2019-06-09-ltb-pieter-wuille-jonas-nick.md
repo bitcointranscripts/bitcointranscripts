@@ -1,6 +1,6 @@
 ---
 title: Ltb Pieter Wuille Jonas Nick (2019-06-09)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
 ---

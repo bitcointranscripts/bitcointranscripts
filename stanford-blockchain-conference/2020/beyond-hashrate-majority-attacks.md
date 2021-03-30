@@ -1,6 +1,6 @@
 ---
 title: Beyond Hashrate Majority Attacks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks']
 ---

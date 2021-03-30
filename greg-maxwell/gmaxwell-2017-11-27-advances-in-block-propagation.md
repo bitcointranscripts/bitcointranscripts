@@ -1,6 +1,6 @@
 ---
 title: Gmaxwell 2017 11 27 Advances In Block Propagation
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['mempool', 'segwit']
 ---
 

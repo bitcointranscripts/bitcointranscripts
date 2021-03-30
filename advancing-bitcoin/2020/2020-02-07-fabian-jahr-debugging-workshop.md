@@ -1,6 +1,6 @@
 ---
 title: Fabian Jahr Debugging Workshop (2020-02-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: Fabian Jahr

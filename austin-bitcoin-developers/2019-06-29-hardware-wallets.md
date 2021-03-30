@@ -1,6 +1,6 @@
 ---
 title: Hardware Wallets (2019-06-29)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['hardware wallet', 'wallet']
 ---

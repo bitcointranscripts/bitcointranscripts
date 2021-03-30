@@ -1,6 +1,6 @@
 ---
 title: History of the Lightning Network
-TranscriptBy: Caralie Chrisco
+transcript_by: Caralie Chrisco
 tags: ['lightning']
 ---
 

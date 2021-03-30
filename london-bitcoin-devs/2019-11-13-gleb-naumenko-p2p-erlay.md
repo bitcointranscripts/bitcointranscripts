@@ -1,6 +1,6 @@
 ---
 title: Gleb Naumenko P2P Erlay (2019-11-13)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'wallet']
 ---

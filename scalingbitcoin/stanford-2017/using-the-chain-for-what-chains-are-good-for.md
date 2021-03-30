@@ -1,6 +1,6 @@
 ---
 title: Using The Chain For What Chains Are Good For
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts']
 ---

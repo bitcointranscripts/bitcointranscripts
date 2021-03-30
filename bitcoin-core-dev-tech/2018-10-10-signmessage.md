@@ -1,6 +1,6 @@
 ---
 title: Signmessage (2018-10-10)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet']
 ---

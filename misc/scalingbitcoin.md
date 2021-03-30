@@ -1,6 +1,6 @@
 ---
 title: Scalingbitcoin
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 [[!map pages="transcripts/scalingbitcoin/* and ! transcripts/scalingbitcoin/*/*"]] 

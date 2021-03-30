@@ -1,6 +1,6 @@
 ---
 title: Crypto In Cryptocurrency
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'cryptography', 'zero-knowledge']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Jute Braiding
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'mining', 'altcoin']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Conner Fromknecht Stephan Livera (2019-06-24)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

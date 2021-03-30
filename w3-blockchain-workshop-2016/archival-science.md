@@ -1,6 +1,6 @@
 ---
 title: Archival Science
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['workshop']
 ---
 

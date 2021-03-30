@@ -1,6 +1,6 @@
 ---
 title: Zkvm
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts', 'zero-knowledge']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Comments And Observations About Timelocks Ron Rivest
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['timelocks']
 ---

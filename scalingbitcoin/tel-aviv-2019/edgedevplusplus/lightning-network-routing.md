@@ -1,6 +1,6 @@
 ---
 title: Lightning Network Routing
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['multisig', 'p2p', 'routing', 'fees']
 ---

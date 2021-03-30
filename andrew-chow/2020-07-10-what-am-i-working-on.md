@@ -1,6 +1,6 @@
 ---
 title: What Am I Working On (2020-07-10)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['wallet']
 ---
 

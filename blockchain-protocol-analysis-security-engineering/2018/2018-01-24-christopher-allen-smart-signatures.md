@@ -1,6 +1,6 @@
 ---
 title: Christopher Allen Smart Signatures (2018-01-24)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus']
 ---

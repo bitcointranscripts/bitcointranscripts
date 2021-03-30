@@ -1,6 +1,6 @@
 ---
 title: Proof Of Stake
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'proof-of-work', 'proof-of-stake']
 ---

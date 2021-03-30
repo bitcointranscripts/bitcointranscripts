@@ -1,6 +1,6 @@
 ---
 title: Smart Contract Bug Hunting
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
 ---

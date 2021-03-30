@@ -1,6 +1,6 @@
 ---
 title: John Newbery Contracts In Bitcoin (2020-04-08)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: John Newbery

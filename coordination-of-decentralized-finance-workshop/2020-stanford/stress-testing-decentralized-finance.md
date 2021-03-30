@@ -1,6 +1,6 @@
 ---
 title: Stress Testing Decentralized Finance
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['attacks']
 ---

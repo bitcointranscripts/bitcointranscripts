@@ -1,6 +1,6 @@
 ---
 title: Adam3Us Bitcoin Scaling Tradeoffs
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Bitcoin scaling tradeoffs with Adam Back (adam3us) at Paralelni Polis

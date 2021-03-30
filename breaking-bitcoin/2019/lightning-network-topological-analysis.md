@@ -1,6 +1,6 @@
 ---
 title: Lightning Network Topological Analysis
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'attacks', 'topology', 'lightning', 'layer 2']
 ---

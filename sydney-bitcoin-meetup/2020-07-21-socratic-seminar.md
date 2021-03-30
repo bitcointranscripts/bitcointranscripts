@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar (2020-07-21)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

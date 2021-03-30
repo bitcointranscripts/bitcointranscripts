@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell Bitcoin Core Testing
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Name: Greg Maxwell

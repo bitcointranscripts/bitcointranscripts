@@ -1,6 +1,6 @@
 ---
 title: Safecurves Choosing Safe Curves For Elliptic Curve Cryptography 2014
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['security', 'cryptography']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Laolu Conner Lnd (2018-12-14)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 tags: ['lightning']
 ---

@@ -1,6 +1,6 @@
 ---
 title: P2P with John Newbery
-TranscriptBy: Caralie Chrisco
+transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['p2p', 'mempool']
 ---

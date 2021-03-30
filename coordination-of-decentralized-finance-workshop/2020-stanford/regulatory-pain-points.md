@@ -1,6 +1,6 @@
 ---
 title: Regulatory Pain Points
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['research', 'regulation']
 ---

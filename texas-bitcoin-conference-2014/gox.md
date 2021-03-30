@@ -1,6 +1,6 @@
 ---
 title: Gox (2014)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
 

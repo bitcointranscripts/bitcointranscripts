@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Adam3Us Fungibility Privacy
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['privacy', 'fungibility']
 ---
 

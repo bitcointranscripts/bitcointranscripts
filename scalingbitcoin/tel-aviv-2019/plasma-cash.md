@@ -1,6 +1,6 @@
 ---
 title: Plasma Cash
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['covenants', 'lightning', 'sidechains', 'layer 2']
 ---

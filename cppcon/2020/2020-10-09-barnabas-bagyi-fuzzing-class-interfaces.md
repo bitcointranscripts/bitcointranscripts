@@ -1,6 +1,6 @@
 ---
 title: Barnabas Bagyi Fuzzing Class Interfaces (2020-10-09)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

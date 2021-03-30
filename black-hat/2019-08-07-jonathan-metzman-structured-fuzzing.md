@@ -1,6 +1,6 @@
 ---
 title: Jonathan Metzman Structured Fuzzing (2019-08-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

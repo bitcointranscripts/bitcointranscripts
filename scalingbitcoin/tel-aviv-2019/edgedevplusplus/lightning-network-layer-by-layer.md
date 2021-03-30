@@ -1,6 +1,6 @@
 ---
 title: Lightning Network Layer By Layer
-TranscriptBy: Caralie Chrisco
+transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['fees']
 ---

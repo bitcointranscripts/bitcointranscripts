@@ -1,6 +1,6 @@
 ---
 title: A Bevy Of Block Size Proposals Bip100 Bip102 And More
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mempool']
 ---

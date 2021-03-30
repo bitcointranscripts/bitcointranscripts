@@ -1,6 +1,6 @@
 ---
 title: How Much Privacy Is Enough
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'scalability']
 ---

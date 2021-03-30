@@ -1,6 +1,6 @@
 ---
 title: Jonas Nick Tim Ruffing Musig2 (2020-10-27)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 tags: ['schnorr', 'multisig']
 ---

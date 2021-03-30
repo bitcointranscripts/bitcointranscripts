@@ -1,6 +1,6 @@
 ---
 title: Elichai Turkel Schnorr Signatures (2019-08-16)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Elichai Turkel

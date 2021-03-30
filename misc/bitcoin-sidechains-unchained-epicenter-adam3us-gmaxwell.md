@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Sidechains Unchained Epicenter Adam3Us Gmaxwell
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['sidechains']
 ---
 

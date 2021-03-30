@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar 6 (2020-02-24)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['taproot']
 ---

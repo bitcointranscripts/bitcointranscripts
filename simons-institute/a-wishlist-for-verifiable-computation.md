@@ -1,6 +1,6 @@
 ---
 title: A Wishlist For Verifiable Computation
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
 ---

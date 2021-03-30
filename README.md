@@ -30,12 +30,12 @@ When creating a new directory or adding a page to an existing directory, please 
 
 Each directory requires an `_index.md` file with front matter that will reflect the name of the index page in the menu. Adding `{{< childpages >}}` as the body will ensure that all the appropriate files in that directory will be listed. (See [example](https://raw.githubusercontent.com/bitcointranscripts/bitcointranscripts/master/advancing-bitcoin/2019/_index.md))
 
-Each transcript is a markdown file, which requires to include the `title` and `TranscriptBy` in the file front matter For example:
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter For example:
 
 ```
 ---
 title: Carl Dong Reproducible Builds (2020-11-30)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 ```
 

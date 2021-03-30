@@ -1,6 +1,6 @@
 ---
 title: Andrew Poelstra Miniscript (2019-05-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

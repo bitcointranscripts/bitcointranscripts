@@ -1,6 +1,6 @@
 ---
 title: Nydfs Bitlicense Lawsky Update
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['regulation']
 ---
 

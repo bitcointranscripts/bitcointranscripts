@@ -1,6 +1,6 @@
 ---
 title: Dan Robinson Ivy (2017-01-26)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 

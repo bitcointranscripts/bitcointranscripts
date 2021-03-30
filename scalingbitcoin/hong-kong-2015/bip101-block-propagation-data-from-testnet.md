@@ -1,6 +1,6 @@
 ---
 title: Bip101 Block Propagation Data From Testnet
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks']
 ---

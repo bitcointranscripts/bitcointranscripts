@@ -1,6 +1,6 @@
 ---
 title: Bitcoin Failure Modes And The Role Of The Lightning Network
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Extracting Seeds From Hardware Wallets
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'attacks', 'cryptography', 'wallet', 'hardware wallet']
 ---

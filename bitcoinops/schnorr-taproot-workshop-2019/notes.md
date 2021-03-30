@@ -1,6 +1,6 @@
 ---
 title: Notes
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['bitcoinops']
 tags: ['consensus', 'taproot', 'schnorr']
 ---

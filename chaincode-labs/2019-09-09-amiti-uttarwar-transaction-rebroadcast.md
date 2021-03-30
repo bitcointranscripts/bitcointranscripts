@@ -1,6 +1,6 @@
 ---
 title: Amiti Uttarwar Transaction Rebroadcast (2019-09-09)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 ---
 
 Amiti Uttarwar

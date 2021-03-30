@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell Checkmultisig Bug
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 tags: ['hard fork', 'multisig']
 ---
 

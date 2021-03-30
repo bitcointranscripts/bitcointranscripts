@@ -1,6 +1,6 @@
 ---
 title: Eric Lombrozo Luke Dashjr Taproot Activation (2020-08-03)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 ---
 

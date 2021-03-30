@@ -1,6 +1,6 @@
 ---
 title: Christian Decker Lightning Topics (2020-08-13)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['podcast']
 tags: ['attacks', 'ux']
 ---

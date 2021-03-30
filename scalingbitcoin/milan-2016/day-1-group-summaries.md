@@ -1,6 +1,6 @@
 ---
 title: Day 1 Group Summaries
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['routing', 'privacy', 'attacks', 'lightning', 'fees', 'fungibility']
 ---

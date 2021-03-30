@@ -1,6 +1,6 @@
 ---
 title: Kostya Serebryany Fuzzing (2017-10-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 
