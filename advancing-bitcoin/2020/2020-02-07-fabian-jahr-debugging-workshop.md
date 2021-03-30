@@ -1,6 +1,8 @@
 ---
 title: Fabian Jahr - Debugging Workshop (2020-02-07)
 transcript_by: Michael Folkson
+categories: ['workshop']
+tags: ['bitcoin core']
 ---
 
 Name: Fabian Jahr

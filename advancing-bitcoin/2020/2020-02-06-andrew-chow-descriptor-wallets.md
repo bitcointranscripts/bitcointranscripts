@@ -1,6 +1,7 @@
 ---
 title: Andrew Chow - Descriptor Wallets (2020-02-06)
 transcript_by: Michael Folkson
+categories: ['workshop']
 tags: ['wallet']
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Kalle Alm - Signet Integration (2020-02-06)
 transcript_by: Michael Folkson
+categories: ['conference']
 tags: ['taproot']
 ---
 

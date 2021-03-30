@@ -1,6 +1,7 @@
 ---
 title: Andrew Poelstra - Miniscript (2020-02-07)
 transcript_by: Michael Folkson
+categories: ['conference']
 tags: ['miniscript']
 ---
 
