@@ -1,7 +1,8 @@
 ---
-title: Eric Lombrozo Luke Dashjr Taproot Activation (2020-08-03)
-transcript_by: Bryan Bishop
+title: Eric Lombrozo, Luke Dashjr - Taproot Activation (2020-08-03)
+transcript_by: Michael Folkson
 categories: ['podcast']
+tags: ['taproot', 'soft fork']
 ---
 
 Name: Eric Lombrozo and Luke Dashjr

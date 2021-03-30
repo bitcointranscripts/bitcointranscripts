@@ -1,7 +1,7 @@
 ---
-title: Jeremy Rubin Sapio 101 (2020-07-11)
-transcript_by: Bryan Bishop
-categories: ['conference']
+title: Jeremy Rubin - Sapio 101 (2020-07-11)
+transcript_by: Michael Folkson
+categories: ['meetup']
 tags: ['smart contracts']
 ---
 

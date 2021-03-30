@@ -1,6 +1,6 @@
 ---
-title: Kostya Serebryany Fuzzing (2017-10-11)
-transcript_by: Bryan Bishop
+title: Kostya Serebryany - Fuzzing (2017-10-11)
+transcript_by: Michael Folkson
 categories: ['conference']
 ---
 

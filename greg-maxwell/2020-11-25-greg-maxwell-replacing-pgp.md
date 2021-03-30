@@ -1,7 +1,7 @@
 ---
 title: Greg Maxwell - Replacing PGP (2020-11-25)
 speaker: Greg Maxwell
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 ---
 
 Name: Greg Maxwell

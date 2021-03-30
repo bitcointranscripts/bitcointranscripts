@@ -1,5 +1,5 @@
 ---
-title: Adam Gibson Unfairly Linear Signatures (2018-06-12)
+title: Adam Gibson - Unfairly Linear Signatures (2018-06-12)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr']

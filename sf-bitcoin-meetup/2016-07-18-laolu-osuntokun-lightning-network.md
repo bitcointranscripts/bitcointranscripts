@@ -1,6 +1,6 @@
 ---
-title: Laolu Osuntokun Lightning Network (2016-07-18)
-transcript_by: Bryan Bishop
+title: Laolu Osuntokun - Lightning Network (2016-07-18)
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
 ---

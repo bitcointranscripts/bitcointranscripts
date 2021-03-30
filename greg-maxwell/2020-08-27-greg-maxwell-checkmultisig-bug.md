@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell - Checkmultisig Bug (2020-08-27)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 tags: ['hard fork', 'multisig']
 ---
 

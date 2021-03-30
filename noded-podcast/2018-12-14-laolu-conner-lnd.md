@@ -1,6 +1,6 @@
 ---
-title: Laolu Conner Lnd (2018-12-14)
-transcript_by: Bryan Bishop
+title: Laolu, Conner - Lnd (2018-12-14)
+transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']
 ---

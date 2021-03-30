@@ -1,6 +1,6 @@
 ---
-title: Tom Kirkpatrick Zap Wallet (2018-12-01)
-transcript_by: Bryan Bishop
+title: Tom Kirkpatrick - Zap Wallet (2018-12-01)
+transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['wallet']
 ---

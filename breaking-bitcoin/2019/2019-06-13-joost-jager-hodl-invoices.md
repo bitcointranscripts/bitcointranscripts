@@ -1,8 +1,8 @@
 ---
-title: Joost Jager Hodl Invoices (2019-06-13)
-transcript_by: Bryan Bishop
+title: Joost Jager - HODL Invoices (2019-06-13)
+transcript_by: Michael Folkson
 categories: ['conference']
-tags: ['lnd']
+tags: ['lnd', 'lightning']
 ---
 
 Joost Jager

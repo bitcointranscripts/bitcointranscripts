@@ -1,6 +1,6 @@
 ---
 title: Jonas Nick, Tim Ruffing - MuSig, MuSig-DN and MuSig2 (2020-10-27)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 speaker: Jonas Nick, Tim Ruffing
 categories: ['podcast']
 tags: ['schnorr', 'multisig', 'taproot']

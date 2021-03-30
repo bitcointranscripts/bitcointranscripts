@@ -1,6 +1,6 @@
 ---
-title: Adam Back Bryan Bishop Block Reorgs (2019-05-14)
-transcript_by: Bryan Bishop
+title: Adam Back, Bryan Bishop - Block Reorgs (2019-05-14)
+transcript_by: Peter McCormack
 categories: ['podcast']
 ---
 

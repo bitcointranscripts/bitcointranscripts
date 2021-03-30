@@ -1,5 +1,5 @@
 ---
-title: Barnabas Bagyi Fuzzing Class Interfaces (2020-10-09)
+title: Barnabas Bagyi - Fuzzing Class Interfaces (2020-10-09)
 transcript_by: Michael Folkson
 categories: ['conference']
 ---

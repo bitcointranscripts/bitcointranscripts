@@ -1,6 +1,6 @@
 ---
 title: Andrew Chow - What Am I Working On (2020-07-10)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 speaker: Andrew Chow
 tags: ['wallet']
 ---

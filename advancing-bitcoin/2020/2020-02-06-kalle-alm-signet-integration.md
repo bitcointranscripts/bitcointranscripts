@@ -1,6 +1,6 @@
 ---
-title: Kalle Alm Signet Integration (2020-02-06)
-transcript_by: Bryan Bishop
+title: Kalle Alm - Signet Integration (2020-02-06)
+transcript_by: Michael Folkson
 tags: ['taproot']
 ---
 

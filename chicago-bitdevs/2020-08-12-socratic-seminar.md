@@ -1,6 +1,6 @@
 ---
 title: Socratic Seminar (2020-08-12)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['wallet']
 ---

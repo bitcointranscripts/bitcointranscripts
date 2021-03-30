@@ -1,6 +1,6 @@
 ---
 title: Adam Back - Simplicity (2020-04-08)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 speaker: Adam Back
 tag: ['smart contracts']
 ---

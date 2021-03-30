@@ -1,6 +1,6 @@
 ---
-title: Roy Sheinfeld Stephan Livera (2019-07-31)
-transcript_by: Bryan Bishop
+title: Roy Sheinfeld - Stephan Livera (2019-07-31)
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

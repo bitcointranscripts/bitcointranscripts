@@ -1,6 +1,6 @@
 ---
-title: Bastien Teinturier Trampoline Routing (2019-10-20)
-transcript_by: Bryan Bishop
+title: Bastien Teinturier - Trampoline Routing (2019-10-20)
+transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['eclair', 'routing', 'wallet']
 ---

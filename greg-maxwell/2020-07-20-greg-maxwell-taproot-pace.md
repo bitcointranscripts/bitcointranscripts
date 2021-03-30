@@ -1,7 +1,7 @@
 ---
 title: Greg Maxwell - Taproot Pace (2020-07-20)
 speaker: Greg Maxwell
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 tags: ['consensus', 'taproot']
 ---
 

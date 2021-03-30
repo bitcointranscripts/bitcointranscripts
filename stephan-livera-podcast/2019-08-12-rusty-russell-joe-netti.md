@@ -1,6 +1,6 @@
 ---
-title: Rusty Russell Joe Netti (2019-08-12)
-transcript_by: Bryan Bishop
+title: Rusty Russell, Joe Netti (2019-08-12)
+transcript_by: Michael Folkson
 categories: ['podcast']
 ---
 

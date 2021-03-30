@@ -1,5 +1,5 @@
 ---
-title: Tim Ruffing Schnorr Multisig (2020-06-17)
+title: Tim Ruffing - Schnorr, Multisig (2020-06-17)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot', 'multisig']

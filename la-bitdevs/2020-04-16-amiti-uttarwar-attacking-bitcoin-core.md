@@ -1,6 +1,6 @@
 ---
-title: Amiti Uttarwar Attacking Bitcoin Core (2020-04-16)
-transcript_by: Bryan Bishop
+title: Amiti Uttarwar - Attacking Bitcoin Core (2020-04-16)
+transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']
 ---

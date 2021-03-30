@@ -1,5 +1,5 @@
 ---
-title: Fabian Jahr Debugging Workshop (2020-02-07)
+title: Fabian Jahr - Debugging Workshop (2020-02-07)
 transcript_by: Michael Folkson
 ---
 

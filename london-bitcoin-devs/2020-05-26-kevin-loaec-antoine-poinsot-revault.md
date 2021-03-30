@@ -1,5 +1,5 @@
 ---
-title: Kevin Loaec Antoine Poinsot Revault (2020-05-26)
+title: Kevin Loaec, Antoine Poinsot - Revault (2020-05-26)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['covenants']

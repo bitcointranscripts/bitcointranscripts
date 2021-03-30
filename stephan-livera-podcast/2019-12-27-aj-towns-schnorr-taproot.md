@@ -1,6 +1,6 @@
 ---
 title: AJ Towns - Schnorr Taproot (2019-12-27)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 speaker: AJ Towns
 categories: ['podcast']
 tags: ['taproot', 'schnorr']

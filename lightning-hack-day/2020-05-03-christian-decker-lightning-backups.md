@@ -1,7 +1,8 @@
 ---
 title: Christian Decker - Lightning Backups (2020-05-03)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 categories: ['hackathon']
+tags: ['lightning']
 ---
 
 Name: Christian Decker

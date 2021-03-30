@@ -1,7 +1,7 @@
 ---
 title: Greg Maxwell - Bitcoin Core Github (2020-10-26)
 speaker: Greg Maxwell
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 ---
 
 Name: Greg Maxwell

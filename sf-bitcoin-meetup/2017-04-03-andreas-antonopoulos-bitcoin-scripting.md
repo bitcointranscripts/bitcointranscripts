@@ -1,7 +1,8 @@
 ---
-title: Andreas Antonopoulos Bitcoin Scripting (2017-04-03)
-transcript_by: Bryan Bishop
+title: Andreas Antonopoulos - Bitcoin Scripting (2017-04-03)
+transcript_by: Michael Folkson
 categories: ['meetup']
+tags: ['script']
 ---
 
 Name: Andreas Antonopoulos

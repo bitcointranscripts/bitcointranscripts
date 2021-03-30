@@ -1,6 +1,6 @@
 ---
 title: Carl Dong - Reproducible Builds (2020-11-30)
-transcript_by: Bryan Bishop
+transcript_by: Michael Folkson
 speaker: Carl Dong
 categories: ['podcast']
 tag: ['build systems']
