@@ -1,5 +1,5 @@
 ---
-title: Onion Routing Deep Dive 
+title: Christian Decker - Onion Routing Deep Dive (2019-06-25)
 transcript_by: Arik Sosman 
 tags: ['lightning', 'sphinx', 'onion', 'routing']
 category: ['residency']
@@ -11,7 +11,7 @@ Location: Chaincode Residency – Summer 2019
 
 Video: <https://youtu.be/D4kX0gR-H0Y>
 
-## Transcript
+## Onion Routing Deep Dive
 
 But we've not seen exactly why we are using an onion, or why we chose this construction of an onion and how this
 construction of an onion actually looks like. So my goal right now is to basically walk you through the iterations that
@@ -28,7 +28,7 @@ basically the onion as it looks for user A, and user A receives this list of add
 that, "okay the next hop is B." So B comes along and sees, “oh, the next hop is C.” C comes along sees, “okay, D is the next
 one,” and once E gets it, this is a terminal node, no need to forward it anymore.
 
-This is all cleartext currently, and I guess everybody sees the downsides of this, namely that we know almost the sender 
+This is all cleartext currently, and I guess everybody sees the downsides of this, namely that we know almost the sender
 (we know the first peer of the sender) and any node in the list definitely sees who the recipient is. So we can do one
 better: basically, instead of having this fixed list of addresses, we now go and just chop off the beginning every time
 we process it, and that turns out to be: A sees this thing, “okay, I am supposed to send to B,” and we chop off B, now
@@ -41,6 +41,8 @@ than the one we had before. And of course then E gets it and E sees “oh, I'm t
 forward it anymore.” Now this still has this downside of well, B still sees the exact route and the amounts and who the
 destination is but at least he doesn't see who the sender is anymore, or any hop doesn't see who the later one is, but I
 will get to that later. So, of course, this all being cleartext is kind of dumb, so let's maybe start encrypting stuff?
+
+## Encryption Scheme
 
 So I have chosen this wonderful black color to represent encryption, and so what we have again is that I, as A, receive
 this blob of information, and I will process it somehow, and from processing this I will receive the blob that I should
@@ -125,6 +127,8 @@ onion, we may fill the first three, four, up to eight (currently) hops, and then
 whenever we decrypt, we actually generate a stream that is 1365 bytes, basically because we append one additional hop at
 the end, which is going to be shifted in with the rest of the pattern.
 
+## HMACs
+
 &#91;Audience member&#93;: _“What happens if one of the hops &lt;inaudible&gt; rigged? Does it &lt;inaudible&gt;”_
 
 That's an excellent question. It also ties in perfectly with the next question I had. So what happens if A,
@@ -203,7 +207,7 @@ is only three hops longer;” this guy, “hey, it's only two hops long;” and 
 &#91;Audience member&#93;: _“The general advice is to never encrypt anything without MACing, it’s always a bad idea. Cause then you
 can manipulate tons of different stuff.”_
 
-And the  reason why we HMAC not only the payload destined for the processing node is exactly that: because
+And the reason why we HMAC not only the payload destined for the processing node is exactly that: because
 then, if A receives this packet here, and only checks the HMAC here, then somebody before him could basically tamper
 with the C, and if then that HMAC fails, we know, okay, it's at least going to be B and C. So by tampering with
 individual parts of this onion, you could basically start probing, “hey, how long is this onion?” And you'd lose all of
@@ -217,6 +221,8 @@ and then we can start computing HMACs for all of these.
 And we compute them in reverse order, because this HMAC is going to be in the payload for E. This HMAC is going to be in
 a payload for D, and this HMAC is going to be in the payload for A. And there's one more D. It gets really confusing
 because you have to reverse order a bunch of times.
+
+## Ephemeral Keys
 
 Okay, so the actual packet serialization we use in the Update HLC format is, we have a single version byte (which we
 recently found out we can never change… sort of dumb); we have an ephemeral key.
@@ -289,7 +295,9 @@ it's backwards mu. You've got to have fun sometimes.
 
 HMAC is sha256 because that's all bitcoin knows. All bitcoiners know. Okay, two more slides and we're done.
 
-Returning an error. So this whole process is going forwards, right? This is a one-shot routing packet that we can only
+## Returning an error
+
+So this whole process is going forwards, right? This is a one-shot routing packet that we can only
 ever go forward and the question is, if something goes wrong, how do we return an error, how do we tell the sender,
 “hey, something is wrong here?” And we don't have a good construction of how to create a backwards onion of using just
 Sphinx, because we heavily modified Sphinx to not include a payload anymore for the final hop. So what we ended up doing
@@ -310,7 +318,9 @@ that is returning this error.
 So yeah, this return onion is really simplistic on purpose, because we hope to eventually find something that is more
 stable, but still breaking.
 
-Recent developments. So far I've told you about how this is actually implemented right now. I have, like, three pending
+## Recent developments
+
+So far I've told you about how this is actually implemented right now. I have, like, three pending
 PsS on the specification that all try to get us away from this fixed 65-byte-frame. 65 bytes, by the way, was chosen
 because it's 64, which is a nice number every every CS guy likes, plus 1 byte, which is sort of that payload type (
 realm, as we call it). So totally arbitrary. It was just the smallest power of two that would fit our payload.
@@ -348,4 +358,4 @@ way of generating an ephemeral key such that they meet up perfectly at Richard, 
 ephemeral key inside of the onion and then basically, when Richard gets your onion, he will be instructed to switch out
 the ephemeral key with the one that was transported in the onion itself, and then this all works. But otherwise it's
 kind of hard. I mean, it's actually cryptographically proven that you can't really meet up in the middle, otherwise
-you'd have broken some cryptographic assumption. I think that's most of the onion stuff?
+you'd have broken some cryptographic assumption.
