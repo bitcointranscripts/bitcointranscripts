@@ -1,5 +1,5 @@
 ---
-title: Fabrice Drouin - Base and Transport Layers of the Lightning Network (2019-09-18)
+title: Fabrice Drouin - Base and Transport Layers of the Lightning Network (2019-06-24)
 transcript_by: Duncan Dean
 category: ['residency']
 tags: ['lightning']
@@ -7,25 +7,27 @@ tags: ['lightning']
 
 Name: Fabrice Drouin
 
+Date: 2019-06-24
+
 Topic: Base and Transport Layers of the Lightning Network
 
 Location: Chaincode Labs Lightning Residency 2019
 
-Video: https://www.youtube.com/watch?v=wyri7cc83kQ
+Video: <https://www.youtube.com/watch?v=wyri7cc83kQ>
 
-Slides: https://residency.chaincode.com/presentations/lightning/Base_Transport.pdf
+Slides: <https://residency.chaincode.com/presentations/lightning/Base_Transport.pdf>
 
 ## Introduction
 
-Fabrice: The base and transport layer, almost everything was already introduced this morning so it's going to be very quick. So have you visited the [lightning repo on GitHub](https://github.com/lightningnetwork/lightning-rfc)? Who hasn’t?
+Fabrice: The base and transport layer, almost everything was already introduced this morning so it's going to be very quick. So have you visited the [lightning repo on GitHub](https://github.com/lightningnetwork/lightning-rfc)? Who hasn't?
 
-Okay, good. So you’ve seen all this? That was a test.
+Okay, good. So you've seen all this? That was a test.
 
 We've covered almost everything this morning. I'm just gonna get back to the base protocol, BOLT 8 and maybe BOLT 9 because I don't think it's been mentioned a lot.
 
 Basically this is the kind of communication we have in lightning. You have a transport layer that encrypts and authenticates messages and then you have a base layer that describes what kind of messages you actually use and the two can be cleanly separated.
 
-The base protocol has been shown this morning so I’m gonna be very quick. It's a custom binary format. The max size of a message is 65 kilobytes and basically you have a type, 2 bytes that tells you what kind of message you're dealing with and a payload and a payload depends on the type. The old messages and the one we use today uses custom encoding, which is a bit hard to extend and the new messages that are going to be introduced hopefully within the next few weeks use TLV encoding which is much nicer to play with and extend. I'll explain what TLV means now.
+The base protocol has been shown this morning so I'm gonna be very quick. It's a custom binary format. The max size of a message is 65 kilobytes and basically you have a type, 2 bytes that tells you what kind of message you're dealing with and a payload and a payload depends on the type. The old messages and the one we use today uses custom encoding, which is a bit hard to extend and the new messages that are going to be introduced hopefully within the next few weeks use TLV encoding which is much nicer to play with and extend. I'll explain what TLV means now.
 
 ## TLV encoding
 
@@ -39,9 +41,9 @@ Fabrice: Probably, yes.
 
 ## Transport Layer
 
-The transport layer, it's been described this morning. It's based on Noise. Each node has a unique private/public key pair. The node ID is your public key. There's a handshake phase in Noise, so you authenticate that the node you're trying to talk to is actually - I don't know - that node has the private key of the public key it’s using as an ID. And once you've performed the handshake - once you've checked that you're talking to who you really want to talk to - then you do have encryption keys, one for inbound traffic, the other one for outbound traffic. And then everything is encrypted using these encryption keys, which will be rotated every five hundred messages.
+The transport layer, it's been described this morning. It's based on Noise. Each node has a unique private/public key pair. The node ID is your public key. There's a handshake phase in Noise, so you authenticate that the node you're trying to talk to is actually - I don't know - that node has the private key of the public key it's using as an ID. And once you've performed the handshake - once you've checked that you're talking to who you really want to talk to - then you do have encryption keys, one for inbound traffic, the other one for outbound traffic. And then everything is encrypted using these encryption keys, which will be rotated every five hundred messages.
 
-Transport layer is in charge of handshake - you really check that you're talking to the node you’re supposed to talk to - and then you decrypt packets that you pass to the application layer. So that's it for the transport layer.
+Transport layer is in charge of handshake - you really check that you're talking to the node you're supposed to talk to - and then you decrypt packets that you pass to the application layer. So that's it for the transport layer.
 
 Do you have any questions?
 
@@ -51,14 +53,14 @@ Fabrice: Oh, because we want to rotate keys every five hundred messages and keys
 
 Audience Member: But why 500? Why not 200? Why not 5,000?
 
-Fabrice: I don't think there’s a specific reason for that. You want to change the keys too often and I guess 1000 is...
+Fabrice: I don't think there's a specific reason for that. You want to change the keys too often and I guess 1000 is...
 
-Audience Member: I don’t there’s any reason for a specific amount. There’s the birthday attack, so the amount of nonces is divided by two, and then just every couple...
-something that sounds reasonable for the protocol. If your protocol sends thousands of messages every second you won’t want every 500. If your protocol sends one message per second you’ll want every this...
+Audience Member: I don't there's any reason for a specific amount. There's the birthday attack, so the amount of nonces is divided by two, and then just every couple...
+something that sounds reasonable for the protocol. If your protocol sends thousands of messages every second you won't want every 500. If your protocol sends one message per second you'll want every this...
 
 Fabrice: One cool thing you can do with lightning is you could basically isolate this and have your implementation work with any text messages and build like a front that is in charge of encrypting and authenticating messages that is separate from the rest of the application. It's something we're thinking about.
 
-Audience Member: I would actually really like that because I'm running the integration tests and they’re hell to debug with the encryption layer intact.
+Audience Member: I would actually really like that because I'm running the integration tests and they're hell to debug with the encryption layer intact.
 
 Audience Member: So is the key exchange here, is that also Diffie-Hellman?
 
@@ -74,7 +76,7 @@ Audience Member: Is that like HD?
 
 Fabrice: No no, it's not. It doesn't look like a BIP 32 derivation; it's something else.
 
-Audience Member: It’s the ChaChaPoly that Christian mentioned, so it's basically this random generator that is XORed with your messages and the random generator has a certain seed value and this is just increased basically. And this creates a new pseudo-random stream. That's why it's also important to know that it's every 500 messages because both parties have to exchange keys at the same time.
+Audience Member: It's the ChaChaPoly that Christian mentioned, so it's basically this random generator that is XORed with your messages and the random generator has a certain seed value and this is just increased basically. And this creates a new pseudo-random stream. That's why it's also important to know that it's every 500 messages because both parties have to exchange keys at the same time.
 
 Fabrice: If you have an off-by-one error in your application, you won't be able to understand the traffic after the first key rotation.
 
@@ -100,7 +102,7 @@ Audience member: What if they lie? If they don't send you the current state but 
 
 Fabrice: Basically, it's something that is supposed to be a last resort. If you know data you have no money, so it's an extra change to get it back. Suppose you lie and you say ok that the last point I remember is an old one and you basically haven't lost data. It's very risky for the peer you are connected to try to cheat because maybe you have not lost your data. And if they do that they will lose everything. So it's a way of making sure that you can get your money back if you've lost everything. Basically, to get this to work you need a very limited amount of data that you can know once you've created the channel.
 
-The second option is initial routing sync, it’s what Christian said this morning. Basically, it says send me everything, all the routing information you have. It's not used anymore because it's that the routing information is just too big.
+The second option is initial routing sync, it's what Christian said this morning. Basically, it says send me everything, all the routing information you have. It's not used anymore because it's that the routing information is just too big.
 
 Audience member: [inaudible]
 
