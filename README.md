@@ -46,6 +46,12 @@ tag: ['build systems']
 
 *Note*: that it is best practice to include the date of the event in the title. (If we can gather enough meta-data, we someday intend on being able to sort transcripts by date.)
 
+### Transcription Style
+
+For your contributions, please use an "edited transcription" style, which can also be referred to as clean verbatim transcription. The goal of an edited transcription is to preserve the meaning of a text without paraphrasing. Stammering, filler words such as 'like' or 'you know', and unnecessary non-verbal communication can be omitted. Strike a balance between completeness and readability. 
+
+Oftentimes, audience questions and comments will be inaudible. Feel free to only indicate when an audience member is speaking if their audio is not clear. 
+
 ## i18n
 
 Spanish and French are [configured by default](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml#L11) for [btctranscripts.com](https://btctranscripts.com).
