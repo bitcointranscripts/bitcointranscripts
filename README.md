@@ -48,7 +48,7 @@ tag: ['build systems']
 
 ### Transcription Style
 
-For your contributions, please use an "edited transcription" style, which can also be referred to as clean verbatim transcription. The goal of an edited transcription is to preserve the meaning of a text without paraphrasing. Stammering, filler words such as 'like' or 'you know', and unnecessary non-verbal communication can be ommitted. Strike a balance between completeness and readability. 
+For your contributions, please use an "edited transcription" style, which can also be referred to as clean verbatim transcription. The goal of an edited transcription is to preserve the meaning of a text without paraphrasing. Stammering, filler words such as 'like' or 'you know', and unnecessary non-verbal communication can be omitted. Strike a balance between completeness and readability. 
 
 Oftentimes, audience questions and comments will be inaudible. Feel free to only indicate when an audience member is speaking if their audio is not clear. 
 
