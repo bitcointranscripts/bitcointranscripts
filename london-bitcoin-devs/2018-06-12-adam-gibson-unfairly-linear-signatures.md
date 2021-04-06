@@ -1,6 +1,8 @@
 ---
-title: Adam Gibson Unfairly Linear Signatures (2018-06-12)
-TranscriptBy: Bryan Bishop
+title: Adam Gibson - Unfairly Linear Signatures (2018-06-12)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['schnorr']
 ---
 
 Name: Adam Gibson

@@ -1,6 +1,8 @@
 ---
-title: Kalle Alm Signet Integration (2020-02-06)
-TranscriptBy: Bryan Bishop
+title: Kalle Alm - Signet Integration (2020-02-06)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['taproot']
 ---
 
 Name: Karl-Johan Alm

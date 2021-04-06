@@ -1,6 +1,8 @@
 ---
 title: Kalle Alm Signet Workshop (2020-02-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
+categories: ['workshop']
+tags: ['taproot']
 ---
 
 Name: Kalle Alm

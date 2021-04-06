@@ -1,6 +1,9 @@
 ---
-title: Andreas Antonopoulos Schnorr Signatures (2018-10-07)
-TranscriptBy: Bryan Bishop
+title: Andreas Antonopoulos - Schnorr Signatures (2018-10-07)
+transcript_by: Michael Folkson
+speaker: Andreas Antonopoulos
+categories: ['podcast']
+tag: ['schnorr']
 ---
 
 Andreas Antonopoulos

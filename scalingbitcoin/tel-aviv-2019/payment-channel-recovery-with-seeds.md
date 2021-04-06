@@ -1,6 +1,8 @@
 ---
 title: Payment Channel Recovery With Seeds
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'wallet']
 ---
 
 Seed-based payment channel recovery

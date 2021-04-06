@@ -1,6 +1,8 @@
 ---
 title: Transaction Fee Estimation
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['wallet', 'fees']
 ---
 
 Bram Cohen
@@ -36,6 +38,8 @@ That's basically my answer to what should be done, it's conservative, it's easil
 
 That's the basics of how I think wallets should handle transaction fees.
 
+categories: ['conference']
+tags: ['wallet', 'fees']
 ---
 
 <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011685.html>

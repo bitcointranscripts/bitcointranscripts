@@ -1,6 +1,8 @@
 ---
-title: Dan Robinson Ivy (2017-01-26)
-TranscriptBy: Bryan Bishop
+title: Dan Robinson - Ivy (2017-01-26)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['smart contracts']
 ---
 
 Name: Dan Robinson

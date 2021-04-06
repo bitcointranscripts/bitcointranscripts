@@ -1,6 +1,8 @@
 ---
 title: Lightning Network Routing Security
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['routing', 'lightning', 'lnd', 'security']
 ---
 
 Security aspects of LN routing

@@ -1,15 +1,13 @@
 ---
 title: State Of Blockchain
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tag: ['ethereum']
 ---
 
 Preliminary notes:
 
-
-
 Contact me- <https://twitter.com/kanzure>
-
-----
 
 I am at the Cambridge center of alternative finance. I am also the founde rof... macroeconomics if you will... very proud to have created and ... this is our .. we started this in 2014, this is a snapshot of what will be coming out over the next few days. If you are worried about the speed that I will be going through these, it will be online soon.
 

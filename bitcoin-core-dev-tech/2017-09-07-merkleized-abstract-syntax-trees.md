@@ -1,6 +1,8 @@
 ---
 title: Merkleized Abstract Syntax Trees (2017-09-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['consensus', 'ux']
 ---
 
 ﻿<https://twitter.com/kanzure/status/907075529534328832>
@@ -80,8 +82,6 @@ Need some candidate soft-forks that are highly desirable by the users. Maybe sig
 
 They can break a CHECKSIGFROMSTACK... in a hard-fork. CHECKBLOCKHASH has other implications, like transactions aren't-- in the immediately prior block, you can't reinsert the transaction, it's not reorg-safe. It should be restricted to like 100 blocks back at least.
 [a]I approve this chatham house rule violation
-
-----
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014932.html>
 

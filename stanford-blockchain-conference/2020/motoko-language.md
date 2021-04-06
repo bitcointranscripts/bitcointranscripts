@@ -1,6 +1,8 @@
 ---
 title: Motoko Language
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'research']
 ---
 
 Motoko, the language for the Internet Computer

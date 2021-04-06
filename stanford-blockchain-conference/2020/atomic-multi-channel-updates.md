@@ -1,6 +1,8 @@
 ---
 title: Atomic Multi Channel Updates
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['scalability']
 ---
 
 Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks
@@ -86,9 +88,6 @@ We have a formal security analysis in the universal composability UC framework. 
 We can reduce the collateral to a constant, and synchronize multiple channels atomically in a way that is backwards-compatible with bitcoin. This enables entirely new classes of off-chain applications like crowdfunding and channel rebalancing and we hope many more will come from bitcoin developers. The paper is available online, you can take a look.
 
 <https://eprint.iacr.org/2019/583.pdf>
-
-
-----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

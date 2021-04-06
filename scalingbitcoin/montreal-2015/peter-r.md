@@ -1,6 +1,7 @@
 ---
 title: Peter R
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 ((Note that there is a more accurate transcript from Peter-R himself below.))
@@ -42,8 +43,6 @@ The production quota will fail because you can only enforce rules that people ag
 * gmaxwell
 * Houman B. Shadab
 * vitalik buterin
-
-------
 
 Good afternoon.  Today I’m going to speak to you about my recent paper that shows how “a transaction fee market exists without a block size limit.” 
 

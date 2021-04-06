@@ -1,6 +1,7 @@
 ---
 title: Scaling And Utxos
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Scaling and TXO commitments
@@ -40,8 +41,6 @@ And finally, the last thing I'd point out with this is that setting up new nodes
 If we implement TXO commitment schemes on the client-side without changing the consensus protocol, and you take advantage of it by having a trusted mechanism to assume that the UTXO state is correct based on state, that's actually a better security model than having miners involved. In BU, you could assume that miners say something is true then it is say true... But I would much rather know who I am trusting. I could be part of my security model I already have: the software that I am trusting and auditing. Why add more parties to that? And with this model, what would Bitcoin, what would running a bitcoin node look like? You download your software, have an assumedvalid TXO state in it, then you ask your peers to fill in the data you're missing. Your node would start immediately and get full security in the same trust model that the software had to begin with. I think this would be a major improvement.
 
 I setup some nodes on scaleway and it took about 5 days for them to get started. Maybe we could go implement this in Bitcoin Core in the next year or two. Thank you.
-
-----
 
 <http://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2015/peter-todd-scalability/>
 

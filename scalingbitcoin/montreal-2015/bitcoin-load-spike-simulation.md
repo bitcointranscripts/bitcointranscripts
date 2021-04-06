@@ -1,6 +1,8 @@
 ---
 title: Bitcoin Load Spike Simulation
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['attacks', 'mempool', 'fees']
 ---
 
 Conner Fromknecht

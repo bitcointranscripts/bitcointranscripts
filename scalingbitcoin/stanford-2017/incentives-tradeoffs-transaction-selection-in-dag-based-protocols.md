@@ -1,6 +1,8 @@
 ---
 title: Incentives Tradeoffs Transaction Selection In Dag Based Protocols
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'layer 2']
 ---
 
 Incentives and Trade-offs in Transaction Selection in DAG-based Protocols

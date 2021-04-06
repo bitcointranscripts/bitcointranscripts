@@ -1,6 +1,8 @@
 ---
-title: Merkleized Abstract Syntax Trees Mast (2018-03-06)
-TranscriptBy: Bryan Bishop
+title: Merkleized Abstract Syntax Trees - MAST (2018-03-06)
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['taproot', 'covenants', 'validation']
 ---
 
 <https://twitter.com/kanzure/status/972120890279432192>

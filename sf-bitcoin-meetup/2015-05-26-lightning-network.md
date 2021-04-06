@@ -1,6 +1,8 @@
 ---
 title: Lightning Network (2015-05-26)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['meetup']
+tags: ['consensus', 'lightning', 'scalability']
 ---
 
 

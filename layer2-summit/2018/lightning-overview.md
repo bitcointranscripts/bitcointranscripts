@@ -1,6 +1,8 @@
 ---
 title: Lightning Overview
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'scalability', 'layer 2']
 ---
 
 Lightning overview

@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Payment Processing And Merchants
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 1 on 1: Bitcoin payment processing and merchants

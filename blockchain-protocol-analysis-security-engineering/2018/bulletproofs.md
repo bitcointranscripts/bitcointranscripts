@@ -1,6 +1,8 @@
 ---
 title: Bulletproofs
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['zero-knowledge']
 ---
 
 Bulletproofs
@@ -197,8 +199,6 @@ There will be an updated paper on bulletproofs in a few days.
 Q: From a proof system perspective, is there any case where it's more interesting to choose a sigma protocol? And secondly, can you expand on the applications on bulletproofs for cryptocurrencies could you use this for publicly verifiable secret sharing scheme to prove some constraints on values fulfilled or is there something else?
 
 A: Technically, I can talk about that in more detail in offline, but when you have complex statements on public commitments or public keys... if you're using different bases for your pedersen commitments, then bulletproofs are potentially still interesting. At least in theory, and perhaps specifically, you could apply this to arbitrary applications. It's a general proof system for arithmetic circuits just like SNARKs is a general proof system for arbitrary arithmetic circuits.
-
-----
 
 <https://joinmarket.me/blog/blog/bulletpoints-on-bulletproofs/>
 

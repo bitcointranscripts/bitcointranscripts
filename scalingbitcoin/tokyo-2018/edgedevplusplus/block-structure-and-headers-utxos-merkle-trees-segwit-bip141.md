@@ -1,6 +1,7 @@
 ---
 title: Block Structure And Headers Utxos Merkle Trees Segwit Bip141
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Block structure & headers, UTXO, Merkle Trees, Address, Proof-of-Work & Difficulty, SegWit (BIP141)

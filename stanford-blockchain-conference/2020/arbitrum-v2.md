@@ -1,6 +1,8 @@
 ---
 title: Arbitrum V2
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['smart contracts', 'layer 2']
 ---
 
 Arbitrum 2.0: Faster Off-Chain Contracts with On-Chain Security
@@ -104,9 +106,6 @@ The branch-and-prune approach to state management allows high performance and st
 # Arbitrum
 
 Arbitrum Rollup is a commercial product. We have plugins for the standard front-end system so you can port existing applications to run in L2 and get those benefits. We have easy tooling for launching your dApp. This is the first roll-up for general contracts to be working on testnet. Also, we're hiring. Thank you.
-
-
-----
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

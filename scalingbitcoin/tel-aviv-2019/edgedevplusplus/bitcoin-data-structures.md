@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Data Structures
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Bitcoin data structures

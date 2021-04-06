@@ -1,6 +1,9 @@
 ---
-title: Andrew Poelstra Miniscript (2019-05-11)
-TranscriptBy: Bryan Bishop
+title: Andrew Poelstra - Miniscript (2019-05-11)
+transcript_by: Michael Folkson
+categories: ['podcast']
+tags: ['miniscript']
+
 ---
 
 Noded podcast May 10th 2019

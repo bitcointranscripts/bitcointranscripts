@@ -1,6 +1,8 @@
 ---
 title: Survey Of Progress In Zero Knowledge Proofs Towards Trustless Snarks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['zero-knowledge']
 ---
 
 Survey of progress in succinct zero-knowledge proofs: towards trustless SNARKs

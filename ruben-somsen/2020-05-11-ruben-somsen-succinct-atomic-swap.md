@@ -1,6 +1,6 @@
 ---
 title: Ruben Somsen Succinct Atomic Swap (2020-05-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
 ---
 
 Name: Ruben Somsen

@@ -1,6 +1,8 @@
 ---
-title: Laolu Osuntokun Neutrino (2017-06-06)
-TranscriptBy: Bryan Bishop
+title: Laolu Osuntokun - Neutrino (2017-06-06)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['lightning', 'spv']
 ---
 
 Laolu Osuntokun

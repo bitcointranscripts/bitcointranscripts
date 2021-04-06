@@ -1,6 +1,9 @@
 ---
-title: Jonas Nick Tim Ruffing Musig2 (2020-10-27)
-TranscriptBy: Bryan Bishop
+title: Jonas Nick, Tim Ruffing - MuSig, MuSig-DN and MuSig2 (2020-10-27)
+transcript_by: Michael Folkson
+speaker: Jonas Nick, Tim Ruffing
+categories: ['podcast']
+tags: ['schnorr', 'multisig', 'taproot']
 ---
 
 Name: Jonas Nick and Tim Ruffing

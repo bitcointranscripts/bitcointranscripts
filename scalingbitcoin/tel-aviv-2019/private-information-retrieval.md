@@ -1,6 +1,8 @@
 ---
 title: Private Information Retrieval
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 Applying private information retrieval (PIR) to lightweight bitcoin clients

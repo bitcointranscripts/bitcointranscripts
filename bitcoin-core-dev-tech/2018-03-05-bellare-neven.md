@@ -1,6 +1,8 @@
 ---
 title: Bellare Neven (2018-03-05)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['multisig']
 ---
 
 See also <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>

@@ -1,6 +1,8 @@
 ---
 title: State Of Cryptography
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['cryptography', 'zero-knowledge']
 ---
 
 State of cryptography for blockchains beyond ECDSA and sha256

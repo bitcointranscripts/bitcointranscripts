@@ -1,6 +1,8 @@
 ---
 title: Casper
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'ethereum']
 ---
 
 Casper the friendly ghost: A "correct-by-construction" blockchain consensus protocol

@@ -1,6 +1,8 @@
 ---
 title: Security Assumptions
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'research', 'cryptography']
 ---
 
 Andrew Poelstra (andytoshi)
@@ -45,8 +47,6 @@ A: I guess you're asking, can I enumerate different trust models? The bitcoin tr
 Q: What do you think about provable or verifiable security in protocol design, rather than crypto?
 
 A: A lot of tooling needs to be built. We need to radically change the way we design protocols. The protocols are written and specified and expected that everyone follows them more or less. And we try to design things so that bad things don't happen. We would like to computationally verify that the protocol is resilient. I have seen some papers about this. The one that I read just yesterday was called "Session types for rust", which is a way of using a strong typing system like in rust or haskell to basically describe your protocol in a way such that when you go to implement it the compiler will prevent you from violating the model. So then you could prove that you implemented the protocol correctly. Your code wont compile if you have any failure modes like that in there. We need to be developing this. There has been a lot of progress in this area.
-
-----
 
 other relevant talk on this subject - <http://diyhpl.us/wiki/transcripts/scalingbitcoin/hong-kong/in-adversarial-environments-blockchains-dont-scale/>
 

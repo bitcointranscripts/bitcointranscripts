@@ -1,6 +1,8 @@
 ---
 title: Celo Ultralight Client
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tag: ['altcoin']
 ---
 
 The Celo ultralight client

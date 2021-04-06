@@ -1,6 +1,8 @@
 ---
 title: Reaching Consensus Open Blockchains
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'ethereum']
 ---
 
 Preliminary notes:
@@ -8,8 +10,6 @@ Preliminary notes:
 
 
 Contact me- <https://twitter.com/kanzure>
-
-----
 
 Reaching consensus on open blockchains
 

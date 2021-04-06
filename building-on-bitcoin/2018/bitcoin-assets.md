@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Assets
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Assets on bitcoin

@@ -1,6 +1,7 @@
 ---
 title: Url.Txt
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 https://scalingbitcoin.org/hongkong2015/

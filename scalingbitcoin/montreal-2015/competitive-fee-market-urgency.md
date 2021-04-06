@@ -1,6 +1,8 @@
 ---
 title: Competitive Fee Market Urgency
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['halving', 'security', 'fees']
 ---
 
 Marshall Long

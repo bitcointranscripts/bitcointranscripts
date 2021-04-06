@@ -1,6 +1,8 @@
 ---
 title: Law Enforcement And Anonymous Transactions
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'proof-of-work']
 ---
 
 Preliminary notes:
@@ -8,8 +10,6 @@ Preliminary notes:
 
 
 Contact me- <https://twitter.com/kanzure>
-
-----
 
 Law enforcement and anonymous transactions
 

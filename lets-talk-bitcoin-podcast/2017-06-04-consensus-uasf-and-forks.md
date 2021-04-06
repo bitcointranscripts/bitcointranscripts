@@ -1,6 +1,8 @@
 ---
 title: Consensus Uasf And Forks (2017-06-04)
-TranscriptBy: Michael Folkson
+transcript_by: Michael Folkson
+categories: ['podcast']
+tags: ['consensus', 'hard fork', 'forks', 'soft fork']
 ---
 
 Name: Andreas Antonopoulos

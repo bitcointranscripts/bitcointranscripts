@@ -1,6 +1,8 @@
 ---
-title: Andrew Poelstra Miniscript Intro (2020-02-06)
-TranscriptBy: Bryan Bishop
+title: Andrew Poelstra - Miniscript Intro (2020-02-06)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['miniscript', 'wallet']
 ---
 
 Name: Andrew Poelstra

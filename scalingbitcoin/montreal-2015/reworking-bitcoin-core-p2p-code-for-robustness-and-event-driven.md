@@ -1,6 +1,8 @@
 ---
 title: Reworking Bitcoin Core P2P Code For Robustness And Event Driven
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['P2P']
 ---
 
 Cory Fields

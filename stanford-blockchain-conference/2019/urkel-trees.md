@@ -1,6 +1,7 @@
 ---
 title: Urkel Trees
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Urkel trees: An optimized and cryptographically provable key-value store for decentralized naming

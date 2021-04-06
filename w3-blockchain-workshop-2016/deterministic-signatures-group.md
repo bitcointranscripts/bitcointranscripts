@@ -1,6 +1,8 @@
 ---
 title: Deterministic Signatures Group
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['threshold signatures']
 ---
 
 Deterministic expressions (group)

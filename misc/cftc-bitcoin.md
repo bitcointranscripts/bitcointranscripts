@@ -1,6 +1,6 @@
 ---
-title: Cftc Bitcoin
-TranscriptBy: Bryan Bishop
+title: CFTC Bitcoin
+transcript_by: Bryan Bishop
 ---
 
 Commodity Futures Trading Commission

@@ -1,6 +1,8 @@
 ---
 title: Custody Group
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['multisig', 'wallet']
 ---
 
 2109-09-08

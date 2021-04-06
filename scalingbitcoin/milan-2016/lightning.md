@@ -1,6 +1,8 @@
 ---
 title: Lightning
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'scalability']
 ---
 
 Lightning work group session

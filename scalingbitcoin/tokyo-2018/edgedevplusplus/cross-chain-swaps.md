@@ -1,6 +1,8 @@
 ---
 title: Cross Chain Swaps
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 Cross-chain swaps: Atomically swapping coins for privacy or cross-blockchain trades

@@ -1,6 +1,7 @@
 ---
 title: Block Rewards
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 An Axiomatic Approach to Block Rewards

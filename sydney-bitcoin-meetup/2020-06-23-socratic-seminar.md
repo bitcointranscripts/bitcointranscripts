@@ -1,6 +1,7 @@
 ---
 title: Socratic Seminar (2020-06-23)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
+categories: ['meetup']
 ---
 
 Name: Socratic Seminar

@@ -1,6 +1,8 @@
 ---
 title: History Of Lattice Based Cryptography
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['cryptography']
 ---
 
 Historical talk on lattice-based cryptography
@@ -18,8 +20,6 @@ Lattice cryptography - from computational complexity to fully homomorphic encryp
 # Introduction 1
 
 So this first of all thanks for coming back from lunch, it's always an achievement. I want to say that this is a special talk within the workshop here at Simons we have a historical cryptopapers seminars series. We try to revisit historical papers and see what led to them and how they impacted things later. One of the talks we asked for was a look into lattice crypto, and it was a perfect opportunity to choose Daniele to give this talk, so I am happy to introduce him. Just to introduce Daniele a little bit, um, he did his PhD at MIT and is currently a professor at UCSD. He is an expert in many things, crypto protocols and lattices specifically he touches everything many of the basic primitives that we saw in the talks over the morning sessions were introduced by him. He has the results on NP-hardness lattices, worst case to average connections and various algorithms in lattices. He also introduced the rigorous analysis of lattice-based crypto, expanding on the work which it appeared by NTRU. He also contributed to our knowledge by writing books and lecture notes, which took a lot of effort and was a great contribution to the community. He also recently created a logic, introduced an algebra for reasoning about multi-party computation, something really forward looking and perhaps before its time. Hopefully the time will come. He has served on many leadership roles, journals, chairs and so on. He has won the Macaty award, NSF career reward, fellowships, and um, I have two things to say which are a bit less formal. First of all, he's really cool. In his young days, he also rode a motorbike. Oh, that is still is true. Still young. That is true, sorry for that. The second thing that I wanted to say is sort of a story that I found amusing, which Daniele himself told me, about how you get into certain areas of research sometimes. At MIT, they have this practice with this exam which is early in your career where you have to read a paper and do some original research related to that paper. Shakti in her wisdom gave him a paper on lattices, and that's how this whole thing started. A great advisor with a great student who really did fantastic things. So please help me welcome Daniele. Thank you.
-
-----
 
 # Introduction 2
 

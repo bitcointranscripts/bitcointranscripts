@@ -1,6 +1,8 @@
 ---
 title: G20 Discussion
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['research', 'regulation']
 ---
 
 Why do we need a multi-stakeholder discussion in a blockchain world? A report from G20 discussions.

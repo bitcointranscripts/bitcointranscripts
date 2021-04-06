@@ -1,6 +1,8 @@
 ---
 title: Extreme Opsec For The Modern Cypherpunk
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 Extreme opsec for the modern cypherpunk

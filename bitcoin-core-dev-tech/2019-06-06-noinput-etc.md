@@ -1,6 +1,8 @@
 ---
-title: Noinput Etc (2019-06-06)
-TranscriptBy: Bryan Bishop
+title: SIGHASH_NOINPUT, ANYPREVOUT (2019-06-06)
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tag: ['soft forks']
 ---
 
 2019-06-06

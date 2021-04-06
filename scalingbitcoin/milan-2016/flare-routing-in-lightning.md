@@ -1,6 +1,8 @@
 ---
 title: Flare Routing In Lightning
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'lightning', 'routing']
 ---
 
 Flare: An approach to routing in lightning network

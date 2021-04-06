@@ -1,6 +1,8 @@
 ---
 title: Prism
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'security']
 ---
 
 Prism: Scaling bitcoin to physical limits

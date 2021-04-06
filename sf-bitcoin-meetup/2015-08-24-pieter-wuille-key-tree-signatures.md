@@ -1,6 +1,8 @@
 ---
-title: Pieter Wuille Key Tree Signatures (2015-08-24)
-TranscriptBy: Bryan Bishop
+title: Pieter Wuille - Key Tree Signatures (2015-08-24)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['multisig']
 ---
 
 Name: Pieter Wuille

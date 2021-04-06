@@ -1,6 +1,7 @@
 ---
-title: Andreas Antonopoulos Seed Splitting (2020-04-08)
-TranscriptBy: Bryan Bishop
+title: Andreas Antonopoulos - Seed Splitting (2020-04-08)
+transcript_by: Michael Folkson
+tags: ['wallet', 'security']
 ---
 
 Name: Andreas Antonopoulos

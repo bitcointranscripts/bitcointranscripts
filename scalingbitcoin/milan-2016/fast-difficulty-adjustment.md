@@ -1,6 +1,7 @@
 ---
 title: Fast Difficulty Adjustment
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Fast difficulty adjustment using a low-pass finite impulse response filter

@@ -1,6 +1,8 @@
 ---
 title: State Of Multisig
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'multisig', 'wallet']
 ---
 
 State of multisig for bitcoin hodlers: Better wallets with PSBT

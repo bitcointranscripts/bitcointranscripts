@@ -1,6 +1,8 @@
 ---
 title: Socratic Seminar (2020-07-21)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
+categories: ['meetup']
+tag: ['taproot']
 ---
 
 Name: Socratic Seminar

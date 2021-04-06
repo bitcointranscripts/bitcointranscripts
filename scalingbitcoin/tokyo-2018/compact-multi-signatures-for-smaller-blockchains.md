@@ -1,6 +1,8 @@
 ---
 title: Compact Multi Signatures For Smaller Blockchains
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['p2pkh', 'P2P']
 ---
 
 Compact multi-signatures for smaller blockchains

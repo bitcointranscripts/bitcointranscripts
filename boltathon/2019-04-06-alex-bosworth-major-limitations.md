@@ -1,6 +1,8 @@
 ---
-title: Alex Bosworth Major Limitations (2019-04-06)
-TranscriptBy: Bryan Bishop
+title: Alex Bosworth -  Major Limitations of Lightning (2019-04-06)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Alex Bosworth

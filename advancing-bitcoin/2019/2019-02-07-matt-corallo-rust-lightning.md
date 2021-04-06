@@ -1,6 +1,8 @@
 ---
-title: Matt Corallo Rust Lightning (2019-02-07)
-TranscriptBy: Bryan Bishop
+title: Matt Corallo - Rust Lightning (2019-02-07)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Matt Corallo

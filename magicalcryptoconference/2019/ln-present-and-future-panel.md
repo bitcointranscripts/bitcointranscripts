@@ -1,6 +1,8 @@
 ---
 title: Ln Present And Future Panel
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'lnd', 'c-lightning']
 ---
 
 Lightning network present & future panel

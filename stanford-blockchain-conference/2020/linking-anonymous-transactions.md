@@ -1,6 +1,8 @@
 ---
 title: Linking Anonymous Transactions
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['attacks']
 ---
 
 Linking anonymous transactions via remote side-channel attacks

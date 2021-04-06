@@ -1,6 +1,8 @@
 ---
 title: Socratic Seminar Payjoins (2020-05-05)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['privacy']
 ---
 
 Name: Socratic Seminar with Adam Gibson

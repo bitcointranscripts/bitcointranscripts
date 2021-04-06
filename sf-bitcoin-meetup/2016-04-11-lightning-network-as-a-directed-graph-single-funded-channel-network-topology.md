@@ -1,6 +1,8 @@
 ---
 title: Lightning Network As A Directed Graph Single Funded Channel Network Topology (2016-04-11)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['meetup']
+tags: ['multisig', 'lightning', 'segwit']
 ---
 
 2016-04-11

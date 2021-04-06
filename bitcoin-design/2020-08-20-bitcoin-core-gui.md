@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Core Gui (2020-08-20)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
+tag: ['bitcoin-design']
 ---
 
 Name: Bitcoin Core GUI introductory meeting

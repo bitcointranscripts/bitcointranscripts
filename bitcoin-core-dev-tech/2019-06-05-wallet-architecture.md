@@ -1,6 +1,8 @@
 ---
 title: Wallet Architecture (2019-06-05)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['wallet']
 ---
 
 2019-06-05

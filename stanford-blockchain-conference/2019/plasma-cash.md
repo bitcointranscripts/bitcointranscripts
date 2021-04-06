@@ -1,6 +1,8 @@
 ---
-title: Plasma Cash
-TranscriptBy: Bryan Bishop
+title: Plasma Cash (2019-01-20)
+transcript_by: Bryan Bishop
+categories: ['conference']
+tag: ['ethereum']
 ---
 
 Plasma Cash: Towards more efficient Plasma constructions

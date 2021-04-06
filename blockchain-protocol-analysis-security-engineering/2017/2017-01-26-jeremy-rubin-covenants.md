@@ -1,6 +1,8 @@
 ---
-title: Jeremy Rubin Covenants (2017-01-26)
-TranscriptBy: Bryan Bishop
+title: Jeremy Rubin - Covenants (2017-01-26)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['covenants']
 ---
 
 Name: Jeremy Rubin

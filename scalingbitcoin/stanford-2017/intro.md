@@ -1,6 +1,7 @@
 ---
 title: Intro
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Introduction Stanford 2017
@@ -19,10 +20,12 @@ A bit about the purpose of scalingbitcoin.org. What we want to do with this is e
 
 Please take a moment to review our code of conduct on the website. We have a no video no pictures policy. We would like to respect the privacy of everyone here. With that, I would like to open and introduce our ....
 
+categories: ['conference']
 ---
 
 I'd like to introduce our MC, Dan Elitzer, who founded the MIT bitcoin club. ((applause))
 
+categories: ['conference']
 ---
 
 It's great to be here. Many of you may not know, but this event did not have an MC originally. At the last minute, the organizing committee decided to insert me in here. Now, it's come to my attention that some people might think that we need an MC or maybe we need a funnier Mc, a taller Mc, or something. If you don't like my jokes, then you could try Scaling Bitcoin XT or Scaling Bitcoin Unlimited. If you can't get any attendees to go then I hear they are going to move their logistics crew across the street. I think they will probably come back. If the market shows that a lot of you wnt to go voer there, then that's the free market. We believe people should be here voluntarily and choose to participate. The serious thing is that everyone here wants bitcoin to succeed. Everyone was here when the bitcoin price was orders of magnitude lower than it was. Engage with the speakers, they put a lot of time nad effort into these presentations. Please adhere to the code of conduct. We're trying to find common ground and discuss ideas. We want to focus on the presentations. Just before we get started, as Anton pointed out, there's a code of conduct, no photos, no videos. There's a Chatham house rules as well. You're welcome to talk about ideas, but unless it happens on a recorded session, you must not attribute the idea to the person or who they are associated with. This is in the interest of everyone engaging openly and honestly here.

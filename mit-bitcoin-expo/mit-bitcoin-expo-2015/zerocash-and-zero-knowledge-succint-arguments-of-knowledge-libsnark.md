@@ -1,6 +1,8 @@
 ---
 title: Zerocash And Zero Knowledge Succint Arguments Of Knowledge Libsnark
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'privacy']
 ---
 
 Zero knowledge proofs and SNARKs and libsnark

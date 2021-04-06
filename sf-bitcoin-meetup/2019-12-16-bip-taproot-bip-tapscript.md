@@ -1,6 +1,8 @@
 ---
 title: Bip Taproot Bip Tapscript (2019-12-16)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['meetup']
+tags: ['taproot', 'schnorr']
 ---
 
 2019-12-16

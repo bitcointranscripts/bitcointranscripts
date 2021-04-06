@@ -1,6 +1,8 @@
 ---
 title: Optimistic Vm
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['layer 2', 'ethereum']
 ---
 
 The optimistic VM

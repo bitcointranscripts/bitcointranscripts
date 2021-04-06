@@ -1,6 +1,7 @@
 ---
-title: James Obeirne (2019-04-11)
-TranscriptBy: Bryan Bishop
+title: James O'Beirne (2019-04-11)
+transcript_by: Michael Folkson
+categories: ['podcast']
 ---
 
 Stephan Livera Podcast with James O’Beirne - April 11th 2019

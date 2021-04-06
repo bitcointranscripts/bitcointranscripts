@@ -1,6 +1,7 @@
 ---
 title: Coin Selection
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Simulation-based evaluation of coin selection strategies

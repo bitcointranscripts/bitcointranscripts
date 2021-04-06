@@ -1,6 +1,8 @@
 ---
 title: Sidechains And Federation Models
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus']
 ---
 
 Sidechains and federation models

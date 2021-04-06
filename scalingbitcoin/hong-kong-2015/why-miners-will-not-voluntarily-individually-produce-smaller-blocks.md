@@ -1,6 +1,8 @@
 ---
 title: Why Miners Will Not Voluntarily Individually Produce Smaller Blocks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'mining', 'incentives', 'fees']
 ---
 
 Jonathan Bier

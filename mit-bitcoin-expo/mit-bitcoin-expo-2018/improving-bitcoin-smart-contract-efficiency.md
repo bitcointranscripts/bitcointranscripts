@@ -1,6 +1,8 @@
 ---
 title: Improving Bitcoin Smart Contract Efficiency
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['taproot', 'smart contracts', 'lightning']
 ---
 
 Improving efficiency of smart contracts on the bitcoin network

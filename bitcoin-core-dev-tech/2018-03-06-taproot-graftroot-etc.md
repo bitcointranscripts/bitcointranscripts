@@ -1,6 +1,8 @@
 ---
-title: Taproot Graftroot Etc (2018-03-06)
-TranscriptBy: Bryan Bishop
+title: Taproot, Graftroot, Etc (2018-03-06)
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['hashlocks', 'timelocks', 'taproot']
 ---
 
 <https://twitter.com/kanzure/status/972468121046061056>

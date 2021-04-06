@@ -1,6 +1,8 @@
 ---
 title: Working On Scripts
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['lightning']
 ---
 
 Working on scripts with logical opcodes

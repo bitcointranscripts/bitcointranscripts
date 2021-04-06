@@ -1,6 +1,7 @@
 ---
 title: Brick Async State Channels
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Brick: Asynchronous State Channels

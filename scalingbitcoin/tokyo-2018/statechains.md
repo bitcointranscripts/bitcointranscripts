@@ -1,6 +1,8 @@
 ---
 title: Statechains
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'lightning', 'sidechains', 'layer 2']
 ---
 
 Statechains: Off-chain transfer of UTXOs

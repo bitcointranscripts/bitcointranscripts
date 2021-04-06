@@ -1,6 +1,7 @@
 ---
-title: Oliver Gugger Lsat (2020-05-16)
-TranscriptBy: Bryan Bishop
+title: Oliver Gugger, LSAT (2020-05-16)
+transcript_by: Michael Folkson
+categories: ['meetup']
 ---
 
 Name: Oliver Gugger

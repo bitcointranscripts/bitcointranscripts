@@ -1,6 +1,7 @@
 ---
 title: The Reserve Currency Fallacy
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 The reserve currency fallacy

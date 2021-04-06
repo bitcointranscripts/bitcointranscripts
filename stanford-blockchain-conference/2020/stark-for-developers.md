@@ -1,6 +1,8 @@
 ---
 title: Stark For Developers
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'zero-knowledge']
 ---
 
 STARK for developers
@@ -83,7 +85,7 @@ We have this one smart contract both for VDF and timelock. There are many other 
 
 So we talked about a smart contract, ready for deployment. Use it on layer one, or on layer two. It allows both timelocks and VDFs for the price of one- timelocks and fair randomness. If you are interested in working with this smart contract or have ideas for how to extend or use it, please talk with us. We'll be here at the conference, or you can send an email to vdf@starkware.co or you can follow us on twitter.
 
-----
+...
 
 <i>Sponsorship</i>: These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

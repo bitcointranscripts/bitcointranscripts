@@ -1,6 +1,7 @@
 ---
 title: Plonk
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge

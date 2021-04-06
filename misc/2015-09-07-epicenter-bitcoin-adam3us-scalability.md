@@ -1,6 +1,7 @@
 ---
 title: Epicenter Bitcoin Adam3Us Scalability (2015-09-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+tags: ['proof-of-work', 'sidechains']
 ---
 
 

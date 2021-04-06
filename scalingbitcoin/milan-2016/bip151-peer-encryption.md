@@ -1,6 +1,8 @@
 ---
-title: Bip151 Peer Encryption
-TranscriptBy: Bryan Bishop
+title: BIP151 Peer Encryption
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['P2P', 'wallet']
 ---
 
 BIP151: Peer-to-peer encryption and authentication from the perspective of end-users

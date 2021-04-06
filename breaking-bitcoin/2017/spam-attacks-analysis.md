@@ -1,6 +1,8 @@
 ---
 title: Spam Attacks Analysis
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'p2sh', 'attacks']
 ---
 
 Hunting moby dick, an analysis of 2015-2016 spam attacks

@@ -1,6 +1,8 @@
 ---
 title: Current And Future State Of Wallets
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'privacy', 'security', 'wallet', 'validation']
 ---
 
 Current and future state of wallets

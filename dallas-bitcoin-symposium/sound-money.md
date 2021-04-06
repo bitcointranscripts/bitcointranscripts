@@ -1,6 +1,8 @@
 ---
 title: Sound Money
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['altcoin']
 ---
 
 Michael Goldstein

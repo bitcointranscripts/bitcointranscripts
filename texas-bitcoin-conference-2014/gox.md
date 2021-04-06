@@ -1,6 +1,7 @@
 ---
 title: Gox (2014)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['meetup']
 ---
 
 Ryan is a founder of BitBits. They donate to any charity in the US. BitBits was a 2013 Harvard Business School new venture finalist. Coming from Mass. As many of our speakers they have traveled a long way. Andreas from ... lawyer. Anti-money laundering specialist. He represents many companies for the transfer of money. He is a criminal defense attorney. He is a frequent speaker. On freedom too. All about freedom and frequent speakers at many money transmitting issues.

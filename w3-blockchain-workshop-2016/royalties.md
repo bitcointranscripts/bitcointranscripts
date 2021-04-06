@@ -1,6 +1,7 @@
 ---
 title: Royalties
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
 ---
 
 Chris Tse

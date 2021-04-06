@@ -1,6 +1,8 @@
 ---
 title: Marco Santori Delaware Initiative
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'proof-of-work']
 ---
 
 Preliminary notes:
@@ -8,8 +10,6 @@ Preliminary notes:
 
 
 Contact me- <https://twitter.com/kanzure>
-
-----
 
 Marco Santori
 

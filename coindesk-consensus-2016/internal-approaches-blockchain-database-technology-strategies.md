@@ -1,6 +1,7 @@
 ---
 title: Internal Approaches Blockchain Database Technology Strategies
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:
@@ -9,7 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-----
 
 William Mougayar, The Business Blockchain - Moderator
 

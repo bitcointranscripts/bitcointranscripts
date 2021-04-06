@@ -1,6 +1,8 @@
 ---
 title: Secure Fountain Architecture
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 A secure fountain architecture for slashing storage costs in blockchains

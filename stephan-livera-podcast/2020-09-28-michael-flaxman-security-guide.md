@@ -1,6 +1,8 @@
 ---
-title: Michael Flaxman Security Guide (2020-09-28)
-TranscriptBy: Bryan Bishop
+title: Michael Flaxman - Security Guide (2020-09-28)
+transcript_by: Michael Folkson
+categories: ['podcast']
+tags: ['security']
 ---
 
 Name: Michael Flaxman

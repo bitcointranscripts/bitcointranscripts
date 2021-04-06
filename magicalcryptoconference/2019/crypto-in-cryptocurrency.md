@@ -1,6 +1,8 @@
 ---
 title: Crypto In Cryptocurrency
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'cryptography', 'zero-knowledge']
 ---
 
 The "crypto" in cryptocurrency: Why everything is weird and hard

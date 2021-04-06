@@ -1,6 +1,8 @@
 ---
 title: New Address Type For Segwit Addresses (2017-03-29)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['meetup']
+tags: ['bech32', 'ux']
 ---
 
 Name: Pieter Wuille

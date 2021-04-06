@@ -1,6 +1,8 @@
 ---
 title: Atomic Multi Channel Updates
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus']
 ---
 
 Atomic multi-channel updates with constant collateral in bitcoin-compatible payment-channel networks

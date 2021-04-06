@@ -1,6 +1,8 @@
 ---
-title: Gleb Naumenko P2P Erlay (2019-11-13)
-TranscriptBy: Bryan Bishop
+title: Gleb Naumenko - Erlay (2019-11-13)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['research', 'P2P']
 ---
 
 Gleb Naumenko

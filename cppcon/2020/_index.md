@@ -1,5 +1,5 @@
 ---
-title: Cppcon 2020
+title: CPPcon 2020
 ---
 
 {{< childpages >}}

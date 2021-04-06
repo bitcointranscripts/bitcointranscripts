@@ -1,9 +1,10 @@
 ---
-title: Intro
-TranscriptBy: Bryan Bishop
+title: Intro to W3 Blockchain Workshop (2016-06-29)
+transcript_by: Bryan Bishop
+categories: ['workshop']
 ---
 
-Blockhains and standards
+Blockchains and standards
 
 W3C Workshop
 

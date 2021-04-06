@@ -1,6 +1,8 @@
 ---
-title: Socratic Seminar Bip Taproot (2020-07-21)
-TranscriptBy: Bryan Bishop
+title: Socratic Seminar - BIP Taproot (2020-07-21)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['schnorr', 'taproot']
 ---
 
 Name: Socratic Seminar
@@ -385,11 +387,11 @@ https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.htm
 
 AJ Towns on G’root (July 2018) 
 
-https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016249.html 
+https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016249.html
 
 Pieter Wuille on G’root (October 2018)
 
-https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016461.html 
+https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-October/016461.html
 
 AJ Towns on cross input signature aggregation (March 2018)
 

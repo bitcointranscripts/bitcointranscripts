@@ -1,6 +1,8 @@
 ---
 title: Boomerang
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['routing']
 ---
 
 Boomerang: Redundancy Improves Latency and Throughput in Payment-Channel Network

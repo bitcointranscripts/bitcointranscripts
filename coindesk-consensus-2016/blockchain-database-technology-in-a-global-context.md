@@ -1,6 +1,7 @@
 ---
 title: Blockchain Database Technology In A Global Context
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:
@@ -9,7 +10,6 @@ Preliminary notes:
 
 Contact me- <https://twitter.com/kanzure>
 
-----
 
 Blockchain database technology in a global context
 

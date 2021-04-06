@@ -1,6 +1,8 @@
 ---
 title: A Bevy Of Block Size Proposals Bip100 Bip102 And More
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['mempool']
 ---
 
 jgarzik
@@ -104,8 +106,6 @@ A: No. I want to maintain backwards-compatibility if at all possible. Not all wa
 Q: Do you think increasing on-chain bandwidth will interfere with the value of bitcoin?
 
 A: It will increase the value of bitcoin. It will signal that we are willing to enhance the system.
-
-----
 
 bip100 <http://gtf.org/garzik/bitcoin/BIP100-blocksizechangeproposal.pdf>
 

@@ -1,6 +1,7 @@
 ---
 title: Bitcoin Payment Economic Analysis
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Economic analysis of the bitcoin payment system

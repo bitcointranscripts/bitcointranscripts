@@ -1,6 +1,8 @@
 ---
 title: Wendy
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['consensus']
 ---
 
 08:45–09:00 - Keynote: “Intro to W3C standards” Wendy Seltzer, W3C.

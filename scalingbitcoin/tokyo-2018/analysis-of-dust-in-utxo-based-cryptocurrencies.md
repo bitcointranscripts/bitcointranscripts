@@ -1,6 +1,7 @@
 ---
 title: Analysis Of Dust In Utxo Based Cryptocurrencies
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 An analysis of dust in UTXO-based cryptocurrencies

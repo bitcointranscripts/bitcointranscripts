@@ -1,5 +1,5 @@
 ---
-title: W3 Blockchain Workshop 2016
+title: W3 Blockchain Workshop
 ---
 
 {{< childpages >}}

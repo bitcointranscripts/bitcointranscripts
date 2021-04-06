@@ -1,13 +1,13 @@
 ---
 title: Joi Ito
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'layer 2', 'fees']
 ---
 
 Joi Ito
 
 Welcome back to Scaling Bitcoin day 2. I am sure everyone went home and tried Ethan's wagering setup yesterday. Today we are going to be covering topics like layer 2, fees, and consensus. To get us started today, we have a very special guest, Joi Ito, director of the MIT Media Lab, and he will be talking about parallels to the internet and ICOs and he will cover a lot of ground. Joi?
-
-----
 
 I think everyone knows what the MIT Media Lab is. I am its director. I was involved in getting the digital currency initiative (DCI) going. I am trying to keep up with what's going on. I am not in the details as much as everyone else. I have been doing this since we setup a digicash server in the 1990s. It feels like we have been doing this for a while.
 

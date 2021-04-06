@@ -1,6 +1,7 @@
 ---
 title: Build Scale Operate
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Build - Scale - Operate: The Three Pillars of the Bitcoin Community

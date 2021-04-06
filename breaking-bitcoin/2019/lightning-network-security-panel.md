@@ -1,6 +1,8 @@
 ---
 title: Lightning Network Security Panel
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 Lightning network security panel

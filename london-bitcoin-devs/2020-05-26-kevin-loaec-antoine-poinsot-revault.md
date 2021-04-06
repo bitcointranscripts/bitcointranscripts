@@ -1,6 +1,8 @@
 ---
-title: Kevin Loaec Antoine Poinsot Revault (2020-05-26)
-TranscriptBy: Bryan Bishop
+title: Kevin Loaec, Antoine Poinsot - Revault (2020-05-26)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['covenants']
 ---
 
 Name: Kevin Loaec and Antoine Poinsot

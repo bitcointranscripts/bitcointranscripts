@@ -1,6 +1,7 @@
 ---
-title: Ctv Bip Review Workshop
-TranscriptBy: Bryan Bishop
+title: CTV BIP Review Workshop
+transcript_by: Bryan Bishop
+speaker: Jeremy Rubin
 ---
 
 OP\_CHECKTEMPLATEVERIFY workshop notes

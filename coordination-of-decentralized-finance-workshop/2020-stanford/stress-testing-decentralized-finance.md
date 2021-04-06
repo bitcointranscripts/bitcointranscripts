@@ -1,6 +1,8 @@
 ---
 title: Stress Testing Decentralized Finance
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['attacks']
 ---
 
 Stress testing decentralized finance
@@ -126,8 +128,6 @@ A: ... there's proportional slashing, where you have to put up a bond proportion
 Q: But the delegator and validator enter outside of the chain agreement, about how the liability of the slashing gets shifted? In that case, validators might still have incentive where they say basically in any circumstance if slashing you still carry the VC costs. So it's the same thing, as a highly leveraged transaction.
 
 A: Yeah, I guess the difference is that on-chain contracts can be enforced by consensus. In newer staking networks, the staking primitive is represented as a smart contract itself. The consensus mechanism is upgradeable in the sense that the contract can be upgraded. The addres can point to another contract that points to another contract that replicates interest rate models.
-
-----
 
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

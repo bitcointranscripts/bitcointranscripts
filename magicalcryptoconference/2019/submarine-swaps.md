@@ -1,6 +1,8 @@
 ---
 title: Submarine Swaps
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['lightning', 'submarine swaps']
 ---
 
 Bridging off-chain and on-chain with submarine swaps

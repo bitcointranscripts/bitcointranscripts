@@ -1,6 +1,8 @@
 ---
 title: Bip99 And Uncontroversial Hard Forks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'forks']
 ---
 
 jtimon

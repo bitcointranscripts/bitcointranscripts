@@ -1,6 +1,8 @@
 ---
 title: The Future Of Bitcoin Smart Contracts
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['smart contracts']
 ---
 
 The future of bitcoin smart contracts

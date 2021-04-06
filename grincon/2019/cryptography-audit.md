@@ -1,6 +1,8 @@
 ---
 title: Cryptography Audit
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'privacy']
 ---
 
 libsecp256k1-zkp audit

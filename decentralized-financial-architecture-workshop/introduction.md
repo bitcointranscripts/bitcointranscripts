@@ -1,6 +1,8 @@
 ---
 title: Introduction (2019)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['security', 'scalability']
 ---
 
 # Introduction to DFA Workshop

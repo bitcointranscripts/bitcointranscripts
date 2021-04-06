@@ -1,6 +1,7 @@
 ---
-title: Russell Oconnor Posts Theorem (2017-01-26)
-TranscriptBy: Bryan Bishop
+title: Russell Oconnor - Posts Theorem (2017-01-26)
+transcript_by: Michael Folkson
+categories: ['conference']
 ---
 
 Name: Russell O’Connor

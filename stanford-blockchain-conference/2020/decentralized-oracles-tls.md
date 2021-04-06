@@ -1,6 +1,8 @@
 ---
 title: Decentralized Oracles Tls
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy']
 ---
 
 DECO: Liberating Web Data Using Decentralized Oracles for TLS

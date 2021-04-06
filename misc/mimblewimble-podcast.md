@@ -1,6 +1,8 @@
 ---
 title: Mimblewimble Podcast
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+category: ['podcast']
+tags: ['research', 'cryptography']
 ---
 
 <https://soundcloud.com/heryptohow/mimblewimble-andrew-poelstra-peter-wuille-brian-deery-and-chris-odom>

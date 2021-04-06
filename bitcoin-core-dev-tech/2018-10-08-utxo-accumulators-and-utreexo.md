@@ -1,6 +1,8 @@
 ---
 title: Utxo Accumulators And Utreexo (2018-10-08)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['accumulators']
 ---
 
 # UTXO accumulators, UTXO commitments, and utreexo

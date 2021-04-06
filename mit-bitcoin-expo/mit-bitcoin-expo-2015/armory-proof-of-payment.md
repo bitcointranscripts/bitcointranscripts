@@ -1,6 +1,8 @@
 ---
 title: Armory Proof Of Payment
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'multisig']
 ---
 
 Armory proof of payment

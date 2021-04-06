@@ -1,6 +1,8 @@
 ---
 title: Anonymous Atomic Locks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'scalability']
 ---
 
 A2L: Anonymous atomic locks for scalability and interoperability in payment-channel hubs

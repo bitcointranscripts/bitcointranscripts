@@ -1,6 +1,8 @@
 ---
 title: Lower Bounds Limits Plasma
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['layer 2']
 ---
 
 Lower Bounds for Off-Chain Protocols: Exploring the Limits of Plasma

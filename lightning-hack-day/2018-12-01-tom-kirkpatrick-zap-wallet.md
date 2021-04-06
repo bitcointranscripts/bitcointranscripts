@@ -1,6 +1,8 @@
 ---
-title: Tom Kirkpatrick Zap Wallet (2018-12-01)
-TranscriptBy: Bryan Bishop
+title: Tom Kirkpatrick - Zap Wallet (2018-12-01)
+transcript_by: Michael Folkson
+categories: ['hackathon']
+tags: ['wallet']
 ---
 
 Tom Kirkpatrick
@@ -178,8 +180,6 @@ A - That’s right. Under the hood they are compatible with each other at the pr
 Q - I just wanted to encourage you to make it separate from Zap. Then it could be useful for testing and then you might get other contributors. You might get an interface that supports everything and not just what Zap wants to do. Win-win.
 
 A - Definitely. Everything we do is open source. A lot of it is embedded in Zap at the moment. There are a couple of libraries that we’ve taken out and extracted separately. We have a library called lnd-binary which lets you really easily install lnd. You can do npm install lnd-binary. It will go to GitHub, it will fetch the lnd binary, it’s got a repository of the checksums, it will validate that it’s the right binary and it will extract that and make it available for use in Node. There are things like that where we’re starting to pull out some of that functionality and extract it out into separate libraries. If we get to the point where we’re building an abstraction or an API that can spit out to three different node implementations or however many it would definitely be something that we’d open source outside of the context of Zap.
-
-----
 
 follow-up: <https://www.reddit.com/r/lightningnetwork/comments/ba3kac/tom_kirkpatrick_zap_wallet_dev_on_building_lnd/>
 

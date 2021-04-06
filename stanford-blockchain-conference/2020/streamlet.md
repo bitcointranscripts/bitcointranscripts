@@ -1,6 +1,8 @@
 ---
 title: Streamlet
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus']
 ---
 
 Streamlet: Textbook Streamlined Blockchain Protocols
@@ -96,7 +98,6 @@ If and only if it extends the longest chain.
 ... Really, really simple. This is the meat of the finalization. This is our entire protocol. A leader proposes a block, extends the longest chain, then a voter votes on the block if it is indeed on the longest chain. Once he sees a few in a row, then he can finalize the entire chain. That's it.
 
 ...
-
 
 
 

@@ -1,6 +1,8 @@
 ---
 title: Mimblewimble And Scriptless Scripts
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['research']
 ---
 
 Mimblewimble and scriptless scripts

@@ -1,6 +1,7 @@
 ---
-title: Barnabas Bagyi Fuzzing Class Interfaces (2020-10-09)
-TranscriptBy: Bryan Bishop
+title: Barnabas Bagyi - Fuzzing Class Interfaces (2020-10-09)
+transcript_by: Michael Folkson
+categories: ['conference']
 ---
 
 Name: Barnabás Bágyi
@@ -18,8 +19,6 @@ Slides: https://github.com/CppCon/CppCon2020/blob/main/Presentations/fuzzing_cla
 LibFuzzer: https://llvm.org/docs/LibFuzzer.html
 
 LibFuzzer tutorial: https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md
-
-Transcript completed by: Michael Folkson
 
 # Intro
 

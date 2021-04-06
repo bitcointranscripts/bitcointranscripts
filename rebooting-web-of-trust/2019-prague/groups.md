@@ -1,6 +1,8 @@
 ---
 title: Groups
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 # Group 1: Agents

@@ -1,6 +1,7 @@
 ---
 title: Cory Fields
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 MIT Bitcoin Expo 2016 transcript

@@ -1,6 +1,8 @@
 ---
 title: Collective Signing
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security']
 ---
 
 Enhancing bitcoin security and performance with strong consistency via collective signing
@@ -14,8 +16,6 @@ Eleftherios Kokoris Kogias
 <https://twitter.com/kanzure/status/785102844839985153>
 
 We are starting the session called "breaking the chain". We will first have collective signing presentation. Thank you.
-
-----
 
 This is joint work with some collaborators.
 

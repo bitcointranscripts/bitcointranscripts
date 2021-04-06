@@ -1,6 +1,8 @@
 ---
 title: Graphene Set Reconciliation
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['P2P']
 ---
 
 Graphene and set reconciliation

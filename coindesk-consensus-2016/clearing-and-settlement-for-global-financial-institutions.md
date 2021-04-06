@@ -1,6 +1,7 @@
 ---
 title: Clearing And Settlement For Global Financial Institutions
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:
@@ -8,8 +9,6 @@ Preliminary notes:
 
 
 Contact me- <https://twitter.com/kanzure>
-
-----
 
 Clearing and settlement for global financial institutions
 

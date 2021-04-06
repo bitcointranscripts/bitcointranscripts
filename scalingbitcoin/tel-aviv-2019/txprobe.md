@@ -1,6 +1,8 @@
 ---
 title: Txprobe
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['topology']
 ---
 
 TxProbe: Discovering bitcoin's network topology using orphan transactions

@@ -1,6 +1,8 @@
 ---
-title: Socratic Seminar Bip Schnorr (2020-06-16)
-TranscriptBy: Bryan Bishop
+title: Socratic Seminar - BIP Schnorr (2020-06-16)
+transcript_by: Michael Folkson
+categories: ['meetup']
+tags: ['schnorr']
 ---
 
 Name: Socratic Seminar

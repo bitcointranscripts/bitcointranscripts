@@ -1,6 +1,7 @@
 ---
 title: Self Sovereign Identity Ideology And Architecture
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Self-sovereign identity: Ideology & architecture

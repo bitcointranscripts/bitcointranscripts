@@ -1,6 +1,8 @@
 ---
 title: Socratic Seminar 3 (2019-10-14)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['meetup']
+tags: ['miniscript', 'taproot']
 ---
 
 Austin Bitcoin Developers socratic seminar 3

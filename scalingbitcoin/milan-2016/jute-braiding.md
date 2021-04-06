@@ -1,6 +1,8 @@
 ---
 title: Jute Braiding
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['consensus', 'mining', 'altcoin']
 ---
 
 Jute: New braiding techniques to achieve significant scaling gains

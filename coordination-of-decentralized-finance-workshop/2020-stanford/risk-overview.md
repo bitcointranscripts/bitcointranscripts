@@ -1,6 +1,7 @@
 ---
 title: Risk Overview
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
 ---
 
 Overview of risk in decentralized financial systems
@@ -92,8 +93,6 @@ Q: Are these types of forums where you are seeing the most productive conversati
 A: Good question. I know these conversations are happening in subcommunities. The soundness discussion happens among the protocol engineers, but I'm not sure if it happens at a broader level or within the regulator communities.
 
 So I suggest long-term stability of decentralized system has two aspects: economic stability, and the other is technological stability. So let's divide the two groups that way. So one will talk about economic stability, and the other will talk about technological stability.
-
-----
 
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

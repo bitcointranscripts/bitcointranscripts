@@ -1,6 +1,7 @@
 ---
 title: How Tech Companies Are Embracing Blockchain Database Technology
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
 ---
 
 Preliminary notes:
@@ -8,8 +9,6 @@ Preliminary notes:
 
 
 Contact me- <https://twitter.com/kanzure>
-
-----
 
 How tech companies are embracing blockchain database technology
 

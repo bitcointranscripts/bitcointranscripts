@@ -1,6 +1,8 @@
 ---
 title: Regulatory Pain Points
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['workshop']
+tags: ['research', 'regulation']
 ---
 
 Regulatory pain points
@@ -94,8 +96,6 @@ In March in Tokyo there will be a two-day workshop, one is a pane ldiscussion an
 Some of the discussion topics can include: privacy vs traceability: are these incompatible values? What are the appropriate KYC/AML requirements? What about standardization and interoperability? Should we wait for organic development for interoperability between blockchains? What about better incentive design to encourage good/bad behavior? What about backdoors and the technical neutrality of regulation? Architecture design ideal for engineers and regulators.
 
 Maybe a regulator can operate a node on the blockchain and record transaction information themselves. This might take some time to change the regulatory mindset, but we should join the discussion and achieve regulatory goals that we want in the discussion together.
-
-----
 
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
 

@@ -1,6 +1,8 @@
 ---
 title: Nix Bitcoin (2020-07-26)
-TranscriptBy: Bryan Bishop
+transcript_by: Michael Folkson
+categories: ['podcast']
+tags: ['security', 'privacy']
 ---
 
 Name: nixbitcoindev

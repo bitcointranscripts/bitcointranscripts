@@ -1,6 +1,8 @@
 ---
 title: Concurrency And Privacy With Payment Channel Networks
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['privacy', 'scalability', 'fees']
 ---
 
 Concurrency and Privacy with Payment-Channel Networks

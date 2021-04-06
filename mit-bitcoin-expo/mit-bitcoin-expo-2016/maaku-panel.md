@@ -1,6 +1,8 @@
 ---
 title: Maaku Panel
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['research', 'validation', 'wallet']
 ---
 
 This can be a broad range of topics for improvements. I am Mark Friedenbach, I have worked on Bitcoin protocol research, but I also do Core tech engineering at Blockstream. We also have Jonas, an independent Bitcoin Core developer. We also have Andrew Poelstra, who has been core to the crypto work which has been incoporated into Bitcoin,  such as libsecp256k1 which we recently integrated in the 0.12 release. It speeds up Bitcoin validation by 7-8x. We also have Joseph Poon, the co-inventor of the Lightning Network paper, and he's running his own Lightning company as well.

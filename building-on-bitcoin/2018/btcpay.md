@@ -1,6 +1,8 @@
 ---
 title: Btcpay
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'privacy', 'wallet']
 ---
 
 How to make everyone run their own full node

@@ -1,6 +1,8 @@
 ---
 title: Lightning Network Security Analysis
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['security', 'privacy', 'lightning']
 ---
 
 Security analysis of the lightning network (2017)

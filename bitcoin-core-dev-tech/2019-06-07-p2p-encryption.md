@@ -1,6 +1,8 @@
 ---
 title: P2P Encryption (2019-06-07)
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['core-dev-tech']
+tags: ['P2P']
 ---
 
 p2p encryption

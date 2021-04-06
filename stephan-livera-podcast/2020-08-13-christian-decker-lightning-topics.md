@@ -1,6 +1,8 @@
 ---
-title: Christian Decker Lightning Topics (2020-08-13)
-TranscriptBy: Bryan Bishop
+title: Christian Decker - Lightning Topics (2020-08-13)
+transcript_by: Michael Folkson
+categories: ['podcast']
+tags: ['attacks', 'lightning']
 ---
 
 Name: Christian Decker

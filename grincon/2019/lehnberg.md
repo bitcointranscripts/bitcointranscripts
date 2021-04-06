@@ -1,6 +1,8 @@
 ---
 title: Lehnberg
-TranscriptBy: Bryan Bishop
+transcript_by: Bryan Bishop
+categories: ['conference']
+tags: ['mining', 'attacks']
 ---
 
 daniel/lehberg

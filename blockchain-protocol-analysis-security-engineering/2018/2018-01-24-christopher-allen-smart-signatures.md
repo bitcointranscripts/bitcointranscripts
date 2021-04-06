@@ -1,6 +1,8 @@
 ---
-title: Christopher Allen Smart Signatures (2018-01-24)
-TranscriptBy: Bryan Bishop
+title: Christopher Allen - Smart Signatures (2018-01-24)
+transcript_by: Michael Folkson
+categories: ['conference']
+tags: ['consensus']
 ---
 
 Name: Christopher Allen
