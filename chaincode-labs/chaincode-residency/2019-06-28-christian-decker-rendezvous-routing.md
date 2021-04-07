@@ -1,6 +1,6 @@
 ---
 title:  Christian Decker - Rendezvous Routing (2019-06-28)
-transcript_by: 
+transcript_by: Caralie Chrisco and Darius Parvin
 categories: [‘residency’]
 tags: [‘lightning’, ‘routing’]
 ---
@@ -16,6 +16,8 @@ Location: Chaincode Residency 2019
 Video: <https://youtu.be/Ms2WwRzBdkM>
 
 Slides: <https://residency.chaincode.com/presentations/lightning/Rendezvous_Routing.pdf>
+
+Transcript by: Caralie Chrisco and Davius Parvin
 
 ## Introduction
 
