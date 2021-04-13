@@ -1,8 +1,8 @@
 ---
-title: John Newbery Wallet Development (2019-06-19)
+title: John Newbery - Wallet Development (2019-06-19)
 transcript_by: Michael Folkson
 tags: ['consensus', 'wallet']
-category: ['residency']
+category: ['residency', 'bitcoin core', 'wallet']
 ---
 
 Name: John Newbery
@@ -13,9 +13,9 @@ Location: Chaincode Labs 2019 Residency
 
 Date: June 19th 2019
 
-Video: https://www.youtube.com/watch?v=j0V8elTzYAA
+Video: <https://www.youtube.com/watch?v=j0V8elTzYAA>
 
-Slides: https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf
+Slides: <https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf>
 
 # Intro
 
@@ -31,7 +31,7 @@ We can integrate that into Bitcoin Core. We have a high level design. But a lot 
 
 # Fair notice
 
-Fair notice, unapologetically I am going to talk about the Bitcoin Core wallet because I don’t know any other wallets. Sorry if you don’t care about Bitcoin Core. This presentation may contain traces of C++. Sorry if you don’t know C++ but I will try to make it understandable. 
+Fair notice, unapologetically I am going to talk about the Bitcoin Core wallet because I don’t know any other wallets. Sorry if you don’t care about Bitcoin Core. This presentation may contain traces of C++. Sorry if you don’t know C++ but I will try to make it understandable.
 
 # What are a wallet’s functions?
 
@@ -39,7 +39,7 @@ What is a wallet? What are the functions of a wallet? I didn’t get as many as 
 
 # Key management
 
-Key management identifies your own transactions. If you have a wallet you want to know when you get paid or when you pay someone. You need to generate new addresses either for handing out to people for payments or generating new keys for change outputs. And you need to determine how to sign transactions. 
+Key management identifies your own transactions. If you have a wallet you want to know when you get paid or when you pay someone. You need to generate new addresses either for handing out to people for payments or generating new keys for change outputs. And you need to determine how to sign transactions.
 
 # Transaction construction
 
@@ -85,7 +85,7 @@ It is a scalar. A private key kept secret and used to sign. It is a scalar in th
 
 This is the hash used to create a P2PKH or P2WPKH address.
 
-Then finally `CTxDestination` and that’s a script template with a specific destination. That’s stored as a variant variable. That can be any one of these types: `CNoDestination`, `CKeyID` a P2PKH, `CScriptID` a P2SH, `WitnessV0ScriptHash` a P2WSH, `WitnessV0KeyHash`, `WitnessUnknown` for a future SegWit version. When we look at an output you try to match a template type to it. We say this is a KeyID or a WitnessV0 ScriptID. As we are receiving transactions and parsing them we want to be able to identify what kind of output it is. That’s where the matching happens. 
+Then finally `CTxDestination` and that’s a script template with a specific destination. That’s stored as a variant variable. That can be any one of these types: `CNoDestination`, `CKeyID` a P2PKH, `CScriptID` a P2SH, `WitnessV0ScriptHash` a P2WSH, `WitnessV0KeyHash`, `WitnessUnknown` for a future SegWit version. When we look at an output you try to match a template type to it. We say this is a KeyID or a WitnessV0 ScriptID. As we are receiving transactions and parsing them we want to be able to identify what kind of output it is. That’s where the matching happens.
 
 Q - That’s not the full list of everything you can send in Bitcoin. It just the list of what the wallet can send to?
 
@@ -135,7 +135,7 @@ Q - There is probably some interface between the RPC calls and the wallet that w
 
 # Loading
 
-We’ve constructed the wallet component. Now we are going to load the actual wallets. `WalletInit::Construct()` adds this client interface for the wallet and the node then tells the wallet to load/start/stop through the `ChainClient` interface. This src/interfaces/ directory contains all of those interface definitions between the node and the wallet and between the GUI and the node. `ChainClient`and that is telling it to do various things like `load` `start` `flush` `stop`. This is loading individual wallets. Most of the methods in that interface call through to functions in src/wallet/load.cpp. As you can probably imagine this file contains all of the loading code. Verifying the wallets, making sure that the wallet files are not corrupt, loading the wallets, starting the wallets, flushing them, stopping them, unloading them. 
+We’ve constructed the wallet component. Now we are going to load the actual wallets. `WalletInit::Construct()` adds this client interface for the wallet and the node then tells the wallet to load/start/stop through the `ChainClient` interface. This src/interfaces/ directory contains all of those interface definitions between the node and the wallet and between the GUI and the node. `ChainClient`and that is telling it to do various things like `load` `start` `flush` `stop`. This is loading individual wallets. Most of the methods in that interface call through to functions in src/wallet/load.cpp. As you can probably imagine this file contains all of the loading code. Verifying the wallets, making sure that the wallet files are not corrupt, loading the wallets, starting the wallets, flushing them, stopping them, unloading them.
 
 # Node <-> Wallet Interface
 
@@ -173,7 +173,7 @@ A - Let’s park discussion of what happens in the future until the end. Let’s
 
 Q - The notifications handler element, is that in addition to the validation interface or is it…
 
-A - It is the validation interface. I’ll go back and explain it. 
+A - It is the validation interface. I’ll go back and explain it.
 
 I wanted to put this diagram up because people were getting a bit lost I think. This is what it looks like. There is one way for the GUI to call into the wallet which is this. There is one way for the wallet to call into the node which is this. And there’s one way for the wallet to get notifications which is this. Then obviously there’s a RPC directly into the…
 
@@ -207,7 +207,7 @@ The node has the `WalletImpl` interface to talk to the wallet. The wallet has th
 
 Q - This might be a basic C++ question but I see here you have virtual functions and before you didn’t have. They were also virtual?
 
-Q - They were virtual as well. Here you don’t have to override, there you have to. 
+Q - They were virtual as well. Here you don’t have to override, there you have to.
 
 A - We never instantiate an object of this class. We also inherit from this class. That’s why these methods are overridden.
 
@@ -237,7 +237,7 @@ A - You’re probably not going to be running multiple wallets on that same node
 
 # Why?!
 
-At this point you might be thinking why? Why all this weird indirection? 
+At this point you might be thinking why? Why all this weird indirection?
 
 Audience member: It is modularized, it is good.
 
@@ -265,7 +265,7 @@ Q - For encrypting is there a common encryption library or does it reuse some of
 
 A - I’m not sure. 
 
-Q - I think it is with CAS, sipa’s implementation of CAS like all the encryption of the wallet stuff. 
+Q - I think it is with CAS, sipa’s implementation of CAS like all the encryption of the wallet stuff.
 
 A - It is just encrypting the private keys.
 
