@@ -1,7 +1,7 @@
 ---
 title: Bitcoin Sidechains - Unchained Epicenter Adam3Us, Gmaxwell (2015-02-03)
 transcript_by: Bryan Bishop
-category: ['podcast']
+categories: ['podcast']
 tags: ['sidechains']
 ---
 

@@ -2,7 +2,7 @@
 title: Alex Bosworth - Lightning Protocol (2018-10-22)
 transcript_by: Michael Folkson
 tags: ['lightning']
-category: ['residency']
+categories: ['residency']
 ---
 
 Alex Bosworth

@@ -2,7 +2,7 @@
 title: James O'Beirne Advanced Segwit (2019-06-18)
 transcript_by: Caralie Chrisco
 tags: ['segwit']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: James O'Beirne  

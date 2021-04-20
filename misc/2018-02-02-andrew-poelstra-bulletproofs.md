@@ -1,7 +1,7 @@
 ---
 title: Andrew Poelstra - Bulletproofs (2018-02-02)
 transcript_by: Bryan Bishop
-category: ['meetup']
+categories: ['meetup']
 tags: ['consensus', 'zero-knowledge', 'cryptography']
 ---
 
