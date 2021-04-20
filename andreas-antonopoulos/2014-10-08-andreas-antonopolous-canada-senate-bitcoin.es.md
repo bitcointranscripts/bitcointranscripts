@@ -2,16 +2,16 @@
 title: Andreas Antonopolous Senado de Canadá Bitcoin (2014-10-08)
 transcript_by: Bryan Bishop 
 translation_by: Blue Moon
-tags: ['security']
+tags: ['seguridad']
 ---
 
-Esta es una transcripción de las pruebas presentadas ante el Comité del Senado de Canadá sobre Banca, Comercio y Economía. Aquí hay un [video](https://www.youtube.com/watch?v=xUNGFZDO8mM&t=3m10s). El discurso de apertura se puede encontrar  [aquí](http://antonopoulos.com/2014/10/09/canadian-senate-hearings-my-opening-remarks/).
+Esta es una transcripción de las pruebas presentadas ante el Comité del Senado de Canadá sobre Banca, Comercio y Economía. Aquí hay un [video](https://www.youtube.com/watch?v=xUNGFZDO8mM&t=3m10s). El discurso de apertura se puede encontrar [aquí](http://antonopoulos.com/2014/10/09/canadian-senate-hearings-my-opening-remarks/).
 
 Puede aparecer otra transcripción [aquí](http://www.parl.gc.ca/SenCommitteeBusiness/CommitteeTranscripts.aspx?parl=41&ses=2&Language=E&comm_id=3) pero quién sabe.
 
 Se puede encontrar una transcripción adicional [aquí](http://bravenewcoin.com/news/unrevised-floor-transcript/).
 
-informe final: <http://www.parl.gc.ca/Content/SEN/Committee/412/banc/rep/rep12jun15-e.pdf>
+Informe final: <http://www.parl.gc.ca/Content/SEN/Committee/412/banc/rep/rep12jun15-e.pdf>
 
 # Observaciones preparadas.
 
