@@ -1,8 +1,9 @@
 ---
 title: John Newbery - Wallet Development (2019-06-19)
 transcript_by: Michael Folkson
-tags: ['consensus', 'wallet']
-category: ['residency', 'bitcoin core', 'wallet']
+speaker: John Newbery
+tags: ['consensus', 'wallet', 'bitcoin core']
+categories: ['residency']
 ---
 
 Name: John Newbery

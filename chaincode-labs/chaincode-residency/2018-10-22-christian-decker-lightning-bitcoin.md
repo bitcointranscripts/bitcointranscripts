@@ -2,7 +2,7 @@
 title: Lightning ≈ Bitcoin
 transcript_by: Anthony Ronning
 tags: ['lightning']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: Dr. Christian Decker

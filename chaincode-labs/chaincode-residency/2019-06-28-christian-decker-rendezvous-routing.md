@@ -1,8 +1,8 @@
 ---
 title:  Christian Decker - Rendezvous Routing (2019-06-28)
 transcript_by: Caralie Chrisco and Darius Parvin
-categories: [‘residency’]
-tags: [‘lightning’, ‘routing’]
+categories: ['residency']
+tags: ['lightning', 'routing']
 ---
 
 Name: Christian Decker

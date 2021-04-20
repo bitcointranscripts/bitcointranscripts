@@ -2,7 +2,7 @@
 title: Ethan Heilman Network Partitioning Attacks (2019-06-12)
 transcript_by: Adam Jonas
 tags: ['privacy', 'P2P', 'attacks']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: Ethan Heilman

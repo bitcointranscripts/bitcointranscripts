@@ -1,7 +1,7 @@
 ---
 title: Fabrice Drouin - Base and Transport Layers of the Lightning Network (2019-06-24)
 transcript_by: Duncan Dean
-category: ['residency']
+categories: ['residency']
 tags: ['lightning']
 ---
 

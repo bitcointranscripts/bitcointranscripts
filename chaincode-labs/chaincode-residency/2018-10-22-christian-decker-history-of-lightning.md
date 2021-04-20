@@ -2,7 +2,7 @@
 title: History of the Lightning Network
 transcript_by: Caralie Chrisco
 tags: ['lightning']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: Dr. Christian Decker

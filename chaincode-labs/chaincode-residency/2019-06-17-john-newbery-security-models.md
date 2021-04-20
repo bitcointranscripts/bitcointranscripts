@@ -2,7 +2,7 @@
 title: John Newbery Security Models (2019-06-17)
 transcript_by: Caralie Chrisco
 tags: ['security', 'taproot', 'cryptography']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: John Newbery
