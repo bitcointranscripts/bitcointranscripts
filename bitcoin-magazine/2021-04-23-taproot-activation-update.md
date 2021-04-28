@@ -13,13 +13,13 @@ Location: Bitcoin Magazine (online)
 
 Date: April 23rd 2021
 
-Video: https://www.youtube.com/watch?v=SHmEXPvN6t4
+Video: <https://www.youtube.com/watch?v=SHmEXPvN6t4>
 
-Previous episode on lockinontimeout (LOT): https://diyhpl.us/wiki/transcripts/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout/
+Previous episode on lockinontimeout (LOT): <https://btctranscripts.com/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout/>
 
-Previous episode on Speedy Trial: https://diyhpl.us/wiki/transcripts/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial/
+Previous episode on Speedy Trial: <https://btctranscripts.com/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial/>
 
-Aaron van Wirdum on “There are now two Taproot activation clients, here’s why”: https://bitcoinmagazine.com/technical/there-are-now-two-taproot-activation-clients-heres-why
+Aaron van Wirdum on “There are now two Taproot activation clients, here’s why”: <https://bitcoinmagazine.com/technical/there-are-now-two-taproot-activation-clients-heres-why>
 
 Transcript by: Michael Folkson
 
@@ -33,7 +33,7 @@ AvW: Sjors, today we have a “lot” more to discuss.
 
 SP: We’ve already made this pun.
 
-AvW: We’ve already made it twice I think. It doesn’t matter. We are going to discuss the final implementation details of Speedy Trial today. We have already covered Speedy Trial in a previous [episode](https://diyhpl.us/wiki/transcripts/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial/). This time we are also going to contrast it to the LOT=true client which is an alternative that has been released by a couple of community members. We are going to discuss how they compare.
+AvW: We’ve already made it twice I think. It doesn’t matter. We are going to discuss the final implementation details of Speedy Trial today. We have already covered Speedy Trial in a previous [episode](https://btctranscripts.com/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial/). This time we are also going to contrast it to the LOT=true client which is an alternative that has been released by a couple of community members. We are going to discuss how they compare.
 
 SP: That sounds like a good idea. We also talked about Taproot activation options in general in a much earlier episode. 
 
@@ -65,9 +65,9 @@ AvW: Let’s hear it Sjors. What are the finalized parameters for Speedy Trial? 
 
 # Bitcoin Core finalized activation parameters
 
-Bitcoin Core 0.21.1 release notes: https://github.com/bitcoin/bitcoin/blob/0.21/doc/release-notes.md
+Bitcoin Core 0.21.1 release notes: <https://github.com/bitcoin/bitcoin/blob/0.21/doc/release-notes.md>
 
-Speedy Trial activation parameters merged into Core: https://github.com/bitcoin/bitcoin/pull/21686
+Speedy Trial activation parameters merged into Core: <https://github.com/bitcoin/bitcoin/pull/21686>
 
 SP: Starting on I think it is this Sunday (April 25th, midnight) the first time the difficult readjusts, that happens every two weeks, probably one week after Sunday…
 
@@ -131,7 +131,7 @@ AvW: I also want to clarify. We don’t know what it is going to look like yet. 
 
 # Alternative to Bitcoin Core (Bitcoin Core 0.21.0-based Taproot Client)
 
-Update on Taproot activation releases: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html
+Update on Taproot activation releases: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
 
 AvW: Another client was also launched. There is a lot of debate on the name. We are going to call it the LOT=true client. 
 
@@ -365,7 +365,7 @@ SP: I guess the futures market would predict exactly that. That would not be goo
 
 # Block height versus MTP
 
-https://github.com/bitcoin/bitcoin/pull/21377#issuecomment-818758277
+<https://github.com/bitcoin/bitcoin/pull/21377#issuecomment-818758277>
 
 SP: We could still talk about this nitty difference between block height versus block time. There was a fiasco but I don’t think it is an interesting difference. 
 
