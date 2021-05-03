@@ -3,7 +3,7 @@ title: Andreas Antonopoulos - Seguridad de la cartera de hardware (2019-02-01)
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 speaker: Andreas Antonopoulos
-tags: [cartera hardware, validación, cartera]
+tags: ['cartera hardware', 'validación', 'cartera']
 ---
 
 Nombre: Andreas Antonpoulos
