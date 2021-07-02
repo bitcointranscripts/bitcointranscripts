@@ -2,7 +2,7 @@
 title: James O'Beirne Advanced Segwit (2019-06-18)
 transcript_by: Caralie Chrisco
 tags: ['segwit']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: James O'Beirne  
@@ -203,11 +203,11 @@ The idea is that we basically take all the transactions in the block in a specif
 
 # Witness Programs
 
-Let's talk about witness programs. There are a few different templates I guess you could say that we have with SegWit. We have a beta witness public key hash which is kind of like a special case for the common case of spinning to a public key and so as you can see here that the witness just consists of the signature and pubkey. The script sig is, of course, empty because this is SegWit now, and so we don't have any in the scriptsig. The script pubkey is just an OP_0 and then the 20-byte hash of the public key. That's pretty straightforward.
+Let's talk about witness programs. There are a few different templates I guess you could say that we have with SegWit. We have a pay to witness public key hash which is kind of like a special case for the common case of spending to a public key and so as you can see here that the witness just consists of the signature and pubkey. The script sig is, of course, empty because this is SegWit now, and so we don't have any in the scriptsig. The script pubkey is just an OP_0 and then the 20-byte hash of the public key. That's pretty straightforward.
 
 For pay-to-witness-script-hash, the witness is the stack that gets evaluated with the script, and the script pubkey is just OP_0 and then the 32 bytes hash of you are evaluating.
 
-Felix: what did we keep the Satoshi original vision for keeping one to many pops on the stack.
+Felix: why did we keep the Satoshi original vision for keeping one too many pops on the stack.
 
 James O'B: That’s out of my pay grade.
 
@@ -331,7 +331,7 @@ Audience Member: That's not validated, right? Can you fake that?
 
 James O'B: You can. You'll probably get banned when your peer asks you for something.
 
-Another interesting detail that was introduced in the validation code is we have this thing called seek validation state, which is basically this object that gets passed in. It's sort of like a piece of data that gets created along with every peer communication that eventually makes its way into the validation part of the system, and it's like how you sort of record what happened or where it went wrong, or like how severely out of alignment the communication is with what you expect.
+Another interesting detail that was introduced in the validation code is we have this thing called CValidationState, which is basically this object that gets passed in. It's sort of like a piece of data that gets created along with every peer communication that eventually makes its way into the validation part of the system, and it's like how you sort of record what happened or where it went wrong, or like how severely out of alignment the communication is with what you expect.
 
 SegWit introduced this idea of "corruption possible," which is kind of interesting because you might say, receive a block, and now in SegWit if some part of the witness data in that block is garbled, but that's the only problematic part of it, then we say "okay, this data might have just gotten screwed up somewhere along the way, and we shouldn't necessarily consider the block invalid, and we shouldn't necessarily disconnect the peer." When I was reviewing this, it kind of raised a question in my mind because why wouldn't we have always had this? Why is somehow having to witness data cordoned off, why does that introduce the possibility of corruption? I don't know. Maybe we can ask somebody.
 

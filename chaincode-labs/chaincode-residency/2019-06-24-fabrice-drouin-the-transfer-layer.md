@@ -2,7 +2,7 @@
 title: Lightning - The Transfer Layer
 transcript_by: Will Clark
 tags: ['lightning']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: Fabrice Drouin

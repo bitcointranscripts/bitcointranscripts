@@ -2,10 +2,10 @@
 title: Assumeutxo (2019-06-07)
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['security']
+tags: ['security', 'IBD', 'bitcoin core']
 ---
 
-assumeutxo
+Assumeutxo
 
 <https://twitter.com/kanzure/status/1137008648620838912>
 

@@ -2,7 +2,7 @@
 title: Wallet Architecture (2019-06-05)
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['wallet']
+tags: ['wallet', 'bitcoin core']
 ---
 
 2019-06-05
@@ -64,4 +64,3 @@ With regards to serialization... it's tightly coupled to CWallet and the databas
 There's quite a few tests that rely on dumb "IsMine" behavior. The functional tests. The entirety of the wallet, basically. There's a lot of things shared between these.
 
 Labels and addressbook, how does that interface now? We have a record that takes the address as a label. It's separate from adding script or whatever to the key store. Yeah, they're different. IsMine in the new one, has no such thing as "InMine solvable". It's either spendable, or watchonly. If you have a hardware wallet, we want to call it "spendable". For watchonly, maybe use multiwallet.
-

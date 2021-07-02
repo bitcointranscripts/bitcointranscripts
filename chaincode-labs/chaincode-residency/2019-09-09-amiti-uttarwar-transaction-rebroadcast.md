@@ -1,7 +1,7 @@
 ---
 title: Amiti Uttarwar - Transaction Rebroadcast (2019-09-09)
 transcript_by: Michael Folkson
-category: ['residency']
+categories: ['residency']
 tag: ['bitcoin core']
 ---
 
