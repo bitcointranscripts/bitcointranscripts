@@ -149,7 +149,8 @@ And think about this one: There's no channel between Alice and Bob. Bob is relay
 
 Audience Member: Yes.
 
-Fabrice: I'll give you the answer later. Okay that’s it for me. questions? 
+Fabrice: I'll give you the answer later. Okay that’s it for me. Questions? 
+
 
 Audience Member: Where’s the next hardware store? I need a wrench. 
 
