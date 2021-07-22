@@ -30,7 +30,8 @@ Audience Member: You also lock up your own channels.
 
 Fabrice: Yes so it's,...It can be really annoying and if you choose really long routes you can lock up to ten times your funds or even 20 times your funds but it's expensive for you. You need money to do that, but it can be really annoying. 
 
-Audience Member: But there is an asymmetry going on right? It’s pay 1...the benefit is 20 times. 
+Audience Member: But there is an asymmetry going on right? It's pay 1...the benefit is 20 times. 
+
 
 Fabrice: Yes, but 20 times not that much so you can't really perform a large scale attack with this type of locking up funds.
 
