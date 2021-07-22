@@ -164,6 +164,7 @@ Audience Member: All the groups talk about the same thing?
 
 Adam Jonas: Yeah, all the groups talk about the same thing.
 
-Audience Member: Jonas, how do you plan to do this with the cost and price questions? Every group a different topic, or…? Because we could boil it down to three. I mean (inaudible)
+Audience Member: Jonas, how do you plan to do this with the cost and price questions? Every group gets a different topic, or…? Because we could boil it down to three. I mean (inaudible)
+
 
 Adam Jonas: Yeah, put it down to three and have each one (inaudible) section.
