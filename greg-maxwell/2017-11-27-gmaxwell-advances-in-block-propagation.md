@@ -19,11 +19,11 @@ video: <https://www.youtube.com/watch?v=EHIuuKCm53o>
 
 efficient block transfer: <https://web.archive.org/web/20170912171304/https://people.xiph.org/~greg/efficient.block.xfer.txt>
 
-low latency block transfer: <https://people.xiph.org/~greg/lowlatency.block.xfer.txt>
+low latency block xfer: <https://web.archive.org/web/20160607023347/https://people.xiph.org/~greg/lowlatency.block.xfer.txt>
 
-<https://people.xiph.org/~greg/mempool_sync_relay.txt>
+<https://web.archive.org/web/20160607023408/https://people.xiph.org/~greg/mempool_sync_relay.txt>
 
-<https://people.xiph.org/~greg/weakblocks.txt>
+<https://web.archive.org/web/20160607023359/http://people.xiph.org/~greg/weakblocks.txt>
 
 compact blocks FAQ <https://bitcoincore.org/en/2016/06/07/compact-blocks-faq/>
 
