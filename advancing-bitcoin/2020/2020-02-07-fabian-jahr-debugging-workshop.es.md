@@ -16,7 +16,7 @@ Día: 7 de febrero de 2020
 
 Vídeo: No se ha publicado ningún vídeo en Internet 
 
-Presentación de Fabian en el Bitcoin Edge Dev++ 2019: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/
+Presentación de Fabian en el Bitcoin Edge Dev++ 2019: https://btctranscripts.com/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/
 
 Depuración de Bitcoin Core doc: https://github.com/fjahr/debugging_bitcoin
 
