@@ -11,6 +11,8 @@ or: "Peter Todd's secret love letter to Zooko"
 
 Peter Todd
 
+Video: https://youtu.be/YHieWJWwVbE
+
 # Background
 
 See <http://web.archive.org/web/20170717025249/https://petertodd.org/2016/cypherpunk-desert-bus-zcash-trusted-setup-ceremony>

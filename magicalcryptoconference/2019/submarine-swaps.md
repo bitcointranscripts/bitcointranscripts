@@ -9,6 +9,8 @@ Bridging off-chain and on-chain with submarine swaps
 
 Alex Bosworth
 
+Video: https://youtu.be/SCxaV2HCQ5o
+
 # Introduction
 
 Hi, I work at Lightning Labs. I want to talk about the dawn of hyperloop. It's a new concept.

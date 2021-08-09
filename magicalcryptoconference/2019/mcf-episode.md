@@ -4,6 +4,9 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 
+Video: https://youtu.be/0MnuvKybuo0?t=1463
+
+Video MCF Short: https://youtu.be/SnfKIKL_Ghk
 
 WP: The short was not about Craig Wright. It was not about him being a fraud, because he is not a fraud.
 

@@ -8,6 +8,8 @@ Fork dynamics
 
 Eric Lombrozo
 
+Video: https://youtu.be/zFN__b6ARH4?t=12523
+
 Thank you, Samson, for that great introduction and thank you for organizing this awesome event. It's great seeing everyone. A few years ago, the situation was extremely different. When Samson originally asked me to give a talk, I kind of thought a little bit about what I should talk about and I wasn't sure what's most interesting. A few years ago, it was much more clear about the set of things going on. I had something to say about those things. I guess now, I would like to broadly talk about some important areas of topics that we wouldn't usually talk about. I kept asking for a topic.
 
 What I'm going to talk about is really what we've got ourselves into with this. People get into this space and they think we're really dumb getting into this. Bitcoin is really hard to explain to people what it is. One of the things I think is really unique is that you see people that really have higher pursuits they are going out to do, but there's basis level of human behavior. It doesn't appeal to human greed and other things like that... so in a sense we're trying to build something to improve humanity and rise above the current human condition and how people think about money, but at the same time people really want to make money.
