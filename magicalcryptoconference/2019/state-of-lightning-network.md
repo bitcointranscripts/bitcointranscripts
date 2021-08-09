@@ -9,6 +9,8 @@ Fireside chat on the state of the lightning network
 
 Stacy Herbert, Elizabeth Stark
 
+Video: https://youtu.be/kk2dUD6QXgw
+
 # Introduction
 
 WP: We have a fireside chat with Stacy Herbert from Kaiser Report and Elizabeth Stark. Some people say she is the CEO of Lightning Network, but she is the CEO of Lightning Labs. Let's invite them on stage.

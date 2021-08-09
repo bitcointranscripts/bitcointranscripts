@@ -9,6 +9,8 @@ Taxonomy of lightning nodes
 
 Lisa Neigut
 
+Video: https://youtu.be/A4i5cEI1jnc
+
 # Introduction
 
 Hello. I work at Blockstream on c-lightning. I am here today to talk to you about a taxonomy of nodes about who's who on the lightning network. I wnat ot go through the tools that have been built, looking through the perspectives of what different nodes are trying to accomplish.

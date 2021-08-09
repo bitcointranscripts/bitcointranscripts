@@ -5,6 +5,8 @@ categories: ['conference']
 tags: ['mining', 'lightning', 'taproot']
 ---
 
+Video: https://youtu.be/8B1fX2i4dMY
+
 Bitcoin protocol development panel
 
 Eric Lombrozo, Matt Corallo, John Newbery, Luke Dashjr, Katherine Wu

@@ -9,6 +9,8 @@ Lightning network present & future panel
 
 Will O'Beirne, Lisa Neigut, Alex Bosworth, Leigh Cuen
 
+Video: https://youtu.be/OzpfiieV5C4
+
 LC: Can everyone hear me now? Alright, alright.
 
 WO: It's getting some good usage. A lot of those are businesses. Definitely it's in the early stage. Elizabeth talked about this. There's a lot of things that are mostly for fun, it's not really at ecommerce yet.

@@ -8,6 +8,8 @@ HTC / Exodus
 
 Phil Chen
 
+Video: https://youtu.be/CyieujRFk3g?t=8077
+
 # Introduction
 
 SM: This conversation started a couple months ago in Hong Kong with Phil Chen and Adam Back were sitting in a bar talking about the bitcoin industry and what would move it forward. Without further adue, please welcome Phil Chen.
