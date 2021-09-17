@@ -1,6 +1,6 @@
 ---
 title: Carla Kirk-Cohen - Routing Problems and Solutions
-transcript_by:
+transcript_by: Caralie Chrisco
 categories: [‘conference’]
 tags: [‘lightning’, ‘routing’]
 ---
