@@ -13,9 +13,8 @@ Location: Chaincode Labs Lightning Residency 2019
 
 Date: 2019-06-26
 
-Video: https://youtu.be/ULVItljEiFE
+Video: <https://youtu.be/ULVItljEiFE> 
 
-Transcript by: Abubakar Nur Khalil
 
 
 ## Introduction
