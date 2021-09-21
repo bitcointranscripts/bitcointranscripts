@@ -13,7 +13,7 @@ Location: Chaincode Labs Lightning Residency 2019
 
 Date: 2019-06-26
 
-Video: https://youtu.be/SoFlRCNdqDg
+Video: <https://youtu.be/SoFlRCNdqDg>
 
 
 ## Introduction
@@ -47,7 +47,7 @@ So my question is: how can a website, for example Twitter, give us a notifcation
 
 ### How does a HTTP server push work?
 
-And I just want to review a little bit how does the HTTP server push work. So you load a web page, and then JavaScript secretly initiates another HTTP request with the web server. And the server looks if it has some information for the client. So for example, are there new tweets? And if there is information, yes you can respond: “here's the information you requested”. The interesting case is if there is no data. Then usually, what you would expect is the HTTP request would finish and say “no there is no data for me”. But in our case, server push defers answering that request to some time in the future, right. It just keeps your TCP socket open, over which HTTP is running, and it waits to the future. And how long does it wait? Well if new information for the client is available or if the client opens a new page and can't receive the response anymore, right, and in this case if something happens, or there is a heartbeat mechanism to reestablish the connection all the time. And then the answer comes. But from an end-user perspective, it really looks like the server has initiated conversation. Because on your web page, magically something appears. And because the end user usually doesn't know the Ajax request is outstanding. You can read more about this on Wikipedia obviously: https://en.wikipedia.org/wiki/Push_technology.
+And I just want to review a little bit how does the HTTP server push work. So you load a web page, and then JavaScript secretly initiates another HTTP request with the web server. And the server looks if it has some information for the client. So for example, are there new tweets? And if there is information, yes you can respond: “here's the information you requested”. The interesting case is if there is no data. Then usually, what you would expect is the HTTP request would finish and say “no there is no data for me”. But in our case, server push defers answering that request to some time in the future, right. It just keeps your TCP socket open, over which HTTP is running, and it waits to the future. And how long does it wait? Well if new information for the client is available or if the client opens a new page and can't receive the response anymore, right, and in this case if something happens, or there is a heartbeat mechanism to reestablish the connection all the time. And then the answer comes. But from an end-user perspective, it really looks like the server has initiated conversation. Because on your web page, magically something appears. And because the end user usually doesn't know the Ajax request is outstanding. You can read more about this on Wikipedia obviously: <https://en.wikipedia.org/wiki/Push_technology>.
 
 ### Payment channels are constructed by deferring the publication or broadcast of some TXs to the future
 
@@ -111,7 +111,7 @@ For every update of the commitment transactions, new revocation keys have to be 
 
 The commitment transactions will have even more outputs, right? So we only saw two outputs in the commitment transaction, which was the timelocked output that goes to myself basically, which can be like taken away as a penalty and the output of the channel partner, but there's also HTLCs that are additional outputs in the commitment transactions. And this talk will not talk too much about HTLCs because Fabrice is doing a talk about HTLCs afterwards. And then in the multihop talk, I will use them again to also show you how actually funds are being exchanged in one channel.
 
-So yeah, there's a small reading suggestion for a payment channel construction with less overhead, and that's the eltoo paper. So a simple layer 2 protocol for Bitcoin. I think one of the authors is sitting here, trying to shill it all the time. And there's also Lalu from Lightning Labs, who helps with it. On my blog, I wrote a summary on this: https://www.rene-pickhardt.de/index.html%3Fp=2116.html. There's actually another very good summary by Lisa, she also wrote a summary on her blog. But even the paper is, I would say, pretty easy to read. So yeah, I don't talk more about eltoo today.
+So yeah, there's a small reading suggestion for a payment channel construction with less overhead, and that's the eltoo paper. So a simple layer 2 protocol for Bitcoin. I think one of the authors is sitting here, trying to shill it all the time. And there's also Lalu from Lightning Labs, who helps with it. On my blog, I wrote a summary on this: <https://www.rene-pickhardt.de/index.html%3Fp=2116.html>. There's actually another very good summary by Lisa, she also wrote a summary on her blog. But even the paper is, I would say, pretty easy to read. So yeah, I don't talk more about eltoo today.
 
 ### Some remarks on dust outputs
 
