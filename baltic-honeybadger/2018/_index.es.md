@@ -1,5 +1,5 @@
 ---
-title: Austin Bitcoin Developers
+title: Baltic Honeybadger 2018 
 ---
 
 {{< childpages >}}
