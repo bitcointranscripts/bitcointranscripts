@@ -13,6 +13,8 @@ Location: Chaincode Labs Lightning Residency 2019
 
 Video: <https://youtu.be/PUDWGH_MvmQ>
 
+Slides: <https://residency.chaincode.com/presentations/lightning/Multiparty_Channels.pdf>
+
 # Symmetric Update Protocols
 
 ## eltoo Update Mechanism
