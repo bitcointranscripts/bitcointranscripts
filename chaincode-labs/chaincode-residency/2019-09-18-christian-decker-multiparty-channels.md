@@ -39,7 +39,7 @@ That's basically the idea of channel factories. It's basically you have the setu
 
 We have this thing here where we can freely send back and forth money between any two endpoints. Why would we then start to do stuff like this where we create channels where we split out funds and create subcontracts, basically, in our bigger contract? Anybody?
 
-Audience: You need to get everybody to sign the same transaction.
+Audience: You don't need to get everybody to sign the same transaction.
 
 Christian: Exactly. So the issue here is that in order to move these funds or to update this contract here, you basically need everybody to sign off. Everybody needs to be aware of what happens in those, and if you want to have a private session with somebody else, then you might say:
 
