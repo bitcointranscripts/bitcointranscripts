@@ -7,7 +7,7 @@ tags: ['covenants']
 
 Name: Jeremy Rubin
 
-Topic: Contracts with Merklized Covenants
+Topic: Structuring Multi Transaction Contracts in Bitcoin
 
 Location: BPASE 2017, Stanford University 
 
@@ -15,7 +15,7 @@ Date: January 26th 2017
 
 Video: https://www.youtube.com/watch?v=r7xN7K0OqaA
 
-Slides: https://cyber.stanford.edu/sites/g/files/sbiybj9936/f/jeremyrubin.pdf
+Slides: https://rubin.io/public/pdfs/multi-txn-contracts.pdf
 
 # Intro
 
