@@ -1,0 +1,5 @@
+---
+title: lightning-specification
+---
+
+{{< childpages >}}
