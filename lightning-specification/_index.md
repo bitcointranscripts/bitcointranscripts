@@ -1,5 +1,5 @@
 ---
-title: lightning-specification
+title: Lightning Specification
 ---
 
 {{< childpages >}}
