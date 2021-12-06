@@ -11,6 +11,8 @@ Luke Dashjr
 
 slides: <https://luke.dashjr.org/tmp/code/block-sizes-mcc.pdf>
 
+Video: https://youtu.be/JJF5Gnro1GU
+
 I am luke-jr. I am going to go over why block size shouldn't be too big.
 
 # How does bitcoin work?

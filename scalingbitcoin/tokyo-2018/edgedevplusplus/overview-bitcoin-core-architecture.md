@@ -1,7 +1,9 @@
 ---
 title: Overview Bitcoin Core Architecture
 transcript_by: Bryan Bishop
+speaker: James O'Beirne
 categories: ['conference']
+tags: ['bitcoin core']
 ---
 
 Bitcoin Core architecture overview
@@ -50,7 +52,7 @@ DoS protection is very important because it prevents malicious peers from disrup
 
 This is an easy way for users to interact programmatically with Bitcoin Core over HTTP. The CLI is actually powered by the RPC interface.
 
-# User interface: Qt
+# User interface: QT
 
 Who here has used this? Oh, okay. Interesting.
 
@@ -208,6 +210,42 @@ I was talking about this earlier.
 
 How do we store stuff in Bitcoin Core? Here's a tree of the file structure if you go into your data dir you're going to see a banlist, blocks/, chainstate/, and others.
 
+`$ tree ~/.bitcoin/regtest/`
+
+```
+├── banlist.dat
+├── blocks
+│   ├── blk00000.dat
+│   ├── index
+│   │   ├── 000005.ldb
+│   │   ├── 000006.log
+│   │   ├── CURRENT
+│   │   ├── LOCK
+│   │   └── MANIFEST-000004
+│   └── rev00000.dat
+├── chainstate
+│   ├── 000005.ldb
+│   ├── 000006.log
+│   ├── CURRENT
+│   ├── LOCK
+│   └── MANIFEST-000004
+├── debug.log
+...
+
+├── fee_estimates.dat
+├── indexes
+│   └── txindex
+│       ├── 000003.log
+│       ├── CURRENT
+│       ├── LOCK
+│       └── MANIFEST-000002
+├── mempool.dat
+├── peers.dat
+└── wallets
+    ├── db.log
+    └── wallet.dat
+```
+
 # Storage: .dat files
 
 The .dat files are basically just raw bytes of some serialized data structures. You can checkout serialization here: <https://github.com/bitcoin/bitcoin/tree/master/src/serialize.h>
@@ -221,9 +259,3 @@ There's a macro called ADD\_SERIALIZE\_METHODS and there's some magic around how
 Leveldb is a fast, sorted key value store used for a few things in Bitcoin. It allows bulk writes and snapshots. It is bundled wit hthe source tree in src/leveldb/ and maintained in bitcoin-core/leveldb.git repository on github.
 
 Leveldb has the block index, which is the tree of all the valid blocks we've seen. It also handles something called chainstate/, which is really just the UTXO set.
-
-
-
-
-
-

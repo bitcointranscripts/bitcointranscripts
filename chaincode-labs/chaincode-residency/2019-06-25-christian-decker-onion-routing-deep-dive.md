@@ -2,7 +2,7 @@
 title: Christian Decker - Onion Routing Deep Dive (2019-06-25)
 transcript_by: Arik Sosman 
 tags: ['lightning', 'sphinx', 'onion', 'routing']
-category: ['residency']
+categories: ['residency']
 ---
 
 Name: Dr. Christian Decker

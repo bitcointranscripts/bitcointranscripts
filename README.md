@@ -46,21 +46,45 @@ tag: ['build systems']
 
 *Note*: that it is best practice to include the date of the event in the title. (If we can gather enough meta-data, we someday intend on being able to sort transcripts by date.)
 
+There is usually some other data that is included at the top of each file like the date of the event, link to the slides, video links, full title, etc. Include what you can. For links, make sure to use the markdown format for links, for example:
+
+```
+Date: 2021-05-03
+video: <https://www.youtube.com/watch?v=L_sI_tXmy2U>
+```
+
+*Note* that valid markdown has `<>`s around urls like the video example above.
+
 ### Transcription Style
 
-For your contributions, please use an "edited transcription" style, which can also be referred to as clean verbatim transcription. The goal of an edited transcription is to preserve the meaning of a text without paraphrasing. Stammering, filler words such as 'like' or 'you know', and unnecessary non-verbal communication can be omitted. Strike a balance between completeness and readability. 
+For your contributions, please use an "edited transcription" style, which can also be referred to as clean verbatim transcription. The goal of an edited transcription is to preserve the meaning of a text without paraphrasing. Stammering, filler words such as 'like' or 'you know', and unnecessary non-verbal communication can be omitted. Strike a balance between completeness and readability.
 
-Oftentimes, audience questions and comments will be inaudible. Feel free to only indicate when an audience member is speaking if their audio is not clear. 
+Oftentimes, audience questions and comments will be inaudible. Feel free to only indicate when an audience member is speaking if their audio is not clear.
 
 ## i18n
 
-Spanish and French are [configured by default](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml#L11) for [btctranscripts.com](https://btctranscripts.com).
+Spanish and Portuguese are [configured by default](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml#L11) for [btctranscripts.com](https://btctranscripts.com).
 
 To add a new spanish translation, for example, you need to add an `_index.es.md` file with the proper Spanish title. Then add the transcript file with the appropriate `.es.md` , e.g. `2021-03-30-example-file.es.md`.
 
-This is the same for French (`.fr`).
+This is the same for Portuguese (`.pt`).
 
-If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml) (this is another [repo](https://github.com/bitcointranscripts/bitcointranscripts.github.io)).
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. We strongly suggest you add the `translated_by` for translated transcripts. For example:
+
+```
+---
+title: Andreas Antonopoulos - Firmas Schnorr (2018-10-07)
+transcript_by: Michael Folkson
+translation_by: Blue Moon
+speaker: Andreas Antonopoulos
+categories: ['podcast']
+tag: ['schnorr']
+---
+```
+
+There is usually some meta-data also usually at the top of each file that includes the event date and video link. That should all be translated as well.
+
+If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml) and translating the appropraite [i18n file](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/i18n) (this is another [repo](https://github.com/bitcointranscripts/bitcointranscripts.github.io)).
 
 We'd love transcripts in other languages so we've made every effort to make i18n as easy as possible.
 

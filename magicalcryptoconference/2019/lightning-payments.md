@@ -9,6 +9,8 @@ Lightning payments (and more) on the web
 
 Will O'Beirne
 
+Video: https://youtu.be/wd-dNd2Wck4
+
 CL: Thank you Elizabeth and Stacy for that great talk. Who runs a lightning node here? So a lot of you. Are you guys excited about lightning? Great, we have like four more talks on lightning. Next we have Will O'Beirne who will be talking about lightning payments on the web. Big round of applause.
 
 # Introduction

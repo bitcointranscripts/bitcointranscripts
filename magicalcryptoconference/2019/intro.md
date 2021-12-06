@@ -6,6 +6,8 @@ categories: ['conference']
 
 Intro
 
+Video: https://youtu.be/CyieujRFk3g
+
 Whalepanda
 
 Hello? Ladies and gentlemen, please take your seats and we're going to start now. Good afternoon everyone. I'm a self-proclaimed VP of operations and swag for this crypto conference. I'm also a friend of the Magical Crypto Friends. I'm very happy to see the turnout for this conference. I see people who are clearly passionate based on the way they dress. Thank you all for coming. I am going to ask a question. What's your favorite thing about this conference so far? Nothing about ICOs. I like that answer. I like your shirt also. My shirt says "Satoshi is Black" ((applause)). "He's a woman, too". Looks like we're ready now. Without further adue, here are the crypto friends to come on stage.

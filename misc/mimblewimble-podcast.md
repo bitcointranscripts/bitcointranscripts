@@ -1,7 +1,7 @@
 ---
 title: Mimblewimble Podcast
 transcript_by: Bryan Bishop
-category: ['podcast']
+categories: ['podcast']
 tags: ['research', 'cryptography']
 ---
 

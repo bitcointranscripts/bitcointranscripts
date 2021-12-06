@@ -7,7 +7,7 @@ tags: ['consensus']
 
 11:45 am: Open Discussion - R&D Goals & Challenges – Patrick Murck, Gavin Andresen, Cory Fields 
 
-We often see people saying htey are testing the waters, they fixed a typo, they made a tiny little fix that doesn't impact much, they are getting used to the process. They are finding that it's really easy to contribut to Bitcoin Core. You code your changes, you submit your changes, there's not much to it.
+We often see people saying they are testing the waters, they fixed a typo, they made a tiny little fix that doesn't impact much, they are getting used to the process. They are finding that it's really easy to contribut to Bitcoin Core. You code your changes, you submit your changes, there's not much to it.
 
 There's a difference, and the lines are fuzzy and undefined, and you cna make a change to Core that changes a spelling error or a change to policy or consensus rules, for those high-level things, for ecosystem-level things, there's several mailing lists, the dev list gets the most traffic. Things get debated there, they get debated on the social media. So it boils down to what changes you are after, so whether you're adding functionality to the program itself it's easy to do that as long as it's not controversial.
 
@@ -19,7 +19,7 @@ Q: Gavin I think you said that the wallet could be greatly improved or broken ou
 
 A: I call Bitcoin Core a reference implementation. A good way to do a wallet to do it is nice. Right now the wallet is not a good reference implementation. It doesn't use HD keys, and it ought to. To make it do that is basically a rewrite. It still uses BerkeleyDB, which we don't like for lots of reasons. We would prefer a different way to store keys in the wallet. It should interact with hardware key storage in some way. It doesn't at all right now. If I was thinking about what wallet would be a good reference implementation wallet, if we had that I think it would be fine if it was part of Bitcoin Core, and we don't have that right now.
 
-Q: But you want to modulariz eit?
+Q: But you want to modularize it?
 
 A: You can compile Bitcoin Core without the wallet at all. I don't care whehter it's a separate repository or not. If we ship a Bitcoin Core 1.0 with wallet code, it should be something we could point at and say it's best practice.
 

@@ -7,6 +7,8 @@ tags: ['privacy', 'taproot', 'schnorr']
 
 Future of privacy coins
 
+Video: https://youtu.be/eGpa45y4_HQ
+
 Brandon Goodell, Andrew Poelstra, Alexandra Moxin
 
 AM: That's not good. Hi everyone. Thanks for coming to the future of privacy coins panel. I want to spend a minute talking ablout backgrounds and interest in this area.

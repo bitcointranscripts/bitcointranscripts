@@ -1,15 +1,22 @@
 ---
-title: Mempool Analysis Simulation
+title: Mempool Analysis & Simulation (2019-06-08)
 transcript_by: Bryan Bishop
+speaker: Kalle Alm
 categories: ['conference']
-tags: ['mining', 'mempool']
+tags: ['mempool']
 ---
 
 Mempool analysis and simulation
 
 kallewoof
 
+Date: 2019-06-08
+
 <https://twitter.com/kanzure/status/1137342023063744512>
+
+video: <https://www.youtube.com/watch?v=Mznn1uVyTUQ>
+
+slides: <https://breaking-bitcoin.com/docs/slides/2019/mempoolAnalysis.pdf>
 
 # Introduction
 
