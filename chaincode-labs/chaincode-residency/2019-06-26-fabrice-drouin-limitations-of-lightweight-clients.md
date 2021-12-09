@@ -1,8 +1,8 @@
 ---
 title: Fabrice Drouin - Limitations of Lightweight Clients
 Transcript_by: Abubakar Nur Khalil
-categories: [‘residency’]
-tags: [‘lightning’, ‘limitations’]
+categories: ['residency']
+tags: ['lightning', 'limitations']
 ---
 
 Name: Fabrice Drouin

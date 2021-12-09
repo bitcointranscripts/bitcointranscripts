@@ -1,8 +1,8 @@
 ---
 title: Fabrice Drouin - Fee Management (Lightning Network)
 Transcript_by: Keyan Kousha, Shiv Patel, Nelson Galdeman
-categories: [‘residency’]
-tags: [‘lightning’, ‘fee management’]
+categories: ['residency']
+tags: ['lightning', 'fee management']
 ---
 
 Name: Fabrice Drouin

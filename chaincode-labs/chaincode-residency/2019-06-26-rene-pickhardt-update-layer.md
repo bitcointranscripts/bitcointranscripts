@@ -1,8 +1,8 @@
 ---
 title: Rene Pickhardt - The Update Layer
 Transcript_by: Jonathan Gross
-categories: [‘residency’]
-tags: [‘lightning’, ‘update layer’]
+categories: ['residency']
+tags: ['lightning', 'update layer']
 ---
 
 Name: René Pickhardt

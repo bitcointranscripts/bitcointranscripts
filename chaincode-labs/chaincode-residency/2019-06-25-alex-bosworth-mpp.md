@@ -1,8 +1,8 @@
 ---
 title: Alex Bosworth - Multiple-path Payments (MPP)
 Transcript_by: Jeff Czyz, Stéphan Vuylsteke
-categories: [‘residency’]
-tags: [‘lightning’, ‘multiple-path payments’]
+categories: ['residency']
+tags: ['lightning', 'multiple-path payments']
 ---
 
 Name: Alex Bosworth

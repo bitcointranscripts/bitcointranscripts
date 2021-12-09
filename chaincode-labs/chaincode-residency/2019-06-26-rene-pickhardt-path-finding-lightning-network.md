@@ -1,8 +1,8 @@
 ---
 title: Rene Pickhardt - Path Finding in the Lightning Network
 Transcript_by: Caralie Chrisco
-categories: [‘residency’]
-tags: [‘lightning’, ‘path-finding’]
+categories: ['residency']
+tags: ['lightning', 'path-finding']
 ---
 
 Name: Rene Pickhardt
