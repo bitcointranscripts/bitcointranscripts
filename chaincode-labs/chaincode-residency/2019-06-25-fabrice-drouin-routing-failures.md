@@ -1,8 +1,8 @@
 ---
 title: Fabrice Drouin - Routing Failures
 Transcript_by: Andrew Toth and Caralie Chrisco
-categories: [‘residency’]
-tags: [‘lightning’, ‘routing failures’]
+categories: ['residency']
+tags: ['lightning', 'routing failures']
 ---
 
 Name: Fabrice Drouin

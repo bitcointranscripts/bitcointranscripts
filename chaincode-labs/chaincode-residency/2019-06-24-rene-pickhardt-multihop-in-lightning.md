@@ -1,8 +1,8 @@
 ---
 title: René Pickhardt - Multihop of the Lightning Network (2019-06-24)
 transcript by: Elle Mouton, Corey Phillips, Brian Mancini, Abubakar Nur Khalil
-categories: [‘residency’]
-tags: [‘lightning’, ‘routing’]
+categories: ['residency']
+tags: ['lightning', 'routing']
 ---
 
 Name: René Pickhardt

@@ -1,8 +1,8 @@
 ---
 title: Rene Pickhardt - Splicing
 Transcript_by: Caralie Chrisco
-categories: [‘residency’]
-tags: [‘lightning’, ‘splicing’]
+categories: ['residency']
+tags: ['lightning', 'splicing']
 ---
 
 Name: Rene Pickhardt
