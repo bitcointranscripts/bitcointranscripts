@@ -135,7 +135,7 @@ So far, the cost of maintaining the utxos has not played a role in Bitcoin.
 In fact with a 1MB block, the worst case utxo set size increase is almost 1MB, whereas the average over the past year is an increase of around 11kilobyte.
 Finding a reasonable place in the cost function is even more complicated than validation and bandwidth resources, in part because they are long-term costs.
 The current situation with Bitcoin is that there is no incentive to avoid increasing the utxo set size if possible.
-This can be as simple as moving bytes from the scriptSig to the scriptPubKey.
+This can be as simple as moving bytes from the scriptPubKey to the scriptSig.
 What we can do with the cost function is placing a slight incentive to include transactions that reduce the utxo set size and thereby cheapen them.
 The proposed way to do this is allowing a larger validation costs when the block reduces the utxo set size.
 This aligns well with the fact that blocks that sweep a lot of utxos have rather extreme validation costs due to the high ratio of inputs to outputs and we want these blocks to be valid because they are extremely beneficial.
