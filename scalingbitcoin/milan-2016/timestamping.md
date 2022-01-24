@@ -60,5 +60,5 @@ Chainpoint describes a merkle tree where the chainpoint proof is in JSON. It con
 
 For the comparison of the size of proofs for opentimestamp versus chainpoint using json, as we can see the json is not that big of a deal. We can use msgpack for json serialization format. Testing compression is not very interesting. We can have gzip with better results, and most of the time msgpack + gzip is slightly better. Apart from size comparison, the point of the binary format of opentimestamps was to give a format with an atomic interpretation that you can either parse the data or you could do nothing with it. And that's exactly what we want.
 
-<img src="https://xkcd.com/927/" />
+<img src="https://imgs.xkcd.com/comics/standards_2x.png" />
 
