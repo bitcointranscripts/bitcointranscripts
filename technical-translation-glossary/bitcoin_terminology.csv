@@ -1,0 +1,56 @@
+en,es,fr
+bitcoin,bitcoin,bitcoin
+blockchain,blockchain,blockchain
+proof of work,prueba de trabajo,preuve de travail
+proof-of-work,prueba de trabajo,preuve de travail
+offchain,offchain,offchain
+onchain,onchain,onchain
+coinbase,coinbase,coinbase
+cold storage,cold storage,cold storage
+hash,hash,hash
+hashed time lock contract,"hashed time lock contract","hashed time lock contract"
+mempool,mempool,mempool
+nonce,número aleatorio,nombre aleatoire
+opcode,opcode,opcode
+halving,halving,halving
+fork,fork,fork
+hard fork,hard fork,hard fork
+soft fork,soft fork,soft fork
+time lock,time lock,time lock
+timelock,timelock,timelock
+locktime,locktime,locktime
+lock time,lock time,lock time
+multisignature,multifirma,multisignature
+orphan block,bloque huérfano,bloc orphelin
+payment channel,canal de pago,canal de paiement
+Script,Script,Script
+script,script,script
+miniscript,miniscript,miniscript
+descriptors,descriptors,descriptors
+output descriptors,output descriptors,output descriptors
+merkle tree,árbol de Merkle,arbre de Merkle
+merkle root,raíz de Merkle,racine de Merkle
+scalability,escalabilidad,scalabilité
+segregated witness,testigo segregado,segregated witness
+double spending,gasto doble,double dépense
+double spend,gasto doble,double dépense
+bolt,BOLT,BOLT
+BOLT,BOLT,BOLT
+capacity,capacidad,capacité
+invoice,factura,facture
+onion routing,onion routing,onion routing
+peer,par,pair
+peer-to-peer,peer-to-peer,pair-à-pair
+Peer-to-Peer,Peer-to-Peer,Peer-to-Peer
+preimage,preimage,preimage
+submarine swap,submarine swap,submarine swap
+watchtower,watchtower,watchtower
+hot wallet,hot wallet,hot wallet
+commitment,compromiso,
+whitepaper,whitepaper,whitepaper
+nLockTime,nLockTime,nLockTime
+nSequence,nSequence,nSequence
+LN-Penalty,LN-Penalty,LN-Penalty
+SIGHASH_NOINPUT,SIGHASH_NOINPUT,SIGHASH_NOINPUT
+eltoo,eltoo,eltoo
+wormhole attack,wormhole attack,wormhole attack
