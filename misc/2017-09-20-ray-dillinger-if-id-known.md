@@ -7,7 +7,7 @@ tags: ['history']
 Autor: Ray Dillinger
 Texto original: <https://www.linkedin.com/pulse/id-known-what-we-were-starting-ray-dillinger/>
 
-Si hubiera sabido lo que estábamos empezando
+# Si hubiera sabido lo que estábamos empezando
 
 En noviembre de 2008, realicé una revisión de código y una auditoría de seguridad para la parte de la blockchain del código fuente de Bitcoin. El fallecido Hal Finney revisó el código y auditó el lenguaje de scripting, y ambos analizamos el código de contabilidad. Satoshi Nakamoto, arquitecto seudónimo y autor del código, alternó entre responder preguntas y hacerlas.
 
