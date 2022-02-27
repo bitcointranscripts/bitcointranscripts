@@ -1,12 +1,11 @@
 ---
 title: Ray Dillinger -  If I'd Known What We Were Starting (2017-09-20)
 translation_by: Julien Urraca
-categories: ['chaincode-curriculum']
 tags: ['history']
 ---
 
 Autor: Ray Dillinger
-Texto original: [link](https://www.linkedin.com/pulse/id-known-what-we-were-starting-ray-dillinger/)
+Texto original: <https://www.linkedin.com/pulse/id-known-what-we-were-starting-ray-dillinger/>
 
 Si hubiera sabido lo que estábamos empezando
 
