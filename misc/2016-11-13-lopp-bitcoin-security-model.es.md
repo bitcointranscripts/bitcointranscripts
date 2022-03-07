@@ -1,5 +1,5 @@
 ---
-title: Jameson Lopp - Bitcoin's Security Model: A Deep Dive (2016-11-13)
+title: Jameson Lopp - Bitcoin's Security Model - A Deep Dive (2016-11-13)
 translation_by: Julien Urraca
 tags: ['security']
 ---
