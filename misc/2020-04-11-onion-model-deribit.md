@@ -5,7 +5,9 @@ edited_by: Julien Urraca
 tags: ['security']
 ---
 
-# El modelo cebolla de la seguridad de blockchain — Parte 1
+Texto original: https://insights.deribit.com/market-research/the-onion-model-of-blockchain-security-part-1/
+
+## El modelo cebolla de la seguridad de blockchain — Parte 1
 
 11 de abril de 2020 | Investigación de mercado
 
@@ -15,7 +17,7 @@ Las personas suelen explicar la seguridad de su proyecto favorito con lo que má
 
 No creo que ninguno de los factores anteriores pueda explicar el fenómeno por sí solo. Es demasiado fácil crear ataques que tengan éxito a pesar de la protección perfecta en un área en particular. Por ejemplo, en una red donde todos los usuarios ejecutan un nodo completo, un minero aún podría reemplazar toda la blockchain por una alternativa en la que controle todas las monedas. Por lo tanto, debe ser la combinación y la interacción de las diferentes partes las que generan la cantidad de seguridad necesaria para un sistema de efectivo digital sin permiso.
 
-### El modelo cebolla de la seguridad blockchain
+##### El modelo cebolla de la seguridad blockchain
 
 El modelo que propongo espera sintetizar los elementos individuales de seguridad en una imagen coherente. El objetivo es analizar la blockchain pública de manera más integral, detectar fortalezas y debilidades y permitir la comparación de diferentes blockchains.
 
@@ -29,7 +31,7 @@ Para destruir permanentemente una blockchain pública, es necesario destruir la 
 
 Los ataques tienen que atravesar este embudo de capas defensivas antes de tocar el núcleo. Ahora discutimos las capas una por una.
 
-### Garantías criptográficas
+#### Garantías criptográficas
 
 El escudo más externo lo proporcionan las garantías criptográficas. La criptografía ofrece la forma de garantía más confiable, por lo que queremos que haga el trabajo pesado y evite la mayoría de los ataques desde el principio. La criptografía garantiza, entre otras cosas:
 
@@ -41,7 +43,7 @@ Todos estos ataques son rechazados por el primer filtro:
 
 Pero si bien la criptografía es muy poderosa, hay otras garantías que no puede proporcionar. Por ejemplo, no puede decidir cuál de dos blockchains igualmente largas es la «correcta» (eso requeriría conocimiento sobre el mundo real, como «a cuál de ellas cambiarán otras personas» y «cuál de ellas tiene el mayor valor de mercado a largo plazo»). Tampoco puede obligar a los mineros a extraer en un bloque específico, publicar un bloque una vez que lo encuentran o incluso asegurarse de que incluyan transacciones específicas.
 
-### Garantías consenso
+#### Garantías consenso
 
 Algunos de los ataques que pasan la primera capa se detendrán en el proceso de consenso. En el consenso de Nakamoto, los nodos observan constantemente la red y cambian automáticamente a la cadena más larga (más cara). A los mineros solo se les paga si sus bloques terminan formando parte de esa cadena más larga, por lo que deben converger con los demás mineros. Como resultado, existe un fuerte sesgo para que los mineros trabajen en la punta de la blockchain porque ahí es donde es más probable que todos los demás reconozcan su bloque.
 
@@ -55,7 +57,7 @@ La dificultad operativa de esto a menudo se subestima. Por ejemplo, los grandes 
 
 Solo China podría alcanzar el 50% de poder de hash confiscando el hardware existente o posiblemente coaccionando a los propietarios de las pools para que lanzaran un solo ataque. Esto podría funcionar, pero solo hasta que los mineros individuales comiencen a notar y dirigir su poder de hash a otra parte. Si bien es muy poco probable que un ataque como este funcione en contra de Bitcoin en el corto plazo, las redes más pequeñas controlan, respectivamente, acciones más pequeñas de potencia de hash o participación. En ese caso, el espacio de posibles atacantes puede incluir gobiernos más pequeños (deshonestos), así como a todo el sector privado.
 
-### Garantías económicas
+#### Garantías económicas
 
 Anteriormente he argumentado que, gracias a las garantías económicas, las blockchains no se rompen de inmediato si una sola entidad controla la capa de consenso. Al establecer los incentivos correctos, las blockchains pueden asociar un costo del mundo real con el mal comportamiento. La capacidad de pagar eso proviene del token nativo, introduciendo un concepto de escasez digital (y, por lo tanto, de valor) que puede recompensar el buen comportamiento (con recompensas y tarifas en bloque) y castigar el mal comportamiento (ya sea recortando los depósitos de seguridad o reteniendo recompensas futuras).
 
@@ -69,7 +71,7 @@ No todos los incentivos económicos son iguales. Una red con una recompensa de b
 
 Los mineros también tienen más piel en el juego cuando el hash requiere hardware especializado (los llamados ASIC) que no se puede reutilizar si la red desaparece. No es casualidad que todos los ataques mineros hasta la fecha hayan ocurrido en redes más pequeñas que se suscriben a una falacia llamada resistencia a ASIC, donde el control se puede adquirir con poca o incluso ninguna piel en el juego (por ejemplo, alquilando potencia de hash).
 
-### Garantías sociales
+#### Garantías sociales
 
 Anteriormente dijimos que para destruir permanentemente una blockchain pública, es necesario destruir la fe de los usuarios en su estado de registro (la lista de propiedad), así como la capacidad de actualizar de manera confiable ese estado en el futuro.
 
@@ -95,7 +97,7 @@ Estos valores fundamentales de un proyecto se renegocian permanentemente y no to
 
 Si consideramos la capa social como la zona cero de cualquier blockchain, podemos ver que los ataques de ingeniería social son una gran amenaza. Las capas más altas se vuelven más vulnerables si los desarrolladores deshonestos pueden introducir cambios de código perjudiciales sin supervisión, particularmente en proyectos con políticas de bifurcación dura frecuentes (se recomienda leer sobre el tema).
 
-### Conclusión y partes futuras
+#### Conclusión y partes futuras
 
 Me parece útil el modelo cebolla para ver cómo las capas individuales de una blockchain pueden crear un todo seguro. En cierto modo, se basa en mi artículo anterior sobre el contrato social de Bitcoin: cualquier blockchain pública parte de un conjunto de valores compartidos en el núcleo, un plan de lo que el sistema espera lograr.
 
