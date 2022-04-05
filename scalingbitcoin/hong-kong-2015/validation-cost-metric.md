@@ -11,8 +11,7 @@ slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_t
 
 video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h52m35s>
 
-Motivation
-===
+## Motivation
 
 As we've seen over the last two days scalability is a multidimensional problem.
 One of the main topics of research is increasing the blocksize to increase transaction throughput.
@@ -44,10 +43,8 @@ As an example, the block cost could be represented by a weighted sum of block si
 
 When we have agreed on such a cost metric, we can get rid of the hard limits and instead introduce a new consensus rule that blocks need to cost less than a threshold to be valid.
 
-Validation cost
-categories: ['conference']
-tags: ['research', 'scalability']
----
+## Validation cost
+
 One aspect of a full cost function are validation-cost.
 We can view validation cost as the time it take to validate a block on a reference machine.
 Then we can introduce a threshold saying that a block is not allowed to exceed 30 seconds validation time on a reference machine.
@@ -60,10 +57,8 @@ The one dimensional situation is depicted in the right, there is one data point 
 With this data it is possible to determine the effect or coefficient of hashing on validation time which is represented as a line in the plot.
 This coefficient can then be used in a consensus rule.
 
-Experiments
-categories: ['conference']
-tags: ['research', 'scalability']
----
+## Experiments
+
 Validation cost is affected first and foremost by OP\_CHECKSIG, that is signature verification and hashing the transaction.
 Bitcoin Core already limits the number of OP\_CHECKSIGs but this is insufficient for our case because what counts are the number of OP\_CHECKSIGs that are executed.
 We built on Gavin Andresen's code to count those factors while validating transactions.
@@ -77,10 +72,8 @@ I found out that I could comfortably use the computer while using only 5GB of 8G
 dbcache determines how much data is cached in memory
 We ran Bitcoin Core version 0.11.2 with libsecp validation and disabled checkpoints.
 
-Result
-categories: ['conference']
-tags: ['research', 'scalability']
----
+## Result
+
 After estimating the coefficients using linear regression,
 we get useful information like for each kilobyte of hashing validation takes 0.005 millisecond longer
 for each signature verification it takes 0.1 millisecond longer.
@@ -90,8 +83,8 @@ to create a block that takes around 5 seconds to validate and only consists of h
 The validation cost function fit is very accurate: for a random test selection of test and mainnet we get an average absolute error of less than 4 ms.
 Most importantly, the estimated function is able to predict hard-to-validate blocks very accurately: The one tested example was a block that took 130.4ms to validate, 131.7 was predicted.
 
-Cost Metric
-===
+## Cost Metric
+
 So, now we derived a validation cost metric that corresponds to
 validation time on a reference machine and
 we can define a new consensus rule that would require a block to
@@ -152,8 +145,8 @@ This situation is shown in the plot for 1MB, 2MB and 4MB maximum block sizes.
 It ensures that the worst case validation time scales as fast as the block size, which is an implicit assumption underlying many blocksize proposals.
 Also it guarantees that average blocks are always allowed to have the maximum block size.
 
-Conclusion
-===
+## Conclusion
+
 In conclusion, Bitcoin places *various* resource requirements on full nodes.
 And it is essential that blocksize proposals account at least for the most important ones, or extreme worst cases are .
 A cost metric helps with that because it sets the requirements in relation to each other.
