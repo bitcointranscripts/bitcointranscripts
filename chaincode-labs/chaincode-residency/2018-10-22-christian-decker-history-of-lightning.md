@@ -72,7 +72,7 @@ Christian: Yes. The reason I left it out is because it adds more complexity and 
 
 Audience Member speaks
 
-Christian: Yes, so the refund transaction had this reliance on a malleability fix because it would need to be created before this one could be confirmed. So you have a transaction that was unconfirmed and you had a refund transaction that was also unconfirmed and the refund transaction was referencing the unconfirmed transaction here. This one could be malleated and thus detaching this refund’s transaction. That's an ugly thing indeed, yes. You could work around it with OP_CSV (OP_CHECKTIMELOCKVERIFY) and stuff, but...
+Christian: Yes, so the refund transaction had this reliance on a malleability fix because it would need to be created before this one could be confirmed. So you have a transaction that was unconfirmed and you had a refund transaction that was also unconfirmed and the refund transaction was referencing the unconfirmed transaction here. This one could be malleated and thus detaching this refund’s transaction. That's an ugly thing indeed, yes. You could work around it with OP_CSV (OP_CHECKSEQUENCEVERIFY) and stuff, but...
 
 Audience Member speaks
 
