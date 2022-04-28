@@ -3,7 +3,7 @@ title: El futuro de los monederos de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
-tags: ['hardware wallet', 'wallet']
+tags: ['cartera hardware', 'cartera']
 ---
 
 1 a 1: El futuro de los monederos de bitcoin
