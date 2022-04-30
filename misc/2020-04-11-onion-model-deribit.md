@@ -17,7 +17,7 @@ Las personas suelen explicar la seguridad de su proyecto favorito con lo que má
 
 No creo que ninguno de los factores anteriores pueda explicar el fenómeno por sí solo. Es demasiado fácil crear ataques que tengan éxito a pesar de la protección perfecta en un área en particular. Por ejemplo, en una red donde todos los usuarios ejecutan un nodo completo, un minero aún podría reemplazar toda la blockchain por una alternativa en la que controle todas las monedas. Por lo tanto, debe ser la combinación y la interacción de las diferentes partes las que generan la cantidad de seguridad necesaria para un sistema de efectivo digital sin permiso.
 
-##### El modelo cebolla de la seguridad blockchain
+#### El modelo cebolla de la seguridad blockchain
 
 El modelo que propongo espera sintetizar los elementos individuales de seguridad en una imagen coherente. El objetivo es analizar la blockchain pública de manera más integral, detectar fortalezas y debilidades y permitir la comparación de diferentes blockchains.
 
