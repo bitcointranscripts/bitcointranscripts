@@ -11,7 +11,7 @@ video: <https://www.youtube.com/watch?v=j2l_Ut4k1qI>
 
 # Introduction
 
-Alright. Give me a second to test this. Alright. Antoine has taken you through the routing layer. I'm going to take you through what the lightning network looks like today. This is the current topology of the network and how this came about, and some approaches for maintaining hte network and making the graph look like we want it to look.
+Alright. Give me a second to test this. Alright. Antoine has taken you through the routing layer. I'm going to take you through what the lightning network looks like today. This is the current topology of the network and how this came about, and some approaches for maintaining the network and making the graph look like we want it to look.
 
 # Lightning brief overview
 
@@ -25,11 +25,11 @@ Public channels are known to the network, and announced on the gossip protocol u
 
 When we look at the topology of the network, we can only look at the public topology really unless someone else volunteers private data. It's kind of annoying because we want to see the really interesting things in the internet. It may be possible to deduce or infer information about private channels through hints.
 
-There's also personal vs routing nodes. A public node or a routing node would setup some public channels and manage capital well, and hope to earn a lot of fees. Fees are very low in lightning but hopefully one day we can have higher nodes and running these nodes can be incentive compatible. It would be great if people earned feeds for running lightning nodes. I think with intelligent channel creation, you can definitely earn a lot more.
+There's also personal vs routing nodes. A public node or a routing node would set up some public channels and manage capital well, and hope to earn a lot of fees. Fees are very low in lightning but hopefully one day we can have higher nodes and running these nodes can be incentive-compatible. It would be great if people earned fees for running lightning nodes. I think with intelligent channel creation, you can definitely earn a lot more.
 
 # Path finding and routing
 
-We use source-based routing in the lightning network. However, you have a scarcity of funds. This means there's going to be a lot of failures through LN because nobody knows the funds. However, there is something you can do called a probing attacks where you route payments through a specific edge and you fail it with a bad preimage but you route it through with various routes and the minute you hit a range where the payments stop going back to you or failing with a certain range, then you know that's the amount available in the channel. At the moment, it's possible to figure out balances even though we're trying to hide it. It can deanonymize things if you can trace balances through the network.
+We use source-based routing in the lightning network. However, you have a scarcity of funds. This means there's going to be a lot of failures through LN because nobody knows the funds. However, there is something you can do called a probing attack where you route payments through a specific edge and you fail it with a bad preimage but you route it through with various routes and the minute you hit a range where the payments stop going back to you or failing with a certain range, then you know that's the amount available in the channel. At the moment, it's possible to figure out balances even though we're trying to hide it. It can deanonymize things if you can trace balances through the network.
 
 We optimize for fees and timelocks. There's a channel update message on the network. This is how we figure out how we're going to route.
 
@@ -47,11 +47,11 @@ Extent is the other one which is longest shortest path, and this value in the li
 
 I don't see why someone would want to drive up the diameter of the lightning network, but just creating two nodes and creating a very large chain at the edge of the graph. It would cost you a bit to do this, but again these are worst case metrics possibly produced by nodes not necessarily actual actors in the network.
 
-A graph of the degree distribution shows that there's a small number of nodes with a ton of channels. This is indicative that we have a hub-and-spoke network. There's a collection of hubs. A hub is one big node that has a bunch of connections, and then the smaller nodes connect to the hub and they have fewer connections. This is fairly supported by the assortativity of the graph, which is a value between -1 and 1. This measures the tendency of nodes to connect to nodes with similar degrees. If it's a positive number, it means low degree nodes connect to high degree nodes ((or is it the other way around)).
+A graph of the degree distribution shows that there's a small number of nodes with a ton of channels. This is indicative that we have a hub-and-spoke network. There's a collection of hubs. A hub is one big node that has a bunch of connections, and then the smaller nodes connect to the hub and they have fewer connections. This is fairly supported by the assortativity of the graph, which is a value between -1 and 1. This measures the tendency of nodes to connect to nodes with similar degrees. If it's a positive number, it means low degree nodes connect to high degree nodes (or is it the other way around).
 
 # Topology creation
 
-When LN first started out, the topology was achieved through manual connections. People connected with other people they knew. Then in 2017, lnd one of the three main implementations, added something called autopilot which automates the way in which you connect to nodes. It worked based on preferential attachment where you would become more likely to connect to nodes that already have a lot of channels open and have liquidity. This drove the development of the hub-and-spoke network. At the time, it was intended for autopilot and the original commit said "we probably shouldn't do this but here's a first attempt at this". It has significantly influenced the network topology.
+When LN first started out, the topology was achieved through manual connections. People connected with other people they knew. Then in 2017, lnd, one of the three main implementations, added something called autopilot which automates the way in which you connect to nodes. It worked based on preferential attachment where you would become more likely to connect to nodes that already have a lot of channels open and have liquidity. This drove the development of the hub-and-spoke network. At the time, it was intended for autopilot and the original commit said "we probably shouldn't do this but here's a first attempt at this". It has significantly influenced the network topology.
 
 Also another aspect of topology/channel creation is liquidity providers. There are some companies that will open a channel to you, like Biig or Bitrefill, which will accept an out-of-band payment where if you pay them they will open up a channel with you providing liquidity. Only a few people were doing this; a lot of channels got opened up and now lnbig has 20-24% of the liquidity of the lightning network in their channels.
 
@@ -65,7 +65,7 @@ Changing topology has a high cost. There would be at least 35,000 transactions o
 
 # Opening channels
 
-The problem with manually opening channels is that people tend to deanonymize themselves and their node metadata. So this is straight deanonymization. People should be responsible for their own privacy, but we should provide a default for less educated users.
+The problem with manually opening channels is that people tend to deanonymize themselves and their node metadata. So this is straight deanonymization. People should be responsible for their own privacy, but we should provide a default for less-educated users.
 
 The other issue is that lightning is a payments graph; it's not a social graph. There's really interesting work on the twitter and facebook social graphs but we don't really know what the graphs on lightning will tend to look like. You might not open a channel with your friend, but rather businesses you work with. You will probably perpetuate a hub-and-spoke network anyway because companies tend to have a power law about them.
 
@@ -73,7 +73,7 @@ Second degree preferential attachment is about connecting to nodes that are peer
 
 # Graph metrics
 
-c-lightning is looking at using graph metrics to inform open/close channel decisions. There's two categories- connections that go to the network as a whole, and then the one as you as a channel alone. There's one mode which is randomly connect, and another one that connects in a way to decrease the diameter of the graph. That's interesting because you can close the diameter. But it is a bit gameable, because someone can costlessly create a large diameter for the network. I'm sure we can get around this fairly easily, like have some sanity checks in there.
+c-lightning is looking at using graph metrics to inform open/close channel decisions. There's two categories: connections that go to the network as a whole, and then the one as you as a channel alone. There's one mode which is randomly connect, and another one that connects in a way to decrease the diameter of the graph. That's interesting because you can close the diameter. But it is a bit gameable, because someone can costlessly create a large diameter for the network. I'm sure we can get around this fairly easily, like have some sanity checks in there.
 
 Another one is "betweenness centrality" which is good for a node that wants to maximize fees. You want to connect to nodes with high betweenness centrality. They tend to sit on a high amount of the shortest paths on the network. If you connect to such a node, then you will probably sit on many of the shortest paths as well.
 
@@ -81,7 +81,7 @@ Also preferential attachment is still an option.
 
 # Node sorting
 
-Another direction which takes a different approach is node scoring. There's something called "buzz scores" which are publicly released scores, but how they do it is not public. But yo ucan make some guesses, like uptime is probably involved. Make sure your nodes are online. I think they do some basic probing to figure out who are the more balanced nodes on the network. I think they run some small probes every 2 weeks and they try to figure out who has more liquidity and they score them well because of this.
+Another direction which takes a different approach is node scoring. There's something called "buzz scores" which are publicly released scores, but how they do it is not public. But you can make some guesses, like uptime is probably involved. Make sure your nodes are online. I think they do some basic probing to figure out who are the more balanced nodes on the network. I think they run some small probes every 2 weeks and they try to figure out who has more liquidity and they score them well because of this.
 
 Again, this is potentially gameable, if you know what metrics they are using, then you can try to increase your score. But it's hard to see an attack here. You get a good score by behaving well. But maybe you can temporarily increase your performance while you get probed, but not sooner.
 
