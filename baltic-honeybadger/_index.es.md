@@ -1,5 +1,5 @@
 ---
-title: Baltic Honeybadger 2018
+title: Baltic Honeybadger
 ---
 
 {{< childpages >}}
