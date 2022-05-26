@@ -14,7 +14,7 @@ Location: Baltic Honeybadger 2019
 
 Date: 14 de septiembre de 2019 
 
-Audio: https://youtu.be/2IpZWSWUIVE?t=23739
+Vídeo: https://youtu.be/2IpZWSWUIVE?t=23739
 
 # Intriduccióno
 
