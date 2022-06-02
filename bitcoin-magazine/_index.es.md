@@ -1,0 +1,5 @@
+---
+title: Bitcoin Magazine
+---
+
+{{< childpages >}}
