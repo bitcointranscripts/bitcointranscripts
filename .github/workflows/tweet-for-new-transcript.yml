@@ -1,0 +1,68 @@
+name: tweet-for-new-transcript
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  # Get your tokens from https://developer.twitter.com/apps
+  TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+  TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+  TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+  TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Get comma-delimited added files in order to then check for the
+      # existence of a comma that indicates multiple added files
+      # we only want to tweet if a single file has been added
+      - id: files
+        uses: Ana06/get-changed-files@v1.2
+        with:
+          format: "csv"
+      - id: variables
+        name: Setup variables
+        run: |
+          # Check that there is only one changed file (no comma exists)
+          FILE_PATH=${{steps.files.outputs.added}}
+          if [[ "$FILE_PATH" == *","* ]]; then
+            echo ::set-output name=MULTIPLE::true
+          fi
+          # Determine the language of the changed file
+          if [[ $FILE_PATH == *".es.md" ]]
+            then
+            echo ::set-output name=LANGUAGE_ES::true
+          elif [[ $FILE_PATH == *".pt.md" ]]
+            then
+            echo ::set-output name=LANGUAGE_PT::true
+          elif [[ $FILE_PATH == *".md" ]]
+            then
+            echo ::set-output name=LANGUAGE_EN::true
+          fi
+          # remove file-type (*.md) from file-name to create the new transcript url
+          echo ::set-output name=URL_PATH::${FILE_PATH%%.*}
+      - uses: Eomm/why-don-t-you-tweet@v1
+        name: Tweet for English transcript
+        if: |
+          !steps.variables.outputs.MULTIPLE && 
+          steps.variables.outputs.LANGUAGE_EN
+        with:
+          tweet-message: "A new transcript has been added! \n https://btctranscripts.com/${{ steps.variables.outputs.URL_PATH }}/"
+      - uses: Eomm/why-don-t-you-tweet@v1
+        name: Tweet for Spanish transcript
+        if: |
+          !steps.variables.outputs.MULTIPLE && 
+          steps.variables.outputs.LANGUAGE_ES
+        with:
+          tweet-message: "A new spanish transcript has been added! \n https://btctranscripts.com/es/${{ steps.variables.outputs.URL_PATH }}/"
+      - uses: Eomm/why-don-t-you-tweet@v1
+        name: Tweet for Portuguese transcript
+        if: |
+          !steps.variables.outputs.MULTIPLE && 
+          steps.variables.outputs.LANGUAGE_PT
+        with:
+          tweet-message: "A new portuguese transcript has been added! \n https://btctranscripts.com/pt/${{ steps.variables.outputs.URL_PATH }}/"
