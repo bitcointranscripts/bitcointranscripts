@@ -14,8 +14,6 @@ coredev.tech septiembre 2017
 
 ((Como siempre, cualquier error es probablemente mío, etc.))
 
-<div id="intro" />
-
 # Introducción
 
 Existe una gran preocupación sobre si BlueMatt se ha convertido en un nombre erróneo.
@@ -23,8 +21,6 @@ Existe una gran preocupación sobre si BlueMatt se ha convertido en un nombre er
 Presentación del lunes por la noche: <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
 
 Creo que deberíamos seguir usando #bitcoin-core-dev para cualquier cosa relacionada con el cambio de Bitcoin Core y tratar de mantener las cosas abiertas aunque estemos juntos aquí hoy y mañana y el siguiente.
-
-<div id="rescans" />
 
 # Carteras y poda de bloques y rescates
 
@@ -140,27 +136,19 @@ Entonces, ¿vamos a añadir una opción GUI para qué tipo de dirección de camb
 
 P2SH ... testigo. Por defecto para el cambio a partir de uno es testigo desnudo, pero eso todavía está abierto a debate. Si nadie lo debate, entonces no cambia. Bueno, depende de quien lo implemente. Joinmarket quiere usar Bech32, openbazaar lo está usando, ... Muy bien, a comer.
 
-<div id="p2sh-adopcion" />
-
 # Adopción de P2SH
 
 ¿Cuánto tiempo pasó con P2SH antes de que se pudiera asumir en general que se podía enviar? Bueno, bastante tiempo. No se puede... tardó años, pero blockchain.info tiene soporte para P2SH ahora, sí. Todavía lo tienen. Así que ahora mismo si envías a un... no lo indexan, no puedes ver las transacciones de una determinada dirección, aparece como... ¿así que todo el mundo los usa porque son "privados"? Llevó años... quizás más rápido por estas fechas, pero aún así algún tiempo.
 
 blockchain.info no mantuvo su sitio durante unos 2 años. Armory tampoco lo implementó durante mucho tiempo. También hay casos especiales, como decir que tienes una cartera de Bitcoin Core. Coinbase era... bech32... digamos que tengo un exchange... el caso particular de enviarse a uno mismo desde un servicio es un caso que la gente utilizará rápidamente. Nadie quiere hacer un viaje de ida y vuelta extra. Si me pago a mí mismo, lo acepto. Alguien me ha preguntado si podemos tener el URI del bip.. y le he dicho que el problema es que son más cosas de las que preocuparse.
 
-<div id="testnet" />
-
 # Algoritmo de ajuste de la dificultad de testnet
 
 El algoritmo de ajuste de la dificultad de testnet es la razón por la que la altura del bloque es alta en testnet3.
 
-<div id="bumpfee" />
-
 # bumpfee y retransmisión
 
 ¿Los monederos suelen retransmitir si la transacción no está en la blockchain después de unos días? Anyonecanspend covenant utxo que necesita para crear uno nuevo de sí mismo en su salida. Si tuvieras covenants, podrías de alguna manera .... oh podríamos hacerlo de esa otra manera, pero no es tan genial como los covenants. La protección de repetición con pactos sería un buen uso de los pactos en lugar de algunos otros usos de los pactos. Segwit2x debería añadir una fuerte protección de repetición bidireccional.
-
-<div id="libevent" />
 
 # libevent
 
@@ -171,8 +159,6 @@ Hay tres capas en libevent. Está la base que se ocupa de los eventos de lectura
 La implementación anterior era un solo hilo para la red y los compañeros se conectaron a la secuencia con una pausa en el medio. Pero ahora con el bucle de eventos podemos hacer múltiples intentos de conexión simultáneos y hacerlo todo a la vez de forma asíncrona.
 
 El nuevo plan para Cory es que fusionaremos su trabajo inmediatamente, luego sólo haremos que Cory arregle los problemas a medida que aparezcan, y cambiaremos el nombre de Bitcoin Core a Bitcoin Cory.
-
-<div id="toolchain-builder" />
 
 # Construcción de la cadena de herramientas
 
@@ -190,13 +176,9 @@ Si cambias todas las transacciones del historial para usar índices, es un 30% m
 
 <http://bitcoin.sipa.be/bech32/demo/demo.html>
 
-<div id="signature-aggregation" />
-
 # Agregación de firmas 
 
 Trasladado a <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>
-
-<div id="coin-selection" />
 
 # Selección de monedas
 
@@ -244,19 +226,13 @@ Si vas por encima del objetivo, cortas esa rama. Esto te da un pequeño corredor
 
 Tenemos muchas cosas diferentes en la métrica. Ahora mismo sólo priorizamos estrictamente las cosas. Ya tenemos 6 cosas de confirmación, luego 1 cosa de confirmación, luego 0 cosas de confirmación, y tal vez queremos tratar cada dirección como una unidad, entonces vas a .... No estoy seguro de que discardfee. Tal vez minimizar discardfee. No, sólo lo que sea. Podríamos minimizar el número de entradas, minimizar la cantidad de cuota que descartamos....
 
-<div id="release-validation" />
-
 # Liberación de la validación
 
 Tengo una pubkey en el binario. Una herramienta de descarga para comprobar el binario que has descargado, como alternativa a pedir al usuario que compruebe manualmente que la liberación ha sido firmada por los desarrolladores de bitcoin. verifysignature no sirve para esto. sha256. Sólo digo que el trabajo mínimo. Eso sería un pequeño número de líneas.
 
-<div id="jenkins" />
-
 # jenkins
 
 jenkins tiene una integración estándar con IRC y podríamos usarlo para activar las construcciones. También tiene alguna interacción con github pull requests. La ventaja de ejecutar cosas en no travis-ci es que podríamos ejecutar un conjunto completo de pruebas porque no estaríamos limitados a las mismas máquinas que travis-ci proporciona. También podrías garantizar que no hay nada más ejecutando concurrentemente. Puedes construir en paralelo, todavía.
-
-<div id="conflicting-transactions" />
 
 # Transacciones conflictivas para las retiradas
 
@@ -269,8 +245,6 @@ Tratar sus propias salidas no confirmadas como de confianza, y los depósitos ma
 Hacer que el hijo pague por el padre en lugar de la sustitución. CPFP para cadenas de 25 transacciones. En algún momento tienes que dejar de hacer retiros. Un intercambio estaba anclando sus reemplazos, lo que causó problemas. El reemplazo es mucho más eficiente.
 
 Transacción de 200 bytes que paga 30 sat/byte. Se gasta por una transacción de 1 sat/byte de 100 kb, pero mi bump para reemplazarla tiene que pagar una cantidad enorme de sat/byte para poder pagar lo que sacó. No tiene que ser la tarifa, tiene que ser lo que ha eliminado.
-
-<div id="mast" />
 
 # Árboles de Merkle y MASTs 
 
