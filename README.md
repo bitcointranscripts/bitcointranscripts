@@ -38,7 +38,7 @@ Each transcript is a markdown file, which requires to include the `title` and `t
 ---
 title: Carl Dong - Reproducible Builds (2020-11-30)
 transcript_by: Bryan Bishop
-speaker: Carl Dong
+speakers: ['Carl Dong']
 categories: ['podcast']
 tag: ['build systems']
 ---
@@ -54,6 +54,8 @@ video: <https://www.youtube.com/watch?v=L_sI_tXmy2U>
 ```
 
 *Note* that valid markdown has `<>`s around urls like the video example above.
+
+When a transcript is added, [@bitcoinwritings](https://twitter.com/bitcoinwritings) will tweet for it and tag speakers & contributors  as long as they have been associated with a twitter username at [twitter_handles.json](/twitter_handles.json)
 
 ### Transcription Style
 
@@ -76,7 +78,7 @@ Each transcript is a markdown file, which requires to include the `title` and `t
 title: Andreas Antonopoulos - Firmas Schnorr (2018-10-07)
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-speaker: Andreas Antonopoulos
+speakers: ['Andreas Antonopoulos']
 categories: ['podcast']
 tag: ['schnorr']
 ---
