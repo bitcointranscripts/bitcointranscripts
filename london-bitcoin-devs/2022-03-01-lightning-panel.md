@@ -13,7 +13,7 @@ Location: London Bitcoin Devs
 
 Date: March 1st 2022
 
-Video: TBA
+Video: <https://www.youtube.com/watch?v=fqhioVxqmig>
 
 # Introductions
 
