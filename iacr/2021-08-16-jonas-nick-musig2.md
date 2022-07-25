@@ -3,6 +3,8 @@ title: Jonas Nick - MuSig2 (2021-08-16)
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
+speakers: ['Jonas Nick']
+date: 2021-08-16
 ---
 
 Name: Jonas Nick
