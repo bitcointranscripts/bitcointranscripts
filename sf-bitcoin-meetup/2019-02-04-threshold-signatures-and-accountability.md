@@ -4,7 +4,6 @@ transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['schnorr', 'taproot', 'threshold signatures']
 speakers: ['Andrew Poelstra']
-date: 2019-02-04
 ---
 
 Name: Andrew Poelstra

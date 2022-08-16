@@ -4,7 +4,6 @@ transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'threshold signatures']
 speakers: ['Chelsea Komlo', 'Elizabeth Crites']
-date: 2022-08-07
 ---
 
 Name: Chelsea Komlo, Elizabeth Crites

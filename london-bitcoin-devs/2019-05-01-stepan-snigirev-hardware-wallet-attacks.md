@@ -4,7 +4,6 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'security']
 speakers: ['Stepan Snigirev']
-date: 2019-05-01
 ---
 
 Name: Stepan Snigirev

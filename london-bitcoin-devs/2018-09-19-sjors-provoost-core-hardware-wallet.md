@@ -4,7 +4,6 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'bitcoin core']
 speakers: ['Sjors Provoost']
-date: 2018-09-19
 ---
 
 Name: Sjors Provoost
