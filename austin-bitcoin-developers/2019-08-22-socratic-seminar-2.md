@@ -1,13 +1,10 @@
 ---
-title: Socratic Seminar 2 (2019-08-22)
+title: Socratic Seminar 2
+date: 2019-08-22
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'hardware wallet', 'multisig', 'wallet']
 ---
-
-2019-08-22
-
-Austin Bitcoin Developers Socratic Seminar 2
 
 <https://twitter.com/kanzure/status/1164710800910692353>
 

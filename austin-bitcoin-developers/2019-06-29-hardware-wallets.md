@@ -1,13 +1,11 @@
 ---
-title: Hardware Wallets (2019-06-29)
+title: Hardware Wallets
+speakers: ['Stepan Snigirev']
+date: 2019-06-29
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['hardware wallet', 'wallet']
 ---
-
-2019-06-29
-
-Stepan Snigirev
 
 livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
 
@@ -15,9 +13,9 @@ livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
 
 see also:
 
-* [Extracting seeds from hardware wallets](http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/)
-* [The future of hardware wallets](http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/future-of-hardware-wallets/)
-* [coredev.tech 2019 hardware wallets discussion](http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-hardware-wallets/)
+* [Extracting seeds from hardware wallets](http://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/)
+* [The future of hardware wallets](https://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/)
+* [coredev.tech 2019 hardware wallets discussion](http://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-hardware-wallets//)
 
 # Background
 

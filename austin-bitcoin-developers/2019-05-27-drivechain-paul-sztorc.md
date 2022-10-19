@@ -1,13 +1,11 @@
 ---
-title: Drivechain Paul Sztorc (2019-05-27)
+title: Drivechain
+speakers: ['Paul Sztorc']
+date: 2019-05-27
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['research', 'lightning', 'layer 2']
+tags: ['research', 'lightning', 'layer 2', 'sidechains']
 ---
-
-2019-05-27
-
-Paul Sztorc (Tierion)
 
 Drivechain: An interoperability layer-2, Described in terms of the lightning network- something you already understand
 
