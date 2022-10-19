@@ -18,7 +18,7 @@ coredev.tech september 2017
 
 There is significant concern regarding whether BlueMatt has become a misnomer.
 
-Monday night presentation: <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
+Monday night presentation: <https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 I think we should continue to use #bitcoin-core-dev for anything about changing Bitcoin Core and try to keep things open even though we're together here today and tomorrow and the next.
 

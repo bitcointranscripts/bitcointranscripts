@@ -192,7 +192,7 @@ Una cosa que sería útil es un campo de versión o alguna manera de actualizar 
 
 # Charlas previas
 
-<https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
+<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/bip151-peer-encryption/>
 

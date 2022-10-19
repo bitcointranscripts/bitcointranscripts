@@ -18,7 +18,7 @@ coredev.tech septiembre 2017
 
 Existe una gran preocupación sobre si BlueMatt se ha convertido en un nombre erróneo.
 
-Presentación del lunes por la noche: <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
+Presentación del lunes por la noche: <https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 Creo que deberíamos seguir usando #bitcoin-core-dev para cualquier cosa relacionada con el cambio de Bitcoin Core y tratar de mantener las cosas abiertas aunque estemos juntos aquí hoy y mañana y el siguiente.
 

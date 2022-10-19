@@ -9,7 +9,7 @@ tags: ['p2p', 'bitcoin core']
 
 <https://btctranscripts.com/scalingbitcoin/milan-2016/bip151-peer-encryption/>
 
-<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
+<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 <https://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/>
 

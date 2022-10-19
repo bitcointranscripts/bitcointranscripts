@@ -310,7 +310,7 @@ Another problem on the network is that-- a number of years ago we introduced pru
 
 <https://github.com/bitcoin/bips/blob/master/bip-0151.mediawiki>
 
-<http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
+<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 It might also interest you that in the bitcoin p2p network we don't currently authenticate or encrypt traffic between bitcoin nodes. It's to somewhat extent already public information, but there's analysis attacks against this. This is low hanging fruit against passive attacks. But it also helps with trusted nodes, like if you have a lite node and you want to connect to your dedicated full node. This would make trusted nodes easier since there's nothing out-of-the-box that does this yet.
 

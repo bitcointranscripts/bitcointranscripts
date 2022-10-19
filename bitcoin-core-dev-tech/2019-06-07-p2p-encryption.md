@@ -18,7 +18,7 @@ p2p encryption
 
 <https://btctranscripts.com/scalingbitcoin/milan-2016/bip151-peer-encryption/>
 
-<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
+<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 # Introduction
 
