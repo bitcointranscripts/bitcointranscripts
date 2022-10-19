@@ -1,14 +1,12 @@
 ---
-title: Hardware Wallets (2019-06-29)
+title: Hardware Wallets
+speakers: ['Stepan Snigirev']
+date: 2019-06-29
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
 tags: ['hardware wallet', 'wallet']
 ---
-
-2019-06-29
-
-Stepan Snigirev
 
 livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
 
