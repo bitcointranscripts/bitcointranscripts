@@ -1,16 +1,15 @@
 ---
-title: Andreas Antonopoulos - Seed Splitting (2020-04-08)
+title: Seed Splitting
+speakers: ['Andreas Antonopoulos']
+date: 2020-04-08
 transcript_by: Michael Folkson
 tags: ['wallet', 'security']
 ---
 
-Name: Andreas Antonopoulos
 
 Topic: Why is seed splitting a bad idea?
 
 Location: Andreas Antonopoulos YouTube channel
-
-Date: April 8th 2020
 
 Video: https://www.youtube.com/watch?v=p5nSibpfHYE
 
