@@ -1,14 +1,14 @@
 ---
-title: Andreas Antonopoulos - Descarga inicial de la cadena de bloques (2018-10-23)
+title: Descarga inicial de la cadena de bloques
+speakers: ['Andreas Antonopoulos']
+date: 2018-10-23
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 speakers: ["Andreas Antonopoulos"]
 tags: ["consenso"]
 ---
 
-Andreas Antonopoulos
-
-Bitcoin Q&A: Descarga inicial de la cadena de bloques
+Bitcoin Q&A: Descarga inicial de la cadena de bloques 
 
 Vídeo: https://www.youtube.com/watch?v=OrYDehC-8TU
 

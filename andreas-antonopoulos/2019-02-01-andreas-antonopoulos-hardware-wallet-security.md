@@ -1,17 +1,14 @@
 ---
-title: Andreas Antonopoulos - Hardware Wallet Security (2019-02-01)
+title: Hardware Wallet Security
+speakers: ['Andreas Antonopoulos']
+date: 2019-02-01
 transcript_by: Michael Folkson
-speakers: ["Andreas Antonopoulos"]
-tags: ["hardware wallet", "validation", "wallet"]
+tags: ['hardware wallet', 'validation', 'wallet']
 ---
-
-Name: Andreas Antonpoulos
 
 Topic: Are Hardware Wallets Secure Enough?
 
 Location: Andreas Antonopoulos YouTube channel
-
-Date: February 1st 2019
 
 Video: https://www.youtube.com/watch?v=3zNVDIz6Snw
 
