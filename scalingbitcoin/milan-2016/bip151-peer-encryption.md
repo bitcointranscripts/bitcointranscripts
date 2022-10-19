@@ -1,13 +1,13 @@
 ---
 title: BIP151 Peer Encryption
+speakers: ['Jonas Schnelli']
+date: 2016-10-09
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['P2P', 'wallet']
 ---
 
 BIP151: Peer-to-peer encryption and authentication from the perspective of end-users
-
-Jonas Schnelli
 
 <https://twitter.com/kanzure/status/785046960705339392>
 
