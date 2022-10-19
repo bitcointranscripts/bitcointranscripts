@@ -1,17 +1,15 @@
 ---
-title: Kalle Alm - Signet Integration (2020-02-06)
+title: Signet Integration
+speakers: ['Kalle Alm']
+date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['conference']
-tags: ['taproot']
+tags: ['taproot', 'testing']
 ---
-
-Name: Karl-Johan Alm
 
 Topic: Signet Integration
 
 Location: Advancing Bitcoin
-
-Date: February 6th 2020
 
 Video (paid access): https://www.advancingbitcoin.com/video/signet-in-practice-integrating-signet-into-your-software,5/
 

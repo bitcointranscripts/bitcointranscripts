@@ -1,12 +1,12 @@
 ---
-title: Andrew Poelstra - Miniscript (2020-02-07)
+title: Miniscript
+speakers: ['Andrew Poelstra']
+date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
 tags: ['miniscript']
 ---
-
-Andrew Poelstra
 
 Taller sobre el avance de Bitcoin
 
@@ -16,7 +16,7 @@ Página Web: https://bitcoin.sipa.be/miniscript/
 
 Taller de reposición: https://github.com/apoelstra/miniscript-workshop
 
-Transcripción de la presentación de Londres Bitcoin Devs Miniscript: https://btctranscripts.com/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/
+Transcripción de la presentación de Londres Bitcoin Devs Miniscript: <https://btctranscripts.com/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/>
 
 # Parte 1
 

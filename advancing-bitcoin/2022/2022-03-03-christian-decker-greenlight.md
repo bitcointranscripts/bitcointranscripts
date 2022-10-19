@@ -1,17 +1,11 @@
 ---
-title: Christian Decker - Deploying Lightning at Scale (2022-03-03)
+title: Deploying Lightning at Scale (Greenlight)
+speakers: ['Christian Decker']
+date: 2022-03-03
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
 ---
-
-Name: Christian Decker
-
-Topic: Deploying Lightning at Scale (Greenlight)
-
-Location: Advancing Bitcoin
-
-Date: March 3rd 2022
 
 Video: <https://vimeo.com/703273144>
 

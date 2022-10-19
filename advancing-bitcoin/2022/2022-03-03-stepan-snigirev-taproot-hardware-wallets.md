@@ -1,19 +1,11 @@
 ---
-title: Stepan Snigirev - Taproot on hardware wallets (2022-03-03)
+title: Taproot on hardware wallets
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'taproot', 'hardware wallet']
 speakers: ['Stepan Snigirev']
 date: 2022-03-03
 ---
-
-Name: Stepan Snigirev
-
-Topic: Taproot on hardware wallets
-
-Location: Advancing Bitcoin
-
-Date: March 3rd 2022
 
 Video: <https://www.youtube.com/watch?v=8uM-v1pSFgs>
 

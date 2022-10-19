@@ -1,18 +1,16 @@
 ---
-title: Fabian Jahr - Taller de depuración (2020-02-07)
+title: Taller de depuración
+speakers: ['Fabian Jahr']
+date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
-tags: ['bitcoin core']
+tags: ['bitcoin core', 'testing']
 ---
-
-Nombre: Fabian Jahr
 
 Tema: Taller de depuración de Bitcoin Core 
 
 Localización: El avanece de Bitcoin
-
-Día: 7 de febrero de 2020
 
 Vídeo: No se ha publicado ningún vídeo en Internet 
 

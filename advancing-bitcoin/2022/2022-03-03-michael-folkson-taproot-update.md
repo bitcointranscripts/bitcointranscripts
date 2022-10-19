@@ -1,5 +1,5 @@
 ---
-title: Michael Folkson - Taproot update (2022-03-03)
+title: Taproot update
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['taproot']
@@ -7,13 +7,7 @@ speakers: ['Michael Folkson']
 date: 2022-03-03
 ---
 
-Name: Michael Folkson
-
 Topic: State of the Taproot Address 2022
-
-Location: Advancing Bitcoin
-
-Date: March 3rd 2022
 
 Video: <https://www.youtube.com/watch?v=8RNYhwEQKxM>
 
