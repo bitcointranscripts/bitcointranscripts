@@ -1,19 +1,11 @@
 ---
-title: Jimmy Song - Taproot multisig (2022-03-03)
+title: Taproot multisig
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
 speakers: ['Jimmy Song']
 date: 2022-03-03
 ---
-
-Name: Jimmy Song
-
-Topic: Taproot multisig
-
-Location: Advancing Bitcoin
-
-Date: March 3rd 2022
 
 Video: <https://www.youtube.com/watch?v=Uo3uzofPlX0>
 

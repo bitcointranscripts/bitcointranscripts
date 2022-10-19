@@ -1,17 +1,15 @@
 ---
-title: Fabian Jahr - Debugging Workshop (2020-02-07)
+title: Debugging Workshop
+speakers: ['Fabian Jahr']
+date: 2020-02-07
 transcript_by: Michael Folkson
 categories: ['workshop']
-tags: ['bitcoin core']
+tags: ['bitcoin core', 'testing']
 ---
-
-Name: Fabian Jahr
 
 Topic: Debugging Bitcoin Core Workshop
 
 Location: Advancing Bitcoin
-
-Date: February 7th 2020
 
 Video: No video was posted online
 

@@ -1,11 +1,11 @@
 ---
-title: Andrew Poelstra - Miniscript (2020-02-07)
+title: Miniscript
+speakers: ['Andrew Poelstra']
+date: 2020-02-07
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['miniscript']
 ---
-
-Andrew Poelstra
 
 Advancing Bitcoin workshop
 
@@ -15,7 +15,7 @@ Website: https://bitcoin.sipa.be/miniscript/
 
 Workshop repo: https://github.com/apoelstra/miniscript-workshop
 
-Transcript of London Bitcoin Devs Miniscript presentation: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/
+Transcript of London Bitcoin Devs Miniscript presentation: <https://btctranscripts.com/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/>
 
 # Part 1
 

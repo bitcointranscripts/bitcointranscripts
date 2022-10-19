@@ -1,20 +1,18 @@
 ---
-title: Antoine Riard - Taproot Lightning (2020-02-06)
+title: Taproot Lightning
+speakers: ['Antoine Riard']
+date: 2020-02-06
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['taproot', 'lightning', 'schnorr']
 ---
 
-Nombre: Antoine Riard
-
 Tema: A Schnorr-Taproot’ed Lightning
 
 Ubicación: El avance de Bitcoin 
 
-Fecha: 6 de febrero de 2020
-
-Video (acceso de pago): https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
+Video: https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 
 Diapositivas: https://www.dropbox.com/s/9vs54e9bqf317u0/Schnorr-Taproot%27ed-LN.pdf
 
