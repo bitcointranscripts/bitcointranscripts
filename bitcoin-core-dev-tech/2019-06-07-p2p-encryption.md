@@ -1,8 +1,9 @@
 ---
 title: P2P Encryption (2019-06-07)
+date: 2019-06-07
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['P2P']
+tags: ['P2P', 'bitcoin core']
 ---
 
 p2p encryption
@@ -12,6 +13,12 @@ p2p encryption
 <https://github.com/bitcoin-core/bitcoin-devwiki/wiki/P2P-Design-Philosophy>
 
 "Elligator Squared: Uniform Points on Elliptic Curves of Prime Order as Uniform Random Strings" <https://eprint.iacr.org/2014/043>
+
+# Previous talks
+
+<https://btctranscripts.com/scalingbitcoin/milan-2016/bip151-peer-encryption/>
+
+<https://btctranscripts.com/sf-bitcoin-meetup/2017-09-04-jonas-schnelli-bip150-bip151/>
 
 # Introduction
 
@@ -121,7 +128,7 @@ At the moment, the proposal seems like a between wanting encryption and it shoul
 
 There's definitely something in between-- there's a difference between being able to do trivial traffic analysis where you match on the first five bytes and knowing what it is, versus having to put in some quantity of CPU to figure out whether this is bitcoin traffic. This is a massive difference for many practical applications.
 
-There's a few cohices. Maybe we don't care about traffic analysis, maybe it's all random, and maybe it looks random to a CPU-constrained observer. I think the CPU-constrained observer is the most important threat model. As soon as the key exchange is done, everything really looks random, so why not take this low-hanging fruit of adding more bytes in the handshake? Well, they could just see your traffic spiked after receiving a bitcoin block and therefore you're running bitcoin.
+There's a few choices. Maybe we don't care about traffic analysis, maybe it's all random, and maybe it looks random to a CPU-constrained observer. I think the CPU-constrained observer is the most important threat model. As soon as the key exchange is done, everything really looks random, so why not take this low-hanging fruit of adding more bytes in the handshake? Well, they could just see your traffic spiked after receiving a bitcoin block and therefore you're running bitcoin.
 
 In terms of upgrade, don't underestimate making a new port and having that be the new protocol. Otherwise you're doing TLS and start TLS. In bitcoin, there's no reason to not keep binding new ports for every single protocol we want. We could say 8336 we assume that's v2... What if people want to use a different port? There's no reason to not use a different port. If you can't bind 8336, you can't bind something else. If a country blocks 8333, you cannot start a new node. You do a DNS seed, everything is 833x, you can't connect.
 
@@ -188,11 +195,3 @@ The bitcoin network is mostly consisting of identityless peers. But there is ide
 I think PQ is too much for this proposal. I think adding post-quantum makes no sense. It makes sense for tor because if I communicate something today it might still be secret in 20 years. There's probably people collecting lots of tor data now in the hopes of decrypting it in 20 years. If there's an easy and obvious way of adding post-quantum then you should do it. If you're CPU bound you do timing and bandwidth analysis anyway, so you don't gain much from adding post-quantum.
 
 One thing that would be useful is a version field or some way to upgrade for post-quantum in the future even if a solution is not included in the proposal. If we add post-quantum now, there is no way we can make that look totally random as far as I know. There might be a way you can. Maybe you can, I don't know.
-
-# Previous talks
-
-<https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-09-04-jonas-schenlli-bip150-bip151/>
-
-<https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/bip151-peer-encryption/>
-
-
