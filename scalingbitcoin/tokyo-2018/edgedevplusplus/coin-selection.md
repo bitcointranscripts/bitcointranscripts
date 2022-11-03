@@ -2,6 +2,7 @@
 title: Coin Selection
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Karl-Johan Alm']
 ---
 
 Coin selection

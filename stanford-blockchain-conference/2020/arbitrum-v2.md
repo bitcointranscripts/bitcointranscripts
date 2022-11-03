@@ -3,6 +3,7 @@ title: Arbitrum V2
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts', 'layer 2']
+speakers: ['Ed Felten']
 ---
 
 Arbitrum 2.0: Faster Off-Chain Contracts with On-Chain Security

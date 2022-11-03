@@ -3,6 +3,7 @@ title: Zero Knowledge Proofs For Bitcoin Scalability And Beyond
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge', 'scalability']
+speakers: ['Madars Virza']
 ---
 
 Madars Virza

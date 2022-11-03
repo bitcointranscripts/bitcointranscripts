@@ -3,6 +3,7 @@ title: Prism
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'security']
+speakers: ['Vivek Bagaria']
 ---
 
 Prism: Scaling bitcoin to physical limits

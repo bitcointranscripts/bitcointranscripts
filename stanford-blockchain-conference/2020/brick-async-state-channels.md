@@ -2,6 +2,7 @@
 title: Brick Async State Channels
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Georgia Avarikioti']
 ---
 
 Brick: Asynchronous State Channels

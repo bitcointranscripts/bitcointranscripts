@@ -3,6 +3,7 @@ title: Bloxroute
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['segwit']
+speakers: ['Soumya Basu']
 ---
 
 bloXroute: A network for tomorrow's blockchain

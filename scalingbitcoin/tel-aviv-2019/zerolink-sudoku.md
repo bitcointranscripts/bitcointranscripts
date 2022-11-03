@@ -3,6 +3,7 @@ title: Zerolink Sudoku
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
+speakers: ['Yuval Kogman']
 ---
 
 ZeroLink sudoku: real vs perceived anonymity

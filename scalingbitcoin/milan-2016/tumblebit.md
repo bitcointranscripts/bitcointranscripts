@@ -3,6 +3,7 @@ title: Tumblebit
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Ethan Heilman', 'Leen AlShenibr']
 ---
 
 TumbleBit

@@ -3,6 +3,7 @@ title: Reproducible Builds
 transcript_by: Bryan Bishop
 categories: ['conference']
 tag: ['build systems']
+speakers: ['Carl Dong']
 ---
 
 Reproducible builds, binaries and trust

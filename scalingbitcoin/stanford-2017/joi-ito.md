@@ -3,6 +3,7 @@ title: Joi Ito
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'layer 2', 'fees']
+speakers: ['Joi Ito']
 ---
 
 Joi Ito

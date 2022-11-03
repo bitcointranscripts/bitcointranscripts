@@ -3,6 +3,7 @@ title: Transparent Snarks From Dark Compilers
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['accumulators']
+speakers: ['Ben Fisch']
 ---
 
 Transparent SNARKs from DARK compilers

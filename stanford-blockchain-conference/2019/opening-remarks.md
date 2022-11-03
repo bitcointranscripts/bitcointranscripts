@@ -2,6 +2,7 @@
 title: Opening Remarks
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Dan Boneh']
 ---
 
 Opening remarks

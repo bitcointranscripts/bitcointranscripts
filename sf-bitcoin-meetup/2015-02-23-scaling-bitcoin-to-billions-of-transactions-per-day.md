@@ -3,6 +3,7 @@ title: Scaling Bitcoin To Billions Of Transactions Per Day (2015-02-23)
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['lightning', 'fees']
+speakers: ['Joseph Poon', 'Thaddeus Dryja']
 ---
 
 2015-02-23

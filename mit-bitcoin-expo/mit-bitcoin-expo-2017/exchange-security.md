@@ -3,6 +3,7 @@ title: Exchange Security
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'wallet']
+speakers: ['Mitchell Dong']
 ---
 
 Exchange security

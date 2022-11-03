@@ -3,6 +3,7 @@ title: Building Bulletproofs
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge']
+speakers: ['Henry de Valence', 'Cathie Yun']
 ---
 
 Building bulletproofs

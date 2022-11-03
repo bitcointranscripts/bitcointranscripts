@@ -3,6 +3,7 @@ title: Protecting Yourself And Your Business
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'build systems']
+speakers: ['Warren Togami']
 ---
 
 Exchange security: Protecting yourself and your business

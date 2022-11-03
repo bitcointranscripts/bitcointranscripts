@@ -3,6 +3,7 @@ title: Bip99 And Uncontroversial Hard Forks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'forks']
+speakers: ['Jorge Timón']
 ---
 
 jtimon

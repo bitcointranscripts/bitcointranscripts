@@ -3,6 +3,7 @@ title: Proof Of Stake
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'proof-of-work', 'proof-of-stake']
+speakers: ['David Tse']
 ---
 
 Proof-of-stake longest chain protocols revisited

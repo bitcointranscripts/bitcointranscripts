@@ -2,6 +2,7 @@
 title: Everything Is Broken
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Cory Fields']
 ---
 
 Everything is broken

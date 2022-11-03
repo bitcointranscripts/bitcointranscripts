@@ -3,6 +3,7 @@ title: Attacking EVM Resource Metering (2019-02-19)
 transcript_by: Bryan Bishop
 categories: ['conference']
 tag: ['ethereum']
+speakers: ['Daniel Perez', 'Benjamin Livshits']
 ---
 
 Broken Metre: Attacking resource metering in EVM

@@ -3,6 +3,7 @@ title: Anonymous Atomic Locks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'scalability']
+speakers: ['Pedro Moreno-Sanchez']
 ---
 
 A2L: Anonymous atomic locks for scalability and interoperability in payment-channel hubs

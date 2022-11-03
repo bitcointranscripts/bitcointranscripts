@@ -3,6 +3,7 @@ title: Andrew Poelstra - Miniscript (2019-05-11)
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['miniscript']
+speakers: ['Andrew Poelstra']
 
 ---
 

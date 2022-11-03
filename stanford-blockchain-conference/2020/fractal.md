@@ -3,6 +3,7 @@ title: Fractal
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'post-quantum']
+speakers: ['Nick Spooner']
 ---
 
 Fractal: Post-Quantum and Transparent Recursive Proofs from Holography

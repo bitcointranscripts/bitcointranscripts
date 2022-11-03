@@ -3,6 +3,7 @@ title: Jute Braiding
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'mining', 'altcoin']
+speakers: ['David Vorick']
 ---
 
 Jute: New braiding techniques to achieve significant scaling gains

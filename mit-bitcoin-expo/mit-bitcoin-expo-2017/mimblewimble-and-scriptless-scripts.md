@@ -2,6 +2,7 @@
 title: Mimblewimble And Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Andrew Poelstra']
 ---
 
 Mimblewimble and scriptless scripts

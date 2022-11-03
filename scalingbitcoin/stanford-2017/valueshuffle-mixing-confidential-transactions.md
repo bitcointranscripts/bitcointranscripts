@@ -3,6 +3,7 @@ title: Valueshuffle Mixing Confidential Transactions
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Tim Ruffing']
 ---
 
 valueshuffle: Mixing confidential transactions

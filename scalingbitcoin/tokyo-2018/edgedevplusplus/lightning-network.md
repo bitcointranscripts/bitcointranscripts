@@ -3,6 +3,7 @@ title: Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Thaddeus Dryja']
 ---
 
 Lightning network overview, lightning channel factories, discreet log contracts

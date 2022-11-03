@@ -2,6 +2,7 @@
 title: Omniledger
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Eleftherios Kokoris-Kogias', 'Philipp Jovanovic', 'Linus Gasser', 'Nicolas Gailly', 'Ewa Syta', 'Bryan Ford']
 ---
 
 Omniledger: A secure, scale-out, decentralized ledger via sharding

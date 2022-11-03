@@ -3,6 +3,7 @@ title: Hierarchical Deterministic Wallets
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['wallet']
+speakers: ['James Chiang']
 ---
 
 Hierarchical deterministic Wallets (bip32)

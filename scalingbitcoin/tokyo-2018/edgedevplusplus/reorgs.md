@@ -3,6 +3,7 @@ title: Reorgs
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks']
+speakers: ['Bryan Bishop']
 ---
 
 Bryan Bishop

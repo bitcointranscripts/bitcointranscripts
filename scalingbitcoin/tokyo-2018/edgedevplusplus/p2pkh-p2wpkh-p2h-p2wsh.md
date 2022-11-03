@@ -3,6 +3,7 @@ title: P2Pkh P2Wpkh P2H P2Wsh
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['p2pkh', 'P2P', 'p2sh']
+speakers: ['Greg Sanders']
 ---
 
 P2PKH/P2WPKH/P2H/P2WSH

@@ -3,6 +3,7 @@ title: Network Topologies And Their Scalability Implications On Decentralized Of
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'custody', 'lightning']
+speakers: ['Joseph Poon']
 ---
 
 Joseph Poon

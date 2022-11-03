@@ -3,6 +3,7 @@ title: Future Of Hardware Wallets
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['hardware wallet', 'multisig', 'wallet']
+speakers: ['Stepan Snigirev']
 ---
 
 The future of hardware wallets

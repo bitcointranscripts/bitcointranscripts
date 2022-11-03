@@ -3,6 +3,7 @@ title: Onion Routing In Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility', 'lightning', 'routing']
+speakers: ['Olaoluwa Osuntokun']
 ---
 
 Onion routing in lightning network

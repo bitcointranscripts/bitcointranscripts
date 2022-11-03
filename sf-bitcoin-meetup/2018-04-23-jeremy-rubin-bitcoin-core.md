@@ -3,6 +3,7 @@ title: Jeremy Rubin - Bitcoin Core (2018-04-23)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['bitcoin core']
+speakers: ['Jeremy Rubin']
 ---
 
 Jeremy Rubin

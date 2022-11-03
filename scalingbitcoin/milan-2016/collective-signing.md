@@ -3,6 +3,7 @@ title: Collective Signing
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Lefteris Kokoris-Kogias', 'Philipp Jovanovic', 'Nicoas Gailly', 'Ismail Khoffi', 'Linus Gasser', 'Bryan Ford']
 ---
 
 Enhancing bitcoin security and performance with strong consistency via collective signing

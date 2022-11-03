@@ -3,6 +3,7 @@ title: Lower Bounds Limits Plasma
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['layer 2']
+speakers: ['Stefan Dziembowski']
 ---
 
 Lower Bounds for Off-Chain Protocols: Exploring the Limits of Plasma
