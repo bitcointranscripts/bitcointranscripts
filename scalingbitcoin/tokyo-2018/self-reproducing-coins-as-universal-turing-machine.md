@@ -1,11 +1,12 @@
 ---
 title: Self Reproducing Coins As Universal Turing Machine
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'smart contracts', 'scalability']
+categories: ["conference"]
+tags: ["research", "smart contracts", "scalability"]
+speakers: ["Dmitry Meshkov", "Alexander Chepurnoy", "Vasily Kharin"]
 ---
 
-Self-reproducing coins as universal turing machine
+# Self-reproducing coins as universal turing machine
 
 Dmitry Meshkov, Alexander Chepurnoy and Vasily Kharin (Ergo Platform)
 
@@ -45,7 +46,7 @@ The scripting language needs to be able to do basic arithmetic operations like b
 
 One of the most simple turing-complete systems is rule 110 by Stephen Wolfram. It's the simplest one-dimensional cellular automata. It was proven 15 years ago that this rule 110 is turing complete.
 
-* "Universality in elementary cellular automata" <https://git.io/vj6ew>
+- "Universality in elementary cellular automata" <https://git.io/vj6ew>
 
 Use transaction chaining to share memory between the transactions. <https://git.io/vj6rX> This can be done with constant block validation time, with a relatively minimal scripting language. We're not doing much, but this allows for running arbitrary computations on the blockchain.
 

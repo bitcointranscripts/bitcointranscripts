@@ -1,8 +1,9 @@
 ---
 title: Bitcoin Toolchain Unit Testing And Deterministic Builds
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['build systems', 'testing']
+categories: ["conference"]
+tags: ["build systems", "testing"]
+speakers: ["Marco Falke"]
 ---
 
 Bitcoin toolchain, unit testing & deterministic builds
@@ -31,7 +32,7 @@ To look at all the modules and targets that our build system supports, so James 
 
 Another build target is libbitcoin-consensus. This is a long term project. It was designed to provide just a library that takes care of all the consensus that is going on. You could, for example, have your node, for some reason, consensus changes- maybe there's a soft-fork or hard-fork then you only update your library and you're running the latest consensus but you don't have to upgrade your whole company infrastructure. For example you don’t have to update your RPC interface etc. But right now, libbitcoin-consensus is really minimal and it can't deal with anything that is stateful. It can do some stateless checks such as simple transaction verification.
 
-We have another build target called bitcoin-tx which is a utility to create and modify bitcoin transactions. And finally, all the other targets including bitcoind, bitcoin-qt, and test\_bitcoin. They all pretty much depend on everything. bitcoind, the daemon that runs in the background, and bitcoin-qt is the GUI, and test\_bitcoin is a ton of test binaries.
+We have another build target called bitcoin-tx which is a utility to create and modify bitcoin transactions. And finally, all the other targets including bitcoind, bitcoin-qt, and test_bitcoin. They all pretty much depend on everything. bitcoind, the daemon that runs in the background, and bitcoin-qt is the GUI, and test_bitcoin is a ton of test binaries.
 
 # Bitcoin Core Testing
 
@@ -60,4 +61,3 @@ To give an overview on how deterministic builds look like today. To remind, it i
 # Deterministic Builds — Progress
 
 To wrap up, some issues that we are currently working on, to give an overview of the progress. I mentioned that we use Ubuntu for the build environment which isn’t ideal. I guess we can be pretty certain that there is probably no backdoor in Ubuntu. If there was, most people run Ubuntu and if they run a non-backdoored Bitcoin Core on a backdoored Ubuntu it is not really going to help. It would be great to have a way to pin the compiler version to some defined version. If Ubuntu was to change the compiler version of the environment we are currently using we can no longer easily reproduce all the builds that happen in the past because different compiler versions means different executables. This indeed happened I think for Bitcoin Core 0.12 for something. Then another thing is where we do these detached signatures. Right now it is done for each operating system by a single person so there is some kind of bottleneck. It would be nicer if this was distributed so the trust would be spread out. It could be achieved with distributed RSA and have multiple maintainers sign off on the binaries. What works already today is of course the intermediate Gitian build results are signed by a lot of people who build them. All the signatures are put in a repository and everyone can and should compare them. That concludes my talk.
-

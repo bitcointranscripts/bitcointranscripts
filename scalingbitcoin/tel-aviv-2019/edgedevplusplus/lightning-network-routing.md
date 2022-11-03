@@ -1,11 +1,12 @@
 ---
 title: Lightning Network Routing
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['multisig', 'P2P', 'routing', 'fees']
+categories: ["conference"]
+tags: ["multisig", "P2P", "routing", "fees"]
+speakers: ["Carla Kirk-Cohen"]
 ---
 
-Lightning network routing: Operation, issues and expansions
+# Lightning network routing: Operation, issues and expansions
 
 Carla Kirk-Cohen
 
@@ -21,13 +22,13 @@ You can also make a multi-hop payment channel network where as long as you can r
 
 # Layers
 
-There's a transport layer, a base layer, and then an update layer. The update layer allows you to trustlessly agree on state and trustlessly revoke past states without the risk of a party broadcasting an old state and being able to steal old bitcoin. There's a penalty transaction but also a DMC and also eltoo which is a new proposal. Eltoo requires SIGHASH\_NOINPUT. Once we have the update layer, we can agree on states. We need an atomic and trustless way to... so that requires the transfer layer like HTLCs. Then we have a multi-hop layer like Sphinx which lets us propagate these HTLCs through the network.
+There's a transport layer, a base layer, and then an update layer. The update layer allows you to trustlessly agree on state and trustlessly revoke past states without the risk of a party broadcasting an old state and being able to steal old bitcoin. There's a penalty transaction but also a DMC and also eltoo which is a new proposal. Eltoo requires SIGHASH_NOINPUT. Once we have the update layer, we can agree on states. We need an atomic and trustless way to... so that requires the transfer layer like HTLCs. Then we have a multi-hop layer like Sphinx which lets us propagate these HTLCs through the network.
 
 # Transport layer
 
 The bottom of the stack is the transport layer. We want to use this to authenticate node identity. We want to do this in a way that is fingerprint-resistant. If I randomly associate with a node in the network, I shouldn't be able to figure out who someone is just by bruteforce randomly connecting. Also we want bruteforfce-resistant communication, we want confidentiality and integrity of messages.
 
-The tool to achieve this is the Noise\_XK protocol. It's a set of tools that you can arrange in various ways. We use the unknown/known variation. When we connect to nodes, we know that the IP is associated with an ID. However, when you're making a connection, you don't advertise your outbound and they don't know who you are so you have to authenticate who you are.
+The tool to achieve this is the Noise_XK protocol. It's a set of tools that you can arrange in various ways. We use the unknown/known variation. When we connect to nodes, we know that the IP is associated with an ID. However, when you're making a connection, you don't advertise your outbound and they don't know who you are so you have to authenticate who you are.
 
 This requires persistent identity. This is different from bitcoin where we want all nodes to be indistinguishable. But in lightning we need to do routing so we need node identity. We use a sequence of Diffie-Hellman operations in a handshake protocol and then we establish a shared secret.
 
@@ -52,8 +53,3 @@ In the update layer, we need to create an updated state between two peers and we
 Another idea was from cdecker at Blockstream where you would be able to send back and forth instead of unidirectional. These would use timestamps to revoke old states. The timestamp would eventually make it so that you can't run the channel anymore once you run out of timelocks you need to close your payment channel.
 
 In the lightning network, in the update layer we need to be able to sign multiple double spends while trustlessly revoking all the recent transactions. The lightning penalty update mechanism is a transaction where you steal all of the funds from your counterparty when they try to cheat you. This commitment transaction is signed before the 2-of-2 multisig is funded, because otherwise the counterparty will be able to ransom your coins or hold it hostage. So you must insist on collecting those signatures first.
-
-
-
-
-

@@ -1,15 +1,16 @@
 ---
 title: Epicenter Bitcoin Adam3Us Scalability (2015-09-07)
 transcript_by: Bryan Bishop
-tags: ['proof-of-work', 'sidechains']
+tags: ["proof-of-work", "sidechains"]
+categories: ["podcast"]
+speakers: ["Adam Back"]
 ---
-
 
 "Why bitcoin needs a measured approach to scaling"
 
 video: <https://youtube.com/watch?v=wYHyR2E5Pic>
 
-Adam Back (adam3us)
+Name: Adam Back (adam3us)
 Epicenter (EC)
 
 Sebastien Couture (SC)

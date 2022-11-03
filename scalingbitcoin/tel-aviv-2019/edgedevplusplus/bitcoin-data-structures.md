@@ -1,7 +1,8 @@
 ---
 title: Bitcoin Data Structures
 transcript_by: Bryan Bishop
-categories: ['conference']
+categories: ["conference"]
+speakers: ["Jimmy Song"]
 ---
 
 Bitcoin data structures
@@ -36,7 +37,7 @@ So you encode it using base58, and then you get an address. This example here is
 
 # Bitcoin transactions
 
-Here's the raw hex dump of a bitcoin transaction. I've color coded it for you. This, again, is in the book. The very first bytes... each pair is a byte, this is hexadecimal. The first four bytes are a version. This is in little endian. Little endian starts first, for little. There is transaction version 1, and then there's transaction version 2 and that's only if you're using OP\_CHECKSEQUENCEVERIFY which I think was introduced as part of bip68.
+Here's the raw hex dump of a bitcoin transaction. I've color coded it for you. This, again, is in the book. The very first bytes... each pair is a byte, this is hexadecimal. The first four bytes are a version. This is in little endian. Little endian starts first, for little. There is transaction version 1, and then there's transaction version 2 and that's only if you're using OP_CHECKSEQUENCEVERIFY which I think was introduced as part of bip68.
 
 Bitcoin runs on a UTXO system. That means unspent transaction outputs. What you have to do for each input is have a reference to the previous output that you are spending. That's what we're going to do here. There's a previous transaction hash. It's hash256 (or two rounds of sha256) of the previous transaction, and this gives you a 32 byte reference to a previous transaction. Note that it's not the current transaction, it's some transaction that existed before. You also need to specify which output of that previous transaction you're spending in this input. You have to reference the index of the output in the list of outputs of that previous transaction.
 
@@ -58,21 +59,21 @@ Yes, you need a signature for each input. Coins can either be spent or unspent. 
 
 Both the input scriptSig and the output scriptpubkey use the bitcoin smart contract language called script. It's purposefully not Turing complete. Unlike ethereum, it's not turing complete, so it can't run infinitely. This is why ethereum needs this complicated thing called gas because otherwise you can ddos every node by running an infinite loop in a contract which would be bad because the whole network would stop working. By not being turing complete, bitcoin script is more limited and doesn't allow for infinite loops. It's sort of like the Forth programming language. It's a programmable way of assigning coins and spending predicates. Every bitcoin address does this.
 
-There are elements and operations. Elements are data, like signatures or public keys. Operations do something, like OP\_CHECKSIG and OP\_HASH160 and OP\_DUP. You have to process all of the commands. If at the end you have the--- if the top element left on the stack is non-zero then it's considered a successful execution. If the top element is 0 or if there's no elements or if it terminated early then it's a failed execution. Every input has to end up with a successful execution for a transaction to be valid.
+There are elements and operations. Elements are data, like signatures or public keys. Operations do something, like OP_CHECKSIG and OP_HASH160 and OP_DUP. You have to process all of the commands. If at the end you have the--- if the top element left on the stack is non-zero then it's considered a successful execution. If the top element is 0 or if there's no elements or if it terminated early then it's a failed execution. Every input has to end up with a successful execution for a transaction to be valid.
 
 <https://en.bitcoin.it/wiki/Script>
 
 Some opcodes of particular interest:
 
-* OP\_DUP
+- OP_DUP
 
-* OP\_CHECKSIG
+- OP_CHECKSIG
 
-* OP\_HASH160
+- OP_HASH160
 
 # Parsing script
 
-Each byte is interpreted as an integer. If the byte is between 1 and 75 inclusive, the next n bytes are an element. Else, byte is an operation based on a lookup table which is defined as part of the language. OP\_0 puts a zero at the top of the stack. 0x93 is OP\_ADD, add the top two elements.
+Each byte is interpreted as an integer. If the byte is between 1 and 75 inclusive, the next n bytes are an element. Else, byte is an operation based on a lookup table which is defined as part of the language. OP_0 puts a zero at the top of the stack. 0x93 is OP_ADD, add the top two elements.
 
 # Processing scripts
 
@@ -80,11 +81,11 @@ So you take the scriptpubkey from the previous transaction and then you take the
 
 # Popular bitcoin scripts
 
-* p2pk - pay-to-pubkey
-* p2pkh - pay-to-pubkeyhash
-* p2sh - pay-to-scripthash
-* p2wpkh - pay-to-witness-pubkeyhash
-* p2wsh - pay-to-witness-scripthash
+- p2pk - pay-to-pubkey
+- p2pkh - pay-to-pubkeyhash
+- p2sh - pay-to-scripthash
+- p2wpkh - pay-to-witness-pubkeyhash
+- p2wsh - pay-to-witness-scripthash
 
 Let's talk about pay-to-pubkeyhash. The scriptpubkey determines what the scriptsig is going to need to be, in order to unlock the funds. Think about the scriptpubkey as the "lock box" that the bitcoin is "in". You define a lockbox in a particular way.
 
@@ -94,9 +95,9 @@ Pay-to-scripthash is different from pay-to-pubkeyhash. To use p2sh, you need to 
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/p2pkh-p2wpkh-p2h-p2wsh/>
 
-OP\_CHECKMULTISIG checks if m of the signatures are valid of the n public keys for the current transaction. Puts 1 back on the stack if valid, and 0 otherwise. You can do 2-of-3, 4-of-5, all sorts of things. Turns out, OP\_CHECKMULTISIG has an off-by-one error. It consumes one more stack element than it is supposed to. This is a bug that Satoshi originally introduced. To make it backwards compatible ,it's always using this initial 0 value that you have to place there.
+OP_CHECKMULTISIG checks if m of the signatures are valid of the n public keys for the current transaction. Puts 1 back on the stack if valid, and 0 otherwise. You can do 2-of-3, 4-of-5, all sorts of things. Turns out, OP_CHECKMULTISIG has an off-by-one error. It consumes one more stack element than it is supposed to. This is a bug that Satoshi originally introduced. To make it backwards compatible ,it's always using this initial 0 value that you have to place there.
 
-You can use OP\_CHECKMULTISIG in conjunction with OP\_OR or other schemes. So you can have things like, after this amount of time, these other keys are acceptable or something.
+You can use OP_CHECKMULTISIG in conjunction with OP_OR or other schemes. So you can have things like, after this amount of time, these other keys are acceptable or something.
 
 # Block parsing
 
@@ -120,9 +121,9 @@ The difficulty gets adjusted every 2016 blocks. Because blocks come on average o
 
 # Calculating target from nBits
 
-The exponent is the last byte. The coefficient is the first 3 bytes in little endian. You plug this into a particular formula where you do coefficient * 256^(exponent - 3). When you do a hash, you end up with a random number. You are trying to grind and find a value that makes this hash hit the requirement where it has a certain number of leading zeroes, and the value has to be below the target value. It's extremely improbable that it has this many leading zeroes. You have to calculate a lot of different hashes to get below this number.
+The exponent is the last byte. The coefficient is the first 3 bytes in little endian. You plug this into a particular formula where you do coefficient \* 256^(exponent - 3). When you do a hash, you end up with a random number. You are trying to grind and find a value that makes this hash hit the requirement where it has a certain number of leading zeroes, and the value has to be below the target value. It's extremely improbable that it has this many leading zeroes. You have to calculate a lot of different hashes to get below this number.
 
-To give you an idea, to find the hash that's below this target, you have to calculate on average 3.8 * 10^21 or 3.8 sextillion hashes. At this difficulty it would take the fastest GPU on the market (which does 2.5 GH/sec) about 50,000 years to find a hash that satisfies that Proof-of-Work difficulty level.
+To give you an idea, to find the hash that's below this target, you have to calculate on average 3.8 \* 10^21 or 3.8 sextillion hashes. At this difficulty it would take the fastest GPU on the market (which does 2.5 GH/sec) about 50,000 years to find a hash that satisfies that Proof-of-Work difficulty level.
 
 # Calculating difficulty from target
 
@@ -146,7 +147,7 @@ The non-upgraded nodes are given an empty scriptSig. This works because of a tri
 
 What about P2SH-P2WPKH? They came up with this for backwards compatible. It's a way to make segwit backwards compatible. All wallets, even if they don't know about segwit, can spend to a segwit wallet. It wraps the entire segwit thing around p2sh. It looks exactly like a p2sh address. These are addresses that start with a 3. You might have seen some of these and suspected they were segwit addresses; you don't know, it could just as easily be a p2sh multisig or something.
 
-The segwit nodes will interpret this special rule: OP\_0 followed by 20 byte element is evaluated to mean that this is now evaluated as script elements. But this is still backwards compatible with pre-segwit nodes because OP\_0 would be put on top of the stack. There's two special rules used here, to make it all backwards compatible. Soft-forks means it's always backwards compatible, all the way back to before P2SH was originally implemented years ago. Even if you're a very old node, it would still work. You validate as much as you can, which won't be as much, but you will still see things as valid.
+The segwit nodes will interpret this special rule: OP_0 followed by 20 byte element is evaluated to mean that this is now evaluated as script elements. But this is still backwards compatible with pre-segwit nodes because OP_0 would be put on top of the stack. There's two special rules used here, to make it all backwards compatible. Soft-forks means it's always backwards compatible, all the way back to before P2SH was originally implemented years ago. Even if you're a very old node, it would still work. You validate as much as you can, which won't be as much, but you will still see things as valid.
 
 # Other
 
@@ -162,7 +163,7 @@ A: Well first, it's optional to transmit this data to the other node. It's only 
 
 Q: I didn't quite understand the nBits field in the blockheader. Also, how do you calculate difficulty adjustment?
 
-A: The nBits field encodes a very large number into four bytes. If you encode the entire number, it would be 32 bytes. But compressing it to 4 bytes is very nice. You don't get quite the resolution you would get with 256 bits or whatever, but that's the idea. The formula that I showed you is a common way to encode a number that big. As far as the difficulty adjustment, the formula is in the book. You can essentially encode the number fairly--- I don't think I have it in the book's code. Or maybe I do. Okay, `calculate_new_bits`. The time differential value is how long it took over the last two weeks * 4. If it's greater than 8 weeks, set it to 8 weeks. The maximum it can increase is by 4. The minimum it can decrease by is 1/4th. The new target is, according to this formula, you take the previous bits times the time differential divided by 2 weeks and then the new target is going to-- if it's bigger than the max target, then it's set to the max target, and then you convert back to bits. All of this is in the book and you can read about how exactly that works. It doesn't have to be a multiple of 2 or anything, it's finely grained.
+A: The nBits field encodes a very large number into four bytes. If you encode the entire number, it would be 32 bytes. But compressing it to 4 bytes is very nice. You don't get quite the resolution you would get with 256 bits or whatever, but that's the idea. The formula that I showed you is a common way to encode a number that big. As far as the difficulty adjustment, the formula is in the book. You can essentially encode the number fairly--- I don't think I have it in the book's code. Or maybe I do. Okay, `calculate_new_bits`. The time differential value is how long it took over the last two weeks \* 4. If it's greater than 8 weeks, set it to 8 weeks. The maximum it can increase is by 4. The minimum it can decrease by is 1/4th. The new target is, according to this formula, you take the previous bits times the time differential divided by 2 weeks and then the new target is going to-- if it's bigger than the max target, then it's set to the max target, and then you convert back to bits. All of this is in the book and you can read about how exactly that works. It doesn't have to be a multiple of 2 or anything, it's finely grained.
 
 Q: You skipped over the merkle root part of the blockheader.
 
@@ -172,6 +173,4 @@ Neutrino gives you a fingerprint on all the transactions in a particular block. 
 
 Q: How does the witness root thing work in the coinbase transaction?
 
-A: Coinbase transactions are different. They are the only transaction allowed to create new bitcoin. It has no inputs. It's supposed to have only one input and people can put anything they want into the scriptSig of that one input. If you look at the coinbase transaction for the genesis block, that's where Satoshi put his "Chancellor on the brink of second bailout for banks" message. The outputs, though, you can have as many of those as you want. You can put something into the coinbase scriptSig arbitrarily, like bip34. You can put a commitment to a filter in there. I think the current way is a witness commitment into --- is it the OP\_RETURN of the first output of the coinbase transaction? There's a commitment to the witness merkle root. Basically, you hack stuff into the coinbase whenever you want to add that. Again, this is something that everyone has to validate. It's a whole network cost when you put in a coinbase commitment. Greg Maxwell has pointed out that when you soft-fork something in and it ends up being a dud then it takes a hard-fork to remove it.
-
-
+A: Coinbase transactions are different. They are the only transaction allowed to create new bitcoin. It has no inputs. It's supposed to have only one input and people can put anything they want into the scriptSig of that one input. If you look at the coinbase transaction for the genesis block, that's where Satoshi put his "Chancellor on the brink of second bailout for banks" message. The outputs, though, you can have as many of those as you want. You can put something into the coinbase scriptSig arbitrarily, like bip34. You can put a commitment to a filter in there. I think the current way is a witness commitment into --- is it the OP_RETURN of the first output of the coinbase transaction? There's a commitment to the witness merkle root. Basically, you hack stuff into the coinbase whenever you want to add that. Again, this is something that everyone has to validate. It's a whole network cost when you put in a coinbase commitment. Greg Maxwell has pointed out that when you soft-fork something in and it ends up being a dud then it takes a hard-fork to remove it.

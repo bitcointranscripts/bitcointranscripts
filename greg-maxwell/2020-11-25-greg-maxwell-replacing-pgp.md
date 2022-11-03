@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell - Replacing PGP (2020-11-25)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 ---
 

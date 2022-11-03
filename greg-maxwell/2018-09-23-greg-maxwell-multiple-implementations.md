@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell - Multiple Implementations (2018-09-23)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 ---
 
@@ -45,4 +45,3 @@ Finally, diversity can exist in forms other than creating more probability disus
 All this also ignores the costs of implementation diversity unrelated to reliability and security, such as the redundancy often making improvements more expensive and slow to implement.
 
 TLDR: In Bitcoin the system as a whole is vulnerable to disruption of any popular implementation has a consensus bug: the disruption can cause financial losses even for people not running the vulnerable software by splitting consensus and causing reorgs. Implementations also tend to frequently reimplement the same bugs even in the rare case where they aren't mostly just copying (or transliterating) code, which is good news for staying consistent but means that even when consistency isn't the concern the hoped-for benefit usually will not materialize. Also network effects tend to keep diversity low regardless, which again is good for consistency, but means but bad for diversity actually doing good. To the extent that diversity can help, it does so primarily through review and monitoring which are better achieved through collaboration on a smaller number of implementations.
-

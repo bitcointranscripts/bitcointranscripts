@@ -1,13 +1,14 @@
 ---
 title: Reworking Bitcoin Core P2P Code For Robustness And Event Driven
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['P2P']
+categories: ["conference"]
+tags: ["P2P"]
+speakers: ["Cory Fields"]
 ---
 
-Cory Fields
+Name: Cory Fields
 
-Reworking Bitcoin Core's p2p code to be more robust and event-driven.
+# Reworking Bitcoin Core's p2p code to be more robust and event-driven.
 
 That is me. I want to apologize right off. I am here to talk about reworking Bitcoin Core p2p code. This is a Bitcoin Core specific topic. I have been working on some software for the past few weeks to talk about working things rather than theory. The presentation is going to suffer because of this.
 

@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['privacy', 'wallet']
 ---
 
-Future of SPV tech
+# Future of SPV tech
 
 <https://docs.google.com/document/d/1t0bSZj5b66xBdW7xrjHlcvfqYAbTaQDB4-_T0Jvs3T4/edit#heading=h.5lm45oa6kuri>
 

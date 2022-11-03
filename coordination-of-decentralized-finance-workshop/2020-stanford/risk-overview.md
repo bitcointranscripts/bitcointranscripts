@@ -1,12 +1,13 @@
 ---
 title: Risk Overview
 transcript_by: Bryan Bishop
-categories: ['workshop']
+categories: ["workshop"]
+speakers: ["Byron Gibson"]
 ---
 
 Overview of risk in decentralized financial systems
 
-Byron Gibson
+Name: Byron Gibson
 
 <https://twitter.com/kanzure/status/1229878346709782528>
 
@@ -38,7 +39,7 @@ Finally, there's financial and economic failure risk. This is something that has
 
 # Cryptographic risk
 
-The problem with building cryptosystems... and this is largely borrowed from a 2015 Andrew Poelstra presentation..  that these systems are difficult to build, maintain and secure. In cryptography, there's no range of severity of errors. Cryptography is "it either works or it's broken" and any subtle flaw could result in a total breach of the system. In cryptography, there's zero tolerance for any kind of defect.
+The problem with building cryptosystems... and this is largely borrowed from a 2015 Andrew Poelstra presentation.. that these systems are difficult to build, maintain and secure. In cryptography, there's no range of severity of errors. Cryptography is "it either works or it's broken" and any subtle flaw could result in a total breach of the system. In cryptography, there's zero tolerance for any kind of defect.
 
 Also, cryptosystems are subject to active opposition. You have clever, adaptive adversaries attempting to break it and steal all the money from it.
 
@@ -56,7 +57,7 @@ Cryptography components along with consensus systems and other engineering compo
 
 One of the ones that Tarun has just talked about this morning is "compositional risk". In the traditional financial system, you can make derivatives of derivatives of derivatives. The compositional risk of how these things become increasingly complex is something that we're starting to pay more attention to.
 
-There are also monetary design considerations as well. Stablecoins have been a big topic for the past few years. There's a philosophical question here: are stablecoins truly stable? The philosophical question is, in complex systems it may be impossible to control the variance.  You can maybe create an impression of control or impression of stability, but what you're doing is building up greater volatility or blow-up risk over time. It's essentially like a volcano which looks stable for a long time, until it explodes all of the sudden.
+There are also monetary design considerations as well. Stablecoins have been a big topic for the past few years. There's a philosophical question here: are stablecoins truly stable? The philosophical question is, in complex systems it may be impossible to control the variance. You can maybe create an impression of control or impression of stability, but what you're doing is building up greater volatility or blow-up risk over time. It's essentially like a volcano which looks stable for a long time, until it explodes all of the sudden.
 
 Finally, there's the base money of cryptocurrency systems itself. Ethereum has its base money of ether and then there's tokens built on top of it. The monetary system design of the base money is still something that the industry is early stage on, and there's probably a lot of exploration of different monetary systems coming over the next 10 years.
 
@@ -95,6 +96,5 @@ A: Good question. I know these conversations are happening in subcommunities. Th
 So I suggest long-term stability of decentralized system has two aspects: economic stability, and the other is technological stability. So let's divide the two groups that way. So one will talk about economic stability, and the other will talk about technological stability.
 
 These transcripts are <a href="https://twitter.com/ChristopherA/status/1228763593782394880">sponsored</a> by <a href="https://blockchaincommons.com/">Blockchain Commons</a>.
-
 
 Tweet: Transcript: "Overview of risk in decentralized financial systems" https://diyhpl.us/wiki/transcripts/coordination-of-decentralized-finance-workshop/2020-stanford/risk-overview/ @byrongibson @CBRStanford #SBC20

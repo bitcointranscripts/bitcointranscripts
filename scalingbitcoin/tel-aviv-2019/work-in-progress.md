@@ -1,8 +1,9 @@
 ---
 title: Work In Progress
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-of-work']
+categories: ["conference"]
+tags: ["proof-of-work"]
+speakers: ["Mikael Dubrovsky"]
 ---
 
 Work in progress sessions
@@ -131,9 +132,9 @@ BB: You can do 2-of-2 multisig with the sender and the recipient and then delete
 
 Thomas Eizinger (coblox.tech)
 
-I want to work on trustlessly rebalancing your LN channels with USDT. Let me tell you how lightning channels work. Just kidding ((laughter)). Does anyone remember omnilayer? It was originally called mastercoin. It has tokens on it like USDT. Omnilayer is a separate consensus layer on top of bitcoin, using OP\_RETURN to embed extra data into bitcoin transactions where this data is not validated by bitcoin nodes but is validated by omnilayer clients.
+I want to work on trustlessly rebalancing your LN channels with USDT. Let me tell you how lightning channels work. Just kidding ((laughter)). Does anyone remember omnilayer? It was originally called mastercoin. It has tokens on it like USDT. Omnilayer is a separate consensus layer on top of bitcoin, using OP_RETURN to embed extra data into bitcoin transactions where this data is not validated by bitcoin nodes but is validated by omnilayer clients.
 
-Can we use HTLCs with omnilayer simple\_send? The answer is yes we can do that. It works just as you would expect it to work. You have an output, and the consensus rules require you to provide the redeem transaction with the HTLC. It provides the preimage to the hash.
+Can we use HTLCs with omnilayer simple_send? The answer is yes we can do that. It works just as you would expect it to work. You have an output, and the consensus rules require you to provide the redeem transaction with the HTLC. It provides the preimage to the hash.
 
 How is this useful? We've learned several things while doing this investigation. If you do assets on top of bitcoin that aren't bitcoin, you don't need to include any functionality that gives you conditional transfers. We can define assets on top of bitcoin and still use HTLCs and scripts to conditionally spend those assets. Omnilayer actually, is, it has a lot of commands to do all kinds of things. You can't directly buy tether with bitcoin-- you have to go through a weird omnicoin to buy tether, which I think just is there to make them money. But you can construct a transaction where within one transaction someone else sends bitcoin and you get tokens back. It's an atomic swap on the same chain.
 
@@ -200,4 +201,3 @@ oh wait that's me (who types for the typer?)
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html>
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html>
-

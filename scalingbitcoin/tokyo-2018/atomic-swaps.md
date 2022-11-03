@@ -1,7 +1,9 @@
 ---
 title: Atomic Swaps
 transcript_by: Bryan Bishop
-categories: ['conference']
+categories: ["conference"]
+tags: ["atomic swaps"]
+speakers: ["Thomas Eizinger", "Lloyd Fournier", "Phillip Hoenisch"]
 ---
 
 The state of atomic swaps
@@ -24,7 +26,7 @@ The main building block for atomic swaps are hash-time-lock contracts (HTLCs). I
 
 # HTLCs
 
-Here is a bitcoin script for an HTLC. It uses OP\_SHA256 and it checks whether the hash matches the expected hash. Everything after that is just a regular p2pkh transaction where you compare to a pubkeyhash and verify the signature at the end.
+Here is a bitcoin script for an HTLC. It uses OP_SHA256 and it checks whether the hash matches the expected hash. Everything after that is just a regular p2pkh transaction where you compare to a pubkeyhash and verify the signature at the end.
 
 # Atomic swaps
 
@@ -78,11 +80,11 @@ How can we construct HTLCs or conditional payments in general without knowing th
 
 # References
 
-* <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/>
-* <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/cross-chain-swaps/>
-* <https://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/blind-signatures-and-scriptless-scripts/>
-* <https://diyhpl.us/wiki/transcripts/layer2-summit/2018/scriptless-scripts/>
-* <https://diyhpl.us/wiki/transcripts/realworldcrypto/2018/mimblewimble-and-scriptless-scripts/>
-* zero-knowledge contingent payments: <https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/>
-* Equivalent secret values across curves: <https://0bin.net/paste/Q5perGCU3+QMVnhz#fNpHXjX0me3Wa-UBItl4hTeK7wjBkl8JlFAmsbTlZVA>
-* <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017245.html>
+- <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/>
+- <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/cross-chain-swaps/>
+- <https://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/blind-signatures-and-scriptless-scripts/>
+- <https://diyhpl.us/wiki/transcripts/layer2-summit/2018/scriptless-scripts/>
+- <https://diyhpl.us/wiki/transcripts/realworldcrypto/2018/mimblewimble-and-scriptless-scripts/>
+- zero-knowledge contingent payments: <https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/>
+- Equivalent secret values across curves: <https://0bin.net/paste/Q5perGCU3+QMVnhz#fNpHXjX0me3Wa-UBItl4hTeK7wjBkl8JlFAmsbTlZVA>
+- <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017245.html>

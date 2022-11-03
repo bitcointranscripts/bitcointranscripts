@@ -1,7 +1,9 @@
 ---
 title: Bitcoin Block Propagation Iblt Rusty Russell
 transcript_by: Bryan Bishop
-categories: ['conference']
+categories: ["conference"]
+speakers: ["Rusty Russell"]
+tags: ["Block propagation"]
 ---
 
 Rusty Russell
@@ -12,13 +14,13 @@ The problem is that blocks are transmitted in their entirety. If you have a 1 MB
 
 That's not desirable, so it would be nice if we could take advantage of the redundancy in the same block. The worst case is that you create a block that nobody has seen before, but it does help for the normal case. A naieve approach is to send txid which potentially adds some roundtrip latency, so you want to avoid that.
 
-The first approach to this was gavinandresen's O(1) block propagation using an invertible bloom lookup table. I google image searched for IBLT and that's what I got. An invertible bloom lookup table, basically what you do is you take.. you split your transactions into fragments that look like this, a fragment id, an index, and then the actual data. Those of you familiar with bloom tables will know that you take three hash functions, you throw the fragment into your bloom filter there, and then you keep a counter as well as XOR'ing in the data. Then do the same thing with the second fragment.  You do that for all the fragments, you get something like this, which is basically an oversaturated bloom table and useless to everyone.
+The first approach to this was gavinandresen's O(1) block propagation using an invertible bloom lookup table. I google image searched for IBLT and that's what I got. An invertible bloom lookup table, basically what you do is you take.. you split your transactions into fragments that look like this, a fragment id, an index, and then the actual data. Those of you familiar with bloom tables will know that you take three hash functions, you throw the fragment into your bloom filter there, and then you keep a counter as well as XOR'ing in the data. Then do the same thing with the second fragment. You do that for all the fragments, you get something like this, which is basically an oversaturated bloom table and useless to everyone.
 
 One side does that ofr the entire block; then the peer gets the equivalent IBLT and then XOR the main parts, you subtract the counters and get the difference, and hopefully that's not oversaturated. You extract the buckets. Buckets with -1: transaction not in block, and you remove that transaction from the IBLT. If the count is 1, then there's an unknown transaction in the block, so extract that. If you end up with an empty IBLT, you then try to form a block out of that. That's IBLT in a nutshell.
 
 There are some minor improvements and optimizations on the original proposal that have been coded up. Use siphash not SHA256 for id (v. fast). Offset index by hash of id (decode ordering). etc.
 
-More interestingly, creating this IBLT is really fast. It's O(number of transactions in the block). There's a twist that we use to make it O(n log n). Pieter Wuille suggested why don't we just this for encoding between peers, rather than the miner setting it up.  You would use this to encode a block for each of your direct peers, potentially differently for each peer.
+More interestingly, creating this IBLT is really fast. It's O(number of transactions in the block). There's a twist that we use to make it O(n log n). Pieter Wuille suggested why don't we just this for encoding between peers, rather than the miner setting it up. You would use this to encode a block for each of your direct peers, potentially differently for each peer.
 
 So the question comes down to scaling. How well does this approach scale? It scales with the differences in mempool with some factor. There's some encoding penalty (1-2.2x) for throwing these transactions into IBLT. It depends on whether they are missing. The differences in mempool scales with transaction rate. As more transactions go through, the more likely you are to have missing transactions in someone else's mempool.
 
@@ -39,6 +41,3 @@ Canonical block ordering; IBLT doesn't encode the order. Gavin suggested that yo
 There is also the idea of propagating weak blocks (near blocks). If it's 1/20th of the difficulty target, they broadcast that, so you get a series of weak blocks before you get a real block. When you send a block, you encode it by referring to a previous weak block: just encode the differences since then. If you could update and represent whole ranges since the last block, that's more likely to be workable if you had ordered by fee per byte anyway.
 
 We can actually test this without any miner supported changes today. This is my vague plan. We cheat and we send the peer all of the information, we pretend it was in the ordder, and then we tack on the ordering information so that we fcould use it today. And then we guess the minfee. And a protocol like this would have contact with your peers, they would have some feedback about how close it was to their mempool, and you could get information about how convergent the mempools are. A recently rebooted node is going to have a very different mempool. When you receive a block, you look at how different it is; then you add an estimate on that for your IBLT sizes, if it's smaller than the block then you use IBLT, and then there's a 95% chance that they can reconstruct it. You need infinite data to be sure, but you pick 95%- and they could always fall back to a normal to getblock.
-
-
-

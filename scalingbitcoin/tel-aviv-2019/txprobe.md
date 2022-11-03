@@ -1,20 +1,20 @@
 ---
 title: Txprobe
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['topology']
+categories: ["conference"]
+tags: ["topology"]
+speakers: ["Sergi Delgado-Segura"]
 ---
 
-TxProbe: Discovering bitcoin's network topology using orphan transactions
+# TxProbe: Discovering bitcoin's network topology using orphan transactions
 
-Sergi Delgado-Segura (sr\_gi)
+Sergi Delgado-Segura (sr_gi)
 
 <https://twitter.com/kanzure/status/1171723329453142016>
 
 paper: <https://arxiv.org/abs/1812.00942>
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/coinscope-andrew-miller/>
-
 
 # Introduction
 
@@ -50,7 +50,7 @@ Okay, that's enough motivation or overview of the network. But as I was saying i
 
 Right now, the way that transaction propagation works-- Gleb is going to be talking about his improvements-- but here's how it works right now. When a node receives a transaction and it is validated, it gets into the local mempool. Eventually, this transaction will get propagated to other nodes on the network. The goal is to get these transactions to be included in blocks.
 
-The first thing that a node would do is to be to announce the existence of the transaction to his peers. So he does an INV announcement message, and then the other node asks for the data with get\_data and asks for the data. There will be a 2 minute window here where Alice has to reply. If she doesn't do so, Bob cancels the request. Otherwise, he receives the transaction back. Later on, this is going to be one of the key things we're using for txprobe.
+The first thing that a node would do is to be to announce the existence of the transaction to his peers. So he does an INV announcement message, and then the other node asks for the data with get_data and asks for the data. There will be a 2 minute window here where Alice has to reply. If she doesn't do so, Bob cancels the request. Otherwise, he receives the transaction back. Later on, this is going to be one of the key things we're using for txprobe.
 
 # Orphan transactions
 
@@ -121,5 +121,3 @@ We basically drew the graph of testnet by running some graph analysis over it. H
 Even though the code was written in a way that was supposed to make a random network, the networks we end up having are not quite as random. We can't extrapolate the results to mainnet because the incentives for running a testnet node and a mainnet node are different.
 
 Is the goal to have a hidden topology as the design goal, or are we trying to achieve transaction privacy with that property? Maybe dandelion would be a better solution for that, which doesn't imply a hidden topology protocol design goal.
-
-

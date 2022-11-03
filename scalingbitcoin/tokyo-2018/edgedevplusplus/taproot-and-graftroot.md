@@ -1,8 +1,9 @@
 ---
 title: Taproot and Graftroot
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy', 'fungibility', 'taproot']
+categories: ["conference"]
+tags: ["privacy", "fungibility", "taproot"]
+speakers: ["Greg Sanders"]
 ---
 
 Taproot and graftroot
@@ -37,13 +38,13 @@ But what if we can remove the additional cost of contingencies, without losing p
 
 There's a concept called pay-to-contract (p2c). It's a method of commiting to a specific message within a public key. For example, in the Elements sidechain based software uses this technique to give money to the federation's public keys while committing to another scriptPubKey that is then redeemed on the sidechain.
 
-Q = P + Hash(P || script) * G
+Q = P + Hash(P || script) \* G
 
 Only one binding using this protocol is possible at a time. Only those who can sign for P can also sign for Q. In bitcoin, consensus doesn't care about this. But you're provably committing to this. Only one binding is possible at a time. You can sign for P and have the message that is being hashed, and having the script being hashed, then you know how to spend the Q, and that's if and only if.
 
 # Taproot
 
-We can commit to this contingency we talked about inside of bitcoin, while having the output script look like any other pay-to-pubkey style output. Q = P + Hash(P || script) * G where the script is the encumberance. The Q is being signed by an m-of-n federation of some sort that has done secret key sharing scheme of some kind. Every participant in that scheme knows how to compute their own shards of P and they also know the hash of P appended to the script. They are all able to sign for this.
+We can commit to this contingency we talked about inside of bitcoin, while having the output script look like any other pay-to-pubkey style output. Q = P + Hash(P || script) \* G where the script is the encumberance. The Q is being signed by an m-of-n federation of some sort that has done secret key sharing scheme of some kind. Every participant in that scheme knows how to compute their own shards of P and they also know the hash of P appended to the script. They are all able to sign for this.
 
 The common case is that you sign for Q, verifiers have no knowledge of the existence or type of contigency. It looks like a normal pay-to-pubkey being spent.
 
@@ -53,7 +54,7 @@ The contingency case is that you reveal P, script, and witness to satisfy the sc
 
 Q = P + Hash(P || script) & G
 
-A revival of an old idea called delegation. This is probably the reason behind OP\_CODESEPARATOR, but you'd have to ask Satoshi. OP\_CODESEPARATOR isn't really used for anything in bitcoin except by Nicolas Dorier I think. At Q creation time, have lal the parties delegate another scrpt by signing the message Hash(Q || script2) where script2 is the new encumberance.
+A revival of an old idea called delegation. This is probably the reason behind OP_CODESEPARATOR, but you'd have to ask Satoshi. OP_CODESEPARATOR isn't really used for anything in bitcoin except by Nicolas Dorier I think. At Q creation time, have lal the parties delegate another scrpt by signing the message Hash(Q || script2) where script2 is the new encumberance.
 
 There can be any number of delegations, but only reveal one.
 
@@ -65,14 +66,14 @@ When it comes to script, if you add expressability, it tends to lower privacy as
 
 # References
 
-* taproot: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html>
+- taproot: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html>
 
-* graftroot <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html>
+- graftroot <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html>
 
-* <https://github.com/Blockstream/contracthashtool>
+- <https://github.com/Blockstream/contracthashtool>
 
-* p2c paper: <https://arxiv.org/pdf/1212.3257.pdf>
+- p2c paper: <https://arxiv.org/pdf/1212.3257.pdf>
 
-* <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/>
+- <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/>
 
-* <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/>
+- <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/>

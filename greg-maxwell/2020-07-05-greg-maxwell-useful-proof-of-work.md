@@ -1,6 +1,6 @@
 ---
 title: Greg Maxwell - Useful Proof Of Work (2020-07-05)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Overview Bitcoin Core Architecture
 transcript_by: Bryan Bishop
-speaker: James O'Beirne
-categories: ['conference']
-tags: ['bitcoin core']
+speakers: ["James O'Beirne"]
+categories: ["conference"]
+tags: ["bitcoin core"]
 ---
 
 Bitcoin Core architecture overview
@@ -44,7 +44,7 @@ I will not be covering: cryptographic implementation details, p2p message protoc
 
 Bitcoin forms a TCP overlay network of nodes passing messages to one another. These are defined in <https://github.com/bitcoin/bitcoin/tree/master/src/protocol.h> including net message types you can look at. That's a succinct summary of the message types nodes can communicate to each other.
 
-You can manually add nodes with the -addnode flag. You can set the number of max connections with -maxconnections and these are MAX\_OUTBOUND\_CONNECTIONS and DEFAULT\_MAX\_PEER\_CONNECTIONS.
+You can manually add nodes with the -addnode flag. You can set the number of max connections with -maxconnections and these are MAX_OUTBOUND_CONNECTIONS and DEFAULT_MAX_PEER_CONNECTIONS.
 
 DoS protection is very important because it prevents malicious peers from disrupting the network. Simple payment verification (SPV) nodes query full nodes for merkle proofs, so Bitcoin Core provides that.
 
@@ -68,7 +68,7 @@ A lot of the initialization stuff happens in <https://github.com/bitcoin/bitcoin
 
 p2p networking is handled by a single select loop in ThreadSocketHandler under CConman. We may replay select with poll (PR 14336) to avoid file descriptor limits.
 
-All changes to the chainstate are effectively single-threaded thanks to cs\_main. If you have have 3 hours to kill, grep for cs\_main and see the horror.
+All changes to the chainstate are effectively single-threaded thanks to cs_main. If you have have 3 hours to kill, grep for cs_main and see the horror.
 
 # Threads
 
@@ -120,13 +120,13 @@ Regions of code are little modules of state and procedures that each do a thing 
 
 net is the bottom of the Bitcoin Core stack. It handles network communication with the p2p network.
 
-# Regions: net\_processing.cpp
+# Regions: net_processing.cpp
 
 <https://github.com/bitcoin/bitcoin/tree/master/src/net_processing.h>
 
 <https://github.com/bitcoin/bitcoin/tree/master/src/net_processing.cpp>
 
-net\_processing adapts the network layer to the chainstate validation layer. It translates network messages into calls for local state changes. "Validation"-specific (information relating to chainstate) data is maintained per-node using CNodeState instances.
+net_processing adapts the network layer to the chainstate validation layer. It translates network messages into calls for local state changes. "Validation"-specific (information relating to chainstate) data is maintained per-node using CNodeState instances.
 
 Much of this region is ProcessMessage() - a giant conditional for rendering particular network message types to calls deeper into Bitcoin Core, such as BLOCK and HEADERS NetMsgType.
 
@@ -252,7 +252,7 @@ The .dat files are basically just raw bytes of some serialized data structures. 
 
 # A brief digression into serialization
 
-There's a macro called ADD\_SERIALIZE\_METHODS and there's some magic around how these structs are packed into raw bytes.
+There's a macro called ADD_SERIALIZE_METHODS and there's some magic around how these structs are packed into raw bytes.
 
 # Leveldb
 

@@ -1,9 +1,9 @@
 ---
 title: AJ Towns - Schnorr Taproot (2019-12-27)
 transcript_by: Michael Folkson
-speaker: AJ Towns
-categories: ['podcast']
-tags: ['taproot', 'schnorr']
+speakers: ["AJ Towns"]
+categories: ["podcast"]
+tags: ["taproot", "schnorr"]
 ---
 
 Name: AJ Towns
@@ -201,4 +201,3 @@ AJ Towns: Yeah. So I’m ajtowns on social media so you can find me there.
 Stephan Livera: Thanks very much for joining me AJ.
 
 AJ Towns: Merry Christmas and Happy new year.
-

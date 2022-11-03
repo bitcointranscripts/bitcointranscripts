@@ -1,8 +1,9 @@
 ---
 title: Lightning Network Topological Analysis
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'attacks', 'topology', 'lightning', 'layer 2']
+categories: ["conference"]
+tags: ["research", "attacks", "topology", "lightning", "layer 2"]
+speakers: ["Istvan Andras Seres"]
 ---
 
 Topological analysis of the lightning network
@@ -21,9 +22,9 @@ Knowing the topology is not necessarily a vulnerability, but it gives you a lot 
 
 There were some recent papers published on this topic:
 
-* TxProbe: Discovering bitcoin's network topology using orphan transactions
-* Timing analysis for inferring the topology of the bitcoin peer-to-peer network
-* Exploring the Monero peer-to-peer network
+- TxProbe: Discovering bitcoin's network topology using orphan transactions
+- Timing analysis for inferring the topology of the bitcoin peer-to-peer network
+- Exploring the Monero peer-to-peer network
 
 Layer 0 topology is hard to get and hard to see. But layer 2 is easier to look at.
 
@@ -35,10 +36,10 @@ We can model the lightning network as a weighted multi-graph where nodes are peo
 
 # Research questions
 
-* What structure does LN have?
-* How centralized is LN?
-* How robust is LN?
-* How can we increase the robustness of LN if we can at all?
+- What structure does LN have?
+- How centralized is LN?
+- How robust is LN?
+- How can we increase the robustness of LN if we can at all?
 
 I can't tell roasbeef to open a payment channel with Bryan, because it's a permissionless setting. It's not even obvious how we can make the network more robust, if we can at all. We as a community either bitcoin or lightning we shouldn decide if it's an explicit design goal to achieve high robustness or not.
 
@@ -72,8 +73,8 @@ I made a snapshot of the network and argued about several properties only lookin
 
 # Other research
 
-* On the difficulty of hiding the balance of lightning network channels
-* Discharged payment channels arxiv.org/pdf/1904.10253v1.pdf
-* Sergi delgado-Segura et al arxiv.org/abs/1812.00942
-* Bitcoin timing analysis paper
-* Mccory, Gervais, off the chain transactions on eprint.iacr.org/2019/360
+- On the difficulty of hiding the balance of lightning network channels
+- Discharged payment channels arxiv.org/pdf/1904.10253v1.pdf
+- Sergi delgado-Segura et al arxiv.org/abs/1812.00942
+- Bitcoin timing analysis paper
+- Mccory, Gervais, off the chain transactions on eprint.iacr.org/2019/360

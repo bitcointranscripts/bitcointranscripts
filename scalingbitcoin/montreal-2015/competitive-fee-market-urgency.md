@@ -1,13 +1,14 @@
 ---
 title: Competitive Fee Market Urgency
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['halving', 'security', 'fees']
+categories: ["conference"]
+tags: ["halving", "security", "fees"]
+speakers: ["Marshall Long"]
 ---
 
-Marshall Long
+Name: Marshall Long
 
-The urgency of a competitive fee market to ensure a scalable future
+# The urgency of a competitive fee market to ensure a scalable future
 
 I am Marshall. I run Firehash. CTO Cryptsy also. Some people have higher cost, some people have lower cost. I think those were some good estimates for true costs. I am going to be talking about why fees are going to be very important very soon. We'll talk about what happens without fees, talk about why bitcoin really isn't free but how we can do things like microtransactions, real microtransactions, talk about the cost and talk about solutions.
 

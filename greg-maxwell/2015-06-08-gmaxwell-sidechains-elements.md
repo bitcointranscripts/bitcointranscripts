@@ -1,10 +1,9 @@
 ---
 title: Gmaxwell - Sidechains Elements (2015-06-08)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Bryan Bishop
-tag: ['sidechains']
+tag: ["sidechains"]
 ---
-
 
 Bringing New Elements to Bitcoin with Sidechains
 

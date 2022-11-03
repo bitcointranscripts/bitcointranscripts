@@ -1,13 +1,14 @@
 ---
 title: On The Security And Performance Of Proof Of Work Blockchains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'mining', 'proof-of-work', 'ethereum']
+categories: ["conference"]
+tags: ["security", "mining", "proof-of-work", "ethereum"]
+speakers: ["Arthur Gervais"]
 ---
 
-On the security and performance of proof-of-work blockchains
+# On the security and performance of proof-of-work blockchains
 
-Arthur Gervais
+Name: Arthur Gervais
 
 <https://twitter.com/kanzure/status/785066988532068352>
 
@@ -70,5 +71,3 @@ A: We do not simulate congestion control for TCP. What we do however measure and
 <https://arthurgervais.github.io/Bitcoin-Simulation/index.html>
 
 paper <https://eprint.iacr.org/2016/555.pdf>
-
-

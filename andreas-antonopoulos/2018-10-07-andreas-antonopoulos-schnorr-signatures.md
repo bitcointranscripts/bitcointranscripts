@@ -1,20 +1,20 @@
 ---
 title: Andreas Antonopoulos - Schnorr Signatures (2018-10-07)
 transcript_by: Michael Folkson
-speaker: Andreas Antonopoulos
-categories: ['podcast']
-tag: ['schnorr']
+speakers: ["Andreas Antonopoulos"]
+categories: ["podcast"]
+tag: ["schnorr"]
 ---
 
 Andreas Antonopoulos
 
-LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures 
+LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures
 
 # Schnorr signatures
 
 We’re currently using the elliptic curve digital signature algorithm (ECDSA) which is a specific way of doing digital signatures with elliptic curves but not the only way. Schnorr signatures have some unique characteristics that make them better in many ways than the ECDSA algorithm we use today in Bitcoin.
 
-Schnorr signatures are better because they have certain quirks in the way the mathematics plays out. Digital signatures are numbers, they’re just numbers. The way you calculate these numbers is in such a way that someone else can verify that you calculated this number with knowledge of the private key without actually revealing this private key. They can verify that you have possession of the private key when you made the signature. A digital signature algorithm is just a mathematical function that gives you a number as a result of applying the private key to a message in such a way that someone else can verify that that number reveals you knew the private key without knowing the private key themselves. There are two aspects to it: signing and verifying. 
+Schnorr signatures are better because they have certain quirks in the way the mathematics plays out. Digital signatures are numbers, they’re just numbers. The way you calculate these numbers is in such a way that someone else can verify that you calculated this number with knowledge of the private key without actually revealing this private key. They can verify that you have possession of the private key when you made the signature. A digital signature algorithm is just a mathematical function that gives you a number as a result of applying the private key to a message in such a way that someone else can verify that that number reveals you knew the private key without knowing the private key themselves. There are two aspects to it: signing and verifying.
 
 Schnorr signatures exhibit certain characteristics that make them better. The first of these is the ability to do aggregation. What that means is that if you want to sign several different messages with several different private keys and produce several different signatures, with Schnorr what you can do is you can produce an aggregate signatures which is the equivalent of if you had signed the aggregate message with the aggregate of all the private keys. Think of it this way. It is as if the sum of all signatures is the same as if you applied one signature with the sum of all private keys on the sum of all messages. I’m using sum in a broader sense. It is not the traditional arithmetic operation of addition but it is the equivalent in elliptic curves.
 
@@ -37,4 +37,3 @@ You can aggregate an infinite number of signatures down to one. There is some re
 We’re currently in the fourth generation of multisig and the previous three generations are still very much in action. The first generation of multisig is what’s called naked multisig which is multisig without pay-to-script-hash. It’s multisig without a ‘3’ address but where you put the entire script in the UTXO. That’s very rare nowadays, you’ll probably not see it. Then you’ve got P2SH wrapped multisig which is what most of us use which is where the multisig address starts with a ‘3’. That’s the one we’re most familiar with. Most people haven’t noticed that there is now a new form of multisig which is multisig with a SegWIt address which is pay-to-witness-script-hash multisig which is a ‘bc1’ address with a new SegWit style address. That’s not even widely spread because SegWit is so new that people haven’t yet been doing SegWit multisig but it is beginning to appear now in a few wallets. Schnorr multisig would be the fourth iteration and you still have the previous three in operation. It is a rolling window.
 
 I’m sure there’s pushback against this, there’s no such thing as a non-controversial upgrade to the Bitcoin protocol. Of course this is a non-mandatory, opt-in that is backward compatible so that you don’t have to validate or use this feature if you don’t want to but that doesn’t remove it from being controversial. In a world where vaccines are controversial I don’t think we’ll ever see a Bitcoin improvement that isn’t.
-

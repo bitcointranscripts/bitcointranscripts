@@ -1,14 +1,16 @@
 ---
 title: Bram Cohen Merkle Sets (2017-07-08)
 transcript_by: Bryan Bishop
-categories: ['meetup']
+categories: ["meetup"]
+speakers: ["Bram Cohen"]
+tags: ["merkle root"]
 ---
 
 2017-07-08
 
 Merkle set data structures for scaling bitcoin
 
-Bram Cohen
+Name: Bram Cohen
 
 video: <https://www.youtube.com/watch?v=52FVkHlCh7Y>
 
@@ -30,7 +32,7 @@ On top of that, it turns out that sometimes you do want just a little teeny bit 
 
 So I'm using a patricia trie. There's a number of subtle different ways of making merkle sets. The most straightforward way is basically you just sort everything and put it into a list. That can't be efficiently updated, because the positions of everything aren't super-canonical, so everyone who is spending time on this has wound up using a patricia trie. It positions everything based on what the bits in it are. Here's the root. Everything that has a 0 as its first bit, goes here. Everything with a 1 as its firs tbit, goes here. This spot right here-- everything starts with the 0 bit, so there's these 2 things here which both have 0 bits, but you include explicit "empty" so that you can have nice proofs of non-inclusion. If you try to optimize out the empties, you could still have proofs of nonmembership, but it's really ugly.
 
-There's one more trick that's actually part of the semantics of this that I came up with, which is that if you have only two things below a particular point, and it's empty on the other side, you do a pass-through. If you look at the bottom here, there's 2 terminals, so the thing that has those 2 terminals children has to do a calculation to figure out the root value there. Above that, there's something where the other side is empty, so that does a "pass-through" because the other side is empty and it only has those 2 values. And then there's another layer that is also empty on the other side, so it does a pass-through. At the top of my diagram, there's a layer where there's no empty on the other side, so it has to  do the tree. The other one has an empty at the very top of the tree, but it doesn't work out because there's hashing to be done there. So this gets rid of a lot of the hashing. It's a substantial optimization and it's worth doing.
+There's one more trick that's actually part of the semantics of this that I came up with, which is that if you have only two things below a particular point, and it's empty on the other side, you do a pass-through. If you look at the bottom here, there's 2 terminals, so the thing that has those 2 terminals children has to do a calculation to figure out the root value there. Above that, there's something where the other side is empty, so that does a "pass-through" because the other side is empty and it only has those 2 values. And then there's another layer that is also empty on the other side, so it does a pass-through. At the top of my diagram, there's a layer where there's no empty on the other side, so it has to do the tree. The other one has an empty at the very top of the tree, but it doesn't work out because there's hashing to be done there. So this gets rid of a lot of the hashing. It's a substantial optimization and it's worth doing.
 
 # Reinventing memory management for fun and profit
 
@@ -108,7 +110,7 @@ A: Yes. It only grows.
 
 Q: That's the biggest distinction from petertodd's proposal, where he chooses bitfield and proof of position...
 
-A: petertodd's idea of keeping the whole UTXO, he likes indexing things by position on the grounds that the recent stuff is getting updated a lot probably, and by organizing things in memory that way, you get memory-efficient look-ups because it's always hitting recent stuff. My approach gets this and more, so you have this compacted down, so you are more likely to hit things that are near because it's all in a smaller area, and all of the recent stuff is right there. So that's a benefit. I don't think this is as near as much of a benefit as this implementation  of a trivial bitfield knowing exactly where the bit is, a one look-up, and the constant factor of 256 is a huge deal, and it's a really easy implementation to do.
+A: petertodd's idea of keeping the whole UTXO, he likes indexing things by position on the grounds that the recent stuff is getting updated a lot probably, and by organizing things in memory that way, you get memory-efficient look-ups because it's always hitting recent stuff. My approach gets this and more, so you have this compacted down, so you are more likely to hit things that are near because it's all in a smaller area, and all of the recent stuff is right there. So that's a benefit. I don't think this is as near as much of a benefit as this implementation of a trivial bitfield knowing exactly where the bit is, a one look-up, and the constant factor of 256 is a huge deal, and it's a really easy implementation to do.
 
 Q: The real challenge of petertodd's proposals previously was that wallet had to track basically the proof of positions and the change over time.
 

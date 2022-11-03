@@ -1,13 +1,14 @@
 ---
 title: Solar Powered Space Pirates
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography']
+categories: ["conference"]
+tags: ["cryptography"]
+speakers: ["Peter Todd"]
 ---
 
-Solar powered space pirates: A threat to bitcoin?
+# Solar powered space pirates: A threat to bitcoin?
 
-petertodd
+Name: Peter Todd
 
 video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1m33s>
 

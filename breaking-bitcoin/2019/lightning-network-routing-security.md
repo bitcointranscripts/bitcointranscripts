@@ -1,11 +1,12 @@
 ---
 title: Lightning Network Routing Security
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['routing', 'lightning', 'lnd', 'security']
+categories: ["conference"]
+tags: ["routing", "lightning", "lnd", "security"]
+speakers: ["Joost Jager"]
 ---
 
-Security aspects of LN routing
+# Security aspects of LN routing
 
 Joost Jager, Lightning Labs
 
@@ -45,20 +46,20 @@ A node that fails a payment does encrypt(HMAC || reason)) so that the other node
 
 A channel might have a balance and it could be insufficient to carry the payment. This would be a temporary channel failure. It encrypts it, then it goes through the onion layers of further encryption for each hop, and the original user can decrypt everything and can blame a certain user for not having a channel balanced and they will be penalized or not used or something.
 
-It's not always that simple though. If the error is "fee\_insufficient" then it means that a node didn't receive enough fees. In lightning, every node charges a fee to forward a payment. That's the basis of a routing node. They advertise the fee they would like to use. So a node might take too much fee and not pay the remaining nodes. In this case, the forwarding node can blame the next node-- but if we see the fee insufficient, it might be the signer of the node or it might be one node before that could be the real source of the problem.
+It's not always that simple though. If the error is "fee_insufficient" then it means that a node didn't receive enough fees. In lightning, every node charges a fee to forward a payment. That's the basis of a routing node. They advertise the fee they would like to use. So a node might take too much fee and not pay the remaining nodes. In this case, the forwarding node can blame the next node-- but if we see the fee insufficient, it might be the signer of the node or it might be one node before that could be the real source of the problem.
 
-There's also the "invalid\_onion" case, where it means that someone forwards information and says it's invalid and I don't have the keys to create an error message to send back to the sender. So in that case, the intermediate node signs a message saying there's an invalid onion problem on behalf of C because C doesn't have the keys to do this. So what should the originating node think about this situation? In this type of error, the originating node needs to take into account that it could be either of those two nodes that are to blame.
+There's also the "invalid_onion" case, where it means that someone forwards information and says it's invalid and I don't have the keys to create an error message to send back to the sender. So in that case, the intermediate node signs a message saying there's an invalid onion problem on behalf of C because C doesn't have the keys to do this. So what should the originating node think about this situation? In this type of error, the originating node needs to take into account that it could be either of those two nodes that are to blame.
 
-There's also "final\_expiry\_too\_soon" case. In LN, these HTLCs get forwarded and they have different timelocks. The final node might have a timelock requirement of 10; so when it arrives to him, it should have at least 10 blocks left on the blockchain before it expires, and if it doesn't then he sends an error back. Any node along the way could have introduced a delay. It's hard to say who took much time to forward it.
+There's also "final_expiry_too_soon" case. In LN, these HTLCs get forwarded and they have different timelocks. The final node might have a timelock requirement of 10; so when it arrives to him, it should have at least 10 blocks left on the blockchain before it expires, and if it doesn't then he sends an error back. Any node along the way could have introduced a delay. It's hard to say who took much time to forward it.
 
 Failure source identification-- unknown case, where the failing node just sends back random bytes, and it's propagated to the originating node. It starts to look for a matching HMAC and it will never find it. So the last node is able to make the payment fail without the originating node being able to know which node in the route did this.
 
 # Consequences
 
-* Bad nodes have opportunities to fail and/or delay a pamyent without the sender being able to identify them easily.
-* Routing nodes seeking to optimize profit could use this to "downgrade" errors to minimize penalization.
-* Why so many failure messages and variants?
-* Node fingerprinting
+- Bad nodes have opportunities to fail and/or delay a pamyent without the sender being able to identify them easily.
+- Routing nodes seeking to optimize profit could use this to "downgrade" errors to minimize penalization.
+- Why so many failure messages and variants?
+- Node fingerprinting
 
 Using a "fee insufficient" error can spread the failure or penalization to multiple nodes. So a smart node would probably try to spread the blame around. It could in fact choose a different error to minimize penalization.
 
@@ -72,7 +73,7 @@ It's important to note that currently the lightning network is reasonably friend
 
 We currently have a few features like previous hops have data obfuscated, and hops do not learn their position in the payment path. It's compatible with older nodes, ideally. In the future we might be able to have the error source identified as a pair of nodes. We would like to be able to identify a pair of nodes that could be blamed for the delay. If you have just a pair of nodes, that could be enough information. This idea is called penalization with node pairs.
 
-We could also add timestamp information in the failure messages.  You would do encrypt(HMAC || timestamp || reason), and then do onions on top of this. One problem with this is that the node can observe the size of the path and then compute how far they are in the path, which is a possible link. We might be able to do a format that has padding or something.
+We could also add timestamp information in the failure messages. You would do encrypt(HMAC || timestamp || reason), and then do onions on top of this. One problem with this is that the node can observe the size of the path and then compute how far they are in the path, which is a possible link. We might be able to do a format that has padding or something.
 
 We would also penalize nodes that fail HMAC and also its predecessor node. Usually the chain of HMACs in the failure message, we're able to narrow down the cause of the failure to a pair of nodes. This fits the requirements for a new style of message.
 

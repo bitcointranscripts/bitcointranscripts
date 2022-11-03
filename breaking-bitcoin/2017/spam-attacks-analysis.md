@@ -1,13 +1,14 @@
 ---
 title: Spam Attacks Analysis
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'p2sh', 'attacks']
+categories: ["conference"]
+tags: ["research", "p2sh", "attacks"]
+speakers: ["Antoine Le Calvez"]
 ---
 
-Hunting moby dick, an analysis of 2015-2016 spam attacks
+# Hunting moby dick, an analysis of 2015-2016 spam attacks
 
-Antoine Le Calvez (khannib)
+Name: Antoine Le Calvez (khannib)
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=1h12m10s>
 
@@ -59,10 +60,10 @@ There were millions of UTXOs created in a matter of days or weeks. We wanted to 
 
 # Overall statistics
 
-* 2.78 GB of block space (2.2% of current blockchain)
-* 268 BTC in fees (9.6 sat/byte average)
-* 1.34 million transactions (0.05% of total)
-* 2 million UTXOs still unspent (3.7% of current UTXO set)
+- 2.78 GB of block space (2.2% of current blockchain)
+- 268 BTC in fees (9.6 sat/byte average)
+- 1.34 million transactions (0.05% of total)
+- 2 million UTXOs still unspent (3.7% of current UTXO set)
 
 In 2015, 268 BTC was somewhat expensive. They had to create the UTXOs and the spending of the outputs. It's not the same person that bears the cost of not cleaning up or spending the money. It was 1.3 million transactions, which now is a few days but back then it was a lot of transactions.
 

@@ -1,12 +1,14 @@
 ---
 title: Blind Signatures
 transcript_by: Bryan Bishop
-categories: ['conference']
+categories: ["conference"]
+speakers: ["Ethan Heilman"]
+tags: ["signatures"]
 ---
 
-Blind signatures
+# Blind signatures
 
-Ethan Heilman (ethan\_heilman) (Commonwealth Crypto)
+Ethan Heilman (ethan_heilman) (Commonwealth Crypto)
 
 <https://twitter.com/kanzure/status/1047648050234060800>
 
@@ -68,7 +70,7 @@ A really simple version of an RSA signature scheme is you take a message, you ha
 
 For blind signatures, it's similar but with one extra step. You take the hash of the message and remember that blinding factor r? You're going to take r and raise it to e (essentially raising it to the public key) and you're going to multiply that against Hash(message). This is the blinded message or blinded serial number when we're talking about anonymous ecash.
 
-When you go to send this to be signed, the signature is this inverse RSA operation where you raise the blinded message to d (mod N) and when you work out the math it's (Hash(m)\*(r^e))^d mod N.... So it's Hash(m)^d * r (mod N). TO unblind it's another equation here. There's also a way to do verification.
+When you go to send this to be signed, the signature is this inverse RSA operation where you raise the blinded message to d (mod N) and when you work out the math it's (Hash(m)\*(r^e))^d mod N.... So it's Hash(m)^d \* r (mod N). TO unblind it's another equation here. There's also a way to do verification.
 
 You're going to divide the r out. You're adding random noise and then subtracting or dividng random noise out... you just have to be careful about this because of the exponentiation to the d value. e is used because it stands for encryption and decryption because they are inverses of each other. If you were using RSA to do encryption, then the e would be the value you raised to to encrypt, and d would be the value you raised to for decryption.
 
@@ -85,8 +87,3 @@ This example is only for 2 files, but you could have many files. You could have 
 We talked about anonymous ecash, blind signatures, building blind signatures using RSA, and blind decryption. ZeroLink uses blind signatures for coinjoin.
 
 https://github.com/nopara73/ZeroLink
-
-
-
-
-

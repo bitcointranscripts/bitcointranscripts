@@ -1,8 +1,8 @@
 ---
 title: Andrew Chow - What Am I Working On (2020-07-10)
 transcript_by: Michael Folkson
-speaker: Andrew Chow
-tags: ['wallet']
+speakers: ["Andrew Chow"]
+tags: ["wallet"]
 ---
 
 Name: Andrew Chow
@@ -28,4 +28,3 @@ Descriptor wallets have since been merged into Bitcoin Core as an experimental f
 My current big project is changing how the wallet is stored. Namely, instead of using a super old version of Berkeley DB, I'm migrating us to using SQLite. We consistently, though not frequently nor regularly, get reports of wallet corruption. This usually means data loss and the loss of private keys. And that is not good. I attribute a lot of the issues we have with our unusual use of BDB; we're essentially using the database in a way that it really wasn't designed for. The gist of it is that we want all the wallet data to end up in the wallet.dat file, and consistently. But BDB wasn't designed to always have everything in a single file, and for everything to end up in that file when it considers the data to be written to disk. So we have a bunch of hacks to force it to do that.
 
 So BDB isn't really good for our use case. It just so happens that SQLite is. It actually is designed for use as an application file format and can be configured to ensure that the data is written to the database file. So I've been refactoring the database handling code to let us integrate SQLite and use that for wallet storage. There are several PRs still open and in review to do all of this. The goal is to have this for 0.21 as the default type for descriptor wallets. Then I'll see about adding the migration of legacy wallets to use SQLite as well.
-

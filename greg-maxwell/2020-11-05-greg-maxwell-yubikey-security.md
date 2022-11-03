@@ -1,8 +1,8 @@
 ---
 title: Greg Maxwell - Yubikey Security (2020-11-05)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
-tags: ['security', 'hardware wallet', 'wallet']
+tags: ["security", "hardware wallet", "wallet"]
 ---
 
 Name: Greg Maxwell

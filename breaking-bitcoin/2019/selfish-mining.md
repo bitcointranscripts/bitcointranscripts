@@ -1,13 +1,14 @@
 ---
 title: Selfish Mining
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
+categories: ["conference"]
+tags: ["mining"]
+speakers: ["Ricardo Perez-Marco"]
 ---
 
-Selfish mining and Dyck words
+# Selfish mining and Dyck words
 
-Ricardo Perez-Marco
+Name: Ricardo Perez-Marco
 
 # Introduction
 
@@ -15,13 +16,11 @@ I am going to talk about our recent work on selfish mining. I am going to explai
 
 # Bibliography
 
-* On profitability of selfish mining
-* On profitability of stubborn mining
-* On profitability of trailing mining
-* Bitcoin selfish mining and Dyck words
-* Selfish mining and Dyck words in bitcoin and ethereum networks
-* Selfish mining in ethereum
+- On profitability of selfish mining
+- On profitability of stubborn mining
+- On profitability of trailing mining
+- Bitcoin selfish mining and Dyck words
+- Selfish mining and Dyck words in bitcoin and ethereum networks
+- Selfish mining in ethereum
 
 The paper on selfish mining in ethereum is even more complex. Selfish mining is really an attack on the difficulty adjustment formula.
-
-

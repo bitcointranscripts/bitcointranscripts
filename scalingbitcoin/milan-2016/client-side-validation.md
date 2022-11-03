@@ -1,13 +1,14 @@
 ---
 title: Client Side Validation
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['consensus', 'validation']
+categories: ["conference"]
+tags: ["consensus", "validation"]
+speakers: ["Peter Todd"]
 ---
 
-Progress on scaling via client-side validation
+# Progress on scaling via client-side validation
 
-Peter Todd
+Name: Peter Todd
 
 <https://twitter.com/kanzure/status/785121442602029056>
 
@@ -94,4 +95,3 @@ A: I would agree with nearly all of that. I didn't mention what would lead to th
 <https://petertodd.org/2014/setting-the-record-proof-of-publication>
 
 <https://bitcoincore.org/logs/2016-05-zurich-meeting-notes.html>
-

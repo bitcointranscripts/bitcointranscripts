@@ -2,18 +2,16 @@
 title: Andreas Antonopoulos - Descarga inicial de la cadena de bloques (2018-10-23)
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-speaker: Andreas Antonopoulos
-tags: ['consenso']
+speakers: ["Andreas Antonopoulos"]
+tags: ["consenso"]
 ---
 
 Andreas Antonopoulos
 
-Bitcoin Q&A: Descarga inicial de la cadena de bloques 
+Bitcoin Q&A: Descarga inicial de la cadena de bloques
 
 Vídeo: https://www.youtube.com/watch?v=OrYDehC-8TU
 
-# Descarga inicial de la cadena de bloques 
- 
+# Descarga inicial de la cadena de bloques
+
 Becca pregunta por qué se tarda tanto en descargar el blockchain. Yo tengo una conexión rápida a Internet y he podido descargar 200GB en menos de una hora. A lo que Becca se refiere es a lo que se llama la descarga inicial del blockchain o IBD, que es la primera sincronización del nodo de Bitcoin o de cualquier tipo de nodo de blockchain con su blockchain. La respuesta es que, aunque la cantidad de datos que hay que descargar para obtener la cadena de bloques completa es de unos 200 GB, no se trata simplemente de descargarla y almacenarla en el disco. Una de las funciones fundamentales del nodo de Bitcoin es validar todas las reglas de consenso. Tu nodo hace eso. Lo hace incluso si no estás haciendo una sincronización completa de la cadena de bloques. Cada nodo valida cada regla. Cuando empiezas desde el bloque génesis y descargas el bloque 0 y luego el bloque 1 y el bloque 2, etc., empiezas a construir la cadena de bloques para llegar a la cadena de bloques completa de hoy y sincronizarla completamente con el resto de la red. Cada bloque que descargas, descargas todas las transacciones de ese bloque y luego tu nodo lo revisa y valida todo. Todas las firmas, todos los gastos, todas las cantidades, todas las recompensas de Coinbase, todas las tarifas. Recrea y reconstruye cada soft fork y actualización y cambio en el código replicando toda la historia desde el 3 de enero de 2009. Se comporta como un nodo en 2009 durante el primer período de descarga de la blockchain y luego, a medida que las reglas cambian, cuenta los votos en la bifurcación suave y cambia las reglas en tiempo real y luego evalúa el siguiente bloque basado en las nuevas reglas. Vuelve a calcular la dificultad y ve si los mineros están perdiendo el objetivo de los bloques que fueron minados en 2010. Evalúa cada regla como si estuviera en ese momento descargándola por primera vez. Simula que se vive en 2009 y luego en 2010, etc., hasta el día de hoy. Cada error, cada bifurcación, cada cambio. Eso requiere algo más que ancho de banda. Se necesita la CPU. También requiere una gran cantidad de indexación en disco. Si lo piensas, para validar si una transacción no está gastando doblemente algo o que está bien gastado. Tiene que mantener un conjunto UTXO en la memoria. Este conjunto de UTXO se va a utilizar con el fin de validar que la cantidad estaba disponible para el gasto. Tiene que indexar todos los UTXO y los IDs de las transacciones cuando tu transacción hace referencia a una transacción anterior, tiene que buscarla por hash. Tiene que reconstruir las raíces de Merkle de todos los bloques y mantener listados todos los hash del bloque anterior. Eso es un montón de indexación de la base de datos. Eso es lo que ocurre con tu nodo. Supongo que tu verdadero problema aquí no es el ancho de banda en la red, sino que probablemente es el ancho de banda hacia el disco duro, así que la capacidad a través del disco duro, el rendimiento del disco duro, así como la memoria disponible. Una configuración mínima recomendada implica 4GB de RAM y eso es sólo si usted tiene un disco de estado sólido relativamente rápido como un disco SSD debido a toda la indexación y la lectura y escritura de la base de datos en el disco que va a suceder. Si no tienes un disco de estado sólido entonces necesitas hacer mucho más caché en la RAM para compensar el rendimiento de un viejo disco duro mecánico. En ese caso podrías necesitar 8 o 16 GB de RAM para compensar eso. Supongo que tu cuello de botella es la E/S del disco, tal vez la CPU, aunque eso es menos probable. Si lo estás ejecutando en un procesador moderno de 4 núcleos no debería ser un problema. Si estás haciendo todo esto en una Raspberry Pi con sólo 2GB de RAM entonces puedo ver cuál es tu problema. Eso va a ser todos los cuellos de botella dentro del sistema en lugar de su ancho de banda.
-
-

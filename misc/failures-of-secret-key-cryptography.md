@@ -1,12 +1,13 @@
 ---
 title: Failures Of Secret Key Cryptography (2013)
 transcript_by: Bryan Bishop
-tags: ['attacks', 'cryptography']
+tags: ["attacks", "cryptography"]
+speakers: ["Daniel J. Bernstein"]
 ---
 
 Failures of secret key cryptography
 
-Daniel J. Bernstein (djb)
+Name: Daniel J. Bernstein (djb)
 
 FSE 2013
 
@@ -60,9 +61,9 @@ In SSL, there are lots of stages to this. I will focus on the secret key part of
 
 So here's what SSL does. You take, well, it's very much the same thing. You take each ciphertext block and add to the next plaintext block. And then feed it through AES to get the next ciphertext block. Except at the very beginning, instead of taking a random number, SSL takes the last ciphertext block from the previous packet. So it sends a packet along, c sub minus 3, c sub minus 2, c sub minus 1, and then it gets the next uh packet to send from the user, p 0, p 1, p 2, ad adds to that last previous c sub minus 1, which we send along in the previous packet, sends that, adds that to c0, and then encrypts on that. The problem here is that the order of operations is very important. Because the attacker can see this last ciphertext before choosing this next plaintext, the attacker can therefore choose p0 as a function of c sub minus 1, in particular can choose p0 to be c sub minus 1 to be exclusive or something where the something is allowing the attacker to guess some previous value. This is none of the random collisions you were hearing about in the other talk; this is the attacker actively saying I got to guess for p sub minus 3, and I'm going to take guess and exclusive OR (XOR) it with c sub minus 4, so that was what was encrypted before, if the guess was correct, to get c sub minus 3, and then I will XOR with c sub... so if the attacker is able to control the next plaintext, if he does this, then the AES encryption of ... which is exactly what SSL says through AES right here, that's exactly the same as c sub minus ... which is encrypted to get c sub minus 3. So the attacker compares these and then checks if the guess was correct. As long as there's not much entropy in this c sub minus 3, so it's a complete failure of this.
 
-* 2002 Moller
-* 2006 Bard: malicious code in browser should be able to carry out this attack, especially if high-entropy data is split across blocks.
-* 2011 Duong-Rizzo "BEAST" fast attack fully implemented, including controlled variable split
+- 2002 Moller
+- 2006 Bard: malicious code in browser should be able to carry out this attack, especially if high-entropy data is split across blocks.
+- 2011 Duong-Rizzo "BEAST" fast attack fully implemented, including controlled variable split
 
 Bard said in 2006 that if you had something in applet, there's no clear obstacles to carry out this attack and it could repeatedly carry out guesss. And this was eventually implemented some years later. It was called the "BEAST" attack against browsers, a browser exploit against SSL/TLS and this really does work, it gets something like a cookie out of the browser in something like tonight.
 
@@ -74,22 +75,19 @@ Browser vendors will look at this attack and say okay, what are we going to do? 
 
 Now the attacker instead of controlling the plaintext could try to control the ciphertext and send along forged network packets. But that doesn't work because each packet includes an authenticator. Each packet has a MAC which is protecting against forgery. And the way this works is that SSL takes the legitimate data, puts an authenticator on it, and oops CBC is supposed to have 16x times some number of bytes, or number of blocks, so SSL takes the authenticated data, puts some padding on it, and then encrypts with CBC. And that padding is something like put on 1 1s or 2 3s or something to get to multiple AES blocks. It's a little complex, but you can look at it and prove.
 
-* 2001 Krawczyk
+- 2001 Krawczyk
 
 Krawczyk's paper looked at this and said this is provably secure. This is like a moment in an action movie when there's a fight going on and suddenly the camera is looking at some barrels full of oil and you just know they are going to explode. So this is provably secure. What a day.
 
-* 2001 Vaudenay
-* 2003 Canvel
+- 2001 Vaudenay
+- 2003 Canvel
 
 In 2001, I think this paper was presented at the Crypto rump session right before Krawczyk's talk (laughter). In Vaudenay's paper, he said this is completely broken if you have a padding oracle. If you can tell the difference between a padding failure on decryption and MAC failure, so the receiver has to decrypt the CBC and then check the padding and then check the authenticator. If there's a way to tell the difference, such as different error messages for different failures, then in almost no time the attacker can figure out any plaintext for any ciphertext block that he wants. Now this if in the statement was as far as I know first demonstrated to be correct by Canvel in 2003 who said, you know, there is one of these padding oracles where here let's watch the time the server takes receiving this data. If the padding is incorrect, it's fast to reject that block. If it's correct, then the server has to compute a MAC and that takes longer. So by watching the timing of the receiver of this SSL encrypted data, you can get exactly the padding oracle you need for this attack Vaudenay's attack to work.
 
-* 2013 AlFardan-Paterson Lucky 13 - watch timing more closely, attack still works
+- 2013 AlFardan-Paterson Lucky 13 - watch timing more closely, attack still works
 
 What browsers do is, well, they say let's always compute the MAC so there's no longer this timing difference between a padding failure and this MAC authenticator failure. And just a month ago (2013) Alfardan-Paterson the lucky 13 attack said okay we can still break it because there's still some small timing differences between having the padding failure and having the authenticator failure.
 
 So what does SSL do about this? There's obvious reactions like, okay really try to control the timing, it's 100s of lines of code and there's all sorts of bugs just to deal with timing issues. But SSL/TLS has an alternative to this which is called cryptographic agility, which is a marketing stunt which has two parts. The second part first. Cryptographic agility means you have some button which says press in case of emergency and then you will switch to different crypto. Nobody has ever tried the button. Whether it works doesn't matter because it's a marketing stunt. Then the other part of cryptographic algorithmic agility is that, because you have that emergency button, you don't bother having good crypto. You don't care whether your crypto is secure. You just say well if there's a problem just press the button. As an example of the button not working, there's AES GCM which has all of its own timing problems, but at least it would get rid of the basic problems with CBC ... SSL in theory can switch TLS 1.2 can switch to AES GCM. But it doesn't work because if you try turning it on, you find that 90% of webservers and basically 100% of browsers don't actually understand it. Okay, so what do you instead? There is one alternative to AES GCM or other GCM... which is supported by all the clients and servers out there, which you can turn on, it's the emergency backup plan in case of AES GCM failure, and it's switching to RC4, and now more than 50% of SSL connections on the internet are using RC4 and lots of people are recommending RC4 ((note: don't use RC4)). Because it's much less fragile than AES CBC.... There are even statements from 2001 Rivest saying... the new attacks do not apply to RC4... SSL does not do that, it takes the whole public key set, and then it does a reasonable hash to generate a one-time RC4 key. Good, sensible, does not need related key attacks. Attacks against web don't respond to RC4 .. However, some of the problems with RC4 are a reason for concern. There's all these biases in RC4 output bytes. At this point I would like to advertise something I have been doing with AlFadan in a paper called "On the security of RC4 in TLS" where it says okay we can do something very much like "BEAST" was doing where instead of targeting AES encrypted cookies with CBC, you target RC4 encrypted cookies; and then you have the same cookie sent through lots of RC4 sessions, then use the biases in RC4 to figure out what the cookie is from all these ciphertexts. What are these biases? Well, if you were paying attention yesterday, you heard some of what I'll say here. The best known one was from 2001 Mantin-Shamir which is that the second byte of RC4 output is biased towards zero. It has a probability of 2/256 of being zero, instead of 1/256 you would expect. And then 2002 Mironov looked at z1 which found z1 was biased away from 1 towards 2 and it had a totally weird distribution of the first output byte of RC4. And then much more recently, 2011 Maitra-Paul-Sen Gupta observed that all the 255 bytes have more than 1/256 chance of being zero, which was contrary to Mantin-Shamir claim that the chances were balanced. And then in 2011 Sen Gupta-Maitra-Paul-Sarkar, the key-length dependent bias, z sub 16, 16th output byte is biased towards -16, assuming you were using a 128-bit key. That's not nearly the end of it. With my coauthors, the conclusion were that there are 256^2 biases in the first 256 bytes of RC4 output. Almost 2^256... so for every possibility of the ith output byte, what's the chance that the byte output is 0? None of those probabilities are 1/256. So as a result of this, you can use statistics to attack SSL. The paper from yesterday, 2013 Watanabe-Isobe-Ohigashi-Morii, some of the biases are listed here. Let me show you some pictures of what the actual probabilities look like.
 
 <https://www.youtube.com/watch?v=bT4cKwBROno&t=33m56s>
-
-
-

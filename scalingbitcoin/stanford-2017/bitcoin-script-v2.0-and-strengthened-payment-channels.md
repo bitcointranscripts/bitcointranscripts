@@ -1,35 +1,36 @@
 ---
 title: Bitcoin Script V2.0 And Strengthened Payment Channels
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['attacks', 'p2sh']
+categories: ["conference"]
+tags: ["attacks", "p2sh"]
+speakers: ["Olaoluwa Osuntokun"]
 ---
 
-Bitcoin script v2.0
+# Bitcoin script v2.0
 
 roasbeef
 
 jl2012
 
-This is a brief history of bitcoin script evolution. Since bitcoin was active in 2009, there was a lot of emergency fixes for the first 2 years done by Satoshi. He found that people could skpi the signature check using OP\_RETURN and malformed scriptSigs. So those functions were removed. OP\_VER and OP\_VERIF were intended for script upgrades but it was found that after every release of bitcoin, it would become a hard-fork because of the design. So those were also removed. Also, many opcodes were removed due to potential denial-of-service attacks: CAT, SUBSTR, LEFT RIGHT, INVERT, AND, OR, XOR, 2MUL, 2DIV, MUL, DIV, MOD, LSHIFT, RSHIFT.
+This is a brief history of bitcoin script evolution. Since bitcoin was active in 2009, there was a lot of emergency fixes for the first 2 years done by Satoshi. He found that people could skpi the signature check using OP_RETURN and malformed scriptSigs. So those functions were removed. OP_VER and OP_VERIF were intended for script upgrades but it was found that after every release of bitcoin, it would become a hard-fork because of the design. So those were also removed. Also, many opcodes were removed due to potential denial-of-service attacks: CAT, SUBSTR, LEFT RIGHT, INVERT, AND, OR, XOR, 2MUL, 2DIV, MUL, DIV, MOD, LSHIFT, RSHIFT.
 
 The first new function introduced was p2sh (bip16) which allowed people to use a single address to pay for any compact script. It doesn't introduce any new functions, it just makes the..... And later there was a fix, with bip66, which was related to script due to strict DER signature format. Consensus bug due to inconsistencies in signature handling in OpenSSL.
 
-There were other upgraded opcodes-- OP\_CHECKLOCKTIMEVERIFY (bip65) and OP\_CHECKSEQUENCEVERIFY (bip112). These are very useful in smart contracts. And finally, we just had a major malleability fix with segwit (bip141).
+There were other upgraded opcodes-- OP_CHECKLOCKTIMEVERIFY (bip65) and OP_CHECKSEQUENCEVERIFY (bip112). These are very useful in smart contracts. And finally, we just had a major malleability fix with segwit (bip141).
 
-There is still a number of shortcomings in bitcoin script. The original solution for OP\_VER and OP\_RETURN -- these solutions were meant to help upgrade the bitcoin network but they were disabled. We currently have OP\_NOP1 to OP\_NOP10 and they only allow pass-fail like CLTV or CSV. But they wont allow for things like CAT. It is also not possible to redefine system operations.
+There is still a number of shortcomings in bitcoin script. The original solution for OP_VER and OP_RETURN -- these solutions were meant to help upgrade the bitcoin network but they were disabled. We currently have OP_NOP1 to OP_NOP10 and they only allow pass-fail like CLTV or CSV. But they wont allow for things like CAT. It is also not possible to redefine system operations.
 
 In segwit, actually, we introduced a witness version and therefore it allows introduction of new script system in a forward compatible way. We can't combine strings or examine parts of a string. But these opcodes are very useful, such as in for example with CAT you can do tree signatures even if you have a very complicated multisig design using CAT you could reduce that size to log(n) size. It would be much more compact. Or with XOR we could do some kind of deterministic random number generator by combining secret values from different parties so that nobody could cheat. They could combine and generate a new random number. If people think-- ... we could use LEFT to make weaker hash. These opcodes were re-enabled in sidechain elements project. It's a sidechain from Bitcoin Core. We can reintroduce these functions to bitcoin.
 
-The other problem are the ... numeric operations which were disabled by Satoshi. There's another problem. Which is that the range of values accepted by script is limited and confused because the CScript.. is processed at ..... bit integers internally. But to these opcodes it's only 32 bits at most. So it's quite confusing. The other problem is that we have this.. it requires 2^51 encode or calculate or manipulate this number. So we need at least 52 bits. But right now it is only 32 bits. So the proposal is to expand the valid input range to 7 bytes which would allow 56 bits. And it limits the maximum size to 7 bytes so we could have the same size for inputs and outputs.  For these operations, we could re-enable them within these safe limits. It would be safe for us to have these functions again.
+The other problem are the ... numeric operations which were disabled by Satoshi. There's another problem. Which is that the range of values accepted by script is limited and confused because the CScript.. is processed at ..... bit integers internally. But to these opcodes it's only 32 bits at most. So it's quite confusing. The other problem is that we have this.. it requires 2^51 encode or calculate or manipulate this number. So we need at least 52 bits. But right now it is only 32 bits. So the proposal is to expand the valid input range to 7 bytes which would allow 56 bits. And it limits the maximum size to 7 bytes so we could have the same size for inputs and outputs. For these operations, we could re-enable them within these safe limits. It would be safe for us to have these functions again.
 
-The other problem is that we currently cannot commit to additional scripts. In the original design of bitcoin, we could have script operations inside of the signature. But the problem is that the signature is not covered by the signature itself. So any script in the scriptSig is modifiable by any third party in the network. For example, if we tried to do a CHECKSIG operation in the signature, people could simply replace it with an OP\_0 and invalidate the transaction. This is a bypass of the.. signature check in the scriptSig. But actually this function is really useful, for example, we can do... delegation, people could add additional scripts to a new UTXO without first spending it. So people could do something like let's say to let their son spend their coin within a year if it is not first spent otherwise.. and also, people, talk about replay protection. So we have some ohter new opcode like pushing the blockhash to the stack, with this function we could have replay protection to make sure the transaction is valid only in a specified blockchain.
+The other problem is that we currently cannot commit to additional scripts. In the original design of bitcoin, we could have script operations inside of the signature. But the problem is that the signature is not covered by the signature itself. So any script in the scriptSig is modifiable by any third party in the network. For example, if we tried to do a CHECKSIG operation in the signature, people could simply replace it with an OP_0 and invalidate the transaction. This is a bypass of the.. signature check in the scriptSig. But actually this function is really useful, for example, we can do... delegation, people could add additional scripts to a new UTXO without first spending it. So people could do something like let's say to let their son spend their coin within a year if it is not first spent otherwise.. and also, people, talk about replay protection. So we have some ohter new opcode like pushing the blockhash to the stack, with this function we could have replay protection to make sure the transaction is valid only in a specified blockchain.
 
-So the proposal is that in the future the CHECKSIG should have the ability to sign additional script and to execute these scripts. And finally the other problem is that the script has limited access to different parts of the transaction. There is only one type of operation that allowed to investigate different parts of the transaction, which is CHECKSIG and CHECKMULTISIG. But it is very limited. There are sighash limitations here... there are only 6 types of sighash. The advantage of doing this is that it's very compact and could use only one byte to indicate which component to sign. But the problem is that it's inflexible. The meaning of this sighash is set at the beginning and you can't change it. You need a new witness version to have another checksig. And the other problem is that the sighash can be complex and people might make mistakes so Satoshi made this mistake in the sighash design such as the well-known bug in validation time and also the SIGHASH\_SINGLE bug. It's not easy to prevent.
+So the proposal is that in the future the CHECKSIG should have the ability to sign additional script and to execute these scripts. And finally the other problem is that the script has limited access to different parts of the transaction. There is only one type of operation that allowed to investigate different parts of the transaction, which is CHECKSIG and CHECKMULTISIG. But it is very limited. There are sighash limitations here... there are only 6 types of sighash. The advantage of doing this is that it's very compact and could use only one byte to indicate which component to sign. But the problem is that it's inflexible. The meaning of this sighash is set at the beginning and you can't change it. You need a new witness version to have another checksig. And the other problem is that the sighash can be complex and people might make mistakes so Satoshi made this mistake in the sighash design such as the well-known bug in validation time and also the SIGHASH_SINGLE bug. It's not easy to prevent.
 
 The proposal is that we might have the next generation of sighash (sighashv2) to expand to two bytes, allow it to cover different parts of the transaction and allow people to choose which components they would like to sign. This would allow more flexibility and hopefully not overly complicated. But still this is probably not enough for more flexible design.
 
-Another proposal is OP\_PUSHTXDATA which pushes the value of different components of a transaction to the stack. It's easy to implement, for example, we could just push the scriptpubkey of the second output to the stack, okay. So it is actually easier to implement. We could do something more than just... because we have sighash, we could check where something is equal to the specified value. But if we could push the value, like the value of an output to the stack, then we could use other operations like more than or less than and then we could do something like checking whether the value of output x must be at least y bitcoin, which is a fixed value.
+Another proposal is OP_PUSHTXDATA which pushes the value of different components of a transaction to the stack. It's easy to implement, for example, we could just push the scriptpubkey of the second output to the stack, okay. So it is actually easier to implement. We could do something more than just... because we have sighash, we could check where something is equal to the specified value. But if we could push the value, like the value of an output to the stack, then we could use other operations like more than or less than and then we could do something like checking whether the value of output x must be at least y bitcoin, which is a fixed value.
 
 There are some other useful functions like MAST which would allow for more compact scripts by hiding the other unexecuted branches. There's also aggregation that would allow n-of-n multisig to be reduced to a single signature and so on. In the elements project, they implemented CHECKSIGFROMSTACK where they don't check the transaction structure but instead they verify a message on the stack. So it could be some message like not bitcoin maybe, perhaps cross-chain swap, or another bitcoin UTXO. And also we might have some elliptic curve point addition and operations which are also useful in lightning network design.
 
@@ -37,6 +38,7 @@ Here are some related works in progress. If you are interested in this topic, I 
 
 categories: ['conference']
 tags: ['attacks', 'p2sh']
+
 ---
 
 so you have your script template the amount value and there is a block impactor beause we have the sha chain whih allows you to hae the hashes.. we can hae that errortate constant beause you need the HTLC chashes, to properly reoke the prior states and if you an't do that then you can't onstruct the redeem script. Right now it ineeds a signature for eery state, you need all the HTLCs, it needs the netowrk erification state, and there's another cool thing you can do with which is like trap door erification and you can include it in the transaction itself and there can be a alsue where there is some margin for it.. Which make sit powerful, and then you can make it more private with these constructs. We only have a few minutes left, we can cover this.
@@ -58,10 +60,3 @@ We an make it more private, because rihgt now the channels on chain use... so we
 And that's it.
 
 # Q&A
-
-
-
-
-
-
-

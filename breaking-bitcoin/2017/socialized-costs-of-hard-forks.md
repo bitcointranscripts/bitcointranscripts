@@ -1,20 +1,20 @@
 ---
 title: Socialized Costs Of Hard Forks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['forks']
+categories: ["conference"]
+tags: ["forks"]
+speakers: ["Jimmy Song"]
 ---
 
-Socialized costs of hard-forks
+# Socialized costs of hard-forks
 
-Jimmy Song
+Name: Jimmy Song
 
 <https://twitter.com/kanzure/status/1005518746260262912>
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s>
 
 KL: Can you hear me? Is it good? Okay. I hope you have practiced your French because.. no, the presentations are in English. Welcome and thank you very much for being here. This conference will very probably be the best we've had in the bitcoin sphere. The crowd is pretty crazy. I've had the ticket list and I can say the people in this room, not just the speakers, the attendees are all super amazing. I'm glad to be launching this event. We're a little late. I have a small joke. I hope you sold your bitcoin today, because we're breaking bitcoin. Thank you. Jimmy is going to start. Please welcome Jimmy Song.
-
 
 # Introduction
 
@@ -102,7 +102,7 @@ Privacy loss is a huge security risk. If you're somebody that is evil, that's lo
 
 Replay attacks didn't happen with bcash but it could have. We might get this with segwit2x, though. Replay attacks are sort of more of a problem for merchants because if you as a user send bitcoin to coinbase.com and someone replays that attack and your bcash also goes to coinbase.com, they are sort of obligated to send you your bcash back. But if it goes the other way, and if coinbase sends you bitcoin and it gets replayed and also sends you bcash- you're not necessarily going to give that back. That's what happend with the Ethereum Classic fork.
 
-There's a pull request on segwit2x's repository for opt-in replay protection. But this has its costs too. Because now you have to put something in OP\_RETURN and now there are larger transactions. Every wallet has to figure this out. This is a one-time cost for everyone. Every wallet has to add this, get it tested, it's not easy to handle this without native replay protection.
+There's a pull request on segwit2x's repository for opt-in replay protection. But this has its costs too. Because now you have to put something in OP_RETURN and now there are larger transactions. Every wallet has to figure this out. This is a one-time cost for everyone. Every wallet has to add this, get it tested, it's not easy to handle this without native replay protection.
 
 # Future hard-forks
 

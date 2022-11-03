@@ -1,8 +1,8 @@
 ---
 title: Gmaxwell - Confidential Transactions (2017-04-28)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Bryan Bishop
-tags: ['privacy']
+tags: ["privacy"]
 ---
 
 Confidential transactions
@@ -57,17 +57,17 @@ Using this kind of scheme for bitcoin was <a href="https://bitcointalk.org/index
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=17m19s>
 
-* No new cryptographic assumptions: CT is secure if secp256k1 ECC signatures are secure (or even better).
+- No new cryptographic assumptions: CT is secure if secp256k1 ECC signatures are secure (or even better).
 
-* ~66% increase in UTXO size (addition of 33 byte 'CT amounts')
+- ~66% increase in UTXO size (addition of 33 byte 'CT amounts')
 
-* 15x-20x increase in bandwidth for transactions
+- 15x-20x increase in bandwidth for transactions
 
-* 30x-60x increase in validation costs. Not an issue for high end hardware especially due to validation caching, but a problem for low end hardware.
+- 30x-60x increase in validation costs. Not an issue for high end hardware especially due to validation caching, but a problem for low end hardware.
 
-* Addresses which are ~twice the length.
+- Addresses which are ~twice the length.
 
-* Moderate code complexity (+1.4kloc crypto code)
+- Moderate code complexity (+1.4kloc crypto code)
 
 So on that subject of costs, doing this stuff with the hidden values isn't cheap in this system. The end result is that on the plus side we can do it with no new cryptographic assumptions by which I mean that CT is completely secure so as long as our ECC signatures are completely secure. And in fact we can do even better so that CT is completely secure against inflation even if ECC is completely broken and I'll talk a bit more about that. So that's the good part.
 

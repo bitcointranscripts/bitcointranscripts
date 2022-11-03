@@ -2,9 +2,9 @@
 title: John Newbery Security Models (2019-06-17)
 transcript_by: Caralie Chrisco
 translation_by: Julien Urraca
-speaker: John Newbery
-tags: ['security', 'taproot', 'cryptography']
-categories: ['residency']
+speakers: ["John Newbery"]
+tags: ["security", "taproot", "cryptography"]
+categories: ["residency"]
 ---
 
 Texto original: <https://btctranscripts.com/chaincode-labs/chaincode-residency/2019-06-17-john-newbery-security-models/>

@@ -1,13 +1,14 @@
 ---
 title: Changing Consensus Rules Without Breaking Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['consensus', 'forks']
+categories: ["conference"]
+tags: ["consensus", "forks"]
+speakers: ["Eric Lombrozo"]
 ---
 
-Changing consensus rules without breaking bitcoin
+# Changing consensus rules without breaking bitcoin
 
-Eric Lombrozo (CodeShark)
+Name: Eric Lombrozo (CodeShark)
 
 video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=32min9s>
 
@@ -55,7 +56,7 @@ Soft-forks guarantee eventual consistency as long as there's majority hashrate e
 
 Before we all knew this, Satoshi introduced hard-forks and broke consensus. I don't think this is well known. Cory Fields found this commit <a href="https://github.com/bitcoin/bitcoin/commit/757f0769d8360ea043f469f3a35f6ec204740446">757f0769d8360ea043f469f3a35f6ec204740446</a> and informed me of it. I wasn't aware of it. There was actually a hard-fork in bitcoin that Satoshi did that we would never do it this way- it's a pretty bad way to do it. If you look at the git commit description here, he says something about reverted makefile.unix wx-config version 0.3.6. Right. That's all it says. It has no indication that it has a breaking change at all. He was basically hiding it in there. He also <a href="https://bitcointalk.org/index.php?topic=626.msg6451#msg6451">posted to bitcointalk</a> and said, please upgrade to 0.3.6 ASAP. We fixed an implementation bug where it is possible that bogus transactions can be displayed as accepted. Do not accept bitcoin payments until you upgrade to 0.3.6. If you can't upgrade right away, then it would be best to shutdown your bitcoin node until you do. And then on top of that, I don't know why he decided to do this as well, he decided to add some optimizations in the same code. Fix a bug and add some optimizations.. okay, well, he did it.
 
-One of the interesting things about this commit which isn't really described in Satoshi's bitcointalk post is the addition of the OP\_NOP opcodes. Before, they were just illegal. If this was found by the script interpreter then it would exit false and fail. And now they basically don't do anything, they are just NOPs. This is technically a hard-fork that he introduced ((if any transaction was to use these, and or if any transaction in the past had used these in a way that breaks the chain given the new rules, especially since this was not phased in with an activation height or grandfather clause)). The previous rule was that they were illegal. Because now transactions that would have been invalid before are now valid. At the time, nobody was using the NOPs so it probably didn't effect anyone ((that we know about-- someone might have had a pre-signed transaction that was not broadcasted that used the previous features)). The network was really small and probably everyone knew each other that was running a node. So it was easy to get everyone to upgrade quickly. Nobody seemed to care.
+One of the interesting things about this commit which isn't really described in Satoshi's bitcointalk post is the addition of the OP_NOP opcodes. Before, they were just illegal. If this was found by the script interpreter then it would exit false and fail. And now they basically don't do anything, they are just NOPs. This is technically a hard-fork that he introduced ((if any transaction was to use these, and or if any transaction in the past had used these in a way that breaks the chain given the new rules, especially since this was not phased in with an activation height or grandfather clause)). The previous rule was that they were illegal. Because now transactions that would have been invalid before are now valid. At the time, nobody was using the NOPs so it probably didn't effect anyone ((that we know about-- someone might have had a pre-signed transaction that was not broadcasted that used the previous features)). The network was really small and probably everyone knew each other that was running a node. So it was easy to get everyone to upgrade quickly. Nobody seemed to care.
 
 There was a genius to this: by doing this hard-fork, it actually enabled future soft-forks. We can now repurpose these NOPs to do other things. I'll get into that in a second.
 
@@ -113,7 +114,7 @@ We had this super majority mechanism which incremented the block version but you
 
 In checklocktimeverify (<a href="https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki">bip65</a>), the transaction version is bumped, which indicates it's going to be using this new feature potentially. And there's new rules. It's basically redefining NOP2 which Satoshi enabled with the hard-fork he did before. Had Satoshi not done that hard-fork, then there wouldn't be NOP2 available, and it wouldn't have been possible to implement checklocktimeverify like that. Old nodes treat it as a NOP (no operation).
 
-This is an example script: notice that if OP\_CHECKLOCKTIMEVERIFY is a NOP then the script interpreter just drops the entire line after the ELSE and that's how old nodes would evaluate the script.
+This is an example script: notice that if OP_CHECKLOCKTIMEVERIFY is a NOP then the script interpreter just drops the entire line after the ELSE and that's how old nodes would evaluate the script.
 
 # Origin of soft-fork for segwit
 
@@ -147,7 +148,7 @@ This is a big dilemma about how we are going to deploy soft-forks in the future.
 
 Near-term soft-forkable changes that people have been looking into include things like: <a href="https://diyhpl.us/wiki/transcripts/blockchain-protocol-analysis-security-engineering/2018/schnorr-signatures-for-bitcoin-challenges-opportunities/">Schnorr signatures</a>, signature aggregation, which is much more efficient than the currently used ECDSA scheme. And MASTs for <a href="https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/">merkleized abstract syntax trees</a>, and there are at least two different proposals for this. MAST allows you to compress scripts where there's a single execution pathway that might be taken so you can have this entire tree of potential execution pathways and the proof to authorize a transaction only needs to include one particular leaf of the tree.
 
-We're looking at <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015141.html">new script versions</a>. At this point we don't need to do the OP\_DROP stuff, we can add new opcodes and a new scripting language or replace it with something that's not a stack machine if we wanted-- not that we want to, but in principle we could replace it with another language. It gives us that option. It's something interesting to think about. Satoshi thought that bitcoin script would be the extensability mechanism to support smart contracts, and now we're looking at the opposite which is that the way the proofs are constructed. Adding new scripting languages turns out to be simple.
+We're looking at <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-October/015141.html">new script versions</a>. At this point we don't need to do the OP_DROP stuff, we can add new opcodes and a new scripting language or replace it with something that's not a stack machine if we wanted-- not that we want to, but in principle we could replace it with another language. It gives us that option. It's something interesting to think about. Satoshi thought that bitcoin script would be the extensability mechanism to support smart contracts, and now we're looking at the opposite which is that the way the proofs are constructed. Adding new scripting languages turns out to be simple.
 
 # Potential changes requiring hard-forks
 

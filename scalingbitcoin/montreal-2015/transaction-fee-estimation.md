@@ -1,13 +1,14 @@
 ---
 title: Transaction Fee Estimation
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['wallet', 'fees']
+categories: ["conference"]
+tags: ["wallet", "fees"]
+speakers: ["Bram Cohen"]
 ---
 
 Bram Cohen
 
-Transaction fee estimation
+# Transaction fee estimation
 
 How wallets can handle real transaction fees
 
@@ -23,7 +24,7 @@ Currently in bitcoin there's no way to make it for a transaction to not happen a
 
 There's a question of what do you actually do- what should wallets do? They can look at what recent transaction fees have been, they can look at recent fees, they can look at mempool data, how long they have been going on current payment attempts. There are some problems with these inputs. What fees were paid in the past is problematic. If you do something where you look at what fees were paid in the past, you can get these crazy spirals where you have peers paying way way more than they need to just off of tradition and what transaction fees were in the previous blocks. This creates miner incentives to exaggerage the transaction price in one mining block because that might force prices up and force them up and keep them there persistently much longer than they would have been to begin with. Using stuff in the mempool requires that SPV clients ask full nodes what's in your mempool, which is trivial pumpable by miners.
 
-You start with either a completely small value like 1 satoshi if you have never sent payments before; you can take the last payment amount times something, as your starting value. I then did some math here. You exponentially increase this up to the maximum that you're willing to spend at the end of the amount of time that you're willing to go, which I assume you're measuring blocks. I assume it's measured in blocks. 
+You start with either a completely small value like 1 satoshi if you have never sent payments before; you can take the last payment amount times something, as your starting value. I then did some math here. You exponentially increase this up to the maximum that you're willing to spend at the end of the amount of time that you're willing to go, which I assume you're measuring blocks. I assume it's measured in blocks.
 
 M = max fee
 
@@ -31,8 +32,7 @@ S = starting fee
 
 B = max number of blocks from start before giving up
 
-e^(lg(S) + (lg(M) - lg(S)) * H/B)
-
+e^(lg(S) + (lg(M) - lg(S)) \* H/B)
 
 That's basically my answer to what should be done, it's conservative, it's easily implemented and it can't be gamed in horrible ways. There's an interesting side question of what happens with your utxo combining. You have a wallet with utxos and you have to decide which ones to use for the inputs and which ouptuts, which effects the size of it. This matters surprisingly little because every new input that you get, every new piece of change you will eventually have to be combined, and you will have to pay the price for that, and it will happen at some point and it doesn't matter where that is. So your algorithm for coin selection isn't really effected all that much. You possibly could try and create transactions for doing your combinations at times for when transaction fees are low, and you could do those at your leisure. There are some possible extensions which could help in terms of making your transactions smaller, one is if you are using Schnorr signatures, you could use the combined schnorr signature on those, which would be a nice extension once you have schnorr signatures. You still need to reveal your public keys, which is space. A better one would be if you have two inputs where two need to be signed by the same value, you need to include the signature just once (whereas right now you need to include it twice), and if it's used properly, then it's pushed back the reveal of the same things going to the same output but only by one generation, it's not a big hit to privacy. Finally something you could do that might really provide optimization, every time that you have a private key that you never used in the history of the blockchain, you can give the private key, but I don't believe this saves much space, because you still need a new signature from it.
 
@@ -40,9 +40,9 @@ That's the basics of how I think wallets should handle transaction fees.
 
 categories: ['conference']
 tags: ['wallet', 'fees']
+
 ---
 
 <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011685.html>
 
 <https://medium.com/@bramcohen/how-wallets-can-handle-transaction-fees-ff5d020d14fb>
-

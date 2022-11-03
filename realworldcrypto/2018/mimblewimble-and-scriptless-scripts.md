@@ -1,13 +1,14 @@
 ---
 title: Mimblewimble And Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
+categories: ["conference"]
+tags: ["research"]
+speakers: ["Andrew Poelstra"]
 ---
 
 Mimblewimble and scriptless scripts
 
-Andrew Poelstra (Blockstream)
+Name: Andrew Poelstra (Blockstream)
 
 <https://www.youtube.com/watch?v=ovCBT1gyk9c>
 
@@ -41,7 +42,7 @@ This mimblewimble system was originally proposed in the form of a <a href="http:
 
 # Talk outline
 
-So I want to talk about two things. Mimblewimble and scriptless scripts. The first topic is mimblewimble, and in particular how do we get this kind of compression. And the second topic is scriptless scripts, which are given this scompression which is given by restricting the transaction structure to be very simple and highly structured-- how can we still do anything interesting? The cool part about bitcoin isn't just that you can send coins around, but also that you can attach various conditions to their spending. You can look for hash preimages, you can do multisignatures, you can  do fun things that build up "smart contracts" I guess is the buzzword regarding these features.
+So I want to talk about two things. Mimblewimble and scriptless scripts. The first topic is mimblewimble, and in particular how do we get this kind of compression. And the second topic is scriptless scripts, which are given this scompression which is given by restricting the transaction structure to be very simple and highly structured-- how can we still do anything interesting? The cool part about bitcoin isn't just that you can send coins around, but also that you can attach various conditions to their spending. You can look for hash preimages, you can do multisignatures, you can do fun things that build up "smart contracts" I guess is the buzzword regarding these features.
 
 # Confidential transactions and pedersen commitments
 
@@ -89,7 +90,7 @@ There are many reasons to do this. I described the motivation for mimblewimble, 
 
 # Schnorr signatures support scriptless scripts
 
-Let me get into some algebra to explain how this works. Probably most people here are familiar with Schnorr signatures or they at least saw them in school or something. Let me briefly overview how Schnorr multi-signatures work where you have multiple parties and you want to create a signature that every participant needs to contribute to produce the signatures. They all have their separate public keys. They sum these up to get a joint public key P and they want to produce a signature which validates with the key P such that all of them together would need to produce this. So they do the standard <a href="https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/schnorr-signatures/">Schnorr signature</a> thing which is that they think of a nonce R which is actually k * G and you produce the signature s = k + ex where k is your secret nonce and e is the hash of the data going into the signature. To do a multisignature you just sum everythin so everyone chooses their own R = k * G. Everybody passes around their different R values they pass them around to get a joint R value. Using the joint R value everyone computes their joint hash challenge and then they do the same thing except e is now a hash of their joint public key and something else. Your nonces are the sum of everyone's contributed nonces, and the signature is the sum of everyone's contributed signature values. Very easy. In practice, I should warn people that there are things called key cancelation attacks where people can choose their keys and nonces in adversarial ways and you need to be careful about it. But it's not an impossible problem and it wont derail anything that I'm talking about here.
+Let me get into some algebra to explain how this works. Probably most people here are familiar with Schnorr signatures or they at least saw them in school or something. Let me briefly overview how Schnorr multi-signatures work where you have multiple parties and you want to create a signature that every participant needs to contribute to produce the signatures. They all have their separate public keys. They sum these up to get a joint public key P and they want to produce a signature which validates with the key P such that all of them together would need to produce this. So they do the standard <a href="https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/schnorr-signatures/">Schnorr signature</a> thing which is that they think of a nonce R which is actually k _ G and you produce the signature s = k + ex where k is your secret nonce and e is the hash of the data going into the signature. To do a multisignature you just sum everythin so everyone chooses their own R = k _ G. Everybody passes around their different R values they pass them around to get a joint R value. Using the joint R value everyone computes their joint hash challenge and then they do the same thing except e is now a hash of their joint public key and something else. Your nonces are the sum of everyone's contributed nonces, and the signature is the sum of everyone's contributed signature values. Very easy. In practice, I should warn people that there are things called key cancelation attacks where people can choose their keys and nonces in adversarial ways and you need to be careful about it. But it's not an impossible problem and it wont derail anything that I'm talking about here.
 
 Kind of a philosophical point is that these multisignatures are already kind of a scriptless script in the sense that you have a bunch of people who have all of their own independent public keys and they add them together to get a joint key. They have a joint key and joint signatures. Public verifiers that weren't party to that, won't know how many people were involved, or that there were more than one person involved. They certainly don't know the original values. You can generalize this. If you look in the literature you'll find threshold signatures, a generalization of this to m-of-n signatures using linear secret sharing and this nice property that because a multisignature came from adding up everyone's nonces and signature values, then if you put a linear secret sharing scheme on there then you can basically do the same thing where you're contributing shares of signatures instead of entire signatures and it all just sort of works- magically.
 

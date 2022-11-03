@@ -1,8 +1,8 @@
 ---
 title: Greg Maxwell - 51 percent mining attack (2019–10-04)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
-tags: ['mining', 'security']
+tags: ["mining", "security"]
 ---
 
 Name: Greg Maxwell
@@ -35,8 +35,8 @@ I think people obsess far too much about "51%"-- it has some kind of attractive 
 A far bigger risk to Bitcoin is that the public using it won't understand, won't care, and won't protect the decentralization properties that make it valuable over centralized alternatives in the first place. ... a risk we can see playing out constantly in the billion dollar market caps of totally centralized systems. The ability demonstrated by system with fake decentralization to arbitrarily change the rules out from under users is far more concerning than the risk that an expensive attack could allow some theft in the case of over-eagerly finalized transactions.
 
 There is really two classes of things that that colluding majority can do:
-	•	They can undermine the stability of consensus, e.g. making continual reorgs against the tip (though to do this successfully over a realistic time frame they need a lot more than 51%). After some brief transition where some active transactors might get robbed by the attackers before everyone realizes the consensus isn't stable, this turns into a network wide denial of service attack that essentially delays all use of the system. 
-	•	They could censor particular users or uses, creating an immediate denial of service against those users/uses. 
+• They can undermine the stability of consensus, e.g. making continual reorgs against the tip (though to do this successfully over a realistic time frame they need a lot more than 51%). After some brief transition where some active transactors might get robbed by the attackers before everyone realizes the consensus isn't stable, this turns into a network wide denial of service attack that essentially delays all use of the system.
+• They could censor particular users or uses, creating an immediate denial of service against those users/uses.
 The first of these is less concerning to me because since it effects everyone and makes the system much less usable it's pretty clear that the users will resolve it somehow, e.g. potentially with a nuclear option of firing the miners by changing the work function. Because of the inevitability of that outcome it makes the whole attack fairly unattractive from a game theory perspective.
 
 I find the second more concerning because since it targets a subset it may be much harder to gain the political will to undertake a costly or risky fix, especially if the targets are somehow politically or legally disadvantaged.
@@ -49,5 +49,3 @@ Likewise, it's part of the reason that many care about node operating costs. Kee
 
 Both of the above attacks in their denial-of-service form also only hurt as long as they go one, applications which don't mind massive delays probably don't care too much about them.
 Often when people talk about security in the context of computers they get caught into the trap of absolute security. With basic computer security and cryptography it's realistically possible to build systems which have effectively unbreakable security. Where unbreakable is economical it should be the goal. But when you talk about physical systems, social standards, or decentralized consensus it appears that strong-sense unbreakable security isn't realistically possible-- and that doesn't mean the result is insecure, it means that security needs to arise out of a balance of costs, risks, and incentives. There isn't such thing as an unbreakable bank-vault, but there certainly is such a thing as a vault where the cost of breaking it isn't worth the pay-off or where the time to break it almost guarantees that an attacker will get caught.
-
-

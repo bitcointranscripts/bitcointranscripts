@@ -1,11 +1,12 @@
 ---
 title: Scaling Oblivious Read Write
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy']
+categories: ["conference"]
+tags: ["privacy"]
+speakers: ["Duc V. Le"]
 ---
 
-A tale of two trees: One writes, and other reads, scaling oblivious accesses to large-scale blockchains
+# A tale of two trees: One writes, and other reads, scaling oblivious accesses to large-scale blockchains
 
 Duc V. Le
 
@@ -49,9 +50,9 @@ The first challenge is the ORAM storage overhead. Using ORAM incurs a constant s
 
 # Solution for storage blow-up
 
-Securing oblivious access to the unspent transaction output set (UTXO set) is sufficient instead of blocks. So the intuition here is that the SGX  should oblivious and securely update UTXOs set, and provide thin clients with oblivious access ot tihs database.
+Securing oblivious access to the unspent transaction output set (UTXO set) is sufficient instead of blocks. So the intuition here is that the SGX should oblivious and securely update UTXOs set, and provide thin clients with oblivious access ot tihs database.
 
-The size of the UTXO database is around 2.8 GB. Therefore, the size of the ORAM tree is about 24 GB and for path-ORAM and  for circuit ORAM it would be about 12 GB which is accessible.
+The size of the UTXO database is around 2.8 GB. Therefore, the size of the ORAM tree is about 24 GB and for path-ORAM and for circuit ORAM it would be about 12 GB which is accessible.
 
 # Challenge: traditional ORAM's lack of concurrency
 
@@ -98,4 +99,3 @@ We have an overview of the system here in this diagram. The SPV client can do re
 # Conclusion
 
 We have developed a system design that supports a large-scale oblivious search on UTXOs while efficiently maintaining the state of the bitcoin UTXO set.
-

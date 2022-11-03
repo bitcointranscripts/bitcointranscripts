@@ -1,8 +1,8 @@
 ---
 title: Greg Maxwell - Covenants and BIP119 (2022–05-05)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
-tags: ['covenants']
+tags: ["covenants"]
 ---
 
 Name: Greg Maxwell
@@ -34,4 +34,3 @@ I think BIP119 is a poor proposal being pushed through in an ill advised way, bu
 I regret ever introducing the term covenant. My intent was to point out that it was inevitable that any sufficiently expressive rules could allow for encumbrances that ran with the coin, and as a result one shouldn't generally accept encumbered coins unless you are extremely sure of what you are doing. Fortunately, there is no risk of doing so accidentally. Just like the example with multisig shows it's already possible to create persistently encumbered coins and it's fundamentally impossible foreclose that possibility through technical means. The protection from it being a problem is already built into every single wallet out there: no wallet will accept/display a payment except under terms set by itself. So the only way anyone could 'force' you to accept some encumbered coin is the same as their ability to just not pay you at all as they're the same thing. Simultaneously, there are plenty of extremely useful, pro-security, pro-privacy, pro-autonomy ways people could conceivably temporarily encumber their own coins... sadly almost none of them are enabled by bip119.
 
 If you're concerned about fungibility, go bother exchanges and minining pools that lock users to withdraw to a single address or don't support all common address types thereby denying users their choice of payment rules.
-

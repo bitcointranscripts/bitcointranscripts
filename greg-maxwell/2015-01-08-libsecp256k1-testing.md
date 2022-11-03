@@ -1,8 +1,8 @@
 ---
 title: Greg Maxwell - libsecp256k1 testing (2015–01-08)
-speaker: Greg Maxwell
+speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
-tags: ['bitcoin core', 'testing']
+tags: ["bitcoin core", "testing"]
 ---
 
 Name: Greg Maxwell
@@ -17,7 +17,7 @@ Date: January 8th 2015
 
 # libsecp256k1 testing
 
-Today OpenSSL [de-embargoed CVE-2014-3570](https://www.openssl.org/news/secadv/20150108.txt) "Bignum squaring may produce incorrect results". That particular security advisory is not a concern for Bitcoin users, but it allows me to explain some of the context behind a slightly cryptic statement I made in the [release notes](https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md) for the upcoming Bitcoin Core 0.10: “we have reason to believe that libsecp256k1 is better tested and more thoroughly reviewed than the implementation in OpenSSL”. Part of that “reason to believe” was our discovery of this OpenSSL flaw. 
+Today OpenSSL [de-embargoed CVE-2014-3570](https://www.openssl.org/news/secadv/20150108.txt) "Bignum squaring may produce incorrect results". That particular security advisory is not a concern for Bitcoin users, but it allows me to explain some of the context behind a slightly cryptic statement I made in the [release notes](https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md) for the upcoming Bitcoin Core 0.10: “we have reason to believe that libsecp256k1 is better tested and more thoroughly reviewed than the implementation in OpenSSL”. Part of that “reason to believe” was our discovery of this OpenSSL flaw.
 
 In Bitcoin Core 0.10 we are migrating transaction signing, and only signing for now, to a cryptographic library we're currently developing-- [libsecp256k1](https://github.com/bitcoin-core/secp256k1) -- which is intended to provide a high-speed, sidechannel avoiding, and high-assurance implementation of the underlying public-key cryptography used in Bitcoin. Doing this allows us to deliver safer and more reliable software that better fits Bitcoin's specific needs. The library is mostly the work of Bitcoin Core super-contributor Pieter Wuille (sipa), though many other people are working on it too-- software created alone tends to be inherently unreviewed. This library is part of what Pieter and I are working on at Blockstream.
 
@@ -28,4 +28,3 @@ The incorrectly squared numbers would be expected to be found randomly with prob
 I generally don't consider my own software adequately enough tested until its tests have turned up a bug in a compiler/toolchain. So far I've not encountered a compiler bug for libsecp256k1-- GCC and clang have been getting much better the last few years-- beyond some cases where the compiler produced brain-dead slow but correct output, so I may have to settle for discovering that a ubiquitous system library couldn't square correctly.
 
 I consider this a fun example of how the Bitcoin ecosystem can contribute to driving forward the state of the art in the security of cryptographic tools, and how our needs justify higher level of assurance than has been found in common software in the past. This example isn't the only reason I have to believe that this new code is better tested and reviewed, but it's a very concrete example.
-

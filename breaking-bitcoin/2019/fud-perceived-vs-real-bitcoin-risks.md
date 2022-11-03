@@ -1,7 +1,8 @@
 ---
 title: Fud Perceived Vs Real Bitcoin Risks
 transcript_by: Bryan Bishop
-categories: ['conference']
+categories: ["conference"]
+speakers: ["Aaron van Wirdum", "Eric Voskuil", "Jimmy Song", "Rodolfo Novak"]
 ---
 
 FUD: real vs perceived risks in bitcoin
@@ -98,7 +99,7 @@ EV: If people want new coins, changes to coins, it's very easy to do. It might b
 
 RN: It's a true voluntary system, yep.
 
-JS: The question assumes that bitcoin is primarily a technology. To me, it's money. For money, it's better if it doesn't change. It's about additive features that are backwards compatible, that's what a soft-fork is. Having a stable base layer is a feature not a bug. When people say hey ethereum is bitcoin 2.0 and eos is bitcoin 3.0, they have a completely skewed view of what this whole thing is. It's money, and you want it to stay stable. The idea that you need to evolve it or something like that is a completely misplaced notion that mostly comes from Silicon Valley where they see everything as a tech play when it is actually a monetary play instead. As far as soft-forks and whether they will activate, segwit was obviously a very difficult thing. Fortunately a lot of the haters have left, and one of the great things about bitcoin is that if you disagree you're free to leave and do your own thing. You're free to do that at any time. That's a feature, again, not a bug. A lot of people say, well now you have this toxic culture and everyone hates each other, but if you disagree enough then you can go and make your own thing. That's totally fine. In many ways, I expect the next soft-fork to be less difficult than the previous one. But who knows. It's possible that there's a much harder time doing soft-forks going forward. It's okay if it doesn't happen. The base layer works great. Would we like to have additional features so that lightning is much easier to implement and things like that? Yeah, absolutely. I would love taproot, Schnorr signatures, SIGHASH\_NOINPUT and all these other things coming in. Is it necessary? Not exactly. It works great as it is. It's adding additional features to make it even better, but it's not necessary.
+JS: The question assumes that bitcoin is primarily a technology. To me, it's money. For money, it's better if it doesn't change. It's about additive features that are backwards compatible, that's what a soft-fork is. Having a stable base layer is a feature not a bug. When people say hey ethereum is bitcoin 2.0 and eos is bitcoin 3.0, they have a completely skewed view of what this whole thing is. It's money, and you want it to stay stable. The idea that you need to evolve it or something like that is a completely misplaced notion that mostly comes from Silicon Valley where they see everything as a tech play when it is actually a monetary play instead. As far as soft-forks and whether they will activate, segwit was obviously a very difficult thing. Fortunately a lot of the haters have left, and one of the great things about bitcoin is that if you disagree you're free to leave and do your own thing. You're free to do that at any time. That's a feature, again, not a bug. A lot of people say, well now you have this toxic culture and everyone hates each other, but if you disagree enough then you can go and make your own thing. That's totally fine. In many ways, I expect the next soft-fork to be less difficult than the previous one. But who knows. It's possible that there's a much harder time doing soft-forks going forward. It's okay if it doesn't happen. The base layer works great. Would we like to have additional features so that lightning is much easier to implement and things like that? Yeah, absolutely. I would love taproot, Schnorr signatures, SIGHASH_NOINPUT and all these other things coming in. Is it necessary? Not exactly. It works great as it is. It's adding additional features to make it even better, but it's not necessary.
 
 AW: That seems to be the consensus of this panel?
 
@@ -214,13 +215,13 @@ AW: Do we have time for one more? Do we want to get into culture wars? Some say 
 
 RN: Bitcoin is a voluntary system. It owes you nothing. That's a good thing, right. It also doesn't force you to do anything or be anything. You can be anybody transacting and participating in the bitcoin network without ever revealing whether you're a dog on the internet. That's a huge security feature.
 
-JS: In one sense, I don't think it's toxic at all. But in another sense, maybe it is. If everyone has the exact same opinion, it's called a cult. I guess that could be another piece of FUD. Having differences is totally okay.  ... There are natural consequences that prevent you from being too much of a jerk. I don't know where the line really is, I don't think anyone can say. But there is a right to be a jerk, and you can't force anyone to not be a jerk.
+JS: In one sense, I don't think it's toxic at all. But in another sense, maybe it is. If everyone has the exact same opinion, it's called a cult. I guess that could be another piece of FUD. Having differences is totally okay. ... There are natural consequences that prevent you from being too much of a jerk. I don't know where the line really is, I don't think anyone can say. But there is a right to be a jerk, and you can't force anyone to not be a jerk.
 
 AW: You want to get into this Eric?
 
 EV: If you're in a community that you don't like, then make another community. There are so many conferences that I don't go to because it's just not my community and I don't really care. So I tend to pay attention to the things I'm interested in. Half of the time I'm not aware of what's going on in the community because I don't pay attention to those things. So you have a choice. Always try to be nice, but that's not always the way it is. The stuff I do see, often there's argument and discussion based on personality. Who somebody is doesn't matter. The arguments they make are interesting to me. When somebody posts a thread, I don't really notice who they are. It's the discussion that's interesting, at least for me. But there's often a lot of discussion based on just a person or who the author is, so I try to avoid those things.
 
-RN: If you are more civil, then it's more likely you will get something merged because you will piss off less people. It's a tool, but not a requirement. 
+RN: If you are more civil, then it's more likely you will get something merged because you will piss off less people. It's a tool, but not a requirement.
 
 # Q&A
 

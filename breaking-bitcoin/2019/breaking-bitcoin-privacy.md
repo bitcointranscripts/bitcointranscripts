@@ -1,11 +1,12 @@
 ---
 title: Breaking Bitcoin Privacy
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy', 'fungibility']
+categories: ["conference"]
+tags: ["privacy", "fungibility"]
+speakers: ["Chris Belcher"]
 ---
 
-Breaking bitcoin privacy
+# Breaking bitcoin privacy
 
 Chris Belcher
 
@@ -95,7 +96,7 @@ This is another example from about a year and a half ago. They were a bitcoin ca
 
 # Security/privacy tradeoff trap
 
-We've been talking about using coinjoins to improve privacy. The most decentralized and most secure systems are things like basic bitcoin transactions, where you make a payment with an output and a change output and sometimes you merge together inputs. The next level down is joinmarket or Wasabi wallet. They break the common-ownership heuristic and they break the graph. But they have higher miner fees because the transactions are so large, and the system can't support as many of those transactions.  But they are more private, as you saw in the last example. Monero is more private than joinmarket and wasabi but full nodes aren't prunable... so Monero's system doesn't know when a coin has been spent, so they can't delete coins that are spent. They have a perpetually growing data structure. The transaction output set can't ever be deleted and every full node has to carry it forever. The system is private, but much less scalable, and therefore less decentralized and less secure. Then there's zcash which uses zero-knowledge proofs and doesn't have a transaction graph. The amounts aren't visible, so it's more private than monero. But zcash has a trusted setup which has certain cryptographic information that if ever revealed would destroy their system and let users be spied on or cause inflation. It's even more private, but even less secure or decentralized. There was also Digicash in the 1990s and it used blind signatures. It had information-theoretic privacy, which meant that even if you had an infinitely powerful computer you couldn't break the privacy. It's the most private system you could imagine. But unfortunately, it was the most centralized, it had a central server and it could be turned off and in fact it was.
+We've been talking about using coinjoins to improve privacy. The most decentralized and most secure systems are things like basic bitcoin transactions, where you make a payment with an output and a change output and sometimes you merge together inputs. The next level down is joinmarket or Wasabi wallet. They break the common-ownership heuristic and they break the graph. But they have higher miner fees because the transactions are so large, and the system can't support as many of those transactions. But they are more private, as you saw in the last example. Monero is more private than joinmarket and wasabi but full nodes aren't prunable... so Monero's system doesn't know when a coin has been spent, so they can't delete coins that are spent. They have a perpetually growing data structure. The transaction output set can't ever be deleted and every full node has to carry it forever. The system is private, but much less scalable, and therefore less decentralized and less secure. Then there's zcash which uses zero-knowledge proofs and doesn't have a transaction graph. The amounts aren't visible, so it's more private than monero. But zcash has a trusted setup which has certain cryptographic information that if ever revealed would destroy their system and let users be spied on or cause inflation. It's even more private, but even less secure or decentralized. There was also Digicash in the 1990s and it used blind signatures. It had information-theoretic privacy, which meant that even if you had an infinitely powerful computer you couldn't break the privacy. It's the most private system you could imagine. But unfortunately, it was the most centralized, it had a central server and it could be turned off and in fact it was.
 
 If we're not careful, you can design a system that trades off security for privacy. We want a system that is both secure and private. There's no point in having security when you can just turn it off. So what's the solution?
 

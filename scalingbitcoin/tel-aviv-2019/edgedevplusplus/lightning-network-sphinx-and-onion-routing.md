@@ -1,11 +1,12 @@
 ---
 title: Lightning Network Sphinx And Onion Routing
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy', 'lightning', 'routing', 'wallet']
+categories: ["conference"]
+tags: ["privacy", "lightning", "routing", "wallet"]
+speakers: ["Antoine Riard"]
 ---
 
-Lightning network: Sphinx and onion routing
+# Lightning network: Sphinx and onion routing
 
 Antoine Riard
 
@@ -53,11 +54,9 @@ Shared secrets are generated through some protocol.
 
 # Future protocols
 
-* Trampoline onion packet (indirection routing layer)
-* rendezvous routing
-* Active message like pay-per-API call, ordered chain of API calls
-* Multi-party computation (auctions, lotteries, ...)
+- Trampoline onion packet (indirection routing layer)
+- rendezvous routing
+- Active message like pay-per-API call, ordered chain of API calls
+- Multi-party computation (auctions, lotteries, ...)
 
 I don't know how people are going to use it, but if you're an application developer then maybe you should try to build something with this.
-
-

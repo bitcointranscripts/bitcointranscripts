@@ -1,16 +1,14 @@
 ---
 title: Blockchain Testbed
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['forks', 'miners', 'security']
+categories: ["conference"]
+tags: ["forks", "miners", "security"]
+speakers: ["Ittay Eyal", "Emin Gun Sirer"]
 ---
 
-Ittay Eyal
+Name: Ittay Eyal & Emin Gun Sirer
 
-Emin Gun Sirer
-
-A testbed for bitcoin scaling
-
+# A testbed for bitcoin scaling
 
 I want to talk today about how to scale bitcoin. We want lower latency, we want higher throughput, more bandwidth and more transactions per second, and we want security. We can try to tune the parameters. In all of the plots, I have time going from left to right and these are blocks in rectangles. We have larger blocks which might give us more throughput. We could have shorter block length, and transactions would come faster on the chain and we have better throughput but we get forks and orphans when that happens. We have unfairness, smaller miners get less revenue and leads to centralization and I will talk about that. We have a longer time to convergence because of these orphans and forks.
 
@@ -55,7 +53,6 @@ Subjective time to prune: similar.
 You need clear metrics, you need to run the actual code, you need to emulate the world around it. We have the testbed and we're happy to collaborate with different ideas. I also presented bitcoin-ng.
 
 Adem Efe Gencer, Emin Gun Sirer, Robbert Van Renesse, Ittay Eyal.
-
 
 bitcoin-ng criticism <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011528.html>
 

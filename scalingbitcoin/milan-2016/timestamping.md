@@ -1,12 +1,14 @@
 ---
 title: Timestamping
 transcript_by: Bryan Bishop
-categories: ['conference']
+categories: ["conference"]
+tags: ["timestamp"]
+speakers: ["Riccardo Casatta"]
 ---
 
-Timestamping
+# Timestamping
 
-Riccardo Casatta
+Name: Riccardo Casatta
 
 slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%20A%20-%20Riccardo.pdf>
 
@@ -16,15 +18,15 @@ Hi everybody. I attended Montreal and Hong Kong. It's a pleasurable to be here i
 
 # Why timestamps at Scaling Bitcoin?
 
-I want to to clarify what is a timestamp. A timestamp proves that a message existed prior to some point in time. That's all it proves. This chart shows the number of OP\_RETURN transactions. This is often used for timestamping. It's a log scale. In 2015, there was a big increase in the number of transactions using this. In 2016, it's about 4000 transactions/day or about 2% of the capacity of the network. It's almost impossible to say how many timestamps are done. This is good for privacy. But a good guess would be to correlate it with the number of transactions........
+I want to to clarify what is a timestamp. A timestamp proves that a message existed prior to some point in time. That's all it proves. This chart shows the number of OP_RETURN transactions. This is often used for timestamping. It's a log scale. In 2015, there was a big increase in the number of transactions using this. In 2016, it's about 4000 transactions/day or about 2% of the capacity of the network. It's almost impossible to say how many timestamps are done. This is good for privacy. But a good guess would be to correlate it with the number of transactions........
 
-OP\_RETURN utilization: coinspark, open assets, colu, eternity wall, omni layer, .... about 50% seem to be timestamping and the other 50% are relying on other properties than blockchain. So we have 2000 transactions/day doing timestamping, then. We just need 200 transactions/day for global timestamping needs. This is less cost. This is like 0.1% of total block space.
+OP_RETURN utilization: coinspark, open assets, colu, eternity wall, omni layer, .... about 50% seem to be timestamping and the other 50% are relying on other properties than blockchain. So we have 2000 transactions/day doing timestamping, then. We just need 200 transactions/day for global timestamping needs. This is less cost. This is like 0.1% of total block space.
 
 # One-certificate-one-transaction
 
 This is one of the proposals for certificates in the blockchain. It's a certificate. No, sorry. The first input is the key of the issuer. The first output represents the recipient of the certificate. The second output is the pubkey. And then the hash of the certificate. With this solution, everyone can check all certificates emitted by one authority. The certificates that someone owns. Also the certificates can be revoked, by spending the revocation key. With this solution, we have one-to-one mapping between certificates and issuing on the blockchain.
 
-So say 3000 degrees/year * 40 exams/year * 40,000 universities. So that means we need 80 megabyte blocks just for degree certificates in the blockchain. So let's see if we can do better with aggregation.
+So say 3000 degrees/year _ 40 exams/year _ 40,000 universities. So that means we need 80 megabyte blocks just for degree certificates in the blockchain. So let's see if we can do better with aggregation.
 
 # Aggregating timestamps
 
@@ -61,4 +63,3 @@ Chainpoint describes a merkle tree where the chainpoint proof is in JSON. It con
 For the comparison of the size of proofs for opentimestamp versus chainpoint using json, as we can see the json is not that big of a deal. We can use msgpack for json serialization format. Testing compression is not very interesting. We can have gzip with better results, and most of the time msgpack + gzip is slightly better. Apart from size comparison, the point of the binary format of opentimestamps was to give a format with an atomic interpretation that you can either parse the data or you could do nothing with it. And that's exactly what we want.
 
 <img src="https://imgs.xkcd.com/comics/standards_2x.png" />
-

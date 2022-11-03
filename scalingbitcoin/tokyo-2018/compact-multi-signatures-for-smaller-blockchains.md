@@ -1,8 +1,9 @@
 ---
 title: Compact Multi Signatures For Smaller Blockchains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['p2pkh', 'P2P']
+categories: ["conference"]
+tags: ["p2pkh", "P2P"]
+speakers: ["Dan Boneh", "Manu Drijvers", "Gregory Neven"]
 ---
 
 Compact multi-signatures for smaller blockchains
@@ -69,8 +70,8 @@ These cannot be used in a standard way to build multisig schemes. Suppose you ha
 
 This signature scheme is pretty cool and has many uses. You can compose signatures, compress signatures, and it seems really straightforward how you can do this because you can simply add up all the signatures. If you want to verify this, you can do this by verifying this product of pairings right here.
 
-* Boldyreva 2003
-* Boneh-GLS 2003
+- Boldyreva 2003
+- Boneh-GLS 2003
 
 There's a rogue key attack here. If you know someone else's public key, and you choose as your own pubkey something for which you don't know the secret key, but you take the group public key to be something where you know the discrete log, then you can break the multisig scheme. But, we oculd insist that all the messages being signed are different. This is what the 2003 BLS paper does, and then you can't aggregate pubkeys anymore. Another alternative is including proof-of-knowledge in your public key, but your public keys will grow. Another alternative is to do smarter key aggregation.
 
@@ -103,4 +104,3 @@ Pubkeys get larger and they get into the blockchain. There might be cases where 
 # Conclusion
 
 What multisigs can give you is savings in the witness length when using these schemes. Going for n-of-n multisig addresses, you can use 144 bytes if you use the pairings version or 96 bytes in the MSDL case. In k-of-n multisig, it's 32 bytes plus k, or n/8 B + 192 bytes for ASM. It would be great to see this adopted but I'm sure there's plenty of practical, technical and political arguments not to do so. If we could help with any of those, then we would be very happy to do so.
-

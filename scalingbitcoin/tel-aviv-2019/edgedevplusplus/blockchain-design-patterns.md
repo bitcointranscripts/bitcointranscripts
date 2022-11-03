@@ -1,13 +1,14 @@
 ---
 title: Blockchain Design Patterns
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['taproot', 'mempool']
+categories: ["conference"]
+tags: ["taproot", "mempool"]
+speakers: ["Andrew Poelstra", "David Vorick"]
 ---
 
-Blockchain design patterns: Layers and scaling approaches
+# Blockchain design patterns: Layers and scaling approaches
 
-Andrew Poelstra, David Vorick
+Name: Andrew Poelstra, David Vorick
 
 <https://twitter.com/kanzure/status/1171400374336536576>
 
@@ -70,7 +71,6 @@ We can guarantee that a cascade of events will all happen together or not happen
 # Replacing transactions: payment and state channels
 
 gmaxwell in a 2013 bitcointalk post-- it's funny how old a lot of this stuff is. A theme that we're not going to talk about in this talk is all the coordination and underlying blockchain tech and moonmath and crypto tricks are relatively simple, it's coordination that is hard. If you do the atomic swap protocol that David just described, where they ensure their swap is atomic.. Say two parties do this, but rather than publishing the final transactoin with the hash preimages, the parties exchange this data offline with each other. At this point, they have avoided publication because they have only sent the data to one another. Now they can both get their money if the other party leads. As a last step, they throw out the transactions. Well, they replace the transactions cooperatively with an ordinary transaction that spends their coins to the right places without revealing any hash preimages. This is a little bit smaller because they are no longer revealing so much data. This is of course not an atomic operation; one party can sign and take the coins. But the blockchain is there ready to enforce the hash preimage thing to take the coins. So now they can do a unregulated atomic swap knowing that if anything goes wrong, they can fallback to on-chain transactions.
-
 
 This idea of replacing transactions not published to the blockchain, with the idea that you are only going to publish the final version, is a very important concept. This can be generalized to the idea of a payment channel. At a high level, ignoring all the safety features, the idea of a payment channel is that two parties take some coins and put some coins into a 2-of-2 multisig policy. They repeatedly sign transactions that give some money to the other party or whatever. They keep doing this replacement over and over again, without publishing the final state to the blockchain because they expect further updates. There's a lot of complexity to get from this to an HTLC and modern payment channel, but it's the basic idea.
 
@@ -178,31 +178,31 @@ I have a slide about this. Does taproot supercede MAST? MAST is this idea that h
 
 Instead of committing to a script, you can commit to a merkle tree of scripts. So there you go, that's MAST. So in fact, the taproot proposal includes MAST as part of it. It's separate from the committing structure I defined, it's there, with a few couple advanced cool things that we noticed as part of implementation. We have a form of MAST where you provide a proof showing where in the tree the script you're using is, we have a way of hiding the direction it's taken. So it's difficult to tell if a tree is unbalanced, and you learn very little information about the shape of the tree, and a few other efficiency things like that which I don't want to get into. They are in Pieter Wuille's fork of the bips repo which has a branch that has a draft BIP that has a few pull requests open on. It's the first hit on google for bip-taproot so you can find it.
 
-One other thing I wanted to mention here is that we eliminate the CHECKMULTISIG opcode in bip-taproot. I mentioned that this is the way in bitcoin how you provide multiple keys and multiple signatures. This opcode kinda sucks. The way it works is that the verifier goes through the list of keys, and for every key they try a signature until they find one that validates with that signature. So you wind up doing a lot of unnecessary signature validations, they just fail. They areu nnecessary. On its own, this prevents batch verification even if the signature algorithm itself was supposed to support batch validation. This wastes a lot of time wiating for invalid ones to fail. Russell O'Connor came up with a way to avoid this with pubkey recovery. It's a very irritating opcode. It's irritating for a pile of other reasons. I could do a full talk abou why I hate OP\_CHECKMULTISIG. Another issue is that there's an opcode limit in bitcoin, pushes don't count, you have a limit of 201 opcodes. You can read the script and pick out the opcodes. But there's an exception: if you have a CHECKMULTISIG opcode, and then you have to go back and evaluate all the branches, and then if CHECKMULTISIG is executed, you add the number of keys in the CHECKMULTISIG. If it's not executed, then you do nothing. There's a bunch of extra code dealing with this one opcode which is just, who knows, a historical accident, and it makes everything more complex.
+One other thing I wanted to mention here is that we eliminate the CHECKMULTISIG opcode in bip-taproot. I mentioned that this is the way in bitcoin how you provide multiple keys and multiple signatures. This opcode kinda sucks. The way it works is that the verifier goes through the list of keys, and for every key they try a signature until they find one that validates with that signature. So you wind up doing a lot of unnecessary signature validations, they just fail. They areu nnecessary. On its own, this prevents batch verification even if the signature algorithm itself was supposed to support batch validation. This wastes a lot of time wiating for invalid ones to fail. Russell O'Connor came up with a way to avoid this with pubkey recovery. It's a very irritating opcode. It's irritating for a pile of other reasons. I could do a full talk abou why I hate OP_CHECKMULTISIG. Another issue is that there's an opcode limit in bitcoin, pushes don't count, you have a limit of 201 opcodes. You can read the script and pick out the opcodes. But there's an exception: if you have a CHECKMULTISIG opcode, and then you have to go back and evaluate all the branches, and then if CHECKMULTISIG is executed, you add the number of keys in the CHECKMULTISIG. If it's not executed, then you do nothing. There's a bunch of extra code dealing with this one opcode which is just, who knows, a historical accident, and it makes everything more complex.
 
 Q: So CHECKMULTISIG is not going to be in tapscript?
 
-CHECKMULTISIG does have one big benefit over interactive signatures, which is that CHECKMULTISIG is non-interactive for multisig. With threshold multisignatures I've been describing, all the people need to interact and they need their keys online and this isn't always practical because maybe you have keys in vaults or something. If you want to do multisig with Schnorr and taproot, we have OP\_CHECKDLSADD. It acts like a CHECKMULTISIG, but when it passes, it adds 1 to your accumulator. So you just count the number of these, and then you check if the accumulator is greater than or equal to whatever your threshold is. This gives you exactly the same use cases as CHECKMULTISIG but with much simpler semantics, with the ability to batch verify, and without the insane special cases in the validation cases.
+CHECKMULTISIG does have one big benefit over interactive signatures, which is that CHECKMULTISIG is non-interactive for multisig. With threshold multisignatures I've been describing, all the people need to interact and they need their keys online and this isn't always practical because maybe you have keys in vaults or something. If you want to do multisig with Schnorr and taproot, we have OP_CHECKDLSADD. It acts like a CHECKMULTISIG, but when it passes, it adds 1 to your accumulator. So you just count the number of these, and then you check if the accumulator is greater than or equal to whatever your threshold is. This gives you exactly the same use cases as CHECKMULTISIG but with much simpler semantics, with the ability to batch verify, and without the insane special cases in the validation cases.
 
 I think that's the last taproot slide.
 
 <https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/>
 
-# Revocations and SIGHASH\_NOINPUT
+# Revocations and SIGHASH_NOINPUT
 
 Let's double back a little bit to lightning.
 
 The taproot talk was about how can we get rid of the hash preimages in lightning. There's another issue in lightning, which is the revocation transactions. There are basically, every time you do a state update, there's an extra transactions that both parties need to hold forever. If you're doing watchtowers, then the watchtowers need to keep all this evergrowing state.
 
-One proposal for bitcoin that would eliminate this complexity is this thing called SIGHASH\_NOINPUT and basically what it allows you to do is create a signature that spends some coins that is valid for spending any UTXO any coin that has the same public key. Then there's a proposal for lightning called eltoo. I think there might be other proposals that use this. It uses a feature of script to restrict this a little bit. The idea is that when you update your state in a payment channel, you createt a new transaction using SIGHASH\_NOINPUT flag, and this new transaction is allowed to undo the old state and also every state that came before it. So you're still doing these updates, but each update accomplishes the work of every previous revocation or update. You have state to keep around, but it's just one transaction and it scales with O(1) instead of O(n). This eliminates one of the only scalability issues in lightning that is asymptotically really bad.
+One proposal for bitcoin that would eliminate this complexity is this thing called SIGHASH_NOINPUT and basically what it allows you to do is create a signature that spends some coins that is valid for spending any UTXO any coin that has the same public key. Then there's a proposal for lightning called eltoo. I think there might be other proposals that use this. It uses a feature of script to restrict this a little bit. The idea is that when you update your state in a payment channel, you createt a new transaction using SIGHASH_NOINPUT flag, and this new transaction is allowed to undo the old state and also every state that came before it. So you're still doing these updates, but each update accomplishes the work of every previous revocation or update. You have state to keep around, but it's just one transaction and it scales with O(1) instead of O(n). This eliminates one of the only scalability issues in lightning that is asymptotically really bad.
 
-The lightning people are really excited about this. They are asking for SIGHASH\_NOINPUT if we do tapscript or taproot. Unfortunately people are scared of NOINPUT. It's very dangerous to have the ability to produce a signature for every single output with your key in it. Naively, anyone can send coins to your old address, and then use that NOINPUT signature to scoop those coins away from you. You would need a really badly designed wallet using NOINPUT, and people worry that these wallets would get created and users would be harmed. There's been a lot of discussion about how to make SIGHASH\_NOINPUT safe. Hopefully this will get into bitcoin at the same time that taproot does. There's a lot of design iteration discussion on SIGHASH\_NOINPUT that didn't need to happen for all the other features of taproot. But this is a really important layer 1 update.
+The lightning people are really excited about this. They are asking for SIGHASH_NOINPUT if we do tapscript or taproot. Unfortunately people are scared of NOINPUT. It's very dangerous to have the ability to produce a signature for every single output with your key in it. Naively, anyone can send coins to your old address, and then use that NOINPUT signature to scoop those coins away from you. You would need a really badly designed wallet using NOINPUT, and people worry that these wallets would get created and users would be harmed. There's been a lot of discussion about how to make SIGHASH_NOINPUT safe. Hopefully this will get into bitcoin at the same time that taproot does. There's a lot of design iteration discussion on SIGHASH_NOINPUT that didn't need to happen for all the other features of taproot. But this is a really important layer 1 update.
 
 Q: Doesn't this make it harder to reason about the security of bitcoin or bitcoin script?
 
 A: Yeah. I do. The existence of sighash noinput makes it harder in general to think about bitcoin script. ... With noinput, maybe somebody tricks me and asks me to do a blind signature. It turns out this blind signature is a NOINPUT signature, and now they can get all the money at once. This is the kind of problem that complicates the script model. I have a solution to this somewhere on the mailing list somewhere. It's extra thought, extra design work. Chaperone signatures...
 
-Initially I was opposed to SIGHASH\_NOINPUT because I thought it would break a use case for various privacy tech. The fact that it doesn't break it, is not trivial. NOINPUT is difficult. Let's move on.
+Initially I was opposed to SIGHASH_NOINPUT because I thought it would break a use case for various privacy tech. The fact that it doesn't break it, is not trivial. NOINPUT is difficult. Let's move on.
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/sighash-noinput/>
 
@@ -331,5 +331,3 @@ Unfortunately, there are so many ways to approach proof-of-stake paradigms that 
 # Multiple blockchains
 
 For scalability, you can have independent blockchains like bitcoin and litecoin. You don't need sharding or anything. As a dogecoiner, I don't need to care about what happens on the bitcoin blockchain. If we use cross-chain lightning, I receive doge not bitcoin, and that's scalability. We can have on-chain on multiple chains, and then each chain has a separate security domain and a separate chain and their own problems.
-
-

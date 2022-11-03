@@ -1,8 +1,9 @@
 ---
 title: Abstract Thinking About Consensus Systems
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['consensus']
+categories: ["conference"]
+tags: ["consensus"]
+speakers: ["Luke Dashjr"]
 ---
 
 Abstract thinking about consensus systems
@@ -112,7 +113,3 @@ It therefore replaced with a byte limit with an abstract "weight limit".
 The weight limit was four times larger, and data serialised for old nodes would count toward the new limit as four weight units per byte, thus avoiding violating their enforced size limit.
 But instead of counting signatures at the same weight, since the “witness” field is new, we can count it at a lower weight.
 Existing fields, on the other hand, can only be counted at a greater relative weight in a softfork.
-
-
-
-

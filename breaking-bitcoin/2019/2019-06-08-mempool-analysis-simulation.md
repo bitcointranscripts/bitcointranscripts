@@ -1,9 +1,9 @@
 ---
 title: Mempool Analysis & Simulation (2019-06-08)
 transcript_by: Bryan Bishop
-speaker: Kalle Alm
-categories: ['conference']
-tags: ['mempool']
+speakers: Kalle Alm
+categories: ["conference"]
+tags: ["mempool"]
 ---
 
 Mempool analysis and simulation

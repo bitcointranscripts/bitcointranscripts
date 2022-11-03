@@ -1,13 +1,14 @@
 ---
 title: Secure Protocols Bip Taproot
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['consensus', 'taproot', 'lightning', 'wallet', 'sidechains']
+categories: ["conference"]
+tags: ["consensus", "taproot", "lightning", "wallet", "sidechains"]
+speakers: ["Jonas Nick"]
 ---
 
-Secure protocols on BIP-taproot
+# Secure protocols on BIP-taproot
 
-Jonas Nick
+Name: Jonas Nick
 
 36C7 1A37 C9D9 88BD E825 08D9 B1A7 0E4F 8DCD 0366
 
@@ -63,7 +64,7 @@ The alternative is to create a MuSig key aggregation between the hardware wallet
 
 # Tweak add
 
-If you want to do more interesting things with bip-taproot, you also have to support this other pay-to-contract construction or "tweak add". This takes your internal public key and a merkle root and it computes this taproot output key. So mathematically what this is that if your internal public key is P, it's fairly straightforward, you just add the hash of (prefix, P, root) multiplied by G the generator. You then receive your new taproot output point, Q. In libsecp, this is just a function called \_ec\_pubkey\_tweak\_add. The tweak is the hash. But there's some problems with fungibility...
+If you want to do more interesting things with bip-taproot, you also have to support this other pay-to-contract construction or "tweak add". This takes your internal public key and a merkle root and it computes this taproot output key. So mathematically what this is that if your internal public key is P, it's fairly straightforward, you just add the hash of (prefix, P, root) multiplied by G the generator. You then receive your new taproot output point, Q. In libsecp, this is just a function called \_ec_pubkey_tweak_add. The tweak is the hash. But there's some problems with fungibility...
 
 # Tweak add fungibility
 

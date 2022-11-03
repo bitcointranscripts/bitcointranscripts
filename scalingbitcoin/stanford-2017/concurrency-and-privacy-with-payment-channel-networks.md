@@ -1,13 +1,14 @@
 ---
 title: Concurrency And Privacy With Payment Channel Networks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy', 'scalability', 'fees']
+categories: ["conference"]
+tags: ["privacy", "scalability", "fees"]
+speakers: ["Pedro Moreno-Sanchez"]
 ---
 
-Concurrency and Privacy with Payment-Channel Networks
+# Concurrency and Privacy with Payment-Channel Networks
 
-Pedro Moreno-Sanchez
+Name: Pedro Moreno-Sanchez
 
 paper: <https://eprint.iacr.org/2017/820.pdf>
 
@@ -39,10 +40,9 @@ We considered two security properites. One is called balance security. The main 
 
 From the privacy point of view, we considered two privacy properties. The first one is that off-path value privacy. If someone was not participating in the path, then it means that... if the attacker was in the path, then they know how much was routed in the payment. Anothe rproperty we are after is that on-path relationship anonymity. If the attacker is in the path, then they should not be able to figure out which actual sender sent the payment. So now we have a set of senders, a set of receivers, all of them are spending, you should not be able to figur eout which ones are paying to which.
 
-
 # Privacy in PCNs
 
-All of the payments happen off-chain. What are the privacy issues then? The problem is that if you have these conditional payments, you can use the same conditions on each of the hops. By looking at the condition, you can figure out which channels are being used. In light of this problem, we are trying to propose a solution to solve this problem.  Our solution is Fulgor: based on multi-hop HTLC method. We want to have standard hash time-lock contract, and take all of the other cryptographic operations and they must be off-chain. We are fully compatible with the current Bitcoin script.
+All of the payments happen off-chain. What are the privacy issues then? The problem is that if you have these conditional payments, you can use the same conditions on each of the hops. By looking at the condition, you can figure out which channels are being used. In light of this problem, we are trying to propose a solution to solve this problem. Our solution is Fulgor: based on multi-hop HTLC method. We want to have standard hash time-lock contract, and take all of the other cryptographic operations and they must be off-chain. We are fully compatible with the current Bitcoin script.
 
 The solution we propose is Fulgor. It's multi-hop HTLCs.
 
@@ -103,11 +103,3 @@ Got time for one more really fast question.
 Q: Can you get the proof size down?
 
 A: Ah definitely. We have talked with the authors. They are working on a better solution .We are looking at testing that. Their proofs are smaller now. With better implementations, we can go lower in proof size. One last thing, our implementation needs a non-interactive zero knowledge. If tomorrow there is a better solution with slower proofs but still has the same properties, we can still use it.
-
-
-
-
-
-
-
-

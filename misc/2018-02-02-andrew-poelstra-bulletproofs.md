@@ -1,13 +1,14 @@
 ---
 title: Andrew Poelstra - Bulletproofs (2018-02-02)
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['consensus', 'zero-knowledge', 'cryptography']
+categories: ["meetup"]
+tags: ["consensus", "zero-knowledge", "cryptography"]
+speakers: ["Andrew Poelstra"]
 ---
 
 Bulletproofs
 
-Andrew Poelstra (andytoshi)
+Name: Andrew Poelstra (andytoshi)
 
 2018-02-02
 
@@ -97,7 +98,7 @@ On the other hand, <a href="https://eprint.iacr.org/2016/163.pdf">zk-boo</a> is 
 
 Versus bulletproofs, which like SNARKs, are very small in size, only a couple kilobytes in many of these contexts, although not always so small--- eventually it becomes as large as you want, they grow logarithmically in size. If you had a circuit with 2 to the million gates, I mean you couldn't fit something that big in any part of the observable universe, but in principle you could do it and then you would get a megabyte bulletproof. SNARKs, on the other hand, are always 200 bytes, no matter how far beyond the limits of the universe you want to imagine. They are small. For rangeproofs, they are less than a kilobyte, and for the kinds of circuits I've been looking at, they are 1 to 2 kilobytes. The verification time, for at least small problems, is reasonably fast. For rangeproofs, it grows very slowly, and the numbers are practical to verify, for rangeproofs and hashes. SNARKs are always constant verification time like 5-7 milliseconds. I haven't benchmarked on modern hardware. The original SNARK paper was in 2013, they used a 2 GHz system or whatever, and they came out at about 10.5 milliseconds. zk-boo has comparable verification time, has large proofs, and zk-boo doesn't support pedersen commitments. So that's where we fit-- specifically in the context of confidential transactions and elliptic curve keys, we're the fastest smallest thing around.
 
-What do these numbers look like for circuits? The classic benchmark is sha256.... familiar with, this is the kind of thing where zk-boo shines, it's described in terms of a whole bunch of boolean logic gates, it's all boolean arithmetic. But for arithmetic circuits, sha256 is kind of a pain to implement, it's going to be 20,000-30,000 gates. .... For something like bulletproofs, STARKs, or SNARKs, it's not the best hash to use. Instead, I am going to use a pedersen hash, which is similar to zcash's jugjug curve hash. Instead, you take your secret inputs, you break it up into bits, to each bit you assign some random curve point, and you have a running sum. Whenever you have a 1 bit, you add a corresponding curve point. Your hash is the sum of the random curve points. I have implemented htis for 768 bits, I ran this on my laptop, it took about 1.25 seconds to prove a preimage of this hash. I used 768 bits instead of 512 bits because, in my implementation it's just as fast to verify from 512 bits to 768 bits so I just did as a high as I can- in the future, it will be faster for 512 bits. It took me 1.3 seconds to prove, verification is 72 milliseconds which is not great, 72 milliseconds for one hash- that's not great, you need multiple hashes and so on. Using batch verification trick that I showed you for rangeproofs, this  applies to circuits too, and my pedersen hashes are only 5 ms per additional hash. 72 milliseconds for the first one, and the rest will be just 5 milliseconds for each one. As I mentioned earlier, the size of both of these proofs is about 2 kb. The pedersen hash one is under 2, and the sha256 one is....
+What do these numbers look like for circuits? The classic benchmark is sha256.... familiar with, this is the kind of thing where zk-boo shines, it's described in terms of a whole bunch of boolean logic gates, it's all boolean arithmetic. But for arithmetic circuits, sha256 is kind of a pain to implement, it's going to be 20,000-30,000 gates. .... For something like bulletproofs, STARKs, or SNARKs, it's not the best hash to use. Instead, I am going to use a pedersen hash, which is similar to zcash's jugjug curve hash. Instead, you take your secret inputs, you break it up into bits, to each bit you assign some random curve point, and you have a running sum. Whenever you have a 1 bit, you add a corresponding curve point. Your hash is the sum of the random curve points. I have implemented htis for 768 bits, I ran this on my laptop, it took about 1.25 seconds to prove a preimage of this hash. I used 768 bits instead of 512 bits because, in my implementation it's just as fast to verify from 512 bits to 768 bits so I just did as a high as I can- in the future, it will be faster for 512 bits. It took me 1.3 seconds to prove, verification is 72 milliseconds which is not great, 72 milliseconds for one hash- that's not great, you need multiple hashes and so on. Using batch verification trick that I showed you for rangeproofs, this applies to circuits too, and my pedersen hashes are only 5 ms per additional hash. 72 milliseconds for the first one, and the rest will be just 5 milliseconds for each one. As I mentioned earlier, the size of both of these proofs is about 2 kb. The pedersen hash one is under 2, and the sha256 one is....
 
 # Other applications of bulletproofs
 

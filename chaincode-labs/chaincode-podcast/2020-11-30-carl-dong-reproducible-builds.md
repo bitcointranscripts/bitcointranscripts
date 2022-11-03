@@ -1,9 +1,9 @@
 ---
 title: Carl Dong - Reproducible Builds (2020-11-30)
 transcript_by: Michael Folkson
-speaker: Carl Dong
-categories: ['podcast']
-tag: ['build systems']
+speakers: ["Carl Dong"]
+categories: ["podcast"]
+tag: ["build systems"]
 ---
 
 Name: Carl Dong
@@ -44,7 +44,7 @@ Guix: https://guix.gnu.org/
 
 AJ: Start from the top. Tell us about reproducible builds.
 
-CD: After I gave that talk last year about Guix I’ve been working a lot on that. Mainly this year it has been a lot of getting things that were barely working into things that are nicely working. We can start with context I guess. If you download a piece of software from the Bitcoin Core website or from GitHub or whatever it is an opaque blob that could contain any code. Technically bitcoincore.com (not the trusted site for Bitcoin Core, that is bitcoincore.org) could serve up a binary that steals all your Bitcoin. How do people know that what they downloaded is what is intended or what is in the codebase or something that they have reviewed? That is why you need reproducible builds so that multiple people can run the build and see that they got the same thing. Nobody inserted something malicious into the binary. 
+CD: After I gave that talk last year about Guix I’ve been working a lot on that. Mainly this year it has been a lot of getting things that were barely working into things that are nicely working. We can start with context I guess. If you download a piece of software from the Bitcoin Core website or from GitHub or whatever it is an opaque blob that could contain any code. Technically bitcoincore.com (not the trusted site for Bitcoin Core, that is bitcoincore.org) could serve up a binary that steals all your Bitcoin. How do people know that what they downloaded is what is intended or what is in the codebase or something that they have reviewed? That is why you need reproducible builds so that multiple people can run the build and see that they got the same thing. Nobody inserted something malicious into the binary.
 
 AJ: How do they make that comparison?
 
@@ -78,7 +78,7 @@ M: You said that Bitcoin was the first project to use Gitian. Is Gitian a Bitcoi
 
 CD: I think so.
 
-AJ: The author, I see devrandom. He’s a Bitcoin contributor. 
+AJ: The author, I see devrandom. He’s a Bitcoin contributor.
 
 M: So Gitian wasn’t something that was there before Bitcoin wanted to use it.
 
@@ -98,7 +98,7 @@ M: Upgrading systems and architectures
 
 # Reproducibility bug in GCC
 
-CD: Reproducibly, portably, nicely is another thing. This arises out of the fact that build systems, another word I guess for a build system is a toolchain. It is literally what it is. It is a chain of tools that are supposed to work together nicely. Unfortunately they always overpromise and underdeliver. Tools say “We support this and that” and then they actually support this set of features on the code path that is tested most. On all the other code paths nothing works properly. It is a mess. I had to go into a lot of this. I remember clearly when I was doing Windows builds the hardest thing was to get the builds to be reproducible. We had the builds working but we had these massive diffs between the outputs of the bitcoind’s that were built and we had no idea where they were coming from. We took a look inside of the binaries but they were just a mess. The approach that I took was look at where it is in the binary and sometimes you can figure it out. Sometimes you can’t. What you have to do is compare to intermediate byproducts of the build system. For example if it is an archive file, archive files are made by archiving all of the object files. If the archived files are different across two builds let’s look at the object files. Are they different? All of these things play into whether it is reproducible or not. The end result of doing Windows builds was that we found that GCC8 had a reproducibility bug in how it built [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/faq.html). libstdc++ is the standard C++ library with things like vectors and all of that. It is shipped inside GCC. When you build GCC it will build libstdc++ because we configure GCC to enable C++ as a language. `libstdc++.a` as in the archive file was non-reproducible but all the object files that make up this archive file were reproducible. It was actually the ordering of these object files inside this archive file that was non-reproducible. If you think about an archive file as multiple object files. When you put objects in an archive file sometimes some build scripts will use `find`. They will do find all `.o` files and put them in an archive file. That is actually wrong. That is non-reproducible because when you do `find` the order of objects that find returns is dependent on whatever the filesystem wants. They can return whatever the filesystem wants to return and so you have to sort the output of that. 
+CD: Reproducibly, portably, nicely is another thing. This arises out of the fact that build systems, another word I guess for a build system is a toolchain. It is literally what it is. It is a chain of tools that are supposed to work together nicely. Unfortunately they always overpromise and underdeliver. Tools say “We support this and that” and then they actually support this set of features on the code path that is tested most. On all the other code paths nothing works properly. It is a mess. I had to go into a lot of this. I remember clearly when I was doing Windows builds the hardest thing was to get the builds to be reproducible. We had the builds working but we had these massive diffs between the outputs of the bitcoind’s that were built and we had no idea where they were coming from. We took a look inside of the binaries but they were just a mess. The approach that I took was look at where it is in the binary and sometimes you can figure it out. Sometimes you can’t. What you have to do is compare to intermediate byproducts of the build system. For example if it is an archive file, archive files are made by archiving all of the object files. If the archived files are different across two builds let’s look at the object files. Are they different? All of these things play into whether it is reproducible or not. The end result of doing Windows builds was that we found that GCC8 had a reproducibility bug in how it built [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/faq.html). libstdc++ is the standard C++ library with things like vectors and all of that. It is shipped inside GCC. When you build GCC it will build libstdc++ because we configure GCC to enable C++ as a language. `libstdc++.a` as in the archive file was non-reproducible but all the object files that make up this archive file were reproducible. It was actually the ordering of these object files inside this archive file that was non-reproducible. If you think about an archive file as multiple object files. When you put objects in an archive file sometimes some build scripts will use `find`. They will do find all `.o` files and put them in an archive file. That is actually wrong. That is non-reproducible because when you do `find` the order of objects that find returns is dependent on whatever the filesystem wants. They can return whatever the filesystem wants to return and so you have to sort the output of that.
 
 M: You went into GCC8 and added a sort to the building of C++ libstd?
 
@@ -118,7 +118,7 @@ CD: There are so many things I could talk about. With the Windows GUIX builds mo
 
 M: It sounds like there is a broader movement of more projects caring about that. By upstreaming stuff and collecting it on reproduciblebuilds.org, collects this information. You said it only affects up to GCC8 so after GCC8 other versions were reproducible?
 
-CD: That bug from before, it is even trickier than I described. After GCC8, in GCC9 they fixed this in GCC9’s own version of libtool. When I was doing this at first I didn’t realize that they had already fixed it because this was fixed upstream in libtool in version 2.7.7b. In GCC when they pulled it into their codebase they pulled 2.7.7a and then fixed it locally without pulling the change from upstream. It was just a mess. People vendoring different stuff and getting it fixed. That is all described on the reproducible builds wiki entry that I put in there just in case it helps somebody in the future. That was a big thing. 
+CD: That bug from before, it is even trickier than I described. After GCC8, in GCC9 they fixed this in GCC9’s own version of libtool. When I was doing this at first I didn’t realize that they had already fixed it because this was fixed upstream in libtool in version 2.7.7b. In GCC when they pulled it into their codebase they pulled 2.7.7a and then fixed it locally without pulling the change from upstream. It was just a mess. People vendoring different stuff and getting it fixed. That is all described on the reproducible builds wiki entry that I put in there just in case it helps somebody in the future. That was a big thing.
 
 # Look at what Debian does
 
@@ -142,13 +142,13 @@ CD: This also ties back to another thing that I wanted to talk about which was w
 
 AJ: Those hashes. How are they produced? Is this just a hash over the binary?
 
-CD: Yes. They are just a very simple SHA256sum over the binary. 
+CD: Yes. They are just a very simple SHA256sum over the binary.
 
 # Mac OS X Toolchain & SDK and cross-compiling
 
 AJ: Do you want to talk about your Mac toolchain?
 
-CD: Yes for sure. Our Mac OS build system is mostly two things: a toolchain and a SDK. Let me back up and give you some context here. It is definitely not supported to cross compile for Mac OS from Linux or from any other operating system. 
+CD: Yes for sure. Our Mac OS build system is mostly two things: a toolchain and a SDK. Let me back up and give you some context here. It is definitely not supported to cross compile for Mac OS from Linux or from any other operating system.
 
 AJ: That’s how Steve Jobs wanted it.
 
@@ -168,7 +168,7 @@ M: I think I get the point that the reproducible build helps maintainers to come
 
 CD: Exactly. The fact that this is reproducible in the other sense, as in reproducible outside of this group, means that if your level of trust shifts a little bit towards “I’m not entirely sure that this group of maintainers is not collaborating” you can go check them yourself.
 
-M: Even if you don’t program or don’t want to go through the codebase yourself you could pay someone to review what exactly is in the release tag and to do the reproducible build. Basically do an audit. 
+M: Even if you don’t program or don’t want to go through the codebase yourself you could pay someone to review what exactly is in the release tag and to do the reproducible build. Basically do an audit.
 
 # Part 2
 
@@ -182,7 +182,7 @@ https://github.com/bitcoin/bitcoin/pull/16175
 
 AJ: Can you talk about that PR a little bit and what it would do?
 
-CD: Basically right now when we process new blocks from a peer we block everything. That is bad in software that is supposed to be performant and also it is bad for embedded systems or systems with less processing power. The basic gist of it is that asynchronous ProcessNewBlock allows us to be able to process new blocks somewhat asynchronously. I looked into that a little bit. One of the things that I had talked about with Matt and Cory a few years ago was very interesting, which was modularizing our consensus engine. Capturing what our consensus engine is right now, as ugly as it is with warts and all, and seeing if we can perhaps physically separate it from the rest of the codebase. Obviously those are much future steps. 
+CD: Basically right now when we process new blocks from a peer we block everything. That is bad in software that is supposed to be performant and also it is bad for embedded systems or systems with less processing power. The basic gist of it is that asynchronous ProcessNewBlock allows us to be able to process new blocks somewhat asynchronously. I looked into that a little bit. One of the things that I had talked about with Matt and Cory a few years ago was very interesting, which was modularizing our consensus engine. Capturing what our consensus engine is right now, as ugly as it is with warts and all, and seeing if we can perhaps physically separate it from the rest of the codebase. Obviously those are much future steps.
 
 # Carl’s De-globalize ChainstateManager PR
 
@@ -192,9 +192,9 @@ PR review club on this PR: https://bitcoincore.reviews/20158
 
 CD: Right now one of the major problems with the consensus engine is that we have so much global mutable state. Having global mutable state is really bad because when you are looking at a function you consider its inputs to just be its parameters and what class it is a member of but you don’t consider that global mutable state can influence the execution of functions and macros greatly. For something as important as our consensus code we should probably modularize it so that it relies on less and less global mutable state and be able to work nicely. After we have modularized it perhaps we can separate it out. Perhaps into a library like people said about libconsensus a few years ago. Perhaps do something else. That is the first step. This is why recently I’ve been working on this PR to de-globalize a class called ChainstateManager. ChainstateManager was introduced as this manager class that manages multiple chain states. Basically chain states encapsulate our view of a chain and the UTXO set and blocks.
 
-M: For example if there are stale blocks or two competing chain tips, they would have multiple chain states. 
+M: For example if there are stale blocks or two competing chain tips, they would have multiple chain states.
 
-CD: That would be one chain state, one chain but two block trees. I think that is what it is. I will explain why there might be multiple chain states. We have multiple chain states in the case of [assumeutxo](https://github.com/jamesob/assumeutxo-docs/tree/2019-04-proposal/proposal). ChainstateManager was introduced for assumeutxo where we will have multiple chain states that are progressing. The active one may switch between one or the other. That’s why we have a chain state. If you look at what our consensus engine encompasses, it encompasses ChainstateManager and all of the objects that it owns and references. That is what I am trying to encapsulate and trying to de-globalize. Because before we had this one `gchainman` that was referenced from everywhere in the codebase. That was getting to be a mess. Also one of the things that is interesting for people who are into the nitty gritty of C++ is that global variables cannot be instantiated with things that are determined after main starts. That is why we have had some very weird ways to initialize these global variables where we initialize an empty one globally and then in main we want to make sure as soon as possible to initialize it with actual contents. There is like a three, four phase initialization. We also initialize it differently between bitcoind and bitcoin-qt and our test code. The combination of having a three, four phase initialization and those means you can have discrepancies between the test code and the main code when you are initializing stuff. It leads to a lot of bugs that are very hard to reason about. 
+CD: That would be one chain state, one chain but two block trees. I think that is what it is. I will explain why there might be multiple chain states. We have multiple chain states in the case of [assumeutxo](https://github.com/jamesob/assumeutxo-docs/tree/2019-04-proposal/proposal). ChainstateManager was introduced for assumeutxo where we will have multiple chain states that are progressing. The active one may switch between one or the other. That’s why we have a chain state. If you look at what our consensus engine encompasses, it encompasses ChainstateManager and all of the objects that it owns and references. That is what I am trying to encapsulate and trying to de-globalize. Because before we had this one `gchainman` that was referenced from everywhere in the codebase. That was getting to be a mess. Also one of the things that is interesting for people who are into the nitty gritty of C++ is that global variables cannot be instantiated with things that are determined after main starts. That is why we have had some very weird ways to initialize these global variables where we initialize an empty one globally and then in main we want to make sure as soon as possible to initialize it with actual contents. There is like a three, four phase initialization. We also initialize it differently between bitcoind and bitcoin-qt and our test code. The combination of having a three, four phase initialization and those means you can have discrepancies between the test code and the main code when you are initializing stuff. It leads to a lot of bugs that are very hard to reason about.
 
 M: Because it is so hard to reproduce.
 
@@ -212,7 +212,7 @@ CD: It comes from the need to not say “consensus critical code.” Because peo
 
 AJ: It was in [0.8](https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki)
 
-CD: Exactly. That’s for sure. 
+CD: Exactly. That’s for sure.
 
 AJ: The reason that is funny?
 
@@ -234,13 +234,13 @@ AJ: Not want to, you have to.
 
 CD: Exactly. You have to replicate the bugs. This is very far off but if someday, maybe in the next ten years, we get to a place where we have a library that other applications can pull in and get a consensus engine that matches exactly with Bitcoin Core’s, then they can implement alternative implementations of Bitcoin without fear of being out of sync with the main chain. They can implement alternative implementations with different policies, mempool policies, different priorities.
 
-M: One of the things that were introduced by previous alternative implementations was that you could serve unconfirmed transactions or serve parts of the UTXO set. Or think about block explorers. Bitcoin Core does not have a full transaction index by default. You can start it with `txindex` but then you still don’t have address balances for example. 
+M: One of the things that were introduced by previous alternative implementations was that you could serve unconfirmed transactions or serve parts of the UTXO set. Or think about block explorers. Bitcoin Core does not have a full transaction index by default. You can start it with `txindex` but then you still don’t have address balances for example.
 
-CD: Exactly. This touches on one of the things that I felt was very compelling to me when I thought more about why I want to do this. It is a technical solution to a somewhat social problem. It can’t be that people try to cram all of the features that they want into Bitcoin Core. That is unmaintainable and not what we want. We don’t want a hundred different indexes to serve every single need. But if people have drastically different ways that they want to implement their node, having a library is so much more useful than telling them to fork the codebase. Forking the codebase means a major rebase every few years, that is not a practical thing to do. 
+CD: Exactly. This touches on one of the things that I felt was very compelling to me when I thought more about why I want to do this. It is a technical solution to a somewhat social problem. It can’t be that people try to cram all of the features that they want into Bitcoin Core. That is unmaintainable and not what we want. We don’t want a hundred different indexes to serve every single need. But if people have drastically different ways that they want to implement their node, having a library is so much more useful than telling them to fork the codebase. Forking the codebase means a major rebase every few years, that is not a practical thing to do.
 
-M: And you inherit all the design decisions. You have to move away from that. Bitcoin Core’s codebase is rather quirky. 
+M: And you inherit all the design decisions. You have to move away from that. Bitcoin Core’s codebase is rather quirky.
 
-CD: For sure. 
+CD: For sure.
 
 AJ: Another lesson of why not to put a proof of concept into production.
 
@@ -255,4 +255,3 @@ M: Does a full node need to have a wallet?
 CD: Maybe not.
 
 AJ: It certainly doesn’t need a GUI. Thank you for joining us. We have been trying for months to get you on. Appreciate the conversation.
-

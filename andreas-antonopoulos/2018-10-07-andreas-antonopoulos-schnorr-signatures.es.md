@@ -2,16 +2,16 @@
 title: Andreas Antonopoulos - Firmas Schnorr (2018-10-07)
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-speaker: Andreas Antonopoulos
-categories: ['podcast']
-tag: ['schnorr']
+speakers: ["Andreas Antonopoulos"]
+categories: ["podcast"]
+tag: ["schnorr"]
 ---
 
 Andreas Antonopoulos
 
-LTB Episodio 378 - El Petro dentro de Venezuela y las firmas Schnorr 
+LTB Episodio 378 - El Petro dentro de Venezuela y las firmas Schnorr
 
-# Firmas Schnorr 
+# Firmas Schnorr
 
 Actualmente utilizamos el algoritmo de firma digital de curva elíptica (ECDSA), que es una forma específica de realizar firmas digitales con curvas elípticas, pero no la única. Las firmas Schnorr tienen algunas características únicas que las hacen mejores en muchos aspectos que el algoritmo ECDSA que usamos actualmente en Bitcoin.
 
@@ -38,5 +38,3 @@ Se puede agregar un número infinito de firmas hasta llegar a una. Hay alguna re
 Actualmente nos encontramos en la cuarta generación de multisig y las tres anteriores todavía están muy presentes. La primera generación de multisig es lo que se llama naked multisig que es multisig sin pay-to-script-hash. Es multisig sin una dirección '3', pero donde se pone todo el script en el UTXO. Eso es muy raro hoy en día, probablemente no lo verás. Luego tienes el multisig envuelto en P2SH que es lo que la mayoría de nosotros usamos, donde la dirección del multisig comienza con un '3'. Ese es el que más conocemos. La mayoría de la gente no se ha dado cuenta de que ahora hay una nueva forma de multisig que es el multisig con una dirección SegWIt que es el multisig pay-to-witness-script-hash que es una dirección 'bc1' con una nueva dirección estilo SegWit. Esto no está muy extendido porque SegWit es tan nuevo que la gente todavía no ha hecho multisig de SegWit pero está empezando a aparecer ahora en algunas carteras. Schnorr multisig sería la cuarta iteración y todavía tienes las tres anteriores en funcionamiento. Es una ventana rodante.
 
 Estoy seguro de que habrá reacciones en contra de esto, no hay tal cosa como una actualización no controvertida del protocolo de Bitcoin. Por supuesto, se trata de una actualización no obligatoria y compatible con el pasado, de modo que no hay que validar o utilizar esta función si no se quiere, pero eso no quita que sea controvertida. En un mundo en el que las vacunas son controvertidas, no creo que veamos nunca una mejora de Bitcoin que no lo sea.
-
-

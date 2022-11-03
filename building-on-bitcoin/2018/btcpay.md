@@ -1,13 +1,14 @@
 ---
 title: Btcpay
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'privacy', 'wallet']
+categories: ["conference"]
+tags: ["security", "privacy", "wallet"]
+speakers: ["Nicolas Dorier"]
 ---
 
 How to make everyone run their own full node
 
-Nicolas Dorier
+Name: Nicolas Dorier
 
 Building on Bitcoin, 2018
 
@@ -45,7 +46,7 @@ A mobile app have good UX but is occassionally connected. Hosting a server has b
 
 A lot of good tools in bitcoin but they are difficult to integrate. I come from Windows where there's giant software that does everything and we just go there. Bitcoin Core was like that originally. As time passes, and as bitcoin has become more focused on the linux community, much of the developers do their own tools that do one specific thing and then the community pipes stuff together to make new things work. It's good but you spend lots of time trying to stick everything together with scotch tape. It's not perfect.
 
-You can try to do everything in software, or you can just glue two phones together and put it on the phone.  I am trying to glue multiple tools together.
+You can try to do everything in software, or you can just glue two phones together and put it on the phone. I am trying to glue multiple tools together.
 
 When the first release of btcpay started, I tried to use docker. Iused postgresql, nginx, woocommerce, nbxplorer, and Bitcoin Core. I used a btcpay plugino on woocommerce. Then Iused letsencrypt-nginx-proxy-companion nginx-gen, to Let's Encrypt.
 
@@ -53,7 +54,7 @@ Since btcpay uses the same API as bitpay, I was able to fork a lot of bitpay plu
 
 NBXplorer was made at DG Labs originally for Elements. I asked them if it could be open-source and they said yes. It's a simple REST API. It doesn't index, it just tracks your own key.
 
-I am using docker-compose to facilitate this. My second task was to integrate lightning, including c-lightning and lightning charge. I am also working on lnd integration. Zap Wallet is a good desktop wallet for lightning. 
+I am using docker-compose to facilitate this. My second task was to integrate lightning, including c-lightning and lightning charge. I am also working on lnd integration. Zap Wallet is a good desktop wallet for lightning.
 
 One downside is that you can't run lightning on a pruned bitcoin node. And also, docker installation on custom hosting is like $10/mo. If we used pruned nodes with lightning then it could bring the cost down to $5/month. And the downside is that the user needs to search for the hosts and run btcpay-install.sh to install and use this btcpay replacement.
 
@@ -61,7 +62,7 @@ I also setup a deploy to azure template. The downside is that this is expensive,
 
 Has a tedious deployment, but this could work with raspberry pi.
 
-It's more user friendly to run your own user node. btcpay will expose a block explorer  to you. You don't need your phone to sync to the blockchain network. It's better to have your full node on a server.
+It's more user friendly to run your own user node. btcpay will expose a block explorer to you. You don't need your phone to sync to the blockchain network. It's better to have your full node on a server.
 
 I am planning to do exchange integration. I think this is actually the most boring thing. When somebody pays you, ... with bitpay, you have like the payment processing, and then the... we can think about this where the payment processor stays open source and then integrates with exchanges. Imagine there's a small reserve on their exchange, then somebodgy pays them, and then immediately the merchant can sell the BTC on the exchange, and that can be used to replenish the reserve. So merchants would be able to hedge against the volatility of bitcoin by using their own full node.
 

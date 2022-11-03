@@ -1,11 +1,12 @@
 ---
 title: Why Miners Will Not Voluntarily Individually Produce Smaller Blocks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'mining', 'incentives', 'fees']
+categories: ["conference"]
+tags: ["security", "mining", "incentives", "fees"]
+speakers: ["Jonathan Bier"]
 ---
 
-Jonathan Bier
+Name: Jonathan Bier
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/2_security_and_incentives_3_bier.pdf>
 
@@ -27,9 +28,9 @@ This is probably fine in most commodity markets. But in bitcoin, we always need 
 
 If the miners care more about long-term interests of the system, then maybe they wont include big blocks. We need to be aware of how miner incentives change. We need to build a robust economic system across the system. At the moment, everyone is collaborating. There is a risk that this will change in the future. Because of this risk, we need to realize that people could become very selfish and care only about the next block.
 
-Now I am going to talk about bip100 and why it might solve some of these issues. Under bip100, miners must vote for the block size they want. Rational miners should vote to maximize their revenue. Some might care about long-term revenue, and some about short-term revenue. Revenue is block reward * exchange rate + transaction volume * average fee * exchange rate. Miners would vote in a balanced way, so at the moment people are debating the relative importance of the fee level or the transaction level or exchange rate, bip100 would be where miners dynamically vote in a balanced way to reflect these competing priorities. They will make their decision based on expected elasticity of their supply curve. The supply curve would be a straight curve, and miners would vote to move it back left or right, and the ywould try to maximize their fee revenue. This is quite contentious because most people don't like this straight vertical line, because it implies that the ... whereas other people think there's always excess capacity. I don't think we should make a decision now. What we need to do is just keep our options open. Don't adopt a scaling proposal that locks us into constantly increasing block size. I don't think we have enough information now to find a right or wrong answer, we should keep an open mind, or adopt a proposal that allows us to go in either direction.
+Now I am going to talk about bip100 and why it might solve some of these issues. Under bip100, miners must vote for the block size they want. Rational miners should vote to maximize their revenue. Some might care about long-term revenue, and some about short-term revenue. Revenue is block reward _ exchange rate + transaction volume _ average fee \* exchange rate. Miners would vote in a balanced way, so at the moment people are debating the relative importance of the fee level or the transaction level or exchange rate, bip100 would be where miners dynamically vote in a balanced way to reflect these competing priorities. They will make their decision based on expected elasticity of their supply curve. The supply curve would be a straight curve, and miners would vote to move it back left or right, and the ywould try to maximize their fee revenue. This is quite contentious because most people don't like this straight vertical line, because it implies that the ... whereas other people think there's always excess capacity. I don't think we should make a decision now. What we need to do is just keep our options open. Don't adopt a scaling proposal that locks us into constantly increasing block size. I don't think we have enough information now to find a right or wrong answer, we should keep an open mind, or adopt a proposal that allows us to go in either direction.
 
-A common criticism of bip100 is that bip100 is a cartel. I admit it does have characteristics similar to a cartel. It enables cartel-like pricing. It's like an open framework that allows miners to decide on  the block size limit in a transparent way. I think it's a good idea because I think miners would form a cartel anyway, to restrict supply space in blocks anyway, and drive up transaction fee prices. bip100 could prevent the actual cartel from forming perhaps.
+A common criticism of bip100 is that bip100 is a cartel. I admit it does have characteristics similar to a cartel. It enables cartel-like pricing. It's like an open framework that allows miners to decide on the block size limit in a transparent way. I think it's a good idea because I think miners would form a cartel anyway, to restrict supply space in blocks anyway, and drive up transaction fee prices. bip100 could prevent the actual cartel from forming perhaps.
 
 Another proposal I have is that we need to recognize the difference between an increase in the limit, and a decrease in the limit. A majority of miners can impose a decrease in the limit anyway without the need for a hard-fork or any change, because 55% of the miners or whatever can always reject any block larger than some amount. This is why I think these voting mechanisms should reflect this. I think there's a proposal that requires 80% to decrease the limit, whereas I think it should always be 50%. If 79% vote for a limit reduction, this sort of advertises that 79% want it down, and this will serve as a catalyst for cartel formation anyway. If 79% can just reduce the limit, then they can ignore the voting mechanism and undermine it through forming a cartel. So I think the voting mechanisms should be designed in a way to keep this in mind, and discourage cartel creation.
 
