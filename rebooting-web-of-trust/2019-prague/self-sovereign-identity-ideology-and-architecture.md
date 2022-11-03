@@ -2,6 +2,7 @@
 title: Self Sovereign Identity Ideology And Architecture
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ["Christopher Allen"]
 ---
 
 Self-sovereign identity: Ideology & architecture

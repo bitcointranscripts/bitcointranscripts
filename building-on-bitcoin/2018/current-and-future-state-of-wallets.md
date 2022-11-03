@@ -3,6 +3,7 @@ title: Current And Future State Of Wallets
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'privacy', 'security', 'wallet', 'validation']
+speakers: ["jonas schnelli"]
 ---
 
 Current and future state of wallets

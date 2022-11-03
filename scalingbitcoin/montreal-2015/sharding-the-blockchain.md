@@ -3,6 +3,7 @@ title: Sharding The Blockchain
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'proof-of-work', 'validation']
+speakers: ["Vlad Zamfir"]
 ---
 
 Sharding the blockchain

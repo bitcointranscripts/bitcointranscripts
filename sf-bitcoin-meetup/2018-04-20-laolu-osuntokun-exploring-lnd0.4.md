@@ -3,6 +3,7 @@ title: Laolu Osuntokun - Exploring Lnd0.4 (2018-04-20)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lnd', 'lightning']
+speakers: ["Laolu Osuntokun", "Conner Fromknecht"]
 ---
 
 Laolu Osuntokun and Conner Fromknecht

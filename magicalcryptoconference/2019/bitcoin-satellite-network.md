@@ -2,6 +2,7 @@
 title: Bitcoin Satellite Network
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ["Adam Back"]
 ---
 
 Bitcoin satellite network

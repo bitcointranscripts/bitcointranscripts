@@ -3,6 +3,7 @@ title: Miniscript
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miniscript']
+speakers: ["Pieter Wuille"]
 ---
 
 Miniscript

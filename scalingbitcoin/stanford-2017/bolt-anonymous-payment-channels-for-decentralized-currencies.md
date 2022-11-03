@@ -3,6 +3,7 @@ title: Bolt Anonymous Payment Channels For Decentralized Currencies
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ["Ian Miers"]
 ---
 
 
@@ -11,10 +12,6 @@ Bolt: Anonymous Payment Channels for Decentralized Currencies
 paper: <https://eprint.iacr.org/2016/701.pdf>
 
 To make questions easier, we are going to have a mic on the isle. Please line up so that we can have questions quickly. Okay, now we have Ian Miers.
-
-categories: ['conference']
-tags: ['privacy']
----
 
 My name is Ian Miers. Just got my PhD at Hpkins... authors of zcash, zerocash, ... My interest in bitcoin was, first getting involved, was dealing wit hthe privacy aspect. There is also a scaling problem. I assume you are aware of that. The bottom line is... converting this to PDF doesn't work well, hm. The bottom line is that... blockchain-based payments have scaling issues. They are expensive in resources and money resource usage and just time, the time latency. This is a problem that is kind of annoying. It's next generation payments, but it's expensive? What?
 

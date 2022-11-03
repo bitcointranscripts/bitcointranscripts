@@ -3,6 +3,7 @@ title: Bootstrapping Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ["Fabrice Drouin"]
 ---
 
 Bootstrapping LN: What have we learned?

@@ -3,6 +3,7 @@ title: Taproot
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['taproot']
+speakers: ["Elichai Turkel"]
 ---
 
 Building Taproot

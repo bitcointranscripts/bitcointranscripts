@@ -3,6 +3,7 @@ title: Defense Of Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['ux']
+speakers: ["Warren Togami"]
 ---
 
 Five insights into the defense of bitcoin

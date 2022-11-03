@@ -3,6 +3,7 @@ title: Lightning Routing Ants Pheromones
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'routing']
+speakers: ["Ricardo Perez"]
 ---
 
 Ant routing for lightning network

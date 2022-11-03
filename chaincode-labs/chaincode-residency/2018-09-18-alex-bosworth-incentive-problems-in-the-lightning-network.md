@@ -3,6 +3,7 @@ title: Alex Bosworth - Incentive Problems in the Lightning Network (2018-09-18)
 transcript_by: Gloria Zhao, Aaron Morris, Lucas de C. Ferreira, Caralie Chrisco
 tags: ['lightning', 'lnd']
 categories: ['residency']
+speakers: ["Alex Bosworth"]
 ---
 
 Alex Bosworth

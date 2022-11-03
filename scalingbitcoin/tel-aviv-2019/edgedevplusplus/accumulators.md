@@ -3,6 +3,7 @@ title: Accumulators
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['accumulators']
+speakers: ["Tadge Dryja"]
 ---
 
 Accumulators

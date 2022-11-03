@@ -2,6 +2,7 @@
 title: Current State Of The Market And Institutional Investors
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ["Tone Vays", "Bruce Fenton"]
 ---
 
 1 on 1: The current state of the market & institutional investors

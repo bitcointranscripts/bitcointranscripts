@@ -3,11 +3,10 @@ title: Coinscope Andrew Miller
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']
+speakers: ["Andrew Miller", "Dave Levin"]
 ---
 
-Andrew Miller
-
-Dave Levin
+Andrew Miller & Dave Levin
 
 coinscope
 

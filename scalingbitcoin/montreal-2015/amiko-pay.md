@@ -3,6 +3,7 @@ title: Amiko Pay
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'lightning', 'routing']
+speakers: ["Amiko Pay", "Come Plooy"]
 ---
 
 Amiko Pay

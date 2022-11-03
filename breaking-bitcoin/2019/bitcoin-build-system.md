@@ -3,6 +3,7 @@ title: Bitcoin Build System
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'build systems']
+speakers: ["Carl Dong"]
 ---
 
 Bitcoin build systems and bitcoin build system security

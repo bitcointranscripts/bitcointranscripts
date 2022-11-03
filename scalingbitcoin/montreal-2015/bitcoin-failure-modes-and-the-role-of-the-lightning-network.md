@@ -3,6 +3,7 @@ title: Bitcoin Failure Modes And The Role Of The Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ["Thaddeus Dryja", "Joseph Poon"]
 ---
 
 Thaddeus Dryja

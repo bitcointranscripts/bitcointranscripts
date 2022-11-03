@@ -3,6 +3,7 @@ title: State Of Cryptography
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['cryptography', 'zero-knowledge']
+speakers: ["Benedikt Bunz"]
 ---
 
 State of cryptography for blockchains beyond ECDSA and sha256

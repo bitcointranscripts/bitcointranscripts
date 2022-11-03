@@ -3,6 +3,7 @@ title: Research And Development Goals
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['consensus']
+speakers: ["Patrick Murck", "Gavin Andresen", "Cory Fields"]
 ---
 
 11:45 am: Open Discussion - R&D Goals & Challenges – Patrick Murck, Gavin Andresen, Cory Fields 

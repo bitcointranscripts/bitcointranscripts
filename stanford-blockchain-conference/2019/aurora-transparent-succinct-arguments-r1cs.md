@@ -3,6 +3,7 @@ title: Aurora Transparent Succinct Arguments R1Cs
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'cryptography', 'scalability']
+speakers: ["Alessandro Chiesa"]
 ---
 
 Aurora: Transparent succinct arguments for R1CS

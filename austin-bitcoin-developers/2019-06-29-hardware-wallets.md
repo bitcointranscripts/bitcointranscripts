@@ -3,6 +3,7 @@ title: Hardware Wallets (2019-06-29)
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['hardware wallet', 'wallet']
+speakers: ["Stepan Snigirev"]
 ---
 
 2019-06-29

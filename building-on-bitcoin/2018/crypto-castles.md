@@ -3,6 +3,7 @@ title: Crypto Castles
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ["Jameson Lopp"]
 ---
 
 Building your own bank and constructing crypto castles

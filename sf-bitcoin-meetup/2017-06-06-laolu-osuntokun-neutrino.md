@@ -3,6 +3,7 @@ title: Laolu Osuntokun - Neutrino (2017-06-06)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'spv']
+speakers: ["Laolu Osuntokun"]
 ---
 
 Laolu Osuntokun

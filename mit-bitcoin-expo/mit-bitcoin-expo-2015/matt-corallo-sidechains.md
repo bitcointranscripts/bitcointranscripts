@@ -3,6 +3,7 @@ title: Matt Corallo Sidechains
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'miners']
+speakers: ["Matt Corallo"]
 ---
 
 Matt Corallo (BlueMatt)

@@ -3,6 +3,7 @@ title: Fraud Proofs Petertodd
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['validation', 'miners', 'wallet']
+speakers: ["Peter Todd"]
 ---
 
 Fraud proofs

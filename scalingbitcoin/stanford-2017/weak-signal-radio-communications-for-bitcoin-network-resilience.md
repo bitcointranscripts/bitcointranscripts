@@ -3,6 +3,7 @@ title: Weak Signal Radio Communications For Bitcoin Network Resilience
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus']
+speakers: ["Nick Szabo"]
 ---
 
 Weak signal radio communications for bitcoin network resilience

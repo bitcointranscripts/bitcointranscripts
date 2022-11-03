@@ -3,6 +3,7 @@ title: Conner Fromknecht - Watchtowers (2019-04-06)
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['research', 'lightning', 'lnd']
+speakers: ["Conner Fromknecht"]
 ---
 
 Conner Fromknecht

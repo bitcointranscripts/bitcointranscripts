@@ -3,6 +3,7 @@ title: Linking Anonymous Transactions
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks']
+speakers: ["Florian Tramer"]
 ---
 
 Linking anonymous transactions via remote side-channel attacks

@@ -3,6 +3,7 @@ title: Bip Securethebag
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'research']
+speakers: ["Jeremy Rubin"]
 ---
 
 BIP: OP\_SECURETHEBAG

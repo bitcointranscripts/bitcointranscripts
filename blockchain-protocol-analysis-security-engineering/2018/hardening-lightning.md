@@ -3,6 +3,7 @@ title: Hardening Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'lightning', 'fees']
+speakers: ["Olaoluwa Osuntokun"]
 ---
 
 Hardening lightning network

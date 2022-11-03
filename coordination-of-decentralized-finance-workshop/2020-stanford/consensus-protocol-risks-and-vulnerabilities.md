@@ -3,6 +3,7 @@ title: Consensus Protocol Risks And Vulnerabilities
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['cryptography']
+speakers: ["Bram Cohen"]
 ---
 
 Consensus protocol risks and vulnerabilities

@@ -3,6 +3,7 @@ title: Changes Without Unanimous Consent
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'miners']
+speakers: ["Anthony Towns"]
 ---
 
 Changes without unanimous consent

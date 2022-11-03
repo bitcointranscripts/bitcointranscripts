@@ -3,6 +3,7 @@ title: Investing In Bitcoin Businesses
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ["Nic Carter"]
 ---
 
 1 on 1: Investing in bitcoin businesses

@@ -3,6 +3,7 @@ title: Lightning Network As A Directed Graph Single Funded Channel Network Topol
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['multisig', 'lightning', 'segwit']
+speakers: ["Tadge Dryja"]
 ---
 
 2016-04-11

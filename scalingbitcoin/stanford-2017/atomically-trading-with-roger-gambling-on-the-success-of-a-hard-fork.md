@@ -2,6 +2,7 @@
 title: Atomically Trading With Roger Gambling On The Success Of A Hard Fork
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ["Ethan Heilman"]
 ---
 
 Atomically Trading with Roger: Gambling on the success of a hard-fork
