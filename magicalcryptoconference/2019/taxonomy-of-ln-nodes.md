@@ -3,6 +3,7 @@ title: Taxonomy Of Ln Nodes
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
+speakers: ['Lisa Neigut']
 ---
 
 Taxonomy of lightning nodes

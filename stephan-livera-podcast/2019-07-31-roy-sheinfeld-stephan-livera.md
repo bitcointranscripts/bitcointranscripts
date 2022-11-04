@@ -2,6 +2,7 @@
 title: Roy Sheinfeld - Stephan Livera (2019-07-31)
 transcript_by: Michael Folkson
 categories: ['podcast']
+speakers: ['Roy Sheinfeld']
 ---
 
 Stephan Livera podcast with Roy Sheinfeld - July 31st 2019

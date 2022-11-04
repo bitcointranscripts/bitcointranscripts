@@ -2,6 +2,7 @@
 title: Bitcoin Maximalism Dissected
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Giacomo Zucco']
 ---
 
 Bitcoin maximalism dissected

@@ -3,6 +3,7 @@ title: Dan Boneh
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'ethereum']
+speakers: ['Dan Boneh']
 ---
 
 A conversation with Dan Boneh

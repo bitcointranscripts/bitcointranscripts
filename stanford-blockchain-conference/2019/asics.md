@@ -3,6 +3,7 @@ title: Asics
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']
+speakers: ['David Vorick']
 ---
 
 ASIC design for mining

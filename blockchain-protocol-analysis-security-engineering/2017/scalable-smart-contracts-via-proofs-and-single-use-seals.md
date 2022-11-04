@@ -3,6 +3,7 @@ title: Scalable Smart Contracts Via Proofs And Single Use Seals
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'privacy', 'smart contracts']
+speakers: ['Peter Todd']
 ---
 
 Scalable smart contracts via proofs and single-use seals

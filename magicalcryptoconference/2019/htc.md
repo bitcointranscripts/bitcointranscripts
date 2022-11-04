@@ -2,6 +2,7 @@
 title: Htc
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Phil Chen']
 ---
 
 HTC / Exodus

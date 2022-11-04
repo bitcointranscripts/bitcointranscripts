@@ -3,6 +3,7 @@ title: Flare Routing In Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'lightning', 'routing']
+speakers: ['Pavel Prihodko', 'Kolya Sakhno', 'Alexei Ostrovskiy', 'Slava Zhigulin', 'Olaoluwa Osuntokun']
 ---
 
 Flare: An approach to routing in lightning network

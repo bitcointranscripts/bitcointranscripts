@@ -3,6 +3,7 @@ title: Accumulating Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['halving']
+speakers: ['Pierre Rochard']
 ---
 
 Accumulating bitcoin

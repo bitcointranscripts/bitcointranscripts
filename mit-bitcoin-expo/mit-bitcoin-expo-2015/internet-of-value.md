@@ -2,6 +2,7 @@
 title: Internet Of Value
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Jeremy Allaire']
 ---
 
 Jeremy Allaire

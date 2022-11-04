@@ -3,6 +3,7 @@ title: Extreme Opsec For The Modern Cypherpunk
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Jameson Lopp']
 ---
 
 Extreme opsec for the modern cypherpunk

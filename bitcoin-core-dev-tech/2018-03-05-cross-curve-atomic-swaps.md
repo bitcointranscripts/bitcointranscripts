@@ -3,6 +3,7 @@ title: Cross Curve Atomic Swaps (2018-03-05)
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['ux', 'lightning', 'schnorr']
+speakers: ['Anthony Towns']
 ---
 
 <https://twitter.com/kanzure/status/971827042223345664>

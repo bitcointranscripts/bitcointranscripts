@@ -3,6 +3,7 @@ title: Validation Cost Metric
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'scalability']
+speakers: ['Jonas Nick']
 ---
 
 Jonas Nick

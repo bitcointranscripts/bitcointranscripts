@@ -3,6 +3,7 @@ title: Elaine Ou - Bootstrapping Lightning Node (2018-10-22)
 transcript_by: Michael Folkson
 tags: ['lightning', 'routing']
 categories: ['residency']
+speakers: ['Elaine Ou']
 ---
 
 Elaine Ou

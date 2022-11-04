@@ -3,6 +3,7 @@ title: Lightning Overview
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'scalability', 'layer 2']
+speakers: ['Conner Fromknecht']
 ---
 
 Lightning overview

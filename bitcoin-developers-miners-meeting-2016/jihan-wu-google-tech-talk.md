@@ -3,6 +3,7 @@ title: Jihan Wu Google Tech Talk (2016)
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['mining', 'proof-of-work', 'miners']
+speakers: ['Jihan Wu']
 ---
 
 Jihan Wu

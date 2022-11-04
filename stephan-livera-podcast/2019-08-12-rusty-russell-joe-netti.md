@@ -2,6 +2,7 @@
 title: Rusty Russell, Joe Netti (2019-08-12)
 transcript_by: Michael Folkson
 categories: ['podcast']
+speakers: ['Rusty Russell', 'Joe Netti']
 ---
 
 Stephan Livera podcast with Rusty Russell and Joe Netti - August 12th 2019

@@ -3,6 +3,7 @@ title: LTB - Pieter Wuille, Jonas Nick (2019-06-09)
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
+speakers: ['Adam B. Levine', 'Stephanie Murphy', 'Andreas M. Antonopoulos', 'Pieter Wuille', 'Jonas Nick']
 ---
 
 Let's Talk Bitcoin with Pieter Wuille and Jonas Nick - June 9th 2019

@@ -3,6 +3,7 @@ title: Schnorr Signatures For Bitcoin - Challenges and Opportunities
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'schnorr']
+speakers: ['Pieter Wuille']
 ---
 
 Schnorr signatures for Bitcoin: Opportunities and challenges

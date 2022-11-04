@@ -2,6 +2,7 @@
 title: Bitcoin Assets
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Giacomo Zucco']
 ---
 
 Assets on bitcoin

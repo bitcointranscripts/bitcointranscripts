@@ -3,6 +3,7 @@ title: Bellare Neven (2018-03-05)
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['multisig']
+speakers: ['Peter Wuille']
 ---
 
 See also <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>

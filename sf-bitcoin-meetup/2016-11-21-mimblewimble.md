@@ -3,6 +3,7 @@ title: Mimblewimble (2016-11-21)
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['privacy', 'fungibility', 'scalability']
+speakers: ['Andrew Poelstra']
 ---
 
 Mimblewimble

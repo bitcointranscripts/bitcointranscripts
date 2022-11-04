@@ -3,6 +3,7 @@ title: Antoine Riard - Rust Lightning (2019-10-20)
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Antoine Riard']
 ---
 
 Antoine Riard

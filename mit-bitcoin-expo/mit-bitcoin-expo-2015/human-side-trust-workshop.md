@@ -2,6 +2,7 @@
 title: Human Side Trust Workshop
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Matt Weiss', 'Joe Gerber']
 ---
 
 Human side of trust

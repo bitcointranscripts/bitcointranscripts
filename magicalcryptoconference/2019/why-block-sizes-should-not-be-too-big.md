@@ -3,6 +3,7 @@ title: Why Block Sizes Should Not Be Too Big
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'proof-of-work', 'miners']
+speakers: ['Luke Dashjr']
 ---
 
 Briefly, why block sizes shouldn't be too big

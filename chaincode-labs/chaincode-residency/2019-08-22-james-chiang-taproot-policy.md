@@ -3,6 +3,7 @@ title: James Chiang Taproot Policy (2019-08-22)
 transcript_by: Michael Folkson
 categories: ['residency']
 tags: ['taproot']
+speakers: ['James Chiang']
 ---
 
 James Chiang

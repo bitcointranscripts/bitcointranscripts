@@ -2,6 +2,7 @@
 title: Scaling And Utxos
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Peter Todd']
 ---
 
 Scaling and TXO commitments

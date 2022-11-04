@@ -3,6 +3,7 @@ title: Lessons For Bitcoin From 150 Years Of Decentralization
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
+speakers: ['Arvind Narayanan']
 ---
 
 Lessons for Bitcoin from the 150-year History of Decentralization

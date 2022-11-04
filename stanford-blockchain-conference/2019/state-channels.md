@@ -2,6 +2,7 @@
 title: State Channels
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Patrick McCorry']
 ---
 
 State channels as a scaling solution for cryptocurrencies

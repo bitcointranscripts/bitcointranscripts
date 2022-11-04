@@ -2,6 +2,7 @@
 title: Proofs Of Space
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Bram Cohen']
 ---
 
 Beyond Hellman's time-memory trade-offs with applications to proofs of space

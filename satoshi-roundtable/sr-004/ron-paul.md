@@ -2,6 +2,7 @@
 title: Ron Paul
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ron Paul']
 ---
 
 Satoshi Roundtable IV

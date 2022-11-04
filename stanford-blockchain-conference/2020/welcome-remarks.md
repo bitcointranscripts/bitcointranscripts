@@ -2,6 +2,7 @@
 title: Welcome Remarks
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Dan Boneh']
 ---
 
 Welcome remarks

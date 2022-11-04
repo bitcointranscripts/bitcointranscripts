@@ -2,6 +2,7 @@
 title: Linq
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Alex Zinder']
 ---
 
 NASDAQ Linq

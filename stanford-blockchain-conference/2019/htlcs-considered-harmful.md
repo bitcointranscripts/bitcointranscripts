@@ -3,6 +3,7 @@ title: Htlcs Considered Harmful
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Daniel Robinson']
 ---
 
 HTLCs considered harmful

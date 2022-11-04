@@ -3,6 +3,7 @@ title: Lightning Payments
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Will O'Beirne']
 ---
 
 Lightning payments (and more) on the web

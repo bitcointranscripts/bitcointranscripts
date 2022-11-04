@@ -2,6 +2,7 @@
 title: The B Foundation
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Alena Vranova']
 ---
 
 The B Foundation

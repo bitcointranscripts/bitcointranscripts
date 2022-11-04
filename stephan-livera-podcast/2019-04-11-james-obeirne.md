@@ -2,6 +2,7 @@
 title: James O'Beirne (2019-04-11)
 transcript_by: Michael Folkson
 categories: ['podcast']
+speakers: ['James O’Beirne']
 ---
 
 Stephan Livera Podcast with James O’Beirne - April 11th 2019

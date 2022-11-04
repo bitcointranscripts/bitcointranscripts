@@ -3,6 +3,7 @@ title: Nadav Kohen - Payment Points (2019-10-20)
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'schnorr']
+speakers: ['Nadav Kohen']
 ---
 
 Nadav Kohen

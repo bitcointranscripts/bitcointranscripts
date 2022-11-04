@@ -3,6 +3,7 @@ title: Pieter Wuille (2020-01-28)
 transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['bitcoin core']
+speakers: ['Pieter Wuille']
 ---
 
 Chaincode Labs podcast with Pieter Wuille
