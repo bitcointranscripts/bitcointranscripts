@@ -3,6 +3,7 @@ title: Single Use Seals
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'cryptography', 'lightning']
+speakers: ['Peter Todd']
 ---
 
 Single use seals

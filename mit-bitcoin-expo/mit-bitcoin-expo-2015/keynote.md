@@ -2,6 +2,7 @@
 title: Keynote
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Charlie Lee']
 ---
 
 Charlie Lee

@@ -2,6 +2,7 @@
 title: Binary Transparency
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Mustafa']
 ---
 
 Contours for binary transparency

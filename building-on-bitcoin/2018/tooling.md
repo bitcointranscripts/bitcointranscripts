@@ -3,6 +3,7 @@ title: Tooling
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['wallet']
+speakers: ['Eric Voskuil', 'Nicolas Dorier', 'Kevin Loaec', 'Lawrence Nahum']
 ---
 
 Tooling

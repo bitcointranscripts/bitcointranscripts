@@ -2,6 +2,7 @@
 title: Jeremy Allaire Circle
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
+speakers: ['Jeremy Allaire']
 ---
 
 Circle

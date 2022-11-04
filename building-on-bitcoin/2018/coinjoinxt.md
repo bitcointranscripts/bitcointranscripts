@@ -3,6 +3,7 @@ title: Coinjoinxt
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility']
+speakers: ['Adam Gibson']
 ---
 
 CoinjoinXT and other techniques for deniable transfers.

@@ -3,6 +3,7 @@ title: Fiat Money Fiat Food
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['proof-of-work']
+speakers: ['Saifedean Ammous']
 ---
 
 Fiat money and fiat food

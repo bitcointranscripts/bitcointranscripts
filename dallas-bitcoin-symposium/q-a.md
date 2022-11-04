@@ -2,6 +2,7 @@
 title: Q A
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Marty Bent', 'Michael Goldstein', 'Justin Moon', 'Dhruv Bansal', 'Gideon Powell', 'Tuur Demeester']
 ---
 
 Q&A session

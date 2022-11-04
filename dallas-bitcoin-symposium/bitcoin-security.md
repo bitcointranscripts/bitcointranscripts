@@ -3,6 +3,7 @@ title: Bitcoin Security
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Dhruv Bansal']
 ---
 
 Dhruv Bansal

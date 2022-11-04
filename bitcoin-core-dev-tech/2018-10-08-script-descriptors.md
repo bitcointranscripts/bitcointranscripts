@@ -3,6 +3,7 @@ title: Script Descriptors (2018-10-08)
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet']
+speakers: ['Pieter Wuille']
 ---
 
 2018-10-08

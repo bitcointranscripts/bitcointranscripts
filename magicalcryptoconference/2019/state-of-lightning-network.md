@@ -3,6 +3,7 @@ title: State Of Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Stacy Herbert', 'Elizabeth Stark']
 ---
 
 Fireside chat on the state of the lightning network

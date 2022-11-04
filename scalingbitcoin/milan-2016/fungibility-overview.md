@@ -3,6 +3,7 @@ title: Fungibility Overview
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['fungibility']
+speakers: ['Matt Corallo', 'Adam Back']
 ---
 
 Fungibility overview

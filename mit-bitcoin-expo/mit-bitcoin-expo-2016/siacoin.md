@@ -3,6 +3,7 @@ title: Siacoin
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['wallet']
+speakers: ['David Vorick']
 ---
 
 Sia

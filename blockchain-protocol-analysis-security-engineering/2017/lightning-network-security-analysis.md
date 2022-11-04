@@ -3,6 +3,7 @@ title: Lightning Network Security Analysis
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'privacy', 'lightning']
+speakers: ['Olaoluwa Osuntokun']
 ---
 
 Security analysis of the lightning network (2017)

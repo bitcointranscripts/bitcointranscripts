@@ -3,6 +3,7 @@ title: A Bevy Of Block Size Proposals Bip100 Bip102 And More
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mempool']
+speakers: ['Jeff Garzik']
 ---
 
 jgarzik

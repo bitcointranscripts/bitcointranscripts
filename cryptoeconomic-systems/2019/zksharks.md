@@ -3,6 +3,7 @@ title: Zksharks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge']
+speakers: ['Madars Virza']
 ---
 
 zkSHARKs

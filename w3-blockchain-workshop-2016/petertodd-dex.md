@@ -3,6 +3,7 @@ title: Petertodd Dex
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['multisig']
+speakers: ['Peter Todd']
 ---
 
 petertodd

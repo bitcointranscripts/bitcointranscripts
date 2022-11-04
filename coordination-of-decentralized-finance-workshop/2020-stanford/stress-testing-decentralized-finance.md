@@ -3,6 +3,7 @@ title: Stress Testing Decentralized Finance
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['attacks']
+speakers: ['Tarun Chitra']
 ---
 
 Stress testing decentralized finance

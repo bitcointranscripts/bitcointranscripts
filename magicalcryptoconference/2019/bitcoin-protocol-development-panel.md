@@ -3,6 +3,7 @@ title: Bitcoin Protocol Development Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'lightning', 'taproot']
+speakers: ['Eric Lombrozo', 'Matt Corallo', 'John Newbery', 'Luke Dashjr', 'Katherine Wu']
 ---
 
 Video: https://youtu.be/8B1fX2i4dMY

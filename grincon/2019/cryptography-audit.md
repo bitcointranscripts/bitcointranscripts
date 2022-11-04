@@ -3,6 +3,7 @@ title: Cryptography Audit
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'privacy']
+speakers: ['John Woeltz']
 ---
 
 libsecp256k1-zkp audit

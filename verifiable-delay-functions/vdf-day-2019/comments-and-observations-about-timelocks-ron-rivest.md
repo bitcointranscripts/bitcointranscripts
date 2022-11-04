@@ -3,6 +3,7 @@ title: Comments And Observations About Timelocks Ron Rivest
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['timelocks']
+speakers: ['Ron Rivest']
 ---
 
 Comments and observations about timelocks and verifiable delay functions

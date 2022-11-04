@@ -3,6 +3,7 @@ title: Blind Signatures And Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'schnorr']
+speakers: ['Jonas Nick']
 ---
 
 Blind signatures in scriptless scripts

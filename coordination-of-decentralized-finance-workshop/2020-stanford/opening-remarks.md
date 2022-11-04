@@ -3,6 +3,7 @@ title: Opening Remarks
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['research']
+speakers: ['Shin'ichiro Matsuo']
 ---
 
 Opening remarks

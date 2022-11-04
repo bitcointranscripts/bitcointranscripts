@@ -3,6 +3,7 @@ title: How To Meme Bitcoin To The Moon
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['halving']
+speakers: ['Michael Goldstein']
 ---
 
 How to meme bitcoin to the moon

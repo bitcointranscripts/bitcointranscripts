@@ -3,6 +3,7 @@ title: History Of Lattice Based Cryptography
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['cryptography']
+speakers: ['Daniele Micciancio']
 ---
 
 Historical talk on lattice-based cryptography

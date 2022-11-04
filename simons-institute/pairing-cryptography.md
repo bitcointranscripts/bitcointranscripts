@@ -2,6 +2,7 @@
 title: Pairing Cryptography
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Dan Boneh']
 ---
 
 [Dan Boneh](http://crypto.stanford.edu/~dabo/) (see also [1](https://en.wikipedia.org/wiki/Dan_Boneh))

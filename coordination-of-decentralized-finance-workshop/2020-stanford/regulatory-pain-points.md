@@ -3,6 +3,7 @@ title: Regulatory Pain Points
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['research', 'regulation']
+speakers: ['Ryosuke Ushida']
 ---
 
 Regulatory pain points

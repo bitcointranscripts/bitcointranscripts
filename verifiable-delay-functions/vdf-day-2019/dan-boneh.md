@@ -1,8 +1,9 @@
 ---
-title: Dan Boneh
+title: Verifiable Delay Functions
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Dan Boneh']
 ---
 
 Verifiable delay functions

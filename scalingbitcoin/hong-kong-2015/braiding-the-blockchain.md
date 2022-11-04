@@ -3,6 +3,7 @@ title: Braiding The Blockchain
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners']
+speakers: ['Bob McElrath']
 ---
 
 Braiding the blockchain

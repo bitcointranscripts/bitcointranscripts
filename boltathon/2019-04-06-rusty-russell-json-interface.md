@@ -3,6 +3,7 @@ title: Rusty Russell - JSON Interface (2019-04-06)
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
+speakers: ['Rusty Russell']
 ---
 
 Rusty Russell

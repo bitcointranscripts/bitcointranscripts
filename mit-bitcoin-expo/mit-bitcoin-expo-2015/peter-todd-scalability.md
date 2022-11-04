@@ -3,6 +3,7 @@ title: Peter Todd Scalability
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['scalability']
+speakers: ['Peter Todd']
 ---
 
 Peter Todd

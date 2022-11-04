@@ -2,6 +2,7 @@
 title: Solving Data Availability Attacks Using Coded Merkle Trees
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Sreeram Kannan']
 ---
 
 Coded Merkle Tree: Solving Data Availability Attacks in Blockchains

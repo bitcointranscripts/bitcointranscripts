@@ -3,6 +3,7 @@ title: Bip101 Block Propagation Data From Testnet
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks']
+speakers: ['Jonathan Tomim']
 ---
 
 bip101 block propagation data from testnet

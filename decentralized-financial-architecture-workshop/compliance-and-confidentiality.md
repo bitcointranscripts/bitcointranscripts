@@ -3,6 +3,7 @@ title: Compliance And Confidentiality
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['regulation']
+speakers: ['Alexander Zaidelson']
 ---
 
 Compliance and confidentiality: can they co-exist?

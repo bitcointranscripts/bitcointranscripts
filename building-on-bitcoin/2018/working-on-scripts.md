@@ -3,6 +3,7 @@ title: Working On Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Thomas Kerin']
 ---
 
 Working on scripts with logical opcodes

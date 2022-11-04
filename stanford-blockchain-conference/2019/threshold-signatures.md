@@ -3,6 +3,7 @@ title: Threshold Signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['threshold signatures']
+speakers: ['Mahnush Movahedi']
 ---
 
 Efficient distributed key generation for threshold signatures

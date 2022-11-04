@@ -3,6 +3,7 @@ title: A Wishlist For Verifiable Computation
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
+speakers: ['Michael Walfish']
 ---
 
 A wishlist for verifiable computation: An applied computer science perspective

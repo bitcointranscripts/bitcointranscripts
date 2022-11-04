@@ -2,6 +2,7 @@
 title: Fork Dynamics
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Eric Lombrozo']
 ---
 
 Fork dynamics

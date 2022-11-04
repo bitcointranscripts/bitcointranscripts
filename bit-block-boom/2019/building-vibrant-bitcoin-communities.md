@@ -2,6 +2,7 @@
 title: Building Vibrant Bitcoin Communities
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Kris Merkel']
 ---
 
 Building vibrant bitcoin communities

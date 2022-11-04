@@ -3,6 +3,7 @@ title: Gleb Naumenko - Erlay (2019-11-13)
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'P2P']
+speakers: ['Gleb Naumenko']
 ---
 
 Gleb Naumenko

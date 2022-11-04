@@ -3,6 +3,7 @@ title: Jnewbery Bitcoin Core V0.17
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research']
+speakers: ['John Newbery']
 ---
 
 Bitcoin Core v0.17

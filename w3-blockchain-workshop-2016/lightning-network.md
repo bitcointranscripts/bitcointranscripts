@@ -3,6 +3,7 @@ title: Lightning Network
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['consensus', 'scalability']
+speakers: ['Tadge Dryja']
 ---
 
 Lightning network

@@ -3,6 +3,7 @@ title: Crypto In Cryptocurrency
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'cryptography', 'zero-knowledge']
+speakers: ['Andrew Poelstra']
 ---
 
 The "crypto" in cryptocurrency: Why everything is weird and hard

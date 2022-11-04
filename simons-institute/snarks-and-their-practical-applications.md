@@ -3,6 +3,7 @@ title: Snarks And Their Practical Applications
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
+speakers: ['Eran Tromer']
 ---
 
 SNARKs and their practical applications
