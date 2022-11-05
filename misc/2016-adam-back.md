@@ -1,6 +1,7 @@
 ---
 title: Adam Back - dgncc (2016)
 transcript_by: Bryan Bishop
+speakers: ['Adam Back']
 ---
 
 Adam Back

@@ -2,6 +2,7 @@
 title: Whalepool (2016-12-14)
 transcript_by: Bryan Bishop
 tags: ['ux', 'segwit']
+speakers: ['Eric Lombrozo', 'Roger Ver']
 ---
 
 Whalepool segwit transcript

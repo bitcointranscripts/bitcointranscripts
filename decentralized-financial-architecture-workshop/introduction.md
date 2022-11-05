@@ -3,6 +3,7 @@ title: Introduction (2019)
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['security', 'scalability']
+speakers: ['Aviv Zohar']
 ---
 
 # Introduction to DFA Workshop

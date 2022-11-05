@@ -2,6 +2,7 @@
 title: Trading Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Florian Maier', 'Tone Vays']
 ---
 
 Trading panel
