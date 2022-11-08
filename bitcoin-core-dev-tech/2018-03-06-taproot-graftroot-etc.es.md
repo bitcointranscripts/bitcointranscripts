@@ -52,11 +52,11 @@ Un graftroot donde se puede enviar de forma no interactiva al multisig de alguie
 
 Taproot: `P = c + H(c || script) G`
 
-Graftroot: `sig<sub>p</sub>(script)`
+Graftroot: sig<sub>p</sub>(script)
 
 Una salida es un punto `p`. `c` es algún otro punto. Hay algún otro punto, y su clave privada puede no existir.
 
-El gasto directo es `sig<sub>p</sub>(tx).`
+El gasto directo es sig<sub>p</sub>(tx).
 
 Taproot gastando...
 
