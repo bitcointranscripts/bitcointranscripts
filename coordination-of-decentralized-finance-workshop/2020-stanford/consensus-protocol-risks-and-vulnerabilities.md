@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['cryptography']
 speakers: ["Bram Cohen"]
+date: 2020-02-19
 ---
 
 Consensus protocol risks and vulnerabilities
-
-Bram Cohen
 
 <https://twitter.com/kanzure/status/1229906447808360450>
 
