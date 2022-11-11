@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'routing']
 speakers: ["Ricardo Perez"]
+date: 2018-07-04
 ---
 
-Ant routing for lightning network
-
-Ricardo Perez-Marco
+# Ant routing for lightning network
 
 Building on Bitcoin 2018
 

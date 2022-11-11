@@ -3,11 +3,10 @@ title: Binary Transparency
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Mustafa']
+date: 2018-07-03
 ---
 
 Contours for binary transparency
-
-Mustafa
 
 <https://twitter.com/kanzure/status/1014167797205815297>
 

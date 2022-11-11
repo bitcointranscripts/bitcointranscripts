@@ -6,7 +6,7 @@ tags: ['research', 'lightning', 'ux', 'wallet']
 speakers: ['Patricia Estevao']
 ---
 
-Designing lightning wallets for the bitcoin user
+# Designing lightning wallets for the bitcoin user
 
 Building on Bitcoin 2018
 

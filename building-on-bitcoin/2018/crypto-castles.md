@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
 speakers: ["Jameson Lopp"]
+date: 2018-07-04
 ---
 
 Building your own bank and constructing crypto castles
-
-Jameson Lopp
 
 Building on Bitcoin 2018
 

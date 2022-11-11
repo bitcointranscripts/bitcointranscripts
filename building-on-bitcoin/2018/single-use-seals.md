@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'cryptography', 'lightning']
 speakers: ['Peter Todd']
+date: 2018-07-03
 ---
 
 Single use seals
-
-petertodd
 
 Building on Bitcoin 2018
 

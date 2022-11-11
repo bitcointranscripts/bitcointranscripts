@@ -3,11 +3,10 @@ title: Bitcoin Assets
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Giacomo Zucco']
+date: 2018-07-04
 ---
 
 Assets on bitcoin
-
-Giacomo Zucco
 
 Building on Bitcoin 2018
 

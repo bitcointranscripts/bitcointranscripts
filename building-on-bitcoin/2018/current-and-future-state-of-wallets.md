@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'privacy', 'security', 'wallet', 'validation']
 speakers: ['Jonas Schnelli']
+date: 2018-07-03
 ---
 
 Current and future state of wallets
-
-Jonas Schnelli
 
 <https://twitter.com/kanzure/status/1014127893495021568>
 
