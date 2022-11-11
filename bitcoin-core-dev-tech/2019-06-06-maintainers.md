@@ -1,10 +1,11 @@
 ---
-title: Maintainers (2019-06-06)
+title: Maintainers view of the Bitcoin Core project
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
+date: 2019-06-06
 ---
 
-Maintainers view of the Bitcoin Core project
+# Maintainers view of the Bitcoin Core project
 
 <https://twitter.com/kanzure/status/1136568307992158208>
 

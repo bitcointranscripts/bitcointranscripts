@@ -1,16 +1,13 @@
 ---
-title: Utxo Accumulators And Utreexo (2018-10-08)
+title: Utxo Accumulators And Utreexo 
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['accumulators']
 speakers: ['Tadge Dryja']
+date: 2018-10-08
 ---
 
 # UTXO accumulators, UTXO commitments, and utreexo
-
-2018-10-08
-
-Tadge Dryja
 
 <https://twitter.com/kanzure/status/1049112390413897728>
 

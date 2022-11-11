@@ -1,12 +1,11 @@
 ---
-title: Meeting Notes (2017-09-05)
+title: Meeting Notes ()
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['privacy']
 speakers: ['Jonas Schnelli']
+date: 2017-09-05
 ---
-
-﻿2017-09-05 - 2017-09-07
 
 coredev.tech september 2017
 

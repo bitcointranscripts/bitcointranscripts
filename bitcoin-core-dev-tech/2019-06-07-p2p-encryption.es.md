@@ -1,9 +1,10 @@
 ---
-title: Cifrado P2P (2019-06-07)
+title: Cifrado P2P 
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['P2P']
+date: 2019-06-07
 ---
 
 Cifrado p2p 

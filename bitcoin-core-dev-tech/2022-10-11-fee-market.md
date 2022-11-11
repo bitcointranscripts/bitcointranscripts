@@ -1,8 +1,9 @@
 ---
-title: Fee Market (2022-10-11)
+title: Fee Market 
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['fees', 'bitcoin core']
+date: 2022-10-11
 ---
 
 # Fee market

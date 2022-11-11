@@ -1,7 +1,8 @@
 ---
-title: Priorities (2018-03-07)
+title: Priorities 
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
+date: 2018-03-07
 ---
 
 <https://twitter.com/kanzure/status/972863994489901056>

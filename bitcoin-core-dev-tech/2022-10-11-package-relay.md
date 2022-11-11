@@ -1,10 +1,10 @@
 ---
-title: Package Relay BIP, implementation, V3, and package RBF proposals (2022-10-11)
+title: Package Relay BIP, implementation, V3, and package RBF proposals 
 transcript_by: Gloria Zhao
 categories: ['core-dev-tech']
 tags: ['package relay', 'bitcoin core']
+date: 2022-10-11
 ---
-
 
 # Notes on Package Relay BIP, implementation, V3, and package RBF proposals from Core Dev in Atlanta.
 
