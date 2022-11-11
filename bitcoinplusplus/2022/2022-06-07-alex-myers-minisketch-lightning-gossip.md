@@ -1,17 +1,15 @@
 ---
-title: Alex Myers - Minisketch and Lightning gossip (2022-06-07)
+title: Minisketch and Lightning gossip 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'P2P']
+speakers: ['Alex Myers']
+date: 2022-06-07
 ---
 
-Name: Alex Myers
-
-Topic: Minisketch and Lightning gossip
+# Minisketch and Lightning gossip
 
 Location: Bitcoin++
-
-Date: June 7th 2022
 
 Video: <https://www.youtube.com/watch?v=e0u59hSsmio>
 
