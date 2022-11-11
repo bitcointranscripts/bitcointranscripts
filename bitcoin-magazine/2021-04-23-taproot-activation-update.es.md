@@ -1,12 +1,12 @@
 ---
-title: Actualización de la activación de Taproot (2021-04-23)
+title: Actualización de la activación de Taproot
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
 tags: ['taproot']
+speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+date: 2021-04-23
 ---
-
-Nombre: Sjors Provoost y Aaron van Wirdum
 
 Tema: Actualización de la activación de Taproot: Speedy Trial y el cliente LOT=true
 

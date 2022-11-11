@@ -1,17 +1,15 @@
 ---
-title: Taproot Activation Update (2021-04-23)
+title: Taproot Activation Update 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot']
+speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+date: 2021-04-23
 ---
-
-Name: Sjors Provoost and Aaron van Wirdum
 
 Topic: Taproot Activation Update: Speedy Trial and the LOT=true client
 
 Location: Bitcoin Magazine (online)
-
-Date: April 23rd 2021
 
 Video: <https://www.youtube.com/watch?v=SHmEXPvN6t4>
 
