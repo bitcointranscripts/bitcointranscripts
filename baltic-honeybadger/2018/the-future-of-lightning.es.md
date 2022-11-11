@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Elizabeth Stark']
 ---
 
 El futuro de lightning
-
-Elizabeth Stark (starkness)
 
 El año del #craeful y el futuro de lightning
 

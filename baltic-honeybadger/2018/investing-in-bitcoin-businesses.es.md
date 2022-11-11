@@ -4,13 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['seguridad']
+speakers: ['Nic Carter', 'Florian Maier']
 ---
 
 1 a 1: Invertir en negocios de bitcoin
-
-Nic Carter (nic\_\_carter)
-
-Florian Maier (Marsmensch)
 
 Matthew Mezinskis (crypto\_voices) (moderador)
 

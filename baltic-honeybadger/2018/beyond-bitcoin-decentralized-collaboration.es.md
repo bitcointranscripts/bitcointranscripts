@@ -3,11 +3,10 @@ title: Más allá de Bitcoin - Colaboración descentralizada
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Yurii Rashkovskii']
 ---
 
 Más allá de Bitcoin: colaboración descentralizada.
-
-Yurii Rashkovskii (yrashk)
 
 <https://twitter.com/kanzure/status/1043432684591230976>
 

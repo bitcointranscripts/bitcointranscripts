@@ -7,8 +7,6 @@ speakers: ['Alena Vranova']
 
 The B Foundation
 
-Alena Vranova (AlenaSatoshi)
-
 <https://twitter.com/kanzure/status/1043802179004493825>
 
 I think most people here have some idea of who I am. I am a long-term bitcoiner. I've been in bitcoin since 2010. I love bitcoin. I am passionate about it. I want to see it grow and prosper. The positive thing about bitcoin is that it has a resilient ecosystem. It doesn't need any CEO. It doesn't need any centralized organization and it doesn't need any central point to direct where it is going. It basically works.

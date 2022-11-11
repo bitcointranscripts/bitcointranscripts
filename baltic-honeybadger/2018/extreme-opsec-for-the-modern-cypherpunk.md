@@ -8,8 +8,6 @@ speakers: ['Jameson Lopp']
 
 Extreme opsec for the modern cypherpunk
 
-Jameson Lopp (lopp) jameson@team.casa
-
 Jameson is the infrastructure engineer at Casa. Please welcome Jameson Lopp.
 
 # Introduction

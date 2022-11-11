@@ -7,8 +7,6 @@ speakers: ['Giacomo Zucco']
 
 Bitcoin maximalism dissected
 
-Giacomo Zucco (giacomozucco)
-
 Good morning everyone. I am very happy to be here at Baltic Honeybadger. Last year I gave a scaling presentation. I opened the conference with a scaling presentation. This year in order to compensate, I will be super serious. This will be the most boring presentation at the conference. I am going to try to dissect and formalize bitcoin maximalism.
 
 This is the scarriest font I found on prezi. I wanted something with blood coming out of it but they didn't have it. So what is bitcoin maximalism? I'll try to give you a definition and do something htat has never been tried before. I want to make an axiomatic deductive treatment of bitcoin maximalism. Let's see if I have time.

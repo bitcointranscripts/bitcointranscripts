@@ -8,18 +8,6 @@ speakers: ["Elizabeth Stark", "Peter Todd (peterktodd)", "Jameson Lopp", "Eric V
 
 Closing panel
 
-Elizabeth Stark (starkness)
-
-Peter Todd (peterktodd)
-
-Jameson Lopp (lopp)
-
-Eric Voskuil (evoskuil)
-
-Alex Petrov (sysmannet)
-
-Roman Snitko (hodlhodl)
-
 <https://twitter.com/kanzure/status/1043517333640241152>
 
 RS: Thanks guys for joining the panel. We just need to get one more chair. I am going to introduce Alex Petrov here because everyone else was on stage. The closing panel is going to be an overview of what's happening in bitcoin. I want to start with the question I started with last year. What is the current state of bitcoin compared to last year? What has happened?

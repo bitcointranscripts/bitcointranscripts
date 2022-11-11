@@ -8,12 +8,6 @@ speakers: ['Pavol Rusnak', 'Lawrence Nahum', 'Giacomo Zucco']
 
 1 on 1: The future of bitcoin wallets
 
-Pavol Rusnak (pavolrusnak)
-
-Lawrence Nahum (larrybitcoin)
-
-Giacomo Zucco (giacomozucco)
-
 <https://twitter.com/kanzure/status/1043445104827084800>
 
 GZ: Thank you very much. We're going to talk about the future of bitcoin wallets. As you know, it's a very central topic. We always compare bitcoin to the internet. Wallets are basically like browsers like back at the beginning of the web. They are the first gateway to a user experience for users on bitcoin. It's important to see how they will evolve. We have two exceptional representatives of the wallet world; one is Pavol Rusnak who is one of the leading contributors to the Trezor hardware wallet. It was the first publcily available commercial hardware wallet. It was the first publicly available hardware wallet. The other person on the panel is Lawrence Nahum, the creator of GreenAddress wallet. It was the first wallet implementing p2sh addresses for multisig, bip32 stuff, and the first wallet for supporting many things.

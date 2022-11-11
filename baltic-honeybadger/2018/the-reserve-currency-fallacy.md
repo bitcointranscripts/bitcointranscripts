@@ -7,8 +7,6 @@ speakers: ['Eric Voskuil']
 
 The reserve currency fallacy
 
-Eric Voskuil (evoskuil)
-
 <https://twitter.com/kanzure/status/1043385469134925824>
 
 Thank you. Developers, developers, developers, developers. Alright, it wasn't that bad. There's a lot of content to explain this concept of the reserve currency fallacy. It's hard to get through it in the amount of available time. I'll be available at the party tonight. I want to go through four slides and talk about the history of this question of scaling, and then the first scaling proposal, second scaling proposal, and so on.

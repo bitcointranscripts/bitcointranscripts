@@ -9,10 +9,6 @@ speakers: ["Tone Vays", "Bruce Fenton"]
 
 <https://twitter.com/kanzure/status/1043404928935444480>
 
-Tone Vays (tonevays)
-
-Bruce Fenton (brucefenton)
-
 Bitcoin Association Guy (BAG)
 
 BAG: I'm here with Bruce Fenton and Tone Vays. Bruce is also host of the Satoshi Roundtable and a long-term investor. Tone Vays is a derivatives trader and content creator. We're going to be talking about Wall Street. I believe you're both based in NY? How was the last 12 months?

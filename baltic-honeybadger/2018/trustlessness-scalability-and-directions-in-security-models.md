@@ -8,8 +8,6 @@ speakers: ['Matt Corallo']
 
 Trustlessness, scalability and directions in security models
 
-Matt Corallo (bluematt)
-
 <https://twitter.com/kanzure/status/1043397023846883329>
 
 ... Is everyone awake? Sure. Jumping jacks. Wow, that's bright. I am more idealistic than Eric. I am going to talk about utility and why people use bitcoin and let's see how that goes.

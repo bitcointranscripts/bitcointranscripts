@@ -6,8 +6,6 @@ categories: ['conference']
 tags: ['custodia', 'reglamento']
 ---
 
-Bryan Bishop
-
 <https://twitter.com/kanzure/status/1048014038179823617>
 
 Custodia de Bitcoin

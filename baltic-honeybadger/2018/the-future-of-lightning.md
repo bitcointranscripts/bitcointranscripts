@@ -8,8 +8,6 @@ speakers: ['Elizabeth Stark']
 
 The future of lightning
 
-Elizabeth Stark (starkness)
-
 The year of #craeful and the future of lightning
 
 <https://twitter.com/kanzure/status/1043501348606693379>

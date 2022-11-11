@@ -7,12 +7,6 @@ speakers: ['Sergej Kotliar', 'Alena Vranova', 'Vortex']
 
 1 on 1: Bitcoin payment processing and merchants
 
-Sergej Kotliar (ziggamon)
-
-Alena Vranova (AlenaSatoshi)
-
-Vortex (theonevortex)
-
 <https://twitter.com/kanzure/status/1043476967918592003>
 
 V: Hello and welcome to this amazing conference. It's a good conference, come on. It's great because you can ask them about UASF and they know what you're talking about. I have some guests with me today. We're going to be talkin gabout merchant processing and talk about regular bitcoin adoption too. The first question I have for Alena is, ... there was a big effort in the early days of bitcoin to onboard merchants and get them on and people thought this was how bitcoin was going to win. There was a big effort to do this in the beginning; do you ever see the whole space being about bringing bitcoin to merchants?

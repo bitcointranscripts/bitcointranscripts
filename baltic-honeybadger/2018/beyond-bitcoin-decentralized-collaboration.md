@@ -7,8 +7,6 @@ speakers: ['Yurii Rashkovskii']
 
 Beyond bitcoin: Decentralized collaboration
 
-Yurii Rashkovskii (yrashk)
-
 <https://twitter.com/kanzure/status/1043432684591230976>
 
 <http://sit.fyi/>

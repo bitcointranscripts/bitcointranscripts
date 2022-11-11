@@ -3,15 +3,12 @@ title: La situación actual del mercado y los inversores institucionales
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Tone Vays', 'Bruce Fenton']
 ---
 
 1 a 1: La situación actual del mercado y los inversores institucionales
 
 <https://twitter.com/kanzure/status/1043404928935444480>
-
-Tone Vays (tonevays)
-
-Bruce Fenton (brucefenton)
 
 Asociación Bitcoin Guy (BAG)
 

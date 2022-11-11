@@ -3,17 +3,10 @@ title: Panel de negociación
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Florian Maier', 'Whalepanda', 'Tone Vays', 'Matthew Mezinskis']
 ---
 
-Panel de negociación
-
-Whalepanda (Whalepanda)
-
-Florian Maier (Marsmensch)
-
-Tone Vays (ToneVays)
-
-Matthew Mezinskis (crypto\_voices)
+# Panel de negociación
 
 MM: Como dice Trace Mayer, es perseguir al conejo. ¿Por qué no nos presentamos? 
 

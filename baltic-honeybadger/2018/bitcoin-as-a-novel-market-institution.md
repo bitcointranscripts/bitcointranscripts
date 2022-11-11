@@ -7,8 +7,6 @@ speakers: ['Nic Carter']
 
 Bitcoin as a novel market institution
 
-Nic Carter (nic\_\_carter)
-
 <https://twitter.com/kanzure/status/1043763647498063872>
 
 I am going to be talking about bitcoin as an economic system, not as a software or cryptographic system. This talk has two parts. In the first, I'm going to take a retrospective of the past 10 years of bitcoin as a functioning economic system. In the second part, I will be looking at bitcoin as it is today and how it will be in the future. I'm going to look at the amount of wealth stored in bitcoin and also at the value of the economic throughput of bitcoin. We have popular measures for measuring these things, but they are inferior in a variety of ways.

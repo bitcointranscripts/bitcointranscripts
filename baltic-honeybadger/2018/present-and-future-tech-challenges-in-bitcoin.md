@@ -8,12 +8,6 @@ speakers: ['Peter Todd', 'Adam Back', 'Pierre Roberge']
 
 1 on 1: Present and future tech challenges in bitcoin
 
-Peter Todd (peterktodd)
-
-Adam Back (adam3us)
-
-Pierre Roberge (robep00)
-
 <https://twitter.com/kanzure/status/1043484879210668032>
 
 PR: Hi everybody. I think I have the great fortune to moderate this panel in the sense that we have really great questions thought by the organizers. Essentially we want to ask Adam and Peter what are their thoughts on the current and the future tech challenges for bitcoin. I'm just going to start with that question, starting with Peter.

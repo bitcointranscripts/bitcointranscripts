@@ -8,8 +8,6 @@ speakers: ['Saifedean Ammous']
 
 The bitcoin standard as a layered scaling solution
 
-Saifedean Ammous (via skype) (saifedean)
-
 <https://twitter.com/kanzure/status/1043425514801844224>
 
 Hello, everyone. Can everyone hear me? Okay, wonderful. You can't see my slides, can you. You have to share the screen if you want them to see your slides. How do I do that? Where is that?  This is new skype, I'm sorry. Thank you everyone for inviting me to speak today. It would be great to join you, but unforutnately I couldn't make it.
