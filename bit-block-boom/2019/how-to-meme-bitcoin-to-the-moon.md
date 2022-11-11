@@ -8,8 +8,6 @@ speakers: ['Michael Goldstein']
 
 How to meme bitcoin to the moon
 
-Michael Goldstein (bitstein)
-
 # Introduction
 
 How many of y'all were at the dinner last night? Okay, great. I had a lot of fun. It was fantastic. I don't know how we will beat it next year, but we will figure something out. I am Michael Goldstein, and welcome to my ridiculous tedtalk. A lot of people talk about price fundamentals, but I am going to talk about how to troll and take the curves hard.

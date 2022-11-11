@@ -8,8 +8,6 @@ speakers: ['Tone Vays']
 
 Bitcoin: There can only be one
 
-Tone Vays
-
 <https://twitter.com/kanzure/status/1162742007460192256>
 
 # Introduction

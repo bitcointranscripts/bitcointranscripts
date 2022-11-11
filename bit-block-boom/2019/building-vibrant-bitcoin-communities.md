@@ -7,8 +7,6 @@ speakers: ['Kris Merkel']
 
 Building vibrant bitcoin communities
 
-Kris Merkel
-
 I am the content manager at Exodus Wallet. I have been helping to build up a userbase over the last few years. We are going to talk about building vibrant bitcoin communities. This is the antithesis of Michael Goldstein's talk.
 
 I want to bring positive dynamics to the communities that we participate in. Bitcoin has a few problems we need to overcome. The problem is Craig Wright. Well, the problem is Roger Ver. If you take the personalities out of it, the problem is actually the pile of shitcoins. The real problem is actually all three of those, as well as a bunch of other stuff.

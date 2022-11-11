@@ -8,8 +8,6 @@ speakers: ["Mike Schmidt"]
 
 Taproot, Schnorr, and the next soft-fork
 
-Mike Schmidt
-
 <https://twitter.com/kanzure/status/1162839000811548672>
 
 # Introduction

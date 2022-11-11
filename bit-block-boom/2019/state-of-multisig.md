@@ -8,8 +8,6 @@ speakers: ['Justin Moon']
 
 State of multisig for bitcoin hodlers: Better wallets with PSBT
 
-Justin Moon
-
 <https://twitter.com/kanzure/status/1162769521993834496>
 
 # Introduction

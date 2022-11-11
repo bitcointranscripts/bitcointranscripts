@@ -8,8 +8,6 @@ speakers: ['Saifedean Ammous']
 
 Fiat money and fiat food
 
-Saifedean Ammous
-
 <https://twitter.com/kanzure/status/1162734566479728641>
 
 # Introduction

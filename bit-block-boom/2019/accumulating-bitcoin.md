@@ -8,8 +8,6 @@ speakers: ['Pierre Rochard']
 
 Accumulating bitcoin
 
-Pierre Rochard
-
 # Introduction
 
 Today I am going to be preaching to the choir I think. Hopefully I will be reiterating and reinforcing some points that you already know but maybe forgot to bring up with your nocoiner friends, or learning something new. I hope there's something for everyone in here.
