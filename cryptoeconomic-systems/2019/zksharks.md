@@ -8,8 +8,6 @@ speakers: ['Madars Virza']
 
 zkSHARKs
 
-Madars Virza
-
 # Introduction
 
 Indeed I am Madars Virza. I am going to talk about SHARKs. I am going to be talking about zero-knowledge SHARKs. It's actually something serious and it's related to non-interactive zero-knowledge proofs.
