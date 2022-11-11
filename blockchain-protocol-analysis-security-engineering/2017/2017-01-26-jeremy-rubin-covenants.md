@@ -1,17 +1,15 @@
 ---
-title: Jeremy Rubin - Covenants (2017-01-26)
+title: Covenants - Structuring Multi Transaction Contracts in Bitcoin
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['covenants']
+speakers: ['Jeremy Rubin']
+date: 2017-01-26
 ---
 
-Name: Jeremy Rubin
-
-Topic: Structuring Multi Transaction Contracts in Bitcoin
+# Structuring Multi Transaction Contracts in Bitcoin
 
 Location: BPASE 2017, Stanford University 
-
-Date: January 26th 2017
 
 Video: https://www.youtube.com/watch?v=r7xN7K0OqaA
 

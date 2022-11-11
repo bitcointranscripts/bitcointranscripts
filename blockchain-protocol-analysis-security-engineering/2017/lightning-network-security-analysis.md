@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'privacy', 'lightning']
 speakers: ['Olaoluwa Osuntokun']
+date: 2017-02-03
 ---
 
-Security analysis of the lightning network (2017)
-
-Olaoluwa Osuntokun (roasbeef), Lightning Labs
+# Security analysis of the lightning network 
 
 <https://twitter.com/kanzure/status/957978915515092992>
 

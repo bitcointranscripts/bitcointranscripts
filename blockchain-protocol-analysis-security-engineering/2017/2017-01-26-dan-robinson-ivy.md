@@ -1,17 +1,15 @@
 ---
-title: Dan Robinson - Ivy (2017-01-26)
+title: Ivy - A Declarative Predicate Language for Smart Contracts
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['smart contracts']
+speakers: ['Dan Robinson']
+date: 2017-01-26
 ---
 
-Name: Dan Robinson
-
-Topic: Ivy: A Declarative Predicate Language for Smart Contracts
+# Ivy: A Declarative Predicate Language for Smart Contracts
 
 Location: BPASE 2017, Stanford University
-
-Date: January 26th 2017
 
 Video: https://www.youtube.com/watch?feature=youtu.be&v=xdxs7VJTqns
 

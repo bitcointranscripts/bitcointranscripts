@@ -4,13 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'schnorr']
 speakers: ['Pieter Wuille']
+date: 2018-01-31
 ---
 
 Schnorr signatures for Bitcoin: Opportunities and challenges
-
-Pieter Wuille (sipa)
-
-2018-01-31
 
 video: <https://www.youtube.com/watch?v=oTsjMz3DaLs>
 

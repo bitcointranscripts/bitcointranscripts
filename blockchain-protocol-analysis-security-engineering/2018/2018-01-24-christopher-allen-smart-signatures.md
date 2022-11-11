@@ -1,17 +1,15 @@
 ---
-title: Christopher Allen - Smart Signatures (2018-01-24)
+title: Smart Signatures 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['consensus']
+date: 2018-01-24
+speakers: ['Christopher Allen']
 ---
 
-Name: Christopher Allen
-
-Topic: Smart Signatures: Experiments in Authorization
+# Smart Signatures: Experiments in Authorization
 
 Location: BPASE 2018, Stanford University
-
-Date: January 24th 2018
 
 Video: https://www.youtube.com/watch?v=E9sbWKbfyJU
 

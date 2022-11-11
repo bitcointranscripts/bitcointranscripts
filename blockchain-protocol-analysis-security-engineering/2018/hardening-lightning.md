@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'lightning', 'fees']
 speakers: ["Olaoluwa Osuntokun"]
+date: 2018-01-30
 ---
 
 Hardening lightning network

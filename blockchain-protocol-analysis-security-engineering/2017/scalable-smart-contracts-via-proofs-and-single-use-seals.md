@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'privacy', 'smart contracts']
 speakers: ['Peter Todd']
+date: 2017-02-03
 ---
 
-Scalable smart contracts via proofs and single-use seals
-
-petertodd
+# Scalable smart contracts via proofs and single-use seals
 
 <https://twitter.com/kanzure/status/957660108137418752>
 

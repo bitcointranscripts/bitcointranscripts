@@ -8,8 +8,6 @@ speakers: ["Benedikt Bünz"]
 
 Bulletproofs
 
-Benedikt Bünz
-
 video: <https://www.youtube.com/watch?v=gZjDKgR4dw8>
 
 <https://twitter.com/kanzure/status/958881877896593410>
