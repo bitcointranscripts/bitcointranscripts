@@ -1,15 +1,13 @@
 ---
-title: Fabrice Drouin - Base and Transport Layers of the Lightning Network (2019-06-24)
+title: Base and Transport Layers of the Lightning Network 
 transcript_by: Duncan Dean
 categories: ['residency']
 tags: ['lightning']
+date: 2019-06-24
+speakers: ['Fabrice Drouin']
 ---
 
-Name: Fabrice Drouin
-
-Date: 2019-06-24
-
-Topic: Base and Transport Layers of the Lightning Network
+# Base and Transport Layers of the Lightning Network
 
 Location: Chaincode Labs Lightning Residency 2019
 

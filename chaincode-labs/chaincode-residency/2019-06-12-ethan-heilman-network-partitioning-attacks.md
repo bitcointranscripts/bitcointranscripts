@@ -1,13 +1,13 @@
 ---
-title: Ethan Heilman Network Partitioning Attacks (2019-06-12)
+title:  Network Partitioning Attacks 
 transcript_by: Adam Jonas
 tags: ['privacy', 'P2P', 'attacks']
 categories: ['residency']
+speakers: ['Ethan Heilman']
+date: 2019-06-12
 ---
 
-Name: Ethan Heilman
-
-Topic: Bitcoin network partitioning & network-level privacy attacks
+# Bitcoin network partitioning & network-level privacy attacks
 
 Location: Chaincode Labs 2019 Residency
 

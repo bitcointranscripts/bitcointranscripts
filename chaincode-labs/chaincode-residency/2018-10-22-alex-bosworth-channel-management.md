@@ -1,14 +1,13 @@
 ---
-title: Alex Bosworth - Channel Management (2018-10-22)
+title:  Channel Management 
 transcript_by: Michael Folkson
 tags: ['lightning', 'routing']
 categories: ['residency']
 speakers: ['Alex Bosworth']
+date: 2018-10-22
 ---
 
-Alex Bosworth
-
-Channel Management
+# Channel Management
 
 Video: https://www.youtube.com/watch?v=HlPIB6jt6ww
 

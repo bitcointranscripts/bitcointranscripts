@@ -1,14 +1,13 @@
 ---
-title: Pierre Rochard - Lightning Excel Plugin (2018-10-26)
+title: Lightning Excel Plugin 
 transcript_by: Michael Folkson
 tags: ['ux', 'lightning', 'lnd']
 categories: ['residency']
 speakers: ['Pierre Rochard']
+date: 2018-10-26
 ---
 
-Pierre Rochard
-
-Lightning Excel Plugin
+# Lightning Excel Plugin
 
 Video: https://www.youtube.com/watch?v=AXeUZrS-8mE&t=0s&list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_&index=10
 

@@ -1,14 +1,13 @@
 ---
-title: Elichai Turkel - Schnorr Signatures (2019-08-16)
+title: Schnorr Signatures 
 transcript_by: Michael Folkson
 categories: ['residency']
 tag: ['schnorr']
 speakers: ['Elichai Turkel']
+date: 2019-08-16
 ---
 
-Elichai Turkel
-
-Schnorr Signatures
+# Schnorr Signatures
 
 Video: <https://www.youtube.com/watch?v=XKatSGCZ-gE>
 

@@ -1,17 +1,15 @@
 ---
-title: Jeremy Rubin - CTV (2020-02-11)
+title:  CHECKTEMPLATEVERIFY (CTV)
 transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['soft fork', 'forks']
+speakers: ['Jeremy Rubin']
+date: 2020-02-11
 ---
 
-Name: Jeremy Rubin
-
-Topic: CHECKTEMPLATEVERIFY
+# CHECKTEMPLATEVERIFY
 
 Location: Chaincode Labs Podcast
-
-Date: February 11th 2020
 
 Video: <https://www.youtube.com/watch?v=Lqcpk5o1Y2E>
 

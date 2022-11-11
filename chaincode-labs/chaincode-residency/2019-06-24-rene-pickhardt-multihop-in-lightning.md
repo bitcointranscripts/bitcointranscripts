@@ -1,17 +1,15 @@
 ---
-title: René Pickhardt - Multihop of the Lightning Network (2019-06-24)
+title: Multihop of the Lightning Network 
 transcript by: Elle Mouton, Corey Phillips, Brian Mancini, Abubakar Nur Khalil
 categories: ['residency']
 tags: ['lightning', 'routing']
+speakers: ['René Pickhardt']
+date: 2019-06-24
 ---
 
-Name: René Pickhardt
-
-Topic: Multihop of the Lightning Network
+# Multihop of the Lightning Network
 
 Location: Chaincode Labs Lightning Residency 2019
-
-Date: 2019-06-24
 
 Video: <https://www.youtube.com/watch?v=P7I-C0_sijg>
 

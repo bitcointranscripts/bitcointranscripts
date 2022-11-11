@@ -3,9 +3,10 @@ title: Lightning - The Transfer Layer
 transcript_by: Will Clark
 tags: ['lightning']
 categories: ['residency']
+speakers: ['Fabrice Drouin']
 ---
 
-Name: Fabrice Drouin
+# Lightning - The Transfer Layer
 
 Location: Chaincode Labs Lightning Residency 2019
 

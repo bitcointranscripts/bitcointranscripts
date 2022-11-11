@@ -1,19 +1,18 @@
 ---
-title: John Newbery Security Models (2019-06-17)
+title: Security Models 
 transcript_by: Caralie Chrisco
 translation_by: Julien Urraca
 speakers: ["John Newbery"]
 tags: ["security", "taproot", "cryptography"]
 categories: ["residency"]
+date: 2019-06-17
 ---
+
+# Security Models
 
 Texto original: <https://btctranscripts.com/chaincode-labs/chaincode-residency/2019-06-17-john-newbery-security-models/>
 
 Transcripción de: Caralie Chrisco
-
-Nombre: John Newbery
-
-Tema: Security Models
 
 Ubicación: Residencia de Chaincode Labs 2019
 

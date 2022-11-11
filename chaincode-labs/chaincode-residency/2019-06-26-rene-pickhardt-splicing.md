@@ -1,13 +1,13 @@
 ---
-title: Rene Pickhardt - Splicing
+title: Splicing
 Transcript_by: Caralie Chrisco
 categories: ['residency']
 tags: ['lightning', 'splicing']
+speakers: ['Rene Pickhardt']
+date: 2019-06-26
 ---
 
-Name: Rene Pickhardt
-
-Topic: Splicing
+# Splicing
 
 Location: Chaincode Labs Lightning Residency 2019
 

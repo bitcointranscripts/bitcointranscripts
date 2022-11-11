@@ -1,12 +1,11 @@
 ---
-title: Alex Bosworth - Lightning Protocol (2018-10-22)
+title: Lightning Protocol 
 transcript_by: Michael Folkson
 tags: ['lightning']
 categories: ['residency']
 speakers: ['Alex Bosworth']
+date: 2018-10-22
 ---
-
-Alex Bosworth
 
 The Lightning Protocol, an Application Design Perspective
 

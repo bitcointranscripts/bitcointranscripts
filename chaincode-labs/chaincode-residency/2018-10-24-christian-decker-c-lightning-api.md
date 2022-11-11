@@ -1,14 +1,13 @@
 ---
-title: Christian Decker - C-Lightning API (2018-10-24)
+title: C-Lightning API 
 transcript_by: Michael Folkson
 tags: ['lightning', 'c-lightning']
 categories: ['residency']
 speakers: ['Christian Decker']
+date: 2018-10-24
 ---
 
-Christian Decker
-
-Developing on c-lightning
+# Developing on c-lightning
 
 Location: Chaincode Labs Lightning Residency 2018
 

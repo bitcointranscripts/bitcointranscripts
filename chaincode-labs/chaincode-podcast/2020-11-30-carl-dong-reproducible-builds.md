@@ -1,18 +1,15 @@
 ---
-title: Carl Dong - Reproducible Builds (2020-11-30)
+title: Carl Dong - Reproducible Builds 
 transcript_by: Michael Folkson
 speakers: ["Carl Dong"]
 categories: ["podcast"]
 tag: ["build systems"]
+date: 2020-11-30
 ---
 
-Name: Carl Dong
-
-Topic: Reproducible Build Systems
+# Reproducible Build Systems
 
 Location: Chaincode Labs Podcast (Episode 9 and 10)
-
-Date: November 30th 2020
 
 Video: <https://www.youtube.com/watch?v=Y5Gfli3x6rI>
 

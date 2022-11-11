@@ -1,17 +1,15 @@
 ---
-title: Carl Dong - libbitcoinkernel (2022-04-12)
+title: libbitcoinkernel 
 transcript_by: Michael Folkson
 categories: ['video']
 tags: ['bitcoin core', 'consensus']
+speakers: ['Carl Dong']
+date: 2022-04-12
 ---
 
-Name: Carl Dong
-
-Topic: libbitcoinkernel
+# libbitcoinkernel
 
 Location: Carl Dong YouTube channel (online)
-
-Date: April 12th 2022
 
 Video: <https://www.youtube.com/watch?v=MdxIkH6GCBs>
 

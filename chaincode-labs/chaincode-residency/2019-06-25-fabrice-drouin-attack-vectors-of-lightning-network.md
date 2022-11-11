@@ -1,17 +1,15 @@
 ---
-title: Fabrice Drouin - Attack Vectors of Lightning Network (2019-06-25)
+title: Attack Vectors of Lightning Network 
 transcript_by: Gijs van Dam
 categories: ['residency']
 tag: ['attacks', 'lightning']
+speakers: ['Fabrice Drouin']
+date: 2019-06-25
 ---
 
-Name: Fabrice Drouin
-
-Topic: Attack Vectors of Lightning Network
+# Attack Vectors of Lightning Network
 
 Location: Chaincode Residency – Summer 2019
-
-Date: June 25th 2019
 
 Video: https://youtu.be/R5cSrftd8nc
 
