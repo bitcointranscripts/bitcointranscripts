@@ -1,16 +1,14 @@
 ---
-title: Kostya Serebryany - Fuzzing (2017-10-11)
+title: Fuzzing 
 transcript_by: Michael Folkson
 categories: ['conference']
+date: 2017-10-11
+speakers: ['Kostya Serebryany']
 ---
 
-Name: Kostya Serebryany
-
-Topic: Fuzz or lose! Why and how to make fuzzing a standard practice for C++
+# Fuzz or lose! Why and how to make fuzzing a standard practice for C++
 
 Location: CppCon 2017
-
-Date: October 11th 2017
 
 Video: https://www.youtube.com/watch?v=k-Cv8Q3zWNQ
 
