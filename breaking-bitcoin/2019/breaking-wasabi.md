@@ -8,8 +8,6 @@ speakers: ["Udi Wertheimer"]
 
 # Breaking wasabi and automated wallets
 
-Name: Udi Wertheimer
-
 1127 96A8 DFCA 1A96 C8B8 0094 9211 687A D298 9B12
 
 <https://twitter.com/kanzure/status/1137652130611978240>

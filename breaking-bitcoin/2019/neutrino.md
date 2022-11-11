@@ -8,8 +8,6 @@ speakers: ["Jimmy Song"]
 
 Neutrino bip158
 
-Jimmy Song
-
 ... 228C D70C FAA6 17E3 2679 E455
 
 bip157 && bip158

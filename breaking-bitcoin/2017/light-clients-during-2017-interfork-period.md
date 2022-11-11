@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ["conference"]
 tags: ["forks", "segwit", "miners", "wallet"]
 speakers: ["Thomas Voegtlin"]
+date: 2017-09-09
 ---
 
-Light clients during the 2017 interfork period
-
-Name: Thomas Voegtlin
+# Light clients during the 2017 interfork period
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5h9m>
 

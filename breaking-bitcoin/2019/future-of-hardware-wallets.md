@@ -8,8 +8,6 @@ speakers: ['Stepan Snigirev']
 
 The future of hardware wallets
 
-Stepan Snigirev
-
 D419 C410 1E24 5B09 0D2C 46BF 8C3D 2C48 560E 81AC
 
 <https://twitter.com/kanzure/status/1137663515957837826>

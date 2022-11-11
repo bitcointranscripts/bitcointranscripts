@@ -8,8 +8,6 @@ speakers: ["Chris Belcher"]
 
 # Breaking bitcoin privacy
 
-Chris Belcher
-
 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129
 
 <https://twitter.com/kanzure/status/1137304437024862208>

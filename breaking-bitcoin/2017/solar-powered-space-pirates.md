@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ["conference"]
 tags: ["cryptography"]
 speakers: ["Peter Todd"]
+date: 2017-09-10
 ---
 
 # Solar powered space pirates: A threat to bitcoin?
-
-Name: Peter Todd
 
 video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1m33s>
 

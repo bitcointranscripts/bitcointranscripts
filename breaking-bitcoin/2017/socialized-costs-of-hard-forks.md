@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ["conference"]
 tags: ["forks"]
 speakers: ["Jimmy Song"]
+date: 2017-09-09
 ---
 
 # Socialized costs of hard-forks
-
-Name: Jimmy Song
 
 <https://twitter.com/kanzure/status/1005518746260262912>
 

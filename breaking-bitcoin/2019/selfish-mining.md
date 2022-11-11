@@ -8,13 +8,11 @@ speakers: ["Ricardo Perez-Marco"]
 
 # Selfish mining and Dyck words
 
-Name: Ricardo Perez-Marco
-
-# Introduction
+## Introduction
 
 I am going to talk about our recent work on selfish mining. I am going to explain the profitability model, the different mathematical models that are used to analyze selfish mining with their properties.
 
-# Bibliography
+## Bibliography
 
 - On profitability of selfish mining
 - On profitability of stubborn mining

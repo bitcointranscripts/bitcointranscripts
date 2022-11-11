@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ["conference"]
 tags: ["consensus", "forks"]
 speakers: ["Eric Lombrozo"]
+date: 2017-09-10
 ---
 
 # Changing consensus rules without breaking bitcoin
-
-Name: Eric Lombrozo (CodeShark)
 
 video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=32min9s>
 
