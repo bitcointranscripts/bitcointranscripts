@@ -1,9 +1,11 @@
 ---
-title: LTB - Pieter Wuille, Jonas Nick (2019-06-09)
+title: LTB - Let's Talk Bitcoin 
 transcript_by: Michael Folkson
 translation_by: Abel Armoa
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
+speakers: ['Pieter Wuille', 'Jonas Nic']
+date: 2019-06-09
 ---
 
 # Hablemos de Bitcoin con Pieter Wuille y Jonas Nick – 9 de Junio de 2019 ("Let's Talk Bitcoin")
