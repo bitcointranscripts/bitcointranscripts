@@ -1,17 +1,15 @@
 ---
-title: Christian Decker - Lightning Backups (2020-05-03)
+title:  Lightning Backups 
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning']
+speakers: ['Christian Decker']
+date: 2020-05-03
 ---
-
-Name: Christian Decker
 
 Topic: Back the f\*\*\* up
 
 Location: Potzblitz (online)
-
-Date: May 3rd 2020
 
 Video: https://www.youtube.com/watch?v=kGQF3wtzr04
 

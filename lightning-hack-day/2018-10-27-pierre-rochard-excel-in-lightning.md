@@ -1,14 +1,13 @@
 ---
-title: Pierre Rochard - Excel In Lightning (2018-10-27)
+title: Excel In Lightning 
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lnd']
 speakers: ["Pierre Rochard"]
+date: 2018-10-27
 ---
 
-Pierre Rochard
-
-Excel in Lightning - Lightning Hack Day NYC
+# Excel in Lightning - Lightning Hack Day NYC
 
 Video: https://www.youtube.com/watch?v=CWIskx9KmAg&t=0s&list=PLYLOctWdUBtYBle_aU4WWJJaTekm8bhct&index=5
 

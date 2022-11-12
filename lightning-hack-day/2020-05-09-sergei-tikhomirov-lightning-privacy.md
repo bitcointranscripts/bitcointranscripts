@@ -1,18 +1,16 @@
 ---
-title: Sergei Tikhomirov - Lightning Privacy (2020-05-09)
+title: Lightning Privacy 
 transcript_by: Michael Folkson
 speakers: ["Sergei Tikhomirov"]
 categories: ["hackathon"]
 tags: ["security", "privacy", "lightning", "scalability"]
+date: 2020-05-09
 ---
 
-Name: Sergei Tikhomirov
 
-Topic: Quantitative Analysis of Lightning Network Privacy
+# Quantitative Analysis of Lightning Network Privacy
 
 Location: Lightning Hacksprint (Fulmo)
-
-Date: May 9th 2020
 
 Video: https://www.youtube.com/watch?v=8lUTbfO94mM
 

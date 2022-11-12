@@ -1,14 +1,13 @@
 ---
-title: Tom Kirkpatrick - Zap Wallet (2018-12-01)
+title: Zap Wallet 
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['wallet']
 speakers: ["Tom Kirkpatrick"]
+date: 2018-12-01
 ---
 
-Tom Kirkpatrick
-
-Zap Desktop - A look under the hood
+# Zap Desktop - A look under the hood
 
 Video: https://www.youtube.com/watch?v=OhRPZs0cWwQ
 

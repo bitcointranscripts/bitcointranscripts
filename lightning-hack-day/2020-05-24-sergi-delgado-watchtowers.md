@@ -1,17 +1,15 @@
 ---
-title: Sergi Delgado - Watchtowers (2020-05-24)
+title:  Watchtowers 
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
+speakers: ['Sergi Delgado']
+date: 2020-05-24
 ---
 
-Name: Sergi Delgado
-
-Topic: Watchtowers and BOLT 13
+# Watchtowers and BOLT 13
 
 Location: Potzblitz (online)
-
-Date: May 24th 2020
 
 Video: https://www.youtube.com/watch?v=Vkq9CVxMclE
 
