@@ -1,13 +1,13 @@
 ---
-title: Chris Stewart - Private Key Management (2019-10-19)
+title: Private Key Management 
 transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Chris Stewart']
+date: 2019-10-19
 ---
 
-Chris Stewart
 
-Lightning 101 for Exchanges: Private Key Management
+# Lightning 101 for Exchanges: Private Key Management
 
 The Lightning Conference Day 1 (Stage 2)
 
