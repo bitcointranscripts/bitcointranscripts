@@ -1,16 +1,15 @@
 ---
-title: Gleb Naumenko - Erlay (2019-11-13)
+title:  Current state of P2P research in Bitcoin /Erlay 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'P2P']
 speakers: ['Gleb Naumenko']
+date: 2019-11-13
 ---
 
-Gleb Naumenko
+# Current state of P2P research in Bitcoin / Erlay 
 
 London Bitcoin Devs
-
-Current state of P2P research in Bitcoin
 
 Video: <https://www.youtube.com/watch?v=ZUWs00Anpaw>
 

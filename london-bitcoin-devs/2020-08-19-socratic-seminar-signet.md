@@ -1,17 +1,16 @@
 ---
-title: Socratic Seminar - Signet (2020-08-19)
+title: Socratic Seminar - Signet 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['taproot', 'schnorr']
+date: 2020-08-19
 ---
-
-Name: Socratic Seminar
 
 Topic: Signet
 
-Location: London BitDevs (online)
+Name: Socratic Seminar
 
-Date: August 19th 2020
+Location: London BitDevs (online)
 
 Video: https://www.youtube.com/watch?v=b0AiucAuX3E
 

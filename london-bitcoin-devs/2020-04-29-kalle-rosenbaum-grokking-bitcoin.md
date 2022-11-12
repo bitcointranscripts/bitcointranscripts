@@ -1,16 +1,14 @@
 ---
-title: Kalle Rosenbaum - Grokking Bitcoin (2020-04-29)
+title: Grokking Bitcoin 
 transcript_by: Michael Folkson
 categories: ['meetup']
+date: 2020-04-29
+speakers: ['Kalle Rosenbaum']
 ---
 
-Name: Kalle Rosenbaum
-
-Topic: Grokking Bitcoin
+# Grokking Bitcoin
 
 Location: London Bitcoin Devs (online)
-
-Date: April 29th 2020
 
 Video: https://www.youtube.com/watch?v=6tHnYyaw0qw
 

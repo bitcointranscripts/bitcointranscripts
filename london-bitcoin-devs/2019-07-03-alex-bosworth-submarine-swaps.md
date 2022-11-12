@@ -1,12 +1,13 @@
 ---
-title: Alex Bosworth - Submarine Swaps (2019-07-03)
+title: Submarine Swaps 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['submarine swaps']
 speakers: ['Alex Bosworth']
+date: 2019-07-03
 ---
 
-Alex Bosworth
+# Submarine Swaps 
 
 London Bitcoin Devs
 

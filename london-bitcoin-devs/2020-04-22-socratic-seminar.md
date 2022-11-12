@@ -1,16 +1,16 @@
 ---
-title: Socratic Seminar (2020-04-22)
+title: Socratic Seminar - Grokking Bitcoin 
 transcript_by: Michael Folkson
 categories: ['meetup']
+date: 2020-04-22
+speakers: ['Kalle Rosenbaum']
 ---
+
+# Grokking Bitcoin 
 
 Name: Socratic Seminar
 
-Topic: Grokking Bitcoin by Kalle Rosenbaum
-
 Location: London BitDevs (online)
-
-Date: April 22nd 2020
 
 The conversation has been anonymized to protect the identity of the participants.
 

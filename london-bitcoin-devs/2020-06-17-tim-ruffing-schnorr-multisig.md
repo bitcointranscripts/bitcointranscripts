@@ -1,17 +1,15 @@
 ---
-title: Tim Ruffing - Schnorr, Multisig (2020-06-17)
+title: Tim Ruffing - Schnorr, Multisig 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot', 'multisig']
+date: 2020-06-17
+speakers: ['Tim Ruffing']
 ---
 
-Name: Tim Ruffing
-
-Topic: Taproot and Schnorr Multisignatures
+# Taproot and Schnorr Multisignatures
 
 Location: London Bitcoin Devs (online)
-
-Date: June 17th 2020
 
 Video: https://www.youtube.com/watch?v=8Op0Glp9Eoo
 

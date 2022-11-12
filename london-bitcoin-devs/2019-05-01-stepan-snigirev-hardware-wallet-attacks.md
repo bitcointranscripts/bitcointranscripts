@@ -1,5 +1,5 @@
 ---
-title: Stepan Snigirev - Hardware wallet attacks (2019-05-01)
+title:  Hardware wallet attacks 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'security']
@@ -7,13 +7,9 @@ speakers: ['Stepan Snigirev']
 date: 2019-05-01
 ---
 
-Name: Stepan Snigirev
-
 Topic: Hardware Wallets (History of attacks)
 
 Location: London Bitcoin Devs
-
-Date: May 1st 2019
 
 Video: <https://www.youtube.com/watch?v=P5PI5MZ_2yo>
 

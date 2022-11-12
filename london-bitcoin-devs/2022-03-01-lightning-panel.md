@@ -1,17 +1,15 @@
 ---
-title: Lightning Network Panel (2022-03-01)
+title: Lightning Network Panel 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
+date: 2022-03-01
+speakers: ['Christian Decker', 'Bastien Teinturier', 'Oliver Gugger', 'Michael Folkson']
 ---
-
-Name: Christian Decker, Bastien Teinturier, Oliver Gugger, Michael Folkson
 
 Topic: The Lightning Network in 2022
 
 Location: London Bitcoin Devs
-
-Date: March 1st 2022
 
 Video: <https://www.youtube.com/watch?v=fqhioVxqmig>
 
