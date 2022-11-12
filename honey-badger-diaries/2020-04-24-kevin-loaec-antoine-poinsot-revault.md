@@ -1,17 +1,15 @@
 ---
-title: Kevin Loaec, Antoine Poinsot - Revault (2020-04-24)
+title: Kevin Loaec, Antoine Poinsot - Revault 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['attacks', 'ux']
+date: 2020-04-24
+speakers: ['Kevin Loaec', 'Antoine Poinsot']
 ---
 
-Name: Kevin Loaec and Antoine Poinsot
-
-Topic: Revault Bitcoin vaults
+# Revault Bitcoin vaults
 
 Location: Honey Badger Diaries (podcast)
-
-Date: April 24th 2020
 
 Video: https://www.youtube.com/watch?v=xDTCT75VwvU
 
