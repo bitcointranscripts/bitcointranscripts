@@ -1,17 +1,15 @@
 ---
-title: Alekos Filini Magical Bitcoin (2020-05-21)
+title: Alekos Filini Magical Bitcoin 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['miniscript', 'wallet']
+speakers: ['Alekos Filini']
+date: 2020-05-21
 ---
 
-Name: Alekos Filini
-
-Topic: Magical Bitcoin
+# Magical Bitcoin
 
 Location: LA BitDevs (online)
-
-Date: May 21st 2020
 
 Magical Bitcoin site: https://magicalbitcoin.org/
 

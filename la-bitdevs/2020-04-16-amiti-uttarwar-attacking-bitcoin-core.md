@@ -1,17 +1,15 @@
 ---
-title: Amiti Uttarwar - Attacking Bitcoin Core (2020-04-16)
+title: Amiti Uttarwar - Attacking Bitcoin Core 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']
+speakers: ['Amiti Uttarwar']
+date: 2020-04-16
 ---
 
-Name: Amiti Uttarwar
-
-Topic: Attacking Bitcoin Core
+# Attacking Bitcoin Core
 
 Location: BitDevs LA
-
-Date: April 16th 2020
 
 Video: https://www.youtube.com/watch?v=8TaY730YlMg
 
