@@ -6,13 +6,13 @@ tags: ['security', 'mining', 'regulation', 'wallet']
 speakers: ['Melanie Shapiro', 'Alan Reiner', 'Kristov Atlas']
 ---
 
+# Security and usability.
+
 * Melanie Shapiro
 * Alan Reiner
 * Kristov Atlas
 * Elizabeth Stark (moderator)
 and maybe Melanie Shapiro? malani?
-
-Security and usability.
 
 Elizabeth: I think this is a highly relevant discussion. I talked a bit about regulation. Regulation might be the number threat, but security might be the number two threat. I am excited to have a panel of leaders in this space who are actively building in this ecosystem. I am going to ask each to do a quick intro.
 

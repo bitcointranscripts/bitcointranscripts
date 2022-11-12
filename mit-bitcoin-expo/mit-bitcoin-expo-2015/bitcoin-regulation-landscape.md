@@ -6,6 +6,8 @@ tags: ['regulation']
 speakers: ['Elizabeth Stark', 'Jerry Brito', 'Constance Choi']
 ---
 
+# Bitcoin Regulation Landscape
+
 * Elizabeth Stark
 * Jerry Brito
 * Constance Choi

@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Joshua Lim', 'Juthica Chou', 'Bobby Cho']
 ---
+#  Bitcoin Financing And Trading
 
 * Joshua Lim (Circle, ex Goldman Sachs)
 * Juthica Chou (LedgerX) (Goldman Sachs)

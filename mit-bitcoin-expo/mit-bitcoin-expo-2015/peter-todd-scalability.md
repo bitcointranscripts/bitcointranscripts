@@ -1,14 +1,12 @@
 ---
-title: Peter Todd Scalability
+title: Scalability
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['scalability']
 speakers: ['Peter Todd']
 ---
 
-Peter Todd
-
-Scalability
+# Scalability
 
 There we go. Yeah. Looks good. Thank you.
 

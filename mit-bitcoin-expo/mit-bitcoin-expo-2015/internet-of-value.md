@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Jeremy Allaire']
 ---
 
-Jeremy Allaire
+# Internet Of Value
 
 What are the lessons from the development of the internet that we can learn from? Why is there an inevitability as to what Bitcoin is doing?
 

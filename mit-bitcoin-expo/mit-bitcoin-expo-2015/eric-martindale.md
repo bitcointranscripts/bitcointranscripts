@@ -1,13 +1,11 @@
 ---
-title: Eric Martindale
+title: Open source - Beyond Bitcoin Core
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Eric Martindale']
 ---
 
 Open source: Beyond Bitcoin Core
-
-Eric Martindale
 
 He is at Bitpay, working on copay, bitcore, foxtrot, and their blockchain explorer.
 

@@ -6,9 +6,7 @@ tags: ['consensus']
 speakers: ['James D'Angelo']
 ---
 
-James D'Angelo
-
-The Scaling Debate is a Proxy Battle Over Centralization
+# The Scaling Debate is a Proxy Battle Over Centralization
 
 I really appreciated the fact that.... I really appreciated Cory's talk. I quoted someone in my talk. It was a fairly recent quote. His whole talk was speaking about governance. There's a lot of governing issues coming into Bitcoin. We like the solving the whole world with technical.
 

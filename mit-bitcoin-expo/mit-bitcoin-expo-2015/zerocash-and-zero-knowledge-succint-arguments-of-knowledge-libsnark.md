@@ -6,9 +6,7 @@ tags: ['consensus', 'privacy']
 speakers: ['Madars Virza']
 ---
 
-Zero knowledge proofs and SNARKs and libsnark
-
-Madars Virza
+# Zero knowledge proofs and SNARKs and libsnark
 
 I am going to tell you about zerocash and our approach of addressing Bitcoin's privacy problem. All of this is joint work with Techion, ETCH Zurich, and MIT, and Matt Green, .. and .. and..
 
