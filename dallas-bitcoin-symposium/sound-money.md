@@ -6,9 +6,7 @@ tags: ['altcoin']
 speakers: ['Michael Goldstein']
 ---
 
-Michael Goldstein
-
-Bitcoin is sound money
+# Bitcoin is sound money
 
 # Introduction
 

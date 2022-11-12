@@ -3,6 +3,7 @@ title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Parker Lewis']
+date: 2019-08-16
 ---
 
 <https://twitter.com/kanzure/status/1162436437687623684>

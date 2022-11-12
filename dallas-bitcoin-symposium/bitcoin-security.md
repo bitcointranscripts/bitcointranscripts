@@ -6,8 +6,6 @@ tags: ['security']
 speakers: ['Dhruv Bansal']
 ---
 
-Dhruv Bansal
-
 Bitcoin security
 
 # Introduction
