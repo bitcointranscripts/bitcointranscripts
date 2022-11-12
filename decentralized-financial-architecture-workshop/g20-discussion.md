@@ -8,7 +8,6 @@ speakers: ['Shinichiro Matsuo']
 
 Why do we need a multi-stakeholder discussion in a blockchain world? A report from G20 discussions.
 
-Shinichiro Matsuo
 
 <https://bsafe.network>
 
