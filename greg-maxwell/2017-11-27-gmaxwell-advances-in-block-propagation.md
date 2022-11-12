@@ -1,15 +1,12 @@
 ---
-title: Gmaxwell - Advances In Block Propagation (2017-11-27)
+title: Advances In Block Propagation 
 transcript_by: Bryan Bishop
 speakers: ["Greg Maxwell"]
 tags: ["mempool", "segwit"]
+date: 2017-11-27
 ---
 
-Advances in block propagation
-
-Greg Maxwell
-
-2017-11-27
+# Advances in block propagation
 
 slides: <https://web.archive.org/web/20190416113003/https://people.xiph.org/~greg/gmaxwell-sf-prop-2017.pdf>
 

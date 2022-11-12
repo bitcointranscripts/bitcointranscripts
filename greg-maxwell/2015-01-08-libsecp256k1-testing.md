@@ -1,17 +1,15 @@
 ---
-title: Greg Maxwell - libsecp256k1 testing (2015–01-08)
+title: libsecp256k1 testing 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 tags: ["bitcoin core", "testing"]
+speakers: [' Greg Maxwell']
+date: 2015–01-08
 ---
-
-Name: Greg Maxwell
 
 Topic: libsecp256k1 testing
 
 Location: Reddit
-
-Date: January 8th 2015
 
 <https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to/>
 

@@ -1,17 +1,14 @@
 ---
-title: Greg Maxwell - Covenants and BIP119 (2022–05-05)
+title:  Covenants and BIP119 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 tags: ["covenants"]
+date: 2022–05-05
 ---
 
-Name: Greg Maxwell
-
-Topic: Covenants and BIP119
+# Covenants and BIP119
 
 Location: Reddit
-
-Date: May 5th 2022
 
 <https://www.reddit.com/r/Bitcoin/comments/uim560/bip_119/i7dhfpb/>
 

@@ -1,17 +1,14 @@
 ---
-title: Greg Maxwell - 51 percent mining attack (2019–10-04)
+title: Greg Maxwell - 51 percent mining attack 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 tags: ["mining", "security"]
+date: 2019–10-04
 ---
 
-Name: Greg Maxwell
-
-Topic: Should we be more concerned by the prospect of a 51 percent mining attack?
+# Should we be more concerned by the prospect of a 51 percent mining attack?
 
 Location: Reddit
-
-Date: October 4th 2019
 
 <https://www.reddit.com/r/Bitcoin/comments/ddddfl/comment/f2g9e7b/?utm_source=share&utm_medium=web2x&context=3>
 

@@ -1,17 +1,15 @@
 ---
-title: Greg Maxwell - OpenSSL bug discovery (2015–01-08)
+title: Greg Maxwell - OpenSSL bug discovery 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 tags: ["bitcoin core", "testing"]
+speakers: ['Greg Maxwell']
+date: 2015–01-08
 ---
-
-Name: Greg Maxwell
 
 Topic: OpenSSL bug discovery
 
 Location: Reddit
-
-Date: January 8th 2015
 
 <https://np.reddit.com/r/programming/comments/2rrc64/openssl_security_advisory_new_openssl_releases/cnilq2w/?context=3>
 

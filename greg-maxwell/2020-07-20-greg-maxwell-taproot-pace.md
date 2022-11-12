@@ -1,17 +1,14 @@
 ---
-title:  Taproot Pace (2020-07-20)
+title:  Taproot Pace 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 tags: ["consensus", "taproot"]
+date: 2020-07-20
 ---
 
-Name: Greg Maxwell
-
-Topic: Is Taproot development moving too fast or too slow?
+# Is Taproot development moving too fast or too slow?
 
 Location: Reddit
-
-Date: July 20, 2020
 
 https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s?utm_source=share&utm_medium=web2x&context=3
 

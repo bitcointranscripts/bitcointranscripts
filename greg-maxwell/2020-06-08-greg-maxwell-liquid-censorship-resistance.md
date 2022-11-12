@@ -1,16 +1,13 @@
 ---
-title: Greg Maxwell - Liquid Censorship Resistance (2020-06-08)
+title: Liquid Censorship Resistance 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
+date: 2020-06-08
 ---
 
-Name: Greg Maxwell
-
-Topic: Is Liquid censorship resistant?
+# Is Liquid censorship resistant?
 
 Location: Reddit
-
-Date: June 8, 2020
 
 https://www.reddit.com/r/Bitcoin/comments/gye0yv/liquid_censorship_resistance/ftcllcm?utm_source=share&utm_medium=web2x&context=3
 

@@ -1,16 +1,13 @@
 ---
-title: Greg Maxwell - Multiple Implementations (2018-09-23)
+title: Greg Maxwell - Multiple Implementations 
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
+date: 2018-09-23
 ---
 
-Name: Greg Maxwell
-
-Topic: Risks of multiple implementations
+# Risks of multiple implementations
 
 Location: Bitcointalk
-
-Date: September 23rd 2018
 
 https://bitcointalk.org/index.php?topic=5035144.msg46077622#msg46077622
 

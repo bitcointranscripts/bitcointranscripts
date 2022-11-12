@@ -1,16 +1,14 @@
 ---
-title: Greg Maxwell - Checkmultisig Bug (2020-08-27)
+title: Checkmultisig Bug 
 transcript_by: Michael Folkson
 tags: ['hard fork', 'multisig']
+speakers: ['Greg Maxwell']
+date: 2020-08-27
 ---
 
-Name: Greg Maxwell
-
-Topic: What is stopping the OP_CHECKMULTISIG extra pop bug from being fixed?
+# What is stopping the OP_CHECKMULTISIG extra pop bug from being fixed?
 
 Location: Bitcointalk
-
-Date: August 27th 2020
 
 https://bitcointalk.org/index.php?topic=5271566.msg55079521#msg55079521
 

@@ -1,11 +1,11 @@
 ---
-title: Gmaxwell - Bitcoin Selection Cryptography (2015-04-29)
+title: Gmaxwell - Bitcoin Selection Cryptography 
 speakers: ["Greg Maxwell"]
 transcript_by: Bryan Bishop
 tag: ["cryptography"]
+speakers: ['Greg Maxwell']
+date: 2015-04-29
 ---
-
-Greg Maxwell (gmaxwell)
 
 - slides: <https://people.xiph.org/~greg/gmaxwell_sfbitcoin_2015_04_20.pdf>
 - video: <https://www.youtube.com/watch?v=Gs9lJTRZCDc> (1h 23min 12sec)

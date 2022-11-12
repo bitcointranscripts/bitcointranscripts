@@ -1,16 +1,13 @@
 ---
-title: Greg Maxwell - Useful Proof Of Work (2020-07-05)
+title: Greg Maxwell - Useful Proof Of Work 
+date: 2020-07-05
 speakers: ["Greg Maxwell"]
 transcript_by: Michael Folkson
 ---
 
-Name: Greg Maxwell
-
-Topic: Why can’t hash power be used for something useful?
+# Why can’t hash power be used for something useful?
 
 Location: Reddit
-
-Date: July 5, 2020
 
 https://www.reddit.com/r/Bitcoin/comments/hlu2ah/why_cant_hash_power_be_used_for_something_useful/fx1axlt?utm_source=share&utm_medium=web2x&context=3
 
