@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
 speakers: ['Lisa Neigut']
+date: 2019-11-28
 ---
 
-Taxonomy of lightning nodes
-
-Lisa Neigut
+# Taxonomy of lightning nodes
 
 Video: https://youtu.be/A4i5cEI1jnc
 

@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'submarine swaps']
 speakers: ['Alex Bosworth']
+date: 2019-11-29
 ---
 
-Bridging off-chain and on-chain with submarine swaps
-
-Alex Bosworth
+# Bridging off-chain and on-chain with submarine swaps
 
 Video: https://youtu.be/SCxaV2HCQ5o
 

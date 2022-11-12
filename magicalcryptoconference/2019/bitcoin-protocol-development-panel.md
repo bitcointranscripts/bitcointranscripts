@@ -10,8 +10,6 @@ Video: https://youtu.be/8B1fX2i4dMY
 
 Bitcoin protocol development panel
 
-Eric Lombrozo, Matt Corallo, John Newbery, Luke Dashjr, Katherine Wu
-
 KW: We have some wonderful panelists today. Let's kick it off. Let's start with Eric. Who are you and what role do you play in bitcoin development?
 
 EL: I got into bitcoin in 2011. I had my own network stack. I almost had a full node implementation but I stopped short because it wasn't as well tested or reviewed as Bitcoin Core. So I started to look into the community a little bit. I became really interested in the development process itself.

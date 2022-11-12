@@ -2,12 +2,11 @@
 title: Bitcoin Satellite Network
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ["Adam Back"]
+speakers: ['Adam Back']
+date: 2019-12-04
 ---
 
-Bitcoin satellite network
-
-Adam Back
+# Bitcoin satellite network
 
 Video: https://youtu.be/tJOI2i6h3HM
 

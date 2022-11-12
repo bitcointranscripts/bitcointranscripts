@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
 speakers: ['Stacy Herbert', 'Elizabeth Stark']
+date: 2019-11-20
 ---
 
 Fireside chat on the state of the lightning network
-
-Stacy Herbert, Elizabeth Stark
 
 Video: https://youtu.be/kk2dUD6QXgw
 

@@ -1,17 +1,13 @@
 ---
 title: The State of Bitcoin Mining
 transcript_by: kouloumos
-speakers: ['Matt Corallo"]
-categories: ["conference", "mining"]
+speakers: ['Matt Corallo']
+categories: ['conference']
+tags: ['mining']
+date: 2019-05-12
 ---
 
-Name: Matt Corallo
-
 Topic: The State of Bitcoin Mining: No Good, The Bad, and The Ugly
-
-Matt Corallo
-
-Date: May 12th 2019
 
 Video: https://www.youtube.com/watch?v=k_z-FBAil6k
 

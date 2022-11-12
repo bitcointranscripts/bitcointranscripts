@@ -10,8 +10,6 @@ Cryptographic hocus-pocus meaning nothing: The zcash trusted setup MPC
 
 or: "Peter Todd's secret love letter to Zooko"
 
-Peter Todd
-
 Video: https://youtu.be/YHieWJWwVbE
 
 # Background

@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
 speakers: ['Will O'Beirne']
+date: 2019-11-22
 ---
 
 Lightning payments (and more) on the web
-
-Will O'Beirne
 
 Video: https://youtu.be/wd-dNd2Wck4
 

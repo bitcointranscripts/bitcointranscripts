@@ -5,9 +5,7 @@ categories: ['conference']
 speakers: ['Adam Back', 'Rodolfo Novak', 'Elaine Ou', 'Adam Back', 'Richard Myers']
 ---
 
-Bitcoin without internet
-
-Adam Back, Rodolfo Novak (Coinkite), Elaine Ou, Adam Back, Richard Myers (GoTenna)
+# Bitcoin without internet
 
 Video: https://youtu.be/5Fim6g2BMZI
 
