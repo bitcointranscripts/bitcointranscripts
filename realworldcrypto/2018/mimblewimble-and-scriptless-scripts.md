@@ -1,16 +1,17 @@
 ---
 title: Mimblewimble And Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["research"]
-speakers: ["Andrew Poelstra"]
+categories: ['conference']
+tags: ['research']
+speakers: ['Andrew Poelstra']
+date: 2018-01-11
 ---
 
-Mimblewimble and scriptless scripts
+# Mimblewimble and scriptless scripts
 
 Name: Andrew Poelstra (Blockstream)
 
-<https://www.youtube.com/watch?v=ovCBT1gyk9c>
+video: <https://www.youtube.com/watch?v=ovCBT1gyk9c>
 
 <https://twitter.com/kanzure/status/954531580848082944>
 
