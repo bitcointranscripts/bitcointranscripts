@@ -3,12 +3,10 @@ title: Amiko Pay
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'lightning', 'routing']
-speakers: ["Amiko Pay", "Come Plooy"]
+speakers: ['Come Plooy']
 ---
 
-Amiko Pay
-
-Come Plooy
+# Amiko Pay
 
 Amiko Pay aims to become an implementation of the lightning network. So that previous presentation was a great setup. There's a little bit more to Amiko Pay. If you look through the basic design of the lightning network, there's a network of payment channels. There have been several variations of this idea. Lightning Network happens to be the best so far. What Amiko Pay aims to do is to focus on the nodes, and do the routing between nodes. The other big problem of Amiko Pay making the payment channels, for different types of channels you can make different plugins. This kind of design makes it possible to have different kinds of channel within the same network. This opens up a couple of possibilities.
 

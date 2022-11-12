@@ -1,14 +1,12 @@
 ---
 title: Wallet Security, Key Management & HSMs (2018-10-04)
 transcript_by: Bryan Bishop
-speakers: ["Bryan Bishop"]
-categories: ["conference"]
-tags: ["security", "wallet"]
+speakers: ['Bryan Bishop']
+categories: ['conference']
+tags: ['security', 'wallet']
 ---
 
-Bryan Bishop
-
-Wallet Security, Key Management & Hardware Security Modules (HSMs)
+# Wallet Security, Key Management & Hardware Security Modules (HSMs)
 
 <https://twitter.com/kanzure/status/1049813559750746112>
 

@@ -1,9 +1,9 @@
 ---
 title: Compact Multi Signatures For Smaller Blockchains
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["p2pkh", "P2P"]
-speakers: ["Dan Boneh", "Manu Drijvers", "Gregory Neven"]
+categories: ['conference']
+tags: ['p2pkh', 'P2P']
+speakers: ['Dan Boneh', 'Manu Drijvers', 'Gregory Neven']
 ---
 
 Compact multi-signatures for smaller blockchains

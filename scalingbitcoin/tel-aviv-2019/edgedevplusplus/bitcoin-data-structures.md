@@ -1,13 +1,11 @@
 ---
 title: Bitcoin Data Structures
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Jimmy Song"]
+categories: ['conference']
+speakers: ['Jimmy Song']
 ---
 
-Bitcoin data structures
-
-Jimmy Song
+# Bitcoin data structures
 
 Bitcoin Edge Dev++ @ Tel Aviv University, September 9th 2019
 

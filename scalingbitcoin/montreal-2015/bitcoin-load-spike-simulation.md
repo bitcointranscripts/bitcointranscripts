@@ -1,12 +1,10 @@
 ---
 title: Bitcoin Load Spike Simulation
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["attacks", "mempool", "fees"]
-speakers: ["Conner Fromknecht", "Nathan Wilcox"]
+categories: ['conference']
+tags: ['attacks', 'mempool', 'fees']
+speakers: ['Conner Fromknecht', 'Nathan Wilcox']
 ---
-
-Name: Conner Fromknecht & Nathan Wilcox
 
 # Bitcoin load spike simulation
 

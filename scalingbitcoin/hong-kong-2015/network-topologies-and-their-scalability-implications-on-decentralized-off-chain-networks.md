@@ -6,7 +6,7 @@ tags: ['consensus', 'custody', 'lightning']
 speakers: ['Joseph Poon']
 ---
 
-Joseph Poon
+#  Network Topologies And Their Scalability Implications On Decentralized Off Chain Networks
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/1_layer2_3_poon.pdf>
 

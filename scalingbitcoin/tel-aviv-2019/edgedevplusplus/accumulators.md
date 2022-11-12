@@ -3,12 +3,10 @@ title: Accumulators
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['accumulators']
-speakers: ["Tadge Dryja"]
+speakers: ['Tadge Dryja']
 ---
 
-Accumulators
-
-Tadge Dryja
+# Accumulators
 
 <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/>
 

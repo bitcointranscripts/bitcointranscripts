@@ -8,8 +8,6 @@ speakers: ['Pedro Moreno-Sanchez']
 
 A2L: Anonymous atomic locks for scalability and interoperability in payment-channel hubs
 
-Pedro Moreno-Sanchez
-
 paper: <https://eprint.iacr.org/2019/589.pdf>
 
 <https://github.com/etairi/A2L>

@@ -1,12 +1,12 @@
 ---
 title: Security Of Diminishing Block Subsidy
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["mining", "miners", "fees"]
-speakers: ["Miles Carlsten", "Harry Kalodner", "Arvind Narayanan"]
+categories: ['conference']
+tags: ['mining', 'miners', 'fees']
+speakers: ['Miles Carlsten', 'Harry Kalodner', 'Arvind Narayanan']
 ---
 
-Name: Miles Carlsten, Harry Kalodner & Arvind Narayanan
+# Security Of Diminishing Block Subsidy
 
 Miners no longer incentivized to mine all the time. The future of mining hardware. Impact on the bitcoin ecosystem. Implications and assumptions of the model.
 

@@ -6,9 +6,7 @@ tags: ["sidechains"]
 speakers: ["Paul Sztorc"]
 ---
 
-Sidechains
-
-Paul Sztorc
+# Sidechains
 
 <https://twitter.com/kanzure/status/784767020290150400>
 

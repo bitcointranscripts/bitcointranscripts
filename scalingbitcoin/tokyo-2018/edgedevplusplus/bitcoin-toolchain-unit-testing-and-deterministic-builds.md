@@ -1,14 +1,12 @@
 ---
 title: Bitcoin Toolchain Unit Testing And Deterministic Builds
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["build systems", "testing"]
-speakers: ["Marco Falke"]
+categories: ['conference']
+tags: ['build systems', 'testing']
+speakers: ['Marco Falke']
 ---
 
-Bitcoin toolchain, unit testing & deterministic builds
-
-Marco Falke
+# Bitcoin toolchain, unit testing & deterministic builds
 
 Video: https://www.youtube.com/watch?v=ZJ2t84trKVo
 

@@ -1,9 +1,9 @@
 ---
 title: Blind Signatures
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Ethan Heilman"]
-tags: ["signatures"]
+categories: ['conference']
+speakers: ['Ethan Heilman']
+tags: ['signatures']
 ---
 
 # Blind signatures

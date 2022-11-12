@@ -1,8 +1,8 @@
 ---
 title: Peter R
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Peter R"]
+categories: ['conference']
+speakers: ['Peter R']
 ---
 
 ((Note that there is a more accurate transcript from Peter-R himself below.))

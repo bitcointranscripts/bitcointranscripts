@@ -1,9 +1,9 @@
 ---
 title: Self Reproducing Coins As Universal Turing Machine
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["research", "smart contracts", "scalability"]
-speakers: ["Dmitry Meshkov", "Alexander Chepurnoy", "Vasily Kharin"]
+categories: ['conference']
+tags: ['research', 'smart contracts', 'scalability']
+speakers: ['Dmitry Meshkov', 'Alexander Chepurnoy', 'Vasily Kharin']
 ---
 
 # Self-reproducing coins as universal turing machine

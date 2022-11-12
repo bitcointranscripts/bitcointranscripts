@@ -6,7 +6,7 @@ tags: ['mempool']
 speakers: ['Jeff Garzik']
 ---
 
-jgarzik
+# A Bevy Of Block Size Proposals Bip100 Bip102 And More
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_1_garzik.pdf>
 

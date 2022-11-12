@@ -1,16 +1,15 @@
 ---
 title: Sighash Noinput
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["bitcoin core"]
-speakers: ["Bryan Bishop"]
+categories: ['conference']
+tags: ['bitcoin core']
+speakers: ['Bryan Bishop']
 ---
 
-Bryan Bishop
+# SIGHASH_NOINPUT (BIP118)
 
 <https://twitter.com/kanzure/status/1049510702384173057>
 
-# SIGHASH_NOINPUT (BIP118)
 
 Dev++ / BC2 - October 4th-5th 2018 - Keio University, Tokyo, Japan
 
@@ -34,6 +33,6 @@ There is a proposal, [bip118](https://github.com/bitcoin/bips/blob/master/bip-01
 
 Alright well this is a bunch of text, about something called application specific pubkeys, which is basically the malleability fix because it is actually quite dangerous. And this is because any input can be swapped into the transaction as long as it has a valid signature and the signature with SIGHASH_NOINPUT says you do not actually care about which input it is as long as the amount is correct.
 
-Specifically, SIGHASH_NOINPUT has received attention because the lightning developers would like to use it for something called watchtowers. And I believe there is either a lightning talk today or tomorrow and that will make more sense, essentially you want to be able to broadcast certain transactions to enforce the rules of the lightning protocol. I already mentioned the malleability fix. There is also another lightning network proposal called eltoo which is very confusing because the name is ambiguous and refers to layer 2 or "L2" but it's not spelled that way. I think it was supposed to be a pun but it is really just confusing.
+Specifically, SIGHASH_NOINPUT has received attention because the lightning developers would like to use it for something called watchtowers. And I believe there is either a lightning talk today or tomorrow and that will make more sense, essentially you want to be able to broadcast certain transactions to enforce the rules of the lightning protocol. I already mentioned the malleability fix. There is also another lightning network proposal called eltoo which is very confusing because the name is ambiguous and refers to layer 2 or 'L2' but it's not spelled that way. I think it was supposed to be a pun but it is really just confusing.
 
 So, there were two other SIGHASH_NOINPUT proposals. One was for an opcode, and there was also one from I think Johnson Lau for either script v2 or SIGHASH v2, I think that is possibly using a bit mask approach, at the very least a bitmask sighash type was implemented for Elements project. And that is the overview of SIGHASH_NOINPUT. I will be back later for other talks.

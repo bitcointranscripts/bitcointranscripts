@@ -1,9 +1,9 @@
 ---
 title: Bitcoin Script V2.0 And Strengthened Payment Channels
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["attacks", "p2sh"]
-speakers: ["Olaoluwa Osuntokun"]
+categories: ['conference']
+tags: ['attacks', 'p2sh']
+speakers: ['Olaoluwa Osuntokun']
 ---
 
 # Bitcoin script v2.0

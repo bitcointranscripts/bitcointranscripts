@@ -6,7 +6,7 @@ tags: ['security']
 speakers: ['Patric']
 ---
 
-Initial Block Synchronization Time Complexity
+# Initial Block Synchronization Time Complexity
 
 slides: <http://strateman.ninja/initial_block_synchronization.pdf>
 

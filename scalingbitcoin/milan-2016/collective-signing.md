@@ -6,9 +6,7 @@ tags: ['security']
 speakers: ['Lefteris Kokoris-Kogias', 'Philipp Jovanovic', 'Nicoas Gailly', 'Ismail Khoffi', 'Linus Gasser', 'Bryan Ford']
 ---
 
-Enhancing bitcoin security and performance with strong consistency via collective signing
-
-Lefteris Kokoris-Kogias (LefKok), Philipp Jovanovic, Nicoas Gailly, Ismail Khoffi, Linus Gasser, Bryan Ford
+# Enhancing bitcoin security and performance with strong consistency via collective signing
 
 EPFL
 

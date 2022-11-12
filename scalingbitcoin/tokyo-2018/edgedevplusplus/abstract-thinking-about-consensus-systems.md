@@ -1,14 +1,12 @@
 ---
 title: Abstract Thinking About Consensus Systems
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["consensus"]
-speakers: ["Luke Dashjr"]
+categories: ['conference']
+tags: ['consensus']
+speakers: ['Luke Dashjr']
 ---
 
-Abstract thinking about consensus systems
-
-Luke Dashjr (luke-jr)
+# Abstract thinking about consensus systems
 
 <https://twitter.com/kanzure/status/1048039485550690304>
 

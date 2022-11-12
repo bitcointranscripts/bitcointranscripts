@@ -6,11 +6,7 @@ tags: ['fungibility']
 speakers: ['Matt Corallo', 'Adam Back']
 ---
 
-Fungibility overview
-
-Matt Corallo
-
-Adam Back
+# Fungibility overview
 
 <https://twitter.com/kanzure/status/784676022318952448>
 

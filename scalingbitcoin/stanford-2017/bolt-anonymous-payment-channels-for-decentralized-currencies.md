@@ -3,11 +3,10 @@ title: Bolt Anonymous Payment Channels For Decentralized Currencies
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
-speakers: ["Ian Miers"]
+speakers: ['Ian Miers']
 ---
 
-
-Bolt: Anonymous Payment Channels for Decentralized Currencies
+# Bolt: Anonymous Payment Channels for Decentralized Currencies
 
 paper: <https://eprint.iacr.org/2016/701.pdf>
 

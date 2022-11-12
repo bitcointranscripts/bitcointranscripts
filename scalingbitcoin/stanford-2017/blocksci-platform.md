@@ -1,9 +1,9 @@
 ---
 title: Blocksci Platform
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["privacy"]
-speakers: ["Harry Kalodner"]
+categories: ['conference']
+tags: ['privacy']
+speakers: ['Harry Kalodner']
 ---
 
 BlockSci: a Platform for Blockchain Science and Exploration

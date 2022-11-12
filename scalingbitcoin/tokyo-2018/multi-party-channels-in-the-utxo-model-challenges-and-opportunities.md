@@ -3,7 +3,7 @@ title: Multi Party Channels In The Utxo Model Challenges And Opportunities
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
-speakers: ["Olaoluwa Osuntokun"]
+speakers: ['Olaoluwa Osuntokun']
 ---
 
 Multi-party channels in the UTXO model: Challenges and opportunities

@@ -6,9 +6,7 @@ tags: ['consensus', 'mining', 'altcoin']
 speakers: ['David Vorick']
 ---
 
-Jute: New braiding techniques to achieve significant scaling gains
-
-David Vorick (taek)
+# Jute: New braiding techniques to achieve significant scaling gains
 
 <https://twitter.com/kanzure/status/785116246257856512>
 

@@ -1,14 +1,12 @@
 ---
 title: Concurrency And Privacy With Payment Channel Networks
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["privacy", "scalability", "fees"]
-speakers: ["Pedro Moreno-Sanchez"]
+categories: ['conference']
+tags: ['privacy', 'scalability', 'fees']
+speakers: ['Pedro Moreno-Sanchez']
 ---
 
 # Concurrency and Privacy with Payment-Channel Networks
-
-Name: Pedro Moreno-Sanchez
 
 paper: <https://eprint.iacr.org/2017/820.pdf>
 

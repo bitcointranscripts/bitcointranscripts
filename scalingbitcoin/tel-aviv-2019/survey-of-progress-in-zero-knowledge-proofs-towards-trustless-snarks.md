@@ -3,10 +3,10 @@ title: Survey Of Progress In Zero Knowledge Proofs Towards Trustless Snarks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge']
-speakers: ["Ben Fisch"]
+speakers: ['Ben Fisch']
 ---
 
-Survey of progress in succinct zero-knowledge proofs: towards trustless SNARKs
+# Survey of progress in succinct zero-knowledge proofs: towards trustless SNARKs
 
 Ben Fisch (Stanford University) (benafisch)
 

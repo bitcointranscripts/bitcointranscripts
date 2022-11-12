@@ -8,8 +8,6 @@ speakers: ['Gleb Naumenko']
 
 Erlay: Bandwidth-efficient transaction relay for bitcoin
 
-Gleb Naumenko (tomatodread)
-
 <https://twitter.com/kanzure/status/1171744449396953090>
 
 paper: <https://arxiv.org/abs/1905.10518>

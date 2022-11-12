@@ -3,7 +3,7 @@ title: Privacy Concepts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
-speakers: ["Udi Wertheimer"]
+speakers: ['Udi Wertheimer']
 ---
 
 Privacy concepts for bitcoin application developers

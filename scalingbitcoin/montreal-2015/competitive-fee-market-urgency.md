@@ -1,9 +1,9 @@
 ---
 title: Competitive Fee Market Urgency
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["halving", "security", "fees"]
-speakers: ["Marshall Long"]
+categories: ['conference']
+tags: ['halving', 'security', 'fees']
+speakers: ['Marshall Long']
 ---
 
 Name: Marshall Long

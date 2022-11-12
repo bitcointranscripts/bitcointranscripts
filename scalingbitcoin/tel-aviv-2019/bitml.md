@@ -3,7 +3,7 @@ title: Bitml
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'smart contracts']
-speakers: ["Stefano Lande"]
+speakers: ['Stefano Lande']
 ---
 
 Developing secure bitcoin contracts using BitML

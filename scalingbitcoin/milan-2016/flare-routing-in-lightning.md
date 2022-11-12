@@ -6,19 +6,9 @@ tags: ['privacy', 'lightning', 'routing']
 speakers: ['Pavel Prihodko', 'Kolya Sakhno', 'Alexei Ostrovskiy', 'Slava Zhigulin', 'Olaoluwa Osuntokun']
 ---
 
-Flare: An approach to routing in lightning network
+# Flare: An approach to routing in lightning network
 
 <https://twitter.com/kanzure/status/784745976170999810>
-
-Pavel Prihodko
-
-Kolya Sakhno
-
-Alexei Ostrovskiy
-
-Slava Zhigulin
-
-Olaoluwa Osuntokun
 
 I will not be as technical as Olaoluwa was. You have nodes that open up payment channels. This scheme is actually developed at the moment in great detail. So how do you find the channels through which to send payments? So we wanted to propose some initial solution to this.
 

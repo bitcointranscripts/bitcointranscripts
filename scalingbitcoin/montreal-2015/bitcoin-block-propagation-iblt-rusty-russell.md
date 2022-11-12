@@ -1,12 +1,11 @@
 ---
 title: Bitcoin Block Propagation Iblt Rusty Russell
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Rusty Russell"]
-tags: ["Block propagation"]
+categories: ['conference']
+speakers: ['Rusty Russell']
+tags: ['Block propagation']
 ---
-
-Rusty Russell
+# Bitcoin Block Propagation Iblt Rusty Russell
 
 This is not what I do. But I was doing it anyway.
 

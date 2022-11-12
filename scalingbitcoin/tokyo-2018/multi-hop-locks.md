@@ -1,9 +1,9 @@
 ---
 title: Multi Hop Locks
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["security", "privacy", "lightning"]
-speakers: ["Giulio Malavolta", "Pedro Moreno-Sanchez", "Matteo Maffei"]
+categories: ['conference']
+tags: ['security', 'privacy', 'lightning']
+speakers: ['Giulio Malavolta', 'Pedro Moreno-Sanchez', 'Matteo Maffei']
 ---
 
 # Multi-hop locks for secure, privacy-preserving and interoperable payment-channel networks

@@ -6,9 +6,7 @@ tags: ['layer 2']
 speakers: ['Aviv Zohar']
 ---
 
-How to charge Lightning
-
-Aviv Zohar
+# How to charge Lightning
 
 Our next talk is getting into layer 2. Leaving hwat needs to done at th...
 

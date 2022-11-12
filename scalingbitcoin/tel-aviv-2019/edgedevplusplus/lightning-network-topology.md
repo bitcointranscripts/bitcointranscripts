@@ -1,9 +1,9 @@
 ---
 title: Lightning network topology, its creation and maintenance
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["topology", "lightning", "routing"]
-speakers: ["Carla Kirk-Cohen"]
+categories: ['conference']
+tags: ['topology', 'lightning', 'routing']
+speakers: ['Carla Kirk-Cohen']
 ---
 
 Carla Kirk-Cohen

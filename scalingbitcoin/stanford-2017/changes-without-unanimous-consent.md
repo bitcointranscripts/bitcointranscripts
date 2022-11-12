@@ -3,14 +3,12 @@ title: Changes Without Unanimous Consent
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'miners']
-speakers: ["Anthony Towns"]
+speakers: ['Anthony Towns']
 ---
 
-Changes without unanimous consent
+# Changes without unanimous consent
 
-Anthony Towns
-
-I want to talk about dealing with consensus changes without so-called consensus. I am using consensus in terms of the social aspect, not in terms of the software algorithm consensus for databases. "Consensus changes without consensus". If you don't consensus on consensus, then some people are going to follow one chain and another another chain.
+I want to talk about dealing with consensus changes without so-called consensus. I am using consensus in terms of the social aspect, not in terms of the software algorithm consensus for databases. 'Consensus changes without consensus'. If you don't consensus on consensus, then some people are going to follow one chain and another another chain.
 
 If you have unanimous consensus, then new upgrades work just fine. Developers write software, miners run the same stuff, and then there are no splits because PoW builds on other blocks and we're all happy and the economy is all in agreement as well and everyone wins. If everyone doesn't agree, you have a bit of a problem. You can have different sorts of disagreements. I would say that the disagreements are going to be more likely as bitcoin scales and grows, for a variety of reasons. Once bitcoin becomes big enough that governments buy in, then governments are going to have different goals to decide upon. There might be incompatible goals and disagreements, where disagreements don't have compromise, and then it ends up in chain split. This might mean segwit2x vs bitcoin cash or whatever.
 

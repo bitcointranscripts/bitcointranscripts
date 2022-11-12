@@ -6,7 +6,7 @@ tags: ['proof-of-work', 'miners']
 speakers: ['Benedikt Buenz', 'Mahdi Zamani']
 ---
 
-Flyclient Super light client for cryptocurrencies
+# Flyclient Super light client for cryptocurrencies
 
 Benedikt Buenz, Mahdi Zamani
 

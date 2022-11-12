@@ -3,12 +3,10 @@ title: Unlinkable Outsourced Channel Monitoring
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'scalability', 'wallet']
-speakers: ["Tadge Dryja"]
+speakers: ['Tadge Dryja']
 ---
 
-Unlinkable outsourced channel monitoring
-
-Tadge Dryja
+# Unlinkable outsourced channel monitoring
 
 <http://lightning.network/>
 
@@ -40,7 +38,7 @@ If I have a channel and I close it, and then I tell the person monitoring it hey
 
 Backups of lightning channels are dangerous. Say you make a backup of state 30, then you make some more transactions, then restore your transaction to state 30, I could quickly lose all my money because I restored a backup. If I connect to my counterparty and say hey I'm trying to make state 31, and they will be sure, and they know the 31st revocation key already, so they can just take money. So it's very risky to restore from a backup.
 
-We could segment the HLTC encrypted blobs such that if I give you one decryption key, you could rollback and get a bunch of the previous decryption keys. Therefore you only need one HLTC at a time. Another thing to prevent spam-- part of the thing about unlinkability is that if I don't tell you which channel I'm monitoring, it might be something I completely made up. I might be spamming you. So there might be some way where you have some kind of group or ring signature to indicate this is a real channel but I'm not telling oyu which one. It's one of the channels curretly open on the networ, but I don't tell you which one. One altruistic node defending the whole network would be good. If the attacker tries to close the channel in the wrong way; they have to think hey is there nobody nice on the network that is going to try to defend that channel? Only then are they going to attack that channel and try to grab the money. Maybe the counterparty is offline and the timeout is this week... I mean maybe there's a node out there is monitoring. Make it anonymous so that nobody has a problem forwarding to everyone their data. Make it hard to spam so that someone will say "I'm the nice guy and I'm going to defend the lightning network and we're going to monitor it".
+We could segment the HLTC encrypted blobs such that if I give you one decryption key, you could rollback and get a bunch of the previous decryption keys. Therefore you only need one HLTC at a time. Another thing to prevent spam-- part of the thing about unlinkability is that if I don't tell you which channel I'm monitoring, it might be something I completely made up. I might be spamming you. So there might be some way where you have some kind of group or ring signature to indicate this is a real channel but I'm not telling oyu which one. It's one of the channels curretly open on the networ, but I don't tell you which one. One altruistic node defending the whole network would be good. If the attacker tries to close the channel in the wrong way; they have to think hey is there nobody nice on the network that is going to try to defend that channel? Only then are they going to attack that channel and try to grab the money. Maybe the counterparty is offline and the timeout is this week... I mean maybe there's a node out there is monitoring. Make it anonymous so that nobody has a problem forwarding to everyone their data. Make it hard to spam so that someone will say 'I'm the nice guy and I'm going to defend the lightning network and we're going to monitor it'.
 
 This is still a work in progress. I think invalid channel closes will be pretty much impossible. There's all this work on transactions that will almost certainly never happen. You will probably never see invalid closes on the network. The risks are so high, and the gains are pretty high. Any questions?
 

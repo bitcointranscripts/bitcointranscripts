@@ -1,14 +1,12 @@
 ---
 title: Validation Costs
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["mining", "P2P", "incentives"]
-speakers: ["Eric Lombrozo"]
+categories: ['conference']
+tags: ['mining', 'P2P', 'incentives']
+speakers: ['Eric Lombrozo']
 ---
 
-Validation costs and incentives
-
-Name: Eric Lombrozo (CodeShark)
+# Validation costs and incentives
 
 How many of you have read the Satoshi whitepaper? It's a good paper. As we have discovered, it has some serious limitations that we think can be fixed but they are serious challenges for scaling. Amongst these are, it was really built as a single code base which was meant to be run in its entirety. All machines were going to participate equally in this p2p network. In a homogenous network, pretty much every node runs the same software, offers the same services, and this isn't really how the internet works. We have other kinds of devices that don't necessarily have the same capabilities as others, and in general we have a very horrogenous network. So a handheld networked device is probably not a good place to do mining if it only has intermittent internet access. At the same time, a point of sale device in a data center is probably not useful.
 

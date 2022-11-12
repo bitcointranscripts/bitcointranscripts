@@ -1,9 +1,9 @@
 ---
 title: Lightning Network Routing
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["multisig", "P2P", "routing", "fees"]
-speakers: ["Carla Kirk-Cohen"]
+categories: ['conference']
+tags: ['multisig', 'P2P', 'routing', 'fees']
+speakers: ['Carla Kirk-Cohen']
 ---
 
 # Lightning network routing: Operation, issues and expansions

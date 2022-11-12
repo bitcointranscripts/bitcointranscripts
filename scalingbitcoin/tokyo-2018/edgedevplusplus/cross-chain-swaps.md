@@ -6,9 +6,7 @@ tags: ['privacy']
 speakers: ['Ethan Heilman', 'Nicolas Dorier']
 ---
 
-Cross-chain swaps: Atomically swapping coins for privacy or cross-blockchain trades
-
-Ethan Heilman, Nicolas Dorier
+# Cross-chain swaps: Atomically swapping coins for privacy or cross-blockchain trades
 
 <https://twitter.com/kanzure/status/1048017311431413760>
 

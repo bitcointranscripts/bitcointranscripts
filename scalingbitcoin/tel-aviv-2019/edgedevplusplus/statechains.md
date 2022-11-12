@@ -1,13 +1,11 @@
 ---
 title: Statechains
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Ruben Somsen"]
+categories: ['conference']
+speakers: ['Ruben Somsen']
 ---
 
 # Schnorr signatures, adaptor signatures and statechains
-
- Ruben Somsen
 
 <https://twitter.com/kanzure/status/1171345418237685760>
 

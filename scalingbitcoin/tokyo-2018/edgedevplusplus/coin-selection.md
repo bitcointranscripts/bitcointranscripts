@@ -5,9 +5,7 @@ categories: ['conference']
 speakers: ['Karl-Johan Alm']
 ---
 
-Coin selection
-
-Karl-Johan Alm (kallewoof)
+# Coin selection
 
 <https://twitter.com/kanzure/status/1047708247333859328>
 

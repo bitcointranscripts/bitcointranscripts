@@ -6,7 +6,7 @@ tags: ['miners', 'fees']
 speakers: ['Mark Friedenbach']
 ---
 
-maaku
+# A Flexible Limit Trading Subsidy For Larger Blocks
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_2_friedenbach.pdf>
 

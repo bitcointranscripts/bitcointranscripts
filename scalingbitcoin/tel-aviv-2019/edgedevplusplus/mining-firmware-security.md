@@ -3,7 +3,7 @@ title: Mining Firmware Security
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
-speakers: ["James Hilliard"]
+speakers: ['James Hilliard']
 ---
 
 Mining firmware security

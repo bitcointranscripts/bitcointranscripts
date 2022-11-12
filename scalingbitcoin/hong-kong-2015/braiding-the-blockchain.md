@@ -6,7 +6,7 @@ tags: ['miners']
 speakers: ['Bob McElrath']
 ---
 
-Braiding the blockchain
+# Braiding the blockchain
 
 Bob McElrath (bsm117532)
 

@@ -6,11 +6,10 @@ tags: ['privacy']
 speakers: ['Tim Ruffing']
 ---
 
-valueshuffle: Mixing confidential transactions
+# valueshuffle: Mixing confidential transactions
 
 paper: <https://eprint.iacr.org/2017/238.pdf>
 
-Tim Ruffing
 
 Thank you.
 

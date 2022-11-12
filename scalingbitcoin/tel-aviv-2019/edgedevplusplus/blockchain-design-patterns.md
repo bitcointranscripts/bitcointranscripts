@@ -1,9 +1,9 @@
 ---
 title: Blockchain Design Patterns
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["taproot", "mempool"]
-speakers: ["Andrew Poelstra", "David Vorick"]
+categories: ['conference']
+tags: ['taproot', 'mempool']
+speakers: ['Andrew Poelstra', 'David Vorick']
 ---
 
 # Blockchain design patterns: Layers and scaling approaches

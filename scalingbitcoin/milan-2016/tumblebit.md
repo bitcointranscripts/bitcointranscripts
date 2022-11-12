@@ -6,11 +6,7 @@ tags: ['privacy']
 speakers: ['Ethan Heilman', 'Leen AlShenibr']
 ---
 
-TumbleBit
-
-Ethan Heilman
-
-Leen AlShenibr
+# TumbleBit
 
 <https://twitter.com/kanzure/status/784686167052709888>
 

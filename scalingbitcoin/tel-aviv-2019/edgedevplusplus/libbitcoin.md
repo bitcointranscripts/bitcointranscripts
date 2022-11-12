@@ -1,12 +1,12 @@
 ---
 title: Libbitcoin
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["James Chiang"]
-tags: ["transaction"]
+categories: ['conference']
+speakers: ['James Chiang']
+tags: ['transaction']
 ---
 
-Libbitcoin: A practical introduction
+# Libbitcoin: A practical introduction
 
 or: libbitcoin's bx tool: Constructing a raw transaction
 

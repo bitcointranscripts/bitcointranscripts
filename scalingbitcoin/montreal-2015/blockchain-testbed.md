@@ -1,9 +1,9 @@
 ---
 title: Blockchain Testbed
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["forks", "miners", "security"]
-speakers: ["Ittay Eyal", "Emin Gun Sirer"]
+categories: ['conference']
+tags: ['forks', 'miners', 'security']
+speakers: ['Ittay Eyal', 'Emin Gun Sirer']
 ---
 
 Name: Ittay Eyal & Emin Gun Sirer
@@ -20,7 +20,7 @@ The first measurement is going to be- consensus delay, how long it takes for you
 
 We see that as we increase the block frequency the consensus delay improves. We get improvement which is what we want. As we increase the block size, and this is the second type of experiment, we have one block every 10 seconds and we increase the block sizes generated every 10 seconds. There is increased block size, and the consensus delay is way up and it grows quickly. This is bad. So we're trying to improve bandwidth and this is what happens to consensus delay.
 
-Another metric is time to prune, I am measuring the time it takes to realize that you are sitting on a branch. And once you are sitting on a branch, how long it takes you to realize that the real chain is somewhere else. We obviously want this to be short. "Subjective time to prune".
+Another metric is time to prune, I am measuring the time it takes to realize that you are sitting on a branch. And once you are sitting on a branch, how long it takes you to realize that the real chain is somewhere else. We obviously want this to be short. 'Subjective time to prune'.
 
 As we increase block size, subjective time to prune becomes increasingly worse.
 

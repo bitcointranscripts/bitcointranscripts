@@ -1,13 +1,12 @@
 ---
 title: Introduction
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Anton Yemelyanov"]
+categories: ['conference']
+speakers: ['Anton Yemelyanov']
 ---
 
 # Introduction to Bitcoin Edge Dev++ and Bc2
 
-Anton Yemelyanov
 We will be using two screens. The english will be on the front screen and the japanese will be on the other screen to the side here. We will also be sharing a google docs file for each one in slack. We should help each other and teach better and learn these things. Without further adue, here's Anton from Bitcoin Edge.
 
 Hi everybody. Welcome to Dev++. It started last year at Stanford 2017 where we trained 100 people. Our goal is that we run Scaling Bitcoin events and we get the development community together and try to explore the boundaries and all the latest technological innovations in bitcoin and we're looking at what the ecosystem needs and how can we help the ecosystem and how we can help bitcoin. Propagating engineering and technical knowledge and getting more people and more engineers on board and understanding all the principles and all the engineering elements of bitcoin. This is one of the best ways that we can contribute to the ecosystem and how we can propagate the ecosystem. The more engineers there are, the more companies are able to get help and get expertise. Hopefully, then, the less problems there will be. More applications would then be developed on top of bitcoin and layer 1 and layer 2 technologies.

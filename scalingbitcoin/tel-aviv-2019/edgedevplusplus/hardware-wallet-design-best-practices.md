@@ -3,12 +3,10 @@ title: Hardware Wallet Design Best Practices
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['hardware wallet', 'wallet']
-speakers: ["Stepan Snigirev"]
+speakers: ['Stepan Snigirev']
 ---
 
 # Hardware wallet design: issues and best practices
-
-Stepan Snigirev
 
 <https://twitter.com/kanzure/status/1171322716303036417>
 

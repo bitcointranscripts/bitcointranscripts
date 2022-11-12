@@ -7,8 +7,6 @@ speakers: ['Mark Erhardt']
 
 Simulation-based evaluation of coin selection strategies
 
-Mark Erhardt (murch)
-
 <https://twitter.com/kanzure/status/785061222316113920>
 
 # Introduction

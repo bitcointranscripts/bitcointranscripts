@@ -1,14 +1,12 @@
 ---
 title: Lightning Network Sphinx And Onion Routing
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["privacy", "lightning", "routing", "wallet"]
-speakers: ["Antoine Riard"]
+categories: ['conference']
+tags: ['privacy', 'lightning', 'routing', 'wallet']
+speakers: ['Antoine Riard']
 ---
 
 # Lightning network: Sphinx and onion routing
-
-Antoine Riard
 
 # Introduction
 
@@ -36,7 +34,7 @@ Tor is the most widely deployed anonymity net. You have plaintext wrapped in the
 
 # Sphinx onion packet
 
-"Sphinx: A compact and provably secure mix format". I think this is only used on lightning really. It's used in higher-protocols like HORNET and Loopix. BOLT 4 is the lightning implementation of Sphinx.
+'Sphinx: A compact and provably secure mix format'. I think this is only used on lightning really. It's used in higher-protocols like HORNET and Loopix. BOLT 4 is the lightning implementation of Sphinx.
 
 The basic building cryptographic building blocks are sha256, ECDH which is for deriving shared secrets from parties based on elliptic curve. Then HMAC which is a keyed hash message authentication code. And then ChaCha20 is a high-speed stream cipher.
 

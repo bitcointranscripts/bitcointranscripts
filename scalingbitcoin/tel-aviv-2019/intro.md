@@ -7,8 +7,6 @@ speakers: ['Anton Yemelyanov']
 
 Introduction to Scaling Bitcoin Tel Aviv 2019
 
-Anton Yemelyanov
-
 <https://telaviv2019.scalingbitcoin.org/>
 
 <https://telaviv2019.scalingbitcoin.org/#schedule>

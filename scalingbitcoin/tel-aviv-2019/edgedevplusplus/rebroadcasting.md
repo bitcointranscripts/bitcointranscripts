@@ -1,9 +1,9 @@
 ---
 title: Rebroadcasting
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["mempool"]
-speakers: ["Amiti Uttarwar"]
+categories: ['conference']
+tags: ['mempool']
+speakers: ['Amiti Uttarwar']
 ---
 
 Rebroadcasting

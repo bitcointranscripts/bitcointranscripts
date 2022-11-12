@@ -6,7 +6,7 @@ tags: ['ux', 'fees']
 speakers: ['Or Sattath']
 ---
 
-Redesigning bitcoin's fee market
+# Redesigning bitcoin's fee market
 
 Or Sattath (The Hebrew University)
 

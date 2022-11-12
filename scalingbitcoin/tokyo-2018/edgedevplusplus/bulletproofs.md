@@ -5,9 +5,7 @@ categories: ['conference']
 speakers: ['Karl-Johan Alm']
 ---
 
-Bulletproofs
-
-Karl-Johan Alm (kallewoof)
+# Bulletproofs
 
 <https://twitter.com/kanzure/status/1047740138824945664>
 

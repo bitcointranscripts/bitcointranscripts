@@ -6,9 +6,7 @@ tags: ['forks']
 speakers: ['Jonathan Tomim']
 ---
 
-bip101 block propagation data from testnet
-
-jtoomim
+# bip101 block propagation data from testnet
 
 video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=2h25m20s>
 

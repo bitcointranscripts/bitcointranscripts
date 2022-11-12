@@ -1,14 +1,11 @@
 ---
 title: Client Side Validation
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["consensus", "validation"]
-speakers: ["Peter Todd"]
+categories: ['conference']
+speakers: ['Peter Todd']
 ---
 
 # Progress on scaling via client-side validation
-
-Name: Peter Todd
 
 <https://twitter.com/kanzure/status/785121442602029056>
 

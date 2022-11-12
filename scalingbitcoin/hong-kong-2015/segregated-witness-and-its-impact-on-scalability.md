@@ -6,7 +6,7 @@ tags: ['segregated witness', 'segwit']
 speakers: ['Pieter Wuille']
 ---
 
-Pieter Wuille (sipa)
+# Segregated Witness And Its Impact On Scalability
 
 video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=36m>
 

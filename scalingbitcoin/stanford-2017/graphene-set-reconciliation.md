@@ -3,10 +3,10 @@ title: Graphene Set Reconciliation
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['P2P']
-speakers: ["Brian N. Levine"]
+speakers: ['Brian N. Levine']
 ---
 
-Graphene and set reconciliation
+# Graphene and set reconciliation
 
 Brian N. Levine, College of Information and Computer Sciences, UMass Amherst
 

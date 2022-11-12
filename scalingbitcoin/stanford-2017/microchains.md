@@ -1,9 +1,9 @@
 ---
 title: Microchains
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["consensus", "proof-of-work", "scalability", "security"]
-speakers: ["David Vorick"]
+categories: ['conference']
+tags: ['consensus', 'proof-of-work', 'scalability', 'security']
+speakers: ['David Vorick']
 ---
 
 Microchains

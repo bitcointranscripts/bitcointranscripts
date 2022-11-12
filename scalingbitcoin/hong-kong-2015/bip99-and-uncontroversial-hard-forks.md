@@ -6,7 +6,7 @@ tags: ['consensus', 'forks']
 speakers: ['Jorge Timón']
 ---
 
-jtimon
+# Bip99 And Uncontroversial Hard Forks
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overview_1_timon.pdf>
 

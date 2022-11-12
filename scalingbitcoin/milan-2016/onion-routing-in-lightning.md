@@ -6,9 +6,7 @@ tags: ['privacy', 'fungibility', 'lightning', 'routing']
 speakers: ['Olaoluwa Osuntokun']
 ---
 
-Onion routing in lightning network
-
-Olaoluwa Osuntokun (roasbeef)
+# Onion routing in lightning network
 
 <http://lightning.network/>
 

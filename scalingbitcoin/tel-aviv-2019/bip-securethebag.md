@@ -3,12 +3,10 @@ title: Bip Securethebag
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'research']
-speakers: ["Jeremy Rubin"]
+speakers: ['Jeremy Rubin']
 ---
 
 BIP: OP\_SECURETHEBAG
-
-Jeremy Rubin
 
 <https://twitter.com/kanzure/status/1171750965478854656>
 

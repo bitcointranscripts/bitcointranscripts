@@ -1,14 +1,12 @@
 ---
 title: Scaling Oblivious Read Write
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["privacy"]
-speakers: ["Duc V. Le"]
+categories: ['conference']
+tags: ['privacy']
+speakers: ['Duc V. Le']
 ---
 
 # A tale of two trees: One writes, and other reads, scaling oblivious accesses to large-scale blockchains
-
-Duc V. Le
 
 # Introduction
 

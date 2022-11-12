@@ -5,11 +5,7 @@ categories: ['conference']
 speakers: ['Meltem Demirors', 'Eric Lombrozo']
 ---
 
-Build - Scale - Operate: The Three Pillars of the Bitcoin Community
-
-Meltem Demirors
-
-Eric Lombrozo
+# Build - Scale - Operate: The Three Pillars of the Bitcoin Community
 
 <https://twitter.com/kanzure/status/784713580713246720>
 

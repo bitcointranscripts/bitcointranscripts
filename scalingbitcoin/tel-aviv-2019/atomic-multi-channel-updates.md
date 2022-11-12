@@ -8,8 +8,6 @@ speakers: ['Pedro Moreno-Sanchez']
 
 Atomic multi-channel updates with constant collateral in bitcoin-compatible payment-channel networks
 
-Pedro Moreno-Sanchez
-
 paper: <https://eprint.iacr.org/2019/583>
 
 <https://twitter.com/kanzure/status/1172102203995283456>

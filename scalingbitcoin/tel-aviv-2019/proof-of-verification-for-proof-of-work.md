@@ -8,8 +8,6 @@ speakers: ['Kanta Matsuura']
 
 Proof of verification for proof of work: Miners must verify the signatures on bitcoin transactions
 
-Kanta Matsuura
-
 <https://twitter.com/kanzure/status/1172142603007143936>
 
 extended abstract: <http://kmlab.iis.u-tokyo.ac.jp/papers/scaling19-matsuura-final.pdf>

@@ -6,7 +6,7 @@ tags: ['mining', 'privacy', 'fungibility']
 speakers: ['Adam Back']
 ---
 
-adam3us (Adam Back)
+# Fungibility And Scalability
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overviews_2_back.pdf>
 

@@ -6,9 +6,7 @@ tags: ["security", "lightning", "scalability"]
 speakers: ["Tadge Dryja"]
 ---
 
-Tadge Dryja
-
-Scalability of Lightning with different BIPs and some back-of-the-envelope calculations.
+# Scalability of Lightning with different BIPs and some back-of-the-envelope calculations.
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/1_layer2_2_dryja.pdf>
 
