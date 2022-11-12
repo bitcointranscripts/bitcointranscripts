@@ -6,9 +6,7 @@ tags: ['security', 'privacy']
 speakers: ['John Woeltz']
 ---
 
-libsecp256k1-zkp audit
-
-John Woeltz
+# libsecp256k1-zkp audit
 
 It's a real treat to be able to be a part of this.
 
