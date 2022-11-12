@@ -1,13 +1,11 @@
 ---
-title: Adam Back - Fungibility Privacy
+title: Fungibility Privacy
 transcript_by: Bryan Bishop
-speakers: ["Adam Back"]
-tags: ["privacy", "fungibility"]
+speakers: ['Adam Back']
+tags: ['privacy', 'fungibility']
 ---
 
-Adam Back (adam3us)
-
-Fungibility and privacy
+# Fungibility and privacy
 
 <https://www.youtube.com/watch?v=3dAdI3Gzodo>
 

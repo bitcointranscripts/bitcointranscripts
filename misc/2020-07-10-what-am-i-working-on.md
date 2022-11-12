@@ -1,17 +1,14 @@
 ---
-title: Andrew Chow - What Am I Working On (2020-07-10)
+title:  What Am I Working On 
 transcript_by: Michael Folkson
-speakers: ["Andrew Chow"]
-tags: ["wallet"]
+speakers: ['Andrew Chow']
+tags: ['wallet']
+date: 2020-07-10
 ---
-
-Name: Andrew Chow
 
 Topic: What am I working on?
 
 Location: Reddit (r/bitcoin)
-
-Date: July 10th 2020
 
 Reddit link: https://www.reddit.com/r/Bitcoin/comments/ho0t1a/what_are_bitcoin_developers_currently_working_on/fxhwqli/?context=3
 

@@ -1,10 +1,12 @@
 ---
-title: Bitcoin Optech - Schnorr and Taproot workshop (2019-09-27)
+title: Bitcoin Optech - Schnorr and Taproot workshop 
 transcript_by: Bryan Bishop
-categories: ["workshop"]
-tags: ["consensus", "taproot", "schnorr"]
-speakers: ["Pieter Wuille"]
+categories: ['workshop']
+tags: ['consensus', 'taproot', 'schnorr']
+date: 2019-09-27
 ---
+
+# Bitcoin Optech - Schnorr and Taproot workshop 
 
 Location: Chaincode Labs, NYC
 

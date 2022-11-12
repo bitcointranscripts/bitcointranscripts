@@ -2,13 +2,13 @@
 title: 0xB10C - The Incomplete History of Bitcoin Development
 translation_by: Julien Urraca
 tags: [ "history" ]
+date: 2019-08-04
 ---
 
 Autor: 0xB10C
 Texto original: <https://b10c.me/blog/004-the-incomplete-history-of-bitcoin-development/>
 
 # La historia incompleta del desarrollo de Bitcoin
-domingo, 4 de agosto de 2019
 
 Para comprender plenamente la justificación del estado actual del desarrollo de Bitcoin, el conocimiento de los eventos históricos es esencial. Esta publicación de blog destaca eventos históricos seleccionados, versiones de software y correcciones de errores antes y después de que Satoshi abandonara el proyecto. Además, contiene una sección sobre el estado actual del desarrollo de Bitcoin. La cronología vinculada proporciona detalles adicionales para cada evento.
 

@@ -1,17 +1,15 @@
 ---
-title: Jonathan Metzman - Structured Fuzzing (2019-08-07)
+title: Structured Fuzzing
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['testing']
+speakers: ['Jonathan Metzman']
+date: 2019-08-07
 ---
-
-Name: Jonathan Metzman
 
 Topic: Going Beyond Coverage Guided Fuzzing with Structured Fuzzing
 
 Location: Black Hat USA 2019
-
-Date: August 7th 2019
 
 Video: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 

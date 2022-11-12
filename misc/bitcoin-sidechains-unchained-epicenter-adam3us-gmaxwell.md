@@ -1,14 +1,13 @@
 ---
-title: Bitcoin Sidechains - Unchained Epicenter Adam3Us, Gmaxwell (2015-02-03)
+title: Bitcoin Sidechains - Unchained Epicenter 
 transcript_by: Bryan Bishop
-categories: ["podcast"]
-tags: ["sidechains"]
-speakers: ["Adam Back", "Greg Maxwell"]
+categories: ['podcast']
+tags: ['sidechains']
+speakers: ['Adam Back', 'Greg Maxwell']
+date: 2015-02-03
 ---
 
-EB65 – Adam Back & Greg Maxwell: Sidechains Unchained
-
-2015-02-03
+# EB65 – Adam Back & Greg Maxwell: Sidechains Unchained
 
 Video: <https://www.youtube.com/watch?v=jE_elgnIw3M>
 

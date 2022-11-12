@@ -1,13 +1,12 @@
 ---
-title: Unchained Capital Socratic Seminar (2019-01-05)
+title: Unchained Capital Socratic Seminar 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'taproot']
+date: 2019-01-05
 ---
 
 Unchained Capital Bitcoin Socratic Seminar
-
-2019-01-05
 
 Socratic Seminar 87 at BitDevs NYC has all of the links on meetup.com available.
 

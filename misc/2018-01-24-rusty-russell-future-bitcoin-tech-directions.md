@@ -1,14 +1,11 @@
 ---
-title: Rusty Russell Future Bitcoin Tech Directions (2018-01-24)
+title: Rusty Russell Future Bitcoin Tech Directions 
 transcript_by: Bryan Bishop
-speakers: ["Rusty Russell"]
+speakers: ['Rusty Russell']
+date: 2018-01-24
 ---
 
-Future technological directions in bitcoin: An unreliable guide
-
-Rusty Russell
-
-2018-01-24
+# Future technological directions in bitcoin: An unreliable guide
 
 video: <https://www.youtube.com/watch?v=VABppufTdpA>
 

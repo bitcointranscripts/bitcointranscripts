@@ -1,12 +1,12 @@
 ---
 title: Safecurves - Choosing Safe Curves For Elliptic Curve Cryptography (2014)
 transcript_by: Bryan Bishop
-tags: ["security", "cryptography"]
-categories: ["conference"]
-speakers: ["Daniel J. Bernstein"]
+tags: ['security', 'cryptography']
+categories: ['conference']
+speakers: ['Daniel J. Bernstein']
 ---
 
-SafeCurves: Choosing Safe Curves for Elliptic Curve Cryptography
+# SafeCurves: Choosing Safe Curves for Elliptic Curve Cryptography
 
 [Daniel J. Bernstein (djb)](https://en.wikipedia.org/wiki/Daniel_J._Bernstein) and [Tanja Lange](http://www.hyperelliptic.org/tanja/)
 

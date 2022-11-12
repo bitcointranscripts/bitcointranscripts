@@ -1,10 +1,11 @@
 ---
-title: Jameson Lopp - Bitcoin's Security Model - A Deep Dive (2016-11-13)
+title: Bitcoin's Security Model - A Deep Dive 
 translation_by: Julien Urraca
 tags: ['security']
+date: 2016-11-13
+speakers: ['Jameson Lopp']
 ---
 
-Autores: Jameson Lopp
 Texto original: <https://www.coindesk.com/markets/2016/11/13/bitcoins-security-model-a-deep-dive/>
 
 # El modelo de seguridad de Bitcoin: una profunda inmersión

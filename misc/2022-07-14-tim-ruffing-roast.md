@@ -1,5 +1,5 @@
 ---
-title: Tim Ruffing - ROAST (2022-07-14)
+title: ROAST 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'threshold signatures']
@@ -7,13 +7,9 @@ speakers: ['Tim Ruffing']
 date: 2022-07-14
 ---
 
-Name: Tim Ruffing
-
 Topic: ROAST
 
 Location: Monash Cybersecurity Seminars
-
-Date: July 14th 2022
 
 Video: <https://www.youtube.com/watch?v=FVW6Hgt_meg>
 
