@@ -1,9 +1,10 @@
 ---
-title: Laolu, Conner - Lnd (2018-12-14)
+title: Lnd 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']
-speakers: ["Laolu Osuntokun", "Conner Fromknecht"]
+speakers: ['Laolu Osuntokun', 'Conner Fromknecht']
+date: 2018-12-14
 ---
 
 Noded podcast with Laolu Osuntokun and Conner Fromknecht - December 14th 2018
