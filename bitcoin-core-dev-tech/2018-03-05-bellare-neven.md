@@ -3,7 +3,6 @@ title: Bellare Neven
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['multisig']
-speakers: ['Peter Wuille']
 date: 2018-03-05
 ---
 

@@ -3,6 +3,7 @@ title: Wallet Architecture
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet', 'bitcoin core']
+speakers: ['Andrew Chow']
 date: 2019-06-05
 ---
 

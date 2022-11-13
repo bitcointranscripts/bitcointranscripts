@@ -3,6 +3,7 @@ title: Custodia de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conference']
+speakers: ['Bryan Bishop']
 tags: ['custodia', 'reglamento']
 ---
 
