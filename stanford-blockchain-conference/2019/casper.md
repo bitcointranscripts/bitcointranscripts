@@ -6,7 +6,7 @@ tags: ['consensus', 'ethereum']
 speakers: ['Vlad Zamfir']
 ---
 
-Casper the friendly ghost: A "correct-by-construction" blockchain consensus protocol
+# Casper the friendly ghost: A "correct-by-construction" blockchain consensus protocol
 
 Vlad Zamfir (Ethereum Foundation)
 

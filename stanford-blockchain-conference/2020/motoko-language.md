@@ -8,8 +8,6 @@ speakers: ['Joachim Breitner']
 
 Motoko, the language for the Internet Computer
 
-Joachim Breitner
-
 # Introduction
 
 Thanks, Byron. Glad to be here. My name is Dominic Williams. I am founder of the internet computer project at Dfinity Foundation. Last year we talked about consensus protocols. Today we are talking about tools for building on top of the internet computer which is great news and shows the progress we have made. I'm going to give some introductory context, and then our senior researcher from our languages division will talk about Motoko. Is it working? Alright.

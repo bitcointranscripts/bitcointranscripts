@@ -3,12 +3,10 @@ title: Celo Ultralight Client
 transcript_by: Bryan Bishop
 categories: ['conference']
 tag: ['altcoin']
-speakers: ["Marek Olszewski", "Michael Straka"]
+speakers: ['Marek Olszewski', 'Michael Straka']
 ---
 
-The Celo ultralight client
-
-Marek Olszewski and Michael Straka
+# The Celo ultralight client
 
 <https://twitter.com/kanzure/status/1230261714039398402>
 

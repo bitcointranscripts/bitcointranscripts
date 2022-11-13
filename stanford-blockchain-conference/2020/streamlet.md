@@ -8,8 +8,6 @@ speakers: ['Benjamin Chan']
 
 Streamlet: Textbook Streamlined Blockchain Protocols
 
-Benjamin Chan
-
 # Introduction
 
 ((.... stream went offline in the other room, had to catch up.))

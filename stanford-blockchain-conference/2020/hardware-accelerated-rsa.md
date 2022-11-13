@@ -1,5 +1,5 @@
 ---
-title: Hardware Accelerated Rsa
+title: Hardware Accelerated Rsa - VDFs, SNARKs, and Accumulators
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge', 'scalability']
@@ -7,8 +7,6 @@ speakers: ['Simon Peffers']
 ---
 
 Hardware Accelerated RSA - VDFs, SNARKs, and Accumulators
-
-Simon Peffers
 
 <https://twitter.com/kanzure/status/1230551345700069377>
 

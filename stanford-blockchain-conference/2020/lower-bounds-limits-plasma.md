@@ -8,8 +8,6 @@ speakers: ['Stefan Dziembowski']
 
 Lower Bounds for Off-Chain Protocols: Exploring the Limits of Plasma
 
-Stefan Dziembowski
-
 <https://twitter.com/kanzure/status/1230183338746335233>
 
 # Introduction

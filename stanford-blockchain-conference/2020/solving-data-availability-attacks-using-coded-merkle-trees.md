@@ -7,8 +7,6 @@ speakers: ['Sreeram Kannan']
 
 Coded Merkle Tree: Solving Data Availability Attacks in Blockchains
 
-Sreeram Kannan
-
 <https://eprint.iacr.org/2019/1139.pdf>
 
 <https://twitter.com/kanzure/status/1230984827651772416>

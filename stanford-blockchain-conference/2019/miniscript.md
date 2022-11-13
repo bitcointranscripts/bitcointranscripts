@@ -3,12 +3,10 @@ title: Miniscript
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miniscript']
-speakers: ["Pieter Wuille"]
+speakers: ['Pieter Wuille']
 ---
 
-Miniscript
-
-Pieter Wuille (sipa) (Blockstream)
+# Miniscript
 
 <https://twitter.com/kanzure/status/1091116834219151360>
 

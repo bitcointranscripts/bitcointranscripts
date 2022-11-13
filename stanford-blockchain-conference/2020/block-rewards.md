@@ -7,8 +7,6 @@ speakers: ['Tim Roughgarden']
 
 An Axiomatic Approach to Block Rewards
 
-Tim Roughgarden
-
 <https://twitter.com/kanzure/status/1230574963813257216>
 
 <https://arxiv.org/pdf/1909.10645.pdf>

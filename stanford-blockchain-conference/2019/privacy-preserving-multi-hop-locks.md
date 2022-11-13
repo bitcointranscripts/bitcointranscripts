@@ -3,7 +3,7 @@ title: Privacy Preserving Multi Hop Locks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['scalability', 'layer 2']
-speakers: ["Pedro Moreno-Sanchez"]
+speakers: ['Pedro Moreno-Sanchez']
 ---
 
 Privacy preserving multi-hop locks for blockchain scalability and interoperability

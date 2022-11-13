@@ -6,9 +6,7 @@ tags: ['accumulators']
 speakers: ['Benedikt Bunz']
 ---
 
-Accumulators for blockchains
-
-Benedikt Bunz
+# Accumulators for blockchains
 
 <https://twitter.com/kanzure/status/1090748293234094082>
 

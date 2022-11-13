@@ -1,14 +1,12 @@
 ---
 title: Proof Of Necessary Work
 transcript_by: Bryan Bishop
-categories: ["conference"]
-speakers: ["Assimakis Kattis"]
-tags: ["proof of work", "fairness"]
+categories: ['conference']
+speakers: ['Assimakis Kattis']
+tags: ['proof of work', 'fairness']
 ---
 
 # Proof of Necessary Work: Succinct State Verification with Fairness Guarantees
-
-Name: Assimakis Kattis
 
 <https://twitter.com/kanzure/status/1230199429849743360>
 

@@ -3,12 +3,10 @@ title: Stark For Developers
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'zero-knowledge']
-speakers: ["Eli Ben-Sasson"]
+speakers: ['Eli Ben-Sasson']
 ---
 
-STARK for developers
-
-Eli Ben-Sasson
+# STARK for developers
 
 <https://twitter.com/kanzure/status/1230279740570783744>
 

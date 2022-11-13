@@ -7,8 +7,6 @@ speakers: ['Dan Boneh']
 
 Opening remarks
 
-Dan Boneh
-
 We will be starting in 10 minutes. I would like to ask the first speaker in the first session for grin to walk to the back of the room to get your microphone ready for the talk.
 
 It's 9 o'clock and time to get started. Could everyone please get to their seats? Alright, let's do this. Welcome everybody. This is the Stanford Blockchain Conference. This is the third time we're running this conference. I'm looking forward to the program. Lots of technical talks, and wonderful hallway conversations. I'm looking forward to speaking with all of you and hearing all the talks.

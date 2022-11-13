@@ -8,8 +8,6 @@ speakers: ['Shayan Eskandari']
 
 Transparent dishonesty: frontrunning attacks on blockchain
 
-Shayan Eskandari
-
 <https://twitter.com/kanzure/status/1231005309310627841>
 
 # Introduction

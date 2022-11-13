@@ -1,14 +1,12 @@
 ---
-title: Prism
+title: Prism - Scaling bitcoin by 10,000
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'mining', 'security']
 speakers: ['Lei Yang']
 ---
 
-Prism: Scaling bitcoin by 10,000x
-
-Lei Yang
+# Prism: Scaling bitcoin by 10,000x
 
 <https://twitter.com/kanzure/status/1230634530110730241>
 

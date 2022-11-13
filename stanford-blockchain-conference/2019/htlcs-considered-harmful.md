@@ -6,9 +6,7 @@ tags: ['lightning']
 speakers: ['Daniel Robinson']
 ---
 
-HTLCs considered harmful
-
-Daniel Robinson (Paradigm)
+# HTLCs considered harmful
 
 <https://twitter.com/kanzure/status/1091033955824881664>
 

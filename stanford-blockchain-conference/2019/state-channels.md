@@ -7,8 +7,6 @@ speakers: ['Patrick McCorry']
 
 State channels as a scaling solution for cryptocurrencies
 
-Patrick McCorry
-
 <https://twitter.com/kanzure/status/1091042382072532992>
 
 # Introduction

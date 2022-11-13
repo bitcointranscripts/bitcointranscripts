@@ -3,7 +3,7 @@ title: Decentralized Oracles Tls
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
-speakers: ["Fan Zhang"]
+speakers: ['Fan Zhang']
 ---
 
 DECO: Liberating Web Data Using Decentralized Oracles for TLS

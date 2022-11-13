@@ -3,7 +3,7 @@ title: Spork Probabilistic Bitcoin Soft Forks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks', 'privacy']
-speakers: ["Jeremy Rubin"]
+speakers: ['Jeremy Rubin']
 ---
 
 Spork: Probabilistic bitcoin soft-forks

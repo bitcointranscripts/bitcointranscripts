@@ -8,8 +8,6 @@ speakers: ['Mahnush Movahedi']
 
 Efficient distributed key generation for threshold signatures
 
-Mahnush Movahedi
-
 # Threshold signatures
 
 Threshold signature schemes are schemes where n parties and at least t are necessary and sufficient for signing. They want to make sure that t parties are necessary. Any threshold signature scheme typically has 3 protocols: key generation, signing, and verifying.

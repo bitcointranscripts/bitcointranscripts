@@ -3,18 +3,16 @@ title: No Incentive
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['incentives']
-speakers: ["David Schwartz"]
+speakers: ['David Schwartz']
 ---
 
 The best incentive is no incentive
-
-David Schwartz
 
 <https://twitter.com/kanzure/status/1230997662339436544>
 
 # Introduction
 
-This is the last session of the conference. Time flies when you're having fun. We're going to be starting with David Schwartz who is one of the co-creators of Ripple and he is going to be talking about a controversial topic that "the best incentive is no incentive".
+This is the last session of the conference. Time flies when you're having fun. We're going to be starting with David Schwartz who is one of the co-creators of Ripple and he is going to be talking about a controversial topic that 'the best incentive is no incentive'.
 
 I am David Schwartz as you just heard I am one of the co-creators of Ripple. Thanks to Dan Boneh for inviting me to be here. I wanted to give this talk 7 years ago but there wouldn't have been a place to give this talk. It's nice that there's a shared understanding now and I can explain the decisions we made back in 2012-2013.
 

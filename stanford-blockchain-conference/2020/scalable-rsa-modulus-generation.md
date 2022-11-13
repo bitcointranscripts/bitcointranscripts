@@ -8,8 +8,6 @@ speakers: ['Megan Chen']
 
 Scalable RSA Modulus Generation with Dishonest Majority
 
-Megan Chen
-
 <https://twitter.com/kanzure/status/1230545603605585920>
 
 # Introduction

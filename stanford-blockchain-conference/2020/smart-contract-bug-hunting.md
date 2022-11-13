@@ -8,8 +8,6 @@ speakers: ['Mooly Sagiv']
 
 Finding Bugs Automatically in Smart Contracts with Parameterized Specifications
 
-Mooly Sagiv
-
 <https://www.certora.com/pubs/sbc2020.pdf>
 
 <https://twitter.com/kanzure/status/1230906600140918784>

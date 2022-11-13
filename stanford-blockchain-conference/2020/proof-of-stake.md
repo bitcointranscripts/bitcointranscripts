@@ -8,8 +8,6 @@ speakers: ['David Tse']
 
 Proof-of-stake longest chain protocols revisited
 
-David Tse
-
 <https://twitter.com/kanzure/status/1230646529230163968>
 
 # Introduction

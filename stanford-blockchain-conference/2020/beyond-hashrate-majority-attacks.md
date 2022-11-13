@@ -3,12 +3,10 @@ title: Beyond Hashrate Majority Attacks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks']
-speakers: ["Vitalik Buterin"]
+speakers: ['Vitalik Buterin']
 ---
 
-Beyond 51% attacks
-
-Vitalik Buterin
+# Beyond 51% attacks
 
 <https://twitter.com/kanzure/status/1230624835996250112>
 

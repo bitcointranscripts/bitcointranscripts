@@ -6,7 +6,7 @@ tags: ['consensus', 'research', 'proof-of-work', 'proof-of-stake', 'ethereum']
 speakers: ['Vitalik Buterin']
 ---
 
-Ethereum 2.0 and beyond
+# Ethereum 2.0 and beyond
 
 Vitalik Buterin
 

@@ -6,7 +6,7 @@ tags: ['zero-knowledge']
 speakers: ['Henry de Valence', 'Cathie Yun']
 ---
 
-Building bulletproofs
+# Building bulletproofs
 
 Henry de Valence, Cathie Yun
 

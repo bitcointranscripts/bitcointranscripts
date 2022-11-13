@@ -8,8 +8,6 @@ speakers: ['Ben Fisch']
 
 Transparent SNARKs from DARK compilers
 
-Ben Fisch
-
 <https://twitter.com/kanzure/status/1230561492254089224>
 
 paper: <https://eprint.iacr.org/2019/1229.pdf>

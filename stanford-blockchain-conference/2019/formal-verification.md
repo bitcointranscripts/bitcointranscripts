@@ -6,7 +6,7 @@ tags: ['security', 'smart contracts']
 speakers: ['Martin Lundfall ']
 ---
 
-Formal verification: The road to complete security of smart contracts
+# Formal verification: The road to complete security of smart contracts
 
 Martin Lundfall (MakerDAO)
 

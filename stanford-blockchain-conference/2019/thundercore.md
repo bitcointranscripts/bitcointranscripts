@@ -8,8 +8,6 @@ speakers: ['Elaine Shi']
 
 Thundercore consensus
 
-Elaine Shi
-
 <https://twitter.com/kanzure/status/1090773938479624192>
 
 # Introduction

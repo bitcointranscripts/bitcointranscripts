@@ -8,8 +8,6 @@ speakers: ['Soumya Basu']
 
 bloXroute: A network for tomorrow's blockchain
 
-Soumya Basu
-
 # Introduction
 
 Hi. I am Souyma and I am here to talk with you about Bloxroute. The elephant in the room is that blockchains have been claimed to solve everything like credit cards, social media, and global micropayments. To handle credit card payment volumes, blockchains need like 5000 transactions per second, for microtransactions you need 70000 transactions per second, and for social media even more. Blockchains today do about 10 transactions/second.
