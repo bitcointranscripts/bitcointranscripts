@@ -1,14 +1,13 @@
 ---
-title: Laolu Osuntokun - Neutrino (2017-06-06)
+title:  Neutrino 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'spv']
-speakers: ["Laolu Osuntokun"]
+speakers: ['Laolu Osuntokun']
+date: 2017-06-06
 ---
 
-Laolu Osuntokun
-
-Neutrino: The Privacy Preserving Bitcoin Light Client
+# Neutrino: The Privacy Preserving Bitcoin Light Client
 
 Video: <https://www.youtube.com/watch?v=7FWKc8lM4Ek>
 

@@ -1,11 +1,10 @@
 ---
-title: Christopher Jeffrey Bcoin (2016-09-28)
+title:  Bcoin 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']
+date: 2016-09-28
 ---
-
-Name: Christopher Jeffrey (JJ)
 
 Topic: Bcoin
 

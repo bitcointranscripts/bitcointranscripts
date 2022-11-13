@@ -1,5 +1,5 @@
 ---
-title: Jonas Schnelli Bip150 Bip151 (2017-09-04)
+title:  Bip150 Bip151 
 speakers: ['Jonas Schnelli']
 date: 2017-09-04
 transcript_by: Bryan Bishop
@@ -7,7 +7,7 @@ categories: ['meetup']
 tags: ['P2P', 'bitcoin core']
 ---
 
-bip150 and bip151: Bitcoin p2p network encryption and authentication
+# bip150 and bip151: Bitcoin p2p network encryption and authentication
 
 <https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki>
 

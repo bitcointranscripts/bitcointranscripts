@@ -1,17 +1,15 @@
 ---
-title: Andreas Antonopoulos - Bitcoin Scripting (2017-04-03)
+title:  Bitcoin Scripting 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['script']
+date: 2017-04-03
+speakers: ['Andreas Antonopoulos']
 ---
-
-Name: Andreas Antonopoulos
 
 Topic: Advanced Bitcoin Scripting
 
 Location: SF Bitcoin Devs
-
-Date: April 3rd 2017
 
 Video: https://www.youtube.com/watch?v=yU3Sr07Qnxg
 

@@ -1,13 +1,12 @@
 ---
-title: Lightning Network (2015-05-26)
+title: Lightning Network 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['consensus', 'lightning', 'scalability']
 speakers: ['Tadge Dryja', 'Joseph Poon']
+date: 2015-05-26
 ---
 
-
-2015-05-26
 
 * Tadge Dryja
 * Joseph Poon

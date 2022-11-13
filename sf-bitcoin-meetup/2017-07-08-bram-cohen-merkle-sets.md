@@ -1,16 +1,13 @@
 ---
-title: Bram Cohen Merkle Sets (2017-07-08)
+title:  Merkle Sets 
 transcript_by: Bryan Bishop
-categories: ["meetup"]
-speakers: ["Bram Cohen"]
-tags: ["merkle root"]
+categories: ['meetup']
+speakers: ['Bram Cohen']
+tags: ['merkle root']
+date: 2017-07-08
 ---
 
-2017-07-08
-
-Merkle set data structures for scaling bitcoin
-
-Name: Bram Cohen
+# Merkle set data structures for scaling bitcoin
 
 video: <https://www.youtube.com/watch?v=52FVkHlCh7Y>
 
