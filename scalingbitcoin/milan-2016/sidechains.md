@@ -1,9 +1,9 @@
 ---
 title: Sidechains
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["sidechains"]
-speakers: ["Paul Sztorc"]
+categories: ['conference']
+tags: ['sidechains']
+speakers: ['Paul Sztorc']
 ---
 
 # Sidechains

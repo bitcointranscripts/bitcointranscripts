@@ -3,7 +3,7 @@ title: Implications
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['regulation']
-speakers: ["Yuta Takanashi"]
+speakers: ['Yuta Takanashi']
 ---
 
 # Implications on regulation and governance of blockchain-based finance

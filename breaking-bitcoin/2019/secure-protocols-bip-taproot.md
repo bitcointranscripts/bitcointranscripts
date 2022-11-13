@@ -1,9 +1,9 @@
 ---
 title: Secure Protocols Bip Taproot
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["consensus", "taproot", "lightning", "wallet", "sidechains"]
-speakers: ["Jonas Nick"]
+categories: ['conference']
+tags: ['consensus', 'taproot', 'lightning', 'wallet', 'sidechains']
+speakers: ['Jonas Nick']
 date: 2019-06-06
 ---
 

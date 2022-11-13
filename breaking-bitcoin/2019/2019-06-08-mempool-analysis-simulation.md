@@ -2,8 +2,8 @@
 title: Mempool Analysis & Simulation 
 transcript_by: Bryan Bishop
 speakers: ['Kalle Alm']
-categories: ["conference"]
-tags: ["mempool"]
+categories: ['conference']
+tags: ['mempool']
 date: 2019-06-08
 ---
 

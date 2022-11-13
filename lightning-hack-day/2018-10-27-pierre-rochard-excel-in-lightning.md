@@ -3,7 +3,7 @@ title: Excel In Lightning
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lnd']
-speakers: ["Pierre Rochard"]
+speakers: ['Pierre Rochard']
 date: 2018-10-27
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Risk Overview
 transcript_by: Bryan Bishop
-categories: ["workshop"]
-speakers: ["Byron Gibson"]
+categories: ['workshop']
+speakers: ['Byron Gibson']
 date: 2020-02-18
 ---
 

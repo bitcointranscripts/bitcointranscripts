@@ -1,8 +1,8 @@
 ---
 title: Rusty Russell - Getting Started With C-Lightning
 transcript_by: Michael Folkson
-speakers: ["Rusty Russell"]
-tags: ["lightning", "c-lightning"]
+speakers: ['Rusty Russell']
+tags: ['lightning', 'c-lightning']
 date: 2019-07-31
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Socialized Costs Of Hard Forks
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["forks"]
-speakers: ["Jimmy Song"]
+categories: ['conference']
+tags: ['forks']
+speakers: ['Jimmy Song']
 date: 2017-09-09
 ---
 

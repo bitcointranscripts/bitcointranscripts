@@ -1,8 +1,8 @@
 ---
 title:  Yubikey Security 
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ["security", "hardware wallet", "wallet"]
+tags: ['security', 'hardware wallet', 'wallet']
 date: 2020-11-05
 ---
 

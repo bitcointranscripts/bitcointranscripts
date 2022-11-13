@@ -1,8 +1,8 @@
 ---
 title:  Taproot Pace 
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ["consensus", "taproot"]
+tags: ['consensus', 'taproot']
 date: 2020-07-20
 ---
 

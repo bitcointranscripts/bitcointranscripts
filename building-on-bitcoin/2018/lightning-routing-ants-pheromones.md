@@ -3,7 +3,7 @@ title: Lightning Routing Ants Pheromones
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'routing']
-speakers: ["Ricardo Perez"]
+speakers: ['Ricardo Perez']
 date: 2018-07-04
 ---
 

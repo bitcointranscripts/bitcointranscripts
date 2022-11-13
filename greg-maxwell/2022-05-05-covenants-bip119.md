@@ -1,8 +1,8 @@
 ---
 title:  Covenants and BIP119 
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ["covenants"]
+tags: ['covenants']
 date: 2022–05-05
 ---
 

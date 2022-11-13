@@ -3,7 +3,7 @@ title: Bootstrapping Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
-speakers: ["Fabrice Drouin"]
+speakers: ['Fabrice Drouin']
 date: 2018-07-04
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Btcpay
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["security", "privacy", "wallet"]
-speakers: ["Nicolas Dorier"]
+categories: ['conference']
+tags: ['security', 'privacy', 'wallet']
+speakers: ['Nicolas Dorier']
 date: 2018-07-03
 ---
 

@@ -3,7 +3,7 @@ title:  Debugging Bitcoin Core
 transcript_by: Michael Folkson
 categories: ['residency']
 tag: ['bitcoin core']
-speakers: ["Fabian Jahr"]
+speakers: ['Fabian Jahr']
 date: 2019-08-22
 ---
 

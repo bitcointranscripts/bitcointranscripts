@@ -1,9 +1,9 @@
 ---
 title: Changing Consensus Rules Without Breaking Bitcoin
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["consensus", "forks"]
-speakers: ["Eric Lombrozo"]
+categories: ['conference']
+tags: ['consensus', 'forks']
+speakers: ['Eric Lombrozo']
 date: 2017-09-10
 ---
 

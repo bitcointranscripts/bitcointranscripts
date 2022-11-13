@@ -2,7 +2,7 @@
 title: Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ["Andrew Poelstra"]
+speakers: ['Andrew Poelstra']
 date: 2018-05-25
 ---
 

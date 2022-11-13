@@ -1,8 +1,8 @@
 ---
 title: Advances In Block Propagation 
 transcript_by: Bryan Bishop
-speakers: ["Greg Maxwell"]
-tags: ["mempool", "segwit"]
+speakers: ['Greg Maxwell']
+tags: ['mempool', 'segwit']
 date: 2017-11-27
 ---
 

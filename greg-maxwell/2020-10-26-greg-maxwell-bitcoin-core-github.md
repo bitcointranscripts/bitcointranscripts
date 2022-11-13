@@ -1,6 +1,6 @@
 ---
-title: Greg Maxwell - Bitcoin Core Github 
-speakers: ["Greg Maxwell"]
+title:  Bitcoin Core Github 
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 date: 2020-10-26
 ---

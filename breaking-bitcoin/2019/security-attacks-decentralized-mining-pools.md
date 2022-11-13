@@ -1,9 +1,9 @@
 ---
 title: Security Attacks Decentralized Mining Pools
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["security", "research", "attacks", "mining"]
-speakers: ["Alexei Zamyatin"]
+categories: ['conference']
+tags: ['security', 'research', 'attacks', 'mining']
+speakers: ['Alexei Zamyatin']
 ---
 
 # Security and attacks on decentralized mining pools

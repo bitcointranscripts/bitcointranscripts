@@ -1,9 +1,9 @@
 ---
 title: Solar Powered Space Pirates
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["cryptography"]
-speakers: ["Peter Todd"]
+categories: ['conference']
+tags: ['cryptography']
+speakers: ['Peter Todd']
 date: 2017-09-10
 ---
 

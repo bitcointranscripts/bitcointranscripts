@@ -1,8 +1,8 @@
 ---
 title:  Confidential Transactions
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
-tags: ["privacy"]
+tags: ['privacy']
 date: 2017-04-28
 ---
 

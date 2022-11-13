@@ -3,7 +3,7 @@ title: Crypto Castles
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
-speakers: ["Jameson Lopp"]
+speakers: ['Jameson Lopp']
 date: 2018-07-04
 ---
 

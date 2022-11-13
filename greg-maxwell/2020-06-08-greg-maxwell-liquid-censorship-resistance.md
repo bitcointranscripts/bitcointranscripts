@@ -1,6 +1,6 @@
 ---
 title: Liquid Censorship Resistance 
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 date: 2020-06-08
 ---

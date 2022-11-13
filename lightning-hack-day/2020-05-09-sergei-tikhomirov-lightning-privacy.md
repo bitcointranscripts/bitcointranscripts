@@ -1,9 +1,9 @@
 ---
 title: Lightning Privacy 
 transcript_by: Michael Folkson
-speakers: ["Sergei Tikhomirov"]
-categories: ["hackathon"]
-tags: ["security", "privacy", "lightning", "scalability"]
+speakers: ['Sergei Tikhomirov']
+categories: ['hackathon']
+tags: ['security', 'privacy', 'lightning', 'scalability']
 date: 2020-05-09
 ---
 

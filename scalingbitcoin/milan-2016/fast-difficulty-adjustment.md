@@ -2,7 +2,7 @@
 title: Fast Difficulty Adjustment
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ["Mark Friedenbach"]
+speakers: ['Mark Friedenbach']
 ---
 
 # Fast difficulty adjustment using a low-pass finite impulse response filter

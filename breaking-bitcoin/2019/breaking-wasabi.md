@@ -1,9 +1,9 @@
 ---
 title: Breaking Wasabi
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["privacy", "wallet"]
-speakers: ["Udi Wertheimer"]
+categories: ['conference']
+tags: ['privacy', 'wallet']
+speakers: ['Udi Wertheimer']
 ---
 
 # Breaking wasabi and automated wallets

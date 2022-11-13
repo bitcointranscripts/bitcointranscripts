@@ -1,9 +1,9 @@
 ---
 title: Joost Jager - HODL Invoices 
 transcript_by: Michael Folkson
-categories: ["conference"]
-tags: ["lnd", "lightning"]
-speakers: ["Joost Jager"]
+categories: ['conference']
+tags: ['lnd', 'lightning']
+speakers: ['Joost Jager']
 date: 2019-06-13
 ---
 

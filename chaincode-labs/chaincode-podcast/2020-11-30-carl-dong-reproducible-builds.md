@@ -1,9 +1,9 @@
 ---
 title: Carl Dong - Reproducible Builds 
 transcript_by: Michael Folkson
-speakers: ["Carl Dong"]
-categories: ["podcast"]
-tag: ["build systems"]
+speakers: ['Carl Dong']
+categories: ['podcast']
+tag: ['build systems']
 date: 2020-11-30
 ---
 

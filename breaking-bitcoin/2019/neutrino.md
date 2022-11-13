@@ -3,7 +3,7 @@ title: Neutrino
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'wallet']
-speakers: ["Jimmy Song"]
+speakers: ['Jimmy Song']
 ---
 
 Neutrino bip158

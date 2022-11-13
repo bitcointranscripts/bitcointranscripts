@@ -1,9 +1,9 @@
 ---
 title: Interview Adam Back Elizabeth Stark
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["lightning"]
-speakers: ["Adam Back", "Elizabeth Stark"]
+categories: ['conference']
+tags: ['lightning']
+speakers: ['Adam Back', 'Elizabeth Stark']
 date: 2017-09-10
 ---
 

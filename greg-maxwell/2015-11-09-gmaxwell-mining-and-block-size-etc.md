@@ -1,6 +1,6 @@
 ---
 title: Mining And Block Size Etc 
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 date: 2015-11-09
 tags: ['mining']

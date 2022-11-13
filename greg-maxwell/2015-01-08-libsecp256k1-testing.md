@@ -1,9 +1,8 @@
 ---
 title: libsecp256k1 testing 
-speakers: ["Greg Maxwell"]
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ["bitcoin core", "testing"]
-speakers: [' Greg Maxwell']
+tags: ['bitcoin core', 'testing']
 date: 2015–01-08
 ---
 
@@ -15,7 +14,7 @@ Location: Reddit
 
 # libsecp256k1 testing
 
-Today OpenSSL [de-embargoed CVE-2014-3570](https://www.openssl.org/news/secadv/20150108.txt) "Bignum squaring may produce incorrect results". That particular security advisory is not a concern for Bitcoin users, but it allows me to explain some of the context behind a slightly cryptic statement I made in the [release notes](https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md) for the upcoming Bitcoin Core 0.10: “we have reason to believe that libsecp256k1 is better tested and more thoroughly reviewed than the implementation in OpenSSL”. Part of that “reason to believe” was our discovery of this OpenSSL flaw.
+Today OpenSSL [de-embargoed CVE-2014-3570](https://www.openssl.org/news/secadv/20150108.txt) 'Bignum squaring may produce incorrect results'. That particular security advisory is not a concern for Bitcoin users, but it allows me to explain some of the context behind a slightly cryptic statement I made in the [release notes](https://github.com/bitcoin/bitcoin/blob/master/doc/release-notes/release-notes-0.10.0.md) for the upcoming Bitcoin Core 0.10: “we have reason to believe that libsecp256k1 is better tested and more thoroughly reviewed than the implementation in OpenSSL”. Part of that “reason to believe” was our discovery of this OpenSSL flaw.
 
 In Bitcoin Core 0.10 we are migrating transaction signing, and only signing for now, to a cryptographic library we're currently developing-- [libsecp256k1](https://github.com/bitcoin-core/secp256k1) -- which is intended to provide a high-speed, sidechannel avoiding, and high-assurance implementation of the underlying public-key cryptography used in Bitcoin. Doing this allows us to deliver safer and more reliable software that better fits Bitcoin's specific needs. The library is mostly the work of Bitcoin Core super-contributor Pieter Wuille (sipa), though many other people are working on it too-- software created alone tends to be inherently unreviewed. This library is part of what Pieter and I are working on at Blockstream.
 

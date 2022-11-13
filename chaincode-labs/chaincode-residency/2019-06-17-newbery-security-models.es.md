@@ -2,9 +2,9 @@
 title: Security Models 
 transcript_by: Caralie Chrisco
 translation_by: Julien Urraca
-speakers: ["John Newbery"]
-tags: ["security", "taproot", "cryptography"]
-categories: ["residency"]
+speakers: ['John Newbery']
+tags: ['security', 'taproot', 'cryptography']
+categories: ['residency']
 date: 2019-06-17
 ---
 

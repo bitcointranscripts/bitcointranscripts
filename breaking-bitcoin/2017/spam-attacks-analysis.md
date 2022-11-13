@@ -1,9 +1,9 @@
 ---
 title: Spam Attacks Analysis
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["research", "p2sh", "attacks"]
-speakers: ["Antoine Le Calvez"]
+categories: ['conference']
+tags: ['research', 'p2sh', 'attacks']
+speakers: ['Antoine Le Calvez']
 date: 2017-09-09
 ---
 

@@ -3,7 +3,7 @@ title: Transaction Rebroadcast
 transcript_by: Michael Folkson
 categories: ['residency']
 tag: ['bitcoin core']
-speakers: ["Amiti Uttarwar"]
+speakers: ['Amiti Uttarwar']
 date: 2019-09-09
 ---
 

@@ -1,9 +1,9 @@
 ---
 title: Lightning Network Routing Security
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["routing", "lightning", "lnd", "security"]
-speakers: ["Joost Jager"]
+categories: ['conference']
+tags: ['routing', 'lightning', 'lnd', 'security']
+speakers: ['Joost Jager']
 ---
 
 # Security aspects of LN routing

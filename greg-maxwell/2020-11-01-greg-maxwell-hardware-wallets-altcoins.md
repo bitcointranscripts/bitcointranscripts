@@ -1,8 +1,8 @@
 ---
 title: Hardware Wallets Altcoins 
 transcript_by: Michael Folkson
-speakers: ["Greg Maxwell"]
-tags: ["hardware wallet", "altcoin", "wallet"]
+speakers: ['Greg Maxwell']
+tags: ['hardware wallet', 'altcoin', 'wallet']
 date: 2020-11-01
 ---
 

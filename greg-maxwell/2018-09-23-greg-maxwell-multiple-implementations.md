@@ -1,6 +1,6 @@
 ---
-title: Greg Maxwell - Multiple Implementations 
-speakers: ["Greg Maxwell"]
+title: Multiple Implementations 
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 date: 2018-09-23
 ---

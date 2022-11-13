@@ -1,9 +1,9 @@
 ---
 title: Light Clients During 2017 Interfork Period
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["forks", "segwit", "miners", "wallet"]
-speakers: ["Thomas Voegtlin"]
+categories: ['conference']
+tags: ['forks', 'segwit', 'miners', 'wallet']
+speakers: ['Thomas Voegtlin']
 date: 2017-09-09
 ---
 

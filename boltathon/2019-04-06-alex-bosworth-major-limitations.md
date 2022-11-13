@@ -3,7 +3,7 @@ title: Major Limitations of Lightning
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
-speakers: ["Alex Bosworth"]
+speakers: ['Alex Bosworth']
 date: 2019-04-06
 ---
 

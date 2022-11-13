@@ -3,7 +3,7 @@ title: Zap Wallet
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['wallet']
-speakers: ["Tom Kirkpatrick"]
+speakers: ['Tom Kirkpatrick']
 date: 2018-12-01
 ---
 
