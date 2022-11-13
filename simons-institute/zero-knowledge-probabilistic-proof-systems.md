@@ -5,9 +5,7 @@ categories: ['conference']
 speakers: ['Shafi Goldwasser']
 ---
 
-Zero knowledge probabilistic proof systems
-
-Shafi Goldwasser
+# Zero knowledge probabilistic proof systems
 
 Historical Papers in Cryptography Seminar Series, Simons Institute
 

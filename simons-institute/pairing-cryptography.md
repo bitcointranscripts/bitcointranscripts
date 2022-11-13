@@ -3,13 +3,12 @@ title: Pairing Cryptography
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Dan Boneh']
+date: 2015-07-14
 ---
 
+# Pairings in Cryptography
+
 [Dan Boneh](http://crypto.stanford.edu/~dabo/) (see also [1](https://en.wikipedia.org/wiki/Dan_Boneh))
-
-Pairings in Cryptography
-
-2015-07-14
 
 <https://www.youtube.com/watch?v=8WDOpzxpnTE&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=21>
 

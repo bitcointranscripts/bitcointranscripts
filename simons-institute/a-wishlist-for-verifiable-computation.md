@@ -8,8 +8,6 @@ speakers: ['Michael Walfish']
 
 A wishlist for verifiable computation: An applied computer science perspective
 
-Michael Walfish (NYU)
-
 * <http://www.pepper-project.org/>
 * <https://www.youtube.com/watch?v=Z4jzA6ts2j4>
 * <http://simons.berkeley.edu/talks/mike-walfish-2015-06-10>
