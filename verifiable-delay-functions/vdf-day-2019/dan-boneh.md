@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
 speakers: ['Dan Boneh']
+date: 2019-02-03
 ---
 
-Verifiable delay functions
-
-Dan Boneh
+# Verifiable delay functions
 
 video: <https://www.youtube.com/watch?v=dN-1q8c50q0>
 
