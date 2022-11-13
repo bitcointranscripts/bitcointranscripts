@@ -1,8 +1,10 @@
 ---
-title: Andrew Poelstra TFTC (2019-06-18)
+title:  TFTC 
 speakers: Andrew Poelstra
 transcript_by: Michael Folkson
-categories: ["podcast"]
+categories: ['podcast']
+date: 2019-06-18
+speakers: ['Andrew Poelstra']
 ---
 
 TFTC podcast with Andrew Poelstra - June 18th 2019 (Abridged)
