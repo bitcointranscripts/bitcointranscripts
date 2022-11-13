@@ -1,16 +1,14 @@
 ---
-title: Thomas Voegtlin, Ghost43 - Electrum (2020-08-09)
+title:  Electrum 
 transcript_by: Michael Folkson
 categories: ['podcast']
+date: 2020-08-09
+speakers: ['Thomas Voegtlin', 'Ghost43']
 ---
-
-Name: Thomas Voegtlin and Ghost43
 
 Topic: Electrum Wallet 4
 
 Location: Stephan Livera Podcast
-
-Date: August 9th 2020
 
 Audio: https://stephanlivera.com/episode/199/
 

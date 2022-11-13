@@ -1,9 +1,10 @@
 ---
-title: Laolu Osuntokun - Stephan Livera (2018-12-11)
+title: Laolu Osuntokun - Stephan Livera 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']
 speakers: ['Laolu Osuntokun']
+date: 2018-12-11
 ---
 
 Stephan Livera podcast with Laolu Osuntokun - December 11th 2018

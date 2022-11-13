@@ -1,13 +1,14 @@
 ---
-title: James O'Beirne (2019-04-11)
+title: The Truth About ‘Power’ in Bitcoin
 transcript_by: Michael Folkson
 categories: ['podcast']
 speakers: ['James O’Beirne']
+date: 2019-04-11
 ---
 
-Stephan Livera Podcast with James O’Beirne - April 11th 2019
+# The Truth About ‘Power’ in Bitcoin
 
-The Truth About ‘Power’ in Bitcoin
+Stephan Livera Podcast with James O’Beirne - April 11th 2019
 
 Podcast: <https://stephanlivera.com/episode/66/>
 

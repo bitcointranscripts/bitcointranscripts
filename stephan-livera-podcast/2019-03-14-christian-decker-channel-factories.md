@@ -1,8 +1,9 @@
 ---
-title: Christian Decker - Channel Factories (2019-03-14)
+title:  Channel Factories 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['topology', 'fees']
+date: 2019-03-14
 ---
 
 Name: Christian Decker

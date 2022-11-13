@@ -1,18 +1,15 @@
 ---
-title: Jonas Nick, Tim Ruffing - MuSig, MuSig-DN and MuSig2 (2020-10-27)
+title:  MuSig, MuSig-DN and MuSig2 
 transcript_by: Michael Folkson
-speakers: ["Jonas Nick", "Tim Ruffing"]
-categories: ["podcast"]
-tags: ["schnorr", "multisig", "taproot"]
+speakers: ['Jonas Nick', 'Tim Ruffing']
+categories: ['podcast']
+tags: ['schnorr', 'multisig', 'taproot']
+date: 2020-10-27
 ---
-
-Name: Jonas Nick and Tim Ruffing
 
 Topic: MuSig, MuSig-DN and MuSig2
 
 Location: Stephan Livera Podcast
-
-Date: October 27th 2020
 
 Audio: https://stephanlivera.com/episode/222/
 

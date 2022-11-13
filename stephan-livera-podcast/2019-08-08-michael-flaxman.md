@@ -1,10 +1,10 @@
 ---
-title: Michael Flaxman (2019-08-08)
+title: Every Bitcoin Hardware Wallet Sucks
 transcript_by: Michael Folkson
 categories: ['podcast']
+date: 2019-08-08
+speakers: ['Michael Flaxman']
 ---
-
-Name: Michael Flaxman
 
 Topic: Every Bitcoin Hardware Wallet Sucks
 

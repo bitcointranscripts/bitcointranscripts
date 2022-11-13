@@ -1,18 +1,15 @@
 ---
-title: AJ Towns - Schnorr Taproot (2019-12-27)
+title: AJ Towns - Schnorr Taproot 
 transcript_by: Michael Folkson
-speakers: ["AJ Towns"]
-categories: ["podcast"]
-tags: ["taproot", "schnorr"]
+speakers: ['AJ Towns']
+categories: ['podcast']
+tags: ['taproot', 'schnorr']
+date: 2019-12-27
 ---
-
-Name: AJ Towns
 
 Topic: Schnorr Taproot Tapscript BIPs
 
 Location: Stephan Livera Podcast
-
-Date: December 27th 2019
 
 Video: https://stephanlivera.com/episode/137/
 

@@ -1,17 +1,15 @@
 ---
-title: Michael Flaxman - Security Guide (2020-09-28)
+title:  Security Guide 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['security']
+date: 2020-09-28
+speakers: ['Michael Flaxman']
 ---
-
-Name: Michael Flaxman
 
 Topic: 10x your Bitcoin security with Multisig
 
 Location: Stephan Livera Podcast
-
-Date: September 28th 2020
 
 Audio: https://stephanlivera.com/episode/215/
 

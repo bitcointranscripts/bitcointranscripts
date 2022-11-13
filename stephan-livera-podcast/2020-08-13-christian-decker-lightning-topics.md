@@ -1,17 +1,15 @@
 ---
-title: Christian Decker - Lightning Topics (2020-08-13)
+title:  Lightning Topics 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['attacks', 'lightning']
+date: 2020-08-13
+speakers: ['Christian Decker']
 ---
-
-Name: Christian Decker
 
 Topic: ANYPREVOUT, MPP, Mitigating Lightning Attacks
 
 Location: Stephan Livera Podcast
-
-Date: August 13th 2020
 
 Audio: https://stephanlivera.com/episode/200/
 
