@@ -6,9 +6,7 @@ tags: ['consensus', 'scalability']
 speakers: ['Tadge Dryja']
 ---
 
-Lightning network
-
-Tadge Dryja
+# Lightning network
 
 I am going to talk about blockchain scalability using payment channel networks. I am working on Lightning Network. It's currently being built in bitcoin but it can support other things. One of the fundamental problems with blockchain is scalability. How can you have millions of users and rapid transactions?
 

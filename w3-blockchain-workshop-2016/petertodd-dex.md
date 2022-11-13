@@ -6,8 +6,6 @@ tags: ['multisig']
 speakers: ['Peter Todd']
 ---
 
-petertodd
-
 I have been working on deterministic expressions language called DEX. It looks like lambda calculus. But really we're trying to create a way to specify expressions that would return true if a signature is valid. Something like this, which is really just check a signature against a pubkey for a message, is essentially something that would be baked into your software anyway. We're trying to move into a layer of abstraction where you can specify the conditions you need for your particular use case. This might be a standard public key. But perhaps you want to do a multisig where Alice signs and Bob signs. That's simple. Something like that is opening up a lot of possibilities, like in bitcoin with multisig.
 
 You could also see things like OR conditions where you have a release-pubkey that could sign any release, and maybe a dev-pubkey which is only allowed to sign development builds. You could build this in where you define the defintion of a valid software release, where it's valid if only signed by the dev-pubkey only if the build is marked as a debug build. It's simple, but it's a nice improvement.

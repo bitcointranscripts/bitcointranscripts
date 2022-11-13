@@ -6,9 +6,7 @@ tags: ['consensus']
 speakers: ['Kenji Saito']
 ---
 
-Kenji Saito
-
-BlockchainHub
+# Blockchain Hub
 
 My understanding is that there is application logic, consensus mechanism, distributed timestamp and ledger structure. With these layers, the blockchain can give total control of assets to the end. This materializes the attitude and philosophy of the internet. The intention is I think great. There is a missing link, though. It would be nice if these blockchain could manage the digital representational of physical assets.
 
