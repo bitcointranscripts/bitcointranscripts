@@ -1,5 +1,5 @@
 ---
-title: Whalepool 
+title: Whalepool
 transcript_by: Bryan Bishop
 tags: ['ux', 'segwit']
 speakers: ['Eric Lombrozo', 'Roger Ver']

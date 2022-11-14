@@ -1,5 +1,5 @@
 ---
-title: Bitcoin's Security Model - A Deep Dive 
+title: Bitcoin's Security Model - A Deep Dive
 translation_by: Julien Urraca
 tags: ['security']
 date: 2016-11-13

@@ -1,12 +1,12 @@
 ---
-title: Bitcoin Optech - Schnorr and Taproot workshop 
+title: Bitcoin Optech - Schnorr and Taproot workshop
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['consensus', 'taproot', 'schnorr']
 date: 2019-09-27
 ---
 
-# Bitcoin Optech - Schnorr and Taproot workshop 
+# Bitcoin Optech - Schnorr and Taproot workshop
 
 Location: Chaincode Labs, NYC
 
@@ -84,7 +84,7 @@ bitcoind v0.19 makes spend-to-taproot standard. So you can spend to these addres
 
 We'll go over this quickly to refresh everyone.
 
-In elliptic curve math, we have scalars which are nmbres. All of the scalars are over modulo arithmetic. You do an operation between A and B and then you do modulo n. The modulo here will be of the group order called SECP256K1_ORDER. Division done using modular inverse requires Fermat's little theorem. Numbers can go from 0 to (group order - 1) because it's modular arithmetic. So 15 + 9 mod 21 is 3. So 24 mod 21 is 3. If it's higher than the modulo, you need to subtract the order. If it's lower than 0, you need to add the order. So these are scalars.
+In elliptic curve math, we have scalars which are nmbres. All of the scalars are over modulo arithmetic. You do an operation between A and B and then you do modulo n. The modulo here will be of the group order called SECP256K1\_ORDER. Division done using modular inverse requires Fermat's little theorem. Numbers can go from 0 to (group order - 1) because it's modular arithmetic. So 15 + 9 mod 21 is 3. So 24 mod 21 is 3. If it's higher than the modulo, you need to subtract the order. If it's lower than 0, you need to add the order. So these are scalars.
 
 Now we'll talk about points on an elliptic curve. There are x and y coordinates. There's something called the generator point which is a way to take scalars and project them into the curve. We'll see in a second how this works. The points in secp curves form an abelian group. What does this mean? It's about closure. If A is a point and B is a point then A + B is also a point. Let's look at integers. They are also an abelian group. 5, 7, and 12 are all integers. There's also associativity meaning (A + B) + C is the same as A + (B + C). Also, there's an identity element meaning, in integers if you do 5 + 0 you get 5. But in elliptic curves, you have an infinity point. A plus infinity is A if A is a point. There's also the inverse property of an abelian group: for any point A there exist some point B such that A + B = 0. So for every A point there's a minus A point. Another property is commutativity, such that A + B is the same as B + A. This should give you some intuitoin that the math over points is similar to math over the integers.
 
@@ -94,7 +94,7 @@ Let's switch over to the notebook.
 
 <https://github.com/bitcoinops/taproot-workshop/blob/master/0.2-Elliptic-Curve-Math.ipynb>
 
-ECKey.generate will generate a valid scalar, so that you don't have to run randrange(1, SECP256K1_ORDER). There is also a function generate_key_pair to help make your life easier.
+ECKey.generate will generate a valid scalar, so that you don't have to run randrange(1, SECP256K1\_ORDER). There is also a function generate\_key\_pair to help make your life easier.
 
 To get the negation, take the order minus the scalar. But if it's part of a bigger operation, then the modulo operator will take care of that in python. In C or rust, modulo operator doesn't work as expected on negative numbers. In python, it works as expected. In C and other compiled languages, it doesn't work like that. The negate method negates it in place, that might be confusing.
 
@@ -112,7 +112,7 @@ G is the generator point.
 
 d is our private key which is actually a scalar.
 
-point is a scalar \* G (which has an x and a y)
+point is a scalar * G (which has an x and a y)
 
 P is the public key (P = dG).
 
@@ -166,7 +166,7 @@ Are you familiar with projective coordinates? It's a re-parameterization of proj
 
 Let's go over the answers: <https://github.com/bitcoinops/taproot-workshop/blob/master/solutions/1.1-schnorr-signatures-solutions.ipynb>
 
-In 1.1.2, we wanted to check the inverse and check that ... so we're generating k and R, we're taking the x of R and the y of R. We're negating k by doing order minus k.secret, and then we're creating minus R from that minus K value. This will also return us an EC Key for that scalar. So we can easily do operations without thinking about the modulo. So then we take the minus R x value and the minus R y value. So we assert the R x value is the same as minus R x value. So then we assert SECP256K1_FIELD_SIZE minus R's y coordinate is the same as minus R's y coordinate.
+In 1.1.2, we wanted to check the inverse and check that ... so we're generating k and R, we're taking the x of R and the y of R. We're negating k by doing order minus k.secret, and then we're creating minus R from that minus K value. This will also return us an EC Key for that scalar. So we can easily do operations without thinking about the modulo. So then we take the minus R x value and the minus R y value. So we assert the R x value is the same as minus R x value. So then we assert SECP256K1\_FIELD\_SIZE minus R's y coordinate is the same as minus R's y coordinate.
 
 In 1.1.3, the next operation is to sign, to create a Schnorr signature. Here, you create a private key and a public key. Here you create a nonce and a public nonce. You need to implement here the jacobi symbol to check if it's a quadratic residue or a quadratic non-residue, and if it's a quadratic non-residue then you negate it. Then we take the X coordinate of the R value, .... you need to hash them together to get the e value, and then you need to use the signature equation, and then the asserts should verify where you run the Schnorr verification equation.
 
@@ -180,7 +180,7 @@ Q: The generate key pair is not in the bitcoin test framework?
 
 A: No. You'll see in the next chapter, there's a bunch of new functions.
 
-Let's go over the solution for section 1.1.3. Again, we generate a private key, public key, nonce, public nonce. We take the X coordinate of R, we take the bytes of the public key, we hash them together to get e. Then we do the Schnorr equation to do k + h \* d where h is actually like e but it's a hash result. THen we take the signature, which is the X of R as bytes in big endian order, plus s.secret.to_bytes(32, big endian).
+Let's go over the solution for section 1.1.3. Again, we generate a private key, public key, nonce, public nonce.We take the X coordinate of R, we take the bytes of the public key, we hash them together to get e. Then we do the Schnorr equation to do k + h \* d where h is actually like e but it's a hash result. THen we take the signature, which is the X of R as bytes in big endian order, plus s.secret.to\_bytes(32, big endian).
 
 Section 1.1.4, this is something interesting and important. Until now, we created random nonces. In python, it's fun to use random.randrange but in practice random is complicated and it's not such an easy thing. We don't want to rely on every signature to need a random number, because if the random number is bad then someone can crack our private key. So we want a deterministic nonce. It's a way where we can get a nonce without having to generate random stuff every time. So what we will do is we will hash our private key and the message together to get a nonce. So if we sign the same message twice, we get the same nonce. Since nobody else knows our private key, nobody can know what's in that nonce. So in 1.1.4, we'll do the same thing again, but this time we'll use a deterministic nonce. The verification will pass if it's a random nonce, or even if it's a deterministic nonce. Signature verification will pass in both cases.
 
@@ -232,7 +232,7 @@ The musig paper proposes uses lexical sorting for constructing ci the coefficien
 
 In the next section, we'll move from key generation to signing for musig. For signing, we need everyone to generate a nonce, commit to the public nonce, then exchange the public nonces, and then they can do the 3-round signing protocol. So here what we're going to do is exactly that; we'll generate three nonces. Here we're not using random ones, we're using a hard-coded one so that the asserts are easier to check. We could have done a verify signature assert, but we also want to check some other stuff.
 
-You can use the function aggregate_schnorr_nonces which will add them up and return a boolean, if you need to negate them. We still need to check if the resulting R point is a quadratic residue or quadratic non-residue. If it's not a quadratic residue, then all the nonces, all three, need to be negated. After this, we get to signing. This is about the commitments and aggregating the nonces. If you add them up and it's not a quadratic residue, then you can negate all of them and add them up, and that will by definition be a quadratic residue.
+You can use the function aggregate\_schnorr\_nonces which will add them up and return a boolean, if you need to negate them. We still need to check if the resulting R point is a quadratic residue or quadratic non-residue. If it's not a quadratic residue, then all the nonces, all three, need to be negated. After this, we get to signing. This is about the commitments and aggregating the nonces. If you add them up and it's not a quadratic residue, then you can negate all of them and add them up, and that will by definition be a quadratic residue.
 
 Q: Is the Schnorr signature generation and verification already in mainstream libsecp256k1?
 
@@ -246,7 +246,7 @@ You shouldn't negate the nonce points in the ... aggregate. So the boolean will 
 
 Now that we have exchanged nonce commitments, we created an aggregate nonce, we negated the scalar nonces if needed. The last part to do is to create the signatures, add them up, and prove that with musig we can verify the signature just as if it is a regular signature. Then you pass it to the regular verify schnorr function, it's not a musig specific verification function. So we need to create partial signatures, add them up, and verify that they are correct for the combined key.
 
-There's a function called aggregate_musig_signature which accepts a list of partial signatures and it will add them up for you, and will return a valid signature.
+There's a function called aggregate\_musig\_signature which accepts a list of partial signatures and it will add them up for you, and will return a valid signature.
 
 If you use bip32 with your nonces, yeah don't do that. If you really really want, you could do a random seed and feed it into Chacha20 and then create nonces. But this doesn't solve most of the problems. Even if you were to specify that everyone must use deterministic nonces, someone could still just not, unless there was a way to prove it was a deterministic nonce. Is it insecure if you know the other guys nonces ahead of time? Yes. In parallel, you could initiate a bunch of signatures, so everyone commits to a hundred nonces, they commit to a hundred nonces, and then they reveal a hundred public nonces, and then they have a stack for the next year to keep signing with musig.
 

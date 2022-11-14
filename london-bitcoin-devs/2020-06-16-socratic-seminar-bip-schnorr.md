@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - BIP Schnorr 
+title: Socratic Seminar - BIP Schnorr
 transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-06-16
@@ -7,8 +7,6 @@ tags: ['schnorr']
 ---
 
 # BIP Schnorr (BIP 340)
-
-Name: Socratic Seminar
 
 Location: London BitDevs (online)
 

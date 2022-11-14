@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core and hardware wallets 
+title: Bitcoin Core and hardware wallets
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'bitcoin core']

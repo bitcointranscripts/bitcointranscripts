@@ -1,5 +1,5 @@
 ---
-title: Excel In Lightning 
+title: Excel In Lightning
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lnd']

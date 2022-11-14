@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - AssumeUTXO 
+title: Socratic Seminar - AssumeUTXO
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['security', 'IBD', 'bitcoin core']

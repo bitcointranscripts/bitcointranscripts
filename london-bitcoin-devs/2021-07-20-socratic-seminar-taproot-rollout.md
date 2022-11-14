@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - Taproot rollout 
+title: Socratic Seminar - Taproot rollout
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']

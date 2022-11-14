@@ -9,8 +9,6 @@ date: 2020-05-05
 
 # Bitcoin privacy (Payjoin/P2EP)
 
-Name: Socratic Seminar 
-
 Location: London BitDevs (online)
 
 Video: https://www.youtube.com/watch?v=hX86rKyNB8I

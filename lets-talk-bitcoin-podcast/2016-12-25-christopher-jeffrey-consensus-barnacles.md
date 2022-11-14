@@ -1,5 +1,5 @@
 ---
-title: Consensus Barnacles 
+title: Consensus Barnacles
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['consensus']

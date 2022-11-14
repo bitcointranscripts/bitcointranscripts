@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - Grokking Bitcoin 
+title: Socratic Seminar - Grokking Bitcoin
 transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-04-22

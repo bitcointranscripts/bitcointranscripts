@@ -1,5 +1,5 @@
 ---
-title: Privacidade e Escalabilidade na Lightning 
+title: Privacidade e Escalabilidade na Lightning
 transcript_by: Michael Folkson
 translation_by: Lucas Ferreira
 speakers: ['Sergei Tikhomirov']

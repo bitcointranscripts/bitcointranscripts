@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - Coinswap 
+title: Socratic Seminar - Coinswap
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['privacy']
@@ -7,8 +7,6 @@ date: 2020-06-23
 ---
 
 # CoinSwap
-
-Name: Socratic Seminar
 
 Location: London BitDevs (online)
 

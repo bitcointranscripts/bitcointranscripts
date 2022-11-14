@@ -1,5 +1,5 @@
 ---
-title: Unfairly Linear Signatures 
+title: Unfairly Linear Signatures
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr']

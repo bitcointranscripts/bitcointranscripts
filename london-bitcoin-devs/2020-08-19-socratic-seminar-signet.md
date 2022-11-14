@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - Signet 
+title: Socratic Seminar - Signet
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['taproot', 'schnorr', 'signet']

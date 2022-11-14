@@ -1,5 +1,5 @@
 ---
-title: Zap Wallet 
+title: Zap Wallet
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['wallet']

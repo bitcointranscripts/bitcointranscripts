@@ -8,8 +8,6 @@ date: 2020-07-21
 
 # BIP Taproot (BIP 341)
 
-Name: Socratic Seminar
-
 Location: London BitDevs (online)
 
 Video: https://www.youtube.com/watch?v=bPcguc108QM

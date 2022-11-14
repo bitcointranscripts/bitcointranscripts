@@ -1,5 +1,5 @@
 ---
-title: Lightning Network Panel 
+title: Lightning Network Panel
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']

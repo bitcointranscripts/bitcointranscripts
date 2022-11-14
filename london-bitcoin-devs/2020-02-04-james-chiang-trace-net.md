@@ -1,5 +1,5 @@
 ---
-title: Trace Net 
+title: Trace Net
 transcript_by: Michael Folkson
 categories: ['meetup']
 speakers: ['James Chiang']

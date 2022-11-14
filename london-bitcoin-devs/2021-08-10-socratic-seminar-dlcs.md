@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar - Discreet Log Contracts 
+title: Socratic Seminar - Discreet Log Contracts
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['smart contracts', 'lightning']

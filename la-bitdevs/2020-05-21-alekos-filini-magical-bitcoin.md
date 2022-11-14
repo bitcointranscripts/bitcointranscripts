@@ -1,5 +1,5 @@
 ---
-title: Alekos Filini Magical Bitcoin 
+title: Magical Bitcoin
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['miniscript', 'wallet']

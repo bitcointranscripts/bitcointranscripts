@@ -1,5 +1,5 @@
 ---
-title: Lightning Routing 
+title: Lightning Routing
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'routing']

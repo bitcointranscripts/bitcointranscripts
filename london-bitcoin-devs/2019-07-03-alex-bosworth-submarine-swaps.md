@@ -1,5 +1,5 @@
 ---
-title: Submarine Swaps 
+title: Submarine Swaps
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['submarine swaps']

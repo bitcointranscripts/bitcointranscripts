@@ -1,5 +1,5 @@
 ---
-title: Consensus Uasf And Forks 
+title: Consensus Uasf And Forks
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['consensus', 'hard fork', 'forks', 'soft fork']

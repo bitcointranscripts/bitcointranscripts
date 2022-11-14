@@ -1,5 +1,5 @@
 ---
-title: Lightning Privacy 
+title: Lightning Privacy
 transcript_by: Michael Folkson
 speakers: ['Sergei Tikhomirov']
 categories: ['hackathon']

@@ -1,5 +1,5 @@
 ---
-title: Rust Lightning 
+title: Rust Lightning
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']

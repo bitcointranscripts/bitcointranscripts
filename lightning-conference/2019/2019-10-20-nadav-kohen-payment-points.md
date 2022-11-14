@@ -1,5 +1,5 @@
 ---
-title: Payment Points 
+title: Payment Points
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'schnorr']

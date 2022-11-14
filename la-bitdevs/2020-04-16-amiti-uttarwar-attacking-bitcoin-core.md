@@ -1,5 +1,5 @@
 ---
-title: Amiti Uttarwar - Attacking Bitcoin Core 
+title: Attacking Bitcoin Core
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']

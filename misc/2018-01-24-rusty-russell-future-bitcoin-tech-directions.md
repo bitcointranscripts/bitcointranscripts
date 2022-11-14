@@ -1,5 +1,5 @@
 ---
-title: Rusty Russell Future Bitcoin Tech Directions 
+title: Rusty Russell Future Bitcoin Tech Directions
 transcript_by: Bryan Bishop
 speakers: ['Rusty Russell']
 date: 2018-01-24

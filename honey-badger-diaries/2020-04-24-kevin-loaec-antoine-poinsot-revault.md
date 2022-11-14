@@ -25,7 +25,7 @@ Antoine: It is a single party architecture and ours is multiparty architecture.
 
 Aaron: Is this the main difference? The main benefit is that it can be used by multiple people at the same time?
 
-Kevin: It is a lot of things in the way it is designed. One of the differences is that in Bryan’s implementation you need to know how much funds you are receiving before setting up the vault. You are already pre-signing the spending transaction and then you delete your private key. On our architecture you don’t need that. The vaults are just addresses that are generated in advance. Any money you receive is already behind a vault. You don’t need to know in advance how much money you are going to receive. You can already give an address to an exchange and whatever money you receive is in the vault. That is the major difference. It is very important in a business situation because you don’t necessarily know how much money you are safe keeping. 
+Kevin: It is a lot of things in the way it is designed. One of the differences is that in Bryan’s implementation you need to know how much funds you are receiving before setting up the vault. You are already pre-signing the spending transaction and then you delete your private key. On our architecture you don’t need that. The vaults are just addresses that are generated in advance. Any money you receive is already behind a vault. You don’t need to know in advance how much money you are going to receive. You can already give an address to an exchange and whatever money you receive is in the vault. That is the major difference. It is very important in a business situation because you don’t necessarily know how much money you are safe keeping.
 
 Aaron: Let’s get into how it actually works then. To understand this would it make sense to start with how Bryan’s design works and then get to yours or do you think it would be better to start with yours and forget about Bryan’s?
 
@@ -33,7 +33,7 @@ Antoine: It is quite different so I think it is better to get straight to ours. 
 
 Aaron: Explain to me how it works. It is a vault. There are three of us. We want to hold our money safe somehow. We want to stop people from stealing it. What do we do?
 
-Antoine: From a high level viewpoint it is an architecture that uses pre-signed transactions and revocable transactions. We called it Revault. Let’s take the company who hired Kevin to make this architecture and who the implementation is for. There are four stakeholders in the company. Two of them are traders that do the day-to-day management of funds. They might send Bitcoin to some exchanges. How it works is any of the stakeholders give an address to receive some Bitcoin to anyone. When they receive the coins they pre-sign 4 transaction. There are the emergency transactions, these spend from the vault which is a 4-of-4 multisig and pays to a timelocked 4-of-4 multisig with other static keys that are always the same. For vault transactions we can generate other keys. This one is pre-signed and shared between the stakeholders in order to revoke. If there is something nasty going on they can always broadcast the emergency transactions which lock funds to a deep vault. 
+Antoine: From a high level viewpoint it is an architecture that uses pre-signed transactions and revocable transactions. We called it Revault. Let’s take the company who hired Kevin to make this architecture and who the implementation is for. There are four stakeholders in the company. Two of them are traders that do the day-to-day management of funds. They might send Bitcoin to some exchanges. How it works is any of the stakeholders give an address to receive some Bitcoin to anyone. When they receive the coins they pre-sign 4 transaction. There are the emergency transactions, these spend from the vault which is a 4-of-4 multisig and pays to a timelocked 4-of-4 multisig with other static keys that are always the same. For vault transactions we can generate other keys. This one is pre-signed and shared between the stakeholders in order to revoke. If there is something nasty going on they can always broadcast the emergency transactions which lock funds to a deep vault.
 
 Aaron: This transaction is timelocked? Who holds the keys to address that it sends to? The same four?
 
@@ -43,7 +43,7 @@ Aaron: The idea behind these addresses is that they are extra secure. Maybe also
 
 Antoine: There is both a timelock and it takes time to access those keys.
 
-Aaron: That is the emergency transaction. 
+Aaron: That is the emergency transaction.
 
 Antoine: Then there is a transaction chain to be able to spend from the vault. We are going to use Segwit transactions of course and start by signing the last one of the chain. There is another emergency transaction for what we call the unvaulting transaction, the one that initiates the spend. This one pays to either the 4-of-4, the same keys, another emergency transaction can be used. Or it pays to the two traders after a small timelock. Like one hour. There are two transactions here which spend the unvault transaction. If you are in the middle of unvaulting a vault you can still broadcast the emergency transaction. You spend from the unvault one. There is the cancel transaction in case the traders broadcast an unvault transaction to spend the vault and one of the stakeholders doesn’t know about the spend. To prevent this it will broadcast the cancel transaction which cancels the unvault to another wallet.
 
@@ -53,7 +53,7 @@ Antoine: There is only one way to spend from the vault. It is by broadcasting th
 
 Kevin: The difference with a normal 4-of-4 is around the business operations or at least operations in general. All of the four pre-signed transactions are signed after some funds have been received. When you receive funds nobody can spend them. First you need the four stakeholders to pre-sign the emergency revaulting transaction and the unvaulting spending transaction. These transactions are already pre-signed and shared between the stakeholders. But then when the traders actively need to spend a transaction you don’t need to wait for the four people to agree with you. That is the whole point, not to annoy every stakeholder every time you need to spend some money. If two people agree on a destination address you can broadcast the transaction. But what Antoine was saying about the four people need to agree, when only two people sign to spend a transaction you have a timelock. During this time any of the four people can trigger the emergency or the revaulting transaction. If you want approve by default but if something goes wrong you can trigger revocation. That can be enforced by watchtowers and things like that because they are all pre-signed transactions. You don’t need to be a human being checking every transaction all the time.
 
-Aaron: That makes sense. It inverts the permissions. 
+Aaron: That makes sense. It inverts the permissions.
 
 Kevin: You still need to have the four stakeholders to pre-sign the transaction at the beginning. You cannot have funds that are received and spent without somebody knowing about it. As soon as they are received they are unspendable until the four people have pre-signed transaction. That is also important. It cannot bypass the four signatures. We do this check at the beginning instead of at the end like a 4-of-4 would do.
 
@@ -69,7 +69,7 @@ Kevin: For now we haven’t pushed the idea down to individual use for single pe
 
 Antoine: We still assume that it will be used by an institution or a company because we don’t protect against bad intentions of one of the stakeholders like the refusal to sign which would not put the funds at risk but would block the operations. Or key deletion. We assume the user will be a company which already has agreements between the stakeholders. This can be another agreement which can be enforced by the legal system outside of the Bitcoin network.
 
-Aaron: Are there any exchanges or any companies that are using vaults right now? The idea is not that new. 
+Aaron: Are there any exchanges or any companies that are using vaults right now? The idea is not that new.
 
 Kevin: You are right. The idea of vaults is not new. The problem is that there is no implementation so far. At least no production ready implementation. All we have is prototypes. Also they are not very practical for different reasons. I think the state of the art so far was Bryan’s implementation which as I said you need to know the amount before receiving the funds. You pre-sign all your derivation tree depending on the amount. That is not very practical. I guess that is the main reason. Another one is that it is really hard to deal with advanced scripting on Bitcoin. It doesn’t have to be really advanced. We are using OP_CHECKSEQUENCEVERIFY and even that is not supported by PSBT or Bitcoin Core if you want to do the transaction manually. It is a nightmare to deal with basic opcodes because nobody uses them.
 
@@ -97,7 +97,7 @@ Antoine: You would have to make all the stakeholders accept a spend to an unauth
 
 Aaron: With Bryan’s first design one of the things the attacker could do is steal the key and wait until the unvault transaction was broadcast by the original owner. You kind of hide in the bushes. That is not possible here?
 
-Kevin: We have the same issue but we solve it with a co-signing server. The co-signing server doesn’t add any risk but the co-signing server is making sure that a spending transaction can only be signed once. You hope the server is enforcing that. If it doesn’t again that is a race condition. That is the case in Bryan’s implementation as well. 
+Kevin: We have the same issue but we solve it with a co-signing server. The co-signing server doesn’t add any risk but the co-signing server is making sure that a spending transaction can only be signed once. You hope the server is enforcing that. If it doesn’t again that is a race condition. That is the case in Bryan’s implementation as well.
 
 Aaron: What is the co-signing server?
 
@@ -107,7 +107,7 @@ Aaron: What if this server goes offline?
 
 Kevin: Then the funds cannot move, they are locked. This is better than being stolen. That is not perfect. If the server signs whatever you send it without enforcing this rule 	of only once per UTXO then we were back to the same problem of the race condition. Today we don’t have a way of enforcing that on the blockchain yet. We don’t have CHECKTEMPLATEVERIFY. Without something like that we can’t enforce that a transaction will signed only once. This is our solution to it.
 
-Aaron: Who owns the signing server? You guys or someone else? 
+Aaron: Who owns the signing server? You guys or someone else?
 
 Antoine: It is self hosted and non-custodial. The company deploying the architecture will be deploy a co-signing server and another server will hold the signatures for all the stakeholders. For them to share them and to make sure they use the same fee rate for all the transactions, otherwise the signatures are not valid. There are some servers to set up for the companies to use the architecture.
 

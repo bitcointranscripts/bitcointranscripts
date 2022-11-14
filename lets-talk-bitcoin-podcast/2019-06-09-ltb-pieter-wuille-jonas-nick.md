@@ -1,5 +1,5 @@
 ---
-title: LTB - Pieter Wuille, Jonas Nick 
+title: LTB
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'schnorr']

@@ -1,5 +1,5 @@
 ---
-title: Grokking Bitcoin 
+title: Grokking Bitcoin
 transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-04-29
