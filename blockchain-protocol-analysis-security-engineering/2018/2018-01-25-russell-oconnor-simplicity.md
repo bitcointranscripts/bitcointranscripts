@@ -1,10 +1,10 @@
 ---
-title: Russell Oconnor - Simplicity 
+title: Simplicity
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['consensus', 'smart contracts']
 date: 2018-01-25
-speakers: ['Russell O’Connor']
+speakers: ["Russell O’Connor"]
 ---
 
 # Simplicity: A New Language for Blockchains
