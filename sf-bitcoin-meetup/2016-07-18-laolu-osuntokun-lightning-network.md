@@ -1,5 +1,5 @@
 ---
-title:  Lightning Network 
+title: Lightning Network 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']

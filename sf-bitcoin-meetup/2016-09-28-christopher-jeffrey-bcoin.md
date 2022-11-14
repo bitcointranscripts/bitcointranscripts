@@ -1,5 +1,5 @@
 ---
-title:  Bcoin 
+title: Bcoin 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']

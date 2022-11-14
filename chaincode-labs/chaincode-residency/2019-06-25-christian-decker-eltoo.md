@@ -1,5 +1,5 @@
 ---
-title:  Eltoo 
+title: Eltoo 
 transcript_by: Michael Folkson
 categories: ['residency']
 tags: ['eltoo', 'lightning']

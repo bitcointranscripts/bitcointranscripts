@@ -1,5 +1,5 @@
 ---
-title:  Lnd 0.6 Beta 
+title: Lnd 0.6 Beta 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lnd', 'lightning']

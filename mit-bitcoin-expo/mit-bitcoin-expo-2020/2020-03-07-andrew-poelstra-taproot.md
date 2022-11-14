@@ -1,5 +1,5 @@
 ---
-title:  Taproot 
+title: Taproot 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['taproot']

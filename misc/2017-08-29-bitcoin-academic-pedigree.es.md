@@ -1,5 +1,5 @@
 ---
-title:  Bitcoin's Academic Pedigree 
+title: Bitcoin's Academic Pedigree 
 translation_by: Julien Urraca
 tags: ['history']
 speakers: ['Arvind Narayanan', 'Jeremy Clark']

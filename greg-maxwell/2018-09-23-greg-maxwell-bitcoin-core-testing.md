@@ -1,5 +1,5 @@
 ---
-title:  Bitcoin Core Testing 
+title: Bitcoin Core Testing 
 transcript_by: Michael Folkson
 transcript_by: Bryan Bishop
 tag: ['bitcoin core', 'testing']

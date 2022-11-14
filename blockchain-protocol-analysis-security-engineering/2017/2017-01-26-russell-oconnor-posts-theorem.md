@@ -1,5 +1,5 @@
 ---
-title:  Posts Theorem
+title: Posts Theorem
 transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Russell Oconnor']

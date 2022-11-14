@@ -1,5 +1,5 @@
 ---
-title:  Bip150 Bip151 
+title: Bip150 Bip151 
 speakers: ['Jonas Schnelli']
 date: 2017-09-04
 transcript_by: Bryan Bishop

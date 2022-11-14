@@ -1,5 +1,5 @@
 ---
-title:  Channel Factories 
+title: Channel Factories 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['topology', 'fees']

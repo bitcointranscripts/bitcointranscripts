@@ -1,5 +1,5 @@
 ---
-title:  Security Guide 
+title: Security Guide 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['security']

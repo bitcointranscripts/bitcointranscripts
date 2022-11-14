@@ -1,5 +1,5 @@
 ---
-title:  Taproot Pace 
+title: Taproot Pace 
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['consensus', 'taproot']

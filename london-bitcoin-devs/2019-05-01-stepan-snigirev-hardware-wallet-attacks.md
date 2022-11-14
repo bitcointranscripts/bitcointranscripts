@@ -1,5 +1,5 @@
 ---
-title:  Hardware wallet attacks 
+title: Hardware wallet attacks 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'security']

@@ -1,5 +1,5 @@
 ---
-title:  Neutrino 
+title: Neutrino 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'spv']

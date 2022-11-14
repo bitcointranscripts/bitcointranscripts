@@ -1,5 +1,5 @@
 ---
-title:  51 percent mining attack 
+title: 51 percent mining attack 
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['mining', 'security']

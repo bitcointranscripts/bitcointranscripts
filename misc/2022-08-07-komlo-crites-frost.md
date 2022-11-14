@@ -1,5 +1,5 @@
 ---
-title:  FROST
+title: FROST
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'threshold signatures']

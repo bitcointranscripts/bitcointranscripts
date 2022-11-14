@@ -1,5 +1,5 @@
 ---
-title:  MuSig, MuSig-DN and MuSig2 
+title: MuSig, MuSig-DN and MuSig2 
 transcript_by: Michael Folkson
 speakers: ['Jonas Nick', 'Tim Ruffing']
 categories: ['podcast']

@@ -1,5 +1,5 @@
 ---
-title:  Network Partitioning Attacks 
+title: Network Partitioning Attacks 
 transcript_by: Adam Jonas
 tags: ['privacy', 'P2P', 'attacks']
 categories: ['residency']

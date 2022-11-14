@@ -1,5 +1,5 @@
 ---
-title:  Bitcoin Full Nodes 
+title: Bitcoin Full Nodes 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['forks', 'hard fork', 'soft fork']

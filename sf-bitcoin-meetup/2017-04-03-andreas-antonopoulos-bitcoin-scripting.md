@@ -1,5 +1,5 @@
 ---
-title:  Bitcoin Scripting 
+title: Bitcoin Scripting 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['script']

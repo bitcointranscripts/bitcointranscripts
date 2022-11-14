@@ -1,5 +1,5 @@
 ---
-title:  MuSig2 
+title: MuSig2 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']

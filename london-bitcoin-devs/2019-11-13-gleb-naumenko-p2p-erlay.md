@@ -1,5 +1,5 @@
 ---
-title:  Current state of P2P research in Bitcoin /Erlay 
+title: Current state of P2P research in Bitcoin /Erlay 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'P2P']

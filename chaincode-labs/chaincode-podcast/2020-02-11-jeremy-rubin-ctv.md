@@ -1,5 +1,5 @@
 ---
-title:  CHECKTEMPLATEVERIFY (CTV)
+title: CHECKTEMPLATEVERIFY (CTV)
 transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['soft fork', 'forks']

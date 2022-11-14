@@ -1,5 +1,5 @@
 ---
-title:  Confidential Transactions
+title: Confidential Transactions
 speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tags: ['privacy']

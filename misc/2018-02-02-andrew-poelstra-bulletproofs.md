@@ -1,5 +1,5 @@
 ---
-title:  Bulletproofs 
+title: Bulletproofs 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['consensus', 'zero-knowledge', 'cryptography']

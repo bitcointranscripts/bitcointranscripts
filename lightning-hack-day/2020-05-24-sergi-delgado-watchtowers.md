@@ -1,5 +1,5 @@
 ---
-title:  Watchtowers 
+title: Watchtowers 
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'c-lightning']

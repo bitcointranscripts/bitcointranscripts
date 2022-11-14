@@ -1,5 +1,5 @@
 ---
-title:  Debugging Bitcoin Core 
+title: Debugging Bitcoin Core 
 transcript_by: Michael Folkson
 categories: ['residency']
 tag: ['bitcoin core']

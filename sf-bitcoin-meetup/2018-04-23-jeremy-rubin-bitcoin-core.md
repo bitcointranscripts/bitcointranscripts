@@ -1,5 +1,5 @@
 ---
-title:  Bitcoin Core 
+title: Bitcoin Core 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['bitcoin core']

@@ -1,5 +1,5 @@
 ---
-title:  Lightning Topics 
+title: Lightning Topics 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['attacks', 'lightning']

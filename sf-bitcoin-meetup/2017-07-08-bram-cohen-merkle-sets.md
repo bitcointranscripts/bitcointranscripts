@@ -1,5 +1,5 @@
 ---
-title:  Merkle Sets 
+title: Merkle Sets 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 speakers: ['Bram Cohen']

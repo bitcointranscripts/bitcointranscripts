@@ -1,5 +1,5 @@
 ---
-title:  Channel Management 
+title: Channel Management 
 transcript_by: Michael Folkson
 tags: ['lightning', 'routing']
 categories: ['residency']

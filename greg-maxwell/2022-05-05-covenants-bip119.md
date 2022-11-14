@@ -1,5 +1,5 @@
 ---
-title:  Covenants and BIP119 
+title: Covenants and BIP119 
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['covenants']

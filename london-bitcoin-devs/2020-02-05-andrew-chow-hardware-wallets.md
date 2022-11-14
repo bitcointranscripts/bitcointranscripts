@@ -1,5 +1,5 @@
 ---
-title:  Hardware Wallets 
+title: Hardware Wallets 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'PSBT', 'wallet']

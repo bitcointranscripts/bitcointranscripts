@@ -1,5 +1,5 @@
 ---
-title:  Miniscript 
+title: Miniscript 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tag: ['miniscript']

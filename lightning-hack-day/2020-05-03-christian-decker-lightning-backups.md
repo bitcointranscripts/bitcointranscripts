@@ -1,5 +1,5 @@
 ---
-title:  Lightning Backups 
+title: Lightning Backups 
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning']

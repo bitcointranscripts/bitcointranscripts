@@ -1,5 +1,5 @@
 ---
-title:  Electrum 
+title: Electrum 
 transcript_by: Michael Folkson
 categories: ['podcast']
 date: 2020-08-09

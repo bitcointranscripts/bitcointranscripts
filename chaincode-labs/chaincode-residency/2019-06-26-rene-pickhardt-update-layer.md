@@ -1,5 +1,5 @@
 ---
-title:  The Update Layer
+title: The Update Layer
 Transcript_by: Jonathan Gross
 categories: ['residency']
 tags: ['lightning', 'update layer']

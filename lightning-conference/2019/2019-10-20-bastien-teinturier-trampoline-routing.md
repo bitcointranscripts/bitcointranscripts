@@ -1,5 +1,5 @@
 ---
-title:  Trampoline Routing 
+title: Trampoline Routing 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['eclair', 'routing', 'wallet']

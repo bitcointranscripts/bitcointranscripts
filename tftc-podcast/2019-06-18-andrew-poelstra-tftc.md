@@ -1,5 +1,5 @@
 ---
-title:  TFTC 
+title: TFTC 
 speakers: Andrew Poelstra
 transcript_by: Michael Folkson
 categories: ['podcast']

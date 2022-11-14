@@ -1,5 +1,5 @@
 ---
-title:  JSON Interface 
+title: JSON Interface 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
