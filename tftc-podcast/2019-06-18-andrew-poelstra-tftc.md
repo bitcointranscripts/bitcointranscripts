@@ -1,6 +1,5 @@
 ---
 title: Tales from the Crypt with Andrew Poelstra
-speakers: Andrew Poelstra
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'schnorr', 'musig', 'miniscript' ]

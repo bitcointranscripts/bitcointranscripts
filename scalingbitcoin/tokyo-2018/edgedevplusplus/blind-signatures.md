@@ -8,7 +8,7 @@ tags: ['signatures']
 
 # Blind signatures
 
-Ethan Heilman (ethan_heilman) (Commonwealth Crypto)
+Ethan Heilman (ethan\_heilman) (Commonwealth Crypto)
 
 <https://twitter.com/kanzure/status/1047648050234060800>
 

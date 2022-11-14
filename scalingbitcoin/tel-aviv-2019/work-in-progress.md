@@ -132,7 +132,7 @@ BB: You can do 2-of-2 multisig with the sender and the recipient and then delete
 
 Thomas Eizinger (coblox.tech)
 
-I want to work on trustlessly rebalancing your LN channels with USDT. Let me tell you how lightning channels work. Just kidding ((laughter)). Does anyone remember omnilayer? It was originally called mastercoin. It has tokens on it like USDT. Omnilayer is a separate consensus layer on top of bitcoin, using OP_RETURN to embed extra data into bitcoin transactions where this data is not validated by bitcoin nodes but is validated by omnilayer clients.
+I want to work on trustlessly rebalancing your LN channels with USDT. Let me tell you how lightning channels work. Just kidding ((laughter)). Does anyone remember omnilayer? It was originally called mastercoin. It has tokens on it like USDT. Omnilayer is a separate consensus layer on top of bitcoin, using OP\_RETURN to embed extra data into bitcoin transactions where this data is not validated by bitcoin nodes but is validated by omnilayer clients.
 
 Can we use HTLCs with omnilayer simple_send? The answer is yes we can do that. It works just as you would expect it to work. You have an output, and the consensus rules require you to provide the redeem transaction with the HTLC. It provides the preimage to the hash.
 

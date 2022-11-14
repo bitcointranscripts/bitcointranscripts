@@ -52,7 +52,7 @@ The contingency case is that you reveal P, script, and witness to satisfy the sc
 
 Q = P + Hash(P || script) & G
 
-A revival of an old idea called delegation. This is probably the reason behind OP_CODESEPARATOR, but you'd have to ask Satoshi. OP_CODESEPARATOR isn't really used for anything in bitcoin except by Nicolas Dorier I think. At Q creation time, have lal the parties delegate another scrpt by signing the message Hash(Q || script2) where script2 is the new encumberance.
+A revival of an old idea called delegation. This is probably the reason behind OP\_CODESEPARATOR, but you'd have to ask Satoshi. OP\_CODESEPARATOR isn't really used for anything in bitcoin except by Nicolas Dorier I think. At Q creation time, have lal the parties delegate another scrpt by signing the message Hash(Q || script2) where script2 is the new encumberance.
 
 There can be any number of delegations, but only reveal one.
 

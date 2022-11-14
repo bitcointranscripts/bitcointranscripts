@@ -42,7 +42,7 @@ I will not be covering: cryptographic implementation details, p2p message protoc
 
 Bitcoin forms a TCP overlay network of nodes passing messages to one another. These are defined in <https://github.com/bitcoin/bitcoin/tree/master/src/protocol.h> including net message types you can look at. That's a succinct summary of the message types nodes can communicate to each other.
 
-You can manually add nodes with the -addnode flag. You can set the number of max connections with -maxconnections and these are MAX_OUTBOUND_CONNECTIONS and DEFAULT_MAX_PEER_CONNECTIONS.
+You can manually add nodes with the -addnode flag. You can set the number of max connections with -maxconnections and these are MAX\_OUTBOUND\_CONNECTIONS and DEFAULT\_MAX\_PEER\_CONNECTIONS.
 
 DoS protection is very important because it prevents malicious peers from disrupting the network. Simple payment verification (SPV) nodes query full nodes for merkle proofs, so Bitcoin Core provides that.
 

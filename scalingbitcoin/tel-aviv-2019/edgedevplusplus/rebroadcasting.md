@@ -80,7 +80,7 @@ This does leave room for an important edge case. The use case is that if you cre
 
 # Conclusion
 
-I wanted to give a shout out to functional tests. A lot of my time was spent writing functional tests. But I was surprised to learn so much about bitcoin by doing that. Mocktime for example. I'd have all these failures, and I learned about sendmessages thread and getdata and transaction time intervals and just from reading the logs-- this line, this line has taught me so much about bitcoin the "combine_logs.py" trick. Tests are never glamorous to write, but I had a lot of fun.
+I wanted to give a shout out to functional tests. A lot of my time was spent writing functional tests. But I was surprised to learn so much about bitcoin by doing that. Mocktime for example. I'd have all these failures, and I learned about sendmessages thread and getdata and transaction time intervals and just from reading the logs-- this line, this line has taught me so much about bitcoin the "combine\_logs.py" trick. Tests are never glamorous to write, but I had a lot of fun.
 
 I would like to persist the unbroadcast set to mempool.dat so that this can survive node restarts. I'm really curious to see what the bandwidth looks like on the network and see if it looks reasonable. I also have some follow-up pull requests like test framework improvements.
 

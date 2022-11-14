@@ -6,7 +6,7 @@ tags: ['bitcoin core']
 speakers: ['Bryan Bishop']
 ---
 
-# SIGHASH_NOINPUT (BIP118)
+# SIGHASH\_NOINPUT (BIP118)
 
 <https://twitter.com/kanzure/status/1049510702384173057>
 
@@ -23,7 +23,7 @@ Hi, my name is Bryan, I'm going to be talking about SIGHASH NOINPUT. It was some
 
 So, just really brief about who I am. I have a software development background. I just left LedgerX last week, so that is an exciting change in my life. Also, I contribute to bitcoin core, usually as code review.
 
-In order to talk about what the SIGHASH_NOINPUT proposal is, I'm going to talk about SIGHASH flags. To talk about SIGHASH flags, this goes back to how a transaction is structured. The data structure for a bitcoin transaction. In script sigs where you have a signature for proving that you have authorization to spend a coin these signatures are constructed in a certain way and there is a single byte appended to a signature that specifies in what way the transaction was signed. So there is a few SIGHASH flags that are implemented and have been deployed since the beginning. The most common one that I use is SIGHASH_ALL, that means sign everything except for the scriptsigs. There are some others as well like, SIGHASH_ANYONECANPAY, where you only sign a current input and everything else in the transaction is not considered part of the signature, it is not covered under the commitment.
+In order to talk about what the SIGHASH\_NOINPUT proposal is, I'm going to talk about SIGHASH flags.  To talk about SIGHASH flags, this goes back to how a transaction is structured.  The data structure for a bitcoin transaction. In script sigs where you have a signature for proving that you have authorization to spend a coin these signatures are constructed in a certain way and there is a single byte appended to a signature that specifies in what way the transaction was signed. So there is a few SIGHASH flags that are implemented and have been deployed since the beginning. The most common one that I use is SIGHASH\_ALL, that means sign everything except for the scriptsigs.  There are some others as well like, SIGHASH\_ANYONECANPAY, where you only sign a current input and everything else in the transaction is not considered part of the signature, it is not covered under the commitment.
 
 So, there have been many proposed improvements for these SIGHASH types where you say well maybe you only want to sign certain aspects of the transaction, and you could say, I'm interested in spending these coins under these conditions, but I'm also not interested in these other details which we are going to ignore. And so many different SIGHASH flags have been proposed for how to do this including SIGHASH_NOINPUT, but also others such as. Basically imagine masking out different parts of the transaction. So any part of the data in the transaction that you can imagine there has been a proposal for a SIGHASH flag for either considering it super important or completely irrelevant in that you are fine with any sort of alternatives being proposed on the network without causing your signature to become invalid.
 

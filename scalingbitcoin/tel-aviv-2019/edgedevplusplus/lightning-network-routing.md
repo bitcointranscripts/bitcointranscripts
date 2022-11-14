@@ -22,7 +22,7 @@ You can also make a multi-hop payment channel network where as long as you can r
 
 # Layers
 
-There's a transport layer, a base layer, and then an update layer. The update layer allows you to trustlessly agree on state and trustlessly revoke past states without the risk of a party broadcasting an old state and being able to steal old bitcoin. There's a penalty transaction but also a DMC and also eltoo which is a new proposal. Eltoo requires SIGHASH_NOINPUT. Once we have the update layer, we can agree on states. We need an atomic and trustless way to... so that requires the transfer layer like HTLCs. Then we have a multi-hop layer like Sphinx which lets us propagate these HTLCs through the network.
+There's a transport layer, a base layer, and then an update layer. The update layer allows you to trustlessly agree on state and trustlessly revoke past states without the risk of a party broadcasting an old state and being able to steal old bitcoin. There's a penalty transaction but also a DMC and also eltoo which is a new proposal. Eltoo requires SIGHASH\_NOINPUT. Once we have the update layer, we can agree on states. We need an atomic and trustless way to... so that requires the transfer layer like HTLCs. Then we have a multi-hop layer like Sphinx which lets us propagate these HTLCs through the network.
 
 # Transport layer
 

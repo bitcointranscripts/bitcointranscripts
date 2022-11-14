@@ -1,9 +1,10 @@
 ---
-title: SIGHASH_NOINPUT, ANYPREVOUT 
+title: SIGHASH_NOINPUT, ANYPREVOUT
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tag: ['soft forks']
 date: 2019-06-06
+speakers: ['Olaoluwa Osuntokun', 'Jeremy Rubin']
 ---
 
 SIGHASH\_NOINPUT, ANYPREVOUT, OP\_CHECKSIGFROMSTACK, OP\_CHECKOUTPUTSHASHVERIFY, and OP\_SECURETHEBAG

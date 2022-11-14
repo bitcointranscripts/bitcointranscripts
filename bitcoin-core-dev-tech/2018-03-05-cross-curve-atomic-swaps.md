@@ -1,9 +1,8 @@
 ---
-title: Cross Curve Atomic Swaps 
+title: Cross Curve Atomic Swaps
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['ux', 'lightning', 'schnorr']
-speakers: ['Anthony Towns']
 date: 2018-03-05
 ---
 

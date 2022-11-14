@@ -26,7 +26,7 @@ The main building block for atomic swaps are hash-time-lock contracts (HTLCs). I
 
 # HTLCs
 
-Here is a bitcoin script for an HTLC. It uses OP_SHA256 and it checks whether the hash matches the expected hash. Everything after that is just a regular p2pkh transaction where you compare to a pubkeyhash and verify the signature at the end.
+Here is a bitcoin script for an HTLC. It uses OP\_SHA256 and it checks whether the hash matches the expected hash. Everything after that is just a regular p2pkh transaction where you compare to a pubkeyhash and verify the signature at the end.
 
 # Atomic swaps
 

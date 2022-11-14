@@ -1,9 +1,10 @@
 ---
-title: Assumeutxo 
+title: Assumeutxo
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['security', 'IBD', 'bitcoin core']
 date: 2019-06-07
+speakers: ["James O'Beirne"]
 ---
 
 Assumeutxo

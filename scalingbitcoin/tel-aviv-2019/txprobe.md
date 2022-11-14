@@ -48,7 +48,7 @@ Okay, that's enough motivation or overview of the network. But as I was saying i
 
 Right now, the way that transaction propagation works-- Gleb is going to be talking about his improvements-- but here's how it works right now. When a node receives a transaction and it is validated, it gets into the local mempool. Eventually, this transaction will get propagated to other nodes on the network. The goal is to get these transactions to be included in blocks.
 
-The first thing that a node would do is to be to announce the existence of the transaction to his peers. So he does an INV announcement message, and then the other node asks for the data with get_data and asks for the data. There will be a 2 minute window here where Alice has to reply. If she doesn't do so, Bob cancels the request. Otherwise, he receives the transaction back. Later on, this is going to be one of the key things we're using for txprobe.
+The first thing that a node would do is to be to announce the existence of the transaction to his peers. So he does an INV announcement message, and then the other node asks for the data with get\_data and asks for the data. There will be a 2 minute window here where Alice has to reply. If she doesn't do so, Bob cancels the request. Otherwise, he receives the transaction back. Later on, this is going to be one of the key things we're using for txprobe.
 
 # Orphan transactions
 
