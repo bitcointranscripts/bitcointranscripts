@@ -3,7 +3,7 @@ title: Scaling Debate Is A Proxy Battle Over Centralization
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus']
-speakers: ['James D'Angelo']
+speakers: ["James D'Angelo"]
 ---
 
 # The Scaling Debate is a Proxy Battle Over Centralization

@@ -3,7 +3,7 @@ title: Advanced Segwit
 transcript_by: Caralie Chrisco
 tags: ['segwit']
 categories: ['residency']
-speakers: ['James O'Beirne']
+speakers: ["James O'Beirne"]
 date: 2019-06-18
 ---
 

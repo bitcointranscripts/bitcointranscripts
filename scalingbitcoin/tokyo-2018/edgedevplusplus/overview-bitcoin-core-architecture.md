@@ -1,7 +1,7 @@
 ---
 title: Overview Bitcoin Core Architecture
 transcript_by: Bryan Bishop
-speakers: ['James O'Beirne']
+speakers: ["James O'Beirne"]
 categories: ['conference']
 tags: ['bitcoin core']
 ---

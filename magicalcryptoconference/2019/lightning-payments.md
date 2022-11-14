@@ -3,7 +3,7 @@ title: Lightning Payments
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
-speakers: ['Will O'Beirne']
+speakers: ["Will O'Beirne"]
 date: 2019-11-22
 ---
 

@@ -3,10 +3,8 @@ title: Matsuo
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['security', 'research', 'cryptography']
-speakers: ['Shinichiro Matsuo']
+speakers: ["Shin'ichiro Matsuo"]
 ---
-
-Shinichiro Matsuo
 
 bsafe.network
 

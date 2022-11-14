@@ -2,7 +2,7 @@
 title: The Truth About ‘Power’ in Bitcoin
 transcript_by: Michael Folkson
 categories: ['podcast']
-speakers: ['James O’Beirne']
+speakers: ["James O’Beirne"]
 date: 2019-04-11
 ---
 
