@@ -382,8 +382,6 @@ A: I don't think the system can decide on what it is. It's inherently external. 
 
 I think that was the last question. Alright, thanks.
 
----
-
 <https://www.reddit.com/r/Bitcoin/comments/6xj7io/greg_maxwell_a_deep_dive_into_bitcoin_core_015/>
 
 <https://news.ycombinator.com/item?id=15155812>

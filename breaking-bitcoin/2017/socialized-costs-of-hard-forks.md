@@ -101,7 +101,7 @@ Privacy loss is a huge security risk. If you're somebody that is evil, that's lo
 
 Replay attacks didn't happen with bcash but it could have. We might get this with segwit2x, though. Replay attacks are sort of more of a problem for merchants because if you as a user send bitcoin to coinbase.com and someone replays that attack and your bcash also goes to coinbase.com, they are sort of obligated to send you your bcash back. But if it goes the other way, and if coinbase sends you bitcoin and it gets replayed and also sends you bcash- you're not necessarily going to give that back. That's what happend with the Ethereum Classic fork.
 
-There's a pull request on segwit2x's repository for opt-in replay protection. But this has its costs too. Because now you have to put something in OP_RETURN and now there are larger transactions. Every wallet has to figure this out. This is a one-time cost for everyone. Every wallet has to add this, get it tested, it's not easy to handle this without native replay protection.
+There's a pull request on segwit2x's repository for opt-in replay protection. But this has its costs too. Because now you have to put something in OP\_RETURN and now there are larger transactions. Every wallet has to figure this out. This is a one-time cost for everyone. Every wallet has to add this, get it tested, it's not easy to handle this without native replay protection.
 
 # Future hard-forks
 
