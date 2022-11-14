@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lnd']
 date: 2020-04-18
-speakers: ['Laolu Osuntokun', 'Joost Jager', 'Oliver Gugger']
+speakers: ['Olaoluwa Osuntokun', 'Joost Jager', 'Oliver Gugger']
 ---
 
 Topic: lnd v0.10

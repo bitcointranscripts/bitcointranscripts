@@ -3,7 +3,7 @@ title: Laolu Osuntokun - Stephan Livera
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']
-speakers: ['Laolu Osuntokun']
+speakers: ['Olaoluwa Osuntokun']
 date: 2018-12-11
 ---
 

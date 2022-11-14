@@ -3,7 +3,7 @@ title: Neutrino
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'spv']
-speakers: ['Laolu Osuntokun']
+speakers: ['Olaoluwa Osuntokun']
 date: 2017-06-06
 ---
 

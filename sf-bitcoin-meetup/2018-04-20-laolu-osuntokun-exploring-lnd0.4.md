@@ -3,7 +3,7 @@ title: Exploring Lnd0.4
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lnd', 'lightning']
-speakers: ['Laolu Osuntokun', 'Conner Fromknecht']
+speakers: ['Olaoluwa Osuntokun', 'Conner Fromknecht']
 date: 2018-04-20
 ---
 
