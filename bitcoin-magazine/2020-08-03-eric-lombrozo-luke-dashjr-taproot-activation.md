@@ -1,5 +1,5 @@
 ---
-title: Eric Lombrozo, Luke Dashjr - Taproot Activation 
+title: Taproot Activation
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'soft fork']

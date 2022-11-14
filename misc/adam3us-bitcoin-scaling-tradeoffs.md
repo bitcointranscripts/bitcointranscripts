@@ -1,9 +1,9 @@
 ---
-title: Bitcoin - Scaling Tradeoffs
+title: Bitcoin Scaling Tradeoffs
 transcript_by: Bryan Bishop
 tag: ['scalability']
 speakers: ['Adam Back']
-categories: ['meetup']
+categories: ['conference']
 date: 2016-04-05
 ---
 

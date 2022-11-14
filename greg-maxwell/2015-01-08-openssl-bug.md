@@ -1,5 +1,5 @@
 ---
-title: Greg Maxwell - OpenSSL bug discovery 
+title: OpenSSL bug discovery
 transcript_by: Michael Folkson
 tags: ['bitcoin core', 'testing']
 speakers: ['Greg Maxwell']

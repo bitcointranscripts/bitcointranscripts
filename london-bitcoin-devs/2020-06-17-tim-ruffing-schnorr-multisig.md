@@ -1,5 +1,5 @@
 ---
-title: Tim Ruffing - Schnorr, Multisig 
+title: Schnorr and Multisig
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot', 'multisig']

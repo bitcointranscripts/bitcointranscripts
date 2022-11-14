@@ -1,7 +1,6 @@
 ---
 title: UASFs, BIP 148, BIP 91 and Taproot Activation 
 transcript_by: Michael Folkson
-speakers: ['Matt Corallo']
 categories: ['podcast']
 tag: ['taproot']
 speakers: ['Matt Corallo']

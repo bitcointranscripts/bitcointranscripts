@@ -2,7 +2,7 @@
 title: Token Journal
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Token journal', 'Jason Teutsch']
+speakers: ['Jason Teutsch']
 ---
 
 -- Disclaimer --
@@ -10,10 +10,6 @@ speakers: ['Token journal', 'Jason Teutsch']
 
 2.  I sometimes add annotations to the transcription text. These will always be denoted by a standard editor's note in parenthesis brackets ((like this)), or in a numbered footnote. I welcome feedback and discussion of these as well.
 --/Disclaimer --
-
-Token journal
-
-Jason Teutsch
 
 We're going to have 4 talks, about 15 minutes each with 5 minutes for Q&A. At the end, there will be a 40 minute discussion about peer review policies we're trying to do for the journal and get feedback on how to shape the structure of the journal process we're going to do. We have four talks in this session.
 

@@ -1,10 +1,10 @@
 ---
-title: LTB - Let's Talk Bitcoin 
+title: Let's Talk Bitcoin - Taproot, Tapscript and Schnorr
 transcript_by: Michael Folkson
 translation_by: Abel Armoa
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
-speakers: ['Pieter Wuille', 'Jonas Nic']
+speakers: ['Pieter Wuille', 'Jonas Nick']
 date: 2019-06-09
 ---
 

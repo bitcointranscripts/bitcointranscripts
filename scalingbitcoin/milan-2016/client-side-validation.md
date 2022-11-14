@@ -2,6 +2,7 @@
 title: Client Side Validation
 transcript_by: Bryan Bishop
 categories: ['conference']
+tags: ['consensus', 'validation']
 speakers: ['Peter Todd']
 ---
 

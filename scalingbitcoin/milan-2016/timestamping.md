@@ -2,7 +2,7 @@
 title: Timestamping
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['timestamp']
+tags: ['timestamping']
 speakers: ['Riccardo Casatta']
 ---
 

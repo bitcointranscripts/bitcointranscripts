@@ -1,5 +1,5 @@
 ---
-title: Taproot Activation Update 
+title: Taproot Activation Update
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot']

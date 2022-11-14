@@ -1,5 +1,5 @@
 ---
-title: Bip Taproot Bip Tapscript 
+title: BIP Taproot and BIP Tapscript
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['taproot', 'schnorr']

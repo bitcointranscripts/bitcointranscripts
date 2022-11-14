@@ -1,5 +1,5 @@
 ---
-title: Kevin Loaec, Antoine Poinsot - Revault 
+title: Revault
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['attacks', 'ux']

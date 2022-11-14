@@ -1,5 +1,5 @@
 ---
-title: Advances In Block Propagation 
+title: Advances In Block Propagation
 transcript_by: Bryan Bishop
 speakers: ['Greg Maxwell']
 tags: ['mempool', 'segwit']
@@ -29,8 +29,6 @@ some history <https://www.reddit.com/r/btc/comments/557ihg/what_are_the_argument
 more history <https://www.reddit.com/r/btc/comments/6p076l/segwit_only_allows_170_of_current_transactions/dkmugw5/>
 
 <https://twitter.com/kanzure/status/944656354307919873>
-
----
 
 # Introduction
 

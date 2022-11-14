@@ -1,5 +1,5 @@
 ---
-title: Quisquis -A new design for anonymous cryptocurrencies
+title: Quisquis - A new design for anonymous cryptocurrencies
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'smart contracts']

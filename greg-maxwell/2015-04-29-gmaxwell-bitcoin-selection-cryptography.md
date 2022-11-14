@@ -1,5 +1,5 @@
 ---
-title: Gmaxwell - Bitcoin Selection Cryptography 
+title: Bitcoin Selection Cryptography
 speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tag: ['cryptography']

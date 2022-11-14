@@ -1,5 +1,5 @@
 ---
-title: Matt Corallo Betterhash 
+title: Betterhash
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['mining', 'ux']

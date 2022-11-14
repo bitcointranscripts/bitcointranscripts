@@ -1,9 +1,9 @@
 ---
-title: Merkle Sets 
+title: Merkle Sets
 transcript_by: Bryan Bishop
 categories: ['meetup']
 speakers: ['Bram Cohen']
-tags: ['merkle root']
+tags: ['merkle trees']
 date: 2017-07-08
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Rusty Russell Improving the Lightning Network 
+title: Improving the Lightning Network
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning', 'c-lightning']

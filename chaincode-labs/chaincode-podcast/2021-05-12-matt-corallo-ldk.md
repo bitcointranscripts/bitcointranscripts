@@ -1,5 +1,5 @@
 ---
-title: Matt Corallo Lightning Development Kit 
+title: Lightning Development Kit
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']

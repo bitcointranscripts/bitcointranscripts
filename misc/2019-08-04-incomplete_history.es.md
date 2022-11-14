@@ -1,8 +1,9 @@
 ---
-title: 0xB10C - The Incomplete History of Bitcoin Development
+title: The Incomplete History of Bitcoin Development
 translation_by: Julien Urraca
 tags: [ "history" ]
 date: 2019-08-04
+speakers: ['0xB10C']
 ---
 
 Autor: 0xB10C

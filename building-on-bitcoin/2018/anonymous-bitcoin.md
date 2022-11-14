@@ -2,7 +2,7 @@
 title: Anonymous Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Adam Ficzor']
+speakers: ['Adam Ficsor']
 date: 2018-07-03
 ---
 

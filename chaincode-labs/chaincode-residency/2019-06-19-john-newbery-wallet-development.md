@@ -1,5 +1,5 @@
 ---
-title: John Newbery - Wallet Development 
+title: Bitcoin Core Wallet Development
 transcript_by: Michael Folkson
 speakers: ['John Newbery']
 tags: ['consensus', 'wallet', 'bitcoin core']

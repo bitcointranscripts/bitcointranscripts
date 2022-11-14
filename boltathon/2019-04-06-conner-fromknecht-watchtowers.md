@@ -1,5 +1,5 @@
 ---
-title: Conner Fromknecht - Watchtowers 
+title: Watchtowers
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['research', 'lightning', 'lnd']

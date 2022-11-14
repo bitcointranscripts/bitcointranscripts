@@ -1,12 +1,11 @@
 ---
-title: Socratic Seminar 
+title: Socratic Seminar 10 from Chicago BitDevs
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['ux']
 date: 2020-07-08
 ---
 
-# Socratic Seminar 
+# Socratic Seminar
 
 ### Agenda in Reddit link below
 
@@ -21,8 +20,6 @@ The conversation has been anonymized by default to protect the identities of the
 # Tainting, CoinJoin, PayJoin, CoinSwap Bitcoin dev mailing list post (Nopara)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017957.html
-
-….
 
 They see you spending it, they could think that is the coin you used on the darknet market.
 

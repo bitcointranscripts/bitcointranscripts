@@ -1,5 +1,5 @@
 ---
-title: Rusty Russell - Offers 
+title: Offers and BOLT 12
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'c-lightning']

@@ -1,5 +1,5 @@
 ---
-title: Fungibility Privacy
+title: Fungibility and Privacy
 transcript_by: Bryan Bishop
 speakers: ['Adam Back']
 tags: ['privacy', 'fungibility']

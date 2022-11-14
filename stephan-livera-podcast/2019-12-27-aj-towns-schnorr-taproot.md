@@ -1,7 +1,7 @@
 ---
-title: AJ Towns - Schnorr Taproot 
+title: Schnorr and Taproot
 transcript_by: Michael Folkson
-speakers: ['AJ Towns']
+speakers: ['Anthony Towns']
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
 date: 2019-12-27

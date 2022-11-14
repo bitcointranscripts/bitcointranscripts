@@ -1,8 +1,8 @@
 ---
-title: Sidechains, Blockstream
+title: Sidechains
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'miners']
+tags: ['security', 'sidechains']
 speakers: ['Matt Corallo']
 ---
 

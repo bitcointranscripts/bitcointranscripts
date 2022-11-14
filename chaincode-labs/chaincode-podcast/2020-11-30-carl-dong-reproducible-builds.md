@@ -1,5 +1,5 @@
 ---
-title: Carl Dong - Reproducible Builds 
+title: Reproducible Builds
 transcript_by: Michael Folkson
 speakers: ['Carl Dong']
 categories: ['podcast']

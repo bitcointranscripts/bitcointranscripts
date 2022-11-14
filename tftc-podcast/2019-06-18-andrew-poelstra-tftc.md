@@ -1,8 +1,9 @@
 ---
-title: TFTC 
+title: Tales from the Crypt with Andrew Poelstra
 speakers: Andrew Poelstra
 transcript_by: Michael Folkson
 categories: ['podcast']
+tags: ['taproot', 'schnorr', 'musig', 'miniscript' ]
 date: 2019-06-18
 speakers: ['Andrew Poelstra']
 ---

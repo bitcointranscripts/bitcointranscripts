@@ -1,11 +1,10 @@
 ---
-title: Rendezvous Routing (2019-06-28)
+title: Rendezvous Routing
 transcript_by: Caralie Chrisco and Darius Parvin
 categories: ['residency']
 tags: ['lightning', 'routing']
 date: 2019-06-28
 speakers: ['Christian Decker']
-
 ---
 
 # Rendezvous Routing (Lightning Network)
