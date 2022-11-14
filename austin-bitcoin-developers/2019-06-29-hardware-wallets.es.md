@@ -14,9 +14,9 @@ livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
 
 Ver también:
 
-* [Extracción de semillas de hardware wallets](http://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/)
-* [El futuro de las hardware wallets](http://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/)
-* [coredev.tech 2019 debate de hardware wallets](http://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-hardware-wallets/)
+* [Extracción de semillas de hardware wallets](https://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/)
+* [El futuro de las hardware wallets](https://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/)
+* [coredev.tech 2019 debate de hardware wallets](https://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-hardware-wallets/)
 
 # Antecedentes 
 
@@ -76,7 +76,7 @@ Con las llaves falsas, puedes comprobar que las firmas se generan de forma deter
 
 Otra solución es que se puede utilizar la generación verificable de estos nonces aleatorios, creo que esto fue propuesto por Pieter Wuille. Para esto necesitas una función hash particular que soporte pruebas de conocimiento cero de que estabas usando este algoritmo sin exponer tus claves privadas. El problema aquí es que es un cálculo muy pesado para un microcontrolador, así que probablemente no lo vas a meter en un microcontrolador.
 
-También hay una idea sobre el uso de [firma de contrato como medida contra el canal de no-cierre](http://btctranscripts.com/sf-bitcoin-meetup/2019-02-04-threshold-signatures-and-accountability/).
+También hay una idea sobre el uso de [firma de contrato como medida contra el canal de no-cierre](https://btctranscripts.com/sf-bitcoin-meetup/2019-02-04-threshold-signatures-and-accountability/).
 
 # Ledger y multisig 
 
@@ -94,7 +94,7 @@ Ahora mismo puede ser más fácil conseguir criptodivisas lanzando malware o ini
 
 # Desventajas de los microcontroladores 
 
-<http://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/>
+<https://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/>
 
 ¿Cómo funcionan los elementos de seguridad? Parece una bala de plata que lo hace todo, ¿verdad? Puedo decirle la diferencia entre los microcontroladores normales y los elementos seguros. Los microcontroladores normales están hechos para la velocidad, la eficiencia y son fáciles de desarrollar. Existen los llamados bits de seguridad que se configuran cuando se termina de programar el microcontrolador. Cuando el microcontrolador arranca, así que como te imaginarías es que debería arrancar con permisos de no-lectura-no-escritura y luego comprueba los bits de seguridad para ver si deberías ser capaz de comunicarte con él, y entonces deberías permitirle tener acceso de lectura/escritura. Pero a veces se hace al revés, donde el microcontrolador está en modo abierto para lectura-escritura y luego comprueba los bits de seguridad y luego se bloquea. Pero el problema es que si hablas con el microcontrolador antes de que sea capaz de leer esos bits, entonces podrías ser capaz de extraer un solo byte de la memoria flash del microcontrolador. Podrías seguir haciendo esto reiniciando una y otra vez; si eres rápido y el microcontrolador es lento, puedes hacer esto incluso más rápido. Creo que esto es algo a lo que Ledger hace referencia en todas sus charlas: este "ataque sin solución" a todos los microcontroladores como Trezor y otros. Creo que está relacionado con esto, porque esto es exactamente lo que está roto por diseño y no se puede arreglar sólo porque el sistema evolucionó así. No, no necesitan usar baja temperatura aquí. Sólo necesitan ser más rápidos que el microcontrolador, lo cual es fácil porque los microcontroladores utilizados en las carteras de hardware son de 200 MHz o así. Así que si usas una GPU o un ordenador moderno entonces podrías hacer algo.
 
@@ -168,7 +168,7 @@ Estamos planeando añadir soporte para miniscript, que podría incluir timelocks
 
 ## Miniscript
 
-[Miniscript](https://btctranscripts.com/stanford-blockchain-conference/2019/miniscript/) (o [aquí](http://btctranscripts.com/noded-podcast/2019-05-11-andrew-poelstra-miniscript/)) fue introducido por Pieter Wuille. No es un mapeo uno a uno de todos los posibles scripts de bitcoin, es un subconjunto de scripts de bitcoin pero cubre como el 99,99% de todos los casos de uso observados en la red hasta ahora. La idea es que describas la lógica de tu secuencia de comandos en una forma conveniente, de manera que una cartera pueda analizar esta información y averiguar qué claves o información necesita obtener para producir una clave. Esto también funciona para muchos de los scripts lightning y también para varios scripts multisig. A continuación, puede compilar esta política miniscript en bitcoin script. Entonces puede analizar y decir que esta rama es la más probable que usaré la mayor parte del tiempo, y luego ordenar las ramas en el script para hacerlo más eficientemente ejecutado en promedio en términos de sigops. Puede optimizar el script de tal manera que en realidad sus tarifas o sus datos que tiene cuando está firmando este script serán mínimos de acuerdo a sus prioridades. Así que si estás gastando principalmente con esto, entonces esto será superóptimo y esta otra rama podría ser un poco más larga.
+[Miniscript](https://btctranscripts.com/stanford-blockchain-conference/2019/miniscript/) (o [aquí](https://btctranscripts.com/noded-podcast/2019-05-11-andrew-poelstra-miniscript/)) fue introducido por Pieter Wuille. No es un mapeo uno a uno de todos los posibles scripts de bitcoin, es un subconjunto de scripts de bitcoin pero cubre como el 99,99% de todos los casos de uso observados en la red hasta ahora. La idea es que describas la lógica de tu secuencia de comandos en una forma conveniente, de manera que una cartera pueda analizar esta información y averiguar qué claves o información necesita obtener para producir una clave. Esto también funciona para muchos de los scripts lightning y también para varios scripts multisig. A continuación, puede compilar esta política miniscript en bitcoin script. Entonces puede analizar y decir que esta rama es la más probable que usaré la mayor parte del tiempo, y luego ordenar las ramas en el script para hacerlo más eficientemente ejecutado en promedio en términos de sigops. Puede optimizar el script de tal manera que en realidad sus tarifas o sus datos que tiene cuando está firmando este script serán mínimos de acuerdo a sus prioridades. Así que si estás gastando principalmente con esto, entonces esto será superóptimo y esta otra rama podría ser un poco más larga.
 
 Después de implementar miniscript, será posible utilizar timelock. Hasta entonces, necesitas algo como una raspberrypi con un firmware personalizado. Podemos tratar de implementar una característica timelock juntos mañana si todavía estará aquí.
 
@@ -176,7 +176,7 @@ Pieter tiene una prueba de concepto en su página web en la que puedes escribir 
 
 # Funciones avanzadas para carteras de hardware 
 
-<http://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/>
+<https://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/>
 
 Algo que podríamos hacer es [coinjoin](https://bitcointalk.org/index.php?topic=279249.0). Ahora mismo los monederos hardware sólo admiten situaciones en las que todas las entradas pertenecen a los monederos hardware. En las transacciones coinjoin, ese no es el caso. Si podemos engañar al monedero hardware para que muestre algo incorrecto, entonces podemos potencialmente robar los fondos. ¿Cómo podría el monedero hardware entender si esta entrada pertenece al monedero hardware o no? Necesita derivar la clave y comprobar si es capaz de firmar. Para ello necesita la ayuda del monedero software. El usuario necesita firmar las transacciones dos veces para este protocolo.
 
@@ -206,13 +206,13 @@ En nuestro caso, por ejemplo, estaba pensando en tener una pantalla en el ordena
 
 P: ¿Qué pasa con el coinshuffle o el coinswap?
 
-R: Sólo sé un poco sobre esto. Para [wasabi wallet](http://btctranscripts.com/breaking-bitcoin/2019/breaking-wasabi/), no sabe qué entradas corresponden a qué salidas porque las registra por separado. Te devuelven una firma ciega y les das una salida ciega o algo así. Generan una firma ciega y no saben lo que están firmando. Esto permite que el servidor de coinjoin verifique que sí, que he firmado algo y que este tipo quiere registrar esta salida para que se vea bien y la ponga en el coinjoin. Para toda esta comunicación utilizan las firmas Schnorr porque allí se pueden utilizar firmas ciegas. En principio esto significa que tienen dos identidades virtuales que no están conectadas entre sí; sus entradas y salidas están completamente desconectadas incluso para el servidor de coinjoin. También generan salidas del mismo valor y luego hacen otra sección de las salidas con un valor diferente por lo que también se puede conseguir el anonimato por alguna cantidad de cambio.
+R: Sólo sé un poco sobre esto. Para [wasabi wallet](https://btctranscripts.com/breaking-bitcoin/2019/breaking-wasabi/), no sabe qué entradas corresponden a qué salidas porque las registra por separado. Te devuelven una firma ciega y les das una salida ciega o algo así. Generan una firma ciega y no saben lo que están firmando. Esto permite que el servidor de coinjoin verifique que sí, que he firmado algo y que este tipo quiere registrar esta salida para que se vea bien y la ponga en el coinjoin. Para toda esta comunicación utilizan las firmas Schnorr porque allí se pueden utilizar firmas ciegas. En principio esto significa que tienen dos identidades virtuales que no están conectadas entre sí; sus entradas y salidas están completamente desconectadas incluso para el servidor de coinjoin. También generan salidas del mismo valor y luego hacen otra sección de las salidas con un valor diferente por lo que también se puede conseguir el anonimato por alguna cantidad de cambio.
 
 El monedero Wasabi soporta monederos de hardware, pero no para coinjoin. Entonces el único beneficio restante de usar Wasabi es tener un control completo de las monedas y poder elegir las monedas para enviar a la gente.
 
 P: ¿Cómo maneja Wasabi la privacidad cuando obtiene sus UTXOs?
 
-R: Creo que utilizan el [protocolo Neutrino](http://btctranscripts.com/breaking-bitcoin/2019/neutrino/), piden los filtros al servidor y luego descargan bloques de nodos bitcoin aleatorios. No necesitas confiar en su servidor central en ese punto. Creo que ya está habilitado para conectarte a tu propio nodo, impresionante eso es genial. Genial. Entonces ahora puedes obtenerlo desde tu nodo de Bitcoin Core.
+R: Creo que utilizan el [protocolo Neutrino](https://btctranscripts.com/breaking-bitcoin/2019/neutrino/), piden los filtros al servidor y luego descargan bloques de nodos bitcoin aleatorios. No necesitas confiar en su servidor central en ese punto. Creo que ya está habilitado para conectarte a tu propio nodo, impresionante eso es genial. Genial. Entonces ahora puedes obtenerlo desde tu nodo de Bitcoin Core.
 
 # Lightning para carteras de hardware 
 
@@ -228,9 +228,9 @@ Pero si él es capaz de conseguir todo el dinero a través de la red de rayos a 
 
 La ventaja de las firmas Schnorr para los monederos hardware es la agregación de claves. Imagina que utilizas transacciones multisig normales, como 3 de 5. Esto significa que cada vez que estás firmando la transacción y poniéndola en la blockchain, ves que hay 5 pubkeys y 3 firmas. Es una gran cantidad de datos, y todo el mundo puede ver que estás usando una configuración multisig de 3 de 5. Terrible para la privacidad, y terrible en términos de tarifas.
 
-Con [las firmas Schnorr](http://btctranscripts.com/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/), puedes combinar estas claves en una sola. Así que puedes tener varios dispositivos o firmantes que generen firmas y luego puedes combinar las firmas y las claves públicas correspondientes en una sola clave pública y una sola firma. Entonces todas las transacciones en la cadena de bloques y la mayoría de las transacciones en la cadena de bloques tendrían un aspecto similar, sólo una clave pública y una firma.
+Con [las firmas Schnorr](https://btctranscripts.com/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/), puedes combinar estas claves en una sola. Así que puedes tener varios dispositivos o firmantes que generen firmas y luego puedes combinar las firmas y las claves públicas correspondientes en una sola clave pública y una sola firma. Entonces todas las transacciones en la cadena de bloques y la mayoría de las transacciones en la cadena de bloques tendrían un aspecto similar, sólo una clave pública y una firma.
 
-Con [taproot](http://btctranscripts.com/bitcoin-core-dev-tech/2019-06-06-taproot/) (o [aquí](http://btctranscripts.com/breaking-bitcoin/2019/secure-protocols-bip-taproot/)), es aún mejor. Usted puede agregar la funcionalidad de scripting allí también. Si todo va bien, como en un relámpago tal vez usted y su contraparte están cooperando libremente y no necesita hacer un cierre unilateral. Podrías hacer un cierre mutuo multisig 2 de 2, y entonces se parece exactamente a una clave pública y una firma única. Si alguien no está cooperando y las cosas van mal, entonces puedes mostrar una rama en el script de taproot que muestra que se te permite reclamar el dinero, pero este script sólo se revela si tienes que ir por este camino. De lo contrario, se obtiene una única clave pública y una única firma en la blockchain.
+Con [taproot](https://btctranscripts.com/bitcoin-core-dev-tech/2019-06-06-taproot/) (o [aquí](https://btctranscripts.com/breaking-bitcoin/2019/secure-protocols-bip-taproot/)), es aún mejor. Usted puede agregar la funcionalidad de scripting allí también. Si todo va bien, como en un relámpago tal vez usted y su contraparte están cooperando libremente y no necesita hacer un cierre unilateral. Podrías hacer un cierre mutuo multisig 2 de 2, y entonces se parece exactamente a una clave pública y una firma única. Si alguien no está cooperando y las cosas van mal, entonces puedes mostrar una rama en el script de taproot que muestra que se te permite reclamar el dinero, pero este script sólo se revela si tienes que ir por este camino. De lo contrario, se obtiene una única clave pública y una única firma en la blockchain.
 
 Podemos utilizar chips en un único dispositivo de monedero de hardware con diferentes arquitecturas y diferentes modelos de seguridad heterogéneos, y poner tres chips diferentes con tres claves diferentes allí, y asegurarnos de que podemos gastar el bitcoin sólo si cada uno de estos chips está firmando en el monedero de hardware. Así que uno puede ser un elemento de seguridad propio, y luego otros microcontroladores en el mismo monedero de hardware, y la salida es sólo una única clave pública y una única firma. También podríamos hacer un chip de Rusia y otro de China. Así que, aunque haya una puerta trasera, es poco probable que tanto el gobierno ruso como el estadounidense cooperen para atacar su monedero. Desde la perspectiva del usuario, parece que sólo hay una única clave o una única firma.
 
@@ -350,7 +350,7 @@ Estos escáneres de huellas dactilares en los portátiles son completamente est�
 
 # Cadenas de estados
 
-<http://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-statechains/>
+<https://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-statechains/>
 
 Con las cadenas de estados, puedes transferir la clave privada a otra persona, y entonces haces que sólo la otra persona pueda hacer una firma. Ruben vino con una construcción interesante donde encima de esto puedes hacer transacciones relámpago donde sólo transfieres parte de este dinero, y puedes hacer rebalanceo y cosas. Pero requiere firmas de Schnorr, firmas ciegas para Schnorr, y si ocurre pues no será por el momento.
 

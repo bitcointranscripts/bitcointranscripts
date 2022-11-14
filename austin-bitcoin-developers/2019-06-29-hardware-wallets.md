@@ -14,9 +14,9 @@ livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
 
 see also:
 
-* [Extracting seeds from hardware wallets](http://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/)
+* [Extracting seeds from hardware wallets](https://btctranscripts.com/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/)
 * [The future of hardware wallets](https://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/)
-* [coredev.tech 2019 hardware wallets discussion](http://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-hardware-wallets//)
+* [coredev.tech 2019 hardware wallets discussion](https://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-hardware-wallets//)
 
 # Background
 
