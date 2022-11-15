@@ -5,8 +5,6 @@ categories: ['meetup']
 date:  2020-05-19
 ---
 
-# Vaults and OP_CHECKTEMPLATEVERIFY
-
 Name: Socratic Seminar
 
 Location: London BitDevs (online)

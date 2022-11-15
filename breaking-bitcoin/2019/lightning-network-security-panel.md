@@ -6,8 +6,6 @@ tags: ['security']
 speakers: ['Olaoluwa Osuntokun', 'Justin Camarena', 'Matt Corallo', 'Michael Folkson']
 ---
 
-# Lightning network security panel
-
 <https://twitter.com/kanzure/status/1137758233865703424>
 
 # Introduction

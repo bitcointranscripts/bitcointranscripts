@@ -6,7 +6,7 @@ tags: ['privacy', 'scalability']
 speakers: ['Quentin Le Sceller']
 ---
 
-# Building mimblewimble and green
+Building mimblewimble and green
 
 Quentin Le Sceller (Grin Dev Team), Ignotus Peverell (Grin Dev Team), Yeastplume (Grin Dev Team), Antioch Peverell (Grin Dev Team), HashMap (Grin Dev Team), John Tromp (Grin Dev Team), Daniel Lehnberg (Grin Dev Team)
 

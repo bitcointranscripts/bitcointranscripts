@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['John Newbery']
 ---
 
-# Finite fields, elliptic curves, ECDSA and Schnorr signatures
+Finite fields, elliptic curves, ECDSA and Schnorr signatures
 
 Digital signatures
 

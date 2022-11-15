@@ -7,8 +7,6 @@ speakers: ['Fabrice Drouin']
 date: 2019-06-25
 ---
 
-# Attack Vectors of Lightning Network
-
 Location: Chaincode Residency – Summer 2019
 
 Video: https://youtu.be/R5cSrftd8nc

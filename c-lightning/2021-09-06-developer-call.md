@@ -6,8 +6,6 @@ tags: ['lightning', 'c-lightning']
 date: 2021-09-06
 ---
 
-# c-lightning developer call
-
 Topic: Various topics
 
 Location: Jitsi online

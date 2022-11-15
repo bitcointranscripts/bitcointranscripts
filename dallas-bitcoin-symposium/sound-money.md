@@ -6,8 +6,6 @@ tags: ['altcoin']
 speakers: ['Michael Goldstein']
 ---
 
-# Bitcoin is sound money
-
 # Introduction
 
 In 2014, Michael appeared on MSNBC and gave this quote: "I'd only recommend using altcoins for speculation purposes if you really love risk, you're absolutely in love with risk, and you're interested in watching money disappear." Today my talk is on sound money for the digital age. The concept of monetary economics is the reason why I got interested in bitcoin back in 2012. I still tihnk that's the important thing that makes bitcoin important in the first place. I wanted to share some ideas around this.

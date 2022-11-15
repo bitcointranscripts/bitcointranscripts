@@ -6,7 +6,7 @@ tags: ['multisig', 'wallet']
 date: 2019-09-08
 ---
 
-# Custody working group
+Custody working group
 
 One of the problems in the ecosystem was nomenclature. We started working on a report about what features a nomenclature would have. Airgaps, constant-time software, sidechannel resistance, Faraday cage, deterministic software, entropy, blind signatures, proof-of-reserve, multi-vendor hardware to minimize compromise. Multi-location and multi-sig. Insurance guarantee scheme. Canaries, dead man switches, tripwires, heartbeat mechanisms. Shamir's secret sharing vs multisig. The second part of this report was going to be market analysis. Most companies don't advertise what their custodial process really is. Coinbase had a lot of marketing. Xapo had videos of their vault. There's the Glacier protocol and Square's subzero now which is open-source. Bryan Bishop's proposals for vaults and restricted signing devices. What is a hot wallet?
 

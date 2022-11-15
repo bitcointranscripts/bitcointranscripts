@@ -7,8 +7,6 @@ speakers: ['Thomas Voegtlin']
 date: 2017-09-09
 ---
 
-# Light clients during the 2017 interfork period
-
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5h9m>
 
 <https://twitter.com/kanzure/status/1005617123287289857>

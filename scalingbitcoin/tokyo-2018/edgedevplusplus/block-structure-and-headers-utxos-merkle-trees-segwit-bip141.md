@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Akio Nakamura']
 ---
 
-# Block structure & headers, UTXO, Merkle Trees, Address, Proof-of-Work & Difficulty, SegWit (BIP141)
+Block structure & headers, UTXO, Merkle Trees, Address, Proof-of-Work & Difficulty, SegWit (BIP141)
 
 Akio Nakamura
 

@@ -6,7 +6,7 @@ tags: ['package relay', 'bitcoin core']
 date: 2022-10-11
 ---
 
-# Notes on Package Relay BIP, implementation, V3, and package RBF proposals from Core Dev in Atlanta.
+Notes on Package Relay BIP, implementation, V3, and package RBF proposals from Core Dev in Atlanta.
 
 Also at <https://gist.github.com/glozow/8469dc9c3a003c7046033a92dd504329>.
 

@@ -7,8 +7,6 @@ date: 2020-05-26
 speakers: ['Kevin Loaec', 'Antoine Poinsot']
 ---
 
-# Revault - A Multiparty Vault Architecture
-
 Location: London Bitcoin Devs (online)	
 
 Video: https://www.youtube.com/watch?v=7CE4aiFxh10

@@ -1,5 +1,5 @@
 ---
-title: Arvind Narayanan
+title: Threshold signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'threshold signatures', 'multisig', 'wallet']

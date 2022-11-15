@@ -6,7 +6,7 @@ tags: ['wallet']
 speakers: ['James Chiang']
 ---
 
-# Hierarchical deterministic Wallets (bip32)
+Hierarchical deterministic Wallets (bip32)
 
 <https://twitter.com/kanzure/status/1047714436889235456>
 

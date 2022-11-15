@@ -7,7 +7,7 @@ speakers: ['Tom Kirkpatrick']
 date: 2018-12-01
 ---
 
-# Zap Desktop - A look under the hood
+Zap Desktop - A look under the hood
 
 Video: https://www.youtube.com/watch?v=OhRPZs0cWwQ
 

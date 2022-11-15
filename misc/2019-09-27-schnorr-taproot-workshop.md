@@ -6,8 +6,6 @@ tags: ['consensus', 'taproot', 'schnorr']
 date: 2019-09-27
 ---
 
-# Bitcoin Optech - Schnorr and Taproot workshop
-
 Location: Chaincode Labs, NYC
 
 <https://bitcoinops.org/en/schnorr-taproot-workshop/>

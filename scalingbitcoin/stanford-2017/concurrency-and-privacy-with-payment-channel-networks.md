@@ -6,8 +6,6 @@ tags: ['privacy', 'scalability', 'fees']
 speakers: ['Pedro Moreno-Sanchez']
 ---
 
-# Concurrency and Privacy with Payment-Channel Networks
-
 paper: <https://eprint.iacr.org/2017/820.pdf>
 
 # Introduction

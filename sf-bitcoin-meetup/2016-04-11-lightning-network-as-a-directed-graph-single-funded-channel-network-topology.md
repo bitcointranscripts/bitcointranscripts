@@ -7,10 +7,6 @@ speakers: ['Tadge Dryja']
 date: 2016-04-11
 ---
 
-# Lightning Network as a Directed Graph: Single-Funded Channel Network Topology
-
-Tadge Dryja <rx@awsomnet.org>
-
 <http://lightning.network/>
 
 video: <https://www.youtube.com/watch?v=-lgYYz3y_hY>

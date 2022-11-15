@@ -6,8 +6,6 @@ date: 2020-04-29
 speakers: ['Kalle Rosenbaum']
 ---
 
-# Grokking Bitcoin
-
 Location: London Bitcoin Devs (online)
 
 Video: https://www.youtube.com/watch?v=6tHnYyaw0qw

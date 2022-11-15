@@ -1,9 +1,9 @@
 ---
-title: libsecp256k1 testing 
+title: libsecp256k1 testing
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['bitcoin core', 'testing']
-date: 2015–01-08
+date: 2015-01-08
 ---
 
 Topic: libsecp256k1 testing

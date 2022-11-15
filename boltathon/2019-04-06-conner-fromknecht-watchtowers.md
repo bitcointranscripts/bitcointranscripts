@@ -6,7 +6,8 @@ tags: ['research', 'lightning', 'lnd']
 speakers: ['Conner Fromknecht']
 date: 2019-04-06
 ---
-# Architecture of LND Watchtowers
+
+Architecture of LND Watchtowers
 
 Video: <https://www.youtube.com/watch?v=2tyr05tLF4g&list=PLC_AgDAr0m6QhwqPDrqMfjX64oHGmwDMk&index=4>
 

@@ -7,7 +7,7 @@ speakers: ['Adam Back']
 date: 2015-09-07
 ---
 
-# Why bitcoin needs a measured approach to scaling
+Why bitcoin needs a measured approach to scaling
 
 video: <https://youtube.com/watch?v=wYHyR2E5Pic>
 

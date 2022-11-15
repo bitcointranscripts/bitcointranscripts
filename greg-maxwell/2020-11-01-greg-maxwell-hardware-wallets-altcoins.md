@@ -1,12 +1,10 @@
 ---
-title: Hardware Wallets Altcoins 
+title: Hardware Wallets Altcoins
 transcript_by: Michael Folkson
 speakers: ['Greg Maxwell']
 tags: ['hardware wallet', 'altcoin', 'wallet']
 date: 2020-11-01
 ---
-
-# Hardware wallets and altcoins
 
 Location: Reddit
 

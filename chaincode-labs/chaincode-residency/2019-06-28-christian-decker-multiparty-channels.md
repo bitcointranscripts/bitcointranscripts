@@ -7,8 +7,6 @@ speakers: ['Christian Decker']
 date: 2019-06-28
 ---
 
-# Multiparty Channels (Lightning Network)
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Video: <https://youtu.be/PUDWGH_MvmQ>

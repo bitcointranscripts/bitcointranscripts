@@ -5,7 +5,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 ---
 
-# Why can’t hash power be used for something useful?
+Why can’t hash power be used for something useful?
 
 Location: Reddit
 

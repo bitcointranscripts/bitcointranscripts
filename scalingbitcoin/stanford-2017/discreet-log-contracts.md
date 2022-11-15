@@ -6,8 +6,6 @@ tags: ['privacy', 'smart contracts', 'lightning', 'schnorr']
 speakers: ['Tadge Dryja']
 ---
 
-# Discreet log contracts
-
 <http://diyhpl.us/wiki/transcripts/discreet-log-contracts/>
 
 video: <https://www.youtube.com/watch?v=FU-rA5dkTHI>

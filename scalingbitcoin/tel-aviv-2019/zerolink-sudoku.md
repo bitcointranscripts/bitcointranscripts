@@ -6,8 +6,6 @@ tags: ['research']
 speakers: ['Yuval Kogman']
 ---
 
-# ZeroLink sudoku: real vs perceived anonymity
-
 <https://twitter.com/kanzure/status/1171788514326908928>
 
 # Introduction

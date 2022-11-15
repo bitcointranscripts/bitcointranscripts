@@ -6,8 +6,6 @@ tags: ['mempool', 'segwit']
 date: 2017-11-27
 ---
 
-# Advances in block propagation
-
 slides: <https://web.archive.org/web/20190416113003/https://people.xiph.org/~greg/gmaxwell-sf-prop-2017.pdf>
 
 video: <https://www.youtube.com/watch?v=EHIuuKCm53o>

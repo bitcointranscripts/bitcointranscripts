@@ -6,7 +6,7 @@ tags: ['routing', 'lightning', 'lnd', 'security']
 speakers: ['Joost Jager']
 ---
 
-# Security aspects of LN routing
+Security aspects of LN routing
 
 Joost Jager, Lightning Labs
 

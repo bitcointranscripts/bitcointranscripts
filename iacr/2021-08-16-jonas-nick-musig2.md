@@ -7,7 +7,7 @@ speakers: ['Jonas Nick']
 date: 2021-08-16
 ---
 
-# MuSig2: Simple Two-Round Schnorr Multi-Signatures
+MuSig2: Simple Two-Round Schnorr Multi-Signatures
 
 Location: IACR Crypto
 

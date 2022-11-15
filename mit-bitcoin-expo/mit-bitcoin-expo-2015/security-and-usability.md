@@ -6,8 +6,6 @@ tags: ['security', 'mining', 'regulation', 'wallet']
 speakers: ['Melanie Shapiro', 'Alan Reiner', 'Kristov Atlas']
 ---
 
-# Security and usability.
-
 * Melanie Shapiro
 * Alan Reiner
 * Kristov Atlas

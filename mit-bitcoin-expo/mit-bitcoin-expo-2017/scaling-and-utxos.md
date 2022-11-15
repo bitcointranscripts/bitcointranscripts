@@ -1,12 +1,10 @@
 ---
-title: Scaling And Utxos
+title: Scaling and UTXO commitments
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Peter Todd']
 date: 2017-03-04
 ---
-
-# Scaling and TXO commitments
 
 video: <https://www.youtube.com/watch?v=0mVOq1jaR1U&feature=youtu.be&t=1h20m>
 

@@ -1,12 +1,10 @@
 ---
-title: Selfish Mining
+title: Selfish mining and Dyck words
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']
 speakers: ['Ricardo Perez-Marco']
 ---
-
-# Selfish mining and Dyck words
 
 ## Introduction
 

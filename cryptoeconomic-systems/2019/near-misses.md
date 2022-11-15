@@ -6,7 +6,7 @@ tags: ['security', 'research']
 speakers: ['Ethan Heilman']
 ---
 
-# Near misses: What could have gone wrong
+Near misses: What could have gone wrong
 
 # Introduction
 

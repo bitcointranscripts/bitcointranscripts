@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Georgia Avarikioti']
 ---
 
-# Brick: Asynchronous State Channels
+Brick: Asynchronous State Channels
 
 <https://twitter.com/kanzure/status/1230943445398614016>
 

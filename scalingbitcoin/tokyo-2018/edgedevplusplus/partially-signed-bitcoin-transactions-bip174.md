@@ -6,8 +6,6 @@ tags: ['segwit', 'wallet']
 speakers: ['Greg Sanders']
 ---
 
-# Partially-signed bitcoin transactions (bip174)
-
 <https://twitter.com/kanzure/status/1047730297242935296>
 
 # Introduction

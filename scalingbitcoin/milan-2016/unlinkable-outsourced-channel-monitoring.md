@@ -6,8 +6,6 @@ tags: ['lightning', 'scalability', 'wallet']
 speakers: ['Tadge Dryja']
 ---
 
-# Unlinkable outsourced channel monitoring
-
 <http://lightning.network/>
 
 <https://twitter.com/kanzure/status/784752625074012160>

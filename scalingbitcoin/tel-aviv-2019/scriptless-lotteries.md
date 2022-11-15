@@ -6,7 +6,7 @@ tags: ['cryptography']
 speakers: ['Lloyd Fournier']
 ---
 
-# Scriptless lotteries on bitcoin from oblivious transfer
+Scriptless lotteries on bitcoin from oblivious transfer
 
 Lloyd Fournier (lloyd.fourn@gmail.com)
 

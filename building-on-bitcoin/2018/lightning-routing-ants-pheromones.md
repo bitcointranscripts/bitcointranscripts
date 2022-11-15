@@ -7,8 +7,6 @@ speakers: ['Ricardo Perez-Marco']
 date: 2018-07-04
 ---
 
-# Ant routing for lightning network
-
 Building on Bitcoin 2018
 
 <https://twitter.com/kanzure/status/1014530761398145025>

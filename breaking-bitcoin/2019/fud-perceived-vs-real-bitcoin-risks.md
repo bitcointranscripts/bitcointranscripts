@@ -5,10 +5,6 @@ categories: ['conference']
 speakers: ['Aaron van Wirdum', 'Eric Voskuil', 'Jimmy Song', 'Rodolfo Novak']
 ---
 
-# FUD: real vs perceived risks in bitcoin
-
-Aaron van Wirdum, Eric Voskuil, Jimmy Song, Rodolfo Novak
-
 <https://twitter.com/kanzure/status/1137285873534492672>
 
 Eric Voskuil 3CD8 C07F 0B5C E14E

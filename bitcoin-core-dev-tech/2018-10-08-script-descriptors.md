@@ -7,10 +7,6 @@ speakers: ['Pieter Wuille']
 date: 2018-10-08
 ---
 
-# Script descriptors
-
-Pieter Wuille (sipa)
-
 <https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md>
 
 I would like to talk about script descriptors. There's a number of projects we're working on and they are all kind of related. I'd like to clarify how things fit together.

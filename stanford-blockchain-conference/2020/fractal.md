@@ -6,8 +6,6 @@ tags: ['security', 'post-quantum']
 speakers: ['Nick Spooner']
 ---
 
-# Fractal: Post-Quantum and Transparent Recursive Proofs from Holography
-
 <https://twitter.com/kanzure/status/1230295372909514752>
 
 <https://eprint.iacr.org/2019/1076.pdf>

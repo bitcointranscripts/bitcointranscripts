@@ -7,7 +7,7 @@ date: 2018-01-24
 speakers: ['Christopher Allen']
 ---
 
-# Smart Signatures: Experiments in Authorization
+Smart Signatures: Experiments in Authorization
 
 Location: BPASE 2018, Stanford University
 

@@ -6,7 +6,7 @@ date: 2020-06-16
 tags: ['schnorr']
 ---
 
-# BIP Schnorr (BIP 340)
+BIP Schnorr (BIP 340)
 
 Location: London BitDevs (online)
 

@@ -6,8 +6,6 @@ date: 2019-06-06
 speakers: ['Michael Ford', 'Wladimir van der Laan']
 ---
 
-# Maintainers view of the Bitcoin Core project
-
 <https://twitter.com/kanzure/status/1136568307992158208>
 
 How do the maintainers think or feel everything is going? Are there any frustrations? Could contributors help eliminate these frustrations? That's all I have.

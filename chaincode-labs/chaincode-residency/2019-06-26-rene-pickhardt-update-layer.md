@@ -7,8 +7,6 @@ date: 2019-06-26
 speakers: ['Rene Pickhardt']
 ---
 
-# The Update Layer
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Video: <https://youtu.be/SoFlRCNdqDg>

@@ -6,7 +6,7 @@ tags: ['schnorr', 'taproot']
 date: 2020-07-21
 ---
 
-# BIP Taproot (BIP 341)
+BIP Taproot (BIP 341)
 
 Location: London BitDevs (online)
 

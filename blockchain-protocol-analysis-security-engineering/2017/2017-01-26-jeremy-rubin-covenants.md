@@ -7,7 +7,7 @@ speakers: ['Jeremy Rubin']
 date: 2017-01-26
 ---
 
-# Structuring Multi Transaction Contracts in Bitcoin
+Structuring Multi Transaction Contracts in Bitcoin
 
 Location: BPASE 2017, Stanford University 
 

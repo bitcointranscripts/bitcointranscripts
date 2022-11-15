@@ -7,8 +7,6 @@ speakers: ['Fabian Jahr']
 date: 2019-08-22
 ---
 
-# Debugging Bitcoin Core
-
 Video: <https://www.youtube.com/watch?v=6aPSCDAiqVI>
 
 Slides: <https://residency.chaincode.com/presentations/Debugging_Bitcoin.pdf>

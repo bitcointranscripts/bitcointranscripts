@@ -6,7 +6,7 @@ tags: ['privacy', 'lightning', 'routing']
 speakers: ['Pavel Prihodko', 'Kolya Sakhno', 'Alexei Ostrovskiy', 'Slava Zhigulin', 'Olaoluwa Osuntokun']
 ---
 
-# Flare: An approach to routing in lightning network
+Flare: An approach to routing in lightning network
 
 <https://twitter.com/kanzure/status/784745976170999810>
 

@@ -7,7 +7,7 @@ categories: ['residency']
 date: 2019-06-19
 ---
 
-# Wallet Development in Bitcoin Core
+Wallet Development in Bitcoin Core
 
 Location: Chaincode Labs 2019 Residency
 

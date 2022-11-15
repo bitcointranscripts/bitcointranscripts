@@ -7,8 +7,6 @@ speakers: ['Christian Decker']
 date: 2018-10-22
 ---
 
-# History of the Lightning Network
-
 Location: Chaincode Labs Lightning Residency 2018
 
 Video: <https://youtu.be/HauP9F16mUM>

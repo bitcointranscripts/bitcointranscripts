@@ -6,8 +6,6 @@ tags: ['fungibility']
 speakers: ['Adlai Chandrasekhar']
 ---
 
-# Joinmarket
-
 <https://twitter.com/kanzure/status/784681036504522752>
 
 slides: <https://scalingbitcoin.org/milan2016/presentations/D1%20-%202%20-%20Adlai%20Chandrasekhar.pdf>

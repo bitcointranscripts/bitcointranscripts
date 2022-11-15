@@ -7,7 +7,7 @@ date: 2021-03-27
 speakers: ['Alex Bosworth']
 ---
 
-# Lightning Routing - Building a new economy
+Lightning Routing - Building a new economy
 
 Location: Lightning Hack Day
 

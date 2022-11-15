@@ -6,8 +6,6 @@ tags: ['miniscript']
 speakers: ['Pieter Wuille']
 ---
 
-# Miniscript
-
 <https://twitter.com/kanzure/status/1091116834219151360>
 
 <https://www.youtube.com/watch?v=sQOfnsW6PTY&t=22540>

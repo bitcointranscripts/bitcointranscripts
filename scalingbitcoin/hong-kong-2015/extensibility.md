@@ -6,7 +6,7 @@ tags: ['security']
 speakers: ['Eric Lombrozo']
 ---
 
-# Extensibility, fraud proofs, and security models
+Extensibility, fraud proofs, and security models
 
 Eric Lombrozo (CodeShark)
 

@@ -6,8 +6,6 @@ tags: ['segregated witness', 'segwit']
 speakers: ['Pieter Wuille']
 ---
 
-# Segregated Witness And Its Impact On Scalability
-
 video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=36m>
 
 slides: <https://prezi.com/lyghixkrguao/segregated-witness-and-deploying-it-for-bitcoin/>

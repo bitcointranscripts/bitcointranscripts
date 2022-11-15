@@ -6,11 +6,6 @@ tags: ['research']
 speakers: ['Eran Tromer', 'Eli Ben-Sasson', 'Matthew Green', 'Alessandro Chiesa', 'Ian Miers', 'Christina Garman', 'Madars Virza', 'Daniel Genkin']
 ---
 
-# SNARKs and their practical applications
-
-Eran Tromer
-
-Tel Aviv University
 
 Joint works with:
 

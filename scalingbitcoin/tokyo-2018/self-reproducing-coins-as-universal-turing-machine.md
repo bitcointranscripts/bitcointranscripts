@@ -6,10 +6,6 @@ tags: ['research', 'smart contracts', 'scalability']
 speakers: ['Dmitry Meshkov', 'Alexander Chepurnoy', 'Vasily Kharin']
 ---
 
-# Self-reproducing coins as universal turing machine
-
-Dmitry Meshkov, Alexander Chepurnoy and Vasily Kharin (Ergo Platform)
-
 paper: <https://arxiv.org/abs/1806.10116>
 
 # Introduction

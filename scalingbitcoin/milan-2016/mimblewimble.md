@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Andrew Poelstra']
 ---
 
-# Mimblewimble: private, massively-prunable public blockchains
+Mimblewimble: private, massively-prunable public blockchains
 
 <https://twitter.com/kanzure/status/784696648597405696>
 

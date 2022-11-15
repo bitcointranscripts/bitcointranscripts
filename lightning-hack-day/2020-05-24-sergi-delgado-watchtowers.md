@@ -1,13 +1,11 @@
 ---
-title: Watchtowers 
+title: Watchtowers and BOLT 13
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
 speakers: ['Sergi Delgado']
 date: 2020-05-24
 ---
-
-# Watchtowers and BOLT 13
 
 Location: Potzblitz (online)
 

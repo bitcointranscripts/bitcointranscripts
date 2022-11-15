@@ -6,7 +6,7 @@ tags: ['mining']
 speakers: ['David Vorick']
 ---
 
-# ASIC design for mining
+ASIC design for mining
 
 <https://twitter.com/kanzure/status/1091056727464697856>
 

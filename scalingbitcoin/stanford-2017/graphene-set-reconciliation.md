@@ -6,7 +6,6 @@ tags: ['P2P']
 speakers: ['Brian N. Levine']
 ---
 
-# Graphene and set reconciliation
 
 Brian N. Levine, College of Information and Computer Sciences, UMass Amherst
 

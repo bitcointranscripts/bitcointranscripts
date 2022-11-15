@@ -7,7 +7,7 @@ speakers: ['Dan Robinson']
 date: 2017-01-26
 ---
 
-# Ivy: A Declarative Predicate Language for Smart Contracts
+Ivy: A Declarative Predicate Language for Smart Contracts
 
 Location: BPASE 2017, Stanford University
 

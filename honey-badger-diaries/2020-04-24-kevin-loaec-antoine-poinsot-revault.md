@@ -7,7 +7,7 @@ date: 2020-04-24
 speakers: ['Kevin Loaec', 'Antoine Poinsot']
 ---
 
-# Revault Bitcoin vaults
+Revault Bitcoin vaults
 
 Location: Honey Badger Diaries (podcast)
 

@@ -7,7 +7,6 @@ tags: ['privacy']
 date: 2020-05-05
 ---
 
-# Bitcoin privacy (Payjoin/P2EP)
 
 Location: London BitDevs (online)
 

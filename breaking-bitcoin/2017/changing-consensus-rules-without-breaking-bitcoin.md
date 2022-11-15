@@ -7,7 +7,7 @@ speakers: ['Eric Lombrozo']
 date: 2017-09-10
 ---
 
-# Changing consensus rules without breaking bitcoin
+Changing consensus rules without breaking bitcoin
 
 video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=32min9s>
 

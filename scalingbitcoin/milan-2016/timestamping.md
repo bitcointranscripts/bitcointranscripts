@@ -6,8 +6,6 @@ tags: ['timestamping']
 speakers: ['Riccardo Casatta']
 ---
 
-# Timestamping
-
 slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%20A%20-%20Riccardo.pdf>
 
 <https://twitter.com/kanzure/status/784773221610586112>

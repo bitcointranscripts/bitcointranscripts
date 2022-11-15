@@ -7,8 +7,6 @@ date: 2019-06-24
 speakers: ['Fabrice Drouin']
 ---
 
-# Base and Transport Layers of the Lightning Network
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Video: <https://www.youtube.com/watch?v=wyri7cc83kQ>

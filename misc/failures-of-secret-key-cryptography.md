@@ -5,8 +5,6 @@ tags: ['attacks', 'cryptography']
 speakers: ['Daniel J. Bernstein']
 ---
 
-# Failures of secret key cryptography
-
 FSE 2013
 
 video: <https://www.youtube.com/watch?v=bT4cKwBROno&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=7>

@@ -6,7 +6,7 @@ tags: ['attacks', 'proof-of-work', 'miners']
 speakers: ['Luke Dashjr']
 ---
 
-# Briefly, why block sizes shouldn't be too big
+Briefly, why block sizes shouldn't be too big
 
 slides: <https://luke.dashjr.org/tmp/code/block-sizes-mcc.pdf>
 

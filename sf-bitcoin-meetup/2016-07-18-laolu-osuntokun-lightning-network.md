@@ -7,7 +7,7 @@ speakers: ['Olaoluwa Osuntokun']
 date: 2016-07-18
 ---
 
-# Lightning Network Deep Dive
+Lightning Network Deep Dive
 
 Video: <https://www.youtube.com/watch?v=tLZc-NLmV20>
 

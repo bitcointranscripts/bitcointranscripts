@@ -7,7 +7,7 @@ categories: ['conference']
 tags: ['P2P', 'wallet']
 ---
 
-# BIP151: Peer-to-peer encryption and authentication from the perspective of end-users
+BIP151: Peer-to-peer encryption and authentication from the perspective of end-users
 
 <https://twitter.com/kanzure/status/785046960705339392>
 

@@ -5,8 +5,6 @@ transcript_by: Michael Folkson
 date: 2018-09-23
 ---
 
-# Risks of multiple implementations
-
 Location: Bitcointalk
 
 https://bitcointalk.org/index.php?topic=5035144.msg46077622#msg46077622

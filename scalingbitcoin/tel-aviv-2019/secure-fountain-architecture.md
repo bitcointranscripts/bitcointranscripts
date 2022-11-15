@@ -6,7 +6,7 @@ tags: ['security']
 speakers: ['Swanand Kadhe']
 ---
 
-# A secure fountain architecture for slashing storage costs in blockchains
+A secure fountain architecture for slashing storage costs in blockchains
 
 Swanand Kadhe (UC Berkeley)
 

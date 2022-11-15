@@ -5,7 +5,6 @@ date: 2019-06-29
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['hardware wallet', 'wallet']
-speakers: ['Stepan Snigirev']
 ---
 
 livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>

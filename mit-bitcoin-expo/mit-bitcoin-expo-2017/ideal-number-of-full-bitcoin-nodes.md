@@ -6,8 +6,6 @@ speakers: ['David Vorick']
 date: 2017-03-04
 ---
 
-# Ideal number of full bitcoin nodes
-
 video: <https://www.youtube.com/watch?v=0mVOq1jaR1U&t=56m20s>
 
 <https://twitter.com/kanzure/status/838481130944876544>

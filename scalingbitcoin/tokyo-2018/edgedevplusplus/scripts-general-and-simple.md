@@ -6,7 +6,7 @@ tags: ['multisig', 'wallet']
 speakers: ['John Newbery']
 ---
 
- # Scripts (general & simple)
+Scripts (general & simple)
 
 <https://twitter.com/kanzure/status/1047679223115083777>
 

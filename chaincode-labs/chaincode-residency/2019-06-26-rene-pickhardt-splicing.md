@@ -7,8 +7,6 @@ speakers: ['Rene Pickhardt']
 date: 2019-06-26
 ---
 
-# Splicing
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Video: https://youtu.be/ZzSveBMtUGI

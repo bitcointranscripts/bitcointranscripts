@@ -6,7 +6,7 @@ tags: ['attacks', 'p2sh']
 speakers: ['Olaoluwa Osuntokun', 'Johnson Lau']
 ---
 
-# Bitcoin script v2.0
+Bitcoin script v2.0
 
 roasbeef
 

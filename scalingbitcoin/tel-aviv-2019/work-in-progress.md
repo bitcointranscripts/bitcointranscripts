@@ -6,8 +6,6 @@ tags: ['proof-of-work']
 speakers: ['Mikael Dubrovsky']
 ---
 
-# Work in progress sessions
-
 Scaling Bitcoin 2019 Tel Aviv "yesod"
 
 <https://twitter.com/kanzure/status/1172173183329476609>

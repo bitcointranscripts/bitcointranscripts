@@ -6,8 +6,6 @@ tags: ['smart contracts', 'zero-knowledge']
 speakers: ['Oleg Andreev']
 ---
 
-# ZkVM: zero-knowledge virtual machine for fast confidential smart contracts
-
 Fats, private, flexible blockchain contracts
 
 Oleg Andreev (Stellar) (oleganza)

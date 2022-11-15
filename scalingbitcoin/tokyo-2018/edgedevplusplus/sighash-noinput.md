@@ -6,7 +6,7 @@ tags: ['bitcoin core']
 speakers: ['Bryan Bishop']
 ---
 
-# SIGHASH\_NOINPUT (BIP118)
+SIGHASH\_NOINPUT (BIP118)
 
 <https://twitter.com/kanzure/status/1049510702384173057>
 

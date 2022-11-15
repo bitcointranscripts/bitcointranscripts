@@ -6,8 +6,6 @@ tags: ['consensus']
 speakers: ['Greg Sanders']
 ---
 
-# Sidechains and federation models
-
 <https://twitter.com/kanzure/status/1048008467871666178>
 
 # Introduction

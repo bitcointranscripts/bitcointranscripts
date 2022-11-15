@@ -7,8 +7,6 @@ speakers: ['Gleb Naumenko']
 date: 2019-11-13
 ---
 
-# Current state of P2P research in Bitcoin / Erlay 
-
 London Bitcoin Devs
 
 Video: <https://www.youtube.com/watch?v=ZUWs00Anpaw>

@@ -7,7 +7,7 @@ date: 2019-06-28
 speakers: ['Christian Decker']
 ---
 
-# Rendezvous Routing (Lightning Network)
+Rendezvous Routing (Lightning Network)
 
 Location: Chaincode Residency 2019
 

@@ -5,8 +5,6 @@ categories: ['conference']
 speakers: ['Brett Seyler']
 ---
 
-# Blockchains for multiplayer games
-
 <https://twitter.com/kanzure/status/1230256436527034368>
 
 # Introduction

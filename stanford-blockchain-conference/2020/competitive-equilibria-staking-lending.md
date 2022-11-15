@@ -6,7 +6,7 @@ tags: ['attacks', 'proof-of-work']
 speakers: ['Tarun Chitra']
 ---
 
-# Competitive equilibria between staking and on-chain lending
+Competitive equilibria between staking and on-chain lending
 
 <https://twitter.com/kanzure/status/1230581977289379840>
 

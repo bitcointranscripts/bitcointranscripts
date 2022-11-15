@@ -1,13 +1,11 @@
 ---
-title: Compact Blocks Fibre 
+title: Compact Blocks and Fibre
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['mining']
 date: 2020-03-12
 speakers: ['Matt Corallo']
 ---
-
-# Compact Blocks and FIBRE
 
 Location: Chaincode Labs Podcast (Episode 6)
 

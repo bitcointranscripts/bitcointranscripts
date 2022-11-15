@@ -6,8 +6,6 @@ speakers: ['Arvind Narayanan', 'Jeremy Clark']
 date: 2017-08-29
 ---
 
-# Bitcoin's Academic Pedigree
-
 Texto original: <https://queue.acm.org/detail.cfm?id=3136559>
 
 # Pedigrí académico de Bitcoin

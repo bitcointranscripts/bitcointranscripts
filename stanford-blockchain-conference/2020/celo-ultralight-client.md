@@ -6,8 +6,6 @@ tag: ['altcoin']
 speakers: ['Marek Olszewski', 'Michael Straka']
 ---
 
-# The Celo ultralight client
-
 <https://twitter.com/kanzure/status/1230261714039398402>
 
 # Introduction

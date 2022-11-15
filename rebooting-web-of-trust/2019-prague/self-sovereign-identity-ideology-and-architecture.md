@@ -5,8 +5,6 @@ categories: ['conference']
 speakers: ['Christopher Allen']
 ---
 
-# Self-sovereign identity: Ideology & architecture
-
 <https://twitter.com/kanzure/status/1168566218040762369>
 
 # Paralelni Polis

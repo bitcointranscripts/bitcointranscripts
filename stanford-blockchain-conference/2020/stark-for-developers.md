@@ -6,8 +6,6 @@ tags: ['privacy', 'zero-knowledge']
 speakers: ['Eli Ben-Sasson']
 ---
 
-# STARK for developers
-
 <https://twitter.com/kanzure/status/1230279740570783744>
 
 # Introduction

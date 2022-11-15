@@ -7,7 +7,7 @@ speakers: ['Ethan Heilman']
 date: 2019-06-12
 ---
 
-# Bitcoin network partitioning & network-level privacy attacks
+Bitcoin network partitioning & network-level privacy attacks
 
 Location: Chaincode Labs 2019 Residency
 

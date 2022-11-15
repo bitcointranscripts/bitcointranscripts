@@ -6,8 +6,6 @@ tags: ['security', 'incentives']
 speakers: ['Peter Todd']
 ---
 
-# In Adversarial Environments Blockchains Dont Scale
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/2_security_and_incentives_2_todd.pdf>
 
 video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=30m35s>

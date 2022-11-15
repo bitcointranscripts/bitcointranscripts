@@ -7,7 +7,7 @@ date: 2019-06-07
 speakers: ['Ruben Somsen']
 ---
 
-# Blind statechains: UTXO transfer with a blind signing server
+Blind statechains: UTXO transfer with a blind signing server
 
 <https://twitter.com/kanzure/status/1136992734953299970>
 

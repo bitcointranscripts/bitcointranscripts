@@ -3,8 +3,8 @@ title: Improving the Lightning Network
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning', 'c-lightning']
-speakers: ['Rusty Russell']       
-date: 2021-05-30                                                                                    
+speakers: ['Rusty Russell']
+date: 2021-05-30
 ---
 
 Topic: Improving the Lightning Network

@@ -7,8 +7,6 @@ tags: ['P2P', 'bitcoin core']
 date: 2019-06-07
 ---
 
-# P2P encryption
-
 <https://twitter.com/kanzure/status/1136939003666685952>
 
 <https://github.com/bitcoin-core/bitcoin-devwiki/wiki/P2P-Design-Philosophy>

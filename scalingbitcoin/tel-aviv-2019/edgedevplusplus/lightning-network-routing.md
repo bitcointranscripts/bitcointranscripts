@@ -6,10 +6,6 @@ tags: ['multisig', 'P2P', 'routing', 'fees']
 speakers: ['Carla Kirk-Cohen']
 ---
 
-# Lightning network routing: Operation, issues and expansions
-
-Carla Kirk-Cohen
-
 # Introduction
 
 Good afternoon everyone. My name is Carla. I am one of the chaincode residents this summer. This talk is going to walk through the protocol layer by layer and look at the different components that make up the network. Lightning is an off-chain scaling solution which consists of a p2p network of payment channels. It allows payments to be forwarded by nodes in exchange for fees.

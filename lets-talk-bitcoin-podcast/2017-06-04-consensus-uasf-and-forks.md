@@ -7,7 +7,7 @@ speakers: ['Andreas Antonopoulos']
 date: 2017-06-04
 ---
 
-# On Consensus and All Kinds of Forks
+On Consensus and All Kinds of Forks
 
 Location: Let’s Talk Bitcoin podcast (Episode 333)
 

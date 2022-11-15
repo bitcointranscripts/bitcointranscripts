@@ -6,7 +6,7 @@ tags: ['attacks']
 speakers: ['Vitalik Buterin']
 ---
 
-# Beyond 51% attacks
+Beyond 51% attacks
 
 <https://twitter.com/kanzure/status/1230624835996250112>
 

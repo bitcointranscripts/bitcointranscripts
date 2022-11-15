@@ -6,7 +6,7 @@ tag: ['sidechains']
 date: 2015-06-08
 ---
 
-# Bringing New Elements to Bitcoin with Sidechains
+Bringing New Elements to Bitcoin with Sidechains
 
 SF Bitcoin Devs Meetup
 

@@ -3,11 +3,9 @@ title: Multihop of the Lightning Network
 transcript by: Elle Mouton, Corey Phillips, Brian Mancini, Abubakar Nur Khalil
 categories: ['residency']
 tags: ['lightning', 'routing']
-speakers: ['René Pickhardt']
+speakers: ['Rene Pickhardt']
 date: 2019-06-24
 ---
-
-# Multihop of the Lightning Network
 
 Location: Chaincode Labs Lightning Residency 2019
 

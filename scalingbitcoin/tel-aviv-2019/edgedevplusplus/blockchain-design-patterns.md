@@ -6,7 +6,7 @@ tags: ['taproot', 'mempool']
 speakers: ['Andrew Poelstra', 'David Vorick']
 ---
 
-# Blockchain design patterns: Layers and scaling approaches
+Blockchain design patterns: Layers and scaling approaches
 
 Name: Andrew Poelstra, David Vorick
 

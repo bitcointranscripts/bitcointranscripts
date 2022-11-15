@@ -7,8 +7,6 @@ speakers: ['Tarun Chitra']
 date: 2020-02-18
 ---
 
-# Stress testing decentralized finance
-
 <https://twitter.com/kanzure/status/1229844754990370816>
 
 # Introduction

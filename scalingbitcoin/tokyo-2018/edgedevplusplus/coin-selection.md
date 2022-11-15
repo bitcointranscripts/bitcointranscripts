@@ -5,8 +5,6 @@ categories: ['conference']
 speakers: ['Karl-Johan Alm']
 ---
 
-# Coin selection
-
 <https://twitter.com/kanzure/status/1047708247333859328>
 
 Video: <https://www.youtube.com/watch?v=ZMzVIi1lgyw>

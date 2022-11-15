@@ -6,8 +6,6 @@ tags: ['p2pkh', 'P2P', 'p2sh']
 speakers: ['Greg Sanders']
 ---
 
-# P2PKH/P2WPKH/P2H/P2WSH
-
 <https://twitter.com/kanzure/status/1047697572444270592>
 
 # Introduction

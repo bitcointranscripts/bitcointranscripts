@@ -7,8 +7,6 @@ tag: ['build systems']
 date: 2020-11-30
 ---
 
-# Reproducible Build Systems
-
 Location: Chaincode Labs Podcast (Episode 9 and 10)
 
 Video: <https://www.youtube.com/watch?v=Y5Gfli3x6rI>

@@ -7,8 +7,6 @@ speakers: ['Alex Bosworth']
 date: 2019-07-03
 ---
 
-# Submarine Swaps 
-
 London Bitcoin Devs
 
 Submarine Swaps and Loop

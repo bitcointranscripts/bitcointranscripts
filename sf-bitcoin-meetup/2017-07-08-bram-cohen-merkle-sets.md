@@ -7,7 +7,7 @@ tags: ['merkle trees']
 date: 2017-07-08
 ---
 
-# Merkle set data structures for scaling bitcoin
+Merkle set data structures for scaling bitcoin
 
 video: <https://www.youtube.com/watch?v=52FVkHlCh7Y>
 

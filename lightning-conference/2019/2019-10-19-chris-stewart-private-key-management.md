@@ -6,8 +6,7 @@ speakers: ['Chris Stewart']
 date: 2019-10-19
 ---
 
-
-# Lightning 101 for Exchanges: Private Key Management
+Lightning 101 for Exchanges: Private Key Management
 
 The Lightning Conference Day 1 (Stage 2)
 

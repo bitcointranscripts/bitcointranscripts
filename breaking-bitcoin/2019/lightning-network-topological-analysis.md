@@ -7,7 +7,7 @@ speakers: ['Istvan Andras Seres']
 date: 2019-01-15
 ---
 
-# Topological analysis of the lightning network
+Topological analysis of the lightning network
 
 paper: <https://arxiv.org/abs/1901.04972>
 

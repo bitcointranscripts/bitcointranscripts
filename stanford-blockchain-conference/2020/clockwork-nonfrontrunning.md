@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Daniel Cline']
 ---
 
-# ClockWork: An exchange protocol for proofs of non-front-running
+ClockWork: An exchange protocol for proofs of non-front-running
 
 <https://twitter.com/kanzure/status/1231012112517844993>
 

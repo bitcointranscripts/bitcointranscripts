@@ -7,7 +7,7 @@ speakers: ['Alex Bosworth']
 date: 2019-11-29
 ---
 
-# Bridging off-chain and on-chain with submarine swaps
+Bridging off-chain and on-chain with submarine swaps
 
 Video: https://youtu.be/SCxaV2HCQ5o
 

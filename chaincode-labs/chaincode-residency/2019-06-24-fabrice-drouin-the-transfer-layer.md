@@ -6,8 +6,6 @@ categories: ['residency']
 speakers: ['Fabrice Drouin']
 ---
 
-# Lightning - The Transfer Layer
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Video: <https://www.youtube.com/watch?v=CGE8I8L7BAc>

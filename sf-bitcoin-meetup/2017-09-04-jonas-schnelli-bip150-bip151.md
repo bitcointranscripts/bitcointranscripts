@@ -7,7 +7,7 @@ categories: ['meetup']
 tags: ['P2P', 'bitcoin core']
 ---
 
-# bip150 and bip151: Bitcoin p2p network encryption and authentication
+bip150 and bip151: Bitcoin p2p network encryption and authentication
 
 <https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki>
 

@@ -6,8 +6,6 @@ tags: ['zero-knowledge', 'scalability']
 speakers: ['Madars Virza']
 ---
 
-# Zero Knowledge Proofs For Bitcoin Scalability And Beyond
-
 video: <https://youtube.com/watch?v=aQ1--w4uEMM&t=4133>
 
 I am going to tell you about zero-knowledge proofs for Bitcoin scalability. Even though this is an overview talk, many of the results I will be telling you about are based on work done by people in the slides and also here at the conference.

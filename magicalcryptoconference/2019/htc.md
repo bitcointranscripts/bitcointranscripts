@@ -6,7 +6,7 @@ speakers: ['Phil Chen']
 date: 2019-05-11
 ---
 
-# HTC / Exodus
+HTC / Exodus
 
 Video: https://youtu.be/CyieujRFk3g?t=8077
 

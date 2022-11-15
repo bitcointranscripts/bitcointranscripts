@@ -7,7 +7,7 @@ date: 2018-01-25
 speakers: ["Russell O’Connor"]
 ---
 
-# Simplicity: A New Language for Blockchains
+Simplicity: A New Language for Blockchains
 
 Location: BPASE 2018, Stanford University
 

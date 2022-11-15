@@ -6,8 +6,6 @@ date: 2020-04-08
 speakers: ['John Newbery']
 ---
 
-# Contracts in Bitcoin
-
 Location: She256 Onboarding to Bitcoin Webinar
 
 Video: <https://youtu.be/H-wH6mY9pZo?t=2549>

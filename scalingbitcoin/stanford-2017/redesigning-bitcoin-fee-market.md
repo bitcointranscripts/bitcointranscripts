@@ -6,8 +6,6 @@ tags: ['ux', 'fees']
 speakers: ['Or Sattath']
 ---
 
-# Redesigning bitcoin's fee market
-
 Or Sattath (The Hebrew University)
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015093.html>

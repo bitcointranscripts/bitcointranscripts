@@ -6,8 +6,6 @@ tags: ['privacy', 'smart contracts', 'multisig']
 speakers: ['Omer Shlomovits']
 ---
 
-# Threshold scriptless scripts
-
 Omer Shlomovits (KZen Research) (omershlomovits, zengo)
 
 <https://twitter.com/kanzure/status/1171690582445580288>

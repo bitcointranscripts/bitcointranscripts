@@ -7,7 +7,7 @@ speakers: ['Olaoluwa Osuntokun']
 date: 2017-02-03
 ---
 
-# Security analysis of the lightning network 
+Security analysis of the lightning network
 
 <https://twitter.com/kanzure/status/957978915515092992>
 

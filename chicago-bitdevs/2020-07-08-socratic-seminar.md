@@ -1,13 +1,9 @@
 ---
-title: Socratic Seminar 10 from Chicago BitDevs
+title: Socratic Seminar 10
 transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-07-08
 ---
-
-# Socratic Seminar
-
-### Agenda in Reddit link below
 
 Location: Chicago BitDevs (online)
 

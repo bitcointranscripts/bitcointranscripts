@@ -6,8 +6,6 @@ speakers: ['Adam Back']
 date: 2019-12-04
 ---
 
-# Bitcoin satellite network
-
 Video: https://youtu.be/tJOI2i6h3HM
 
 # Bitcoin in Spaaace!

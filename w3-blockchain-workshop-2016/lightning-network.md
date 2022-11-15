@@ -6,8 +6,6 @@ tags: ['consensus', 'scalability']
 speakers: ['Tadge Dryja']
 ---
 
-# Lightning network
-
 I am going to talk about blockchain scalability using payment channel networks. I am working on Lightning Network. It's currently being built in bitcoin but it can support other things. One of the fundamental problems with blockchain is scalability. How can you have millions of users and rapid transactions?
 
 Fundamentally, the blockchain is shared. You can call it a DLT but it's really a copied ledger. Every user has a copy. When you're at a conference and everyone is using the same wifi AP, it's pretty slow. You really want a segmented network where everyone is plugged into their own switch.

@@ -7,9 +7,7 @@ speakers: ['Pierre Rochard']
 date: 2018-10-26
 ---
 
-# Lightning Excel Plugin
-
-Video: https://www.youtube.com/watch?v=AXeUZrS-8mE&t=0s&list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_&index=10
+Video: <https://www.youtube.com/watch?v=AXeUZrS-8mE&t=0s&list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_&index=10>
 
 
 # Demo

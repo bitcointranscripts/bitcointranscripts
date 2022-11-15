@@ -7,8 +7,6 @@ speakers: ['Christian Decker']
 date: 2018-10-22
 ---
 
-# Lightning ≈ Bitcoin
-
 Location: Chaincode Labs Lightning Residency 2018
 
 Video: <https://youtu.be/8lMLo-7yF5k>

@@ -1,12 +1,12 @@
 ---
-title: 51 percent mining attack 
+title: 51 percent mining attack
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['mining', 'security']
-date: 2019–10-04
+date: 2019-10-04
 ---
 
-# Should we be more concerned by the prospect of a 51 percent mining attack?
+Should we be more concerned by the prospect of a 51 percent mining attack?
 
 Location: Reddit
 

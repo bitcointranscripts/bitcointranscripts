@@ -6,7 +6,7 @@ speakers: ['Assimakis Kattis']
 tags: ['proof of work', 'fairness']
 ---
 
-# Proof of Necessary Work: Succinct State Verification with Fairness Guarantees
+Proof of Necessary Work: Succinct State Verification with Fairness Guarantees
 
 <https://twitter.com/kanzure/status/1230199429849743360>
 

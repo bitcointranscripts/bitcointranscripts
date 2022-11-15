@@ -3,7 +3,7 @@ title: OpenSSL bug discovery
 transcript_by: Michael Folkson
 tags: ['bitcoin core', 'testing']
 speakers: ['Greg Maxwell']
-date: 2015–01-08
+date: 2015-01-08
 ---
 
 Topic: OpenSSL bug discovery

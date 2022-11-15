@@ -6,7 +6,7 @@ tags: ['topology']
 speakers: ['Sergi Delgado-Segura']
 ---
 
-# TxProbe: Discovering bitcoin's network topology using orphan transactions
+TxProbe: Discovering bitcoin's network topology using orphan transactions
 
 <https://twitter.com/kanzure/status/1171723329453142016>
 

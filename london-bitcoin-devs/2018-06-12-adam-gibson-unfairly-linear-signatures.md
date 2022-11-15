@@ -7,8 +7,6 @@ speakers: ['Adam Gibson']
 date: 2018-06-12
 ---
 
-# Unfairly Linear Signatures
-
 Location: London Bitcoin Devs
 
 Video: https://www.youtube.com/watch?v=mLZ7qVwKalE

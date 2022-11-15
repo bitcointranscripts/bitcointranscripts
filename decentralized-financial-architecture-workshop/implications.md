@@ -6,7 +6,7 @@ tags: ['regulation']
 speakers: ['Yuta Takanashi']
 ---
 
-# Implications on regulation and governance of blockchain-based finance
+Implications on regulation and governance of blockchain-based finance
 
 Yuta Takanashi (Financial Services Agency, Japan)
 

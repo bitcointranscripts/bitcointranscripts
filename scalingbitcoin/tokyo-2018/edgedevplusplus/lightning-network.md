@@ -6,7 +6,7 @@ tags: ['lightning']
 speakers: ['Thaddeus Dryja']
 ---
 
-# Lightning network overview, lightning channel factories, discreet log contracts
+Lightning network overview, lightning channel factories, discreet log contracts
 
 <https://twitter.com/kanzure/status/1048039589837852672>
 

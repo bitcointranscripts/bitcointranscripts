@@ -6,8 +6,6 @@ tag: ['smart contracts']
 date: 2020-04-08
 ---
 
-# Simplicity - Next-Gen Smart Contracting
-
 Location: Blockstream webinar
 
 Video: https://www.youtube.com/watch?v=RZNCk-nyx_A

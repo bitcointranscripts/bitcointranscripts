@@ -7,7 +7,7 @@ speakers: ['Rusty Russell']
 date: 2019-10-19
 ---
 
-# Make Me An Offer: Next Level Invoicing
+Make Me An Offer: Next Level Invoicing
 
 The Lightning Conference Day 1 (Stage 1)
 

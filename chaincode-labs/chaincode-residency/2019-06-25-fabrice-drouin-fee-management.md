@@ -6,8 +6,6 @@ tags: ['lightning', 'fee management']
 speakers: ['Fabrice Drouin']
 ---
 
-# Fee Management (Lightning Network)
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Video: <https://youtu.be/r8S3iELg9_U>

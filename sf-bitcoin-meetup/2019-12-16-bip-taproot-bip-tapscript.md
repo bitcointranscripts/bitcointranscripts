@@ -7,8 +7,6 @@ speakers: ['Pieter Wuille']
 date: 2019-12-16
 ---
 
-# bip-taproot
-
 slides: <https://prezi.com/view/AlXd19INd3isgt3SvW8g/>
 
 <https://twitter.com/kanzure/status/1208438837845929987>

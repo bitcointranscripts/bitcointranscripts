@@ -6,7 +6,7 @@ date: 2017-09-10
 speakers: ['Christopher Jeffrey']
 ---
 
- # Pitfalls of Consensus Implementation
+Pitfalls of Consensus Implementation
 
 Location: Breaking Bitcoin
 

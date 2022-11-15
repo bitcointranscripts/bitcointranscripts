@@ -6,8 +6,6 @@ tags: ['security', 'multisig']
 speakers: ['Andy Ofiesh']
 ---
 
-# Armory proof of payment
-
 I am going to talk about proof of payment. This is simple. You can do this. That you couldn't do before 2008. We'll see if this works. I hear it might work. That's okay, I'll pull this up here. I have ruined everything. Just jam that in there. Here we go.
 
 So uh, I said who I am. Bitcoin Armory. I am here to talk about proof of payment. Basically, let's talk about Armory first real quick. First released in 2011. Open-source Bitcoin security software. It's been featured on bitcoin.org for free. It's the original innovator of cold storage. You can install it on an offline computer. You can hold your credentials there to sign transactions. Use your online computer to know how much money you have. That's the gist of cold storage.

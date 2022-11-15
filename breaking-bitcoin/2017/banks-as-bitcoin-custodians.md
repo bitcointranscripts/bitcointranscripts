@@ -7,7 +7,7 @@ speakers: ['Giacomo Zucco']
 date: 2017-09-09
 ---
 
-# Traditional banks as bitcoin custodians: Security challenges and implications
+Traditional banks as bitcoin custodians: Security challenges and implications
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=4h8m>
 

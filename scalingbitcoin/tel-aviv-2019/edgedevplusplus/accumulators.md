@@ -6,8 +6,6 @@ tags: ['accumulators']
 speakers: ['Tadge Dryja']
 ---
 
-# Accumulators
-
 <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/>
 
 <https://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2019/utreexo/>

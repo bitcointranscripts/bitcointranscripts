@@ -7,7 +7,7 @@ speakers: ['Nadav Kohen']
 date: 2019-10-20
 ---
 
-# Replacing Payment Hashes with Payment Points
+Replacing Payment Hashes with Payment Points
 
 The Lightning Conference Day 2 (Stage 2)
 

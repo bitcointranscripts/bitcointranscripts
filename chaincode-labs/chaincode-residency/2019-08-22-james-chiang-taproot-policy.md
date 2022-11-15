@@ -7,8 +7,6 @@ speakers: ['James Chiang']
 date: 2019-08-22
 ---
 
-# Taproot and Policy
-
 Video: <https://www.youtube.com/watch?v=EdRm_mnoCWc>
 
 Slides: <https://residency.chaincode.com/presentations/Taproot_Policy.pdf>

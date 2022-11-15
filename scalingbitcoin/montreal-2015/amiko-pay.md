@@ -6,8 +6,6 @@ tags: ['security', 'lightning', 'routing']
 speakers: ['Come Plooy']
 ---
 
-# Amiko Pay
-
 Amiko Pay aims to become an implementation of the lightning network. So that previous presentation was a great setup. There's a little bit more to Amiko Pay. If you look through the basic design of the lightning network, there's a network of payment channels. There have been several variations of this idea. Lightning Network happens to be the best so far. What Amiko Pay aims to do is to focus on the nodes, and do the routing between nodes. The other big problem of Amiko Pay making the payment channels, for different types of channels you can make different plugins. This kind of design makes it possible to have different kinds of channel within the same network. This opens up a couple of possibilities.
 
 These channels can be different in technology, they can offer a different security/convenience tradeoff. They could actually be running on different blockchains. That would make that network useful for transfer of payments between sidechains. When they are sidechains, they are still trading BTC. But what about on different channels and sidechains you are trading different assets? Then the nodes become a mesh network of different assets and multiple channel types. For now, I am not going to implement that in Amiko Pay. This could give you decentralized exchanges in the future.

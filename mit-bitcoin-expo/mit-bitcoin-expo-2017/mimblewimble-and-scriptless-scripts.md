@@ -6,8 +6,6 @@ speakers: ['Andrew Poelstra']
 date: 2017-03-04
 ---
 
-# Mimblewimble and scriptless scripts
-
 video: <https://www.youtube.com/watch?v=0mVOq1jaR1U&t=39m8s>
 
 <https://twitter.com/kanzure/status/838480912396533760>

@@ -6,7 +6,7 @@ tags: ['privacy']
 speakers: ['Duc V. Le']
 ---
 
-# A tale of two trees: One writes, and other reads, scaling oblivious accesses to large-scale blockchains
+A tale of two trees: One writes, and other reads, scaling oblivious accesses to large-scale blockchains
 
 # Introduction
 

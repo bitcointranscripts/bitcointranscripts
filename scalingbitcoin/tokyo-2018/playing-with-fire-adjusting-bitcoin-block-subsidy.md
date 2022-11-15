@@ -6,10 +6,6 @@ tags: ['miners', 'fees']
 speakers: ['Anthony Towns']
 ---
 
-# Playing with fire: Adjusting bitcoin's block subsidy
-
-Name: Anthony Towns (ajtowns)
-
 slides: <https://github.com/ajtowns/sc-btc-2018>
 
 <https://twitter.com/kanzure/status/1048401029148991488>

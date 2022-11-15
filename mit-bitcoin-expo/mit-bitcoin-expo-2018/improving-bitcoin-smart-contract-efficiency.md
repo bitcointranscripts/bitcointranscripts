@@ -6,8 +6,6 @@ tags: ['taproot', 'smart contracts', 'lightning']
 speakers: ['Tadge Dryja']
 ---
 
-# Improving efficiency of smart contracts on the bitcoin network
-
 video: <https://www.youtube.com/watch?v=i-0NUqIVVV4&t=53m14s>
 
 <https://twitter.com/kanzure/status/980545280973201410>

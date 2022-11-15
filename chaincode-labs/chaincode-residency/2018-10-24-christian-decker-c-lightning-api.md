@@ -7,8 +7,6 @@ speakers: ['Christian Decker']
 date: 2018-10-24
 ---
 
-# Developing on c-lightning
-
 Location: Chaincode Labs Lightning Residency 2018
 
 Video: <https://www.youtube.com/watch?v=l8OLD7or0DA>

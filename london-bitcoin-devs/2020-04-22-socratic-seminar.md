@@ -6,8 +6,6 @@ date: 2020-04-22
 speakers: ['Kalle Rosenbaum']
 ---
 
-# Grokking Bitcoin 
-
 Name: Socratic Seminar
 
 Location: London BitDevs (online)

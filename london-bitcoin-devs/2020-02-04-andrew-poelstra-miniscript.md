@@ -7,7 +7,7 @@ speakers: ['Andrew Poelstra']
 date: 2020-02-04
 ---
 
-# Bitcoin Script to Miniscript
+Bitcoin Script to Miniscript
 
 London Bitcoin Devs
 

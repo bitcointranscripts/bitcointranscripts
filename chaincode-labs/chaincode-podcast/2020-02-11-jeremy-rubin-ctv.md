@@ -7,8 +7,6 @@ speakers: ['Jeremy Rubin']
 date: 2020-02-11
 ---
 
-# CHECKTEMPLATEVERIFY
-
 Location: Chaincode Labs Podcast
 
 Video: <https://www.youtube.com/watch?v=Lqcpk5o1Y2E>

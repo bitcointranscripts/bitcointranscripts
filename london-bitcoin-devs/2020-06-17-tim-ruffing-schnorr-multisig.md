@@ -7,7 +7,7 @@ date: 2020-06-17
 speakers: ['Tim Ruffing']
 ---
 
-# Taproot and Schnorr Multisignatures
+Taproot and Schnorr Multisignatures
 
 Location: London Bitcoin Devs (online)
 

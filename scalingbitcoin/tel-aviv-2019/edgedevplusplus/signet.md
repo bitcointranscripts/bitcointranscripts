@@ -5,8 +5,6 @@ categories: ['conference']
 speakers: ['Kalle Alm']
 ---
 
-# Signet
-
 kallewoof
 
 <https://twitter.com/kanzure/status/1171310731100381184>

@@ -7,8 +7,6 @@ speakers: ['Eric Voskuil', 'Nicolas Dorier', 'Kevin Loaec', 'Lawrence Nahum']
 date: 2018-07-03
 ---
 
-# Tooling
-
 Building on Bitcoin 2018
 
 <https://twitter.com/kanzure/status/1014167542422822913>

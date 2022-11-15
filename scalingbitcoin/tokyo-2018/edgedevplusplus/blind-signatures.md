@@ -6,10 +6,6 @@ speakers: ['Ethan Heilman']
 tags: ['signatures']
 ---
 
-# Blind signatures
-
-Ethan Heilman (ethan\_heilman) (Commonwealth Crypto)
-
 <https://twitter.com/kanzure/status/1047648050234060800>
 
 See also <http://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/blind-signatures-and-scriptless-scripts/>

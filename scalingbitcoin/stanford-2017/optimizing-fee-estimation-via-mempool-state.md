@@ -6,9 +6,6 @@ tags: ['mempool', 'fees']
 speakers: ['Karl-Johan Alm']
 ---
 
-# Optimizing fee estimation via the mempool state
-
-Name: Karl-Johan Alm (DG Lab)
 
 I am a Bitcoin Core developer and I work at DG Lab. Today I would like to talk about fees. There's this weird gap between-- there are two things going on. People complain about high fees. But people are confused about why Bitcoin Core is giving high fees but if you set fees manually you can get a much lower fee and get a transaction mined pretty fast. I started to look into this in detail and did simulations and a bunch of stuff.
 

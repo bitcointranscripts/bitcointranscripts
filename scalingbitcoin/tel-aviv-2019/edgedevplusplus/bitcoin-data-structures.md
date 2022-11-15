@@ -5,8 +5,6 @@ categories: ['conference']
 speakers: ['Jimmy Song']
 ---
 
-# Bitcoin data structures
-
 Bitcoin Edge Dev++ @ Tel Aviv University, September 9th 2019
 
 <https://twitter.com/kanzure/status/1170974373089632257>

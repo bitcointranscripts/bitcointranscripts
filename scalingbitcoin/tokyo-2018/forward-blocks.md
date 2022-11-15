@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Mark Friedenbach']
 ---
 
-# Forward blocks: On-chain settlement capacity increases without the hard-fork
+Forward blocks: On-chain settlement capacity increases without the hard-fork
 
 Mark Friedenbach (maaku)
 

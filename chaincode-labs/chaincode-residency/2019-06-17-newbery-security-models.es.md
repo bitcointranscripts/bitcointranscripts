@@ -8,8 +8,6 @@ categories: ['residency']
 date: 2019-06-17
 ---
 
-# Security Models
-
 Texto original: <https://btctranscripts.com/chaincode-labs/chaincode-residency/2019-06-17-john-newbery-security-models/>
 
 Transcripción de: Caralie Chrisco

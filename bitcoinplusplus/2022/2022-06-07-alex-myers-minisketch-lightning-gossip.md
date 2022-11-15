@@ -7,8 +7,6 @@ speakers: ['Alex Myers']
 date: 2022-06-07
 ---
 
-# Minisketch and Lightning gossip
-
 Location: Bitcoin++
 
 Video: <https://www.youtube.com/watch?v=e0u59hSsmio>

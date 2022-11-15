@@ -6,8 +6,6 @@ tags: ['smart contracts', 'ethereum']
 speakers: ['Andrew Miller', 'Elaine Shi']
 ---
 
-# Step by Step Towards Writing a Safe Contract: Insights from an Undergraduate Ethereum Lab
-
 Next up I want to introduce Elaine Shi and Andrew Miller from University of Maryland. Andrew is also on the zerocash team.
 
 Okay. I am an assistant professor at the University of Maryland. We all believe that cryptocurrency is the way of the future and smart contracts. So students in the future have to program smart contracts.

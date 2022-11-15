@@ -6,7 +6,7 @@ tags: ['fees', 'bitcoin core']
 date: 2022-10-11
 ---
 
-# Fee market
+Fee market
 
 There are two times we have had sustained fees: late 2017 and early 2021. In late 2017 we saw lots of things break because people hadn't written software to deal with variable fees or anything. I don't know if that was as big of a problem in 2021. I do worry that this will start to become a thing. If you have no variable fee market, and you can just throw in 1 sat/vbyte for several years then it will just work until it doesn't. So right now developers don't have to worry about it. It can be really complex with lightning and RBF (replace-by-fee). A lot of businesses don't track RBFs.
 

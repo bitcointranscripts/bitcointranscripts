@@ -7,7 +7,7 @@ speakers: ['Igor Korsakov']
 date: 2022-01-26
 --- 
 
-# Cool Lightning Network Developments
+Cool Lightning Network Developments
 
 Video: <https://www.youtube.com/watch?v=5pmfNOUQg_s?t=285>
 

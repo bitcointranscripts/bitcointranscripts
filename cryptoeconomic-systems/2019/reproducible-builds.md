@@ -6,7 +6,7 @@ tag: ['build systems']
 speakers: ['Carl Dong']
 ---
 
-# Reproducible builds, binaries and trust
+Reproducible builds, binaries and trust
 
 Carl Dong (Chaincode Labs)
 

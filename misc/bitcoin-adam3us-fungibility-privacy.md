@@ -5,8 +5,6 @@ speakers: ['Adam Back']
 tags: ['privacy', 'fungibility']
 ---
 
-# Fungibility and privacy
-
 <https://www.youtube.com/watch?v=3dAdI3Gzodo>
 
 First of all I was going to explain what we mean by fungibility before bitcoin and ecash. It's an old legal concept in fact, about paper currency. It's the idea that a one ten dollar note is the same as any other ten dollar note. If you receive a note that was involved in a theft, 10 transactions ago, and the police investigate the theft, they have no right to remove the ten dollar note from your pocket. It's not your fault that it was involved in a previous crime. And so bank notes actually have serial numbers, so it would be possible for a stolen note to be traced back to you.

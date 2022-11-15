@@ -6,7 +6,7 @@ tags: ['consensus']
 speakers: ['Patrick Murck', 'Gavin Andresen', 'Cory Fields']
 ---
 
-# R&D Goals & Challenges  
+R&D Goals & Challenges
 
 We often see people saying they are testing the waters, they fixed a typo, they made a tiny little fix that doesn't impact much, they are getting used to the process. They are finding that it's really easy to contribut to Bitcoin Core. You code your changes, you submit your changes, there's not much to it.
 

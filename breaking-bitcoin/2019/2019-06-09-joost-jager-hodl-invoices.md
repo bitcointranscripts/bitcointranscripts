@@ -1,5 +1,5 @@
 ---
-title: Joost Jager - HODL Invoices 
+title: HODL Invoices
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lnd', 'lightning']
@@ -7,7 +7,7 @@ speakers: ['Joost Jager']
 date: 2019-06-13
 ---
 
-# Hodl Invoices (Breaking Bitcoin training session)
+Hodl Invoices (Breaking Bitcoin training session)
 
 Video: <https://www.youtube.com/watch?v=jOEq9PvN-7A>
 

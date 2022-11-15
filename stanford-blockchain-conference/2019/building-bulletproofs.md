@@ -6,12 +6,6 @@ tags: ['zero-knowledge']
 speakers: ['Henry de Valence', 'Cathie Yun']
 ---
 
-# Building bulletproofs
-
-Henry de Valence, Cathie Yun
-
-Cathie Yun
-
 <https://twitter.com/kanzure/status/1090668746073563136>
 
 # Introduction

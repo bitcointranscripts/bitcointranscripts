@@ -6,10 +6,6 @@ tags: ['security', 'attacks', 'cryptography', 'wallet', 'hardware wallet']
 speakers: ['Charles Guillemet']
 ---
 
-# Extracting seeds from hardware wallets
-
-Charles Guillemet (P3b7\_)
-
 7DC5A359D0D5B5AB6728...
 
 <https://twitter.com/kanzure/status/1137672946435198976>
@@ -36,7 +32,7 @@ Meanwhile, we received our Ellipal and we played with it, and found some hidden 
 
 We probed the UART interface which we noticed was present. We probed the two wires. When the device boots, there's a lot of stuff that goes to this wire and givces interesting information on what's inside. We also played with the transmission wire and we sent a FACTFACT on the tx wire which is about factory mode. Then the device went into factory mode and we were able to get wifi and connect to our network. We were able to check and see that wifi was still activated.
 
-What about the usb? It is not physically connected. But there's pin points on the PCB so we just had to solder the USB data to the pinpoints. Then I used mediatek_flash_tool after connecting the USB port to our computer. We used the mediatek bootloader and we were able to use the mediatek bootloader. We had full access to the flash memory, and the filesystem was not encrypted. We were able to enable non-root ADB, install third-party APKs, you're root on an android system. It is possible to backdoor the wallet, reactivate wifi, everything is possible.
+What about the usb? It is not physically connected. But there's pin points on the PCB so we just had to solder the USB data to the pinpoints. Then I used mediatek\_flash\_tool after connecting the USB port to our computer. We used the mediatek bootloader and we were able to use the mediatek bootloader. We had full access to the flash memory, and the filesystem was not encrypted. We were able to enable non-root ADB, install third-party APKs, you're root on an android system. It is possible to backdoor the wallet, reactivate wifi, everything is possible.
 
 We got a dump of the wallet application and began the reverse engineering process. We retrieved the firmware signature public key, and the firmware encryption key (3-DES) that we had tried to bruteforce. The bruteforce had not succeeded because it was 3-DES... we also retrieved the encrypted wallet.
 

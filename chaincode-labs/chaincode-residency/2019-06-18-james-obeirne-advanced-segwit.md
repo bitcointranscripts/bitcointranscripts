@@ -7,8 +7,6 @@ speakers: ["James O'Beirne"]
 date: 2019-06-18
 ---
 
-# Advanced SegWit  
-
 Location: Chaincode Labs 2019 Residency  
 
 Video: <https://youtu.be/JgNgnwF9hfY>  

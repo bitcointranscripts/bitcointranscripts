@@ -7,7 +7,7 @@ speakers: ['Adam Back', 'Greg Maxwell']
 date: 2015-02-03
 ---
 
-# EB65 – Adam Back & Greg Maxwell: Sidechains Unchained
+EB65 – Adam Back & Greg Maxwell: Sidechains Unchained
 
 Video: <https://www.youtube.com/watch?v=jE_elgnIw3M>
 

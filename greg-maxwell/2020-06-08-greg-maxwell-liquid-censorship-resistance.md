@@ -1,11 +1,9 @@
 ---
-title: Liquid Censorship Resistance 
+title: Liquid Censorship Resistance
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 date: 2020-06-08
 ---
-
-# Is Liquid censorship resistant?
 
 Location: Reddit
 

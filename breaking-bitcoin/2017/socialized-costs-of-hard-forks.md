@@ -7,8 +7,6 @@ speakers: ['Jimmy Song']
 date: 2017-09-09
 ---
 
-# Socialized costs of hard-forks
-
 <https://twitter.com/kanzure/status/1005518746260262912>
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s>

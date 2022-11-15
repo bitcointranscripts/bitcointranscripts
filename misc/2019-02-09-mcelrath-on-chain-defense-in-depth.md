@@ -6,7 +6,7 @@ speakers: ['Bob McElrath']
 date: 2019-02-09
 ---
 
-# On-chain defense in depth (UCL CBT seminar)
+On-chain defense in depth (UCL CBT seminar)
 
 video: <https://vimeo.com/316301424>
 

@@ -6,7 +6,7 @@ tags: ['ux']
 speakers: ['Warren Togami']
 ---
 
-# Five insights into the defense of bitcoin
+Five insights into the defense of bitcoin
 
 <https://twitter.com/kanzure/status/1137389045355614208>
 

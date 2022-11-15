@@ -6,8 +6,6 @@ tags: ['privacy']
 date: 2020-06-23
 ---
 
-# CoinSwap
-
 Location: London BitDevs (online)
 
 Date: June 23rd 2020

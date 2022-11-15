@@ -8,7 +8,7 @@ date: 2020-05-09
 ---
 
 
-# Quantitative Analysis of Lightning Network Privacy
+Quantitative Analysis of Lightning Network Privacy
 
 Location: Lightning Hacksprint (Fulmo)
 

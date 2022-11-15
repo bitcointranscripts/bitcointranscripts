@@ -6,8 +6,6 @@ tags: ['miners']
 speakers: ['Bob McElrath']
 ---
 
-# Braiding the blockchain
-
 Bob McElrath (bsm117532)
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/2_breaking_the_chain_1_mcelrath.pdf>

@@ -7,8 +7,6 @@ speakers: ['Andrew Poelstra']
 date: 2018-02-02
 ---
 
-# Bulletproofs
-
 49th Milan Bitcoin meetup
 
 video: <https://www.pscp.tv/w/1mnxerNaNkLKX>

@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Mark Friedenbach']
 ---
 
-# Fast difficulty adjustment using a low-pass finite impulse response filter
+Fast difficulty adjustment using a low-pass finite impulse response filter
 
 <https://twitter.com/kanzure/status/785107422323085312>
 

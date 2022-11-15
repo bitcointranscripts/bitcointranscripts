@@ -6,8 +6,6 @@ tags: ['privacy', 'fungibility', 'lightning', 'routing']
 speakers: ['Olaoluwa Osuntokun']
 ---
 
-# Onion routing in lightning network
-
 <http://lightning.network/>
 
 <https://twitter.com/kanzure/status/784742298089299969>

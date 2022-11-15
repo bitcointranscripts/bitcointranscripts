@@ -7,8 +7,6 @@ speakers: ['Alekos Filini']
 date: 2020-05-21
 ---
 
-# Magical Bitcoin
-
 Location: LA BitDevs (online)
 
 Magical Bitcoin site: https://magicalbitcoin.org/

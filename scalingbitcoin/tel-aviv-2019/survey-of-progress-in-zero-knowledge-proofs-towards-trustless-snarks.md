@@ -6,8 +6,6 @@ tags: ['zero-knowledge']
 speakers: ['Ben Fisch']
 ---
 
-# Survey of progress in succinct zero-knowledge proofs: towards trustless SNARKs
-
 Ben Fisch (Stanford University) (benafisch)
 
 <https://twitter.com/kanzure/status/1171683484382957568>

@@ -7,7 +7,7 @@ speakers: ['Olaoluwa Osuntokun']
 date: 2017-06-06
 ---
 
-# Neutrino: The Privacy Preserving Bitcoin Light Client
+Neutrino: The Privacy Preserving Bitcoin Light Client
 
 Video: <https://www.youtube.com/watch?v=7FWKc8lM4Ek>
 

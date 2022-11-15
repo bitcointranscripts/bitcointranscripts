@@ -6,8 +6,6 @@ categories: ['conference']
 tags: ['bitcoin core']
 ---
 
-# Bitcoin Core architecture overview
-
 <https://twitter.com/kanzure/status/1048098034234445824>
 
 slides: <http://jameso.be/dev++2018/>

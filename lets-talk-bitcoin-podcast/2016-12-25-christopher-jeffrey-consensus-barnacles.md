@@ -7,8 +7,6 @@ date: 2016-12-25
 speakers: ['Christopher Jeffrey']
 ---
 
-# Barnacles of Consensus
-
 Location: Let’s Talk Bitcoin podcast (Episode 319)
 
 Audio: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-319-barnacles-of-consensus

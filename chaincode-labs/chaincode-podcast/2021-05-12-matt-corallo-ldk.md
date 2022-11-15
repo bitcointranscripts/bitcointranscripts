@@ -7,8 +7,6 @@ speakers: ['Matt Corallo']
 date: 2021-05-12
 ---
 
-# Lightning Development Kit (LDK)
-
 Location: Chaincode Labs Podcast (Episode 13)
 
 Audio: <https://podcast.chaincode.com/2021/05/12/matt-corallo-13.html>

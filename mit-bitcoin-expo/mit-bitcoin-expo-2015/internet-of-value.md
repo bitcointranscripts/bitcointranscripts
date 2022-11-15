@@ -5,8 +5,6 @@ categories: ['conference']
 speakers: ['Jeremy Allaire']
 ---
 
-# Internet Of Value
-
 What are the lessons from the development of the internet that we can learn from? Why is there an inevitability as to what Bitcoin is doing?
 
 At a high level, I like to explain that we are experiencing a fundamental transformation in how the world economy stores and verifies value. Bitcoin and these other projects that are being built are part of that arc. We have talked not just about payments. It's about how ownership and fidicuiary trust in general can be managed. And development of standards of how entities interact in this digitzed world of fidicuiary trust.

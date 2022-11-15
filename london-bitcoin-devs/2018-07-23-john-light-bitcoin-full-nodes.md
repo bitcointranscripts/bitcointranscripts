@@ -7,8 +7,6 @@ date: 2018-07-23
 speakers: ['John Light']
 ---
 
-# Bitcoin Full Nodes
-
 Location: London Bitcoin Devs
 
 Video: https://www.youtube.com/watch?v=qzbdNefsA-0

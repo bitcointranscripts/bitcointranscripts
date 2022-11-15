@@ -6,8 +6,6 @@ tags: ['security', 'mining', 'incentives', 'fees']
 speakers: ['Jonathan Bier']
 ---
 
-# Why Miners Will Not Voluntarily Individually Produce Smaller Blocks
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/2_security_and_incentives_3_bier.pdf>
 
 video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h30s>

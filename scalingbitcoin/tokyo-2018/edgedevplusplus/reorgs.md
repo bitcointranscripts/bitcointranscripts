@@ -6,8 +6,6 @@ tags: ['forks']
 speakers: ['Bryan Bishop']
 ---
 
-# Handling Reorgs & Forks
-
 <https://twitter.com/kanzure/status/1052344700554960896>
 
 Dev++ / BC2 - October 4th-5th  2018 - Keio University, Tokyo, Japan <https://bitcoinedge.org/event/keio-devplusplus-2018>

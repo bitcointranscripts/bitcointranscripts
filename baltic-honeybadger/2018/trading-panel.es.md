@@ -6,8 +6,6 @@ categories: ['conferencia']
 speakers: ['Florian Maier', 'Whalepanda', 'Tone Vays', 'Matthew Mezinskis']
 ---
 
-# Panel de negociación
-
 MM: Como dice Trace Mayer, es perseguir al conejo. ¿Por qué no nos presentamos? 
 
 TV: Mi nombre es Tone Vays. Vengo del entorno comercial tradicional de Wall Street. Me uní al espacio de las criptomonedas en 2013. Hablé en mi primera conferencia y escribí mi primer artículo en el primer trimestre de 2014. Estaba haciendo algo de trading. Con la popularidad del canal de youtube y de ir a conferencias, volví a operar con opciones en los mercados tradicionales. Volveré a operar con cripto pronto, pero tengo mucha experiencia.

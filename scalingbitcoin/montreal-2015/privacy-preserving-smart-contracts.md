@@ -6,7 +6,6 @@ tags: ['privacy', 'smart contracts', 'miners']
 speakers: ['Ranjit Kumaresan']
 ---
 
-# Privacy Preserving Smart Contracts
 
 <ranjit@csail.mit.edu>
 

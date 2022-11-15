@@ -7,7 +7,7 @@ speakers: ['Antoine Riard']
 date: 2019-10-20
 ---
 
-# Deploying rust-lightning in the wild
+Deploying rust-lightning in the wild
 
 The Lightning Conference Day 2 (Stage 2)
 

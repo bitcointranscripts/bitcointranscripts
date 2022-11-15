@@ -7,7 +7,7 @@ speakers: ['Tadge Dryja']
 date: 2018-10-08
 ---
 
-# UTXO accumulators, UTXO commitments, and utreexo
+UTXO accumulators, UTXO commitments, and utreexo
 
 <https://twitter.com/kanzure/status/1049112390413897728>
 

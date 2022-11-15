@@ -1,14 +1,10 @@
 ---
-title: Ethereum2
+title: Ethereum 2.0 and beyond
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'research', 'proof-of-work', 'proof-of-stake', 'ethereum']
 speakers: ['Vitalik Buterin']
 ---
-
-# Ethereum 2.0 and beyond
-
-Vitalik Buterin
 
 Please welcome Vitalik who needs no introduction.
 

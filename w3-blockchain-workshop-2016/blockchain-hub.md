@@ -6,8 +6,6 @@ tags: ['consensus']
 speakers: ['Kenji Saito']
 ---
 
-# Blockchain Hub
-
 My understanding is that there is application logic, consensus mechanism, distributed timestamp and ledger structure. With these layers, the blockchain can give total control of assets to the end. This materializes the attitude and philosophy of the internet. The intention is I think great. There is a missing link, though. It would be nice if these blockchain could manage the digital representational of physical assets.
 
 I have been working with real estate escrow company in Japan to work on the proof-of-concept service of the real estate trading based on blockchain. Trusted mapping between digital assets and their represented entities. In any web page, we can have a system of trusted management of the elements and the history and the identities and so on. We can have trusted web elements representing physical entities. Trusted web elements backed by assets on blockchains.

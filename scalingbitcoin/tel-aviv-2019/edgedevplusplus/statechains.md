@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Ruben Somsen']
 ---
 
-# Schnorr signatures, adaptor signatures and statechains
+Schnorr signatures, adaptor signatures and statechains
 
 <https://twitter.com/kanzure/status/1171345418237685760>
 

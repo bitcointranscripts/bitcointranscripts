@@ -6,7 +6,7 @@ date: 2017-10-11
 speakers: ['Kostya Serebryany']
 ---
 
-# Fuzz or lose! Why and how to make fuzzing a standard practice for C++
+Fuzz or lose! Why and how to make fuzzing a standard practice for C++
 
 Location: CppCon 2017
 

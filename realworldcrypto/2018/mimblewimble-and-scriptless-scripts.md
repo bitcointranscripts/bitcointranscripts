@@ -7,8 +7,6 @@ speakers: ['Andrew Poelstra']
 date: 2018-01-11
 ---
 
-# Mimblewimble and scriptless scripts
-
 Name: Andrew Poelstra (Blockstream)
 
 video: <https://www.youtube.com/watch?v=ovCBT1gyk9c>

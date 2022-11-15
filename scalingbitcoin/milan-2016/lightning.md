@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['privacy', 'scalability']
 ---
 
-# Lightning work group session
+Lightning work group session
 
 <https://twitter.com/kanzure/status/784783992478466049>
 

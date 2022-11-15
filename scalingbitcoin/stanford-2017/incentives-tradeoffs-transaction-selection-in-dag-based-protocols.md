@@ -6,8 +6,6 @@ tags: ['lightning', 'layer 2']
 speakers: ['Yonatan Sompolinsky']
 ---
 
-# Incentives and Trade-offs in Transaction Selection in DAG-based Protocols
-
 Yonatan Sompolinsky (The Hebrew University)
 
 Commercial effort to implement DAG-based protocols. No ICO, it's a regular company.

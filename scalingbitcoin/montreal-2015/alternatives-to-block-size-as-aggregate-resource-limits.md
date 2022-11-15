@@ -5,8 +5,6 @@ categories: ['conference']
 tags: ['validation']
 ---
 
-# Alternatives To Block Size As Aggregate Resource Limits
-
 maaku
 
 I am talking about block size, but not any particular proposal. Why do we have the block size limit and is it a good thing in the first place? The block size exists as a denial-of-service limiter. It limits the amount of resources that a node validating the blockchain can exhaust when validating a block. We want to do this because in the early days of bitcoin there are often certain kinds of transactions there are ways to slow down a validator by using a non-standard transaction or filling up a block with tons of spam. As we have seen in the talks today and yesterday, if you can increase the validation cost of a node, there are great centralizing pressure from being able to deny service to the network in this way.

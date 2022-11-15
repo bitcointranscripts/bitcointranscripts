@@ -1,5 +1,5 @@
 ---
-title: Taproot Activation with Speedy Trial 
+title: Taproot Activation with Speedy Trial
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot']
@@ -7,8 +7,6 @@ speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-03-12
 ---
 
-
-# Taproot Activation with Speedy Trial
 
 Location: Bitcoin Magazine (online)
 

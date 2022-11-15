@@ -6,8 +6,6 @@ tags: ['security', 'research', 'attacks', 'mining']
 speakers: ['Alexei Zamyatin']
 ---
 
-# Security and attacks on decentralized mining pools
-
 <https://twitter.com/kanzure/status/1137373752038240262>
 
 # Introduction

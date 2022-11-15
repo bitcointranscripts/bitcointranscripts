@@ -6,7 +6,7 @@ tags: ['security', 'privacy', 'lightning']
 speakers: ['Giulio Malavolta', 'Pedro Moreno-Sanchez', 'Matteo Maffei']
 ---
 
-# Multi-hop locks for secure, privacy-preserving and interoperable payment-channel networks
+Multi-hop locks for secure, privacy-preserving and interoperable payment-channel networks
 
 Giulio Malavolta (Friedrich-Alexander-University Erlangen-Nuernberg), Pedro Moreno-Sanchez (Purdue University), Clara Schneidewind (Vienna University of Technology), Aniket Kate (Purdue University) and Matteo Maffei (Vienna University of Technology)
 

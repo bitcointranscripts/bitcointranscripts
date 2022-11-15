@@ -7,8 +7,6 @@ speakers: ['Rene Pickhardt']
 date: 2019-06-26
 ---
 
-# Path Finding in the Lightning Network
-
 Location: Chaincode Residency 2019
 
 Video: <https://www.youtube.com/watch?v=NT_dMqB1xuA>

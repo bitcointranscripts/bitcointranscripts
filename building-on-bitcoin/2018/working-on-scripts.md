@@ -7,7 +7,7 @@ speakers: ['Thomas Kerin']
 date: 2018-07-03
 ---
 
-# Working on scripts with logical opcodes
+Working on scripts with logical opcodes
 
 Building on Bitcoin 2018
 

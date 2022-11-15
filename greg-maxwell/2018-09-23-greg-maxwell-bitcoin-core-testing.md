@@ -7,8 +7,6 @@ speakers: ['Greg Maxwell']
 date: 2018-09-23
 ---
 
-# Bitcoin Core testing
-
 Location: Bitcointalk
 
 https://bitcointalk.org/index.php?topic=5035144.msg46080218#msg46080218

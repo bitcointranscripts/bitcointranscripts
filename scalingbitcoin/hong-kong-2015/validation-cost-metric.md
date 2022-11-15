@@ -6,8 +6,6 @@ tags: ['research', 'scalability']
 speakers: ['Jonas Nick']
 ---
 
-# Validation Cost Metric
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_3_nick.pdf>
 
 video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h52m35s>

@@ -7,8 +7,6 @@ speakers: ['Sjors Provoost', 'Jonas Schnelli', 'Andrew Chow']
 date:  2019-06-07
 ---
 
-# Hardware wallets
-
 <https://twitter.com/kanzure/status/1136924010955104257>
 
 How much should Bitcoin Core do, and how much should other libraries do? Andrew Chow wrote the wonderful HWI tool. Right now we have a pull request to support external signers. The HWI script can talk to most major hardware wallets because it has all the drivers built in now, and it can get keys from it, and sign arbitrary transactions. That's roughly what it does. It's kind of manual, though. You have to enter some python commands; call some Bitcoin Core RPC to get the result back in; so I wrote some convenience RPC methods for Bitcoin Core that lets you do the same things with fewer commands. So now you can do enumeratesigners and bitcoin-cli fetchkeys and it will do all the dance to get all the keys off the device and put them on the wallet. The public keys, not the private keys. Yes, the private keys would be bitcoin-cli footgun. Then there's a command to display address. Any address you want, then that RPC method would look in the wallet, find the actual address, get the keys out, tell the signer, get the derivation path so you don't need to manually find out the derivation path. Also there's signtransaction which does all the magic of composing a-- it's essentially the same as sendmany or createpsbt. You give it a bunch of destination addresses; it will create a PSBT, send to the device, wait for the device to sign it, and then broadcast it.

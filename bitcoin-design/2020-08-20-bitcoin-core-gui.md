@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core Gui 
+title: Bitcoin Core Gui
 transcript_by: Michael Folkson
 tag: ['bitcoin-design']
 date: 2020-08-20

@@ -6,8 +6,6 @@ tags: ['build systems', 'testing']
 speakers: ['Marco Falke']
 ---
 
-# Bitcoin toolchain, unit testing & deterministic builds
-
 Video: https://www.youtube.com/watch?v=ZJ2t84trKVo
 
 <https://twitter.com/kanzure/status/1048103693885759489>

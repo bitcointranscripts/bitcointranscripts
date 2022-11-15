@@ -7,7 +7,7 @@ speakers: ['Rusty Russell']
 date: 2019-04-06
 ---
 
-# JSON Interface with c-lightning and Writing Extensions
+JSON Interface with c-lightning and Writing Extensions
 
 video: <https://www.youtube.com/watch?v=sNB1N7FyMHA>
 

@@ -6,8 +6,6 @@ tags: ['consensus', 'smart contracts']
 speakers: ['Prastudy Fauzi']
 ---
 
-# Quisquis: A new design for anonymous cryptocurrencies
-
 <https://twitter.com/kanzure/status/1090677466216128512>
 
 <https://eprint.iacr.org/2018/990>

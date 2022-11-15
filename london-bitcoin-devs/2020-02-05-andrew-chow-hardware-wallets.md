@@ -7,7 +7,7 @@ speakers: ['Andrew Chow']
 date: 2020-02-05
 ---
 
-# Hardware Wallets in Bitcoin Core
+Hardware Wallets in Bitcoin Core
 
 London Bitcoin Devs
 

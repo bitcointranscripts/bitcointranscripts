@@ -5,7 +5,6 @@ categories: ['conference']
 speakers: ['Rusty Russell']
 tags: ['block propagation']
 ---
-# Bitcoin Block Propagation Iblt Rusty Russell
 
 This is not what I do. But I was doing it anyway.
 

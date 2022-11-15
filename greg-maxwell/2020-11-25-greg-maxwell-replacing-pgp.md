@@ -1,11 +1,9 @@
 ---
-title: Replacing PGP 
+title: Replacing PGP with Bitcoin public key infrastructure
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 date: 2020-11-25
 ---
-
-# Replacing PGP with Bitcoin public key infrastructure
 
 Location: Reddit
 

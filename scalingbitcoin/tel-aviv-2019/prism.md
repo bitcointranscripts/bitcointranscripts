@@ -6,7 +6,7 @@ tags: ['consensus', 'security']
 speakers: ['Vivek Bagaria']
 ---
 
-# Prism: Scaling bitcoin to physical limits
+Prism: Scaling bitcoin to physical limits
 
 # Introduction
 

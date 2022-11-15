@@ -6,8 +6,6 @@ tags: ['privacy', 'lightning', 'routing', 'wallet']
 speakers: ['Antoine Riard']
 ---
 
-# Lightning network: Sphinx and onion routing
-
 # Introduction
 
 Hi everyone. I am a developer of rust-lightning, it started in 2018 by BlueMatt. I started contributing about a year ago now. It's a full featured, flexible, spec-compliant lightning library. It targets exchanges, wallet vendors, hardware, meshnet devices, and you can join us on Freenode IRC in the #rust-bitcoin channel which is a really nice one.

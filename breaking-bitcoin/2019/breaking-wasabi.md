@@ -6,7 +6,7 @@ tags: ['privacy', 'wallet']
 speakers: ['Udi Wertheimer']
 ---
 
-# Breaking wasabi and automated wallets
+Breaking wasabi and automated wallets
 
 1127 96A8 DFCA 1A96 C8B8 0094 9211 687A D298 9B12
 

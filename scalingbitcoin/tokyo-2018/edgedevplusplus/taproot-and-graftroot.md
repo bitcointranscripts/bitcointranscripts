@@ -6,8 +6,6 @@ tags: ['privacy', 'fungibility', 'taproot']
 speakers: ['Greg Sanders']
 ---
 
-# Taproot and graftroot
-
 <https://twitter.com/kanzure/status/1047764770265284608>
 
 # Introduction

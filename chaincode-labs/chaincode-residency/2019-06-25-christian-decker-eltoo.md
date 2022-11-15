@@ -7,7 +7,7 @@ speakers: ['Christian Decker']
 date: 2019-06-25
 ---
 
-# Eltoo: The (Far) Future of Lightning
+Eltoo: The (Far) Future of Lightning
 
 Location: Chaincode Labs
 

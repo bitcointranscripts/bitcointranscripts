@@ -6,8 +6,6 @@ tags: ['hardware wallet', 'wallet']
 speakers: ['Stepan Snigirev']
 ---
 
-# Hardware wallet design: issues and best practices
-
 <https://twitter.com/kanzure/status/1171322716303036417>
 
 # Introduction

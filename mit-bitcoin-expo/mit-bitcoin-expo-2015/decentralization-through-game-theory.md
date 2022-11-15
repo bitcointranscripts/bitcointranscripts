@@ -6,7 +6,6 @@ tags: ['mining']
 speakers: ['Andreas Antonopoulos']
 ---
 
-#  Decentralization Through Game Theory
 
 Thank you Charlie, let's have another round of applause. Up next, we have Andreas Antonopoulos.
 

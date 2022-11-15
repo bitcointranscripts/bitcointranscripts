@@ -6,7 +6,7 @@ speakers: ['Byron Gibson']
 date: 2020-02-18
 ---
 
-# Overview of risk in decentralized financial systems
+Overview of risk in decentralized financial systems
 
 <https://twitter.com/kanzure/status/1229878346709782528>
 

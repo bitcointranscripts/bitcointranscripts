@@ -1,5 +1,5 @@
 ---
-title: LTB
+title: The Tools and The Work
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'schnorr']

@@ -7,8 +7,6 @@ speakers: ['Olaoluwa Osuntokun', 'Conner Fromknecht']
 date: 2018-04-20
 ---
 
-# Exploring lnd 0.4-beta
-
 Video: https://www.youtube.com/watch?v=LXY0L8eeG3k
 
 Slides: https://docs.google.com/presentation/d/1pyQgGDUcB29r8DnTaS0GQS6usjw4CpgciQx_-XBVOwU/

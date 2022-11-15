@@ -7,8 +7,6 @@ speakers: ['Dan Boneh']
 date: 2019-02-03
 ---
 
-# Verifiable delay functions
-
 video: <https://www.youtube.com/watch?v=dN-1q8c50q0>
 
 <https://twitter.com/kanzure/status/1152586087912673280>

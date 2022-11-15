@@ -6,7 +6,7 @@ tags: ['privacy']
 speakers: ['Kalle Rosenbaum', 'Rusty Russell']
 ---
 
-# IBLT and weak block propagation performance
+IBLT and weak block propagation performance
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/3_block_propagation_1_rosenbaum.pdf>
 

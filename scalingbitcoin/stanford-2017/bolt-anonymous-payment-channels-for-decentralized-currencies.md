@@ -6,8 +6,6 @@ tags: ['privacy']
 speakers: ['Ian Miers']
 ---
 
-# Bolt: Anonymous Payment Channels for Decentralized Currencies
-
 paper: <https://eprint.iacr.org/2016/701.pdf>
 
 To make questions easier, we are going to have a mic on the isle. Please line up so that we can have questions quickly. Okay, now we have Ian Miers.

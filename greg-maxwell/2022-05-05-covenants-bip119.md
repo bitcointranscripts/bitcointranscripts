@@ -3,10 +3,8 @@ title: Covenants and BIP119
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['covenants']
-date: 2022–05-05
+date: 2022-05-05
 ---
-
-# Covenants and BIP119
 
 Location: Reddit
 

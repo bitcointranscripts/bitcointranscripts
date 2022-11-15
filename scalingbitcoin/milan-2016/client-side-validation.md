@@ -6,7 +6,7 @@ tags: ['consensus', 'validation']
 speakers: ['Peter Todd']
 ---
 
-# Progress on scaling via client-side validation
+Progress on scaling via client-side validation
 
 <https://twitter.com/kanzure/status/785121442602029056>
 

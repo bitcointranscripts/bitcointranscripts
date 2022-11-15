@@ -6,7 +6,6 @@ tags: ['mining']
 speakers: ['David Vorick']
 ---
 
-# Trust And Blockchain Marketplaces
 # Introduction
 
 I founded Sia, a decentralized storage platform started in 2014. Today, Sia is the only decentralized storage platform out there. I also founded Obelisk which is a mining equipment manufacturing company.

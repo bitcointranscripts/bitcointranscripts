@@ -6,8 +6,6 @@ tags: ['consensus']
 speakers: ['Luke Dashjr']
 ---
 
-# Abstract thinking about consensus systems
-
 <https://twitter.com/kanzure/status/1048039485550690304>
 
 slides: <https://drive.google.com/file/d/1LiGzgFXMI2zq8o9skErLcO3ET2YeQbyx/view?usp=sharing>

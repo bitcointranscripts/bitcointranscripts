@@ -5,7 +5,6 @@ categories: ['conference']
 tags: ['wallet', 'fees']
 speakers: ['Bram Cohen']
 ---
-# Transaction fee estimation
 
 How wallets can handle real transaction fees
 

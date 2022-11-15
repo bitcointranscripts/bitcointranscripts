@@ -7,7 +7,7 @@ speakers: ['Carl Dong']
 date: 2018-06-08
 ---
 
-# Bitcoin build systems and bitcoin build system security
+Bitcoin build systems and bitcoin build system security
 
 Carl Dong, Chaincode Labs
 

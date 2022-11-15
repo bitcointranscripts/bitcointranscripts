@@ -6,9 +6,6 @@ tags: ['privacy']
 date: 2017-04-28
 ---
 
-# Confidential transactions
-
-
 <https://twitter.com/kanzure/status/859604355917414400>
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU>

@@ -5,8 +5,6 @@ transcript_by: Bryan Bishop
 date: 2017-08-28
 ---
 
-# A deep dive into Bitcoin Core v0.15
-
 video: <https://www.youtube.com/watch?v=nSRoEeqYtJA>
 
 slides: <https://people.xiph.org/~greg/gmaxwell-sf-015-2017.pdf>

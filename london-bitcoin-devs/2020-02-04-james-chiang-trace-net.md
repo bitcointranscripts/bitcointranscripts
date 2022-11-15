@@ -6,7 +6,7 @@ speakers: ['James Chiang']
 date: 2020-02-04
 ---
 
-# Bitcoin Trace-Net
+Bitcoin Trace-Net
 
 Location: London Bitcoin Devs
 

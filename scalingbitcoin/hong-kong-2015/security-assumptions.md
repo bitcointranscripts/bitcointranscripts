@@ -6,8 +6,6 @@ tags: ['security', 'research', 'cryptography']
 speakers: ['Andrew Poelstra']
 ---
 
-# Security Assumptions
-
 video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=9m20s>
 
 Hi, welcome back.

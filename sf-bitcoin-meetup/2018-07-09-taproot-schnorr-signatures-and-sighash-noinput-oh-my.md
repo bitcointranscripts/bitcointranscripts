@@ -7,8 +7,6 @@ speakers: ['Pieter Wuille']
 date: 2018-07-09
 ---
 
-# Taproot, Schnorr signatures, and SIGHASH\_NOINPUT, oh my!
-
 <https://twitter.com/kanzure/status/1021880538020368385>
 
 video: <https://www.youtube.com/watch?v=YSUVRj8iznU>
