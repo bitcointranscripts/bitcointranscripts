@@ -2,11 +2,10 @@
 title: Digital Signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['John Newbery']
 ---
 
 Finite fields, elliptic curves, ECDSA and Schnorr signatures
-
-John Newbery (jnewbery)
 
 Digital signatures
 

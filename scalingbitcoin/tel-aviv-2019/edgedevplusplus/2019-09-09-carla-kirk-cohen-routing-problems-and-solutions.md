@@ -1,20 +1,18 @@
 ---
-title: Carla Kirk-Cohen - Routing Problems and Solutions
+title: Routing Problems and Solutions
 transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['lightning', 'routing']
+speakers: ['Carla Kirk-Cohen']
+date: 2019-09-09
 ---
 
-Name: Carla Kirk-Cohen
 
 Topic: Routing Problems and Solutions
-
-Date: 2019-09-09
 
 Location: Tel-Aviv 2019
 
 Video: <https://youtu.be/1O-bhcbh9vE>
-
 
 ## Introduction
 

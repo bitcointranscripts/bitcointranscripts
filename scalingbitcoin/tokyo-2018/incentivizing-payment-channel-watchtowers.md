@@ -3,6 +3,7 @@ title: Incentivizing Payment Channel Watchtowers
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['eltoo', 'lightning']
+speakers: ['Zeta Avarikioti']
 ---
 
 Incentivizing payment channel watchtowers

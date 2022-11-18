@@ -1,8 +1,9 @@
 ---
-title: Pindar Wong
+title: What Internet governance can learn from Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks', 'miners']
+speakers: ['Pindar Wong']
 ---
 
 Pindar Wong

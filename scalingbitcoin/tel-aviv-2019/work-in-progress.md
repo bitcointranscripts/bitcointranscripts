@@ -3,9 +3,8 @@ title: Work In Progress
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['proof-of-work']
+speakers: ['Mikael Dubrovsky']
 ---
-
-Work in progress sessions
 
 Scaling Bitcoin 2019 Tel Aviv "yesod"
 

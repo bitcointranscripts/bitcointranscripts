@@ -1,11 +1,11 @@
 ---
-title: Christian Decker - Onion Routing Deep Dive (2019-06-25)
+title: Onion Routing Deep Dive 
 transcript_by: Arik Sosman 
 tags: ['lightning', 'sphinx', 'onion', 'routing']
 categories: ['residency']
+speakers: ['Christian Decker']
+date: 2019-06-25
 ---
-
-Name: Dr. Christian Decker
 
 Location: Chaincode Residency – Summer 2019
 

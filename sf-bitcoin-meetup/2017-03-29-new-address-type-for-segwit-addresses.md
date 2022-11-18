@@ -1,17 +1,15 @@
 ---
-title: New Address Type For Segwit Addresses (2017-03-29)
+title: New Address Type For Segwit Addresses 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['bech32', 'ux']
+date: 2017-03-29
+speakers: ['Pieter Wuille']
 ---
-
-Name: Pieter Wuille
 
 Topic: Bech32 addresses for Bitcoin
 
 Location: SF Bitcoin Devs
-
-Date: March 27th 2017
 
 Video: <https://www.youtube.com/watch?v=NqiN9VFE4CU>
 

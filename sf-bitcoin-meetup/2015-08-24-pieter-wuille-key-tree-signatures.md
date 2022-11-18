@@ -1,17 +1,15 @@
 ---
-title: Pieter Wuille - Key Tree Signatures (2015-08-24)
+title: Key Tree Signatures 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['multisig']
+date: 2015-08-24
+speakers: ['Pieter Wuille']
 ---
-
-Name: Pieter Wuille
 
 Topic: Key Tree Signatures
 
 Location: SF Bitcoin Devs
-
-Date: August 24th 2015
 
 Video: <https://www.youtube.com/watch?v=gcQLWeFmpYg>
 

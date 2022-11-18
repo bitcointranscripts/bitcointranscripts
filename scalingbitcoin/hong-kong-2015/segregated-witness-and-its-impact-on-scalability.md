@@ -3,9 +3,8 @@ title: Segregated Witness And Its Impact On Scalability
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['segregated witness', 'segwit']
+speakers: ['Pieter Wuille']
 ---
-
-Pieter Wuille (sipa)
 
 video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=36m>
 

@@ -2,11 +2,9 @@
 title: Sidechains
 transcript_by: Bryan Bishop
 categories: ['conference']
+tags: ['sidechains']
+speakers: ['Paul Sztorc']
 ---
-
-Sidechains
-
-Paul Sztorc
 
 <https://twitter.com/kanzure/status/784767020290150400>
 

@@ -3,11 +3,11 @@ title: Breaking Hardware Wallets
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'hardware wallet', 'wallet']
+speakers: ['Nicolas Bacca']
+date: 2017-09-09
 ---
 
 Breaking hardware wallets: Tales from the trenches and glimpses into the future
-
-Nicolas Bacca
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=6h42m30s>
 

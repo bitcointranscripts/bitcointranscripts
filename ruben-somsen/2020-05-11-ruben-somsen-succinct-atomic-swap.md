@@ -1,15 +1,13 @@
 ---
-title: Ruben Somsen Succinct Atomic Swap (2020-05-11)
+title: Succinct Atomic Swap
 transcript_by: Michael Folkson
+date: 2020-05-11
+speakers: ['Ruben Somsen']
 ---
-
-Name: Ruben Somsen
 
 Topic: Succinct Atomic Swap (SAS)
 
 Location: Ruben Somsen YouTube channel
-
-Date: May 11th 2020
 
 Video: https://www.youtube.com/watch?v=TlCxpdNScCA
 

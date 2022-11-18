@@ -1,11 +1,11 @@
 ---
-title: Nadav Kohen - Payment Points (2019-10-20)
+title: Payment Points
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'schnorr']
+speakers: ['Nadav Kohen']
+date: 2019-10-20
 ---
-
-Nadav Kohen
 
 Replacing Payment Hashes with Payment Points
 

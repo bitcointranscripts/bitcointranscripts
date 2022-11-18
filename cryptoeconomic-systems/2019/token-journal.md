@@ -2,6 +2,7 @@
 title: Token Journal
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Jason Teutsch']
 ---
 
 -- Disclaimer --

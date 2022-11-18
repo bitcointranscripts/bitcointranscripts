@@ -1,19 +1,17 @@
 ---
-title: Sergei Tikhomirov - Privacidade e Escalabilidade na Lightning (2020-05-09)
+title: Privacidade e Escalabilidade na Lightning
 transcript_by: Michael Folkson
 translation_by: Lucas Ferreira
-speaker: Sergei Tikhomirov
+speakers: ['Sergei Tikhomirov']
 categories: ['hackathon']
 tags: ['security', 'privacy', 'lightning', 'scalability']
+date: 2020-05-09
 ---
 
-Nome: Sergei Tikhomirov
 
 Tópico: Análise Quantitativa da Privacidade e escalabilidade na Lightning Network
 
 Localização: Lightning Hacksprint (Fulmo)
-
-Data: 2020-05-09
 
 Vídeo: <https://www.youtube.com/watch?v=8lUTbfO94mM>
 

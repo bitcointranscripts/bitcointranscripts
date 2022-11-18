@@ -2,9 +2,8 @@
 title: Day 2 Opening
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Pindar Wong']
 ---
-
-Pindar Wong
 
 You know exactly what I am going to be saying. Code of Conduct. Code of Conduct. Code of Conduct. I am going to introduce the program chair, Neha. Hi everyone. I hope everyone enjoyed day 1. I thought it was quite fascinating.
 

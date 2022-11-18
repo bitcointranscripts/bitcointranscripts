@@ -1,10 +1,9 @@
 ---
-title: Socratic Seminar 4 (2019-11-19)
+title: Socratic Seminar 4
+date: 2019-11-19
 transcript_by: Bryan Bishop
 categories: ['meetup']
 ---
-
-Socratic seminar #4
 
 <https://twitter.com/kanzure/status/1196947713658626048>
 

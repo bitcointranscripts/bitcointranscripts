@@ -2,6 +2,7 @@
 title: Stroem Payment Channels
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Jarl Fransson']
 ---
 
 Stroem

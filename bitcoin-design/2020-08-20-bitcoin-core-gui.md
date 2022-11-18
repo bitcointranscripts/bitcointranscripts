@@ -1,7 +1,8 @@
 ---
-title: Bitcoin Core Gui (2020-08-20)
+title: Bitcoin Core Gui
 transcript_by: Michael Folkson
 tag: ['bitcoin-design']
+date: 2020-08-20
 ---
 
 Name: Bitcoin Core GUI introductory meeting
@@ -9,8 +10,6 @@ Name: Bitcoin Core GUI introductory meeting
 Topic: Agenda link posted below
 
 Location: Bitcoin Design (online)
-
-Date: August 20th 2020
 
 Video: No video posted online
 

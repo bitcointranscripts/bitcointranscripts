@@ -3,6 +3,7 @@ title: Proofs Of Space And Replication
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'proof-of-work']
+speakers: ['Ben Fisch']
 ---
 
 Tight proofs of space and and replication

@@ -3,6 +3,7 @@ title: Issues Impacting Block Size Proposals
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['P2P']
+speakers: ['Jeff Garzik']
 ---
 
 Issues impacting block size proposals

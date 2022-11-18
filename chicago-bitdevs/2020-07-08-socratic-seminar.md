@@ -1,17 +1,11 @@
 ---
-title: Socratic Seminar (2020-07-08)
+title: Socratic Seminar 10
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['ux']
+date: 2020-07-08
 ---
 
-Name: Socratic Seminar
-
-Topic: Agenda in Reddit link below
-
 Location: Chicago BitDevs (online)
-
-Date: July 8th 2020
 
 Video: No video posted online
 

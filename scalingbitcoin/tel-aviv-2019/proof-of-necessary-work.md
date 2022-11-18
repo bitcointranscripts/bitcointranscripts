@@ -3,6 +3,7 @@ title: Proof Of Necessary Work
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['proof-of-work']
+speakers: ['Assimakis Kattis']
 ---
 
 Proof of necessary work: Succinct state verification with fairness guarantees

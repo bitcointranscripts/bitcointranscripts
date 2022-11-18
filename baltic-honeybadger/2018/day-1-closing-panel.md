@@ -3,21 +3,10 @@ title: Day 1 Closing Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Elizabeth Stark', 'Peter Todd', 'Jameson Lopp', 'Eric Voskuil', 'Alex Petrov', 'Roman Snitko']
 ---
 
 Closing panel
-
-Elizabeth Stark (starkness)
-
-Peter Todd (peterktodd)
-
-Jameson Lopp (lopp)
-
-Eric Voskuil (evoskuil)
-
-Alex Petrov (sysmannet)
-
-Roman Snitko (hodlhodl)
 
 <https://twitter.com/kanzure/status/1043517333640241152>
 

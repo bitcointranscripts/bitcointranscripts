@@ -2,11 +2,8 @@
 title: Failures Of Secret Key Cryptography (2013)
 transcript_by: Bryan Bishop
 tags: ['attacks', 'cryptography']
+speakers: ['Daniel J. Bernstein']
 ---
-
-Failures of secret key cryptography
-
-Daniel J. Bernstein (djb)
 
 FSE 2013
 

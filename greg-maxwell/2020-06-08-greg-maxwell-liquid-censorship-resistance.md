@@ -1,16 +1,11 @@
 ---
-title: Greg Maxwell - Liquid Censorship Resistance (2020-06-08)
-speaker: Greg Maxwell
+title: Liquid Censorship Resistance
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
+date: 2020-06-08
 ---
 
-Name: Greg Maxwell
-
-Topic: Is Liquid censorship resistant?
-
 Location: Reddit
-
-Date: June 8, 2020
 
 https://www.reddit.com/r/Bitcoin/comments/gye0yv/liquid_censorship_resistance/ftcllcm?utm_source=share&utm_medium=web2x&context=3
 
@@ -23,4 +18,3 @@ Back when I worked at Blockstream there was thought in the design to mitigate so
 For Bitcoin, Liquid is an alternative to straight up exchange custody and has some potentially useful security trade-offs compared to that. But if you wouldn't leave bitcoins with an exchange then they probably shouldn't be in Liquid either, because even though there are probably countermeasures it's probably impossible for any of us to validate that they're actually in place and working or reason about their implications.
 
 One of the things that frustrates me about this space though is that some of the same people who go on about liquid not being censorship resistant are happy to promote extremely centralized altcoins or single point exchanges which are no better.
-

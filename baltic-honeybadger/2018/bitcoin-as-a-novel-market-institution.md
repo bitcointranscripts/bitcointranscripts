@@ -2,11 +2,10 @@
 title: Bitcoin As A Novel Market Institution
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Nic Carter']
 ---
 
 Bitcoin as a novel market institution
-
-Nic Carter (nic\_\_carter)
 
 <https://twitter.com/kanzure/status/1043763647498063872>
 

@@ -3,11 +3,10 @@ title: Formal Verification
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'smart contracts']
+speakers: ['Martin Lundfall']
 ---
 
 Formal verification: The road to complete security of smart contracts
-
-Martin Lundfall (MakerDAO)
 
 slides: <https://twitter.com/MartinLundfall/status/1091119463276064769>
 

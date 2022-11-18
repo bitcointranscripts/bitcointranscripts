@@ -3,11 +3,11 @@ title: Coinjoinxt
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility']
+speakers: ['Adam Gibson']
+date: 2018-07-03
 ---
 
 CoinjoinXT and other techniques for deniable transfers.
-
-Adam Gibson (waxwing)
 
 Building on Bitcoin 2018
 

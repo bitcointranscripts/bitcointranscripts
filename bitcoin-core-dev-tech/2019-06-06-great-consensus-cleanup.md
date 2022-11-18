@@ -1,13 +1,13 @@
 ---
-title: Great Consensus Cleanup (2019-06-06)
+title: Great Consensus Cleanup
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['consensus', 'soft fork', 'forks']
+date: 2019-06-06
+speakers: ['Matt Corallo']
 ---
 
-2019-06-06
-
-Great consensus cleanup <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016714.html>
+<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016714.html>
 
 <https://twitter.com/kanzure/status/1136591286012698626>
 

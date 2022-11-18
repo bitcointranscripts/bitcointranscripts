@@ -1,17 +1,15 @@
 ---
-title: Consensus Uasf And Forks (2017-06-04)
+title: Consensus Uasf And Forks
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['consensus', 'hard fork', 'forks', 'soft fork']
+speakers: ['Andreas Antonopoulos']
+date: 2017-06-04
 ---
 
-Name: Andreas Antonopoulos
-
-Topic: On Consensus and All Kinds of Forks
+On Consensus and All Kinds of Forks
 
 Location: Let’s Talk Bitcoin podcast (Episode 333)
-
-Date: June 4th 2017
 
 Audio: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-333-on-consensus-and-all-kinds-of-forks
 

@@ -1,15 +1,10 @@
 ---
-title: Gmaxwell - Confidential Transactions (2017-04-28)
-speaker: Greg Maxwell
+title: Confidential Transactions
+speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tags: ['privacy']
+date: 2017-04-28
 ---
-
-Confidential transactions
-
-gmaxwell
-
-2017-04-28
 
 <https://twitter.com/kanzure/status/859604355917414400>
 

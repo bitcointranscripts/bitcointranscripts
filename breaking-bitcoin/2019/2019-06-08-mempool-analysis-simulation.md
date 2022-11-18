@@ -1,16 +1,11 @@
 ---
-title: Mempool Analysis & Simulation (2019-06-08)
+title: Mempool Analysis & Simulation 
 transcript_by: Bryan Bishop
-speaker: Kalle Alm
+speakers: ['Kalle Alm']
 categories: ['conference']
 tags: ['mempool']
+date: 2019-06-08
 ---
-
-Mempool analysis and simulation
-
-kallewoof
-
-Date: 2019-06-08
 
 <https://twitter.com/kanzure/status/1137342023063744512>
 

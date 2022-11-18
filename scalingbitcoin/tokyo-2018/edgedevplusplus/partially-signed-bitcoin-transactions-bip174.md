@@ -3,11 +3,8 @@ title: Partially Signed Bitcoin Transactions Bip174
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['segwit', 'wallet']
+speakers: ['Greg Sanders']
 ---
-
-Partially-signed bitcoin transactions (bip174)
-
-Greg Sanders (instagibbs)
 
 <https://twitter.com/kanzure/status/1047730297242935296>
 

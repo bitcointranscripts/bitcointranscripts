@@ -3,11 +3,8 @@ title: Joinmarket
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['fungibility']
+speakers: ['Adlai Chandrasekhar']
 ---
-
-Joinmarket
-
-Adlai Chandrasekhar
 
 <https://twitter.com/kanzure/status/784681036504522752>
 

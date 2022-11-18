@@ -3,6 +3,7 @@ title: Microchains
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'proof-of-work', 'scalability', 'security']
+speakers: ['David Vorick']
 ---
 
 Microchains
@@ -64,5 +65,3 @@ A: In terms of attack visibility, I think the only assumption that we really nee
 Q: That's a similar assumption to proof-of-stake.
 
 A: I would say its better than proof-of-stake in a lot of other ways. One of the huge benefits this has is that if I am bootstrapping to a network, I have absolute certainty by the amount of proof-of-work on a chain, that I have bootstrapped to the right chain. Whereas PoS has the costless history problem, which this does not.
-
-

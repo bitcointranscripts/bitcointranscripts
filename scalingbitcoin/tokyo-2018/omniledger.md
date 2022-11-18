@@ -2,6 +2,7 @@
 title: Omniledger
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Eleftherios Kokoris-Kogias']
 ---
 
 Omniledger: A secure, scale-out, decentralized ledger via sharding

@@ -1,17 +1,13 @@
 ---
-title: Greg Maxwell - Bitcoin Core Testing (2018-09-23)
+title: Bitcoin Core Testing 
 transcript_by: Michael Folkson
 transcript_by: Bryan Bishop
-tag: ['bitcoin core', 'testing']
+tags: ['bitcoin core', 'testing']
+speakers: ['Greg Maxwell']
+date: 2018-09-23
 ---
 
-Name: Greg Maxwell
-
-Topic: Bitcoin Core testing
-
 Location: Bitcointalk
-
-Date: September 23rd 2018
 
 https://bitcointalk.org/index.php?topic=5035144.msg46080218#msg46080218
 

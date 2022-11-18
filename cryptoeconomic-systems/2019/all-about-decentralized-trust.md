@@ -2,6 +2,7 @@
 title: All About Decentralized Trust
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ittai Abraham']
 ---
 
 -- Disclaimer --

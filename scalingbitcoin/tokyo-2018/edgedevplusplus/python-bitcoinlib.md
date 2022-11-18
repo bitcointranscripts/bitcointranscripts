@@ -2,15 +2,13 @@
 title: Python Bitcoinlib
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Bryan Bishop']
+date: 2018-10-05
 ---
-
-Name: Bryan Bishop
 
 Topic: Overview of python-bitcoinlib
 
 Location: Bitcoin Edge Dev++, Keto University, Tokyo, Japan
-
-Date: October 5th 2018
 
 Video: https://www.youtube.com/watch?v=JnBOO1zjm4I
 

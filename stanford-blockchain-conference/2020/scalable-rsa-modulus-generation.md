@@ -3,11 +3,10 @@ title: Scalable Rsa Modulus Generation
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'cryptography', 'accumulators']
+speakers: ['Megan Chen']
 ---
 
 Scalable RSA Modulus Generation with Dishonest Majority
-
-Megan Chen
 
 <https://twitter.com/kanzure/status/1230545603605585920>
 

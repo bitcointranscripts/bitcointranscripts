@@ -1,14 +1,12 @@
 ---
-title: Seminario Socrático 2 (2019-08-22)
+title: Seminario Socrático 2
+date: 2019-08-22
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
 tags: ['investigación', 'hardware wallet', 'multisig', 'wallet']
 ---
 
-2019-08-22
-
-Seminario Socrático de Desarrolladores de Bitcoin de Austin 2
 
 <https://twitter.com/kanzure/status/1164710800910692353>
 

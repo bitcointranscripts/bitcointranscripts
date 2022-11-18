@@ -3,11 +3,8 @@ title: Lightning Network Sphinx And Onion Routing
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'lightning', 'routing', 'wallet']
+speakers: ['Antoine Riard']
 ---
-
-Lightning network: Sphinx and onion routing
-
-Antoine Riard
 
 # Introduction
 

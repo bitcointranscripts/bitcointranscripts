@@ -2,9 +2,8 @@
 title: Signet
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Kalle Alm']
 ---
-
-Signet
 
 kallewoof
 

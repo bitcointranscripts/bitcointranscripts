@@ -3,11 +3,10 @@ title: Payment Channel Recovery With Seeds
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'wallet']
+speakers: ['David Vorick']
 ---
 
 Seed-based payment channel recovery
-
-David Vorick
 
 <https://twitter.com/kanzure/status/1172129077765050368>
 

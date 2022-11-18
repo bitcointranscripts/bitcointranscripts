@@ -1,17 +1,13 @@
 ---
-title: Christopher Jeffrey Consensus Barnacles (2016-12-25)
+title: Consensus Barnacles
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['consensus']
+date: 2016-12-25
+speakers: ['Christopher Jeffrey']
 ---
 
-Name: Christopher Jeffrey (JJ)
-
-Topic: Barnacles of Consensus
-
 Location: Let’s Talk Bitcoin podcast (Episode 319)
-
-Date: December 25th 2016
 
 Audio: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-319-barnacles-of-consensus
 

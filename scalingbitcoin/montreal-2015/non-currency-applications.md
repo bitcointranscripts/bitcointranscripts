@@ -3,11 +3,10 @@ title: Non Currency Applications
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['scalability']
+speakers: ['Harry Kalodner']
 ---
 
 Scalability of non-currency applications
-
-Harry Kalodner
 
 I am from Princeton University. I am here to talk about the scalability issues that non-currency applications of bitcoin have that might be a little different than regular payments that go through the bitcoin network. I put this together with my advisor, Arvind. The reason why I want to talk about this is because when people talk about how bitcoin will have to scale is that people throw out a thing about Visa processing 20,000 transactions per second or something. There are other relevant factors though.
 

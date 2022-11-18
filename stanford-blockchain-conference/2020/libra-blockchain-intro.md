@@ -3,6 +3,7 @@ title: Libra Blockchain Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['altcoin']
+speakers: ['Ben Maurer']
 ---
 
 The Libra Blockchain & Move: A technical introduction

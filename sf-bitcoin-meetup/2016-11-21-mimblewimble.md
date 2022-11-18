@@ -1,13 +1,13 @@
 ---
-title: Mimblewimble (2016-11-21)
+title: Mimblewimble 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['privacy', 'fungibility', 'scalability']
+speakers: ['Andrew Poelstra']
+date: 2016-11-21
 ---
 
 Mimblewimble
-
-Andrew Poelstra (andytoshi)
 
 <https://www.youtube.com/watch?v=aHTRlbCaUyM>
 

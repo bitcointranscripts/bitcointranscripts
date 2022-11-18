@@ -3,15 +3,13 @@ title: Threshold Schnorr Signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'schnorr']
+speakers: ['Tim Ruffing']
+date: 2019-10-06
 ---
-
-Name: Tim Ruffing
 
 Topic: The Quest for Practical Threshold Schnorr Signatures
 
 Location: Cryptoeconomic Systems Summit 2019
-
-Date: October 6th 2019
 
 Video: https://www.youtube.com/watch?v=Wy5jpgmmqAg
 

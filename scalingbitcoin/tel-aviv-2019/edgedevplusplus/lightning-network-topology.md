@@ -3,6 +3,7 @@ title: Lightning network topology, its creation and maintenance
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['topology', 'lightning', 'routing']
+speakers: ['Carla Kirk-Cohen']
 ---
 
 Carla Kirk-Cohen
@@ -104,5 +105,3 @@ Utility: how much personal use we get from a channel. This isn't particularly im
 # Conclusion
 
 The lightning network seems to have a hub and spoke topology. Topology is really hard to change. It's expensive to change this.
-
-

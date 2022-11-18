@@ -1,13 +1,12 @@
 ---
-title: Andreas Antonopoulos - Firmas Schnorr (2018-10-07)
+title: Firmas Schnorr
+speakers: ['Andreas Antonopoulos']
+date: 2018-10-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-speaker: Andreas Antonopoulos
 categories: ['podcast']
-tag: ['schnorr']
+tags: ['schnorr']
 ---
-
-Andreas Antonopoulos
 
 LTB Episodio 378 - El Petro dentro de Venezuela y las firmas Schnorr 
 

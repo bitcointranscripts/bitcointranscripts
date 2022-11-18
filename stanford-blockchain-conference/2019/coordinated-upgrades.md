@@ -2,11 +2,10 @@
 title: Coordinated Upgrades
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Stephanie Hurder']
 ---
 
 Blockchain upgrades as a coordination game
-
-Stephanie Hurder
 
 <https://twitter.com/kanzure/status/1091139621000339456>
 

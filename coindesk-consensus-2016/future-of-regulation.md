@@ -3,6 +3,7 @@ title: Future Of Regulation
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['regulation']
+speakers: ['Jerry Brito', 'J. Christopher Giancarlo', 'Benjamin Lawsky', 'Mark Wetjen']
 ---
 
 Preliminary notes:

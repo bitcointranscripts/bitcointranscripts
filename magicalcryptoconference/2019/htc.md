@@ -2,11 +2,11 @@
 title: Htc
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Phil Chen']
+date: 2019-05-11
 ---
 
 HTC / Exodus
-
-Phil Chen
 
 Video: https://youtu.be/CyieujRFk3g?t=8077
 

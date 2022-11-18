@@ -1,20 +1,17 @@
 ---
-title: Jeremy Rubin, Andrew Poelstra - Covenants (2021-11-05)
+title: Covenants 
 transcript_by: Jeremy Rubin
 categories: ['conference']
 tags: ['covenants']
+date: 2021-11-05
+speakers: ['Jeremy Rubin', 'Andrew Poelstra']
 ---
-
-Name: Jeremy Rubin and Andrew Poelstra
 
 Topic: Covenants
 
 Location: TABConf (The Atlanta Bitcoin Conference)
 
-Date: November 5th 2021
-
 Video: No video was posted online
-
 
 As per Socratic village rules names of all attendees (other than the advertised speakers) have been anonymized and audio will not be published to preserve anonymity of the question askers.
 

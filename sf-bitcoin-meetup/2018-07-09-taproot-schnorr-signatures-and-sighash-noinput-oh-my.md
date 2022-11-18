@@ -1,13 +1,11 @@
 ---
-title: Taproot Schnorr Signatures And Sighash Noinput Oh My (2018-07-09)
+title: Taproot, Schnorr signatures, and SIGHASH_NOINPUT
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tag: ['taproot', 'schnorr']
+speakers: ['Pieter Wuille']
+date: 2018-07-09
 ---
-
-Taproot, Schnorr signatures, and SIGHASH\_NOINPUT, oh my!
-
-Pieter Wuille (sipa)
 
 <https://twitter.com/kanzure/status/1021880538020368385>
 

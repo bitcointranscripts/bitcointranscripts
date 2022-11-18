@@ -3,11 +3,10 @@ title: Accumulators
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['merkle trees', 'accumulators']
+speakers: ['Benedikt Bünz', 'Benjamin Fisch', 'Dan Boneh']
 ---
 
 A scalable drop-in replacement for merkle trees
-
-Benedikt Bünz, Benjamin Fisch and Dan Boneh (Stanford University)
 
 <https://twitter.com/kanzure/status/1048454406755168257>
 

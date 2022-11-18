@@ -3,17 +3,10 @@ title: Lessons For Bitcoin From 150 Years Of Decentralization
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
+speakers: ['Arvind Narayanan']
 ---
 
-Lessons for Bitcoin from the 150-year History of Decentralization
-
-Arvind Narayanan
-
-
-Lessons for Bitcoin from the 150-year History of Decentralization
-
-Arvind Narayanan (twitter- random_walker)
-Princeton University
+Arvind Narayanan (twitter- random_walker) - Princeton University
 
 Another 30 seconds. Take your seats. We have Arvind Narayanan. Some of the research from Princeton has rivaled the work of MIT. Professor Narayanan is going to teach us some lessons for Bitcoin.
 

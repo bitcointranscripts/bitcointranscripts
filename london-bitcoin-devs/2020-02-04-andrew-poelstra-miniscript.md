@@ -1,15 +1,15 @@
 ---
-title: Andrew Poelstra - Miniscript (2020-02-04)
+title: Miniscript 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tag: ['miniscript']
+speakers: ['Andrew Poelstra']
+date: 2020-02-04
 ---
 
-Andrew Poelstra
+Bitcoin Script to Miniscript
 
 London Bitcoin Devs
-
-Bitcoin Script to Miniscript
 
 <https://twitter.com/kanzure/status/1237071807699718146>
 

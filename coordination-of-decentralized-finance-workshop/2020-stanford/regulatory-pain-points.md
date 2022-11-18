@@ -3,11 +3,11 @@ title: Regulatory Pain Points
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['research', 'regulation']
+speakers: ['Ryosuke Ushida']
+date: 2020-02-18
 ---
 
 Regulatory pain points
-
-Ryosuke Ushida
 
 <https://twitter.com/kanzure/status/1229838162827993088>
 

@@ -3,11 +3,9 @@ title: How To Charge Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['layer 2']
+speakers: ['Aviv Zohar']
 ---
 
-How to charge Lightning
-
-Aviv Zohar
 
 Our next talk is getting into layer 2. Leaving hwat needs to done at th...
 

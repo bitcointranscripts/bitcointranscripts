@@ -1,17 +1,15 @@
 ---
-title: Laolu, Joost, Oliver - Lnd0.10 (2020-04-18)
+title: Laolu, Joost, Oliver - Lnd0.10 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lnd']
+date: 2020-04-18
+speakers: ['Olaoluwa Osuntokun', 'Joost Jager', 'Oliver Gugger']
 ---
-
-Name: Laolu Osuntokun, Joost Jager and Oliver Gugger
 
 Topic: lnd v0.10
 
 Location: Virtual Reality (VR Bitcoin)
-
-Date: April 18th 2020
 
 Video: https://www.youtube.com/watch?v=h34fUGuDjMg
 

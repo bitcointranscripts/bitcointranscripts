@@ -1,17 +1,15 @@
 ---
-title: Gloria Zhao - Transaction Relay Policy (2021-11-16)
+title: Transaction Relay Policy
+speakers: ['Gloria Zhao']
+date: 2021-11-16
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['P2P', 'mempool']
 ---
 
-Name: Gloria Zhao
-
 Topic: Transaction Relay Policy for L2 Developers
 
 Location: Adopting Bitcoin
-
-Date: November 16th 2021
 
 Video: <https://www.youtube.com/watch?v=fbWSQvJjKFs>
 

@@ -1,13 +1,11 @@
 ---
-title: Fabian Jahr - Debugging Bitcoin Core (2019-08-22)
+title: Debugging Bitcoin Core 
 transcript_by: Michael Folkson
 categories: ['residency']
 tag: ['bitcoin core']
+speakers: ['Fabian Jahr']
+date: 2019-08-22
 ---
-
-Fabian Jahr
-
-Debugging Bitcoin Core
 
 Video: <https://www.youtube.com/watch?v=6aPSCDAiqVI>
 

@@ -3,11 +3,10 @@ title: Smart Contract Bug Hunting
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Mooly Sagiv']
 ---
 
 Finding Bugs Automatically in Smart Contracts with Parameterized Specifications
-
-Mooly Sagiv
 
 <https://www.certora.com/pubs/sbc2020.pdf>
 

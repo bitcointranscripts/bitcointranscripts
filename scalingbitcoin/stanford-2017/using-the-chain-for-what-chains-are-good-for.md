@@ -3,11 +3,8 @@ title: Using The Chain For What Chains Are Good For
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts']
+speakers: ['Andrew Poelstra']
 ---
-
-Using the Chain for what Chains are Good For
-
-Andrew Poelstra (andytoshi)
 
 Video: <https://www.youtube.com/watch?t=5757&v=3pd6xHjLbhs>
 

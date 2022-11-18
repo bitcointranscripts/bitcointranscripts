@@ -3,11 +3,8 @@ title: Taproot and Graftroot
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility', 'taproot']
+speakers: ['Greg Sanders']
 ---
-
-Taproot and graftroot
-
-Greg Sanders (instagibbs)
 
 <https://twitter.com/kanzure/status/1047764770265284608>
 

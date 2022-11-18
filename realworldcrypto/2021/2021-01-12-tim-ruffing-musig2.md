@@ -1,17 +1,15 @@
 ---
-title: Tim Ruffing - MuSig2 (2021-01-12)
+title: MuSig2 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
+date: 2021-01-12
+speakers: ['Tim Ruffing']
 ---
-
-Name: Tim Ruffing
 
 Topic: MuSig2: Simple Two-Round Schnorr Multi-Signatures
 
 Location: Real World Crypto 
-
-Date: January 12th 2021
 
 Video: <https://www.youtube.com/watch?v=DRzDDFetS3E>
 

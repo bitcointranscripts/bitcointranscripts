@@ -1,17 +1,12 @@
 ---
-title: Greg Maxwell - Yubikey Security (2020-11-05)
-speaker: Greg Maxwell
+title: Yubikey Security
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['security', 'hardware wallet', 'wallet']
+date: 2020-11-05
 ---
 
-Name: Greg Maxwell
-
-Topic: Yubikey security
-
 Location: Reddit
-
-Date: November 7th 2020
 
 https://www.reddit.com/r/Bitcoin/comments/jp2fp3/opinion_regarding_security/gbhojor?utm_source=share&utm_medium=web2x&context=3
 

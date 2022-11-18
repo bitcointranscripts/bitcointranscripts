@@ -1,13 +1,10 @@
 ---
-title: Reorgs
+title: Handling Reorgs & Forks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks']
+speakers: ['Bryan Bishop']
 ---
-
-Bryan Bishop
-
-Handling Reorgs & Forks
 
 <https://twitter.com/kanzure/status/1052344700554960896>
 

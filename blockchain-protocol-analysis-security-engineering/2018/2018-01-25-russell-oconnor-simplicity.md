@@ -1,17 +1,15 @@
 ---
-title: Russell Oconnor - Simplicity (2018-01-25)
+title: Simplicity
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['consensus', 'smart contracts']
+date: 2018-01-25
+speakers: ["Russell O’Connor"]
 ---
 
-Name: Russell O’Connor
-
-Topic: Simplicity: A New Language for Blockchains
+Simplicity: A New Language for Blockchains
 
 Location: BPASE 2018, Stanford University
-
-Date: January 25th 2018
 
 Video: https://www.youtube.com/watch?v=VOeUq3oR2fk
 

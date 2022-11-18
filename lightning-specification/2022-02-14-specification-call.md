@@ -1,8 +1,9 @@
 ---
-title: Lightning specification call (2022-02-14)
+title: Lightning specification call 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
+date: 2022-02-14
 ---
 
 Name: Lightning specification call
@@ -10,8 +11,6 @@ Name: Lightning specification call
 Topic: Agenda below
 
 Location: Jitsi
-
-Date: February 14th 2022
 
 Video: No video posted online
 

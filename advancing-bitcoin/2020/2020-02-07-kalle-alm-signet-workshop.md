@@ -1,17 +1,15 @@
 ---
-title: Kalle Alm Signet Workshop (2020-02-07)
+title: Signet Workshop
+speakers: ['Kalle Alm']
+date: 2020-02-07
 transcript_by: Michael Folkson
 categories: ['workshop']
-tags: ['taproot']
+tags: ['taproot', 'testing']
 ---
-
-Name: Kalle Alm
 
 Topic: Signet Workshop
 
 Location: Advancing Bitcoin
-
-Date: February 7th 2020
 
 Video: No video posted online
 
