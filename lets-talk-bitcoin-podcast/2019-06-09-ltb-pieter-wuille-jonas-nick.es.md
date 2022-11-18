@@ -1,7 +1,6 @@
 ---
-title: Let's Talk Bitcoin - Taproot, Tapscript and Schnorr
+title: The Tools and The Work
 transcript_by: Michael Folkson
-translation_by: Abel Armoa
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
 speakers: ['Pieter Wuille', 'Jonas Nick']

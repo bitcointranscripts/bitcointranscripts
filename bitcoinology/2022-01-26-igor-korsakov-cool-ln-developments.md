@@ -1,9 +1,9 @@
 ---
 title: Bitcoin Lightning Network Developments
 transcript_by: kouloumos
-categories: ["meetup"]
-tags: ["lightning", "layer 2", "RGB"]
-speakers: ["Igor Korsakov"]
+categories: ['meetup']
+tags: ['lightning', 'layer 2', 'RGB']
+speakers: ['Igor Korsakov']
 date: 2022-01-26
 ---
 

@@ -2,7 +2,7 @@
 title: Bulletproofs
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Karl-Johan Alm']
+speakers: ['Kalle Alm']
 ---
 
 # Bulletproofs

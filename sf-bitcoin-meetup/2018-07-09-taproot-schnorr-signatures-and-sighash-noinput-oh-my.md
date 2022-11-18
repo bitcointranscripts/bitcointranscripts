@@ -1,5 +1,5 @@
 ---
-title: Taproot Schnorr Signatures And Sighash Noinput Oh My 
+title: Taproot, Schnorr signatures, and SIGHASH_NOINPUT
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tag: ['taproot', 'schnorr']

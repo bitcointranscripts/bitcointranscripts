@@ -1,5 +1,5 @@
 ---
-title: Lightning Questions
+title: C-Lightning Questions
 transcript_by: Michael Folkson
 speakers: ['Christian Decker']
 tags: ['lightning', 'lnd', 'c-lightning']

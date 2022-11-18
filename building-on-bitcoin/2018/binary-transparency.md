@@ -2,7 +2,7 @@
 title: Binary Transparency
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Mustafa']
+speakers: ['Mustafa Al-Bassam']
 date: 2018-07-03
 ---
 

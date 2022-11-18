@@ -2,7 +2,7 @@
 title: Coin Selection
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Karl-Johan Alm']
+speakers: ['Kalle Alm']
 ---
 
 <https://twitter.com/kanzure/status/1047708247333859328>

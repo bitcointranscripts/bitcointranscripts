@@ -3,7 +3,7 @@ title: Incentivizing Payment Channel Watchtowers
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['eltoo', 'lightning']
-speakers: ['Zeta Avarikioti', 'Georgia Avarikioti', 'Felix Laufenberg', 'Jakub Sliwinski', 'Yuyi Wang', 'Roger Wattenhofer']
+speakers: ['Zeta Avarikioti']
 ---
 
 Incentivizing payment channel watchtowers

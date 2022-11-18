@@ -1,8 +1,8 @@
 ---
 title: BIP324 - Version 2 of p2p encrypted transport protocol
 transcript_by: Bryan Bishop
-categories: ["core-dev-tech"]
-tags: ["p2p", "bitcoin core"]
+categories: ['core-dev-tech']
+tags: ['p2p', 'bitcoin core']
 date: 2022-10-10
 ---
 

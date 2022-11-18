@@ -3,7 +3,7 @@ title: The Tools and The Work
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
-speakers: ['Adam B. Levine', 'Stephanie Murphy', 'Andreas M. Antonopoulos', 'Pieter Wuille', 'Jonas Nick']
+speakers: ['Pieter Wuille', 'Jonas Nick']
 date: 2019-06-09
 ---
 

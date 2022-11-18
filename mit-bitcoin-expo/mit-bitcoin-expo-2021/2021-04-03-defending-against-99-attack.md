@@ -1,5 +1,5 @@
 ---
-title: How much Security is too much Security? Defending against a 99.999% Attack (2021-04-03)
+title: How much Security is too much Security? Defending against a 99.999% Attack 
 transcript_by: Carla Kirk-Cohen
 categories: ['conference']
 tags: ['security']

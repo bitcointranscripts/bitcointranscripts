@@ -4,7 +4,6 @@ speakers: ['Andreas Antonopoulos']
 date: 2014-10-08
 transcript_by: Bryan Bishop
 tags: ['security']
-speakers: ['Andreas Antonopolous']
 ---
 
 This is a transcript of submitted evidence to the Parliament of Canada's Senate Committee on Banking, Trade and Commerce. Here is a [video](https://www.youtube.com/watch?v=xUNGFZDO8mM&t=3m10s). The opening remarks can be found [here](http://antonopoulos.com/2014/10/09/canadian-senate-hearings-my-opening-remarks/).

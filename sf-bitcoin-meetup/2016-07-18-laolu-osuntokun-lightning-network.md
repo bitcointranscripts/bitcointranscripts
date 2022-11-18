@@ -3,7 +3,7 @@ title: Lightning Network
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
-speakers: ['Laolu Osuntokun']
+speakers: ['Olaoluwa Osuntokun']
 date: 2016-07-18
 ---
 

@@ -6,9 +6,7 @@ tags: ['forks', 'miners', 'security']
 speakers: ['Ittay Eyal', 'Emin Gun Sirer']
 ---
 
-Name: Ittay Eyal & Emin Gun Sirer
-
-# A testbed for bitcoin scaling
+A testbed for bitcoin scaling
 
 I want to talk today about how to scale bitcoin. We want lower latency, we want higher throughput, more bandwidth and more transactions per second, and we want security. We can try to tune the parameters. In all of the plots, I have time going from left to right and these are blocks in rectangles. We have larger blocks which might give us more throughput. We could have shorter block length, and transactions would come faster on the chain and we have better throughput but we get forks and orphans when that happens. We have unfairness, smaller miners get less revenue and leads to centralization and I will talk about that. We have a longer time to convergence because of these orphans and forks.
 

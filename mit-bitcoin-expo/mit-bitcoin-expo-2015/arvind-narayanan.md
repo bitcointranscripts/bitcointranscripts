@@ -6,8 +6,6 @@ tags: ['security', 'threshold signatures', 'multisig', 'wallet']
 speakers: ['Arvind Narayanan']
 ---
 
-# Threshold signatures
-
 I want to tell you what threshold signatures are and I want to convince you that threshold signatures are a technology you need. This is collaborative work.
 
 There are three things I want to tell you today. The first is that the banking security model has been very very refined and has sophisticated techniques and process and controls for ensuring security. It does not translate to Bitcoin. This may seem surprising. Hopefully it will be obvious in retrospect.

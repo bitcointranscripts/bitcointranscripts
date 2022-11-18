@@ -3,7 +3,7 @@ title: Snarks And Their Practical Applications
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
-speakers: ['Eran Tromer', 'Eli Ben-Sasson', 'Matthew Green', 'Alessandro Chiesa', 'Ian Miers', 'Christina Garman', 'Madars Virza', 'Daniel Genkin']
+speakers: ['Eran Tromer']
 ---
 
 

@@ -1,9 +1,9 @@
 ---
 title: Transaction Fee Estimation
 transcript_by: Bryan Bishop
-categories: ["conference"]
-tags: ["wallet", "fees"]
-speakers: ["Bram Cohen"]
+categories: ['conference']
+tags: ['wallet', 'fees']
+speakers: ['Bram Cohen']
 ---
 
 How wallets can handle real transaction fees

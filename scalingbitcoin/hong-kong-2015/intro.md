@@ -2,7 +2,7 @@
 title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Bobbie Lee', 'Pindar Wong']
+speakers: ['Bobby Lee', 'Pindar Wong']
 ---
 
 Introduction to event

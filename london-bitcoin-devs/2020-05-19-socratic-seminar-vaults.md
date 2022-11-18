@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar Vaults - Vaults and OP_CHECKTEMPLATEVERIFY
+title: Socratic Seminar - Vaults and OP_CHECKTEMPLATEVERIFY
 transcript_by: Michael Folkson
 categories: ['meetup']
 date:  2020-05-19

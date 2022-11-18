@@ -1,5 +1,5 @@
 ---
-title: Pieter Wuille - Key Tree Signatures 
+title: Key Tree Signatures 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['multisig']

@@ -4,7 +4,6 @@ speakers: ['Andreas Antonopoulos']
 date: 2018-10-23
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-speakers: ['Andreas Antonopoulos']
 tags: ['consenso']
 ---
 

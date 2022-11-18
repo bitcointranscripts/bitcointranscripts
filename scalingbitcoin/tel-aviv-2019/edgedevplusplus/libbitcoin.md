@@ -3,7 +3,6 @@ title: Libbitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['James Chiang']
-tags: ['transaction']
 ---
 
 Libbitcoin: A practical introduction

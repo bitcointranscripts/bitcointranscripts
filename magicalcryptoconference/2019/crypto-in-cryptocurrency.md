@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'cryptography', 'zero-knowledge']
 speakers: ['Andrew Poelstra']
-date: 2016-12-06
+date: 2019-05-12
 ---
 
 The "crypto" in cryptocurrency: Why everything is weird and hard

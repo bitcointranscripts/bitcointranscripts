@@ -3,7 +3,7 @@ title: Optimizing Fee Estimation Via Mempool State
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mempool', 'fees']
-speakers: ['Karl-Johan Alm']
+speakers: ['Kalle Alm']
 ---
 
 

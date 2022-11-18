@@ -2,7 +2,7 @@
 title: Attack Vectors of Lightning Network 
 transcript_by: Gijs van Dam
 categories: ['residency']
-tag: ['attacks', 'lightning']
+tags: ['attacks', 'lightning']
 speakers: ['Fabrice Drouin']
 date: 2019-06-25
 ---

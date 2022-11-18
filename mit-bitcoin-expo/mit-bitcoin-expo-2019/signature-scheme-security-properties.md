@@ -1,5 +1,5 @@
 ---
-title: Andrew Poelstra - Secure Signatures (2019-03-09)
+title: Secure Signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['schnorr', 'multisig']

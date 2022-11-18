@@ -3,7 +3,7 @@ title: Bitcoin Block Propagation and IBLT
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Rusty Russell']
-tags: ['block propagation']
+tags: ['p2p', 'research']
 ---
 
 This is not what I do. But I was doing it anyway.

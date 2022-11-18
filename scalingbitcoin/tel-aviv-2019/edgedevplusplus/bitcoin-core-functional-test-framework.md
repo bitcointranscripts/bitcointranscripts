@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Fabian Jahr']
 date: 2020-09-10
+tags: ['bitcoin-core', 'testing']
 ---
 
 Topic: Bitcoin Core functional test framework

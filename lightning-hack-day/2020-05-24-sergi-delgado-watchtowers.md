@@ -3,7 +3,7 @@ title: Watchtowers and BOLT 13
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
-speakers: ['Sergi Delgado']
+speakers: ['Sergi Delgado Segura']
 date: 2020-05-24
 ---
 

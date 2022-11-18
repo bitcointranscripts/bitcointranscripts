@@ -6,8 +6,6 @@ tags: ['forks']
 speakers: ['Jonathan Tomim']
 ---
 
-# bip101 block propagation data from testnet
-
 video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=2h25m20s>
 
 I am a bitcoin miner. I am a C++ programmer and a scientist. I will be going pretty fast. I have a lot of stuff to cover. Bare with me.
