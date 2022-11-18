@@ -2,11 +2,8 @@
 title: Fud Perceived Vs Real Bitcoin Risks
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Aaron van Wirdum', 'Eric Voskuil', 'Jimmy Song', 'Rodolfo Novak']
 ---
-
-FUD: real vs perceived risks in bitcoin
-
-Aaron van Wirdum, Eric Voskuil, Jimmy Song, Rodolfo Novak
 
 <https://twitter.com/kanzure/status/1137285873534492672>
 

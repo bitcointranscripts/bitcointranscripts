@@ -1,17 +1,15 @@
 ---
-title: Alex Bosworth - Multiple-path Payments (MPP)
+title: Multiple-path Payments (MPP)
 Transcript_by: Jeff Czyz, Stéphan Vuylsteke
 categories: ['residency']
 tags: ['lightning', 'multiple-path payments']
+speakers: ['Alex Bosworth']
+date: 2019-06-25
 ---
-
-Name: Alex Bosworth
 
 Topic: Multiple-path Payments (MPP)
 
 Location: Chaincode Residency 2019
-
-Date: 2019-06-25
 
 Video: <https://youtu.be/Og4TGERPZMY>
 

@@ -3,6 +3,7 @@ title: Handel Practical Multisig Aggregation
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'proof-of-stake']
+speakers: ['Nicolas Gailly']
 ---
 
 Handel: Practical multi-signature aggregation for large byzantine committees

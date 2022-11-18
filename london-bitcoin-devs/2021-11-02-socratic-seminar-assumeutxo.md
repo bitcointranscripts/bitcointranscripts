@@ -1,17 +1,16 @@
 ---
-title: Socratic Seminar - AssumeUTXO (2021-11-02)
+title: Socratic Seminar - AssumeUTXO
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['security', 'IBD', 'bitcoin core']
+date: 2021-11-02
 ---
-
-Name: Socratic Seminar
 
 Topic: AssumeUTXO
 
-Location: London BitDevs (online)
+Name: Socratic Seminar
 
-Date: November 2nd 2021
+Location: London BitDevs (online)
 
 Video: <https://www.youtube.com/watch?v=JottwT-kEdg>
 

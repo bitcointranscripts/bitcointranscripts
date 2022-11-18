@@ -1,5 +1,7 @@
 ---
-title: Andreas Antonopolous Senado de Canadá Bitcoin (2014-10-08)
+title: Senado de Canadá Bitcoin
+speakers: ['Andreas Antonopoulos']
+date: 2014-10-08
 transcript_by: Bryan Bishop 
 translation_by: Blue Moon
 tags: ['seguridad']

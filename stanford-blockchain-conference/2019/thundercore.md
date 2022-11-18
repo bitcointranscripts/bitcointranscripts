@@ -3,11 +3,10 @@ title: Thundercore
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus']
+speakers: ['Elaine Shi']
 ---
 
 Thundercore consensus
-
-Elaine Shi
 
 <https://twitter.com/kanzure/status/1090773938479624192>
 

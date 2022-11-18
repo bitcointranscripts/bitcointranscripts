@@ -3,13 +3,13 @@ title: Sighash Noinput
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['bitcoin core']
+speakers: ['Bryan Bishop']
 ---
 
-Bryan Bishop
+SIGHASH\_NOINPUT (BIP118)
 
 <https://twitter.com/kanzure/status/1049510702384173057>
 
-SIGHASH\_NOINPUT (BIP118)
 
 Dev++ / BC2 - October 4th-5th  2018 - Keio University, Tokyo, Japan
 

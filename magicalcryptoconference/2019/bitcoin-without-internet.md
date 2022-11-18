@@ -2,11 +2,8 @@
 title: Bitcoin Without Internet
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Adam Back', 'Rodolfo Novak', 'Elaine Ou', 'Adam Back', 'Richard Myers']
 ---
-
-Bitcoin without internet
-
-Adam Back, Rodolfo Novak (Coinkite), Elaine Ou, Adam Back, Richard Myers (GoTenna)
 
 Video: https://youtu.be/5Fim6g2BMZI
 

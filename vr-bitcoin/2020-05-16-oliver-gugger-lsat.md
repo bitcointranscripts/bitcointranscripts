@@ -1,16 +1,14 @@
 ---
-title: Oliver Gugger, LSAT (2020-05-16)
+title: Oliver Gugger, LSAT 
 transcript_by: Michael Folkson
 categories: ['meetup']
+date: 2020-05-16
+speakers: ['Oliver Gugger']
 ---
-
-Name: Oliver Gugger
 
 Topic: LSAT - Your Ticket Aboard The Lightning Native Web
 
 Location: Reckless VR
-
-Date: May 16th 2020
 
 Video: https://www.youtube.com/watch?v=IW08RJUpzw0
 

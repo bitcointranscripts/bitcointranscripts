@@ -2,11 +2,11 @@
 title: Libbitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Eric Voskuil' ]
+date: 2018-07-04
 ---
 
-libbitcoin
-
-Eric Voskuil
+# libbitcoin
 
 Building on Bitcoin 2018
 

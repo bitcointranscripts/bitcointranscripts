@@ -2,6 +2,7 @@
 title: Solving The Blockchain Trilemma
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Sreeram Kannan', 'David Tse', 'Pramod Viswanath']
 ---
 
 -- Disclaimer --

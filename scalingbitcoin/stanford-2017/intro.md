@@ -2,6 +2,7 @@
 title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Anton Yemelyanov']
 ---
 
 Introduction Stanford 2017

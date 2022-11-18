@@ -1,15 +1,13 @@
 ---
-title: Taproot activation and LOT=true vs LOT=false (2021-02-26)
+title: Taproot activation and LOT=true vs LOT=false 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot']
+date: 2021-02-26
+speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 ---
 
-Name: Sjors Provoost and Aaron van Wirdum
-
 Location: Bitcoin Magazine (online)
-
-Date: February 26th 2021
 
 Video: https://www.youtube.com/watch?v=7ouVGgE75zg
 

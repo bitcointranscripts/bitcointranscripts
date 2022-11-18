@@ -1,16 +1,12 @@
 ---
-title: John Newbery - Contracts in Bitcoin (2020-04-08)
+title: Contracts in Bitcoin 
 transcript_by: Caralie Chrisco
 tag: ['smart contracts']
+date: 2020-04-08
+speakers: ['John Newbery']
 ---
 
-Name: John Newbery
-
-Topic: Contracts in Bitcoin
-
 Location: She256 Onboarding to Bitcoin Webinar
-
-Date: April 8, 2020
 
 Video: <https://youtu.be/H-wH6mY9pZo?t=2549>
 

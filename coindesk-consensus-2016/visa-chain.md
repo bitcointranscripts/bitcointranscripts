@@ -2,6 +2,7 @@
 title: Visa Chain
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Adam Ludwin']
 ---
 
 Preliminary notes:

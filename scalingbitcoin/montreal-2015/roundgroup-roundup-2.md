@@ -4,9 +4,9 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 ---
 
-Roundgroup roundup day 2
-
 # Communicating without official structures
+
+Roundgroup roundup day 2
 
 Hi guys, okay I am going to try to find my voice here. I am losing it. I ran the session on communication without official structures. We went through the various channels through which people are communicating in this community like forums, blogs, irc, reddit, twitter, email, and we talked a little about them each. There's also the conferences and meetings. There are different forms of communication in text than in person. It's a lot easier to read into things negatively when it's just via text. It way may not be intended, but people may assume negativity. One of our goals was, are there ways to encourage people to assume good faith?
 

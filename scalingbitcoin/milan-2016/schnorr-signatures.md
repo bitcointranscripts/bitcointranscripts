@@ -3,15 +3,13 @@ title: Schnorr Signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'cryptography', 'schnorr']
+speakers: ['Pieter Wuille']
+date: 2016-10-10
 ---
-
-Name: Pieter Wuille
 
 Topic: Schnorr signatures for Bitcoin
 
 Location: Scaling Bitcoin (Milan)
-
-Date: October 10th 2016
 
 Video: https://www.youtube.com/watch?v=_Z0ID-0DOnc&feature=youtu.be&t=2297
 

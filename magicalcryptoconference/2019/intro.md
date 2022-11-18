@@ -2,6 +2,7 @@
 title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
+date: 2019-05-11
 ---
 
 Intro

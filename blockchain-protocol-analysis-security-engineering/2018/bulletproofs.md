@@ -3,11 +3,10 @@ title: Bulletproofs
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge']
+speakers: ['Benedikt Bünz']
 ---
 
 Bulletproofs
-
-Benedikt Bünz
 
 video: <https://www.youtube.com/watch?v=gZjDKgR4dw8>
 

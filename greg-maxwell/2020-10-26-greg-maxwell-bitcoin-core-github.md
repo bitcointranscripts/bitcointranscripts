@@ -1,16 +1,11 @@
 ---
-title: Greg Maxwell - Bitcoin Core Github (2020-10-26)
-speaker: Greg Maxwell
+title: Bitcoin Core Github 
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
+date: 2020-10-26
 ---
 
-Name: Greg Maxwell
-
-Topic: Bitcoin Core and GitHub
-
 Location: Reddit
-
-Date: October 2020
 
 https://www.reddit.com/r/Bitcoin/comments/jiat6s/can_github_censor_the_code_of_bitcoin_the/ga5k9ap?utm_source=share&utm_medium=web2x&context=3
 

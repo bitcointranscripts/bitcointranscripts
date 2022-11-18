@@ -3,9 +3,8 @@ title: A Bevy Of Block Size Proposals Bip100 Bip102 And More
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mempool']
+speakers: ['Jeff Garzik']
 ---
-
-jgarzik
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_1_garzik.pdf>
 

@@ -3,11 +3,8 @@ title: Lightning Network Security Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Olaoluwa Osuntokun', 'Justin Camarena', 'Matt Corallo', 'Michael Folkson']
 ---
-
-Lightning network security panel
-
-Olaoluwa Osuntokun, Justin Camarena, Matt Corallo, Michael Folkson
 
 <https://twitter.com/kanzure/status/1137758233865703424>
 

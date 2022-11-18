@@ -1,17 +1,15 @@
 ---
-title: Andrew Poelstra - Taproot (2020-03-07)
+title: Taproot 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['taproot']
+speakers: ['Andrew Poelstra']
+date: 2020-03-07
 ---
-
-Name: Andrew Poelstra
 
 Topic: Taproot - Who, How, Why
 
 Location: MIT Bitcoin Expo 2020
-
-Date: March 7th 2020
 
 Video: https://www.youtube.com/watch?v=1VtQBVauvhw
 

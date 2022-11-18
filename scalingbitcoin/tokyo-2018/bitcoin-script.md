@@ -3,6 +3,7 @@ title: Bitcoin Script
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks', 'taproot', 'covenants', 'segwit']
+speakers: ['Olaoluwa Osuntokun']
 ---
 
 Featuring roasbeef

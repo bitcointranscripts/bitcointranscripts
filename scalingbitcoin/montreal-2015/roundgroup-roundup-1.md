@@ -2,13 +2,12 @@
 title: Roundgroup Roundup 1
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Bram Cohen']
 ---
 
 Roundtable roundup review 1
 
 # Future of SPV Technology
-
-Bram Cohen
 
 So hopefully I summarized this reasonably. There were a number of things that came up in our discussion. It would help SPV a lot if there were UTXO commitments in blocks. This can be done with a soft-fork. It has implementation cost difficulties. There are some ugly things you could do about how the trees are formed, so that you don't have to repopulate the whole thing every single block. There might be some happy place where the complexity of code and the difficulty of doing this and the complexity of doing the lookups are only modestly ugly. More work should be done there.
 

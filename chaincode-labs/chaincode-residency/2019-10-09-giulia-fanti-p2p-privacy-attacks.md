@@ -1,13 +1,11 @@
 ---
-title: Giulia Fanti P2P Privacy Attacks (2019-10-09)
+title: P2P Privacy Attacks
 transcript_by: Caralie Chrisco
 tags: ['privacy', 'P2P', 'attacks']
 categories: ['residency']
+speakers: ['Giulia Fanti']
+date: 2019-10-09
 ---
-
-Name: Giulia Fanti
-
-Topic: Researching Bitcoin P2P privacy attacks
 
 Location: Chaincode Labs 2019 Residency
 

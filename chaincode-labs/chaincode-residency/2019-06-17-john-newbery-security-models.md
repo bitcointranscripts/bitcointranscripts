@@ -1,12 +1,12 @@
 ---
-title: John Newbery Security Models (2019-06-17)
+title: Security Models 
 transcript_by: Caralie Chrisco
 tags: ['security', 'taproot', 'cryptography']
 categories: ['residency']
+speakers: ['John Newbery']
+date: 2019-06-17
 ---
 
-Name: John Newbery
-  
 Topic: Security Models
   
 Location: Chaincode Labs 2019 Residency

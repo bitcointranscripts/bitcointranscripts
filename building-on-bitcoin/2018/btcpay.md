@@ -3,11 +3,11 @@ title: Btcpay
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'privacy', 'wallet']
+speakers: ['Nicolas Dorier']
+date: 2018-07-03
 ---
 
 How to make everyone run their own full node
-
-Nicolas Dorier
 
 Building on Bitcoin, 2018
 

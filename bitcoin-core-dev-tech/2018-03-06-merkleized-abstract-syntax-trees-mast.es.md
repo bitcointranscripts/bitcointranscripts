@@ -1,9 +1,10 @@
 ---
-title: Árboles de sintaxis abstracta merkleizados - MAST (2018-03-06)
+title: Árboles de sintaxis abstracta merkleizados - MAST 
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['taproot', 'covenios', 'validación']
+date: 2018-03-06
 ---
 
 <https://twitter.com/kanzure/status/972120890279432192>

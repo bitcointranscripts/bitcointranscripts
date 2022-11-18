@@ -3,6 +3,7 @@ title: Sybilquorum
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'proof-of-work']
+speakers: ['Alberto Sonnino']
 ---
 
 SybilQuorum: Open distributed ledgers through trust networks

@@ -3,6 +3,7 @@ title: Multi Hop Locks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'privacy', 'lightning']
+speakers: ['Giulio Malavolta', 'Pedro Moreno-Sanchez', 'Matteo Maffei']
 ---
 
 Multi-hop locks for secure, privacy-preserving and interoperable payment-channel networks
@@ -32,4 +33,3 @@ One-way homomorphic functions suffice for multi-hop locks in full script setting
 Q: Does your scheme solve the wormhole attack that you described at the beginning?
 
 A: Every condition is randomized differently. To open each of the hops, you need a secret key which is unique to each of the hops. If one user in the middle opens the sum of n keys, he doesn't know ... party... he doesn't know which is the ith condition that he could forward it to someone else in the path.
-

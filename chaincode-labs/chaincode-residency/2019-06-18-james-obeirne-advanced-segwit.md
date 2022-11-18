@@ -1,13 +1,11 @@
 ---
-title: James O'Beirne Advanced Segwit (2019-06-18)
+title: Advanced Segwit 
 transcript_by: Caralie Chrisco
 tags: ['segwit']
 categories: ['residency']
+speakers: ["James O'Beirne"]
+date: 2019-06-18
 ---
-
-Name: James O'Beirne  
-
-Topic: Advanced SegWit  
 
 Location: Chaincode Labs 2019 Residency  
 

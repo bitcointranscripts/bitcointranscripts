@@ -1,17 +1,14 @@
 ---
-title: Socratic Seminar - BIP Taproot (2020-07-21)
+title: Socratic Seminar - BIP Taproot
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']
+date: 2020-07-21
 ---
 
-Name: Socratic Seminar
-
-Topic: BIP Taproot (BIP 341)
+BIP Taproot (BIP 341)
 
 Location: London BitDevs (online)
-
-Date: July 21st 2020
 
 Video: https://www.youtube.com/watch?v=bPcguc108QM
 

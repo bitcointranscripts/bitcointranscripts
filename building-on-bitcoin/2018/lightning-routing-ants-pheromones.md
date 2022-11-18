@@ -1,13 +1,11 @@
 ---
-title: Lightning Routing Ants Pheromones
+title: Ant routing for the Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'routing']
+speakers: ['Ricardo Perez-Marco']
+date: 2018-07-04
 ---
-
-Ant routing for lightning network
-
-Ricardo Perez-Marco
 
 Building on Bitcoin 2018
 

@@ -1,7 +1,7 @@
 ---
 title: CTV BIP Review Workshop
 transcript_by: Bryan Bishop
-speaker: Jeremy Rubin
+speakers: ['Jeremy Rubin']
 ---
 
 OP\_CHECKTEMPLATEVERIFY workshop notes

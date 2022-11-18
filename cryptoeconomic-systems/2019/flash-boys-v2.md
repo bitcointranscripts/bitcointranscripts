@@ -3,6 +3,7 @@ title: Flash Boys V2
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
+speakers: ['Ari Juels']
 ---
 
 -- Disclaimer --

@@ -2,6 +2,7 @@
 title: Clearing And Settlement For Global Financial Institutions
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Charles Cascarilla', 'Chris Church', 'Brad Peterson', 'Sandra Ro']
 ---
 
 Preliminary notes:

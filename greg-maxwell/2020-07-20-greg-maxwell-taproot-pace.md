@@ -1,17 +1,14 @@
 ---
-title: Greg Maxwell - Taproot Pace (2020-07-20)
-speaker: Greg Maxwell
+title: Taproot Pace
+speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['consensus', 'taproot']
+date: 2020-07-20
 ---
 
-Name: Greg Maxwell
-
-Topic: Is Taproot development moving too fast or too slow?
+Is Taproot development moving too fast or too slow?
 
 Location: Reddit
-
-Date: July 20, 2020
 
 https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s?utm_source=share&utm_medium=web2x&context=3
 
@@ -34,4 +31,3 @@ To the extent that we might delay Taproot because we could instead deploy a more
 Moreover, I believe the discussion about Taproot is essentially complete. It's been extensively reviewed and analyzed. People want it. No major arguments against it have been raised. At this juncture, additional waiting isn't adding more review and certainty. Instead, additional delay is sapping inertia and potentially increasing risk somewhat as people start forgetting details, delaying work on downstream usage (like wallet support), and not investing as much additional review effort as they would be investing if they felt confident about the activation timeframe. It's also delaying work on subsequent technology like signature aggregation, G’root, and other things.
 
 I'm all for taking things slowly and deliberately. But I think we have, especially given the narrowness of this change. No matter how slowly something goes someone could always say "but it could be done slower"-- but slower is only better up to a point and beyond that slower is worse even if you totally disregard the fact that applications that would benefit from Taproot aren't getting the benefit.
-

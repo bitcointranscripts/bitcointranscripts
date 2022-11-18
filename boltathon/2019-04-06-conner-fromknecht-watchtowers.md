@@ -1,11 +1,11 @@
 ---
-title: Conner Fromknecht - Watchtowers (2019-04-06)
+title: Watchtowers
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['research', 'lightning', 'lnd']
+speakers: ['Conner Fromknecht']
+date: 2019-04-06
 ---
-
-Conner Fromknecht
 
 Architecture of LND Watchtowers
 

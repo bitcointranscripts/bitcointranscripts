@@ -2,6 +2,7 @@
 title: Analysis Of Dust In Utxo Based Cryptocurrencies
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Cristina Pérez-Solà', 'Sergi Delgado Segura', 'Guillermo Navarro-Arribas', 'Jordi Herrera']
 ---
 
 An analysis of dust in UTXO-based cryptocurrencies

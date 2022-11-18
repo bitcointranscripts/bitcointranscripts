@@ -1,8 +1,9 @@
 ---
-title: Cross Curve Atomic Swaps (2018-03-05)
+title: Cross Curve Atomic Swaps
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['ux', 'lightning', 'schnorr']
+date: 2018-03-05
 ---
 
 <https://twitter.com/kanzure/status/971827042223345664>

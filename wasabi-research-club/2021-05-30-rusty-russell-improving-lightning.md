@@ -1,18 +1,15 @@
 ---
-title: Rusty Russell Improving the Lightning Network (2021-05-30)
+title: Improving the Lightning Network
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning', 'c-lightning']
-
+speakers: ['Rusty Russell']
+date: 2021-05-30
 ---
-
-Name: Rusty Russell
 
 Topic: Improving the Lightning Network
 
 Location: Join the Wasabikas podcast
-
-Date: May 30th 2021
 
 Audio: <https://www.youtube.com/watch?v=BRkSE00aj5k&list=PLPwc75tPMdsixsuhwau82Q0IfxECo0z_E&index=18>
 

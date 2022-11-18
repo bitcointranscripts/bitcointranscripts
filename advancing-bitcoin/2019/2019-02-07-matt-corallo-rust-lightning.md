@@ -1,11 +1,11 @@
 ---
-title: Matt Corallo - Rust Lightning (2019-02-07)
+title: Rust Lightning
+speakers: ['Matt Corallo']
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
+date: 2019-02-07
 ---
-
-Matt Corallo
 
 Flexible Lightning in Rust
 

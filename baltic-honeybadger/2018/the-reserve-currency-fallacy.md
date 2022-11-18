@@ -2,11 +2,10 @@
 title: The Reserve Currency Fallacy
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Eric Voskuil']
 ---
 
 The reserve currency fallacy
-
-Eric Voskuil (evoskuil)
 
 <https://twitter.com/kanzure/status/1043385469134925824>
 

@@ -2,15 +2,11 @@
 title: Ideal Number Of Full Bitcoin Nodes
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['David Vorick']
+date: 2017-03-04
 ---
 
-Ideal number of full bitcoin nodes
-
-David Vorick
-
-2017-03-04
-
-<https://www.youtube.com/watch?v=0mVOq1jaR1U&t=56m20s>
+video: <https://www.youtube.com/watch?v=0mVOq1jaR1U&t=56m20s>
 
 <https://twitter.com/kanzure/status/838481130944876544>
 

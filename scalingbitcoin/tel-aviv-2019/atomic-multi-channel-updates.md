@@ -3,11 +3,10 @@ title: Atomic Multi Channel Updates
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus']
+speakers: ['Pedro Moreno-Sanchez']
 ---
 
 Atomic multi-channel updates with constant collateral in bitcoin-compatible payment-channel networks
-
-Pedro Moreno-Sanchez
 
 paper: <https://eprint.iacr.org/2019/583>
 

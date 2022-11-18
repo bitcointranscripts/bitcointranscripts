@@ -1,9 +1,10 @@
 ---
-title: Árboles de sintaxis abstracta merkleizados (2017-09-07)
+title: Árboles de sintaxis abstracta merkleizados 
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['consenso', 'ux']
+date: 2017-09-07
 ---
 
 ﻿<https://twitter.com/kanzure/status/907075529534328832>

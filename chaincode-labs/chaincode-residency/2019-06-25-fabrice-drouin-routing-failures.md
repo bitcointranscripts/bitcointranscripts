@@ -1,17 +1,15 @@
 ---
-title: Fabrice Drouin - Routing Failures
+title: Routing Failures
 Transcript_by: Andrew Toth and Caralie Chrisco
 categories: ['residency']
 tags: ['lightning', 'routing failures']
+speakers: ['Fabrice Drouin']
+date: 2019-06-25
 ---
-
-Name: Fabrice Drouin
 
 Topic: Routing Failures
 
 Location: Chaincode Labs Lightning Residency 2019
-
-Date: 2019-06-25
 
 Video: <https://youtu.be/z5vEyvc2vrE>
 

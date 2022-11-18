@@ -1,17 +1,16 @@
 ---
-title: Socratic Seminar - Taproot rollout (2021-07-20)
+title: Socratic Seminar - Taproot rollout
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']
+date: 2021-07-20
 ---
-
-Name: Socratic Seminar
 
 Topic: Taproot is locked in. What now?
 
-Location: London BitDevs (online)
+Name: Socratic Seminar
 
-Date: July 20th 2021
+Location: London BitDevs (online)
 
 Video: <https://www.youtube.com/watch?v=GAkLuZNsZzw>
 

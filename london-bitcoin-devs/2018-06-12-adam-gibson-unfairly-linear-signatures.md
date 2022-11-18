@@ -1,17 +1,13 @@
 ---
-title: Adam Gibson - Unfairly Linear Signatures (2018-06-12)
+title: Unfairly Linear Signatures
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr']
+speakers: ['Adam Gibson']
+date: 2018-06-12
 ---
 
-Name: Adam Gibson
-
-Topic: Unfairly Linear Signatures
-
 Location: London Bitcoin Devs
-
-Date: June 12th 2018
 
 Video: https://www.youtube.com/watch?v=mLZ7qVwKalE
 

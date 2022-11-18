@@ -1,13 +1,11 @@
 ---
-title: Alex Bosworth -  Major Limitations of Lightning (2019-04-06)
+title: Major Limitations of Lightning 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Alex Bosworth']
+date: 2019-04-06
 ---
-
-Alex Bosworth
-
-Major Limitations of the Lightning Network
 
 Video: <https://www.youtube.com/watch?v=ctx-oAIhhSY&list=PLC_AgDAr0m6QhwqPDrqMfjX64oHGmwDMk&index=4>
 

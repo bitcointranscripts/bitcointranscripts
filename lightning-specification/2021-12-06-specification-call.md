@@ -1,8 +1,9 @@
 ---
-title: Lightning specification call (2021-12-06)
+title: Lightning specification call 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
+date: 2021-12-06
 ---
 
 Name: Lightning specification call
@@ -10,8 +11,6 @@ Name: Lightning specification call
 Topic: Agenda below
 
 Location: Google Meet
-
-Date: December 6th 2021
 
 Video: No video posted online
 

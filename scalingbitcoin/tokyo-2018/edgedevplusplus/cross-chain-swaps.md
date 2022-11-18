@@ -3,11 +3,10 @@ title: Cross Chain Swaps
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Ethan Heilman', 'Nicolas Dorier']
 ---
 
 Cross-chain swaps: Atomically swapping coins for privacy or cross-blockchain trades
-
-Ethan Heilman, Nicolas Dorier
 
 <https://twitter.com/kanzure/status/1048017311431413760>
 

@@ -1,17 +1,13 @@
 ---
-title: John Light - Bitcoin Full Nodes (2018-07-23)
+title: Bitcoin Full Nodes 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['forks', 'hard fork', 'soft fork']
+date: 2018-07-23
+speakers: ['John Light']
 ---
 
-Name: John Light
-
-Topic: Bitcoin Full Nodes
-
 Location: London Bitcoin Devs
-
-Date: July 23rd 2018
 
 Video: https://www.youtube.com/watch?v=qzbdNefsA-0
 

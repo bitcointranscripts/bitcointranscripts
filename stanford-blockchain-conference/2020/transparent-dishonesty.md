@@ -3,11 +3,10 @@ title: Transparent Dishonesty
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks']
+speakers: ['Shayan Eskandari']
 ---
 
 Transparent dishonesty: frontrunning attacks on blockchain
-
-Shayan Eskandari
 
 <https://twitter.com/kanzure/status/1231005309310627841>
 

@@ -2,17 +2,8 @@
 title: Trading Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Florian Maier', 'Tone Vays', 'Whalepanda', 'Matthew Mezinskis']
 ---
-
-Trading panel
-
-Whalepanda (Whalepanda)
-
-Florian Maier (Marsmensch)
-
-Tone Vays (ToneVays)
-
-Matthew Mezinskis (crypto\_voices)
 
 MM: As Trace Mayer says, it's chasing the rabbit. Why not introduce ourselves?
 

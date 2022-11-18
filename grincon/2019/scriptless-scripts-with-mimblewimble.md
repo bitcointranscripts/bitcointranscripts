@@ -3,6 +3,7 @@ title: Scriptless Scripts With Mimblewimble
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'lightning', 'multisig', 'timelocks']
+speakers: ['Andrew Poelstra']
 ---
 
 Scriptless scripts with mimblewimble

@@ -1,18 +1,16 @@
 ---
-title: Andrew Poelstra - Miniscript Introducción (2020-02-06)
+title: Miniscript Introducción
+speakers: ['Andrew Poelstra']
+date: 2020-02-06
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['miniscript', 'cartera']
 ---
 
-Nombre: Andrew Poelstra
-
 Tema: Introducción a Miniscript
 
 Locación: El avance de Bitcoin
-
-Día: 6 de febrero de 2020 
 
 Vídeo: https://www.youtube.com/watch?v=eTUuwASdUBE
 

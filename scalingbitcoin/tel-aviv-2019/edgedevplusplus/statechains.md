@@ -2,11 +2,10 @@
 title: Statechains
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ruben Somsen']
 ---
 
 Schnorr signatures, adaptor signatures and statechains
-
-Ruben Somsen
 
 <https://twitter.com/kanzure/status/1171345418237685760>
 
@@ -57,4 +56,3 @@ How do you prove to somebody that you know a private key? You sign a message and
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/statechains/>
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017005.html>
-

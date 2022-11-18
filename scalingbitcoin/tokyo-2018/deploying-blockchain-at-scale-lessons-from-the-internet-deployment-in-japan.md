@@ -2,6 +2,7 @@
 title: Deploying Blockchain At Scale Lessons From The Internet Deployment In Japan
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Jun Muai']
 ---
 
 Deploying blockchain at scale: Lessons learned from the Internet deployment in Japan

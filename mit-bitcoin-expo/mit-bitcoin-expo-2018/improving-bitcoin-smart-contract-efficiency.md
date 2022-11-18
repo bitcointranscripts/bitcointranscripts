@@ -3,11 +3,8 @@ title: Improving Bitcoin Smart Contract Efficiency
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['taproot', 'smart contracts', 'lightning']
+speakers: ['Tadge Dryja']
 ---
-
-Improving efficiency of smart contracts on the bitcoin network
-
-Tadge Dryja
 
 video: <https://www.youtube.com/watch?v=i-0NUqIVVV4&t=53m14s>
 

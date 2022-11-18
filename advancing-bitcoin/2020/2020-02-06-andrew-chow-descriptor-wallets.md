@@ -1,17 +1,15 @@
 ---
-title: Andrew Chow - Descriptor Wallets (2020-02-06)
+title: Descriptor Wallets
+speakers: ['Andrew Chow']
+date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['workshop']
 tags: ['wallet']
 ---
 
-Name: Andrew Chow
-
 Topic: Rethinking Wallet Architecture: Native Descriptor Wallets
 
 Location: Advancing Bitcoin
-
-Date: February 6th 2020
 
 Video: https://www.youtube.com/watch?v=xC25NzIjzog
 

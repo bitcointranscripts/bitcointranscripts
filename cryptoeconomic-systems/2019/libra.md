@@ -2,6 +2,7 @@
 title: Libra
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Dahlia Malkhi']
 ---
 
 -- Disclaimer --

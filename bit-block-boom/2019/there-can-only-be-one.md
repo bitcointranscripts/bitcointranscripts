@@ -3,11 +3,10 @@ title: There Can Only Be One
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'proof-of-work', 'altcoin']
+speakers: ['Tone Vays']
 ---
 
 Bitcoin: There can only be one
-
-Tone Vays
 
 <https://twitter.com/kanzure/status/1162742007460192256>
 

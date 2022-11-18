@@ -1,13 +1,11 @@
 ---
-title: Bastien Teinturier - Trampoline Routing (2019-10-20)
+title: Trampoline Routing
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['eclair', 'routing', 'wallet']
+speakers: ['Bastien Teinturier']
+date: 2019-10-20
 ---
-
-Bastien Teinturier
-
-Trampoline Routing
 
 The Lightning Conference Day 2 (Stage 2)
 

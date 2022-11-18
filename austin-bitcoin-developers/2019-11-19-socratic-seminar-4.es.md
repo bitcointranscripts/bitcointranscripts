@@ -1,11 +1,10 @@
 ---
-title: Seminario Socrático 4 (2019-11-19)
+title: Seminario Socrático 4
+date: 2019-11-19
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
 ---
-
-Seminario Socrático #4
 
 <https://twitter.com/kanzure/status/1196947713658626048>
 

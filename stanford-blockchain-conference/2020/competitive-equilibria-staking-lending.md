@@ -3,11 +3,10 @@ title: Competitive Equilibria Staking Lending
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'proof-of-work']
+speakers: ['Tarun Chitra']
 ---
 
 Competitive equilibria between staking and on-chain lending
-
-Tarun Chitra
 
 <https://twitter.com/kanzure/status/1230581977289379840>
 

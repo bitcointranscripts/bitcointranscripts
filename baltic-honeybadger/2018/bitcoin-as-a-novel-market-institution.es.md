@@ -3,11 +3,10 @@ title: Bitcoin como nueva institución de mercado
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Nic Carter']
 ---
 
 Bitcoin como nueva institución de mercado
-
-Nic Carter (nic\_\_carter)
 
 <https://twitter.com/kanzure/status/1043763647498063872>
 

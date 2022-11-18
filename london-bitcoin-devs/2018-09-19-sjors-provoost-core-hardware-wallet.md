@@ -1,5 +1,5 @@
 ---
-title: Sjors Provoost - Bitcoin Core and hardware wallets (2018-09-19)
+title: Bitcoin Core and hardware wallets
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'bitcoin core']
@@ -7,13 +7,9 @@ speakers: ['Sjors Provoost']
 date: 2018-09-19
 ---
 
-Name: Sjors Provoost
-
 Topic: Using Bitcoin Core with hardware wallets
 
 Location: London Bitcoin Devs
-
-Date: September 19th 2018
 
 Video: <https://www.youtube.com/watch?v=SUDkYbkcTsQ>
 

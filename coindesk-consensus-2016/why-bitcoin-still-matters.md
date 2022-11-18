@@ -2,6 +2,7 @@
 title: Why Bitcoin Still Matters
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Hutchins']
 ---
 
 Preliminary notes:

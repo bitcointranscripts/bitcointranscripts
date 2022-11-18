@@ -2,11 +2,10 @@
 title: Mimblewimble
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Andrew Poelstra']
 ---
 
 Mimblewimble: private, massively-prunable public blockchains
-
-Andrew Poelstra (andytoshi)
 
 <https://twitter.com/kanzure/status/784696648597405696>
 

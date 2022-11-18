@@ -1,17 +1,15 @@
 ---
-title: Luke Dashjr - Taproot Activation (2021-03-17)
+title: Taproot Activation 
 transcript_by: Stephan Livera
 categories: ['podcast']
 tags: ['taproot', 'soft fork']
+speakers: ['Luke Dashjr']
+date: 2021-03-17
 ---
-
-Name: Luke Dashjr
 
 Topic: How Bitcoin UASF went down, Taproot LOT=true, Speedy Trial, Small Blocks
 
 Location: Stephan Livera Podcast
-
-Date: March 17th 2021
 
 Audio: https://stephanlivera.com/episode/260/
 

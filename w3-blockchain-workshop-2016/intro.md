@@ -1,7 +1,9 @@
 ---
-title: Intro to W3 Blockchain Workshop (2016-06-29)
+title: Intro to W3 Blockchain Workshop 
 transcript_by: Bryan Bishop
 categories: ['workshop']
+speakers: ['Doug Schepers']
+date: 2016-06-29
 ---
 
 Blockchains and standards

@@ -3,6 +3,7 @@ title: Building Mimblewimble And Grin
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'scalability']
+speakers: ['Quentin Le Sceller']
 ---
 
 Building mimblewimble and green

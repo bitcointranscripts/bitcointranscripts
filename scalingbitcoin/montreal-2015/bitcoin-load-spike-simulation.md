@@ -3,14 +3,8 @@ title: Bitcoin Load Spike Simulation
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'mempool', 'fees']
+speakers: ['Conner Fromknecht', 'Nathan Wilcox']
 ---
-
-Conner Fromknecht
-
-Nathan Wilcox
-
-
-Bitcoin load spike simulation
 
 Our goal for this project, our rationale of what we're interesting is when many transactions arrive in a short period of time. This could be because of denial of service attacks where few entities are creating a large number of transactions, or many people wanting to create transactions, like a shopping spree. We wanted to answer two questions, how does the temporary spike in transaction rate affect confirmation delay distribution? For a given spike shape, can we change the block size and how would that effect the evolution of the system?
 

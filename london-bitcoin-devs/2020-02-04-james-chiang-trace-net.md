@@ -1,16 +1,14 @@
 ---
-title: James Chiang Trace Net (2020-02-04)
+title: Trace Net
 transcript_by: Michael Folkson
 categories: ['meetup']
+speakers: ['James Chiang']
+date: 2020-02-04
 ---
 
-Name: James Chiang
-
-Topic: Bitcoin Trace-Net
+Bitcoin Trace-Net
 
 Location: London Bitcoin Devs
-
-Date: February 4th 2020
 
 Video: https://www.youtube.com/watch?v=SMvoGkxMyYs
 

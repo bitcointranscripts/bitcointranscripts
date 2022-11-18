@@ -1,17 +1,12 @@
 ---
-title: Fabrice Drouin - Fee Management (Lightning Network)
+title: Fee Management (Lightning Network)
 Transcript_by: Keyan Kousha, Shiv Patel, Nelson Galdeman
 categories: ['residency']
 tags: ['lightning', 'fee management']
+speakers: ['Fabrice Drouin']
 ---
 
-Name: Fabrice Drouin
-
-Topic: Fee Management (Lightning Network)
-
 Location: Chaincode Labs Lightning Residency 2019
-
-Date: 2019-06-25
 
 Video: <https://youtu.be/r8S3iELg9_U>
 

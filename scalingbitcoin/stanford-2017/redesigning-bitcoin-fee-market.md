@@ -3,9 +3,8 @@ title: Redesigning Bitcoin Fee Market
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['ux', 'fees']
+speakers: ['Or Sattath']
 ---
-
-Redesigning bitcoin's fee market
 
 Or Sattath (The Hebrew University)
 

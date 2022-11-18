@@ -1,9 +1,10 @@
 ---
-title: Intercambios atómicos de curvas transversales (2018-03-05)
+title: Intercambios atómicos de curvas transversales
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['ux', 'firmas', 'criptografía']
+date: 2018-03-05
 ---
 
 <https://twitter.com/kanzure/status/971827042223345664>

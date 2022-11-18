@@ -3,11 +3,8 @@ title: Armory Proof Of Payment
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'multisig']
+speakers: ['Andy Ofiesh']
 ---
-
-Armory proof of payment
-
-Andy Ofiesh
 
 I am going to talk about proof of payment. This is simple. You can do this. That you couldn't do before 2008. We'll see if this works. I hear it might work. That's okay, I'll pull this up here. I have ruined everything. Just jam that in there. Here we go.
 

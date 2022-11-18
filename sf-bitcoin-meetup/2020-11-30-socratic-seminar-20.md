@@ -1,10 +1,9 @@
 ---
-title: Socratic Seminar 20 (2020-11-30)
+title: Socratic Seminar 20 
 transcript_by: Bryan Bishop
 categories: ['meetup']
+date: 2020-11-30
 ---
-
-2020-11-30
 
 SF Bitcoin Devs socratic seminar #20
 

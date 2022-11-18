@@ -3,15 +3,10 @@ title: Procesamiento de pagos con Bitcoin y comerciantes
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Sergej Kotliar', 'Alena Vranova', 'Vortex']
 ---
 
 1 a 1: Procesamiento de pagos con Bitcoin y comerciantes
-
-Sergej Kotliar (ziggamon)
-
-Alena Vranova (AlenaSatoshi)
-
-Vortex (theonevortex)
 
 <https://twitter.com/kanzure/status/1043476967918592003>
 

@@ -1,8 +1,9 @@
 ---
-title: Socratic Seminar (2020-08-12)
+title: Socratic Seminar 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['wallet']
+date: 2020-08-12
 ---
 
 Name: Socratic Seminar
@@ -10,8 +11,6 @@ Name: Socratic Seminar
 Topic: Agenda below
 
 Location: Chicago BitDevs (online)
-
-Date: August 12th 2020
 
 Video: No video posted online
 

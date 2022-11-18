@@ -3,15 +3,11 @@ title: Exchange Security
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'wallet']
+speakers: ['Mitchell Dong']
+date: 2017-03-04
 ---
 
-Exchange security
-
-Mitchell Dong
-
-2017-03-04
-
-<https://www.youtube.com/watch?v=0mVOq1jaR1U&t=3h15m>
+video: <https://www.youtube.com/watch?v=0mVOq1jaR1U&t=3h15m>
 
 <https://twitter.com/kanzure/status/838517545783148545>
 

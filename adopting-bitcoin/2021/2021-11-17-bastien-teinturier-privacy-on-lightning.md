@@ -1,11 +1,11 @@
 ---
-title: Bastien Teinturier - Privacy On Lightning (2021-11-17)
+title: Privacy On Lightning
+speakers: ['Bastien Teinturier']
+date: 2021-11-17
 transcript_by: freddiekrugerrand
 categories: ['conference']
 tags: ['lightning', 'privacy']
 ---
-
-Name: Bastien Teinturier
 
 Topic: Privacy On Lightning
 

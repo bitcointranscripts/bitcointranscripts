@@ -3,11 +3,8 @@ title: Bitcoin Failure Modes And The Role Of The Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Tadge Dryja', 'Joseph Poon']
 ---
-
-Thaddeus Dryja
-
-Joseph Poon
 
 I am going to be talking about bitcoin failure modes, and Joseph will talk about how the lightning network can help. I'll start. We'll start off by saying that bitcoin is working, which is really cool. Blocks starts with lots of zeroes, coins stay put, they move when you tell them to. That's really cool and it works. That's great. This is a good starting place. We should acknowledge that bitcoin can fail. But it's anti-fragile, right? What's the blockheight of the final block? There are fates maybe worse than final block.
 

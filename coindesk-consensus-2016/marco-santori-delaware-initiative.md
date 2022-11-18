@@ -1,17 +1,14 @@
 ---
-title: Marco Santori Delaware Initiative
+title: Delaware Initiative
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'proof-of-work']
+speakers: ['Marco Santori']
 ---
 
 Preliminary notes:
 
-
-
 Contact me- <https://twitter.com/kanzure>
-
-Marco Santori
 
 Delaware initiative
 

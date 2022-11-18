@@ -3,9 +3,8 @@ title: Technological Stability
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['privacy', 'fungibility']
+date: 2020-02-18
 ---
-
-Technological stability
 
 <https://twitter.com/kanzure/status/1229891596688052226>
 

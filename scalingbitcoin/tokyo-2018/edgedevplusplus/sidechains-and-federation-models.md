@@ -3,11 +3,8 @@ title: Sidechains And Federation Models
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus']
+speakers: ['Greg Sanders']
 ---
-
-Sidechains and federation models
-
-Greg Sanders (instagibbs)
 
 <https://twitter.com/kanzure/status/1048008467871666178>
 

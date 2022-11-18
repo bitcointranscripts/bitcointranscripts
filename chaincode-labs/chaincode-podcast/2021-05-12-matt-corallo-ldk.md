@@ -1,17 +1,13 @@
 ---
-title: Matt Corallo Lightning Development Kit (2021-05-12)
+title: Lightning Development Kit
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']
+speakers: ['Matt Corallo']
+date: 2021-05-12
 ---
 
-Name: Matt Corallo
-
-Topic: Lightning Development Kit (LDK)
-
 Location: Chaincode Labs Podcast (Episode 13)
-
-Date: May 12th 2021
 
 Audio: <https://podcast.chaincode.com/2021/05/12/matt-corallo-13.html>
 

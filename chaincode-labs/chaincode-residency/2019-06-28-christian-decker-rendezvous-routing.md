@@ -1,15 +1,13 @@
 ---
-title:  Christian Decker - Rendezvous Routing (2019-06-28)
+title: Rendezvous Routing
 transcript_by: Caralie Chrisco and Darius Parvin
 categories: ['residency']
 tags: ['lightning', 'routing']
+date: 2019-06-28
+speakers: ['Christian Decker']
 ---
 
-Name: Christian Decker
-
-Topic: Rendezvous Routing (Lightning Network)
-
-Date: 2019-06-28
+Rendezvous Routing (Lightning Network)
 
 Location: Chaincode Residency 2019
 

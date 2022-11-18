@@ -1,18 +1,16 @@
 ---
-title: Andrew Chow - Carteras de descriptores  (2020-02-06)
+title: Carteras de descriptores
+speakers: ['Andrew Chow']
+date: 2020-02-06
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
 tags: ['cartera']
 ---
 
-Nombre: Andrew Chow
-
 Tema: Repensar la arquitectura de las carteras: Carteras de descriptores nativos 
 
 Ubicación: El avance de Bitcoin
-
-Día: 6 de febrero de 2020 
 
 Vídeo: https://www.youtube.com/watch?v=xC25NzIjzog
 

@@ -1,13 +1,9 @@
 ---
-title: James Gatto Marco Santori Bitcoin Law For Developers
+title: Bitcoin Law For Developers
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
+speakers: ['James Gatto', 'Marco Santori']
 ---
-
-Bitcoin law for developers
-
-James Gatto
-Marco Santori
 
 We are going to be taking a 15 minute coffee break after our next two speakers. I want to introduce you to James Gatto and Marco Santori with Pilsbury. They will be spending some time talking about Bitcoin law. They have a room this afternoon and they are offering to talk with you one on one. So Marco and James.
 

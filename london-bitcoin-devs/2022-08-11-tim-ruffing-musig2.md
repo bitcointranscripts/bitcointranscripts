@@ -1,13 +1,11 @@
 ---
-title: Tim Ruffing - MuSig2 (2022-08-11)
+title: MuSig2
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'multisig']
 speakers: ['Tim Ruffing']
 date: 2022-08-11
 ---
-
-Name: Tim Ruffing
 
 Topic: MuSig2
 

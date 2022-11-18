@@ -1,17 +1,15 @@
 ---
-title: Jeremy Rubin - Sapio 101 (2020-07-11)
+title: Jeremy Rubin - Sapio 101 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['smart contracts']
+speakers: ['Jeremy Rubin']
+date: 2020-07-11
 ---
-
-Name: Jeremy Rubin
 
 Topic: Sapio Programming 101: Stateful Smart Contracts for Bitcoin with OP_CTV
 
 Location: Reckless VR
-
-Date: July 11th 2020
 
 Video: https://www.youtube.com/watch?v=4vDuttlImPc
 

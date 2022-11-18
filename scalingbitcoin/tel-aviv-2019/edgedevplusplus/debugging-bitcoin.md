@@ -2,15 +2,13 @@
 title: Debugging Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
+date: 2020-09-09
+speakers: ['Fabian Jahr']
 ---
-
-Name: Fabian Jahr
 
 Topic: Debugging Bitcoin
 
 Location: Bitcoin Edge Dev++
-
-Date: September 9th 2020
 
 Video: https://www.youtube.com/watch?v=8bea0bdoFG0
 

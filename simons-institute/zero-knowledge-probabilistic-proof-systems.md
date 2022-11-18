@@ -2,11 +2,8 @@
 title: Zero Knowledge Probabilistic Proof Systems
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Shafi Goldwasser']
 ---
-
-Zero knowledge probabilistic proof systems
-
-Shafi Goldwasser
 
 Historical Papers in Cryptography Seminar Series, Simons Institute
 
