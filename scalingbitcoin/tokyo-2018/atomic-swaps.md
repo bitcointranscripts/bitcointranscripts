@@ -3,12 +3,11 @@ title: Atomic Swaps
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['atomic swaps']
-speakers: ['Thomas Eizinger']
+speakers: ['Thomas Eizinger', 'Lloyd Fournier', 'Phillip Hoenisch']
 ---
 
 The state of atomic swaps
 
-Thomas Eizinger, Lloyd Fournier and Phillip Hoenisch (CoBlox)
 
 <https://twitter.com/kanzure/status/1048790167283068929>
 
