@@ -2,6 +2,7 @@
 title: Future Of Blockchains
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Paul Vigna', 'Balaji Srinivasan', 'David Rutter']
 ---
 
 Preliminary notes:

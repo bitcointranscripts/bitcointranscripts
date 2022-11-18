@@ -2,6 +2,7 @@
 title: How To Get Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Balaji Srinivasan']
 ---
 
 Preliminary notes:

@@ -3,13 +3,8 @@ title: Tumblebit
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Ethan Heilman', 'Leen AlShenibr']
 ---
-
-TumbleBit
-
-Ethan Heilman
-
-Leen AlShenibr
 
 <https://twitter.com/kanzure/status/784686167052709888>
 

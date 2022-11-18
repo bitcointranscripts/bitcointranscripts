@@ -1,10 +1,9 @@
 ---
-title: Funding
+title: Funding bitcoin development
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Tadge Dryja']
 ---
-
-Tadge Dryja
 
 Funding bitcoin development
 

@@ -1,13 +1,13 @@
 ---
-title: Wallet Architecture in Bitcoin Core (2018-10-04)
+title: Wallet Architecture in Bitcoin Core 
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'wallet', 'bitcoin core']
+speakers: ['John Newbery']
+date: 2018-10-04
 ---
 
 Bitcoin Core wallet architecture
-
-John Newbery
 
 <https://twitter.com/kanzure/status/1171018684816605185>
 

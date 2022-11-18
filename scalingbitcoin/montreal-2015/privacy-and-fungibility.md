@@ -7,7 +7,6 @@ tags: ['privacy', 'fungibility', 'lightning', 'scalability']
 
 Privacy and scalability
 
-
 Even though Bitcoin is the worst privacy system ever, everyone in the community very strongly values privacy.
 
 There are at least three things:

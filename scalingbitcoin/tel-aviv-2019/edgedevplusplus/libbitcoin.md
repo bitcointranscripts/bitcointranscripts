@@ -2,6 +2,8 @@
 title: Libbitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['James Chiang']
+tags: ['transaction']
 ---
 
 Libbitcoin: A practical introduction
@@ -107,6 +109,3 @@ Okay, that's my presentation. Thank you Anton for having us. I think it's import
 # See also
 
 <https://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/libbitcoin/>
-
-
-

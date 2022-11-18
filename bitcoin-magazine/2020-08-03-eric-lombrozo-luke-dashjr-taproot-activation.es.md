@@ -1,18 +1,16 @@
 ---
-title: Eric Lombrozo, Luke Dashjr - Activación de Taproot (2020-08-03)
+title: Activación de Taproot 
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
 tags: ['taproot', 'soft fork']
+date: 2020-08-03
+speakers: ['Eric Lombrozo', 'Luke Dashjr']
 ---
-
-Name: Eric Lombrozo y Luke Dashjr
 
 Topic: Cómo activar un nuevo Soft Fork
 
 Location: Bitcoin Magazine (en línea)
-
-Date: 3 de agosto de 2020 
 
 Video: https://www.youtube.com/watch?v=yQZb0RDyFCQ
 

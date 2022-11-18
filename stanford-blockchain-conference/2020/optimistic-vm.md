@@ -3,6 +3,7 @@ title: Optimistic Vm
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['layer 2', 'ethereum']
+speakers: ['Karl Floersch']
 ---
 
 The optimistic VM

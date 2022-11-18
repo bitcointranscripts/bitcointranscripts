@@ -1,5 +1,5 @@
 ---
-title: Jonas Nick - MuSig2 (2021-08-16)
+title: MuSig2 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
@@ -7,13 +7,9 @@ speakers: ['Jonas Nick']
 date: 2021-08-16
 ---
 
-Name: Jonas Nick
-
-Topic: MuSig2: Simple Two-Round Schnorr Multi-Signatures
+MuSig2: Simple Two-Round Schnorr Multi-Signatures
 
 Location: IACR Crypto
-
-Date: August 16th 2021
 
 Video: <https://www.youtube.com/watch?v=Dzqj236cVHk>
 

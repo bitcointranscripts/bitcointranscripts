@@ -1,9 +1,10 @@
 ---
-title: Agregación de firmas (2017-09-06)
+title: Agregación de firmas 
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['validación', 'multisig']
+date: 2017-09-06
 ---
 
 ﻿<https://twitter.com/kanzure/status/907065194463072258>

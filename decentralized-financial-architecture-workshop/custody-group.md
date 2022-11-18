@@ -3,9 +3,8 @@ title: Custody Group
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['multisig', 'wallet']
+date: 2019-09-08
 ---
-
-2109-09-08
 
 Custody working group
 

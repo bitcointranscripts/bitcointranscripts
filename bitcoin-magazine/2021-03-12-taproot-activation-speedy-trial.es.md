@@ -1,18 +1,16 @@
 ---
-title: Taproot Activación con Speedy Trial (2021-03-12)
+title: Taproot Activación con Speedy Trial 
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
 tags: ['taproot']
+date: 2021-03-12
+speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 ---
-
-Nombre: Sjors Provoost y Aaron van Wirdum
 
 Tema: Taproot Activación con Speedy Trial
 
 Localización: Bitcoin Magazine (en línea)
-
-Fecha: 12 de marzo de 2021
 
 Video: https://www.youtube.com/watch?v=oCPrjaw3YVI
 

@@ -1,8 +1,9 @@
 ---
-title: Christian Decker - C-Lightning Questions (2019-09-04)
+title: Lightning Questions
 transcript_by: Michael Folkson
-speaker: Christian Decker
+speakers: ['Christian Decker']
 tags: ['lightning', 'lnd', 'c-lightning']
+date: 2019-09-04
 ---
 
 Christian Decker

@@ -1,16 +1,14 @@
 ---
-title: Socratic Seminar Vaults (2020-05-19)
+title: Socratic Seminar Vaults - Vaults and OP_CHECKTEMPLATEVERIFY
 transcript_by: Michael Folkson
 categories: ['meetup']
+date:  2020-05-19
 ---
 
 Name: Socratic Seminar
 
-Topic: Vaults and OP_CHECKTEMPLATEVERIFY
-
 Location: London BitDevs (online)
 
-Date: May 19th 2020
 
 Video: https://www.youtube.com/watch?v=34jMGiCAmQM
 

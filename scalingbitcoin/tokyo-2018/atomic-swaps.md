@@ -2,6 +2,8 @@
 title: Atomic Swaps
 transcript_by: Bryan Bishop
 categories: ['conference']
+tags: ['atomic swaps']
+speakers: ['Thomas Eizinger', 'Lloyd Fournier', 'Phillip Hoenisch']
 ---
 
 The state of atomic swaps

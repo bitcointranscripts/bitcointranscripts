@@ -3,6 +3,7 @@ title: Overview Of Security Concerns
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'attacks', 'validation', 'scalability']
+speakers: ['Peter Todd']
 ---
 
 petertodd

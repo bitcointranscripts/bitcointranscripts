@@ -1,13 +1,11 @@
 ---
-title: Rusty Russell - JSON Interface (2019-04-06)
+title: JSON Interface 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
+speakers: ['Rusty Russell']
+date: 2019-04-06
 ---
-
-Rusty Russell
-
-Boltathon
 
 JSON Interface with c-lightning and Writing Extensions
 

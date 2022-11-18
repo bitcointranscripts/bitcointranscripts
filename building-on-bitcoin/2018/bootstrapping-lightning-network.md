@@ -3,11 +3,11 @@ title: Bootstrapping Lightning Network
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Fabrice Drouin']
+date: 2018-07-04
 ---
 
 Bootstrapping LN: What have we learned?
-
-Fabrice Drouin
 
 Building on Bitcoin 2018
 

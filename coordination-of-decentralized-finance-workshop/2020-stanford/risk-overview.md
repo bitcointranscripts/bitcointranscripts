@@ -2,11 +2,11 @@
 title: Risk Overview
 transcript_by: Bryan Bishop
 categories: ['workshop']
+speakers: ['Byron Gibson']
+date: 2020-02-18
 ---
 
 Overview of risk in decentralized financial systems
-
-Byron Gibson
 
 <https://twitter.com/kanzure/status/1229878346709782528>
 

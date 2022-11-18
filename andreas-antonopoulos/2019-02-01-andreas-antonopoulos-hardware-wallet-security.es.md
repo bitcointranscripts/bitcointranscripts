@@ -1,18 +1,15 @@
 ---
-title: Andreas Antonopoulos - Seguridad de la cartera de hardware (2019-02-01)
+title: Seguridad de la cartera de hardware
+speakers: ['Andreas Antonopoulos']
+date: 2019-02-01
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-speaker: Andreas Antonopoulos
 tags: ['cartera hardware', 'validación', 'cartera']
 ---
-
-Nombre: Andreas Antonpoulos
 
 Tema: ¿Son los monederos electrónicos lo suficientemente seguros? 
 
 Localización: Canal de YouTube de Andreas Antonopoulos 
-
-Día: 1 de febrero de 2019 
 
 Video: https://www.youtube.com/watch?v=3zNVDIz6Snw
 

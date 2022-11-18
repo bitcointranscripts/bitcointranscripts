@@ -4,15 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['cartera hardware', 'cartera']
+speakers: ['Pavol Rusnak', 'Lawrence Nahum', 'Giacomo Zucco']
 ---
 
 1 a 1: El futuro de los monederos de bitcoin
-
-Pavol Rusnak (pavolrusnak)
-
-Lawrence Nahum (larrybitcoin)
-
-Giacomo Zucco (giacomozucco)
 
 <https://twitter.com/kanzure/status/1043445104827084800>
 

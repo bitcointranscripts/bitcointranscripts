@@ -3,15 +3,10 @@ title: Present And Future Tech Challenges In Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts']
+speakers: ['Peter Todd', 'Adam Back', 'Pierre Roberge']
 ---
 
 1 on 1: Present and future tech challenges in bitcoin
-
-Peter Todd (peterktodd)
-
-Adam Back (adam3us)
-
-Pierre Roberge (robep00)
 
 <https://twitter.com/kanzure/status/1043484879210668032>
 

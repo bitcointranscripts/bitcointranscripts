@@ -3,13 +3,9 @@ title: Bitcoin Script V2.0 And Strengthened Payment Channels
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'p2sh']
+speakers: ['Olaoluwa Osuntokun', 'Johnson Lau']
 ---
 
-Bitcoin script v2.0
-
-roasbeef
-
-jl2012
 
 This is a brief history of bitcoin script evolution. Since bitcoin was active in 2009, there was a lot of emergency fixes for the first 2 years done by Satoshi. He found that people could skpi the signature check using OP\_RETURN and malformed scriptSigs. So those functions were removed. OP\_VER and OP\_VERIF were intended for script upgrades but it was found that after every release of bitcoin, it would become a hard-fork because of the design. So those were also removed. Also, many opcodes were removed due to potential denial-of-service attacks: CAT, SUBSTR, LEFT RIGHT, INVERT, AND, OR, XOR, 2MUL, 2DIV, MUL, DIV, MOD, LSHIFT, RSHIFT.
 

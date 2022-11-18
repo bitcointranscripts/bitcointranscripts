@@ -3,9 +3,8 @@ title: Breaking The Chain
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'mining', 'proof-of-work', 'validation']
+speakers: ['Peter Todd']
 ---
-
-Breaking the chain
 
 <https://twitter.com/kanzure/status/785144266683195392>
 

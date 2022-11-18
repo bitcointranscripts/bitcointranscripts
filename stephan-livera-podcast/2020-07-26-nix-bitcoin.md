@@ -1,11 +1,11 @@
 ---
-title: Nix Bitcoin (2020-07-26)
+title: Nix Bitcoin 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['security', 'privacy']
+speakers: ['nixbitcoindev']
+date: 2020-07-26
 ---
-
-Name: nixbitcoindev
 
 Topic: nix-bitcoin
 

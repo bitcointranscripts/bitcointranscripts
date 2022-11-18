@@ -3,11 +3,10 @@ title: La Fundación B
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Alena Vranova']
 ---
 
 La Fundación B
-
-Alena Vranova (AlenaSatoshi)
 
 <https://twitter.com/kanzure/status/1043802179004493825>
 

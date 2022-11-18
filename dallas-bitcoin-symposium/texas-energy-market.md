@@ -3,9 +3,8 @@ title: Texas Energy Market
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']
+speakers: ['Gideon Powell']
 ---
-
-Gideon Powell
 
 Bitcoin mining
 

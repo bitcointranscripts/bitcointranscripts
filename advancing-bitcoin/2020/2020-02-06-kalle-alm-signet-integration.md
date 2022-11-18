@@ -1,11 +1,11 @@
 ---
-title: Kalle Alm - Signet Integration (2020-02-06)
+title: Signet Integration
+speakers: ['Kalle Alm']
+date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['conference']
-tags: ['taproot']
+tags: ['taproot', 'testing']
 ---
-
-Name: Karl-Johan Alm
 
 Topic: Signet Integration
 

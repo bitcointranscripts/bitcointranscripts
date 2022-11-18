@@ -1,12 +1,11 @@
 ---
-title: Richard Bondi Bitcoin Cli Regtest (2018-08-17)
+title: Bitcoin CLI and Regtest
+speakers: ['Richard Bondi']
+date: 2018-08-17
 transcript_by: Michael Folkson
 categories: ['meetup']
+tags: ['bitcoin core', 'testing']
 ---
-
-Richard Bondi
-
-Bitcoin CLI and Regtest
 
 Video: <https://www.youtube.com/watch?v=sbupEpL6-J4>
 

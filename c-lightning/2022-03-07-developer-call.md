@@ -1,8 +1,9 @@
 ---
-title: c-lightning developer call (2022-03-07)
+title: c-lightning developer call 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
+date: 2022-03-07
 ---
 
 Name: c-lightning developer call
@@ -10,8 +11,6 @@ Name: c-lightning developer call
 Topic: Various topics
 
 Location: Jitsi online
-
-Date: March 7th 2022
 
 Video: No video posted online
 

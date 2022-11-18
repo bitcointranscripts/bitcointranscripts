@@ -7,13 +7,9 @@ speakers: ['Andrew Poelstra']
 date: 2019-03-09
 ---
 
-Name: Andrew Poelstra
-
 Topic: Secure Signatures - Harder Than You Think
 
 Location: MIT Bitcoin Expo 2019
-
-Date: March 9th 2019
 
 Video: <https://www.youtube.com/watch?v=0gc1DSk8wlw>
 

@@ -3,6 +3,7 @@ title: Mixicles
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'smart contracts']
+speakers: ['Ari Juels']
 ---
 
 Mixicles: Simple Private Decentralized Finance

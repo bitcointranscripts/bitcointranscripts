@@ -2,11 +2,10 @@
 title: Everything Is Broken
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Cory Fields']
 ---
 
 Everything is broken
-
-Cory Fields
 
 This is a clickbaity title, I realize. But the reason I say it is because it's become a mantra for at least myself but for the people who hear me banging my hands on the desk all the time. I am Cory Fields and I work here at the MIT DCI. I am also a Bitcoin Core developer. I am less active these days there because I have been spending some time looking at some higher layer stuff.
 

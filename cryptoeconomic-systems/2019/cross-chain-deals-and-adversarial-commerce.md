@@ -2,6 +2,7 @@
 title: Cross Chain Deals And Adversarial Commerce
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Maurice Herlihy']
 ---
 
 -- Disclaimer --

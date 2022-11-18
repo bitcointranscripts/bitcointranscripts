@@ -1,10 +1,10 @@
 ---
-title: Adam Back, Bryan Bishop - Block Reorgs (2019-05-14)
+title: Block Reorgs
 transcript_by: Peter McCormack
 categories: ['podcast']
+date: 2019-05-14
+speakers: ['Adam Back', 'Bryan Bishop']
 ---
-
-Name: Adam Back and Bryan Bishop
 
 Topic: Bitcoin Block Re-orgs
 

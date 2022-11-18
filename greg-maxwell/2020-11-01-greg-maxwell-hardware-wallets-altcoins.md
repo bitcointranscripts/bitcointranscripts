@@ -1,17 +1,12 @@
 ---
-title: Greg Maxwell - Hardware Wallets Altcoins (2020-11-01)
+title: Hardware Wallets Altcoins
 transcript_by: Michael Folkson
-speaker: Greg Maxwell
+speakers: ['Greg Maxwell']
 tags: ['hardware wallet', 'altcoin', 'wallet']
+date: 2020-11-01
 ---
 
-Name: Greg Maxwell
-
-Topic: Hardware wallets and altcoins
-
 Location: Reddit
-
-Date: November 1st 2020
 
 https://www.reddit.com/r/Bitcoin/comments/jlwxpq/why_do_you_think_coldcard_doesnt_support_altcoins/gasoyuj?utm_source=share&utm_medium=web2x&context=3
 

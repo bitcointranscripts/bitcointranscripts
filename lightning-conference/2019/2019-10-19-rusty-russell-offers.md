@@ -1,13 +1,13 @@
 ---
-title: Rusty Russell - Offers (2019-10-19)
+title: Offers and BOLT 12
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
+speakers: ['Rusty Russell']
+date: 2019-10-19
 ---
 
-Name: Rusty Russell
-
-Topic: Make Me An Offer: Next Level Invoicing
+Make Me An Offer: Next Level Invoicing
 
 The Lightning Conference Day 1 (Stage 1)
 

@@ -3,6 +3,7 @@ title: Reaching Consensus Open Blockchains
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'ethereum']
+speakers: ['Pindar Wong', 'Gavin Andresen', 'Vitalik Buterin', 'Neha Narula', 'Eric Lombrozo']
 ---
 
 Preliminary notes:

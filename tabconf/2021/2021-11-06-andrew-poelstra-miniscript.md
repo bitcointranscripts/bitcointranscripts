@@ -1,17 +1,15 @@
 ---
-title: Andrew Poelstra - Miniscript (2021-11-06)
+title: Miniscript 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['miniscript', 'wallet']
+speakers: ['Andrew Poelstra']
+date: 2021-11-06
 ---
-
-Name: Andrew Poelstra
 
 Topic: Miniscript - Custody, Computable, Composable
 
 Location: TABConf (The Atlanta Bitcoin Conference)
-
-Date: November 6th 2021
 
 Video: <https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s>
 

@@ -3,11 +3,11 @@ title: Lightning Network Topological Analysis
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'attacks', 'topology', 'lightning', 'layer 2']
+speakers: ['Istvan Andras Seres']
+date: 2019-01-15
 ---
 
 Topological analysis of the lightning network
-
-Istvan Andras Seres
 
 paper: <https://arxiv.org/abs/1901.04972>
 

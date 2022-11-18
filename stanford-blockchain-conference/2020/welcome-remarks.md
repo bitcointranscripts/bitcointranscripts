@@ -2,11 +2,11 @@
 title: Welcome Remarks
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Dan Boneh']
+date: 2020-02-19
 ---
 
 Welcome remarks
-
-Dan Boneh
 
 <https://twitter.com/kanzure/status/1230178753805836288>
 

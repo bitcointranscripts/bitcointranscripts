@@ -1,11 +1,11 @@
 ---
-title: Laolu Osuntokun - Lightning Network (2016-07-18)
+title: Lightning Network 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
+speakers: ['Laolu Osuntokun']
+date: 2016-07-18
 ---
-
-Laolu Osuntokun
 
 Lightning Network Deep Dive
 

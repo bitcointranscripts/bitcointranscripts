@@ -3,6 +3,7 @@ title: Stark Dex
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['academia', 'scalability']
+speakers: ['Eli Ben-Sasson']
 ---
 
 The STARK truth about DEXes

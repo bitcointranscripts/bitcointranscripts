@@ -3,6 +3,7 @@ title: Secure Fountain Architecture
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Swanand Kadhe']
 ---
 
 A secure fountain architecture for slashing storage costs in blockchains

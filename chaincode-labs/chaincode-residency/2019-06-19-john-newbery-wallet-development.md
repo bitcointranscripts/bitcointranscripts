@@ -1,18 +1,15 @@
 ---
-title: John Newbery - Wallet Development (2019-06-19)
+title: Bitcoin Core Wallet Development
 transcript_by: Michael Folkson
-speaker: John Newbery
+speakers: ['John Newbery']
 tags: ['consensus', 'wallet', 'bitcoin core']
 categories: ['residency']
+date: 2019-06-19
 ---
 
-Name: John Newbery
-
-Topic: Wallet Development in Bitcoin Core
+Wallet Development in Bitcoin Core
 
 Location: Chaincode Labs 2019 Residency
-
-Date: June 19th 2019
 
 Video: <https://www.youtube.com/watch?v=j0V8elTzYAA>
 

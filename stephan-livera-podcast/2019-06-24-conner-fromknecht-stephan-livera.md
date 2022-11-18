@@ -1,7 +1,9 @@
 ---
-title: Conner Fromknecht - Stephan Livera (2019-06-24)
+title: Conner Fromknecht - Stephan Livera 
 transcript_by: Michael Folkson
 categories: ['podcast']
+speakers: ['Conner Fromknecht']
+date: 2019-06-24
 ---
 
 Stephan Livera podcast with Conner Fromknecht - June 24th 2019

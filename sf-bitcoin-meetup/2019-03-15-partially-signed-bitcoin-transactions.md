@@ -1,11 +1,11 @@
 ---
-title: Partially Signed Bitcoin Transactions (2019-03-15)
+title: Partially Signed Bitcoin Transactions 
 transcript_by: Caralie Chrisco
 categories: ['meetup']
 tag: ['PSBT']
+date: 2019-03-15
+speakers: ['Andrew Chow']
 ---
-
-Name: Andrew Chow
 
 Topic: PSBT
 

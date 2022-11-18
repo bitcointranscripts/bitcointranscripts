@@ -3,6 +3,7 @@ title: Ghostdag
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'proof-of-work', 'miners', 'security']
+speakers: ['Yonatan Sompolinsky', 'Aviv Zohar']
 ---
 
 The GHOSTDAG protocol

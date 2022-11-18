@@ -1,13 +1,12 @@
 ---
-title: Lightning Network BOLT by BOLT (2018-07-24)
+title: Lightning Network BOLT by BOLT 
 transcript_by: Gloria Zhao
 categories: ['meetup']
 tag: ['lightning'] 
+speakers: ['Jim Posen']
+date: 2018-07-24
 ---
 
-
-
-Name: Jim Posen
 
 Topic: Lightning Network BOLT by BOLT 
 

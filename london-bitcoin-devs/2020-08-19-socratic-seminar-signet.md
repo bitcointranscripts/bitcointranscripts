@@ -1,21 +1,20 @@
 ---
-title: Socratic Seminar - Signet (2020-08-19)
+title: Socratic Seminar - Signet
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['taproot', 'schnorr']
+tags: ['taproot', 'schnorr', 'signet']
+date: 2020-08-19
 ---
-
-Name: Socratic Seminar
 
 Topic: Signet
 
+Name: Socratic Seminar
+
 Location: London BitDevs (online)
 
-Date: August 19th 2020
+Video: <https://www.youtube.com/watch?v=b0AiucAuX3E>
 
-Video: https://www.youtube.com/watch?v=b0AiucAuX3E
-
-Pastebin of the resources discussed: https://pastebin.com/rAcXX9Tn
+Pastebin of the resources discussed: <https://pastebin.com/rAcXX9Tn>
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 

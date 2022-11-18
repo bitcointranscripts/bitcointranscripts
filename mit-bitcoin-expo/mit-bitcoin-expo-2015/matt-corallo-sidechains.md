@@ -1,11 +1,11 @@
 ---
-title: Matt Corallo Sidechains
+title: Sidechains
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'miners']
+tags: ['security', 'sidechains']
+speakers: ['Matt Corallo']
 ---
 
-Matt Corallo (BlueMatt)
 
 Sidechains, Blockstream
 

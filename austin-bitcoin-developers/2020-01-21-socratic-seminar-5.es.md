@@ -1,12 +1,11 @@
 ---
-title: Seminario Socrático 5 (2020-01-21)
+title: Seminario Socrático 5
+date: 2020-01-21
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
 tags: ['lightning']
 ---
-
-Seminario socrático para desarrolladores de Bitcoin en Austin 5
 
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/267941700/>
 

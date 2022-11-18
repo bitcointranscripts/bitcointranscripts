@@ -1,8 +1,10 @@
 ---
-title: Conner Fromknecht - Lnd 0.6 Beta (2019-05-02)
+title: Lnd 0.6 Beta 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lnd', 'lightning']
+speakers: ['Conner Fromknecht']
+date: 2019-05-02
 ---
 
 Conner Fromknecht

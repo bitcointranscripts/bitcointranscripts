@@ -1,17 +1,14 @@
 ---
-title: Socratic Seminar Payjoins (2020-05-05)
+title: Socratic Seminar Payjoins - Bitcoin privacy (Payjoin/P2EP)
 transcript_by: Michael Folkson
 categories: ['meetup']
+speakers: ['Adam Gibson']
 tags: ['privacy']
+date: 2020-05-05
 ---
 
-Name: Socratic Seminar with Adam Gibson
-
-Topic: Bitcoin privacy (Payjoin/P2EP)
 
 Location: London BitDevs (online)
-
-Date: May 5th 2020
 
 Video: https://www.youtube.com/watch?v=hX86rKyNB8I
 

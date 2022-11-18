@@ -2,11 +2,10 @@
 title: Building Vibrant Bitcoin Communities
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Kris Merkel']
 ---
 
 Building vibrant bitcoin communities
-
-Kris Merkel
 
 I am the content manager at Exodus Wallet. I have been helping to build up a userbase over the last few years. We are going to talk about building vibrant bitcoin communities. This is the antithesis of Michael Goldstein's talk.
 

@@ -1,17 +1,15 @@
 ---
-title: Andrew Chow Hardware Wallets (2020-02-05)
+title: Hardware Wallets 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'PSBT', 'wallet']
+speakers: ['Andrew Chow']
+date: 2020-02-05
 ---
 
-Andrew Chow
+Hardware Wallets in Bitcoin Core
 
 London Bitcoin Devs
-
-February 5th 2020
-
-Hardware Wallets in Bitcoin Core
 
 Video: https://www.youtube.com/watch?v=8mdfygEzQjE
 

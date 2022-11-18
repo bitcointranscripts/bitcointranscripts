@@ -2,6 +2,7 @@
 title: Journals As Clubs
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Jason Potts']
 ---
 
 -- Disclaimer --

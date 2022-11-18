@@ -3,6 +3,7 @@ title: Blocksci Platform
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Harry Kalodner']
 ---
 
 BlockSci: a Platform for Blockchain Science and Exploration
@@ -56,4 +57,3 @@ So far I have focused on scalability implications related to bitcoin. I want to 
 Q: What indexes do you need on Bitcoin Core?
 
 A: The default setup. You don't need txindex. We parse all of the block files ourselves without using any sort of indexing. The reason for this is that we would like to be able to have blocksci running concurrently with a node. This is not possible with bitcoin core's current leveldb indexes which only support single reader.
-

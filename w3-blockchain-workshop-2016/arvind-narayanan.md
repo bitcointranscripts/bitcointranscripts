@@ -2,6 +2,7 @@
 title: Arvind Narayanan
 transcript_by: Bryan Bishop
 categories: ['workshop']
+speakers: ['Arvind Narayanan']
 ---
 
 I would like to introduce Arvind. He is a professor at Princeton. He has talked about this in a number of different forums.

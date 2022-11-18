@@ -3,6 +3,7 @@ title: Atomic Multi Channel Updates
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['scalability']
+speakers: ['Matteo Maffei']
 ---
 
 Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks

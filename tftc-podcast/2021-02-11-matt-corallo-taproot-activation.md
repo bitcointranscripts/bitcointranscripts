@@ -1,18 +1,15 @@
 ---
-title: Matt Corallo - UASFs, BIP 148, BIP 91 and Taproot Activation (2021-02-11)
+title: UASFs, BIP 148, BIP 91 and Taproot Activation 
 transcript_by: Michael Folkson
-speaker: Matt Corallo
 categories: ['podcast']
 tag: ['taproot']
+speakers: ['Matt Corallo']
+date: 2021-02-11
 ---
-
-Name: Matt Corallo
 
 Topic: UASFs, BIP 148, BIP 91 and Taproot Activation
 
 Location: Tales from the Crypt podcast
-
-Date: February 11th 2021
 
 Audio: https://anchor.fm/tales-from-the-crypt/episodes/228-UASFs--BIP-148--BIP-91--and-Taproot-Activation-with-Matt-Corallo-eq7cif
 
@@ -58,7 +55,7 @@ MC: It is terrible for all of us if we split. Here is a thing that we can do whe
 
 MB: The miners were crucial in this, you needed 80 percent of miner signaling.
 
-MC: Right, with all of these really compressed timelines the UASF BIP 148 crowd was suggesting they could activate something on a really compressed timeline but you can’t get any material amount of nodes upgraded. The only thing you can really do is get miners to enforce these rules. As long as they are enforcing them they are the rules of the network and we’ll get nodes to upgrade over time to enforce them. 
+MC: Right, with all of these really compressed timelines the UASF BIP 148 crowd was suggesting they could activate something on a really compressed timeline but you can’t get any material amount of nodes upgraded. The only thing you can really do is get miners to enforce these rules. As long as they are enforcing them they are the rules of the network and we’ll get nodes to upgrade over time to enforce them.
 
 MB: It was a hairy situation back then if you weren’t around.
 
@@ -96,7 +93,7 @@ MC: That was a separate issue. There was one a little later. In any case you can
 
 MB: I can certainly see that. For this particular situation with Taproot, Schnorr, people have been eagerly awaiting this and I guess it is just trying to find that balance between urgency and complacency.
 
-MC: It is totally understandable. It has been forever. 
+MC: It is totally understandable. It has been forever.
 
 MB: In many conversations with you and others precedents matter and we should be thinking about precedents that are set. Do these nuclear options even need to be put on the table yet?
 
@@ -110,7 +107,7 @@ MB: Jihan is gone. F2Pool had some f\*\*\*ery with switching BIP 9 off and on an
 
 MC: He’s gotten pushed out because he bet the company on Bcash and that didn’t go very well. It should be focused on healing and doing the best and most careful design. I think it is also important to talk up and realize how much work has gone on in the background that I think is critical for consensus changes and should be critical for consensus changes in the future that hasn’t been sufficiently talked up or publicized. There were a number of meetings driven by the Bitcoin Optech folks between large businesses just talking about all the technical details of Taproot. Really getting into the nitty gritty and saying “Here is the proposed change. You are a big user of Bitcoin. What do you think? Are you happy with this? Are there some issues with it that maybe impact you in some way? Can you integrate this? Are you excited about this? Is this interesting?” All these kinds of things. Obviously it has been publicly decided at this point for years, it has been maybe a bit of a slower process for various reasons but these things happened in a way that Bitcoin has really grown up because of work by a few people in the Optech group. I think that should be the face of Bitcoin consensus changes, not the debates over specific activation methods and people saying “We need to force miners to signal at the end of a year because that is how we get this quicker.” The face really needs to be look at all the work some of these developers put in, people at Chaincode and the Optech group and Bitcoin Core contributors funded at this point by various groups, all the work they’ve put in to making sure this is carefully designed and talking to everyone they could and making sure no one in the community is going to be negatively impacted by this and it is going to really help some stuff like Lightning and some other systems and then going ahead with it. That needs to be the face of consensus changes.
 
-MB: To put forth the user activated soft fork argument for this particular case. Again I don’t think it is going to get to that point, I don’t think it needs to, I don’t think it should because of precedence, focusing on the scars from SegWit2x, that battle, there does seem to be a bit of apprehension from a large part of the developer community to put forth an activation path. People are like “Who is going to put something forward?” The UASF crowd has been “If no one is going to do it we can do it and this is the way we think it is best to do it because we want this.” There is not a rush to get it. It is sort of a rush to get it but do we have to put this ball into motion? 
+MB: To put forth the user activated soft fork argument for this particular case. Again I don’t think it is going to get to that point, I don’t think it needs to, I don’t think it should because of precedence, focusing on the scars from SegWit2x, that battle, there does seem to be a bit of apprehension from a large part of the developer community to put forth an activation path. People are like “Who is going to put something forward?” The UASF crowd has been “If no one is going to do it we can do it and this is the way we think it is best to do it because we want this.” There is not a rush to get it. It is sort of a rush to get it but do we have to put this ball into motion?
 
 MC: It has been years. Nothing is really happening, what is going on? Not so much a rush as it would be nice to get it eventually. I honestly can’t fault that argument. There are some folks who worked on Taproot who don’t have any desire to work on activation mechanisms because of basically SegWit, the mess of the activation debate there and because activation mechanisms in Bitcoin, there is no good answer. The right answer is we find a way to have changes only activate once it is clear that no one in the community is going to be negatively impacted. The changes must not be blocked by someone who is saying they are going to be negatively impacted when they are not. There is no perfect technical solution to that. There is not a way to capture that so it is ultimately a little subjective. There are some folks that don’t want to work on that kind of stuff. There are folks who do want to work on that kind of stuff. I think that conversation got started maybe only, I think I kickstarted it but I immediately stopped working on it.
 
@@ -120,7 +117,7 @@ MC: Let me check my email. I sent an [email](https://lists.linuxfoundation.org/p
 
 MB: It is good to see people meeting on IRC. There is another meeting next Wednesday on IRC about it. I’m pulling up Michael Folkson’s [notes](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018379.html) from the first IRC meeting. Overwhelming consensus that 1 year is the correct timeout period, unanimous support for BIP 8 except for Luke Dashjr (see notes for exact wording), no decision on start time but 2 months was done for SegWit and that didn’t seem too objectionable. It seems like good conversation from Michael’s notes.
 
-MC: I just have Michael’s notes as well. It seems like people are coming round to just doing the miner readiness signaling thing. 
+MC: I just have Michael’s notes as well. It seems like people are coming round to just doing the miner readiness signaling thing.
 
 # Comparing the SegWit and Taproot soft fork changes
 
@@ -144,13 +141,13 @@ MB: 1.5 billion for Tesla. The severity and the importance of making sure this n
 
 MC: Yeah it seems like there is a bit more consensus forming which is really good.
 
-MB: Give a shout out to the pools, to Poolin, I think that may have given confidence for some in the developer community to begin having these types of conversations and sticking their necks out with specific activation paths. Obviously users on Twitter and other platforms signaling that they want to use some of the functionality that will be provided by this upgrade. 
+MB: Give a shout out to the pools, to Poolin, I think that may have given confidence for some in the developer community to begin having these types of conversations and sticking their necks out with specific activation paths. Obviously users on Twitter and other platforms signaling that they want to use some of the functionality that will be provided by this upgrade.
 
 MC: I would love to see it more from the business community as well but all that stuff is really great to see. At least during the SegWit debacle, the 3 or 4 main groups, you’ve got business community, you’ve got pools and miners, you’ve got individual users and you’ve got developers, as much as we can get all 4 of those groups to be vocal that a change is acceptable and meets their requirements. Maybe it is useful to them, maybe it is not but at least it is acceptable and not a negative to them the better off we will be for future changes. Even if this change is minor and a lot of people don’t really need to care about it having them say “I looked at that change and I don’t care about it” is a great outcome.
 
 MB: At the end of the day they don’t have to use it if they don’t want to because it is all backward compatible?
 
-MC: Right. The change was made very carefully to make sure it is not risking other people’s coins with crazy new cryptographic assumptions. It is not going to massively change the market dynamics of Bitcoin or the fee market or whatever. It is a pretty straight up and down, backwards compatible, if you use it you use it, if you don’t you don’t care kind of change. It is important that that is stated as broadly as it can be. That is the gold standard for Bitcoin changes and that is how Bitcoin changes should look. 
+MC: Right. The change was made very carefully to make sure it is not risking other people’s coins with crazy new cryptographic assumptions. It is not going to massively change the market dynamics of Bitcoin or the fee market or whatever. It is a pretty straight up and down, backwards compatible, if you use it you use it, if you don’t you don’t care kind of change. It is important that that is stated as broadly as it can be. That is the gold standard for Bitcoin changes and that is how Bitcoin changes should look.
 
 MB: Bitcoin is beautiful. It feels weird, maybe people will be affected by this conversation and that will have a little effect on whether or not this gets activated.
 
@@ -184,9 +181,9 @@ MB: I’m bullish on the Lightning Network, I know I’m a fanatic but I think p
 
 MC: People are sleeping on it in part because it is not integrated anywhere. I think a lot of the Lightning folks across different parts of the Lightning ecosystem are really excited. This year looking towards more exchange integration and institutional integration of Lightning which hopefully is going to take some volume of transactions off the blockchain itself, give people some instant transacting ability and then hopefully that also translates a little bit into mobile wallets. It shouldn’t be the case that you ever download a Bitcoin wallet that doesn’t support Lightning. That is where we are at today. You download a Bitcoin wallet and it probably doesn’t support Lightning and that sucks. Or if it does there are a few wallets, non-custodial Bitcoin wallets but then custodial Lightning because the only good way to integrate Lightning today is custodial. That shouldn’t be the case.
 
-MB: Even better if you can abstract so you don’t even know you are using Lightning versus main chain. 
+MB: Even better if you can abstract so you don’t even know you are using Lightning versus main chain.
 
-MC: Right. Nor should a user ever be aware of Lightning, they should just know that their payment cleared instantly. That is what you should have. I am really bullish on it, that’s why I’m working on it full time but also I’m really bullish on integrations into existing Bitcoin wallets and new Bitcoin wallets that support it. Today a lot of Bitcoin stuff is really tightly integrated with the application level. People aren’t just downloading and running Bitcoin Core and using Bitcoin Core’s wallet to power their big exchange. Some people use Bitcoin Core but most people don’t use its wallet. Those are the options for Lightning today. You can run c-lightning, it has a great plugin system, you can do a tonne of hooking and editing it but it is still downloading and running a binary. A little less so for lnd. lnd has you download Bitcoin Core and you get the RPC API, that is what you have. It is great for many use cases, a lot of people use Bitcoin Core very successfully as a wallet on their server, whatever and same for lnd. But it is just not going to get us there in terms of mobile wallets everywhere and it is not going to get us there… I am really bullish on it, I hope we can have a really positive impact too. 
+MC: Right. Nor should a user ever be aware of Lightning, they should just know that their payment cleared instantly. That is what you should have. I am really bullish on it, that’s why I’m working on it full time but also I’m really bullish on integrations into existing Bitcoin wallets and new Bitcoin wallets that support it. Today a lot of Bitcoin stuff is really tightly integrated with the application level. People aren’t just downloading and running Bitcoin Core and using Bitcoin Core’s wallet to power their big exchange. Some people use Bitcoin Core but most people don’t use its wallet. Those are the options for Lightning today. You can run c-lightning, it has a great plugin system, you can do a tonne of hooking and editing it but it is still downloading and running a binary. A little less so for lnd. lnd has you download Bitcoin Core and you get the RPC API, that is what you have. It is great for many use cases, a lot of people use Bitcoin Core very successfully as a wallet on their server, whatever and same for lnd. But it is just not going to get us there in terms of mobile wallets everywhere and it is not going to get us there… I am really bullish on it, I hope we can have a really positive impact too.
 
 MB: Thank you for all the work you do, thank you for reaching out. Like I told you, you don’t have to say thank you for having you on, you have an open invite in perpetuity until I croak or you croak or until this podcast croaks.
 

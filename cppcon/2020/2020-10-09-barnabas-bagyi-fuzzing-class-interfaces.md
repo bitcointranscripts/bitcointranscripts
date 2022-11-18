@@ -1,16 +1,14 @@
 ---
-title: Barnabas Bagyi - Fuzzing Class Interfaces (2020-10-09)
+title: Fuzzing Class Interfaces 
 transcript_by: Michael Folkson
 categories: ['conference']
+speakers: ['Barnabás Bágyi']
+date: 2020-10-09
 ---
 
-Name: Barnabás Bágyi
-
-Topic: Fuzzing Class Interfaces for Generating and Running Tests with libFuzzer
+# Fuzzing Class Interfaces for Generating and Running Tests with libFuzzer
 
 Location: CppCon 2020
-
-Date: October 9th 2020
 
 Video: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 

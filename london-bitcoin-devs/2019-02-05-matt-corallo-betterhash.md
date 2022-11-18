@@ -1,17 +1,15 @@
 ---
-title: Matt Corallo Betterhash (2019-02-05)
+title: Betterhash
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['mining', 'ux']
+speakers: ['Matt Corallo']
+date: 2019-02-05
 ---
-
-Name: Matt Corallo
 
 Topic: Better Hashing through BetterHash
 
 Location: London Bitcoin Devs
-
-Date: February 5th 2019
 
 Video: https://www.youtube.com/watch?v=0lGO5I74qJM
 

@@ -1,7 +1,8 @@
 ---
-title: NY DFS Bitlicense Lawsky Update (2014-12-18)
+title: NY DFS Bitlicense Lawsky Update 
 transcript_by: Bryan Bishop
 tags: ['regulation']
+date: 2014-12-18
 ---
 
 NY DFS BitLicense update 2014-12-18

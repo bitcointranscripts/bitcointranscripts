@@ -3,11 +3,10 @@ title: Erlay
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['P2P']
+speakers: ['Gleb Naumenko']
 ---
 
 Erlay: Bandwidth-efficient transaction relay for bitcoin
-
-Gleb Naumenko (tomatodread)
 
 <https://twitter.com/kanzure/status/1171744449396953090>
 

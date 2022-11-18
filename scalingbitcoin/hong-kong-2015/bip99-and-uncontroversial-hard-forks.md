@@ -3,9 +3,8 @@ title: Bip99 And Uncontroversial Hard Forks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'forks']
+speakers: ['Jorge Timón']
 ---
-
-jtimon
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overview_1_timon.pdf>
 

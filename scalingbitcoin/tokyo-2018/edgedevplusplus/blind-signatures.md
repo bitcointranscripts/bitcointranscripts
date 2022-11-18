@@ -2,11 +2,9 @@
 title: Blind Signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ethan Heilman']
+tags: ['signatures']
 ---
-
-Blind signatures
-
-Ethan Heilman (ethan\_heilman) (Commonwealth Crypto)
 
 <https://twitter.com/kanzure/status/1047648050234060800>
 

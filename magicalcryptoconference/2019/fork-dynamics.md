@@ -2,11 +2,11 @@
 title: Fork Dynamics
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Eric Lombrozo']
+date: 2019-05-12
 ---
 
 Fork dynamics
-
-Eric Lombrozo
 
 Video: https://youtu.be/zFN__b6ARH4?t=12523
 

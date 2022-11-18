@@ -3,11 +3,10 @@ title: Zerocash And Zero Knowledge Succint Arguments Of Knowledge Libsnark
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'privacy']
+speakers: ['Madars Virza']
 ---
 
 Zero knowledge proofs and SNARKs and libsnark
-
-Madars Virza
 
 I am going to tell you about zerocash and our approach of addressing Bitcoin's privacy problem. All of this is joint work with Techion, ETCH Zurich, and MIT, and Matt Green, .. and .. and..
 

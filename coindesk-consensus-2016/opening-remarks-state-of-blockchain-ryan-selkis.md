@@ -1,12 +1,11 @@
 ---
-title: Opening Remarks State Of Blockchain Ryan Selkis
+title: Opening Remarks State Of Blockchain
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ryan Selkis']
 ---
 
 Preliminary notes:
-
-
 
 Contact me- <https://twitter.com/kanzure>
 

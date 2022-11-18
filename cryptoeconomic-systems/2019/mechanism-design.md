@@ -3,6 +3,7 @@ title: Mechanism Design
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'incentives']
+speakers: ['Matt Weinberg']
 ---
 
 -- Disclaimer --

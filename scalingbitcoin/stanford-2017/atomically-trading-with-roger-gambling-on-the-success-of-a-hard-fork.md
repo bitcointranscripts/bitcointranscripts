@@ -2,13 +2,12 @@
 title: Atomically Trading With Roger Gambling On The Success Of A Hard Fork
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ethan Heilman']
 ---
 
 Atomically Trading with Roger: Gambling on the success of a hard-fork
 
 paper: <http://homepages.cs.ncl.ac.uk/patrick.mc-corry/atomically-trading-roger.pdf>
-
-Ethan Heilman
 
 This is joint work with Patrick McCorry, Andrew Miller and myslef. Patrick was originally going to give this talk but he was unable to make it. I'll give the talk with his slides. I want to acknowledge Roger Ver for permission to use his name in the title of the talk. We asked permission.
 

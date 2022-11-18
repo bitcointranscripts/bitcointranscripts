@@ -3,9 +3,8 @@ title: Joi Ito
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'layer 2', 'fees']
+speakers: ['Joi Ito']
 ---
-
-Joi Ito
 
 Welcome back to Scaling Bitcoin day 2. I am sure everyone went home and tried Ethan's wagering setup yesterday. Today we are going to be covering topics like layer 2, fees, and consensus. To get us started today, we have a very special guest, Joi Ito, director of the MIT Media Lab, and he will be talking about parallels to the internet and ICOs and he will cover a lot of ground. Joi?
 

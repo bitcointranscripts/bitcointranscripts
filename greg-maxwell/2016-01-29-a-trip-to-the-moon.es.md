@@ -1,10 +1,11 @@
 ---
-title: A trip to the moon requires a rocket with multiple stages - Greg Maxwell (2016-01-29)
+title: A trip to the moon requires a rocket with multiple stages 
 translation_by: Julien Urraca
 tags: ['scaling']
+speakers: ['Greg Maxwell']
+date: 2016-01-29
 ---
 
-Autor: Greg Maxwell
 Texto original: <https://www.reddit.com/r/Bitcoin/comments/438hx0/a_trip_to_the_moon_requires_a_rocket_with/>
 
 Un viaje a la luna requiere un cohete con múltiples etapas o, de lo contrario, la ecuación del cohete te comerá el almuerzo... empacar a todos como un coche de payasos en un trebuchet y esperar el éxito esta excluido.

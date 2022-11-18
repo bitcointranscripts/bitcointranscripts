@@ -1,11 +1,10 @@
 ---
-title: Socratic Seminar 3 (2019-10-14)
+title: Socratic Seminar 3
+date: 2019-10-14
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['miniscript', 'taproot']
 ---
-
-Austin Bitcoin Developers socratic seminar 3
 
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/265295570/>
 

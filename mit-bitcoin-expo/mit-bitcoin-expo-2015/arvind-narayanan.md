@@ -1,13 +1,12 @@
 ---
-title: Arvind Narayanan
+title: Threshold signatures
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'threshold signatures', 'multisig', 'wallet']
+speakers: ['Arvind Narayanan']
 ---
 
-Arvind Narayanan
-
-Threshold signatures
+# Threshold signatures
 
 I want to tell you what threshold signatures are and I want to convince you that threshold signatures are a technology you need. This is collaborative work.
 

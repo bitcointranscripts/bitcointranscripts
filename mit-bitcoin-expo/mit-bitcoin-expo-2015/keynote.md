@@ -2,9 +2,8 @@
 title: Keynote
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Charlie Lee']
 ---
-
-Charlie Lee
 
 It has been a while since I have been back to MIT. So. So um. Yeah, it's. I got extremely excited that the expo is at 26100. This was one of my favorite classrooms. Almost 20 years ago, I took 1802 with Professor Rogers. Yeah. I hope I am not as boring as he was back then.
 

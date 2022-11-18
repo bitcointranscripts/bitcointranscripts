@@ -3,6 +3,7 @@ title: Bitcoin Regulation Landscape
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['regulation']
+speakers: ['Elizabeth Stark', 'Jerry Brito', 'Constance Choi']
 ---
 
 * Elizabeth Stark

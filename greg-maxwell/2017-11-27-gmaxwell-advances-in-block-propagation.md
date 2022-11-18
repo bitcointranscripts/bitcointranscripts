@@ -1,15 +1,10 @@
 ---
-title: Gmaxwell - Advances In Block Propagation (2017-11-27)
+title: Advances In Block Propagation
 transcript_by: Bryan Bishop
-speaker: Greg Maxwell
+speakers: ['Greg Maxwell']
 tags: ['mempool', 'segwit']
+date: 2017-11-27
 ---
-
-Advances in block propagation
-
-Greg Maxwell
-
-2017-11-27
 
 slides: <https://web.archive.org/web/20190416113003/https://people.xiph.org/~greg/gmaxwell-sf-prop-2017.pdf>
 
@@ -33,10 +28,7 @@ more history <https://www.reddit.com/r/btc/comments/6p076l/segwit_only_allows_17
 
 <https://twitter.com/kanzure/status/944656354307919873>
 
-----
-
 # Introduction
-
 
 I'll be talking about some recent advances in block propagation and why this stuff is important. I am going to talk about how the original bitcoin p2p protocol works, and it doesn't work that way for the most part anymore. I will talk about the history of this, including fast block relay protocol, block network coding, and then building up to where the state of the art is today.
 

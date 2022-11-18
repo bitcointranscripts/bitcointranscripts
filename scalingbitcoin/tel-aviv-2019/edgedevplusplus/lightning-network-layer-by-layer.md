@@ -3,9 +3,8 @@ title: Lightning Network Layer By Layer
 transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['fees']
+speakers: ['Carla Kirk-Cohen']
 ---
-
-Name: Carla Kirk-Cohen
 
 Topic: The Lightning Network Layer by Layer
 

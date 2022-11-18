@@ -3,13 +3,12 @@ title: Cryptographic Hocus Pocus
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Peter Todd']
 ---
 
 Cryptographic hocus-pocus meaning nothing: The zcash trusted setup MPC
 
 or: "Peter Todd's secret love letter to Zooko"
-
-Peter Todd
 
 Video: https://youtu.be/YHieWJWwVbE
 

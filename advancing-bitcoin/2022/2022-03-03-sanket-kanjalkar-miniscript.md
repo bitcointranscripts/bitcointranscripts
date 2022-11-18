@@ -1,5 +1,5 @@
 ---
-title: Sanket Kanjalkar - Miniscript (2022-03-03)
+title: Miniscript
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['script', 'miniscript']
@@ -7,13 +7,7 @@ speakers: ['Sanket Kanjalkar']
 date: 2022-03-03
 ---
 
-Name: Sanket Kanjalkar
-
 Topic: Miniscript: Composable, Analyzable and Smarter Bitcoin Script
-
-Location: Advancing Bitcoin
-
-Date: March 3rd 2022
 
 Video: <https://www.youtube.com/watch?v=Bn1CWsqt3VQ>
 

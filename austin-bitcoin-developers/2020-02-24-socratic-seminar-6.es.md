@@ -1,12 +1,11 @@
 ---
-title: Seminario Socrático 6 (2020-02-24)
+title: Seminario Socrático 6
+date: 2020-02-24
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
 tags: ['taproot']
 ---
-
-Seminario socrático para desarrolladores de Bitcoin en Austin 6
 
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/268812642/>
 

@@ -3,6 +3,7 @@ title: Dan Boneh
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners', 'mining', 'privacy', 'cryptography', 'post-quantum']
+speakers: ['Taariq Lewis']
 ---
 
 Dan Boneh fireside chat

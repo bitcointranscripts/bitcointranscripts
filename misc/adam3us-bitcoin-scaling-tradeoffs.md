@@ -1,7 +1,10 @@
 ---
-title: Adam3Us Bitcoin - Scaling Tradeoffs
+title: Bitcoin Scaling Tradeoffs
 transcript_by: Bryan Bishop
 tag: ['scalability']
+speakers: ['Adam Back']
+categories: ['conference']
+date: 2016-04-05
 ---
 
 Bitcoin scaling tradeoffs with Adam Back (adam3us) at Paralelni Polis
@@ -13,8 +16,6 @@ video: <https://www.youtube.com/watch?v=HEZAlNBJjA0>
 slides: <http://www.slideshare.net/paralelnipolis/bitcoin-scaling-tradeoffs-with-adam-back>
 
 description: "In this talk, Adam Back overviews the Bitcoin scaling and discuses his personal view about its tradeoffs and future development."
-
-date: 2016-04-05
 
 # Intro fluff
 

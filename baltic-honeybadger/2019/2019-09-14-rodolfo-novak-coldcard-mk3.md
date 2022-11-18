@@ -1,17 +1,15 @@
 ---
-title: Rodolfo Novak Coldcard Mk3 (2019-09-14)
+title: Coldcard Mk3 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['security', 'hardware wallet', 'wallet']
+date: 2019-09-14
+speakers: ['Rodolfo Novak']
 ---
-
-Name: Rodolfo Novak
 
 Topic: Coldcard Mk3 - Security in Depth
 
 Location: Baltic Honeybadger 2019
-
-Date: September 14th 2019
 
 Audio: https://youtu.be/2IpZWSWUIVE?t=23739
 

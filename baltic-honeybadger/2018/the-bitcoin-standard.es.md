@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['seguridad']
+speakers: ['Saifedean Ammous']
 ---
 
 El estándar bitcoin como solución de escalado por capas
-
-Saifedean Ammous (via skype) (saifedean)
 
 <https://twitter.com/kanzure/status/1043425514801844224>
 

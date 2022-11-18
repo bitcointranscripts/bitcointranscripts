@@ -3,11 +3,11 @@ title: Ln Present And Future Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'lnd', 'c-lightning']
+speakers: ["Will O'Beirne", 'Lisa Neigut', 'Alex Bosworth', 'Leigh Cuen']
+date: 2019-12-12
 ---
 
 Lightning network present & future panel
-
-Will O'Beirne, Lisa Neigut, Alex Bosworth, Leigh Cuen
 
 Video: https://youtu.be/OzpfiieV5C4
 

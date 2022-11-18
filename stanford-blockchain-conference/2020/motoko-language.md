@@ -3,11 +3,10 @@ title: Motoko Language
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'research']
+speakers: ['Joachim Breitner']
 ---
 
 Motoko, the language for the Internet Computer
-
-Joachim Breitner
 
 # Introduction
 

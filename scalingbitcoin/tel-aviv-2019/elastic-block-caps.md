@@ -3,11 +3,10 @@ title: Elastic Block Caps
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['scalability', 'fees']
+speakers: ['Meni Rosenfeld']
 ---
 
 Elastic block caps
-
-Meni Rosenfeld
 
 # Introduction
 

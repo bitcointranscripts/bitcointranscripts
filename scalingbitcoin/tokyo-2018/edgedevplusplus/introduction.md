@@ -1,13 +1,9 @@
 ---
-title: Introduction
+title: Introduction to Bitcoin Edge Dev++ and Bc2
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Anton Yemelyanov']
 ---
-
-Introduction to Bitcoin Edge Dev++ and Bc2
-
-Anton Yemelyanov
-
 
 We will be using two screens. The english will be on the front screen and the japanese will be on the other screen to the side here. We will also be sharing a google docs file for each one in slack. We should help each other and teach better and learn these things. Without further adue, here's Anton from Bitcoin Edge.
 
