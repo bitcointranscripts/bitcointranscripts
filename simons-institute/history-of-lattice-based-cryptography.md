@@ -3,13 +3,13 @@ title: History Of Lattice Based Cryptography
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['cryptography']
+speakers: ['Daniele Micciancio']
+date: 2015-07-15
 ---
 
 Historical talk on lattice-based cryptography
 
 Daniele Micciancio, UC San Diego
-
-2015-07-15
 
 <https://www.youtube.com/watch?v=4KVJbEOqB_Q&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=22>
 

@@ -2,6 +2,7 @@
 title: Some Questions For Bitcoiners
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Joi Ito']
 ---
 
 Joi Ito

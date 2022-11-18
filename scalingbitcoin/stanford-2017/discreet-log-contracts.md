@@ -3,13 +3,12 @@ title: Discreet Log Contracts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'smart contracts', 'lightning', 'schnorr']
+speakers: ['Tadge Dryja']
 ---
-
-Discreet log contracts
 
 <http://diyhpl.us/wiki/transcripts/discreet-log-contracts/>
 
-<https://www.youtube.com/watch?v=FU-rA5dkTHI>
+video: <https://www.youtube.com/watch?v=FU-rA5dkTHI>
 
 paper: <https://adiabat.github.io/dlc.pdf>
 

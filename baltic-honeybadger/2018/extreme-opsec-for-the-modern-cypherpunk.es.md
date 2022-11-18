@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['privacidad']
+speakers: ['Jameson Lopp']
 ---
 
 Opsec extremo para el cypherpunk moderno
-
-Jameson Lopp (lopp) jameson@team.casa
 
 Jameson es el ingeniero de infraestructuras de Casa. Demos la bienvenida a Jameson Lopp.
 

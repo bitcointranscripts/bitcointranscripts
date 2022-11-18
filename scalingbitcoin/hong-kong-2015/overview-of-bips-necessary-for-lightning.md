@@ -3,9 +3,8 @@ title: Overview Of Bips Necessary For Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'lightning', 'scalability']
+speakers: ['Tadge Dryja']
 ---
-
-Tadge Dryja
 
 Scalability of Lightning with different BIPs and some back-of-the-envelope calculations.
 

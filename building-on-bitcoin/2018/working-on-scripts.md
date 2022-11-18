@@ -3,11 +3,11 @@ title: Working On Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning']
+speakers: ['Thomas Kerin']
+date: 2018-07-03
 ---
 
 Working on scripts with logical opcodes
-
-Thomas Kerin
 
 Building on Bitcoin 2018
 

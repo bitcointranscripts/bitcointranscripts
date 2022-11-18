@@ -3,9 +3,8 @@ title: Competitive Fee Market Urgency
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['halving', 'security', 'fees']
+speakers: ['Marshall Long']
 ---
-
-Marshall Long
 
 The urgency of a competitive fee market to ensure a scalable future
 

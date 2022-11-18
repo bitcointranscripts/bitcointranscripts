@@ -3,11 +3,10 @@ title: Breaking Bitcoin Privacy
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility']
+speakers: ['Chris Belcher']
 ---
 
 Breaking bitcoin privacy
-
-Chris Belcher
 
 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129
 

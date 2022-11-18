@@ -1,5 +1,7 @@
 ---
-title: Andreas Antonopolous Canada Senate Bitcoin (2014-10-08)
+title: Canada Senate Bitcoin
+speakers: ['Andreas Antonopoulos']
+date: 2014-10-08
 transcript_by: Bryan Bishop
 tags: ['security']
 ---

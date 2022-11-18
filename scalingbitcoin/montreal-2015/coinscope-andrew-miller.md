@@ -1,15 +1,10 @@
 ---
-title: Coinscope Andrew Miller
+title: Coinscope 
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']
+speakers: ['Andrew Miller', 'Dave Levin']
 ---
-
-Andrew Miller
-
-Dave Levin
-
-coinscope
 
 <http://cs.umd.edu/projects/coinscope/>
 

@@ -1,15 +1,11 @@
 ---
-title: Bip Taproot Bip Tapscript (2019-12-16)
+title: BIP Taproot and BIP Tapscript
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['taproot', 'schnorr']
+speakers: ['Pieter Wuille']
+date: 2019-12-16
 ---
-
-2019-12-16
-
-bip-taproot
-
-Pieter Wuille (sipa)
 
 slides: <https://prezi.com/view/AlXd19INd3isgt3SvW8g/>
 

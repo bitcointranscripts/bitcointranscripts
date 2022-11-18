@@ -1,15 +1,11 @@
 ---
-title: Andrew Poelstra - Bulletproofs (2018-02-02)
+title: Bulletproofs 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['consensus', 'zero-knowledge', 'cryptography']
+speakers: ['Andrew Poelstra']
+date: 2018-02-02
 ---
-
-Bulletproofs
-
-Andrew Poelstra (andytoshi)
-
-2018-02-02
 
 49th Milan Bitcoin meetup
 

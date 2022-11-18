@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['contratos inteligentes']
+speakers: ['Max Keidun']
 ---
 
 El futuro de los contratos inteligentes de Bitcoin
-
-Max Keidun (keidunm)
 
 <https://twitter.com/kanzure/status/1043419056492228608>
 

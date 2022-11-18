@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['halving']
+speakers: ['Pierre Rochard']
 ---
 
 Acumular Bitcoin
-
-Pierre Rochard
 
 # Introducción
 

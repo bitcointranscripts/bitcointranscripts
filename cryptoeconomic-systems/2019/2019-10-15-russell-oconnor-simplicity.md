@@ -1,17 +1,15 @@
 ---
-title: Russell Oconnor Simplicity (2019-10-15)
+title: Simplicity 
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['sidechains', 'soft fork']
+speakers: ['Russell O’Connor']
+date: 2019-10-15
 ---
-
-Name: Russell O’Connor
 
 Topic: Simplicity
 
 Location: CES Summit 2019
-
-Date: October 15th 2019
 
 Video: https://www.youtube.com/watch?v=Pn5rySgyTQ0
 

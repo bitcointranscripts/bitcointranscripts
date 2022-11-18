@@ -1,8 +1,10 @@
 ---
-title: LTB - Pieter Wuille, Jonas Nick (2019-06-09)
+title: The Tools and The Work
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
+speakers: ['Pieter Wuille', 'Jonas Nick']
+date: 2019-06-09
 ---
 
 Let's Talk Bitcoin with Pieter Wuille and Jonas Nick - June 9th 2019

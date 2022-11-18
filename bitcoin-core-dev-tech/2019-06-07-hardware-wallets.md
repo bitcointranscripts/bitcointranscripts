@@ -1,11 +1,11 @@
 ---
-title: Hardware Wallets (2019-06-07)
+title: Hardware Wallets
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['hardware wallet', 'wallet']
+speakers: ['Sjors Provoost', 'Jonas Schnelli', 'Andrew Chow']
+date:  2019-06-07
 ---
-
-Hardware wallets
 
 <https://twitter.com/kanzure/status/1136924010955104257>
 

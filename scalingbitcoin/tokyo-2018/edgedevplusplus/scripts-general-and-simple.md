@@ -3,11 +3,10 @@ title: Scripts General And Simple
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['multisig', 'wallet']
+speakers: ['John Newbery']
 ---
 
 Scripts (general & simple)
-
-John Newbery (jnewbery)
 
 <https://twitter.com/kanzure/status/1047679223115083777>
 

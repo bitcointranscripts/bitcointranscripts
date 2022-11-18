@@ -2,11 +2,8 @@
 title: Blockchains For Multiplayer Games
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Brett Seyler']
 ---
-
-Blockchains for multiplayer games
-
-Brett Seyler
 
 <https://twitter.com/kanzure/status/1230256436527034368>
 

@@ -1,18 +1,15 @@
 ---
-title: AJ Towns - Schnorr Taproot (2019-12-27)
+title: Schnorr and Taproot
 transcript_by: Michael Folkson
-speaker: AJ Towns
+speakers: ['Anthony Towns']
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
+date: 2019-12-27
 ---
-
-Name: AJ Towns
 
 Topic: Schnorr Taproot Tapscript BIPs
 
 Location: Stephan Livera Podcast
-
-Date: December 27th 2019
 
 Video: https://stephanlivera.com/episode/137/
 
@@ -201,4 +198,3 @@ AJ Towns: Yeah. So I’m ajtowns on social media so you can find me there.
 Stephan Livera: Thanks very much for joining me AJ.
 
 AJ Towns: Merry Christmas and Happy new year.
-

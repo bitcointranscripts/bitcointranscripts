@@ -3,11 +3,10 @@ title: Breaking Wasabi
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'wallet']
+speakers: ['Udi Wertheimer']
 ---
 
 Breaking wasabi and automated wallets
-
-Udi Wertheimer
 
 1127 96A8 DFCA 1A96 C8B8 0094 9211 687A D298 9B12
 

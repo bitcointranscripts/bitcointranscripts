@@ -3,11 +3,8 @@ title: Security Assumptions
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'research', 'cryptography']
+speakers: ['Andrew Poelstra']
 ---
-
-Andrew Poelstra (andytoshi)
-
-Security Assumptions
 
 video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=9m20s>
 

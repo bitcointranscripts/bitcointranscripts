@@ -1,15 +1,11 @@
 ---
-title: Script Descriptors (2018-10-08)
+title: Script Descriptors 
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet']
+speakers: ['Pieter Wuille']
+date: 2018-10-08
 ---
-
-2018-10-08
-
-# Script descriptors
-
-Pieter Wuille (sipa)
 
 <https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md>
 

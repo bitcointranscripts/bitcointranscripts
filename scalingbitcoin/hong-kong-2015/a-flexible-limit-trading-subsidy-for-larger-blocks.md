@@ -3,9 +3,8 @@ title: A Flexible Limit Trading Subsidy For Larger Blocks
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners', 'fees']
+speakers: ['Mark Friedenbach']
 ---
-
-maaku
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_2_friedenbach.pdf>
 

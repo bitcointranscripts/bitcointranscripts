@@ -1,8 +1,9 @@
 ---
-title: Guía de Bitcoin Core (2020-08-20)
+title: Guía de Bitcoin Core 
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tag: ['bitcoin-diseño']
+date: 2020-08-20
 ---
 
 Name: Reunión introductoria de la GUI de Bitcoin Core 

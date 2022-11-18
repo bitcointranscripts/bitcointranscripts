@@ -1,12 +1,9 @@
 ---
-title: Jeremy Allaire Circle
+title: Circle
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
+speakers: ['Jeremy Allaire', 'Sean Neville']
 ---
-
-Circle
-
-Jeremy Allaire, Sean Neville
 
 We are excited to be here and sponsoring this event. We have backgrounds in working on developer tools that goes back to the early days of something.
 

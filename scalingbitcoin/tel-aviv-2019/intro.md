@@ -2,11 +2,10 @@
 title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Anton Yemelyanov']
 ---
 
 Introduction to Scaling Bitcoin Tel Aviv 2019
-
-Anton Yemelyanov
 
 <https://telaviv2019.scalingbitcoin.org/>
 

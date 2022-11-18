@@ -1,17 +1,15 @@
 ---
-title: Andreas Antonopoulos - División de la semilla (2020-04-08)
+title: División de la semilla
+speakers: ['Andreas Antonopoulos']
+date: 2020-04-08
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tags: ['cartera', 'seguridad']
 ---
 
-Nombre: Andreas Antonopoulos
-
 Tema: ¿Por qué es una mala idea dividir las semillas? 
 
 Localisación: Canal de YouTube de Andreas Antonopoulos
-
-Día: 8 de abril de 2020 
 
 Vídeo: https://www.youtube.com/watch?v=p5nSibpfHYE
 

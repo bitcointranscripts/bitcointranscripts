@@ -2,15 +2,14 @@
 title: Bitcoin Core Functional Test Framework
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Fabian Jahr']
+date: 2020-09-10
+tags: ['bitcoin-core', 'testing']
 ---
-
-Name: Fabian Jahr
 
 Topic: Bitcoin Core functional test framework
 
 Location: Bitcoin Edge Dev++
-
-Date: September 10th 2020
 
 Video: https://www.youtube.com/watch?v=gr75ubfNQ20
 

@@ -1,12 +1,11 @@
 ---
-title: P2P Encryption (2019-06-07)
+title: P2P Encryption 
 date: 2019-06-07
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['P2P', 'bitcoin core']
+date: 2019-06-07
 ---
-
-p2p encryption
 
 <https://twitter.com/kanzure/status/1136939003666685952>
 

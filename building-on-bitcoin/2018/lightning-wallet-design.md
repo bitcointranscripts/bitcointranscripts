@@ -3,6 +3,7 @@ title: Lightning Wallet Design
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'lightning', 'ux', 'wallet']
+speakers: ['Patricia Estevao']
 ---
 
 Designing lightning wallets for the bitcoin user

@@ -1,17 +1,13 @@
 ---
-title: Rene Pickhardt - The Update Layer
+title: The Update Layer
 Transcript_by: Jonathan Gross
 categories: ['residency']
 tags: ['lightning', 'update layer']
+date: 2019-06-26
+speakers: ['Rene Pickhardt']
 ---
 
-Name: René Pickhardt
-
-Topic: The Update Layer
-
 Location: Chaincode Labs Lightning Residency 2019
-
-Date: 2019-06-26
 
 Video: <https://youtu.be/SoFlRCNdqDg>
 

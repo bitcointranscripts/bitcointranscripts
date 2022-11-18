@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['seguridad', 'scalabilidad']
+speakers: ['Matt Corallo']
 ---
 
 Escalabilidad y orientación de los modelos de seguridad
-
-Matt Corallo (bluematt)
 
 <https://twitter.com/kanzure/status/1043397023846883329>
 

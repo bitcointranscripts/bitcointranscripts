@@ -1,11 +1,10 @@
 ---
-title: Andreas Antonopoulos - Initial Blockchain Download (2018-10-23)
+title: Initial Blockchain Download
+speakers: ['Andreas Antonopoulos']
+date: 2018-10-23
 transcript_by: Michael Folkson
-speaker: Andreas Antonopoulos
 tags: ['consensus']
 ---
-
-Andreas Antonopoulos
 
 Bitcoin Q&A: Initial blockchain download
 

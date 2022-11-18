@@ -2,11 +2,10 @@
 title: Block Rewards
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Tim Roughgarden']
 ---
 
 An Axiomatic Approach to Block Rewards
-
-Tim Roughgarden
 
 <https://twitter.com/kanzure/status/1230574963813257216>
 

@@ -1,9 +1,10 @@
 ---
-title: Andrew Poelstra - Miniscript (2019-05-11)
+title: Miniscript 
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['miniscript']
-
+speakers: ['Andrew Poelstra']
+date: 2019-05-11
 ---
 
 Noded podcast May 10th 2019

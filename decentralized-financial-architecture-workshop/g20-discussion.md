@@ -3,11 +3,11 @@ title: G20 Discussion
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['research', 'regulation']
+speakers: ["Shin'ichiro Matsuo"]
 ---
 
 Why do we need a multi-stakeholder discussion in a blockchain world? A report from G20 discussions.
 
-Shinichiro Matsuo
 
 <https://bsafe.network>
 

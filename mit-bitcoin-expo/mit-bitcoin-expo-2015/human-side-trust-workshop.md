@@ -2,12 +2,9 @@
 title: Human Side Trust Workshop
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Matt Weiss', 'Joe Gerber']
 ---
 
-Human side of trust
-
-* Matt Weiss
-* Joe Gerber
 
 We would like to start with a brief activity. In you rprograms, this says design workshop. If that scares you, then we will not be doing trust falls. We will not be forming teams. But we would like to start with an activity. Identify someone around you who you do not know. Keep a mental image of that person in your mind.
 

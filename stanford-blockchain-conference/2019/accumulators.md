@@ -3,11 +3,10 @@ title: Accumulators
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['accumulators']
+speakers: ['Benedikt Bünz']
 ---
 
 Accumulators for blockchains
-
-Benedikt Bunz
 
 <https://twitter.com/kanzure/status/1090748293234094082>
 

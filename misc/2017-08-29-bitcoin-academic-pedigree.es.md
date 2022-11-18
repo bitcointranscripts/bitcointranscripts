@@ -1,10 +1,11 @@
 ---
-title: Arvind Narayanan and Jeremy Clark - Bitcoin's Academic Pedigree (2017-08-29)
+title: Bitcoin's Academic Pedigree 
 translation_by: Julien Urraca
 tags: ['history']
+speakers: ['Arvind Narayanan', 'Jeremy Clark']
+date: 2017-08-29
 ---
 
-Autores: Arvind Narayanan and Jeremy Clark
 Texto original: <https://queue.acm.org/detail.cfm?id=3136559>
 
 # Pedigrí académico de Bitcoin

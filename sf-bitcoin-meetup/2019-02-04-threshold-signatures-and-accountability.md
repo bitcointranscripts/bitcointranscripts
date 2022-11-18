@@ -1,5 +1,5 @@
 ---
-title: Andrew Poelstra - Threshold Signatures And Accountability (2019-02-04)
+title: Threshold Signatures And Accountability 
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['schnorr', 'taproot', 'threshold signatures']
@@ -7,13 +7,9 @@ speakers: ['Andrew Poelstra']
 date: 2019-02-04
 ---
 
-Name: Andrew Poelstra
-
 Topic: Threshold Signatures and Accountability
 
 Location: SF Bitcoin Devs
-
-Date: February 4th 2019
 
 Video: <https://www.youtube.com/watch?v=j9Wvz7zI_Ac>
 

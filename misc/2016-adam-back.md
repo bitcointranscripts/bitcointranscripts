@@ -1,9 +1,10 @@
 ---
-title: Adam Back - dgncc (2016)
+title: Implications of Blockchain
 transcript_by: Bryan Bishop
+speakers: ['Adam Back']
+date: 2016-11-04
+categories: ['conference']
 ---
-
-Adam Back
 
 New Context Conference 2016 <http://dg717.com/ncc/en/>
 

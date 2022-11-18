@@ -3,9 +3,8 @@ title: Threshold Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'smart contracts', 'multisig']
+speakers: ['Omer Shlomovits']
 ---
-
-Threshold scriptless scripts
 
 Omer Shlomovits (KZen Research) (omershlomovits, zengo)
 

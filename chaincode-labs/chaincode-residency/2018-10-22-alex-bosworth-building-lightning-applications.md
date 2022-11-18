@@ -1,13 +1,11 @@
 ---
-title: Alex Bosworth - Building Lightning Applications (2018-10-22)
+title: Building Lightning Applications
 transcript_by: Michael Folkson
 tags: ['lightning', 'lnd', 'wallet']
 categories: ['residency']
+speakers: ['Alex Bosworth']
+date: 2018-10-22
 ---
-
-Alex Bosworth
-
-Building Lightning Applications
 
 Video: <https://www.youtube.com/watch?v=JhRIWc9zPjA>
 

@@ -1,20 +1,15 @@
 ---
-title: Fabrice Drouin - Limitations of Lightweight Clients
+title: Limitations of Lightweight Clients
 Transcript_by: Abubakar Nur Khalil
 categories: ['residency']
 tags: ['lightning', 'limitations']
+speakers: ['Fabrice Drouin']
+date: 2019-06-26
 ---
-
-Name: Fabrice Drouin
-
-Topic: Limitations of Lightweight Clients
 
 Location: Chaincode Labs Lightning Residency 2019
 
-Date: 2019-06-26
-
 Video: <https://youtu.be/ULVItljEiFE> 
-
 
 
 ## Introduction

@@ -3,6 +3,7 @@ title: Block Synchronization Time
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
+speakers: ['Patrick Strateman']
 ---
 
 Initial Block Synchronization Time Complexity

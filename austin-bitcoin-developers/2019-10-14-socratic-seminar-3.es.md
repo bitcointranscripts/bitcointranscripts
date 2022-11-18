@@ -1,5 +1,6 @@
 ---
-title: Seminario Socrático 3 (2019-10-14)
+title: Seminario Socrático 3
+date: 2019-10-14
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']

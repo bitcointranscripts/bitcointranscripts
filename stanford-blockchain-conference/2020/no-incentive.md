@@ -3,11 +3,10 @@ title: No Incentive
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['incentives']
+speakers: ['David Schwartz']
 ---
 
 The best incentive is no incentive
-
-David Schwartz
 
 <https://twitter.com/kanzure/status/1230997662339436544>
 

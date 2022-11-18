@@ -2,11 +2,10 @@
 title: Beyond Bitcoin Decentralized Collaboration
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Yurii Rashkovskii']
 ---
 
 Beyond bitcoin: Decentralized collaboration
-
-Yurii Rashkovskii (yrashk)
 
 <https://twitter.com/kanzure/status/1043432684591230976>
 

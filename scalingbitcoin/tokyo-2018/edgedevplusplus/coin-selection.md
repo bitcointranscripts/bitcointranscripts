@@ -2,11 +2,8 @@
 title: Coin Selection
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Kalle Alm']
 ---
-
-Coin selection
-
-Karl-Johan Alm (kallewoof)
 
 <https://twitter.com/kanzure/status/1047708247333859328>
 

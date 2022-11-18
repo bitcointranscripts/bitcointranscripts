@@ -1,14 +1,9 @@
 ---
-title: Gmaxwell - Deep Dive Bitcoin Core V0.15 (2017-08-28)
-speaker: Greg Maxwell
+title: Deep Dive Bitcoin Core V0.15 
+speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
+date: 2017-08-28
 ---
-
-A deep dive into Bitcoin Core v0.15
-
-Greg Maxwell
-
-2017-08-28
 
 video: <https://www.youtube.com/watch?v=nSRoEeqYtJA>
 

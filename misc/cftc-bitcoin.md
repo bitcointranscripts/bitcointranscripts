@@ -1,6 +1,7 @@
 ---
 title: CFTC Bitcoin
 transcript_by: Bryan Bishop
+speakers: ['Brian O’Keefe', 'David Bailey', 'Rodrigo Buenaventura']
 ---
 
 Commodity Futures Trading Commission

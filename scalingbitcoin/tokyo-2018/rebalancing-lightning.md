@@ -3,6 +3,7 @@ title: Rebalancing Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'routing', 'fees']
+speakers: ['Sebastián Reca']
 ---
 
 Rebalancing in the lightning network: Analysis and implications

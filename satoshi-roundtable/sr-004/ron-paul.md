@@ -2,13 +2,11 @@
 title: Ron Paul
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Ron Paul']
+date: 2018-02-06
 ---
 
 Satoshi Roundtable IV
-
-Ron Paul
-
-2018-02-06
 
 # Introduction 1
 

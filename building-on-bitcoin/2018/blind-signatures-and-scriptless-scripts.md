@@ -3,11 +3,11 @@ title: Blind Signatures And Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'schnorr']
+speakers: ['Jonas Nick']
+date: 2018-07-03
 ---
 
 Blind signatures in scriptless scripts
-
-Jonas Nick
 
 Building on Bitcoin 2018
 

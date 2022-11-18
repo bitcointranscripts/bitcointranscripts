@@ -3,11 +3,11 @@ title: Opening Remarks
 transcript_by: Bryan Bishop
 categories: ['workshop']
 tags: ['research']
+speakers: ["Shin'ichiro Matsuo"]
+date: 2020-02-18
 ---
 
 Opening remarks
-
-Shin'ichiro Matsuo
 
 <http://bsafe.network/events/codefi_stanford_2020/>
 

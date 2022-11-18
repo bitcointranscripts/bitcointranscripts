@@ -1,5 +1,7 @@
 ---
-title: Andrew Poelstra - Miniscript (2020-02-07)
+title: Miniscript
+speakers: ['Andrew Poelstra']
+date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']

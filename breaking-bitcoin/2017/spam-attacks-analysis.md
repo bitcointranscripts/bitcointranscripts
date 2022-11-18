@@ -3,11 +3,11 @@ title: Spam Attacks Analysis
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'p2sh', 'attacks']
+speakers: ['Antoine Le Calvez']
+date: 2017-09-09
 ---
 
 Hunting moby dick, an analysis of 2015-2016 spam attacks
-
-Antoine Le Calvez (khannib)
 
 video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=1h12m10s>
 

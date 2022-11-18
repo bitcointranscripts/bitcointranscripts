@@ -1,17 +1,15 @@
 ---
-title: Christian Decker - Channel Factories (2019-03-14)
+title: Channel Factories
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['topology', 'fees']
+speaker: ['Christian Decker']
+date: 2019-03-14
 ---
-
-Name: Christian Decker
 
 Topic: Lightning Channel Factories
 
 Location: Stephan Livera Podcast
-
-Date: March 14th 2019
 
 Audio: https://stephanlivera.com/episode/59/
 

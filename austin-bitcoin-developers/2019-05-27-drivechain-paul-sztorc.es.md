@@ -1,14 +1,12 @@
 ---
-title: Drivechain Paul Sztorc (2019-05-27)
+title: Drivechain
+speakers: ['Paul Sztorc']
+date: 2019-05-27
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
-tags: ['investigación', 'lightning', 'capa 2']
+tags: ['investigación', 'lightning', 'capa 2', 'sidechains']
 ---
-
-2019-05-27
-
-Paul Sztorc (Niveles)
 
 Drivechain: Una capa de interoperabilidad-2, descrita en términos de la red lightning - algo que ya entiendes
 

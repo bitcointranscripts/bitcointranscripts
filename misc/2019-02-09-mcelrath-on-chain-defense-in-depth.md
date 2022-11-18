@@ -1,14 +1,12 @@
 ---
-title: Mcelrath On Chain Defense In Depth (2019-02-09)
+title: Chain Defense In Depth 
 transcript_by: Bryan Bishop
 tags: ['custody', 'wallet']
+speakers: ['Bob McElrath']
+date: 2019-02-09
 ---
 
-2019-02-09
-
 On-chain defense in depth (UCL CBT seminar)
-
-Bob McElrath (Fidelity Digital Assets)
 
 video: <https://vimeo.com/316301424>
 

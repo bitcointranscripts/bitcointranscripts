@@ -2,11 +2,9 @@
 title: Timestamping
 transcript_by: Bryan Bishop
 categories: ['conference']
+tags: ['timestamping']
+speakers: ['Riccardo Casatta']
 ---
-
-Timestamping
-
-Riccardo Casatta
 
 slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%20A%20-%20Riccardo.pdf>
 

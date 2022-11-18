@@ -3,11 +3,10 @@ title: Bosminer
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']
+speakers: ['Jan Capek']
 ---
 
 Challenges of developing Bosminer from scratch in Rust
-
-Jan Capek (janbraiins)
 
 <https://braiins-os.org/>
 

@@ -1,7 +1,9 @@
 ---
-title: Ray Dillinger -  If I'd Known What We Were Starting (2017-09-20)
+title: If I'd Known What We Were Starting 
 translation_by: Julien Urraca
 tags: ['history']
+speakers: ['Ray Dillinger']
+date: 2017-09-20
 ---
 
 Autor: Ray Dillinger

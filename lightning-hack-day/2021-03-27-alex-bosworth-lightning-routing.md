@@ -1,17 +1,15 @@
 ---
-title: Alex Bosworth - Lightning Routing (2021-03-27)
+title: Lightning Routing
 transcript_by: Michael Folkson
 categories: ['hackathon']
 tags: ['lightning', 'routing']
+date: 2021-03-27
+speakers: ['Alex Bosworth']
 ---
 
-Name: Alex Bosworth
-
-Topic: Lightning Routing - Building a new economy
+Lightning Routing - Building a new economy
 
 Location: Lightning Hack Day
-
-Date: March 27th 2021
 
 Video: No video posted online
 

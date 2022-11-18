@@ -3,6 +3,7 @@ title: How Much Privacy Is Enough
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'scalability']
+speakers: ['Ian Miers']
 ---
 
 How much privacy is enough? Threats, scaling, and trade-offs in blockchain privacy protocols

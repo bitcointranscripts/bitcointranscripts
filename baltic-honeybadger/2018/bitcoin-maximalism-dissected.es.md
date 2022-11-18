@@ -3,11 +3,10 @@ title: El maximalismo de Bitcoin diseccionado
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
+speakers: ['Giacomo Zucco']
 ---
 
 El maximalismo de Bitcoin diseccionado
-
-Giacomo Zucco (giacomozucco)
 
 Buenos días a todos. Estoy muy contento de estar aquí en el Baltic Honeybadger. El año pasado hice una presentación de scaling. Inauguré la conferencia con una presentación de escalamiento. Este año, para compensar, seré súper serio. Esta será la presentación más aburrida de la conferencia. Voy a tratar de diseccionar y formalizar el maximalismo de bitcoin.
 

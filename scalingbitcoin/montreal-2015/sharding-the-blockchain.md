@@ -3,11 +3,8 @@ title: Sharding The Blockchain
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'proof-of-work', 'validation']
+speakers: ['Vlad Zamfir']
 ---
-
-Sharding the blockchain
-
-Vlad Zamfir
 
 I am going to talk about blockchain sharding. This is one of the scaling solutions that I like the most. I have done the most work on it. In case you don't know who I am, I am a researcher mostly with the ethereum project. Basically the basics of sharding is that in non-sharding, every node does every validation. In a sharding solution, nodes hold a subset of the state, and a subset of the blockchain. By state we mean UTXOs. Instead of everyone redundantly doing the same work, we're going to share the load but still have an only economic assurance even though we're not going to validate every transaction.
 

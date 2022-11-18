@@ -1,14 +1,12 @@
 ---
-title: Gmaxwell - Mining And Block Size Etc (2015-11-09)
-speaker: Greg Maxwell
+title: Mining And Block Size Etc
+speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
+date: 2015-11-09
+tags: ['mining']
 ---
 
-Mining, block size, etc.
-
-gmaxwell
-
-2015-11-09
+# Mining, block size, etc.
 
 <https://www.youtube.com/watch?v=RguZ0_nmSPw>
 

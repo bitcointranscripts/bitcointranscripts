@@ -1,17 +1,12 @@
 ---
-title: Adam Back - Simplicity (2020-04-08)
+title: Simplicity - Next-Gen Smart Contracting
 transcript_by: Michael Folkson
-speaker: Adam Back
+speakers: ['Adam Back']
 tag: ['smart contracts']
+date: 2020-04-08
 ---
 
-Name: Adam Back
-
-Topic: Simplicity - Next-Gen Smart Contracting
-
 Location: Blockstream webinar
-
-Date: April 8th 2020
 
 Video: https://www.youtube.com/watch?v=RZNCk-nyx_A
 

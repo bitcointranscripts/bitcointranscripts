@@ -2,9 +2,8 @@
 title: Keynote Gavin Andresen
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Gavin Andresen']
 ---
-
-Gavin Andresen
 
 His fame precedes him. He's going to talk about chain sizes and all that.
 

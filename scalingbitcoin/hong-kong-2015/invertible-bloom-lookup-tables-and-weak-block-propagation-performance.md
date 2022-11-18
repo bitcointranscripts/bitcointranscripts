@@ -3,11 +3,10 @@ title: Invertible Bloom Lookup Tables And Weak Block Propagation Performance
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
+speakers: ['Kalle Rosenbaum', 'Rusty Russell']
 ---
 
 IBLT and weak block propagation performance
-
-Kalle Rosenbaum and Rusty Russell
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/3_block_propagation_1_rosenbaum.pdf>
 

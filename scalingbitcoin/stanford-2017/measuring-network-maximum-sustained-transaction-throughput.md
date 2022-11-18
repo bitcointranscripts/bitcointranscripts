@@ -3,6 +3,7 @@ title: Measuring Network Maximum Sustained Transaction Throughput
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['P2P', 'miners', 'fees']
+speakers: ['Andrew Stone']
 ---
 
 Measuring maximum sustained transaction throughput on a global network of Bitcoin nodes

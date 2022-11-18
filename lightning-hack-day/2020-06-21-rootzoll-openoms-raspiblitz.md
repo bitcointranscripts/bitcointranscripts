@@ -1,16 +1,12 @@
 ---
-title: Rootzoll, Openoms, Raspiblitz (2020-06-21)
+title: RaspiBlitz full node
 transcript_by: Michael Folkson
 categories: ['hackathon']
+date: 2020-06-21
+speakers: ['Rootzoll', 'Openoms']
 ---
 
-Name: Rootzoll and Openoms
-
-Topic: RaspiBlitz full node
-
 Location: Potzblitz (online)
-
-Date: June 21st 2020
 
 Video: https://www.youtube.com/watch?v=1EqUi4xRbr0
 

@@ -2,6 +2,7 @@
 title: Introduction
 transcript_by: Bryan Bishop
 categories: ['conference']
+speakers: ['Andrew Miller', 'Neha Narula']
 ---
 
 -- Disclaimer --

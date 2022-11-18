@@ -1,7 +1,9 @@
 ---
-title: Peter R
+title: Fee markets
 transcript_by: Bryan Bishop
 categories: ['conference']
+tags: ['fees']
+speakers: ['Peter Rizun']
 ---
 
 ((Note that there is a more accurate transcript from Peter-R himself below.))

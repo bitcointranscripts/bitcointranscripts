@@ -1,8 +1,9 @@
 ---
-title: c-lightning developer call (2021-10-04)
+title: c-lightning developer call 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
+date: 2021-10-04
 ---
 
 Name: c-lightning developer call
@@ -10,8 +11,6 @@ Name: c-lightning developer call
 Topic: Various topics
 
 Location: Jitsi online
-
-Date: October 4th 2021
 
 Video: No video posted online
 

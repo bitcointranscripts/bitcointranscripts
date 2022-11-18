@@ -1,8 +1,10 @@
 ---
-title: Signmessage (2018-10-10)
+title: Signmessage 
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet']
+speakers: ['Kalle Alm']
+date: 2018-10-10
 ---
 
 <https://twitter.com/kanzure/status/1049834659306061829>

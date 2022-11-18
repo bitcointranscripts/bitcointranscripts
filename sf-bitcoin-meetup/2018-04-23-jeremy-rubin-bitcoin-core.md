@@ -1,11 +1,11 @@
 ---
-title: Jeremy Rubin - Bitcoin Core (2018-04-23)
+title: Bitcoin Core 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['bitcoin core']
+speakers: ['Jeremy Rubin']
+date: 2018-04-23
 ---
-
-Jeremy Rubin
 
 A hardCORE workout
 

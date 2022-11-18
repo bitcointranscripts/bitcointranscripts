@@ -3,9 +3,9 @@ title: Tooling
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['wallet']
+speakers: ['Eric Voskuil', 'Nicolas Dorier', 'Kevin Loaec', 'Lawrence Nahum']
+date: 2018-07-03
 ---
-
-Tooling
 
 Building on Bitcoin 2018
 

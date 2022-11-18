@@ -1,16 +1,14 @@
 ---
-title: Christopher Jeffrey Consensus Pitfalls (2017-09-10)
+title: Consensus Pitfalls 
 transcript_by: Michael Folkson
 categories: ['conference']
+date: 2017-09-10
+speakers: ['Christopher Jeffrey']
 ---
 
-Name: Christopher Jeffrey (JJ)
-
-Topic: Pitfalls of Consensus Implementation
+Pitfalls of Consensus Implementation
 
 Location: Breaking Bitcoin
-
-Date: September 10th 2017
 
 Video: https://youtu.be/0WCaoGiAOHE?t=9000
 
