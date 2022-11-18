@@ -3,11 +3,10 @@ title: Apertura
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conference']
+video: <https://www.youtube.com/watch?v=66ZoGUAnY9s>
 ---
 
 Discurso de apertura del Baltic Honeybadger 2018
-
-livestream: <https://www.youtube.com/watch?v=66ZoGUAnY9s>
 
 twitter: <https://twitter.com/search?f=tweets&vertical=default&q=bh2018>
 

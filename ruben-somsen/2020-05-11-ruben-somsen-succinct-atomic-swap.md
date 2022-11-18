@@ -3,13 +3,12 @@ title: Succinct Atomic Swap
 transcript_by: Michael Folkson
 date: 2020-05-11
 speakers: ['Ruben Somsen']
+video: <https://www.youtube.com/watch?v=TlCxpdNScCA>
 ---
 
 Topic: Succinct Atomic Swap (SAS)
 
 Location: Ruben Somsen YouTube channel
-
-Video: https://www.youtube.com/watch?v=TlCxpdNScCA
 
 SAS resources: https://gist.github.com/RubenSomsen/8853a66a64825716f51b409be528355f
 

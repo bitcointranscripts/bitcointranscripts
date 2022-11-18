@@ -4,6 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['security', 'IBD', 'bitcoin core']
 date: 2021-11-02
+video: <https://www.youtube.com/watch?v=JottwT-kEdg>
 ---
 
 Topic: AssumeUTXO
@@ -11,8 +12,6 @@ Topic: AssumeUTXO
 Name: Socratic Seminar
 
 Location: London BitDevs (online)
-
-Video: <https://www.youtube.com/watch?v=JottwT-kEdg>
 
 Reading list: <https://gist.github.com/michaelfolkson/f46a7085af59b2e7b9a79047155c3993>
 

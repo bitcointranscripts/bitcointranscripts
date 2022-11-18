@@ -5,11 +5,10 @@ tags: ['lightning', 'c-lightning']
 categories: ['residency']
 speakers: ['Christian Decker']
 date: 2018-10-24
+video: <https://www.youtube.com/watch?v=l8OLD7or0DA>
 ---
 
 Location: Chaincode Labs Lightning Residency 2018
-
-Video: <https://www.youtube.com/watch?v=l8OLD7or0DA>
 
 <https://twitter.com/kanzure/status/1232313790311436290>
 

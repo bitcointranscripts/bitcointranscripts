@@ -5,15 +5,12 @@ categories: ['conference']
 tags: ['schnorr', 'threshold signatures']
 speakers: ['Chelsea Komlo', 'Elizabeth Crites']
 date: 2022-08-07
+video: <https://youtu.be/tWopcFzSTas?t=11604>
 ---
 
 Topic: FROST
 
 Location: Zcon 3
-
-Date: August 7th 2022
-
-Video: <https://youtu.be/tWopcFzSTas?t=11604>
 
 FROST paper: <https://eprint.iacr.org/2020/852.pdf>
 

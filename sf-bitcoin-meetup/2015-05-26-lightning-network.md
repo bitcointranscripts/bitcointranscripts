@@ -5,6 +5,7 @@ categories: ['meetup']
 tags: ['consensus', 'lightning', 'scalability']
 speakers: ['Tadge Dryja', 'Joseph Poon']
 date: 2015-05-26
+video: <https://www.youtube.com/watch?v=2QH5EV_Io0E>
 ---
 
 
@@ -14,8 +15,6 @@ date: 2015-05-26
 How Lightning Network can offer a solution for bitcoin's scalability problems
 
 <http://lightning.network/>
-
-video: <https://www.youtube.com/watch?v=2QH5EV_Io0E>
 
 slides: <https://lightning.network/lightning-network-presentation-sfbitcoinsocial-2015-05-26.pdf>
 

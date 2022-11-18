@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 tags: ['security', 'cryptography']
 categories: ['conference']
 speakers: ['Daniel J. Bernstein']
+video: <https://www.youtube.com/watch?v=dFUJmzcj0iw&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=15>
 ---
 
 [Daniel J. Bernstein (djb)](https://en.wikipedia.org/wiki/Daniel_J._Bernstein) and [Tanja Lange](http://www.hyperelliptic.org/tanja/)
 
 SchmooCon 2014
-
-video 1: <https://www.youtube.com/watch?v=dFUJmzcj0iw&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=15>
 
 video 2 (same?): <https://www.youtube.com/watch?v=maBOorEfOOk&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=91>
 

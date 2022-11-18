@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['submarine swaps']
 speakers: ['Alex Bosworth']
 date: 2019-07-03
+video: <https://www.youtube.com/watch?v=eB_HkYb7Y2M>
 ---
 
 London Bitcoin Devs
 
 Submarine Swaps and Loop
-
-Video: <https://www.youtube.com/watch?v=eB_HkYb7Y2M>
 
 Slides: <https://www.dropbox.com/s/cyh97jv81hrz8tf/alex-bosworth-submarine-swaps-loop.pdf?dl=0>
 

@@ -3,13 +3,12 @@ title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Bobby Lee', 'Pindar Wong']
+video: <https://youtube.com/watch?v=qdghS32TeZU>
 ---
 
 Introduction to event
 
 schedule: <https://scalingbitcoin.org/hongkong2015/#schedule>
-
-livestream: <https://youtube.com/watch?v=qdghS32TeZU>
 
 better livestream link: <http://www.youtube.com/channel/UCql9h_eXmusjt-f3k8qLwPQ/live>
 

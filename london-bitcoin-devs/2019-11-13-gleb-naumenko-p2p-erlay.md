@@ -5,11 +5,10 @@ categories: ['meetup']
 tags: ['research', 'P2P']
 speakers: ['Gleb Naumenko']
 date: 2019-11-13
+video: <https://www.youtube.com/watch?v=ZUWs00Anpaw>
 ---
 
 London Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=ZUWs00Anpaw>
 
 <https://twitter.com/kanzure/status/1201861687097352198>
 

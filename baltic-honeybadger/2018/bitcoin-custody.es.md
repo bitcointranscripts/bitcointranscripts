@@ -5,6 +5,7 @@ translation_by: Blue Moon
 categories: ['conference']
 speakers: ['Bryan Bishop']
 tags: ['custodia', 'reglamento']
+video:  <https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s>
 ---
 
 <https://twitter.com/kanzure/status/1048014038179823617>
@@ -18,8 +19,6 @@ Schedule: https://bh2018.hodlhodl.com/
 Transcripción
 
 Hora de inicio:  6:09:50
-
-Youtube:  https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s
 
 Mi nombre es Bryan Bishop, voy a hablar de la custodia de bitcoin. Aquí está mi huella digital PGP, deberíamos hacer eso. Así que quién soy, tengo un fondo de desarrollo de software, no solo escribo transcripciones. En realidad ya no estoy en LedgerX desde el viernes (21 de septiembre de 2018) que vine aquí.  Eso es el final de 4 años, así que están viendo a un hombre libre. [Aplausos] Gracias.
 

@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 speakers: ["James O'Beirne"]
 categories: ['conference']
 tags: ['bitcoin core']
+video: <https://www.youtube.com/watch?v=L_sI_tXmy2U>
 ---
 
 <https://twitter.com/kanzure/status/1048098034234445824>
 
 slides: <http://jameso.be/dev++2018/>
-
-video: <https://www.youtube.com/watch?v=L_sI_tXmy2U>
 
 # Introduction
 

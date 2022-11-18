@@ -5,13 +5,13 @@ categories: ['conference']
 tags: ['testing']
 speakers: ['Jonathan Metzman']
 date: 2019-08-07
+video: <https://www.youtube.com/watch?v=TtPXYPJ5_eE>
 ---
 
 Topic: Going Beyond Coverage Guided Fuzzing with Structured Fuzzing
 
 Location: Black Hat USA 2019
 
-Video: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 
 Blackhat: https://www.blackhat.com/us-19/briefings/schedule/#going-beyond-coverage-guided-fuzzing-with-structured-fuzzing-16110
 

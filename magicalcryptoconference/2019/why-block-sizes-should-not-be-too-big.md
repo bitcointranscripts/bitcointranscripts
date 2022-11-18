@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'proof-of-work', 'miners']
 speakers: ['Luke Dashjr']
+video: <https://youtu.be/JJF5Gnro1GU>
 ---
 
 Briefly, why block sizes shouldn't be too big
 
 slides: <https://luke.dashjr.org/tmp/code/block-sizes-mcc.pdf>
-
-Video: https://youtu.be/JJF5Gnro1GU
 
 I am luke-jr. I am going to go over why block size shouldn't be too big.
 

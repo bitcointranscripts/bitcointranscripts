@@ -5,13 +5,12 @@ categories: ['residency']
 tags: ['eltoo', 'lightning']
 speakers: ['Christian Decker']
 date: 2019-06-25
+video: <https://www.youtube.com/watch?v=3ZjymCOmn_A>
 ---
 
 Eltoo: The (Far) Future of Lightning
 
 Location: Chaincode Labs
-
-Video: https://www.youtube.com/watch?v=3ZjymCOmn_A
 
 Slides: https://residency.chaincode.com/presentations/lightning/Eltoo.pdf
 

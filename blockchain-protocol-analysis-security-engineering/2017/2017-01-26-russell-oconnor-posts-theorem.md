@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Russell Oconnor']
 date: 2017-01-26
+video: <https://www.youtube.com/watch?v=TGE6jrVmt_I>
 ---
 
 Post’s Theorem and Blockchain Languages: A Short Course in the Theory of Computation
 
 Location: BPASE 2017, Stanford University
-
-Video: <https://www.youtube.com/watch?v=TGE6jrVmt_I>
 
 # Intro
 

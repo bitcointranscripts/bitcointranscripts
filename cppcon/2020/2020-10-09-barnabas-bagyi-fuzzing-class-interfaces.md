@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Barnabás Bágyi']
 date: 2020-10-09
+video: <https://www.youtube.com/watch?v=TtPXYPJ5_eE>
 ---
 
 # Fuzzing Class Interfaces for Generating and Running Tests with libFuzzer
 
 Location: CppCon 2020
-
-Video: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 
 Slides: https://github.com/CppCon/CppCon2020/blob/main/Presentations/fuzzing_class_interfaces_for_generating_and_running_tests_with_libfuzzer/fuzzing_class_interfaces_for_generating_and_running_tests_with_libfuzzer__barnab%C3%A1s_b%C3%A1gyi__cppcon_2020.pdf
 

@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 categories: ['conference']
 date: 2017-09-10
 speakers: ['Christopher Jeffrey']
+video: <https://youtu.be/0WCaoGiAOHE?t=9000>
 ---
 
 Pitfalls of Consensus Implementation
 
 Location: Breaking Bitcoin
-
-Video: https://youtu.be/0WCaoGiAOHE?t=9000
 
 # Intro
 

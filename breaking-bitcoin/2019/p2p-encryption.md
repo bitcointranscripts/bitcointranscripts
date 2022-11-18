@@ -5,11 +5,10 @@ date: 2019-06-08
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['P2P', 'cryptography', 'bitcoin core']
+video: <https://www.youtube.com/watch?v=mcJa1YvzrFs>
 ---
 
 bip324: v2 message transport protocol
-
-Video: <https://www.youtube.com/watch?v=mcJa1YvzrFs>
 
 <https://twitter.com/kanzure/status/1137312478373851136>
 

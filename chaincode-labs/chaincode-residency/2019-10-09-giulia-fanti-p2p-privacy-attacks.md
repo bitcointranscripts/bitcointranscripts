@@ -5,11 +5,10 @@ tags: ['privacy', 'P2P', 'attacks']
 categories: ['residency']
 speakers: ['Giulia Fanti']
 date: 2019-10-09
+video: <https://youtu.be/qKNEUfnYue0>
 ---
 
 Location: Chaincode Labs 2019 Residency
-
-Video: <https://youtu.be/qKNEUfnYue0>
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/giulia_fanti_bitcoin_p2p.pdf>
 

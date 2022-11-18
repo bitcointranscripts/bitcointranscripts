@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['security', 'research']
 speakers: ['Giacomo Zucco']
 date: 2017-09-09
+video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=4h8m>
 ---
 
 Traditional banks as bitcoin custodians: Security challenges and implications
-
-video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=4h8m>
 
 <https://twitter.com/kanzure/status/1005545022559866880>
 

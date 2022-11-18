@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['cryptography']
 speakers: ['Peter Todd']
 date: 2017-09-10
+video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1m33s>
 ---
 
 Solar powered space pirates: A threat to bitcoin?
-
-video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1m33s>
 
 <https://twitter.com/kanzure/status/1005633917356007425>
 

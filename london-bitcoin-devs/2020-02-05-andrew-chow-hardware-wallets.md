@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['hardware wallet', 'PSBT', 'wallet']
 speakers: ['Andrew Chow']
 date: 2020-02-05
+video: <https://www.youtube.com/watch?v=8mdfygEzQjE>
 ---
 
 Hardware Wallets in Bitcoin Core
 
 London Bitcoin Devs
-
-Video: https://www.youtube.com/watch?v=8mdfygEzQjE
 
 Slides: https://www.dropbox.com/s/k02o32d0pagac4r/Andrew%20Chow%20slides.pdf
 

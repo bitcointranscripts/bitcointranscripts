@@ -6,13 +6,12 @@ categories: ['residency']
 tags: ['eltoo', 'lightning']
 date: 2019-06-25
 speakers: ['Christian Decker']
+video: <https://www.youtube.com/watch?v=3ZjymCOmn_A>
 ---
 
 Tema: Eltoo: El (lejano) futuro de lightning
 
 Lugar: Chaincode Labs
-
-Video: https://www.youtube.com/watch?v=3ZjymCOmn_A
 
 Diapositivas: https://residency.chaincode.com/presentations/lightning/Eltoo.pdf
 

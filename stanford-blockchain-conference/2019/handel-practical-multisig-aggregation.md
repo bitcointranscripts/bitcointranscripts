@@ -8,8 +8,6 @@ speakers: ['Nicolas Gailly']
 
 Handel: Practical multi-signature aggregation for large byzantine committees
 
-Nicolas Gailly
-
 # Introduction
 
 Handle is a aggregation protocol for large scale byzantine committees. This is work with my colleagues in addition to myself.

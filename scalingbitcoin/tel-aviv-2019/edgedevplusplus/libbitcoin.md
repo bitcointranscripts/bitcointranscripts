@@ -9,8 +9,6 @@ Libbitcoin: A practical introduction
 
 or: libbitcoin's bx tool: Constructing a raw transaction
 
-James Chiang
-
 <https://twitter.com/kanzure/status/1171352496247365633>
 
 <https://github.com/libbitcoin/libbitcoin-explorer/wiki/Download-BX>

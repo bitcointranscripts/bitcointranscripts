@@ -8,8 +8,6 @@ speakers: ['Jeremy Rubin']
 
 Spork: Probabilistic bitcoin soft-forks
 
-Jeremy Rubin
-
 # Introduction
 
 Thank you for the introduction. I have a secret. I am not an economist, so you'll have to forgive me if I don't have your favorite annotations today. I have my own annotations. I originally gave a predecessor to this talk in Japan. You might notice my title here is a haiku: these are protocols used for changing the bitcoin netwokr protocols. People do highly value staying together for a chain, we're doing coordinated activation of a new upgrade.

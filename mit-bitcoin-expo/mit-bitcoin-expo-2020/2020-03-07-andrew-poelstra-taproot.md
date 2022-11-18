@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['taproot']
 speakers: ['Andrew Poelstra']
 date: 2020-03-07
+video: https://www.youtube.com/watch?v=1VtQBVauvhw
 ---
 
 Topic: Taproot - Who, How, Why
 
 Location: MIT Bitcoin Expo 2020
-
-Video: https://www.youtube.com/watch?v=1VtQBVauvhw
 
 BIP 341: https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
 

@@ -5,11 +5,10 @@ speakers: ['Matt Corallo']
 categories: ['conference']
 tags: ['mining']
 date: 2019-05-12
+video: <https://www.youtube.com/watch?v=k_z-FBAil6k>
 ---
 
 Topic: The State of Bitcoin Mining: No Good, The Bad, and The Ugly
-
-Video: https://www.youtube.com/watch?v=k_z-FBAil6k
 
 So I'm going to talk a little bit about kind of the state of mining and the set of protocols that are used for mining today, a tiny bit about the history. And then I'm going to talk very briefly about some of the solutions that are being proposed, whether it's [BetterHash](https://bitcoinmagazine.com/business/betterhash-protocol-lets-pool-miners-regain-control-over-their-hash-power), whether it's [Braidpool](https://pool2win.github.io/braidpool/) design, rebooting [P2Pool](https://en.bitcoin.it/wiki/P2Pool), and some of the other stuff, only kind of briefly at the end. But mostly, I just want to give more impotence for how broken the state of things are today, and why the community broadly desperately needs to be focused on fixing stuff. So I'm in [Chaincode](https://chaincode.com/), and if you didn't notice, we have a really fancy new logo. So I'm just gonna sit here and admire that for a minute. Thanks to John and other people who put that together. But before we go down the rabbit hole of mining I want to talk very briefly and make sure we're on the same page about why we're here and what Bitcoin is.
 

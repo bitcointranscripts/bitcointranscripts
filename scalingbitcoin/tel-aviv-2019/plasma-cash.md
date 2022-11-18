@@ -10,8 +10,6 @@ Plasma Cash: Towards more efficient plasma constructions
 
 Non-custodial sidechains for bitcoin utilizing plasma cash and covenants
 
-Georgios Konstantopoulos
-
 <https://twitter.com/kanzure/status/1172108023705284609>
 
 paper: <https://github.com/loomnetwork/plasma-paper/blob/master/plasma_cash.pdf>

@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'covenants']
 speakers: ['Emin Gun Sirer']
+video: <https://www.youtube.com/watch?time_continue=10254&v=_Z0ID-0DOnc>
 ---
 
 Bitcoin covenants: Opportunities and challenges
 
 <https://twitter.com/kanzure/status/785071789705728000>
-
-<https://www.youtube.com/watch?time_continue=10254&v=_Z0ID-0DOnc>
 
 We published this last February at an academic workshop. The work itself has interesting ramifications. My real goal here is to start a conversation and then do a follow-up blog post where we collate feedback from the community. We would like to add this to Bitcoin Core. Covenants.
 

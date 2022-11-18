@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['schnorr', 'taproot', 'multisig']
 date: 2020-06-17
 speakers: ['Tim Ruffing']
+video: <https://www.youtube.com/watch?v=8Op0Glp9Eoo>
 ---
 
 Taproot and Schnorr Multisignatures
 
 Location: London Bitcoin Devs (online)
-
-Video: https://www.youtube.com/watch?v=8Op0Glp9Eoo
 
 Slides: https://slides.com/real-or-random/taproot-and-schnorr-multisig
 

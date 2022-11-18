@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['research', 'schnorr']
 speakers: ['Tim Ruffing']
 date: 2019-10-06
+video: <https://www.youtube.com/watch?v=Wy5jpgmmqAg>
 ---
 
 Topic: The Quest for Practical Threshold Schnorr Signatures
 
 Location: Cryptoeconomic Systems Summit 2019
-
-Video: https://www.youtube.com/watch?v=Wy5jpgmmqAg
 
 Slides: https://slides.com/real-or-random/schnorr-threshold-sigs-ces-summit-2019
 

@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['wallet']
 speakers: ['James Chiang']
+video: <https://www.youtube.com/watch?v=OVvue2dXkJo>
 ---
 
 Hierarchical deterministic Wallets (bip32)
 
 <https://twitter.com/kanzure/status/1047714436889235456>
-
-video: <https://www.youtube.com/watch?v=OVvue2dXkJo>
 
 <https://teachbitcoin.io/presentations/wallets.html>
 

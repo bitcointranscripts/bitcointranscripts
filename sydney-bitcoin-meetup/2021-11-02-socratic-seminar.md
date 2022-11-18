@@ -1,8 +1,9 @@
 ---
-title: Sydney Socratic Seminar (2021-11-02)
+title: Sydney Socratic Seminar 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['P2P', 'mempool']
+date: 2021-11-02
 ---
 
 Name: Socratic Seminar
@@ -10,8 +11,6 @@ Name: Socratic Seminar
 Topic: Package relay
 
 Location: Bitcoin Sydney (online)
-
-Date: November 2nd 2021
 
 Video: No video posted online
 

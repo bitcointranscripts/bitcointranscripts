@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']
 date: 2020-07-21
+video: <https://www.youtube.com/watch?v=bPcguc108QM>
 ---
 
 BIP Taproot (BIP 341)
 
 Location: London BitDevs (online)
-
-Video: https://www.youtube.com/watch?v=bPcguc108QM
 
 Pastebin of the resources discussed: https://pastebin.com/vsT3DNqW
 

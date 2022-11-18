@@ -5,11 +5,10 @@ categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
 speakers: ['Sergi Delgado Segura']
 date: 2020-05-24
+video: <https://www.youtube.com/watch?v=Vkq9CVxMclE>
 ---
 
 Location: Potzblitz (online)
-
-Video: https://www.youtube.com/watch?v=Vkq9CVxMclE
 
 Slides: https://srgi.me/resources/slides/Potzblitz!2020-Watchtowers.pdf
 

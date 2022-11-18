@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['smart contracts']
 speakers: ['Jeremy Rubin']
 date: 2020-07-11
+video: https://www.youtube.com/watch?v=4vDuttlImPc
 ---
 
 Topic: Sapio Programming 101: Stateful Smart Contracts for Bitcoin with OP_CTV
 
 Location: Reckless VR
-
-Video: https://www.youtube.com/watch?v=4vDuttlImPc
 
 Slides: https://docs.google.com/presentation/d/1X4AGNXJ5yCeHRrf5sa9DarWfDyEkm6fFUlrcIRQtUw4/
 

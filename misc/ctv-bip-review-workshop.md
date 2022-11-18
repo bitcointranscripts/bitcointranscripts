@@ -2,6 +2,7 @@
 title: CTV BIP Review Workshop
 transcript_by: Bryan Bishop
 speakers: ['Jeremy Rubin']
+video: <https://www.pscp.tv/w/1PlJQmRZWnZJE> 
 ---
 
 OP\_CHECKTEMPLATEVERIFY workshop notes
@@ -10,7 +11,7 @@ OP\_CHECKTEMPLATEVERIFY workshop notes
 
 transcript tweet <https://twitter.com/kanzure/status/1223708325960798208>
 
-livestream: <https://www.pscp.tv/w/1PlJQmRZWnZJE> and tweet <https://twitter.com/JeremyRubin/status/1223664128381734912> or <https://twitter.com/JeremyRubin/status/1223672458516938752> and <https://twitter.com/JeremyRubin/status/1223729378946715648>
+tweet <https://twitter.com/JeremyRubin/status/1223664128381734912> or <https://twitter.com/JeremyRubin/status/1223672458516938752> and <https://twitter.com/JeremyRubin/status/1223729378946715648>
 
 IRC logs: <http://gnusha.org/ctv-bip-review/>
 

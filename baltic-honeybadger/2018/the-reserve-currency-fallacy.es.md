@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferenciae']
 speakers: ['Eric Voskuil']
+video: <https://youtu.be/66ZoGUAnY9s?t=2181>
 ---
 
 La falacia de la moneda de reserva

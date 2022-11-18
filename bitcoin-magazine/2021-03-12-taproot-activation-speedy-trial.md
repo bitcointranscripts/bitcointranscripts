@@ -5,12 +5,11 @@ categories: ['podcast']
 tags: ['taproot']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-03-12
+video: <https://www.youtube.com/watch?v=oCPrjaw3YVI>
 ---
 
 
 Location: Bitcoin Magazine (online)
-
-Video: https://www.youtube.com/watch?v=oCPrjaw3YVI
 
 Speedy Trial proposal: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 

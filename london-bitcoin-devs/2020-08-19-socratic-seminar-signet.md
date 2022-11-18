@@ -4,6 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['taproot', 'schnorr', 'signet']
 date: 2020-08-19
+video: <https://www.youtube.com/watch?v=b0AiucAuX3E>
 ---
 
 Topic: Signet
@@ -11,8 +12,6 @@ Topic: Signet
 Name: Socratic Seminar
 
 Location: London BitDevs (online)
-
-Video: <https://www.youtube.com/watch?v=b0AiucAuX3E>
 
 Pastebin of the resources discussed: <https://pastebin.com/rAcXX9Tn>
 

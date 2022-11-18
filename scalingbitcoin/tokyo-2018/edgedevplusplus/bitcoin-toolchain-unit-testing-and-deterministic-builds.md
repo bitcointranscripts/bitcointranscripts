@@ -4,9 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['build systems', 'testing']
 speakers: ['Marco Falke']
+video: https://www.youtube.com/watch?v=ZJ2t84trKVo
 ---
-
-Video: https://www.youtube.com/watch?v=ZJ2t84trKVo
 
 <https://twitter.com/kanzure/status/1048103693885759489>
 

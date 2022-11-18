@@ -4,9 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Peter Todd']
 date: 2017-03-04
----
-
 video: <https://www.youtube.com/watch?v=0mVOq1jaR1U&feature=youtu.be&t=1h20m>
+---
 
 <https://twitter.com/kanzure/status/838481311992012800>
 

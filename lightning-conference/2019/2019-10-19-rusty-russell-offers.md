@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['lightning', 'c-lightning']
 speakers: ['Rusty Russell']
 date: 2019-10-19
+video: <https://www.youtube.com/watch?v=Wq75pGWmMd4>
 ---
 
 Make Me An Offer: Next Level Invoicing
 
 The Lightning Conference Day 1 (Stage 1)
-
-Video: <https://www.youtube.com/watch?v=Wq75pGWmMd4>
 
 BOLT 11: <https://github.com/lightningnetwork/lightning-rfc/blob/master/11-payment-encoding.md>
 

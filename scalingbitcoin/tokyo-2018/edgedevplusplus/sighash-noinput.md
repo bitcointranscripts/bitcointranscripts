@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['bitcoin core']
 speakers: ['Bryan Bishop']
+video: <https://www.youtube.com/watch?v=HlMZWvAHYno&t=2250s>
 ---
 
 SIGHASH\_NOINPUT (BIP118)
@@ -16,8 +17,6 @@ Dev++ / BC2 - October 4th-5th  2018 - Keio University, Tokyo, Japan
 <https://bitcoinedge.org/event/keio-devplusplus-2018>
 
 <https://keio-devplusplus-2018.bitcoinedge.org/#schedule>
-
-video: <https://www.youtube.com/watch?v=HlMZWvAHYno&t=2250s>
 
 Hi, my name is Bryan, I'm going to be talking about SIGHASH NOINPUT. It was something that I was asked to speak about. It is currently not deployed, but it is an active proposal.
 

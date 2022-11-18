@@ -5,11 +5,10 @@ categories: ['meetup']
 tags: ['lightning', 'spv']
 speakers: ['Olaoluwa Osuntokun']
 date: 2017-06-06
+video: <https://www.youtube.com/watch?v=7FWKc8lM4Ek>
 ---
 
 Neutrino: The Privacy Preserving Bitcoin Light Client
-
-Video: <https://www.youtube.com/watch?v=7FWKc8lM4Ek>
 
 Slides: <https://docs.google.com/presentation/d/1vjJUWOZIaPshjx1svfE6rFZ2lC07n47ifOdzpKWqpb4/>
 

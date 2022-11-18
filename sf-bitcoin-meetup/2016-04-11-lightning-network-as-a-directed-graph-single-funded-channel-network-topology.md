@@ -5,11 +5,10 @@ categories: ['meetup']
 tags: ['multisig', 'lightning', 'segwit']
 speakers: ['Tadge Dryja']
 date: 2016-04-11
+video: <https://www.youtube.com/watch?v=-lgYYz3y_hY>
 ---
 
 <http://lightning.network/>
-
-video: <https://www.youtube.com/watch?v=-lgYYz3y_hY>
 
 slides: <http://diyhpl.us/~bryan/papers2/bitcoin/Lightning%20Network%20as%20Directed%20Graph%20Single-Funded%20Channel%20Topology%20-%20Tadge%20Dryja%20-%202016-04-11.pdf>
 

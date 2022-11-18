@@ -6,11 +6,10 @@ categories: ['podcast']
 tags: ['taproot']
 date: 2021-02-26
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+video: <https://www.youtube.com/watch?v=7ouVGgE75zg>
 ---
 
 Localización: Bitcoin Magazine (en línea)
-
-Video: https://www.youtube.com/watch?v=7ouVGgE75zg
 
 BIP 8: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 

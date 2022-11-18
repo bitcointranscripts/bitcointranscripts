@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-06-16
 tags: ['schnorr']
+video: <https://www.youtube.com/watch?v=uE3lLsf38O4>
 ---
 
 BIP Schnorr (BIP 340)
 
 Location: London BitDevs (online)
-
-Video: https://www.youtube.com/watch?v=uE3lLsf38O4
 
 Pastebin of the resources discussed: https://pastebin.com/uyktht33
 

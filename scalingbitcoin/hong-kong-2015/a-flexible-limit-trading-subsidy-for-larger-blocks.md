@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners', 'fees']
 speakers: ['Mark Friedenbach']
+video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h27m53s>
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_2_friedenbach.pdf>
-
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h27m53s>
 
 I really want to thank jgarzik for that interesting talk. Who picks what block size? My talk is going to be about a category of dynamic block size proposals that attach the block size limit to the fee in such a way that as there is more demand for block size, through users that want to pay fees, the block size will increase or decrease as necessary. The need for a dynamic block size is so that the block size can increase. A payment network stuck at a too small block size is useless. At the same time, a block that is too large leads to miner centralization, not only in an adversarial case where miners are out t oget us, not only is that an issue, but we might see miner centralization to a group located in one place, which is influenced by big blocks. We are looking for a goldilocks zone where the blocks are large enough to be useful, but not so large that they destroy the network.
 

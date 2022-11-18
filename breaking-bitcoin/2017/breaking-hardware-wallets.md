@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['attacks', 'hardware wallet', 'wallet']
 speakers: ['Nicolas Bacca']
 date: 2017-09-09
+video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=6h42m30s>
 ---
 
 Breaking hardware wallets: Tales from the trenches and glimpses into the future
-
-video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=6h42m30s>
 
 <https://twitter.com/kanzure/status/1005627960160849920>
 

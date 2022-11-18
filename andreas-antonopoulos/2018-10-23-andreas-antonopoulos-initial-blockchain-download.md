@@ -4,11 +4,10 @@ speakers: ['Andreas Antonopoulos']
 date: 2018-10-23
 transcript_by: Michael Folkson
 tags: ['consensus']
+video: <https://www.youtube.com/watch?v=OrYDehC-8TU>
 ---
 
 Bitcoin Q&A: Initial blockchain download
-
-Video: https://www.youtube.com/watch?v=OrYDehC-8TU
 
 # Initial blockchain download
 

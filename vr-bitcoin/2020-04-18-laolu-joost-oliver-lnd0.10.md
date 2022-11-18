@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['lnd']
 date: 2020-04-18
 speakers: ['Olaoluwa Osuntokun', 'Joost Jager', 'Oliver Gugger']
+video: https://www.youtube.com/watch?v=h34fUGuDjMg
 ---
 
 Topic: lnd v0.10
 
 Location: Virtual Reality (VR Bitcoin)
-
-Video: https://www.youtube.com/watch?v=h34fUGuDjMg
 
 # Intro (Laolu Osuntokun)
 

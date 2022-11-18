@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['schnorr', 'threshold signatures']
 speakers: ['Tim Ruffing']
 date: 2022-07-14
+video: <https://www.youtube.com/watch?v=FVW6Hgt_meg>
 ---
 
 Topic: ROAST
 
 Location: Monash Cybersecurity Seminars
-
-Video: <https://www.youtube.com/watch?v=FVW6Hgt_meg>
 
 ROAST paper: <https://eprint.iacr.org/2022/550.pdf>
 

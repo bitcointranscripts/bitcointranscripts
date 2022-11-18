@@ -5,14 +5,13 @@ categories: ['meetup']
 tag: ['lightning'] 
 speakers: ['Jim Posen']
 date: 2018-07-24
+video: <https://www.youtube.com/watch?v=Ysj2yobFMF4>
 ---
 
 
 Topic: Lightning Network BOLT by BOLT 
 
 Location: LA Blockchain Meetup
-
-Video: <https://www.youtube.com/watch?v=Ysj2yobFMF4>
 
 Transcript by: glozow
 

@@ -5,13 +5,12 @@ date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['miniscript', 'wallet']
+video: <https://www.youtube.com/watch?v=eTUuwASdUBE>
 ---
 
 Topic: Introduction to Miniscript
 
 Location: Advancing Bitcoin
-
-Video: https://www.youtube.com/watch?v=eTUuwASdUBE
 
 Slides: https://www.dropbox.com/s/vgh5vaooqqbgg1v/andrew-poelstra.pdf
 

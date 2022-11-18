@@ -4,9 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Adam Back']
 date: 2019-05-11
+video: <https://youtu.be/tJOI2i6h3HM>
 ---
-
-Video: https://youtu.be/tJOI2i6h3HM
 
 # Bitcoin in Spaaace!
 

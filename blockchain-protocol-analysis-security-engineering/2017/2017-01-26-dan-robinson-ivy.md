@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['smart contracts']
 speakers: ['Dan Robinson']
 date: 2017-01-26
+video: <https://www.youtube.com/watch?feature=youtu.be&v=xdxs7VJTqns>
 ---
 
 Ivy: A Declarative Predicate Language for Smart Contracts
 
 Location: BPASE 2017, Stanford University
-
-Video: https://www.youtube.com/watch?feature=youtu.be&v=xdxs7VJTqns
 
 # Intro
 

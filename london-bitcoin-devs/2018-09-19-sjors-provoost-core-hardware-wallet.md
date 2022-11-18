@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['hardware wallet', 'bitcoin core']
 speakers: ['Sjors Provoost']
 date: 2018-09-19
+video: <https://www.youtube.com/watch?v=SUDkYbkcTsQ>
 ---
 
 Topic: Using Bitcoin Core with hardware wallets
 
 Location: London Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=SUDkYbkcTsQ>
 
 Slides: <https://github.com/Sjors/presentations/blob/master/2018-09-19%20London%20Bitcoin%20Devs/2018-09%20London%20Bitcoin%20Devs%200.5.pdf>
 

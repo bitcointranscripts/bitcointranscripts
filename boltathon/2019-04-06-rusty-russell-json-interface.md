@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['lightning', 'c-lightning']
 speakers: ['Rusty Russell']
 date: 2019-04-06
+video: <https://www.youtube.com/watch?v=sNB1N7FyMHA>
 ---
 
 JSON Interface with c-lightning and Writing Extensions
-
-video: <https://www.youtube.com/watch?v=sNB1N7FyMHA>
 
 <https://twitter.com/kanzure/status/1230892247345852416>
 

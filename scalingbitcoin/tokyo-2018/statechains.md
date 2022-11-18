@@ -8,8 +8,6 @@ speakers: ['Ruben Somsen']
 
 Statechains: Off-chain transfer of UTXOs
 
-Ruben Somsen
-
 I am the education director of readingbitcoin.org, and I am going to be talking about statechains for off-chain transfer of UTXOs.
 
 <https://twitter.com/kanzure/status/1048799338703376385>

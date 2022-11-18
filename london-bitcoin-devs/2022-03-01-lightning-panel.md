@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['lightning']
 date: 2022-03-01
 speakers: ['Christian Decker', 'Bastien Teinturier', 'Oliver Gugger', 'Michael Folkson']
+video: <https://www.youtube.com/watch?v=fqhioVxqmig>
 ---
 
 Topic: The Lightning Network in 2022
 
 Location: London Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=fqhioVxqmig>
 
 # Introductions
 

@@ -4,14 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility', 'lightning', 'routing']
 speakers: ['Olaoluwa Osuntokun']
+video: <https://www.youtube.com/watch?v=Gzg_u9gHc5Q#t=2m44s>
 ---
 
 <http://lightning.network/>
 
 <https://twitter.com/kanzure/status/784742298089299969>
-
-video: <https://www.youtube.com/watch?v=Gzg_u9gHc5Q#t=2m44s>
-
 
 Privacy-preserving decentralized micropayments
 

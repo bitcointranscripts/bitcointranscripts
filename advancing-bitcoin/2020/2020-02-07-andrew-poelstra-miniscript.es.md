@@ -8,8 +8,6 @@ categories: ['taller']
 tags: ['miniscript']
 ---
 
-Andrew Poelstra
-
 Taller sobre el avance de Bitcoin
 
 Miniscript

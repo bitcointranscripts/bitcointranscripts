@@ -5,13 +5,12 @@ categories: ['podcast']
 tags: ['taproot', 'soft fork']
 speakers: ['Eric Lombrozo', 'Luke Dashjr']
 date: 2020-08-03
+video: <https://www.youtube.com/watch?v=yQZb0RDyFCQ>
 ---
 
 Topic: How to Activate a New Soft Fork
 
 Location: Bitcoin Magazine (online)
-
-Video: https://www.youtube.com/watch?v=yQZb0RDyFCQ
 
 Aaron van Wirdum in Bitcoin Magazine on BIP 8, BIP 9 or Modern Soft Fork Activation: https://bitcoinmagazine.com/articles/bip-8-bip-9-or-modern-soft-fork-activation-how-bitcoin-could-upgrade-next
 

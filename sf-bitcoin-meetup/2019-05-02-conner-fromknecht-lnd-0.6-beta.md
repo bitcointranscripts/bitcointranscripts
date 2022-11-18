@@ -5,6 +5,7 @@ categories: ['meetup']
 tags: ['lnd', 'lightning']
 speakers: ['Conner Fromknecht']
 date: 2019-05-02
+video: https://www.youtube.com/watch?v=XkyPw2_l6YE
 ---
 
 Conner Fromknecht
@@ -12,8 +13,6 @@ Conner Fromknecht
 SF Lightning Devs
 
 LND 0.6 Beta Deep Dive
-
-Video: https://www.youtube.com/watch?v=XkyPw2_l6YE
 
 # Intro
 

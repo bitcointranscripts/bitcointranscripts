@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['research', 'schnorr']
 speakers: ['Pieter Wuille']
 date: 2018-01-31
+video: <https://www.youtube.com/watch?v=oTsjMz3DaLs>
 ---
 
 Schnorr signatures for Bitcoin: Opportunities and challenges
-
-video: <https://www.youtube.com/watch?v=oTsjMz3DaLs>
 
 slides: <https://prezi.com/bihvorormznd/schnorr-signatures-for-bitcoin/>
 

@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['bech32', 'ux']
 date: 2017-03-29
 speakers: ['Pieter Wuille']
+video: <https://www.youtube.com/watch?v=NqiN9VFE4CU>
 ---
 
 Topic: Bech32 addresses for Bitcoin
 
 Location: SF Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=NqiN9VFE4CU>
 
 Slides: <https://prezi.com/gwnjkqjqjjbz/bech32-a-base32-address-format/>
 

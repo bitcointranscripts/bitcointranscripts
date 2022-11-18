@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['covenants']
 speakers: ['Jeremy Rubin']
 date: 2017-01-26
+video: <https://www.youtube.com/watch?v=r7xN7K0OqaA>
 ---
 
 Structuring Multi Transaction Contracts in Bitcoin
 
 Location: BPASE 2017, Stanford University 
-
-Video: https://www.youtube.com/watch?v=r7xN7K0OqaA
 
 Slides: https://rubin.io/public/pdfs/multi-txn-contracts.pdf
 

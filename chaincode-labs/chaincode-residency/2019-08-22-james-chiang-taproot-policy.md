@@ -5,9 +5,8 @@ categories: ['residency']
 tags: ['taproot']
 speakers: ['James Chiang']
 date: 2019-08-22
+video: <https://www.youtube.com/watch?v=EdRm_mnoCWc>
 ---
-
-Video: <https://www.youtube.com/watch?v=EdRm_mnoCWc>
 
 Slides: <https://residency.chaincode.com/presentations/Taproot_Policy.pdf>
 

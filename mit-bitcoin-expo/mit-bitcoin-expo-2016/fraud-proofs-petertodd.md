@@ -4,9 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['validation', 'miners', 'wallet']
 speakers: ['Peter Todd']
----
-
 video: <https://www.youtube.com/watch?v=UVuUZm4l-ss&t=4h29m10s>
+---
 
 In Bitcoin we have made this tradeoff where we don't have everyone running full nodes. Not everyone is participating equally. If you have a full node, you have lots of gigs of hard drive space, but if you do that, you only get a few transactions per second. Modularizing validation an argument for this is how to improve on this situation.
 

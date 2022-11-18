@@ -5,6 +5,7 @@ categories: ['conference']
 tags: ['security', 'build systems']
 speakers: ['Carl Dong']
 date: 2018-06-08
+video: <https://www.youtube.com/watch?v=I2iShmUTEl8>
 ---
 
 Bitcoin build systems and bitcoin build system security
@@ -12,8 +13,6 @@ Bitcoin build systems and bitcoin build system security
 Carl Dong, Chaincode Labs
 
 <https://twitter.com/kanzure/status/1137347937426661376>
-
-video: <https://www.youtube.com/watch?v=I2iShmUTEl8>
 
 I couldn't make it to Amsterdam this year, but I hope the graphics I have prepared for this talk can make up for my absence. Let's say you want to be a good bitcoin citizen and start to run your own bitcoin node. Say you go to bitcoincore.org, you click the download button, and you open the disk image and you double click on Bitcoin Core. Then you get this warning.... If you're as paranoid as I am, you got this download and you got this notification, are you sure bitcoincore.org is the right website? Is it a phishing scheme? What about bitcoin.com? That website sounds much more official, right? Wrong.
 

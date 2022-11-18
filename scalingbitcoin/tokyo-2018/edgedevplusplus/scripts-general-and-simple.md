@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['multisig', 'wallet']
 speakers: ['John Newbery']
+video: <https://www.youtube.com/watch?v=np-SCwkqVy4>
 ---
 
 Scripts (general & simple)
 
 <https://twitter.com/kanzure/status/1047679223115083777>
-
-Video: <https://www.youtube.com/watch?v=np-SCwkqVy4>
 
 # Introduction
 

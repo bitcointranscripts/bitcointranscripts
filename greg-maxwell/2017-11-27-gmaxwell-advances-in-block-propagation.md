@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 speakers: ['Greg Maxwell']
 tags: ['mempool', 'segwit']
 date: 2017-11-27
+video: <https://www.youtube.com/watch?v=EHIuuKCm53o>
 ---
 
 slides: <https://web.archive.org/web/20190416113003/https://people.xiph.org/~greg/gmaxwell-sf-prop-2017.pdf>
-
-video: <https://www.youtube.com/watch?v=EHIuuKCm53o>
 
 <https://en.bitcoin.it/wiki/User:Gmaxwell/block_network_coding>
 

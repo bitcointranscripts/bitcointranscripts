@@ -4,6 +4,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tag: ['sidechains']
 date: 2015-06-08
+video: <https://s3-us-west-1.amazonaws.com/blkstrm/video/elements-gmaxwell.mp4>
 ---
 
 Bringing New Elements to Bitcoin with Sidechains
@@ -14,8 +15,6 @@ Gregory Maxwell
 DE47 BC9E 6D2D A6B0 2DC6 10B1 AC85 9362 B041 3BFA
 
 slides: <https://people.xiph.org/~greg/blockstream.gmaxwell.elements.talk.060815.pdf>
-
-video: <https://s3-us-west-1.amazonaws.com/blkstrm/video/elements-gmaxwell.mp4>
 
 <https://github.com/ElementsProject/elements/>
 

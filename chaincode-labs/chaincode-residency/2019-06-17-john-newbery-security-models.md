@@ -5,13 +5,12 @@ tags: ['security', 'taproot', 'cryptography']
 categories: ['residency']
 speakers: ['John Newbery']
 date: 2019-06-17
+video: <https://youtu.be/6gGcS4N5Rg4>
 ---
 
 Topic: Security Models
   
 Location: Chaincode Labs 2019 Residency
-  
-Video: <https://youtu.be/6gGcS4N5Rg4>
   
 Slides: <https://residency.chaincode.com/presentations/bitcoin/security_models.pdf>
 

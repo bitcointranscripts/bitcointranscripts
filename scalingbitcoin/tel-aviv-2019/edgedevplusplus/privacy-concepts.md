@@ -8,8 +8,6 @@ speakers: ['Udi Wertheimer']
 
 Privacy concepts for bitcoin application developers
 
-Udi Wertheimer
-
 <https://twitter.com/kanzure/status/1171036497044267008>
 
 # Introduction

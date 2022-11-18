@@ -5,6 +5,7 @@ speakers: ['Bryan Bishop']
 categories: ['conference']
 tags: ['security', 'wallet']
 date: 2018-10-04
+video: <https://youtu.be/WcOIXsOLJ3w?t=3550>
 ---
 
 Wallet Security, Key Management & Hardware Security Modules (HSMs)
@@ -15,8 +16,6 @@ Dev++ / BC2 - October 4th-5th 2018 - Keio University, Tokyo, Japan
 <https://bitcoinedge.org/event/keio-devplusplus-2018>
 
 schedule: <https://keio-devplusplus-2018.bitcoinedge.org/#schedule>
-
-video: <https://youtu.be/WcOIXsOLJ3w?t=3550>
 
 ## Intro
 

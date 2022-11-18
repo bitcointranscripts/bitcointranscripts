@@ -5,11 +5,10 @@ tags: ['lightning', 'sphinx', 'onion', 'routing']
 categories: ['residency']
 speakers: ['Christian Decker']
 date: 2019-06-25
+video: <https://youtu.be/D4kX0gR-H0Y>
 ---
 
 Location: Chaincode Residency – Summer 2019
-
-Video: <https://youtu.be/D4kX0gR-H0Y>
 
 ## Onion Routing Deep Dive
 

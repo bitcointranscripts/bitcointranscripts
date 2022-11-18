@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Bryan Bishop']
 date: 2018-10-05
+video: https://www.youtube.com/watch?v=JnBOO1zjm4I
 ---
 
 Topic: Overview of python-bitcoinlib
 
 Location: Bitcoin Edge Dev++, Keto University, Tokyo, Japan
-
-Video: https://www.youtube.com/watch?v=JnBOO1zjm4I
 
 python-bitcoinlib repo: https://github.com/petertodd/python-bitcoinlib
 

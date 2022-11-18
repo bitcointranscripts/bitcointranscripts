@@ -8,8 +8,6 @@ speakers: ['Amiti Uttarwar']
 
 Rebroadcasting
 
-Amiti Uttarwar (amizi)
-
 <https://twitter.com/kanzure/status/1171042478088232960>
 
 # Introduction

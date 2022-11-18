@@ -5,6 +5,7 @@ categories: ['meetup']
 tags: ['schnorr', 'multisig']
 speakers: ['Tim Ruffing']
 date: 2022-08-11
+video: <https://www.youtube.com/watch?v=TpyK_ayKlj0>
 ---
 
 Topic: MuSig2
@@ -12,8 +13,6 @@ Topic: MuSig2
 Location: London Bitcoin Devs
 
 Date: August 11th 2022
-
-Video: <https://www.youtube.com/watch?v=TpyK_ayKlj0>
 
 Reading list: <https://gist.github.com/michaelfolkson/5bfffa71a93426b57d518b09ebd0998c>
 

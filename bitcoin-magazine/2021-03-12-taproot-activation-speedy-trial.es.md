@@ -6,13 +6,12 @@ categories: ['podcast']
 tags: ['taproot']
 date: 2021-03-12
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+video: <https://www.youtube.com/watch?v=oCPrjaw3YVI>
 ---
 
 Tema: Taproot Activación con Speedy Trial
 
 Localización: Bitcoin Magazine (en línea)
-
-Video: https://www.youtube.com/watch?v=oCPrjaw3YVI
 
 Propuesta Speedy Trial: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 

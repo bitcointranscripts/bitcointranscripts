@@ -5,13 +5,12 @@ speakers: ['John Newbery']
 tags: ['consensus', 'wallet', 'bitcoin core']
 categories: ['residency']
 date: 2019-06-19
+video: <https://www.youtube.com/watch?v=j0V8elTzYAA>
 ---
 
 Wallet Development in Bitcoin Core
 
 Location: Chaincode Labs 2019 Residency
-
-Video: <https://www.youtube.com/watch?v=j0V8elTzYAA>
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf>
 

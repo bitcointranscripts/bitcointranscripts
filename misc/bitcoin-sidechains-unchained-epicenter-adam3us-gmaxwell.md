@@ -5,11 +5,10 @@ categories: ['podcast']
 tags: ['sidechains']
 speakers: ['Adam Back', 'Greg Maxwell']
 date: 2015-02-03
+video: <https://www.youtube.com/watch?v=jE_elgnIw3M>
 ---
 
 EB65 – Adam Back & Greg Maxwell: Sidechains Unchained
-
-Video: <https://www.youtube.com/watch?v=jE_elgnIw3M>
 
 people:
 
