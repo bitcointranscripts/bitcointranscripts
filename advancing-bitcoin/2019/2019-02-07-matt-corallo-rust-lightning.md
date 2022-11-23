@@ -9,8 +9,6 @@ date: 2019-02-07
 
 Flexible Lightning in Rust
 
-Video: <https://vimeo.com/316624439>
-
 Slides: <https://docs.google.com/presentation/d/154bMWdcMCFUco4ZXQ3lWfF51U5dad8pQ23rKVkncnns/edit#slide=id.p>
 
 <https://twitter.com/kanzure/status/1144256392490029057>

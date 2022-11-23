@@ -4,7 +4,7 @@ transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['fees']
 speakers: ['Carla Kirk-Cohen']
-video: https://www.youtube.com/watch?v=tie0Gpq2eJI
+video: <https://www.youtube.com/watch?v=tie0Gpq2eJI>
 ---
 
 Topic: The Lightning Network Layer by Layer

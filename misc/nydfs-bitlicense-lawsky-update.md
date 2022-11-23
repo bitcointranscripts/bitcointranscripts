@@ -7,8 +7,6 @@ date: 2014-12-18
 
 NY DFS BitLicense update 2014-12-18
 
-<http://bipartisanpolicy.org/events/payment-policy-in-the-21st-century-the-promise-of-innovation-and-the-challenge-of-regulation/>
-
 And that's a serious problem that we all need to address with a hightened sense of urgency and focus. Let me start with the BitLicense and virtual currencies. These came on our radar screen last year at DFS because like all of the other states we regulate money transmitters like Moneygram and Western Union. We were worried that virtual currency firms were transmitting currency. Our regulatory rules were written before the internet and before virtual currencies.
 
 In august of 2013 we launched an extensive inquiry into the appropriate regulatory guardrails for virtual currency. We heard hearings about virtual currencies over 2 days. The goal was to get a 360 degree view of this new and constantly evolving industry, both of its promise and potential pitfalls. Our challenge was to come up with appropriate guardrails to protect consumers, while not stiffling innovation in a fledging industry. MtGox, Silk Road. The ability to send money lal over the world to people. Bring down the cost of international remittances significantly. Some of the real benefits of currency if used properly. Virtual currency does not require credit card information in financial transaction, which can reduce the chance of identity theft and related frauds.

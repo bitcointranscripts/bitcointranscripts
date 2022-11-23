@@ -10,8 +10,6 @@ Topic: Bitcoin Block Re-orgs
 
 Location: What Bitcoin Did Podcast
 
-Date: May 14th 2019
-
 Audio: https://www.whatbitcoindid.com/podcast/bitcoin-block-reorgs-explained-with-adam-back-and-bryan-bishop
 
 Bitcoin Stack Exchange on blockchain rollbacks: https://bitcoin.stackexchange.com/questions/87652/51-attack-apparently-very-easy-refering-to-czs-rollback-btc-chain-how-t

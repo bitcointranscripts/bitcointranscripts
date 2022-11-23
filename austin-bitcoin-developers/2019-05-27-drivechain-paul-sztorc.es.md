@@ -12,8 +12,6 @@ Drivechain: Una capa de interoperabilidad-2, descrita en términos de la red lig
 
 <https://twitter.com/kanzure/status/1133202672570519552>
 
-video: <https://www.youtube.com/watch?v=BH-qZhEZSrg>
-
 # Sobre mí
 
 Bien, aquí hay algunas cosas sobre mí. He sido un bitcoiner desde 2012. He publicado investigaciones sobre bitcoin en el blog truthcoin.info. He presentado en Scaling Bitcoin 1, 2, 3, 4, tabconf, y Building on Bitcoin. Mi formación es en economía y estadística. Trabajé en el Departamento de Economía de Yale como estadístico durante 2,5 años. Mi jefe de entonces ganó un premio Nobel a principios de este año.

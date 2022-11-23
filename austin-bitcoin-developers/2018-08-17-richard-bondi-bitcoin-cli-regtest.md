@@ -7,8 +7,6 @@ categories: ['meetup']
 tags: ['bitcoin core', 'testing']
 ---
 
-Video: <https://www.youtube.com/watch?v=sbupEpL6-J4>
-
 Clone this repo to follow along: <https://github.com/austin-bitcoin-developers/regtest-dev-environment>
 
 <https://twitter.com/kanzure/status/1161266116293009408>

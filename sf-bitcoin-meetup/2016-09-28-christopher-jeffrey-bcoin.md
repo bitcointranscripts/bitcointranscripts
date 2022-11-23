@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']
 date: 2016-09-28
-video: https://www.youtube.com/watch?v=MGm54LZ1T50
+video: <https://www.youtube.com/watch?v=MGm54LZ1T50>
 ---
 
 Topic: Bcoin

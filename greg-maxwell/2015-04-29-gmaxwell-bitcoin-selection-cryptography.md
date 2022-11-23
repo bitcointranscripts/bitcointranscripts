@@ -7,8 +7,7 @@ date: 2015-04-29
 video: <https://www.youtube.com/watch?v=Gs9lJTRZCDc>
 ---
 
-* slides: <https://people.xiph.org/~greg/gmaxwell_sfbitcoin_2015_04_20.pdf>
-# A deep dive with Bitcoin Core developer Greg Maxwell
+A deep dive with Bitcoin Core developer Greg Maxwell
 
 The blueberry muffins are a lie. But instead I got some other things to present about. My name is Greg Maxwell. I am one of the committers to Bitcoin Core. I am one of the five people with commit access. I have been working on Bitcoin since 2011. Came into Bitcoin through assorted paths as has everyone else.
 

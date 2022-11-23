@@ -7,8 +7,6 @@ categories: ['meetup']
 tags: ['hardware wallet', 'wallet']
 ---
 
-livestream: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
-
 <https://twitter.com/kanzure/status/1145019634547978240>
 
 see also:

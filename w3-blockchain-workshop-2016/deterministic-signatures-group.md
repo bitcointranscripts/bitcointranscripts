@@ -27,8 +27,6 @@ ECDSA threshold signatures. Signature systems. Multisig predicate expressions.
 
 <https://petertodd.org/2016/talks-dex-arnhem-dev-workshop>
 
-<http://www.weboftrust.info/downloads/smart-signatures.pdf>
-
 Probably what people are least familiar with is crypto conditions. I am going to say a tiny bit about it. Rather than a more flexible language, it's more of a struct that basically it's a structure in which you can put a bunch of isgnatures in a variety of ways such that you evaluate the struct so it's more of a, it's similar to DEX except there's a few features it doesn't have, like it doesn't evaluate external inputs, like "is equal to some value you pass in". It's a formalized language for encoding an expression of a signature or crypto operations or pretty much the same thing. It's an entirely deterministic way to pass around this stuff so that it doesn't matter what language or platform, the result is always going to be the same, it's an essential primitive for the interledger thing, we think of it as a provable event, you need to prove the event happened, you prove it by providing a signature that fulfills that condition.
 
 There was one thing that interledger did differently. You had some prefixes in a fashion such that you could rapidly interpret that you can't do this part of the tree. There were bitmasks upfront. It would specify what operations are going to be used, so you don't have to unpack the whole thing to be able to decide whether you can evaluate.
