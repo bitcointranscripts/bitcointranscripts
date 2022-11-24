@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['schnorr', 'threshold signatures']
 speakers: ['Chelsea Komlo', 'Elizabeth Crites']
 date: 2022-08-07
-video: <https://youtu.be/tWopcFzSTas?t=11604>
+media: <https://youtu.be/tWopcFzSTas?t=11604>
 ---
 
 Topic: FROST

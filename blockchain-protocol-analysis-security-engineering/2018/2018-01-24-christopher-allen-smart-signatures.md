@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['consensus']
 date: 2018-01-24
 speakers: ['Christopher Allen']
-video: <https://www.youtube.com/watch?v=E9sbWKbfyJU>
+media: <https://www.youtube.com/watch?v=E9sbWKbfyJU>
 ---
 
 Smart Signatures: Experiments in Authorization

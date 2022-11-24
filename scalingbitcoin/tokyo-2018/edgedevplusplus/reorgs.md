@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks']
 speakers: ['Bryan Bishop']
-video: <https://youtu.be/EUUQbveGF5E?t=7>
+media: <https://youtu.be/EUUQbveGF5E?t=7>
 ---
 
 <https://twitter.com/kanzure/status/1052344700554960896>

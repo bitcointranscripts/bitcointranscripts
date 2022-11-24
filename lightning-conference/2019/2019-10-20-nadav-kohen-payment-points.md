@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'schnorr']
 speakers: ['Nadav Kohen']
 date: 2019-10-20
-video: <https://www.youtube.com/watch?v=TE65I9E8Q5k>
+media: <https://www.youtube.com/watch?v=TE65I9E8Q5k>
 ---
 
 Replacing Payment Hashes with Payment Points

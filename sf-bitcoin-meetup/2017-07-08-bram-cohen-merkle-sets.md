@@ -5,7 +5,7 @@ categories: ['meetup']
 speakers: ['Bram Cohen']
 tags: ['merkle trees']
 date: 2017-07-08
-video: <https://www.youtube.com/watch?v=52FVkHlCh7Y>
+media: <https://www.youtube.com/watch?v=52FVkHlCh7Y>
 ---
 
 Merkle set data structures for scaling bitcoin

@@ -3,7 +3,7 @@ title: Succinct Atomic Swap
 transcript_by: Michael Folkson
 date: 2020-05-11
 speakers: ['Ruben Somsen']
-video: <https://www.youtube.com/watch?v=TlCxpdNScCA>
+media: <https://www.youtube.com/watch?v=TlCxpdNScCA>
 ---
 
 Topic: Succinct Atomic Swap (SAS)

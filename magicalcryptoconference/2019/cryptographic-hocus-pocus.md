@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
 speakers: ['Peter Todd']
-video: <https://youtu.be/YHieWJWwVbE>
+media: <https://youtu.be/YHieWJWwVbE>
 ---
 
 Cryptographic hocus-pocus meaning nothing: The zcash trusted setup MPC

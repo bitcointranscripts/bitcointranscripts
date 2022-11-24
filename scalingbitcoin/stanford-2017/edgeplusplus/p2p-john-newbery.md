@@ -3,7 +3,7 @@ title: P2P with John Newbery
 transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['P2P', 'mempool']
-video: <https://youtu.be/eVerdR2hOMw>
+media: <https://youtu.be/eVerdR2hOMw>
 ---
 
 Name: John Newbery

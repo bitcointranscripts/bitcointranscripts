@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']
 date: 2020-07-21
-video: <https://www.youtube.com/watch?v=bPcguc108QM>
+media: <https://www.youtube.com/watch?v=bPcguc108QM>
 ---
 
 BIP Taproot (BIP 341)

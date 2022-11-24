@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts']
 speakers: ['Andrew Poelstra']
-video: <https://www.youtube.com/watch?t=5757&v=3pd6xHjLbhs>
+media: <https://www.youtube.com/watch?t=5757&v=3pd6xHjLbhs>
 ---
 
 

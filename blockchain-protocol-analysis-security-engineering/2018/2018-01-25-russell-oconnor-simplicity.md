@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['consensus', 'smart contracts']
 date: 2018-01-25
 speakers: ["Russell O’Connor"]
-video: https://www.youtube.com/watch?v=VOeUq3oR2fk
+media: https://www.youtube.com/watch?v=VOeUq3oR2fk
 ---
 
 Simplicity: A New Language for Blockchains

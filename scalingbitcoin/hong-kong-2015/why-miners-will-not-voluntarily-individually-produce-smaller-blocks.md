@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'mining', 'incentives', 'fees']
 speakers: ['Jonathan Bier']
-video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h30s>
+media: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h30s>
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/2_security_and_incentives_3_bier.pdf>

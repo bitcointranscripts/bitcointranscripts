@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['multisig', 'wallet']
 speakers: ['John Newbery']
-video: <https://www.youtube.com/watch?v=np-SCwkqVy4>
+media: <https://www.youtube.com/watch?v=np-SCwkqVy4>
 ---
 
 Scripts (general & simple)

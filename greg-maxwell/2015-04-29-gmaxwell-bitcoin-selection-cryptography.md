@@ -4,7 +4,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tag: ['cryptography']
 date: 2015-04-29
-video: <https://www.youtube.com/watch?v=Gs9lJTRZCDc>
+media: <https://www.youtube.com/watch?v=Gs9lJTRZCDc>
 ---
 
 A deep dive with Bitcoin Core developer Greg Maxwell

@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'c-lightning']
 speakers: ['Rusty Russell']
 date: 2019-10-19
-video: <https://www.youtube.com/watch?v=Wq75pGWmMd4>
+media: <https://www.youtube.com/watch?v=Wq75pGWmMd4>
 ---
 
 Make Me An Offer: Next Level Invoicing

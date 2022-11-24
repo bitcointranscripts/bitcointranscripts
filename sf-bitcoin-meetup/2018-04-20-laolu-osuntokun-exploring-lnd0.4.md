@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['lnd', 'lightning']
 speakers: ['Olaoluwa Osuntokun', 'Conner Fromknecht']
 date: 2018-04-20
-video: <https://www.youtube.com/watch?v=LXY0L8eeG3k>
+media: <https://www.youtube.com/watch?v=LXY0L8eeG3k>
 ---
 
 

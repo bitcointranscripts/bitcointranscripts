@@ -4,7 +4,7 @@ speakers: ['Andreas Antonopoulos']
 date: 2019-02-01
 transcript_by: Michael Folkson
 tags: ['hardware wallet', 'validation', 'wallet']
-video: <https://www.youtube.com/watch?v=3zNVDIz6Snw>
+media: <https://www.youtube.com/watch?v=3zNVDIz6Snw>
 ---
 
 Topic: Are Hardware Wallets Secure Enough?

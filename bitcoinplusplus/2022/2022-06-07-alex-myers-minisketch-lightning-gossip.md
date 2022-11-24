@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'P2P']
 speakers: ['Alex Myers']
 date: 2022-06-07
-video: <https://www.youtube.com/watch?v=e0u59hSsmio>
+media: <https://www.youtube.com/watch?v=e0u59hSsmio>
 ---
 
 Location: Bitcoin++

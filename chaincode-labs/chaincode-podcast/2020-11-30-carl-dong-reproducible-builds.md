@@ -5,7 +5,7 @@ speakers: ['Carl Dong']
 categories: ['podcast']
 tag: ['build systems']
 date: 2020-11-30
-video: <https://www.youtube.com/watch?v=Y5Gfli3x6rI>
+media: <https://www.youtube.com/watch?v=Y5Gfli3x6rI>
 ---
 
 Location: Chaincode Labs Podcast (Episode 9 and 10)

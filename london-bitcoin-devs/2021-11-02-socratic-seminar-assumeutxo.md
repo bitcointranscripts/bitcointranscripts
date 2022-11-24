@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['security', 'IBD', 'bitcoin core']
 date: 2021-11-02
-video: <https://www.youtube.com/watch?v=JottwT-kEdg>
+media: <https://www.youtube.com/watch?v=JottwT-kEdg>
 ---
 
 Topic: AssumeUTXO

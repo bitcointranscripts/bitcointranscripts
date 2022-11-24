@@ -4,7 +4,7 @@ Transcript_by: Keyan Kousha, Shiv Patel, Nelson Galdeman
 categories: ['residency']
 tags: ['lightning', 'fee management']
 speakers: ['Fabrice Drouin']
-video: <https://youtu.be/r8S3iELg9_U>
+media: <https://youtu.be/r8S3iELg9_U>
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

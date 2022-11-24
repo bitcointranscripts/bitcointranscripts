@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'custody', 'lightning']
 speakers: ['Joseph Poon']
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=1h29m38s>
+media: <https://www.youtube.com/watch?v=fst1IK_mrng&t=1h29m38s>
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/1_layer2_3_poon.pdf>

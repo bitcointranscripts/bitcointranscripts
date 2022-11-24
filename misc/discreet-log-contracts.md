@@ -2,7 +2,7 @@
 title: Discreet Log Contracts
 transcript_by: Bryan Bishop
 speakers: ['Tadge Dryja']
-video: <https://www.youtube.com/watch?v=FU-rA5dkTHI>
+media: <https://www.youtube.com/watch?v=FU-rA5dkTHI>
 ---
 
 paper: <https://adiabat.github.io/dlc.pdf>

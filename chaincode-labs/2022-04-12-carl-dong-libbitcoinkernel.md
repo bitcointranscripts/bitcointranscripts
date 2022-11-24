@@ -5,7 +5,7 @@ categories: ['video']
 tags: ['bitcoin core', 'consensus']
 speakers: ['Carl Dong']
 date: 2022-04-12
-video: <https://www.youtube.com/watch?v=MdxIkH6GCBs>
+media: <https://www.youtube.com/watch?v=MdxIkH6GCBs>
 ---
 
 Location: Carl Dong YouTube channel (online)

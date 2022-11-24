@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'routing']
 speakers: ['Carla Kirk-Cohen']
 date: 2019-09-09
-video: <https://youtu.be/1O-bhcbh9vE>
+media: <https://youtu.be/1O-bhcbh9vE>
 ---
 
 

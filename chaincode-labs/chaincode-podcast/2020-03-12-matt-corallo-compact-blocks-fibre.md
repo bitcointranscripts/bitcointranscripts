@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['mining']
 date: 2020-03-12
 speakers: ['Matt Corallo']
-video: https://www.youtube.com/watch?v=0uPDDELGjdo
+media: https://www.youtube.com/watch?v=0uPDDELGjdo
 ---
 
 Location: Chaincode Labs Podcast (Episode 6)

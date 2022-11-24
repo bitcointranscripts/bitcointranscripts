@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['forks', 'hard fork', 'soft fork']
 date: 2018-07-23
 speakers: ['John Light']
-video: <https://www.youtube.com/watch?v=qzbdNefsA-0>
+media: <https://www.youtube.com/watch?v=qzbdNefsA-0>
 ---
 
 Location: London Bitcoin Devs

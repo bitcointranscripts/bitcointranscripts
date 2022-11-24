@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['attacks', 'ux']
 date: 2020-04-24
 speakers: ['Kevin Loaec', 'Antoine Poinsot']
-video: <https://www.youtube.com/watch?v=xDTCT75VwvU>
+media: <https://www.youtube.com/watch?v=xDTCT75VwvU>
 ---
 
 Revault Bitcoin vaults

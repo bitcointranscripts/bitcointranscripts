@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['lightning']
 speakers: ['Olaoluwa Osuntokun']
 date: 2016-07-18
-video: <https://www.youtube.com/watch?v=tLZc-NLmV20>
+media: <https://www.youtube.com/watch?v=tLZc-NLmV20>
 ---
 
 Lightning Network Deep Dive

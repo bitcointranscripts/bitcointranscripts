@@ -6,7 +6,7 @@ transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['taproot', 'lightning', 'schnorr']
-video: <https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/>
+media: <https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/>
 ---
 
 Nombre: Antoine Riard

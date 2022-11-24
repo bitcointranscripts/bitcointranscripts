@@ -5,7 +5,7 @@ tags: ['security', 'taproot', 'cryptography']
 categories: ['residency']
 speakers: ['John Newbery']
 date: 2019-06-17
-video: <https://youtu.be/6gGcS4N5Rg4>
+media: <https://youtu.be/6gGcS4N5Rg4>
 ---
 
 Topic: Security Models

@@ -4,7 +4,7 @@ transcript_by: Will Clark
 tags: ['lightning']
 categories: ['residency']
 speakers: ['Fabrice Drouin']
-video: <https://www.youtube.com/watch?v=CGE8I8L7BAc>
+media: <https://www.youtube.com/watch?v=CGE8I8L7BAc>
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

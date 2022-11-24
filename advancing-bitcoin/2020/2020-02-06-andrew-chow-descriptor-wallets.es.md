@@ -6,7 +6,7 @@ transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
 tags: ['cartera']
-video: <https://www.youtube.com/watch?v=xC25NzIjzog>
+media: <https://www.youtube.com/watch?v=xC25NzIjzog>
 ---
 
 Tema: Repensar la arquitectura de las carteras: Carteras de descriptores nativos 

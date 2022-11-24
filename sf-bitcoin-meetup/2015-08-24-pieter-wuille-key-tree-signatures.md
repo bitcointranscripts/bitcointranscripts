@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['multisig']
 date: 2015-08-24
 speakers: ['Pieter Wuille']
-video: <https://www.youtube.com/watch?v=gcQLWeFmpYg>
+media: <https://www.youtube.com/watch?v=gcQLWeFmpYg>
 ---
 
 Topic: Key Tree Signatures

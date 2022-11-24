@@ -2,7 +2,7 @@
 title: CTV BIP Review Workshop
 transcript_by: Bryan Bishop
 speakers: ['Jeremy Rubin']
-video: <https://www.pscp.tv/w/1PlJQmRZWnZJE> 
+media: <https://www.pscp.tv/w/1PlJQmRZWnZJE> 
 ---
 
 OP\_CHECKTEMPLATEVERIFY workshop notes

@@ -5,7 +5,7 @@ categories: ['meetup']
 tag: ['miniscript']
 speakers: ['Andrew Poelstra']
 date: 2020-02-04
-video: <https://www.youtube.com/watch?v=_v1lECxNDiM>
+media: <https://www.youtube.com/watch?v=_v1lECxNDiM>
 ---
 
 Bitcoin Script to Miniscript

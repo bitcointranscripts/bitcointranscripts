@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['bitcoin core']
 speakers: ['Bryan Bishop']
-video: <https://www.youtube.com/watch?v=HlMZWvAHYno&t=2250s>
+media: <https://www.youtube.com/watch?v=HlMZWvAHYno&t=2250s>
 ---
 
 SIGHASH\_NOINPUT (BIP118)

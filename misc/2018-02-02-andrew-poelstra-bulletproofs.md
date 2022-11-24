@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['consensus', 'zero-knowledge', 'cryptography']
 speakers: ['Andrew Poelstra']
 date: 2018-02-02
-video: <https://www.pscp.tv/w/1mnxerNaNkLKX>
+media: <https://www.pscp.tv/w/1mnxerNaNkLKX>
 ---
 
 49th Milan Bitcoin meetup

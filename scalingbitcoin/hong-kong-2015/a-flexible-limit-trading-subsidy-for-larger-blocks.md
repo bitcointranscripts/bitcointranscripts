@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners', 'fees']
 speakers: ['Mark Friedenbach']
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h27m53s>
+media: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h27m53s>
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_2_friedenbach.pdf>

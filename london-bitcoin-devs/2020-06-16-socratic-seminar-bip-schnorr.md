@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-06-16
 tags: ['schnorr']
-video: <https://www.youtube.com/watch?v=uE3lLsf38O4>
+media: <https://www.youtube.com/watch?v=uE3lLsf38O4>
 ---
 
 BIP Schnorr (BIP 340)

@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['schnorr', 'threshold signatures']
 speakers: ['Tim Ruffing']
 date: 2022-07-14
-video: <https://www.youtube.com/watch?v=FVW6Hgt_meg>
+media: <https://www.youtube.com/watch?v=FVW6Hgt_meg>
 ---
 
 Topic: ROAST

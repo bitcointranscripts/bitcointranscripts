@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['attacks', 'lightning']
 speakers: ['Fabrice Drouin']
 date: 2019-06-25
-video: <https://youtu.be/R5cSrftd8nc>
+media: <https://youtu.be/R5cSrftd8nc>
 ---
 
 Location: Chaincode Residency – Summer 2019

@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['lnd']
 date: 2020-04-18
 speakers: ['Olaoluwa Osuntokun', 'Joost Jager', 'Oliver Gugger']
-video: https://www.youtube.com/watch?v=h34fUGuDjMg
+media: <https://www.youtube.com/watch?v=h34fUGuDjMg>
 ---
 
 Topic: lnd v0.10

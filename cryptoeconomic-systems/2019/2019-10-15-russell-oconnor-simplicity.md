@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['sidechains', 'soft fork']
 speakers: ['Russell O’Connor']
 date: 2019-10-15
-video: <https://www.youtube.com/watch?v=Pn5rySgyTQ0>
+media: <https://www.youtube.com/watch?v=Pn5rySgyTQ0>
 ---
 
 Topic: Simplicity

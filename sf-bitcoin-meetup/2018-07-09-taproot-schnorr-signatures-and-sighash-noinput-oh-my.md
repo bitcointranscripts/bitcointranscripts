@@ -5,7 +5,7 @@ categories: ['meetup']
 tag: ['taproot', 'schnorr']
 speakers: ['Pieter Wuille']
 date: 2018-07-09
-video: <https://www.youtube.com/watch?v=YSUVRj8iznU>
+media: <https://www.youtube.com/watch?v=YSUVRj8iznU>
 ---
 
 <https://twitter.com/kanzure/status/1021880538020368385>

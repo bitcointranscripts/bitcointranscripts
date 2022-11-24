@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning']
 speakers: ['Alex Bosworth']
 date: 2019-04-06
-video: <https://www.youtube.com/watch?v=ctx-oAIhhSY&list=PLC_AgDAr0m6QhwqPDrqMfjX64oHGmwDMk&index=4>
+media: <https://www.youtube.com/watch?v=ctx-oAIhhSY&list=PLC_AgDAr0m6QhwqPDrqMfjX64oHGmwDMk&index=4>
 ---
 
 Slides: <https://drive.google.com/open?id=1UIHfYdnAWGMvsLhljTgcneCxQAHcWjxg>

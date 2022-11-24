@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['security', 'lightning', 'fees']
 speakers: ['Olaoluwa Osuntokun']
 date: 2018-01-30
-video: <https://www.youtube.com/watch?v=V3f4yYVCxpk>
+media: <https://www.youtube.com/watch?v=V3f4yYVCxpk>
 ---
 
 Hardening lightning network

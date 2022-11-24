@@ -5,7 +5,7 @@ categories: ['podcast']
 tag: ['soft fork', 'forks']
 speakers: ['Jeremy Rubin']
 date: 2020-02-11
-video: <https://www.youtube.com/watch?v=Lqcpk5o1Y2E>
+media: <https://www.youtube.com/watch?v=Lqcpk5o1Y2E>
 ---
 
 Location: Chaincode Labs Podcast

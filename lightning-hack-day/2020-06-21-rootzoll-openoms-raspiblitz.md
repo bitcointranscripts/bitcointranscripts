@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['hackathon']
 date: 2020-06-21
 speakers: ['Rootzoll', 'Openoms']
-video: <https://www.youtube.com/watch?v=1EqUi4xRbr0>
+media: <https://www.youtube.com/watch?v=1EqUi4xRbr0>
 ---
 
 Location: Potzblitz (online)

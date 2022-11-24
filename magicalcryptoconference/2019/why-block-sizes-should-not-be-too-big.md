@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'proof-of-work', 'miners']
 speakers: ['Luke Dashjr']
-video: <https://youtu.be/JJF5Gnro1GU>
+media: <https://youtu.be/JJF5Gnro1GU>
 ---
 
 Briefly, why block sizes shouldn't be too big

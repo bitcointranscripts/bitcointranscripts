@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['segregated witness', 'segwit']
 speakers: ['Pieter Wuille']
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=36m>
+media: <https://www.youtube.com/watch?v=fst1IK_mrng&t=36m>
 ---
 
 slides: <https://prezi.com/lyghixkrguao/segregated-witness-and-deploying-it-for-bitcoin/>

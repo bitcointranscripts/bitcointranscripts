@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['conference']
 date: 2017-10-11
 speakers: ['Kostya Serebryany']
-video: <https://www.youtube.com/watch?v=k-Cv8Q3zWNQ>
+media: <https://www.youtube.com/watch?v=k-Cv8Q3zWNQ>
 ---
 
 Fuzz or lose! Why and how to make fuzzing a standard practice for C++

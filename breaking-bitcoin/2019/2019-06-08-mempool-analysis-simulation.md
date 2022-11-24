@@ -5,7 +5,7 @@ speakers: ['Kalle Alm']
 categories: ['conference']
 tags: ['mempool']
 date: 2019-06-08
-video: <https://www.youtube.com/watch?v=Mznn1uVyTUQ>
+media: <https://www.youtube.com/watch?v=Mznn1uVyTUQ>
 ---
 
 <https://twitter.com/kanzure/status/1137342023063744512>

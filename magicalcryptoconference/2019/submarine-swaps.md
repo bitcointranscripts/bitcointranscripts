@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'submarine swaps']
 speakers: ['Alex Bosworth']
 date: 2019-05-11
-video: <https://youtu.be/SCxaV2HCQ5o>
+media: <https://youtu.be/SCxaV2HCQ5o>
 ---
 
 Bridging off-chain and on-chain with submarine swaps

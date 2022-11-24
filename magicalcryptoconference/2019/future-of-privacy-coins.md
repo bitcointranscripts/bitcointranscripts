@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'taproot', 'schnorr']
 speakers: ['Brandon Goodell', 'Andrew Poelstra', 'Alexandra Moxin']
-video: <https://youtu.be/eGpa45y4_HQ>
+media: <https://youtu.be/eGpa45y4_HQ>
 ---
 
 Future of privacy coins

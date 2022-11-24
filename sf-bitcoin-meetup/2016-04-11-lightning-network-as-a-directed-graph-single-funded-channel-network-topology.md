@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['multisig', 'lightning', 'segwit']
 speakers: ['Tadge Dryja']
 date: 2016-04-11
-video: <https://www.youtube.com/watch?v=-lgYYz3y_hY>
+media: <https://www.youtube.com/watch?v=-lgYYz3y_hY>
 ---
 
 <http://lightning.network/>

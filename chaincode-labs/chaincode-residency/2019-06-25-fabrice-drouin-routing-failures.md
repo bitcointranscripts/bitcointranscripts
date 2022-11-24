@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning', 'routing failures']
 speakers: ['Fabrice Drouin']
 date: 2019-06-25
-video: <https://youtu.be/z5vEyvc2vrE>
+media: <https://youtu.be/z5vEyvc2vrE>
 ---
 
 Topic: Routing Failures

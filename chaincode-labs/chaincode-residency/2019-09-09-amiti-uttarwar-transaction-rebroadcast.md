@@ -5,7 +5,7 @@ categories: ['residency']
 tag: ['bitcoin core']
 speakers: ['Amiti Uttarwar']
 date: 2019-09-09
-video: <https://www.youtube.com/watch?v=v4TXfwwz_VI>
+media: <https://www.youtube.com/watch?v=v4TXfwwz_VI>
 ---
 
 <https://twitter.com/kanzure/status/1199710296199385088>

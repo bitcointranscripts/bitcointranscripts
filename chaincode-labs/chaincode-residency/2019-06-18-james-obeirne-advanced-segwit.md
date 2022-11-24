@@ -5,7 +5,7 @@ tags: ['segwit']
 categories: ['residency']
 speakers: ["James O'Beirne"]
 date: 2019-06-18
-video: <https://youtu.be/JgNgnwF9hfY>  
+media: <https://youtu.be/JgNgnwF9hfY>  
 ---
 
 Location: Chaincode Labs 2019 Residency  

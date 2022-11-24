@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['miniscript', 'wallet']
 speakers: ['Andrew Poelstra']
 date: 2021-11-06
-video: <https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s>
+media: <https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s>
 ---
 
 Topic: Miniscript - Custody, Computable, Composable

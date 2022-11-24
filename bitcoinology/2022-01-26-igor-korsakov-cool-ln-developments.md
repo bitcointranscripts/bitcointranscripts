@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['lightning', 'layer 2', 'RGB']
 speakers: ['Igor Korsakov']
 date: 2022-01-26
-video: <https://www.youtube.com/watch?v=5pmfNOUQg_s?t=285>
+media: <https://www.youtube.com/watch?v=5pmfNOUQg_s?t=285>
 ---
 
 Topic: Cool Lightning Network Developments

@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'research', 'cryptography']
 speakers: ['Andrew Poelstra']
-video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=9m20s>
+media: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=9m20s>
 ---
 
 Hi, welcome back.

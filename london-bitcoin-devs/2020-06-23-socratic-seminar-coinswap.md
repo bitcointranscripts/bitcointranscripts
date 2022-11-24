@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['privacy']
 date: 2020-06-23
-video: <https://www.youtube.com/watch?v=u7l6rP49hIA>
+media: <https://www.youtube.com/watch?v=u7l6rP49hIA>
 ---
 
 Location: London BitDevs (online)

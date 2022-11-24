@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning', 'multiple-path payments']
 speakers: ['Alex Bosworth']
 date: 2019-06-25
-video: <https://youtu.be/Og4TGERPZMY>
+media: <https://youtu.be/Og4TGERPZMY>
 ---
 
 Topic: Multiple-path Payments (MPP)

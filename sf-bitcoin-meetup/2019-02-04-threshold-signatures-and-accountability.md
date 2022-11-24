@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['schnorr', 'taproot', 'threshold signatures']
 speakers: ['Andrew Poelstra']
 date: 2019-02-04
-video: <https://www.youtube.com/watch?v=j9Wvz7zI_Ac>
+media: <https://www.youtube.com/watch?v=j9Wvz7zI_Ac>
 ---
 
 Topic: Threshold Signatures and Accountability

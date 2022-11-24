@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lnd', 'lightning']
 speakers: ['Joost Jager']
 date: 2019-06-13
-video: <https://www.youtube.com/watch?v=jOEq9PvN-7A>
+media: <https://www.youtube.com/watch?v=jOEq9PvN-7A>
 ---
 
 Hodl Invoices (Breaking Bitcoin training session)

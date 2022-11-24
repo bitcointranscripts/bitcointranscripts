@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['schnorr', 'multisig']
 speakers: ['Tim Ruffing']
 date: 2022-08-11
-video: <https://www.youtube.com/watch?v=TpyK_ayKlj0>
+media: <https://www.youtube.com/watch?v=TpyK_ayKlj0>
 ---
 
 Topic: MuSig2

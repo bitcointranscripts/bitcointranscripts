@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Phil Chen']
 date: 2019-05-11
-video: <https://youtu.be/CyieujRFk3g?t=8077>
+media: <https://youtu.be/CyieujRFk3g?t=8077>
 ---
 
 HTC / Exodus

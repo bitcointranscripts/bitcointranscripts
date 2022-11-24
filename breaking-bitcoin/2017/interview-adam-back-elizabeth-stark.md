@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning']
 speakers: ['Adam Back', 'Elizabeth Stark']
 date: 2017-09-10
-video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1h58m3s>
+media: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1h58m3s>
 ---
 
 <https://twitter.com/kanzure/status/1005842855271784449>

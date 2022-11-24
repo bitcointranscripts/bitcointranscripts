@@ -5,7 +5,7 @@ date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['miniscript', 'wallet']
-video: <https://www.youtube.com/watch?v=eTUuwASdUBE>
+media: <https://www.youtube.com/watch?v=eTUuwASdUBE>
 ---
 
 Topic: Introduction to Miniscript

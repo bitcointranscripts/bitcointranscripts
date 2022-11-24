@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['mining', 'ux']
 speakers: ['Matt Corallo']
 date: 2019-02-05
-video: <https://www.youtube.com/watch?v=0lGO5I74qJM>
+media: <https://www.youtube.com/watch?v=0lGO5I74qJM>
 ---
 
 Topic: Better Hashing through BetterHash

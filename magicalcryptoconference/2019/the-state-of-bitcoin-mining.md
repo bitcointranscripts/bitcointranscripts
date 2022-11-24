@@ -5,7 +5,7 @@ speakers: ['Matt Corallo']
 categories: ['conference']
 tags: ['mining']
 date: 2019-05-12
-video: <https://www.youtube.com/watch?v=k_z-FBAil6k>
+media: <https://www.youtube.com/watch?v=k_z-FBAil6k>
 ---
 
 Topic: The State of Bitcoin Mining: No Good, The Bad, and The Ugly

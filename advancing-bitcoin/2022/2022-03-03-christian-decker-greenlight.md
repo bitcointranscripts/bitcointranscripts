@@ -5,9 +5,8 @@ date: 2022-03-03
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
+media: <https://vimeo.com/703273144>
 ---
-
-Video: <https://vimeo.com/703273144>
 
 Blog post on Greenlight: <https://blog.blockstream.com/en-greenlight-by-blockstream-lightning-made-easy/>
 

@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research']
 speakers: ['John Newbery']
-video: <https://www.youtube.com/watch?v=f33HlAvJUFw>
+media: <https://www.youtube.com/watch?v=f33HlAvJUFw>
 ---
 
 Bitcoin Core v0.17

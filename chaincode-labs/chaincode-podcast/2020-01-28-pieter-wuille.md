@@ -5,7 +5,7 @@ categories: ['podcast']
 tag: ['bitcoin core']
 speakers: ['Pieter Wuille']
 date: 2020-01-28
-video: <https://www.youtube.com/watch?v=s0XopkGcN9U
+media: <https://www.youtube.com/watch?v=s0XopkGcN9U
 ---
 
 Chaincode Labs podcast with Pieter Wuille

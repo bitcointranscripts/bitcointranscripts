@@ -5,7 +5,7 @@ tags: ['lightning']
 categories: ['residency']
 speakers: ['Christian Decker']
 date: 2018-10-22
-video: <https://youtu.be/HauP9F16mUM>
+media: <https://youtu.be/HauP9F16mUM>
 ---
 
 Location: Chaincode Labs Lightning Residency 2018

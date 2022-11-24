@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['eclair', 'routing', 'wallet']
 speakers: ['Bastien Teinturier']
 date: 2019-10-20
-video: <https://www.youtube.com/watch?v=1E-KhLA6Gck>
+media: <https://www.youtube.com/watch?v=1E-KhLA6Gck>
 ---
 
 The Lightning Conference Day 2 (Stage 2)

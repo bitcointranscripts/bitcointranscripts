@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['segwit', 'consensus', 'forks', 'security', 'lightning']
 speakers: ['Greg Sanders']
-video: <https://www.youtube.com/watch?v=_Z0ID-0DOnc>
+media: <https://www.youtube.com/watch?v=_Z0ID-0DOnc>
 ---
 
 Lessons learned with segwit in Bitcoin

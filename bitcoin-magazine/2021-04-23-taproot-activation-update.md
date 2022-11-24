@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['taproot']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-04-23
-video: <https://www.youtube.com/watch?v=SHmEXPvN6t4>
+media: <https://www.youtube.com/watch?v=SHmEXPvN6t4>
 ---
 
 Topic: Taproot Activation Update: Speedy Trial and the LOT=true client

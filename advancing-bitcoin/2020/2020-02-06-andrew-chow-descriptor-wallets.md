@@ -5,7 +5,7 @@ date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['workshop']
 tags: ['wallet']
-video: <https://www.youtube.com/watch?v=xC25NzIjzog>
+media: <https://www.youtube.com/watch?v=xC25NzIjzog>
 ---
 
 Topic: Rethinking Wallet Architecture: Native Descriptor Wallets

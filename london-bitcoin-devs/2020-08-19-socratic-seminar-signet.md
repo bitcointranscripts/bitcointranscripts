@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['taproot', 'schnorr', 'signet']
 date: 2020-08-19
-video: <https://www.youtube.com/watch?v=b0AiucAuX3E>
+media: <https://www.youtube.com/watch?v=b0AiucAuX3E>
 ---
 
 Topic: Signet

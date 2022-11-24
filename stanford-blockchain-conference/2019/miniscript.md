@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miniscript']
 speakers: ['Pieter Wuille']
-video: <https://www.youtube.com/watch?v=sQOfnsW6PTY&t=22540>
+media: <https://www.youtube.com/watch?v=sQOfnsW6PTY&t=22540>
 ---
 
 <https://twitter.com/kanzure/status/1091116834219151360>

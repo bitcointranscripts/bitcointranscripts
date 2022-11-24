@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning']
 speakers: ['Antoine Riard']
 date: 2019-10-20
-video: <https://www.youtube.com/watch?v=q6a1On5pirk>
+media: <https://www.youtube.com/watch?v=q6a1On5pirk>
 ---
 
 Deploying rust-lightning in the wild

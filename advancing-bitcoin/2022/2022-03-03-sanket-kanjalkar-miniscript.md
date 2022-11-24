@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['script', 'miniscript']
 speakers: ['Sanket Kanjalkar']
 date: 2022-03-03
+media: <https://www.youtube.com/watch?v=Bn1CWsqt3VQ>
 ---
 
 Topic: Miniscript: Composable, Analyzable and Smarter Bitcoin Script
-
-Video: <https://www.youtube.com/watch?v=Bn1CWsqt3VQ>
 
 Andrew Poelstra on Miniscript: <https://btctranscripts.com/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/>
 

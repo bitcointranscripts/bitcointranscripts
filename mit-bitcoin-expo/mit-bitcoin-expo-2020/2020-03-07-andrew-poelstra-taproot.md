@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['taproot']
 speakers: ['Andrew Poelstra']
 date: 2020-03-07
-video: https://www.youtube.com/watch?v=1VtQBVauvhw
+media: <https://www.youtube.com/watch?v=1VtQBVauvhw>
 ---
 
 Topic: Taproot - Who, How, Why

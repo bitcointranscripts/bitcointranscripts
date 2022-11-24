@@ -4,7 +4,7 @@ speakers: ['Andreas Antonopoulos']
 date: 2020-04-08
 transcript_by: Michael Folkson
 tags: ['wallet', 'security']
-video: <https://www.youtube.com/watch?v=p5nSibpfHYE>
+media: <https://www.youtube.com/watch?v=p5nSibpfHYE>
 ---
 
 

@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'lightning', 'scalability']
 speakers: ['Tadge Dryja']
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=1h5m50s>
+media: <https://www.youtube.com/watch?v=fst1IK_mrng&t=1h5m50s>
 ---
 
 Scalability of Lightning with different BIPs and some back-of-the-envelope calculations.

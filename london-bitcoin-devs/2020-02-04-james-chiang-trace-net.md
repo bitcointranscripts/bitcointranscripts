@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 speakers: ['James Chiang']
 date: 2020-02-04
-video: <https://www.youtube.com/watch?v=SMvoGkxMyYs>
+media: <https://www.youtube.com/watch?v=SMvoGkxMyYs>
 ---
 
 Bitcoin Trace-Net

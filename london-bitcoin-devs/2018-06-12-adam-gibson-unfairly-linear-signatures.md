@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['schnorr']
 speakers: ['Adam Gibson']
 date: 2018-06-12
-video: <https://www.youtube.com/watch?v=mLZ7qVwKalE>
+media: <https://www.youtube.com/watch?v=mLZ7qVwKalE>
 ---
 
 Location: London Bitcoin Devs

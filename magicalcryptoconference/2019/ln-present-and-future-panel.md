@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'lnd', 'c-lightning']
 speakers: ["Will O'Beirne", 'Lisa Neigut', 'Alex Bosworth', 'Leigh Cuen']
 date: 2019-05-11
-video: <https://youtu.be/OzpfiieV5C4>
+media: <https://youtu.be/OzpfiieV5C4>
 ---
 
 Lightning network present & future panel

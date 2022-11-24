@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['smart contracts', 'lightning']
 date: 2021-08-10
-video: <https://www.youtube.com/watch?v=h6SkBwOCFsA>
+media: <https://www.youtube.com/watch?v=h6SkBwOCFsA>
 ---
 
 Name: Socratic Seminar

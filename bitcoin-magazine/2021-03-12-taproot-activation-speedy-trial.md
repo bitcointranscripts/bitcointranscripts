@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['taproot']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-03-12
-video: <https://www.youtube.com/watch?v=oCPrjaw3YVI>
+media: <https://www.youtube.com/watch?v=oCPrjaw3YVI>
 ---
 
 
