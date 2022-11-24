@@ -10,6 +10,8 @@ Name: Socratic Seminar
 
 Location: London BitDevs (online)
 
+Pastebin of the resources discussed: <https://pastebin.com/3Q8MSwky>
+
 Twitter announcement: https://twitter.com/kanzure/status/1262821838654255104?s=20
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who would prefer their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.

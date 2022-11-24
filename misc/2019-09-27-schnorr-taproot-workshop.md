@@ -8,6 +8,8 @@ date: 2019-09-27
 
 Location: Chaincode Labs, NYC
 
+<https://bitcoinops.org/en/schnorr-taproot-workshop/>
+
 <https://github.com/bitcoinops/taproot-workshop>
 
 <https://bitcoinops.slack.com>

@@ -6,6 +6,7 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
 tags: ['hardware wallet', 'wallet']
+media: <<https://www.youtube.com/watch?v=rK0jUeHeDf0>>
 ---
 
 <https://twitter.com/kanzure/status/1145019634547978240>

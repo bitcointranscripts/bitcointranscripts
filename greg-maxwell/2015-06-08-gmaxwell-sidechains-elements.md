@@ -14,6 +14,8 @@ SF Bitcoin Devs Meetup
 Gregory Maxwell
 DE47 BC9E 6D2D A6B0 2DC6 10B1 AC85 9362 B041 3BFA
 
+- slides: <https://people.xiph.org/~greg/blockstream.gmaxwell.elements.talk.060815.pdf>
+
 <https://github.com/ElementsProject/elements/>
 
 Hello, I am Greg Maxwell, one of the developers of the Bitcoin system and its reference software. Since 2011, I have worked on the system facing many interesting challenges and developing many solutions to many problems, adapting and growing and maintaining Bitcoin along with a community of other technical contributors.

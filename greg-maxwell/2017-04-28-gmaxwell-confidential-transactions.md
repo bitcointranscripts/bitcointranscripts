@@ -4,6 +4,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tags: ['privacy']
 date: 2017-04-28
+media: <https://www.youtube.com/watch?v=LHPYNZ8i1cU>
 ---
 
 <https://twitter.com/kanzure/status/859604355917414400>
