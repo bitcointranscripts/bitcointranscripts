@@ -5,11 +5,10 @@ categories: ['podcast']
 tags: ['miniscript']
 speakers: ['Andrew Poelstra']
 date: 2019-05-11
+media: <https://soundcloud.com/noded-bitcoin-podcast/noded-0490-with-andrew-poelstra>
 ---
 
 Noded podcast May 10th 2019
-
-Audio: <https://soundcloud.com/noded-bitcoin-podcast/noded-0490-with-andrew-poelstra>
 
 <https://twitter.com/kanzure/status/1135217746059415552>
 

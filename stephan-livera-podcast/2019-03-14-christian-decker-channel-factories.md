@@ -5,13 +5,12 @@ categories: ['podcast']
 tags: ['topology', 'fees']
 speaker: ['Christian Decker']
 date: 2019-03-14
+media: <https://stephanlivera.com/episode/59/>
 ---
 
 Topic: Lightning Channel Factories
 
 Location: Stephan Livera Podcast
-
-Audio: https://stephanlivera.com/episode/59/
 
 # Lightning topology limitation
 

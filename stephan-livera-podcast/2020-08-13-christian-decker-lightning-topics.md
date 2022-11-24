@@ -5,13 +5,13 @@ categories: ['podcast']
 tags: ['attacks', 'lightning']
 date: 2020-08-13
 speakers: ['Christian Decker']
+media: <https://stephanlivera.com/episode/200/>
 ---
 
 Topic: ANYPREVOUT, MPP, Mitigating Lightning Attacks
 
 Location: Stephan Livera Podcast
 
-Audio: https://stephanlivera.com/episode/200/
 
 Transcript completed by: Stephan Livera Edited by: Michael Folkson
 

@@ -5,13 +5,12 @@ speakers: ['Jonas Nick', 'Tim Ruffing']
 categories: ['podcast']
 tags: ['schnorr', 'multisig', 'taproot']
 date: 2020-10-27
+media: <https://stephanlivera.com/episode/222/>
 ---
 
 Topic: MuSig, MuSig-DN and MuSig2
 
 Location: Stephan Livera Podcast
-
-Audio: https://stephanlivera.com/episode/222/
 
 Tim Ruffing on Schnorr multisig at London Bitcoin Devs: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-17-tim-ruffing-schnorr-multisig/
 
