@@ -5,11 +5,10 @@ categories: ['video']
 tags: ['bitcoin core', 'consensus']
 speakers: ['Carl Dong']
 date: 2022-04-12
+media: https://www.youtube.com/watch?v=MdxIkH6GCBs
 ---
 
 Location: Carl Dong YouTube channel (online)
-
-Video: <https://www.youtube.com/watch?v=MdxIkH6GCBs>
 
 Tracking issue in Bitcoin Core: <https://github.com/bitcoin/bitcoin/issues/24303>
 

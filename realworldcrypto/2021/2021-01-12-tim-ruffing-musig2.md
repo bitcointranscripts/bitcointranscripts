@@ -5,16 +5,14 @@ categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
 date: 2021-01-12
 speakers: ['Tim Ruffing']
+media: https://www.youtube.com/watch?v=DRzDDFetS3E
 ---
 
 Topic: MuSig2: Simple Two-Round Schnorr Multi-Signatures
 
 Location: Real World Crypto 
 
-Video: <https://www.youtube.com/watch?v=DRzDDFetS3E>
-
 MuSig2 paper: <https://eprint.iacr.org/2020/1261.pdf>
-
 
 # Introduction
 

@@ -5,9 +5,8 @@ tags: ['lightning', 'lnd', 'wallet']
 categories: ['residency']
 speakers: ['Alex Bosworth']
 date: 2018-10-22
+media: https://www.youtube.com/watch?v=JhRIWc9zPjA
 ---
-
-Video: <https://www.youtube.com/watch?v=JhRIWc9zPjA>
 
 Slides: <https://lightningresidency.com/assets/presentations/Bosworth_Building_Applications.pdf>
 

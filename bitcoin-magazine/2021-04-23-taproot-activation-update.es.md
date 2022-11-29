@@ -6,6 +6,7 @@ categories: ['podcast']
 tags: ['taproot']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-04-23
+media: https://www.youtube.com/watch?v=SHmEXPvN6t4
 ---
 
 Tema: Actualización de la activación de Taproot: Speedy Trial y el cliente LOT=true
@@ -13,8 +14,6 @@ Tema: Actualización de la activación de Taproot: Speedy Trial y el cliente LOT
 Ubicación: Bitcoin Magazine (en línea)
 
 Fecha: 23 de abril de 2021
-
-Video: <https://www.youtube.com/watch?v=SHmEXPvN6t4>
 
 Episodio anterior en lockinontimeout (LOT): <https://btctranscripts.com/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout/>
 

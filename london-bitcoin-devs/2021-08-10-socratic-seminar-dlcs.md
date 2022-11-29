@@ -4,6 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['smart contracts', 'lightning']
 date: 2021-08-10
+media: https://www.youtube.com/watch?v=h6SkBwOCFsA
 ---
 
 Name: Socratic Seminar
@@ -11,8 +12,6 @@ Name: Socratic Seminar
 Topic: Discreet Log Contracts
 
 Location: London BitDevs (online)
-
-Video: <https://www.youtube.com/watch?v=h6SkBwOCFsA>
 
 Gist of resources discussed: <https://gist.github.com/michaelfolkson/f5da6774c24f99dba5c6c16ec8d499e9>
 

@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['miniscript', 'wallet']
 speakers: ['Andrew Poelstra']
 date: 2021-11-06
+media: https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s
 ---
 
 Topic: Miniscript - Custody, Computable, Composable
 
 Location: TABConf (The Atlanta Bitcoin Conference)
-
-Video: <https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s>
 
 Slides: <https://download.wpsoftware.net/bitcoin/wizardry/2021-11-tabconf/slides.pdf>
 

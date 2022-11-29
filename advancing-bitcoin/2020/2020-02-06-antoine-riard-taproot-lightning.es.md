@@ -6,6 +6,7 @@ transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['taproot', 'lightning', 'schnorr']
+media: https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 ---
 
 Nombre: Antoine Riard
@@ -15,8 +16,6 @@ Tema: A Schnorr-Taproot’ed Lightning
 Ubicación: El avance de Bitcoin 
 
 Fecha: 6 de febrero de 2020
-
-Video (acceso de pago): https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 
 Diapositivas: https://www.dropbox.com/s/9vs54e9bqf317u0/Schnorr-Taproot%27ed-LN.pdf
 

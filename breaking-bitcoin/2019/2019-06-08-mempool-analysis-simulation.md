@@ -5,11 +5,10 @@ speakers: ['Kalle Alm']
 categories: ['conference']
 tags: ['mempool']
 date: 2019-06-08
+media: https://www.youtube.com/watch?v=Mznn1uVyTUQ
 ---
 
 <https://twitter.com/kanzure/status/1137342023063744512>
-
-video: <https://www.youtube.com/watch?v=Mznn1uVyTUQ>
 
 slides: <https://breaking-bitcoin.com/docs/slides/2019/mempoolAnalysis.pdf>
 

@@ -5,13 +5,12 @@ speakers: ['Anthony Towns']
 categories: ['podcast']
 tags: ['taproot', 'schnorr']
 date: 2019-12-27
+media: https://stephanlivera.com/episode/137/
 ---
 
 Topic: Schnorr Taproot Tapscript BIPs
 
 Location: Stephan Livera Podcast
-
-Video: https://stephanlivera.com/episode/137/
 
 # Transcript
 

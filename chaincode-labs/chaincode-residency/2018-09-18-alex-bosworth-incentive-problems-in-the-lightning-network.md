@@ -5,9 +5,8 @@ tags: ['lightning', 'lnd']
 categories: ['residency']
 speakers: ['Alex Bosworth']
 date: 2018-09-18
+media: https://youtu.be/lByQUr7zPr0
 ---
-
-Video: <https://youtu.be/lByQUr7zPr0>
 
 # Incentive Problems in the Lightning Network
 

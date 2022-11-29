@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
 speakers: ['Jonas Nick']
 date: 2021-08-16
+media: https://www.youtube.com/watch?v=Dzqj236cVHk
 ---
 
 MuSig2: Simple Two-Round Schnorr Multi-Signatures
 
 Location: IACR Crypto
-
-Video: <https://www.youtube.com/watch?v=Dzqj236cVHk>
 
 MuSig2 paper: <https://eprint.iacr.org/2020/1261.pdf>
 

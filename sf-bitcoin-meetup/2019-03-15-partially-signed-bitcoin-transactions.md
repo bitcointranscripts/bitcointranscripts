@@ -5,13 +5,12 @@ categories: ['meetup']
 tag: ['PSBT']
 date: 2019-03-15
 speakers: ['Andrew Chow']
+media: https://www.youtube.com/watch?v=H6xZSRDXUiU&feature=youtu.be
 ---
 
 Topic: PSBT
 
 Location: SF Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=H6xZSRDXUiU&feature=youtu.be>
 
 # Introduction
 

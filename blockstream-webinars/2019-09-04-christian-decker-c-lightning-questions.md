@@ -4,13 +4,10 @@ transcript_by: Michael Folkson
 speakers: ['Christian Decker']
 tags: ['lightning', 'lnd', 'c-lightning']
 date: 2019-09-04
+media: https://www.youtube.com/watch?v=r7Un8FZYlS4&list=PLseHpvCI1BjAfUx8zjJXadlBh_eKV9zJi&index=8
 ---
 
-Christian Decker
-
 c-lightning Q and A session
-
-Video: <https://www.youtube.com/watch?v=r7Un8FZYlS4&list=PLseHpvCI1BjAfUx8zjJXadlBh_eKV9zJi&index=8>
 
 <https://twitter.com/kanzure/status/1230527903969841152>
 

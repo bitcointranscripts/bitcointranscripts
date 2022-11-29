@@ -3,11 +3,10 @@ title: Future Bitcoin Tech Directions
 transcript_by: Bryan Bishop
 speakers: ['Rusty Russell']
 date: 2018-01-24
+media: https://www.youtube.com/watch?v=VABppufTdpA
 ---
 
 Future technological directions in bitcoin: An unreliable guide
-
-video: <https://www.youtube.com/watch?v=VABppufTdpA>
 
 notes: <https://docs.google.com/document/d/1iNzJtJRq9-0vdILQAe9Bcj7r1a7xYVf8CSY0_oFrH9c/edit> or <http://diyhpl.us/~bryan/papers2/bitcoin/Future%20technological%20directions%20in%20bitcoin%20-%202018-01-24.pdf>
 

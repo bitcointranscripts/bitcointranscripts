@@ -8,8 +8,6 @@ speakers: ['Pedro Moreno-Sanchez']
 
 Privacy preserving multi-hop locks for blockchain scalability and interoperability
 
-Pedro Moreno-Sanchez
-
 <https://twitter.com/kanzure/status/1091026195032924160>
 
 paper: <https://eprint.iacr.org/2018/472.pdf>

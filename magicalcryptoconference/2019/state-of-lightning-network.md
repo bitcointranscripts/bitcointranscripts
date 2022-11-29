@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['lightning']
 speakers: ['Stacy Herbert', 'Elizabeth Stark']
 date: 2019-05-11
+media: https://youtu.be/kk2dUD6QXgw
 ---
 
 Fireside chat on the state of the lightning network
-
-Video: https://youtu.be/kk2dUD6QXgw
 
 # Introduction
 

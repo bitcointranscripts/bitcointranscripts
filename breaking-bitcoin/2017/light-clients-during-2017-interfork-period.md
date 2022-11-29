@@ -5,9 +5,8 @@ categories: ['conference']
 tags: ['forks', 'segwit', 'miners', 'wallet']
 speakers: ['Thomas Voegtlin']
 date: 2017-09-09
+media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=5h9m
 ---
-
-video: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5h9m>
 
 <https://twitter.com/kanzure/status/1005617123287289857>
 

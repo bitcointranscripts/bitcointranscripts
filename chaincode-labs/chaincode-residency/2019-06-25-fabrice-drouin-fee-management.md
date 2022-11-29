@@ -4,11 +4,10 @@ Transcript_by: Keyan Kousha, Shiv Patel, Nelson Galdeman
 categories: ['residency']
 tags: ['lightning', 'fee management']
 speakers: ['Fabrice Drouin']
+media: https://youtu.be/r8S3iELg9_U
 ---
 
 Location: Chaincode Labs Lightning Residency 2019
-
-Video: <https://youtu.be/r8S3iELg9_U>
 
 Fabrice: So I'm going to talk about fee management in Lightning which has been surprisingly one of the biggest operational issues we had when we launched the Lightning Network. So again the idea of Lightning is you have transactions that are not published but publishable, and in our case the problem is what does exactly publishable mean. So it means the UTXO that you’re spending is still spendable. It means that the transaction is fully signed but it also means that the fees that you attach to the transactions are realistic - you're not overpaying fees but you're not underpaying fees otherwise it could take a long time to confirm it. This has been a source of issues on lightning almost from the beginning. Okay so you can say this on fee management in lightning: is that funder, the one who opens a channel, pays on chain fees and to adjust the fee rates because obviously if you leave your channel open for a long time the on chain fee rate will change. So what you're supposed to do is you're supposed to monitor the on chain fees and adjust what you want to apply by sending to your peer and update fee message which says ok this is what I would want to apply for on chain fees for the commitment transaction and the fundee can refuse an update fee message and close the channel. So do you know why the fundee would care about onchain fees? Do you have any idea why it would matter also on the fundee’s side to avoid having fees that are not realistic? 
 

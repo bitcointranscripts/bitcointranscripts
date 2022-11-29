@@ -5,13 +5,12 @@ categories: ['residency']
 tags: ['lightning', 'multiple-path payments']
 speakers: ['Alex Bosworth']
 date: 2019-06-25
+media: https://youtu.be/Og4TGERPZMY
 ---
 
 Topic: Multiple-path Payments (MPP)
 
 Location: Chaincode Residency 2019
-
-Video: <https://youtu.be/Og4TGERPZMY>
 
 # Bigger, Faster, Cheaper - Multiplexing Payments
 

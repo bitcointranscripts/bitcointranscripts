@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['sidechains', 'soft fork']
 speakers: ['Russell O’Connor']
 date: 2019-10-15
+media: https://www.youtube.com/watch?v=Pn5rySgyTQ0
 ---
 
 Topic: Simplicity
 
 Location: CES Summit 2019
-
-Video: https://www.youtube.com/watch?v=Pn5rySgyTQ0
 
 Slides: https://drive.google.com/file/d/1FivYGQzOYfM0JGl4SS3VR1UGKsyMn_L5/
 

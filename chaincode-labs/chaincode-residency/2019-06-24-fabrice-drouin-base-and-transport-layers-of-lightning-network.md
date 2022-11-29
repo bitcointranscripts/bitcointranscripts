@@ -5,11 +5,10 @@ categories: ['residency']
 tags: ['lightning']
 date: 2019-06-24
 speakers: ['Fabrice Drouin']
+media: https://www.youtube.com/watch?v=wyri7cc83kQ
 ---
 
 Location: Chaincode Labs Lightning Residency 2019
-
-Video: <https://www.youtube.com/watch?v=wyri7cc83kQ>
 
 Slides: <https://residency.chaincode.com/presentations/lightning/Base_Transport.pdf>
 

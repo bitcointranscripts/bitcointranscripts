@@ -6,6 +6,7 @@ speakers: ['John Newbery']
 tags: ['security', 'taproot', 'cryptography']
 categories: ['residency']
 date: 2019-06-17
+media: https://youtu.be/6gGcS4N5Rg4
 ---
 
 Texto original: <https://btctranscripts.com/chaincode-labs/chaincode-residency/2019-06-17-john-newbery-security-models/>
@@ -13,8 +14,6 @@ Texto original: <https://btctranscripts.com/chaincode-labs/chaincode-residency/2
 Transcripción de: Caralie Chrisco
 
 Ubicación: Residencia de Chaincode Labs 2019
-
-Vídeo: https://youtu.be/6gGcS4N5Rg4
 
 Diapositivas: https://residency.chaincode.com/presentations/bitcoin/security_models.pdf
 

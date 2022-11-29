@@ -7,8 +7,6 @@ categories: ['conference']
 tags: ['miniscript']
 ---
 
-Andrew Poelstra
-
 Advancing Bitcoin workshop
 
 Miniscript

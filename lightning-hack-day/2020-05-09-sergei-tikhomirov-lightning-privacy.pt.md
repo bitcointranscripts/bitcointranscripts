@@ -6,14 +6,13 @@ speakers: ['Sergei Tikhomirov']
 categories: ['hackathon']
 tags: ['security', 'privacy', 'lightning', 'scalability']
 date: 2020-05-09
+media: https://www.youtube.com/watch?v=8lUTbfO94mM
 ---
 
 
 Tópico: Análise Quantitativa da Privacidade e escalabilidade na Lightning Network
 
 Localização: Lightning Hacksprint (Fulmo)
-
-Vídeo: <https://www.youtube.com/watch?v=8lUTbfO94mM>
 
 Slides: <https://docs.google.com/presentation/d/1H9EdrhjQ9x3q0qfsei7iFYINVf2lwPyjUKHd3CScy4k/edit#slide=id.g7774542944_0_0>
 

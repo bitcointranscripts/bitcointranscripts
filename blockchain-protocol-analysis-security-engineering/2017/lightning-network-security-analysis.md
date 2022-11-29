@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['security', 'privacy', 'lightning']
 speakers: ['Olaoluwa Osuntokun']
 date: 2017-02-03
+media: https://www.youtube.com/watch?v=Eq_eY8iWrKI
 ---
 
 Security analysis of the lightning network
 
 <https://twitter.com/kanzure/status/957978915515092992>
-
-video: <https://www.youtube.com/watch?v=Eq_eY8iWrKI>
 
 slides: <https://cyber.stanford.edu/sites/default/files/olaoluwaosuntokun.pdf>
 

@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['multisig']
 date: 2015-08-24
 speakers: ['Pieter Wuille']
+media: https://www.youtube.com/watch?v=gcQLWeFmpYg
 ---
 
 Topic: Key Tree Signatures
 
 Location: SF Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=gcQLWeFmpYg>
 
 Slides: <https://prezi.com/vsj95ns4ucu3/key-tree-signatures/>
 

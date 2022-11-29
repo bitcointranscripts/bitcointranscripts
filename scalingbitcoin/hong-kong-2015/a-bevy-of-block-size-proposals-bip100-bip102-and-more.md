@@ -4,13 +4,14 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mempool']
 speakers: ['Jeff Garzik']
+media: https://www.youtube.com/watch?v=fst1IK_mrng&t=3h52m35s
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_1_garzik.pdf>
 
 slides: <http://www.slideshare.net/jgarzik/a-bevy-of-block-size-proposals-scaling-bitcoin-hk-2015>
 
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&t=3h52m35s> or <https://www.youtube.com/watch?v=37LiYOOevqs&t=1h16m6s>
+ Alternative video: <https://www.youtube.com/watch?v=37LiYOOevqs&t=1h16m6s>
 
 We're going to be talking about every single block size proposal. This is going to be the least technical presentation at the conference. I am not going to go into the proposals htemselves. Changing the block size itself is pretty simple. You change a constant. It's more a discussion of algorithms, roll-out, etc.
 

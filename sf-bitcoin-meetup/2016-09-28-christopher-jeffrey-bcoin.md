@@ -4,15 +4,12 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['consensus']
 date: 2016-09-28
+media: https://www.youtube.com/watch?v=MGm54LZ1T50
 ---
 
 Topic: Bcoin
 
 Location: SF Bitcoin Devs
-
-Date: September 28th 2016
-
-Video: https://www.youtube.com/watch?v=MGm54LZ1T50
 
 Bcoin repo: https://github.com/bcoin-org/bcoin
 

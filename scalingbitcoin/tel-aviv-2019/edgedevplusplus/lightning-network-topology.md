@@ -4,11 +4,11 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['topology', 'lightning', 'routing']
 speakers: ['Carla Kirk-Cohen']
+media: https://www.youtube.com/watch?v=j2l_Ut4k1qI
 ---
 
 Carla Kirk-Cohen
 
-video: <https://www.youtube.com/watch?v=j2l_Ut4k1qI>
 
 # Introduction
 

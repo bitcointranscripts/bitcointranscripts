@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['consensus', 'forks']
 speakers: ['Eric Lombrozo']
 date: 2017-09-10
+media: https://www.youtube.com/watch?v=0WCaoGiAOHE&t=32min9s
 ---
 
 Changing consensus rules without breaking bitcoin
-
-video: <https://www.youtube.com/watch?v=0WCaoGiAOHE&t=32min9s>
 
 <https://twitter.com/kanzure/status/1005822360321216512>
 

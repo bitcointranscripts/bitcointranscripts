@@ -5,11 +5,10 @@ speakers: ['Carl Dong']
 categories: ['podcast']
 tag: ['build systems']
 date: 2020-11-30
+media: https://www.youtube.com/watch?v=Y5Gfli3x6rI
 ---
 
 Location: Chaincode Labs Podcast (Episode 9 and 10)
-
-Video: <https://www.youtube.com/watch?v=Y5Gfli3x6rI>
 
 Carl Dong’s presentation at Breaking Bitcoin 2019 on “Bitcoin Build System Security”: https://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
 

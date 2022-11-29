@@ -5,12 +5,10 @@ categories: ['residency']
 tags: ['lightning', 'limitations']
 speakers: ['Fabrice Drouin']
 date: 2019-06-26
+media: https://youtu.be/ULVItljEiFE
 ---
 
 Location: Chaincode Labs Lightning Residency 2019
-
-Video: <https://youtu.be/ULVItljEiFE> 
-
 
 ## Introduction
 

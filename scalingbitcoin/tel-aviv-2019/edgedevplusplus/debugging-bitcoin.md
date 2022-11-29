@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 date: 2020-09-09
 speakers: ['Fabian Jahr']
+media: https://www.youtube.com/watch?v=8bea0bdoFG0
 ---
 
 Topic: Debugging Bitcoin
 
 Location: Bitcoin Edge Dev++
-
-Video: https://www.youtube.com/watch?v=8bea0bdoFG0
 
 Slides: https://telaviv2019.bitcoinedge.org/files/debugging-tools-for-bitcoin-core.pdf
 

@@ -5,13 +5,12 @@ categories: ['residency']
 tags: ['lightning', 'routing failures']
 speakers: ['Fabrice Drouin']
 date: 2019-06-25
+media: https://youtu.be/z5vEyvc2vrE
 ---
 
 Topic: Routing Failures
 
 Location: Chaincode Labs Lightning Residency 2019
-
-Video: <https://youtu.be/z5vEyvc2vrE>
 
 ## Introduction
 

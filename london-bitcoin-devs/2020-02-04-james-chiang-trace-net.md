@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 speakers: ['James Chiang']
 date: 2020-02-04
+media: https://www.youtube.com/watch?v=SMvoGkxMyYs
 ---
 
 Bitcoin Trace-Net
 
 Location: London Bitcoin Devs
-
-Video: https://www.youtube.com/watch?v=SMvoGkxMyYs
 
 Slides: https://www.dropbox.com/s/99md18bnnl8jnnw/James%20Chiang%20-%20Bitcoin%20Trace%20Net.pdf
 

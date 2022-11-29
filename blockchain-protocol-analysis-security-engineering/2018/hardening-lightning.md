@@ -5,6 +5,7 @@ categories: ['conference']
 tags: ['security', 'lightning', 'fees']
 speakers: ['Olaoluwa Osuntokun']
 date: 2018-01-30
+media: https://www.youtube.com/watch?v=V3f4yYVCxpk
 ---
 
 Hardening lightning network
@@ -12,8 +13,6 @@ Hardening lightning network
 Olaoluwa Osuntokun (roasbeef), Lightning Labs
 
 <https://twitter.com/kanzure/status/959155562134102016>
-
-video: <https://www.youtube.com/watch?v=V3f4yYVCxpk>
 
 slides: <https://docs.google.com/presentation/d/14NuX5LTDSmmfYbAn0NupuXnXpfoZE0nXsG7CjzPXdlA/edit>
 

@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Eric Lombrozo']
 date: 2019-05-12
+media: https://youtu.be/zFN__b6ARH4?t=12523
 ---
 
 Fork dynamics
-
-Video: https://youtu.be/zFN__b6ARH4?t=12523
 
 Thank you, Samson, for that great introduction and thank you for organizing this awesome event. It's great seeing everyone. A few years ago, the situation was extremely different. When Samson originally asked me to give a talk, I kind of thought a little bit about what I should talk about and I wasn't sure what's most interesting. A few years ago, it was much more clear about the set of things going on. I had something to say about those things. I guess now, I would like to broadly talk about some important areas of topics that we wouldn't usually talk about. I kept asking for a topic.
 

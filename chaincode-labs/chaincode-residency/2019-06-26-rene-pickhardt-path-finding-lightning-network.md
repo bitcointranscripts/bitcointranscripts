@@ -5,11 +5,10 @@ categories: ['residency']
 tags: ['lightning', 'path-finding']
 speakers: ['Rene Pickhardt']
 date: 2019-06-26
+media: https://www.youtube.com/watch?v=NT_dMqB1xuA
 ---
 
 Location: Chaincode Residency 2019
-
-Video: <https://www.youtube.com/watch?v=NT_dMqB1xuA>
 
 ## Introduction
 

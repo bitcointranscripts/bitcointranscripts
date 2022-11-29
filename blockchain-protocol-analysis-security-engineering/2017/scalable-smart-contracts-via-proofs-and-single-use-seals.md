@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['consensus', 'privacy', 'smart contracts']
 speakers: ['Peter Todd']
 date: 2017-02-03
+media: https://youtu.be/7BA7f5vk3jQ
 ---
 
 <https://twitter.com/kanzure/status/957660108137418752>
-
-video: <https://youtu.be/7BA7f5vk3jQ>
 
 slides: <https://cyber.stanford.edu/sites/default/files/petertodd.pdf>
 
