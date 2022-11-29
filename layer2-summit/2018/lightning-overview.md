@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['lightning', 'scalability', 'layer 2']
 speakers: ['Conner Fromknecht']
-date: 2018-04-25
+date: 2018-05-18
 media: https://www.youtube.com/watch?v=jzoS0tPUAiQ&t=15m10s
 ---
 

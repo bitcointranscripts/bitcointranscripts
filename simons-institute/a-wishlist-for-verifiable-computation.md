@@ -4,6 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
 speakers: ['Michael Walfish']
+date: 2015-06-10
+media: https://www.youtube.com/watch?v=Z4jzA6ts2j4
 ---
 
 A wishlist for verifiable computation: An applied computer science perspective
