@@ -4,6 +4,7 @@ transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Chris Stewart']
 date: 2019-10-19
+media: https://www.youtube.com/watch?v=14GKUfxfPMU&feature=youtu.be&t=1201
 ---
 
 Lightning 101 for Exchanges: Private Key Management
@@ -11,8 +12,6 @@ Lightning 101 for Exchanges: Private Key Management
 The Lightning Conference Day 1 (Stage 2)
 
 <https://twitter.com/kanzure/status/1212894908375322625>
-
-Video: <https://www.youtube.com/watch?v=14GKUfxfPMU&feature=youtu.be&t=1201>
 
 Slides: <https://docs.google.com/presentation/d/1_-FF0U2AXuhBxEzW9J_IrYxvRi1SS2MYwJl0QeIcqbI/edit#slide=id.p>
 

@@ -5,11 +5,10 @@ categories: ['meetup']
 tags: ['covenants']
 date: 2020-05-26
 speakers: ['Kevin Loaec', 'Antoine Poinsot']
+media: https://www.youtube.com/watch?v=7CE4aiFxh10
 ---
 
 Location: London Bitcoin Devs (online)	
-
-Video: https://www.youtube.com/watch?v=7CE4aiFxh10
 
 Kevin slides: https://www.dropbox.com/s/rj45ebnic2m0q2m/kevin%20loaec%20revault%20slides.pdf?dl=0
 

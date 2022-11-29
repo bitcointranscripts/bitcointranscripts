@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
 speakers: ['Kalle Rosenbaum', 'Rusty Russell']
+media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s
 ---
 
 IBLT and weak block propagation performance
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/3_block_propagation_1_rosenbaum.pdf>
-
-video: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s>
 
 IBLT - invertible bloom lookup tables
 

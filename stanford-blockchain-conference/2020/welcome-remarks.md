@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Dan Boneh']
 date: 2020-02-19
+media: https://youtube.com/watch?v=JhZUItnyQ0k
 ---
 
 Welcome remarks
@@ -11,8 +12,6 @@ Welcome remarks
 <https://twitter.com/kanzure/status/1230178753805836288>
 
 <https://cbr.stanford.edu/sbc20/>
-
-livestream: <https://youtube.com/watch?v=JhZUItnyQ0k>
 
 telegram: <https://t.me/sbc20>
 

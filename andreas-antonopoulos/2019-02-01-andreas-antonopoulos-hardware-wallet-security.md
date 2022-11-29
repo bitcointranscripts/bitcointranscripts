@@ -4,13 +4,12 @@ speakers: ['Andreas Antonopoulos']
 date: 2019-02-01
 transcript_by: Michael Folkson
 tags: ['hardware wallet', 'validation', 'wallet']
+media: https://www.youtube.com/watch?v=3zNVDIz6Snw
 ---
 
 Topic: Are Hardware Wallets Secure Enough?
 
 Location: Andreas Antonopoulos YouTube channel
-
-Video: https://www.youtube.com/watch?v=3zNVDIz6Snw
 
 # Are Hardware Wallets Secure Enough?
 

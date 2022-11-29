@@ -8,8 +8,6 @@ speakers: ['Andrew Poelstra', 'David Vorick']
 
 Blockchain design patterns: Layers and scaling approaches
 
-Name: Andrew Poelstra, David Vorick
-
 <https://twitter.com/kanzure/status/1171400374336536576>
 
 # Introduction

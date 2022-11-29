@@ -4,11 +4,10 @@ transcript_by: Michael Folkson
 categories: ['hackathon']
 date: 2020-06-21
 speakers: ['Rootzoll', 'Openoms']
+media: https://www.youtube.com/watch?v=1EqUi4xRbr0
 ---
 
 Location: Potzblitz (online)
-
-Video: https://www.youtube.com/watch?v=1EqUi4xRbr0
 
 Slides: https://keybase.pub/oms/Potzblitz9-RaspiBlitz-slides.pdf
 

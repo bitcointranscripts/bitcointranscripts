@@ -5,14 +5,13 @@ categories: ['conference']
 tags: ['lightning', 'routing']
 speakers: ['Carla Kirk-Cohen']
 date: 2019-09-09
+media: https://youtu.be/1O-bhcbh9vE
 ---
 
 
 Topic: Routing Problems and Solutions
 
 Location: Tel-Aviv 2019
-
-Video: <https://youtu.be/1O-bhcbh9vE>
 
 ## Introduction
 

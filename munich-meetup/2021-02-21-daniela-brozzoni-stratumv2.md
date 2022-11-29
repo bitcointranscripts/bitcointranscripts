@@ -4,13 +4,12 @@ transcript_by: Michael Folkson
 tags: ['mining']
 speakers: ['Daniela Brozzoni']
 date: 2021-02-21
+media: https://www.youtube.com/watch?v=58LrQ0Q89x0
 ---
 
 Topic: Mining Basics and Stratum v2
 
 Location: Bitcoin Munich
-
-Video: https://www.youtube.com/watch?v=58LrQ0Q89x0
 
 Matt Corallo presentation on BetterHash: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2019-02-05-matt-corallo-betterhash/
 

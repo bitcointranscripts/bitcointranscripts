@@ -5,11 +5,10 @@ tags: ['lightning', 'routing']
 categories: ['residency']
 speakers: ['Elaine Ou']
 date: 2018-10-22
+media: https://www.youtube.com/watch?v=qX4Z3JY1094
 ---
 
 Bootstrapping and maintaining a Lightning Node
-
-Video: https://www.youtube.com/watch?v=qX4Z3JY1094
 
 Slides: https://lightningresidency.com/assets/presentations/Ou_Bootstrapping_and_Maintaining_a_Lightning_Node.pdf
 

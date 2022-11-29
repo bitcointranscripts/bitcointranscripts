@@ -4,11 +4,10 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 date: 2015-11-09
 tags: ['mining']
+media: http://web.archive.org/web/20160704124220/https://www.youtube.com/watch?v=RguZ0_nmSPw
 ---
 
 # Mining, block size, etc.
-
-<https://www.youtube.com/watch?v=RguZ0_nmSPw>
 
 So uh I am really excited to announce or introduce our next speaker, Greg Maxwell. Greg, well, there are people who talk and there's people who do, and Greg is definitely a doer. He is definitely one of the most accomplished if not most helpful, one of the most active people, not just in terms of commits that we see, but also things we don't see, like input regarding bugs and to other developers and being a great voice in this industry. Also, he is with Blockstream, one of the most exciting companies employing several Bitcoin developers. Everyone is a volunteer. His company has recently had a major product announcement. He is taking his time to just help the space and we really appreciate this and thank you very much for being here. (applause)
 

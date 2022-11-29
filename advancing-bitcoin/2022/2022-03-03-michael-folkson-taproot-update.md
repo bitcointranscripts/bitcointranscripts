@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['taproot']
 speakers: ['Michael Folkson']
 date: 2022-03-03
+media: https://www.youtube.com/watch?v=8RNYhwEQKxM
 ---
 
 Topic: State of the Taproot Address 2022
-
-Video: <https://www.youtube.com/watch?v=8RNYhwEQKxM>
 
 Slides: <https://www.dropbox.com/s/l31cy3xkw0zi6aq/Advancing%20Bitcoin%20presentation%20-%20Michael%20Folkson.pdf?dl=0>
 

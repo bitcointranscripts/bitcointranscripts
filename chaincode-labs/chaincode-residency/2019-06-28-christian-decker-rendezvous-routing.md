@@ -5,13 +5,12 @@ categories: ['residency']
 tags: ['lightning', 'routing']
 date: 2019-06-28
 speakers: ['Christian Decker']
+media: https://youtu.be/Ms2WwRzBdkM
 ---
 
 Rendezvous Routing (Lightning Network)
 
 Location: Chaincode Residency 2019
-
-Video: <https://youtu.be/Ms2WwRzBdkM>
 
 Slides: <https://residency.chaincode.com/presentations/lightning/Rendezvous_Routing.pdf>
 

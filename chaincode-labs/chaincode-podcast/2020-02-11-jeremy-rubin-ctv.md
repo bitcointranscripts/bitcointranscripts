@@ -5,11 +5,10 @@ categories: ['podcast']
 tag: ['soft fork', 'forks']
 speakers: ['Jeremy Rubin']
 date: 2020-02-11
+media: https://www.youtube.com/watch?v=Lqcpk5o1Y2E
 ---
 
 Location: Chaincode Labs Podcast
-
-Video: <https://www.youtube.com/watch?v=Lqcpk5o1Y2E>
 
 CTV BIP review workshop transcript: <https://diyhpl.us/wiki/transcripts/ctv-bip-review-workshop/>
 

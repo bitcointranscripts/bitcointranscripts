@@ -4,13 +4,12 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['miners']
 speakers: ['Bob McElrath']
+media: https://www.youtube.com/watch?v=fst1IK_mrng&feature=youtu.be&t=2h17m20s
 ---
 
 Bob McElrath (bsm117532)
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/2_breaking_the_chain_1_mcelrath.pdf>
-
-video: <https://www.youtube.com/watch?v=fst1IK_mrng&feature=youtu.be&t=2h17m20s>
 
 I work for SolidX in New York. I am here to tell you about some modifications to the blockchain. All the things we heard yesterday about the block size, come down to the existence of orphans. The reason why we have these problems are orphans. These are consequences of physics and resources. This is not a fundamental property in Bitcoin. ((Transcripter's note: basically, only sharding can make local bandwidth less of an issue. Block size limit is not only for the orphan rate.))
 

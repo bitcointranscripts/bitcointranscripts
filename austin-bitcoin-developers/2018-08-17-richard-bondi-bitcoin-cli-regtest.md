@@ -5,9 +5,8 @@ date: 2018-08-17
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['bitcoin core', 'testing']
+media: https://www.youtube.com/watch?v=sbupEpL6-J4
 ---
-
-Video: <https://www.youtube.com/watch?v=sbupEpL6-J4>
 
 Clone this repo to follow along: <https://github.com/austin-bitcoin-developers/regtest-dev-environment>
 

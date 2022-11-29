@@ -6,7 +6,7 @@ tags: ['regulation']
 speakers: ['Alexander Zaidelson']
 ---
 
-# Compliance and confidentiality: can they co-exist?
+Compliance and confidentiality: can they co-exist?
 
 Alexander Zaidelson, Beam
 

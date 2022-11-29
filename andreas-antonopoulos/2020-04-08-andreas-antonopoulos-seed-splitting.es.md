@@ -5,13 +5,12 @@ date: 2020-04-08
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tags: ['cartera', 'seguridad']
+vídeo: <https://www.youtube.com/watch?v=p5nSibpfHYE>
 ---
 
 Tema: ¿Por qué es una mala idea dividir las semillas? 
 
 Localisación: Canal de YouTube de Andreas Antonopoulos
-
-Vídeo: https://www.youtube.com/watch?v=p5nSibpfHYE
 
 # ¿Por qué es una mala idea dividir las semillas? 
 

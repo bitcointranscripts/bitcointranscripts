@@ -3,11 +3,10 @@ title: Failures Of Secret Key Cryptography (2013)
 transcript_by: Bryan Bishop
 tags: ['attacks', 'cryptography']
 speakers: ['Daniel J. Bernstein']
+media: https://www.youtube.com/watch?v=bT4cKwBROno&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=7
 ---
 
 FSE 2013
-
-video: <https://www.youtube.com/watch?v=bT4cKwBROno&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=7>
 
 Welcome to the second invited talk, to be given by Dan Bernstein. Dan is one of the few members of our community who does not need an introduction. It's a great honor and pleasure that he has agreed to give a talk here. Dan comes from UC Berkeley and from Chicago. Just a few things you might know Dan from-- he sued the U.S. government about export controls. In 2004, .. in a class of his.. a lot of qmail, his work on factoring, ECC, and symmetric cryptology. Poly1305, .. and also he's... attacks.. So please join me in welcoming Dan Bernstein.
 

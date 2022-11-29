@@ -1,7 +1,8 @@
 ---
-title: Socratic Seminar (2020-08-25)
+title: Socratic Seminar 
 transcript_by: Michael Folkson
 categories: ['meetup']
+date: 2020-08-25
 ---
 
 Name: Socratic Seminar
@@ -9,8 +10,6 @@ Name: Socratic Seminar
 Topic: Agenda in Google Doc below
 
 Location: Bitcoin Sydney (online)
-
-Date: August 25th 2020
 
 Video: No video posted online
 

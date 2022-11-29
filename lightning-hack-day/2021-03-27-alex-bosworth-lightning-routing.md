@@ -11,7 +11,7 @@ Lightning Routing - Building a new economy
 
 Location: Lightning Hack Day
 
-Video: No video posted online
+media: No video posted online
 
 Slides: <https://www.dropbox.com/s/oo9o8ij62utvlfo/alex-bosworth-lightning-routing.pdf>
 

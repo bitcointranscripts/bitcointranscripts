@@ -5,13 +5,13 @@ categories: ['podcast']
 tag: ['taproot']
 speakers: ['Matt Corallo']
 date: 2021-02-11
+media: https://anchor.fm/tales-from-the-crypt/episodes/228-UASFs--BIP-148--BIP-91--and-Taproot-Activation-with-Matt-Corallo-eq7cif
 ---
 
 Topic: UASFs, BIP 148, BIP 91 and Taproot Activation
 
 Location: Tales from the Crypt podcast
 
-Audio: https://anchor.fm/tales-from-the-crypt/episodes/228-UASFs--BIP-148--BIP-91--and-Taproot-Activation-with-Matt-Corallo-eq7cif
 
 # Intro
 

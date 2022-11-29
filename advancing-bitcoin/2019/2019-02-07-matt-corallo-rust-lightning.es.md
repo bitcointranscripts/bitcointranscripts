@@ -6,11 +6,10 @@ translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['lightning']
 date: 2019-02-07
+media: https://www.youtube.com/watch?v=w_To_bnXjvk
 ---
 
 Lightning flexible en Rust
-
-Vídeo: <https://vimeo.com/316624439>
 
 Diapositivas: <https://docs.google.com/presentation/d/154bMWdcMCFUco4ZXQ3lWfF51U5dad8pQ23rKVkncnns/edit#slide=id.p>
 

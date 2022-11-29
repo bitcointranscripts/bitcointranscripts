@@ -5,13 +5,12 @@ tags: ['privacy', 'P2P', 'attacks']
 categories: ['residency']
 speakers: ['Ethan Heilman']
 date: 2019-06-12
+media: https://www.youtube.com/watch?v=StnOVBbIpD8
 ---
 
 Bitcoin network partitioning & network-level privacy attacks
 
 Location: Chaincode Labs 2019 Residency
-
-Video: <https://www.youtube.com/watch?v=StnOVBbIpD8>
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/ethan_heilman_p2p.pdf>
 

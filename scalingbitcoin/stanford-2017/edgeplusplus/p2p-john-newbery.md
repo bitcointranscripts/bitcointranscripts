@@ -3,6 +3,7 @@ title: P2P with John Newbery
 transcript_by: Caralie Chrisco
 categories: ['conference']
 tags: ['P2P', 'mempool']
+media: https://youtu.be/eVerdR2hOMw
 ---
 
 Name: John Newbery
@@ -10,8 +11,6 @@ Name: John Newbery
 Topic: Bitcoin Peer-to-Peer Network and Mempool
 
 Location: Bitcoin Edge Dev++ 2017 - Stanford University
-
-Video: <https://youtu.be/eVerdR2hOMw>
  
 Slides: <https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/p2p.pdf> & <https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/mempool.pdf>
 

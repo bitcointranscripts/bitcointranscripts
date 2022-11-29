@@ -5,13 +5,12 @@ categories: ['podcast']
 tags: ['lightning', 'c-lightning']
 speakers: ['Rusty Russell']
 date: 2021-05-30
+media: https://www.youtube.com/watch?v=BRkSE00aj5k&list=PLPwc75tPMdsixsuhwau82Q0IfxECo0z_E&index=18
 ---
 
 Topic: Improving the Lightning Network
 
 Location: Join the Wasabikas podcast
-
-Audio: <https://www.youtube.com/watch?v=BRkSE00aj5k&list=PLPwc75tPMdsixsuhwau82Q0IfxECo0z_E&index=18>
 
 # How Rusty got into Lightning
 

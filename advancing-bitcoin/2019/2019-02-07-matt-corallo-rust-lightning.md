@@ -5,11 +5,10 @@ transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning']
 date: 2019-02-07
+media: https://www.youtube.com/watch?v=w_To_bnXjvk
 ---
 
 Flexible Lightning in Rust
-
-Video: <https://vimeo.com/316624439>
 
 Slides: <https://docs.google.com/presentation/d/154bMWdcMCFUco4ZXQ3lWfF51U5dad8pQ23rKVkncnns/edit#slide=id.p>
 

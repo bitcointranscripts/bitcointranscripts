@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['hardware wallet', 'security']
 speakers: ['Stepan Snigirev']
 date: 2019-05-01
+media: https://www.youtube.com/watch?v=P5PI5MZ_2yo
 ---
 
 Topic: Hardware Wallets (History of attacks)
 
 Location: London Bitcoin Devs
-
-Video: <https://www.youtube.com/watch?v=P5PI5MZ_2yo>
 
 Slides: <https://www.dropbox.com/s/64s3mtmt3efijxo/Stepan%20Snigirev%20on%20hardware%20wallet%20attacks.pdf>
 

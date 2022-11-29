@@ -8,8 +8,6 @@ speakers: ['Nicolas Dorier']
 
 Reproducible lightning benchmark
 
-Nicolas Dorier (DG Lab)
-
 <https://github.com/dgarage/LightningBenchmarks>
 
 <https://twitter.com/kanzure/status/1048760545699016705>

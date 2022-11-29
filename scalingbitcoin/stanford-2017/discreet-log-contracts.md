@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'smart contracts', 'lightning', 'schnorr']
 speakers: ['Tadge Dryja']
+media: https://www.youtube.com/watch?v=FU-rA5dkTHI
 ---
 
 <http://diyhpl.us/wiki/transcripts/discreet-log-contracts/>
-
-video: <https://www.youtube.com/watch?v=FU-rA5dkTHI>
 
 paper: <https://adiabat.github.io/dlc.pdf>
 

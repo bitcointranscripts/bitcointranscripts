@@ -4,14 +4,13 @@ speakers: ['Andreas Antonopoulos']
 date: 2020-04-08
 transcript_by: Michael Folkson
 tags: ['wallet', 'security']
+media: https://www.youtube.com/watch?v=p5nSibpfHYE
 ---
 
 
 Topic: Why is seed splitting a bad idea?
 
 Location: Andreas Antonopoulos YouTube channel
-
-Video: https://www.youtube.com/watch?v=p5nSibpfHYE
 
 # Why is seed splitting a bad idea?
 

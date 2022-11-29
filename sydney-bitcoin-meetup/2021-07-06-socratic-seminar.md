@@ -1,8 +1,9 @@
 ---
-title: Sydney Socratic Seminar (2021-07-06)
+title: Sydney Socratic Seminar 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'lightning']
+date: 2021-07-06
 ---
 
 Name: Socratic Seminar
@@ -10,8 +11,6 @@ Name: Socratic Seminar
 Topic: Fee bumping and layer 2 protocols
 
 Location: Bitcoin Sydney (online)
-
-Date: July 6th 2021
 
 Video: No video posted online
 
