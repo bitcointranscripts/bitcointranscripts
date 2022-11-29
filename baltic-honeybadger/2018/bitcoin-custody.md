@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['custody', 'regulation']
 speakers: ['Bryan Bishop']
 date: 2018-09-23
-media:  <https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s>
+media: https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s
 ---
 
 <https://twitter.com/kanzure/status/1048014038179823617>

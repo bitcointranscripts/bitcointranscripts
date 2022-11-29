@@ -14,7 +14,7 @@ SF Bitcoin Devs Meetup
 Gregory Maxwell
 DE47 BC9E 6D2D A6B0 2DC6 10B1 AC85 9362 B041 3BFA
 
-- slides: <https://people.xiph.org/~greg/blockstream.gmaxwell.elements.talk.060815.pdf>
+slides: <https://people.xiph.org/~greg/blockstream.gmaxwell.elements.talk.060815.pdf>
 
 <https://github.com/ElementsProject/elements/>
 

@@ -5,6 +5,7 @@ date: 2019-05-27
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'lightning', 'layer 2', 'sidechains']
+media: https://www.youtube.com/watch?v=BH-qZhEZSrg
 ---
 
 Drivechain: An interoperability layer-2, Described in terms of the lightning network- something you already understand

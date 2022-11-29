@@ -6,7 +6,7 @@ categories: ['conferencia']
 tags: ['seguridad', 'cartera hardware', 'cartera']
 date: 2019-09-14
 speakers: ['Rodolfo Novak']
-vídeo: <https://youtu.be/2IpZWSWUIVE?t=23739>
+vídeo: https://youtu.be/2IpZWSWUIVE?t=23739
 ---
 
 
