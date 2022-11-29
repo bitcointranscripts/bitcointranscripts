@@ -1,8 +1,9 @@
 ---
-title: Sydney Socratic Seminar (2021-02-23)
+title: Sydney Socratic Seminar 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'lightning', 'attacks', 'taproot']
+date: 2021-02-23
 ---
 
 Name: Socratic Seminar
@@ -10,8 +11,6 @@ Name: Socratic Seminar
 Topic: Agenda in Google Doc below
 
 Location: Bitcoin Sydney (online)
-
-Date: February 23rd 2021
 
 Video: No video posted online
 

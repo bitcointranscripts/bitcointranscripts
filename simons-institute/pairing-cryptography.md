@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Dan Boneh']
 date: 2015-07-14
+media: https://www.youtube.com/watch?v=8WDOpzxpnTE&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=21
 ---
 
 [Dan Boneh](http://crypto.stanford.edu/~dabo/) (see also [1](https://en.wikipedia.org/wiki/Dan_Boneh))
-
-<https://www.youtube.com/watch?v=8WDOpzxpnTE&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=21>
 
 slides: <http://crypto.biu.ac.il/sites/default/files/3rd_BIU_Winter_School/Boneh-basics-of-pairings.pdf>
 

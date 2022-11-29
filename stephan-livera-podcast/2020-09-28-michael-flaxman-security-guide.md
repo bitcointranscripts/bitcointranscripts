@@ -5,13 +5,12 @@ categories: ['podcast']
 tags: ['security']
 date: 2020-09-28
 speakers: ['Michael Flaxman']
+media: https://stephanlivera.com/episode/215/
 ---
 
 Topic: 10x your Bitcoin security with Multisig
 
 Location: Stephan Livera Podcast
-
-Audio: https://stephanlivera.com/episode/215/
 
 Previous SLP episode with Michael Flaxman: https://diyhpl.us/wiki/transcripts/stephan-livera-podcast/2019-08-08-michael-flaxman/
 

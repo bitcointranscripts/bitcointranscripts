@@ -5,12 +5,10 @@ categories: ['conference']
 tags: ['lightning', 'submarine swaps']
 speakers: ['Alex Bosworth']
 date: 2019-05-11
+media: https://youtu.be/SCxaV2HCQ5o
 ---
 
 Bridging off-chain and on-chain with submarine swaps
-
-Video: https://youtu.be/SCxaV2HCQ5o
-
 # Introduction
 
 Hi, I work at Lightning Labs. I want to talk about the dawn of hyperloop. It's a new concept.

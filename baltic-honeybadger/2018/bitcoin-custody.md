@@ -5,6 +5,7 @@ categories: ['conference']
 tags: ['custody', 'regulation']
 speakers: ['Bryan Bishop']
 date: 2018-09-23
+media: https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s
 ---
 
 <https://twitter.com/kanzure/status/1048014038179823617>
@@ -18,8 +19,6 @@ Schedule: https://bh2018.hodlhodl.com/
 Transcript
 
 Start time:  6:09:50
-
-Youtube:  https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s
 
 My name is Bryan Bishop, I’m going to be talking about bitcoin custody. Here is my PGP fingerprint, we should be doing that. So who am I, I have a software development background, I don’t just type transcripts. I’m actually no longer at LedgerX as of Friday (Sept 21 2018) when I came here.  That is the end of 4 years, so you are looking at a free man. [Applause] Thank you.
 

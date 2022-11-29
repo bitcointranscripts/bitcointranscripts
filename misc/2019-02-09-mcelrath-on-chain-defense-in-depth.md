@@ -4,11 +4,10 @@ transcript_by: Bryan Bishop
 tags: ['custody', 'wallet']
 speakers: ['Bob McElrath']
 date: 2019-02-09
+media: https://vimeo.com/316301424
 ---
 
 On-chain defense in depth (UCL CBT seminar)
-
-video: <https://vimeo.com/316301424>
 
 <https://twitter.com/kanzure/status/1159542209584218113>
 

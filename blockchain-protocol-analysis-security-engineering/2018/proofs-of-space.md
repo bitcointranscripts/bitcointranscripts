@@ -4,13 +4,10 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Bram Cohen']
 date: 2018-01-31
+media: https://www.youtube.com/watch?v=iqxkO7C-cyk
 ---
 
 Beyond Hellman's time-memory trade-offs with applications to proofs of space
-
-Bram Cohen
-
-video: <https://www.youtube.com/watch?v=iqxkO7C-cyk>
 
 <https://twitter.com/kanzure/status/962378701278208000>
 

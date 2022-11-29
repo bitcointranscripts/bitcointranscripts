@@ -5,13 +5,12 @@ categories: ['conference']
 speakers: ['Fabian Jahr']
 date: 2020-09-10
 tags: ['bitcoin-core', 'testing']
+media: https://www.youtube.com/watch?v=gr75ubfNQ20
 ---
 
 Topic: Bitcoin Core functional test framework
 
 Location: Bitcoin Edge Dev++
-
-Video: https://www.youtube.com/watch?v=gr75ubfNQ20
 
 Slides: https://telaviv2019.bitcoinedge.org/files/test-framework-in-bitcoin-core.pdf
 

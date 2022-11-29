@@ -6,13 +6,12 @@ transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
 tags: ['cartera']
+media: https://www.youtube.com/watch?v=xC25NzIjzog
 ---
 
 Tema: Repensar la arquitectura de las carteras: Carteras de descriptores nativos 
 
 Ubicación: El avance de Bitcoin
-
-Vídeo: https://www.youtube.com/watch?v=xC25NzIjzog
 
 Diapositivas: https://www.dropbox.com/s/142b4o4lrbkvqnh/Rethinking%20Wallet%20Architecture_%20Native%20Descriptor%20Wallets.pptx
 

@@ -5,9 +5,8 @@ categories: ['conference']
 tags: ['research']
 speakers: ['Andrew Poelstra']
 date: 2018-01-11
+media: https://www.youtube.com/watch?v=ovCBT1gyk9c
 ---
-
-video: <https://www.youtube.com/watch?v=ovCBT1gyk9c>
 
 <https://twitter.com/kanzure/status/954531580848082944>
 

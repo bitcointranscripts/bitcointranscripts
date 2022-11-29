@@ -1,8 +1,9 @@
 ---
-title: Sydney Socratic Seminar (2021-06-01)
+title: Sydney Socratic Seminar 
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'lightning', 'script']
+date: 2021-06-01
 ---
 
 Name: Socratic Seminar
@@ -10,8 +11,6 @@ Name: Socratic Seminar
 Topic: Agenda in Google Doc below
 
 Location: Bitcoin Sydney (online)
-
-Date: June 1st 2021
 
 Video: No video posted online
 

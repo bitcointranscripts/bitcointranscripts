@@ -5,6 +5,7 @@ date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['taproot', 'lightning', 'schnorr']
+media: https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 ---
 
 Name: Antoine Riard
@@ -14,8 +15,6 @@ Topic: A Schnorr-Taproot’ed Lightning
 Location: Advancing Bitcoin
 
 Date: February 6th 2020
-
-Video (paid access): https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 
 Slides: https://www.dropbox.com/s/9vs54e9bqf317u0/Schnorr-Taproot%27ed-LN.pdf
 

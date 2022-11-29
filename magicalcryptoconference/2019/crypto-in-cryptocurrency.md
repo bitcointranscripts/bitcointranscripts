@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['security', 'cryptography', 'zero-knowledge']
 speakers: ['Andrew Poelstra']
 date: 2019-05-12
+media: https://youtu.be/mRl3c9ppO78
 ---
 
 The "crypto" in cryptocurrency: Why everything is weird and hard
-
-Video: https://youtu.be/mRl3c9ppO78
 
 I do not have any slides for you. This is my attempt to keep this non-technical, by depriving myself of any ability to write equations on screen. The topic of my talk is why everything is weird and hard in cryptocurrency. What is cryptography as a mathematics and field of science? And how does this work in practice?
 

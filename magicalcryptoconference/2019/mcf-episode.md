@@ -3,9 +3,8 @@ title: Mcf Episode
 transcript_by: Bryan Bishop
 categories: ['conference']
 date: 2019-05-11
+media: https://youtu.be/0MnuvKybuo0?t=1463
 ---
-
-Video: https://youtu.be/0MnuvKybuo0?t=1463
 
 Video MCF Short: https://youtu.be/SnfKIKL_Ghk
 

@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['security']
 date: 2021-04-03
 speakers: ['Tadge Dryja']
+media: https://mitbitcoinexpo.org/
 ---
 
 Topic: How much Security is too much Security? Defending Against a 99.999% Attack
 
 Location: Online
-
-Video: <https://mitbitcoinexpo.org/> - Day 1, Part 1 @ 38:15
 
 ## Introduction
 Hi everyone, it's too bad that we can't be in person but I think by next year we'll be able to do this in person. It's been a long year without conferences. And I guess for maybe many people watching the MIT Bitcoin Expo last March, was the last time I saw a bunch of people in person before this whole thing. Thanks to Neha, that was a really good start off for the day. I'm going to talk in some ways about the opposite side of things, saying, well, do we have too much security? And talking about defending against a 99.9% attack. 

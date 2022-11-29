@@ -6,8 +6,6 @@ tags: ['security', 'attacks', 'validation', 'scalability']
 speakers: ['Peter Todd']
 ---
 
-petertodd
-
 Overview of Security Concerns
 
 I am going to talk about scale-related security issues. Scale-related security issues. I said scale, not scalability. We are not talking about scalability. We're talking about changing numbers, and what are the implications, what attacks are easier or harder by changing the block size number. What are we trying to accomplish? What is the system meant to be? Nobody really agrees of course. What's interesting is that as much as we disagree about what was meant to be, there are a lot of key things about what bitcoin could be, these visions share some details.

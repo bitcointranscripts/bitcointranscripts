@@ -5,11 +5,10 @@ tags: ['segwit']
 categories: ['residency']
 speakers: ["James O'Beirne"]
 date: 2019-06-18
+media: https://youtu.be/JgNgnwF9hfY
 ---
 
 Location: Chaincode Labs 2019 Residency  
-
-Video: <https://youtu.be/JgNgnwF9hfY>  
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/Advanced_segwit.pdf>  
 

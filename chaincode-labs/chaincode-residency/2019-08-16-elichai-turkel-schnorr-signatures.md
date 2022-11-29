@@ -5,9 +5,8 @@ categories: ['residency']
 tag: ['schnorr']
 speakers: ['Elichai Turkel']
 date: 2019-08-16
+media: https://www.youtube.com/watch?v=XKatSGCZ-gE
 ---
-
-Video: <https://www.youtube.com/watch?v=XKatSGCZ-gE>
 
 Slides: <https://residency.chaincode.com/presentations/Schnorr_Signatures.pdf>
 

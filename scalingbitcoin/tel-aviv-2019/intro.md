@@ -3,6 +3,7 @@ title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Anton Yemelyanov']
+media: https://www.youtube.com/watch?v=-gdfxNalDIc
 ---
 
 Introduction to Scaling Bitcoin Tel Aviv 2019
@@ -14,8 +15,6 @@ Introduction to Scaling Bitcoin Tel Aviv 2019
 Freenode IRC: #bitcoin-workshops
 
 <https://telaviv2019.scalingbitcoin.org/live/>
-
-livestream: <https://www.youtube.com/watch?v=-gdfxNalDIc>
 
 Everybody please take your seats. Just to let you know, there's electrical plugs in the center of row 1 and row 6. Otherwise, there are extension cords connected on the sides.
 

@@ -4,9 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['taproot', 'smart contracts', 'lightning']
 speakers: ['Tadge Dryja']
+media: https://www.youtube.com/watch?v=i-0NUqIVVV4&t=53m14s
 ---
-
-video: <https://www.youtube.com/watch?v=i-0NUqIVVV4&t=53m14s>
 
 <https://twitter.com/kanzure/status/980545280973201410>
 

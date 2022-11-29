@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['security', 'hardware wallet', 'wallet']
 date: 2019-09-14
 speakers: ['Rodolfo Novak']
+media: https://youtu.be/2IpZWSWUIVE?t=23739
 ---
 
 Topic: Coldcard Mk3 - Security in Depth
 
 Location: Baltic Honeybadger 2019
-
-Audio: https://youtu.be/2IpZWSWUIVE?t=23739
 
 # Intro
 

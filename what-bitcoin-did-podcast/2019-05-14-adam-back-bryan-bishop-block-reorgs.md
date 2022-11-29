@@ -4,15 +4,13 @@ transcript_by: Peter McCormack
 categories: ['podcast']
 date: 2019-05-14
 speakers: ['Adam Back', 'Bryan Bishop']
+media: https://www.whatbitcoindid.com/podcast/bitcoin-block-reorgs-explained-with-adam-back-and-bryan-bishop
 ---
 
 Topic: Bitcoin Block Re-orgs
 
 Location: What Bitcoin Did Podcast
 
-Date: May 14th 2019
-
-Audio: https://www.whatbitcoindid.com/podcast/bitcoin-block-reorgs-explained-with-adam-back-and-bryan-bishop
 
 Bitcoin Stack Exchange on blockchain rollbacks: https://bitcoin.stackexchange.com/questions/87652/51-attack-apparently-very-easy-refering-to-czs-rollback-btc-chain-how-t
 

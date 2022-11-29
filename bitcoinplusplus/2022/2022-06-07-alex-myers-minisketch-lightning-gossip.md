@@ -5,11 +5,10 @@ categories: ['conference']
 tags: ['lightning', 'P2P']
 speakers: ['Alex Myers']
 date: 2022-06-07
+media: https://www.youtube.com/watch?v=e0u59hSsmio
 ---
 
 Location: Bitcoin++
-
-Video: <https://www.youtube.com/watch?v=e0u59hSsmio>
 
 Slides: <https://endothermic.dev/presentations/magical-minisketch>
 

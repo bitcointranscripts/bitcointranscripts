@@ -8,8 +8,6 @@ speakers: ['David Vorick']
 
 Microchains
 
-David Vorick
-
 <https://twitter.com/kanzure/status/927257690685939712>
 
 I would like to see a blockchain ecosystem with 1000s of transactions/second at layer 1 with full security. And so, we have to look at blockchain differently if we are going to achieve this.

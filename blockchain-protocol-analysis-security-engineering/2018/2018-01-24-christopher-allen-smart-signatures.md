@@ -5,13 +5,12 @@ categories: ['conference']
 tags: ['consensus']
 date: 2018-01-24
 speakers: ['Christopher Allen']
+media: https://www.youtube.com/watch?v=E9sbWKbfyJU
 ---
 
 Smart Signatures: Experiments in Authorization
 
 Location: BPASE 2018, Stanford University
-
-Video: https://www.youtube.com/watch?v=E9sbWKbfyJU
 
 Slides: https://www.slideshare.net/ChristopherA/smart-signaturesexperiments-in-authentication-stanford-bpase-2018-final
 

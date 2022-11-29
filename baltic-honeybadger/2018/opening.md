@@ -2,11 +2,10 @@
 title: Opening
 transcript_by: Bryan Bishop
 categories: ['conference']
+media: https://www.youtube.com/watch?v=66ZoGUAnY9s
 ---
 
 Opening remarks for Baltic Honeybadger 2018
-
-livestream: <https://www.youtube.com/watch?v=66ZoGUAnY9s>
 
 twitter: <https://twitter.com/search?f=tweets&vertical=default&q=bh2018>
 

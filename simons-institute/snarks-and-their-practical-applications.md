@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
 speakers: ['Eran Tromer']
+media: https://www.youtube.com/watch?v=Rm-p8rrR9c8
 ---
 
 
@@ -17,7 +18,6 @@ Joint works with:
 * Madars Virza
 * Daniel Genkin
 
-<https://www.youtube.com/watch?v=Rm-p8rrR9c8>
 
 Thank you very much. I would like to thank the organizers for giving this opportunity to learn so much from my peers and colleagues some of which are here. This is a wonderful survey of many of the works in this area. As I was sitting here, I was in real-time adjusting my slides to minimize the overlap. I will cut down on the amount of introduction because what we just saw (Mike Walfish) was wonderful. I would like to focus on the specific things that we have been looking at in one area of research.
 

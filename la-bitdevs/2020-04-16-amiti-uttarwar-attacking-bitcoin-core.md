@@ -5,11 +5,10 @@ categories: ['meetup']
 tags: ['consensus']
 speakers: ['Amiti Uttarwar']
 date: 2020-04-16
+media: https://www.youtube.com/watch?v=8TaY730YlMg
 ---
 
 Location: BitDevs LA
-
-Video: https://www.youtube.com/watch?v=8TaY730YlMg
 
 # Intro
 

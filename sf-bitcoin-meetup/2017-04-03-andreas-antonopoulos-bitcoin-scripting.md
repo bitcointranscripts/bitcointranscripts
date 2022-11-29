@@ -5,13 +5,12 @@ categories: ['meetup']
 tags: ['script']
 date: 2017-04-03
 speakers: ['Andreas Antonopoulos']
+media: https://www.youtube.com/watch?v=yU3Sr07Qnxg
 ---
 
 Topic: Advanced Bitcoin Scripting
 
 Location: SF Bitcoin Devs
-
-Video: https://www.youtube.com/watch?v=yU3Sr07Qnxg
 
 Mastering Bitcoin on GitHub: https://github.com/bitcoinbook/bitcoinbook
 

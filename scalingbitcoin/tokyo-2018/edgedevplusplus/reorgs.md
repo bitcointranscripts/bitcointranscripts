@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['forks']
 speakers: ['Bryan Bishop']
+media: https://youtu.be/EUUQbveGF5E?t=7
 ---
 
 <https://twitter.com/kanzure/status/1052344700554960896>
@@ -11,8 +12,6 @@ speakers: ['Bryan Bishop']
 Dev++ / BC2 - October 4th-5th  2018 - Keio University, Tokyo, Japan <https://bitcoinedge.org/event/keio-devplusplus-2018>
 
 schedule: <https://keio-devplusplus-2018.bitcoinedge.org/#schedule>
-
-video: <https://youtu.be/EUUQbveGF5E?t=7>
 
 # Introduction
 

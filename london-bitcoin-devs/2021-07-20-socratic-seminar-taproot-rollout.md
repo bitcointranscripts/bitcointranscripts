@@ -4,6 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']
 date: 2021-07-20
+media: https://www.youtube.com/watch?v=GAkLuZNsZzw
 ---
 
 Topic: Taproot is locked in. What now?
@@ -11,8 +12,6 @@ Topic: Taproot is locked in. What now?
 Name: Socratic Seminar
 
 Location: London BitDevs (online)
-
-Video: <https://www.youtube.com/watch?v=GAkLuZNsZzw>
 
 Gist of resources discussed: <https://gist.github.com/michaelfolkson/0803271754f851530fe8242087859254>
 

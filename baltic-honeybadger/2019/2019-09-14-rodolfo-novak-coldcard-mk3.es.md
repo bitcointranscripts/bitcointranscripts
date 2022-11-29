@@ -6,14 +6,13 @@ categories: ['conferencia']
 tags: ['seguridad', 'cartera hardware', 'cartera']
 date: 2019-09-14
 speakers: ['Rodolfo Novak']
+vídeo: https://youtu.be/2IpZWSWUIVE?t=23739
 ---
 
 
 Topic: Coldcard Mk3 - Security in Depth
 
 Location: Baltic Honeybadger 2019
-
-Vídeo: https://youtu.be/2IpZWSWUIVE?t=23739
 
 # Intriduccióno
 

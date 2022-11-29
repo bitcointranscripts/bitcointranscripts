@@ -4,9 +4,9 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['smart contracts']
 speakers: ['Andrew Poelstra']
+media: https://www.youtube.com/watch?t=5757&v=3pd6xHjLbhs
 ---
 
-Video: <https://www.youtube.com/watch?t=5757&v=3pd6xHjLbhs>
 
 I am Andrew Poelstra, a cryptographer at Blockstream. I am going to talk about scriptless scripts. But this is a specific example of a more general theme, which is using the blockchain as a trust anchor or commitment layer for smart contracts whose real contents don't really hit the blockchain. I'll elaborate on what I mean by that, and I'll show what the benefits are for that.
 
