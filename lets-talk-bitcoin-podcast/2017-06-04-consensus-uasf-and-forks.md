@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['consensus', 'hard fork', 'forks', 'soft fork']
 speakers: ['Andreas Antonopoulos']
 date: 2017-06-04
-media: <https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-333-on-consensus-and-all-kinds-of-forks>
+media: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-333-on-consensus-and-all-kinds-of-forks
 ---
 
 On Consensus and All Kinds of Forks

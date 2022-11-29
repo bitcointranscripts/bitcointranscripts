@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['consensus', 'forks']
 speakers: ['Jorge Timón']
-media: <https://youtube.com/watch?v=aQ1--w4uEMM&t=1121>
+media: https://youtube.com/watch?v=aQ1--w4uEMM&t=1121
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overview_1_timon.pdf>

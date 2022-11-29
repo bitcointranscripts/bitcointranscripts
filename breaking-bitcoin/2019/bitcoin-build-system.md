@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['security', 'build systems']
 speakers: ['Carl Dong']
 date: 2018-06-08
-media: <https://www.youtube.com/watch?v=I2iShmUTEl8>
+media: https://www.youtube.com/watch?v=I2iShmUTEl8
 ---
 
 Bitcoin build systems and bitcoin build system security

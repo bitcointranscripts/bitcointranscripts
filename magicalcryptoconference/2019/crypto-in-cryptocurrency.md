@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['security', 'cryptography', 'zero-knowledge']
 speakers: ['Andrew Poelstra']
 date: 2019-05-12
-media: <https://youtu.be/mRl3c9ppO78>
+media: https://youtu.be/mRl3c9ppO78
 ---
 
 The "crypto" in cryptocurrency: Why everything is weird and hard

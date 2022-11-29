@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['consensus', 'lightning', 'scalability']
 speakers: ['Tadge Dryja', 'Joseph Poon']
 date: 2015-05-26
-media: <https://www.youtube.com/watch?v=2QH5EV_Io0E>
+media: https://www.youtube.com/watch?v=2QH5EV_Io0E
 ---
 
 

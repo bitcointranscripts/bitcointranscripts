@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy', 'fungibility', 'lightning', 'routing']
 speakers: ['Olaoluwa Osuntokun']
-media: <https://www.youtube.com/watch?v=Gzg_u9gHc5Q#t=2m44s>
+media: https://www.youtube.com/watch?v=Gzg_u9gHc5Q#t=2m44s
 ---
 
 <http://lightning.network/>

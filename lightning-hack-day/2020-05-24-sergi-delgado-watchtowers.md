@@ -5,7 +5,7 @@ categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
 speakers: ['Sergi Delgado Segura']
 date: 2020-05-24
-media: <https://www.youtube.com/watch?v=Vkq9CVxMclE>
+media: https://www.youtube.com/watch?v=Vkq9CVxMclE
 ---
 
 Location: Potzblitz (online)

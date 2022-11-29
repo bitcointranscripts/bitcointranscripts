@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['testing']
 speakers: ['Jonathan Metzman']
 date: 2019-08-07
-media: <https://www.youtube.com/watch?v=TtPXYPJ5_eE>
+media: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 ---
 
 Topic: Going Beyond Coverage Guided Fuzzing with Structured Fuzzing

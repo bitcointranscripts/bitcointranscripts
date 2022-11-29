@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['script', 'miniscript']
 speakers: ['Sanket Kanjalkar']
 date: 2022-03-03
-media: <https://www.youtube.com/watch?v=Bn1CWsqt3VQ>
+media: https://www.youtube.com/watch?v=Bn1CWsqt3VQ
 ---
 
 Topic: Miniscript: Composable, Analyzable and Smarter Bitcoin Script

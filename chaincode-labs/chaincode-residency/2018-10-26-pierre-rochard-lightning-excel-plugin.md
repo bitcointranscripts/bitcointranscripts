@@ -5,7 +5,7 @@ tags: ['ux', 'lightning', 'lnd']
 categories: ['residency']
 speakers: ['Pierre Rochard']
 date: 2018-10-26
-media: <https://www.youtube.com/watch?v=AXeUZrS-8mE&t=0s&list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_&index=10>
+media: https://www.youtube.com/watch?v=AXeUZrS-8mE&t=0s&list=PLpLH33TRghT2jmuP9YQRo-e8gk969Q2F_&index=10
 ---
 
 # Demo

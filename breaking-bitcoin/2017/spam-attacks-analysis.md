@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['research', 'p2sh', 'attacks']
 speakers: ['Antoine Le Calvez']
 date: 2017-09-09
-media: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=1h12m10s>
+media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=1h12m10s
 ---
 
 Hunting moby dick, an analysis of 2015-2016 spam attacks

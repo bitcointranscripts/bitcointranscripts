@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'privacy', 'fungibility']
 speakers: ['Adam Back']
-media: <https://youtube.com/watch?v=aQ1--w4uEMM&t=2443>
+media: https://youtube.com/watch?v=aQ1--w4uEMM&t=2443
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overviews_2_back.pdf>

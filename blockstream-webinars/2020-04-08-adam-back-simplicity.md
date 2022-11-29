@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 speakers: ['Adam Back']
 tag: ['smart contracts']
 date: 2020-04-08
-media: <https://www.youtube.com/watch?v=RZNCk-nyx_A>
+media: https://www.youtube.com/watch?v=RZNCk-nyx_A
 ---
 
 Location: Blockstream webinar

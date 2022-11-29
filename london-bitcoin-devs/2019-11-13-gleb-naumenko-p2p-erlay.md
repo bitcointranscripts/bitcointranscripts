@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['research', 'P2P']
 speakers: ['Gleb Naumenko']
 date: 2019-11-13
-media: <https://www.youtube.com/watch?v=ZUWs00Anpaw>
+media: https://www.youtube.com/watch?v=ZUWs00Anpaw
 ---
 
 London Bitcoin Devs

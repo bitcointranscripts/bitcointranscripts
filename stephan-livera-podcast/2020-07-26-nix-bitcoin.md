@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['security', 'privacy']
 speakers: ['nixbitcoindev']
 date: 2020-07-26
-media: <https://stephanlivera.com/episode/195/>
+media: https://stephanlivera.com/episode/195/
 ---
 
 Topic: nix-bitcoin

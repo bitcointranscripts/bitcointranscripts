@@ -5,7 +5,7 @@ categories: ['residency']
 tag: ['lightning', 'multiparty channel', 'channel factory']
 speakers: ['Christian Decker']
 date: 2019-06-28
-media: <https://youtu.be/PUDWGH_MvmQ>
+media: https://youtu.be/PUDWGH_MvmQ
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

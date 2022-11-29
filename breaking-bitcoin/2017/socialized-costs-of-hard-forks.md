@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['forks']
 speakers: ['Jimmy Song']
 date: 2017-09-09
-media: <https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s>
+media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s
 ---
 
 <https://twitter.com/kanzure/status/1005518746260262912>

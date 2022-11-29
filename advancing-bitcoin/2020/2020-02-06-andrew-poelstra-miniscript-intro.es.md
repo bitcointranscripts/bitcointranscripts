@@ -6,7 +6,7 @@ transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
 tags: ['miniscript', 'cartera']
-media: <https://www.youtube.com/watch?v=eTUuwASdUBE>
+media: https://www.youtube.com/watch?v=eTUuwASdUBE
 ---
 
 Tema: Introducción a Miniscript

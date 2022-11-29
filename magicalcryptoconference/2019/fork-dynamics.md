@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Eric Lombrozo']
 date: 2019-05-12
-media: <https://youtu.be/zFN__b6ARH4?t=12523>
+media: https://youtu.be/zFN__b6ARH4?t=12523
 ---
 
 Fork dynamics

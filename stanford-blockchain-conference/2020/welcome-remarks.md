@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Dan Boneh']
 date: 2020-02-19
-media: <https://youtube.com/watch?v=JhZUItnyQ0k>
+media: https://youtube.com/watch?v=JhZUItnyQ0k
 ---
 
 Welcome remarks

@@ -5,7 +5,7 @@ date: 2020-02-06
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['taproot', 'testing']
-media: <https://www.advancingbitcoin.com/video/signet-in-practice-integrating-signet-into-your-software,5/>
+media: https://www.advancingbitcoin.com/video/signet-in-practice-integrating-signet-into-your-software,5/
 ---
 
 Topic: Signet Integration

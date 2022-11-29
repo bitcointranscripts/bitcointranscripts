@@ -3,7 +3,7 @@ title: Deep Dive Bitcoin Core V0.15
 speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 date: 2017-08-28
-media: <https://www.youtube.com/watch?v=nSRoEeqYtJA>
+media: https://www.youtube.com/watch?v=nSRoEeqYtJA
 ---
 
 slides: <https://people.xiph.org/~greg/gmaxwell-sf-015-2017.pdf>

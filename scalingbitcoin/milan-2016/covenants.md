@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['attacks', 'covenants']
 speakers: ['Emin Gun Sirer']
-media: <https://www.youtube.com/watch?time_continue=10254&v=_Z0ID-0DOnc>
+media: https://www.youtube.com/watch?time_continue=10254&v=_Z0ID-0DOnc
 ---
 
 Bitcoin covenants: Opportunities and challenges

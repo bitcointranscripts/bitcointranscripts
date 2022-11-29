@@ -5,7 +5,7 @@ date: 2019-06-29
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['hardware wallet', 'wallet']
-media: <https://www.youtube.com/watch?v=rK0jUeHeDf0>
+media: https://www.youtube.com/watch?v=rK0jUeHeDf0
 ---
 
 <https://twitter.com/kanzure/status/1145019634547978240>

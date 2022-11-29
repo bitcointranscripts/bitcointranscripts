@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
 date: 2021-01-12
 speakers: ['Tim Ruffing']
-media: <https://www.youtube.com/watch?v=DRzDDFetS3E>
+media: https://www.youtube.com/watch?v=DRzDDFetS3E
 ---
 
 Topic: MuSig2: Simple Two-Round Schnorr Multi-Signatures

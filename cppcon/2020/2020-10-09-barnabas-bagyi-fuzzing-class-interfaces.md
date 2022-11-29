@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Barnabás Bágyi']
 date: 2020-10-09
-media: <https://www.youtube.com/watch?v=TtPXYPJ5_eE>
+media: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 ---
 
 # Fuzzing Class Interfaces for Generating and Running Tests with libFuzzer

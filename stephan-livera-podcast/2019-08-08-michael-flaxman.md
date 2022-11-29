@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['podcast']
 date: 2019-08-08
 speakers: ['Michael Flaxman']
-media: <https://stephanlivera.com/episode/97/>
+media: https://stephanlivera.com/episode/97/
 ---
 
 Topic: Every Bitcoin Hardware Wallet Sucks

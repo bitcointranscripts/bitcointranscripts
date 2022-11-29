@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['security']
 date: 2021-04-03
 speakers: ['Tadge Dryja']
-media: <https://mitbitcoinexpo.org/>
+media: https://mitbitcoinexpo.org/
 ---
 
 Topic: How much Security is too much Security? Defending Against a 99.999% Attack

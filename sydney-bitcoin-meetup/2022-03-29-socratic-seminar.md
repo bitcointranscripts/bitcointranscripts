@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'threshold signatures']
 date: 2022-03-29
-media: <https://rumble.com/vz3i3u-frost-the-future-of-schnorr-multisignatures-on-bitcoin.html>
+media: https://rumble.com/vz3i3u-frost-the-future-of-schnorr-multisignatures-on-bitcoin.html
 ---
 
 Name: Socratic Seminar w/ Jesse Posner

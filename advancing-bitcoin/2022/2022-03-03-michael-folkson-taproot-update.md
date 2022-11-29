@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['taproot']
 speakers: ['Michael Folkson']
 date: 2022-03-03
-media: <https://www.youtube.com/watch?v=8RNYhwEQKxM>
+media: https://www.youtube.com/watch?v=8RNYhwEQKxM
 ---
 
 Topic: State of the Taproot Address 2022

@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'scalability']
 speakers: ['Jonas Nick']
-media: <https://www.youtube.com/watch?v=fst1IK_mrng&t=4h52m35s>
+media: https://www.youtube.com/watch?v=fst1IK_mrng&t=4h52m35s
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_3_nick.pdf>

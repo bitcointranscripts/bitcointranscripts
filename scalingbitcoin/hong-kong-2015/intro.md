@@ -3,7 +3,7 @@ title: Intro
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Bobby Lee', 'Pindar Wong']
-media: <https://youtube.com/watch?v=qdghS32TeZU>
+media: https://youtube.com/watch?v=qdghS32TeZU
 ---
 
 Introduction to event

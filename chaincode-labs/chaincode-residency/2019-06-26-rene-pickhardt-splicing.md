@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning', 'splicing']
 speakers: ['Rene Pickhardt']
 date: 2019-06-26
-media: <https://youtu.be/ZzSveBMtUGI>
+media: https://youtu.be/ZzSveBMtUGI
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Bryan Bishop']
 date: 2018-10-05
-media: <https://www.youtube.com/watch?v=JnBOO1zjm4I>
+media: https://www.youtube.com/watch?v=JnBOO1zjm4I
 ---
 
 Topic: Overview of python-bitcoinlib

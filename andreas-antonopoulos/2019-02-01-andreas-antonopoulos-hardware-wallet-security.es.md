@@ -5,7 +5,7 @@ date: 2019-02-01
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tags: ['cartera hardware', 'validación', 'cartera']
-media: <https://www.youtube.com/watch?v=3zNVDIz6Snw>
+media: https://www.youtube.com/watch?v=3zNVDIz6Snw
 ---
 
 Tema: ¿Son los monederos electrónicos lo suficientemente seguros? 

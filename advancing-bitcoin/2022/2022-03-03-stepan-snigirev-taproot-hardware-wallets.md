@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['schnorr', 'taproot', 'hardware wallet']
 speakers: ['Stepan Snigirev']
 date: 2022-03-03
-media: <https://www.youtube.com/watch?v=8uM-v1pSFgs>
+media: https://www.youtube.com/watch?v=8uM-v1pSFgs
 ---
 
 

@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 speakers: ['Rusty Russell']
 tags: ['lightning', 'c-lightning']
 date: 2019-07-31
-media: <https://www.youtube.com/watch?v=fab4P3BIZxk>
+media: https://www.youtube.com/watch?v=fab4P3BIZxk
 ---
 
 Getting started with c-lightning

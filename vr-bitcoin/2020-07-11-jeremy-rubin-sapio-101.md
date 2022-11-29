@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['smart contracts']
 speakers: ['Jeremy Rubin']
 date: 2020-07-11
-media: <https://www.youtube.com/watch?v=4vDuttlImPc>
+media: https://www.youtube.com/watch?v=4vDuttlImPc
 ---
 
 Topic: Sapio Programming 101: Stateful Smart Contracts for Bitcoin with OP_CTV

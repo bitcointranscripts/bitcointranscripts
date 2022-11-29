@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['taproot', 'soft fork']
 speakers: ['Luke Dashjr']
 date: 2021-03-17
-media: <https://stephanlivera.com/episode/260/>
+media: https://stephanlivera.com/episode/260/
 ---
 
 Topic: How Bitcoin UASF went down, Taproot LOT=true, Speedy Trial, Small Blocks

@@ -5,7 +5,7 @@ tags: ['lightning']
 categories: ['residency']
 speakers: ['Alex Bosworth']
 date: 2018-10-22
-media: <https://www.youtube.com/watch?v=1R5DNUcCYRg>
+media: https://www.youtube.com/watch?v=1R5DNUcCYRg
 ---
 
 The Lightning Protocol, an Application Design Perspective

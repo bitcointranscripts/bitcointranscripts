@@ -5,7 +5,7 @@ categories: ['meetup']
 speakers: ['Adam Gibson']
 tags: ['privacy']
 date: 2020-05-05
-media: <https://www.youtube.com/watch?v=hX86rKyNB8I>
+media: https://www.youtube.com/watch?v=hX86rKyNB8I
 ---
 
 Location: London BitDevs (online)

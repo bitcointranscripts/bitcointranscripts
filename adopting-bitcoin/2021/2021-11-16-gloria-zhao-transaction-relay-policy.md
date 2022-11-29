@@ -5,7 +5,7 @@ date: 2021-11-16
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['P2P', 'mempool']
-media: <https://www.youtube.com/watch?v=fbWSQvJjKFs>
+media: https://www.youtube.com/watch?v=fbWSQvJjKFs
 ---
 
 Topic: Transaction Relay Policy for L2 Developers

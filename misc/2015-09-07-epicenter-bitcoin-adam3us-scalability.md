@@ -5,7 +5,7 @@ tags: ['proof-of-work', 'sidechains']
 categories: ['podcast']
 speakers: ['Adam Back']
 date: 2015-09-07
-media: <https://youtube.com/watch?v=wYHyR2E5Pic>
+media: https://youtube.com/watch?v=wYHyR2E5Pic
 ---
 
 Why bitcoin needs a measured approach to scaling

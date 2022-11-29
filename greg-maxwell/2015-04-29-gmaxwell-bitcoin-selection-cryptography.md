@@ -4,7 +4,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tag: ['cryptography']
 date: 2015-04-29
-media: <https://www.youtube.com/watch?v=Gs9lJTRZCDc>
+media: https://www.youtube.com/watch?v=Gs9lJTRZCDc
 ---
 
 * slides: <https://people.xiph.org/~greg/gmaxwell_sfbitcoin_2015_04_20.pdf>

@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning', 'update layer']
 date: 2019-06-26
 speakers: ['Rene Pickhardt']
-media: <https://youtu.be/SoFlRCNdqDg>
+media: https://youtu.be/SoFlRCNdqDg
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

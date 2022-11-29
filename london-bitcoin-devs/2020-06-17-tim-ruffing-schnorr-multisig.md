@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['schnorr', 'taproot', 'multisig']
 date: 2020-06-17
 speakers: ['Tim Ruffing']
-media: <https://www.youtube.com/watch?v=8Op0Glp9Eoo>
+media: https://www.youtube.com/watch?v=8Op0Glp9Eoo
 ---
 
 Taproot and Schnorr Multisignatures

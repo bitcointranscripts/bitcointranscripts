@@ -6,7 +6,7 @@ categories: ['residency']
 tags: ['eltoo', 'lightning']
 date: 2019-06-25
 speakers: ['Christian Decker']
-media: <https://www.youtube.com/watch?v=3ZjymCOmn_A>
+media: https://www.youtube.com/watch?v=3ZjymCOmn_A
 ---
 
 Tema: Eltoo: El (lejano) futuro de lightning

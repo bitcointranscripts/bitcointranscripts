@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['lightning', 'fees']
 speakers: ['Joseph Poon', 'Tadge Dryja']
 date: 2015-02-23
-media: <https://www.youtube.com/watch?v=8zVzw912wPo>
+media: https://www.youtube.com/watch?v=8zVzw912wPo
 ---
 
 Scaling Bitcoin To Billions Of Transactions Per Day 

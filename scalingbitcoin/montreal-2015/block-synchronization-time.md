@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security']
 speakers: ['Patrick Strateman']
-media: <http://youtube.com/watch?v=TgjrS-BPWDQ&t=2h02m06s>
+media: http://youtube.com/watch?v=TgjrS-BPWDQ&t=2h02m06s
 ---
 
 Initial Block Synchronization Time Complexity

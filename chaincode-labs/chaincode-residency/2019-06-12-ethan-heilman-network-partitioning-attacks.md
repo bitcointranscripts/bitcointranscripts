@@ -5,7 +5,7 @@ tags: ['privacy', 'P2P', 'attacks']
 categories: ['residency']
 speakers: ['Ethan Heilman']
 date: 2019-06-12
-media: <https://www.youtube.com/watch?v=StnOVBbIpD8>
+media: https://www.youtube.com/watch?v=StnOVBbIpD8
 ---
 
 Bitcoin network partitioning & network-level privacy attacks

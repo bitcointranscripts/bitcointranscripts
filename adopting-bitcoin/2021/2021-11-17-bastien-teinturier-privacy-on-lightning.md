@@ -5,7 +5,7 @@ date: 2021-11-17
 transcript_by: freddiekrugerrand
 categories: ['conference']
 tags: ['lightning', 'privacy']
-media: <https://www.youtube.com/watch?v=gOiKlx9a1xg>
+media: https://www.youtube.com/watch?v=gOiKlx9a1xg
 ---
 
 Topic: Privacy On Lightning

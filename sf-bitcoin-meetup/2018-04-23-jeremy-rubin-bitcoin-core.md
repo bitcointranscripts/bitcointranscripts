@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['bitcoin core']
 speakers: ['Jeremy Rubin']
 date: 2018-04-23
-media: <https://www.youtube.com/watch?v=PKzJktErUdk>
+media: https://www.youtube.com/watch?v=PKzJktErUdk
 ---
 
 A hardCORE workout

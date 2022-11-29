@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['covenants']
 date: 2020-05-26
 speakers: ['Kevin Loaec', 'Antoine Poinsot']
-media: <https://www.youtube.com/watch?v=7CE4aiFxh10>
+media: https://www.youtube.com/watch?v=7CE4aiFxh10
 ---
 
 Location: London Bitcoin Devs (online)	

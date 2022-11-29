@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['hardware wallet', 'security']
 speakers: ['Stepan Snigirev']
 date: 2019-05-01
-media: <https://www.youtube.com/watch?v=P5PI5MZ_2yo>
+media: https://www.youtube.com/watch?v=P5PI5MZ_2yo
 ---
 
 Topic: Hardware Wallets (History of attacks)

@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['security', 'research', 'mining', 'wallet']
 speakers: ['Matt Corallo']
 date: 2017-03-04
-media: <https://www.youtube.com/watch?v=0mVOq1jaR1U&t=2h22m11s>
+media: https://www.youtube.com/watch?v=0mVOq1jaR1U&t=2h22m11s
 ---
 
 <https://twitter.com/kanzure/status/838500313212518404>

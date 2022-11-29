@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mempool']
 speakers: ['Jeff Garzik']
-media: <https://www.youtube.com/watch?v=fst1IK_mrng&t=3h52m35s>
+media: https://www.youtube.com/watch?v=fst1IK_mrng&t=3h52m35s
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_1_garzik.pdf>

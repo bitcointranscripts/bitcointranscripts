@@ -4,7 +4,7 @@ transcript_by: Caralie Chrisco
 tag: ['smart contracts']
 date: 2020-04-08
 speakers: ['John Newbery']
-media: <https://youtu.be/H-wH6mY9pZo?t=2549>
+media: https://youtu.be/H-wH6mY9pZo?t=2549
 ---
 
 Location: She256 Onboarding to Bitcoin Webinar

@@ -4,7 +4,7 @@ transcript_by: Peter McCormack
 categories: ['podcast']
 date: 2019-05-14
 speakers: ['Adam Back', 'Bryan Bishop']
-media: <https://www.whatbitcoindid.com/podcast/bitcoin-block-reorgs-explained-with-adam-back-and-bryan-bishop>
+media: https://www.whatbitcoindid.com/podcast/bitcoin-block-reorgs-explained-with-adam-back-and-bryan-bishop
 ---
 
 Topic: Bitcoin Block Re-orgs

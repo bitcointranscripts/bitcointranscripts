@@ -4,7 +4,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tag: ['sidechains']
 date: 2015-06-08
-media: <https://s3-us-west-1.amazonaws.com/blkstrm/video/elements-gmaxwell.mp4>
+media: https://s3-us-west-1.amazonaws.com/blkstrm/video/elements-gmaxwell.mp4
 ---
 
 Bringing New Elements to Bitcoin with Sidechains

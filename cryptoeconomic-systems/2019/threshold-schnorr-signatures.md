@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['research', 'schnorr']
 speakers: ['Tim Ruffing']
 date: 2019-10-06
-media: <https://www.youtube.com/watch?v=Wy5jpgmmqAg>
+media: https://www.youtube.com/watch?v=Wy5jpgmmqAg
 ---
 
 Topic: The Quest for Practical Threshold Schnorr Signatures

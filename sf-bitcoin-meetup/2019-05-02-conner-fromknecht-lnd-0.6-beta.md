@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['lnd', 'lightning']
 speakers: ['Conner Fromknecht']
 date: 2019-05-02
-media: <https://www.youtube.com/watch?v=XkyPw2_l6YE>
+media: https://www.youtube.com/watch?v=XkyPw2_l6YE
 ---
 
 Conner Fromknecht

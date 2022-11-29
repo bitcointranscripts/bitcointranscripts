@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning']
 date: 2019-06-24
 speakers: ['Fabrice Drouin']
-media: <https://www.youtube.com/watch?v=wyri7cc83kQ>
+media: https://www.youtube.com/watch?v=wyri7cc83kQ
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

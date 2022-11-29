@@ -6,7 +6,7 @@ categories: ['podcast']
 tags: ['taproot', 'soft fork']
 date: 2020-08-03
 speakers: ['Eric Lombrozo', 'Luke Dashjr']
-media: <https://www.youtube.com/watch?v=yQZb0RDyFCQ>
+media: https://www.youtube.com/watch?v=yQZb0RDyFCQ
 ---
 
 Topic: Cómo activar un nuevo Soft Fork

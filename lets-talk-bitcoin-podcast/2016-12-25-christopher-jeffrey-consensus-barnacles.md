@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['consensus']
 date: 2016-12-25
 speakers: ['Christopher Jeffrey']
-media: <https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-319-barnacles-of-consensus>
+media: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-319-barnacles-of-consensus
 ---
 
 Location: Let’s Talk Bitcoin podcast (Episode 319)

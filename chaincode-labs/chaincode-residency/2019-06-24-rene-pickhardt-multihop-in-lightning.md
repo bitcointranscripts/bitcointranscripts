@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning', 'routing']
 speakers: ['Rene Pickhardt']
 date: 2019-06-24
-media: <https://www.youtube.com/watch?v=P7I-C0_sijg>
+media: https://www.youtube.com/watch?v=P7I-C0_sijg
 ---
 
 Location: Chaincode Labs Lightning Residency 2019

@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['security', 'cryptography', 'schnorr']
 speakers: ['Pieter Wuille']
 date: 2016-10-10
-media: <https://www.youtube.com/watch?v=_Z0ID-0DOnc&feature=youtu.be&t=2297>
+media: https://www.youtube.com/watch?v=_Z0ID-0DOnc&feature=youtu.be&t=2297
 ---
 
 Topic: Schnorr signatures for Bitcoin

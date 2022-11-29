@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning']
 speakers: ["Will O'Beirne"]
 date: 2019-05-11
-media: <https://youtu.be/wd-dNd2Wck4>
+media: https://youtu.be/wd-dNd2Wck4
 ---
 
 Lightning payments (and more) on the web

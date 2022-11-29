@@ -5,7 +5,7 @@ categories: ['hackathon']
 tags: ['wallet']
 speakers: ['Tom Kirkpatrick']
 date: 2018-12-01
-media: <https://www.youtube.com/watch?v=OhRPZs0cWwQ>
+media: https://www.youtube.com/watch?v=OhRPZs0cWwQ
 ---
 
 Zap Desktop - A look under the hood

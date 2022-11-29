@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Russell Oconnor']
 date: 2017-01-26
-media: <https://www.youtube.com/watch?v=TGE6jrVmt_I>
+media: https://www.youtube.com/watch?v=TGE6jrVmt_I
 ---
 
 Post’s Theorem and Blockchain Languages: A Short Course in the Theory of Computation

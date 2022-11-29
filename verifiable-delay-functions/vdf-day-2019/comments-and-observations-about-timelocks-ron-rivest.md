@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['timelocks']
 speakers: ['Ron Rivest']
-media: <https://www.youtube.com/watch?v=NadhhH_eQBQ>
+media: https://www.youtube.com/watch?v=NadhhH_eQBQ
 ---
 
 Comments and observations about timelocks and verifiable delay functions

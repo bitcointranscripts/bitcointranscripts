@@ -5,7 +5,7 @@ date: 2018-10-23
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tags: ['consenso']
-media: <https://www.youtube.com/watch?v=OrYDehC-8TU>
+media: https://www.youtube.com/watch?v=OrYDehC-8TU
 ---
 
 Bitcoin Q&A: Descarga inicial de la cadena de bloques 

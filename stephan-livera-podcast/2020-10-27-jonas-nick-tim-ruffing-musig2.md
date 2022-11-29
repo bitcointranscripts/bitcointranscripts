@@ -5,7 +5,7 @@ speakers: ['Jonas Nick', 'Tim Ruffing']
 categories: ['podcast']
 tags: ['schnorr', 'multisig', 'taproot']
 date: 2020-10-27
-media: <https://stephanlivera.com/episode/222/>
+media: https://stephanlivera.com/episode/222/
 ---
 
 Topic: MuSig, MuSig-DN and MuSig2

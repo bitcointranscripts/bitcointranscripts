@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['schnorr', 'taproot']
 date: 2021-07-20
-media: <https://www.youtube.com/watch?v=GAkLuZNsZzw>
+media: https://www.youtube.com/watch?v=GAkLuZNsZzw
 ---
 
 Topic: Taproot is locked in. What now?

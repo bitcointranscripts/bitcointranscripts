@@ -5,7 +5,7 @@ categories: ['meetup']
 tags: ['hardware wallet', 'bitcoin core']
 speakers: ['Sjors Provoost']
 date: 2018-09-19
-media: <https://www.youtube.com/watch?v=SUDkYbkcTsQ>
+media: https://www.youtube.com/watch?v=SUDkYbkcTsQ
 ---
 
 Topic: Using Bitcoin Core with hardware wallets

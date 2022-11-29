@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['privacy']
 speakers: ['Kalle Rosenbaum', 'Rusty Russell']
-media: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s>
+media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s
 ---
 
 IBLT and weak block propagation performance

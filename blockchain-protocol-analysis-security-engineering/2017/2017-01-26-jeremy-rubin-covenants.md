@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['covenants']
 speakers: ['Jeremy Rubin']
 date: 2017-01-26
-media: <https://www.youtube.com/watch?v=r7xN7K0OqaA>
+media: https://www.youtube.com/watch?v=r7xN7K0OqaA
 ---
 
 Structuring Multi Transaction Contracts in Bitcoin

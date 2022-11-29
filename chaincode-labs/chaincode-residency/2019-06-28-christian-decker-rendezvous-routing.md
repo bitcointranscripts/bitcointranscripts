@@ -5,7 +5,7 @@ categories: ['residency']
 tags: ['lightning', 'routing']
 date: 2019-06-28
 speakers: ['Christian Decker']
-media: <https://youtu.be/Ms2WwRzBdkM>
+media: https://youtu.be/Ms2WwRzBdkM
 ---
 
 Rendezvous Routing (Lightning Network)

@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-05-16
 speakers: ['Oliver Gugger']
-media: <https://www.youtube.com/watch?v=IW08RJUpzw0>
+media: https://www.youtube.com/watch?v=IW08RJUpzw0
 ---
 
 Topic: LSAT - Your Ticket Aboard The Lightning Native Web

@@ -5,7 +5,7 @@ categories: ['conference']
 speakers: ['Fabian Jahr']
 date: 2020-09-10
 tags: ['bitcoin-core', 'testing']
-media: <https://www.youtube.com/watch?v=gr75ubfNQ20>
+media: https://www.youtube.com/watch?v=gr75ubfNQ20
 ---
 
 Topic: Bitcoin Core functional test framework

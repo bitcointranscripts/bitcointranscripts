@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['lightning', 'c-lightning']
 speakers: ['Lisa Neigut']
 date: 2019-05-11
-media: <https://youtu.be/A4i5cEI1jnc>
+media: https://youtu.be/A4i5cEI1jnc
 ---
 
 # Introduction

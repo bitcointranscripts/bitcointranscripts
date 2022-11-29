@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'incentives']
 speakers: ['Peter Todd']
-media: <https://www.youtube.com/watch?v=ivgxcEOyWNs&t=30m35s>
+media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=30m35s
 ---
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/2_security_and_incentives_2_todd.pdf>

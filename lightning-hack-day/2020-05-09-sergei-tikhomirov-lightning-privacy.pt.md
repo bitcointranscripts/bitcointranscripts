@@ -6,7 +6,7 @@ speakers: ['Sergei Tikhomirov']
 categories: ['hackathon']
 tags: ['security', 'privacy', 'lightning', 'scalability']
 date: 2020-05-09
-media: <https://www.youtube.com/watch?v=8lUTbfO94mM>
+media: https://www.youtube.com/watch?v=8lUTbfO94mM
 ---
 
 

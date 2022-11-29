@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['schnorr', 'multisig']
 speakers: ['Andrew Poelstra']
 date: 2019-03-09
-media: <https://www.youtube.com/watch?v=0gc1DSk8wlw>
+media: https://www.youtube.com/watch?v=0gc1DSk8wlw
 ---
 
 Topic: Secure Signatures - Harder Than You Think

@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
 speakers: ['Eran Tromer']
-media: <https://www.youtube.com/watch?v=Rm-p8rrR9c8>
+media: https://www.youtube.com/watch?v=Rm-p8rrR9c8
 ---
 
 

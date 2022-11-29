@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['schnorr', 'taproot', 'multisig']
 speakers: ['Jimmy Song']
 date: 2022-03-03
-media: <https://www.youtube.com/watch?v=Uo3uzofPlX0>
+media: https://www.youtube.com/watch?v=Uo3uzofPlX0
 ---
 
 

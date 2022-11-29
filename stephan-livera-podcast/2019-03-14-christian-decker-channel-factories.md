@@ -5,7 +5,7 @@ categories: ['podcast']
 tags: ['topology', 'fees']
 speaker: ['Christian Decker']
 date: 2019-03-14
-media: <https://stephanlivera.com/episode/59/>
+media: https://stephanlivera.com/episode/59/
 ---
 
 Topic: Lightning Channel Factories

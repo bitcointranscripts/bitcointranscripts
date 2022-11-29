@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['zero-knowledge']
 speakers: ['Benedikt Bünz']
-media: <https://www.youtube.com/watch?v=gZjDKgR4dw8>
+media: https://www.youtube.com/watch?v=gZjDKgR4dw8
 ---
 
 Bulletproofs

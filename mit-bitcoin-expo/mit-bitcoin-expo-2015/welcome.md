@@ -3,7 +3,7 @@ title: Welcome
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Jonathan Harvey Buschel', 'Jinglan Wang']
-media: <https://www.youtube.com/watch?v=lIgjogLipvk>
+media: https://www.youtube.com/watch?v=lIgjogLipvk
 ---
 
 Welcome session
