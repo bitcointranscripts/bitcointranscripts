@@ -4,7 +4,7 @@ speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 date: 2015-11-09
 tags: ['mining']
-media: https://www.youtube.com/watch?v=RguZ0_nmSPw
+media: http://web.archive.org/web/20160704124220/https://www.youtube.com/watch?v=RguZ0_nmSPw
 ---
 
 # Mining, block size, etc.

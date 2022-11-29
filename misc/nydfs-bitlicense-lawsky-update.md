@@ -7,7 +7,7 @@ date: 2014-12-18
 
 NY DFS BitLicense update 2014-12-18
 
-<http://bipartisanpolicy.org/events/payment-policy-in-the-21st-century-the-promise-of-innovation-and-the-challenge-of-regulation/>
+<http://web.archive.org/web/20150511110453/http://bipartisanpolicy.org/events/payment-policy-in-the-21st-century-the-promise-of-innovation-and-the-challenge-of-regulation/>
 
 
 And that's a serious problem that we all need to address with a hightened sense of urgency and focus. Let me start with the BitLicense and virtual currencies. These came on our radar screen last year at DFS because like all of the other states we regulate money transmitters like Moneygram and Western Union. We were worried that virtual currency firms were transmitting currency. Our regulatory rules were written before the internet and before virtual currencies.
