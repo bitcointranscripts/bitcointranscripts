@@ -4,7 +4,6 @@ date: 2019-06-07
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['P2P', 'bitcoin core']
-date: 2019-06-07
 ---
 
 <https://twitter.com/kanzure/status/1136939003666685952>
