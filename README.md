@@ -32,28 +32,28 @@ Each directory requires an `_index.md` file with front matter that will reflect 
 
 The file name will ideally be prefixed by the date (e.g. `2021-03-30-example-file.md`)
 
-Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. You can optionally add the speaker's name as well as categories and tags as strings in an array. For example:
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. You can optionally add the `speakers`' names, `categories` and `tags` as strings in an array as well as `date`(YYYY-MM-DD) and the video/audio link as `media` if available. For example:
 
 ```
 ---
-title: Carl Dong - Reproducible Builds (2020-11-30)
+title: Reproducible Builds 
 transcript_by: Bryan Bishop
 speakers: ['Carl Dong']
 categories: ['podcast']
-tag: ['build systems']
+tags: ['build systems']
+date: 2020-11-30
+media: https://www.youtube.com/watch?v=L_sI_tXmy2U
 ---
 ```
 
-*Note*: that it is best practice to include the date of the event in the title. (If we can gather enough meta-data, we someday intend on being able to sort transcripts by date.)
-
-There is usually some other data that is included at the top of each file like the date of the event, link to the slides, video links, full title, etc. Include what you can. For links, make sure to use the markdown format for links, for example:
+There is usually some other data that is included at the top of each file like full title and slides. Include what you can. For example:
 
 ```
-Date: 2021-05-03
-video: <https://www.youtube.com/watch?v=L_sI_tXmy2U>
+Slides: <https://docs.google.com/presentation/d/154bMWdcMCFUco4ZXQ3lWfF51U5dad8pQ23rKVkncnns/edit#slide=id.p>
+
 ```
 
-*Note* that valid markdown has `<>`s around urls like the video example above.
+*Note* that valid markdown has `<>`s around urls like the slide example above.
 
 When a transcript is added, [@bitcoinwritings](https://twitter.com/bitcoinwritings) will tweet for it and tag speakers & contributors  as long as they have been associated with a twitter username at [twitter_handles.json](/twitter_handles.json)
 
@@ -71,20 +71,22 @@ To add a new spanish translation, for example, you need to add an `_index.es.md`
 
 This is the same for Portuguese (`.pt`).
 
-Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. We strongly suggest you add the `translated_by` for translated transcripts. For example:
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter as shown above. We strongly suggest you add the `translation_by` for translated transcripts. For example:
 
 ```
 ---
-title: Andreas Antonopoulos - Firmas Schnorr (2018-10-07)
+title: Firmas Schnorr
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 speakers: ['Andreas Antonopoulos']
 categories: ['podcast']
-tag: ['schnorr']
+tags: ['schnorr']
+date: 2018-10-07
+media: https://www.youtube.com/watch?v=8TaY730YlMg
 ---
 ```
 
-There is usually some meta-data also usually at the top of each file that includes the event date and video link. That should all be translated as well.
+There is usually some meta-data also usually at the top of each file that includes slides link and other data. That should all be translated as well.
 
 If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml) and translating the appropraite [i18n file](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/i18n) (this is another [repo](https://github.com/bitcointranscripts/bitcointranscripts.github.io)).
 
