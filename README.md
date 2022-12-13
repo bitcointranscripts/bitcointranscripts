@@ -71,20 +71,22 @@ To add a new spanish translation, for example, you need to add an `_index.es.md`
 
 This is the same for Portuguese (`.pt`).
 
-Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. We strongly suggest you add the `translated_by` for translated transcripts. For example:
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter as shown above. We strongly suggest you add the `translation_by` for translated transcripts. For example:
 
 ```
 ---
-title: Andreas Antonopoulos - Firmas Schnorr (2018-10-07)
+title: Firmas Schnorr
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 speakers: ['Andreas Antonopoulos']
 categories: ['podcast']
-tag: ['schnorr']
+tags: ['schnorr']
+date: 2018-10-07
+media: https://www.youtube.com/watch?v=8TaY730YlMg
 ---
 ```
 
-There is usually some meta-data also usually at the top of each file that includes the event date and video link. That should all be translated as well.
+There is usually some meta-data also usually at the top of each file that includes slides link and other data. That should all be translated as well.
 
 If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml) and translating the appropraite [i18n file](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/i18n) (this is another [repo](https://github.com/bitcointranscripts/bitcointranscripts.github.io)).
 
