@@ -32,28 +32,30 @@ Each directory requires an `_index.md` file with front matter that will reflect 
 
 The file name will ideally be prefixed by the date (e.g. `2021-03-30-example-file.md`)
 
-Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. You can optionally add the speaker's name as well as categories and tags as strings in an array. For example:
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. You can optionally add the speaker's name, categories as well as date and tags as strings in an array. Also, optionally included is a video/audio link as `media` provided they are available. For example:
 
 ```
 ---
-title: Carl Dong - Reproducible Builds (2020-11-30)
+title: Reproducible Builds 
 transcript_by: Bryan Bishop
 speakers: ['Carl Dong']
 categories: ['podcast']
-tag: ['build systems']
+tags: ['build systems']
+date: 2020-11-30
+media: https://www.youtube.com/watch?v=L_sI_tXmy2U
 ---
 ```
 
-*Note*: that it is best practice to include the date of the event in the title. (If we can gather enough meta-data, we someday intend on being able to sort transcripts by date.)
-
-There is usually some other data that is included at the top of each file like the date of the event, link to the slides, video links, full title, etc. Include what you can. For links, make sure to use the markdown format for links, for example:
+There is usually some other data that is included at the top of each file like full title and slides. Include what you can. For example:
 
 ```
-Date: 2021-05-03
-video: <https://www.youtube.com/watch?v=L_sI_tXmy2U>
+LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures
+
+Slides: <https://docs.google.com/presentation/d/154bMWdcMCFUco4ZXQ3lWfF51U5dad8pQ23rKVkncnns/edit#slide=id.p>
+
 ```
 
-*Note* that valid markdown has `<>`s around urls like the video example above.
+*Note* that valid markdown has `<>`s around urls (outside the file front matter section) like the slide example above.
 
 When a transcript is added, [@bitcoinwritings](https://twitter.com/bitcoinwritings) will tweet for it and tag speakers & contributors  as long as they have been associated with a twitter username at [twitter_handles.json](/twitter_handles.json)
 
