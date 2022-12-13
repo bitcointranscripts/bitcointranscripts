@@ -1,7 +1,6 @@
 ---
 title: Bitcoin Core Testing 
 transcript_by: Michael Folkson
-transcript_by: Bryan Bishop
 tags: ['bitcoin core', 'testing']
 speakers: ['Greg Maxwell']
 date: 2018-09-23
