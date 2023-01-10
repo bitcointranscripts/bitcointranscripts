@@ -1,20 +1,17 @@
 ---
-title: Andrew Poelstra - Miniscript (2021-11-06)
+title: Miniscript 
 transcript_by: Michael Folkson
 translation_by: Ajian
 categories: ['conference']
 tags: ['miniscript', 'wallet']
+speakers: ['Andrew Poelstra']
+date: 2021-11-06
+media: https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s
 ---
-
-演讲者：Andrew Poelstra
 
 主题：Miniscript：资金保管，可计算，可组合
 
 场合：TABConf (The Atlanta Bitcoin Conference)
-
-日期：2021 年 11 月 6 日。
-
-视频：<https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s>
 
 幻灯片：<https://download.wpsoftware.net/bitcoin/wizardry/2021-11-tabconf/slides.pdf>
 
