@@ -1,22 +1,15 @@
 ---
-title: Sanket Kanjalkar - Miniscript (2022-03-03)
+title: Miniscript
 transcript_by: Michael Folkson
 translation_by: Ajian
 categories: ['conference']
 tags: ['script', 'miniscript']
 speakers: ['Sanket Kanjalkar']
 date: 2022-03-03
+media: https://www.youtube.com/watch?v=Bn1CWsqt3VQ
 ---
 
-演讲者：Sanket Kanjalkar
-
 题目：Miniscript：可组合、可分析、更智能的比特币脚本
-
-场合：Advancing Bitcoin
-
-日期：2022 年 3 月 3 日
-
-视频：<https://www.youtube.com/watch?v=Bn1CWsqt3VQ>
 
 Andrew Poelstra 论 Miniscript：<https://btctranscripts.com/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/>
 
