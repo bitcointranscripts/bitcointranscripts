@@ -1,5 +1,5 @@
 ---
-title: Misconceptions about segwit vbytes (2022-10-15)
+title: Misconceptions about segwit vbytes 
 transcript_by: Bryan Bishop
 translation_by: Ajian
 categories: ['core-dev-tech']
