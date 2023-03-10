@@ -18,6 +18,7 @@ Agenda: <https://github.com/lightning/bolts/issues/1053>
 The conversation has been anonymized by default to protect the identities of the participants. Participants that wish to be attributed are welcome to propose changes to the transcript.
 
 # Channel Pruning
+
 Speaker 2: To be honest, I don't think anything has made a lot of progress since the last spec meeting, so I don't think we should do the topics in order. I didn't know what order to put them in. There's just one quick question I wanted to ask about implementations about the channel pruning behavior. 
 
 Speaker 0: Core Lightning has that integrated now. 
@@ -35,6 +36,7 @@ Speaker 6: We switched to doing it for either one in like two releases ago or ma
 Speaker 2: Yeah, I just wanted to check that it has been implemented by everyone and we can just drop it from the list. Okay, so perfect. Everyone has it now, so we can just remove that. All right. So let's move on to next. To be honest, I don't have any of those topics that I have seen apart from splicing on which [redacted] had a question. I don't know what topics we should cover. So if anyone wants to cover a specific topic, just raise your hand and cover it. 
 
 # Splicing
+
 Speaker 3: Do you want to go over the splicing stuff? 
 
 Speaker 2: Yeah, sure. 
@@ -106,6 +108,7 @@ Speaker 1: Yeah. Definitely easier to implement.
 Speaker 2: Cool. Cool. All right. So should we do another topic? Is there something that one of you has been working on that made progress and that it tends to report? 
 
 # Taproot
+
 Speaker 0: I can talk about some Taproot stuff. Made a bunch of progress on Taproot stuff. Have everything working other than breaches and things like that. We've also went to review from some people as well that were on the spec, or at least looking at the code level. There's two things that came up in review. One thing is: In certain situations, we don't want a key spend path to exist, right? We only want to script a script path. For example, one situation is, okay, the remote output, we basically want them to force to have one CSV delay, right? And initially, like I have like a nums point in there, right? So basically something you can use to generate the okay, well, no, no, no, no, no, no, no, no, no, no, no, no, there's code. You can check things like that, people will. Okay, well, it's simpler. Maybe if we just instead use like the funding key and you say, okay, well, you're never gonna sign for that anyway, right? But then, you know, in review, people run off that. Like today, it's possible to sort of like actually scan on chain for your own to remote output, basically, by like looking at your own, you know, basically like your HD key chain, that's offline, you can actually go through all your keys, and then find it on chain, right? If we did the funding key method, that wouldn't, wouldn't be possible, unless you had some SCB type information, basically, right? So, that's kind of like an argument: Do we go back to the number point that would allow this easy recovery tool? Basically because this is a global parameter for the system, or something that's bound that particular point. That was one thing that came up. At the code level, it's just like whatever key you put in there, so it's really not that big of a change. It's just a matter of, are you hard-coding the key being this numbs point or are you doing some other thing? As far as the numbs stuff, I have some code that we've used to do the same thing for LNC, which requires this. You just use this PAKE handshake, basically. People want to write other code to verify this, to verify it themselves, to replicate this after their opinions. I think there was just some uneasiness around using this newer thing, essentially. If we can address that, just because it feels like the argument of that recovery tool is pretty nice and stuff still happens, and so it'd be nice if we can retain this, basically. The code impact is minor. It's just a matter of this constant or using the multi-sig key. 
 
 Speaker 1: Yeah. This sounds like speed running the discovery of static remote key, right? 
@@ -175,6 +178,7 @@ Speaker 1: Yeah.
 Speaker 0: I can always run it through, and see what it pops out with. Maybe it's the same thing because this isn't too crazy. It's just time out success, things we've been doing for a while now. I think those are my two major type of things.
 
 # Blinded Paths Interoperability
+
 Speaker 2: Perfect, so what else do you guys wanna discuss? What have you been all working on for the past two weeks? 
 
 Speaker 2: I also saw that [redacted] had a lot of issues with the test, so I'm not sure. I saw that you merged the PR with the latest changes for the Blinded Paths path to CLN. Is that gonna be in your next release? 
@@ -216,6 +220,7 @@ Speaker 1: Okay, perfect. Yeah, look forward to that too. So that will be good b
 Speaker 2: All right, so what else? Dual funding. Since [redacted] isn't there, we're just waiting for CLN to finalize the code to be able to do the end-to-end tests. Route blinding, done. And then messages. I don't think there's anything new of us as well. So is there one of the topics from the bottom of the list or something else that people want to discuss? 
 
 # Oakland Protocol
+
 Speaker 1: Yeah, so the Oakland Protocol, which is like on the back burner, getting further off the back burner. We talked about doing a non-enforcing one that sees how much it would break things. Has anyone actually done that yet? 
 
 Speaker 2: It is on my to-do list, but I decided that I would finalize dual funding, liquidity ads, and splicing before that. So we're getting back to the end of it. Yeah, maybe this summer. I don't know. It'll take a while. 
@@ -247,6 +252,7 @@ Speaker 6: Yeah, I wasn't in a rush to fix it because stop opening 100 msats cha
 Speaker 1: Cool. I'm hearing 20% is like the golden number between the two of your numbers. So that's good. I'll open an issue. 
 
 # Max HTLC Requrement
+
 Speaker 0: There's one thing that we need to catch up to: Basically, the change that we did for the HTLC max being required. We now realize there's some like subtleties around that, but I think we have a way to do it properly without partitioning the network in a sense, but that was like one thing that we thought was a little bit easier. So, we're fixing that with next release definitely. And then same thing with the SCB delay thing as well. We realized there's another thing with some old LND nodes, but I think we have a way to resolve that too. But do you think that we're a little bit behind on that? I think we should have to catch up in, but you've seen make sure that we do proper testing. I think we've reproduced both the HTLC max disconnecting with c-lighting, and then also, the first goes to lighting as well. 
 
 Speaker 1: Yeah, so our next release is going to just ignore those messages rather than starting sending warning and hang up because there are some nodes out there that are sending, and these ones are all ancient. Like they're two years old. 
@@ -262,6 +268,7 @@ Speaker 2: Cool. What is the subtlety with the HTLC max?
 Speaker 0: Well, just the subtlety was just that LND was still relaying HTLC max stuff. So, if you relay that, it can cause disconnection with another peer, right? Which is like a second order thing. It's not us sending it; it's someone else that relays and then sends- they get sent over to basically. So, 'cause we've made an issue where that's weird. We knew that, but then, it was kind of one of those things as far as coordinating that roll out. 
 
 # Async Payments
+
 Speaker 2: Oh yeah, that is mentioning that [redacted] posted a scheme for the long-term async payment. I haven't had time to look at it yet. 
 
 Speaker 0: Same. 
@@ -293,6 +300,7 @@ Speaker 0: Okay, yeah. But so once I do this script stuff, I can get people like
 Speaker 4: Cool. 
 
 # Channel Jamming
+
 Speaker 0: Anything else? I guess one thing is. I know [redacted] opened up some channel jamming stuff. I don't know if you've checked that out. I haven't checked out at all. I know some people made some comments.
 
 Speaker 2: Yeah, [redacted] also posted to the mailing list. We had a meeting about jamming last Monday, and [redacted] posted a good summary on the mailing list, especially with some potential issues that we found with using upfront fees. When there's a big difference in channel fees between nodes hops in the route, upfront fees may not make sense and may have the wrong incentives. Some nodes may have an incentive to just collect them and not relay. So there are a lot of open questions in [redacted]'s email. So if everyone can have a look at it, maybe think about it, and join the next meeting, that would be great. 
