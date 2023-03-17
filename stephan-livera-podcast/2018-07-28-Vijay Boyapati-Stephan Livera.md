@@ -4,7 +4,7 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Vijay Boyapati']
 date: 2018-07-28
-media: https://stephanlivera.com/episode/2/
+media: https://stephanlivera.com/download-episode/507/2.mp3
 ---
 
 Location: Stephan Livera Podcast
