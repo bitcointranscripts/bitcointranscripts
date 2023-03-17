@@ -2,7 +2,7 @@
 title: How Bitcoin ‘mentally captures’ people.
 transcript_by: Stephan Livera
 categories: ['podcast']
-speaker: ['Vijay Boyapati']
+speakers: ['Vijay Boyapati']
 date: 2018-07-28
 media: https://stephanlivera.com/episode/2/
 ---
