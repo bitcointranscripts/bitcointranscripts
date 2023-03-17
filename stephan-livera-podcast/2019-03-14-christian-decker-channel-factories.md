@@ -3,7 +3,7 @@ title: Channel Factories
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['topology', 'fees']
-speaker: ['Christian Decker']
+speakers: ['Christian Decker']
 date: 2019-03-14
 media: https://stephanlivera.com/episode/59/
 ---
