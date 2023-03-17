@@ -13,7 +13,7 @@ Topic: How Bitcoin ‘mentally captures’ people with Vijay Boyapati
 
 # Transcript
 
- Stephan Livera: Hi guys, welcome to Stephan Livera Podcast episode two with Vijay Boyapati. Vijay is a software engineer and Austrian economist. He’s been around Bitcoin for a while and he commonly shares his thoughts on Twitter. Most famously, I think you’ll like his article, The Bullish Case for Bitcoin, A Great One-Stop Shop Case for Bitcoin.
+Stephan Livera: Hi guys, welcome to Stephan Livera Podcast episode two with Vijay Boyapati. Vijay is a software engineer and Austrian economist. He’s been around Bitcoin for a while and he commonly shares his thoughts on Twitter. Most famously, I think you’ll like his article, The Bullish Case for Bitcoin, A Great One-Stop Shop Case for Bitcoin.
 
 Stephan Livera: So this discussion is fantastic and it’s filled with insights, but unfortunately, during this recording, unknown to us, just for a short period, around five to 10 minutes worth of it, there was some audio distortion. I apologize for that, but the discussion was too good to just let it go. Hopefully, that’s okay for you, and I’ll try and fix it up for the next episode. So without any further do, here’s my conversation with Vijay. For our guest today we’ve got Vijay. So Vijay, tell me a little bit about your intellectual influences that led you into Bitcoin.
 
