@@ -9,7 +9,7 @@ media: https://stephanlivera.com/episode/48/
 media: https://stephanlivera.com/download-episode/955/48.mp3
 
 Location: Stephan Livera Podcast
-
+##
 Stephan Livera: You’re listening to the Stephan Livera podcast focused on Bitcoin and Austrian economics. This is episode 48 with Nicolas Dorier, who started a great project. I wanted to discuss BTCPayServer. Nicolas is also the creator of NBitcoin, a Bitcoin library for the .Net platform in C#. Here’s my conversation with Nicolas. Nicolas, thanks for coming on the show.
 
 Nicolas Dorier: Yeah, thank you for inviting me.
