@@ -4,7 +4,7 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Rusty Russell']
 date: 2019-12-16
-episode_link: https://stephanlivera.com/episode/134/
+media: https://stephanlivera.com/episode/134/
 ---
 media: https://stephanlivera.com/download-episode/1685/134.mp3
 
