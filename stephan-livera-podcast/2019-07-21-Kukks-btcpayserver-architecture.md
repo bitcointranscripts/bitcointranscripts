@@ -10,7 +10,7 @@ episode_link: https://stephanlivera.com/episode/91/
 
 media: https://stephanlivera.com/download-episode/1276/91.mp3?ref=download
 
-Lacation: Stephan Livera Podcast
+Lacation: Stephan Livera Podcast.
 
 Topic: Kukks – BTCPayServer architecture and BTC transmuter
 
