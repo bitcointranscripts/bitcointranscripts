@@ -1,4 +1,5 @@
-﻿title: Lightning specification call 
+﻿---
+title: Lightning specification call 
 transcript_by: Generated
 categories: ['meeting']
 tags: ['lightning']
