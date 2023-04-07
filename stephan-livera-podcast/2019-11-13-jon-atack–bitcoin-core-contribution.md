@@ -4,18 +4,18 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Jon Atack']
 date: 2019-11-13
-episode_link: https://stephanlivera.com/episode/124/
-
+media: https://stephanlivera.com/episode/124/
 ---
 
-media: https://stephanlivera.com/download-episode/1617/124.mp3?ref=download
+media: https://stephanlivera.com/download-episode/1617/124.mp3
 
-Lacation: Stephan Livera Podcast
+Location: Stephan Livera Podcast
 
 Topic: Jon Atack – Bitcoin Core Contribution
 
 ##
- Stephan Livera: Jon, welcome to the show.
+
+Stephan Livera: Jon, welcome to the show.
 
 Jon Atack: Hi, Stephan. Thanks for having me. I’m pleased to be here.
 
