@@ -1,19 +1,14 @@
 ---
-title: Jack Dorsey and Elizabeth Stark
+title: Bitcoin- Native Currency of the Internet
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Jack Dorsey and Elizabeth Stark']
 date: 2019-02-11
-episode_link: https://stephanlivera.com/episode/52/
-
+media: https://stephanlivera.com/episode/52/
 ---
+media: https://stephanlivera.com/download-episode/975/52.mp3
 
-media: https://stephanlivera.com/download-episode/975/52.mp3?ref=download
-
-Lacation: Stephan Livera Podcast
-
-Topic: Jack Dorsey and Elizabeth Stark – Bitcoin: Native Currency of the Internet
-
+Location: Stephan Livera Podcast
 
 Stephan Livera: Welcome to the Stephan Livera podcast, focused on Bitcoin and Austrian economics. Learn the technology and economics of Bitcoin by listening in to interviews with the best and brightest. It’s a very special episode today with Jack Dorsey, CEO of Twitter and Square, and also Elizabeth Stark, CEO of Lightning Labs.
 
