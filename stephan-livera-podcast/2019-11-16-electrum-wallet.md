@@ -1,16 +1,14 @@
 ---
-title: Electrum Wallet
+title: Electrum Wallet-Bitcoin seeds, PSBT, Multi sig, Lightning
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: [' Thomas Voegtlin']
 date: 2019-11-16
-episode_link: https://stephanlivera.com/episode/125/
-
+media: https://stephanlivera.com/episode/125/
 ---
+media: https://stephanlivera.com/download-episode/1630/125.mp3
 
-media: https://stephanlivera.com/download-episode/1630/125.mp3?ref=download
-
-Lacation: Stephan Livera Podcast
+Location: Stephan Livera Podcast
 
 Topic: Thomas Voegtlin – Electrum Wallet: Bitcoin seeds, PSBT, Multi sig, Lightning
 ##
