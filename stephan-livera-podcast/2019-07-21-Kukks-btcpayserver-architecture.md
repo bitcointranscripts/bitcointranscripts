@@ -4,16 +4,15 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Kukks']
 date: 2019-01-20
-episode_link: https://stephanlivera.com/episode/91/
-
+media: https://stephanlivera.com/episode/91/
 ---
+media: https://stephanlivera.com/download-episode/1276/91.mp3
 
-media: https://stephanlivera.com/download-episode/1276/91.mp3?ref=download
-
-Lacation: Stephan Livera Podcast.
+Location: Stephan Livera Podcast.
 
 Topic: Kukks – BTCPayServer architecture and BTC transmuter
 
+##
 
 Stephan Livera: Hi, and welcome back to the Stephan Livera podcast, focused on Bitcoin and Austrian economics. Today, we are carrying on with he BTCPayServer series, with Kukks, a contributor of BTCPayServer. But first, let me introduce the sponsors of the podcast.
 
