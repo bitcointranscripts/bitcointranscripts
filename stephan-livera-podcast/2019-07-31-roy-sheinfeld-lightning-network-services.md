@@ -6,15 +6,12 @@ speakers: ['Roy Sheinfeld']
 date: 2019-07-31
 media: https://stephanlivera.com/episode/94/
 ---
-
 media: https://stephanlivera.com/download-episode/1348/94.mp3
 
 Location: Stephan Livera Podcast
 
 Topic: Roy Sheinfeld – Lightning Network Services for the Masses
-
 ##
-
 Stephan Livera: Roy, welcome to the show.
 
 Roy Sheinfeld: Hey Stephan, great to be here.
