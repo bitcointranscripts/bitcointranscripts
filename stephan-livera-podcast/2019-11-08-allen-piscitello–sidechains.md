@@ -5,16 +5,17 @@ categories: ['podcast']
 speakers: ['Allen Piscitello']
 date: 2019-11-08
 episode_link: https://stephanlivera.com/episode/123/
-
 ---
 
-media: https://stephanlivera.com/download-episode/1614/123.mp3?ref=download
+media: https://stephanlivera.com/download-episode/1614/123.mp3
 
-Lacation: Stephan Livera Podcast
+Location: Stephan Livera Podcast
 
 Topic: Allen Piscitello – Sidechains & Blockstream Liquid
+
 ##
- Stephan Livera: Allen, welcome to the show.
+
+Stephan Livera: Allen, welcome to the show.
 
 Allen P: Thanks for having me on.
 
