@@ -5,9 +5,7 @@ categories: ['podcast']
 speakers: ['Nicolas Dorie']
 date: 2019-01-20
 media: https://stephanlivera.com/episode/48/
-
 ---
-
 media: https://stephanlivera.com/download-episode/955/48.mp3
 
 Location: Stephan Livera Podcast
