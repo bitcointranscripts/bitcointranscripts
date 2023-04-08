@@ -4,7 +4,7 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Andreas M. Antonopoulos']
 date: 2020-01-06
-media: https://stephanlivera.com/download-episode/1707/139.mp3?ref=download
+media: https://stephanlivera.com/download-episode/1707/139.mp3
 ---
 podcast: https://stephanlivera.com/episode/139/
 
