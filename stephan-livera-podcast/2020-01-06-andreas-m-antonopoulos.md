@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/1707/139.mp3
 ---
 podcast: https://stephanlivera.com/episode/139/
 
-Location: Stephan Livera Podcast
-## Intro
 Stephan Livera: Andreas, welcome back to the show.
 
 Andreas: It’s a pleasure. Thank you so much for having me again.
