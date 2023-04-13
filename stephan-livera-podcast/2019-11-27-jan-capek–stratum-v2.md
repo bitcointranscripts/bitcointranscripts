@@ -4,14 +4,10 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Jan Čapek']
 date: 2019-11-27
-media: https://stephanlivera.com/episode/128/
----
 media: https://stephanlivera.com/download-episode/1649/128.mp3
+---
+podcast: https://stephanlivera.com/episode/128/
 
-Location: Stephan Livera Podcast
-
-Topic: Jan Čapek – Stratum v2 Bitcoin Mining Protocol
-##
 Stephan Livera: Jan, welcome to the show.
 
 Jan Čapek: Hi, thanks for having me here.
