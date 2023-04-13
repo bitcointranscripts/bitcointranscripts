@@ -8,9 +8,7 @@ media: https://stephanlivera.com/download-episode/1769/149.mp3
 ---
 podcast: https://stephanlivera.com/episode/149/
 
-Location: Stephan Livera Podcast
-## Intro
- Stephan Livera:
+Stephan Livera:
 
 Adam, welcome to the show.
 
