@@ -4,16 +4,9 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Jack Mallers']
 date: 2019-10-29
-episode_link: https://stephanlivera.com/episode/120/
----
-
 media: https://stephanlivera.com/download-episode/1599/120.mp3
-
-Location: Stephan Livera Podcast
-
-Topic: Jack Mallers – Lightning & Identity, Olympus and Zap
-
-##
+---
+podcast: https://stephanlivera.com/episode/120/
 
 Stephan Livera: Jack, welcome to the show, man.
 
