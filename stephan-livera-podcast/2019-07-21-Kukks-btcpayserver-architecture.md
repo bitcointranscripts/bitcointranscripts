@@ -4,16 +4,10 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Kukks']
 date: 2019-01-20
-media: https://stephanlivera.com/episode/91/
----
 media: https://stephanlivera.com/download-episode/1276/91.mp3
-
-Location: Stephan Livera Podcast.
-
-Topic: Kukks – BTCPayServer architecture and BTC transmuter
-
-##
-
+---
+podcast: https://stephanlivera.com/episode/91/
+## Introduction
 Stephan Livera: Hi, and welcome back to the Stephan Livera podcast, focused on Bitcoin and Austrian economics. Today, we are carrying on with he BTCPayServer series, with Kukks, a contributor of BTCPayServer. But first, let me introduce the sponsors of the podcast.
 
 Stephan Livera: So firstly, check out Kraken. They are the best Bitcoin exchange. I’ve been consistently impressed with the way they operate, over the years. They also have this incredible strong focus on security. They’re operating Kraken security labs, they are working on various initiatives in the space. They’re one of the longest-standing Bitcoin exchanges. They’re consistently rated the best. They offer some of the best liquidity in the industry. They’ve got high trading volume and no fees. Kraken have 24/7 support, and on the institutional business solutions side, they’re very popular there too. They offer the highest available API rate limits, and there’s also a Kraken OTC desk. Kraken offer five Fiat currencies, and also offer margin and futures trading. So, to learn more and sign up, go to the Kraken link in the show notes.
