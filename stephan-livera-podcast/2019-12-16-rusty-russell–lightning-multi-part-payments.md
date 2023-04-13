@@ -4,14 +4,10 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Rusty Russell']
 date: 2019-12-16
-media: https://stephanlivera.com/episode/134/
----
 media: https://stephanlivera.com/download-episode/1685/134.mp3
+---
+podcast: https://stephanlivera.com/episode/134/
 
-Location: Stephan Livera Podcast
-
-Topic: Rusty Russell – Lightning Multi Part Payments
-##
 Stephan Livera: Rusty, welcome back to the show.
 
 Rusty Russell: Great to be on again Stephan.
