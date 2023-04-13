@@ -7,8 +7,6 @@ date: 2019-07-25
 media: https://stephanlivera.com/download-episode/1289/92.mp3
 ---
 podcast: https://stephanlivera.com/episode/92/
-
-Location: Stephan Livera Podcast
 ## Introduction
 Stephan Livera: Hi and welcome to the Stephan Livera Podcast focused on bitcoin and Austrian economics. Today we are closing out the BTCPayServer series with Britt Kelly. But first let me introduce the sponsors of the podcast. So firstly, checkout Kraken. Over my years in bitcoin I’ve been really impressed with the way they operate. They have a really, really strong focus on security and they have consistently acted ethically in the space. They’re one of the longest standing bitcoin exchanges, they’re consistently rated the best. They have a high quality platform, they offer some of the best liquidity possible in the industry. They’ve got high trading volume and low fees with no minimum or hidden fees. Kraken also have 24/7 support. And on the institutional and business solutions side, they offer the highest available API rate limits. There is also a Kraken OTC desk. Kraken offer a five fee out currencies and they also offer margin and futures trading. To learn more and sign up, go to the Kraken link in the show notes.
 
