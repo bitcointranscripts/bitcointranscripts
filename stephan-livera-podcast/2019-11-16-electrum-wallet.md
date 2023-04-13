@@ -4,15 +4,11 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: [' Thomas Voegtlin']
 date: 2019-11-16
-media: https://stephanlivera.com/episode/125/
----
 media: https://stephanlivera.com/download-episode/1630/125.mp3
+---
+podcast: https://stephanlivera.com/episode/125/
 
-Location: Stephan Livera Podcast
-
-Topic: Thomas Voegtlin – Electrum Wallet: Bitcoin seeds, PSBT, Multi sig, Lightning
-##
- Stephan Livera: Thomas, welcome to the show.
+Stephan Livera: Thomas, welcome to the show.
 
 Thomas Voegtlin: Thank you for having me.
 
