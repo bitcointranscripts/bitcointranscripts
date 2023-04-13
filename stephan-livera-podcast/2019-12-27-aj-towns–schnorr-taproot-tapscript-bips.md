@@ -4,14 +4,10 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['AJ Towns']
 date: 2019-12-27
-media: https://stephanlivera.com/episode/137/
----
 media: https://stephanlivera.com/download-episode/1699/137.mp3
+---
+podcast: https://stephanlivera.com/episode/137/
 
-Location: Stephan Livera Podcast
-
-Topic: AJ Towns – Schnorr Taproot Tapscript BIPs
-##
 Stephan Livera: AJ, welcome to the show.
 
 AJ Towns: Howdy.
