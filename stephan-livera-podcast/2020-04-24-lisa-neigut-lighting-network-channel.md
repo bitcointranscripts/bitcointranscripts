@@ -7,7 +7,9 @@ date: 2020-04-24
 media: https://stephanlivera.com/download-episode/1969/168.mp3
 ---
 podcast: https://stephanlivera.com/episode/168/
+
 ## Introduction
+
 Lisa Neigut of Blockstream joins me to talk about Lightning Network Channels, c-lightning, and Dual Funded Channels. 
 
 
