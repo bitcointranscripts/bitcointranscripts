@@ -2,7 +2,7 @@
 title: v2 P2P Transport Protocol for Bitcoin (BIP324)
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Dhruv, Pieter Wuille and Tim Ruffing']
+speakers: ['Dhruv', 'Pieter Wuille', Tim Ruffing']
 date: 2022-11-13
 media: https://stephanlivera.com/download-episode/5607/433.mp3
 ---
