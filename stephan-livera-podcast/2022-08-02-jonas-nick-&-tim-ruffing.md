@@ -2,7 +2,7 @@
 title: Half Signature Aggregation-What is it and how does it help scale Bitcoin?
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Jonas Nick & Tim Ruffing']
+speakers: ['Jonas Nick', 'Tim Ruffing']
 date: 2022-08-02
 media: https://www.youtube.com/watch?v=sUpITup2igE
 ---
