@@ -7,7 +7,9 @@ date: 2020-05-27
 media: https://www.youtube.com/watch?v=B3wn6JC0aWc
 ---
 podcast: https://stephanlivera.com/episode/177/
+
 ## Transcript:
+
 Stephan Livera:
 
 Welcome, Murch.
