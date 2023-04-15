@@ -1,5 +1,5 @@
 ---
-title: What Bitcoin Specialises
+title: What Bitcoin Specialises in
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Matt Corallo']
