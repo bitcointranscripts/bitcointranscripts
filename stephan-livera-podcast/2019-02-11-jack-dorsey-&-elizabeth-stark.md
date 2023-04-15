@@ -2,7 +2,7 @@
 title: Bitcoin- Native Currency of the Internet
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Jack Dorsey and Elizabeth Stark']
+speakers: ['Jack Dorsey', 'Elizabeth Stark']
 date: 2019-02-11
 media: https://stephanlivera.com/download-episode/975/52.mp3
 ---
