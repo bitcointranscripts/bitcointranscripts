@@ -2,7 +2,7 @@
 title: What’s MuSig2? What Does it Mean for Bitcoin Multisig?
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Jonas Nick and Tim Ruffing']
+speakers: ['Jonas Nick', 'Tim Ruffing']
 tags: ['taproot']
 date: 2020-10-27
 media: https://stephanlivera.com/download-episode/2581/222.mp3
