@@ -2,7 +2,7 @@
 title: RaspiBlitz
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Rootzoll & Openoms']
+speakers: ['Rootzoll', 'Openoms']
 date: 2020-07-21
 media: https://www.youtube.com/watch?v=2GgabBbEYo0
 ---
