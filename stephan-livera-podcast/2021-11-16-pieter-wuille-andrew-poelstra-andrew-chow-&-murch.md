@@ -2,7 +2,7 @@
 title: SLP321 On-chain scaling with Bitcoin Core Developers
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Pieter Wuille,Andrew Poelstra,Andrew Chow & Murch']
+speakers: ['Pieter Wuille', 'Andrew Poelstra', 'Andrew Chow', 'Mark Erhardt']
 date: 2021-11-16
 media: https://stephanlivera.com/download-episode/4089/321.mp3
 ---
