@@ -7,6 +7,7 @@ date: 2020-08-13
 media: https://stephanlivera.com/download-episode/2396/200.mp3
 ---
 podcast: https://stephanlivera.com/episode/200/
+
 ## Transcript
 
 Stephan Livera:
