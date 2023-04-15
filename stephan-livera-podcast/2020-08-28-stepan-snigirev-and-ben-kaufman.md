@@ -2,7 +2,7 @@
 title: Specter Desktop Bitcoin Multi Sig
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Stepan Snigirev and Ben Kaufman']
+speakers: ['Stepan Snigirev', 'Ben Kaufman']
 date: 2020-08-28
 media: https://stephanlivera.com/download-episode/2433/205.mp3
 ---
