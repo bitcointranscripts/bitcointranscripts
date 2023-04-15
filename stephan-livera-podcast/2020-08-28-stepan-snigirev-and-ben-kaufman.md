@@ -7,7 +7,9 @@ date: 2020-08-28
 media: https://stephanlivera.com/download-episode/2433/205.mp3
 ---
 podcast: https://stephanlivera.com/episode/205/
+
 ## Transcript
+
 Stephan Livera:
 
 Stepan and Ben, welcome to the show.
