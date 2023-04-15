@@ -1,5 +1,5 @@
 ---
-title: Casey Rodarmor What are Ordinals?
+title: What are Ordinals?
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Casey Rodarmor']
