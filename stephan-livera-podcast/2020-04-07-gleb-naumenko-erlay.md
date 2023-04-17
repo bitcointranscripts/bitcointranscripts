@@ -8,8 +8,9 @@ media: https://stephanlivera.com/download-episode/1909/164.mp3
 ---
 podcast: https://stephanlivera.com/episode/164/
 
-Gleb Naumenko of Chaincode Labs joins me in this episode to talk about erlay.
 Stephan Livera:
+
+Gleb Naumenko of Chaincode Labs joins me in this episode to talk about erlay.
 
 Gleb. Welcome to the show, mate.
 
