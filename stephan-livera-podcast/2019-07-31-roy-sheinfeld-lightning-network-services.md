@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/1348/94.mp3
 ---
 podcast: https://stephanlivera.com/episode/94/
 
-## Introduction
-
 Stephan Livera: Roy, welcome to the show.
 
 Roy Sheinfeld: Hey Stephan, great to be here.
