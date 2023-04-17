@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/2396/200.mp3
 ---
 podcast: https://stephanlivera.com/episode/200/
 
-## Transcript
-
 Stephan Livera:
 
 Christian welcome back to the show.
