@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/2559/219.mp3
 ---
 podcast: https://stephanlivera.com/episode/219/
 
-## Transcript
-
 Stephan Livera:
 
 Nadav welcome to the show.
