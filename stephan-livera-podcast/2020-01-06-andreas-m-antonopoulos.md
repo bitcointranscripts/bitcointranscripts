@@ -2,7 +2,7 @@
 title: Mastering Lightning & Using BTCPayServer
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Andreas M. Antonopoulos']
+speakers: ['Andreas Antonopoulos']
 date: 2020-01-06
 media: https://stephanlivera.com/download-episode/1707/139.mp3
 ---
