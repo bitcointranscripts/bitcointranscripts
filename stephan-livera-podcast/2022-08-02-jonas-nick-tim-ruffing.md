@@ -7,7 +7,7 @@ date: 2022-08-02
 media: https://www.youtube.com/watch?v=sUpITup2igE
 ---
 podcast: https://stephanlivera.com/episode/400/
-## Transcript
+
 Stephan Livera: Jonas and Tim, welcome back to the show. Great to chat with you guys again. And so we’re gonna chat about half signature aggregation and hear a little bit from you guys about what you’re working on and just get into what that means for Bitcoin. So Jonas, I know you probably will be best to give some background on some of this — I know you did a talk at Adopting Bitcoin in November of last year, so call it 7–8 months ago, talking about some of this at a high level. So do you want to just give us a bit of an overview here? Like, What is signature aggregation?
 
 Jonas Nick [0:46]: Okay, so signature aggregation, as the name kind of suggests, is the process of taking individual signatures — for example: Schnorr signatures — and then produce a single aggregate signature. So you could imagine that Alice signs a check and Bob signs a check. And with a signature aggregation scheme, they could instead have a single signature such that both checks are valid instead of each check having their own signature. And in the realm of digital signatures, the purpose of this is that we reduce the size of the signature data that’s being sent, because now instead of sending two signatures, you’re only sending this single aggregate signature. And depending on what kind of aggregation scheme is being used, the size of the aggregate signature should be either constantly small or a bit larger but at least not as large as all of the individual signatures combined.
