@@ -2,7 +2,7 @@
 title: Electrum Wallet
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Thomas V', 'Ghost43']
+speakers: ['Thomas Voegtlin', 'Ghost43']
 date: 2020-08-09
 media: https://stephanlivera.com/download-episode/2385/199.mp3
 ---
