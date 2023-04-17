@@ -2,7 +2,7 @@
 title: Bitcoin Coin Selection - Managing Large Wallets
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Murch joins']
+speakers: ['Mark Erhardt']
 date: 2020-05-27
 media: https://www.youtube.com/watch?v=B3wn6JC0aWc
 ---
