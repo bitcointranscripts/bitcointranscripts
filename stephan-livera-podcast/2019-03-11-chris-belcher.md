@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/1014/58.mp3
 ---
 podcast: https://stephanlivera.com/episode/58/
 
-## Introduction
-
 Stephan Livera: My guest today is Chris Belcher, Bitcoin privacy O.G. He’s been in the game a long time, and has made great contributions on privacy. He’s involved with JoinMarket, Electrum Personal Server, and most recently he wrote, or rather updated, a fantastic Bitcoin privacy Wiki which you simply must read. Here is my interview with Chris. Chris, welcome to the show.
 
 Chris Belcher: Hello, thanks for having me.
