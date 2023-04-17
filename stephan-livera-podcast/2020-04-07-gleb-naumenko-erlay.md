@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/1909/164.mp3
 ---
 podcast: https://stephanlivera.com/episode/164/
 
-## Introduction
-
 Gleb Naumenko of Chaincode Labs joins me in this episode to talk about erlay.
 Stephan Livera:
 
