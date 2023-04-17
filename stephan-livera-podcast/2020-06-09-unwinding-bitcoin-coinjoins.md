@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/2153/179.mp3
 ---
 podcast: https://stephanlivera.com/episode/179/
 
-## Transcript
-
 Stephan Livera:
 
 Hi Ergo, welcome to the show.
