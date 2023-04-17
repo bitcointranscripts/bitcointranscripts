@@ -8,8 +8,6 @@ media: https://stephanlivera.com/download-episode/1955/167.mp3?ref=download
 ---
 podcast: https://stephanlivera.com/episode/167/
 
-## Introduction
-
 Chris Belcher rejoins me on the show to talk about Bitcoin Surveillance companies, and what risks they present to Bitcoin. We also talk about JoinMarket fidelity bonds. 
 Stephan Livera:
 
