@@ -2,7 +2,7 @@
 title: A New Way to HODL?
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['James O'Beirne']
+speakers: ["James O'Beirne"]
 date: 2023-01-14
 media: https://www.youtube.com/watch?v=Nq6WxJ0PgJ4
 ---
