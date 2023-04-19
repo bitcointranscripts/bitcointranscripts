@@ -4,7 +4,7 @@ transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Chris Belcher']
 date: 2020-04-21
-media: https://stephanlivera.com/download-episode/1955/167.mp3?ref=download
+media: https://stephanlivera.com/download-episode/1955/167.mp3
 ---
 podcast: https://stephanlivera.com/episode/167/
 
