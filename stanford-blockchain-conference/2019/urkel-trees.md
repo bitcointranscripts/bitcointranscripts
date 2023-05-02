@@ -43,7 +43,7 @@ The merkle part of the name arises from the fact that the keys, or the pointer t
 
 Why am I talking about all these other trees instead of urkel trees? We wanted to give some of the thinking about why we looked at these data structures and what we modeled our solution from.
 
-Handshake is a blockchain-based naming system compatible with DNS. The goal is to replace the DNS root zone servers and root files. The root zone namespaces will be issued through open auctions on the blockchain. We want to tie ownership to an UTXO, and embed metadata to that coin, and then users of the network can query the blockchain state to resolve the name queries.
+Handshake is a blockchain-based naming system compatible with DNS. The goal is to replace the DNS root zone servers and root files. The root zone namespaces will be issued through open auctions on the blockchain. We want to tie ownership to a UTXO, and embed metadata to that coin, and then users of the network can query the blockchain state to resolve the name queries.
 
 A lite client is super important in this type of system. There are billions of users on the internet. I bet most of them don't care about storing transactions on the network. Using Handshake should be so easy, it should be a small piece of software that doesn't use much memory or computation. It should be like downloading a chrome extension.
 
