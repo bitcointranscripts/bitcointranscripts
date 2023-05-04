@@ -2,7 +2,6 @@
 title: A Security Focused Bitcoin Node
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['Nix-bitcoindev']
 date: 2020-07-26
 media: https://stephanlivera.com/download-episode/2348/195.mp3
 ---
