@@ -2,7 +2,7 @@
 title: Schnorr Taproot Tapscript BIPs 
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['AJ Towns']
+speakers: ['Anthony Towns']
 date: 2019-12-27
 media: https://stephanlivera.com/download-episode/1699/137.mp3
 ---
