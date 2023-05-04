@@ -1,5 +1,5 @@
 ---
-title: SLP452 Bitcoin Miniscript and what it enables – with Antoine Poinsot & Salvatore Ingala
+title: Bitcoin Miniscript and what it enables
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Antoine Poinsot', 'Salvatore Ingala']
