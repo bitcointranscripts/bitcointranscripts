@@ -2,7 +2,6 @@
 title: Bitcoin multi sig security under $50
 transcript_by: Stephan Livera
 categories: ['podcast']
-speakers: ['SeedSigner']
 date: 2021-08-24
 media: https://www.youtube.com/watch?v=TAEQ2D3Npjc
 ---
