@@ -5,6 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['consenso', 'ux']
 date: 2017-09-07
+aliases: ['/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees.es/']
 ---
 
 ﻿<https://twitter.com/kanzure/status/907075529534328832>

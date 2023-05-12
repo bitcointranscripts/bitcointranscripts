@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['ux', 'lightning', 'schnorr']
 date: 2018-03-05
+aliases: ['/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/']
 ---
 
 <https://twitter.com/kanzure/status/971827042223345664>

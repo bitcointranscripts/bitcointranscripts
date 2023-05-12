@@ -5,6 +5,7 @@ categories: ['core-dev-tech']
 tags: ['wallet']
 speakers: ['Pieter Wuille']
 date: 2018-10-08
+aliases: ['/bitcoin-core-dev-tech/2018-10-08-script-descriptors/']
 ---
 
 <https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md>

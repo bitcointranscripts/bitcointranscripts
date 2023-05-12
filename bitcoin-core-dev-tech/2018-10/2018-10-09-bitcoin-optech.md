@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['lightning', 'segwit']
 date: 2018-10-09
+aliases: ['/bitcoin-core-dev-tech/2018-10-09-bitcoin-optech/']
 ---
 
 <https://twitter.com/kanzure/status/1049527415767101440>

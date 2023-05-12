@@ -3,6 +3,7 @@ title: Mempool Clustering
 categories: ['core-dev-tech']
 tags: ['bitcoin core', 'mempool']
 date: 2023-04-25
+aliases: ['/bitcoin-core-dev-tech/2023-04-25-mempool-clustering/']
 speakers: ['Suhas Daftuar', 'Pieter Wuille']
 ---
 

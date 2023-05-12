@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['security', 'IBD', 'bitcoin core']
 date: 2019-06-07
+aliases: ['/bitcoin-core-dev-tech/2019-06-07-assumeutxo/']
 speakers: ["James O'Beirne"]
 ---
 

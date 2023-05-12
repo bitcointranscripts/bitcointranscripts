@@ -3,6 +3,7 @@ title: Refactors
 categories: ['core-dev-tech']
 tags: ['bitcoin core']
 date: 2023-04-25
+aliases: ['/bitcoin-core-dev-tech/2023-04-25-refactors/']
 speakers: ['Fabian Jahr']
 ---
 

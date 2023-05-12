@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['hashlocks', 'timelocks', 'taproot']
 date: 2018-03-06
+aliases: ['/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/']
 ---
 
 <https://twitter.com/kanzure/status/972468121046061056>

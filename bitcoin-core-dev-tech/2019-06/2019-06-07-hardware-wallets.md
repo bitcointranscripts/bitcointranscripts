@@ -5,6 +5,7 @@ categories: ['core-dev-tech']
 tags: ['hardware wallet', 'wallet']
 speakers: ['Sjors Provoost', 'Jonas Schnelli', 'Andrew Chow']
 date:  2019-06-07
+aliases: ['/bitcoin-core-dev-tech/2019-06-07-hardware-wallets/']
 ---
 
 <https://twitter.com/kanzure/status/1136924010955104257>

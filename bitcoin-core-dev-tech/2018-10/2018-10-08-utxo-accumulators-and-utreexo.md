@@ -5,6 +5,7 @@ categories: ['core-dev-tech']
 tags: ['accumulators']
 speakers: ['Tadge Dryja']
 date: 2018-10-08
+aliases: ['/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/']
 ---
 
 UTXO accumulators, UTXO commitments, and utreexo

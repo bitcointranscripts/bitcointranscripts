@@ -3,6 +3,7 @@ title: Silent Payments
 categories: ['core-dev-tech']
 tags: ['bitcoin core', 'silent payments']
 date: 2023-04-25
+aliases: ['/bitcoin-core-dev-tech/2023-04-26-silent-payments/']
 speakers: ['Josibake', 'Ruben Somsen']
 ---
 

@@ -5,6 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['ux', 'firmas', 'criptografía']
 date: 2018-03-05
+aliases: ['/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps.es/']
 ---
 
 <https://twitter.com/kanzure/status/971827042223345664>

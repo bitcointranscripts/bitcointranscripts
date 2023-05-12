@@ -5,6 +5,7 @@ categories: ['core-dev-tech']
 tags: ['wallet', 'bitcoin core']
 speakers: ['Andrew Chow']
 date: 2019-06-05
+aliases: ['/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/']
 ---
 
 

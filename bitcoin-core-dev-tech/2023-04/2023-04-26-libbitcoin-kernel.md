@@ -3,6 +3,7 @@ title: Libbitcoin kernel
 categories: ['core-dev-tech']
 tags: ['bitcoin core', 'libbitcoin kernel']
 date: 2023-04-26
+aliases: ['/bitcoin-core-dev-tech/2023-04-26-libbitcoin-kernel/']
 speakers: ['thecharlatan']
 ---
 

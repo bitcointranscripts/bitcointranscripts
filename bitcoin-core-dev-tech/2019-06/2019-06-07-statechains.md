@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['ux']
 date: 2019-06-07
+aliases: ['/bitcoin-core-dev-tech/2019-06-07-statechains/']
 speakers: ['Ruben Somsen']
 ---
 

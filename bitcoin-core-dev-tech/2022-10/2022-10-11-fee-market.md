@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['fees', 'bitcoin core']
 date: 2022-10-11
+aliases: ['/bitcoin-core-dev-tech/2022-10-11-fee-market/']
 ---
 
 Fee market

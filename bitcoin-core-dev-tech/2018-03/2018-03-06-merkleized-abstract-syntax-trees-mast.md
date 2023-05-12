@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['taproot', 'covenants', 'validation']
 date: 2018-03-06
+aliases: ['/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/']
 ---
 
 <https://twitter.com/kanzure/status/972120890279432192>

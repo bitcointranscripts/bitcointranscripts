@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['consensus', 'wallet']
 date: 2018-10-09
+aliases: ['/bitcoin-core-dev-tech/2018-10-09-wallet-stuff/']
 ---
 
 

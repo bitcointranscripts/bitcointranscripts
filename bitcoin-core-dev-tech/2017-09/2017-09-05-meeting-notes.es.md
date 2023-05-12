@@ -5,6 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['privacidad']
 date: 2017-09-05
+aliases: ['/bitcoin-core-dev-tech/2017-09-05-meeting-notes.es/']
 ---
 
 coredev.tech septiembre 2017

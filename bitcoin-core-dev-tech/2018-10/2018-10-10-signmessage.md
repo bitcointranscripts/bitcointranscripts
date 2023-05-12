@@ -5,6 +5,7 @@ categories: ['core-dev-tech']
 tags: ['wallet']
 speakers: ['Kalle Alm']
 date: 2018-10-10
+aliases: ['/bitcoin-core-dev-tech/2018-10-10-signmessage/']
 ---
 
 <https://twitter.com/kanzure/status/1049834659306061829>
