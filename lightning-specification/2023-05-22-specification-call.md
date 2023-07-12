@@ -1,5 +1,5 @@
 ---
-title: Lightning Specification Meeting - 2023/05/22
+title: Lightning Specification Meeting - Agenda #1082
 transcript_by: Gurwinder Sahota via TBTBTC v1.0.0
 tags: ['lightning']
 date: 2023-05-22

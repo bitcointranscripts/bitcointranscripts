@@ -1,5 +1,5 @@
 ---
-title: Lightning Specification Meeting - 2023/07/17
+title: Lightning Specification Meeting - Agenda #1094
 transcript_by: Gurwinder Sahota via TBTBTC v1.0.0
 tags: ['lightning']
 date: 2023-07-17

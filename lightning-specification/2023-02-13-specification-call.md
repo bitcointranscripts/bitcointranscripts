@@ -1,5 +1,5 @@
 ---
-title: Lightning specification call 
+title: Lightning specification call - Agenda #1055
 transcript_by: Generated, Human-Verified by Carla Kirk-Cohen
 categories: ['meeting']
 tags: ['lightning']
