@@ -1,5 +1,5 @@
 ---
-title: Lightning specification call - Agenda #1053
+title: Lightning Specification Meeting - Agenda 1053
 transcript_by: Generated
 categories: ['meeting']
 tags: ['lightning']
