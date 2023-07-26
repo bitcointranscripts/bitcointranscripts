@@ -1,5 +1,5 @@
 ---
-title: Lightning specification call - Agenda #969
+title: Lightning Specification Meeting - Agenda 0969
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning']
