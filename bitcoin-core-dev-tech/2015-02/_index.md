@@ -1,5 +1,5 @@
 ---
-title: 2015-02
+title: Bitcoin Core Dev Tech 2015 (February)
 ---
 
 {{< childpages >}}

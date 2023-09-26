@@ -1,5 +1,5 @@
 ---
-title: 2018-10
+title: Bitcoin Core Dev Tech 2018 (October)
 ---
 
 {{< childpages >}}
