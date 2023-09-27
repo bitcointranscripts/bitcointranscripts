@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core Dev Tech 2023 (April)
+title: Bitcoin Core Dev Tech 2023 (Apr)
 ---
 
 {{< childpages >}}

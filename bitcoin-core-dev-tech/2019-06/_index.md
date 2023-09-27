@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core Dev Tech 2019 (June)
+title: Bitcoin Core Dev Tech 2019
 ---
 
 {{< childpages >}}

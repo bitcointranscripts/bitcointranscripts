@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core Dev Tech 2022 (October)
+title: Bitcoin Core Dev Tech 2022
 ---
 
 {{< childpages >}}
