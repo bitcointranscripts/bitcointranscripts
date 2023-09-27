@@ -1,38 +1,33 @@
 ---
-
 title: Lightning Specification Meeting - Agenda 1101
-
 transcript_by: Gurwinder Sahota via TBTBTC v1.0.0
-
 tags: ['lightning']
-
 date: 2023-08-14
-
 ---
 
 Agenda: <https://github.com/lightning/bolts/issues/1101>
 
-Speaker 0: Alright, should we start? I want to talk a quick update on dual funding because I've been working with [Redacted] on cross-compatibility tests between Core Lightning and Eclair, and so far, everything looks good. The only part that has not yet been fully implemented in CLN is the reconnection part — when you disconnect in the middle of the signature exchange. This kind of reconnection is supposed to complete that signature exchange with one new TLV added to channel re-establish. So, I'm just waiting for [Redacted] to finalize that, then I'll be able to do cross-combat test on those two. Once both are compatible, I guess we're gonna probably rework the commits and rebase the PR on top of master, but then it should be ready to go. That will also free up some cleanup on the quiescence and splicing spec PRs, so that we can have the same basis to work on those.
+Speaker 0: Alright, should we start? I want to talk a quick update on dual funding because I've been working with [redacted] on cross-compatibility tests between Core Lightning and Eclair, and so far, everything looks good. The only part that has not yet been fully implemented in CLN is the reconnection part — when you disconnect in the middle of the signature exchange. This kind of reconnection is supposed to complete that signature exchange with one new TLV added to channel re-establish. So, I'm just waiting for [redacted] to finalize that, then I'll be able to do cross-combat test on those two. Once both are compatible, I guess we're gonna probably rework the commits and rebase the PR on top of master, but then it should be ready to go. That will also free up some cleanup on the quiescence and splicing spec PRs, so that we can have the same basis to work on those.
 
 Speaker 1: Cool.
 
 Speaker 2: Cool. We're trying to look at some of the questions and splicing stuff and it was kind of a stack on top of each other. So, decoupling it would definitely make it easier to work through and understand.
 
-Speaker 1: Yeah, [Redacted] isn’t here. So, I actually don't know. Is it further up? There's splicing further up. No?  Anyway, we've shipped an experimental splicing, so people are busy breaking it all over the place right now. So there's this. It's experimental, so they get to keep both pieces when they break it. It turns out one way to test is to do testing in CI. The other way is to just throw it at users, apparently.
+Speaker 1: Yeah, [redacted] isn’t here. So, I actually don't know. Is it further up? There's splicing further up. No?  Anyway, we've shipped an experimental splicing, so people are busy breaking it all over the place right now. So there's this. It's experimental, so they get to keep both pieces when they break it. It turns out one way to test is to do testing in CI. The other way is to just throw it at users, apparently.
 
-Speaker 2: Oh yeah. They'll do all the random shit that you need, basically. 
+Speaker 2: Oh yeah. They'll do all the random shit that you need, basically.
 
-Speaker 1. I know. A little bit more testing would be nice, but they really wanted to make it into this release, so it's labeled experimental, and people can turn it on and keep both pieces. It works in the happy case. It's just all the unhappy cases, where people are discovering force closes and things. Hopefully that will resolve in the next three days before I do the final release. 
+Speaker 1. I know. A little bit more testing would be nice, but they really wanted to make it into this release, so it's labeled experimental, and people can turn it on and keep both pieces. It works in the happy case. It's just all the unhappy cases, where people are discovering force closes and things. Hopefully that will resolve in the next three days before I do the final release.
 
-Speaker 2: Cool. Is there any stuff that should start to come back to this book? I know [Redacted] had that gist of other edge case-y stuff, and I'm guessing now the idea to sort of compile that down into a new text eventually in terms of what actually works a lot or what needs to be changed or whatever.
+Speaker 2: Cool. Is there any stuff that should start to come back to this book? I know [redacted] had that gist of other edge case-y stuff, and I'm guessing now the idea to sort of compile that down into a new text eventually in terms of what actually works a lot or what needs to be changed or whatever.
 
-Speaker 0: Oh yeah. I haven't worked on that at all, but at some point, we were discussing how to represent message exchanges so that we could have test vectors that would be exactly the messages exchanged. It could also be an input for the test at some point, but it's also useful to have something visual, where people can see exactly what messages are exchanged and why this scenario is not working, so that people implementing the feature understand some of the edge cases and details that can happen when some of these messages are out of order or something like that. But I haven't worked on it more. I think I won't have time to work on that in the very short term, but that's definitely something I'll come back to. 
+Speaker 0: Oh yeah. I haven't worked on that at all, but at some point, we were discussing how to represent message exchanges so that we could have test vectors that would be exactly the messages exchanged. It could also be an input for the test at some point, but it's also useful to have something visual, where people can see exactly what messages are exchanged and why this scenario is not working, so that people implementing the feature understand some of the edge cases and details that can happen when some of these messages are out of order or something like that. But I haven't worked on it more. I think I won't have time to work on that in the very short term, but that's definitely something I'll come back to.
 
 Speaker 2: Cool. Yeah, and then the other related things — we started to take a look at the dynamic commitment stuff again. Kind of what we talked about in IC around aligning it, at least, with the message prefix and making sure the message flow meshes as much as possible. That's something we're doing in the background. I haven't started any code or anything. Just refreshing our mental model of the actual PRs, given some nuances if you looked at it last. But I think we'll have anything that comes through either on the questions or the slicing things. I think we also want the STFU for this as well, because otherwise, it's hard to do upgrades. I mean, it's simpler if there's no HTLCs. Obviously, you can upgrade HTLCs, but it's a lot simpler not to.
 
 Speaker 1: Yeah.
 
-Speaker 0: Yeah, great. So, I think in the end, it's just gonna end up being adding more TLVs to these splice messages to just explain what we want to negotiate on top of just creating a new transaction. I think it should be simple enough, but it's going to be to talk about it and to retell it once we have a standard basis for the PR after dual funding is merged. 
+Speaker 0: Yeah, great. So, I think in the end, it's just gonna end up being adding more TLVs to these splice messages to just explain what we want to negotiate on top of just creating a new transaction. I think it should be simple enough, but it's going to be to talk about it and to retell it once we have a standard basis for the PR after dual funding is merged.
 
 Speaker 2: Cool, and the TLVs are mainly for re-establishers, right? So basically, you remember what happened on reconnection type of a thing? For splicing, I guess?
 
@@ -48,11 +43,11 @@ Speaker 0: Oh yeah, I see what you mean. You mean it could be either directly wh
 
 Speaker 2: Oh, that's right. There's a splicing message. Yeah, I'm still a little behind on that stuff, but I did a pretty good core type work step, so now I can start to catch up with the rest of the world.
 
-Speaker 5: Alright. So, I guess that's it for dual funding, pricing, and all those related stuff. So there's that PR by [Redacted] about clarifying optional and mandatory feature bits. I think it's now small enough and good enough.I can merge. You can have a look at it. It's only four lines, I guess, now.
+Speaker 5: Alright. So, I guess that's it for dual funding, pricing, and all those related stuff. So there's that PR by [redacted] about clarifying optional and mandatory feature bits. I think it's now small enough and good enough.I can merge. You can have a look at it. It's only four lines, I guess, now.
 
 Speaker 3: Yeah, I didn't change something that we all already did, right? So we should, It's just a clarification in the spec.
 
-Speaker 2: Yeah. I know you had a question around the wording, [Redacted]. Did that ever get resolved in line, if you're on?
+Speaker 2: Yeah. I know you had a question around the wording, [redacted]. Did that ever get resolved in line, if you're on?
 
 Speaker 4: Yeah, I believe I went over it out of band. Sorry, I did not put it back on the review.
 
@@ -62,7 +57,7 @@ Speaker 3: I think maybe we are here. We can discuss the wording. The suggestion
 
 Speaker 2: Is the rationale that it doesn't say what you should do if they said it or…? Because must, I think they're saying that must should be. Must is: You're gonna bail out. While should is: They shouldn't do it, but also you shouldn't care. Or I think that was like describing…
 
-Speaker 1: …dumb shit is pretty obvious. I don't know. I mean, I'm happy with a must like don't do this, and what are you doing? Like, seriously? It's weird. We never specified it. Like, it was said to do this or do this. We never said you could do that. If people do it, I'm not sure how people respond, but I know I find it hard to care about these cases. It's like: Well, if someone says both options, then they're just confused. If you go to weird stuff — I know it's not a bad thing to specify — don't set both. Just don't. We haven't defined that. You don't know what people will do. Don't do it. I mean, most implementations will go test: Do I have mandatory? Is this required? Yes, and they'll behave appropriately. I think our code, we don't explicitly reject you if you set both, but we will treat it as mandatory. We basically go: We understand it, we go, is either one set, we don't care. I think everyone will actually behave how this behaves. 
+Speaker 1: …dumb shit is pretty obvious. I don't know. I mean, I'm happy with a must like don't do this, and what are you doing? Like, seriously? It's weird. We never specified it. Like, it was said to do this or do this. We never said you could do that. If people do it, I'm not sure how people respond, but I know I find it hard to care about these cases. It's like: Well, if someone says both options, then they're just confused. If you go to weird stuff — I know it's not a bad thing to specify — don't set both. Just don't. We haven't defined that. You don't know what people will do. Don't do it. I mean, most implementations will go test: Do I have mandatory? Is this required? Yes, and they'll behave appropriately. I think our code, we don't explicitly reject you if you set both, but we will treat it as mandatory. We basically go: We understand it, we go, is either one set, we don't care. I think everyone will actually behave how this behaves.
 
 Speaker 3: Yeah, I think we'll do that. I just would tell him that that's his thing. He takes the mandatory one. I guess LDK: Reject if we specify the optional one. No, LDK, do the same thing, I guess.
 
@@ -80,9 +75,9 @@ Speaker 2: So, cool. Yeah, we can do that for 18. We're also on the cusp of gett
 
 Speaker 1: That'd be cool.
 
-Speaker 2: Not yet in the RC phase, but hopefully this week, finger crossed. Cool. Okay. Next thing. 
+Speaker 2: Not yet in the RC phase, but hopefully this week, finger crossed. Cool. Okay. Next thing.
 
-Speaker 0: Mutual close. 
+Speaker 0: Mutual close.
 
 Speaker 2: Oh, so should we merge 1095?
 
@@ -154,11 +149,11 @@ Speaker 0: The kernel ID is a long-term identifier, whereas short-channel IDs ar
 
 Speaker 1: Yeah it basically depends on the expiry of the offer, right?
 
-Speaker 5: Right? It's equally painful. But if you're talking about offers, the vast majority of payments in general tend to be these shorter term things that people post that might be a side effect of both love and sucking and requiring that, but that will still be enough material number of payments, and for those this may be particularly useful because you can have a much smaller QR code. But	 I mean it is the case that if you want to build a very long term offer, you probably wouldn't use this. Still, this is just an option, right? You can go still.
+Speaker 5: Right? It's equally painful. But if you're talking about offers, the vast majority of payments in general tend to be these shorter term things that people post that might be a side effect of both love and sucking and requiring that, but that will still be enough material number of payments, and for those this may be particularly useful because you can have a much smaller QR code. But, I mean it is the case that if you want to build a very long term offer, you probably wouldn't use this. Still, this is just an option, right? You can go still.
 
 Speaker 2: So, okay. So, it's not mandatory. It's just like adding a TLV to let you do the other works.
 
-Speaker 0: Yeah. Basically, the implementation could decide when you generate an offer. With a long expiration, we would just wait for you and we've another ID; and if you have a short expiration, we would use a SCID. 
+Speaker 0: Yeah. Basically, the implementation could decide when you generate an offer. With a long expiration, we would just wait for you and we've another ID; and if you have a short expiration, we would use a SCID.
 
 Speaker 5: Potentially, yeah.
 
@@ -172,21 +167,21 @@ Speaker 1: Okay, cool. It's weird because it's a new fundamental type because yo
 
 Speaker 0: It's interesting because it's extensible. That means it's going to be another idea that the binary is either 0 or 1 plus short channel ID, or 2 or 3 plus a 32 byte pubkey, or 4 or 5 plus something else in the future. So, it's interesting.
 
-Speaker 1: Yeah. Adding another extension point feels like a hack, but I don't know. There are a number of places where it's like short channel ID or pubkey. 
+Speaker 1: Yeah. Adding another extension point feels like a hack, but I don't know. There are a number of places where it's like short channel ID or pubkey.
 
-Speaker 5: Does anyone use open SSL to read pubkeys? Those are already defined. 
+Speaker 5: Does anyone use open SSL to read pubkeys? Those are already defined.
 
-Speaker 1: Oh God, I hope not. 
+Speaker 1: Oh God, I hope not.
 
 Speaker 5: They are. No, no, there's a definition for like, one, two, three, four, and five or something.
 
-Speaker 2: Oh, yeah, there are prefixes. Yeah, and there's a hybrid also. 
+Speaker 2: Oh, yeah, there are prefixes. Yeah, and there's a hybrid also.
 
 Speaker 5: Yeah, they're really bad. Don't use them. But they exist. They're defined. Yep.
 
-Speaker 2: Is that a PR, [Redacted]? 
+Speaker 2: Is that a PR, [redacted]?
 
-Speaker 7: No, I'm working on a blinded payment path construction for LDK. Basically how our API works is, it takes a list of the unblinded payloads that are going to go in the blinded path, and so those payloads can contain stuff like payment relay, fee parameters, and payment constraints. Then from those payloads, I construct the blinded pay info that's going to go in the offer. But the only field that I can't really construct from that is the HTLC maximum msat because that's not included in the blinded payment TLVs for the blinded path. So, I'm just wondering if we plan to add that or if I should— how are people setting this? I don't know, [Redacted], does that make sense?
+Speaker 7: No, I'm working on a blinded payment path construction for LDK. Basically how our API works is, it takes a list of the unblinded payloads that are going to go in the blinded path, and so those payloads can contain stuff like payment relay, fee parameters, and payment constraints. Then from those payloads, I construct the blinded pay info that's going to go in the offer. But the only field that I can't really construct from that is the HTLC maximum msat because that's not included in the blinded payment TLVs for the blinded path. So, I'm just wondering if we plan to add that or if I should— how are people setting this? I don't know, [redacted], does that make sense?
 
 Speaker 0: On top of my head, no. I really, that's something where I really need to dive deep into the code actually to make sure. Can you just put that in writing somewhere, so that we can look at it calmly tomorrow?
 
@@ -200,9 +195,9 @@ Speaker 2: Cool. Okay. Quiescence. I think this just bumped because we were look
 
 Speaker 0: Yeah, I don't think there's anything new. I think we finished implementing a quiescence and master stuff — like one that we haven't tested cross compatibility with CLN yet. We're finalizing the last bits of splicing before we do those compatibility tests. I don't think there's anything new in the PR at least.
 
-Speaker 1: The only interesting thing is that the feature bit changed. So. we kind of decided, [Redacted] pinged me after we released RC1 with a really good idea that we shouldn't use the final feature bit until it's spec final. So, we've added a 100. So, instead of 63, we're using 163 just as a rough convention to go. That way, if nothing changes and we spec final it and it gets a real feature bit, you can just advertise both in transition. But if something changes, you don't end up with someone shipping the final one, and they're getting these weird interop errors, because: Oh, no, we're running our experimental version, whatever. So, it's kind of a cute convention just to add 100 for things that are in progress, especially if you're deploying them. To add 100, so that we've got this, you're not going to break people who implement the final one: I wonder why the fuck nothing works. So, we've just temporarily flipped to bit 163. If people turn that on for a current release, and I think there's probably a good convention for anything like this, where the spec is not completely final, that just add 100. Because we had this problem with dual funding where we broke it multiple times. Then, if someone implemented final dual funding, they would get really confused because it would try to negotiate with old nodes.
+Speaker 1: The only interesting thing is that the feature bit changed. So. we kind of decided, [redacted] pinged me after we released RC1 with a really good idea that we shouldn't use the final feature bit until it's spec final. So, we've added a 100. So, instead of 63, we're using 163 just as a rough convention to go. That way, if nothing changes and we spec final it and it gets a real feature bit, you can just advertise both in transition. But if something changes, you don't end up with someone shipping the final one, and they're getting these weird interop errors, because: Oh, no, we're running our experimental version, whatever. So, it's kind of a cute convention just to add 100 for things that are in progress, especially if you're deploying them. To add 100, so that we've got this, you're not going to break people who implement the final one: I wonder why the fuck nothing works. So, we've just temporarily flipped to bit 163. If people turn that on for a current release, and I think there's probably a good convention for anything like this, where the spec is not completely final, that just add 100. Because we had this problem with dual funding where we broke it multiple times. Then, if someone implemented final dual funding, they would get really confused because it would try to negotiate with old nodes.
 
-Speaker 2: Yeah. That makes sense. Like staging. 
+Speaker 2: Yeah. That makes sense. Like staging.
 
 Speaker 0: We have a lot of bugs on our node. When we started activating the opening feature bit and having a lot of old CLN node connecting and saying that another feature bit was required, whereas it was not, and we would break the connection with a lot of old CLN nodes.
 
@@ -214,7 +209,7 @@ Speaker 1: There's a contributing document that we should probably — It says h
 
 Speaker 2: Splicing. I think we kind of talked about it earlier as far as breaking stuff. Getting better. You're breaking stuff better.
 
-Speaker 0: Slowly moving along. Nothing major to report. We want one thing — we discussed today with [Redacted] — it's not clear in the spec, but if you have a pending splice that's not confirmed: Do you allow another splice to be added as a child or do you force the other peer to RBF the pending splice if they want to make more contributions? I think it would make sense to always force RBFing when splices are unconfirmed because it's more efficient, but the spec doesn't say anything about it, and I don't know if the implementation does anything about that.
+Speaker 0: Slowly moving along. Nothing major to report. We want one thing — we discussed today with [redacted] — it's not clear in the spec, but if you have a pending splice that's not confirmed: Do you allow another splice to be added as a child or do you force the other peer to RBF the pending splice if they want to make more contributions? I think it would make sense to always force RBFing when splices are unconfirmed because it's more efficient, but the spec doesn't say anything about it, and I don't know if the implementation does anything about that.
 
 Speaker 1: Yeah, no, because when one of the splices is confirmed, you assume it cancels all the others. So, it's kind of implied they're at the same level. So, they're all competing against each other. Otherwise, you have to start introducing dependency trees and stuff and that's just messy.
 
@@ -222,11 +217,11 @@ Speaker 2: Yeah, it's more challenging.
 
 Speaker 0: If you have a binning splice that's not confirmed and they send you splicing it, what are you gonna respond? Tx abort?
 
-Speaker 1: I would have to check the code, but you can have multiple inputs. You can propose multiple, I believe. 
+Speaker 1: I would have to check the code, but you can have multiple inputs. You can propose multiple, I believe.
 
 Speaker 0: But it should use TX init RBF then, right? Because it's an RBF of the first one, it's more explicit to say TX init RBF instead of placing it again, right? Because for example, for zero-conf, then you don't really have a choice. And for zero-conf, you potentially must, yeah, you actually must chain those either instead of RBFing them. So, that's why there's a distinction between a new splice init on top of an unconfirmed splice or TX init RBF for the splice. But for non-zero conf, I think we should always RBF.
 
-Speaker 1: Yes, I think so. But I may not have to check with [Redacted] as to what their interpretation is.
+Speaker 1: Yes, I think so. But I may not have to check with [redacted] as to what their interpretation is.
 
 Speaker 2: Cool. Taproot. So, I said I was going to have the spec thing draft by the next time. That happened, fortunately. But I have gained a lot more wisdom on on-chain stuff, generally. So, I think a big thing I want to do is expand the on-chain section, which is HTLCs, breaches, et cetera. The main thing that I was fixing in the past was just the additional data that needs to be stored or just regenerated. So, for everything, you have the control box, but then for all the replication paths, you also need to store the top tweaks of the second and first level for HTLCs. That's because they can breed, and then you have to basically use the top two to do the keyspend or they can go to the second level as well. And that was one thing that I hadn't stored, but then some itests basically showed just certain bugs there. So I've been on the on-chain stuff, I guess, for the past month or so. I think I finally concluded it last night as far as getting all the itests working. This is the only thing that, I think, I had to do for, but I didn't follow up on just as far as storing that extra information. I think, technically, for the second level of HTLCs, because it uses the same key — this is just the sweep after delay — I think you can just either regenerate it or only store one of them. But right now, I store one for every single HTLC. Now, all the HTLCs have these two levels alongside of it — or sorry, these values, rather. But other than that, I think our implementation is more or less complete now in terms of all the on-chain stuff, all the breach stuff, some things with co-op close, re-establish, all that stuff. So now, I'm going to start to work to get that wisdom back into the spec, and then ideally also add some basic test vectors around transaction construction, things like that as well.
 
@@ -238,11 +233,11 @@ Speaker 2: For some definition of solved.
 
 Speaker 5 Well, I mean, that's the obvious solution. No one has anything better, and that certainly works very well. Obviously works.
 
-Speaker 8: Were the 10 round trips, [Redacted]? Sorry, is that what they said to you?
+Speaker 8: Were the 10 round trips, [redacted]? Sorry, is that what they said to you?
 
 Speaker 5: No, there's no 10 round trips. You just have 10 of the revocation hash tree things.
 
-Speaker 2: I think [Redacted] means in the wild if you actually had 10 signers, but I guess you would have some decomposition amongst the signers who has what value or something like that?
+Speaker 2: I think [redacted] means in the wild if you actually had 10 signers, but I guess you would have some decomposition amongst the signers who has what value or something like that?
 
 Speaker 5: Ohh, you wouldn't need 10 individual round trips. You would need 10 round trips, but they all run in parallel. Or however many signers you have, of course.
 
@@ -250,11 +245,11 @@ Speaker 1: Yeah, someone should actually write down the calculations showing the
 
 Speaker 8: I thought it was your proposal at the summit, unless I'm confusing it with the APA.
 
-Speaker 1: No, no, it was mine. I hated it, but [Redacted] improved it, and now I'm liking it more. It's dumb, and sometimes dumb things nobody can fuck this up. Well, okay, so sorry. Of course, they can.
+Speaker 1: No, no, it was mine. I hated it, but [redacted] improved it, and now I'm liking it more. It's dumb, and sometimes dumb things nobody can fuck this up. Well, okay, so sorry. Of course, they can.
 
-Speaker 8: Okay, cool. 
+Speaker 8: Okay, cool.
 
-Speaker 1: But the question was the number, and I think [Redacted] had some evidence that like to do three of five I think we need ten or something.
+Speaker 1: But the question was the number, and I think [redacted] had some evidence that like to do three of five I think we need ten or something.
 
 Speaker 5: Three of five and four of five — I think both need ten. And then, if you want five of six or six of seven or anything like that, you need like 30 or so, you need like way more, and suddenly it's kind of, yeah.
 
@@ -266,7 +261,7 @@ Speaker 5: That is separate and that is still true.
 
 Speaker 2: But were you gonna get into something around the FROST MuSIG2 thing or something, or around the proof?
 
-Speaker 8: Yeah, I was going to say that — up until two minutes ago, my thinking was that with the bigger complication still being their vocation, which I guess isn't the case. At least, I want to see a write-up, which I'll do tomorrow with [Redacted]. I was thinking that it doesn't really make sense to not do nonces because we have this more difficult barrier anyway. So, I was going to advocate that we proceed on course.
+Speaker 8: Yeah, I was going to say that — up until two minutes ago, my thinking was that with the bigger complication still being their vocation, which I guess isn't the case. At least, I want to see a write-up, which I'll do tomorrow with [redacted]. I was thinking that it doesn't really make sense to not do nonces because we have this more difficult barrier anyway. So, I was going to advocate that we proceed on course.
 
 Speaker 5: So, I just pasted it on IRC. I guess I'll copy it on matrix and put it separate. But that's if you have 10 non-shares, and you have five things, and you split up the non-shares as indicated, then that gets you three of five.
 
@@ -280,7 +275,7 @@ Speaker 5: If you have 10 revocation shares and you split them up as follows, an
 
 Speaker 2: Cool. I think one interesting thing around... Oh, go ahead.
 
-Speaker 5: I was going to say that we did neg this. So, last week, we'd kind of gotten not very far in the discussion, and then somebody said: Hey, what about — have we asked the VLS folks? We did go ask the VLS folks. Sadly, I don't know if [Redacted]’s here, but [Redacted] said this morning that they were having some technical issues and travel issues, so wasn't gonna be able to make it this week, but they did paste — well, I can leave it to you, [Redacted]. But they did post on the spec meeting thing, saying basically, the explicit script pack thing would be much simpler.
+Speaker 5: I was going to say that we did neg this. So, last week, we'd kind of gotten not very far in the discussion, and then somebody said: Hey, what about — have we asked the VLS folks? We did go ask the VLS folks. Sadly, I don't know if [redacted]’s here, but [redacted] said this morning that they were having some technical issues and travel issues, so wasn't gonna be able to make it this week, but they did paste — well, I can leave it to you, [redacted]. But they did post on the spec meeting thing, saying basically, the explicit script pack thing would be much simpler.
 
 Speaker 1: Right. What he said.
 
@@ -288,7 +283,7 @@ Speaker 8: He also said it would probably be computationally cheaper on some low
 
 Speaker 2: You still have number one, the difference in on-chain costs, which is more than double a witness size. And the other thing, this is simpler, but have they done the FROST stuff in the VLS setting as well? That's the main motivating factor we've been going in that direction. Should someone get that far before we double the force close cost for everybody to make potentially small use case in terms of no reviews are actually possible?
 
-Speaker 9: I think we should defer to [Redacted] for the details there, but I don't think we're adamant about it. It's just that it seems simpler is what they’re saying.
+Speaker 9: I think we should defer to [redacted] for the details there, but I don't think we're adamant about it. It's just that it seems simpler is what they’re saying.
 
 Speaker 2: Yeah, probably so. I spent most of my time on the on-chain stuff, and maybe this is my recency bias of this is the last thing I worked on compared to this is the earlier thing. But, at least, our code base, which is updating assumptions of: Okay, you need a control block. You need a tab tweak. This thing is slightly different. Are you doing a key spend or a key — that was kind of dominating a lot of our review cycle, but granted that I did do the non-stuff a lot earlier on the process. This was kind of like: Okay, like get into that stuff. But that's just like at least one data point at least where I happen to spend a significant time, but you know, somewhat skewed.
 
@@ -302,11 +297,11 @@ Speaker 2: You can delete.
 
 Speaker 5: Yeah, I mean, I remain not sure where to go with this. The FROST stuff seems doable enough. There is an implementation somewhere, right? It's not just a theory thing, not in the Lightning context, but there is outside of Lightning.
 
-Speaker 2: I think there are a few, I know like [Redacted] has been working on stuff. They have some hard hardware wallet thingy. I think they're out there. I'm not sure if they're used ‘seriously’ yet, beyond like a demo or something like that.
+Speaker 2: I think there are a few, I know like [redacted] has been working on stuff. They have some hard hardware wallet thingy. I think they're out there. I'm not sure if they're used ‘seriously’ yet, beyond like a demo or something like that.
 
 Speaker 5: So that doesn't seem that far away, and it seems worth considering that. I mean we do have to take a kind of holistic decision here: Do we want Taproot to look like multisig for all counterparties? Or do we want Taproot to look different for a multisig counterparty versus not? I mean, at least, as the crypto exists right now, I would guess that means it has to be two of two multi-sig and it has to be this — let's call it 10 revocation secrets XORed together. So, I mean we have to decide. I think that's the decision. I think the decision is: Always looks like multisig or doesn't always look like multisig and has a separate feature bit for multi-sig.
 
-Speaker 8: [Redacted], can you explain what your hesitation is? You said the crypto right now looks that you know there should be an explicit do of two multi-sig. That's not really the message that I've gotten from [Redacted], but maybe I'm mixing it up.
+Speaker 8: [redacted], can you explain what your hesitation is? You said the crypto right now looks that you know there should be an explicit do of two multi-sig. That's not really the message that I've gotten from [redacted], but maybe I'm mixing it up.
 
 Speaker 5: I mean, there's no proof. From what I've heard, there's not a lot of confidence in how to prove. It's not like there's no like approach for how to prove nested MuSIG or FROSTed MuSIG yet. So, I don't think we can make any kind of assumptions based on that yet.
 
@@ -318,7 +313,7 @@ Speaker 2: Yeah, but if it's possible — meaning that you can't even verify som
 
 Speaker 8: It doesn't really seem to be the case because you know you're describing it from a third-party observer, but you know the participants know more. One of the critical assumptions that you also don't think private key material to the participants, and so if there's something where nonce nesting would reveal something to your other participants that not nesting it wouldn't, I think that that might potentially expose you to vulnerabilities, where you, at the very least, would lose the threshold signature property even though externally it still looks perfectly sound.
 
-Speaker 5: Yeah, it seems to me like that would just imply that you can steal your counterparty's money, but not the other way around. Otherwise, presumably, MuSIG2 itself would be not sound in some very material way. 
+Speaker 5: Yeah, it seems to me like that would just imply that you can steal your counterparty's money, but not the other way around. Otherwise, presumably, MuSIG2 itself would be not sound in some very material way.
 
 Speaker 2: I think that's where I'm getting at, right? That like — I send you a key, but that could be a nested instance.
 
@@ -328,7 +323,7 @@ Speaker 2: I'm in the separate feature bit camp just because it feels like it's 
 
 Speaker 8: Then, you're leaking though that you're likely trying to do a multi-sig setup.
 
-Speaker 2: Yeah, I don't know. In theory, I can deduce that, maybe just from your latency or something. I don't know. Right? But the thing is, the whole point of this initially was not leaking it, right? Okay, well I could be five nodes and you don't really know, right? 
+Speaker 2: Yeah, I don't know. In theory, I can deduce that, maybe just from your latency or something. I don't know. Right? But the thing is, the whole point of this initially was not leaking it, right? Okay, well I could be five nodes and you don't really know, right?
 
 Speaker 8: Yeah, and of course with the unilateral close, you're still leaking the fact that it was one.
 
@@ -338,19 +333,19 @@ Speaker 2: And the other thing as well — as I mentioned earlier, you have more
 
 Speaker 9: I don't think it changes our storage requirements massively. So significantly. Massively, so significantly.
 
-Speaker 5: Any opinions from [Redacted] or [Redacted]?
+Speaker 5: Any opinions from [redacted] or [redacted]?
 
 Speaker 1: No, I'm staying out for brighter people to decide what we should do, and then I'm going to follow.
 
 Speaker 8: Same.
 
-Speaker 1: Alright. [Redacted] likes nonsense. I like nonsense.
+Speaker 1: Alright. [redacted] likes nonsense. I like nonsense.
 
 Speaker 8: No nonsense nonsense.
 
 Speaker 5: Alright, I mean, this seems fine to me. I think it does mean that we're going to end up with a taproot-multisig-feature flag that will have different on-chain format and different everything, and presumably that means everyone needs to support both because people are going to want to run it.
 
-Speaker 8: I think we have a bit of incomplete information right now, [Redacted]. And based on the majority of — I mean, I really agree with [Redacted reasoning here. The majority of the use case with the lack of Frost implementations seems like the best thing for the ecosystem at the moment is probably just to go with the process. 
+Speaker 8: I think we have a bit of incomplete information right now, [redacted]. And based on the majority of — I mean, I really agree with [redacted] reasoning here. The majority of the use case with the lack of Frost implementations seems like the best thing for the ecosystem at the moment is probably just to go with the process.
 
 Speaker 5: People will eventually support FROST obviously. Like FROST is a straightforward-ish thing to build, and people will use that for lightning nodes. I think that's clear.
 
@@ -360,7 +355,7 @@ Speaker 5: Well, I mean, that has a much more indeterminate timeline in terms of
 
 Speaker 1: No, what we do is we use LND as a forcing function. If you want to talk to LND, you've got to write a nested MuSIG proof.
 
-Speaker 2: If you do that, you'll get a job from one of us. Oh yeah, we'd be happy to pay for that. One question related to something [Redacted] brought up around the plus 100 as a convention for like pending stuff, right? So, for example, ideally by this week, we'll have merged something in, and that something will be available with a build tag or a flag or whatever else. It feels like it makes sense that we should advertise the plus 100 feature bit for this. I don't know exactly what bit we have in the spec, but that just seems to be the thing to do going forward now, and we can do that pretty easily on our end.
+Speaker 2: If you do that, you'll get a job from one of us. Oh yeah, we'd be happy to pay for that. One question related to something [redacted] brought up around the plus 100 as a convention for like pending stuff, right? So, for example, ideally by this week, we'll have merged something in, and that something will be available with a build tag or a flag or whatever else. It feels like it makes sense that we should advertise the plus 100 feature bit for this. I don't know exactly what bit we have in the spec, but that just seems to be the thing to do going forward now, and we can do that pretty easily on our end.
 
 Speaker 5: Yep.
 
@@ -368,9 +363,9 @@ Speaker 2: Cool. Okay, we'll do that. Because we have something but you know, wi
 
 Speaker 5: Okay, Just to be clear, all of y'all will implement the non-nonce version eventually when people have demand for it?
 
-Speaker 2: Yeah. Whenever it's written out, whatever. 
+Speaker 2: Yeah. Whenever it's written out, whatever.
 
-Speaker 5: Which might be three years. I don't know. 
+Speaker 5: Which might be three years. I don't know.
 
 Speaker 2: Yeah, right. And then, that'll just be the other channel type or whatever. Then, at least with that, the latter half stays the same, assuming everything else.
 
@@ -378,15 +373,15 @@ Speaker 5: Cool.
 
 Speaker 8: What's next — CLTVX Fiery?
 
-Speaker 2: Yeah, I don't think there's any updates on Gossip yet. I need to sync up with [Redacted] on that and she's not here yet either. So check that.
+Speaker 2: Yeah, I don't think there's any updates on Gossip yet. I need to sync up with [redacted] on that and she's not here yet either. So check that.
 
-Speaker 1: Yeah. Oh, so on the Gossip 2.0, like the extension that I promised [Redacted], I have a trick for short channel IDs. So, the thing is that if you stop proving your UTXOs, you lose globally unique short channel IDs, but there's a trick where you can use the numbers beyond the block limit. If you've got say, rounded up 4k transactions in a block, then you can use a short channel ID. So you see you prove this UTXO, and then you use UTXO plus, as if it's transaction plus 4K, or 8K, or 16K, whatever, you end up with about 10 bits worth. Those are basically shadow SCIDs. So, if you ever see one of those, it doesn't come with a proof, but you know where to find the proof, right? You're basically saying it's linked to this other one, right? So you can figure out what the master short channel ID is; go find that channel and check that that's valid and everything; and then you can accept the kind of shadow short channel IDs. That gives you a pile of bits. And all you have to remember is how many transactions in each block, or actually how many bits worth of transactions in each block.
+Speaker 1: Yeah. Oh, so on the Gossip 2.0, like the extension that I promised [redacted], I have a trick for short channel IDs. So, the thing is that if you stop proving your UTXOs, you lose globally unique short channel IDs, but there's a trick where you can use the numbers beyond the block limit. If you've got say, rounded up 4k transactions in a block, then you can use a short channel ID. So you see you prove this UTXO, and then you use UTXO plus, as if it's transaction plus 4K, or 8K, or 16K, whatever, you end up with about 10 bits worth. Those are basically shadow SCIDs. So, if you ever see one of those, it doesn't come with a proof, but you know where to find the proof, right? You're basically saying it's linked to this other one, right? So you can figure out what the master short channel ID is; go find that channel and check that that's valid and everything; and then you can accept the kind of shadow short channel IDs. That gives you a pile of bits. And all you have to remember is how many transactions in each block, or actually how many bits worth of transactions in each block.
 
 Speaker 5: Can you — I mean, the annoying part is many nodes don't have the full block data, so you don't know how many transactions were in the block. Can we just hard code that?
 
 Speaker 1: You can guess. The thing is…
 
-Speaker 0: It sounds like we're about to create ordinals. It sounds like [Redacted] wants lightning ordinals.
+Speaker 0: It sounds like we're about to create ordinals. It sounds like [redacted] wants lightning ordinals.
 
 Speaker 1: Short channel IDs are ordinals, right?
 
@@ -406,25 +401,25 @@ Speaker 5: Yeah.
 
 Speaker 1: Cool. Two bits, because you may want, depending on what your factor is, right? But yeah, a handful of bits. Yeah, cool. So that was the only new trick.
 
-Speaker 2: Cool. The CLTV thing, we're bumping up towards the end also. I think we know the values everyone has. Everyone seems to have the same value. I think this thing advocated doubling it. We said we don't need to double it, and I think it looks okay. 
+Speaker 2: Cool. The CLTV thing, we're bumping up towards the end also. I think we know the values everyone has. Everyone seems to have the same value. I think this thing advocated doubling it. We said we don't need to double it, and I think it looks okay.
 
 Speaker 5: It needs to be updated, the PR, to not double it?
 
-Speaker 2: Yep, it's updated to not double it. It has a rebase conflict artifact in it. That's the only thing I see at a glance. Okay. Errors. [Redacted] isn't here. I don't think there's much new here. Looks like we have ACINQ. ACINQ has an implementation too, which is cool. I think there's a feature bit conflict as well, which we should make sure is resolved. Yeah, this isn't in the next LND release, so we got time. Dust thing, I think this was finally updated. This is 919.
+Speaker 2: Yep, it's updated to not double it. It has a rebase conflict artifact in it. That's the only thing I see at a glance. Okay. Errors. [redacted] isn't here. I don't think there's much new here. Looks like we have ACINQ. ACINQ has an implementation too, which is cool. I think there's a feature bit conflict as well, which we should make sure is resolved. Yeah, this isn't in the next LND release, so we got time. Dust thing, I think this was finally updated. This is 919.
 
 Speaker 0: Now, we have two acts, and it looks like it was separated from the rest of — It's looking good.
 
-Speaker 2: Yep, okay. So is this ready to get in? I think on our team, [Redacted] looked at it last. It’s very old also. 
+Speaker 2: Yep, okay. So is this ready to get in? I think on our team, [redacted] looked at it last. It’s very old also.
 
 Speaker 0: Okay, I'm looking at it again to see if anything changed, but it looks like it's looking good. Yeah, here's what I remember. Yeah, I'm gonna actually do it.
 
-Speaker 2: Alright, so I'll pass the merge baton to you, [Redacted].
+Speaker 2: Alright, so I'll pass the merge baton to you, [redacted].
 
 Speaker 0: Okay.
 
 Speaker 2: I think we all do this in some form. I think it's good to, for posterity, catalog it somewhere, but...
 
-Speaker 0: How old is that PR? October 4th, 2021. 
+Speaker 0: How old is that PR? October 4th, 2021.
 
 Speaker 2: Yeah, that's pretty old.
 
@@ -436,7 +431,7 @@ Speaker 1: It needs to age a little bit, you know.
 
 Speaker 2: Yeah, we can put it back in the barrel.
 
-Speaker 2: Cool. Check. Can already establish this is my very long term homework for [Redacted] that I haven't followed through on yet. I'm almost done with my taproot saga, so now I can go back up right here and check this out actually. Cool. I guess anything else in the final round here?
+Speaker 2: Cool. Check. Can already establish this is my very long term homework for [redacted] that I haven't followed through on yet. I'm almost done with my taproot saga, so now I can go back up right here and check this out actually. Cool. I guess anything else in the final round here?
 
 Speaker 1: We did skip over offers, but I did do test vectors for offers, which is always a pain to write because you got to write all the ones that are invalid, and they're really friggin hard to generate. But I did put those up. I also should really do invoice requests and invoices like the same thing. Here's all the valid ones. Here's all the fields. Here's all the invalid ones. So, there probably will be a couple more PRs, but there were no surprises in implementing it. It's just a fairness thing, right?
 
@@ -463,4 +458,3 @@ Speaker 1: Cool.
 Speaker 2: Thanks, y'all. Cheers.
 
 Speaker 1: Thank you.
-
