@@ -7,13 +7,13 @@ date: 2023-08-28
 
 Agenda: <https://github.com/lightning/bolts/issues/1103>
 
-Speaker 0: I don't think I've seen any discussion happening on any of the PRs and they all last from the last time. So, I don't think we should go and have them in order, except maybe the first one that we may want to just finalize and get something into the spec to say that it should be 2016 everywhere. But, as [Redacted] was saying, can probably make it a one-liner and it would be easier. 
+Speaker 0: I don't think I've seen any discussion happening on any of the PRs. So, I don't think we should go and have them in order, except maybe the first one that we may want to just finalize and get something into the spec to say that it should be 2016 everywhere. But, as [redacted] was saying, can probably make it a one-liner and it would be easier.
 
-Speaker 1: Please. 
+Speaker 1: Please.
 
-Speaker 0: Okay, so let's just make that feedback, and wait for [Redacted] to transform this into a one-liner. One other thing that I've seen a lot of discussions on is related to simplified commitment. We had a bug; there was an issue. I'm going to link that issue right now for a force close that happened between an Eclair node and an LND node, but then also happened between two LND nodes. This is a case where actually without simplified commitment, we don't have a choice because people on both sides can asynchronously be adding HTLCs, we can end up just getting into the remote reserve and having to force close because the reserve is not met. There's just no way to avoid that situation with current protocols. So maybe that's a good argument for working on simplified commitments at some point.
+Speaker 0: Okay, so let's just make that feedback, and wait for [redacted] to transform this into a one-liner. One other thing that I've seen a lot of discussions on is related to simplified commitment. We had a bug; there was an issue. I'm going to link that issue right now for a force close that happened between an Eclair node and an LND node, but then also happened between two LND nodes. This is a case where actually without simplified commitment, we don't have a choice because people on both sides can asynchronously be adding HTLCs, we can end up just getting into the remote reserve and having to force close because the reserve is not met. There's just no way to avoid that situation with current protocols. So maybe that's a good argument for working on simplified commitments at some point.
 
-Speaker 1: Yes, it's definitely on my to-do list for this next release, which is three months away. We've just done a release, so now I can't use that as an excuse anymore, and ption simplified commitments is on my list to do and then scratch out an implementation. We have one that [Redacted] did because they did it for L2, but we have to. It's slightly more complicated for the current LN penalty. So, I plan on revisiting that in the next three months.
+Speaker 1: Yes, it's definitely on my to-do list for this next release, which is three months away. We've just done a release, so now I can't use that as an excuse anymore, and ption simplified commitments is on my list to do and then scratch out an implementation. We have one that [redacted] did because they did it for L2, but we have to. It's slightly more complicated for the current LN penalty. So, I plan on revisiting that in the next three months.
 
 Speaker 0: Okay. Yeah, I think it's really worth it because we're starting to see all those issues with people experimenting with sending a lot of HTLC that frequent weights, right? We are hitting those edge cases and we want to provide commitment. There's just no way to avoid it, and having false closes that we cannot avoid is really annoying. So, shall we just quickly go down the list in order and see if we have anything to say on it, or otherwise we just move to something else. So, do we have anything new on the simple close? On my side, I haven't had time to prototype anything yet. So I think it's more waiting for implementation.
 
@@ -23,11 +23,11 @@ Speaker 0: Yeah, okay. So just needs a small change on the spec, and then people
 
 Speaker 2: No progress right now on that front list.
 
-Speaker 1: Okay. Yeah, I know [Redacted] was pretty keen to get this, so I expect it'll happen pretty soon.
+Speaker 1: Okay. Yeah, I know [redacted] was pretty keen to get this, so I expect it'll happen pretty soon.
 
 Speaker 0: Alright. So, then on the spec cleanup — add to my to-do list to actually, at least, make those features mandatory in Eclair. I think we should all do the same, but apart from that, nothing new on my side.
 
-Speaker 1: So, there is an issue that came up with splicing and gossip, which I was just reminded by the fact [Redacted] made a comment in the offer PR, which was a little meta on short channel ID usage. So, we have this issue where if you splice your channel, we have this 12 block bridge, where if you know about a channel and it closes, you give it 12 blocks and consider it still to be live. Now, that has some weird cases. It means that during that time, you probably don't propagate any updates for that channel. You will annoy other implementations if they're completely new on the network. You'll be talking about a closed UTXO and they will be like: I don't know what the hell you're talking about. We stopped gossiping about that because I know [Redacted] complained to [Redacted], said that we were gossiping about dead channels all the time. But it also means if that's your only channel and you've just spliced it, you can't propagate your node announcement now for like six blocks. So while it kind of works almost, it's not a great solution. We had proposed previously that you have this magical update that says: Hey, I'm splicing, there's a thing happening. And somehow that lets you change the rules. Like you explicitly mark something. But it still doesn't help the case with new nodes coming on the network. How do you provide a splice in progress? If they've got a simple lookup and they say, well, this UTXO doesn't exist, it's not clear to me how we solve that problem.
+Speaker 1: So, there is an issue that came up with splicing and gossip, which I was just reminded by the fact [redacted] made a comment in the offer PR, which was a little meta on short channel ID usage. So, we have this issue where if you splice your channel, we have this 12 block bridge, where if you know about a channel and it closes, you give it 12 blocks and consider it still to be live. Now, that has some weird cases. It means that during that time, you probably don't propagate any updates for that channel. You will annoy other implementations if they're completely new on the network. You'll be talking about a closed UTXO and they will be like: I don't know what the hell you're talking about. We stopped gossiping about that because I know [redacted] complained to [redacted], said that we were gossiping about dead channels all the time. But it also means if that's your only channel and you've just spliced it, you can't propagate your node announcement now for like six blocks. So while it kind of works almost, it's not a great solution. We had proposed previously that you have this magical update that says: Hey, I'm splicing, there's a thing happening. And somehow that lets you change the rules. Like you explicitly mark something. But it still doesn't help the case with new nodes coming on the network. How do you provide a splice in progress? If they've got a simple lookup and they say, well, this UTXO doesn't exist, it's not clear to me how we solve that problem.
 
 Speaker 3: Is it worth solving?
 
@@ -73,9 +73,9 @@ Speaker 0: Alright, so the next step is the SCIDs in Blinded Path. I haven't tho
 
 Speaker 1: No, I haven't implemented this yet either.
 
-Speaker 0: And [Redacted] or [Redacted] on the LDK side?
+Speaker 0: And [redacted] or [redacted] on the LDK side?
 
-Speaker 5: No, we've not implemented it. 
+Speaker 5: No, we've not implemented it.
 
 Speaker 0: Okay. Yeah, I guess we should just wait then for people to implement it and see if it just works out okay, or if we discover some things that are annoying.
 
@@ -111,19 +111,19 @@ Speaker 5: I was about to say it's also annoying when you have to, if you get �
 
 Speaker 0: Yeah.
 
-Speaker 1: Cool. Okay. Other than the fact that I hate the fact that you renumbered things gratuitously to try to keep the deal. 
+Speaker 1: Cool. Okay. Other than the fact that I hate the fact that you renumbered things gratuitously to try to keep the deal.
 
 Speaker 5: That’s no longer a problem ‘cause we got rid of that.
 
-Speaker 1: Yeah, cool. So, I might fold this into my PR, so it's all in one place. The offers PR. 
+Speaker 1: Yeah, cool. So, I might fold this into my PR, so it's all in one place. The offers PR.
 
-Speaker 5: That sounds good. 
+Speaker 5: That sounds good.
 
 Speaker 1: Yeah. Okay, cool. Everyone seems in agreement. Easy.
 
 Speaker 0: Yeah. On the other side, I'm preparing for the TabConf net next week. I'm going to do a workshop about writing plugins for Eclair, and we're going to write a Bolt 12 plugin so that people can accept tips using Bolt 12.  I've just finished testing it, and it's really, really easy to write. So, I hope people will start playing around with it, and we get to merge that soon.
 
-Speaker 1: I am going to create another PR — because people love these things — that reintroduces this recurring payment thing, so that we can discuss that thing that we pointed out. But it will keep it as a separate PR, as an extension, because I think it's an interesting idea. There are complexities in there. I mean, it's definitely something that we want. It's a very clear use case that everyone loves. But I have very opinionated ways on the way you have to do it because people have proposed really dumb ways, where you'll call the server and ask: Do I owe you a payment? Or they'll call you and ask for another payment and stupid things. So, it's worth having a discussion once we get to that point. I will reintroduce that, which it was an old diff that I have to now rebase. Ooh, [Redacted] has some news.
+Speaker 1: I am going to create another PR — because people love these things — that reintroduces this recurring payment thing, so that we can discuss that thing that we pointed out. But it will keep it as a separate PR, as an extension, because I think it's an interesting idea. There are complexities in there. I mean, it's definitely something that we want. It's a very clear use case that everyone loves. But I have very opinionated ways on the way you have to do it because people have proposed really dumb ways, where you'll call the server and ask: Do I owe you a payment? Or they'll call you and ask for another payment and stupid things. So, it's worth having a discussion once we get to that point. I will reintroduce that, which it was an old diff that I have to now rebase. Ooh, [redacted] has some news.
 
 Speaker 6: Yeah, just chugging along. Merged several last week, but still some to go. So, we're pretty focused on it. So yay!
 
@@ -133,7 +133,7 @@ Speaker 0: Yeah, I should spend some time on that document again to try to clari
 
 Speaker 1: Yeah, there was always the problem that with the 1% fixed reserve, if I splice in some massive amount into your channel, you can't spend, we can't — basically the channel's useless until — normally if I put like a hundred times the existing amount in a channel with a 1% reserve, what happens? Like, we can't use the channel now?
 
-Speaker 0: We had a discussion on that in a PR that I created and then closed with [Redacted] and [Redacted] and the other [Redacted]. The main takeaway is that whenever you splice, if a new reserve is not met, it's as if it was a new channel, actually. So, you should just enforce the previous reserve and start enforcing the new reserve only once it gets met.
+Speaker 0: We had a discussion on that in a PR that I created and then closed with [redacted] and [redacted] and the other [redacted]. The main takeaway is that whenever you splice, if a new reserve is not met, it's as if it was a new channel, actually. So, you should just enforce the previous reserve and start enforcing the new reserve only once it gets met.
 
 Speaker 1: Fair.
 
@@ -157,21 +157,21 @@ Speaker 1: Oh, I'm pretty sure we make you, you can only go towards the reserve.
 
 Speaker 3: Yeah. No one uses that. But what about if you send one HTLC and then can they send it back? I don't know.
 
-Speaker 0: Yeah. Reserve is annoying. Really annoying. 
+Speaker 0: Yeah. Reserve is annoying. Really annoying.
 
-Speaker 3: Yeah. 
+Speaker 3: Yeah.
 
 Speaker 0: Anything else on splicing? Any new progress on either that or quiescence?
 
 Speaker 4: I was just curious how quiescence is going for you over there.
 
-Speaker 0: Oh, quiescence. We finished implementing quiescence, and it's even on master on Eclair. [Redacted] wanted to try it against the Lightning to see if the quiescence part works. We know that the splicing part is not gonna work because we don't use exactly the same TLVs in commit-sig. But all the quiescence part, I guess, should be working. [Redacted] will try that, and we'll try to do cross-compat tests on that next week, this week or next week. So we should have feedback on that one soon.
+Speaker 0: Oh, quiescence. We finished implementing quiescence, and it's even on master on Eclair. [redacted] wanted to try it against the Lightning to see if the quiescence part works. We know that the splicing part is not gonna work because we don't use exactly the same TLVs in commit-sig. But all the quiescence part, I guess, should be working. [redacted] will try that, and we'll try to do cross-compat tests on that next week, this week or next week. So we should have feedback on that one soon.
 
 Speaker 4: Sweet. Yeah, I think it's one of those things that seems really simple, and the corner cases kind of creep up on you.
 
 Speaker 0: Yeah, exactly. So we'll see what we find. I think initially we think that cross-compat is going to be easy. Everything is just going to work out great. Then the real world happens, and we find a lot of issues. We'll see.
 
-Speaker 1: Speaking of splicing though, we should mention that [Redacted] and I had this communication about feature bits. So because we've rolled out RC1 and had experimental splicing as an option, and splicing is like bits 62 and 63, [Redacted] pointed out that until the spec is finalized and everyone's happy with interop, we probably shouldn't use the real feature bits. We're advertising if people turn experimental splicing on in core lightning, they get 163. So, we decided to add 100 to the bits, and I will document that convention, I think, and we should carry it forward. In the PR, you put: Hey, we're going to reserve this bit. That's fine. But until it's actually finalized, and you've done interop testing, you should probably add 100 and advertise like a shadow feature bit. And then, of course, in transition, if it's ratified with no changes, then you can just accept both features for some transition, and it will work fine. But it does mean we don't have this annoying case that we had with dual funding, where the spec changed, but our implementation still advertised the real one, and if you're perfectly spec compliant, you don't actually interop with everyone else who's also advertising the bit. Then, you have all these debugging pain. We always hold on: That's an old core lightning node. That's why it's not working. So, just going forward, we should probably adopt that rough convention that we actually advertise like on the experimental, like a plus 100 for a while. 
+Speaker 1: Speaking of splicing though, we should mention that [redacted] and I had this communication about feature bits. So because we've rolled out RC1 and had experimental splicing as an option, and splicing is like bits 62 and 63, [redacted] pointed out that until the spec is finalized and everyone's happy with interop, we probably shouldn't use the real feature bits. We're advertising if people turn experimental splicing on in core lightning, they get 163. So, we decided to add 100 to the bits, and I will document that convention, I think, and we should carry it forward. In the PR, you put: Hey, we're going to reserve this bit. That's fine. But until it's actually finalized, and you've done interop testing, you should probably add 100 and advertise like a shadow feature bit. And then, of course, in transition, if it's ratified with no changes, then you can just accept both features for some transition, and it will work fine. But it does mean we don't have this annoying case that we had with dual funding, where the spec changed, but our implementation still advertised the real one, and if you're perfectly spec compliant, you don't actually interop with everyone else who's also advertising the bit. Then, you have all these debugging pain. We always hold on: That's an old core lightning node. That's why it's not working. So, just going forward, we should probably adopt that rough convention that we actually advertise like on the experimental, like a plus 100 for a while.
 
 Speaker 0: By the way, what do you do for dual funding in your latest release? Because I think that now most of the messages do follow the spec and we have internal testing on that between AKL and CLN, but there's still the channel reestablished part that hasn't been fully implemented in CLN and is not yet tested. So I'm not sure how that would be in practice.
 
@@ -181,7 +181,7 @@ Speaker 0: In the latest release of CLN, what is going to happen for the potenti
 
 Speaker 8: That's a good question. I'm not sure, I'd have to check. I'm in progress of implementing it, so that would make it easier to test, because I'll have one. I will look into this this week. This is a good question.
 
-Speaker 1:So, we have a point release coming up because MacOS. Anyway, so I'm holding that back, although we don't generally do changes like this in a point release because it's experimental. Whatever. If [Redacted] gets a compact change, and we completely break or completely fix — whatever the euphemism is — dual funding, that's allowed to go in a point release. So, we could release a point for this. Certainly, if you reach an interop milestone with Eclair, that would be a good reason to put it in, even if it breaks existing core lightning. I'll just redirect all the bug reports to you.
+Speaker 1:So, we have a point release coming up because MacOS. Anyway, so I'm holding that back, although we don't generally do changes like this in a point release because it's experimental. Whatever. If [redacted] gets a compact change, and we completely break or completely fix — whatever the euphemism is — dual funding, that's allowed to go in a point release. So, we could release a point for this. Certainly, if you reach an interop milestone with Eclair, that would be a good reason to put it in, even if it breaks existing core lightning. I'll just redirect all the bug reports to you.
 
 Speaker 8: Great. That sounds good. The status on that is that the change has been implemented. I just need to update. It changes some of the tests. So I just need to fix the test stuff. So there's a good chance that we would have that ready to go this week. Question mark.  So, I'll try and move that up on my to-do list.
 
@@ -211,15 +211,15 @@ Speaker 8: Yes. We're using MuSIG2 for unilateral closes. Yes.
 
 Speaker 1: Do we have anything, any progress on Gossip? Taproot Gossip?
 
-Speaker 2: Nothing yet, [Redacted]. We're hoping to make progress in the coming weeks. 
+Speaker 2: Nothing yet, [redacted]. We're hoping to make progress in the coming weeks.
 
 Speaker 1: Oh, the longer it takes you, the further I can push it back on my own to-do list. So, I'm not pushing. I'm just asking.
 
-Speaker 2: Sure. 
+Speaker 2: Sure.
 
 Speaker 0: Alright, then it's attributable errors. I haven't followed up on the implementation PRs. I think we're at the stage where we're waiting for just interop testing and last reviews. And everything else is just still — people are still working on everything. So, any other topic people want to discuss? Or anything else people have seen or been working on that's interesting to share? It's August. Nobody's been working?
 
-Speaker 4: I have a thing, which is not really a spec thing, but [Redacted] and I were working through how you do cross-channel splices moving from one channel to another, and it ends up interacting with the signing order stuff a lot and just gets really complicated. Just something to think about.
+Speaker 4: I have a thing, which is not really a spec thing, but [redacted] and I were working through how you do cross-channel splices moving from one channel to another, and it ends up interacting with the signing order stuff a lot and just gets really complicated. Just something to think about.
 
 Speaker 0: What do you mean? Many people trying to batch multiple splices across channels?
 
@@ -245,9 +245,9 @@ Speaker 4: Yeah, node ID. That sounds right.
 
 Speaker 0: Yeah, we do node ID in Eclair.
 
-Speaker 1: Well, it seems like [Redacted] isn't coming back.
+Speaker 1: Well, it seems like [redacted] isn't coming back.
 
-Speaker 0: Yeah, it's the usual reboot the whole PC to fix the issue. 
+Speaker 0: Yeah, it's the usual reboot the whole PC to fix the issue.
 
 Speaker 9: Cool. Was somebody else talking or can I pose my question?
 
@@ -255,7 +255,7 @@ Speaker 0: Go for it.
 
 Speaker 9: I was wondering whether we are planning in the lightning spec to implement something that we can fail HTLC's or something like this. Not the current way, where we force the other person to accept an HTLC and we cannot fail it back. It's like UDP mostly, whether we plan to do something else.
 
-Speaker 0: Yes, that's exactly something that we cannot do right now with the current protocol, but the simplified commitment change that I linked into the issue will enable us to do. I think, [Redacted] called that an ‘add an HTLC,’ where the other guy says: Update add HTLC, and you instantly say: Oh no, I don't want that one. Don't even bother try signing it. Let's just remove it right now.
+Speaker 0: Yes, that's exactly something that we cannot do right now with the current protocol, but the simplified commitment change that I linked into the issue will enable us to do. I think, [redacted] called that an ‘add an HTLC,’ where the other guy says: Update add HTLC, and you instantly say: Oh no, I don't want that one. Don't even bother try signing it. Let's just remove it right now.
 
 Speaker 1: Yeah, but you can also fail, but they have to send both signatures. So, they have to send: Here's this commitment signature if you fail the HTLCs. And then the question is: Do you have to fail all of the add ones at once? I think the answer is yes, because otherwise, you have to send a combinatorial number of signatures. So, here's if you're going to fail things, and here's if you're going to accept things. So you do have to send both signatures across. There are a few twists in here. but it becomes much easier to think about with option simplified commitment.
 
@@ -269,9 +269,9 @@ Speaker 1: Sorry, we do accept a reasonable range. The thing is that with anchor
 
 Speaker 9: Okay, thanks, sounds reasonable.
 
-Speaker 3: [Redacted], your release notes said something about better pay plugin, something-something, smarter routing. Are you now tracking history of failures? And if so, what scoring algorithm are you using for selecting?
+Speaker 3: [redacted], your release notes said something about better pay plugin, something-something, smarter routing. Are you now tracking history of failures? And if so, what scoring algorithm are you using for selecting?
 
-Speaker 1: Yeah, so [Redacted] has been looking at the green light stuff. So, obviously we can see people's payments at this point. We were doing some dumb stuff. We were pre-splitting, but above a certain amount. We automatically pre-split before we even tried to send a payment. It turns out that that does not work very well. That was actually increasing our failure rates because at some point, you start hitting HTLC number limits. So we eliminated that. There were just some dumb bugs, especially where we had an alias channel. We wouldn't consider it if we had a zero-conf channel. We didn't properly consider it in routing and things like that. Mainly, it was bugs. Our real hope is that the Renepay plugin, which is way experimental at the moment. Tends to crash; get upset. I'm hoping that [Redacted], who wrote the min cost flow — because it's in the main cost flow part; it hits an assertion. It's like: Hold on, these numbers don't work. Like: Well, how did we get here? So, there's some fun debugging to go, but our hope is that we'll end up doing the min-cost flow approach, and we'll end up with something that is much nicer than what we have now, which is Dijkstra bolted on something, handwave, added some heuristics. So, there are incremental improvements, but I'm really hoping that next release will have something that doesn't mean cost flow and we get a decent idea of what's happening on the network. We don't even remember between payments at the moment. Renepay actually does keep history of stuff. It's a very low bar at the moment. It's pretty easy to improve. But we're hoping to jump right up with a complete rewrite.
+Speaker 1: Yeah, so [redacted] has been looking at the green light stuff. So, obviously we can see people's payments at this point. We were doing some dumb stuff. We were pre-splitting, but above a certain amount. We automatically pre-split before we even tried to send a payment. It turns out that that does not work very well. That was actually increasing our failure rates because at some point, you start hitting HTLC number limits. So we eliminated that. There were just some dumb bugs, especially where we had an alias channel. We wouldn't consider it if we had a zero-conf channel. We didn't properly consider it in routing and things like that. Mainly, it was bugs. Our real hope is that the Renepay plugin, which is way experimental at the moment. Tends to crash; get upset. I'm hoping that [redacted], who wrote the min cost flow — because it's in the main cost flow part; it hits an assertion. It's like: Hold on, these numbers don't work. Like: Well, how did we get here? So, there's some fun debugging to go, but our hope is that we'll end up doing the min-cost flow approach, and we'll end up with something that is much nicer than what we have now, which is Dijkstra bolted on something, handwave, added some heuristics. So, there are incremental improvements, but I'm really hoping that next release will have something that doesn't mean cost flow and we get a decent idea of what's happening on the network. We don't even remember between payments at the moment. Renepay actually does keep history of stuff. It's a very low bar at the moment. It's pretty easy to improve. But we're hoping to jump right up with a complete rewrite.
 
 Speaker 3: Okay. Yeah, I was just curious whether you were remembering or not yet as always I'd like to Keep up with what people are doing on routing because it tends to be the source of all of the failures that people say.
 
@@ -283,19 +283,19 @@ Speaker 0: Does it work in mempool.space?
 
 Speaker 3: No, it doesn't work on any of the public ones that I've seen.
 
-Speaker 0: Too bad. Oh, and [Redacted] mentioned getting feedback on LNPrototest on the mailing list. Well, maybe we can do that quickly.
+Speaker 0: Too bad. Oh, and [redacted] mentioned getting feedback on LNPrototest on the mailing list. Well, maybe we can do that quickly.
 
 Speaker 10: Oh, yeah, I'm pretty happy to do that. We are in the process to rewrite LNPrototest to make this a little bit more nice to read, basically. I was curious if some other implementation tried to implement LNPrototest runner and give up because it was too messy.
 
-Speaker 0: Yeah, we regularly said we would, but then every time we said we would, either [Redacted], [Redacted], or someone else said: Oh, but let me write some more documentation to help you know what you actually have to do. And then, we've always just never came back to it. So, we never did anything, but we would really like to do something to get compatibility with the LNPrototest, but we've never actually done it. So, feel free to rewrite whatever you want. I don't know if LDK or LND has played with LNPrototest, but I think they haven't either.
+Speaker 0: Yeah, we regularly said we would, but then every time we said we would, either [redacted], [redacted], or someone else said: Oh, but let me write some more documentation to help you know what you actually have to do. And then, we've always just never came back to it. So, we never did anything, but we would really like to do something to get compatibility with the LNPrototest, but we've never actually done it. So, feel free to rewrite whatever you want. I don't know if LDK or LND has played with LNPrototest, but I think they haven't either.
 
 Speaker 10: Yeah, no, with LDK, I arrived to a prototype, but LDK is easy because you need to build your node, right? So, at some point, it is pretty easy to support the LDK. I am also in the process to write some documentation on how to write a runner for it. Basically, what I think some implementation is missing — some way to pass custom key to the node to the lightning node. For instance, if a LNPrototest want specific channel key, private key, because we make some calculation on what we expect in the test. At least on the LDK side, I had some trouble to support the planar decay.
 
 Speaker 0: Sounds good.
 
-Speaker 1: Cool. I'm sorry, [Redacted], I haven't reviewed your rework, but it's on my to-do list.
+Speaker 1: Cool. I'm sorry, [redacted], I haven't reviewed your rework, but it's on my to-do list.
 
-Speaker105: Yeah, now I am working on the way, how to chaining part of the spec, right? If you want write the connection integration test, and then you want to use the same code to do the funding channel, I am working on this way to chaining previous test. 
+Speaker105: Yeah, now I am working on the way, how to chaining part of the spec, right? If you want write the connection integration test, and then you want to use the same code to do the funding channel, I am working on this way to chaining previous test.
 
 Speaker 1: The main purpose for LNPrototest is testing cases that never happen. So, it's sending invalid packets, sending odd messages that aren't spec'd, stuff like that. That's been the main use for us. Not so much testing the normal happy cases, but testing things that never happen. Sending TLVs that you don't expect and things like that. That are harder to test in a black box testing way. So, I made it really hard to write this. Sorry.
 
@@ -303,9 +303,9 @@ Speaker 0: It would also be really useful for all the interactive TX testing, wh
 
 Speaker 10: Yeah. Also now, on LND, we are implementing some big feature, right? Splicing all the stuff is really easy to say: Okay, this is the normal workflow and what we get. Something like that.
 
-Speaker 0: Alright. If we have nothing else, we can just call it a day and get back to work. 
+Speaker 0: Alright. If we have nothing else, we can just call it a day and get back to work.
 
-Speaker 10: Sounds fantastic. 
+Speaker 10: Sounds fantastic.
 
 Speaker 1: Ciao.
 
