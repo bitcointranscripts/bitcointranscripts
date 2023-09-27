@@ -5,7 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['p2p', 'bitcoin core']
 date: 2022-10-10
-aliases: ['/bitcoin-core-dev-tech/2022-10-10-p2p-encryption.es/']
+aliases: ['/es/bitcoin-core-dev-tech/2022-10-10-p2p-encryption/']
 ---
 
 # Intervenciones anteriores 

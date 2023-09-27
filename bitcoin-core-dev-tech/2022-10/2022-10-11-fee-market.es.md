@@ -4,6 +4,7 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['fees', 'bitcoin core']
+aliases: ['/es/bitcoin-core-dev-tech/2022-10-11-fee-market/']
 ---
 
 # Mercado de tarifas 

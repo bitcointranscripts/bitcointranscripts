@@ -26,8 +26,3 @@ Often they want a problem that is both approachable and meaningful. Not everythi
 This is an open call for the raw list of ideas that you would like people to work on.
 
 <https://bitcoinproblems.org/>
-
-
-
-
-

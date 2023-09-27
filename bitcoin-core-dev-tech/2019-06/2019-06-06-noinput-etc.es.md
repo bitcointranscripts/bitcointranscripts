@@ -5,7 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['soft forks']
 date: 2019-06-06
-aliases: ['/bitcoin-core-dev-tech/2019-06-06-noinput-etc.es/']
+aliases: ['/es/bitcoin-core-dev-tech/2019-06-06-noinput-etc/']
 speakers: ['Olaoluwa Osuntokun', 'Jeremy Rubin']
 ---
 

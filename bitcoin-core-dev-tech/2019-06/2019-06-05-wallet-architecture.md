@@ -8,8 +8,6 @@ date: 2019-06-05
 aliases: ['/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/']
 ---
 
-
-
 Bitcoin Core wallet architecture + descriptors
 
 <https://twitter.com/kanzure/status/1136282460675878915>

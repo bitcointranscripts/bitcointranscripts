@@ -5,7 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['P2P']
 date: 2019-06-07
-aliases: ['/bitcoin-core-dev-tech/2019-06-07-p2p-encryption.es/']
+aliases: ['/es/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/']
 ---
 
 Cifrado p2p 
