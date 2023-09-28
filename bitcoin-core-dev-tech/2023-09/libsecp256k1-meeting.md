@@ -1,0 +1,54 @@
+---
+title: Libsecp256k1 Meeting
+categories: ['core-dev-tech']
+tags: ['bitcoin core', 'libsecp256k1']
+date: 2023-09-20
+---
+
+- Topics: Scope, Priorities
+- Next release Dec 16th
+- Scope: Informal agreeement currently
+- What new modules to add?
+- Needs a specification (whatever that means, Pseudocode etc.0
+- Should we formalize the agreement more? Should also not be too specific
+- What are examples where this came up in the past? Exfill, Ecdh, Elswift, SIlent payments, musig, schnorr, adaptor sigs, half-agg
+- How specific do we need to be? Tie it to examples to be more clear
+- ECIES (Interesting in the future?)
+- Other problem: What is the boundary to core? For example move hashing to secp?
+- Need argument for security, needs use-case
+- Buy-in from maintainers, willingness to maintain it long term
+- Relevance to the project is very vague as a requirement
+- Security also hard to formalize
+- Example: Anti-Exfill, people want it, but not our priority, fulfilling the requirements would not have helped in that case, different opinions on this change
+- Requirements are hygiene but don't guarantee that it will be reviewed/merged
+- Attack hard to do and mulitsig solves it anyway
+- Would still be good to be transparent and give feedback earlier
+- What is a specification? External standardization documentation, hashing externally avoided the question for ECDH, ECDH is a protocol not a cryptographic function
+- Abstract description of a protocol, ellswift has the BIP
+- Documentation, just describe how intended to be used, can not prevent every possible misuse
+- Rationale/Motivation
+- Security goals
+- "Easiest way to use it should be a secure way"
+- Too large spectrum to clearly define, needs to be convincing to the group
+- Relevance: clear use-case, details still hard to agree on in certain cases, "good for bitcoin"?
+- Contributing.md going to be added by nickler
+- Next release for december features? ECMult_const, xonlyECDH, silent payments?
+- Silent payments now uses low level stuff it shouldn't be using
+- Would like to have a module for silent payment functions that do the work and encapsulate it
+- Make a PR on Secp? Show what it would look like, silent payment will work on it
+- All lower level component are already there for it
+- Change: remove scratch space, only wanted to do in a major release? Basically unused
+- Fix issues with secp-rust (nostd), they need to make patches to remove syscalls, which are not strictly needed
+- build system docs, contrib md
+- Musig
+- synthetic nonces in ecdsa? modern ecdsa module
+- 1.0 was tied to milestones but abandoned to not hinder shipping incremental releases, still a goal to make a 1.0
+- Fuzzing project? Not far enough yet
+- ARM testing/CI (Macro Fake)
+- Priorities: ECMULT, ust nostd, xonlyECDH picked
+- Boundaries to Core: Where should hashing reside?
+- There are arguments ofr both sides: Con: Easier to get access to machine specific hashing optimization from Bitcoin Core because it is higher level, high cost to add this to secp, so either we have performance cost or maintenance cost, but for many things this may not matter. Pro: we could have higher level APIs in secp.
+- For bitcoin core hashing performance for ECDSA is very relevant, so probably not going to happen there, making it slower for validation would be bad
+- question if the optimization should be part of the scope?
+- what does applicable to bitcoin mean? could mean anything looking into eventual future, layer-2s etc. What about Muhash, checksums for tor v2 addrs etc.?
+- BIP32 module is probably in scope
