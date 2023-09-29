@@ -21,7 +21,7 @@ Aquí hay tres áreas principales. Una es IsMine: ¿cómo determino que una sali
 
 Ahora mismo IsMine es independiente de la cartera, por alguna razón. No es parte de CWallet. Está bien abstraerlo. IsMine es relevante cuando entra una nueva transacción y queremos ver nuestro saldo. Se usa para las funciones getcredit/getdebit de las salidas de la wallet, se usa en muchos sitios. Cuando una transacción entra, la billetera es notificada.
 
-[[2019-06-05-wallet-architecture.jpg]]
+![wallet architecture](/bitcoin-core-dev-tech/2019-06/2019-06-05-wallet-architecture.jpg)
 
 # Arquitectura de wallets heredados en la actualidad 
 
