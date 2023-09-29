@@ -47,7 +47,7 @@ date: 2023-09-20
 - ARM testing/CI (Macro Fake)
 - Priorities: ECMULT, ust nostd, xonlyECDH picked
 - Boundaries to Core: Where should hashing reside?
-- There are arguments ofr both sides: Con: Easier to get access to machine specific hashing optimization from Bitcoin Core because it is higher level, high cost to add this to secp, so either we have performance cost or maintenance cost, but for many things this may not matter. Pro: we could have higher level APIs in secp.
+- There are arguments on both sides: Con: Easier to get access to machine specific hashing optimization from Bitcoin Core because it is higher level, high cost to add this to secp, so either we have performance cost or maintenance cost, but for many things this may not matter. Pro: we could have higher level APIs in secp.
 - For bitcoin core hashing performance for ECDSA is very relevant, so probably not going to happen there, making it slower for validation would be bad
 - question if the optimization should be part of the scope?
 - what does applicable to bitcoin mean? could mean anything looking into eventual future, layer-2s etc. What about Muhash, checksums for tor v2 addrs etc.?

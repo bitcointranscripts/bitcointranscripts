@@ -152,7 +152,7 @@ Immediate
   - having a hard time coming up with the usecases
   - just a matter of looking at the tests and seeing what should be moved over
 
-## Removal from kernel as an active project priority
+## Removal of kernel as an active project priority
 
 Weeks from removing the kernel from the priority projects. All the patches, just need to get it through review. Once the next 3 get in, pull from priority.
 

@@ -18,8 +18,8 @@ date: 2023-09-20
 - Information creation, addresses, txs or blocks
   - We want blocks at tips fast - consensus critical information needs to be as fast as possible - ability to get the information - forgetting that there are multiple networks - the purpose is to know what the current most work chain tip is
     - Even the addr relay network - everything falls apart if you can’t get that information
-    - The crux of the p2p network it to propagate what is the most work
-  - Txs can take much much longer bt don’t want to leak the source of the origin
+    - The crux of the p2p network is to propagate what is the most work
+  - Txs can take much much longer but don’t want to leak the source of the origin
     - The privacy implications of Txs makes it difficult
 
 Could give up fast propagations for privacy for txs that would be fine but not for blocks. Speed is the most important factor.
@@ -44,7 +44,7 @@ Censorship resistance - create a network where everyone where connects and passe
 
 - Your node doesn’t know if you are a reachable node. The network will tell you if it is reachable. From a network perspective:
   - Is providing inbounds purely altruistic
-  - From a personal standpoint, are there any advantages to accepting in bounds?
+  - From a personal standpoint, are there any advantages to accepting inbounds?
     - Diversity? You have no guarantees that they aren’t the same entities.
     - If you are enabling inbounds - surface area vulnerability - we have mitigations in place but we have more influence on who you outbounds are over time
     - We need peers that accept inbound connections because we need that for the network to run

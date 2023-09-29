@@ -1,7 +1,7 @@
 ---
-title: AssumeUTXO Update
+title: CMake Update
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'assumeUTXO']
+tags: ['bitcoin core', 'build systems']
 date: 2023-09-21
 speakers: ['Cory Fields']
 ---
@@ -10,7 +10,7 @@ speakers: ['Cory Fields']
 
 Hebasto has a branch he has been PRing into his own repo. Opened a huge CMake PR for Bitcoin core.
 
-Introducing it chunk by chink on his own repo
+Introducing it chunk by chunk on his own repo
 
 QT and GUIX is after that
 
@@ -20,13 +20,11 @@ How to get this into Core?
 
 We don’t have something clean. Still have something wonky and how and what to do with autotools.
 
-Ideally introduce CMake for a full cycle. It might still a little too rough to ship on day 1 of the v27 cycle.
+Ideally introduce CMake for a full cycle. It might still be a little too rough to ship on day 1 of the v27 cycle.
 
 We could deviate from the beginning of the cycle plan. Half way through a release cycle half way through a cycle is better than a crash and burn at the beginning of a cycle.
 
-The standard stuff works fine but
-
-This is for people’s setups. There is a real possibility that people here wouldn’t be able to week.
+This is for people’s setups. There is a real possibility that people here wouldn’t be able to work.
 
 Every branch is going to need to rebase, reinstalling stuff, etc. It will be a hit for productivity.
 
@@ -47,5 +45,5 @@ The goal is after the branch off to merge CMake and delete autotools.
 
 ## The plan
 
-Ping individual people to test - there is a PR to test. Goal is to have conviction on whether to merge after branch off.
+Ping individual people to test - there is a [PR to test]((https://github.com/hebasto/bitcoin/pull/31)). Goal is to have conviction on whether to merge after branch off.
 Once things gets merged and that you can’t build, it’s on you.

@@ -15,13 +15,13 @@ speakers: [Mark Erhardt]
 - Convert privacy preference (0-5) into satoshis to make it compatible with the waste score
   - Combined score = PrivacyScoreWeight x PrivacyScore + CostWeight x WasteMetric
   - 20-30 sats per privacy point as a gut feeling
+- Privacy score example: sending to different script type than inputs of transaction
+  - We already match the change type to the recipient type, but that can still mean that we have differently typed inputs than outputs
+  - If we have two input sets, where one has the same type and the other has a different type, the one with the same type inputs should be preferred by the privacy metric
 - Privacy score example: Preferring spending UTXOs of similar age
   - E.g. spending a UTXO received two years ago and one received the same week may leak more information than two UTXOs received two years ago
   - The timeframe in which someone spends received coins could be a privacy leak
   - Right now, given current 12 input sets and variability of coin selection, might not be a privacy concern
-- Privacy score example: sending to different script type than inputs of transaction
-  - We already match the change type to the recipient type, but that can still mean that we have differently typed inputs than outputs
-  - If we have two input sets, where one has the same type and the other has a different type, the one with the same type inputs should be preferred by the privacy metric
 - Need to implement privacy heuristics
   - Which requires more information about UTXOs
 - 24 potential ideas for metrics so far

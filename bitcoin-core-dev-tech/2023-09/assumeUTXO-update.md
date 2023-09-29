@@ -14,7 +14,7 @@ date: 2023-09-20
     - Probably this should be moved to separate PR?
 
 - Questions about initial next steps (unanswered):
-  - Which release is this PRed target for?
+  - Which release is this PR targeted for?
   - Does it make sense to merge code changes first, then hash later?
   - Maybe staged rollout makes sense? First merge code changes, then merge hash, then distribute snapshots?
     - Assumeutxo is a new feature which needs testing.

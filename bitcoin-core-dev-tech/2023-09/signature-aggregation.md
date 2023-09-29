@@ -93,7 +93,7 @@ There is an alt proof with different assumptions re. group size and hash size (t
 
 If you don't assume special things about the group, idealised assumptions, you have a loss of that square property. Someone has proved that there is no better proof. This doesn't imply it's insecure, but there is no better proof. In MuSig 1 paper there was a ^4 root loss. Similar here for half agg; there is a fork per signature, so there is a loss factor which is 2^n where n is number of transactions. So with 7 tx it only proves that signature is 1 bit secure.
 
-There is no perfect security proof, but in practice that is often tollerated/acceptable. But for half agg, since it's new, makes sense to be cautious.
+There is no perfect security proof, but in practice that is often tolerated/acceptable. But for half agg, since it's new, makes sense to be cautious.
 
 If you look at math guarantees, it can be misleading. e.g. if MuSig turns out to be much weaker than schnorr, then we can switch. We are only as secure as the weakest link.
 
@@ -109,7 +109,7 @@ Is a security proof required for a proposed consensus change?
 
 With full CISA, a problem with a new script version, similar to g'root
 
-separate sigs from scripting - does this also apply to half agg? Yes. Need to be unambiguos about which sigs are aggregated. Imagine a new tapscript, V2 (simplicity?), an old verified will not be able to see those signautres, not recognise them as signatures, need two seperate algos; one for pre-fork, and one for the upgraded nodes. NOt hard, but must be careful in designing as e.g. OP_CHECKSIG/OP_SUCCESS could break? ONe thing you could do is say CISA only applys to key-path spend. Doenside is that this needs a new witness version. But it is the most impactful as we expect most signatures to be key-path spends. Not aggregating keys in the script side removes many problems.
+separate sigs from scripting - does this also apply to half agg? Yes. Need to be unambiguous about which sigs are aggregated. Imagine a new tapscript, V2 (simplicity?), an old verified will not be able to see those signatures, not recognise them as signatures, need two separate algos; one for pre-fork, and one for the upgraded nodes. Not hard, but must be careful in designing as e.g. OP_CHECKSIG/OP_SUCCESS could break? One thing you could do is say CISA only applies to key-path spend. Downside is that this needs a new witness version. But it is the most impactful as we expect most signatures to be key-path spends. Not aggregating keys in the script side removes many problems.
 
 Tx validation needs to be unambiguous about what the signatures are for
 
