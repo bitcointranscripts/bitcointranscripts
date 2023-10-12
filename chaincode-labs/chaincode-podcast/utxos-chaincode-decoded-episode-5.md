@@ -1,9 +1,9 @@
 ---
-title: UTXOs (Chaincode Decoded) - Episode 5 of the Chaincode Podcast
+title: UTXOs (Chaincode Decoded) - Episode 5
 transcript_by: sasa-buklijas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=sNLbg9BUV4Y
-tags: ["UTXO"]
-speakers: ["Adam Jonas","John Newbery"]
+tags: ["utxo"]
+speakers: ["Adam Jonas", "John Newbery"]
 categories: ["Podcast"]
 date: 2020-12-01
 ---
@@ -16,11 +16,11 @@ If we go back in time to version 0.1, all that was stored was the blockchain and
 
 Adam Jonas: 00:00:28
 
-Welcome back to the Chaincode Podcast. This episode is going to be a little bit different. We're going to do something, just there's no guest, it's just John and I talking.   
+Welcome back to the Chaincode Podcast. This episode is going to be a little bit different. We're going to do something, just there's no guest, it's just John and I talking.
 
 John Newbery: 00:00:36
 
-Hi, Jonas. 
+Hi, Jonas.
 
 Adam Jonas: 00:00:37
 
@@ -51,55 +51,55 @@ And in episode four we talked to James O'Beirne about AssumeUTXO, which is an on
 
 Adam Jonas: 00:01:45
 
-Very good. So maybe start off what is the UTXO set? 
+Very good. So maybe start off what is the UTXO set?
 
 John Newbery: 00:01:51
 
-The UTXO set is Bitcoin. It is what Bitcoin is and it is what the consensus algorithm behind Bitcoin is designed to allow us to all reach a shared state on what the UTXO set is. So, if I have a wallet in Bitcoin, I don't have an account, there's no such thing as accounts on the network level, on the protocol level, I just have a bunch of transaction outputs. And we call those my coins. And when I want to create a transaction I spend some of my coins and I create new coins. So Bitcoin is this set of coins, a set of transaction outputs, and every transaction can be seen as a patch on that set. It removes some items and adds new items. It removes the outputs that are spent and adds the new outputs from those new transactions. And if we think about a block, a block is an aggregate of transactions and it can be thought of as the union of all of those patches. So a block removes some UTXOs from the set and adds new UTXOs that get created in that block. And if we think about the blockchain, that is simply a sequence of these blocks, each of which removes some UTXOs and adds new UTXOs. So the blockchain is this append-only log with proofs attached. And if I give you that log and you replay it, each of those blocks in turn will amend that set. And at the end, you should arrive at the same result that I arrive at. That is what we call consensus. We've reached the same result. 
+The UTXO set is Bitcoin. It is what Bitcoin is and it is what the consensus algorithm behind Bitcoin is designed to allow us to all reach a shared state on what the UTXO set is. So, if I have a wallet in Bitcoin, I don't have an account, there's no such thing as accounts on the network level, on the protocol level, I just have a bunch of transaction outputs. And we call those my coins. And when I want to create a transaction I spend some of my coins and I create new coins. So Bitcoin is this set of coins, a set of transaction outputs, and every transaction can be seen as a patch on that set. It removes some items and adds new items. It removes the outputs that are spent and adds the new outputs from those new transactions. And if we think about a block, a block is an aggregate of transactions and it can be thought of as the union of all of those patches. So a block removes some UTXOs from the set and adds new UTXOs that get created in that block. And if we think about the blockchain, that is simply a sequence of these blocks, each of which removes some UTXOs and adds new UTXOs. So the blockchain is this append-only log with proofs attached. And if I give you that log and you replay it, each of those blocks in turn will amend that set. And at the end, you should arrive at the same result that I arrive at. That is what we call consensus. We've reached the same result.
 
 Adam Jonas: 00:03:25
 
-Cool. So, tell me a little bit about the difference between the abstract concept of the UTXO set and maybe the more concrete implementation in Bitcoin Core or in Bitcoin. 
+Cool. So, tell me a little bit about the difference between the abstract concept of the UTXO set and maybe the more concrete implementation in Bitcoin Core or in Bitcoin.
 
 John Newbery: 00:03:37
 
-Yeah, so what I've been talking about so far as a UTXO set is a very abstract idea. It exists as part of the protocol, it's something we can talk about and think about. But let's kind of move from that to how it's implemented in software and what the data structures are and what's actually going on in your Bitcoin Core node to turn that kind of abstract idea into something that's more real and concrete. In Bitcoin Core, as it stands today in 0.19 and 0.20, we have what's called a coins database. So all these coins are stored either in memory or on disk in this large database that is indexed by what we call the outpoint and that outpoint consists of the transaction ID and the index of the transaction output that the coin is. If we go back in time to earlier versions of Bitcoin, let's go right back to the beginning to version 0.1, there was no concrete implementation of the UTXO set. It was an abstract idea that people could talk about later. But actually, in software, all that was stored was the blockchain and an index from the transaction ID into that blockchain together with I think a marker saying whether that coin was spent or not. That's I mean that's okay for your first version, but it doesn't really scale and it's bad performance because every time you want to access a coin you need to read it from disk. So in 0.8 in 2012, Peter Wuille implemented Ultraprune, and go back to episode 1 if you want to hear about that. And then in 0.15, which would have been around 2016, the format of that database was changed. It was previously keyed on just the transaction ID and then each of the outputs was a sub-entry below that to being keyed by the output itself. 
+Yeah, so what I've been talking about so far as a UTXO set is a very abstract idea. It exists as part of the protocol, it's something we can talk about and think about. But let's kind of move from that to how it's implemented in software and what the data structures are and what's actually going on in your Bitcoin Core node to turn that kind of abstract idea into something that's more real and concrete. In Bitcoin Core, as it stands today in 0.19 and 0.20, we have what's called a coins database. So all these coins are stored either in memory or on disk in this large database that is indexed by what we call the outpoint and that outpoint consists of the transaction ID and the index of the transaction output that the coin is. If we go back in time to earlier versions of Bitcoin, let's go right back to the beginning to version 0.1, there was no concrete implementation of the UTXO set. It was an abstract idea that people could talk about later. But actually, in software, all that was stored was the blockchain and an index from the transaction ID into that blockchain together with I think a marker saying whether that coin was spent or not. That's I mean that's okay for your first version, but it doesn't really scale and it's bad performance because every time you want to access a coin you need to read it from disk. So in 0.8 in 2012, Peter Wuille implemented Ultraprune, and go back to episode 1 if you want to hear about that. And then in 0.15, which would have been around 2016, the format of that database was changed. It was previously keyed on just the transaction ID and then each of the outputs was a sub-entry below that to being keyed by the output itself.
 
 Adam Jonas: 00:05:35
 
-So, how big is this data structure at this point? And I guess, in what cases do we need to access it? 
+So, how big is this data structure at this point? And I guess, in what cases do we need to access it?
 
 John Newbery: 00:05:42
 
-Data structure at this point, I believe, is on the order of four gigabytes, plus or minus a gigabyte I think. And so for a large machine you can easily store all of that in memory, but for a less powered machine you're not going to be able to get all of that in RAM. 
+Data structure at this point, I believe, is on the order of four gigabytes, plus or minus a gigabyte I think. And so for a large machine you can easily store all of that in memory, but for a less powered machine you're not going to be able to get all of that in RAM.
 
 Adam Jonas 00:05:57
 
-And maybe before you go too much further, like what are the advantages for maybe people who are on the cusp of understanding what you're talking about? What are the advantages of keeping in memory or putting it on disk? 
+And maybe before you go too much further, like what are the advantages for maybe people who are on the cusp of understanding what you're talking about? What are the advantages of keeping in memory or putting it on disk?
 
 John Newbery: 00:06:09
 
-Performance, predominantly. So accessing data from disk, either to write it to disk or to read it from disk, is many, many times slower than accessing memory RAM. So it might be... 
+Performance, predominantly. So accessing data from disk, either to write it to disk or to read it from disk, is many, many times slower than accessing memory RAM. So it might be...
 
-Adam Jonas: 00:06:21 
+Adam Jonas: 00:06:21
 
-It's the order of like 100, 000 or something like that, yeah. 
+It's the order of like 100, 000 or something like that, yeah.
 
 John Newbery: 00:06:25
 
-So if you scale up the times and it's like a second for memory, then it would be months or years. So it's just much, much quicker to keep stuff in memory when you can, but obviously memory is limited, and so if this data set becomes too big for your machine's memory, you need some way of what we call flushing that to disk. And so we have most of it stored on disk. And then above that we have what's called a cache for items that we think are going to be accessed more frequently. And that way we can get good performance and yet we can still store the entire data set without running out of memory. 
+So if you scale up the times and it's like a second for memory, then it would be months or years. So it's just much, much quicker to keep stuff in memory when you can, but obviously memory is limited, and so if this data set becomes too big for your machine's memory, you need some way of what we call flushing that to disk. And so we have most of it stored on disk. And then above that we have what's called a cache for items that we think are going to be accessed more frequently. And that way we can get good performance and yet we can still store the entire data set without running out of memory.
 
 Adam Jonas: 00:07:05
 
-Cool. So in what cases do we need to access this? 
+Cool. So in what cases do we need to access this?
 
 John Newbery: 00:07:10
 
-We access this whenever we try and spend a transaction. So if a transaction comes in, that transaction contains inputs, which are the coins that are being spent, and it produces new outputs. And so to verify that transaction as a full node, I need to first of all make sure that those coins exist, that it's trying to spend, so it's not just trying to make money out of thin air, and also that it fulfils the spending conditions of those coins. And those spending conditions are usually produce signature for the public key, which is associated with this output. So that's what the UTXO set does. It allows a full node to verify first of all the existence, and then verify the spending conditions are met when that coin tries to be spent. 
+We access this whenever we try and spend a transaction. So if a transaction comes in, that transaction contains inputs, which are the coins that are being spent, and it produces new outputs. And so to verify that transaction as a full node, I need to first of all make sure that those coins exist, that it's trying to spend, so it's not just trying to make money out of thin air, and also that it fulfils the spending conditions of those coins. And those spending conditions are usually produce signature for the public key, which is associated with this output. So that's what the UTXO set does. It allows a full node to verify first of all the existence, and then verify the spending conditions are met when that coin tries to be spent.
 
 Adam Jonas: 00:07:54
 
-Got it. So there's got to be, we're talking about memory, we're talking about flushing the disk, there has to be some sort of cache layer as well. Can you tell me, does that exist? And if so, are there different layers to it? 
+Got it. So there's got to be, we're talking about memory, we're talking about flushing the disk, there has to be some sort of cache layer as well. Can you tell me, does that exist? And if so, are there different layers to it?
 
 ## The cache layer
 
@@ -115,7 +115,7 @@ So listeners might have heard of the dbcache parameter. What's that and why does
 
 John Newbery: 00:10:02
 
-So, dbcache is a parameter that controls the size of that first lower level cache that I talked about earlier. And obviously the bigger that is, the less frequently you need to flush out that cache. The default setting for dbcache is 300 megabytes. So that means when you turn Bitcoin on for the first time, and you start downloading blocks, you'll be creating these new coins. The blocks will be adding new coins to your UTXO set stored in your coins cache. And when that reaches 300 megabytes, the cache is full up and you need to flush the disk. And that is pretty slow. It's a little bit disruptive to initial sync because everything pauses whilst you write everything to disk and then subsequently everything is cleared from that cache. So when you come to spend those coins in a later block, it needs to be read from disk again. So you lose both on having to write and having to read. The larger that dbcache is, the less frequently you need to do that flush to disk. So if you have a slow block download and you have memory to spare, try bumping up that dbcache to a higher number than 300. Incidentally, I prefer the term initial sync to initial block download, because there's a lot more going on during that process and downloading blocks. The vast majority of work is taking signatures and doing these flushes to disk and reads from disk. So I think initial sync kind of captures that whole process a bit better. 
+So, dbcache is a parameter that controls the size of that first lower level cache that I talked about earlier. And obviously the bigger that is, the less frequently you need to flush out that cache. The default setting for dbcache is 300 megabytes. So that means when you turn Bitcoin on for the first time, and you start downloading blocks, you'll be creating these new coins. The blocks will be adding new coins to your UTXO set stored in your coins cache. And when that reaches 300 megabytes, the cache is full up and you need to flush the disk. And that is pretty slow. It's a little bit disruptive to initial sync because everything pauses whilst you write everything to disk and then subsequently everything is cleared from that cache. So when you come to spend those coins in a later block, it needs to be read from disk again. So you lose both on having to write and having to read. The larger that dbcache is, the less frequently you need to do that flush to disk. So if you have a slow block download and you have memory to spare, try bumping up that dbcache to a higher number than 300. Incidentally, I prefer the term initial sync to initial block download, because there's a lot more going on during that process and downloading blocks. The vast majority of work is taking signatures and doing these flushes to disk and reads from disk. So I think initial sync kind of captures that whole process a bit better.
 
 ## Different ideas on how to keep track of the UTXO set and utreexo
 
@@ -131,7 +131,7 @@ Yeah absolutely. There have been a lot of proposals, a lot of theoretical ideas 
 
 Adam Jonas: 00:13:57
 
-So, the way you're talking about this, the UTXO just continues to grow. Is that the case? Are there ways to consolidate it? Do we want it big? Do we want it small? What's the future of the UTXO set? 
+So, the way you're talking about this, the UTXO just continues to grow. Is that the case? Are there ways to consolidate it? Do we want it big? Do we want it small? What's the future of the UTXO set?
 
 John Newbery: 00:14:11
 
@@ -141,11 +141,11 @@ Adam Jonas: 00:14:40
 
 And why? Historically, why would that happen?
 
- ## UTXO consolidation
+## UTXO consolidation
 
 John Newbery: 00:14:43
 
-Well, during 2017, it grew. There were lots of transactions, lots of traffic on the network and fees were not very high. And following that in 2018, fees reduced again. And A lot of actors on the network saw that as an opportunity to do what's called UTXO consolidation. Where they had a purse full of very small coins and they took those and combined them into one larger coin. And across the network, hundreds of thousands or millions of UTXOs were consolidated in this way. 
+Well, during 2017, it grew. There were lots of transactions, lots of traffic on the network and fees were not very high. And following that in 2018, fees reduced again. And A lot of actors on the network saw that as an opportunity to do what's called UTXO consolidation. Where they had a purse full of very small coins and they took those and combined them into one larger coin. And across the network, hundreds of thousands or millions of UTXOs were consolidated in this way.
 
 Adam Jonas: 00:15:22
 
@@ -159,7 +159,7 @@ Adam Jonas: 00:15:48
 
 But are you trying to clean up things like that are close to dust limit? And try you know if you're thinking of pennies and turn them in for a $10 bill, or are you trying to take all your pennies and turn them into a $100 bill or even larger?
 
-## UTXO selection 
+## UTXO selection
 
 John Newbery: 00:16:03
 
