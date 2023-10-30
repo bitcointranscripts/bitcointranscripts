@@ -6,6 +6,7 @@ transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['P2P', 'mempool']
 media: https://www.youtube.com/watch?v=fbWSQvJjKFs
+translation_by: Ajian
 ---
 
 主题：L2 开发者须知的交易转发规则
