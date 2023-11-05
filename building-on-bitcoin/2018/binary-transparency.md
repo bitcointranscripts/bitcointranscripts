@@ -1,12 +1,11 @@
 ---
-title: Binary Transparency
+title: Contours for Binary Transparency
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Mustafa Al-Bassam']
 date: 2018-07-03
+media: https://www.youtube.com/watch?v=59Igv-zQE7Y
 ---
-
-Contours for binary transparency
 
 <https://twitter.com/kanzure/status/1014167797205815297>
 

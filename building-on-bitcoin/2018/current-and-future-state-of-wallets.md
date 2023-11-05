@@ -5,9 +5,8 @@ categories: ['conference']
 tags: ['consensus', 'privacy', 'security', 'wallet', 'validation']
 speakers: ['Jonas Schnelli']
 date: 2018-07-03
+media: https://www.youtube.com/watch?v=CO2NXDWJa08
 ---
-
-Current and future state of wallets
 
 <https://twitter.com/kanzure/status/1014127893495021568>
 

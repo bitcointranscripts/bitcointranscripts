@@ -4,11 +4,8 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Eric Voskuil' ]
 date: 2018-07-04
+media: https://www.youtube.com/watch?v=QtB4YUneiEE
 ---
-
-# libbitcoin
-
-Building on Bitcoin 2018
 
 <https://twitter.com/kanzure/status/1014483126817521665>
 

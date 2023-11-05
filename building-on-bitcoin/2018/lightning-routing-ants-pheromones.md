@@ -5,9 +5,10 @@ categories: ['conference']
 tags: ['lightning', 'routing']
 speakers: ['Ricardo Perez-Marco']
 date: 2018-07-04
+media: https://www.youtube.com/watch?v=nmqniwbwCg0
 ---
 
-Building on Bitcoin 2018
+Decentralized anonymous routing algorithm for LN
 
 <https://twitter.com/kanzure/status/1014530761398145025>
 
@@ -15,7 +16,7 @@ Building on Bitcoin 2018
 
 # Introduction
 
-I wanted to present some ideas for alternative ideas for routing on LN. This was published on arxiv: 1807.00151 (July 2018).
+I wanted to present some ideas for alternative ideas for routing on LN. This was published on [arxiv: 1807.00151 (July 2018)](https://arxiv.org/abs/1807.00151v2).
 
 <http://webusers.imj-prg.fr/~ricardo.perez-marco>
 

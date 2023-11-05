@@ -5,18 +5,12 @@ categories: ['conference']
 tags: ['wallet']
 speakers: ['Eric Voskuil', 'Nicolas Dorier', 'Kevin Loaec', 'Lawrence Nahum']
 date: 2018-07-03
+media: https://www.youtube.com/watch?v=fjtmyaH6MG8
 ---
-
-Building on Bitcoin 2018
 
 <https://twitter.com/kanzure/status/1014167542422822913>
 
 What kind of tools do we need to create, in order to facilitate building on bitcoin? We are going to open questions to the floor. The guys will be there to get your questions. The panel will be about 20 minutes long, and then we will go for food.
-
-eric voskuil
-nicolasdorier
-kevin loaec
-lawrence nahum
 
 LN: I work at Blockstream. I work on low-level wallets and tooling for wallets.
 
