@@ -1,5 +1,5 @@
 ---
-title: Simplicity - Going Beyond Miniscript by Christian Lewe at Advancing Bitcoin Conference in London 2023
+title: "Simplicity: Going Beyond Miniscript"
 transcript_by: aphilg via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=abUF4MQ7j1w
 tags: ["Script","Miniscript"]
