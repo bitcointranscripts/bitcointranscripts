@@ -1,10 +1,9 @@
 ---
-title: Círculo 
+title: Charla de los fundadores de Circle
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 speakers: ['Jeremy Allaire', 'Sean Neville']
-aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/jeremy-allaire-circle/']
 ---
 
 Estamos encantados de estar aquí y de patrocinar este evento. Nuestra experiencia en herramientas para desarrolladores se remonta a los primeros días de algo.
