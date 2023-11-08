@@ -1,5 +1,5 @@
 ---
-title: Circle
+title: Talk by the founders of Circle
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 speakers: ['Jeremy Allaire', 'Sean Neville']
