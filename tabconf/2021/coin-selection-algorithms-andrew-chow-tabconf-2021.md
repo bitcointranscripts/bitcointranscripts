@@ -94,7 +94,7 @@ Audience: Right, and I guess the expectation is when you add more algorithms you
 
 Audience: Unless I misunderstood the consolidation fee rate, is that a constant? Are you picking that? 
 
-Andrew: So it's a user configurable value. We picked 10 because it seemed nice. But that's the default value. It can be changed through various settings. 
+Andrew: So it's a user configurable value. We picked ten because it seemed nice. But that's the default value. It can be changed through various settings. 
 
 Audience: So I can set it to 5, compare all these algorithms and I might end up with a different result to someone who set it to 20 or something. 
 
