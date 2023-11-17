@@ -2,15 +2,11 @@
 title: Routing Failures
 Transcript_by: Andrew Toth and Caralie Chrisco
 categories: ['residency']
-tags: ['lightning', 'routing failures']
+tags: ['lightning', 'routing']
 speakers: ['Fabrice Drouin']
 date: 2019-06-25
 media: https://youtu.be/z5vEyvc2vrE
 ---
-
-Topic: Routing Failures
-
-Location: Chaincode Labs Lightning Residency 2019
 
 ## Introduction
 

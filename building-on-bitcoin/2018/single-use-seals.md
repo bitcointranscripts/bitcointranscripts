@@ -5,11 +5,8 @@ categories: ['conference']
 tags: ['consensus', 'cryptography', 'lightning']
 speakers: ['Peter Todd']
 date: 2018-07-03
+media: https://www.youtube.com/watch?v=1U-1xkhJeEo
 ---
-
-Single use seals
-
-Building on Bitcoin 2018
 
 <https://twitter.com/kanzure/status/1014168068447195136>
 
