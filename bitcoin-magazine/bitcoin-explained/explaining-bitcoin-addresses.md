@@ -1,4 +1,12 @@
-
+---
+title: "Explaining Bitcoin Addresses"
+transcript_by: mubarak23 via review.btctranscripts.com
+media: https://www.youtube.com/watch?v=R1kF1rnLvM8
+tags: ["script"]
+speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+categories: ["podcast"]
+date: 2021-02-19
+---
 Aaron Van Wirdum: 00:01:45
 
 live from Utrecht this is the Van Wirdum Sjorsnado hello hey Sjors so the other day I wants to send Bitcoin to someone, but I didn't. Why? Shouldn't you hodl? I hodl all I can, but sometimes I need to eat, or I need to pay my rent, or I need to buy a new plant for my living room.
