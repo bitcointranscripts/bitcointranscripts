@@ -1,20 +1,3 @@
----
-title: "Explaining Bitcoin Addresses"
-transcript_by: mubarak23 via review.btctranscripts.com
-media: https://www.youtube.com/watch?v=R1kF1rnLvM8
-tags: ["script"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
-categories: ["podcast"]
-date: 2021-02-19
----
-
-Aaron Van Wirdum: 00:00:00
-
-Before the show, a quick word from our sponsor.
-
-Sjors Provoost: 00:00:04
-
-What is up Bitcoiners? It's CK and I'm here to talk to you about the Bitcoin 2021 conference this June in sunny Miami, Florida. It is going to be June 4th and 5th and we are barreling towards a sold out conference. Already one third of our available tickets have been sold and way more than half of our whale passes have been sold. We are almost sold out completely on the whale pass. We have amazing speakers, Jack Dorsey, Chamath, Nick Szabo, Tony Hawk, Peter Todd, many, many more and many more to be announced. You can go to the website to check them all out. Mayor Suarez has welcomed us into the city with open arms and again, tickets are flying off the shelves. Seriously, I see the feed and like I've done many conferences. This one is is really has some something going for it. And honestly, guys, like, after all this after 2020, Bitcoiners want to grab a beer, hang out. We're bringing back Bitcoin 2019 vibes, times 10, prices times 10. Let's go. Use promo code Satoshi, all caps, SATOSHI for 10% off. You can go to the website, b.tc backslash conference. Again, that is b.tc backslash conference and get your ticket today. Today prices also are going up and hey we may just sell out so we have a hard cap can't really be flexible there don't wait
 
 Aaron Van Wirdum: 00:01:45
 
@@ -150,15 +133,15 @@ Exactly, so what is an address?
 
 Sjors Provoost: 00:08:09
 
-So an address essentially is, at least this type of address, is the number one followed by the hash of the public key. But it is encoded using something called base 58.
+So an address essentially is, at least this type of address, is the number one followed by the hash of the public key. But it is encoded using something called base58.
 
 Aaron Van Wirdum: 00:08:20
 
-What's base 58?
+What's base58?
 
 Sjors Provoost: 00:08:22
 
-Okay so let's go back to base 64 I don't know if you've ever seen an email source code like an attachment all these weird characters in there that's base 64 but And base 58 is based on that, but maybe to say what it is, it is all the lowercase letters, all the uppercase letters, and all the numbers, and without any of the signs, and with some ambiguous things removed. So you do not have the small O, the big O, and the zero.
+Okay so let's go back to base 64 I don't know if you've ever seen an email source code like an attachment all these weird characters in there that's base 64 but And base58 is based on that, but maybe to say what it is, it is all the lowercase letters, all the uppercase letters, and all the numbers, and without any of the signs, and with some ambiguous things removed. So you do not have the small O, the big O, and the zero.
 
 Aaron Van Wirdum: 00:08:50
 
@@ -198,7 +181,7 @@ Okay, so we have 10 symbols, so that means that once you get by the 11th number,
 
 Sjors Provoost: 00:10:13
 
-Yeah exactly, and there have been different bases in use, right? So base 360 I believe was used by Babylonians, or maybe base 60. And then for computers we tend to use base 2 internally, because chips are either on or off, so it's 0 or 1, so a long series of 0s and 1s. And you can express any number of that now in order to read machine code typically you would use hexadecimal which is base 16 so that is 0 to 9 and then a to F mm-hmm yeah and right and so base 58 is basically this 58 possible characters to express something with.
+Yeah exactly, and there have been different bases in use, right? So base 360 I believe was used by Babylonians, or maybe base 60. And then for computers we tend to use base 2 internally, because chips are either on or off, so it's 0 or 1, so a long series of 0s and 1s. And you can express any number of that now in order to read machine code typically you would use hexadecimal which is base 16 so that is 0 to 9 and then a to F mm-hmm yeah and right and so base58 is basically this 58 possible characters to express something with.
 
 Aaron Van Wirdum: 00:10:51
 
@@ -206,11 +189,11 @@ Yeah, it's all numbers and there's different ways of expressing a number based o
 
 Sjors Provoost: 00:11:02
 
-Right, the trade-off here is readability really, because you could represent machine code as normal characters, so the ASCII alphabet, or the ASCII character set is 256 different characters, So that's base 256. But if you've ever done something like print and then the name of a file, your computer will show complete gibberish on the screen and it will start beeping. And the reason it starts beeping is because one of these codes Somewhere in the base 256 is a beep, which actually makes your terminal beep. So it is completely impractical to view a file using base 256, even though there is a character for every of the 256 things there. So that's why you tend to do that in base 16. Hexadecimal is relatively easy to read, but then it's quite long. If you take a public key and you write it as hexadecimal it's a rather long thing to write down but and bass 58 is a little bit shorter so maybe you know it's easier to copy paste perhaps or it's not even easy to read on the phone like bass 58 is pretty terrible because it's uppercase, lowercase, uppercase, lowercase.
+Right, the trade-off here is readability really, because you could represent machine code as normal characters, so the ASCII alphabet, or the ASCII character set is 256 different characters, So that's base 256. But if you've ever done something like print and then the name of a file, your computer will show complete gibberish on the screen and it will start beeping. And the reason it starts beeping is because one of these codes Somewhere in the base 256 is a beep, which actually makes your terminal beep. So it is completely impractical to view a file using base 256, even though there is a character for every of the 256 things there. So that's why you tend to do that in base 16. Hexadecimal is relatively easy to read, but then it's quite long. If you take a public key and you write it as hexadecimal it's a rather long thing to write down but and base58 is a little bit shorter so maybe you know it's easier to copy paste perhaps or it's not even easy to read on the phone like base58 is pretty terrible because it's uppercase, lowercase, uppercase, lowercase.
 
 Aaron Van Wirdum: 00:12:05
 
-Yeah, okay. Just to restate that briefly. So base 2 is just you're just using two symbols, which is 1 and 0. And base 10 is what we use most of the time. It's 0, 1, 2, 3, 4, up until 9. Then you have hexadecimal, which uses 0 through 9, plus A, B, C, D, E, F. And then what we're talking about here is base 58, which uses 58 different symbols, which are 0 through 9, and then most of the alphabet in both capital letters and undercase,
+Yeah, okay. Just to restate that briefly. So base 2 is just you're just using two symbols, which is 1 and 0. And base 10 is what we use most of the time. It's 0, 1, 2, 3, 4, up until 9. Then you have hexadecimal, which uses 0 through 9, plus A, B, C, D, E, F. And then what we're talking about here is base58, which uses 58 different symbols, which are 0 through 9, and then most of the alphabet in both capital letters and undercase,
 
 Sjors Provoost: 00:12:40
 
@@ -226,7 +209,7 @@ Right, and that's why you get a little bit less than, you know, if you just add 
 
 Aaron Van Wirdum: 00:13:09
 
-So I think we finally explained what base 58 means.
+So I think we finally explained what base58 means.
 
 Sjors Provoost: 00:13:11
 
@@ -234,7 +217,7 @@ Yeah, and just as a side step, I talked about email earlier, that's base 64. Tha
 
 Aaron Van Wirdum: 00:13:32
 
-Okay, that's base 58. Now, why are we talking about this? What is an address?
+Okay, that's base58. Now, why are we talking about this? What is an address?
 
 Sjors Provoost: 00:13:37
 
@@ -242,11 +225,11 @@ Yeah, so the address again is the actually the value 0, I believe, but that's ex
 
 Aaron Van Wirdum: 00:13:46
 
-Base 58 system, yeah.
+base58 system, yeah.
 
 Sjors Provoost: 00:13:47
 
-Yeah, so it starts with a 1 and then it's followed by the public key hash, which is just expressed in base 58.
+Yeah, so it starts with a 1 and then it's followed by the public key hash, which is just expressed in base58.
 
 Aaron Van Wirdum: 00:13:54
 
@@ -254,11 +237,11 @@ Right, is that all it is?
 
 Sjors Provoost: 00:13:56
 
-Yes, and keep in mind, so that is the information you send to somebody else when you want them to send you Bitcoin. You could also just send them 00 and then the public key and maybe they would be able to interpret that. Probably not. You could send them the actual script that's used on the blockchain because on the blockchain There is no like base 58 or base 64 or anything like that. The blockchain is just, you know, binary information. So the blockchain has this script that says, if the person has the right public key hash, has the public key belonging to this public key hash, then you can spend it. And we talked about in an earlier episode how Bitcoin scripts work. So you could send somebody the Bitcoin script in hexadecimal, anything you want. But the convention is you use this address format. And that's why all traditional Bitcoin addresses start with a one. And they're all the same, roughly the same length.
+Yes, and keep in mind, so that is the information you send to somebody else when you want them to send you Bitcoin. You could also just send them 00 and then the public key and maybe they would be able to interpret that. Probably not. You could send them the actual script that's used on the blockchain because on the blockchain There is no like base58 or base 64 or anything like that. The blockchain is just, you know, binary information. So the blockchain has this script that says, if the person has the right public key hash, has the public key belonging to this public key hash, then you can spend it. And we talked about in an earlier episode how Bitcoin scripts work. So you could send somebody the Bitcoin script in hexadecimal, anything you want. But the convention is you use this address format. And that's why all traditional Bitcoin addresses start with a one. And they're all the same, roughly the same length.
 
 Aaron Van Wirdum: 00:14:45
 
-Okay, so a Bitcoin address is basically just a base 58 representation of a version number plus a public key hash. Sure, is base 58 used for anything else in Bitcoin?
+Okay, so a Bitcoin address is basically just a base58 representation of a version number plus a public key hash. Sure, is base58 used for anything else in Bitcoin?
 
 Sjors Provoost: 00:15:01
 
@@ -334,7 +317,7 @@ So it's just a convention and once again meaning on the blockchain itself
 
 Aaron Van Wirdum: 00:17:13
 
-once again all this is is a version number plus this hash represented in base 58. Is that all it is? Yeah. This is all so much simpler than I once thought, Sjors.
+once again all this is is a version number plus this hash represented in base58. Is that all it is? Yeah. This is all so much simpler than I once thought, Sjors.
 
 Sjors Provoost: 00:17:26
 
@@ -362,7 +345,7 @@ Yeah, usually, but not always. And we're getting into that, I think. Yep. So wha
 
 Sjors Provoost: 00:18:16
 
-Well, that is BEG32 or BECH32 or however you want to pronounce it. And it's been used since SegWit, basically. And again, it is something that doesn't exist on the blockchain, so it's just a convention that wallets can use. This is a, as the name suggests, a base 32 system. Which means you have almost all the letters, and almost all the numbers, minus some ambiguous characters that you don't want to have, because they look too much like numbers or letters.
+Well, that is BECH32 or however you want to pronounce it. And it's been used since SegWit, basically. And again, it is something that doesn't exist on the blockchain, so it's just a convention that wallets can use. This is a, as the name suggests, a base 32 system. Which means you have almost all the letters, and almost all the numbers, minus some ambiguous characters that you don't want to have, because they look too much like numbers or letters.
 
 Aaron Van Wirdum: 00:18:46
 
@@ -450,7 +433,7 @@ One just means... Skip this. The human readable part is over, now the fun stuff 
 
 Sjors Provoost: 00:21:43
 
- Right. And the fun stuff, it's a little bit easier actually than with Base58, because there's a convention that says if it's... Well, the convention is it starts with the SegWit version, so the first version of SegWit is 0, which in BEC32 is written as Q. And then it's either followed by 20 bytes or 32 bytes. And that is, then it means either it's the public key hash, or it is the script hash. And they're different lengths now because SegWit uses the SHA-256 hash of the script, rather than the RIPMAT-160 hash of the script. So in base58 the script hash is the same length as the public key hash but in segwit they're not the same length. So Simply by looking at how long the address is, you know whether you're paying to a script or you're paying to a public key. Yeah, sure, we don't have to say it.
+Right. And the fun stuff, it's a little bit easier actually than with Base58, because there's a convention that says if it's... Well, the convention is it starts with the SegWit version, so the first version of SegWit is 0, which in BECH32 is written as Q. And then it's either followed by 20 bytes or 32 bytes. And that is, then it means either it's the public key hash, or it is the script hash. And they're different lengths now because SegWit uses the SHA-256 hash of the script, rather than the RIPEMD-160 hash of the script. So in base58 the script hash is the same length as the public key hash but in segwit they're not the same length. So Simply by looking at how long the address is, you know whether you're paying to a script or you're paying to a public key. Yeah, sure, we don't have to say it.
 
 Aaron Van Wirdum: 00:22:36
 
@@ -474,7 +457,7 @@ Gijs is there anything else cool about back32?
 
 Sjors Provoost: 00:23:16
 
-Yeah there is and it's about error correction. So in base 58 there is a checksum. So a checksum basically means you add something to the address at the end and that way if you make a typo then that checksum at the end of the address is not gonna work.
+Yeah there is and it's about error correction. So in base58 there is a checksum. So a checksum basically means you add something to the address at the end and that way if you make a typo then that checksum at the end of the address is not gonna work.
 
 Aaron Van Wirdum: 00:23:34
 
@@ -598,7 +581,7 @@ That's right. So that's annoying, because it does mean that if your wallet wants
 
 Aaron Van Wirdum: 00:29:51
 
-Right, so we started out with base58 addresses, now we're all starting to use BEC32 addresses. Is this final? Are we going to keep using BEC32 or are you anticipating some other address format somewhere in the future?
+Right, so we started out with base58 addresses, now we're all starting to use BECH32 addresses. Is this final? Are we going to keep using BECH32 or are you anticipating some other address format somewhere in the future?
 
 Sjors Provoost: 00:30:07
 
