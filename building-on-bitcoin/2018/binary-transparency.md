@@ -57,4 +57,4 @@ To implement this with the debian package repositories, there were about ~1.7 te
 
 <https://github.com/musalbas/contour>
 
-Q: What about custom builds for everyone? You would need formal proof of software behavior, tied to the particular build. 
+Q: What about custom builds for everyone? You would need formal proof of software behavior, tied to the particular build.

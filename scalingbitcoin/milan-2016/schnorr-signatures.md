@@ -14,7 +14,7 @@ Location: Scaling Bitcoin (Milan)
 
 Slides: URL expired
 
-Pieter Wuille presentation on Schnorr at BPASE 2018: https://diyhpl.us/wiki/transcripts/blockchain-protocol-analysis-security-engineering/2018/schnorr-signatures-for-bitcoin-challenges-opportunities/ 
+Pieter Wuille presentation on Schnorr at BPASE 2018: https://diyhpl.us/wiki/transcripts/blockchain-protocol-analysis-security-engineering/2018/schnorr-signatures-for-bitcoin-challenges-opportunities/
 
 Transcript completed by: Bryan Bishop
 Edited by: Michael Folkson
@@ -25,7 +25,7 @@ Today I will be talking about Schnorr signatures for Bitcoin. I want to say a fe
 
 # Schnorr signatures
 
-Schnorr signatures are a cryptographic scheme. That’s the formula. 
+Schnorr signatures are a cryptographic scheme. That’s the formula.
 
 `Q = x * G`
 
@@ -35,7 +35,7 @@ I don't think I will discuss the details here. I will first talk about the histo
 
 # History
 
-So history, Schnorr signatures were originally proposed in 1988 by Claus-Peter Schnorr who patented his invention. The nice thing about Schnorr signatures is that they are remarkably simple. It is much simpler than ECDSA, even. It works on any group in which the discrete logarithm problem is hard. 
+So history, Schnorr signatures were originally proposed in 1988 by Claus-Peter Schnorr who patented his invention. The nice thing about Schnorr signatures is that they are remarkably simple. It is much simpler than ECDSA, even. It works on any group in which the discrete logarithm problem is hard.
 
 At the time it was proposed for integer multiplication of modular groups. These days we apply it to elliptic curve crypto. However, in 1993, a standard for signatures based on this type of cryptography was standardized. However they didn't use the Schnorr system presumably because it was patented. Instead, DSA was standardized, presumably to avoid some of the patents. Schnorr claimed for a long time that DSA infringed on his own patents.
 
@@ -43,14 +43,14 @@ In 2005, when elliptic curve cryptography was being standardized people built on
 
 # Advantages
 
-What are some of the advantages that Schnorr has over ECDSA? One is that it is provably secure under standard assumptions, a random oracle model and that the discrete logarithm problem is hard. 
+What are some of the advantages that Schnorr has over ECDSA? One is that it is provably secure under standard assumptions, a random oracle model and that the discrete logarithm problem is hard.
 ECDSA does not have any proof. Its security is based on people trying to break it and failing. For Schnorr we know that if the random oracle model is an assumption we can make and the discrete logarithm problem is hard then we can 100 percent prove it is secure. It is also provably non-malleable. This is not so much a problem anymore in Bitcoin as we hopefully soon have Segregated Witness plus a low s policy that prevents the known malleability of ECDSA. But there is no proof that there is no other malleability in ECDSA. In Schnorr we know it is impossible. It also supports batch validation which means if you have a group of public key, message signature pairs rather than just a single one, you can verify whether all of them are valid or not all of them are valid at once at a higher speed than each of them individually. This is exactly what we want for Bitcoin blocks because they are big batches of signatures to validate. Last but definitely not least is native k-of-k multisignatures. The idea is that in Schnorr you can take a bunch of keys together and have a single signature that proves all of them signed. And more which I will talk about later.
 
 # Applications of Schnorr signatures
 
 What are some of the applications? First can we take Schnorr as a drop-in replacement for ECDSA as it exists in Bitcoin? And can we apply it to multisig signatures? And I will talk about transaction wide signature aggregation. My goal here is to come up with a single standard that fits all of the applications so we don’t have to worry about what can be used where and when.
 
-So first, the drop-in replacement question. The security proof of Schnorr signatures says that they are existentially unforgeable under the assumptions I mentioned before. 
+So first, the drop-in replacement question. The security proof of Schnorr signatures says that they are existentially unforgeable under the assumptions I mentioned before.
 
 What this means is that if there is a fixed chosen public key in advance it is impossible to create a signature for that key without having the key for any message even messages that an attacker can choose. This sounds great, it is exactly what we want. It turns out it is not exactly what we want. It doesn’t say anything about keys you haven’t chosen in advance. It turns out if you take Schnorr signatures naively and apply it to an elliptic curve group it has a really annoying interaction with BIP 32 when used with public derivation. If you know a master public key and you see any signature below it you can transmute that signature into a valid signature for any other key under that master key. This is a very unexpected result that is not necessarily a problem under standard assumptions. But we should really test our assumptions. This nice proof of existential unforgeability but we need to test whether that is the only thing we want.
 
@@ -84,7 +84,7 @@ Instead of just multiplying each key with the hash of itself we multiply it with
 
 # Bringing this to Bitcoin
 
-So how do we bring this to Bitcoin? The easiest is we do OP_SCHNORR instead of OP_CHECKSIGVERIFY. With the SegWit script versioning we could define a new version number. CHECKSIGVERIFY from now on means Schnorr CHECKSIGVERIFY. This has a downside. It can only do k-of-k and there is a single signature for every key. We could do better and make an alternative to OP_CHECKMULTISIG, OP_MULTISCHNORR I guess which has multiple public keys but still only a single signature. This would be a huge advantage for larger multisig constructions which are very expensive and large right now in Bitcoin. If we had the above plus a Merkle check or Merklized Abstract Syntax Tree (MAST) or any of those we can pretty much reduce every input to just a single signature. Choose some combination of keys and provide a single signature with it. If we go as far as doing signature aggregation we can do pretty much anything with just a single signature for the entire transaction. 
+So how do we bring this to Bitcoin? The easiest is we do OP_SCHNORR instead of OP_CHECKSIGVERIFY. With the SegWit script versioning we could define a new version number. CHECKSIGVERIFY from now on means Schnorr CHECKSIGVERIFY. This has a downside. It can only do k-of-k and there is a single signature for every key. We could do better and make an alternative to OP_CHECKMULTISIG, OP_MULTISCHNORR I guess which has multiple public keys but still only a single signature. This would be a huge advantage for larger multisig constructions which are very expensive and large right now in Bitcoin. If we had the above plus a Merkle check or Merklized Abstract Syntax Tree (MAST) or any of those we can pretty much reduce every input to just a single signature. Choose some combination of keys and provide a single signature with it. If we go as far as doing signature aggregation we can do pretty much anything with just a single signature for the entire transaction.
 
 # Signature aggregation
 
@@ -92,7 +92,7 @@ How would signature aggregation would in practice? On the left are signatures, o
 
 # Future work
 
-We definitely need to do academic write ups about this delinearization scheme. I don't know of much in the literature about this exact case. Waiting for SegWit to roll out because we need script versioning. And we need to write a BIP. 
+We definitely need to do academic write ups about this delinearization scheme. I don't know of much in the literature about this exact case. Waiting for SegWit to roll out because we need script versioning. And we need to write a BIP.
 
 Thank you.
 

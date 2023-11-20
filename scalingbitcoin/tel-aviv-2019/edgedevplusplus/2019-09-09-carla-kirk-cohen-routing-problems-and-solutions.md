@@ -66,9 +66,9 @@ So one of the ideas out there at the moment is something called trampoline routi
 
 We'll touch a lot in privacy about this. this is more that you're not necessarily gonna have that you don't want to just be opening up a channel with the trampoline. So you'll have a local view of the network. It's maybe got a few trampoline nodes and a few hops between yourself and those trampolines. That's kind of what 's trying to indicate that you will do some routing yourself. It'll just be much less because you're trying to reach this trampoline which will then do the vast majority of the robbing.
 
-Audience Member Speaks. 
+Audience Member Speaks.
 
-Carla: No, I don't notice into necessarily okay so this is one of the proposals out there for trampolines is PR six five four on the bolts pacification and the way this works is that you do a regular trampoline regular onion to the trampoline which is that first half in the diagram. and this is the onion packet that looks like so it's got a type version, public key and one thousand three hundred bytes of hop-hop payloads. 
+Carla: No, I don't notice into necessarily okay so this is one of the proposals out there for trampolines is PR six five four on the bolts pacification and the way this works is that you do a regular trampoline regular onion to the trampoline which is that first half in the diagram. and this is the onion packet that looks like so it's got a type version, public key and one thousand three hundred bytes of hop-hop payloads.
 
 And then you put the trampoline onion inside of the hot payload of the original onion in the last hop. The trampoline onion packet looks very similar to the original onion packet however it's got a much shorter hop payloads and you get 400 bytes of payload and these payloads are slightly different so they have the amount they have the node ID they have the time life delay but they also have what's called recipient features and these recipient features indicate what kind of recipient it is so whether or not the recipient supports trampoline or not. This is really important when we get down to routing to your recipient.
 
@@ -78,17 +78,17 @@ So A would send us this onion to whoever has a look at this onion peels off the 
 
 It then also takes the remainder of the trampoline onion and puts it back inside of this regular onion. So we created a new onion and now we're going to route it again. This onion goes off on the Lightning Network and each node along the hop peels back the player and routes it onwards until eventually it reaches the second trampoline. This trampoline again understands that there is a trampoline onion packet inside of the regular packet whereas all the other nodes along the hub between t1 and t2 didn't need to know that. They're only concerned with the next hop along the way.
 
-So they just look at the regular onion they see when they need to go and they send it with no problems but t2 gets this trampoline packet and has a look at the next hop in it and it sees the next hop is zed. Zed also got the recipient features set so that it knows it is not a trampoline node. So it now needs to convert this final hop in the network into a regular onion hop rather than putting the onion the trampoline packet back in the onion so it now computes the route to Zed which is just a single hop for a Y to route to Z and then sends a packet onto Y who sends a packet to Zed who receives the payment and observes absolutely no difference. 
+So they just look at the regular onion they see when they need to go and they send it with no problems but t2 gets this trampoline packet and has a look at the next hop in it and it sees the next hop is zed. Zed also got the recipient features set so that it knows it is not a trampoline node. So it now needs to convert this final hop in the network into a regular onion hop rather than putting the onion the trampoline packet back in the onion so it now computes the route to Zed which is just a single hop for a Y to route to Z and then sends a packet onto Y who sends a packet to Zed who receives the payment and observes absolutely no difference.
 
 A problem here is that there is a privacy unique if Z is not a trampoline bug. Because the second trampoline knows that they are not the final destination because they had to convert it to a regular hop. If it was supporting trampoline they would just put that trampoline onion back inside of the regular onion and say could unwrap it and would know what the message was and there wouldn't be any privacy leak.
 
-On that note moving on to some trade offs, the first is this potential privacy leak. If all recipient nerds support trampoline it would be fine and there are some things that we can do to get around this issue but if people aren't supplying trampoline this is a privacy leak for the recipient. However the degree to how bad this is you can debate the curse. We use sauce based routing so the sender already knows who the recipient is. There's just now one more party who knows who the recipient of the other's payment is and that's the final trampoline. 
+On that note moving on to some trade offs, the first is this potential privacy leak. If all recipient nerds support trampoline it would be fine and there are some things that we can do to get around this issue but if people aren't supplying trampoline this is a privacy leak for the recipient. However the degree to how bad this is you can debate the curse. We use sauce based routing so the sender already knows who the recipient is. There's just now one more party who knows who the recipient of the other's payment is and that's the final trampoline.
 
 Another trade-off --
 
 Audience Member speaks
 
-Carla: Yeah so just as I understand this type of message, so I signal this feature to be a new feature, a new feature block that you negotiate 
+Carla: Yeah so just as I understand this type of message, so I signal this feature to be a new feature, a new feature block that you negotiate
 
 Another argument against trampoline routing, which I think is all right, is that if you use a trampoline you're not gonna learn about the network graph. Because when you fail, when you fail to make payments you can discount certain edges and learn where your routing wall and routing badly. I don't personally rate this one very highly as a bad trade-off because if you are using a trampoline you've really chosen to outsource routing. That's the trade-off you've made. If you do want to learn more about the network graph and run more efficiently, then you need to be able to support more of the graph.
 
@@ -105,7 +105,7 @@ Yeah thank you. Questions?
 ## Q&A
 
 Audience Member speaks
-Carla: Oh no so if I have a channel open with someone and you're routing in this direction only I only I charge fees because it's my Bitcoin that's that's being potentially locked up okay so it's my liquidity that's being used and then if someone's routing to me then they earn the fees well said 
+Carla: Oh no so if I have a channel open with someone and you're routing in this direction only I only I charge fees because it's my Bitcoin that's that's being potentially locked up okay so it's my liquidity that's being used and then if someone's routing to me then they earn the fees well said
 
 Audience Member Speaks
 

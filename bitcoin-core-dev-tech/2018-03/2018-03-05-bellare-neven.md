@@ -1,5 +1,5 @@
 ---
-title: Bellare Neven 
+title: Bellare Neven
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['multisig']

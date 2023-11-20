@@ -1,5 +1,5 @@
 ---
-title: El maximalismo de Bitcoin diseccionado 
+title: El maximalismo de Bitcoin diseccionado
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

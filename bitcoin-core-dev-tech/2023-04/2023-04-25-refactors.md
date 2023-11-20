@@ -55,7 +55,7 @@ Part of the problem is too much politeness
 
 If you are part time, it’s easier to do small things
 
-- Full timers - more comfortable to jump into something that is deeper - we don’t have 
+- Full timers - more comfortable to jump into something that is deeper - we don’t have
 - Like to work on larger domains but grants may not value that as much
 - Open a lot of smaller refactors to make it seem like they are doing something
 

@@ -1,5 +1,5 @@
 ---
-title: Nix Bitcoin 
+title: Nix Bitcoin
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['security', 'privacy']

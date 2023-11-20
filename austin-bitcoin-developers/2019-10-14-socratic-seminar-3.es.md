@@ -39,7 +39,7 @@ WT: ¿Qué seguridad tienen los desarrolladores de que el consenso es el comport
 
 R: Muy seguro, por dos razones. En la pantalla hay 26 fragmentos y todos son pequeños y sencillos. Y además no usamos los somáticos raros, salvo que OP\_CSV toma un número de 5 bytes donde los otros toman números de 4 bytes.
 
-# Boletín de Bitcoin optech 
+# Boletín de Bitcoin optech
 
 Una cosa genial es el boletín de bitcoin optech. Voy a omitir algunos. Hicieron una matriz de compatibilidad de billeteras. Ellos están presionando para el uso de segwit. Cualquiera que sea el monedero que estés usando, puedes recorrerlo y ver qué características superan. Esto es útil a la hora de elegir un intercambio o algo así. Tuvieron una serie de 27 semanas en las que el boletín de cada semana incluía una sección sobre segwit, como por ejemplo cómo implementarlo y por qué implementarlo. Cualquiera que sienta curiosidad por segwit lo encontrará útil y podrá volver a hojearlos. Son lecturas bastante cortas.
 
@@ -49,7 +49,7 @@ R: La verdad es que no. Una cosa que me pareció genial es que a veces ves cosas
 
 ... muchos de ellos soportan pay-to-pubkey-hash que es algo así como el single sig, sólo que usando una cartera de hardware. ... También hay algunas restricciones extrañas en la longitud de las direcciones. Algunos de ellos soportan bech32. Algún comentario sobre esto o experiencias con la adopción de segwit-- ¿tu cartera lo utiliza? ¿Alguna opinión al respecto? Bien, podemos seguir avanzando.
 
-# Cambios notables en el código 
+# Cambios notables en el código
 
 Aquí hay un cambio de código notable que me pareció interesante. Nicolas Dorier hizo btcpay. Tiene un pull request abierto para permitir una lista blanca para los filtros bloom. Si tienes un cliente lite, como en tu teléfono móvil, tienen una característica de lista blanca donde básicamente puedes permitir -- es otra forma de usar tus nodos completos y hablar con clientes lite. ¿Alguna idea sobre esto?
 
@@ -79,7 +79,7 @@ SNICKER es como esta interesante propuesta de coinjoin. Básicamente, si puedes 
 
 Coinjoin es un mecanismo de privacidad en bitcoin en el que un grupo de personas deciden combinar transacciones y luego dar un montón de salidas con todas las mismas cantidades y puede ocultar de dónde vino su BTC. Sin embargo, no sabes quién es el creador de esta transacción. SNICKER tiene mejores garantías de privacidad y es más barato.
 
-# Cosas rápidas al azar 
+# Cosas rápidas al azar
 
 Aquí hay un script de python genial que alguien hizo, que puede imprimir un gráfico de quién estaba minando en un momento dado. Podrías hacer una animación, supongo.
 
@@ -87,11 +87,11 @@ Aquí hay un nuevo explorador de bloques que no había visto antes; hace un mape
 
 Este es projectmempool.space que tiene un montón de gráficos interesantes, como la utilización del mempool. Estas son las transacciones que están esperando ser confirmadas. Esta es la tasa que la gente está pagando para entrar en el blockchain, graficada en el tiempo.
 
-# Inmersión en el código de Bitcoin 
+# Inmersión en el código de Bitcoin
 
 Esto es hacer algunos análisis sobre la actividad en el repo de Bitcoin Core. En algunos días de la semana hay mucha actividad, pero no en los fines de semana. También muestra el número de commits; está aumentando con el tiempo en general. Aquí está el análisis de cuánto tiempo permanece el código creo. Creo que eso es lo que es. ¿Qué es el análisis de burndown? Realmente no tiene sentido sin embargo... ¿así que esto desapareció inmediatamente?
 
-# Fuego rápido de nuevo 
+# Fuego rápido de nuevo
 
 Chainalysis menciona que la mayoría de los bitcoin mixtos no se utilizan con fines ilícitos. Este fue un interesante artículo en Bitcoin Magazine. Wasabi Wallet ha recibido 250 millones de dólares en lo que va de año y va en vertical. Así que eso es genial. Luego hay un análisis de este mercado de fabricantes, un sucesor de la ruta de la seda. Bitcoin sigue siendo el principal modo de pago, y Monero no lo es. Es el método de pago dominante, así que eso es interesante.
 
@@ -101,7 +101,7 @@ Aquí hay algunas cosas nuevas en la GUI de Bitcoin Core. Esta permite deshabili
 
 Algunos de nosotros también fuimos al taller optech de bitcoin taproot, el editor del boletín optech. Fue genial. Era un montón de código python en cuadernos jupyter. Instalas una versión de Bitcoin Core con el código taproot bip ejecutado, y eres capaz de escribir transacciones contra eso y puedes aprender cómo funciona taproot contra eso. Hay ejemplos muy profundos hechos por la gente de residencia de Chaincode Labs. Podrían estar interesados en hacer un seminario o taller de taproot de un día.
 
-# Cosas de Lightning 
+# Cosas de Lightning
 
 La sección de lightning es algo pequeña esta vez. Hay algunas cosas que he estado leyendo también, tangencialmente relacionadas. Una cosa que me pareció interesante y que Justin tocó y que no está en esta lista, pero que de todos modos la traigo a colación, es la discusión en la lista de correo de bitcoin-dev sobre la nomenclatura del uso de la palabra dirección. Pensé que era un punto interesante para la discusión.
 
@@ -115,7 +115,7 @@ P: ¿Y si se dice "envíalo a esta moneda" o "a este bloqueo"? Alguien sugiere "
 
 Los UTXOs son cosas realmente nuevas en lo que se refiere al intercambio de dinero. No hay una analogía real. La gente encuentra esto confuso sobre bitcoin; que es una escritura y un cierre. Tal vez sea mejor para la adopción hacer un nuevo nombre, para que la gente tenga algo a lo que agarrarse.
 
-# Conciliación de la cadena y fuera de la cadena con eltoo 
+# Conciliación de la cadena y fuera de la cadena con eltoo
 
 Intentaré explicar brevemente qué es eltoo. ¿Todos saben lo que es lightning? Sí. Lightning actualmente utiliza este formato de escritura en las transacciones de bitcoin para crear este mecanismo fuera de la cadena. Estos se llaman HTLCs, hashed timelock contracts. Es similar a lo que estábamos viendo antes, como miniscript, no exactamente, son scripts más complejos que no sólo pagan a una clave pública que codifica las condiciones actuales. Una de las formas en que Lightning permite este protocolo fuera de la cadena es que usted tiene dos partes que entran en un contrato multisig y ambos tienen que estar de acuerdo desbloquearlo. Cuando se pagan el uno al otro, son sólo dos personas, y básicamente están de acuerdo en reequilibrar el pago de ese contrato. Uno de los problemas es que lo que sucede cuando no se confía en la otra parte. Así que digamos que la otra persona toma una versión acordada más antigua de su contrato... Hay un mecanismo de castigo, donde existe la posibilidad de robar todo el valor del contrato.
 

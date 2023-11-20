@@ -56,11 +56,11 @@ We have some new people that work here though. That's exciting.
 
 Caralie Chrisco: 00:00:59
 
-That is very exciting. 
+That is very exciting.
 
 Adam Jonas: 00:01:00
 
-You want to talk to Murch for the first one back? 
+You want to talk to Murch for the first one back?
 
 Caralie Chrisco: 00:01:02
 
@@ -112,15 +112,15 @@ I am very happy to be back in a big city. It suits my lifestyle. I'm so glad not
 
 Adam Jonas:
 
-Yeah. 
+Yeah.
 
 Mark Erhardt:
 
-I mean, the pandemic makes it all a little less lively and less social. So, looking forward to all of that being behind us eventually. Yeah. 
+I mean, the pandemic makes it all a little less lively and less social. So, looking forward to all of that being behind us eventually. Yeah.
 
 Adam Jonas: 00:02:06
 
-So everybody calls you Murch. You prefer to be called Murch. 
+So everybody calls you Murch. You prefer to be called Murch.
 
 Mark Erhardt:
 
@@ -222,7 +222,7 @@ Maybe as you're sort of describing these different features available, you could
 
 Mark Erhardt: 00:09:57
 
-Right. So batching, of course, requires you to make a lot of payments for you to be doable in the first place. If you're making one payment per hour you'd have to make the first recipient wait for over an hour until the second recipient comes along so you can make two payments in one transaction. Obviously that's not gonna work and you're just gonna send out the first payment and then the second payment an hour later. Now, if you're a big Bitcoin exchange and have hundreds of thousands of customers, always there's going to be some that want to withdraw, and you can just make one payment per minute and send to 20 people at the same time. So, you'll continuously just have this rolling set of payments you're batching into a transaction, and just on a clock, tick out a transaction once per minute, and you gain maybe a 70% efficiency gain in block space per payment. 
+Right. So batching, of course, requires you to make a lot of payments for you to be doable in the first place. If you're making one payment per hour you'd have to make the first recipient wait for over an hour until the second recipient comes along so you can make two payments in one transaction. Obviously that's not gonna work and you're just gonna send out the first payment and then the second payment an hour later. Now, if you're a big Bitcoin exchange and have hundreds of thousands of customers, always there's going to be some that want to withdraw, and you can just make one payment per minute and send to 20 people at the same time. So, you'll continuously just have this rolling set of payments you're batching into a transaction, and just on a clock, tick out a transaction once per minute, and you gain maybe a 70% efficiency gain in block space per payment.
 
 Adam Jonas: 00:10:59
 
@@ -236,7 +236,7 @@ What about consolidations? What's that?
 
 Mark Erhardt: 00:11:03
 
-Again, this is something that affects you if you have a lot of traffic. Every time you receive a payment, you'll have a new UTXO. And some of them might be fairly small, right? In some countries, say, Bitcoin exchange in South America, the average deposit size will be a lot smaller than the average batch of payments that they're going to make. And let's say people deposit $20 each time. But when you do a withdrawal, altogether you're trying to send out $400 worth of Bitcoin. So you'd have to use 20 pieces of Bitcoin of those $20 pieces to make up those $400, And you'd pay that at a high fee rate because you want to make the withdrawal go through quickly. So you'd have this huge transaction that you pay premium fee rate for to get it through quickly. And what you'd rather do is, well, let's just consolidate all those 20 tiny pieces overnight, and tomorrow I'll have one piece of $400 worth of Bitcoin, and I'll use that to make a payment. But of course, they need the withdrawal now. So you have to be a little foresightful. And you keep continuously consolidating all those tiny pieces when there's little demand for transactions: overnight, over weekends, when there's a flurry of quick blocks. With the bigger pieces you have in your wallet, you make batch payments with few inputs. 
+Again, this is something that affects you if you have a lot of traffic. Every time you receive a payment, you'll have a new UTXO. And some of them might be fairly small, right? In some countries, say, Bitcoin exchange in South America, the average deposit size will be a lot smaller than the average batch of payments that they're going to make. And let's say people deposit $20 each time. But when you do a withdrawal, altogether you're trying to send out $400 worth of Bitcoin. So you'd have to use 20 pieces of Bitcoin of those $20 pieces to make up those $400, And you'd pay that at a high fee rate because you want to make the withdrawal go through quickly. So you'd have this huge transaction that you pay premium fee rate for to get it through quickly. And what you'd rather do is, well, let's just consolidate all those 20 tiny pieces overnight, and tomorrow I'll have one piece of $400 worth of Bitcoin, and I'll use that to make a payment. But of course, they need the withdrawal now. So you have to be a little foresightful. And you keep continuously consolidating all those tiny pieces when there's little demand for transactions: overnight, over weekends, when there's a flurry of quick blocks. With the bigger pieces you have in your wallet, you make batch payments with few inputs.
 
 Adam Jonas: 00:12:42
 
@@ -262,7 +262,7 @@ Got it. Okay. Change splitting.
 
 Mark Erhardt: 00:14:06
 
-Right. Change splitting ties into a similar problem. You would want to do change splitting if you have a lot of traffic on a wallet, but you have very few pieces of Bitcoin. So let's say you start a new exchange and you've already lined up a bunch of users and they're chomping at the bit to get started. So you know you'll make a lot of transactions right out of the door. If you start your wallet with one piece of 100 Bitcoin, you'll have a bad time because now in your first transaction you use that piece of Bitcoin and then all of your money is in flight. All of it was used in that transaction. Sure, you'll get the remainder back in a change output, but everybody is going to wait until that transaction goes through or you'll build a chain of unconfirmed transactions, which can lead to other problems. And so what you do is you split the change. Instead of sending, say, 0.1 bitcoin and getting back 99.9 bitcoin in a single piece, you'd split it into, say, eight pieces of various values. And now after the first transaction is confirmed, you'll have eight pieces to work with, and you can do eight transactions in parallel that are not in the same transaction graph. And you'll only send an eighth of your total balance on flight if you make a transaction. That's the basic idea. You want to fan out your value to a good number of pieces, especially if you have a very high traffic wallet. 
+Right. Change splitting ties into a similar problem. You would want to do change splitting if you have a lot of traffic on a wallet, but you have very few pieces of Bitcoin. So let's say you start a new exchange and you've already lined up a bunch of users and they're chomping at the bit to get started. So you know you'll make a lot of transactions right out of the door. If you start your wallet with one piece of 100 Bitcoin, you'll have a bad time because now in your first transaction you use that piece of Bitcoin and then all of your money is in flight. All of it was used in that transaction. Sure, you'll get the remainder back in a change output, but everybody is going to wait until that transaction goes through or you'll build a chain of unconfirmed transactions, which can lead to other problems. And so what you do is you split the change. Instead of sending, say, 0.1 bitcoin and getting back 99.9 bitcoin in a single piece, you'd split it into, say, eight pieces of various values. And now after the first transaction is confirmed, you'll have eight pieces to work with, and you can do eight transactions in parallel that are not in the same transaction graph. And you'll only send an eighth of your total balance on flight if you make a transaction. That's the basic idea. You want to fan out your value to a good number of pieces, especially if you have a very high traffic wallet.
 
 Adam Jonas: 00:15:47
 
@@ -272,7 +272,7 @@ Cool. What other things do we have at our disposal to sort of battle this oncomi
 
 Mark Erhardt: 00:15:54
 
-Since 2015 we've had replace by fee. I think it's a little complicated to implement. There's some UX considerations but it is an extremely powerful tool to save money, especially as an exchange that can use it fairly versatile. 
+Since 2015 we've had replace by fee. I think it's a little complicated to implement. There's some UX considerations but it is an extremely powerful tool to save money, especially as an exchange that can use it fairly versatile.
 
 Adam Jonas: 00:16:14
 
@@ -375,7 +375,7 @@ Maybe taproot, Schnorr. So we talked a little bit about more efficient output fo
 
 Adam Jonas: 00:35:03
 
-Great, something else to look forward to. 
+Great, something else to look forward to.
 
 Mark Erhardt: 00:35:05
 
@@ -413,7 +413,7 @@ Gotta warm up.
 
 Adam Jonas: 00:35:31
 
-Yeah. Well, I think we did all right. 
+Yeah. Well, I think we did all right.
 
 Caralie Chrisco: 00:35:34
 

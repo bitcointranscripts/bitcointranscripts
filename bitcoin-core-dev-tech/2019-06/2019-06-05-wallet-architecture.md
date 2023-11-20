@@ -1,5 +1,5 @@
 ---
-title: Wallet Architecture 
+title: Wallet Architecture
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet', 'bitcoin core']

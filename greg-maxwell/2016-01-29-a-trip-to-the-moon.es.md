@@ -1,5 +1,5 @@
 ---
-title: A trip to the moon requires a rocket with multiple stages 
+title: A trip to the moon requires a rocket with multiple stages
 translation_by: Julien Urraca
 tags: ['scaling']
 speakers: ['Greg Maxwell']

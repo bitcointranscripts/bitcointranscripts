@@ -1,5 +1,5 @@
 ---
-title: Attacking EVM Resource Metering 
+title: Attacking EVM Resource Metering
 transcript_by: Bryan Bishop
 categories: ['conference']
 tag: ['ethereum']

@@ -22,7 +22,7 @@ Bitcoin Core dev wiki on Wallet Class Structure Changes: https://github.com/bitc
 
 # Intro
 
-Hi everyone. I am Andrew Chow, I am an engineer at Blockstream and also a Bitcoin Core contributor working mostly on the Bitcoin Core wallet. Today I am going to be talking about rethinking the wallet architecture with native descriptor wallets. But first in order to understand why we need to rethink the wallet architecture we have got to understand what the current wallet does or what it did before I guess. 
+Hi everyone. I am Andrew Chow, I am an engineer at Blockstream and also a Bitcoin Core contributor working mostly on the Bitcoin Core wallet. Today I am going to be talking about rethinking the wallet architecture with native descriptor wallets. But first in order to understand why we need to rethink the wallet architecture we have got to understand what the current wallet does or what it did before I guess.
 
 # Old Wallet Architecture
 
@@ -30,7 +30,7 @@ What is the old wallet architecture, at least in Bitcoin Core? We have a thing w
 
 # Native Descriptor Wallets
 
-First what are native descriptor wallets? As the name suggests they store descriptors. What are descriptors? I will get to that in a minute or two. The thing with native descriptor wallets is they can store any kind of descriptor including multisig descriptors or in the future Miniscript. With native descriptor wallets we can have a wallet that hands out addresses for multisigs, for arbitrary scripts, basically whatever you want without the wallet software having to hardcode in what to do with keys or what kind of scripts to produce. We also use a specific type of descriptor called a range descriptor that lets us generate multiple things from a single descriptor. 
+First what are native descriptor wallets? As the name suggests they store descriptors. What are descriptors? I will get to that in a minute or two. The thing with native descriptor wallets is they can store any kind of descriptor including multisig descriptors or in the future Miniscript. With native descriptor wallets we can have a wallet that hands out addresses for multisigs, for arbitrary scripts, basically whatever you want without the wallet software having to hardcode in what to do with keys or what kind of scripts to produce. We also use a specific type of descriptor called a range descriptor that lets us generate multiple things from a single descriptor.
 
 # Output Script Descriptors
 
@@ -47,7 +47,7 @@ This is a very simple descriptor. At the beginning you see it says `pkh`. This s
 
 `76a91406afd46bcdfd22ef94ac122aa11f241244a37ecc88ac`
 
-And we know the address which is up there as well. 
+And we know the address which is up there as well.
 
 `1cMh228HTCiwS8ZsaakH8A8wze1JR5ZsP`
 
@@ -61,11 +61,11 @@ This kind of descriptor is actually what we will be including in our wallet. Thi
 
 # Stored Descriptors
 
-There is one for each address type. There is one `pkh`, one `sh(wpkh)` and one `wpkh`. And one of each of those three for change and receiving addresses. But the cool thing here is that we are not limited to just these three kinds of descriptors. You can replace say the `wpkh` one with `wsh(multi)` if you wanted to have bech32 multisig addresses. 
+There is one for each address type. There is one `pkh`, one `sh(wpkh)` and one `wpkh`. And one of each of those three for change and receiving addresses. But the cool thing here is that we are not limited to just these three kinds of descriptors. You can replace say the `wpkh` one with `wsh(multi)` if you wanted to have bech32 multisig addresses.
 
 # Benefits of Descriptor Wallets
 
-That is one of the cool things about descriptor wallets. They are expandable, we can just swap out one of the descriptors with a different one and we can still get addresses for that. The wallet itself doesn’t really need to know how to sign for that multisig that you put in there because the descriptor tells you how to sign for it. Another thing about descriptor wallets is that those descriptors are completely unambiguous as to the derivation paths you are using and what kind of address you are producing. This means that if you wanted to import a descriptor to another wallet you don’t have to guess what derivation path it is going to use and you don’t have to guess what kind of address it is going to use. The descriptor tells you right there exactly what it is going to produce. That means we can get rid of [walletsrecovery.org](https://walletsrecovery.org/). That makes backups easier. We have everything we need in one single string or I guess a couple of strings you can slap together. That checksum also makes them portable in case you decided to type them in by hand for some reason. 
+That is one of the cool things about descriptor wallets. They are expandable, we can just swap out one of the descriptors with a different one and we can still get addresses for that. The wallet itself doesn’t really need to know how to sign for that multisig that you put in there because the descriptor tells you how to sign for it. Another thing about descriptor wallets is that those descriptors are completely unambiguous as to the derivation paths you are using and what kind of address you are producing. This means that if you wanted to import a descriptor to another wallet you don’t have to guess what derivation path it is going to use and you don’t have to guess what kind of address it is going to use. The descriptor tells you right there exactly what it is going to produce. That means we can get rid of [walletsrecovery.org](https://walletsrecovery.org/). That makes backups easier. We have everything we need in one single string or I guess a couple of strings you can slap together. That checksum also makes them portable in case you decided to type them in by hand for some reason.
 
 # Implementing Descriptor wallets
 

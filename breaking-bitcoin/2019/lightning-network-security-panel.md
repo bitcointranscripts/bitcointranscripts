@@ -84,7 +84,7 @@ OO: Those tests aren't fully encompassing, it is a very basic thing. That was so
 
 MC: Fuzz testing isn't just for crashing. rust-lightning has been doing protocol level fuzz testing where the input from the fuzzer, you use that as a list of commands to send payments, connect nodes, disconnect nodes, reorder messages, things you would only see if you had very strange internet behavior where you have multipath. This exists, it's not common but it is also entirely possible. To really poke at all of these edge cases so you can really test the state machine and really test the behavior of the nodes. Do you read over a buffer when you’re deserialize something, do you over allocate memory things something simple like that. I'd really like to integrate other nodes into that, but it's really hard to take free standing daemons that aren't libraries. Maybe I’ll spend some more time with eclair trying to do that but I haven’t got round to it yet.
 
-JC: In my experience, testing out the software, running a node on mainnet and having hundreds of channels and some private channels. Initially when all the implementations launched on mainnet they were constantly having issues with each other. They wouldn’t connect, they wouldn’t stay connected, channels would get force closed. It was an endless stream of reporting issues, sharing the bug logs with all of the teams. Lately there still have been issues here and there but it has been getting better. 
+JC: In my experience, testing out the software, running a node on mainnet and having hundreds of channels and some private channels. Initially when all the implementations launched on mainnet they were constantly having issues with each other. They wouldn’t connect, they wouldn’t stay connected, channels would get force closed. It was an endless stream of reporting issues, sharing the bug logs with all of the teams. Lately there still have been issues here and there but it has been getting better.
 
 MF: Obviously we've had the discussion for years on whether multiple implementations are good on Bitcoin. On Lightning it is interesting because there are some parallels but there are some things that are just completely different.
 
@@ -114,7 +114,7 @@ MC: Especially when you really know your counterparty, if they really do somethi
 
 MF: Have you looked at watchtowers at Bitrefill? Any plans to offer a watchtower?
 
-JC: I don't think any of them are production ready. I think lnd has a pull request. I sleep better at night now that we have static channel backups. Previously it was just a reckless running of a hot wallet. If you have any data corruption and you fall back to an old state I lose all of the money. At this point it is probably not something we want to lose. 
+JC: I don't think any of them are production ready. I think lnd has a pull request. I sleep better at night now that we have static channel backups. Previously it was just a reckless running of a hot wallet. If you have any data corruption and you fall back to an old state I lose all of the money. At this point it is probably not something we want to lose.
 
 # Lightning hardware wallets
 
@@ -158,7 +158,7 @@ MC: I don't know if he’s here. I blame him either way.
 
 JC: This is also an issue for us. We offer a channel opening service. Since we are the initiator we have to pay the fee. One of the things we have to cost in is the force-close fee. If you sell a channel for two dollars and the closing fee is $5 because the fees are high that day we have to pay that. One of the reasons why our fees for our channel opening service is so high is that the current implementation of channels have a fixed fee. In the new implementation of 1.1 the fee is static but you can bump it.
 
-OO: Fees are definitely important. In lnd you’ll have the ability to anchor down the funding transaction. You could maybe have a very low satoshi per byte fee on your funding transaction but later on increase that slowly up. It is definitely important that all Lightning implementations are very aware of fees. The dumbest thing you can do is use the fee from the estimator and that’s it. The better strategy is to low-ball and use RBF to slowly get in when you need to. You don’t need to pay 100 satoshis per byte, that’s wasteful. That keeps fees up and messes with other fee estimators as well. We’ve been doing a lot of work in lnd to make it more fee aware and give the users control. If you’re closing a channel, it may not need to be immediate. Maybe you can do it in two days with a very low fee. We try to make sure that information is pushed to the end user and the API. We take many requests in that area. 
+OO: Fees are definitely important. In lnd you’ll have the ability to anchor down the funding transaction. You could maybe have a very low satoshi per byte fee on your funding transaction but later on increase that slowly up. It is definitely important that all Lightning implementations are very aware of fees. The dumbest thing you can do is use the fee from the estimator and that’s it. The better strategy is to low-ball and use RBF to slowly get in when you need to. You don’t need to pay 100 satoshis per byte, that’s wasteful. That keeps fees up and messes with other fee estimators as well. We’ve been doing a lot of work in lnd to make it more fee aware and give the users control. If you’re closing a channel, it may not need to be immediate. Maybe you can do it in two days with a very low fee. We try to make sure that information is pushed to the end user and the API. We take many requests in that area.
 
 MC: That's another great thing about lightning in general. Because there’s a lot of transactions that you make in Lightning, especially opening channels where you don't really care if it confirms soon. You can actually enforce real security and wait a day or longer for the transaction to confirm. Today taking transactions at 3 confs, 6 confs, 12 confs is really risky. Hash rate is not in any material way secure and taking transactions in a timeframe that is shorter than the amount of time that people can realistically respond to an issue, identify the cause and fix the issue which is definitely not two hours. You’re introducing a lot of risk. The nice thing about Lightning and other layer 2 solutions is you can say “I’m going to wait a day for this”. Then I’m really sure this is not going to be re-orged out or have any problems.
 
@@ -170,7 +170,7 @@ MC: We also just don't know. Lightning clearly improves the ability to fit more 
 
 MF: Finally, Conner from Lightning Labs has a question for you Laolu. Is Raiden more scalable than Lightning?
 
-OO: What? No. They do weird things like store addresses of nodes in the chain and using the P2P network for gossip. So I'd say no. 
+OO: What? No. They do weird things like store addresses of nodes in the chain and using the P2P network for gossip. So I'd say no.
 
 MF: Hopefully that makes you feel a bit more comfortable Conner about working on Lightning rather than Raiden.
 

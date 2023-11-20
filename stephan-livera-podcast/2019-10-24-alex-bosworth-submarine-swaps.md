@@ -1,5 +1,5 @@
 ---
-title: Submarine Swaps, Lightning Loop, Hyperloop 
+title: Submarine Swaps, Lightning Loop, Hyperloop
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Alex Bosworth']

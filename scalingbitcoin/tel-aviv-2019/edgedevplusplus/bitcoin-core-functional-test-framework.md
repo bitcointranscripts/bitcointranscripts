@@ -40,11 +40,11 @@ I talked about this yesterday in my debugging talk. You have to be aware of wher
 
 # Running tests
 
-How are you running the tests? First of all you can run these tests directly like any other Python file by specifying the path. 
+How are you running the tests? First of all you can run these tests directly like any other Python file by specifying the path.
 
 `test/functional/feature_rbf.py`
 
-This is also very helpful because you see all the `self.log.info` outputs in stdout then. But you can also run the tests through test harness and that is very helpful if you want to run all the tests in one time, the full functional test suite. 
+This is also very helpful because you see all the `self.log.info` outputs in stdout then. But you can also run the tests through test harness and that is very helpful if you want to run all the tests in one time, the full functional test suite.
 
 `test/functional/test_runner.py feature_rbf.py/`
 
@@ -64,7 +64,7 @@ What is in a test? We will look at an example in a moment. I am just going to go
 
 # Test class
 
-You will find the test class. Usually you name the class as the name of the test. Then you subclass the `BitcoinTestFramework` and you do a couple of overrides depending on what you are going to need in the test. The two functions that are going to see overriding almost every test is one setting the `test_params` by overriding `set_test_params()`. Then you will see `run_test()` which is the implementation of the test. There are other functionalities that you can override but you can see these for yourself in the `test_framework/test_framework.py` file. 
+You will find the test class. Usually you name the class as the name of the test. Then you subclass the `BitcoinTestFramework` and you do a couple of overrides depending on what you are going to need in the test. The two functions that are going to see overriding almost every test is one setting the `test_params` by overriding `set_test_params()`. Then you will see `run_test()` which is the implementation of the test. There are other functionalities that you can override but you can see these for yourself in the `test_framework/test_framework.py` file.
 
 # Node calls
 
@@ -78,7 +78,7 @@ Another thing that you are going to need frequently is P2P introspection. Oftent
 
 # Example
 
-I’ll show you a simple example. 
+I’ll show you a simple example.
 
 https://github.com/bitcoin/bitcoin/blob/master/test/functional/rpc_blockchain.py
 

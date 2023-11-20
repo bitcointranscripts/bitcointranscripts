@@ -39,13 +39,13 @@ git checkout taproot
 ./configure -C --enable-dangerous
 make -j5
 ```
-In your src folder you should have bitcoind, bitcoin-cli and a couple of the binaries. If you are all done with this part you can go into your src folder and type `./bitcoind -signet` and hit enter. 
+In your src folder you should have bitcoind, bitcoin-cli and a couple of the binaries. If you are all done with this part you can go into your src folder and type `./bitcoind -signet` and hit enter.
 
 If you have managed to sync up Signet do:
 
 `./bitcoin-cli -signet getnewaddress`
 
-You should get a `sb1…` address. Post this address in the Telegram group. 
+You should get a `sb1…` address. Post this address in the Telegram group.
 
 Q - Do you have to be fully synced to get a new address?
 
@@ -77,17 +77,17 @@ Some person out there set up their own Signet so we are getting blocks for it.
 
 `./bitcoin-cli-signet getpeerinfo`
 
-I have a network running with Signet Taproot right now. We will eventually switch to that one. If you are going to Stepan Snigirev’s hardware workshop this afternoon which I recommend you should do then you will be able to continue using the Signet Taproot setup that you have with coins and everything in his workshop with a hardware wallet. 
+I have a network running with Signet Taproot right now. We will eventually switch to that one. If you are going to Stepan Snigirev’s hardware workshop this afternoon which I recommend you should do then you will be able to continue using the Signet Taproot setup that you have with coins and everything in his workshop with a hardware wallet.
 
 `./bitcoin-cli -signet settxfee 0.00001`
 
 `./bitcoin-cli -signet sendtoaddress sb1….8mg 1`
 
-I am sending everyone 1 Signet Bitcoin. If you go to the [Signet block explorer](https://explorer.bc-2.jp/) copy the `AddToWallet` text string and put it into the block explorer. You should see it is unconfirmed, the fees etc. 
+I am sending everyone 1 Signet Bitcoin. If you go to the [Signet block explorer](https://explorer.bc-2.jp/) copy the `AddToWallet` text string and put it into the block explorer. You should see it is unconfirmed, the fees etc.
 
 # btcdeb
 
-I am going to move onto the btcdeb part. This is the Bitcoin debugger that I maintain. It has experimental support for Taproot so I figured out we could use that. 
+I am going to move onto the btcdeb part. This is the Bitcoin debugger that I maintain. It has experimental support for Taproot so I figured out we could use that.
 
 ```
 cd ..
@@ -171,9 +171,9 @@ Right now we are on the signet branch. What we want to do is change the chain pa
 
 Q - This is in the Bitcoin repo?
 
-A - Yes. btcdeb is already set up to work with this. 
+A - Yes. btcdeb is already set up to work with this.
 
-If you have done that you should now have a branch called `signet-vanilla-taproot`. We’re not going to do anything with that now but we are going to change the chain parameters later. 
+If you have done that you should now have a branch called `signet-vanilla-taproot`. We’re not going to do anything with that now but we are going to change the chain parameters later.
 
 # The feature branch
 
@@ -187,7 +187,7 @@ git pull
 git reset --hard sipa/taproot
 ```
 
-sipa is Pieter Wuille by the way. 
+sipa is Pieter Wuille by the way.
 
 Q - …
 
@@ -208,11 +208,11 @@ Q - On which branch is this?
 
 A - signet-vanilla.
 
-I will quickly go through what this is. The `bin` part is the challenge. You probably recognize it. It looks like a normal Bitcoin script. What it does it says a 1 and a 33 byte push and a pubkey and a 1 and a CHECKMULTISIG. It is a 1-of-1 MULTISIG. The second part is a genesis nonce, I will talk about that. The third party is a seed, the computer that is running this version of Signet. 
+I will quickly go through what this is. The `bin` part is the challenge. You probably recognize it. It looks like a normal Bitcoin script. What it does it says a 1 and a 33 byte push and a pubkey and a 1 and a CHECKMULTISIG. It is a 1-of-1 MULTISIG. The second part is a genesis nonce, I will talk about that. The third party is a seed, the computer that is running this version of Signet.
 
 `git commit -am “new signet parameters”`
 
-You should commit to your signet-vanilla-taproot repository with your new parameters. Once you have that you can merge this with taproot. When we run it we should be able to use Taproot. 
+You should commit to your signet-vanilla-taproot repository with your new parameters. Once you have that you can merge this with taproot. When we run it we should be able to use Taproot.
 
 Q - …
 
@@ -226,7 +226,7 @@ And then we do the `git merge taproot`. If you have done `git checkout -b signet
 
 (We merge taproot on top of signet-taproot)
 
-When you do the `git merge taproot` you are going to have conflicts. You need both parts but remove the verify witness program in the first part. 
+When you do the `git merge taproot` you are going to have conflicts. You need both parts but remove the verify witness program in the first part.
 
 The reason why I am having you painstakingly go through this is because this is exactly what you are going to have to do if you ever have a feature yourself that you want to merge. You are going to have these merge conflicts that show up. We are now at the part where our Signet is working. If you manage to compile this and run it it will crash. The reason why it crashes is because you have an old Signet running. You want to delete the Signet folder in your Data. Let’s do that. Stop your running bitcoind.
 
@@ -244,13 +244,13 @@ Once you have finished make:
 
 `./bitcoind -signet`
 
-If you remembered to delete the signet folder in your data it should now connect to a different Signet which has Taproot. This one started in January 2020. If you were back in 2019 you are using the previous Signet. 
+If you remembered to delete the signet folder in your data it should now connect to a different Signet which has Taproot. This one started in January 2020. If you were back in 2019 you are using the previous Signet.
 
 `./autogen.sh`
 
 `./configure -C --disable-test --disable-bench --without-gui`
 
-If you are running into compiler errors you may have to `./autogen.sh` and `./configure` again and then `make clean`. 
+If you are running into compiler errors you may have to `./autogen.sh` and `./configure` again and then `make clean`.
 
 # btcdeb
 
@@ -266,7 +266,7 @@ The homework is to use this man to create a Taproot address and send that to me.
 
 `./btcdeb --txin=$txin --tx=020000…`
 
-What I am doing is saying “This is the input transaction here and then this is the transaction and tell me what happens.” It says this is a SegWit transaction and gives the transaction data. Then here we come to the `Taproot commitment`. This has the `control` object. Have you heard about MAST? This is MAST implemented in Taproot. What Taproot does is uses MAST to prove that a particular script, this `script`, was actually added into the address at creation time. When you create the address you can insert any amounts of scripts you want but no one is going to see the scripts unless you use them to spend. In this case I am using this one to spend the transaction. The `control` object is saying that you use this data to derive the root of the Merkle tree. If you have a root of the Merkle tree and it matches then that script was committed. The ‘control’ object has a version byte and then it is followed by a pubkey. Pubkeys in Taproot are 32 bytes. If you are used to pubkeys in Bitcoin in general they are 33 bytes. They have 02 or 03 followed by a hex value. We remove the 02 or 03 and it is assuming they are a particular type. Then there is a `program`. There is `p` and `q`. `p` is the internal pubkey used to create this Taproot spend. Then there is some Merkle root stuff that goes on. What btcdeb does here is it steps through this commitment phase. There is this `final k` here and then there is a `TapTweak`. There is a `CheckPayToContract` here. This script only has one input so it doesn’t have a Merkle tree at all. Once this finishes with the Taproot commitment check we see the script being run. It is OP_SHA256, OP_EQUALVERIFY and then there is a pubkey and a OP_CHECKSIG. This is just like normal. 
+What I am doing is saying “This is the input transaction here and then this is the transaction and tell me what happens.” It says this is a SegWit transaction and gives the transaction data. Then here we come to the `Taproot commitment`. This has the `control` object. Have you heard about MAST? This is MAST implemented in Taproot. What Taproot does is uses MAST to prove that a particular script, this `script`, was actually added into the address at creation time. When you create the address you can insert any amounts of scripts you want but no one is going to see the scripts unless you use them to spend. In this case I am using this one to spend the transaction. The `control` object is saying that you use this data to derive the root of the Merkle tree. If you have a root of the Merkle tree and it matches then that script was committed. The ‘control’ object has a version byte and then it is followed by a pubkey. Pubkeys in Taproot are 32 bytes. If you are used to pubkeys in Bitcoin in general they are 33 bytes. They have 02 or 03 followed by a hex value. We remove the 02 or 03 and it is assuming they are a particular type. Then there is a `program`. There is `p` and `q`. `p` is the internal pubkey used to create this Taproot spend. Then there is some Merkle root stuff that goes on. What btcdeb does here is it steps through this commitment phase. There is this `final k` here and then there is a `TapTweak`. There is a `CheckPayToContract` here. This script only has one input so it doesn’t have a Merkle tree at all. Once this finishes with the Taproot commitment check we see the script being run. It is OP_SHA256, OP_EQUALVERIFY and then there is a pubkey and a OP_CHECKSIG. This is just like normal.
 
 `btcdeb> step`
 
@@ -274,7 +274,7 @@ This is the result of the OP_CHECKSIG. You can see a few things here. It is a 32
 
 Q - This is the Merkle tree part? You don’t provide the whole script, you only provide the path that you are executing.
 
-A - Yes. This works exactly like the Merkle root inside transactions except there are some tweaks with version bytes and stuff. 
+A - Yes. This works exactly like the Merkle root inside transactions except there are some tweaks with version bytes and stuff.
 
 If you look at it like this you are not saving a lot of space but you have to remember that these things are all big blobs, 32 byte values. If you look here you see this thing is kind of big. If you don’t have to show one of these you are saving space and saving fees. It is a huge improvement. If everyone agrees you can spend it as if it was a regular pubkey. That is a huge saving privacy wise and fee wise. Nobody is going to be able to separate your custom stuff with a normal pubkey if everyone is in agreement. Think about a payment channel in Lightning, how often do you have the other person not agreeing to close a channel? Usually they are like “Ok”. Normally you would just use the pubkey and be done with it. In this example I actually have the private key, normally you don’t. The way you do this is you use MuSig or something to create the internal private key. That way nobody actually knows the private key but you can still spend it. I didn’t get as far as I hoped but hopefully you got a start at least.
 

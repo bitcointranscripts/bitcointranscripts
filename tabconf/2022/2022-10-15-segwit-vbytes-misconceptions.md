@@ -1,5 +1,5 @@
 ---
-title: Misconceptions about segwit vbytes 
+title: Misconceptions about segwit vbytes
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['segwit', 'fees']

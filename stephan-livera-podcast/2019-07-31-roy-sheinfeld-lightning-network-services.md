@@ -1,5 +1,5 @@
 ---
-title: Lightning Network Services for the Masses 
+title: Lightning Network Services for the Masses
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Roy Sheinfeld']

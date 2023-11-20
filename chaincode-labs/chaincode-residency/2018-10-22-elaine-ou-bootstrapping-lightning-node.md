@@ -1,5 +1,5 @@
 ---
-title: Bootstrapping Lightning Node 
+title: Bootstrapping Lightning Node
 transcript_by: Michael Folkson
 tags: ['lightning', 'routing']
 categories: ['residency']
@@ -18,7 +18,7 @@ My name ie Elaine. I’ll talk about bootstrapping and maintaining a lightning n
 
 # Bootstrapping and Maintaining a Lightning Node
 
-We’ll start with an overview of how routing works just to understand what the nodes are trying to do and from there we’ll step back and look at ways of finding peers and getting incoming channels and maintaining capacity. 
+We’ll start with an overview of how routing works just to understand what the nodes are trying to do and from there we’ll step back and look at ways of finding peers and getting incoming channels and maintaining capacity.
 
 # Calculating a Route
 
@@ -46,7 +46,7 @@ Q - Are funding_created and funding_locked absolutely necessary enough to go on 
 
 A - The funding isn’t actually broadcast when the transaction is created.
 
-We’ll pretend that this is just a private channel between A and B. It’s not forwarding payments for anyone else. Node A sends some update messages to add more timelock transactions and they can commit the transactions with a signed commitment. Node B will reply with a commitment preimage for the previous commitment. Node B will revoke and acknowledge each new commitment. Basically every time a commitment is created there’s a public key that’s created that is associated with the commitment. If the commitment later becomes revoked because a newer commitment is created then the person who has the private key for the revocation can claim the amount in the channel. The revocation key is created using the previous commitment and the revocation basepoint. If Node A tries to broadcast an older commitment then Node B can see that and derive the private key because it had the revocation secret and claim all the money for itself. On the other hand Node A would have to wait for the delay that they initially agreed upon when creating the channel to try to spend the money. This gives B some time to react. It also creates the encumbrance that Node A could have their money locked up if B disappears. If Node B disappears that becomes a liability for Node A because they probably opened up the channel with the intention of using it to make payments or using Node B as a routing point to send payments elsewhere. So an unresponsive Node B means that now this channel is stuck in limbo for some amount of time. It’s kind of a pain in the butt for Node A. We want to be able to create channels and not run the risk that our counterparty in the channel disappears or misbehaves. 
+We’ll pretend that this is just a private channel between A and B. It’s not forwarding payments for anyone else. Node A sends some update messages to add more timelock transactions and they can commit the transactions with a signed commitment. Node B will reply with a commitment preimage for the previous commitment. Node B will revoke and acknowledge each new commitment. Basically every time a commitment is created there’s a public key that’s created that is associated with the commitment. If the commitment later becomes revoked because a newer commitment is created then the person who has the private key for the revocation can claim the amount in the channel. The revocation key is created using the previous commitment and the revocation basepoint. If Node A tries to broadcast an older commitment then Node B can see that and derive the private key because it had the revocation secret and claim all the money for itself. On the other hand Node A would have to wait for the delay that they initially agreed upon when creating the channel to try to spend the money. This gives B some time to react. It also creates the encumbrance that Node A could have their money locked up if B disappears. If Node B disappears that becomes a liability for Node A because they probably opened up the channel with the intention of using it to make payments or using Node B as a routing point to send payments elsewhere. So an unresponsive Node B means that now this channel is stuck in limbo for some amount of time. It’s kind of a pain in the butt for Node A. We want to be able to create channels and not run the risk that our counterparty in the channel disappears or misbehaves.
 
 # Finding Good Peers
 
@@ -56,7 +56,7 @@ Q - If you open a channel with one of these nodes are you the only one providing
 
 A - The node who opens the channel is the one who puts money on the line.
 
-Q - So what would happen if you just wanted to be paid through Lightning, how would you achieve that? 
+Q - So what would happen if you just wanted to be paid through Lightning, how would you achieve that?
 
 A - You would have to convince someone to open a channel to you. We’ll get to that in a little bit. Basically the funds are going to be tied up so you have to choose wisely.
 
@@ -74,7 +74,7 @@ A - It’s design for privacy because if you can see the changing balance on eac
 
 # Autopilot (LND)
 
-lnd has a function called Autopilot where it can automatically open channels to different nodes for a new node. Rene I know you’ve written some critiques on Autopilot. Autopilot right now is not recommended for mainnet but it is good to understand what Autopilot is trying to achieve so we know what the goals are in creating new channels. The way Autopilot works is that it opens channels to nodes. The user can specify the maximum number of channels it wants and the fraction of funds to commit. Then Autopilot will select a random set of nodes to connect to. The probability of connecting a node will be weighted proportional to the number of channels a node already has, according to a power law distribution. Nodes that already have a lot of channels have a higher probability of getting more channels opened to them. It’ll ultimately result in a lot of hubs, a lot of nodes with lots of connections. If everyone were to use Autopilot we would end up with a scale-free network. The hub and spoke model has got a bit of a bad reputation because people think it means centralization where they’re critical points of failure. Most social networks tend to be scale-free networks. Nodes will cluster around super connectors and this makes communication more efficient between nodes. As long as there are many super connectors there’s lower risk of a single point of failure. The network is still relatively decentralized even though there are a lot of super connectors. 
+lnd has a function called Autopilot where it can automatically open channels to different nodes for a new node. Rene I know you’ve written some critiques on Autopilot. Autopilot right now is not recommended for mainnet but it is good to understand what Autopilot is trying to achieve so we know what the goals are in creating new channels. The way Autopilot works is that it opens channels to nodes. The user can specify the maximum number of channels it wants and the fraction of funds to commit. Then Autopilot will select a random set of nodes to connect to. The probability of connecting a node will be weighted proportional to the number of channels a node already has, according to a power law distribution. Nodes that already have a lot of channels have a higher probability of getting more channels opened to them. It’ll ultimately result in a lot of hubs, a lot of nodes with lots of connections. If everyone were to use Autopilot we would end up with a scale-free network. The hub and spoke model has got a bit of a bad reputation because people think it means centralization where they’re critical points of failure. Most social networks tend to be scale-free networks. Nodes will cluster around super connectors and this makes communication more efficient between nodes. As long as there are many super connectors there’s lower risk of a single point of failure. The network is still relatively decentralized even though there are a lot of super connectors.
 
 # Additional Considerations
 
@@ -88,7 +88,7 @@ As we mentioned previously, someone opening a channel to you is a smart contract
 
 The other two options are one, to exchange onchain Bitcoin for Lightning payments. Zigzag.io is an example of such an exchange. They let you buy Bitcoin on the exchange and the exchange then opens a channel to your node and pushes the funds to you. You’re basically paying onchain for offchain or Lightning Bitcoin. You can also do it the other way round.
 
-Q - 
+Q -
 
 A - Ok, cool. If you have questions about it you can ask them.
 
@@ -104,15 +104,15 @@ So now we have some ideas about how to get inbound channels. We want to maintain
 
 # BOLT 7 - P2P Node and Channel Discovery
 
-There’s very limited information that gets shared over the Lightning Network through regular gossip. There are channel announcement messages that announce new public channels and then there are updates for fees and timelock expiries. Not all channels are public and there’s basically a flag you can set when creating a channel. Some nodes won’t accept public channels because they can’t commit to operating the channel. Once a channel is public, it means you’re willing to route payments for other people and then anyone can start using your channel. Not all channels need to be public. 
+There’s very limited information that gets shared over the Lightning Network through regular gossip. There are channel announcement messages that announce new public channels and then there are updates for fees and timelock expiries. Not all channels are public and there’s basically a flag you can set when creating a channel. Some nodes won’t accept public channels because they can’t commit to operating the channel. Once a channel is public, it means you’re willing to route payments for other people and then anyone can start using your channel. Not all channels need to be public.
 
 # Let Nodes Do Their Jobs
 
-For most users that are simply doing payments or occasionally receiving payments, they don’t need to create public channels. Right now, I think channels are private unless announced. Many users including myself like making public channels because then we can see ourselves on Lightning explorers and other people connect to us. I can show my mom that I’m cool and lots of people want to make channels to me. But then if I disappear because I have a flaky connection then that’s really bad. It’s basically false advertising on my part to make myself public and accept connections and then disappear. I’ll invoke Adam Smith here on the idea of division of labor. Different nodes are going to be better at different things. Not all Lightning users will need to be routing nodes and not all Lightning users will be expected to stay online and maintain channels all the time. Ultimately in the network, there will be probably be a number of nodes that are there just for routing. They’re earning money from fees so they’re incentivized to stay online and maintain balanced channels. 
+For most users that are simply doing payments or occasionally receiving payments, they don’t need to create public channels. Right now, I think channels are private unless announced. Many users including myself like making public channels because then we can see ourselves on Lightning explorers and other people connect to us. I can show my mom that I’m cool and lots of people want to make channels to me. But then if I disappear because I have a flaky connection then that’s really bad. It’s basically false advertising on my part to make myself public and accept connections and then disappear. I’ll invoke Adam Smith here on the idea of division of labor. Different nodes are going to be better at different things. Not all Lightning users will need to be routing nodes and not all Lightning users will be expected to stay online and maintain channels all the time. Ultimately in the network, there will be probably be a number of nodes that are there just for routing. They’re earning money from fees so they’re incentivized to stay online and maintain balanced channels.
 
 # Routing Hints
 
-As a Lightning user, even if you don’t have public channels you can have private channels and then provide people who want to pay you routing hints in their invoice. When you create an invoice in Lightning you can add a field that indicates what some intermediate nodes are so the payer can find a path to you even if you don’t have any public channels available. This way if more people make their channels private then the information that nodes have will be more reliable. 
+As a Lightning user, even if you don’t have public channels you can have private channels and then provide people who want to pay you routing hints in their invoice. When you create an invoice in Lightning you can add a field that indicates what some intermediate nodes are so the payer can find a path to you even if you don’t have any public channels available. This way if more people make their channels private then the information that nodes have will be more reliable.
 
 # Be a Good Node
 
@@ -124,7 +124,7 @@ A - You can use that counterparty node as a route for something else but ultimat
 
 Q - I mean just adding more funds…
 
-A - Like rebalancing? At the moment you would need to close the channel and add more funds but in the future there’s going to be splicing where you can resize open channels. It’s still all work in progress. Right now, high capacity channels are very scarce. Soon there will be multipath transactions where you can split a payment up over many channels to distribute the payment and not be constrained by the maximum channel width. 
+A - Like rebalancing? At the moment you would need to close the channel and add more funds but in the future there’s going to be splicing where you can resize open channels. It’s still all work in progress. Right now, high capacity channels are very scarce. Soon there will be multipath transactions where you can split a payment up over many channels to distribute the payment and not be constrained by the maximum channel width.
 
 # Lots More
 
@@ -146,11 +146,11 @@ A - The command line tools will show you what fees you’ve earned from operatin
 
 Q - How likely is it that nodes will game the system? Is there any way to detect that?
 
-A - Capacity can’t be lied about because you can see the funding transaction so you know exactly what’s locked up. The channel balance? Right now that information isn’t being communicated at all. It’s more of a trial and error thing. You can try to push a payment through a channel and if it doesn’t work you know it can’t handle it. 
+A - Capacity can’t be lied about because you can see the funding transaction so you know exactly what’s locked up. The channel balance? Right now that information isn’t being communicated at all. It’s more of a trial and error thing. You can try to push a payment through a channel and if it doesn’t work you know it can’t handle it.
 
 Q - If you don’t know the channel balances realistically how many times do you have to push a payment before you find one that does have the correct balance to push a payment through. A lot of times you could run into channels that have been exhausted in the direction you’re trying to push a payment.
 
-A - Information is updated in real-time so nodes might have stale information. 
+A - Information is updated in real-time so nodes might have stale information.
 
 Q - Does most node software take account of that internally or is that something you have to explicitly say as a developer, ok that didn’t work let’s not try that node ever again.
 

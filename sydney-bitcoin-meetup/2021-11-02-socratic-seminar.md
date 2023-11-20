@@ -1,5 +1,5 @@
 ---
-title: Sydney Socratic Seminar 
+title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['P2P', 'mempool']
@@ -32,7 +32,7 @@ I think the best thing for me to do is go through Gloria’s [mailing list post]
 
 As we already talked about Bitcoin already has these packages in Bitcoin Core as data structures but they are just not put over the network. That is correct?
 
-Yeah they only exist within your mempool. We don’t think about packages until they are already in our mempool. We want to be able to validate them and relay them. 
+Yeah they only exist within your mempool. We don’t think about packages until they are already in our mempool. We want to be able to validate them and relay them.
 
 The reason packages already exist, one of the reasons would be child-pays-for-parent?
 
@@ -46,7 +46,7 @@ So the existing package rules, there is this `MAX_PACKAGE_COUNT`. This is the ha
 
 Is it possible to put the logic together, the RBF rule of not evicting more than 100, is it possible to still have 99 be evicted with the `MAX_PACKAGE_COUNT` at 25 or is it like 25 is the real limit?
 
-You can be conflicting with 100 different transactions that are independent in the mempool. 
+You can be conflicting with 100 different transactions that are independent in the mempool.
 
 They are orthogonal basically.
 
@@ -54,13 +54,13 @@ Yeah.
 
 To clarify, is this when you try to replace multiple transactions? Can you walk me through an example as to when the 100 transaction limit can occur?
 
-Let’s say you are trying to validate a transaction and it has 100 inputs. Each of those inputs is also spent by a transaction in your mempool. But those transactions in your mempool are not related. 
+Let’s say you are trying to validate a transaction and it has 100 inputs. Each of those inputs is also spent by a transaction in your mempool. But those transactions in your mempool are not related.
 
 You have multiple conflicting transactions? Or are you replacing multiple transactions with a single transaction?
 
 Yes. I think people get confused because they think of there only being one original transaction. They are like “It is not going to have more than 25 descendants so how can you hit 100?” But you can be conflicting with many independent transactions.
 
-One transaction can spend 10 different inputs. Each of those inputs can have a package of 25 associated with it. 
+One transaction can spend 10 different inputs. Each of those inputs can have a package of 25 associated with it.
 
 [This](https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#existing-package-rules) is what the rules look like and how they would affect the relay. The basic one (1A), you’ve got 24 descendants, then you try to package with 2 more in it, doesn’t work. 13 with a package with 2 more in it is fine (1B).
 
@@ -102,11 +102,11 @@ Right.
 
 In the previous diagram C what do the dots imply?
 
-It is just shorthand for 1 through 24. It means there is P1, P2, P3 etc all the way to P24. 
+It is just shorthand for 1 through 24. It means there is P1, P2, P3 etc all the way to P24.
 
 At each individual layer of those parents there are another 24 of them. The second dot implies another parent.
 
-They are also arrows. P25 is spending all of them. 
+They are also arrows. P25 is spending all of them.
 
 Ok, understood.
 
@@ -130,17 +130,17 @@ G2 is an interesting one. When you get a package you remove the thing from the p
 
 You are essentially de-duplicating. If it is already in your mempool you don’t need to be checking it again and you shouldn’t use its fees again.
 
-That’s the key point. After de-duplicating here you can see that this adds 200 vbytes and 100 sats. The point is although this package includes P1 we can just include P1 without P3 and P2. If P1 is already in our mempool we can say “Let’s just include that”. 
+That’s the key point. After de-duplicating here you can see that this adds 200 vbytes and 100 sats. The point is although this package includes P1 we can just include P1 without P3 and P2. If P1 is already in our mempool we can say “Let’s just include that”.
 
 You definitely shouldn’t include its fees. For example here if you included P1 then you would think “I have enough fees to replace M2”. It would look like you are adding 300 sats and 300 vbytes which would be enough. But you already used M1’s fees to pay for the replacement of that other one in diagram G1. You used those fees already so you shouldn’t be trying to use them again.
 
 Let’s say M1 didn’t exist. Let’s consider G2 in isolation. MP1 is P1, it is the same one. It is irrelevant whether MP1 is in the mempool already, you just want to consider it in isolation. In other words replacing M2 only depends on P2 and P3. Is that the right way to think about it?
 
-Yes. If MP1 isn’t already in the mempool you need it in order to validate P3. 
+Yes. If MP1 isn’t already in the mempool you need it in order to validate P3.
 
-The fees of MP1 do not matter in the case of considering whether to add this package of P3 and P2. 
+The fees of MP1 do not matter in the case of considering whether to add this package of P3 and P2.
 
-If it is not already in your mempool then it is fine to use its fees. But if it is already in your mempool then you definitely shouldn’t because it already used its fees to pay for something. 
+If it is not already in your mempool then it is fine to use its fees. But if it is already in your mempool then you definitely shouldn’t because it already used its fees to pay for something.
 
 That’s interesting. Isn’t the point of it to have the best transactions in the mempool? Regardless of what is already in your mempool shouldn’t you just choose the transaction set that is the best? Or are you saying that rule is not as important as keeping packages together? Packages should be excluded or included as a whole.
 
@@ -164,7 +164,7 @@ G2 is a pretty good example, a good structure. You would try adding P1 first, th
 
 <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#package-rbf>
 
-This is package RBF which is the modification of the [BIP 125 rules](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki#implementation-details). The first one, does this use the same signaling mechanism as BIP 125? 
+This is package RBF which is the modification of the [BIP 125 rules](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki#implementation-details). The first one, does this use the same signaling mechanism as BIP 125?
 
 Yes.
 
@@ -190,7 +190,7 @@ For reconstructing compact blocks for example.
 
 So the intermediate state is a cache.
 
-A little bit but it is not part of the mempool. That’s why we have rules that say “If you want to replace a transaction in the mempool it has to be a significantly higher fee”. We are going to keep the best one. 
+A little bit but it is not part of the mempool. That’s why we have rules that say “If you want to replace a transaction in the mempool it has to be a significantly higher fee”. We are going to keep the best one.
 
 You would never go to that cache to get things out of it? To put it back in the mempool?
 
@@ -204,9 +204,9 @@ You could use the cache instead of re-requesting it?
 
 You could theoretically.
 
-Ok so the signaling. I guess this means that everything that is RBF’ed has the signaling in it. It is set with the sequence number. Here is a new rule, New Unconfirmed Inputs (Rule 2). A package may include new unconfirmed inputs but the ancestor fee rate of the child must be as high as the ancestor fee rates of every transaction being replaced. This is contrary to BIP 125 which states “The replacement transaction may only include an unconfirmed input if the input was included in one of the original transactions”. The original BIP 125 was written mostly for wallets who want to bump their fee. When you bump a fee you are going to spend the same inputs, you may add another one, but you are mostly going to spend the same inputs or lower the value of one of your outputs, usually your change output to get more fees. This package rule is more sophisticated than this because we are not dealing with just simple wallets anymore, we are dealing with Layer 2 protocols which need to use child-pays-for-parent. I guess that’s the main motivation. 
+Ok so the signaling. I guess this means that everything that is RBF’ed has the signaling in it. It is set with the sequence number. Here is a new rule, New Unconfirmed Inputs (Rule 2). A package may include new unconfirmed inputs but the ancestor fee rate of the child must be as high as the ancestor fee rates of every transaction being replaced. This is contrary to BIP 125 which states “The replacement transaction may only include an unconfirmed input if the input was included in one of the original transactions”. The original BIP 125 was written mostly for wallets who want to bump their fee. When you bump a fee you are going to spend the same inputs, you may add another one, but you are mostly going to spend the same inputs or lower the value of one of your outputs, usually your change output to get more fees. This package rule is more sophisticated than this because we are not dealing with just simple wallets anymore, we are dealing with Layer 2 protocols which need to use child-pays-for-parent. I guess that’s the main motivation.
 
-Yes. Not to knock RBF as it was originally implemented but they were constrained by what the mempool data structure was able to provide them at the time. We have a better mempool now so we are able to have more intelligent rules around RBF. 
+Yes. Not to knock RBF as it was originally implemented but they were constrained by what the mempool data structure was able to provide them at the time. We have a better mempool now so we are able to have more intelligent rules around RBF.
 
 What does it mean, ancestor fee rate? We have this structure, this package that has children and parents. The child has a fee rate, including the child you can figure out the fee rate of the child in so far as its parent is replacing something in the mempool. You have to look at every single thing you are evicting and see if the ancestor fee rate to the parent that it is replacing double spending the one that is in the mempool is higher than the one that was in the mempool. I don’t know if that is a coherent way of saying it.
 
@@ -234,13 +234,13 @@ The next one is the Absolute Fee Rule (Rule 3) which also exists in BIP 125. The
 
 Feerate (Rule 4), we already went through that a bit originally. The package must pay for its own bandwidth. You need a 1 sat per vbyte improvement over whatever you are replacing. It must be higher than the replaced transactions by at least that much.
 
-Total Number of Replaced Transactions (Rule 5) states the package cannot replace more than 100 mempool transactions. 
+Total Number of Replaced Transactions (Rule 5) states the package cannot replace more than 100 mempool transactions.
 
-The final bit of this is to talk about why you add individual submission, we’ve gone through that a little bit. 
+The final bit of this is to talk about why you add individual submission, we’ve gone through that a little bit.
 
 # Q&A
 
-One thing that did change, Rule 2, “The replacement transaction may only include an unconfirmed input if that input was included in one of the original transactions”. Wasn’t there also a rule where BIP 125 had to have everything confirmed? In Bitcoin Core [PR 6871](https://github.com/bitcoin/bitcoin/pull/6871) there is a comment in main.cpp “We don’t want to accept replacements that require low feerate junk to be mined first. Ideally we’d keep track of the ancestor feerates and make the decision based on that but for now requiring all new inputs to be confirmed works.” 
+One thing that did change, Rule 2, “The replacement transaction may only include an unconfirmed input if that input was included in one of the original transactions”. Wasn’t there also a rule where BIP 125 had to have everything confirmed? In Bitcoin Core [PR 6871](https://github.com/bitcoin/bitcoin/pull/6871) there is a comment in main.cpp “We don’t want to accept replacements that require low feerate junk to be mined first. Ideally we’d keep track of the ancestor feerates and make the decision based on that but for now requiring all new inputs to be confirmed works.”
 
 That is rule 2, if there are any additional inputs they need to be confirmed.
 
@@ -266,7 +266,7 @@ There’s that. The wallet shouldn’t be telling the node what to relay on the 
 
 Not that but you can broadcast multiple transactions at the same time.
 
-Yes of course. There would be a client interface where you submit multiple transactions together and let your mempool handle that. 
+Yes of course. There would be a client interface where you submit multiple transactions together and let your mempool handle that.
 
 Couldn’t you make the argument that if your node knows the other node is not going to accept this by the old RBF rules they can just say “You need to use the package thing”. I don’t know if that would make sense. There’s no hack really so let’s fix it.
 
@@ -298,7 +298,7 @@ We are going to have to go into the whole spacechain design to explain it proper
 
 I think the reason we want a dust limit is to prevent UTXO bloat. That’s why we have the standardness rule. There is absolutely no way that you can guarantee that that child will be created. You said it would only be included in a block if the child is there. We have no control over that. The miner chooses the transactions. As a node operator with a mempool I personally don’t want to be relaying transactions that create zero satoshi outputs. I don’t want to contribute to bloating the UTXO set. You can’t get around that rule, the miner chooses, the miner has discretion over what transactions go into the block.
 
-I fully agree with that. The point here is that you are not creating a zero satoshi output, you are spending it right away in the same block. Otherwise the miner should not accept it. 
+I fully agree with that. The point here is that you are not creating a zero satoshi output, you are spending it right away in the same block. Otherwise the miner should not accept it.
 
 You are not enforcing that.
 
@@ -338,7 +338,7 @@ Now we are talking again about the fact that theoretically miners can mine a zer
 
 You are asking us to change our policy which I wouldn’t do.
 
-If the policy ended up creating zero satoshi outputs, yes. But I am saying that we can do this in such a way that the policy doesn’t create zero satoshi outputs. 
+If the policy ended up creating zero satoshi outputs, yes. But I am saying that we can do this in such a way that the policy doesn’t create zero satoshi outputs.
 
 It is incentive incompatible to create zero satoshi outputs. You can’t guarantee.
 
@@ -416,7 +416,7 @@ There are limits of course but essentially yes. And there are also situations wh
 
 We already have limits on the size of the transaction. We are essentially extending those limits by a multiple of whatever the max package size is. Sounds like caching is going to be the biggest challenge here then. We hope that the transaction size limit we currently have is unnecessarily restrictive. Because if it isn’t we’re just about to multiply it by the max package size.
 
-I believe the package cannot be bigger than the maximum transaction size (100kb?). 
+I believe the package cannot be bigger than the maximum transaction size (100kb?).
 
 So your question is if zero fee transactions are fine why not zero outputs too. We are already relaxing the min relay fee requirement when in a package, why not also the non-zero output requirement (when in a package)? You’re getting the relay of the transaction for free, why not the relay of an extra zero output?
 

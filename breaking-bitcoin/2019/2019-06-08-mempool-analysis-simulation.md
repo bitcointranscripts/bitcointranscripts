@@ -1,5 +1,5 @@
 ---
-title: Mempool Analysis & Simulation 
+title: Mempool Analysis & Simulation
 transcript_by: Bryan Bishop
 speakers: ['Kalle Alm']
 categories: ['conference']

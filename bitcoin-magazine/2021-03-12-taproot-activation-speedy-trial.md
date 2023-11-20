@@ -41,7 +41,7 @@ Proposed timeline: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-
 
 AvW: Should we begin with Speedy Trial, what is Speedy Trial Sjors?
 
-SP: I think that is a good idea to do. With the proposals that we talked about last time for activating Taproot, basically Bitcoin Core would release some software, maybe in April of something, and then the miners will start signaling using that software in I think, August or something. Then they can signal for a year and at the end of the year the whole thing ends. 
+SP: I think that is a good idea to do. With the proposals that we talked about last time for activating Taproot, basically Bitcoin Core would release some software, maybe in April of something, and then the miners will start signaling using that software in I think, August or something. Then they can signal for a year and at the end of the year the whole thing ends.
 
 AvW: That was LOT=true or LOT=false. The debate was on whether or not it should end with forced signaling or not. That’s the LOT=true, LOT=false thing.
 
@@ -59,19 +59,19 @@ AvW: Miners and actual Bitcoin users.
 
 SP: Yes. You want to give everybody plenty of time to upgrade. The idea is we would start the signaling very quickly. Also miners can signal without installing the software. Once the signal threshold has been reached then the soft fork is set in stone. It is going to happen, at least if people run the full nodes. Then there is still some time for people to upgrade and for miners to really upgrade and run that new software rather than just signal for it. They could run that software but they might not. That is why is sort of ok to release a bit early.
 
-AvW: They should really be running the software if they are signaling? 
+AvW: They should really be running the software if they are signaling?
 
 SP: No. We can get into that later.
 
 AvW: For now, to recap really briefly, Speedy Trial means release the software fairly fast and quickly after it is released start the signaling period for 3 months, which is relatively short for a signaling period. See if 90 percent of miners agree, if they do Taproot activates 6 months after the initial release of the software. If 90 percent of miners don’t activate within 3 months the proposal expires and we can continue the discussion on how to activate Taproot.
 
-SP: We are then back to where we were a few weeks ago but with more data. 
+SP: We are then back to where we were a few weeks ago but with more data.
 
 # The evolution of the Speedy Trial proposal
 
-AvW: Exactly. I want to briefly touch on how we got here. We discussed the whole LOT=true and LOT=false thing and there appeared to be a gridlock. Some people definitely didn’t want LOT=true, some people definitely didn’t want LOT=false and then a third proposal entered the mix. It wasn’t brand new but it wasn’t a major part of the discussion, a simple flag day. A simple flag day would have meant that the Bitcoin Core code would have included a date in the future or a block height in the future, at which point the Taproot upgrade would activate regardless of hash power up until that point. 
+AvW: Exactly. I want to briefly touch on how we got here. We discussed the whole LOT=true and LOT=false thing and there appeared to be a gridlock. Some people definitely didn’t want LOT=true, some people definitely didn’t want LOT=false and then a third proposal entered the mix. It wasn’t brand new but it wasn’t a major part of the discussion, a simple flag day. A simple flag day would have meant that the Bitcoin Core code would have included a date in the future or a block height in the future, at which point the Taproot upgrade would activate regardless of hash power up until that point.
 
-SP: I find this an even worse idea. When there is a lot of debate people start proposing stuff. 
+SP: I find this an even worse idea. When there is a lot of debate people start proposing stuff.
 
 AvW: I think the reason that we reached this gridlock situation where people feel very strongly about different ideas has a lot to do what happened during the SegWit upgrade. We discussed this before but people have very different ideas of what actually happened. Some people feel very strongly that users showed their muscles. Users claimed their sovereignty, users claimed back the protocol and they basically forced miners to activate the SegWit upgrade. It was a huge victory for Bitcoin users. Then other people feel very strongly that Bitcoin came near to a complete disaster with a fractured network and people losing money, a big mess. The first group of people really likes doing a UASF again or starting with LOT=false and switching to LOT=true or maybe just starting with LOT=true. The people who think it was a big mess, they prefer to use a flag day this time. Nice and safe in a way, use a flag day, none of this miner signaling, miners can’t be forced to signal and all of that. These different views on what actually happened a couple of years ago now means people can’t really agree on a new activation proposal. After a lot of discussion all factions were sort of willing to settle on Speedy Trial even though no one really likes it for a couple of reasons which we will get into. The UASF people, they are ok with Speedy Trial because it doesn’t get in the way of the UASF. If the Speedy Trial fails they will still do the UASF next year. The flag day people are sort of ok because the 3 months doesn’t allow for a big enough window to do the UASF probably. The UASF people have said that that is too fast and let’s do this Speedy Trial.
 
@@ -79,7 +79,7 @@ SP: There is also still the LOT=false, let’s just do soft forks the way we’v
 
 AvW: The LOT=false people, this is basically LOT=false just on a shorter timescale. Everyone is sort of willing to settle on this even though no one really likes it.
 
-SP: From the point of view that I’m seeing, I’m actually looking at the code that is being written, what I have noticed is that once the Speedy Trial came out more people came out of the woodwork and started writing code that could actually get this done. Whereas before it was mostly Luke I think writing that one [pull request](https://github.com/bitcoin/bitcoin/pull/19573). 
+SP: From the point of view that I’m seeing, I’m actually looking at the code that is being written, what I have noticed is that once the Speedy Trial came out more people came out of the woodwork and started writing code that could actually get this done. Whereas before it was mostly Luke I think writing that one [pull request](https://github.com/bitcoin/bitcoin/pull/19573).
 
 AvW: BIP 8?
 
@@ -107,7 +107,7 @@ SP: Let’s do an example there, it is fun to illustrate. Let’s say the deadli
 
 AvW: It is a bigger problem with shorter signaling periods as well?
 
-SP: Yes of course. If there is a longer signaling period it is less likely that the signal is going to arrive at the edge of a period. 
+SP: Yes of course. If there is a longer signaling period it is less likely that the signal is going to arrive at the edge of a period.
 
 AvW: The threshold, I thought it was going to be 90 percent this time?
 
@@ -117,7 +117,7 @@ AvW: That is also true with BIP 9. You remove one edge case, you have one edge c
 
 SP: Right, with BIP 9 you could have the same scenario, exactly one vote, if it is just at the edge one miner vote. But the much bigger problem with BIP 9 is that if the time on the block is 1 second after midnight or before this matters. Even if they are way over the threshold. They might have 99.999 percent but that last block comes in too late and so the entire period is disqualified. With an election you are looking at all the votes. You are saying “It has got 97 percent support, it is going to happen” and then that last block is just too late and it doesn’t happen. It is difficult to explain but we don’t have this problem with height based activation.
 
-AvW: I guess the biggest disadvantage of using BIP 8 is that it is a bigger change as far as code comes. 
+AvW: I guess the biggest disadvantage of using BIP 8 is that it is a bigger change as far as code comes.
 
 SP: Yeah but I’ve looked at that code yesterday and wrote some tests for it. Andrew Chow and Luke Dashjr have already implemented a lot of it. It has already been reviewed by people. It is actually not too bad. It looks like 50 lines of code. However, if there is a bug in it it is really, really bad. Just because it is only a few lines of code, it might be safer to use something that is already out there. But I am not terribly worried about it.
 
@@ -127,7 +127,7 @@ AvW: Then there is the hash power threshold. Is it 90 or 95?
 
 SP: What is being implemented now in Bitcoin Core is the general mechanism. It is saying “For any soft fork that you call Speedy Trial you could for example use 90 percent.” But for Taproot the code for Taproot in Bitcoin Core, it just says “It never activates.” That is the way you indicate that this soft fork is in the code but it is not going to happen yet. These numbers are arbitrary. The code will support 70 percent or 95 percent, as long as it is not some imaginary number or more than 100 percent.
 
-AvW: It is worth pointing out that in the end it is always 51 percent effectively because 51 percent of miners can always decide to orphan non-signaling blocks. 
+AvW: It is worth pointing out that in the end it is always 51 percent effectively because 51 percent of miners can always decide to orphan non-signaling blocks.
 
 SP: And create a mess. But they could.
 
@@ -155,11 +155,11 @@ AvW: Ok. Shall we get to some of the downsides of this proposal?
 
 SP: Some of the risks. The first one we briefly mentioned. Because this thing is deployed quite quickly and because it is very clear that the activation of the rules is delayed, there is an incentive for miners to just signal rather than actually install the code. Then they could procrastinate on actually installing the software. That is fine unless they procrastinate so long that they forget to actually enforce the rules.
 
-AvW: Which sounds quite bad to me Sjors. 
+AvW: Which sounds quite bad to me Sjors.
 
-SP: Yeah. That is bad, I agree. It is always possible for miners to just signal and not actually enforce the rules. This risk exists with any soft fork deployment. 
+SP: Yeah. That is bad, I agree. It is always possible for miners to just signal and not actually enforce the rules. This risk exists with any soft fork deployment.
 
-AvW: Yes, miners can always just signal, fake signal. That has happened in the past. We have seen fake signaling. It was the BIP 66 soft fork where we learnt later that miners were fake signaling because we saw big re-orgs on the network. That is definitely something we would want to avoid. 
+AvW: Yes, miners can always just signal, fake signal. That has happened in the past. We have seen fake signaling. It was the BIP 66 soft fork where we learnt later that miners were fake signaling because we saw big re-orgs on the network. That is definitely something we would want to avoid.
 
 SP: I think we briefly explained this earlier but we can explain it again. Bitcoin Core, if you use that to create your blocks as a miner, there are some safety mechanisms in place to make sure that you do not create a block that is invalid. However if another miner creates a block that is invalid you will mine on top of it. Then you have a problem because the full nodes that are enforcing Taproot will reject your block. Presumably most of the ecosystem, if this signaling works, will upgrade. Then you get into this whole very scary situation where you really hope that is true. Not a massive part of the economy is too lazy to upgrade and you get a complete mess.
 
@@ -173,7 +173,7 @@ SP: SegWit version. The current version of SegWit is version 0 because we are ne
 
 AvW: Isn’t it also the case that regular nodes will just not forward the transaction to other nodes?
 
-SP: That is correct, that is another safety mechanism. 
+SP: That is correct, that is another safety mechanism.
 
 AvW: There are two safety mechanisms.
 
@@ -189,7 +189,7 @@ SP: If you have 300,000 euros to burn you could make a block like that and chall
 
 AvW: That was a long tangent on the problems with false signaling. All of this would only happen if miners are false signaling?
 
-SP: To be clear false signaling is not some malicious act, it is just a lazy, convenient thing. You say “Don’t worry, I’ll do my homework. I will send you that memo in time, don’t worry.” 
+SP: To be clear false signaling is not some malicious act, it is just a lazy, convenient thing. You say “Don’t worry, I’ll do my homework. I will send you that memo in time, don’t worry.”
 
 AvW: I haven’t upgraded yet but I will upgrade. That’s the risk of false signaling.
 
@@ -209,7 +209,7 @@ SP: You could maybe, why not?
 
 AvW: What would you trigger?
 
-SP: There is a flag day out there but you deploy software that requires signaling. 
+SP: There is a flag day out there but you deploy software that requires signaling.
 
 AvW: That is what UASF people would be running.
 

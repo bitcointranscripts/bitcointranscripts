@@ -82,7 +82,7 @@ Q: Is that used by lots of miners?
 
 A: Used more by traders. Miners could do it, but I don't think that many miners did that. It would be good if they did.
 
-Alex Petrov from Bitfury. If you have a big data center, you can keep a couple of bitcoin for the future. But for smaller miners, they should sell them almost immediately with some delay to cover energy cost, data center cost, or employees who were working for data center support. They have bigger risk. Because they have bigger risk, they have lower margin for what they can keep for future. Bigger miners keep bitcoin, they believe in bitcoin's future market price, and they are trying to save bitcoin for the future. 
+Alex Petrov from Bitfury. If you have a big data center, you can keep a couple of bitcoin for the future. But for smaller miners, they should sell them almost immediately with some delay to cover energy cost, data center cost, or employees who were working for data center support. They have bigger risk. Because they have bigger risk, they have lower margin for what they can keep for future. Bigger miners keep bitcoin, they believe in bitcoin's future market price, and they are trying to save bitcoin for the future.
 
 My name is Jack. Sometime it's in fiat, sometimes in bitcoin. But the difficulty of hashrate rise, you don't know. So mining company tell you how many miner produce, and the price faulty too, so there can be bubble, you can tell, sometime miners lose money. In my opinion, small miners are... very very quickly, and hashrate is centralized, especially in Western area there is lower cheaper electricity and in some places in America, like Washington State, and Iceland, because they are using water to produce their electricity.
 

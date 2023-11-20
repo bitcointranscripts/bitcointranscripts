@@ -25,7 +25,7 @@ Speaker 1: Gotcha. Cool. Yeah, and I think the other thing is that we're just po
 
 Speaker 3: Yeah, also there is also a debate about what happens if we send multiple shutdown messages with different scripts, and we discussed on the PR that — [Redacted]’s here. We discussed on the PR…
 
-Speaker 1: We're talking about the simple close. Sorry [Redacted]. 
+Speaker 1: We're talking about the simple close. Sorry [Redacted].
 
 Speaker 3: Yeah, no, no. We discussed on the PR that if I send a second shutdown, I invalidate the previous one. And when we return the message from the receiver, we need to confirm the script public key where we send the closing transaction. Does it make sense also to avoid concurrency?
 
@@ -59,7 +59,7 @@ Speaker 1: What's this thing around this game theory? I haven't read the comment
 
 Speaker 4: It's like, you know, so, oh, because you're paying your own fees. You're like: Well, I really want you to close and I want you to close kind of shit. Now, the thing is that in the unilateral case, the opener is paying all the fees. So, they have an incentive to do this anyway. Now, if I really, really don't want to pay for the close, but I want a mutual close, it's simple. I just propose a fee that is below one set per byte. If I really don't want to pay fees, I propose a zero fee close, and you sign off on it. Great. Good. Right? Now, the opener is not going to propose a zero fee because that would be dumb, right? But you could totally — there's nothing in the spec that stops you doing that. If you really, really want to close, but you don't want to pay anything, propose a zero fee. Whatever. I don't care. The opener will propose a fee that's maybe de minimis, but they'll want to propagate. So, it still works. People are really upset about the game theory, but it doesn't add any new things we don't already have, where you already try to convince the peer to force close and stuff like that. I think there's no game theory-free version of closing, and so make it simple.
 
-Speaker 1:Yeah, I need to follow up or just understand the whole op return thing a bit better as well. That's the only thing that was new to me. Or  would you just give it to miners or effectively? 
+Speaker 1:Yeah, I need to follow up or just understand the whole op return thing a bit better as well. That's the only thing that was new to me. Or  would you just give it to miners or effectively?
 
 Speaker 4: Yeah, I mean, it's the only way of doing it because if you both say you don't want the output, you got to have something.
 
@@ -77,7 +77,7 @@ Speaker 2: No, there's no network minimum.
 
 Speaker 1: Yeah, so LND has a 20k value, [Redacted].
 
-Speaker 5: Got it. Oops. 
+Speaker 5: Got it. Oops.
 
 Speaker 1: Yeah, but I was thinking in practice, because we have a 20k minimum, it probably doesn't matter. But I was just like, cover all the bases or whatever.
 
@@ -131,11 +131,11 @@ Speaker 1: Bad onion?
 
 Speaker 4: We get upset. We're like: What the hell is this?
 
-Speaker 2: Same. 
+Speaker 2: Same.
 
 Speaker 1: Okay. Yeah, because we're like that.
 
-Speaker 2: I doubt it's bad — oh, probably bad onion? I don’t know. 
+Speaker 2: I doubt it's bad — oh, probably bad onion? I don’t know.
 
 Speaker 1: It's either bad onion or malformed onion, whatever the name is.
 
@@ -143,7 +143,7 @@ Speaker 4: Yeah, it's one of those ones. Yeah.
 
 Speaker 1: Yeah. I was curious. I think we're looking to actually remove it. I guess we can set the bit to required first, which maybe is related to the thing around the assumption stuff, which is the next thing. Okay, but so for this one, we're saying it's okay for now. We'll think about something, or do we want to have it be airtight?
 
-Speaker 4: I'm relatively happy for it to be undefined. I'm trying to look at where we say set the feature. Generally, we say we test the feature bit, and so if they're both set, then it just kind of works, but it's kind of nice to be explicit. 
+Speaker 4: I'm relatively happy for it to be undefined. I'm trying to look at where we say set the feature. Generally, we say we test the feature bit, and so if they're both set, then it just kind of works, but it's kind of nice to be explicit.
 
 Speaker 1: Yeah, whenever we do exist, we do like both versions of the bit.
 
@@ -157,11 +157,11 @@ Speaker 4: Yeah. I mean, don't send it, but if someone does…
 
 Speaker 3: The PR is not saying that we should fail. But if both are set, we take the required one. It's a pretty trivial one. So, you should do it either way, right? If I know this is required for me. Also, if I specify that this is also optional for me, it's required, right? I don't think the PR said that you should fail, but maybe wrong.
 
-Speaker 1: Well, basically you're saying: You shouldn't set it, but you shouldn't reject it. Right now, this PR is set. 
+Speaker 1: Well, basically you're saying: You shouldn't set it, but you shouldn't reject it. Right now, this PR is set.
 
 Speaker 3: If you set the receiver, need to take this like: Hey, you want this as the quad. I don't care if it's also optional. So, just in your, the optional one.
 
-Speaker 4: Okay. So, looking through the spec briefly, we talk about rejecting evens and everything else. We never define what negotiated means, but we assume everyone knows what negotiated means. We should probably define that somewhere. When we say a feature is negotiated, which is the language we use, it means that basically, you either both set it to optional or you both set it to compulsory. You both set it — optional or compulsory, right? You don't care. But yeah, it basically implies you both set it, and therefore it's negotiated. Since that isn't defined, I think everyone is basically doing that test, but it might be good to spell it out. So, a feature is offered if whoever we're talking about has set it, either optional or compulsory; and if we both offered it, then it's negotiated. Right? So, that's the language that the spec kind of is heading towards, and maybe we should just nail that right down. 
+Speaker 4: Okay. So, looking through the spec briefly, we talk about rejecting evens and everything else. We never define what negotiated means, but we assume everyone knows what negotiated means. We should probably define that somewhere. When we say a feature is negotiated, which is the language we use, it means that basically, you either both set it to optional or you both set it to compulsory. You both set it — optional or compulsory, right? You don't care. But yeah, it basically implies you both set it, and therefore it's negotiated. Since that isn't defined, I think everyone is basically doing that test, but it might be good to spell it out. So, a feature is offered if whoever we're talking about has set it, either optional or compulsory; and if we both offered it, then it's negotiated. Right? So, that's the language that the spec kind of is heading towards, and maybe we should just nail that right down.
 
 Speaker 5: Just as a quick clarification: Are all the currently deployed features strictly independent? Or do some of them imply other ones?
 
@@ -171,9 +171,9 @@ Speaker 5: So, then presumably any mandatory feature bit can also imply mandator
 
 Speaker 4: It could, but you don't have to. Although, presumably, everyone accepts it, right? The only difference between mandatory and optional is that if they don't understand it, they should behave differently. There's no other signaling on that. So, presumably, if you've specified a higher level one, they understand that one. Otherwise, it would have hung up on you. And so, the lesser one, who cares?
 
-Speaker 5: Right, yeah, I guess it depends on how sort of nitpicky we want the protocol to be. But are these dependencies listed explicitly in Bolt 9? 
+Speaker 5: Right, yeah, I guess it depends on how sort of nitpicky we want the protocol to be. But are these dependencies listed explicitly in Bolt 9?
 
-Speaker 4: Yes. 
+Speaker 4: Yes.
 
 Speaker 1: Yeah. So, every bit has something that lists dependencies, basically. We have logic for that in LND as well. It's like deps.go, I think, is where that is.
 
@@ -185,7 +185,7 @@ Speaker 1: I see what you're saying. You're saying require, yeah. I think you ne
 
 Speaker 4: I mean, feature bits are like a really crude hammer, right? It's like literally if you don't understand this, I don't even want to talk to you, which in practice is the last stage — right — and we hit this recently because usually you're like: Well maybe I don't want to open new channels to you, but if you've got an existing channel with me, I still want to talk to you. So, really you've got to have everyone upgraded before you can really start top mandatory. The exception is if you were writing a new implementation or something and you're like: Well, I don't care about old nodes and I'm gonna be ahead of the curve, sure. But yeah, we've discovered it's a pretty crude, crude hammer.
 
-Speaker 1:Cool. 
+Speaker 1:Cool.
 
 Speaker 5: These are like node, right? Not per channel.
 
@@ -203,9 +203,9 @@ Speaker 0: Yeah, okay. So, this is removing unused features and assuming four mo
 
 Speaker 1: Yeah, something we talked about just in terms of cleaning stuff up. My main thing for this is that it feels like there should be the intermediate phase of required. ‘Cause it feels like we never really did require. Looking at our bits right now, the only thing we have required is like the payment secret, or people call it in the invoice, and nothing else. For example, now we can theoretically set TLV and then payload to require in our next release, and just start there or something like that. There's probably some other ones that we can make required, like static key required, whatever else.
 
-Speaker 4: Yeah. I wonder if we want to flip them onto required. I'll leave this on the back burner for a bit, flip them on to required. See what happens. Then, once everyone's like: No, it's required, then we go: Cool, let's just start assuming it. 
+Speaker 4: Yeah. I wonder if we want to flip them onto required. I'll leave this on the back burner for a bit, flip them on to required. See what happens. Then, once everyone's like: No, it's required, then we go: Cool, let's just start assuming it.
 
-Speaker 1: Yeah, exactly. 
+Speaker 1: Yeah, exactly.
 
 Speaker 4: That's effectively the same.
 
@@ -255,13 +255,13 @@ Speaker 1: So, are 1097 and 1069 the same thing or different?
 
 Speaker 6: 1069 is [Redacted]’s, and that follows up with something different.
 
-Speaker 1: Gotcha. 
+Speaker 1: Gotcha.
 
 Speaker 0: Does this peer require changes in what anyone has already merged for blinded path stuff? Or is this just a clarification?
 
 Speaker 6: I believe it's just a clarification. It's definitely what Acinq is currently doing. I'm not sure about CLN, and it's what [Redacted] and [Redacted] are doing in RPRs. (around 36:10 mark)
 
-Speaker 0: Cool. 
+Speaker 0: Cool.
 
 Speaker 4: Then it's correct.
 
@@ -293,9 +293,9 @@ Speaker 0: Not on the call. Is there anyone else then that wants to lead the dis
 
 Speaker 1: I think it's in the comments.
 
-Speaker 2: I think it was discussed last meeting. 
+Speaker 2: I think it was discussed last meeting.
 
-Speaker 1: Yeah, or look at the comments. 
+Speaker 1: Yeah, or look at the comments.
 
 Speaker 0: Everyone has the same value. Yeah, that does look like what the comment says. Okay. This is proposing to change it to 4032. Everyone currently is in 2016, but this is proposing to change it to 4032.
 
@@ -307,7 +307,7 @@ Speaker 5: Yeah, we discussed this at the last spec meeting.I think where we had
 
 Speaker 4: Why is your magic number better than our magic number? I don't know. How do we pick?
 
-Speaker 1: Well I mean everyone already does 2016. 
+Speaker 1: Well I mean everyone already does 2016.
 
 Speaker 2: The discussion I recall at the last meeting was: Let's stick with what we have because everyone has the same number and not less changes. I don't think there's much left to discuss aside from the PR needs to be updated to suggest 2016.
 
@@ -317,7 +317,7 @@ Speaker 1: I don't think so, but talking with them, and a bit more tech — I th
 
 Speaker 2: There's some level of agreement on that, right? So, basically this is waiting for Interop.
 
-Speaker 1: Yes, I think the PR needs updating. 
+Speaker 1: Yes, I think the PR needs updating.
 
 Speaker 2: Yeah, PR may need to be updated. There may or may not be constant changes, but I think the next step concretely here is interop. Yeah.
 
@@ -339,7 +339,7 @@ Speaker 7: I wrote the test vectors for LDK. I think they could use a review gla
 
 Speaker 4: Yeah, I think it's hard to get the intermediate values wrong. The final one's correct.
 
-Speaker 1: That's my problem with onion stuff. 
+Speaker 1: That's my problem with onion stuff.
 
 Speaker4: Yeah. When it works, it works. When it doesn't, oh my god.
 
@@ -353,7 +353,7 @@ Speaker 2: If it passes, that means our test code may need cleaning up, but at l
 
 Speaker 4: Yeah, let's get together and do an interop test. Actual real interop, just to make sure that we haven't missed something stupid, [redacted]. So, we'll do that offline, and we can join some nodes together and send messages and see what happens.
 
-Speaker 7: Awesome. 
+Speaker 7: Awesome.
 
 Speaker 6: Well, in the most strange interop way possible, I've used LDK to send onion messages to CLN and it works through LND, but maybe we should do a less Frankenstein-y interop.
 
@@ -387,7 +387,7 @@ Speaker 0: Okay So, this is an update on top of, or modification, of offers. So,
 
 Speaker 8: Yeah, we discussed it last meeting. So I don't have much to really discuss now, but I just wanna let you all know that it's available for review.
 
-Speaker 0: Okay, great. 
+Speaker 0: Okay, great.
 
 Speaker 2: [Redacted] got muted in the middle of talking. I'm not sure if we muted them or why they got muted.
 
@@ -403,7 +403,7 @@ Speaker 4: Test vectors and this are both pending, so we won't merge it.
 
 Speaker 0: Okay. Just reading comments all over the place. Alright.
 
-Speaker 4: Yeah, we want 1099. 
+Speaker 4: Yeah, we want 1099.
 
 Speaker 0: Okay, I'm gonna edit. Great. Awesome, y'all. What is up next? It would be adding a dust exposure threshold. This is 919. This is also from [Redacted].
 
@@ -419,7 +419,7 @@ Speaker 4: Do we time this one out?
 
 Speaker 0: What does timeout mean?
 
-Speaker 1: Well, it was worth the OP did, and then I said, should we reopen it? But we can let them timeout again. 
+Speaker 1: Well, it was worth the OP did, and then I said, should we reopen it? But we can let them timeout again.
 
 Speaker 2: I mean, we should — even if we don't, what's the current text of it? Because the very original text of this PR was like super specific and nothing anyone wanted. If we don't land this, whoever presses the close button should, at least, add a note. There is an attack here that if you let the max dust exposure go up, you can be hurt. So, see this and do something about it. There's a lot of text here, and we could just not have all this text, and just have a much smaller thing.
 
@@ -435,7 +435,7 @@ Speaker 4: Okay, let me look at the final text. Okay, so I promise I will review
 
 Speaker 0: Okay, cool. That seems like a solid point. Should I note it on the PR?
 
-Speaker 4: Yep. 
+Speaker 4: Yep.
 
 Speaker 2: If [Redacted]’s happy with this, I'm happy to see it merged without anyone else looking at it. Do we time out the requirements for two ACKs? Can we time that out?
 
@@ -449,7 +449,7 @@ Speaker 9: Yeah, I have a LDK PR that's kind of having some issues with lifetime
 
 Speaker 1: Cool, but I'll ping people. I guess PR, IRC, whatever else, once nothing is done. At this point, I can just get some test vectors up as well, just for the various transactions, and maybe do a new JSON vector. ‘Cause I don't think we have JSON anywhere else, right? They're just like the...
 
-Speaker 9: No, I don't think I have seen JSON anywhere. Yeah, that’ll be good. That sounds fun. 
+Speaker 9: No, I don't think I have seen JSON anywhere. Yeah, that’ll be good. That sounds fun.
 
 Speaker 1: Well, no, [Redacted] added JSON for zero anchor. So, that's already there, or at least, I think that's in line. But I was looking to do that for the TX transaction stuff there too. But yeah, so generally, I'm focusing on catching up the spec this week, and just in terms of the minor changes and other things like that — say, MuSIG 1.0, etc. — and then, ideally to be out of draft this week too, which, I think, was like my thing to have test vectors on there.
 
@@ -465,15 +465,15 @@ Speaker 4: And it's transient. You never have to persist the nonce. That was the
 
 Speaker 9: That is true. We never would have to persist them.
 
-Speaker 1: This one feels late in the game. I don't know. We've been talking about MuSIG for a year. 
+Speaker 1: This one feels late in the game. I don't know. We've been talking about MuSIG for a year.
 
 Speaker 4: I know. [Redacted], where's your...
 
-Speaker 1: This is making more sense with the force close. Taproot compared to regular as well because you have the extra up key, and then also the control block as well. I think people can do it. 
+Speaker 1: This is making more sense with the force close. Taproot compared to regular as well because you have the extra up key, and then also the control block as well. I think people can do it.
 
 Speaker 2: You could just force close. Isn’t that part of the reason why we're fixing the shutdown stuff to not be as force close happy?
 
-Speaker 1: Well, I think it's just independent of it. It just feels like we felt like we were going to go all the way and stopping halfway because people had trouble implementing or don't want to. I don't really understand what the rationale was. Just not have to do the non-stuff you have to do it anyway? To me, this feels very late in the game, given when we talked about this last year, to say co-op code is different now, and then co-op code is also different. Then you have more bytes on-chain, as well as more expensive. I think once people sit down and look at the nonce stuff, it sounds scary, but I think we've slimmed it down a bunch to what it was before. Credit to [Redacted] and [Redacted] for doing the Jitnons thing and stuff like that as well. But I don't think it's as scary as people think it is. 
+Speaker 1: Well, I think it's just independent of it. It just feels like we felt like we were going to go all the way and stopping halfway because people had trouble implementing or don't want to. I don't really understand what the rationale was. Just not have to do the non-stuff you have to do it anyway? To me, this feels very late in the game, given when we talked about this last year, to say co-op code is different now, and then co-op code is also different. Then you have more bytes on-chain, as well as more expensive. I think once people sit down and look at the nonce stuff, it sounds scary, but I think we've slimmed it down a bunch to what it was before. Credit to [Redacted] and [Redacted] for doing the Jitnons thing and stuff like that as well. But I don't think it's as scary as people think it is.
 
 Speaker 9: I kind of agree with [Redacted]. I think it's nice to have a smaller fucking green lateral close. I don't think the non-stop is too complicated. However, as before, I'm perfectly fine with dropping it entirely, even though it's late in the game. I think we should keep it down.
 
@@ -483,7 +483,7 @@ Speaker 9: Well, I don't know if you can necessarily call it clean, because you 
 
 Speaker 5: Well, I mean, you're going to want to reduce the chain footprint eventually, especially since a lot of the taproot rationale is to try to compress things down to these like single signatures.
 
-Speaker 9: Right. The argument of course is that unilateral closes happen much more rarely than cooperative closes. On the other hand, if you do have a unilateral close, then you probably want to make sure that you can spend as much money as possible on fixing a fee situation. So, if the close itself takes up less weight, it's probably a big benefit. Yeah, debate. 
+Speaker 9: Right. The argument of course is that unilateral closes happen much more rarely than cooperative closes. On the other hand, if you do have a unilateral close, then you probably want to make sure that you can spend as much money as possible on fixing a fee situation. So, if the close itself takes up less weight, it's probably a big benefit. Yeah, debate.
 
 Speaker 10: But co-op closes are also smaller, right?
 
@@ -517,7 +517,7 @@ Speaker 0: Is this something that you could add…
 
 Speaker 1: It feels like people were discouraged about FROST, but they haven't fully given up there. So, I don't know if they’re still investigating that. There is just like the check SIG add thing as well. I think one of the things because Gossip 1.75 — or we're calling it like now, just say it's a pubkey — means you can do whatever you want to, right? Where before it maybe would sort of prescribe MuSIG 2. Now, you can have a script path that has 20 signers if you want to, right? And that's not enforced on the gossip layer anymore, but then you would need to define all of that for that channel type, which you can do because it's a length level thing. And hey, there's gonna be more channel types in the future anyway, so yeah.
 
-Speaker 0: I mean, would it make sense to make this like just a different channel type then? Like, there's an option to do commitment transactions without the nonces. I guess then you get the: Who's supporting it? It's probably better to have a single. 
+Speaker 0: I mean, would it make sense to make this like just a different channel type then? Like, there's an option to do commitment transactions without the nonces. I guess then you get the: Who's supporting it? It's probably better to have a single.
 
 Speaker 5: That’s going to make it more complicated.
 
@@ -527,7 +527,7 @@ Speaker 1: Well, yeah, I mean, if whoever wants to take it all the way and actua
 
 Speaker 9: Yeah, I do want to say, though, that if people want to use a non-sluss scheme in order to be able to use FROST more easily, that's a disadvantage because then that leaks that you are probably interested in that because they have some different signer setup. So...
 
-Speaker 2: Right, in order to... 
+Speaker 2: Right, in order to...
 
 Speaker 1: Yeah, it's not clear that you can not leak. Unless you warn everybody.
 
@@ -575,11 +575,11 @@ Speaker 2: I think the implementing part, at least, I think there's some level o
 
 Speaker 0: We are overtime by 10 minutes. If people want to keep talking, I'm definitely down to keep chatting. But if that.
 
-Speaker 2: [Redacted] has been sitting here, smacking their head for the last 10 minutes. 
+Speaker 2: [Redacted] has been sitting here, smacking their head for the last 10 minutes.
 
 Speaker 4: No, no. Look, I'm loving this conversation. I did want to note that we looked at nested MuSIG for the gossip stuff, where you go: Oh, actually, because we're signed with a taproot key, and we want to sign with two node keys, and can we do this? I'm leaning towards a hybrid at the moment, where if you've got one SIG, that means: Okay, I have signed the whole thing with three keys — the taproot internal key and the two node keys — and I've managed to do that. If you've got two, it means: Well, one of them's just, this is signed by the taproot key, and this is signed by the node keys. So, you don't have to do nested FROST if you can't do that. But if you manage to do that in future, then — because the verification side is trivial, right? Validation signature, well, it's signed by all three. That's great. How do you produce that? So, we're probably going to have to do some awkward hybrid thing. They talked about half-aggregation, which is much easier, but I'm still holding out hope that we will end up with nested FROST SIG Mu-Sig — that this Franken creature will come to life, and we will get down to a single signature. So, even though it's gossip and we care about bytes, I'm tempted to not go for half aggregation and go for either two SIGs or one SIG.
 
-Speaker 2: On this. I did go back and forth a little bit after the last meeting with [Redacted], I think. [Redacted] pointed out you don't really gain anything if we get that hybrid creature actually, because the verification time is basically the same. It's all just adding the pubkey anyway. Might save a single operation. 
+Speaker 2: On this. I did go back and forth a little bit after the last meeting with [Redacted], I think. [Redacted] pointed out you don't really gain anything if we get that hybrid creature actually, because the verification time is basically the same. It's all just adding the pubkey anyway. Might save a single operation.
 
 Speaker 4: It's size.
 
@@ -601,9 +601,9 @@ Speaker 1: If people want to add the bit and then define it, I think they can. A
 
 Speaker 2: I assume, at this point, that LND will ship with nonces because you guys have already written the code. That is a very separate question from: Will others ship with the same? I mean, similar to what we ended up with anchors because people shipped quick, there ended up being two different variants of anchors, and we're only just now getting that fixed. Right?
 
-Speaker 4: So that's one question. I need to write up. Do you want me to write up the nonce thing? Because I think I talked about the recognition. We said: Okay, well we won't prescribe it basically, but we can say: People, you should have a new nonce, right? Should I write up the nonce thing and more details in the end. 
+Speaker 4: So that's one question. I need to write up. Do you want me to write up the nonce thing? Because I think I talked about the recognition. We said: Okay, well we won't prescribe it basically, but we can say: People, you should have a new nonce, right? Should I write up the nonce thing and more details in the end.
 
-Speaker 2: Frankly, personally, I was totally fine with the nonce thing until you brought up the multi-SIG question, and I'm like: Oh shit actually maybe this makes more sense. 
+Speaker 2: Frankly, personally, I was totally fine with the nonce thing until you brought up the multi-SIG question, and I'm like: Oh shit actually maybe this makes more sense.
 
 Speaker 0: Well, just have multiple phones, right?
 
@@ -611,7 +611,7 @@ Speaker 3: Four different lighting channels, it's fine. Yeah, I mean, I'm okay w
 
 Speaker 1: But okay, I guess is there any direct soul searching that needs to happen on this front?
 
-Speaker 0: I mean, I feel like it's like Core Lightning hasn't implemented anything for taproot yet, right? So like, as like a new implementer, it's like: Okay, we want to do what we think is going to be like the best thing for the spec, right? So ignore — we clearly don't have the history or any of the code that we would have to change. It's all greenfield to some extent, right? So for us, it's like: Okay, what is going to be, what do we think is, what shuffles have already been put in the ground, what is the best implementation, when not with compatibility, right? So, I'm not really sure what the answer is. Maybe we should have another discussion about this next meeting around it after — definitely over time here… 
+Speaker 0: I mean, I feel like it's like Core Lightning hasn't implemented anything for taproot yet, right? So like, as like a new implementer, it's like: Okay, we want to do what we think is going to be like the best thing for the spec, right? So ignore — we clearly don't have the history or any of the code that we would have to change. It's all greenfield to some extent, right? So for us, it's like: Okay, what is going to be, what do we think is, what shuffles have already been put in the ground, what is the best implementation, when not with compatibility, right? So, I'm not really sure what the answer is. Maybe we should have another discussion about this next meeting around it after — definitely over time here…
 
 Speaker 2: I just feel bad kicking it to the next one because then it's just going to be: Well, we've already shipped the code, instead of: Well, we're about to ship the code.
 
@@ -619,7 +619,7 @@ Speaker 0: That makes sense. I mean, I definitely worked on spec stuff that had 
 
 Speaker 1: My initial goal was MuSIG minimally everywhere, which is what led to state machine and code close being MuSIG. That also coincided with reducing on-chain fees whenever possible. There are some cases in the new one, where things end up being a script path because anchors, other things like that. But, at least, my initial goal was like MuSIG everywhere, minimal chain footprint test stuff for BTLC stuff, and sort of like de-risk MuSIG stuff in general, in terms of knowing how it works and other edge cases and stuff at least. But if we're changing that to support more multi-SIG thresholds or something like that, then it's separate. I guess the other thing is wouldn't the whole thing around allowing arbitrary multi-SIG threshold also lead into the whole mini-SHA chain thing, which doesn't seem to have been figured out fully yet?
 
-Speaker 2: I think that has been figured out fully. I'm sorry. I don’t know if I posted it on IRC, but we did get a general solution. 
+Speaker 2: I think that has been figured out fully. I'm sorry. I don’t know if I posted it on IRC, but we did get a general solution.
 
 Speaker 4: Did you get all the numbers? Like, how many do we need? Is eight the right number? Okay.
 
@@ -629,11 +629,11 @@ Speaker 4: Okay.
 
 Speaker 1: So, that's everyone always send and process 10 SHA chain things.
 
-Speaker 2: Basically. 
+Speaker 2: Basically.
 
 Speaker 4: Sure.
 
-Speaker 1: I guess one part of me  feels like we're really impacting the protocol for what seems to be a rare case that people like, but it's unclear how widespread it will be. I mean, because are you really going to have five different nodes? Or where are they? Like latency stuff? 
+Speaker 1: I guess one part of me  feels like we're really impacting the protocol for what seems to be a rare case that people like, but it's unclear how widespread it will be. I mean, because are you really going to have five different nodes? Or where are they? Like latency stuff?
 
 Speaker 8: Well, if it's not going to be supported, it's obviously not going to be widespread at all.
 
@@ -649,11 +649,11 @@ Speaker 1: Yeah, ‘cause also I'm not sure if VLS has any MuSIG 2 partial SIG A
 
 Speaker 4: Yeah, I don't think it's going to make a big difference for them, to be honest. Oh, maybe they care about nonces.
 
-Speaker 1: Yeah, it's a question of whether they want to do the new nonce thing or not. They do have that extra bit of state they need to store, which is alongside the signature really. And they're doing that verification, but I guess we can ask them about it. I guess, at least the social thing stuff here is: See what VLS thinks and then, Core Lightning, size up the impact or something. 
+Speaker 1: Yeah, it's a question of whether they want to do the new nonce thing or not. They do have that extra bit of state they need to store, which is alongside the signature really. And they're doing that verification, but I guess we can ask them about it. I guess, at least the social thing stuff here is: See what VLS thinks and then, Core Lightning, size up the impact or something.
 
 Speaker 4: I will hand that to [Redacted].
 
-Speaker 2: Oh gosh. So I'll do that... 
+Speaker 2: Oh gosh. So I'll do that...
 
 Speaker 4: I'll do multi-SHA chain. How's that?
 

@@ -1,5 +1,5 @@
 ---
-title: Defending Bitcoin Privacy 
+title: Defending Bitcoin Privacy
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Chris Belcher']

@@ -22,7 +22,7 @@ We can do a cumulative binomial distribution to see the probability of any one s
 
 So basically there are two levels of blocks. Top-level blocks deals with estimating people's mining powers, and then low-level blocks that are creating shards to produce those outputs. Everyone will be a light client, but they wont process their transactions, these headers of the shards will have merkle roots for the UTXO state changes ideally, we can talk more about that later, and then basically they will group together outputs that are going to different shards so that they can update their UTXO sets to include those new outputs.
 
-We estimate the mining power of coinbases, we sample the coinbases to shards, we split up the UTXOs, then we validate the work on the low-level blocks, then we validate work and format of low-level block-headers. Top-level block is just SPV of all low-level blocks. The top-level block- in the transaction location we instead have block headers for different shards, these have groups of transactions, 
+We estimate the mining power of coinbases, we sample the coinbases to shards, we split up the UTXOs, then we validate the work on the low-level blocks, then we validate work and format of low-level block-headers. Top-level block is just SPV of all low-level blocks. The top-level block- in the transaction location we instead have block headers for different shards, these have groups of transactions,
 
 <https://github.com/vbuterin/scalability_paper/blob/master/scalability.pdf>
 

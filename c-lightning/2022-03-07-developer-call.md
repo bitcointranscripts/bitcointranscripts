@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -23,7 +23,7 @@ I’ve been working on the multi channel connect stuff, trying to not get distra
 
 It was an awesome [write up](https://twitter.com/rusty_twit/status/1500606585403768832?s=20&t=eXvYFs__TkNA81w7D-Al3Q). I enjoyed it.
 
-I wrote it up and then I thought do I really want to post this? I don’t really want to interact with people over this. I just wanted to drop it and run. My thinking was possibly worth exposing it, I don’t know if anyone cares. Nobody should care. Rene kept bugging me and poking the bear. 
+I wrote it up and then I thought do I really want to post this? I don’t really want to interact with people over this. I just wanted to drop it and run. My thinking was possibly worth exposing it, I don’t know if anyone cares. Nobody should care. Rene kept bugging me and poking the bear.
 
 I’m still working on Minisketch stuff, I think I have the encoding figured out. I have a draft BOLT 7 update documenting what I’m doing there. Rusty shared an issue on GitHub, I was digging into the logs a little bit, I started logging some of the gossip I was receiving. I think the issue stemmed from node announcements not propagating. I was also looking into in general how often do we filter spam gossip. I was surprised, I parsed the logs and it looks like over a 24 hour period that number is something like 2,100. I’ve gathered a bit more data since I started doing that, I haven’t seen how variable it is. It looks like there is about 2,100 unique channels that we maybe out of date on gossip at any point in time simply because they’ve exceeded their allocated number of updates recently. I guess that doesn’t necessarily mean a lot to the traditional gossip mechanism but in terms of integrating Minisketch, definitely going to have to tighten up the rules around rejection of too frequent updates.
 
@@ -45,11 +45,11 @@ If it doesn’t go in the gossip store it won’t get rebroadcast, that’s trad
 
 I spent the last week in London. Before that I mentioned to implement the RPC methods, hooks and subscription interfaces for cln-plugin. That took a bit longer because I wanted to make them async/await which in Rust are really complicated types. That took quite a while to dig into but I am really happy now that we can also call the RPC which is async/await from inside one of these methods and hooks and notification handlers. That completes the scaffolding for cln-plugin and we can finally get it rolling. An additional issue that I had was that some of Rust’s internals triggers Valgrind. I had to figure out how to add suppressions for Valgrind inside of Rust which took me down a weird path. I wanted to make them minimal instead of just copy, pasting whatever Valgrind spat out at the end of the run. That took a bit longer. In London there was Core Dev and then we had Advancing Bitcoin, both excellent venues. We looked a bit into stuff like the RBF pinning attacks. We made some progress there though we will have to discuss this stuff with the wider community because there are no decisions being taken at Core Dev when there are people that might not join. There was general support for the [idea](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-March/020095.html) of separating the denial of service part out of the RBF rules. This is the only reason why [Rule 3](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki#implementation-details) is in there. That is hopefully something that we can address eventually. Funnily enough one of the proposals was the staggered broadcast again which we introduced for denial of service in Lightning all of these years ago and we seem to be quite happy with it. Even though we add these tokens for replacements. Other than that I’ve mostly been working on Greenlight stuff, backporting a couple of things namely for the gRPC interface. We now have automatically generated mTLS certificates. If you use gRPC you can use mutual authentication between server and client. That was a nice piece of code, it works quite nicely. If you don’t have the certificates it will generate them, very similar to what LND does at first start. It generates a couple of certificates that you can copy, paste to wherever you want to use them and end up with a secure connection.
 
-I have a drive by bug report. Every so often I get changes to the Rust generated protofiles. Randomly it adds stuff and I’m like “Nothing changed”. I’m not quite sure whether there is a Heisen-bug in the generator or something. Next time it happens I’ll take a look. I `git clean` and then I `make` again and it is all happy. 
+I have a drive by bug report. Every so often I get changes to the Rust generated protofiles. Randomly it adds stuff and I’m like “Nothing changed”. I’m not quite sure whether there is a Heisen-bug in the generator or something. Next time it happens I’ll take a look. I `git clean` and then I `make` again and it is all happy.
 
 I saw one enum being generated which was new. I’ll look into it.
 
-As I jump back and forth on my patch series sometimes I do a `make` and I get Rust stuff. 
+As I jump back and forth on my patch series sometimes I do a `make` and I get Rust stuff.
 
 I was very happy to see that enum pop up. I was like “Somebody changed the JSON schema files and my code worked”. But apparently it is a Heisen-enum.
 
@@ -65,7 +65,7 @@ Light clients and RBF doesn’t make sense anyway, they don’t have a mempool, 
 
 As some of you may have heard I have been working on the first [mobile client](https://jb55.com/lnlink/) for c-lightning. I wish I could say that I’ve had more issues but it has been pretty reliable. I’ll give one example. I’ve got [BOLT 12 support](https://twitter.com/jb55/status/1499270260595167232?s=20&t=P0oZSqLPywawthPrZ-wwZg) working so you can tip and it will do a payment. This is just calling `pay` and it works. The only issue I had was Commando, it seems to block. If I’m doing a long payment it will prevent any other request from happening so the app kind of bugs out. I’ve had to set the retry limit to 30 seconds instead of 60 seconds. Maybe even lower, 15 seconds. Usability wise, I don’t know if you’d want to wait a minute on your phone to do a transaction and then block the connection for 60 seconds. Other than that it has been super stable. Pretty impressed with how well it is working.
 
-I am pretty sure I can fix that, I just have to make the command async. 
+I am pretty sure I can fix that, I just have to make the command async.
 
 I noticed there was an async PR for plugins from like 2019. You just need to add an async to the command hook. Another thing that came up with runes is this idea, we are restricted on if it starts with `list` or `get`, the read only runes. This is specific to crazy people who want to give me read only access to their node. If we ever introduce a `list` or `get` method that is sensitive in future we don’t have a way of revoking runes right now. I have been working on a way to change the master secret on runes, just revoke them all.
 
@@ -73,7 +73,7 @@ We do have a way to revoke them, they have a unique ID so you can go through and
 
 Like datastore.
 
-Yeah, `list datastore`, that’s got all the secrets in it, that would be dumb. We may end up doing something like a whitelist rather than a blacklist. 
+Yeah, `list datastore`, that’s got all the secrets in it, that would be dumb. We may end up doing something like a whitelist rather than a blacklist.
 
 I was thinking maybe we should encourage people, if you are going to make a read only rune just do it for specific methods. Not a blanket read only.
 
@@ -91,7 +91,7 @@ As you mentioned earlier I did the [second part](https://github.com/ElementsProj
 
 I don’t think so. It is best effort as you pointed out in your PR. Worst case we advertise something that is bogus.
 
-If we had a config switch obviously we wouldn’t create node announcements that wouldn’t be usable because not all of the people will be able to open their router board. Then we just have an additional announced address that is not usable which changes over time. That’t the trade-off there. If we suppress it, we don’t have it, it makes it slightly easier for people to figure out. Maybe it depends on the documentation we’ll add later when we move the experimental. 
+If we had a config switch obviously we wouldn’t create node announcements that wouldn’t be usable because not all of the people will be able to open their router board. Then we just have an additional announced address that is not usable which changes over time. That’t the trade-off there. If we suppress it, we don’t have it, it makes it slightly easier for people to figure out. Maybe it depends on the documentation we’ll add later when we move the experimental.
 
 If it was going to be an option it would have to be a negative option. One thing worth checking is if somebody is trying to run a Tor only node they must not advertise this and stuff like that.
 
@@ -103,17 +103,17 @@ It is already [merged](https://github.com/lightning/bolts/pull/917).
 
 Then take it off experimental, put it in.
 
-I can do that. We didn’t have a release with it. 
+I can do that. We didn’t have a release with it.
 
 Experimental for stuff that would violate spec or that we can’t do because of spec concerns. That may change. Once it is in the spec it should not be experimental unless we are really terrified it is going to do something horrible to people. That’s fine.
 
 The DNS is still [not merged](https://github.com/lightning/bolts/pull/911) in the spec. There was another implementation that was working on it so maybe we can get this in the spec soonish.
 
-We had a great meeting in Istanbul before London. We had two LND developers, Carla and Oliver, spoke about BOLT 12 in a PR review club fashion which was great. Spoke about the onion messages, spam protection. Paid for a lot of Lightning beers with my c-lightning node. It is a node behind Tor, it was connected through a VPN to my phone with the new Zeus wallet. It was a release candidate then, now the 0.6 release is out, I can recommend. The Raspiblitz 1.7.2 has been so far a good update, we were focusing on stability improvements. We have a connection menu that exposes some endpoints for connecting Spark wallet, Sparko and the Zeus wallet through different interfaces: the c-lightning REST interface, the Spark wallet interface. We would be interested in a facilitated connection towards this iPhone wallet. I would be very happy to assist. If you give us a spec then we just put it into the menu. 
+We had a great meeting in Istanbul before London. We had two LND developers, Carla and Oliver, spoke about BOLT 12 in a PR review club fashion which was great. Spoke about the onion messages, spam protection. Paid for a lot of Lightning beers with my c-lightning node. It is a node behind Tor, it was connected through a VPN to my phone with the new Zeus wallet. It was a release candidate then, now the 0.6 release is out, I can recommend. The Raspiblitz 1.7.2 has been so far a good update, we were focusing on stability improvements. We have a connection menu that exposes some endpoints for connecting Spark wallet, Sparko and the Zeus wallet through different interfaces: the c-lightning REST interface, the Spark wallet interface. We would be interested in a facilitated connection towards this iPhone wallet. I would be very happy to assist. If you give us a spec then we just put it into the menu.
 
 # Bookkeeper plugin
 
-I have been working on a [plugin](https://github.com/ElementsProject/lightning/pull/5071) that I’m now calling the bookkeeper plugin which will help you with your Lightning bookkeeping. I pushed up a PR late night Friday, thanks Rusty for getting some of the prerequisites in. I am currently working through the little things that CI wants me to do. Hoping to get that done by end of day today. The bookkeeping stuff, there are a couple of commands in it that I’m pretty excited about but I’m hoping people will take some time to look at them and run on their node, give me some feedback about what other information they want to have. The novel thing with the bookkeeper is the level of data collection that it is doing. There is probably a little more data we could add. For example when you pay an invoice there’s the possibility for us to write down how much of that invoice goes to fees versus to the actual invoice that you are paying and collect data on that. It is not something we are doing currently. The idea is this will give you a really easy way to print out all the events on your node that made you money, lost you money, where you spent your money, where you earned money at a millisat level of resolution. It is a big PR, a lot of the PR is just printing out different ways of viewing the data, there is a lot of data there now. Hopefully other people will run it and say “Wouldn’t it be great if we also had this view?” It is definitely going to make the on disk data usage a little bit higher than it has been. We are now saving a copy of stuff. I don’t really have a good answer of how to fix that. There is definitely a way you can rollup events that have passed a long time in the past, you checkmark things. Events that are 3 years old you probably don’t need the exact data on, that’s future work. It also keeps track of when a channel closes and has been resolved onchain. It is possible to go and rollup all the channels that you’ve already closed and have been resolved onchain, you already have the data for, after however many blocks e.g. 1000 blocks. There are opportunities for making the data less compact as time goes on. 
+I have been working on a [plugin](https://github.com/ElementsProject/lightning/pull/5071) that I’m now calling the bookkeeper plugin which will help you with your Lightning bookkeeping. I pushed up a PR late night Friday, thanks Rusty for getting some of the prerequisites in. I am currently working through the little things that CI wants me to do. Hoping to get that done by end of day today. The bookkeeping stuff, there are a couple of commands in it that I’m pretty excited about but I’m hoping people will take some time to look at them and run on their node, give me some feedback about what other information they want to have. The novel thing with the bookkeeper is the level of data collection that it is doing. There is probably a little more data we could add. For example when you pay an invoice there’s the possibility for us to write down how much of that invoice goes to fees versus to the actual invoice that you are paying and collect data on that. It is not something we are doing currently. The idea is this will give you a really easy way to print out all the events on your node that made you money, lost you money, where you spent your money, where you earned money at a millisat level of resolution. It is a big PR, a lot of the PR is just printing out different ways of viewing the data, there is a lot of data there now. Hopefully other people will run it and say “Wouldn’t it be great if we also had this view?” It is definitely going to make the on disk data usage a little bit higher than it has been. We are now saving a copy of stuff. I don’t really have a good answer of how to fix that. There is definitely a way you can rollup events that have passed a long time in the past, you checkmark things. Events that are 3 years old you probably don’t need the exact data on, that’s future work. It also keeps track of when a channel closes and has been resolved onchain. It is possible to go and rollup all the channels that you’ve already closed and have been resolved onchain, you already have the data for, after however many blocks e.g. 1000 blocks. There are opportunities for making the data less compact as time goes on.
 
 This week I am going to work on some outstanding bugs and cleanups I need to do in the funder plugin, the way it handles PSBTs needs to be fixed up a little bit. I think I was going to look at making our RBF bump for v2 channels easier to use. Z-man has submitted a big request for that. That’s probably going to be what I’m working on this week unless anything else pops up.
 
@@ -125,13 +125,13 @@ My general philosophy with these things is more switches is just confusing. As a
 
 At least for one release.
 
-This is the first release. Give us feedback and try to keep a little bit of wriggle room. 
+This is the first release. Give us feedback and try to keep a little bit of wriggle room.
 
 What’s the best way to indicate on the APIs? Add experimental, exp before the actual thing and then delete it later?
 
 That is almost worse. You’ve done quite a lot of API work so I would say it is unlikely you’re going to do a major change. Ideally of course you won’t or it will be backwards compatible, a new annotation or something. That’s the plan but it is not the promise. There’s a difference between those two. Maybe I’m backing out of this commitment. It is hard to indicate this in a way that isn’t going to hurt people. In the release notes I’ll make sure it is clear this is a new thing, please play around with it but it will be in anger next release. We are still in the data gathering phase maybe. I look forward to reviewing that PR. It is big so I’ve been waiting for you to rebase it  before I review it multiple times. It is a lot of code.
 
-vincenzopalazzo: Last week I was also in London. The last two weeks I spent some time on lnprototest, I’m adding a new test for cooperative closing. In the last spec meeting we discussed the spec being underspecified in some way. It is good to have some spec tests from this side. This resulted in me finding a bug in lnprototest. When a test fails we don’t stop Bitcoin Core. After a different failure my machine blew up off the Bitcoin Core daemon. I fixed that, please take a look in case I’ve made a mistake. This week I will merge it and continue my work on the integration testing. I am also [working on](https://github.com/ElementsProject/lightning/pull/5022) splitting the `listpeers` command. I found a mistake in my understanding. The `listpeers` command uses the intersection between the gossip map and the peer that we are connected with. I am assuming that `listpeers` shows all the network and this is wrong. I need to refactor the logic that I proposed in the pull request. 
+vincenzopalazzo: Last week I was also in London. The last two weeks I spent some time on lnprototest, I’m adding a new test for cooperative closing. In the last spec meeting we discussed the spec being underspecified in some way. It is good to have some spec tests from this side. This resulted in me finding a bug in lnprototest. When a test fails we don’t stop Bitcoin Core. After a different failure my machine blew up off the Bitcoin Core daemon. I fixed that, please take a look in case I’ve made a mistake. This week I will merge it and continue my work on the integration testing. I am also [working on](https://github.com/ElementsProject/lightning/pull/5022) splitting the `listpeers` command. I found a mistake in my understanding. The `listpeers` command uses the intersection between the gossip map and the peer that we are connected with. I am assuming that `listpeers` shows all the network and this is wrong. I need to refactor the logic that I proposed in the pull request.
 
 # Reckless plugin manager
 
@@ -157,11 +157,11 @@ It really works. It is weird but it does work. You can tunnel the whole thing ov
 
 You need a HTTPS connection?
 
-Yeah. This is really annoying. I am probably going to run on bootstrap.bolt12.org, at some point there will be a proxy. You connect to that proxy because that’s got the certificate and then you tell it where you want to go. It means I can snoop your traffic but it is encrypted. 
+Yeah. This is really annoying. I am probably going to run on bootstrap.bolt12.org, at some point there will be a proxy. You connect to that proxy because that’s got the certificate and then you tell it where you want to go. It means I can snoop your traffic but it is encrypted.
 
-You can’t reverse proxy a Lightning connection because there is no SNI or anything to key off of. 
+You can’t reverse proxy a Lightning connection because there is no SNI or anything to key off of.
 
-Lightning is a parallel infrastructure so there isn’t any real overlap. Providing proxies is a fairly straightforward thing to do. You can use Lightning to pay for them. There’s a possibility there eventually. 
+Lightning is a parallel infrastructure so there isn’t any real overlap. Providing proxies is a fairly straightforward thing to do. You can use Lightning to pay for them. There’s a possibility there eventually.
 
 The HTTPS thing is really unfortunate. I am just running my node off my home connection. I don’t have a web server and I was thinking of writing a plugin that lists all the payments to an offer. It would have been cool to do that with just lnsocket and Javascript code. But maybe I’ll just bite the bullet and run a proxy or something.
 
@@ -171,7 +171,7 @@ What was the point about not having SNI?
 
 This is something Warren Togami was talking about, in terms of hiding your IP. Imagine if you had a privacy proxy where you could have an IP that is in front of your actual node. I was trying to think of a way to do that. I think the only way would be if you had a SNI type system where you could reverse proxy the Lightning connection. I don’t think it is possible.
 
-From a browser you should be able to. 
+From a browser you should be able to.
 
 This is separate from web browser.
 

@@ -1,5 +1,5 @@
 ---
-title: Sydney Socratic Seminar 
+title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['research', 'lightning']
@@ -44,13 +44,13 @@ It is in BIP 125.
 
 It is rule 4?
 
-First the BIP isn’t exhaustive because the check on the higher fee rate isn’t part of the BIP but that is part of the Core mempool guard. This says you must pay 1 satoshi per byte. 
+First the BIP isn’t exhaustive because the check on the higher fee rate isn’t part of the BIP but that is part of the Core mempool guard. This says you must pay 1 satoshi per byte.
 
 “The replacement transaction must also pay for its own bandwidth at or above the rate set by the node’s minimum relay fee setting. For example, if the minimum relay fee is 1 satoshi/byte and the replacement transaction is 500 bytes total, then the replacement must pay a fee at least 500 satoshis higher than the sum of the originals.”
 
-This is what I call the fee rate. 
+This is what I call the fee rate.
 
-That’s a different rule. In the code, not in the BIP. 
+That’s a different rule. In the code, not in the BIP.
 
 Doesn’t this one imply it is a higher fee rate?
 
@@ -78,7 +78,7 @@ You are just saying the fee needs to be higher than what is currently in the mem
 
 You have to take into account current mempool dynamics that can’t be encoded into this BIP because the BIP doesn’t know.
 
-I think we are talking about two different things. There is a first case where there is no competing transaction in the mempool and your transactions must be above the mempool minimum fee rate. Then there is… which is applying for replacement. 
+I think we are talking about two different things. There is a first case where there is no competing transaction in the mempool and your transactions must be above the mempool minimum fee rate. Then there is… which is applying for replacement.
 
 This replacement is based on a fixed value which is the relay fee. This is a configuration value?
 
@@ -106,7 +106,7 @@ But rule 4 should cover that?
 
 Sorry, I’m talking about the wrong one.
 
-That one makes sense. The reason replacement is a risky business, allowing nodes to replace their transactions means they force your node effectively to verify signatures. They can do that frequently, as frequently as they can replace a transaction. If you only have 1 UTXO then you can only force the node to verify a signature for that UTXO. 
+That one makes sense. The reason replacement is a risky business, allowing nodes to replace their transactions means they force your node effectively to verify signatures. They can do that frequently, as frequently as they can replace a transaction. If you only have 1 UTXO then you can only force the node to verify a signature for that UTXO.
 
 And the bandwidth.
 
@@ -116,7 +116,7 @@ Rule 3, what was the motivation for rule 3?
 
 Is it bandwidth or is it making sure that miners are not losing money in any way of looking at it?
 
-What’s your mining strategy? 
+What’s your mining strategy?
 
 What was the motivation for the BIP authors?
 
@@ -126,7 +126,7 @@ If you remember miners select packages of transactions based on the fee rate and
 
 So maybe it is sort of a pragmatic rule and maybe it is up in the air whether it could be changed.
 
-Now you might have an issue where I might be a miner and I might see the absolute fee of my mempool decreasing. If the replacement is in the top 1MB or 2MB of the mempool that might be problematic. I am not sure there is another upcoming transaction coming after this one. You have a first transaction A with a high absolute fee, you have a new transaction A’ with a higher fee rate but lower absolute fee. To be sure that the loss in absolute fee is going to be replaced by another incoming transaction. 
+Now you might have an issue where I might be a miner and I might see the absolute fee of my mempool decreasing. If the replacement is in the top 1MB or 2MB of the mempool that might be problematic. I am not sure there is another upcoming transaction coming after this one. You have a first transaction A with a high absolute fee, you have a new transaction A’ with a higher fee rate but lower absolute fee. To be sure that the loss in absolute fee is going to be replaced by another incoming transaction.
 
 That’s a really interesting point. You could imagine a situation if you got rid of this rule where miners make less money. What I was thinking is this rather contrived situation where I put out a transaction that has a large absolute fee, then I put out another transaction that replaces it with a higher fee rate but lower absolute fee. This probably over time wouldn’t tangibly lose miners much money.
 
@@ -138,11 +138,11 @@ I think the problem is that it is very difficult to predict whether or not this 
 
 The authors didn’t want to make assumptions.
 
-I think you could create a method where you would check whether or not there are other transactions waiting to fill the void if you replace the transaction with a lower fee than the sum. If there are other transactions waiting in the mempool, ultimately the miner gets more profit. I think you could check that but it would be a lot of complexity. I think this is just a simplification of the model as opposed to the absolutely most efficient thing. 
+I think you could create a method where you would check whether or not there are other transactions waiting to fill the void if you replace the transaction with a lower fee than the sum. If there are other transactions waiting in the mempool, ultimately the miner gets more profit. I think you could check that but it would be a lot of complexity. I think this is just a simplification of the model as opposed to the absolutely most efficient thing.
 
 And I think in the majority of cases the transactions would be of similar size. The RBF transaction would be of similar size if not almost identical to the original low fee transaction. In which case the fee rate is pretty irrelevant, it is down to absolute fee.
 
-Most user behavior, yes. You could contrive examples where that wouldn’t be the case. 
+Most user behavior, yes. You could contrive examples where that wouldn’t be the case.
 
 Don’t you have issues where you have a RBF flag transaction and there are a bunch of unconfirmed transactions that depend on it? Now you are removing a bunch of fees out the mempool, I think that’s the scenario.
 
@@ -152,7 +152,7 @@ All the ones that are evicted, it is compared.
 
 There is a 100 descendant limit.
 
-You are going to replace absolute fee of the conflicting transactions and at most 100 of their descendants. 
+You are going to replace absolute fee of the conflicting transactions and at most 100 of their descendants.
 
 There is a comment in the chat “RBF with the Bitcoin Core coin selection algorithm will mostly have more inputs in replacement transactions so bigger size”. I don’t know if that is true. Is that true from a Core coin selection perspective?
 
@@ -160,7 +160,7 @@ What you would hopefully do with a wallet, I have been working on that recently,
 
 That makes sense to me but I don’t know if that’s what Bitcoin Core coin selection does.
 
-Let’s talk about this rule 5. 
+Let’s talk about this rule 5.
 
 “The number of original transactions to be replaced and their descendant transactions which will be evicted from the mempool must not exceed a total of 100 transactions”
 
@@ -178,9 +178,9 @@ Then the question is why do we have 100, rule 5? The scenario seems very strange
 
 My guess is you have to have constraints, the constraint was put at 100. If you have literally no constraints I am guessing it would be something that is very difficult to verify.
 
-If I remember correctly, it is an anti DOS measure to avoid deep mempool traversal, a mempool graph with too much depth. 
+If I remember correctly, it is an anti DOS measure to avoid deep mempool traversal, a mempool graph with too much depth.
 
-It makes sense that you would limit the descendants, but what is interesting here is that we limit the number that can be evicted. If you pay for it it doesn’t seem any more harmful than when they were first added. 
+It makes sense that you would limit the descendants, but what is interesting here is that we limit the number that can be evicted. If you pay for it it doesn’t seem any more harmful than when they were first added.
 
 You need to traverse this graph to know if it is replaceable. To get the fee rate and the absolute fee.
 
@@ -228,7 +228,7 @@ No that is a different check. You do have package limits checks in the mempool. 
 
 The carve out rule was not for rule 5?
 
-No. 
+No.
 
 I knew this was some dark arts, it is even deeper than I thought.
 
@@ -264,7 +264,7 @@ You might in the case of re-orgs.
 
 In some weird circumstance, that’s really interesting. There are packages: the root transaction and its descendants. That’s the data structure.
 
-That’s the data structure present in Core’s code. A package starts with only one transaction, the root transaction is already a package in itself. 
+That’s the data structure present in Core’s code. A package starts with only one transaction, the root transaction is already a package in itself.
 
 As descendants get added they just get added to the notional package.
 
@@ -298,7 +298,7 @@ Why is that unfortunate? You are going to have to pay fees. Whether that parent 
 
 The reason is you are pre-signing a bunch of transactions. Somebody has to create them, it doesn’t matter who creates them. Somebody else has to use CPFP to get that transaction into the Bitcoin blockchain. Ideally you want that person to pay all the fees. You don’t want the person who created these pre-signed transactions to pay all the fees because that person is not really interested in getting that transaction into the block, it is the person who is bumping the transaction who is interested. I don’t want to go into too much detail.
 
-The bumper is going to pay the vast majority of the fee anyway. The question here is whether that initial fee is zero or a really low fee. I would have thought a really low fee isn’t a problem because it is basically zero. 
+The bumper is going to pay the vast majority of the fee anyway. The question here is whether that initial fee is zero or a really low fee. I would have thought a really low fee isn’t a problem because it is basically zero.
 
 The reason it is a problem is because one person has to pre-sign 1 transaction per block for the next 3 years or something like that. That person has to pay all the fees of all the transactions ahead of time. That is essentially the problem. It is 1 satoshi per byte but it is 1 satoshi per byte times 3 years worth of blocks. It is a huge amount at the end of the day.
 
@@ -326,11 +326,11 @@ So that’s a cool idea. So how does Antoine’s SIGHASH_IOMAP compare to this s
 
 It was proposed a while back on Bitcointalk, to have one input inside multiple outputs or do fixable maps of inputs and outputs. Let’s say you have different models for fee bumping, the first one is CPFP where you are increasing the package fee rate by adding a child. There is another model where you are adding another input and output on the bumped transaction itself which is more SIGHASH_IOMAP or SIGHASH_ANYONECANPAY. There is another dimension which is sponsorship, “I do have another transaction in the mempool, completely unrelated, no ancestor or descendant relationships.” Then you have the last model with transaction mutation where you have a signature committing to a different fee rate. All of them are coming with different trade-offs in term of interactivity, onchain footprint, privacy, flexibility for watchtowers and also bandwidth on the base layer. Also if you are doing batching, you try to aggregate multiple Lightning commitment transactions in one big transaction chunk.
 
-That’s the impression I got from the IOMAP proposal. You have the protocol input and output which are transferring from one address to another address within the context of the protocol. We can maybe call it the kernel of the transaction. Then using SIGHASH_IOMAP you just sign a few inputs and outputs but you can add whatever you want onto the rest of it, which can mean adding other inputs from your wallet to bump the fee. And if you needed to do a bunch of these at the same time you could merge them all into one big transaction. Are you able to do something similar with sponsorship or is that something that is limited to your proposal? The reasons you need SIGHASH_IOMAP and you can’t rely on BIP 143’s inputs and outputs is that with Lightning you might have 1 input spending the funding output and multiple outputs, one output per counterparty and multiple HTLC outputs. You would like to attach this input spending the funding output with those all as part of the same Lightning channel. That is not something you can’t do right now. With SIGHASH_IOMAP you could have those transaction shards and aggregate them with another Lightning channel transaction shard and have 1 input and 1 output for doing the fee bumping. Instead of having 1 input and 1 output per commitment transaction. 
+That’s the impression I got from the IOMAP proposal. You have the protocol input and output which are transferring from one address to another address within the context of the protocol. We can maybe call it the kernel of the transaction. Then using SIGHASH_IOMAP you just sign a few inputs and outputs but you can add whatever you want onto the rest of it, which can mean adding other inputs from your wallet to bump the fee. And if you needed to do a bunch of these at the same time you could merge them all into one big transaction. Are you able to do something similar with sponsorship or is that something that is limited to your proposal? The reasons you need SIGHASH_IOMAP and you can’t rely on BIP 143’s inputs and outputs is that with Lightning you might have 1 input spending the funding output and multiple outputs, one output per counterparty and multiple HTLC outputs. You would like to attach this input spending the funding output with those all as part of the same Lightning channel. That is not something you can’t do right now. With SIGHASH_IOMAP you could have those transaction shards and aggregate them with another Lightning channel transaction shard and have 1 input and 1 output for doing the fee bumping. Instead of having 1 input and 1 output per commitment transaction.
 
 With one extra input from your wallet you could bump a whole bunch of commitment transactions?
 
-Yes. 
+Yes.
 
 Can you do that with sponsorship?
 
@@ -384,7 +384,7 @@ I don’t understand the downside that you explained. There is a `to_self` outpu
 
 Not if it is a revoked transaction. Then it may not be going to you.
 
-Assuming that that transaction with a `to_self` output gets confirmed, that `to_self` output is going to you. 
+Assuming that that transaction with a `to_self` output gets confirmed, that `to_self` output is going to you.
 
 It has got a relative timelock.
 
@@ -416,15 +416,15 @@ Do you do as good a job as you can for layer 2 in terms of full node relay rules
 
 Do you foresee some of the soft fork proposals, Jeremy’s sponsorship or SIGHASH_IOMAP, are they possible soft fork candidates?
 
-I would say that is not a high priority soft fork. Between ANYPREVOUT and IOMAP I would pick up ANYPREVOUT first. 
+I would say that is not a high priority soft fork. Between ANYPREVOUT and IOMAP I would pick up ANYPREVOUT first.
 
 IOMAP needs ANYPREVOUT?
 
 Yes. Long term it would be cool to have but a low priority soft fork for now in my personal viewpoint.
 
-I prefer a bundled soft fork anyway. 
+I prefer a bundled soft fork anyway.
 
-That’s another conversation. 
+That’s another conversation.
 
 I think I’ve seen people want SIGHASH_IOMAP or something similar for a bunch of reasons. It is very handy to have for this protocol, you could merge transactions together that weren’t originally decided to be together, it is a nice thing to have. A Bitcoin transaction as an abstraction is not so solid. I realized this when working with the Mimblewimble idea, it doesn’t have transactions per se. It just has these kernels, Bitcoin inputs and outputs that are linked together, but you can merge them all up together non-interactively.
 

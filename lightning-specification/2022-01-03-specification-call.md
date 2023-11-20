@@ -42,7 +42,7 @@ I think this is good to go. We said we would re-add all-zero errors. It is not e
 
 You changed the “must fail the channel” to “must fail the channel as referred to by the error message” but there is no mention that all-zeros mean all channels anymore. Maybe we should fix that. Did the bot get an upgrade somehow?
 
-I fixed that warning message. I have added a few explicit lines. I should have done fixups, sorry. I didn’t push to the right branch, let me fix that. I will push the fixup commit, just need to clean my Git tree. 
+I fixed that warning message. I have added a few explicit lines. I should have done fixups, sorry. I didn’t push to the right branch, let me fix that. I will push the fixup commit, just need to clean my Git tree.
 
 I think this one deserves to be the first PR to be merged in 2022. It has been too long, it has already shipped and already helped us. Do you realize it was opened year ago almost? We must have a limit of less than a year to merge PRs. We are barely in time.
 
@@ -52,7 +52,7 @@ I think this one deserves to be the first PR to be merged in 2022. It has been t
 
 <https://github.com/lightning/bolts/pull/932>
 
-I think both of these work well together, two clarifications. We’ve seen an occurrence of this thing on testnet where someone reestablished a channel with our node, was late, we did not close the channel and we saw that later they reestablished a channel with the right numbers and we did not have to fail the channel. Probably someone was testing that and verifying that we did just wait for them to send an error before closing the channel. 
+I think both of these work well together, two clarifications. We’ve seen an occurrence of this thing on testnet where someone reestablished a channel with our node, was late, we did not close the channel and we saw that later they reestablished a channel with the right numbers and we did not have to fail the channel. Probably someone was testing that and verifying that we did just wait for them to send an error before closing the channel.
 
 The weird thing about 932 is it says “should send an error to request that the peer fails the channel” but last I checked the definition for error still suggests that the peer force close.
 
@@ -70,11 +70,11 @@ I guess it is confusing that it just says you should send an error.
 
 In practice I can see how this could be useful. Two things, one is that it is unclear what the expectation is. This will modify that to have them send it first. You need to be ready for either scenario. It is not a breaking change but it is modifying the expected behavior. It seems like y’all run into this pretty frequently but I have never had an instance where we were trying to manually stop a force close from happening. lnd’s behavior is bound by prior versions of lnd’s force closes. This is an interesting change in that it is not changing things fundamental, it is changing an expectation but you need to be ready for the prior versions still. It seems difficult to handle rollout.
 
-What do you mean by prior version? It should be compatible as is. 
+What do you mean by prior version? It should be compatible as is.
 
 If for example we ship in eclair something that lets you halt before sending the error when you see that you are late maybe that doesn’t work because the other guy has already force closed. In which case it doesn’t matter, it doesn’t harm either. But if the other guy has not closed and you have the DB issue our issue is mostly that if someone has a big node with thousands of channels and they just misconfigure the DB they would lose all of their channels as once. It would be a very costly mistake. They can easily avoid it if we just prompt when they restart and say “It looks like something is really bad. Are you sure that this is right? Do you want to continue?” We give them a chance to fix it and avoid a very horrible mistake that costs a lot of onchain fees.
 
-It seems more of an advisory rather than a spec requirement. You can wait or you can just do it. 
+It seems more of an advisory rather than a spec requirement. You can wait or you can just do it.
 
 We are not putting any changes in the spec for that. We are just asking implementations to do what the spec says and only force close when they receive the error and not when they see the other guy is late.
 
@@ -84,7 +84,7 @@ Exactly. That requires the other peer to not anticipate your errors and not forc
 
 Is this related to the warnings I see when I force close?
 
-No. 
+No.
 
 Did warnings die in the background?
 
@@ -116,7 +116,7 @@ Maybe we can add it in the rationale that “should send an error” does not me
 
 Sure, that would suffice. It would be useful why this is the way it is.
 
-That makes sense. 
+That makes sense.
 
 That was a comment for 942. I guess it also applies to 932.
 
@@ -132,7 +132,7 @@ It is like Spartacus, I’m Lightning Developer. I would have to check this one.
 
 I assume by deadlock they just mean the channel is there and it is not closing anytime soon. It could just be if the node hasn’t been online for a year or two. I’m not sure how it is different.
 
-I think I should check this one out. It could be a typo fix or something greater, it depends on how much you squint at the shoulds and musts. 
+I think I should check this one out. It could be a typo fix or something greater, it depends on how much you squint at the shoulds and musts.
 
 Do you think we should merge these two PRs? Ask lightning-developer to cherry pick pm47’s commit and add a section to the rationale to clarify what we said. Just have it in one PR so it makes more sense?
 
@@ -152,7 +152,7 @@ If you look at their diff, it adds “Don’t broadcast and you shouldn’t send
 
 What you mean is that the change to BOLT 2 would be to completely remove the “should fail the channel” and not replace it with anything else? Just have 942 go in which says that you must not broadcast your commitment transaction.
 
-I think Laolu is saying that the change in 942 that adds a “should send an error message” is in a weird place because BOLT 5 is all about things onchain. Mentioning that you should send a P2P message is very out of place there. 
+I think Laolu is saying that the change in 942 that adds a “should send an error message” is in a weird place because BOLT 5 is all about things onchain. Mentioning that you should send a P2P message is very out of place there.
 
 We should go with 932 assuming lightning-developer agrees that they are interchangeable. That is the only thing that the diff adds. Or we could just leave the “must not broadcast” to make that explicit. I think that is what they were getting at if it is outdated. I think they can be merged, just that one line can be moved. I’ll comment on that.
 
@@ -162,7 +162,7 @@ Do you want to go ahead and squash the fixup?
 
 It made more sense when we had the running commentary so yeah. I will now squash.
 
-I posted that comment on 942 that we want to merge it, remove that line, cherry pick the other thing from 932 and try to move forward from that. 
+I posted that comment on 942 that we want to merge it, remove that line, cherry pick the other thing from 932 and try to move forward from that.
 
 And then 932 should probably have a rationale update. Or 942 if they both go together.
 
@@ -184,9 +184,9 @@ We very well might. 942 is just adding it in another spot. It is a trivial diff,
 
 Reestablish where you detect this talks explicitly about “must not broadcast”. “If it is wrong must not broadcast this commitment transaction” and that is where you’d implement it. Where have they put it?
 
-They are putting it in the onchain BOLT. 
+They are putting it in the onchain BOLT.
 
-Adding it in the onchain BOLT seems like the wrong place. I think it should be in 2 because that is where we define the channel reestablish stuff and that is where 932 added it. 
+Adding it in the onchain BOLT seems like the wrong place. I think it should be in 2 because that is where we define the channel reestablish stuff and that is where 932 added it.
 
 Yeah onchain is usually where it is already done. It does talk about broadcasting. It talks about failing a channel here. I’ll comment on the PR.
 
@@ -194,9 +194,9 @@ Yeah onchain is usually where it is already done. It does talk about broadcastin
 
 <https://github.com/lightning/bolts/pull/912>
 
-I think this has interop. I think there are questions around actual deployment. 
+I think this has interop. I think there are questions around actual deployment.
 
-Regarding payment metadata, it looks all good to me. I have a PR on eclair that is ready to be merged. If you have the same on lnd and it hasn’t changed we know that it interops. We can deploy it. I did metrics on the eclair side so we will always put the payment metadata in all invoices that we generate once we activate the feature on the node. Then we register in the metric whether the sender actually sent us the payment metadata or not. 
+Regarding payment metadata, it looks all good to me. I have a PR on eclair that is ready to be merged. If you have the same on lnd and it hasn’t changed we know that it interops. We can deploy it. I did metrics on the eclair side so we will always put the payment metadata in all invoices that we generate once we activate the feature on the node. Then we register in the metric whether the sender actually sent us the payment metadata or not.
 
 The receiving side, we only have one implementation right? So we test with eclair sending and lnd receiving?
 
@@ -204,7 +204,7 @@ I thought we tested in both directions?
 
 You support both directions now? You said to me that eclair doesn’t support receiving so I could only test in one direction.
 
-We support receiving, we just don’t support making it mandatory and rejecting the payment if the payment metadata is not there. But we do support receiving it and we will log that the sender actually sent the metadata. 
+We support receiving, we just don’t support making it mandatory and rejecting the payment if the payment metadata is not there. But we do support receiving it and we will log that the sender actually sent the metadata.
 
 I could also run that test? I think I did comment that I only tested one way in the PR. Everything is very straightforward so I don’t expect any problems there.
 
@@ -238,7 +238,7 @@ Next step do you want to look at something more long term? Is there a topic you�
 
 Taproot myself but happy to do other stuff first. I started [implementing it](https://github.com/btcsuite/btcd/pull/1787) over the break, I got super far. I just need to do all the OP_SUCCESS and some of the new policy things. Pretty happy with where lnd is right now. The one thing that came up with my implementation that will need to be in the spec or maybe another BIP, a deterministic algorithm for including the leaves in the actual tree itself. There are a bunch of ways you can do it. You need to make a binary tree but that is not canonical. It needs something similar to BIP 69 even though we don’t really use it for creating the tree itself. The BIP does have this recursive algorithm in there as well so we could try to further specify that. That is one thing that came up. How far are people in wallet level, node stuff? I have done the node stuff in btcd, I haven’t done the wallet stuff fully but I have things planned out for the wallet. You need an index of every leaf to the inclusion proof which is data that we don’t really store. We just store the script, there is other stuff to store. Are people starting to implement Schnorr stuff? I guess people use libsecp, are people starting to do wallet level or library stuff?
 
-For which scripts are you concerned about? For the HTLCs we would just copy them and have only one leaf basically. For PTLCs it is not obvious that we would need multiple leaves. That depends on how much the leaf inclusion proof costs instead of just the branching. AJ said that we need to verify but it may be less costly to put everything in just one leaf for the PTLC case because it is quite simple. The version that I have is quite simple. 
+For which scripts are you concerned about? For the HTLCs we would just copy them and have only one leaf basically. For PTLCs it is not obvious that we would need multiple leaves. That depends on how much the leaf inclusion proof costs instead of just the branching. AJ said that we need to verify but it may be less costly to put everything in just one leaf for the PTLC case because it is quite simple. The version that I have is quite simple.
 
 It has two leaves right now. That is something that didn’t occur to me until I got into the code. Another thing I was thinking about as well, this was a surprise to me, there are two sighashes, the external one and the internal one. But the internal one doesn’t actually commit to the path of the script itself. You commit to a leaf but not the entire path. I remember in the past we had an issue with duplicate scripts for HTLCs. The BIP recommends never having a duplicate script, maybe there is some weird thing where because you can take a signature for both of those two and they will be valid for a given input. Maybe there is some weird thing we need to account for. You can re-bind a signature for duplicate leaves and that is something that I didn’t know was possible. I thought maybe you committed the index but as far as I can tell that is not there. That’s another thing to be cognizant of when we are doing the design. I don’t think it affects anything but it was something surprising once I got into the code level. Something we should consider for future stuff.
 
@@ -272,7 +272,7 @@ Which is kind of cool.
 
 Is it? If you have a magnification factor doesn’t that mean we introduce credit as well? You are saying I am adding leverage to my funds committed.
 
-No. It means you don’t care what other people are doing. You never have any credit issues. 
+No. It means you don’t care what other people are doing. You never have any credit issues.
 
 Let’s say we have 1000 BTC in the network right now. We could have 10,000 BTC overnight if everyone does 10x leverage with this right? Number go up.
 
@@ -306,7 +306,7 @@ If there is no leverage it is one-to-one. You need to map out the UTXO set in or
 
 Why do you assume that we can’t do a ZK UTXO proof?
 
-Size. 
+Size.
 
 Where is it anchored in? Bitcoin doesn’t have any ZK friendly…
 
@@ -324,7 +324,7 @@ What about something like a TXO that was unspent for a month allows you to claim
 
 It feels like it could all probably work and it is going to need to be a parallel network anyway. T-bast is right, it is going to take a lot of people to examine stuff. To me it seems like a great background goal. I am just interested in near term Taproot stuff which is step one. This does necessitate something on the gossip layer but it can be smaller potentially.
 
-That’s the point though right. If we do a naive Taproot public channel, we can do private channels all day long, then we “hard fork” the gossip layer twice. 
+That’s the point though right. If we do a naive Taproot public channel, we can do private channels all day long, then we “hard fork” the gossip layer twice.
 
 You need something new, yeah.
 
@@ -336,27 +336,27 @@ At least if we do the super simple version everything else stays the same. Valid
 
 We don’t want to do it the same. The current one is horrendously broken and has a massive privacy issue.
 
-It is not perfect but it is there. It is also not clear what properties we can achieve. All this stuff is early. I know Chainalysis [announced](https://blog.chainalysis.com/reports/lightning-network-support/) but it is kind of a good thing that they did. 
+It is not perfect but it is there. It is also not clear what properties we can achieve. All this stuff is early. I know Chainalysis [announced](https://blog.chainalysis.com/reports/lightning-network-support/) but it is kind of a good thing that they did.
 
 Taproot is still early too.
 
 It is more concrete at least in my mind than this gossip thing.
 
-As far as Chainalysis, people just want a checkbox and they have that checkbox. It is actually good for Lightning. 
+As far as Chainalysis, people just want a checkbox and they have that checkbox. It is actually good for Lightning.
 
-Half of the reason that they launched it is that it is a data collection thing. 
+Half of the reason that they launched it is that it is a data collection thing.
 
 People asked them to launch it also. “We need something to tell the boys in blue that we are doing the checkbox”. They have the checkbox now.
 
 They launched it, it probably doesn’t do much yet, it is probably just a huge data grab.
 
-It is not even clear that they are running a node yet. We know they are looking at onchain stuff. 
+It is not even clear that they are running a node yet. We know they are looking at onchain stuff.
 
 And Lightning payment data via all the new clients that they have signed up to check boxes. What kind of data are they collecting and using? They have all these invoices now. What data are we leaking in invoices? Maybe that is something we should be considering.
 
 I think we need to find out more about the implementation. Some people I may or may not know have sat on some of these sessions to ignorantly ask questions and gather information. We definitely need to learn more.
 
-Redoing the gossip this way does simplify one thing. That is that you announce your node then you announce your channels. At the moment we have this thing, you have to announce your channel and then you can do a node. You can’t really reverse the order and stuff like that. In some ways conceptually gossip becomes similar. 
+Redoing the gossip this way does simplify one thing. That is that you announce your node then you announce your channels. At the moment we have this thing, you have to announce your channel and then you can do a node. You can’t really reverse the order and stuff like that. In some ways conceptually gossip becomes similar.
 
 Right now at least on lnd if a node sends an announcement we don’t write to disk unless they have channels. Now you are saying you need to write to disk first to process their future proofs. Why can’t I just spam you with nodes and say I’m sending the proofs later?
 
@@ -410,9 +410,9 @@ I don’t think that is true though. Now you can make a 2-of-2 that costs the sa
 
 Perhaps. It is cheaper. I feel like we’d want to at least retain the current properties we have but that is something that will come out in design.
 
-I don’t understand why we’d want to retain the current properties. I think 90 percent of the current properties we have are entirely useless. 
+I don’t understand why we’d want to retain the current properties. I think 90 percent of the current properties we have are entirely useless.
 
-At least with the current version we ensure that we minimize reuse of the output. We at least say it is a multisig. That restricts the uses. If we say this is an output I can use anything. As long as I know an internal key I can use anything. 
+At least with the current version we ensure that we minimize reuse of the output. We at least say it is a multisig. That restricts the uses. If we say this is an output I can use anything. As long as I know an internal key I can use anything.
 
 This is what led me to the gossip 2 stuff when I realized this. If we are going to go any UTXO anyway. I think you can turn any Taproot output into a fake 2-of-2 anyway.
 
@@ -450,7 +450,7 @@ That’s the whole point of Taproot, let’s not break Taproot.
 
 It is not about breaking Taproot, it is about giving you a binding proof. I can write up why I think that matters in the non-spoofyness of the current graph. That’s a longer form thing.
 
-Who cares about the non-spoofyness? It is useful for statistics but we could just not have this statistic. 
+Who cares about the non-spoofyness? It is useful for statistics but we could just not have this statistic.
 
 It is the sanctity of the channel graph as a data structure in the chain.
 
@@ -468,7 +468,7 @@ The node is often online, there’s some balance of payments in both directions 
 
 We disagree on this. I want to verify as much as possible. You want to verify as little as possible and you just want people to commit funds. I don’t think that is the proper route. I think we want to maintain the current structure we have right now. By verifying as much as possible you increase the cost of a false signal. “You went through MuSig derivation for this output and you need the two keys to spend. If you lose one of them you can’t spend it.” That increases the cost of a faulty signal.
 
-Isn’t it the case especially with Taproot there is no difference in cost to faulty signal. Anything we can come up with, the cost of a faulty signal is the same as the cost of just having a wallet that is deliberately doing this. 
+Isn’t it the case especially with Taproot there is no difference in cost to faulty signal. Anything we can come up with, the cost of a faulty signal is the same as the cost of just having a wallet that is deliberately doing this.
 
 That’s additional cost in the complexity of the wallet. If you want every single wallet to make a fake multisig output onchain you can do that but you increase the cost of the false signal.
 
@@ -482,7 +482,7 @@ I think a faulty signal should be expensive and you do that by requiring more st
 
 But you are adding a lot of additional cost in the gossip layer, a lot of additional signatures, a lot of different validation complexity in order to make people do an additional 10 minutes of work in the software development stage.
 
-We need MuSig anyway, we need MuSig to do the signing. 
+We need MuSig anyway, we need MuSig to do the signing.
 
 Let’s say we want to aggregate the signatures, me as a verifier I need to do the MuSig aggregation myself as well too. I am pretty sure the aux nonce actually commits to the MuSig challenge hash. The aux nonce is something they added to let you inject randomness for hardware wallets. Assuming MuSig is final requires you to have that value there then you bind it there.
 
@@ -496,7 +496,7 @@ The thing I like about it is that it is simpler in some ways. Prove your node, c
 
 It feels a lot simpler as long as you can work out exactly the kind of denial of service concerns and make the proof small enough. It is just a proof size question to me.
 
-I have got to go implement it to figure out what I don’t know. Come up with a sketch, come up with some hacky implementation and convince myself it works. 
+I have got to go implement it to figure out what I don’t know. Come up with a sketch, come up with some hacky implementation and convince myself it works.
 
 To a large extent I want to know what the concrete proof size is which may require an implementation, I’m not sure. That is not a question for me, that is a question for like the Blockstream Research Crypto people.
 
@@ -506,5 +506,5 @@ I’m sure they have a hour to spare.
 
 Last thing, I updated the test vectors in route blinding. If you have time to validate them then I think we should be good to go to get route blinding and onion messages in. No hurry, whenever you have some time.
 
-That means I’lll check them in 13 days time. 
+That means I’lll check them in 13 days time.
 

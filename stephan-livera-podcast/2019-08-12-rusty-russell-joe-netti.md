@@ -1,5 +1,5 @@
 ---
-title: Rusty Russell, Joe Netti 
+title: Rusty Russell, Joe Netti
 transcript_by: Michael Folkson
 categories: ['podcast']
 speakers: ['Rusty Russell', 'Joe Netti']

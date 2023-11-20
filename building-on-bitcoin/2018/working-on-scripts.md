@@ -32,7 +32,7 @@ To identify contents of branches, and suppose that we have software that can sig
 
 We just proceed over the whole script, we associate all the opcodes with each codepath.... So since this is a general method as well, we want to check for valid or invalid scripts. If any codepath while we're tracking the changes to the vfExec.. if by the end of the script, it's obviously invalid, it wasn't fully balance,d, so we can reject those. I have really... nasty slide, ... just what it's doing there, and yeah, at what point information is known.
 
-You can see here there's a box without anything in it. This represents no execution yet. Then we run into the IF, and then there's a conditional section, and it would have to be true to enter that part, and there's no further nesting in that branch where it was one.. so it oesn't go any further. We then see that the ELSE opcode indicates it could have been 0 or false... we also see there are further conditionals... and they are the same values we wound up for naming... our code paths earlier... 
+You can see here there's a box without anything in it. This represents no execution yet. Then we run into the IF, and then there's a conditional section, and it would have to be true to enter that part, and there's no further nesting in that branch where it was one.. so it oesn't go any further. We then see that the ELSE opcode indicates it could have been 0 or false... we also see there are further conditionals... and they are the same values we wound up for naming... our code paths earlier...
 
 I wanted to look at mutually-exclusive opcodes in different branches of scripts.
 

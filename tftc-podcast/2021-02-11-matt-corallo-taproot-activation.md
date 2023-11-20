@@ -1,5 +1,5 @@
 ---
-title: UASFs, BIP 148, BIP 91 and Taproot Activation 
+title: UASFs, BIP 148, BIP 91 and Taproot Activation
 transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['taproot']

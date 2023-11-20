@@ -1,5 +1,5 @@
 ---
-title: Utxo Accumulators And Utreexo 
+title: Utxo Accumulators And Utreexo
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['accumulators']

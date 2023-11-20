@@ -1,5 +1,5 @@
 ---
-title: Schnorr Taproot Tapscript BIPs 
+title: Schnorr Taproot Tapscript BIPs
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Anthony Towns']

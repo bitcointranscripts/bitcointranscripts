@@ -22,7 +22,7 @@ Kristov: I started writing a book about Bitcoin privacy. That is a topic that I 
 
 Elizabeth: What do you see as the biggest pro and biggest con in terms of Bitcoin security?
 
-Melanie: I think one of the biggest limitations is the users themselves. I think  that placing responsibility in the hand of users is often times there is human error. Losing a piece of paper and private keys. 
+Melanie: I think one of the biggest limitations is the users themselves. I think  that placing responsibility in the hand of users is often times there is human error. Losing a piece of paper and private keys.
 
 ((feed just skipped forward by like an hour))
 

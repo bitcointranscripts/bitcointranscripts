@@ -134,7 +134,7 @@ The qr code is json -> gzip -> base64 and it fits like 80-90 outputs and it's fi
 
 Printed QR code... each packet can say it's 1-of-n, and as it reads it, it figures out which one it is, and then it figures out which one is done or not done yet.
 
-Signatures could be batched into a bigger output QR code on the device. So it's not a huge bottleneck yet. Packetized QR codes are an interesting area. When you parse the QR code from Christopher Allen's stuff, the QR code says what it is saying. 
+Signatures could be batched into a bigger output QR code on the device. So it's not a huge bottleneck yet. Packetized QR codes are an interesting area. When you parse the QR code from Christopher Allen's stuff, the QR code says what it is saying.
 
 # Recent attacks
 

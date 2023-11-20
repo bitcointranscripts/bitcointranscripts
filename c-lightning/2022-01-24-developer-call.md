@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -60,7 +60,7 @@ The channel ones you don’t have to annotate because the channel ones you see g
 
 That makes sense. The subtractive case is it is somebody else’s outputs that are mixed through or something, these would be unannotated I guess so ignore those.
 
-That would happen on dual funding opens or if we do splices. Those would pass through silently. 
+That would happen on dual funding opens or if we do splices. Those would pass through silently.
 
 Which is why you are seeing them as giant fees.
 
@@ -72,13 +72,13 @@ I suspect there may be some corner cases. People actually start to use accountin
 
 This notifications problem seems like it would be a common one across plugins. If plugins are requiring other plugins or interacting with other plugins is this going to be a common thing? Does the custom notifications thing solve this or is that just one approach?
 
-It is definitely one mechanism for us to have inter plugin communication. It is not the only one. But it is the one that is pushed based. You have a real time way of interacting with some other parts of the system. The other ones are basically the [datastore](https://github.com/lightningd/plugins/tree/master/datastore) where you can deposit some information and then retrieve from another location. Those are the two that are dedicated to communicating information between plugins. 
+It is definitely one mechanism for us to have inter plugin communication. It is not the only one. But it is the one that is pushed based. You have a real time way of interacting with some other parts of the system. The other ones are basically the [datastore](https://github.com/lightningd/plugins/tree/master/datastore) where you can deposit some information and then retrieve from another location. Those are the two that are dedicated to communicating information between plugins.
 
-The other way of doing it is you can have a command in this plugin. That’s only one-to-one generally because you can’t both implement a command. “This plugin should always call this command” is a way of doing it but it is pretty ugly. 
+The other way of doing it is you can have a command in this plugin. That’s only one-to-one generally because you can’t both implement a command. “This plugin should always call this command” is a way of doing it but it is pretty ugly.
 
 You can also have RPC commands intercepting commands from other plugins which can be really strange. The canonical use case for that would be an authentication mechanism for a RPC that is entering the system through another plugin. You could have a web frontend plugin that receives incoming requests and then forwards these requests unauthenticated to the JSON-RPC. Since there is a second plugin using a RPC command intercepting everything it can reject or accept only authenticated messages. If for example you have a cookie inside of your JSON-RPC request that could be checked by a second plugin. You can keep RPC and authentication orthogonal to each other. Not that anybody has ever needed that flexibility but we have it.
 
-I thought about doing it for [Commando](https://github.com/lightningd/plugins/tree/master/commando) but I decided no. As it comes in it validates it and sends it on. It doesn’t have a second plugin that does generic authentication. If we did we would need hook ordering. CLBOSS for example intercepts commands. You want to get to it before CLBOSS does. You are opening that can of worms about hook ordering. 
+I thought about doing it for [Commando](https://github.com/lightningd/plugins/tree/master/commando) but I decided no. As it comes in it validates it and sends it on. It doesn’t have a second plugin that does generic authentication. If we did we would need hook ordering. CLBOSS for example intercepts commands. You want to get to it before CLBOSS does. You are opening that can of worms about hook ordering.
 
 That and the authentication plugin crashing but not taking the node down with it can be really weird.
 
@@ -90,7 +90,7 @@ Commando works quite well doing inline authentication but if you wanted a more g
 
 vincenzopalazzo: I have worked on a [compilation error](https://github.com/ElementsProject/lightning/pull/4987) on c-lightning about Alpine. The solution I came up with was if we are in the test environment we store in this process that we use in the CLI. If we are in the test environment this is the test read function, otherwise it is the read function that we have. This way we can compile on Alpine without any error. With another pull request I am integrating the compilation test with Docker Compose with Alpine. Last week I released the first version of my Dart wrapper around c-lightning. This can be very useful now we have the gRPC interface because with Dart it is possible to make a cross compiled UI using Flutter. Hopefully we can give the opportunity to use this library to interact in an isolated way with c-lightning. We have different ways to talk with c-lightning: the REST API, UNIX socket and now gRPC. I would like to implement a GraphQL API when Christian finishes the Rust plugin. One thing we discussed two weeks ago, taking a data model description and translate this data model to the source code, this can be useful to maintain all the wrappers that we have in c-lightning. Rust, Golang, Java and all the others.
 
-I have never even seen Dart code. I will be interested to take a look when you’ve hooked that together. 
+I have never even seen Dart code. I will be interested to take a look when you’ve hooked that together.
 
 vincenzopalazzo: Dart code is a little bit C++ plus Javascript plus some weird stuff.
 
@@ -102,11 +102,11 @@ Someone submitted a patch, the version on pip had fallen out of the version of t
 
 I have been quite busy extending and implementing a couple of automatic recovery options. That will be the biggest addition to the c-lightning bit as well as the lnd bit. Trying to get people to be able to recover from the seed we provide. This BIP 39 compatible seed they write down when they are generating a wallet in Raspiblitz. There is an automatic rescan which is picked up during running and then switched off for the next restart. There is this cl rescue file which is just a copy of a directory and can be imported from the graphical interface. It is built in a way such that when we get this web UI going we should be able to implement it there as well because all processes are running in the background. There is a Redis database which is caching the system status and taking care of these background processes. That has been a lot of work for rootzoll. More and more users are trying out c-lightning, they like it, they like the simplicity, the speed. Some of them have been going through the recovery things from which I have been trying to pick up what can be improved. For example the `guess_to_remote` function is something that is quite difficult to automate. When users are offline and the peers are force closing channels then that will be picked up automatically as I understand. I documented in detail in our Raspiblitz c-lighting frequently asked questions [page](https://github.com/rootzoll/raspiblitz/blob/v1.7/FAQ.cl.md). You need to look up the node ID and the peer and which address to look for which is not the timelocked one. It involves a lot of testing and restarting and recovering nodes so it is a time consuming process.
 
-Plebnet was mentioned last time. I started a c-lightning node on Plebnet, the same one which is always running the latest master. I started running an explorer for Plebnet. I am trying to get some attention for c-lightning on Plebnet. 
+Plebnet was mentioned last time. I started a c-lightning node on Plebnet, the same one which is always running the latest master. I started running an explorer for Plebnet. I am trying to get some attention for c-lightning on Plebnet.
 
 This is the playground on Signet?
 
-Yes. 
+Yes.
 
-There’s GraphQL which may not make this release because the ambitious person who decided to write GraphQL has bitten off a lot. It was a very ambitious PR and I am having to meet them halfway. I am going to have to do more infrastructure work so that we can fit their things in. They had this vision that we would drop JSON-RPC and just replace it all with GraphQL. That is not going to happen. We are going to have both for a while. I am not going to commit to a GraphQL first approach until we’ve implemented it and seen if people use it. If it becomes a dominant use then we can talk about rewriting all our internal functions to match it. But I’m not going there first. We are going to try to leave as much as possible of the internal code the same. We produce the JSON and do some tricks in the backend to make GraphQL work. But I have to write that code unfortunately. It is great to have such an ambitious PR but for future reference I would never recommend your first PR be “I’m going to rewrite your whole JSON-RPC interface and all the functions”. That would not be my choice. Unfortunately I’ve been cycle bound with this other work so I haven’t had as much time to do that as I would wish. 
+There’s GraphQL which may not make this release because the ambitious person who decided to write GraphQL has bitten off a lot. It was a very ambitious PR and I am having to meet them halfway. I am going to have to do more infrastructure work so that we can fit their things in. They had this vision that we would drop JSON-RPC and just replace it all with GraphQL. That is not going to happen. We are going to have both for a while. I am not going to commit to a GraphQL first approach until we’ve implemented it and seen if people use it. If it becomes a dominant use then we can talk about rewriting all our internal functions to match it. But I’m not going there first. We are going to try to leave as much as possible of the internal code the same. We produce the JSON and do some tricks in the backend to make GraphQL work. But I have to write that code unfortunately. It is great to have such an ambitious PR but for future reference I would never recommend your first PR be “I’m going to rewrite your whole JSON-RPC interface and all the functions”. That would not be my choice. Unfortunately I’ve been cycle bound with this other work so I haven’t had as much time to do that as I would wish.
 

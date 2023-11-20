@@ -1,5 +1,5 @@
 ---
-title: Debugging Bitcoin Core 
+title: Debugging Bitcoin Core
 transcript_by: Michael Folkson
 categories: ['residency']
 tag: ['bitcoin core']
@@ -20,7 +20,7 @@ I’m talking about debugging Bitcoin and that means to me using loggers and deb
 
 # Welcome to Bitcoin
 
-You’re starting out with Bitcoin as a junior and you start on your first day and you get some assignments, some very basic stuff. You just try to find your way around the codebase, logging, you look around and see `LogPrintf`, something that looks useful. Also `cout`, that’s something you find. You do that and you also found that there is a debug.log file and after running Bitcoin yourself you try to grep the debug.log file but you don’t find any of the strings that you thought you were logging. What is really going on here? You think I will just ask in a chat because it is my first day so somebody can help me out. 
+You’re starting out with Bitcoin as a junior and you start on your first day and you get some assignments, some very basic stuff. You just try to find your way around the codebase, logging, you look around and see `LogPrintf`, something that looks useful. Also `cout`, that’s something you find. You do that and you also found that there is a debug.log file and after running Bitcoin yourself you try to grep the debug.log file but you don’t find any of the strings that you thought you were logging. What is really going on here? You think I will just ask in a chat because it is my first day so somebody can help me out.
 
 # Let’s ask in the chat
 
@@ -32,7 +32,7 @@ What the developer said was right. We actually see that the logging to `std::out
 
 # Moving on to unit tests
 
-You are asked to add some unit tests. You also learnt from your mistake earlier and don’t want to embarrass yourself again in the chat so this time you Google and there is another senior developer Andrew, he actually wrote some very informative message on the StackExchange. You can see there if I want to do unit tests then I have to use this other binary, this test binary. I’m also using Boost here as the testing framework so I have to use these BOOST_TEST_MESSAGEs and I also have to remember this `--log_level=all`. You try this out and this is pretty straightforward. 
+You are asked to add some unit tests. You also learnt from your mistake earlier and don’t want to embarrass yourself again in the chat so this time you Google and there is another senior developer Andrew, he actually wrote some very informative message on the StackExchange. You can see there if I want to do unit tests then I have to use this other binary, this test binary. I’m also using Boost here as the testing framework so I have to use these BOOST_TEST_MESSAGEs and I also have to remember this `--log_level=all`. You try this out and this is pretty straightforward.
 
 # That was kind of easy
 
@@ -44,19 +44,19 @@ Just to remind you what a debugger actually is if anyone doesn’t know, what we
 
 # This is pretty cool!
 
-If you use this with test_bitcoin it works very straightforward. You use lldb to run test_bitcoin. It is not running yet, it is actually lldb running with test_bitcoin as a target. Then you can set b, a breakpoint and you run giving here any parameters you would normally hand to test_bitcoin. You’re stopping at the point where you set the breakpoint. This is really good. Then you also want to add some functional tests. 
+If you use this with test_bitcoin it works very straightforward. You use lldb to run test_bitcoin. It is not running yet, it is actually lldb running with test_bitcoin as a target. Then you can set b, a breakpoint and you run giving here any parameters you would normally hand to test_bitcoin. You’re stopping at the point where you set the breakpoint. This is really good. Then you also want to add some functional tests.
 
 # Should not be too hard for functional tests
 
-This was very straightforward with the unit tests so this should just work very easily. Functional tests, a global definition, are tests that are executed from the view of the user. We are basically describing how a user or several users might behave and this is then running a RPC, from the view of the CLI. These are implemented in Python in Bitcoin and if you look in the Python code you can just use `self.log.debug` and you can use pdb which is a debugging tool in Python. This works very easily but if you then want to look from the C++ code or if you want to use gdb or lldb in the C++ code then it gets a little bit more tricky. The Python is running bitcoind in the background and there is not a really easy way to get to it. 
+This was very straightforward with the unit tests so this should just work very easily. Functional tests, a global definition, are tests that are executed from the view of the user. We are basically describing how a user or several users might behave and this is then running a RPC, from the view of the CLI. These are implemented in Python in Bitcoin and if you look in the Python code you can just use `self.log.debug` and you can use pdb which is a debugging tool in Python. This works very easily but if you then want to look from the C++ code or if you want to use gdb or lldb in the C++ code then it gets a little bit more tricky. The Python is running bitcoind in the background and there is not a really easy way to get to it.
 
-# But where is the executable? 
+# But where is the executable?
 
 That means this is not straightforward, we need a game plan. Let’s get together and I’ll tell you the gameplan.
 
 # Gameplan
 
-The first thing we are going to do is run the functional test and let it start the bitcoind process. Then we need to stop the functional test because we want to get to the bitcoind process. For that we want to set pdb, we use pdb to stop that. We have to find the bitcoind process which is technically running but not doing anything because the functional test is not doing anything. We have to attach to it using lldb, we have to set the breakpoint and at that point we can use pdb and tell it to continue. Then the C++ code is actually going to run into the breakpoint that we set with the lldb. Optionally we want to change the 60 second timeout that is running on the functional test. We do the pdb to stop the functional test, we run the functional test here. We go to the other tab, we run lldb with hopefully the right PID. We set the breakpoint on the function or the line or whatever we want. We let the bitcoind process continue. Then we let the Python functional test continue and then we are stopping at the right point. 
+The first thing we are going to do is run the functional test and let it start the bitcoind process. Then we need to stop the functional test because we want to get to the bitcoind process. For that we want to set pdb, we use pdb to stop that. We have to find the bitcoind process which is technically running but not doing anything because the functional test is not doing anything. We have to attach to it using lldb, we have to set the breakpoint and at that point we can use pdb and tell it to continue. Then the C++ code is actually going to run into the breakpoint that we set with the lldb. Optionally we want to change the 60 second timeout that is running on the functional test. We do the pdb to stop the functional test, we run the functional test here. We go to the other tab, we run lldb with hopefully the right PID. We set the breakpoint on the function or the line or whatever we want. We let the bitcoind process continue. Then we let the Python functional test continue and then we are stopping at the right point.
 
 # Major key to success: Context awareness
 

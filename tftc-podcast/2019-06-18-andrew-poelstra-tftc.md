@@ -45,7 +45,7 @@ Andrew: It is not quite that. They would have different Miniscripts but they wou
 
 Marty: So almost like an efficiency alarm?
 
-Andrew: It lets you do things more efficiently. Actually kind of amusingly I’m aware of two examples of people who using Miniscript were able to find more efficient scripts than the ones they had come up with by hand. One of them was us with Liquid. We were able to save 2 bytes in our Liquid spending policy using Miniscript versus the scheme that we came up with. The other is the company called Arwen in the Boston area. This is Sharon Goldberg and Ethan Heilman and a few folks like that. 
+Andrew: It lets you do things more efficiently. Actually kind of amusingly I’m aware of two examples of people who using Miniscript were able to find more efficient scripts than the ones they had come up with by hand. One of them was us with Liquid. We were able to save 2 bytes in our Liquid spending policy using Miniscript versus the scheme that we came up with. The other is the company called Arwen in the Boston area. This is Sharon Goldberg and Ethan Heilman and a few folks like that.
 
 Marty: They’re doing custody solutions correct?
 
@@ -57,7 +57,7 @@ Andrew: So Miniscript is probably bad for the size of the chainstate because it 
 
 Marty: This will be something like if you don’t sign a message every n blocks release to this address or something like that?
 
-Andrew: It would be something like that. I’d set n to be six or twelve months I think. The most you can set in Bitcoin script is twelve months I believe. I forget the exact reason, I think it is the number of blocks. 
+Andrew: It would be something like that. I’d set n to be six or twelve months I think. The most you can set in Bitcoin script is twelve months I believe. I forget the exact reason, I think it is the number of blocks.
 
 Marty: So does it use UNIX time to derive that or is it going on block height and guesstimated year length?
 
@@ -91,7 +91,7 @@ Marty: Keep it simple stupid.
 
 Andrew: Yeah exactly. Fortunately we didn’t have to sacrifice efficiency anywhere to get that. We were worried that we would but it turned out everywhere where something was difficult there was an equivalent construction that wasn’t so difficult. The story behind how Miniscript started was Carl Dong who is a Bitcoin developer who works at Chaincode right now….
 
-Marty: TFTC alum too, he has been on this podcast talking about GUIX containers. 
+Marty: TFTC alum too, he has been on this podcast talking about GUIX containers.
 
 Andrew: Carl is one of the maintainers of the rust-bitcoin project, a library that does all sorts of Bitcoin transaction and block related things for Bitcoin. He wanted to add some support for multisignatures so he wrote some code and he wrote some unit tests, it was all solid stuff but he had templated a specific kind of multisignature and I said “I don’t want that in the library. This is a general library and we’re not going to use your special purpose multisignature thing because that is one specific thing you’re doing is multisignatures. To be clear I was being irrational here, multisignatures are very general. I was like “No that’s too specific.” What if I wanted to do a multisignature and a hash preimage or something? Carl said “What the hell do you want me to do? I’m not going to write a general script analysis engine or something so you don’t have templates in your unit tests.” I said “Ok let me think about this.” I happened to be in Mountainview near Blockstream’s office at the time so I was able to go locate Pieter Wuille. I said “Pieter I need to define a subset of script that will contain everything that I care about but that isn’t just a fixed set of templates.” And he said “That’s funny because we need to do the same thing in Bitcoin Core.” So we both independently had the goal of creating such a thing. So we got to work doing this, we took out two or three whiteboards in the Blockstream office in Mountainview and we spent like 40 hours laboriously going through every possible Bitcoin script construction we could think of and counting OP codes, counting bytes and reasoning about how much it would cost to satisfy them. At the end what we came up with was Miniscript. It was a combination of a lot of hard work and grinding to get the most efficient thing that we possibly do that we were a little obsessive of. And Pieter knowing the computer science stuff about what could be efficiently satisfied and what could be efficiently reasoned about. Pieter was able to write a compiler from an abstract, even more human readable language than Miniscript to Miniscript where it would choose the most optimal of all the different Miniscript constructions.
 
@@ -117,7 +117,7 @@ Marty: That taps into Taproot and Graftroot to help smart contracting capaibilit
 
 Andrew: Yes. So Musig is the protocol that lets you jointly produce a Schnorr signature. So if you have a single signature that needs to produced by multiple people, those people run the Musig protocol offchain and what comes out is a single signature that you would use as Taproot.
 
-Marty: So do you like working on these different aspects? Does it help you stay motivated and do you like jumping from concept to concept? 
+Marty: So do you like working on these different aspects? Does it help you stay motivated and do you like jumping from concept to concept?
 
 Andrew: Yeah it is very cool to have this high level view of the system. I used to wonder about Greg Maxwell who knows everything about Bitcoin, how could he possibly do this?
 

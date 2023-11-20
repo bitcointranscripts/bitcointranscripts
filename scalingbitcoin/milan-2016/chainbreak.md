@@ -89,23 +89,23 @@ You can't allocate tx fees until you see the state of the network
 1.  do you split fees?
 
     1.  if you don't, you can fee-snipe
-    
+
     2.  if you do, smart wallets will cheat the fee reallocation
-    
+
         1.  smart wallets that pay specific miners compromise centralization
-        
+
         2.  tx fees should be the best way to get your tx confirmed
-    
+
     3.  could eliminate gossip broadcast of txs ("p2p layer")
-    
+
         1.  PoW required to get any transaction confirmed
-        
+
         2.  PoW started as a spam prevention mechanism, becomes this again
-    
+
     4.  "deep mempool"
-    
+
         situation in bitcoin today - more txs waiting than the content of a block
-        
+
         1.  arguably you always have this, because there is always demand for backing up data, at a lower price
 
 ### Network size measured by graph structure<a id="sec-1-1-3" name="sec-1-1-3"></a>
@@ -123,9 +123,9 @@ You can't allocate tx fees until you see the state of the network
 1.  question of how bead/block difficulty is determined
 
     1.  chains are synchronous, block is a network-wide event
-    
+
     2.  braids are parallel, beads appear simultaneously
-    
+
     3.  can difficulty & reward algorithms have multiple values at different points in the graph?
 
 ## fee sniping<a id="sec-1-2" name="sec-1-2"></a>

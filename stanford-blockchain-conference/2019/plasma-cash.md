@@ -1,5 +1,5 @@
 ---
-title: Plasma Cash 
+title: Plasma Cash
 transcript_by: Bryan Bishop
 categories: ['conference']
 tag: ['ethereum']

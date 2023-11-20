@@ -255,7 +255,7 @@ Anyhow, so the first question is why is it called a Tate pairing? Well, okay so,
 
 How did Victor's paper get dessiminated? That's a good question. Oh, I know how it happened. So what happened was that Victor wrote his paper, and unfortunately it was rejected. But then he circulated it among friends and, Minez, Comodo, and Vansays, learned about the pairing and the fact that it is computable, and they came up with a reduction from a discrete log on elliptic curve to discrete log on the finite field, using the pairing. And that's where the attribute of course to Victor Miller, and that's where the, that's how it became well known. So if you have a result that is not published, get someone else to write a strong paper that uses it.
 
-Q: .. worked for ideal research ... 
+Q: .. worked for ideal research ...
 
 A: Yeah, it was dessiminated inside of IBM, that's true. Very very true. But also there was the internet.
 

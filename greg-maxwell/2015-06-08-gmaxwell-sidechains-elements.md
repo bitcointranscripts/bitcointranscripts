@@ -1,5 +1,5 @@
 ---
-title: Sidechains Elements 
+title: Sidechains Elements
 speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
 tag: ['sidechains']

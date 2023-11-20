@@ -1,5 +1,5 @@
 ---
-title: Roy Sheinfeld - Stephan Livera 
+title: Roy Sheinfeld - Stephan Livera
 transcript_by: Michael Folkson
 categories: ['podcast']
 speakers: ['Roy Sheinfeld']

@@ -1,5 +1,5 @@
 ---
-title: Contracts in Bitcoin 
+title: Contracts in Bitcoin
 transcript_by: Caralie Chrisco
 tag: ['smart contracts']
 date: 2020-04-08
@@ -27,7 +27,7 @@ What is a contract? Well, a contract is, in some ways, a meeting of the minds wh
 
 I might want to borrow money to buy a house, for example. And at some point in the future, I'll pay back that money, but I know that the future me would prefer not to pay back that money. All things being equal, I prefer to keep the money and the house. So I bind myself into a contract where there's a penalty for future me if I don't pay back the money. Because obviously, no one would lend me money if I could just run away with it.
 
-So this is similar to Odysseus, binding himself to the mast. He knows that future Odysseus will want to go and visit the island of the sirens, but present Odysseus enters a contract with his sailors where he limits himself, and so he's bound to the mast just as we are bound to contracts.  
+So this is similar to Odysseus, binding himself to the mast. He knows that future Odysseus will want to go and visit the island of the sirens, but present Odysseus enters a contract with his sailors where he limits himself, and so he's bound to the mast just as we are bound to contracts.
 
 The concept here is limiting future me's freedom. The freedom to renege on my debt or to order his sailors to steer to the island expands present-me's freedom because I can borrow money. This concept of contracts has existed for centuries, for millennia. It is a fundamental building block of civilization and the market economy. We naturally think of contracts as written, but oral agreements count as contracts and have been around since prehistory. People were thinking about this for many years as the internet came online, and it would be impossible to rederive all of the wisdom contained in this tradition of contract law and norms very quickly. If we start from scratch using just kind of reason and first principles it would take us many centuries to redevelop sophisticated ideas like contract law. The digital revolution is coming and is challenging us to develop new institutions in a much shorter period of time than that.
 
@@ -101,7 +101,7 @@ That's the theory. I'm going now talk a little bit about how script has changed 
 
 Here's a transaction in Bitcoin. It has some metadata at the start and the end. At the start, we have a version. At the end, we have a locktime. Then within a transaction, we have one or more txins, so we can see one here. We have one green txin, and then dot dot dot. There can be many of those. SS stands for script sig. Then we have one or more outputs. We can see one here. It's red. We can have many. SPK is the script pubkey. So that's one transaction. We have a second transaction, and the input from that second transaction spends the output from the first transaction.
 
-In the first version of Bitcoin, you take the script sig from the input and the script pubkey from the output being spent and concatenate them and then execute them, and they're all written in the same script language. You can see that from the code that I showed you earlier, `EvalScript` on the scriptsig from the inputs plus this code separator thing, then plus the script pubkey from the output. Well, that was bugged. It was a pretty big bug where anyone could spend anyone's money. Satoshi fixed that in 2010. The fix was just to separate. So, execute a scriptsig first and then execute scriptpubkey. You might think, why is the scriptsig why is that signature a script? All it's doing is providing data. And you'd be right. The scriptsig really just pushes data onto the stack. We can see from this snippet of code that first `EvalScript` is running the scriptsig, and the job there is just to push data to the stack, and then the second `EvalScript` actually runs the script, the locking script, the script pubkey.  
+In the first version of Bitcoin, you take the script sig from the input and the script pubkey from the output being spent and concatenate them and then execute them, and they're all written in the same script language. You can see that from the code that I showed you earlier, `EvalScript` on the scriptsig from the inputs plus this code separator thing, then plus the script pubkey from the output. Well, that was bugged. It was a pretty big bug where anyone could spend anyone's money. Satoshi fixed that in 2010. The fix was just to separate. So, execute a scriptsig first and then execute scriptpubkey. You might think, why is the scriptsig why is that signature a script? All it's doing is providing data. And you'd be right. The scriptsig really just pushes data onto the stack. We can see from this snippet of code that first `EvalScript` is running the scriptsig, and the job there is just to push data to the stack, and then the second `EvalScript` actually runs the script, the locking script, the script pubkey.
 
 # Pay to Script Hash (P2SH)
 

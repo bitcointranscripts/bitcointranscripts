@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -38,19 +38,19 @@ We fix it by manually setting the value to the maximum plus one of the column.
 
 Wouldn’t the select statement have populated it with that? I will look through the code.
 
-The insert with values in that column will not call the increment on the sequence. That is the collision. 
+The insert with values in that column will not call the increment on the sequence. That is the collision.
 
-I’m not sure I get it but I will look at the code until I understand it. I have a hack that does some database handling, helpers to delete columns and rename columns. This is easy in Postgres and really hard in SQL. I would like to fix that case rather than have us continuously stumble over it. 
+I’m not sure I get it but I will look at the code until I understand it. I have a hack that does some database handling, helpers to delete columns and rename columns. This is easy in Postgres and really hard in SQL. I would like to fix that case rather than have us continuously stumble over it.
 
 # Individual updates
 
-I just opened a maximum size channel on signet to my friend who I am teaching c-lightning to. We will have new students soon. 
+I just opened a maximum size channel on signet to my friend who I am teaching c-lightning to. We will have new students soon.
 
 I was thinking I have to fire up my signet node and get that working. I have been running a signet Bitcoin node for a long time but I haven’t actually fired up c-lightning. Maybe after I upgrade my machine. I run my nodes under Valgrind and it is very heavy.
 
-I am running the latest version of c-lightning on signet, testnet and mainnet. It is all running very well. 
+I am running the latest version of c-lightning on signet, testnet and mainnet. It is all running very well.
 
-There seems to be an active signet community which is nice. 
+There seems to be an active signet community which is nice.
 
 The next Raspiblitz release will likely be in the next 2 weeks. We have a few bugs ironed out. We added c-lightning, added parallel testnet and signet. We updated the image, there were some pressing bugs. I have updated to c-lightning 0.10.2 RC1 and RC2 from the menu so it works with the Raspiblitz deployment, the updates are working. That’s available for everyone even if you don’t update the image. That will be coming with the next release of course. My smaller size routing node, I didn’t find any issues which is good I guess. Another interesting development, waxwing has used [c-lightning onion messages](https://github.com/JoinMarket-Org/joinmarket-clientserver/pull/1000) in Joinmarket. That’s an exciting thing to look at and explore. Also there is a proposal to use actual payments later on for the coinjoin fees paid to the makers but that is far off. It is a more involved, complicated implementation but the onion messages to be used in parallel with the IRC coordination is quite exciting. That just uses a couple of Lightning instances. That is the other thing I have been looking at.
 
@@ -62,7 +62,7 @@ If you are doing a coinjoin you are obfuscating your UTXO set which is definitel
 
 What is the release cadence of c-lightning? Is it the same as Core?
 
-It is every 2 or 3 months. 
+It is every 2 or 3 months.
 
 For a minor release?
 
@@ -104,11 +104,11 @@ What PRs are we talking about?
 
 Last week I worked on some internal Blockstream stuff. I have also been updating our [guess to remote stuff](https://github.com/ElementsProject/lightning/pull/4893) to include anchor outputs. Someone recently fried their node and didn’t have a backup. I am on working on recovering stuff. They weren’t able to use our [existing recovery tools](https://lightning.readthedocs.io/BACKUP.html) to recover any of the funds they had put into lease channels on either side. The reason for that is those use anchor outputs and our tooling did not take anchor output scripts into account. I’ve updated those and created an extra tool. The change to anchor outputs changes the `to_remote` from a public key hash to a script hash. Now you need to know what the script is. It used to be you had a pubkey, it is pretty easy to use existing wallet software to spend any output using a pubkey, private key, that is pretty straightforward, a lot of wallets support that workflow. They don’t really seem to support the script hash thing so I added an extra tool, I haven’t tested it yet and I’m not 100 percent sure it works. In theory there is now a tool where if you give it a PSBT it has the output you want to spend and all the metadata associated with it. This tool will sign that input on the PSBT that you provided and return a PSBT with the proper scriptSig information filled out so you can spend it. I trust it signs correctly and it will do whatever but I haven’t tested that it spends correctly. I pinged the person who had the problem. I need to talk them into giving me their private key data for the output of the channel that I had with them. I can just send it to wherever they want. That is up in a PR.
 
-When I was in Zurich a few weeks ago I spent some time talking to Christian about how to update our accounting stuff. I would really like to get an accounting plugin done soon. I did some rethinking about how we do events, it is an event based system. Coins move around, c-lightning emits an event. I am going to make some changes to how we are keeping track of things. I think the biggest notable change is we will no longer be emitting events about chain fees which kind of sucks. There is a good reason to not do that. Instead the accounting plugin will have to do fee calculations on its own which I think is fine. That is probably going to be the biggest change. Working through that today, figuring out what needs to change. Hopefully the in c-lightning stuff will be quite lightweight and then I can spend a lot of time getting the accounting plugin exactly where I want it. That will be really exciting. I am also going to be in Atlanta, Wednesday through Sunday at the TAB conference. I am giving a [talk](https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s), appearing on a panel and running some other stuff. I will probably be a little busy this week preparing for the myriad of things someone has signed me up for. If anyone has suggestions about topics to talk about you have 24 hours to submit submissions if there are things on Lightning you want to hear about. 
+When I was in Zurich a few weeks ago I spent some time talking to Christian about how to update our accounting stuff. I would really like to get an accounting plugin done soon. I did some rethinking about how we do events, it is an event based system. Coins move around, c-lightning emits an event. I am going to make some changes to how we are keeping track of things. I think the biggest notable change is we will no longer be emitting events about chain fees which kind of sucks. There is a good reason to not do that. Instead the accounting plugin will have to do fee calculations on its own which I think is fine. That is probably going to be the biggest change. Working through that today, figuring out what needs to change. Hopefully the in c-lightning stuff will be quite lightweight and then I can spend a lot of time getting the accounting plugin exactly where I want it. That will be really exciting. I am also going to be in Atlanta, Wednesday through Sunday at the TAB conference. I am giving a [talk](https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s), appearing on a panel and running some other stuff. I will probably be a little busy this week preparing for the myriad of things someone has signed me up for. If anyone has suggestions about topics to talk about you have 24 hours to submit submissions if there are things on Lightning you want to hear about.
 
 Something to get rid of next after we’ve got [rid of the mempool](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019572.html).
 
-That was brave. I think it is great. I think you are wrong but that is ok. 
+That was brave. I think it is great. I think you are wrong but that is ok.
 
 I think it is ok to be wrong.
 
@@ -122,7 +122,7 @@ If people don’t lynch you occasionally you are not doing your job properly.
 
 Someone posted on the mailing list, is someone moderating this list? How is this allowed to be posted? Are they even reading the posts?
 
-Didn’t you know the mempool was part of Satoshi’s doctrine, you can’t question it (Joke). 
+Didn’t you know the mempool was part of Satoshi’s doctrine, you can’t question it (Joke).
 
 There have been some pretty good discussions in a private chat I’ve been in about changing the RBF rules. This has been headed up by Murch and Gloria. I have been talking to them pushing for a certain angle on how those rules get changed. I think I’ve managed to convince at least one person. We are looking at making pinning less possible. I don’t know if I want to talk about that though.
 
@@ -140,7 +140,7 @@ One of the ways we are going to kind of get around that is I am going to push so
 
 That makes sense. 6 blocks is final(ish) and 100 blocks is forever.
 
-But that means the plugin needs to have a block store of its own that it keeps track of. It is not beautiful but I think it will be fine. 
+But that means the plugin needs to have a block store of its own that it keeps track of. It is not beautiful but I think it will be fine.
 
 Did you have a prototype of an accounting plugin before? It didn’t make it to the plugin repo?
 
@@ -152,7 +152,7 @@ Yes that’s correct. The data format is fine. I thought I was going to have to 
 
 I stumbled across it in the outpoint rewrite.
 
-vincenzopalazzo: In the last two weeks I have worked on some c-lightning PR review. Also I started working on an issue where we accepted opening a channel with an amount lower than the minimum amount that the other side would accept. I think we need to query the gossip map in some way to get this information. I think we miss this check where the amount that we are requiring to open the channel is greater than the minimum than the other side would accept. To get this information we need to query inside the `fundchannel` command to get the information from the gossip map. I am not sure about this. 
+vincenzopalazzo: In the last two weeks I have worked on some c-lightning PR review. Also I started working on an issue where we accepted opening a channel with an amount lower than the minimum amount that the other side would accept. I think we need to query the gossip map in some way to get this information. I think we miss this check where the amount that we are requiring to open the channel is greater than the minimum than the other side would accept. To get this information we need to query inside the `fundchannel` command to get the information from the gossip map. I am not sure about this.
 
 They do not have a generic way of gossiping to say what their minimum channel size is which is unfortunate. It has been a common request. We didn’t do it because there is a whole heap of other conditions it could have on things. What happens is you get an error back which is a “human readable” code to say I didn’t like things. There is no reliable way of telling it. The human operator reads the code and says “It must be this.”
 
@@ -164,9 +164,9 @@ Just tell them upfront. Whenever you connect to someone, tell them upfront in th
 
 Min channel size is actually really common. I do like the error proposal where you specify exactly what is wrong. It was a proposal, I don’t know if it went anywhere. At risk of making you do a lot more work you could perhaps look at that. They don’t broadcast any information where you can immediately tell what the channel size should be. Sorry, you would expect it to work the way you say but it doesn’t.
 
-vincenzopalazzo: I’ve finished my first version of the Matrix plugin with the server. In the next week I will publish the website with some fun information. I am relying on the information that I am receiving because I don’t want to make a real server with authentication, I want someone to put the data and I verify this data is from the node that sent me this information. The things I am thinking about is to use onion messages. I receive the data, I get the hash to check this data and with the onion message I send back the message to the node that is the owner of this payload. “This is your data with a check on the hash” and I receive back ACK or NACK. I don’t know if this is the correct way to do it. 
+vincenzopalazzo: I’ve finished my first version of the Matrix plugin with the server. In the next week I will publish the website with some fun information. I am relying on the information that I am receiving because I don’t want to make a real server with authentication, I want someone to put the data and I verify this data is from the node that sent me this information. The things I am thinking about is to use onion messages. I receive the data, I get the hash to check this data and with the onion message I send back the message to the node that is the owner of this payload. “This is your data with a check on the hash” and I receive back ACK or NACK. I don’t know if this is the correct way to do it.
 
-I am a fan of anything that uses onion messages so I’m probably biased here. 
+I am a fan of anything that uses onion messages so I’m probably biased here.
 
 # Future possible changes to Lightning gossip
 
@@ -186,7 +186,7 @@ In Bitcoin Core when you run a signet node it runs immediately by default on a s
 
 I have done that in the Raspiblitz, following Bitcoin Core’s logic for testnet I add a `1` before the 9735 and for signet I add a `3`.
 
-Maybe we should switch to defaults. It makes sense. In theory you can run multiple networks on a single port, I don’t know if anyone does that and our implementation doesn’t support it. But in theory you could have a node that runs both testnet and mainnet off of the same port. We have all the distinguishing messages, you can tell if you are only interested in this kind of gossip. I don’t think any implementation actually supports it. 
+Maybe we should switch to defaults. It makes sense. In theory you can run multiple networks on a single port, I don’t know if anyone does that and our implementation doesn’t support it. But in theory you could have a node that runs both testnet and mainnet off of the same port. We have all the distinguishing messages, you can tell if you are only interested in this kind of gossip. I don’t think any implementation actually supports it.
 
 I had a problem doing that for Bitcoin Core when my node picked up some testnet block hashes and thought it was on a fork. I was quite worried for a moment.
 
@@ -194,7 +194,7 @@ We do distinguish them all, we will ignore them properly. In fact now we will ha
 
 # Q&A
 
-Someone, I was talking to them, they opened a 20,00 satoshi channel to me. They couldn’t see it in Umbrel what the reserve was of the channel. Maybe on the command line but not in the web user interface. I showed them what’s the reserve, it was the same for both me and them. I didn’t have anything so I said “Now you send me 579 satoshis”. I still cannot send anything to you because it fills my reserve. We managed actually to send through me and so I did not lose any satoshis, I am routing for free. It was very interesting because I never realized these reserves of channels. Today I opened the signet channel with another friend, he filled my reserve and I was still not able to send him 20 satoshis. The reserve was 10,000 satoshis. I checked it was filled, the reserve was filled on my side and I had 20 extra satoshis, I couldn’t send them. It was reported in c-lightning. 
+Someone, I was talking to them, they opened a 20,00 satoshi channel to me. They couldn’t see it in Umbrel what the reserve was of the channel. Maybe on the command line but not in the web user interface. I showed them what’s the reserve, it was the same for both me and them. I didn’t have anything so I said “Now you send me 579 satoshis”. I still cannot send anything to you because it fills my reserve. We managed actually to send through me and so I did not lose any satoshis, I am routing for free. It was very interesting because I never realized these reserves of channels. Today I opened the signet channel with another friend, he filled my reserve and I was still not able to send him 20 satoshis. The reserve was 10,000 satoshis. I checked it was filled, the reserve was filled on my side and I had 20 extra satoshis, I couldn’t send them. It was reported in c-lightning.
 
 Who opened the channel?
 
@@ -212,7 +212,7 @@ The routing engine is invoked.
 
 Probably because I was sending it and I have many other signet channels.
 
-It should definitely work though. 
+It should definitely work though.
 
 I’ll file a bug report.
 
@@ -246,7 +246,7 @@ Minisketch looks as if it is close to merge, if you want to use Minisketch for g
 
 You did actually code it up as well? It was more than just a mailing list post? I didn’t see the branch.
 
-I never pushed the branch, I never got to that point. Just played with it. Minisketch was really nice, the library is very Pieter Wuille, very sweet. Everyone should play with Minisketch just because they can, it is really cool. To some extent it is always secondary, it is just an efficiency improvement. There aren’t many protocol changes required. The whole network doesn’t have to upgrade to start using Minisketch gossip between nodes. 
+I never pushed the branch, I never got to that point. Just played with it. Minisketch was really nice, the library is very Pieter Wuille, very sweet. Everyone should play with Minisketch just because they can, it is really cool. To some extent it is always secondary, it is just an efficiency improvement. There aren’t many protocol changes required. The whole network doesn’t have to upgrade to start using Minisketch gossip between nodes.
 
 When sending and receiving the remote address I use some struct which I get from the wire. In order to parse it I create the struct in C and say it is packed. I need to say it is packed so it is aligned and not something shifted in order to read it correctly. Is there a proper way to do this? Using some directive gcc that it is packed is not the correct way of doing this.
 

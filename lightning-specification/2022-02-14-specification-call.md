@@ -20,7 +20,7 @@ Agenda: <https://github.com/lightning/bolts/issues/957>
 
 I was talking about organizing a face to face Lightning Core Dev meetup. If I understand correctly there has only been one formal one and that was in 2019 in Australia. There has been two?
 
-Milan, the kickoff. There has only ever been two. 
+Milan, the kickoff. There has only ever been two.
 
 That was probably before my time in Bitcoin.
 
@@ -30,13 +30,13 @@ I think it is high time that we meet in person. I know there was one last fall b
 
 There are a few things popping up randomly that maybe people will be at. I know some people are going to be in London, some people may be in Miami. If we can piggy back maybe that can work but London is in like 3 weeks.
 
-I’m probably the only Lighting one but I’m not going to the UK. I know a number of Core devs aren’t going to the UK either. 
+I’m probably the only Lighting one but I’m not going to the UK. I know a number of Core devs aren’t going to the UK either.
 
 Some of our people are going but they are already in Europe, it is a skip. Not a long distance.
 
-I’m happy to go to Europe. Because of the lawsuit currently entering into the UK… At least until we finish the jurisdiction challenge. 
+I’m happy to go to Europe. Because of the lawsuit currently entering into the UK… At least until we finish the jurisdiction challenge.
 
-I forgot that was happening in the background. 
+I forgot that was happening in the background.
 
 As these Bitcoin conferences occur, some subset of us there, let’s meet up and make progress. Work towards to this one where the majority of us can hopefully attend.
 
@@ -44,7 +44,7 @@ As these Bitcoin conferences occur, some subset of us there, let’s meet up and
 
 <https://github.com/lightning/bolts/pull/904>
 
-This is a one liner to use a warning. This should be easy to integrate. Another thing that we could discuss about that PR is the point Laolu raised. We could add a feature bit for that. I don’t think we need to and I think Matt doesn’t think we need to either. 
+This is a one liner to use a warning. This should be easy to integrate. Another thing that we could discuss about that PR is the point Laolu raised. We could add a feature bit for that. I don’t think we need to and I think Matt doesn’t think we need to either.
 
 If this thing can save you a bunch of chain fees maybe you want to find people that promise to always do it. That was the rationale there. Otherwise you have the fallback thing. Maybe you end up paying more because they are doing weird stuff. I started implementing this, I need to go back to my PR.
 
@@ -52,11 +52,11 @@ We can separately discuss having a feature bit for the quick close thing itself.
 
 People send warnings today. I get some issues in lnd, an unknown thing. Maybe we should add more logic in there basically. I think c-lightning sends one if you already have a channel that is closing and you try to do a new one. I think Carla has an older PR for that, we just need to revive it so we can see when things are going wrong.
 
-I think we send them too now. It is just a new message type that you are supposed to log. 
+I think we send them too now. It is just a new message type that you are supposed to log.
 
 We had an older PR that was waiting for stuff to settle down but it is merged now so we could move forward with that. I’m trying to find it now.
 
-I agree it is completely orthogonal to a feature bit so maybe have a quick look at that PR. 
+I agree it is completely orthogonal to a feature bit so maybe have a quick look at that PR.
 
 # Offers
 
@@ -70,19 +70,19 @@ To be clear I am not going to agitate strongly for this. I think it would let us
 
 I need to dive a bit more into that. I do not realize yet how much work I will have to do. I would be able to know more in a few weeks and then make a recommendation. Right now I suggest to keep it in until we realize that it is too much and we want to ship without it. Then we may want to remove it. I added a comment today which is potentially another breaking thing so you may want to take a look at it. It is about using a single blinded hint for the whole blinded path instead of one per hop. That is something that would change the wire requirements. We need to decide whether we want to do it or not. While I was reviewing Thomas’ PR on eclair to add offers I realized that there this thing which is a routing hint saying how much fees and CLTV delta to use for the parts of the blinded path. Thomas understood it as there must be one for every hop in every blinded path that is in the offer or the invoice. The way I understood it was we only need one per path and we should apply the same fee and CLTV for all hops in the path to hide them more. You don’t want to show there are different fees here. That is an unblinding vector and it takes up less space.
 
-You still have to indicate the number of hops though. 
+You still have to indicate the number of hops though.
 
-Yeah. You still have to have an unencrypted blob for each of the hops. But for the fees and CLTV you just provide one value that should work for all the hops in that route. It is more lightweight in the offer and in the invoice. Especially if you add dummy hops at the end of the blinded route you don’t have to repeat new fees and CLTV expiry that takes up more space for no reason. It also forces you to have something that is uniform and works for the whole path which makes it hopefully harder to unblind. 
+Yeah. You still have to have an unencrypted blob for each of the hops. But for the fees and CLTV you just provide one value that should work for all the hops in that route. It is more lightweight in the offer and in the invoice. Especially if you add dummy hops at the end of the blinded route you don’t have to repeat new fees and CLTV expiry that takes up more space for no reason. It also forces you to have something that is uniform and works for the whole path which makes it hopefully harder to unblind.
 
 Does that mean you have to go through all the nodes across all the different payment paths, find the one which is charging the highest fees and apply that ubiquitously to every single node?
 
-In a way that is already what you do. When you include the path you have all the data for all these hops so you just select the highest fee instead of selecting the right fee for each of the hops. 
+In a way that is already what you do. When you include the path you have all the data for all these hops so you just select the highest fee instead of selecting the right fee for each of the hops.
 
-If you are doing something smart you obfuscate those numbers. It doesn’t help a huge amount because they can still probe. We have a plan for that, that’s later. You put something inside the onion to say “Don’t accept below this fee because they are trying to use it to probe you.” It is not a break for me because I don’t write this field at the moment. We can certainly change it. It is a simplification, it makes sense. You could imagine a case where I am feeding you a blinded path where one is higher. You could argue if it is such an obvious vector then don’t put that in the blinded path, start with the blinded path after that. 
+If you are doing something smart you obfuscate those numbers. It doesn’t help a huge amount because they can still probe. We have a plan for that, that’s later. You put something inside the onion to say “Don’t accept below this fee because they are trying to use it to probe you.” It is not a break for me because I don’t write this field at the moment. We can certainly change it. It is a simplification, it makes sense. You could imagine a case where I am feeding you a blinded path where one is higher. You could argue if it is such an obvious vector then don’t put that in the blinded path, start with the blinded path after that.
 
-Or just use the higher value for everyone. One other thing I was arguing in the route blinding PR is that it may be frightening for the sender to see that there is a high fee to pay for the blinded part of the route. But actually you could reverse that and make it be paid by the merchant. The merchant would discount the value of the real item and would actually pay for the fee of the blinded path himself because it makes sense. The merchant is trying to hide themselves so they should pay the fee for the blinded part of the route. 
+Or just use the higher value for everyone. One other thing I was arguing in the route blinding PR is that it may be frightening for the sender to see that there is a high fee to pay for the blinded part of the route. But actually you could reverse that and make it be paid by the merchant. The merchant would discount the value of the real item and would actually pay for the fee of the blinded path himself because it makes sense. The merchant is trying to hide themselves so they should pay the fee for the blinded part of the route.
 
-I buy the argument. If you are paying for liquidity you will end up with this one hop that is potentially significantly higher. But at the moment the Lightning Network is still low. I ACK that, I will write some verbiage around it. Change it to a single that applies across the route, I like it. 
+I buy the argument. If you are paying for liquidity you will end up with this one hop that is potentially significantly higher. But at the moment the Lightning Network is still low. I ACK that, I will write some verbiage around it. Change it to a single that applies across the route, I like it.
 
 # Zero conf channels
 
@@ -106,19 +106,19 @@ So it is an outbound channel?
 
 Yes it is an outbound channel. The way it is setup, the maker is always the one that is going to be opening the channel, in this case the person who is opening the zero conf channel. Right now in our flow the user would see the `open_channel`, assuming there is a channel type and whatever else, see it is not zero conf and then reject it. Otherwise it would need to accept it and then later on have an exception down the line that they send a `min_depth` of a different value. That’s the flow.
 
-You flipped it on us again. You are talking about the side that is accepting the channel, not the channel opener. And you want to filter on the `open_channel` message itself. 
+You flipped it on us again. You are talking about the side that is accepting the channel, not the channel opener. And you want to filter on the `open_channel` message itself.
 
 Yes. We do a similar thing. If someone wants anchor only because we have a feature bit or a channel type there, they can say “That’s not an anchor channel. I’m rejecting it” and everything moves forward like that. I don’t see a reason not to add a channel type here if it can make peering and general protocols built on top of it more explicit. We can fail quicker rather than failing later. The failing later, we would receive the `min_depth`…
 
-You said this is for the case where a user has received an `open_channel` and then is going to make some decision based on that `open_channel` and then send a response or an `accept_channel`. But once you’ve received that `open_channel` you now have all the information. The `min_depth` is only in the `accept_channel`. Presumably the node that is opening the channel, if you tell it it is zero conf it is just going to accept that because why wouldn’t it? In my understanding of the way we’ve done it and c-lightning has spoken about implementing it just seeing the `open_channel` and knowing what you are going to write in the `accept_channel` is sufficient to know whether the channel will be zero conf. 
+You said this is for the case where a user has received an `open_channel` and then is going to make some decision based on that `open_channel` and then send a response or an `accept_channel`. But once you’ve received that `open_channel` you now have all the information. The `min_depth` is only in the `accept_channel`. Presumably the node that is opening the channel, if you tell it it is zero conf it is just going to accept that because why wouldn’t it? In my understanding of the way we’ve done it and c-lightning has spoken about implementing it just seeing the `open_channel` and knowing what you are going to write in the `accept_channel` is sufficient to know whether the channel will be zero conf.
 
 That’s the difference. Y’all are saying zero conf all day everyday. We are saying zero conf under these very precise scenarios. It wouldn’t be a default thing for the world. I don’t see any downside and I feel like it makes certain protocols more precise because you can fail earlier. We have a lot of feature bits, we already have a channel type here too. Maybe certain channels can’t support zero conf in the future.
 
-And multi funder is a whole other discussion. 
+And multi funder is a whole other discussion.
 
 We have the ability at the protocol level to allow that filtering to exist in the future by having the zero conf bit here.
 
-In the case of you’ve received an `open_channel` message, you say “I’m going to do zero conf with this channel”. Presumably at that point you’ve done further out of band negotiation. Obviously you are not going to accept zero conf from anyone, you are going to say “This node, we’ve already negotiated this and that”. Why can that negotiation not be the thing that decides this instead of having it be a negotiation? First you negotiate, you know you are going to do zero conf with this node, you get a channel from that node and then you do an additional negotiation step and say “It must be zero conf”. 
+In the case of you’ve received an `open_channel` message, you say “I’m going to do zero conf with this channel”. Presumably at that point you’ve done further out of band negotiation. Obviously you are not going to accept zero conf from anyone, you are going to say “This node, we’ve already negotiated this and that”. Why can that negotiation not be the thing that decides this instead of having it be a negotiation? First you negotiate, you know you are going to do zero conf with this node, you get a channel from that node and then you do an additional negotiation step and say “It must be zero conf”.
 
 This is when things are extended. At that point maybe they are eligible. But in this case whenever you send it I know it is there at runtime. We always try to verify the lowest layer. Let’s say we are doing this thing and it is not in the feature bit. Then the user sends `min_depth` zero, for whatever reason other party says “No”. At that point you have a weird silent failure. Now the receiver is saying “Zero conf” rather than the proposer. If the proposer initially gets the `accept_channel` and then does nothing, UX wise it is hard to have a consistent flow there.
 
@@ -142,7 +142,7 @@ The problem with this PR is it conflicts two things. One is if you do zero conf 
 
 One other slight thing here with the way Pool works, we like this because it increases the set of signers required to double spend. For example if I have a batch of 5 people opening a channel it requires all 5 of them to double spend rather than just the person that was opening. It also requires us to double spend as well too. It increases the total set of collusion that is necessary in order to double spend the output. The reason they can’t double spend is they are in a UTXO that is a 2-of-2 with us. They would need us and every other person as well to double spend the entire batch. That’s the one difference security model wise with how this works in this setting. It is like a coinjoin where everyone has a timelocked input basically. The input will only be signed if things look good. The trust stuff is explicit. That’s another reason to add a channel type there. “Do I want to accept this zero conf thing?” You are right that there is a double opt-in. We are just trying to make it more explicit. It is more sensible if we know zero conf stuff can’t work for every channel type.
 
-Originally the channel types were just to get around this hack. There were some features we had to remember. If you negotiated that at the beginning that made sense for the whole channel lifetime independent of what’s in the future. But generalizing it to “This is not persistent state but this is stuff about this channel”. It is not objectionable. 
+Originally the channel types were just to get around this hack. There were some features we had to remember. If you negotiated that at the beginning that made sense for the whole channel lifetime independent of what’s in the future. But generalizing it to “This is not persistent state but this is stuff about this channel”. It is not objectionable.
 
 If we want explicit signaling I would strongly suggest we switch to a TLV in `open_channel` rather than making it a channel type.
 
@@ -160,7 +160,7 @@ It is today but maybe that is inflexible thinking. My only caveat on this, it is
 
 Presumably the way y’all would implement that is that even if your counterparty says “6 confs” you will always send the `funding_locked` immediately after you broadcast the funding transaction if you are the initiator. Is that what you are thinking?
 
-Yeah. If you are the initiator and there is no `push_msat`. And in our case with dual open, if you’ve got no funds on the line we will just go “Sure whatever”, we will zero conf stuff. 
+Yeah. If you are the initiator and there is no `push_msat`. And in our case with dual open, if you’ve got no funds on the line we will just go “Sure whatever”, we will zero conf stuff.
 
 Why does `push_msat` matter?
 
@@ -172,15 +172,15 @@ Specifying `push_msat` puts you at some risk of them getting the money. If it is
 
 Presumably you were ok with them getting the money because you’ve pushed msat to them?
 
-If you wanted to scam them maybe you wouldn’t do that. 
+If you wanted to scam them maybe you wouldn’t do that.
 
-The guy who accepts the `push_msat`, if it is a payment for something that has been semi trusted and done before, “I will push you msat because I opened this channel because you opened a channel to me. I opened a channel back in response. I will push you money through that.” But if you accept it as zero conf and they double spend it you lost that msat, maybe you opened a channel in response. It is more the guy who accepts the `push_msat` that has a risk of accepting zero conf. 
+The guy who accepts the `push_msat`, if it is a payment for something that has been semi trusted and done before, “I will push you msat because I opened this channel because you opened a channel to me. I opened a channel back in response. I will push you money through that.” But if you accept it as zero conf and they double spend it you lost that msat, maybe you opened a channel in response. It is more the guy who accepts the `push_msat` that has a risk of accepting zero conf.
 
 You can generalize this for the dual funding case.
 
 This is an interesting question then. Basically the channel type or TLV or whatever would say “Either send me an accept with zero `min_depth` or I’m going to immediately close the channel.”
 
-Or send a warning message or error and whatever else. 
+Or send a warning message or error and whatever else.
 
 The initiator will still always send a `funding _locked` immediately and the receiver can still send a `funding_locked` immediately if they want to. The feature bit is only an indicator of either you do this or I am going to close the channel.
 
@@ -192,7 +192,7 @@ The thing is it should flag that they are trusting the zero conf, not just that 
 
 It should say that they must, not just that they can. If you see this bit and you are going to send an `accept_channel` that does not have a zero conf `min_depth` you must fail the channel.
 
-Negotiation has failed at that point. 
+Negotiation has failed at that point.
 
 It is not optional.
 
@@ -232,7 +232,7 @@ We have one of everything. The only divergence is the upfront feature bit check.
 
 Add a TLV rather than defining a new bit.
 
-We have a TLV. 
+We have a TLV.
 
 Add a TLV that says the required bit.
 
@@ -240,33 +240,33 @@ I’ll edit this PR for now. If I was smarter I’d have split it into two. I do
 
 It is pretty small, not a multi file mega thing.
 
-Action Rusty to do another pass, make a channel type and see what happens, how bad it gets. 
+Action Rusty to do another pass, make a channel type and see what happens, how bad it gets.
 
 # Zero reserve
 
 I’m going to jot that down on the PR. One other thing related to this is zero reserve. Eugene is implementing this and asking questions about zero reserve. Right now I let you cheat me for free but maybe it is not useful unless we have it both ways. I think he was wondering do you always do zero reserve? I think right now technically if you send zero it is in violation of the spec. I think we have must be greater than zero thing.
 
-We accept it, we do not allow you to send it currently. We may at some point allow you to send it. We accept it, maybe in violation of the spec. 
+We accept it, we do not allow you to send it currently. We may at some point allow you to send it. We accept it, maybe in violation of the spec.
 
 Must set greater than or equal to `dust_limit_satoshis`.
 
-If you set that to zero there is that weird interaction. I looked at a really old Breez PR, I found that it allowed zero reserve but it didn’t because it would reject it if it was less than the dust limit. We also had some dust limit revelations a few months ago as far as interactions with other fields. 
+If you set that to zero there is that weird interaction. I looked at a really old Breez PR, I found that it allowed zero reserve but it didn’t because it would reject it if it was less than the dust limit. We also had some dust limit revelations a few months ago as far as interactions with other fields.
 
-At least in our codebase I don’t think there’s a weird interaction. If the output value is less than the dust limit you still have to remove it. 
+At least in our codebase I don’t think there’s a weird interaction. If the output value is less than the dust limit you still have to remove it.
 
 Otherwise you’d have a weird situation where I make the reserve on your commitment transaction below dust which means it can’t propagate. Maybe I can do that by rebalancing or something like that.
 
 There is still a `dust_limit_satoshis`.
 
-The issue is you can end up with a zero output transaction. 
+The issue is you can end up with a zero output transaction.
 
 As long as your dust limit is non-zero. You still remove the output.
 
-No you remove all the outputs, that’s the problem. That’s not a valid transaction. 
+No you remove all the outputs, that’s the problem. That’s not a valid transaction.
 
 A zero output transaction, I see your point.
 
-By forcing a reserve you are saying that someone has an output at all times. I think that was the corner case that we ended up slamming into. Maybe it doesn’t matter. What are you doing with your life if you’ve managed to turn everything into dust? I don’t if that is real but I remember that corner case. 
+By forcing a reserve you are saying that someone has an output at all times. I think that was the corner case that we ended up slamming into. Maybe it doesn’t matter. What are you doing with your life if you’ve managed to turn everything into dust? I don’t if that is real but I remember that corner case.
 
 I know Breez is running a LND fork and they already doing this in the wild.
 
@@ -280,7 +280,7 @@ Because otherwise it is weird. You have this value you can’t move and people w
 
 We had users who were like “No I need this or I can’t ship”. I think we have separate dust enforcement around our outputs. That’s a good point, there may be a corner case where you could hit a zero output transaction.
 
-That was the killer. It is unspendable. In one way you don’t care, on the other hand it is UTXO damage. 
+That was the killer. It is unspendable. In one way you don’t care, on the other hand it is UTXO damage.
 
 It is application level brain damage at that point.
 
@@ -310,7 +310,7 @@ As long as that guy paying the fee is the one with all the balance and the other
 
 It is possible in theory, yeah.
 
-You may have to put a clause in the fee rate saying you don’t do that. “Don’t set a fee rate such that you would end up with zero outputs”. Figure out exactly what to test rather than just saying that. Assuming we can work out why are we suggesting this is a new channel type? A zero reserve channel type? 
+You may have to put a clause in the fee rate saying you don’t do that. “Don’t set a fee rate such that you would end up with zero outputs”. Figure out exactly what to test rather than just saying that. Assuming we can work out why are we suggesting this is a new channel type? A zero reserve channel type?
 
 I don’t see why it would be.
 
@@ -330,13 +330,13 @@ At the moment it is 1 percent. The 1 percent is known at negotiation time, you c
 
  Even if we had the boolean it would be after discussing the channel types. So maybe it would be the same thing as for zero conf. If we want to know it upfront then we do need a channel type.
 
-I think it makes sense as a channel type. It also is a feature bit. You know what you are getting. The reason I like 1 percent reserve is the same kind of reason. I could tell you exactly what channel size you will have after putting in this many sats. If we make it a channel type it falls automatically into dual funding anyway. 
+I think it makes sense as a channel type. It also is a feature bit. You know what you are getting. The reason I like 1 percent reserve is the same kind of reason. I could tell you exactly what channel size you will have after putting in this many sats. If we make it a channel type it falls automatically into dual funding anyway.
 
 Does anybody know if you can get zero outputs with just one side sending zero channel reserve? Because there’s an asymmetry here?
 
 Both sides have to have zero reserve right?
 
-What he’s saying is ignoring this I can send it and you don’t send it. Presumably we have asymmetric dust limits, is there some weird edge case there? 
+What he’s saying is ignoring this I can send it and you don’t send it. Presumably we have asymmetric dust limits, is there some weird edge case there?
 
 Only pre any HTLCs right? You could start with a zero balance on one side before any HTLCs have flown?
 
@@ -350,13 +350,13 @@ One topic that has been discussed a lot recently is RBF. I don’t know if you�
 
 Why isn’t it as simple as just deleting that other code? If it was me I would just have a pure delete PR.
 
-It is a denial of service attack against Bitcoin Core nodes. The problem is all of this stuff very quickly turns into either a) it is not actually optimal for miners or b) it is a denial of service attack against Bitcoin Core nodes such that you can’t possibly implement it without breaking everything. 
+It is a denial of service attack against Bitcoin Core nodes. The problem is all of this stuff very quickly turns into either a) it is not actually optimal for miners or b) it is a denial of service attack against Bitcoin Core nodes such that you can’t possibly implement it without breaking everything.
 
 Wouldn’t you keep the whole min step thing? Each replacement still needs to replace a certain amount?
 
 One issue is that if the transaction package is going to confirm in the next block, it is actually not optimal for miners to accept a replacement that is smaller but has a higher fee rate. You decrease the value of the next block which is exactly the thing you don’t want to do.
 
-Why would a miner have a bigger mempool and keep the conflicts? You could check only the ancestor package and accept things that have a bigger ancestor package than the things they are replacing, not care about descendants. The miners would keep more and would keep conflicts, for them it would make sense. 
+Why would a miner have a bigger mempool and keep the conflicts? You could check only the ancestor package and accept things that have a bigger ancestor package than the things they are replacing, not care about descendants. The miners would keep more and would keep conflicts, for them it would make sense.
 
 You are saying that you look at just the part that is in the next block and then you look at whether or not that has a higher total fee?
 
@@ -366,21 +366,21 @@ Russell O’Connor’s [proposal](https://lists.linuxfoundation.org/pipermail/bi
 
 If a Bitcoin Core node is making decisions that are different from what is being mined you are denial of service attacking yourself. Fundamentally by relaying and by validating and doing all the work you are spending time doing something. If that transaction is something that the creator of that transaction knows will never get mined then they know they can do this all day long.
 
-You are not always doing the optimal thing because there may be descendants. I want to ignore descendants when evaluating whether a package is better than another package. Ignoring descendants, it is much easier because it doesn’t vary from one mempool to another if you only look at ancestors. You still force the ancestor package to increase. 
+You are not always doing the optimal thing because there may be descendants. I want to ignore descendants when evaluating whether a package is better than another package. Ignoring descendants, it is much easier because it doesn’t vary from one mempool to another if you only look at ancestors. You still force the ancestor package to increase.
 
 The ancestor package but what about the descendants? You’ve kicked out the descendants and the descendants are a free relay issue. If I can add a bunch of descendants to the mempool and then do something that kicks them out without paying for the descendants then I can do this over and over again and blow up your CPU.
 
 I believe the conflict is fundamental here. The miners don’t care how much spam you’ve got to get through to get to them, that is what their priority is. The network priority is minimize network traffic. These two are in conflict. They are absolutely in conflict. Currently Bitcoin Core biases towards protecting the network rather than optimizing for miners. Not long term incentive compatible.
 
-What you are saying, you don’t care if you are throwing out children. The point is you could also have a world where you just simply don’t accept these children. If you are wasting traffic adding all these children, I guess this gets into the distinction between top block versus not. These descendants being in the top block versus not. Fundamentally if you really wanted to rearchitect the whole mempool from top to bottom what you would really do is say “I am going to aggressively relay things that fit in the next block. Beyond that I am going to aggressively rate limit it. I am going to have a fixed bandwidth buffer for stuff that is not in the next block. If it is in the next block I’ll relay it. 
+What you are saying, you don’t care if you are throwing out children. The point is you could also have a world where you just simply don’t accept these children. If you are wasting traffic adding all these children, I guess this gets into the distinction between top block versus not. These descendants being in the top block versus not. Fundamentally if you really wanted to rearchitect the whole mempool from top to bottom what you would really do is say “I am going to aggressively relay things that fit in the next block. Beyond that I am going to aggressively rate limit it. I am going to have a fixed bandwidth buffer for stuff that is not in the next block. If it is in the next block I’ll relay it.
 
 You have less spam problems at that point because anyone trying to spam with tiny replacements is at risk of getting mined at any point. It also gives them emergency override to go “I need to override this so I am going to slam it with a fee that is going to get in the next block and everyone will relay it.” It is also much more miner compatible. Fundamentally the concept of a mempool as being a linear array of transactions that is ready to go into blocks at any point is not optimal for miners. They should be keeping a whole pile of options open and doing this NP complete thing where they are rejuggling things, that is not going to happen.
 
 What is practically optimal for miners is also what they can run in their CPU in a reasonable amount of time and can actually implement. There is an argument to be made that what is optimal for miners is always do whatever Bitcoin Core does because it is probably good enough and anything else takes a lot of effort which may screw you if you make an invalid block.
 
-On your point about evicting descendants being costly. Is it really because it is bounded? You don’t have chains of descendants that can be longer than 25. 
+On your point about evicting descendants being costly. Is it really because it is bounded? You don’t have chains of descendants that can be longer than 25.
 
-It is not bounded because you can do it over and over again. 
+It is not bounded because you can do it over and over again.
 
 Every time you are still increasing the package of the ancestors. That on its own will eventually confirm. You will have paid for something.
 
@@ -388,7 +388,7 @@ The question is how much of a blowup compared to current relay cost are you doin
 
 That is something that should be easy to compute. I can try to have a look at it before London. I will discuss this with folks who will be in London.
 
-I will start to review Eugene’s zero conf thing. People can ping on the issue once they have that ready for interop. Then maybe by a meeting or two from now I will have some Taproot PTLC stuff ready and make t-bast’s [gist](https://github.com/t-bast/lightning-docs/blob/master/taproot-updates.md) a little more concrete. 
+I will start to review Eugene’s zero conf thing. People can ping on the issue once they have that ready for interop. Then maybe by a meeting or two from now I will have some Taproot PTLC stuff ready and make t-bast’s [gist](https://github.com/t-bast/lightning-docs/blob/master/taproot-updates.md) a little more concrete.
 
-I don’t know if anyone replied to the [gossip thing](https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html) I threw out there. I did promise last meeting I’d put some meat on that proposal. It is still way off. 
+I don’t know if anyone replied to the [gossip thing](https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html) I threw out there. I did promise last meeting I’d put some meat on that proposal. It is still way off.
 

@@ -71,7 +71,7 @@ So what does the library have? It has some of the basic data structures you’d 
 
 # Mutable vs immutable data structures
 
-In python-bitcoinlib there is a distinction between mutable data structures and immutable data structures. This is a little odd because Python is generally considered to be not the right language to use if you want to preserve memory correctness which you generally want to do when you are dealing with Bitcoin. The theory behind this is if you are going to handle transaction data in Python or any other language, at least you want to try to mark which ones are final and aren’t going to be modified. In python-bitcoinlib that is `CMutableTransaction` and `CTransaction` is the immutable version. Whereas if you create a `CTransaction` and you initialize the data structure with a list of transaction inputs and a list of transaction outputs, the `CTransaction` type is not going to allow you to add extra inputs because theoretically you have already defined the transaction. The transaction should not be able to be updated after that point. 
+In python-bitcoinlib there is a distinction between mutable data structures and immutable data structures. This is a little odd because Python is generally considered to be not the right language to use if you want to preserve memory correctness which you generally want to do when you are dealing with Bitcoin. The theory behind this is if you are going to handle transaction data in Python or any other language, at least you want to try to mark which ones are final and aren’t going to be modified. In python-bitcoinlib that is `CMutableTransaction` and `CTransaction` is the immutable version. Whereas if you create a `CTransaction` and you initialize the data structure with a list of transaction inputs and a list of transaction outputs, the `CTransaction` type is not going to allow you to add extra inputs because theoretically you have already defined the transaction. The transaction should not be able to be updated after that point.
 
 (From slide - Unlike the Bitcoin Core codebase this distinction also applies to `COutPoint`, `CTxIn`, `CTxOut` and `Cblock`. This is helpful for preventing mutation of transaction data in memory throughout a Python application but this is not Python’s superpower.)
 
@@ -81,7 +81,7 @@ Also Bitcoin Core shows transaction and block hashes as little endian hex and ev
 
 `x` is the function for big endian hex to bytes. Since it is used so often it had a one letter name. This is really terrible if you are in the habit of using one letter abbreviations for names for your variables when you are doing rapid prototyping or testing. Just be aware that `x` is actually a function.
 
-Similarly there is a function which is `lx` little endian hex to bytes. Or `b2lx` which is bytes to little endian hex and `b2x` which is bytes to big endian hex. 
+Similarly there is a function which is `lx` little endian hex to bytes. Or `b2lx` which is bytes to little endian hex and `b2x` which is bytes to big endian hex.
 
 # Other stuff in python-bitcoinlib
 
@@ -89,7 +89,7 @@ The library helps you use both testnet and mainnet. The way it does that is swit
 
 # RPC
 
-There is a RPC library for communicating with Bitcoin nodes, in particular Bitcoin Core. I have often found that I’ve needed to write a wrapper around the RPC connection function especially if you ever use this in a high volume environment where you are rapidly in succession querying the Bitcoin Core RPC. There is a RPC thread limit and sometimes you need to refresh the connections. Often I write a decorator around this RPC make-connection or any other RPC call to refresh the connection in the event that an error like that occurs. One interesting thing to note here is that when you are developing an application that uses Bitcoin Core you should be careful not to treat Bitcoin Core as a database because it is really not a database. Even though some of the RPC interfaces used to pretend it was, especially around accounts. Accounts were a good example because if you issue a RPC command to change an accounts, I guess a benign one would be to change an account’s name or something, it is not really a transactional interface like you would with a Postgres database. In the event that other things in your software stack have failed you would have to manually go back and fix all the things that you’ve told Bitcoin Core to do. There is no transactional atomicity guarantees. 
+There is a RPC library for communicating with Bitcoin nodes, in particular Bitcoin Core. I have often found that I’ve needed to write a wrapper around the RPC connection function especially if you ever use this in a high volume environment where you are rapidly in succession querying the Bitcoin Core RPC. There is a RPC thread limit and sometimes you need to refresh the connections. Often I write a decorator around this RPC make-connection or any other RPC call to refresh the connection in the event that an error like that occurs. One interesting thing to note here is that when you are developing an application that uses Bitcoin Core you should be careful not to treat Bitcoin Core as a database because it is really not a database. Even though some of the RPC interfaces used to pretend it was, especially around accounts. Accounts were a good example because if you issue a RPC command to change an accounts, I guess a benign one would be to change an account’s name or something, it is not really a transactional interface like you would with a Postgres database. In the event that other things in your software stack have failed you would have to manually go back and fix all the things that you’ve told Bitcoin Core to do. There is no transactional atomicity guarantees.
 
 (From slide - I have often found myself using the `_call` helper. I have often needed to write a wrapper around the make-new-RPC-connection function so that when RPC commands are called, a new RPC connection is established regardless of whether the connection is stale. Bitcoin Core RPC isn’t what you think it is (this is not database software with transactional capability or integrity guarantees) FakeBitcoinProxy class (available in a pull request) helps make unit tests without running bitcoind (mocks of bitcoin RPC)
 
@@ -139,7 +139,7 @@ Line 70, you have already created the transaction earlier at the top line of thi
 
 # Example: Spend p2pkh UTXO (5/5)
 
-Then we can verify that the scriptSig works based off of the scriptPubKey for that input. 
+Then we can verify that the scriptSig works based off of the scriptPubKey for that input.
 
 `VerifyScript(txin.scriptSig, txin_scriptPubKey, tx, 0, (SCRIPT_VERIFY_P2SH,))`
 
@@ -149,7 +149,7 @@ In python-bitcoinlib it will just fail with a raise an exception. I’m not goin
 
 # Future improvements (wish list)
 
-Some things notably absent from python-bitcoinlib. If you are going to implement something related to SegWit, don’t, because there is nothing implemented in there to handle SegWit. It is something important to note. It doesn’t have bech32 from BIP 173. It doesn’t have BIP 32 support. It doesn’t support BIP 174 (PSBTs). It doesn’t support output descriptors which I recognize that we haven’t talked about this past two days. There is no generally accepted proposal yet for script v2. Interestingly enough this will probably be called script v1 which is very confusing. That is because Bitcoin script is currently version zero. These guys are laughing over here but it is actually a huge problem. It is very ambiguous. Why is it still using OpenSSL? Who knows? In general for signing the signature is still going to be correct no matter which of the two libraries you are using. Perhaps an ability to switch out between the two, that would be an interesting project to implement. A simple weekend thing or something. 
+Some things notably absent from python-bitcoinlib. If you are going to implement something related to SegWit, don’t, because there is nothing implemented in there to handle SegWit. It is something important to note. It doesn’t have bech32 from BIP 173. It doesn’t have BIP 32 support. It doesn’t support BIP 174 (PSBTs). It doesn’t support output descriptors which I recognize that we haven’t talked about this past two days. There is no generally accepted proposal yet for script v2. Interestingly enough this will probably be called script v1 which is very confusing. That is because Bitcoin script is currently version zero. These guys are laughing over here but it is actually a huge problem. It is very ambiguous. Why is it still using OpenSSL? Who knows? In general for signing the signature is still going to be correct no matter which of the two libraries you are using. Perhaps an ability to switch out between the two, that would be an interesting project to implement. A simple weekend thing or something.
 
 # That’s all, folks
 
@@ -183,7 +183,7 @@ A - Poor
 
 Q - I think there’s an opportunity if you are into Python, this is a way to get involved in Bitcoin development.
 
-A - Absolutely. In general it is considered a bad idea to use unmaintained code. At the same time there is a collection of work that has been performed here that could be useful. Some of the data structures are quite basic and they are not going to be deprecated. There are bits and pieces that you could probably safely use. Other parts that you should probably stay away from. Unfortunately this requires expertise to tell the difference. 
+A - Absolutely. In general it is considered a bad idea to use unmaintained code. At the same time there is a collection of work that has been performed here that could be useful. Some of the data structures are quite basic and they are not going to be deprecated. There are bits and pieces that you could probably safely use. Other parts that you should probably stay away from. Unfortunately this requires expertise to tell the difference.
 
 Q - If someone is good at Python who could they talk to about reviving this as a maintained project?
 

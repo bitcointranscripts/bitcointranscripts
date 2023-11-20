@@ -1,5 +1,5 @@
 ---
-title: JSON Interface 
+title: JSON Interface
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['lightning', 'c-lightning']
@@ -20,7 +20,7 @@ Ok I have `top` running. We have a plan and we’re going to start from zero. We
 
 `git clone https://github.com/ElementsProject/lightning.git`
 
-As a general rule, with c-lightning we do do releases but it is always more fun to run on master. It should be reasonably stable. I tend to run my nodes on master or pretty close to simply because I like the extra testing. If you’re doing development it is nice to be on master. We’ve got Lightning, it’s master version. 
+As a general rule, with c-lightning we do do releases but it is always more fun to run on master. It should be reasonably stable. I tend to run my nodes on master or pretty close to simply because I like the extra testing. If you’re doing development it is nice to be on master. We’ve got Lightning, it’s master version.
 
 `git describe`
 
@@ -58,7 +58,7 @@ If you look in tmp/l1 it has created a store where it holds all the gossip which
 
 `pstree -p $(cat /tmp/l1/lightning-regtest.pid)`
 
-Here you can see lightningd and there’s lightning_connectd. That’s the one that is responsible for when you ask a connection to come out and when somebody connects in. It sorts out the handshake, who they are and figures out what daemon to hand them to. There’s gossipd which is responsible for all the gossip. It controls routing, it controls gossip about chatting about routing to other nodes and things like pings and stuff all go through gossipd. There’s the hsmd which is the hardware security module that controls all the secrets. It does all the signing, all the cryptographic operations that require knowledge of the secret keys. There is a pay. There is one plugin that we ship by default called pay that implements the pay command which is important. 
+Here you can see lightningd and there’s lightning_connectd. That’s the one that is responsible for when you ask a connection to come out and when somebody connects in. It sorts out the handshake, who they are and figures out what daemon to hand them to. There’s gossipd which is responsible for all the gossip. It controls routing, it controls gossip about chatting about routing to other nodes and things like pings and stuff all go through gossipd. There’s the hsmd which is the hardware security module that controls all the secrets. It does all the signing, all the cryptographic operations that require knowledge of the secret keys. There is a pay. There is one plugin that we ship by default called pay that implements the pay command which is important.
 
 Q - What’s the advantage of using regtest over testnet?
 
@@ -68,7 +68,7 @@ Let’s run lightning-cli now. I’ll just clear out the spam.
 
 `lightning-cli --lightning-dir=/tmp/li getinfo`
 
-I have to tell it what lightning dir to talk to because it will put it in the wrong place by default. This is the information about our node. You can see its ID here, that’s its public key. We have the alias. Each node gets an alias and a color. You can choose those, you can copy other people. There is no security around that at all. The color by default as you can tell is red, green, blue and it is taken from the first three bytes of your ID. We’ve chosen how many peers we have, how many channels which are all zero. The addresses that we advertise to the network, which is currently none. The bindings which is where we’re listening to which is basically ipv4 and ipv6 localhost. The default Lightning port is 9735 which is actually the unicode codepoint for the lightning symbol. That’s the port that we self assign for the Lightning protocol. The version, the block height we’re on, regtest is 333 blocks in, what network we’re on, how many fees we’ve collected. That’s a nice summary of how your node is going. This is going to be really painful to type so let’s create some aliases. 
+I have to tell it what lightning dir to talk to because it will put it in the wrong place by default. This is the information about our node. You can see its ID here, that’s its public key. We have the alias. Each node gets an alias and a color. You can choose those, you can copy other people. There is no security around that at all. The color by default as you can tell is red, green, blue and it is taken from the first three bytes of your ID. We’ve chosen how many peers we have, how many channels which are all zero. The addresses that we advertise to the network, which is currently none. The bindings which is where we’re listening to which is basically ipv4 and ipv6 localhost. The default Lightning port is 9735 which is actually the unicode codepoint for the lightning symbol. That’s the port that we self assign for the Lightning protocol. The version, the block height we’re on, regtest is 333 blocks in, what network we’re on, how many fees we’ve collected. That’s a nice summary of how your node is going. This is going to be really painful to type so let’s create some aliases.
 
 `alias l1=‘lightning-cli —lightning-dir=/tmp/l1`
 
@@ -78,7 +78,7 @@ That’s going to make our life just a little bit easier. We should pimp our nod
 
 `l1 stop`
 
-We will stop our node and we will edit the config file. We might as well tell it that we’re going to be in regtest. We will tell it that we want log-level debug. Log-level debug is really spammy but it is good for trying to figure out what is going on. We’ll also tell it to log into a file rather than spamming our console. 
+We will stop our node and we will edit the config file. We might as well tell it that we’re going to be in regtest. We will tell it that we want log-level debug. Log-level debug is really spammy but it is good for trying to figure out what is going on. We’ll also tell it to log into a file rather than spamming our console.
 
 ```
 echo network=regtest >> /tmp/l1/config
@@ -86,7 +86,7 @@ echo log-level=debug >> /tmp/l1/config
 echo log-file=/tmp/l1/log >> /tmp/l1/config
 echo rgb=ff000 >> /tmp/l1/config
 ```
-Let’s set the color. Anyone have a suggestion for what color they want? Everyone likes red right? All red, no green, no blue. And an alias? Up to 32 bytes, can be UTF-8. Anyone want to type a suggestion for an alias name? Satoshi, ok. Not very original but you win by being first. 
+Let’s set the color. Anyone have a suggestion for what color they want? Everyone likes red right? All red, no green, no blue. And an alias? Up to 32 bytes, can be UTF-8. Anyone want to type a suggestion for an alias name? Satoshi, ok. Not very original but you win by being first.
 
 `echo alias=‘satoshi’ >> /tmp/l1/config`
 
@@ -116,11 +116,11 @@ We’ll watch it fail and it fails because it is by default trying to use the sa
 
 `lightningd —lightning-dir=/tmp/l2 —addr=/tmp/l2/peer`
 
-When something bad happens you’ll see a backtrace like this. These are the things that you usually send on our bugtracker or come to IRC and say “Hey Rusty. Look at this pastebin with the bug that we’ve found.” I found this the other day whilst testing. I am going to briefly show you if you’ve got a bug and you want to chase it down, how we do that. If you remember, we built this with developer options so we can add to this. Then you can tell it what daemon to debug. 
+When something bad happens you’ll see a backtrace like this. These are the things that you usually send on our bugtracker or come to IRC and say “Hey Rusty. Look at this pastebin with the bug that we’ve found.” I found this the other day whilst testing. I am going to briefly show you if you’ve got a bug and you want to chase it down, how we do that. If you remember, we built this with developer options so we can add to this. Then you can tell it what daemon to debug.
 
 `lightningd —lightning-dir=/tmp/l2 —addr=/tmp/l2/peer —dev-debugger=connectd`
 
-What it will do is by default it runs up its own terminal with gdb in it to attach to that daemon just after it has started up. Because Ubuntu tries to be secure you have to do this. 
+What it will do is by default it runs up its own terminal with gdb in it to attach to that daemon just after it has started up. Because Ubuntu tries to be secure you have to do this.
 
 `echo 0 | sudo dd of=/proc/sys/kernel/yarn…..e_scope`
 
@@ -128,7 +128,7 @@ This time gdb will mange to connect. So gdb is connected. It failed for a differ
 
 `rm /tmp/l2/peer`
 
-`lightningd —lightning-dir=/tmp/l2 —addr=/tmp/l2/peer —dev-debugger=connectd` 
+`lightningd —lightning-dir=/tmp/l2 —addr=/tmp/l2/peer —dev-debugger=connectd`
 
 Here we can see it aborted. Here is the line where it aborted, line 997. We can poke around and see what’s wrong. That’s supposed to be false and it’s true. As it happens this is because I used an unsupported option and this is a bug that I have a fix pending for but I deliberately didn’t fix it so that we could look at how you would track down this kind of thing. This allows you to open it in debugger, you can do all kinds of things like look around the source files, go up a level and see what’s being called and stuff like that. In this case the workaround is easy. We do bind address. The reason it is asserting is because it is trying to advertise this address but this is a local address. This should never happen. It is a bug. A bind address does what we want.
 
@@ -142,7 +142,7 @@ There we go, we’ve got a juniorset, that’s our second node.
 
 `l1 getinfo`
 
- We have two nodes now. As you can see l2’s binding address is a local socket there. Now let’s connect them together. We can tell l1 to connect. In order to connect to a node you need to know its keys so you can do a cryptographic handshake. We say connect to that @ the filename which in this case is a local socket rather than an IP address. 
+ We have two nodes now. As you can see l2’s binding address is a local socket there. Now let’s connect them together. We can tell l1 to connect. In order to connect to a node you need to know its keys so you can do a cryptographic handshake. We say connect to that @ the filename which in this case is a local socket rather than an IP address.
 
 `l1 connect 2019-04-07T01:23:19.754Z`
 
@@ -176,7 +176,7 @@ That’s the world’s stupidest plugin. Now let’s stop l1.
 
 `l1 stop`
 
-You can either specify a plugin directory and it will look for everything that is executable that looks like a plugin in that directory and fire it off or you can specify a specific plugin which is what we’ll do here. 
+You can either specify a plugin directory and it will look for everything that is executable that looks like a plugin in that directory and fire it off or you can specify a specific plugin which is what we’ll do here.
 
 `lightningd —lightning-dir=/tmp/l1 —plugin=/tmp/plugin.sh`
 
@@ -188,13 +188,13 @@ It hasn’t done anything yet, that’’s strange. Let’s do pstree.
 
 `pstree`
 
-I’ve got a lot of crap. We told it to dump stuff in plugin.log. It has sent this JSON message to our plugin. Our plugin of course is stupid and doesn’t respond. What will in fact happen is that after 60 seconds it will give up on the plugin and refuse to start. Plugins have to respond to `getmanifest` and `getmanifest` is where the plugin says “Here is what I support.” There’s the failure. plugin.sh failed to respond to `getmanifest` in time and something is badly broken. `getmanifest` should be really fast. We know what it is going to send us for `getmanifest` and we can follow our slightly ridiculous example a little further. We can actually respond to `getmanifest`. We’re going to do this and then abandon this really stupid plugin. 
+I’ve got a lot of crap. We told it to dump stuff in plugin.log. It has sent this JSON message to our plugin. Our plugin of course is stupid and doesn’t respond. What will in fact happen is that after 60 seconds it will give up on the plugin and refuse to start. Plugins have to respond to `getmanifest` and `getmanifest` is where the plugin says “Here is what I support.” There’s the failure. plugin.sh failed to respond to `getmanifest` in time and something is badly broken. `getmanifest` should be really fast. We know what it is going to send us for `getmanifest` and we can follow our slightly ridiculous example a little further. We can actually respond to `getmanifest`. We’re going to do this and then abandon this really stupid plugin.
 
 `vi /tmp/plugin.sh`
 
 We need to get the ID. Every JSON RPC command has an ID. We read whatever they send us until we get an ID line and they go “Ok that’s great I will respond with that ID.” In response to the stuff that it has asked us we tell it what options we support. In this case `dumboption` and what methods we supply and we call it `dumbmethod`. Anything else it sends we put into the log again. Let’s do `--help`.
 
-Here it lists all the options that lightningd takes and you can see down the bottom it has added `dumboption`. It has queried our plugin and our plugin has gone “Yeah we’ve got an option called dumboption.” It gets integrated into the help message. It also adds a new method called `dumbmethod`. 
+Here it lists all the options that lightningd takes and you can see down the bottom it has added `dumboption`. It has queried our plugin and our plugin has gone “Yeah we’ve got an option called dumboption.” It gets integrated into the help message. It also adds a new method called `dumbmethod`.
 
 `l1 dumb method`
 
@@ -224,15 +224,15 @@ We’ve got this little plugin in Python which is probably the easiest way to wr
 
 `vi /tmp/plugin.py`
 
-Basically `from lightning import Plugin` it starts up a plugin and you have these annotators that say what methods you have. That’s the hello method, that’s the documentation. It gets a greeting option and it basically just prints it straight back. Here’s what happens when it initializes, it doesn’t do anything apart from print out hello world. You can also have subscriptions. Subscriptions are basically things that you tell in your manifest, you say “Hey lightningd I want to know when these things happen” and it will call you and notify you. Currently there are connect and disconnect. There are a lot of others coming. It’ll show you what happens when peers connect and you can whatever you want there. We don’t really need those subscriptions, we can delete them. Here’s an option for example `—greeting` defaults to hello and tells you the greeting it should use. You can run `lightningd —greeting`. Anything that you can specify in the command line you can also specify in that config file. Instead of `—greeting` you would just `greeting=config file`. One of the coolest things about Python is you can do this. 
+Basically `from lightning import Plugin` it starts up a plugin and you have these annotators that say what methods you have. That’s the hello method, that’s the documentation. It gets a greeting option and it basically just prints it straight back. Here’s what happens when it initializes, it doesn’t do anything apart from print out hello world. You can also have subscriptions. Subscriptions are basically things that you tell in your manifest, you say “Hey lightningd I want to know when these things happen” and it will call you and notify you. Currently there are connect and disconnect. There are a lot of others coming. It’ll show you what happens when peers connect and you can whatever you want there. We don’t really need those subscriptions, we can delete them. Here’s an option for example `—greeting` defaults to hello and tells you the greeting it should use. You can run `lightningd —greeting`. Anything that you can specify in the command line you can also specify in that config file. Instead of `—greeting` you would just `greeting=config file`. One of the coolest things about Python is you can do this.
 
 ```import threading```
 
-We want to do a web service. We want to provide a web API. I completely cut and pasted this from the really good documentation for Flask. 
+We want to do a web service. We want to provide a web API. I completely cut and pasted this from the really good documentation for Flask.
 
 `app = Flask(_names__)`
 
-Flask is basically a web server inside of Python programs. I turned debugging off. 
+Flask is basically a web server inside of Python programs. I turned debugging off.
 
 `app.debug = False`
 
@@ -242,7 +242,7 @@ Inside our thread when we get emitted we will start the Flask thread as daemon.
 
 `threading.Thread(target=app.run, daemon=True).start()`
 
-That turns it into a web server. Remember we made it executable, we copied it from the hello world thing which is already executable. You can run plugins manually. This is actually how they get done by lightningd. For debugging it is really cool to run them manually. 
+That turns it into a web server. Remember we made it executable, we copied it from the hello world thing which is already executable. You can run plugins manually. This is actually how they get done by lightningd. For debugging it is really cool to run them manually.
 
 Q - Are the processes for plugins running throughout the lifetime of lightningd or are they invoked in a new process each time there’s an event?
 
@@ -252,7 +252,7 @@ Q - Is there anything for community plugins to get rated on trustworthiness?
 
 A - There is actually a Lightning plugins [repo](https://github.com/lightningd/plugins) that contains a few plugins that people have written but we haven’t formally gone through as far as doing community vetting for plugins and stuff. That kind of thing will come with more security later on. As things get more sophisticated there will be more vetting of plugins and things. For the moment, you run a plugin, you’ve got like 3 testnet Bitcoin and someone compromises it. That’s ok. We’re still at the reckless phase of Lightning. Obviously caveat emptor. If you’ve got a serious amount of money on your node you should be reading through the plugins if you’re downloading and running. Because you can specify a plugin directory you can just drop them in a plugin directory and in fact there are options you can specify to blacklist particular plugins and not start those up. You can specify multiple directories. I expect there to be a lot of growth in plugins and I expect people from this call to write plugins and go “I can’t do something because there is not a powerful enough API.” So we will add that pretty much on demand.
 
-Let’s run this up manually. In this case we are lightningd invoking our plugin. We need to hand it that string which was the JSON string about `getmanifest`. We need to ask it to `getmanifest`. Here’s one we printed earlier so we’ll just cut and paste that in. There you go. It gave us the manifest. It is telling us everything about itself. Then we need to tell it to init. We also had one of those because we spat out what we got given before. Here we go. It has actually dumped a log, it is actually using the logging stuff to dump a backtrace because obviously I committed a typo somewhere. That was my fault. That thing I cut and pasted in was not the correct value. I fed it a dumboption here which it didn’t say it was interested in so naturally the plugin freaked out. Let’s try that again. Here’s your `getmanifest` call and here is your options call. I will skip the bit that you wouldn’t want and give you that bit. Now Flask printed out some crap and it says it is running on localhost. 
+Let’s run this up manually. In this case we are lightningd invoking our plugin. We need to hand it that string which was the JSON string about `getmanifest`. We need to ask it to `getmanifest`. Here’s one we printed earlier so we’ll just cut and paste that in. There you go. It gave us the manifest. It is telling us everything about itself. Then we need to tell it to init. We also had one of those because we spat out what we got given before. Here we go. It has actually dumped a log, it is actually using the logging stuff to dump a backtrace because obviously I committed a typo somewhere. That was my fault. That thing I cut and pasted in was not the correct value. I fed it a dumboption here which it didn’t say it was interested in so naturally the plugin freaked out. Let’s try that again. Here’s your `getmanifest` call and here is your options call. I will skip the bit that you wouldn’t want and give you that bit. Now Flask printed out some crap and it says it is running on localhost.
 
 `127.0.0.1:5000`
 
@@ -264,7 +264,7 @@ If we run up our plugin now, it should be running.
 
 `lightningd —lightning-dir=/tmp/l1 —plugin=/tmp/plugin.py &`
 
-It seems to be running too which is good. 
+It seems to be running too which is good.
 
 `cat /tmp/l1/log`
 
@@ -277,7 +277,7 @@ Something bad went wrong. Let’s look in our log.
 
 `less /tmp/l1/log`
 
-Here we go. We have got the Python backtrace “name secrets is not defined.” Rusty screwed up and didn’t do the `import secrets` line at the top. That wasn’t the bug I expected to hit. Let’s do that again. This is the bug that I expected to hit. 
+Here we go. We have got the Python backtrace “name secrets is not defined.” Rusty screwed up and didn’t do the `import secrets` line at the top. That wasn’t the bug I expected to hit. Let’s do that again. This is the bug that I expected to hit.
 
 `l1 stop`
 `lightningd —lightning-dir=/tmp/l1 —plugin=/tmp/plugin.py &`
@@ -295,13 +295,13 @@ Let’s do the stop and start dance again.
 `l1 stop`
 `lightningd —lightning-dir=/tmp/l1 —plugin=/tmp/plugin.py &`
 
-This time it was supposed to work. Let me check the logs. I did actually fix this and then I rebooted my machine and lost the fix. 
+This time it was supposed to work. Let me check the logs. I did actually fix this and then I rebooted my machine and lost the fix.
 
 `vi /tmp/plugin.py`
 
 `return invoice[‘bolt11’]`
 
-This returns a struct. We just want the BOLT 11 part of the invoice. 
+This returns a struct. We just want the BOLT 11 part of the invoice.
 
 `l1 stop`
 `lightningd —lightning-dir=/tmp/l1 —plugin=/tmp/plugin.py &`
@@ -314,7 +314,7 @@ Here we can see what currency, timestamp, when it expires, who it pays to which 
 
 `l1 connect 02c3f6c70fa61…/tmp/l2/peer`
 
- Let’s get an address from l2. 
+ Let’s get an address from l2.
 
 `l2 newaddr`
 
@@ -332,7 +332,7 @@ There we go. We get it to generate something. Now if we do list funds. After l2 
 
 `l2 getinfo`
 
-There we go, cool. We’ve got a confirmed payment, the value in millisatoshi is a crap load because it is 10 Bitcoin. Now l2 has funds. l2 needs to fund the channel. 
+There we go, cool. We’ve got a confirmed payment, the value in millisatoshi is a crap load because it is 10 Bitcoin. Now l2 has funds. l2 needs to fund the channel.
 
 `l2 fundchannel 02e20e8b7058…. 0.042btc`
 
@@ -372,9 +372,9 @@ A - Yes. This was always something that we wanted to do. For those not familiar,
 
 Q - .NET Core run on Linux?
 
-A - Yes. .NET Core can definitely run on Linux. You could do C\# on Linux. It is just a question of it wasn’t the most popular language for people to use on Linux. That is why there’s no C\# plugin. It would be pretty easy to write. If you can speak JSON you handle those bits, you handle the registration for them and it is pretty easy. It is pretty easy to write in any language natively but it is nice if you’ve got a library that does all that infrastructure for you and registers your options and does all that stuff rather than having to do it manually. 
+A - Yes. .NET Core can definitely run on Linux. You could do C\# on Linux. It is just a question of it wasn’t the most popular language for people to use on Linux. That is why there’s no C\# plugin. It would be pretty easy to write. If you can speak JSON you handle those bits, you handle the registration for them and it is pretty easy. It is pretty easy to write in any language natively but it is nice if you’ve got a library that does all that infrastructure for you and registers your options and does all that stuff rather than having to do it manually.
 
 Q - Thank you so much Rusty. This was fantastic. If people want to reach out to you and ask you more questions where they can find you?
 
-A - \@rusty_twit on Twitter is usually the best way of doing it. We also hang out on both the \#lightning-dev and \#c-lightning IRC channels on Freenode. \#lightning-dev is generally for general Lightning development discussion and protocol discussion and \#c-lightning is specifically for c-lightning questions. Of course my email is pretty easy to Google as well. rusty at blockstream.com or rusty at rustcorp.com.au. 
+A - \@rusty_twit on Twitter is usually the best way of doing it. We also hang out on both the \#lightning-dev and \#c-lightning IRC channels on Freenode. \#lightning-dev is generally for general Lightning development discussion and protocol discussion and \#c-lightning is specifically for c-lightning questions. Of course my email is pretty easy to Google as well. rusty at blockstream.com or rusty at rustcorp.com.au.
 

@@ -84,7 +84,7 @@ James: We need to... we should not make a Bitcoin congress with 1000 individuals
 
 Q: I am new to Bitcoin. I am from China. I would like to ask, what percentage of Bitcoin is mining in the United States? Since you assume that China has been colluding, and that it's a large community, then what about the United States?
 
-James: Like the USSR vs the US and we will both make enormous missiles? So maybe the US would buy equally? We don't know those numbers. We don't know who's mining where. We don't know if the American miners are controlled by the Chinese. You cannot decentralize hardware. You can decentralize people, not hardware. 
+James: Like the USSR vs the US and we will both make enormous missiles? So maybe the US would buy equally? We don't know those numbers. We don't know who's mining where. We don't know if the American miners are controlled by the Chinese. You cannot decentralize hardware. You can decentralize people, not hardware.
 
 Why are people not hardware?
 

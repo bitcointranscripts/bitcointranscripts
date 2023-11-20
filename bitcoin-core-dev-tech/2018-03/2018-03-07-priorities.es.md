@@ -1,5 +1,5 @@
 ---
-title: Prioridades 
+title: Prioridades
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
@@ -9,7 +9,7 @@ aliases: ['/bitcoin-core-dev-tech/2018-03-07-priorities.es/']
 
 <https://twitter.com/kanzure/status/972863994489901056>
 
-# Prioridades 
+# Prioridades
 
 Vamos a esperar hasta que BlueMatt esté aquí. Nadie sabe cuáles son sus prioridades. Dice que podría llegar alrededor del mediodía.
 

@@ -1,5 +1,5 @@
 ---
-title: Bitcoin como nueva institución de mercado 
+title: Bitcoin como nueva institución de mercado
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

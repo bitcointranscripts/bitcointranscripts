@@ -1,5 +1,5 @@
 ---
-title: What Am I Working On 
+title: What Am I Working On
 transcript_by: Michael Folkson
 speakers: ['Andrew Chow']
 tags: ['wallet']

@@ -1,5 +1,5 @@
 ---
-title: Activación de Taproot 
+title: Activación de Taproot
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
@@ -17,7 +17,7 @@ Aaron van Wirdum Aaron van Wirdum en Bitcoin Magazine sobre el BIP 8, el BIP 9 o
 
 David Harding sobre las propuestas de activación de Taproot: https://gist.github.com/harding/dda66f5fd00611c0890bdfa70e28152d
 
-# Introducción 
+# Introducción
 
 Aaron van Wirdum (AvW): Eric, Luke bienvenido. Feliz Día de la Independencia de Bitcoin. ¿Cómo están?
 

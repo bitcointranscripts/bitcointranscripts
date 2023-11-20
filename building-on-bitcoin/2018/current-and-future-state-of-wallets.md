@@ -144,7 +144,7 @@ Q: Correct. Thank you.
 
 Q: I don't want to bash bip158... but I'm enough of a geek to want a full node, but I'm enough of a normal guy that I don't want my phone to be cluttered with stuff. At the end of the day, I don't have battery. I think the industry is going to that direction because people are holding email on the cloud, they are putting everything on the cloud. What is your opinion with the current situation that that would be imroved, where for example, in red, you can choose  to-- whatever node is available, or you can manually enter your full node at home. That way, I would go towards a box that you were talking about.
 
-A: Ithink connecting to a known node that you run, I think that makes sense. Most people just use a tcp raw socket. Some people say do a ssh tunnel on iOS, but the problem is that it doesn't work. Is Tor reliable in the long-term? Do we have reliable alternatives to Tor? 
+A: Ithink connecting to a known node that you run, I think that makes sense. Most people just use a tcp raw socket. Some people say do a ssh tunnel on iOS, but the problem is that it doesn't work. Is Tor reliable in the long-term? Do we have reliable alternatives to Tor?
 
 Q: You were talking about a hardware device of the future. It has to have enough storage space for a full node... and maybe 5g connection to quickly download the whole blockchain.. and you can trust it. How did you imagine that working? So it connects to a tunnel to your node at home or something? Do you think it's... will it be possible to have a small device with enough connection and space?
 

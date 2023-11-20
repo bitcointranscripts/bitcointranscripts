@@ -1,5 +1,5 @@
 ---
-title: Intro to W3 Blockchain Workshop 
+title: Intro to W3 Blockchain Workshop
 transcript_by: Bryan Bishop
 categories: ['workshop']
 speakers: ['Doug Schepers']

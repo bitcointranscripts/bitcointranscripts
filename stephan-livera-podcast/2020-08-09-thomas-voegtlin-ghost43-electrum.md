@@ -1,5 +1,5 @@
 ---
-title: Electrum 
+title: Electrum
 transcript_by: Michael Folkson
 categories: ['podcast']
 date: 2020-08-09
@@ -229,7 +229,7 @@ G43: I think there are two large points here. One is how you would back up and r
 
 SL: The PSBT approach seems to be supported by many different wallet software and hardware. That’s the spending part. I guess it’s just the backups part where there needs to be some sort of standard that people kind of form up on. Thomas, I know we spoke about this on the earlier episode, currently many hardware wallets are using BIP39 style mnemonic seeds and Electrum has its own seed style. For some users that could be confusing. They are often taught they only need the first four letters of each word to be able to recover that wallet. It can be confusing if there’s multiple word sets. I’m wondering whether your thoughts have changed on that, the comparison of the different seed types and whether you would go to a BIP39 style seed.
 
-TV: We would need to get rid of our old word list if we wanted to have this four letters disambiguation. I don’t know if we can do that yet. Maybe we could disable it by default but some users would be confused. The big problem we have is that when BIP39 was published it was a standard that collided with existing Electrum seeds. Because both use English words they have words in common. The old Electrum seeds could be in some cases valid BIP39 seeds. 
+TV: We would need to get rid of our old word list if we wanted to have this four letters disambiguation. I don’t know if we can do that yet. Maybe we could disable it by default but some users would be confused. The big problem we have is that when BIP39 was published it was a standard that collided with existing Electrum seeds. Because both use English words they have words in common. The old Electrum seeds could be in some cases valid BIP39 seeds.
 
 G43: You’re talking about word lists but the word list is just one small part of a seed scheme. Regarding the word list there are currently two English Electrum word lists. The one we used at the very beginning which is used by so called old type seeds for Electrum. Since version 2 when the current seed scheme was introduced for Electrum, these modern seeds have been using the same word list as the BIP39 English word list. The current scheme is independent completely of the word list. Technically to decode a seed you don’t even need the word list. The word list is simply used to generate seeds that contain English words but the current Electrum scheme for the seeds is completely independent of any language or words, it just uses Unicode characters.
 
@@ -301,7 +301,7 @@ G43: First of all if you want to contribute you should come to the IRC channel o
 
 TV: I’m very happy with the approach where people propose a pull request for an issue that has been annoying them. That’s the best capital allocation in terms of programming time. People usually start contributing because they see an issue that we do not see. That’s very important. I think that’s also how you started to work on Electrum. Ghost, you were fixing an issue that was annoying you. Most of the time we receive a pull request, it is something that is not so important for us but it is important for someone so they propose to fix it. That’s very good because it increases the number of viewpoints on the software.
 
-G43: Even if someone wanted to implement a completely new feature they can go for it. I just mentioned Payjoin, if someone said that they were interested in implementing Payjoin for Electrum then great. We would give all the help and could discuss the possible approaches and what modifications would be needed for the code. They would maybe not do the whole thing but some prototype that sort of works. 
+G43: Even if someone wanted to implement a completely new feature they can go for it. I just mentioned Payjoin, if someone said that they were interested in implementing Payjoin for Electrum then great. We would give all the help and could discuss the possible approaches and what modifications would be needed for the code. They would maybe not do the whole thing but some prototype that sort of works.
 
 TV: We talked about Payjoin earlier because it seems kind of easy to do now.
 

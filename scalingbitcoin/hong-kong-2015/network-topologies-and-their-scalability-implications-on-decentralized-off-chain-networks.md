@@ -43,7 +43,7 @@ There are greater on-chain efficiencies, but higher off-chain costs, related to 
 
 Q: That was pretty interesting. One question I did have about what you mentioned in the beginning, about the over-arching of where Bitcoin should be in the long-term. What are your thoughts on, if miner rewards go to zero, and transaction fees don't go up-- what if miners are paid only by US dollar appreciation of BTC? So price should increase assuming the usage of bitcoin and demand will sort of static.
 
-A: That's a possibility, but how many people do you see today mining at a loss? 
+A: That's a possibility, but how many people do you see today mining at a loss?
 
 Q: The price is where it is today, because miners are selling 50 BTC per block. If they can only sell 25 BTC per block, that it would maybe double. The price might appreciate.
 

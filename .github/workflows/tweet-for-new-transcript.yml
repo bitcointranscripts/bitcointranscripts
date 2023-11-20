@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v3
       - id: transcript
         # This script extracts the neccessary data from the file's metadata
-        # to construct the tweet. It replaces names with twitter handles when 
+        # to construct the tweet. It replaces names with twitter handles when
         # they are available in `twitter_handles.json`
         name: Extract transcript details
         if: |

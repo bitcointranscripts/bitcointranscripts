@@ -189,7 +189,7 @@ Our main idea of communication scaling is to use erasure codes to reduce the dat
 
 The main claim is that we have a new algorithm for erasure coding-- it's not just a regular erasure code, it's a new algorithm called a Coded Merkle Tree. A merkle tree is a mechanism to commit to a bunch of data, but a coded merkle tree is very similar to a merkle tree in that it has hierarchy but it has erasure encoding embedded in the various layers. With a coded merkle tree, we can achieve not only the few bits that you download, but also if you look at the third column here it's called the coding-fraud proof size. The size of the proof to prove fraud is actually small compared to other codes. There was another code constructed by Vitalik Buterin and others called "Fraud and data availability proofs" paper in 2018.
 
-I am not going to explain the construction of our erasure code, but I do want to point out that the coded merkle tree looks like a merkle tree but at each level there is coding and interleaving in order to construct... 
+I am not going to explain the construction of our erasure code, but I do want to point out that the coded merkle tree looks like a merkle tree but at each level there is coding and interleaving in order to construct...
 
 
 

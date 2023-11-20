@@ -1,5 +1,5 @@
 ---
-title: La falacia de la moneda de reserva 
+title: La falacia de la moneda de reserva
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferenciae']

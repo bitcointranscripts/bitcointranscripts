@@ -1,5 +1,5 @@
 ---
-title: Silent Payments and Alternatives 
+title: Silent Payments and Alternatives
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 speakers: ['Ruben Somsen']

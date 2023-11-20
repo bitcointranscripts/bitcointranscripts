@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -39,25 +39,25 @@ And we already do that. There is the datastore API which is there to allow plugi
 
 <https://github.com/ElementsProject/lightning/pull/4980>
 
-I have been working on making our remote procedure call interface actually remote and no longer a huge misnomer. To do that I set myself a task of writing a plugin in Rust that on the one side talks JSON-RPC with a Lightning daemon. For those who don’t know that is going through a UNIX domain socket and can therefore only be accessed locally. We should probably call it LPC, Local Procedure Call. On the other side of the plugin we are going to talk gRPC with mTLS authentication initially with the goal to have eventually more fine-grained access control using Rusty’s [runes](https://github.com/rustyrussell/runes) project. This itself is a reimagining of macaroons. I already did this kind of plugin for Greenlight. It is not something that I could just lift and shift. The methods that we implement on the JSON-RPC side and we expose on the gRPC side need to be mapped. For Greenlight I did that manually because we currently only expose a subset of that. For the full c-lightning API that was way more work than I was willing to do. We now have a generator that takes the JSON schemas, they represent the structure and are used to verify that our responses from the JSON-RPC are well structured and match our expectations. We generate the reading side of these RPCs from those. We have a JSON stream on one side, we get structs out on the other side. We have a translation layer which takes the JSON formatted data and writes them into gRPC formatted data. The conversion is a bit more complex because on the JSON side we cannot have binary strings. Everything is hex encoded. On the gRPC side we can actually use binary strings which is much more performant. Then we also use the JSON-RPC schema to generate the gRPC scheme. This looks a bit weird. Which is why I have a tiny little [drawing](https://hackmd.io/5rtG-VJ6Rh-3mtKq1JZJtQ) here that I’d like to share. There are a couple of conversions. One of the important things that I did over the last couple of days was write a generator that will take the JSON-RPC files and extract and generate all of the surrounding code. It can get a bit weird. This image helped me order my thoughts. Ultimately we should have a RPC that is modern, can be granularly instrumented and authorizations can be given out in a very granular fashion. It should become the de facto standard for our networked RPC. Once we have these generators there is really nothing that prevents us from also generating a REST RPC for example or a GraphQL RPC. This is the first step and I’m hoping that we can use these derived things over time and extend the RPC that way. Otherwise I have mostly been doing small stuff, assisting Rusty in shepherding issues and pull requests through CI. Hopefully we can get to a publishable state pretty soon. 
+I have been working on making our remote procedure call interface actually remote and no longer a huge misnomer. To do that I set myself a task of writing a plugin in Rust that on the one side talks JSON-RPC with a Lightning daemon. For those who don’t know that is going through a UNIX domain socket and can therefore only be accessed locally. We should probably call it LPC, Local Procedure Call. On the other side of the plugin we are going to talk gRPC with mTLS authentication initially with the goal to have eventually more fine-grained access control using Rusty’s [runes](https://github.com/rustyrussell/runes) project. This itself is a reimagining of macaroons. I already did this kind of plugin for Greenlight. It is not something that I could just lift and shift. The methods that we implement on the JSON-RPC side and we expose on the gRPC side need to be mapped. For Greenlight I did that manually because we currently only expose a subset of that. For the full c-lightning API that was way more work than I was willing to do. We now have a generator that takes the JSON schemas, they represent the structure and are used to verify that our responses from the JSON-RPC are well structured and match our expectations. We generate the reading side of these RPCs from those. We have a JSON stream on one side, we get structs out on the other side. We have a translation layer which takes the JSON formatted data and writes them into gRPC formatted data. The conversion is a bit more complex because on the JSON side we cannot have binary strings. Everything is hex encoded. On the gRPC side we can actually use binary strings which is much more performant. Then we also use the JSON-RPC schema to generate the gRPC scheme. This looks a bit weird. Which is why I have a tiny little [drawing](https://hackmd.io/5rtG-VJ6Rh-3mtKq1JZJtQ) here that I’d like to share. There are a couple of conversions. One of the important things that I did over the last couple of days was write a generator that will take the JSON-RPC files and extract and generate all of the surrounding code. It can get a bit weird. This image helped me order my thoughts. Ultimately we should have a RPC that is modern, can be granularly instrumented and authorizations can be given out in a very granular fashion. It should become the de facto standard for our networked RPC. Once we have these generators there is really nothing that prevents us from also generating a REST RPC for example or a GraphQL RPC. This is the first step and I’m hoping that we can use these derived things over time and extend the RPC that way. Otherwise I have mostly been doing small stuff, assisting Rusty in shepherding issues and pull requests through CI. Hopefully we can get to a publishable state pretty soon.
 
-This brings me to Rusty’s update. Rusty has been pretty much in the refactoring hell. He is reworking the way that we communicate with our peer. What we have had so far is when we have an incoming connection we take this connection, we hand it around to different daemons depending on what life stage we are in for the channel. It starts off at openingd, then it goes to channeld, then it goes to closingd and then it goes to onchaind. There never is a fixed daemon where you can talk to a peer. It might be in different stages. That is what has prevented us from having multiple channels per connection or per peer in the past. You could have two channels that are in opening and the other one is already in closing. To which one are you talking? To which one do you give the file descriptor? What Rusty is doing is he extracted all of this into connectd, connectd being the daemon that takes care of talking to the peer. Everybody else just tells connectd what to say to it. That has surfaced a couple of regressions that we didn’t expect. We did expect some regressions but we didn’t expect these specific regressions. We have mostly been working towards fixing those regressions. Currently it is looking very nice and we should get to a publishable state soon. I’m not complaining because that gives me more time to work on my nice RPC of course. 
+This brings me to Rusty’s update. Rusty has been pretty much in the refactoring hell. He is reworking the way that we communicate with our peer. What we have had so far is when we have an incoming connection we take this connection, we hand it around to different daemons depending on what life stage we are in for the channel. It starts off at openingd, then it goes to channeld, then it goes to closingd and then it goes to onchaind. There never is a fixed daemon where you can talk to a peer. It might be in different stages. That is what has prevented us from having multiple channels per connection or per peer in the past. You could have two channels that are in opening and the other one is already in closing. To which one are you talking? To which one do you give the file descriptor? What Rusty is doing is he extracted all of this into connectd, connectd being the daemon that takes care of talking to the peer. Everybody else just tells connectd what to say to it. That has surfaced a couple of regressions that we didn’t expect. We did expect some regressions but we didn’t expect these specific regressions. We have mostly been working towards fixing those regressions. Currently it is looking very nice and we should get to a publishable state soon. I’m not complaining because that gives me more time to work on my nice RPC of course.
 
 rust-lightning (LDK) has done a lot of work in terms of language bindings for Rust. How does it compare building bindings for other languages from C to what they are doing on rust-lightning?
 
-There we are talking about different bindings. These are the bindings that we use for our RPC interface. I think when rust-lightning is talking about bindings they are talking much more about having a C API that they can compile into their own apps. Whereas this is inter daemon communication or daemon with plugin or daemon with front end. The C API that rust-lightning is building is most likely to be consumed by a binary directly. For example if you are building a Java application or an Android application you will most likely be using GNI to talk to rust-lightning instead of some other Java code. I think they are referring to that. Whereas this is mostly inter daemon and inter process communication. We have a connection or a file descriptor where we write stuff out. 
+There we are talking about different bindings. These are the bindings that we use for our RPC interface. I think when rust-lightning is talking about bindings they are talking much more about having a C API that they can compile into their own apps. Whereas this is inter daemon communication or daemon with plugin or daemon with front end. The C API that rust-lightning is building is most likely to be consumed by a binary directly. For example if you are building a Java application or an Android application you will most likely be using GNI to talk to rust-lightning instead of some other Java code. I think they are referring to that. Whereas this is mostly inter daemon and inter process communication. We have a connection or a file descriptor where we write stuff out.
 
 So a bit more internal, a bit more closer to the core?
 
-rust-lightning, yes. What you have on rust-lightning is C function calls that you can call from any client code. But they are residing in the same process. Whereas these protocols that I’m writing are more for inter process communication. I have done some Rust bindings myself for Greenlight, for the client side, and it is a very nice thing to do. So much more comfortable than writing C files yourself. That’s the way to go. 
+rust-lightning, yes. What you have on rust-lightning is C function calls that you can call from any client code. But they are residing in the same process. Whereas these protocols that I’m writing are more for inter process communication. I have done some Rust bindings myself for Greenlight, for the client side, and it is a very nice thing to do. So much more comfortable than writing C files yourself. That’s the way to go.
 
 # Individual updates
 
-I’ve been mostly working on the Spark wallet. I’ve [added](https://github.com/shesek/spark-wallet/pull/194) the web socket option in the Electron build. For the web build I will have to set up a proxy because browsers hate unsecured connections. The immediate next step is to add the QR code option in the Electron build so that the user can just scan the QR code and connect to the node, get read only access to the node. I had a brief meeting with Rusty this morning, we will be using the runes library, I don’t know much about that. I will have to read through it. I’ll be writing a plugin similar to the Sparko plugin so I can get information of the node through web socket to the wallet. Present all the information on the wallet through web socket. 
+I’ve been mostly working on the Spark wallet. I’ve [added](https://github.com/shesek/spark-wallet/pull/194) the web socket option in the Electron build. For the web build I will have to set up a proxy because browsers hate unsecured connections. The immediate next step is to add the QR code option in the Electron build so that the user can just scan the QR code and connect to the node, get read only access to the node. I had a brief meeting with Rusty this morning, we will be using the runes library, I don’t know much about that. I will have to read through it. I’ll be writing a plugin similar to the Sparko plugin so I can get information of the node through web socket to the wallet. Present all the information on the wallet through web socket.
 
-So runes are nothing to be scared of. They are just bearer tokens. They are just a string of text that never changes. You send it over as http headers usually when you are talking http. Definitely something that you’ll be able to do. 
+So runes are nothing to be scared of. They are just bearer tokens. They are just a string of text that never changes. You send it over as http headers usually when you are talking http. Definitely something that you’ll be able to do.
 
-I think Michael (Schmoock) has got a PR still open on the Spark wallet from December 2020. 
+I think Michael (Schmoock) has got a PR still open on the Spark wallet from December 2020.
 
 I messaged shesek on Twitter.
 
@@ -65,21 +65,21 @@ I am working on finalizing the remote address lookup support which is looking go
 
 Why don’t we need a port when we do domain lookups?
 
-The NAT public IP discovery thing. What we now do is the peer that is getting an inbound connection is reporting back the connection to the remote. “I heard you on this public address with this source port”. The source port obviously isn’t very useful to either one. It could have been removed from the proposal but then we have to redeclare the data structure because currently it is the same data structure as in the node announcement. We just reuse it. Sebastian said it is ok to have it in there, no problem. In theory if we are very pedantic we don’t need this. We would redeclare and transmit without the port. In practice, maybe in the future someone will have some use for this. I don’t know, not sure. You could comment in the RFC if you want it or not. 
+The NAT public IP discovery thing. What we now do is the peer that is getting an inbound connection is reporting back the connection to the remote. “I heard you on this public address with this source port”. The source port obviously isn’t very useful to either one. It could have been removed from the proposal but then we have to redeclare the data structure because currently it is the same data structure as in the node announcement. We just reuse it. Sebastian said it is ok to have it in there, no problem. In theory if we are very pedantic we don’t need this. We would redeclare and transmit without the port. In practice, maybe in the future someone will have some use for this. I don’t know, not sure. You could comment in the RFC if you want it or not.
 
-I wonder if it can be used to detect NAT devices in between, if the source port changed there is a NAT device. 
+I wonder if it can be used to detect NAT devices in between, if the source port changed there is a NAT device.
 
 Yes, absolutely. In my opinion we go with the source port and everybody knows it is the source and not the listening port. Maybe some smart guy in the future has a better idea how to use this field. Apart from this it is almost done. Our first PR in our code will have the experimental flag and the first version will likely just log the information. I will open up another PR which will then use this information in several ways. To get this decoupled from the RFC and the cross compatibility testing I want the network layer feature without utilizing this field. That can be in another PR.
 
 The source port doesn’t really hurt there. It is not like it is gossip. It doesn’t have to be stored by everybody. It is just a P2P message. Spending too much time on efficiency there is probably not a good use of your time.
 
-It is just 2 bytes. 
+It is just 2 bytes.
 
 Times each connection and both directions. When we switch to 128 bit ports…
 
 Is that planned?
 
-Once we go to IPv64 yes, I guess (Joke). You can’t really expect the author of IP tables to realize the source port isn’t useful in this protocol. 
+Once we go to IPv64 yes, I guess (Joke). You can’t really expect the author of IP tables to realize the source port isn’t useful in this protocol.
 
 You have to have a port to initialize the connection. Let’s start from there is no Lightning node. When the first two appear how do they communicate? They have to know something, how to reach each other.
 
@@ -91,11 +91,11 @@ This bootstrapping problem is something that we’ve known in literature for the
 
 Let’s use Twitter (Joke).
 
-You need to have some way of fixing it. There are viruses that solve the bootstrapping problem by doing an exhaustive search of the entire IPv4 space. This also works but it is kind of expensive. 
+You need to have some way of fixing it. There are viruses that solve the bootstrapping problem by doing an exhaustive search of the entire IPv4 space. This also works but it is kind of expensive.
 
 vincenzopalazzo: Before Christmas I opened a PR to introduce compiling and testing on Alpine. I did this on lnprototest with a Docker container, we can reproduce locally without running the CI each time. Also we can maybe solve the problem that Rusty has to reproduce the failure of the CI locally. Maybe we can introduce the Docker image to try to compile for testing. I was reading the PR that Christian made with Rust because I was working with the same idea, take the JSON and create a different model for a different language. I have a problem to abstract because in JSON we miss the comment and you cannot add metadata. I discovered JSON5 that is a version of JSON that admits the comments. I was starting from JSON schema 5, convert with the metadata, convert the model to an intermediate language and after convert to a different type of language, Java, Rust and Go. It is tricky. Maybe Christian will find a solution and I can find a way to add this metadata. In addition I have two questions. One error I found in `listchannels`, I am not able to catch when `listchannels` is not able to find a channel by short channel ID. `listchannels` sees inside the gossip map and the gossip map contains all the channels of the network. If the channel is not there then it means the peer is offline?
 
-The `listchannels` lists all the channels that have had an update in the last 2 weeks. That is our liveness condition. Only the directions for which the update was. We have two channel entries in `listchannels` for each channel, one going in this direction and one going in this direction. We only keep the ones where we’ve had some activity in the last 2 weeks. And of course we only know about the channels that we have seen something from, in this case being the update. 
+The `listchannels` lists all the channels that have had an update in the last 2 weeks. That is our liveness condition. Only the directions for which the update was. We have two channel entries in `listchannels` for each channel, one going in this direction and one going in this direction. We only keep the ones where we’ve had some activity in the last 2 weeks. And of course we only know about the channels that we have seen something from, in this case being the update.
 
 vincenzopalazzo: If I see some activity like payment forwarding in the last 10 days or 24 hours and I don’t find this channel inside the gossip map I have a bug in my code or I am missing something?
 
@@ -133,9 +133,9 @@ No I would probably go from YAML to everything else. The indirection through the
 
 Have you considered API Blueprint?
 
-No. 
+No.
 
-That is a markdown text format. 
+That is a markdown text format.
 
 That is Apiary?
 
@@ -155,13 +155,13 @@ I personally have never run c-lightning on signet. There is something new you ca
 
 I’ve been working on some infrastructure projects since the last meeting. There have been a lot of people testing CLBOSS in the Raspiblitz context, it has been generating a lot of activity. The backup plugin was growing so much, the biggest backup file I’ve seen was 19GB and that is within 2 months. In the next Raspiblitz release there will be an automatic compact backup feature. It takes the backup file down to the size of the actual database which has been shrinking with the release of v0.10.2. I have lnd nodes that have between 5 and 10GB each even after compacting but it seems like c-lightning is more efficient with space. We’ve had a couple of people recovering nodes and channels, the tools are coming together at least in my mind. We are trying to put it into a menu and guide, some presentable things. I am aware that Lisa has been doing a lot of that as well. Regarding infrastructure I’m running on ARM 64 bit Raspberry Pis and Odroids which are 32 bit. I started a project which is Linux on ZFS, I know your recommendation is Btfrs but ZFS seems to be more battle tested to me. For ZFS if you are using an encryption key file that uses a 32 bit secret exactly the same as the `hsm_secret`. I was able to use the HSM tool to regenerate this, make it from the BIP 39 compliant 24 words. That file is encrypting my disk. I could have the same file as the `hsm_secret`. I have a node now that is much more performant than previous ones in virtual machines and Raspberry Pis. I do run various testnet and signet instances but they are not very stable, they are more experimental and blow up from time to time. There is this [Plebnet playground](https://github.com/PLEBNET-PLAYGROUND) which is on GitHub. It is a signet instance, you have to adapt your Bitcoin Core to be on that network, it is not the default signet network of Bitcoin Core. People are very active there, there is a huge amount of routing and scripts running, around 20-40 nodes. They have no c-lightning instances so that would be an interesting thing to join into.
 
-I didn’t know they used a special signet. 
+I didn’t know they used a special signet.
 
 They have all the coins to themselves and they can run their own faucet. There is a [Plebnet wiki](https://plebnet.wiki/wiki/Main_Page).
 
-There is a [video series](https://bitcointv.com/c/bitcoinkindergarten/videos) by Jestopher who has joined us previously, he is working on AMBOSS. He is part of the bitcoinkindergarten community. 
+There is a [video series](https://bitcointv.com/c/bitcoinkindergarten/videos) by Jestopher who has joined us previously, he is working on AMBOSS. He is part of the bitcoinkindergarten community.
 
-You talked about the size of the backup. There is an upcoming feature in 0.10.3. This will be less data consumptive as the backup plugin. 
+You talked about the size of the backup. There is an upcoming feature in 0.10.3. This will be less data consumptive as the backup plugin.
 
 That probably depends. If you have a second sqlite instance running that will consume read and write cycles on your SD cards more quickly than if you had an append only log but it will be smaller yes. I have been looking into writing a sqlite based backup backend as well that should replay all of the operations in the secondary database which could also be remote. Trailing one operation so we can rollback that one which we might be off sync with.
 
@@ -179,7 +179,7 @@ You could connect to a Tor endpoint even if you are only advertising your clearn
 
 That’s why most implementations I guess prefer clearnet when you have both.
 
-It depends on the settings. The Tor nodes of lnd, to a clearnet endpoint they would connect through Tor. Now they have this setting bypassing the proxy which connects to the clearnet endpoints through clearnet bypassing Tor even if the node is advertising a Tor address only. It is a bit of a mess. 
+It depends on the settings. The Tor nodes of lnd, to a clearnet endpoint they would connect through Tor. Now they have this setting bypassing the proxy which connects to the clearnet endpoints through clearnet bypassing Tor even if the node is advertising a Tor address only. It is a bit of a mess.
 
 I have just made the change in my config because I understand what you are saying and it makes sense. I’m not advertising onion anymore because I know that onion things can connect through Tor to my IPv4 address. There is no point for me to advertise onion.
 
@@ -189,7 +189,7 @@ I am advertising IPv4 anyway.
 
 If you have a clearnet endpoint you don’t have anything to hide.
 
-The only thing is at least with our implementation you have to restart the daemon to get the new IP address, maybe we should fix that. I am working on those issues. That is one reason to maybe broadcast Tor, when your software is unable to update its public IP address then maybe Tor is a fallback option. We are using Tor for two reasons. To get around your router and to get around your router. 
+The only thing is at least with our implementation you have to restart the daemon to get the new IP address, maybe we should fix that. I am working on those issues. That is one reason to maybe broadcast Tor, when your software is unable to update its public IP address then maybe Tor is a fallback option. We are using Tor for two reasons. To get around your router and to get around your router.
 
 If only there was a new version of IP that could cover every grain of dust with its own address so we wouldn’t need NAT anymore. I should stop dreaming now.
 
@@ -211,21 +211,21 @@ I’ve been curious on what the plans are there. That is going to blow things wi
 
 It is definitely good to have you look into Minisketch and bring that perspective into that process as well. We can make the best gossip protocol there is.
 
-My background is probably a little different. I am a mechanical engineer by background. Got into electrical, had to spin up some servers and relay information over it so I got into protocols. That’s my background. I am trying to catch up on a lot of the more IT focused aspects. Excited to learn. 
+My background is probably a little different. I am a mechanical engineer by background. Got into electrical, had to spin up some servers and relay information over it so I got into protocols. That’s my background. I am trying to catch up on a lot of the more IT focused aspects. Excited to learn.
 
 # Zero base fee
 
-I can give a brief overview and we can start thinking about this in the future. I have been talking to Rene (Pickhardt) today. He has been doing his research on finding optimal routes in the Lightning Network. One of the complications that we face is that fee function that we are currently using is kind of working against us for having the optimal algorithm for finding this min cost flow. The reason for that is during the reformulations for the calculation of the min cost flow these fall out as remainders and accumulate, basically just mess everything up. You might have heard in the past that especially on Twitter there has been a push for setting the base fee to zero. Let me take one step back and explain what the base fee is and we can see how that would impact it. When we set the fees for our channels to be used we have one part which is fixed, to say “If I forward any amount there is some fixed overhead for whoever I’m forwarding this for so I want to be compensated for that”. And there is a variable part that is proportional to the amount that is being transferred. Taking the aspect that I have made some of my money available for you to forward your payment and so I should be rewarded proportionally to that. Currently we have both the base fee and the proportional fee, they sum up. According to Rene’s research it would be much nicer to have just the proportional size. That brings us to a cost function when we compute flows and paths where everything is proportional to the size of the payment that massively simplifies the computations. For the mathematically inclined the problem when you have the base fee is NP complete. If you don’t have the base fee it is polynomial. The complexity is polynomial which is way more manageable. There are two ways to get to this more malleable, more tractable problem. Those are we all set the base fee to zero, making it drop away in all the computations, or we approximate. We pretend it is zero, it is not going to be a dominant part of the fee that we are going to pay anyway. Let’s set it to zero for the computation and when we have the route we can do the correct computation with the slightly higher fees. The problem is we don’t have any idea of how good this approximation is. Rene is currently working on finding out how good that approximation is. In the meantime he asked us whether it would be possible to set the base fee to zero by default in c-lightning. The idea being that this already would bring the majority of the c-lightning nodes to have this more tractable problem for pathfinding which we could then start using. That’s basically the setup. I don’t have a good answer of what is preferable or what isn’t. It is definitely something that we as a community should decide together. 
+I can give a brief overview and we can start thinking about this in the future. I have been talking to Rene (Pickhardt) today. He has been doing his research on finding optimal routes in the Lightning Network. One of the complications that we face is that fee function that we are currently using is kind of working against us for having the optimal algorithm for finding this min cost flow. The reason for that is during the reformulations for the calculation of the min cost flow these fall out as remainders and accumulate, basically just mess everything up. You might have heard in the past that especially on Twitter there has been a push for setting the base fee to zero. Let me take one step back and explain what the base fee is and we can see how that would impact it. When we set the fees for our channels to be used we have one part which is fixed, to say “If I forward any amount there is some fixed overhead for whoever I’m forwarding this for so I want to be compensated for that”. And there is a variable part that is proportional to the amount that is being transferred. Taking the aspect that I have made some of my money available for you to forward your payment and so I should be rewarded proportionally to that. Currently we have both the base fee and the proportional fee, they sum up. According to Rene’s research it would be much nicer to have just the proportional size. That brings us to a cost function when we compute flows and paths where everything is proportional to the size of the payment that massively simplifies the computations. For the mathematically inclined the problem when you have the base fee is NP complete. If you don’t have the base fee it is polynomial. The complexity is polynomial which is way more manageable. There are two ways to get to this more malleable, more tractable problem. Those are we all set the base fee to zero, making it drop away in all the computations, or we approximate. We pretend it is zero, it is not going to be a dominant part of the fee that we are going to pay anyway. Let’s set it to zero for the computation and when we have the route we can do the correct computation with the slightly higher fees. The problem is we don’t have any idea of how good this approximation is. Rene is currently working on finding out how good that approximation is. In the meantime he asked us whether it would be possible to set the base fee to zero by default in c-lightning. The idea being that this already would bring the majority of the c-lightning nodes to have this more tractable problem for pathfinding which we could then start using. That’s basically the setup. I don’t have a good answer of what is preferable or what isn’t. It is definitely something that we as a community should decide together.
 
 Why don’t we set the proportional fee to zero instead?
 
-I’m not sure that would make it polynomial again. 
+I’m not sure that would make it polynomial again.
 
-Maybe you have to discuss this with Rene. I thought that it was just the fact that we have two variables instead of one. 
+Maybe you have to discuss this with Rene. I thought that it was just the fact that we have two variables instead of one.
 
-No it is that we have a non-linear factor in there. 
+No it is that we have a non-linear factor in there.
 
-I am not a fan of this proposal. There is a reason for the base fee and there is a reason for the proportional fee. The reason is not that somebody wants to earn money, it is more the reason that we have to find out how to cover the risks. Maybe in the future we can talk about how to earn money by this. In theory it has to cover risks and by setting this to zero it disables the ability to cover risk which is problematic. The easiest example one could give is that by having a zero base fee someone can do a flooding attack on your node and just route around with the tiniest minimal amount you can get and pay almost nothing. 
+I am not a fan of this proposal. There is a reason for the base fee and there is a reason for the proportional fee. The reason is not that somebody wants to earn money, it is more the reason that we have to find out how to cover the risks. Maybe in the future we can talk about how to earn money by this. In theory it has to cover risks and by setting this to zero it disables the ability to cover risk which is problematic. The easiest example one could give is that by having a zero base fee someone can do a flooding attack on your node and just route around with the tiniest minimal amount you can get and pay almost nothing.
 
 We do have tools like min HTLC size. You could take the min HTLC size, have your base fee and the proportional fee and hide that base fee in that. You will always get more than base fee plus proportional fee. You’d actually be getting more for larger HTLCs. I am not arguing that we should do that, it is just that as I remember it this nonchalant “We have to do some work that is fixed so we want to get paid for that”, that is something we decided in half a hour back in 2016. There definitely isn’t a big plan behind it.
 
@@ -237,7 +237,7 @@ If you educate the network in a way that zero is the proper value and if you don
 
 Our default is 1 and 1.
 
-In lnd. 
+In lnd.
 
 In c-lightning it is even smaller isn’t it?
 
@@ -245,15 +245,15 @@ It is 1 msat instead of 1 sat. We don’t have to remove the base fee from the s
 
 I always had the idea that a plugin developer would come up with an answer and set the base fee dynamically per channel which hasn’t really happened yet. When too many implementations go for zero then too many routing algorithms will assume zero or filter out the rest and this value will be gone in future. That’s likely what will happen. It will still be there for backward compatibility but effectively nobody would like to choose to change it.
 
-If algorithms choose to ignore the base fee and compute a route without it and then recompute it back in you are actually getting more money than if they were computing correctly. We are actually paying you for sticking to the old protocol. My main thing for a zero base fee right now is that it is almost impossible for us to assign a value to the work that we do for a single forwarding. I have not seen anybody really play with it that much. Most of the algorithms today already make most of their decisions based on the proportional fee. 
+If algorithms choose to ignore the base fee and compute a route without it and then recompute it back in you are actually getting more money than if they were computing correctly. We are actually paying you for sticking to the old protocol. My main thing for a zero base fee right now is that it is almost impossible for us to assign a value to the work that we do for a single forwarding. I have not seen anybody really play with it that much. Most of the algorithms today already make most of their decisions based on the proportional fee.
 
 What’s BlueMatt’s opinion?
 
-He is against it. I think his fear is very much like yours that we lose flexibility and we are taking away options from users. 
+He is against it. I think his fear is very much like yours that we lose flexibility and we are taking away options from users.
 
 One thing about this is almost nobody is earning money on Lightning yet. My node is operating at a loss and I don’t care because I do other stuff. The stuff we decide now will have an effect in the future. If we lose this value and it would be good in future to have this value then we would have a problem.
 
-Then we’d reintroduce it. 
+Then we’d reintroduce it.
 
 You are more on the side to drop the base fee?
 
@@ -261,17 +261,17 @@ I am undecided, I would like to move the discussion forward. I do feel that Rene
 
 This is just implementation level? It is just an implementation choice. Surely it is a c-lightning developer, contributor choice and that’s the entirety of it?
 
-We should still make sure it makes sense at a network wide level and that we aren’t going against the desires of our users by dropping the Easter egg into their laps. It is part of a longer discussion if we want to switch over to a min cost flow based routing computation rather than our current iterated Dijkstra. 
+We should still make sure it makes sense at a network wide level and that we aren’t going against the desires of our users by dropping the Easter egg into their laps. It is part of a longer discussion if we want to switch over to a min cost flow based routing computation rather than our current iterated Dijkstra.
 
 Do you see a non-proportional amount of risk to a forwarding? A risk to lose money or HTLC fails, you have to close a channel, certain fees apply. Is there a non-proportional part or is it mostly non-proportional?
 
-It depends on the threat model you have. If it is a purposeful attack and you have an attacker that is motivated to try to ruin you they can just use hodl invoices to not pay any fee and still give you the bad effects. That is very much non-proportional but also pretty meaningless to consider because no matter what parameters we have there we won’t counter that kind of attack. 
+It depends on the threat model you have. If it is a purposeful attack and you have an attacker that is motivated to try to ruin you they can just use hodl invoices to not pay any fee and still give you the bad effects. That is very much non-proportional but also pretty meaningless to consider because no matter what parameters we have there we won’t counter that kind of attack.
 
 Along the route the attacker and the victim is someone else but it causes you to fail the channel.
 
 That is definitely a possibility and that is a non-proportional risk. Every HTLC no matter how big, if it is above the dust threshold, can end up killing your channel.
 
-So we have a non-proportional risk. Do we have a proportional risk? 
+So we have a non-proportional risk. Do we have a proportional risk?
 
 Yes every forwarded payment, if you are not timely, you may end up forwarding but not receiving the incoming payment. That is proportional.
 
@@ -291,9 +291,9 @@ It is slow because we purposefully slow gossip down because we want to prevent f
 
 But the cost to the first HTLC having a zero base fee is much less than as you approach maxing out…
 
-No we can’t make it that dynamic because that would leak… We have to have a fixed proportional fee and a fixed base fee, otherwise we would have to communicate to the outside “You paid too little or too much because you weren’t the first HTLC”. That’s leaking that there is another payment going through this node. At least for the risk of closure it should be independent. Probably the base fee should be the same for all HTLCs anyway. Also because they have overlapping lifetimes but they don’t match exactly. This might be the first one, suddenly you only have this one but it came second so you gave it the lower base fee. 
+No we can’t make it that dynamic because that would leak… We have to have a fixed proportional fee and a fixed base fee, otherwise we would have to communicate to the outside “You paid too little or too much because you weren’t the first HTLC”. That’s leaking that there is another payment going through this node. At least for the risk of closure it should be independent. Probably the base fee should be the same for all HTLCs anyway. Also because they have overlapping lifetimes but they don’t match exactly. This might be the first one, suddenly you only have this one but it came second so you gave it the lower base fee.
 
-Losing the channel or closing the channel is the risk of making a possibly large or costly onchain transaction but there is the opportunity cost of having a large channel open and that liquidity moving. That is entirely covered by the proportional fee, the base fee has no role in that. The base fee is almost just like an anti-spam measure which doesn’t make sense if your min HTLC is set properly. 
+Losing the channel or closing the channel is the risk of making a possibly large or costly onchain transaction but there is the opportunity cost of having a large channel open and that liquidity moving. That is entirely covered by the proportional fee, the base fee has no role in that. The base fee is almost just like an anti-spam measure which doesn’t make sense if your min HTLC is set properly.
 
-When a channel gets closed because there is a HTLC attached to it you have the onchain fees which are fixed no matter the size of the HTLCs attached. A zero base fee in my mind was always there to pay for the onchain fees in case of an emergency with a cumulative part through the proportional fees. But it is hard to gauge the risk of forwarding a HTLC and therefore coming up with a good base fee. 
+When a channel gets closed because there is a HTLC attached to it you have the onchain fees which are fixed no matter the size of the HTLCs attached. A zero base fee in my mind was always there to pay for the onchain fees in case of an emergency with a cumulative part through the proportional fees. But it is hard to gauge the risk of forwarding a HTLC and therefore coming up with a good base fee.
 

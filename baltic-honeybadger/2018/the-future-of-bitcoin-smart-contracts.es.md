@@ -1,5 +1,5 @@
 ---
-title: El futuro de los contratos inteligentes de Bitcoin 
+title: El futuro de los contratos inteligentes de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

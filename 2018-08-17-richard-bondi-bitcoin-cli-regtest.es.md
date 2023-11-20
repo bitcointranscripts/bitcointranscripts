@@ -17,7 +17,7 @@ Clone este repositorio para seguir el proceso: <https://github.com/austin-bitcoi
 
 Así que el objetivo aquí como Justin dijo es conseguir el entorno regtest configurado. Las ventajas que mencionó, también existe la ventaja de que usted puede minar sus propias monedas a voluntad por lo que no tiene que perder el tiempo con grifos testnet. También puedes generar bloques, así que no tienes que esperar seis confirmaciones o lo que sea, ni siquiera los diez minutos. Las confirmaciones llegan enseguida y esa es una de las cosas que vamos a ver con Bitcoin Core que es lo que vamos a utilizar. ¿Alguien no lo tiene instalado todavía? Vamos a ir a través de ello y voy a mostrar todo con mi configuración que tengo aquí. Usted puede seguirme a lo largo del proceso. También esta este repositorio aquí, usted puede descargar este repositorio que sería útil. Una vez que tengas Bitcoin Core configurado, ejecuta algunos scripts que configurarán tres nodos en modo regtest. Así que vas a ejecutar tres nodos en tu portátil que comienza con cero bloques. Tienes un blockchain limpio y si empieza... puedes borrarlo. Realmente no tienes que preocuparte por los recursos. Es una de las ventajas de regtest. Supongo que podemos empezar a clonar el repo. ¿Me zambullo y empiezo a demostrar?
 
-# Demostración  
+# Demostración
 
 En el repositorio tenemos algunos scripts. En primer lugar queremos hacer el script de ejecución que nos pondrá en marcha y obtener los tres nodos si tenemos nuestras configuraciones establecidas. Voy a ponerlo en marcha aquí. Si ustedes están listos pueden tratar de arrancarlo. Si tienen problemas podemos parar y tratar de averiguar cuales son.
 
@@ -305,11 +305,11 @@ No, no va a funcionar porque no hemos firmado la transacción. Esto te dará má
 
 `signrawtransaction “[add result hex string]”`
 
-Así que ahora tengo una transacción firmada. Vamos a enviar ese bebé. Lo siguiente es `sendrawtransaction` y entonces todo lo que realmente necesitas es una cadena. 
+Así que ahora tengo una transacción firmada. Vamos a enviar ese bebé. Lo siguiente es `sendrawtransaction` y entonces todo lo que realmente necesitas es una cadena.
 
 `sendrawtransaction “[add result hex string]”`
 
-R - ¿La `createrawtransaction` tiene una entrada y luego la segunda cosa es una salida? 
+R - ¿La `createrawtransaction` tiene una entrada y luego la segunda cosa es una salida?
 
 A - Correcto. La salida es la dirección a la que estoy enviando y la cantidad, es un objeto. Puedo tener varias direcciones. La dirección es la clave y la cantidad es el valor. Es un objeto JSON, una clave-valor, dirección-importe.
 
@@ -325,7 +325,7 @@ R - Claro. Esta es la que intentamos enviar.
 
 Esto es lo que parece decodificado. La firma está en los datos del testigo.
 
-Así que lo que Alice necesita hacer es obtener un cambio de dirección, `getrawchangeaddress` sin parámetros. 
+Así que lo que Alice necesita hacer es obtener un cambio de dirección, `getrawchangeaddress` sin parámetros.
 
 `getrawchangeaddress`
 
@@ -341,7 +341,7 @@ R - Ese es el cambio de Alice. 5 van a Bob, 4.99999 vuelven a Alice, a su nueva 
 
 No estoy seguro de cuál es la diferencia entre dirección de cambio y dirección. Sé que en HD es m/0/0/0/1 para la dirección de cambio y m/0/0/0/0 para la dirección principal.
 
-R - ¿Tiene `getrawchangeaddress` un HD diferente? 
+R - ¿Tiene `getrawchangeaddress` un HD diferente?
 
 R - No conozco bien la implementación de Bitcoin Core pero si estás usando la característica HD de Bitcoin Core no usa el BIP32 por defecto. Utiliza derivación endurecida para cada dirección, no es compatible con tu Trezor o lo que sea.
 
@@ -389,7 +389,7 @@ Han pasado más de cinco minutos. Ahora tengo un bloque que se parece más a un 
 
 Está haciendo un montón de otras cosas. Tengo algunas cosas que debería haber comentado. Estoy experimentando con bloques compactos, hay algo después de la raíz Merkle. Parece que coincide. Esa es otra ventaja de la simulación. Puedes tener bloques con datos en ellos. Te llevaría un rato escribir Alice enviando a Bob y Bob enviando a Alice y hacer eso todo el día y luego intentar generar un bloque. Es una herramienta más para ayudarte. De eso se trataba. Para tener un entorno local útil donde no estás en la blockchain, no tienes que preocuparte de sincronizar cada vez, cada vez que cierras tu portátil y vuelves a subir.
 
-# PREGUNTAS Y RESPUESTAS 
+# PREGUNTAS Y RESPUESTAS
 
 P - ¿Cómo funciona el simulador aleatorio?
 

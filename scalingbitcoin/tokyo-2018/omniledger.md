@@ -49,7 +49,7 @@ First we used sharding via distributed randomness, we have multiple partitions, 
 
 # Shard validator assignment
 
-We use two randomness protocols. One needs a trusted leader. See "Scalable bias-resistant distributed randomness" 2017. RandHound is a multi-party computation protocol. The basic idea is that given a leader, we can produce a fully-unbiasable unpredictable random number. The only thing the leader can do is isolate node participant. If the leader is honest, then the random numbers it produces are absolutely provably unbiasable. 
+We use two randomness protocols. One needs a trusted leader. See "Scalable bias-resistant distributed randomness" 2017. RandHound is a multi-party computation protocol. The basic idea is that given a leader, we can produce a fully-unbiasable unpredictable random number. The only thing the leader can do is isolate node participant. If the leader is honest, then the random numbers it produces are absolutely provably unbiasable.
 
 # Atomix: atomic cross-shard transactions
 

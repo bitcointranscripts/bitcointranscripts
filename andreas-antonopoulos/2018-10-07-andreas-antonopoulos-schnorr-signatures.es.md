@@ -8,9 +8,9 @@ categories: ['podcast']
 tags: ['schnorr']
 ---
 
-LTB Episodio 378 - El Petro dentro de Venezuela y las firmas Schnorr 
+LTB Episodio 378 - El Petro dentro de Venezuela y las firmas Schnorr
 
-# Firmas Schnorr 
+# Firmas Schnorr
 
 Actualmente utilizamos el algoritmo de firma digital de curva elíptica (ECDSA), que es una forma específica de realizar firmas digitales con curvas elípticas, pero no la única. Las firmas Schnorr tienen algunas características únicas que las hacen mejores en muchos aspectos que el algoritmo ECDSA que usamos actualmente en Bitcoin.
 

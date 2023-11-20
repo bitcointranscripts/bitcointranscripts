@@ -7,7 +7,7 @@ tags: ['fees', 'bitcoin core']
 aliases: ['/es/bitcoin-core-dev-tech/2022-10-11-fee-market/']
 ---
 
-# Mercado de tarifas 
+# Mercado de tarifas
 
 Hay dos momentos en los que hemos tenido tasas sostenidas: a finales de 2017 y a principios de 2021. A finales de 2017 vimos que muchas cosas se rompían porque la gente no había escrito un software para hacer frente a las tasas variables o algo así. No sé si eso fue un problema tan grande en 2021. Lo que sí me preocupa es que esto empiece a ser una cosa. Si no hay un mercado de tarifas variables y se puede poner `1` sat/vbyte durante varios años, entonces funcionará hasta que no funcione. Así que ahora mismo los desarrolladores no tienen que preocuparse por ello. Puede ser realmente complejo con los lightning y el RBF (replace-by-fee). Muchas empresas no hacen un seguimiento de los RBF.
 
@@ -72,6 +72,6 @@ Nadie predijo que Facebook tendría mil millones de usuarios en Facebook. Pero l
 
 ¿Qué hay de algún tipo de plan de degradación en el que las tarifas sean bajas y no se pague por la seguridad? Como si en lugar de encogerse de hombros y decir lo siento, se acabara todo. Hay puntos de control, o algunas empresas podrían hacer minería altruista tal vez eso podría ser asqueroso o tal vez no. O tal vez otras formas de asegurar la cadena que no sea la minería. ¿Qué hay de la transición a algo como el concepto de federación dinámica (dynafed) de Liquid para la firma de bloques? No es proof-of-stake, pero tampoco es proof-of-work.
 
-Mucha de la gente que consideramos usuarios naturales de bitcoin, quieren huir de la inflación de su moneda local y estarían mejor servidos con USDC o algo así. Quieren algo más estable que su propia moneda. Bitcoin podría ser demasiado volátil para su apetito al huir de su moneda nativa. Taro suena interesante para mí como una forma de conseguir un mercado descentralizado real en la parte superior de bitcoin porque la gente que tiene na canal de activos será capaz de ... No veo cómo Taro puede aumentar la demanda en la capa 1 de bitcoin. No es bitcoin de capa de consenso. 
+Mucha de la gente que consideramos usuarios naturales de bitcoin, quieren huir de la inflación de su moneda local y estarían mejor servidos con USDC o algo así. Quieren algo más estable que su propia moneda. Bitcoin podría ser demasiado volátil para su apetito al huir de su moneda nativa. Taro suena interesante para mí como una forma de conseguir un mercado descentralizado real en la parte superior de bitcoin porque la gente que tiene na canal de activos será capaz de ... No veo cómo Taro puede aumentar la demanda en la capa 1 de bitcoin. No es bitcoin de capa de consenso.
 
 

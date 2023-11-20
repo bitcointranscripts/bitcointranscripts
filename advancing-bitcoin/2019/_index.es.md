@@ -1,5 +1,5 @@
 ---
-title: Advancing Bitcoin 2019 
+title: Advancing Bitcoin 2019
 ---
 
 {{< childpages >}}

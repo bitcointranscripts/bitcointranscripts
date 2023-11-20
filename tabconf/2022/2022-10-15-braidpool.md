@@ -1,5 +1,5 @@
 ---
-title: Braidpool 
+title: Braidpool
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['pools', 'mining', 'p2pool']

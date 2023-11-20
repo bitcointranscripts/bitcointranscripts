@@ -28,7 +28,7 @@ That’s true. Your feedback loop is still the same, increase the fee rate.
 
 You may even want to not spend that specific unconfirmed output because it is a long chain of other ancestors that have a low fee rate. You may want to use another one.
 
-I don’t think we’ll end up with long chains because we won’t use unconfirmed outputs by default anyway unless they overwrite it. To a certain extent. 
+I don’t think we’ll end up with long chains because we won’t use unconfirmed outputs by default anyway unless they overwrite it. To a certain extent.
 
 Then your UTXOs can easily be exhausted if you have to bump many HTLCs and you bump them independently instead of batching them together. That is something that concerns me.
 
@@ -60,13 +60,13 @@ Raw sending, gotcha. We have our own wallet which means that certain things are 
 
 <https://github.com/lightning/bolts/pull/954>
 
-It read as being optional but you must use it? Only one party needs to use it. The other party can just do SIGHASH_ALL. 
+It read as being optional but you must use it? Only one party needs to use it. The other party can just do SIGHASH_ALL.
 
 The PR is just pointing to something that we already have specified somewhere.
 
 The PR is just pointing out that you have to, not that you can.
 
-It was clear elsewhere but it wasn’t clear reading this part of the spec that it was required. 
+It was clear elsewhere but it wasn’t clear reading this part of the spec that it was required.
 
 Almost a typo fix. Or a clarification fix.
 
@@ -76,27 +76,27 @@ Almost a typo fix. Or a clarification fix.
 
 Great investigation by Arik on this. This is maybe super heavy weight. Are we ready to go into SNARK land? As an engineer it is cool but do we want to do nothing but SNARKs?
 
-Arik’s last comment is the killer. We spoke to a tonne of people, looked at a bunch of stuff and there is nothing that has a mature implementation that we can take and use. 
+Arik’s last comment is the killer. We spoke to a tonne of people, looked at a bunch of stuff and there is nothing that has a mature implementation that we can take and use.
 
 I think Bastien’s point is also very true. There is so much research being done right now that it is still changing at a very fast pace. Maybe something will come up eventually where the STARK land and PLONK land which are the ones that don’t require trusted setups will have somewhat more acceptable proof sizes and verification times. However even though I think the math behind all this is so fascinating and I would love to understand it better I also think that it is somewhat opaque. One of the beautiful aspects of Bitcoin is that it is extremely easy to understand.
 
-Worst case it is a denial of service issue. Especially with trusted setup. Worst case it is a denial of service issue against you by all of the implementation developers who are conspiring to denial of service attack you. They all write the code and are conspiring. We could probably do worse if we all wanted to conspire together and screw users over. 
+Worst case it is a denial of service issue. Especially with trusted setup. Worst case it is a denial of service issue against you by all of the implementation developers who are conspiring to denial of service attack you. They all write the code and are conspiring. We could probably do worse if we all wanted to conspire together and screw users over.
 
 I will note that with the verification times you don’t want the actual anti DOS measure to be effectively a DOS.
 
-That’s a good point. Laolu also pointed to the log scaling ring signatures which I was asking some folks about. No one is even trying to work on implementing that. Unless we all wanted to each hire somebody and have them work full time on this for a year or two, that doesn’t seem realistic. 
+That’s a good point. Laolu also pointed to the log scaling ring signatures which I was asking some folks about. No one is even trying to work on implementing that. Unless we all wanted to each hire somebody and have them work full time on this for a year or two, that doesn’t seem realistic.
 
-Even something like STARKs still requires pretty large machines to do the proving stuff. We could run but it is still faraway. Things are still evolving pretty rapidly. Every single month a new paper or a new modification comes out, they are still chasing each other. 
+Even something like STARKs still requires pretty large machines to do the proving stuff. We could run but it is still faraway. Things are still evolving pretty rapidly. Every single month a new paper or a new modification comes out, they are still chasing each other.
 
-Was there some research on attacking all those schemes? 
+Was there some research on attacking all those schemes?
 
 There’s a tonne of those. I think the problem is more that they are so busy working on coming up with a clever proof system that they don’t actually ever spend the time to implement and productionize the previous proof system.
 
 And the benchmarks are usually micro benchmarks which means Python linter extrapolation or something.
 
-They are too busy coming up with new proof systems. The proof may be right but they can’t productionize the implementation. There are no implementations that you’d want to trust. 
+They are too busy coming up with new proof systems. The proof may be right but they can’t productionize the implementation. There are no implementations that you’d want to trust.
 
-To address the ring signatures, whether it is [Borromean ring signatures](https://github.com/Blockstream/borromean_paper/blob/master/borromean_draft_0.01_9ade1e49.pdf) or log scale signatures or maybe even constant size signatures which I guess is not possible quite yet. Given the Taproot channel opening mechanism it will need to be possible to have them be linearly aggregatable such that no one individual is actually able to create a ring signature but when you combine the ring signature components it will work seamlessly. I don’t know if we have a Schnorr based ring signature proof aggregation thing. 
+To address the ring signatures, whether it is [Borromean ring signatures](https://github.com/Blockstream/borromean_paper/blob/master/borromean_draft_0.01_9ade1e49.pdf) or log scale signatures or maybe even constant size signatures which I guess is not possible quite yet. Given the Taproot channel opening mechanism it will need to be possible to have them be linearly aggregatable such that no one individual is actually able to create a ring signature but when you combine the ring signature components it will work seamlessly. I don’t know if we have a Schnorr based ring signature proof aggregation thing.
 
 I don’t think so. Schnorr based ring signatures do exist, that is what CT uses, but as far as aggregating them I am not sure that is possible. We could do BLS but we have some constraints if we are making it Bitcoin like at least. We could hope for the ZK rollup team to produce something that is usable, there are at least 2 or 3 of them that exist but they are still working on getting things to production.
 
@@ -120,7 +120,7 @@ It is different and it does open the door to trust channels where you don’t re
 
 But then I can buy an important looking node of yours.
 
-You kind of always could. You still have to have other people who are advertising the same channel. You can’t just say “I have a million BTC to Bitfinex”. They would need to be in on it too. 
+You kind of always could. You still have to have other people who are advertising the same channel. You can’t just say “I have a million BTC to Bitfinex”. They would need to be in on it too.
 
 They would need to cross-sign.
 
@@ -132,7 +132,7 @@ I think the bigger question is how much privacy does it provide? Your point abou
 
 If you advertise immediately “I have 1 BTC”, you open a channel and then you have to re-advertise because you spent the UTXO. “I have this other one”. It becomes very obvious what you are doing if you did that. If you always advertised your change UTXO and you are opening channels you gain nothing. You have literally told them every single move you’ve made.
 
-If you have a change UTXO on the side as a side effect of opening the first channel or doing a first deposit or something like that. 
+If you have a change UTXO on the side as a side effect of opening the first channel or doing a first deposit or something like that.
 
 I think you’d only do it when you’ve got a channel open because it doesn’t make sense until then. You gain maybe something. You could advertise the channel or the change. Either one would work. I was assuming it was going to be all MuSig and all Taproot. Maybe you would allow an old style 2-of-2 so you could advertise using an existing channel. Somebody should write up a straw man and see what it looks like.
 
@@ -140,7 +140,7 @@ I was going to take a stab at the basic gossip one. I think I 80 percent underst
 
 I can write that up.
 
-It is definitely smaller. If you assume that we are doing handwave Taproot. If that [message signing BIP](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki), that one that people keep talking about gets finalized then just using that would also help. Rather than everyone having a boutique signing thing. 
+It is definitely smaller. If you assume that we are doing handwave Taproot. If that [message signing BIP](https://github.com/bitcoin/bips/blob/master/bip-0322.mediawiki), that one that people keep talking about gets finalized then just using that would also help. Rather than everyone having a boutique signing thing.
 
 I think that was more for user facing encoding stuff.
 
@@ -160,9 +160,9 @@ That is what took me so long. It is basically an implementation of the BOLTs. It
 
 I just need to get a little more familiar with it. We may have someone coming in to do general open source platform maintenance stuff. Maybe this could be in their wheelhouse. I see it has this DSL kind of thing, “Expect message. Send message”. I definitely can see how it can be super flaky on our Travis CI containers. Definitely something we need to get better at.
 
-It is really good for new stuff too. If you are hacking up some new protocol then it is nice, you can write a clean test for it and we started doing some more development that way. You can test stupid corner cases that don’t really happen. You reconnect at this point and you restart, it should all come back. That is a pretty good strength of it. 
+It is really good for new stuff too. If you are hacking up some new protocol then it is nice, you can write a clean test for it and we started doing some more development that way. You can test stupid corner cases that don’t really happen. You reconnect at this point and you restart, it should all come back. That is a pretty good strength of it.
 
-The initial point is this [clightning.py](https://github.com/rustyrussell/lnprototest/blob/master/lnprototest/clightning/clightning.py). If we were to create something similar for lnd. We could make some special branch to do the dev stuff. I don’t think we have anything like that right now. Or when we initialize the node we could feed that through or something. 
+The initial point is this [clightning.py](https://github.com/rustyrussell/lnprototest/blob/master/lnprototest/clightning/clightning.py). If we were to create something similar for lnd. We could make some special branch to do the dev stuff. I don’t think we have anything like that right now. Or when we initialize the node we could feed that through or something.
 
 You shouldn’t have to now. It used to be that it was nailed in, it will be this node ID that I am talking to. Now it is the other way round. In this case the lnd driver would tell it “Here is the node ID, here’s all the stuff that you need”. You should write it so that it reaches in and grabs that information out of the node. I haven’t because the old style was a node ID, a private key of `01010101` etc but that is a relic.
 
@@ -184,7 +184,7 @@ Good question. The reason I didn’t do route blinded hints… Ideally it would 
 
 Let’s not do that.
 
-We could just import the route. 
+We could just import the route.
 
 I think what you would do is you would add the normal blinding and then you’d immediately deprecate it. “Here’s your unblinded hints. It is deprecated, you should not use this but we understand that this will be probably be used for the next however many months or years”.
 
@@ -226,7 +226,7 @@ I don’t know if I believe in that dream but I believe the dream that there wil
 
 I built the whole LDK thing into WASM and have the whole API exposed in Javascript for some completely unknown reason, people seem to want this. The question I have, the problem is I’ve been informed browsers seem to want to require web socket to be over SSL if you are on a SSL site. This makes your existing gossip method for web sockets not very useful because no one can say “Actually here’s the hostname with the SSL certificate that you can connect to for web sockets”.
 
-Connecting to a raw IP address and just asking for an encrypted web socket is apparently too hard for modern browsers. 
+Connecting to a raw IP address and just asking for an encrypted web socket is apparently too hard for modern browsers.
 
 Do you want to lean on the existing DNS hostname thing? Do you want to change it to have a different hostname for web sockets which probably makes some sense, if you are going to have a SSL cert then maybe you are going to have a separate hostname. Or Cloudflare or something completely bonkers and privacy destroying.
 
@@ -234,7 +234,7 @@ You would need a SSL cert for the port as well, the port that they advertised. W
 
 I think the ports just do whatever. We do stuff and don’t specify the port. lnd has a Let’s Encrypt thing for your gRPC API that we do. It just accepts it and that works. That is a super good point I totally ignored. We use web sockets for some stuff but it is gRPC web which is still using TLS anyway. It has always been there so I forgot about it.
 
-If you need it try to use it and see if it works? The web socket port advertisement is already a hack. It says “Try this port for web sockets” but you may have a Tor endpoint that may not support it. They end up having to work through. 
+If you need it try to use it and see if it works? The web socket port advertisement is already a hack. It says “Try this port for web sockets” but you may have a Tor endpoint that may not support it. They end up having to work through.
 
 The problem is you have to specify the hostname. You have to have a way to get the hostname. We can continue with the current design and say “I’m advertising the hostname and I add this extra bit that says there is also a web socket on that same hostname”. Or we could say “I’m advertising a hostname but here’s the web socket thing which is a different hostname because that hostname has to support TLS”. I didn’t want to deal with TLS. I don’t know if that should be separate or whether we’re ok just leaving it. I don’t know.
 
@@ -256,7 +256,7 @@ They gradually got more anal about this over time.
 
 # Miscellaneous
 
-I continue to work on Taproot stuff. I think I will finish the base implementation this week and then do onchain from there. I’ll look at t-bast’s initial doc. 
+I continue to work on Taproot stuff. I think I will finish the base implementation this week and then do onchain from there. I’ll look at t-bast’s initial doc.
 
 Where are you on anchor outputs? We are going to make a release of eclair tomorrow and we are activating anchor outputs by default now. lnd activated it a while ago.
 
@@ -278,7 +278,7 @@ For real, for real.
 
 We were planning on doing the same thing. Having a UTXO reserve possibly force closing a channel if we need more funds. Try a mutual close. The assumption that all your peers don’t go bad at once. But if you’ve got network connectivity issues that heuristic could fail really badly as you try to close all your channels.
 
-Or if you have a bad DB upgrade all of your channels close and you had HTLCs in there, you have to claim everything at once, it is a nightmare. We are releasing production support for Postgres with a migration tool. We have tested that a lot because we really didn’t want this to fail and have people have all their channels fail at the same time. 
+Or if you have a bad DB upgrade all of your channels close and you had HTLCs in there, you have to claim everything at once, it is a nightmare. We are releasing production support for Postgres with a migration tool. We have tested that a lot because we really didn’t want this to fail and have people have all their channels fail at the same time.
 
 We had a migration tool but we held it back, we should test this thing first.
 
@@ -312,13 +312,13 @@ It sounds like both ACINQ and lnd have decided to go for the reserve requirement
 
 lnd does reserve, ACINQ will call you if there’s an issue.
 
-Thanks y’all. I’ll maybe try to confirm Matt’s HTTP web socket thing. What he is saying makes sense but maybe it just works. 
+Thanks y’all. I’ll maybe try to confirm Matt’s HTTP web socket thing. What he is saying makes sense but maybe it just works.
 
-The web socket stuff, because we are doing our own crypto underneath we are like “We don’t care. Give us a web socket”. It turns out that is against the mantra of most modern browsers. “We are going to tell you what to do”. 
+The web socket stuff, because we are doing our own crypto underneath we are like “We don’t care. Give us a web socket”. It turns out that is against the mantra of most modern browsers. “We are going to tell you what to do”.
 
-Worst case we’ll just have more crypto. 
+Worst case we’ll just have more crypto.
 
-You can use a proxy. You can grab a web socket proxy and it will talk stuff for you. You have got traffic analysis privacy then. There are public ones out there. We could also all run one and do it that way. It would be nice if the browser got out the way and let us do our own stuff. 
+You can use a proxy. You can grab a web socket proxy and it will talk stuff for you. You have got traffic analysis privacy then. There are public ones out there. We could also all run one and do it that way. It would be nice if the browser got out the way and let us do our own stuff.
 
 In browser land if you don’t have a domain name you are a nobody. You don’t exist without a domain name.
 

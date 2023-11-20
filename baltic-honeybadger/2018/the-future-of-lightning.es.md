@@ -35,7 +35,7 @@ Avanzando rápidamente hasta 2015 hay un documento que ayudé a editar... llamad
 
 Alice y Bob celebran un contrato multisig de 2 en 2 Alice y Bob celebran un contrato multisig de 2 en 2 para entrar en un lightning. Ambos ponen algo de dinero y luego actualizan el estado entre ellos. Estas son transacciones reales de bitcoin. Por cierto, no hay ninguna ICO de Lightning. Lo sé. Utiliza transacciones reales de bitcoin. Alice y Bob actualizan su estado cuando envían dinero entre ellos. Cada vez que actualizan el estado, firman un nuevo estado y revocan el anterior para que no puedan robarse mutuamente faltando a su palabra. El cierre cooperativo puede hacerse en 10 minutos.
 
-# Pagos como paquetes 
+# Pagos como paquetes
 
 Puede que Alice y Bob sólo se vean una vez en una luna azul. Se puede tener una red y los pagos se pueden enrutar a través de otros nodos. Para ello se pueden utilizar contratos multisaltos y contratos hash de bloqueo de tiempo (HTLC). La forma en que funciona el reenvío en lightning es que los nodos intermedios pueden recibir fondos sólo si va atómicamente al remitente. En la gran mayoría de los casos, se transacciona instantáneamente y va al final de la ruta. También tenemos el enrutamiento cebolla, que consiste en que los nodos intermedios sólo conocen los nodos anteriores y posteriores, pero no la ruta completa.
 
@@ -79,7 +79,7 @@ En este vídeo, nuestro principal desarrollador de aplicaciones es... por favor,
 
 Neutrino ha logrado un gran hito. Neutrino es una implementación de cliente lite que usamos en Lightning Labs junto con Jim Posen de Coinbase han diseñado eso. BlueMatt ha estado involucrado en eso. Incluye bip157 y bip158. Es sustancialmente más privado y no filtra varios datos del usuario y la información de las transacciones. Esto es algo muy grande.
 
-# Torres de vigilancia 
+# Torres de vigilancia
 
 La gente ha estado preguntando sobre la aplicación de escritorio... ¿cuándo móvil? Uno de los aspectos importantes de la compatibilidad con los teléfonos móviles no es sólo neutrino porque no quieres ejecutar un nodo completo en tu teléfono, sino que tenemos torres de vigilancia que son importantes. Puedes estar de viaje durante una semana y queremos asegurarnos de que hay torres de vigilancia que controlan si hay trampas en la red.
 

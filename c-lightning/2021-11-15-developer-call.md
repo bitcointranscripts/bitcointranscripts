@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -21,7 +21,7 @@ So, Taproot. The one place in the spec where Taproot matters if you are using it
 
 One interesting thing about moving everything to Taproot, I was reading a [tweet](https://twitter.com/n1ckler/status/1334240709814136833?s=20) from Jonas Nick that you can do ring signatures to prove reserves of Taproot outputs at a given height. One reason you’d want to upgrade to them is you can prove you have a given output amount. That’s important for liquidity ad stuff, if you want to ask someone how much available balance they have, they could give you a balance? I think you can verify that someone had that balance at a height? Maybe it is just output ownership in a set.
 
-I don’t know about balance but he did ownership within a set which is kind of similar. Obviously for a while we won’t have enough Taproot outputs to make that very anonymizing. There has been speculation we could use a similar ring signature for gossip, you prove a channel. That is more interesting. It is doesn’t really work the way we do channel announcements today because we link them to a specific UTXO and you can tell when it is closed. If we switched to using some proof of UTXO for node announcements, as we’ve discussed inverting our gossip, that starts to be really attractive potentially. Except for the size issue and the fact that to validate it you would have to keep a snapshot of the eligible UTXOs at particular heights. They say “I have a UTXO, here’s the proof”. You need to somewhere have a set of UTXOs at the height that they are trying to do the proof at. You can batch it and say “You can only prove these once a day or every how many blocks” but that is still things you need to keep and infrastructure that doesn’t exist. It is still sci-fi at this point but it is interesting sci-fi. 
+I don’t know about balance but he did ownership within a set which is kind of similar. Obviously for a while we won’t have enough Taproot outputs to make that very anonymizing. There has been speculation we could use a similar ring signature for gossip, you prove a channel. That is more interesting. It is doesn’t really work the way we do channel announcements today because we link them to a specific UTXO and you can tell when it is closed. If we switched to using some proof of UTXO for node announcements, as we’ve discussed inverting our gossip, that starts to be really attractive potentially. Except for the size issue and the fact that to validate it you would have to keep a snapshot of the eligible UTXOs at particular heights. They say “I have a UTXO, here’s the proof”. You need to somewhere have a set of UTXOs at the height that they are trying to do the proof at. You can batch it and say “You can only prove these once a day or every how many blocks” but that is still things you need to keep and infrastructure that doesn’t exist. It is still sci-fi at this point but it is interesting sci-fi.
 
 I guess you have to be clear on what part of the Taproot upgrade we are talking about. I think what you were talking about is paying out to pay-to-taproot (P2TR) addresses from your channel. I understand when you say that doesn’t need to be subject to the “two implementation” rule. But something where the 2-of-2 is a P2TR, then we are in the world where we definitely need two implementations and perhaps you want even more than that because it is really a network thing…
 
@@ -33,13 +33,13 @@ I opened the ports [PR](https://github.com/ElementsProject/lightning/pull/4900) 
 
 Which PR?
 
-PR 4900. I have tested it and it works for me. 
+PR 4900. I have tested it and it works for me.
 
 It is mostly just documentation and changing the port number. There is a change in the tests, what is happening in the tests? Why is there something that is looking like a hash changing?
 
 Did you touch the DB file?
 
-A small change in the tests because there was the port and the port is encoded in hex. I needed to change the default port encoded in hex. I needed to change that default 9735 into regtest default port. 
+A small change in the tests because there was the port and the port is encoded in hex. I needed to change the default port encoded in hex. I needed to change that default 9735 into regtest default port.
 
 That’s testing the gossip message coming through the wire in that test that we get bitwise exact. That’s why it has to change. It is not a hash, we are doing a hex dump of the message going across the wire. And of course the gossip message has now changed because it is a different port number. That one is pretty explanatory. We have had a lot of CI flakes recently. I’ve been trying to whack them. I suspect that they have lowered the ceiling on the GitHub runners and we are getting out of memory (OOM) and I am not quite sure how to deal with that. I have been tempted to add a demessage at the end of our runs to see if I’m getting OOM killed. We are getting exit with code -9 which normally means SIGKILL. This almost always means you’ve been OOM killed.
 
@@ -51,13 +51,13 @@ It wasn’t the checksum of the plugin was it?
 
 You changed something about the checksum calculation in the plugin to see if it allocated additional memory?
 
-Yes, I ran the whole thing under [Massif](https://valgrind.org/docs/manual/ms-manual.html), the heap profiler. The big spike in startup was basically pulling in all the plugins to do the checksums. We can get rid of that. 20 MB, we have got a fair number of plugins now and they have got all the debug information and everything else. We literally pull in the whole files to checksum them. Under Valgrind it uses a multiple of memory. If we are firing up a lot of nodes at once perhaps it is doing something. 
+Yes, I ran the whole thing under [Massif](https://valgrind.org/docs/manual/ms-manual.html), the heap profiler. The big spike in startup was basically pulling in all the plugins to do the checksums. We can get rid of that. 20 MB, we have got a fair number of plugins now and they have got all the debug information and everything else. We literally pull in the whole files to checksum them. Under Valgrind it uses a multiple of memory. If we are firing up a lot of nodes at once perhaps it is doing something.
 
 It wasn’t a memory leak or something?
 
-No as far as I can tell it is not a memory leak. We are not seeing massive increases in memory. We’ve got enough options on Valgrind to try to cut the memory usage down but we have perhaps hit some ceiling. I think you can run external runners with GitHub. If all else fails we have to outsource it to Google Cloud or something to get some more beef behind our CI but it is painful. Mundane things, not exciting things but sometimes software engineering is a lot of mundane things. 
+No as far as I can tell it is not a memory leak. We are not seeing massive increases in memory. We’ve got enough options on Valgrind to try to cut the memory usage down but we have perhaps hit some ceiling. I think you can run external runners with GitHub. If all else fails we have to outsource it to Google Cloud or something to get some more beef behind our CI but it is painful. Mundane things, not exciting things but sometimes software engineering is a lot of mundane things.
 
-Congratulations for the release in case it wasn’t already mentioned before. I was waiting for the cleanup PR which is now on master, I rebased my stuff. There is one thing still missing, it is about the [DNS PR](https://github.com/ElementsProject/lightning/pull/4829), I think you left a [comment](https://github.com/ElementsProject/lightning/pull/4829#discussion_r746146256) that I didn’t fully understand about the Valgrind issue. You were mentioning something, I should add the port number as a local variable but there is no port number in this specific snippet so I was confused. Maybe I take the time to go through it myself. All the other remarks I already finished them up, it is just that one point. 
+Congratulations for the release in case it wasn’t already mentioned before. I was waiting for the cleanup PR which is now on master, I rebased my stuff. There is one thing still missing, it is about the [DNS PR](https://github.com/ElementsProject/lightning/pull/4829), I think you left a [comment](https://github.com/ElementsProject/lightning/pull/4829#discussion_r746146256) that I didn’t fully understand about the Valgrind issue. You were mentioning something, I should add the port number as a local variable but there is no port number in this specific snippet so I was confused. Maybe I take the time to go through it myself. All the other remarks I already finished them up, it is just that one point.
 
 You initialized a variable and you said that Valgrind complains for the next iteration. Yes, Valgrind complains, the problem is not that Valgrind complains, the problem is that there is a real bug here. That is because you resized the array and when you resize an array it can get reallocated and moved. The old pointer was pointing at the end of the old array. When you try to update it…. That’s why Valgrind complained. Your comment says it fixes Valgrind complaints for the next iteration. Well, yeah.
 
@@ -79,7 +79,7 @@ I don’t have a bug but the comment is wrong. Now I’ve got it.
 
 You were mentioning something about portnum, or ZmnSCPxj did. This is not part of this code so I was confused.
 
-ZmnSCPxj said that you should be saving portnum in a new var. 
+ZmnSCPxj said that you should be saving portnum in a new var.
 
 The reason we have the addr variable is simply to access the port number. Rather than have that temporary variable that has this problem where you have to keep it updated you can just save the port number. If you zoom out on the code you’ll see what he is talking about. The only reason we keep that around the loop is so that we can access the port number. But just save the port number and then this whole problem goes away.
 
@@ -87,7 +87,7 @@ Portnum is not part of my code but I will have a look.
 
 When the code gets subtle you start thinking about how I can sidestep this whole problem. This is nicer.
 
-Once I get CI beaten into shape then I am hoping to squeeze all these PRs in. I am release captain for this release which at this point is looking like mid January. I think we are going to go longer for this one. There is some stuff I really want to get in. 
+Once I get CI beaten into shape then I am hoping to squeeze all these PRs in. I am release captain for this release which at this point is looking like mid January. I think we are going to go longer for this one. There is some stuff I really want to get in.
 
 # Accounting plugin update
 
@@ -95,7 +95,7 @@ I am working on redoing the way that we do accounting in onchaind. The long term
 
 Accounting is vital and yet it is on the back burner continuously. It is never on fire. It would be good to have this in the new release.
 
-One exciting thing about it is I think it is going to start exposing our onchaind. It will be easy to track improvements when we make them to how we handle funds onchain which I think is very exciting. 
+One exciting thing about it is I think it is going to start exposing our onchaind. It will be easy to track improvements when we make them to how we handle funds onchain which I think is very exciting.
 
 I see a lot of people saying “Look I made all this money forwarding” but without a full accounting of how much they submit on fees and rebalancing and everything else. I think it is a bit of a mirage to some extent. Having a sat by sat view of what happens with your funds is actually important, just for the metrics not to mention tax time. It is very, very cool. I am looking forward to it.
 
@@ -144,7 +144,7 @@ It could be a Rust plugin.
 
 Ideally we would ship it with the binary.
 
-That is coming soon. We are going to have to start shipping Rust. 
+That is coming soon. We are going to have to start shipping Rust.
 
 We can make it dependent on whether you have Rust or not. If you compile it the releases will definitely have Rust and we can ship binary Rust. The one thing that I’m not sure about is whether Rust is reproducible as of now. It might end up breaking our repro build at the moment. I will look into that though.
 
@@ -166,7 +166,7 @@ Those are solved problems right? (Joke)
 
 We can do macaroons now,
 
-Runes, Rusty’s runes. 
+Runes, Rusty’s runes.
 
 # Individual updates (cont.)
 
@@ -174,13 +174,13 @@ vincenzopalazzo: I have a plugin that makes a REST API but it is in Java and it 
 
 I am looking at your PR now, yes you should move those to somewhere else. You should expose the definitions somewhere and make sure they are documented in the man page. I guess the question is which error?
 
-vincenzopalazzo: The question is what is the value of the error that lightningd… 
+vincenzopalazzo: The question is what is the value of the error that lightningd…
 
-You start from `1` and start increasing and don’t go above `127`. That’s fine. HSM errors being `20`, they are arbitrary numbers, it doesn’t matter. 
+You start from `1` and start increasing and don’t go above `127`. That’s fine. HSM errors being `20`, they are arbitrary numbers, it doesn’t matter.
 
 vincenzopalazzo: The second question, we check if the HTLC is encrypted only when we run the command line? The command line, the static error code is `1`. I don’t know if this is customizable in some way?
 
-It is all code, we can fix everything. It depends where it is exiting with the error. There is a general thing you call by default and we can change the default, we can change the way we handle errors to our manual error handler rather than using the CCAN default one. I think that will fix it. There is an error in exit, handling it by default inside the option parsing. That, we can not use the default one, we can have our own. It is possible for us to write our own and not use the default one that exits `1`. It is fixable. 
+It is all code, we can fix everything. It depends where it is exiting with the error. There is a general thing you call by default and we can change the default, we can change the way we handle errors to our manual error handler rather than using the CCAN default one. I think that will fix it. There is an error in exit, handling it by default inside the option parsing. That, we can not use the default one, we can have our own. It is possible for us to write our own and not use the default one that exits `1`. It is fixable.
 
 vincenzopalazzo: It makes sense there is only one error for the command line. Maybe there is some different way to check that. My idea is only to change the default error by command line.
 
@@ -224,11 +224,11 @@ Could these have been really slowly confirming channels? Like 2 weeks?
 
 No, absolutely not.
 
-That’s a bit of a corner case, if they don’t confirm for 2 weeks then they confirm. Then your peer who is the fundee will forget about them and you will wait indefinitely. 
+That’s a bit of a corner case, if they don’t confirm for 2 weeks then they confirm. Then your peer who is the fundee will forget about them and you will wait indefinitely.
 
 Force disconnect and reconnect. I don’t know why this happened to me. It is locking up a significant amount of funds. Is there a way to detect this and do this internally after a while?
 
-It is not us, they haven’t sent something we expect. We are waiting. 
+It is not us, they haven’t sent something we expect. We are waiting.
 
 I know that it is not us but we could try to fix that on our end if we see that.
 
@@ -238,7 +238,7 @@ I forced the disconnect, it is again connected, now it is normal. Good.
 
 Is this LND on the other end?
 
-I don’t know. I just used some plugin to open new channels. Half of them stopped responding. 
+I don’t know. I just used some plugin to open new channels. Half of them stopped responding.
 
 That’s weird. Debug logs will tell you all the messages you received.
 
@@ -304,7 +304,7 @@ How much of that 2 Bitcoin did he give to you?
 
 Zero.
 
-Such a nice guy. 
+Such a nice guy.
 
 It is much better to learn from other people’s disasters than your own. There is a certain amount of relief.
 
@@ -314,9 +314,9 @@ He did the mistake and not the software.
 
 Yes.
 
-I agree, I was very impressed you got that back. 
+I agree, I was very impressed you got that back.
 
-The good old days when we didn’t have a database and didn’t persist any data across restarts. 
+The good old days when we didn’t have a database and didn’t persist any data across restarts.
 
 That is very old. I think 0.5.2 was the first version that I helped build and that was with a database.
 

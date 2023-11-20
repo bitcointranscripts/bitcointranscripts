@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Core Testing 
+title: Bitcoin Core Testing
 transcript_by: Michael Folkson
 tags: ['bitcoin core', 'testing']
 speakers: ['Greg Maxwell']

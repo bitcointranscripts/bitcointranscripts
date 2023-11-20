@@ -1,5 +1,5 @@
 ---
-title: Fuzzing Class Interfaces 
+title: Fuzzing Class Interfaces
 transcript_by: Michael Folkson
 categories: ['conference']
 speakers: ['Barnabás Bágyi']
@@ -19,11 +19,11 @@ LibFuzzer tutorial: https://github.com/google/fuzzing/blob/master/tutorial/libFu
 
 # Intro
 
-Hello everyone. My name is Barnabas Bagyi. I am a C++ developer currently working at Ericsson with some previous experience in the automative industry. I will be talking about fuzzing class interfaces for generating and running tests with [libFuzzer](https://llvm.org/docs/LibFuzzer.html). This was also the topic of my Masters thesis that I recently finished. My invaluable professor and supervisor Zoltan Porkolab came up with the base idea of it. 
+Hello everyone. My name is Barnabas Bagyi. I am a C++ developer currently working at Ericsson with some previous experience in the automative industry. I will be talking about fuzzing class interfaces for generating and running tests with [libFuzzer](https://llvm.org/docs/LibFuzzer.html). This was also the topic of my Masters thesis that I recently finished. My invaluable professor and supervisor Zoltan Porkolab came up with the base idea of it.
 
 # Overview
 
-Before we get into it let me present the outline of what is to come. I will start by showing through an example what is missing from the current testing ecosystem and why we should not be satisfied by using only unit tests to test our classes even though they are great too. After a brief introduction of fuzzing in general and playing with a buzzer we will go through the design of using this to create a newer testing method which is meant to test our classes based on their interfaces only. Then we will finish off seeing the results we’ve achieved with this interface fuzzer in two brief case studies. 
+Before we get into it let me present the outline of what is to come. I will start by showing through an example what is missing from the current testing ecosystem and why we should not be satisfied by using only unit tests to test our classes even though they are great too. After a brief introduction of fuzzing in general and playing with a buzzer we will go through the design of using this to create a newer testing method which is meant to test our classes based on their interfaces only. Then we will finish off seeing the results we’ve achieved with this interface fuzzer in two brief case studies.
 
 # Let’s follow the design and testing of a (container) class
 
@@ -31,17 +31,17 @@ Let’s start by following the design and testing of a container class and see w
 
 # The (simplified) container vision
 
-Let’s suppose that we would like to implement a double ended queue similar to `std::deque`. This container works by having vectors of static size arrays, one vector in fact, and if it needs to grow in either direction it can increase the size of the main vector. 
+Let’s suppose that we would like to implement a double ended queue similar to `std::deque`. This container works by having vectors of static size arrays, one vector in fact, and if it needs to grow in either direction it can increase the size of the main vector.
 
 This is how the interface of set class looks like. It is not templated for the sake of simplicity. We have our `push_back` and `pop_back` methods. We can query the element on the back. We can also do the same things on the front as well. We of course can also access the number of elements currently contained within.
 
 # Example Unit Test Case
 
-Now let’s pretend that we finish the implementation of the class and are very eager to test it out. Let’s see if it works or not. What we would do is write unit tests for it just like the one on the screen. I have used Google Test for the sake of this example but I imagine all unit test frameworks to be quite similar. This test is great because we are only testing a small part of the software in isolation. This makes it far easier to find the root cause of an issue if we encounter any. One very important observation for the sake of this talk is the structure of the unit test. It is practically a list of method calls with state essentials in between them. But the million dollar question when it comes to unit tests is when to stop testing. How many test cases are enough? Maybe we should try similar for the front methods as well and that’s it. 
+Now let’s pretend that we finish the implementation of the class and are very eager to test it out. Let’s see if it works or not. What we would do is write unit tests for it just like the one on the screen. I have used Google Test for the sake of this example but I imagine all unit test frameworks to be quite similar. This test is great because we are only testing a small part of the software in isolation. This makes it far easier to find the root cause of an issue if we encounter any. One very important observation for the sake of this talk is the structure of the unit test. It is practically a list of method calls with state essentials in between them. But the million dollar question when it comes to unit tests is when to stop testing. How many test cases are enough? Maybe we should try similar for the front methods as well and that’s it.
 
 # Possible undetected bugs
 
-Of course that wouldn’t be enough. There are a lot of possible undedicated bugs which we need to care about. In the following slides I have drawn the arrays to have only 3 elements but in reality they tend to have 16 or so. The main vulnerability of this container is the management of the arrays contained within the vector. Or maybe creating one is done well but when we have to destruct an array we somehow fail. We cause a memory leak. Or it is also possible that after the destruction of any array we leave the object in an invalid state. That might be only discovered after recreating the previous destructed array leading to a crash for example. What’s particularly hideous about this case is that covering it gives us zero additional lines of code coverage. It is very easy to forget about. 
+Of course that wouldn’t be enough. There are a lot of possible undedicated bugs which we need to care about. In the following slides I have drawn the arrays to have only 3 elements but in reality they tend to have 16 or so. The main vulnerability of this container is the management of the arrays contained within the vector. Or maybe creating one is done well but when we have to destruct an array we somehow fail. We cause a memory leak. Or it is also possible that after the destruction of any array we leave the object in an invalid state. That might be only discovered after recreating the previous destructed array leading to a crash for example. What’s particularly hideous about this case is that covering it gives us zero additional lines of code coverage. It is very easy to forget about.
 
 # Too many states
 
@@ -51,7 +51,7 @@ Another thing which complicates it is that we still need to pay attention to the
 
 # What we would need
 
-What we would need is something to combat the exponential growth that we face. A good idea might be automatic test generation. With automatic test generation we could test way more test cases than manually. Of course we still couldn’t test all of them, far from it. But it would still be far more. We could generate test cases like this with two `push_back`, one after the other. Or we could generate a `push_back` and a `pop_front` afterwards. Or a `pop_front` and a `push_back`. If we are trying to generate test cases based on the interface of the class by itself `pop_front` looks legal because we have no idea when we can call `pop_front`. The interface does not really contain at least from a C++ language sense it doesn’t. But of course we shouldn’t be ok with it. It is not a valid test case. It is a waste of time to run it. 
+What we would need is something to combat the exponential growth that we face. A good idea might be automatic test generation. With automatic test generation we could test way more test cases than manually. Of course we still couldn’t test all of them, far from it. But it would still be far more. We could generate test cases like this with two `push_back`, one after the other. Or we could generate a `push_back` and a `pop_front` afterwards. Or a `pop_front` and a `push_back`. If we are trying to generate test cases based on the interface of the class by itself `pop_front` looks legal because we have no idea when we can call `pop_front`. The interface does not really contain at least from a C++ language sense it doesn’t. But of course we shouldn’t be ok with it. It is not a valid test case. It is a waste of time to run it.
 
 A second good requirement would be filtering out invalid method calls. How would we want to use this tool? A great way of using it would be to just run random unit tests for example while the CI/CD machine is idle. Let’s not rest it too much. Being able to generate a test case and then run it right afterwards seems a quite sane requirement. We should add it to the list. On the other hand we would also like to be able to persist test cases. Maybe we run this test case discovery for a long time. We find a great amount of good test cases, we would want to persist it later. If a new commit comes we can just rerun the same test for regression testing. This is another thing that we would want to keep in mind. But of course we don’t want to save literally every single test case that the automatic generation creates. That would be simply way too much, a waste of space on the computer. That’s mostly because these are automatically generated test cases, it doesn’t matter how smart the generation is, there would be some redundant test cases like the two on the slide right now. Both of them are only calling the `size` method on an empty container. The `size method` is also a constant method. We expect it to not change the container’s state. Persisting only one of them would be ideal. Of course we can choose to persist the smaller one. But all of this means nothing if we are just generating the same 3 or 4 test cases all the time. We are not even calling some methods. We want to achieve a high combined coverage. And now comes the question, what kinds of issues would we like to catch. Of course finding crashes is great. It is relatively easy to find them because if we run them they crash. It is a great identification of an error. But it would be great if we could detect other things, other undefined behavior or even logical errors as well. Those who are familiar with fuzzing might realize that it fits most of the criteria that we established. We will go to a slide in a minute to see that I’m not lying about it but first let’s quickly refresh our knowledge about fuzzing.
 
@@ -59,11 +59,11 @@ A second good requirement would be filtering out invalid method calls. How would
 
 https://diyhpl.us/wiki/transcripts/cppcon/2017/2017-10-11-kostya-serebryany-fuzzing/
 
-If you would like to see a talk focused on fuzzing only I recommend the [one](https://diyhpl.us/wiki/transcripts/cppcon/2017/2017-10-11-kostya-serebryany-fuzzing/ at the bottom of the slide. 
+If you would like to see a talk focused on fuzzing only I recommend the [one](https://diyhpl.us/wiki/transcripts/cppcon/2017/2017-10-11-kostya-serebryany-fuzzing/ at the bottom of the slide.
 
 # Fuzzing in general
 
-Let’s see how a general template of a fuzzer looks like. The main act of fuzzing is done by the fuzzer engine. What this fuzzer engine does is generate a string which is used an argument to the test subject, the target function. This is the function that fuzzing is meant to test. If the function is run and the function fails we can raise the error. We can see that we’ve caught a bug. But if it does not fail, the fuzzer engine can just retry with a newly generated string. Although this method may look quite simplistic it is a great method. It is time proven, it has found thousands of crashes in reputable repositories. 
+Let’s see how a general template of a fuzzer looks like. The main act of fuzzing is done by the fuzzer engine. What this fuzzer engine does is generate a string which is used an argument to the test subject, the target function. This is the function that fuzzing is meant to test. If the function is run and the function fails we can raise the error. We can see that we’ve caught a bug. But if it does not fail, the fuzzer engine can just retry with a newly generated string. Although this method may look quite simplistic it is a great method. It is time proven, it has found thousands of crashes in reputable repositories.
 
 # LLVM/Clang libFuzzer
 
@@ -71,7 +71,7 @@ The fuzzer engine that I have decided to use is LLVM/Clang libFuzzer. Let me hig
 
 # Fuzzing example
 
-Let’s see libFuzzer in action. Here our fuzzing target first checks whether the received string is at least two characters long and then indexes into them. After that it also indexes into a third character without checking the newer size requirements. That sounds like a bug. If the comparison holds we have a nested crash where we somehow index into a new pointer thinking that it is an array of at least size 5. Now what we have to do to use libFuzzer is we only have to `-fsanitize=fuzzer` as a compile (clang) argument. We didn’t even declare a `main` function but that is totally fine since libFuzzer will link its own `main` together with our binary automatically. This `main` is what implements the libFuzzer engine and we repeatedly call our target function. After running the binary we can see the segmentation fault on address 4 which most likely corresponds to the inner most issue within our code, the new pointer reference. 
+Let’s see libFuzzer in action. Here our fuzzing target first checks whether the received string is at least two characters long and then indexes into them. After that it also indexes into a third character without checking the newer size requirements. That sounds like a bug. If the comparison holds we have a nested crash where we somehow index into a new pointer thinking that it is an array of at least size 5. Now what we have to do to use libFuzzer is we only have to `-fsanitize=fuzzer` as a compile (clang) argument. We didn’t even declare a `main` function but that is totally fine since libFuzzer will link its own `main` together with our binary automatically. This `main` is what implements the libFuzzer engine and we repeatedly call our target function. After running the binary we can see the segmentation fault on address 4 which most likely corresponds to the inner most issue within our code, the new pointer reference.
 
 # Clang Sanitizers
 
@@ -89,15 +89,15 @@ Now after discussing the sanitizers let’s read the error message on the previo
 
 # What we would need (again)
 
-So let’s get back to this slide as I promised. Now we can verify that fuzzing indeed does generate test cases automatically. Of course the second point (filtering out invalid method calls) does not really make sense when it comes to fuzzing. Fuzzing is all about testing string interfaces. It has no concept of method calls at all. Fuzzing runs test cases on the fly, every single fuzzer as far as I know. libFuzzer maintains the Corpus as a directory on the filesystem so persisting test cases is also taken care of. libFuzzer also has the ability of rerunning tests from a previously generated Corpus. Filtering redundant test cases is also done by libFuzzer by simply not even saving them onto the Corpus directory. Of course the fuzzer also can achieve great coverage, as I already mentioned fuzzing is a great tool for that. What about finding more things than just crashes? We’ve seen that sanitizers work with libFuzzer so we can find more than just crashes but logical errors seem a bit our of reach for fuzzing. Even still fuzzing seems pretty great. It fits most of our criteria, let’s try to adapt it. 
+So let’s get back to this slide as I promised. Now we can verify that fuzzing indeed does generate test cases automatically. Of course the second point (filtering out invalid method calls) does not really make sense when it comes to fuzzing. Fuzzing is all about testing string interfaces. It has no concept of method calls at all. Fuzzing runs test cases on the fly, every single fuzzer as far as I know. libFuzzer maintains the Corpus as a directory on the filesystem so persisting test cases is also taken care of. libFuzzer also has the ability of rerunning tests from a previously generated Corpus. Filtering redundant test cases is also done by libFuzzer by simply not even saving them onto the Corpus directory. Of course the fuzzer also can achieve great coverage, as I already mentioned fuzzing is a great tool for that. What about finding more things than just crashes? We’ve seen that sanitizers work with libFuzzer so we can find more than just crashes but logical errors seem a bit our of reach for fuzzing. Even still fuzzing seems pretty great. It fits most of our criteria, let’s try to adapt it.
 
 # How does fuzzing help us? We won’t be testing just string interfaces
 
-But how? Because fuzzing is for string interfaces and we don’t have that. What should we do? 
+But how? Because fuzzing is for string interfaces and we don’t have that. What should we do?
 
 # Transforming libFuzzer to an Interface Fuzzer
 
-This is how fuzzing looks like. What we have to do is sometimes take the string and transform it into something which we can use to test the fuzzed class. What we have to do is somehow interpret the generated fuzzed string as a method call list. Afterwards we can just call the method call list one after the other on the fuzzed class. Of course we would have reflection, it would be a great candidate for implementing something like this. If we could somehow query the methods that the class has and then use it afterwards. But reflection is pretty far away at the moment, at least as far as I know. Instead what we have to do is use some user code to generate an interface description. Now what the interpreter can do is use that interface description to interpret the string and generate the method call list in the end. 
+This is how fuzzing looks like. What we have to do is sometimes take the string and transform it into something which we can use to test the fuzzed class. What we have to do is somehow interpret the generated fuzzed string as a method call list. Afterwards we can just call the method call list one after the other on the fuzzed class. Of course we would have reflection, it would be a great candidate for implementing something like this. If we could somehow query the methods that the class has and then use it afterwards. But reflection is pretty far away at the moment, at least as far as I know. Instead what we have to do is use some user code to generate an interface description. Now what the interpreter can do is use that interface description to interpret the string and generate the method call list in the end.
 
 # Interface Description
 
@@ -115,7 +115,7 @@ Namely what I am talking about is `FuzzedDataProvider`. This class is defined sp
 
 # Crashes are not Enough
 
-We are at the place where we can safely generate test cases which have only valid method calls and roughly look like those on the slide right now. But are we satisfied? What if we have bugs that are not revealed by crashes? Of course we have sanitizers but something catching actual logical errors might also be great. 
+We are at the place where we can safely generate test cases which have only valid method calls and roughly look like those on the slide right now. But are we satisfied? What if we have bugs that are not revealed by crashes? Of course we have sanitizers but something catching actual logical errors might also be great.
 
 # Invariants
 
@@ -123,7 +123,7 @@ What we can take to try to help us with this problem is invariants. An invariant
 
 # Let’s put it to the test
 
-So let’s put it to the test. Let’s see how this method actually performs. 
+So let’s put it to the test. Let’s see how this method actually performs.
 
 # Case Study 1: Simplified Deque
 
@@ -137,13 +137,13 @@ The second example is a bit more complicated. I have chosen a state of the art h
 
 I ultimately broke the implementation of the hash map test into two parts. This first part is the setup. Here the argument placeholders are defined which we will use in the second slide. We can see that it has a `to_res` which will be used to resize and rehash the container to have a size between 1 and 10,000. The `integralRange` on the right is defined as a function taking the start and finish of the range, and returning a function taking a fuzz data provider which will return the actual generated integer that we want to use there. `to_res` is just an argument placeholder. This stands for everything else in the slide. All three things are just argument placeholders. `randomString` is also implemented the same way. In `key_val` what we can see is an actual custom return argument placeholder when we use preexisting placeholders, namely `randomString` and combine them to create a random string pair, which is the `robin_hood` pair, not `std` pair.
 
-Now what we can do with these argument placeholders is we can declare methods like this. This is pretty boring, exactly the same as it was in the previous slide only with different methods. We have an `insert` which takes a pair of strings and inserts the key value pair into the map. We also have `emplace` where we construct the pair `emplace`. We also have `count` which counts the keys, `contains` which checks whether the key is in there and so on. I am not listing the amount of user code that was necessary to implement this interface fuzzing as a user. It is very, very small. I am happy how it turned out from an interface standpoint to be honest. Even though I couldn’t leave out these `AUTOTEST` mock rules which I tried really hard but didn’t succeed. 
+Now what we can do with these argument placeholders is we can declare methods like this. This is pretty boring, exactly the same as it was in the previous slide only with different methods. We have an `insert` which takes a pair of strings and inserts the key value pair into the map. We also have `emplace` where we construct the pair `emplace`. We also have `count` which counts the keys, `contains` which checks whether the key is in there and so on. I am not listing the amount of user code that was necessary to implement this interface fuzzing as a user. It is very, very small. I am happy how it turned out from an interface standpoint to be honest. Even though I couldn’t leave out these `AUTOTEST` mock rules which I tried really hard but didn’t succeed.
 
 # Summary
 
-So let’s sum up what happened in the last 40 minutes. We encountered a problem of not having mass testing tools. The solution we tried was adapting existing fuzzing methodology. To do this we first created a way to describe the interface of the class that we want to test. Afterwards we interpreted the fuzz string as a method list and excluded the invalid test cases from it. We then executed the interpreted test case. What is great about this solution is that it works well with the same sanitizers that libFuzzer can be used with. The first results of the prototype seem pretty promising. These were the ones I mentioned in the case study section. If you would like to take a look at this prototype feel free to look at it on my [GitLab](https://gitlab.com/wilzegers/autotest/). 
+So let’s sum up what happened in the last 40 minutes. We encountered a problem of not having mass testing tools. The solution we tried was adapting existing fuzzing methodology. To do this we first created a way to describe the interface of the class that we want to test. Afterwards we interpreted the fuzz string as a method list and excluded the invalid test cases from it. We then executed the interpreted test case. What is great about this solution is that it works well with the same sanitizers that libFuzzer can be used with. The first results of the prototype seem pretty promising. These were the ones I mentioned in the case study section. If you would like to take a look at this prototype feel free to look at it on my [GitLab](https://gitlab.com/wilzegers/autotest/).
 
 # Future work
 
-The question is where to go from here. A great idea would be to test it on non-container classes which might pose additional challenges with the argument values meaning more than in the case of the containers. Of course this prototype, while it seems to work well enough, also needs a pretty big refactoring because I am really hoping that nobody will look at the code itself. The most important future work I have right now is to answer any questions you may have about the presentation. Hopefully I will be live in a moment. 
+The question is where to go from here. A great idea would be to test it on non-container classes which might pose additional challenges with the argument values meaning more than in the case of the containers. Of course this prototype, while it seems to work well enough, also needs a pretty big refactoring because I am really hoping that nobody will look at the code itself. The most important future work I have right now is to answer any questions you may have about the presentation. Hopefully I will be live in a moment.
 

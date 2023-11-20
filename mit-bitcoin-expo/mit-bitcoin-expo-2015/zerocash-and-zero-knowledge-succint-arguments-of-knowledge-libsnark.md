@@ -46,7 +46,7 @@ All of those properties when taken together are actually impossible. So we relax
 
 Having identified what we want, can we get it? In a beautiful line of early work by Killian92 and Mical92, Mical00, they are efficient enough to be implemented.
 
-PGHR13, BCGTV13, BCTV14b, KPPSST14, ZPK14, CFHKPKNPZ14, BCTV14, 
+PGHR13, BCGTV13, BCTV14b, KPPSST14, ZPK14, CFHKPKNPZ14, BCTV14,
 
 We chose one of those systems, libsnark, that we believe is best. Our implementation we chose is fast. It's also very versatile. It supports low-level concepts like circuits and high-level concepts like random access machines. It is MIT licensed.
 

@@ -1,5 +1,5 @@
 ---
-title: Lightning Network 
+title: Lightning Network
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['consensus', 'lightning', 'scalability']

@@ -21,7 +21,7 @@ Mi experiencia con los PBI es que pueden ser muy informativos porque son una esp
 
 Eventualmente podríamos repasar los BIPs de segwit o los bips de cartera como bip32 los realmente importantes. Esta es una buena prueba. Tengo las cosas normales en cola aquí, así que si encontramos esto demasiado aburrido, entonces podríamos cambiar a eso. Háganme saber. Podríamos querer la pizarra. Si pudieras desplegar eso... podríamos encontrarlo útil.
 
-# Presentaciones 
+# Presentaciones
 
 ((se omitio))
 
@@ -41,7 +41,7 @@ Otro aspecto es la no maleabilidad. Hemos tenido problemas con la maleabilidad e
 
     17:30 < kanzure> en el bip de taproot, la no maleabilidad es una motivación: ¿por qué? segwit lo soluciona ¿no? me gusta la no maleabilidad por supuesto.
     17:41 < aj> kanzure: wtxid la maleabilidad sigue siendo agradable de evitar, al igual que el hecho de tener diferentes tamaños de datos de los testigos, lo que podría permitir a la gente malear su tarifa sobre p2p?
-    17:48 < sipa> también la propagación de la tx se ve perjudicada por la maleabilidad, lo que contribuye indirectamente a la propagación de bloques en bloques compactos & co 
+    17:48 < sipa> también la propagación de la tx se ve perjudicada por la maleabilidad, lo que contribuye indirectamente a la propagación de bloques en bloques compactos & co
     18:00 < kanzure> Gracias. Estamos en un seminario socrático en este momento :).
 
 La linealidad (agregación de pubkeys) también es muy buena. Pero taproot no motiva realmente la agregación de claves por sí misma. Taproot podría utilizar multifirmas ECDSA dentro de cada rama.
@@ -56,7 +56,7 @@ Completamente especificado- es determinista. Con ECDSA hay algunos problemas, co
 
 El último punto es que bip-schnorr utiliza la misma matemática de curva elíptica secp256k1 para hacer las firmas y la verificación. También las mismas funciones hash. Podemos conservar los métodos existentes para los secretos y las claves públicas. No necesitamos nuevas formas de producir secretos o claves públicas, ni necesitamos nuevas suposiciones. Es la misma matemática detrás, sólo una forma diferente de aplicarla. ¿Alguna pregunta?
 
-## Diseño bip340 
+## Diseño bip340
 
 Resumen de la firma Schnorr: <https://www.youtube.com/watch?v=FU-rA5dkTHI&t=18m40s>
 
@@ -76,12 +76,12 @@ También hay otra información sobre la serialización de las diferentes primiti
 
 Etiquetado como hashes...
 
-    18:04 < kanzure> para los hashes etiquetados, ¿en qué situación se espera la reutilización del nonce? como los nonces de baja entropía...? 
-    18:04 < aj> ¿se refiere a la reutilización de etiquetas? 
-    18:05 < kanzure> "Por ejemplo, sin el hashing etiquetado, una firma BIP340 podría ser también válida para un esquema de firma en el que la única diferencia es que los argumentos de la función hash están reordenados. Peor aún, si la función de derivación del nonce de BIP340 fue copiada o creada independientemente, entonces el nonce podría ser reutilizado accidentalmente en el otro esquema filtrando la clave secreta". 
-    18:05 < kanzure> esto sólo sería cierto para los nonces de baja entropía, ¿verdad? 
-    18:05 < aj> o si el nonce es determinista 
-    18:06 < kanzure> Oh, ya veo, puedo ver formas en que los nonces deterministas entrarían en conflicto. 
+    18:04 < kanzure> para los hashes etiquetados, ¿en qué situación se espera la reutilización del nonce? como los nonces de baja entropía...?
+    18:04 < aj> ¿se refiere a la reutilización de etiquetas?
+    18:05 < kanzure> "Por ejemplo, sin el hashing etiquetado, una firma BIP340 podría ser también válida para un esquema de firma en el que la única diferencia es que los argumentos de la función hash están reordenados. Peor aún, si la función de derivación del nonce de BIP340 fue copiada o creada independientemente, entonces el nonce podría ser reutilizado accidentalmente en el otro esquema filtrando la clave secreta".
+    18:05 < kanzure> esto sólo sería cierto para los nonces de baja entropía, ¿verdad?
+    18:05 < aj> o si el nonce es determinista
+    18:06 < kanzure> Oh, ya veo, puedo ver formas en que los nonces deterministas entrarían en conflicto.
 
 Pasemos a las aplicaciones. Firmas de adaptadores.... útiles para la privacidad en los relámpagos para que cada salto no revele las preimágenes o deje que los observadores sepan qué protocolo estaba ocurriendo realmente una vez que las cosas se encadenan. Bien, entonces sí. Genial.
 

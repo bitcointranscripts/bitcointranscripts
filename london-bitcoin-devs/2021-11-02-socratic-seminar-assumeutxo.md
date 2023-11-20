@@ -17,9 +17,9 @@ Reading list: <https://gist.github.com/michaelfolkson/f46a7085af59b2e7b9a7904715
 
 # Intros
 
-Michael Folkson (MF): This is a discussion on AssumeUTXO. We are lucky to have James O’Beirne on the call. There is a reading list that I will share in a second with a bunch of links going right from concept, some of the podcasts James has done, a couple of presentations James has done. And then towards the end hopefully we will get pretty technical and in the weeds of some of the current, past and future PRs. Let’s do intros. 
+Michael Folkson (MF): This is a discussion on AssumeUTXO. We are lucky to have James O’Beirne on the call. There is a reading list that I will share in a second with a bunch of links going right from concept, some of the podcasts James has done, a couple of presentations James has done. And then towards the end hopefully we will get pretty technical and in the weeds of some of the current, past and future PRs. Let’s do intros.
 
-James O’Beirne (JOB): Thanks Michael for putting this together and for having me. It is nice to be able to participate in meetings like this. My name is James O’Beirne. I have been working on Bitcoin Core on and off for about 6 years. Spent some time at Chaincode Labs and continue to work full time on Bitcoin Core today. Excited to talk about AssumeUTXO and to answer any questions anybody has. The project has been going on for maybe 2 and a half years now which is a lot longer than I’d anticipated. Always happy to talk about it so thanks for the opportunity. 
+James O’Beirne (JOB): Thanks Michael for putting this together and for having me. It is nice to be able to participate in meetings like this. My name is James O’Beirne. I have been working on Bitcoin Core on and off for about 6 years. Spent some time at Chaincode Labs and continue to work full time on Bitcoin Core today. Excited to talk about AssumeUTXO and to answer any questions anybody has. The project has been going on for maybe 2 and a half years now which is a lot longer than I’d anticipated. Always happy to talk about it so thanks for the opportunity.
 
 # Why do we validate the whole blockchain from genesis?
 
@@ -27,7 +27,7 @@ James O’Beirne (JOB): Thanks Michael for putting this together and for having 
 
 MF: We generally start with basics, some people who are beginners will get lost later. I am going to pick on some volunteers to discuss some of the basics. The first question is what is initial block download? Why do we do it? Why do we bother validating the whole blockchain from genesis?
 
-Openoms (O): The whole point is to build the current UTXO set so we can see what coins are available to be spent currently and which have been spent before. We do it by validating all the blocks, downloading all the blocks from the genesis block, from the beginning. Going through which coins have been spent and ending up with the current chain tip which will end up building the current UTXO set. We can know what has been spent before and what is available now. 
+Openoms (O): The whole point is to build the current UTXO set so we can see what coins are available to be spent currently and which have been spent before. We do it by validating all the blocks, downloading all the blocks from the genesis block, from the beginning. Going through which coins have been spent and ending up with the current chain tip which will end up building the current UTXO set. We can know what has been spent before and what is available now.
 
 JOB: At a very high level if you think of the state of Bitcoin as being a ledger you want to validate for yourself without taking anything for granted the current state of the ledger. The way you would do that is by replaying every single transaction that has ever happened to create the current state of the ledger and verifying for yourself that each transaction is valid. That is essentially what the initial block download is.
 
@@ -47,7 +47,7 @@ O: A couple of hours on high end hardware with a I7 processor and a decent amoun
 
 Stephan (S): I was using Raspiblitz and it took me like 5 days with a SSD. Similar magnitude.
 
-O: It depends a lot on the peers you end up downloading from. For example if you have a full node on your local network and you add it as a peer then it can be quite quick in that sense. Also if you are downloading through Tor that can slow down things a lot. 
+O: It depends a lot on the peers you end up downloading from. For example if you have a full node on your local network and you add it as a peer then it can be quite quick in that sense. Also if you are downloading through Tor that can slow down things a lot.
 
 # Assumedvalid and checkpoints
 
@@ -65,7 +65,7 @@ S: To be clear assumed valid is still being used today, it is just the checkpoin
 
 JOB: Yes. Assumed valid is used by default. It is the default configuration. Typically every release the assumed valid value is bumped to a recent block as of the time of the code. That typically happens every release. Calvin (Kim) is saying that checkpoints are still used. They are probably just really low height and could probably be removed. Assumed valid is still very much maintained. It is the default setting. If you want to opt out of it and do a full signature check for the entire chain you can do that by passing the value `0` for an assumed valid configuration.
 
-Calvin Kim (CK): Just a point on removing the old checkpoints. Technically that is a hard fork. 
+Calvin Kim (CK): Just a point on removing the old checkpoints. Technically that is a hard fork.
 
 JOB: Yeah, exactly. It would broaden the consensus rules, it would allow blocks that were previously invalid to be valid. You are right about that Calvin.
 
@@ -81,15 +81,15 @@ S: The difference in performance would be that you skip signature validation unt
 
 JOB: That sounds right. I am not sure offhand, I’d have to check the code.
 
-S: There is only a single hash in the code right? Whereas checkpoints you have one every I don’t know 50,000 blocks. But for assumed valid it is only a single hash. 
+S: There is only a single hash in the code right? Whereas checkpoints you have one every I don’t know 50,000 blocks. But for assumed valid it is only a single hash.
 
-CK: That hash is backed by minimum chain work. There are some checks to make sure you are on the right chain. 
+CK: That hash is backed by minimum chain work. There are some checks to make sure you are on the right chain.
 
 JOB: Yeah minimum chain work is definitely another relevant setting here. That prevents someone from sending a really long chain of headers that may be longer in a strict count than mainnet but is lower work.
 
 MF: This is relevant in an AssumeUTXO context because the concept is that you are going to validate only a fraction of the chain and then potentially do transactions. Pay or receive having only done a fraction of the initial block download. The rest of it from genesis would be happening in the background but you are already functional, you are already up and running, you are already potentially doing transactions, paying and receiving.
 
-JOB: That’s the sketch of AssumeUTXO. With assumedvalid you are still downloading all the blocks. You have all the data onhand. AssumeUTXO allows you to take a serialized snapshot of the UTXO set, deserialize that, load that in from a certain height. In the same way as with assumedvalid we expect that by the time the code is distributed there are going to be hundreds if not thousands of blocks on top of the assumedvalid value, the same would go for AssumeUTXO. We would expect that the initial block download that you have to is truncated but it is not completely eliminated. You are still downloading a few thousand blocks on top of that snapshot. In the background we then start a full initial block download. 
+JOB: That’s the sketch of AssumeUTXO. With assumedvalid you are still downloading all the blocks. You have all the data onhand. AssumeUTXO allows you to take a serialized snapshot of the UTXO set, deserialize that, load that in from a certain height. In the same way as with assumedvalid we expect that by the time the code is distributed there are going to be hundreds if not thousands of blocks on top of the assumedvalid value, the same would go for AssumeUTXO. We would expect that the initial block download that you have to is truncated but it is not completely eliminated. You are still downloading a few thousand blocks on top of that snapshot. In the background we then start a full initial block download.
 
 # The AssumeUTXO concept
 
@@ -133,17 +133,17 @@ JOB: If someone say generates a snapshot that is 3 blocks old what would happen 
 
 O: Transacting with an unsynced node there is a big difference between sending and receiving. If you can send and the network accepts it and especially if the receiver receives it then you don’t need to verify that anymore. The question is when you are receiving something and you want confirmation. That would need the new blocks fed to you as well which is a much more complicated question.
 
-JOB: That’s a great point. There is an asymmetry there. 
+JOB: That’s a great point. There is an asymmetry there.
 
 O: You wouldn’t be able to verify without reaching the chain tip, fully sychronizing. You might be able to construct a transaction without doing that and then broadcast it.
 
 JOB: Yes.
 
-MF: So this is sounding less controversial than I thought it was initially. 
+MF: So this is sounding less controversial than I thought it was initially.
 
 Ross Clelland (RC): Are there concerns where the snapshot is being taken when a Lightning channel is opened? It is subsequently closed but you’ve given that snapshot to someone, they think the channel is still open so they could use that. Or would Lightning itself prevent that money from being sent?
 
-JOB: I think that’s equivalent to the simple payment example where someone gives you a snapshot, you load in the snapshot. Until you’ve gotten to the network tip, the most recent block that everyone has seen, you can’t make assertions about what is spent and what is unspent. I think they are analogous. 
+JOB: I think that’s equivalent to the simple payment example where someone gives you a snapshot, you load in the snapshot. Until you’ve gotten to the network tip, the most recent block that everyone has seen, you can’t make assertions about what is spent and what is unspent. I think they are analogous.
 
 MF: I’m wavering on this now. I came into this thinking you would definitely want the user to complete that initial block download from genesis. As you say this is conservatively designed in that you do actually complete the full IBD, it is just you do the from genesis part after you are up and running. This argument of whether you should actually do that IBD from genesis and what’s the point of that seems like a question.
 
@@ -161,7 +161,7 @@ JOB: Exactly. Even with that one interesting line of thinking is to use the comp
 
 O: There is an implementation of a similar idea called [btc-rpc-proxy](https://github.com/Kixunil/btc-rpc-proxy). That is outside Bitcoin Core but it is a service that simulates a full chain to the software calling the Bitcoin RPC interface. It sits behind Bitcoin Core and the Bitcoin RPC basically. You still have a pruned node but there is a request getting to a block which is not on the chain anymore because it is pruned. It requests it like with the block filters and serves it to the requester software. To that software it looks like it is an unpruned node but in reality it is not. There is this full node company called Embassy who are running on a SD card by default and they use a pruned chain. They also develop and use this btc-rpc-proxy which allows them to not need 300 GB of storage, they just need a SD card with the OS and the pruned node. This is something in between the block filters and the pruned, full node trade-off.
 
-MF: I’m guessing the strongest argument for still doing IBD from genesis is what you said James, in principle ideally we want everyone to be able to fetch and validate the whole chain. And so if we relaxed and become less conservative, don’t do that by default, release that conservatism, then perhaps those blocks and transactions from the first few years of Bitcoin are just impossible to retrieve. 
+MF: I’m guessing the strongest argument for still doing IBD from genesis is what you said James, in principle ideally we want everyone to be able to fetch and validate the whole chain. And so if we relaxed and become less conservative, don’t do that by default, release that conservatism, then perhaps those blocks and transactions from the first few years of Bitcoin are just impossible to retrieve.
 
 JOB: Right. Someone early in the proposal made the argument, in theory everybody is incentivized just to run a pruned node. Why would you keep the extra storage around? I don’t think they are quite comparable. Running a pruned node doesn’t make the IBD go faster. Pretty much everyone wants IBD to go faster. If it was easy enough almost everybody would want to do AssumeUTXO, it gives you an operable node much more quickly. In that case you would then have the default of not having the blocks. In practice it may be the case that many more people don’t have the full chain history on disk. I think you are right.
 
@@ -177,9 +177,9 @@ JOB: Definitely. You could automatically parse the chain params, the cpp file, e
 
 MF: I was thinking there would be a warning in the GUI if you say made a payment or received a payment without having completed IBD. I was thinking there would be information to the user “You haven’t completed IBD. Therefore there is a slightly higher risk”. But I’m thinking that is not even necessary. The risk is not zero, there could be some crazy re-org back there but it is basically zero to many decimal places.
 
-JOB: I agree. I don’t know what the user’s action would be subsequently. It is such a vanishingly low probability that there would be some kind of attack there. If you assume that the user got a malicious binary that had a bad AssumeUTXO hash in it they would strip out that warning too. 
+JOB: I agree. I don’t know what the user’s action would be subsequently. It is such a vanishingly low probability that there would be some kind of attack there. If you assume that the user got a malicious binary that had a bad AssumeUTXO hash in it they would strip out that warning too.
 
-Thaddeus Dryja (TD): It seems like the only thing you can do is crash. The binary is not self consistent. It is like “Hey this binary has detected a state where the binary itself is assured that it would never happen”. So crash or something. 
+Thaddeus Dryja (TD): It seems like the only thing you can do is crash. The binary is not self consistent. It is like “Hey this binary has detected a state where the binary itself is assured that it would never happen”. So crash or something.
 
 # How AssumeUTXO interacts with other projects like Utreexo
 
@@ -221,17 +221,17 @@ JOB: It is worth noting as well that at some point there was talk about incorpor
 
 TD: A lot of people think it is this. I don’t know that it actually gives you that much in either case. Even AssumeUTXO, you are going to want to validate the last couple of weeks or months anyway. You can hardcode that far back in the binary. Does it really help that much to have miners committing to these things? I don’t know.
 
-JOB: That’s a fundamental shift of trust towards the miners as well. 
+JOB: That’s a fundamental shift of trust towards the miners as well.
 
 TD: Even if you were willing to do that, “Let’s make this a commitment” there are a lot of downsides. The biggest that I’ve talked to people about, at least for Utreexo, it keeps changing. We have cool ideas and now it is twice as fast as it was last month or something. We definitely don’t want to commit to some kind of soft fork because what if you find a way better idea in a year but now you’ve got this soft fork thing stuck in that no one wants to use anymore. Also it doesn’t seem to get you that much. For the risk and the change in trust it seems like you can do a lot of really cool things without that. I haven’t really even looked into that much because it doesn’t seem it will help us that much. Let’s not even go there. It is the same sort of idea with AssumeUTXO? It doesn’t seem like there is any need to involve miners?
 
 JOB: Absolutely. Given it has taken two and a half years just to do the implementation I didn’t want to undertake anything even getting close to a soft fork.
 
-TD: That’s what is cool about it. These improvements that aren’t even forks at all. If you want to use it, cool and if you don’t… That’s one of the things we talk about a lot with Utreexo, it is a big enough change that it is going to be hard to get into Bitcoin Core and rightly so. Bitcoin Core is quite conservative with changing all this stuff and it is a pretty big change. Let’s try testnet versions that aren’t Core and play around with that first. Maybe it is the kind of the thing where people use it for a year or two without it being merged into Core. Then it is long enough and well tested enough that people are like “We can move it in now”. 
+TD: That’s what is cool about it. These improvements that aren’t even forks at all. If you want to use it, cool and if you don’t… That’s one of the things we talk about a lot with Utreexo, it is a big enough change that it is going to be hard to get into Bitcoin Core and rightly so. Bitcoin Core is quite conservative with changing all this stuff and it is a pretty big change. Let’s try testnet versions that aren’t Core and play around with that first. Maybe it is the kind of the thing where people use it for a year or two without it being merged into Core. Then it is long enough and well tested enough that people are like “We can move it in now”.
 
 JOB: I was going to say that hopefully with [libbitcoinkernel](https://github.com/bitcoin/bitcoin/issues/24303) it might even be practical or advisable to do Utreexo as a separate project. At the same time I think you guys are going to be modifying so much of what is considered consensus critical. The benefits of having a shared library like libbitcoinkernel probably aren’t as much as if you just want to do your own mempool or do a different peer-to-peer relay.
 
-TD: The messages are different. I have talked to other people who are interested in libbitcoinkernel, libconsensus, that kind of stuff. Getting rid of the database code as consensus code is something people are very interested in. Talking to fanquake, fanquake got rid of OpenSSL in Bitcoin Core a year or two ago. He was like “If we could get rid of LevelDB that would be amazing”. LevelDB is pretty big and does affect consensus. It would be great if it didn’t or if it was walled off or isolated a bit more. LevelDB seems fine and everyone is using it. The transition from BerkeleyDB to LevelDB was this big unintentional hard fork. That’s a scary thing to do if you want to change database stuff. But you may want to in the future. Walling that off would be another project that we want. This is part of it. You sort of need to wall it off a bit to do things like AssumeUTXO as well. 
+TD: The messages are different. I have talked to other people who are interested in libbitcoinkernel, libconsensus, that kind of stuff. Getting rid of the database code as consensus code is something people are very interested in. Talking to fanquake, fanquake got rid of OpenSSL in Bitcoin Core a year or two ago. He was like “If we could get rid of LevelDB that would be amazing”. LevelDB is pretty big and does affect consensus. It would be great if it didn’t or if it was walled off or isolated a bit more. LevelDB seems fine and everyone is using it. The transition from BerkeleyDB to LevelDB was this big unintentional hard fork. That’s a scary thing to do if you want to change database stuff. But you may want to in the future. Walling that off would be another project that we want. This is part of it. You sort of need to wall it off a bit to do things like AssumeUTXO as well.
 
 MF: We could definitely have a whole session on Utreexo but we should probably move on. Final question, I am just trying to understand how they could potentially play together. Could you perhaps do a normal IBD from snapshot to tip and then use Utreexo from genesis to snapshot? How are they going to play together? Would you use both?
 
@@ -243,7 +243,7 @@ TD: It would be cool and something we should look at. I did talk about that a li
 
 MF: There are a few other proposals or mini projects I thought we’d briefly cover. The impact of the [rolling UTXO set hash](https://gist.github.com/fjahr/fa4892874b090d3a4f4fccc5bafa0210) on AssumeUTXO. Have you used this as part of AssumeUTXO? At least in my understanding there was an intersection between these two projects. Is that correct?
 
-FJ: There is not really an intersection. The hashes that they use now, they could use MuHash instead. But right now it uses the “legacy” hash of the UTXO set. James was already working on AssumeUTXO when I got started with this stuff. The whole UTXO set project was based on the old style of hash. It was very unclear if and when the rolling hash, MuHash, would get in. There was really no reason to change that. Now it is in there could be potentially in the future, instead of the serialized hash, the MuHash could be used. That would give some upside if you run the CoinStats index. It is much easier to get hashes of UTXO sets that are in the past. James has a script to do it with a node but I guess the node is not really operational while you are running the script. It is a bit hacky. This could potentially make it a lot nicer but then of course you would still need to make changes in the sense that these saved hashes in the codebase would need to be MuHash hashes. Of course you could have both in there. That is still a bit off, MuHash first needs to be considered 100 percent safe. We still need to watch it a bit more and get a bit more experience with it and give it a bit more time before that makes sense. 
+FJ: There is not really an intersection. The hashes that they use now, they could use MuHash instead. But right now it uses the “legacy” hash of the UTXO set. James was already working on AssumeUTXO when I got started with this stuff. The whole UTXO set project was based on the old style of hash. It was very unclear if and when the rolling hash, MuHash, would get in. There was really no reason to change that. Now it is in there could be potentially in the future, instead of the serialized hash, the MuHash could be used. That would give some upside if you run the CoinStats index. It is much easier to get hashes of UTXO sets that are in the past. James has a script to do it with a node but I guess the node is not really operational while you are running the script. It is a bit hacky. This could potentially make it a lot nicer but then of course you would still need to make changes in the sense that these saved hashes in the codebase would need to be MuHash hashes. Of course you could have both in there. That is still a bit off, MuHash first needs to be considered 100 percent safe. We still need to watch it a bit more and get a bit more experience with it and give it a bit more time before that makes sense.
 
 JOB: Definitely. As Fabian mentioned the process right now for checking the AssumeUTXO hash on your own node is pretty hacky because what you have to do is call `invalidateblock` on the block after the snapshot block so that you roll your chain back to the snapshot point. Then you calculate the hash. All the while obviously your node is not at network tip and so not operable. You have to reconsider a block and rewind back to tip. That does take probably 15 minutes at least.
 
@@ -251,7 +251,7 @@ MF: It says here “It is conceivable that AssumeUTXO could use the rolling UTXO
 
 JOB: AssumeUTXO is really agnostic in terms of the particular commitment as long as you hardcode it. As Fabian said you could imagine that if we decide MuHash has the security properties that we’re comfortable with you could have a side by side listing or something to facilitate migration, just move to MuHash.
 
-MF: There were a couple more that were interesting. I don’t know if James or anybody else wants to comment on these. There was the [periodic automatic UTXO database backup](https://github.com/bitcoin/bitcoin/issues/8037) that has been open for a number of years from Wladimir. 
+MF: There were a couple more that were interesting. I don’t know if James or anybody else wants to comment on these. There was the [periodic automatic UTXO database backup](https://github.com/bitcoin/bitcoin/issues/8037) that has been open for a number of years from Wladimir.
 
 JOB: I haven’t really looked at this in depth.
 
@@ -269,13 +269,13 @@ TD: I know a little bit about that. Definitely talking to Cory about that stuff 
 
 MF: Let’s talk about the implementation in Core then to finish. The evolution of this, you have the [prototype](https://github.com/bitcoin/bitcoin/pull/15606) just to check it works or convince yourself and convince others that this was worth pursuing. You said this wasn’t mergeable, this was just a prototype. Any interesting things that came out of this other than just initial feedback?
 
-JOB: That started out as a rough prototype. I think it was a single commit when I opened. It has slowly evolved into something resembling mergeable. At the moment I think it needs a rebase but beyond that from my perspective it is code that could be considered for merging. What I’ve been doing is trying to carve off little bits of it and open separate PRs so each change can get the appropriate level of scrutiny. Maybe people can goad me into actually writing unit tests and things like that. This PR does represent the current state of everything needed to do AssumeUTXO. I am regularly testing it. 
+JOB: That started out as a rough prototype. I think it was a single commit when I opened. It has slowly evolved into something resembling mergeable. At the moment I think it needs a rebase but beyond that from my perspective it is code that could be considered for merging. What I’ve been doing is trying to carve off little bits of it and open separate PRs so each change can get the appropriate level of scrutiny. Maybe people can goad me into actually writing unit tests and things like that. This PR does represent the current state of everything needed to do AssumeUTXO. I am regularly testing it.
 
 MF: I misunderstood then. I thought you’d spun off all the other PRs and that was the implementation of it that you thought was going to get merged. This was just the first attempt. But I’ve misunderstood that.
 
 JOB: It initially was just the first attempt. Bit by bit I’ve been keeping it up to date with the changes I do make. All the merged PRs so far have been commits that I’ve carved off from this one. One of the incidental sad things about that PR is that it has got so many comments and so much discussion now that it is almost impossible to navigate based on GitHub’s UI. I don’t know what is to be done about that.
 
-MF: A lot of people complain about the GitHub UI and comments, it is a massive headache. 
+MF: A lot of people complain about the GitHub UI and comments, it is a massive headache.
 
 JOB: Can’t live with it, can’t live without it kind of thing.
 
@@ -287,19 +287,19 @@ MF: That was a big project in itself wasn’t it? I suppose you could still have
 
 JOB: Yeah exactly, that is the whole point of the ChainstateManager versus a particular chainstate object.
 
-MF: Then there’s the (open) PRs. This is the [issue](https://github.com/bitcoin/bitcoin/issues/15605). 
+MF: Then there’s the (open) PRs. This is the [issue](https://github.com/bitcoin/bitcoin/issues/15605).
 
-JOB: The issue and the original prototype PR got a little bit muddled. There was some conceptual talk in both places. 
+JOB: The issue and the original prototype PR got a little bit muddled. There was some conceptual talk in both places.
 
 MF: The [project](https://github.com/bitcoin/bitcoin/projects/11) has all the PRs. We won’t go through them one by one. Quite a few of them are refactors, certainly the early ones were refactors. Add ChainstateManager was an early one we were just discussing that has been deglobalized by Carl. Any particular ones that have been merged that are worth discussing or worth pulling out at this point? James has dropped off the call. We’ll see if James comes back. Let’s go back to Utreexo for a moment. What’s the current status of the project? I saw there was an implementation in Go using the btcd implementation.
 
 TD: We’ve been mostly working in Go. Nicolas and Calvin are making some C++ code but we are working more in Go initially to try things out and then port it over to C++. Someone was working on a Rust version as well.
 
-CK: That was me. 
+CK: That was me.
 
 TD: If anyone wants to join Utreexo IRC channel on Libera, utreexo.
 
-MF: In terms of the PRs that have been merged, are there any particular ones that are worth discussing and pulling up? And then we’ll discuss what still needs to be merged. 
+MF: In terms of the PRs that have been merged, are there any particular ones that are worth discussing and pulling up? And then we’ll discuss what still needs to be merged.
 
 JOB: The UTXO snapshot activation thing could be worth a look. The `ChainstateManager` introduction is kind of interesting. But to talk through them here is probably kind of laborious. I would just say if you are interested they should hopefully be fairly clearly titled. You can go and read through the changes for any you are particularly interested in.
 
@@ -309,19 +309,19 @@ JOB: No, I think a lot of the stuff that got merged is pretty self contained. Th
 
 MF: In terms of the review and testing, it looks like you’ve only got one PR left to get merged? Will that be Phase 1 completed?
 
-JOB: I wish that were the case. There is another PR that is open, fanquake has been very kindly maintaining this project because I don’t have the GitHub permissions to add stuff to projects. There is another change in parallel that is being considered in addition to those 3 or 4 PRs up there. What I don’t want to do is open all the PRs I want to get merged at once. I think that will overwhelm people. I gradually as merges happen open up new PRs. If you want to see all the commits that have yet to go in for the completion of Phase 1 you can go to the AssumeUTXO [PR](https://github.com/bitcoin/bitcoin/pull/15606). That has all the commits that are required for that to happen. That is a listing of all the commits that are left to go in. 
+JOB: I wish that were the case. There is another PR that is open, fanquake has been very kindly maintaining this project because I don’t have the GitHub permissions to add stuff to projects. There is another change in parallel that is being considered in addition to those 3 or 4 PRs up there. What I don’t want to do is open all the PRs I want to get merged at once. I think that will overwhelm people. I gradually as merges happen open up new PRs. If you want to see all the commits that have yet to go in for the completion of Phase 1 you can go to the AssumeUTXO [PR](https://github.com/bitcoin/bitcoin/pull/15606). That has all the commits that are required for that to happen. That is a listing of all the commits that are left to go in.
 
 MF: What’s an easy way to test it? I saw Sjors had found a bug or two and done some good reviews by playing around with it. What could people do to be useful? Is it functional in a way that you can use the RPC and try to do IBD from the snapshot?
 
-JOB: It should be pretty usable. Right now there’s a hardcoded hash at I think 685,000 maybe. Sjors and I have at various points been hosting the UTXO snapshot over Torrent. You can clone this branch, build it and play around with doing an IBD using that snapshot. We should probably create a more recent one but I haven’t thought to do that recently. I bundled a little [script](https://github.com/bitcoin/bitcoin/blob/master/contrib/devtools/utxo_snapshot.sh) in `contrib` that allows you to do a little mock usage on mainnet. It will spin up a new data directory, it will sync maybe 50,000 blocks that happens very quickly. It will generate a snapshot and then it will tell you what to recompile your code with to allow you to accept that snapshot so you can demonstrate to yourself that the change works. I use that as a system or functional test to make sure the main branch still works. 
+JOB: It should be pretty usable. Right now there’s a hardcoded hash at I think 685,000 maybe. Sjors and I have at various points been hosting the UTXO snapshot over Torrent. You can clone this branch, build it and play around with doing an IBD using that snapshot. We should probably create a more recent one but I haven’t thought to do that recently. I bundled a little [script](https://github.com/bitcoin/bitcoin/blob/master/contrib/devtools/utxo_snapshot.sh) in `contrib` that allows you to do a little mock usage on mainnet. It will spin up a new data directory, it will sync maybe 50,000 blocks that happens very quickly. It will generate a snapshot and then it will tell you what to recompile your code with to allow you to accept that snapshot so you can demonstrate to yourself that the change works. I use that as a system or functional test to make sure the main branch still works.
 
 MF: It is functional yet there are still a lot of commits and a lot of code still to merge.
 
 JOB: Absolutely, yeah.
 
-MF: It is working on your branch, gotcha. Any edge cases or tests that need to be written? I was trying to think of edge cases but the edge cases I was thinking of would be like a snapshot that was really recent and then there was a re-org or something. But that is not possible. 
+MF: It is working on your branch, gotcha. Any edge cases or tests that need to be written? I was trying to think of edge cases but the edge cases I was thinking of would be like a snapshot that was really recent and then there was a re-org or something. But that is not possible.
 
-JOB: It would be great to have a test for doing pruning and building all the indexes to make sure that code still works. I don’t think I’ve tested all that stuff very rigorously. There is no reason it shouldn’t work but it definitely needs to be tested with pruning and indexing both enabled. 
+JOB: It would be great to have a test for doing pruning and building all the indexes to make sure that code still works. I don’t think I’ve tested all that stuff very rigorously. There is no reason it shouldn’t work but it definitely needs to be tested with pruning and indexing both enabled.
 
 MF: Why might this be a problem?
 

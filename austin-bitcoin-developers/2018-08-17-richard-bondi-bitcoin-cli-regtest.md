@@ -46,17 +46,17 @@ A - We have Alice and then we have a data directory of Bob. The top one doesn’
 
 Q - So this is just a bitcoind configuration file?
 
-A - It is bitcoin.conf for bitcoind. Or if you run Bitcoin-Qt it will look at the same one. 
+A - It is bitcoin.conf for bitcoind. Or if you run Bitcoin-Qt it will look at the same one.
 
 Q - So how are Alice and Bob are different?
 
-A - They have different ports. These are just random numbers, they just had to be unique. So you can see Bob is 18446, the default port for regtest is 18444, this is 18445. And then the same thing for the RPC ports. There’s a default of 18443, there’s this random thing that Justin made up and then Bob has another random thing that Justin made up. 
+A - They have different ports. These are just random numbers, they just had to be unique. So you can see Bob is 18446, the default port for regtest is 18444, this is 18445. And then the same thing for the RPC ports. There’s a default of 18443, there’s this random thing that Justin made up and then Bob has another random thing that Justin made up.
 
 Q - Ok so when it says `port=` that it is what Alice is running and then the other two are how to connect to these other two peers? It is a way of bootstrapping our little mini network of 3?
 
 A - Right.
 
-So if I go back to my command prompt. I’m up and running. 
+So if I go back to my command prompt. I’m up and running.
 
 Q - You only actually really need to add one of them and you will discover the other peers, `addnode` is a luxury?
 
@@ -102,7 +102,7 @@ Ok no money, sad state of affairs. But we don’t have to mess with testnet fauc
 
 So we generate a block. There’s the hash of the block we generated. Kind of unexciting, nothing but a coinbase in there but that’s the way things work.
 
-Q - If only you could find a way to sneak that into the real chain. 
+Q - If only you could find a way to sneak that into the real chain.
 
 A - No I’ve got something. Hang tight, I’ve got you covered. You don’t need a real chain, that’s the whole point of this. If you could get up and running this fast but the world don’t work that way.
 
@@ -204,7 +204,7 @@ Q - Can you send more coins to Alice, send her like 10 more and run that query w
 
 A - Yes. Let’s do it.
 
-I need another address from Alice. 
+I need another address from Alice.
 
 `alice-cli getnewaddress`
 
@@ -226,7 +226,7 @@ I’ve got the two transactions.
 
 It came up on this screen, it is so small I can’t see it. What I did was develop a tool that allows you to connect to multiple nodes and it has some convenient features for working with the commands so you don’t have to be clumsy working with the CLI. We can do some of the same things.
 
-Q - We should all be getting the exact same results as you down to the signatures? My transaction IDs don’t match yours. On the command line output, it is deterministic, we should be getting the same results? I think Bitcoin Core uses deterministic k values now so the signatures should be duplicated. 
+Q - We should all be getting the exact same results as you down to the signatures? My transaction IDs don’t match yours. On the command line output, it is deterministic, we should be getting the same results? I think Bitcoin Core uses deterministic k values now so the signatures should be duplicated.
 
 A - We’ve got three different configurations. I wouldn’t expect the same results but you may be right. If you installed on mainnet you’re not going to generate from the same seed.
 
@@ -262,7 +262,7 @@ We’ll do the same thing here. We’ll come back to Alice and list the unspent.
 
 `sendtoaddress “[insert address]” 5`
 
-It is a little different here from the CLI, the strings you don’t need the quotes. Here you do because it is Javascript and I didn’t want to figure out how to parse it. How much do we want to send Bob, we’ll send 5, we’ll keep most of the wealth to ourselves. We’ve got that transaction, we can look at that if we want to. Somebody tell me how do I see that that transaction came through to Bob? 
+It is a little different here from the CLI, the strings you don’t need the quotes. Here you do because it is Javascript and I didn’t want to figure out how to parse it. How much do we want to send Bob, we’ll send 5, we’ll keep most of the wealth to ourselves. We’ve got that transaction, we can look at that if we want to. Somebody tell me how do I see that that transaction came through to Bob?
 
 `listunspent 0`
 
@@ -292,7 +292,7 @@ Q - So you’re constructing a transaction from transaction inputs?
 
 A - From unspent outputs. I’m telling it for my input I want to use that transaction, index number 0, it should be that top one with the 10 coins in.
 
-Another thing I can do multiple lines, I just can’t have spaces between the multiple lines. That’s my first parameter. Now I need someone to send it to. Let’s go get Bob, an object with an address and an amount. 
+Another thing I can do multiple lines, I just can’t have spaces between the multiple lines. That’s my first parameter. Now I need someone to send it to. Let’s go get Bob, an object with an address and an amount.
 
 Bob - `getnewaddress`
 
@@ -300,7 +300,7 @@ We’ll send 5 again. There’s our transaction we created.
 
 Regpool - `createrawtransaction [{“txid”: “[add transaction ID]”, “vout”: 0}] {“[add address]”: 5}`
 
-So what do you think is going to happen if I try to send that? 
+So what do you think is going to happen if I try to send that?
 
 Q - You generated a new address for Bob and plugged it in as the output right?
 
@@ -328,7 +328,7 @@ A - Sure. This is the one we tried to send.
 
 `decoderawtransaction  “[add result hex string]”`
 
-There’s what it looks like decoded. The signature is in the witness data. 
+There’s what it looks like decoded. The signature is in the witness data.
 
 So what Alice needs to do is get a change address, `getrawchangeaddress` with no parameters.
 
@@ -356,7 +356,7 @@ I’m creating the transaction, I want to sign it.
 
 `signrawtransaction “[add result hex string]”`
 
-There’s my signed transaction, I want to send that as a raw transaction. 
+There’s my signed transaction, I want to send that as a raw transaction.
 
 `sendrawtransaction “[add result hex string]”`
 
@@ -376,13 +376,13 @@ A - It is raw. This is all Javascript. I just went through the spec and it said 
 
 Q - We did that in Jimmy Song’s class.
 
-A - I’ve been going through his book and doing everything in Javascript so that I can do it rather than just copying the Python code and tweaking it. Javascript wouldn’t be my first choice but it is what I know and it was the fastest way to learn. 
+A - I’ve been going through his book and doing everything in Javascript so that I can do it rather than just copying the Python code and tweaking it. Javascript wouldn’t be my first choice but it is what I know and it was the fastest way to learn.
 
 That’s part of the development environment. I wanted you to get set up, it is optional. You can actually see transactions coming in.
 
 Q - What file is that in the repository?
 
-A - It is a different repo, the one that’s actually connecting directly. The idea is to simulate. If you connected directly and there was no simulation you’d just be sitting at a blank screen. You’d get a ping, you’d get a pong. That’s a bunch of random stuff I go through for my own education. I wanted to share it. If things work for me and you prefer Javascript over Python. If you’re not a Python guy and you prefer Javascript there’s another alternative. You can go through and read that. You can try running these scripts just to play with them and tweak them a little bit. Or just to watch the network. You can put breakpoints in your code and see something didn’t happen. The whole idea is to have a troubleshooting tool. 
+A - It is a different repo, the one that’s actually connecting directly. The idea is to simulate. If you connected directly and there was no simulation you’d just be sitting at a blank screen. You’d get a ping, you’d get a pong. That’s a bunch of random stuff I go through for my own education. I wanted to share it. If things work for me and you prefer Javascript over Python. If you’re not a Python guy and you prefer Javascript there’s another alternative. You can go through and read that. You can try running these scripts just to play with them and tweak them a little bit. Or just to watch the network. You can put breakpoints in your code and see something didn’t happen. The whole idea is to have a troubleshooting tool.
 
 Let’s go back to this guy. I’m pretty sure I mined a block by now. Let’s find out.
 
@@ -404,7 +404,7 @@ Q - Are they all valid transactions?
 
 A - Yeah. Let me pull up the code (simulate.js). I’m going to generate a random amount between 0 and 2 and we’ll get a new address. I’m in my own local environment. I’m sending all money back to myself. From Bob’s and Alice’s perspective they don’t know that. It looks like somebody creating transactions and sending them on the network. I get a new address, I send to address and then I give it that random amount. Then I send. I have a timer here so that every five minutes it is going to mine.
 
-Q - You’ve got transactions that you’re spitting out and you’ve got blocks that you’re spitting out? 
+Q - You’ve got transactions that you’re spitting out and you’ve got blocks that you’re spitting out?
 
 A - Right. If you were in there doing Bob and Alice while that was running those would be there too. But that way you have a mining thing. It is closer to real world.
 
@@ -414,7 +414,7 @@ A - You have the magic bytes, that determines your network. That’s the very fi
 
 Q - If Michael and I wanted to be on the same regtest network? It is probably a networking challenge?
 
-A - You could just open up a port? I don’t know. That would be a good idea but I don’t know. You wouldn’t have to download testnet. 
+A - You could just open up a port? I don’t know. That would be a good idea but I don’t know. You wouldn’t have to download testnet.
 
 You could test the UI and stuff. You could have cooperative development and have the same… You don’t really need to do that. You can run them separately, you don’t have to see exactly the same numbers.
 

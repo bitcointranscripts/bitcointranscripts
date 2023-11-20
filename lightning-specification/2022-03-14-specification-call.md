@@ -20,7 +20,7 @@ Agenda: <https://github.com/lightning/bolts/issues/969>
 
 <https://github.com/lightning/bolts/pull/962>
 
-I think eclair and c-lightning have both removed support for legacy payments. 
+I think eclair and c-lightning have both removed support for legacy payments.
 
 I’ll probably make a PR to add the feature bit or at least flip it to required. The only wallet I can think of that is somewhat more fringe now is Simple Bitcoin Wallet. I am assuming they are doing the new stuff because they have some other hosted channel thing that adds custom fields.
 
@@ -28,7 +28,7 @@ I’ll probably make a PR to add the feature bit or at least flip it to required
 
 <https://github.com/lightning/bolts/issues/964>
 
-Next one is some questions around co-op close clarification. Do you allow people to send the co-op `closing_signed` message when HTLCs are there? What do we define as a clean slate when a co-op close transaction was able to move forward? 
+Next one is some questions around co-op close clarification. Do you allow people to send the co-op `closing_signed` message when HTLCs are there? What do we define as a clean slate when a co-op close transaction was able to move forward?
 
 This is about shutdown not `closing_signed`.
 
@@ -48,7 +48,7 @@ No if you send shutdown, reconnect and then don’t send shutdown again and hord
 
 That would be up to your counterparty. If your counterparty thinks you are in shutdown they will reject the HTLC. If your counterparty doesn’t think they are in shutdown they will accept it. You are supposed to resend shutdown on reconnect? I don’t actually know if we do.
 
-I don’t think so. I think he is bringing up a point that a channel could get stuck. If one side sends it and the other side remembers it. I think what we do is we remember the shutdown and then if things didn’t happen we won’t let a co-op close happen. It is kind of like a bug. 
+I don’t think so. I think he is bringing up a point that a channel could get stuck. If one side sends it and the other side remembers it. I think what we do is we remember the shutdown and then if things didn’t happen we won’t let a co-op close happen. It is kind of like a bug.
 
 The solution to this is we should resend shutdown right?
 
@@ -86,7 +86,7 @@ That is already required. There has to be no pending anything for `closing_signe
 
 I think he means a dangling commitment. If I send one and you don’t revoke yet can I send `closing_signed`? You have two commitments and you haven’t revoked one of them. Is that the scenario?
 
-Yeah it can be that the dangling commitment and your own local commitment are actually clear of any HTLCs. 
+Yeah it can be that the dangling commitment and your own local commitment are actually clear of any HTLCs.
 
 You mean from the `update_fee`?
 
@@ -108,7 +108,7 @@ I think you are saying that that shouldn’t be allowed. You should assume that 
 
 It is awkward to not allow that though because you may have a HTLC that times out in 2 days. If you aren’t allowed to do a fee update for 2 days while you are waiting on a HTLC to timeout that is kind of bad.
 
-I thought the idea of sending a `shutdown` signals we are not updating this anymore. 
+I thought the idea of sending a `shutdown` signals we are not updating this anymore.
 
 The idea of `shutdown` is I’m not going to add any more new HTLCs. Now we are just waiting for the HTLCs that are here to timeout before we do a `closing_signed`.
 
@@ -136,7 +136,7 @@ But allow `update_fee` I guess.
 
 That’s the thing, you have no idea if everything is clean. Your counterparty might have sent a `commitment_signed` that you haven’t received yet. Then you send a `closing_signed` and then you have to respond to the commitment transaction but you’ve already sent a `closing_signed`.
 
-For us we will remove the channel from the active set of forwarding stuff. If you sent a `commitment_signed` after we’d sent `shutdown` it would get lost. 
+For us we will remove the channel from the active set of forwarding stuff. If you sent a `commitment_signed` after we’d sent `shutdown` it would get lost.
 
 Certainly you have to be able to handle an update fulfil HTLC after shutdown.
 
@@ -162,15 +162,15 @@ I guess the spec is clear already. It says “The only case where you are not al
 
 I think that limitation to piggy back on top of `update_add_htlc` or remove HTLC should clarify that.
 
-I don’t think we implement this but you are allowed to send an `update_fee` as long as it is also with an update remove in the same `commitment_signed`. 
+I don’t think we implement this but you are allowed to send an `update_fee` as long as it is also with an update remove in the same `commitment_signed`.
 
-You can’t send it in isolation but you can send it when removing a HTLC. 
+You can’t send it in isolation but you can send it when removing a HTLC.
 
 Yes.
 
-You definitely should allow removing generally because that can help you get a channel to a clean state. 
+You definitely should allow removing generally because that can help you get a channel to a clean state.
 
-You have to allow removing. I think the spec is clear. I don’t have any questions here. 
+You have to allow removing. I think the spec is clear. I don’t have any questions here.
 
 About fee, yeah ok but not about the pending commitment thing.
 
@@ -196,7 +196,7 @@ You can do this today given we let you specify a port. It is kind of like adding
 
 Let’s just drop the Litecoin part, I don’t think we need it in BOLTs.
 
-It is pretty broken in LND today. We broke it accidentally while we were doing some wallet stuff. I think someone has a fork somewhere. This sounds fine to me. It links to a bitcoind [PR](https://github.com/bitcoin/bitcoin/pull/23306) but I don’t think that PR is related (Make AddrMan support multiple ports per IP). We already kind of have that. 
+It is pretty broken in LND today. We broke it accidentally while we were doing some wallet stuff. I think someone has a fork somewhere. This sounds fine to me. It links to a bitcoind [PR](https://github.com/bitcoin/bitcoin/pull/23306) but I don’t think that PR is related (Make AddrMan support multiple ports per IP). We already kind of have that.
 
 I don’t see how that is related.
 
@@ -248,7 +248,7 @@ I guess this is related to the prior one? At least there is a new update to this
 
 <https://github.com/lightning/bolts/pull/851>
 
-I don’t have any immediate updates. There are still a few pending things that t-bast requested, making the reserve optional, that I need to get in. We are wrapping some stuff up for the next release. We’ve also got someone who has started working on splicing in c-lightning. That is using the [draft](https://github.com/lightning/bolts/pull/863) that Rusty wrote up a while ago. It reuses a bunch of the stuff that we have in the dual funding, the interactive transaction protocol part to do the splicing. Hopefully we will have some more progress on that soon which is exciting. 
+I don’t have any immediate updates. There are still a few pending things that t-bast requested, making the reserve optional, that I need to get in. We are wrapping some stuff up for the next release. We’ve also got someone who has started working on splicing in c-lightning. That is using the [draft](https://github.com/lightning/bolts/pull/863) that Rusty wrote up a while ago. It reuses a bunch of the stuff that we have in the dual funding, the interactive transaction protocol part to do the splicing. Hopefully we will have some more progress on that soon which is exciting.
 
 # Offers
 
@@ -260,9 +260,9 @@ Offers, I saw there were some comments from Thomas from ACINQ. I’m guessing st
 
 <https://github.com/lightning/bolts/pull/919>
 
-I’m not sure this has legs still. 
+I’m not sure this has legs still.
 
-I updated the wording a while back based on Rusty’s feedback. 
+I updated the wording a while back based on Rusty’s feedback.
 
 The original feedback was that it was overly specific. Did you end up rewriting it to be less prescriptive and more just describing the issue?
 
@@ -274,7 +274,7 @@ Re-request people to review.
 
 Interop section, this web socket thing. I think Chrome enforces it, maybe Firefox and some other ones don’t. That fragmentation probably makes it difficult to assume it is not there.
 
-I think the solution to this is we need to drop the current design and replace it with a hostname. Have a flag to say “I support SSL or TLS”. 
+I think the solution to this is we need to drop the current design and replace it with a hostname. Have a flag to say “I support SSL or TLS”.
 
 That’s related to [PR 911](https://github.com/lightning/bolts/pull/911) that adds the hostname in the first place.
 
@@ -292,7 +292,7 @@ Yeah, sure.
 
 This is also in waiting for interop section.
 
-Hasn’t it had interop? We haven’t added it yet but I thought eclair had it though. t-bast isn’t here. 
+Hasn’t it had interop? We haven’t added it yet but I thought eclair had it though. t-bast isn’t here.
 
 I think they do. I know c-lightning has it. We have a similar feature that hacked around this but this is pretty straightforward.
 
@@ -362,13 +362,13 @@ Sure, that’s my understanding as well. Right now if you send an `open_channel`
 
 You are not allowed to not send an `accept_channel` message without a `channel_type`.
 
-It says “If it sets `channel_type`”. It doesn’t say that you must set `channel_type`. 
+It says “If it sets `channel_type`”. It doesn’t say that you must set `channel_type`.
 
-The “it” here is the `open_channel` message. Maybe that is what is unclear. If the `open_channel` message sets a `channel_type` then you must set the `channel_type` from `open_channel`. 
+The “it” here is the `open_channel` message. Maybe that is what is unclear. If the `open_channel` message sets a `channel_type` then you must set the `channel_type` from `open_channel`.
 
 No “it” is the sender. The sender…. sets `channel_type`.
 
-I think that is weird wording. If it sets `channel_type` and “it” you are saying is the `open_channel` message so this is making it less ambiguous wording wise.  Now it is saying “If the `channel_type` is negotiated then you must set the `channel_type` from `open_channel.” To me this is making it more explicit. 
+I think that is weird wording. If it sets `channel_type` and “it” you are saying is the `open_channel` message so this is making it less ambiguous wording wise.  Now it is saying “If the `channel_type` is negotiated then you must set the `channel_type` from `open_channel.” To me this is making it more explicit.
 
 I see your understanding but I do not see how it refers to `open_channel`. The way that the specs are written is you have the top thing as the sender and then you have some bullet points. “It” refers to the sender.
 
@@ -398,5 +398,5 @@ I re-approved it. I guess t-bast can potentially merge when he gets back.
 
 # Long term updates
 
-I finished [MuSig2 stuff](https://github.com/btcsuite/btcd/pull/1820). Now it is fixing up the API, making it hard to re-use nonces, stuff like that. 
+I finished [MuSig2 stuff](https://github.com/btcsuite/btcd/pull/1820). Now it is fixing up the API, making it hard to re-use nonces, stuff like that.
 

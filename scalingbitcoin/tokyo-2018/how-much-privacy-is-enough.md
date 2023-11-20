@@ -38,7 +38,7 @@ So that's why you should care about privacy and cryptocurrency. So what are the 
 
 # Bitcoin privacy is not intuitive
 
-Typically people think about third-party passive observers as the main threat. But you need to consider other attackers, like active attackers that can send payments to you, receive payments from you, interact with third-parties. You need to think about obvious attacks like merchants trying to track their customers; users who try to identify who their receivers are, and exchanges trying to track you. 
+Typically people think about third-party passive observers as the main threat. But you need to consider other attackers, like active attackers that can send payments to you, receive payments from you, interact with third-parties. You need to think about obvious attacks like merchants trying to track their customers; users who try to identify who their receivers are, and exchanges trying to track you.
 
 # Privacy approaches
 

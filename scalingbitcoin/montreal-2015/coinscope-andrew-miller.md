@@ -1,5 +1,5 @@
 ---
-title: Coinscope 
+title: Coinscope
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining']

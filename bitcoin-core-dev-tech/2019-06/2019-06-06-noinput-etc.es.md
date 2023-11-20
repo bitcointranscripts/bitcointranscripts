@@ -71,7 +71,7 @@ Todos a los que envías dinero necesitan ver el script completo; o su subárbol.
 
 Es pactos, pero muy simple, y todavía se puede hacer cosas interesantes. Usted puede controlar cómo se gastan las monedas, sin tener una infección viral cosa. No puede infectar todas las monedas del mundo indirectamente o algo así. Así que es finito. Tienes que calcular de antemano lo que va a suceder. Tal vez podrías usar una función hash segura y así no hacer ciclos.
 
-Bóvedas es un gran problema para la seguridad. Así que eso sería realmente genial. Hubo bóvedas, control de digestión, y también usted podría tener un pago de un intercambio si usted es una ballena y usted no tiene que revelar lo que las salidas van a en el momento de la retirada y usted podría revelar más tarde en algunas cantidades discretas y usted no tiene que publicar que por adelantado. Es una ocultación de commit-reveal o UTXO. Esto es generalmente útil para cualquier tipo de, pactos sólo realmente volar la cantidad de cosas que usted cna hacer con bitcoin script. Usted puede tener una garantía de ciertas cosas. 
+Bóvedas es un gran problema para la seguridad. Así que eso sería realmente genial. Hubo bóvedas, control de digestión, y también usted podría tener un pago de un intercambio si usted es una ballena y usted no tiene que revelar lo que las salidas van a en el momento de la retirada y usted podría revelar más tarde en algunas cantidades discretas y usted no tiene que publicar que por adelantado. Es una ocultación de commit-reveal o UTXO. Esto es generalmente útil para cualquier tipo de, pactos sólo realmente volar la cantidad de cosas que usted cna hacer con bitcoin script. Usted puede tener una garantía de ciertas cosas.
 
 Puedes tenerlo totalmente enumerado y dices, soy estos 20 puntos finales y ahora puedo crear nuevas firmas en esos puntos finales y anticipar dónde van a crear nuevos árboles.
 
@@ -95,7 +95,7 @@ Nunca he oído hablar de un uso para un tiempo de bloqueo absoluto por entrada. 
 
 ¿Qué pasa con la versión 2 de entrada mientras estamos en ello? Bueno, tenemos que con tapscript y todas esas otras cosas. ¿Alguna otra pregunta sobre CHECKSIGFROMSTACK?
 
-# OP\_SECURETHEBAG de nuevo 
+# OP\_SECURETHEBAG de nuevo
 
 Jeremy dio una charla en 2016 sobre unos pactos más poderosos; pero eran las ideas generales para los pactos. Creo que en ese momento tenía una idea y meditó durante un tiempo. La respuesta fue "demasiado poderoso, demasiado aterrador". Este es el primero en el que decimos "sí, con eso no veo cómo podéis dispararos en el pie". También con tapscript tienes una hoja de posibles caminos. Idealmente tienes un lenguaje donde puedes generar lo que quieres que sea, compilar tus transacciones, firmarlo, y moverlo en cadena. ¿Tanglescript? Porque es un DAG.
 

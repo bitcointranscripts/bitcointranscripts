@@ -1,5 +1,5 @@
 ---
-title: Script Descriptors 
+title: Script Descriptors
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet']

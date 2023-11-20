@@ -69,7 +69,7 @@ Q: How big are the UTXO set size were you testing with?
 
 A: The blockchain was 3.3 GB when we started. I didn't look at the UTXO set size in particular. Sorry, I can't answer that question. I can look into it.
 
-Q: It seemed like your blocks were transmitting always from Lond. What about data from when blocks were generated in China? I am concerned about the internet issue is something that circles China. 
+Q: It seemed like your blocks were transmitting always from Lond. What about data from when blocks were generated in China? I am concerned about the internet issue is something that circles China.
 
 A: I don't have data from mining in China yet. However, I can do a similar test, which I actually prepared for, where I downloaded the file from a Chinese node. Pick a city. Okay, Shenzhen. This isn't here, this is all in my notes. Oh, we lost the screen. Shanghai is getting packet loss from the Great Firewall. Washington had 512 kilobytes/sec. Tokyo 812 kilobytes/second. Singapore still waiting, hasn't even started now. 980 kilobytes for London. We were using teamviewer to show my laptop.
 

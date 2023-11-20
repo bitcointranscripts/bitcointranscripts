@@ -17,7 +17,7 @@ I want to present a project I’ve been hacking on for the past month which is g
 
 # Q&A
 
-Q - Are you running it in Excel? 
+Q - Are you running it in Excel?
 
 A - Excel has several different ways to program it. The immediate user facing way to program it is to… a bunch of functions inside of Excel. I’m not doing that. The second hardest way is to do it is to do a VBA macro. Then you can do a plugin in dot net languages like C#. That’s what I’m doing in C#. Anything that you would have access to in C#, you would have access to in this environment, including gRPC, including if I wanted to I could do a REST API call to bitcoinaverage.com. Then I could have the current dollar value of the payment I’m sending. It’s definitely something I want to include eventually. To your question, how does it actually take this data and then display it. Excel has an interop API that allows you to change every single thing about an Excel workbook that you can change manually through the UI. So you can change all of these borders…its definitely going to create them programmatically so I don’t have a line of code for each border. But it’s a function in there of like create borders.
 

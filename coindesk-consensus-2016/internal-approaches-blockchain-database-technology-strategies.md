@@ -68,7 +68,7 @@ IL: When we did some research, one of the approaches we've taken is we partner a
 
 WM: Thank you. ....
 
-EB: 
+EB:
 
 WM: And how?
 

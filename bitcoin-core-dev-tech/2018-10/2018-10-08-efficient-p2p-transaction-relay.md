@@ -1,5 +1,5 @@
 ---
-title: Efficient P2P Transaction Relay 
+title: Efficient P2P Transaction Relay
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['P2P']

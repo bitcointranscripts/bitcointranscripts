@@ -7,13 +7,13 @@ categories: ['podcast']
 tags: ['schnorr']
 ---
 
-LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures 
+LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures
 
 # Schnorr signatures
 
 We’re currently using the elliptic curve digital signature algorithm (ECDSA) which is a specific way of doing digital signatures with elliptic curves but not the only way. Schnorr signatures have some unique characteristics that make them better in many ways than the ECDSA algorithm we use today in Bitcoin.
 
-Schnorr signatures are better because they have certain quirks in the way the mathematics plays out. Digital signatures are numbers, they’re just numbers. The way you calculate these numbers is in such a way that someone else can verify that you calculated this number with knowledge of the private key without actually revealing this private key. They can verify that you have possession of the private key when you made the signature. A digital signature algorithm is just a mathematical function that gives you a number as a result of applying the private key to a message in such a way that someone else can verify that that number reveals you knew the private key without knowing the private key themselves. There are two aspects to it: signing and verifying. 
+Schnorr signatures are better because they have certain quirks in the way the mathematics plays out. Digital signatures are numbers, they’re just numbers. The way you calculate these numbers is in such a way that someone else can verify that you calculated this number with knowledge of the private key without actually revealing this private key. They can verify that you have possession of the private key when you made the signature. A digital signature algorithm is just a mathematical function that gives you a number as a result of applying the private key to a message in such a way that someone else can verify that that number reveals you knew the private key without knowing the private key themselves. There are two aspects to it: signing and verifying.
 
 Schnorr signatures exhibit certain characteristics that make them better. The first of these is the ability to do aggregation. What that means is that if you want to sign several different messages with several different private keys and produce several different signatures, with Schnorr what you can do is you can produce an aggregate signatures which is the equivalent of if you had signed the aggregate message with the aggregate of all the private keys. Think of it this way. It is as if the sum of all signatures is the same as if you applied one signature with the sum of all private keys on the sum of all messages. I’m using sum in a broader sense. It is not the traditional arithmetic operation of addition but it is the equivalent in elliptic curves.
 

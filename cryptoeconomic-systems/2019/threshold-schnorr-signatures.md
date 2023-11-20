@@ -35,7 +35,7 @@ Why do you need threshold or multisignatures in a Bitcoin or cryptocurrency sett
 
 # Goals
 
-Our goal in this talk is to obtain threshold signatures that look like ordinary signatures. The reason for that is first of all they are much more efficient than what we currently have on Bitcoin. They also offer privacy advantages. 
+Our goal in this talk is to obtain threshold signatures that look like ordinary signatures. The reason for that is first of all they are much more efficient than what we currently have on Bitcoin. They also offer privacy advantages.
 
 # Taproot
 
@@ -67,7 +67,7 @@ There's a [draft](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki
 
 `R_1 = g^(r_1)`
 
-These are Schnorr signatures. How can we get to multisignatures or threshold signatures? Let’s start with multisignatures. The idea is that we split the secret key x into n parts for n parties. For the nonce we want to do the same. Instead of having a single r we have a sum of a lot of r’s. Each of those components belongs to one of our peers. 
+These are Schnorr signatures. How can we get to multisignatures or threshold signatures? Let’s start with multisignatures. The idea is that we split the secret key x into n parts for n parties. For the nonce we want to do the same. Instead of having a single r we have a sum of a lot of r’s. Each of those components belongs to one of our peers.
 
 The public versions of those scalars, because everything homomorphic if you multiply you get the sum and the exponent here. We do this for all the parties. This is a high level view. This is naive because it is not secure. There are multiple problems with that but all of them are solvable. There are full solutions available. For example the MuSig [scheme](https://eprint.iacr.org/2018/068.pdf) invented by people from Blockstream and others in 2018. Concurrently the MSDL-pop [scheme](https://eprint.iacr.org/2018/483.pdf) by Boneh, Drijvers and Neven that solves the same problem in a slightly different way. Both are very good schemes I think.
 
@@ -77,11 +77,11 @@ How would we go from multisignatures to threshold signatures? A simple way to de
 
 # Distributed key generation
 
-The second required step is going to fully distributed key generation. We have x. We split it into x_1 + x_2 + x_3 that belongs to different parties. The blue peer here secret shares its own secret x_1 with all the participants including himself. We have this secret x which is split into three parts, each of these parts is individually secret shared amongst all the parties. I depicted it only for the blue peer but the green peer and the yellow peer do the same. 
+The second required step is going to fully distributed key generation. We have x. We split it into x_1 + x_2 + x_3 that belongs to different parties. The blue peer here secret shares its own secret x_1 with all the participants including himself. We have this secret x which is split into three parts, each of these parts is individually secret shared amongst all the parties. I depicted it only for the blue peer but the green peer and the yellow peer do the same.
 
 # DKG for Key and Nonce
 
-What I have described so far is doing this for the secret key. You can do this only for the secret key and you get a working for a scheme. We haven’t done a security proof for this yet but it looks reasonable. If you do this only for the secret key, this distributed key generation, then you probably get a protocol that doesn’t have a constant number of rounds. You get O(f) where f is the number of disruptive parties that try to prevent you from getting a signature. This is 2-of-3. If you have 3-of-3 we don’t need the threshold secret sharing at all. We can just use a multisignature scheme as I have shown before. Here we get O(f) rounds. The basic reason is that we have to commit to the set of signers upfront and then maybe you choose a signer that later wants to go offline and then you have to restart. That’s a detail that I don’t have time to explain. 
+What I have described so far is doing this for the secret key. You can do this only for the secret key and you get a working for a scheme. We haven’t done a security proof for this yet but it looks reasonable. If you do this only for the secret key, this distributed key generation, then you probably get a protocol that doesn’t have a constant number of rounds. You get O(f) where f is the number of disruptive parties that try to prevent you from getting a signature. This is 2-of-3. If you have 3-of-3 we don’t need the threshold secret sharing at all. We can just use a multisignature scheme as I have shown before. Here we get O(f) rounds. The basic reason is that we have to commit to the set of signers upfront and then maybe you choose a signer that later wants to go offline and then you have to restart. That’s a detail that I don’t have time to explain.
 
 The solution to that is to do distributed key generation also for the nonce. So we do the same as for the key setup but now we have to run a distributed key generation protocol whenever we have a signing session because the nonce is generated during the signing algorithm. If we do that we can go down to a constant number of rounds. Even though we have to add a few rounds to run the DKG protocol.
 
@@ -91,7 +91,7 @@ To put this into context these ideas are pretty old. Pedersen in 1991 proposed a
 
 # Why do these schemes fail in practice?
 
-You may ask what’s the point? What are you trying to tell me now? I want to show you why those schemes in practice if you want to apply them. 
+You may ask what’s the point? What are you trying to tell me now? I want to show you why those schemes in practice if you want to apply them.
 
 # Issue 1: Trust Assumption
 
@@ -99,7 +99,7 @@ There are two main issues. The first issue is that there is a trust assumption. 
 
 # Assumption Ignores Good Cases
 
-If you look at this assumption, the maximum number of malicious peers should be 5. What if only 3 peers are malicious? Then I can indeed produce a signature. When I set up a scheme I have to choose a t but if I choose t=5 it doesn’t mean that immediately 5 parties are malicious. It just means it is the maximum it can tolerate. Even if 5 people are malicious in the first scenario I can’t obtain a valid signature. This might be acceptable. What shouldn’t happen that those 5 parties can forge. This setting still makes sense. If you saw the [talk](https://www.youtube.com/watch?v=HCwRpOjgP3Q) yesterday by Dahlia Malkhi she talked about flexible BFT in a live but corrupt nodes. This is exactly the setting we have here. If those two peers in the middle, the yellow ones, are live but corrupt which means that they are trying to attack safety, which in our case is unforgeability but they won’t attack liveness this is exactly the model we need. 
+If you look at this assumption, the maximum number of malicious peers should be 5. What if only 3 peers are malicious? Then I can indeed produce a signature. When I set up a scheme I have to choose a t but if I choose t=5 it doesn’t mean that immediately 5 parties are malicious. It just means it is the maximum it can tolerate. Even if 5 people are malicious in the first scenario I can’t obtain a valid signature. This might be acceptable. What shouldn’t happen that those 5 parties can forge. This setting still makes sense. If you saw the [talk](https://www.youtube.com/watch?v=HCwRpOjgP3Q) yesterday by Dahlia Malkhi she talked about flexible BFT in a live but corrupt nodes. This is exactly the setting we have here. If those two peers in the middle, the yellow ones, are live but corrupt which means that they are trying to attack safety, which in our case is unforgeability but they won’t attack liveness this is exactly the model we need.
 
 # Drop the Assumption?
 
@@ -111,7 +111,7 @@ The second issue is that those schemes assume a broadcast channel. This means th
 
 # Attack on Unforgeability
 
-This is a simple attack in both of those schemes. Let’s say the attacker is the guy in the middle, the broadcast channel. There are 4 peers. What the attacker can do is split the view of 4 peers into two worlds. In the left world he claims that peer 1 and peer 2 are offline. In the second world he claims that peer 3 and peer 4 are offline. What these protocols do now is they reconstruct the secret nonces of the other parties. On the left hand side you would reconstruct r_1 and r_2. On the right hand side you would reconstruct r_3 and r_4. Now the attacker can run one of those worlds to the end. Then he obtains a combined nonce r and by completing one of those protocols the attacker can also obtain a signature. Now given the full private nonce and the signature he can compute the secret key. This means that if you use those protocols naively, if the network is insecure you lose unforgeability. There wasn’t even a malicious peer involved, just the network was malicious. 
+This is a simple attack in both of those schemes. Let’s say the attacker is the guy in the middle, the broadcast channel. There are 4 peers. What the attacker can do is split the view of 4 peers into two worlds. In the left world he claims that peer 1 and peer 2 are offline. In the second world he claims that peer 3 and peer 4 are offline. What these protocols do now is they reconstruct the secret nonces of the other parties. On the left hand side you would reconstruct r_1 and r_2. On the right hand side you would reconstruct r_3 and r_4. Now the attacker can run one of those worlds to the end. Then he obtains a combined nonce r and by completing one of those protocols the attacker can also obtain a signature. Now given the full private nonce and the signature he can compute the secret key. This means that if you use those protocols naively, if the network is insecure you lose unforgeability. There wasn’t even a malicious peer involved, just the network was malicious.
 
 # Malicious vs Offline
 
@@ -133,7 +133,7 @@ A - You have to assume something about the network. Let’s say the network does
 
 Q - If the broadcast channel is malicious you could say that you could easily know that. Or removing the whole assumption on a broadcast channel
 
-A - If you can get for example a scheme that works asynchronously it doesn’t rely on broadcast itself, this would be nice. One simple thing you can do is if you have a scheme that at least is unforgeable even if the broadcast channel is insecure then you can say “I have at most f malicious nodes”. I take f+1 leaders and run the broadcast through these f+1 leaders and I run f+1 instances of the protocol. This is safe because the protocol is unforgeable even if f of those leaders are malicious. Then I get robustness but it increases communication a lot. You can also run a reliable broadcast protocol but this increases communication even more. Maybe this is a simple and practical way to go once you have a scheme that stays unforgeable if the broadcast is malicious. 
+A - If you can get for example a scheme that works asynchronously it doesn’t rely on broadcast itself, this would be nice. One simple thing you can do is if you have a scheme that at least is unforgeable even if the broadcast channel is insecure then you can say “I have at most f malicious nodes”. I take f+1 leaders and run the broadcast through these f+1 leaders and I run f+1 instances of the protocol. This is safe because the protocol is unforgeable even if f of those leaders are malicious. Then I get robustness but it increases communication a lot. You can also run a reliable broadcast protocol but this increases communication even more. Maybe this is a simple and practical way to go once you have a scheme that stays unforgeable if the broadcast is malicious.
 
 Q - I thought I remembered that it was possible to construct a composite public key if it was any monotone boolean function of the constituent public keys for a Schnorr signature.
 
@@ -141,7 +141,7 @@ A - I think this is true. I have not looked into those schemes but I think it is
 
 Q - I am a little disappointed you are using Shamir secret sharing, it is fine, it works but it is a completely different mechanism for the threshold. If I can construct a monotone boolean function I can say “Key 1 plus Key 2 OR Key 2 plus Key 3 OR Key 1 plus Key 3”. I was expecting you to go in that direction. Is that not possible? Is there something completely broken about that direction?
 
-Q - The way I am aware of is to use Shamir secret sharing. You can write any monotone function. You have all these groups of n-of-n keys and you have a disjunction. You can have the members of the first group do distributed key generation to all the members of the other group. Now there is a total key that was generated by the first group of participants. Every group is able to reconstruct that key independently using Shamir. That is the only way I am aware of. 
+Q - The way I am aware of is to use Shamir secret sharing. You can write any monotone function. You have all these groups of n-of-n keys and you have a disjunction. You can have the members of the first group do distributed key generation to all the members of the other group. Now there is a total key that was generated by the first group of participants. Every group is able to reconstruct that key independently using Shamir. That is the only way I am aware of.
 
 A - This is related. The reason why I focused on threshold was it is a simpler setting to start with. What you are saying is one of the most natural extensions. I should have listed it.
 

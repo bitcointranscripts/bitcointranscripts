@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Optech 
+title: Bitcoin Optech
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['lightning', 'segwit']

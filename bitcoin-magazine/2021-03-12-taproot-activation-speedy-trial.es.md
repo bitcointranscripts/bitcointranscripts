@@ -1,5 +1,5 @@
 ---
-title: Taproot Activación con Speedy Trial 
+title: Taproot Activación con Speedy Trial
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
@@ -43,7 +43,7 @@ Propuesta de calendario: https://lists.linuxfoundation.org/pipermail/bitcoin-dev
 
 AvW: ¿Empezamos con Speedy Trial, qué es Speedy Trial Sjors?
 
-SP: Creo que es una buena idea. Con las propuestas de las que hablamos la última vez para activar Taproot, básicamente Bitcoin Core liberaría algún software, tal vez en abril o algo así, y luego los mineros empezarían a señalar usando ese software en, creo, agosto o algo así. Entonces pueden señalar durante un año y al final del año todo termina. 
+SP: Creo que es una buena idea. Con las propuestas de las que hablamos la última vez para activar Taproot, básicamente Bitcoin Core liberaría algún software, tal vez en abril o algo así, y luego los mineros empezarían a señalar usando ese software en, creo, agosto o algo así. Entonces pueden señalar durante un año y al final del año todo termina.
 
 AvW: Eso era LOT=true o LOT=false. El debate era sobre si debía terminar con la señalización forzosa o no. Eso es lo de LOT=true, LOT=false.
 

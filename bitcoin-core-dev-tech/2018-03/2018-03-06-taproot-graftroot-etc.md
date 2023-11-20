@@ -1,5 +1,5 @@
 ---
-title: Taproot, Graftroot, Etc 
+title: Taproot, Graftroot, Etc
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['hashlocks', 'timelocks', 'taproot']
@@ -43,7 +43,7 @@ Given two messages and a single fixed signature, find me a public key... Given t
 
 You should probably never send money to people who aren't expecting to receive the money. But people probably will stil do it anyway.
 
-There's always a global signature part of the transaction. There is a signature somewhere in the transaction.  It's all aggregated into the signature. ... 
+There's always a global signature part of the transaction. There is a signature somewhere in the transaction.  It's all aggregated into the signature. ...
 
 A graftroot where you can non-interactively send to someone's multisig... to some arbitrary script for multisig with keys in it. You could do, but you do the direct tihng. I want a 2-of-3 multisig script and I want to do it without asking the people to sign anything or do any graftroot. You can't. Are you sure? You can, with the recovery tricky, as long as there's at least a single script. It might not work though.... this signature doesnt' sign the txid, it only signs the scripts. It works. But only as long as there's a single... and if you're doing that, why aren't you using taproot? It's cheaper. Only reason why you're doing it is because you want to graduate from taproot to graftroot... for fungibility reasons you.. Wouldn't it be cool to merge it all though? Say I have a public key, and I have a script, and fixed upfront, and you can't. You want to do graftroot. If P is fixed, then you can't. But if you just want to send to a script, then you could use graftroot. You want to non-interactively send to a script... we want to non-interactively send to a script which has no relation to this pubkey that it has no relationship to, but that's impossible. You're saying, it's unusual that you would have a public key and a script upfront. If you don't have non-interactivity, then graftroot does everything. 2-of-3 multisig-- 3 possible scripts now. That's not as efficient as having 3 scripts.. then again, 2-of-3... In graftroot, you should be sending to a collection of pubkeys, and they can decide to delegate to particular scripts. As long as you have this collection of public keys, it's completely non-interactive.
 

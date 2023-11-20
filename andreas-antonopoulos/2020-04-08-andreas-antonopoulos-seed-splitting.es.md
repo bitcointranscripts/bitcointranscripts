@@ -8,16 +8,16 @@ tags: ['cartera', 'seguridad']
 vídeo: <https://www.youtube.com/watch?v=p5nSibpfHYE>
 ---
 
-Tema: ¿Por qué es una mala idea dividir las semillas? 
+Tema: ¿Por qué es una mala idea dividir las semillas?
 
 Localisación: Canal de YouTube de Andreas Antonopoulos
 
-# ¿Por qué es una mala idea dividir las semillas? 
+# ¿Por qué es una mala idea dividir las semillas?
 
 Esto es algo que se discute todo el tiempo, especialmente en los foros de novatos. Realmente hay que tener mucho cuidado. Un amigo tuvo la idea de lograr una protección de 2 de 3 de la semilla de mi cartera almacenando la semilla de la siguiente manera:
 
-Ubicación 1: palabras clave 1-8 y 9-16 
-Ubicación 2: palabras clave 1-8 y 17-24 
+Ubicación 1: palabras clave 1-8 y 9-16
+Ubicación 2: palabras clave 1-8 y 17-24
 Ubicación 3: palabras clave 9-16 y 17-24
 
 Se parece mucho al esquema de compartir secretos de Shamir, pero más fácil. Una ubicación no revela toda la semilla pero cualquiera de dos de ellas es suficiente. ¿Esto es seguro?

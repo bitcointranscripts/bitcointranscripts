@@ -31,9 +31,9 @@ To understand what is the class of predicates we can define programmatically wha
 
 We define computable functions as partial functions on the natural numbers that can be defined by a Turing machine or can be defined by a lambda calculus term or can be defined by general recursion. The big result of the theory of computation is that all these three models produce exactly the same answer for what the computable functions are. That is how we have come to accept this definition. Whilst the logicians and mathematicians use the natural numbers N for their predicates you guys should just think blob of data when you see the natural numbers. All data can be encoded as a natural number. The logicians and mathematicians don’t care about particulars of the data so they just work with the natural numbers. Any time you see this funny looking N just think blob of data. These functions are partial functions of course because our computations might not terminate. We might not produce an output from our Turing machine or lambda calculus term.
 
-What we do is we define computably enumerable predicates as those predicates over the natural numbers or over blobs of data, that are the domain of some computable function. The inputs for which some computable function will halt. 
+What we do is we define computably enumerable predicates as those predicates over the natural numbers or over blobs of data, that are the domain of some computable function. The inputs for which some computable function will halt.
 
-These C.E. predicates, these computably enumerable predicates are the broadest class of predicates that we can define programmatically. This class of predicates was completely characterized by Post using logic and the Arithmetic Hierarchy. Just to show you how broad this class of C.E. predicates are, if you have a traditional characteristic function, some function that is returning TRUE or FALSE we can turn this into a C.E. predicate just by taking that function as a subroutine. Calling it, if it returns TRUE our machine halts, if it returns FALSE we just go into an infinite loop. Now we have made a function whose domain is equal to the characteristic function we passed in. The C.E. predicates are the broadest class of predicates that we can programmatically define. 
+These C.E. predicates, these computably enumerable predicates are the broadest class of predicates that we can define programmatically. This class of predicates was completely characterized by Post using logic and the Arithmetic Hierarchy. Just to show you how broad this class of C.E. predicates are, if you have a traditional characteristic function, some function that is returning TRUE or FALSE we can turn this into a C.E. predicate just by taking that function as a subroutine. Calling it, if it returns TRUE our machine halts, if it returns FALSE we just go into an infinite loop. Now we have made a function whose domain is equal to the characteristic function we passed in. The C.E. predicates are the broadest class of predicates that we can programmatically define.
 
 # C.E. Predicates and the Arithmetic Hierarchy
 
@@ -41,15 +41,15 @@ Let’s talk about the arithmetic hierarchy.
 
 # First Order Logic
 
-Now we have to take off our computer scientist hat and put on our logician hat, do a quick review of formal logic, first order logic. It will be very fast. Thinking way back to maybe your undergrad days what is first order logic? We have these atomic formulas, they are made of variables and constants like zero and one. We have plus and times for arithmetic. We have an equality predicate relation and an inequality relation and those form our atomic formulas. 
+Now we have to take off our computer scientist hat and put on our logician hat, do a quick review of formal logic, first order logic. It will be very fast. Thinking way back to maybe your undergrad days what is first order logic? We have these atomic formulas, they are made of variables and constants like zero and one. We have plus and times for arithmetic. We have an equality predicate relation and an inequality relation and those form our atomic formulas.
 
-Building on top of these atomic formulas that are doing arithmetic operations we have connectives like AND for conjunction or OR for disjunction, implication and negation. We have those logical propositional connectives to form more complicated propositions. Then we have quantifiers which give us predicates. I am going to take an unusual step of separating between bound and unbound quantifiers. We define bound quantifiers as our existential, there exists some x less than some term t such that p holds. Or for all x which is less than some term t, p holds. Those are bound. Then we have also the unbound quantifiers which range over all the natural numbers, all data. There exists some natural number x such that p holds. Or for all x p holds. Those are how we define formulas in first order logic. If you do formal reasoning you will get very familiar with this sort of stuff. 
+Building on top of these atomic formulas that are doing arithmetic operations we have connectives like AND for conjunction or OR for disjunction, implication and negation. We have those logical propositional connectives to form more complicated propositions. Then we have quantifiers which give us predicates. I am going to take an unusual step of separating between bound and unbound quantifiers. We define bound quantifiers as our existential, there exists some x less than some term t such that p holds. Or for all x which is less than some term t, p holds. Those are bound. Then we have also the unbound quantifiers which range over all the natural numbers, all data. There exists some natural number x such that p holds. Or for all x p holds. Those are how we define formulas in first order logic. If you do formal reasoning you will get very familiar with this sort of stuff.
 
 # Arithmetic Hierarchy
 
 The arithmetic hierarchy is defined as ways of classifying these different types of formulas. A delta_0 formula which is right at the bottom at the arithmetic hierarchy. Those are these arithmetic formulas that have no unbound quantifier. Every quantifier you see is bound. For all x less than something there exists y less than something for example. This is an example of a delta_0 formula.
 
-A sigma_1 formula, those are the form where you have an existential unbound quantifier. There exists some x over the natural numbers such that p holds where p is a delta_0 formula. I give an example below. A pi_1 formula is of the form for all n over the natural numbers one unbound universal quantifier p holds where p is a delta_0 formula. It has no further unbound quantifiers. I give an example there. The hierarchy continues above there where we start alternating our universal existential quantifiers. We don’t need for the purposes of this talk to go any higher than this level in the arithmetic hierarchy. 
+A sigma_1 formula, those are the form where you have an existential unbound quantifier. There exists some x over the natural numbers such that p holds where p is a delta_0 formula. I give an example below. A pi_1 formula is of the form for all n over the natural numbers one unbound universal quantifier p holds where p is a delta_0 formula. It has no further unbound quantifiers. I give an example there. The hierarchy continues above there where we start alternating our universal existential quantifiers. We don’t need for the purposes of this talk to go any higher than this level in the arithmetic hierarchy.
 
 We say a predicate is sigma_1 if it is definable by some sigma_1 formula. That sigma_1 formula will have one free variable which corresponds to the variable that the predicate is being performed over. Similarly we define a pi_1 predicate to be those that are definable by some sort of pi_1 formula.
 
@@ -71,7 +71,7 @@ Here is the recap. Turing complete languages can only define computably enumerab
 
 What exactly is this witness blob of data that Post’s Theorem is saying we are going to be quantifying over? What is it that we are searching for?
 
-Post’s Theorem directly doesn’t tell us exactly what is the meaning of this witness. There are a number of choices that we have of interpreting what that witness is. Here are two extreme examples of what that choice could be. 
+Post’s Theorem directly doesn’t tell us exactly what is the meaning of this witness. There are a number of choices that we have of interpreting what that witness is. Here are two extreme examples of what that choice could be.
 
 # Gas-based witness
 
@@ -97,7 +97,7 @@ So this is the conclusion slide here. You can tweet this to all your followers. 
 
 # Q&A
 
-Q - You mentioned trade-offs but we already have a perfect solution with recursive SNARKs. You get constant time, constant space and on top of that you have privacy. 
+Q - You mentioned trade-offs but we already have a perfect solution with recursive SNARKs. You get constant time, constant space and on top of that you have privacy.
 
 A - Yes. SNARKs is the perfect solution (joke).
 

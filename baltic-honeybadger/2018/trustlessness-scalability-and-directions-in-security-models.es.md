@@ -1,5 +1,5 @@
 ---
-title: Escalabilidad y orientación de los modelos de seguridad 
+title: Escalabilidad y orientación de los modelos de seguridad
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

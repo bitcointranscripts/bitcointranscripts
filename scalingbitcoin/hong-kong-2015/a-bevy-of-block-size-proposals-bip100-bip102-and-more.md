@@ -65,7 +65,7 @@ A: ... I haven't seen any of that so far, well that's not true, there's someone 
 
 Q: What fee is too much? What about the number of people? Perhaps this is more viable than fee number or fee level.
 
-A: Yes, that's one of the inputs to block size debate. It's very difficult to measure users. ((We would have to keep verification super super cheap. Increasingly cheaper.)) ... In the past, we would rather onboard bitcoin users with low-fees, rather than high-fees in bitcoin's current stage. This is a valid economic choice as well, 
+A: Yes, that's one of the inputs to block size debate. It's very difficult to measure users. ((We would have to keep verification super super cheap. Increasingly cheaper.)) ... In the past, we would rather onboard bitcoin users with low-fees, rather than high-fees in bitcoin's current stage. This is a valid economic choice as well,
 
 Q: Bandwidth solutions over non-bandwidth solutions?
 

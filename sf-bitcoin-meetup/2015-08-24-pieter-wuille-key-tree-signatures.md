@@ -1,5 +1,5 @@
 ---
-title: Key Tree Signatures 
+title: Key Tree Signatures
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['multisig']
@@ -26,7 +26,7 @@ Multisig, this is the mechanism where you have transactions that need to be sign
 
 # OP_CHECKMULTISIG properties
 
-In Bitcoin this is implemented using OP_CHECKMULTISIG which gives N public keys and requires K signatures with it where K is between 1 and N. In Bitcoin N in this case is in practice limited to 15 keys due to the restrictions of P2SH, pay-to-script-hash addresses. It has a downside that validation performance if such a CHECKMULTISIG transaction is being used on the blockchain depends on the number of keys. If you do even a 1-of-15 multisig it can require up to 15 signature checks that everyone in the Bitcoin network will have to do. This is a resource constraint which is not nice. The storage size, you need to publish the full public keys and signatures into the blockchain. This is linear in K and N. This means that even if the restriction of these 15 keys was lifted there is really no way of doing thousands of keys involved. The transactions would be huge. 
+In Bitcoin this is implemented using OP_CHECKMULTISIG which gives N public keys and requires K signatures with it where K is between 1 and N. In Bitcoin N in this case is in practice limited to 15 keys due to the restrictions of P2SH, pay-to-script-hash addresses. It has a downside that validation performance if such a CHECKMULTISIG transaction is being used on the blockchain depends on the number of keys. If you do even a 1-of-15 multisig it can require up to 15 signature checks that everyone in the Bitcoin network will have to do. This is a resource constraint which is not nice. The storage size, you need to publish the full public keys and signatures into the blockchain. This is linear in K and N. This means that even if the restriction of these 15 keys was lifted there is really no way of doing thousands of keys involved. The transactions would be huge.
 
 # ACE UP
 
@@ -64,7 +64,7 @@ SWAP IF			r,h3,b3,h2,b2,h1,x
 	SWAP			r,h3,b3,h2,b2,x,h1
 CAT SHA256		r,h3,b3,h2,b2,x
 SWAP IF			r,h2,b3,h2,x
-	SWAP			r,h2,b3,x,h2	
+	SWAP			r,h2,b3,x,h2
 CAT SHA256		r,h2,b3,x
 SWAP IF			r,h2,x
 SWAP			    r,x,h2
@@ -72,13 +72,13 @@ CAT SHA256		r,x
 EQUALVERIFY
 ```
 
-This is a literal translation of the program from one side to the other. Unfortunately it requires this CAT operation which is concatenation. This was an operation was disabled in Bitcoin years ago, 2009/10 for fear of DOS potential. However in Elements Alpha, our first technology demo sidechain we reenabled this OP_CAT. This was actually accidentally made a general improvement, I think Patrick did that. Then later realized that this actually enabled the implementation of these Merkle trees. On the right you can see what the stack is. I won’t go through the details but if you are interested you can go through it and see that it actually works out. 
+This is a literal translation of the program from one side to the other. Unfortunately it requires this CAT operation which is concatenation. This was an operation was disabled in Bitcoin years ago, 2009/10 for fear of DOS potential. However in Elements Alpha, our first technology demo sidechain we reenabled this OP_CAT. This was actually accidentally made a general improvement, I think Patrick did that. Then later realized that this actually enabled the implementation of these Merkle trees. On the right you can see what the stack is. I won’t go through the details but if you are interested you can go through it and see that it actually works out.
 
 We can use this. What someone would do is publish a public key, publish this path along the Merkle tree to prove that it results in a root hash. Then publish a signature with that public key and all you need to do is verify that the Merkle branch results in a hash that is equal to the root and that the signature checks out with this public key. We have combined the checking that the public key is a member of the set and actually doing a signature check with it. This has very nice performance properties because what ends up in the blockchain is just a single signature check. Plus a bunch of hashes. They are much faster to validate than a signature check. This results in logarithmic storage size. Every layer in the tree you add doubles the number of potential keys. You can create something with thousands or hundreds of thousands of keys and only have a few levels in the tree. Why would someone want a 1-of-N scheme? It is not typically something that is being used. One use case is honeypots. If say you have a server farm with 10,000 machines and they all have a wallet. You want to see whether someone breaks in. Perhaps you want to give a certain incentive for an attacker to steal the money that is there. Say I have for my 10,000 machines 10 Bitcoin at my disposal that I don’t care about, that I am willing to lose if that means I can detect an intrusion. In a normal scheme I would need to put 1 millibitcoin on every machine and it is very unlikely that an attacker would find this interesting enough to steal. However, if you have a 1-of-N multisig scheme with 10,000 keys you can share your 10 Bitcoin over the entire set. Every machine would have full access to those same 10 Bitcoin. If a single machine is broken into presumably they steal the whole thing. At the same time because of this accountability property that this also has you would know which machine was stolen. You would give a separate key to each of them.
 
 Q - How many keys? I thought you could only use a certain number of keys with multisignature?
 
-A - In Bitcoin’s CHECKMULTISIG you can but using the approach I have just shown here you can build a Merkle tree with 10,000 keys at the bottom and the tree would only be 14 levels deep. It is a few hundred bytes to do this. This is a logarithmic storage size which this approach has. You only publish a single signature and a single public key and then in logarithmic space you can prove that it is a member of this huge set of 10,000. 
+A - In Bitcoin’s CHECKMULTISIG you can but using the approach I have just shown here you can build a Merkle tree with 10,000 keys at the bottom and the tree would only be 14 levels deep. It is a few hundred bytes to do this. This is a logarithmic storage size which this approach has. You only publish a single signature and a single public key and then in logarithmic space you can prove that it is a member of this huge set of 10,000.
 
 Q - How big is the script to do this?
 
@@ -98,7 +98,7 @@ A - With ECDSA you only have a single key. But using a CHECKMULTISIG constructio
 
 # Better K-of-N
 
-To combine these we have one scheme that allows us to produce a Merkle tree to prove membership of a large set. Otherwise we have a mechanism for taking several keys and making it look like a single key. To combine these two you create a Merkle tree where every leaf is one of the potential combinations you want to allow with different public keys. 
+To combine these we have one scheme that allows us to produce a Merkle tree to prove membership of a large set. Otherwise we have a mechanism for taking several keys and making it look like a single key. To combine these two you create a Merkle tree where every leaf is one of the potential combinations you want to allow with different public keys.
 
 # Example
 
@@ -106,7 +106,7 @@ For example if I would want to do a 2-of-4 signature this has 6 combinations for
 
 # Performance
 
-The performance is still nearly constant validation time because there is only a single actual expensive signature check involved though there may be several levels of hashes which are much faster. The space required for this sort of mechanism, the amount of data this requires on the blockchain is logarithmic in the number of combinations of keys. The signing time is linear because during signing you need to construct a Merkle branch. In order to do so you need to know the entire tree. This is unfortunate as there is a certain overhead to computing the sum of the public keys in each of the leaves. 
+The performance is still nearly constant validation time because there is only a single actual expensive signature check involved though there may be several levels of hashes which are much faster. The space required for this sort of mechanism, the amount of data this requires on the blockchain is logarithmic in the number of combinations of keys. The signing time is linear because during signing you need to construct a Merkle branch. In order to do so you need to know the entire tree. This is unfortunate as there is a certain overhead to computing the sum of the public keys in each of the leaves.
 
 # Number of combinations
 
@@ -114,7 +114,7 @@ Here is a table of all up to 20-of-20 keys, I don’t know if you can read the n
 
 Q - With this property of summation of public keys with Schnorr what is to stop someone from doing an attack where they forge a key by generating a whole bunch of public keys and finding a way of summing those to the thing they want to do and signing the ones that they generated?
 
-A - Public keys have 256 bit entropy in them. It sounds like you are trying something like a collision attack which would have 2^128 in order to pull off. 
+A - Public keys have 256 bit entropy in them. It sounds like you are trying something like a collision attack which would have 2^128 in order to pull off.
 
 Q - There is an attack that your implementation avoids, I don’t know if we will talk about it tonight?
 
@@ -128,13 +128,13 @@ We are not actually in this scheme restricted to just doing K-of-N. We are const
 
 `OR(AND(k1,k2,k3), THRESHOLD(2,k4,k5,AND(k6,k7)))`
 
-This just says “Either k1, k2, k3 all sign or 2 out of k4, k5 and a combination of k6 and k7 have to sign. You can construct arbitrarily complex descriptions like this. This is a universal scheme so any monotonic boolean circuit of conditions you would want to allow over sets of public keys can be represented by this. Only AND and OR are sufficient but by adding this threshold ability K-of-N it is much more expressive. 
+This just says “Either k1, k2, k3 all sign or 2 out of k4, k5 and a combination of k6 and k7 have to sign. You can construct arbitrarily complex descriptions like this. This is a universal scheme so any monotonic boolean circuit of conditions you would want to allow over sets of public keys can be represented by this. Only AND and OR are sufficient but by adding this threshold ability K-of-N it is much more expressive.
 
 # Implementation
 
 https://github.com/ElementsProject/elements/pull/48
 
-This is implemented. You can look at the source code of it. It is not yet merged into Elements Alpha but we will probably do so soon. You can create such a description of AND and OR and THRESHOLD of different public keys that you want. It will compute the address for it, allow you to send to it, allow signing it, transferring the partially signed transaction for it around and result in a valid transaction. A few interesting implementation details here. All of it works in logarithmic space. Even if you have a description that results in let’s say 1 billion combinations, those 1 billion combinations are never fully materialized in memory. How does it work? It iterates over your description tree to produce one by one the different combinations in a lazy way and then there is a Merkle root and branching algorithm that will consume these to produce a Merkle branch of a Merkle root. It never keeps all of these in memory at the same time. This means that all this code can reasonably run on low power, low memory devices which is something you usually want for multisig schemes. It is tested, at least once. 
+This is implemented. You can look at the source code of it. It is not yet merged into Elements Alpha but we will probably do so soon. You can create such a description of AND and OR and THRESHOLD of different public keys that you want. It will compute the address for it, allow you to send to it, allow signing it, transferring the partially signed transaction for it around and result in a valid transaction. A few interesting implementation details here. All of it works in logarithmic space. Even if you have a description that results in let’s say 1 billion combinations, those 1 billion combinations are never fully materialized in memory. How does it work? It iterates over your description tree to produce one by one the different combinations in a lazy way and then there is a Merkle root and branching algorithm that will consume these to produce a Merkle branch of a Merkle root. It never keeps all of these in memory at the same time. This means that all this code can reasonably run on low power, low memory devices which is something you usually want for multisig schemes. It is tested, at least once.
 
 # Properties
 
@@ -142,11 +142,11 @@ Let’s go back to the ACE UP properties that I mentioned in the beginning. The 
 
 # Log-log scale graph for signature size
 
-I will show you some benchmarks. This is a graph that shows the size of the signature as a function of the number of keys involved. For tree signatures the worst case is where K is half of N. 10-of-20, 5-of-10, this results in the maximum number of combinations. Those are the red lines. For CHECKMULTISIG the worst situation is where you have the number minus one. 19-of-20, 9-of-10 and so on. That is the blue line. The dotted lines are CHECKMULTISIG and the full lines are tree signatures. You can see it that there is not a single case where CHECKMULTISIG is better. I do need to point out that this a logarithmic scale in bytes. 100 kilobytes is the largest transaction that can fit in a Bitcoin block. That is the limit. It is also not entirely honest to say the full red line goes up there because the signing time is exponentially related to the size of the signature. The largest one up there would probably require more computation than the universe can do in a reasonable amount of time. It only goes up to around a kilobyte. 
+I will show you some benchmarks. This is a graph that shows the size of the signature as a function of the number of keys involved. For tree signatures the worst case is where K is half of N. 10-of-20, 5-of-10, this results in the maximum number of combinations. Those are the red lines. For CHECKMULTISIG the worst situation is where you have the number minus one. 19-of-20, 9-of-10 and so on. That is the blue line. The dotted lines are CHECKMULTISIG and the full lines are tree signatures. You can see it that there is not a single case where CHECKMULTISIG is better. I do need to point out that this a logarithmic scale in bytes. 100 kilobytes is the largest transaction that can fit in a Bitcoin block. That is the limit. It is also not entirely honest to say the full red line goes up there because the signing time is exponentially related to the size of the signature. The largest one up there would probably require more computation than the universe can do in a reasonable amount of time. It only goes up to around a kilobyte.
 
 # Log-log scale graph for validation time
 
-This is a graph for the validation time of both. CHECKMULTISIG is the dotted line that goes diagonally while the two lines below are tree signatures. In microseconds, it goes up to 0.1 seconds for validation. 
+This is a graph for the validation time of both. CHECKMULTISIG is the dotted line that goes diagonally while the two lines below are tree signatures. In microseconds, it goes up to 0.1 seconds for validation.
 
 Q - Where is the dotted red line?
 
@@ -160,9 +160,9 @@ Q - Would it make sense to actually build this in natively so there is pay-to-me
 
 A - Next point. In addition to native Merkle branch checking to be able to get this to work in Bitcoin we would also need Schnorr signature support. That too is possible with a soft fork and would bring in several other advantages like batch validation. Batch validation is where you take a bunch of signatures and you verify whether all of them are valid or at least one of them is invalid. There is a factor of 2,3 speed up to get over a single validation. It is exactly the thing we want in Bitcoin during block validation.
 
-A next step and this is actually an idea that is much older than all of this work, Merklized Abstract Syntax Trees. We are not really limited to producing a single balanced tree of combinations of keys. We could in fact restructure this scripting language entirely to be tree shaped where you have AND and OR things. You can put “check a locktime”, “check a signature” and all sorts of complex conditions that you can write but structure them as an abstract syntax tree. You have just some expression that defines the condition for spending something using signature checks and whatever. Then turn this expression into a tree, an OR or CHECKSIG A, CHECKSIG B would be a tree like I’ve shown. You put Merklization directly onto this tree. Every node would get a hash associated with it that depends on the hash of the leaves below. This basically allows you to build a huge script of different conditions and only reveal the part of the script that you are actually using to satisfy. That would be the next step. Not something that is easy to do here but I am very interested in working on that. It is like doing P2SH recursively. You pay to a hash that reveals part of a script and part of that is again a hash which reveals a part of a script and so on. 
+A next step and this is actually an idea that is much older than all of this work, Merklized Abstract Syntax Trees. We are not really limited to producing a single balanced tree of combinations of keys. We could in fact restructure this scripting language entirely to be tree shaped where you have AND and OR things. You can put “check a locktime”, “check a signature” and all sorts of complex conditions that you can write but structure them as an abstract syntax tree. You have just some expression that defines the condition for spending something using signature checks and whatever. Then turn this expression into a tree, an OR or CHECKSIG A, CHECKSIG B would be a tree like I’ve shown. You put Merklization directly onto this tree. Every node would get a hash associated with it that depends on the hash of the leaves below. This basically allows you to build a huge script of different conditions and only reveal the part of the script that you are actually using to satisfy. That would be the next step. Not something that is easy to do here but I am very interested in working on that. It is like doing P2SH recursively. You pay to a hash that reveals part of a script and part of that is again a hash which reveals a part of a script and so on.
 
-Q - I’d point out that with MAST this big tree of signatures can be this big tree of instructions saying “If this returns TRUE check these three keys.” 
+Q - I’d point out that with MAST this big tree of signatures can be this big tree of instructions saying “If this returns TRUE check these three keys.”
 
 A - Turning the actual script into a tree rather than just the keys.
 
@@ -186,7 +186,7 @@ Q - For the Bitcoin blockchain it is ECDSA but there are other blockchains. Eris
 
 A - I think ed25519 does not support adding public keys together? It has a requirement on a particular bit being set.
 
-Greg Maxwell: This will work in Bitcoin eventually. This is a trivial soft fork. ed25519 breaks hierarchical wallets. It breaks the addition with standard implementations. The curve is fine. 
+Greg Maxwell: This will work in Bitcoin eventually. This is a trivial soft fork. ed25519 breaks hierarchical wallets. It breaks the addition with standard implementations. The curve is fine.
 
 Q - Have there been simulations done to see if you have filled a block with CHECKMULTISIG in maximum case how long the verification would take?
 
@@ -194,13 +194,13 @@ A - You would fail because there is a limit in Bitcoin.
 
 Q - The 100 kilobytes?
 
-A - There is a sigop limit. There is a limit in Bitcoin that limits a single block to at most perform 20,000 signature checking operations. However this is computed in an inefficient way. A 1-of-20 multisig which can go up to 20 signature checks will always be counted as 20. You can only do 1000 maximum size CHECKMULTISIGs in a Bitcoin block. 
+A - There is a sigop limit. There is a limit in Bitcoin that limits a single block to at most perform 20,000 signature checking operations. However this is computed in an inefficient way. A 1-of-20 multisig which can go up to 20 signature checks will always be counted as 20. You can only do 1000 maximum size CHECKMULTISIGs in a Bitcoin block.
 
 Q - Why was the cap taken out for… and why are those problems not relevant on a sidechain?
 
 A - Imagine a script, push a byte, DUP CAT DUP CAT DUP CAT, this blows up your memory usage in an exponential way. You take the one byte, you duplicate it, you have two arguments of one byte, you concatenate it together, it is two bytes now. Duplicate two bytes, four bytes. This was a time in Bitcoin when there were several vulnerabilities being discovered and presumably at the time this restriction on disabling the CAT opcode was intended to be temporary except it now requires a hard fork to reenable.
 
-Greg Maxwell: There was an attack that you could cause many petabytes of memory usage in the system, it was a real attack, nobody exploited it but it existed so the opcode was disabled to be sure there was no attack. 
+Greg Maxwell: There was an attack that you could cause many petabytes of memory usage in the system, it was a real attack, nobody exploited it but it existed so the opcode was disabled to be sure there was no attack.
 
 A - So the obvious question becomes why did we reenable it because it is side limited? Any CAT that would result in a size over 520 bytes which is the usual size limit for a script in Elements to fail. We reenabled it in a trivial and safe way. People could have done in Bitcoin at the time too but nobody bothered.
 
@@ -230,5 +230,5 @@ A - One of the problems involved here is if you have several people distributing
 
 Q - What do you think about the hard fork?
 
-A - I think we should try to avoid controversial hard forks. I think we should work towards to a solution that the entire ecosystem can support. 
+A - I think we should try to avoid controversial hard forks. I think we should work towards to a solution that the entire ecosystem can support.
 

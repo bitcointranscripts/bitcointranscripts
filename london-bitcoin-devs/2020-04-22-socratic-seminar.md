@@ -14,7 +14,7 @@ The conversation has been anonymized to protect the identity of the participants
 
 # Discussion of Hopin video conferencing software
 
-We tested this a few weeks back for a German meetup and it was pretty nice. It was reliable and it worked. Of course it is not open source and Jitsi could be much better. We were quite happy with the experience. We are looking to do the Value of Bitcoin conference on this platform. It is a little more robust than what we have seen with Jitsi. The Lightning hackathon was good. 
+We tested this a few weeks back for a German meetup and it was pretty nice. It was reliable and it worked. Of course it is not open source and Jitsi could be much better. We were quite happy with the experience. We are looking to do the Value of Bitcoin conference on this platform. It is a little more robust than what we have seen with Jitsi. The Lightning hackathon was good.
 
 Why don’t you just use Jitsi? Fair question. I am seriously considering it and I watching to see how it goes with Berlin. Berlin are doing a bunch of events using Jitsi and they have set up their own server. There are a few performance issues and they did have a few connection problems last time they were livestreaming. Performance wise it is not going to be the level of Zoom or Hangouts.
 
@@ -64,21 +64,21 @@ I started with Mastering Bitcoin when Mastering Bitcoin came out. Grokking Bitco
 
 # Foreword by David Harding
 
-The first part of the book was David Harding’s intro. For anyone who doesn’t know David Harding, he works on Bitcoin Optech and is one of the best writers in Bitcoin. I think Kalle in some of the podcasts he did last year talked about how pleased he was that David Harding did that foreword. 
+The first part of the book was David Harding’s intro. For anyone who doesn’t know David Harding, he works on Bitcoin Optech and is one of the best writers in Bitcoin. I think Kalle in some of the podcasts he did last year talked about how pleased he was that David Harding did that foreword.
 
 I always looked up to David. He is a very nice person and a great writer. I thought he would be a perfect fit for the foreword. I didn’t know him personally. I reached out to him and he seemed to like the book. He agreed to write the foreword for me. I am very pleased with and proud of. If you hadn’t read it I can read out loud the last paragraph of his foreword.
 
-You can buy the book on Manning. It is open source so you can see all the text on [GitHub](https://github.com/kallerosenbaum/grokkingbitcoin).  
+You can buy the book on Manning. It is open source so you can see all the text on [GitHub](https://github.com/kallerosenbaum/grokkingbitcoin).
 
 I also want to add that if you look at the book on the GitHub you won’t see the images. You won’t see any diagrams. I recommend that you go to my build. You can view the content which is identical to the print book. It is not as typed as beautifully as it is in the book. I’ll read out from David Harding’s foreword, the last paragraph.
 
 “Bitcoin needs books like Grokking Bitcoin, but it also needs an active group of users who read those books and come to understand the technical principles on which Bitcoin is built. During these early days of what I hope will be the long history of Bitcoin, users are often asked to evaluate proposed changes to the system - changes that may affect the security and privacy of their bitcoins. Those who have read this book will understand how the system prevents cheating and will be able to help ensure that future changes preserve that essential feature and its many benefits.”
 
-I think he captures very well that users are the ones who are responsible for the security for the system. The more people who understand the technical ideas of Bitcoin the more people will be able to shout out against bad ideas or praise good ideas. 
+I think he captures very well that users are the ones who are responsible for the security for the system. The more people who understand the technical ideas of Bitcoin the more people will be able to shout out against bad ideas or praise good ideas.
 
 # What is the point of Bitcoin technical education?
 
-There’s kind of two aspects to it. There is wanting to have informed Bitcoin users and informed full node operators and then also, both can be achieved in the same book, encourage the next generation of developers either working on projects like Bitcoin Core or working for Bitcoin companies. Training the next generation of Bitcoin developers. 
+There’s kind of two aspects to it. There is wanting to have informed Bitcoin users and informed full node operators and then also, both can be achieved in the same book, encourage the next generation of developers either working on projects like Bitcoin Core or working for Bitcoin companies. Training the next generation of Bitcoin developers.
 
 I am trying to learn and I really want to have a good understanding to use these tools properly. I’m trying to understand where you draw this line. If you are going to be honest and you want to evaluate these things properly you have to spend all your life to get to the point where you understand what is happening. How many people can really go through Bitcoin Core and really understand what is happening? Be really confident that what I am running on my computer is ok. Even when you understand that there are other dependencies and things. Where do you draw the line and how realistic is this? I think it is unrealistic to have that expectation of people.
 
@@ -100,7 +100,7 @@ You are not saying there shouldn’t be any middle ground. With Taproot coming a
 
 I think there should be but it is really unrealistic to expect those people to understand what is happening and make the best decision. The voting is you have to run the software. But you are probably going to end up running the software for other changes rather than the real logical reasons.
 
-Surely you can be convinced of the benefits of the SegWit or the benefits of Taproot without actually going through all the code and auditing it and ACKing it on the Bitcoin Core GitHub. Surely just by buying into the changes the people are working on that is better than nothing? It is not about being useful or being useless. There is a gradient or there are increments. 
+Surely you can be convinced of the benefits of the SegWit or the benefits of Taproot without actually going through all the code and auditing it and ACKing it on the Bitcoin Core GitHub. Surely just by buying into the changes the people are working on that is better than nothing? It is not about being useful or being useless. There is a gradient or there are increments.
 
 If some group of core developers collude to push a change that is harmful in some way there are magnitudes more people who are actually knowledgeable enough to vet these ideas and debunk them and blow the whistle. That will blow up on Twitter for example. I am pretty confident that even normies will be able to receive information at least that something is going on. If needed those people can try to understand what this is about. These things cannot go under the radar. It will be noticed by tech people. They will warn other people as long as not every single person with technical competence is in cahoots with each other. If there is one single technical person not in cahoots you will know about it.
 
@@ -146,7 +146,7 @@ I don’t believe that for Bitcoin cold storage everybody have their own private
 
 # HD wallets (page 94)
 
-What is a HD wallet? 
+What is a HD wallet?
 
 HD wallets implement that nice seed phrase, either 12 or 24 words which you can write on a nice paper not online and save it. With this you can restore your private key and all your public keys connected and your addresses. I think from a security perspective, I don’t know what BIP it was but it was a quite important improvement and a factor in not as many Bitcoins being lost in future.
 
@@ -154,9 +154,9 @@ Why use a HD wallet? Why not just use a normal wallet?
 
 For me, backups. You just write down those 24 words, you can even do it plaintext. In the first implementation of Bitcoin Core the private keys would just be randomly generated and those private keys would be saved. If you continued to use the wallet more would be generated but then people would find when they recover their wallet from backup that some private keys were lost. That was a very annoying feature. That’s what I really like about hierarchical deterministic wallets. You just write down the seed from a random number generator which gives you an unlimited amount of private keys. In practice I think it is 4 billion. You can also add different passes for different coins. If you inclined to altcoinery you can also put all your other crypto assets on the same seed. It is just 24 words so it is pretty much idiot proof to backup. I really like that feature about it.
 
-You can generate a bunch of addresses and you just need to know that one mnemonic. 
+You can generate a bunch of addresses and you just need to know that one mnemonic.
 
-How much does someone need to know here? I think they need to know that it is safe to be giving out loads of addresses. I think they need to know that they need to keep the mnemonic safe. Perhaps they don’t need some of the more complicated things like deriving hardened private keys. You do have a warning in the book saying this is hard. 
+How much does someone need to know here? I think they need to know that it is safe to be giving out loads of addresses. I think they need to know that they need to keep the mnemonic safe. Perhaps they don’t need some of the more complicated things like deriving hardened private keys. You do have a warning in the book saying this is hard.
 
 I pretty much agree that they need to know the 24 words safe. But maybe it is also interesting for them to understand that they won’t get any metadata back from that seed. They will see their transaction history but they won’t see what their transactions were for. If they have made notes in their app regarding those transactions. This is for pizza, this for a loan, they won’t get that data back. I think that is valuable information to know. More or less I think it stops at the 24 words, what you need to know there.
 
@@ -182,7 +182,7 @@ I am pretty sure in the next few years we will see solutions where people can fo
 
 I imagined myself writing these scripts and putting my money there. For amounts higher than some trivial pocket change it is too scary. One has to understand deeply what is happening. I have been in Bitcoin for a number of years and I still don’t understand very deeply how scripts get executed. It would be scary for me to write a Bitcoin script by hand and put my money there. If it is even more complex, if it is more full featured, then I think even people who would want to use it will go either to a custodian who will compile the script for them or a wallet with a visual interface will let me drag and drop keys here and there. Still in the background I will have to trust the wallet to compile the Bitcoin script correctly in the end.
 
-Writing scripts is extremely hard even with Miniscript. I think there will emerge standard scripts that everybody uses. It is not going to be personal scripts for you. Everyone will just grab a standard script that everybody else uses. I don’t think many people will write scripts but they will be reviewed and battle tested for bigger and bigger amounts until everybody more or less trusts them to be correct. 
+Writing scripts is extremely hard even with Miniscript. I think there will emerge standard scripts that everybody uses. It is not going to be personal scripts for you. Everyone will just grab a standard script that everybody else uses. I don’t think many people will write scripts but they will be reviewed and battle tested for bigger and bigger amounts until everybody more or less trusts them to be correct.
 
 You have online custodial wallets. Then you can have your own 5-of-7 multisig setup which is super advanced and really self sovereign about it. What Bitcoin adds here is the choice. You can choose what level of security you have, what level of trust you want to put into your money or the level of self sovereignty you want. It is a matter of choice here. It is the first time we have this choice to be able to secure our own digital money.
 
@@ -196,11 +196,11 @@ If I remember correctly it is when you can’t derive backward keys.
 
 If you have non-hardened keys you have a problem if you have exposed the master pubkey which is something that you would normally expose and a single private key people can derive from that information all the other private keys and steal all the funds in that wallet. This is a big issue. This is prevented, I’m not quite sure how this is achieved. Is there any advantage in using non-hardened derivation? This is an obsolete way or is there some advantage to it that would make you take that risk?
 
-There is an advantage to using non-hardened derivation. The advantage there is you can put a node in the derivation tree on an insecure web server. The web server will be able to generate addresses for the web shop without needing any private key. They can generate new addresses, as many as it needs. 
+There is an advantage to using non-hardened derivation. The advantage there is you can put a node in the derivation tree on an insecure web server. The web server will be able to generate addresses for the web shop without needing any private key. They can generate new addresses, as many as it needs.
 
 That is not an advantage of a non-hardened key? You can still do that with a hardened one? You derive a child and then you give the xpub of the child tree to the web server. You can do that same thing right?
 
-If the xpub is derived via a hardened path you can still put that xpub on the web server. The keys underneath that xpub need to be non-hardened. The thing with a hardened key is that it needs parent private key in order to derive a hardened child key. In order to derive a non-hardened child key you only need the parent public key. 
+If the xpub is derived via a hardened path you can still put that xpub on the web server. The keys underneath that xpub need to be non-hardened. The thing with a hardened key is that it needs parent private key in order to derive a hardened child key. In order to derive a non-hardened child key you only need the parent public key.
 
 For your wallet it would always be a good idea if it was hardened. Then only the leaf would be non-hardened. But no advantage for a wallet only doing non-hardened?
 
@@ -220,17 +220,17 @@ With hardened you hand them whatever is on the thing three layers below and they
 
 One thing with HD wallets is you can have a tree of keys and you can create one hardened path down to this key. You put that on the web server so the web server can generate addresses. Suppose that someone gets one of those private keys then they can generate all the web server keys but they cannot generate anything above that xpub. You can have other nodes in this tree. You do a hardened derivation to a xpub here which represents over the counter sales or something like that. That account will not be affected by the hack over here. That is one of the major features with a hardened derivation. Even if one subtree is hacked it won’t affect the whole tree.
 
-Is there any reason to maintain software that does not by default allow at least hardened derivation? 
+Is there any reason to maintain software that does not by default allow at least hardened derivation?
 
 I would say no. You want to give the ability to do both and you want different sections of the tree hardened or unhardened. It doesn’t make much sense to only give you one of those two options. They both have upsides and downsides.
 
 Does BTCPay Server do hardened or non-hardened derivation?
 
-I set up a BTCPay Server myself and I just gave it one xpub and it derived addresses from it happily. You can give it any xpub and it will derive non-hardened addresses from it. 
+I set up a BTCPay Server myself and I just gave it one xpub and it derived addresses from it happily. You can give it any xpub and it will derive non-hardened addresses from it.
 
 # Chapter 11 (Bitcoin upgrades) and Taproot activation
 
-There is a nice Andreas Antonopoulos analogy for soft forks and hard forks. 
+There is a nice Andreas Antonopoulos analogy for soft forks and hard forks.
 
 The analogy is a vegetarian restaurant serving vegan food. It is still compatible with vegetarian. If you starting delivering beef burgers to your customers that would be a hard fork because it is not compatible. It is not a subset of what you had before. It is an extension.
 
@@ -240,7 +240,7 @@ The vegetarian restaurant could start serving meat in which case they would driv
 
 Everyone has heard about Taproot. What do we know about how Taproot could be activated?
 
-As far as I know there is nothing yet. There is not a plan for activation but I may be lagging in my knowledge here. 
+As far as I know there is nothing yet. There is not a plan for activation but I may be lagging in my knowledge here.
 
 How was SegWit activated?
 
@@ -252,7 +252,7 @@ That would normally be the intention. If the miners are happy with it and they s
 
 I do remember miners were signaling below the threshold. That would have caused it to be retried in a year or two. In order to avoid that UASF was devised where users would point a gun at the miners and threaten them with rejecting their blocks if they didn’t do the SegWit upgrade. But I’m not sure what happened.
 
-We didn’t reach 95\% organically. Miners refused, they plateaued at around 30\% or so. Something had to be done. It was a very complex discussion. A lot of different stakeholders had very strong opinions. The general thing that happened was the threat of losing mining income due to an invalid block caused the miners to obey the new rules and start signaling. The new rules being the user activated soft fork that threatened to drop blocks that didn’t signal after a certain block height. 
+We didn’t reach 95\% organically. Miners refused, they plateaued at around 30\% or so. Something had to be done. It was a very complex discussion. A lot of different stakeholders had very strong opinions. The general thing that happened was the threat of losing mining income due to an invalid block caused the miners to obey the new rules and start signaling. The new rules being the user activated soft fork that threatened to drop blocks that didn’t signal after a certain block height.
 
 I remember the discussion. That was the point where the ecosystem learned that the miners don’t have the ultimate power over stuff, it is the users, it is the node operators.
 
@@ -270,9 +270,9 @@ The bigger concern is losing money. If you are mining a less profitable chain yo
 
 Is it like people with halal food. The more restrictive thing, it is just a matter of time before everyone is going to have halal food. Is it the same thing? They wanted to make sure they could mine all the blockchains they could.
 
-It is like Nassim Taleb’s intolerant minority argument where a small group of people refuse to move so everyone follows the intolerant minority. I don’t know if that applies in this case because you do want to be mining on the chain with the coin that is most expensive. You would have taken a massive loss by mining on that SegWit2x chain. 
+It is like Nassim Taleb’s intolerant minority argument where a small group of people refuse to move so everyone follows the intolerant minority. I don’t know if that applies in this case because you do want to be mining on the chain with the coin that is most expensive. You would have taken a massive loss by mining on that SegWit2x chain.
 
-Why did the miners start supporting the SegWit soft fork? 
+Why did the miners start supporting the SegWit soft fork?
 
 They didn’t support it. They wanted SegWit2x. The majority of the miners and the exchanges wanted SegWit2x. To fork the chain and continue mining SegWit2x rather than just allowing SegWit to happen they would have taken a massive loss. There were also bugs in the SegWit2x implementation so it just wasn’t the right horse to back.
 

@@ -54,7 +54,7 @@ Tor has centralized rate limiting. We can do that too but then we’re biting of
 
 Tor does not have centralized rate limiting.
 
-What do you mean? The directory authorities. 
+What do you mean? The directory authorities.
 
 Tor has centralized selection of pseudo honest nodes but anyone can connect and start flooding the Tor network. They don’t have centralized rate limiting.
 
@@ -62,7 +62,7 @@ Tor has centralized selection of pseudo honest nodes but anyone can connect and 
 
 It is closed membership in a sense.
 
-Not on the client side though. 
+Not on the client side though.
 
 Sure. All I’m getting at is that it seems like we are trying to replicate the Tor network, or a subset, it just seems that’s a lot to bite off basically. Maybe we’ll get there when we get there. We’d just end up with VPNs over Lightning. That sounds cool, I thought that was cool a few years ago, I did talks and stuff but now I’m more wary of it.
 
@@ -88,11 +88,11 @@ I’m just caught on the arbitrary data thing. The implications of that, whether
 
 I think we’ve built that already unfortunately. HTLCs built that already.
 
-Onion messages are no more or less s\*\*\*\*y. The only difference with an onion message assuming proper rate limiting like we described is you have to pay maybe a 100 msat fee or 1 sat fee. That is the only difference. And you get much smarter rate limiting for onion messages because you can push the rate limiting back towards the sender. 
+Onion messages are no more or less s\*\*\*\*y. The only difference with an onion message assuming proper rate limiting like we described is you have to pay maybe a 100 msat fee or 1 sat fee. That is the only difference. And you get much smarter rate limiting for onion messages because you can push the rate limiting back towards the sender.
 
 I’m not very optimistic, I guess we’ll see where it goes. I guess people will handle it when we get Wireguard over Lightning. That sounds cool.
 
-I do anticipate at some point that we will see people paying for HORNET. There are definitely going to be LSPs, people who run Lightning nodes and are quite happy to sell you bandwidth. I expect that this rate limiting will become too aggressive for that kind of usage. It will be interesting to see where people set the rate limits. 
+I do anticipate at some point that we will see people paying for HORNET. There are definitely going to be LSPs, people who run Lightning nodes and are quite happy to sell you bandwidth. I expect that this rate limiting will become too aggressive for that kind of usage. It will be interesting to see where people set the rate limits.
 
 Have people implemented the rate limiting today or just hypothesizing how it could be done in the future?
 
@@ -162,7 +162,7 @@ Next we’ve got these two PRs for gossip addresses, DNS hostname and to tell yo
 
 The IP one, there is a c-lightning and eclair implementation but last I tested I don’t remember, I think I sent some comments to m-schmoock because there were issues that I found in the c-lightning implementation. I don’t know if that has been fixed since then.
 
-It is still a pull request, we haven’t merged it yet. Unfortunately Michael is not on the call. It is still a work in progress as I understand it but the spec seems pretty straightforward. 
+It is still a pull request, we haven’t merged it yet. Unfortunately Michael is not on the call. It is still a work in progress as I understand it but the spec seems pretty straightforward.
 
 Sounds like c-lightning and ACINQ are working on cross implementation testing and nothing worth discussing here.
 
@@ -188,7 +188,7 @@ We figured it is just making it explicit something that was implicit. The other 
 
 If you didn’t advertise this feature bit you should be ignoring.
 
-c-lightning does that as well too right? Ok we can fix that. 
+c-lightning does that as well too right? Ok we can fix that.
 
 There is also a comment on the PR 906. Right now you don’t ignore obviously if you receive a channel type even though the feature bit is not set, the feature bit doesn’t exist yet because the PR is not merged. The PR currently says that you should ignore the channel type if the feature bit was not set. I commented and t-bast seems to agree that you should continue to optionally interpret the TLV whether the feature bit is set or not. In part because nodes do this today.
 
@@ -198,19 +198,19 @@ You can read it if you want. It is there. It is used today, that is what the spe
 
 Interesting. We’ll parse it but we’ll ignore it. That seems like a different requirement. We’ll only look at it if the feature bit is set.
 
-If you want to not send a channel type in response then that would be fine too. My proposed change here is we’ll send it, we’ll parse it if we receive it, we don’t care about the feature bit. And we’ll also eventually now set the feature bit. But if you want to ignore the field because we didn’t set the feature bit, you are talking to a current version of LDK, not a future version, then that’s fine as long as you don’t respond with a channel type in the accept channel message. We’ll just say “Clearly they didn’t understand it and that’s fine”. 
+If you want to not send a channel type in response then that would be fine too. My proposed change here is we’ll send it, we’ll parse it if we receive it, we don’t care about the feature bit. And we’ll also eventually now set the feature bit. But if you want to ignore the field because we didn’t set the feature bit, you are talking to a current version of LDK, not a future version, then that’s fine as long as you don’t respond with a channel type in the accept channel message. We’ll just say “Clearly they didn’t understand it and that’s fine”.
 
-I’ll need to go back and read the original PR. 
+I’ll need to go back and read the original PR.
 
 I see what you are saying. But if it is present in both messages and we only send it if it was present…
 
-The problem is what you are suggesting is a change from the current spec. The current spec says you should just send it and if you receive it you should parse it. If you understand it and you parse it you should respond with something in the accept channel message. 
+The problem is what you are suggesting is a change from the current spec. The current spec says you should just send it and if you receive it you should parse it. If you understand it and you parse it you should respond with something in the accept channel message.
 
 Currently it is gated on both sides.
 
 It is making it slightly tighter yeah.
 
-If we had done it the right way, if we’d put a feature bit in the first place then it is pretty easy. Set the feature bit and send it. If you don’t set the feature bit don’t send it. And then it is very easy. But we didn’t do that. Now it is kind of implied, if you sent it that means you wanted me to use it. If we both send it then we’re using it. If we didn’t both send it then we’re not using it at all. 
+If we had done it the right way, if we’d put a feature bit in the first place then it is pretty easy. Set the feature bit and send it. If you don’t set the feature bit don’t send it. And then it is very easy. But we didn’t do that. Now it is kind of implied, if you sent it that means you wanted me to use it. If we both send it then we’re using it. If we didn’t both send it then we’re not using it at all.
 
 I think it is compatible with the behavior in that if I’m sending the bit I’m going to send it. I can remove that to make that looser but I think it is compatible with our behavior of we only send it if we send a bit.
 
@@ -240,13 +240,13 @@ Turbo channels, PR 910, are there implementations of this? We’re working on it
 
 I think Eugene has one now that he has tested. I think there are just questions on chantype stuff. We are talking about zero conf.
 
-My only concern was there is no chantype for zero conf explicitly. I left a comment. 
+My only concern was there is no chantype for zero conf explicitly. I left a comment.
 
 Zero conf isn’t a different channel construction, it is not really something you have to remember. Originally channel types were stuff you had to remember. “This is a static remote key” or stuff that was obviously persisting across the channel. There is one thing however you have to remember. If this is a private channel and you don’t want them to route by the short channel ID… Let me pull up the PR, I should mention turbo in the title then I could find more easily. I think the last commit may have added this, there is a pile of 8 fixes. Now there is a channel type but that channel type means don’t you dare route by short channel ID. That’s cool and the reason that is cool is because when we have channel type upgrade, which is another PR, you can take the existing private channel and then go “From now on no longer route via short channel ID. We are going to use the alias thing now.” For a normal channel you can route by both. I can give you an alias and you can use either. But obviously for an unannounced channel in the ideal world you would never route by short channel ID to avoid probing. You can’t do that today because it breaks back compatibility. You don’t know when the other side is ready. They have got to be handing out aliases in their invoices and stuff like that. By adding a short channel ID just for the private case that gives you that feature that you want.
 
 I saw the recent change. I was mostly referring to if I start a channel flow and I have the feature bit and they have the feature bit, they want zero conf. When the acceptor sends accept channel it is kind of like “I hope you open a zero conf channel to me. I hope you send `funding_locked`.” In the spec currently if a `funding_created` is sent back then the initiator agrees to open a zero conf channel, a promise almost. The current wording is very open ended I think.
 
-We should make it clear that if you offer this ability and you are funding the channel then you should do zero conf. You’ve got nothing to lose, I trust myself so I will zero conf for you. Whether you accept it or not is obviously beyond my control. You might decide to delay for some confs. But the opener should always send, I’ll check the wording. The idea is to prefer this model of opening in future. If you advertise this you will aggressively send `funding_locked` before it is really locked. I will check the wording to make sure that is explicit enough. 
+We should make it clear that if you offer this ability and you are funding the channel then you should do zero conf. You’ve got nothing to lose, I trust myself so I will zero conf for you. Whether you accept it or not is obviously beyond my control. You might decide to delay for some confs. But the opener should always send, I’ll check the wording. The idea is to prefer this model of opening in future. If you advertise this you will aggressively send `funding_locked` before it is really locked. I will check the wording to make sure that is explicit enough.
 
 His point is he preferred to be more explicit. Y’all are saying they don’t have to send it. We’d like to make that explicit.
 
@@ -258,9 +258,9 @@ You’ll start bouncing HTLCs off.
 
 Does that mean you can’t signal it within the protocol? Otherwise every party opening a channel with me if I have the feature bit set is somehow assuming that I may send it. Versus if I am opening a channel outbound and I don’t set the bit they know we are not doing zero conf. To me it is about the explicit versus implicit type of thing. Do we implicitly know because I don’t know who Matt actually is in real life that we are not doing zero conf? Or can I set in my message “Hey we are doing a zero conf”.
 
-It seems like you are trying to interpret the bit in a way that the bit doesn’t mean. The bit does not mean zero conf. That’s not what the bit means. 
+It seems like you are trying to interpret the bit in a way that the bit doesn’t mean. The bit does not mean zero conf. That’s not what the bit means.
 
-I think the difference is that y’all are interpreting it as behavior while we’re thinking of it as a channel type. If we can add logic to validate that channel type and let users explicitly open that channel type. Y’all are saying “I have the bit set. I might send it, I might not”. 
+I think the difference is that y’all are interpreting it as behavior while we’re thinking of it as a channel type. If we can add logic to validate that channel type and let users explicitly open that channel type. Y’all are saying “I have the bit set. I might send it, I might not”.
 
 I think the UX will be other way round. Matt opens a channel with me and then he pings me and goes “You don’t trust my node yet, I can’t route through you” and I go “Cool, I am going to flip that on”. There is no way to change the channel type after we’ve negotiated it. It depends how your controls are going to work. If beforehand you are going to have a vetted list of nodes that you trust then when we’re talking obviously in the protocol I could say “By the way I am perfectly happy to open this zero conf with you”. When you open a channel with me I go “Yeah I trust you” and you know. But I don’t know how that would extend to the case where after you’ve opened the channel with me I decide that I trust you and I’m going to do the thing.
 
@@ -284,7 +284,7 @@ Two things, we have something in mind basically where we’ll know ahead of time
 
 In the future the sender will always open zero conf, always. Every channel will be zero conf, everyone will be zero conf. There is no non zero conf anymore. “Here’s the feature, I support zero conf”.
 
-Moving to full RBF in v24, full RBF and zero conf everywhere don’t really go together super great. 
+Moving to full RBF in v24, full RBF and zero conf everywhere don’t really go together super great.
 
 For channel v2 stuff?
 
@@ -294,7 +294,7 @@ It just feels like the control flow should be flipped. Let’s say I’m opening
 
 You are not going to accept zero conf from anyone.
 
-Yes, which is why you’ll send the `reject` message. 
+Yes, which is why you’ll send the `reject` message.
 
 The point is no one is going to say “I accept this from everyone” and so there is always going to be some out of band negotiation.
 
@@ -378,9 +378,9 @@ The receiver can always immediately send a `funding_locked`. Now you’re sittin
 
 We wouldn’t do anything because we didn’t set the bit. This is just constraining the paths of the software and what we expect. It seems like people at least acknowledge that there’s a condition where maybe you want the initiator to be able to specify this upfront. And it fails faster. At least we have those two acknowledgements. We won’t be setting zero conf for everything once this is in as well too.
 
-We will. So we definitely do not want your dance where you have to reconnect and offer a different channel type. That is why. It is a lot more logic for us to change this. 
+We will. So we definitely do not want your dance where you have to reconnect and offer a different channel type. That is why. It is a lot more logic for us to change this.
 
-It is still implementation phase. 
+It is still implementation phase.
 
 More code in exchange for half a RTT, faster failure does not seem like it is…
 
@@ -400,7 +400,7 @@ That is unspec-ed so far. We need to figure that out. Once the other party is pu
 
 If I said on Reddit every channel is now zero conf people will be like what?
 
-On the initiator side I agree that the initiator has an incentive to always say zero conf. If he’s the only one putting funds in the channel on the receiver side I agree that we would choose depending on other conditions. But on the initiator side I don’t see why we would not do zero conf all the time. 
+On the initiator side I agree that the initiator has an incentive to always say zero conf. If he’s the only one putting funds in the channel on the receiver side I agree that we would choose depending on other conditions. But on the initiator side I don’t see why we would not do zero conf all the time.
 
 The initiator might not just auto do zero conf because the market may price that default risk? If you have no marginal cost then you would but if there is a market premium for that service from an acceptor…
 
@@ -448,13 +448,13 @@ So why not let them be explicit with that?
 
 We are by setting `min_depth`.
 
-They say “Here’s my min_depth, it is not zero”. That is how they are telling you explicitly whether they are going to zero conf or not. 
+They say “Here’s my min_depth, it is not zero”. That is how they are telling you explicitly whether they are going to zero conf or not.
 
 Y’all are saying this lets me open up a channel and not know if they support it yet and they tell me later. Versus me just saying “I want to open the channel” and they say “No”. That’s the difference.
 
 Right because this is way simpler. You can offer it to everyone and they can accept or not on their own terms. You don’t have to do this dance where you go “I insist on a zero conf channel even though I don’t care either way because it doesn’t make a difference to me, I’m opening it and I trust myself. I explicitly want to open a zero conf channel.” They go “No I don’t trust you”. Then I go back and say “Now let’s open a normal channel”. It is the dumbest protocol ever.
 
-Do we realize that this is the type of negotiation that we put into place with the explicit channel type? Remember we had a different type before. There was this double opt in thing. We said “No you’ll just send the error and then try again”. That’s what this is. We’ll have to do that anyway for any channel type because that’s the way we decided to do negotiation. 
+Do we realize that this is the type of negotiation that we put into place with the explicit channel type? Remember we had a different type before. There was this double opt in thing. We said “No you’ll just send the error and then try again”. That’s what this is. We’ll have to do that anyway for any channel type because that’s the way we decided to do negotiation.
 
 They are different. The reason I think it makes sense for channel type to try some specific channel type, “I want this anchor thing” and you say “No”. I’m like “Ok maybe something else”. But here the reason it is different is that I really think when you actually use it if a guy says “No to zero conf” you still want to have a channel with them.
 

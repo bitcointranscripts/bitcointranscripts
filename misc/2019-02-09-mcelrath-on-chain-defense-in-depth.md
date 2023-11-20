@@ -1,5 +1,5 @@
 ---
-title: Chain Defense In Depth 
+title: Chain Defense In Depth
 transcript_by: Bryan Bishop
 tags: ['custody', 'wallet']
 speakers: ['Bob McElrath']

@@ -1,5 +1,5 @@
 ---
-title: Lnd 
+title: Lnd
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['lightning']
@@ -19,7 +19,7 @@ roasbeef: Not bad
 
 Pierre: So I listened to Laolu on Stephan Livera’s podcast and I would encourage any of our listeners to go listen to that first so that they can hear all about some of the latest developments in lightning. I remember you covered AMP and various other topics including Neutrino. I’ll try not to bring those topics up although we can maybe go deeper on them. We’ll try to cover some new ground. What I feel like was not covered in the Stephan Livera interview was Laolu’s background, his software engineering career and what led him to his end… obviously the same for you Conner. Your involvement in lightning. Let’s start off with that. Where did you guys go to college?
 
-roasbeef: I went to school at UC Santa Barbara (UCSB). 
+roasbeef: I went to school at UC Santa Barbara (UCSB).
 
 bitconner: I went to MIT. Started there for undergrad and then did my Masters there too.
 
@@ -27,7 +27,7 @@ roasbeef: Yeah I did the same thing at UCSB.
 
 Pierre: And what were your Masters in?
 
-roasbeef: Mine was in applied cryptography. I ended up working in symmetric search, like encrypted search. How to make the index and use symmetric crypto on it to have an index that provides privacy… information retrieval on top of it. 
+roasbeef: Mine was in applied cryptography. I ended up working in symmetric search, like encrypted search. How to make the index and use symmetric crypto on it to have an index that provides privacy… information retrieval on top of it.
 
 Pierre: Awesome. What year was this in?
 
@@ -43,7 +43,7 @@ roasbeef: For me, initially I remember I was taking this wireless networking cou
 
 Pierre: Awesome. Just had to set aside your ego.
 
-roasbeef: I was like “let me throw my shit out”. This is way better. My code wasn’t even that great at that point. I didn’t know what to next. I didn’t have the entire Bitcoin programming model in my head yet. So I couldn’t really progress. Over time I did more and more small stuff so I had that to do large projects in Bitcoin at that point. 
+roasbeef: I was like “let me throw my shit out”. This is way better. My code wasn’t even that great at that point. I didn’t know what to next. I didn’t have the entire Bitcoin programming model in my head yet. So I couldn’t really progress. Over time I did more and more small stuff so I had that to do large projects in Bitcoin at that point.
 
 Pierre: Ethereum was growing at that time. What made it so that you weren’t interested in working on Ethereum scaling or Ethereum related projects?
 
@@ -69,11 +69,11 @@ bitconner: One of the big takeaways is that’s nice to put an IRC handle to som
 
 roasbeef: People aren’t dicks in person
 
-Pierre: I definitely agree with that sentiment because we know a bunch of people on Twitter and it is always completely different when you meet them in person. Your interactions with them afterwards are different as well now you’ve met in person. 
+Pierre: I definitely agree with that sentiment because we know a bunch of people on Twitter and it is always completely different when you meet them in person. Your interactions with them afterwards are different as well now you’ve met in person.
 
 bitstein: The nametags need to have the Twitter avatar on it. Even more than people’s handles, it’s the avatar you know people by.
 
-roasbeef: When you’re scrolling you detect the avatar very quickly. You scan it and you’re like what’s that? I haven’t changed mine for a bit now. 
+roasbeef: When you’re scrolling you detect the avatar very quickly. You scan it and you’re like what’s that? I haven’t changed mine for a bit now.
 
 Pierre: So Conner, with your discussions in Montreal, what made you decide that Lighting was an exciting project to work on?
 
@@ -97,7 +97,7 @@ roasbeef: When you start to do more involved batching you can open and close mor
 
 Pierre: On the other end of the spectrum in terms of criticism, it’s like what if Laolu is right and this creates even more demand for transactions onchain? We have a block weight limit so there’s no way everyone can get onboarded onto Lightning because look at these calculations that I made. What do you make of that?
 
-roasbeef: There will always be limitations at the base layer but maybe in the future people can have different things like dynamic block sizes where you have a mechanism that can update itself programmatically. Even then if you’re working towards slightly different trust models there are ways where you can create channels offchain rather than just onchain. I gave a talk about this at Scaling Bitcoin. We have some ideas on this different trust model where you allow people to create channels offchain so you can onboard people onto Lightning without having onchain transactions. In the end I think in the future there will be some sort of dynamic block size. There will always be a limitation. You can’t just crank it to a 11 and think there’s no consequences. 
+roasbeef: There will always be limitations at the base layer but maybe in the future people can have different things like dynamic block sizes where you have a mechanism that can update itself programmatically. Even then if you’re working towards slightly different trust models there are ways where you can create channels offchain rather than just onchain. I gave a talk about this at Scaling Bitcoin. We have some ideas on this different trust model where you allow people to create channels offchain so you can onboard people onto Lightning without having onchain transactions. In the end I think in the future there will be some sort of dynamic block size. There will always be a limitation. You can’t just crank it to a 11 and think there’s no consequences.
 
 bitconner: At the end of the day, if you’ve already squeezed out all the performance you can get via Lightning and there’s still a constraint at the base layer, that could maybe be justification for making other decisions around block size. The wrong thing in my opinion would be to increase the block size because there’s pressure now and not build out the technology that could relieve that. If you’ve already built that out and there’s still issues down the road that’s more justification to pursue that. I think we’re quite a way off on that front.
 
@@ -109,11 +109,11 @@ roasbeef: My node has probably done 2 or 3000 transactions, updates etc. That wa
 
 bitconner: I asked Alex to tell us how many channel updates Y’alls had done and it was almost 400,000.
 
-Pierre: Maybe we can get it to a million with this node launcher I’ve been getting people onboarded to. We can increase the amount of load on Alex’s server. He doesn’t share any of that money with Lightning Labs right? All of that Y’alls money goes directly into his back pocket. 
+Pierre: Maybe we can get it to a million with this node launcher I’ve been getting people onboarded to. We can increase the amount of load on Alex’s server. He doesn’t share any of that money with Lightning Labs right? All of that Y’alls money goes directly into his back pocket.
 
 roasbeef: Yeah he’s the CEO of Y’alls, he handles that.
 
-Pierre: Maybe he’ll help out Lightning Labs with some funding in the future. It is going to be a giant media empire, bigger than Reddit. Michael - did you have some questions? I was going to look at the audience questions. 
+Pierre: Maybe he’ll help out Lightning Labs with some funding in the future. It is going to be a giant media empire, bigger than Reddit. Michael - did you have some questions? I was going to look at the audience questions.
 
 bitstein: We do have some good audience questions. I think go down some of the list. There’s one from BillyBTC. How often can we expect additions to be made to the Lightning Network BOLT specifications and how likely is it for BOLTs, current or future, to change after being accepted?
 
@@ -137,7 +137,7 @@ roasbeef: The other thing is that in future it will be even more of a thing wher
 
 Pierre: Awesome. We’ve another question here which I also would have this question from Matthew R. He was really enjoying the history, we got up to Scaling Bitcoin Montreal, he would love to hear more; when they met and what led to them starting working at Lightning Labs and the story of Lightning Labs up until now.
 
-roasbeef: I guess it was after Scaling Bitcoin, Hong Kong in December I met and hung a lot more with Joseph, Elizabeth and Tadge. I was really interested in working on this stuff. At that point I was interning at Google and at one point I was deciding which of them I wanted to do: Google and be there full time or go to Bitcoin instead. I had Google FOMO as I’d miss everything internally at Google. Eventually I had more and more… well I’m never going to be able to do this again so I have to go forwards with this thing. Lightning Labs was created in 2016 or so and at that point I ended up graduating at UCSB and I started working that summer. We eventually got Conner onboard in 2017. He was working on some other project at that time. We talked him up enticing him to join the company and then we got him on at that point. I probably skipped some details in between. That’s kind of like the timeline. I was hanging out with Joseph, Tadge and Elizabeth Stark more and more during the summer. They really convinced me that this was something I was going to be able to do and I felt that this was the opportunity to do so especially given I was fresh out of school and if it failed I’d just go back to Google and have a cushy job. 
+roasbeef: I guess it was after Scaling Bitcoin, Hong Kong in December I met and hung a lot more with Joseph, Elizabeth and Tadge. I was really interested in working on this stuff. At that point I was interning at Google and at one point I was deciding which of them I wanted to do: Google and be there full time or go to Bitcoin instead. I had Google FOMO as I’d miss everything internally at Google. Eventually I had more and more… well I’m never going to be able to do this again so I have to go forwards with this thing. Lightning Labs was created in 2016 or so and at that point I ended up graduating at UCSB and I started working that summer. We eventually got Conner onboard in 2017. He was working on some other project at that time. We talked him up enticing him to join the company and then we got him on at that point. I probably skipped some details in between. That’s kind of like the timeline. I was hanging out with Joseph, Tadge and Elizabeth Stark more and more during the summer. They really convinced me that this was something I was going to be able to do and I felt that this was the opportunity to do so especially given I was fresh out of school and if it failed I’d just go back to Google and have a cushy job.
 
 Pierre: That explains why you have so many Google related technologies in lnd whether it’s Go, protobufs, gRPC.
 
@@ -309,7 +309,7 @@ roasbeef: I’d say it depends. I think right now there are a few nodes earning 
 
 bitconner: It also depends on your costs. If you’re running on Digital Ocean, that’s not free but if you’re running on your Raspberry Pi in your house you have a better shot but even then like Laolu said, you’re going to need some velocity. Then there’s the question of I’m running on a Raspberry Pi, do I want to put enough capital so that I can make non-negligible fees or do I want to put a million dollars on a Raspberry Pi which I do not recommend anyone do. Please do not do that. You’ve got to pick the right trade-off of how much capital I’m putting up, where I’m putting it, what is the stability, reliability of that node and the durability.
 
-roasbeef: I feel like some nodes are over-capitalized in terms of risk, reward. If you have twenty million on the network, the fees aren’t substantial, maybe you should be putting the money elsewhere. That would be a little more balanced. When things are a lot more robust we’ll have a much higher velocity of payments on the network. 
+roasbeef: I feel like some nodes are over-capitalized in terms of risk, reward. If you have twenty million on the network, the fees aren’t substantial, maybe you should be putting the money elsewhere. That would be a little more balanced. When things are a lot more robust we’ll have a much higher velocity of payments on the network.
 
 bitconner: If Lighting does end up providing more of a streaming interface where you stream payments for an Uber or a movie, your payment velocity will be higher and more consistent. If you get a payday everyday instead of once a month, then fees routing nodes… it’s more consistent and uniform. The volume and the stability of the income may level off and become something you can rely on.
 
@@ -353,15 +353,15 @@ Pierre: Interesting, that’s fascinating.
 
 roasbeef: That’s kind of like subnets on the internet or autonomous servers. You’ll see similar things in the future where one node has a whole shadow network that isn’t announced to other people. Or within a organization they have a bunch of private channels to the wider area you expose a few public channels.
 
-bitconner: One of the nice things about that is I’m only advertising one routing policy and every node only needs in essence to have one edge advertised even though there could be three or four channels backing it onchain that don’t need to be advertised. That helps a little bit with that approach in terms of the router state that each node needs to keep because the packets that the node sends for the advertised channel work just as well on the unadvertised ones. 
+bitconner: One of the nice things about that is I’m only advertising one routing policy and every node only needs in essence to have one edge advertised even though there could be three or four channels backing it onchain that don’t need to be advertised. That helps a little bit with that approach in terms of the router state that each node needs to keep because the packets that the node sends for the advertised channel work just as well on the unadvertised ones.
 
-Pierre: Right, fascinating. And then one of the other things we discussed was how having web of trust peers would avoid the issue of them force closing a channel on you or even cooperatively closing a channel so your channels can have more age and have a Lindy effect for routing. 
+Pierre: Right, fascinating. And then one of the other things we discussed was how having web of trust peers would avoid the issue of them force closing a channel on you or even cooperatively closing a channel so your channels can have more age and have a Lindy effect for routing.
 
-roasbeef: You can maybe have a lower CSV value. If I have a channel with Conner I can have a lower CSV value because I have more protection against him cheating me or trying to do a breach. Businesses may have different parameters as far as public channels to themselves versus parameters on x people on the greater network. 
+roasbeef: You can maybe have a lower CSV value. If I have a channel with Conner I can have a lower CSV value because I have more protection against him cheating me or trying to do a breach. Businesses may have different parameters as far as public channels to themselves versus parameters on x people on the greater network.
 
 Pierre: This leads me to the next question from @cart852. Do I need to close my payment channels to upgrade my lnd software in the future.
 
-bitconner: Typically no. Most of the changes are backwards compatible with channels. I don’t think we’ve had a release where you’ve needed to close channels necessarily. 
+bitconner: Typically no. Most of the changes are backwards compatible with channels. I don’t think we’ve had a release where you’ve needed to close channels necessarily.
 
 roasbeef: No
 
@@ -383,7 +383,7 @@ Pierre: Gotcha. So we’re coming up on a hour here. This has been a fascinating
 
 roasbeef: Run lnd, I don’t know.
 
-bitconner: There will be a bunch of new features coming out early next year. We’ve been working a lot on the watchtower protocols, getting those flushed out, starting to test it out. I just ran it with an in-memory database on my node last night, checking out that everything is working properly, as we expect. So should be going through review on that in the next couple of months. So maybe people on Slack, be looking to test that out if you guys are interested. It’ll need some testers. 
+bitconner: There will be a bunch of new features coming out early next year. We’ve been working a lot on the watchtower protocols, getting those flushed out, starting to test it out. I just ran it with an in-memory database on my node last night, checking out that everything is working properly, as we expect. So should be going through review on that in the next couple of months. So maybe people on Slack, be looking to test that out if you guys are interested. It’ll need some testers.
 
 Pierre: How do you get on the Lightning Labs Slack?
 

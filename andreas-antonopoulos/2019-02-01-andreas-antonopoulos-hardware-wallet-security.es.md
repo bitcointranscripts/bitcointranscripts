@@ -8,11 +8,11 @@ tags: ['cartera hardware', 'validación', 'cartera']
 media: https://www.youtube.com/watch?v=3zNVDIz6Snw
 ---
 
-Tema: ¿Son los monederos electrónicos lo suficientemente seguros? 
+Tema: ¿Son los monederos electrónicos lo suficientemente seguros?
 
-Localización: Canal de YouTube de Andreas Antonopoulos 
+Localización: Canal de YouTube de Andreas Antonopoulos
 
-# ¿Son los monederos electrónicos lo suficientemente seguros? 
+# ¿Son los monederos electrónicos lo suficientemente seguros?
 
 P - Hola Andreas. Almaceno mi criptografía en un Ledger. Escuchando a Trace Mayer esta semana me preocupa que esto no sea lo suficientemente seguro. Trace dice que necesitas Bitcoin Core para la validación de la red, Armory para gestionar las claves privadas y un protocolo Glacier para los procedimientos operativos estándar y un portátil Purism para el hardware. ¿Cuál es el estándar de oro para almacenar criptomonedas para personas no técnicas? ¿Es suficiente una cartera de hardware? Si mi cripto ha estado en mi cartera de hardware durante un año, ¿es más o menos probable que sea hackeada con el tiempo?
 

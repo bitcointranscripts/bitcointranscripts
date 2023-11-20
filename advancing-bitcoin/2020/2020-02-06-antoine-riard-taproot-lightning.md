@@ -24,19 +24,19 @@ Today Schnorr and Taproot for Lightning, it is a really exciting topic.
 
 # Lightning architecture
 
-The Lightning architecture for those who are not familiar with it. You have the blockchain as the underlying layer. On top of it you are going to build a channel, you have a HTLC and people are going to spend onions to you. If you want to be paid you are going to send an invoice to the sender. 
+The Lightning architecture for those who are not familiar with it. You have the blockchain as the underlying layer. On top of it you are going to build a channel, you have a HTLC and people are going to spend onions to you. If you want to be paid you are going to send an invoice to the sender.
 
 # What should we design Lightning for?
 
-What should we design Lightning for? When we are doing Lightning design spec, we are pouring a lot of brainpower into it and everyone has a different view of what Lightning should be. Should Lightning be a fast, payment transaction system? Should Lightning be optimized for microtransactions? Is Lightning really cool because you get instant finality of your transactions? Is privacy the reason we are doing Lightning? Lightning may have better privacy properties. When we are talking about privacy for Lightning it would be better to have the privacy of the base layer in mind. On the base layer you are going to broadcast transactions. There is an amount, it is not encrypted. There is an address, it is not encrypted. You are going to link inputs and outputs in the UTXO graph. 
+What should we design Lightning for? When we are doing Lightning design spec, we are pouring a lot of brainpower into it and everyone has a different view of what Lightning should be. Should Lightning be a fast, payment transaction system? Should Lightning be optimized for microtransactions? Is Lightning really cool because you get instant finality of your transactions? Is privacy the reason we are doing Lightning? Lightning may have better privacy properties. When we are talking about privacy for Lightning it would be better to have the privacy of the base layer in mind. On the base layer you are going to broadcast transactions. There is an amount, it is not encrypted. There is an address, it is not encrypted. You are going to link inputs and outputs in the UTXO graph.
 
 # What’s the privacy on the base layer?
 
-Privacy for the base layer is not that great that today. Lightning may be a way to solve privacy. 
+Privacy for the base layer is not that great that today. Lightning may be a way to solve privacy.
 
 # What’s the privacy on Lightning?
 
-But on Lightning there is a payment path. Lightning nodes have pubkeys tied to them and that is an identity vector. With HTLCs you may reuse a hash, there are a lot of different privacy vectors. Privacy is I think really important if you want censorship resistant money. 
+But on Lightning there is a payment path. Lightning nodes have pubkeys tied to them and that is an identity vector. With HTLCs you may reuse a hash, there are a lot of different privacy vectors. Privacy is I think really important if you want censorship resistant money.
 
 # Why should we focus on privacy?
 
@@ -70,7 +70,7 @@ What are the new consensus properties of this upgrade? Linearity is the one we a
 
 # More Schnorr-Taproot resources
 
-There are BIP numbers for [Schnorr](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki), [Taproot](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki) and [Tapscript](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki). I encourage you to read the BIPs. There are also more resources on AJ Town’s GitHub [repo](https://github.com/ajtowns/taproot-review). 
+There are BIP numbers for [Schnorr](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki), [Taproot](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki) and [Tapscript](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki). I encourage you to read the BIPs. There are also more resources on AJ Town’s GitHub [repo](https://github.com/ajtowns/taproot-review).
 
 # Channel: “Plaintext” closing
 
@@ -102,7 +102,7 @@ Every HTLC part of the payment path reuse the same Script hashlock ie
 
 `OP_HASH160  <RIPEMD160(payment_hash)>  OP_EQUALVERIFY`
 
-Going further right now we are using a payment hash. Any HTLC part of the payment path is reusing the same hash. If you are a Chainalysis company and you are running spy nodes on the network or you are running big processing nodes and these nodes are part of the same payment path they are going to be able to guess “graph nearness” of the sender and receiver. That is really bad because right now payment paths are quite short given the current topology. Ideally we would like to use a different hashlock for every hop. 
+Going further right now we are using a payment hash. Any HTLC part of the payment path is reusing the same hash. If you are a Chainalysis company and you are running spy nodes on the network or you are running big processing nodes and these nodes are part of the same payment path they are going to be able to guess “graph nearness” of the sender and receiver. That is really bad because right now payment paths are quite short given the current topology. Ideally we would like to use a different hashlock for every hop.
 
 # Schnorr-Taproot: Point Time Locked Contract
 
@@ -112,7 +112,7 @@ Going further right now we are using a payment hash. Any HTLC part of the paymen
 
 `secret t = adaptor_sig - partial_sig`
 
-There is this cool idea of scriptless scripts by Andrew Poelstra who was speaking earlier today. With a scriptless script you are going to tweak the nonce pubkey with a secret. When one of the parties is ready to claim the secret she has to reveal it to unlock the output. 
+There is this cool idea of scriptless scripts by Andrew Poelstra who was speaking earlier today. With a scriptless script you are going to tweak the nonce pubkey with a secret. When one of the parties is ready to claim the secret she has to reveal it to unlock the output.
 
 # PTLC protocol: setup phase
 
@@ -130,7 +130,7 @@ The second phase is the update phase. You are going to exchange 	partial sigs be
 
 (See diagram in slides)
 
-The last phase is the settlement one. Dave is going to reveal the secret that lets Carol learn about her own secret which is going to let Bob learn about his own secret. Bob is going to claim the PTLC from Alice. Alice is going to learn the final secret. This final secret can be reused to solve other issues. 
+The last phase is the settlement one. Dave is going to reveal the secret that lets Carol learn about her own secret which is going to let Bob learn about his own secret. Bob is going to claim the PTLC from Alice. Alice is going to learn the final secret. This final secret can be reused to solve other issues.
 
 # Invoices: proof-of-payment
 
@@ -142,15 +142,15 @@ Reusing the z value (zG has been signed by the receiver) of the PTLC protocol, y
 
 # Onion-packet: simple payment or MPP
 
-MPP has been presented by Joost. Right now MPP is cool to solve liquidity issues but it may be a weakness for privacy because you may be able to do payment paths intersection between the different MPP used if a spying node of part of all MPP payment paths. Ideally you want to use a different value for this payment path. 
+MPP has been presented by Joost. Right now MPP is cool to solve liquidity issues but it may be a weakness for privacy because you may be able to do payment paths intersection between the different MPP used if a spying node of part of all MPP payment paths. Ideally you want to use a different value for this payment path.
 
 # Schnorr Taproot onion packet: Discreet Log AMP
 
-There is the idea of using the same cryptography trick of Schnorr linearity. Before to set the payment path Alice the sender will offset the curve point received from Dave, the last hop of the payment path, by her own secret. You are going to send shards of the secret through every onion part of the atomic multipayment path. Only when all of them are locked at the last hop, is it going to be possible to combine the shard secrets and claim the payment.	
+There is the idea of using the same cryptography trick of Schnorr linearity. Before to set the payment path Alice the sender will offset the curve point received from Dave, the last hop of the payment path, by her own secret. You are going to send shards of the secret through every onion part of the atomic multipayment path. Only when all of them are locked at the last hop, is it going to be possible to combine the shard secrets and claim the payment.
 
 # HTLC: stuck payments
 
-There is another issue right now which is being discussed on the [mailing list](https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002029.html). You send a payment, one of the hops on the payment path is going to be offline or not available. To cancel the payment and wait to send another one you have to first wait until the HTLC timelock expires to get the funds back to the original sender. Ideally you want a way so that the sender can cancel the payment without waiting. 
+There is another issue right now which is being discussed on the [mailing list](https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-June/002029.html). You send a payment, one of the hops on the payment path is going to be offline or not available. To cancel the payment and wait to send another one you have to first wait until the HTLC timelock expires to get the funds back to the original sender. Ideally you want a way so that the sender can cancel the payment without waiting.
 
 # Schnorr Taproot HTLC: cancellable payments
 
@@ -166,7 +166,7 @@ What you can do is instead of this is have payment point constructions. The idea
 
 # Protocol-side, no silver bullet, a lot of tricks
 
-Schnorr and Taproot, it is not a silver bullet. There are a lot of other leaks like when you are doing channel announcements on Lightning right now you are doxing yourself by linking a Lightning pubkey identity and onchain UTXO. In a few years people are going to wake up and say “This Lightning pubkey was linked to a domain name.” Then you will be able to link between a domain name and an onchain UTXO which is really bad. Even if we do PTLC for the payment path we still have issues with the CLTV delta which is the same on every hop. Also the amount stays the same minus the Lightning fees for every hop. Ideally we may want to implement further tricks like random CLTV delta routing algorithms or pad the payment path to always use 10 hops or 20 hops even if it is costlier. That may be better for privacy. Right now people are working on dual funded channels for Lightning. We may do Coinjoin for every funding transaction which would be really cool. Schnorr and Taproot are going to take more than one year to get integrated into Lightning. This will be only the start for building really consistent privacy for Lightning. 
+Schnorr and Taproot, it is not a silver bullet. There are a lot of other leaks like when you are doing channel announcements on Lightning right now you are doxing yourself by linking a Lightning pubkey identity and onchain UTXO. In a few years people are going to wake up and say “This Lightning pubkey was linked to a domain name.” Then you will be able to link between a domain name and an onchain UTXO which is really bad. Even if we do PTLC for the payment path we still have issues with the CLTV delta which is the same on every hop. Also the amount stays the same minus the Lightning fees for every hop. Ideally we may want to implement further tricks like random CLTV delta routing algorithms or pad the payment path to always use 10 hops or 20 hops even if it is costlier. That may be better for privacy. Right now people are working on dual funded channels for Lightning. We may do Coinjoin for every funding transaction which would be really cool. Schnorr and Taproot are going to take more than one year to get integrated into Lightning. This will be only the start for building really consistent privacy for Lightning.
 
 # Application-side, building private first apps
 
@@ -184,5 +184,5 @@ A - There are multiple ways. First you can integrate Taproot for the funding out
 
 Q - You said Lightning has privacy guarantees on its protocol but developers should make sure they don’t ruin the privacy guarantees on top of the base Lightning protocol. Do you see a tendency that applications are taking shortcuts on Lightning and ruining the privacy?
 
-A - Yes. Right now there is this idea of [trampoline routing](https://diyhpl.us/wiki/transcripts/lightning-conference/2019/2019-10-20-bastien-teinturier-trampoline-routing/) which is maybe great for user experience but on the privacy side it is broken. What gives us a lot of privacy in Lightning is source routing. Going to trampoline routing means the person who does the trampoline routing for you is going to learn who you are if you are using one hop and worse is going to know who you are sending funds to. There is trampoline routing, if you are not using privacy preserving Lightning clients… Nobody has done a real privacy study on Lightning clients. Neutrino, bloom filters, no one has done real research. They are not great, there are privacy leaks if you are using them. There are Lightning privacy issues and there are base layer privacy issues. If you are building an application you should have all of them in mind. It is really hard. Using the node pubkey I don’t think is great. I would like [rendez-vous routing](https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html) to be done on Lightning to avoid announcing my pubkey, having my invoice tied to my pubkey and my pubkey being part of Lightning. And channel announcement of course. I hope at some point we have some kind of proof of ownership so I can prove I own this channel without revealing which UTXO I own. 
+A - Yes. Right now there is this idea of [trampoline routing](https://diyhpl.us/wiki/transcripts/lightning-conference/2019/2019-10-20-bastien-teinturier-trampoline-routing/) which is maybe great for user experience but on the privacy side it is broken. What gives us a lot of privacy in Lightning is source routing. Going to trampoline routing means the person who does the trampoline routing for you is going to learn who you are if you are using one hop and worse is going to know who you are sending funds to. There is trampoline routing, if you are not using privacy preserving Lightning clients… Nobody has done a real privacy study on Lightning clients. Neutrino, bloom filters, no one has done real research. They are not great, there are privacy leaks if you are using them. There are Lightning privacy issues and there are base layer privacy issues. If you are building an application you should have all of them in mind. It is really hard. Using the node pubkey I don’t think is great. I would like [rendez-vous routing](https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-November/001498.html) to be done on Lightning to avoid announcing my pubkey, having my invoice tied to my pubkey and my pubkey being part of Lightning. And channel announcement of course. I hope at some point we have some kind of proof of ownership so I can prove I own this channel without revealing which UTXO I own.
 

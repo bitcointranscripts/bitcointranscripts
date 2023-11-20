@@ -1,5 +1,5 @@
 ---
-title: New Address Type For Segwit Addresses 
+title: New Address Type For Segwit Addresses
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['bech32', 'ux']
@@ -52,7 +52,7 @@ Probably the best known type of checksum algorithm that allows error correction 
 
 # BCH codes
 
-About a year ago I found out about [BCH codes](https://en.wikipedia.org/wiki/BCH_code) which are a generalization of Reed-Solomon code that drop this restriction of being limited to the alphabet size minus 1. Most of the research on BCH code is actually about bits based ones but this is not necessary. A lot of research is applicable to larger ones as well. We are going to create a BCH code over our size 32 alphabet. In fact it turns out the theory that you can read about in nice articles on Wikipedia, if you do the math you can construct a BCH code with distance 5. Yay! I’ll soon show you a diagram for why this actually matters. It turns out there is still a huge design space, many parameters are free in this BCH class of codes. So we’ll need a way to figure out which one to use. 
+About a year ago I found out about [BCH codes](https://en.wikipedia.org/wiki/BCH_code) which are a generalization of Reed-Solomon code that drop this restriction of being limited to the alphabet size minus 1. Most of the research on BCH code is actually about bits based ones but this is not necessary. A lot of research is applicable to larger ones as well. We are going to create a BCH code over our size 32 alphabet. In fact it turns out the theory that you can read about in nice articles on Wikipedia, if you do the math you can construct a BCH code with distance 5. Yay! I’ll soon show you a diagram for why this actually matters. It turns out there is still a huge design space, many parameters are free in this BCH class of codes. So we’ll need a way to figure out which one to use.
 
 # BCH code selection
 
@@ -60,7 +60,7 @@ Even if you fix the field size there are about 160,000 different ones. When conf
 
 How do you characterize such a code because all 71 character addresses is that ridiculously large number that we need to go over to characterize them? This is about 2^350 so way, way, way beyond the number of atoms in the universe. However, BCH codes belong to a class called linear codes. Linear codes means if you have a valid code word and you look at the values that every character represents and pairwise add every character to another valid code word the sum will again be a valid code word. What you only need to look for if you want to see whether this code below distance 5, you need to check does there exist any pair of 4 non-zero values over these 71 positions whose checksum is zero. Because if that is the case you can add that to any valid code word and your result will be another valid code word. Now we have established two valid code words with distance 4. It turns out that is still 12 trillion combinations which is painfully large. Maybe not entirely impossible but more than we were able to do. The next realization is that you can use a collision search. Instead of looking for 4 errors what you do is you look for only 2. You build a table with all the results on 2 errors, compute what their checksum would be to correct it, sort that table and look whether there are any 2 identical ones. Now you have 2 code words that need the same checksum to correct it. If you XOR them, if you add them together, now you have 2 x 2 = 4 changes and the checksum cancels out. Through this collision search you can now find by only doing the square root of the amount of work which makes it feasible.
 
-There are a bunch of other optimizations on top which I may talk about later if there is interest. We are able to do some search. We start from this 159,605 codes, let’s require that they actually have distance 5 at length 71. There are 28,825 left. Which one to pick from now? What you want to do is look at how they behave at 1 beyond the limit. All of these codes, these 28,825 codes, they all detect 4 errors at length 71. But what if you give them 5 errors? What if you give them 5 errors that are only appearing in a burst very close together or you give them randomly distributed behaviors? It turns out if we pick some reasonable assumptions about how we weigh the random case versus the worst case there are 310 best ones that are identical. 
+There are a bunch of other optimizations on top which I may talk about later if there is interest. We are able to do some search. We start from this 159,605 codes, let’s require that they actually have distance 5 at length 71. There are 28,825 left. Which one to pick from now? What you want to do is look at how they behave at 1 beyond the limit. All of these codes, these 28,825 codes, they all detect 4 errors at length 71. But what if you give them 5 errors? What if you give them 5 errors that are only appearing in a burst very close together or you give them randomly distributed behaviors? It turns out if we pick some reasonable assumptions about how we weigh the random case versus the worst case there are 310 best ones that are identical.
 
 # Effective error detecting power as a function of error rate (graph)
 
@@ -96,7 +96,7 @@ All of this together gives bech32 which is a generic data format for things like
 
 https://github.com/sipa/bech32/blob/master/ref/python/segwit_addr.py#L27-L36
 
-Ta da. This is the checksum algorithm. It uses no bignum conversion, it has no SHA256 dependency. It is just these ten lines. Of course you need more for the character set conversion and converting to bytes for the witness program. But the mathematical part of the spec is just this. 
+Ta da. This is the checksum algorithm. It uses no bignum conversion, it has no SHA256 dependency. It is just these ten lines. Of course you need more for the character set conversion and converting to bytes for the witness program. But the mathematical part of the spec is just this.
 
 # Demo website
 
@@ -112,7 +112,7 @@ A - I have no idea. I expect it to be low but I also expect that we wouldn’t k
 
 Q - In the error location code, can it suggest corrections there?
 
-A - Yes. The location code actually does full error correction. It knows what the likely error is but it intentionally does not show you because you should go back and look at what it should be rather than try things. Greg suggests I explain why this matters. A code with distance d can either detect d-1 errors or correct (d-1)/2. This means that our code which is distance 5 can detect 4 errors but can only correct 2. This is because you can be in the middle of two valid code words and then you don’t know which one to go to. So if you make 4 errors, which will never result in a valid code word, you may however have gotten closer to another valid code word than the one you started off from. This means that your ability to do error detection is eroded by trying to do correction. 
+A - Yes. The location code actually does full error correction. It knows what the likely error is but it intentionally does not show you because you should go back and look at what it should be rather than try things. Greg suggests I explain why this matters. A code with distance d can either detect d-1 errors or correct (d-1)/2. This means that our code which is distance 5 can detect 4 errors but can only correct 2. This is because you can be in the middle of two valid code words and then you don’t know which one to go to. So if you make 4 errors, which will never result in a valid code word, you may however have gotten closer to another valid code word than the one you started off from. This means that your ability to do error detection is eroded by trying to do correction.
 
 Greg Maxwell: The key point to make here is that if you make 4 errors it will almost certainly correct it to a valid address which is not the address you intended. This is why you don’t want to correct the errors.
 
@@ -162,7 +162,7 @@ A - Anything where humans are dealing with small strings of cryptographic materi
 
 Q - Are most of the design decisions around things like the character map and the code generator, are they documented along with the BIP?
 
-A - Yes. They are briefly. There is a rationale section that explains why many of the decisions were made. 
+A - Yes. They are briefly. There is a rationale section that explains why many of the decisions were made.
 
 Q - Is there any way to use this scheme for traditional pay-to-pubkey or pay-to-script-hash?
 

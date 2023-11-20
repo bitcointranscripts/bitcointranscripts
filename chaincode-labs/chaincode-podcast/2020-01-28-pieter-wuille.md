@@ -1,5 +1,5 @@
 ---
-title: Pieter Wuille 
+title: Pieter Wuille
 transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['bitcoin core']
@@ -30,7 +30,7 @@ John: We’re here to talk about Bitcoin and Bitcoin Core development. We have P
 
 Pieter: That is possible.
 
-John: That’s quite a lot over 11 years. No not quite, sorry. We’ll cut that bit so no one knows. Let’s say 9 years. 
+John: That’s quite a lot over 11 years. No not quite, sorry. We’ll cut that bit so no one knows. Let’s say 9 years.
 
 Pieter: I don’t like the implication.
 
@@ -48,7 +48,7 @@ Pieter: That’s another issue that the pre-headers first mechanism had. You’d
 
 John: Stale blocks?
 
-Pieter: Stale blocks which are just blocks in the chain that were abandoned because the majority hashrate forked away. Around the time of 0.7, 0.8, 0.9 I think we kept adding hacks on top of the block downloading mechanism trying to put heuristics to prevent it from having 8 connections and downloading all blocks from all of them simultaneously. At some point syncing got so slow that you’d end up with so many orphans that you could go out of memory while downloading. You’re still trying to catch up and you’re learning of all these new blocks that were just mined during the time you were syncing. They would all be kept in memory. Then we introduced a limit on how many of those were kept. The oldest ones would be deleted. That led to even more problems where those orphans were actually downloaded over and over again. Over all this was a mess and it was clear this wasn’t going to keep working. 
+Pieter: Stale blocks which are just blocks in the chain that were abandoned because the majority hashrate forked away. Around the time of 0.7, 0.8, 0.9 I think we kept adding hacks on top of the block downloading mechanism trying to put heuristics to prevent it from having 8 connections and downloading all blocks from all of them simultaneously. At some point syncing got so slow that you’d end up with so many orphans that you could go out of memory while downloading. You’re still trying to catch up and you’re learning of all these new blocks that were just mined during the time you were syncing. They would all be kept in memory. Then we introduced a limit on how many of those were kept. The oldest ones would be deleted. That led to even more problems where those orphans were actually downloaded over and over again. Over all this was a mess and it was clear this wasn’t going to keep working.
 
 John: For context this is 2013, 2014ish?
 
@@ -56,7 +56,7 @@ Pieter: Possibly. This was fixed in 0.10. Headers first synchronization was intr
 
 John: The reason for that is the vast majority of time when doing an initial block download and initial sync is checking the signatures in the transactions.
 
-Pieter: Right. Plus actually downloading the data because headers are 80 bytes per block rather than… 
+Pieter: Right. Plus actually downloading the data because headers are 80 bytes per block rather than…
 
 John: 1MB at the time, 2MB now.
 
@@ -104,7 +104,7 @@ Pieter: How do you call that? A dozen dozen?
 
 John: A score
 
-Pieter: A score is 20? 
+Pieter: A score is 20?
 
 John: A gross, sorry. I apologize, we’ll cut that bit. I have one final questions on headers first sync which is did you see an immediate uptick in performance? If you hadn’t done that, if that hadn’t been done what would Bitcoin look like right now?
 
@@ -122,11 +122,11 @@ Pieter: I can talk about what ultraprune is.
 
 Jonas: Go ahead.
 
-Pieter: This was in 0.8. Ultraprune is the name of the patch set I made that effectively introduced the concept of an explicit UTXO set to Bitcoin’s validation logic. Before that time there was a database that kept for every transaction output ever created whether or not it was already spent and even where it was spent using 12 bytes of data in the database per output ever created. 
+Pieter: This was in 0.8. Ultraprune is the name of the patch set I made that effectively introduced the concept of an explicit UTXO set to Bitcoin’s validation logic. Before that time there was a database that kept for every transaction output ever created whether or not it was already spent and even where it was spent using 12 bytes of data in the database per output ever created.
 
 John: That is a txo set not a utxo set.
 
-Pieter: Right. It was mutable. It was a database from txid to list of its outputs and whether or not they were spent and where they were spent. By the time I started working on this this database had grown to several gigabytes. This was a problem. It was fairly slow but also the database was indirect in that when you wanted to do validation you had to go first check this database to see if those outputs were not already spent and if they weren’t you still had to go find the transaction in the block files to find those utxos. You wouldn’t be able to validate the script before you could fetch the utxo. Effectively your working set was this whole database plus the whole blockchain. This couldn’t work with pruning or anything. You had to have all blocks available because you were using the blockchain data as the utxo data. The motivation was someone had started working I think on a patch that would go through this database and delete all txids whose outputs were already fully spent. Clearly these weren’t needed anymore. Ultraprune started as a proof of concept of if we take this to the extreme how small can we make that database? Instead of storing something for every output why don’t we actually switch to something where you just store the unspent ones because those are the only ones you still need afterwards. Then there was this performance consideration where everything is indirect, we always need this indirection to the blockchain data. The utxos are actually small, they are just an amount and a small script usually. Why don’t we copy that to the database as well so everything you need for validation is right there? It depended on what kind of I/O speed you had. At the time it reduced the amount of data you had to access from several gigabytes to maybe in the tens of megabytes at the time. 
+Pieter: Right. It was mutable. It was a database from txid to list of its outputs and whether or not they were spent and where they were spent. By the time I started working on this this database had grown to several gigabytes. This was a problem. It was fairly slow but also the database was indirect in that when you wanted to do validation you had to go first check this database to see if those outputs were not already spent and if they weren’t you still had to go find the transaction in the block files to find those utxos. You wouldn’t be able to validate the script before you could fetch the utxo. Effectively your working set was this whole database plus the whole blockchain. This couldn’t work with pruning or anything. You had to have all blocks available because you were using the blockchain data as the utxo data. The motivation was someone had started working I think on a patch that would go through this database and delete all txids whose outputs were already fully spent. Clearly these weren’t needed anymore. Ultraprune started as a proof of concept of if we take this to the extreme how small can we make that database? Instead of storing something for every output why don’t we actually switch to something where you just store the unspent ones because those are the only ones you still need afterwards. Then there was this performance consideration where everything is indirect, we always need this indirection to the blockchain data. The utxos are actually small, they are just an amount and a small script usually. Why don’t we copy that to the database as well so everything you need for validation is right there? It depended on what kind of I/O speed you had. At the time it reduced the amount of data you had to access from several gigabytes to maybe in the tens of megabytes at the time.
 
 John: If you extrapolate that to today it changes from 300 gigabytes or whatever the blockchain is to 3 gigabytes?
 
@@ -160,11 +160,11 @@ Pieter: Probably things like modern fuzzing could’ve found this. Who knows rig
 
 John: In your hardware, anywhere.
 
-Pieter: Exactly. We can talk about the boundary in trying to abstract the part of the codebase that intentionally contributes to consensus but it is very hard to say clearly this code has no impact on consensus code because bugs can leak. I think one of the things to learn there is you really want software that is intended for use in a consensus system where not only you have the requirement that if everyone behaves correctly everybody accepts the right answer but also that everybody will disagree about what is an invalid piece of data in lockstep. 
+Pieter: Exactly. We can talk about the boundary in trying to abstract the part of the codebase that intentionally contributes to consensus but it is very hard to say clearly this code has no impact on consensus code because bugs can leak. I think one of the things to learn there is you really want software that is intended for use in a consensus system where not only you have the requirement that if everyone behaves correctly everybody accepts the right answer but also that everybody will disagree about what is an invalid piece of data in lockstep.
 
 John: That condition is much harder.
 
-Pieter: That’s much harder. It is not a usual thing you design things for. Maybe a good thing to bring up is [BIP66](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html) DER signature failure. You also had getting rid of OpenSSL on the list of things to talk about. Validation of signatures in Bitcoin’s reference code used to use OpenSSL for validation. Signatures were encoded in whatever data OpenSSL expects. 
+Pieter: That’s much harder. It is not a usual thing you design things for. Maybe a good thing to bring up is [BIP66](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-July/009697.html) DER signature failure. You also had getting rid of OpenSSL on the list of things to talk about. Validation of signatures in Bitcoin’s reference code used to use OpenSSL for validation. Signatures were encoded in whatever data OpenSSL expects.
 
 John: Let’s take a step back and talk about Satoshi implementing Bitcoin. Satoshi wrote a white paper and then produced a reference implementation of Bitcoin. In that reference implementation there was a dependency on OpenSSL that was used for many things.
 
@@ -184,7 +184,7 @@ Pieter: It would start by saying “Here is a concatenation of two things and it
 
 John: So what do you do about that? You’ve discovered that Bitcoin is inconsistent with itself.
 
-Pieter: In a similar way that 0.7 and everything before it were inconsistent with itself due to this BDB lock issue. This was a much more concrete thing. You’d know exactly that I can construct a signature that these platforms will accept and these won’t. This wasn’t non-deterministic, this was deterministic. It was just dependent on the platform. The problem was fixing this wasn’t just a database update, this was implicitly part of our consensus rules. So what we needed to do was fix those consensus rules. That is what BIP66 was designed to do. The full rationale for BIP66 wasn’t revealed until long after it was deployed because this was so trivial to exploit. We did keep that hidden for a long time. BIP66’s stated goal which was correct in part was being able to move off OpenSSL. Let’s switch to a very well specified subset of signatures which everybody already produces. The signing code that people were using was sufficiently strict apart from a few other implementations this was generally not a problem. There were concerns at the time about miners that didn’t actually do full validation which would have made it even easier to broadcast such a signature on the network and get it included. That was interesting. Again taught us that even when you think you have a specification of what your consensus rules are everybody would’ve thought there’s this document that specifies ECDSA and secp256k1, that is our specification. It turns out it wasn’t. 
+Pieter: In a similar way that 0.7 and everything before it were inconsistent with itself due to this BDB lock issue. This was a much more concrete thing. You’d know exactly that I can construct a signature that these platforms will accept and these won’t. This wasn’t non-deterministic, this was deterministic. It was just dependent on the platform. The problem was fixing this wasn’t just a database update, this was implicitly part of our consensus rules. So what we needed to do was fix those consensus rules. That is what BIP66 was designed to do. The full rationale for BIP66 wasn’t revealed until long after it was deployed because this was so trivial to exploit. We did keep that hidden for a long time. BIP66’s stated goal which was correct in part was being able to move off OpenSSL. Let’s switch to a very well specified subset of signatures which everybody already produces. The signing code that people were using was sufficiently strict apart from a few other implementations this was generally not a problem. There were concerns at the time about miners that didn’t actually do full validation which would have made it even easier to broadcast such a signature on the network and get it included. That was interesting. Again taught us that even when you think you have a specification of what your consensus rules are everybody would’ve thought there’s this document that specifies ECDSA and secp256k1, that is our specification. It turns out it wasn’t.
 
 John: Consensus is slippery and touches everything.
 
@@ -242,7 +242,7 @@ Pieter: Exactly you would need a standard for conveying that information that wo
 
 John: I agree entirely that this isn’t really an exercise for faulting Satoshi for the mistakes. But if I could wave a magic wand SegWit from the genesis block would be great because then the block could commit to the signatures, the wtxid whereas now it doesn’t.
 
-Pieter: In SegWit it does. In SegWit there is a coinbase output that contains a hash with the root of a Merkle tree that commits to all wtxids. 
+Pieter: In SegWit it does. In SegWit there is a coinbase output that contains a hash with the root of a Merkle tree that commits to all wtxids.
 
 John: Right, yes. But you don’t know that until you deserialize the transactions from the block which is a little bit annoying.
 

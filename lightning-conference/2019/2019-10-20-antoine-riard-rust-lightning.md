@@ -18,7 +18,7 @@ Slides: https://github.com/ariard/talk-slides/blob/master/deploying-rust-lightni
 
 # Intro
 
-Hi everyone, super happy to be here at the Lightning Conference. I’ve had an awesome weekend. Today I will talk on rust-lightning a project I’ve been contributing to for a year and a half. To get started, please take photos of the slides, not of me. So the story of rust-lightning. The idea was to build something really flexible, something really modular. That was TheBlueMatt idea. It got started in the beginning of 2018. I started to contribute September 2018. It is still ongoing work. It is built on top of the awesome rust-bitcoin ecosystem. We use the awesome andytoshi rust-bitcoin library. 
+Hi everyone, super happy to be here at the Lightning Conference. I’ve had an awesome weekend. Today I will talk on rust-lightning a project I’ve been contributing to for a year and a half. To get started, please take photos of the slides, not of me. So the story of rust-lightning. The idea was to build something really flexible, something really modular. That was TheBlueMatt idea. It got started in the beginning of 2018. I started to contribute September 2018. It is still ongoing work. It is built on top of the awesome rust-bitcoin ecosystem. We use the awesome andytoshi rust-bitcoin library.
 
 # Why Lightning?
 
@@ -30,7 +30,7 @@ That is what I really like about rust-lightning. We are trying to build a modula
 
 # Anatomy of rust-lightning
 
-A quick look at the anatomy of rust-lightning. The main component is ChannelManager. It is going to receive keys from the KeysManager and then be able to generate a channel. Every update you get in your channel you should pass it to the ManyChannelMonitor, that is what we call watchtowers in the mainstream Lightning language. Your ChannelMonitor should be connected to the chain and at the same time you should have a PeerHandler which sends blobs of encrypted data to the Lightning network. All of these components, if you don’t like what we have done with the peer handler you can write your own peer-to-peer stack. If you don’t need the Router because you are going to maybe only do channels with a pre-set of people you can take out the Router. With the ManyChannelMonitor we have a default implementation for the backend of watchtowers, we don’t have the rest of the integration, you can rewrite yours. Really modular. Let’s go through every interface. 
+A quick look at the anatomy of rust-lightning. The main component is ChannelManager. It is going to receive keys from the KeysManager and then be able to generate a channel. Every update you get in your channel you should pass it to the ManyChannelMonitor, that is what we call watchtowers in the mainstream Lightning language. Your ChannelMonitor should be connected to the chain and at the same time you should have a PeerHandler which sends blobs of encrypted data to the Lightning network. All of these components, if you don’t like what we have done with the peer handler you can write your own peer-to-peer stack. If you don’t need the Router because you are going to maybe only do channels with a pre-set of people you can take out the Router. With the ManyChannelMonitor we have a default implementation for the backend of watchtowers, we don’t have the rest of the integration, you can rewrite yours. Really modular. Let’s go through every interface.
 
 # Anatomy of a LN node: ChannelManager
 
@@ -54,7 +54,7 @@ The last piece of software, the last abstract interface, the RoutingMessageHandl
 
 # Anatomy of a LN node: ChainWatchInterface
 
-The last piece. It is more like integrating with onchain stuff. What is really hard if you have written any piece of Bitcoin software is getting right in case of re-org. If you already have a chain management tracker for your enterprise wallet you should be able to reuse this chain management stuff for your Lightning stuff. You should not have multiple servers doing chain tracking or chain management. You should be able to integrate this interface on top of a Electrum server or something like that. 
+The last piece. It is more like integrating with onchain stuff. What is really hard if you have written any piece of Bitcoin software is getting right in case of re-org. If you already have a chain management tracker for your enterprise wallet you should be able to reuse this chain management stuff for your Lightning stuff. You should not have multiple servers doing chain tracking or chain management. You should be able to integrate this interface on top of a Electrum server or something like that.
 
 # Scenario 1: An exchange
 

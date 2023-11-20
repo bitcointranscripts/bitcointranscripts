@@ -96,7 +96,7 @@ or_d (multi(2,A,B,C),and_v(vc:pkh(E),older(10)))
 
 技术上来说，Miniscript 也是比特币脚本。用高级语言来编码的想法并不新鲜。以前人们也想过这样的东西。有人写过编译器（compiler）。但 Miniscript 有一些独特之处。首先，它属于 Script 。它不会编译成另一种语言。如果你有一段脚本，你可以在 Script 和 Miniscript 之间作一对一的映射。只要你得到了相应的 Miniscript 代码，你也就得到了比特币脚本。虽然底层的东西是相同的、解释器也用相同的方式执行，但 Miniscript 代表了一种不同的思考方法。Miniscript 项目的一个很好的愿景是，开发者应该忘记堆栈的存在。在脚本中，你安排自己想要执行的指令，有一个 OP_CHECKSIGADD 操作码，它会读取 3 个参数，如果通过，就会给数值增加  ` 1 ` 。但有了 Miniscript，你应该直接认为这里有一个  ` multi ` 函数，你只需要提供一些东西来满足它。我想要思考的是，我需要什么东西来执行这些代码，而不是应该给脚本机器输入什么指令。所有的转换工作，把脚本转成 Miniscript 代码、把 Miniscript 代码转成脚本，都由 Miniscript 技术自身来完成。开发者只需要思考他们在乎的东西。作为一个开发者，你知道自己想处理什么样的威胁模型，那么你就该专注于此，让 Miniscript 来处理你怎么描述它们以及如何编写成脚本这样的问题。与堆栈方法不同，Miniscript 采用了一种函数式、组合式的方法，真正帮我们以结构化的方法完成了编码。
 
-# Miniscript 翻译成 Script 
+# Miniscript 翻译成 Script
 
 检查公钥签名（check(key)）
 
@@ -104,7 +104,7 @@ or_d (multi(2,A,B,C),and_v(vc:pkh(E),older(10)))
 pk(key) # 此为 Miniscript 代码
  <key>  # 此为转化成的脚本。下文相同，一行 Miniscript 一行脚本。译者注
 
-pk_h(key) 
+pk_h(key)
 OP_DUP OP_HASH160 <HASH160(key)> OP_EQUALVERIFY
 ```
 

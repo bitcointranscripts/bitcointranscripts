@@ -1,5 +1,5 @@
 ---
-title: Fee Market 
+title: Fee Market
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['fees', 'bitcoin core']

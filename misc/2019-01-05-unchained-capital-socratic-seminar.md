@@ -1,5 +1,5 @@
 ---
-title: Unchained Capital Socratic Seminar 
+title: Unchained Capital Socratic Seminar
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['research', 'taproot']

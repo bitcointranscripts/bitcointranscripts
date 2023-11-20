@@ -1,5 +1,5 @@
 ---
-title: Mimblewimble 
+title: Mimblewimble
 transcript_by: Bryan Bishop
 categories: ['meetup']
 tags: ['privacy', 'fungibility', 'scalability']

@@ -1,5 +1,5 @@
 ---
-title: libbitcoinkernel 
+title: libbitcoinkernel
 transcript_by: Michael Folkson
 categories: ['video']
 tags: ['bitcoin core', 'consensus']
@@ -28,15 +28,15 @@ When I lay it out like this on the slide everything looks so nice and tidy. It a
 
 # Rust evangelism strike force
 
-Additionally other developers may want to wholesale reimplement parts of Bitcoin Core in another language. If you have a badge carrying member of the Rust evangelism strike force on your team you know exactly what I’m talking about. They are going to want to turn these subsystems into artisanal crafted crates and brag about how they never ever, not even once clone memory. The challenge that these developers of alternative implementations face is they are faced with three options. In my mind they are three bad options. 
+Additionally other developers may want to wholesale reimplement parts of Bitcoin Core in another language. If you have a badge carrying member of the Rust evangelism strike force on your team you know exactly what I’m talking about. They are going to want to turn these subsystems into artisanal crafted crates and brag about how they never ever, not even once clone memory. The challenge that these developers of alternative implementations face is they are faced with three options. In my mind they are three bad options.
 
 # PR review
 
-They can try to get the code through the review process into Bitcoin Core. But the Bitcoin Core project wants to avoid too many features and toggles because they bloat the codebase. You end up with the choice of either imposing a maintenance burden on reviewers and maintainers or having features that are not well maintained which is also a problem. 
+They can try to get the code through the review process into Bitcoin Core. But the Bitcoin Core project wants to avoid too many features and toggles because they bloat the codebase. You end up with the choice of either imposing a maintenance burden on reviewers and maintainers or having features that are not well maintained which is also a problem.
 
 # Fork
 
-These developers may also want to maintain their own fork as an alternative. This is a codebase fork not a network fork. This is a burden on these developers as it is a huge hassle to rebase on Bitcoin Core’s codebase every release or every few releases as the Elements project devs can attest to. 
+These developers may also want to maintain their own fork as an alternative. This is a codebase fork not a network fork. This is a burden on these developers as it is a huge hassle to rebase on Bitcoin Core’s codebase every release or every few releases as the Elements project devs can attest to.
 
 # Reimplement
 
@@ -48,7 +48,7 @@ On a more personal note, I think that it speaks to the strength of the Bitcoin c
 
 # How do we get there?
 
-So how do we get there? How do we get to this promised land where our consensus engine is decoupled from the rest of the codebase and made into a library? 
+So how do we get there? How do we get to this promised land where our consensus engine is decoupled from the rest of the codebase and made into a library?
 
 # Prior Art: libbitcoinconsensus.so
 
@@ -60,11 +60,11 @@ Following that in 2016 there was a brave effort to complete libbitcoinconsensus 
 
 # libbitcoinkernel - an incremental approach
 
-Given how these previous attempts turned out we need to devise a new plan that takes into account and respects the sheer size of work that is extracting the consensus engine. In my mind this is work that will involve multiple contributors, it is certainly not a one man job, and perhaps will span across multiple releases. I think we need to take an incremental approach to extracting the consensus engine instead of trying to build a perfect library from the ground up out of nothing. What does taking an incremental approach mean? 
+Given how these previous attempts turned out we need to devise a new plan that takes into account and respects the sheer size of work that is extracting the consensus engine. In my mind this is work that will involve multiple contributors, it is certainly not a one man job, and perhaps will span across multiple releases. I think we need to take an incremental approach to extracting the consensus engine instead of trying to build a perfect library from the ground up out of nothing. What does taking an incremental approach mean?
 
 # What it is?
 
-On an abstract or logical level it means that we first capture a rough outline of what our consensus engine is today. Once that is done we can whittle it down to what we would like our consensus engine API to look like or what it should be. Make it available to other languages via bindings. This whittling it down approach has the benefit of avoiding prematurely optimizing for the perfect boundary and API since that can be highly subjective, non-obvious and probably a hot bag of unproductive bikeshedding. 
+On an abstract or logical level it means that we first capture a rough outline of what our consensus engine is today. Once that is done we can whittle it down to what we would like our consensus engine API to look like or what it should be. Make it available to other languages via bindings. This whittling it down approach has the benefit of avoiding prematurely optimizing for the perfect boundary and API since that can be highly subjective, non-obvious and probably a hot bag of unproductive bikeshedding.
 
 # Reuse classes -> refine API
 
@@ -72,15 +72,15 @@ On the code level it means that we will also be able to reuse our existing C++ c
 
 # Logistics
 
-Let’s talk logistics. 
+Let’s talk logistics.
 
 # Current phase - Extraction
 
-Right now I am in the middle of completing a candidate branch of the extraction phase that will yield a libbitcoinkernel that has a API that’s very Bitcoin Core specific but is usable by an external C++ project. This phase will also include a dummy binary which uses this library and exercises our consensus engine a bit just to prove out that it works. 
+Right now I am in the middle of completing a candidate branch of the extraction phase that will yield a libbitcoinkernel that has a API that’s very Bitcoin Core specific but is usable by an external C++ project. This phase will also include a dummy binary which uses this library and exercises our consensus engine a bit just to prove out that it works.
 
 # Prevent Re-entanglement
 
-What I’ve realized after experimenting with this branch over the last couple of months is that the biggest value add of this first phase, this extraction phase, is that after it is merged any re-entanglement of consensus with new modules will result in linker errors. In essence there is a big value add just to be gained from the first part alone in that we will avoid any entanglement regressions. 
+What I’ve realized after experimenting with this branch over the last couple of months is that the biggest value add of this first phase, this extraction phase, is that after it is merged any re-entanglement of consensus with new modules will result in linker errors. In essence there is a big value add just to be gained from the first part alone in that we will avoid any entanglement regressions.
 
 # Future - Continual API refinement
 

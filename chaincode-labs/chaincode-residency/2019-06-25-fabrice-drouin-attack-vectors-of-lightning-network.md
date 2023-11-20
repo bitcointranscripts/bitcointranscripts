@@ -1,5 +1,5 @@
 ---
-title: Attack Vectors of Lightning Network 
+title: Attack Vectors of Lightning Network
 transcript_by: Gijs van Dam
 categories: ['residency']
 tags: ['attacks', 'lightning']
@@ -12,31 +12,31 @@ Location: Chaincode Residency – Summer 2019
 
 # Introduction
 
-All right so I'm going to introduce really quickly attack vectors on Lightning. I focus on first what you can do with the Lightning protocol, but I will mostly speak about how attacks will probably happen in real life. It's probably not going to be direct attacks on the protocol itself. 
+All right so I'm going to introduce really quickly attack vectors on Lightning. I focus on first what you can do with the Lightning protocol, but I will mostly speak about how attacks will probably happen in real life. It's probably not going to be direct attacks on the protocol itself.
 
 # Denial of Service
 
-So the basic attacks you can have when you're running lightning nodes are denial of service attacks basically. Lightning nodes are servers that accept incoming tcp connections, you can just overflow the servers with connections and that's something that is extremely hard to fight. Basically fighting low level connection DDoS  is really expensive. You can use services like Cloudflare but it's very expensive and if you don't what's going to happen is your host your hosting provider will eventually disconnect you from the network there's no route to you because DDoS attack against you will have an impact on everyone else in the same data centers and you will be effectively disconnected so that's really really hard to fight. 
+So the basic attacks you can have when you're running lightning nodes are denial of service attacks basically. Lightning nodes are servers that accept incoming tcp connections, you can just overflow the servers with connections and that's something that is extremely hard to fight. Basically fighting low level connection DDoS  is really expensive. You can use services like Cloudflare but it's very expensive and if you don't what's going to happen is your host your hosting provider will eventually disconnect you from the network there's no route to you because DDoS attack against you will have an impact on everyone else in the same data centers and you will be effectively disconnected so that's really really hard to fight.
 
-There's an ongoing DDos attack against electrum servers, I don't know if you have heard of it. They are blacklisting I think 150,000 IPs right now, but it's a battle that is really hard to fight. Something that is really easy to do with lightning but it's a bit costly is to just lock up channels. You have limitations in lightning. You can't have more than, you can't have too many pending payments and the amounts of your pending payments is also limited, so you can just lock up channels. You can just send HTLC's without preimages and after a while, channels will not accept more pending payments. However, this is not free. So can you tell me why it's not really free to do that? 
+There's an ongoing DDos attack against electrum servers, I don't know if you have heard of it. They are blacklisting I think 150,000 IPs right now, but it's a battle that is really hard to fight. Something that is really easy to do with lightning but it's a bit costly is to just lock up channels. You have limitations in lightning. You can't have more than, you can't have too many pending payments and the amounts of your pending payments is also limited, so you can just lock up channels. You can just send HTLC's without preimages and after a while, channels will not accept more pending payments. However, this is not free. So can you tell me why it's not really free to do that?
 
 
 Audience Member: You also lock up your own channels.
 
-Fabrice: Yes so it's,...It can be really annoying and if you choose really long routes you can lock up to ten times your funds or even 20 times your funds but it's expensive for you. You need money to do that, but it can be really annoying. 
+Fabrice: Yes so it's,...It can be really annoying and if you choose really long routes you can lock up to ten times your funds or even 20 times your funds but it's expensive for you. You need money to do that, but it can be really annoying.
 
-Audience Member: But there is an asymmetry going on right? It's pay 1...the benefit is 20 times. 
+Audience Member: But there is an asymmetry going on right? It's pay 1...the benefit is 20 times.
 
 
 Fabrice: Yes, but 20 times not that much so you can't really perform a large scale attack with this type of locking up funds.
 
 Audience Member: But potentially (inaudible)
 
-Fabrice: Yes. 
+Fabrice: Yes.
 
 Audience Member: But if you're locking it up, eventually you'll get it back (inaudible)
 
-Fabrice: Yes but it can still be a bit annoying. There's also resource usage attacks. If you look at the type of queries that Lightning nodes are supposed to serve, some of these queries can be quite expensive and especially the syncing your routing table is really expensive and using range queries can also be a bit expensive. So if you connect to a node you request routing table dump, you disconnect, you try again, you disconnect, try again, this can be really annoying for the serving node. So that could also be used to just lock up resources on your servers. 
+Fabrice: Yes but it can still be a bit annoying. There's also resource usage attacks. If you look at the type of queries that Lightning nodes are supposed to serve, some of these queries can be quite expensive and especially the syncing your routing table is really expensive and using range queries can also be a bit expensive. So if you connect to a node you request routing table dump, you disconnect, you try again, you disconnect, try again, this can be really annoying for the serving node. So that could also be used to just lock up resources on your servers.
 
 # Preimage reuse
 
@@ -54,11 +54,11 @@ One of the things that we've done with a mobile app to fight this is to use real
 
 # Watchtower
 
-So watchtowers, I think we've described how they work, but the consensus now, even though not everybody might agree with it, is that the penalty idea may not have been such a good idea after all and I don't think anyone is actually trying to cheat right now. So the few penalties transactions that have been published were published because someone messed up with an old backup and were punished for making mistakes but not punished because they were actually trying to be evil. So Eltoo -  that's my opinion - is a bit better. But I understand why some people still want the ability to punish bad actors. 
+So watchtowers, I think we've described how they work, but the consensus now, even though not everybody might agree with it, is that the penalty idea may not have been such a good idea after all and I don't think anyone is actually trying to cheat right now. So the few penalties transactions that have been published were published because someone messed up with an old backup and were punished for making mistakes but not punished because they were actually trying to be evil. So Eltoo -  that's my opinion - is a bit better. But I understand why some people still want the ability to punish bad actors.
 
 # "Lightning Node" Attack Surface
 
-But honestly I don't think that attacks against Lightning nodes will attack the protocol. I used to work for a security company for some time. My first year was in the defense industry and then the security industry. We still work with security consultants and basically if someone was to attack Lightning they would not attack the Lightning protocol, they will attack the implementations. That's what is really likely to happen. 
+But honestly I don't think that attacks against Lightning nodes will attack the protocol. I used to work for a security company for some time. My first year was in the defense industry and then the security industry. We still work with security consultants and basically if someone was to attack Lightning they would not attack the Lightning protocol, they will attack the implementations. That's what is really likely to happen.
 
 Have some of you worked with security companies or pen systems? So there's one thing that is really funny with these guys: you can work on building things or you can work on attacking things, but you don't do both at the same time. So pen testers and white hats, very often they are developers, but they will not work on building and defending on the same project. So you choose a team to work on building something and the team to work on attacking the same thing but they're not the same people. It's like, I think, American football, but I don't know that much about football, but you have defense teams and attack teams and they're not the same guys. Maybe people can play defense and attack but not in the same games and with security companies and pen testers it's the same.
 
@@ -70,7 +70,7 @@ There was another one, I think it was also Linux. You would remove the hard driv
 
 Audience Member: Multisig!
 
-Fabrice: Yeah but I personally think that using secure elements is probably today a bit safer than relying on open source firmware. 
+Fabrice: Yeah but I personally think that using secure elements is probably today a bit safer than relying on open source firmware.
 
 Audience Member: The problem in closed source is then you get to a situation like two months ago that almost all the ssd's out there were faking about encryption. Everyone thought they were doing disk encryption, but it was all fake. The ssd's lied about their encryption and didn't really encrypt anything. Samsung, Corsair and all of the huge companies lied about the encryption. It wasn't encrypting anything. So Trezor might do the same. It might not even be an HSM really.
 
@@ -84,7 +84,7 @@ There is one thing that, so what I'm saying is, if you want to think about how t
 
 The wallets you use... so if you are running a Lightning node you have a hot wallet because you need to be able to open channels. And then you have the actual Lightning wallet. It's another kind of hot wallet with different constraints. A lot of people are thinking about using HSMs to protect the Bitcoin wallets and the Lightning wallets and protecting the Bitcoin wallet is fairly difficult because the problem is automation. You know how the hardware wallets work: You send a transaction to the hardware wallet. It will display the address you want to send money to and if the address is right you will press a button and it will sign the transaction and return it back to you. This is fine if you manually interact with your wallet but what if you want to automate things?
 
-Suppose you're in a big service you need to sign like big transactions all the time? How do you.. you won't have people clicking on buttons every time you want to send something, so you end up with another issue: It's very easy to over-engineer security solutions but if it's impossible to steal your keys but it's very easy to get your system to sign anything, then you don't have any kind of security. So if you focus on protecting keys but you forget that what you need to protect is the ability of people to use your keys, to get your system to sign, then you're missing the point and you're not that safe. And it's a problem with a lot of bitcoin applications and it's something that all hardware wallet vendors are working on but it's really hard because there are very few things you can check when you're signing bitcoin transactions. Lightning is a bit different. There is something you can do that will prevent, should prevent people from stealing from you. So what that is, is when you are relaying payments you can try checking that for every outgoing payment there is a matching incoming payment. But to do this you need to understand what's going on, which is a bit hard. 
+Suppose you're in a big service you need to sign like big transactions all the time? How do you.. you won't have people clicking on buttons every time you want to send something, so you end up with another issue: It's very easy to over-engineer security solutions but if it's impossible to steal your keys but it's very easy to get your system to sign anything, then you don't have any kind of security. So if you focus on protecting keys but you forget that what you need to protect is the ability of people to use your keys, to get your system to sign, then you're missing the point and you're not that safe. And it's a problem with a lot of bitcoin applications and it's something that all hardware wallet vendors are working on but it's really hard because there are very few things you can check when you're signing bitcoin transactions. Lightning is a bit different. There is something you can do that will prevent, should prevent people from stealing from you. So what that is, is when you are relaying payments you can try checking that for every outgoing payment there is a matching incoming payment. But to do this you need to understand what's going on, which is a bit hard.
 
 # "Eclipse" Attack
 
@@ -102,11 +102,11 @@ Fabrice: I can leave this as an open question because I think there's a session 
 
 Audience Member: In order for Alice to (inaudible) the HTLC Alice has to revoke the old state, no?
 
-Fabrice: Ah yes, you are getting there! So what happens if you try to use a channel that is closed but you don't know it?  
+Fabrice: Ah yes, you are getting there! So what happens if you try to use a channel that is closed but you don't know it?
 
 Audience Member: You can't claim.
 
-Fabrice: OK, I'll let you think about it and we will come back to this during the next session. Basically the question is: Alice,...the channel between Alice and Bob is closed. Bob doesn't know it, so he keeps on relaying payments from that channel to other channels. Is Bob losing money or not? 
+Fabrice: OK, I'll let you think about it and we will come back to this during the next session. Basically the question is: Alice,...the channel between Alice and Bob is closed. Bob doesn't know it, so he keeps on relaying payments from that channel to other channels. Is Bob losing money or not?
 
 Audience Member: Depends if the timeout (inaudible)
 

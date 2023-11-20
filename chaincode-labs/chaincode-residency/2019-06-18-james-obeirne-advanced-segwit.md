@@ -1,5 +1,5 @@
 ---
-title: Advanced Segwit 
+title: Advanced Segwit
 transcript_by: Caralie Chrisco
 tags: ['segwit']
 categories: ['residency']
@@ -8,9 +8,9 @@ date: 2019-06-18
 media: https://youtu.be/JgNgnwF9hfY
 ---
 
-Location: Chaincode Labs 2019 Residency  
+Location: Chaincode Labs 2019 Residency
 
-Slides: <https://residency.chaincode.com/presentations/bitcoin/Advanced_segwit.pdf>  
+Slides: <https://residency.chaincode.com/presentations/bitcoin/Advanced_segwit.pdf>
 
 James O'Beirne: To sort of vamp off of Jonas's preamble, I'm not that smart. I'm a decent programmer, but compared to a lot of people who work on Bitcoin, I barely know what I'm doing. I kind of consider myself like a carpenter, a digital carpenter equivalent. I'm a steady hand. I can get things done. I'm fairly patient, which i s key when it comes to Bitcoin Core development because, trust me, you're gonna be doing a lot of waiting around and a lot of rebasing. But fundamentally, I don't think I'm that smart, so that's why this talk is low-budget.
 
@@ -98,7 +98,7 @@ James O'B: Yeah, I guess given the certain insecurity here, who can give me a pr
 
 Audience Member: I guess like you were saying, you'd have to find a collision with a script that was different than the one that it was signed. Brute force or otherwise.
 
-James O'B: So at the time of deployment, I think Pieter noted that currently, a sufficiently motivated attacker with a lot of resources could actually find collision because it's like you said, it's like 80 bits of security and at the time at least he said that that was that amounted to a few weeks of the global Bitcoin hashrate. Worth keeping in mind.  
+James O'B: So at the time of deployment, I think Pieter noted that currently, a sufficiently motivated attacker with a lot of resources could actually find collision because it's like you said, it's like 80 bits of security and at the time at least he said that that was that amounted to a few weeks of the global Bitcoin hashrate. Worth keeping in mind.
 
 Audience Member: Although the Bitcoin network, just assuming somebody wanted to try that, they wouldn't have ASICs for that, right?
 
@@ -221,7 +221,7 @@ James O'B: Oh, you did a presentation on it? Cool, so you guys should have some 
 So the idea is that basically there's some timeout period where this deployment would be proposed and if by some median time passed hadn't been signaled for sufficiently, then we go into a failed state. You basically say, well back to the drawing board. The ecosystem isn't supporting this change. But on the other hand, if you hit that threshold before the timeout, you enter this starting phase, and that basically exists so that you can make your way through this locked-in transition, which is as far as I can tell it's basically a buffer of time between, "Okay, we're gonna do this thing" and like" let's give it a few weeks or whatever for everyone to get ready for it." So BIP9 ended up being a little bit controversial. Can anyone speak to why?
 Hugo?
 
-Hugo: I think it gave too much power to the miners by setting the threshold too high in 95%. The user had no say in how to activate it. The ball was in the miner's court.  
+Hugo: I think it gave too much power to the miners by setting the threshold too high in 95%. The user had no say in how to activate it. The ball was in the miner's court.
 
 James O'B: So it was kind of agonizing because there had been all this fanfare you know there's this scaling problem and this malleability problem and a lot of the Core devs have gone off and scratched their heads for a while and come back with this proposal. I remember watching Pieter give the SegWit talk to at S.F. Bitcoin devs, and it was really exciting. It was like, "great, let's get this thing rolled out." Previously in Bitcoin's history, every upgrade or fork had been pretty unceremoniously accepted by miners. Partly because there was a small community and nobody really cared that much. So it was frustrating when the code is actually merging into the master, and there was just this euphoric feeling, but then you sit and wait and watch the versions go by, and it was just obvious. The signaling rate was in like 10% or 20% or something for a long time, and nothing happened. Obviously this kind of fomented some fire in the community, and then this personality called Shaolinfry showed up.
 
@@ -229,7 +229,7 @@ Shaolinfry proposed an alternate activation mechanism that it's sort of like BIP
 
 Elichai: I think that cause in the future, they would disable it. They would use that BIP for a different proposal. So if anyone still runs this code, it won't be forked off.
 
-James O'B: That's a good point, yep.  
+James O'B: That's a good point, yep.
 
 Audience Member: November 15th is when BIP141 timeout was. If it's not locked in by then, it's game over.
 
@@ -271,15 +271,15 @@ James O'B: It would seem that way, and this is a great segue into what we're goi
 
 Let's talk a little bit about what ASIC boost is.
 
-A guy named Jeremy Rubin, who you may have seen in the Bitcoin Core project, and more generally around the cryptocurrency ecosystem, put together a really nice write-up on what ASIC boost is and so I highly recommend going through and actually making sure you understand each step.  
+A guy named Jeremy Rubin, who you may have seen in the Bitcoin Core project, and more generally around the cryptocurrency ecosystem, put together a really nice write-up on what ASIC boost is and so I highly recommend going through and actually making sure you understand each step.
 
-The short form of that is that miners discovered a kind of clever, sort of undetectable way of getting a slight advantage when trying to compute a nonce that would hash below the target. The way this works is the SHA-256 function happens basically in multiple rounds. You can cache parts of the computation of a SHA-256 function. Basically SHA-256 will split the input into multiple parts, and if you sort of cache the mid-state based on one of the early parts and then just tweak the later parts, you can save yourself some computation.  
+The short form of that is that miners discovered a kind of clever, sort of undetectable way of getting a slight advantage when trying to compute a nonce that would hash below the target. The way this works is the SHA-256 function happens basically in multiple rounds. You can cache parts of the computation of a SHA-256 function. Basically SHA-256 will split the input into multiple parts, and if you sort of cache the mid-state based on one of the early parts and then just tweak the later parts, you can save yourself some computation.
 
 What it appeared was going on was miners were playing some interesting games in terms of rearranging the Merkle tree, and they could do so in such a way that they could generate collisions that would share parts of the Merkle hash in common with one another so that they could reuse this mid-state and basically get sort of an advantage when they were trying to mine a block. It turns out that obviously, SegWit modifies the commitment structure of the Merkle tree, and it does so in a way by adding this witness commitment to the coinbase output, which is always to the far left of the tree. It does so in such a way that it kind of obviates any way to do its manipulation of the Merkle tree to get an advantage.
 
 That's called covert ASIC boost because you can't necessarily tell a priori that this is what they're doing, but we would see weird blocks that have like low numbers of transactions. I think there were a few invalid blocks that were mined based on ordering that kind of indicated that people were trying to play these games. We had an inclination that it was going on, and I think Greg Maxwell did some research where he actually cracked open a miner and saw that there was an ASIC boost functionality built in some of the ANT miners. So this would certainly give a sort of plausible reason why miners might be hostile to the idea of changing the commitment structure because if it's nullifying some advantage and that's a pretty big deal for them.
 
-It turns out you can do a different version of ASIC boost called overt ASIC boost by playing with some of the data in the version header. But doing this makes it obvious that you're using this over an ASIC boost, and obviously, not all the version field is accessible for playing these kinds of games. That's ASIC boost.  
+It turns out you can do a different version of ASIC boost called overt ASIC boost by playing with some of the data in the version header. But doing this makes it obvious that you're using this over an ASIC boost, and obviously, not all the version field is accessible for playing these kinds of games. That's ASIC boost.
 
 Does anybody have any questions about ASIC boosts or any comments? It's pretty fascinating. When it was happening, it felt like a lot of intrigue, and it had a lot of interesting public relations stuff that came out of it. It was fun to read.
 
@@ -506,7 +506,7 @@ Audience Member: 2023.
 
 James O'B: In terms of the code, how will we have Schnorr signatures?
 
-Audience Member: It's also a bundle of changes.  
+Audience Member: It's also a bundle of changes.
 
 Cross talk...
 

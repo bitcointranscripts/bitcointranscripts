@@ -9,7 +9,7 @@ Agenda: <https://github.com/lightning/bolts/issues/1076>
 
 Speaker 0: First off of the list is dual funding. [Redacted] has merged the two small patches that we had discussed adding. There's only one small patch that is remaining, which is about making the TLV signed to allow for future splicing to make sure that splicing can also use the RBF messages for signed amounts. But apart from that, it looks like dual funding is almost complete. We plan on activating it on our node soon to be able to use it in Phoenix. Do you all see an issue with starting to advertise that feature a bit? Perfect. So, anything specific on dual-funding, or is it just waiting for implementation and the last few bits in other implementations?
 
-Speaker 1: Very exciting. We're so close. 
+Speaker 1: Very exciting. We're so close.
 
 Speaker 0: Soon, you'll be able to test the Phoenix app that uses dual funding and splicing. Next on the list is a clarification on the truncated integers because it looks like we were not requiring them to be minimal, but actually, at least, our implementation was requiring it to be minimal. And apparently, C-Lightning was as well. The spec didn't say so, so I think it's a good idea to clarify the spec. I think the state of the PR is enough, and it doesn't need additional test vectors because there are already test vectors for that actually.
 
@@ -25,11 +25,11 @@ Speaker 3: Someone on LND could comment. But, at least, on this specific PR, som
 
 Speaker 1: I think Core Lightning treats warnings as disconnects because I had to redo it. We added the TX abort message for dual funding stuff, and the big change with TX abort in Core Lightning is that we don't disconnect. So, I think Core Lightning will probably also have to change behavior for warnings, FYI.
 
-Speaker 4: I'm happy with that. Having it occur rather than just randomly disconnecting. We have an issue at the moment that if the other side forgets their channel and we send a warning, we don't wait long enough for them to send the error that would make us fall on chain sometimes. So, you can get the state where you have to manually close if the other side has lost their database, so which is not the intention, right? You're supposed to receive that error from them and then drop the chain. In many cases, we won't do that, so I've been looking at this behavior anyway. I think removing this is fine. I think we went through the spec - that was a sweep - and we put wording everywhere to make it explicit. So, that's fine. 
+Speaker 4: I'm happy with that. Having it occur rather than just randomly disconnecting. We have an issue at the moment that if the other side forgets their channel and we send a warning, we don't wait long enough for them to send the error that would make us fall on chain sometimes. So, you can get the state where you have to manually close if the other side has lost their database, so which is not the intention, right? You're supposed to receive that error from them and then drop the chain. In many cases, we won't do that, so I've been looking at this behavior anyway. I think removing this is fine. I think we went through the spec - that was a sweep - and we put wording everywhere to make it explicit. So, that's fine.
 
 Speaker 2: Yes, I thought you did that?
 
-Speaker 3: Well, we. Yes. I think it was done. 
+Speaker 3: Well, we. Yes. I think it was done.
 
 Speaker 0: Alright, perfect. I guess we can move onto the next one. The next one is a bit more tricky, and it's potentially harder to work on it only orally without writing stuff down - it's about CLTV handling in blinded paths. One of the things in the comments you made, [Redacted], that I don't understand is that - the way it works is really kind of the same kind of thing as non-blinded path. As a sender, when you have a blinded path, add more hops to reach the introduction node. When you start building your onion, you start from a block height at the recipient, then you add the CLTV delta for the route and your minimal final expiry delta. Then, you add the normal CLTV deltas to the other guys. So, we still send an absolute outgoing CLTV value to a recipient, which matches the value we started with. Does that make sense?
 
@@ -43,17 +43,17 @@ Speaker 0: But the thing is, if it's not both, you cannot trust that the other g
 
 Speaker 2: Okay, yeah. Makes sense. So then, maybe we need to specify as well that the recipient - if they have added one, they need to encrypt it back to themselves in the blinded payload that they'd bluffed for themselves. We don't have to specify how, but we should probably specify that they have to do that.
 
-Speaker 0: Yeah, it's true that these things have not been specified much right now because only the blinded path mechanism has been introduced, but the way you create blinded paths was only done for the first time in Bolt 12. But I agree that this is really confusing and there are a lot of ways to interpret that. I agree we should do a better job at explaining those, and maybe going through a lot of examples will also be very helpful to see where to make it more explicit. I can spend some time doing that. Create a document where it's easier to see how it behaves - at least in Eclair - how I think it should behave. Then, people can comment on it. 
+Speaker 0: Yeah, it's true that these things have not been specified much right now because only the blinded path mechanism has been introduced, but the way you create blinded paths was only done for the first time in Bolt 12. But I agree that this is really confusing and there are a lot of ways to interpret that. I agree we should do a better job at explaining those, and maybe going through a lot of examples will also be very helpful to see where to make it more explicit. I can spend some time doing that. Create a document where it's easier to see how it behaves - at least in Eclair - how I think it should behave. Then, people can comment on it.
 
-Speaker 2: Right. I had understood that the behavior of all of this would be the same for - okay, so I was trying to document what had been communicated to me via a game of telephone of how Eclair operated, not actually looking at the code. That's just wrong. I had just written down that it's offset from zero, right? So, it's no longer an absolute CLTV, but in fact, just the delta from that the final node would be able to subtract this delta, and they should get the current block plus their expected difference, which would work as well, I think. But if you currently do the absolute value final as a block height difference, then we should document that instead. So, I will update this PR. Maybe not today. I will change the way it's worded. 
+Speaker 2: Right. I had understood that the behavior of all of this would be the same for - okay, so I was trying to document what had been communicated to me via a game of telephone of how Eclair operated, not actually looking at the code. That's just wrong. I had just written down that it's offset from zero, right? So, it's no longer an absolute CLTV, but in fact, just the delta from that the final node would be able to subtract this delta, and they should get the current block plus their expected difference, which would work as well, I think. But if you currently do the absolute value final as a block height difference, then we should document that instead. So, I will update this PR. Maybe not today. I will change the way it's worded.
 
 Speaker 0: Perfect. I'll add more details in a document that makes it easier to explain how it works, and we will see how it goes then. I think it's going to be easier with diagrams and concrete examples.
 
 Speaker 3: Do we need to have both ends add CLTV? I would say it's the responsibility of the person making the blinded path to add any CLTV padding. They certainly need to be able to do it because if they're actually secretly forwarding it to someone else - the classic: I'm wrapping someone else's invoice case - they do. But does the sender need to bump CLTV or can they just...?
 
-Speaker 0: Actually, the sender protects themselves that way - actually, no. Maybe not. Actually, it's just that this way ensures that the next to last hop cannot guess who the last hop is. If the last hop didn't add any random values, the next to last hop can infer who the last hop is, and maybe the sender doesn't want that, so the sender adds a random delay. They cannot trust that the recipient has added a random delay. 
+Speaker 0: Actually, the sender protects themselves that way - actually, no. Maybe not. Actually, it's just that this way ensures that the next to last hop cannot guess who the last hop is. If the last hop didn't add any random values, the next to last hop can infer who the last hop is, and maybe the sender doesn't want that, so the sender adds a random delay. They cannot trust that the recipient has added a random delay.
 
-Speaker 3: It's the shadow route thing again, where they pin to that. 
+Speaker 3: It's the shadow route thing again, where they pin to that.
 
 Speaker 0: Yeah, with blinded paths, the sender can only add a delay and start with an absolute value at the recipient that is not just the current block height plus a few blocks for potential blocks found during payment propagation, but a bigger random delay to make sure that the next to last hop cannot guess who the recipient is.
 
@@ -65,21 +65,21 @@ Speaker 3: Similarly offers. I should go through these. and make sure they're al
 
 Speaker 0: Since we don't want to frighten people by merging two big PRs at the same time, we should merge onion messages soon, so that we have a bit more time before we also merge Bolt 12. Apart from that, I don't know if there's anything new on the onion messages PR and offers. On offers, the only topic that I've seen is the one linked to that CLTV delta. The fact that the blended paths do expire - they have an expiry in absolute block time - but the invoices do not include that expiry, but have an expiry in seconds, which makes more sense for users and to a UX. You go to a merchant website, you don't want an expiry in block height, you want to see an expiry in absolute timestamps. But that means that the creators of the invoices have to juggle between absolute timestamp and the route expiry to make sure that actually those two match.
 
-Speaker 3: Yeah, the expiry on blinded routes was later than the original expiry from Vault 12, which is based on the expiry on Vault 11. I think having an expiry on your invoices that is not in seconds is weird. So, my assumption was that: Yeah, you would set your blinded path to be something larger. I mean, that's just a sort of safety check rather than a critical thing whereas your invoice might actually be: No, no, you need to pay by this date. 
+Speaker 3: Yeah, the expiry on blinded routes was later than the original expiry from Vault 12, which is based on the expiry on Vault 11. I think having an expiry on your invoices that is not in seconds is weird. So, my assumption was that: Yeah, you would set your blinded path to be something larger. I mean, that's just a sort of safety check rather than a critical thing whereas your invoice might actually be: No, no, you need to pay by this date.
 
-Speaker 0: Yeah, I agree, but that's just something that is not explained in the Vault 12 specification, and that can be confusing. So I think it's worth just putting it somewhere. 
+Speaker 0: Yeah, I agree, but that's just something that is not explained in the Vault 12 specification, and that can be confusing. So I think it's worth just putting it somewhere.
 
 Speaker 2: Should we just remove the expiry from blinded paths? I mean, if you're staring at the expiry on an invoice, then...
 
 Speaker 3: But you can still send - the expiry on the blinded path stops you, the path at all. It's designed to be a mechanism to avoid undue exposure, right? You don't want some vast time in the future you because you can you can find out who people are by uptime at some point, right? And if you give someone an eternal blinded path...
 
-Speaker 3: Oh, the fire in the blinded path is in the per hop. Okay, nevermind. I will shut up. 
+Speaker 3: Oh, the fire in the blinded path is in the per hop. Okay, nevermind. I will shut up.
 
 Speaker 3: It has a different use, yeah. But obviously, there's a blinded path that doesn't last as long as their invoices a little bit defeating. So yeah, there should be a note there.
 
 Speaker 0: Is there some other progress on offers or onion messages that someone had been working on or something to report? Anything to report?
 
-Speaker 3: Yeah, Bolt 12 test vectors. I think we might need to regenerate those. Yes, I'll put that on my to-do. 
+Speaker 3: Yeah, Bolt 12 test vectors. I think we might need to regenerate those. Yes, I'll put that on my to-do.
 
 Speaker 0: Then, for next topic, I don't think there's anything new on the dust exposure threshold PR. It's just missing some reviews. So, whenever people have time, just have a look at it so that we can merge that. And then, there's taproot. I don't know if there are people here who've been working on taproot recently. At least, people from the LDK team.
 
@@ -91,7 +91,7 @@ Speaker 0: But on the specification, you do have agreement between LDK and LND o
 
 Speaker 4: For the most part, yeah
 
-Speaker 0: Okay, good to know. So then, maybe taproot-gossip. Has there been any did anyone have time to have a look at taproot gossip? 
+Speaker 0: Okay, good to know. So then, maybe taproot-gossip. Has there been any did anyone have time to have a look at taproot gossip?
 
 Speaker 3: Is that going to be the battle royale of New York?
 
@@ -99,19 +99,19 @@ Speaker 2: Probably. But [Redacted] keeps promising an introductory post on the 
 
 Speaker 4: I mean, don't we all?
 
-Speaker 2: Indeed. Indeed, we do. 
+Speaker 2: Indeed. Indeed, we do.
 
 Speaker 0: Alright, so next up then is splicing. And we've made a lot of progress on splicing recently. We've been starting to experiment with a version of Phoenix on testnet that uses splicing to only keep one channel per user, and it's really fun. It's really nice. So, we'll be able to share our testnet builds if people are interested and have Android. I think on iOS, it's going to be a bit painful to share to easily share a testnet build. But if some people want to try out an Android version and see what seems weird in the choices we made, just send me a ping and we'll send you a build this week or the week after that. And apart from that, on the specification, [Redacted], are there things that you wanted to discuss? I think we've been just making progress and implementing stuff.
 
 Speaker 5: Yeah, I think we have everything kind of settled. There's definitely a lot of spec cleanup to do, which maybe would make more sense to do as we get into interop. But I did have one thought - which is just kind of a future thinking thing - is that: Do you think we'll ever want to use SIGHASH single in the interactive transaction protocol? So, if we ever want to use it, we probably should include support for it now before everyone else starts building it out. You know what I mean?
 
-Speaker 0: Why can't we just assume that right now it's SIGHASH all, and if we want to use something else than SIGHASH all, it will be a new TLV that you have to understand that's mandatory or... 
+Speaker 0: Why can't we just assume that right now it's SIGHASH all, and if we want to use something else than SIGHASH all, it will be a new TLV that you have to understand that's mandatory or...
 
 Speaker 5: Well, I mean, like if one side wants to use SIGHASH single and the other side doesn't care, right? There could be a scenario where it'd be helpful to be permissive of that - like, allow the other side to add SIGHASH singles and be like: I don't care; put them in. And maybe also broadcast them for them.
 
 Speaker 3: Hold on. So I mean, it doesn't - oh, so you're sending straight signatures? You're not seeing SIGHASH flags at the moment?
 
-Speaker 5: Everything is assumed SIGHASH all, yeah. 
+Speaker 5: Everything is assumed SIGHASH all, yeah.
 
 Speaker 3: Yeah, you're gonna need to fix that. Because one of the theories was that you might want to - because we have SIGHASH singles, right? You could be an existing HTLC transaction that you're trying to sew through your giant transaction that you're building. So, which is one of the reasons you can negotiate your input and output numbers so that you can try to make them match. So yeah, you probably want to think SIGHASH flags at that point.
 
@@ -125,9 +125,9 @@ Speaker 3: You've got a new random number now.
 
 Speaker 5: Exactly, yeah. And then, if everybody tries to pick serial ID number one to get in front. Like how theoretically could happen without a spec change. But if that's going to happen, it feels like maybe we should do it a more correct way than random serial numbers. I don't know, it's a thought.
 
-Speaker 3: No, random works shockingly well in practice. I mean, even if you both have an ordering, as long as you're both not naive about your ordering. You're both not trying to get numbers because you don't care which position as long as they match, right? So, statistically, you can always get what you want. You can always remove it again if you decide that you didn't like it. 
+Speaker 3: No, random works shockingly well in practice. I mean, even if you both have an ordering, as long as you're both not naive about your ordering. You're both not trying to get numbers because you don't care which position as long as they match, right? So, statistically, you can always get what you want. You can always remove it again if you decide that you didn't like it.
 
-Speaker 5: Oh, it's a good point. 
+Speaker 5: Oh, it's a good point.
 
 Speaker 3: Right. So, it's theoretically possible that you will fail to get matching slots, and then you can remove it and try again. Or you've hit zero and you can't go any higher. Or you've got one, they've got zero, and you're like: Okay, well, I can either switch these or not. But in theory, yes, they've got the maximum number and the minimum number. Actually, you can't have both because one of you is constrained to odd, one of you is constrained to even. So, you can always get one in, right? But yes, in theory, you could fail to construct it the way you want. But, if you're just using random numbers in a 64 bit space, you're going to be able to put them wherever you want. So, I don't think it's actually a problem. I mean, I haven't implemented it, and it would be a little bit tricky to do, but it's certainly possible.
 
@@ -135,9 +135,9 @@ Speaker 5: Cool, yeah, that's the last like remaining question in my mind about 
 
 Speaker 3: So, we do have channel types in there now for the splice?
 
-Speaker 5: That is a great question. I don't know. 
+Speaker 5: That is a great question. I don't know.
 
-Speaker 0: I don't think the specification right now adds it, but it's just a TLV that's already in open channel and accept channel, and that we need to add to splice and splice arc. 
+Speaker 0: I don't think the specification right now adds it, but it's just a TLV that's already in open channel and accept channel, and that we need to add to splice and splice arc.
 
 Speaker 5: So I don't think we have it now. Is the idea to upgrade channel types or something from an old V1 to V2 or something in a splice?
 
@@ -145,7 +145,7 @@ Speaker 3: You can just abort if they ask you for something that you don't suppo
 
 Speaker 5: Right, yes. That is something that needs to be done.
 
-Speaker 0: Yeah, and on our side, we haven't worked that much. We just started working on the quiescence part because we've started for Phoenix with just a poor man's quiescence, where we only initiate a splice when there's just nothing on the channel - no pending HTLCs, nothing. So, we're going to add quiescence on top, and maybe we'll have comments when we do that. But looking at the spec PR and at how it would be implemented in Eclair, there doesn't seem to be any issues there. So, we just have to do a compact test to verify that we understood it correctly. But I don't think there's anything weird that's going to come out of that implementation. 
+Speaker 0: Yeah, and on our side, we haven't worked that much. We just started working on the quiescence part because we've started for Phoenix with just a poor man's quiescence, where we only initiate a splice when there's just nothing on the channel - no pending HTLCs, nothing. So, we're going to add quiescence on top, and maybe we'll have comments when we do that. But looking at the spec PR and at how it would be implemented in Eclair, there doesn't seem to be any issues there. So, we just have to do a compact test to verify that we understood it correctly. But I don't think there's anything weird that's going to come out of that implementation.
 
 Speaker 3: So, the other comment that I have is that I wonder if we should implement an optional reconnect message. So, the moment we had this idea of when we reconnect, we reset everything. We could have a message that says: For this channel, pretend I've just reconnected. So basically, I know a channel reset kind of thing that would simulate the same flow. So this would...
 
@@ -157,15 +157,15 @@ Speaker 5: Do you think we might be able to drop TX abort and just have that?
 
 Speaker 0: What does it add on top of TX abort? Because it seems to me that's exactly what TX abort does, right?
 
-Speaker 3: I don't think you can send TX abort if you're not splicing. We had a case where they've re-established a channel, but that number is messed up. So we send them a warning, and we end up hanging up on them because we can't do anything with the channel. But if they've got another channel that is okay, we just disrupt that because we're messed up. It's an unusual case, but it would be nice for us to say: Okay, just reset this channel, and we can go through the reconnect dance again. But I'm not gonna close connection. 
+Speaker 3: I don't think you can send TX abort if you're not splicing. We had a case where they've re-established a channel, but that number is messed up. So we send them a warning, and we end up hanging up on them because we can't do anything with the channel. But if they've got another channel that is okay, we just disrupt that because we're messed up. It's an unusual case, but it would be nice for us to say: Okay, just reset this channel, and we can go through the reconnect dance again. But I'm not gonna close connection.
 
-Speaker 2: It seems like a lot of work. I mean, just disconnecting and reconnecting doesn't interrupt for very long. 
+Speaker 2: It seems like a lot of work. I mean, just disconnecting and reconnecting doesn't interrupt for very long.
 
 Speaker 3: It does appear in a loop. Yeah, there are some cases where I can't talk to you anymore about this channel because you were way out of sync. So, at the moment, you have really no choice but to do a massive connect to reconnect, and that can be disruptive to multiple channels. It's kind of because the spec kind of - we retroed in multiple channels at the last minute and multiplexed it - and so, we have this awkward space here where we use reconnect as a huge hammer for things. But I mean, in theory, it could be an odd message, so it wouldn't be harmful. And maybe if they didn't understand it, you would then just hang up; if they talk about the channel again. If they send something unexpected, you'd just go: Well, you're wrong. Anyway, it's just a thought - I've thought it would be nice in some ways from a protocol point of view to have such a message. So, I would throw it in there in case you want one.
 
 Speaker 0: Yeah, to be honest, I'm not entirely convinced yet. We haven't felt the need for that yet, but why not? Well, let's try it. Why not? I don't think it needs to hold up the splice PR, but we'll see. We're still far before we can finalize any of these. Alright, and I guess the next two items - there hasn't been any progress on those: fat errors and clarifying the channel established requirements. I guess no one had time to look at those or do any implementation work here.
 
-Speaker 6: For fat errors, I played around with Rust Lighting a little bit and hacked them into it and see them interop with LND. So, that is implementation progress. On the concept itself, I think we're still where we were last time. 
+Speaker 6: For fat errors, I played around with Rust Lighting a little bit and hacked them into it and see them interop with LND. So, that is implementation progress. On the concept itself, I think we're still where we were last time.
 
 Speaker 2: Indeed, and that forced me to actually look at it though. So, I spent one evening, where I was already falling asleep and clearly didn't come up with anything interesting. But I stared at it for a while longer, and am little more convinced that we can't actually do better than this stupid N-squared thing. So I'll probably get back to that again sometime in the next week or so. I'm much happier with the design, which means I will actually have to go review the spec and give more useful feedback on the spec rather than just saying: I don't know, I'll get to it.
 
@@ -173,7 +173,7 @@ Speaker 6: Alright, looking forward to that.
 
 Speaker 0: We're still interested as well on the Eclair side. It's just that we are deep down in the splicing and Bolt 12 rabbit holes. So, whenever we get out of those rabbit holes, we'll have time to look at it. But I don't know when that will be.
 
-Speaker 6: Don't you feel that something like this is more of a fix on a base layer? That's something that you should have done a long time ago already, where we're splicing and Bolt 12 is more additions to what we already have. 
+Speaker 6: Don't you feel that something like this is more of a fix on a base layer? That's something that you should have done a long time ago already, where we're splicing and Bolt 12 is more additions to what we already have.
 
 Speaker 0: Yeah, definitely, but now that we are deep in that rabbit hole, we want to get out of it before we can put our brain onto something else. Otherwise the context switching is going to be too hard.
 
@@ -189,13 +189,13 @@ Speaker 0: Okay. So, the next two. There's a here's two old competing PRs to cla
 
 Speaker 3: Oh, yes. [Redacted] has an implementation, and it's very, very simple. So, we need to write up a spec. [Redacted] was trying to seek a grant at the moment to continue that work, particularly the spec work. So, it's sort of in a holding pattern.
 
-Speaker 0: Okay. We can definitely talk then about mailing list moderation. So, is it just you, [Redacted], moderating the emails right now? 
+Speaker 0: Okay. We can definitely talk then about mailing list moderation. So, is it just you, [Redacted], moderating the emails right now?
 
-Speaker 3: It seems to be. So, the three moderators are [Redacted], myself and [Redacted], but I went away for a week and it seems like nobody did the moderation. So, I'd like to throw in a couple more moderators. The only problem is that there's a single password, so it's basically complete. It's very open kimono. If you give someone access to moderate the mail list, they have complete control on the mail list because this is mailman. So, I would like to have a couple more people, particularly in different time zones who've got access. [Redacted], sounds like you're volunteering. 
+Speaker 3: It seems to be. So, the three moderators are [Redacted], myself and [Redacted], but I went away for a week and it seems like nobody did the moderation. So, I'd like to throw in a couple more moderators. The only problem is that there's a single password, so it's basically complete. It's very open kimono. If you give someone access to moderate the mail list, they have complete control on the mail list because this is mailman. So, I would like to have a couple more people, particularly in different time zones who've got access. [Redacted], sounds like you're volunteering.
 
 Speaker 2: Oh dear God. I mean, I'm happy to do it. But you know me, I create drama. So I mean, if you want me fine, but that sounds like a bad idea.
 
-Speaker 3: Yeah, I didn't say I would continue doing it. But you're welcome to do it. And [Redacted]. I mean, if people who post regularly are good people as moderators, because they'll at least check it when they post and push their own post through. As you know, there was some personal drama that was in danger of spilling onto the list, which is why we turned on emergency moderation. That seems to have died down and it is possible we could switch emergency moderation off, and it would not be an issue. I have not had to moderate a huge amount, surprisingly, under that. All I've been doing is putting delays into the mailing list. So, did I send an email when moderation turned on last week? Yes, I did send a mail, and then I forgot to push it through. So, it was in the moderation queue for a while, but there was a mail-to-mail list about emergency moderation. 
+Speaker 3: Yeah, I didn't say I would continue doing it. But you're welcome to do it. And [Redacted]. I mean, if people who post regularly are good people as moderators, because they'll at least check it when they post and push their own post through. As you know, there was some personal drama that was in danger of spilling onto the list, which is why we turned on emergency moderation. That seems to have died down and it is possible we could switch emergency moderation off, and it would not be an issue. I have not had to moderate a huge amount, surprisingly, under that. All I've been doing is putting delays into the mailing list. So, did I send an email when moderation turned on last week? Yes, I did send a mail, and then I forgot to push it through. So, it was in the moderation queue for a while, but there was a mail-to-mail list about emergency moderation.
 
 Speaker 7: Okay, I missed that. Thanks.
 
@@ -203,9 +203,9 @@ Speaker 3: So yes, I will signal [Redacted] and [Redacted] the access credential
 
 Speaker 2: Damn, you're gonna make me go post to the mailing list more regularly, weren't you?
 
-Speaker 0: I agree with what [Redacted] said in one of the mailing list posts: We haven't posted a lot on the Lightning Dev mailing list. A lot of things have been happening directly on spec PRs, and people who are not following spec PRs that already have thousands of comments are missing some interesting bits. For example, the part about the liquidity griefing attack on dual funding. So, that's why I also decided to start posting that kind of thing to the mailing list. I think we should try to post some of the important stuff we discover in the spec PRs for the important features, such as taproots, splicing, dual funding - those complex stuff. It makes sense to have them in the mailing list, where it's easier to search for than in GitHub comments in big PRs. So, if other people have time to share things that they discover on the mailing list, I think that would be helpful. 
+Speaker 0: I agree with what [Redacted] said in one of the mailing list posts: We haven't posted a lot on the Lightning Dev mailing list. A lot of things have been happening directly on spec PRs, and people who are not following spec PRs that already have thousands of comments are missing some interesting bits. For example, the part about the liquidity griefing attack on dual funding. So, that's why I also decided to start posting that kind of thing to the mailing list. I think we should try to post some of the important stuff we discover in the spec PRs for the important features, such as taproots, splicing, dual funding - those complex stuff. It makes sense to have them in the mailing list, where it's easier to search for than in GitHub comments in big PRs. So, if other people have time to share things that they discover on the mailing list, I think that would be helpful.
 
-Speaker 2: Yeah, there's also stuff like - I know LND did a bunch of routing work in their last release, and that was cool to me because I was also doing some similar stuff and wanted to crib off their notes, but sadly they never got a chance to write it up. And that's the kind of thing that I think could also be on the mailing list. And I'm now realizing that I'm accidentally setting myself up to write about what I've been working on, which was a mistake, but oh well. 
+Speaker 2: Yeah, there's also stuff like - I know LND did a bunch of routing work in their last release, and that was cool to me because I was also doing some similar stuff and wanted to crib off their notes, but sadly they never got a chance to write it up. And that's the kind of thing that I think could also be on the mailing list. And I'm now realizing that I'm accidentally setting myself up to write about what I've been working on, which was a mistake, but oh well.
 
 Speaker 0: Alright, so is there any other topic that people wanted to discuss? Is there anything that comes to mind? There's been There's also been a new PR opened by [Redacted] about the HTLC endorsement - the reputation part of Jamming. But it's really a draft PR for now, and I haven't had time to look at it yet. I don't know if other people had time to look at it. It's 10.71.
 
@@ -215,17 +215,17 @@ Speaker 8: Yeah, it's just a draft PR at the moment. Sorry, I don't know what dr
 
 Speaker 0: Perfect. That makes sense. Then it's easy for us. We don't have to look at it yet. Perfect.
 
-Speaker 8: Yeah, I'll take it out of draft when it's ready for a look, and I'll bother everyone massively. So, you'll know. 
+Speaker 8: Yeah, I'll take it out of draft when it's ready for a look, and I'll bother everyone massively. So, you'll know.
 
 Speaker 0: Perfect. So, anything else anyone will need to discuss?
 
 Speaker 2: Wait, there was one other thing. I was just looking at the PR list. Oh, WebSocket. PR 10.68. [Redacted] with attempt to revive WebSocket push, and announce basically the host name that would receive a WebSocket TLS wrapped thingamajig.
 
-Speaker 3: Yeah, so I was going to close the other one. I don't know if this PR got merged. No, I think it's going in next time. But I mean, having WebSockets is kind of cool, but advertising it is a whole another can of worms. So, I decided to split the two. I like the fact that we have WebSocket support, and you can offer it, but mainly people are using it for commando and things to control their own nodes, rather than as a generic mechanism for nodes to actually talk to each other. So, at least for us, that part is less interesting. So, I was going to withdraw the WebSocket announce PR. 
+Speaker 3: Yeah, so I was going to close the other one. I don't know if this PR got merged. No, I think it's going in next time. But I mean, having WebSockets is kind of cool, but advertising it is a whole another can of worms. So, I decided to split the two. I like the fact that we have WebSocket support, and you can offer it, but mainly people are using it for commando and things to control their own nodes, rather than as a generic mechanism for nodes to actually talk to each other. So, at least for us, that part is less interesting. So, I was going to withdraw the WebSocket announce PR.
 
 Speaker 2: Yeah, I kind of agree, but I do wonder whether anything changes when we're talking about onion messages, because then you can have a website that connects to a node and asks for an invoice or something. I don't know if this is actually a good idea. Maybe this is, in fact, a bad idea, but it's a thing to consider when we discuss it.
 
-Speaker 3: Well, I think actually having public web socket proxies for Lightning starts to make sense. So you can connect to the proxy and it will connect to the lightning node for you, and you can speak lightning from JavaScript. Its kind of nice. But for for individual pleb nodes, not quite as interesting, I think. 
+Speaker 3: Well, I think actually having public web socket proxies for Lightning starts to make sense. So you can connect to the proxy and it will connect to the lightning node for you, and you can speak lightning from JavaScript. Its kind of nice. But for for individual pleb nodes, not quite as interesting, I think.
 
 Speaker 2: Well, it'd be nice to skip the proxy. Like, there's no reason to want a proxy.
 
@@ -237,19 +237,19 @@ Speaker 3: Yeah. I think the straight to the proxy, I kind of wanted to implemen
 
 Speaker 2: Yeah, I mean, it'll be a relatively rare thing, but I think the question is more: If you were to announce it, then basically you get this proxy thing for free. Basically, any lightning node that does do this, not only is a proxy, but then if you fetch a snapshot of the graph or something, then you know a list of proxies, rather than having to have that be a whole separate concept.
 
-Speaker 3: Yeah, but I think it's not a priority. So, I was going to close my PR, and then somebody can implement it and then push it. 
+Speaker 3: Yeah, but I think it's not a priority. So, I was going to close my PR, and then somebody can implement it and then push it.
 
-Speaker 2: It's certainly not a priority for me. I guess my question was more - well, I mean, it might be a priority for [Redacted], so [Redacted] might implement it in the LDK, but I think the question was more: Is this a 'Well, maybe we could do this?' or is this a 'No, we don't want a website connecting to my node' kind of thing? I guess you could always just not add the TLS wrapper under your node if you didn't want that. But more of a philosophical question: Is this a thing that we want to do? Obviously, I don't think this is happening soon. 
+Speaker 2: It's certainly not a priority for me. I guess my question was more - well, I mean, it might be a priority for [Redacted], so [Redacted] might implement it in the LDK, but I think the question was more: Is this a 'Well, maybe we could do this?' or is this a 'No, we don't want a website connecting to my node' kind of thing? I guess you could always just not add the TLS wrapper under your node if you didn't want that. But more of a philosophical question: Is this a thing that we want to do? Obviously, I don't think this is happening soon.
 
 Speaker 3: I don't know. That's why I think if someone wants a proxy and it becomes popular, then you start to go: Cool, everyone should have one, and we should probably push the PR. But if this proxy is used by three people, then maybe it's not worth pushing. I don't know.
 
-Speaker 2: Yeah, I mean, the other thing is a bunch of people trying to build LDK-based nodes and WASM. And for some reason, these stupid web browser extension wallets are popular. I don't know why, but people keep trying to build them and they keep getting users and it's frustrating, but that also means no direct TCP for these things. 
+Speaker 2: Yeah, I mean, the other thing is a bunch of people trying to build LDK-based nodes and WASM. And for some reason, these stupid web browser extension wallets are popular. I don't know why, but people keep trying to build them and they keep getting users and it's frustrating, but that also means no direct TCP for these things.
 
 Speaker 3: Yeah, that's why I think the proxy idea kind of makes sense. And to bridge the web and lightning worlds is kind of cool. It's unfortunate that we have to go through this hacky web socket thing to do it. I mean, I've been pitching this idea to people that we should eventually end up with nodes that provide you with a service card of: Here's all the services I offer. And this could be one of them, right? I will proxy your stuff. I will provide a web socket and I will provide back up; all these things that you could potentially do.
 
 Speaker 4: I think it's probably a good thing because due to the inherent limitations of browsers. We probably don't want browsers being able to run full nodes themselves because they can't do chain monitoring. They can't guarantee that your funds aren't going to be breached.
 
-Speaker 2: You can as an extension. I mean, insofar as the computer's online, but the normal extension. That's why the browser extension things are popular, right? 
+Speaker 2: You can as an extension. I mean, insofar as the computer's online, but the normal extension. That's why the browser extension things are popular, right?
 
 Speaker 3: Also, importantly, I don't think we can stop them from doing it badly. But yes, I'm not going to write one. So don't oppose it, but I'm not particularly interested in it, I guess is the answer. But I am going to shut the old PR.
 
@@ -265,6 +265,6 @@ Speaker 8: Okay, perfect. I'll spin up an issue then, and then everyone can just
 
 Speaker 2: We should put a public note that - now, at the spec meeting, is not a time to unveil a grand new proposal, because it's far more productive if people get to look at it beforehand, and then you could discuss it rather than getting thrown it this brand new idea face to face. I mean, sometimes it happens because you come up with ideas. But if you have some great thing you want to bring, surprise is not your friend here. Because it's just the time everyone to get up on it. It's not useful. It's nice if people have a bit of foretelling about what they're interested in is actually a really good idea.
 
-Speaker 8: Okay, great. I'll add some advisory to please link documentation beforehand rather than just random topics. That's all for me. 
+Speaker 8: Okay, great. I'll add some advisory to please link documentation beforehand rather than just random topics. That's all for me.
 
-Speaker 0: Alright, then I guess we're all good. 
+Speaker 0: Alright, then I guess we're all good.

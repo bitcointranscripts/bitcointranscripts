@@ -16,11 +16,11 @@ Hola. La idea era hacer una reunión de estilo más socrático. Esto fue popular
 
 Mike Schmidt hablará de algunos boletines de optech a los que ha contribuido. Dhruv hablará sobre el intercambio de secretos Hermit y Shamir. Flaxman nos enseñará cómo configurar una cartera de hardware multisig con Electrum. Nos mostrará cómo se puede hacer esto y algunas de las cosas que hemos aprendido. Bryan Bishop hablará sobre su propuesta de bóvedas que se hizo recientemente. Lo ideal es que cada uno de estos temas dure unos 10 minutos. Sin embargo, es probable que se extiendan un poco. Vamos a tener un montón de participación de la audiencia y realmente interactivo.
 
-# Boletines de Bitcoin Optech 
+# Boletines de Bitcoin Optech
 
 No tengo nada preparado, pero podemos abrir algunos de estos enlaces y presentar mi perspectiva o lo que yo entiendo. Si la gente tiene ideas o preguntas, sólo tiene que hablar.
 
-# Boletín 57: Coinjoin y joinmarket 
+# Boletín 57: Coinjoin y joinmarket
 
 <https://bitcoinops.org/en/newsletters/2019/07/31/>
 
@@ -32,7 +32,7 @@ Al igual que la minería de bitcoin, se trata de una resistencia sibilina median
 
 Los equipos de los monederos Samurai y Wasabi tuvieron algunas discusiones interesantes. Estuvieron hablando sobre la reutilización de direcciones y cuánto reduce realmente la privacidad. No creo que sea un tema resuelto, ambos siguen yendo y viniendo atacándose mutuamente. Para cualquiera de estos coinjoins, todos están expuestos en cierta medida a coinjoin. Así que siempre hay compensaciones. Mayor coste, algo de protección, aún no es perfecto, una empresa podría estar dispuesta a bloquear esas monedas. Una cosa interesante sobre esto es que aumenta el coste de los servicios de Chainalysis - tendrán que cobrar más a sus clientes; así que esto reduce sus márgenes y tal vez podamos sacarlos del negocio.
 
-# Boletín de noticias 57: signmessage 
+# Boletín de noticias 57: signmessage
 
 <https://github.com/bitcoin/bitcoin/issues/16440>
 
@@ -42,7 +42,7 @@ Bitcoin Core tiene la capacidad de hacer signmessage, pero esta funcionalidad er
 
 Todo lo que puedes hacer con la firma es demostrar que en algún momento tuviste esa clave privada. Si alguien te roba las claves privadas, puedes seguir firmando con tu clave privada, pero ya no tienes las monedas. Tienes que demostrar que no la tienes; o que otra persona no la tiene. O que, en la altura de bloque actual, tenías los fondos. Ese es el verdadero reto de la prueba de reservas, la mayoría de las propuestas tratan de mover los fondos.
 
-# Boletín 57: debate sobre el filtro Bloom 
+# Boletín 57: debate sobre el filtro Bloom
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html>
 
@@ -56,11 +56,11 @@ Alguien argumentó que Chainalysis ya está ejecutando todos estos nodos de filt
 
 ¿La idea es que bip57 esté activado por defecto, para sustituirlo? ¿Va a estar Neutrino activado por defecto? Lo está para btcd. Me imagino que bitcoind tendrá algo similar. Son sólo comandos de red. Se almacena un poco más localmente, con los filtros de Neutrino. Tienes que hacer un seguimiento. Si hay un compromiso de coinbase o lo que sea, vas a tener que revisar eso también. Eso tendría que ser un soft-fork.
 
-# Noticias de Lightning (Buck Perley) 
+# Noticias de Lightning (Buck Perley)
 
 Voy a repasar los temas lightning de la lista del seminario socrático. Ayer estuve en un avión durante unas horas, así que preparé algunas preguntas y espero que podamos suscitar algunas cuestiones en torno a ellas.
 
-## Torres de vigilancia 
+## Torres de vigilancia
 
 <https://blog.bitmex.com/lightning-network-part-4-all-adopt-the-watchtower/>
 
@@ -90,7 +90,7 @@ P: Uno de los argumentos es que si las tasas del bitcoin suben mucho, tienes la 
 
 R: Sí, pero ahora mismo no es un negocio viable. Podría serlo en el futuro. Ahora mismo, mi sensación es que no estás ganando dinero con las tarifas, pero estás creando liquidez y esto hace que sea más viable para vuestros clientes utilizar Lightning. Así que realmente su modelo de negocio es más acerca de la creación de liquidez y ayudar a la utilidad en lugar de hacer dinero. La idea es que la gente gane cuotas como torres de vigilancia, cuotas de enrutamiento, aumentando la liquidez, y hay otro modelo de negocio donde la gente puede pagar por la liquidez entrante. Esos son los tres principales modelos de negocio de la red de rayos que conozco.
 
-## Modelo de estado estacionario para LN 
+## Modelo de estado estacionario para LN
 
 <https://github.com/gr-g/ln-steady-state-model>
 
@@ -100,7 +100,7 @@ R: Sí, pero ahora mismo no es un negocio viable. Podría serlo en el futuro. Ah
 
 ¿Hay alguien aquí que tenga un nodo de lightning? Bueno, unos cuantos. Uno de los grandes guiños a los lightning es que no son súper utilizables. Parte de eso es que están tratando de ayudar en el lado de la ingeniería con torres de vigilancia y el piloto automático y las nuevas interfaces gráficas de usuario. Otra gran parte es simplemente, guías sobre cómo ejecutar un nodo de lightning. Ellos van a través de las banderas útiles que se puede activar. Si alguna vez se ejecuta la ayuda de lndcli, es un enorme menú de cosas a tener en cuenta. ¿Alguna historia de horror de los dolores de cabeza de tratar con el lightning y las cosas que sería útil?
 
-P: Más liquidez entrante. 
+P: Más liquidez entrante.
 
 R: ¿Qué cree que podría ayudar a ello? ¿Hay algo en proyecto que pueda ser útil?
 
@@ -112,7 +112,7 @@ Tienen un servidor de Loop. Es básicamente swaps submarinos. Es una herramienta
 
 Tienen un mecanismo llamado Loopty Loop en el que se continúa recursivamente el bucle de salida. Se sacan fondos en bucle, se obtienen fnuds encadenados, se sacan en bucle y se vuelven a sacar en bucle. Puedes seguir haciendo eso y obtener liquidez entrante, pero de nuevo no es barato, y no es instantáneo. Así que estás perdiendo algunos de los beneficios de la lightning.
 
-## Copias de seguridad de los canales estáticos 
+## Copias de seguridad de los canales estáticos
 
 Lightning Labs hablaba ahora de su aplicación móvil. Una de las cosas interesantes de esta actualización es que tienen copias de seguridad de canales estáticos en iCloud. Tenía curiosidad por saber si alguien tenía alguna opinión al respecto. Creo que es genial que se pueda hacer una copia de seguridad en la nube para estos. Almacena el estado del canal, incluyendo cuál es el saldo. Si tu nodo bitcoin se cae, y sólo tienes tu mnemónica, no pasa nada. Pero con LN, tienes estados fuera de la cadena donde no hay registro de ello en la blockchain. El único registro es la contraparte, pero no quieres confiar en ella. Si no tienes copias de seguridad de tu estado, tu contraparte podría publicar una transacción de robo y tú no lo sabrías. También podrías publicar accidentalmente un estado antiguo, lo que daría a tu contraparte la oportunidad de robar todos los fondos del canal, lo que es otra cosa que eltoo puede evitar. Si tienes la aplicación en iOS, estas cosas se actualizan automáticamente y no tienes que preocuparte por ello, pero estás confiando en Apple iCloud.
 
@@ -132,7 +132,7 @@ P: ¿Por qué se basa en el tiempo, en lugar de pagar por una solicitud?
 
 R: Depende del mercado. En lugar de decir que pago por una sola solicitud, podrías decir que en lugar del apretón de manos de ida y vuelta, obtienes acceso durante 30 segundos y terminas hasta que el tiempo expira. Construí una aplicación de prueba de concepto que es como un yalls (que es como un medium.com) para la lectura de contenido donde en lugar de pagar una cantidad a granel para un pedazo de contenido, usted dice oh voy a pagar por 30 segundos y ver si desea seguir leyendo sobre la base de eso. Permite mecanismos de precios más flexibles en los que puedes tener una discriminación de precios mucho más fina basada en la demanda.
 
-# Desvarío de la cartera de hardware 
+# Desvarío de la cartera de hardware
 
 <https://stephanlivera.com/episode/97/>
 
@@ -192,7 +192,7 @@ Genial, gracias por describirlo.
 
 <https://bitcoinmagazine.com/articles/revamped-idea-bitcoin-vaults-may-end-exchange-hacks-good>
 
-# Ermitaño 
+# Ermitaño
 
 <https://github.com/unchained-capital/hermit>
 

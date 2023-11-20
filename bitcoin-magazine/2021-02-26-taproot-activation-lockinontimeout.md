@@ -1,5 +1,5 @@
 ---
-title: Taproot activation and LOT=true vs LOT=false 
+title: Taproot activation and LOT=true vs LOT=false
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot']
@@ -66,9 +66,9 @@ AvW: Now we are four years ahead in time, it is four years later and now the Tap
 
 SP: It is basically a built in UASF option which you can decide to use or not. There is now a formal way in the protocol to do this to activate a soft fork at a cut off date.
 
-AvW: LOT has two options. The first option is false, LOT is false. That means that miners can signal for the upgrade for one year and then in that year if the 90 percent threshold for the upgrade is met it will activate as we just explained. By the way 1 year and 90 percent isn’t set in stone but it is what people seem to settle on. For convenience sake that is what I’m going to use for discussing this. Miners have 1 year to activate the upgrade. If after that year they have not upgraded the Taproot upgrade will expire. It will just not happen, that is LOT is false. 
+AvW: LOT has two options. The first option is false, LOT is false. That means that miners can signal for the upgrade for one year and then in that year if the 90 percent threshold for the upgrade is met it will activate as we just explained. By the way 1 year and 90 percent isn’t set in stone but it is what people seem to settle on. For convenience sake that is what I’m going to use for discussing this. Miners have 1 year to activate the upgrade. If after that year they have not upgraded the Taproot upgrade will expire. It will just not happen, that is LOT is false.
 
-SP: And of course there is always the option then of shipping a new release, trying again. It is not a “no” vote, it is just nothing happens. 
+SP: And of course there is always the option then of shipping a new release, trying again. It is not a “no” vote, it is just nothing happens.
 
 AvW: Exactly. Then there is LOT=true which again miners have 1 year to signal support (readiness) for the upgrade. If a 90 percent threshold is met then the upgrade will activate. However the big difference is what happens if miners don’t reach this threshold. If they don’t signal for the upgrade. In that case when the year is almost over nodes that have LOT=true will start to reject all blocks that don’t signal for the upgrade. In other words they will only accept blocks that will signal for the upgrade which means of course that the 90 percent threshold will be met and therefore Taproot, or any other soft fork in this mechanism, will activate.
 
@@ -86,11 +86,11 @@ AvW: The reason some people like LOT=true is because that way miners don’t hav
 
 SP: Or even while this thing is going on. You could wait half a year with LOT=false and half a year later say “This is taking too long. Let’s take a little more risk and set LOT=true.” Or lower the threshold or some other permutation that slightly increases the risk but also increases the likeliness of activation.
 
-AvW: Yeah, you’re right. But that is actually also one of the arguments against using LOT=false. LOT=true proponents say that as you’ve suggested we can do it after 6 months, but there are another group of users that might say “No. First wait until the year is over and then we will just redeploy again.” Let’s say after 6 months Taproot hasn’t activated. Now all of a sudden you get a new discussion between people that want to start deploying LOT=true clients right away and groups of users that want to wait until the year is over. It is reintroducing the discussion we are having now except by then we only have 6 months to resolve it. It is like a ticking time bomb kind of situation. 
+AvW: Yeah, you’re right. But that is actually also one of the arguments against using LOT=false. LOT=true proponents say that as you’ve suggested we can do it after 6 months, but there are another group of users that might say “No. First wait until the year is over and then we will just redeploy again.” Let’s say after 6 months Taproot hasn’t activated. Now all of a sudden you get a new discussion between people that want to start deploying LOT=true clients right away and groups of users that want to wait until the year is over. It is reintroducing the discussion we are having now except by then we only have 6 months to resolve it. It is like a ticking time bomb kind of situation.
 
 SP: Not really to resolve it. If you don’t do anything for 6 months then there is only one option left which is to try again with a new activation bit.
 
-AvW: But then you need to agree on when you are going to do that. Are you going to do that after 6 months or are you going to do that later? People might disagree. 
+AvW: But then you need to agree on when you are going to do that. Are you going to do that after 6 months or are you going to do that later? People might disagree.
 
 SP: Then you’d be back to where we are now except you’d know a little bit more because now you know that the miners weren’t signaling.
 
@@ -98,7 +98,7 @@ AvW: And you don’t have a lot of time to resolve it because after 6 months mig
 
 SP: The thing you’re talking about here is the possibility of say anarchy in the sense that there is no consensus about when to activate this thing. One group, I think we discussed this at length in the third episode, just gets really aggressive and says “No we are going to activate this earlier.” Then nobody knows when it is going to happen.
 
-AvW: Let me put it differently. If right now we are saying “If after 6 months miners haven’t activated Taproot then we will just upgrade to LOT=true clients” then LOT=true proponents will say “If that’s the plan anyways let’s just do it now. That’s much easier. Why do we have to do that halfway?” That is the counterargument to the counterargument. 
+AvW: Let me put it differently. If right now we are saying “If after 6 months miners haven’t activated Taproot then we will just upgrade to LOT=true clients” then LOT=true proponents will say “If that’s the plan anyways let’s just do it now. That’s much easier. Why do we have to do that halfway?” That is the counterargument to the counterargument.
 
 SP: I can see that. But of course there is also the scenario where we never do this, Taproot just doesn’t activate. It depends on what people want. There is something to be said for a status quo bias where you don’t do anything if it is too controversial for whatever reason. There is another side case here that is useful to keep in mind. There might be a very good reason to cancel Taproot. There might be a bug that is revealed after.
 
@@ -106,7 +106,7 @@ AvW: You are getting ahead of me. There are a bunch of arguments in favor of LOT
 
 SP: I don’t see how that argument doesn’t apply to LOT=true. Anything could cause controversy.
 
-AvW: That is probably fair. I tend to agree with that. The other argument for LOT=false is that miners and especially mining pools have already indicated that they are supportive of Taproot, they’ll activate it. It is not necessary to do the LOT=true thing as far as we can tell. The third argument is what you just mentioned. It is possible that someone finds a bug with Taproot, a software bug or some other problem is possible. If you do LOT=false it is fairly easy to just let it expire and users won’t have to upgrade their software again. 
+AvW: That is probably fair. I tend to agree with that. The other argument for LOT=false is that miners and especially mining pools have already indicated that they are supportive of Taproot, they’ll activate it. It is not necessary to do the LOT=true thing as far as we can tell. The third argument is what you just mentioned. It is possible that someone finds a bug with Taproot, a software bug or some other problem is possible. If you do LOT=false it is fairly easy to just let it expire and users won’t have to upgrade their software again.
 
 SP: The only thing there is that you’d have to recommend that miners do not install that upgrade. It is worth noting, I think we pointed this out in Episode 3, people don’t always review things very early. A lot of people have reviewed Taproot code but others might not bother to review it until the activation code is there because they just wait for the last minute. It is not implausible that someone very smart starts reviewing this very late, perhaps some exchange that is about to deploy it.
 
@@ -116,7 +116,7 @@ SP: We’ve seen it with certain altcoins too, right before deployment people fi
 
 AvW: I don’t think that’s true. There are other ways to get rid of it.
 
-SP: Depending on what the bug is you may be able to soft fork it out. 
+SP: Depending on what the bug is you may be able to soft fork it out.
 
 AvW: There are ways to fix it even in that case. The other counterargument to that point would be “If we are not sure that it is bug free and we are not sure that this upgrade is correct then it shouldn’t be deployed either way, LOT=true or LOT=false or anything. We need to be sure of that anyway.”
 
@@ -134,13 +134,13 @@ AvW: Exactly. They don’t actually have power over the network. In that sense t
 
 SP: And the precedent. What if Bitcoin Core is compromised at some point and ships an update and says “If you don’t stop it then it is going to activate.” Then it is nice if the miners can say “No I don’t think so.”
 
-AvW: Users could say that as well by not downloading it like you said. Now we get to the fifth argument. This is where it gets pretty complex. The fifth argument against LOT=true is that it could cause all sorts of network instability. If it happens that the year is over and there are LOT=true clients on the network it is possible that they would split off from the main chain and there could be re-orgs. People could lose money and miners could mine an invalid block and lose their block reward and all that sort of stuff. The LOT=true proponents argue that that risk is actually best mitigated if people adopt LOT=true. 
+AvW: Users could say that as well by not downloading it like you said. Now we get to the fifth argument. This is where it gets pretty complex. The fifth argument against LOT=true is that it could cause all sorts of network instability. If it happens that the year is over and there are LOT=true clients on the network it is possible that they would split off from the main chain and there could be re-orgs. People could lose money and miners could mine an invalid block and lose their block reward and all that sort of stuff. The LOT=true proponents argue that that risk is actually best mitigated if people adopt LOT=true.
 
 SP: I’m skeptical, that sounds very circular. Maybe it is useful to explain what these bad scenarios look like? Then others can decide whether a) they think those bad scenarios are worth risking and b) how to make them less likely. Some of that is almost political. You all have these discussions in society, should people have guns or not, what are the incentives, you may never figure that out. But we can talk about some of the mechanics here.
 
 AvW: To be clear, if somehow there would be complete consensus on the network over either LOT=true, all nodes run LOT=true, or all nodes run LOT=false then I think that would be totally fine. Either way.
 
-SP: Yeah. The irony is of course that if there is complete consensus and everybody runs LOT=true then it will never be used. You’re right in theory. I don’t see a scenario where miners would say “We are happy with LOT=true but we are deliberately not going to signal and then signal at the very last moment.” 
+SP: Yeah. The irony is of course that if there is complete consensus and everybody runs LOT=true then it will never be used. You’re right in theory. I don’t see a scenario where miners would say “We are happy with LOT=true but we are deliberately not going to signal and then signal at the very last moment.”
 
 AvW: You are right but we are digressing. The point is that the really complicated scenarios arise when some parts of the network are running LOT=true, some parts of the network are running LOT=false or some parts of the network are running neither because they haven’t upgraded. Or some combination of these, half of the network has LOT=true, half of the network has neither. That’s where things get very complicated and Sjors, you’ve thought about it, what do you think? Tell me what the risks are.
 
@@ -166,7 +166,7 @@ SP: I was about to get to that. Now we are talking about the LOT=false people. Y
 
 AvW: It is someone in Korea, he doesn’t keep up with discussion.
 
-SP: Let’s not be mean to Korea. 
+SP: Let’s not be mean to Korea.
 
 AvW: Pick a country where they don’t speak English.
 
@@ -188,7 +188,7 @@ SP: Yeah. You can translate this also to people who are using hardware wallet so
 
 AvW: That’s what I want to get that. Everyone agrees or at least we both agree and I think most people would agree that this scenario we just painted, that’s horrible, we don’t want that. So the next question is how do you avoid this scenario? That’s also one of the things where LOT=true and LOT=false people differ in their opinions. LOT=false proponents like yourself argue against LOT=true because the chain split was caused by LOT=true and therefore if we don’t want chain splits we don’t want LOT=true and the thing we just described won’t happened. The worst case scenario is that we don’t have Taproot, it will just expire. That’s not as bad as this poor Korean guy losing his honest day’s work.
 
-SP: Exactly and we might have Taproot later. 
+SP: Exactly and we might have Taproot later.
 
 AvW: The LOT=true proponents will argue Bitcoin is an open network and any peer can run any software they want. For better or worse LOT=true is a thing that exists. If we want to avoid a chain split the best way to avoid that is to make sure that everyone uses LOT=true or at least the majority of miners upgrade in time and LOT=true is the best way to ensure that. Getting critical mass for LOT=true is actually the safer option despite the fact that LOT=true also introduced the risk. If I want to give an analogy it is kind of like the world would be a safer place without nuclear weapons but there are nuclear weapons. It seems like it is safer to actually have one in that case.
 
@@ -196,15 +196,15 @@ SP: I think that analogy breaks down very quickly but yeah I get the idea.
 
 AvW: It is not a perfect analogy I’m sure. The point is LOT=true exists and now we have to deal with that. It might be a better world, a safer place if LOT=true didn’t exist, if UASFs didn’t exist. But it does and now we have to deal with that fact. There is an argument to be made that making sure the soft fork succeeds is actually the best way to go to save that poor Korean guy.
 
-SP: I am always very skeptical of this type of game theory because it sounds rhetorically nice but I’m not sure it is really true. One of the obvious problems is how do you know you’ve reached the entire Bitcoin community. We talked about this hypothetical person in this other country who is not reading Twitter and Reddit, has no idea that this is going on let alone most of the lightweight wallet users. The number of people who use Bitcoin is much, much greater than the number of people who are even remotely interested in these discussions. Also to even explain the risk to those people, even if we could reach them, to explain why they should upgrade, that alone is a rather big challenge. In this episode we roughly try to explain what would go wrong if they don’t upgrade. We can’t just tell them they must upgrade. That violates the idea that you persuade people with arguments and let them decide what they want to do rather than tell them based on authority. 
+SP: I am always very skeptical of this type of game theory because it sounds rhetorically nice but I’m not sure it is really true. One of the obvious problems is how do you know you’ve reached the entire Bitcoin community. We talked about this hypothetical person in this other country who is not reading Twitter and Reddit, has no idea that this is going on let alone most of the lightweight wallet users. The number of people who use Bitcoin is much, much greater than the number of people who are even remotely interested in these discussions. Also to even explain the risk to those people, even if we could reach them, to explain why they should upgrade, that alone is a rather big challenge. In this episode we roughly try to explain what would go wrong if they don’t upgrade. We can’t just tell them they must upgrade. That violates the idea that you persuade people with arguments and let them decide what they want to do rather than tell them based on authority.
 
 AvW: Keep in mind that in the end all of this is avoided if a majority of hash power upgrades. With LOT=true it actually is any majority would be fine in the end. If miners themselves use LOT=true then they’ll definitely get the longest chain by the end of the year.
 
-SP: The game theory is kind of narrowed to say you want to convince the miners to do this. The problem though is if it fails we just explained the disaster that happens. Then the question is what is that risk? Can you put a percentage on that? Can you somehow simulate the world and find out what happens? 
+SP: The game theory is kind of narrowed to say you want to convince the miners to do this. The problem though is if it fails we just explained the disaster that happens. Then the question is what is that risk? Can you put a percentage on that? Can you somehow simulate the world and find out what happens?
 
 AvW: I am on the fence on this. I see compelling arguments on both sides. I was leaning towards lot=false at first but the more I think about it… The argument is if you include lot=true in Bitcoin Core then that practically guarantees that everything will be fine because the economic majority will almost certainly run it. Exchanges and most users.
 
-SP: I’m not even sure that is true. That assumes that this economic majority is quick to upgrade and not ignoring things. 
+SP: I’m not even sure that is true. That assumes that this economic majority is quick to upgrade and not ignoring things.
 
 AvW: At least within a year.
 
@@ -222,7 +222,7 @@ AvW: I think it is definitely a strict advantage.
 
 SP: The advantage is you can’t be re-orged. The disadvantage is your chain might never grow. I don’t know which of those two…
 
-AvW: It would probably grow. It depends on how big that group is again. That’s not something we can objectively measure. I guess that’s what it comes down to. 
+AvW: It would probably grow. It depends on how big that group is again. That’s not something we can objectively measure. I guess that’s what it comes down to.
 
 SP: Even retroactively we can’t. We still don’t know what really caused the SegWit activation even four years afterwards. That gives you an idea of how difficult it is to know what these forces really are.
 
@@ -254,7 +254,7 @@ AvW: What do you think is going to happen? How do you anticipate this playing ou
 
 SP: I started looking a little bit at the nitty gritty, [one](https://github.com/bitcoin/bitcoin/pull/19573) of the pull requests that Luke Dashjr opened to implement BIP 8 in general, not specifically for Taproot I believe. There’s already complexity with this LOT=true thing engaged because you need to think about how the peer-to-peer network should behave. From a principle of least action, what is the least work for developers to do, setting LOT to false probably results in easier code which will get merged earlier. And even if Luke is like “I will only do this if it is set to true” then somebody else will make a pull request that sets it to false and gets merged earlier. I think from a what happens when lazy people, I mean lazy in the most respectful way, what is the path of least resistance? It is probably a LOT=false, just from an engineering point of view.
 
-AvW: So LOT=false in Bitcoin Core is what you would expect in that case. 
+AvW: So LOT=false in Bitcoin Core is what you would expect in that case.
 
 SP: Yes. And somebody else would implement LOT=true.
 

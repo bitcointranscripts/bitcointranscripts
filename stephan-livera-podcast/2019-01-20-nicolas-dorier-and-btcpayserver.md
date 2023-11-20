@@ -1,5 +1,5 @@
 ---
-title: Nicolas Dorier and BTCPayServer – self hosted Bitcoin and Lightning payments 
+title: Nicolas Dorier and BTCPayServer – self hosted Bitcoin and Lightning payments
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Nicolas Dorier']
