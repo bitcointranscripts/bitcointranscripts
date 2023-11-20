@@ -1,6 +1,6 @@
 ---
-title: Onion Routing Deep Dive 
-transcript_by: Arik Sosman 
+title: Onion Routing Deep Dive
+transcript_by: Arik Sosman
 tags: ['lightning', 'sphinx', 'onion', 'routing']
 categories: ['residency']
 speakers: ['Christian Decker']

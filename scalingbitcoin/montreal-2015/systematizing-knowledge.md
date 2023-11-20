@@ -25,13 +25,13 @@ What's the best forms of these? We could complain about the old IRC logs and mai
 - economics people, finance people (not necessarily banks)
 - lawyers
 
-Telling the bankers that the MOOCs exist, has been very helpful for legitimacy reasons. Students are an important audience because you want people who are coming into the community for the first time to be able to get up to speed faster. The SK paper was aiming at academics. There are other efforts. Educational materials is for undergrad-level or high-school-level students. And then there's finance industry, market reports. 
+Telling the bankers that the MOOCs exist, has been very helpful for legitimacy reasons. Students are an important audience because you want people who are coming into the community for the first time to be able to get up to speed faster. The SK paper was aiming at academics. There are other efforts. Educational materials is for undergrad-level or high-school-level students. And then there's finance industry, market reports.
 
-Gavin and Greg are probably the closest two who are interacting with academics. 
+Gavin and Greg are probably the closest two who are interacting with academics.
 
-Look up so that -- everyone knows about the cypherpunks movement, and it was the proto-bitcoin kind of ideas. Most of those mailing lists have visible logs. 
+Look up so that -- everyone knows about the cypherpunks movement, and it was the proto-bitcoin kind of ideas. Most of those mailing lists have visible logs.
 
-liberationtech, libtech, and another liberationtech... 
+liberationtech, libtech, and another liberationtech...
 
 Archival activity. gmaxwell/bryan has a project to index technologies and proposals.
 
@@ -45,7 +45,7 @@ Committed effort to improve the bitcoin wiki?
 
 For devs and for anyone that might run a full node or wallet, what the various pros and cons are of different proposals. Proposal summaries with greppable form, with different proposals linked to why we want this point, because we want this other feature. Argument map. Mind maps. Could be done as a wiki.
 
-You could see developer debate that happens on BIPs so that people could catch up faster. Systematizing whatever's not quite knowledge yet, like on the edge of controversy. We had to filter when writing a paper, we had to drop stuff that was brand-new ideas that had not percolated yet. 
+You could see developer debate that happens on BIPs so that people could catch up faster. Systematizing whatever's not quite knowledge yet, like on the edge of controversy. We had to filter when writing a paper, we had to drop stuff that was brand-new ideas that had not percolated yet.
 
 Vitalik often writes blog posts.
 

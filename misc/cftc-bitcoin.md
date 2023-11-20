@@ -13,7 +13,7 @@ Commodity Futures Trading Commission
 
 ## description
 
-Panel I: CFTC Clearing for Non-Deliverable Forwards (NDF) 
+Panel I: CFTC Clearing for Non-Deliverable Forwards (NDF)
 
 The first panel will discuss whether mandatory clearing should be required of NDF swaps contracts.  Each panelist will present and then there will be opportunity for broader discussion and questions.  Representatives from the CFTC, the Bank of England, and the European Securities and Markets Authority will also be joined by a subcommittee of experts on the foreign exchange markets who, although not presenting at the meeting, will participate in the broader discussion following the presentations.
 
@@ -61,7 +61,7 @@ To the extent that these are standaridzed contracts, those would be subject to t
 
 One of the striking facts that we need to address is that 99% of that is uncleared transactions. One of the five factors is that we are comfortable with the capacity for the clearinghouse's ability to take on those additional volumes. The next set of slides talk about LCH.. can yo ugo back one? LCH has filed some supplement data about the number of transactions they were clearing. Their original filing was done some time ago. The number of new trades that they have cleared through the beginning of this year.. Gavin can talk about the volumes that LHC has seen recently. The FCISEF tracker.. FIA SEF Tracker. 61% increase in the clearing of NDFs, we are seeing growht inregard to the activity of the SEFs.
 
-These last two slides here... commission regulations 50.25 sets forth an implementation schedule. The rule itself is that the implementation schedule is discretionary to the extent that we are considering a new asset class, I think staff would very much support using the implementation schedule that we have. If people don't recall how that works is, category 1 entities would need to begin clearing within 90 days, that's active funds, major swap participants... the active funds are more than 200 swap trades per month. Category 1 entities are all other financial participants, all other entities... 
+These last two slides here... commission regulations 50.25 sets forth an implementation schedule. The rule itself is that the implementation schedule is discretionary to the extent that we are considering a new asset class, I think staff would very much support using the implementation schedule that we have. If people don't recall how that works is, category 1 entities would need to begin clearing within 90 days, that's active funds, major swap participants... the active funds are more than 200 swap trades per month. Category 1 entities are all other financial participants, all other entities...
 
 The first clearing mandate that we should.. was the one on interest rate derivatives that was sent to the commission on the first of October. The second clearing mandate was the one on CDSes, and that is ongoing and we expect to deliver that around the end of November. The third clearing mandate is this one that we are discussing today on NDFs.
 
@@ -85,7 +85,7 @@ Most of the currency pairs we are discussing see several thousand trades per day
 
 I am not drawing conclusions about what the clearing mandate should look like. We want to look at... To that end, I support the thoughtful approach. That's what I wanted to highlight to the committee and I look forward to questions.
 
-I think we can start opening up questions to the rest of the membership here today. 
+I think we can start opening up questions to the rest of the membership here today.
 
 It might be worth, although it's addressed in some ways for a clearing mandate, if any of the participants might be willing to speak to the general benefits of imposing a mandate, apart from the technicalities of whether it would fit within the statute, it might be benefit to review for the public. Why would a clearing mandate be considered in the first place? What is it about clearing that's a positive as far as the public is concerned or the financial markets are concerned? How does a mandate fit into that for a NDF?
 

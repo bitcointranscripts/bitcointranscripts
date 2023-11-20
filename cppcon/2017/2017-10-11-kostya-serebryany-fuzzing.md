@@ -1,5 +1,5 @@
 ---
-title: Fuzzing 
+title: Fuzzing
 transcript_by: Michael Folkson
 categories: ['conference']
 date: 2017-10-11
@@ -21,7 +21,7 @@ Good afternoon and thank you for coming for the last afternoon session. I apprec
 
 # Agenda
 
-I hope to explain to you why we should be doing fuzzing. We will have several case studies related to fuzzing. I will discuss continuous and automated fuzzing which is a kind of magic. I will cover some of the challenges we face with adoption of fuzzing. I will not cover any deep technical details today. This is just a half hour talk. Your questions after the talk about any kind of detail are very welcome. 
+I hope to explain to you why we should be doing fuzzing. We will have several case studies related to fuzzing. I will discuss continuous and automated fuzzing which is a kind of magic. I will cover some of the challenges we face with adoption of fuzzing. I will not cover any deep technical details today. This is just a half hour talk. Your questions after the talk about any kind of detail are very welcome.
 
 # Testing vs Fuzzing
 
@@ -37,7 +37,7 @@ So why would you fuzz C++ code? Please wake up.
 
 # Hackers love C / C++
 
-One of the reasons why you would want your C++ code is because hackers love C and C++. The problem with this is that the hackers love C++ and C for different reasons. Not for the same reasons as you love C++. This animated gif shows you how fuzzing can find the Heartbleed bug in five seconds. For those of you who don’t remember Heartbleed is a bug that shocked the industry and the internet about three years ago. I presented [this](https://www.youtube.com/watch?v=qTkYDA0En6U) at CppCon two years ago. 
+One of the reasons why you would want your C++ code is because hackers love C and C++. The problem with this is that the hackers love C++ and C for different reasons. Not for the same reasons as you love C++. This animated gif shows you how fuzzing can find the Heartbleed bug in five seconds. For those of you who don’t remember Heartbleed is a bug that shocked the industry and the internet about three years ago. I presented [this](https://www.youtube.com/watch?v=qTkYDA0En6U) at CppCon two years ago.
 
 # Did he just say C / C++?
 
@@ -45,7 +45,7 @@ Did I hear any boos in the audience? Did I really say C / C++ at a C++ conferenc
 
 # C++ inherited memory safety bugs from C
 
-Yes I did say C / C++ because C++ unfortunately inherited a bunch of problems from the C language. The major one in my view is the set of memory safety bugs such as buffer overflows, use-after-frees, use of uninitialized memory and so on. Every time I say something like this “C++ inherited blah blah blah” I hear boos. 
+Yes I did say C / C++ because C++ unfortunately inherited a bunch of problems from the C language. The major one in my view is the set of memory safety bugs such as buffer overflows, use-after-frees, use of uninitialized memory and so on. Every time I say something like this “C++ inherited blah blah blah” I hear boos.
 
 # “Modern C++” doesn’t have memory safety problems
 
@@ -53,15 +53,15 @@ I hear “Modern C++ doesn’t have those things.” I heard this when C++ 11 ap
 
 # Can you spot the bug?
 
-This is modern C++. The class called `std::string_view` has just appeared in C++ 17. Who can spot the bug in this code snippet? Quite a few of you can spot the bug but quite a few of you cannot or are sleeping. 
+This is modern C++. The class called `std::string_view` has just appeared in C++ 17. Who can spot the bug in this code snippet? Quite a few of you can spot the bug but quite a few of you cannot or are sleeping.
 
 # Finding security bugs in C++17 code since 2011
 
-That is a buffer overflow. We are creating a temporary object which is a result of concatenating two strings. We take the reference to the temporary object in the `string_view` then the object is destroyed. Then we use the reference to the destroyed object. Oops. Any kind of sane memory error detection tool for C++ would report this bug if you execute this code while testing with this memory safety tool. 
+That is a buffer overflow. We are creating a temporary object which is a result of concatenating two strings. We take the reference to the temporary object in the `string_view` then the object is destroyed. Then we use the reference to the destroyed object. Oops. Any kind of sane memory error detection tool for C++ would report this bug if you execute this code while testing with this memory safety tool.
 
 # Even trickier
 
-Things get a little bit more sophisticated if you just remove a few characters from this example. Instead of using “Hellooooo” with many o’s, you use “Helloo” with just a few o’s and it will become a different bug. At least as it is implemented in lib C++ because this is now a short string optimization, no heap memory is involved. It is still a bug but slightly different. 
+Things get a little bit more sophisticated if you just remove a few characters from this example. Instead of using “Hellooooo” with many o’s, you use “Helloo” with just a few o’s and it will become a different bug. At least as it is implemented in lib C++ because this is now a short string optimization, no heap memory is involved. It is still a bug but slightly different.
 
 # Let’s fuzz some modern C++
 
@@ -101,7 +101,7 @@ I am very grateful to the Boost developers for fixing all of those bugs very pro
 
 # boost::regex added to OSS-Fuzz 5 days ago
 
-I have added boost::regex to the continuous fuzzing source which I am going to talk about in the next slide. It happened last Thursday evening because I was preparing my slides and I realized that something is missing on this slide. On Saturday 5 bugs appeared on the continuous fuzzing service in Boost. On Sunday evening two more popped up and one of them was actually a memory safety bug in Boost, stack buffer overflow. If anyone here is from Boost I will try to catch you tomorrow at the Boost dinner so that we can fuzz more of Boost. 
+I have added boost::regex to the continuous fuzzing source which I am going to talk about in the next slide. It happened last Thursday evening because I was preparing my slides and I realized that something is missing on this slide. On Saturday 5 bugs appeared on the continuous fuzzing service in Boost. On Sunday evening two more popped up and one of them was actually a memory safety bug in Boost, stack buffer overflow. If anyone here is from Boost I will try to catch you tomorrow at the Boost dinner so that we can fuzz more of Boost.
 
 # OSS-Fuzz: Fuzzing as a Service
 
@@ -109,7 +109,7 @@ A few words about the continuous fuzzing service I mentioned. The service is cal
 
 # OSS-Fuzz: 2000+ bugs in 60+ OSS projects
 
-This slide shows some of our trophies. In less than a year the service has provided 2000 bugs for more than 60 open source projects. This is the slide from months ago. Now the numbers are even better. As you can see there is a usual set of suspects. Memory safety bugs, buffer overflows and use-after-frees. But there are lots of other types of bugs like out-of-memory, timeouts, leaks. The largest section comes from the tool called UBSan, Undefined Behavior Sanitizer. These are basically signed integer overflows and shifts by large numbers like shifting left by 1000. 
+This slide shows some of our trophies. In less than a year the service has provided 2000 bugs for more than 60 open source projects. This is the slide from months ago. Now the numbers are even better. As you can see there is a usual set of suspects. Memory safety bugs, buffer overflows and use-after-frees. But there are lots of other types of bugs like out-of-memory, timeouts, leaks. The largest section comes from the tool called UBSan, Undefined Behavior Sanitizer. These are basically signed integer overflows and shifts by large numbers like shifting left by 1000.
 
 # What if my code is not open source?
 
@@ -129,11 +129,11 @@ Let’s take a look. A compiler is typically a series of building blocks. Roughl
 
 # Fuzzing a C++ compiler: structure-aware
 
-This is what we got. We have implemented the toy prototype for fuzzing where we know that the input is C++. This input that triggers an infinite loop in LLVM, it actually looks like C++. It is a subset of C but this is my toy prototype. All of the bugs we found this way, and we found a few, they trigger something inside the deepest levels of the compiler namely optimizer and code generator. 
+This is what we got. We have implemented the toy prototype for fuzzing where we know that the input is C++. This input that triggers an infinite loop in LLVM, it actually looks like C++. It is a subset of C but this is my toy prototype. All of the bugs we found this way, and we found a few, they trigger something inside the deepest levels of the compiler namely optimizer and code generator.
 
 # Structure-aware fuzzing with libFuzzer
 
-How do we do this? We need to provide a little bit of help to the fuzzer by implementing what we call a custom mutator. Most of the fuzzing engines typically mutate the day to day, consume in some trivial way like byte flipping and bit flipping. Instead we need to provide a function that takes the bag of bytes, parsing it into an abstract syntax tree or some other structure, implements one single mutation on that tree and feeds it back to the target that we want to fuzz. We also have a support [library](https://github.com/google/libprotobug-mutator) that does all of the above on the protobufs. A protobuf is a library that provides AST serialization and deserialization. We then hooked this library into clang so that we can fuzz C++ not protobufs. I won’t go into more details now but this was really simple and all of this code is in the LLVM trunk now so you can have a look. 
+How do we do this? We need to provide a little bit of help to the fuzzer by implementing what we call a custom mutator. Most of the fuzzing engines typically mutate the day to day, consume in some trivial way like byte flipping and bit flipping. Instead we need to provide a function that takes the bag of bytes, parsing it into an abstract syntax tree or some other structure, implements one single mutation on that tree and feeds it back to the target that we want to fuzz. We also have a support [library](https://github.com/google/libprotobug-mutator) that does all of the above on the protobufs. A protobuf is a library that provides AST serialization and deserialization. We then hooked this library into clang so that we can fuzz C++ not protobufs. I won’t go into more details now but this was really simple and all of this code is in the LLVM trunk now so you can have a look.
 
 # Fuzzing can find logical bugs too!
 
@@ -157,7 +157,7 @@ At Google we have reached quite good adoption of fuzzing. Not good enough, we ar
 
 # Adoption elsewhere: YMMV
 
-What about adoption outside of Google? Here it varies between the teams. I’ve just heard from one of the large C++ companies here at CppCon that they are using libFuzzer. Thank you guys but I want everyone here to use libFuzzer if it is applicable to your code. 
+What about adoption outside of Google? Here it varies between the teams. I’ve just heard from one of the large C++ companies here at CppCon that they are using libFuzzer. Thank you guys but I want everyone here to use libFuzzer if it is applicable to your code.
 
 # Fuzz-Driven Development
 
@@ -165,11 +165,11 @@ I started my career as a C++ developer 19 years ago. One of my first managers to
 
 # We need to make Fuzzing simpler
 
-We need to make fuzzing to make it more widely adopted. We’ll probably have to change the language, the IDEs, the compilers, the build system and whatever it takes to make it super easy. We need to make fuzzing as easy as putting one word in one place in your program. 
+We need to make fuzzing to make it more widely adopted. We’ll probably have to change the language, the IDEs, the compilers, the build system and whatever it takes to make it super easy. We need to make fuzzing as easy as putting one word in one place in your program.
 
 # Proposal: C++ attribute
 
-Here is my proposal that is not tested and not implemented but I want something like this to happen. Suppose that somewhere in your application you have an API function that consumes data. We want to slap an attribute on that function and have it fuzzed automatically by the build system, IDE, CI or whatever you have. `Data` and `Size` are not really C++. You would probably agree. We may want something more C++, maybe allow strings as parameters or maybe allow vectors of simple types as parameters. Or maybe allow any kind of types. But for any kind of types it becomes a little bit tricky because the fuzzer needs to know how to serialize and deserialize this data and optionally how to mutate this data. Then we will have to provide more stuff there. 
+Here is my proposal that is not tested and not implemented but I want something like this to happen. Suppose that somewhere in your application you have an API function that consumes data. We want to slap an attribute on that function and have it fuzzed automatically by the build system, IDE, CI or whatever you have. `Data` and `Size` are not really C++. You would probably agree. We may want something more C++, maybe allow strings as parameters or maybe allow vectors of simple types as parameters. Or maybe allow any kind of types. But for any kind of types it becomes a little bit tricky because the fuzzer needs to know how to serialize and deserialize this data and optionally how to mutate this data. Then we will have to provide more stuff there.
 
 # C++ Memory Safety > Fuzzing
 

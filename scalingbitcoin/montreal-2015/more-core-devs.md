@@ -12,7 +12,7 @@ Objectives:
 * 10x would only be like <1000 bitcoin developers
 * 7000 fedora developers
 * how do we grow developers?
-* 
+*
 
 how many tor developers? how many linux developers?
 

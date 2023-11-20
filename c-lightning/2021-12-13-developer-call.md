@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -30,7 +30,7 @@ Thank you, your reviews have been helpful too. I look forward to figuring out wh
 
 Congratulations.
 
-Most of my time went into figuring out the codebase of the front end. I have added the web socket button at the footer of the wallet and it redirects to a new page, then we enter the IP and runes and then it connects to the node. This is what I’ve done in recent days because the codebase is pretty huge. 
+Most of my time went into figuring out the codebase of the front end. I have added the web socket button at the footer of the wallet and it redirects to a new page, then we enter the IP and runes and then it connects to the node. This is what I’ve done in recent days because the codebase is pretty huge.
 
 This is Spark. This is extending some of the work you did beforehand. When you set up the Spark wallet you have to get a certificate and it uses the certificate to connect. In order to get the certificate you have to have a public domain name, you have to redirect port 80 or run it as root so that you can bind to port 80 to get the Let’s Encrypt certificate handshake, to connect Spark to your wallet. With Aditya’s earlier work that speaks the Lightning protocol in Javascript, instead of doing all this we had this idea that you could just connect to your Lightning node like anything else would and use the Lightning protocol to speak to it. We have this plugin called Commando that lets you run arbitrary commands like that. Our idea was to integrate that into Spark so that instead of doing all this you could just get the rune that Commando uses, basically a cookie, and give it the IP address and the node ID. Eventually it is in QR code form and then you could drive your node that way which is much more convenient than doing this whole setup and Let’s Encrypt certificate. Because our protocol is already encrypted and authenticated that provides you with the same security guarantees you’d have before. Nicely it allows you to have a read only version of Spark because you could hand out a rune that only gives read only access. There are a few twists along the way. One is that the codebase is really big and Aditya has had to wade through and figure all that out. But the other thing is Spark doesn’t actually work the way you’d write it in a modern way. It is a front end to c-lightning. You talk to this Spark server that implements some superset of commands. We want to speak to c-lightning so those commands that need to exist will have to be in a plugin so that you can refer to them like normal commands. There’ll be some work at the backend as well to make all these pieces work. Getting the bit where it actually connects through is huge so great to get that far. I am looking forward to that because I think it will make Spark a lot more usable. I had to give him access to my node to test this out because it has all the Spark backend pieces already set up. I checked and my money is still there which is good. It is my old tip jar, it became my c-lightning node. That powers that for the moment. What’s the next step now you’ve got it connecting?
 
@@ -56,13 +56,13 @@ It is a re-publication of an analysis of the Lightning Network census that we di
 
 This means you are more senior now, you don’t do the dirty work.
 
-If I was a professor I would claim full responsibility. 
+If I was a professor I would claim full responsibility.
 
 # Working towards an accounting plugin (continued)
 
 On the accounting work can you explain the highlights of the coin movements changes you’ve made in the PR? The UTXO view of onchain events has changed?
 
-Nothing has changed that you would see if you were a user of c-lightning. The biggest change has to do with structure of events that we are emitting them, when we emit them and the data that is contained inside of them. We have this notification that we have been emitting, it used to contain this data and be emitted on these certain times. Now it is getting emitted at slightly different times with slightly different data. That is the biggest thing that you as a user of a c-lightning would see with that PR applied. All of the UTXO view stuff has to do with test infrastructure etc. 
+Nothing has changed that you would see if you were a user of c-lightning. The biggest change has to do with structure of events that we are emitting them, when we emit them and the data that is contained inside of them. We have this notification that we have been emitting, it used to contain this data and be emitted on these certain times. Now it is getting emitted at slightly different times with slightly different data. That is the biggest thing that you as a user of a c-lightning would see with that PR applied. All of the UTXO view stuff has to do with test infrastructure etc.
 
 You’ve got to step back. We’ve had for a few years this infrastructure to trace all the coin movements but we really didn’t have a consumer of it. It was there, Lisa did it ages ago, we never finished it. When Lisa went to finish it she went “I don’t like the data it is producing. It doesn’t quite hit the spot”. So she went back, tore it up and did it the second time better. Hopefully this time we’ll get the part of the iceberg that pokes above the water done. The new version has some nicer properties that we discovered the first time round. It is that classic you have to write the first one so you can throw it away to write the second one kind of thing I think. From a user point of view this will finally happen I think, we will have this much more coherent view of what is going on.
 
@@ -72,7 +72,7 @@ One of the open problems with the first one was the whole if you’ve already be
 
 Is the commit message description outdated then? It says “Pivoting from a transaction ID based world to an outpoint based world”. Another one is “UTXO view of onchain events rather than fee amounts”.
 
-That’s correct. It is referring to the data that is emitted in the event. 
+That’s correct. It is referring to the data that is emitted in the event.
 
 # lnmetrics project
 
@@ -92,13 +92,13 @@ vincenzopalazzo: We also verify that the information came from the node by the s
 
 But it will just be c-lightning nodes running the plugin that have connected to your node? It is just collecting data on that subset of the network?
 
-vincenzopalazzo: Yes but not because I only want to support c-lightning. At the moment there is not a unique wrapper for all the nodes. If I want to call the `listchannels` or `listforwards` I need to add a wrapper, It is too much work for now to create the wrapper in Go etc. The commands are very stupid, `listchannels`, `listforwards`, not much that we cannot do for other implementations. 
+vincenzopalazzo: Yes but not because I only want to support c-lightning. At the moment there is not a unique wrapper for all the nodes. If I want to call the `listchannels` or `listforwards` I need to add a wrapper, It is too much work for now to create the wrapper in Go etc. The commands are very stupid, `listchannels`, `listforwards`, not much that we cannot do for other implementations.
 
 That’s future work but they will always have to connect to you or have a channel to your node to populate the site with the data from the nodes?
 
 vincenzopalazzo: No you only need to run the plugin inside c-lightning and add the link of my server. It is only a HTTP request to my server to add your data. This is giving me your view of the network, your list of channels etc. You don’t need a connection with my node and in reality I am not running a real node under the hood, under the server. I am verifying by hand the signature of the node.
 
-I am installing right now, thank you for the reminder. 
+I am installing right now, thank you for the reminder.
 
 I hope there isn’t a crash.
 
@@ -116,7 +116,7 @@ These projects are never straightforward, don’t worry. We are used to the arra
 
 # Individual updates (continued)
 
-I am working on networking issues mostly these past couple of days. lnd has been churning up a lot of dust with this tor skip proxy for clearnet targets = true setting which is an interesting thing that c-lightning already has. It makes Tor only nodes an option to connect out to the clearnet peers circumventing Tor through clearnet. When you are a Tor only node by default you are going through the proxy with every connection. A clearnet node would have an incoming connection through Tor through 4,5 hops which adds 1.5 to 7 seconds of delay. It is very easy to ping a IP address API that spits back a IP address to see how it works. Without a VPN I was having 0.3, 0.4 seconds to get to a server and back. This is not even Lightning, this is my node or computer doing it with my home internet connection. A VPN adds about 0.2, 0.3 seconds which is acceptable but Tor is making this 5 times more at least if we are lucky with the circuit. Running a routing node, this is an issue. Going into the c-lightning settings there is this always use proxy = true which we use for the Tor only nodes. If that would be put to false then the same thing happens, it would not use the proxy towards the clearnet nodes. This is an issue when someone is running a node at home because it would expose the IP address. But quite easily you can just download an open VPN configuration and with any of the VPN providers you can mask your home IP and get away with just that one hop. A subscription is needed but multiple nodes can be used on multiple devices. A firewall needs to be set up which can be done with IP tables. What we’d like is to put this into Raspiblitz so that people who are exposing their clearnet IP anyway, they can set this on and be reachable through Tor and clearnet. Or for someone who is more privacy focused they still could set up a public VPN subscription and still have this on and still have 3 times less lag on their payments or routing. It is a complicated issue because there are so many moving parts here. 
+I am working on networking issues mostly these past couple of days. lnd has been churning up a lot of dust with this tor skip proxy for clearnet targets = true setting which is an interesting thing that c-lightning already has. It makes Tor only nodes an option to connect out to the clearnet peers circumventing Tor through clearnet. When you are a Tor only node by default you are going through the proxy with every connection. A clearnet node would have an incoming connection through Tor through 4,5 hops which adds 1.5 to 7 seconds of delay. It is very easy to ping a IP address API that spits back a IP address to see how it works. Without a VPN I was having 0.3, 0.4 seconds to get to a server and back. This is not even Lightning, this is my node or computer doing it with my home internet connection. A VPN adds about 0.2, 0.3 seconds which is acceptable but Tor is making this 5 times more at least if we are lucky with the circuit. Running a routing node, this is an issue. Going into the c-lightning settings there is this always use proxy = true which we use for the Tor only nodes. If that would be put to false then the same thing happens, it would not use the proxy towards the clearnet nodes. This is an issue when someone is running a node at home because it would expose the IP address. But quite easily you can just download an open VPN configuration and with any of the VPN providers you can mask your home IP and get away with just that one hop. A subscription is needed but multiple nodes can be used on multiple devices. A firewall needs to be set up which can be done with IP tables. What we’d like is to put this into Raspiblitz so that people who are exposing their clearnet IP anyway, they can set this on and be reachable through Tor and clearnet. Or for someone who is more privacy focused they still could set up a public VPN subscription and still have this on and still have 3 times less lag on their payments or routing. It is a complicated issue because there are so many moving parts here.
 
 # CLBOSS
 
@@ -124,7 +124,7 @@ I am working on networking issues mostly these past couple of days. lnd has been
 
 Another thing is that people are coming to use c-lightning and the biggest attraction is CLBOSS because they realize it is too much to manage channels. People want to participate in the Lightning Network and they want to have a routing node, pay from their own node traveling to El Salvador or whatever, it is easily possible but to manage the node’s liquidity and receive payments it is work that some would never do. For people who are technical enough to do the management of the node but don’t want to focus on it it is a very good option and it seems to work very well. There is a lot of discussion, I have been in contact with Will Clark a lot about his suggestions and PRs for the CLBOSS repo on which nodes to open to. That is the biggest question. The channel sizes should be increased from what is in the last release, it shouldn’t open channels which are below 1 million or 2 million satoshis if there is enough liquidity onchain available. It seems to me that CLBOSS is easily performing as a beginner routing node manager, someone who would just sit down and open 5 channels and leave it as that. A channel would close, they would unbalance and their routing node wouldn’t work anymore. Instead of that it just manages it, a very good experience. It might even be related to the data we can collect with Vincenzo’s plugin. If there is some pattern towards which nodes we would like to open channels to for example, which could be incorporated into the logic of the peer selection of CLBOSS, that could be very useful and something that is a practical outcome of it.
 
-vincenzopalazzo: I am also talking with Z-man to see if this API can help on what data is usable. I was reading an issue, when rebalancing the channel put the money in the smallest channel because we don’t want to create centrality in the network. If you put a lot of money in a channel that doesn’t have enough capacity you have a problem. It is useful to know this information. 
+vincenzopalazzo: I am also talking with Z-man to see if this API can help on what data is usable. I was reading an issue, when rebalancing the channel put the money in the smallest channel because we don’t want to create centrality in the network. If you put a lot of money in a channel that doesn’t have enough capacity you have a problem. It is useful to know this information.
 
 There were very good discussions in the issues from fee rate estimation to this kind of peer selection. I understand you don’t want to just open the most simplistic to the biggest node but also you don’t want to end  up having dead ends with poorly connected peers.
 
@@ -160,27 +160,27 @@ CLBOSS interestingly once sent a whole pile of money out in Spark. It was doing 
 
 For monitoring RTL it does need to have the c-lightning REST repo installed and RTL but it does show the onchain movements, a richer interface than the Spark one.
 
-Spark is basically just about showing your own payments and what you’ve received rather than monitoring your node so that does make sense. 
+Spark is basically just about showing your own payments and what you’ve received rather than monitoring your node so that does make sense.
 
 Accounting fixes this.
 
-Yes. I look forward to my pretty accounting view of all this stuff. That is interesting though. Accounting will give us a view into what CLBOSS is doing which will be interesting. You can armchair quarterback a little bit more easily and say “Hold on. You opened this and I saw you spend this much in fees and we got this much out in Lightning fees. Was that really worth doing?” It is a problem with any kind of active management. You always wonder if you are spending more doing your active management than you are getting back. If you just did the dumb thing maybe you would be better. CLBOSS doesn’t seem to do a huge amount of work. It does spam my logs, it does a lot of monitoring but it doesn’t spend all my sats. 
+Yes. I look forward to my pretty accounting view of all this stuff. That is interesting though. Accounting will give us a view into what CLBOSS is doing which will be interesting. You can armchair quarterback a little bit more easily and say “Hold on. You opened this and I saw you spend this much in fees and we got this much out in Lightning fees. Was that really worth doing?” It is a problem with any kind of active management. You always wonder if you are spending more doing your active management than you are getting back. If you just did the dumb thing maybe you would be better. CLBOSS doesn’t seem to do a huge amount of work. It does spam my logs, it does a lot of monitoring but it doesn’t spend all my sats.
 
 What is best is it is aware of chain fees. It is waiting for 1 sat/vbyte, there was a discussion about it not opening a channel when the fee was 1.65 but it waited until it was 1.0. In the past two weeks it was often 1.0. It is dynamically aware of the mempool state so that is something that saves you time. Sometimes it is better to do this Sunday night.
 
 Has anyone actually looked at the CLBOSS code by the way?
 
-It is C++, I try. 
+It is C++, I try.
 
 vincenzopalazzo: I am trying to read some code. The only thing difficult for me is the multithreading and the asynchronous stuff. I don’t know the codebase very well.
 
 I am glad two people have cast an eye over it. I know it is C++ but I haven’t even opened any of the files. I have no idea what is going on inside at all.
 
-The issues are mostly about him explaining the logic on why these things happen. You should be able to point to the code but it is not that straightforward. 
+The issues are mostly about him explaining the logic on why these things happen. You should be able to point to the code but it is not that straightforward.
 
 I would have written it in Python myself. I think AI is probably a better fit for Python.
 
-For rebalancing there are two Python based scripts. One is done by [C-Otto](https://github.com/C-Otto/rebalance-lnd) who is running a big lnd node. That rebalances lnd. There is also [lndmanage](https://github.com/bitromortac/lndmanage) by bitromortac who is a physicist in Germany. Very nice software as well, it is very well laid out in the command line. Both are planning to do this kind of automated node management feature. That would be some competition from that side as well. The thing is that with dual funded channels c-lightning has better tools. 
+For rebalancing there are two Python based scripts. One is done by [C-Otto](https://github.com/C-Otto/rebalance-lnd) who is running a big lnd node. That rebalances lnd. There is also [lndmanage](https://github.com/bitromortac/lndmanage) by bitromortac who is a physicist in Germany. Very nice software as well, it is very well laid out in the command line. Both are planning to do this kind of automated node management feature. That would be some competition from that side as well. The thing is that with dual funded channels c-lightning has better tools.
 
 When we do multi-channels as well especially with fees low it does give you another thing for Z-man to play with. Of course if the peer supports dual funded channels that’s easier. And when we get splicing that will also allow him to do that. With everything else on my plate it is definitely not going to be this release. I keep promising the next release but maybe the next, next release. That would be cool.
 
@@ -188,10 +188,10 @@ CLBOSS’s last release was December 15th 2020. One year and two days.
 
 Let me check what version I am running. I think he runs weird versions on mine. 0.11b, whatever that is.
 
-0.10 is the release and considered to be stable. That is what people run on the Raspiblitz at least. 
+0.10 is the release and considered to be stable. That is what people run on the Raspiblitz at least.
 
 It is not even a Git repo. He is running a tagged release, he is not running straight from Git. It is good to see people contributing to that. As you say it does catch the low fee times when I am not going to be awake or doing other things. One of the things is I wanted to pull out some funds out of my node to start a new node and do an onchain transfer. It really wants to use all your UTXOs to build channels. I had to mug it, turn it off, restart c-lightning, close the channel manually and then move the funds out before it would steal them for opening new channels. It would be nice to say “CLBOSS make this payment but there is no hurry. I want to make this payment within a week, pay to this address” and have it figure out what to close and where to get the funds from. It would be cool to have a little bit more direction to it. At the moment it is get out the way and I’ll do all the stuff for you. I do wonder if it will eventually evolve into this much more high level direction where you give it some vague stuff. “I would like to take some funds out to cold storage” and it just figures out how to do it. Maybe eventually.
 
-At the moment it doesn’t close channels. It does in master but the release has no channel closing activated. 
+At the moment it doesn’t close channels. It does in master but the release has no channel closing activated.
 
 I really want a higher level, maybe I’ve got too much in my node and I want to move to cold storage because the price has gone up or whatever but I’m not in a hurry. I want it done in a week or a month or something. Because it already knows onchain fees and can figure out which channels to close it makes more sense than what I did which is pick two channels that look about the right size and close them and move the funds. That was really dumb, I probably chose the wrong ones. You are right, he needs to do another Christmas release. Bother him for that.

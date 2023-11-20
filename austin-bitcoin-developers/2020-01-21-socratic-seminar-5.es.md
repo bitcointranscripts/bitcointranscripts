@@ -21,7 +21,7 @@ Así que solemos empezar con una demostración de un proyecto basado en un rayo 
 
 Esta no es una idea original para mí. Fue presentada por roasbeef, cofundador de Lightning Labs en la conferencia Lightning del pasado octubre. Trabajé en un proyecto que hacía algo similar. Cuando presentó esto como una especificación más formalizada, tuvo mucho sentido basado en lo que yo estaba trabajando. Así que acabo de terminar una versión inicial de una herramienta que pone esto en práctica y permite a la gente construir sobre esto. Voy a dar un breve resumen de lo que puede hacer con esto.
 
-Un resumen rápido. Voy a hablar de las claves de la API y el estado de la autenticación hoy en día. A continuación, lo que son los macarrones, que son una gran parte de cómo funcionan las LSATs. 
+Un resumen rápido. Voy a hablar de las claves de la API y el estado de la autenticación hoy en día. A continuación, lo que son los macarrones, que son una gran parte de cómo funcionan las LSATs.
 
 LSAT es un token de autentificación del servicio lightning..
 
@@ -75,7 +75,7 @@ LSAT sería útil para un proveedor de servicios que aloja blogs de diferentes a
 
 Pondré algunas diapositivas en la página de la reunión.
 
-# Seminario socrático 
+# Seminario socrático
 
 Esto va a ser un repaso rápido de las cosas que están sucediendo en el desarrollo de bitcoin. Yo facilitaré esto y hablaré de los temas, y sacaré algo de conocimiento de la audiencia. Sólo entiendo como el 10% de esto, y algunos de ustedes entienden mucho más. Así que interrúmpeme y salta, pero no des un discurso.
 
@@ -91,7 +91,7 @@ Este es el trabajo de Jeremy Rubin. La idea es que es una propuesta de pacto par
 
 Es bastante interesante. Estuve en Londres y me reuní con estos tipos. Tienen una implementación completa de esto en python. Era agradable y simple, no estoy seguro si es de código abierto todavía. Hay como tres implementaciones de watchtower ahora, y deben ser estandarizadas.
 
-## Estafa de PlusToken 
+## Estafa de PlusToken
 
 ErgoBTC hizo algunas investigaciones sobre la estafa PlusToken. Fue una estafa en China que obtuvo como 200.000 BTC. La gente que la dirigía no era sofisticada. Así que trataron de hacer alguna mezcla... pero barajaron sus monedas de mala manera. Los atraparon. Algún whitehat lo descubrió y fue capaz de rastrear dónde salían los fondos de un intercambio y demás. Aquí hay un hilo de Twitter que habla de cómo el movimiento de estos BTC podría haber afectado al precio. Hace un mes, algunos de los chicos fueron atrapados. La teoría de este tipo es que detuvieron a los subordinados, y el que tenía las llaves no fue detenido. Así que la mezcla continuó, claramente este otro tipo tiene las llaves. También tenían un montón de ETH y fue movido como hace un mes, y el mercado se asustó- el precio de ETH cayó. Así que tal vez tomó una gran posición corta, y luego movió las monedas, en lugar de vender. 200.000 BTC es mucho, realmente se puede mover el precio con esto.
 
@@ -109,7 +109,7 @@ Aquí hay un sitio de datos de rayos. Pierre tenía el nodo número uno. Tiene c
 
 Jameson Lopp tiene algunas comparaciones de implementación de bitcoin. Esto es un análogo. Se trata de las diferentes versiones de Bitcoin Core como la v0.8 y siguientes. A continuación, analiza cuánto tiempo tarda la descarga del bloque inicial, para el blockchain actual.  Hay otro para el tiempo que tarda en sincronizarse con el blockchain en la fecha en que fue lanzado. Hubo una gran caída cuando cambiaron de openssl a libsecp256k1. Entonces era enormemente más performante.
 
-## Atajos inseguros en MuSig 
+## Atajos inseguros en MuSig
 
 Se trata de parte de la interactividad en Schnorr MuSig. Hay tres rondas en este protocolo. En este artículo, él está discutiendo todas las maneras que usted puede estropear con él. MuSig es bastante complejo y hay un montón de armas de pie, que es el resumen aquí supongo.
 
@@ -117,23 +117,23 @@ Se trata de parte de la interactividad en Schnorr MuSig. Hay tres rondas en este
 
 Multisig en el concepto es conseguir algunas entidades diferentes, donde se puede hacer en la cadena multisig o fuera de la cadena multisig donde se agregan las firmas juntos y se unen. Estos chicos tienen algo así, pero las claves rotan con el tiempo. Puedes tener un escenario en el que todas las partes pierden una clave durante un año determinado, pero como las claves son rotativas, ninguna de ellas pierde una cantidad mínima por encima de una determinada cantidad. Así que el monedero seguiría conservándose aunque todas las personas hayan perdido sus claves. Esto se llama "compartir el secreto proactivamente". Parece que sería más práctico hacer 3-de-5 y simplemente configurar un nuevo 3-de-5 cuando 1-de-5 lo pierde. A Binance le gusta esto porque es la compatibilidad de shitcoin que les gusta. Ledger también.
 
-## Ataque a la tarjeta fría 
+## Ataque a la tarjeta fría
 
 La forma en que este ataque funciona es que puedes engañarlo para que genere una dirección de cambio en algo como esto... una ruta de derivación en la que tomas el hijo número 44, 0 endurecido, y luego el último es un número enorme. Entonces lo pones en una hoja muy al borde de la clave privada, de tal manera que sería difícil encontrarla de nuevo si la buscas. Técnicamente sigues siendo dueño de las monedas, pero sería difícil gastarlas. Así que era un exploit inteligente. Básicamente, un atacante puede convencer a tu tarjeta fría de que está siendo enviada a "tu" dirección, pero en realidad es una ruta bip32 aleatoria o algo así. Ningún monedero de hardware actualmente rastrea las direcciones de cambio que dan. Así que la idea es restringirlo a alguna brecha de búsqueda... no ir más allá de la brecha o algo así. O podría estar en un sitio web generando un montón de direcciones, por adelantado, para los usuarios o los pagos o algo así. También había algo sobre 32 bits + 1 o algo así, más allá del valor MAX.
 
-## Error de Trezor 
+## Error de Trezor
 
 Trezor tenía un error en el que si tenías una... si estabas tratando de hacer una salida single-sig, y luego tenías una entrada multi-sig y luego un cambio multi-sig, podías inyectar tu propia dirección de cambio multisig o algo así. Tu máquina anfitriona podría hacer esto. Esto fue como hace un mes o un mes y medio. No muestran el cambio, si es que lo tienes. En este escenario, la dirección de cambio de multisig es algo que no posees, y debería tratar eso como un gasto doble o algo así. Esto era un exploit remoto. Trató la dirección multisig de otra persona como tu dirección. Simplemente no se incluyó en el cálculo de la tarifa o algo así.
 
-## Hilo de Monero 
+## Hilo de Monero
 
 Alguien tiene un hash malo en su software. Así que es una historia de detectives tratando de averiguar lo que salió mal, como si el sitio web es malo o algo así. Resulta que el binario era malicioso. Puedes ver el trabajo de detective en tiempo real. Alguien fue capaz de conseguir el binario y hacer algunos análisis. Se añadieron dos funciones; una de ellas enviaría su semilla al atacante. Así que si ejecutas este binario y tienes algún monero, entonces el atacante ahora tiene ese monero. Es bastante fascinante. El binario llegó al sitio web de Monero. Eso es bastante aterrador. Este es un buen ejemplo de por qué necesitas comprobar las firmas y los hashes cuando descargas una cartera. Monero estaba sirviendo esto a la gente que estaba descargando el software. Era getmonero.org que estaba sirviendo el malware. Es interesante que tuvieran acceso al sitio, y no actualizaran los hashes md5 o algo así. Bueno, tal vez pensaron que los usuarios comprobarían el sitio web y no el binario que realmente descargaron.
 
-## Detenciones de intercambiadores de SIM 
+## Detenciones de intercambiadores de SIM
 
 Esto era sólo un artículo de noticias. El SIM swapping es cuando entras en una tienda de Verizon y dices que tienes un número, y entonces ponen tu número de teléfono en tu teléfono y entonces puedes robar el bitcoin de alguien o lo que sea. Utilizan las preguntas habituales como cuál es tu nombre de soltera y otra información pública.
 
-## Ataque de Vertcoin 51% 
+## Ataque de Vertcoin 51%
 
 Esto ha sucedido ya dos veces. Tuvimos una discusión cuando esto ocurrió hace seis meses. De alguna manera esta moneda sobrevive a los ataques del 51%. ¿Por qué sobreviven? Tal vez es tan especulativo que la gente se encoge de hombros. ¿Qué pasa con el bitcoin o el ethereum que son atacados en un 51%? Así que tal vez todo es comercio especulativo, o los usuarios son demasiado estúpidos o algo así.
 
@@ -151,15 +151,15 @@ OpenSSL fue eliminado por completo. Comenzó en 2012. Mucho de esto aceleró la 
 
 Es una mejor manera de hacer la selección de monedas al componer las transacciones. Quiere optimizar las comisiones a largo plazo. Así que escribió su tesis para demostrar que esta sería una buena forma de hacerlo. Murch también señaló que la selección aleatoria de monedas era realmente mejor que la solución de aproximación estocástica.
 
-## joostjager - enrutamiento permitir ruta ... 
+## joostjager - enrutamiento permitir ruta ...
 
 Puedes pagar a alguien incluyéndolo en una ruta, sin que tenga que darte una factura. Alex Bosworth creó una biblioteca para hacer esto. Tienes que estar directamente conectado a ellos; así que puedes dirigirte a ti mismo a una persona con la que estés conectado.
 
-## Último salto opcional a los pagos 
+## Último salto opcional a los pagos
 
 Así que aquí puedes decir, puedes definir una ruta diciendo quiero pagar a esta persona y el último salto tiene que ser del punto n-1 al n. Así que si por alguna razón quieres, como si no confiaras en alguien... Entonces quería pagarle, pero quería elegir quién era el último salto. Aunque no sé por qué querrías hacer eso.
-	
-## lnrpc y otros comandos rpc para lnd 
+
+## lnrpc y otros comandos rpc para lnd
 
 ## joinmarket-clientserver 0.6.0
 
@@ -291,7 +291,7 @@ El gran punto de esta charla fue: no se puede hacer hash del hardware. Puedes ha
 
 ## Conferencia y charlas de la CCC
 
-## SHA-1 colisión 
+## SHA-1 colisión
 
 Por 70k dólares fueron capaces de crear dos claves PGP, usando la versión heredada de PGP que usa sha-1 para el hash, y fueron capaces de crear dos claves que tenían diferentes ids de usuario con certificados que colisionaban.
 

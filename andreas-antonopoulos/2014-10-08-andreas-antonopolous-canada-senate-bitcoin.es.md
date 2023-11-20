@@ -2,7 +2,7 @@
 title: Senado de Canadá Bitcoin
 speakers: ['Andreas Antonopoulos']
 date: 2014-10-08
-transcript_by: Bryan Bishop 
+transcript_by: Bryan Bishop
 translation_by: Blue Moon
 tags: ['seguridad']
 ---
@@ -206,7 +206,7 @@ AA: mPesa es fascinante porque ha demostrado lo que es posible cuando se introdu
 Senador: Muchas gracias Sr. Presidente. Me gustaría agradecerle esta contribución. Es extremadamente útil. Me gustaría pasar a algunos puntos finales. Me gustaría aprovechar sus comentarios derivados de lo que preguntó el senador Ringette. Hemos estado explorando la oportunidad de innovación para Canadá si lo hacemos bien. ¿Cuál es esta oportunidad?
 
 AA: Creo que hay dos aspectos en esto. Está la investigación pura y las capacidades tecnológicas que puedan existir en la esfera de Bitcoin. Una de las cosas que me gusta destacar es que no es sólo dinero para Internet. Bitcoin es el dinero de internet. La moneda es la primera aplicación. La moneda funciona en la red de confianza descentralizada basada en la tecnología blockchain. La moneda bitcoin es casi lo mismo que el correo electrónico en los años 90. Permitió el crecimiento de Internet. Fue la aplicación asesina que hizo que valiera la pena que la gente se involucrara. Pero no nos abrió los ojos a las infinitas posibilidades, la web, Facebook, Twitter, cosas así. Bitcoin, la moneda, es la punta del iceberg, es la prototecnología que la llevará a los consumidores. Habrá otras aplicaciones. Desde el punto de vista de la investigación y la innovación, es increíble. Las posibilidades de ampliar los servicios bancarios también son importantes. Canadá tiene bolsillos... cerca del 18% de la población en Estados Unidos tiene capacidades bancarias muy limitadas. Hay bolsas dentro de este país que tienen muy poco acceso a los bancos. Creo que la combinación de investigación primaria e innovación en estas nuevas tecnologías, y la bancarización de nuevas partes desfavorecidas de la población es muy potente, sobre todo si aprovechamos el carácter internacional de la moneda.
-	
+
 Senador: ¿Cómo se equivocó el estado de Nueva York?
 
 AA: Creo que se han equivocado en muchos aspectos. Uno de ellos es que se han apresurado a regular muy pronto. Otra es al regular bitcoin exactamente igual que el sistema bancario actual y no ver las diferencias entre bitcoin y el sistema actual. La única analogía que se me ocurre es si en el proto internet, la comisión federal de comunicaciones en los Estados Unidos decidiera que internet requería que cada operador de sitios web tuviera una licencia. Este resultado habría destruido casi con toda seguridad la industria de Internet en los EE.UU., sin embargo no habría impactado en la industria de Internet en todos los demás lugares, sino que habría empujado la innovación a otros lugares. Tratar el Bitcoin como una cuenta bancaria de lujo es un error. Regularlo como tal lo ahoga. Lo pone en el campo de juego de los incumbentes, pone en lugares las mismas regulaciones, y nos obliga a comportarnos más como un banco, y sin embargo su característica única es que no es un banco.

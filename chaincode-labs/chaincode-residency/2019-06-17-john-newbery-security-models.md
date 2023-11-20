@@ -1,5 +1,5 @@
 ---
-title: Security Models 
+title: Security Models
 transcript_by: Caralie Chrisco
 tags: ['security', 'taproot', 'cryptography']
 categories: ['residency']
@@ -9,9 +9,9 @@ media: https://youtu.be/6gGcS4N5Rg4
 ---
 
 Topic: Security Models
-  
+
 Location: Chaincode Labs 2019 Residency
-  
+
 Slides: <https://residency.chaincode.com/presentations/bitcoin/security_models.pdf>
 
 John Newbery: Alright, Security Models. This is going to be like a quick whistle-stop tour of various things, very high-level view. I'm going to start by giving you some kind of framework to think about things. So in cryptography, we often talk about security proofs in terms of existing schemes, we talk about assumptions.

@@ -1,5 +1,5 @@
 ---
-title: P2P Encryption 
+title: P2P Encryption
 date: 2019-06-07
 aliases: ['/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/']
 transcript_by: Bryan Bishop

@@ -1,5 +1,5 @@
 ---
-title: Sidechains & Blockstream Liquid 
+title: Sidechains & Blockstream Liquid
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Allen Piscitello']

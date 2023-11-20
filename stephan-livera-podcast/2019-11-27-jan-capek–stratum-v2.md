@@ -1,5 +1,5 @@
 ---
-title: Stratum v2 Bitcoin Mining Protocol 
+title: Stratum v2 Bitcoin Mining Protocol
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Jan Čapek']

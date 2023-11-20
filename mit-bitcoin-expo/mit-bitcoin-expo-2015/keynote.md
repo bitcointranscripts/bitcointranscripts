@@ -83,7 +83,7 @@ Q: Are there any ways to stop the fees from going higher?
 
 A: Decentralization costs more. It is more efficient to run a centralized system. To have everyone keep track of the blockchain is expensive. I think that fees will have to go up. There's only so much you can increase the block size by, at some point people are ust doing a lot of work for very little money. So the economics have to make sense. The fees have to go up.
 
-Q: 
+Q:
 
 A: It is not that related to the difficulty for miners. That's controlled by how many people are mining (WRONG- it's the hashrate, not people). Difficulty will go down.
 

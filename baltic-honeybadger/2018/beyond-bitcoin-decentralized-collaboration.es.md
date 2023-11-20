@@ -1,5 +1,5 @@
 ---
-title: Más allá de Bitcoin - Colaboración descentralizada 
+title: Más allá de Bitcoin - Colaboración descentralizada
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

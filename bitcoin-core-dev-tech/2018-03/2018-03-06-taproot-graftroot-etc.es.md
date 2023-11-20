@@ -121,5 +121,5 @@ Digamos que tienes un soft-fork que añade la agregación de la firma. Y luego h
 
 Las salidas de los testigos son de hasta `40 bytes`, podemos tratar los últimos `8 bytes` como más número de versión. Esa es la razón por la que está ahí. Podrías simplemente decir, los `v1` se agregan aquí, los `v2` se agregan allí, los `v3` se agregan allí... Y entonces no necesitamos hacer nada de este baño de sangre de ejecución condicional.
 
-¿Cuántas horquillas suaves estás buscando? Si juntas la agregación de firmas con taproot y graftroot, entonces podría tomar más tiempo. Para cuando lleguemos a la `v16`, estaremos muertos. Los soft-forks podrían ser cada vez más difíciles de desplegar.      
+¿Cuántas horquillas suaves estás buscando? Si juntas la agregación de firmas con taproot y graftroot, entonces podría tomar más tiempo. Para cuando lleguemos a la `v16`, estaremos muertos. Los soft-forks podrían ser cada vez más difíciles de desplegar.
 

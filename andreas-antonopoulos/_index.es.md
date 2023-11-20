@@ -1,5 +1,5 @@
 ---
-title: Andreas Antonopoulos 
+title: Andreas Antonopoulos
 ---
 
 {{< childpages >}}

@@ -1,5 +1,5 @@
 ---
-title: Acumular Bitcoin 
+title: Acumular Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

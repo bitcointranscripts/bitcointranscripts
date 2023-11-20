@@ -1,5 +1,5 @@
 ---
-title: Signmessage 
+title: Signmessage
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['wallet']

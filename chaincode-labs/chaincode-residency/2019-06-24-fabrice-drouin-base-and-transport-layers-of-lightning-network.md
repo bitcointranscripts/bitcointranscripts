@@ -1,5 +1,5 @@
 ---
-title: Base and Transport Layers of the Lightning Network 
+title: Base and Transport Layers of the Lightning Network
 transcript_by: Duncan Dean
 categories: ['residency']
 tags: ['lightning']

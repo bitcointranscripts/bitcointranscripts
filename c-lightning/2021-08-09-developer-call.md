@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -56,7 +56,7 @@ I have generated the Javascript for different functions. I have tested them agai
 
 I have a PR for you to pull the test vectors out from the Python code. I am writing a parallel version in Python, ideally we will share test vectors. Some of them are from the spec. I started pulling in the spec as an external module so there is a PR coming your way that makes it a little bit easier to share all that data which is nice. I think everyone is looking forward to the npm, that’ll be cool.
 
-I am working on adding [offer](https://bolt12.org/) support on c-lightning REST and then planning to add experimental offers functionality on the [RTL](https://github.com/Ride-The-Lightning/RTL) UI as well. Thinking through the UX and the different scenarios on how to handle offers, both generate offers and if somebody pays an offer how to set up a recurring payment, what type of UX. I’m working on the backend right now, c-lightning REST and then figuring out an experimental UI for offers. 
+I am working on adding [offer](https://bolt12.org/) support on c-lightning REST and then planning to add experimental offers functionality on the [RTL](https://github.com/Ride-The-Lightning/RTL) UI as well. Thinking through the UX and the different scenarios on how to handle offers, both generate offers and if somebody pays an offer how to set up a recurring payment, what type of UX. I’m working on the backend right now, c-lightning REST and then figuring out an experimental UI for offers.
 
 Interestingly Nadav (shesek) is working on integrating with [Spark](https://github.com/shesek/spark-wallet). He’s hit the same kind of problems. His initial release which will come out soon, he is waiting for the final c-lightning release, when that comes out it won’t support recurrence. All the big UX questions are around the recurrence stuff. He is going to have the basic offers and he is hoping in the next release he will get recurrence. It requires local storage, have timers and things like that that are a whole new set of UX challenges. Obviously that is what everyone wants.
 
@@ -84,17 +84,17 @@ It is worth mentioning that the dual funding is it is only in the open protocol.
 
 Does it require a closing of the dual funded channel? And then a reopening?
 
-No. 
+No.
 
 If you want them to give you liquidity and you already have a channel with them you would need to close your current channel and then have them reopen a channel where they put liquidity into it.
 
 Yes, we only support a single live channel with a peer at the moment. That’s independent of anything else.
 
-For future releases, when we have splicing in theory it might be possible to renegotiate something with a splice instead of a close and reopen. 
+For future releases, when we have splicing in theory it might be possible to renegotiate something with a splice instead of a close and reopen.
 
 That’s the bit ACINQ really want, they want splicing really badly. Very excited about this release, recommended upgrade for everyone. It has been a long release cycle, much longer than normal. I am hoping the next one will be shorter.
 
-I was curious about limiting the max HTLC size. Why would you want to do that? When I open channels it is so I can route as large HTLCs as possible. 
+I was curious about limiting the max HTLC size. Why would you want to do that? When I open channels it is so I can route as large HTLCs as possible.
 
 Because of the escape hole. If you pay me for liquidity and I use everything except the reserve, 99 percent of it, one huge HTLC. Then I drop it onchain unilaterally and the HTLC times out in 3 days. I can get that back in 3 days because the HTLCs are not encumbered with the lease timeout. Normally the deal is you’ve paid me for liquidity, I can’t get my money back for a month. But there is a hole and that is the HTLCs. If you limit the number of HTLCs in flight at one time you reduce the size of that hole that I can get back. Also using up all your liquidity simultaneously at once is not the real case you are going for usually. You probably want this liquidity to last some period of time. These days with MPP, even if they can only use part of the liquidity they can use something else as well. Usually you are opening more liquidity than you expect from a single payment although maybe you’re not. Maybe you are only after that one payment and that’s why you need the liquidity, in which case perhaps that’s fine. In that case you don’t care if they keep it for a month or not. The main reason is that the HTLC is not encumbered by the extra delay that you’ve agreed on the lease.
 

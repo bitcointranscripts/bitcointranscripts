@@ -1,5 +1,5 @@
 ---
-title: Merkleized Abstract Syntax Trees - MAST 
+title: Merkleized Abstract Syntax Trees - MAST
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['taproot', 'covenants', 'validation']

@@ -1,5 +1,5 @@
 ---
-title: Code Review 
+title: Code Review
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 date: 2019-06-05
@@ -60,7 +60,7 @@ The high-priority list for review is sometimes really hard for reviewers, they a
 
 The big important PRs don't get reviews because they are too complicated to understand. The 5 PR limit doesn't address that in any way. What would address it? Smaller PRs, maybe. You should be able to comment partially on a PR and come back to it later. At Facebook, when they make a PR, they review it commit by commit, and every commit that gets reviewed gets immediately merged in. But this might not work for us, like refactoring commits if the end result isn't going to go anywhere. If you do it commit-by-commit, the PRs get smaller, and you get things merged in.
 
-On the 5 PR limit, right now I have open PRs and right now I don't have a reason to push people. But if I have a limit then I have to start pushing people. Concept ACK vs nit stuff, I haven't thought about it, I am going ot think about it, but I am not going to go in and write a bunch of nits. 
+On the 5 PR limit, right now I have open PRs and right now I don't have a reason to push people. But if I have a limit then I have to start pushing people. Concept ACK vs nit stuff, I haven't thought about it, I am going ot think about it, but I am not going to go in and write a bunch of nits.
 
 Do we want to make the in-meeting decide high priority for reviews be automatic concept ACKs? Like you have a right during the meeting to argue that something should be on the list? Some people can't be present in the meeting, so you can't make it so that you must defend it during the meeting. The author should make a clear case in the PR. In the meeting, they can reference the PR and then you click on it and see the motivation. The person who puts it on the high priority list should either verify it's been concept ACKs, or say it needs concept ACKs. Deciding what goes on the high priority list, if it's "everyone gets to nominate one" then we don't need a meeting for that. It feels like a useful use of meeting time to use that meeting to concept ACK things. But there's the issue of not everyone can be present all the time. There shouldn't be final decisions in the meeting, but discussing things is fine. Bugfixes before a release, those should be automatically concept ACKed. Maybe in github, have subprojects for high priority.
 

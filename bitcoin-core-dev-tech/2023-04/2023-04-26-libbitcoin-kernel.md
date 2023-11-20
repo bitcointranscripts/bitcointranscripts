@@ -15,7 +15,7 @@ Q: bitcoind and bitcoin-qt linked against kernel the libary in the future?
 
 Q: Have you looked at an electrum implementation using libbitcoinkernel?
 
-- audience: yes, would be good to have something like this! 
+- audience: yes, would be good to have something like this!
 - audience: Also could do the long proposed address index with that?
 - audience: not only address index, other indexes too.
 
@@ -45,7 +45,7 @@ Q: Presenter: Feedback on approach to building smaller PoC in private to find ou
 
 - (no responses)
 
-Q: Many places that call shutdown. Errors should bubble up with "this function called shutdown". 
+Q: Many places that call shutdown. Errors should bubble up with "this function called shutdown".
 
 - audience: To do this, we'd have to change a lot of code - huge diff.
 - audience: we can use a scripted-diff which makes review easier.

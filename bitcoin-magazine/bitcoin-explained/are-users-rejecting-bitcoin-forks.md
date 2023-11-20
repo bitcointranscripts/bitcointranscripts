@@ -14,15 +14,15 @@ Aaron: Live from Utrecht, this is **Bitcoin, Explained**. Hey Sjors.
 
 Sjors: What's up?
 
-Aaron: Sjors Provoost, Bitcoin Core contributor and author. 
+Aaron: Sjors Provoost, Bitcoin Core contributor and author.
 
-Sjors: Oh yes. 
+Sjors: Oh yes.
 
-Aaron: Congratulations! 
+Aaron: Congratulations!
 
-Sjors: Thank you. 
+Sjors: Thank you.
 
-Aaron: Your new book, [Bitcoin: A Work in Progress](https://www.btcwip.com/) is now available on Amazon? 
+Aaron: Your new book, [Bitcoin: A Work in Progress](https://www.btcwip.com/) is now available on Amazon?
 
 Sjors: On everywhere. You go to [btcwip.com](https://www.btcwip.com/), which is Work in Progress. There's links to various Amazons and other sites where you can hopefully buy the book.
 
@@ -36,9 +36,9 @@ Sjors: That's right.
 
 Aaron: We are gonna discuss **URSF**s which stands for **U**ser-**R**esisted **S**oft **F**ork or **U**ser-**R**ejected **S**oft **F**ork. I think it's sort of settling on user resisted soft fork but the acronym is the same anyways so URSF.
 
-Sjors: Well a rejection is an outcome and resistance is an attempt, right? Well, I guess you can succeed in either. 
+Sjors: Well a rejection is an outcome and resistance is an attempt, right? Well, I guess you can succeed in either.
 
-Aaron: So, wait, which one do you prefer then? 
+Aaron: So, wait, which one do you prefer then?
 
 Sjors: Well, I would say rejected, because then you say we actually rejected it.
 
@@ -78,7 +78,7 @@ Sjors: Okay.
 
 # Dealing with miners
 
-Aaron: All right. So basically, ideally, we want miners to signal and to activate the soft fork that way. And that's how it has been done with previous soft forks, definitely before SegWit, that's how we did soft forks. And the reason for that is that if miners enforce the soft fork, then you are sure that the network stays in consensus because even non-upgraded nodes will follow the majority chain. The problem with this, and we've talked about this in previous episodes, I'm not gonna rehash all of it, but in short the problem with this is that it allows miners to block the upgrade. Miners can just refuse to signal and then the soft fork, the upgrade, doesn't happen. Okay, now there's three ways to deal with that situation. 
+Aaron: All right. So basically, ideally, we want miners to signal and to activate the soft fork that way. And that's how it has been done with previous soft forks, definitely before SegWit, that's how we did soft forks. And the reason for that is that if miners enforce the soft fork, then you are sure that the network stays in consensus because even non-upgraded nodes will follow the majority chain. The problem with this, and we've talked about this in previous episodes, I'm not gonna rehash all of it, but in short the problem with this is that it allows miners to block the upgrade. Miners can just refuse to signal and then the soft fork, the upgrade, doesn't happen. Okay, now there's three ways to deal with that situation.
 
 Aaron: **Option one** is to accept that miners have a veto. You just agree that miners should be allowed to block a soft fork. That's one option. That's an opinion you can have. And there are people that have this opinion. Okay. That's optional. I don't like this option, but I think inherently the rules of Bitcoin are defined by the users when they accept money. I will define which rules I want my money to adhere to. And the miners are more like commodity producers. And if they don't produce the blocks that I want, then I'm just not going to value whatever coins they mine. I think users are fundamentally in control of the system, but you can be of the opinion, you can have a different opinion.
 
@@ -116,7 +116,7 @@ Aaron: But that's exactly where the URSF comes in, in a minute. We're getting th
 
 Sjors: Okay, so option one was you just accept the unpleasant fact that miners could not signal. Option two is you just start enforcing the new rules without any signaling. Option three...
 
-Aaron: And **option three** – that's essentially what BIP 148 was in the SegWit context, which is mandatory signaling. So that's the UASFs that we've seen and that we remember and that we've done podcasts on. It's when your node mandates signaling at some point. 
+Aaron: And **option three** – that's essentially what BIP 148 was in the SegWit context, which is mandatory signaling. So that's the UASFs that we've seen and that we remember and that we've done podcasts on. It's when your node mandates signaling at some point.
 
 Sjors: And the advantage over that, over option two, is that now you know exactly when the conflict is going to happen, because you know what block should signal and not. So you're not waiting until the rules are actually violated, you're already having the fight in the signaling phase. And a secondary benefit is that because the signaling is mandatory, if the signaling therefore happens and everybody understands what's going on, whether or not they're running the mandatory signaling client.
 
@@ -134,7 +134,7 @@ Sjors: Well, right now, I mean, I think there was somebody before Taproot activa
 
 Aaron: Yeah. And then the other thing you said is if there are other nodes on the network that are just looking at the signaling but won't mandate it, then they can also be activated through this UASF. Some people would consider it a detriment. I don't really understand why personally, but I've seen that argument.
 
-Sjors: Well, in any case, that's relevant in the case where a small minority or anyway, a minority releases such a UASF client. In the case where Bitcoin Core releases a UASF client, I would guess there is no other group. It's just everybody would be running that. There wouldn't be somebody running a regular BIP 9 optional signaling client. 
+Sjors: Well, in any case, that's relevant in the case where a small minority or anyway, a minority releases such a UASF client. In the case where Bitcoin Core releases a UASF client, I would guess there is no other group. It's just everybody would be running that. There wouldn't be somebody running a regular BIP 9 optional signaling client.
 
 Aaron: Right. Exactly.
 
@@ -252,7 +252,7 @@ Sjors: It's true. I guess the difference between a 51% attack and a soft fork in
 
 Aaron: Yeah, I mean if we wanted to, but I'm not sure if we want to. Essentially this sort of gets to a philosophical discussion of what is even Bitcoin, like what are the Bitcoin rules, what is a full node, and in that sense, this is sort of how I would define it, I guess.
 
-Sjors: You do not want to be the first person to run a hard fork that stops enforcing SegWit, basically. So that's sort of a mechanism that keeps enforcing the rules that are activated in a soft fork. But those rules would actually have to be in the code and they're in the code that miners run, they're in the code that exchanges run, they're in the code that users run. And if you want to be the first one to relax those rules, it's usually not a good place, so you'd really have to organize that. 
+Sjors: You do not want to be the first person to run a hard fork that stops enforcing SegWit, basically. So that's sort of a mechanism that keeps enforcing the rules that are activated in a soft fork. But those rules would actually have to be in the code and they're in the code that miners run, they're in the code that exchanges run, they're in the code that users run. And if you want to be the first one to relax those rules, it's usually not a good place, so you'd really have to organize that.
 
 Aaron: Yeah, well, what I was going to say is I would maybe even argue or make the case that the way I would define the protocol upgrade is there needs to be something on the blockchain that signals that and that can be recognized as such so people can either upgrade to the new rules or reject it. At this point, the discussion is getting philosophical.
 
@@ -262,9 +262,9 @@ Aaron: They usually are, I think, Sjors.
 
 Sjors: Well, sometimes we have a very clear concept that we're going to explain, and it's a little bit less philosophical.
 
-Aaron: This was a bit different than usual, yeah. 
+Aaron: This was a bit different than usual, yeah.
 
-Sjors: Anyhow, that all? 
+Sjors: Anyhow, that all?
 
 Aaron: I think that was it.
 

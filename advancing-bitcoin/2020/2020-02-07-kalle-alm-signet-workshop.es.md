@@ -8,13 +8,13 @@ categories: ['taller']
 tags: ['taproot', 'testing']
 ---
 
-Tema: Taller Signet 
+Tema: Taller Signet
 
-Localización: El avance de Bitcoin 
+Localización: El avance de Bitcoin
 
-Vídeo: No se ha publicado ningún vídeo en línea 
+Vídeo: No se ha publicado ningún vídeo en línea
 
-# Preparémonos 
+# Preparémonos
 
 ```
 mkdir workspace
@@ -108,7 +108,7 @@ P - ¿Qué hace la bandera -C?
 
 R - Acelera la configuración cuando se ejecuta varias veces porque se almacenan en caché todas las salidas. Pero creo que hay un problema con libsecp que hace que esto sea un problema la primera vez. Puedes prescindir de -C.
 
-# Controles remotos  
+# Controles remotos
 
 Su bifurcación de Bitcoin Core git@github.com:user/bitcoin.git
 
@@ -131,15 +131,15 @@ Ahora mismo Signet no está en Bitcoin Core, lo que causa complicaciones. El [Si
 
 Debido a que Signet no está fusionado todavía, hay una rama `signet`. Tan pronto como se fusione con Bitcoin Core ya no tendremos eso. En nuestro GitHub creamos una rama de Signet y luego creamos una rama `signet-vanilla-taproot` (signet y parámetros de red). Tenemos una rama `taproot` que es la de sipa. Luego creamos una rama `signet-taproot`. Esta es la característica (`taproot`) fusionada sobre `signet-vanilla-taproot`.
 
-# Ramas (después de la fusión de firmas) 
+# Ramas (después de la fusión de firmas)
 
 Una vez que se fusione no tendremos una rama `signet`.
 
-# Ramas (futuro) 
+# Ramas (futuro)
 
 En el futuro sólo tendremos una rama de característcas (`taproot`) (característica de los parámetros de signet). Hoy en día va a ser un poco quisquilloso, pero vamos a ver hasta dónde llegamos.
 
-# La rama signet 
+# La rama signet
 
 Nosotros ya hemos hecho esta parte y tú ya deberías haber construido esta rama.
 
@@ -158,7 +158,7 @@ git fetch upstream pull/16411/head:signet
 git checkout signet
 ```
 
-# La rama signet-vanilla-feature 
+# La rama signet-vanilla-feature
 
 (Creamos esto una vez y luego basamos nuestra rama signet-feature en ella. Si acabamos queriendo reajustar signet-feature lo hacemos recreando en base a esta rama).
 
@@ -276,7 +276,7 @@ Este es el resultado del OP_CHECKSIG. Puedes ver algunas cosas aquí. Es una pub
 
 P - ¿Esta es la parte del árbol de Merkle? No proporcionas todo el script, sólo proporcionas la ruta que estás ejecutando..
 
-R - Sí. Esto funciona exactamente como la raíz Merkle dentro de las transacciones, excepto que hay algunos ajustes con los bytes de versión y otras cosas. 
+R - Sí. Esto funciona exactamente como la raíz Merkle dentro de las transacciones, excepto que hay algunos ajustes con los bytes de versión y otras cosas.
 
 Si lo miras así, no estás ahorrando mucho espacio, pero tienes que recordar que estas cosas son todos blobs grandes, valores de 32 bytes. Si miras aquí ves que esta cosa es bastante grande. Si no tienes que mostrar uno de estos estás ahorrando espacio y ahorrando tasas. Es una gran mejora. Si todo el mundo está de acuerdo puedes gastarlo como si fuera una pubkey normal. Eso es un gran ahorro de privacidad y de tasas. Nadie va a poder separar tus cosas personalizadas con una pubkey normal si todos están de acuerdo. Piensa en un canal de pago en Lightning, ¿cuántas veces la otra persona no está de acuerdo en cerrar un canal? Por lo general, son como "Ok". Normalmente se utiliza la clave pública y se acaba con ella. En este ejemplo yo tengo la clave privada, normalmente no la tienes. La forma de hacerlo es usar MuSig o algo así para crear la clave privada interna. De esta manera nadie sabe realmente la clave privada, pero todavía se puede gastar. No llegué tan lejos como esperaba pero espero que al menos tengas un comienzo.
 

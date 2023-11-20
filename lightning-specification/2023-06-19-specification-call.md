@@ -33,7 +33,7 @@ Speaker 0: But that's because you use only 32 bits of HMAC. So, can you explain 
 
 Speaker 1: It's not that much to - sorry, what did you say?
 
-Speaker 0: To grind. To make sure that you have only 2 to 32. 
+Speaker 0: To grind. To make sure that you have only 2 to 32.
 
 Speaker 1: I think they cannot grind, can they? Because they have no way to know whether the HMAC that they create is correct. Only the sender is able to verify. So, it would not be grinding, but this would be more like guessing.
 
@@ -43,11 +43,11 @@ Speaker 1: Yeah. But if you'll say, it doesn't really matter. We want 32 bytes o
 
 Speaker 2: There's definitely a latency win to one or two packets definitely has a marked latency win. But I don't know. That's something I need to check carefully, right? Because you're really blurring the lines when you start going: Oh, we'll throw out some cryptographic assumptions. But if we're right, and it is a pure guess, it does sound appealing.
 
-Speaker 3: I agree. It'd be nice to do - what was the number of hops that you defaulted to previously? Because the other thing we can do, right, is we can say: Well, there's two options for the number of hops. And the first one is max seven or whatever, which basically everything is anyway. And then, anything more than that, you fall back to this huge size. 
+Speaker 3: I agree. It'd be nice to do - what was the number of hops that you defaulted to previously? Because the other thing we can do, right, is we can say: Well, there's two options for the number of hops. And the first one is max seven or whatever, which basically everything is anyway. And then, anything more than that, you fall back to this huge size.
 
 Speaker 1: In the previous proposal, I went for 27, like the presumed maximum. But now I try to - actually [Redacted] did all this preparatory work - but I've been playing with that myself also a little bit. I settled for 20 hops and four byte HMACs because that ends up with a 1200 byte failure message. Obviously, you can also make it fewer hops than that. What I currently do is - in pathfinding, I don't look at this feature at all. I just look for the best path. And once the best path is found, I'm going to check all the node features, if all the nodes support attribute-divider errors, and the route length is below the maximum supported by the structure of the failure message, then it's going to be used. But if you put it to seven, and we would find the route as nine hops, then the LND implementation, at least as I'm proposing now...
 
-Speaker 3: Sure, but the network diameter is like seven, right? Or something like that today? It's not very wide. So, even if we don't have to do - seven is obviously aggressive - but you could do 15, 12, you know. There are other mediums that we could pick if we don't want to go down to 4 bytes and would instead do 16. 
+Speaker 3: Sure, but the network diameter is like seven, right? Or something like that today? It's not very wide. So, even if we don't have to do - seven is obviously aggressive - but you could do 15, 12, you know. There are other mediums that we could pick if we don't want to go down to 4 bytes and would instead do 16.
 
 Speaker 1: Yeah, I think one thing that's also important is when I was still at 12 kilobytes, it felt big and it seems that we needed to add some parameters to tailor to whatever the sender prefers because of its bandwidth. But then, people already raised the objection: Okay, this is introducing a fingerprinting factor because you can look at what is requested, so you know something about the sender. And if you can just make the whole thing overall smaller, then maybe there's no need for parameterization. So, in the current implementation, I just removed all the parameters. The sender is only signaling to every hop that it wants attributable errors, and then the parameters are just fixed in the spec to whatever we want them to do.
 
@@ -57,7 +57,7 @@ Speaker 1: Yeah, but I think if this story about the game theory and guessing, i
 
 Speaker 3: Yeah. It's worth talking about in New York. I agree. I think. Yeah.
 
-Speaker 1: The other thing is I also tried to simplify - I started simple and I make it complicated; and now, try to simplify it again - is the format of the payload of the intermediate nodes. So, they can all attach data to the return packet. Initially. I just had four bytes to hold a hold time in milliseconds. And then, I switched to a TLV format to make it extensible, but also not really extensible because the length is fixed. So, the sender would communicate the maximum number of bytes, and then all the routing nodes would put a TLV stream in there. But, you need communication about: Okay, what should the node put in there? It just felt like: Do we really want this now? So, I reverted back to just four bytes for a whole time. Also, because there seems to be not much inspiration for whatever else we can put in that field other than the whole time. Currently, we're signaling this attributable error thing with an empty TLV record in the forward pass. If in two years time, we change our minds and we decide that: No, no, we need more space. Maybe we can just add a byte in there, or use a different QV record to signal: Okay, now this new format, and go from there. 
+Speaker 1: The other thing is I also tried to simplify - I started simple and I make it complicated; and now, try to simplify it again - is the format of the payload of the intermediate nodes. So, they can all attach data to the return packet. Initially. I just had four bytes to hold a hold time in milliseconds. And then, I switched to a TLV format to make it extensible, but also not really extensible because the length is fixed. So, the sender would communicate the maximum number of bytes, and then all the routing nodes would put a TLV stream in there. But, you need communication about: Okay, what should the node put in there? It just felt like: Do we really want this now? So, I reverted back to just four bytes for a whole time. Also, because there seems to be not much inspiration for whatever else we can put in that field other than the whole time. Currently, we're signaling this attributable error thing with an empty TLV record in the forward pass. If in two years time, we change our minds and we decide that: No, no, we need more space. Maybe we can just add a byte in there, or use a different QV record to signal: Okay, now this new format, and go from there.
 
 Speaker 3: I was a fan of the extensible format there. It is fixed size, and we have to pick a size and we have to pay for that size. But again, we pay a privacy penalty every time we add a bit here, and I'm not a huge fan of paying another one. If we end up needing one extra bit, like why not? The TLV overhead sucks because for TLV, we have another two bytes per field for the TLV. But I don't know, I mean, kind of why not? I don't see a huge reason to rip it out. It's not like we have to, it's not like we would commit to, you know, 64 bytes or something for each hop. We'd do something smaller for constraint, but hey, at least we have flexibility.
 
@@ -71,7 +71,7 @@ Speaker 2: Yeah. Middle-endian. We need some different endians in there just to 
 
 Speaker 3: Yeah. Just like in stratum.
 
-Speaker 2: Yeah. So, the per hop is completely a linear function, isn't it? So, you know, if we were to go from four to eight, it would basically be adding another four by 20 bytes. 
+Speaker 2: Yeah. So, the per hop is completely a linear function, isn't it? So, you know, if we were to go from four to eight, it would basically be adding another four by 20 bytes.
 
 Speaker 1: So much of change now that. I think whatever we decide here, I think everything is just going to work. And even if we make the wrong choice, then we can sort of correct it later on, but at the expense of flagging another bit indeed. But I am a little bit worried about having all these options, and we need to talk about that for a long time before we finally get to make it. So I'm a bit - well, we see New York how it goes. Maybe we can just settle on something and just go for that. I think especially with the smaller sizes, it does feel - even though maybe rationally you would say like bandwidth is not so important - it does feel a lot better to me if it's just one kilobyte, 1.5 kilobytes, it's almost the same as forward onion. And it feels better, but maybe it's just emotional. I'm not sure.
 
@@ -81,7 +81,7 @@ Speaker 1: Oh, you mean failures?
 
 Speaker 3: I think I'm ready to say we should finalize this in New York. It seems ready. Seems like it's time.
 
-Speaker 1: OK, let's do it now. 
+Speaker 1: OK, let's do it now.
 
 Speaker 2: Yeah, and we'll debate all the details. We'll come up with some happy numbers. I'm going to have to validate that there's no hole in your theory about four byte HMAC 'cause it feels it's a slippery slope, right? Why not three bytes? Why not three bytes? Definitely not two bytes, you know, like...
 
@@ -91,7 +91,7 @@ Speaker 2: Two bytes, no. Two bytes starts to get - I don't know. The point is t
 
 Speaker 1: Yeah, I know, but then 65,000 times, you're not going to nail it, and then you're penalized all these times. So, and then it's a little bit lossy anyway. Like this whole reputation thing. So yeah. Maybe one byte is enough.
 
-Speaker 3: No, we just gonna do three bits. 
+Speaker 3: No, we just gonna do three bits.
 
 Speaker 1: Yeah, Three bits. Okay.
 
@@ -127,7 +127,7 @@ Speaker 0: Alight, perfect. So, do we want to discuss one of the other PRs? Is t
 
 Speaker 1: I have one question, not related to PRs and also not related to New York. So in my little project about the annex, I got to know this thing a little bit better. And I wondered: Are there any implications for taproot channels in Lightning? So, just assume that annex is standard without restrictions. Let's say that's just like an alternative node that allows all the annexes as long as it is consensus valid. Like, what does this mean? I think typically, the problems occur when somebody is stuffing that annex. So, let's say you've got a dual funded channel, and then the final signer - it's stuffed that annex - and then it brings the fee rate right down. And then the other party sees their coins locked, for example. But I'm not sure what else there is. It seems mostly focused around that, because if there's just a single sign or you're only increasing the size of the transaction, but it's your own transaction. And we're just wondering if there's like any like crossover there with what's happening in Lightning currently.
 
-Speaker 0: On the fee rate staking issue, I think that even without that, the last signer can already increase the size of his witnesses or he has other ways to make sure that the transaction is bigger than expected. So, that's an issue anyway. I don't think the annex will make it worse. So I think it's an issue anyway. 
+Speaker 0: On the fee rate staking issue, I think that even without that, the last signer can already increase the size of his witnesses or he has other ways to make sure that the transaction is bigger than expected. So, that's an issue anyway. I don't think the annex will make it worse. So I think it's an issue anyway.
 
 Speaker 1: So, before CoinJoin, they were talking about the mitigation, where a participant needs to reveal their complete taptree, so that you can verify that the source of the coins does not allow any spend path that includes 1MB JPEG.
 
@@ -243,13 +243,13 @@ Speaker 4: Yeah, the main reason is it's kind of annoying to send nonces just to
 
 Speaker 3: Yeah, I mean, I think you just increase the probability of a forced close, right? That nodes no longer can signal: Hey, here's the range. But you can do it without sending the nonce, right? You can just not sign in the first closing sign, send a range, and then the non-initiator can respond either with 'yes, here's the value out of your range that I'm okay with' or they can respond with 'goodbye, I'm force closing now.'
 
-Speaker 4: Okay, so send the fee without the SIG, I guess. That also works. 
+Speaker 4: Okay, so send the fee without the SIG, I guess. That also works.
 
 Speaker 3: I mean, that's basically no different than today. It just means one more hop for the SIG. That's not a big deal.
 
 Speaker 4: Yeah, okay. We'll go with that.
 
-Speaker 2: I think you can ack with the value and the SIG, right? Because you need both SIGs, right? I think that works. 
+Speaker 2: I think you can ack with the value and the SIG, right? Because you need both SIGs, right? I think that works.
 
 Speaker 3: Probably.
 
@@ -259,7 +259,7 @@ Speaker 0: Didn't you also have an idea on how to use interactive TX to build ac
 
 Speaker 2: Yes, there are some subtleties But I think we did have a variant proposal where we basically end up with two closing transactions.
 
-Speaker 0: Yeah, I don't know how painful it is to actually manage the state for something like that. 
+Speaker 0: Yeah, I don't know how painful it is to actually manage the state for something like that.
 
 Speaker 2: I think I convinced myself it was okay. But we need to think about it again. Thanks for remembering that.
 
@@ -277,7 +277,7 @@ Speaker 2: Yeah, me too. But it has the no disagreement property, right? You don
 
 Speaker 4: Yeah, it seems like someone would only force close if the force close fee was higher than the co-op close fee. Is that true?
 
-Speaker 0: Lower, you mean? 
+Speaker 0: Lower, you mean?
 
 Speaker 2: No, because the force close fee is paid by one side at the moment. So, the original panel...
 

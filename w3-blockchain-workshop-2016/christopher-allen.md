@@ -87,7 +87,7 @@ Talking does not equal communication. I see a lot of familiar faces in the room.
 
 # Table 12
 
-We were talking about the distinction on deliberating about a solution and coming to a consensus about what the solution ought to be. Often these two are confused, and people will push to finalize something before it has been fully deliberated. You might look at the debates about block size. I am from the UK. If you turn on the news, you might see something about the dangers of voting before delibrating. 
+We were talking about the distinction on deliberating about a solution and coming to a consensus about what the solution ought to be. Often these two are confused, and people will push to finalize something before it has been fully deliberated. You might look at the debates about block size. I am from the UK. If you turn on the news, you might see something about the dangers of voting before delibrating.
 
 # Table 13
 

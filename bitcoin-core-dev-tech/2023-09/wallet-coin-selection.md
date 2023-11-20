@@ -12,20 +12,20 @@ date: 2023-09-19
         * Consolidation with payment
             * Alternative: Use sendall with two outputs one with an amount and yours without an amount
         * Payment and send at least X to yourself
-        * Consolidate with automatic coin selection of at least X 
+        * Consolidate with automatic coin selection of at least X
             * Alternative: Implement "Send at least" as a separate and explicitly feature
     * Consider just giving an error if change destination is the same with one of the outputs
         * Should we do the enforcement only at RPC level?
-            * No, because this is risky 
+            * No, because this is risky
     * We don't want to fix manual RBF, because we have bumpfee RPC
         * Maybe you can also take original TX and give to fundrawtransaction
 * **Topic:  https://github.com/bitcoin/bitcoin/pull/26732**
-    * CreateTransactionInternal should remove UTXOs conflicting with preselected  
+    * CreateTransactionInternal should remove UTXOs conflicting with preselected
 * **Topic: Where do we make change decisions? During tx building or coin selection?**
     * Whether we create change, how big it is and the type
     * We determine the size of the change twice
-        * One time to feed into coinselection 
-        * Second time when we do the actual tx building 
+        * One time to feed into coinselection
+        * Second time when we do the actual tx building
     * One approach is to let coinselection pick change type
     * Conclusion so far: Status quo remains
 * **Topic: Bug when BnB produce change https://github.com/bitcoin/bitcoin/issues/28180**

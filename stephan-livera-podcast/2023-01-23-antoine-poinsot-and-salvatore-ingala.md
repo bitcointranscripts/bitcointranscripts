@@ -22,7 +22,7 @@ Stephan :
 
 So I know you guys are both building out some stuff in Miniscript. Obviously, software and hardware. And I know this is an interesting area, there’s been a bit of discussion about it, but there’s also been some critique about it as well. So I’d be interested to get into this with you guys, but maybe first if we could start. What was your interest like, why did you get interested in this idea of Miniscript?
 
-Antoine 
+Antoine
 
 For me, it was starting working in revolts and actually having the responsibility of developing the projects and tinkering with bitcoin scripts and thinking, well, I’m not going to take the responsibility of writing bitcoin scripts by hand. So I needed framework to do that safely.
 
@@ -94,7 +94,7 @@ Stephan :
 
 Sorry, you’re right, I think I explained that poorly. But I mean is like you could have your own personal set up and in a way the Miniscript is indifferent to whether I just had one single device or whether I’m having a two of three actually in the background. It doesn’t really matter. As long as I satisfy the condition, the script doesn’t care.
 
-Antoine 
+Antoine
 
 Yeah, exactly.
 

@@ -1,5 +1,5 @@
 ---
-title: If I'd Known What We Were Starting 
+title: If I'd Known What We Were Starting
 translation_by: Julien Urraca
 tags: ['history']
 speakers: ['Ray Dillinger']

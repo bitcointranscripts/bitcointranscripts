@@ -1,5 +1,5 @@
 ---
-title: C-Lightning API 
+title: C-Lightning API
 transcript_by: Michael Folkson
 tags: ['lightning', 'c-lightning']
 categories: ['residency']
@@ -18,7 +18,7 @@ Good morning from the last day of presentations. I’m Chris still. Today I will
 
 # Goals
 
-First of all the goals of c-lightning are basically to be fast and lightweight. We want you to be able to deploy this on Raspberry Pis, on big beefy server machines, on your laptops, wherever you sort of have a stable connection. There you give the best utility to the rest of the network. We want c-lightning to be flexible and customizable because we don’t think that we will guess the exact configuration that you will need. We want to give you the tools to adapt it to your own needs. We want to optimize for power users. There’s plenty of options for Lightning nodes to run on home devices, on mobile phones. While we can do that we will know how to optimize for that. We want to be the server backend running big services on top of this. 
+First of all the goals of c-lightning are basically to be fast and lightweight. We want you to be able to deploy this on Raspberry Pis, on big beefy server machines, on your laptops, wherever you sort of have a stable connection. There you give the best utility to the rest of the network. We want c-lightning to be flexible and customizable because we don’t think that we will guess the exact configuration that you will need. We want to give you the tools to adapt it to your own needs. We want to optimize for power users. There’s plenty of options for Lightning nodes to run on home devices, on mobile phones. While we can do that we will know how to optimize for that. We want to be the server backend running big services on top of this.
 
 # TL;DR I want my node now
 
@@ -30,7 +30,7 @@ sudo apt-get update
 sudo apt-get install lightningd
 ```
 
-Then you can start lightningd. Notice that by default we still have the testnet as the network configuration. We also encourage people to enable `log-level=debug` because that gives us loads of information should anything go wrong. We can help you try to debug whatever happened. 
+Then you can start lightningd. Notice that by default we still have the testnet as the network configuration. We also encourage people to enable `log-level=debug` because that gives us loads of information should anything go wrong. We can help you try to debug whatever happened.
 
 `lightningd —network=bitcoin —log-level=debug`
 
@@ -38,7 +38,7 @@ If you can also pipe this output into a file because it scrolls by really fast. 
 
 `lightning-cli getinfo`
 
-`lightning-cli help` will give you all the possible JSON RPC calls that you can invoke with this. You should be ok. 
+`lightning-cli help` will give you all the possible JSON RPC calls that you can invoke with this. You should be ok.
 
 Q - It does not include bitcoind as a dependency?
 
@@ -78,7 +78,7 @@ A - gossipd is there as a central store for network information.
 
 Q - There were plans to externalize the gossip so that separate Lightning daemons could utilize the same gossipd?
 
-A - The question is whether we have plans to externalize gossipd. gossipd is external currently. It currently starts a new gossipd for each c-lightning instance but you could potentially merge that into one big gossipd if you run hundreds of c-lightning nodes. You can also just have a small stub that talks to a centralized server. That gets rid of a lot of duplication in your infrastructure because gossipd is actually the thing that uses the most memory in all of this. It is only scarcely used. You could potentially just centralize that and have it talk to some routing service that is external. 
+A - The question is whether we have plans to externalize gossipd. gossipd is external currently. It currently starts a new gossipd for each c-lightning instance but you could potentially merge that into one big gossipd if you run hundreds of c-lightning nodes. You can also just have a small stub that talks to a centralized server. That gets rid of a lot of duplication in your infrastructure because gossipd is actually the thing that uses the most memory in all of this. It is only scarcely used. You could potentially just centralize that and have it talk to some routing service that is external.
 
 # JSON-RPC Interface
 
@@ -88,9 +88,9 @@ What I didn’t mention too much is we have a JSON-RPC. Why JSON? It is really e
 
 Q - Is there anything that is preferable to develop a plugin over the CLI?
 
-A - With respect to plugin versus CLI, as long as whatever we do fits into your model and the automated way of interacting with c-lightning, accepting payments, creating invoices and all of that stuff, works for you don’t write a plugin. Just be a JSON-RPC client. If you want to customize how c-lightning interacts with the rest of the world and you don’t want to have a separate thing that you need to make sure runs you can write a plugin and have this slightly more tight integration with c-lightning. 
+A - With respect to plugin versus CLI, as long as whatever we do fits into your model and the automated way of interacting with c-lightning, accepting payments, creating invoices and all of that stuff, works for you don’t write a plugin. Just be a JSON-RPC client. If you want to customize how c-lightning interacts with the rest of the world and you don’t want to have a separate thing that you need to make sure runs you can write a plugin and have this slightly more tight integration with c-lightning.
 
-JSON-RPC clients, we have the [Python JSON-RPC client](https://pypi.org/project/pylightning) which is the most up to date. It is also what we use for testing internally. This will actually be always on par with the c-lightning implementation. We have the [Javascript client](https://github.com/ElementsProject/lightning-charge) which is part of Lightning Charge. Lightning Charge is basically one of these services that expose the JSON-RPC over the network. It is a NodeJS service that exposes both a JSON-RPC over HTTP as well as a REST over HTTP service. If you feel more comfortable with REST you can use that. If you feel more comfortable with JSON-RPC you can take the library part of Lightning Charge. I have written a tiny [Go wrapper](https://github.com/cdecker/kugelblitz) that is so out of date that I feel awkward just talking about it. If you really just want to hack with c-lightning there is also the option of using socat on the shell. Mind you, you will have to write JSON messages and valid JSON-RPC calls but you could potentially run stuff from the shell as well. 
+JSON-RPC clients, we have the [Python JSON-RPC client](https://pypi.org/project/pylightning) which is the most up to date. It is also what we use for testing internally. This will actually be always on par with the c-lightning implementation. We have the [Javascript client](https://github.com/ElementsProject/lightning-charge) which is part of Lightning Charge. Lightning Charge is basically one of these services that expose the JSON-RPC over the network. It is a NodeJS service that exposes both a JSON-RPC over HTTP as well as a REST over HTTP service. If you feel more comfortable with REST you can use that. If you feel more comfortable with JSON-RPC you can take the library part of Lightning Charge. I have written a tiny [Go wrapper](https://github.com/cdecker/kugelblitz) that is so out of date that I feel awkward just talking about it. If you really just want to hack with c-lightning there is also the option of using socat on the shell. Mind you, you will have to write JSON messages and valid JSON-RPC calls but you could potentially run stuff from the shell as well.
 
 # Invoicing/Receiving Payments
 
@@ -104,7 +104,7 @@ lightning-cli waitinvoice [label]
 lightning-cli waitanyinvoice [last-pay-index]
 ```
 
-To wait for invoices we have the `lightning-cli listinvoices`. That’s just basically a huge list of all invoices. Or you could also specify a label in which case it will just show this one invoice. We have ‘waitinvoice’ followed by label if you want to wait for a specific invoice to be paid. That’s a way to do it. If you have a lot of pending invoices you are probably better off with the `waitanyinvoice` which gives you the next invoice that is completed after the `last-pay-index`. What you can do is I receive a payment, this payment has a payment index and in the meantime more payments come in and then if you just want the next one you can add the `last-pay-index` which will give you the next one. If there has already been a next invoice that has been paid you will get that one. If there was no next payment then this will block until an invoice is paid. This is just acting as a message queue for you to consume invoices that have been paid. 
+To wait for invoices we have the `lightning-cli listinvoices`. That’s just basically a huge list of all invoices. Or you could also specify a label in which case it will just show this one invoice. We have ‘waitinvoice’ followed by label if you want to wait for a specific invoice to be paid. That’s a way to do it. If you have a lot of pending invoices you are probably better off with the `waitanyinvoice` which gives you the next invoice that is completed after the `last-pay-index`. What you can do is I receive a payment, this payment has a payment index and in the meantime more payments come in and then if you just want the next one you can add the `last-pay-index` which will give you the next one. If there has already been a next invoice that has been paid you will get that one. If there was no next payment then this will block until an invoice is paid. This is just acting as a message queue for you to consume invoices that have been paid.
 
 `lightning-cli delexpiredinvoice [maxexpiry]`
 
@@ -138,13 +138,13 @@ lightning-cli waitsendpay [payment_hash]
 
 For example if you want to create a special route that drops off more money like Rene did a few days ago you can use `getroute` and that will give you a JSON description of the path that the payment might take. You can actually edit that however you’d like. Be careful if you reduce the fee amounts or something like that. The forwarding node might not forward it anymore. You can do fun stuff like concatenate two routes from A to B and then B to A and create circles and all of that fun stuff. If you really want to do that there are really nice things we can do with this like lotteries over Lightning. Have me trigger some coin flip on a gambling service and then getting the payout in the form of a Lightning payment. `sendpay` will actually take the route that you just created with `getroute` and given a payment hash will attempt to pay that route with that payment hash. And `waitsendpay` is again a way for you to wait for this payment to succeed.
 
-Q - Is routes a list of…? 
+Q - Is routes a list of…?
 
-A - Routes is a list of dicts and the dict contains the CLTV that should be applied at that place, the amount of satoshis that should be forwarded and which channel to use obviously. That’s basically what the onion looks like when you receive it and decrypt it and now need to forward it. What CLTV should I use, how many satoshis should I forward and which channel of my five should I use? 
+A - Routes is a list of dicts and the dict contains the CLTV that should be applied at that place, the amount of satoshis that should be forwarded and which channel to use obviously. That’s basically what the onion looks like when you receive it and decrypt it and now need to forward it. What CLTV should I use, how many satoshis should I forward and which channel of my five should I use?
 
 Q - Is that the same format that’s in BOLT 11 for invoices?
 
-A - I don’t think so, no because BOLT 11 uses binary encoding for this and this uses a JSON format. 
+A - I don’t think so, no because BOLT 11 uses binary encoding for this and this uses a JSON format.
 
 Q - Same data contents?
 

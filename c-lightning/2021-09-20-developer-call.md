@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -28,7 +28,7 @@ We fixed something for both Alpine and Open BSD today. They are running the late
 
 Excellent work, the fixes were really nice and I was able to merge them right away. Thanks for pinging me when the CI was redone. That helped getting me back working on CI.
 
-I have been working on the DNS address descriptor type. At the last protocol development meeting there wasn’t time to talk about it but I think it is pretty easy and there won’t be big discussions anyway. If we want this I think it can be done. I implemented it already to a point where it runs on my local machine. I need to care for the edge cases, what I do for error handling and stuff. It is a little bit more complicated than I thought. The way we find out what addresses and interfaces we are listening on and what we are announcing is a bit complex. But it can be done and it works already. I think I will be submitting a PR in the next few days. 
+I have been working on the DNS address descriptor type. At the last protocol development meeting there wasn’t time to talk about it but I think it is pretty easy and there won’t be big discussions anyway. If we want this I think it can be done. I implemented it already to a point where it runs on my local machine. I need to care for the edge cases, what I do for error handling and stuff. It is a little bit more complicated than I thought. The way we find out what addresses and interfaces we are listening on and what we are announcing is a bit complex. But it can be done and it works already. I think I will be submitting a PR in the next few days.
 
 I’m assuming you are not going to be able to autodetect these? You are going to have to bind addresses manually?
 
@@ -72,7 +72,7 @@ In the end you put a secret inside the encrypted blob. If you decrypt it you che
 
 Definitely a good idea. And looking forward to the LDK compatibility, that is a big one.
 
-vincenzopalazzo: I’m not making anything spectacular, some pull request review and also I am working on fixing the `make check` command. There is some checking inside the lightningd config file. We are checking the experimental features that are not documented yet. I don’t know whether to put a generic message “This is an experimental feature” and nothing else inside the doc or skipping it. 
+vincenzopalazzo: I’m not making anything spectacular, some pull request review and also I am working on fixing the `make check` command. There is some checking inside the lightningd config file. We are checking the experimental features that are not documented yet. I don’t know whether to put a generic message “This is an experimental feature” and nothing else inside the doc or skipping it.
 
 That is a common issue that we configure the build to run one way and then certain features appear or disappear and `make check` fails. We probably should filter out the experimental ones for the doc checks since they were most likely not be checked and not be filled anyway.
 
@@ -98,7 +98,7 @@ But it is once off. I will review the PR, it is fine.
 
 Most of them are actually just derived files that we blank out in the review panel.
 
-vincenzopalazzo: It was four lines that I changed and nothing more. I think spaces wins because I am the spaces person. 
+vincenzopalazzo: It was four lines that I changed and nothing more. I think spaces wins because I am the spaces person.
 
 But more characters with spaces, think of all that wasted disk space just with white space.
 
@@ -108,7 +108,7 @@ But tabs is wasted horizontal space. It displays larger and I have to travel mor
 
 I will quickly go through the release progress. There are a couple of PRs that need some attention. Some of them are marked as drafts and we should decide whether we want to updraft them or keep them as drafts for the moment. Many of the ones that aren’t drafts I am trying to shepherd through CI so those should eventually be merged since they have already been ACKed by reviewers. In particular Rusty mentioned the web socket one, I always took that one as a joke. Should we really undraft and get it in there?
 
-Yeah Aditya is using it. 
+Yeah Aditya is using it.
 
 If we have users we should probably do that. For PR 4767 adding the counter variable to the Autodata, it is probably up to Rusty whether that is worth breaking the gcc…
 
@@ -128,7 +128,7 @@ That is what we do. Then you end up with a problem where it doesn’t build beca
 
 One more caveat, the Autodata also clashes horribly with Address Sanitizer because that’s a region of the binary that is not well instrumented by the Address Sanitizer. If it does instrument it then your offsets are wrong because it pads all the different locations to see if you are accessing a place where you don’t. I currently do have it blocked in my Address Sanitizer.
 
-The answer here is that I should rework the Autodata stuff to use some kind of generation code. I will look at that this afternoon. 
+The answer here is that I should rework the Autodata stuff to use some kind of generation code. I will look at that this afternoon.
 
 But I really like Autodata.
 
@@ -142,13 +142,13 @@ Trust me I tried and failed miserably.
 
 Besides that we do have a couple of pending PRs that have reviews that need to be addressed. I think we have PR 4771 which is Rusty’s fix to add more weight to larger channels. I was intending to talk to Rene (Pickhardt) today but I forgot. I will have to reach out to him again since he has been running a couple of `paytest` instances. We might want to measure the impact of what happens here and how much difference it makes in the end.
 
-I have been meaning to ping you about that. If we both run `paytest` we should be able to test against each other and get some stats before and after. 
+I have been meaning to ping you about that. If we both run `paytest` we should be able to test against each other and get some stats before and after.
 
 Sounds good, I will install that one.
 
 There are random numbers in that heuristic. I chose to make the size of the channel twice as important as the fees. Why? Because everyone likes the number 2. There are heuristics in there that I would like to actually validate before we deploy.
 
-It also takes into account the size of the payment and the size of the channel. 
+It also takes into account the size of the payment and the size of the channel.
 
 It is the ratio question. But it uses the actual fee of the channel and I wonder if it should use a nominal median fee as its benchmark for how much to penalize.
 
@@ -186,7 +186,7 @@ A Tor bias?
 
 At least we already connect preferably now thanks to your work to non-Tor if we can. We should invert that if we are fully Tor. If we are an all Tor node then maybe we do want to connect to onion servers in preference. But that’s a win to start with. I think pinging is important because what happens is we find out that the Tor connection is dead at the point we try to make a payment. It is probably why it is so unreliable. Just pinging would find out earlier, the Tor connection would break and we’ll be forced to reconnect. That will improve our reliability in practice I believe. It won’t make it worse.
 
-I have seen other scenarios, not Lightning related, where there were a lot of troubles. When a TCP connection is messed up I guess you know the best… 
+I have seen other scenarios, not Lightning related, where there were a lot of troubles. When a TCP connection is messed up I guess you know the best…
 
 You can always hang up and try again. That is usually the best way to deal with those things. If you are not getting any traffic you should just go round again. I am going to have to look through my logs to see what my Tor behavior is like, I haven’t been monitoring it closely. I have some Tor onion nodes that I connect to. I have heard reports that they are terrible but I haven’t zeroed in on them specifically. It would be nice to fix that. I think pinging Tor nodes, it won’t make things worse.
 
@@ -194,7 +194,7 @@ If your major objective is routing success and you are less concerned about priv
 
 We don’t implement AMP as Lightning Labs calls their version, we implement MPP. MPP is spec’ed, AMP isn’t. There is a clear trade-off. If you try to avoid MPP at all costs you might actually run out of time trying your best to have a single payment go through. And not have enough time to try splitting it if you prioritize single part payments over MPP. There is also an argument to be made about MPP actually helping you obfuscate your traffic quite nicely by chunking all your payments into common sizes. You aren’t telling anybody the complete size of your payment. Everybody just sees single parts that look like a single dollar. They are quite nicely intermixed especially once we get PTLCs where you can’t collate them anymore. This argument might actually benefit privacy rather than you trying a single payment giving away the entirety of the amount. And the amount might actually be of such a form that you are correlating yourself between hops. If I send 13 dollars and a bit and then I see something that is exactly 13 dollars the chances are this might be related. Whereas if I send out 13 one dollar payments and we can’t correlate them anymore then it is hard to track them. By splitting and using MPP we increase the chances of having a successful payment rather than you having to retry multiple times, failing attempts that are high privacy and therefore ending up with a stronger signal for somebody to pick up on. If I try 20 times in the matter of 5 minutes to pay a single invoice but always failing because my success probability is so low.
 
-I think there is some magic triangle (e.g. [Zooko’s triangle](https://en.wikipedia.org/wiki/Zooko%27s_triangle)) where you have cheapness of route, performance and privacy. You can have maybe two of them but not all three. 
+I think there is some magic triangle (e.g. [Zooko’s triangle](https://en.wikipedia.org/wiki/Zooko%27s_triangle)) where you have cheapness of route, performance and privacy. You can have maybe two of them but not all three.
 
 You might be located somewhere in the middle. Our point when setting up the randomness for the route selection was always that there should be an amount below which you just don’t care. That has been this 0.5 percent that we added where we are allowed to select a route on your behalf. If we go above 0.5 percent of the sent amount then we might reject and ask you “Are you ok if we try with a higher fee?” It is my and Rusty’s belief that if we make that allowable budget small enough then it really shouldn’t matter to you and you should be fine us randomizing in order to increase your privacy at a slightly higher cost. We’ve never been ones to try to squeeze every single satoshi out of the route finding at all.
 
@@ -204,7 +204,7 @@ There is a trade-off here. We don’t make it as cleverly as we could but there 
 
 Can I ask about Tor? The reasons for being against Tor, is it because of the broken circuits or is it because of the lag?
 
-It is because in my opinion it damages the network health of the Lightning Network considerably already. The connections are not reliable enough. On a one hop basis that is ok, but not when you do 5 or 8 hops routing. A majority of those being Tor is a showstopper. I think a lot of users are doing, all implementations come with the Tor support, they just don’t care to get through the local firewall, their home routing network so they are reachable on the internet. Because of this they go with Tor and they think it is more privacy, which it is, but it is also unreliable. What we did is offer everyone the slowest possible solution to the problem everyone has. That is why it is damaging the network. I am not against Tor, I am pro offering ways to reduce that. 
+It is because in my opinion it damages the network health of the Lightning Network considerably already. The connections are not reliable enough. On a one hop basis that is ok, but not when you do 5 or 8 hops routing. A majority of those being Tor is a showstopper. I think a lot of users are doing, all implementations come with the Tor support, they just don’t care to get through the local firewall, their home routing network so they are reachable on the internet. Because of this they go with Tor and they think it is more privacy, which it is, but it is also unreliable. What we did is offer everyone the slowest possible solution to the problem everyone has. That is why it is damaging the network. I am not against Tor, I am pro offering ways to reduce that.
 
 A couple of comments. These are not only not getting through the local firewall but these are all home nodes. They are not renting a VPS, they would use clearnet. If someone is at home then they wouldn’t and shouldn’t put their money out in their window. It is reckless to run a clearnet node at home. The equipment you are using, it’ll be a Raspberry Pi if you are lucky in a stable hardware setup. A lot of times the instability is correlating with it being behind Tor but the reason might not be Tor, it might be a hardware issue or a flaky home internet connection or using WiFi.
 
@@ -238,9 +238,9 @@ It is a DARPA project.
 
 Core has I2P support. Maybe longer term I2P would be a slot in replacement for Tor. Apparently it is more robust although I have no idea who backs that up.
 
-I have not read into I2P, maybe I should. 
+I have not read into I2P, maybe I should.
 
-It is much smaller for now so it is hard to tell what it does under the same kind of usage. 
+It is much smaller for now so it is hard to tell what it does under the same kind of usage.
 
 That is good, less nodes that can fail! (Joke)
 
@@ -278,9 +278,9 @@ How big is the impact? On your Raspberry Pi it is slow, do you have an idea?
 
 It is more installing all the packages will probably take you half a hour. I’ll have to check. There is a lot of Python cr\*p. If you are running a modern thing you’ve probably got Python3 already so you won’t need Python itself but you’ll need Mako and a pile of other things. It will pull in quite a bit over a minimal build. On the other hand how do you often do you rebuild your c-lightning on your Raspberry Pi?
 
-A lot? 
+A lot?
 
-But it is a one time dev setup. 
+But it is a one time dev setup.
 
 We have all the checks and everything in there.
 
@@ -336,7 +336,7 @@ Next meeting will be on the eve of release pretty much.
 
 Last time we discussed Python dependencies, did that cleanly resolve in the last two weeks?
 
-Yes and hence Christian’s thing, when we tag them we should automatically push up the updated Python packages from now. This avoids some of these tangles that we can get into. Or at least find out about them sooner. 
+Yes and hence Christian’s thing, when we tag them we should automatically push up the updated Python packages from now. This avoids some of these tangles that we can get into. Or at least find out about them sooner.
 
 Trying to automate all the things.
 

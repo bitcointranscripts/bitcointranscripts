@@ -1,5 +1,5 @@
 ---
-title: c-lightning developer call 
+title: c-lightning developer call
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['lightning', 'c-lightning']
@@ -22,9 +22,9 @@ I will note we have been having CI problems. We obviously slowly grew to the poi
 
 # Individual updates
 
-I checked my [PR](https://github.com/ElementsProject/lightning/pull/4900) and it is still failing. It is not really failing, I know it is ok, I was testing it locally, but the CI. I rebased to the current master. 
+I checked my [PR](https://github.com/ElementsProject/lightning/pull/4900) and it is still failing. It is not really failing, I know it is ok, I was testing it locally, but the CI. I rebased to the current master.
 
-We have at least one other flake that I’m aware of. I will happily babysit that one through. 
+We have at least one other flake that I’m aware of. I will happily babysit that one through.
 
 What number?
 
@@ -68,7 +68,7 @@ One other implementation needs to pick up on it so it can be tested and merged. 
 
 That would be cool. It would be nice if we could skip experimental altogether and go straight in. It is tempting to skip experimental, every time we do that we get into problems. We should do it by the book. It is an annoying two step, you implement it and then you hack it out and hack it back in again. A second implementation, technically you can’t implement it, it has to be an independent implementation so you do have to get someone else to do it.
 
-I thought eclair had implemented this? Wasn’t it briefly discussed at the [protocol meeting](https://btctranscripts.com/lightning-specification/2021-11-22-specification-call/#dynamic-dns-support-in-gossip-messages) last week? 
+I thought eclair had implemented this? Wasn’t it briefly discussed at the [protocol meeting](https://btctranscripts.com/lightning-specification/2021-11-22-specification-call/#dynamic-dns-support-in-gossip-messages) last week?
 
 Which one?
 
@@ -96,7 +96,7 @@ I’ve been working on accounting stuff, basically rewriting how we do accountin
 
 I look forward to the accounting plugin, I want pretty graphs, pie charts and things like that so I can find out where I lost all my money.
 
-I don’t think we are going to have graphs at first but soon. I am actually a little worried that shipping accounting, we are going to lose like half of people running c-lightning nodes because they are going to realize where all their money is going. I think shipping accounting stuff is a little bit of a double edged sword. On the other side accounting is really a data collection problem so we are going to have some really good data about money and accounting on your Lightning node. The other thing about it is that once you start collecting data all of a sudden you have metrics so you can figure out better ways to not spend as much money. Hopefully this will lead to more improvements in how we handle onchain funds etc. 
+I don’t think we are going to have graphs at first but soon. I am actually a little worried that shipping accounting, we are going to lose like half of people running c-lightning nodes because they are going to realize where all their money is going. I think shipping accounting stuff is a little bit of a double edged sword. On the other side accounting is really a data collection problem so we are going to have some really good data about money and accounting on your Lightning node. The other thing about it is that once you start collecting data all of a sudden you have metrics so you can figure out better ways to not spend as much money. Hopefully this will lead to more improvements in how we handle onchain funds etc.
 
 It will probably drive anchor outputs, the unilateral close at the moment where we are overpaying on fees….
 
@@ -106,7 +106,7 @@ They do but you can be more aggressive on fee rate.
 
 We’ll see.
 
-Maybe we’ll have the evidence that it is not worth implementing, I don’t know. At the moment we are in calm seas. With low fees everything is easy. It is only when fees spike where it will probably help. The original anchor outputs was really clean and cool but then it got less clean. You’re right, the two extra outputs cost you. We will see. 
+Maybe we’ll have the evidence that it is not worth implementing, I don’t know. At the moment we are in calm seas. With low fees everything is easy. It is only when fees spike where it will probably help. The original anchor outputs was really clean and cool but then it got less clean. You’re right, the two extra outputs cost you. We will see.
 
 It is really expensive to be an opener I think we’re going to find out. Maybe this will make dual funding way more attractive because then everyone is going to want to be on the other side of the open.
 
@@ -118,7 +118,7 @@ t-bast’s and generally ACINQ’s focus on privacy has been really good. They a
 
 It was a very nice place to stay, to learn. I was curious to see how people perceive it and whether they take Bitcoin or dollars. People seemed quite happy about what is happening, the ones who know a little about Bitcoin. I didn’t meet anyone who was against or technophobic. Some wanted to buy fuel in dollars because that’s the only thing available in the petrol stations, you need to use dollars. I am still processing. Seeing people using this thing day to day, “I need some dollars for my fuel but if you want to tip me this is my wallet”. They are also happy to try other things out. I think the Bitcoin Beach wallet is the most appropriate thing to use because it works the smoothest, regarding the custody at least you can speak to the people who are looking after your money, it is better than a bank. Also the backup things, for mobile it is even more important. What happens when you lose you phone? With the Bitcoin Beach wallet you register your phone number and then you can get it back. Through the phone number you can get your balance back. Whereas other things you need to upload some file here and there or write down 24 words etc. For day to day usage for groceries that is the way to go. What I was most excited about is speaking about this federated e-cash stuff. Also witnessed some Lightning invoices converted to an audio and going into CB radio. The other side of the building was recording the audio and getting the invoice paid. That was a fun thing, proving you don’t really need internet to do these things.
 
-I definitely feel a trip to El Salvador coming up in my future. 
+I definitely feel a trip to El Salvador coming up in my future.
 
 vincenzopalazzo: This week I focused on the [RC1](https://github.com/LNOpenMetrics/go-lnmetrics.reporter/releases/tag/v0.0.4-rc3) of the [LN Open Metrics plugin](https://vincenzopalazzo.medium.com/introduction-to-ln-open-metrics-96a7c859f4e2). I finally achieved an executable and this week I will publish an [email](https://lists.ozlabs.org/pipermail/c-lightning/2021-November/000213.html) to the mailing list to describe how it works. Also on c-lightning I am working on reporting the error code for the c-lightning command when we interact with the CLI. I am refactoring the method to return an error code and pass the error message as an event. Now I need to ACK the Ccan library because there is only one error code and I would like to have a method that returns an exit code or something like that. But I am not very comfortable with the macros inside the Ccan library.
 
@@ -150,15 +150,15 @@ We have tried to reduce single points of failure. There is dumb stuff like putti
 
 Generally speaking GitHub by default doesn’t rebase pull requests so it can happen that you have two pull requests, you apply one and then the other one doesn’t apply anymore. Or worse you actually have semantic differences between what you based your work on and what your work is going to be based on later. That’s really dangerous. We should catch that with CI but at that point everything already went through code review and we should have noticed that. Those semantic changes are what can cause master to break. But from a purely mechanical point of view if there is a syntactical conflict, when you change the same lines, we will abort the rebase anyway. And CI like I said is our safety net. Currently what we do if you are release captain is that you can go through the pull request list and just merge all of them. This can result in a broken master whereas by automating the “We apply one then we rebase the next one in the queue and test it fully and only then apply it.” Then we rebase the next one. We also minimize the number of CI runs, CI for us is a contended resource.
 
-Especially around release time. As release captain you are pushing a lot of stuff in at the same time. We give the release captain broad authority to ignore CI or abort it early, stuff like that. It would certainly assist. There are only so many hours in the day, you really want to get the release out. “These three are good so I am going to do trivial rebases and just push them in without CI passing”. That has been known to fail. The other thing we do is we aggressively rebase rather than merges. I always prefer this because if you have these kind of conflicts and you get a merge you can tell exactly what happened. You can tell it is no one’s fault, both before merge were ok and the merge was bad. That doesn’t help you very much semantically. If you rebase the set of changes then you can test and bisect and go “This was good, this was good, this was good, this was the point that you broke”. You don’t get the ability to blame at this point, you can’t go “You should have spotted that” because it turns out that maybe you’d built it on something else and you couldn’t tell. More importantly you do get the ability to nail quite easily down to the commit which actually broke something even if it is not obvious why that got as far as it did at this point. My preference is always to rebase rather than do merges. If you bisect and you get down to “It is broken in a merge commit” you are in deep s\*\*\*. You’ve got 100 changes here, 100 changes here, they are all fine but the merge is broken. You can’t bisect that further. 
+Especially around release time. As release captain you are pushing a lot of stuff in at the same time. We give the release captain broad authority to ignore CI or abort it early, stuff like that. It would certainly assist. There are only so many hours in the day, you really want to get the release out. “These three are good so I am going to do trivial rebases and just push them in without CI passing”. That has been known to fail. The other thing we do is we aggressively rebase rather than merges. I always prefer this because if you have these kind of conflicts and you get a merge you can tell exactly what happened. You can tell it is no one’s fault, both before merge were ok and the merge was bad. That doesn’t help you very much semantically. If you rebase the set of changes then you can test and bisect and go “This was good, this was good, this was good, this was the point that you broke”. You don’t get the ability to blame at this point, you can’t go “You should have spotted that” because it turns out that maybe you’d built it on something else and you couldn’t tell. More importantly you do get the ability to nail quite easily down to the commit which actually broke something even if it is not obvious why that got as far as it did at this point. My preference is always to rebase rather than do merges. If you bisect and you get down to “It is broken in a merge commit” you are in deep s\*\*\*. You’ve got 100 changes here, 100 changes here, they are all fine but the merge is broken. You can’t bisect that further.
 
 That’s even the simplest case where you are not doing an octopus merge right? Where you might have 10 branches all going into the same merge commit and then you have to disentangle 10 PRs to find which one is broken because of the combination that just didn’t work out.
 
-I have always preferred rebases. Some of it is a holdover from kernel days pre-Git where you used patches. Effectively that is always a rebase so you are always applying on top. 
+I have always preferred rebases. Some of it is a holdover from kernel days pre-Git where you used patches. Effectively that is always a rebase so you are always applying on top.
 
 # Individual updates (cont.)
 
-I should mention that Aditya, the Summer of Bitcoin student is coming back as an intern. At least that’s the plan. I said to him that we really liked his work and we should totally take him on as an intern when he gets a break. He has just finished exams so ideally next week he’ll be doing an internship with Blockstream for a couple of months. I have put him on the idea of trying to get [Spark](https://github.com/shesek/spark-wallet) to use Commando. Spark at the moment requires HTTPS, it needs a TLS certificate and everything else. I was like “Wouldn’t it be cool if Spark, the wallet front end, could speak the native Lightning protocol and use Commando which is basically a way of sending commands across the Lightning protocol authenticated using runes?” Then you could skip this whole authentication step. You could just authorize your front end and at this point Spark would look a lot like any other node on the network. You just say “This node can send me commands” or “This is the list of commands it could send me”. That would be kind of cool. He has got a lot of the prerequisites for it because he wrote a lot of the Javascript work for BOLT 12 and he wrote the stuff to speak web socket and he wrote the stuff to actually speak the Lightning protocol in a primitive sense. He has kind of got the pieces. Spark is written in Javascript so I am going to see how far he gets with that. It will be interesting to see what his experiences are trying to get that working as a serious authentication method. I don’t think anyone has used Commando in anger before. And it will finally give you the ability to do a Spark read only where you’ve got a front end that can’t actually spend funds but can view things and stuff like that. That is what I am thinking for his internship project. 
+I should mention that Aditya, the Summer of Bitcoin student is coming back as an intern. At least that’s the plan. I said to him that we really liked his work and we should totally take him on as an intern when he gets a break. He has just finished exams so ideally next week he’ll be doing an internship with Blockstream for a couple of months. I have put him on the idea of trying to get [Spark](https://github.com/shesek/spark-wallet) to use Commando. Spark at the moment requires HTTPS, it needs a TLS certificate and everything else. I was like “Wouldn’t it be cool if Spark, the wallet front end, could speak the native Lightning protocol and use Commando which is basically a way of sending commands across the Lightning protocol authenticated using runes?” Then you could skip this whole authentication step. You could just authorize your front end and at this point Spark would look a lot like any other node on the network. You just say “This node can send me commands” or “This is the list of commands it could send me”. That would be kind of cool. He has got a lot of the prerequisites for it because he wrote a lot of the Javascript work for BOLT 12 and he wrote the stuff to speak web socket and he wrote the stuff to actually speak the Lightning protocol in a primitive sense. He has kind of got the pieces. Spark is written in Javascript so I am going to see how far he gets with that. It will be interesting to see what his experiences are trying to get that working as a serious authentication method. I don’t think anyone has used Commando in anger before. And it will finally give you the ability to do a Spark read only where you’ve got a front end that can’t actually spend funds but can view things and stuff like that. That is what I am thinking for his internship project.
 
 I am working on, other than de-flaking and trying to reduce memory in tests… My node had been up for almost a month, I was slacking on updating it across the release, it started to run out of memory. It runs in development mode and it turns out we had a small memory leak with a FIXME, 12 bytes at a time. It is fine except with all the development stuff we allocate a lot of extra metadata every time we do an allocation so we can find memory leaks. It turns out I had a gigabyte of extra metadata hanging around. Particularly because we have a log prefix and we would generate that on every JSON command. We didn’t ref count, I said we should ref count this but let’s just leak it for now. It is 12 bytes, what could possibly go wrong? You can do a lot of 12 byte leaking before anyone notices. It was the 256 byte backtrace that was attached to each one that started to get pretty heavy. Because I’m running CLBOSS. CLBOSS does an awful lot of JSON RPC commands all the time. You run it for a month or so under development mode, you get a gigabyte or so. That’s fixed. We deliberately suppressed our memory leak detection for that code because it was a known thing. We’ve got pretty good memory leak detection. I have a fix for that, I did it properly, that should be much nicer. But it is not a case that most people will run into because most people who run developer things and CLBOSS, you either have a big machine and you don’t really notice or you restart more often because you want to keep up with master. It was a fun one to find.
 
@@ -182,19 +182,19 @@ A fun question. Do you think it improves the situation on the Tor connections or
 
 This is a very good question that I will have to actually start reviewing my logs of Tor nodes to see how that is working.
 
-It would be good to know because I’m not too sure about this. 
+It would be good to know because I’m not too sure about this.
 
 You have this great plugin that we should use to assess our forwards. That’s the proof in the pudding, whether we actually get more HTLCs through our Tor connections or not. To actually do retrospective I’d have to go through the logs and see what our stats are.
 
 Maybe we want to make a configuration parameter about the ping pong stuff because some people may be using this on mobile connections and that maybe painful. It forces you to not sleep at all ever.
 
-That is a really interesting question. The other thing is we don’t log gossip for similar reasons so I’m not sure how much traffic it is making it worse than existing gossip which is every 60 seconds. I would have to look through on I/O debugging to see how much gossip we are getting every 60 seconds. I suspect you already in hell if you are trying to do this because you are going to get gossip from every peer every 60 seconds. 
+That is a really interesting question. The other thing is we don’t log gossip for similar reasons so I’m not sure how much traffic it is making it worse than existing gossip which is every 60 seconds. I would have to look through on I/O debugging to see how much gossip we are getting every 60 seconds. I suspect you already in hell if you are trying to do this because you are going to get gossip from every peer every 60 seconds.
 
 It can’t be tuned? Maybe that would be a nice side project to optimize it a bit for mobile connections.
 
 The problem is your peers will be doing it as well. You’ll need to tell them to back off somehow, go into quiet mode. The answer is actually don’t connect to peers unless you have something to say. This would be the other way of operating your node, you only connect on demand and you disconnect when you are not interested. But that is terrible if they are trying to forward to you. Unless you have a full IP address and they can do the same thing, connect to you when they want to talk.
 
-Mobile users have a lot of problems with public IP addresses. 
+Mobile users have a lot of problems with public IP addresses.
 
 They can only connect out so I don’t know how that helps. You can suppress gossip. Maybe it is worth having a similar thing… It would be interesting to see. We do currently choose 3 peers to gossip to us at any time. But if you were to run a node where you tune that down to zero for long periods of time and then burst your gossip in. If you want to play with gossip there is the Minisketch stuff as well that I have in a branch that I never pushed anywhere. The idea is you have a summary, you send this Minisketch summary of all your gossip every so often. If there is something useful to say then you transmit the gossip that the other side is missing. That would also be useful both for reducing bandwidth but also it potentially means you can go for a lot longer before you try to sync your gossip up. You might want to sync your gossip as you are doing a payment for example. Maybe you start the payment and then you also try to sync your gossip at the same time, I don’t know. I just suspect that if you are on mobile and you are really bandwidth constrained our implementation is not going to…
 
@@ -204,7 +204,7 @@ I think running a routing node generally on a phone when you’re relying on bat
 
 On the phone I think the problem is the synchronization with the Bitcoin blockchain, this is the bottleneck.
 
-Not necessarily phone. For example stuff like routers where you put in a SIM card, people may use them in the trailer or whatever. 
+Not necessarily phone. For example stuff like routers where you put in a SIM card, people may use them in the trailer or whatever.
 
 But in that case are they running off battery?
 
@@ -212,7 +212,7 @@ Not really.
 
 Lots of exciting stuff happening, I am really looking forward to this next release. By the way I have nominally made the date January 20th because we are going to lose the holiday break generally. Everything stops for a while. January 10th seemed a little ambitious.
 
-Hi, good morning. My semester just finished so I will set up the Spark wallet today. 
+Hi, good morning. My semester just finished so I will set up the Spark wallet today.
 
 Once you’ve gone through the pain of trying to get it to do the Let’s Encrypt for the certificate so you can connect you’ll understand why we want to try something else.
 
@@ -224,15 +224,15 @@ We are centralizing everything through the connection daemon. The connection dae
 
 I’d like to hear more about Greenlight one day as well. Not today, another time. Whatever you can share that is not client confidential like what lessons there have been from getting these people onboarded to Lightning who otherwise wouldn’t have onboarded. It sounds like an interesting topic for another day.
 
-Don’t get me started. You won’t get me stopped. It is my new favorite topic. I put aside a hour during lectures to talk about Greenlight. 
+Don’t get me started. You won’t get me stopped. It is my new favorite topic. I put aside a hour during lectures to talk about Greenlight.
 
 You should be filming the lectures.
 
-They’re not mine. You can probably ask Lukas, the president of the Swiss Bitcoin Association, he is organizing the 21 Lectures stuff. I think he has a recording of it. Anytime I’m more than happy to talk about Greenlight. Maybe we can set up a special slot so I don’t take away too much time from everybody else. Because like I said once I get started I will not stop. There is not that much that is confidential, most of the stuff like I mentioned will be open source eventually. And we are already starting backporting some of the parts into c-lightning. The networked RPC being one example. That has always been the goal. We want to run c-lightning nodes to learn for the open source project. Cross help, cross finance our resources this way. And it allows us to gain a lot of experience running c-lightning in production as well. There is definitely a lot we can talk about. 
+They’re not mine. You can probably ask Lukas, the president of the Swiss Bitcoin Association, he is organizing the 21 Lectures stuff. I think he has a recording of it. Anytime I’m more than happy to talk about Greenlight. Maybe we can set up a special slot so I don’t take away too much time from everybody else. Because like I said once I get started I will not stop. There is not that much that is confidential, most of the stuff like I mentioned will be open source eventually. And we are already starting backporting some of the parts into c-lightning. The networked RPC being one example. That has always been the goal. We want to run c-lightning nodes to learn for the open source project. Cross help, cross finance our resources this way. And it allows us to gain a lot of experience running c-lightning in production as well. There is definitely a lot we can talk about.
 
 I’ll message you and try to get something organized.
 
-From today there is a [new Signet faucet](https://signet.bublina.eu.org/) run by me. I have 1000 Signet coins. I am using Signet a lot to teach new people Bitcoin. It is very helpful. I was experiencing some problems with the Signet faucet so I did my own and talked to kallewoof. It is now on the wiki and I want to see more people trying to ask for Signet coins. At the moment the balance is growing. 
+From today there is a [new Signet faucet](https://signet.bublina.eu.org/) run by me. I have 1000 Signet coins. I am using Signet a lot to teach new people Bitcoin. It is very helpful. I was experiencing some problems with the Signet faucet so I did my own and talked to kallewoof. It is now on the wiki and I want to see more people trying to ask for Signet coins. At the moment the balance is growing.
 
 I have a lot of thoroughly mixed Signet coins in my Joinmarket instance. It is all communicated through the second version of the onion messages currently. But you won’t be finding where it is coming from.
 

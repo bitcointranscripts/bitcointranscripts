@@ -1,5 +1,5 @@
 ---
-title: Signature Aggregation 
+title: Signature Aggregation
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['validation', 'multisig']

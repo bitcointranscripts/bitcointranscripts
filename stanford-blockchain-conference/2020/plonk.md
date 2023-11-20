@@ -31,7 +31,7 @@ This is a picture from the first zcash ceremony where someone is destroying the 
 
 This setup as you can see can be a painful process, in particular for the computer. What are our options in terms of what setup our SNARK will need? Until 2018, until very recently, it was very much "all or nothing". We had these per-circuit setup SNARKs which means that before starting a setup, you need to decide exactly what statements you want to prove.
 
-Two things- if all the setup participants colluded or something went wrong, then the setup is worthless. But say you want to make a small change in the type of statements you want to prove, then you have to throwaway the setup again. In fact, in zcash sapling at some point we decided that something in the circuit needed to be big endian not little endian or maybe the other way around, and the setup was restarted after a month because of this. 
+Two things- if all the setup participants colluded or something went wrong, then the setup is worthless. But say you want to make a small change in the type of statements you want to prove, then you have to throwaway the setup again. In fact, in zcash sapling at some point we decided that something in the circuit needed to be big endian not little endian or maybe the other way around, and the setup was restarted after a month because of this.
 
 The other extreme is the types of things that Eli Ben Sasson and others are developing where there's no trusted setup. The setup is basically picking a hash function that we all agree on, and there's no secret trap door or collusion of participants. In the past few years, other proof systems with this property of transparent setup are coming up.
 

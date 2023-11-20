@@ -217,7 +217,7 @@ AW: You want to get into this Eric?
 
 EV: If you're in a community that you don't like, then make another community. There are so many conferences that I don't go to because it's just not my community and I don't really care. So I tend to pay attention to the things I'm interested in. Half of the time I'm not aware of what's going on in the community because I don't pay attention to those things. So you have a choice. Always try to be nice, but that's not always the way it is. The stuff I do see, often there's argument and discussion based on personality. Who somebody is doesn't matter. The arguments they make are interesting to me. When somebody posts a thread, I don't really notice who they are. It's the discussion that's interesting, at least for me. But there's often a lot of discussion based on just a person or who the author is, so I try to avoid those things.
 
-RN: If you are more civil, then it's more likely you will get something merged because you will piss off less people. It's a tool, but not a requirement. 
+RN: If you are more civil, then it's more likely you will get something merged because you will piss off less people. It's a tool, but not a requirement.
 
 # Q&A
 

@@ -1,5 +1,5 @@
 ---
-title: Package Relay BIP, implementation, V3, and package RBF proposals 
+title: Package Relay BIP, implementation, V3, and package RBF proposals
 transcript_by: Gloria Zhao
 categories: ['core-dev-tech']
 tags: ['package relay', 'bitcoin core']

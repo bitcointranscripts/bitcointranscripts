@@ -1,5 +1,5 @@
 ---
-title: La Fundación B 
+title: La Fundación B
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

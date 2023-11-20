@@ -1,5 +1,5 @@
 ---
-title: Silent Payments and Alternatives 
+title: Silent Payments and Alternatives
 transcript_by: Bryan Bishop
 translation_by: Ajian
 categories: ['core-dev-tech']

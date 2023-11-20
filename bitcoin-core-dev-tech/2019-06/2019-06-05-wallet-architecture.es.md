@@ -1,5 +1,5 @@
 ---
-title: Arquitecturas de las wallets 
+title: Arquitecturas de las wallets
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
@@ -23,7 +23,7 @@ Ahora mismo IsMine es independiente de la cartera, por alguna razón. No es part
 
 ![wallet architecture](/bitcoin-core-dev-tech/2019-06/2019-06-05-wallet-architecture.jpg)
 
-# Arquitectura de wallets heredados en la actualidad 
+# Arquitectura de wallets heredados en la actualidad
 
 El almacén de claves de la wallet contiene las claves privadas, scripts, cosas vigiladas. IsMine recibe consultas, y luego él mismo consulta el almacén de claves. Así es como funcionan las cosas ahora. Luego está el almacén de claves que tiene la información de la clave HD, y realmente esto es algo que se consulta de vez en cuando, se le pide que rellene el almacén de claves, y el almacén de claves pone las cosas en esa masa de datos. La única entrada de IsMine es scriptpubkey. Luego hay varias sobrecargas, una donde puedes darle un txout, entonces busca el txout y luego pasa el script a las comprobaciones de IsMine. El código de firma también llama al almacén de claves d la wallet. El código de firma utiliza un proveedor de firma, pero el proveedor de firma es implementado por el almacén de claves. Es esta cosa donde todo es volcado y consultado. Pero es de muy bajo nivel. No entiende lo que está pasando. Importas un script, importas algunas claves, y resulta que sabe que puede firmar por ello, así que vamos a llamarlo IsMine. No tiene ni idea de lo que las cosas están destinadas a ser ... también, el keypool tiene claves, pero no tiene direcciones, por lo que no puede razonar sobre qué tipo de dirección que le gustaría tener.
 

@@ -57,7 +57,7 @@ Por encima de un compromiso con el código abierto, ¿qué es esta colaboración
 
 Hemos tenido cerca de dos horas de intensa discusión extremadamente abstracta... ¿Qué tal si nos tomamos un pequeño descanso y empezamos en 15 minutos?
 
-# Seminario socrático #4 
+# Seminario socrático #4
 
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/266418133/>
 
@@ -114,17 +114,17 @@ P: ¿Cuántos de los presentes saben lo que es el taproot y el schnorr? Dirigido
 
 Optech hizo estos talleres de un día completo en Nueva York y Bryan Bishop estuvo allí también... Ellos configuraron un código básico para jugar con Taproot.  Estábamos pensando en organizar uno de esos talleres aquí en Austin durante un día, para revisar todo el material que Optech reunió. ¿Quién aquí estaría interesado en esto? Tienen videos, cuadernos Jupyter y transcripciones. ¿Quién de aquí estaría dispuesto a asistir a uno de esos? Oh, fantástico. Bien, entonces probablemente lo haremos. El de Nueva York fue realmente bueno. Con ese número de personas, podrían enviar a alguien, o a Mike Schmidt, o a Poelstra... podemos arrastrarlo al otro lado del río.
 
-# Seminario socrático 
+# Seminario socrático
 
 <https://bitdevs.org/2019-10-24-socratic-seminar-97>
 
 <https://bitdevs.org/2019-11-13-socratic-seminar-98>
 
-## Formatos de taproot y de dirección 
+## Formatos de taproot y de dirección
 
 Taproot va a utilizar este nuevo formato de dirección bech32. Hay alguna discusión sobre si queremos incluir el formato de dirección heredado en esta próxima propuesta, como este soporte de pago a la escritura. Parece que están tratando de abandonarlo por completo. ¿Hay alguna opinión o comentario al respecto?
 
-P: ¿Cómo cambiaría? 
+P: ¿Cómo cambiaría?
 
 R: Será el nuevo formato de dirección bech32, como bc2, la segunda versión de segwit. Eso es lo que las direcciones serán. Están haciendo un llamamiento para decir, ¿hay alguna razón para apoyar a p2sh con esto? Hasta ahora no parece que nadie lo demande. Esta sería la versión 2. Si todavía no soporta segwit y bech32, entonces algo más está pasando y no va a soportar taproot de todos modos. Así que obliga a la gente a actualizar para estar al día.. Tener el soporte de wrap solo añade complejidad a la implementación del nuevo formato de dirección, si has mirado cualquier implementación que haga el p2sh wrap, es solo un extra que recorre recursivamente la dirección.
 
@@ -144,15 +144,15 @@ R: Bueno, erlay reduce el retraso.
 
 Hace unos meses hubo un gran fallo en todos los clientes de lightning.
 
-## Operación de intercambio en BTSE 
+## Operación de intercambio en BTSE
 
 Hubo una interesante charla con uno de los ingenieros de la bolsa. Uno de los puntos interesantes fue la diferencia entre, básicamente, el uso de segwit en una transacción de 2 de 3 ahorrará las tasas en un 44%, que es una anécdota bastante interesante de esta entrevista. Segwit realmente ayudó con multisig en términos de tasas. Puedes ver esto muy fácilmente si miras en blockstream.info que te dice hey mira idiota podrías haber ahorrado xyz en tasas si hubieras usado segwit. Así que eso está muy bien.
 
-## Versión candidata de Bitcoin Core 
+## Versión candidata de Bitcoin Core
 
 Hay una nueva versión candidata para Bitcoin Core. Es 0.19rc1. Hay una nueva para probar. Si eres algo técnico, descárgalo y úsalo en tu uso diario y esto ayudará a limar los errores. Esto es completamente impulsado por voluntarios, así que esto ayuda.
 
-## Dirección por defecto 
+## Dirección por defecto
 
 Hubo algunos cambios recientes en Bitcoin Core, este cambia la dirección por defecto para los usuarios de RPC. Esto es para los usuarios que están enviando mensajes a bitcoind desde otro lugar que no sea GUIs como la aplicación Fully Noded o Caravan podría utilizar interfaces RPC. Cambia la dirección al nuevo formato de dirección bech32, por defecto.
 
@@ -162,7 +162,7 @@ Hubo otro cambio similar para los usuarios de la GUI. Eso requirió dos cambios 
 
 Esta es una implementación parcial en python de la red de rayos. Creo que esta es la que Rusty estaba usando para encontrar el error. Él estaba tratando de probar múltiples clientes de rayos al mismo tiempo.
 
-## El error de lightning 
+## El error de lightning
 
  Cuando abres un canal relámpago, hay un... vale, allá vamos. Hay dos partes en un canal de rayos. Este tipo abre el canal, y este otro sigue el procedimiento de apertura del canal. Básicamente, puede engañar a la otra parte y decir que sí se ha abierto el canal. No requiere que el receptor compruebe realmente que la transacción es la prometida por el financiador: tanto el importe como el scriptpubkey real. Comprueban todo lo que ocurre cuando se detiene el canal, pero no comprueban realmente que el dinero bloqueado en el canal estaba realmente bloqueado en primer lugar. Este error era menos malo en eclair, pero era bastante malo en c-lightning. La causa raíz era que había una especificación para lightning, se fomentaban múltiples implementaciones, y se olvidaron de incluir esto en la especificación, así que todos los codificadores escribieron código que era claramente incorrecto.. lo cual es horroroso.
 
@@ -170,19 +170,19 @@ Otra cosa realmente interesante aquí fue la línea de tiempo del descubrimiento
 
 Algunos trataron de explotar el bug de c-lightning. Se discutió en twitter. Esto fue en bitdevs 97. Rusty dio una gran explicación de esto. Alguien lo descubrió, pero no robó mucho. Creemos que probablemente fue algún ingeniero tratando de ver si podía hacerlo, no un ataque real de gran magnitud.
 
-## Cumbre sobre criptoeconomía 
+## Cumbre sobre criptoeconomía
 
 Hubo algunas charlas realmente buenas en la conferencia del MIT. Hubo algunas buenas charlas en particular... una fue de Cory Fields, sobre problemas en Bitcoin Core y cosas así. Una fue sobre CVEs críticos en Bitcoin... Fueron realmente interesantes. Si quieres aprender sobre la seguridad de Bitcoin, échale un vistazo. También había una gran sección sobre lo que sería el peor caso de malware para bitcoin. Eso fue realmente interesante.
 
-## Descriptores de salida 
+## Descriptores de salida
 
 Los descriptores de salida son otra cosa interesante que se está desarrollando. Se han implementado en Bitcoin Core.
 
-## Revisión de Taproot 
+## Revisión de Taproot
 
 Todos los mejores ingenieros están en el canal IRC de revisión de taproot y son discusiones de gran calidad.
 
-## Apoyo a los relámpagos de Electrum 
+## Apoyo a los relámpagos de Electrum
 
 Alguien hablaba de las diferentes responsabilidades de un monedero... el que vigila la cadena de bloques, el que gestiona las claves y el que planifica las transacciones. Todas ellas deberían estar separadas. Electrum es el enfoque opuesto, es una implementación monolítica y ahora hace rayos. Si funciona, entonces sería increíble. Si funcionara en las colas, entonces sería genial. ¿Por qué no lo haría? Nada funciona en Tails. Tails estuvo casi un año sin soporte de bitcoin porque la gente de electrum/lightning hace su versión debian en último lugar o algo así, es de baja prioridad para ellos. ¿Estás usando tails con electrum? Hay casos de uso para ello. Usar tails con electrum no tiene valor, .... bueno, puedes usar Electrum Personal Server, que puedes usar en tails.
 
@@ -208,25 +208,25 @@ En realidad no es una lengua. Es más bien un modelo computacional... es más bi
 
 Miniscript está a medio camino entre .... ¿Funcionarían juntos miniscript y simplicidad? No tienen nada que ver. Miniscript es una simplificación de bitcoin script para los casos de uso más comunes. La simplicidad consiste más en empezar desde cero. La última vez, tuvimos a Andrew aquí y nos dio una pequeña y agradable discusión sobre miniscript.
 
-## bip70 y la regla de los viajes 
+## bip70 y la regla de los viajes
 
 Había un monedero de demostración hecho por Singapur y alguna empresa de contabilidad... es un monedero que sólo puede enviar a monederos que entienden su protocolo, e incluye información de reglas de viaje. Hay muchas formas malas de hacer esto. Si no tenemos cuidado, entonces una de las malas formas obtendrá un amplio apoyo de la industria. Así que lo ideal es que nos centremos en la privacidad y en mantener todo lo posible sin dejar de cumplir las normas.
 
-## No consultar todas las semillas DNS a la vez 
+## No consultar todas las semillas DNS a la vez
 
 Este es el PR 15558. Hay como unos pocos desarrolladores de bitcoin que ejecutan nodos semilla. Solía ser, cuando iniciabas tu nodo, que consultaba todos los nodos al mismo tiempo. Así que estas semillas DNS tendrían una visión relativamente completa de toda la red. Así que ahora sólo pregunta a 3 de los nodos. Si sólo consultas a uno, hay una vulnerabilidad de eclipse y si ese nodo te miente estás en un gran problema. Pero no quieres consultarlos a todos, así que reduces la visibilidad que estas cosas tienen sobre el estado de la red. Hay algunas preguntas interesantes aquí.
 
 Otro problema es que todo el mundo utiliza la misma semilla DNS. Pieter Wuille la escribió y todos los demás la usan. Es una cosa interesante. En mi clase, hago que la gente escriba una semilla DNS y arranque Bitcoin Core por su cuenta. Si hay un error en la implementación de la semilla DNS, entonces todos los nodos podrían caer por ese error potencialmente. No ha fallado durante cinco años, así que probablemente esté bien, pero podría ser significativo.
 
-## Kirguistán 
+## Kirguistán
 
 Kirguistán cerró el grifo a algunos mineros porque consumían demasiada energía. En Monglolia, algunos reguladores o reguladores chinos se quejaban de la minería china. Mongolia... sólo tiene un 23,16% de renovables, por lo que es una energía bastante sucia. Es bastante interesante. Una de las otras cosas que suceden es que gran parte del carbón estadounidense es ahora antieconómico en los Estados Unidos, pero es económico enviarlo a China y que China lo queme. A los chinos no les gusta pagar a los estadounidenses por nada, así que quieren que se compre menos carbón de Estados Unidos.
 
-## Hardware de bitcoin para bricolaje 
+## Hardware de bitcoin para bricolaje
 
 Stepan Snigirev estuvo aquí hace unos meses y repasó todos los proyectos de carteras de hardware DIY que conocemos. Como construir tus propios trezors o todo tipo de cosas. Si te gusta trastear, echa un vistazo a este proyecto nuestro.
 
-## Resistencia cuántica 
+## Resistencia cuántica
 
 Andrew Chow tenía una gran pregunta en Stack Overflow donde se pregunta... ¿el hashing de las claves públicas proporciona resistencia cuántica? Estoy mirando a Bob porque es una de las tres personas que entiende esto en bitcoin. Él hizo un buen argumento que, p2pkh no proporciona resistencia cuántica. El dio una serie de cosas que voy a repasar. Cuando gastas una transacción p2pkh, revelas la pubkey cuando la gastas. Si alguien tiene una computadora cuántica súper poderosa, puede usar tu clave pública para, presumiblemente, romper el hash de tu clave, si reutilizas las direcciones.
 
@@ -242,7 +242,7 @@ Sin embargo, deberíamos poner un clavo en este ataúd. Si vamos a desplegar tap
 
 Es como la fusión. Han estado diciendo que la fusión está a 5-10 años de distancia, desde que puedo recordar. Todavía está a 5-10 años de distancia. Pero no se puede robar un montón de bitcoin con la fusión si no es minando o algo así. Es posible demostrar definitivamente que la computación cuántica es imposible. Si alguien quiere financiarme para que lo haga, estaré encantado de hacerlo.
 
-## ¿Cómo funciona la debilidad de la mutación de longitud bech32? 
+## ¿Cómo funciona la debilidad de la mutación de longitud bech32?
 
 He leído esto en stackoverflow pero no lo entiendo muy bien. Pieter Wuille escribió en... tiene algo que ver con las direcciones de bech32 mapeando a un polinomio con 32 términos, y la p o la q es como el 1, y puedes añadir un montón de 1's, y algo pasa. Es una debilidad de bech32. Realmente no lo entiendo más que eso. La respuesta a corto plazo es que sólo aceptamos 24 o 32. La respuesta a largo plazo, es que en algún momento necesitaremos un nuevo... un bech64 o un bech48 o lo que sea, y lo arreglaremos entonces. Pero hay una solución a corto plazo no consensuada, justo ahí.
 
@@ -250,19 +250,19 @@ He leído esto en stackoverflow pero no lo entiendo muy bien. Pieter Wuille escr
 
 Dado como Bitcoin Core... un proxy tor llamado SOCKS, que es como se usa tor, podría reescribir completamente la memoria, básicamente. Esto es algo de como 2012. El arreglo fue durante el 2017 y ahora la revelación ha sido liberada. Han pasado dos años desde que se publicó la revelación. La línea de tiempo es interesante. Vulnerabilidad introducida en 2012. Revelada al equipo de seguridad, dos años después. Hace que te preguntes qué tipo de problemas se esconden en las cosas en este momento.
 
-## Pruebas de Jameson Lopp en diferentes nodos 
+## Pruebas de Jameson Lopp en diferentes nodos
 
 Jameson hizo grandes pruebas en diferentes nodos y descargando cosas. Bitcoin Core ocupó el puesto número uno. bcoin fue el número dos. btcd tuvo problemas. libbitcoin también se desempeñó como número cuatro. Libbitcoin indexa todos los UTXOs así que en realidad indexa más que sólo el txindex. Es difícil hacer una comparación uno a uno. He oído que libbitcoin hace algunas afirmaciones extraordinarias sobre lo rápido que es su descarga inicial de bloques. Es posible que estén desarrollando libbitcoin en sistemas altamente multinúcleo, por lo que probablemente haya una gran cantidad de hilos en los que se basan. Obsérvese que el tiempo de descarga inicial de bloques es más rápido con un año más de bloques con un año más de mejora. La descarga inicial de bloques es realmente importante, y queremos que ese tiempo siga bajando, porque si no, no se puede sincronizar. Alguien estaba intentando sincronizar con Ethereum y fallaba una y otra vez, pero finalmente consiguió que funcionara después de dos meses. Fue una entrada de blog interesante.
 
-# Claves públicas de Bitcoin y eliminación de las coordenadas x 
+# Claves públicas de Bitcoin y eliminación de las coordenadas x
 
 En bitcoin, las claves públicas son ... el problema es que es un poco más grande que 32 bytes. Hay un truco que permite que siempre sea de 32 bytes. El problema es que se puede decir que la eliminación de la coordenada y podría hacerla menos segura. Esto explica de una manera realmente agradable, para alguien que no entiende cómo se hacen las pruebas criptográficas, por qué no reduce la seguridad. Es realmente una explicación elegante de por qué eliminar la coordenada x no reduce la seguridad. Esto es para bip-schnorr, que decidió hacer esto hace un tiempo. Pero la razón no fue explicada en ese momento.
-	
+
 Estas claves públicas son puntos en una curva que se parece a esto. Realmente no sabes si está en la mitad superior o en la mitad inferior. Así que hay un byte delante que te dice cuál es. Esto elimina ese byte... No, es un solo bit, no un byte. Dada la coordenada x puedes calcular la coordenada y hasta la simetría de espejo si es arriba y abajo. Y en la entrada del blog se argumenta cómo se puede prescindir de ese bit.
 
 También es significativo que finalmente han publicado en la librería secp256k1, un PR para este schnorr sólo para x. No parece que vayan a fusionarlo antes de que se fusione la propuesta de taproot o algo así. Todavía estamos a un año o dos del siguiente paso. Blockchain Commons tiene un fork de esa implementación de secp256k1-schnorr en los repositorios de github de Blockchain Commons. Si estás interesado en jugar con Schnorr, es un algoritmo de firma digital realmente sencillo e interesante. Ya deberíamos haber cambiado de ECDSA a Schnorr.
 
-## Publicación en el blog de Coinbase 
+## Publicación en el blog de Coinbase
 
 <https://blog.coinbase.com/how-coinbase-views-proof-of-work-security-f4ba1a139da0>
 
@@ -270,15 +270,15 @@ Este fue un gran post del blog de Coinbase. No quieres monopolizar la tasa de ha
 
 El argumento en contra de los ASICs es que no hay compensación en la seguridad, sino que la democratiza, y cualquiera puede minar en su ordenador, lo que es mejor para la comunidad. Pero el argumento contrario es que reduce tanto la seguridad... De todos modos, es imposible conseguir una resistencia total de ASIC. Aumenta los requisitos de entrada para hacer un ASIC, para un algoritmo "resistente al ASIC". Es un jardín amurallado o una ventaja competitiva. Esto es lo que se ve cada vez que Monero hace hard-forks en su red. Creo que en los últimos 3 hard-forks, alguien descubrió un ASIC cada vez. Otro problema es que los desarrolladores saben cuál va a ser el próximo algoritmo, y podrían vender esta información a un minero, lo cual es una ventaja increíble.
 
-## Prueba óptica de trabajo 
+## Prueba óptica de trabajo
 
 No, todavía no es algo real. Es más bien hipotético. Podemos hablar más tarde sobre esto.
 
-## Compilación del NDK de Android de Bitcoin Core 
+## Compilación del NDK de Android de Bitcoin Core
 
 Esto puede compilar Bitcoin Core para android así que es genial.
-	
-## Creación de instantáneas de UTXO (16899) 
+
+## Creación de instantáneas de UTXO (16899)
 
 Jamesob está trabajando en esto. Esto es para dumputxooutset. Esto define una manera de crear instantáneas UTXO con un comando RPC.
 

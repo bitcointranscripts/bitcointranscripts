@@ -18,7 +18,7 @@ The conversation has been anonymized by default to protect the identities of the
 
 I’ve been working on connectd, we got that [merged](https://github.com/ElementsProject/lightning/pull/4731). It was not a big change. I have complained in the past that there tends to be a slight preference for c-lightning nodes and other implementations to just go for Tor bypassing your local firewall which is good and bad. It has both sides. It is less complicated but it turns out those Tor connections aren’t that fast. I was thinking about how to improve that. There is a small change that connectd starts by looking up the IPv4 and IPv6 addresses first and if it doesn’t get a connection there it tries the Tor connection last. At least when the nodes are configured with both addresses we will always take the IP and not the Tor version. That’s better I guess and eliminated a small bug. Currently I am working on the gossmap implementation that Rusty brought up. I am committing on [your branch](https://github.com/rustyrussell/lightning/pull/7) there because I can’t directly into the main repo, that is not possible. I am fiddling a bit with the interface and messing around with it so it gets more usable. Looking forward to using it for rebalancing when done.
 
-That would be good. You brought up Tor, somebody pointed out that Tor connections tend to die over long periods of time, the middle node vanishes. The idea that we shoulda actively ping over Tor came up on that PR. 
+That would be good. You brought up Tor, somebody pointed out that Tor connections tend to die over long periods of time, the middle node vanishes. The idea that we shoulda actively ping over Tor came up on that PR.
 
 Maybe I’ll do it, not sure. I have looked into it.
 
@@ -28,11 +28,11 @@ I already mentioned I think last meeting that I would like to add a change reque
 
 There is no reason not to add an address type for DNS. It is one of those things that’s driven by usage. Other Tor like networks are definitely something we would want to see when people ask for it. I look forward to your spec proposal, it should be easy.
 
-Since I am release captain for the next release I will be tackling mostly the backlog on GitHub. There are a couple of PRs that I am already reviewing. One is Michael’s [PR](https://github.com/rustyrussell/lightning/pull/7) for the gossmap changes. I promised I’d get to that as soon as possible. Speaking of Python I have debugged the problem with the [py-ln](https://pypi.org/project/pyln-proto/) BOLT packages that are published on PyPy. That turns out to be a relative link that points to nowhere if you download the source distribution. I am basically just materializing that. Since I was working on that I also added a GitHub actions workflow that will publish all of the py-ln packages every time we have a push on master to the test PyPy and a push that is tagged as a release should eventually be auto pushed to the public PyPy. At least we get that automated from now on. I am still unsure on how to bump the versions since we currently just manually bump the versions. We are not allowed to upload multiple times for the test one which is a nightly build. I will end up with a version number `.post` and then number of commits since the last tag. That seems to be the versioning scheme that they prefer. This leaves us with a major version. I’m looking into how we can extract that from Git describe by referencing the previous tag that we are based on. Speaking of which I created a new PyPy account just for GitHub Actions. If Rusty could invite pyln-bot as a maintainer to the BOLT packages we can actually automate that as well. 
+Since I am release captain for the next release I will be tackling mostly the backlog on GitHub. There are a couple of PRs that I am already reviewing. One is Michael’s [PR](https://github.com/rustyrussell/lightning/pull/7) for the gossmap changes. I promised I’d get to that as soon as possible. Speaking of Python I have debugged the problem with the [py-ln](https://pypi.org/project/pyln-proto/) BOLT packages that are published on PyPy. That turns out to be a relative link that points to nowhere if you download the source distribution. I am basically just materializing that. Since I was working on that I also added a GitHub actions workflow that will publish all of the py-ln packages every time we have a push on master to the test PyPy and a push that is tagged as a release should eventually be auto pushed to the public PyPy. At least we get that automated from now on. I am still unsure on how to bump the versions since we currently just manually bump the versions. We are not allowed to upload multiple times for the test one which is a nightly build. I will end up with a version number `.post` and then number of commits since the last tag. That seems to be the versioning scheme that they prefer. This leaves us with a major version. I’m looking into how we can extract that from Git describe by referencing the previous tag that we are based on. Speaking of which I created a new PyPy account just for GitHub Actions. If Rusty could invite pyln-bot as a maintainer to the BOLT packages we can actually automate that as well.
 
 What could go wrong? Sure.
 
-I created a new bot exactly because I didn’t feel like I want my other non Lightning related things be touched by GitHub. That is Lightning specific. That way at least we have that sort of compartmentalized. For stuff to land on PyPy it actually has to be committed on master. That gives us at least a gatekeeping capability that we might want. If somebody gets to push to master we are in trouble anyway. Other than that I have re-set up the Bitcoin bot which has been acting up lately. That is due to a change in either certificates or the API on the GitHub side which then caused me to redeploy which didn’t work on an old Ubuntu version so I just created a new VM and it should be running again. If there is anything just ping me. It should work. For reference that is the bot that counts acknowledgements and makes sure that some other housekeeping rules are maintained such as not having fixup commits in a pull request. I am looking into how to extend that in future but for now that’s what it has been good for, housekeeping mainly. 
+I created a new bot exactly because I didn’t feel like I want my other non Lightning related things be touched by GitHub. That is Lightning specific. That way at least we have that sort of compartmentalized. For stuff to land on PyPy it actually has to be committed on master. That gives us at least a gatekeeping capability that we might want. If somebody gets to push to master we are in trouble anyway. Other than that I have re-set up the Bitcoin bot which has been acting up lately. That is due to a change in either certificates or the API on the GitHub side which then caused me to redeploy which didn’t work on an old Ubuntu version so I just created a new VM and it should be running again. If there is anything just ping me. It should work. For reference that is the bot that counts acknowledgements and makes sure that some other housekeeping rules are maintained such as not having fixup commits in a pull request. I am looking into how to extend that in future but for now that’s what it has been good for, housekeeping mainly.
 
 # Greenlight
 
@@ -40,7 +40,7 @@ Other than that mostly [Greenlight](https://blockstream.com/2021/07/21/en-greenl
 
 You didn’t mention that it is in Rust.
 
-It is in Rust. 
+It is in Rust.
 
 We are going to have to rebrand aren’t we?
 
@@ -58,7 +58,7 @@ Just the plugins are in Rust? You are using the hsmd in C that is currently in c
 
 The reason why it got refactored into [libhsmd](https://github.com/ElementsProject/lightning/pull/4497), the construction we had before was c-lightning talking to a hsm proxy which forwarded everything to a plugin and then the client would attach and stream the requests out. Then on the client we would have the streaming engine and it would talk to a full hsmd. Now that requires multiple processes on the client side because we need one, to pull in the requests, the other one is the actual hsmd that does reply to these requests. By extracting everything into libhsmd we can now go through the FFI interface and do away with the second process basically.
 
-The hsmd core is still C at the moment. But it is not that much code really. We haven’t committed to a stable API so it would be painful to have two implementations for that reason but it would be like a weekend project to write a Rust version I would think. It is the simplest of the daemons. It takes stuff, decides what to do and spits back an answer. 
+The hsmd core is still C at the moment. But it is not that much code really. We haven’t committed to a stable API so it would be painful to have two implementations for that reason but it would be like a weekend project to write a Rust version I would think. It is the simplest of the daemons. It takes stuff, decides what to do and spits back an answer.
 
 That’s the exact reason why it is the first one you documented right?
 
@@ -92,9 +92,9 @@ Maybe I wouldn’t want the full access but just knowing the node ID, that would
 
 No, it has been running for years. But I did give him CLBOSS access at least 12 months ago. It has been running quite a few versions.
 
-Just with the node ID I would have a look. We will probably give an option to people. I always recommend people don’t use autopilot but people do use it anyway. With the proper warnings I think it would be a good experiment. 
+Just with the node ID I would have a look. We will probably give an option to people. I always recommend people don’t use autopilot but people do use it anyway. With the proper warnings I think it would be a good experiment.
 
-I always wanted something like a co-pilot rather than an autopilot. I always wanted something that would give me hints “Have you thought about…?” Even like a Dear Diary, I really wanted to write a Dear Diary plugin. Every day it would send me an email saying “Hi this is your node. This week the following interesting things happened. You should probably think about rebalancing this channel.” That is the kind of level that I want rather than something that will go “Move over Rusty. I am taking over your node and I am doing all these things.” CLBOSS is a little bit too bossy but that’s perhaps what people want. I would prefer something like an assistant rather than a commander. 
+I always wanted something like a co-pilot rather than an autopilot. I always wanted something that would give me hints “Have you thought about…?” Even like a Dear Diary, I really wanted to write a Dear Diary plugin. Every day it would send me an email saying “Hi this is your node. This week the following interesting things happened. You should probably think about rebalancing this channel.” That is the kind of level that I want rather than something that will go “Move over Rusty. I am taking over your node and I am doing all these things.” CLBOSS is a little bit too bossy but that’s perhaps what people want. I would prefer something like an assistant rather than a commander.
 
 Good luck with the ongoing release, always a stressful time.
 
@@ -110,7 +110,7 @@ We have submitted [Mastering Lightning](https://github.com/lnbook/lnbook) to O�
 
 Christian, he is also timezone compatible so that makes it easier to go back and forth.
 
-The book will go into print soonish. There is still some time left, probably a month or so. I think c-lightning shouldn’t fall out of it. 
+The book will go into print soonish. There is still some time left, probably a month or so. I think c-lightning shouldn’t fall out of it.
 
 I do hope you are not printing the Docker files.
 
@@ -172,7 +172,7 @@ IANA?
 
 I think that should be replaced.
 
-Everyone choose your own addresses. Isn’t that what IPv6 was for? 
+Everyone choose your own addresses. Isn’t that what IPv6 was for?
 
 It is doable. There were those guys using this Namecoin in 2013 which is a good idea in of itself even though nobody uses it. It proved that it could be made decentralized and we could do the same thing with managing address space. What we could do is make a fund, buy a large enough address room of IPv6 and then we say “That’s the Lightning implementation of IANA” and we do our distribution. You can rent and trade those addresses. If someone shuts down IANA you still know this block is managed by this decentralized system. We don’t rely on this political thing there. That would be cool.
 

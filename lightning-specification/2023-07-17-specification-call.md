@@ -23,7 +23,7 @@ Speaker 0: There was some discussion on this about —  What was it? I think [Re
 
 Speaker 1: No, I think I'm finally reading through the comments. Sorry. There's a question on…
 
-Speaker 0: Here it is: Option static remote key being dependent on anchor outputs. 
+Speaker 0: Here it is: Option static remote key being dependent on anchor outputs.
 
 Speaker 1: Yeah. Or the other way around, anchor outputs dependent on options static remote key. So, [Redacted] doesn't want to assume it, but I think, I'm not quite sure why, but [Redacted] does comment that the whole section we should remove.
 
@@ -59,9 +59,9 @@ Speaker 0: Yeah, LND's 2016. So, also two weeks at the moment.
 
 Speaker 1: Yeah, I think we're the same.
 
-Speaker 0: I think Eclair used to be a thousand, and now they've bumped it, but I could be wrong there. 
+Speaker 0: I think Eclair used to be a thousand, and now they've bumped it, but I could be wrong there.
 
-Speaker 4: Should we drop a comment in the issue to call for what those parameters are? 
+Speaker 4: Should we drop a comment in the issue to call for what those parameters are?
 
 Speaker 1: Yep.
 
@@ -107,9 +107,9 @@ Speaker 2: It's also probably worth mentioning, naive implementation should, at 
 
 Speaker 1: Yeah, the spec says you should do rate-limiting, and that's where it leaves it. So, I kind of agree with [Redacted]. We'll go with that, and we'll see. If we actually start hitting real issues with rate-limiting, as in we are rate-limiting too aggressively — real traffic, not people trying to stream video — then, we definitely have some things that we can do.
 
-Speaker 4: Cool. Thanks for educating me on that. 
+Speaker 4: Cool. Thanks for educating me on that.
 
-Speaker 1: Cool. 
+Speaker 1: Cool.
 
 Speaker 0: Alright. So, test vectors and then, a big green button — very exciting. Likewise, I guess, Offers 798, no updates here. Just waiting on interop.
 
@@ -135,7 +135,7 @@ Speaker 5: I wish it had come like two or three days early. Well, but in the int
 
 Speaker 1: Yeah. Look, I'm always tempted by the simplicity of just going: Let's not do, or let's push it back, right? You know, we could have a future feature bit, where we've optimized our commitment transactions to have a single SIG, and that's cute. I'm really tempted to go: Hey, this is a good place to cut the research project, right? I don't know, you're the closest to implementing it. Like, what do you think?
 
-Speaker 5: Well, basically what I'm saying is it's not that much of an additional onus to implement, but the simplicity of getting rid of the nonces is very appealing, especially in terms of the introspectability of the individual — the signature composition, you know? 
+Speaker 5: Well, basically what I'm saying is it's not that much of an additional onus to implement, but the simplicity of getting rid of the nonces is very appealing, especially in terms of the introspectability of the individual — the signature composition, you know?
 
 Speaker 1: Yeah.
 
@@ -153,13 +153,13 @@ Speaker 1: Yeah. And I mean, the issue of playing a bit fast and loose with stor
 
 Speaker 5: Yeah, it is. In that regard, I have a PR that I actually just opened an hour or so ago against simple taproot to slightly increase the just-in-timeness of the local nonces for channel opening. It's very marginal. It also gets rid of the images that are there and converts them to memory JS embeds, so we can more easily see diagrams and update them. But this is all operating on the assumption that's — it's disregarding [Redacted]'s proposal for the time being.
 
-Speaker 1: Okay, cool. Well, yeah, I guess, yeah, go away and have a deep think about it and decide which way you advocate for us to go because I'm too far enough away to really have an informed opinion, but I can see your dilemma. Good luck. 
+Speaker 1: Okay, cool. Well, yeah, I guess, yeah, go away and have a deep think about it and decide which way you advocate for us to go because I'm too far enough away to really have an informed opinion, but I can see your dilemma. Good luck.
 
 Speaker 5: Either is great, honestly
 
 Speaker 0: Cool, okay. Alright. 1059, taproot gossip. [Redacted] is here here. Posted a comment right before.
 
-Speaker 7: Yeah, I just posted a comment on the PR just giving a summary of all the updates that I took away from the meeting. So, just to get an ACK from everyone before I go ahead and actually update the whole doc. Yeah, so would appreciate it if people gave it a read before the next call. 
+Speaker 7: Yeah, I just posted a comment on the PR just giving a summary of all the updates that I took away from the meeting. So, just to get an ACK from everyone before I go ahead and actually update the whole doc. Yeah, so would appreciate it if people gave it a read before the next call.
 
 Speaker 2: One thing that I was talking to someone about at the meeting, and I don't remember who, is we should take this also as an opportunity to really clearly define a lot of the stuff that's not as clearly defined. Like, there was some conversation about the disabled bit, and whether that means ‘My peer is gone, I can't write a payment,’ or whether that means ‘I have no available liquidity on my side of the channel.’ It seems some nodes use it for one thing, some nodes use it for the other, and that's really bad. That should have one definition. So, it might be worth taking this also as an opportunity to be able to much more clearly define some of these things that already exist — that will presumably continue to exist — but that we should all standardize on in one way or another.
 
@@ -187,7 +187,7 @@ Speaker 7: Cool.
 
 Speaker 1: Okay. So, I mean, at the end of the day, what we win out of this is one less signature. So, we save 64 bytes. So, I'm not panicking over it.
 
-Speaker 2: Yeah, that's true, especially if we don't even have to worry about the details, we just add them together. That'll be nice and easy. So, let's follow up. I guess I will take that as an action item. I'll follow up with [Redacted]. 
+Speaker 2: Yeah, that's true, especially if we don't even have to worry about the details, we just add them together. That'll be nice and easy. So, let's follow up. I guess I will take that as an action item. I'll follow up with [Redacted].
 
 Speaker 1: Cool. Okay. So [Reacted], choose which dragons we slay. Excellent.
 
@@ -211,7 +211,7 @@ Speaker 2: Okay, do you happen to know offhand what the difference was if we jus
 
 Speaker 8: Offhand, I don't.
 
-Speaker 2: Okay. 
+Speaker 2: Okay.
 
 Speaker 8: But there's a difference in size, like the byte size is less than a third.
 
@@ -221,7 +221,7 @@ Speaker 1: Yeah. Doing the inside stuff is trivial. The fields are already there
 
 Speaker 2: I mean, we can just use a byte for that. I mean, it is removing a full pubkey, and that's a pretty big difference in a lot of cases, especially in QR code. Yeah, 24 bytes. I mean, some of these changes, and I guess [Redacted] can share this table that they have, but I mean, some of the changes are one blinded path or whatever, where we removed two pubkeys, and then the third pubkey is a third of that 30% difference. So, that means like 10% reduction basically, I think would be the estimate. Yeah. I hate it, but my vote would be: It's worth it. It's more work for [Redacted] though, so…
 
-Speaker 1: Yeah, no, I agree. Okay, [Redacted], sounds like you're on this. Do you want us to do the spec change, put up a PR that makes both changes? 
+Speaker 1: Yeah, no, I agree. Okay, [Redacted], sounds like you're on this. Do you want us to do the spec change, put up a PR that makes both changes?
 
 Speaker 8: Yeah, I'd have to look into the details, but it shouldn't be too bad, I imagine.
 
@@ -253,7 +253,7 @@ Speaker 9: So, after the simplified commitments discussion, folks from LND came 
 
 Speaker 1: Yeah, I think that was my suggestion — that a splice without any actual adding inputs and outputs should map pretty well onto this dynamic commitment.
 
-Speaker 9: Yeah, because they don't want to implement any of the interactive transaction stuff. 
+Speaker 9: Yeah, because they don't want to implement any of the interactive transaction stuff.
 
 Speaker 1: Yep. They do, just not yet. They just don't know it yet.
 
@@ -261,7 +261,7 @@ Speaker 6: Yeah, I feel like that works. There's some weird things, like splice 
 
 Speaker 9: Why do you say that? What does splice lock do?
 
-Speaker 6: It's when it's locked on-chain six confirmations, obviously, if you're not doing anything on chain. 
+Speaker 6: It's when it's locked on-chain six confirmations, obviously, if you're not doing anything on chain.
 
 Speaker 9: Oh, I see. Yeah.
 
@@ -271,7 +271,7 @@ Speaker 6: Oh, is the other one that they move the funding output over to the ta
 
 Speaker 1: That's the one they really want, right? Which makes sense. That's basically a splice without any in or out.
 
-Speaker 6: A hundred percent, yeah. 
+Speaker 6: A hundred percent, yeah.
 
 Speaker 1: If you just wanna do something like flip to anchor outputs, you don't need any of this. It's way, way simpler.
 
@@ -289,4 +289,4 @@ Speaker 0: Alright. And last item on the list — this one's also been a little 
 
 Speaker 1: GitHub says it's asking for my review. So I should do that, right? I will do that.
 
-Speaker 0: On the to-do list. Great. Yeah. I guess, a reminder to anyone who feels like they can take a look at those two. They've been hanging around for a while. That's it for the sort of formal agenda, what I've got on the issue. I'd just like to make a request to folks who are at the spec meeting: If you'd like to take a look at the notes, and maybe amend them if there's anything you're unhappy with. I'm going to send those out to the mailing list on Wednesday morning. It's as good as we could do. The audio recordings didn't really come through, but I made notes and [Redacted] from Labs made notes, so we have some kind of record. Any other topics before we close out for today? No. Okay. 
+Speaker 0: On the to-do list. Great. Yeah. I guess, a reminder to anyone who feels like they can take a look at those two. They've been hanging around for a while. That's it for the sort of formal agenda, what I've got on the issue. I'd just like to make a request to folks who are at the spec meeting: If you'd like to take a look at the notes, and maybe amend them if there's anything you're unhappy with. I'm going to send those out to the mailing list on Wednesday morning. It's as good as we could do. The audio recordings didn't really come through, but I made notes and [Redacted] from Labs made notes, so we have some kind of record. Any other topics before we close out for today? No. Okay.

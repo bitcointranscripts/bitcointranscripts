@@ -1,5 +1,5 @@
 ---
-title: Coldcard Mk3 
+title: Coldcard Mk3
 transcript_by: Michael Folkson
 categories: ['conference']
 tags: ['security', 'hardware wallet', 'wallet']
@@ -18,7 +18,7 @@ My name is Rodolfo, I have been around Bitcoin for a little while. We make hardw
 
 # What were the options
 
-When I closed my last company and decided to find a place to store my coins I couldn’t really find a wallet that satisfied two things that I needed. Which was physical security and open source. There are two wallets on the market. One is physical secure but it is closed source. The other one is not physically secure but it is open source. I just couldn’t take that so I created a new one. Coldcard Mk3 achieves that. 
+When I closed my last company and decided to find a place to store my coins I couldn’t really find a wallet that satisfied two things that I needed. Which was physical security and open source. There are two wallets on the market. One is physical secure but it is closed source. The other one is not physically secure but it is open source. I just couldn’t take that so I created a new one. Coldcard Mk3 achieves that.
 
 # MCU + SE
 
@@ -26,11 +26,11 @@ One thing that is interesting is there is rhetoric about how you can’t really 
 
 # Security in Depth
 
-We play with this theme that security in depth is essentially how do you increase the cost of an attack to be completely asymmetrical to the attacker. You want it to be very expensive and take a lot of money so that your attacker feels that way. 
+We play with this theme that security in depth is essentially how do you increase the cost of an attack to be completely asymmetrical to the attacker. You want it to be very expensive and take a lot of money so that your attacker feels that way.
 
 # Peeling the layers
 
-What we do is create a lot of layers. Each layer makes it cost more. The first layer for us is a wallet is fully airgapped if you want it to be. With Coldcard you don’t actually have to ever connect to a computer if you don’t want it to be connected to a computer. That decreases your attack vector significantly because most attacks require you to somehow interact with the device to try to get the stuff out of the device. We have ways of going around that. 
+What we do is create a lot of layers. Each layer makes it cost more. The first layer for us is a wallet is fully airgapped if you want it to be. With Coldcard you don’t actually have to ever connect to a computer if you don’t want it to be connected to a computer. That decreases your attack vector significantly because most attacks require you to somehow interact with the device to try to get the stuff out of the device. We have ways of going around that.
 
 # Starting from the basics: Local supply chain
 
@@ -44,7 +44,7 @@ Then we go to the next stage. How can I ship from my factory to you and prevent 
 
 The next stage is “Ok great I’ve got my wallet. I check the bag, I check the serial number of the bag.” We provide high resolution pictures of the device on our website and the case is clear so you can actually look inside and see that there is no funny stuff in there. A lot of attacks would require them to modify the hardware to try to take your coins from you. Let’s say everything looks exactly as it is supposed to, great.
 
-How do we secure the chips? The secure element is right here. It is this little guy. It is connected directly to the LEDs for a reason I will explain later. We put epoxy on top of that. Even if you want to try to break apart the wallet, take the secure element out, try to read it somehow, you are probably going to break it trying to get it out of there. You’ve already had to break the case for that. We also put a little bit of epoxy on the contacts the matter from the other microchip that it talks to. 
+How do we secure the chips? The secure element is right here. It is this little guy. It is connected directly to the LEDs for a reason I will explain later. We put epoxy on top of that. Even if you want to try to break apart the wallet, take the secure element out, try to read it somehow, you are probably going to break it trying to get it out of there. You’ve already had to break the case for that. We also put a little bit of epoxy on the contacts the matter from the other microchip that it talks to.
 
 # Peeling the layers
 
@@ -52,11 +52,11 @@ Then we have this system where we want to be able to attest the hardware without
 
 # Split PIN with anti phishing 2 words ie Evil Maid: Device Swap/Parts Swap
 
-Now let’s say you have a problem where you left the device unattended in your house or in a hotel. You could have an evil maid and the evil maid could try to swap your device. This is actually an attack that does happen, not so much for hardware wallets yet, not at least known, but it is a common one. Essentially an attacker would replace your device with a dummy device because you are not going to inspect everything again. He’ll be in the other room for example with your actual device. But his is actually transmitting you typing the PIN to him. So he can go in and take the money out. What we do is we split the PIN into two. There are essentially two PINs, The first PIN, it is going to unlock these two words. These two words are unique to you and the device. Then once you look at the device after putting your first part of the PIN you see these two words. If the two words are wrong that means that device is not your device. They can’t really change that inside the secure element. It is about 4 million combinations. If the words are ok then you type the second part of the PIN. Even if they got the first part of the PIN because it did transmit to the other room, now you have the second part of the PIN protecting your wealth there. 
+Now let’s say you have a problem where you left the device unattended in your house or in a hotel. You could have an evil maid and the evil maid could try to swap your device. This is actually an attack that does happen, not so much for hardware wallets yet, not at least known, but it is a common one. Essentially an attacker would replace your device with a dummy device because you are not going to inspect everything again. He’ll be in the other room for example with your actual device. But his is actually transmitting you typing the PIN to him. So he can go in and take the money out. What we do is we split the PIN into two. There are essentially two PINs, The first PIN, it is going to unlock these two words. These two words are unique to you and the device. Then once you look at the device after putting your first part of the PIN you see these two words. If the two words are wrong that means that device is not your device. They can’t really change that inside the secure element. It is about 4 million combinations. If the words are ok then you type the second part of the PIN. Even if they got the first part of the PIN because it did transmit to the other room, now you have the second part of the PIN protecting your wealth there.
 
 # Air-gap seed generation + dice rolling option
 
-A huge problem with hardware wallets or any sort of cryptography in general, you need to have a sound seed or private key. To generate that, wallets would use the random number generator inside their secure element. If they are good they will have true RNGs. The issue is that you are still trusting the silicon on the chips. You can’t trust that because if somebody has a backdoor on the chip you get screwed out of your coins again. What we do is we use dice. You can throw dice and it can provably tell you that you are inputting your own entropy. We walk you through on the device screen. You just throw a few dice and you are going to get a sound private key, it is pretty mathematically provable. You do that completely airgapped. Coldcard can work with just a battery. You can plug it into your computer and have a very nice traditional way of using a hardware wallet, say for your warm funds. But for your deep stuff, your deep cold storage, this device so far has not touched a computer. You can go inside your Faraday cage, you can have Michael Flaxman standing guard outside of it, you can wear your tinfoil hat. You can do this whole process knowing that nobody is intercepting anything. 
+A huge problem with hardware wallets or any sort of cryptography in general, you need to have a sound seed or private key. To generate that, wallets would use the random number generator inside their secure element. If they are good they will have true RNGs. The issue is that you are still trusting the silicon on the chips. You can’t trust that because if somebody has a backdoor on the chip you get screwed out of your coins again. What we do is we use dice. You can throw dice and it can provably tell you that you are inputting your own entropy. We walk you through on the device screen. You just throw a few dice and you are going to get a sound private key, it is pretty mathematically provable. You do that completely airgapped. Coldcard can work with just a battery. You can plug it into your computer and have a very nice traditional way of using a hardware wallet, say for your warm funds. But for your deep stuff, your deep cold storage, this device so far has not touched a computer. You can go inside your Faraday cage, you can have Michael Flaxman standing guard outside of it, you can wear your tinfoil hat. You can do this whole process knowing that nobody is intercepting anything.
 
 # Multi-Sig Setup also Air-Gap
 
@@ -106,7 +106,7 @@ A - I don’t know, I’m hopeful. We haven’t reviewed it so I can’t promise
 
 Q - Can you elaborate a bit more, you mentioned if you enter your PIN a few times wrong and then you enter it correctly it resets. But earlier you said it cannot reset? Can that reset be simulated in some way to infinitely try a lot of PINs?
 
-A - That is what a secure element provides you. If a wallet doesn’t have a secure element it can’t do this, it is hopeless. That is why we created this. You need a monotonic counter. It is sort of like a counter function that it can reverse. But then you could have something pretend to be that. The secure element provides you with the type of memory you need that can’t be changed, period. It just can’t. We can prevent that from being an attempt. Then once it does reset it resets the monotonic counter. 
+A - That is what a secure element provides you. If a wallet doesn’t have a secure element it can’t do this, it is hopeless. That is why we created this. You need a monotonic counter. It is sort of like a counter function that it can reverse. But then you could have something pretend to be that. The secure element provides you with the type of memory you need that can’t be changed, period. It just can’t. We can prevent that from being an attempt. Then once it does reset it resets the monotonic counter.
 
 Q - What’s the secret of your awesomeness? Specifically Twitter awesomeness, if you can elaborate on that.
 
@@ -116,7 +116,7 @@ Q - In a couple of slides you have some features to make it easier to use this a
 
 A - We don’t really care. We built this for me. Everybody has a different journey in Bitcoin but everybody gets there eventually. There is only so much abstraction you can do without trusting somebody else. Every layer of abstraction you are trusting something else. It is very important for people to get there. We try to make it easy and we can probably make it easier as well. That is why we also support USBs so you can be warm with a more traditional way of using it. But there are things we will never do. We will never have a web wallet for this to be connected to via USB because that is insanity. We will never make you verify your device with our servers so you can use that device because you are essentially doxing yourself. Even if we are nice we don’t know who is listening. Essentially the philosophy of this device is that nobody knows you have it, it doesn’t touch anything and we don’t know you have it. It really goes down the privacy way of handling things. For that you get for free the airgap way of doing things. Just think about Stuxnet. The effort that those guys went through to get the malware inside the facility. It is all about creating that and standing by that. If you want a much easier wallet to use that provides you with some of the features that we would not do I’ll send you to my competitors’ website and you can buy from them.
 
-Q - Can we enumerate once again all the things that are done on the secure element? It is storage of the mnemonic seed, it is managing the monotonic counter and the private key for attestation is there. Is there anything more that the secure element is doing? 
+Q - Can we enumerate once again all the things that are done on the secure element? It is storage of the mnemonic seed, it is managing the monotonic counter and the private key for attestation is there. Is there anything more that the secure element is doing?
 
 A - We use a TRNG for some of the communication between the MCU and the secure element. You need that randomness, that is reasonable for the two to talk together because there is a one time token on the MCU. We use the randomness, we use its features to do the communication safely between the two, we don’t use any closed source crypto accelerators to do any Bitcoin thing. All Bitcoin operations are done with an open source crypto library that we share with other hardware wallets. There are a lot of eyes on that. I don’t know if that is the source of that question. No obscure crypto being used. Vendor libraries for embedded is really a cluster of crap. You don’t use it. You have your own things and then for all the cryptography that is related to Bitcoin you have libraries that are open and maintained by more than one person so there is a lot of eyes there.
 

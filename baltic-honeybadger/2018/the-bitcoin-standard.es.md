@@ -1,5 +1,5 @@
 ---
-title: El estándar Bitcoin 
+title: El estándar Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

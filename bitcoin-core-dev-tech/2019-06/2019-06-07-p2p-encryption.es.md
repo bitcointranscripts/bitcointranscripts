@@ -1,5 +1,5 @@
 ---
-title: Cifrado P2P 
+title: Cifrado P2P
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
@@ -8,7 +8,7 @@ date: 2019-06-07
 aliases: ['/es/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/']
 ---
 
-Cifrado p2p 
+Cifrado p2p
 
 <https://twitter.com/kanzure/status/1136939003666685952>
 
@@ -28,7 +28,7 @@ Los objetivos son, de nuevo, añadir el cifrado oportunista; a veces me arrepien
 
 También es una oportunidad para optimizar el protocolo. El objetivo no es como la resistencia a la censura.  Es una encriptación oportunista, no para la resistencia a la censura. Tiene algunas buenas propiedades para resolver los observadores pasivos, pero aparte de eso es más bien un bloque de construcción. Además, elimina la manipulación de mensajes no detectables.
 
-# Apretón de manos 
+# Apretón de manos
 
 Repasemos cómo funciona. Este es el resumen simple. La propuesta actual es que un iniciador envía una pubkey de `32` bytes sin ninguna cabecera de mensaje ni nada más, son sólo `32` bytes puros al respondedor. El respondedor lee los `32` bytes y luego detecta si se trata de un mensaje mágico de la versión `1`, y comienza con la versión de la magia. Si es así, entonces es un handshake del protocolo `v1`, entonces continúa con v1 porque todavía queremos usar `v1`. Si no contiene la magia en la versión, entonces trata los `32` bytes como un handshake. Entonces hace un `ECDH`, entonces él envía de vuelta su clave pública, y luego en el otro lado hacemos `ECDH` y tenemos un secreto compartido.
 
@@ -180,7 +180,7 @@ La mayor amenaza en Internet hoy en día es la vigilancia generalizada, y el cif
 
 Para el cifrado, tienes que estar en el medio. El monitoreo perasivo generalmente significa que no estás en el medio, sólo estás monitoreando paquetes. Sólo puedes descifrar si eres el par o estás en el medio. Si eres un ISP, puedes instalar algo en el router para escuchar el tráfico, manipular paquetes, observar paquetes, sin coste, sin handshake nada. Pero si quieres interceder en este protocolo, necesitas interceptar activamente el apretón de manos y arreglar las claves, rastrear a cada compañero, es mucho más complejo de hacer. Imagina que eres una entidad de vigilancia donde lo que obtienes es un volcado en vivo de paquetes a través de Internet.
 
-# Firma: un protocolo de autenticación secreta 
+# Firma: un protocolo de autenticación secreta
 
 <https://gist.github.com/sipa/d7dcaae0419f10e5be0270fada84c20b>
 

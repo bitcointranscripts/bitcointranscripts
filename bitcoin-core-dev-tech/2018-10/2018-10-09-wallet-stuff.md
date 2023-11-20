@@ -1,5 +1,5 @@
 ---
-title: Wallet Stuff 
+title: Wallet Stuff
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['consensus', 'wallet']

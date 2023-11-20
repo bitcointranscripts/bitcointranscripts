@@ -1,5 +1,5 @@
 ---
-title: Custodia de Bitcoin 
+title: Custodia de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conference']

@@ -1,5 +1,5 @@
 ---
-title: Socratic Seminar 20 
+title: Socratic Seminar 20
 transcript_by: Bryan Bishop
 categories: ['meetup']
 date: 2020-11-30
@@ -171,7 +171,7 @@ XX04: What about old coins excluded? People are often bringing up pre-segwit coi
 
 XX06: I'm not aware of that chart, but it makes sense. We should mention that in public, and someone will do it.
 
-XX01: One of these lines is hard to see here. The payments using segwit has increased, it's just hard to see that on my black background. The other reason I wanted to bring this up is because--- taproot is obviously a proposed soft-fork coming and with a new version of segwit addresses and seeing how the previous network upgrade adoption went, and kind of where it is potentially plateaued is interesting especially in light of a new upgrade coming down the road. I have myself a lot that I could say about this, having run a bitcoin company, having seen how infrastructure ossicizes and companies get stuck with legacy infrastructure that they don't bother to update. What can we do to make it easier to make 
+XX01: One of these lines is hard to see here. The payments using segwit has increased, it's just hard to see that on my black background. The other reason I wanted to bring this up is because--- taproot is obviously a proposed soft-fork coming and with a new version of segwit addresses and seeing how the previous network upgrade adoption went, and kind of where it is potentially plateaued is interesting especially in light of a new upgrade coming down the road. I have myself a lot that I could say about this, having run a bitcoin company, having seen how infrastructure ossicizes and companies get stuck with legacy infrastructure that they don't bother to update. What can we do to make it easier to make
 
 BB: address index wasn't that interesting.
 
@@ -442,7 +442,7 @@ XX01: Shouldn't we have made it 0.0000021 since it's bitcoin? That's just a joke
 
 XX06: About taproot, I've been looking at how 2-of-3 multisig would end up transaction size wise and single sig and so on, and it's just another huge size improvement. It's going to be 58 vbytes. Comparing that to 2-of-3 multisig with P2SH with 297 bytes, it's almost a 5x reduction in blockchain space which I think is pretty remarkable. Then the other thing that I've been really thinking about is if people are now going to start implementing sending to v1 addresses first, like they had been with native segwit where they were first able to send it to, and later it was enabled as a non-default reecive address.... then I think there's a lot of room for people to upgrade to native segwit by default, because when they support taproot they will therefore go to native segwit. So we will see a big push of segwit adoption with taproot getting merged.
 
-XX01: ... how far are we from the world where can someone can spin up a 3-of-5 cold storage with a single pubkey representing a threshold required to sign for it? 
+XX01: ... how far are we from the world where can someone can spin up a 3-of-5 cold storage with a single pubkey representing a threshold required to sign for it?
 
 XX03: ... the first round can be pre-computed before you know its message. There's some edge cases to worry about, but in that case you have a non-interactive signing protocol. You have everyone publish their partial signatures, and then they can be combined. It's a remarkable technique. It's just using two nonces instead of one nonce. Then you MuSig those two nonces at signing time. This was pretty much invented simultaneously by three distinct groups of people.
 

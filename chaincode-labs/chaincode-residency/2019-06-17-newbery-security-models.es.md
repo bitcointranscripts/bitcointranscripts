@@ -1,5 +1,5 @@
 ---
-title: Security Models 
+title: Security Models
 transcript_by: Caralie Chrisco
 translation_by: Julien Urraca
 speakers: ['John Newbery']

@@ -36,7 +36,7 @@ Each transcript is a markdown file, which requires to include the `title` and `t
 
 ```
 ---
-title: Reproducible Builds 
+title: Reproducible Builds
 transcript_by: Bryan Bishop
 speakers: ['Carl Dong']
 categories: ['podcast']

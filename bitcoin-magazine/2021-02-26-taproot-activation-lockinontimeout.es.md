@@ -1,5 +1,5 @@
 ---
-title: Activación de Taproot y LOT=true vs LOT=false 
+title: Activación de Taproot y LOT=true vs LOT=false
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']

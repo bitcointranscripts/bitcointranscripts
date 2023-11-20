@@ -1,5 +1,5 @@
 ---
-title: Covenants 
+title: Covenants
 transcript_by: Jeremy Rubin
 translation_by: Ajian
 categories: ['conference']

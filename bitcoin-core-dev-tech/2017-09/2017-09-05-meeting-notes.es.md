@@ -176,7 +176,7 @@ Si cambias todas las transacciones del historial para usar índices, es un 30% m
 
 <http://bitcoin.sipa.be/bech32/demo/demo.html>
 
-# Agregación de firmas 
+# Agregación de firmas
 
 Trasladado a <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>
 
@@ -246,7 +246,7 @@ Hacer que el hijo pague por el padre en lugar de la sustitución. CPFP para cade
 
 Transacción de 200 bytes que paga 30 sat/byte. Se gasta por una transacción de 1 sat/byte de 100 kb, pero mi bump para reemplazarla tiene que pagar una cantidad enorme de sat/byte para poder pagar lo que sacó. No tiene que ser la tarifa, tiene que ser lo que ha eliminado.
 
-# Árboles de Merkle y MASTs 
+# Árboles de Merkle y MASTs
 
 Trasaladado a <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/>
 

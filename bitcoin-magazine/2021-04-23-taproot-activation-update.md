@@ -32,7 +32,7 @@ SP: We’ve already made this pun.
 
 AvW: We’ve already made it twice I think. It doesn’t matter. We are going to discuss the final implementation details of Speedy Trial today. We have already covered Speedy Trial in a previous [episode](https://btctranscripts.com/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial/). This time we are also going to contrast it to the LOT=true client which is an alternative that has been released by a couple of community members. We are going to discuss how they compare.
 
-SP: That sounds like a good idea. We also talked about Taproot activation options in general in a much earlier episode. 
+SP: That sounds like a good idea. We also talked about Taproot activation options in general in a much earlier episode.
 
 AvW: One of the first ones?
 
@@ -40,7 +40,7 @@ SP: We also talked about this idea of this cowboy mentality where somebody would
 
 AvW: That is where we are.
 
-SP: We also predicted correctly that there would be a lot of bikeshedding. 
+SP: We also predicted correctly that there would be a lot of bikeshedding.
 
 AvW: Yes, this is also something we will get into. First of all as a very brief recap, we are talking about Taproot activation. Taproot is a proposed protocol upgrade for compact and potentially privacy preserving smart contracts on the Bitcoin protocol. Is that a good summary?
 
@@ -50,9 +50,9 @@ AvW: The discussion on how to upgrade has been going on for a while now. The cha
 
 SP: Yeah. The other thing that can work when it is a distributed system is some sort of conventions, ways that you are used to doing things. But unfortunately the convention we had ran into problems with the SegWit deployment. Then the question is “Should we try something else or was it just a freak accident and we should try the same thing again?”
 
-AvW: I think the last preface before we really start getting into Speedy Trial, I’d like to point out the general idea with a soft fork, a backwards compatible upgrade which Taproot is, is that if a majority of hash power is enforcing the new rules that means that the network will stay in consensus. 
+AvW: I think the last preface before we really start getting into Speedy Trial, I’d like to point out the general idea with a soft fork, a backwards compatible upgrade which Taproot is, is that if a majority of hash power is enforcing the new rules that means that the network will stay in consensus.
 
-SP: Yeah. We can repeat that if you keep making transactions that are pre-Taproot then those transactions are still valid. In that sense, as a user you can ignore soft forks. Unfortunately if there is a problem you cannot ignore that as a user even if your transactions don’t use Taproot. 
+SP: Yeah. We can repeat that if you keep making transactions that are pre-Taproot then those transactions are still valid. In that sense, as a user you can ignore soft forks. Unfortunately if there is a problem you cannot ignore that as a user even if your transactions don’t use Taproot.
 
 AvW: I think everyone agrees that it is very nice if a majority of hash power enforces the rules. There are coordination mechanisms to measure how many miners are on board with an upgrade. That is how you can coordinate a fairly safe soft fork. That is something everyone agrees on. Where people start to disagree on what happens if miners don’t actually cooperate with this coordination. We are not going to rehash all of that. There are previous episodes about that. What we are going to explain is that in the end the Bitcoin Core development community settled on a solution called “Speedy Trial.” We already mentioned that as well in a previous episode. Now it is finalized and we are going to explain what the finalized parameters are for this.
 
@@ -70,7 +70,7 @@ SP: Starting on I think it is this Sunday (April 25th, midnight) the first time 
 
 AvW: It is Saturday
 
-SP:… the signaling starts. In about two weeks the signaling starts, no earlier than one week from now. 
+SP:… the signaling starts. In about two weeks the signaling starts, no earlier than one week from now.
 
 AvW: Just to be clear, that’s the earliest it can start.
 
@@ -82,9 +82,9 @@ SP: That would be a cool date. That is when the signaling starts and the signali
 
 AvW: Which is estimated to be mined when?
 
-SP: That will be November 12th this year. 
+SP: That will be November 12th this year.
 
-AvW: That is going to differ a bit of course based on how fast blocks are going to be mined over the coming months. It is going to be November almost certainly. 
+AvW: That is going to differ a bit of course based on how fast blocks are going to be mined over the coming months. It is going to be November almost certainly.
 
 SP: Which would be 4 years after the SegWit2x effort imploded.
 
@@ -92,19 +92,19 @@ AvW: Right, nice timing in that sense.
 
 SP: Every date is nice. That’s what the Speedy Trial does. Every two weeks there is a vote, if 90 percent of the vote is reached then that’s the activation date. It doesn’t happen immediately and because it is a “Speedy” Trial it could also fail quickly and that is in August, around August 11th. If the difficulty period after that or before that, I always forget, doesn’t reach the goal, I think it is after…
 
-AvW: The difficulty period must have ended by August 11th right? 
+AvW: The difficulty period must have ended by August 11th right?
 
 SP: When August 11th is passed it could still activate but then the next difficulty period, it cannot. I think the rule is at the end of the difficulty period you start counting and if the result is a failure then if it is after August 11th you give up but if it is not yet August 11th you enter the next round.
 
 AvW: If the first block of a new difficulty period is mined on August 10th will that difficulty period still count?
 
-SP: That’s right. I think that’s one of the subtle changes made to BIP 9 to make BIP 9 easier to reason about. I think it used to be the other way around where you first check the date but if it was past the date you would give up but if it was before the date you would still count. Now I think it is the other way round, it is a bit simpler. 
+SP: That’s right. I think that’s one of the subtle changes made to BIP 9 to make BIP 9 easier to reason about. I think it used to be the other way around where you first check the date but if it was past the date you would give up but if it was before the date you would still count. Now I think it is the other way round, it is a bit simpler.
 
 AvW: I see. There is going to be a signaling window of about 3 months.
 
 SP: That’s right.
 
-AvW: If in any difficulty period within that signaling window of 3 months 90 percent of hash power is reached Taproot will activate in November of this year. 
+AvW: If in any difficulty period within that signaling window of 3 months 90 percent of hash power is reached Taproot will activate in November of this year.
 
 SP: Yes
 
@@ -120,21 +120,21 @@ AvW: I just wanted to clarify that.
 
 SP: It does not mean that Taproot is cancelled.
 
-AvW: If the threshold isn’t met then this specific software client will just do nothing but Bitcoin Core developers and the rest of the Bitcoin community can still figure out new ways to activate Taproot. 
+AvW: If the threshold isn’t met then this specific software client will just do nothing but Bitcoin Core developers and the rest of the Bitcoin community can still figure out new ways to activate Taproot.
 
 SP: Exactly. It is a low cost experiment. If it wins we get Taproot. If not then we have some more information as to why we don’t…
 
-AvW: I also want to clarify. We don’t know what it is going to look like yet. That will have to be figured out then. We could start figuring it out now but that hasn’t been decided yet, what the deployment would look like. 
+AvW: I also want to clarify. We don’t know what it is going to look like yet. That will have to be figured out then. We could start figuring it out now but that hasn’t been decided yet, what the deployment would look like.
 
 # Alternative to Bitcoin Core (Bitcoin Core 0.21.0-based Taproot Client)
 
 Update on Taproot activation releases: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
 
-AvW: Another client was also launched. There is a lot of debate on the name. We are going to call it the LOT=true client. 
+AvW: Another client was also launched. There is a lot of debate on the name. We are going to call it the LOT=true client.
 
 SP: That sounds good to me.
 
-AvW: It derives from this technical and philosophical difference about how soft forks should be activated in the first place. This client uses, you guessed it, LOT=true. LOT=true means that if the signaling window is over, by the end of the signaling window nodes will start to reject any blocks that don’t signal. They only accept blocks that signal. That is the main difference. Let’s get into the specifics of the LOT=true client. 
+AvW: It derives from this technical and philosophical difference about how soft forks should be activated in the first place. This client uses, you guessed it, LOT=true. LOT=true means that if the signaling window is over, by the end of the signaling window nodes will start to reject any blocks that don’t signal. They only accept blocks that signal. That is the main difference. Let’s get into the specifics of the LOT=true client.
 
 SP: In the beginning it is the same, in principle it is the same. There is a theoretical possibility that it is not if miners do something really crazy. It starts at a certain block height…
 
@@ -142,9 +142,9 @@ AvW: We just mentioned that Bitcoin Core 0.21.1 starts its signaling window on t
 
 SP: Exactly, they picked block 681,408.
 
-AvW: It is specified as a block height instead of indirectly through using a date. 
+AvW: It is specified as a block height instead of indirectly through using a date.
 
-SP: But in all likelihood that is going to be the exact same moment. Both Speedy Trial (Core) and the LOT=true client will start the signaling, the voting periods at the same time. The voting periods themselves, they vote on the same bit. They both vote on bit 2. They both have a threshold of 90 percent. Also if the vote is true then it also has a delayed activation. The delayed activation is a block height in both scenarios in both the Speedy Trial (Core) and the LOT=true variant. 
+SP: But in all likelihood that is going to be the exact same moment. Both Speedy Trial (Core) and the LOT=true client will start the signaling, the voting periods at the same time. The voting periods themselves, they vote on the same bit. They both vote on bit 2. They both have a threshold of 90 percent. Also if the vote is true then it also has a delayed activation. The delayed activation is a block height in both scenarios in both the Speedy Trial (Core) and the LOT=true variant.
 
 AvW: Botha are November 12th, a November activation anyway. If miners signal readiness for Taproot within the Speedy Trial period both of these clients will activate Taproot in November on that exact same date, exact same block.
 
@@ -152,7 +152,7 @@ SP: So in that sense they are identical. But they are also different.
 
 AvW: Let’s get into the first big difference. We already mentioned one difference which is the very subtle difference between starting it at height, the thing we just mentioned. Let’s get into a bigger difference.
 
-SP: There is also a height for a timeout in this LOT=true and that is also a block. But not only is that a block, that could be a slight difference especially when it is a long time period. At the beginning if you use block height or time, date you can guess very accurately but if it is a year ahead then you can’t. But this is almost two years ahead, this block height (762048, approximately November 10th 2022) that they have in there. It goes on much longer. 
+SP: There is also a height for a timeout in this LOT=true and that is also a block. But not only is that a block, that could be a slight difference especially when it is a long time period. At the beginning if you use block height or time, date you can guess very accurately but if it is a year ahead then you can’t. But this is almost two years ahead, this block height (762048, approximately November 10th 2022) that they have in there. It goes on much longer.
 
 AvW: Two years from now you mean, well one and a half.
 
@@ -162,11 +162,11 @@ AvW: Let’s stick to the facts first and the implications later. Speedy Trial (
 
 SP: The other big difference is that at the end of that 18 months, where the Speedy Trial will simply give up and continue, the LOT=true will wait for miners who do signal. This could be nobody or could be everybody.
 
-AvW: They will only accept signaling blocks after these 18 months. For those who are aware of the whole block size war, it is a little bit like the BIP 148 client. 
+AvW: They will only accept signaling blocks after these 18 months. For those who are aware of the whole block size war, it is a little bit like the BIP 148 client.
 
 SP: It is pretty much the same with slightly better tolerance. The UASF client required every single block to signal whereas this one requires 90 percent to signal. In practice if you are the miners at the last 10 percent of that window you need to pay a bit more attention. Other than that it is the same.
 
-AvW: That is why some people would call this the UASF client. The BIP 148 client was the UASF client for SegWit, this is the UASF client for Taproot. I know that for example Luke Dashjr has been contributing to this client doesn’t like the term UASF in this context because there is 18 months of regular miner signaling. 
+AvW: That is why some people would call this the UASF client. The BIP 148 client was the UASF client for SegWit, this is the UASF client for Taproot. I know that for example Luke Dashjr has been contributing to this client doesn’t like the term UASF in this context because there is 18 months of regular miner signaling.
 
 SP: So did the UASF. It is a bit more patient than the UASF.
 
@@ -190,19 +190,19 @@ SP: Then of course if you are using that LOT=true client and you start immediate
 
 AvW: In this case it matters what miners are doing as well. If miners signal readiness because they are actually ready and they are actually going to enforce Taproot then it is fine. There is no issue because they will enforce the soft fork and even Bitcoin Core 0.21.1 nodes will follow this chain. The LOT=true client will enforce and everybody is happy on the same chain. The only scenario where this is a problem, what you just described, is if miners do signal readiness but they aren’t actually going to enforce the Taproot rules.
 
-SP: The problem is of course in general with soft forks, but especially if everyone is not on exactly the same page about what the rules are, you only know that it is enforced when it is actually enforced. You don’t know if it is going to be enforced in the future. This will create a conundrum for everybody else because then the question is what to do? One thing you could do at that point is say “Obviously Taproot is activated so let’s just release a new version of Bitcoin Core that just says retroactively it activated.” It could just be a BIP 9 soft fork repeating the same bit but slightly later or it could just say “We know it activated. We will just hardcode the flag date.” 
+SP: The problem is of course in general with soft forks, but especially if everyone is not on exactly the same page about what the rules are, you only know that it is enforced when it is actually enforced. You don’t know if it is going to be enforced in the future. This will create a conundrum for everybody else because then the question is what to do? One thing you could do at that point is say “Obviously Taproot is activated so let’s just release a new version of Bitcoin Core that just says retroactively it activated.” It could just be a BIP 9 soft fork repeating the same bit but slightly later or it could just say “We know it activated. We will just hardcode the flag date.”
 
 AvW: It could just be a second Speedy Trial. Everything would work in that case?
 
-SP: There is a problem with reusing the same bit number within a short period of time. (Note: AJ Towns stated on IRC that this would only be a problem if multiple soft forks were being deployed in parallel.) Because it would be exactly the week after in the scenario we talked about it may not be possible to use the same bit. Then you will have a problem because you can’t actually check that specific bit but there’s no signal on any of the other bits. That would create a bit of a headache. The other solution would be very simple, to say it apparently activated so we will just hardcode the block date and activate it then. The problem is what if between the time that the community decides “Let’s do this” and the moment that software is released and somewhat widely deployed one or more miners say “Actually we are going to start stealing these Taproot coins.” You get a massive clusterf\*\*\* in terms of agreeing on the chain. Now miners will not be incentivized to do this because why would you deliberately create complete chaos if you just signaled for a soft fork? But it is a very scary situation and it might make it scary to make the release. If you do make the release but miners start playing these shenanigans what do you do then? Do you accept a huge re-org at some point? Or do you give up and consider it not deployed? But then people lose their money and you’ve released a client that you now have to hard fork from technically. It is not a good scenario. 
+SP: There is a problem with reusing the same bit number within a short period of time. (Note: AJ Towns stated on IRC that this would only be a problem if multiple soft forks were being deployed in parallel.) Because it would be exactly the week after in the scenario we talked about it may not be possible to use the same bit. Then you will have a problem because you can’t actually check that specific bit but there’s no signal on any of the other bits. That would create a bit of a headache. The other solution would be very simple, to say it apparently activated so we will just hardcode the block date and activate it then. The problem is what if between the time that the community decides “Let’s do this” and the moment that software is released and somewhat widely deployed one or more miners say “Actually we are going to start stealing these Taproot coins.” You get a massive clusterf\*\*\* in terms of agreeing on the chain. Now miners will not be incentivized to do this because why would you deliberately create complete chaos if you just signaled for a soft fork? But it is a very scary situation and it might make it scary to make the release. If you do make the release but miners start playing these shenanigans what do you do then? Do you accept a huge re-org at some point? Or do you give up and consider it not deployed? But then people lose their money and you’ve released a client that you now have to hard fork from technically. It is not a good scenario.
 
-AvW: It gets complicated in scenarios like this, also with game theory and economics. Even if miners would choose to steal they risk stealing coins on a chain that could be re-orged. They have just mined a chain that could be re-orged if other miners do enforce these Taproot rules. It gets weird, it is a discussion about economic incentives and game theory in that scenario. Personally I think it is pretty unlikely that something like this would happen but it is at least technically possible and it is something to be aware of. 
+AvW: It gets complicated in scenarios like this, also with game theory and economics. Even if miners would choose to steal they risk stealing coins on a chain that could be re-orged. They have just mined a chain that could be re-orged if other miners do enforce these Taproot rules. It gets weird, it is a discussion about economic incentives and game theory in that scenario. Personally I think it is pretty unlikely that something like this would happen but it is at least technically possible and it is something to be aware of.
 
-SP: It does make you wonder whether as a miner it is smart to signal immediately after this Speedy Trial. This LOT=true client allows for two years anyway. If the only reason you are signaling is because this client exists then I would strongly suggest not doing it immediately after the Speedy Trial. Maybe wait a little bit until there is some consensus about what to do next. 
+SP: It does make you wonder whether as a miner it is smart to signal immediately after this Speedy Trial. This LOT=true client allows for two years anyway. If the only reason you are signaling is because this client exists then I would strongly suggest not doing it immediately after the Speedy Trial. Maybe wait a little bit until there is some consensus about what to do next.
 
 AvW: One thing you mentioned and I want to quickly address that, this risk always exists for any soft fork. Miners can always false signal, they could have done it with SegWit for example, false signal and then steal coins from SegWit outputs. Old nodes wouldn’t notice the difference. That is always a risk. I think the difference here is that Bitcoin Core 0.21.1 users in this scenario might think they are running a new node, from their perspective they are running an updated node. They are running the same risks as previously only outdated nodes would run.
 
-SP: I would be mostly worried about the potential 0.21.2 users who are installing the successor to Speedy Trial which retroactively activates Taproot perhaps. That group is very uncertain of what the rules are. 
+SP: I would be mostly worried about the potential 0.21.2 users who are installing the successor to Speedy Trial which retroactively activates Taproot perhaps. That group is very uncertain of what the rules are.
 
 AvW: Which group is this?
 
@@ -212,9 +212,9 @@ AvW: It would still be November so there is still room to prepare in that case.
 
 SP: Ok, then I guess what I said before is nonsense. The easier solution would be to do a flag date where the new release would say “It is going to activate on November 12th or whatever that block height is without any signaling.” Signaling exists but people have different interpretations about it. That could be a way.
 
-# Recap 
+# Recap
 
-AvW: I am still completely clear about what we are talking about it here but I am not sure if our listeners are catching up at this point. Shall we recap? If miners activate during the Speedy Trial then everything is fine, everyone is in consensus. 
+AvW: I am still completely clear about what we are talking about it here but I am not sure if our listeners are catching up at this point. Shall we recap? If miners activate during the Speedy Trial then everything is fine, everyone is in consensus.
 
 SP: And the new rules take effect in November.
 
@@ -254,7 +254,7 @@ SP: Let’s say in this case in December of this year the miners suddenly start 
 
 AvW: This is the same scenario we just discussed? There is only a problem if there is a false signaling. Otherwise it is fine.
 
-SP: There is a problem if there is false signaling but it is more complicated to resolve this one because that option of just releasing a new client with a flag day in it that is far enough into the future, that is not longer there. It is potentially active immediately. If you do a release but then suddenly a miner starts not enforcing the rules you get this confusion that we talked about earlier. Then we are able to solve it by just making a flag date. This would be even messier. Maybe it is also even less likely. 
+SP: There is a problem if there is false signaling but it is more complicated to resolve this one because that option of just releasing a new client with a flag day in it that is far enough into the future, that is not longer there. It is potentially active immediately. If you do a release but then suddenly a miner starts not enforcing the rules you get this confusion that we talked about earlier. Then we are able to solve it by just making a flag date. This would be even messier. Maybe it is also even less likely.
 
 AvW: It is pretty similar to the previous scenario but a little more difficult, less obvious how to solve this.
 
@@ -266,9 +266,9 @@ SP: You wanted to go for some scenario where miners wait all the way to the end 
 
 AvW: Yes that is where I wanted to go.
 
-SP: This is where the mandatory signaling kicks in. If there is no mandatory signaling then the LOT=true nodes will stop until somebody mines a block that they’d like to see, a block that signals. If they do see this block that signals we are back in the previous example where suddenly the regular Bitcoin Core nodes see this signaling but they ignore it. Now there is a group of nodes that believe that Taproot is active and there is a group of nodes that don’t. Somebody then has to decide what to do with it. 
+SP: This is where the mandatory signaling kicks in. If there is no mandatory signaling then the LOT=true nodes will stop until somebody mines a block that they’d like to see, a block that signals. If they do see this block that signals we are back in the previous example where suddenly the regular Bitcoin Core nodes see this signaling but they ignore it. Now there is a group of nodes that believe that Taproot is active and there is a group of nodes that don’t. Somebody then has to decide what to do with it.
 
-AvW: You are still talking about false signaling here? 
+AvW: You are still talking about false signaling here?
 
 SP: Even if the signaling is genuine you still want there to be a Bitcoin Core release, probably, that actually says “We have Taproot now.” But the question is when do we have Taproot according to that release? What is a safe date to put in there? You could do it retroactively.
 
@@ -278,7 +278,7 @@ SP: The problem with this signaling is you don’t know if it is active until so
 
 AvW: My assumption was that there wasn’t false signaling. They’ll just create the longest chain with the valid rules anyway.
 
-SP: The problem with that is that it is unknowable. 
+SP: The problem with that is that it is unknowable.
 
 AvW: The scenario I really wanted to get to Sjors is the very simple scenario where the majority of miners doesn’t signal when the 18 months are up. In that case they are going to create the longest chain that the Bitcoin Core 0.21.1 nodes are going to follow while the LOT=true nodes are only going to accept blocks that do signal which maybe zero or at least fewer. If it is a majority then there is no split. But if it is not a majority then we have a split.
 
@@ -294,13 +294,13 @@ SP: The problem with this sort of stuff is if it doesn’t work out fine it is r
 
 # Development process of LOT=true client
 
-AvW: I want to bring something up before you bring up whatever you wanted to bring up. I have seen some concerns by Bitcoin Core developers about the development process of the LOT=true client. I think this gets down to the Gitian building, Gitian signing which we also discussed in another [episode](https://www.youtube.com/watch?v=_qdhc5WLd2A). 
+AvW: I want to bring something up before you bring up whatever you wanted to bring up. I have seen some concerns by Bitcoin Core developers about the development process of the LOT=true client. I think this gets down to the Gitian building, Gitian signing which we also discussed in another [episode](https://www.youtube.com/watch?v=_qdhc5WLd2A).
 
 SP: We talked about the need for software to be open source, to be easy to audit.
 
-AvW: Can you give your view on that in this context? 
+AvW: Can you give your view on that in this context?
 
-SP; The change that they made relative to the main Bitcoin Core client is not huge. You can see it on GitHub. In that sense that part of open source is reasonably doable to verify. I think that code has had less review but not zero review. 
+SP; The change that they made relative to the main Bitcoin Core client is not huge. You can see it on GitHub. In that sense that part of open source is reasonably doable to verify. I think that code has had less review but not zero review.
 
 AvW: Less than Bitcoin Core’s?
 
@@ -310,7 +310,7 @@ AvW: More than that?
 
 SP: I would say. The idea has been studied a bit longer. But the second problem is how do you know that what you are downloading isn’t malware. There are two measures there. There is release signatures, the website explains pretty well how to check those. I think they were signed by Luke Dashjr and by the other developer. You can check that.
 
-AvW: Bitcoin Mechanic is the other developer. Actually it is released by Bitcoin Mechanic and Shinobi and Luke Dashjr is the advisor, contributor. 
+AvW: Bitcoin Mechanic is the other developer. Actually it is released by Bitcoin Mechanic and Shinobi and Luke Dashjr is the advisor, contributor.
 
 SP: Usually there is a binary file that you download and then there is a file with checksums in it and that file with checksums is also signed by a known person. If you have Luke’s key or whoever, their key and you know them, you can check that at least the binary you downloaded is not coming from a hacked website. The second thing, you just have a binary and you know they signed it but who are they? The second thing is you want to check that this code matches the binary and that is where Gitian building comes in which we talked about in an earlier [episode](https://www.youtube.com/watch?v=_qdhc5WLd2A). Basically deterministic builds. It takes the source code and it produces the binary. Multiple people can then sign that indeed according to them this source code produces this binary. The more people that confirm that the more likely it is that they are not colluding. I think there are only two Gitian signatures for this other release.
 
@@ -322,7 +322,7 @@ AvW: A lot of the experienced Bitcoin Core developers that have been developing 
 
 SP: The most recent release, yes.
 
-AvW: You are trusting that they are not all colluding and spreading malware. It still comes down to trust in that sense for most people. 
+AvW: You are trusting that they are not all colluding and spreading malware. It still comes down to trust in that sense for most people.
 
 SP: If you are really contemplating running this alternative software you really should know what you are doing in terms of all these re-org scenarios. If you already know what you are doing in those terms then just compile the thing from source. Why not? If you are not able to compile things from source you probably shouldn’t be running this. But that is up to you. I am not worried that they are shipping malware but in general it is just a matter of time before somebody says “I have a different version with LOT=happy and please download  it here” and it steals all your Bitcoin. It is more the precedent this is setting that I’m worried about than that this thing might actually have malware in it.
 
@@ -338,7 +338,7 @@ AvW: Was there anything else you wanted to bring up?
 
 # What would Bitcoin Core release if Speedy Trial failed to activate?
 
-SP: Yeah we talked about true signaling or false signaling on bit 1 but a very real possibility I think if this activation fails and we want to try something else then we probably don’t want to use the same bit if it is before the timeout window. That could create a scenario where you might start saying “Let’s use another bit to do signaling.” Then you could get some confusion where there is a new Bitcoin Core release that activates using bit 3 for example but the LOT=true folks don’t see it because they are looking at bit 1. That may or may not be an actual problem. The other thing is that there could be all sorts of other ways to activate this thing. One could be a flag day. If Bitcoin Core were to release a flag day then there won’t be any signaling. The LOT=true client won’t know that Taproot is active and they will demand signaling at some point even though Taproot is already active. 
+SP: Yeah we talked about true signaling or false signaling on bit 1 but a very real possibility I think if this activation fails and we want to try something else then we probably don’t want to use the same bit if it is before the timeout window. That could create a scenario where you might start saying “Let’s use another bit to do signaling.” Then you could get some confusion where there is a new Bitcoin Core release that activates using bit 3 for example but the LOT=true folks don’t see it because they are looking at bit 1. That may or may not be an actual problem. The other thing is that there could be all sorts of other ways to activate this thing. One could be a flag day. If Bitcoin Core were to release a flag day then there won’t be any signaling. The LOT=true client won’t know that Taproot is active and they will demand signaling at some point even though Taproot is already active.
 
 AvW: Your point being that we don’t know what Bitcoin Core will release after Speedy Trial and what they might release might not necessarily be compatible with the LOT=true client. That works both ways of course.
 
@@ -350,7 +350,7 @@ SP: No, not really. I am much more worried about people who are not following th
 
 AvW: That could also mean making it compatible with the LOT=true client.
 
-SP: No, as far as the v0.15 node is concerned there is no LOT=true client. 
+SP: No, as far as the v0.15 node is concerned there is no LOT=true client.
 
 AvW: Do we want to get into all sorts of scenarios? The scenario that I am most concerned about is the LOT=true chain to call it that if there is ever a split will win but only after a while because you get long re-orgs. This gets back to the LOT=true versus LOT=false discussion in the first place.
 
@@ -358,17 +358,17 @@ SP: I can only see that happening with a massive price collapse of Bitcoin itsel
 
 AvW: I agree with that. The reason I am not concerned is what I mentioned before, I think these things will be sorted out by futures markets well before it actually happens.
 
-SP: I guess the futures market would predict exactly that. That would not be good. Depending on your confidence in futures markets which for me is not that amazing. 
+SP: I guess the futures market would predict exactly that. That would not be good. Depending on your confidence in futures markets which for me is not that amazing.
 
 # Block height versus MTP
 
 <https://github.com/bitcoin/bitcoin/pull/21377#issuecomment-818758277>
 
-SP: We could still talk about this nitty difference between block height versus block time. There was a fiasco but I don’t think it is an interesting difference. 
+SP: We could still talk about this nitty difference between block height versus block time. There was a fiasco but I don’t think it is an interesting difference.
 
 AvW: We might as well mention it.
 
-SP: When we first described the Speedy Trial we assumed everything would be based on block height. There would be a transformation from the way soft forks work right now which is based on these median times to block heights which is conceptually simpler. Later on there was some discussion between the people who were working on that, considering maybe the only Speedy Trial difference should be the activation height and none of the other changes. From the point of the view of the existing codebase it is easier to make the Speedy Trial adjust one parameter which is a minimum activation height versus the change where you change everything into block heights which is a bigger change from the existing code. Even though the end result is easier. A purely block height based approach is easier to understand, easier to explain what it is going to do, when it is going to do it. Some edge cases are also easier. But to stay closer to the existing codebase is easier for reviewers somewhat. The difference is pretty small so I think some people decided on a coin toss and other people I think agreed without the coin toss. 
+SP: When we first described the Speedy Trial we assumed everything would be based on block height. There would be a transformation from the way soft forks work right now which is based on these median times to block heights which is conceptually simpler. Later on there was some discussion between the people who were working on that, considering maybe the only Speedy Trial difference should be the activation height and none of the other changes. From the point of the view of the existing codebase it is easier to make the Speedy Trial adjust one parameter which is a minimum activation height versus the change where you change everything into block heights which is a bigger change from the existing code. Even though the end result is easier. A purely block height based approach is easier to understand, easier to explain what it is going to do, when it is going to do it. Some edge cases are also easier. But to stay closer to the existing codebase is easier for reviewers somewhat. The difference is pretty small so I think some people decided on a coin toss and other people I think agreed without the coin toss.
 
 AvW: There are arguments on both sides but they seem to be pretty subtle, pretty nuanced. Like we mentioned Speedy Trial is going to start on the same date anyway so it doesn’t seem to matter that much. At some point some developers were seriously considering deciding through a coin flip using the Bitcoin blockchain for that, picking a block in the near future and seeing if it ends with an even or odd number. I don’t know if that was literally what they did but that would be one way of doing it. I think they did do the coin flip but then after that the champions for both solutions ended up agreeing anyway.
 
@@ -386,21 +386,21 @@ AvW: Let’s leave the coin flip and the time, block height thing behind us Sjor
 
 SP: I think we can very briefly still interject one thing that was brought up which is the timewarp attack.
 
-AvW: We didn’t mention that, that is somewhat relevant in this context. An argument against using block time is that it opens the door to timewarp attacks where miners are faking the timestamps on the blocks they mine to pretend it is a different time and date. That way they can for example just skip the signaling period altogether, if they collude in doing that. 
+AvW: We didn’t mention that, that is somewhat relevant in this context. An argument against using block time is that it opens the door to timewarp attacks where miners are faking the timestamps on the blocks they mine to pretend it is a different time and date. That way they can for example just skip the signaling period altogether, if they collude in doing that.
 
 SP: That sounds like an enormous amount of effort for no good reason but it is an interesting scenario. We did an episode about the timewarp attack a long time ago, back when I understood it. There is a soft fork proposal to get rid of it that I don’t think anyone objected to but also nobody bothered to actually implement. One way to deal with this hypothetical scenario is if it were to happen then we deploy the soft fork against the timewarp attack first and then we try Taproot activation again.
 
-AvW: The argument against that from someone like Luke is of course you can fix any bug but you can also just not include the bug in the first place. 
+AvW: The argument against that from someone like Luke is of course you can fix any bug but you can also just not include the bug in the first place.
 
 SP: It is nice to know that miners would be willing to use it. If we know that miners are actually willing to exploit the timewarp attack that is incredibly valuable information. If they have a way to collude and a motivation to use that attack… The cost of that attack would be pretty low, it would be delaying Taproot by a few months but we would have this massive conspiracy unveiled. I think that is a win.
 
 AvW: The way Luke sees it is that there was already consensus on all sorts of things, using BIP 8 and this LOT=true thing, he saw this as somewhat of a consensus effort. Using block times is frustrating that in his opinion. I don’t want to speak for him but if I am trying to channel Luke a little bit or explain his perspective that would be it. In his view consensus was already forming and now it is a different path.
 
-SP: I don’t think this new approach blocks any of the LOT=true stuff that much. We went through all the scenarios here and the confusion wasn’t around block height versus time, it was on all sorts of things that could go wrong depending on how things evolved. But not that particular issue. As for consensus, consensus is in the eye of the beholder. I would say if multiple people disagree then there isn’t consensus. 
+SP: I don’t think this new approach blocks any of the LOT=true stuff that much. We went through all the scenarios here and the confusion wasn’t around block height versus time, it was on all sorts of things that could go wrong depending on how things evolved. But not that particular issue. As for consensus, consensus is in the eye of the beholder. I would say if multiple people disagree then there isn’t consensus.
 
-AvW: That would also work the other way around. Where Luke disagrees using block time. 
+AvW: That would also work the other way around. Where Luke disagrees using block time.
 
-SP: But he cannot say there was consensus on something. If people disagree by definition there wasn’t consensus. 
+SP: But he cannot say there was consensus on something. If people disagree by definition there wasn’t consensus.
 
 AvW: It was my impression that there was no consensus because people disagree. Let’s wrap up. For our listeners that are confused and worried I am going to emphasize the next 3 months Speedy Trial is going to run on both clients. If miners activate through Speedy Trial we are going to have Taproot in November and everyone is going to be happy. We will continue the soft fork discussion with the next soft fork.
 

@@ -31,7 +31,7 @@ Pieter: I think I heard about Bitcoin first at the end of 2010 on a IRC channel 
 
 Stephanie: And what was exciting to you about Bitcoin at that time?
 
-Pieter: It was just this idea that you could have a currency defined by the internet, by nothing more than software. It was always a technology that attracted me and had potential for changing how we think about money. 
+Pieter: It was just this idea that you could have a currency defined by the internet, by nothing more than software. It was always a technology that attracted me and had potential for changing how we think about money.
 
 Stephanie: And when did you first start developing for Bitcoin?
 
@@ -43,7 +43,7 @@ Pieter: No I did not. At the time the Bitcoin software that existed didn't have 
 
 Stephanie: That's fascinating, I really like that story. Have you been actively developing for this entire time and how did you get interested in Taproot and Tapscript and Schnorr signatures.
 
-Pieter: I have. Initially I was just doing that in my free time and then as soon as I joined Blockstream in 2014 I was able to do it full time. Since that time I've worked on many things. Taproot and the related things are a continuation of the effort around Segregated Witness which started a couple of years ago. 
+Pieter: I have. Initially I was just doing that in my free time and then as soon as I joined Blockstream in 2014 I was able to do it full time. Since that time I've worked on many things. Taproot and the related things are a continuation of the effort around Segregated Witness which started a couple of years ago.
 
 Stephanie: You're interested in scalability and security?
 
@@ -57,7 +57,7 @@ Stephanie: That's such a cool story.
 
 Adam: I remember that interview. Very interesting ideas in the early days for sure.
 
-Stephanie: So continue Jonas. How did you get started with developing? 
+Stephanie: So continue Jonas. How did you get started with developing?
 
 Jonas: I started contributing during university. Also in the same year I studied computer science. In 2015 after that I joined Blockstream.
 
@@ -69,17 +69,17 @@ Stephanie: So it is just a different way to sign transactions it sounds like you
 
 Pieter: Correct. It is even more low level, it is the primitive that you use to produce that signature. However, there are a number of properties that these signature schemes have that we're interested in. One of them in particular is the fact that these signatures are linear. What this means in practice is you can take a group of people, take their public keys, combine those public keys together into a single public key and now those participants whose public keys you have taken to combine can jointly produce a signature for the combined public key. This is really a very compact way of doing what we're calling multisignatures in Bitcoin. In particular n-of-n ones. You have a group of three signers and you want all three of them to sign off on something. Instead of needing to put three public keys on the blockchain you only put one. And instead of having a signature for each you only have one.
 
-Stephanie: It sounds like this is more efficient but also importantly it is more private because you're exposing less information. 
+Stephanie: It sounds like this is more efficient but also importantly it is more private because you're exposing less information.
 
 Pieter: Exactly. Generally when you're exposing less information you also reveal less. But in particular what is gained here is you leak less about your policy to the world. Imagine a fancy new piece of wallet, hardware wallet software suite comes on the market, a fancy wallet and they're the only ones in the world that use 5-of-7 multisignatures. If you're going to use that software it will be patently obvious to the entire world which transactions are fancy wallet ones. So by reducing that information leak, by turning pretty much everything into a single signature. So far I've only talked about the n-of-n case but there are ways to get similar, not quite as big but similar improvements for k-of-n or different policies as well.
 
 Stephanie: What's k-of-n?
 
-Pieter: k-of-n is say 2 out of 3 where k is different from n. 
+Pieter: k-of-n is say 2 out of 3 where k is different from n.
 
 Andreas: That's what we usually call m-of-n.
 
-Stephanie: So we're just using another letter, that confused me. 
+Stephanie: So we're just using another letter, that confused me.
 
 Pieter: m and n sound too similar so I started using k and n.
 
@@ -129,7 +129,7 @@ Pieter: Yes it would be.
 
 Andreas: So because of the script versioning introduction in v0 SegWit these proposals are now being… as SegWit v1, the second edition of SegWit essentially.
 
-Pieter: That's right. Due to the script versioning mechanism we can essentially make proposals that completely change the script system or anything within that space and all of these things remain simple soft forks as opposed to trying to hack it into existing OP codes that we had to do before. 
+Pieter: That's right. Due to the script versioning mechanism we can essentially make proposals that completely change the script system or anything within that space and all of these things remain simple soft forks as opposed to trying to hack it into existing OP codes that we had to do before.
 
 Andreas: So two years ago when we started talking about SegWit we predicted that that would be one of the big benefits because it gives enormous flexibility for upgrades through soft forks. The other two proposals that were brought to the table, the Tapscript and Taproot which also incorporates MAST, the Merkelized Abstract Syntax Trees, are also being proposed as a soft fork. One of the things that struck me as very interesting is that they are being proposed as a bundle, meaning altogether. That has a lot to do with the combination of features that bring the best set of privacy features so that it is not obvious that you are using new privacy techniques. Can you talk a bit about what Taproot is and how it relates to Schnorr and MAST and why these are being brought in as a bundle of proposals?
 
@@ -165,7 +165,7 @@ Pieter: Yes, absolutely. It is just that and the reference implementation doesn'
 
 Andreas: But they are not prevented either so there is a possibility that in the future you could have perhaps a transaction with three or four inputs where we could have aggregation of the signatures so there is one signature for the entire transaction. And then perhaps even later on if all the signatures in a block were like that you could even aggregate a whole block into one signature.
 
-Pieter: Yes, not prevented but it will require a successor to Taproot. The aggregation cross-input would probably not be in BIP-Taproot. 
+Pieter: Yes, not prevented but it will require a successor to Taproot. The aggregation cross-input would probably not be in BIP-Taproot.
 
 Andreas: In terms of the adoption of this we obviously don't have a timeline for these BIPs to be soft forked into mainnet. But let's assume that they were soft forked at some point in the future. Obviously this would be a hybrid chain where ECDSA, which still exists of course, one of the principles in Bitcoin is that you don't invalidate old outstanding UTXO. Anyone can bring anything back from the very first block and it should still be spendable. At that point you have ECDSA and Schnorr coexisting in blocks perhaps even in single transactions, some inputs could be ECDSA, some could be Schnorr, others could be mixed. How does that affect batch verifiability let's say on a transaction basis? Do you just batch verify whichever Schnorr signatures you have and then separately verify the ECDSA ones?
 
@@ -175,7 +175,7 @@ Andreas: And so the more adoption you have of Schnorr signatures the more wallet
 
 Stephanie: Just like SegWit.
 
-Pieter: The difference here of course is that there are no actual user benefit to this batch verifiability so there's no discount for enabling it other than the fact that Schnorr signatures are somewhat smaller. I expect there are sufficient incentives when Schnorr signatures are eventually, this may take a long time of course, widely adopted to give a significant boost. 
+Pieter: The difference here of course is that there are no actual user benefit to this batch verifiability so there's no discount for enabling it other than the fact that Schnorr signatures are somewhat smaller. I expect there are sufficient incentives when Schnorr signatures are eventually, this may take a long time of course, widely adopted to give a significant boost.
 
 Jonas: With Schnorr signatures and ECDSA signatures if you don't take batch verification into account they are similarly fast. With batch verification Schnorr signatures become faster. If I look at the numbers here, if you have ten signatures you can validate them 1.5 times as fast for example. Or if you have the number of signatures on the order of a block like let's say a couple of thousand then you get 2.5 times the speedup over validating them all one by one. Doing as the implementation defines, whenever you see a transaction you can try to batch verify it but when you batch verify a transaction or signatures if it doesn't work out you don't know at all which specific signature verification failed. I think this is just an engineering challenge, when to use batch verification and when not to do that.
 
@@ -197,7 +197,7 @@ Adam: So basically what you're saying is that the advantage that we were talking
 
 Pieter: Yes
 
-Adam: During that transition period where we've got a lot of Schnorr signatures but we also have a lot of non-Schnorr signatures in the same block can you batch verify that block or would you just be batch verifying all of the Schnorr signature transactions within that block? 
+Adam: During that transition period where we've got a lot of Schnorr signatures but we also have a lot of non-Schnorr signatures in the same block can you batch verify that block or would you just be batch verifying all of the Schnorr signature transactions within that block?
 
 Pieter: Yeah exactly. You'd batch verify just the Schnorr signatures.
 
@@ -241,7 +241,7 @@ Andreas: As a follow up to that, with SegWit we saw a new address format, bech32
 
 Pieter: It already is because BIP173 that defines the bech32 addresses for Bitcoin actually specifies an address format for every SegWit output not just v0 ones. So SegWit v1 outputs can already be encoded using bech32 addresses. There may be some compatibility issues, it is possible that sender software still only allows v0 witness bech32 outputs. Even if that is the case that would be a very simple change to permit v1 as well.
 
-Andreas: So no new address format which I'm sure is a relief for everyone who is trying to learn what all of them are. 
+Andreas: So no new address format which I'm sure is a relief for everyone who is trying to learn what all of them are.
 
 Pieter: Yes. In fact the fourth character in a BIP173 address is for v0 always a q, it is bc1q, for v1 it will be bc1p.
 

@@ -1,5 +1,5 @@
 ---
-title: Meeting Notes 
+title: Meeting Notes
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['privacy']
@@ -117,7 +117,7 @@ How do you communicate to users that you can send to native SegWit but not recei
 
 In the bitcoin payment protocol, add SegWit to that? can we make a fallback? Well, then people will need extra code in URI handling to support this. Well we already have code in there. Give someone an address, and if they can't pay, then you give them another one. Coinbase is giving you an address by qr code or a link... let's set an example for other wallets. Support for Bech32 will probably go quite so fast, and we should plan for success, assume it goes well, and if it doesn't go fast then we should try to help it, and then we have learned a lesson which we need to know for other future upgrades.
 
-Well lightning is going to use the BIP70 URI scheme, and the client can optionally choose to use the lightning stuff which is extra data in the URI. But it can also just fallback to that. The lightning rusty bolts should really be BIPs. 
+Well lightning is going to use the BIP70 URI scheme, and the client can optionally choose to use the lightning stuff which is extra data in the URI. But it can also just fallback to that. The lightning rusty bolts should really be BIPs.
 
 You sign a transaction, it's witness malleated, and the malleated version gets mined, you might not notice that, a few weeks later you're looking at your wallet, you can't correlate that to what's in the blockchain. The txid will be confirmed. The transaction in the GUI will be like the wrong size.... The wallet behaves correctly, but what does the user expect? It's a good thing to fix, but it might not be critical. gettxoutproof might not... outputs not affected by witnesses. Does gettxoproof work with witness, period? It gives a Merkle branch between the block and transaction. You have arbitrary user, and verifytxout which will show you the witness, and that might be garbage. That's not good. BlueMatt will open issue. Also the issue for require some message about all the add RPC requires backup.
 
@@ -190,7 +190,7 @@ Moved to <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-sig
 <div id="coin-selection" />
 # Coin selection
 
-First time around uses branch-and-bound. And then it falls back to the other method if it fails. It's one-shot. The branch-and-bound, first time it runs, it sees if it can construct... it uses effective values for the inputs. The argument I had for not using effective values is that it causes you to grind-down change more often. So the concern about effective value is that.. [bad things but since BnB creates no change it’s not a problem] 
+First time around uses branch-and-bound. And then it falls back to the other method if it fails. It's one-shot. The branch-and-bound, first time it runs, it sees if it can construct... it uses effective values for the inputs. The argument I had for not using effective values is that it causes you to grind-down change more often. So the concern about effective value is that.. [bad things but since BnB creates no change it’s not a problem]
 
 Use the discard rate for deciding change. Calculating the cost of change and using discard rate, instead of the 1008 block estimate Say you have a 1k sat input and it would cost you 999 sat to spend it. You're happy to pick it, even though the fee rate you're paying is high. It's sorted by... given a list of inputs, we sort it first, in largest to smallest, and then we pick going down that. The window it has to hit is based on the discard rate. The discard rate is small compared to the total fee rate. The cost of creating a change is our current fee rate, so 34x. That's several thousand. Unlikely to pick anything smaller than that. Picks larger effective rates first. So it doesn't get into the window.
 

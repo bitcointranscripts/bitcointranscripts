@@ -70,7 +70,7 @@ Let’s add that, let’s implement it and let’s do compatibility testing agai
 
 Let’s move onto the next one, the compression algorithm support thing. It is an old one, it was removing the dependency on zlib for implementations that did not want to support it. At the same time make it flexible enough to add new encodings or new compression algorithms if we ever need to. Make sure that this is also something that is more general than gossip queries if we ever need to. We can do it for free even though I’m sure we’ll ever use it. Basically you send a bitfield in a TLV in your init saying “Here are the compression algorithms I support”. People for gossip queries only use the things that both you and I support. We have tested with Matt on testnet and it worked great with LDK and eclair. It is not very hard to implement.
 
-It is so much easier to implement zlib than it is to actually implement this. 
+It is so much easier to implement zlib than it is to actually implement this.
 
 It adds a bit of complexity. It is still one feature. It is not very hard.
 
@@ -108,7 +108,7 @@ Going back to first principles I’d be quite happy to just drop zlib. I would w
 
 I’ll try to get in touch with a few wallets. See if they are using it, if they even know if they are using it or not. And if they can measure the difference between the two and see if they really need it. Maybe they’ll say that the fact that it uses more battery is more of an issue for them than the fact that it uses more bandwidth. I don’t even know if it is something that is important for them.
 
-You are just not going to download the graph fast enough on mobile to want to do that anyway. At least not from a peer-to-peer node. 
+You are just not going to download the graph fast enough on mobile to want to do that anyway. At least not from a peer-to-peer node.
 
 Eugene is saying that lnd doesn’t even have a config option for zlib by default. Unless Breez forked it they couldn’t be using zlib at all. I’ll check with the Breez team and if they are not using it I guess we can go and start deprecating it. At least open a PR and tell the mailing list and see if anyone says that they absolutely want to keep it.
 
@@ -121,9 +121,9 @@ I guess the second one we don’t even need to talk about it because nothing has
 
 911 we have merged at least as an experimental option. DNS support we have. We can put DNS fields in advertizements, it seems to work pretty much as you’d expect. It is a fairly straightforward change. 911 we have implemented, we should probably get someone else to implement it as well. There is a draft PR for 917, the init message change. Without Michael (Schmoock) here I don’t know what the status is but I can look at it.
 
-I think it is not filtering local addresses yet. But apart from that he has the TLV and I tested that the TLV decodes fine on the eclair side. But he doesn’t yet filter local addresses. 
+I think it is not filtering local addresses yet. But apart from that he has the TLV and I tested that the TLV decodes fine on the eclair side. But he doesn’t yet filter local addresses.
 
-That’s weird because we have that code already. That’s how we decide whether or not by default we advertize our own address. He probably just hasn’t hooked it up. 
+That’s weird because we have that code already. That’s how we decide whether or not by default we advertize our own address. He probably just hasn’t hooked it up.
 
 I think we can discuss these two when there is momentum in the implementations.
 
@@ -159,7 +159,7 @@ Everyone pays the price because it is gossiped. To be honest I just looked up Pu
 
 Alright, I will comment on the PR.
 
-And make sure you put a link to the Wikipedia Punycode article so people can share the horror if they haven’t been exposed before. 
+And make sure you put a link to the Wikipedia Punycode article so people can share the horror if they haven’t been exposed before.
 
 And encode the link in Punycode itself.
 
@@ -174,7 +174,7 @@ To one of internationalized versions.
 
 I am ambivalent about whether they should go in together or go in separate. Whichever allows us to get this stuff merged before the year ends is what I’m in favor of.
 
-Maybe separate is a good idea. The one I opened will be updated very often. Every time someone adds a BLIP they will have to open this table of things that they want to reserve. Whereas they should not open things about the meta process of adding a BLIP. 
+Maybe separate is a good idea. The one I opened will be updated very often. Every time someone adds a BLIP they will have to open this table of things that they want to reserve. Whereas they should not open things about the meta process of adding a BLIP.
 
 Agreed, I think that makes sense.
 
@@ -186,7 +186,7 @@ I guess it sounds like a good start to me. I think we will probably change some 
 
 This looks good to me. I’m sure we are going to have some level of friction over the status field. The BIP process uses them for a little bit of pseudo inside baseball sometimes. I have a feeling that we are going to want to revisit these as we go but that is ok. I don’t think we need to figure that out now.
 
-I think in general having this as a starting point and continually iterating on it as people start using the process makes a lot of sense. 
+I think in general having this as a starting point and continually iterating on it as people start using the process makes a lot of sense.
 
 I agree. I will do a real review this week. It is a conceptual ACK from me at least.
 
@@ -202,11 +202,11 @@ Great. We have had route blinding for payments for well over a year as an experi
 
 That sounds good to me. I didn’t put anything in the BOLTs related to messages, I left it in the proposal. I think the only important parts to discuss are the potential unblinding attacks that you would do by probing fees, probing CLTV expiry delta. It is basically things that we recommend implementations do like use the same CLTV expiry delta across the whole route. Use something that is different from the public values but maybe higher, same for the fees. I am not sure how to best convey those in the spec.
 
-While I can specify that you should use the same value across you can always ignore those values and choose to probe the differences. The ultimate answer is you put it in the encrypted TLV, you put “By the way please enforce this value” so they can’t play with it. 
+While I can specify that you should use the same value across you can always ignore those values and choose to probe the differences. The ultimate answer is you put it in the encrypted TLV, you put “By the way please enforce this value” so they can’t play with it.
 
 That makes it bigger.
 
-Perfect is the enemy of the good, yeah. That is another thing that can potentially be added later. I think for now a graph is relatively homogenous anyway so you wouldn’t get all that much data. Although you would get some doing those games. We have a way of fixing it later if we want. 
+Perfect is the enemy of the good, yeah. That is another thing that can potentially be added later. I think for now a graph is relatively homogenous anyway so you wouldn’t get all that much data. Although you would get some doing those games. We have a way of fixing it later if we want.
 
 What would you tell an intermediate node that is inside the blinded route when they receive a payment that they should forward and the fee is not enough or the CLTV is not enough? What error should they answer?
 
@@ -220,11 +220,11 @@ I think that makes sense from the recipient’s point of view. Especially if you
 
 Even from a payment’s point of view as a recipient if you are not well connected at all, you just have one entry point, since it is blinded you can still make it look like you have many entry points and provide many fake route hints. I think it is a good idea to have this option.
 
-I agree. That’s for payments. We’d need to test that. But for onion messages this route blinding works really well. 
+I agree. That’s for payments. We’d need to test that. But for onion messages this route blinding works really well.
 
 I saw that Tim made a comment about typo. Do you know if he has some time available to review the crypto? I discussed it with Jonas Nick in El Salvador. He said it could be on his list because he didn’t realize it was a requirement for offers. They have so much to do already, I’m not sure if they will find the time to take a look at it.
 
-I will beg and see what happens. 
+I will beg and see what happens.
 
 Sounds good.
 
@@ -256,13 +256,13 @@ ACK.
 
 <https://github.com/lightning/bolts/pull/834>
 
-Let’s finalize warning messages I guess. There’s not much to say. 
+Let’s finalize warning messages I guess. There’s not much to say.
 
 We had some argument last week but Rusty has not updated the PR it looks like. We are waiting on that.
 
 You are ok to re-add that Rusty? The `O0` errors.
 
-Yes. I will re-add zeros. 
+Yes. I will re-add zeros.
 
 I’ll re-read it again and ACK it. We can finally get this merged since it is already live in 3 implementations.
 
@@ -280,7 +280,7 @@ I created an issue to make it more clear. And I opened issues on lnd and c-light
 
 <https://github.com/lightning/bolts/issues/934>
 
-It makes sense but I don’t know what we actually do in practice. 
+It makes sense but I don’t know what we actually do in practice.
 
 I haven’t tested again. He was pretty sure lnd does automatically close before receiving.. but c-lightning he was not entirely sure. We started to implement a new mode for node operators of big nodes who are actively monitoring their node and don’t want to take any risks. They can configure this new strategy when we detect that we are late and the other guy says we are late, we print a big log in a specific log file and send a notification on Telegram or something to the node operator. Give them an opportunity to fix it before they lose thousands of channels. If they messed up something with TLV or.. We then realized it didn’t make sense to implement it right now because our peers would close anyway regardless of what we did.
 
@@ -302,7 +302,7 @@ I guess we will have to discuss that on the mailing list. I do like option simpl
 
 Especially since what we realized with PTLCs, in a way you have to do some kind of simplified commitment. You cannot really stream in both directions because before sending your commit sig you have to wait for the other guy to send something. That is why I thought about option simplified commitment and making sure that they would work together. I think option simplified commitment, if we have drafted the rest, can be a good first step towards the protocol change for PTLCs.
 
-Yes. The other thing about option simplified commitment is it makes update a lot easier. At the moment the channel update proposal uses this quiescent state where you have to make sure that nobody has got anything in flight. That is always true in option simplified commitment. At the beginning of your turn by definition it is static. That is why the spec is written in the twisted way it is. You have to be quiescent, you are always quiescent at the beginning. Any significant changes are much easier in this model. It is my fault because a certain person encouraged me to write the optimal algorithm in the first place and I should have pushed back and said “No let’s start with something simple like this”. This was my original scheme by the way. A simplex rather than a duplex protocol but lessons learned, I’ll take that one. Playing with implementations of this is probably useful too. 
+Yes. The other thing about option simplified commitment is it makes update a lot easier. At the moment the channel update proposal uses this quiescent state where you have to make sure that nobody has got anything in flight. That is always true in option simplified commitment. At the beginning of your turn by definition it is static. That is why the spec is written in the twisted way it is. You have to be quiescent, you are always quiescent at the beginning. Any significant changes are much easier in this model. It is my fault because a certain person encouraged me to write the optimal algorithm in the first place and I should have pushed back and said “No let’s start with something simple like this”. This was my original scheme by the way. A simplex rather than a duplex protocol but lessons learned, I’ll take that one. Playing with implementations of this is probably useful too.
 
-I think it is important to start thinking right now about how we could do PTLCs and not paint ourselves in a corner with a protocol change that would make it harder to do PTLCs than what we could ideally do. I would really like to have PTLCs in 2022, at least a first version of it. 
+I think it is important to start thinking right now about how we could do PTLCs and not paint ourselves in a corner with a protocol change that would make it harder to do PTLCs than what we could ideally do. I would really like to have PTLCs in 2022, at least a first version of it.
 

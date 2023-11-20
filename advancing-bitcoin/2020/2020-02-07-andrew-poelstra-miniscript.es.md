@@ -30,7 +30,7 @@ Para un poco de antecedentes sobre la configuración de Rust antes de saltar a l
 
 P - ¿Cuándo has hecho este repo? ¿Hace una hora?
 
-R - El último commit fue hace una hora. 
+R - El último commit fue hace una hora.
 
 P - El commit inicial también fue hace una hora.
 
@@ -178,7 +178,7 @@ P - Yo también usaba descriptores en 2019.
 
 Gran parte de la confusión aquí corresponde a la confusión histórica y a los accidentes que se produjeron en el diseño del monedero de Bitcoin Core que, a su vez, fueron la única fuente de los formatos de dirección y los formatos de intercambio que utilizamos hoy en día. Así que los descriptores limpian esto y hacen una separación mucho más clara. Y luego Miniscript surgió de los descriptores, Pieter y yo estábamos haciendo cosas muy similares que se cruzaron. Puedes pensar en Miniscript como una forma de ampliar los descriptores para no sólo separar claramente los diferentes tipos de direcciones, sino que también podemos utilizarlos para separar políticas completamente diferentes. De repente tenemos esta capacidad de pensar en multisig y timelocks y todas estas cosas. Y los descriptores nos dan un gran marco para ello. Ampliamos el marco de los descriptores, pasando de distinguir entre tipos de direcciones a distinguir entre tipos de programas. Eso es lo que es Miniscript. Pero entonces Miniscript se convirtió en algo mucho más grande porque al implementar esto, como hablé en mi charla de ayer, nos dimos cuenta de que había mucha comprobación de cordura y mucho análisis que queríamos hacer en los Scripts. Una vez que podemos soportar cosas de aspecto arbitrario de Script nos dimos cuenta de que hay un montón de errores que es posible hacer. Vamos a entrar en eso un poco en los próximos diez o quince minutos.
 
-# Taller 
+# Taller
 
 Empecemos con algunas cosas del taller. En mi Git repo [aquí](https://github.com/apoelstra/miniscript-workshop) tengo algo de código fuente. Vamos a seguir adelante y abrir algunas fuentes.
 
@@ -397,7 +397,7 @@ P - Debería cambiar uno de esos `63` por `62`.
 
 R - Mira eso, "InvalidOpcode(OP_VER)". Es curioso.
 
- Déjame cambiar un `1` por un `2`. "Unexpected("\#2")" porque el número 2, no hay contexto en el que deba aparecer... 
+ Déjame cambiar un `1` por un `2`. "Unexpected("\#2")" porque el número 2, no hay contexto en el que deba aparecer...
 
 P - ¿Es justo decir que si tiene la misma identidad dos veces en el guión es algo que nunca haría?
 
@@ -595,7 +595,7 @@ R: El problema de desechar todo es que se produce una explosión combinatoria de
 
 Estamos a las 12:30 y he tocado al menos todo lo que quería tocar. Voy a abrir el turno de preguntas o podemos hacer otras cosas si queréis.
 
-# PREGUNTAS Y RESPUESTAS 
+# PREGUNTAS Y RESPUESTAS
 
 P - ¿Esto permite evaluar el impacto de nuevos opcodes? ¿Podría implementarlo en Miniscript y ver cómo...?
 
@@ -653,7 +653,7 @@ R - Así es. Si estuviste en el [Bitcoin Developer meetup](https://btctranscript
 
 Q - You said somewhere maybe on a podcast that Miniscript was a rare example of something that you’d completed.
 
-A - Right so there is a goal that we did complete. We did not complete the original goal of writing a finalizer. We absolutely have a complete language that can parse Scripts. We ripped out half the Liquid code and replaced it with Miniscript and it was all the code that I hated. All the witness building, fee estimates and the unit tests were so bad. We accomplished that. There is a practical sense in which it is finished and I can use it for everything I want to do. I feel like the flag to really say it is finished is we have a finalizer and we have a fee estimator that’s smart. Those two things I’ve been dragging my feet on. 
+A - Right so there is a goal that we did complete. We did not complete the original goal of writing a finalizer. We absolutely have a complete language that can parse Scripts. We ripped out half the Liquid code and replaced it with Miniscript and it was all the code that I hated. All the witness building, fee estimates and the unit tests were so bad. We accomplished that. There is a practical sense in which it is finished and I can use it for everything I want to do. I feel like the flag to really say it is finished is we have a finalizer and we have a fee estimator that’s smart. Those two things I’ve been dragging my feet on.
 
 P - ¿Qué estabilidad tiene? ¿Lo va a cambiar?
 

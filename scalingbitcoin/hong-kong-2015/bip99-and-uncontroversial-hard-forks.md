@@ -45,7 +45,7 @@ A controversial soft-fork is where miners decide to collude between themselves, 
 
 There are controversial hard-fork proposals. We will see some examples if I have time. The point here is that we don't care about miners here because if we have something controversial, some miners might be opposed, then we don't want use any miner upgrade confirmation mechanism because we can just use a time threshold and that's it.
 
-A schism hard-fork is like going to war, and we don't want to kill civilians or anything, we don't want to hurt bystanders that don't know what's going on. A way to do that is to start the controversial hard-fork is by..... 
+A schism hard-fork is like going to war, and we don't want to kill civilians or anything, we don't want to hurt bystanders that don't know what's going on. A way to do that is to start the controversial hard-fork is by.....
 
 (inaudible / stream problems)
 

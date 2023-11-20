@@ -10,7 +10,7 @@ media: https://www.youtube.com/watch?v=r7xN7K0OqaA
 
 Structuring Multi Transaction Contracts in Bitcoin
 
-Location: BPASE 2017, Stanford University 
+Location: BPASE 2017, Stanford University
 
 Slides: https://rubin.io/public/pdfs/multi-txn-contracts.pdf
 
@@ -28,7 +28,7 @@ In Bitcoin we try to figure out ways we can do this that are safe. I think that 
 
 # We Can Have It All
 
-I think we can have it all. We can express these as transaction level invariants rather than at the script level and we can use covenants to help us get there. I am glad you have already heard about what covenants actually are. I think of it as any invariant on what the output of a transaction will be. I’ll go over that a little bit more. 
+I think we can have it all. We can express these as transaction level invariants rather than at the script level and we can use covenants to help us get there. I am glad you have already heard about what covenants actually are. I think of it as any invariant on what the output of a transaction will be. I’ll go over that a little bit more.
 
 # Contributions
 
@@ -44,7 +44,7 @@ You might imagine that you have a naughty banker who you give 100 dollars and th
 
 # Covenant Contracts
 
-You may want to rather express that “Hey. When I give you this money it is for you to give it back to me later. I am the only one who can withdraw.” That is an example of a covenant. You’ve given control of something to some other structure but you’ve specified what exactly can happen after that point. 
+You may want to rather express that “Hey. When I give you this money it is for you to give it back to me later. I am the only one who can withdraw.” That is an example of a covenant. You’ve given control of something to some other structure but you’ve specified what exactly can happen after that point.
 
 # Placeholder Notation
 
@@ -72,7 +72,7 @@ I am going to start off with an anecdote about some expired accounts. Let’s sa
 
 # Two Cars Problem
 
-The next problem I want to tell you about is the two cars problem. Let’s say you are doing fairly well and you have a Porsche and a Ferrari. You tell your really good friend “Hey why don’t you take one of my cars for the day? I am going to decide which one I want later. Don’t take it until I have decided.” You give them the keys and you give them the option but you want to express “Don’t take a key until I have chosen the key that I would like to use.” That is a little bit tough to do in Bitcoin if you want to say this happens before something else happens. You want to be well on your journey before they are able to take the other key and take the car that you might have wanted. 
+The next problem I want to tell you about is the two cars problem. Let’s say you are doing fairly well and you have a Porsche and a Ferrari. You tell your really good friend “Hey why don’t you take one of my cars for the day? I am going to decide which one I want later. Don’t take it until I have decided.” You give them the keys and you give them the option but you want to express “Don’t take a key until I have chosen the key that I would like to use.” That is a little bit tough to do in Bitcoin if you want to say this happens before something else happens. You want to be well on your journey before they are able to take the other key and take the car that you might have wanted.
 
 # Impossible Input Covenant
 
@@ -92,7 +92,7 @@ Your trouble with the airline doesn’t stop there. Now let’s say you decide �
 
 # Virtual Output Covenant
 
-The solution here is a virtual output covenant. Now a virtual output covenant says that you have an output that gets created with maybe zero satoshis. It is not something that is going to give you any value. You are also going to provide a script that would redeem that within the same transaction. What that gives you is a proof that if you could have spent that you did. And it is not spendable by anyone else. Everything executes all at once. This is a little bit like a delta zero script because you are able to then have any property that you have go recursively if you have a covenant combined with a virtual UTXO. You don’t have a safety risk of this leaking outside of a single transaction so all the execution happens on your end because you have to construct the transaction to have spent all these UTXOs. 
+The solution here is a virtual output covenant. Now a virtual output covenant says that you have an output that gets created with maybe zero satoshis. It is not something that is going to give you any value. You are also going to provide a script that would redeem that within the same transaction. What that gives you is a proof that if you could have spent that you did. And it is not spendable by anyone else. Everything executes all at once. This is a little bit like a delta zero script because you are able to then have any property that you have go recursively if you have a covenant combined with a virtual UTXO. You don’t have a safety risk of this leaking outside of a single transaction so all the execution happens on your end because you have to construct the transaction to have spent all these UTXOs.
 
 # Application - Merkle Covenants
 
@@ -116,7 +116,7 @@ I actually take a little bit of an issue with this. I don’t think this is quit
 
 # Conditional Covenant
 
-The way that you can do it in the way that I would envision is you can do a conditional covenant. What happens when you have two covenants and you are able to choose which one you enforce. You say “I either want to output A or I want to output B”. 
+The way that you can do it in the way that I would envision is you can do a conditional covenant. What happens when you have two covenants and you are able to choose which one you enforce. You say “I either want to output A or I want to output B”.
 
 # Either Red Tx or Blue Tx
 
@@ -124,7 +124,7 @@ When you spend something like that it looks like this. You have two possibilitie
 
 # Properties
 
-This is pretty interesting because this gives us a lot of possibilities of doing not only the atomic side that goes across blocks, executing in multiple phases but we can also guarantee using virtual UTXOs that this happens all at once as well. We can use this primitive either way. When we are using it in the virtual way there is no extra hash overhead. When we are using in the non-atomic way where it happens across multiple you do need a hash commitment for the new txid that you create. There is a bit of overhead to do it in this new way but it might be worth it for the various types of contract you could be composing. There are also some benefits if you want to have larger scripts or if you want to parallelize your signatures. This makes it slightly easier to do them all at once. 
+This is pretty interesting because this gives us a lot of possibilities of doing not only the atomic side that goes across blocks, executing in multiple phases but we can also guarantee using virtual UTXOs that this happens all at once as well. We can use this primitive either way. When we are using it in the virtual way there is no extra hash overhead. When we are using in the non-atomic way where it happens across multiple you do need a hash commitment for the new txid that you create. There is a bit of overhead to do it in this new way but it might be worth it for the various types of contract you could be composing. There are also some benefits if you want to have larger scripts or if you want to parallelize your signatures. This makes it slightly easier to do them all at once.
 
 # Transaction Diagrams
 
@@ -148,7 +148,7 @@ The other type of thing I introduced in this talk was an input join covenant. Th
 
 # Primitives: Impossible Input Covenant (Constructive)
 
-Similarly we can also pretty easily express an impossible input covenant by just explicitly making a marker output that gets consumed by one of the scripts. If NOT B (~B) gets created then this output C can be spent in a transaction to D. If B does get created then C is permanently unspendable. 
+Similarly we can also pretty easily express an impossible input covenant by just explicitly making a marker output that gets consumed by one of the scripts. If NOT B (~B) gets created then this output C can be spent in a transaction to D. If B does get created then C is permanently unspendable.
 
 # Primitives: Impossible Input Covenant
 
@@ -204,7 +204,7 @@ An example I would give for the Lightning Network would be you have some Lightni
 
 # Etc
 
-There are a number of other potential execution techniques that are useful when you’re dealing with these multi-phased protocols. I am not going to go too heavily into them just for the sake of time. I am happy to talk more afterwards about them. 
+There are a number of other potential execution techniques that are useful when you’re dealing with these multi-phased protocols. I am not going to go too heavily into them just for the sake of time. I am happy to talk more afterwards about them.
 
 # Quality of Service Matters
 

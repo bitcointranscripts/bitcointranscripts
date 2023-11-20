@@ -1,5 +1,5 @@
 ---
-title: Priorities 
+title: Priorities
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 date: 2018-03-07

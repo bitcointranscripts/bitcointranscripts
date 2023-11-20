@@ -1,5 +1,5 @@
 ---
-title: Miniscript 
+title: Miniscript
 transcript_by: Michael Folkson
 translation_by: Ajian
 categories: ['conference']

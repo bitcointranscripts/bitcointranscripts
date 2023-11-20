@@ -2,7 +2,7 @@ name: Sync submodule updates to parent repository
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           ssh-keyscan -H "$hosts" > ~/.ssh/known_hosts
 
       - uses: actions/checkout@v2
-        with: 
+        with:
           repository: bitcointranscripts/bitcointranscripts.github.io
           token: ${{ secrets.PRIVATE_TOKEN }}
 

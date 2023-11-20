@@ -1,5 +1,5 @@
 ---
-title: Taproot Activation 
+title: Taproot Activation
 transcript_by: Stephan Livera
 categories: ['podcast']
 tags: ['taproot', 'soft fork']

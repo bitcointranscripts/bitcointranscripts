@@ -1,5 +1,5 @@
 ---
-title: Braidpool 
+title: Braidpool
 transcript_by: Bryan Bishop
 translation_by: Ajian
 categories: ['core-dev-tech']

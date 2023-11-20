@@ -1,5 +1,5 @@
 ---
-title: Panel de clausura del primer día 
+title: Panel de clausura del primer día
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

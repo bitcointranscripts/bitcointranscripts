@@ -19,17 +19,17 @@ Transcript of London Bitcoin Devs Miniscript presentation: https://diyhpl.us/wik
 
 # Part 1
 
-So what we’re going to do, there is a couple of things. We are going to go through the Miniscript website and learn about how Miniscript is constructed, how the type system works, some of the anti-malleability rules. Then we’re going to go to a repo that I created last night, a Git repo with some example programs. We’re going to try to recreate those and try to modify those and learn how to use the rust-miniscript library and some of the capabilities of the library. We are going to encounter a few bugs, we are going to encounter a bunch of limitations which we can discuss and see if people can think of ideas around these limitations. Some of them seem to be computationally intractable, some of them are engineering difficulties, some of them are API questions. With all this said it would be helpful if you all have a Rust toolchain installed. It is very quick if you are willing to run this curl command downloading a shell script and pipe that into sh then you can install Rust this way. 
+So what we’re going to do, there is a couple of things. We are going to go through the Miniscript website and learn about how Miniscript is constructed, how the type system works, some of the anti-malleability rules. Then we’re going to go to a repo that I created last night, a Git repo with some example programs. We’re going to try to recreate those and try to modify those and learn how to use the rust-miniscript library and some of the capabilities of the library. We are going to encounter a few bugs, we are going to encounter a bunch of limitations which we can discuss and see if people can think of ideas around these limitations. Some of them seem to be computationally intractable, some of them are engineering difficulties, some of them are API questions. With all this said it would be helpful if you all have a Rust toolchain installed. It is very quick if you are willing to run this curl command downloading a shell script and pipe that into sh then you can install Rust this way.
 
 Q - Is there a minimum version because I just got it from the repo?
 
 A - Yeah the minimum version is 1.22 which came out like 2 years ago. 1.37 is plenty.
 
-For a little background about the Rust setup before I jump into the actual thing and start talking about Miniscript. The [rust-miniscript](https://github.com/apoelstra/rust-miniscript) library is part of the [rust-bitcoin](https://github.com/rust-bitcoin/rust-bitcoin) family of libraries. These all have pretty aggressive minimum Rust versions. By aggressive I mean aggressive against the Rust community, a very conservative minimum version. They require 1.22. The reason being that Carl (Dong) has a Guix way to build 1.22 from some minimal.. Guix. We can bootstrap Rust 1.22 from the toolchain that we trust where if you’re always tracking the very latest one that would be very difficult. In general the only way to build Rust 1.x is to use 1.x-1. If we went up 15 versions our deterministic bootstrap would have to compile 15… That’s part of the reason. Another part is just trying to be consistent with what is in the Debian repo and then also be conservative and not changing things. With all that said with any version of Rust you can obtain today will work with this. Rust changes fairly quickly but we’re not using… There are a couple of things we need. One is if you want to play along with the Rust stuff though I’ll be doing it on the screen, it is good to grab the toolchain from [rustlang.org](https://www.rust-lang.org/learn/get-started). The Linux instructions are this pipe sh thing. I don’t know how you do it on Mac or Windows, it may be different. The other thing that you guys will probably want is this Git [repo](https://github.com/apoelstra/miniscript-workshop). I don’t know if you can read that URL. 
+For a little background about the Rust setup before I jump into the actual thing and start talking about Miniscript. The [rust-miniscript](https://github.com/apoelstra/rust-miniscript) library is part of the [rust-bitcoin](https://github.com/rust-bitcoin/rust-bitcoin) family of libraries. These all have pretty aggressive minimum Rust versions. By aggressive I mean aggressive against the Rust community, a very conservative minimum version. They require 1.22. The reason being that Carl (Dong) has a Guix way to build 1.22 from some minimal.. Guix. We can bootstrap Rust 1.22 from the toolchain that we trust where if you’re always tracking the very latest one that would be very difficult. In general the only way to build Rust 1.x is to use 1.x-1. If we went up 15 versions our deterministic bootstrap would have to compile 15… That’s part of the reason. Another part is just trying to be consistent with what is in the Debian repo and then also be conservative and not changing things. With all that said with any version of Rust you can obtain today will work with this. Rust changes fairly quickly but we’re not using… There are a couple of things we need. One is if you want to play along with the Rust stuff though I’ll be doing it on the screen, it is good to grab the toolchain from [rustlang.org](https://www.rust-lang.org/learn/get-started). The Linux instructions are this pipe sh thing. I don’t know how you do it on Mac or Windows, it may be different. The other thing that you guys will probably want is this Git [repo](https://github.com/apoelstra/miniscript-workshop). I don’t know if you can read that URL.
 
 Q - When did you make this repo? A hour ago?
 
-A - The latest commit was one hour ago. 
+A - The latest commit was one hour ago.
 
 Q - The initial commit was also one hour ago.
 
@@ -50,7 +50,7 @@ OP_ENDIF
 <A> OP_CHECKSIG
 ```
 
-The benefits of Miniscript over using the raw Script is that when you have a program structured in this way it is very easy to analyze in a lot of different ways. It is easy given an arbitrary Script to figure out how to construct witnesses for it. In general this is a little bit difficult. Bitcoin Script has a whole bunch of opcodes. Each opcode has requirements for what goes on the stack when you run it. When you compose a whole program out of these you can’t just look at the program and say “To satisfy this Script I need to provide a signature here and a public key here and a hash preimage here. I need to put the number zero here” and so forth. With Miniscript it is very easy to answer questions like this. It is very easy to estimate the witness size if you are doing fee estimation for your transaction. It is very easy to do a bunch of semantic analysis which I think we will also go into. 
+The benefits of Miniscript over using the raw Script is that when you have a program structured in this way it is very easy to analyze in a lot of different ways. It is easy given an arbitrary Script to figure out how to construct witnesses for it. In general this is a little bit difficult. Bitcoin Script has a whole bunch of opcodes. Each opcode has requirements for what goes on the stack when you run it. When you compose a whole program out of these you can’t just look at the program and say “To satisfy this Script I need to provide a signature here and a public key here and a hash preimage here. I need to put the number zero here” and so forth. With Miniscript it is very easy to answer questions like this. It is very easy to estimate the witness size if you are doing fee estimation for your transaction. It is very easy to do a bunch of semantic analysis which I think we will also go into.
 
 Q - You call that one Miniscript so the level above is a Policy descriptor language? At least for me I have some confusion about the terminology.
 
@@ -60,7 +60,7 @@ A - That is a good question. This thing I call Miniscript. Miniscript is basical
 
 You can see it looks very similar to Miniscript with two big differences. One is all of the noise has gone. I no longer `and_v` and different kinds of ORs and ANDs. I no longer have all these wrappers and stuff. I just have ANDs and ORs, pub keys, hashes and timelocks. The other big difference is I’ve got weights. If I have an OR anywhere in a Policy I have different weights I can assign. What this `9` means, this OR is either a pubkey or a timelock of 1000 blocks, there is an implicit `1` here, the `9` there means that the left branch is 9 times as likely as the right branch. Here we’ve got 90\% we’re going to use the left branch, 10\% we’re going to use the right branch. The reason we do that is because policies are not a Bitcoin thing, policies do not correspond to Bitcoin Script, policies are abstract semantic things. If we want to use something like this on the blockchain we need to convert it to Miniscript. The way we do that is by running a compiler which we will also get to if we have time. You can see on Pieter’s website here there is a WebJS compiler that he’s compiled to from the C++. We take this Policy up here, this abstract kind of thing, we compile to Miniscript and you can see you’ve got basically the same thing except all the noise has been added. There is specific choices of what noise to add in what places which corresponds to specific choices of which Script fragments we’re using. Also you can see the probability here. Bitcoin itself has no notion of probabilities. The coins appear on the blockchain, they get spent once, that’s the fact of life. As James (Chiang) was saying you only have these two state transitions, maybe three if you consider… An output is created, it gets confirmed, it gets spent. That is all that happens. There is no notion of probabilities, there is not even a notion of executing, there is not even really a meaning assigned to any Script branches that aren’t taken. So this is all very abstract. We’re going to write some code and we’ll see more concretely what these sort of things mean.
 
-Q - There is a Bitcoin StackExchange [page](https://bitcoin.stackexchange.com/questions/91565/what-does-bitcoin-policy-language-offer-the-developer-that-miniscript-doesnt-w)  answering this question. Sipa answers it and James and Sanket. 
+Q - There is a Bitcoin StackExchange [page](https://bitcoin.stackexchange.com/questions/91565/what-does-bitcoin-policy-language-offer-the-developer-that-miniscript-doesnt-w)  answering this question. Sipa answers it and James and Sanket.
 
 A - Write any of these keywords into Google and you’ll find this.
 
@@ -68,13 +68,13 @@ One last thing to say about Policy. Policies in general you would create when yo
 
 Q - Can you verify a Script satisfies a Policy?
 
-A - Yes. Pieter hasn’t implemented this so the website doesn’t have it. Conceptually what you can do is you take this and everything after an underscore or before a colon is either wrappers or somehow specifying the exact Script fragments to be used. If you just throw those away what you will be left with is exactly the same as this Policy although the weights are not… The weights don’t matter of course for semantic reasonings. Absolutely. 
+A - Yes. Pieter hasn’t implemented this so the website doesn’t have it. Conceptually what you can do is you take this and everything after an underscore or before a colon is either wrappers or somehow specifying the exact Script fragments to be used. If you just throw those away what you will be left with is exactly the same as this Policy although the weights are not… The weights don’t matter of course for semantic reasonings. Absolutely.
 
-In the rust-miniscript library, let me hop over to the rust-miniscript documentation [here](https://docs.rs/miniscript/0.12.0/miniscript/policy/trait.Liftable.html). This is not the most readable description of what is going on here. If you have a Miniscript of some form you can use this function Lift here, you run it through Lift and whatever you started whether it was a Miniscript or a Policy or some other representation of your Script, you run it through here and you get this [object](https://docs.rs/miniscript/0.12.0/miniscript/policy/semantic/enum.Policy.html) called a Semantic Policy, an abstract Policy which corresponds to a Miniscript. It is just the ANDs and ORs and thresholds. You can these are all the different components. An abstract Policy, it might be Unsatisfiable, it might be Trivial, those correspond with the zero OP_RETURN Script. It might be a pubkey hash, it might be a timelock, it might be a hash, an AND, OR or threshold of any of those things. There is not anymore to it then that. If I go instead to the [Miniscript type](https://docs.rs/miniscript/0.12.0/miniscript/policy/semantic/enum.Policy.html) if I can find it. This is what a Miniscript is. It is one of these things. You can see you’ve got `True`, `False`, `Pk`, `PkH`, timelocks and hashes of course but then you’ve got all these different things, `Alt` `Swap`, `Check`, `DupIf`, `Verify`, `Nonzero`, `ZeroNotEqual`. Those are all wrappers. They take some other Miniscript fragment and they put something around it. They add like an OP_VERIFY at the end, they add an IF, ENDIF so you can skip over it by passing zero. They might put an OP_SWAP in front of it so you can move things out the way. It might move something to the altstack, run the contained program and then bring something back to the altstack. Things like this that are important for the Bitcoin Script semantics. Then you’ve got your ANDs, ORs and thresholds. You can see again you’ve got many of these. You’ve got three kinds of ANDs, four kinds of Ors and two kinds of thresholds. 
+In the rust-miniscript library, let me hop over to the rust-miniscript documentation [here](https://docs.rs/miniscript/0.12.0/miniscript/policy/trait.Liftable.html). This is not the most readable description of what is going on here. If you have a Miniscript of some form you can use this function Lift here, you run it through Lift and whatever you started whether it was a Miniscript or a Policy or some other representation of your Script, you run it through here and you get this [object](https://docs.rs/miniscript/0.12.0/miniscript/policy/semantic/enum.Policy.html) called a Semantic Policy, an abstract Policy which corresponds to a Miniscript. It is just the ANDs and ORs and thresholds. You can these are all the different components. An abstract Policy, it might be Unsatisfiable, it might be Trivial, those correspond with the zero OP_RETURN Script. It might be a pubkey hash, it might be a timelock, it might be a hash, an AND, OR or threshold of any of those things. There is not anymore to it then that. If I go instead to the [Miniscript type](https://docs.rs/miniscript/0.12.0/miniscript/policy/semantic/enum.Policy.html) if I can find it. This is what a Miniscript is. It is one of these things. You can see you’ve got `True`, `False`, `Pk`, `PkH`, timelocks and hashes of course but then you’ve got all these different things, `Alt` `Swap`, `Check`, `DupIf`, `Verify`, `Nonzero`, `ZeroNotEqual`. Those are all wrappers. They take some other Miniscript fragment and they put something around it. They add like an OP_VERIFY at the end, they add an IF, ENDIF so you can skip over it by passing zero. They might put an OP_SWAP in front of it so you can move things out the way. It might move something to the altstack, run the contained program and then bring something back to the altstack. Things like this that are important for the Bitcoin Script semantics. Then you’ve got your ANDs, ORs and thresholds. You can see again you’ve got many of these. You’ve got three kinds of ANDs, four kinds of Ors and two kinds of thresholds.
 
 Q - So for reference which of these directly overlap with existing descriptors?
 
-A - That’s a good question. The conceptual answer is that none of this overlaps with descriptors. They have similar names. 
+A - That’s a good question. The conceptual answer is that none of this overlaps with descriptors. They have similar names.
 
 Q - It looks like threshold is exactly what you’d pass into `importmulti`? And `PkH`…
 
@@ -90,7 +90,7 @@ A - Interesting. Under this definition the PKH will be the Miniscript and the WS
 
 Q - You can literally do that in descriptors right now.
 
-A - I would claim that to the extent that you can do you’ve already brought part of Miniscript into descriptors. 
+A - I would claim that to the extent that you can do you’ve already brought part of Miniscript into descriptors.
 
 Q - You’ve just claimed that PKH is not a Miniscript?
 
@@ -100,7 +100,7 @@ Let me say one last thing. In a year or two when Miniscript is fully implemented
 
 Q - Is this a way to think about this? You think about descriptors as your high level language like a Java. You’ve got your intermediate byte code with Miniscript and then your actual machine code, the descriptor itself. Do you think that is fair or not fair?
 
-A - I would say unfair. Using this analogy Miniscript corresponds to the byte code and then the descriptor part would correspond to the header on your Java program, your JVM version something like that which sets whatever flag you need to run it. Descriptors include a lot of things that are not part of Miniscript. Thing like P2SH. Miniscript has no notion of P2SH because it is just about Bitcoin Scripts. 
+A - I would say unfair. Using this analogy Miniscript corresponds to the byte code and then the descriptor part would correspond to the header on your Java program, your JVM version something like that which sets whatever flag you need to run it. Descriptors include a lot of things that are not part of Miniscript. Thing like P2SH. Miniscript has no notion of P2SH because it is just about Bitcoin Scripts.
 
 Q - I think a better way to think about this is that descriptors describe the scriptPubKey and Miniscript describes your redeem script or witness script. The separation is your Miniscript goes in the input, your descriptors go in the outputs.
 
@@ -120,7 +120,7 @@ A - The reason we have a distinction at all is that descriptors are implemented 
 
 Q - One thing is descriptors was an idea Pieter had originally and then Miniscript came out of that so the distinction between them isn’t very strong. They are very related.
 
-A - There wasn’t even a lot of time between these. 
+A - There wasn’t even a lot of time between these.
 
 Q - It was like 20 hours. It was one day he talked to me in his office about descriptors and the next day… and then Miniscript came from that.
 
@@ -128,7 +128,7 @@ A - I thought there was at least a week. A bit of history. Output descriptors ar
 
 Q - You were trying to finalize a PSBT without implementing…
 
-A - That’s right. Carl Dong has implemented PSBT in rust-bitcoin. He is trying to add special purpose code for CHECKMULTISIG so he can do these PSBT types of CHECKMULTISIG. I nabbed this, I said “I don’t want these specific Script templates in here. This is not some special purpose library for every specific thing that comes into Carl’s head. This is a generic Bitcoin library. I went to Pieter and I said “I need a way to generally model Bitcoin Script.” And he said “What if we extended descriptors to add MULTISIGs and ANDs and ORs and timelocks and hash preimages?” So originally Miniscript was just an extension of descriptors. But what happened was that Miniscript spun out into quite a large research project that survived on its own. The distinction is a practical distinction right now that reflects that these are different projects happening at different times. But they are designed to work together and they are designed to complement each other in a way that there is no clear separation. That’s really where all this confusion is coming from. 
+A - That’s right. Carl Dong has implemented PSBT in rust-bitcoin. He is trying to add special purpose code for CHECKMULTISIG so he can do these PSBT types of CHECKMULTISIG. I nabbed this, I said “I don’t want these specific Script templates in here. This is not some special purpose library for every specific thing that comes into Carl’s head. This is a generic Bitcoin library. I went to Pieter and I said “I need a way to generally model Bitcoin Script.” And he said “What if we extended descriptors to add MULTISIGs and ANDs and ORs and timelocks and hash preimages?” So originally Miniscript was just an extension of descriptors. But what happened was that Miniscript spun out into quite a large research project that survived on its own. The distinction is a practical distinction right now that reflects that these are different projects happening at different times. But they are designed to work together and they are designed to complement each other in a way that there is no clear separation. That’s really where all this confusion is coming from.
 
 Q - So it is all Pieter’s fault?
 
@@ -138,7 +138,7 @@ Q - The wallet was simple from Satoshi because it was just raw pubkeys. Somebody
 
 Q - That was the mistake.
 
-A - The original and worst brain damage is a long time ago there was what’s called a bare pubkey output where your scriptPubKey just contained a public key and scriptSig operator. Your scriptSig had to have a signature and then when you verified that, signature, public key, CHECKSIG. Then somebody, I think it was Satoshi realized what if we do a 20 byte hash of the public key. Now your output is take that 20 byte hash, hash whatever is on the stack which had better be a public key and check that the public key on the stack hashes to this specific hash. Then do the CHECKSIG. Now when you create an output all you have is this pubkey hash rather than a full pubkey so you’re saving about 10 bytes and then when you spend the coins you have to reveal the public key and then you have to reveal a signature. So spending is a little bit more expensive. 
+A - The original and worst brain damage is a long time ago there was what’s called a bare pubkey output where your scriptPubKey just contained a public key and scriptSig operator. Your scriptSig had to have a signature and then when you verified that, signature, public key, CHECKSIG. Then somebody, I think it was Satoshi realized what if we do a 20 byte hash of the public key. Now your output is take that 20 byte hash, hash whatever is on the stack which had better be a public key and check that the public key on the stack hashes to this specific hash. Then do the CHECKSIG. Now when you create an output all you have is this pubkey hash rather than a full pubkey so you’re saving about 10 bytes and then when you spend the coins you have to reveal the public key and then you have to reveal a signature. So spending is a little bit more expensive.
 
 Q - When this was originally known you had uncompressed pubkeys so you’re saving like 40 something bytes.
 
@@ -146,7 +146,7 @@ A - That is an even older Satoshi mistake was allowing OpenSSL to parse public k
 
 Q - Nobody in Bitcoin or…?
 
-A - Nobody in Bitcoin. Somebody said “Look at this flag. What if we used this flag?” 
+A - Nobody in Bitcoin. Somebody said “Look at this flag. What if we used this flag?”
 
 Q - Can you still pay to a raw uncompressed pubkey?
 
@@ -158,7 +158,7 @@ A - It will give you a legacy address that corresponds with that public key but 
 
 Q - What do you mean by round trip?
 
-A - I mean if you start with a scriptPubKey which is a bare pubkey, you derive an address from that by doing `listunspent` or whatever and then you try to get a scriptPubKey back from that address you will get a different scriptPubKey. You literally are producing an address that everyone else will interpret as corresponding to a different scriptPubKey. This is accidentally ok because Core doesn’t care about scriptPubKeys. 
+A - I mean if you start with a scriptPubKey which is a bare pubkey, you derive an address from that by doing `listunspent` or whatever and then you try to get a scriptPubKey back from that address you will get a different scriptPubKey. You literally are producing an address that everyone else will interpret as corresponding to a different scriptPubKey. This is accidentally ok because Core doesn’t care about scriptPubKeys.
 
 Q - The Core wallet will sample both?
 
@@ -182,7 +182,7 @@ Let’s get started with some of the workshop stuff. In my Git repo [here](https
 
 `vim src/01-intro.rs`
 
-[Here](https://github.com/apoelstra/miniscript-workshop/blob/master/src/01-intro.rs) is a simple program that I wrote to demonstrate using the rust-miniscript library. We are using Rust 2018 here, somebody asked about minimum Rust version. You can all clone this repo. You can see I have whole bunch of binaries that correspond to the different things we’ll be doing. The dependencies I’m depending on are the Miniscript crate version 0.12 which is the latest version of Miniscript. For those of you who don’t know Rust I’ve got the Miniscript descriptor. The Miniscript trait uses a descriptor type. Descriptors in rust-miniscript are parameterized by the type of public key. I’ll demonstrate what I mean by that in a second. I’m going to say I want to use the regular Bitcoin public key. A little bit of weirdness which is Rust specific. 
+[Here](https://github.com/apoelstra/miniscript-workshop/blob/master/src/01-intro.rs) is a simple program that I wrote to demonstrate using the rust-miniscript library. We are using Rust 2018 here, somebody asked about minimum Rust version. You can all clone this repo. You can see I have whole bunch of binaries that correspond to the different things we’ll be doing. The dependencies I’m depending on are the Miniscript crate version 0.12 which is the latest version of Miniscript. For those of you who don’t know Rust I’ve got the Miniscript descriptor. The Miniscript trait uses a descriptor type. Descriptors in rust-miniscript are parameterized by the type of public key. I’ll demonstrate what I mean by that in a second. I’m going to say I want to use the regular Bitcoin public key. A little bit of weirdness which is Rust specific.
 
 `miniscript::bitcoin::PublicKey`
 
@@ -204,7 +204,7 @@ Q - WPKH would be more obvious.
 
 A - WPKH doesn’t have Miniscript.
 
-Q - You could do WSH - PKH. 
+Q - You could do WSH - PKH.
 
 A - I could. Let me run through this. Then we’ll change it up to make it more sensible.
 
@@ -242,11 +242,11 @@ How might we do that? How do you turn something that might be false or true and 
 
 Q - So OP_SIZE will say that the size of a zero is zero?
 
-A - Yes because zero in Bitcoin is the empty string. 
+A - Yes because zero in Bitcoin is the empty string.
 
 Q - One of those zeros in an empty string. You can have other zeros.
 
-A - Right so that brings us to the second issue. Suppose I was doing something more clever and just trying to use 0NOTEQUAL. Imagine we didn’t have this limit. There are actually a lot of things that are not the empty string which are in fact zero. Then I would be introducing a malleability vector because unlike IF which has a MINIMALIF rule constraining me all of my other opcodes have no such thing. As soon as I do this conversion now I would actually be introducing a malleability vector. I need somehow to enforce it so that there is only one thing that will trigger the zero and cause the IF statement to be skipped. I want this to be exactly the empty string. SIZE 0NOTEQUAL will actually do this. 
+A - Right so that brings us to the second issue. Suppose I was doing something more clever and just trying to use 0NOTEQUAL. Imagine we didn’t have this limit. There are actually a lot of things that are not the empty string which are in fact zero. Then I would be introducing a malleability vector because unlike IF which has a MINIMALIF rule constraining me all of my other opcodes have no such thing. As soon as I do this conversion now I would actually be introducing a malleability vector. I need somehow to enforce it so that there is only one thing that will trigger the zero and cause the IF statement to be skipped. I want this to be exactly the empty string. SIZE 0NOTEQUAL will actually do this.
 
 Q - Negative zero is not…
 
@@ -264,7 +264,7 @@ A - It is probably one of Pieter’s six languages. We kind of ran out of letter
 
 Q - It is either a joke or…
 
-A - Pieter might have an answer for you but we were starting to run out of letters. You can see the a is ALTSTACK, s is SWAP, c is CHECKSIG, v is VERIFY, t is TRUE. They all make sense, is this the only one that doesn’t make sense? 
+A - Pieter might have an answer for you but we were starting to run out of letters. You can see the a is ALTSTACK, s is SWAP, c is CHECKSIG, v is VERIFY, t is TRUE. They all make sense, is this the only one that doesn’t make sense?
 
 Q - Joker?
 
@@ -357,7 +357,7 @@ let ms = Miniscript <DummyKey>::from_str(“c:or_1(pk(),pk())”,
 .unwrap();
 ```
 
-We can this Script here. I’ve got this OP_IF key, ELSE key, ENDIF and the CHECKSIG on the outside. 
+We can this Script here. I’ve got this OP_IF key, ELSE key, ENDIF and the CHECKSIG on the outside.
 
 Q - You’re taking advantage of the feature that the Miniscript compiler doesn’t know those two keys are the same. It thinks those are two different keys?
 
@@ -371,7 +371,7 @@ Now I’ve moved the CHECKSIG on the inside and now you can see I’ve got two C
 
 `”vc:or_i(pk(),pk())”`
 
-There we go. It says “NonTopLevel”, there’s this giant thing here. It tells you what it parsed in what mode. I can see if I’m developing it is not the most nice error messages in the world. “NonTopLevel” means that the top level Script is not a B. Then it actually wrote in detail what it is. I can see first of all that it is a V not a B. I can even see how this happened. I can check through this. Are the keys correctly formed? No I’ve got this `or_i` here and both branches are Ks which is correct. The c wrapper turns it into a B and then the v, wait a minute that’s where I went wrong. With a little bit of thinking I can figure out what went wrong. It is an open API question. How can I produce more useful error messages here? There are lots of ways where the top level will wind up not being a B. Pretty much if you make any mistake anywhere in a Script this will cause a cascade of errors that will propagate up to the top level being wrong. The chances are somewhere along the line there was an actual mistake. I don’t know really how I can be more intelligent about providing guidance to the user here. It may be that you have to do the compiler route where you have people file literally hundreds of bugs about confusing error messages and you have hundreds of heuristics. 
+There we go. It says “NonTopLevel”, there’s this giant thing here. It tells you what it parsed in what mode. I can see if I’m developing it is not the most nice error messages in the world. “NonTopLevel” means that the top level Script is not a B. Then it actually wrote in detail what it is. I can see first of all that it is a V not a B. I can even see how this happened. I can check through this. Are the keys correctly formed? No I’ve got this `or_i` here and both branches are Ks which is correct. The c wrapper turns it into a B and then the v, wait a minute that’s where I went wrong. With a little bit of thinking I can figure out what went wrong. It is an open API question. How can I produce more useful error messages here? There are lots of ways where the top level will wind up not being a B. Pretty much if you make any mistake anywhere in a Script this will cause a cascade of errors that will propagate up to the top level being wrong. The chances are somewhere along the line there was an actual mistake. I don’t know really how I can be more intelligent about providing guidance to the user here. It may be that you have to do the compiler route where you have people file literally hundreds of bugs about confusing error messages and you have hundreds of heuristics.
 
 If you really want to do bad untyped Miniscript here is the way to do it. You reach deep into the library, you pass it a generic expression, an expression is just a bunch of strings with parentheses lying around them. You can print that expression directly into a Miniscript. This conversion from a tree to a Miniscript, it does not do any type checking. Is this useful ever, it is very unergonomic, it should be because it is a bad thing to do, you shouldn’t do it.
 
@@ -379,7 +379,7 @@ Let’s move on. I’ve been saying that Miniscript can encode Script but up unt
 
 `cargo run —bin script`
 
-Here is my original Script that’s decoded in a nice way. Doesn’t that look scary? It is like a nested IF. This probably came out of our fuzz tests. There’s a unit test in the Miniscript library called [all_attribute_tests](https://github.com/apoelstra/rust-miniscript/blob/5ba9bfe01780023062576f6fe4ccd2a9ced9c1db/src/miniscript/mod.rs#L451) that I think Sanket produced somehow which will do weird stuff like uuj. Let me quickly check what the u wrapper does. u is unlikely, you take an OR between your thing and zero. Why would you do that? It is basically the same as j. You are taking your dissatisfaction potentially with something complicated and you’re changing to provide a zero for the IF statement. Here rather than using SIZE 0NOTEQUAL we actually require the user put a zero or one in place. It may be surprising that it is ever more efficient to use SIZE 0NOTEQUAL rather than putting a zero or one. Zero is one byte and one is two bytes and SIZE 0NOTEQUAL is always two. But in fact it is. Part of the reason is that these are different constraints. The fact that these are more efficient is a statement about the world that Pieter and I checked. What we’ve done here is something very unrealistic. We’ve taken the u wrapper and then applied it again which you would never do. There is no reason to do that unless you are trying to file a Miniscript error. We parse the Script and we get our Miniscript. Imagine we mess up the Script somehow. Let’s change that `63` to `61`. Now when we parse you can see `InvalidOpcode(OP_NOP)`. `61` is not a valid Miniscript so it won’t parse it. What if instead I manipulate the public key? I’m going to change this `d0` to a `d1` which 50/50 will cause it to fail. Near the end I’ve got these zeros. Let me quickly show you the Script again. I’ve got this OP_0 and OP_0 here which are part of the u wrapper. If I change one of these to a 1… `Unexpected(“\#104”)`. I changed the zero to a one I thought, what could that possibly mean? I’m sorry the one is `0101`. 
+Here is my original Script that’s decoded in a nice way. Doesn’t that look scary? It is like a nested IF. This probably came out of our fuzz tests. There’s a unit test in the Miniscript library called [all_attribute_tests](https://github.com/apoelstra/rust-miniscript/blob/5ba9bfe01780023062576f6fe4ccd2a9ced9c1db/src/miniscript/mod.rs#L451) that I think Sanket produced somehow which will do weird stuff like uuj. Let me quickly check what the u wrapper does. u is unlikely, you take an OR between your thing and zero. Why would you do that? It is basically the same as j. You are taking your dissatisfaction potentially with something complicated and you’re changing to provide a zero for the IF statement. Here rather than using SIZE 0NOTEQUAL we actually require the user put a zero or one in place. It may be surprising that it is ever more efficient to use SIZE 0NOTEQUAL rather than putting a zero or one. Zero is one byte and one is two bytes and SIZE 0NOTEQUAL is always two. But in fact it is. Part of the reason is that these are different constraints. The fact that these are more efficient is a statement about the world that Pieter and I checked. What we’ve done here is something very unrealistic. We’ve taken the u wrapper and then applied it again which you would never do. There is no reason to do that unless you are trying to file a Miniscript error. We parse the Script and we get our Miniscript. Imagine we mess up the Script somehow. Let’s change that `63` to `61`. Now when we parse you can see `InvalidOpcode(OP_NOP)`. `61` is not a valid Miniscript so it won’t parse it. What if instead I manipulate the public key? I’m going to change this `d0` to a `d1` which 50/50 will cause it to fail. Near the end I’ve got these zeros. Let me quickly show you the Script again. I’ve got this OP_0 and OP_0 here which are part of the u wrapper. If I change one of these to a 1… `Unexpected(“\#104”)`. I changed the zero to a one I thought, what could that possibly mean? I’m sorry the one is `0101`.
 
 Q - Isn’t one `51`?
 
@@ -393,13 +393,13 @@ I have changed the zero to a one. I have OP_PUSHNUM_1. This is actually a valid 
 
 Q - You should change one of those `63` to `62`.
 
-A - Look at that, “InvalidOpcode(OP_VER)”. That’s funny. 
+A - Look at that, “InvalidOpcode(OP_VER)”. That’s funny.
 
  Let me change a `1` to a `2`. “Unexpected(“\#2”)” because the number 2, there is no context in which that should ever appear…
 
 Q - Is it fair to say that if you have the same identity twice in the Script it is something that you would never do?
 
-A - I think so. If you use it twice that may actually do something. If you do `jj` that will actually change the type properties so I can’t promise you that that is useless. I am 95\% sure in every single case it is useless. It will do something but that something will be adding this or losing type properties. The more type properties you have the better. This just came from the fuzz test. 
+A - I think so. If you use it twice that may actually do something. If you do `jj` that will actually change the type properties so I can’t promise you that that is useless. I am 95\% sure in every single case it is useless. It will do something but that something will be adding this or losing type properties. The more type properties you have the better. This just came from the fuzz test.
 
 Q - All valid Bitcoin Scripts should be parsable by…?
 
@@ -425,7 +425,7 @@ A - And it may be a malleability problem. In a lot of cases it is but I forget s
 
 Q - I thought you wanted to not use SegWit sometimes?
 
-A - I did but for very simple things. Like only for what Liquid does which is so simple that I could do it even pre-SegWit. It was nothing weird. It was like the j wrapper didn’t quite do the right thing. I really should have documented that somewhere. Obviously I will forget it so why didn’t I write it down? 
+A - I did but for very simple things. Like only for what Liquid does which is so simple that I could do it even pre-SegWit. It was nothing weird. It was like the j wrapper didn’t quite do the right thing. I really should have documented that somewhere. Obviously I will forget it so why didn’t I write it down?
 
 We call it `htlc_policy.compile`, we parse the Policy, we compile it. The compiler output is going to give us a Miniscript and then we wrap that in the `Wsh` descriptor. Then we print out what the resulting descriptor is and we can see this is a Miniscript. I was wondering what the hell Thomas was talking about, about taking the output of a CHECKSIG and using that to switch. I was like “Miniscript can’t do that”, I forgot. We totally added this `andor` thing which does exactly this. Let me show you on the [website](http://bitcoin.sipa.be/miniscript/) what `andor` looks like. Here it is. It does some predicate and if we scroll down to the type checks the predicate has to have a couple of restrictions. X has to be Bdu. What does this mean? The B means that it will output something nonzero on the stack when it is being satisfied. The u means that that nonzero is going to be one and the d means it is possible to dissatisfy it thereby putting a zero on the stack. These three conditions Bdu tell us that this X here is possible to satisfy or dissatisfy. If you can either satisfy or dissatisfy it in those cases it will output one or zero. That means I can stick the result of that in the IF or NOTIF as the case may be. In the case that it succeeds X, if not it will fail it will be Y, in the case it does not succeed you’ll use Z. Why do we use IF rather than NOTIF? It is to make the parsing easier. If we didn’t use the NOTIF then there would be a parsing ambiguity between this (`or_i`) and this (`andor`). When we see the IF we don’t know whether X is going to appear. There’s a neat fact about parsing Miniscript which is that it is always possible to disambiguate the next thing. There are two exceptions that are easy to deal with. It is always possible to disambiguate what you are doing by doing a one token look ahead and literally looking at what the token is. Whereas if we were using IF here I would have to parse the entire X and look what X was to figure out whether that was something sensible. It would be difficult to distinguish between that (`andor`) and this `and_v`. If I had an IF here then if I saw this I might wonder is this actually the `or_i` and this is part of this X Y `and_v` or is this part of `andor`? You don’t need to follow. The point is that it is difficult to parse. Conveniently Satoshi provided us two IF opcodes. In this case it literally doesn’t matter which one we choose so we use NOTIF in that case but nowhere else. You can see it is here but this is actually just a special case. When we see NOTIF we know we are in `andor` which makes parsing easier.
 
@@ -451,7 +451,7 @@ Let me quickly grab the `max_satisfaction_weight` right here.
 
 `cargo run —bin compile`
 
-Max satisfaction (Max sat weight) is 292. 
+Max satisfaction (Max sat weight) is 292.
 
 Q - The max satisfaction weight is based on the Policy so it would have to bury all the weights or it takes the worst case?
 
@@ -461,7 +461,7 @@ Q - Is that what we use for fee estimation?
 
 A - Yes this is what we use for fee estimation. Like in Liquid we use that for fee estimation. In principle it is possible to be smarter but it is difficult.
 
-What if I change my Policy and I say that the first branch is actually way more likely than the second branch? 
+What if I change my Policy and I say that the first branch is actually way more likely than the second branch?
 
 `or(1000\@and(sha256({secret_hash}), pk({redeem_identity})), 1\@and(older({expiry}),pk({refund_identity}))’
 
@@ -479,7 +479,7 @@ Q - In the Lightning case we check the other signature first and the timelock an
 
 A - That’s what you’d expect. All we are doing is checking the other signature first.
 
-I bet you that the max satisfaction weight if I change it all will be 1 byte larger. Actually it is not the max satisfaction weight that will change, it is going to be the average satisfaction weight. I do know how to get that. We’ll copy and paste the Policy into [Pieter’s website](http://bitcoin.sipa.be/miniscript/) because my byte code won’t help with it. Let me first comment out all these assertions so I can just jump to the max satisfaction weight. 
+I bet you that the max satisfaction weight if I change it all will be 1 byte larger. Actually it is not the max satisfaction weight that will change, it is going to be the average satisfaction weight. I do know how to get that. We’ll copy and paste the Policy into [Pieter’s website](http://bitcoin.sipa.be/miniscript/) because my byte code won’t help with it. Let me first comment out all these assertions so I can just jump to the max satisfaction weight.
 
 Q - Pieter outputs the average satisfaction?
 
@@ -543,7 +543,7 @@ A - Yes. At least on the compiler side it would be nontrivial to implement. Else
 
 Q - The fuzzing repo is designed to crash the compiler?
 
-A - I have a fuzzer that is designed to crash the compiler. Let me go back to my compile Script here. 
+A - I have a fuzzer that is designed to crash the compiler. Let me go back to my compile Script here.
 
 `vim 06-compile.rs`
 
@@ -575,9 +575,9 @@ A - You can use verify afterwards. Verifying, like running a Script interpreter?
 
 Q - rust-bitcoin does not have a Script interpreter.
 
-A - Correct. Or I could use Sanket’s Miniscript interpreter which if I had an extra 3 hours we could play with. I think one straightforward thing to do is just verify the signatures and satisfaction time. 
+A - Correct. Or I could use Sanket’s Miniscript interpreter which if I had an extra 3 hours we could play with. I think one straightforward thing to do is just verify the signatures and satisfaction time.
 
-Real quick I will show you what happens here. I am printing the unsigned transaction and the signed transaction. 
+Real quick I will show you what happens here. I am printing the unsigned transaction and the signed transaction.
 
 `cargo run —bin satisfy`
 
@@ -589,7 +589,7 @@ Ok just `CouldNotSatisfy`. So similar to type checking and similar to that other
 
 Q - You could dump out everything?
 
-A - The problem with dumping out everything is that you get this combinatorial explosion of what everything might mean. One thing I could do is dump every single key and say these keys have signatures, these keys don’t. These hashes have preimages, these hashes don’t. These timelocks are satisfied. That would definitely be more useful than outputting `CouldNotSatisfy`. In general there are combinatorially different branches so it can’t really tell what the intended choice was on every IF statement. 
+A - The problem with dumping out everything is that you get this combinatorial explosion of what everything might mean. One thing I could do is dump every single key and say these keys have signatures, these keys don’t. These hashes have preimages, these hashes don’t. These timelocks are satisfied. That would definitely be more useful than outputting `CouldNotSatisfy`. In general there are combinatorially different branches so it can’t really tell what the intended choice was on every IF statement.
 
 We are at 12:30 and I did at least touch on everything I wanted to touch on. I’ll open the floor to questions or we could do other stuff if you guys want to.
 
@@ -597,7 +597,7 @@ We are at 12:30 and I did at least touch on everything I wanted to touch on. I�
 
 Q - Does this allow you to evaluate the impact of new opcodes? You could implement it in Miniscript and look at how it…?
 
-A - Yes absolutely. If somebody were to implement a new opcode, a new AND or OR construction that is added to Miniscript Pieter and I would run through the first 100 billion Scripts and look at how they compiled this new opcode and how they didn’t. If there was a change, that’s great, that’s a valuable opcode for efficiency reasons even for no other reason, if not maybe that’s telling. We did that actually with a lot of the Miniscript fragments. We would add them and then run the compiler 100 billion times and see whether it actually impacted anything. We found in a few cases that we had fragments that we’d come up with that we thought would be more efficient but turned out never to be. When the compiler showed it never was we did some harder analysis to actually convince ourselves that it wasn’t. We were able to shrink the language quite a bit by doing that and come to the current language. If we added a new opcode and it gave us something new that wasn’t a signature, hash or timelock that would obviously be purely additive functionality. There’s not really anything more we could say other than that. 
+A - Yes absolutely. If somebody were to implement a new opcode, a new AND or OR construction that is added to Miniscript Pieter and I would run through the first 100 billion Scripts and look at how they compiled this new opcode and how they didn’t. If there was a change, that’s great, that’s a valuable opcode for efficiency reasons even for no other reason, if not maybe that’s telling. We did that actually with a lot of the Miniscript fragments. We would add them and then run the compiler 100 billion times and see whether it actually impacted anything. We found in a few cases that we had fragments that we’d come up with that we thought would be more efficient but turned out never to be. When the compiler showed it never was we did some harder analysis to actually convince ourselves that it wasn’t. We were able to shrink the language quite a bit by doing that and come to the current language. If we added a new opcode and it gave us something new that wasn’t a signature, hash or timelock that would obviously be purely additive functionality. There’s not really anything more we could say other than that.
 
 Q - Could it break Miniscript and make it much harder to implement?
 
@@ -651,7 +651,7 @@ A - That is correct. If you were at the [Bitcoin Developer meetup](https://diyhp
 
 Q - You said somewhere maybe on a podcast that Miniscript was a rare example of something that you’d completed.
 
-A - Right so there is a goal that we did complete. We did not complete the original goal of writing a finalizer. We absolutely have a complete language that can parse Scripts. We ripped out half the Liquid code and replaced it with Miniscript and it was all the code that I hated. All the witness building, fee estimates and the unit tests were so bad. We accomplished that. There is a practical sense in which it is finished and I can use it for everything I want to do. I feel like the flag to really say it is finished is we have a finalizer and we have a fee estimator that’s smart. Those two things I’ve been dragging my feet on. 
+A - Right so there is a goal that we did complete. We did not complete the original goal of writing a finalizer. We absolutely have a complete language that can parse Scripts. We ripped out half the Liquid code and replaced it with Miniscript and it was all the code that I hated. All the witness building, fee estimates and the unit tests were so bad. We accomplished that. There is a practical sense in which it is finished and I can use it for everything I want to do. I feel like the flag to really say it is finished is we have a finalizer and we have a fee estimator that’s smart. Those two things I’ve been dragging my feet on.
 
 Q - How stable is it? Will you change it?
 
@@ -663,7 +663,7 @@ A - I think this is 1.0. I think we are at that point. I would just finish those
 
 Q - Additive changes maybe?
 
-A - Maybe additive changes. It is certainly going to change for Tapscript. We’ll probably consider Miniscript Tapscript to be…. maybe we could do it purely additively. 
+A - Maybe additive changes. It is certainly going to change for Tapscript. We’ll probably consider Miniscript Tapscript to be…. maybe we could do it purely additively.
 
 Q - Simplicity can be used on Elements but would need a soft fork on mainchain?
 
@@ -727,7 +727,7 @@ A - We should and we will write a getting started guide.
 
 Q - Does Pieter’s repo have documentation?
 
-A - No it has way less. 
+A - No it has way less.
 
 This workshop was really helpful for me seeing how to explain from a starting point what sort of things go wrong and what kind of questions people have. This was really helpful for me in figuring that out.
 

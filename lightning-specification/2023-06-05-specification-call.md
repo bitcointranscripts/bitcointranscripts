@@ -29,7 +29,7 @@ Speaker 1: To be clear, I have no desire to change anything. I'm happy to descri
 
 Speaker 0: Okay then. Anyone should just have a look at the gist I put in the comment, and see if it seems to make sense or if I missed something. And I think other pairs of eyes would be really helpful. Now, I'll put the link here, but it takes some time. You should grab some coffee and spend, at least, half an hour on that to make sure that it makes sense. So yeah, we'll keep tracking that directly on the PR. Nothing more to do on that one. So, the next step, [Redacted] added a PR to harmonize the max HTLC expiry across implementations, if I understood correctly?
 
-Speaker 1: Yeah, that basically we're out of - like you wanted to increase the amount that we were defaulting to four days or something. And my response was basically: There's no way other nodes are actually going to keep routing through us if we do that. So, I don't know that we need to actually write it. 
+Speaker 1: Yeah, that basically we're out of - like you wanted to increase the amount that we were defaulting to four days or something. And my response was basically: There's no way other nodes are actually going to keep routing through us if we do that. So, I don't know that we need to actually write it.
 
 Speaker 0: You mean selecting you in pathfinding or allowing to relay HTLCs at intermediate nodes?
 
@@ -111,11 +111,11 @@ Speaker 0: Yeah, I don't know. Because yeah, we're aggressively trying to get th
 
 Speaker 1: Yeah, it may just be kind of a more of a pre-anchor issue. I'm not sure. I know that this was, I think, the biggest issue. My estimates were that this was, by far, the biggest issue for force closures, or at least easily avoidable issue for force closures when the fees were rapidly going up. Again, this might have been more of a pre-anchor channel issues, but I think it was the biggest issue, so I don't know.
 
-Speaker 0: Okay. Yeah. I need to think about it and to see if we add that for the case of a commitment transaction is that confirmed. I know that [Redacted] created an issue on the CRN and indicating that they wanted to do something like that, but they didn't specify whether they would do it also if a commitment transaction wasn't confirmed or need the case where the HTLC timeout wasn't confirmed. I'm not sure. 
+Speaker 0: Okay. Yeah. I need to think about it and to see if we add that for the case of a commitment transaction is that confirmed. I know that [Redacted] created an issue on the CRN and indicating that they wanted to do something like that, but they didn't specify whether they would do it also if a commitment transaction wasn't confirmed or need the case where the HTLC timeout wasn't confirmed. I'm not sure.
 
 Speaker 1: Yeah. I'm trying to think of what other force closures there were. Is the LND bug, which they've now fixed and I don't know if they've done a release yet. So, make sure your peers are running LND 16.3 if you have LND peers.
 
-Speaker 0: It's probably going to help and we turned on ignoring internal errors from LND. So, that's going to help as well. 
+Speaker 0: It's probably going to help and we turned on ignoring internal errors from LND. So, that's going to help as well.
 
 Speaker 1: Oh really? I don't know that I've seen internal errors causing force closes on recent versions of LND.
 
@@ -127,7 +127,7 @@ Speaker 0: Yeah, but we had too many reports of people being affected by that. M
 
 Speaker 1: So, that sounds like a him issue rather than something to work around.
 
-Speaker 0: Yeah, I agree as well. 
+Speaker 0: Yeah, I agree as well.
 
 Speaker 1: I mean, they did have that bug a while back where they were treating warnings as errors. But I think they fixed that a while back. That might have been a year ago now.
 

@@ -1,5 +1,5 @@
 ---
-title: Useful Proof Of Work 
+title: Useful Proof Of Work
 date: 2020-07-05
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson

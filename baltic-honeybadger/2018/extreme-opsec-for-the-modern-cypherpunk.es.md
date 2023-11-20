@@ -1,5 +1,5 @@
 ---
-title: Opsec extremo para el cypherpunk moderno 
+title: Opsec extremo para el cypherpunk moderno
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']

@@ -1,5 +1,5 @@
 ---
-title: Lightning Multi Part Payments 
+title: Lightning Multi Part Payments
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Rusty Russell']

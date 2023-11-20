@@ -230,7 +230,7 @@ Audience: So before Bob and Carol timeout, basically the entire route, you can't
 
 Fabrice: It depends how many pending HTLCs you have...
 
-Decker: No you can add additional HTLCs and still use those channels. So for the HTLC you've just set aside a small portion of your channel and that will not get resolved until you resolve the HTLC, but with the remainder you can still perform updates. 
+Decker: No you can add additional HTLCs and still use those channels. So for the HTLC you've just set aside a small portion of your channel and that will not get resolved until you resolve the HTLC, but with the remainder you can still perform updates.
 
 Fabrice: OK so the money is stuck, but you can still use the route. Yes?
 

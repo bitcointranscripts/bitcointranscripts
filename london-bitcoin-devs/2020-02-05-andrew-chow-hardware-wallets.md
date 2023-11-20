@@ -1,5 +1,5 @@
 ---
-title: Hardware Wallets 
+title: Hardware Wallets
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['hardware wallet', 'PSBT', 'wallet']
@@ -38,7 +38,7 @@ Ledger does something different. Then BitBox, they do something different. They 
 
 # Do we want vendor specific stuff in Bitcoin Core itself?
 
-This brings up a question that we got in Bitcoin Core which was do we want to have this vendor specific stuff in Core? Do we want to have device specific in Core? The answer to that is no. We definitely do not. First of all who is going to maintain it, who is going to write it and who is going to review it? If I implemented it that would be me but what if I stopped contributing to Core? Who is going to maintain it then? Also who is going to review it? If I wrote the code I at least have to have maybe two or three other people to review it so they also need to understand everything which is unlikely to happen. Then for changes they also need to review it and it just a huge pain in the ass. It adds a lot of complexity. An obvious answer would be to use vendor provided libraries but there aren’t any in C++ so I guess that is out of the question now. At least in Core because Core is C++. There is lots of complexity with every individual device and also each one introduces more dependencies. Just having HID and WebUSB would mean having to have [libusb](https://github.com/libusb/libusb) which does the USB driver stuff that at least someone else did the low level thing. But libusb is itself fairly large and because this would be part of the default Core installation you would run into an issue where if libusb has a vulnerability that is exploitable then anyone who is using Core can be exploited even if they are not using a hardware wallet. The hardware wallet users is still not that large. It would be a lot of users that would be affected even if they were just running Core and using the Core wallet. 
+This brings up a question that we got in Bitcoin Core which was do we want to have this vendor specific stuff in Core? Do we want to have device specific in Core? The answer to that is no. We definitely do not. First of all who is going to maintain it, who is going to write it and who is going to review it? If I implemented it that would be me but what if I stopped contributing to Core? Who is going to maintain it then? Also who is going to review it? If I wrote the code I at least have to have maybe two or three other people to review it so they also need to understand everything which is unlikely to happen. Then for changes they also need to review it and it just a huge pain in the ass. It adds a lot of complexity. An obvious answer would be to use vendor provided libraries but there aren’t any in C++ so I guess that is out of the question now. At least in Core because Core is C++. There is lots of complexity with every individual device and also each one introduces more dependencies. Just having HID and WebUSB would mean having to have [libusb](https://github.com/libusb/libusb) which does the USB driver stuff that at least someone else did the low level thing. But libusb is itself fairly large and because this would be part of the default Core installation you would run into an issue where if libusb has a vulnerability that is exploitable then anyone who is using Core can be exploited even if they are not using a hardware wallet. The hardware wallet users is still not that large. It would be a lot of users that would be affected even if they were just running Core and using the Core wallet.
 
 # Solution
 
@@ -46,7 +46,7 @@ So what is our solution to this? The solution is that first of all we need to de
 
 Q - After the fact you realized that PSBTs don’t fit in hardware device’s memory? Are there any thoughts that are rumbling around in the background to make them smaller?
 
-A - At this point, no. I think most of the benefit from making them smaller would be to just tell everyone to stop using legacy transactions. 
+A - At this point, no. I think most of the benefit from making them smaller would be to just tell everyone to stop using legacy transactions.
 
 Q - Non-SegWit is the problem?
 
@@ -54,7 +54,7 @@ A - Yes non-SegWit inputs can be very large. If everyone used SegWit that is alm
 
 Q - So is the expectation that future hardware wallets will just have more memory?
 
-A - Yes. Future hardware wallets hopefully, not that PSBT is public and people know about it, people will consider that and include more memory. The Coldcard takes PSBTs directly. I guess part of their design process was that they knew about PSBT and figured out how much memory they would need in order to store a PSBT. 
+A - Yes. Future hardware wallets hopefully, not that PSBT is public and people know about it, people will consider that and include more memory. The Coldcard takes PSBTs directly. I guess part of their design process was that they knew about PSBT and figured out how much memory they would need in order to store a PSBT.
 
 # Bitcoin Core Wallet
 
@@ -78,7 +78,7 @@ A - Yes. It was still a bag of keys model. All it did was instead of calling the
 
 Q - What about restoring from seed?
 
-A - You can’t. 
+A - You can’t.
 
 Q - So what’s the point?
 
@@ -104,7 +104,7 @@ The last thing is that if you want to read about this we have a document on the 
 
 Q - I didn’t even know the dev wiki existed.
 
-A - No one checks it and I checked it a few months ago and someone had vandalized it. 
+A - No one checks it and I checked it a few months ago and someone had vandalized it.
 
 Q - Is that like bitcoin.org?
 
@@ -124,11 +124,11 @@ This ScriptPubKeyManager thing is how we are doing hardware wallets because we a
 
 # Current Status
 
-For the current status of all this stuff we’ve got an [issue \#14145](https://github.com/bitcoin/bitcoin/issues/14145) that tracks everything or should track everything. I don’t know if it has been updated recently. It has a bit of the motivation and some other relevant details that people might care about for hardware wallet support. This refactor ([PR \#17261](https://github.com/bitcoin/bitcoin/pull/17261)) was merged finally last week after I had written the slides. We actually do now have this ScriptPubKeyManager model and so we are finally moving forward with descriptor wallets. Our descriptor wallet is in the works. There is a [PR \#16528](https://github.com/bitcoin/bitcoin/pull/16528) for it. It is experimental, you can try it out. You might lose your money, not my fault. But descriptor wallets is a step towards our hardware wallet stuff because we use the descriptors for scriptPubKey production. We are just going to subclass the descriptor ScriptPubKeyManager and then replace the signing part with HWI basically. There is actually a [PR \#16546](https://github.com/bitcoin/bitcoin/pull/16546) that lets you use hardware wallets in Core. Sjors (Provoost) has written one. I actually don’t know how he’s implemented it but I think the design will probably change just because his thing was screwing around mostly. That implements everything if you want to try it. As for HWI itself, HWI is feature complete and completely usable. It can talk to the five devices I mentioned, Trezor, Keepkey, Ledger Nano S and X, Coldcard and BitBox 01. You can use HWI as a standalone thing and actually Wasabi and BTCPay Server are both using HWI which is kind of crazy but they found many bugs which is also kind of crazy. Thanks to them for testing my software. Hardware wallets, you can use them with HWI and Core manually. There is a command line thing. If you are not scared of the Terminal you can do it but it is also very scary for everyone else. This is what I’m going to be demoing, there have been a lot of changes to Core and to HWI recently for upcoming changes to HWI that will let you do everything from the GUI. For all the new users and the more advanced users who don’t like the Terminal there will be a GUI that you can use for everything. 
+For the current status of all this stuff we’ve got an [issue \#14145](https://github.com/bitcoin/bitcoin/issues/14145) that tracks everything or should track everything. I don’t know if it has been updated recently. It has a bit of the motivation and some other relevant details that people might care about for hardware wallet support. This refactor ([PR \#17261](https://github.com/bitcoin/bitcoin/pull/17261)) was merged finally last week after I had written the slides. We actually do now have this ScriptPubKeyManager model and so we are finally moving forward with descriptor wallets. Our descriptor wallet is in the works. There is a [PR \#16528](https://github.com/bitcoin/bitcoin/pull/16528) for it. It is experimental, you can try it out. You might lose your money, not my fault. But descriptor wallets is a step towards our hardware wallet stuff because we use the descriptors for scriptPubKey production. We are just going to subclass the descriptor ScriptPubKeyManager and then replace the signing part with HWI basically. There is actually a [PR \#16546](https://github.com/bitcoin/bitcoin/pull/16546) that lets you use hardware wallets in Core. Sjors (Provoost) has written one. I actually don’t know how he’s implemented it but I think the design will probably change just because his thing was screwing around mostly. That implements everything if you want to try it. As for HWI itself, HWI is feature complete and completely usable. It can talk to the five devices I mentioned, Trezor, Keepkey, Ledger Nano S and X, Coldcard and BitBox 01. You can use HWI as a standalone thing and actually Wasabi and BTCPay Server are both using HWI which is kind of crazy but they found many bugs which is also kind of crazy. Thanks to them for testing my software. Hardware wallets, you can use them with HWI and Core manually. There is a command line thing. If you are not scared of the Terminal you can do it but it is also very scary for everyone else. This is what I’m going to be demoing, there have been a lot of changes to Core and to HWI recently for upcoming changes to HWI that will let you do everything from the GUI. For all the new users and the more advanced users who don’t like the Terminal there will be a GUI that you can use for everything.
 
 Q - How does it work the integration between HWI and Wasabi?
 
-A - They told me that they are using it. 
+A - They told me that they are using it.
 
 Q - It is based on NBitcoin, the C\# library?
 
@@ -140,7 +140,7 @@ A - HWI is Python but is a command line tool. In every programming language I kn
 
 Q - Do they use console out?
 
-A - I’m not sure. If you are Linux only you could use fork and exec if you really wanted to. But in Core I think we’re going to use Boost.Process probably. 
+A - I’m not sure. If you are Linux only you could use fork and exec if you really wanted to. But in Core I think we’re going to use Boost.Process probably.
 
 Q - Why did you choose Python?
 
@@ -172,7 +172,7 @@ A - Yeah BitBox01 doesn’t have a screen and we haven’t figured out… Someon
 
 # Demo
 
-Let me start testnet first. 
+Let me start testnet first.
 
 Q - Is Trezor T supported?
 
@@ -212,11 +212,11 @@ Q - This is not related to that database lock slowing it down, with importmulti?
 
 A - I don’t think so. There was just some weird thing about that. It will not work but then when I toss it into gdb to debug the thing it starts working.
 
-Here is my testnet wallet, I am not going to sync because I’m on data and that is going to be expensive. For this one I am going to be using a Coldcard because that is the easiest thing to do. You can use any device. Core is running off my descriptor wallet branch which if you look in my repo it is named [wallet-of-the-glorious-future](https://github.com/achow101/bitcoin/tree/wallet-of-the-glorious-future). There have been some GUI changes to Core recently that when you have a watch only wallet it will produce a PSBT. You can send and when you click send it actually says “create unsigned” and it will make a PSBT. To actually do something with the PSBT you have to still go through the RPC console. [Glen (Willen)](https://github.com/gwillen) is working on a GUI for PSBT workflow. Then HWI, this is the experimental HWI GUI. I am not a GUI designer and I don’t work on Qt that much so it is not great but it works. This one is the Qt branch but there is also a bug fix in here from one of the other branches that has not been merged yet because I haven’t had the time to do it. Let me enter my pin of 12345. I have a tonne of hardware wallets and they are all test devices including this one. If anyone wants the private keys to this, I can’t tell you the seed because I don’t know it anymore. In HWI, in this GUI it picks up the Coldcard and I can select it and wait a few minutes while it tries to figure out everything. While that is going let’s make a new watch only wallet in Core. There is a nice GUI for this. Because it is watch only we will need to select the disable private keys option. This is how Core knows a wallet is watch only, by the fact that it has no private keys. Don’t confuse this for the fact that you can import an address as watch only into a normal wallet. I consider this to be bad design. We are deprecating it but you can still do it but please don’t. It will be unsupported very soon. Make a blank wallet, that doesn’t actually matter because disable private keys implies blank. Then I added a new checkbox in this PR so that you can make a descriptor wallet. Now HWI Qt, there are two commands to get descriptor stuff from HWI and that is `getkeypool` and `getdescriptors`. In the GUI what I’ve done is automatically do it in the main screen so you have the info right there. `getdescriptors` is just useful if you want to look at some descriptors but `getkeypool` is formatted specifically to work with `importmulti` and the `importdescriptors` command that we are introducing so all you have to do is copy and paste the thing if you are working on the command line. You don’t have to fiddle around with JSON. I can just copy this and then open up the debug console. We don’t have a GUI for importing either but I will probably add that soon. The command for this is `importdescriptors`, paste the thing copied from HWI and now I can fetch a bunch of addresses from Core. I get a new receiving address. What did I do wrong? This is a P2SH. When I set this up I used bech32 and not nested but the default is always nested. I can make new addresses. That’s a bug, the fact that shows nothing. That will be fixed eventually. If you choose to do P2SH addresses like I just did now you can see here is the address, you can get a bunch of them. If you look at the keypool size it stays 1000 even though I get a bunch of addresses. At least it should, there’s an off by one, it stays consistent. If you did this with `importmulti` only imports things into the keypool once. If you don’t import enough keys or you use all your keys you have to go back to your hardware wallet and fetch more. With descriptors, it is generally from the descriptors as it goes. The other cool thing with descriptors… the one I just imported was SH - WPKH. If I really wanted to I could make that a multisig and get multisig addresses. So this is bech32 now. Let me import descriptors. Now I can get a bech32 address. So I sent a transaction to this from that thing there. So hopefully it rescans. I screwed up somewhere. 
+Here is my testnet wallet, I am not going to sync because I’m on data and that is going to be expensive. For this one I am going to be using a Coldcard because that is the easiest thing to do. You can use any device. Core is running off my descriptor wallet branch which if you look in my repo it is named [wallet-of-the-glorious-future](https://github.com/achow101/bitcoin/tree/wallet-of-the-glorious-future). There have been some GUI changes to Core recently that when you have a watch only wallet it will produce a PSBT. You can send and when you click send it actually says “create unsigned” and it will make a PSBT. To actually do something with the PSBT you have to still go through the RPC console. [Glen (Willen)](https://github.com/gwillen) is working on a GUI for PSBT workflow. Then HWI, this is the experimental HWI GUI. I am not a GUI designer and I don’t work on Qt that much so it is not great but it works. This one is the Qt branch but there is also a bug fix in here from one of the other branches that has not been merged yet because I haven’t had the time to do it. Let me enter my pin of 12345. I have a tonne of hardware wallets and they are all test devices including this one. If anyone wants the private keys to this, I can’t tell you the seed because I don’t know it anymore. In HWI, in this GUI it picks up the Coldcard and I can select it and wait a few minutes while it tries to figure out everything. While that is going let’s make a new watch only wallet in Core. There is a nice GUI for this. Because it is watch only we will need to select the disable private keys option. This is how Core knows a wallet is watch only, by the fact that it has no private keys. Don’t confuse this for the fact that you can import an address as watch only into a normal wallet. I consider this to be bad design. We are deprecating it but you can still do it but please don’t. It will be unsupported very soon. Make a blank wallet, that doesn’t actually matter because disable private keys implies blank. Then I added a new checkbox in this PR so that you can make a descriptor wallet. Now HWI Qt, there are two commands to get descriptor stuff from HWI and that is `getkeypool` and `getdescriptors`. In the GUI what I’ve done is automatically do it in the main screen so you have the info right there. `getdescriptors` is just useful if you want to look at some descriptors but `getkeypool` is formatted specifically to work with `importmulti` and the `importdescriptors` command that we are introducing so all you have to do is copy and paste the thing if you are working on the command line. You don’t have to fiddle around with JSON. I can just copy this and then open up the debug console. We don’t have a GUI for importing either but I will probably add that soon. The command for this is `importdescriptors`, paste the thing copied from HWI and now I can fetch a bunch of addresses from Core. I get a new receiving address. What did I do wrong? This is a P2SH. When I set this up I used bech32 and not nested but the default is always nested. I can make new addresses. That’s a bug, the fact that shows nothing. That will be fixed eventually. If you choose to do P2SH addresses like I just did now you can see here is the address, you can get a bunch of them. If you look at the keypool size it stays 1000 even though I get a bunch of addresses. At least it should, there’s an off by one, it stays consistent. If you did this with `importmulti` only imports things into the keypool once. If you don’t import enough keys or you use all your keys you have to go back to your hardware wallet and fetch more. With descriptors, it is generally from the descriptors as it goes. The other cool thing with descriptors… the one I just imported was SH - WPKH. If I really wanted to I could make that a multisig and get multisig addresses. So this is bech32 now. Let me import descriptors. Now I can get a bech32 address. So I sent a transaction to this from that thing there. So hopefully it rescans. I screwed up somewhere.
 
 `src/qt/bitcoin-qt -testnet -nowallet -noconnect`
 
-Testnet is going to take a while. The main thing with this is that you can almost do it all from the GUI and hopefully in 0.20 you will be able to. There is an open PR for the PSBT side of things, in particular that is the `finalizepsbt` command and then `sendrawtransaction`. 
+Testnet is going to take a while. The main thing with this is that you can almost do it all from the GUI and hopefully in 0.20 you will be able to. There is an open PR for the PSBT side of things, in particular that is the `finalizepsbt` command and then `sendrawtransaction`.
 
 Q - Is there a fire hazard over there?
 
@@ -226,7 +226,7 @@ The other thing we haven’t done is the imported stuff, that will need its own 
 
 Q - Scammers have been active.
 
-A - That warning is because there was a time on Bitcointalk where people would tell people to `dumpprivkey` and they would post their privkey. 
+A - That warning is because there was a time on Bitcointalk where people would tell people to `dumpprivkey` and they would post their privkey.
 
 The block height I was using was that one. `rescanblockchain` and there’s a transaction I made last week. This thing, I can sign the transaction now. From the normal send dialog, it says `Create Unsigned` because this is a watch only wallet. I can send my Bitcoin back to where it came from. Amount, 10. If you notice there is a bug down here, it says zero down here it should say 10. So normally this has `Send` but now it says `Copy PSBT to clipboard`. It copies it and now I can go to HWI, click the `Sign PSBT` button, drop in the dialog, click Sign, wait a few minutes for it to do it. Validation, ok to send. Why not? It is just testnet coins. It signs it and spits out a PSBT. Then the last thing is to finalize the PSBT. I get this nice hex thing and I can do send. And it sends and it works. It is almost entirely in the GUI.
 
@@ -288,7 +288,7 @@ A - It can’t check. It is too dumb to check.
 
 Q - This doesn’t sound dangerous at all. I doubt there are any security issues (sarcasm)
 
-A - I had implemented that and I was like “Wait we should probably fix it and not do that”. But then Greg Sanders was like “I think it is fine”. I was like “I guess I’ll hide it behind some expert mode switch” which I then didn’t introduce for a few months. The problem with multisig and Trezor T is that because we use SegWit to create the bogus signature if the entire transaction is not SegWit it runs into that mixed SegWit and non-SegWit error which is one of the most infuriating things I’ve run into. 
+A - I had implemented that and I was like “Wait we should probably fix it and not do that”. But then Greg Sanders was like “I think it is fine”. I was like “I guess I’ll hide it behind some expert mode switch” which I then didn’t introduce for a few months. The problem with multisig and Trezor T is that because we use SegWit to create the bogus signature if the entire transaction is not SegWit it runs into that mixed SegWit and non-SegWit error which is one of the most infuriating things I’ve run into.
 
 Q - Functionality or security wise is there a clear statement of what your… can do or cannot do? Is there an explicit statement about any guarantee or conditional guarantee. Your interface would depend on some other things and also for the Python interface, Python itself is a huge liability including packages and modules. As long as it complies with a reduced set of language features then your interface can function?
 

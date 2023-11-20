@@ -1,5 +1,5 @@
 ---
-title: Eltoo 
+title: Eltoo
 transcript_by: Michael Folkson
 categories: ['residency']
 tags: ['eltoo', 'lightning']
@@ -24,17 +24,17 @@ Who has never heard about eltoo? It is my pet project and I am pretty proud of i
 
 # Off-Chain Protocols
 
-We saw this yesterday already. Update mechanisms basically are some people meet, they lock in their onchain state and they go off and negotiate offchain on what to do with this state. They can renegotiate over and over again. The update protocol makes sure that all of the invalidated states are not applicable anymore. The Lightning penalty mechanism does this by penalizing who is misbehaving. Duplex micropayment channels and eltoo do that by overriding the effects that you were trying to get to by misbehaving. 
+We saw this yesterday already. Update mechanisms basically are some people meet, they lock in their onchain state and they go off and negotiate offchain on what to do with this state. They can renegotiate over and over again. The update protocol makes sure that all of the invalidated states are not applicable anymore. The Lightning penalty mechanism does this by penalizing who is misbehaving. Duplex micropayment channels and eltoo do that by overriding the effects that you were trying to get to by misbehaving.
 
 # eltoo Update Mechanism
 
 eltoo, just some quick notation. I represent outputs as circles and transactions as squares. This is called a funding transaction. It basically takes funds from the green user, let’s call her Alice, and creates a multisig output that is controlled by both Alice and Bob, Bob being the blue guy. From there on all the changes to the state of this output need to be negotiated between the two. What we do in eltoo is basically we attach to this output a settlement transaction called `Settle 0` that reflects the initial state. We could actually drop this one and it goes Alice creates a channel and we settle the channel and Alice gets her 5 Bitcoin back. This timelock which is represented by this clock here ensures that during this timeout we can actually go in and create an update. If we do that we create this update that ratchets this output forward and creates a new place to attach a new settlement that reflects the new state. In this case we have transferred 1 Bitcoin from Alice to Bob. This guy (`Settle 0`) becomes double spent and we can forget about this. We are currently replaying this onchain but we can lift this offchain quite easily later on. We can repeat this over and over again and this is basically already the entire mechanism. When we want to create a new update we double spend this output, this becomes invalid, it will never be able to reach the blockchain anymore. `Update 2` ratchets this forward and opens up a point where we can attach `Settle 2`.
 
-Q - For your updates, when you say you ratchet forward what is that transaction, `Update 1`? Is that spending to a new 2-of-2 multisig? 
+Q - For your updates, when you say you ratchet forward what is that transaction, `Update 1`? Is that spending to a new 2-of-2 multisig?
 
 A - Exactly. This is the multisig that is shared by Alice and Bob containing those 5 Bitcoin. Now we take this update transaction, we spend this output and create a new output that again contains 5 Bitcoin owned by Alice by Bob. The only difference being what we can attach to it. To this we can attach `Settle 1` but not `Settle 0`. The other thing that is particular from this one we can attach `Update 2` not `Update 1`.
 
-We’ve just played this game on the blockchain. We’ve done this on the blockchain and it is really bad. Every time we do an update we create an onchain transaction which is probably not what we wanted because we pay fees every time. We wait for confirmations every single time. We wouldn’t have to wait for confirmations because these timeouts are chosen in such a way that these always gets precedence over this. We can be sure that if both of these are out there `Settle 0` will not confirm because `Update 1` has priority. 
+We’ve just played this game on the blockchain. We’ve done this on the blockchain and it is really bad. Every time we do an update we create an onchain transaction which is probably not what we wanted because we pay fees every time. We wait for confirmations every single time. We wouldn’t have to wait for confirmations because these timeouts are chosen in such a way that these always gets precedence over this. We can be sure that if both of these are out there `Settle 0` will not confirm because `Update 1` has priority.
 
 Q - If that timeout expires and you haven’t broadcast `Update 1` then you can just broadcast `Settle 0`. So what if you have a channel that doesn’t have a lot of action on it?
 
@@ -52,7 +52,7 @@ A - Absolutely. With Lightning the unilateral close of a channel is always a two
 
 Q - ….
 
-A - That is something that took us a while to figure out. We can have a way that `Update 2` is only attachable to anything that has a lower state number. The way we do it is that each of these have a CLTV operation as their first thing in them. This guy (`Update 1`) gets a locktime that is somewhere in the past so we don’t actually have a locktime but we can still compare it with the current state number. What this guy (`Update 2`) does when executing the Script is pull my own locktime and compares it to the state number that is already on the stack from the previous one. Only if that locktime is larger than the state number that was pushed on the stack by the previous one will that be valid. The reason we use locktimes in the past is because we don’t actually want a locktime, we just want to have this comparison between two numbers. Locktimes in the past are immediately valid. 
+A - That is something that took us a while to figure out. We can have a way that `Update 2` is only attachable to anything that has a lower state number. The way we do it is that each of these have a CLTV operation as their first thing in them. This guy (`Update 1`) gets a locktime that is somewhere in the past so we don’t actually have a locktime but we can still compare it with the current state number. What this guy (`Update 2`) does when executing the Script is pull my own locktime and compares it to the state number that is already on the stack from the previous one. Only if that locktime is larger than the state number that was pushed on the stack by the previous one will that be valid. The reason we use locktimes in the past is because we don’t actually want a locktime, we just want to have this comparison between two numbers. Locktimes in the past are immediately valid.
 
 Q - …
 
@@ -90,7 +90,7 @@ Q - …
 
 A - We can reintroduce symmetries at the settlement step, that’s true. We have two settlement transactions, one for you and one for me. We do have a construction. With a SHAchain we can have revocation secrets that we can generate at will basically. It also has a cleaner separation of layers. What I am excited about is besides being able to put that back into Lightning we can actually create multiparty channels where we as a whole room for example manage a set of funds and we can move them freely between any of us without having to open channels or have multihops between us. It is just a pool of funds that we can rearrange however we want. Then we go into channel factories and all of that stuff but I will talk more on that on Thursday.
 
-The disadvantages are no penalty and we need a change in the Bitcoin protocol which has proven to be a bit more difficult than I anticipated. That is always the case. I spent my whole PhD proposing stuff and no one ever using it. We talked about the proposals at Core Dev. There are two or three variants of it. 
+The disadvantages are no penalty and we need a change in the Bitcoin protocol which has proven to be a bit more difficult than I anticipated. That is always the case. I spent my whole PhD proposing stuff and no one ever using it. We talked about the proposals at Core Dev. There are two or three variants of it.
 
 # When moon?
 

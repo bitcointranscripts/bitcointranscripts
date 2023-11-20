@@ -27,7 +27,7 @@ Suppose you have the Bitcoin blockchain, and you want to have anonymous currency
 
 This is the basic idea behind zerocash, at a high level. Zerocash adds divisibility and some other concepts. The basic idea remains the same. You have a ledger note of transactions, but a ledger of proofs that the transactions are valid. So that's one example of zero-knowledge proofs.
 
-Another example is how to use zero-knowledge for privacy-preserving proofs of solvency. Here by solvency I just mean the simple claim that my assets are greater than my liabilities, and privacy-preserving should mean that the exchange not reveal anything about its fees or balances. All of this is 10,000 feet overview of Provisions, which works as follows. You need to publish two commitments, one to all your assets, one commitment to your liabilities, then three kinds of zero-knowledge proofs. You want to claim that the exchange is solvent, which means that the asset commitment is greater than the liabilities commitment. This is not enough because anything could be in those two commitments. So what you need next is you prove that the liability commitment is correctly formd, meaning 
+Another example is how to use zero-knowledge for privacy-preserving proofs of solvency. Here by solvency I just mean the simple claim that my assets are greater than my liabilities, and privacy-preserving should mean that the exchange not reveal anything about its fees or balances. All of this is 10,000 feet overview of Provisions, which works as follows. You need to publish two commitments, one to all your assets, one commitment to your liabilities, then three kinds of zero-knowledge proofs. You want to claim that the exchange is solvent, which means that the asset commitment is greater than the liabilities commitment. This is not enough because anything could be in those two commitments. So what you need next is you prove that the liability commitment is correctly formd, meaning
 
 <https://eprint.iacr.org/2015/1008.pdf> zk proof solvency
 
@@ -47,7 +47,7 @@ This is a solved problem. There are three solutions on how to do that. Number on
 
 Okay so there are 3 approaches, that's quite a slide. Which one should I choose in practice? In fact, what is the practical efficiency for SNARKs? The verifier efficiency only depends on the input of your relation. Usually when you structure your relation write, it's milliseconds. The bottleneck seems to be prover performance which is essentially base SNARK performance, applied to the size of the circuit. You can write a small circuit and that would be very nice, but what does it mean in concrete numbers? Well, there's a paper about non-outsourceable puzzle proofs, which are benchmarks for provers, like a half-million gate circuit. One circuit takes about 20 minutes on this system, or anothe rtime on another system.
 
-.. which is a useful primitive to have in merkle trees, and if you write it donw in a snarks-for-c approach for say vntinyram, you can get 0.8 conversion factor. If you just use the circuit generator, you would get maybe 8.1, and if you write it down with gadgets, you could probably ..... 
+.. which is a useful primitive to have in merkle trees, and if you write it donw in a snarks-for-c approach for say vntinyram, you can get 0.8 conversion factor. If you just use the circuit generator, you would get maybe 8.1, and if you write it down with gadgets, you could probably .....
 
 The crucial thing for efficient use of SNARKs is what we call relation engineering, meaning that your relation should really be checking different properties. You should use non-determinism. I am going to tell you about the most exciting part. Which is applying NIZKs and SNARKs.
 
@@ -71,7 +71,7 @@ Q: How well does SNARK verify in your gadget work?
 
 A: This was crypto that ... peter is asking for recursive SNARKs, do we have verifiers for some? The answer is yes, and you can do bootstrapping with recursive SNARKs. Oops I misspoke, it was not Peter. It was Pindar.
 
-Q: ... 
+Q: ...
 
 A: We hvne't tried implementing that. ....
 

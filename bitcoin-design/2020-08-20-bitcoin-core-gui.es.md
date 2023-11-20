@@ -1,12 +1,12 @@
 ---
-title: Guía de Bitcoin Core 
+title: Guía de Bitcoin Core
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tag: ['bitcoin-diseño']
 date: 2020-08-20
 ---
 
-Name: Reunión introductoria de la GUI de Bitcoin Core 
+Name: Reunión introductoria de la GUI de Bitcoin Core
 
 Tema: Enlace del orden del día publicado a continuación
 
@@ -18,7 +18,7 @@ Agenda: https://github.com/BitcoinDesign/Meta/issues/8
 
 La conversación se ha anonimizado por defecto para proteger la identidad de los participantes. Aquellos que han expresado su preferencia por que se atribuyan sus comentarios son atribuidos. Si usted ha participado y quiere que sus comentarios sean atribuidos, póngase en contacto con nosotros.
 
-# Revisión de Bitcoin Core PR 
+# Revisión de Bitcoin Core PR
 
 Parece que hay mucho que aprender sobre los antecedentes de Bitcoin Core, cómo se hace el trabajo, lo que debería ser, lo que es ahora mismo, por qué es como es ahora mismo. Tengo curiosidad por aprender más allí.
 

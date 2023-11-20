@@ -72,7 +72,7 @@ Perhaps with coordination between miners we can achive better results than nash.
 
 In bitcoin selfish mining is a known attack and deviation on the protocol. It's risky, it only works in the long term. And so arguably the reason why we didn't see selfish mining until now or at least not in notable amounts was that playing with your mining node just to withhold your blocks and risk losing it all is too risky and miners wont engage in such behaior. Unforotunately in a DAG, mining from the mining protocol is much more available to you, you just need to select transactions in a certain way or hold your blocks for a few seconds. So if I am withholding my block for 2 bloks, that's not going to hurt me. It's a much more granular decision for how to optimize my mining, and the risks for the miner are less. The harm to the system is relatively marginal. Also lazy selfish mining is another concern- it might not have communication infrastructure either deliberately or by laziness and doesn't propagate blocks to the network. This pool might not lose too much profit and other miners might be harmed, this is an interesting topic for us so we're investigating it.
 
-When implementing blockDAG protocols, the incentives really matter. Bitcoin has 1 block every 10 minutes. At least in the ... 
+When implementing blockDAG protocols, the incentives really matter. Bitcoin has 1 block every 10 minutes. At least in the ...
 
 
 

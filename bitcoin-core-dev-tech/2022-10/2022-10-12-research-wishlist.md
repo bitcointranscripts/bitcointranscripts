@@ -1,5 +1,5 @@
 ---
-title: Research wishlist 
+title: Research wishlist
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 tags: ['research']

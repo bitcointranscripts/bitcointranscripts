@@ -15,7 +15,7 @@ MIT Compton Labs - Building 26, room 100
 
 <http://mitbitcoinexpo.org/>
 
-Okay guys, we are getting close to the time for the next panel. Head back to your seats. You may bring food in with you. We also started 15 minutes late. People have 15 minutes .. we ended lunch on time. One of our speakers literally only came for 30 minutes today, 2 to 230. 
+Okay guys, we are getting close to the time for the next panel. Head back to your seats. You may bring food in with you. We also started 15 minutes late. People have 15 minutes .. we ended lunch on time. One of our speakers literally only came for 30 minutes today, 2 to 230.
 
 It's going to be escape. I don't know how to use Macs. It will be minimize and then just go to panels and it will be the seventy first in there. I think the livestream is not filming that though. Do you want to do it before we announce it? Did we find her? Yeah, we found her. Okay, that's fine. Oh, we have water for them. Nice. Talking to Constance then. Let's do one more run.
 

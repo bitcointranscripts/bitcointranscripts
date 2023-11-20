@@ -23,7 +23,7 @@ categories: ['conference']
 
 ==Abstract==
 
-Social key recovery allows users to collaborate with each other to securely recover their secrets instead of using centralized account reset procedures. Shamir secret sharing can be used as an implementation of social key recovery, where a secret can be split into a number of shares with various threshold requirements or in the future any arbitrary monotone boolean function describing a recovery policy. 
+Social key recovery allows users to collaborate with each other to securely recover their secrets instead of using centralized account reset procedures. Shamir secret sharing can be used as an implementation of social key recovery, where a secret can be split into a number of shares with various threshold requirements or in the future any arbitrary monotone boolean function describing a recovery policy.
 
 SatoshiLabs' SLIP 39 is one proposed implementation of Shamir secret sharing with mnemonics. SLIP 39 implements simple Shamir secret sharing plus a two-level fixed threshold group, including a mnemonic text encoding scheme and an encryption scheme as well.
 

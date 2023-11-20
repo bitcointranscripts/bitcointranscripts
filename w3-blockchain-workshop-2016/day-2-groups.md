@@ -24,7 +24,7 @@ Q: Is any of that up on the board?
 
 A: Shortly.
 
-Q: Pagerank for transactions? 
+Q: Pagerank for transactions?
 
 A: It's a notion of centrality of the transaction. In blockchain, a transaction has a connection, we can calculate centralities up to the second depth, connected to the weighted address, we can add more weight that can be part of the address, and we can calculate the size and amount and distance from the genesis block. Ratio of changes of amounts. This can be a calculated effect. We don't know who own the addresses, and the auditor or regulator are able to screen which address has importancy and we are- that is my thinking.
 

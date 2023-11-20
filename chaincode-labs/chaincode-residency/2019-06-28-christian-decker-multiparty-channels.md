@@ -1,5 +1,5 @@
 ---
-title: Multiparty Channels (Lightning Network) 
+title: Multiparty Channels (Lightning Network)
 transcript_by: Lucas de C. Ferreira, Ben Knáb
 categories: ['residency']
 tag: ['lightning', 'multiparty channel', 'channel factory']
@@ -20,7 +20,7 @@ Two days ago, we’ve seen the symmetric update mechanism called eltoo, and havi
 
 ## Duplex Micropayment Channels
 
-It was predated by this stuff. Has anybody seen this before? This was basically my first attempt at creating a duplex micropayment channel or a micropayment channel that couldn't go both ways... Basically, what we did was have timelocks and have them decrease over time. So this all is timelock 100, and the first update has timelock 99, 100, 100, and so on. And every time you do a replacement, you basically count down on one of these levels and then basically just make sure that this is confirmable slightly before the other stuff is confirmable. 
+It was predated by this stuff. Has anybody seen this before? This was basically my first attempt at creating a duplex micropayment channel or a micropayment channel that couldn't go both ways... Basically, what we did was have timelocks and have them decrease over time. So this all is timelock 100, and the first update has timelock 99, 100, 100, and so on. And every time you do a replacement, you basically count down on one of these levels and then basically just make sure that this is confirmable slightly before the other stuff is confirmable.
 
 Back then, I didn't realize this but what we did was basically have this invalidation tree which is used to sort of count down time, but what you have here is basically simple micropayment channels. These are unidirectional payment channels and what you do is you have the structure of an update mechanism and then something built on top of it, right? Because if you have an update mechanism, the only thing that you’re basically doing is having some way of creating a transaction. Eventually, that might create some outputs. That's all we basically try to do; in Lightning, it happens to be the balances of the two parties and HTLCs, but really there is not much of a difference to have any construction of transactions on top of these outputs that you're guaranteed will eventually be created or will not be created in the case you remove them later on.  So we can actually have these kinds of settlement transactions take off other stuff.
 
@@ -32,7 +32,7 @@ But why do we care about this? For starters, you can do stuff like multiparty ch
 
 ## Channel Factories
 
-That's basically the idea of channel factories. It's basically you have the setup transaction, and you have the settlement transaction, that in turn then splits funds into smaller groups and you can then have channels built on top of this bigger group, you can split them and really have just the yellow and the pink one talk to each other while we still have commit control over the entirety of your funds. 
+That's basically the idea of channel factories. It's basically you have the setup transaction, and you have the settlement transaction, that in turn then splits funds into smaller groups and you can then have channels built on top of this bigger group, you can split them and really have just the yellow and the pink one talk to each other while we still have commit control over the entirety of your funds.
 
 We have this thing here where we can freely send back and forth money between any two endpoints. Why would we then start to do stuff like this where we create channels where we split out funds and create subcontracts, basically, in our bigger contract? Anybody?
 
@@ -78,7 +78,7 @@ Christian: Yeah, it gets really hard. Either you have a provision in there to ev
 
 Audience: Then you have the double-spend problem.
 
-Christian: Right, it's the off-chain version of the double-spending problem exactly. So this kind of dynamic membership would be really nice because we could basically have somebody enter the room, and they would be able to interact with us, and we wouldn't have capacity issues, we wouldn't have multi-hop health issues, we wouldn't have CLTVs. It would all get so much easier, but we just don't know how to do that yet. So maybe one of you guys will come up with something, hopefully. 
+Christian: Right, it's the off-chain version of the double-spending problem exactly. So this kind of dynamic membership would be really nice because we could basically have somebody enter the room, and they would be able to interact with us, and we wouldn't have capacity issues, we wouldn't have multi-hop health issues, we wouldn't have CLTVs. It would all get so much easier, but we just don't know how to do that yet. So maybe one of you guys will come up with something, hopefully.
 
 Audience: This doesn’t work with LN-Penalty, right?
 

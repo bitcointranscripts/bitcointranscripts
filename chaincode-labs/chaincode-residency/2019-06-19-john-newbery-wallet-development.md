@@ -76,7 +76,7 @@ A point on the secp256k1 curve. In Bitcoin Core we have this object, we have thi
 
 Audience member: Hopefully a huge number.
 
-It is a scalar. A private key kept secret and used to sign. It is a scalar in the secp256k1 group. In Bitcoin Core that is a class called `CKey`. That’s in `src/key.h`. Next up we have this thing called `CKeyID` which is the HASH160 of that public key. That’s the hash used to create a pubkey hash. That’s also how we identify the keys in the wallet. That is a uint160. It is a 160 bit number and the class is `CKeyID` a reference to a `CKey`. 
+It is a scalar. A private key kept secret and used to sign. It is a scalar in the secp256k1 group. In Bitcoin Core that is a class called `CKey`. That’s in `src/key.h`. Next up we have this thing called `CKeyID` which is the HASH160 of that public key. That’s the hash used to create a pubkey hash. That’s also how we identify the keys in the wallet. That is a uint160. It is a 160 bit number and the class is `CKeyID` a reference to a `CKey`.
 
 `RIPEMD160(SHA256(pubkey))`
 
@@ -126,7 +126,7 @@ A - We’ll get onto that a bit later.
 
 Q - Why is there an interface specifically for the init part of the wallet interface? If we build with `disable-wallet` you would think the entire wallet interface would need to be included.
 
-A - This `WalletInitInterface` is defined in the node. Then the wallet code inherits from there and implements that interface. Or if you build without a wallet then the node code implements that interface as a dummy. 
+A - This `WalletInitInterface` is defined in the node. Then the wallet code inherits from there and implements that interface. Or if you build without a wallet then the node code implements that interface as a dummy.
 
 Q - There is probably some interface between the RPC calls and the wallet that would also be dummied out because it is rebuilding without the wallet. But that’s not part of the `WalletInitInterface`. That’s a separate interface. We’ll get onto that.
 
@@ -218,13 +218,13 @@ That’s the interface. This is validationinterface.h. It has got good comments 
 
 Q - We have all these handlers that are queued up. Let’s say a new blockchain tip occurs. All these handlers are called, they are called in sequence. Why? If I have ten subscribers, there’s one event. Why is it important that these ten handlers are called in sequence in that queue? Why can’t they be called concurrently?
 
-A - Because we only have one thread. Some of these are asynchronous and some of these are synchronous. 
+A - Because we only have one thread. Some of these are asynchronous and some of these are synchronous.
 
 Q - Every subscriber to validation events could have its own stack of events on its own thread.
 
 Q - Every subscriber has one handler or multiple. They will then register these handlers and when they register it they have to register in sequence. They have spots. When the event is called, the signal is called, these are executed one by one by whatever thread is calling the signal.
 
-Q - You need every component to see the same consistent view. The events have to be in order but not between the different components. 
+Q - You need every component to see the same consistent view. The events have to be in order but not between the different components.
 
 A - You could potentially do something like that. The way it is implemented in Bitcoin Core is that some of these are synchronous. `ChainStateFlushed` is the main thread, the message handler thread, will call those callback functions directly. The background thread methods will be called on the scheduler. We only have one of each. Potentially you could make it multithreaded but we’re not optimizing for having like 50 wallets in parallel.
 
@@ -252,7 +252,7 @@ I am going to run through code management. Let’s have a look at the wallet dir
 
 `ls -1 src/wallet`
 
-In src/wallet there are a few files. A test directory for unit tests. There is not much in there. It is not huge. 
+In src/wallet there are a few files. A test directory for unit tests. There is not much in there. It is not huge.
 
 # Code layout
 
@@ -260,7 +260,7 @@ We have coinselection.cpp and coinselection.h which is the branch and bound coin
 
 Q - For encrypting is there a common encryption library or does it reuse some of the crypto libraries? Does it have its own thing?
 
-A - I’m not sure. 
+A - I’m not sure.
 
 Q - I think it is with CAS, sipa’s implementation of CAS like all the encryption of the wallet stuff.
 

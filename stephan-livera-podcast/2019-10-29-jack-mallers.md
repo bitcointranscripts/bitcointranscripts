@@ -1,5 +1,5 @@
 ---
-title: Lightning & Identity, Olympus and Zap 
+title: Lightning & Identity, Olympus and Zap
 transcript_by: Stephan Livera
 categories: ['podcast']
 speakers: ['Jack Mallers']

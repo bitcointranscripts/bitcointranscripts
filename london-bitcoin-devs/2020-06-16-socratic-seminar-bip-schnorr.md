@@ -37,7 +37,7 @@ MF: We can do a very long Q&A. You can just produce a few slides to get us going
 
 Volker Herminghaus (VH): I am Volker. I am here for total immersive learning about cryptography. I have no credentials.
 
-MF: That is totally fine. 
+MF: That is totally fine.
 
 # Properties of a Digital Signature Scheme
 
@@ -45,7 +45,7 @@ MF: As in previous Socratics we will start from basics or from first principles.
 
 VH: It is reversible. You could just divide by 7 and you would get the original value. That wouldn’t be very secure.
 
-MF: This is kind of the forgeability property. 
+MF: This is kind of the forgeability property.
 
 AG: What you are describing here Michael is connected to the zero knowledgeness. Let’s not get technical, the privacy element. You want to prove that you own a credential or a key without revealing the key. In the example 5 x 7 if your message is 5 we are imagining that your key is 7. Not the best key ever but we work with what we’ve got. If your key is 7 and you multiply your message by that you can divide by the message to get the 7. The first property we are mentioning there is it should keep the confidentiality of the key. Technically this zero knowledge property.
 
@@ -65,9 +65,9 @@ PW: I think you define as producer as “he who has the private key”.
 
 TR: I think Elichai has a good point here. Of course you want to make sure that if you give a signature and you use your secret key to create that signature you want to make sure that your secret key does not leak. That is how usual schemes do that. In the end the more basic property that you want is what Elichai just described. If you see a signature you shouldn’t be able to produce a different signature without having the secret key of course. I heard people talking about encryption and asking the same question. What should an encryption scheme provide? Sometimes people say that it should hide the secret key but this isn’t sufficient. It should hide the message. The secret key is the tool to hide the message. I think we can say the same here for signatures. Of course we don’t want to leak the full secret key because this would allow others to produce signatures. But you can ask questions like “What happens if you leak for example parts of the secret key?” There are signature schemes where this is fine. You may leak 1 bit, you leak some of the signature key but still people can’t produce signatures.
 
-PW: The end goal is unforgeability. Someone without a key can’t produce a valid signature. A corollary is that obviously you cannot learn the full key from the signature. 
+PW: The end goal is unforgeability. Someone without a key can’t produce a valid signature. A corollary is that obviously you cannot learn the full key from the signature.
 
-ET: Part of my point was also in the multiplication example. You might be able to produce another valid signature without knowing the private key. 
+ET: Part of my point was also in the multiplication example. You might be able to produce another valid signature without knowing the private key.
 
 MF: I think we are ticking off most of the properties. The properties that Adam had in his presentation were completeness, soundness and zero knowledgeness.
 
@@ -79,7 +79,7 @@ PW: Then there is the notion of strong unforgeability which is even stronger. Ev
 
 MF: The signer cannot produce another signature on the same message? Or an attacker can’t produce a signature on the same message?
 
-PW: An attacker should not be able to produce another signature on a valid message even if they have already seen a valid signature on that message. This is related to non-malleability. 
+PW: An attacker should not be able to produce another signature on a valid message even if they have already seen a valid signature on that message. This is related to non-malleability.
 
 MF: That is another property we need on Bitcoin that perhaps you don’t need on a normal digital signature scheme where we don’t have money and a consensus system with signatures being shared all over the place.
 
@@ -93,7 +93,7 @@ VH: I think the reason why a hash function can’t be used as a signature is bec
 
 PW: Well, no. I don’t think it is required that a signature scheme should be able to verify it without having the message. The problem is that you can’t verify a HMAC without knowing the key. Inherently you need to give the secret key to the verifier in that case. That obviously breaks the unforgeability.
 
-TR: This explains why HMAC is used for TLS connections because they are connections for two defined peers, the two endpoints of the connection. They both can have the key. If I haven’t produced this MAC message then there is only one other party in the world that has the key which is the other side of my connection. I know the other side has produced the message. 
+TR: This explains why HMAC is used for TLS connections because they are connections for two defined peers, the two endpoints of the connection. They both can have the key. If I haven’t produced this MAC message then there is only one other party in the world that has the key which is the other side of my connection. I know the other side has produced the message.
 
 PW: You can see a HMAC as an analog of a digital signature scheme but in the symmetric world where you always have shared keys or passwords instead of a secret public, private key pair.
 
@@ -129,7 +129,7 @@ MF: This is where I wanted to start in terms of the reading list. I am going to 
 
 ET: Thank you. I really tried to make it as understandable as possible for non-mathematicians. Basically the biggest difference between ECDSA and Schnorr, you can see there on the second line of my presentation we use the x coordinate of the point kG which is weird. Usually in Schnorr for example there is a full separation between point operations, what you do for verification and signing. You can see at the bottom in Schnorr you take a bunch of scalars, you multiply, you add. It is normal modular arithmetic. In ECDSA you create a point and you take the x of that point. You use that like a scalar which is really weird. It is part of the reason why there is no formal proof for ECDSA although a lot of people have tried.
 
-PW: It depends what you mean by formal proof. There are proofs, just under the standard assumption of discrete logarithm and random oracle. In particular if you add an additional assumption that taking the x coordinate from a point and assume some properties about that then it is provable. 
+PW: It depends what you mean by formal proof. There are proofs, just under the standard assumption of discrete logarithm and random oracle. In particular if you add an additional assumption that taking the x coordinate from a point and assume some properties about that then it is provable.
 
 ET: Have those properties been analyzed?
 
@@ -143,7 +143,7 @@ ET: I assume that proof isn’t new. Last time I Googled for it I didn’t find 
 
 PW: It is linked in the [BIP](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki).
 
-ET: There is some proof but as Pieter said the proof is assuming something that wasn’t properly analyzed like discrete log. The reason behind it is probably a combination of the patent on Schnorr and some weird politics in NIST. There are some conspiracies around it but we will ignore those. We do believe that ECDSA is working and isn’t broken. There is no reason to believe otherwise. It is still nicer that Schnorr doesn’t do this weird thing. On top of the actual proof, because Schnorr doesn’t do point operation in the signing it is linear, meaning that you can add signatures, you can tweak signatures and you still get something that is valid in the framework of the signing. 
+ET: There is some proof but as Pieter said the proof is assuming something that wasn’t properly analyzed like discrete log. The reason behind it is probably a combination of the patent on Schnorr and some weird politics in NIST. There are some conspiracies around it but we will ignore those. We do believe that ECDSA is working and isn’t broken. There is no reason to believe otherwise. It is still nicer that Schnorr doesn’t do this weird thing. On top of the actual proof, because Schnorr doesn’t do point operation in the signing it is linear, meaning that you can add signatures, you can tweak signatures and you still get something that is valid in the framework of the signing.
 
 # Benefits of Schnorr for Bitcoin
 
@@ -153,15 +153,15 @@ ET: Obviously there is a proof. Probably a lot of non-mathematicians don’t car
 
 MF: To summarize, an improved security proof on ECDSA. Linearity, Schnorr signatures are also a little smaller, not a massive deal.
 
-ET: Getting rid of DER is a very good thing. Aside from the size which is an improvement in Bitcoin where we need to save those bytes forever. The exact encoding isn’t fun. In the past there were a lot of bugs that were found by some people here. 
+ET: Getting rid of DER is a very good thing. Aside from the size which is an improvement in Bitcoin where we need to save those bytes forever. The exact encoding isn’t fun. In the past there were a lot of bugs that were found by some people here.
 
-Nadav Kohen (NK): I just wanted to point out that along with all the things that have already been mentioned Schnorr signatures also have the nice property that you can compute the sG, the point associated with the signature from public information only. This enables a lot of fun schemes. ECDSA doesn’t have any equivalent to that as far as I’m aware. Schnorr with pre-committed r values, if you know the r value, the public key and the message then you compute sG from just that public information ahead of time without knowing what the signature is. I am referring to the discreet log contract [paper](https://adiabat.github.io/dlc.pdf) more or less. 
+Nadav Kohen (NK): I just wanted to point out that along with all the things that have already been mentioned Schnorr signatures also have the nice property that you can compute the sG, the point associated with the signature from public information only. This enables a lot of fun schemes. ECDSA doesn’t have any equivalent to that as far as I’m aware. Schnorr with pre-committed r values, if you know the r value, the public key and the message then you compute sG from just that public information ahead of time without knowing what the signature is. I am referring to the discreet log contract [paper](https://adiabat.github.io/dlc.pdf) more or less.
 
 stefanwouldgo: Doesn’t Schnorr have the strong unforgeability property Pieter mentioned before?
 
 TR: When we mentioned there was a security proof on better assumptions it is also the case that Schnorr has strong unforgeability built in where ECDSA does not. For ECDSA the only reason why it is not strongly unforgeable is that you can negate one of the components in the signature. If you see a signature you can negate it and it is still valid. Given a signature you can produce one other valid signature. This can be avoided by just checking that one of the numbers is in the right range. It is not strictly an improvement. You can do the same for ECDSA. You can make it strongly unforgeable.
 
-PW: Given that we already as a policy do that in Bitcoin, it is the low s rule. With the low s rule and under these additional assumptions it is also possible to prove that ECDSA is strongly unforgeable. 
+PW: Given that we already as a policy do that in Bitcoin, it is the low s rule. With the low s rule and under these additional assumptions it is also possible to prove that ECDSA is strongly unforgeable.
 
 TR: I think the same comment applies to the DER encoding. It is just an encoding issue. Now we move to Schnorr signatures we also fix some other things that are annoying. But you could also encode ECDSA in a nicer way.
 
@@ -171,11 +171,11 @@ AG: A little side note that might be of interest or amusement to some people. A 
 
 TR: This was a historical thing?
 
-AG: It was the crypto 1992 proceedings. 
+AG: It was the crypto 1992 proceedings.
 
 TR: When was the first proof? 1997 I think. The journal of cryptography paper says received in 1997. Provable security of Schnorr wasn’t a thing at that time.
 
-AG: Are you talking about [Pointcheval and Stern](https://www.di.ens.fr/david.pointcheval/Documents/Papers/1996_eurocrypt.pdf)? There was no concept of a reduction before that? 
+AG: Are you talking about [Pointcheval and Stern](https://www.di.ens.fr/david.pointcheval/Documents/Papers/1996_eurocrypt.pdf)? There was no concept of a reduction before that?
 
 TR: No one figured out how to prove Schnorr signatures are secure? I don’t know, I need to check. Maybe I am wrong.
 
@@ -185,11 +185,11 @@ TR: If you are familiar with Fiat-Shamir then it is super weird to remove the no
 
 MF: Anything else on why we want Schnorr? We’ve covered everything?
 
-TR: It was mentioned but not really stressed. In general it is much easier to build cryptography on top of Schnorr signatures. There are so many things you can imagine and things we can’t imagine right now. At the moment we are looking into multisignatures, threshold signatures, blind signature variations. Andrew Poelstra’s scriptless scripts. All of these things are usually much easier to build on top of Schnorr because you have these nice algebraic properties that Schnorr preserves. The point of ECDSA basically was to break those algebraic properties. There is nothing definitive you can say about this but in general the math is much nicer. 
+TR: It was mentioned but not really stressed. In general it is much easier to build cryptography on top of Schnorr signatures. There are so many things you can imagine and things we can’t imagine right now. At the moment we are looking into multisignatures, threshold signatures, blind signature variations. Andrew Poelstra’s scriptless scripts. All of these things are usually much easier to build on top of Schnorr because you have these nice algebraic properties that Schnorr preserves. The point of ECDSA basically was to break those algebraic properties. There is nothing definitive you can say about this but in general the math is much nicer.
 
 NK: Essentially building anything on top of ECDSA that you can build on top of Schnorr requires zero knowledge proofs to fill in the lost properties which adds a lot of complexity.
 
-TR: Or other things like encryption. With Schnorr signatures we have very easy constructions for multisignatures. If you have n parties who want to sign… There was work involved and people got it wrong a few times but we have it now and it is simple. For ECDSA even if you go for only two party signatures, 2-of-2, you can build this but it is pretty ugly. You need a lot of stuff just to make that work. For example you need to introduce a completely different new encryption scheme just to make the 2-of-2 signatures work. 
+TR: Or other things like encryption. With Schnorr signatures we have very easy constructions for multisignatures. If you have n parties who want to sign… There was work involved and people got it wrong a few times but we have it now and it is simple. For ECDSA even if you go for only two party signatures, 2-of-2, you can build this but it is pretty ugly. You need a lot of stuff just to make that work. For example you need to introduce a completely different new encryption scheme just to make the 2-of-2 signatures work.
 
 # Design considerations for the Schnorr implementation
 
@@ -215,19 +215,19 @@ ET: At the very least it violates separation of concerns. You don’t want to mi
 
 PW: Arguably we are doing that too for the sake of convenience, reusing the same keys. Given that the same BIP 32 derivation is used.
 
-MF: One thing Pieter said in his Scaling Bitcoin 2016 [presentation](https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/schnorr-signatures/) was that you couldn’t just slot in Schnorr as a replacement for ECDSA because of the BIP 32 problem. This is where you can calculate a signature of a child key if you know that master public key. 
+MF: One thing Pieter said in his Scaling Bitcoin 2016 [presentation](https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/schnorr-signatures/) was that you couldn’t just slot in Schnorr as a replacement for ECDSA because of the BIP 32 problem. This is where you can calculate a signature of a child key if you know that master public key.
 
 “It turns out if you take Schnorr signatures naively and apply it to an elliptic curve group it has a really annoying interaction with BIP 32 when used with public derivation. If you know a master public key and you see any signature below it you can transmute that signature into a valid signature for any other key under that master key.” Pieter Wuille at Scaling Bitcoin 2016
 
 NK: Nonce generation seems like a pretty big design choice. How we have deterministic nonce generation plus adding in auxiliary randomness.
 
-MF: The people who were involved back then, I don’t know exactly when, maybe it started 2013, 2014 but it certainly seemed to get serious in 2016 when Pieter presented at Scaling Bitcoin on it. Were there any big changes in terms of your thinking how Schnorr should be implemented? I know Taproot only came along in 2017 so you had to integrate the thinking on the Schnorr implementation with Taproot. We will go onto the multisignature stuff later. 
+MF: The people who were involved back then, I don’t know exactly when, maybe it started 2013, 2014 but it certainly seemed to get serious in 2016 when Pieter presented at Scaling Bitcoin on it. Were there any big changes in terms of your thinking how Schnorr should be implemented? I know Taproot only came along in 2017 so you had to integrate the thinking on the Schnorr implementation with Taproot. We will go onto the multisignature stuff later.
 
-PW: The biggest change I went through was thinking of Schnorr primarily as a scaling improvement. I was envisaging it to be part of a cross input aggregation scheme where we would aggregate all signatures in an entire transaction into one. With the invention of Taproot that changed to a much more simple per input for a privacy improvement technique. 
+PW: The biggest change I went through was thinking of Schnorr primarily as a scaling improvement. I was envisaging it to be part of a cross input aggregation scheme where we would aggregate all signatures in an entire transaction into one. With the invention of Taproot that changed to a much more simple per input for a privacy improvement technique.
 
 ET: I think I remember you tweeting about it a while ago, the fact that you see Schnorr as doing cross input aggregation and maybe one day BLS or something like that doing cross block aggregation.
 
-MF: So Taproot and perhaps changing priorities on what Schnorr use cases were possible. Cross input aggregation isn’t in BIP Schnorr or in a potential soft fork in the coming months or years. There is a lot of work that I understand to get to a point where that could be introduced to Bitcoin. 
+MF: So Taproot and perhaps changing priorities on what Schnorr use cases were possible. Cross input aggregation isn’t in BIP Schnorr or in a potential soft fork in the coming months or years. There is a lot of work that I understand to get to a point where that could be introduced to Bitcoin.
 
 # Dangers of implementing Schnorr too early
 
@@ -235,7 +235,7 @@ MF: What could go wrong? Let’s say that there had been a Schnorr soft fork two
 
 AG: It is a science fiction argument I suppose but what if people started making signature aggregation just by adding keys together?
 
-PW: Whenever we are talking about hypothetical scenarios it is hard to imagine what we are exactly we are talking about. If it was just a OP_SCHNORR that was introduced and nothing more I don’t think there would be much risk. It would also not be particularly interesting. You wouldn’t get the cross input aggregation, you wouldn’t get Taproot. You would have the ability to do efficient multisig and threshold signatures within one input. Before we spend a lot of time thinking about all the ways that can go wrong, MuSig and its various iterations, there is certainly risk there. 
+PW: Whenever we are talking about hypothetical scenarios it is hard to imagine what we are exactly we are talking about. If it was just a OP_SCHNORR that was introduced and nothing more I don’t think there would be much risk. It would also not be particularly interesting. You wouldn’t get the cross input aggregation, you wouldn’t get Taproot. You would have the ability to do efficient multisig and threshold signatures within one input. Before we spend a lot of time thinking about all the ways that can go wrong, MuSig and its various iterations, there is certainly risk there.
 
 NK: You would’ve still gotten adaptor signatures and that would’ve made Lightning nicer maybe. We will still get there.
 
@@ -247,13 +247,13 @@ PW: There is no hash.
 
 AG: We are talking about Taproot here not Schnorr per se.
 
-PW: That’s right. The Taproot proposal puts a tweaked public key directly in the output. There are no hashes involved. 
+PW: That’s right. The Taproot proposal puts a tweaked public key directly in the output. There are no hashes involved.
 
 NK: Does the tweak save this scenario at all?
 
 PW: I would argue there is no problem at all. I believe the argument that hashes protect against a quantum computer is cargo cult. If ECDLP is broken we have a problem period. Any interesting use beyond simple payments and that includes BIP 32 derivation, multisig, Lightning, various other protocols all rely on already sharing public keys with different parties. If we believe that computing a private key from a public key is easy for an attacker we shouldn’t be doing these things. The correct approach is thinking of in the long term how we can move to an actual post quantum secure scheme and not lie to ourselves that our current use of hashes is any significant improvement.
 
-MF: That is a conversation you have had to rehash a lot it seems. Watching from afar. 
+MF: That is a conversation you have had to rehash a lot it seems. Watching from afar.
 
 (For more information on why hashing public keys does not actually provide much quantum resistance see this StackExchange [post](https://bitcoin.stackexchange.com/questions/91049/why-does-hashing-public-keys-not-actually-provide-any-quantum-resistance) from Andrew Chow.)
 
@@ -271,17 +271,17 @@ MF: This was the [roadmap](https://bitcoincore.org/en/2017/03/23/schnorr-signatu
 
 NK: You mean the code or a soft fork?
 
-MF: It needs to be merged in and then there would be soft fork. What could go wrong? This is linking to the discussion with Pieter earlier where I said “What would’ve happened if it had been implemented really early.” Pieter said “There wouldn’t have been much of a problem if say there had been a OP_SCHNORR opcode back in 2017”. But we don’t to have things introduced to Bitcoin where there are lots of opcodes where funds are locked up using those opcodes. I think Andreas (Antonopoulos) has called this crud. 
+MF: It needs to be merged in and then there would be soft fork. What could go wrong? This is linking to the discussion with Pieter earlier where I said “What would’ve happened if it had been implemented really early.” Pieter said “There wouldn’t have been much of a problem if say there had been a OP_SCHNORR opcode back in 2017”. But we don’t to have things introduced to Bitcoin where there are lots of opcodes where funds are locked up using those opcodes. I think Andreas (Antonopoulos) has called this crud.
 
 (See the end of this [presentation](https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-04-03-andreas-antonopoulos-bitcoin-scripting/) from Andreas Antonopoulos at SF Bitcoin Devs on Advanced Bitcoin Scripting)
 
 MF: We want to get it right first time. We don’t want to get things wrong. We want to have sorted out the multisig schemes and make sure Taproot integrates perfectly with Schnorr. We don’t want to rush things in. What could go wrong?
 
-PW: I think my biggest concern is in how things end up being used. Just because Schnorr makes it easier to build more complicated constructions on top doesn’t mean they all interact well and securely. We have already seen many unexpected pitfalls. The two round MuSig scheme that was proven insecure. We went from we think we have a proof and someone found a mistake in a proof. And then someone found an actual break. All these things were discovered before deployment. I think the process is working here. There is certainly risk that people will end up using much more experimental things on top. Nonce derivation or anything that introduces more interaction at the wallet signing level introduces risk I think. At the same time it comes with huge benefits. 
+PW: I think my biggest concern is in how things end up being used. Just because Schnorr makes it easier to build more complicated constructions on top doesn’t mean they all interact well and securely. We have already seen many unexpected pitfalls. The two round MuSig scheme that was proven insecure. We went from we think we have a proof and someone found a mistake in a proof. And then someone found an actual break. All these things were discovered before deployment. I think the process is working here. There is certainly risk that people will end up using much more experimental things on top. Nonce derivation or anything that introduces more interaction at the wallet signing level introduces risk I think. At the same time it comes with huge benefits.
 
 NK: I would also like to note that there is at least some risk of that happening on ECDSA as well now that there are a lot more feasible schemes built on top of ECDSA that are worse than the Schnorr versions.
 
-PW: Absolutely. I think these same concerns apply to things like 2 party ECDSA, much more so in fact. 
+PW: Absolutely. I think these same concerns apply to things like 2 party ECDSA, much more so in fact.
 
 MF: We will go onto this later but do we need to have those multisig schemes bulletproof and be really confident in those multisig schemes before we merge Schnorr in? Or can we potentially make those secure in the future after a Schnorr soft fork?
 
@@ -291,17 +291,17 @@ MF: In a worst case scenario where there was a bug or things that had to be chan
 
 TR: What Pieter mentioned in that sense is maybe not the worst case scenario. This would be a scheme on top of Schnorr failing and you could just stop using this. It is not nice but in this case you hopefully don’t need to fix the consensus code. Whenever you need to do a hard fork because of a bug in the consensus code it is a nightmare scenario.
 
-PW: I think that is good to point out. Almost all the risk is in how things end up being adopted. Of course there could be actual bugs in a consensus implementation and so on but I think we are reasonably confident that that isn’t the case. That is not a very high bar. Imagine the Schnorr scheme we introduce is just trivially insecure. Anyone can forge a signature. That isn’t the risk for the consensus system in the sense that if nobody uses it there is no problem. Today you can send to OP_TRUE, that is also insecure. Everything depends on the actual schemes and how wallets adopt things. These were extreme examples obviously. 
+PW: I think that is good to point out. Almost all the risk is in how things end up being adopted. Of course there could be actual bugs in a consensus implementation and so on but I think we are reasonably confident that that isn’t the case. That is not a very high bar. Imagine the Schnorr scheme we introduce is just trivially insecure. Anyone can forge a signature. That isn’t the risk for the consensus system in the sense that if nobody uses it there is no problem. Today you can send to OP_TRUE, that is also insecure. Everything depends on the actual schemes and how wallets adopt things. These were extreme examples obviously.
 
 TR: I was surprised by your comment Pieter. That your concern is people build crazy things on top of it. This is always what I fear, coming more from a theory background. When we have Schnorr signatures you can do this fancy construction that I wrote ten minutes ago. You get all these nice properties but you need a security proof. How does it work? Writing a paper and getting peer review takes two years. I am always on the side of being cautious and try to slow down things and be careful. I fully agree with Pieter. We should be careful. Just because a scheme seems to work doesn’t mean it is secure.
 
-TR: One point that we haven’t covered that much is batch verification. That’s a big one. This is actually something where Schnorr is better than ECDSA because we just can’t do this with the current ECDSA. 
+TR: One point that we haven’t covered that much is batch verification. That’s a big one. This is actually something where Schnorr is better than ECDSA because we just can’t do this with the current ECDSA.
 
 PW: With a trivial modification you could. It wouldn’t be ECDSA anymore. It is not just an encoding issue. But with a very small change to ECDSA you could.
 
 AG: What would that be?
 
-PW: You send the full R point rather than only the x coordinate of R modulo the curve order. That’s enough. Or what we call a compact signature that has an additional two bits to indicate whether R_x overflowed or not and which of the two to pick. There is a strong analogy between batch verification and public key recovery. 
+PW: You send the full R point rather than only the x coordinate of R modulo the curve order. That’s enough. Or what we call a compact signature that has an additional two bits to indicate whether R_x overflowed or not and which of the two to pick. There is a strong analogy between batch verification and public key recovery.
 
 MF: Your answer surprised me Pieter because as a protocol developer or someone who cares about the protocol and the network we don’t care about people building things on top and losing money. What we are worried about funds being locked up in some bug ridden opcode etc and everyone having to verify that bug ridden opcode forever.
 
@@ -309,11 +309,11 @@ PW: I don’t know what the distinction really is. There are two concerns. One i
 
 MF: I suppose that is one of the concerns. Crud or lots of funds being locked up in stuff that wasn’t optimal. It would’ve been much better if things that were optimal were merged in rather than rubbish.
 
-PW: That again is about how things are used. Say Taproot goes through today as it is proposed and gets adopted but everyone uses it by putting existing analogs of multisig scripts inside the tree and don’t use those features. That is a potential outcome and it would be unfortunate but there isn’t much you can do as a protocol designer. 
+PW: That again is about how things are used. Say Taproot goes through today as it is proposed and gets adopted but everyone uses it by putting existing analogs of multisig scripts inside the tree and don’t use those features. That is a potential outcome and it would be unfortunate but there isn’t much you can do as a protocol designer.
 
 ET: I believe you mentioned the distinction between a consensus failure and upper level protocol failures. I think they can be as bad. Let’s say if Schnorr didn’t interact well with BIP 32 and we didn’t notice that. All the wallets would deploy Schnorr with BIP 32 and a lot of funds would get stolen. This is at least as bad as funds being locked up because of consensus.
 
-PW: Absolutely there is no doubt about that. But it depends on it being used. That is the distinction. 
+PW: Absolutely there is no doubt about that. But it depends on it being used. That is the distinction.
 
 MF: You only need one person to use it and then everyone has to care about it. Is that the distinction? Or are you talking about lots of adoption?
 
@@ -325,23 +325,23 @@ http://www.neven.org/papers/schnorr.pdf
 
 MF: So on the reading list there is this paper by Neven, Smart and Warinschi. Who has read this paper? Anyone like to discuss what the hash functions are for Schnorr signatures? How has this paper informed how hash functions are used for Schnorr in Bitcoin?
 
-TR: If I remember this paper has a deeper look into possible alternative security proofs for Schnorr signatures. The normal security proof for Schnorr signatures models the hash function as a random oracle which is what people in crypto do because we cryptographers don’t know how to prove stuff otherwise. At least not very efficiently. We invent this model where we look at the hash function as an ideal thing and then we can play ugly tricks in the security proof. When I say ugly tricks I really mean that. The only confidence that we have in the random oracle model is that it has been used for decades now and it hasn’t led to a problem. We know it is weird but it has never failed us so I believe in it. It is already needed in Bitcoin so it is not a problem to rely on it because it is used in other places in Bitcoin. 
+TR: If I remember this paper has a deeper look into possible alternative security proofs for Schnorr signatures. The normal security proof for Schnorr signatures models the hash function as a random oracle which is what people in crypto do because we cryptographers don’t know how to prove stuff otherwise. At least not very efficiently. We invent this model where we look at the hash function as an ideal thing and then we can play ugly tricks in the security proof. When I say ugly tricks I really mean that. The only confidence that we have in the random oracle model is that it has been used for decades now and it hasn’t led to a problem. We know it is weird but it has never failed us so I believe in it. It is already needed in Bitcoin so it is not a problem to rely on it because it is used in other places in Bitcoin.
 
 PW: I think this is something that few people realize. How crazy some of the cryptographic assumptions are that people make. The random oracle model, a couple of months ago I explained to someone who was reasonably technical but not all that into cryptography how the random oracle DL proof works. His reaction was “That is terrible. That has nothing to do with the real world.” It is true. I won’t go into the details here but it is pretty interesting. The fact that you can program a random oracle has no relation at all to how things work in the real world. If you look at it just pragmatically, how well it has helped us build secure protocols? I think it has been very useful there. In the end you just need to look at how good is this as a tool and how often has it failed us.
 
 TR: In practice it has never failed us so it is a super useful tool. Nevertheless it is interesting to look into other models. This is what is done in this paper. In this paper they take a different approach. As I said normally if you want to prove Schnorr signatures are secure you assume that discrete logarithm is hard. This is a standard thing. There is nothing weird about this. It is still an assumption. You can formalize it and it can be true in the real world that this is hard. You can make this crazy random oracle assumption for the hash function. I think in this paper they go the other way round. They take a simple assumption for the hash function and they discover several assumptions for example, random prefix second preimage secure. I won’t go into details but you can make that formal. It is a much weaker assumption than this crazy random oracle thing. To be able to prove something about the resulting Schnorr signature scheme what they do is they instead make the discrete logarithm problem a more ideal thing. Discrete logarithm in a mathematical group. In our case it is the group of points on the elliptic curve. In the proof they model this group as an ideal mathematical object with strange idealized properties. In this model, the generic group model, we don’t have as much confidence in this one as in the random oracle model I would say. It is another way to produce a proof. This gives us more confidence in the resulting thing. If you go with that approach you can produce a proof, if you go with that other approach you can also produce a proof. It is even more confidence that what we are doing is sound in theory. Concretely this also has implications for the length of the hash function here. I’m not sure.
 
-PW: I believe that is correct. I think the paper points out that you can do with 128 bit hashes in that model but of course you lose the property that your signature is a secure commitment to the message in that case. That may or may not matter. I think it is an implicit assumption that many people who think informally about the signature scheme assume it is scary to lose. 
+PW: I believe that is correct. I think the paper points out that you can do with 128 bit hashes in that model but of course you lose the property that your signature is a secure commitment to the message in that case. That may or may not matter. I think it is an implicit assumption that many people who think informally about the signature scheme assume it is scary to lose.
 
 TR: Let me give some background here. This is not really relevant for the Schnorr signature scheme that we have proposed. But it is relevant to the design decisions there. You could specify a variant of Schnorr signatures which are even shorter than what we have proposed. In our proposal you send two elements, R a curve point and s the scalar. You can replace R with a hash. This is in some sense in the spirit of ECDSA. You can replace R with a hash. A hash is suitable, if you have a hash function like SHA256 you can truncate it after 128 bits. You can play around with this length. If you want to send an elliptic curve point you can’t really do that. Usually you send a x coordinate. You can truncate this but then the receiver will never be able to recover the full point from that again. By switching to a hash function you could tune its parameters and then tune it even smaller. This would reduce the final signature by 128 bits and it would still be secure. However this comes with several disadvantages. We explains them in the BIP. One of the disadvantages is that we lose batch verification. We don’t want to do that. Then another disadvantage is pointed out by this paper. If we switch to hashes and do this size optimization then the signature scheme would have a weird property namely the following. I can take a message m, give a signature on it and send you the message. Later I give you a second message m’ and the signature that I sent you will also be valid for m’. I can do this as the sender. If you think about unforgeability there is nothing wrong with this because I am the sender, I am the guy who has the secret key. I can produce a signature for m and m’. For any other message that I want but it is still an unintuitive property that I can produce one single signature that is valid for two messages. This will confuse a lot of protocols that people want to build on top of Schnorr because they implicitly assume that this can’t happen. In particular it is going to be interesting if the sender is not a single party. In this example I mentioned I am the guy with the secret key. But what if we do something like MuSig where the secret key is split among a group of parties and maybe they don’t trust each other. Who is the sender in that case? Things start to get messy. I think this is pointed out in this paper. Another reason why we don’t want to use this hash variant.
 
 AG: You mentioned that one of the reasons you don’t like this truncated hash variant is that it would remove the batch verification property. I know you mentioned that earlier as well. I wonder if it would be useful if you could explain concretely how much an advantage it would be in Bitcoin in the real world to have the batch verification property.
 
-PW: I think a 3x or 4x reduction in CPU for verifying a block isn’t bad. 
+PW: I think a 3x or 4x reduction in CPU for verifying a block isn’t bad.
 
 AG: Under what assumptions do you get those figures?
 
-PW: You are right to point out that there are assumptions here. In practice many transactions are validated ahead of time. So that doesn’t apply. This is definitely something that matters for initial block download validation. And possibly even more because you could arguably batch multiple blocks together. Or even all of them. You can get even higher factors that I haven’t looked into the numbers how much that is. 
+PW: You are right to point out that there are assumptions here. In practice many transactions are validated ahead of time. So that doesn’t apply. This is definitely something that matters for initial block download validation. And possibly even more because you could arguably batch multiple blocks together. Or even all of them. You can get even higher factors that I haven’t looked into the numbers how much that is.
 
 AG: Are you saying in a typical scenario where everything was using Schnorr that you’d get a 4x speedup on verification of a block?
 
@@ -375,7 +375,7 @@ https://medium.com/blockstream/reducing-bitcoin-transaction-sizes-with-x-only-pu
 
 MF: This was Jonas Nick’s blog post on x only pubkeys. I’m sure somebody can summarize this because this was pretty important.
 
-PW: This is about the question of whether it is fine to go to x only public keys and the trade-offs there. The argument that people sometimes make that clearly you are cutting the key space in half because half of the private keys correspond to those public keys. You might think that this inherently means a slight reduction in security. But it turns out that this is not the case. A way to see this intuitively is if it is possible to break the discrete logarithm of a x only public key faster than breaking it for a full public key then I could use the faster algorithm to break full public keys too by negating it optionally in the beginning. In the end negating the output. It turns out that this doesn’t just apply to discrete logarithms, it also applies to forging signatures. I think Jonas has a nice blog post on that which is why I suggested he talk about this. The paradox here is how is it possible that you don’t get a speedup? The reason is that the structure of a negation of a point already lets you actually break the discrete logarithm slightly faster. You can try two public keys at once during a break algorithm. 
+PW: This is about the question of whether it is fine to go to x only public keys and the trade-offs there. The argument that people sometimes make that clearly you are cutting the key space in half because half of the private keys correspond to those public keys. You might think that this inherently means a slight reduction in security. But it turns out that this is not the case. A way to see this intuitively is if it is possible to break the discrete logarithm of a x only public key faster than breaking it for a full public key then I could use the faster algorithm to break full public keys too by negating it optionally in the beginning. In the end negating the output. It turns out that this doesn’t just apply to discrete logarithms, it also applies to forging signatures. I think Jonas has a nice blog post on that which is why I suggested he talk about this. The paradox here is how is it possible that you don’t get a speedup? The reason is that the structure of a negation of a point already lets you actually break the discrete logarithm slightly faster. You can try two public keys at once during a break algorithm.
 
 TR: It seems like a paradox. It is not that you don’t lose security, it is just super, super tiny.
 
@@ -383,15 +383,15 @@ PW: What do you mean by super tiny?
 
 TR: People sometimes talk about the hardness of cryptographic problems. They say this should be 2^128 operations hard to break discrete log but they don’t say what operations are. The reason why they don’t say is because the numbers are that big. It doesn’t really matter if you can’t use CPU cycles or additions or whatever. In this case this explains the difference here because negating a public key seems to be an elliptic curve operation and they are much more expensive than finite field operations. If you think of an elliptic curve point it has two coordinates x and y and they are elements of a finite field. Computations on a finite field are much faster than computations on a point itself. However for negating this is not the case. If you negate the point what you do is negate the y coordinate. It is not like you lose 1 bit of security in terms of public key operations or group operations. You lose maybe 1 bit in finite field operations but it is so much smaller.
 
-PW: No I think you are failing to distinguish two things. The difference between the optimal algorithm that can break a x only key and the optimal algorithm that can break a full key is just an additive difference. It is a precomputation and post processing step that you do once. What you are talking about is the fact that you can already use the negation to speed up computing the discrete log of a full public key. This is what resolves the paradox. 
+PW: No I think you are failing to distinguish two things. The difference between the optimal algorithm that can break a x only key and the optimal algorithm that can break a full key is just an additive difference. It is a precomputation and post processing step that you do once. What you are talking about is the fact that you can already use the negation to speed up computing the discrete log of a full public key. This is what resolves the paradox.
 
 TR: Maybe you are right. I need to read Jonas’ blog post again.
 
-ET: Even if it did cut the security in half it would just be one less bit. 
+ET: Even if it did cut the security in half it would just be one less bit.
 
 PW: Or half a bit because it is square root. It isn’t even that.
 
-TR: If you are talking about a single bit, even if you lose half a bit or one bit it is not really clear what that means. In that sense ECDSA is actually a tiny bit harder than breaking Schnorr. We don’t really know for those small factors. 
+TR: If you are talking about a single bit, even if you lose half a bit or one bit it is not really clear what that means. In that sense ECDSA is actually a tiny bit harder than breaking Schnorr. We don’t really know for those small factors.
 
 stefanwouldgo: It is just a constant factor right?
 
@@ -423,13 +423,13 @@ MF: There is a question from nothingmuch in the chat. Care to comment on “ It 
 
 nothingmuch: Deterministic nonce generation, my understanding is that it is not compatible with MuSig right?
 
-PW: It is compatible but only in a trivially insecure way. 
+PW: It is compatible but only in a trivially insecure way.
 
 TR: This is a really interesting point. Maybe tomorrow I will talk about this. Variants of MuSig, I can explain this in more detail. We talked a lot about deterministic nonces. If you look at ECDSA and Schnorr signatures this is what we read everywhere. It can horribly fail if you use real randomness because if randomness breaks down it might leak your private key and so on. So please use deterministic randomness. We hammered this into the minds of all implementers. Now as you point out it is exactly the case that if you now go to MuSig and use deterministic randomness it is exactly the other way round. If you deterministic randomness it is horribly broken.
 
 ET: What are your thoughts on synthetic nonces with MuSig?
 
-TR: It doesn’t help you with MuSig. The idea of synthetic nonces as Pieter said, it is secure if either the real randomness is secure or the deterministic randomness works out. 
+TR: It doesn’t help you with MuSig. The idea of synthetic nonces as Pieter said, it is secure if either the real randomness is secure or the deterministic randomness works out.
 
 PW: And in MuSig without variants you just need to have real randomness period.
 
@@ -445,11 +445,11 @@ https://github.com/bitcoin/bitcoin/pull/17977
 
 MF: The next item in the agenda is the actual PR in Bitcoin Core implementing BIP 340-342. One smaller [PR 16902](https://bitcoincore.reviews/16902.html) was taken out of this monster Schnorr, Taproot PR and we looked at that Bitcoin Core PR review club. Are there any possibilities to take further PRs out of that monster PR? This was for easy reviewability I think more than anything.
 
-PW: There have been a couple that have been taken out, opened and/or merged independently. I think the only obvious one that is remaining is merging support for Schnorr signatures first in libsecp and then in Bitcoin Core. On top of that I think the code changes are fairly modest of what remains. 
+PW: There have been a couple that have been taken out, opened and/or merged independently. I think the only obvious one that is remaining is merging support for Schnorr signatures first in libsecp and then in Bitcoin Core. On top of that I think the code changes are fairly modest of what remains.
 
 MF: It is pretty much ready to be merged bar a few small things? Or just needs more review? What are the next steps for it to be merged assuming consensus?
 
-PW: I think the key word is assuming consensus. It probably requires vague plan at least about how it will be deployed. 
+PW: I think the key word is assuming consensus. It probably requires vague plan at least about how it will be deployed.
 
 MF: Is that the bottleneck now, the activation conversation? You think the code is pretty much there?
 
@@ -473,11 +473,11 @@ ET: The library is pretty cool. Originally I think it was made by Pieter to test
 
 MF: How did you build it to begin with Pieter? It is in C, the same as OpenSSL, did you use parts of OpenSSL to begin with and then build it out?
 
-PW: No libsecp at the very beginning was written in C++. It was later converted to C to be more compatible with low powered devices and things like that. And improve things like static analyzability. It is entirely written from scratch. The original algorithms, some of them were inspired by techniques used in ed25519 and things I had seen in other implementations. Later lots of very interesting novel algorithms were contributed by Peter Dettman and others. 
+PW: No libsecp at the very beginning was written in C++. It was later converted to C to be more compatible with low powered devices and things like that. And improve things like static analyzability. It is entirely written from scratch. The original algorithms, some of them were inspired by techniques used in ed25519 and things I had seen in other implementations. Later lots of very interesting novel algorithms were contributed by Peter Dettman and others.
 
-MF: You talked about this on the Chaincode Labs [podcast](https://diyhpl.us/wiki/transcripts/chaincode-labs/2020-01-28-pieter-wuille/). The motivation for working on this were to shrink that attack surface area in terms of what it is actually doing from a security perspective. OpenSSL was doing a lot of stuff that we didn’t need in Bitcoin and there was the DER encoding problem. 
+MF: You talked about this on the Chaincode Labs [podcast](https://diyhpl.us/wiki/transcripts/chaincode-labs/2020-01-28-pieter-wuille/). The motivation for working on this were to shrink that attack surface area in terms of what it is actually doing from a security perspective. OpenSSL was doing a lot of stuff that we didn’t need in Bitcoin and there was the DER encoding problem.
 
-PW: It is reducing attack surface by being something that does one thing. 
+PW: It is reducing attack surface by being something that does one thing.
 
 # libsecp256kfun
 
@@ -499,7 +499,7 @@ ET: I wanted to note this as a lot of people have looked at it.
 
 MF: Tim, you did say you might talk about this tomorrow. The different multisig schemes. [MuSig](https://eprint.iacr.org/2018/068.pdf), [Bellare-Neven](https://cseweb.ucsd.edu/~mihir/papers/multisignatures-ccs.pdf), [MSDL pop scheme](https://eprint.iacr.org/2018/483.pdf) (Boneh et al) and then there are the threshold schemes. Who can give a high level comparison between the multisig schemes and then there is the threshold schemes?
 
-TR: Let me try for the ones you mentioned. The first reasonable scheme in that area was Bellare-Neven because it was the first scheme in what would you call a plain public key model. I can talk about this tomorrow too. The problem with multisignatures is…. Let’s say I have a public key and Pieter has a public key. These are just things that we claim but it doesn’t mean that we know the secret key for them. It turns out that if we don’t know the secret key for a public key we can do some nasty tricks. I can show those tomorrow. For example if we do this naively I can create a public key that depends on Pieter’s public key. After I have seen Pieter’s key I can create a key for which I don’t know the secret key. If we add those keys together to form an aggregate key for the multisignature then it would be a key for which I can sign and only I. I don’t need Pieter. This defeats the purpose of a multisignature. This is called a key cancellation attack or a rogue key attack. 
+TR: Let me try for the ones you mentioned. The first reasonable scheme in that area was Bellare-Neven because it was the first scheme in what would you call a plain public key model. I can talk about this tomorrow too. The problem with multisignatures is…. Let’s say I have a public key and Pieter has a public key. These are just things that we claim but it doesn’t mean that we know the secret key for them. It turns out that if we don’t know the secret key for a public key we can do some nasty tricks. I can show those tomorrow. For example if we do this naively I can create a public key that depends on Pieter’s public key. After I have seen Pieter’s key I can create a key for which I don’t know the secret key. If we add those keys together to form an aggregate key for the multisignature then it would be a key for which I can sign and only I. I don’t need Pieter. This defeats the purpose of a multisignature. This is called a key cancellation attack or a rogue key attack.
 
 MF: Key subtraction? Different terms for it.
 
@@ -513,7 +513,7 @@ MF: You don’t have Schnorr in Elements? How are you doing schemes like MuSig w
 
 TR: There was an old Schnorr implementation in an Elements version a few years ago. Greg says I’m wrong.
 
-PW: Elements Alpha used to have Schnorr signatures but it was subsequently dropped after we discovered we wanted something that was secure against cancellation attacks. The Schnorr code that was in Elements Alpha was plain Schnorr without pubkey prefixing even. But it was dropped. It is not currently there. 
+PW: Elements Alpha used to have Schnorr signatures but it was subsequently dropped after we discovered we wanted something that was secure against cancellation attacks. The Schnorr code that was in Elements Alpha was plain Schnorr without pubkey prefixing even. But it was dropped. It is not currently there.
 
 TR: I can’t speak for Elements and Liquid because I am not so much involved in development there. I guess the plan is to wait until the Bitcoin PRs have stabilized where we are confident that we can implement it in Liquid. Confidence and hope that it won’t change much afterwards. We mostly try to be with compatible with the core features of Bitcoin Core because this makes development easier. Of course we have the advantage that forks are maybe easier if you have a federation.
 
@@ -531,15 +531,15 @@ TR: I started an implementation of DiceMix under the Elements project in GitHub 
 
 AG: The whole BIP 32 with Schnorr thing. Can somebody give the one minute summary? The general idea is that everything should still be usable but there are some details to pay attention to. Is that right?
 
-PW: Very short. If you do non-key prefixed Schnorr in combination with BIP 32 then you can malleate signatures for one key into another key in the same tree if you know the derivation paths. 
+PW: Very short. If you do non-key prefixed Schnorr in combination with BIP 32 then you can malleate signatures for one key into another key in the same tree if you know the derivation paths.
 
 AG: A beautiful illustration of why it makes absolutely zero sense to not key prefix. I like that.
 
-PW: I need to add that even without key prefixing this is not a problem in Bitcoin in reasonable settings because we implicitly commit to the public key. 
+PW: I need to add that even without key prefixing this is not a problem in Bitcoin in reasonable settings because we implicitly commit to the public key.
 
 AG: Except for the SIGHASH_NOINPUT thing which was mentioned in the BIP. It doesn’t exist.
 
-PW: Still it is a scary thing that has potential interaction with things so keep prefixing. 
+PW: Still it is a scary thing that has potential interaction with things so keep prefixing.
 
-MF: Let’s wrap up there. Thank you to all those attending. Tim will present tomorrow. The topic is going to Schnorr multisig and threshold sig schemes. 
+MF: Let’s wrap up there. Thank you to all those attending. Tim will present tomorrow. The topic is going to Schnorr multisig and threshold sig schemes.
 

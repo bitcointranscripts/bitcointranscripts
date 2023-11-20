@@ -56,7 +56,7 @@ ND; Something interesting I noticed. I came into bitcoin in 2014. Before that, I
 
 EV: Standards develop economically. It's not economically feasible for everyone to be doing development. We've been focusing on electrum for wallet-client server communication. This happened as the internet evolved- there were some standards that were important to talk about and sit down and talk about, but it wasn't mandatory, and people sometimes come back later and rationalize the things that have survived. There are things being factored out of Bitcoin Core's giant binary blob. It's not just Bitcoin Core, many things are designed in that model. There's just too much in one place. Mining, for example, a lot of these pieces.
 
-ND: As a preview of my talk, I talk about wallets, and I think walets weigh too much. I think they should talk to a trusted server which you own. If you have your own server with your own bitcoin node and an explorer you control, then you can use your mobile device to connect directly to it, then... 
+ND: As a preview of my talk, I talk about wallets, and I think walets weigh too much. I think they should talk to a trusted server which you own. If you have your own server with your own bitcoin node and an explorer you control, then you can use your mobile device to connect directly to it, then...
 
 LN: Has to be optional, not everyone is going to do that.
 

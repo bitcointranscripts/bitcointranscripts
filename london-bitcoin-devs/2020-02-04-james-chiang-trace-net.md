@@ -91,11 +91,11 @@ A - Exactly. Safe or not safe. We first build the entire state space.
 
 # Example: Trace-Net Contract Execution (1)
 
-Here is an example of a possible trace. This is the sequence of transitions. We have the funding transition from the Internal Actor. The External Actor then funds. The Internal Actor then swaps coins thereby revealing the preimage. Then the External Actor swaps with that preimage. I am going to walk you through it and you can check how the state changes. In this case the Internal Actor has funded so you can see the output has moved here. The External Actor can decide to do a couple of things. In this case the External Actor also funds the contract. You can note here currently we are at block height 100 in this example. This is the age of the output, 6 confirmations, but because there is no timelock the earliest fire time is at zero. The Input Arc transitions have released all the Input Arcs. Now the External Actor funds the other contract and the swap now occurs. When the Internal Actor performs the swap transaction the state of the witness marking for this guy changes to External. Once the swap transaction is executed here the hash preimage is released and the External Actor is now able to produce the witness for this guy here which includes the preimage of the same hashlock. 
+Here is an example of a possible trace. This is the sequence of transitions. We have the funding transition from the Internal Actor. The External Actor then funds. The Internal Actor then swaps coins thereby revealing the preimage. Then the External Actor swaps with that preimage. I am going to walk you through it and you can check how the state changes. In this case the Internal Actor has funded so you can see the output has moved here. The External Actor can decide to do a couple of things. In this case the External Actor also funds the contract. You can note here currently we are at block height 100 in this example. This is the age of the output, 6 confirmations, but because there is no timelock the earliest fire time is at zero. The Input Arc transitions have released all the Input Arcs. Now the External Actor funds the other contract and the swap now occurs. When the Internal Actor performs the swap transaction the state of the witness marking for this guy changes to External. Once the swap transaction is executed here the hash preimage is released and the External Actor is now able to produce the witness for this guy here which includes the preimage of the same hashlock.
 
 # Example: Trace-Net Contract Execution (2)
 
-This is another possible trace. We have the Internal Actor that just sweeps. The Internal Actor can move the output to another one that it controls. Subsequently so does the other actor. That is also a possible trace. Note that this is also safe because I get the same funds back so to speak. If my signing policy is an implied balance then this trace is entirely safe. I haven’t lost any funds. I haven’t performed the swap that I wanted to but if the signing policy is balanced then this works as well. 
+This is another possible trace. We have the Internal Actor that just sweeps. The Internal Actor can move the output to another one that it controls. Subsequently so does the other actor. That is also a possible trace. Note that this is also safe because I get the same funds back so to speak. If my signing policy is an implied balance then this trace is entirely safe. I haven’t lost any funds. I haven’t performed the swap that I wanted to but if the signing policy is balanced then this works as well.
 
 # Example: Trace-Net Execution (3)
 
@@ -175,7 +175,7 @@ Q - There could be attacks where one party could force another party to spend lo
 
 Q - Just do CPFP. If you have another output you can always CPFP and the main output is going to be the balance of the contract propagated across a stage of transactions.
 
-Q - Safety wouldn’t normally be defined as fee efficiency. But in certain scenarios where the attacker can force you to lose all your funds because of fees then suddenly safety and fee efficiency become blurred. 
+Q - Safety wouldn’t normally be defined as fee efficiency. But in certain scenarios where the attacker can force you to lose all your funds because of fees then suddenly safety and fee efficiency become blurred.
 
 Q - It is not about losing funds because your transaction isn’t confirmed. It is that you had to spend some money just to get your money back.
 
@@ -201,11 +201,11 @@ A - What does a fee race mean? A fee race means that I am being prevented from c
 
 Q - I’m not sure how that happens in practice. You could have an auction or you could have someone making too many childs.
 
-A - I feel that is something a contract design can’t help with. 
+A - I feel that is something a contract design can’t help with.
 
-Q - You could make it robust against it. You could say “I can never be in a situation where I must spend right now.” Or at least you could indicate the risks. If you do this and this happens in a high fee environment you might be screwed so don’t do it in a high fee environment. 
+Q - You could make it robust against it. You could say “I can never be in a situation where I must spend right now.” Or at least you could indicate the risks. If you do this and this happens in a high fee environment you might be screwed so don’t do it in a high fee environment.
 
-A - That’s a really good point. We could for example say “I evaluate for time zero and I evaluate for a future where we have confirmed a hundred extra blocks.” Is the contract still safe then or have certain things timed out? That’s entirely possible. For example in these markings here I capture the notion of chain height. The chain height here is 50 and the earliest fire time is zero. We could do this entire evaluation at 51, 52, 53. 
+A - That’s a really good point. We could for example say “I evaluate for time zero and I evaluate for a future where we have confirmed a hundred extra blocks.” Is the contract still safe then or have certain things timed out? That’s entirely possible. For example in these markings here I capture the notion of chain height. The chain height here is 50 and the earliest fire time is zero. We could do this entire evaluation at 51, 52, 53.
 
 Q - But also prevailing fee rates.
 
@@ -229,7 +229,7 @@ Q - The worst case scenario is it is impossible to ever get your transaction onc
 
 A - In this case we have relaxed the requirement of timelocks being fired in order and we are modeling everything probabilistically. There is the probability of a timelocked transition firing before another one because you are not vigilant or you are not watching the chain. Watching the chain is a cost. You can still observe how the expected probability of success or failure evolves as you update the contract, as you add states to the channel.
 
-Q - Do you want to talk about Tamarin Prover or not? 
+Q - Do you want to talk about Tamarin Prover or not?
 
-A - That isn’t related to this. I have been thinking about areas where you could potentially take off the shelf to verify protocols. It is still model checking, the whole approach here is model checking. You take a model, you try to exhaustively build its state space and you exhaustively check the state space for safety properties that you define. In a P2P protocol or messaging protocol there are different states we can have that we negotiate. There are good ones and bad ones. That tells me what are safe actions on my part and whether the protocol design allows for me to take these safe execution traces. 
+A - That isn’t related to this. I have been thinking about areas where you could potentially take off the shelf to verify protocols. It is still model checking, the whole approach here is model checking. You take a model, you try to exhaustively build its state space and you exhaustively check the state space for safety properties that you define. In a P2P protocol or messaging protocol there are different states we can have that we negotiate. There are good ones and bad ones. That tells me what are safe actions on my part and whether the protocol design allows for me to take these safe execution traces.
 

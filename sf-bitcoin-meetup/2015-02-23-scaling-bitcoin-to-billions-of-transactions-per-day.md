@@ -8,7 +8,7 @@ date: 2015-02-23
 media: https://www.youtube.com/watch?v=8zVzw912wPo
 ---
 
-Scaling Bitcoin To Billions Of Transactions Per Day 
+Scaling Bitcoin To Billions Of Transactions Per Day
 
 <http://lightning.network/>
 
