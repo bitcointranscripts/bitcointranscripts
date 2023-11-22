@@ -89,13 +89,19 @@ jobs:
           echo ::set-output name=TITLE::${TWEET}
 
           # Construct tweet transcription details
-          TWEET="Transcript by "
-          TRANSCRIPT_BY_TWITTER=$(cat twitter_handles.json | jq '."'"${TRANSCRIPT_BY}"'"' --raw-output)
-          if [[ $TRANSCRIPT_BY_TWITTER == null ]]; then TWEET+="${TRANSCRIPT_BY}"; else TWEET+="@${TRANSCRIPT_BY_TWITTER} "; fi
-          if [[ -n $TRANSLATION_BY ]]; then
-            TWEET+=" and translation by "
-            TRANSLATION_BY_TWITTER=$(cat twitter_handles.json | jq '."'"${TRANSLATION_BY}"'"' --raw-output)
-            if [[ $TRANSLATION_BY_TWITTER == null ]]; then TWEET+="${TRANSLATION_BY}"; else TWEET+="@${TRANSLATION_BY_TWITTER} "; fi
+          if [[ $TRANSCRIPT_BY == *"via review.btctranscripts.com"* && -z $TRANSLATION_BY ]]; then
+            # Transcript is from review
+            TRANSCRIPT_BY=$(echo "$TRANSCRIPT_BY" | awk -F ' via ' '{print $1}') # Extract reviewer's handle
+            TWEET="${TRANSCRIPT_BY} just earned sats for reviewing via review.btctranscripts.com"
+          else
+            TWEET="Transcript by "
+            TRANSCRIPT_BY_TWITTER=$(cat twitter_handles.json | jq '."'"${TRANSCRIPT_BY}"'"' --raw-output)
+            if [[ $TRANSCRIPT_BY_TWITTER == null ]]; then TWEET+="${TRANSCRIPT_BY}"; else TWEET+="@${TRANSCRIPT_BY_TWITTER} "; fi
+            if [[ -n $TRANSLATION_BY ]]; then
+              TWEET+=" and translation by "
+              TRANSLATION_BY_TWITTER=$(cat twitter_handles.json | jq '."'"${TRANSLATION_BY}"'"' --raw-output)
+              if [[ $TRANSLATION_BY_TWITTER == null ]]; then TWEET+="${TRANSLATION_BY}"; else TWEET+="@${TRANSLATION_BY_TWITTER} "; fi
+            fi
           fi
           echo ::set-output name=CONTRIBUTORS::${TWEET}
 
