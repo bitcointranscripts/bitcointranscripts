@@ -355,4 +355,3 @@ Speaking of fascinating, if you are looking to level up your knowledge on Bitcoi
 John: 00:49:31
 
 Bye.
-
