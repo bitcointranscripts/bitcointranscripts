@@ -2,23 +2,11 @@
 title: "Explaining Segregated Witness"
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=DsyMUzhfG34
-tags: ["segwit","Forks","Soft Fork","Taproot"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+tags: ["segwit","Soft Fork"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-03-18
 ---
-
-## <Intro>
-
-Aaron: 00:00:00
-
-Before the show, a quick word from our sponsor.
-
-CK: 00:00:04
-
-## Bitcoin 2021 Conference
-
-What is up Bitcoiners? It's CK and I'm here to talk to you about the Bitcoin 2021 conference this June in sunny Miami, Florida. It is going to be June 4th and 5th and we are barreling towards a sold out conference. Already one third of our available tickets have been sold and *way *more than half of our whale passes have been sold. We are almost sold out completely on the whale pass. We have amazing speakers, Jack Dorsey, Chamath, Nick Szabo, Tony Hawk, Peter Todd, many, many more and many more to be announced. You can go to the website to check them all out. Mayor Suarez has welcomed us into the city with open arms and again, tickets are flying off the shelves. Seriously, I see the feed and, like, I've done many conferences. This one is really has some something going for it. And honestly, guys, like, after all this, after 2020, Bitcoiners wanna grab a beer, hang out. We're bringing back Bitcoin 2019 vibes times 10, prices times 10, let's go. Use promo code SATOSHI, all caps, SATOSHI for 10% off, you can go to the website b.tc backslash conference. Again, that is b.tc backslash conference and get your ticket today. Today Prices also are going up and hey, we may just sell out. So we have a hard cap. Can't really be flexible there. Don't wait.
 
 Aaron: 00:01:46
 
@@ -48,7 +36,7 @@ It's the last soft fork we know of.
 
 Aaron: 00:02:07
 
-Exactly yes I guess so. It activated in 2017. It was developed in--it started being developed in 2015.
+Exactly yes I guess so. It activated in 2017. It started being developed in 2015.
 
 Sjors: 00:02:17
 
@@ -82,7 +70,7 @@ We could start with what the problem was.
 
 Aaron: 00:02:59
 
-Okay what was the problem? Why did we need "segwitures?"
+Okay what was the problem? Why did we need SegWit Sjors?
 
 Sjors: 00:03:02
 
@@ -98,7 +86,7 @@ Yeah, and there were lots of ways to do that. So one of the ways that was fixed 
 
 Aaron: 00:04:38
 
-yes if someone can mess with it in flight, basically you send a transaction to the network and then it's forwarded from peer to peer and till it reaches miner and it's included in a block but every peer on the network but can basically take the transaction, tweak it a little bit, and forward it, or the miner can do that
+Yes if someone can mess with it in flight, basically you send a transaction to the network and then it's forwarded from peer to peer and till it reaches miner and it's included in a block but every peer on the network but can basically take the transaction, tweak it a little bit, and forward it, or the miner can do that
 
 Sjors: 00:04:55
 
@@ -190,7 +178,7 @@ To make this very clear, in case some of our listeners aren't keeping up, the th
 
 Sjors: 00:10:33
 
-Yeah, so the solution there is to put the hash, sorry, put the *signature *in a separate place inside the transaction that, as far as old nodes are concerned, doesn't even exist. And you still refer back to other transactions by the original data. So the original, basically the original part of the transaction, that still creates the hash. And the signature is this new data and you do not use it to create a hash.
+Yeah, so the solution there is to put the signature in a separate place inside the transaction that, as far as old nodes are concerned, doesn't even exist. And you still refer back to other transactions by the original data. So the original, basically the original part of the transaction, that still creates the hash. And the signature is this new data and you do not use it to create a hash.
 
 Aaron: 00:10:58
 
@@ -250,7 +238,7 @@ It's in the Coinbase transaction right?
 
 Sjors: 00:13:52
 
-So I think it's appended at the end of the block but it's also referred to in the Coinbase transaction because what you do want to do is you want to make sure that you know the block hash just refers to the things that are in the block. But it only refers to the things that are in a block as far as legacy nodes are concerned. But you don't want to tell the legacy notes about the SegWit stuff. So what happens is there is a OPRETURN statement in the Coinbase, which refers to a hash of all the witness stuff.
+So I think it's appended at the end of the block but it's also referred to in the Coinbase transaction because what you do want to do is you want to make sure that you know the block hash just refers to the things that are in the block. But it only refers to the things that are in a block as far as legacy nodes are concerned. But you don't want to tell the legacy notes about the SegWit stuff. So what happens is there is a `OP_RETURN` statement in the Coinbase, which refers to a hash of all the witness stuff.
 
 Aaron: 00:14:20
 
@@ -258,22 +246,22 @@ Yeah, the Coinbase, in case listeners don't know this, isn't just a company, it'
 
 Sjors: 00:14:30
 
-Yeah, and that transaction can just spend the money however it wants but it has to contain at least one output with OPRETURN in it and that OPRETURN must refer to the witness blocks. So all nodes just see an OPRETURN statement and they don't care.
+Yeah, and that transaction can just spend the money however it wants but it has to contain at least one output with `OP_RETURN` in it and that `OP_RETURN` must refer to the witness blocks. So all nodes just see an `OP_RETURN` statement and they don't care.
 
 Aaron: 00:14:44
 
-And OPRETURN is a little bit of text.
+And `OP_RETURN` is a little bit of text.
 
 Sjors: 00:14:47
 
-Yeah, OPRETURN basically means, okay, you're done verifying, ignore this. But it can be followed by text, which is then ignored. Except by new nodes, which will actually check this. So this allows the nodes to communicate blocks and transactions to new nodes and to old nodes and they all agree on what's there. And the other thing, the other reason why this can be a soft fork and that's more important for the new nodes is, well, you're spending, where are you sending the coins to when you're using SegWit? So you're using a special address type now. And this address type, or like on the blockchain, what you have is a script pubkey, that is what an output says. So an output of a transaction tells you how to spend the new transaction. It puts a constraint on it. And so this script pubkey with segwit starts with a zero, or at least does now, but with taproot, it'll start with a 1. And then it's followed by the hash of a public key, or the hash of a script. And new nodes know what to do with this. They see this version 0, they know, okay, this is SegWit the way we know it, and they see a public key hash, and they know, okay, whoever wants to spend this needs to actually provide the public key and a signature. But old nodes, what they see is, okay, there is this condition which is put 0 on the stack and put this random garbage on the stack that I don't know what it is. And the end result is there's something on my stack and it's not 0 and I did not fail. And so, okay, whatever, this is fine, you can spend this. So, old nodes think that anybody can spend that coin, but new nodes know exactly who can spend it and who cannot spend it.
+Yeah, `OP_RETURN` basically means, okay, you're done verifying, ignore this. But it can be followed by text, which is then ignored. Except by new nodes, which will actually check this. So this allows the nodes to communicate blocks and transactions to new nodes and to old nodes and they all agree on what's there. And the other thing, the other reason why this can be a soft fork and that's more important for the new nodes is, well, you're spending, where are you sending the coins to when you're using SegWit? So you're using a special address type now. And this address type, or like on the blockchain, what you have is a script pubkey, that is what an output says. So an output of a transaction tells you how to spend the new transaction. It puts a constraint on it. And so this script pubkey with segwit starts with a zero, or at least does now, but with taproot, it'll start with a 1. And then it's followed by the hash of a public key, or the hash of a script. And new nodes know what to do with this. They see this version 0, they know, okay, this is SegWit the way we know it, and they see a public key hash, and they know, okay, whoever wants to spend this needs to actually provide the public key and a signature. But old nodes, what they see is, okay, there is this condition which is put 0 on the stack and put this random garbage on the stack that I don't know what it is. And the end result is there's something on my stack and it's not 0 and I did not fail. And so, okay, whatever, this is fine, you can spend this. So, old nodes think that anybody can spend that coin, but new nodes know exactly who can spend it and who cannot spend it.
 
 Aaron: 00:16:27
 
-Yeah, it's actually called "anyone can spend" out. Yes. So, in a hypothetical situation where there would only be all the nodes on the network, then it would also literally mean that the coins in these addresses could be spent by anyone.
+Yeah, it's actually called "anyone can spend". Yes. So, in a hypothetical situation where there would only be all the nodes on the network, then it would also literally mean that the coins in these addresses could be spent by anyone.
 
 
-## SegWit andTaproot
+## SegWit and Taproot
 
 
 Sjors: 00:16:40
@@ -445,7 +433,7 @@ I mean yeah it enables things like lightning so that's a pretty big capacity inc
 
 Aaron: 00:25:29
 
-so that's one And then we have the block size increase, which is two. Then we have the versioning bits, which makes it easier to deploy future upgrades, which is three. And then four, you just mentioned, is the hardware wallet fee issue is solved.
+So that's one and then we have the block size increase, which is two. Then we have the versioning bits, which makes it easier to deploy future upgrades, which is three. And then four, you just mentioned, is the hardware wallet fee issue is solved.
 
 Sjors: 00:25:45
 
@@ -473,7 +461,7 @@ Yeah, I guess the argument there would be that the signature hash reference, the
 
 Sjors: 00:26:40
 
-Well you wouldn't have had to put it anywhere. If you do a hard fork you can just add the witness data to the blocks and in the main Merkle tree, so you don't need to do anything in the OPRETURN.
+Well you wouldn't have had to put it anywhere. If you do a hard fork you can just add the witness data to the blocks and in the main Merkle tree, so you don't need to do anything in the `OP_RETURN`.
 
 Aaron: 00:26:50
 
@@ -534,4 +522,3 @@ All right then. Thank you for listening to The Van Wirdum Sjorsnado.
 Aaron: 00:27:51
 
 There you go.
-

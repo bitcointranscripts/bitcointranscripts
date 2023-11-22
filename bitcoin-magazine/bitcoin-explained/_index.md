@@ -1,5 +1,0 @@
----
-title: Bitcoin Explained
----
-
-{{< childpages >}}
