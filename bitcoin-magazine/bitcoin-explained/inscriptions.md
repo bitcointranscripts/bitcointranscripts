@@ -7,6 +7,8 @@ categories: ["podcast"]
 date: 2023-02-08
 ---
 
+## Introduction
+
 Aaron Van Wirdum: 00:00:20
 
 Live from Utrecht, this is Bitcoin Explained. Sjors, we're gonna lean into some Twitter controversy today.
@@ -17,7 +19,7 @@ Exactly, we have to jump on the bandwagon and make sure that we talk about what 
 
 Aaron Van Wirdum: 00:00:34
 
-Love it! Yeah, actually I got this request from a colleague of mine, Brendan Green, and since I am his humble servant, I had no other choice but to make an episode about this topic, which is inscriptions, and maybe also ordinals to some extent but yeah as you mentioned everyone's talking about it now which I think for both of us was more of a demotivating factor because everything that's that can be said about it has been said by now maybe. But we're gonna try to at least explain what it is, I guess.
+Love it! Yeah, actually I got this request from a colleague of mine, Brandon Green, and since I am his humble servant, I had no other choice but to make an episode about this topic, which is inscriptions, and maybe also ordinals to some extent but yeah as you mentioned everyone's talking about it now which I think for both of us was more of a demotivating factor because everything that's that can be said about it has been said by now maybe. But we're gonna try to at least explain what it is, I guess.
 
 Sjors Provoost: 00:01:08
 
@@ -37,7 +39,7 @@ Love the Van Wirdum Sjorsnado.
 
 Sjors Provoost: 00:01:32
 
-Excellent. And the other one from Mr. Mr. 5,674 sats. Excellent topic and explanations. As for topics for the future show, I have some, I need some technical explanation. Perhaps you could be of assistance because I thought I knew how my Lightning channel closed, but my node died and BluWallet seized the on-chain stuff, yay, and I contacted the other node operator and they closed the channel out, yay, but my share of closing Lightning Balance didn't go on-chain. Thanks.
+Excellent. And the other one from Mr. Mister 5,674 sats. Excellent topic and explanations. As for topics for the future show, I have some, I need some technical explanation. Perhaps you could be of assistance because I thought I knew how my Lightning channel closed, but my node died and BluWallet seized the on-chain stuff, yay, and I contacted the other node operator and they closed the channel out, yay, but my share of closing Lightning Balance didn't go on-chain. Thanks.
 
 Aaron Van Wirdum: 00:02:07
 
@@ -71,22 +73,24 @@ Sjors Provoost: 00:03:37
 
 Yes.
 
+## Brief Explanation of OP\_RETURN
+
 Aaron Van Wirdum: 00:03:38
 
-The controversy is brewing and we're gonna lean into it with everything we have short inscriptions okay first before we actually get to inscriptions I do want to mention a lot of this ties in with OP_RETURN and we made an episode on OP_RETURN on the OP_RETURN Wars as it was referred to, which was episode 61, 
-and we'll recap some of that here, but maybe not all of it. So if you really don't know, and now I'm addressing you, my dear listener, our dear listener, if you don't know what OP_RETURN is, then you might wanna go back to episode 61 first to sort of get an idea of what the history there is. That said we will recap it real quick. Yeah sure, so I'll just leave this to you. OP_RETURN, What do we need to know before we get to inscriptions?
+The controversy is brewing and we're gonna lean into it with everything we have short inscriptions okay first before we actually get to inscriptions I do want to mention a lot of this ties in with `OP_RETURN` and we made an episode on `OP_RETURN` on the `OP_RETURN` Wars as it was referred to, which was episode 61, 
+and we'll recap some of that here, but maybe not all of it. So if you really don't know, and now I'm addressing you, my dear listener, our dear listener, if you don't know what `OP_RETURN` is, then you might wanna go back to episode 61 first to sort of get an idea of what the history there is. That said we will recap it real quick. Yeah sure, so I'll just leave this to you. `OP_RETURN`, What do we need to know before we get to inscriptions?
 
 Sjors Provoost: 00:04:33
 
-Yeah, so OP_RETURN was a solution to a problem. And the problem was that, well, the problem wasn't so much that people were putting stuff on the blockchain that wasn't money. They were putting pictures, etc. On the blockchain. That wasn't necessarily the problem, but the problem was in how they were doing it. They were using weird mechanisms. 
+Yeah, so `OP_RETURN` was a solution to a problem. And the problem was that, well, the problem wasn't so much that people were putting stuff on the blockchain that wasn't money. They were putting pictures, etc. On the blockchain. That wasn't necessarily the problem, but the problem was in how they were doing it. They were using weird mechanisms. 
 
 Aaron Van Wirdum: 00:04:52
 
-Whoa, whoa, whoa. I'll stop you right there. That's debatable, right? Some people will say that's in itself a problem.
+I'll stop you right there. That's debatable, right? Some people will say that's in itself a problem.
 
 Sjors Provoost: 00:04:57
 
-Yeah, some people would, but there was a bigger problem, and that was in the way that we're doing it. And the way that we're doing it was causing the so-called UTXO set to grow a lot. And the UTXO set is basically the set of coins that exist in the world and that could be spent by somebody at any time. You don't know when it's going to be spent. So you tend to keep it in RAM so that whenever a new block comes in, you can very quickly check whether the new block is spending coins that actually exist or not. And the problem with the way they were putting data on the blockchain is they were basically making it look like there were real coins out there that could be spent with public keys and all, but they were really, they could never be spent because there was no private key because of the way the images were encoded. And so OP_RETURN was a sort of a mitigation of that by saying, okay, please use this mechanism called OP_RETURN, and we'll explain how that works, so that we don't have this problem with RAM. 
+Yeah, some people would, but there was a bigger problem, and that was in the way that we're doing it. And the way that we're doing it was causing the so-called UTXO set to grow a lot. And the UTXO set is basically the set of coins that exist in the world and that could be spent by somebody at any time. You don't know when it's going to be spent. So you tend to keep it in RAM so that whenever a new block comes in, you can very quickly check whether the new block is spending coins that actually exist or not. And the problem with the way they were putting data on the blockchain is they were basically making it look like there were real coins out there that could be spent with public keys and all, but they were really, they could never be spent because there was no private key because of the way the images were encoded. And so `OP_RETURN` was a sort of a mitigation of that by saying, okay, please use this mechanism called `OP_RETURN`, and we'll explain how that works, so that we don't have this problem with RAM. 
 
 Aaron Van Wirdum: 00:05:53
 
@@ -94,7 +98,7 @@ I don't think we will. People will have to go back to episode 61, Sjors.
 
 Sjors Provoost: 00:05:56
 
-All right, fine. We won't explain it. Or we might get back to it. Anyway, so people could use Opportune, they could put up to 80 bytes on the blockchain this way, in a way that doesn't waste people's RAM, still takes space in the blockchain, but it doesn't waste people's RAM and RAM is much more precious.
+All right, fine. We won't explain it. Or we might get back to it. Anyway, so people could use `OP_RETURN`, they could put up to 80 bytes on the blockchain this way, in a way that doesn't waste people's RAM, still takes space in the blockchain, but it doesn't waste people's RAM and RAM is much more precious.
 
 Aaron Van Wirdum: 00:06:13
 
@@ -118,7 +122,7 @@ Right. So developers said, all right, if you're going to upload data on the bloc
 
 Sjors Provoost: 00:07:11
 
-Yeah. And if I remember correctly, that limit was basically such that it was slightly more attractive to use OP_RETURN than to use the bad methods that we used before, but not unnecessarily attractive.
+Yeah. And if I remember correctly, that limit was basically such that it was slightly more attractive to use `OP_RETURN` than to use the bad methods that we used before, but not unnecessarily attractive.
 
 Aaron Van Wirdum: 00:07:22
 
@@ -128,9 +132,11 @@ Sjors Provoost: 00:07:34
 
 Yeah, I think so.
 
+## What Inscriptions are
+
 Aaron Van Wirdum: 00:07:34
 
-Okay, so inscriptions then, I guess my one sentence summary would be, inscriptions are a way to do the same thing, to do what OP_RETURN does, but without the limit. Is that a fair one sentence summary?
+Okay, so inscriptions then, I guess my one sentence summary would be, inscriptions are a way to do the same thing, to do what `OP_RETURN` does, but without the limit. Is that a fair one sentence summary?
 
 Sjors Provoost: 00:07:52
 
@@ -146,7 +152,7 @@ Yeah so instead of an 80 byte limit he found a way to have a 400 kilobyte limit 
 
 Aaron Van Wirdum: 00:08:16
 
-Okay, so then the one sentence summary is, someone found a way to do something very similar to OP_RETURN, but with a much bigger limit and with a cheaper, at least cheaper per byte fee wise. Yeah. That's a very ugly sentence, but I still think that counts as one sentence.
+Okay, so then the one sentence summary is, someone found a way to do something very similar to `OP_RETURN`, but with a much bigger limit and with a cheaper, at least cheaper per byte fee wise. Yeah. That's a very ugly sentence, but I still think that counts as one sentence.
 
 Sjors Provoost: 00:08:39
 
@@ -178,15 +184,15 @@ Yeah pretty much, But it doesn't really matter because the way that you put data
 
 Aaron Van Wirdum: 00:09:38
 
-Yeah, right. So that's what the inscriptions are. Inscriptions are uploading data into the Bitcoin blockchain. And that's probably, It seems that's sort of what most of the controversy, the Twitter shitstorm, is about. And that's also what we're going to address mostly in this episode. I don't think we're going to get into Ordinals too much, although we've already mentioned it. So, Sjors, how does it work? How did KC get around this limit, this OP_RETURN limit? What's the...
+Yeah, right. So that's what the inscriptions are. Inscriptions are uploading data into the Bitcoin blockchain. And that's probably, It seems that's sort of what most of the controversy, the Twitter shitstorm, is about. And that's also what we're going to address mostly in this episode. I don't think we're going to get into Ordinals too much, although we've already mentioned it. So, Sjors, how does it work? How did Casey get around this limit, this `OP_RETURN` limit? What's the...
 
 Sjors Provoost: 00:10:10
 
-Yeah, so basically the way OP_RETURN works is you're creating an output basically. And when you create an output, you basically have to tell the nodes or the blockchain what way this output can be spent. And that's fine. You basically say OP_RETURN and then followed by a bunch of gibberish. Doesn't matter what it is because as soon as the blockchain is reading OP_RETURN, it stops, it says, okay, it's valid. And in fact, I'm going to forget it because it is unspendable. That's why it's a nice mechanism. And because it's an output, you're not getting any SegWit discount. You're paying the normal price. If you want to get into weight units 4 weight units per byte of data but don't worry about weight units I guess.
+Yeah, so basically the way `OP_RETURN` works is you're creating an output basically. And when you create an output, you basically have to tell the nodes or the blockchain what way this output can be spent. And that's fine. You basically say `OP_RETURN` and then followed by a bunch of gibberish. Doesn't matter what it is because as soon as the blockchain is reading `OP_RETURN`, it stops, it says, okay, it's valid. And in fact, I'm going to forget it because it is unspendable. That's why it's a nice mechanism. And because it's an output, you're not getting any SegWit discount. You're paying the normal price. If you want to get into weight units - 4 weight units per byte of data - but don't worry about weight units I guess.
 
 Aaron Van Wirdum: 00:10:51
 
-And maybe you're also sort of skipping ahead which makes it more confusing anyways I guess just carry on. So you just explained how OP_RETURN works, which is also explained in depth in episode 61.
+And maybe you're also sort of skipping ahead which makes it more confusing anyways I guess just carry on. So you just explained how `OP_RETURN` works, which is also explained in depth in episode 61.
 
 Sjors Provoost: 00:11:05
 
@@ -194,19 +200,18 @@ Exactly.
 
 Aaron Van Wirdum: 00:11:06
 
-NO more questions about inscriptions.
+Now my question is about inscriptions.
+
+## How Inscriptions Work
 
 Sjors Provoost: 00:11:08
 
-Exactly. And these are not using outputs, they're using inputs. And an input basically, the goal of an input is to say, okay, here's an output, you just point to a transaction hash and an index in the transaction and here is the piece of script, the witness, that you need to spend that output. Now this witness gets a 4x discount And so what this new scheme does is it basically puts all the OP_RETURN like data in the witness instead of in the output. And now we can get into the way it puts it into the witness, doesn't really matter, but the idea is you need to eventually, when you're spending your own coins, you need to provide a signature. But you don't have to do that right away. You can do a bunch of nonsense and then provide a signature. Or you can provide a signature and then continue the script, do a bunch of nonsense and then return. And that's basically what you're doing. So either before or after you provide your signature you write on the blockchain OP_FALSE and what that does is it we talked about bitcoin scripts all the way I think in episode 2 but it basically puts something on the stack called false. Now stack is like a pile of plates. So you have a pile of plates, which is exactly one high, the word false is on that plate. And then there's the next code is called OP_IF. And this OP_IF statement looks at what's the top plate, well, false. And then it says, okay, I'm going to skip until either I see an else or I see an end if. And so there is an end if in this particular script and it turns out that between this if statement and the end if statement is where you have all this data that you're trying to upload into the blockchain. And as we just described, the OP_IF statement means that we're not executing all that data, we're just skipping past it. So you're able to do whatever you want because it's not evaluated.
+Exactly. And these are not using outputs, they're using inputs. And an input basically, the goal of an input is to say, okay, here's an output, you just point to a transaction hash and an index in the transaction and here is the piece of script, the witness, that you need to spend that output. Now this witness gets a 4x discount. So what this new scheme does is it basically puts all the `OP_RETURN` like data in the witness instead of in the output. And now we can get into the way it puts it into the witness, doesn't really matter, but the idea is you need to eventually, when you're spending your own coins, you need to provide a signature. But you don't have to do that right away. You can do a bunch of nonsense and then provide a signature. Or you can provide a signature and then continue the script, do a bunch of nonsense and then return. And that's basically what you're doing. So either before or after you provide your signature you write on the blockchain `OP_FALSE` and what that does is it - we talked about bitcoin scripts all the way I think in episode 2 - but it basically puts something on the stack called false. Now stack is like a pile of plates. So you have a pile of plates, which is exactly one high, the word false is on that plate. And then there's the next code is called `OP_IF`. And this `OP_IF` statement looks at what's the top plate, well, false. And then it says, okay, I'm going to skip until either I see an else or I see an end if. And so there is an end if in this particular script and it turns out that between this if statement and the end if statement is where you have all this data that you're trying to upload into the blockchain. And as we just described, the `OP_IF` statement means that we're not executing all that data, we're just skipping past it. So you're able to do whatever you want because it's not evaluated.
 
 Aaron Van Wirdum: 00:13:00
 
 Okay, that was a very technical explanation and I'm gonna try to dumb it down a bit. And then if I dumb it down so much that it becomes inaccurate, you should stop me.
 
-Sponsor: 00:13:14
-
-Yo, What is going on guys? We are proud to have Voltage as a sponsor of this episode. How many of you developers out there have wanted a streamlined infrastructure provider for your particular project? Well, I'll tell you what, Voltage is the Bitcoin infrastructure provider you have been looking for that makes building on Bitcoin quick and easy, whether it's Bitcoin nodes, Lightning nodes, BTC pay, and so much more. But don't take it from me. Just ask the guys over at Amboss, Sphinx, Podcast Index, and Thunder Games, and so many others that you guys already know and love. Their enterprise-grade products make it fast and easy to build, deploy, and scale your next project. So make it easy on yourself. Even Normie Plebs can use the dashboard or API. Don't wait before the next block confirmation. Let your team focus on building great products and let Voltage handle all the rest. Voltage is your go-to zero management Bitcoin infrastructure solution.
 
 Aaron Van Wirdum: 00:14:09
 
@@ -230,7 +235,7 @@ I'm not even going to remember it because my node is a prune node, so it forgets
 
 Sjors Provoost: 00:15:50
 
-So if you have a full archival node, so one that keeps all the history, you will remember all this stuff and you have to download it once. But if you have a pruned node, yeah you're gonna toss it as you would with OP_RETURN by the way. There's no difference there. And it's not using up any of your RAM, because RAM is only consumed when you create an output. And in this case, you're not creating an output, you're spending an output. So the second the output is spent, you can forget that output ever existed, and the witness never has to be in RAM anyway. Well, except the moment you're checking it.
+So if you have a full archival node, so one that keeps all the history, you will remember all this stuff and you have to download it once. But if you have a pruned node, yeah you're gonna toss it as you would with `OP_RETURN` by the way. There's no difference there. And it's not using up any of your RAM, because RAM is only consumed when you create an output. And in this case, you're not creating an output, you're spending an output. So the second the output is spent, you can forget that output ever existed, and the witness never has to be in RAM anyway. Well, except the moment you're checking it.
 
 Aaron Van Wirdum: 00:16:19
 
@@ -254,11 +259,11 @@ Yeah. So that software will see the same data but it will say hey I know what th
 
 Sjors Provoost: 00:17:01
 
-Yeah so that script will basically ask for every transaction in the blockchain, one by one, and then it will inspect the transaction and look for a certain pattern. And I guess in this case, we'd be looking for an OP CODE called push, followed by the data ORD or something like that. And then it processes whatever comes after that as a file. Which these kinds of tools have existed before for image upload using Uppreturn and using all these other mechanisms. There were also scripts that would basically work in the same way. In fact in my book now that I'm shilling that there's an appendix I think it's appendix C which contains the Bitcoin white paper but it also contains instructions of how you can get the Bitcoin white paper PDF out of the Bitcoin blockchain with just one very complicated command.
+Yeah so that script will basically ask for every transaction in the blockchain, one by one, and then it will inspect the transaction and look for a certain pattern. And I guess in this case, we'd be looking for an OP CODE called push, followed by the data ORD or something like that. And then it processes whatever comes after that as a file. Which these kinds of tools have existed before for image upload using `OP_RETURN` and using all these other mechanisms. There were also scripts that would basically work in the same way. In fact in my book, now that I'm shilling that, there's an appendix I think it's appendix C which contains the Bitcoin white paper but it also contains instructions of how you can get the Bitcoin white paper PDF out of the Bitcoin blockchain with just one very complicated command.
 
 Aaron Van Wirdum: 00:17:53
 
-Right. Okay, so I think we've now explained... So OP_RETURN had this limit of how much data you can upload.
+Right. Okay, so I think we've now explained... So `OP_RETURN` had this limit of how much data you can upload.
 
 Sjors Provoost: 00:18:03
 
@@ -267,6 +272,8 @@ Mm-hmm.
 Aaron Van Wirdum: 00:18:04
 
 So I think we've now explained how Casey essentially got around this limit to otherwise accomplish something very similar.
+
+## What makes Inscriptions possible
 
 Sjors Provoost: 00:18:13
 
@@ -278,7 +285,7 @@ Sure, yeah.
 
 Sjors Provoost: 00:18:19
 
-But there isn't. And in fact with SegWit, there were some limits, and with Taproot to the witness size, so it was still much bigger than what you could do with OP_RETURN, but with Taproot these limits were lifted even more. And the main reason for that is to make it simpler to interpret a script. Things like mini script that we've talked about in earlier episodes when you see a script you want to reason about it, what properties does it have? Can I spend it? You might be part of a very complicated multi-sig and you want to make sure that yes I can provide one signature and if somebody else also provides a signature it can be spent and the coins are not lost? And this type of analysis is easier when there are fewer limits in place. So there were good reasons to remove all these limits, but it does mean that you can make a 400 kilobyte image this way.
+But there isn't. And in fact with SegWit, there were some limits, and with Taproot to the witness size, so it was still much bigger than what you could do with `OP_RETURN`, but with Taproot these limits were lifted even more. And the main reason for that is to make it simpler to interpret a script. Things like miniscript that we've talked about in earlier episodes when you see a script you want to reason about it, what properties does it have? Can I spend it? You might be part of a very complicated multi-sig and you want to make sure that yes I can provide one signature and if somebody else also provides a signature it can be spent and the coins are not lost? And this type of analysis is easier when there are fewer limits in place. So there were good reasons to remove all these limits, but it does mean that you can make a 400 kilobyte image this way.
 
 Aaron Van Wirdum: 00:19:06
 
@@ -294,19 +301,21 @@ Four, right? Yeah.
 
 Sjors Provoost: 00:19:26
 
-Yeah. So the real limit is what can be mined. If you contact a miner directly, or you, you, you go Peter Todd style, create an alternative client that does not care about this limit and promote this alternative client and then hope that miners will actually just look for it with a big enough bounty, then you can actually produce a full block, 400 megabyte block, with just a giant movie or whatever it is inside of it. And I wonder who will be the first person to do that. I guess Burak.
+Yeah. So the real limit is what can be mined. If you contact a miner directly, or you go Peter Todd style, create an alternative client that does not care about this limit and promote this alternative client and then hope that miners will actually just look for it with a big enough bounty, then you can actually produce a full block, 400 megabyte block, with just a giant movie or whatever it is inside of it. And I wonder who will be the first person to do that. I guess Burak.
 
 Aaron Van Wirdum: 00:19:58
 
-Yeah, so you could have... You could have a block that consists of one, I guess, almost four megabytes transaction that is actually, like you said.
+Yeah, so you could have a block that consists of one, I guess, almost four megabytes transaction that is actually, like you said...
 
 Sjors Provoost: 00:20:08
 
-Yeah, you have to leave a little bit of space because, the block has to have a header and has to have the Coinbase transaction for the miner and your transaction itself has to have a bunch of overhead, it has to probably send the money somewhere. So don't make it exactly four megabytes, four million bytes, a little bit less, but yeah, you can make it pretty big. And, you can do the same with OP_RETURN, but then you can only make it one megabyte. So in that sense, it's four times cheaper. So with OP_RETURN if you provided it directly to a miner there's no limit. You can make as far as I know a one megabyte or slightly less OP_RETURN transaction but for the same cost you can make a four megabyte inscription.
+Yeah, you have to leave a little bit of space because, the block has to have a header and has to have the Coinbase transaction for the miner and your transaction itself has to have a bunch of overhead, it has to probably send the money somewhere. So don't make it exactly four megabytes, four million bytes, a little bit less, but yeah, you can make it pretty big. And, you can do the same with `OP_RETURN`, but then you can only make it one megabyte. So in that sense, it's four times cheaper. So with `OP_RETURN` if you provided it directly to a miner there's no limit. You can make, as far as I know, a one megabyte or slightly less `OP_RETURN` transaction but for the same cost you can make a four megabyte inscription.
+
+## The SegWit discount that Inscriptions make use of
 
 Aaron Van Wirdum: 00:20:45
 
-Yeah well that was gonna be my next question or the next point I was going to bring up. So we've explained how to get around the OP_RERTURN limit, so to say. And then the other thing is that inscriptions make use of this SegWit Discount. So we may have explained this in a previous episode, we probably have, or maybe not, I'm not sure, but what does this actually mean? Can you explain what the SegWit Discount is or why people call it that or what is actually what we're talking about.
+Yeah well that was gonna be my next question or the next point I was going to bring up. So we've explained how to get around the `OP_RETURN` limit, so to say. And then the other thing is that inscriptions make use of this SegWit Discount. So we may have explained this in a previous episode, we probably have, or maybe not, I'm not sure, but what does this actually mean? Can you explain what the SegWit Discount is or why people call it that or what is actually what we're talking about.
 
 Sjors Provoost: 00:21:20
 
@@ -318,7 +327,7 @@ Well, no, it can be up to four, right?
 
 Sjors Provoost: 00:21:58
 
-The entire block can be up to four. Yeah, so Yeah, I guess you're right. The witness data can be up to four, but then the main data has to be less, because the total has to be less than four. The witness plus the non-witness data.
+The entire block can be up to four. Yeah, so I guess you're right. The witness data can be up to four, but then the main data has to be less, because the total has to be less than four. The witness plus the non-witness data.
 
 Aaron Van Wirdum: 00:22:11
 
@@ -354,7 +363,7 @@ But I don't think that's the reason. It has to do with if transactions get very 
 
 Aaron Van Wirdum: 00:23:53
 
-Right. Yeah. Now, I mean, I definitely remember that it was at least one of the arguments or it was claimed that the discount also better aligned incentives. I guess I'm just a bit rusty on why that was exactly. 
+Right. I definitely remember that it was at least one of the arguments or it was claimed that the discount also better aligned incentives. I guess I'm just a bit rusty on why that was exactly. 
 
 Sjors Provoost: 00:24:06
 
@@ -370,15 +379,17 @@ To start combining coins.
 
 Aaron Van Wirdum: 00:24:42
 
-Okay. Well, in any case, I think the point is that through the witness, blocks can be bigger. So there's a bit more block space. And then if a fee market develops, so if not all transactions fit into blocks, then transactions will have to outbid each other. And if you're using more of the part of the block that's less scarce, then miners are more inclined to include it because they can include more of them. Right? That's how the incentives work. And that's why there's a quote unquote discount on using witness data. So that's why using inscriptions is basically cheaper per byte than using OP_RETURN. Yeah. Right? Am I saying it right? I think I'm saying it right. Okay. So then I think we've now explained what inscriptions are and how they work. And maybe we should get a little bit into why it is controversial or why are some people angry about this and or...
+Okay. Well, in any case, I think the point is that through the witness, blocks can be bigger. So there's a bit more block space. And then if a fee market develops, so if not all transactions fit into blocks, then transactions will have to outbid each other. And if you're using more of the part of the block that's less scarce, then miners are more inclined to include it because they can include more of them. Right? That's how the incentives work. And that's why there's a quote unquote discount on using witness data. So that's why using inscriptions is basically cheaper per byte than using `OP_RETURN`. Yeah. Right? Am I saying it right? I think I'm saying it right. Okay. So then I think we've now explained what inscriptions are and how they work. And maybe we should get a little bit into why it is controversial or why are some people angry about this and or...
+
+## The Controversy around Inscriptions 
 
 Sjors Provoost: 00:25:51
 
-Well I'm not a psychologist but you could you could argue that Bitcoin's primary purpose is to make money basically as a censorship resistant system for money transfer and if you start doing other things with it that other use case might at some point push out the money use case. Now hopefully the fee structure that exists in Bitcoin is enough to make sure that the money use case is always going to be basically able to pay for itself and always outcompete any other system because it is hopefully in the long term insanely expensive to store data on the blockchain and you have to compete if you want to put your JPEG on the blockchain that's fine but you're competing with Michael Saylor that wants to spend a billion dollars and is probably able to pay a much higher fee on that. So that's the hope but because this mechanism gives you a 4x discount compared to using OP_RETURN, the dynamics just changed by a factor of four. Essentially, the same dynamics where you have a competing use case is now four times cheaper.
+Well I'm not a psychologist but you could you could argue that Bitcoin's primary purpose is to make money basically as a censorship resistant system for money transfer and if you start doing other things with it that other use case might at some point push out the money use case. Now hopefully the fee structure that exists in Bitcoin is enough to make sure that the money use case is always going to be basically able to pay for itself and always outcompete any other system because it is hopefully in the long term insanely expensive to store data on the blockchain and you have to compete if you want to put your JPEG on the blockchain that's fine but you're competing with Michael Saylor that wants to spend a billion dollars and is probably able to pay a much higher fee on that. So that's the hope but because this mechanism gives you a 4x discount compared to using `OP_RETURN`, the dynamics just changed by a factor of four. Essentially, the same dynamics where you have a competing use case is now four times cheaper.
 
 Aaron Van Wirdum: 00:26:49
 
-I think the first thing that may be worth mentioning, and you mentioned it yourself in the up return episode, is that nodes don't get paid, right? If you're running a note. And so the idea is, or this is one of the arguments, this is why it's controversial, at least in some parts of the Bitcoin world, is that if you're running a note, you're agreeing to process transactions, also the transactions of other people, that's the, the social contract or whatever you want to call it. I think that term is very overused, but that's sort of what you're agreeing to do, But you didn't agree to also process or transmit or store rare peppies. So then if people start doing that, that's abusing the system in a way. That's the argument.
+I think the first thing that may be worth mentioning, and you mentioned it yourself in the `OP_RETURN` episode, is that nodes don't get paid, right? If you're running a note. And so the idea is, or this is one of the arguments, this is why it's controversial, at least in some parts of the Bitcoin world, is that if you're running a note, you're agreeing to process transactions, also the transactions of other people, that's the, the social contract or whatever you want to call it. I think that term is very overused, but that's sort of what you're agreeing to do, But you didn't agree to also process or transmit or store rare peppies. So then if people start doing that, that's abusing the system in a way. That's the argument.
 
 Sjors Provoost: 00:27:48
 
@@ -414,7 +425,7 @@ Okay, so that's sort of the main argument against this, but as you mentioned or 
 
 Sjors Provoost: 00:29:09
 
-No, from my cursory look at the mailing list, it is replied by Andrew Polstra, the cryptographer and long-time Bitcoiner.
+No, from my cursory look at the mailing list, it is replied by Andrew Poelstra, the cryptographer and long-time Bitcoiner.
 
 Aaron Van Wirdum: 00:29:16
 
@@ -442,19 +453,11 @@ And blocks are already two megabytes right now. And so even if this new thing be
 
 Aaron Van Wirdum: 00:32:16
 
-Yeah And then it's sort of an extension of that is if a fee market develops what we want and what we sometimes have it, comes and goes, it seems like, but there is some fee market issue dynamics going on. Anyways, if that continues to develop, I just can't imagine that uploading rare pepes is going to be the most valuable thing. I don't think that's going to win. You can't predict the future. That's right. But I can sort of speculate, right. And I just can't imagine that this is going to be the thing that people will use.
-
-Sjors Provoost: 00:32:55
-
-Probably not
-
-Aaron Van Wirdum: 00:32:56
-
-such a valuable system for
+Yeah And then it's sort of an extension of that is if a fee market develops what we want and what we sometimes have it, comes and goes, it seems like, but there is some fee market issue dynamics going on. Anyways, if that continues to develop, I just can't imagine that uploading rare pepes is going to be the most valuable thing. I don't think that's going to win. You can't predict the future. That's right. But I can sort of speculate, right. And I just can't imagine that this is going to be the thing that people will use such a valuable system for.
 
 Sjors Provoost: 00:32:57
 
-It's the most inefficient way possible to upload a file it doesn't give you much more long-term protection than torrents. So there's another downside that I'm a little bit worried about, which is more political than technical, which is that if people start using this to upload bad things, let's just say, Yeah, if bad things have already been uploaded to the blockchain in the past, but it was very incidental so you can very easily argue, well, that's just some weird guy doing something weird and it's not a real problem. But if it starts happening with gigabytes and gigabytes and gigabytes and the FBI gets really annoyed and it starts lobbying Congress, then this could be a stick that's used against having a full node. Yet another argument, you can use Bitcoin, but you have to use an exchange, because if you use a full note, you have all these bad things on your computer and we can't tell if you're just using Bitcoin or you're doing these bad things. And so, it could be another little political push away from self-custody or even a FUD campaign away from self-custody.
+It's the most inefficient way possible to upload a file it doesn't give you much more long-term protection than torrents. So there's another downside that I'm a little bit worried about, which is more political than technical, which is that if people start using this to upload bad things, let's just say, Yeah, if bad things have already been uploaded to the blockchain in the past, but it was very incidental so you can very easily argue, well, that's just some weird guy doing something weird and it's not a real problem. But if it starts happening with gigabytes and gigabytes and gigabytes and the FBI gets really annoyed and it starts lobbying Congress, then this could be a stick that's used against having a full node. Yet another argument, you can use Bitcoin, but you have to use an exchange, because if you use a full node, you have all these bad things on your computer and we can't tell if you're just using Bitcoin or you're doing these bad things. And so, it could be another little political push away from self-custody or even a FUD campaign away from self-custody.
 
 Aaron Van Wirdum: 00:33:59
 
@@ -462,11 +465,13 @@ Right. Interesting. Yeah, that's... I haven't thought about this argument, so I'
 
 Sjors Provoost: 00:34:05
 
-But that argument is only four times as bad as it was before. Because you can already do these things with Upper Turn, now you can do them four times cheaper. I don't think that's a game-changing fee difference. So it's only about whether this thing even becomes a hype, because it might be that nobody cares about this possibility and nobody uses it.
+But that argument is only four times as bad as it was before. Because you can already do these things with `OP_RETURN`, now you can do them four times cheaper. I don't think that's a game-changing fee difference. So it's only about whether this thing even becomes a hype, because it might be that nobody cares about this possibility and nobody uses it.
+
+## Ordinals
 
 Aaron Van Wirdum: 00:34:22
 
-Right. Okay. So we've explained what inscriptions are. I think, I mean, I'm sure there's, more nuance to dive into if you're really interested in that. But I think we've covered the main reason why there's a controversy and the argument for and against. Should we really quickly, before we end this episode, mention the ordinal part of it or how that works or 
+Right. Okay. So we've explained what inscriptions are. I think, I mean, I'm sure there's, more nuance to dive into if you're really interested in that. But I think we've covered the main reason why there's a controversy and the argument for and against. Should we really quickly, before we end this episode, mention the ordinal part of it or how that works or...
 
 Sjors Provoost: 00:34:51
 
@@ -474,7 +479,7 @@ No
 
 Aaron Van Wirdum: 00:34:52
 
-No? Okay yes well I think I'll give you a one sentence explanation right so I think the idea is when you upload an inscription so when you're uploading the data then I think one of the satoshis in that transaction is the, I mean, it's so dumb. NFTs are so dumb, Sjoerd. I can't, I have so much trouble. Have you, okay, I should first explain the thing. I just don't understand why people still take this seriously. Let me ask you another question. How much longer, after what time should I seriously, what's your opinion on NFTs maybe first of all? Because I think it's absurd.
+No? Okay yes well I think I'll give you a one sentence explanation right so I think the idea is when you upload an inscription, so when you're uploading the data then I think one of the satoshis in that transaction is the, I mean, it's so dumb. NFTs are so dumb, Sjors. I can't, I have so much trouble. Okay, I should first explain the thing. I just don't understand why people still take this seriously. Let me ask you another question. What's your opinion on NFTs maybe first of all? Because I think it's absurd.
 
 Sjors Provoost: 00:35:37
 
@@ -502,11 +507,11 @@ Okay, yeah, fair, you can do that, you don't need a blockchain for that, right.
 
 Sjors Provoost: 00:36:21
 
-You don't need a blockchain for that. So you can say whatever the database said is true. And the nice thing about that is that a judge couldn't reverse transactions, because with the blockchain, you might end up with a situation where... let's say you have a trust that says, okay, whoever has this, this NFT really is the legal owner of this, of the IP of the artwork. And then some guy in North Korea steals the Bitcoin transaction or whatever transaction it is. And then a judge says, this trust may say that, but actually legally speaking, the US government is now the owner of this particular NFT and so that means that now you need to look at the blockchain and all the court records to decide who owns which NFT and you have a mess Whereas if you have a normal database and the judge says something, then you just change the database. So yeah, I think NFTs are rather pointless with the blockchain.
+You don't need a blockchain for that. So you can say whatever the database said is true. And the nice thing about that is that a judge couldn't reverse transactions, because with the blockchain, you might end up with a situation where... let's say you have a trust that says, okay, whoever has this, this NFT really is the legal owner of this, of the IP of the artwork. And then some guy in North Korea steals the Bitcoin transaction or whatever transaction it is. And then a judge says, this trust may say that, but actually legally speaking, the US government is now the owner of this particular NFT and so that means that now you need to look at the blockchain and all the court records to decide who owns which NFT and you have a mess. Whereas if you have a normal database and the judge says something, then you just change the database. So yeah, I think NFTs are rather pointless with the blockchain.
 
 Aaron Van Wirdum: 00:37:10
 
-Let's take this concrete example before we get into the weeds of all kinds of weird stuff. So now you're uploading a Pepe image into the Bitcoin blockchain. And then by doing that, there's now Satoshi that says you own the Pepe image. And then if I send the Satoshi to you, then you own the Pepe image, but the Pepe image is literally on the blockchain. That's the point. Anyone can download it. So what are we even...
+Let's take this concrete example before we get into the weeds of all kinds of weird stuff. So now you're uploading a Pepe image into the Bitcoin blockchain. And then by doing that, there's now a satoshi that says you own the Pepe image. And then if I send the Satoshi to you, then you own the Pepe image, but the Pepe image is literally on the blockchain. That's the point. Anyone can download it. So what are we even...
 
 Sjors Provoost: 00:37:38
 
@@ -518,7 +523,7 @@ Am I taking crazy pills? The rare Pepe is on the blockchain. How do you own it? 
 
 Sjors Provoost: 00:37:47
 
-Ownership and possession are not the same thing. So I can possess your bicycle and you can go to the police and say, hey, this is my bicycle, I own this bicycle, and then the police will change the possession of the bicycle. Right. So the Same goes for NFTs. If somebody draws a rare Pepe, then while they are the artist, they own the copyright. And they can make a contract with you.
+Ownership and possession are not the same thing. So I can possess your bicycle and you can go to the police and say, hey, this is my bicycle, I own this bicycle, and then the police will change the possession of the bicycle. Right. So the same goes for NFTs. If somebody draws a rare Pepe, then while they are the artist, they own the copyright. And they can make a contract with you.
 
 Aaron Van Wirdum: 00:38:07
 
@@ -542,7 +547,7 @@ Right, okay. Anyways, I think we're not going to get into ordinals anymore. The 
 
 Sjors Provoost: 00:38:33
 
-Exactly. All right, I think we've covered everything. If there's any other thing you may want to Google, Google max standard TX weight with underscores because that's the real limit that applies here. And I'm looking forward to see the first 4MB Bitcoin transaction with a picture of... I don't care... Somebody. And thank you for listening to Bitcoin
+Exactly. All right, I think we've covered everything. If there's any other thing you may want to Google, Google `MAX_STANDARD_TX_WEIGHT` because that's the real limit that applies here. And I'm looking forward to see the first 4MB Bitcoin transaction with a picture of... I don't care... Somebody. And thank you for listening to Bitcoin
 
 Aaron Van Wirdum: 00:38:45
 
