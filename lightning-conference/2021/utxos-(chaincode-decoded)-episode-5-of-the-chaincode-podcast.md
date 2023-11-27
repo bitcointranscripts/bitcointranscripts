@@ -3,7 +3,7 @@ title: "UTXOs (Chaincode Decoded) - Episode 5 of the Chaincode Podcast"
 transcript_by: Extheoisah via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=sNLbg9BUV4Y
 tags: ["UTXO","Lightning"]
-speakers: ["Adam Jonas","John Newbery"]
+speakers: ["Adam Jonas","John Newbery","Adam Back"]
 categories: ["Conference"]
 date: 2020-12-02
 ---
