@@ -2,8 +2,8 @@
 title: "HD Wallets, Mnemonic codes and SeedQR"
 transcript_by: QureshiFaisal via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=s8dCyjpfS5E
-tags: ["Hardware Wallet","Cryptography","Privacy","Wallet"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+tags: ["hardware-wallet","wallet"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-09-17
 ---
