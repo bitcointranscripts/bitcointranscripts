@@ -1,5 +1,5 @@
 ---
-title: Mit Bitcoin Expo 2022
+title: MIT Bitcoin Expo 2022
 ---
 
 {{< childpages >}}
