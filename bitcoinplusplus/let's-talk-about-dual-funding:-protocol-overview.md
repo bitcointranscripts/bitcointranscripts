@@ -7,106 +7,104 @@ speakers: ["Lisa Neigut"]
 categories: ["conference"]
 date: 2023-03-16
 ---
-# Dual Funding Protocol Overview
+## Openning a Lightning Channel
 
-## Unspent Transactions Output
-Unspent transaction object is locked up.
+Unspent transaction output is locked up.
 Bitcoin is unspent, but it requires two parties to sign.
 In order to spend it, you need two people to sign off on it.
 How do we make that happen?
-Multisig that two people sign off, 2 of 2 multisig.
+A multisig that two people sign off, so it's 2 of 2 multisig.
 
-## Lightning Channels and Multisig, Bitcoin Script and the Lightning protocol
 We're talking about lightning channels.
-A lightning channel is a UTXO that is locked up with a 2 of 2.
+A lightning channel is a UTXO that is locked up with a 2 of 2 (multisig).
 The process of opening a lightning channel, what does that involve?
 We want to open a channel.
-That means where two people, lightning nodes, are going to make a 2 of 2 outputs.
+That means where two people (lightning nodes) are going to make a 2 of 2 output.
 What does that mean?
 What does it take to make a 2 of 2 output?
-It's a script.
+
 What does a Bitcoin script do?
-It helps you lock up Bitcoins.
 It locks Bitcoins up.
 This is how you write contracts.
-You write programs in Bitcoin writing Bitcoin scripts.
+How you write programs in Bitcoin is you write Bitcoin scripts.
 This is the script definition for opening a Lightning channel.
+`OP_2 <pubkey1> <pubkey2> OP_2 OP_CHECKMULTISIG`
 The reason we're going through this is so we know what we need to open a channel.
 We need some information.
 Two parties are going to come together.
+
 Lightning is a protocol.
 What is protocol design?
-Protocol is figuring out what two people need to communicate to accomplish a task?
+Protocol is figuring out what two people need to communicate to accomplish a task.
 Most protocols are two people talking.
 You can get multi-party ones if they're complicated.
-Lightning is written, you have two people having a conversation.
-We need to figure out what they need to tell each other so that we can make it UTXO on chain.
-What we want to do is make it 2 of 2 multisig.
-And we want to end up with a UTXO at the end of this process.
-We need to know what we need to talk about in our conversation to make this happen.
+Lightning is all written, you have two people having a conversation.
+We need to figure out what they need to tell each other so that we can make a UTXO on-chain.
+We want to end up with one of these (referring to the multisig) at the end of this process.
+We're going to have a conversation.
+And we need to know what we need to talk about in our conversation to make this happen.
 In order to know what we should talk about, we need to know what we're putting information into.
-This is the script that we're going to put on chain.
 
-##Open Lightning Channel Between Two Nodes and Checking Multisig with Pubkeys 
-Notice there's two things we're missing "OP_2 <pubkey1> <pubkey2> OP_2 
-    OP_CHECKMULTISIG"
+### The multisig (OP_CHECKMULTISIG)
+
+This is the script that we're going to put on-chain.
+`OP_2 <pubkey1> <pubkey2> OP_2 OP_CHECKMULTISIG`
+Notice there's two things we're missing.
 
 We're missing a pubkey1 and a pubkey2.
-To check how multisig works we watch a check_multisig.
-The point is that in order to make this script, there's two items, two pieces of information we need, we need one pubkey and we need two pubkeys.
-
-## Checking Signatures Match
-The general idea behind a check multisig is you're going to need a signature that matches each of the pubkeys.
-There are two pubkeys in here,  pubkey1 and pubkey2, one from each participant.
-You are going to be given a pubkey, and you're going to put it into this contract, then you lock the money up on chain.
+In order to make this script, there's two items, two pieces of information we need, we need one pubkey and we need two pubkeys.
+The general idea behind `OP_CHECKMULTISIG` is you're going to need a signature that matches each of the pubkeys.
+There are two pubkeys in here, `<pubkey1>` and `<pubkey2>`, one from each participant.
+You are going to be given a pubkey, and you're going to put it into this contract, then you lock the money up on-chain.
 It can't move anywhere unless both of these pubkeys sign off.
 To build this, we need to get a pubkey for the other party.
-Everyone knows that we have a transaction.
-You have a list of inputs, and then you have a list of outputs.
-One of these list of outputs needs to be a 2 of 2 multisig.
-Historically, anyone using V1 channel opens on lightning.
+(In a transaction) You have a list of inputs, and then you have a list of outputs.
+One of these listed outputs needs to be a 2 of 2 multisig.
+
+### Getting a pubkey from each party
+
 The way that this works on two nodes is you have node1, and then on the other side of the channel, you have node2 talking to each other.
 Node1 is going to send a message to node2 saying, I want to open a channel.
 Part of that message is that I have pubkey1 and going to send that over to node2.
 Node2 is going to get that message.
-Node2 is going to send a message back and say no,  and hang up on you and the end of the conversation.
+Node2 is going to send a message back and say no, and hang up on you.
 They can do that and just end the conversation.
-They don't have to talk to you, but if they say yes, you can open a channel to me, here's Pubkey2.
+They don't have to talk to you if they don't want to.
+But let's say that they're like "sure, you can open a channel to me, here's a pubkey too".
 That's how we send each other pubkeys back and forth.
+You might be like, Lisa, what?
+Surely this is not what specs look like, right?
+It doesn't look much different at all, let's go find it.
 
-## [Lightning Network In-Progress Specifications](https://github.com/lightning/bolts) 
-
+So what is [the specification](https://github.com/lightning/bolts)?
+It's just literally writing out this stuff like this, except in a little fancier terminology.
 We're talking about [Channel Establishment](https://github.com/lightning/bolts/blob/master/02-peer-protocol.md#channel-establishment) building and opening a channel.
-The official name is Open Channel "open_channel"  the formal name for this response is Accept Channel "accept_channel" - open channel/accept channel.
+The official name for "Hey, I want to open a channel" is `open_channel`.
+The formal name for this response is `accept_channel` - open channel/accept channel.
 What's inside the message they're actually sending.
 More info than just the pubkey.
-Funding is how much money you want to put in a channel.
-Push inside is how much money I want you to have.
-The funding pubkey.
-There's an object, a piece of info called funding pubkey, which I've been calling pubkey1.
-There is a message that  everyone can see.
-You send to node2, and has all this information.
-The funding pubkey is the pubkey, and then 2 of 2 multisig scripts are the funding transaction output.
+`funding_satoshis` is how much money you want to put in a channel.
+`push_msat` is how much money I'm just giving you because I decided I want you to have it - it's a bribe, sort of.
+There's an object, a piece of info called `funding_pubkey`, which I've been calling pubkey1.
+There is a message that everyone can see.
+You send it over the wire to node2, and now node2 has all this information.
+`funding_pubkey` is the pubkey, in the 2 of 2 multisig script of the funding transaction output.
 The spec writes out exactly how you should consider each of these things.
-The other node sends back the accept channel message.
-Part of this is their pubkey but hey also have a funding pubkey.
-They also send back a funding pubkey which is also known as pubkey2 "funding_pubkey (pubkey2)".
-## Exchange Signatures
-At the end of these two message exchanges, both parties know what pubkey1 and pubkey2.
-Node1 sent pubkey1 to node2, and node2 responded back with pubkey2 "OP_2 <pubkey1> <pubkey2> OP_2_CHECKMULTISIG" and veryone has everything they need to build.
-Everyone has everything they need to fill in all the blanks.
+Then the other node sends back the accept channel message, and part of this is their pubkey.
+They also send back a `funding_pubkey` which is also known as pubkey2.
+At the end of these two message exchanges, both parties know what pubkey1 and pubkey2 are.
+Node1 sent pubkey1 to node2, and node2 responded back with pubkey2.
+At this point, everyone has everything they need to fill in all the blanks.
 We can make a locking script for our Bitcoin, and we can send our Bitcoin to this output, and we have a channel.
 We have all the info we need to open a channel.
-You can send bitcoins.
+
 Let's say we have an enormous amount of bitcoin.
 Five bitcoin.
-We send some money to BTC address.
-5 btc ==> btc address.
-It takes two signals.
+We send some money to Bitcoin address.
 The way it works is node1 is going to send money to this address, locking up their money into this address.
-Node1 is makes a transaction to the Bitcoin address.
-In order to move their 5 bitcoin, they need a sign off from node2.
-Node2 needs to sign to move the 5 bitcoin.
+Node1 makes a transaction to the Bitcoin address.
+In order to move their 5 BTC, they need a sign off from node2.
+Node2 needs to sign to move the 5 BTC.
 What are some downsides to doing this?
 When the channel opens, who has Bitcoin that they can spend in the channel?
 Only node1.
@@ -115,50 +113,52 @@ Node2 could also just send money to that address.
 Everyone knows what the address is.
 What if we just all start sending money to the address?
 We'll have lots of UTXOs with money locked into it.
-This is a problem though,as the protocol only supports once you send money to the transactions.
-Signature from node2 is needed to spend it.
-If you send money to this Bitcoin address and don't already have the ability to spend it already and your peer disappears, five Bitcoin is lost.
-You send five bitcoin to an address, and someone else, some rando node on the internet, gave you a pubkey that you locked up the money with, and you cannot get your money back without their signature.
-This is not good idea.
-More needed in the protocol, and "open_channel", needed before we send money to this address.
+This is a problem though.
+Once you send money to the transactions, you need the other node's signature to spend it, to get it out.
+If you send money to this Bitcoin address and you don't have the ability to spend it and your peer disappears, you just lost five Bitcoin.
+You send five bitcoin to an address, and someone else, some random node on the internet, gave you a pubkey that you locked up the money with, and you cannot get your money back without their signature.
+Thit doesn't seem like a good idea.
+So we need a little more in the "open_channel" protocol.
+We need a little more information before we send money to this address.
 
-## Downsides to Putting Money in Channel
+Some downsides to this:
+- Only one side can put money into a channel open.
+- You send money to an address, but you want to make sure you can spend from that address before you send money there.
 
-The new protocol isn't going to fix thise.
-Downsides are that only one side can put money into a channle open.
-You rdon't want to send money to the open address, until you know you can spend it.
-You send money to an address, but you want to make sure you can spend from that address before you send money there.
-I've had some people that did that a few years ago for Lightning, and changed the protocol work to give them more ability to use any wallet.
-They wanted to open a Lightning channel, and they sent money to an address without getting the ability to spend it first.
-The other node went away and closed the channel, and it was lost forever.
-Node1, after receiving accept channel, is going to build the transaction.
-A transaction that sends money to that address, because now they can make that address.
-Node1 builds a transaction that sends money to node2.
-Node1 sends the TXID and the funding out point, the V out, called funding out point "txid, vout (funding outpoint)" This tells node2 where to look for money on chain that will be found in channel open.
-Node2 is notified and node1 builds the transaction, and sends to node2 the information and a signature.
-We're sending an output number.
-These two pieces of information uniquely identify where you see your Bitcoin on chain.
-Not sent yet.
+### Building a tx that sends money to the multisig address
+
+Node1, after receiving accept channel, is going to build the transaction that sends money to that address, because now they can make that address.
+They' are going to send over the wire the `txid` and the `vout`, called funding out point.
+This tells node2 where to look for money on-chain that will be found in channel open.
+One side builds the transaction, and then they send to node 2 the information about that.
+We also send a signature.
+
+We're sending the `txid`, and we're sending an output number (`vout`).
+These two pieces of information uniquely identify where you will expect to see your Bitcoin on-chain.
+Notice we haven't sent it yet.
 This is pre-planning for node1.
-We send a signature, lets node2 rescue their money if this transaction ends up on chain.
-When I send the money to this address, you can use this signature from me, along with your own signature, to rescue the money.
-Node2 can get their money back if something goes wrong with the funding output.
-If I send all my money to it and then disappear, node2 in theory could get their money out.
-Node2 receives, and sends back another message include their signature so that node1 can then get their money out.
-Once node1 has a signature from node2, the transaction is sent.
-Permission is needed from peer to get your money out of that address before you send anything to that address.
-This is called the signature and called a commitment transaction.
-The next message is a funding sign message and inside of it, is a signature.
-A message called funding sign.
-Transaction is sent and both sides wait for the funding, for the channel to open, and wait for the transaction that has the script that locks all the money up.
-Waiting for the output that has node1's money to get mined into a block and confirmed to certain depth.
+We also send a signature, that lets node2 rescue their money if this transaction ends up on-chain.
+This is like, "When I send the money to this address, you can use this signature from me, along with your own signature, to rescue the money".
+This lets node2 to get their money back if something goes wrong with the funding output.
+If I send all my money to it and then disappear, node2, in theory, could get their money out.
+Node2 gets it (the `funding_created` message), and sends back another message (the `funding_signed` message) that's going to include their signature so that node1 can then get their money out.
+Once node1 has a signature from node2, they're going to go ahead and send the (funding) transaction.
+You're going to wait until you have the other party's permission to get your money out of that address before you send anything to that address.
+So you have a get out of jail card just in case the peer goes away.
 
-## Channel Ready Lock Transaction and Broadcast to Blockchain
+The next message that they (node2) send back is a `funding_signed` message and inside of it is a signature.
+So that's it.
+That's the conversation.
+Transaction is sent and both sides wait for the channel to open, which means we're waiting for the transaction that has the script that locks all the money up.
+But all the money is only node1's money.
+So we are waiting for the output that has all of node1's money to get mined into a block and then get buried to certain depth,
+At that point, channel's open!
 
-When the channel opens, we send a message, called channel ready.
-Both nodes send "channel_ready", when node1 sees transaction is mined,after certain number of negotiate blocks,  node1 will send a channel ready.
-To recap, two people want to talk to  have a conversation about opening a channel, they exchange pub keys, and exchange signatures.
-Once they get their signatures, the person who built the transaction sends the transaction out to the blockchain, and as soon as it gets mined that channels considered open and existing.
+When the channel opens, we both (nodes) send a message, called `channel_ready`.
+When node1 sees it get mined to a certain depth (the transaction) it will send a `channel_ready`, and then node2 will send a `channel_ready`.
+
+So, we have two people who want to have a conversation about opening a channel, they have to exchange some pubkeys, and then they have to exchange some signatures.
+Once they get their signatures, one person who's built the transaction sends the transaction out to the blockchain, and as soon as it gets mined that channel is considered open and existing.
 
 ## Dealing with Liquidity
 
