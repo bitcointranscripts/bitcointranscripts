@@ -72,6 +72,7 @@ Of course, it's not that hard to replace transaction whether or not it's being o
 In this other rule here, inherited signaling, that basically means if you have a transaction in the mempool, then you spend it again, so you have two unconfirmed transactions, it's supposed to be that the second one can be directly replaced, and long story short, it's not actually implemented.
 So if you ever read the BIP, that part isn't true.
 But the moral of the story is we got transaction replacement in.
+
 It is actually used, you know, with this opt-in thing, and that's all well and good.
 My own OpenTimestamps calendars use it to go get optimal fees and as a byproduct to update the Merkle tree of transactions of timestamping.
 So they start off at the minimum possible fee, and every time a new block comes in, which is indication the fee was too low, they double spend it with a higher fee and a higher fee, and a higher fee, and eventually gets mined.
@@ -95,6 +96,7 @@ And there is no set time limit for how long a transaction can sit around in memp
 I mean, in theory, it could sit around for months.
 There's a thing called transaction expiry, but transaction expiry, because mempools are, of course, a per node thing, if a transaction expires from your mempool, some asshole can just go and rebroadcast it again and get it back into your mempool, and then the two weeks goes on again.
 There's no clear solution to this.
+
 So finally, after all these years people said well why don't we just go and add full replace-by-fee?
 Why don't we just say screw this opt-in thing?
 Why don't we just do the transaction replacement rules for any transaction?
@@ -130,6 +132,7 @@ That's just saying, well, you can't replace for like, one extra Satoshi.
 You got to replace for at least, you know, the minimum relay fee times the size.
 And then (rule) number five, well, you're not allowed to replace more than a hundred transactions at once.
 And between these like three and five are the main ones that allow pinning to work.
+
 Again, let's suppose we're in this coinjoin.
 You want to go and make my coinjoin sit around forever.
 If you just take your input and broadcast a chain of 100 transactions, Bitcoin Core instances running these defaults, we'll say, hang on a second, we're not gonna replace one with the other because that's 100 and that's just too much.
@@ -157,6 +160,7 @@ So, you know, that's better.
 But, now let's go and look at the case where the double-spend isn't as attractive.
 It's a lower fee.
 Well, if it's a lower fee, the coinjoin's just gonna replace it, and the vast majority of miners are gonna have this transaction and we make forward progress by getting the coinjoin mined, nice and simple.
+
 Now, let's go look at the scenario where someone's trying to maliciously stop the coinjoin.
 Well, how do they do this?
 Well, if they don't want to spend money, they have to broadcast a pinning transaction that pays low fees.
@@ -198,6 +202,7 @@ It sounds silly, but, back in like 2015, 2016 or so, I remember talking to peopl
 Which is insane, like, the Bitcoin protocol can't be decentralized yet also have a list of what is or isn't the valid transaction seen in mempools.
 You know, there just isn't consensus over gossip networks.
 We just have to accept that.
+
 But one of the political trade-offs is people will try to go do these things if they build businesses on it.
 And this is the kind of outcome that can happen.
 And other people in Bitcoin can say, well, screw this.
@@ -225,6 +230,7 @@ First of all, if you're running a listening node that is reachable from the rest
 And IPv4 nodes as an example, there's only about 5,000 or so listening nodes.
 Running a beefy server that literally just connects to every single node at once is completely feasible.
 That side of the propagation issue is easy to solve.
+
 I think the more interesting thing is what happens when someone turns on a node that isn't accepting incoming connections?
 What is the chance that they wind up connecting to one of these full RBF nodes?
 Well, that's your math for it (Peter refers to figure on slide).
