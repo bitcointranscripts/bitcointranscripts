@@ -2,7 +2,7 @@
 title: "Murch and Enterprise Wallets/UTXO Management - Episode 8"
 transcript_by: Extheoisah via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yy6Mt5-fl0g
-speakers: ["Adam Back"]
+speakers: ["Adam Back","Adam Jonas"]
 categories: ["podcast"]
 date: 2020-11-09
 ---
