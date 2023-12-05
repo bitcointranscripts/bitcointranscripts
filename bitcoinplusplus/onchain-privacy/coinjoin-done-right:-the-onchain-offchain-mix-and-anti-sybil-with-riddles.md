@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=khmLiM9xhwk
 tags: ["privacy","asmap","atomic swaps"]
 speakers: ["Adam Gibson"]
 categories: ["conference"]
-date: 2023-02-07
+date: 2022-12-10
 ---
 NOTE: Slides of the talk can be found [here](https://github.com/delcin-raj/btc_transcripts_materials/blob/main/cdmx2022.pdf)
 
@@ -157,9 +157,9 @@ Chris Belcher and I in JoinMarket in the early days and many other people of cou
 And if everyone is just CoinJoining by default with no regard paid for the actual necessity of their own privacy, they might just recombine everything after.
 I mean if everything is a CoinJoin, I don't know what that really looks like, but if you're not going to act in a way that preserves privacy and you're CoinJoining with people that actually need it, you might hurt them inadvertently."
 
-Yeah, yeah that's a very important point about the fragility or brittleness of these collaborative transactions, as people tend to call them nowadays, is that you can't assert the quality of privacy you get because it depends on not only behavior before, which you can read on the blockchain, but behavior after of your counterparties.
+Yeah that's a very important point about the fragility or brittleness of these collaborative transactions, as people tend to call them nowadays, is that you can't assert the quality of privacy you get because it depends on not only behavior before, which you can read on the blockchain, but behavior after of your counterparties.
 So that's a very problematic aspect.
-There's obviously lots of answers to that, but I wanted to, this is debatable, but I wanted to illustrate what I think is how it's working today, which is that people are using CoinJoin mostly in these systems.
+There's obviously lots of answers to that, this is debatable, but I wanted to illustrate what I think is how it's working today, which is that people are using CoinJoin mostly in these systems.
 I mean, Wasabi 2.0 already sort of invalidates some of the things I'm saying here, but in the centrally coordinated model, the idea is that you have to agree on an amount, and that's not very true with RB2, well it kind of is and isn't with RB2, but let's just say, because you're having a central coordinator, who gets to decide what the amount is, so therefore, generally speaking, you have what they call fixed denominations.
 If you have fixed denominations, you're gonna get a smoother experience because the central coordinator can handle a lot of the nonsense.
 But the inability to choose an amount causes problems like "toxic change".
@@ -170,11 +170,11 @@ On the other hand, if you go the other extreme like JoinMarket tried to do, you 
 You have to handle a lot of problems yourself as a user that otherwise would have been handled by the coordinator, such as Sybil Attacks, or things similar to Sybil Attacks, I won't go into details.
 And it makes the experience a lot less smooth.
 It also has a much bigger problem, which is an on-chain fee watermark.
-So if the fees are being paid from certain participants in the collaborative transaction to another participant because that participant is offering liquidity as a service, it means there's gonna be a discrepancy in the, I'm not going into details, I'm just giving you like the high level idea that the, for example, the inputs of one party might be, have more fee deducted from them than the inputs of other parties, which might make it easy for you to identify the inputs of the person who was paying for the service, as opposed to the people who were offering the service and getting paid.
+So if the fees are being paid from certain participants in the collaborative transaction to another participant because that participant is offering liquidity as a service, it means there's gonna be a discrepancy in the, I'm not going into details, I'm just giving you like the high level idea that the inputs of one party might be, have more fee deducted from them than the inputs of other parties, which might make it easy for you to identify the inputs of the person who was paying for the service, as opposed to the people who were offering the service and getting paid.
 I mentioned this recently in a post on Mastodon, but it suddenly occurred to me, because I listened to a podcast by Sjoerds Provest and Aaron Van Weerdum about the recent case of Alexei Pertsef, who was imprisoned in the Netherlands, and not yet charged, I believe, but imprisoned for multiple months for being a coder for Tornado Cash, or being part of the Tornado Cash team.
 And while we don't know the full details, it apparently is the case that the basis of the prosecutions keeping him in prison is mostly around the existence of a token called TORN or something, which, well, is not directly inside the sort of tornado cash contract execution It's inside like some relaying process, and why do you have to relay transactions into the tornado cash?
 Process it turns out.
-It's precisely because of on-chain fees because if you do this this anonymity process in their contract naively, the fact that you're paying a fee in Ethereum for the execution of the contract kind of somehow gives away who you were to begin with.
+It's precisely because of on-chain fees because if you do this anonymity process in their contract naively, the fact that you're paying a fee in Ethereum for the execution of the contract kind of somehow gives away who you were to begin with.
 So it's exactly the same issue.
 We often find ourselves stumbling if we try to make properly decentralized, properly trustless versions of these cooperative or collaborative transactions for privacy, We stumble over the fact that there's a fee that has to be paid and if it's being paid directly on chain, then we come back to that, the DNA of blockchains is to be public, right?
 Which means that you have a big problem.
@@ -227,26 +227,29 @@ Alice makes another UTXO contribution A1 to TX2.
 #### Basically the idea comes from, how did SegWit change Bitcoin?
 
 Now I'm not going to put this to the audience because you could answer that 10 ways, but the most important thing is lightning.
-Anyone here who knows lightning probably knows that why SegWit was important for lightning is it allowed you to pre-sign a transaction using an input that wasn't yet confirmed because you know The txid the transaction id of the transaction before it's on the blockchain, and why did that change in segwit well?
+Anyone here who knows lightning probably knows that why SegWit was important for lightning is it allowed you to pre-sign a transaction using an input that wasn't yet confirmed because you know The txid, the transaction id of the transaction before it's on the blockchain, and why did that change in segwit well?
 All right, let me throw out.
 Why did segwit allow us to pre sign transactions?
-Audience: To go over the transaction malleability which meant you couldn't fool the other party.
-Adam Gibson: And what caused transaction malleability?
-Audience: The witness data being a part of the transaction rather than being separate.
-Adam Gibson: And why would it malleate?
+[Audience]: To go over the transaction malleability which meant you couldn't fool the other party.
+
+And what caused transaction malleability?
+
+[Audience]: The witness data being a part of the transaction rather than being separate.
+
+And why would it malleate?
 Why would that witness data malleate?
-Audience: Because you can change trivially.
+
+[Audience]: Because you can change trivially.
 I can't remember exactly what you can change about it, but you can create a new valid transaction that does the same thing, but with a different signature.
-Adam Gibson continues ...
+
 The idea is that, I guess it's kind of important for something else that comes up later is that, we sometimes forget that when we sign something with ECDSA or with Schnorr, we can always make a new signature with a new nonce, same private key, we can make effectively an infinite number of signatures.
 So that fact meant that Lightning didn't work without SegWit, but now the witness is outside the transaction ID, you can't malleate it, so you can pre-sign transactions.
 The idea here is just to exploit the same thing, but instead in lightening, you create multiple versions of the same transaction, and they kind of, one overwrites the other with a punishment mechanism.
-
 Here, I originally called this on-chain contracting.
 Well, let's just have a bunch of transactions and they are all gonna go on-chain.
 So the idea here is, there's a funding UTXO (F) between Alice and Bob that gets negotiated in such a way that Bob should recevie a payout at the end.
 Then the two parties agree on a sequence of transactions (TX1, TX2, TX3, TX4) which are all linked by at least one connecting UTXO, which all has to be multi-sig.
-And tthey're both gonna have to sign, pre-sign every one of these transactions first before they co-sign the funding transaction.
+And they're both gonna have to sign, pre-sign every one of these transactions first before they co-sign the funding transaction.
 And that means that at the end of that process, they can both be assured, if at least one of them wants to broadcast all of these transactions, they will definitely all go through because the connectors, the inputs are multi-sigs which can't be reneged on by the counterparty.
 Why does this matter for CoinJoin?
 Well it means that, after tx1 Bob can get a payout in tx1 without Alice also being paid something.
@@ -273,10 +276,10 @@ Does that make sense?
 So notice here, we started with a one and one(Initially deposited amount by A and B), and yeah, so Alice contributed one, so at this point, Alice should get paid back one, but Bob should only get paid back 0.5 because he had an output in TX1.
 Any questions about this structure because this will be extended in a minute.
 
-
-Audience: Can Alice add that output after the first transaction was signed already?
+[Audience]: Can Alice add that output after the first transaction was signed already?
 Or in other words, can we update the chain after we started it?
-Adam Gibson: I never thought about that.
+
+I never thought about that.
 What do you think?
 So hang on a minute.
 So, no?
@@ -290,28 +293,31 @@ So we couldn't like, unless you maybe SIGHASH Single or some dark arts that I do
 No, basically I'd always envisioned this as frozen in time at the point where you finally, the distinguishing decision is to sign that, or let's say sign the transaction that pays into that.
 Yeah, it has to be that way around.
 Yeah, anyway that's the basic idea.
-Audience: So this is a chain of pre-signed transactions but just like with Lightning we can update.
 
-Adam Gibson: Right, this is what I was saying at the start, is that Lightning is about, I like, whimsically I called it vertical contracting as opposed to horizontal contracting, yeah, because Lightning updates and of course intrinsically updating is kind of stupid, right, because that doesn't guarantee the previous one doesn't exist anymore but the idea is there's a punishment mechanism or an L2 mechanism.
+[Audience]: So this is a chain of pre-signed transactions but just like with Lightning we can update.
+
+Right, this is what I was saying at the start, is that Lightning is about, I whimsically called it vertical contracting as opposed to horizontal contracting, because Lightning updates and of course intrinsically updating is kind of stupid, right, because that doesn't guarantee the previous one doesn't exist anymore but the idea is there's a punishment mechanism or an L2 mechanism.
 None of that here this is just flat you know everything is signed up front and it's unlocked at the moment when you sign the funding UTXO.
-Audience: But if both parties collaborate honestly then they could.
-Adam Gibson continues ...
-Oh yeah yeah sorry yeah if of course that just that goes without saying right I mean I'm just trying to design something that's safe from the other side cheating.
+
+[Audience]: But if both parties collaborate honestly then they could.
+
+Oh yeah! Of course that just goes without saying right, I mean, I'm just trying to design something that's safe from the other side cheating.
 Obviously I've put two here, obviously it could be ten people as well, by the way.
 This is designed for an N of N multi-sig thing.
 So I don't mind spending time on this because after all I'm sure most people either haven't heard of this or didn't really look into it.
 So if there are other questions about this structure, I don't mind.
 I wanna like make it way more complicated.
-Yeah, so how can I summarize it, if you don't want to get lost in the details.
+Yeah, so how can I summarize it? if you don't want to get lost in the details.
 I want to summarize it by saying everything's pre-signed and the reason it's all locked in is precisely because the transfer of funds is on a multi-sig controlled by all parties?
 Otherwise it wouldn't be safe, right?
 Well no, because that's why this is a very bare bones illustration, but for example in TX1 there's an extra payout to one of the parties.
 So naively you look at it and think, well this isn't safe because Bob's getting a whole load of money before Alice got anything.
 But that's why everything has to be frozen and locked at the start.
 And by achieving that goal it means we can break the typical heuristics because it doesn't look right.
-That looks like there's an actual payment there/
+That looks like there's an actual payment there.
 
 ## Kitchen Sink
+
 *Refer Slide 10*
 
 I call this the kitchen sink, so I'm extending this idea a bit, all right?
@@ -327,9 +333,10 @@ The scenario is Alice wants to make a simple payment to Bob, who is not around.
 She wants to pay Bob one Bitcoin.
 And Carol wants to pay David two bitcoins, but he is around, he's online, and they agree to PayJoin it.
 Because that's better for privacy, right?
-I mean, you've probably, I'm assuming everyone here knows what PayJoin is.
-Collaborative spend between two parties, which is represented 
-Alice wanted to pay Bob one Bitcoin, Bob's not around so it's, you know, but Carol wants to pay David two bitcoins in a PayJoin and he has to be around to do the PayJoin So where's the PayJoin represented in the diagram?
+I mean, I'm assuming everyone here knows what PayJoin is.
+Collaborative spend between two parties, which is represented.
+Alice wanted to pay Bob one Bitcoin, Bob's not around so it's, you know, but Carol wants to pay David two bitcoins in a PayJoin and he has to be around to do the PayJoin.
+So where's the PayJoin represented in the diagram?
 It's represented by the 3rd node.
 It's clear because there's a D there, right?
 So David's there, right?
@@ -350,24 +357,23 @@ Lock it somewhere in the chain.
 Well David's just like gonna...
 He's happy to accept a payment of two bitcoins from Carol, but he just wants to do a PayJoin with it, maybe he's got BTC pay server, he doesn't want to do all this rubbish, you know.
 He doesn't care about the rest of the tree, what do we do?
-Audience: I mean with PayJoin you have a pre-signed single user transaction.
-Adam Gibson: Yeah, but that wouldn't help stop the double spend problem we're talking about.
+
+[Audience]: I mean with PayJoin you have a pre-signed single user transaction.
+
+Yeah, but that wouldn't help stop the double spend problem we're talking about.
 Remember it's delayed, right?
-Audience: But if it's a high fee?
+
+[Audience]: But if it's a high fee?
 No, but he could double spend it with a high fee.
-Adam Gibson continues ...
 
 No, don't do that.
 That's wrong, that's terrible.
 Well, it's on the diagram.
 
-
 ### Time Lock to mitigate double spending
+
 Time lock back out, right?
-It's there.
-Yeah.
-Yeah.
-Like in the previous diagram, if you have a promise UTXO, you have to put some kind of back out before it to make sure that if the guy double spends it, then at the very least we can assure that the people involved in this CoinJoin XT structure are going to get back the money that they had to start with, they don't lose any money.
+It's there, Like in the previous diagram, if you have a promise UTXO, you have to put some kind of back out before it to make sure that if the guy double spends it, then at the very least we can assure that the people involved in this CoinJoin XT structure are going to get back the money that they had to start with, they don't lose any money.
 Now of course that's not quite good enough because would you go to all this trouble and then just have somebody just, that's annoying right?
 Well you can address that with several ways.
 For example here(2.5_D red line) he's kind of, it's kind of addressed by the fact he's receiving money.
@@ -377,7 +383,9 @@ So I think that's a pretty good incentive.
 Other ways it could be incented is, if the promise UTXO is coming from one of the parties who funded, they could actually have a penalty in the time lock back out.
 But I mean, maybe that's a detail.
 What else is going on here apart from these two payments?
+
 ### Channel Splice
+
 What's going on at the bottom(last node)?
 Now I think this is the really important part.
 This is the main thing I wanted to tell you actually.
@@ -396,12 +404,14 @@ Why might that be valuable?
 I mean we could just have, because in fact Carol is owed 1.4 Bitcoin at this stage and Alice is owed 1.1 Bitcoin, So they could just simply be paid 1.1 and 1.4 and everything would be normal.
 They've made their payments, they've gone through this structure, but why might it be useful to add in a splice into a channel?
 
-Audience: It's like similar to a PayJoin, where you're hiding the amount each user receives.
-Adam Gibson continues ...
+[Audience]: It's like similar to a PayJoin, where you're hiding the amount each user receives.
+
 Yeah, it's hiding, it's making, I'll just go straight to the point, because you're basically 100% correct, is that it breaks subset sum analysis, I want to put it like that.
 
 ## Subset Sum Analysis
+
 ### Overview
+
 Now what's subset sum analysis?
 It's the basic idea that in a transaction, if it's collaborative, if Alice is basically paying herself in the transaction and Bob is basically paying himself in the transaction, then you can kind of, like the shared coin thing, you can break, figure out these inputs add up to these outputs, these inputs add up to these outputs, and the whole thing ended up being more or less pointless, yeah?
 At least from a privacy perspective.
@@ -414,7 +424,9 @@ So that structure had four inputs.
 What do I mean by inputs?
 Any arrow that goes into a node in the diagram is considered an input, any outward arrow is considered output.
 So there are six outputs.
+
 ### How to subset sum analyse?
+
 If you wanted to do subset sum analysis, you're looking for subsets of the inputs and subsets of the outputs.
 Now in mathematics that's called a power set.
 It's basically the set of all subsets which ingeniously can be calculated by considering that each item is either in a subset or not in a subset, which means the number of subsets of n is 2 to the n minus 1 if you don't include the empty set.
@@ -429,43 +441,46 @@ But it's funny because the Lightning Channel one is like a weird twist on that i
 I guess that's a fundamentally different thing to a payment interparticipant.
 But if you have, PayJoin has interparticipant payment, which is why, as you said correctly and I incorrectly corrected you yesterday, a PayJoin does break subset sum.
 A PayJoin does break it because it's an inter-participant payment.
-
 The same principle will definitely apply, but also a lightning channel can do the same thing because it's splitting funds without it being exposed on chain.
-Audience: And so is there a qualitative difference between there's one inter-participatory payment versus two?
 
-Adam Gibson: Yeah, I was thinking about this the last couple of days.
+[Audience]: And so is there a qualitative difference between there's one inter-participatory payment versus two?
+
+Yeah, I was thinking about this the last couple of days.
 I haven't really figured it out yet.
 I think that's a really interesting question, like could we get 10 people operating in this kind of structure, and just have two of them paying each other, and everyone else's stuff, subsets, I think trivially no, right, because let's say you've got A, B, C, D, right, and A's paying himself, and B's paying himself, now C is paying D, so A and B, clearly their amounts will add up, right, so you won't have broken subsets on for A and B.
 It seems trivially that that's not.
 I think there's a lot of little twists on this.
 
-Audience: So the knapsack paper gives the sub-transaction model, the sub-transaction mapping model.
+[Audience]: So the knapsack paper gives the sub-transaction model, the sub-transaction mapping model.
 And in there, they assume the sub-transactions map to zero.
 They don't model fees.
 If you generalize this and parametrize it by some delta, they make a tolerance.
 Yeah, they make a useful distinction between derived sub-transaction mappings and non-derived sub-transaction mappings.
 So we can think of the non-derived ones as elementary.
 They're actually finer grained, whereas the coarser grained ones don't add additional information.
-Adam Gibson: Oh you mean like building multiple into a bigger one.
-Audience: The trivial partition of everything together is always a valid solution.
+
+Oh you mean like building multiple into a bigger one.
+
+[Audience]: The trivial partition of everything together is always a valid solution.
 And then the question is, so qualitatively, are you breaking the assumption that a single sub-transaction belongs to a single user?
 That's one aspect of it.
 And you can still divide into sub-transactions, it's just that the set of users that that sub-transaction is attributed to is more than one entity.
 And secondly, there's the question of the tolerance of the amount.
 So both the fees complicate this a little bit, but specifically the PayJoin aspect or any sort of internal transfer within the transaction means that the adversary must have additional information?
-Adam Gibson: Exactly! That's my point of confusion with PayJoin is if you're looking at it thinking Oh that might be a page on then you come up with two solutions But if you have no idea you just look there's no solution.
-Audience: Yeah and even if you have a solution the solution might attribute that part of the solution to two entities or more, right?
+
+Exactly! That's my point of confusion with PayJoin is if you're looking at it thinking Oh that might be a page on then you come up with two solutions But if you have no idea you just look there's no solution.
+
+[Audience]: Yeah and even if you have a solution the solution might attribute that part of the solution to two entities or more, right?
 So you have this, I think that's the important qualitative distinction.
-Adam Gibson: Yeah.
-Okay, thanks.
-So clearly this is quite a thorny and very interesting topic.
+
+Okay, thanks. So clearly this is quite a thorny and very interesting topic.
 I don't want to say it's like, oh, it's too complicated.
 It's actually really interesting to start thinking about this.
 But I do want to come back and talk about the track that, why Am I even proposing such a weird design as that?
 Well, I guess I should ask you.
 I mean, maybe you just saw my slides, but what do you think might be the advantage?
 All this, it seems like a lot of hassle, right?
-Well, I mean, certainly in this way, it is a lot of hassle.
+Well, certainly in this way, it is a lot of hassle.
 There's multiple things going on.
 There's four people involved.
 One of them's not around, but two of them are having to negotiate a bunch of multi-sig addresses.
@@ -484,13 +499,12 @@ So it's a world of difference, right, from what we're thinking about equal outpu
 That's the first point.
 What are the other possible advantages to this structure?
 
-Audience: You don't even know when the tree starts or stops.
+[Audience]: You don't even know when the tree starts or stops.
 
 ### Comparison with CoinJoin
-#### Transaction graph
-Adam Gibson continues ...
+
 Excellent, yeah.
-This is, I think, the thing that I like the most about it and that's why if I can convince my mouse to work, I do that and then I do that.
+The thing that I like the most about it and that's why if I can convince my mouse to work, I do that and then I do that.
 Excuse me for the low quality here, but this was Like the picture (Transaction graph) I used to illustrate the start of my blog post about this topic.
 This is a bit more advanced than the blog, but you know, it's the same thing.
 So you know, there's some things happening in a bunch of transactions that are connected, but they're just part of this huge transaction graph on the blockchain.
@@ -499,10 +513,8 @@ It's a huge, it's a completely different world from equal output CoinJoin.
 So that's probably the biggest advantage.
 
 ## Advantages - 1 of CoinJoinXT
-1. Every transaction, except arguably the last, looks like normal spend.
-2. All the transaction negotiation can happen right at the start (A, C, D).
-3. MuSig2 or ECDSA-2P can hide the use of multisig.
-4. This sub-graph is not distinguishable, analyst doesn't see this as an event.
+
+(refer slide #11)
 
 So, every transaction could be possibly interpreted as an ordinary spend, with the caveat that since many of these inputs are multi-sig, We need them to be not traditional multi-sig, not OP-CHECK-SIG-ADD-IN-TAP route, but specifically mu-sig style multi-sig, or at least aggregated multi-sig.
 So that's kind of a big limitation, but it's possible today.
@@ -521,12 +533,12 @@ Anything that hides, to me it's important to hide the fact that they're the mult
 And the last point is the point that we just said, the subgraph is not distinguishable.
 
 ## How subset sum analysis can fail?
-1. There are multiple subset sum solutions
-2. The analyst cannot find the subgraph
-3. There is an inter-particiapant (not-external) payment
+
+(refer slide #14)
+
 Okay, we talked about subset sum analysis.
 I'd also like to point out that subset sum analysis can fail in three ways, maybe.
-There are multiple subset sum solutions, We discussed this a little bit.
+There are multiple subset sum solutions, we discussed this a little bit.
 Sometimes, especially with larger transactions, not so much here, but with larger transactions, there might be multiple different subsets that add up to the same value on the other side.
 That's a brittle thing, and I think nothing much explained in great detail yesterday why it's brittle, we shouldn't rely on that, but it exists.
 The analyst cannot find the subgraph, that's the fantastic thing about this construct.
@@ -538,16 +550,20 @@ Arguably, the second is the most important.
 I think That's true.
 
 ## Disadvantages
+
 All right.
 Some practical disadvantages of doing that.
+
 ### All at once? Timelocks but
+
 First of all, you're gonna have to time lock.
 I'm claiming that when we look at this sequence of transactions that we pre-sign, we're gonna have to put time locks on them.
 Why do we have to put time locks on them?
 Or why do I think we should put time locks on them?
 In other words, delay them.
-Yeah, they don't just, why should we delay the transactions?
-Because of not, if it's like 10 of them, and they all go on chain at once, then at least theoretically, somebody who's watching is gonna say, oh look, that's, well, in the future as well, not just at the time.
+
+Why should we delay the transactions?
+Because if not, if it's like 10 of them, and they all go on chain at once, then at least theoretically, somebody who's watching is gonna say, oh look, that's, well, in the future as well, not just at the time.
 So, you know, timing correlation, it would be a bit crappy if we just broadcast them all at once.
 You could do that in an initial phase, just testing the idea out, but I think if you want a properly mature system using that, you're gonna have to have delays.
 That's not very practical, is it?
@@ -559,16 +575,20 @@ So I claim that because of that, it might mean we do kinda need to take a make a
 Pay me some money please, yeah.
 So I think we do probably do need a market model at least a little bit for that to work.
 
-Audience: Sorry, aren't the time blocks a fingerprint as well?
-Adam Gibson: The good question, but I think not because we're going to join the anonymity set of Electrum and Core and other wallets like JoinMarket who put the most recent block or the most recent block minus three or whatever it is, you know.
-Audience: So we would just have to broadcast the transaction as soon as the time block expires.
+[Audience]: Sorry, aren't the time blocks a fingerprint as well?
+
+The good question, but I think not because we're going to join the anonymity set of Electrum and Core and other wallets like JoinMarket who put the most recent block or the most recent block minus three or whatever it is, you know.
+
+[Audience]: So we would just have to broadcast the transaction as soon as the time block expires.
 If we wait a long time...
-Adam Gibson: I've got you should definitely, yeah, it would be a little bit bad, a little bit late, but I mean that's not gonna be a big deal.
+
+I've got you should definitely, yeah, it would be a little bit bad, a little bit late, but I mean that's not gonna be a big deal.
 You're gonna have to stay online, right, to broadcast them at those times.
 Well yeah, that's a fair point, that they could end up being a little bit delayed and therefore theoretically they look weird.
 Fair point, Yeah, depending on if you're online or not.
 
 ### Offchain oncahin privacy bleed is cool but ...
+
 Off-chain, on-chain privacy bleed is cool.
 Do people follow what I'm talking about there?
 That was a bit of a weird phrase I used there.
@@ -580,11 +600,13 @@ Because that is just a tiny delta in the subset sum analysis.
 Nothing much, just mention tolerance.
 You can put a little delta value in your subset sum and get more solutions.
 And obviously it's gonna come out.
-So I'm thinking like, I don't know, top of my head like 10%, just checking the time here, 10%, maybe if the off-chain is like 10% of the on-chain, it's okay.
+So I'm thinking like, I don't know, top of my head like 10%, maybe if the off-chain is like 10% of the on-chain, it's okay.
 Maybe if the off-chain is only like 1%, maybe it's not okay.
 Question, yeah?
-Audience: Do you have to include the eventual?
-Adam Gibson: Ah, good question, good question.
+
+[Audience]: Do you have to include the eventual?
+
+Ah, good question, good question.
 I remember thinking about this, yeah.
 Let's go back to the slide (Kitchen Sink) so we can explain it.
 So we had, remember, a splice in node 5.
@@ -593,7 +615,6 @@ Well, but the nice thing is even if they do that, we don't know for sure that th
 So I think the worst case would be, you put the money into a Lightning channel, then you immediately remove it, then it's kind of stupid because you can just assume that they didn't have any payments in the meantime routed through it or payments they made.
 Yeah, so but in the general case, you can reasonably say that as long as that channel is long living, we could plausibly assume some amount of TXs went through it.
 But very good question, I had the same question myself.
-
 So now, I know we're all hungry, and probably tired as well.
 Yeah, and that's why I'm now gonna give you a really dense piece of mathematics.
 So in order to have this, I mentioned I think we need a market for this because there's delays and so we have a coordination issue because people don't really want to do it.
@@ -604,12 +625,9 @@ There are liquidity markets, there's liquidity ads, there's all these markets, r
 So we're used to the idea that we can like advertise to request liquidity and offer a payment for that service of liquidity.
 [Refer here](https://nixbitcoin.org/orderbook/.)
 
-## The problem Onchain fees
-1. Coordinating to get liquidity, pay to participate (JM, liquidity ads, etc.,)
-2. For CoinJoin onchain fee leave a trace.
-3. Inputs of payer are easity to identify.
-This means no privacy from receiver, one of the best things coinjoin could give.
-4. Outputs may be hidden from snooper but may not asymmetric behaviour on-chain.
+### The problem Onchain fees
+
+(refer slide #17)
 
 The problem here is, as I mentioned, on-chain fees and CoinJoin in JoinMarket are a real problem.
 So like you do a simple CoinJoin on JoinMarket, you're exposing almost certainly your input value because you're paying a fee to the makers And that fee is deducted.
@@ -623,12 +641,12 @@ So we want this fee to be off-chain, but that's a bit tricky.
 And I'm gonna propose a way to solve that problem, make the fee be off-chain so nobody sees it.
 I suppose you could either take that approach that some people take of making everyone contribute equally to the mining fee, or you could embed it in this as well.
 I think both make sense, don't they?
-Let's say.
 Let's say it includes mining fee, just for simplicity, all right?
 Because it's just another number to add into the fee at the end of the day.
 
-# The solution? - offchain fees - 1
-*Refer Slide 18*
+## The solution? - offchain fees - 1
+
+(refer Slide #18)
 
 I mean, I know there's different ways of doing it.
 So crudely, my proposed solution is this.
@@ -646,27 +664,31 @@ This particular part of my presentation requires something that doesn't exist ye
 But this requires PTLC, because you have to pay to a point, right?
 And then you set up the HTLCs. When the maker does what is required of him, which is to say sends all the signatures and all the transactions and the multi-sigs that I've just shown you, then the taker will broadcast the transactions, thus revealing his signature, and the trick of it is that his revealing signature will be able to be matched up with the adapter signature or signature adapter that the taker produced originally on his partial Schnorr signature in the multi-sig.
 And so what that results in is that the maker receives the pre-image for the invoice atomically with the broadcast of the funding transaction.
-I'm gonna expand on that because when I first came up with this idea, I thought, well, that's cool, and then I realized it's actually a really big problem with it.
-Audience: If you don't have, PTLC's on LightningNet, couldn't you just do a PTLC on-chain?
-Adam Gibson: I don't know what you mean.
-Audience: Like if you have, you just do a point time lock contract literally on a non-chain payment.
-Adam Gibson: We were trying to create off-chain fees to avoid having a fingerprint on-chain.
-Ah, okay.
-The fundamental goal here is an off-chain fee, yeah.
+I'm gonna expand on that because when I first came up with this idea, I thought, well, that's cool, and then I realized there's actually a really big problem with it.
+
+[Audience]: If you don't have, PTLC's on LightningNetwork, couldn't you just do a PTLC on-chain?
+
+I don't know what you mean.
+
+[Audience]: Like if you have, you just do a point time lock contract literally on a non-chain payment.
+
+We were trying to create off-chain fees to avoid having a fingerprint on-chain.
+The fundamental goal here is an off-chain fee.
 Okay, but other than that, your idea is excellent.
 It just doesn't actually solve the problem I'm trying to solve.
 It solves another problem.
 But a good point though.
 
-# The solution? - offchain fees - 2
-*Refer slide 19*
+## The solution? - offchain fees - 2
+
+(refer slide #19)
 
 So let me first explain why it doesn't work.
 What I've just said doesn't actually work.
 And the reason it doesn't work is because we have more than one maker.
 If we had only one maker, it would work fine.
 This works fine in a two-party sense.
-You could imagine each maker setting up the invoice to an elliptic curve point Q plus some offset that they choose and Then the taker will send the adapter signature, and I don't really have time to explain adapter signatures I'm sure a lot of people have heard of it and a lot of people don't really understand it because it's not something that people talk about much.
+You could imagine each maker setting up the invoice to an elliptic curve point Q plus some offset that they choose and then the taker will send the adapter signature, and I don't really have time to explain adapter signatures I'm sure a lot of people have heard of it and a lot of people don't really understand it because it's not something that people talk about much.
 But the basic idea is you can swap a signature for a secret value.
 If I can boil it down to one thing, it's that.
 You can swap a signature for a secret value.
@@ -681,7 +703,9 @@ So this is like a Schnorr signature, but with part of the nonce missing.
 The part that's missing is the Q.
 So basically, he gets the secret value Q once the transaction is broadcast on chain.
 So it's atomic, it's trustless.
-# The solution? - offchain fees - 3
+
+## The solution? - offchain fees - 3
+
 Now why doesn't that work?
 Well, it does work if there's only one maker.
 If there's multiple makers, yeah, he uses Q to settle the Lightning invoice.
@@ -693,7 +717,8 @@ He's not gonna be able to subtract, yeah, he's not gonna be able to subtract his
 So fundamentally, it doesn't work, but it does because I figured it out.
 Because I actually wrote a blog post years ago, just completely off the top of my head, I thought, I had no idea, it didn't seem remotely practical, but I thought you can kind of do this adapt to signature trick with multiple people at the same time.
 
-# The solution? - offchain fees - 4
+## The solution? - offchain fees - 4
+
 So what you can do is this.
 I'll just say it, I'm sorry, I know.
 Imagine two makers, we're gonna make a musig, three of three musig, we have an aggregated p, p aggregate, we each have our own nonce, we use three round musig and not musig two, because it's a bit simpler to analyze in this case, but I think it would work the other way as well.
@@ -713,7 +738,8 @@ And linearity makes that work.
 
 
 # The solution? - offchain fees - 5
-*Refer Slide 22*
+
+(refer Slide #22)
 
 So each party makes their own adaptor.
 So everyone has to send an adaptor to everyone else, which is corresponding to their own adaptor secret QI.
@@ -728,10 +754,11 @@ But basically, he will, any person will be able to subtract their own full parti
 And the result will be the sum of the adapter secrets, which are not theirs.
 And that's what they already decided was the pre-image for their Lightning invoice.
 Should I really have done a presentation about this?
-Audience: It's kind of cool because you're sort of changing into two-party, I mean, it's still a two-party, right?
+
+[Audience]: It's kind of cool because you're sort of changing into two-party, I mean, it's still a two-party, right?
 But it's sort of changing the math and stuff so there's a two-party thing, right?
 
-Adam Gibson: Yeah, I remember when I had this idea, I ran it by Andrew Polster on IRC, and he was like, yeah, that's really cool.
+Yeah, I remember when I had this idea, I ran it by Andrew Polster on IRC, and he was like, yeah, that's really cool.
 And I realized that this is unfairly linear signatures for the win, you know?
 It's like, it's the linearity that makes it work, because without that linearity you couldn't do that, but you're exactly right, it pretends that everyone else is one counterparty by adding them all up.
 The only caveat I'll say is, when you do stuff like this in cryptography, you have to be really careful, because the thing is, what happens if somebody tries to adversarially create their adapter point?
@@ -750,18 +777,15 @@ I mean, you just have to make sure you aggregate the keys properly, because you 
 What if two of the makers collaborate?
 Is the fact that if you commit to the inputs to the adapter up front, which is to say the adapter point and the nonce, then it's impossible for you to manipulate those values based on the other person's values.
 Right, so you're thinking if the two make it Q values were somehow manipulated.
-Yeah, it's possible, that's why I really, I'm not quite sure, I'll have to think about that.
+Yeah, it's possible, that's why I really... I'm not quite sure, I'll have to think about that.
 I'll think about that one, that's an interesting point.
 I don't know, I don't think there's an issue there, but I couldn't tell you for sure.
 I'm not sure what you would, anyway, let's not get into that now, because I don't have an answer.
-Okay, we're running out of time, hang on.
-Where's my phone gone, There it is.
+
 
 # SDMC - the sales pitch
-* A market solution to coordination
-* No on chain footprint of that market
-* A steganographic style of coinjoin - each tx in the tree can look like a payment
-* Preserve the no-cross-block interactivity property of coinjoin.
+
+(refere slide #24)
 
 So sales, let me just summarize what I'm saying here.
 Sales pitch, because you know, I'm a terrible salesman, and I admit it, but sometimes you want to sell something a little bit.
@@ -774,13 +798,14 @@ I mean, you know, lighting payments fail, So I don't exactly know what we do abo
 Any ideas?
 I mean, we atomically set up this invoice and then you try and pay it and then.
 I mean, reasonable questions.
-Audience: The failure would be before the route reaches the receiver.
+
+[Audience]: The failure would be before the route reaches the receiver.
 And the HODL invoice only goes into effect when the receiver receives the route.
-Adam Gibson continues ...
+
 Oh yeah, you've already set it up.
 That's true.
 If you weren't able to route it to start with, then it wouldn't.
-Yeah, and then I mean, I am completely clueless about this stuff, but I know that things like hodl invoices are a bit of a problem in Lightning, right?
+Yeah, I am completely clueless about this stuff, but I know that things like hodl invoices are a bit of a problem in Lightning, right?
 Because you're locking things up, and there's a question of how, but that closely ties into my other area of interest, which is how do we allow people to get paid appropriately for the actual resources being used, which includes time and not just money, right?
 So I think that's a whole other discussion, but it's certainly, but a good point, I wasn't thinking clearly, there's not really an issue with the routing thing because you've already done it.
 We could still fail though, right?
@@ -798,7 +823,8 @@ That's my sales pitch for SDMC, which is a thing.
 I think the other thing, you know, unless...
 Yeah, maybe questions now.
 I'll stop there.
-Questions.
+
+## Questions.
 
 Audience: I was just curious, sorry if we already covered this, but is there a way to lock the makers into a fee rate?
 Is that designed?
@@ -812,6 +838,7 @@ Audience: And the taker publishes it, right?
 Adam Gibson: Anyone can publish it, it's a multi-sig so whoever finishes first, I mean whoever wants it to go.
 The idea with this structure is that anyone, once all the, let's say all the transactions after the funding get signed in advance, and they're all based on a multi-sig, once all of those are signed in advance, that means everyone's agreed, and so they both co-sign the funding transaction which kicks it off.
 I've forgotten the question now.
+
 Audience: Oh, I was just talking about fee rates.
 It sounds like what you're saying is that they're only signing it once they see the fee rates.
 There's no concern like that.
@@ -863,6 +890,7 @@ So you could have like a watchtower kind of design.
 Now, there wouldn't literally be a watchtower because it's not watching, it's just somebody could be doing that job on your behalf if you could trust them with your privacy.
 But other than that, I mean at the end of the day storing some transactions isn't that much harder than storing some private keys and it's only very temporary.
 So it's definitely a problem but it's not I think a great...
+
 Audience: There's just no hierarchical deterministic way of backing it up contrarily with keys, right?
 Adam Gibson: True, yeah, good point, yeah.
 That's worse than keys for sure, yeah.
