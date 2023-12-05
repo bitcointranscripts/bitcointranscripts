@@ -826,30 +826,35 @@ I'll stop there.
 
 ## Questions.
 
-Audience: I was just curious, sorry if we already covered this, but is there a way to lock the makers into a fee rate?
+[Audience]: I was just curious, sorry if we already covered this, but is there a way to lock the makers into a fee rate?
 Is that designed?
-Adam Gibson: You mean the Bitcoin network fee rate?
 
-Audience: Yeah, I was just imagining, like, if I'm a maker, I could, like, publish the transaction that allows me to get the pre-image, but at a really low fee so it never gets mined.
-Adam Gibson: Publish a transaction that allows me to get the fee image.
+[Adam Gibson]: You mean the Bitcoin network fee rate?
+
+[Audience]: Yeah, I was just imagining, like, if I'm a maker, I could, like, publish the transaction that allows me to get the pre-image, but at a really low fee so it never gets mined.
+
+[Adam Gibson]: Publish a transaction that allows me to get the fee image.
 the transaction that allows you to get the pre-image is the funding transaction which is a multi-sig so both parties are signing off on that.
 
-Audience: And the taker publishes it, right?
-Adam Gibson: Anyone can publish it, it's a multi-sig so whoever finishes first, I mean whoever wants it to go.
+[Audience]: And the taker publishes it, right?
+
+[Adam Gibson]: Anyone can publish it, it's a multi-sig so whoever finishes first, I mean whoever wants it to go.
 The idea with this structure is that anyone, once all the, let's say all the transactions after the funding get signed in advance, and they're all based on a multi-sig, once all of those are signed in advance, that means everyone's agreed, and so they both co-sign the funding transaction which kicks it off.
 I've forgotten the question now.
 
-Audience: Oh, I was just talking about fee rates.
+[Audience]: Oh, I was just talking about fee rates.
 It sounds like what you're saying is that they're only signing it once they see the fee rates.
 There's no concern like that.
-Adam Gibson: Well, they'd have to agree on the fee rates to sign it, I think is what I'm saying.
+
+[Adam Gibson]: Well, they'd have to agree on the fee rates to sign it, I think is what I'm saying.
 It's a transaction?
 Okay, I'm getting an odd from Lisa, so I'm probably right.
 Any other questions?
 Yeah, I know it's like a bit of a weird concept.
 
-Audience: What happens if the fee rate changes between when you've signed, pre-signed all the transactions?
-Adam Gibson: Yeah, now that's a good question.
+[Audience]: What happens if the fee rate changes between when you've signed, pre-signed all the transactions?
+
+[Adam Gibson]: Yeah, now that's a good question.
 Somebody asked that back in the day about Coin.xt.
 They said, what about fee rates?
 Yeah, so could we...
@@ -861,8 +866,9 @@ Can anyone come up with a better one?
 So we pre-sign all these transactions, and then suddenly the mempool just spikes.
 Can we just reply?
 
-Audience: Child pays for parent, presumably in another coin to next.
-Adam Gibson: Yeah, we could do that, right.
+[Audience]: Child pays for parent, presumably in another coin to next.
+
+[Adam Gibson]: Yeah, we could do that, right.
 Especially if it was just like a one line thing.
 It would be particularly easy, just the last one.
 Well, I guess.
@@ -875,15 +881,16 @@ Oh yeah, yeah, I remember now, yeah, yeah.
 I remember now.
 That was interesting.
 Now I think that's an important practical point which I kind of glossed over, but I don't think it should stop it from working.
-But it does connect to another point, which is this whole thing about timing, like Will people be comfortable with doing these kind of structures that take hours?
-Now, I showed a kind of a, you know, paradise version where everything's perfect and somebody gets to do a PayJoin, somebody gets to splice into a channel, somebody gets a payment.
+But it does connect to another point, which is this whole thing about timing, like will people be comfortable with doing these kind of structures that take hours?
+Now, I showed a kind of a paradise version where everything's perfect and somebody gets to do a PayJoin, somebody gets to splice into a channel, somebody gets a payment.
 But does Bob, Bob might have to wait six hours for that payment, because I don't want to broadcast all those transactions right at once, so are we really gonna have external payments in those structures?
 Maybe not, maybe mostly it'll be more like what CoinJoin is today, where a lot of people are getting together and maybe there's a market, some people get paid a fee.
 That's why I was really keen on the idea of designing an off-chain fee element to it because I think I mean in theory you could apply that same idea to JoinMarket it's just unfortunate we don't have PTLCs yet they're very powerful and this is a very good example to me of why they're powerful.
 People talk about breaking the correlation in the route which is great and everything but you know this you can swap signatures for secrets it's really powerful yeah.
 
-Audience: And contrarily to single transaction CoinJoin there's a backup problem as well.
-Adam Gibson: Well yeah One of the disadvantages we listed was you have to treat these pre-signed transactions as well as money.
+[Audience]: And contrarily to single transaction CoinJoin there's a backup problem as well.
+
+[Adam Gibson]: Well yeah One of the disadvantages we listed was you have to treat these pre-signed transactions as well as money.
 Not necessarily as secrets, of course, yeah, but that's the other thing.
 They're not secret even though they are money.
 So you could have like a watchtower kind of design.
@@ -891,8 +898,9 @@ Now, there wouldn't literally be a watchtower because it's not watching, it's ju
 But other than that, I mean at the end of the day storing some transactions isn't that much harder than storing some private keys and it's only very temporary.
 So it's definitely a problem but it's not I think a great...
 
-Audience: There's just no hierarchical deterministic way of backing it up contrarily with keys, right?
-Adam Gibson: True, yeah, good point, yeah.
+[Audience]: There's just no hierarchical deterministic way of backing it up contrarily with keys, right?
+
+[Adam Gibson]: True, yeah, good point, yeah.
 That's worse than keys for sure, yeah.
 Unless, well actually these time lock back outs are interesting in this, though, aren't they?
 No, good point, yeah.
@@ -900,8 +908,9 @@ It's more difficult, you do have to store that data, but only for a short period
 It's not like, you know.
 Any other questions?
 
-Audience: Did you compare the block size, block space?
-Adam Gibson: Oh, thank you for mentioning that because I forgot to mention it.
+[Audience]: Did you compare the block size, block space?
+
+[Adam Gibson]: Oh, thank you for mentioning that because I forgot to mention it.
 I think one of the other advantages of this construction is that I think, now this is a really tricky point.
 We talked both yesterday and today about k-anonymity, the idea of measuring anonymity quantitatively, saying there's this number of people who have the same role or action in this event and therefore there's a K anonymity of 10 or 100 or something.
 It doesn't apply, in my opinion, at least not in any way that I understand, to a steganographic style of privacy preserving technology.
@@ -916,18 +925,21 @@ Why did I say that?
 You actually asked a slightly different question but I thought it was connected.
 You said...
 
-Audience: My other question would have been how to quantify privacy which you answered but the other question is how does it compare block space wise?
+[Audience]: My other question would have been how to quantify privacy which you answered but the other question is how does it compare block space wise?
 Yeah, efficiency of block space.
-Adam Gibson: Do you see why I think it's connected right?
+
+[Adam Gibson]: Do you see why I think it's connected right?
 Because if you need a quantitative measure like 100, you need to have a lot of people, well debatable.
 I know you've got a lot of very sophisticated ideas about efficiency within your construction of block space usage.
 But in principle, this might apply to CoinSwap, but I think it certainly applies to this construction.
 But I would argue it's very efficient in block space, because you get a quality of anonymity which is difficult to measure, but which arguably is much higher for per unit of transaction.
 It's difficult to compare.
 
-#### Entropic model
-Adam Gibson: We would we would love to have I'm just gonna pretend It's the whole block the anonymity set is the whole blockchain and somebody's gonna have to tell me why it isn't Entropic model?
-Audience: Yeah Yeah, so like in this case the anonymity set would be potentially huge, like whatever time window of value-compatible transactions.
+### Entropic model
+
+[Adam Gibson]: We would we would love to have I'm just gonna pretend It's the whole block the anonymity set is the whole blockchain and somebody's gonna have to tell me why it isn't Entropic model?
+
+[Audience]: Yeah, so like in this case the anonymity set would be potentially huge, like whatever time window of value-compatible transactions.
 Yes.
 But then there's two very difficult open questions.
 If you try to model the adversary, three.
@@ -941,7 +953,8 @@ We really want lower bounds on the entropy.
 That's good enough.
 But Nonetheless, the entropy that you would have to calculate for this is like a joint entropy over the power set of all potential points of origin, and that's an exponentially sized object.
 So like, and it's, yeah, very difficult questions.
-Adam Gibson: Yeah, which is great, right?
+
+[Adam Gibson]: Yeah, which is great, right?
 It's so difficult.
 That's great.
 Well, I agree.
@@ -950,9 +963,10 @@ All I'm trying to do in this is trying to expand what I think is already trivial
 It's really, really difficult to get any real practical fungibility, but intrinsically it's completely fungible.
 So this is trying to expand on the real intrinsic nature.
 
-Audience: One thing that I think is kind of cool about this sort of thing, and this is like sort of maybe more of a social commentary than anything like necessarily technical, but it's cool that like, I mean I think CoinJoin in general are like this idea where Bitcoiners have to come together, so like you have to work together as a team to like keep your privacy, which is kind of cool.
+[Audience]: One thing that I think is kind of cool about this sort of thing, and this is like sort of maybe more of a social commentary than anything like necessarily technical, but it's cool that like, I mean I think CoinJoin in general are like this idea where Bitcoiners have to come together, so like you have to work together as a team to like keep your privacy, which is kind of cool.
 This it seems like is a little more, your teams can be like a little smaller size, so to speak, than in larger CoinJoin.
-Adam Gibson: That's a good point I didn't really mention.
+
+[Adam Gibson]: That's a good point I didn't really mention.
 I showed these examples with two people just because it's easier to draw the diagram.
 You can do this with 10.
 I was talking, I think, to NoPara the other week about what happened if we try to do Wasabi with more people using a CoinJoin XT structure.
@@ -974,8 +988,9 @@ Because if it only has one entry point, it's more plausible to me, intuitively, 
 Maybe that's just a bit too vague.
 So yeah, large, but I agree with your original point, which is we can do this with smaller groups of people and get a real effect, which is what I had in my mind, like three, four people.
 
-Audience: What's the privacy punishment for the fallback time locked?
-Adam Gibson: Yeah, good question.
+[Audience]: What's the privacy punishment for the fallback time locked?
+
+[Adam Gibson]: Yeah, good question.
 That's a good question.
 How much do we lose in terms of the fallback?
 It seems to me debatable.
@@ -985,22 +1000,27 @@ We could theoretically make the time locks themselves be trees if we need to mak
 So I think that's a good example where if you had a lot of people it might be worse, wouldn't it, because if you want the time lock to be one payout for everyone, it will look very, very distinct.
 That's a good point which I hadn't thought about, yeah.
 There's definitely trade-offs with using large numbers of people with this, which in practice you would probably avoid by using small groups, I think.
-Audience: And so If the adversary knows that a certain tree is a CoinJoin XT, then the anonymity set is just the fresh Bitcoin that entered the tree in that time period?
-Adam Gibson: The anonymity set of what though?
+
+[Audience]: And so If the adversary knows that a certain tree is a CoinJoin XT, then the anonymity set is just the fresh Bitcoin that entered the tree in that time period?
+
+[Adam Gibson]: The anonymity set of what though?
 One specific output?
 It's really slippery isn't it?
 But it's a good point to consider, we should definitely consider that, but I think it's.
-Audience: Like the point I'm trying to make is that if the adversary doesn't know that this is CoinJoin XT, yes, the anonymity set is huge.
+
+[Audience]: Like the point I'm trying to make is that if the adversary doesn't know that this is CoinJoin XT, yes, the anonymity set is huge.
 But just like with PayJoin, right?
 But if he does know this is CoinJoin XT, then it seems it decreases the anonymity sets.
-Adam Gibson: Well, it must, by definition.
+
+[Adam Gibson]: Well, it must, by definition.
 He knows more information, right?
 I'm not sure how easy to quantify it but but but should therefore be a fairly tractable problem at least it would reduce it more to existing blockchain analysis on more normal flows I guess which may or may not be easy depending on the structure.
 I mean, this is a very simple structure.
 I think we can make, well, we can make lots of structures.
-Audience: Is there an optimal structure?
 
-Adam Gibson: Yeah, I wish, I mean, I think I'm a bit too lazy to actually try and do this analysis.
+[Audience]: Is there an optimal structure?
+
+[Adam Gibson]: Yeah, I wish, I mean, I think I'm a bit too lazy to actually try and do this analysis.
 No, because that kind of analysis is hard.
 I don't know, I prefer thinking about long equations with sigmas in them.
 I don't like that kind of, yeah, it's hard.
