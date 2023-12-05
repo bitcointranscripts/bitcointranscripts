@@ -2,7 +2,7 @@
 title: "Nadav Kohen and Payment Points - Episode 7"
 transcript_by: Extheoisah via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Y2mTjCldRAU
-speakers: ["Adam Back"]
+speakers: ["Adam Back","Adam Jonas","Alan Reiner"]
 categories: ["podcast"]
 date: 2020-03-30
 ---
