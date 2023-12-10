@@ -6,10 +6,7 @@ tags: ['lightning', 'segwit']
 date: 2018-10-09
 aliases: ['/bitcoin-core-dev-tech/2018-10-09-bitcoin-optech/']
 ---
-
 <https://twitter.com/kanzure/status/1049527415767101440>
-
-# Bitcoin Optech
 
 <https://bitcoinops.org/>
 
