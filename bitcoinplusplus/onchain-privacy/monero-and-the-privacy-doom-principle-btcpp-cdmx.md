@@ -1,50 +1,17 @@
 ---
-title: "Monero and the Privacy Doom Principle -- btcpp cdmx"
+title: "Monero and the Privacy Doom Principle"
 transcript_by: Dnsmpr via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yq_cOVHr8Pg
 tags: ["privacy"]
 speakers: ["David Vorick"]
 categories: ["conference"]
-date: 2023-03-10
+date: 2023-12-09
 ---
+I'm a blockchain researcher and developer.
+I've built the Sia blockchain ecosystem and I've been in the space for a while and today I'm talking about Monero and privacy models that ended up being explained in analytical techniques that we can use to beat error in privacy.
 
-## Chapter 1: Introduction and Overview
+## The Concept of Privacy in Cryptocurrencies
 
-Female host [0:00]
-Okay, so what are we talking about today, David?
-Do you have an intro or we can enter you?
-How do you want to do it?
-
-David [0:09]
-Sure.
-So I'm a blockchain researcher and developer.
-I've built a blockchain ecosystem and I've been in the space for a while and then today I'm talking about Onero and privacy models that ended up being explained in analytical techniques that we can use to beat error in privacy.
-Yeah.
-
-Female host [0:40]
-Cool.
-
-Male host [0:41]
-Right on.
-
-Female host [0:43]
-Great, okay. So if you wanna go ahead and get started, if you need anything, Asher will let me know. But great.
-
-David [0:51]
-Okay, sounds good.
-
-Male and Female host [0:56]
-Check these mics, are both of these hot? Yeah I think so. Okay, maybe, actually we might want to give one to the audience later. Okay, yeah. Do you need to share your screen?
-
-No, I'll just be talking.
-
-Male host [1:32]
-All right, yeah, I think we can start.
-
-## Chapter 2: The Concept of Privacy in Cryptocurrencies
-
-David [1:35]
-Excellent, cool.
 So my name is David Vork.
 I've been in the blockchain space for about a decade.
 I've been between researching and launching blockchains, doing a lot of engineering, but I've been in the space for a while and studying things.
@@ -54,9 +21,9 @@ And so essentially I want to talk through my findings and why I believe that Mon
 And I think that this extends to other similar privacy cryptocurrencies as well, such as the Atlantis, but we'll get into all that.
 Before we get too much into the technicals, I wanted to talk about what is privacy and what does it mean when a cryptocurrency provides users with privacy.
 And basically, The goal of a privacy cryptocurrency is to make sure that each transaction that a user makes on the network is isolated and does not reveal any information about any of the user's other activity.
-And So Bitcoin is not so great about this.
+And so Bitcoin is not so great about this.
 When we think about an example where, say, withdraws Bitcoins from Coinbase, then they take those coins from their own wallet and they spend those coins on, let's say, HIV medicine.
-And Then the HIV company who accepted Bitcoin goes and deposits It on coinbase.
+And then the HIV company who accepted Bitcoin goes and deposits It on coinbase.
 You have this transaction chain essentially, Coinbase to user to HIV company to Coinbase.
 If the cryptocurrency is private, Coinbase will have no way of detecting that these transactions are related.
 And so the Coinbase will not learn that the user is a purchaser of HIV medication, or has a business relationship, or has a relationship with an HIV company.
@@ -73,7 +40,7 @@ We want to make sure that the user is protected because we told them that they w
 So they shouldn't have to think about privacy.
 The wallet should just give them that privacy.
 
-## Chapter 3: The Stream Payment Model and its Impact on Cryptocurrency Privacy
+## The Stream Payment Model and its Impact on Cryptocurrency Privacy
 
 So to help analyze cryptocurrencies and determine how good the privacy is, I came up with something that I'm calling the stream payment model.
 It's an idea of, it's a model of user behavior that is essentially both practical and like believable.
@@ -99,7 +66,7 @@ And so our goal is to make sure that when a user is transacting, there's no way 
 And so that's the stream wallet model.
 So before we get too much into the analytics, I need to talk about blockchain outputs, which I realize a lot of you are probably already familiar with, but I'm going to go ahead and give a refresher anyway.
 
-## Chapter 4: Detailed Analysis of Cryptocurrency Privacy Mechanisms
+## Detailed Analysis of Cryptocurrency Privacy Mechanisms
 
 So basically, the way blockchains work is that transaction, you create something called an output, and it's basically evidence that you are associated with this transaction.
 Bitcoin's very straightforward, and so every time that you receive money, there's an output.
@@ -149,7 +116,7 @@ But in the context of a highly active ecosystem with hundreds of millions of out
 And so Basically, it doesn't matter how many decoys you're using.
 If you cannot get to the point where every single output is plausibly part of your decoy set, the way Zcash does it, you're eventually going to break down under the stream payment model.
 
-## Chapter 5: Privacy Decay and Statistical Analysis in Cryptocurrencies
+## Privacy Decay and Statistical Analysis in Cryptocurrencies
 
 And something that's important to remember is that privacy decay is exponential.
 And so if something only has a 90% chance of happening, then maybe the first four or five times you pay rent, it's just a coincidence four or five times in a row.
@@ -173,7 +140,7 @@ How many transactions backwards would they be?
 And so the landlord can build a model of like, if the user is innocent, this is the statistical profile that their decoys would have.
 And then you just ask, do my outputs, do my art payments appear in this decoy graph more frequently than this statistical model suggests they should?
 And if the answer is yes, then you have a very strong reason to suspect that this person is the same as your favorite artist.
-And so basically you can ask questions to the blockchain of like, you know, is this person X, is this person Y, are their funds Z?
+And so basically you can ask questions to the blockchain of like, is this person X, is this person Y, are their funds Z?
 And you can just build a statistical graph.
 If the answer is no, this is what the statistics should say.
 And then you look at the reality of what the statistics do say, and then you can build a very clean statistical understanding of how likely this person is to be in.
@@ -184,7 +151,7 @@ And so, yeah, basically the statistics that break Monero come from asking what r
 And in the case of Zcash, you get this security because every single output is a plausible source of every single transaction.
 And so this sort of statistical analysis doesn't work.
 
-## Chapter 6: Potential Solutions and Future of Cryptocurrency Privacy
+## Potential Solutions and Future of Cryptocurrency Privacy
 
 Since I have time, I'll go ahead and talk about a potential fix.
 So I think that if Monero and similar cryptocurrencies want to fix what they should do is they should switch to a full decoy model.
@@ -192,7 +159,7 @@ If you don't like trusted setup, you can do it with Starks, but they should swit
 But if they insist on staying with ring signatures, what they can do is they can have users obfuscate their transactions by sending the money to themselves repeatedly.
 On Monero, you need to do it something like a dozen times.
 On the Lantis, it's something like five times.
-And the big caveat is that if everyone else is also doing this, then you can actually get to a point where, because a user, by the time a user spends money to the landlord they've kind of recycled it through the output graph a dozen times and all of their decoys have been cycled through a dozen times by Everyone else who's doing the cycling.
+And the big caveat is that if everyone else is also doing this, then you can actually get to a point where, because a user, by the time a user spends money to the landlord they've kind of recycled it through the output graph a dozen times and all of their decoys have been cycled through a dozen times by everyone else who's doing the cycling.
 So as long as the whole ecosystem is continuously doing this cycling you can get to a point where the graph is noisy enough that the analytics break down, but I really don't suggest that as a solution because it hinges on a bunch of assumptions like everyone else has to be playing along.
 Everyone else has to still have their wallets running.
 If half your ecosystem disappears and only shows up during bull markets, then during the bear markets, the people who are trying to use the platform for privacy are much more exposed because that additional noise factor, hiding factor is not present.
@@ -205,23 +172,28 @@ And switching from 10 outputs to 100 or 100,000 really doesn't make a dent.
 The statistics break things down very quickly when you have a smart enough analyst.
 And so, yeah, that is my talk.
 And I've been sitting on this for like three or four years, so it's great to finally put it out into the wild.
+
+## Q&A
+
 I know that some of it may have gotten a little bit technical, so I'm more than happy to answer questions if anyone would like clarification on anything or just has other questions.
 
-## Chapter 7: Q&A Session and Closing Remarks
-
+Host:
 Yeah, sure.
 I'll ask a clarifying question.
 So this type of analysis requires like the landlord to be the purchaser or does it?
 
-Yeah, so For the very basic breakdown we or the stream model do assume that the landlord is on both sides of the equation.
+David Vorick:
+Yeah, so for the very basic breakdown we or the stream model do assume that the landlord is on both sides of the equation.
 In practice, what it really would probably look like is that, you know, the user collects money for their art through BitGo, then withdraws it from BitGo, sends it to the landlord, and then the landlord sends it to Coinbase.
 Coinbase and BitGo share analytics information because they both use, I think they both use Elliptic to do analytics.
 And so now the landlord's not the one finding out about the user, it's Coinbase and BitGo that are getting all this information about the user.
 But in practice, it's actually the case that you probably have a party on both sides.
 It's not the landlord, but it's a bigger service provider that can see everything and is going to be able to figure out that you are both this artist and you pay.
 
+Host:
 Second follow up to that is, so as you sort of weaken the anonymity of one person in the graph, like say Alice, and then you say you're like, I'm 25% sure that, or like maybe over 50% sure that these are her transactions, and you also weaken Bob's, and Bob and Alice are in the same, we're in the same anonymity set, then Do the probabilities, like, do they both, are they both weakened even more because you've somewhat learned some information about one or are they like independent?
 
+David Vorick:
 Yeah, so that's the other thing that like just makes life really tough for Monero because so in something like Zcash, they are independent, but in something like Monero, I like to think of it as like a giant Sudoku puzzle where as you interact with Coinbase and BitGo and these big providers, what you're effectively doing is you're giving them numbers in a Sudoku puzzle.
 And if there's just a little bit, it's fine, right? You have a giant Sudoku puzzle and like four numbers, you're not going to be able to solve the puzzle.
 There's a lot of mystery.
@@ -232,27 +204,14 @@ And so, yes, if Alice does something that erodes her privacy by, say, 25%, right
 Even that is enough to start to do things that will unmask Bob.
 Because Bob was hiding alongside Alice, and the fact that Alice isn't so hidden anymore does impact Bob's ability to hide as well.
 
-Male host [25:35]
+Host:
 Wow, that's a lot worse than I thought.
-It reminds me of the wave function collapse algorithm, which everyone should check out. But are there other questions from the Audience?
-I know Peter Todd has something to say.
-Okay, well, thank you for your time.
-Sorry we were running a bit late.
-But, yeah, let's give him a round of applause.
-Oh, you got something, Jimmy?
+It reminds me of the wave function collapse algorithm, which everyone should check out.
 
-Audience [26:09]
-Yes.
-Okay.
-So random last minute question.
-Like, outside of being directly contacted by, say, the feds or whatever, how would the average user just know if they've been compromised?
+Audience:
+Outside of being contacted by the feds, how would the average user know whether they have been compromised from a privacy perspective?
 
-Male host [26:21]
-Just repeat it real quick.
-
-Okay, so outside of being contacted by the feds, how would the average user know whether they have been compromised from a privacy perspective?
-
-David [26:34]
+David Vorick:
 Yeah, so that's the thing.
 A lot of times there's no way to know, and especially when it comes to entities, or maybe we should call them adversaries, such as Coinbase and BitGo, not only are they not going to notify you, but also the way it impacts your life is going to be more subtle.
 For example, it might just change what sort of ads get presented to you.
@@ -261,14 +220,11 @@ I mean, if we're thinking like really dystopian, it's possible that things Coinb
 Coinbase might be able to contribute information to AIG that impacts the prices of home insurance for you if they know certain activities about you that make you a more risky customer.
 And so yeah, you're not necessarily going to know, but that doesn't mean that there aren't very real consequences that are actively impacting your life.
 
-Audience [27:39]
-Great.
-
-Male host [27:41]
+Host:
 Okay, I think that's it.
 Yeah, let's clap.
-Thank you.
-Thank you.
 Thank you, David.
+
+David Vorick:
 Absolutely.
 Thank you.
