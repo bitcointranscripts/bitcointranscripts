@@ -21,11 +21,11 @@ We decided that a good topic would be the usage of Lightning, or Lightning Netwo
 I'm going to go through what I'm going to do in this talk.
 It's basically going to have two halves to this session.
 The first half is me giving a talk, a traditional presentation.
-You can interrupt with questions if you  that's fine.
+You can interrupt with questions if you like that's fine.
 If you do, I will have to repeat them—a reminder to myself.
 I'm going to explain some of the history behind the Lightning Network and where it came from.
 Because if you only know a little bit about Bitcoin and we just established it with a hands-up, most people here know quite a bit about Bitcoin, but some people may be watching or some people in this room right now may don't know that much about it, and they may know even less about Lightning.
-I want to give the context, where it comes from, and why it's useful today, and hopefully that will lead into what it's really to use the Lightning Network today as a payment system, and we're actually going to do that in practice in the second hour.
+I want to give the context, where it comes from, and why it's useful today, and hopefully that will lead into what it's really like to use the Lightning Network today as a payment system, and we're actually going to do that in practice in the second hour.
 
 Let me kick off by, first of all, going to the start of this presentation.
 I've called it Lightning Network Make Bitcoin Fun Again, and I hope you'll understand, apart from just the trivial sense, why I say that as we go through the first section.
@@ -41,16 +41,16 @@ It cannot be instant to transfer bitcoin.
 In terms of zero processing fees or very low processing fees, that was very true in the very early days of Bitcoin, but even though it was true, everyone knew inevitably that to whatever extent Bitcoin was successful, it inevitably meant that fees would not be zero, and moreover, not only are they not zero nowadays, but they are quite unpredictable, which is maybe even more important than that they're not zero.
 This was unfortunate, but it reflected a very strong sort of cultural tendency, if you could call it a culture, in the early days of Bitcoin to think of it as a potential replacement for our normal consumer payment system.
 People often talk about cash and digital cash, but what I think a lot of people had in their minds around that time, 2012, 13, 14, is they had in their mind, "Oh, I'm going to go to my local bar, my local pub, and I'm going to infuse them; they're going to accept Bitcoin; they'll be, you know, people made these videos of QR code, exactly what we're going to do today, but they did this eight years ago or whatever," and they were, "Oh, look, the bar is; there was a pub somewhere in London or somewhere in England anyway, accepting Bitcoin this," and it was all, you know, to use the language of the kids nowadays, it was all a bit cringe.
-It was a bit cringeworthy because, to me anyway, it was  but that's obviously silly because that's not how it's actually going to work, and why do I say that?
+It was a bit cringeworthy because, to me anyway, that's not how it's actually going to work, and why do I say that?
 Because I always called it, well, Bitcoin is SWIFT, not Starbucks points.
 What I meant by that, if you don't know SWIFT, is that SWIFT is international wire transfers.
 It's a very heavy, very serious way of transferring money, but it works all around the world.
-It was originally tended to be very apolitical, and you can think of Bitcoin that or hard currency in the old Soviet Union.
+It was originally tended to be very apolitical, and you can think of Bitcoin like that or like hard currency in the old Soviet Union.
 You can't really think of it as a replacement for Visa because it just doesn't scale to that.
 It doesn't have the right privacy properties.
 It doesn't have the right consumer experience.
 That's why I and quite a few other people were quite negative about this viewpoint.
-On the other hand, there were people this, the most obvious example being Roger Ver and several others; Charlie Shrem was another one, who were very public figures in 2013, very popular and famous, and a lot of the time they were going on the media and they were trying to push this narrative: "Bitcoin is going to be the next Visa." We started talking about transactions per second metrics, and they were always trying to play down the idea that there would be fees and there would be delays.
+On the other hand, there were people like this, the most obvious example being Roger Ver and several others; Charlie Shrem was another one, who were very public figures in 2013, very popular and famous, and a lot of the time they were going on the media and they were trying to push this narrative: "Bitcoin is going to be the next Visa." We started talking about transactions per second metrics, and they were always trying to play down the idea that there would be fees and there would be delays.
 They all know we can accept unconfirmed transactions and we can just work around it, and even whole companies were built up around this concept that we could make these transactions sort of free and sort of instant, but actually they weren't really, and this whole, well, I suppose the guy at the bottom here perfectly illustrates the end of that period, or the transitionary period, because that was an amazing video, by the way, in 2013 with him sitting on this bouncy ball.
 I have no idea to this day why he was sitting on that when they were talking to him, but this is Mark Karpellis; he used to run Mt. Gox or Mt. Gox, and of course, he's another sort of aspect of the problems of those early eras because there was a lot of, you could call it, amateurishness or unprofessionalness in maintaining these very serious exchange websites, and famously, it completely collapsed with millions of dollars lost, or millions of...hundreds of millions, I suppose.
 Charlie Shrem was a businessman.
@@ -135,7 +135,7 @@ They came up with what's called nowadays the bolts.
 ## The Bolts
 
 The bolts are the standards.
-They're a bit RFCs for those of you who are engineers or internet people.
+They're a bit like RFCs for those of you who are engineers or internet people.
 Basically, it describes what the protocol should do, what the protocol must do, and what every piece of software must agree to in order for all these Lightning off-chain payments to work.
 And the outcome of all that is that in 2017, the software moves forward; they have something that works, and by the summer of 2017, this historic moment—it's historic, silly in a way—is at room 77 in Berlin.
 You have Laulu, one of the engineers I just mentioned, paying for a beer with Lightning.
@@ -185,10 +185,10 @@ There are lots and lots of them.
 Actually, nowadays, it's tens of thousands.
 And each one of them has a certain amount of bitcoin in it—those beads on that wire.
 We're just adding them up on that graph.
-And you can see obviously, any new technology, there are ways of adoption; there's a sudden growth for this, that, and the other.
+And you can see obviously, like any new technology, there are ways of adoption; there's a sudden growth for this, that, and the other.
 For example, sometime in the middle of 2018, there was this thing called the Lightning Torch, and it was  Oh, let's try this out.
 Let's try sending money to each other using this protocol off the blockchain right across the world, and I think they did it on Twitter.
-One person would send 100,000 sats, sats such as satoshis, right, a 100 millionth of a Bitcoin, and then the next person would send 110,000 sats to some other random person; it would go around in a group, and Bitcoin being Bitcoin, of course, eventually the topic arose: well, can I send this to a guy in Iran, and somebody was  maybe you shouldn't send it?
+One person would send 100,000 sats, sats such as satoshis, right, a 100 millionth of a Bitcoin, and then the next person would send 110,000 sats to some other random person; it would go around in a group, and Bitcoin being Bitcoin, of course, eventually the topic arose: well, can I send this to a guy in Iran, and somebody was like, Maybe you shouldn't send it?
 This is—that's what it's for, right?
 Bitcoin is for the payments you're not allowed to make; they don't want you to make them, and that's what they say, and of course the other thing about it is that it's dangerous.
 So I show here an example: payment failed.
@@ -238,23 +238,23 @@ What you can do is click on it, and it says to you, "Right, choose your color," 
 Again, one satoshi is about 1,000th of a dollar.
 Just to give you a sense, You can start drawing, and you can draw the Mona Lisa, or you can draw a penis, as many people did back in the day.
 I can assure you that.
-And you can draw anything you  and it costs you one satoshi per pixel.
+And you can draw anything you like and it costs you one satoshi per pixel.
 It's very, very simple.
 I actually tried it again yesterday, just to check if it still works.
 It works fine.
 Am I still there?
 No, I don't know.
 Anyway, so the point is, this was really fun, and it was really popular for about one month, and I remember, perhaps people here remember, the Bitcoin Lightning Conference in Berlin in 2019, I think it was, where they had a panel, and there were all these very serious people sitting in a panel talking about lightning.
-And it's somebody's drawing a penis above them because, in real time, it's really funny.
+And somebody's drawing a penis above them because, in real time, it's really funny.
 But I think that's lovely because that illustrates that point.
 Maybe it's not the most useful thing in the world, but it really does illustrate something you couldn't do otherwise.
 
 ## LN Markets
 
 Right?
-And I this example; it is much more recent.
+And I like this example; it is much more recent.
 This is a site called LN Markets, and all they're doing here is offering you the opportunity to trade futures with leverage, so the degenerate gamblers amongst us, and there are plenty of them, will love this site if they haven't seen it already.
-What I really about it is something called this link here; you can't see it, but it says connect with lnurl.
+What I really like about it is something called this link here; you can't see it, but it says connect with lnurl.
 What it really means is that when you click it, it pulls up a QR code.
 And again, you can try this later if you've got the right wallet.
 You can scan it, and it will log you in with the public key of your lightning node.
@@ -283,10 +283,10 @@ interesting, I think.
 Just a brain dump here of all the different ways I could remember spending lightning.
 Basically, buying souvenirs, buying mugs, buying t-shirts, and different kinds of gambling, that Lightning Spin one, Satoshi's Place, and Bitrefill (which I haven't mentioned yet, is really cool where you can actually buy gift cards), you can buy gift cards using Lightning or mainchain Bitcoin.
 And it's just really easy.
-And what I about that site is that they've really tried hard.
+And what I like about that site is that they've really tried hard.
 They've got really good lightning support, and they've got a lot of other features as well, such as address, if anyone knows what that means.
 
-You can do things pay friends to settle a restaurant bill, and it might seem a trivial example, but I can tell you I've done that maybe seven, eight, nine, or 10 times at different meetups and conferences.
+You can do things like pay friends to settle a restaurant bill, and it might seem like a trivial example, but I can tell you I've done that maybe seven, eight, nine, or 10 times at different meetups and conferences.
 And of course, what's cool about it is that it actually works, as opposed to in the past, when we could do it with just Bitcoin wallets, and it did work, but we didn't get confirmations.
 We were just trusting each other anyway.
 It's really cool that now, with lots of different white lightning wallets, we'll see there are several of them.
@@ -312,7 +312,7 @@ Of course, the final point is that we do tend to still use the Bitcoin main chai
 ## Growth
 
 Okay, we're getting through.
-Growth—that's what the network looked at the end of January 2018 on the left.
+Growth—that's what the network looked like in the end of January 2018 on the left.
 It's already pretty complicated, right?
 However, there aren't that many nodes; there are just a lot of connections.
 Nowadays, if we try to visualize the Lightning Network, it's nearly impossible because you can't.
@@ -446,7 +446,7 @@ Bob can keep the extra clause saying that if Alice ever spends the old version, 
 Now, the opposite.
 Bob signs an extra clause on his contract, and it says if I ever execute contract 1b, well, all the money is going to go to Alice.
 And Alice can take that.
-I know it's a bit complicated, but what I'm trying to illustrate to you is that essentially, it's almost just a legal wrangling; it's just a legal construction.
+I know it's a bit complicated, but what I'm trying to illustrate to you is that essentially, it's almost just like a legal wrangling; it's just a legal construction.
 What it means is that here's Bob; he's paid his $60 to Alice.
 
 If he decides to be a cheat and tries to use the old version of the contract and walks over here and says, "Give me that," his money's locked for one day, remember?
@@ -474,7 +474,7 @@ Does that make sense to you as a broad outline of how it works?
 That's a bad question.
 What might be the problem?
 I think it's fair to say that there are two obvious problems with this construction, two ways it can go wrong.
-Let me put it that.
+Let me put it like that.
 What are the two ways this construction can go wrong?
 
 So the first problem is what we call liveness.
@@ -482,7 +482,7 @@ Here I use the example of one day, but we would actually use longer periods than
 If you're not around, somebody might cheat you, and if you just stay offline for a long time, then their cheating could be successful.
 In what I just described, this would be executed after one day, two weeks, or whatever it is.
 That's the first problem.
-This protocol is not Bitcoin, where you just receive money and forget about it for four years.
+This protocol is not like Bitcoin, where you just receive money and forget about it for four years.
 That's the first one.
 
 The second one is a bit more subtle, so I'm not sure if people will say what I'm thinking in my head.
@@ -540,7 +540,7 @@ And very often they'll have a separate button for scanning a QR code, because mo
 But the thing to remember is that this is an interactive process.
 
 What makes this different from Bitcoin is that it's true, and it's almost entirely true that both parties have to be present.
-in Bitcoin, the receiver can just be asleep.
+In Bitcoin, the receiver can just be asleep.
 But in Lightning, that's not really the case.
 Serve is the caveat there.
 We're going to send and receive.
@@ -577,7 +577,7 @@ You've got the Bitcoin; it's very much a tale of two cities, the El Salvador exp
 You've got the Bitcoin Beach, a famous project, in a place called El Zonte, literally on the beach, of course.
 very small place, very, we could say underdeveloped, few restaurants, few hotels, and basically everyone there has, as a project, started using Bitcoin and also Lightning for payments for various things.
 And they tend to use something called the Bitcoin Beach wallet, which is a really strange hybrid.
-It's not really the things I just showed you, which you just installed on your phone.
+It's not really like the things I just showed you, which you just installed on your phone.
 It's a centralized custodial service by a company called Galloy.
 And when you scan their QR codes, maybe later one of you might want to try that one, particularly, you'll see that you actually get sent to a webpage, not to a lightning wallet.
 You have to go to a webpage, and the webpage then hosts the lightning payment invoice for this person, even though again, it's custodial.
@@ -652,7 +652,7 @@ It was all very strange.
 And when you talk to the taxi drivers, half of them think it's great, and half of them think it's terrible.
 I don't know what that proves.
 
-Video Time! I just thought it might be amusing to finish this off by showing you what it's to use it.
+Video Time! I just thought it might be amusing to finish this off by showing you what it's like to use it.
 If my eyesight can actually find it, there it is.
 This was a completely serendipitous meeting on the street.
 It's already scanned the QR code.
@@ -660,7 +660,7 @@ It's already scanned the QR code.
 VIDEO: *Difficult to Hear* All we need is a hotspot and 815.
 You got it?
 Woo! All right, all right, there we go.
-Every time I see it, everybody's  Woo! Strict deals, coffee.
+Every time I see it, everybody's like Woo! Strict deals, coffee.
 I keep on talking about coffee and tea.
 
 This very short video is basically about how I met a guy called Tomer on the street.
@@ -677,7 +677,7 @@ It could be the case that we reach a point where everyone can reliably pay each 
 $10.01 I paid for a $10 bag of coffee.
 I didn't know him, and he didn't know me.
 It worked perfectly in, literally, two or three seconds.
-Of course, it's not always going to be great that, but that was an example where it was really good.
+Of course, it's not always going to be great like that, but that was an example where it was really good.
 
 Another example, which is a few seconds longer but also a short video, is this.
 I actually just nabbed this from Twitter.
