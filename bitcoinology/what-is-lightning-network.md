@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=ZxrXkprwxUM
 tags: ["lightning"]
 speakers: ["Adam Gibson"]
 categories: ["meetup"]
-date: 2021-12-20
+date: 2021-12-15
 ---
 ## Introduction
 
@@ -40,7 +40,7 @@ Because of its nature, without going into the technical details, Bitcoin is not 
 It cannot be instant to transfer bitcoin.
 In terms of zero processing fees or very low processing fees, that was very true in the very early days of Bitcoin, but even though it was true, everyone knew inevitably that to whatever extent Bitcoin was successful, it inevitably meant that fees would not be zero, and moreover, not only are they not zero nowadays, but they are quite unpredictable, which is maybe even more important than that they're not zero.
 This was unfortunate, but it reflected a very strong sort of cultural tendency, if you could call it a culture, in the early days of Bitcoin to think of it as a potential replacement for our normal consumer payment system.
-People often talk about cash and digital cash, but what I think a lot of people had in their minds around that time, 2012, 13, 14, is they had in their mind, "Oh, I'm going to go to my local bar, my local pub, and I'm going to infuse them; they're going to accept Bitcoin; they'll be, you know, people made these videos of QR code, exactly what we're going to do today, but they did this eight years ago or whatever," and they were, "Oh, look, the bar is; there was a pub somewhere in London or somewhere in England anyway, accepting Bitcoin this," and it was all, you know, to use the language of the kids nowadays, it was all a bit cringe.
+People often talk about cash and digital cash, but what I think a lot of people had in their minds around that time, 2012, 13, 14, is they had in their mind, "Oh, I'm going to go to my local bar, my local pub, and I'm going to infuse them; they're going to accept Bitcoin; they'll be, you know, people made these videos of QR code, exactly what we're going to do today, but they did this eight years ago or whatever," and they were, "Oh, look, the bar is; there was a pub somewhere in London or somewhere in England anyway, accepting Bitcoin this," and it was all, to use the language of the kids nowadays, it was all a bit cringe.
 It was a bit cringeworthy because, to me anyway, that's not how it's actually going to work, and why do I say that?
 Because I always called it, well, Bitcoin is SWIFT, not Starbucks points.
 What I meant by that, if you don't know SWIFT, is that SWIFT is international wire transfers.
@@ -81,8 +81,7 @@ What we'll see in the coming years is that something else was going on in the ba
 This is January 2016, roughly.
 We have these two guys, Taj Dreiger and Joseph Poon, writing a paper called the Lightning Network Paper.
 Initially, it was something just in the back quarters because it was just technical people, a few developers here and there, and so on, researchers who were even remotely interested in this.
-This paper was strange.
-It was written in a strange way.
+This paper was written in a strange way.
 I don't know how many people...
 hands up if you have actually read the Lightning Network Paper, more than a few lines.
 Well done! You're obviously very masochistic people, because that paper is not an easy read.
@@ -756,7 +755,7 @@ It's fixed there until we decide to close the channel.
 Channels are opened for a certain amount of money, and then we have that amount of money in that channel.
 
 Think of it: there are lots of channels with different amounts—one with $50, one with $500, one with $100—all over the place, and we're trying to move money around through these channels.
-Sorry, I didn't explain all this, because I didn't want to get too much in the weeds, you know?
+Sorry, I didn't explain all this, because I didn't want to get too much in the weeds.
 Liquidity is something we're talking about, how much money is available to be moved in certain directions through the network.
 Is that helping?
 
