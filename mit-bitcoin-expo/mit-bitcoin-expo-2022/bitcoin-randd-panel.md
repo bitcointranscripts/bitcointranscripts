@@ -2,17 +2,14 @@
 title: "Bitcoin R&D Panel"
 transcript_by: WeAreAllHodlonaut via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=UIkvHzPIgRM
-tags: ["Research","Covenants","Package Relay","Smart Contracts"]
+tags: ["Research","Covenants","Smart Contracts"]
 speakers: ["Jeremy Rubin","Gloria Zhao","Andrew Poelstra"]
 categories: ["conference"]
-date: 2022-07-07
+date: 2022-05-07
 ---
 
 Ayush: 00:00:07
 
-But yeah, hopefully everyone had a nice lunch.
-The Panera sandwiches really hit the spot most of the time.
-So the turkey sandwich was awesome.
 My name is Ayush Khandelwal.
 I am a software engineer at Google.
 I run a tech crypto-focused podcast on the side.
@@ -41,7 +38,6 @@ And I'm sponsored by Brink.
 
 Andrew: 00:01:22
 
-Cool.
 Hi, I'm Andrew Polstra.
 I went to the University of Texas at Austin since we're doing this.
 I'm the Director of Research at Blockstream and I've been involved in a number of different privacy and scalability technologies over the last few years.
@@ -68,7 +64,6 @@ I think the self-sovereignty and scalability will be able to do probably on that
 
 Ayush: 00:03:10
 
-Yeah.
 Do you have anything to add to this, Gloria?
 
 Gloria: 00:03:14
@@ -102,7 +97,7 @@ Andrew: 00:04:44
 
 I think it's probably a bad trade-off.
 It's a complicated thing, right?
-So if you have your coins on like Coinbase or something like that, on the one hand, you know, you're trusting Coinbase to not lose them, to not get hacked, to not have a database failure that all their backups fail or something catastrophic like that.
+So if you have your coins on like Coinbase or something like that, on the one hand, you're trusting Coinbase to not lose them, to not get hacked, to not have a database failure that all their backups fail or something catastrophic like that.
 You're implicitly trusting their software developers and their security team and stuff like that to make sure that your keys are being managed securely.
 And if you're reasonably technical and kind of know what you're doing, probably you could do a better job.
 Especially if you're not moving your coins very frequently, if you had them stored on a crypto steel that was on ice somewhere, or in a volcano, or something like that.
@@ -111,10 +106,6 @@ It's hard for me to say that unilaterally.
 Like I wish we were in a world where I could say like, yeah, Coinbase is horrible, don't ever store your coins there.
 But now I have to say that in a more qualified way.
 Because self-custody is also difficult.
-
-Ayush: 00:05:46
-
-Yeah.
 
 Jeremy: 00:05:48
 
@@ -147,7 +138,6 @@ That for a lot of people I think would make them more comfortable.
 
 Ayush: 00:08:09
 
-Yeah.
 And we're also seeing this.
 I actually read an article yesterday.
 Facebook, Apple, Microsoft, and Google are working together with the Fido Association to have these passwordless login mechanisms.
@@ -161,7 +151,7 @@ Andrew: 00:08:46
 So I don't like biometrics, because they have bad incentive structures.
 Or if somebody wants to steal them, they're physically attached to your body and maybe they'll try to detach them or something.
 And they're also difficult to replace and all that good stuff.
-But Fido too is not only like biometrics and stuff, there's also like Yiba keys and stuff.
+But Fido too is not only like biometrics and stuff, there's also like Yubikeys and stuff.
 I've got one in my pocket, probably a lot of us have something like that.
 The issue with those is that they're, by design they're impossible to clone, right?
 So there's a risk that you physically use them.
@@ -176,10 +166,6 @@ And if you're a friend of somebody, you give them access to print out a encrypte
 And so you get a durable storage that somebody else has.
 And then the main thing would be the social recovery aspect of like, hey, can you please give me the thing that I printed out because my personal access got destroyed.
 And that might be a direction where things go, where it's a little bit more about the who you know side of people who you might trust to help you recover, rather than your own individual thing where you can get compromised on.
-
-Andrew: 00:10:25
-
-Yeah.
 
 Ayush: 00:10:28
 
@@ -199,7 +185,7 @@ Human-wise, I'd say we're a lot more decentralized than say, open source project
 So actually a lot of people don't know this, but I think more than 50% of what Google works on in terms of code is actually open source.
 But it's like, oh, we're in this open source alliance, and technically it's under this open source license, but 99.999% of the commits are written by Google and some other big software companies.
 It's just when something breaks upstream that they get a PR from someone else.
-Whereas Bitcoin is, like actually I think all of the maintainers except for two of them are like funded by a different company and those are all through donations, which is a very different model from, you know, salaried employees at Google who are responsible for reviewing each other's PRs. So there is, I think, decision making-wise, it's a bit more decentralized.
+Whereas Bitcoin is, like actually I think all of the maintainers except for two of them are like funded by a different company and those are all through donations, which is a very different model from, salaried employees at Google who are responsible for reviewing each other's PRs. So there is, I think, decision making-wise, it's a bit more decentralized.
 But other than that, it's literally the same thing.
 You open a PR, it gets reviewed, it gets merged.
 
@@ -249,13 +235,13 @@ If you don't want to make more money, you're free not to.
 Gloria: 00:14:47
 
 I think one thing that Andrew touched on that I kind of want to throw out there is I think consent, there's like an overly over-represented attention to consensus changes when like that's maybe historically has been major upgrades to Bitcoin, but there's so many ways to make Bitcoin better without requiring a consensus change.
-Like Peter Wille is famous for authoring many of the past soft forks, or most recent ones at least, but I often throw out the example that I would say one of the biggest scalability things that he did for Bitcoin was Ultra Prune, which is instead of looking at history using the blocks and looking at those transactions, just keep a UTXO set and that can represent your chain state in just a few gigabytes.
+Like Pieter Wuille is famous for authoring many of the past soft forks, or most recent ones at least, but I often throw out the example that I would say one of the biggest scalability things that he did for Bitcoin was Ultra Prune, which is instead of looking at history using the blocks and looking at those transactions, just keep a UTXO set and that can represent your chain state in just a few gigabytes.
 And that allows you to prune blocks and whatnot.
 And I would say that that is one of the biggest improvements but that didn't require a soft fork.
 That's in fact, I think most nodes would not, I wasn't there when it was deployed, but there would be no noticeable difference in terms of node-to-node interactions.
 Consensus changes obviously require community consensus.
 P2P protocol changes, you probably want a BIP so that people can implement that as well.
-But above, that's just the tip of the iceberg of like all of the things that you could do to make Bitcoin better without involving everyone and the miners and the users to like, you know, come together, because that's very costly.
+But above, that's just the tip of the iceberg of like all of the things that you could do to make Bitcoin better without involving everyone and the miners and the users to like, come together, because that's very costly.
 
 Ayush: 00:16:29
 
@@ -274,14 +260,14 @@ One of the ones that I like to talk about is wallet vaults.
 So adding a little bit more in the name of protection when you go to pull your funds out of cold storage so that you're sure that they're ending up in the right space and have more ability to prevent theft or hackers or whatever.
 So, couple basic things.
 It's not like Ethereum and you're gonna see AMMs and Uniswap and stuff if you want that, it's in the other conference hall.
-But sort of as a part of that, because that is a consensus upgrade, there's been quite a process of trying to educate and inform and get the word out and also seek a little bit more detailed review of the impact that this might have on you know how Bitcoin operates and I think Gloria is absolutely correct that when it comes to consensus upgrades they actually because they're a little bit more dangerous, they end up being significantly safer because they get so much attention compared to your average change to Bitcoin, which kind of gets review but sails through with a couple of the experts who understand that area, doing it, and it goes out and releases and people don't make a big global fuss of something like ultra prune but there are impacts of like if all the nodes on the network are running pruned like how long could we do a rework in Bitcoin does that have an impact on that it's worth kind of analyzing some of those things and we take you know care and consideration and not doing something obviously wrong.
+But sort of as a part of that, because that is a consensus upgrade, there's been quite a process of trying to educate and inform and get the word out and also seek a little bit more detailed review of the impact that this might have on how Bitcoin operates and I think Gloria is absolutely correct that when it comes to consensus upgrades they actually because they're a little bit more dangerous, they end up being significantly safer because they get so much attention compared to your average change to Bitcoin, which kind of gets review but sails through with a couple of the experts who understand that area, doing it, and it goes out and releases and people don't make a big global fuss of something like ultra prune but there are impacts of like if all the nodes on the network are running pruned like how long could we do a rework in Bitcoin does that have an impact on that it's worth kind of analyzing some of those things and we take care and consideration and not doing something obviously wrong.
 But in any part of the code that changes Bitcoin, the entire behavior of the network can change pretty radically.
 For the specific process that I've been in, in BIP-119, recently there's been a little bit of controversy because I put out a blog post which said, if the network wanted to adopt this, here is a potential release schedule upon which it would be possible to get consensus and activate if it were desirable to the community.
 Here's how if users didn't want that, they could resist that change.
 And also that if the community didn't want that, it's like fine, it just means that it wouldn't be, it wouldn't happen this year.
 It would maybe happen next year or in years future.
 Maybe there would be a bigger research program, but if people want it this year, then this is sort of the only way that it could happen.
-And in response to that, that was a little bit interpreted as like, you know, Jeremy believes he's the dictator of what happens in Bitcoin, which was not really related to anything I actually put out into the universe.
+And in response to that, that was a little bit interpreted as like, Jeremy believes he's the dictator of what happens in Bitcoin, which was not really related to anything I actually put out into the universe.
 But it's kind of like a game of telephone to get consensus with people, and people interpret things and pass it along and pass it along, and the message gets sort of distorted.
 
 Ayush: 00:19:48
@@ -292,7 +278,7 @@ Is this something which will fit in with Sapio, which you've developed?
 Jeremy: 00:20:00
 
 Yeah, so one of the things that anybody who's looked at in other ecosystems is usually these ecosystems have a programming language for developing a smart contract in, and then they have a base layer that's actually executing that.
-And Bitcoin is maybe a little bit unique because while there's Bitcoin script, it's not really a, and there's now, you know, mini script and policy, which are a little bit higher level, there's not really a general language for, let's say, like implementing something like the Lightning Network, or implementing something like a wallet vault until Sapio.
+And Bitcoin is maybe a little bit unique because while there's Bitcoin script, and there's now miniscript and policy, which are a little bit higher level, there's not really a general language for, let's say, like implementing something like the Lightning Network, or implementing something like a wallet vault until Sapio.
 And Sapio is kind of trying to be a general purpose tooling for developing any Bitcoin smart contract and having automatic interfaces and integrations into other services.
 And so check template verify is something that you could use within that for writing smart contracts, but it would be optional or it could integrate with other smart contracting primitives as well.
 So that's a little bit of what that is.
@@ -325,7 +311,7 @@ Gloria: 00:24:03
 
 Can I add something?
 I have a pet peeve about how people refer to smart contracts because often, as Andrew kind of hinted at, the difference is what the dev experiences.
-So for example, like, actually, Ishana Misra wrote a really good article, I think, titled Bitcoin has always had smart contracts, and then a bit about scripts.
+So for example, Ishaana Misra wrote a really good article, I think, titled Bitcoin has always had smart contracts, and then a bit about scripts.
 And literally it is like, you can express a lot of the things that other blockchains might call smart contracts, it's just that people find opcodes of script hard to deal with.
 And it's just a matter of how many layers of abstraction can you build on top so that you end up with the exact same result.
 Even if it's like, oh, an oracle needs to attest to this and then provide the hash pre-image, like a lot of people would consider that smart contracting because now you have a lot more expressiveness with like what you can bake into spending conditions.
@@ -363,7 +349,6 @@ And then we've not really seen the evolution of decentralized poker on Bitcoin.
 
 Gloria: 00:29:05
 
-I think there might be some, sorry, sorry.
 I just wanted to attach, I think this is one of the main things that I love about Bitcoin as opposed to all other software engineering, where it's like, okay, here's what we want our security model to be, and we're not gonna budge on any of these security assumptions, and we'll build bottom up, and over time, we'll build whatever the features are.
 Because you're not gonna go, and I like that, whereas other places, it's like you're not gonna go to a VC pitch meeting and be like, we need five years to strengthen our security model, and then we can start building features.
 Like that's just not how the world works, right?
@@ -412,7 +397,6 @@ It's kind of you can't prevent people, it would just sort of if you had the righ
 
 Andrew: 00:33:15
 
-Yeah.
 And I would build on something Gloria was hinting at earlier about simplicity or taproot, which is a simpler model of simplicity in some sense, which is if you want Bitcoin to just do transactions and stuff, one way to try to achieve that is by just not having functionality that would otherwise be usable.
 And that's sort of historically what happened.
 I don't think on purpose, really.
@@ -455,7 +439,6 @@ Optimizing the mempool is a big part of the scalability problem, so when, if and
 
 Jeremy: 00:37:34
 
-Yeah.
 So I guess as a first sort of like recap, like the mempool is, in my view, like the most important and impressive data structure in Bitcoin.
 It's kind of like this central brain of everything that goes on, and people are like, oh, isn't it like the blockchain?
 It's like, well, how do you figure what should go into the blockchain?
@@ -464,12 +447,12 @@ Aren't those, well, actually the mempool's kind of involved there.
 How do you decide when to do a transaction?
 Well, you gotta look at the mempool.
 If Bitcoin, how is it gonna pay for blocks in the future when subsidy goes away?
-Well, the mempool, everything always points back to Bitcoin is an agent-driven process where the mempool is our you know is our brain for that thing and so the mempools main objective is sort of twofold right now and the first is to be able to tell miners what to mine in a way that maximizes profit.
+Well, the mempool, everything always points back to Bitcoin is an agent-driven process where the mempool is our brain for that thing and so the mempools main objective is sort of twofold right now and the first is to be able to tell miners what to mine in a way that maximizes profit.
 And the other function is to make relaying transactions sort of efficient, which is also kind of helping miners who want to put blocks out into the world.
 Part of what we're seeing a larger evolution towards as people are doing more and more smart contracts is the mempool as an API to program against for people making things that they wanna be able to guarantee happen on some timeline.
 So an example, if you have a lightning channel that's open and your counterparty goes away, you might need to close it within an amount of time.
 And what you have to do is make a rational argument to the mempool that says, hey, you'll maximize your revenue by closing my lightning channel appropriately.
-Now, it turns out that a general reasoning introducing intelligence is a complicated program to write, especially one that we're trying to have be largely, you know, rational.
+Now, it turns out that a general reasoning introducing intelligence is a complicated program to write, especially one that we're trying to have be largely rational.
 And so what you end up getting is circumstances where the mempool can be committed to a belief, let's say, and that belief would be that this transaction looks like we're gonna get a lot of money for it, so we're not gonna consider anything else that might challenge that transaction or replace it or conflict with it.
 And so that can get you into situations where if you're, let's say, doing a lightning transaction, your transaction might end up being stuck because somebody else has frozen it and you're not able to make an argument that the mempool's willing to listen to.
 And that can get you into a lot of trouble as you're depending on it.
@@ -521,7 +504,6 @@ Yeah, I'm really glad I picked a project that doesn't conflict with anyone's.
 
 Ayush: 00:44:49
 
-Yeah.
 So we are coming up on time, but it's been an absolute honor having you guys here.
 I think we're all leaving this room smarter than we came in.
 So that's been awesome.
