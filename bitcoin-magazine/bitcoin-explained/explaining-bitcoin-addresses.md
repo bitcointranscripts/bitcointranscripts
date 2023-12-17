@@ -9,6 +9,7 @@ date: 2021-02-19
 ---
 
 
+
 Aaron Van Wirdum: 00:01:45
 
 live from Utrecht this is the Van Wirdum Sjorsnado hello hey Sjors so the other day I wants to send Bitcoin to someone, but I didn't. Why? Shouldn't you hodl? I hodl all I can, but sometimes I need to eat, or I need to pay my rent, or I need to buy a new plant for my living room.
@@ -55,28 +56,28 @@ First of all, so I made a stupid joke about IP addresses, but this was actually 
 
 Sjors Provoost: 00:02:38
 
-Yeah, so in the initial version of Bitcoin, Satoshi announced it on the mailing list and said, well if you want to send somebody some coins, you just enter their IP address and then it'll exchange, I guess, an address to send it to.
+so in the initial version of Bitcoin, Satoshi announced it on the mailing list and said, well if you want to send somebody some coins, you just enter their IP address and then it'll exchange, I guess, an address to send it to.
 
 Aaron Van Wirdum: 00:02:51
 
-Yeah, so it was actually possible to send Bitcoins to people's IP addresses. I don't think that's possible anymore. That's not in any of the code.
+so it was actually possible to send Bitcoins to people's IP addresses. I don't think that's possible anymore. That's not in any of the code.
 
 Sjors Provoost: 00:02:58
 
-I don't think so either. I haven't seen it. Yeah, because the other way is that you just get an address to send to, and then it goes to the blockchain. And because the other side is checking the blockchain also, it'll show up.
+I don't think so either. I haven't seen it. because the other way is that you just get an address to send to, and then it goes to the blockchain. And because the other side is checking the blockchain also, it'll show up.
 
 Aaron Van Wirdum: 00:03:10
 
-Yeah. Well, that's actually not how it works at all. But we're going to explain it now, I think. Yep. Let's go. Okay. First of all, Sjors, when you send Bitcoin to someone, what do you actually do? What happens?
+Well, that's actually not how it works at all. But we're going to explain it now, I think. Let's go. Okay. First of all, Sjors, when you send Bitcoin to someone, what do you actually do? What happens?
 
 Sjors Provoost: 00:03:22
 
-Well, you're creating a transaction that has a bunch of inputs, and it has an output. And that output describes who can spend it. Yeah. Right? So you could say anybody can spend this, That's not a good idea.
+Well, you're creating a transaction that has a bunch of inputs, and it has an output. And that output describes who can spend it. So you could say anybody can spend this, That's not a good idea.
 We talked about that in an earlier episode. So what you do is you put a constraint on it. And the very first version of that constraint was he or she who has this public key can spend the coins. So that's called pay to public key.
 
 Aaron Van Wirdum: 00:03:49
 
-Yes, exactly. So, and then we just mentioned this IP example. So what actually happened was you would connect to someone's IP. I don't know the nitty-gritty details, but in general, you would connect to someone's IP and you'd ask for a public public key and that person would give you the public key and I think that's what you send the bitcoins to.
+then we just mentioned this IP example. So what actually happened was you would connect to someone's IP. I don't know the nitty-gritty details, but in general, you would connect to someone's IP and you'd ask for a public public key and that person would give you the public key and I think that's what you send the bitcoins to.
 
 Sjors Provoost: 00:04:08
 
@@ -84,7 +85,7 @@ Yeah I believe so too but I haven't seen that code in action so we could be slig
 
 Aaron Van Wirdum: 00:04:14
 
- Yeah is there anyone who's ever used this way of paying someone pay to IP address?
+is there anyone who's ever used this way of paying someone pay to IP address?
 
 Sjors Provoost: 00:04:23
 
@@ -96,13 +97,13 @@ It was technically possible. If anyone listening has ever actually used this We'
 
 Sjors Provoost: 00:04:31
 
-I mean, it makes sense to think that way from the, in the first version of Bitcoin, right? Because before that, you had all these peer-to-peer applications and they were generally very direct, so with Napster and all these things, or Kazaa, I don't know which one, you would connect to other people and you would download things from them.
+I mean, it makes sense to think that way from the, in the first version of Bitcoin, Because before that, you had all these peer-to-peer applications and they were generally very direct, so with Napster and all these things, or Kazaa, I don't know which one, you would connect to other people and you would download things from them.
 
 And with Bitcoin, you connect to other peers, but nowadays you just connect to random peers. But perhaps in the beginning, the idea might've been, okay, you connect to peers you know, and so then you might as well do transactions with them. But right now you don't really do transactions with the peers you're directly connected to. At least not in Bitcoin on-chain.
 
 Aaron Van Wirdum: 00:05:05
 
-Yeah. Well, anyway, so that's one way of paying someone to a public key, is you'd connect to their IP address and you'd get their public key. The other way is if you mine Bitcoins. So if you're a miner, then you're actually sending the block rewards to your public key. Is that still the case? It used to be the case in the beginning, at least.
+Yeah. Well, anyway, so that's one way of paying someone to a public key, is you'd connect to their IP address and you'd get their public key. The other way is if you mine Bitcoins. So if you're a miner, then you're actually sending the block rewards to your public key. Is that still the case? It used to be the case in the beginning.
 
 Sjors Provoost: 00:05:24
 
@@ -110,29 +111,31 @@ Well, in the beginning, Bitcoin had a piece of mining software built into the so
 
 Aaron Van Wirdum: 00:05:35
 
-Well, you just have to press a button, but yeah.
+Well, you just have to press a button.
 
 Sjors Provoost: 00:05:37
 
-Yeah, I guess. And then later on, you had mining pools and it all became more professional. So the way they would pay out might be very different. Probably, you know, might go to a multi-sig address from which it's paid back to the individual pool participants, or it could be paid directly to the pool participants, although that's a bit inefficient because you need a long list of addresses in the Coinbase, but I've seen huge Coinbase transactions, so probably people were doing that.
+And then later on, you had mining pools and it all became more professional. So the way they would pay out might be very different. Probably, you know, might go to a multi-sig address from which it's paid back to the individual pool participants, or it could be paid directly to the pool participants, although that's a bit inefficient because you need a long list of addresses in the Coinbase, but I've seen huge Coinbase transactions, so probably people were doing that.
 
 Aaron Van Wirdum: 00:06:06
 
 Right. Well, anyway, so the point I was making was this pay to public key way of paying someone. I learned this while doing a little bit of research for the show. That was only ever really used for pay to IP address and for the minor the block reward. It wasn't actually used for anything other than that. 
 
-What was used other than that was pay to public key hash, right? So you're not sending money to a public key, but you're sending money to the hash of that public key. Yeah. And this is where addresses come in. 
+What was used other than that was pay to public key hash, So you're not sending money to a public key, but you're sending money to the hash of that public key. And this is where addresses come in. 
 
-Yeah, Because this type of payment actually used addresses for the first time. Not for the first time, this was always there. Also something I learned while doing a little bit of research. This was there since day one. There were Bitcoin addresses since day one, but they were only there for pay to public key hash.
+Because this type of payment actually used addresses for the first time. Not for the first time, this was always there. Also something I learned while doing a little bit of research. This was there since day one. There were Bitcoin addresses since day one, but they were only there for pay to public key hash.
 
 Sjors Provoost: 00:06:58
 
-Right. So, basically, so the script on the Bitcoin blockchain would in that case say, okay, the person who can spend this must have the public key belonging to this hash. 
+So the script on the Bitcoin blockchain would in that case say, okay, the person who can spend this must have the public key belonging to this hash. 
+
 So the nice thing about that is that you're not saying which public key you have, or at least at the time it was thought that maybe that was safer against quantum attacks.
+
 But the other benefit is that it's a little bit shorter, so it saves a bit on block space, although, of course, that wasn't an issue back then. So yeah, you pay to the public key hash.
 
 Aaron Van Wirdum: 00:07:27
 
-Yeah, I guess in a way, it's slightly more private as well, right? Because you're only revealing your public key when you're paying? No, that doesn't make sense.
+I guess in a way, it's slightly more private as well, right? Because you're only revealing your public key when you're paying? No, that doesn't make sense.
 
 Sjors Provoost: 00:07:35
 
@@ -168,7 +171,7 @@ Should we start with bass 10?
 
 Sjors Provoost: 00:08:53
 
-Yeah, so I mean there's two things. 
+So I mean there's two things. 
 
 Aaron Van Wirdum: 00:08:56
 
@@ -190,18 +193,16 @@ Aaron Van Wirdum: 00:09:48
 
 I totally agree, I just want to make it clear that we're not actually using fingers most of the time.
 
-Sjors Provoost: 00:09:53
-
-No, and so the...
 
 Aaron Van Wirdum: 00:09:54
 
 Okay, so we have 10 symbols, so that means that once you get by the 11th number, at that point you're going to have to reuse symbols you've already used, so you're now going to use combinations.
+
 So in our case, that would be, well it's going to get confusing because the first number is a zero, so then the 11th number is the one and the zero.
 
 Sjors Provoost: 00:10:13
 
-Yeah exactly, and there have been different bases in use, right? So base 360 I believe was used by Babylonians, or maybe base 60. And then for computers we tend to use base 2 internally, because chips are either on or off, so it's 0 or 1, so a long series of 0s and 1s. And you can express any number of that now in order to read machine code typically you would use hexadecimal which is base 16 so that is 0 to 9 and then a to F mm-hmm yeah and right and so base58 is basically this 58 possible characters to express something with.
+Exactly, and there have been different bases in use, right? So base 360 I believe was used by Babylonians, or maybe base 60. And then for computers we tend to use base 2 internally, because chips are either on or off, so it's 0 or 1, so a long series of 0s and 1s. And you can express any number of that now in order to read machine code typically you would use hexadecimal which is base 16 so that is 0 to 9 and then a to F and right and so base58 is basically this 58 possible characters to express something with.
 
 Aaron Van Wirdum: 00:10:51
 
@@ -219,7 +220,7 @@ If you take a public key and you write it as hexadecimal it's a rather long thin
 
 Aaron Van Wirdum: 00:12:05
 
-Yeah, okay. Just to restate that briefly. So base 2 is just you're just using two symbols, which is 1 and 0. And base 10 is what we use most of the time. It's 0, 1, 2, 3, 4, up until 9.
+Just to restate that briefly. So base 2 is just you're just using two symbols, which is 1 and 0. And base 10 is what we use most of the time. It's 0, 1, 2, 3, 4, up until 9.
 
 Then you have hexadecimal, which uses 0 through 9, plus A, B, C, D, E, F. And then what we're talking about here is base58, which uses 58 different symbols, which are 0 through 9, and then most of the alphabet in both capital letters and undercase, right?
 
@@ -229,7 +230,7 @@ Yeah, I think it's lowercase and uppercase, and then most of the numbers, but th
 
 Aaron Van Wirdum: 00:12:53
 
-Yeah, I think for example the capital "I" and the lowercase "i" are both not in there because they look too similar.
+I think for example the capital "I" and the lowercase "l" are both not in there because they look too similar.
 
 Sjors Provoost: 00:13:01
 
@@ -241,7 +242,7 @@ So I think we finally explained what base58 means.
 
 Sjors Provoost: 00:13:11
 
-Yeah, and just as a side step, I talked about email earlier, that's base 64. That is the same, but it also has some characters like underscore and plus and equals and that was mostly used for email attachments and I guess they didn't want to use all 256 characters either because they didn't want the email to start beeping but they did want to squeeze a lot of information into the attachment.
+ And just as a side step, I talked about email earlier, that's base 64. That is the same, but it also has some characters like underscore and plus and equals and that was mostly used for email attachments and I guess they didn't want to use all 256 characters either because they didn't want the email to start beeping but they did want to squeeze a lot of information into the attachment.
 
 Aaron Van Wirdum: 00:13:32
 
@@ -249,7 +250,7 @@ Okay, that's base58. Now, why are we talking about this? What is an address?
 
 Sjors Provoost: 00:13:37
 
-Yeah, so the address again is the actually the value 0, I believe, but that's expressed as a 1 because that's the first digit in this character set.
+So the address again is the actually the value 0, I believe, but that's expressed as a 1 because that's the first digit in this character set.
 
 Aaron Van Wirdum: 00:13:46
 
@@ -280,7 +281,7 @@ Sjors, is base58 used for anything else in Bitcoin?
 
 Sjors Provoost: 00:15:01
 
-Yeah you can also use it to communicate a private key and then that case your version number is well it's written as 5 But it actually represents I think 128
+You can also use it to communicate a private key and then that case your version number is well it's written as 5 But it actually represents I think 128
 
 Aaron Van Wirdum: 00:15:11
 
@@ -296,7 +297,7 @@ So that's why all private keys start with a 5 or at least used to start with a f
 
 Sjors Provoost: 00:15:19
 
-Yeah so in the old days you had paper wallets that you could print you know and if you generate them actually securely without a backdoor then on one side of the piece of paper you would have something starting with a five and on the other other side of the paper you would have something started with a one and then it would say like show this to other people and don't show this to other people.
+ In the old days you had paper wallets that you could print you know and if you generate them actually securely without a backdoor then on one side of the piece of paper you would have something starting with a five and on the other other side of the paper you would have something started with a one and then it would say like show this to other people and don't show this to other people.
 
 Aaron Van Wirdum: 00:15:36
 
@@ -352,7 +353,7 @@ So it's just a convention and once again meaning on the blockchain itself
 
 Aaron Van Wirdum: 00:17:13
 
-once again all this is is a version number plus this hash represented in base58. Is that all it is? Yeah. This is all so much simpler than I once thought, Sjors.
+once again all this is is a version number plus this hash represented in base58. Is that all it is? This is all so much simpler than I once thought, Sjors.
 
 Sjors Provoost: 00:17:26
 
@@ -368,7 +369,7 @@ otherwise probably that would have been version 0 and then all normal addresses 
 
 Aaron Van Wirdum: 00:17:48
 
-I think for anyone who already knew this which is probably a good chunk of people this is a very boring episode so far but I think it's gonna get better because oh my god because Sjors we now have a new type of address since a year or two, which starts with BC1.
+I think for anyone who already knew this which is probably a good chunk of people this is a very boring episode so far but I think it's gonna get better because Sjors we now have a new type of address since a year or two, which starts with BC1.
 
 Sjors Provoost: 00:18:09
 
@@ -376,19 +377,19 @@ BC1Q even, usually.
 
 Aaron Van Wirdum: 00:18:11
 
-Yeah, usually, but not always. And we're getting into that, I think. Yep. So what is this all about?
+Yeah, usually, but not always. And we're getting into that, I think. So what is this all about?
 
 Sjors Provoost: 00:18:16
 
-Well, that is BEC32 or however you want to pronounce it. And it's been used since SegWit, basically. And again, it is something that doesn't exist on the blockchain, so it's just a convention that wallets can use. This is a, as the name suggests, a base 32 system. Which means you have almost all the letters, and almost all the numbers, minus some ambiguous characters that you don't want to have, because they look too much like numbers or letters.
+Well, that is BECH32 or however you want to pronounce it. And it's been used since SegWit, basically. And again, it is something that doesn't exist on the blockchain, so it's just a convention that wallets can use. This is a, as the name suggests, a base 32 system. Which means you have almost all the letters, and almost all the numbers, minus some ambiguous characters that you don't want to have, because they look too much like numbers or letters.
 
 Aaron Van Wirdum: 00:18:46
 
-Yeah, and I think one of the big differences compared to Base58 is that this time there are no longer uppercase and lowercase letters. There's just any, every letter is only in there once.
+I think one of the big differences compared to Base58 is that this time there are no longer uppercase and lowercase letters. There's just any, every letter is only in there once.
 
 Sjors Provoost: 00:18:58
 
-Exactly. The other difference is that
+Exactly. 
 
 Aaron Van Wirdum: 00:18:59
 
@@ -396,7 +397,7 @@ I'll mention one benefit of that, which is that if you want to read an address o
 
 Sjors Provoost: 00:19:11
 
-Yeah and the other difference is, I didn't check with bass 58, but basically it doesn't start with zero or anything like that. It looks pretty arbitrary. So the value zero is written as a Q, the value one is written as a P, the value two is written as a Z, etc.
+ The other difference is, I didn't check with bass 58, but basically it doesn't start with zero or anything like that. It looks pretty arbitrary. So the value zero is written as a Q, the value one is written as a P, the value two is written as a Z, etc.
 
 Aaron Van Wirdum: 00:19:27
 
@@ -416,15 +417,15 @@ It is, if there is a human interpretation that depends on it, then you don't wan
 
 Aaron Van Wirdum: 00:20:02
 
-Okay, now BEC32.
+Okay, now BECH32.
 
 Sjors Provoost: 00:20:05
 
-Yeah, so there's a set of 32 characters, and that means you're... But it's doing the same thing, right? It's again saying, okay, here's a pay to public key... Yeah, a pay to public key address. In this case, a pay to witness public key because it's using segwit but it's the same idea public key hash so it says hello and then followed by the hash of the public key
+Yeah, so there's a set of 32 characters, and But it's doing the same thing, right? It's again saying, okay, here's a pay to public key, a pay to public key address. In this case, a pay to witness public key because it's using segwit but it's the same idea public key hash so it says hello and then followed by the hash of the public key
 
 Aaron Van Wirdum: 00:20:30
 
-okay so BEC32 addresses what are we looking at exactly Because what we're seeing for each address, it starts with BC1 and then usually a Q and then a whole bunch of other symbols. So what does this all mean?
+So BECH32 addresses what are we looking at exactly Because what we're seeing for each address, it starts with BC1 and then usually a Q and then a whole bunch of other symbols. So what does this all mean?
 
 Sjors Provoost: 00:20:43
 
@@ -432,7 +433,7 @@ That's right, so there is something called the human readable part. And that doe
 
 Aaron Van Wirdum: 00:20:58
 
-Yeah, so if Litecoin would want to use these kinds of addresses. Maybe they do actually, I don't know.
+So if Litecoin would want to use these kinds of addresses. Maybe they do actually, I don't know.
 
 Sjors Provoost: 00:21:04
 
@@ -444,7 +445,7 @@ Exactly. So these first two letters just refer to which currency is this about? 
 
 Sjors Provoost: 00:21:12
 
-Yeah, and it can be, I think, a fairly arbitrary number of letters. The idea is that it's separated by a one.
+ And it can be, I think, a fairly arbitrary number of letters. The idea is that it's separated by a one.
 
 Aaron Van Wirdum: 00:21:17
 
@@ -452,11 +453,8 @@ Oh, it could be more than two letters as well?
 
 Sjors Provoost: 00:21:19
 
-Yeah, I think initially Bitcoin Cash was using a much longer introduction.
+I think initially Bitcoin Cash was using a much longer introduction.
 
-Aaron Van Wirdum: 00:21:23
-
-I see, okay.
 
 Sjors Provoost: 00:21:24
 
@@ -464,11 +462,11 @@ So that's pretty arbitrary. Obviously, you want to conserve space, so BC is nice
 
 Aaron Van Wirdum: 00:21:36
 
-One just means... Skip this. The human readable part is over, now the fun stuff starts. Now the meat and potatoes.
+One just means, The human readable part is over, now the fun stuff starts.
 
 Sjors Provoost: 00:21:43
 
-Right. And the fun stuff, it's a little bit easier actually than with Base58, because there's a convention that says if it's... Well, the convention is it starts with the SegWit version, so the first version of SegWit is 0, which in BEC32 is written as Q.
+it's a little bit easier actually than with Base58, because there's a convention that says if it's... Well, the convention is it starts with the SegWit version, so the first version of SegWit is 0, which in BECH32 is written as Q.
 
 And then it's either followed by 20 bytes or 32 bytes. And that is, then it means either it's the public key hash, or it is the script hash. And they're different lengths now because SegWit uses the SHA-256 hash of the script, rather than the RIPEMD-160 hash of the script. So in base58 the script hash is the same length as the public key hash but in segwit they're not the same length. 
 
@@ -476,7 +474,7 @@ So Simply by looking at how long the address is, you know whether you're paying 
 
 Aaron Van Wirdum: 00:22:36
 
-Right. So to reiterate the first two letters, B C, that just means this is about Bitcoin. Then the one says, okay, that was the part telling you which currency this is. Now pay attention where you're actually going to pay money to. Then the q means which version is going to follow, which version of address. Yep. And then what comes after that?
+So to reiterate the first two letters, B C, that just means this is about Bitcoin. Then the one says, okay, that was the part telling you which currency this is. Now pay attention where you're actually going to pay money to. Then the q means which version is going to follow, which version of address. And then what comes after that?
 
 Sjors Provoost: 00:22:58
 
@@ -484,7 +482,7 @@ Which version of segwit.
 
 Aaron Van Wirdum: 00:22:59
 
-But yeah, what comes after it is actually the BEC32 representation of this hash, which is either paid to public key hash or pay to script hash.
+But yeah, what comes after it is actually the BECH32 representation of this hash, which is either paid to public key hash or pay to script hash.
 
 Sjors Provoost: 00:23:08
 
@@ -492,7 +490,7 @@ Yeah exactly or pay to witness public key hash or pay to witness script hash.
 
 Aaron Van Wirdum: 00:23:12
 
-Sjors is there anything else cool about BEC32?
+Sjors is there anything else cool about BECH32?
 
 Sjors Provoost: 00:23:16
 
@@ -522,7 +520,7 @@ Sjors Provoost: 00:23:55
 
 Well, yeah, you'd have to have the unlucky typo. I don't know if the odds are 1 in 10,000 or 100,000 or something. But there's a lot of Bitcoin users. 
 
-But in BEC32 it's actually better because it will not just tell you that there's a typo, it'll tell you where the typo is. And that's done differently. So where we talked about in the Base58 system, there is a checksum which just takes all the bytes, basically takes all the bytes from the address and then hashes it.
+But in BECH32 it's actually better because it will not just tell you that there's a typo, it'll tell you where the typo is. And that's done differently. So where we talked about in the Base58 system, there is a checksum which just takes all the bytes, basically takes all the bytes from the address and then hashes it.
 
 Here there is very sophisticated mathematical magic. I don't think it's super sophisticated, but I can't explain what the actual magic is. But the magic makes it so that you can actually make a typo and it'll actually tell you where the typo is. And you can make about four typos and it'll still know where the typo is and what the real value is. If you do more than that, It won't. 
 
@@ -536,9 +534,6 @@ Sjors Provoost: 00:25:13
 
 No, they're not overlapping.
 
-Aaron Van Wirdum: 00:25:15
-
-Okay.
 
 Sjors Provoost: 00:25:16
 
@@ -546,13 +541,10 @@ So the idea there is you want the circles to be as big as possible, obviously, b
 
 And of course, in the example of a two-dimensional wall with two-dimensional circles, it's pretty simple to visualize, right? You throw the dart and you see okay it's still within the big circle so it should belong to this dot so that is like saying okay here's your typo and this is how you fix it
 
-Aaron Van Wirdum: 00:25:41
-
-right
 
 Sjors Provoost: 00:25:41
 
-but and in the case of BEC32 the way I think you should imagine it is that instead of a two-dimensional wall you have a 32 dimensional wall and the circles are also Probably 32 dimensional hyper.
+but and in the case of BECH32 the way I think you should imagine it is that instead of a two-dimensional wall you have a 32 dimensional wall and the circles are also Probably 32 dimensional hyper.
 
 Aaron Van Wirdum: 00:25:53
 
@@ -562,15 +554,15 @@ Sjors Provoost: 00:25:58
 
 Well, if you've studied something like physics or math, you know that anything you can do in two dimensions you know you can see it in three dimensions and you can do it in n dimensions you can abstract all these things out to to as many dimensions as you need but the general intuition is the same so now you're hitting your keyboard and somewhere in that 32 dimensional space you're slightly off you know but you're still inside this sphere whatever that might look like and so it knows where that mistake is but there's a problem oh yeah no all this amazing wizardry missed something and it basically it lost me a long time ago but go on...
 
- Well basically it turns out that if your BEC32 address ends with a P and then you can add an arbitrary number of queues to it and it still will match the checksum.
+ Well basically it turns out that if your BECH32 address ends with a P and then you can add an arbitrary number of queues to it and it still will match the checksum.
 
 Aaron Van Wirdum: 00:26:47
 
-Oh yeah, that was a bug in BEC32.
+that was a bug in BECH32.
 
 Sjors Provoost: 00:26:51
 
-Yeah, so I guess the analogy would be that the circles are not entirely separate in some weird way. And that's not good. But that's actually not a problem originally.
+ So I guess the analogy would be that the circles are not entirely separate in some weird way. And that's not good. But that's actually not a problem originally.
 
 Aaron Van Wirdum: 00:27:01
 
@@ -580,9 +572,6 @@ Sjors Provoost: 00:27:16
 
 Yeah, which means it's unspendable.
 
-Aaron Van Wirdum: 00:27:17
-
-Right. Yeah, exactly.
 
 Sjors Provoost: 00:27:18
 
@@ -592,9 +581,6 @@ Aaron Van Wirdum: 00:27:35
 
 yeah if you have a 20 byte address and you add one queue then it's 21 which is still invalid so you'd have to accidentally add 15 q's or how many were 12 well cues
 
-Sjors Provoost: 00:27:45
-
-yeah or something like that I don't know
 
 Aaron Van Wirdum: 00:27:47
 
@@ -602,7 +588,7 @@ that's pretty unlikely to happen
 
 Sjors Provoost: 00:27:49
 
-yeah cuz I might be confusing bytes and characters, but exactly. That's very unlikely to happen for SegWit version 0. But now we would say, okay, we're going to have a new, you know, we're going to have future versions of SegWit, such as Taproot.
+I might be confusing bytes and characters, but exactly. That's very unlikely to happen for SegWit version 0. But now we would say, okay, we're going to have a new, you know, we're going to have future versions of SegWit, such as Taproot.
 Right. Which, you know, would be BC1P, because P is version 1. And I believe for Taproot, there's also a constraint in how long these addresses are supposed to be So it's still not an acute problem but in the future maybe we want to have addresses that are somewhat more arbitrary in length because maybe you want to add some weird conditions to it or you want to communicate other information not just the address maybe you want to put the amount inside the address.
 
 Aaron Van Wirdum: 00:28:30
@@ -611,7 +597,7 @@ Right.
 
 Sjors Provoost: 00:28:31
 
-So this is why there's a new standard proposed BIP 350 which is called BEC32M and it's actually a very simple change. I think it adds to the all the math it adds one extra number to that math. And then it fixes that particular bug. And everybody's happy.
+So this is why there's a new standard proposed BIP 350 which is called BECH32M and it's actually a very simple change. I think it adds to the all the math it adds one extra number to that math. And then it fixes that particular bug. And everybody's happy.
 
 Aaron Van Wirdum: 00:28:51
 
@@ -623,23 +609,23 @@ Yeah, you can't just add stuff to it without running into problems.
 
 Aaron Van Wirdum: 00:29:00
 
-But I guess this does mean that wallets that have by now upgraded to support these special SecWit addresses, BEC32 addresses, they now have to upgrade again.
+But I guess this does mean that wallets that have by now upgraded to support these special SecWit addresses, BECH32 addresses, they now have to upgrade again.
 
 Sjors Provoost: 00:29:11
 
-That's right. So that's annoying, because it does mean that if your wallet wants to support sending to a taproot address, then it has to make a small change to the BEC32 implementation. And there's some example code on the BIP. It's not a big change because it just adds one number and if you look at the Bitcoin Core implementation it's a fairly simple change that does it. But it does mean that moving forward when you see a BEC32 address you have to parse it then see if it's the version 0 or the version 1 and then do things slightly differently but even that is just a very small change right but it is annoying yeah it does mean that especially hardware wallets, you know, with firmware updates could take a while.
+That's right. So that's annoying, because it does mean that if your wallet wants to support sending to a taproot address, then it has to make a small change to the BECH32 implementation. And there's some example code on the BIP. It's not a big change because it just adds one number and if you look at the Bitcoin Core implementation it's a fairly simple change that does it. But it does mean that moving forward when you see a BECH32 address you have to parse it then see if it's the version 0 or the version 1 and then do things slightly differently but even that is just a very small change but it is annoying yeah it does mean that especially hardware wallets, you know, with firmware updates could take a while.
 
 Aaron Van Wirdum: 00:29:51
 
-Right, so we started out with base58 addresses, now we're all starting to use BEC32 addresses. Is this final? Are we going to keep using BEC32 or are you anticipating some other address format somewhere in the future?
+Right, so we started out with base58 addresses, now we're all starting to use BECH32 addresses. Is this final? Are we going to keep using BECH32 or are you anticipating some other address format somewhere in the future?
 
 Sjors Provoost: 00:30:07
 
-No, I think this will do for a long time. BEC32 is a way to write addresses. Now, what is actually inside an address, there could be more information in it, right? And the most interesting example of that is Lightning Invoices. 
+No, I think this will do for a long time. BECH32 is a way to write addresses. Now, what is actually inside an address, there could be more information in it, right? And the most interesting example of that is Lightning Invoices. 
 
-Lightning Invoices uses BEC32, but they're much longer because they contain a lot more information. They contain the public key, they contain the amount, they contain the deadline, they contain a bunch of secrets, they contain all sorts of stuff, all sorts of routing hints even. It's like a whole book you're sending over.
+Lightning Invoices uses BECH32, but they're much longer because they contain a lot more information. They contain the public key, they contain the amount, they contain the deadline, they contain a bunch of secrets, they contain all sorts of stuff, all sorts of routing hints even. It's like a whole book you're sending over.
 
-So BEC32 is just an alphabet essentially. You can make it as long as you want with this little caveat in mind that we talked about, but you're probably not going to type, manually type Lightning invoices anyway, because they're too long. So you tend to copy paste them.
+So BECH32 is just an alphabet essentially. You can make it as long as you want with this little caveat in mind that we talked about, but you're probably not going to type, manually type Lightning invoices anyway, because they're too long. So you tend to copy paste them.
 
 Aaron Van Wirdum: 00:30:52
 
@@ -647,7 +633,7 @@ Yeah. And generally you copy paste any address. I don't retype addresses. Do you
 
 Sjors Provoost: 00:30:58
 
-Well, you might, I don't know, you might have some like nuclear cold storage and the addresses for that nuclear cold storage might be written down on a piece of paper because you don't want them ever to touch anything that's on the internet. But generally people copy paste. But there was some discussion early on with BEC32, I think, that was explicitly talking about can this be communicated over the phone.
+Well, you might, I don't know, you might have some like nuclear cold storage and the addresses for that nuclear cold storage might be written down on a piece of paper because you don't want them ever to touch anything that's on the internet. But generally people copy paste. But there was some discussion early on with BECH32, I think, that was explicitly talking about can this be communicated over the phone.
 
 Aaron Van Wirdum: 00:31:20
 
@@ -655,7 +641,7 @@ Yeah, true. That's why there's this...
 
 Sjors Provoost: 00:31:23
 
-Even in your nuclear bunker situation, maybe you need to communicate something to somebody else in another nuclear bunker through smoke signals. And then, you know, you could use BEC32 for smoke signals although maybe a base 2 system is easier I don't know I've never done smoke signaling
+Even in your nuclear bunker situation, maybe you need to communicate something to somebody else in another nuclear bunker through smoke signals. And then, you know, you could use BECH32 for smoke signals although maybe a base 2 system is easier I don't know I've never done smoke signaling
 
 Aaron Van Wirdum: 00:31:37
 
