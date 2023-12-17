@@ -13,7 +13,7 @@ date: 2020-09-25
 Aaron Van Wirdum: 00:00:07
 
 Live from Utrecht, this is the Van Wirdum Sjorsnedo.
-Hello! Sjoerds, welcome.
+Hello! Sjors, welcome.
 
 Sjors Provoost: 00:00:12
 
