@@ -4,9 +4,7 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 speakers: ['James Gatto', 'Marco Santori']
-aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/james-gatto-marco-santori-bitcoin-law-for-developers/']
 ---
-
 Vamos a hacer una pausa de 15 minutos para tomar café después de nuestros dos próximos oradores. Quiero presentarles a James Gatto y Marco Santori de Pilsbury. Pasarán algún tiempo hablando de la ley Bitcoin. Tienen una sala esta tarde y se ofrecen a hablar con ustedes uno a uno. Así que Marco y James.
 
 Te perdiste la introducción. ¿Estuvo bien? (risas)
