@@ -2,15 +2,14 @@
 title: "OP_RETURN"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=NYj80OGlWGg
-tags: ["script","utxo"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
-categories: ["Podcast"]
+tags: ["script"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
+categories: ["podcast"]
 date: 2022-07-15
 ---
-
 ## Intro
 
-Aaron Van Wirdum: 00:00:19
+Aaron van Wirdum: 00:00:19
 
 Live from Utrecht, this is Bitcoin Explained.
 Hey Sjors.
@@ -19,7 +18,7 @@ Sjors Provoost: 00:00:24
 
 What's up?
 
-Aaron Van Wirdum: 00:00:25
+Aaron van Wirdum: 00:00:25
 
 How exciting.
 Two weeks ago you told me that maybe you would go to Bitcoin Amsterdam.
@@ -28,7 +27,7 @@ Sjors Provoost: 00:00:31
 
 Yes.
 
-Aaron Van Wirdum: 00:00:31
+Aaron van Wirdum: 00:00:31
 
 And now you're a speaker.
 
@@ -36,7 +35,7 @@ Sjors Provoost: 00:00:33
 
 I'm a panelist, probably not a real speaker.
 
-Aaron Van Wirdum: 00:00:37
+Aaron van Wirdum: 00:00:37
 
 That counts that that's a speaker in my book Sjors.
 
@@ -44,7 +43,7 @@ Sjors Provoost: 00:00:40
 
 Sounds good.
 
-Aaron Van Wirdum: 00:00:41
+Aaron van Wirdum: 00:00:41
 
 How exciting.
 Sjors today we're gonna discuss we're gonna discuss a blog post by BitMax Research.
@@ -53,7 +52,7 @@ Sjors Provoost: 00:00:48
 
 That's right.
 
-Aaron Van Wirdum: 00:00:48
+Aaron van Wirdum: 00:00:48
 
 Which is about the OP_RETURN Wars.
 So exactly, very nice clickbait title.
@@ -68,7 +67,7 @@ It's called the OP_RETURN wars of 2014, Dapps versus Bitcoin transactions.
 And it's a slightly clickbaity title because well it was only called wars by certain other people.
 But
 
-Aaron Van Wirdum: 00:01:14
+Aaron van Wirdum: 00:01:14
 
 wasn't it referred to as the OP_RETURN wars previously in your memory?
 
@@ -77,7 +76,7 @@ Sjors Provoost: 00:01:18
 Yeah, but some people object that the OP_RETURN wars have been sort of that term was phrased by people trying to launch various coins and trying to make Bitcoin developers look bad.
 Not everybody likes the term.
 
-Aaron Van Wirdum: 00:01:31
+Aaron van Wirdum: 00:01:31
 
 Okay, fair enough.
 Okay, so let's start at the beginning.
@@ -93,7 +92,7 @@ And so a nice example, and so the most practical form to use that would be that 
 Because when a script is invalid, you know it's not going to run, and that means that nobody can ever spend it.
 Because no matter what you do, it's always going to be invalid.
 
-Aaron Van Wirdum: 00:02:14
+Aaron van Wirdum: 00:02:14
 
 Right, but that to me sounds like the transaction would be invalid.
 
@@ -103,7 +102,7 @@ Oh, no, no, no.
 It's an output of a transaction.
 So if you're sending to an OP_RETURN transaction, so if you're sending, if your address, quote unquote, so the script on the blockchain is in OP_RETURN followed by anything, then whoever tries to spend it will find that their transaction is invalid.
 
-Aaron Van Wirdum: 00:02:34
+Aaron van Wirdum: 00:02:34
 
 Right.
 Okay.
@@ -115,7 +114,7 @@ Sjors Provoost: 00:02:42
 
 Exactly.
 
-Aaron Van Wirdum: 00:02:42
+Aaron van Wirdum: 00:02:42
 
 From an output that has OP_RETURN in it.
 
@@ -128,7 +127,7 @@ They're there, but it's impossible to spend them.
 
 ## How long has OP_RETURN been around
 
-Aaron Van Wirdum: 00:03:01
+Aaron van Wirdum: 00:03:01
 
 Right.
 And OP_RETURN has always been in Bitcoin?
@@ -140,7 +139,7 @@ Sjors Provoost: 00:03:09
 As far as I know, yes.
 And so that means it's also been always been possible to put anything you want after the OP_RETURN code.
 
-Aaron Van Wirdum: 00:03:17
+Aaron van Wirdum: 00:03:17
 
 Right, so you could always create a transaction with OP_RETURN.
 However, and now we'll get to this in a second, I think originally transactions that spent from an OP_RETURN, no wait, transactions that spent to, wait now I'm confused.
@@ -157,7 +156,7 @@ Those are automatically relayed.
 And that's partially to prevent people shooting themselves in the foot by creating a transaction that's just wrong.
 And there's probably some other reasons that we can get into in another podcast.
 
-Aaron Van Wirdum: 00:04:04
+Aaron van Wirdum: 00:04:04
 
 Right.
 Yeah.
@@ -168,7 +167,7 @@ Sjors Provoost: 00:04:13
 
 That's right.
 
-Aaron Van Wirdum: 00:04:13
+Aaron van Wirdum: 00:04:13
 
 So, it's very hard to get it into an actual block.
 
@@ -177,7 +176,7 @@ Sjors Provoost: 00:04:16
 Yeah.
 You'd have to talk to a miner.
 
-Aaron Van Wirdum: 00:04:18
+Aaron van Wirdum: 00:04:18
 
 Yeah, and then the miner would have to put it into a block, because I assume that mining software also by default just wouldn't include it in blocks, right?
 
@@ -187,7 +186,7 @@ Yeah, so either you would have to know which node is a miner, And then maybe tha
 
 ## OP_RETURN Node acceptance and Standardness
 
-Aaron Van Wirdum: 00:04:40
+Aaron van Wirdum: 00:04:40
 
 Right.
 So at some point, and this is what the blog post is about, at some point, it was decided that nodes, that Bitcoin nodes, Bitcoin Core nodes specifically, although back then it wasn't even called Bitcoin Core yet, they would actually start forwarding some OP_RETURN transactions, right?
@@ -202,7 +201,7 @@ And then later on, as we'll discuss, it was increased to 80 bytes.
 And so the reason is, it was kind of, I think one of the analogies that was used, or many analogies used, I'll stick to the, let's say the friendly ones, is this idea of People were breaking windows all the time because they're trying to get inside of a house and it was nice to just leave the window open, basically.
 So it was actually a form, it was meant as a form of damage control.
 
-Aaron Van Wirdum: 00:05:42
+Aaron van Wirdum: 00:05:42
 
 Well, before we get to the analogy, or Well, now you've given the analogy, but what is it an analogy for?
 What are we actually talking about?
@@ -226,7 +225,7 @@ Even today, even though nobody will ever spend it, you still have to keep track 
 And so the solution is to use OP_RETURN.
 Now you can still put that kind of data on the blockchain if you wanted to, but nodes don't have to keep track of it because they know it is not spendable.
 
-Aaron Van Wirdum: 00:07:36
+Aaron van Wirdum: 00:07:36
 
 Right.
 So to go one step back or to tackle that step by step.
@@ -240,7 +239,7 @@ Yes.
 
 ## Keeping unnecessary data off the UTXO set
 
-Aaron Van Wirdum: 00:08:05
+Aaron van Wirdum: 00:08:05
 
 Right.
 So, and then that's transmitted over the Bitcoin network.
@@ -261,7 +260,7 @@ But the difference is that this little database that you're keeping of the UTXO 
 And you can also normally throw away old blocks.
 So if you have a small hard drive, you can always toss out the old blocks, but you can never toss out anything from the UTXO set.
 
-Aaron Van Wirdum: 00:09:54
+Aaron van Wirdum: 00:09:54
 
 Yeah, so the two main benefits are, first of all, storage, especially for pruned nodes that don't store the entire blockchain, because they now have a benefit because they have a smaller UTXO set.
 And the other one is computational.
@@ -282,7 +281,7 @@ It is episode 15 in which we explain a mechanism that could solve this problem c
 And that would remove the need to keep the UTXO set in RAM, but it comes at the expense of some trade-offs.
 And we just explain those there.
 
-Aaron Van Wirdum: 00:11:02
+Aaron van Wirdum: 00:11:02
 
 Okay, let's stick to the OP_RETURN for now.
 People were storing data in the blockchain.
@@ -294,7 +293,7 @@ Sjors Provoost: 00:11:27
 
 Yeah, but there was a second request too, I would say, because this limit of 40 bytes.
 
-Aaron Van Wirdum: 00:11:32
+Aaron van Wirdum: 00:11:32
 
 Yeah, I was going to get there.
 So OP_RETURN was always in the protocol, but it was basically useless because nodes wouldn't forward OP_RETURN transactions.
@@ -325,7 +324,7 @@ And it turns out that very old node software, especially from say 2012, would no
 So back then it was actually necessary to keep blocks small, basically from a more altruistic point of view.
 And that's what a lot of the discussion was about, like what is good behavior on the blockchain.
 
-Aaron Van Wirdum: 00:13:27
+Aaron van Wirdum: 00:13:27
 
 So why was, so the first limit that was set, well initially the limit was zero, initially OP_RETURN was effectively impossible, but then the limit was increased to 40 and why why was it increased to 40 okay
 
@@ -335,7 +334,7 @@ so the idea behind 40 is that it allows you to put a hash in there, a typical ha
 So this allows you to put a 32 byte hash on the blockchain and then a few extra bytes to do, I don't know, some metadata for that hash.
 Now there were some protocols out there that wanted 80 bytes.
 
-Aaron Van Wirdum: 00:14:06
+Aaron van Wirdum: 00:14:06
 
 Yeah, Counterparty in specific.
 This is what sort of this blog post that is the reason we're making this podcast.
@@ -349,7 +348,7 @@ But basically there was some back and forth and I guess people decided to just a
 But really 40 should be enough for most things, but it requires a little bit more work for those protocols.
 So if you look at something like, as far as i know..
 
-Aaron Van Wirdum: 00:14:38
+Aaron van Wirdum: 00:14:38
 
 The reason 40 is enough is what you're saying is because really the only data you ever need to include in the blockchain really is a hash.
 Because then you anchor any other data you want to anchor in and that's really all you ever need to do.
@@ -368,7 +367,7 @@ So they were putting data on the blockchain anyway.
 And so yeah, I guess then it makes more sense to say, okay, let's just increase the OP_RETURN limit to 80 bytes.
 So they stopped doing that.
 
-Aaron Van Wirdum: 00:15:44
+Aaron van Wirdum: 00:15:44
 
 So At first it was increased to 40, this was in 2014 and the argument there, as we explained, or as you explained, is that you really only need 40 because you can just include a hash.
 But then people, you said a counterparty project, it was using more than 40 for whatever they want to do.
@@ -387,7 +386,7 @@ Then there was a limit of 40 in the release software.
 And then much later, there was another limit of 80.
 And so some of the fight, war, whatever you want to call it, seems to be about that.
 
-Aaron Van Wirdum: 00:17:14
+Aaron van Wirdum: 00:17:14
 
 They announced 80.
 
@@ -395,7 +394,7 @@ Sjors Provoost: 00:17:15
 
 Where It was sort of seen as a revoking of the 80, but that was never really released.
 
-Aaron Van Wirdum: 00:17:21
+Aaron van Wirdum: 00:17:21
 
 Right.
 Got it.
@@ -407,7 +406,7 @@ Sjors Provoost: 00:17:29
 So I think what happened is there was this upper turn thing was introduced in the code and they just picked 80 as the first number then there was, I think Jeff Garzik put it on the mailing list saying hey we should probably talk about that and then people said okay let's make it 40 and that was what went into the release.
 So and then there's you can find newer discussions where people said oh you know we told you about Counterparty and then I think Greg Maxwell would say no you didn't you told us after basically this release and then we increased it but you know so that's a whole fight about what was the sequence of events there.
 
-Aaron Van Wirdum: 00:18:04
+Aaron van Wirdum: 00:18:04
 
 So and right now the limit is 80?
 Yeah and there was a minor maybe mistake in the blog post where it said that currently the limit is 83 but you you say it's just 80 right?
@@ -420,14 +419,14 @@ And the reason is because you have one byte that says OP_RETURN, then you have a
 So there's ways of grouping your data.
 There's just very subtle implementation details, but as long as you stay below the 83 bytes for the whole script you're fine.
 
-Aaron Van Wirdum: 00:19:03
+Aaron van Wirdum: 00:19:03
 
 Right.
 Now one thing you already alluded to is that back then, back when this discussion was happening, I think people were really looking at the Bitcoin blockchain as sort of a shared resource.
 And they weren't thinking about it as much, it seemed like, like we would today as a market.
 So today, in general, I think we have more of this idea that whoever is willing to pay the highest fees gets into the block.
 
-Aaron Van Wirdum: 00:19:34
+Aaron van Wirdum: 00:19:34
 
 And we have a block size limit to protect nodes, essentially, to protect users from having to store too much data.
 And back then, people weren't really thinking about fee markets yet.
@@ -444,7 +443,7 @@ Do you want them to store your your bible?
 Or do you only want to do payments?
 So you could still have that argument that even if somebody was willing to pay a very high rate, a very high fee to miners to include lots of OP_RETURN data, you could argue well, but they're not paying the node operators to store that OP_RETURN data and people are not running nodes to publish the Bible or whatever.
 
-Aaron Van Wirdum: 00:20:52
+Aaron van Wirdum: 00:20:52
 
 But they don't have to store the data.
 Though they still need to verify it once.
@@ -460,7 +459,7 @@ Because you're just creating a bunch of noise between all the transactions.
 
 ## Should the size limits remain?
 
-Aaron Van Wirdum: 00:21:48
+Aaron van Wirdum: 00:21:48
 
 Right.
 Well, that could also be considered an argument for removing the limit.
@@ -471,7 +470,7 @@ Sjors Provoost: 00:22:01
 You can't see it if you're not using OP_RETURN.
 So those protocols that use tweaked signatures don't use OP_RETURN at all.
 
-Aaron Van Wirdum: 00:22:09
+Aaron van Wirdum: 00:22:09
 
 Well, that's what I mean.
 So at that point, why don't we just say, okay, people can put data on the blockchain and we can stop them.
@@ -484,7 +483,7 @@ But as far as I know there's nobody currently with a serious proposal of why the
 I think Bitcoin SV is experimenting with very, very, very, very large OP_RETURN messages and like has 99.999999% of their chain with OP_RETURN data.
 So I don't know how I would feel about it, but so far I don't think it's a relevant question.
 
-Aaron Van Wirdum: 00:23:00
+Aaron van Wirdum: 00:23:00
 
 So the general idea behind, and I think this is what you mentioned when you said some people don't like the term OP_RETURN wars, is that this part of Bitcoin's history is sort of considered by Vitalik decided to launch Ethereum.
 
@@ -494,7 +493,7 @@ Yeah, but that makes very little sense because he could have used, if he needed 
 So I don't think that particular thing would have made the difference.
 It's not possible to run Ethereum on top of Bitcoin with or without OP_RETURN.
 
-Aaron Van Wirdum: 00:23:36
+Aaron van Wirdum: 00:23:36
 
 And the other thing anyone can do, of course, is just fork Bitcoin Core and allow for bigger OP_RETURN messages, since it's not a consensus rule.
 
@@ -503,7 +502,7 @@ Sjors Provoost: 00:23:44
 So you know, maybe The lesson from that discussion was that Bitcoin was clearly not going the way of allowing everything and everyone to do complicated things on the blockchain.
 And that may have been a realization point for him to say, okay, if Bitcoin is not going that direction, I'll try my own project.
 
-Aaron Van Wirdum: 00:24:00
+Aaron van Wirdum: 00:24:00
 
 Yeah, I think that's sort of the argument or that's also the argument sort of presented in this blog post that it was a cultural thing that the Bitcoin culture at that time was not very accommodating to non-transaction data on the blockchain and that's why Vitalik decided to start his own blockchain.
 
@@ -513,7 +512,7 @@ Perhaps, might also have something to do with being able to make money.
 But of course the nice thing about having a new chain is you know you can do whatever you want so it does give you a lot of creative freedom.
 That's the more optimistic interpretation of it.
 
-Aaron Van Wirdum: 00:24:31
+Aaron van Wirdum: 00:24:31
 
 Yes, they can clearly do whatever they want.
 We cover everything about OP_RETURN?
@@ -525,7 +524,7 @@ Well, it might be fun to mention there was an incident in 2019, a project called
 And at some point there was a lot of increase in the number of OP_RETURN transactions, not the size of them, just the sheer number of them.
 To the point where they were starting to compete, you know, they had to pay some pretty high fees to compete with regular transactions And it was interesting to watch and there was kind of a worry that this would just mean that, you know, OP_RETURN transactions are the buyer of last resort and every block from now on will be full.
 
-Aaron Van Wirdum: 00:25:11
+Aaron van Wirdum: 00:25:11
 
 That was basically an altcoin that used Bitcoin's proof of work as its security?
 
@@ -538,7 +537,7 @@ So it would be a nice way to give money to Bitcoin miners.
 But last time I checked on a coin market cap, it said market data is untracked.
 So it sounds like that's not going very well.
 
-Aaron Van Wirdum: 00:25:50
+Aaron van Wirdum: 00:25:50
 
 It doesn't sound very good, Sjors.
 
@@ -546,7 +545,7 @@ Sjors Provoost: 00:25:51
 
 But who knows.
 
-Aaron Van Wirdum: 00:25:52
+Aaron van Wirdum: 00:25:52
 
 Okay, I think that's it, or not.
 
@@ -554,4 +553,4 @@ Sjors Provoost: 00:25:55
 
 Yep, that's all I got.
 Great.
-Thank
+Thank you for listening.
