@@ -75,7 +75,6 @@ wasn't it referred to as the OP_RETURN wars previously in your memory?
 Sjors Provoost: 00:01:18
 
 Yeah, but some people object that the OP_RETURN wars have been sort of that term was phrased by people trying to launch various coins and trying to make Bitcoin developers look bad.
-Right.
 Not everybody likes the term.
 
 Aaron Van Wirdum: 00:01:31
@@ -123,10 +122,6 @@ From an output that has OP_RETURN in it.
 Sjors Provoost: 00:02:45
 
 Yes.
-
-
-Sjors Provoost: 00:02:46
-
 And because it's provably unspendable, that allows software that processes the Bitcoin blockchain to make some optimizations, it can basically just pretend that those coins don't exist.
 But whether they really exist or not is kind of in the eye of the beholder.
 They're there, but it's impossible to spend them.
@@ -196,7 +191,6 @@ Aaron Van Wirdum: 00:04:40
 
 Right.
 So at some point, and this is what the blog post is about, at some point, it was decided that nodes, that Bitcoin nodes, Bitcoin Core nodes specifically, although back then it wasn't even called Bitcoin Core yet, they would actually start forwarding some OP_RETURN transactions, right?
-Yeah.
 So why was that?
 
 Sjors Provoost: 00:05:01
@@ -212,13 +206,11 @@ Aaron Van Wirdum: 00:05:42
 
 Well, before we get to the analogy, or Well, now you've given the analogy, but what is it an analogy for?
 What are we actually talking about?
-What is the actual damage, right?
-Why were people breaking windows?
-Yeah.
 
 Sjors Provoost: 00:05:49
 
-
+What is the actual damage, right?
+Why were people breaking windows?
 So basically, people were trying to put things on the blockchain that are not transactions, that are not moving money, but that are sharing information.
 And one example of that, which I'll shamelessly plug, you can also find in my book, is to put the Bitcoin white paper inside the blockchain.
 And the way they would do that is to create a transaction that sends money to a multi-sig address and that multi-sig address would have three keys but those keys you know would not actually be keys because a public key would you know be a nice piece of data but they wouldn't be actual keys and it turns out that if you add up all these fake keys you can reconstruct a Bitcoin white paper.
@@ -318,9 +310,6 @@ Yeah, exactly.
 So one number you could have used for that size was to say, okay, how big can these multi-sig transactions be?
 And I think that was 172 bytes so you could have said okay we're just gonna make OP_RETURN 172 bytes because in that case there is really no reason to use these multi-sig keys anymore because you might as well use OP_RETURN but there was a simultaneous I guess movement or desire to not make the blockchain unnecessarily big.
 
-Aaron Van Wirdum: 00:12:21
-
-And
 
 Sjors Provoost: 00:12:22
 
@@ -332,15 +321,7 @@ But back then, blocks were super small.
 They were maybe 10 kilobytes or 100 kilobytes, I don't know where they were in 2014.
 And that meant that this OP_RETURN data could just make blocks really big for the time that happened.
 And we've done an episode in the past where we looked at, I think it's episode number 55, where we looked at old node software and see how that old node software would perform under the current block sizes.
-And it turns out that very old node software, especially from say 2012, would not have been able to keep up with actual one megabyte blocks,
-
-Aaron Van Wirdum: 00:13:14
-
-Right.
-
-Sjors Provoost: 00:13:14
-
-or at least not very easily.
+And it turns out that very old node software, especially from say 2012, would not have been able to keep up with actual one megabyte blocks,or at least not very easily.
 So back then it was actually necessary to keep blocks small, basically from a more altruistic point of view.
 And that's what a lot of the discussion was about, like what is good behavior on the blockchain.
 
@@ -366,19 +347,11 @@ Sjors Provoost: 00:14:17
 Yeah, so I don't know for sure if the increase to 80 bytes was only for counterparty or whether there was another protocol that needed it.
 But basically there was some back and forth and I guess people decided to just allow 80 bytes.
 But really 40 should be enough for most things, but it requires a little bit more work for those protocols.
-So if you look at something like, as far as I
+So if you look at something like, as far as i know..
 
 Aaron Van Wirdum: 00:14:38
 
-know...
 The reason 40 is enough is what you're saying is because really the only data you ever need to include in the blockchain really is a hash.
-
-Sjors Provoost: 00:14:47
-
-Yes.
-
-Aaron Van Wirdum: 00:14:48
-
 Because then you anchor any other data you want to anchor in and that's really all you ever need to do.
 
 Sjors Provoost: 00:14:52
@@ -397,11 +370,9 @@ So they stopped doing that.
 
 Aaron Van Wirdum: 00:15:44
 
-Right.
 So At first it was increased to 40, this was in 2014 and the argument there, as we explained, or as you explained, is that you really only need 40 because you can just include a hash.
 But then people, you said a counterparty project, it was using more than 40 for whatever they want to do.
 So essentially Bitcoin developers conceded and said, all right, well, if you're going to do it anyways, here's 80, here, have fun with it, with your 80.
-You definitely...
 
 Sjors Provoost: 00:16:13
 
@@ -439,7 +410,6 @@ So and then there's you can find newer discussions where people said oh you know
 Aaron Van Wirdum: 00:18:04
 
 So and right now the limit is 80?
-Yes.
 Yeah and there was a minor maybe mistake in the blog post where it said that currently the limit is 83 but you you say it's just 80 right?
 
 Sjors Provoost: 00:18:16
@@ -457,13 +427,9 @@ Now one thing you already alluded to is that back then, back when this discussio
 And they weren't thinking about it as much, it seemed like, like we would today as a market.
 So today, in general, I think we have more of this idea that whoever is willing to pay the highest fees gets into the block.
 
-Sjors Provoost: 00:19:34
-
-And
-
 Aaron Van Wirdum: 00:19:34
 
-we have a block size limit to protect nodes, essentially, to protect users from having to store too much data.
+And we have a block size limit to protect nodes, essentially, to protect users from having to store too much data.
 And back then, people weren't really thinking about fee markets yet.
 There were no fee markets yet.
 So it was really just considered a shared resource.
@@ -486,7 +452,6 @@ Though they still need to verify it once.
 Sjors Provoost: 00:20:56
 
 Yeah, they still need to process it.
-Yeah.
 So, but yeah, the burden is a bit lower, especially when you use OP_RETURN and it's much better than the alternatives.
 On the other hand, there's also now things like RGB and things like OpenTimestamps, various other projects that show that you can just use a single hash or even not a hash at all because from a privacy point of view, things like tweaked signatures, tweaked public keys or tweaked signatures are even a more privacy-friendly way to put data on the blockchain, which also makes them indistinguishable from regular transactions.
 That one thing, that means that you can't stop it, whatever you do in the protocol.
@@ -562,7 +527,7 @@ To the point where they were starting to compete, you know, they had to pay some
 
 Aaron Van Wirdum: 00:25:11
 
-That was basically an altcoin that used Bitcoin's proof of work as its security.
+That was basically an altcoin that used Bitcoin's proof of work as its security?
 
 Sjors Provoost: 00:25:18
 
@@ -590,7 +555,3 @@ Sjors Provoost: 00:25:55
 Yep, that's all I got.
 Great.
 Thank
-
-Aaron Van Wirdum: 00:26:15
-
-Thank you
