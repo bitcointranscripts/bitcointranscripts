@@ -25,13 +25,6 @@ Hello.
 Van Wirdum: 00:01:38
 
 Van Wirdum Sjorsnado.
-
-Provoost: 00:01:40
-
-That's right.
-
-Van Wirdum: 00:01:40
-
 Did I say it right this time?
 
 Provoost: 00:01:42
@@ -193,16 +186,8 @@ So what instead happens is something called Bloom Filters.
 And what your lightweight wallet does is it creates a filter which says, give me all the transactions that relate to this address.
 But It doesn't really say which address it is, but there's some magic math going on so that when a node sees a certain address, it'll know that it has to send you a signal.
 So for example, it would say, give me all the transactions in which an address starts with an A.
-Right.
 And that's not exactly how it works.
 It's mathematically more sophisticated than that.
-
-Van Wirdum: 00:06:49
-
-Sure.
-
-Provoost: 00:06:49
-
 But you can understand intuitively what the privacy benefit of that is.
 Like I'm not telling you that which address I have.
 I'm just telling you tell me everything that has an A in it.
@@ -214,7 +199,6 @@ If you care a bit more about privacy, you ask for a bit more, but it comes at th
 
 Van Wirdum: 00:07:13
 
-Yeah.
 So the thing is, your actual addresses are a subset of the addresses you're asking about.
 
 Provoost: 00:07:19
@@ -226,7 +210,7 @@ And each of those transactions will have the correct proof that it actually belo
 
 Van Wirdum: 00:07:41
 
-Right, which the light client is then able to check.
+Which the light client is then able to check.
 So the light client checks, okay, is this actually the address I cared about or is this a false positive is the block valid as far as hash power goes and then is the transaction valid I guess and if that all checks out then the light client sort of knows fairly sure that it has been paid even though they're still trusting Hashpower.
 
 Provoost: 00:08:04
@@ -253,14 +237,7 @@ Provoost: 00:08:35
 
 Yeah, so one problem is privacy and particularly because you don't want to use too much data, there apparently are quite a few wallets out there that will use the lowest false positive rate possible.
 So you can say okay you know do I want lots of false positives so lots of information about other addresses so I have good privacy but you can also set it very low and apparently they use a very low one which means that you're really just telling the full node that you're talking to, okay, this is the address I care about.
-
-Van Wirdum: 00:09:04
-
-Yeah.
-
-Provoost: 00:09:05
-
-And that's a problem because that full node you're talking to might be, I don't know, JANAlysis.
+And that's a problem because that full node you're talking to might be, I don't know, Chainalysis.
 
 Van Wirdum: 00:09:10
 
@@ -286,13 +263,6 @@ It's broken.
 Provoost: 00:09:54
 
 Yeah, the other problem is that it's pretty intense on the node that has to do this, that has to provide these filters, because if you're running a full node, now some random node starts talking to you and says, hey, please give me updates about these addresses.
-
-Van Wirdum: 00:10:08
-
-Right
-
-Provoost: 00:10:09
-
 And so you need to do a bunch of CPU use for people, and you're just doing it voluntarily.
 And it turns out that that's even exploitable.
 If you create a special filter, you can create a lot of CPU load for somebody even though you don't actually care about those transactions.
@@ -300,13 +270,13 @@ So you can write especially those Raspberry Pis which is turned into steaming yo
 
 Van Wirdum: 00:10:29
 
-Yeah so in this case the the live client the SPV client is making the filter for the addresses it cares about plus false positives, gives this filter to a full node on a network, and then this full node has to decipher which addresses the light client is interested in.
+Yeah, so in this case the the live client the SPV client is making the filter for the addresses it cares about plus false positives, gives this filter to a full node on a network, and then this full node has to decipher which addresses the light client is interested in.
 This is costing the full node's CPU power.
 So it's costly, and the full node isn't earning anything by it, unless it's a spy node, and then we're back to problem one.
 
 Provoost: 00:10:59
 
-Well, yeah, and that creates a perverse incentive of course, because for normal people there is really no reason to do this other than altruism, but for spy nodes there is a financial motive to do this, so guess who are serving this.
+Well, and that creates a perverse incentive of course, because for normal people there is really no reason to do this other than altruism, but for spy nodes there is a financial motive to do this, so guess who are serving this.
 So let's move on to a new approach that was produced, I believe proposed around 2018, maybe 2019.
 
 Van Wirdum: 00:11:18
@@ -323,11 +293,11 @@ Lightning Labs' CTO?
 
 Provoost: 00:11:24
 
-Exactly I cannot mimic his speaking pace but
+Exactly, I cannot mimic his speaking pace but
 
 Van Wirdum: 00:11:29
 
-nobody can
+Nobody can.
 
 Provoost: 00:11:30
 
@@ -341,13 +311,6 @@ Provoost: 00:11:37
 
 Yeah, of the idea of compact block filters.
 The BIPs you want to look for are BIP 157 and BIP 158.
-
-Van Wirdum: 00:11:45
-
-Okay.
-
-Provoost: 00:11:46
-
 So, I think we should first talk about high level, what's going on and why it's good.
 And then I'll try to do a quick explainer on what it's actually doing at a more nitty gritty technical level, because it's kind of cool, I think.
 
@@ -384,33 +347,12 @@ Well, every output script that's in the block And for every input, the output sc
 Van Wirdum: 00:13:06
 
 So this means that any full node, especially now with Bitcoin Core 21, any full node can create a filter, right?
-
-Provoost: 00:13:14
-
-That's right.
-
-Van Wirdum: 00:13:15
-
 And they would all be the same because they're all seeing the same block?
 
 Provoost: 00:13:17
 
 Yes.
-
-Van Wirdum: 00:13:18
-
-Okay.
-
-Provoost: 00:13:19
-
 And now on the client side what you do is you connect to any peer and you say give me the filters.
-
-Van Wirdum: 00:13:23
-
-Yeah.
-
-Provoost: 00:13:24
-
 You know you're not giving away any information when you're doing that other than that you're a light client.
 
 Van Wirdum: 00:13:29
@@ -438,28 +380,13 @@ And then a computer is going to tell them yes there might be relevant transactio
 
 Provoost: 00:14:29
 
-yeah and so this false positive story is as far as I know is not because of privacy It's just because math can't do better.
-
-Van Wirdum: 00:14:36
-
-Right.
-
-Provoost: 00:14:36
-
+Yeah and so this false positive story is as far as I know is not because of privacy It's just because math can't do better.
 This has to do with like, if you want less false positives, then the files that the node need to keep track of need to be bigger.
-
-Van Wirdum: 00:14:44
-
-Right.
-
-Provoost: 00:14:44
-
-So if you make the filters really, really, really big, then you never get false positives, but then you might as well download the whole block.
+So if you make the filters really big, then you never get false positives, but then you might as well download the whole block.
 
 Van Wirdum: 00:14:50
 
-Right.
-So if the computer says no, if computer says no, there are definitely no relevant transactions in this block for you, then the light client just ignores the block.
+So if the computer says no, there are definitely no relevant transactions in this block for you, then the light client just ignores the block.
 
 Provoost: 00:15:01
 
@@ -490,11 +417,11 @@ Yeah, so you actually have to download slightly more data, I guess, compared to 
 
 Provoost: 00:15:55
 
-Yeah, but you get much better privacy.
+But you get much better privacy.
 
 Van Wirdum: 00:15:56
 
-Yeah, because now sometimes you need to download a block.
+Because now sometimes you need to download a block.
 
 Provoost: 00:16:00
 
@@ -507,11 +434,11 @@ Even sometimes if there's a false positive, so sometimes you download a block fo
 Provoost: 00:16:09
 
 Yeah, and you could even be smarter about it.
-Like you could request, you know, one block per peer so that the only thing each peer knows is that you may care about something in that block which is not a lot of information maybe you fetch them over Tor if you want to be even better so that's kind of nice privacy wise but yeah it reuses a bit more bandwidth
+Like you could request, you know, one block per peer so that the only thing each peer knows is that you may care about something in that block which is not a lot of information maybe you fetch them over Tor if you want to be even better so that's kind of nice privacy wise but it reuses a bit more bandwidth
 
 Van Wirdum: 00:16:29
 
-is that a high level part?
+Is that a high level part?
 
 Provoost: 00:16:31
 
@@ -536,7 +463,7 @@ Yeah.
 Van Wirdum: 00:17:26
 
 Or not.
-Well anyways yeah so one problem is that the filter, you're a live client, I'm a live client, I'm downloading this filter from you, Sjoerds, who's running a full node, and then I actually have no idea if this filter is actually a filter or just gibberish.
+Well anyways so one problem is that the filter, you're a live client, I'm a live client, I'm downloading this filter from you, Sjoerds, who's running a full node, and then I actually have no idea if this filter is actually a filter or just gibberish.
 Is that what you're telling me?
 
 Provoost: 00:17:42
@@ -598,7 +525,7 @@ Yeah, you want to get more technical?
 
 Provoost: 00:19:34
 
-Yeah, so like I said, so here's the recipe.
+Yeah, so here's the recipe.
 If you're serving these filters, what you do is you go through a block, for each block, you take all the output scripts, except OPRETURN, because that's not interesting, And you take all the, for every input you take, all the output scripts it refers to.
 And you just put those in a row.
 And now, for every item you're going to hash it, there's a special hash function for it.
@@ -637,13 +564,6 @@ But basically, it's kind of cool fancy math that lets you you know very efficien
 Van Wirdum: 00:21:37
 
 Love it.
-
-Provoost: 00:21:38
-
-Right.
-
-Van Wirdum: 00:21:39
-
 Okay so that was the high level explanation and then after that the mathematical explanation which I didn't understand but maybe some of our listeners did.
 
 Provoost: 00:21:48
@@ -672,11 +592,9 @@ Well, for, it's probably for several reasons, but one reason would be how easy d
 
 Van Wirdum: 00:22:18
 
-Right.
 Even if you're using this Neutrino solution just like the specific solution which we discussed at first, you're still not getting full security.
 You're still trusting hash power as I've mentioned in both cases.
 So you're trusting that at least a majority of miners isn't lying to you, essentially.
-Right?
 So then the question is, okay, we can make it very easy to run live clients, but do we actually want to make it very easy for people to run light clients because that way they're all going to trust on miners and maybe that's not such a good idea in the first place.
 
 Provoost: 00:22:55
@@ -693,13 +611,6 @@ Yeah, or not Bitcoin at all.
 Provoost: 00:23:13
 
 Exactly.
-
-Van Wirdum: 00:23:14
-
-Right.
-
-Provoost: 00:23:15
-
 So, and it's hard to say, and in the long run, maybe it's different, right?
 Maybe in the short run, by supporting this, you get lots of mobile adoption of people who at least, you know, use Bitcoin, at least check the headers, rather than check absolutely nothing.
 But maybe on the very long run, that doesn't happen.
@@ -708,7 +619,7 @@ So if the block size doesn't increase, and if networks and computers do get bett
 
 Van Wirdum: 00:23:46
 
-Yeah, I guess this would also assume a more law holding up, right?
+I guess this would also assume a more law holding up, right?
 
 Provoost: 00:23:51
 
@@ -717,15 +628,8 @@ Otherwise it takes even longer.
 
 Van Wirdum: 00:23:56
 
-We could also decrease the block size limit as Luke suggests, and that way it would be shorter that that way we could use full nodes on our phone sooner
-
-Provoost: 00:24:07
-
-yeah I don't know if that's worth having a giant civil war over though and there was another thing I
-
-Van Wirdum: 00:24:13
-
-think only Luke thinks that yeah well not just Luke there's there's a couple more people but it's probably not gonna happen.
+We could also decrease the block size limit as Luke suggests, and that way it would be shorter that that way we could use full nodes on our phone sooner.
+I don't know if that's worth having a giant civil war over though and there was another thing I think only Luke thinks that yeah well not just Luke there's there's a couple more people but it's probably not gonna happen.
 
 Provoost: 00:24:20
 
