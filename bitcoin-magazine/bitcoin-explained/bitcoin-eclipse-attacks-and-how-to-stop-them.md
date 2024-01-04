@@ -3,7 +3,7 @@ title: "Bitcoin Eclipse Attacks And How To Stop Them"
 transcript_by: NeroCherubino via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=UK9Yykf2aA4
 tags: ["attacks"]
-speakers: ["Provoost Provoost","Aaron Van Wirdum"]
+speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["podcast"]
 date: 2020-11-13
 ---
