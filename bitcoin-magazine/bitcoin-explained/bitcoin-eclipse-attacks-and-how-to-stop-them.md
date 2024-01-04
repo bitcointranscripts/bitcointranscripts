@@ -31,20 +31,10 @@ Oh, thoroughly, yes.
 Van Wirdum: 00:00:17
 
 Be careful what you say because you're definitely gonna trigger half of our audience.
-I don't know.
-Whatever you say.
 
 Provoost: 00:00:23
 
-The US has great export products, great cheeseburgers, Frappuccinos, nice people, laptops and
-
-Van Wirdum: 00:00:29
-
-great movies,
-
-Provoost: 00:00:30
-
-good entertainment.
+The US has great export products, great cheeseburgers, Frappuccinos, nice people, laptops and great movies, good entertainment.
 
 Van Wirdum: 00:00:32
 
@@ -60,37 +50,14 @@ Van Wirdum: 00:00:47
 
 Great.
 So, let's talk more about Eclipses.
-Yes.
 For this entire episode.
-
-Provoost: 00:00:52
-
-That's right.
-
-Van Wirdum: 00:00:52
-
 We're actually going to do something slightly...
 This is the first time we're doing this, I guess, right?
 We're going to discuss a white paper, a paper.
 
 Provoost: 00:01:01
 
-Yeah, we're going to discuss a paper about eclipse attacks
-
-Van Wirdum: 00:01:03
-
-yes and the paper
-
-Provoost: 00:01:04
-
-come up with a better pun so
-
-Van Wirdum: 00:01:06
-
-that's all you got from us it's the paper eclipse attacks on bitcoins peer-to-peer network by Ethan Hellman, Allison Kandler, Aviv Zohar and Sharon Goldberg from Boston University and Hebrew University, MSR Israel.
-
-Provoost: 00:01:24
-
+Yeah, we're going to discuss a paper about eclipse attacks yes and the paper come up with a better pun so that's all you got from us it's the paper eclipse attacks on bitcoins peer-to-peer network by Ethan Hellman, Allison Kandler, Aviv Zohar and Sharon Goldberg from Boston University and Hebrew University, MSR Israel.
 That's right and it was published in 2015.
 
 Van Wirdum: 00:01:26
@@ -106,28 +73,14 @@ So to give you an idea about the speed of Bitcoin development, sometimes somebod
 
 Van Wirdum: 00:01:49
 
-Yeah, but this is not the first improvement based on this paper This is one of them and this is just the reason we're doing an episode about it now,
-
-Provoost: 00:01:55
-
-correct A lot of things have already been done.
-
-Van Wirdum: 00:01:57
-
-Okay, so shows what are eclipse attacks?
+Yeah, but this is not the first improvement based on this paper This is one of them and this is just the reason we're doing an episode about it now, correct A lot of things have already been done.
+So shows what are eclipse attacks?
 
 Provoost: 00:02:00
 
 So an eclipse attack is when your node is only seeing your enemy, basically, your attacker.
 You know, your node has connections that it makes to the outside world, and there are people who connect to your node.
-
-Van Wirdum: 00:02:11
-
-And if
-
-Provoost: 00:02:12
-
-all those connections are to some evil person, then you think you're talking to the whole world, but you're actually only talking to one person.
+And if all those connections are to some evil person, then you think you're talking to the whole world, but you're actually only talking to one person.
 So that person is eclipsing your view of the world.
 
 Van Wirdum: 00:02:21
@@ -144,12 +97,11 @@ That's changed maybe a little bit but that's the idea.
 Van Wirdum: 00:02:40
 
 Right so then the idea is if you control all outbound or inbound nodes?
-Both.
 Both okay so if you control both all inbound and outbound nodes of someone else then you can basically lie to them and they have no other connection to the network am I saying that right
 
 Provoost: 00:02:57
 
-that's right so basically you you know you connect to all these nodes because you want to ask them for new transactions and for new blocks and they'll spontaneously give you new transactions and new blocks.
+That's right so basically you you know you connect to all these nodes because you want to ask them for new transactions and for new blocks and they'll spontaneously give you new transactions and new blocks.
 And so if you're only talking to one person eventually, then that person can decide not to give you certain transactions and not to give you certain blocks.
 Now they cannot make fake things entirely, right?
 They can't fake signatures because you're still checking all the consensus rules.
@@ -165,22 +117,8 @@ Provoost: 00:03:32
 
 The easiest thing, and it's I guess less relevant now because people are more aware of that risk in general, is they can do a double spend attack on you.
 So let's say you're expecting money from somebody, you're expecting coins from somebody, and you see this transaction appear in your mempool, so in your memory, but it's not yet in a block and you're happy.
-
-Van Wirdum: 00:03:52
-
-But
-
-Provoost: 00:03:52
-
-now it turns out that this person is actually sending you that transaction over the wire, but to the outside world he's sending a very different transaction and so then a new block arrives but you're not going to see that block.
-
-Van Wirdum: 00:04:07
-
-He's sending a conflicting transaction is what you mean he's sending the same coins to someone else yeah
-
-Provoost: 00:04:12
-
-to himself probably yeah And so you think you've got this unconfirmed transaction and it's going towards you and you're not seeing any new blocks, but you think, okay, I guess, you know, this is good.
+But now it turns out that this person is actually sending you that transaction over the wire, but to the outside world he's sending a very different transaction and so then a new block arrives but you're not going to see that block.
+He's sending a conflicting transaction is what you mean he's sending the same coins to someone else to himself probably and so you think you've got this unconfirmed transaction and it's going towards you and you're not seeing any new blocks, but you think, okay, I guess, you know, this is good.
 It's mine.
 
 Van Wirdum: 00:04:24
@@ -200,15 +138,7 @@ Right, so what if I don't trust Zeroconf?
 Provoost: 00:04:43
 
 So if you do wait for a confirmation, they can still attack you using an Eclipse attack, but it's going to get a lot more expensive.
-So they'll have to produce a block, basically,
-
-Van Wirdum: 00:04:54
-
-a
-
-Provoost: 00:04:54
-
-valid block.
+So they'll have to produce a block, basically, a valid block.
 And then they give you that block, and it includes the transaction, so you think it's confirmed.
 But the outside world is also producing blocks, the normal miners, and they're hiding those normal blocks from you.
 So now in the outside world, that transaction never happened because there's a longer chain that's not paying you, and you've just accepted their one block or maybe multiple blocks.
@@ -228,7 +158,7 @@ So unless
 
 Van Wirdum: 00:06:06
 
-you're buying...
+You're buying...
 Which is very unlikely.
 
 Provoost: 00:06:07
@@ -242,7 +172,6 @@ So there's a lot of economic damage, but they still scam you.
 
 Van Wirdum: 00:06:50
 
-Right.
 So basically, let's say there are two miners on the network, just to simplify things, then you launch an Eclipse attack on one of them, plus you launch an Eclipse attack on me.
 Then you can have this one miner produce blocks and he doesn't see the blocks of his competitor and you send these blocks of the miner you're attacking to me and therefore we're on sort of a separate network, which could be a minority network.
 So the miner is wasting money, and I'm being cheated with fake transactions at the same time.
@@ -251,13 +180,6 @@ Provoost: 00:07:24
 
 Yes, but the attacker still makes money.
 So, yes, it's important that the attacker doesn't necessarily have to produce the blocks themselves in order to profit from an Eclipse attack.
-
-Van Wirdum: 00:07:33
-
-Right.
-
-Provoost: 00:07:33
-
 Now, the good news, or I don't know if it's good news, but mining is still somewhat centralized.
 There's specialized networks that connect miners, so this is quite difficult to do.
 
@@ -270,13 +192,6 @@ Provoost: 00:07:45
 
 Exactly.
 But we don't want to rely on that of course.
-
-Van Wirdum: 00:07:48
-
-Right.
-
-Provoost: 00:07:48
-
 Ideally, you know, it should be impossible to eclipse anyone.
 
 Van Wirdum: 00:07:52
@@ -290,7 +205,7 @@ So I guess in order to understand that we should explain how this paper proposes
 
 Van Wirdum: 00:08:08
 
-Right, oh yeah, I almost forgot about that, yes.
+Right, I almost forgot about that.
 How do you actually do it?
 
 Provoost: 00:08:14
@@ -299,11 +214,10 @@ Well how did you used to?
 The idea that you, there's a couple of ingredients that you need here.
 One is that what nodes are doing, when they start, they try to find other peers.
 And I think we talked about that before a little bit when we talked about DNS seeds.
-Yeah, a couple
 
 Van Wirdum: 00:08:32
 
-episodes ago.
+A couple episodes ago.
 
 Provoost: 00:08:33
 
@@ -312,31 +226,13 @@ And when the node restarts, it looks at this file for all the addresses it's hea
 And the idea here is that you try to pollute this file as an attacker.
 You try to give the node a lot of new addresses that you control or that just don't exist.
 That's fine, too.
-And you you kind of try to exploit the way that this Node picks the addresses that's sort
-
-Van Wirdum: 00:09:08
-
-of
-
-Provoost: 00:09:09
-
-at a high level what happens.
-And so basically the The node divides the addresses in buckets It basically looks at the IP address and find some patterns in it like the starting letters of the IP address or deciding numbers of the IP address And it divides them across buckets that way
-
-Van Wirdum: 00:09:25
-
+And you you kind of try to exploit the way that this Node picks the addresses that's sort of at a high level what happens.
+And so basically the The node divides the addresses in buckets It basically looks at the IP address and find some patterns in it like the starting letters of the IP address or deciding numbers of the IP address
 and I guess buckets are just a different word for lists
 
 Provoost: 00:09:29
 
-Yes, yeah separate lists and then when it's starting up it just tries to you know, pick things from different buckets,
-
-Van Wirdum: 00:09:36
-
-right?
-
-Provoost: 00:09:36
-
+Yes, yeah separate lists and then when it's starting up it just tries to you know, pick things from different buckets.
 It's still get confused by the details.
 It doesn't really matter.
 But there's basically a way that it does that, and you can exploit that mechanism because the mechanism has or had a bias in it.
@@ -345,22 +241,8 @@ And so you could exploit that.
 But the idea is you give the node, you start up a whole bunch of attack nodes and you just feed IP addresses.
 You connect to the victim node so you can occupy all the inbound connections.
 That's easy.
-
-Van Wirdum: 00:10:11
-
-Right.
-
-Provoost: 00:10:11
-
 And then you give it a lot of nonsense addresses and a lot of real addresses that are you.
-
-Van Wirdum: 00:10:17
-
-Yeah, so
-
-Provoost: 00:10:17
-
-every time it makes a connection, it either fails because there's nothing there or it connects to you.
+So every time it makes a connection, it either fails because there's nothing there or it connects to you.
 And eventually it only connects to you.
 
 Van Wirdum: 00:10:25
@@ -373,11 +255,11 @@ Yeah, and so part of the trick here is that you have a list of IP addresses that
 
 Van Wirdum: 00:11:03
 
-Right, so it's even worse than the sort of random example I gave.
+So it's even worse than the sort of random example I gave.
 
 Provoost: 00:11:07
 
-Yeah, well, that's the problem.
+Well, that's the problem.
 You can just keep giving somebody new addresses and then eventually they won't remember any of their old addresses.
 So the paper runs a simulation to see how difficult it is to actually overflow all these buckets.
 Because maybe it might be possible in theory, but maybe it's just too much work.
@@ -409,13 +291,6 @@ There's been lots of problems like that.
 But when it crashes and it starts again, hopefully, usually automatically, if you've configured a server correctly.
 And when it starts automatically, or when it starts, it's gonna look at that file of peers it knows, and it's gonna try and connect to them.
 So it's gonna look in all these buckets, and it's only gonna find the attacker.
-
-Van Wirdum: 00:12:49
-
-Right.
-
-Provoost: 00:12:50
-
 And then the attacker also makes sure that it's connecting to you.
 So all your inbound connections are full.
 And then you're just only talking to the attacker.
@@ -451,7 +326,6 @@ One thing you can do is to not have that bias.
 
 Van Wirdum: 00:13:35
 
-Right.
 Or reverse that bias.
 
 Provoost: 00:13:38
@@ -476,12 +350,11 @@ So what I think a couple of years ago was merged was basically Bitcoin Core ever
 
 Van Wirdum: 00:14:46
 
-Right.
 So that is prioritizing older addresses just in a smarter way.
 
 Provoost: 00:14:51
 
-Yes, exactly.
+Exactly.
 
 Van Wirdum: 00:14:53
 
@@ -491,24 +364,9 @@ Is that one merged using more buckets?
 
 Provoost: 00:14:57
 
-I don't think so.
-
-Van Wirdum: 00:15:00
-
-Okay.
-
-Provoost: 00:15:01
-
 I don't think using more buckets was merged.
 Basically the paper has about 10 suggestions and some of them have been merged.
 Some of them even before the paper came out because obviously it was an exploitable vulnerability.
-
-Van Wirdum: 00:15:09
-
-Right.
-
-Provoost: 00:15:10
-
 And some of them much later.
 Another thing you can do, and that is actually what has been merged a few weeks ago.
 
@@ -518,8 +376,7 @@ Which will be in the next Bitcoin Core release?
 
 Provoost: 00:15:20
 
-Hopefully, yes.
-Well, yes.
+Hopefully.
 Is that when you restart, you try to remember some of the last connections you had.
 And so that's what it's doing basically.
 It remembers, I think, two connections.
@@ -527,22 +384,15 @@ Namely two connections that it only exchanges blocks with, and it tries to recon
 But not too often, because there's trade-offs everywhere.
 But apparently, it's not a good idea to always try to reconnect to the same nodes again when you restart.
 Because for all you know, the reason you crashed in the first place is because one of those nodes was evil.
-
-Van Wirdum: 00:15:52
-
-Right.
-
-Provoost: 00:15:53
-
 Right?
 
 Van Wirdum: 00:15:54
 
-Yeah, so yeah, the idea is that as you explained before, you need to crash a node for a node to start up again and find, well, all of the attack IP addresses in this case, this attack would be countered because you're just connecting to some of the same IP addresses you were already connected to.
+Yeah, the idea is that as you explained before, you need to crash a node for a node to start up again and find, well, all of the attack IP addresses in this case, this attack would be countered because you're just connecting to some of the same IP addresses you were already connected to.
 
 Provoost: 00:16:09
 
-Yeah, but now...
+But now...
 
 Van Wirdum: 00:16:11
 
@@ -551,13 +401,6 @@ With the trade-off that maybe the one you connected to was also the one that cra
 Provoost: 00:16:16
 
 Yes, but you exactly yeah and I think one of the mitigations for that is that you only try this once so you connect to the one you were connected to last but if that goes wrong again you don't do it again.
-
-Van Wirdum: 00:16:27
-
-Right.
-
-Provoost: 00:16:28
-
 Now another thing you can do is not have more buckets but have more connections, more outbound connections.
 Because the more outbound connections you have, the more likely you are to be connecting to honest nodes.
 
@@ -611,15 +454,7 @@ But we sort of already spoiled it in the previous solution.
 Provoost: 00:17:41
 
 We may have.
-So one of the ways to have more connections, to have the upside of more connections without the downside of more bandwidth is to only exchange blocks with those extra connections because that happens much less frequently and
-
-Van Wirdum: 00:17:54
-
-it still costs a little bit of extra bandwidth but much less
-
-Provoost: 00:17:58
-
-and this again you know reminds us that you need to wait for confirmations, because those connections will tell you about new blocks.
+So one of the ways to have more connections, to have the upside of more connections without the downside of more bandwidth is to only exchange blocks with those extra connections because that happens much less frequently and it still costs a little bit of extra bandwidth but much less and this again you know reminds us that you need to wait for confirmations, because those connections will tell you about new blocks.
 They won't tell you about new stuff in the mempool, but that's fine if you wait for confirmations.
 
 Van Wirdum: 00:18:11
@@ -661,8 +496,7 @@ So if you have multiple nodes that you're using for whatever your service is, an
 
 Van Wirdum: 00:19:34
 
-Sounds like a good idea to me, Sjoerd.
-Yeah.
+Sounds like a good idea to me, Sjoers.
 But there were like ten solutions in the paper.
 
 Provoost: 00:19:38
