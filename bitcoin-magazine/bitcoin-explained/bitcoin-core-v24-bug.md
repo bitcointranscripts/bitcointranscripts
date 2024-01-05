@@ -2,7 +2,7 @@
 title: "Bitcoin Core v24 Bug"
 transcript_by: jeffreyweier via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=66W6_AVSxME
-tags: ["bitcoin-core","full-rbf"]
+tags: ["bitcoin-core"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-12-29
@@ -88,7 +88,7 @@ Aaron van Wirdum: 00:02:26
 
 We wanted to bring you something before the end of the year, because otherwise you would have had to manage probably five to six weeks without our voice.
 And we didn't want to do that to you, the listeners.
-So here we are back with an episode about a bug that was in Bitcoin Core 24.0.0. But, first of all, let's back up a little bit here.
+So here we are back with an episode about a bug that was in Bitcoin Core 24.0. But, first of all, let's back up a little bit here.
 Let's take it seriously.
 
 Sjors Provoost: 00:02:40
@@ -99,7 +99,7 @@ It's a serious issue.
 
 Aaron van Wirdum: 00:02:41
 
-We had an episode on Bitcoin Core 24.0.0. But then the release of Bitcoin Core 24.0.0 was delayed by quite a bit.
+We had an episode on Bitcoin Core 24.0. But then the release of Bitcoin Core 24.0 was delayed by quite a bit.
 And that was because of a discussion about full RBF, there was an option to switch on full RBF in the Bitcoin Core 24 node.
 And that sort of pushed back the actual release of Bitcoin Core 24.
 And then finally Bitcoin Core 24 was released, but then it kind of wasn't.
@@ -110,7 +110,6 @@ Yeah, there was a bug in it.
 But the release was announced.
 But if you went to the website bitcoincore.org, you would actually still find version 23.
 So only some advanced users would have been able to download the actual release.
-And then...
 
 Aaron van Wirdum: 00:03:39
 
@@ -136,26 +135,17 @@ Aaron van Wirdum: 00:04:31
 
 Okay, I see.
 So there was technically an official Bitcoin Core 24 release, but that release never showed up on bitcoincore.org.
-What you do find on bitcoincore.org right now is BitcoinCore 24.0.1. And this is because there was a bug in the original, technically officially released Bitcoin Core 24 release.
+What you do find on bitcoincore.org right now is Bitcoin Core 24.0.1. And this is because there was a bug in the original, technically officially released Bitcoin Core 24 release.
 Is that right?
 
 Sjors Provoost: 00:04:56
 
 Yeah, exactly.
 And when something like that happens, then the next release can be just called 24.0.1, basically not immediately 24.1. Because it's like a quick enough fix, basically.
-
-Aaron van Wirdum: 00:05:09
-
-Okay.
-
-Sjors Provoost: 00:05:09
-
 Probably nobody's gonna be running the old version.
 
 Aaron van Wirdum: 00:05:12
 
-Right.
-So that gets us to ...
 So first of all, there was a bug in 24, but that was not caught in the release process.
 That's why there is the release candidate process, right?
 
@@ -167,55 +157,17 @@ So that was not found in time.
 
 Aaron van Wirdum: 00:05:43
 
-Right.
 So a bug was found after it was officially released, but before it was published on the bitcoincore.org website.
 Okay, Sjors, what's the bug?
 What happened?
 What went wrong?
 
-## Podcasting 2.0 / Boosts (should this be removed???)
-
-Sjors Provoost: 00:05:54
-
-Well, let's make a little suspension here, and I'm going to read some boosts from the previous episode first.
-
-Aaron van Wirdum: 00:06:00
-
-Oh, yeah, we almost forgot about that.
-People are paying us money.
-We shouldn't forget about that at all.
-Go ahead, Sjors.
-And also tell our other listeners how they can pay us even more money.
-
-Sjors Provoost: 00:06:12
-
-Yeah, so if you have an app that supports the Podcasting 2.0 standard, there's multiple apps, Fountain is one, then you can actually stream sats to us.
-And if you Google something like Podcasting 2.0 streaming sats, and you'll find podcasts that explain that in more detail.
-And then you can also send us a message, which is called a boost.
-And we got, we got a bunch of messages.
-I'll just read two.
-
-Aaron van Wirdum: 00:06:34
-
-These are the top paying ones?
-
-Sjors Provoost: 00:06:36
-
-Yes, though we don't promise to take the top ones.
-I'll read the amount and the name, et cetera.
-So we have at Banana Man, or Banana Man, depending on if he's British or American paying 12,000 sats saying episode 69 nice.
-Okay and then we have a question from at user 6025638884 well la la la la.
-
-Aaron van Wirdum: 00:07:06
-
-No, no this is important Sjors he's paying money.
-You better read his name right.
+[omitted podcasting 2.0/boosts segment]
 
 ## What makes a non-RBF transaction new?
 
 Sjors Provoost: 00:07:10
 
-No, these are default usernames that are created by the app, so that's fine.
 He or she is paying 10,000 sats and has a question which is related to the topic we talked about earlier, namely RBF.
 What makes a non-RBF transaction new to a node and when is it just another version?
 Is it easy to consider the new transaction if some of the input UTXO changes.
@@ -343,12 +295,14 @@ What was this bug?
 Sjors Provoost: 00:12:14
 
 Yeah, it was a bit of a foot gun basically.
-You could, I don't know, foot gun is the right word.
-You could lose a bunch of money so in Bitcoin Core you when you're sending money you can either let the wallet decide automatically which of your coins to use to send the money or you can manually specify exactly which coins you want to use or some combination of both where you say well I want to pay one Bitcoin to this guy and I want to use this specific 0.3 Bitcoin coin that I have but other than that you figure it out which coins to take from the wallet.
+I don't know if foot gun is the right word.
+You could lose a bunch of money.
+So in Bitcoin Core when you're sending money you can either let the wallet decide automatically which of your coins to use to send the money or you can manually specify exactly which coins you want to use or some combination of both where you say well I want to pay one Bitcoin to this guy and I want to use this specific 0.3 Bitcoin coin that I have but other than that you figure it out which coins to take from the wallet.
 
 Aaron van Wirdum: 00:12:44
 
-Right, when you're saying coins the technical term here is UTXOs. I guess people that know that know what you mean anyway.
+Right, when you're saying coins the technical term here is UTXOs.
+I guess people that know that know what you mean anyway.
 So yeah, my addition doesn't really help anyone.
 
 Sjors Provoost: 00:12:54
@@ -361,7 +315,7 @@ Aaron van Wirdum: 00:13:14
 Well if you want to use the analogy, sometimes when you're abroad in a country where you don't know which coins are what and you don't want to waste time, you just sort of show all your coins to the merchant and then they'll just pick.
 
 Sjors Provoost: 00:13:24
-.0
+
 They'll do the coin selection for you.
 
 Aaron van Wirdum: 00:13:26
@@ -379,8 +333,7 @@ So that would be the analogy here.
 
 Sjors Provoost: 00:13:31
 
-So anyway, there was a bug in that where, if you want to stick to the analogy, I think what happened is you would pick one of those coins and then it would basically, well let's not use the analogy.
-You would basically select a couple of coins and then due to the bug it would use those coins twice to calculate what was going on.
+So anyway, there was a bug in that where you would basically select a couple of coins and then due to the bug it would use those coins twice to calculate what was going on.
 
 Aaron van Wirdum: 00:13:54
 
@@ -432,8 +385,7 @@ And with the new version, it would only need two steps to remove the coin.
 So it was cleaner, but it had the mistake in there and the mistake was not caught.
 It wasn't caught during the code review by the people looking at it.
 There were also no tests that failed.
-So there was no test where this precise scenario of adding two coins, etc., etc.
-was there.
+So there was no test where this precise scenario of adding two coins, etc., etc. was there.
 Because either could have caught it.
 Somebody could have caught it in a review or somebody, some automated test could have caught it, but it didn't.
 And so the way that that is fixed is, first you fix the original bug, and second, you add tests that would have caught it, so that at least the same bug could not happen again.
@@ -467,10 +419,8 @@ So it was definitely worth fixing.
 
 Aaron van Wirdum: 00:19:33
 
-Right.
-Okay.
 Well, there you have it.
-That's why the new release is Bitcoin Core 24.0.0.1 instead of just Bitcoin Core 24.
+That's why the new release is Bitcoin Core 24.0.1 instead of just Bitcoin Core 24.
 You are enlightened, our dear listener.
 
 ## Additional bug fixes
@@ -511,18 +461,17 @@ We'll find out there were bugs in version 24.
 And then you can do two things to your users.
 You can say, tough, just download version 25 if you want that bug fixed.
 But then they have to download all these new changes in version 25, which people don't like.
-So there will also be version 24.0.1, which only fixes the bugs, but doesn't have any of the other new changes.
+So there will also be version 24.1, which only fixes the bugs, but doesn't have any of the other new changes.
 That's called backporting.
 
 Aaron van Wirdum: 00:21:06
 
 Sjors, I just want you to tell our listeners that Bitcoin Core 24.0.1 is clean and we're ready for the new year.
-We're ready for Bitcoin Core...
-No, we're ready for 2023 with Bitcoin Core 24.0.1.
+We're ready for 2023 with Bitcoin Core 24.0.1.
 
 Sjors Provoost: 00:21:20
 
-Well, all I can tell you is that currently there is a milestone called 24.0.1 and it doesn't have any bugs in it.
+Well, all I can tell you is that currently there is a milestone called 24.1 and it doesn't have any bugs in it.
 
 Aaron van Wirdum: 00:21:27
 
