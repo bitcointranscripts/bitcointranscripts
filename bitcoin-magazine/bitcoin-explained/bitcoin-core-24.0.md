@@ -36,7 +36,7 @@ How do you like the weather?
 
 Aaron van Wirdum: 00:00:29
 
-Yeah, well, It was too hot all summer and then it was nice for about a week and now we're back to too cold. So...
+Yeah, well, It was too hot all summer and then it was nice for about a week and now we're back to too cold.
 
 Sjors Provoost: 00:00:36
 
@@ -47,17 +47,14 @@ Aaron van Wirdum: 00:00:39
 That's winter for you at least for now it's still a little bit light.
 For example while we're recording It's still light and it's past six.
 That's the really dreadful moment for me when the clock changes.
-We go back to the...
-We revert.
 
 Sjors Provoost: 00:00:55
 
-They might say this.
 Well, we go to standard time, although some people want to change it and make the summertime the default, which I think is terrible.
 
 Aaron van Wirdum: 00:01:03
 
-I would definitely prefer that, just because I don't get up that early anyways so I like to optimize my my Sun hours
+I would definitely prefer that, just because I don't get up that early anyways so I like to optimize my sun hours
 
 Sjors Provoost: 00:01:13
 
@@ -66,26 +63,22 @@ I mean ultimately you can just get up whenever you want to get up right unless y
 Aaron van Wirdum: 00:01:19
 
 But you are kind of reliant on the rest of society around you, right?
-Like stores close at a certain time and people get out of work at a certain time, like might be your friends, or you want to record a podcast at a certain time because you want to eat at a certain time.
+Like stores close at a certain time and people get out of work at a certain time, might be your friends, or you want to record a podcast at a certain time because you want to eat at a certain time.
 So I don't have that full flexibility that you suggest because of all these people around me.
-Okay, Sjors, I'm going to show the conference one more time.
+
+Okay, Sjors, I'm going to shill the conference one more time.
 Conference is coming up.
 You can get a 10% discount if you know how to spell Sjorsnado, that's your discount code.
 Sjorsnado on I think it's b.tc/amsterdam.
 I think that's the website for the conference.
 All right, Sjors, We're going to discuss the new Bitcoin Core release that's coming up.
 It's not here yet.
-It's Bitcoin Core
-
-Sjors Provoost: 00:02:06
-
-24.0.
 
 ## What does it mean
 
 Aaron van Wirdum: 00:02:09
 
-24.0, that's the upcoming one.
+It's Bitcoin Core 24.0, that's the upcoming one.
 Real quick for maybe there are some new listeners, What does it mean that there's a new Bitcoin Core release coming out?
 
 Sjors Provoost: 00:02:18
@@ -102,14 +95,12 @@ Generally, whatever is done is done.
 
 Sjors Provoost: 00:02:41
 
-Yes.
-And then there are some minor updates throughout the rest of the year.
+Yes. And then there are some minor updates throughout the rest of the year.
 That might be 24.1, 24.2, etc.
 And those typically are just bug fixes, but no major changes.
 
 Aaron van Wirdum: 00:02:51
 
-Right.
 And right now there's a release candidate.
 At the time of recording this podcast, there's I think the first release candidate for Bitcoin Core 24.
 
@@ -121,35 +112,28 @@ Sjors Provoost: 00:03:01
 
 Kind of what the word suggests, it's a candidate for the release.
 So if all goes well, then the actual release will be made identical to the last candidate.
-But the idea is that people who know what they're doing should be downloading that release candidate and or compiling it themselves and play around with it and make sure that nothing crashes that things they use especially if you run some sort of automated service like you might be running an exchange or maybe you're running BTC pay or something like that you want to make sure nothing breaks in your setup because Bitcoin Core tries to not break things that use it but it happens occasionally.
+But the idea is that people who know what they're doing should be downloading that release candidate and or compiling it themselves and playing around with it and making sure that nothing crashes the things they use especially if you run some sort of automated service like you might be running an exchange or maybe you're running BTC pay or something like that you want to make sure nothing breaks in your setup because Bitcoin Core tries to not break things that use it but it happens occasionally.
 
 Aaron van Wirdum: 00:03:39
 
-Right so if there's no report of anything breaking then this release candidates will basically be the release right?
+Right so if there's no report of anything breaking then this release candidate will basically be the release right?
 
 Sjors Provoost: 00:03:45
 
-Yeah but I think there's already some some things that have been improved so there will definitely be a second release candidate
+Yeah, but I think there are already some things that have been improved so there will definitely be a second release candidate.
 
 Aaron van Wirdum: 00:03:51
 
-okay yeah and I think in previous Bitcore releases there were an average like four or so
+okay yeah, and I think in previous Bitcoin core releases there were an average of four or so.
 
 Sjors Provoost: 00:03:56
 
-yeah I'd say that's typical
-
-Aaron van Wirdum: 00:03:57
-
-yeah so that
-
-Sjors Provoost: 00:03:58
-
-so usually there's two weeks between them So you release it and then maybe after a week or so people start fixing things and then after two weeks there is a new one
+Yeah, I'd say that's typical.
+So usually there's two weeks between them, So you release it and then maybe after a week or so, people start fixing things, and then after two weeks there is a new one.
 
 Aaron van Wirdum: 00:04:06
 
-Right, so realistically well technically the new bitcoin core 24 release could be released any day now, but practically speaking will probably be at least a couple more weeks, right?
+Right, so realistically well technically the new Bitcoin Core 24 release could be released any day now, but practically speaking will probably be at least a couple more weeks, right?
 
 Sjors Provoost: 00:04:17
 
@@ -158,9 +142,7 @@ I think there is a release, attempted release schedule on the Bitcoin Core repos
 
 Aaron van Wirdum: 00:04:28
 
-Right.
-Okay.
-So, there's a bunch of new futures as well as bug fixes and improvements, sorry, performance improvements in this new release.
+So, there are a bunch of new features as well as bug fixes and improvements, sorry, performance improvements in this new release.
 We're going to discuss a couple of these.
 This is kind of just our selection.
 If this podcast was made by two other people, by Ors and Sharon, they might make a different selection.
@@ -173,7 +155,7 @@ So there's a lot of changes that are just not very interesting to discuss, altho
 
 Aaron van Wirdum: 00:05:29
 
-Yeah, I'm just saying we made a selection of some of the changes that we think are probably most interesting
+Yeah, I'm just saying we made a selection of some of the changes that we think are probably the most interesting
 to you, our dear listener.
 
 ## Peer-to-Peer network changes
@@ -198,20 +180,18 @@ Peer-to-peer networking.
 
 Aaron van Wirdum: 00:05:57
 
-Yeah.
 Let's move on.
 So it says that there's a change and you're gonna explain to me what this is That's the format of the podcast in case you forgot.
 It says download headers from peers so the downloading from Downloading of headers from peers has been reworked.
 That's right somehow.
-Okay
 
 ## Download headers from peers
 
 Sjors Provoost: 00:06:18
 
 Yeah, this one might be worth a separate episode, but I think we can explain the gist of it now.
-So when your node first starts up, it is going to find peers, which we discussed in earlier episode, and then it's going to download headers from peers, which we've also discussed in earlier episodes.
-So it tries to get all the headers first and then...
+So when your node first starts up, it is going to find peers, which we discussed in an earlier episode, and then it's going to download headers from peers, which we've also discussed in earlier episodes.
+So it tries to get all the headers first.
 
 Aaron van Wirdum: 00:06:36
 
@@ -277,7 +257,7 @@ You need the actual proof of work,
 Sjors Provoost: 00:08:27
 
 Yeah. But I mean, you know, the proof of work in the beginning was quite low, so you can do that with a CPU, but maybe if you wanna do some damage, maybe you need more power.
-Anyway, so the worry is that you get a billion headers from a chain and it's not the real chain, but it's a lots of low work nonsense.
+Anyway, so the worry is that you get a billion headers from a chain and it's not the real chain, but it's a lot of low-work nonsense.
 And the problem with that is that not just do you have to download it because that's kind of hard to avoid But you also tend to store it on your disk because maybe you receive half a billion headers But and those don't go anywhere, but you don't know maybe there's another half a billion headers on top of that that do take you to the real tip.
 So you can't really throw those headers away that easily.
 And so the attack would be that lots of headers are sent to you.
@@ -297,7 +277,7 @@ Aaron van Wirdum: 00:09:26
 Yes, so that problem was solved by only checking the headers.
 But now basically a new problem is introduced, namely someone could just send you a boatload of fake headers, essentially.
 And then while downloading all these headers, you also have to store it.
-This is resource intensive.
+This is resource-intensive.
 
 Sjors Provoost: 00:09:43
 
@@ -327,7 +307,7 @@ Right.
 So it's not optional.
 Right.
 And that has always been done retroactively, like a long time after.
-So, so a way to abuse checkpoints is to say, well, somebody stole my coins.
+So a way to abuse checkpoints is to say, well, somebody stole my coins.
 I'm going to now introduce a checkpoint that happened before somebody stole my coins for a new block that I've created.
 That does not steal my coins.
 And then, you know, we start history again.
@@ -341,10 +321,9 @@ Well, that should be after some of, well
 Sjors Provoost: 00:10:37
 
 Yeah, so somebody steals my coins.
-Yeah.
 Let's say that happens today.
 Then I call up a miner and say, could you make a couple of new blocks that don't steal my coins?
-Here's the double spend version that I want to include in that block.
+Here's the double-spend version that I want to include in that block.
 They mine it for me and then I release a new version of Bitcoin Core that says here's a checkpoint.
 You must ignore like the real big chain that has built on top of the hack and actually go for this other chain.
 
@@ -376,7 +355,6 @@ It's a while.
 
 Sjors Provoost: 00:11:35
 
-Yeah.
 And so it'd be nice to get rid of those things entirely because, you know, they are confusing and, you know, we probably don't want to add new ones.
 So In order to get rid of them, you still need to fix this resource exhaustion attack that we just talked about.
 So then how do you do that?
@@ -386,11 +364,10 @@ You just look at them, check if they're correct, and you throw them away.
 This means it does not use any of your disk space.
 Then if you see enough work at the end, if you checked all the headers and you see the proof of work is enough, it's the longest chain, Then you ask the peer, hey, can you send them again, please?
 And you download them again.
-Right.
+
 
 Aaron van Wirdum: 00:12:21
 
-Yeah.
 I think I mentioned yesterday when we went over this in our preparation, this is kind of how my attention span usually works.
 
 Sjors Provoost: 00:12:28
@@ -403,10 +380,6 @@ Please repeat.
 Aaron van Wirdum: 00:12:35
 
 Can you repeat that for me?
-
-Sjors Provoost: 00:12:36
-
-Yeah.
 
 Aaron van Wirdum: 00:12:37
 
@@ -438,13 +411,13 @@ You don't know that, because you didn't store them.
 So what you do instead is you store one checksum, which is a one-bit checksum, every 50,000 blocks or so.
 So every 50,000 headers you store a zero or a one depending on the contents of those headers and you do that every 50,000 headers.
 That is very little information but it turns out that it's actually quite difficult for anybody to fake that information.
-So it's for anybody to create fake headers that do match your your checksum, even though it's a very small checksum.
+So it's for anybody to create fake headers that do match your checksum, even though it's a very small checksum.
 
 ## checksums
 
 Aaron van Wirdum: 00:13:36
 
-Right, yeah, a checksum is essentially you add up all kinds of numbers and you get a very short number which doesn't in itself prove anything, but I guess if you do it a bunch of times then...
+Right, yeah, a checksum is essentially you add up all kinds of numbers and you get a very short number which doesn't in itself prove anything, but I guess if you do it a bunch of times then.
 
 Sjors Provoost: 00:13:46
 
@@ -461,11 +434,11 @@ If you change any of the headers, well, you'll either get a one or a zero, but i
 Now that, of course, is a 50-50 chance.
 Yeah.
 So that's pretty easy for a hacker to go after, but there are many blocks.
-So it turns out that if for a long enough, I might be wrong on the exact number, it might be less than 50,000, but if you have enough of those one-bit checks, basically, then it becomes quite hard for an attacker to create a fake chain that has enough proof of work but that is different from the last one they sent you.
+So it turns out that if for long enough, I might be wrong on the exact number, it might be less than 50,000, but if you have enough of those one-bit checks, basically, then it becomes quite hard for an attacker to create a fake chain that has enough proof of work but that is different from the last one they sent you.
 
 Aaron van Wirdum: 00:14:23
 
-Yep okay that makes sense.
+Yep okay, that makes sense.
 So there's still a small part of the problem left which is you do still need to download it the first time.
 Yes.
 But it solves another part of the problem essentially.
@@ -474,7 +447,7 @@ Sjors Provoost: 00:14:37
 
 Yes, so the downside is you're downloading headers twice so that might be another 100 megabytes or so in the ideal case.
 However, compared to the size of the blockchain, it's not too bad.
-And compared to the worst case attack, it's definitely not bad.
+And compared to the worst-case attack, it's definitely not bad.
 
 Aaron van Wirdum: 00:14:53
 
@@ -486,11 +459,11 @@ Sjors Provoost: 00:15:10
 
 Well, with this defense, no, because all they can do is waste your bandwidth.
 And there are many ways to waste your bandwidth, right?
-An attack can just send you a gigabyte block and it would or just complete gibberish in general so that's that's not a new problem
+An attack can just send you a gigabyte block and it would or just complete gibberish in general so that's not a new problem
 
 Aaron van Wirdum: 00:15:24
 
-okay so this was included in Bitcoin core 24 and will be
+okay so this was included in Bitcoin Core 24 and will be
 
 Sjors Provoost: 00:15:28
 
@@ -506,7 +479,6 @@ Yeah, and of course, you know, there has to be some additional discussion to mak
 
 Aaron van Wirdum: 00:15:44
 
-Right.
 Okay, well, that's the peer-to-peer part of Bitcoin 24.
 Then the next point is Mempool uses full RBF now or can use full RBF?
 
@@ -524,16 +496,17 @@ Sjors Provoost: 00:16:08
 
 So basically the Bitcoin protocol itself, when you have one transaction and then you want to double spend it, there's nothing stopping you from doing that before it's in a block.
 Now, from an incentive point of view, miners are most likely to include the block with the highest fee, but they don't necessarily have to.
+
 And so there was a proposal by Peter Todd many, many years ago to say, well, normally the nodes, well, let's go one step back.
 So what miners do is ultimately up to miners.
 You have no control over that.
 And Bitcoin Core can change things in the software, but miners will do whatever they do, because what the mempool does is not consensus.
-Yeah.
+
 However, the nodes will relay transactions.
 And so you can change the nodes to say, well, I'm gonna broadcast some transactions and not gonna rebroadcast other transactions.
 And so this new rule, opt-in replaced by fee, opt-in RBF, basically said that normally we only broadcast the first version of the transaction we see, regardless of the second one.
 Doesn't matter if the second one pays more fees.
-But if you put a flag in a transaction that says, I want to opt in to replace by fee, then nodes will refer, will relay transactions that pay a higher fee only and a bunch of other constraints.
+But if you put a flag in a transaction that says, I want to opt-in to replace by fee, then nodes will refer, will relay transactions that pay a higher fee only and a bunch of other constraints.
 And so this gives the recipient some assurance, not much, but some assurance that if this flag is present, this transaction could be replaced anytime.
 You really have to wait for it to confirm.
 If it doesn't have this flag, it might still disappear.
@@ -547,7 +520,6 @@ But the main purpose or the main idea for using a flag, for example, is to incre
 
 Sjors Provoost: 00:17:54
 
-That's definitely...
 I don't know how long that idea has been around because the idea of being stuck in a mempool, that concept didn't even exist until 2015 or 2016.
 That was never a problem.
 
@@ -555,44 +527,39 @@ That was never a problem.
 Aaron van Wirdum: 00:18:04
 
 But it was the flag was introduced around that time and definitely in the context of that, that was the debate.
-Okay.
 Yeah, I'm sure about that.
-
-
 So to summarize that, At least the idea for the flag was you send a transaction, but the mempool was full, and therefore your transaction is not confirming.
 Now with the RBF flag, you can basically resend the same transaction with a higher fee, and therefore, because the flag is included, nodes will actually forward it to miners and it can be included in a block.
+
 Now you don't actually need to include the flag anymore.
 If this setting is turned on?
 
 Sjors Provoost: 00:18:44
 
-Yeah, I think that if you turn this setting on, then the flag does no longer have to be in there it'll it'll relate anyway so then I'm guessing there are other rules though because I assume the fee has to go up but I'm not sure about that
+Yeah, I think that if you turn this setting on, then the flag does no longer have to be in there, it'll relate anyway so then I'm guessing there are other rules though because I assume the fee has to go up but I'm not sure about that
 
 Aaron van Wirdum: 00:18:56
 
-so in my case if so far I was running a Bitcoin Core node let's say what was the previous one 23 of course So far I was running Bitcoin core 23 and then my node would not forward a transaction even if it had a higher fee and it conflicted with the previous transaction.
+So in my case if so far I was running a Bitcoin Core node let's say what was the previous one 23 of course So far I was running Bitcoin Core 23 and then my node would not forward a transaction even if it had a higher fee and it conflicted with the previous transaction.
 It would not do that.
 But now with Bitcoin 24 I can switch the setting and now it will actually forward that transaction.
 
 Sjors Provoost: 00:19:22
 
-Yeah I think that's it and it basically means that if you're relying on this opt-in RBF system to prevent double spends, basically to prevent double spends, you should now rely on that less so, because there's going to be more nodes that will relay this thing regardless.
+Yeah, I think that's it and it basically means that if you're relying on this opt-in RBF system to prevent double spends, basically to prevent double spends, you should now rely on that less so, because there's going to be more nodes that will relay this thing regardless.
 
 Aaron van Wirdum: 00:19:37
 
-Yeah, well, I mean, it was almost, well, I don't know about almost certainly, but there's definitely a much bigger chance that a conflict in transaction will make it to a miner now, right?
+Yeah, well, I mean, it was almost, well, I don't know about almost certainly, but there's definitely a much bigger chance that a conflict in a transaction will make it to a miner now, right?
 Because I think there only needs to be a relatively small amount of notes on the network that actually do it for a transaction to just find its way over the entire network.
 
 Sjors Provoost: 00:19:54
 
-But there was already ways to do it, right?
+But there were already ways to do it, right?
 There was a patch by Peter Todd which was pretty small and you could use that to modify your nodes.
 So there's already some nodes doing it.
 Now there's more, presumably.
 
-Aaron van Wirdum: 00:20:04
-
-Right.
 ## Merchants
 
 Aaron van Wirdum: 00:21:06
@@ -612,13 +579,13 @@ There are still some merchants that rely on zero-conf.
 Sjors Provoost: 00:21:15
 
 Yeah, there are definitely merchants that do that.
-But the flip side is that there's also merchants that use Lightning and Lightning is generally bothered a lot by this, by the existing RBF rules because they make it much more complicated to deal with penalty transactions.
-So they may get, on the long run, they may get a better lightning experience out of this.
+But the flip side is that there are also merchants that use Lightning and Lightning is generally bothered a lot by this, by the existing RBF rules because they make it much more complicated to deal with penalty transactions.
+So they may get, in the long run, they may get a better lightning experience out of this.
 
 Aaron van Wirdum: 00:21:36
 
 I mean, my personal opinion is that this should just be the general rule.
-Well, transaction should always be broadcast and forwarded, especially if they have a higher fee.
+Transactions should always be broadcast and forwarded, especially if they have a higher fee.
 
 Sjors Provoost: 00:21:48
 
@@ -627,7 +594,7 @@ But I think the bigger problem is that this RBF flag has very specific rules.
 It's not just that you set the flag, you also have to do a few other things and those other things cause complications.
 So that could be a reason to say, you know what, let's forget about this opt-in RBF completely and relay everything that is reasonable.
 But there are trade-offs.
-One is just bandwidth because if my node relays everything that you sent to it, I could send you one transaction and then increase it by one satoshi per byte or increase it by...
+One is just bandwidth because if my node relays everything that you sent to it, I could send you one transaction and then increase it by one satoshi per byte or increase it by.
 Don't even increase the fee, but just change the destinations a bit, and I could send you millions and millions of variations of the same transaction, basically wasting everybody's bandwidth.
 So it's not entirely without trade-offs.
 
@@ -636,18 +603,19 @@ So it's not entirely without trade-offs.
 
 Aaron van Wirdum: 00:22:39
 
-Fair.
 All right, let's move on to the third point.
 So we mentioned the change on the peer-to-peer network, the block header thing, and we just mentioned RBF.
 And then the third point is this related to descriptor wallets and migration to the descriptor wallets?
 
 Sjors Provoost: 00:22:52
 
-Yeah I'm not sure how much we covered the descriptor wallets so far but the gist of it is that the Bitcoin Core wallet is quite old.
+Yeah, I'm not sure how much we covered the descriptor wallets so far but the gist of it is that the Bitcoin Core wallet is quite old.
+
 It used to be just a bag of keys and then given a private key, the wallet would have to pay attention to certain scripts.
 I think in one of the first episodes we explained what scripts are.
+
 But the simplest scripts is just that anybody with the public key can spend this coin.
-The second simplest script is the anybody with the hash of the public key, like, you know, can spend the coin or anybody with the, you know, the public key for which the hash is blah, blah, blah.
+The second simplest script is that anybody with the hash of the public key, like, you know, can spend the coin or anybody with the, you know, the public key for which the hash is blah, blah, blah.
 Yeah.
 And then there was, but then later on came SegWit and that created another two variations of how you could spend the coins.
 Because you had the address of BC1, and you had the address that looked like a P2SH address with SegWit wrapped in it.
@@ -667,12 +635,12 @@ Now your wallet handles all this.
 
 Aaron van Wirdum: 00:24:14
 
-What's the practical benefits of that?
+What are the practical benefits of that?
 Just less resources?
 
 Sjors Provoost: 00:24:17
 
-For the end user this doesn't matter.
+For the end user, this doesn't matter.
 
 Sjors Provoost: 00:24:19
 
@@ -680,7 +648,7 @@ It just means that their wallet software is better maintained.
 Because it's less of a headache for the wallet developers to deal with this.
 So it basically involved the giant rewrite, mostly done by Andrew Chow.
 And one of the challenges there is we have this old wallet and we want to move people over to the new wallet.
-And so the first step for that is this new RPC call called Migrate Wallet, which does what it says it does.
+And so the first step for that is this new RPC call called `migratewallet`, which does what it says it does.
 
 Aaron van Wirdum: 00:24:43
 
@@ -688,7 +656,6 @@ It will migrate your wallet?
 
 Sjors Provoost: 00:24:45
 
-Yeah.
 And for the simplest cases, you know, if you created a wallet in the last couple years and you didn't do anything super fancy, very complicated, multi-sig setups, whatever, this will work.
 If you did do something complicated, then please test it.
 It'll make a backup, but maybe make your own backup too.
@@ -700,7 +667,6 @@ And we'd like to see bug reports basically, because maybe you have some super co
 
 Aaron van Wirdum: 00:25:09
 
-Right.
 So basically what this does is your wallet software will just go over all of the UTXOs and say, what, this is a paid to public key?
 This is a multisig.
 And throw them into different buckets
@@ -718,7 +684,6 @@ It'll look through what keys you have in the wallet and it will restructure thos
 Aaron van Wirdum: 00:25:31
 
 It will throw these in the different buckets?
-Yeah.
 Okay, instead of one big bucket.
 
 Sjors Provoost: 00:25:36
@@ -734,9 +699,8 @@ Sjors Provoost: 00:25:46
 
 I mean yeah, the users benefit indirectly, but yeah, it does.
 I mean, descriptors have already been used to allow taproot.
-So if you wanted to use taproot, you either need to create a whole new wallet or you need to migrate to a descriptor wallet and then add taproot to it.
+So if you wanted to use Taproot, you either need to create a whole new wallet or you need to migrate to a descriptor wallet and then add Taproot to it.
 So there is that too.
-Right.
 
 ## Mini Script Support
 
@@ -758,7 +722,6 @@ You cannot spend from it yet.
 
 Aaron van Wirdum: 00:26:48
 
-Right.
 I mean, the other way to put it, the simple way to put it maybe is mini script allows for smart contracting type of stuff, right?
 
 ## Mini Script
@@ -797,7 +760,7 @@ So you shouldn't do that.
 Aaron van Wirdum: 00:27:49
 
 Okay, yeah, don't do it yet.
-And this sounds like you might need to run a separate wallet or a separate piece of software that you connect to your Bitcoin Core node?
+And this sounds like you might need to run a separate wallet or a separate piece of software that you connect to your Bitcoin Core node.
 
 Sjors Provoost: 00:28:00
 
@@ -838,20 +801,19 @@ Is there currently other Bitcoin software that already allows you to create and 
 
 Sjors Provoost: 00:29:17
 
-No, as far as I know there is there's basically a library called Rust Miniscript and a library written by CPython that does Miniscript and C++ Those libraries you can use but they're not fully functional wallets So I don't know if anybody is using Miniscript in the wild, maybe Blockstream is for their what is it?
+No, as far as I know, there is there's basically a library called Rust Miniscript and a library written by CPython that does Miniscript and C++ Those libraries you can use but they're not fully functional wallets So I don't know if anybody is using Miniscript in the wild, maybe Blockstream is for their what is it?
+Liquid sidechain stuff, I would know.
 
 Aaron van Wirdum: 00:29:36
 
-Liquid sidechain?
-Liquid sidechain stuff, I would know.
 Okay, well interesting, like I said that sounds like a pretty big step actually.
 
 Sjors Provoost: 00:29:43
 
-Yeah, and it would also I think This is the longer term trend of hopefully turning Bitcoin Core from a not a very good wallet, was quite slow, quite weird, to hopefully a very good wallet.
+Yeah, and it would also I think This is the longer-term trend of hopefully turning Bitcoin Core from a not a very good wallet, was quite slow, quite weird, to hopefully a very good wallet.
 And at least a very good wallet for power users, right?
 So maybe exchanges want to use it more.
-And My hope is that if this wallet becomes very powerful, then more people will help review the code and more people will help improve it.
+My hope is that if this wallet becomes very powerful, then more people will help review the code and more people will help improve it.
 So you kind of get this self-amplifying effect.
 Once it's useful enough, more people will look at it, but it takes a very long time to become useful enough because it's not useful enough so not enough people are working on it.
 It's really I think maybe four people.
@@ -861,7 +823,7 @@ It's really I think maybe four people.
 Aaron van Wirdum: 00:30:27
 
 All right moving on to the next point.
-The next point on our list this is another point about RBF.
+The next point on our list is another point about RBF.
 
 Sjors Provoost: 00:30:36
 
@@ -875,17 +837,14 @@ Okay, wait, so we're not talking about the GUI, right?
 Sjors Provoost: 00:30:49
 
 No, the GUI already switched to use RBF by default.
-Right.
-And now
 
 Aaron van Wirdum: 00:30:53
 
-the command line does as well?
+And now the command line does as well?
 
 Sjors Provoost: 00:30:54
 
 Yeah.
-So why didn't it?
 
 Aaron van Wirdum: 00:30:56
 
@@ -905,11 +864,11 @@ Sjors Provoost: 00:31:00
 So one of the reasons is that people are using the Bitcoin Core wallet in some automated systems.
 So if you're running a Bitcoin ATM, you may have some really old software that does not know that RBF exists, maybe because it's really old, and it might get confused if it's turned on by default.
 So for those kind of systems you don't want to change things too quickly.
-But I think it's been five years now so might be a good time
+But I think it's been five years now so might be a good time to switch to default.
 
 Aaron van Wirdum: 00:31:24
 
-to switch to default.
+That should be enough time.
 
 Sjors Provoost: 00:31:26
 
@@ -917,13 +876,13 @@ Well hopefully.
 
 Aaron van Wirdum: 00:31:28
 
-Okay so would we expect more RBF transactions on the network now?
+Okay, so would we expect more RBF transactions on the network now?
 
 Sjors Provoost: 00:31:34
 
 We'll have to see.
 It depends on when people start using it.
-My hope is no, because my hope is that anybody who builds this kind of software already decided whether they want RBF on or off because it's just a default value.
+My hope is no because my hope is that anybody who builds this kind of software already decided whether they want RBF on or off because it's just a default value.
 You probably should already set that default to what you want it to be so that you're not surprised by this update.
 So I hope to see no difference.
 
@@ -950,8 +909,6 @@ Or gets confused by them.
 
 Aaron van Wirdum: 00:32:24
 
-Yeah.
-Yeah.
 Yeah, these are out there.
 Okay, makes sense.
 
@@ -984,7 +941,6 @@ But that means that generally when you see two outputs to a transaction, the big
 
 Aaron van Wirdum: 00:33:30
 
-Right.
 Well, is that necessarily true?
 That's maybe true if there are several inputs, right?
 That logic only holds up if there are several inputs, I think.
@@ -993,13 +949,9 @@ Sjors Provoost: 00:33:41
 
 Or if there's one input.
 
-Aaron van Wirdum: 00:33:43
-
-Well, if there's only...
-
 Sjors Provoost: 00:33:44
 
-Let's say you, well, if there's, depends on how much there is available, right?
+Let's say you, well, if there is, depends on how much there is available, right?
 But you're looking at the chain, so you don't know what was available.
 But if your wallet is looking at a bag of coins, it might, you know, start with the smallest coin saying, nah, it's not big enough.
 And then keep looking and then find one coin that's big enough.
@@ -1022,7 +974,7 @@ Oh several, and do you know which ones or no?
 
 Sjors Provoost: 00:34:26
 
-No I should ask Merch.
+No, I should ask Merch.
 Okay.
 He wrote a whole thesis on it and implemented a bunch of things.
 
@@ -1036,7 +988,7 @@ I think originally the system was called the knapsack.
 And I think the knapsack basically meant you just grabbed coins randomly and then see if it was enough.
 And then if it wasn't, you try it again.
 And then there was a new thing called branch and bound, which was a bit more smarter way to find coins.
-And there's also the try to find a single coin that is exactly the right value strategy.
+And there's also the trying to find a single coin that is exactly the right value strategy.
 
 
 Sjors Provoost: 00:34:57
@@ -1048,7 +1000,7 @@ And the way you do that is basically saying, well, rather than looking for the c
 
 Aaron van Wirdum: 00:35:25
 
-Right, so you want to spend one Bitcoin, so you're going to look for UTXO of three Bitcoin.
+Right, so you want to spend one Bitcoin, so you're going to look for UTXO of three Bitcoins.
 
 Sjors Provoost: 00:35:29
 
@@ -1074,8 +1026,6 @@ And that number is random.
 
 Aaron van Wirdum: 00:36:10
 
-Right.
-Okay.
 That sounds interesting.
 Doesn't that mean that you sometimes end up using more UTXOs than you would actually require?
 In other words, wouldn't you make transactions bigger than they really need to be?
@@ -1083,7 +1033,6 @@ In other words, wouldn't you make transactions bigger than they really need to b
 Sjors Provoost: 00:36:25
 
 Yeah, I think that might mean that sometimes you are spending more coins than necessary.
-Yeah.
 
 Aaron van Wirdum: 00:36:31
 
@@ -1102,12 +1051,8 @@ Sjors Provoost: 00:36:49
 
 I mean, if you're using the GUI, you can also do your coin selection completely manually.
 There is a little menu where you can see what your inputs are and just select which ones you want to spend.
-Yeah.
 
 Aaron van Wirdum: 00:36:58
-
-Okay.
-
 
 So there might be trade-offs that we're not completely clear on, but the general idea is you're going to look for more coins than you actually need for privacy purposes.
 That's ultimately the benefit, right?
@@ -1121,22 +1066,20 @@ Aaron van Wirdum: 00:37:14
 Yeah, we should maybe.
 That does sound like an interesting topic.
 We can go over all of this.
-Cool.
-Exciting.
-Last point, Shorts.
+Last point, Sjors.
 
 ## SendAll
 
 Sjors Provoost: 00:37:23
 
 Yeah, this one isn't super interesting.
-It's a new RPC called SendAll.
+It's a new RPC called `sendall`.
 And so this is a command line tool.
 And the name suggests that you're sending all your money.
 That's not actually true.
 You can use it to send all your money away to a different wallet, let's say if you're trying to migrate.
 But you can also say, take these coins, so these specific input coins, and send them all to a specific destination.
-This is stuff that you could already do because there was one command line tool called and send many and send to address.
+This is stuff that you could already do because there was one command line tool called `sendmany` and `sendtoaddress`.
 There basically were already calls to do this.
 
 Aaron van Wirdum: 00:37:55
@@ -1147,34 +1090,32 @@ Sjors Provoost: 00:37:58
 
 Yeah.
 So the underlying motivation here is actually that there are different intentions that the user might have.
-They might want to send an entire coin to an exchange for privacy reasons or they might want to send an exact amount to an exchange and in retrospect you don't really know what the user intended so that creates problems when you try to bump the fee.
+They might want to send an entire coin to an exchange for privacy reasons or they might want to send an exact amount to an exchange and in retrospect, you don't really know what the user intended so that creates problems when you try to bump the fee.
 But also the code that actually implements this is a bit of a mess because it has all these different features.
 So you can do all these different things for different use cases.
 That means your code is full of if, then, else, if, if, else, else, if.
-And so basically this is the first step to splitting that up to saying okay if you want to do this specific thing use the send all method if you want to do this other thing use the send method and that's the first step to just you know at the command line it's easier to tell users to to start using two different commands for two different things and then eventually I guess under the hood there will be some changes to the GUI to also use the separation.
+And so basically this is the first step to splitting that up to saying okay if you want to do this specific thing use the `sendall` method if you want to do this other thing use the send method and that's the first step to just you know at the command line it's easier to tell users to start using two different commands for two different things and then eventually I guess under the hood there will be some changes to the GUI to also use the separation.
 
 Aaron van Wirdum: 00:38:52
 
-Okay.
 I mean, this sounds like something that basically all wallets already do.
-I don't know.
 
 Sjors Provoost: 00:38:58
 
+I don't know.
 Like I said, it's not a new piece of functionality.
 
 Aaron van Wirdum: 00:39:01
 
-The insulting thing though, is that other wallets, the university accepted term for this is sends max.
-send max?
+The insulting thing though, is that other wallets, the universally accepted term for this is send-max.
 
 Sjors Provoost: 00:39:07
 
-Yeah but it's send max given a set of coins.
+Yeah, but it's send-max given a set of coins.
 
 Aaron van Wirdum: 00:39:12
 
-That's also what send max is I think or not?
+That's also what send-max is I think or not?
 
 Sjors Provoost: 00:39:14
 
@@ -1185,7 +1126,7 @@ Aaron van Wirdum: 00:39:15
 That's how I use it.
 That's how I think about it.
 No, but I get your point.
-Okay, yeah, this was not the most exciting future of the seven, but I'm happy we covered it, Shorz.
+Okay, yeah, this was not the most exciting future of the seven, but I'm happy we covered it, Sjors.
 Are you?
 
 Sjors Provoost: 00:39:24
@@ -1195,7 +1136,6 @@ Yeah, like I said, there's probably at least probably 500 or maybe a thousand in
 
 Aaron van Wirdum: 00:39:36
 
-Right, okay.
 Well, we covered the highlights.
 At least we covered our highlights.
 I think so too.
@@ -1208,4 +1148,3 @@ We'll see thank you for listening to bitcoin
 Aaron van Wirdum: 00:40:45
 
 Explained.
-
