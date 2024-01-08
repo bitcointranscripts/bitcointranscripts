@@ -14,14 +14,14 @@ date: 2023-02-22
 
 NVK: 00:00:08
 
-Hello and welcome to the Bitcoin.review podcast.
+Hello and welcome to Bitcoin.review podcast.
 This is an ad-free pod.
-Thank you so much for streaming those sats.
+Thank you so much for streaming those Sats.
 If you're a new listener, I'm NVK and I run CoinKite, where we've been helping people secure their bitcoins for over a decade.
-We make products like the QuoteCard, BlockLock, and we have a bunch of other projects.
+We make products like the QuoteCard, and BlockLock, and we have a bunch of other projects.
 You can find more information on CoinKite.com.
 Today, we're going to be talking about Bitcoin Core development and trying to demystify it, maybe sort of like shed some light.
-So, so some of the FUD goes away and new FUD comes in maybe, who knows?
+So, some of the FUD goes away and new FUD comes in maybe, who knows?
 
 ## Guest introductions
 
@@ -57,10 +57,9 @@ Do you guys want to tell the audience what you guys do related to Core?
 
 James O'Beirne: 00:01:12
 
-Sure.
 So yeah, my name is James And I've done work on Bitcoin Core since 2015, when I made a patch that's actually kind of coming back into relevance.
-It obfuscated the chain state contents, anything that's loaded into memory, because We were having this problem where Norton Antivirus software on Windows platforms would actually wipe out the chain data because Someone had embedded viral signatures in the operatrons Which is pretty funny.
-Now, we're talking about do that doing that for blocks, of course with the rise of inscriptions, but I so I since 2018 I've worked full-time on Bitcoin Core and related projects.
+It obfuscated the chain state contents, anything that's loaded into memory because We were having this problem where Norton Antivirus software on Windows platforms would actually wipe out the chain data because Someone had embedded viral signatures in the operations Which is pretty funny.
+Now, we're talking about doing that for blocks, of course with the rise of inscriptions, but I so I since 2018 I've worked full-time on Bitcoin Core and related projects.
 
 NVK: 00:01:57
 
@@ -71,7 +70,7 @@ Sjors Provoost: 00:01:59
 
 Yeah, I've been working on Bitcoin Core since 2017.
 I mostly review stuff hanging around in the wallet, but I also like to test completely random stuff and review it.
-So I've looked at some of James' work and other people.
+So I've looked at some of James' work and other people's.
 
 NVK: 00:02:13
 
@@ -80,14 +79,14 @@ Cool, and Mike?
 Mike Schmidt: 00:02:15
 
 I've never contributed to Bitcoin Core.
-So I'm the outsider on this panel, but I do have some I think interesting insights into the funding world around Bitcoin Core, as well as some of the supporting efforts that isn't necessarily the zeros and ones that James and Sjors are doing, but support some of those efforts in terms of funding, education, and news.
-So I actually got my sort of break into the Bitcoin world with working at Blockstream and then actually met James through Bitcoin Optech, one of the initiatives that he helped start.
+So I'm the outsider on this panel, but I do have some I think interesting insights into the funding world around Bitcoin Core, as well as some of the supporting efforts that aren't necessarily the zeros and ones that James and Sjors are doing, but support some of those efforts in terms of funding, education, and news.
+So I actually got my sort of break into the Bitcoin world by working at Blockstream and then actually met James through Bitcoin Optech, one of the initiatives that he helped start.
 And so I helped contribute at Optech and also executive director at Brink where we actually fund Bitcoin open source developers.
 So that's sort of my background and perspective.
 
 NVK: 00:03:07
 
-And I guess you're being very short there on OpTec, which is an absolutely fantastic resource that I believe started to to try to educate industry on what's going on with Bitcoin Core development, right?
+And I guess you're being very short there on Optech, which is an absolutely fantastic resource that I believe started to try to educate the industry on what's going on with Bitcoin Core development, right?
 Because, you know, realistically speaking, I mean, industry has very few sort of devs that often can understand or contribute to Bitcoin Core.
 You know, people are busy building stuff to ship to customers.
 And, and there was always this like huge gap between like what's going on in Bitcoin, which can seem a little messy and sort of like very opaque.
@@ -95,35 +94,32 @@ And, and how can we sort of like let people know that like, you know, these are 
 
 Mike Schmidt: 00:03:47
 
-Yeah, I think James could probably provide a bit more of the of the history, but I think it was a suggestion by Adam Back that the communication lines should be opened between developers and Bitcoin businesses.
-And I think Optech has done a pretty good job about digesting developments in the technical Bitcoin dev space and surfacing those to a less technical or less involved audience, including Bitcoin businesses.
+Yeah, I think James could probably provide a bit more of the history, but I think it was a suggestion by Adam Back that the communication lines should be opened between developers and Bitcoin businesses.
+And I think Optech has done a pretty good job of digesting developments in the technical Bitcoin dev space and surfacing those to a less technical or less involved audience, including Bitcoin businesses.
 And I think we've done a good job of that and maybe less of a good job.
-And maybe there's more potential about getting more feedback from Bitcoin businesses or Bitcoin users about how folks are using the software and feedback on that.
+And maybe there's more potential for getting more feedback from Bitcoin businesses or Bitcoin users about how folks are using the software and feedback on that.
 
 NVK: 00:04:35
 
 So I think it's an interesting thread that the reason why I started pulling on from there is because traditionally Bitcoin Core development was sort of opaque because it's like anarchic, right?
 People work on what they want to work.
-They may not even be on GitHub per se.
+They may not even be on GitHub per-say.
 And there is sort of like nobody decides what gets worked on.
 So there's like a lot of initiatives going on at the same time and they may not have like people's priorities in mind.
 It's whatever people want to work on, right?
 It's very hard to keep track of that stuff.
 It's very hard to understand half the time what people are working on because of the technical complexity.
 And correct me if I'm wrong, but I imagine the motivation behind Optech was around the block wars where there was a lot of opacity, not due to anybody's intent, but it's just that like, you know, there's this like completely like galaxy brain shit that people are working on.
-And then there's industry trying to say, Hey, the fees are high.
-Right.
-Like it's just like this very sort of like, you know, grub, grub brain, sort of like fees high.
-I need solution.
-Right.
+And then there's the industry trying to say, Hey, the fees are high.
+Like it's just like this very sort of like, you know, grub brain, sort of like fees high.
+I need a solution.
 And then there is like this like millions of things going on in Bitcoin Core development that may or may not affect that.
 And I got a vibe that like, you know, the intent of Optech was sort of like, okay, look, there's this massive gap.
-Can we start bridging this and involving industry and sort of like educating industry and sort of like keep tab of what people are working on.
+Can we start bridging this and involving the industry and sort of educating the industry and sort of keeping tabs on what people are working on?
 
 Sjors Provoost: 00:06:03
 
-I mean, the newsletter helps developers keep tab of what's going on.
-So,
+I mean, the newsletter helps developers keep tabs on what's going on.
 
 NVK: 00:06:08
 
@@ -135,45 +131,43 @@ That's true.
 It's really the best resource week to week for what's kind of going on.
 But yeah, you're right.
 I mean, Optech was founded in 2018 on the heels of the 2017 bull run fee market.
-And, you know, initially, there was a lot of emphasis when we would go out and talk to various members of industry about how to kind of manage the fee market and how to use things like RBF, so that exchanges were making the most efficient use of block space that they could.
-What I think we found in practice many times was that exchanges were aware that they were inefficient, but they just had kind of like bigger fish to fry from the standpoint of being a corporate entity with shareholders and profits to make.
+And, you know, initially, there was a lot of emphases when we would go out and talk to various members of the industry about how to kind of manage the fee market and how to use things like RBF so that exchanges were making the most efficient use of block space that they could.
+What I think we found in practice many times was that exchanges were aware that they were inefficient, but they just had kind of bigger fish to fry from the standpoint of being a corporate entity with shareholders and profits to make.
 And so like the conclusion that I kind of came to was, well, If a business wants to ignore best practices and basically penalize themselves with fees, you know, it's fine with me to subsidize miners and create a robust fee market.
 So I kind of like exited that conversation a little bit just because I found it was very hard to get uptake and it wasn't my position to try and sort of like push people.
 
 NVK: 00:07:19
 
-Yeah.
-It's a tough position to be in just generally speaking.
-Right.
-I mean, like Bitcoin has a set of incentives, you know, it's money for your enemies and everybody's sort of like using differently and they have both like overt and covert like incentives or sort of like intentions, right?
+Yeah, It's a tough position to be in just generally speaking.
+I mean, like Bitcoin has a set of incentives, you know, it's money for your enemies, and everybody's sort of like using differently and they have both like overt and covert like incentives or sort of like intentions, right?
 And we can't read people's minds, right?
 We can just work with the network thinking of like sort of like the worst case scenario and the best case scenario and sort of like, you know, aim somewhere where it makes sense for each feature.
 
-## The beginning of Bitcoin development
 
 So like, let's sort of like go back in time.
-How does this whole thing started?
+How does this whole thing start?
 How did Bitcoin development start?
-Right, I mean, you have Satoshi releases the paper, right?
-He releases the source code, I think was on SourceForge at the time.
-And conversations were had on email and on Bitcoin Talk, if I remember right.
-My memory is also failing of that time.
+Right, I mean, you have Satoshi release the paper, right?
+He released the source code, which I think was on SourceForge at the time.
+And conversations were had via email and on Bitcoin Talk if I remember right.
+My memory is also failing at that time.
 So that's sort of like how it starts, right?
-I mean, And Satoshi has very sort of like unilateral decisions that he pushes into Bitcoin, right?
+I mean, Satoshi has very sort of like unilateral decisions that he pushes into Bitcoin, right?
 Like, oh, I don't want Bitcoin block to be 32 megabytes.
 It's going to be one.
-Right.
 So like, boom, made a change.
 Push.
 Nobody says anything.
 
+## The beginning of Bitcoin development
+
 Sjors Provoost: 00:08:28
 
-I read some of the discussion on the on the Bitcoin talk forum for when Satoshi made those changes.
-And I think the the change to one megabyte, the discussion wasn't even about that change.
+I read some of the discussion on the Bitcoin Talk forum about when Satoshi made those changes.
+And I think the change to one megabyte, the discussion wasn't even about that change.
 There was another change in that in a pull request.
 I'm saying between scarecrows because he just pushed change.
-Yeah, there were people commenting on that, even though two lines above, there was the block size decrease.
+Yeah, there were people commenting on that, even though two lines above, there was a block size decrease.
 So that then makes you wonder whether there was some private communication about that change, or whether there was just no communication about the change and people didn't even know about it until much later.
 
 NVK: 00:09:00
@@ -181,7 +175,6 @@ NVK: 00:09:00
 I like to assume there is always private communication.
 You know, I think it's a better mental model for these things.
 You have to assume that people are colluding, good or bad, to try to get their preference ahead.
-Right?
 It's just a normal human thing to do.
 It's the natural market thing to do.
 
@@ -191,23 +184,23 @@ And we know that Satoshi communicated directly with some people because some of 
 
 NVK: 00:09:23
 
-So, so, okay.
-So, so we start that way, right.
-It's like, you know, there's 50 people using Bitcoin at a time, right.
+So we start that way.
+It's like, you know, there's 50 people using Bitcoin at a time.
 Like, you know, then a hundred and two hundred, like it kind of grew a little fast, like to a few thousand people within that sort of timeline.
-And, and the software is sort of like, you know, nobody, it's a very low stakes too, right?
-Like everybody who, who in their right mind would assume that this crazy idea would work.
-You don't have to be like like either a liar or crazy.
+And the software is sort of like, you know 
+it's very low stakes too
+Like everybody who, in their right mind would assume that this crazy idea would work.
+You have to be either a liar or crazy.
 Especially if you're around those days you'd understand this.
 Like I mean it's absolutely batshit crazy.
 So things are progressing right.
 It's lower stakes so people are less intense about things and people have a lot less of their bags depending on Bitcoin.
 And then we started having other people sort of like coming in and like you have like personalities like Gavin who sort of like you know tried to bring a little bit of the Linux sort of let's call it that was the benevolent dictator which was I don't think he lasted more than just a few months.
-I think everybody sort of like was a very sort of affirmative on the fact that he should sidestep that kind of intention.
+I think everybody sort of like was very sort of affirmative on the fact that he should sidestep that kind of intention.
 
 James O'Beirne: 00:10:31
 
-And maybe I'm sure you can help me here with the history because I'm a little bit fuzzy, but I think one of the things that he kind of pushed through pretty controversially was pay to script hash.
+And maybe Sjors you can help me here with the history because I'm a little bit fuzzy, but I think one of the things that he kind of pushed through pretty controversially was pay to script hash.
 Is that right?
 
 NVK: 00:10:42
@@ -216,12 +209,12 @@ Yes, P2SH was.
 
 Sjors Provoost: 00:10:43
 
-My understanding that that is true, but I've only read like one long form article about it.
-I have not actually done any digging myself in that history.
+My understanding is that this is true, but I've only read one long-form article about it.
+I have not actually done any digging myself into that history.
 
 NVK: 00:10:51
 
-Yeah, there's also OpEvol that had like a recursive bug or something like that.
+Yeah, there's also OP_EVAL that had like a recursive bug or something like that.
 And it had to be rewinded.
 
 Sjors Provoost: 00:10:58
@@ -232,17 +225,17 @@ So if it was doing anything like that, like just evaluating stuff.
 NVK: 00:11:11
 
 There was a lot of stuff that was like, it could be seen as either incompetence or sketchy.
-This is around the time where Mike Hearn was also around and known, I don't know if it's true or not, as the guy who put the backdoor on Gmail.
-I'm not going to get into it because like the point of this pod is not to create drama, to put any of the guests in any position where they don't want to be.
-You know, and this history is very complex, long and unclear as well.
+This is around the time when Mike Hearn was also around and known, I don't know if it's true or not, as the guy who put the backdoor on Gmail.
+I'm not going to get into it because like the point of this pod is not to create drama, or to put any of the guests in any position where they don't want to be.
+You know, and this history is very complex, long, and unclear as well.
 We're not here to discuss that on specifics.
 It's not the point.
-It's just to sort of like give a picture to people that don't know, like that the story on this is not like your traditional sort of like open source project where, you know, there is a core amount of people and some people actually like have the literal power to decide what goes in the next release, you know, it's a much more complex and fluid system, right?
+It's just to sort of like give a picture to people that don't know, like that the story on this is not like your traditional sort of like open source project where, you know, there is a core amount of people and some people actually like to have the literal power to decide what goes in the next release, you know, it's a much more complex and fluid system, right?
 
 Sjors Provoost: 00:11:59
 
-Yeah, in the beginning, I'm guessing it was more like a normal open source project and it started evolving 
-to the point where developers realized they can't just unilaterally change things.
+Yeah, in the beginning, I'm guessing it was more like a normal open-source project and it started evolving 
+to the point where developers realized they couldn't just unilaterally change things.
 
 ## Modern Bitcoin development
 
@@ -250,27 +243,28 @@ NVK: 00:12:09
 
 So let's then evolve to the point where, you know, like post Gavin era where, you know, he was still trying to split Bitcoin Core from the wallet and all that stuff.
 And so like a little bit more modern history of Bitcoin, let's put it this way, where it's like, okay, so we have this sort of like more functional thing.
-There's a lot of money in the system And it's like sort of like last sketchy quote unquote kind of thing.
+There's a lot of money in the system And it's like sort of like last sketchy quote-unquote kind of thing.
 It's kind of like moving on to GitHub where we have a lot of people working on it.
 You have issues, you have the mailing list now.
-Bitcoin talks used a lot last.
-It just became sort of like more industry than cottage industry.
+Bitcoin talks were used a lot last.
+It just became sort of like more industry than a cottage industry.
 Right.
-So, so now we have like GitHub, right?
+So, now we have GitHub, right?
 Like, and we have over what, almost 350 BIPs now.
 
-## The process for making basic changes to Bitcoin
 
 So let's say I wanted to make a change to Bitcoin, right?
-Like a non contentious change, right?
+Like a non-contentious change, right?
 Like I just want to tweak a button on the UI or I want to change some help docs, right?
 Like how would I go about doing that?
 
+## The process for making basic changes to Bitcoin
+
 Sjors Provoost: 00:13:09
 
-Well, you, I mean, so that's important to distinguish.
+Well, I mean, so that's important to distinguish.
 I think we've done that in, you've at least done that in other episodes.
-Bitcoin Core is a giant blob of software that includes the super critical consensus stuff that you really want to be careful with and also includes lots of other stuff that is just software and it would be nice if it was separated but that has been a decade-long project that sometimes gets some renewed attention.
+Bitcoin Core is a giant blob of software that includes the supercritical consensus stuff that you really want to be careful with and also includes lots of other stuff that is just software it would be nice if it was separated but that has been a decade-long project that sometimes gets some renewed attention.
 But really if it was if it were separated then a lot of the things would be probably perceived as a lot less spectacular.
 Because oh you're just a guy working on a Bitcoin wallet rather than oh you're working on the Bitcoin Core wallet.
 It's like well you're working on the wallet that's sort of attached to Bitcoin Core like a Siamese twin and we can't take it out.
@@ -283,19 +277,18 @@ You make a commit, then on your own branch, you push the branch.
 That's the jargon, but you basically submit a pull request, which then other people can see as, hey, some person and they'll see your picture or whatever pseudonym you picked, wants to make a change to Bitcoin, and other reviewers can then see what that change is.
 So they'll see only one line changed, it's just a readme file, then they'll say, okay, that looks good to me.
 In the case of like a simple typo fix, they'll say that, or you know, the discussion will be a bit longer.
-And then if enough people have said that it's okay, which in the case of a typo would probably be just one person saying it's okay, one of the maintainers, we can I guess talk about it later, we'll hit the merge button?
+And then if enough people have said that it's okay, which in the case of a typo would probably be just one person saying it's okay, one of the maintainers, we can I guess talk about it later, will hit the merge button?
 And that merge button basically puts your change into the master branch.
 And then it's just part of the Bitcoin software.
-And then at some point it gets released.
+And then at some point, it gets released.
 
 James O'Beirne: 00:15:12
 
-But I think let me, yeah, let me pick up on that part of the story, because I think this is where Bitcoin gets very, very interesting and diverges from a lot of other, say, application development.
+But I think let me, yeah, let me pick up on that part of the story, because I think this is where Bitcoin gets very, very interesting and diverges from a lot of other, say application development.
 Like, if you're using some app on your phone, that is updated typically on kind of a push model.
 So like the developer pushes out a new update and then, you know, iOS or Android or whatever, we'll sort of like download that application involuntarily and give you a new version of it.
 When, when Bitcoin is released roughly every six months, users of Bitcoin have to voluntarily go and update the software.
-There's no like automatic update process.
-So when you go and add a button to the wallet...
+There's no automatic update process.
 
 NVK: 00:15:53
 
@@ -309,10 +302,10 @@ And they should sort of say, OK, yeah, I'm going to run this new version of Bitc
 
 NVK: 00:16:17
 
-Well, let's just give an example, right?
-Say for example, like in the block wars, right?
+Well, let's just give an example.
+Say for example, like in the block wars.
 Somebody goes, say like this didn't happen, but because the core devs sort of were trying to be neutral and also like, I'd imagine they'd probably be okay with me saying this, that the majority of them were for not making the blocks that huge.
-So say industry had enough weight, right?
+So say the industry had enough weight.
 Or even say they paid GitHub to block everybody out.
 And that's even a better idea.
 They paid GitHub to block everybody out.
@@ -325,7 +318,7 @@ You'd probably have to just ignore those and keep those big blocks going forward
 Right?
 It's like, is that kind of scare?
 Like, I mean, there's a lot of things that could happen.
-You could have a change, you could have a hacker taking over GitHub.
+You could have a change, you could have a hacker taking over Github.
 See, there is a trend there on GitHub being centralized.
 It doesn't quite work just like that.
 
@@ -333,26 +326,18 @@ It doesn't quite work just like that.
 Sjors Provoost: 00:17:26
 
 But to go on that, into that rabbit hole, I think there was a way on Ubuntu to install a Bitcoin Core through the apt repository.
-And that means if you do sudo apt install Bitcoin, that does get auto updated.
-And it gets auto updated by whoever controls the Ubuntu repository.
+And that means if you do sudo apt install Bitcoin, that does get auto-updated.
+And it gets auto-updated by whoever controls the Ubuntu repository.
 So it's not even necessarily the Bitcoin Core developers.
 So that's a bit scary.
-But generally you have to go and download it yourself if
-
-NVK: 00:17:51
-
-you want
-
-Sjors Provoost: 00:17:51
-
-a new version.
+But generally, you have to go and download it yourself if you want a new version.
 And so you can wait until see if there's a panic on Twitter.
 And if so, maybe wait a little bit.
 
 NVK: 00:17:57
 
-And also like and then there is the keys, right?
-Like there is a bunch of people who have keys.
+And also like and then there are the keys, right?
+Like there are a bunch of people who have keys.
 We're going to get into that, but there's a bunch of people who have keys and they all sign that release saying, hey, this release is good for me.
 This release is good for me.
 This release is good for me.
@@ -383,9 +368,9 @@ So it's a bit of a gray area,
 NVK: 00:19:08
 
 but it is.
-But it's still a public service, right?
+But it's still a public service.
 You're at least vouching that that virus came from that source code.
-You can look back and say, hey, you know, it's just from like altering this or like doing some fact finding there, right?
+You can look back and say, hey, you know, it's just from like altering this or like doing some fact-finding there.
 Some audit, you could go and say, hey, you know, this release was that source code.
 
 James O'Beirne: 00:19:26
@@ -395,13 +380,13 @@ But so that's, you know, this Wall Street Journal article that just came out las
 Sjors Provoost: 00:19:35
 
 The title was terrible.
-The contents wasn't too bad, but they do miss the point.
+The contents weren't too bad, but they do miss the point.
 
 James O'Beirne: 00:19:40
 
 Yeah, I just, yeah, I think it's gonna be probably interpreted by the laymen in the wrong way because what would happen, like, let's say hypothetically, tomorrow, one of the maintainers doubled the block subsidy, right?
-And then merge that change, maybe even without a pull request.
-In actuality, what would happen is that code wouldn't be released for another few months.
+And then merged that change, maybe even without a pull request.
+In actuality, what would happen is that the code wouldn't be released for another few months.
 And then even if it were released, you know, I think probably nobody would run that binary because there would be enough people who noticed that change.
 Because, you know, we do comparisons between the last release version and kind of what all the sum change set of the new version would be.
 You know, they'd see that and word would get out and nobody would run the software.
@@ -409,16 +394,16 @@ You know, they'd see that and word would get out and nobody would run the softwa
 NVK: 00:20:27
 
 But there is one more thing here, right?
-I mean, like Bitcoin is also the consensus of the network.
-So like realistically speaking, this consensus is so complex that like, if people make some little changes here and there, they're likely to fork and be out of consensus.
+I mean, Bitcoin is also the consensus of the network.
+So like realistically speaking, this consensus is so complex that, if people make some little changes here and there, they're likely to fork and be out of consensus.
 So there's a lot of risk in that too.
 
 Sjors Provoost: 00:20:45
 
 Well, but let's say they did it carefully and they just did a block size doubling.
 The other thing is that the software is not updated simultaneously because it's not automatic.
-So and you might have exchanges that are running five year old versions of Bitcoin Core.
-That's not that does actually happen.
+So you might have exchanges that are running five-year-old versions of Bitcoin Core.
+That's not, that does actually happen.
 So that means that as soon as there is a split, because of some conspiracy, and it would have to be between the maintainers and a bunch of miners, you'd probably get a chain split and some of the old nodes would not follow it.
 Some of the updated nodes would follow it.
 So there'd be all sorts of signals out there that there's something definitely bad going on.
@@ -434,51 +419,48 @@ Schmidt pointed to forkmonitor.info, which does that.
 
 Mike Schmidt: 00:21:35
 
-I think the BitMEX folks run a bunch of those including older Bitcoin Core, as well as some of the other implementations like the Bitcoin or BTCD.
+I think the BitMEX folks run a bunch of those including older Bitcoin Core, as well as some of the other implementations like the Libbitcoin or BTCD.
 
 Sjors Provoost: 00:21:46
 
 Yeah, I built that.
-So basically, but it's for BitMEX Research App.
+So basically, it's for BitMEX Research App.
 So it runs a bunch of older nodes.
 It also runs different implementations.
-It used to run the Bitcoin, but it became quite hard to run it.
-Hopefully they'll do a new release that's a bit, that's quick again.
+It used to run Bitcoin, but it became quite hard to run it.
+Hopefully, they'll do a new release that's quick again.
 I think it runs BTCD.
-Yeah.
 
 James O'Beirne: 00:22:05
 
-Yeah.
 While we're plugging monitoring platforms, I have BMON which runs old versions as well.
 One of the interesting metrics that I was looking at actually today on BMON is the difference in mempool size between contemporary node versions and old versions.
 Old versions don't permit taproot spends to propagate and so their mempools are much smaller at this point than contemporary versions.
 
 NVK: 00:22:28
 
-Well, I mean, and now people are going to want to probably increase their mempool size so that the dickbutts fit.
+Well, I mean, now people are going to want to probably increase their mempool size so that the dickbutts fit.
 The mempool is much bigger.
-But you know, I find it fascinating because technically, you know, like I like to think of the JPEGs now as essentially like a placeholder for interesting taproot transactions.
+But you know, I find it fascinating because technically, you know, I like to think of the JPEGs now as essentially like a placeholder for interesting taproot transactions.
 It's just giving us a taste of what the future is going to look like with actual mempool and block space used for things that are not extremely dense transactions.
-So we could see some crazy lightning channels with like a gazillion sort of intricacies that take, you know, 300, 500 kilobytes, right.
-And they may not be as dense with fees, right, for that amount of bytes.
+So we could see some crazy lightning channels with like a gazillion sort of intricacies that take, you know, 300, 500 kilobytes.
+And they may not be as dense with fees, for that amount of bytes.
 So they might be sort of floating to the top and you might not want to lose those.
-Right.
 So you might want to increase that mempool space as well.
-It's a nice sort of like dry run for all that stuff with a sprinkle of drama.
+It's a nice sort of like a dry run for all that stuff with a sprinkle of drama.
 
 James O'Beirne: 00:23:30
 
 Totally.
 
+## Who decides what gets worked on?
+
 NVK: 00:23:31
 
 Okay.
-So, so like taking this in a slightly different direction,
-
-## Who decides what gets worked on?
-who decides what gets worked on?
-So, so like who's the boss of Bitcoin that says, Hey, you know, I am, I am a business and I need this done, or I am a state actor.
+So like taking this in a slightly different direction.
+Who decides what gets worked on?
+So like who's the boss of Bitcoin that says, Hey, you know, I am a business and I need this done, or I am a state actor?
 I want this done.
 Like who decides what gets worked on?
 
@@ -492,13 +474,9 @@ NVK: 00:24:18
 
 But realistically speaking, right?
 
-Mike Schmidt: 00:24:19
-
-So
-
 Sjors Provoost: 00:24:19
 
-anybody who wants to change will have to do it themselves or hire somebody to do it for them.
+So anybody who wants to change will have to do it themselves or hire somebody to do it for them.
 And then even though they've written all the code, they're still screwed because now they need to convince people that it's worth reviewing and worth merging.
 But even if people think it's conceptually a good idea, the review part is still gonna keep you in limbo for a very long time.
 
@@ -508,7 +486,7 @@ You get used to rebase.
 
 Mike Schmidt: 00:24:40
 
-Well, this is like the change the code.
+Well, this is like changing the code.
 
 James O'Beirne: 00:24:42
 
@@ -522,20 +500,20 @@ Still waiting for that PR.
 Sjors Provoost: 00:24:48
 
 Yeah, That's an example of how you're not supposed to do it.
-You're spending millions of dollars in screaming, please change the code.
+You're spending millions of dollars screaming, please change the code.
 Even though they could have spent, you know, a tenth of that to have at least a bunch of students write some actual code, which would then have problems.
 
 NVK: 00:25:02
 
 But that's their intent, right?
-Their intent is just to cause confusion and, you know, orchestrate style.
+Their intent is just to cause confusion and, you know, orchestra style.
 
 Sjors Provoost: 00:25:07
 
-Well, it depends on what you mean by they, right?
+Well, it depends on what you mean by them, right?
 So if you mean the Ripple founder behind it, maybe his mission is to just disrupt Bitcoin.
 I don't know if that's Greenpeace mission.
-I mean, maybe their mission is simply to take money and make a bunch of noise in a very like business way, or maybe they really believe that this change is possible and that the way to get the change is to make a bunch of noise rather than to actually change the code.
+I mean, maybe their mission is simply to take the money and make a bunch of noise in a very like business way, or maybe they really believe that this change is possible and that the way to get the change is to make a bunch of noise rather than to actually change the code.
 
 NVK: 00:25:31
 
@@ -544,12 +522,11 @@ Because it's a symbol of oppression or whatever.
 So like, you know, and GitHub actually changed from master branches to main branches, which you have to go back in and change the defaults or all your script breaks.
 So anyway, so like, but let's say this, these are friendly, sort of friendly actors, right?
 Like, they actually want to work on some cool stuff or they want to hire people to work on some cool stuff and things that everybody wants.
-Right.
-How, how do people go about that?
-How, how do people just go and sort of like, Hey, I want to, I want this done, right.
-I may not be a cool there.
-I want, I want this amazing thing done and I'm willing to fund it.
-How would that, how would people go about that?
+How do people go about that?
+How do people just go and sort of like, Hey, I want this done?
+I may not be cool there.
+I want this amazing thing done and I'm willing to fund it.
+How would people go about that?
 
 James O'Beirne: 00:26:19
 
@@ -557,109 +534,103 @@ Yeah, I mean, this is another one of the ways that Bitcoin is really unique and 
 There's no centralized roadmap.
 There's no indication of priorities, other than occasionally individuals might write a blog post saying, hey, this is what I care about.
 This is what I think should be worked on.
-So if you're a new contributor looking to get involved, it's really pretty tough, because you are responsible yourself for ascertaining what's valuable to work on, what would people be receptive to.
+So if you're a new contributor looking to get involved, it's really pretty tough, because you are responsible yourself for ascertaining what's valuable to work on, and what would people be receptive to.
 And then if you're, say, a company who wants something done, that's more clear than being an individual contributor and wanting to get involved, because I think your move there is to go to the GitHub issue queue, write up what you want, kind of justify it with rationale.
-And that actually, that might be very welcome, because there are a number of people out there who are like, yeah, I want to get involved.
+And that actually, might be very welcome, because there are a number of people out there who are like, yeah, I want to get involved.
 I want to help this thing out.
 I want to write some code.
 But I just have no idea where to start.
-Yeah, yeah.
 And I mean, that's, you know, personally, that's one of the really frustrating parts of the project.
 And the people who, a lot of people who have quit, I think quit out of frustration because they're just in this position where they've done some valuable work, but it just kind of sits there and languishes and they have to rebase it.
-And it's just this real, like in Bitcoin, you do like, you know, 10, 5, 10% of the work that you do is like writing the initial prototype code draft, putting it out there.
-And then like the remaining 95 to 90% is like addressing feedback, rebasing, just really mundane, awful.
+And it's just this real, like in Bitcoin, you do like, you know, 10% of the work that you do is like writing the initial prototype code draft, putting it out there.
+And then the remaining 95 to 90% is like addressing feedback, rebasing, just really mundane, awful.
 
 NVK: 00:27:57
 
 I mean, you gotta rebase, right?
 Because you wanna keep that up to date because when people do have the time to come review your PR, right?
-You want that to be like tip top and ready to go because...
+You want that to be like tip top and ready to go because.
 
 James O'Beirne: 00:28:09
 
-In an mergeable state, yeah.
+In a mergeable state, yeah.
 
 NVK: 00:28:11
 
 Exactly, right?
 Because that might be your chance of the year, right?
-Yeah.
-Sure.
 
 Sjors Provoost: 00:28:17
 
 I was going to say, but then you do rebase.
 And then once in a while, somebody comes by and says, Hey, don't rebase this stuff.
 I want to be able to run it on top of an older branch of Bitcoin.
-That's happened to me a few times, not very often and usually by one person.
+That's happened to me a few times, not very often, and usually by one person.
 
 Mike Schmidt: 00:28:30
 
-There's a few different things that are in play there.
+There are a few different things that are in play there.
 Of course, we talked about anybody, you know, Sjor's walked through how you could open up a PR and update the readme and potentially you find an issue that you'd like to work on and you can work on that.
-There's a little bit of odds with what you may wanna work on and what is valuable to the reviewers and to the maintainers.
+There's a little bit of odds in what you may wanna work on and what is valuable to the reviewers and to the maintainers.
 And while there is no Bitcoin core roadmap, I do think that there's value in seasoned contributors telling the world what they're working on and plan to work on.
 Because I think that can solve two issues.
-One is reviewers or maintainers taking a look at new PRs that people who are just eager to help are putting together and it's potentially low value PRs or distracting.
+One is reviewers or maintainers taking a look at new PRs that people who are just eager to help are putting together and it's potentially low-value PRs or distracting.
 At least some folks can interpret it in that way.
-And then secondly, some established contributors are also looking for people to help with their particular project or piece of the code that they're working on.
+And then secondly, some established contributors are also looking for people to help with their particular project or piece of code that they're working on.
 And so by coming up with something like a personal roadmap or writing up a project that you're working on and where new contributors can potentially help you, you solve both of those issues because now you're not getting maybe a superfluous PR to the repository.
 So you don't have to worry about review time on that.
 But now not only that, but you're also now getting a pull request that is interesting for you if you're an established contributor.
 So that's something I'm interested in.
-Just as point of clarification, Brink as an organization that funds open source development work, including on Bitcoin Core, explicitly, I do not want to be in the board and the grant committee do not want to be directing what our grantees are working on and some very sensitive to that.
+Just as a point of clarification, Brink as an organization that funds open source development work, including on Bitcoin Core, explicitly, I do not want to be on the board and the grant committee does not want to be directing what our grantees are working on and some very sensitive to that.
 But I do think it's interesting if they on their own volition would come up with something like, here's what I'm working on, here's what's important to me.
 If you open up a PR with this, I'm more likely to review it and help you and potentially mentor you.
 
 NVK: 00:30:48
 
-You know, I personally have no issues if you guys wanted to sort of like dictate what do you want to see exist?
-Like I, I actually, if anything, I love the, the market honesty on something like that, not to say that it's dishonest what you do at all.
+You know, I personally have no issues if you guys wanted to sort of like dictate what you want to see exist.
+Like I, I actually, if anything, I love the market honesty on something like that, not to say that it's dishonest what you do at all.
 Like I understand where you guys are coming from and trying to sort of remain out of the politics while supporting the project.
-But I love when like industry comes and say, Hey, I'm willing to pay for somebody to do this thing because one, I don't think I'm breaking the system, right?
+But I love it when like industry comes and says, Hey, I'm willing to pay for somebody to do this thing because one, I don't think I'm breaking the system, right?
 Like it's an earnest sort of intentional thing, right?
-Like say Stratum V2 or something, right?
-Like I'm a miner, I really want to see like better, a better way of doing coordination of new blocks and I'm willing to pay for it.
-And you know, some people may not like it, you know, it's still fair, but like, I really want to fund this, like, you know, like, can everybody who wants to work on it, lift their hands and, you know, like, and I'm going to help you guys economically and whatever.
-Right.
-Like, I think it's, it's important for people to know that there is space for that as well.
-Like we don't have to all be like Brink which tries to remains outside of this, which is used to be the traditional model, right?
+Like, say Stratum V2 or something, right?
+Like I'm a miner, I really want to see like better, better way of doing coordination of new blocks and I'm willing to pay for it.
+And you know, some people may not like it, you know, it's still fair, but like, I really want to fund this, can everybody who wants to work on it, lift their hands, you know, and I'm going to help you guys economically and whatever.
+Like, I think it's important for people to know that there is space for that as well.
+We don't have to all be like Brink which tries to remain outside of this, which is used to be the traditional model.
 Like most entities that do fund Bitcoin core development, try to stay out so that, you know, it doesn't murky the waters and stuff.
-But I think when there's like a clear business goal and it's like a nice, it's like a source of truth, right?
-Like it's obvious, like these people are not being, Even if I don't agree, they're not being serious or anything.
+But I think when there's like a clear business goal and it's like a source of truth, right?
+Like it's obvious, like these people are not being, Even if I don't agree, they're not being insidious or anything.
 This is like, you know, this is what they're trying to accomplish, right?
-Like this is how they make money.
+This is how they make money.
 
 Mike Schmidt: 00:32:22
 
 Yeah, I think there's there's an implicit or explicit direction.
 Obviously, I'm saying that Brink is not trying to direct our grantees explicitly, but you could always say, and this is true, the fact that we've chosen those grantees and the projects that they've chosen to work on is an implicit endorsement of that.
 And I think that that's okay.
-And obviously we're comfortable with that because you do need to make a decision on what you think is the most impactful work that could be done on the project given the grantees that are applying in our case.
-There are projects, sections of code that would make up something called a project that I think the industry could fund and not get much backlash.
-So, like, for example, like the 322 in generic sign message is something that I've heard that there's some identity folks interested in funding, for example.
+Obviously, we're comfortable with that because you do need to make a decision on what you think is the most impactful work that could be done on the project given the grantees that are applying in our case.
+There are projects, and sections of code that would make up something called a project that I think the industry could fund and not get much backlash.
+So, like, for example, BIP 322 generic signed message is something that I've heard that there's some identity folks interested in funding, for example.
 And I don't know, there's been some talk about that now with this Ordinals project that that signed message may be valuable.
-And so something like that may be innocuous, whereas something more consensus related, like if you're funding, trying to get a new op code or in or something like that may be more controversial.
+And so something like that may be innocuous, whereas something more consensus related, like if you're funding, trying to get a new opcode or in or something like that may be more controversial.
 Maybe James has some thoughts on that.
 I don't know.
 
 NVK: 00:33:41
 
-You know, I think it's important for people to like not be shy about airing their business intentions.
+You know, I think it's important for people not to be shy about airing their business intentions.
 You know, sometimes it's beneficial to them to just shut up and not because, you know, they want to get that thing in, but they don't want their competitor to maybe push it against it.
-Right.
-But generally speaking, I think it's a nice thing to do because, you know, Bitcoin enemies, right.
+But generally speaking, I think it's a nice thing to do because, you know, Bitcoin enemies, right?
 Like we're state actors or things like that.
 They're not going to be nice, kind and like, you know, go and say, Hey, I'd love to fund people and sort of like be quiet about it.
 Right.
 So they're going to be completely, completely covert.
 And they're going to like, you know, like do all this with all this sort of like literally evil intent towards the project.
-Right.
-So it's anyways, I just, I like to air out the laundry of Bitcoin, I think is important and it's good for it without sort of like delaying people from their works.
+So it's anyways, I just, I like to air out the laundry of Bitcoin, I think is important and it's good for it without sort of like delaying people from their work.
 
 Sjors Provoost: 00:34:31
 
-I suspect that there's not a lot of companies that have a very specific thing that they want to change in Bitcoin Core that would warrant finding, recruiting a full-time developer.
+I suspect that there are not a lot of companies that have a very specific thing that they want to change in Bitcoin Core that would warrant finding, and recruiting a full-time developer.
 I guess there may be occasionally, you know, if they're using Bitcoin Core in their environment there might be occasionally a bug or whatever but I think at that point it's easier for them to just get one of their own staff to figure out how to fix it but the idea that a business would depend on like a new opcode or anything like that that's such a long-term game anyway
 
 NVK: 00:35:00
@@ -671,11 +642,11 @@ Right.
 So they actually made a push and funded and helped sort of like push changes that like would benefit and make them exist as a business.
 Let's see, for example, Stratum V2, right?
 Miners, like a lot of miners, especially non-public traded miners, want that to happen because it does protect them in many different ways, with more privacy, with, you know, give them more speed.
-And so like, there is like, I wouldn't say like, you know, a business is unlikely to need a specific feature.
+And so like, I wouldn't say, a business is unlikely to need a specific feature.
 Maybe OpVault would be great.
 Like I can see how a business would need that.
 Like specifically, I need this so that I can do like large custody, you know, for like institutional clients.
-Cause that's the only way I can do it right like I can totally see that happening.
+That's the only way I can do it right, I can totally see that happening.
 
 Sjors Provoost: 00:36:04
 
@@ -683,51 +654,51 @@ But Stratum V2 you can see the other approach which is just build your own softw
 
 Sjors Provoost: 00:36:13
 
-At some point there may be some things that they'll need a tweak to Bitcoin Core for in order to make it work.
+At some point, there may be some things that they'll need a tweak to Bitcoin Core for in order to make it work.
 
 NVK: 00:36:19
 
 That's often how it is, right?
-Like the business will have this thing, but then they need a few little tweaks to Bitcoin so that like their thing actually works in a sort of like performant way,right?
+Like the business will have this thing, but then they need a few little tweaks to Bitcoin so that like their thing actually works in a sort of performant way, right?
 
 James O'Beirne: 00:36:30
 
 And I mean, you could imagine that in many cases, a business might make those tweaks and they might just run a patched version of Bitcoind.
 Like in the case of mining, I know there are people out there who want to solo mine, who don't want to use stratum because there's a tremendous amount of overhead in terms of doing the paper share accounting and all that.
 And what they really would like is to get frequent block template pushes, right?
-And that's something that you can kind of just like patch onto Bitcoin and run in a pretty low risk way.
-I mean, obviously there's a little bit of annoyance having to have a deploy pipeline that like patches a version of Bitcoin builds it, but it's not that a huge deal.
-So I really, I mean, my take is like, I don't see anybody pushing for changes in Bitcoin in any kind of a, like setting aside malignance, but like in a sort of thoughtless way, I think, you know, a lot of the say stuff that like Blockstream is experimenting with, you know, the op codes that they have for transaction introspection, like that obviously has applications for their liquid stuff, but you can make the argument that that stuff is very generally useful, and it's research that's really worth doing.
+And that's something that you can kind of just patch onto Bitcoin and run in a pretty low-risk way.
+I mean, obviously, there's a little bit of annoyance having to have a deploy pipeline that patches a version of Bitcoin that builds it, but it's not that a huge deal.
+So I really, I mean, my take is like, I don't see anybody pushing for changes in Bitcoin in any kind of a, like setting aside malignance, but like in a sort of thoughtless way, I think, you know, a lot of the say stuff that like Blockstream is experimenting with, you know, the opcodes that they have for transaction introspection, like that obviously has applications for their liquid stuff, but you can make the argument that that stuff is very generally useful, and it's research that's really worth doing.
 So I think at this stage of the game, I really don't see anything, even if you're talking about consensus proposals that are anywhere near the sort of nature of like, say, the block size increase proposals, which even then, I mean, maybe a lot of people who wanted the block size increase, maybe their motivations were probably genuine in the sense that they just want to see Bitcoin scale.
 Yeah, they want to lower the fees.
 They want to see Bitcoin adoption continue and so on and so forth.
-But yeah, at this stage in the game, like maybe there will come a time where we see proposals that are kind of at the expense of some particular user group.
+But yeah, at this stage in the game, like maybe there will come a time when we see proposals that are kind of at the expense of some particular user group.
 But I think right now, luckily, everybody just wants to see Bitcoin prosper, as far as I can tell.
 
 Sjors Provoost: 00:38:24
 
-The Segway2x thing was interesting to watch that, because there were attempts to increase the block size, like smaller pull requests, by experienced developers like Gavin.
+The Segwit2x thing was interesting to watch that because there were attempts to increase the block size, like smaller pull requests, by experienced developers like Gavin.
 But they never really got through.
-But then once a bunch of companies decided that they wanted to sequit to X alternative client, they forked the repo and hired, I think they, I don't know if they paid him, but I'm assuming they paid Garzik to do it.
+But then once a bunch of companies decided that they wanted to Segwit2x alternative client, they forked the repo and hired, I think they, I don't know if they paid him, but I'm assuming they paid Garzik to do it.
 So that's an example of you can hire an existing developer to do something specific for you.
 And this didn't work out because it was just too hard for one person to do.
 
 ## Who chooses what gets merged?
 NVK: 00:39:00
 
-Yeah, so that's sort of like leads me to sort of like the next thing, which is like who chooses what gets merged and how does something gets actually merged because You know if one thing I think a lot of people already understand is that like changes are excruciatingly reviewed, right?
+Yeah, so that sort of like leads me to sort of like the next thing, which is like who chooses what gets merged and how does something gets actually merged because You know if one thing I think a lot of people already understand is that like changes are excruciatingly reviewed, right?
 Even minute changes.
-And that's likely why we don't see malicious changes attempts, right?
+And that's likely why we don't see malicious change attempts.
 Because you become very clear, very fast.
-So who are the people who, you know, gets to merge it?
+So who are the people who, you know, get to merge it?
 
 James O'Beirne: 00:39:31
 
-It's a really subtle and difficult thing to explain because on the one hand, the line that we all like to recite is that maintainers are just janitors and really They act as a kind of conduit to express the broader desires of the technical community.
+It's a really subtle and difficult thing to explain because, on the one hand, the line that we all like to recite is that maintainers are just janitors and really They act as a kind of conduit to express the broader desires of the technical community.
 And like at face value, that's absolutely true.
-The more complicated nuanced reality is that oftentimes maintainers are seen as like technical leaders.
+The more complicated nuanced reality is that oftentimes maintainers are seen as technical leaders.
 They are in that position for a reason because people broadly trust their judgment.
-And so people, whether they subconscious or not, they pay a lot of attention to what those maintainers are doing and what they like.
+And so people, whether they subconsciously or not, they pay a lot of attention to what those maintainers are doing and what they like.
 
 NVK: 00:40:12
 
@@ -739,7 +710,7 @@ Yeah, the gray beards, exactly.
 So, you know, I do think there's definitely a Bitcoin ivory tower and Bitcoin is very, very difficult because to understand it from first principles is not something almost anybody can do.
 And so what happens is, in the community, you have varying degrees of technical capability, varying degrees of actually evaluating proposals.
 And what happens is people sort of rely on the heuristic of, like, who do I trust?
-Who's going to give me kind of a notion of what this change actually is and whether it's a good thing.
+Who's going to give me kind of a notion of what this change actually is and whether it's a good thing?
 And so you're in this situation where there's like a very small number of people who are kind of upstream of the technical consensus around something and everybody else to varying degrees just kind of like sort of follows along.
 
 Sjors Provoost: 00:41:01
@@ -767,39 +738,34 @@ Technically they could download, they could merge it locally, sign it, and then 
 Sjors Provoost: 00:41:39
 
 So there's a group of people that are listed in a text file by their PGP key.
-And the idea there is that when they merge something into Bitcoin Core, not only do they hit the button on GitHub, they don't hit the button on GitHub because they have to run a bunch of scripts, they have to PGP sign the fact that they merged it.
+The idea there is that when they merge something into Bitcoin Core, not only do they hit the button on GitHub, but they don't hit the button on GitHub because they have to run a bunch of scripts, they have to PGP sign the fact that they merged it.
 And then there's a script called verify commits, which does have problems, but it's there, that will actually go through recent commits and make sure that it was only those maintainers doing it.
 Basically, you can just look at the GitHub history and see that these merges are done by that fairly small number of people.
 Then you have to check, I guess, spot check or trust or whatever you want, that they are following a process that when they merge something, you can go back and see what they merged, and you can look at that board and see the discussion.
 If the discussion is full of developers saying, no, this is horrible, don't merge this.
 And yet they merge it, then, you know, that's probably a situation.
 But usually what you'll see is other developers with experience in that area saying, okay, this looks good.
-And then- So like
 
 NVK: 00:42:42
 
-that goes sort of like back to this, right?
-Like where, you know, that article, for example, that, you know, it's in the hands of six shadowy super coders, right?
+So like that goes sort of like back to this.
+Like that article, for example, that it's in the hands of six shadowy super coders, right?
 Yes, practically, but no, technically.
-Right.
-So like, you know, these are people who are trusted to do some of this work, but you know, like there is a lot of people who understand Bitcoin enough to understand that change that just happened.
-Right.
+So like, you know, these are people who are trusted to do some of this work, but you know, like there are a lot of people who understand Bitcoin enough to understand that change that just happened.
 They may not have been as technical to sort of invent that change.
-Right.
 Which is often the case.
-Right.
 Like some crazy amazing cryptography was invented to do something or some new way of doing blocks like segregated witness or something like that, right?
 But people who there is a next level of people there is a much larger group who can review that and say, you know, like, can you please clarify it here?
-So even if they hit the button, because we don't have automated software pushes and updated sort of like a software update, the alarm would be sound.
+So even if they hit the button, because we don't have automated software pushes and updates sort of like a software update, the alarm would be sound.
 
 Sjors Provoost: 00:43:42
 
 Well, and also you're running, lots of people will run not the releases, but the master branch, so the in-progress version.
 And those people include pretty much all of the developers who are working on trying new features.
 And they'll often find bugs that were accidentally merged.
-There's lots of pull requests in Bitcoin core that are just fixing little things that were broken by pull request because they were missed in the review.
+There are lots of pull requests in Bitcoin core that are just fixing little things that were broken by pull requests because they were missed in the review.
 It does get a lot of eyes on it.
-Even if you didn't review the pull request yourself, I sometimes find pull request because I'm working on another pull request and whatever just got merged just broke my work.
+Even if you didn't review the pull request yourself, I sometimes find a pull request because I'm working on another pull request, and whatever just got merged just broke my work.
 I have to go in and look like, what the hell were they changing?
 Why?
 And then, you know, I'll say, okay, whatever, it's fine or not.
@@ -809,18 +775,18 @@ NVK: 00:44:24
 
 Yeah.
 So like, you know, we could almost divide, like this discussion kind of happens like when in the minutiae they happen on GitHub, right?
-So like, you're going to have literally code line comments, right?
+So like, you're going to have literally code-line comments.
 You're going to have issue comments.
-You're going to have PR level comments.
+You're going to have PR-level comments.
 And there's a lot of discussion that happens there.
-PR comments, they start getting a little bit more abstract, not necessarily to the specifics, but the nitpicks, the nits are really done on a line level or cold block level.
-And then the PR discussions often sort of spill either from or to the mailing list and it all like, maybe people don't understand how the mailing list work.
+PR comments, start getting a little bit more abstract, not necessarily to the specifics, but the nitpicks, and the nits are really done on a line level or code block level.
+And then the PR discussions often sort of spill either from or to the mailing list and it all like, maybe people don't understand how the mailing list works.
 Do you guys want to explain how the Bitcoin mailing list exists?
 
 Sjors Provoost: 00:45:06
 
 That's pretty rare, though.
-I would say the amount of pull requests that have overlap with what happens on the mailing list is probably 1%.
+I would say the amount of pull requests that overlap with what happens on the mailing list is probably 1%.
 
 NVK: 00:45:14
 
@@ -828,17 +794,16 @@ But those are the ones that are the biggies.
 
 Sjors Provoost: 00:45:15
 
-Well, yeah, because they might influence some sort of either consensus or at least at the peer to peer level.
+Well, yeah, because they might influence some sort of either consensus or at least at the peer-to-peer level.
 
 NVK: 00:45:21
 
 Full RBF, right?
 That was one that spilled over from GitHub back to the mailing list.
-And it's normal, like it's fair.
-I mean, like people should find clarification, right?
+And it's normal like it's fair.
+I mean, people should find clarification, right?
 You know, for the people that don't know, the Bitcoin dev mailing list is this sort of like a, like a traditional email mailing list where anyone can email there, there is moderation.
-Right.
-So if you just send an email saying, you know, like, fuck you all or love you all.
+So if you just send an email saying, you know, like, f*ck you all or love you all.
 It's definitely not going to make it.
 
 Sjors Provoost: 00:45:48
@@ -850,7 +815,7 @@ NVK: 00:45:50
 That's right.
 But you know, like even trolly sort of like valid questions or points are often let in because it's important to let a lot of that in.
 Just don't expect people to respond.
-You know, if, if you, if it's too out of scope, right.
+You know, if, if you, if it's too out of scope, right?
 IRC might be a better place to go ask that.
 Often the idea of the mailing list is like things that could be a little bit more constructive, they need a little broader audience, including business to be sort of purview to, or to announce, right?
 Like, hey, I have a new proposal.
@@ -858,44 +823,40 @@ I have a new idea.
 You know, sometimes the back and forth will happen there.
 Sometimes it'll happen right where you have your BIP being drafted.
 So that brings us to BIPs.
-
-## BIPs
-
 Bitcoin improvement proposals.
 What are BIPs?
+
+## BIPs
 
 James O'Beirne: 00:46:34
 
 BIPs are, I guess, like a very technical specification of some idea that's relevant to Bitcoin.
 It doesn't even have to be something that goes into Bitcoin Core or the protocol.
 It could be some kind of a wallet format or, you know, strategy for using Bitcoin in some way.
-But it's really, they're really just, if you're familiar with like the way the internet was designed, it's almost like an RFC.
-RFC.
-RFC, yeah.
+But it's really, they're really just if you're familiar with like the way the internet was designed, it's almost like an RFC.
 
 NVK: 00:46:59
 
 So Like, you know, would you say like, maybe people like, I just saw this sort of like slight drama with the Ordinal's BIP being introduced.
-Right.
-And it all like the arguments are kind of fair in one side because, you know, it feels a little trolly, but I know Casey.
+And it all like the arguments are kind of fair on one side because, you know, it feels a little trolly, but I know Casey.
 So like, I know it was not meant that way, you know, as a fair technical proposal too.
-And I think people get confused if like what makes it as a BIP number, a BIP draft doesn't mean it's going to make it to Bitcoin, right.
-It's just like, Hey, we have this formal proposal, right?
+And I think people get confused if like what makes it a BIP number, a BIP draft doesn't mean it's going to make it to Bitcoin.
+It's just like, Hey, we have this formal proposal.
 It's a guideline to do something.
-It's an idea, it's an idea that's very complete, right?
-It's like technically sort of like valid, right?
+It's an idea, it's an idea that's very complete.
+It's like technically sort of valid.
 Which is always wishy-washy.
 I know I'm being wishy-washy, but that's what we have to work with here.
-And it's, And you know what, like it is warranted to exist in the Bitcoin ripple, right?
+And it's, And you know what like it is warranted to exist in the Bitcoin ripple.
 Because you know, it's affecting people.
-There's people using maybe this idea or there's people that really want to make this idea happen.
+There's people using maybe this idea or there are people who really want to make this idea happen.
 That's at least how I feel about BIPs. So, you know, you could actually quiet the discussion by just adding the damn thing.
 And then like, you know, boom, let it have it there.
 And now have the discussion under the BIP.
 
 James O'Beirne: 00:48:07
 
-I guess the counterpoint would be that, you know, and I don't know how I feel about the ordinals, but it's probably fine to add.
+I guess the counterpoint would be that you know, and I don't know how I feel about the ordinals, but it's probably fine to add.
 But the counterpoint would be like, There's all kinds of stuff.
 There's an infinite number of things you can do on top of Bitcoin.
 And so the idea that like every time we come up with a new way to do something and somebody writes up a media wiki document, like the idea that we would like spam the BIPs repo with all these different things you could do with Bitcoin, at a certain point that just gets ridiculous, right?
@@ -909,34 +870,33 @@ If it's going to actually have a meaningful change to the actual Bitcoin code an
 
 Sjors Provoost: 00:48:56
 
-But I wouldn't put too much value on whether something gets a BIP number, right?
-You can write a Bitcoin improvement proposal and put it on your own website and have the same format as any other BIP but it won't get a number because whatever politics.
+But I wouldn't put too much value on whether something gets a BIP number.
+You can write a Bitcoin improvement proposal and put it on your own website and have the same format as any other BIP but it won't get a number because of whatever politics.
 Now the argument of having too many different proposals that are what you can do is a sort of a layer on top of Bitcoin, I guess.
 Well, you can make a separate thing, like Lightning has its own repo with its own proposal.
-Lightning doesn't make bips, they have bolts.
-So you can say, okay, there is now a new repo for things that you're publishing on the blockchain that have no consensus meeting.
-You know, you can describe counterparty there, give it number one and describe this guy, the inscriptions and whatever, call it number two.
+Lightning doesn't make BIPs, they have BOLTs.
+So you can say, okay, there is now a new repo for things that you're publishing on the blockchain that have no consensus meaning.
+You know, you can describe counterparty there, give it number one and describe this guy, the inscriptions, and whatever, call it number two.
 So that's just a matter of where you want to keep the information.
 I don't think that matters.
 
 NVK: 00:49:46
 
-So I think the original sin of BIPS is not having a stricter sort of like a set of requirements that you have to meet in order to make it as a BIP.
+So I think the original sin of BIPS is not having a stricter sort of a set of requirements that you have to meet in order to make it as a BIP.
 That's my opinion, my personal opinion.
 This is not like the people who work on that opinion.
 I don't know what their opinion is.
 Might be the same, might not.
-But like the issue is like, we have a lot of BIPs, a lot of BIPs. They'll never make it to Bitcoin that like are interesting ideas, but you know, it's just not going to happen.
+But the issue is like, we have a lot of BIPs, a lot of BIPs. They'll never make it to Bitcoin that like are interesting ideas, but you know, it's just not going to happen.
 Or there's things, there are things that are just not implemented.
-Then there is a lot of Bitcoin features that never made it into BIPs, even though they're referenced as BIPs, like BIP, is it 44 or 84?
+Then there are a lot of Bitcoin features that never made it into BIPs, even though they're referenced as BIPs, like BIP, is it 44 or 84?
 I think it's 84.
-There is no BIP that defines that derivation path, even though it gets referenced everywhere, because the other derivation has a BIP that represents the number.
+There is no BIP that defines that derivation path, even though it gets referenced everywhere because the other derivation has a BIP that represents the number.
 So listen, it's open source.
 It's a, it's rough consensus, right?
-So of course the things that we use as documentation, implementation and building blocks are going to be messy too.
+So of course the things that we use as documentation, implementation, and building blocks are going to be messy too.
 Right.
-And I think like people have trouble sort of like accepting that it's not gonna be clean and pretty.
-BIP 84, yes.
+And I think people have trouble sort of accepting that it's not gonna be clean and pretty.
 Then it's 44 that was missing.
 
 Sjors Provoost: 00:50:58
@@ -945,42 +905,41 @@ Well, there's a lot missing, right?
 So the numbering system of the BIP is more mysterious than ordinals.
 They're not continuously numbered from zero to N.
 They tend to come in groups of 10, where they might start numbering from like, you know, 21, 22, 23, and then there might be another series 40, 41, 42.
-So there is some logic there that exists I believe in Luke's brain but it may have been documented to
+So there is some logic there that exists I believe in Luke's brain but it may have been documented too.
 
 Mike Schmidt: 00:51:27
 
-tonal it's in tonal
+Tonal it's in tonal
 
 Sjors Provoost: 00:51:29
 
-that could be so the taproot bits you know or 340 341 342 but there's a lots of unused numbers there so
+That could be so the taproot bits you know or 340 341 342 but there are a lot of unused numbers there so
 
 Mike Schmidt: 00:51:36
 
-Rodolfo are you saying that you think the BIP repo is too liberal on letting things in?
+Rodolfo, are you saying that you think the BIP repo is too liberal on letting things in?
 Is that your point?
 
 NVK: 00:51:41
 
 I think so.
-I mean, you know, I'm the kind of person that prefers a little bit more of a some general sets of rules, right?
+I mean, you know, I'm the kind of person who prefers a little bit more of a general set of rules, right?
 Just to avoid conflict.
 The rules can be changed.
 I'm cool with that.
-Like, it's more like, hey, let's just have like, let's only add BIPs that like we should add all of them, every idiocity that people come up with as long as they have like some minimum, you know, technical merits to it.
-Let's put it this way, right?
+Like, it's more like, hey, let's just have like, let's only add BIPs that like we should add all of them, every idiocy that people come up with as long as they have like some minimum, you know, technical merits to it.
+Let's put it this way.
 
 Sjors Provoost: 00:52:12
 
-I think BIP2 actually put some constraints and like it has to have some technical merit.
+I think BIP2 actually put some constraints and it has to have some technical merit.
 
 NVK: 00:52:17
 
 But those should be drafts.
 They should not be assigned numbers.
-Maybe they can have the draft number, which is a different than the final number.
-But like it should be a different folder in a different repo.
-Right.
+Maybe they can have the draft number, which is different than the final number.
+But like it should be in a different folder in a different repo.
 So it's like all the stuff that you want to come up with just so it gets like, it's really cool that things get documented, even stupid ideas, even like evil ideas or whatever, right?
 Like, I mean, we should document all this stuff.
 7,000 years from now, you go to this library, there's all this cool shit.
@@ -988,13 +947,12 @@ Like, I mean, we should document all this stuff.
 Sjors Provoost: 00:52:43
 
 I think you're prematurely optimizing it.
-There's one, There used to be only one maintainer up until like a year ago when a second was added, which I don't think they're being completely overwhelmed by the number of new BIP requests coming in.
+There's one, There used to be only one maintainer up until like a year ago when a second was added, so I don't think they're being completely overwhelmed by the number of new BIP requests coming in.
 
 NVK: 00:52:57
 
-Right.
-But people are also scared.
-I've met enough people that had very interesting ideas that I believe should be BIPs. They just don't do it because everybody is terrified of having to deal with it, right?
+Right, But people are also scared.
+I've met enough people who had very interesting ideas that I believe should be BIPs. They just don't do it because everybody is terrified of having to deal with it, right?
 
 Sjors Provoost: 00:53:07
 
@@ -1002,21 +960,20 @@ So they just write a proposal and don't give it a number and put it on the maili
 
 NVK: 00:53:11
 
-Right.
 Well, that's the other problem.
 I then, the mailing list, I find that the mailing list audience is slightly different than the BIP actual.
 It's like you get a different type of response.
-And again, like it's a very like, it's a, it's a fault of the medium.
+And again, like it's a very like, it's a fault of the medium.
 
 Sjors Provoost: 00:53:26
 
 But you get the best responses once you've actually implemented something like working code, either in Bitcoin Core or somewhere else, depending on what the thing is that you're working on, then you'll get feedback from the relevant people.
-If you're just writing a sort of a high level proposal, yeah, then you're gonna get...
+If you're just writing a sort of a high-level proposal, yeah, then you're not gonna get
 
 NVK: 00:53:42
 
 No, it doesn't belong in a BIP.
-High level stuff, you need to have like pseudo code, you have to have like, like a true representation of what is it that you want to implement as a BIP, right?
+High-level stuff, you need to have like pseudo code, you have to have like, like a true representation of what is it that you want to implement as a BIP, right?
 At least that's my view.
 
 Sjors Provoost: 00:53:53
@@ -1029,63 +986,51 @@ Might as well either ignore you because they'll be tired of even pointing out th
 
 NVK: 00:54:08
 
-So my idea is, you know, like have a slightly better improved set of rules and then just dump them in a separate repo, right?
-Like we call that the library of BIPs, right?
+So my idea is, you know, like have a slightly better-improved set of rules and then just dump them in a separate repo, right?
+We call that the library of BIPs, right?
 And then you can categorize them as like the forgotten, the forbidden, the, you know, like whatever you want.
 
 Sjors Provoost: 00:54:26
 
 I don't want to see it as long winding discussion about meta, what has to go in a BIP or not.
-And you just you don't want this.
+And you just don't want this.
 
 James O'Beirne: 00:54:34
 
-Yeah, when I was doing a ASSUMEUTXO, I didn't do a BIP for that.
+Yeah, when I was doing an ASSUMEUTXO, I didn't do a BIP for that.
 Partly at the time because I think I was intimidated, but partly because it seemed like an implementation detail for Bitcoin Core.
-And so I was like, OK, well, this is need to be.
+And so I was like, OK, well, this needs to be.
 
 Sjors Provoost: 00:54:46
 
 I would say it's too much.
 So it definitely deserves a BIP if somebody else because it's not something that should only work in Bitcoin Core.
 And, you know, you might want to build tooling around it, too.
-So
 
 NVK: 00:54:57
 
-just selfishly speaking, like I don't want to go read the discussion first.
-
-Sjors Provoost: 00:55:01
-
-Right.
-
-NVK: 00:55:02
+Just selfishly speaking, I don't want to go read the discussion first.
 
 I want to go read the paper first.
-Right.
 So like having that BIP.
-Right.
 Even if it's an assigned number is just by name.
-Right.
 In some separate repo.
 So we're not polluting the same Git file.
-Right.
 It's very useful.
 Very useful.
-Right.
 So you go read it like, okay, this is interesting.
 Then you go check out the discussion, which it could be, you know, like one dude having no objection to like, you know, the whole sort of internet hating on it.
 
 Sjors Provoost: 00:55:27
 
-With James's proposal with the vaults, now you have a PDF, which describes the initial idea.
+With James's proposal for the vaults, now you have a PDF, that describes the initial idea.
 Then there is a BIP and there's an implementation.
 And that's on the mailing list.
 That is good.
 The only problem is, the only problem is if you go to the PDF, that's from like early January.
 And so the actual implementation has changed based on discussion on the mailing list.
 So it's actually kind of a pain for you, I guess, to keep all that up to date.
-I mean, ideally I would want a PDF that also updates with the latest proposals so that I can get the very high level.
+I mean, ideally, I would want a PDF that also updates with the latest proposals so that I can get a very high level.
 
 NVK: 00:55:58
 
@@ -1095,7 +1040,6 @@ Sjors Provoost: 00:56:01
 
 It's all written, I assume it's written in Markdown and then you generate the PDF.
 So you can read the original Markdown.
-My point is that-
 
 James O'Beirne: 00:56:07
 
@@ -1104,13 +1048,13 @@ No, I wrote it in LaTeX.
 Sjors Provoost: 00:56:09
 
 No. Oh, but you can write with Pandoc.
-You can write Markdown, which is converted to LaTeX and then write- Yeah,
+You can write Markdown, which is converted to LaTeX, and then write
 
 James O'Beirne: 00:56:15
 
-but the formatting isn't as nice.
+Yeah, but the formatting isn't as nice.
 You don't get as much control.
-I wanted to make a nice looking paper.
+I wanted to make a nice-looking paper.
 
 Sjors Provoost: 00:56:21
 
@@ -1125,12 +1069,12 @@ Sjors Provoost: 00:56:26
 
 I spent a ridiculous amount of time fiddling with the layout of my book, like figuring out how to get Pandoc to do certain things.
 That's true.
-But anyway, it's nice to have like a high level document, like a pretty PDF and then a bib and then you know, you can see the middle of this discussion.
-But yeah, anyway,
+But anyway, it's nice to have like a high-level document, like a pretty PDF and then a BIP, and then you know, you can see the middle of this discussion.
+But yeah, anyway.
 
 Mike Schmidt: 00:56:43
 
-And there's actually versioning new venue that you want your idea or your code to get in.
+And there's actually versioning a new venue that you want your idea or your code to get in.
 And this is something that James is working on, which is this Bitcoin inquisition.
 James, as part of the process or what you're going through, do you see that you wanna have OpVault activated there now?
 Is that like the playground where ideas that are truly valuable get activated in Bitcoin Inquisition?
@@ -1141,14 +1085,12 @@ Yeah, I think so because it used to be if you wanted to play with a pending soft
 But a soft fork being on TestNet kind of signifies that it's slated for mainnet.
 So Inquisitions is nice because we can just kind of do whatever we want there and play with ideas and actually have persistence in terms of test data.
 So yeah, I think it's a great institution.
-I mean, obviously Vaults hasn't hit Inquisition yet, but I'm really hopeful for it.
+I mean, obviously, Vaults hasn't hit Inquisition yet, but I'm really hopeful for it.
 
 Sjors Provoost: 00:57:50
 
 But does Inquisition run on the regular SIGNET?
-Yeah.
 Because in principle, you can have a custom SIGNET for every single softfork proposal.
-Yeah.
 I guess it's nice to have a lot of sample transactions in a real blockchain and faucets and infrastructure like that ready to go.
 
 James O'Beirne: 00:58:04
@@ -1169,7 +1111,7 @@ So it's a little bit of a pain, but I think it's probably worth it.
 
 Mike Schmidt: 00:58:40
 
-So you can actually have OpCTV.
+So you can actually have OP_CTV.
 
 James O'Beirne: 00:58:42
 
@@ -1186,7 +1128,7 @@ So, you know, like having ways of testing this of like a good amount of transact
 Sjors Provoost: 00:59:06
 
 This is, it is a bit strange though, because the idea of testnet was to just test things, but typically when you wanna do something on testnet, it should be probably be merged into Bitcoin Core, even if it's only active on test net.
-And here, I mean, Cygnet should be no different in principle because Cygnet is just the same as test net in that sense.
+And here, I mean, Signet should be no different in principle because Signet is just the same as test net in that sense.
 But now what you're doing is you're taking a different repository and you're merging these experimental softworks in there, and then the consensus is enforced by the people who run that particular SIGNET, which in this case is two people.
 I guess it works.
 It's a different model to just try things out on an experimental blockchain without merging it into Bitcoin Core because I guess that act of merging is seen as a bit too much endorsement.
@@ -1198,7 +1140,7 @@ Even if you're saying, skip this line, if you're on test net, that could still b
 NVK: 01:00:03
 
 Yeah.
-So as a side note here, like this is a constant sort of like thing that gets brought up.
+So as a side note here, like this is a constant sort of thing that gets brought up.
 Like is GitHub centralization a risk?
 
 Sjors Provoost: 01:00:11
@@ -1215,30 +1157,21 @@ Well, it depends on the risk for what, but it's, it's such a useful tool that if
 
 NVK: 01:00:23
 
-We see like people tend to think that like, you know, we are at risk, right?
-Like it's always like, you know, like the airplanes are going to fall out the sky kind of risk, right?
-You know, I think it could be a nonsense and annoying and not like, we wouldn't be as productive, but like, again, like we are all saying, right, Git is decentralized and everybody has a copy of everything and everybody has signatures and, you know, we can move to Git labs and we might even lose the issues which would really suck.
+We see people tend to think that, you know, we are at risk.
+It's always like, you know, the airplanes are going to fall out the sky kind of risk.
+You know, I think it could be a nonsense and annoying and not like, we wouldn't be as productive, but like we are all saying, Git is decentralized and everybody has a copy of everything and everybody has signatures and, you know, we can move to Git labs and we might even lose the issues which would really suck.
 But I have a feeling that somebody out there is keeping a copy.
 
 Sjors Provoost: 01:00:55
 
 Let's say GitHub could just change the code from under us, but that's why we have all these signatures, so that's pretty easy to detect and make a bunch of noise about.
 They can mess with the release tags, I guess, but the releases are on a different website anyway than GitHub, the actual downloads that we give to people.
-So I'm not sure what...
 
 Mike Schmidt: 01:01:13
 
 There's also, like, the TornadoCash example, where they just decided to take down the repository completely.
 And I know that got the heckles up of at least some of the Bitcoin developers that were worried that, well, maybe the sky isn't falling today, but they've definitely shown that things can fall from the sky if you rub people the wrong way.
-And so I know there's at least some experimentation going on right now with trying to mirror the repository to maybe GitLab, GitLab hosted, maybe a GitLab self-hosted and seeing what that mapping looks like, because yes, Git is decentralized, but a lot of the goodies and niceties and even things
-
-NVK: 01:02:02
-
-like, you
-
-Mike Schmidt: 01:02:02
-
-know, emoji reactions, you know, up down vote, you know, those sorts of things maybe don't have a mapping.
+And so I know there's at least some experimentation going on right now with trying to mirror the repository to maybe GitLab, GitLab hosted, maybe a GitLab self-hosted and seeing what that mapping looks like, because yes, Git is decentralized, but a lot of the goodies and niceties and even things like, emoji reactions, up down vote, you know, those sorts of things maybe don't have a mapping.
 So it's a matter of figuring out what gets mapped over and could get mapped over so that you don't lose all that productivity if GitHub were to go down.
 I think it would be quite chaotic for a period, although it wouldn't be obviously an existential threat to Bitcoin in any way.
 
@@ -1270,7 +1203,7 @@ I keep on saying to them, don't try to invent something, you just copy Photoshop
 
 James O'Beirne: 01:03:52
 
-Oh, gimp.
+Oh, Gimp.
 
 NVK: 01:03:53
 
@@ -1279,13 +1212,13 @@ Yeah, so like, please just keep all the buttons exactly the same.
 Sjors Provoost: 01:03:57
 
 But a lot of the other scenarios that people would be worried about by thinking GitHub is centralized, like yeah, GitHub itself could start messing with the code.
-Those kinds of scenarios I think would also exist if the thing was more decentralizedly hosted, because then you have to trust whoever is behind that.
+Those kinds of scenarios I think would also exist if the thing was more decentralizedly hosted because then you have to trust whoever is behind that.
 
 NVK: 01:04:11
 
 Well, even more, right?
 Because Microsoft has a reputation here too, right?
-I mean, they don't wanna be known for the people who like rug pull like software out of people.
+I mean, they don't wanna be known for the people who like rug pull software out of people.
 It's kind of a biggie.
 
 Sjors Provoost: 01:04:21
@@ -1296,15 +1229,15 @@ Something like that.
 
 NVK: 01:04:41
 
-I think the biggest risk with Git, like realistic practical risk is like, for example, say China tells GitHub, don't show the Bitcoin repo to Chinese people.
+I think the biggest risk with Git, like the realistic practical risk, is, for example, say China tells GitHub, don't show the Bitcoin repo to Chinese people.
 Cause GitHub's still there, right?
 Like all the devs are there, but they just can't work on that repo, right?
-You're gonna probably see a lot of that going on as we go forward, as things get a little bit more weird, but it's not gonna be like a full on- Yeah, that
+You're gonna probably see a lot of that going on as we go forward, as things get a little bit more weird, but it's not gonna be like a full-on.
 
 Sjors Provoost: 01:05:02
 
-could be an argument for having a good mirror somewhere so that people can keep contributing on some other website.
-But I guess with China, it's such a whack-a-mole game that even having a mirror just don't just crush the mirror.
+Yeah, that could be an argument for having a good mirror somewhere so that people can keep contributing on some other website.
+But I guess with China, it's such a whack-a-mole game that even having a mirror just doesn't crush the mirror.
 If they want to not have the Bitcoin repo accessible to developers in China, there's no point in going to some other site because there'll be one guy in charge of making sure that happens.
 And if that guy sees the mirror, then I'll add that to the list.
 
@@ -1312,19 +1245,19 @@ And if that guy sees the mirror, then I'll add that to the list.
 
 NVK: 01:05:27
 
-So guys like, you know, to, to, to go into a more difficult topic here.
-First is like, who chooses the, the activation method and, what are the activation method options and like how does whole massive shit works?
-I mean, you know, like it's always dramatic.
-It has not been sort of like flushed out.
+So guys like, you know, to go into a more difficult topic here.
+First is like, who chooses, the activation method, what are the activation method options, and how does whole massive shit work?
+I mean, you know like it's always dramatic.
+It has not been sort of flushed out.
 And I don't believe it ever will, just the nature of the project.
-But like we talked about the changes, but like a lot of changes require a soft fork or a hard fork could be.
+But like we talked about the changes, a lot of changes require a soft fork or a hard fork.
 So, you know, we have to have ways of doing that safely and we have to have ways of signaling and creating consensus and displaying consensus.
 You know, I'm a big fan of Flag Day, Game of Chicken.
-I really don't like the speedy trial stuff, you know, a LOT=true, you know, so, so like, as default, so those are my sort of things, but like, how do you feel about this from more like, yeah.
+I really don't like the speedy trial stuff, you know, a LOT=true, you know, so like, as default, so those are my sort of things, but like, how do you feel about this?
 
 James O'Beirne: 01:06:27
 
-Yeah, Rodolfo, can you, can you describe what you don't like about speedy trial, because from what I know, all speedy trial is saying is basically like, hey, we're gonna do a short period where if all the miners absolutely want this thing, then they signal.
+Yeah, Rodolfo, can you, can you describe what you don't like about speedy trial, because from what I know, all speedy trial is saying is basically like, hey, we're gonna do a short period where if all the miners absolutely want this thing, then the signal.
 So otherwise we're just gonna fall back to something else later on that's gonna be more lengthy.
 Like what is your objection to that?
 
@@ -1339,12 +1272,11 @@ And sort of like using this mechanism covertly, right?
 To sort of try to signal to each other, okay, you know what?
 Hey, oh, look, we have consensus.
 You know what I mean?
-It's- But
 
 Sjors Provoost: 01:07:21
 
-then you don't like the whole idea of using miners to activate softworks.
-I mean, there is an actual dependence on miners when you want to activate a softwork in a way that's safe.
+But then you don't like the whole idea of using miners to activate softforks.
+I mean, there is an actual dependence on miners when you want to activate a softfork in a way that's safe.
 That's just, that dependence is there because you want the majority of miners to enforce it so that people who upgrade more slowly don't get fooled by all sorts of chain splits.
 
 NVK: 01:07:40
@@ -1365,64 +1297,59 @@ Which everyone should read by the way.
 Sjors Provoost: 01:07:58
 
 The book is called Bitcoin a work in progress by Sjors.
-It's a cool book.
-Thank you.
-It's a great book.
-So basically I kind of went through like, you know, Satoshi was just activating soft works sneakily really and then things got better with things like BIP9 and then there was a lot of drama around SegWit and in my opinion we just had a bit of post-traumatic stress syndrome from SegWit so that we made more of a flow of taproot than was necessary.
-My guess is would have been fine with BIP9 especially given what happened speedy trial and the drama just delayed activating the whole thing because as soon as this drama a lot of Bitcoin developers will be like, okay, I'm just gonna sit in a little corner away from the drama, and I will come back when the drama is over.
+So basically I kind of went through like, you know, Satoshi was just activating soft works sneakily really, and then things got better with things like BIP9 and then there was a lot of drama around SegWit and in my opinion, we just had a bit of post-traumatic stress syndrome from SegWit so that we made more of a flow of taproot than was necessary.
+My guess is that would have been fine with BIP9 especially given what happened during speedy trial and the drama just delayed activating the whole thing because as soon as this drama a lot of Bitcoin developers will be like, okay, I'm just gonna sit in a little corner away from the drama, and I will come back when the drama is over.
 And then the lack of action will cause more drama.
 
 NVK: 01:08:46
 
 Let me add one thing.
 I'm okay with speedy trial if we did LOT=true.
-I think what I want is consequence to people making decisions.
+I think what I want is consequences for people making decisions.
 
 Sjors Provoost: 01:08:54
 
 I think LOT=true is a terrible idea.
-So the whole point of using miners to activate a software is to make it safe.
+So the whole point of using miners to activate software is to make it safe.
 To make it so that if you don't upgrade your node, if you're running an old node, whatever, you're not going to get confused because the miners are making sure that any deviation gets re-orged.
 
 NVK: 01:09:09
 
-But then let's make a LOT=true.
-Yeah.
-As soon as
+But then let's make LOT=true.
+
 
 Sjors Provoost: 01:09:12
 
-you start adding game of chicken dynamics that can potentially lead to giant re-orgs, you have removed the whole safety.
+As soon as you start adding a game of chicken dynamics that can potentially lead to giant reorgs, you have removed the whole safety.
 So if you don't care about safety, then why are you trying to do it safely?
 
 NVK: 01:09:26
 
 No, it's not black and white.
 Hang on.
-It's not black and white, right?
-There's like different shades of safety here, right?
-I think you could make a case that with LOT=true and Speedy Trial, right?
+It's not black and white.
+There are different shades of safety here.
+I think you could make a case with LOT=true and Speedy Trial.
 And a long activation period, you could make it safe.
 
 Sjors Provoost: 01:09:41
 
 Well, the idea of Speedy Trial was to try it before anything else.
 So something like Lotru could have been done after the Speedy trial.
-There is no point in doing a Speedy trial with Lattice True because Lattice True is basically saying we're going to activate this software at some point in the future.
-Yeah.
+There is no point in doing a Speedy trial with Lot=True because Lot=True is basically saying we're going to activate this software at some point in the future.
 If you're going to do that, then I don't think you need to Speedy trial.
-You can just use a lot of super activation and then allow miners to signal from it right away.
+You can just use a LOT=true activation and then allow miners to signal from it right away.
 So there's no benefit in the speedy trial.
 
 NVK: 01:10:08
 
 I want people to like shit or get off the pot, right?
-I don't want to give people the benefit of just sort of like testing out little things because this is a way in which people find It's a way to test things.
-They may not be beneficial to everybody like without consequence
+I don't want to give people the benefit of just sort of testing out little things because this is a way in which people find It's a way to test things.
+They may not be beneficial to everybody without consequence
 
 Sjors Provoost: 01:10:25
 
-Well, that's why I don't like this video trial either because I think it would have been fine to just do the regular bit 9 activation
+Well, that's why I don't like this speedy trial either because I think it would have been fine to just do the regular BIP 9 activation
 
 NVK: 01:10:31
 
@@ -1431,16 +1358,12 @@ Yeah, that's fine by me
 Sjors Provoost: 01:10:33
 
 And maybe we could have modified it to the BIP 8 without the LOT=false stuff because it uses heights.
-It's a little bit less, has a few less edge cases than BIP 9 does because it uses timestamps and you can do some annoying things with timestamps.
-
-NVK: 01:10:47
-
-Right.
+It's a little bit less, and has a few less edge cases than BIP 9 does because it uses timestamps and you can do some annoying things with timestamps.
 
 Sjors Provoost: 01:10:47
 
 So I think we shouldn't have made a fuzz about it and it's very easy to deploy multiple soft forks at the same time using BIP9.
-If you start adding LOT=true, I really don't want to even think about what that will look like if you had multiple active time...
+If you start adding LOT=true, I really don't want to even think about what that will look like if you had multiple active at the same time
 
 NVK: 01:11:00
 
@@ -1454,14 +1377,14 @@ I don't want to think about it.
 NVK: 01:11:16
 
 So here's an interesting thing.
-I still like have an unsettled like my own personal preference.
-I don't know if I if I rather have many little things get activated unceremoniously like often and by often I mean you know like say every six months and we even have like a set date, you know, that the little thing is going to work.
+I still have an unsettled like my own personal preference.
+I don't know if I rather have many little things get activated unceremoniously often and by often I mean you know say every six months and we even have a set date, you know, that the little thing is going to work.
 And I mean little, I mean little, right?
-That something that does require activation and not bundle things into this Omni build sort of style.
-Cause this is, I think a lot of people got a bad taste too during the fork wars because like SegWit was kind of a ominous bill, right?
-So like you have all this crap in, right?
-It's very hard for people that don't understand like these things deeply to understand what's going on, right?
-And then people feel bitter about it after.
+That is something that does require activation and not bundle things into this Omni build sort of style.
+Cause this is, I think a lot of people got a bad taste too during the block wars because like SegWit was kind of an ominous bill, right?
+So like you have all this crap in.
+It's very hard for people who don't understand these things deeply to understand what's going on.
+And then people feel bitter about it afterward.
 
 Sjors Provoost: 01:12:02
 
@@ -1471,41 +1394,39 @@ Just if it's Taproot, you definitely could have removed some things from it, but
 
 NVK: 01:12:11
 
-Yep.
-No, I get it.
+Yep. No, I get it.
 
 Sjors Provoost: 01:12:12
 
-I mean, you could have done like Schnorr separately and other things separately.
+I mean, you could have done Schnorr separately and other things separately.
 
 NVK: 01:12:16
 
 I don't know.
 Is there conversations about like, you know, should we do the little things?
 Should we make big bundles?
-Is there like a lot of conversation going on about like how to activate things is like a proactive thinking?
+Is there a lot of conversation going on about like how to activate things like proactive thinking?
 
 James O'Beirne: 01:12:29
 
-All I can say is, you know, when I started doing assumeUTXO and obviously like implementation changes are different from consensus, but I had this very optimistic idea that I would carve this thing up into a bunch of tiny changes and do it bit by bit so that everybody could follow along and be assured that every step of it was safe.
+All I can say is, you know when I started doing ASSUMEUTXO and obviously, implementation changes are different from consensus, but I had this very optimistic idea that I would carve this thing up into a bunch of tiny changes and do it bit by bit so that everybody could follow along and be assured that every step of it was safe.
 And in hindsight, I really regret that in some ways, because I think it winds up dragging things out to an incredible degree.
 It makes everybody fatigued.
 You have to test and retest and retest and retest.
 And like with a consensus change, I think to your point, you don't wanna make the community kind of lazy and you don't wanna just acclimate them to these constant changes rolling out because then they won't scrutinize them as much.
-And so, you know, it's this tension between having these big, you know, I mean, Segwit and Taproot, as I've said before, they're like these massive, almost reinventions of Bitcoin scripting and they're great changes, but but they are, you know, pretty hefty.
+And so, you know, it's this tension between having these big, you know, I mean, Segwit and Taproot, as I've said before, they're like these massive, almost reinventions of Bitcoin scripting and they're great changes, but they are, you know, pretty hefty.
 So there's a tension between that and then having like a bunch of small changes to get rolled out and people just get used to kind of upgrading consensus.
-And that's maybe a less than ideal state.
+And that's maybe a less-than-ideal state.
 
 NVK: 01:13:41
 
 You know, it's funny.
-I thought Schnorr, adding Schnorr, just Schnorr, not even talking about everything else, like it was going to be the thing.
+I thought Schnorr, adding Schnorr, just Schnorr, not even talking about everything else like it was going to be the thing.
 Like I thought that people were going to literally go to war over that.
 That's a fundamental change to Bitcoin.
 I mean, we now have a secondary crypto primitive in there.
 Like it's hard to convey.
-Like, I mean, you could almost say this is not Bitcoin anymore, right?
-Like, I mean, you know, it's just sort of like...
+Like, I mean, you could almost say this is not Bitcoin anymore.
 
 Sjors Provoost: 01:14:05
 
@@ -1526,17 +1447,17 @@ Activation.
 James O'Beirne: 01:14:22
 
 I thought it was hilarious.
-I thought that people got bent out of shape in terms of the activation of her taproot was like the most ridiculous thing I'd ever seen because it's the least, to me, it's the least substantive part of the proposal.
+I thought that people got bent out of shape in terms of the activation of her taproot was the most ridiculous thing I'd ever seen because it's the least, to me, it's the least substantive part of the proposal.
 It's like, and so it almost, it felt to me like contrived.
 
 NVK: 01:14:39
 
 No, I mean, I was angry about the activation.
-I am, I'm being very like open here.
+I am, I'm being very open here.
 The activation was annoying me.
 I did not like the way it was kind of like it felt shoved through.
 The package I had no issues with.
-I mean, I always found important for Bitcoin to have a second cryptographic primitive in case the other one breaks.
+I mean, I always found it important for Bitcoin to have a second cryptographic primitive in case the other one breaks.
 So like, ready to go kind of thing.
 
 Sjors Provoost: 01:14:59
@@ -1547,14 +1468,13 @@ I mean, Schnorr is like ECDSA with a few lines of code removed essentially.
 
 NVK: 01:15:08
 
-I understand, but like, you know, we have proofs for it.
+I understand, but like, you know, we have proof for it.
 It's just nice to have, you know, maybe the issue with ECDSA is found that Like, you know, it's in a minute part of it.
 It's a subsection of it.
-Like, you know, it's just, it only affects a certain kinds of keys that were generated, whatever, right?
-Like the point is it's nice to have a backup that's already part of the chain.
-Right.
-But anyways, going back to this, The package was fine by me, right?
-Like, you know, like I want this features.
+Like, you know, it's just, it only affects certain kinds of keys that were generated, whatever, right?
+The point is it's nice to have a backup that's already part of the chain.
+But anyway, going back to this, The package was fine by me.
+Like, you know, I want these features.
 I think they're great.
 The issue was activation.
 It did feel shoved through.
@@ -1563,7 +1483,7 @@ A lot of people were not in the mood of talking and it's only gonna get weirder.
 
 Sjors Provoost: 01:15:45
 
-Well, the show through part is you could say the speedy trial kind of gives that feeling perhaps, but I think if there had been no drama, the BIP-9 deployment would have been earlier than that we had speedy trial.
+Well, the show-through part is you could say the speedy trial kind of gives that feeling perhaps, but I think if there had been no drama, the BIP-9 deployment would have been earlier than that we had speedy trial.
 So in a sense, I think it got delayed by all the drama by about three to six months.
 And then the speedy trial was kind of a way to cop out of the drama, the saying like, okay, let's just put this drama on pause, see if the speedy trial just works, and then we can continue the drama if it doesn't work.
 
@@ -1571,7 +1491,7 @@ Mike Schmidt: 01:16:14
 
 Well, it's a bit interesting that, you know, we had the, so some folks from Optech and AJ Towns put together taproot review and there was little groups that met each week or every two weeks and sort of went through different prompts and tried to review this, the code base, the package, as you say, Rodolfo.
 And I think there was some good that came out of that.
-But in terms of the energy put in to that versus the energy that went into discussing about discussing about discussing the activation method.
+But in terms of the energy put into that versus the energy that went into discussing about discussing about discussing the activation method.
 It's a little disheartening that so much energy and passion went into that where it felt like people were kind of going through the motions than actually reviewing the thing.
 So there's a bit of contrast there that I wanted to point out.
 
@@ -1600,21 +1520,20 @@ Yeah, exactly.
 
 NVK: 01:17:32
 
-I think you guys are sort of like looking at this more from the core perspective.
-I think there's a few things here.
-One is, yes, I mean, Taproot, Schnorr and all the package, it's a little bit more complicated than your average industry person can sort of comprehend.
+I think you guys are sort of looking at this more from the core perspective.
+I think there are a few things here.
+One is, yes, I mean, Taproot, Schnorr, and all the package, it's a little bit more complicated than your average industry person can sort of comprehend.
 The actual technology there is not simple.
-But there was two years of people seriously having work groups and discussing and providing as much.
+But there were two years of people seriously having work groups and discussing and providing as much.
 Listen, we're really trying to not create contention for when this thing comes about.
-Like that was the sentiment, right?
-But I think the issue with activation is even people that don't want something get that thing.
-Right.
-And there is a certain feeling of like getting a new consensus on Bitcoin being shoved onto your node, which is literally what happens.
-And I think it's a feature that these things are so horrible, right?
-Like they create a lot more scrutiny on the people, on the package, on the method, on the medium.
-And that, like, even though it will definitely make people retire early, it will definitely make sure that, you know, some people need a long break.
+That was the sentiment.
+But I think the issue with activation is even people who don't want something get that thing.
+And there is a certain feeling of getting a new consensus on Bitcoin being shoved onto your node, which is literally what happens.
+And I think it's a feature that these things are so horrible.
+They create a lot more scrutiny on the people, on the package, on the method, on the medium.
+And that, like, even though it will definitely make people retire early, it will definitely make sure that you know, some people need a long break.
 As horrible as it is, it's necessary.
-Like it's something that in my view needs to be that way so that we discourage any kind of like a bad actor from trying to participate in that unless they're fully vested.
+It's something that in my view needs to be that way so that we discourage any kind of like a bad actor from trying to participate in that unless they're fully vested.
 
 Sjors Provoost: 01:19:04
 
@@ -1622,7 +1541,7 @@ But there's a difference between making it difficult to activate something and m
 
 NVK: 01:19:11
 
-Oh, yeah, the drama is regarded.
+Oh, yeah, the drama is retarded.
 
 
 Sjors Provoost: 01:19:13
@@ -1633,44 +1552,39 @@ So you couldn't have a malicious fork and then deliberately create a lot of dram
 
 NVK: 01:19:32
 
-But you know, you could say that the activation method still unsettled, right?
+But you know, you could say that the activation method is still unsettled, right?
 So like, there's gonna be drama around that.
 I don't know, maybe we should start working groups on figuring out new activation groups for the next activation.
 
 Sjors Provoost: 01:19:43
 
-I mean, my heartache on the Activation is just BIP-8 minus a LOT=true stuff, and it's fine.
+I mean, my heartache on the Activation is just BIP-8 minus the LOT=true stuff, and it's fine.
 
 James O'Beirne: 01:19:50
 
 I think that's the thing, is like if there was some fundamental objection to Taproot people had, they could have articulated it through Speedy Trial.
 Like Speedy Trial could have failed.
-And I just don't know that, I mean, personally, I'm not interested in activation method.
-I hope to God, if OpVault stuff goes well, like somebody else has some strong, well-informed opinion about how activation happens, because I surely don't.
+And I just don't know that, I mean, personally, I'm not interested in the activation method.
+I hope to God, if OpVault stuff goes well, somebody else has some strong, well-informed opinion about how activation happens because I surely don't.
 Probably somebody like, you know, with the Inelective Sjors, should be thinking about that stuff.
-I don't have the mind for it, but, but yeah, I just think if there were...
+I don't have the mind for it, but yeah.
 
 Sjors Provoost: 01:20:23
 
 I don't want to do it either.
-That's why I just do BIP8 without a LOT=true stuff.
-Because I've already reviewed that code.
-
-James O'Beirne: 01:20:29
-
-that's fine.
-Right, right.
+That's why I just do BIP8 without LOT=true stuff.
+Because I've already reviewed that code so that's fine.
 
 NVK: 01:20:30
 
-And, you know, like, guys, I don't I don't think like there's no amount of discussing it at least at this stage of Bitcoin that I think will make it easier.
-Again, like, you know, we came from an extremely contentious like Game of Chicken, which was Segwit, right?
+And, you know, like, guys, I don't think like there's no amount of discussing it at least at this stage of Bitcoin that I think will make it easier.
+Again, like, you know, we came from an extremely contentious like Game of Chicken, which was Segwit.
 And then it was fairly recent right after that we did another activation of something that was kind of like big and hard for people to understand, even though all the information was available there for them to understand or cope or whatever.
-But again, I think like the fact that people are not interested in entertaining the discussion about activation, cause everybody was just so PTSD from it sort of like made people think that there is some more contentious sort of like this thing just feeds on itself.
-But, you know, maybe the next one, because this one was fairly like, you know, for all the drama that was, was fairly insignificant, right?
+But again, I think the fact that people are not interested in entertaining the discussion about activation, cause everybody was just so PTSD from it sort of like made people think that there is some more contentious sort of like this thing just feeds on itself.
+But, you know, maybe the next one, because this one was fairly like, you know, for all the drama that was, was fairly insignificant.
 I mean, compared to the previous.
 So I think the next one, depending on the Bitcoin price at the same time, because that matters, will sort of dictate maybe a slightly different dynamic.
-Maybe some galaxy brain comes up with something more clever that sort of like appeases most people or better compromise.
+Maybe some galaxy brain comes up with something more clever that sort of appeases most people or better compromise.
 
 Mike Schmidt: 01:21:43
 
@@ -1679,9 +1593,9 @@ Do we need to do the great consensus cleanup?
 
 NVK: 01:21:49
 
-I think that if we found a way to have miners have a backseat on it and yet like they still have to participate because they still have to activate, right?
+I think that if we found a way to have miners have a backseat on it and yet they still have to participate because they still have to activate, right?
 But if there was a way where the dynamic essentially deferred to the economic nodes in a way where even if it's like soft, I think it would go a long way because I think a lot of people, a lot of people are PTSD with miners trying to take control of the network.
-So I think having that the dynamic somehow show that the economic nodes are kind of calling the what's gonna happen really it's kind of a big deal even if it's a pageant show and not the actual thing.
+So I think having that dynamic somehow shows that the economic nodes are kind of calling the what's gonna happen really it's kind of a big deal even if it's a pageant show and not the actual thing.
 
 Sjors Provoost: 01:22:34
 
@@ -1701,12 +1615,11 @@ And then I don't know what the game theory would look like, but definitely.
 NVK: 01:23:16
 
 I'm just saying, like, if anything, it would just be fun to watch.
-I'm going to buy a lot of popcorn, you know, like that, that would be an absolute fantastic events to happen in my lifetime.
+I'm going to buy a lot of popcorn, you know, like that, that would be an absolutely fantastic event to happen in my lifetime.
 
 Sjors Provoost: 01:23:27
 
-Yeah.
-But I think that the question you want to, I think one question that's important to ask is, you know, is there some sort of future where you're worried about some specific change to Bitcoin that is very bad for the users, but somehow not bad for the miners and where you would have the miners push it through?
+Yeah, But I think that the question you want to, I think one question that's important to ask is, you know, is there some sort of future where you're worried about some specific change to Bitcoin that is very bad for the users, but somehow not bad for the miners and where you would have the miners push it through?
 
 NVK: 01:23:45
 
@@ -1719,11 +1632,11 @@ Or is there ever a scenario where you're worried about the miners stopping the c
 
 NVK: 01:23:52
 
-No, I'm not concerned about the miner stopping changes because aside from like...
+No, I'm not concerned about the miner stopping changes.
 
 Sjors Provoost: 01:23:58
 
-That's not as true, right?
+Then you don't need LOT=true, right?
 If the miners don't stop it, you don't need anything like that.
 
 NVK: 01:24:02
@@ -1744,29 +1657,28 @@ Oh yeah, no, I agree.
 Sjors Provoost: 01:24:38
 
 And we've been waiting for a very long time for some other group of miners to re-org them.
-So the most obvious bad soft fork that miners could deploy is a KYC soft fork, where basically like blocks are empty unless like miners have proved that you have done your KYC through whatever mechanism they want.
+So the most obvious bad soft fork that miners could deploy is a KYC soft fork, where basically blocks are empty unless miners have proved that you have done your KYC through whatever mechanism they want.
 
 NVK: 01:24:55
 
-Yeah, but then you add more fee and some other miners gonna mine it, right?
-Like that's why like those kinds of like minor picks the transactions kind of like attacks, right?
+Yeah, but then you add more fees and some other miners gonna mine it, right?
+Like that's why those kinds of miners picks the transactions kind of like attacks, right?
 So like they do either empty blocks or whatever, not very concerned.
 
 Sjors Provoost: 01:25:09
 
-Well, that is a case where the just having miners enforces soft fork doesn't really make it a soft fork because the economic nodes will completely ignore that rule set.
+Well, that is a case where just having miners enforce softfork doesn't really make it a softfork because the economic nodes will completely ignore that rule set.
 Nobody will run a node that enforces that rule set.
-So as soon as the majority of miners no longer enforces it, no longer re-orgs out blocks that don't comply with it, then you just get it.
+So as soon as the majority of miners no longer enforce it, no longer re-org out blocks that don't comply with it, then you just get it.
 Everything will just go in anyway.
-There'll be a giant mempool, maybe a few hundred gigabyte mempool, but eventually it will go through.
+There'll be a giant mempool, maybe a few hundred-gigabyte mempool, but eventually, it will go through.
 
 NVK: 01:25:37
 
-Now another fun thing too on that game theory is that like, you know, as Bitcoin halves, right, the rewards per block, like, you know, the miners further depend on the users, right.
+Now another fun thing too on that game theory is that like, you know, as Bitcoin halves, right, the rewards per block, like, you know, the miners further depend on the users, right?
 For their income.
-So, so like it become, it's going to become economically stupid for them not to mind the transactions, right?
-Like even, even if they don't agree with the transactions, even their state is saying, Hey, don't do this because then they're going to just move their gear somewhere else.
-Right.
+So like it becomes, it's going to become economically stupid for them not to mind the transactions, right?
+Like, even if they don't agree with the transactions, even their state is saying, Hey, don't do this because then they're going to just move their gear somewhere else.
 
 Sjors Provoost: 01:26:02
 
@@ -1784,7 +1696,7 @@ It's going to suck.
 Sjors Provoost: 01:26:13
 
 No, they'll get subsidized to reorg, basically.
-So basically, the minor revenue is not from coming from Bitcoin transactions is coming from governments that pay them to censor.
+So basically, the minor revenue is not coming from Bitcoin transactions is coming from governments that pay them to censor.
 
 Mike Schmidt: 01:26:22
 
@@ -1793,7 +1705,7 @@ This is the Eric Voskuil discussion.
 NVK: 01:26:25
 
 Yes, very much.
-So yeah, but I still don't think it would be as economically interesting as mining those because see what users would do is just further increase the fees, right?
+So yeah, but I still don't think it would be as economically interesting as mining those because see, what users would do is just further increase the fees, right?
 Like, and then you're gonna have miners outside of that network to do it.
 And then they're gonna start getting into Whack-a-mole, where you're gonna start like, you know, blacklisting miners, you're gonna try to fork the actual stratum network.
 And it all like, it just gets weird nonsense.
@@ -1802,13 +1714,13 @@ But like, it's very hard to sustain this kind of stuff forever.
 
 Sjors Provoost: 01:27:00
 
-Yeah, it'll be an interesting question about security budget, like who has the bigger budget here?
+Yeah, it'll be an interesting question about security budget, who has the bigger budget here?
 Is the economic use of Bitcoin, you know, are people really willing to pay enough fees to overcome an opponent that is willing to pay a lot of money to not have them make transactions?
 
 NVK: 01:27:14
 
 You know, a heuristic that I like on that, It's not like a perfect analogous to it, but it's like Bitcoin is the largest computational capacity on earth by like many, many, many, many, many orders of magnitude.
-And it's still like this kiddie pool, tiny economic system, right?
+And it's still like this kiddie pool, a tiny economic system, right?
 Like, I mean, like Bitcoin is hilariously small, even at the peak.
 Like we barely hit a trillion and it's still like, man, what Apple probably has more cash than Bitcoin has its own value, right?
 
@@ -1819,11 +1731,11 @@ I mean, I know we have a lot of hash power, but I think, I don't know how it com
 
 James O'Beirne: 01:27:52
 
-It's not like general purpose compute, right?
+It's not like general-purpose compute, right?
 
 NVK: 01:27:54
 
-It's not general purpose, but it is.
+It's not general-purpose, but it is.
 
 Sjors Provoost: 01:27:57
 
@@ -1839,39 +1751,38 @@ I mean, ours is specific.
 
 Sjors Provoost: 01:28:12
 
-I have no idea how many gigawatts worth of data centers is out there that are just doing general compute and AI.
+I have no idea how many gigawatts worth of data centers are out there that are just doing general compute and AI.
 Maybe Bitcoin is bigger than that, but maybe not.
 
 NVK: 01:28:21
 
-That came up, I think on the last, sorry, on the previous boot run.
-But anyways, somebody can give us some notes later.
-
-## Improving Bitcoin development and visibility/perception of development
+That came up, I think on the last, sorry, on the previous bull run.
+But anyway, somebody can give us some notes later.
 
 So guys, like there's like, I guess like two things now, like one, one main thing I want to address and then like some questions from the audience, unless you guys sort of like have things that you want to bring up, which is totally cool with me.
-So one thing is like really like the optimist view here, like What can we do to improve two things, the visibility on how the sausage is made so that the FUD can exist as easy.
+So one thing is like really like the optimist view here, like What can we do to improve two things, the visibility on how the sausage is made so that the FUD can exist as easily.
 So we don't have like Wall Street Journal writing retarded articles or at least retarded headlines.
 And the other thing is like how do we improve development in terms of like, I wouldn't say like certainly like attracting more people, but like getting the people that are interested in working on that, like working on that.
-Who wants to tackle like each question here?
+Who wants to tackle each question here?
+
+## Improving Bitcoin development and visibility/perception of development
 
 Sjors Provoost: 01:29:13
 
 Well, to the first one, so The problem I guess is we have lots of good views into what's going on if you read Optech, but the average Wall Street Journal reader is not gonna read Optech.
 So I guess then the countermeasure would have to be some popular science writer actually writing about random Bitcoin core requests as if they're like super interesting.
-And that just takes a great science communicator or a great technology communicator that somehow can do it without coming across as a complete shill.
+And that just takes a great science communicator or a great technology communicator who somehow can do it without coming across as a complete shill.
 
 NVK: 01:29:43
 
 Well, I mean, the cool thing about pop science is that it can just invent whatever the fuck you want.
 And it goes into the thing as if it was true.
 Right.
-I mean, you know, if you read any pop science magazine or whatever, we have to stuff there is like, like completely either a lie or wrong.
+I mean, you know if you read any pop science magazine or whatever, we have to stuff there is like, like completely either a lie or wrong.
 
 Sjors Provoost: 01:29:59
 
 So the risk comes in.
-Right.
 So whoever is that writer may then decide to start promoting Ripple all of a sudden, or at least promote some sort of hard fork that they want.
 So maybe it's good that Bitcoin is a bit boring.
 
@@ -1879,7 +1790,7 @@ James O'Beirne: 01:30:12
 
 Yeah, I think, you know, the Wall Street Journal has political motivations.
 So you're never gonna, you're never gonna fix that.
-I think there's a there's a vested interest in misinterpreting the technological stuff.
+I think there's a vested interest in misinterpreting the technological stuff.
 
 Mike Schmidt: 01:30:24
 
@@ -1898,7 +1809,7 @@ NVK: 01:31:33
 You know, one little tip on media relations is when a reporter reaches out to you without being very clear on the article that he's writing, like, oh, I'm writing this.
 Can you please help me understand so I can, you know, like I need a quote or whatever, right?
 If they're being wishy-washy about what they're writing, it's 100% a hit piece, either on you or on the topic you like.
-They're just using you as a means to get like better technical bullshit so that they can sort of feeling the sound better.
+They're just using you as a means to get better technical bullshit so that they can sort of feel the sound better.
 
 Sjors Provoost: 01:32:03
 
@@ -1910,16 +1821,15 @@ I would like to have a mainstream journalist discover that and blow the whistle 
 James O'Beirne: 01:32:30
 
 But they're not gonna be breaking that news.
-It's, you know, someone in the technical community is going to figure that out well before they would ever, you know, you
+It's, you know, someone in the technical community is going to figure that out well before they would ever, you know.
 
 NVK: 01:32:36
 
-know, I found like 99, 99% of the time when they reach out with like, you know, they, they will be very specific when they're in good faith.
+You know, I found like 99% of the time when they reach out with like, you know, they, they will be very specific when they're in good faith.
 Like here is what I'm writing about or, Oh, I read this awesome blog piece about like this feature that's coming.
 Can you please help me clarify it?
-Like they're very forthcoming of what they're writing when they're not being serious.
-Right.
-Like, And when they're like doing a hit piece or something negative, they always hide what they're trying to write.
+Like they're very forthcoming about what they're writing when they're not being insidious.
+And when they're doing a hit piece or something negative, they always hide what they're trying to write.
 
 Sjors Provoost: 01:33:06
 
@@ -1930,7 +1840,7 @@ NVK: 01:33:18
 
 No, there has been.
 I've had a piece, especially in the past, quite some time ago, where it was like mainstream just learning about Bitcoin and stuff.
-And the article didn't make it out, but they were like earnestly trying to write like a decent piece about it to the extent that they can sort of comprehend, especially back in the day.
+The article didn't make it out, but they were earnestly trying to write a decent piece about it to the extent that they could sort of comprehend, especially back in the day.
 
 Sjors Provoost: 01:33:35
 
@@ -1940,46 +1850,39 @@ So that'll probably give us a lot of ways to phrase things that they understand.
 James O'Beirne: 01:33:52
 
 You know, again, see political motivation.
-I think we need to be ready to reckon with the reality that these institutions are structurally motivated to find against Bitcoin in ways that are potentially unfair to the technical realities.
+I think we need to be ready to reckon with the reality that these institutions are structurally motivated to fight against Bitcoin in ways that are potentially unfair to the technical realities.
 
 Sjors Provoost: 01:34:08
 
 Yeah, I'm not saying we should use those institutions to communicate these things.
 We should first figure out how to communicate them because that's quite hard.
-And that's why I said maybe the court case will give us some like actual ways to articulate it that makes sense that are not just written by shills basically but but have stood the test of scrutiny by somebody who's very adversarial on it and then you need a medium to broadcast that stuff in that could be, you know, somebody else going off.
+And that's why I said maybe the court case will give us some actual ways to articulate it that make sense that is not just written by shills basically but have stood the test of scrutiny by somebody who's very adversarial on it and then you need a medium to broadcast that stuff in that could be, you know, somebody else going off.
 
 NVK: 01:34:35
 
-But here's the thing, right?
+But here's the thing.
 Mainstream functions in certificates and in appeal to authority and all that stuff.
-Right.
 And they have their own approved authorities.
-Right.
-I think that the reality that bitcoins have to sort of accept is that, you know, at least for the next decade, at least I believe, you know, we're just going to have an in-hospital sort of like space, in-hospitable space for Bitcoin in mainstream, right.
+I think that the reality that bitcoins have to sort of accept is that you know, at least for the next decade, at least I believe, you know, we're just going to have an in-hospital sort of like space, in-hospitable space for Bitcoin in the mainstream.
 That'd be mainstream politics.
-That'd be mainstream anything really, because we're built, we're building the thing that sort of kind of like defunds them.
-So like, you know, they're not going to like
-
-Sjors Provoost: 01:35:07
-
-it, right.
+That'd be mainstream anything really, because we're building the thing that sort of kind of like defunds them.
+So you know, they're not going to like it.
 
 NVK: 01:35:08
 
-There's going to be some of the factors from them, but like the majority of the damages, listen, we're coming for your, for your bread.
-If you're
+There's going to be some de-factors from them, but like the majority of the damages, listen, we're coming for your, for your bread.
+
 
 Sjors Provoost: 01:35:14
 
-trying to reach large audiences, you don't need to go through traditional media, but I would call Joe Rogan mainstream media at this point.
+If you're trying to reach large audiences, you don't need to go through traditional media, but I would call Joe Rogan mainstream media at this point.
 Like he's reaching a bigger audience.
 He doesn't get Bitcoin.
 No, but you can go on his show and basically talk.
-So
 
 NVK: 01:35:29
 
-people have tried.
+People have tried.
 
 James O'Beirne: 01:35:30
 
@@ -1992,7 +1895,7 @@ Mike Schmidt: 01:35:56
 
 There's some room for improvement even within our own house.
 I've noticed this.
-I'd be curious to your guys' comments on this, but I've seen on Twitter lately, a lot of, there shouldn't be developers in Bitcoin as a career or...
+I'd be curious about your guys' comments on this, but I've seen on Twitter lately, a lot of, there shouldn't be developers in Bitcoin as a career.
 
 James O'Beirne: 01:36:13
 
@@ -2001,71 +1904,53 @@ Oh yeah, that moron Steve.
 Mike Schmidt: 01:36:14
 
 Yeah, well, there's that, but there's him and then there's others too.
-Like he may have, I don't know what his point, if I'm being, if I'm steelmanning his argument.
+As he may have, I don't know what his point is, if I'm being, if I'm steel manning his argument.
 
 NVK: 01:36:24
 
-Okay.
-So, so Steve is a good friend and I understand where he's coming from.
+So Steve is a good friend and I understand where he's coming from.
 And I don't like it.
 I don't like Bitcoin lewdism.
 It feels like lewdism, right?
-Like it's like we were having this conversation, I think like an episode ago that I had the two of you there.
-I think it might have been the OpVault episode where we're talking about gardening versus like, you know, like software does not exist without updates.
+It's like we were having this conversation, I think like an episode ago that I had the two of you there.
+I think it might have been the OpVault episode where we're talking about gardening versus like, you know, software does not exist without updates.
 And I differ in this mindset where it's like, I believe that all the devs should be hired by actual industry.
-So it's very clear on their motives as opposed to like charities and things like the Brink is doing, like, which is great, but it's harder to see what the intent is, right?
+So it's very clear on their motives as opposed to charities and things like the Brink is doing, like, which is great, but it's harder to see what the intent is, right?
 
 James O'Beirne: 01:37:08
 
-Yeah.
-So his concern is that if you employ people full time to work on Bitcoin, their constituency to develop their own interests, they can be, you know, subtly manipulated by the people who are paying them to work on Bitcoin and, and therefore we shouldn't have anybody paid to work on Bitcoin.
+So his concern is that if you employ people full time to work on Bitcoin, their constituency to develop their own interests, they can be, you know, subtly manipulated by the people who are paying them to work on Bitcoin and, therefore we shouldn't have anybody paid to work on Bitcoin.
 So there should be no Bitcoin developers, which is just fucking nuts.
 It's just insane.
 
 NVK: 01:37:28
 
-But I think that's what happens when people who are not software people,
-
-James O'Beirne: 01:37:31
-
-right?
-
-NVK: 01:37:32
-
-Look at Bitcoin.
-And in all honesty, I think most of the fault here is when you have a system that is very complex, opaque and anarchic, right.
-Like by nature, like it is fucking hard to understand Bitcoin.
-I mean, you know, I was just joking before we started, like half the people complaining about Bitcoin on Twitter, like they don't understand how Bitcoin works.
-
-James O'Beirne: 01:37:52
-
-Right.
-
-NVK: 01:37:52
+But I think that's what happens when people who are not software people, look at Bitcoin.
+And in all honesty, I think most of the fault here is when you have a system that is very complex, opaque, and anarchic.
+Like by nature, it is f*cking hard to understand Bitcoin.
+I mean, you know, I was just joking before we started, like half the people complaining about Bitcoin on Twitter, they don't understand how Bitcoin works.
 
 I mean, like, and these are people who go on spaces and talk about like Bitcoin as if they were some expert.
 
 James O'Beirne: 01:37:57
 
-I was just going to say real quick and, you know, I'm sure Shorz And Mike, maybe this resonates with you to some extent.
-But I just wanted to make clear the one thing I wanted to get across in this episode is like, assuming UTXO op vault, like I wouldn't have done these things if someone wasn't paying me full time for the last four years to sit in a chair and like look at the Bitcoin source code, they would have been completely unreasonable to do like in a part time capacity.
-And so I think that the funding is
+I was just going to say real quick and, you know, I'm sure Sjors And Mike, maybe this resonates with you to some extent.
+But I just wanted to make clear the one thing I wanted to get across in this episode is like, ASSUMEUTXO, OPVAULT, like I wouldn't have done these things if someone wasn't paying me full time for the last four years to sit in a chair and like look at the Bitcoin source code, they would have been completely unreasonable to do like in a part-time capacity.
+And so I think that the funding is really important.
 
 NVK: 01:38:24
 
-really important.
 And it's self-flagellation to create Bitcoin proposals and like get them out.
-It's
 
 James O'Beirne: 01:38:28
 
-not fun.
+It's not fun.
 
 NVK: 01:38:29
 
 No, no.
 I mean, it's very like, it's not like the goodness of your heart that you do that.
-Like, it's like, it's really is like, well, I mean, it is kind of the goodness of your heart too, but like, it's, it's, it's like, it takes a lot.
+Like, it's like, it's really is like, well, I mean, it is kind of the goodness of your heart too, but like, it takes a lot.
 It takes a lot out of you too.
 
 James O'Beirne: 01:38:44
@@ -2074,8 +1959,7 @@ Yeah.
 
 NVK: 01:38:46
 
-You know, and, and, you know, people want to get paid to work.
-Like, I mean, that's.
+You know, and people want to get paid to work.
 
 James O'Beirne: 01:38:50
 
@@ -2089,30 +1973,22 @@ If you don't have it.
 NVK: 01:39:05
 
 I think those comments are out of ignorance and frustration.
-Right.
-So yeah, ignorance to like how software works, how it's maintained.
-Right.
+So yeah, ignorance to like how the software works, how it's maintained.
 And then there is frustration with things like how things get activated.
-Right.
-And, and, and the consequences of where things are not truly fought through.
-Right.
-I mean like, you know, nobody would have fought that people are going to use the discounted, unlimited witness of taproot to put in Dick butts.
-Right.
+And, and, and the consequences of where things are not truly thought through.
+I mean like, you know, nobody would have thought that people are going to use the discounted, unlimited witness of taproot to put in Dick-butts.
 So the answer is, listen, stop f**king with my money.
-Right.
 Please stop making changes.
 So like I understand that that's the sentiment that a lot of people get.
 And it's fair.
-I mean, yeah, they're not necessarily like wrong to say, You know what, stop it.
+I mean, yeah, they're not necessarily wrong to say, You know what, stop it.
 I don't want more changes.
 I don't want more features.
 It's good enough for me.
-Right.
 
 James O'Beirne: 01:39:48
 
 Emotionally, that's a completely fair stance.
-Yeah.
 
 NVK: 01:39:51
 
@@ -2129,18 +2005,15 @@ And I think there's a confusion.
 This is what I said earlier about we need to clean up and educate within our own Bitcoin Twitter house before we try it.
 You know we got people who are side hard money Bitcoiners in the profile who say there's Why is there anybody working on Bitcoin?
 Right.
-So I think we we got education to do.
+So I think we got education to do.
 
 NVK: 01:40:49
 
 No, but for example, you know, it would be very easy to sell stuff like, for example, encrypted communication between nodes with a white listing.
-Right.
 So they're like you have like pub keys that you share with each other.
-And now you're like actually preventing spam.
+And now you're actually preventing spam.
 So there's like a bunch of stuff you can do there.
-Right.
-Like there is things that you can do because those things don't feel like you're messing people's money.
-Right.
+There are things that you can do because those things don't feel like you're messing with people's money.
 Even though you are creating slightly different dynamics in a way.
 So like, you know, there is a narrative, a narrative issue.
 
@@ -2156,7 +2029,7 @@ Well you need a Windows computer, right?
 
 Sjors Provoost: 01:41:30
 
-Yeah, for one thing you need a Windows computer, but try to run old Windows software I think it will refuse to run it because it I think it used to let you run in like 32-bit mode and it might not do that anymore.
+Yeah, for one thing, you need a Windows computer, but try to run old Windows software I think it will refuse to run it because it I think it used to let you run in 32-bit mode and it might not do that anymore.
 So operating systems get annoying.
 The other thing is compiling gets annoying So If you are a business and you're running Bitcoin Core, probably you are compiling it yourself on your whatever infrastructure.
 Wait two years, well maybe on Linux it's a bit longer.
@@ -2170,46 +2043,45 @@ And then maybe one day it'll be a consensus bug that we didn't realize and nobod
 
 NVK: 01:42:27
 
-But that's because people are not running FreeBSD because if they were running FreeBSD like us, they would have servers, they have like six years of time, you know, running an old core on it and everything is just fine.
+But that's because people are not running FreeBSD because if they were running FreeBSD like us, they would have servers, they have like six years up-time, you know, running an old core on it and everything is just fine.
 Don't touch it.
 That's what's working.
 
 Sjors Provoost: 01:42:40
 
 That's what's working.
-People was using the same computers that they put in in 1970 because they can't replace the actual computer.
+People were using the same computers that they put in in 1970 because they couldn't replace the actual computer.
 If that's how you want to run Bitcoin and sure, that sounds good.
 
 NVK: 01:42:49
 
 I'm just kidding.
-But, but like, I think there is room for, for both.
+But like, I think there is room, for both.
 I think it's important that people run old versions.
-I think, I think we, we need to communicate the importance of gardening, right?
-Because, you know, I was one of those people screaming ossify, right?
+I think, I think, we need to communicate the importance of gardening, right?
+Because, you know, I was one of those people screaming ossify.
 But my ossification sort of idea, I feel like it was confusing people.
 So I stopped saying it because that included the gardening, right?
 Like what I mean, ossification is like, okay, let's be more conservative about new features.
-Right.
 Because, you know, like maybe I want to, like, I want the inertia to start setting in.
 I don't know how much more should be done.
-Not that I have any control over anything, but like just in my own mind, right.
-Like of what is acceptable to me versus potential consequences.
+Not that I have any control over anything, but like just in my own mind.
+Like what is acceptable to me versus potential consequences.
 
 Sjors Provoost: 01:43:34
 
 But I also think protocol is not done yet in the sense that it's not going to be able to handle.
 I think James talked about that on the Marty Benta podcast, which was a nice little therapy session, kind of.
 It was very good.
-The second half, some people didn't like the upvote stuff because it was too technical, but just stick through that.
+In the second half, some people didn't like the OPVAULT stuff because it was too technical, but just stuck through that.
 I mean, that's not interesting, but if you stick through it, it gets really existential.
-And one of the things is, yeah, we need, if we want Bitcoin to work for the world population and let's assume that it doesn't actually grow too much.
+And one of the things is, yeah, we need, if we want Bitcoin to work for the world population, and let's assume that it doesn't actually grow too much.
 It sticks to the order of 10 billion.
 Yeah, we have some work to do.
 
 NVK: 01:44:08
 
-You know, recently after the whole drama with ordinals, right, I think I was talking to Rindell And I sort of like kind of came to this realization just talking that like, okay, so it's 5,000 years have passed, right?
+You know, recently after the whole drama with ordinals, right, I think I was talking to Rindell And I sort of kind of came to this realization just talking that like, okay, so it's 5,000 years have passed.
 Like there is not a single person that has been able to verify from Genesis anymore.
 
 Sjors Provoost: 01:44:30
@@ -2221,13 +2093,13 @@ NVK: 01:44:32
 And no, but it gets extra interesting, right?
 You could have had some fork a thousand years in, they got swept under the rug and the people a thousand years after that sort of like forgot that history and sort of like moved on, you know, maybe there was a great fire in the cathedral, right?
 Like, and all the documents were burned.
-And this has happened through history, like a multitude of times, right?
-In the cultures, they were the best at maintaining documentation in rocks, right?
+And this has happened throughout history, like a multitude of times, right?
+In the cultures, they were the best at maintaining documentation in rocks.
 
 Sjors Provoost: 01:44:58
 
-And there will be coins that people will allege are like unfairly created.
-So there will be very rich families or ethnicities that will be accused even just falsely accused of owning like false coins because some of the history is gone.
+And there will be coins that people will allege are unfairly created.
+So there will be very rich families or ethnicities that will be accused even just falsely accused of owning false coins because some of the history is gone.
 And then the conspiracy will say well in that piece of history that we lost, that's where these people created these fake coins and then there'll be horrible wars over it.
 
 NVK: 01:45:21
@@ -2236,11 +2108,10 @@ yeah.
 You know, like having a form of conservatism, right?
 That is not Lewdism.
 And having that as like this gardening mentality is the little bonsai, you try not to kill it, you just want to keep it going in a certain direction.
-Like, and conveying that, educating people on that, and like literally explaining, if we don't change this, you cannot run core in the new processor, right?
+Like, and conveying that, educating people on that, and like literally explaining, if we don't change this, you cannot run Core in the new processor.
 Like, if we don't do this, you can't do that in this other way of routing on the internet.
-Right?
 Like things like that.
-I think it will help people understand that like some changes in software need to exist.
+I think it will help people understand that some changes in software need to exist.
 Or you're screwed.
 Or you might have the best version of Bitcoin, a floppy drive, and you cannot find a floppy drive, right?
 Like that's what happens to software.
@@ -2255,7 +2126,7 @@ Usually, you know, the reality is a little bit more complicated.
 NVK: 01:46:24
 
 Maybe just separating more of the consensus stuff from operational business logic stuff might help a lot.
-Like, And I'm not talking about the core, like the node versus the wallet part on Bitcoin Core, which is like God awful work and God bless if you're trying to do that.
+Like, And I'm not talking about the core, like the node versus the wallet part on Bitcoin Core, which is like God-awful work and God bless if you're trying to do that.
 And I'm talking about like, and that's where it kind of goes back to the BIP stuff, you know, like for example, Craig wanted a BIP to do labels, right?
 So wallets had like a standard for labels.
 Like, you know, and I'm not saying I have an answer either, but like having sort of like this other section of Bitcoin core, it's kind of like formal, it's kind of like Bitcoin core-ish style, but it's like for things that are unrelated to consensus, unrelated to deep code.
@@ -2273,16 +2144,12 @@ Like you have a separate spec there that's for like, you know, like IO stuff or 
 Like maybe it's overcomplicating.
 I don't know.
 But like industry wants something set in stone to develop on top.
-Right.
 Like ideally.
-Right.
 So it's like, you're not like, for example, we, we did the PSBT thing was forgotten.
 Nobody was using it.
-But then like as soon as we started doing PSBT because nobody was going to do it.
+But then as soon as we started doing PSBT because nobody was going to do it.
 Oh no, we want to kind of change it and fix it a little bit.
-Right.
-So it's like, ah, you know, of course this was going to happen.
-Right.
+So it's like, ah, you know, of course, this was going to happen.
 Like everybody forgot about it.
 Nobody wants it, but then somebody starts using it.
 Well, let's change it.
@@ -2290,24 +2157,24 @@ So it's just this idea of having a better place for standards that are more busi
 
 Sjors Provoost: 01:48:04
 
-But so far it's just one giant blob of code and it is being organized better, but I think no matter how you do it, you also want to clean up the code in that giant blob or even in the consensus part of, however you want to define that, Even if we have a separate kernel, you know, that's being worked on, that kernel itself will have C++ code that we'll want to make maybe safer so it doesn't crash or so that it still compiles or so that it validates signatures three times faster.
-Things like libsecp, sorry, libsecp256k1.
-That's a library and it's being maintained and it is extremely important and it actually gets-
+But so far it's just one giant blob of code and it is being organized better, but I think no matter how you do it, you also want to clean up the code in that giant blob or even in the consensus part of, however, you want to define that, Even if we have a separate kernel, you know, that's being worked on, that kernel itself will have C++ code that we'll want to make maybe safer so it doesn't crash or so that it still compiles or so that it validates signatures three times faster.
+Things like libsecp, sorry, `libsecp256k1`.
+That's a library and it's being maintained and it is extremely important.
 
 NVK: 01:48:38
 
-Can you imagine if that was done inside core?
+Can you imagine if that was done inside Core?
 I think it was brilliant that they did it outside.
 
 Sjors Provoost: 01:48:42
 
-It's done outside core, but it is being updated to core.
+It's done outside Core, but it is being updated to Core.
 And that's a library that I don't know how to review it.
 It's super scary.
 
 NVK: 01:48:51
 
-I don't think there is more than 10 people in the world that can.
+I don't think there are more than 10 people in the world that can.
 
 Sjors Provoost: 01:48:55
 
@@ -2318,7 +2185,7 @@ But good luck reviewing that.
 NVK: 01:49:06
 
 No, but like that's the thing, right?
-Like it goes back to this heuristic of having like grey beards you trust.
+It goes back to this heuristic of having grey beards you trust.
 I mean, like you're not going to get out of that.
 That's true for airplanes.
 
@@ -2326,8 +2193,8 @@ Sjors Provoost: 01:49:13
 
 Not just the grey beards.
 I mean, you can also, you will use the new version.
-You will sync the Bitcoin core blockchain from scratch with the Zoom valid off and a bunch of things like that.
-So so, you know, at least whatever shenanigans they did, they didn't like, you know, if I if I run that thing in a new blockchain appears now, like, yeah, this is odd, but that that usually doesn't happen.
+You will sync the Bitcoin core blockchain from scratch with the assume valid off and a bunch of things like that.
+So you know, at least whatever shenanigans they did, they didn't like, you know, if I run that thing in a new blockchain appears now, like, yeah, this is odd, but that that usually doesn't happen.
 
 ## Audience questions
 
@@ -2354,24 +2221,22 @@ Oh, Nostr only.
 NVK: 01:49:56
 
 So, okay.
-So can a more public facing website be built to show active developments and what stage they are in, navigating GitHub can be imposing for the average person from Andrew.
+So can a more public-facing website be built to show active developments and what stage they are in, navigating GitHub can be imposing for the average person from Andrew.
 
 
 Sjors Provoost: 01:50:15
 It's problematic for Bitcoin developers too.
-Like you can be working in your own little corner and you have no idea what's happening in other.
+You can be working in your own little corner and you have no idea what's happening in others.
 
 NVK: 01:50:19
 
 I think it's two things.
-I mean, the average person is not gonna understand what's going on anyways.
+I mean, the average person is not gonna understand what's going on anyway.
 So I think that the proverbial average person is completely hopeless and is gonna have to trust companies and people.
 
 James O'Beirne: 01:50:30
 
 Well, Optech, like you said, does a really good job of surveying everything.
-And I just think...
-
 
 Sjors Provoost: 01:50:35
 
@@ -2383,7 +2248,7 @@ James O'Beirne: 01:50:39
 
 It's just a lot of work.
 It's a ton of work to aggregate that stuff.
-You would really have to go out and like basically interview all the frequent contributors and...
+You would really have to go out and like basically interview all the frequent contributors.
 
 NVK: 01:50:47
 
@@ -2392,7 +2257,7 @@ It's like you don't want to invest too much effort into stuff that could just so
 
 James O'Beirne: 01:50:55
 
-Yeah, I mean, Peer's Bitcoin Axe thing was pretty cool.
+Yeah, I mean, Pierre's Bitcoin Axe thing was pretty cool.
 
 NVK: 01:50:58
 
@@ -2407,53 +2272,51 @@ I think you could kind of.
 
 Mike Schmidt: 01:51:07
 
-There's a couple of different layers.
+There are a couple of different layers.
 Obviously, if you know enough, you can look at the code or issues.
 Then at a level higher, some of the PRs are tied into projects on GitHub, which may help summarize some of that, but I think a lot of that gets out of date and maybe that's still too technical.
 Then you have Optech, which does this weekly, but it's still pretty granular.
-I've tossed around the idea, maybe even James, back when you were at Optech of like Optech being like the what, what happened, what got changed, what got discussed, what's on the mailing list.
-And there being the ability to maybe have a so what on top of that, that digest that.
-We did one of those with Optech and having the executive briefing and sort of summarize that for executives.
-Maybe there's a way, for example, to take the Optech end of year digest mammoth write-up and doing a so what on top of that.
+I've tossed around the idea, maybe even James, back when you were at Optech of Optech being like the what, what happened, what got changed, what got discussed, what's on the mailing list.
+And there is the ability to maybe have a so what on top of that, that digest that.
+We did one of those with Optech and had the executive briefing and sort of summarized that for executives.
+Maybe there's a way, for example, to take the Optech end-of-year digest mammoth write-up and doing a so what on top of that.
 And maybe that would make it more accessible for people.
 I don't know if that's what that question is asking but maybe that's a potential solution.
 
 NVK: 01:52:15
 
 I normally don't have time to go through the whole Optech.
-Like it's like because it's just there's too much stuff going on in Bitcoin.
+It's like because it's just there's too much stuff going on in Bitcoin.
 
-Sjors Provoost: 01:52:21
+Mike Schmidt: 01:52:21
 
-And you guys are really curate.
+How dare you.
 
 NVK: 01:52:23
 
-No, and you guys are really curate all that stuff into even last.
-Right.
+And you guys are really curate.
+No, and you guys are curating all that stuff into even last.
 You condense that and you give a lot of TLDRs, which is fantastic.
 But it's just too much.
-Right.
-So one thing that I really love is that spaces that you guys do, which I wish was longer.
+So one thing that I really love is the spaces that you guys do, which I wish was longer.
 I really wish it was longer.
 
 Mike Schmidt: 01:52:39
 
-You want it longer.
+You want it longer?
 
 NVK: 01:52:40
 
 Yes.
 I mean, there's no topic in Bitcoin that it can do in less than two hours.
 This was something that one of the reasons why I started the spot is because you cannot have any Bitcoin conversation in less than two hours.
-Like if it's less than two hours is because it's just interviewing a person that's like sort of like explaining exactly what the narrative they had in their mind.
-Right.
+Like if it's less than two hours is because it's just interviewing a person who's like sort of like explaining exactly what the narrative they had in their mind.
 Like, which we all do, but like, it's, it's impossible.
 Like this topics just have too many tangents.
 You're complicated, you know?
 So yeah, longer, or, or like more of them in topic specifics.
-One good thing is like, for example, in the interview style, like deliver episodes on pretty much everything that happens, right?
-You'll find the person that either created the problem, resolved the problem or proposing something and have the person talk for an hour there, right?
+One good thing is like, for example, in the interview style, like delivering episodes on pretty much everything that happens, right?
+You'll find the person who either created the problem, resolved the problem, or proposed something and have the person talk for an hour there, right?
 That's very helpful too.
 
 Sjors Provoost: 01:53:30
@@ -2471,7 +2334,7 @@ I know another podcast.
 James O'Beirne: 01:53:34
 
 Yeah.
-The Shores NATO.
+The Sjorsnado.
 
 NVK: 01:53:36
 
@@ -2487,8 +2350,8 @@ But you know like, but your pod is like, is very good for like average people to
 
 Sjors Provoost: 01:53:48
 
-Yeah it's mostly actually we try to be evergreen.
-So there's lots of episodes and some people will even approach me saying oh I just listened to your entire backlog which is like that's impressive.
+Yeah, it's mostly actually we try to be evergreen.
+So there are lots of episodes and some people will even approach me saying oh I just listened to your entire backlog which is like that's impressive.
 
 NVK: 01:53:57
 
@@ -2496,8 +2359,8 @@ That's what people do by the way.
 
 Sjors Provoost: 01:53:58
 
-Yeah and The thing is most of these episodes are still correct.
-As in some of the proposals may have changed a bit.
+Yeah, and The thing is most of these episodes are still correct.
+Some of the proposals may have changed a bit.
 But it is not a current events episode.
 It's just that we often run out of topics and then we'll do like, oh, what's new in Bitcoin Core Vision 24?
 And that's our version of clickbait.
@@ -2513,16 +2376,14 @@ Thank you.
 
 NVK: 01:54:21
 
-Right.
-Okay.
 All right.
-So, so let's move on to the next question here.
-Current FUD from MSM about small number of devs that we've already addressed that one that was from 1F52b.
+So let's move on to the next question here.
+Current FUD from MSM about the small number of devs that we've already addressed that one that was from 1F52b.
 
 Sjors Provoost: 01:54:32
 
 Well, we didn't address the part that they confused developers and maintainers.
-They really just suggested there was like six developers, even though there are more than a hundred.
+They really just suggested there were like six developers, even though there are more than a hundred.
 
 NVK: 01:54:42
 
@@ -2541,33 +2402,30 @@ We've addressed it.
 
 NVK: 01:55:02
 
-Yeah.
-Okay.
-Ben Gunn.
-Please debunk the thought about centralization of contributors, the same one.
+Yeah, Okay, Ben Gunn.
+Please debunk the thought about the centralization of contributors, same one.
 Like, so this is what's doing the rounds.
 Yeah, I mean, it's gonna be centralized because there's only so many brains in the world.
-So the easier the problem, the more people be there to help address it.
+So the easier the problem, the more people are there to help address it.
 And you know, you're going to have to trust people to a certain extent, but we have great webs of trust so that you can check the signatures and check the code and check the releases.
 
 Sjors Provoost: 01:55:31
 
 We also have this thing called the whistleblowing effect.
-So even if the person who you trust to keep an eye on things might be asleep, as long as you have some access to what happens in the rest of the world by being on some social network or talking to some people occasionally, you'll find out that there's something really bad going on.
+So even if the person you trust to keep an eye on things might be asleep, as long as you have some access to what happens in the rest of the world by being on some social network or talking to some people occasionally, you'll find out that there's something really bad going on.
 That's also a mechanism that you're trusting, I think.
 
 NVK: 01:55:54
 
-Yep.
-Christopher Liss.
-I still don't entirely get derivation path and why it can't be the same.
+Yep, Christopher Liss.
+I still don't entirely get the derivation path and why it can't be the same.
 Okay.
 This is out of scope for this episode.
-Highly, highly recommend going check out <walletsrecovery.org>.
+I highly, recommend going check out <walletsrecovery.org>.
 I put all that information there.
 Bitburn.
 I would cover some aspects of the blockchain wars and the history of development.
-I think we've sort of went around it.
+I think we've sort of gone around it.
 
 Sjors Provoost: 01:56:22
 
@@ -2577,24 +2435,22 @@ The Block Size Wars, Jonathan Beer.
 
 NVK: 01:56:27
 
-Johnny.
-Yeah.
-BTC Totoro.
-I'd love to hear a bit about what like a day or a week in trenches working on Bitcoin Core is like day in day out.
+Yeah, BTC Totoro.
+I'd love to hear a bit about what a day or a week in the trenches working on Bitcoin Core is like day in and day out.
 Does the job feel isolating and alone or is it the opposite where it's lots of people willing to help and find issues?
-Well the two of you there called on it so go for it.
+Well, the two of you there called on it so go for it.
 
 Sjors Provoost: 01:56:54
 
-It's basically like any job where you're working from home except you don't have direct colleagues in the same way you don't have a boss that's screaming at you, and so you have no idea what you should be working on?
+It's basically like any job where you're working from home except you don't have direct colleagues in the same way you don't have a boss who's screaming at you, and so you have no idea what you should be working on.
 No, it's not, I don't know, it's not always easy.
 
 James O'Beirne: 01:57:10
 
-No, I find it exceptionally difficult at points, especially if you're kind of in the middle of working on something that's not, you know, getting a lot of review or you're unsure about how to proceed on something or, you know, you're kind of you spend a lot of time trying to figure out what's worth working on.
+No, I find it exceptionally difficult at points, especially if you're kind of in the middle of working on something that's not, you know, getting a lot of reviews or you're unsure about how to proceed on something or, you know, you're kind of you spend a lot of time trying to figure out what's worth working on.
 And the other thing is you spend a lot of time doing code review because code review is one of the most valuable things in Bitcoin.
-Sjors is really, really good at doing review and testing.
-But that's, you know, it's it's it's kind of I mean, personally, I find a lot of joy in being in an office environment and seeing people and talking to people and seeing people face to face.
+Sjors is really, really good at doing reviews and testing.
+But that's, you know, it's kind of I mean, personally, I find a lot of joy in being in an office environment and seeing people and talking to people and seeing people face to face.
 And you get zero of that because you get it a few times a year when the core devs, some of them meet.
 But for me, it's very isolating and very difficult.
 
@@ -2604,7 +2460,7 @@ Well, one thing that's peculiar about, I guess, Bitcoin Core as a team or to the
 There's no central office.
 There's not even a central spot.
 It's not like, oh, if only you move to City X, then you can be somewhat more in people's company.
-Like, you know, there's some cities where you have more than two.
+Like, you know, there are some cities where you have more than two.
 
 NVK: 01:58:14
 
@@ -2613,12 +2469,11 @@ It's also very academic too.
 James O'Beirne: 01:58:16
 
 It's very academic.
-Yeah.
 
 NVK: 01:58:18
 
 It's, You know, like you have to have a, like a threshold of, of like pain that's very high, at least in my view, I don't exist in academic environments.
-Like you have to be prepared for that sort of like, you know, slow pace and sort of like very sort of like review like and, you know, it's the opposite of business really.
+Like you have to be prepared for that sort of like, you know, slow pace and sort of like a very sort of like review like and, you know, it's the opposite of business really.
 
 James O'Beirne: 01:58:39
 
@@ -2629,7 +2484,7 @@ Sjors Provoost: 01:58:47
 
 Well, worse than that, I think, because there's no scope.
 So it's not ever finished, you're not producing a single document.
-Although some people like yourself are working on very specific fairly large projects that at least gives you some focus.
+Although some people like yourself are working on very specific fairly large projects that at least give you some focus.
 One of my things is that I review very random stuff.
 So there's almost no scope there.
 That can be tricky.
@@ -2652,43 +2507,39 @@ Sjors Provoost: 02:00:01
 
 I'm doing that so that I get on your podcast.
 But there are some countermeasures.
-Like I have my own to do list system that will actually show me what things I wanted to review.
+Like I have my own to-do list system that will actually show me what things I want to review.
 But sometimes I don't get to that.
 And I review recent stuff more often.
 
 James O'Beirne: 02:00:15
 
-I have like five of those to do list systems and I keep making them and abandoning them.
-Like I have, you know, like five different lists with PR numbers on them to review.
+I have like five of those to-do list systems and I keep making them and abandoning them.
+Like I have, you know like five different lists with PR numbers on them to review.
 
 NVK: 02:00:23
 
-You know, I do not do to do lists.
-F*ck to do lists.
+You know, I do not do to-do lists.
+F*ck to-do lists.
 F*ck calendars.
 No. You said you do.
 
 James O'Beirne: 02:00:32
 
 No calendars.
-That's no.
-Wow.
-That's barbaric.
+Wow, That's barbaric.
 I don't know.
 
 NVK: 02:00:35
 
-You know, like, listen, you know, like I have some bare calendars, like for example, Johnny would put the episodes to do, or, you know, I have a call with a lawyer, but I don't schedule a single anything unless it's like, you know, trying to get a group of people to do a very specific for anything more than two days.
+You know, like I have some bare calendars, like for example, Johnny would put the episodes to do, or, you know, I have a call with a lawyer, but I don't schedule a single anything unless it's like, you know, trying to get a group of people to do a very specific for anything more than two days.
 I don't schedule anything more ahead than two days.
 I want my calendars clear, completely clear so that if I want to do something, I can do the thing.
-Wow.
 
 Sjors Provoost: 02:01:01
 
 Yeah, same here.
 I think, I mean, I use calendars only for things that physically have to happen at a certain time in a certain place.
 I do not use them to say, oh I'm going to work on X, I'm going to work on Y.
-GTD.
 It's very GTD and I'm not saying GTD is perfect.
 GTD has some huge drawbacks but I've been using that since 2005, I think.
 And as a general system, I like it.
@@ -2721,7 +2572,7 @@ So it's a nice system, but yeah.
 NVK: 02:02:17
 
 You know, unimportant items, just it's like, it's like noise pollution in things to do.
-They just like deviate you from like the things that are actually important shit gets done.
+They just like deviate you from the things that are actually important shit gets done.
 Yeah.
 
 Sjors Provoost: 02:02:26
@@ -2737,22 +2588,22 @@ Sjors Provoost: 02:02:44
 
 No, but if you look at like, you know, in GTD you have things, something called a project, which is anything that's more than one action.
 A lot of my reviewing things are basically saying, wait for this thing to get rebased or updated.
-That's just a waiting for thing that's there.
+That's just a waiting-for thing that's there.
 So occasionally that'll pop up and I'll look, okay, has this actually somebody touched this?
-And then the next instruction would be for me to test it or, and for my own pull request, usually the project just consists of wait for feedback or it being merged, but that's a one action project.
+And then the next instruction would be for me to test it or, for my own pull request, usually, the project just consists of waiting for feedback or it being merged, but that's a one-action project.
 So it's still nice to have a list of things that I care about.
 
 Mike Schmidt: 02:03:19
 
-The Eisenhower matrix, right?
-The urgent and important, right?
+The Eisenhower Matrix.
+The urgent and important.
 And you don't necessarily want to be spending your time in the urgent important quadrant of that.
 You probably want to be spending your time in the not urgent but important category so that you don't have to worry about that.
 
 Sjors Provoost: 02:03:37
 
 Just get shit out of the way.
-Well GTD makes no such quadrant, right?
+Well GTD makes no such quadrant.
 It's just things that can be done given the context, given that you are behind your computer, what could be the next action?
 
 NVK: 02:03:49
@@ -2762,23 +2613,23 @@ Maybe we should do an episode on just that time management.
 James O'Beirne: 02:03:53
 
 I'd like that.
-It just
+
 
 Sjors Provoost: 02:03:54
 
-works better.
+It just works better.
 I mean, if you ever want to read the book, you should read the original one.
 So the one from the 1990s, which uses very analog technologies to get the job done.
 He wrote a new one, but it's too abstract and too long.
 So stick to the old one.
-And the thing it doesn't really account for is this world of instant notifications that we're getting now, which GitHub is one of the problems, but mails and other.
+And the thing it doesn't really account for is this world of instant notifications that we're getting now, which GitHub is one of the problems, but emails and others.
 I mean, part of that is just you want to kill all those notifications.
 And you should not get you should not be getting push messages from Twitter.
 That's like if that's what you're doing, that's not good.
 
 NVK: 02:04:29
 
-Yeah, I think like people just struggle with like actually triaging what is actually important.
+Yeah, I think people just struggle with actually triaging what is actually important.
 And then like, and then sort of like the complacency kind of sets in because you know, it's just we're all human, right?
 Like it's really, it's just, that's the true challenge is like what's really important.
 And then like people don't leave room to just like fucking do nothing to and like just reflect.
@@ -2806,7 +2657,7 @@ NVK: 02:05:13
 That's horrible.
 Anyways, all right.
 So a couple more questions here and we're setting this one off to bed.
-Aside from C++, are there any prerequisite skills, knowledge a dev should have before attempting to contribute?
+Aside from C++, are there any prerequisite skills, or knowledge a dev should have before attempting to contribute?
 Gary Kraus.
 
 Sjors Provoost: 02:05:29
@@ -2814,8 +2665,8 @@ Sjors Provoost: 02:05:29
 Python is nice.
 That's great.
 Some people have actually, that was their entry point.
-They knew Python and they would be helping writing better tests.
-C is nice if you want to work on libsecp.
+They knew Python and they would be helping write better tests.
+C is nice if you want to work on `libsecp`.
 C is not nice, but it's useful for that.
 
 NVK: 02:05:44
@@ -2827,7 +2678,7 @@ You understand computers now.
 Mike Schmidt: 02:05:52
 
 I think the philosophy is important too.
-I think there's a couple of different documents that would help even if you do know sort of the technicals.
+I think there are a couple of different documents that would help even if you do know sort of the technicals.
 If you're talking about doing Bitcoin core work, there's a Bitcoin development philosophy doc that's on GitHub that you may be interested in from a philosophical perspective.
 And then Will Clark is working on an onboarding to Bitcoin Core document as well that I think if you combine that with the technical knowledge would be very valuable for a budding C++ Bitcoin developer wannabe.
 
@@ -2836,21 +2687,19 @@ Sjors Provoost: 02:06:28
 Yeah, and if you wanna do Testing, you don't actually have to understand either of these languages, at least not in detail.
 What is much more useful for testing is understanding how Bitcoin Core should behave.
 A lot of what I do with video is just like, I'll see somebody change something and I know how it should behave and I'm going to try and guess what they forgot and then see if I can break it very quickly and then just say okay you broke this part and then move on to the next pull request.
-So just knowing how a piece of software should behave, a kind of QA work that is useful too.
+So just knowing how a piece of software should behave, is a kind of QA work that is useful too.
 Though it does require that you've probably used this offer a lot before you know, because otherwise you're going to file bugs about bad behavior in Bitcoin Core and I can guarantee you those bugs have been filed hundreds of times and nobody wants to fix them.
-So it is important to know what the things is that are bad that we care about.
+So it is important to know what the things are that are bad that we care about.
 
 NVK: 02:07:17
 
-This reinforces this idea that like, you know, and why you need to have full time people on it is because it takes like, you know, like nearly a decade for somebody to have full visibility on the code base.
-Right.
-Like, like a good sort of like broad view on what's going on.
-Right.
+This reinforces this idea that like, you know, and why you need to have full-time people on it is because it takes like, you know, like nearly a decade for somebody to have full visibility on the code base.
+Like, like a good sort of broad view on what's going on.
 
 Sjors Provoost: 02:07:33
 
-You will never have full visibility on the code.
-Yeah, but full visibility on like 10 percent of the code base.
+You will never have full visibility of the code.
+Yeah, but full visibility on like 10% of the code base.
 
 NVK: 02:07:39
 
@@ -2864,27 +2713,27 @@ Like if you're just like a tourist to Bitcoin Core, you're not going to understa
 
 Sjors Provoost: 02:08:04
 
-I don't think you need to do it full time, by the way, but I'm very Dutch in that sense.
-I think you can do things part time, but it's nice to have long term continuity though.
+I don't think you need to do it full-time, by the way, but I'm very Dutch in that sense.
+I think you can do things part-time, but it's nice to have long-term continuity though.
 
 NVK: 02:08:13
 
 Yep.
 There was, Okay, so here's another question that's along those lines too.
-A open source optimist guy.
+An open source optimist guy.
 How are decisions made about code-based structure and best practices?
 So like, I'm just interpreting his question here, but like code structure and sort of like best practices and sort of like how the core sort of like prefers things to be done.
 
 Sjors Provoost: 02:08:37
 
-And there's a developer notes markdown file in the GitHub repository that has a bunch of these standard things like, you know, do the intendation this way, do the intendation that way.
-There's a few linters that check things and other than that I think the convention is to do whatever similar code was already doing, like kind of just follow the existing pattern.
-Don't go and factor all the commas in the code, you're not going to make people happy.
+And there's a developer notes markdown file in the GitHub repository that has a bunch of these standard things like, you know, do the indentation this way, do the indentation that way.
+There are a few linters that check things and other than that I think the convention is to do whatever similar code was already doing, like kind of just follow the existing pattern.
+Don't go and refactor all the commas in the code, you're not going to make people happy.
 
 James O'Beirne: 02:09:04
 
-The document that Mike referenced earlier, the onboarding to Bitcoin Core, I think spends a lot of time talking about architecture and the considerations that would involve and how the evolution of how things have gone.
-So That's really, I mean, you could do a two hour podcast on just how core should be architected, how it is architected.
+The document that Mike referenced earlier, the onboarding to Bitcoin Core, I think spends a lot of time talking about architecture and the considerations that would involve and how the evolution of how things has gone.
+So That's really, I mean, you could do a two-hour podcast on just how core should be architected, how it is architected.
 So that document's definitely worth reading if you're curious about that.
 
 Sjors Provoost: 02:09:25
@@ -2895,10 +2744,11 @@ Though, if you wanna, you know, if you're making any more complicated change, yo
 
 NVK: 02:09:42
 
-Okay, so BourbonicPlague, would love to hear discussion around contributing anonymously to risk personal attack and all that stuff.
-So the other day I made a post about how like I think maybe like people should share IDs, do like ID mixing and all like ID shuffling.
-And you know I highly like recommend people doing, creating NIMS for their submissions.
-The code is gonna get reviewed anyways.
+Okay, so BourbonicPlague.
+Would love to hear a discussion around contributing anonymously to risk personal attack and all that stuff.
+So the other day I made a post about how like I think maybe people should share IDs, do ID mixing, and all like ID shuffling.
+And you know I highly like to recommend people doing, creating NIMS for their submissions.
+The code is gonna get reviewed anyway.
 It's not because you have a bigger name that your code is not gonna, like it's gonna go faster or whatever.
 
 Sjors Provoost: 02:10:17
@@ -2909,9 +2759,9 @@ Now you're removing that part too because you're not.
 NVK: 02:10:27
 
 Yeah, but you know, safety, right?
-Like nothing is without trade-offs.
+Nothing is without trade-offs.
 Maybe you have some great ideas or you want to fix some work and you don't want to expose yourself to any dynamic that may come from working on Bitcoin, positive or negative.
-You know, come in as an M, do something and leave.
+You know, come in as a NIM, do something, and leave.
 Xiaolongfan.
 
 Mike Schmidt: 02:10:43
@@ -2921,31 +2771,27 @@ He's got funding.
 He's got funding as far as I know on and that's anonymous.
 He communicates with voice and he's been on the Optech recap that we've done.
 So he's still connected and maybe maybe he wouldn't do an in-person meeting.
-But you
+
 
 NVK: 02:11:02
 
-know, like guys, it's also not that like I think like the fear is blown a little bit out of proportion because, you know, a few devs had issues with Craig Wright and stuff.
-I mean, realistically speaking, like, you know, there's a lot of people working in And like the great, great, great majority never had any issues that I know of.
+But you know, like guys, it's also not that like I think like the fear is blown a little bit out of proportion because, you know, a few devs had issues with Craig Wright and stuff.
+I mean, realistically speaking, like, you know, there's a lot of people working in, And like the great majority never had any issues that I know of.
 So, you know, like don't just fall for the fear to like, you know, have some balls and go get some shit done.
 
 Sjors Provoost: 02:11:25
 
 Kind of depends on where you live, too, right?
 If you live in a sort of, you know, free speechish place, it's going to be a little bit different than if you live in a country where being even remotely involved with Bitcoin is like death penalty stuff.
-So right.
 
 NVK: 02:11:40
 
-Yeah.
-Yeah.
 I think I think we can leave it on that note.
-Listen guys, This was a huge pleasure.
+Listen, guys, this was a huge pleasure.
 I really appreciate you guys putting in all this time.
-I hope we managed to have people sort of like have another inch of understanding on how Bitcoin works and the dynamics in that.
-I think many people who listen to this, to the show, probably know how to contact the guests and sign up for a Mike's mailing list.
+I hope we managed to have people sort of like have another inch of understanding of how Bitcoin works and the dynamics in that.
+I think many people who listen to this, to the show, probably know how to contact the guests and sign up for Mike's mailing list.
 You know, subscribe to Sjor's podcast, you know, follow James in multiple places.
-Yeah.
 So any final thoughts, James?
 
 James O'Beirne: 02:12:21
@@ -2971,7 +2817,7 @@ Mike.
 
 Mike Schmidt: 02:12:44
 
-Yeah, I think it's easy to listen to two and a half hours of people talking about how strange everything is and BIPs here and that and activation and fighting and mailing lists and to be discouraged by that.
+Yeah, I think it's easy to listen to two and a half hours of people talk about how strange everything is and BIPs here and that and activation and fighting and mailing lists and to be discouraged by that.
 But I think that the alternative is much worse, which is organization and control centralized in a single place.
 And Bitcoin represents the opposite of that.
 So I think we should embrace the decentralization and some of the chaos and craziness that we've talked about on this call as a positive thing.
@@ -2995,10 +2841,10 @@ Thanks for listening.
 If you're new to the pod, make sure to listen to some very cool other episodes.
 Episode 15 about Lightning.
 Episode 11 about podcasting 2.0 and value for value.
-And we also had a hardware wallet security panel in episode five.
-Don't forget to follow  @BitcoinReviewHQ or get in touch on Telegram [Bitcoin Review Pod](https://t.me/BitcoinReviewPod), or BitcoinReview@CoinKite.com.
+And we also had a hardware wallet security panel on episode five.
+Don't forget to follow at @BitcoinReviewHQ or get in touch on Telegram [Bitcoin Review Pod](https://t.me/BitcoinReviewPod), or Bitcoin Review at CoinKite.com.
 We don't have a crystal ball, so let us know about your projects.
 Leave your Boostogram on this episode and we'll try to read it on the next episode.
 We've added more people to the splits.
-Now, if you send us streaming sats, some of that goes to <opensats.org> and also to Citadel Dispatch with my guest Odell.
-If you don't know much about Value for Value or Bitcoin Podcast 2.0, Go to <bitcoin.review/v4v>
+Now, if you send us streaming sats, some of that go to [opensats.org](opensats.org) and also to Citadel Dispatch with my guest Odell.
+If you don't know much about Value for Value or Bitcoin Podcast 2.0, Go to [bitcoin.review/v4v](bitcoin.review/v4v)
