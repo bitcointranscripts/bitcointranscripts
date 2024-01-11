@@ -2,7 +2,7 @@
 title: Consensus Uasf And Forks
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['consensus', 'hard fork', 'forks', 'soft fork']
+tags: ['consensus', 'soft-fork-activation']
 speakers: ['Andreas Antonopoulos']
 date: 2017-06-04
 media: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-333-on-consensus-and-all-kinds-of-forks

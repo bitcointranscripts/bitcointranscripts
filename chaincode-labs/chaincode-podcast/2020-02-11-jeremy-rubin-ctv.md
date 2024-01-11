@@ -2,17 +2,14 @@
 title: CHECKTEMPLATEVERIFY (CTV)
 transcript_by: Michael Folkson
 categories: ['podcast']
-tag: ['soft fork', 'forks']
+tag: ['op_checktemplateverify']
 speakers: ['Jeremy Rubin']
 date: 2020-02-11
 media: https://www.youtube.com/watch?v=Lqcpk5o1Y2E
 ---
-
-Location: Chaincode Labs Podcast
-
 CTV BIP review workshop transcript: <https://diyhpl.us/wiki/transcripts/ctv-bip-review-workshop/>
 
-# Intro
+## Intro
 
 Jonas: Welcome to the podcast Jeremy.
 
@@ -26,7 +23,7 @@ Jonas: That ended up working out alright.
 
 Jeremy: I kept an eye on it for a few years. Fast forward to the summer of 2013 I had finished my freshman year of college. I started getting more interested in Bitcoin. I bought a little bit on Mt Gox that I eventually lost and started thinking “This is actually really cool.” In the fall of 2013 I decided to start doing some projects. I had learnt a little bit more, I was a bit of a better programmer. I started a project called Tidbit which was a way to replace advertising on website with cryptocurrency mining. It was a neat project. We had the messaging drilled down where it is about fixing the internet, bringing it back to the people, getting rid of these evil ads that are bad for democracy, bad for journalism. We were maybe a little bit ahead of our time. Then we received a really nasty subpoena from the State of New Jersey which was not exactly them suing us, or making any charges, but they copy and pasted language out of their version of the Computer Fraud & Abuse Act. It was basically all these felony statutes where it is like “Did you do…?” and that is a thing that is a felony and has mandatory sentencing. We were pretty freaked. We got the support of some various legal non-profits like the Electronic Frontier Foundation. I think that was a big crossroads for me where it is like “This Bitcoin stuff, it's cool but is it going to be a big problem to work on.” That was the point where I decided to double down and stick to Bitcoin. From there I did a number of projects at MIT including the Bitcoin Airdrop with some of the other Chaincode guys. They helped out there too. We gave every undergraduate 100 dollars of Bitcoin. We gave in 2014 like 4000 undergraduates 100 dollars of Bitcoin and looked to see what happened. Then I started the MIT Digital Currency Initiative, the MIT Bitcoin Expo. Then when I was graduating and deciding what I wanted to do I figured out that I had been doing a lot of Bitcoin related stuff and research and community organizing but now I am out of classes I have time to do more full time open source contribution. That has been since 2016 what I have been doing.
 
-# CTV
+## CTV
 
 Jonas: Very good. What's CTV?
 
@@ -45,7 +42,7 @@ John: What is a covenant?
 
 Jeremy: A covenant is a way of restricting the way that you can spend a coin. This sounds like a little bit of a weird property and something that maybe already exists in Bitcoin. If I spend to a specific key haven't I fundamentally restricted to somebody who knows that key? You have. With CTV what you are doing is you are not just restricting to somebody who has that key, once somebody has that key you are restricting what they can do with it. Which is a little bit of a departure. We have some precedence for this in Bitcoin. If you have a CheckSequenceVerify or CheckLockTimeVerify opcode you are saying to somebody I am giving you this coin but you can only spend it after a certain amount of time. We have restricted what actions they can take. CheckTemplateVerify is even more restrictive. You are saying to somebody that this coin can only be spent in this specific transaction. You've restricted it to a specific transaction that can happen. That itself is a little bit of an odd property. You might think “If we are restricting to a specific transaction why not just do that transaction right away?” It turns out that there is a useful way that you can program at the transaction level if you allow transactions to be played out in this way. That is at the heart of what CTV is accomplishing is allowing people to program Bitcoin at the transaction level instead of at the script level.
 
-# History of covenant proposals
+## History of covenant proposals
 
 John: The concept of covenants has been around for a few years now in Bitcoin. Can you give us a bit of historic context? What have the previous proposals been and how does CTV differ from those?
 
@@ -55,7 +52,7 @@ John: Specifically CTV wouldn't allow you to make these infectious covenants tha
 
 Jeremy: Correct. That was one of the design goals originally of CTV. That has since been slightly been relaxed. I had originally made a version of CTV which provably with other extensions to Bitcoin would also not introduce this behavior. But if people later wanted to add some other opcodes that would may be purposely trying to introduce recursive covenants it would also be able to add it. Things like OP_CAT that we know enable all sorts of weird use cases that are unexpectedly complicated.
 
-# Covenant use cases
+## Covenant use cases
 
 John: That is a high level historic tour of covenants. Why are people interested in covenants? What are some of the use cases that people have been talking about?
 
@@ -71,7 +68,7 @@ Jonas: The Bitcoin trust fund babies will thank you in the future. They will get
 
 Jeremy: Exactly. I think that is a fun way to think of it. If you are thinking of how do I leave Bitcoin to my family? We know that maybe multisig wouldn't be good because inheritance schemes, people are always arguing about who has the right to spend. But if you said “I think this money would corrupt my family and I want them to have a reasonable amount of money but not limited” you could set them up in a program to receive let's say a Bitcoin a month for the rest of their life if you have a lot of Bitcoin. That may be a more robust way of ensuring some sort of inheritance.
 
-# Payment pools
+## Payment pools
 
 John: Moving onto other applications of simple covenants, not CTV. There is something called payment pools. Can you tell us what that is?
 
@@ -81,7 +78,7 @@ John: I think that primitive is very interesting. Any construction where you hav
 
 Jeremy: The basic way that I have been thinking that you would want to construct payment pools is that you would have a tree of Lightning channels. There are various constructions, people are thinking about what is best. Some people like where it is not actually a tree, you emit one person at a time. I think what is nice about the tree of channels is that at the lowest layer channels, they are just two party. It is compatible with Lightning existing. You can route around the entire network. Also you get a privacy benefit. Right now every update to the payment pool if it is not a tree you have to involve everyone and get a signature from everyone. But if you have a tree of channels then it is just two people have to agree. When you want to do a higher order transfer between two people who don't have a route or who have maxed out their balances, you percolate up that tree of channels to coordinate. If somebody is offline then you would need to go onchain. If you look at the probabilities of different things you can prove in the sense of being roughly equivalent even though it might generate a couple more transactions, logarithmic versus linear.
 
-# CTV with Taproot and SIGHASH_NOINPUT
+## CTV with Taproot and SIGHASH_NOINPUT
 
 John: Another interesting thing is that OP_CTV seems to me to play quite nicely with Taproot and SIGHASH_NOINPUT. Taproot allows you to have this tree of different spending conditions and each one of those could contain a OP_CTV encumbered output. Only one of which would ever be redeemed. Then SIGHASH_NOINPUT or equivalent allows these layer 2 protocols to act a lot like Layer 1 protocols. They can be updated sequentially.
 
@@ -95,7 +92,7 @@ Jonas: But not obsolete. There are additional benefits to ANYPREVOUT.
 
 Jeremy: Yes. It doesn't obsolete ANYPREVOUT. ANYPREVOUT can fundamentally help with updating state in a different way than CTV does. In these payment pools you might be using this ANYPREVOUT, ANYSCRIPT once you have already committed to a CTV internally. That would be the way that you balance it out. CTV also has greater flexibility that if other opcodes like OP_CAT get introduced to Bitcoin you can do all sorts of other types of covenants. Whereas with SIGHASH_NOINPUT you might not be able to do some of those more fancy covenants. You would still be restricted to just what CTV can do without OP_CAT. There are some additional features that could be coming down the pipeline with CTV but not with just SIGHASH_NONINPUT.
 
-# CTV and Lightning
+## CTV and Lightning
 
 Jonas: Can you tell us a little bit about how you imagine CTV working with Lightning channels?
 
@@ -109,7 +106,7 @@ John: Because if the payments fail or the channel fails you need to be able to p
 
 Jeremy: Yes. Then this reduces how much it is adding to the chain such that you can resolve the HTLCs in priority order. You can say “I want to resolve the HTLCs in order of which ones have the most money in.” Maybe you can imagine a protocol where the later ones you still want to resolve them but you want to lock up the money that is problematic first and then deal with the ones that are less problematic that haven't recently been routed through or something. A lot of these things are things that shouldn't come up. These are only in the non-optimistic case that somebody has cheated on a route. That can happen but this makes it easier to know that you are going to get your funds back and less chance of getting stuck and somebody snipes your output. I think that that overall improves the security while also improving the number of routes. In turn if you can have more routes collateralizing a Lightning channel is more efficient. If you have this money locked up you can increase the amount of fees that you can collect as a routing node which means people have an incentive to put more money in. It also means right now that if people have a lot of HTLCs that they want to create they create many, many channels. Even maybe redundant because they want to have isolation between Channel A and Channel B. If something goes wrong in Channel A, Channel B doesn't also get taken down. CTV can help with this by saying “You don't need to create all these channels. Just create a single channel and we can do that fragmentation inside of the channel not worrying about the HTLC element.” It helps with the use cases.
 
-# CTV implementation
+## CTV implementation
 
 John: Moving onto implementation details for CTV. You have talked a couple of times about the happy case where only a single signature ends up being put onchain. Obviously when we are designing these protocols we need to consider the unhappy case where you have this Layer 2 protocol and you have a lot of state there from your OP_CTV. You might have a lot of transactions and child transactions and descendant transactions. As you have been proposing this new opcode OP_CTV you have also been making changes to Bitcoin Core, opening PRs in Bitcoin Core. Can you talk a bit about those?
 
