@@ -2,7 +2,7 @@
 title: "Covenants, Introspection, CTV and Activation Impasse"
 transcript_by: jeffreyweier via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=o8tjsVdiPUI
-tags: ["covenants"]
+tags: ["covenants","vaults","soft-fork-activation"]
 speakers: ["James O'Beirne","Rijndael","NVK"]
 categories: ["podcast"]
 date: 2023-09-29
@@ -1141,7 +1141,6 @@ Yes, absolutely.
 James: 01:06:55
 
 Making a transaction that was previously invalid valid is a hard fork.
-So, we can't, you know...
 
 NVK: 01:07:03
 
@@ -1370,7 +1369,6 @@ Because remember, a lot of bad actors want to change Bitcoin to have, say, 22 mi
 
 James: 01:19:28
 
-No, but those are...
 Yeah, those are risks.
 But the mitigation to those risks is is responding proactively with invalidateblock scripts.
 Or, just not running some shitty software that someone puts out.
@@ -1602,7 +1600,6 @@ NVK: 01:26:28
 
 That's right.
 They're going to do a gender assessment on the fork.
-You know what I mean?
 It's kind of funny.
 It's a little reductionist.
 But every single time I have this conversation, we always end up with the same fucking problem, which is nowhere.
@@ -1821,12 +1818,10 @@ That's originally the route that I wanted to go.
 And I started to actually prototype what vault wallet code looks like with just CTV.
 And I came to the conclusion that if you're a big company, having CTV would operationally make vaults easier to do, but they were still impractical for your everyday user.
 And that was really the outgrowth of OP_VAULT.
-So, there's part of me that...
 
 NVK: 01:34:46
 
 Let business solve the easiness of it.
-You know what I mean?
 If the choices don't have anything.
 
 James: 01:34:52
@@ -1845,7 +1840,6 @@ What if we game the chaos in the chaotic way?
 Maybe this is the way to deal with this.
 What if we essentially have enough people going, fuck it, we're gonna have a UASF flag day thing, okay?
 And in the midst of all that and the fight, somebody goes, you know what, fuck it, I'm going to do Speedy Trial.
-You know what I mean?
 And essentially you arrive at what happened last time.
 Because you can't prevent anybody from doing anything.
 That's the beautiful thing of Bitcoin too.
@@ -2322,18 +2316,11 @@ He blinded us.
 That was your unconscious mind really gave your position away on that one.
 It was just absolutely on.
 You got a terrible poker face.
-Having a little bit of skin in the game, a PR or something, really unnerves a lot of people who just think this is just theoretical, because I think right now everybody is on this on this mold, mental mold, I'm just going to ignore it.
-It's just ...
+Having a little bit of skin in the game, a PR or something, really unnerves a lot of people who just think this is just theoretical, because I think right now everybody is on this on this mental mold, I'm just going to ignore it.
 
 Rijndael: 01:58:10
 
-It's not real.
-
-James: 01:58:10
-
-Yeah.
-Yeah.
-Right.
+It's not real yet.
 
 NVK: 01:58:11
 
