@@ -6,9 +6,8 @@ tags: ["lightning", "dual funded channels", "c-Lightning"]
 speakers: ["Lisa Neigut"]
 categories: ["Workshop"]
 date: 2021-03-25
+aliases: ['/c-lightning/dual-funded-channels/']
 ---
-
-
 ## Dual Funding channels explainer + demo
 
 Cool. Okay, thanks everyone for coming. I think we're going to go ahead and get started. It's right at 11.02 on my time, so that hopefully more people will show up, but for everyone who's here, I want to make the best use of all of your time. Okay, great. So for those of you who aren't really sure what dual funding is, maybe you've heard people say that word before, but let me give you a kind of a quick overview.
