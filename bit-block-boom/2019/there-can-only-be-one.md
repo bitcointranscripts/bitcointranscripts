@@ -4,17 +4,18 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['mining', 'proof-of-work', 'altcoin']
 speakers: ['Tone Vays']
+media: https://www.youtube.com/watch?v=QWaCr_tKjRk
 ---
 
 Bitcoin: There can only be one
 
 <https://twitter.com/kanzure/status/1162742007460192256>
 
-# Introduction
+## Introduction
 
 I am basically going to talk about why bitcoin will basically eat all the shitcoins and why all of them are going away and I am going to point to some of the details. The big graphic right there is my attempt to categorize all of the altcoins, the ICO space, and so on. Everyone is slowly starting to merge mine with bitcoin, since they can't keep up with the charadde.
 
-# Proof-of-work
+## Proof-of-work
 
 The word "blockchain" was never seen in the Satoshi whitepaper. It was about proof-of-work and anti double spending. "When they solve the proof-of-work, the block is broadcasted to the network and added to the blockchain". In earlier writings, it was called a timechain. But now the word has run away and everything is a "blockchain".
 
@@ -24,11 +25,11 @@ The other thing that people don't realize is that bitcoin was the combination of
 
 Satoshi wanted this to be money. It's going to be critical, and one of the most important things to it is stability, that things won't move fast and break. This is why in 2010 he wrote that "the nature of bitcoin is such that once version 1.0 was released, the core design was set in stone for the rest of its lifetime". This immutability is not a feature of the bitcoin software, which is trivial to change for anyone with coding skills, but rather it is grounded in network effects and the difficulty of getting everyone on the network to adopt the same change to the software.
 
-# Hard money
+## Hard money
 
 So now that we have talked about the bitcoin tech, let's talk about the money side of equation. "Hard money, by taking the question of supply out of the hands of governments and their economist-propagandists, would force everyone to be productive to society instead of seeking to get rich through the fools' errand of monetary manipulation". World leaders keep trying to convince each other to devalue currencies.
 
-# Altcoins
+## Altcoins
 
 Let's talk about litecoin. They said "litecoin is silver to bitcoin's gold", and it must be true because they said so. That's Charlie Lee. What does that even mean? Bitcoin is gold, litecoin is silver, and XRP are diamonds. I was curious about that. The extreme centralization of XRP makes it share specific characteristics with the diamond market. Centralization allows for some manipulation. At least he went in the right direction, so they all have to fight each other. Everyone says gold is manipulated, but what about diamonds, let's speculate on the price of diamonds- give me a futures market.
 
