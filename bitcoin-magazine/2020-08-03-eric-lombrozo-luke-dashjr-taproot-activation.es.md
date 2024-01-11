@@ -3,7 +3,7 @@ title: Activación de Taproot
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
-tags: ['taproot', 'soft fork']
+tags: ['taproot', 'soft-fork-activation']
 date: 2020-08-03
 speakers: ['Eric Lombrozo', 'Luke Dashjr']
 media: https://www.youtube.com/watch?v=yQZb0RDyFCQ

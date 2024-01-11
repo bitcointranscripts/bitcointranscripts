@@ -2,7 +2,7 @@
 title: Great Consensus Cleanup
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['consensus', 'soft fork', 'forks']
+tags: ['consensus-cleanup-soft-fork']
 date: 2019-06-06
 aliases: ['/bitcoin-core-dev-tech/2019-06-06-great-consensus-cleanup/']
 speakers: ['Matt Corallo']
@@ -12,7 +12,7 @@ speakers: ['Matt Corallo']
 
 <https://twitter.com/kanzure/status/1136591286012698626>
 
-# Introduction
+## Introduction
 
 There's not much new to talk about. Unclear about CODESEPARATOR. You want to make it a consensus rule that transactions can't be larger than 100 kb. No reactions to that? Alright. Fine, we're doing it. Let's do it. Does everyone know what this proposal is?
 
@@ -20,7 +20,7 @@ Validation time for any block-- we were lazy about fixing this. Segwit was a fir
 
 Is there a risk of normalizing soft-forks? Maybe, but this isn't frivolous.
 
-# Timewarp
+## Timewarp
 
 The soft-fork fix for timewarp is actually simple. I would like to get that pull request in. What is the fix exactly? The issue in timewarp is there's an off-by-one in the calculation of the height for difficulty adjustment. You can jump backwards or forwards significantly, not sure, just on the difficulty adjustment block change. If you just constrain those two blocks to be well ordered, then fine, timewarp is gone. So you just add a new rule saying these blocks must be well-ordered. If you set that rule such that it can go backwards up to 2 hours, then there should be no impact where a miner would generate such a block. The timestamp is allowed to go backwards no more than 7200 seconds.
 
@@ -40,7 +40,7 @@ Does bfgminer or cgminer currently have any code to reject their pool telling th
 
 So you crawled node times, but did you look at pool times? No, I didn't get around to that. I was just looking at the bitcoin network and comparing their clock to my local clock. Almost all pools have a listening bitcoin node on the same IP address, which is weird. But for those who don't, they have a pool, and then a node in the same rack or data center running a bitcoin node and then maybe an internal bitcoin node that is not listening. In general, the clocks seem to be within a second, which is roughly what you would expect from NTP plus or minus a few seconds. A whole bunch of people are an hour out. It's probably buggy timezone. Buggy daylight savings time, probably. And Windows setting local time instead of setting to UTC. There's a 15-minute time zone. North Korea has the worst timezone stuff ever. Well, that's because they don't care about the rest of the world.
 
-# More on the great consensus cleanup proposal
+## More on the great consensus cleanup proposal
 
 There's a bunch of rules, including 64-byte transactions which primarily impacts segwit transactions. Yeah, that's another thing. The codesep thing is only ever intended to be for non-segwit transactions but maybe we will drop that in favor of a 100k rule. But the 100k rule is only for legacy? I haven't thought that far ahead. It should be 100k base size. You could just say 100k base size, and then it applies to segwit as well. Or 400k witness, really. 100k strip size, is what you want, right? Base size is weird language to me. Witness strip size, no more than 100kb should be the proposal. That's the only thing that matters to the sighashing rules. But you could also do it by witness weight because that's how we calculate size now. You're right, if you want to attack the exact thing that is causing problem, you would do it by.... we don't want to do it to the other thing because if you have a giant witness. Do we want witnesses larger than 400 kb?
 
@@ -54,7 +54,7 @@ What about the big giant transaction per block, giant coinjoin transaction with 
 
 Another comment, you really need numbers to show people that this change reduces the worst case. Yes, I have numbers. Having those numbers would be great for convincing people. I haven't gotten around to rewriting it yet. Nobody appeared to really care.
 
-# Soft-fork
+## Soft-fork
 
 Since the timewarp rule has not been violated, maybe nobody upgrades- how do you tell? Well, if they mine invalid blocks then it won't be accepted by the network. You don't have the assurance, except that everyone is running Bitcoin Core. If you start losing money, you're going to fix your shit very quickly.
 

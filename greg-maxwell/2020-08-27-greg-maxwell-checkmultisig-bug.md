@@ -1,7 +1,7 @@
 ---
 title: Checkmultisig Bug
 transcript_by: Michael Folkson
-tags: ['hard fork', 'multisig']
+tags: ['multisig']
 speakers: ['Greg Maxwell']
 date: 2020-08-27
 ---

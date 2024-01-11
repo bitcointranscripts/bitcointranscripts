@@ -1,13 +1,10 @@
 ---
-title: Taproot Schnorr Soft Fork
+title: "Taproot, Schnorr, and the next soft-fork"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tag: ['schnorr', 'taproot', 'soft fork', 'forks']
+tags: ['schnorr', 'taproot', 'soft-fork-activation']
 speakers: ['Mike Schmidt']
 ---
-
-Taproot, Schnorr, and the next soft-fork
-
 <https://twitter.com/kanzure/status/1162839000811548672>
 
 # Introduction

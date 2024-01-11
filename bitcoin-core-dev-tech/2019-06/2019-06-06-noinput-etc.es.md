@@ -1,11 +1,10 @@
 ---
-title: SIGHASH_NOINPUT, ANYPREVOUT
+title: "Discusión general sobre SIGHASH_NOINPUT, OP_CHECKSIGFROMSTACK, and OP_SECURETHEBAG"
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['soft forks']
+tags: ['sighash_anyprevout','op_checksigfromstack','op_checktemplateverify']
 date: 2019-06-06
-aliases: ['/es/bitcoin-core-dev-tech/2019-06-06-noinput-etc/']
 speakers: ['Olaoluwa Osuntokun', 'Jeremy Rubin']
 ---
 

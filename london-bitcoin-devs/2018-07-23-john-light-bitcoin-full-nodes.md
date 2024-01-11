@@ -2,14 +2,11 @@
 title: Bitcoin Full Nodes
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['forks', 'hard fork', 'soft fork']
+tags: ['soft-fork-activation']
 date: 2018-07-23
 speakers: ['John Light']
 media: https://www.youtube.com/watch?v=qzbdNefsA-0
 ---
-
-Location: London Bitcoin Devs
-
 John Light blog post on soft forks and hard forks: https://medium.com/@lightcoin/the-differences-between-a-hard-fork-a-soft-fork-and-a-chain-split-and-what-they-mean-for-the-769273f358c9
 
 # Intro
