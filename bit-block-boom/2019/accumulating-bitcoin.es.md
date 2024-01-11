@@ -3,12 +3,8 @@ title: Acumular Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
-tags: ['halving']
 speakers: ['Pierre Rochard']
 ---
-
-Acumular Bitcoin
-
 # Introducción
 
 Hoy voy a predicar al coro, creo. Espero reiterar y reforzar algunos puntos que ya conoces pero que tal vez olvidaste mencionar a tus amigos nocoiner, o aprender algo nuevo. Espero que haya algo para todos aquí.
