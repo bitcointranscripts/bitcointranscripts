@@ -1,27 +1,20 @@
 ---
-title: Socratic Seminar - AssumeUTXO
+title: "Socratic Seminar - AssumeUTXO"
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['security', 'IBD', 'bitcoin core']
+tags: ['security', 'assumeUTXO', 'bitcoin core']
 date: 2021-11-02
 media: https://www.youtube.com/watch?v=JottwT-kEdg
 ---
-
-Topic: AssumeUTXO
-
-Name: Socratic Seminar
-
-Location: London BitDevs (online)
-
 Reading list: <https://gist.github.com/michaelfolkson/f46a7085af59b2e7b9a79047155c3993>
 
-# Intros
+## Intros
 
 Michael Folkson (MF): This is a discussion on AssumeUTXO. We are lucky to have James O’Beirne on the call. There is a reading list that I will share in a second with a bunch of links going right from concept, some of the podcasts James has done, a couple of presentations James has done. And then towards the end hopefully we will get pretty technical and in the weeds of some of the current, past and future PRs. Let’s do intros.
 
 James O’Beirne (JOB): Thanks Michael for putting this together and for having me. It is nice to be able to participate in meetings like this. My name is James O’Beirne. I have been working on Bitcoin Core on and off for about 6 years. Spent some time at Chaincode Labs and continue to work full time on Bitcoin Core today. Excited to talk about AssumeUTXO and to answer any questions anybody has. The project has been going on for maybe 2 and a half years now which is a lot longer than I’d anticipated. Always happy to talk about it so thanks for the opportunity.
 
-# Why do we validate the whole blockchain from genesis?
+## Why do we validate the whole blockchain from genesis?
 
 <https://btctranscripts.com/andreas-antonopoulos/2018-10-23-andreas-antonopoulos-initial-blockchain-download/>
 
@@ -33,7 +26,7 @@ JOB: At a very high level if you think of the state of Bitcoin as being a ledger
 
 MF: We are replaying absolutely everything from genesis, all the rule changes, all the transactions, all the blocks and eventually we get to that current blockchain tip.
 
-# How long does the initial block download take?
+## How long does the initial block download take?
 
 <https://blog.bitmex.com/bitcoins-initial-block-download/>
 
@@ -49,7 +42,7 @@ Stephan (S): I was using Raspiblitz and it took me like 5 days with a SSD. Simil
 
 O: It depends a lot on the peers you end up downloading from. For example if you have a full node on your local network and you add it as a peer then it can be quite quick in that sense. Also if you are downloading through Tor that can slow down things a lot.
 
-# Assumedvalid and checkpoints
+## Assumedvalid and checkpoints
 
 <https://bitcoincore.org/en/2017/03/08/release-0.14.0/#assumed-valid-blocks>
 
@@ -91,7 +84,7 @@ MF: This is relevant in an AssumeUTXO context because the concept is that you ar
 
 JOB: That’s the sketch of AssumeUTXO. With assumedvalid you are still downloading all the blocks. You have all the data onhand. AssumeUTXO allows you to take a serialized snapshot of the UTXO set, deserialize that, load that in from a certain height. In the same way as with assumedvalid we expect that by the time the code is distributed there are going to be hundreds if not thousands of blocks on top of the assumedvalid value, the same would go for AssumeUTXO. We would expect that the initial block download that you have to is truncated but it is not completely eliminated. You are still downloading a few thousand blocks on top of that snapshot. In the background we then start a full initial block download.
 
-# The AssumeUTXO concept
+## The AssumeUTXO concept
 
 Bitcoin Optech topics page: <https://bitcoinops.org/en/topics/assumeutxo/>
 
@@ -121,7 +114,7 @@ O: There is no risk of having information withheld from you like with Neutrino. 
 
 JOB: Exactly.
 
-# Security model of AssumeUTXO
+## Security model of AssumeUTXO
 
 MF: We are kind of on the security model now. We won’t spend too much time on this but we should cover it. Presumably this has slowed progress on it. There are different perspectives. There is a perspective that perhaps you shouldn’t make any transactions, send or receive, until you’ve done a full initial block download. I’m assuming some people think that. Then you’ve got people in the middle that are kind of like “It is ok if the snapshot is really, really deep”, like years deep. Others will say months deep, some would say weeks. Are concerns over security slowing progress on this or have slowed progress up until this point?
 
@@ -181,7 +174,7 @@ JOB: I agree. I don’t know what the user’s action would be subsequently. It 
 
 Thaddeus Dryja (TD): It seems like the only thing you can do is crash. The binary is not self consistent. It is like “Hey this binary has detected a state where the binary itself is assured that it would never happen”. So crash or something.
 
-# How AssumeUTXO interacts with other projects like Utreexo
+## How AssumeUTXO interacts with other projects like Utreexo
 
 Utreexo: <https://dci.mit.edu/utreexo>
 
@@ -263,7 +256,7 @@ MF: Full node security without maintaining a full UTXO set.
 
 TD: I know a little bit about that. Definitely talking to Cory about that stuff was one of the things that led to Utreexo. Let’s keep LevelDB, the UTXO set, instead of storing the outpoint and the pubkey script and the amount, let’s just take the hash of all that. You do need to send these proofs, the preimages, when you are spending a transaction but they are very small. Most of the data you can get from the transaction itself. You just can’t get the amount I guess because you don’t know exactly how many satoshis. The txid and the index itself you’ll see right there in the input of the transaction. The fun thing is most of the time you don’t need the pubkey script. You can figure it out yourself. With regular P2PKH you see the pubkey posted in the input and the signature, you can just that pubkey and see if it matches. It should if it works. You only have to send 12 bytes or something for each UTXO you are spending. We use this code and this technique in Utreexo as well. This is a much simpler thing though because you still have the UTXO set in your database, it is just hashes instead of the preimage data. It is not that much smaller. It cuts in half-ish.
 
-# The AssumeUTXO implementation in Bitcoin Core
+## The AssumeUTXO implementation in Bitcoin Core
 
 <https://github.com/bitcoin/bitcoin/pull/15606>
 
