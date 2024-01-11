@@ -4,8 +4,9 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
 speakers: ['Pierre Rochard']
+media: https://www.youtube.com/watch?v=eDsK4OpB69Q
 ---
-# Introducción
+## Introducción
 
 Hoy voy a predicar al coro, creo. Espero reiterar y reforzar algunos puntos que ya conoces pero que tal vez olvidaste mencionar a tus amigos nocoiner, o aprender algo nuevo. Espero que haya algo para todos aquí.
 
@@ -17,7 +18,7 @@ P: ¿Vas a trolear a un periodista?
 
 R: ¿Hoy? Ya lo he hecho.
 
-# Conceptos erróneos
+## Conceptos erróneos
 
 Una de las mayores ideas erróneas que escuché cuando conocí el bitcoin fue que éste era sólo un sistema de pagos. Si lees el libro blanco, entonces lees esto y piensas: "Vale, me permite transferir valor sin un tercero de confianza". El libro blanco no dice nada en absoluto sobre la política monetaria de bitcoin. No habla de la tapa. No habla de la reducción a la mitad, o de toda esta escasez. Ha sido muy fácil para la gente pasar por alto que bitcoin inherentemente de facto como existe en el mundo no es sólo una tecnología de pagos. También es una tecnología de ahorro.
 

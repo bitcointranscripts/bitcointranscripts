@@ -3,8 +3,9 @@ title: How To Meme Bitcoin To The Moon
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Michael Goldstein']
+media: https://www.youtube.com/watch?v=PBAuHv5cPl8
 ---
-# Introduction
+## Introduction
 
 How many of y'all were at the dinner last night? Okay, great. I had a lot of fun. It was fantastic. I don't know how we will beat it next year, but we will figure something out. I am Michael Goldstein, and welcome to my ridiculous tedtalk. A lot of people talk about price fundamentals, but I am going to talk about how to troll and take the curves hard.
 
@@ -14,15 +15,15 @@ We have also had guys like Joe Kernan on CBNC Squawk Box which is suddenly my fa
 
 This is our meme world, and everyone else is just living in it.
 
-# Defining the memetic landscape
+## Defining the memetic landscape
 
 We live in a world where we're inundated with social media, podcastings, fox and carrier pigeons, whatever you need to get messages out ther,e we have infomration overflow. My mind can only handle so much information at a time, I don't know about Bryan but-- our ability to process it all is extremely scarce. In order to get messages across, we need to be able to create memes that are efficient and extremely well crafted. We're getting to the floor of Congress now. We're not just playing around with magic internet money, we're engaging in advanced geopolitical meme craft and we're shaping civilization for centuries and we have to get our message out.
 
-# The path to victory
+## The path to victory
 
 Frankly, no one person matters that much. This is really just all fun and games while the macroeconomics of hard money does what it does, which is dominate. In the mean time, we can have a lot of fun and expedite the process by finding people at the margins and teach them new information about what we know about the world, and also bully the people that don't agree with us.
 
-# Rhetoric vs dialectic
+## Rhetoric vs dialectic
 
 A very important concept in communication comes from Aristotle in this distinction. This is an important thing to understand when you are engaging people. Rhetoric is the art of persuasion. How do you convince people to take up a new idea or change their minds? Dialectic is the art of argumentation. When I say argumentation, I mean that in a strict debate sense where you are working through things in a logical method. Memes are rhetoric, whereas dialectic is not.
 
@@ -30,7 +31,7 @@ Rhetoric is good for public discussion, defending or accusing others. When peopl
 
 Dialectic on the other hand is systematic logical discussion and method of finding truth. That is more good for private or academic discussion. Thta's good for people where you can agree on certain principles ahead of time so that you don't wallow around in the mud. You are both working together, and you might disagree, but you are working together to elucidate some bigger truth. You need to be on the same team to be able to do that.
 
-# When to argue, and when to troll
+## When to argue, and when to troll
 
 Arguing, like debate, that's with other bitcoin maximalists. It's people who-- or they can be pre-coiners. People who are interested in actually learning with you, like coming to that truth along with you. But everyone in the outgroup like shitcoiners, nocoiners, journalists, especially journalists, they only get trolling. Basically anyone with a blue checkmark on twitter, until proven innocent, will get the heavy hand of absolute trolling. There's no reason to ever engage in someone who is not willing to understand your position in a good systematic logical way. That doesn't mean you're constnatly always talking like that, but if they are not willing to take your ideas seriously, then there's no reason to engage them in a way that assumes they are that kind of person, they do not deserve it and they have not shown they have deserved it.
 
@@ -40,29 +41,29 @@ You're not really talking to the people who you are replying to on twitter; it i
 
 You must understand, who is your actual audience? You need to communicate based on that, rather than assuming everyone is there to find a bigger truth. Some people just want to nocoin.
 
-# Relentless propaganda
+## Relentless propaganda
 
 Relentless propaganda every single day, just do it. Pump it out. This is good for bitcoin. There is no bad news for bitcoin. Bitcoin is anti-fragile and overcomes all obstacles. Bitcoin Tina understands, correct. Anything you're broadcasting should be relentlessly positive, because there is no bad news for bitcoin, only good news for bitcoin.
 
 We should always anchor on the most bullish position. You should never be afraid to take the possibilities to their logical extreme, and from there work reality into your model with nuance as necessary, as needed, and as deserved. A nocoiner doe snot necessarily need to understand that "oh we might be going to $99m instead of $100m/coin". Always give them the most bullish; their opinion isn't merely wrong, it's completely wrong.
 
-# Always be bullish
+## Always be bullish
 
 If someone says "bitcoin is not going to change the economy", no, you say: bitcoin is going to reshape civilization for the glorious future. Always be bullish. Learn to code.
 
-# Trigram memes good
+## Trigram memes good
 
 Three word memes are very powerful. We learned this from "the art of the meme" himself, the President of the US-- Donald Trump--- orange coin good, number go up, bitcoin fixes this. These are powerful memes. They are so simple, that to an outsider it seems repetitive and droning and ridiculous, yet for us insiders, "orange coin goods"-- we're talking about the ethical implications of money production. "Number go up", we're talking about bitcoin being the most liquid good and liquid goods have a positive feedback loop. Outsiders don't get that, they just see "number go up". And "bitcoin fixes this"-- bitcoin as a tool for division of labor or whatever; but for them they ask, how do you think bitcoin fixes the food supply and modern art and real estate? It literally fixes all of that, by the way.
 
-# In-group techniques
+## In-group techniques
 
 You still need propaganda. You need a way to remind people why they are here. It's important to be witty, fun, memorable and find mental models that just stick. So you're able to boil things down into something that is three words. How do you get these complex ideas into three words? Bitcoin governance was boiled down to "Mexican standoff" --- or the geopolitics and the inevitability of bitcoin, done the same. You should also never be tired of sharing important actual knowledge to the world. There is no such thing as too much Austrian economics content. I need to see more Rothbartt people, get out there. For the in-group, this is a great way to be pumping people up and getting the knowledge out that helps craft greater memes as we go forward.
 
-# Relentless propaganda again
+## Relentless propaganda again
 
 Rule number 2: Nocoiners must be crushed. When I say nocoiners, I don't mean someone who merely doesn't own bitcoin-- most of those are pre-coiners. We take care of our pre-coiners and love them. Nocoiners are people who don't own bitcoin, and they hate bitcoin. They must all be crushed. They are supporters of a massively destructive economic system that is both a historical abberation and completely unnecessary. Show no mercy. They deserve absolutely no mercy.
 
-# Out-group techniques
+## Out-group techniques
 
 This is the concept of re-framing, agreeing and amplifying, and the concept of dominating.
 
@@ -80,7 +81,7 @@ No apologies: there is never a reason to give an apology, especially to a nocoin
 
 Reject nocoiner orthodoxy. Do not fall into their frame. Show no mercy. Always remind them "orange coin good, number go up".
 
-# Requirements for successful memeing
+## Requirements for successful memeing
 
 You need to read the books. Get knowledge. Read all the classics-- computer science, hard money, networks, you need to fully understand bitcoin if you want to actually have yourself armed to be able to go out and make memes. You can't just show up and be an idiot, you will be found out. Likewise, you need to find actual truth. There's plenty of methods of trolling online where you don't need to know anything, and you're just trying to get a rise out of someone. I am in fact calling for ethical trolling, conscious memeing if you will. It's important to always be right. Also, you need confidence and you need to be able to stand up for the ideas that you believe. You did the work, and you proved it, and it comes out in the form of a nice little meme.
 
@@ -88,7 +89,7 @@ Memecrafting does not transpire in a day. It took years from us calling litecoin
 
 Ethical trolling is more than just getting a rise of people. There's a fantastic essay called "Live not by lies", and he took up the objective of rejecting all falsehoods in his life. He didn't want to tell any lies, nor read any lies in the newspaper. He always wanted to take on the truth. It's in your advantage to not read hte news anyway, because it's full of bluecheck nocoiners spreading lies about bitcoin anyway.
 
-# Recommended reading
+## Recommended reading
 
 * "Rejecting nocoiner orthodoxy" (Elaine Ou)
 
