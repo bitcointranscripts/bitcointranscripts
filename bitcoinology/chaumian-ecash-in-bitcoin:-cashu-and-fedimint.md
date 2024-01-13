@@ -46,7 +46,7 @@ So I put three points there.
 I don't know if it's a comprehensive list, but what is the motivation for having something like a Chaumian cache system?
 Before I'm even explaining what it is, I'm gonna talk about why it might be useful, maybe.
 
-* More scalable, faster.
+More scalable, faster.
 
 I mean, this probably is something that everyone here is familiar with, is the concept that if we use a centralized system, it's much easier to be scalable, performant.
 You know, we can have a single database and maybe it's replicated, like if it's Google or one of these big tech companies, you can make thousands, millions, I don't know how many queries per second.
@@ -112,20 +112,21 @@ I mean, we might as, oh, sorry, I'm playing with, Sorry, I touched the microphon
 Before I even go into what I wanna say, does anyone here wanna take a stab at answering that question?
 If Chaumian eCash is so great, and you could say it's great because it's scalable and private, and maybe it isn't so great with a theft thing, but whatever.
 If it's so great, why hasn't it been done yet?
-I would say something like, it's tied to, let's say, dollars or something, or gold, physical assets, but it's how it's been done before.
-So it's tied to a real thing which gives it value in the first place, then you have these tokens you can trade around digitally.
 
+Anon: I would say something like, it's tied to, let's say, dollars or something, or gold, physical assets, but it's how it's been done before.
+So it's tied to a real thing which gives it value in the first place, then you have these tokens you can trade around digitally. 
 But then that gives you a centralised thing that governments don't like and can come and shut down, which happened with e-gold and the other things.
 So what Bitcoin brings to the table is something that has value, but isn't something you can go and catch.
 So that's why it's interesting to apply this on top of Bitcoin.
-Right.
-OK.
+
+Adam: Right. OK.
+
 Adam: Any other opinions or thoughts?
 
-Anon :Is Stab in the Dark something to do with Schnorr signatures and their licensing?
+Anon: I'l stab in the dark something to do with Schnorr signatures and their licensing?
 
-Adam: Oh, OK.
-And actually, as it turns out, I was part of my research.
+Adam: Oh, OlK.
+And actually, as it turns out, it was part of my research.
 It's not only Schnorr, but several other cryptographic algorithms, including RSA, had weird patterns around them as well.
 Interesting point.
 I didn't even think about that answer, but I suspect that's a small part of the story.
@@ -135,19 +136,26 @@ That sometimes developing these systems is actually stymied by legal restriction
 Anon: I'm gonna ask something stupid, but didn't Wasabi use something of this sort in their back end or something like that?
 So does it mean it has been done, or people have been using it to some degree?
 Or is that?
-Okay, so that's another perfectly valid answer to my question is, don't be stupid, it has been done.
+
+Adam: Okay, so that's another perfectly valid answer to my question is, don't be stupid, it has been done.
 It has been done multiple times in different ways.
-I wouldn't say Wasabi was an implementation of eCache, But it was certainly an implementation of Chaum mein and blinding in a very it is very it's very related It's not just you know is a very valid You know and not only wasabi, but other things, too Right yeah, so there's there's some gray area gray areas hit here between to be registered for a coin join.
-Right now, you can see someone keeps on disbehaving and swapping Putin out based on their token.
-Right, yeah, so there's some gray areas here between token and coin, and there's various different things, we're gonna come on later, we'll see another one as well.
+I wouldn't say Wasabi was an implementation of eCache, but it was certainly an implementation of Chaumian blinding in a very it is very it's very related It's not just you know is a very valid. You know and not only wasabi, but other things, too.
+
+Anon: Does Mercury also have that?
+ 
+Anon: It has the same token concept. ** Not transcribable  **
+
+Adam: Right, yeah, so there's some gray areas here between token and coin, and there's various different things, we're gonna come on later, we'll see another one as well.
 All right, I think we've got a good sort of set.
-What's the answer?
+
+Anon: What's the answer?
 Why hasn't that, is this what it has been done?
-There's no simple answer to that question, we'll keep addressing it as we go along, yeah.
+
+Adam: There's no simple answer to that question, we'll keep addressing it as we go along, yeah.
 Is it fair to say that it's also, like, it's targeting late, or its use cases are more suitable for later adopters rather than earlier adopters because of this inherently centralized aspect of it?
 Well, it's certainly true that the kind of bootstrapping mechanism you have in something like Bitcoin is difficult in systems which are just a simple central.
 I mean the classic problem you might think of is I'm gonna make a new proof of stake coin.
-Well Who has all the coins at the start?
+Well who has all the coins at the start?
 Oops, do I get them all?
 That's nice, but it's kind of a shitty system, right?
 So centralization doesn't really solve that problem, which is one of the kind of clever things about Bitcoin, but I feel like, oh, that's not good.
