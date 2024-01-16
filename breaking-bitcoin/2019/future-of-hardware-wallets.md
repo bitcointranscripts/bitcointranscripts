@@ -1,38 +1,36 @@
 ---
-title: Future Of Hardware Wallets
+title: "The Future of Hardware Wallets"
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['hardware wallet', 'multisig', 'wallet']
 speakers: ['Stepan Snigirev']
+media: https://www.youtube.com/watch?v=OxX_LFgdYa0
 ---
-
-The future of hardware wallets
-
 D419 C410 1E24 5B09 0D2C 46BF 8C3D 2C48 560E 81AC
 
 <https://twitter.com/kanzure/status/1137663515957837826>
 
-# Introduction
+## Introduction
 
 We are making a secure hardware platform for developers so that they can build their own hardware wallets. Today I want to talk about certain challenges for hardware wallets, what we're missing, and how we can get better.
 
-# Current capabilities of hardware wallets
+## Current capabilities of hardware wallets
 
 Normally, hardware wallets keep keys reasonably secret and are able to spend coins or sign transactions. All the inputs have to be ours, that's the usual constraint. Then we can have an arbitrary list of outputs including a change output that belongs to the user. We can receive funds, so we can show an address on the hardware wallet. And these hardware wallets can do multisig. Some wallets do or don't support multisig. Also, hardware wallets can do shitcoins.
 
-# Nice to have features
+## Nice to have features
 
 It would be nice if hardware wallets had support for coinjoin, lightning, custom scripts and sidechains. Right now, you can't do coinjoins with hardware wallets. Lightning is awesome but tricky. With coinjoin, the trick is that we have a bunch of inputs and a bunch of outputs. After the last talk, you're probably all already experts in coinjoin. The crucial thing about coinjoin is that they have external inputs. In hardware wallets, a naieve implementation of coinjoin will allow coinjoins to steal your coins. I will be focusing on lightning and coinjoin for now.
 
-# Coinjoin
+## Coinjoin
 
 I can probably skip this slide since you know the concept. We first need to register the coin inputs to the coinjoin server. Then we sign a coinjoin transaction, and retry if someone else in the protocol fails. The signature is returned to the server so that the server can broadcast the coinjoin transaction. Sometimes a coinjoin transaction fails to get completely signed because one of the users is doing a denial of service attack or otherwise. It's common from the user's perspective to retry with the same inputs or same amounts.
 
-# Coinjoin attack
+## Coinjoin attack
 
 Say we're a malicious wallet. I am not a coinjoin server, but a client application. I can put two identical user inputs, which is usually common in coinjoin, and you put them in the inputs and you put only one user output and then the others are other outputs. How can the hardware wallet decide if the input belongs to the user or not? Right now there's no way. So we trust the software to mark the input needed to sign. The attack is to mark only one of the user inputs as mine, and then the hardware wallet signs it and we get the signature for the first input. The software wallet then pretends the coinjoin transaction failed, and sends to the hardware transaction the same transaction but marking the second input as ours. So the hardware wallet doesn't have a way to determine which inputs were his. You could do SPV proofs to proof that an input is yours. We need a reliable way to determine if the input belongs to the hardware wallet or not. Trezor is working on this with achow101.
 
-# Hardware wallet proof of (non) ownership
+## Hardware wallet proof of (non) ownership
 
 <https://github.com/satoshilabs/slips/blob/slips-19-20-coinjoin-proofs/slip-0019.md>
 
@@ -40,11 +38,11 @@ We could make a proof for every input, and we need to sign this proof with a key
 
 This could be extend to multisig or even MuSig key aggregation.
 
-# Beyond p2wpkh
+## Beyond p2wpkh
 
 We can replace the signature with a witness in the previous scheme. We sign it with multiple co-signers. We combine the signatures into the witness, and then everyone can verify that all participants in the coinjoin transaction that yeah this guy has enough keys to sign this input. The proof body can be hmac(id\_key1, txid || vout) || hmac(id\_key2, txid || vout). You just concatenate all the proofs together.
 
-# Challenges
+## Challenges
 
 What if we have Schnorr signatures? We could use key aggregation, so our signature will be from a single key. But this will be larger. It's a leak of privacy for coinjoin to do that. Every participant will see that you have a 3x larger proof, and then on another coinjoin round you might see another input with the same big thing so it breaks some privacy. Schnorr and taproot might be able to make fixed-sized proofs.
 
@@ -52,7 +50,7 @@ In order to verify the signature, you need to know the public key, to know the p
 
 For single key use case, I think we're ready to deploy it and run it and use coinjoin on hardware wallets.
 
-# Lightning on hardware wallets
+## Lightning on hardware wallets
 
 We need to be connected all the time in order to route lightning payments and also receive lightning payments and maybe send. There are timelocks everywhere. We need to react in a timely manner. We also need to monitor the blockchain because we need to know if the channel is still open, or closed, or an error.
 
@@ -64,7 +62,7 @@ What if the attacker starts delaying the blockchain? He is sending the blocks wi
 
 Finally, it would be nice to have a backup communication channel if the attacker tries to completely disconnect our hardware wallet. Watchtowers could work, or any kind of notification to the user that something is going wrong here.
 
-# Trusted nodes and initial hardware support
+## Trusted nodes and initial hardware support
 
 We can limit the behavior of the node to eliminate routing. We can only send and receive. The only way to lose the funds is routing through the nodes with the lightning payment. What we can enforce is to get a message signed on the hardware wallet with the key that we used to open the channel, and this message can be verified-- all hardware wallets support message signing, like "yes, I do want to send 1 millicoin with the payment hash of blah". Then you send it together with your other offers, your trusted node verifies it and then routes the payment. You can still receive payments without interacting with the hardware wallet. The trusted node can route the incoming receive request.
 

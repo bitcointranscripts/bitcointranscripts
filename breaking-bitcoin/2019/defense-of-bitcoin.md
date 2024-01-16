@@ -1,20 +1,18 @@
 ---
-title: Defense Of Bitcoin
+title: "Five Insights into the Defense of Bitcoin"
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['ux']
 speakers: ['Warren Togami']
+media: https://www.youtube.com/watch?v=n5xS9liL8Sk
 ---
-
-Five insights into the defense of bitcoin
-
 <https://twitter.com/kanzure/status/1137389045355614208>
 
-# Introduction
+## Introduction
 
 Today I work at Blockstream but I have a long long history working in open-source software first with the Linux operating system as an advocate then working on the operating system itself. This has led me to a few insights on the defense of bitcoin that has little to do with software but it needs a talk thrown together very quickly for today.
 
-# Defense by safety-critical engineering process
+## Defense by safety-critical engineering process
 
 I believe that it's possible to have a truly decentralized development process. It's vitally important for the long-term survival of bitcoin and the personal safety of developers for there to be truly nobody in charge that can be coerced or forced to do anything. If you want bitcoin to survive in the long-term, we need to defend this as an idea. This needs to become more true over time. I believe that bitcoin has set itself apart by a demonstration of due diligence through a safety-critical change control peer review process.
 
@@ -22,15 +20,15 @@ I have seen the bitcoin developers take it very seriously that they really don't
 
 I believe this guards against what some people tend to think needs to be governance. I think governance is vulnerable to political factors and coercion. A common problem is that people make a big deal about who has commit access. If you know how these projects work, that's complete nonsense. Ideally the maintainers we have today, having commit access is not politics, you're a facilitator of a peer review process and a janitor. It doesn't matter who has commit access, because over time as the quality bar increases as more software professionals have joined the project it's become more true that no individual can force something that is not adequately reviewed.
 
-# Defense by harm reduction
+## Defense by harm reduction
 
 The other day I had a random idea. If you believe the reference implementation has done a good job because of the safety-critical process, then there are some opportunities to do some things in the reference implementation that we haven't done in the past. A few years ago, we decided to support to a limited degree OP\_RETURN. But now there's discussion about adding assumeutxo which is a way to bring up a full node but verify after the fact, which helps reduce the initial time until you can use the wallet. The lack of these things in the reference implementation has-- someone has argued this causes harm because it has led many service providers, who need to use or deploy a solution, to use far worse options that are not as well-engineered as the reference implementation, which has led to major cost issues and maintainability issues as a result.
 
-# Defense by diverse verification
+## Defense by diverse verification
 
 I am trying to promote the idea of diverse verification. A great many people especially like Bitcoin Core developers have believed that alternative implementations are inherently dangerous because consensus is bug-for-bug compatibility with bugs that have not yet been discovered. Over time, the code quality has been improving substantially because a lot of time and effort has been put into reimplementing and getting rid of the most dangerous parts of what was used by bitcoin like OpenSSL for example. We've had a few surprises along the way. Back in 2013, we had an unexpected behavior in bdb regarding the locklimit. The inflation bug too... it's not only the alternative implementations that are risk at diverging from Bitcoin Core. There's also the risk that different versions of Bitcoin Core aren't able to maintain compatibility. It kind of doesn't matter what people believe about the danger of running alternative implementations, because the reality is that some big service providers are running alternative implementations and we can't agree what to do about that... We need an emergency response plan, and it would be nice to be able to detect accidental convergence failures or consensus failures a lot earlier. We could do this in an automated way if many companies and organizations run the different versions of Bitcoin Core and monitor them for divergence and then you can set off automated alarms. If you're a service provider, maybe you can put your server into a fail safe mode to reduce the chances of losses. The humans can then figure out quickly what is the consequences of the divergence. Usually it's only one of the alternative implementations htat has fallen off the network but this is a way to protect everyone and to protect yourself as a service provider especially. I think it should not be controversial to handle things this way. Also, alternative implementations are less likely to all be vulnerable to the occassional very rare mistakes that may pass the peer code review process for the reference implementation. So that's a thing.
 
-# Defense by educational outreach
+## Defense by educational outreach
 
 Another type of defense of bitcoin is what I would call educational outreach. I want to talk about readingbitcoin.org. Back in 2015, if you were around back then, it was a very stressful multi-year period where was a lot of confusion and acrimony and some would call it misinformation... because I had been working in open-source for a long time by that point, even before bitcoin, my approach to attacking this problem was education and outreach. I created Scaling Bitcoin back in 2015. The problem was a very confusing issue was fought in the media; how do you fight back when the real answer doesn't fit in a soundbite? Well, you form a really boring academic conference and that slowly changed the discourse. Now there's a lot of conferences that are about tech, and it's not about the marketing. But that being said, I want to promote readingbitcoin.org which is about educational outreach.
 
@@ -42,6 +40,6 @@ The goal is to build a pipeline process with translators that Ruben works with o
 
 We're doing this as a non-profit project under the Linux Foundation, which does this for many hundreds of other projects. They do administration for non-profit backends so that this guy can focus on the mission. We also recently got the Linux Foundation to begin to accept bitcoin donations for any of their hundreds of projects. So that's hopefully helpful for bitcoin in other ways. I mentioned this structure of how the Linux Foundation's subprojects work for open-source projects, because it's an opportunity for others who want to build other non-profits, it's a good way to think about things. The way they normally create these open-source subfoundations is that they are split into two legal entities. One is a directed fund, and the other is a technical project. The technical project is led by basically a technical leader and it's by meritocracy. By the structure of the organization, the funders have no say in what the technical project does. It's like, you either support the mission or you don't, with money. I think a lot of us like the idea of if you don't want any--- it's not a big deal for this educational thing, but when it comes to open-source software development it might be a bigger deal where you don't want corporations to dominate the development agenda for their own benefit.
 
-# Defense by diverse contribution
+## Defense by diverse contribution
 
 There are many diverse contributors to the bitcoin reference implementation including companies like Square, Chaincode Labs, Digital Garage, DG Lab, MIT Digital Currency Initiative, Xapo, Blockstream and yes even Bitmain. There's also local groups like NY BitDevs meetup, SF Bitcoin Devs meetup, Boston BitDevs meetup, Seoul bitcoin meetup, Coin Center, readingbitcoin.org, and others. We're in trouble if there's a central organization that runs this thing. But we can get a lot done with many groups working together contributing to the whole. These groups sometimes don't agree with each other, either, which helps develop new ideas.

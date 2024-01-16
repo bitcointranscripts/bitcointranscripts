@@ -1,16 +1,13 @@
 ---
-title: Bitcoin Build System
+title: "Bitcoin Build System Security"
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['security', 'build systems']
 speakers: ['Carl Dong']
 date: 2018-06-08
-media: https://www.youtube.com/watch?v=I2iShmUTEl8
+media: https://www.youtube.com/watch?v=8dxpcgRIpIs
 ---
-
-Bitcoin build systems and bitcoin build system security
-
-Carl Dong, Chaincode Labs
+Alternative video without the Q&A session: https://www.youtube.com/watch?v=I2iShmUTEl8
 
 <https://twitter.com/kanzure/status/1137347937426661376>
 
