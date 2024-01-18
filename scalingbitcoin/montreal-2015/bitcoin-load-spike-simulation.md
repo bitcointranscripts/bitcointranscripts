@@ -2,10 +2,9 @@
 title: Bitcoin Load Spike Simulation
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['attacks', 'mempool', 'fees']
+tags: ['research']
 speakers: ['Conner Fromknecht', 'Nathan Wilcox']
 ---
-
 Our goal for this project, our rationale of what we're interesting is when many transactions arrive in a short period of time. This could be because of denial of service attacks where few entities are creating a large number of transactions, or many people wanting to create transactions, like a shopping spree. We wanted to answer two questions, how does the temporary spike in transaction rate affect confirmation delay distribution? For a given spike shape, can we change the block size and how would that effect the evolution of the system?
 
 Our simulation is based on ... stoachastic simulation "bitcoin\_load\_spike". Based on bitcoin traffic bulletin #34 simulation. Our mempool model was an infinite FIFO queue (no fees/priority). They are appended to the mempool. We used transactions that were 250 bytes. The main way that our model differs from the bitcoin traffic bulletin is that our block size is variable, we can adjust it, and provide spike profiles, we have this time-varying spike so we can model that in the simulation so that we have different loads during different points in our simulation. We can log the confirmation times for each one of our spikes.

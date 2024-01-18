@@ -2,7 +2,7 @@
 title: "Blockchain Design Patterns: Layers and scaling approaches"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['taproot', 'mempool']
+tags: ['taproot', 'scalability']
 speakers: ['Andrew Poelstra', 'David Vorick']
 date: 2019-09-10
 aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/blockchain-design-patterns]
@@ -10,11 +10,11 @@ aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/blockchain-design-patter
 
 <https://twitter.com/kanzure/status/1171400374336536576>
 
-# Introduction
+## Introduction
 
 Alright. Are we ready to get going? Thumbs up? Alright. Cool. I am Andrew and this is David. We're here to talk about blockchain design patterns: layers and scaling approaches. This will be a tour of a bunch of different scaling approaches in bitcoin in particular but it's probably applicable to other blockchains out there. Our talk is in 3 parts. We'll talk about some existing scaling tech and related things like caching transactions and mempool propagation. We'll talk about some of the scaling proposals out there like taproot and erlay and other things in the news. In the third section, we talk about the more speculative bleeding edge crypto things.
 
-# Scaling: goals and constraints
+## Scaling: goals and constraints
 
 So what do we mean by scaling?
 
@@ -30,7 +30,7 @@ When we talk about scaling, there's a few angles we're coming from. Everything t
 
 <https://diyhpl.us/~bryan/irc/bitcoin/scalingbitcoin-review.pdf>
 
-# Bitcoin today: UTXOs
+## Bitcoin today: UTXOs
 
 The first part of this talk is about bitcoin today. Things that are deployed and exist in the bitcoin network today. Let me give a quick summary of how bitcoin handles coins and transactions. This is the UTXO model-- unsigned transaction outputs. All bitcoins are assigned to objects called UTXOs. These are individual indivisible objects that have a spending policy, and if you know the secret key you can spend the coins. They also have an amount. To spend coins, you have to take a bunch of UTXOs that you own, you spend all of the UTXOs, and then you create new UTXOs belonging to your recipient(s). Since these are indivisible, you usually have to create an extra output for change to send it back to yourself. Other blockchains have accounts instead of UTXOs, like ethereum.
 
@@ -38,7 +38,7 @@ There are a number of reasons that bitcoin chose the design that it did. When yo
 
 There's also things about proving properties of existence of UTXOs. In bitcoin, UTXOs get created and destroyed. Those are the only two events in the UTXO's lifecycle. If you want to prove that a UTXO existed at some point, you provide the transaction that created it and a merkle path for the inclusion of the transaction in a blockheader. For things like blockexplorers and other historical analysis auditing applications, this is very convenient. It's very difficult to do this in an account-based model because you have to maintain the balance of every single account at every single point of time and there's no nice compact way to tie that back to individual events in the blockchain which makes proving things about the ethereum chain historically quite difficult.
 
-# Bitcoin today: Headers-first, transaction relay, and caching
+## Bitcoin today: Headers-first, transaction relay, and caching
 
 Headers first is very primitive technology today. But when you join the blockchain, you download all the blockheaders which are 80 byte data objects and you try to find the longest chain. The chain part of the blockchain is entirely contained in 80 byte headers. All 600,000 of these are like less than 60 megs of data or something. So you can validate this chain, and then later you download the block data, which is much more data. So you start by downloading the headerchain, and it's low bandwidth-- you can get it over SMS or over the satellite, and then you know the right chain, and then you go find the blocks. Maybe you get it from less trustable sources, since you already have the headers nobody can lie to you about the blocks. The headers cryptographically commit to the blocks. In 2014, headers first got implemented. Before that, you had to join the network and get lucky about choosing peers because you wouldn't know that someone was lying to you until you were done with the sync.
 
@@ -48,11 +48,11 @@ When you see a block and everything was previously validated, then you don't nee
 
 One last thing I'll mention is dandelion, which is a transaction propagation scheme. The way this works is that you send a transaction along some one-dimensional path of peers during a stem phase. Rather than flooding the transaction to the network, which means the origin node can be determined by spy nodes on the network, you do the stem phase and then a fluff phase which makes it much more difficult to do that kind of spying analysis.
 
-# Compact blocks and FIBRE
+## Compact blocks and FIBRE
 
 We've talked about compact blocks and FIBRE. People sometimes get this confused. Compact blocks is about propagating blocks to nodes in the hopes that they already have the transaction. FIBRE is about miners communicating blocks to each other, and its goal is to minimize latency. Miners learn new blocks as quickly as possible. FIBRE is super wasteful at bandwidth. It uses an error correcting code to blindly send it among as many paths as it can to sort of stream the data. As long as it sees as much data from many different nodes, it can reconstruct that block basically. So one is for nodes, one is for miners.
 
-# On-chain and off-chain state
+## On-chain and off-chain state
 
 In a moment, we're going to talk about layer 2.
 
@@ -62,11 +62,11 @@ Rather than trying to extend the capabilities and the space available within bit
 
 You're anchoring data to the blockchain, not publishing it. Putting data on the blockchain is a so-called proof-of-publication. If you need to prove that some data was available to everyone in the world at some point, you can put it in the blockchain. But typically when people think they need to do this, what they really need to do is anchor their data to the chain. There are some use cases where you really need proof-of-publication but it's much more rare. I'm not aware of a real trustless alternative to using a blockchain for this, but I really wish people wouldn't put all this arbitrary data in the blockchain.
 
-# Hash preimages and atomic swaps
+## Hash preimages and atomic swaps
 
 We can guarantee that a cascade of events will all happen together or not happen together. This is kind of an extension of proof-of-publication. We have something where if a piece of data gets published, like a signature or something, we can guarantee that this cascade will trigger. This is a layer 1 tech primitive that leads into some very nice things that we can do in layer 2 that make blockchains more scalable. Publishing hashes and hash preimages is an example of where you need proof-of-publication because you need to make sure that if someone takes in money and the hash shows up in public, then the other person should be able to take their money on the other side of the atomic swap.
 
-# Replacing transactions: payment and state channels
+## Replacing transactions: payment and state channels
 
 gmaxwell in a 2013 bitcointalk post-- it's funny how old a lot of this stuff is. A theme that we're not going to talk about in this talk is all the coordination and underlying blockchain tech and moonmath and crypto tricks are relatively simple, it's coordination that is hard. If you do the atomic swap protocol that David just described, where they ensure their swap is atomic.. Say two parties do this, but rather than publishing the final transactoin with the hash preimages, the parties exchange this data offline with each other. At this point, they have avoided publication because they have only sent the data to one another. Now they can both get their money if the other party leads. As a last step, they throw out the transactions. Well, they replace the transactions cooperatively with an ordinary transaction that spends their coins to the right places without revealing any hash preimages. This is a little bit smaller because they are no longer revealing so much data. This is of course not an atomic operation; one party can sign and take the coins. But the blockchain is there ready to enforce the hash preimage thing to take the coins. So now they can do a unregulated atomic swap knowing that if anything goes wrong, they can fallback to on-chain transactions.
 
@@ -75,23 +75,23 @@ This idea of replacing transactions not published to the blockchain, with the id
 
 These payment channels and replacement gets you a lot of scalability because you're not limited in the number of transactions you can do between now and the next block that gets mined. You're replacing transactions rather than creating new ones that need to get committed, because of the way you setup the 2-of-2 multisig setup.
 
-# Payment channels and revoking old state
+## Payment channels and revoking old state
 
 One problem with payment channels is that if you keep creating new transactions repeatedly, there's the concern that one of the parties can publish an old state. None of these transactions are inherently better than the others. Because they are always spending the same coins, only one will be valid. But the blockchain isn't going to do anything for you to ensure that the "right one" is valid. This seems like a no-go beczause you want to cancel all of the old states each time you replace. That's what replacement should mean. You could double spend the coins and re-start, but then you would have to create a transaction and publish it to the blockchain. So you don't gain anything. But there's another way, where you create a new transaction that undoes the first transaction. So you create a second transaction that spends the original coins and gives it back to the original owner, and the original transaction is now revoked. If that first transaction hits the blockchain, then the other counterparty has a penalty transaction or other transaction they can publish to get their money back. This is fine, but this requires a separate revocation transaction to be created every time you do one of these state updates. This is in fact how lightning network works today; every payment channel has some extra state that parties need to store for every single channel update. There's some ways to mitigate that.
 
 This idea shows up quite a bit when people are proposing extensions to bitcoin: why don't we provide a way to cancel old transactions directly? What if transactions have a timeout, and after that timeout, they are no longer valid? Or what about a signature you can add that will invalidate the transactions? What about a way to make transactions invalid after the fact? There's a few reasons why this doesn't work. There's the ability to cache transactions in your mempool. If you have some transactions cached in your mempool that can be invalidated by some event like maybe a new block appearing and invalidating it, each time one of these events happens you have to rescan all of your mempool and update the transactions or remove them. This requires expensive scans or complex reindexing or something. One further complication is that this is made worse by the fact that the blockchain can reorg. You have to rescan the chain to see which transactions have been invalidated, unconfirmed or absent. It's a big mess. It also creates a fungibility risk because if a transaction could be invalidated-- like say a transaction was in a blockchain, a reorg happens and it becomes invalid. Every transaction that spent its coins, the whole transaction tree graph below that point, becomes invalid too. Coins with an expiry mechanism are riskier to accept than other coins. This is true by the way of coinbase transactions and miner rewards. In bitcoin, we require 100 blocks go by before miners can spend their coins because we want to make sure it's next to impossible for coins to be reorged out if a reorg would cause those coins to be invalidated. A cancelation has the same issue. A lot of these proposals just, don't work. It's difficult to create a revocation mechanism that actually gets broadcasted to the whole network. If you revoke a transaction and it gets confirmed anyway, without a consensus layer which a blockchain is supposed to be anyway, how do you complain about that?
 
-# Linking payment channels
+## Linking payment channels
 
 This is how the lightning network works. It uses HTLCs. It's a hashlock preimage trick to make transactions atomic. You link multiple payment channels with the same hash. You can send money through long paths. This proof-of-publication mechanism guarantees that if the last person on the path can take their money, all the way back to the original sender so the money goes all the way or it doesn't go at all. Each of these individual linked payment channels can be updated independently by the mechanism of creating revocation transactions and replacing the original transaction. Finally, there are some other security mechanisms like some timelocks like when anything goes wrong in the protocol then money will eventually return to where it comes from. There's thus a limited hold-up risk related to this timelock period. I'm not going to talk about the details of the timelocks or about linking payment channels across chains, or multi-asset lightning.
 
 I just want to talk about the specific scalability tricks that go into forming these payment channels. These are quite general tools you can use, and you can use it to create cool projects on the bitcoin network without requiring a lot of resources from the bitcoin chain.
 
-# Proposed improvements
+## Proposed improvements
 
 This section is about proposals that are generally speaking accepted, things that have not been deployed yet but we believe they will be deployed because the tradeoffs make sense and we like the structure. First one we're going to talk about is an erlay.
 
-# Erlay
+## Erlay
 
 Erlay deals with the transaction propagation layer. It's consensus critical in the sense that if you're not getting blocks or transactions then you can't see the state of the network and you can be double spent. If you're not aware of what hte most recent block is, or what the best chain is, you can be double spent and you're at risk. On the network today, the transaction propagation system takes the most bandwidth. Because of that, we put a small cap on the number of peers that we actively go and get, which is 8, although a pull request has increased this to 10 for block propagation only not transaction propagation. 8 is enough to create a well-connected robust graph. Sometimes you see eclipse attacks where it often feels fragile.
 
@@ -119,7 +119,7 @@ A: So the concern with connecting to more spy nodes is that, those nodes-- so if
 
 <https://diyhpl.us/wiki/transcripts/tftc-podcast/2019-06-18-andrew-poelstra-tftc/>
 
-# Compact threshold signatures
+## Compact threshold signatures
 
 The next few slides are building up to a proposal called taproot but let me talk about some components first.
 
@@ -133,13 +133,13 @@ But with Schnorr signatures, it's very simple for these parties to instead combi
 
 With some complexity, you can generalize this further. I said 3-of-3 and 5-of-5, but you can actually do thresholds as well. You can do k-of-n for any k and any n provided n > k. Similarly, this produces one key and one signature. You can generalize this even further, and this could be an hour long talk itself. You could do arbitrary montone functions where you can define-- you can take a big set of signers and define any collection of subsets who should be able to sign, and you could produce a threshold signature like algorithm for which any of the admissable subsets would be allowed to sign and no other subsets. Monotone just means that if some set of signers is allowed, then any larger set is also allowed. It's almost tautological in the blockchain context.
 
-# Adaptor signatures
+## Adaptor signatures
 
 Ruben gave a whole talk on adaptor signatures. We use the proof of publication trick and we encode this in the signature. Rather than a hash preimage in the script, you have this hash point and this extra secret. This completely replaces the hash in the preimage. What's cool about this is that once again all you need is signature support from the blockchain, you don't need additional consensus rule changes. You just throw a signature on the chain. Another benefit is privacy. There's a lot of cool privacy tricks. One signature hits the chain, no indication that adaptor signatures were involved. You can also do reblinding and other tricks.
 
 The proof-of-publication requirement we had for the preimages and the hashes and the preimage, now become the proof-of-publication requirement for the signatures. That's kind of inherent to a blockchain. Blockchains have transactions with signatures. There's no way with existing tech to eliminate the requirement that all the signatures get published, because the chain needs to be publicly verifiable and everyone needs to be able to verify the transactions which means they need to be able to validate the signatures. We get more capabilities with adaptor signatures, and we require less out of the blockchain. That's my definition of scalability.
 
-# Taproot: main idea
+## Taproot: main idea
 
 Before I talk about taproot... Up til now, I have been talking about Schnorr signatures and how you can combine these to have arbitrary complex policies or protocols. It's one key, one signature. The idea behind taproot is that if you can really do so much with one key and one signature, why don't we just make all the outputs in bitcoin be one key and all the witnesses be one signature? Instead of bringing in this whole script evaluation aparatus, then we can bring in one key one signature and then that's great. Your validation condition is a nice little algebraic equation and there's little room for weird consensus edge cases. You also get batch validation. I should mention that this is kind of how mimblewimble works: you only have an ability to verify signature. Historically, this whole adaptor signature business came out of mimblewimble and in particular the question of how to add scripting to mimblewimble. As soon as I came up with this idea, I brought it to bitcoin and forgot about mimblewimble. As soon as I could do it with bitcoin, I ran away.
 
@@ -187,7 +187,7 @@ I think that's the last taproot slide.
 
 <https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/>
 
-# Revocations and SIGHASH\_NOINPUT
+## Revocations and SIGHASH\_NOINPUT
 
 Let's double back a little bit to lightning.
 
@@ -205,11 +205,11 @@ Initially I was opposed to SIGHASH\_NOINPUT because I thought it would break a u
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/edgedevplusplus/sighash-noinput/>
 
-# Speculative improvements
+## Speculative improvements
 
 A lot of these improvements we're just going to only touch the surface level. If you want to ask questions or go deeper on a particular one, we're certainly happy to do that. But there's a lot of scalability proposals out there. Some of them are more interesting than others. We tried to cherrypick things that are very beneficial for scalability that we liked, and then some that are innovative or maybe they break things. Some of them we put them in here because they are extremely popular even though we don't like them.
 
-# utreexo
+## utreexo
 
 Utreexo out of all of these are hte most practical and most realistic of the speculative improvements. Today one of the big bottlenecks with bitcoin is blockchain validation. In particular, you need a ton of disk space and you need to keep track of the set of coins that are currently spendable. With utreexo, we merkleize this whole thing and we keep one merkle root and we get rid of the need to keep a database. Today to run bitcoin consensus, you need database software and keeping things on disk. That's rough. Database optimization is incredibly involved and it's difficult to be certain that it's implemented correctly. If we switch to utreexo, then we can throw away our database software. Every time osmeone spends, they would provide a merkle proof showing that the coin was in the merkle root. This allows us to essentially keep things on disk. We can fit an entire blockchain validator on a single ASIC. We could create a chip that can validate the bitcoin blockchain just as fast as you can download it. The major tradeoff is that every transaction needs a merkle proof alongside it, which is a couple hundred bytes. There's a few ways to help with that though.
 
@@ -217,7 +217,7 @@ Tadge did a talk yesterday on utreexo.
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/accumulators/>
 
-# Client side validation
+## Client side validation
 
 Currently no ongoing research into client side validation. The idea is to not put transactions on the blockchain at all. Most output history wouldn't be visible. Since we're not putting it on the blockchain, that means the blockchain takes less bandwidth and takes less computation to verify. It's much simpler. To validate an output, if someone spends coins to someone else, you send that someone whoever's receiving the output, the sender will provide them with the entire history of that output back to the coinbase where it was originally mined.
 
@@ -251,7 +251,7 @@ A: Basically, you would get versioned outputs. Basically, if I'm on some soft-fo
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/client-side-validation/>
 
-# DAG-based blockchain
+## DAG-based blockchain
 
 This is another popular one. Ethereum uses a not-correct version of something called Ghost DAG. The bitcoin blockchain is a straight line, if you get forks or competing blocks then only one of them wins. You discard everything else. I think there was a 2015 paper called "inclusive lbockchain protocols" which presented an approach using directed acyclic graph approach to blockchain. Multiple miners can release blocks at the same time, and then there's an algorithm to linearize those blocks and the invalid transactions you just ignore. The DAG approach solves particularly miner challenges. It allows you to have faster block times, lower safe confirmation times, it reduces the pressure on miners to have fast propagation. So fast propagation is no longer as important. It doesn't help with initial block validation, you still have to check every output every spend. That resource bottleneck doesn't change, therefore this isn't seen as true scalability at least today because it doesn't solve our biggest bottleneck.
 
@@ -267,7 +267,7 @@ A: Yes. Correct. DAGs are only advantageous in terms of confirmation security if
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/chainbreak/>
 
-# Confidential transactions
+## Confidential transactions
 
 Confidential transactions is the idea that you can replace the amounts with homomorphic commitments that hide what the amounts are, but they still bind to the amounts so nobody can pretend they are something they are not. Homomorphic means they can be added. Validators can add up all the inputs and all the output amounts and they can tell whether or not they balance to zero, by checking those homomorphic commitments, or by using a proof of zeroness.
 
@@ -279,7 +279,7 @@ The other issue is that these things aren't quantum secure. Right now in bitcoin
 
 <https://diyhpl.us/wiki/transcripts/gmaxwell-confidential-transactions/>
 
-# STARKs and general zero-knowledge proofs
+## STARKs and general zero-knowledge proofs
 
 In confidential transactions, we have a rangeproof attached to every output. This is an example of a zero-knowledge proof, specifically one to prove a range. The purpose of this is to make sure that ranges aren't going to overflow, that the values aren't going to be negative numbers and won't overflow.
 
@@ -295,7 +295,7 @@ It's promising tech, and it's practical for a lot of purposes even right now. It
 
 At some point, this will be mature and efficient enough taht we will start seeing it in the blockchain and see real scalability improvements.
 
-# Sharding
+## Sharding
 
 We have two slides left, sharding and proof-of-stakes. My two favorite things.
 
@@ -313,7 +313,7 @@ A: There's a lot of technologies that like-- fundamental tech steps that would n
 
 A: The challenge on that one is not just information withholding, but double spending. If you have multiple proofs that are all valid, and you see multiple histories that transpired. How do we pick which one transpired? If you combine sharding with STARKs, maybe you find some wiggle room to make it work.
 
-# Proof-of-stake
+## Proof-of-stake
 
 Proof-of-stake is incredibly popular in the altcoin world. It's almost unconditionally popular. It falls back to traditional byzantine fault tolerance models. In proof-of-stake, you see 51% assumptions. Normally things fall away from incentive compatibility. I'm just going to say there's many issues.
 
@@ -327,7 +327,7 @@ Unfortunately, there are so many ways to approach proof-of-stake paradigms that 
 
 <https://download.wpsoftware.net/bitcoin/asic-faq.pdf>
 
-# Multiple blockchains
+## Multiple blockchains
 
 For scalability, you can have independent blockchains like bitcoin and litecoin. You don't need sharding or anything. As a dogecoiner, I don't need to care about what happens on the bitcoin blockchain. If we use cross-chain lightning, I receive doge not bitcoin, and that's scalability. We can have on-chain on multiple chains, and then each chain has a separate security domain and a separate chain and their own problems.
 

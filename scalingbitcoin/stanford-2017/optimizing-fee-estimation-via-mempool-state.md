@@ -2,11 +2,9 @@
 title: Optimizing Fee Estimation Via Mempool State
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mempool', 'fees']
+tags: ['fee-management']
 speakers: ['Kalle Alm']
 ---
-
-
 I am a Bitcoin Core developer and I work at DG Lab. Today I would like to talk about fees. There's this weird gap between-- there are two things going on. People complain about high fees. But people are confused about why Bitcoin Core is giving high fees but if you set fees manually you can get a much lower fee and get a transaction mined pretty fast. I started to look into this in detail and did simulations and a bunch of stuff.
 
 One of the ideas I had was to use the mempool state to optimize the fee rate and also very accurately determine how much time until a transaction is going to be mined in terms of cost. I think this kind of user interface guide is going to help a lot of people figure out what is going on with their transaction when it's not immediately confirmed. This might help a bunch of grief.

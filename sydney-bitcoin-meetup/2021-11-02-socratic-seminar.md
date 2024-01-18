@@ -2,7 +2,7 @@
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['P2P', 'mempool']
+tags: ['package-relay']
 date: 2021-11-02
 ---
 
@@ -22,11 +22,11 @@ Package Mempool Accept and Package RBF: <https://lists.linuxfoundation.org/piper
 
 With illustrations: <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a>
 
-# Intro
+## Intro
 
 I think the best thing for me to do is go through Gloria’s [mailing list post](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html). We’ll go through the package relay acceptance rules and look at how they differ from the existing BIP 125 rules which we had a whole [Socratic](https://btctranscripts.com/sydney-bitcoin-meetup/2021-07-06-socratic-seminar/) about a few months ago with Antoine Riard. Gloria can interject whenever she feels like talking about anything in particular. We are going to go through this excellent mailing list post that Gloria made with all these awesome pictures. We’ll talk about how the package relay rules may differ from [BIP 125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki) replace-by-fee rules. These are the existing rules you apply when you get a transaction to see if you are going to include it in your mempool or not and whether you are going to pass it onto other nodes. With packages, which are single transactions relaying multiple transactions you need variations in these rules. They are really carefully thought out here and explained. A really valuable post. Let’s start going through them.
 
-# Existing package rules
+## Existing package rules
 
 <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#existing-package-rules>
 
@@ -92,7 +92,7 @@ The third row is probably more indicative of what we would actually see. In 3A t
 
 Yes. That’s a restriction, that’s intentional.
 
-# Proposed changes
+## Proposed changes
 
 <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#existing-package-rules>
 
@@ -110,7 +110,7 @@ They are also arrows. P25 is spending all of them.
 
 Ok, understood.
 
-# Fee-Related Checks Use Package Feerate
+## Fee-Related Checks Use Package Feerate
 
 <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#fee-related-checks-use-package-feerate>
 
@@ -160,7 +160,7 @@ You have a package and it has transaction A, B and C. A has a zero fee?
 
 G2 is a pretty good example, a good structure. You would try adding P1 first, that’s fine. Then you would try adding P2, it says “That is not going to work”. You can’t add P3 because you don’t have P2. Then you start considering P2 and P3 as a group.
 
-# Package RBF
+## Package RBF
 
 <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a#package-rbf>
 
@@ -238,7 +238,7 @@ Total Number of Replaced Transactions (Rule 5) states the package cannot replace
 
 The final bit of this is to talk about why you add individual submission, we’ve gone through that a little bit.
 
-# Q&A
+## Q&A
 
 One thing that did change, Rule 2, “The replacement transaction may only include an unconfirmed input if that input was included in one of the original transactions”. Wasn’t there also a rule where BIP 125 had to have everything confirmed? In Bitcoin Core [PR 6871](https://github.com/bitcoin/bitcoin/pull/6871) there is a comment in main.cpp “We don’t want to accept replacements that require low feerate junk to be mined first. Ideally we’d keep track of the ancestor feerates and make the decision based on that but for now requiring all new inputs to be confirmed works.”
 
@@ -272,7 +272,7 @@ Couldn’t you make the argument that if your node knows the other node is not g
 
 Just fix it.
 
-# Zero satoshi outputs in packages
+## Zero satoshi outputs in packages
 
 For my spacechain proposal one of the things I would like to see is the possibility of spending zero satoshi outputs. It looks like maybe with package relay there might be a possibility to do that. The problem with zero satoshi outputs is you need to abide by the dust limit. If you don’t abide by the dust limit then you might create an output that is uneconomical to spend. We want to guarantee that zero satoshi outputs by the relay rules are not accepted. But if you have a package then you can construct it in such a way that you can guarantee that the zero satoshi output is being spent within the same package. You could argue that it is ugly because of this, it is essentially a hack to use an output as an anchor to do child-pays-for-parent. My thinking is if you create a transaction that has zero satoshi outputs and that transaction itself has either a fee that is zero or a fee that is at least lower than the child that is paying for it then if you send that out as a package it will never be the case that the child gets evicted and the parent stays in the mempool. That is what you don’t want. You don’t want the child to be evicted and the zero satoshi output still being in the mempool. If the fee rate of the child is higher then I think you guarantee that either they both get evicted or neither get evicted.
 

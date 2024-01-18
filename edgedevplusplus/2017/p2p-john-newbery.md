@@ -2,7 +2,7 @@
 title: Bitcoin Peer-to-Peer Network and Mempool
 transcript_by: Caralie Chrisco
 categories: ['conference']
-tags: ['P2P', 'mempool']
+tags: ['p2p', 'mempool']
 media: https://youtu.be/eVerdR2hOMw
 speakers: ["John Newbery"]
 aliases: [/scalingbitcoin/stanford-2017/edgeplusplus/p2p-john-newberry]
@@ -12,13 +12,13 @@ summary: "John Newbery covers the primitives and functionality that comprises Bi
 Slides: <https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/p2p.pdf> & <https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/mempool.pdf>
 
 
-# Bitcoin Peer-to-Peer Network
+## Intro
 
 John: So far today, we've talked about transactions and blocks and the blockchain. Those are the fundamental building blocks of Bitcoin. Those are the data structures that we use. On a more practical level, how does a Bitcoin network actually function? How do we transmit these transactions and blocks around? Well, the answer to that is a peer-to-peer network, which is what I'm going to talk about now.
 
 I'll give you a brief overview of what the P2P network is. I'll talk about different kinds of nodes on that network. There are different nodes. I'll talk about the message format. I'll talk about control messages, transaction propagation, and finally, block propagation.
 
-# P2P
+## P2P
 
 So what is the peer-to-peer network? It's how transactions and blocks are propagated from your node across to the other nodes in a Bitcoin network. It's a completely flat open peer-to-peer network. There's no authentication. There are no special control master nodes or anything like that. Each node on the network is a peer, and it needs to be resistant to attack because it's open, right? There's no wall between Bitcoin and the rest of the world. Bitcoin must be resistant to things like denial of service attacks, Sybil attacks, and so on.
 
@@ -56,11 +56,11 @@ Audience Member: A node's behavior doesn't propagate throughout the network, rig
 
 John: Yeah, this is our node making decisions about its peers. I won't go into that in any more detail, but that's kind of a high level.
 
-# Types of Nodes
+## Types of Nodes
 
 Let's talk about different types of nodes on the network. The gold standard is a full node, otherwise known as a fully validating node. That's because it validates all of the rules, all of the consensus rules of Bitcoin. It receives blocks as they're mined and propagated. It verifies the validity of those blocks. It verifies that all of the transactions in that block are valid and are spending unspent outputs, and it enforces the consensus rules of the Bitcoin network. To do that, it needs to keep a collection of all of the unspent outputs. That's the set of information that we're interested in. It's the most secure and the most private way to use Bitcoin. If you use your own full node, you're validating the rules. You're making sure that there's no extra inflation, there are no double spends. It's also the most private because you're not telling anyone about your addresses or your public keys.
 
-# Pruned node
+## Pruned node
 
 There's the concept of a pruned node. This was introduced in v10 or v12, I think. A pruned node is a full node. It's still validating all of the rules of the Bitcoin network. The only difference is it's discarding old blocks after it's validated them. That saves on disk space. It's got to retain a bit of history, up to two days. I think two days minimum and the undo data that I told you about. If there's a reorg, even if a day reorg, that would be a really large reorg, it can still do that. It propagates the new blocks. It sees, but it can't serve old blocks to peers. When you turn your node on for the first time, you need to download all of the blocks in the blockchain. That's called initial block download. If you connect to a full node that doesn't prune, you can download all of the old blocks. If you connect to a pruned node, obviously, they can't serve you those old blocks because it has pruned them away. In terms of security, it's as secure as a full node. It is a full node, right? It's validating all of the rules is making sure the miners aren't increasing inflation. It's making sure that there aren't double spends. It's a full node, but it's just saving a bit of disk space.
 
@@ -76,11 +76,11 @@ Audience Member: (inaudible)
 
 John: That is slightly different. A full node has two types of data. It has the blocks as they were serialized, which it's storing on its disk, and that will be up to 200 GB at this point, and it has a set of unspent transaction outputs. What you need in order to enforce the rules of the network is that set, the UTXO set. The archive of blocks is basically dead data. You don't use it for validation, and if you remove that and you just have the UTXO set, you can still validate all of the rules. So that UTXO set does not include spent outputs. Those spent outputs have already been removed. I'm sorry I don't have that white paper and chapter 7 in my head, but it sounds slightly different. Any other question about pruning?
 
-# Archival Nodes
+## Archival Nodes
 
 I'm going to talk about archival nodes. All I mean by that is, it's a full block that stores the entire history. It's like an archive, and it can serve blocks to its peers on the network. Unlike a pruned node, which can't serve all blocks, an archival node can serve you any block in the history. That's signaled using your NODE_NETWORK service bits in the version handshake. That should answer your question.
 
-# SPV Nodes
+## SPV Nodes
 
 Next are SPV nodes. SPV nodes only download the block headers and information about specific transactions. When I say information, I mean the Merkle proof of that transaction was included in a block. So they can validate proof of work because that's included in the headers, but they can't validate other network rules. They can't detect an invalid transaction has been included in the block and can't verify the money supply. So if all of the nodes on the network were using this system, except the miners who are mining, the miners could inflate money. No one would be checking them. They can verify the inclusion of transactions, and they can't verify exclusion. We don't have that kind of proof. They can use something called bloom filters to preserve a bit of privacy. They're not great. A bloom filter is my SPV node talking to a full node and saying, "I am interested in this set of transactions or this set of addresses, but I'm not going to tell you exactly what addresses." With that kind of filter, you'll always get the transactions you're interested in if the full node is honest. But the full node can't fingerprint exactly what your address is. They're not great. There are better systems out there, but this is what we have right now, in the peer-to-peer network.
 
@@ -108,7 +108,7 @@ Audience Member: Do archival nodes advertise as some kind of a system of record?
 
 John: Again, I'm just using this word archival in a vague sense. What I mean is, it will serve old blocks. And a node signals that it can serve old blocks using the NODE_NETWORK service bit in the version handshake. So when you connect to it for the first time, it will say I have node network, which means I will serve you blocks. Any other questions?
 
-# Message Format
+## Message Format
 
 Let's talk quickly about the message format. Peer-to-peer messages have a header and a payload. The head is 24 bytes long. It's a fixed length, and it's got certain fields. Fixed fields. In fixed fields. It's got magic at the front. That's just 4 bytes, 4 fixed bytes saying that this is a message on the Bitcoin network. For the main net, it is f9beb4d9. It's just what Satoshi chose to identify messages for the Bitcoin main net. Testnet has a different 4 bytes leading. Litecoin has a different 4-byte magic. Bitcoin cash has the same magic, but they claim they're going to change to a different magic. 2x tries to pretend it's Bitcoin...
 
@@ -118,7 +118,7 @@ So here's an example header. Those first four bytes are always the same network 
 
 Does that make sense? Pretty simple format.
 
-# Message types
+## Message types
 
 There are two really kinds of messages on the network. There are control messages, and there are inventory or data messages. Let's look at the most important control messages, and probably the most important is a version, version VERACK handshake. Every new connection on the network starts with this handshake. I connect to a peer. I send him a version. He sends me a VERACK. He sends me his version. I send him a VERACK. That's a handshake. It's used by nodes to exchange information about themselves.
 
@@ -152,7 +152,7 @@ Just quickly spinning through the other control messages. VERACK as a response t
 
 To answer your question, how do we propagate a transaction across this network? Well, new transactions are announced with an INV message. That stands for inventory, which means we have new inventory to share. That contains a transaction ID. That's the hash of the transaction, excluding the witness, which is the unique identifier for that transaction. INVs can also be used to propagate blocks, but that's not so common these days. Originally, that's how blocks were propagated, but not so anymore. If the receiving node wants that transaction, if it hasn't seen it before, it sends a GETDATA saying, "Yep, send me that transaction." And then the announcing node will send a TX message, so it looks like that. Pretty simple. The transmitting node sends an INV, the receiving node wants that transaction, so it sends a GETDATA, and the transmitting node sends a TX. Make sense? Pretty easy.
 
-# Block Propagation
+## Block Propagation
 
 That's transaction blocks. How do we propagate those? Initially, they were propagating the same way as transactions INV-GETDATA-BLOCK. In v0.10.0,  we introduced what's called headers first syncing. In v0.12.0, we introduced SENDHEADERS. V0.13.0, introduced compact blocks. V0.14.0, high bandwidth compact blocks, and all of this is an effort to make block propagation faster and more efficient. Block propagation is really important. The faster blocks propagate across the network, the lower the stale block rate, and the more healthy the system runs. Transactions, it doesn't matter if they get delayed a bit, but blocks really need to get across the network more quickly. That's why there's a parallel network called FIBRE, that Matt Corallo maintains as a way of transmitting and propagating blocks really fast -- speed of light fast.
 
@@ -160,7 +160,7 @@ So let's talk about some of those block propagation methods. Headers-first is wh
 
 John: Any questions about SENDHEADERS? SENDHEADERS was the next step along, and that was a new control message in v12, protocol version 70012. It's sent immediately after the VERSION  handshake. So you do your VERSION handshake with your peer, and then you say SENDHEADERS. It indicates that I want you to send me headers without sending the INV first. That saves us one round-trip, saves us the INV-GETHEADERS round trip, and that's formally defined in BIP 130, if you want to look up the definition. So after v12 that's what it looks like. So in the headers, the receiving node sends back a GETDATA and the transmitting node sends a block.
 
-# Compact blocks
+## Compact blocks
 
 What about compact blocks? Compact blocks reduce even more than the round-trip time the bandwidth for propagating blocks, and it relies on this observation that if you're on the peer-to-peer network and you're receiving transactions and blocks when you receive the block, you've probably seen most of the transactions in that block already because you saw them when they entered your mempool. You saw them when they were propagated around before they got in a block. It's enabled in a similar way to SENDHEADERS. There's a SENDCMPCT message similar to SENDHEADERS sent immediately after the VERSION handshake, and it's defined in BIP 152.
 
@@ -182,7 +182,7 @@ Audience member: Is there anything being done to mitigate latency and getting ar
 
 John: FIBRE, I think FIBRE would do that. Probably. Again it's not something I know a great deal about.
 
-# Mempool
+## Mempool
 
 I'm going to talk about a mempool. So I'm going to have to rush a bit to get through this. I'm going to talk about what a mempool is. I'm going to talk about limiting and eviction in the mempool and then like this grab bag of topics about things that connect to the mempool. Replace-by-fee, signature caching, script caching. Going to talk a little bit more about compact blocks, and then I'll touch on fee estimation. All of those topics down there somehow interact with the mempool in some way.
 
@@ -206,7 +206,7 @@ The fee rate calculation is done based on a package, and when we say package, we
 
 There's another dimension to this. There's something called FEEFILTER, and that's my node saying to my peer, I'm no longer interested in transactions paying lower than this fee rate because I won't accept it to my mempool. So I say, "I'm not interested in transactions to pay less than five Satoshi's per byte because my mempool won't accept them anyway," and that's defined in BIP 133. Any questions about that?
 
-# Replace-by-Fee
+## Replace-by-Fee
 
 Replace-by-fee is a way of unsticking your transaction. Say you send a transaction out to Bitcoin with a low fee or with a certain level of fee and the fee rate on blocks goes up, miners probably won't include your transaction because there are better paying transactions out there, and so it kind of gets stuck in this limbo in the mempool. Replaced by fee is a way of unsticking it. We replace the old transaction with a new version with a higher transaction fee. Like I said earlier, a miner can choose to include any version of a transaction. The mempool is not consensus critical. The mempool is not canonical. A miner couldn't choose which transaction they include, but as I said, most nodes won't allow transactions to be replaced in the mempool, in general. That's kind of the general rule.
 
@@ -218,13 +218,13 @@ There are a few conditions attached to that. Replace-by-fee could potentially be
 
 So there are conditions attached to replace-by-fee. The first condition is it has to have this sequence number lower than that. The replacement needs to have a higher fee. I can't replace it by a lower fee, so I need to keep bumping up the fee. The replacement doesn't contain any new unconfirmed inputs, and the replacement pays for its own bandwidth. So the delta between the old transaction and new transaction needs to be at least some level, some number of Satoshi per byte, 500 Satoshi, or something like that. The replacement does not replace more than 100 transactions. Any questions about RBF?
 
-# Signature Caching
+## Signature Caching
 
 Next, I'm going to talk about signature caching. There are a few signatures, I don't know if you recognize any of those signatures. As I said earlier, transactions, in general, are seen twice if you're a fully connected node on the Bitcoin network. You'll see them once when they're broadcast by the signing user and sent across the network. And then you'll see them the second time when they're included in a block. So obviously, there's an optimization here. Rather than fully validate a transaction twice, you can partially cache the result of that transaction the first time. So when you see it in a block, you don't have to do all of that transaction validation again. It means that block propagation is a lot faster because you don't need to fully validate all of the transactions in the block.
 
 Signature validation, that ECDSA stuff that Jimmy talked about earlier where you're validating an ECDSA signature that's really expensive. You've got to do a lot of elliptic curve additions, and it takes a long, long time, a lot of computing power. So, each transaction input usually includes at least one signature. Instead of evaluating those signatures twice just keep a cache of those signature validations evaluations and that was added in a Bitcoin Core quite a long time ago 0.7.
 
-# Script Caching
+## Script Caching
 
 There's a new, better version of script caching. Instead of just caching the signature validation,  in script caching we cache the validity of the entire script in input. Because a Bitcoin script is context-free, if it's true now it'll be true forever, independent of any contextual information. So we cache the validity of the entire script sig evaluation, and that was added in 0.15, which came out in July.
 
@@ -236,13 +236,13 @@ So why don't we just cache the entire transaction? Well, because transactions ar
 
 So why am I talking about this now? Because obviously, this requires a mempool. It requires that you've seen a transaction before you see the block, so that's how it links back into the mempool. And you get more benefit from this the longer you've been online. As your cache fills up by seeing more transactions, by the time the block arrives, you would have seen a higher percentage of those transactions in the block. So the longer you're online, the better this cache will be functioning. Obviously, a `-blocksonly` node will not benefit from this. It's like front-loading the validation of a block because you're partially validating a block before you even see it. You're validating the transactions in that block before you even receive it.
 
-# Compact blocks
+## Compact blocks
 
 A bit more about compact blocks, and again this will link into mempool somehow. Compact block saves propagation, bandwidth, and time as I said earlier. The way it does that is it doesn't include all of the raw transactions, the serialized transactions when it transmits a block. That's defined in BIP 152. It was introduced in, I think, in version 12 or 13. There's low bandwidth that will save on block propagation bandwidth but not necessarily on time.  And in high bandwidth, which is what really saves on block propagation time.
 
 Why is this interesting in terms of the mempool? Well, we receive a compact block that doesn't contain all of the full transactions. The way that works is a transmitting node thinks, "this receiving node already has these transactions in its mempool. It's already seen them, so I don't need to include them in a block. It refers to transactions by a shortid. That's a 6-byte digest using this kind of this SipHash-2-4 algorithm, and then the receiving node will take those shortids and see if they map to transactions in its mempool and try and reconstruct that block itself. You're saving a little bandwidth, and potentially, you're saving time. If you're missing any transactions, if there are any gaps in your mempool, you can send a GETBLOCKTXN back saying, "I've got some gaps. Can you help me fill them in?" So that requires a mempool, right? It requires that you've got this collection of transactions already in your mempool. Any questions?
 
-# Fee Estimation
+## Fee Estimation
 
 In Bitcoin, your transactions all have fees. You're in some kind of competition with other users of the system to get your transaction into a block. The way you differentiate yourself from other transactions, the way you induce miners to include your transaction in a block, is to include a big fee -- an appropriate fee for how urgent your need is. That's how miners choose which transaction to include, and the prevailing fee rate can change quite a lot. We've seen this recently. We've seen it go up quite a bit and then down, then up. It depends on a lot of factors, but it comes down to how much demand there is for the supply of block space. So estimating how much fee you need is quite difficult. It's a dynamic system. What you do or what some people do affects what other people do. The past is not necessarily indicative of what will happen in the future. It's an estimate.
 
