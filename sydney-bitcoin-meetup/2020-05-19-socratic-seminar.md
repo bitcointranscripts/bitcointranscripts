@@ -2,7 +2,7 @@
 title: Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['multisig', 'mempool']
+tags: ['multisig', 'fee-management']
 date: 2020-05-19
 ---
 
@@ -18,7 +18,7 @@ Google Doc of the resources discussed: https://docs.google.com/document/d/1hCTlQ
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# 0xB10C blog post on mempool observations
+## 0xB10C blog post on mempool observations
 
 https://b10c.me/mempool-observations/2-bitmex-broadcast-13-utc/
 
@@ -42,7 +42,7 @@ I am not sure. Typically if you estimate fee rates you say “I want to be inclu
 
 It is a really great blog post. It strikes a nice balance between really going into the detail but actually explaining things in a way that is easy for the layman to understand.
 
-# Fabian Jahr blog post on “Where are the coins?”
+## Fabian Jahr blog post on “Where are the coins?”
 
 https://medium.com/okcoin-blog/btc-developer-asks-where-are-the-coins-8ea70b1734f4
 
@@ -68,7 +68,7 @@ It says we will enforce BIP 30 every time unless the height is one of these part
 
 This rule applies to every block apart from these two blocks.
 
-# PTLCs (lightning-dev mailing list)
+## PTLCs (lightning-dev mailing list)
 
 https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-April/002647.html
 
@@ -84,7 +84,7 @@ There was a question on IRC yesterday about a specific mailing list post on one 
 
 The short story is that Andrew Poelstra invented the adaptor signature. Then Pedro Moreno-Sanchez invented the ECDSA one. When he explained it he only explained it with a two party protocol. What I did is say we can simplify this to a single signer one. This doesn’t give you all the benefits but it makes far simpler and much more practical for use in Bitcoin today. That was that mailing list [post](https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-November/002316.html). It seems solid to me. There might be some minor things that might change but from a security perspective it passes all the things that I would look for. I implemented it myself and I made several mistakes. When I looked at whether Jonas Nick had made the same mistakes, he didn’t. He managed to do all that in a hackathon, very impressive.
 
-# On the scalability issues of onboarding millions of LN clients (lightning-dev mailing list)
+## On the scalability issues of onboarding millions of LN clients (lightning-dev mailing list)
 
 https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-May/002678.html
 
@@ -182,7 +182,7 @@ I am still a random person for them. Maybe they saw me once or twice at a confer
 
 This is where you need to have a ladder. It is much better people are going “I am connecting to this guy’s node. He is serving me filters” than none of the options apart from a full node are there and therefore I am just going to trust Coinbase or Kraken to deal with it. I am not going to worry about how my balance is being verified. The situation that you describe is superior to custodial. And it is a long journey. As long people understand what they are doing you can see in 5, 10 years they are like “I don’t want to trust this guy’s node anymore. I don’t want to have filters served from this guy’s node. I am going to run my own node.” You have given them a stepping stone towards running a full node that wouldn’t have been there if you had ditched all the superior light client options.
 
-# RFC: Rust code integration into Bitcoin Core
+## RFC: Rust code integration into Bitcoin Core
 
 https://github.com/bitcoin/bitcoin/issues/17090
 
@@ -248,7 +248,7 @@ We haven’t talked much about the promise of Rust. Rust is really exciting. Def
 
 If we had managed to have a Core dev meetup earlier this year, we didn’t because it got cancelled, I’m sure that would have been one of the things very much discussed in person. We’ll wait and see.
 
-# Dual funding in c-lightning
+## Dual funding in c-lightning
 
 https://github.com/ElementsProject/lightning/pull/3418
 
@@ -286,7 +286,7 @@ I would have thought it would be harder to engineer if you are modifying your da
 
 The protocol ends up being an alternating protocol where you say “I have nothing further to add and I’m finished.” You end up ping ponging back and forth. It came out of this research on figuring out how to coordinate multiple of these at once. Not that we are planning to implement that but we wanted to make sure it was possible to do that. That does add some complexity to the protocol. The rule is you don’t check at the end. Obviously they need to have enough inputs to fund the channel that they’ve promised and stuff like that. But they might need to change an input and remove a UTXO and use a different one. Then they would delete one and add another. That is completely legal even though at some point it could be a transaction with zero inputs. It is only when it is finalized that you do all the checks. It is not that hard as long as it is carefully specified. Says he who hasn’t implemented it yet. That’s one of the reasons we implement it to see if it is a dumb idea.
 
-# Bitcoin Core MacOS functional tests failing intermittently
+## Bitcoin Core MacOS functional tests failing intermittently
 
 https://github.com/bitcoin/bitcoin/issues/18794
 
@@ -296,7 +296,7 @@ Two elements. One, an update on the state of functional tests in Core. The other
 
 I think we have got the functional tests fairly nailed down on Mac OS now. Especially over the past 18-24 months Mac OS has turned into a horrible operating system to use for a lot of stuff we are doing. It comes pre-installed with lots of really old versions of tools like make 3.8. It has got Apple clang by default that is a version of some upstream LLVM clang with a bunch of Apple stuff hacked in. We spent a lot of time working around in our build system. There were issues with the fuzzers as well. I patched some of those. That was linking issues. Or the alternative to throw away Apple clang and use a proper LLVM clang 10 or whatever is the latest release. It works now. I don’t think our docs are entirely correct. There are a few command line flags, there is a flag in there telling people to disable the AS assembly optimizations. I don’t think that is required for Mac OS specifically for any reason. That will work but if you want to do a lot of fuzzing or have something that continuously runs a lot of the functional and unit tests for Core spin up a Linux instance somewhere preferably a recent Ubuntu 20 or Debian 10/11. Run them on there instead. On the CI more generally, we have obviously used Travis for a long time with sometimes good success, other times worse success. I think Marco (Falke) has got to the point where he got fed up with Travis and has really genericized a lot of our CI infrastructure so you can run it wherever you want. I know he runs it on Cirrus and something else as well regularly. He has a btc_nightly [repo](https://github.com/MarcoFalke/btc_nightly) with scripts for doing that that you can fork and use as well. Continual issues with Travis with certain builds running out of disk space. We reported this 4 or 5 months ago and we still haven’t got answers about why it happens. Maybe we will migrate to something else. Anytime it comes up, do we pay for something else and where are we going to migrate to? We don’t want to end up on something worse than what we have currently have.
 
-# Modern soft fork activation
+## Modern soft fork activation
 
 https://twitter.com/LukeDashjr/status/1260598347322265600?s=20
 
@@ -314,7 +314,7 @@ If miners dragged their heels or they don’t want to proceed with it one method
 
 Yes. I don’t think there is any reason we can’t be prepared to do both. Set it up so that we’ll have this one year and this other year and at the end of two years it will definitely be activated as long as it seems sensible. If it is taking too long we can have the emergency and do the exact same thing we did with BIP 148 and force signaling earlier. They are not necessarily incompatible ideas either.
 
-# AltNet, a pluggable framework for alternative transports
+## AltNet, a pluggable framework for alternative transports
 
 https://github.com/bitcoin/bitcoin/pull/18988
 
@@ -336,7 +336,7 @@ What benefits do you see from this? Would it enable different methods of communi
 
 I would have to think about it more and how it is going to be implemented. How does this AltNet play together with the main actual net. I don’t have a model in my head right now how that would work. I would need to think about it.
 
-# secp256kfun
+## secp256kfun
 
 https://github.com/LLFourn/secp256kfun
 

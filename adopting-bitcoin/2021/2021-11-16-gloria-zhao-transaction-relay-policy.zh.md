@@ -4,7 +4,7 @@ speakers: ['Gloria Zhao']
 date: 2021-11-16
 transcript_by: Michael Folkson
 categories: ['conference']
-tags: ['P2P', 'mempool']
+tags: ['transaction-relay-policy']
 media: https://www.youtube.com/watch?v=fbWSQvJjKFs
 translation_by: Ajian
 ---
