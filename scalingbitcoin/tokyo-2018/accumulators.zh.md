@@ -1,10 +1,12 @@
 ---
-title: Accumulators
+title: "A Scalable Drop in Replacement for Merkle Trees"
 transcript_by: Bryan Bishop
 translation_by: Ajian
 categories: ['conference']
-tags: ['merkle trees', 'accumulators']
-speakers: ['Benedikt Bünz', 'Benjamin Fisch', 'Dan Boneh']
+tags: ['accumulators']
+speakers: ['Benedikt Bünz']
+date: 2018-10-06
+media: https://www.youtube.com/watch?v=IMzLa9B1_3E&t=3520
 ---
 
 一种马上可用且可扩展的默克尔树替代品

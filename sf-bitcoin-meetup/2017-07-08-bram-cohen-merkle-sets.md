@@ -1,24 +1,21 @@
 ---
-title: Merkle Sets
+title: "Merkle Set Data Structures for Scaling Bitcoin"
 transcript_by: Bryan Bishop
 categories: ['meetup']
 speakers: ['Bram Cohen']
-tags: ['merkle trees']
+tags: ['cryptography']
 date: 2017-07-08
 media: https://www.youtube.com/watch?v=52FVkHlCh7Y
 ---
-
-Merkle set data structures for scaling bitcoin
-
 code: <https://github.com/bramcohen/MerkleSet>
 
 <https://twitter.com/kanzure/status/888836850529558531>
 
-# Introduction
+## Introduction
 
 There's been a fair amount of talk about putting <a href="http://diyhpl.us/~bryan/irc/bitcoin/utxo-commitments-or-fraud-proofs.stdout.txt">UTXO commitments</a> in bitcoin blocks. Whether this is a good idea or not, but on the off-chance that it might be a good idea, I spent a fair amount of time thinking and actually good merkle set implementation whic his what you you need to put utxo set commitments in bitcoin blocks. There are other benefits to this, in that there are actually a million and one uses for merkle sets in general, and it's actually a general interesting problem and it performs well. So I figured I would make it, and if it's not useful to me, then it might be useful to someone anyway.
 
-# High-performance merkle set implementation
+## High-performance merkle set implementation
 
 Okay, so. Merkle set. For those of you who aren't aware, this is sometimes-- sometimes people call it a hash set, based on hash tree, and then Ralph Merkle gets really mad at you. Since he's still alive, we still call them merkle trees. A merkle set is a set which contains arrays of bytes, it keeps track of its merkle root. All the things at the terminal things are the things contained in the set, in the middle are summaries, and then the root. You can use the root to prove, for someone who has the root, to prove whether something is or is not in the set.
 
@@ -30,7 +27,7 @@ So I'm using a patricia trie. There's a number of subtle different ways of makin
 
 There's one more trick that's actually part of the semantics of this that I came up with, which is that if you have only two things below a particular point, and it's empty on the other side, you do a pass-through. If you look at the bottom here, there's 2 terminals, so the thing that has those 2 terminals children has to do a calculation to figure out the root value there. Above that, there's something where the other side is empty, so that does a "pass-through" because the other side is empty and it only has those 2 values. And then there's another layer that is also empty on the other side, so it does a pass-through. At the top of my diagram, there's a layer where there's no empty on the other side, so it has to  do the tree. The other one has an empty at the very top of the tree, but it doesn't work out because there's hashing to be done there. So this gets rid of a lot of the hashing. It's a substantial optimization and it's worth doing.
 
-# Reinventing memory management for fun and profit
+## Reinventing memory management for fun and profit
 
 I have on github a merkle set git repository which is an implementation of this. It's in python, which is ridiculous. It needs to be ported to C soon. That has a reference implementation which is very straightforward, and a high performance implementation that isn't high performance yet. There are subtleties to what the performance needs are. In modern architectures, you spend all of your time waiting for memory. The exact subtleties of how that works aren't clear. When you're accessing memory, you want to get things near each other all together. In the extreme version, it's a physical hard drive where a seek is expensive but reading everything at once isn't an issue. In SSD this is less so, but it continues up the memory hierarchy. So you have to arrange things that are near each other are near each other in memory.
 
@@ -88,7 +85,7 @@ Q: Your block structure doesn't change the resulting root hash?
 
 A: Yeah. The block structure does not change the root hash whatsoever. I implemented this as a very simple reference implementation which is quite straightforward. It has some nice properties. If you are doing things with lots of fallbacks, and you want to keep lots of roots without copying everything over, everything is immutable in it. The performant one-- everything is really mutable and if you want to get back you have to rollback. They do absolutely the same exact thing, and I have extensive tests, the way these tests work is that they have just a random bunch of strings and they repeatedly add one string at a time and they report the root each time and they make sure everything added is still there, and everything added isn't there yet, and then deletes them one at a time and works its way back. Once it has tested the reference implementation, it does this for other parameters including fairly degenerate ones, for the performant one. I found a lot of bugs. It has 98% code coverage with a fairly small amount of test code.
 
-# TXO bitfields
+## TXO bitfields
 
 Any more questions? Okay, something that I am fairly sure will be controversial. Unfortunately the <a href="https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev">bitcoin-dev mailing list</a> has got completely drowned in discussions of subtleties of upgrade paths recently (laughter). So there hasn't been too much discussion of real engineering, much to my dismay. But, so, using a merkle set is kind of a blunt hammer, all problems can be solved with a merkle set. And maybe in some cases, something a little bit more white box, that knows a little bit more about what's going on under the hood, might perform better. So here's a thought. My merkle set proposal has an implementation with defined behavior. But right now, the way things work, you implicitly have a UTXO set, and a wallet has a private key, it generates a transaction, sends it to a full node that has a UTXO set so that it can validate the transaction, and the UTXO set size is approximately the number of things in the UTXO set multiplied by 32 bytes. So the number over here is kind of big and you might want it to be smaller.
 
@@ -180,7 +177,7 @@ A: It doesn't have to be per block. I like per block, because it's a good idea f
 
 Q: But we already have linear amount of data from the blocks that are available. I agree.
 
-# Other links
+## Other links
 
 delayed txo commitments <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012715.html>
 
