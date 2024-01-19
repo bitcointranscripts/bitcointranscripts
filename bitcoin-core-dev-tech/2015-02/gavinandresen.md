@@ -2,7 +2,6 @@
 title: Gavinandresen
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['multisig', 'wallet']
 aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/gavinandresen/']
 ---
 

@@ -3,22 +3,22 @@ title: Socratic Seminar 2
 date: 2019-08-22
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['research', 'hardware wallet', 'multisig', 'wallet']
+tags: ['research', 'hardware wallet']
 ---
 
 <https://twitter.com/kanzure/status/1164710800910692353>
 
-# Introduction
+## Introduction
 
 Hello. The idea was to do a more socratic style meetup. This was popularized by Bitdevs NYC and spread to SF. We tried this a few months ago with Jay. The idea is we run through research news, newsletters, podcasters, talk about what happened in the technical bitcoin community. We're going to have different presenters.
 
 Mike Schmidt is going to talk about some optech newsletters that he has been contributing to. Dhruv will talk about Hermit and Shamir secret sharing. Flaxman will teach us how to setup a multisig hardware wallet with Electrum. He is going to show us how you can actually do this and some of these things we have learned. Bryan Bishop will talk about his vaults proposal that was recently made. So ideally we can keep these each to about 10 minutes. They will probably go over a little though. Let's get a lot of audience participation and really interactive.
 
-# Bitcoin Optech newsletters
+## Bitcoin Optech newsletters
 
 I don't have anything prepared, but we can open up some of these links and I can introduce my perspective or what my understanding is. If people have ideas or questions, then just speak up.
 
-# Newsletter 57: Coinjoin and joinmarket
+## Newsletter 57: Coinjoin and joinmarket
 
 <https://bitcoinops.org/en/newsletters/2019/07/31/>
 
@@ -30,7 +30,7 @@ Similar to bitcoin mining, this is sybil resistance by burning energy for proof-
 
 Samurai and Wasabi wallet teams had some interesting discussions. They were talking about address reuse and how much does it really reduce privacy. I don't think it's a resolved issue, they are both still going back and forth attacking each other. For any of these coinjoins, they are all exposed to a certain extent to coinjoin. So there's always tradeoffs. Higher cost, some protection, still not perfect, a company could still be willing to lock up those coins. An interesting thing about that is that it increases the cost for Chainalysis services-- they will have to charge more to their customers; so this strips their margins and maybe we can put them out of business.
 
-# Newsletter 57: signmessage
+## Newsletter 57: signmessage
 
 <https://github.com/bitcoin/bitcoin/issues/16440>
 
@@ -40,7 +40,7 @@ Bitcoin Core has the ability to do signmessage, but this functionality was only 
 
 All you can do with signing is prove that you at some point had that private key. If someone stole your private keys, you can still sign with your private key, but you no longer have the coins. You have to prove that you don't have it; or that someone else doesn't have it. Or that, at the current blockheight, you had the funds. That's the real challenge of proof-of-reserves, most of the proposals are about moving the funds.
 
-# Newsletter 57: Bloom filter discussion
+## Newsletter 57: Bloom filter discussion
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html>
 
@@ -54,11 +54,11 @@ Does anyone use a wallet or is aware that you are using a wallet that is an SPV 
 
 Is the idea that bip57 will be on by default, to replace that? Is Neutrino going to be on by default? It is for btcd. I imagine bitcoind will have something similar. It's just network commands. You store a little bit more locally, with the Neutrino filters. You have to keep track. If there's a coinbase commitment or whatever, you're going to need to check that too. That would have to be a soft-fork.
 
-# Lightning news (Buck Perley)
+## Lightning news (Buck Perley)
 
 I am going to go through the lightning topics on the socratic seminar list. I was on a plane for a few hours yesterday, so I prepared some questions and hopefully we can spark some questions around those.
 
-## Watchtowers
+### Watchtowers
 
 <https://blog.bitmex.com/lightning-network-part-4-all-adopt-the-watchtower/>
 
@@ -88,11 +88,11 @@ Q: One of the arguments is that if the bitcoin fees go way up, you have the bene
 
 A: Yes, but right now it's not a viable business. It could be in the future. Right now, my sense is that you're not making money on the fees, but you're making liquidity and this makes it more viable for your customers to use lightning. So really your business model is more about creating liquidity and helping utility rather than making money. The idea is that people would make fees as watchtowers, routing fees, increasing liquidity, and there's another business model where people can pay for inbound liquidity. Those are the three main lightning network business models that I know about.
 
-## Steady state model for LN
+### Steady state model for LN
 
 <https://github.com/gr-g/ln-steady-state-model>
 
-## LN guide
+### LN guide
 
 <https://blog.lightning.engineering/posts/2019/08/15/routing-quide-1.html>
 
@@ -110,15 +110,15 @@ They have one Loop server. It's basically submarine swaps. It's a tool that leve
 
 They have a mechanism called Loopty Loop where you recursively continue to loop out. You loop funds out, you get on-chained fnuds, you loop out, and you loop out again. You can keep on doing that and get inbound liquidity, but again it's not cheap, and it's not instant. So you're losing some of the benefits of lightning.
 
-## Static channel backups
+### Static channel backups
 
 Lightning Labs was talking about its mobile app now. One of the interesting things about this update was that they have static channel backups to iCloud. I was kind of curious if anyone has thoughts on that. I think it's cool you can do cloud backup for these. It stores the state of the channel, including what the balance is. If your bitcoin node goes down, and you just have your mnemonic, that's fine. But with LN, you have off-chain states where there's no record of it on the blockchain. The only other record is the counterparty but you don't want to trust them. If you don't have backups of your state, your counterparty could publish a theft transaction and you wouldn't know about it. You might accidentally publish an old state too, which will give your counterparty a chance to steal all the funds in the channel, which is anothe rthing that eltoo can prevent. If you have the app on iOS, you're automatically updating these things and you don't have to worry about it, but you're trusting Apple iCloud.
 
-## Suredbits playground
+### Suredbits playground
 
 This is-- this lets you pay lightning micropayments for, you can pay for spot prices, or NBA stats, and if I were to press something... basically, it's paying for an API call for small requests. So it would be like almost an AWS on demand, that's how I think about it.
 
-## Boltwall
+### Boltwall
 
 <https://github.com/Tierion/boltwall>
 
@@ -130,7 +130,7 @@ Q: Why time based, instead of paying for a request?
 
 A: It depends on the market. Rather than saying I'm paying for a single request, you could say instead of the back-and-forth handshake, you get access for 30 seconds and be done with it until the time expires. I built a proof-of-concept application that is like a yalls (which is like a medium.com) for reading content where rather than paying a bulk amount for a piece of content, you say oh I'm going to pay for 30 seconds and see if you want to keep reading based on that. It allows for more flexible pricing mechanisms where you can have a lot more fine grained price discrimination based off of the demand.
 
-# Hardware wallet rant
+## Hardware wallet rant
 
 <https://stephanlivera.com/episode/97/>
 
@@ -180,7 +180,7 @@ A: I think so. But only way to know is to do it.
 
 A: I was talking with instagibbs who has been working on HWI. He says the trezor receives a template for what is the change address; it doesn't do any verification to define what is change, it just trusts what the client says. So it might not be better than a Ledger. It just trusts what the hot machine knew. Ledger seems to do a better job because-- the trezor could be hiding the--- Coldcard is clearly doing the best job, so you can teach it about the xpubs and it can make the assertion for itself without having to trust others.
 
-# Vaults (Bryan Bishop)
+## Vaults (Bryan Bishop)
 
 Cool, thanks for describing that.
 
@@ -190,7 +190,7 @@ Cool, thanks for describing that.
 
 <https://bitcoinmagazine.com/articles/revamped-idea-bitcoin-vaults-may-end-exchange-hacks-good>
 
-# Hermit
+## Hermit
 
 <https://github.com/unchained-capital/hermit>
 
@@ -231,6 +231,6 @@ A: Correct, it's unlocking all shards together in memory at one location and the
 
 Trezor claims that they will support SLIP 39 by the end of the summer, which is really interesting because you can recover shards one at a time in a Trezor and just walk around to each shard and collect those and get the full secret.
 
-# Jimmy stuff
+## Jimmy stuff
 
 Last but not least, Jimmy has something to sell us. This is the little bitcoin book. It's available on Amazon right now. I had seven coauthors on this. We wrote the book in four days, which was a really fun experience. It's meant for someone who doesn't know anything about bitcoin. It's a very short read, at 115 pages. About 30 pages of those are Q&A. Another 10 are glossary and things like that. So it's really more like 75 pages that you can read pretty quickly. We had in mind a person that doesn't know anything about bitcoin. I have given this book to my wife who doesn't know much about what's going on; it's meant to be that sort of book that is understandbale. The first chapter is, "what is wrong with money today?" and what's going on with the current system? Doesn't mention bitcoin once, and then it goes to what is bitcoin. We tell the story of the Lehman bank and talk about what drove Satoshi to build bitcoin. The other chapter is about price and volatility. We asked a lot of people that we knew that didn't know about bitcoin, they ask what is it backed by? Why does it have a market price? Chapter four is about why bitcoin matters for human rights and this is just talking about it globally and why it matters right now. There's a very Silicon Valley centric perspective on bitcoin which is that it's going to disrupt or whatever, but there's real people right now that are benefiting from bitcoin that did not have financial tools or bank accounts available before. Right now there are people escaping from Venezuela for bitcoin. There's a discount of bitcoin in Colombia right now, because there's so many refugees coming out of Venezuela with their wealth in bitcoin and they sell it immediately in Colombia to get started on their new life. There are cab drivers in Iran asking me about bitcoin. This is a real thing, guys. Getting that global perspective is a big goal of this book. Chapter five is a tale of two futures and this is where we speculate about what the future would be like without bitcoin, and then what the future would be like with bitcoin. Lastly, so that's where the book ends, and then we have a bunch of Q&A and stuff that you might want to know about. There's questions like, who is Satoshi? Who controls bitcoin? Isn't it too volatile? How can it be trusted? Why have so many exchanges been hacked? There's a whole section on the energy question. All kinds of stuff like that. Additional resources, like lopp's page, podcasts, books, websites, things like that. I am going to probably send this with my Christmas cards or something. Half my friends have no idea what I am doing here. This is my way of informing them. It's number on Amazon for the category of digital currencies.

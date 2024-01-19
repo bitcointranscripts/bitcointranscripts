@@ -2,7 +2,6 @@
 title: Topics
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'multisig']
 ---
 
 Rebooting Web of Trust topic selection

@@ -2,7 +2,7 @@
 title: State Of Multisig
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'multisig', 'wallet']
+tags: ['psbt']
 speakers: ['Justin Moon']
 media: https://www.youtube.com/watch?v=xrReq7V7oJU
 ---

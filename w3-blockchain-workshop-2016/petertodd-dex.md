@@ -1,8 +1,8 @@
 ---
-title: Petertodd Dex
+title: "Dex: Deterministic Predicate Expressions for Smarter Signatures"
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['multisig']
+tags: ['research']
 speakers: ['Peter Todd']
 ---
 

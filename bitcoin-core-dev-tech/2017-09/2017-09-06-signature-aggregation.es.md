@@ -3,7 +3,7 @@ title: Agregación de firmas
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['validación', 'multisig']
+tags: ['signature-aggregation']
 date: 2017-09-06
 aliases: ['/es/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/']
 ---

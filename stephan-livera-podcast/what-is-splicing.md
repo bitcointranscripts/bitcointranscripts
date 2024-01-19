@@ -2,12 +2,11 @@
 title: What is splicing?
 transcript_by: adamjonas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=C-jpZePiAcQ
-tags: ["multisig"]
+tags: ["splicing"]
 speakers: ["Stephan Livera","Dusty Daemon"]
 categories: ["podcast"]
 date: 2023-07-10
 ---
-
 Stephan Livera 00:02:14
 
 Dusty welcome to the show hey thanks for having me yeah I'm a fan of what you got what you're doing with splicing and obviously it's been great to see you over the years kind of or in and around the Bitcoin and Lightning circles and yeah I love what you're doing with flashing so let's hear a little bit about you just for people who don't know you just a little bit on you

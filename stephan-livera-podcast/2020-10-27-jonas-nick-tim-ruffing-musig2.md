@@ -3,15 +3,10 @@ title: MuSig, MuSig-DN and MuSig2
 transcript_by: Michael Folkson
 speakers: ['Jonas Nick', 'Tim Ruffing']
 categories: ['podcast']
-tags: ['schnorr', 'multisig', 'taproot']
+tags: ['musig']
 date: 2020-10-27
 media: https://stephanlivera.com/episode/222/
 ---
-
-Topic: MuSig, MuSig-DN and MuSig2
-
-Location: Stephan Livera Podcast
-
 Tim Ruffing on Schnorr multisig at London Bitcoin Devs: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-17-tim-ruffing-schnorr-multisig/
 
 MuSig paper: https://eprint.iacr.org/2018/068.pdf
@@ -30,7 +25,7 @@ MuSig2 blog post: https://medium.com/blockstream/musig2-simple-two-round-schnorr
 
 Transcript completed by: Stephan Livera Edited by: Michael Folkson
 
-# Intro
+## Intro
 
 Stephan Livera (SL): Jonas and Tim, welcome to the show.
 
@@ -46,13 +41,13 @@ SL: And Tim let’s hear a little bit from you.
 
 TR: My name is Tim Ruffing. I’m in Germany like Jonas is. I got into cryptography in the traditional academic way. I did my PhD in the particular cryptography in Bitcoin at Saarland University. The title of my [dissertation](https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/29102/1/ruffing2019.pdf) was “Cryptography For Bitcoin and Friends”. During that time I mostly worked on privacy in Bitcoin and now that I’m in the research team at Blockstream I work a lot on signatures in particular, all the stuff you’re hopefully going to talk about today like MuSig, multisignature, threshold signatures, basically everything that’s related to Schnorr signatures.
 
-# The Taproot soft fork
+## The Taproot soft fork
 
 SL: So the context for today. We’ve got this coming soft fork that basically everyone wants in Bitcoin, the Schnorr or colloquially the Taproot soft fork. What’s the relation between Schnorr, Taproot and then MuSig and multisignature. Perhaps Jonas, if you want to just set the context for us.
 
 JN: So Taproot is this new witness program version that we will have hopefully after the activation. So instead of having a SegWit v0 output you will have a SegWit v1 output. What this means is that now you have different ways of spending this coin and one of these ways is to provide a Schnorr signature. This is how BIP-Schnorr (BIP 340) relates to BIP-Taproot (BIP 341). This is an upgrade to how this works right now with ECDSA signatures because Schnorr signatures are a little bit simpler and allow a few more applications on top of that. MuSig is the idea of making multisignatures compact in Bitcoin. Right now in Bitcoin you have this CHECKMULTISIG opcode but calling this a multisignature is perhaps a little bit of a stretch because it’s not really compact. You just write down all the public keys and all the signatures and then you verify them one by one. What you really want is that this is all efficient, you have a single signature and a single public key but your policy is still a multisignature. This is the idea behind MuSig for Schnorr signatures.
 
-# Multisignature and threshold signatures
+## Multisignature and threshold signatures
 
 SL: To spell that out for listeners who might not be familiar. Current day multisignature relies on using Bitcoin scripting. Let’s say we’re doing a 2-of-3 multisignature output. Then we have to actually show two signatures. In the Taproot world we’ll be moving to a Taproot key path spend where we can construct a multisignature, let’s say between the three of us, and onchain you can only see one signature.
 
@@ -64,13 +59,13 @@ TR: Yeah. I think that is an important difference in the terminology. When you t
 
 SL: That’s the difference between threshold signatures and multisignature when we’re talking in the academic context. Perhaps you could outline this journey, there are different forms of MuSig. There’s MuSig1, MuSig-DN and MuSig2. Could you spell out for us what are the differences between those different types?
 
-# History of MuSig
+## History of MuSig
 
 JN: Tim, you’re the expert on the history of MuSig.
 
 TR: Let’s go a step back and see what was there before MuSig because there’s an interesting story to tell there. One of the main reasons to get Schnorr signatures into Bitcoin is you can build a lot of things easier with Schnorr signatures than with ECDSA. For example, multisignature and threshold signatures and other advanced types of signatures, scriptless scripts, things like that. So all of these are somewhat nicer with Schnorr signatures because the math around Schnorr signatures is easier. Some years ago people like Andrew Poelstra, Pieter Wuille, Greg Maxwell thought about doing multisignatures with Schnorr. They came up with a scheme and their main challenge was to avoid an attack called rogue key attack, others call it key cancellation attack. Let’s say we do a 3-of-3 among us here. I publish my public key and Stephan publishes his key. Jonas is the attacker, he looks at our keys and chooses his key depending on our keys. If we do this in a naive way then the resulting key, the multisignature key that should represent all of us would actually only represent him. So Jonas could sign alone with this key which is totally not the goal of multisignatures of course. This is really just cancellation. If we add up the keys and Jonas chose the key in a pretty way then our keys just subtract out again, they’re gone. He could sign alone. Of course it’s not what we want. So those people thought they had a solution to to this problem. What they came up with was really a solution for that problem but it had another issue too. This issue is Wagner’s attack. Maybe we will come to that later. I don’t want to go into the details of this now because then the story will be even longer. They tried to publish, tried to write this up in a paper and publish it. Then people pointed them to existing work in the literature that didn’t solve this problem but solved the other problem, Wagner’s attack. The story continued. They got together with the co-author, Yannick Seurin from France who is a brilliant cryptographer I’d say. He was happy to have them write up  a scheme that is basically the combination of the two worlds that solve both problems. This was the old version of MuSig1. When I say old version, I mean like an insecure version, because even they screwed up again. In this other work they pointed to, this paper by Bellare and Neven (2006). For multisignatures you need an interactive signing procedure. All the signers need to talk to each other when they generate the signature. The process in this paper had three rounds. They needed to send three messages to each other. Yannick (Seurin) had the idea of improving that to two rounds. Unfortunately this idea was flawed. So we had to revert back to three rounds and this is MuSig1 which avoids the key cancellation attack.
 
-# MuSig interactivity
+## MuSig interactivity
 
 SL: Can we unpack the idea of interactivity? So as I understand multisignatures or threshold signatures today is non-interactive. The three of us can put in a xpub each and create this multisignature. What is the interactivity part in the MuSig context?
 
@@ -94,7 +89,7 @@ JN: But they didn’t prove that you cannot prove another scheme is secure. Then
 
 TR: I think this is where it really started with MuSig-DN then.
 
-# MuSig-DN
+## MuSig-DN
 
 MuSig-DN paper: https://eprint.iacr.org/2020/1057.pdf
 
@@ -130,7 +125,7 @@ JN: These hardware wallet devices, they have very different specs. They do diffe
 
 TR: Let me stress that because people tend to forget about this. MuSig-DN removes one possibility to shoot yourself in the foot. It removes this reliance on the random number generator. On the other hand it is much more complex than what we did in MuSig1 for example in terms of engineering complexity. Building the secure zero knowledge proof and implementing it correctly is pretty complicated. Of course you can get it right. Software has bugs. I don’t have a measure on the lines of code of the zero knowledge proof as compared to the rest of the signing. I think the difference is large. Maybe 10x this is just a guess. If you have 10x lines of code it is much easier to make a mistake. We really need to work on the careful implementation of MuSig-DN before it’s really ready to be used in practice and we can trust it.
 
-# MuSig-DN use cases
+## MuSig-DN use cases
 
 SL: What kind of business or what kind of use case would that make sense for? A Bitcoin exchange wants to have a warm wallet and they would use MuSig-DN to distribute that? What kind of example uses would you see for MuSig-DN?
 
@@ -140,7 +135,7 @@ TR: One thing we could add here, maybe you can see this as a intermediate step. 
 
 JN: To give an example, for Lightning it’s not a problem to keep state because it can keep the state in memory. If your program aborts or crashes then just do a completely new signing session. The same holds for federated sidechains and also Blockstream Green.
 
-# MuSig2
+## MuSig2
 
 MuSig2 paper: https://eprint.iacr.org/2020/1261.pdf
 
@@ -160,7 +155,7 @@ SL: Can you tell us more about MuSig2 and how it would look and what’s involve
 
 TR: If you look at applications where we really envision this to be used is protocols like Lightning. Currently you are in a Lightning channel between two parties, they run a multisignature, they do this using the naive thing with Bitcoin script. This is a scenario where we want MuSig to be used because it’s now efficient. You don’t need this additional round trip because it’s only two rounds. You can pre-process the first round. When you set up the channel you can already do the pre-processing. If you want to send some money over the channel only then you get the message you want to sign. Then it’s basically one additional message on the network to create the signature. If you want to differentiate this with MuSig-DN, it’s really simple and lightweight. This is something you can write into a specification for Lightning for example. In theory you could use something like MuSig-DN in Lightning but you probably wouldn’t want to have this in the spec because MuSig-DN only works if everybody is using this deterministic nonce that we explained earlier. You would put the burden of running the expensive zero knowledge proofs on everybody. It is probably not something you can agree on. But MuSig2 is simple enough that I hope that people can agree on using this in Lightning and other higher level protocols, discreet log contracts and other things you can build with Schnorr signatures.
 
-# One-more discrete logarithm assumption
+## One-more discrete logarithm assumption
 
 Paper on the one-more discrete logarithm assumption: https://eprint.iacr.org/2007/442.pdf
 
@@ -172,7 +167,7 @@ JN: Just to give an example your group element would be your public key. The sec
 
 TR: That’s a very nice example I should have brought up. It should of course be hard to compute secret keys from public keys. Otherwise all the security is gone. This is an example for discrete logarithm. In normal discrete logarithm, I give you one public key and you have to come up with the secret key. Hopefully this is hard. In one-more discrete logarithm this is a little bit generalized. The game is different. The game is I give you let’s say 10 public keys. Now you can ask me for nine secret keys and still you shouldn’t be able to figure out the 10th secret key. The interesting thing about this is that you can’t ask for exact secret keys of things that I gave you public keys for but you can combine them, you can add them up. For example I can send you 10 public keys, public key 1 to public key 10. Then you could ask me for the secret key of public key 1 plus public key 2. You can play tricks like this but you can only ask 9 questions. In the end after you ask 9 questions if you can compute the secret keys of all of these 10 things I’ve sent to you then you solve the problem. We still believe this is hard because people have used this in the past but it is not exactly equivalent to the normal discrete logarithm assumptions. We have to make a stronger assumption but as I say this assumption has been used in the past so we are pretty confident that it holds. It is not an issue in practice.
 
-# MuSig2 use cases
+## MuSig2 use cases
 
 SL: You mentioned earlier that your aim is that this would be used inside of Lightning as an example. Would it also make sense to have this as part of general hardware wallets and multisignature security? To use MuSig2 as part of that or in your view is it not really well designed for that purpose?
 
@@ -186,7 +181,7 @@ TR: It’s really similar. I think that’s really the selling point of MuSig2. 
 
 JN: This is why we’re calling it MuSig2 because it really supersedes MuSig1. There’s no reason to use MuSig1.
 
-# Using MuSig2 for threshold signature schemes
+## Using MuSig2 for threshold signature schemes
 
 Murch on Taproot 2-of-3: https://medium.com/@murchandamus/2-of-3-multisig-inputs-using-pay-to-taproot-d5faf2312ba3
 
@@ -224,7 +219,7 @@ SL: In practice people could be doing MuSig2 for multisignature or a kind of thr
 
 JN: Or they could do a normal payment which looks exactly the same as well. In the Taproot world your spend is either just a signature so there is no opcode because you provide a signature for the public key and the Taproot output, or it’s just a CHECKSIG opcode. The same as a normal payment.
 
-# Scriptless scripts and PTLCs
+## Scriptless scripts and PTLCs
 
 Nadav Kohen on PTLCs at The Lightning Conference: https://diyhpl.us/wiki/transcripts/lightning-conference/2019/2019-10-20-nadav-kohen-payment-points/
 
@@ -254,7 +249,7 @@ JN: This works but of course this has the disadvantage as far as I know that you
 
 TR: It depends on the scenario. If you store your Bitcoin… that’s maybe where if you do it in a Taproot tree or using other methods will be better for now. In some scenarios you really need this n-of-n and our prime example again is Lightning. This is where we see MuSig2 where they have 2-of-2 channels and this is exactly what you need.
 
-# Future Work
+## Future Work
 
 SL: Where do we go from here with MuSig2? What kind of development or contributions would you like to see? Or what do you see that’s necessary before we get further adoption of MuSig2?
 

@@ -2,12 +2,9 @@
 title: Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['multisig', 'fee-management']
+tags: ['fee-management','dual-funding']
 date: 2020-05-19
 ---
-
-Name: Socratic Seminar
-
 Topic: Agenda in Google Doc below
 
 Location: Bitcoin Sydney (online)

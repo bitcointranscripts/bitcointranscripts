@@ -2,14 +2,11 @@
 title: Signature Aggregation
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['validation', 'multisig']
+tags: ['signature-aggregation']
 date: 2017-09-06
 aliases: ['/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/']
 ---
-
-﻿<https://twitter.com/kanzure/status/907065194463072258>
-
-# Signature aggregation
+<https://twitter.com/kanzure/status/907065194463072258>
 
 Sipa, can you sign and verify ECDSA signatures by hand? No. Over GF(43), maybe. Inverses could take a little bit to compute. Over GF(2).
 

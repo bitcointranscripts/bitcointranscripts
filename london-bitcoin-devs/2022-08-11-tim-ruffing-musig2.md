@@ -2,21 +2,14 @@
 title: MuSig2
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['schnorr', 'multisig']
+tags: ['musig']
 speakers: ['Tim Ruffing']
 date: 2022-08-11
 media: https://www.youtube.com/watch?v=TpyK_ayKlj0
 ---
-
-Topic: MuSig2
-
-Location: London Bitcoin Devs
-
-Date: August 11th 2022
-
 Reading list: <https://gist.github.com/michaelfolkson/5bfffa71a93426b57d518b09ebd0998c>
 
-# Introduction
+## Introduction
 
 Michael Folkson (MF): This is a Socratic Seminar, we are going to be discussing MuSig2 and we’ll move onto adjacent topics such as FROST and libsecp256k1 later. We have a few people on the call including Tim (Ruffing). If you want to do short intros, you don’t have to, for the people on the call.
 
@@ -28,7 +21,7 @@ Nigel Sharp (NS): I’m Nigel Sharp, bit of a newbie software engineer, Bitcoine
 
 Grant (G): Hi, I’m Grant. Excited about MuSig. I may have a couple of questions later on but I think I’ll mostly just observe for the moment.
 
-# A retrospective look at BIP340
+## A retrospective look at BIP340
 
 MF: This is a BitDevs, there are a lot of BitDevs all over the world in various cities. There is a list [here](https://bitdevs.org/cities). This is going to be a bit different in that we’re going to focus on one particular topic and libsecp256k1. Also we are going to assume a base level of knowledge from a [Socratic](https://btctranscripts.com/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/) and [presentation](https://btctranscripts.com/london-bitcoin-devs/2020-06-17-tim-ruffing-schnorr-multisig/) Tim did a couple of years ago. This isn’t going to be an intro. If you are looking for an intro this won’t be for you. But anyone is free to listen in and participate and ask questions. The Socratic we did with Tim, this is before [BIP340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki) was finalized, this was before Taproot was activated, this was before Schnorr signatures were online and active on the Bitcoin blockchain. First question, BIP340 related, has anything in BIP340 been a disappointment or problematic or caused any challenges with any future work? It is always very difficult to finalize and put something in stone, put it in the consensus rules forever especially when you don’t know what is coming down the pipeline in terms of other projects and other protocols, other designs. The only thing I’ve seen, you can tell me if there is anything else, is the x-only pubkeys for the TLUV opcode. The choice of x-only pubkeys in BIP340, that has had a complication for a covenant opcode in its current design. That’s the only thing I’ve heard from BIP340 that has posed any kind of disappointment.
 
@@ -40,7 +33,7 @@ TR: Mostly. The other thing, it is not really a pain but we are working on a tin
 
 MF: That’s BIP340. I thought we’d cover that because before it wasn’t active onchain and now it is. Hopefully that will be the only thing that comes to light regarding BIP340 frustrations.
 
-# MuSig2 history
+## MuSig2 history
 
 MF: Let’s go onto MuSig2. I have a bunch of links, a couple of talks from [Tim Ruffing](https://btctranscripts.com/realworldcrypto/2021/2021-01-12-tim-ruffing-musig2/) and [Jonas Nick](https://btctranscripts.com/iacr/2021-08-16-jonas-nick-musig2/). I thought I’d start with a basic history. The first paper I found was [this](https://cseweb.ucsd.edu/~mihir/papers/multisignatures.pdf) from Bellare, Neven (2006). They tried to do multisig, I guess key aggregation multisig. I don’t know what the motivation is for this. Before Bitcoin and before blockchains what were people using multisig for? What use cases were there where there were so many signatures flying around? Not only that but also wanting to have multiple people signing? And then on top of that wanting to aggregate it to get the privacy or space benefit? Is it just a case of academics pursuing their interests and not really worrying about the use case? Or is there a use case out there where people wanted this?
 
@@ -116,7 +109,7 @@ MF: Was there a particular number of signing sessions that you need to be able t
 
 TR: You need a handful but the security goes down pretty quickly. There are two answers. With the first attack this covered, with Wagner’s algorithm, there it goes down pretty quickly. I never implemented it but around 100 I think it is doable in practice. If you have a powerful machine with a lot of computation power maybe much lower, I don’t know. Recently there was a new paper that improves this attack to super low computation. There you specifically need 256. If you have 256 sessions, or maybe 257 or something like this, then the attack is suddenly super simple. You could probably do it on your pocket calculator if you spend half a hour.
 
-# Different security models for security proofs
+## Different security models for security proofs
 
 Jonas Nick on OMDL: <https://btctranscripts.com/iacr/2021-08-16-jonas-nick-musig2/#one-more-dl-omdl>
 
@@ -152,7 +145,7 @@ EC: The term “weaker” and “stronger” means different things in different
 
 TR: And it even confuses cryptographers. When you look at algebraic OMDL it is a weaker assumption than OMDL, slightly weaker which is slightly better. We have to assume less which gives us a stronger result. Even cryptographers are trained to believe whenever the hear the word “algebraic” it is something bad because now we have to make all these assumptions. In this specific case we are actually making a weaker assumption, that is why we stressed it so much in the paper. Whenever we say algebraic OMDL we have a relative clause that says it is actually weaker than OMDL to remind the reader that what we’re doing is actually a good thing and not a bad thing.
 
-# MuSig-DN
+## MuSig-DN
 
 Paper: <https://eprint.iacr.org/2020/1057.pdf>
 
@@ -178,7 +171,7 @@ EC: No, I’d just say that I think there are some niche use cases for having a 
 
 TR: We thought about using the core of it in other protocols and problems but we haven’t really found anything.
 
-# MuSig2
+## MuSig2
 
 MuSig2 paper: <https://eprint.iacr.org/2020/1261.pdf>
 
@@ -194,7 +187,7 @@ TR: Yeah. In this [blog post](https://medium.com/blockstream/musig2-simple-two-r
 
 MF: And on the security proofs you’ve proved the security of MuSig2 in the random oracle model. “We prove the security of MuSig2 in the random oracle model, and the security of a more efficient variant in the combination of the random oracle and the algebraic group model. Both our proofs rely on a weaker variant of the OMDL assumption”. Maybe I’ll never understand that. MuSig2, any other comments on MuSig2?
 
-# SpeedyMuSig and proofs of possession
+## SpeedyMuSig and proofs of possession
 
 Paper that references SpeedyMuSig: <https://eprint.iacr.org/2021/1375.pdf>
 
@@ -242,7 +235,7 @@ Adam Gibson (AG): We have pubkey recovery in pre-Taproot already because we have
 
 TR: We can’t do it in Schnorr, at least not with BIP340.
 
-# MuSig2 draft BIP
+## MuSig2 draft BIP
 
 MuSig2 draft BIP: <https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki>
 
@@ -286,7 +279,7 @@ MF: And this is a new requirement because before with single signatures you are 
 
 TR: Yeah, right. That’s exactly the thing that MuSig-DN solves in a sense but by adding a lot of complexity. This is also a very, very important thing to know. People have tried to use this trick with the hash generating the nonce by hashing the secret key and the message for multisignatures. Don’t do this. If this was possible we would have added it to the BIP. But it is totally insecure. For years we told people when they implement signatures they should generate the nonce deterministically because this is way safer. This is true for ordinary single singer signatures. But funnily it is the exact opposite for multisignatures. This is really dangerous because we’ve seen people do this. We told them for years derive nonces deterministically and then they saw the multisignature proposal and said “Ok it is safer to derive nonces deterministically”. Now it is the other way round. It is strange but that is how it is. When you look at nonce generation here it has this note. “NonceGen must have access to a high quality random generator to draw an unbiased, uniformly random value rand”. We say it explicitly, you must not derive deterministically.
 
-# MuSig2 support in Lightning and hardware signers
+## MuSig2 support in Lightning and hardware signers
 
 MF: Is this going to be the biggest challenge? Everything seems to take years these days but assuming we get hardware signer support for MuSig2, the hardware signer would need to provide this randomness that it currently wouldn’t.
 
@@ -304,7 +297,7 @@ MF: It is merged but perhaps it is just an option, they aren’t actually using 
 
 AG: I know Laolu wrote an implementation of MuSig2 in the btcsuite golang backend but for sure it isn’t exactly final.
 
-# FROST
+## FROST
 
 FROST paper: <https://eprint.iacr.org/2020/852.pdf>
 
@@ -376,7 +369,7 @@ MF: Are there particular use cases that this IRTF standard is being geared towar
 
 TR: I really need to stress that we believe we can do this but we really don’t know. I could write down a scheme but I don’t know if it is secure. We’d need to prove it was secure and nobody has done that so far. I wouldn’t recommend using nested MuSig at the moment.
 
-# libsecp256k1 scope
+## libsecp256k1 scope
 
 MF: Let’s finish off with libsecp256k1. I don’t know which is priority. Finalizing the MuSig2 BIP or getting a API release out for libsecp256k1. What’s your current thinking, obviously there are other contributors, other reviewers, other maintainers, on how close we are to having a libsecp256k1 release and formal API?
 
@@ -398,7 +391,7 @@ MF: It is hard, there are a lot of grey areas here. You don’t know where to dr
 
 TR: Upstream, the discussion in libsecp256k1 is much more interesting in that respect. There we really have a community project. We want to have the things there that are relevant for Bitcoin I think. But of course our time is limited. In the libsecp256k1-zkp fork, it is a repo controlled by Blockstream, we could do whatever we want with this repo. That’s why we don’t care that much what we put in there but maybe we should care a little bit more and have a discussion on the upstream repo. Then it would be more meaningful for everybody.
 
-# Reusing code for future proposals (e.g. CISA)
+## Reusing code for future proposals (e.g. CISA)
 
 MF: There was some [discussion](https://github.com/ElementsProject/secp256k1-zkp/pull/120#issuecomment-759674484) here. You’ve discussed some cross input signature aggregation type proposals, you were on a [podcast](https://stephanlivera.com/episode/400/) recently talking about half signature aggregation. There are some things that can be reused. You are having to think “Not only is this code potentially being used in the use case that we’re coding it up for but it might be used in future”. It is not consensus so it is not cemented on the blockchain but I suppose you are trying to think ahead in making sure it is modular and a potential module could do the same function for both use cases, even long term things.
 
@@ -408,7 +401,7 @@ MF: It is not critically important. It is just a nice to have type thing. This l
 
 TR: When you are writing code you can think about future applications. It is probably good to think about but it might turn out in a month you want to do it differently. That’s how it works.
 
-# ROAST
+## ROAST
 
 ROAST paper: <https://eprint.iacr.org/2022/550.pdf>
 
@@ -452,7 +445,7 @@ MF: I’m assuming it still uses CHECKMULTISIG rather than CHECKSIGADD. The bene
 
 TR: I’d need to ask the Liquid engineers.
 
-# Q&A
+## Q&A
 
 Q - Back in MuSig land, in the [BIP](https://github.com/jonasnick/bips/blob/musig2/bip-musig2.mediawiki) there is a section called verify failed test cases and it provides some signatures. One of them exceeds the group size and it fails. One of them is the wrong signer and so it fails. And one of them is the wrong signature… why is that an important test to make?
 

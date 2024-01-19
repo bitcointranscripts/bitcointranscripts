@@ -2,12 +2,11 @@
 title: Timelock-enabled safety and recovery use cases for Bitcoin users
 transcript_by: pgsdesign via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=4jO-FDiFw4U
-tags: ["timelocks", "miniscript", "multisig", "wallet", "custody"]
+tags: ["timelocks", "miniscript"]
 speakers: ["Kevin Loaec"]
 categories: ["conference"]
 date: 2023-03-01
 ---
-
 ## Introduction
 
  Can we give a round of applause for Kevin, and welcome him to the stage. Thank you. Alright, yeah, so I'm going to do a talk around Timelocks in Bitcoin. I'm going to start with a pretty quick introduction on the different types of Timelocks over time in Bitcoin, and where we're at today. Also, a little bit, very, very quickly talking about what we're using Timelocks for in Bitcoin today. And also all the very exciting stuff that's happening on Bitcoin in the past few months that is going to completely change the game over how we use Timelocks. And by the end of this talk, I hope I will have convinced you all that the future of Bitcoin is pretty much having Timelocks everywhere. So yeah, that's the idea.
