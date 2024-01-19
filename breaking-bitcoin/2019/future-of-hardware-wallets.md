@@ -2,7 +2,7 @@
 title: "The Future of Hardware Wallets"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['hardware wallet', 'multisig', 'wallet']
+tags: ['hardware wallet']
 speakers: ['Stepan Snigirev']
 media: https://www.youtube.com/watch?v=OxX_LFgdYa0
 ---

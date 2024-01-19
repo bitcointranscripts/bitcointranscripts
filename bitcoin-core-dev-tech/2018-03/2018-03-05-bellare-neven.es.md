@@ -1,16 +1,13 @@
 ---
-title: Bellare Neven
+title: Bellare-Neven
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['multisig']
+tags: ['signature-aggregation']
 date: 2018-03-05
 aliases: ['/es/bitcoin-core-dev-tech/2018-03-05-bellare-neven/']
 ---
-
 Ver también <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>
-
-# Bellare-Neven
 
 Se ha publicado, ha existido durante una década, y es ampliamente citado. En Bellare-Neven, es en sí mismo, es un esquema multi-firma que significa múltiples pubkeys y un mensaje. Debe tratar las autorizaciones individuales para gastar entradas, como mensajes individuales. Lo que necesitamos es un esquema de firma agregada interactiva. El artículo de Bellare-Neven sugiere una forma trivial de construir un esquema de firma agregada a partir de un esquema multisig donde interactivamente todos firman el mensaje de todos. Encontramos una vulnerabilidad en este esquema, es muy sutil.
 

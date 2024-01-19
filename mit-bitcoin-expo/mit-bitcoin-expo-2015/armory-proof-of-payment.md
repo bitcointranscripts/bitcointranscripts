@@ -2,7 +2,7 @@
 title: Armory Proof Of Payment
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'multisig']
+tags: ['proof-of-payment']
 speakers: ['Andy Ofiesh']
 ---
 

@@ -3,7 +3,6 @@ title: Gavin Andresen
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['multisig', 'wallet']
 ---
 
 <http://blog.circle.com/2015/02/10/devcore-livestream/>

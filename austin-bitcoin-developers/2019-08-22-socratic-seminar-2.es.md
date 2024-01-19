@@ -4,7 +4,7 @@ date: 2019-08-22
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
-tags: ['investigación', 'hardware wallet', 'multisig', 'wallet']
+tags: ['research', 'hardware wallet']
 ---
 
 

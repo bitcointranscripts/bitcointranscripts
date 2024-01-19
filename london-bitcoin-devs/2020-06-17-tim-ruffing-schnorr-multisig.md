@@ -1,30 +1,27 @@
 ---
-title: Schnorr and Multisig
+title: "Taproot and Schnorr Multisignatures"
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['schnorr', 'taproot', 'multisig']
+tags: ['schnorr-signatures', 'musig']
 date: 2020-06-17
 speakers: ['Tim Ruffing']
 media: https://www.youtube.com/watch?v=8Op0Glp9Eoo
 ---
-
-Taproot and Schnorr Multisignatures
-
 Location: London Bitcoin Devs (online)
 
 Slides: https://slides.com/real-or-random/taproot-and-schnorr-multisig
 
 Transcript of the previous day’s Socratic Seminar on BIP-Schnorr: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/
 
-# Intro (Michael Folkson)
+## Intro (Michael Folkson)
 
 We are now live. This is London Bitcoin Devs with Tim Ruffing. We had the [Socratic Seminar](https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/) yesterday, I think we have some people on the call that were at the Socratic Seminar. That was brilliant. Thanks to Tim, Pieter, Greg, waxwing and everyone for showing up and taking 2 and a half hours out of their day. That was great, we’ll get a transcript for that up. The video is up on [YouTube](https://www.youtube.com/watch?v=uE3lLsf38O4). Today Tim is going to present on Schnorr multisig and threshold schemes and then we will do a Q&A afterwards on that topic and also his thesis. For those who don’t know Tim, Tim Ruffing is a Cryptographic Engineer at Blockstream, contributor to libsecp256k1, BIP Schnorr, Bitcoin Core and author for the thesis “Cryptography for Bitcoin and Friends.” I’ll pass over to Tim, thanks for being here Tim.
 
-# Intro (Tim Ruffing)
+## Intro (Tim Ruffing)
 
 Thanks for having me. I enjoyed the seminar yesterday. Yesterday the things we didn’t really cover were mostly multisignatures. I will give a quick overview of Taproot from my point of view as a cryptography person. Then I will talk about different issues in constructing multisignature schemes. Feel free to interrupt me if you have a question.
 
-# UTXOs in Bitcoin
+## UTXOs in Bitcoin
 
 From a very simple point of view what are UTXOs in Bitcoin? A UTXO is a spending condition that says “If you fulfill this condition then you are allowed to spend the funds.” Those are encoded in a small program called a script. In almost all cases, the boring case, you need to provide a signature for the transaction you want to make. You need to provide a signature under a given public key that is hardcoded in that script. The scripts look like this:
 
@@ -32,7 +29,7 @@ From a very simple point of view what are UTXOs in Bitcoin? A UTXO is a spending
 
 This might be an old version, just to give you an idea. You don’t need to understand what this does. The public key is inside this hash. The script says “Give me a signature under this public key” and then you are allowed to spend the funds. That is how we can define ownership of coins in Bitcoin. If I send it to your public key then these are your coins because you can spend them with your secret key. Currently we have a public key inside the script. In Taproot, if you want to describe Taproot in one sentence it is a script inside a public key. It is the other way round. How can we do this?
 
-# Elliptic Curve Public Keys can serve as Commitments
+## Elliptic Curve Public Keys can serve as Commitments
 
 The idea here is that elliptic curve public keys can serve as cryptographic commitments .They can commit to messages. If you look at how a public key looks, a public key is something like:
 
@@ -44,13 +41,13 @@ where g is the generator of the secp curve in our case. Sorry for using multipli
 
 The secret key is tweaked with this hash function. Now we have a public key with a tweak and the secret key with the same tweak. Data can be anything we want to commit to.
 
-# Taproot
+## Taproot
 
 `pk = g^(x+H(g^x, script))`
 
 In Taproot the data we commit too is essentially the script. If we have such a public key in a UTXO on the chain what we can do is spend it in two ways. The first one is key-path spending. This is an ordinary thing. You can produce a Schnorr signature which is valid under that public key pk. I will talk about Schnorr signatures later. What I have said so far is not specific to Schnorr signatures. The keys in ECDSA would look the same. We could do the same trick with ECDSA but it is not that cool for applications. I will get onto that later. Just accept for now we will do this with Schnorr signatures. Key-path spending is one way. We can produce a Schnorr signature that is valid under this public key. The cool thing about this is if we do this left part we never reveal that script. Nobody will ever notice that there is a script inside at all. With script-path spending we reveal the script and we reveal `g^x` and we fulfill the original script. The script, like in Bitcoin today, can be arbitrary spending conditions encoded in a program. In Taproot it is not only single script, it is a Merkle tree of scripts, but for what I am discussing it doesn’t really matter much. Usually key-path spending is what we would do traditionally if a single party is involved. Even if there is no script at all, this is just an ordinary UTXO, you don’t need the script here and ownership is defined by knowledge of x. Script-path spending becomes interesting if we have what people call a smart contract which I define as some UTXO where multiple people are involved in the ownership. For example a 2-of-2 multisig in Lightning where you need several parties to agree on an outcome.
 
-# Smart Contracts
+## Smart Contracts
 
 Let’s talk more about this. Let’s say we have two parties and they both have a secret key. The first party has a secret key x_1 and the second party has a secret key x_2. This means they have a combined secret key of x_1 + x_2. This is not perfectly correct but I will explain that part later. For now accept that we just take a sum here. The secret key will be the sum of x_1 and x_2. Now we tweak it again with this script.
 
@@ -58,11 +55,11 @@ Let’s talk more about this. Let’s say we have two parties and they both have
 
 Now we have two cases. If those two parties are cooperative and agree what they want to do with this UTXO then they can produce a single Schnorr signature that is valid under this combined key. This will be a multisignature. This is the simple case. In this case they will not reveal what the script here is. To an outsider it won’t even be clear this is a multisig. This looks like an ordinary spend. The only case where the script is relevant is if the people don’t agree or don’t cooperate. Let’s take the Lightning example. Usually you assume that the other party is online and cooperative. But if it is not then there is the timeout and after this timeout you are able to spend the funds on your own without the cooperation of the other party. This would be a condition that is encoded in this script here. As long as the parties in this smart contract, it can be more than two, as long as they all agree we won’t need to reveal the script which is great for privacy. People won’t even notice that there is a multisig or smart contract going on.
 
-# Taproot is Cool
+## Taproot is Cool
 
 Let me summarize those advantages. This means that all Taproot UTXOs will look the same. There is a single public key in a sense plus an amount of course but the amount is not relevant in our discussion here. The UTXO itself is not a script anymore. It is just a single public key. This is great because public keys are short, they are just 32 bytes. Also as I said before most spends look the same. Usually if you take the key-path spend then the spend of a UTXO is just a single signature. This is also nice because Schnorr signatures are short, they are 64 bytes. The only exception is if we have parties in the smart contract that don’t agree. This is the only case where we need the script-path spend and need to put more data on the chain plus need to reveal what is actually going on.
 
-# Applications
+## Applications
 
 This is great for applications because our idea here is that at the consensus layer we can just put simple Schnorr signature verification. The consensus layer doesn’t care about advanced Schnorr signature protocols. But we can build those on top without changing the consensus code. We can build multisignatures on top, we hopefully can build threshold signatures on top, we can build Blind Schnorr signatures on top as long as the output of all those things looks like an ordinary Schnorr signature. It is understandable by the consensus rules and the consensus rules just do simple Schnorr signature verification. This is great because the contracts are hidden from verifiers. It is a single public key and a single signature and you don’t see what contract is going on. Additionally the consensus layer is kept simple. It is just Schnorr signature verification and the consensus layer doesn’t need to care about multisignatures, threshold signatures. It doesn’t even know what a threshold signature is. It just understands Schnorr signature verification.
 
@@ -70,15 +67,15 @@ Q - That bottom layer currently supports all of the above options in terms of mu
 
 A - I will come back to that part later. Multisignatures I think are basically solved. We need more work for threshold signatures and we need more work for blind signatures. I believe all of this can be done but we are not quite there yet. I will talk about multisignatures and threshold signatures in the rest of the talk. I won’t cover blind signatures but for blind signatures the situation is that more work needs to be done but we are confident that we can develop schemes that have blind signatures that look like Schnorr signatures.
 
-# Taproot BIPs
+## Taproot BIPs
 
 As a summary there are currently three Bitcoin Improvement Proposals that cover Schnorr signatures and Taproot. The numbers are here ([BIP 340](https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki), [BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki), [BIP 342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki)). Taproot was so large that we split it into two. There is a lot of stuff going on.
 
-# Research Agenda
+## Research Agenda
 
 Inspired by this idea or vision here when people ask me what I am doing at Blockstream or what my research agenda is I work on everything as long as it looks like a Schnorr signature. Then it is compatible with Taproot. I am really interested in multisignatures, threshold signatures, blind signatures or even things that aren’t signatures. As long as in the end they output something like a Schnorr signature we can put it on the blockchain and play with it. The rest of the talk, I will be mostly talk about multisignatures and a little bit about threshold signatures.
 
-# Schnorr Signatures
+## Schnorr Signatures
 
 Let’s look at Schnorr signatures first. Secret keys are integers, scalars and exponents.
 
@@ -118,7 +115,7 @@ Then it can check this equation on the left hand side (s = xc + r). But because 
 
 X^c is the same as g^(xc). Multiplied by R which is g^r. This is the public version of the equation. This is why verification can be done publicly. This is what we want from a signature scheme. You check if this equation holds and if it does the signature is valid. I won’t explain why this is secure. The idea of this slide is to give you reminder of what Schnorr signatures look like and we can work from here towards our multisignature scheme.
 
-# Deterministic Randomness
+## Deterministic Randomness
 
 First let me talk about this random here. We covered this yesterday a little bit in the Socratic Seminar. How should we compute this random value? On the previous slide I used the dollar sign \$ the symbol people use for random. Maybe we should replace it with the Bitcoin sign and not use the dollar sign. What we do in practice is we derive this randomness deterministically which first sounds like a paradox. Is it randomness if it is deterministic? It is not really randomness if it is deterministic but it is still unpredictable to adversaries and this is what matters. How we derive this value is we take another hash function H_non, non for nonce. H are all variants of SHA256. When I wrote these slides I am looking at it from a theoretical point of view and any good hash function will do. I just write H it is simpler. We have H_non here. We have some public inputs, the public key, the message but we also have the secret key as an input. This is why it is unpredictable to attackers. The attacker doesn’t know the secret key x and so can’t compute this value here.
 
@@ -138,7 +135,7 @@ In one case we have s = cx + r and s’ = c’x + r. Now you reveal those two va
 
 This lets everybody compute your secret key because they know s, this is what you revealed as part of the signature and they know c because they compute it from public values. This is the worst case that can happen. If you reuse the same randomness for different messages everybody can compute your public key. To give you an idea why this hash function helps if you use the hash function to derive the randomness. The reason is that if you use different messages here, the m is an input to the hash function H_non, those will result in different r values. Assuming we have different m we will have different r and the revealing of x above can never happen. This is how you should implement Schnorr signatures in general. The same holds for ECDSA and similar signatures. If you look at the BIP we do it in exactly this way.
 
-# Naive Multisignatures (Insecure!)
+## Naive Multisignatures (Insecure!)
 
 This is what Schnorr signatures look like. Let’s see how we can expand the idea to multisignatures. This is the naive way and it is insecure. It should be obvious from the slide.
 
@@ -170,7 +167,7 @@ We can sum up all the s_i and give the signature back (R,s). Because everything 
 
 It is the sum of all r_i which gives r and the sum of all x_i which gives x. We implement this by summing all the s_i to get s. Everything is nicely linear so we can just add up everything and get the final signature. This works. The problem is not that it doesn’t work, the problem is that it is not secure. Why is this not secure? There are two issues.
 
-# Issue 1: Rogue Key Attack
+## Issue 1: Rogue Key Attack
 
 The first issue is, we mentioned this yesterday, the rogue key attack. Let’s say we have three parties. The first two are honest. They compute their public keys pk_1 = g^(x_1) and pk_2 = g^(x_2) and then there is a third malicious party. The malicious party, the attacker, selects the public key pk_3 dependent on the other public keys.
 
@@ -204,7 +201,7 @@ A - Right. If you are malicious there is no point in pushing out only one. Maybe
 
 Q - Unless there is accountability but I think you will go onto accountability later. That brings another dimension in.
 
-# Avoiding Rogue-Key Attacks
+## Avoiding Rogue-Key Attacks
 
 That is the attack. How do we get around this? Avoiding rogue key attacks. There are two approaches to avoid those attacks. One is called [proofs of possession](https://eprint.iacr.org/2018/483.pdf) (“pop”). This is what people have done very early when they discovered these attacks in the 1980s or 1990s. At least two decades old. The generic way to prevent this is to add proofs of possession to your public keys. What does this mean? You could also say a proof of knowledge. It is proof of knowledge of your secret key. You have your public key and what you add to it is a zero knowledge proof that you know the corresponding secret key. Because Schnorr signatures are zero knowledge proofs of knowledge you can sign your public key with your secret key. That sounds weird but it does the job. Why does it work? Let’s go back. In this example:
 
@@ -218,7 +215,7 @@ It is actually `x_3 - x_1 - x_2` and he doesn’t know x_1 and x_2. He wouldn’
 
 The better way, or what we believe is the better way is what [MuSig](https://eprint.iacr.org/2018/068.pdf) does. What we do there is we use a public key aggregation function with tweaks. How does this work?
 
-# MuSig Key Aggregation
+## MuSig Key Aggregation
 
 The slide is wrong here. Forget about this middle part here. Instead of multiplying the public keys we additionally add a coefficient here for every party. Coefficients a_1, a_2 and a_3.
 
@@ -230,11 +227,11 @@ The product of pk_i raised to a_i. What are those coefficients? They are compute
 
 There is another hash function. What do we put inside the hash function? All the public keys and the index of the signer. The index will make sure that this is a different value for all the signer. All the public keys makes sure it depends on all the public keys. We have these additional coefficients here. This is what avoids the rogue key attack. It does it in a nicer way. We don’t need those proofs of possession. You can just work with simple public keys. You don’t need to additionally send proofs of possession around. It is not necessary. It just works out. This is essentially a public function. You have public keys here, they are public and you can compute the a_i, they depend on public values. Everybody can compute the aggregated key given all the public keys. This is how MuSig avoids rogue key attacks. I won’t prove why this works but it is in the paper.
 
-# Issue 2: Parallel Security
+## Issue 2: Parallel Security
 
 The second issue we have to deal with is parallel security. What I mean by that is running multiple signing sessions in parallel. Can we do this? It turns out if you look at a naive scheme again we can’t. Why is that the case? I will show you an attack.
 
-# Wagner’s Algorithm
+## Wagner’s Algorithm
 
 First I need to talk about Wagner’s algorithm. What is Wagner’s algorithm? I won’t explain how it works but I can explain what it does. Let’s look at this problem here.
 
@@ -246,7 +243,7 @@ This looks like a hash function collision. You have to find two messages such th
 
 If you look at the above equation you could also write H(m_1) - H(m_0) = 0. You could do the same here. Finding some messages where the hashes sum up to zero. This is written again in another way. Surprisingly this problem is easy. It is easy because Wagner’s algorithm exists. This example with 100 here I think this is 2^40 operations. The larger you make the number of messages here the easier this problem gets. How can we turn this into an attack? I said I want an attack if we run multiple sessions in parallel. If there is a single signer that uses the same secret key for multiple sessions in parallel.
 
-# Attack Using Wagner’s Algorithm
+## Attack Using Wagner’s Algorithm
 
 The attack works as follows. We have a public key. This is the combined public key. Again I am looking at the naive thing, the key aggregation is the simple one here. It doesn’t matter for this attack just because it is simpler. Let’s say x is the value that belongs to the victim, the honest party and x’ is the value of the attacker.
 
@@ -279,11 +276,11 @@ Q - Andrew Poelstra said in a SF Bitcoin Devs [presentation](https://diyhpl.us/w
 
 A - In general you are right. If you look at the previous issue with the rogue key attack I think the fix is simple enough. It adds a little bit of engineering overhead but it shouldn’t matter to you if you use a nice library that has already implemented it. You only have to do it once and take it off the shelf. It adds a little bit to the runtime but it is acceptable for the increased security. Of course everybody is free to make their choices. I think your comment would apply more to the fix that I am showing now. This is really something that people don’t like in practice. There is a real trade-off.
 
-# Parallel Security
+## Parallel Security
 
 So how do we fix this attack? How do we get parallel security? The problem if you look back at the previous slide is the attacker can influence what is going into the hash function here. He influences the right side of the products (R_1 x R’_1, R_2 x R’_2 etc) here. This is the gist of the problem. If the attacker can’t influence what is going on, he can’t play around with these values then he can’t apply Wagner’s algorithm and make the sum on the right hand side match the left hand side. The problem is the attacker controls the hash value because he controls part of the nonce. For anybody with a little bit of background in provable security what does this mean for the security proof? In the proof this would mean the reduction must know this final R in every session before the attacker knows. This is required for programming the random oracle on H(pk, R, m). This is how you simulate signatures. If the attacker can predict this R value because he controls it then the attacker can make this query before we can program the random oracle. How do we fix this issue now? The fix is that we let every signer send a commitment to this R value upfront. Why does this help? If you look at the attack the victim sends nonces and then the attacker knows those nonces already and can play around with them. In particular he already knows the final target value R here which is the product of all those nonces R_1, R_2,… before he needs to reply with his own nonces R’_1, R’_2,… here. By introducing a commitment we will avoid exactly this.
 
-# MuSig
+## MuSig
 
 If you look at the final MuSig algorithm. On the left hand side this is a normal Schnorr signature. On the right hand side, I am lying a little bit here. This is not MuSig. Please don’t implement this. Please don’t implement crypto if you don’t know what you are doing. What I left out for simplicity is the protection against rogue key attacks. It wasn’t important here but I wanted to put a note on this slide and I forgot to. It doesn’t have the a_i coefficients but it protects against the attack we have just seen. Why? In this line we are introducing what I said.
 
@@ -309,11 +306,11 @@ Q - If you already have two rounds that additional third round isn’t a big dea
 
 A - Right. Also what you can’t do in MuSig, for the same reason, Jonas Nick has a nice [blog post](https://medium.com/blockstream/insecure-shortcuts-in-musig-2ad0d38a97da) on insecure shortcuts in MuSig. You should read it, it is cool. It mentions one issue where even if you have this additional round, you are maybe annoyed you have three rounds, can we optimize this? You might have the idea to do this round `broadcast h_i = H(R_i)` upfront before knowing the message. Let’s say in the future you will have a signing session with some parties so you can already prepare now and take a R_i value here, compute H(R_i) and share now. You can do this. Then you save this round or precompute it in a sense. When you know you have the message and you want to sign the transaction at the end you just need to run the additional two rounds. You can do this. The problem is if you do this you might also have the same idea for the second round here. `broadcast R_i, R = R_1 x R_2 x ….` You might also broadcast this already before the message is known. This is a perfectly fine idea because m is only used here. It seems like you can run the protocol up to that point without knowing m. The problem here is that thing is horrible. The problem is exactly the same as before. The attacker can influence the final hash value. If you go back to the attack using Wagner’s algorithm the R values are fixed. The attacker can’t influence this. But now if the message is not fixed yet when you do this step the attacker can influence the message. He controls all the hash values on the right hand side and can do the exact same attack. I can only recommend this Jonas Nick blog post, it is really useful.
 
-# Extensions to MuSig
+## Extensions to MuSig
 
 The last part shows some extensions to MuSig. I won’t go into detail, just one slide per extension. One thing that is basically done and accepted at a conference.
 
-# MuSig-DN
+## MuSig-DN
 
 Let me repeat that Schnorr signatures, they need randomness, I have talked about this a lot. I also explained that true randomness can be broken and this leads to bad failures. Use a pseudorandom generator, I called this deterministic randomness. Sorry the wording is not perfect from my previous slides. This is exactly what I showed you with the H_non function where we derived the randomness deterministically from the secret key and the message. We hammered this into the heads of people that they should really do this. This is the right way to do it. The problem is and we also talked this yesterday, if you apply to this to multisignatures it fails catastrophically. It is exactly the other way round. If you do it deterministically it fails. Why is that the case? I can give you an intuition at least by going back to the Deterministic Randomness slide. I explained this attack on the right hand side. If you use the same r, the nonce, for two different messages or two different c then everybody can compute your secret key. Now if we look at the simplified MuSig where the key coefficients are not there, the same attack would apply if you give a partial signature with the same r_i and different c. How can c be different? Let’s say we are two parties, you are the attacker and I am the honest user. I derive my nonce deterministically. We have a session for a message m and I derive my nonce from the secret key and m. I arrive at a r_1 value and I give you this partial signature s_1. You get this and now you start the second round for the same message. Maybe because you claimed the first one failed and you never received the value or whatever. What you do in the second session you send a different partial nonce for you. You send a different R_2. This will result in a different c but because I derive my own nonce deterministically I will use my same nonce, the r value, but now the c is different. Because you didn’t choose your nonce deterministically. This is how we fix this problem. We introduce zero knowledge proofs that prove that everybody chooses the nonce deterministically. Then it is working again. This is exactly what avoids the attack that I just mentioned. You can only use deterministic nonces if you know everybody is using deterministic nonces. The only way to be aware of this is to add zero knowledge proofs to the protocol. When I say they are somewhat expensive, they explain maybe one second to the protocol depending on your hardware and the number of signers. About one second. On the way we get rid of the three rounds. We have two rounds now. But again if you use those zero knowledge proofs it is a real trade-off here. If you care about efficiency it is not clear what is better here. Maybe it is better to run a third round depending on your setting and scenario. The main point of this paper is not to go to two rounds but to avoid the requirement for true randomness. This can fail in practice.
 
@@ -335,11 +332,11 @@ I think the issue here is that it is not about reusing nonces, it is about reusi
 
 This is one project. It is accepted at the CCS conference this year. It is not public yet, we don’t have a pre-print available but hopefully soon. Hopefully not only the paper but also a blog post that explains it for a different audience. This is joint work with Jonas Nick, Yannick Seurin and Pieter Wuille. Pieter has a nice intuition for the paper and why he is involved.
 
-# Disclaimer
+## Disclaimer
 
 I have two slides left. They are both projects that are work in progress. We are not sure yet if what we are doing is the right thing and if it makes sense. If it doesn’t work out don’t come back to me in a year and complain that it didn’t.
 
-# (Simple) 2-round MuSig
+## (Simple) 2-round MuSig
 
 The first thing and I think I have never talked about this in public is that we are working on a simple 2 round MuSig scheme. On the MuSig slide I said we can go back to two rounds but it needs zero knowledge proofs. If your goal is to have a two round scheme I think we have a better idea. The story of MuSig is that the first revision of the paper, this contained a two round scheme with a security proof under an assumption that is not exactly discrete logarithm (DL) but a little stronger. It is called one more discrete logarithm (OMDL). It is related to discrete logarithm. It is still a reasonable assumption one can make. The original two round MuSig scheme was proven secure under this assumption, or we believed it was proven secure until Drijvers, Edalatnejad, Ford, Kiltz, Loss, Neven, Stepanovs found a [bug](https://eprint.iacr.org/2018/417.pdf) in the proof and an attack on the scheme. The attack is interesting because it is an attack based on Wagner’s attack. If you do MuSig naively in two rounds it won’t work. The reason is the attack that is written up in detail in this paper. Then people who wrote the MuSig [paper](https://eprint.iacr.org/2018/068.pdf), Maxwell, Poelstra, Seurin, Wuille had to revert to a three round variant and give another security proof for the three round variant. We are pretty confident it is true. Now this is work in progress but we have a very simple idea that brings us back to two rounds. We are currently writing this up and our plan is to first share with fellow researchers before we release anything stupid to the public. But we are getting more and more confident that this is working. This would be very nice for this area. Hopefully what this will also enable is what I could call nested MuSig where you have multiple nested MuSig sessions. What do I mean by this? I think the canonical example is let’s say we have MuSig in a session for something like a Lightning channel where we need a 2-of-2. I am one of the participants in the Lightning channel and I want to have an additional MuSig with my part of the key where I share my part of the key again between my desktop machine and my hardware wallet maybe. It is basically MuSig inside of MuSig. I have part of the key and this part of the key is split into my desktop machine and the hardware wallet. This should work in a way that is still secure and also in a way that the other party in the Lightning channel doesn’t need to be aware of what I’m doing with my own keys. The other party in the Lightning channel shouldn’t even know that I’m internally running another MuSig session. This is the goal of this nested MuSig. I think this would be helpful in practice in exactly those scenarios and I am sure there are other scenarios. This is joint work with Jonas Nick, Yannick Seurin, Duc Le at the moment. This might change if more people join. We are working on it, we think it works but we are not confident enough to share with the world at the moment. Please be patient.
 
@@ -347,7 +344,7 @@ Q - This is the use case where you are opening a channel with a counterparty and
 
 A - As long as we cooperate with the counterparty an observer that just simply observes the blockchain won’t notice that this was a Lightning channel because of Taproot. What I worry about is the privacy against the counterparty. I don’t want to tell my counterparty how I’m doing key management with my hardware wallet for example. It is a little bit like in Taproot, it is not only for privacy it is also for simplicity. In a technical Lightning specification we probably only want to support 2-of-2 MuSig just for simplicity. You don’t want to explicitly care about the case where one of the parties is a multisig between more keys. You can keep the specification simple and the code of the counterparty doesn’t need to care about what you are doing because it doesn’t know in the first place. It is good for simplicity and it is good for privacy.
 
-# Threshold MuSig
+## Threshold MuSig
 
 (Tim Ruffing [presented](https://diyhpl.us/wiki/transcripts/cryptoeconomic-systems/2019/threshold-schnorr-signatures/) on “The Quest for Practical Threshold Schnorr Signatures” at CES Summit 2019)
 
@@ -379,7 +376,7 @@ Pieter Wuille: Something where you have the property that anyone can send out a 
 
 When talking about this assumption in threshold signatures, the gist is you want two properties. You want unforgeability where you say if the attacker controls less than t signers then he isn’t able to produce a signature. If he controls t-1 signers he can’t produce a signature. Then there is another property which you could call robustness which says that if you have t honest signers then you should be able to produce a signature. It is perfectly to assume something like a broadcast channel if you are talking about reliability or robustness as I called it now. If those t signers, they are all honest, they still need a way to talk to each other. If they don’t have a reliable network where they can talk to each other then it is clear that they can’t produce a signature. If the attacker blocks all messages for example they can’t make progress. That is not a surprise. We think in layers and if your only interest is to build a secure threshold signature scheme then you can certainly make that assumption that you have a broadcast channel available to produce signatures. That is a problem we handle at a different layer. What shouldn’t happen is we make this broadcast channel assumption for unforgeability. This is exactly what those protocols do. If you watch my talk I explain that attack. Think of a man in the middle that implements the broadcast, it is a server that connects all the people and does the broadcast for you but the server is malicious. Not even changing messages, just by omitting messages this server can learn the secret key of all the parties. This is really not what you want to have in practice. It was so surprising for us. If you look at the paper it makes this broadcast channel assumption. When I read this my feeling was they need this for reliability, for robustness. If you look at the details, this is very subtle, it turns out they also need it for unforgeability but they are never explicit about this. This sounds like a complaint, it is not, if you use a certain model you can make that assumption. I am just saying this is not enough yet. We need more work to make threshold signatures work.
 
-# Q&A
+## Q&A
 
 Q - We tried to set the setting yesterday of what a signature scheme requires. We then talked about what a signature scheme in a system like Bitcoin needs to have. It is like piling on requirements all the time. With a multisig scheme you are piling even more requirements on top of what you need in Bitcoin. There is such a long list of requirements. You didn’t talk about accountability at all. On the schemes that you talked about today or some of the competing multisig schemes there are various levels of accountability. Perhaps you could explain what accountability is and which ones are good for accountability?
 

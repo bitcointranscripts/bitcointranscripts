@@ -2,25 +2,20 @@
 title: Scriptless Scripts With Mimblewimble
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'lightning', 'multisig', 'timelocks']
+tags: ['adaptor-signatures']
 speakers: ['Andrew Poelstra']
 ---
-
-Scriptless scripts with mimblewimble
-
-Andrew Poelstra (andytoshi)
-
-# Introduction
+## Introduction
 
 Hi everyone. I am Andrew Poelstra. I am the research director at Blockstream. I want to talk about deploying scriptless scripts, wihch is something I haven't talked much about over the past year or two.
 
-# History
+## History
 
 Let me give a bit of history about mimblewimble. As many of you know, this was dead-dropped anonymously in the middle of 2016 by someone named Tom Elvis Jedusor which is the French name for Voldemort. It had no scripts in it. The closest thing to bitcoin script were these digital signatures. These were just basic cryptographic signatures to demonstrate that people spending coins had the right to spend those coins. You couldn't do multisignatures, you coudln't do timelocks, you couldn't do hash preimages. It wasn't clear that you would be able to do something like lightning, which requires intricate scripting support, much less any of the other crazy stuff people are doing in blockchain.
 
 Voldemort mentioned this at the end of his document. He wanted to figure out a way to translate script operations into discrete log operations. He wants some way to get these basic cryptographic signatures these schnorr signatures with the semantics of a scripting system. And it wasn't clear that this was possible. Voldemort had no idea whether this was possible. He didn't give any hints as to what to do, and that's what scriptless scripts are. It's a direct answer to his question. It's a way to transform script operations into a discrete log.
 
-# Kernels in mimblewimble
+## Kernels in mimblewimble
 
 <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2016-11-21-mimblewimble/>
 
@@ -42,7 +37,7 @@ If you delete this data from the blockchain, then how can you attach more spendi
 
 So how could you attach any script information to these? Well, let me switch from pictures to algebra to try to answer that question.
 
-# Adaptor signatures
+## Adaptor signatures
 
 These kernel proofs are looking like Schnorr multisignatures. We talked a lot about Schnorr multisignatures in the crypto space. If you sign your private key, it's a zero knowledge proof of knowledge of the private key. A schnorr multisig is a fiat-shamir transform of the schnorr zero-knowledge protocol.
 
@@ -52,7 +47,7 @@ After the nonce exchange protocol, the schnorr signatures are in a sense unique 
 
 So how can we use this? Well, one party has to reveal a secret to complete the protocol.
 
-# Atomic cross-chain swaps
+## Atomic cross-chain swaps
 
 <http://diyhpl.us/wiki/transcripts/layer2-summit/2018/scriptless-scripts/>
 
@@ -62,7 +57,7 @@ We're not dependent, at all, at what these signatures are signing. We aren't dep
 
 In particular, mimblewimble kernels are sufficient for this.
 
-# Features of adaptor signatures
+## Features of adaptor signatures
 
 Adaptor signatures are better than the way that people have been doing these things in bitcoin or ethereum. You can do really general things. You can do zero-knowledge contingent payments in bitcoin where the secret you reveal during the signing keys, that the encryption key is a committed secret to the location of buried treasure or something.
 
@@ -72,13 +67,13 @@ There's this re-blinding property- you can exploit algebraic structure here. You
 
 Let me say more about privacy. We have a very strong privacy property here, called deniability. If I take any two signatures I can find laying around, like on the grin blockchain, and I can invent my own secret encrypted value, and generate a complete transcript showing that those are actually atomic transactions and they did an atomic swap or something. And the fact I can do that with any two signatures on the chain, says that these transcripts are meaningless and they prove nothing at all. If you are concerned about the privacy of atomic swaps, which is something you should be concerned about, especially in lightning where you don't want all of your payments and financial contacts to be very visible and permanently correlated, then this is a really important privacy property that we were struggling with in lightning for quite a while.
 
-# Limits of adaptor signatures
+## Limits of adaptor signatures
 
 Let me talk about the limitations here. It depends on Alice being able to look at the blockchain, being able to subtract off her contribution and Bob's contribution. If you have multiple parties, then it gets hard to separate this. It's difficult to extend this to multi-signer protocols. As long as two people are signing, if you're doing a 2-of-3 threshold scheme then you're still okay.
 
 It depends on publication of complete signatures. Dan Boneh just said that one of his top three features is signature aggregation. Unfortunately, signature aggregation breaks this system. We've been brainstorming this, it's very difficult, it seems it may not be possible. But we said that about everything else we're talking about, so I'm no longer worried about things that seem impossible.
 
-# Witness encryption
+## Witness encryption
 
 Witness encryption is my preferred moon math method of doing timelocks. I mentioned a couple slides ago that you could do a zero-knowledge contingent payment, where you do an adaptor signature and instead of sharing a secret across two transactions, instead you generate a zero-kinowledge proof showing that this secret is the encryption key to some NP problem, like a complete transaction on another blockchain or a digital signature from a third-party on some message, or a proof that you found a satellite image that you found oil reserves or something. There's weird applications of zero-knowledge proofs that you can use here.
 
@@ -90,7 +85,7 @@ There was a 2013 paper by Garg, Gentry, Sahai, Waters showing that you can do wi
 
 This is really exciting. This is basically hte most immediate application. I could put up coins up on mimblewimble, and let them take it if they can prove the reimann hypothesis or something, or the twin prime conjecture. In principle, that would be possible.
 
-# Timelocks in mimblewimble
+## Timelocks in mimblewimble
 
 So that's my preferred solution for timelocks. There's some other ways. Absolute timelocks can be added to mimblewimble by having kernels sign a minimum blockheight before which they may not be included in the blockchain.
 
@@ -98,6 +93,6 @@ Relative timelocks are much harder, because kernel signatures are independent of
 
 Somsen and Friedenbach in 2016 personal communication had an idea to let kenrels reference .....
 
-# Open problems
+## Open problems
 
 That's it, that's the end of my talk. Let's figure out timelocks, scriptless scsripts with BLS, and multiparty 3+ party scriptless scripts. And what about standards and interoperability.

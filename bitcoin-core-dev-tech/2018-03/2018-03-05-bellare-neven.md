@@ -1,15 +1,12 @@
 ---
-title: Bellare Neven
+title: Bellare-Neven
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['multisig']
+tags: ['signature-aggregation']
 date: 2018-03-05
 aliases: ['/bitcoin-core-dev-tech/2018-03-05-bellare-neven/']
 ---
-
 See also <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>
-
-# Bellare-Neven
 
 It's been published, it's been around for a decade, and it's widely cited. In Bellare-Neven, it's itself, it's a multi-signature scheme which means multiple pubkeys and one message. You should treat the individual authorizations to spend inputs, as individual messages. What we need is an interactive aggregate signature scheme. Bellare-Neven's paper suggests a trivial way of building an aggregate signature scheme out of a multisig scheme where interactively everyone signs everyone's message. We found a vulnerability in this scheme, it's very subtle.
 
