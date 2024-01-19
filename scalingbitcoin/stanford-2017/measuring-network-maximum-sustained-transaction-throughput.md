@@ -1,13 +1,12 @@
 ---
-title: Measuring Network Maximum Sustained Transaction Throughput
+title: "Measuring maximum sustained transaction throughput on a global network of Bitcoin nodes"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['P2P', 'miners', 'fees']
+tags: ['p2p']
 speakers: ['Andrew Stone']
+date: 2017-11-04
+https://www.youtube.com/watch?v=LDF8bOEqXt4&t=3981s
 ---
-
-Measuring maximum sustained transaction throughput on a global network of Bitcoin nodes
-
 Andrew Stone, Bitcoin Unlimited
 
 We are 25 minutes behind schedule.
@@ -20,7 +19,7 @@ The scaling concerns are related to network nodes because those nodes must proce
 
 I was interested in 50k/sec number. Is this easy to achieve? Is it physically impossible? Maybe somewhere in between. It seems to be controversial. We wanted to measure the maximum sustained throughput on standard off-the-shelf client software already out there and see how close we would be to achieving that number.
 
-# Gigablock testnet
+## Gigablock testnet
 
 We built a gigablock testnet. As of October 2017, it has 18 nodes. Our standard hardware spec is 4 core machine with 30 megabit/second internet. 16 GB RAM and a solid state hard drive. Typically we are only mining with 4 to 6 of those nodes. The rest are hosting python scripts which are generating a bunch of 2-input 2-output transactions and broadcasting them to the local bitcoind instance.
 
@@ -56,7 +55,7 @@ I thought it was interesting that the bottlenecks we found were not related to t
 
 Andrew
 
-# Mempool magic
+## Mempool magic
 
 Thanks. I did two types of optimization to achieve the number. The first one is parallelization and secondly just raw optimization of the code. If you look at this slide, this is what the original code did. I think you guys can take a look. Sorry if this ... might be more appropriate for people wh have looked at the code, sometimes you have to dive into the details. There was a socket receive thread and a message receive thread. And then send to the mempool which would do other work like midblocks and stuff. I focused only on transaction acceptance. It looks more complex, but it's probalby 95% the same actual code, it's just a reorganization.
 
@@ -76,7 +75,7 @@ In one of the previous talks today you learned about a bloom filter. I don't hav
 
 Since I am not even running the hashes in the bloom filter, this fast filter runs probably orders of magnitude faster. We didn't even test it. And that's it.
 
-# Q&A
+## Q&A
 
 Q: How do I validate transactions if it's a gigablock?
 

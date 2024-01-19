@@ -2,17 +2,16 @@
 title: "Dandelion: Privacy-preserving transaction propagation in Bitcoin's p2p network"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'P2P', 'miners']
+tags: ['dandelion']
 speakers: ['Giulia Fanti']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=SrE6KdBgI1o
 ---
-
 <https://twitter.com/kanzure/status/1014196927062249472>
 
 Today I will be talking to you about privacy in bitcoin's p2p layer. This was joint work with some talented colleagues.
 
-# Bitcoin p2p layer
+## Bitcoin p2p layer
 
 I want to give a brief overview of the p2p layer. Users in bitcoin are connected over a p2p network with tcp links. Users are identified by ip address and port number. Users have a second identity, which is their address or public key or however you want to think about it.
 
@@ -22,7 +21,7 @@ Alice's address and her real identity need to remain unlinked. In this talk, I a
 
 My claim is that the way that the current bitcoin network works is that it amkes it relatively easy to link someone's address to their IP address.
 
-# Transaction propagation
+## Transaction propagation
 
 Today, messages on the network spread according to a process of diffusion. Nodes spread transaction with exponential random delay. Each node independently chooses fresh independent delay.
 
@@ -30,7 +29,7 @@ If we have a set of corrupt nodes, they can use the node graph to infer the sour
 
 The problem is that diffusion is vulnerable to source detection. This has been explored in a bunch of papers including a few tailored to bitcoin's p2p network. The point is, without expending too many resources, you can make this linkage with probabilities that are exceeding like 50%. They are scary numbers.
 
-# Dandelion
+## Dandelion
 
 Dandelion is a project to build a lightweight transaction propagation algorithm with theoretical rpovable anonymity guarantees. I am going to be talking about what those guarantees are and give you some intiution about why dandelion works.
 
@@ -40,7 +39,7 @@ The other solution that people discuss is why not build some kind of onion routi
 
 Our goal with dandelion was to propose a system that has theoretical privacy guarantees, benefits everyone in the network, and is lightweight and easy to implement.
 
-# Model and assumptions
+## Model and assumptions
 
 I am going to talk about the model and the solution next.
 
@@ -60,7 +59,7 @@ There are two basic properties that we want. We want assymetry-- in diffusion, y
 
 We can control the spreading protocol-- given a p2p graph topology, what is the spreading method? Right now, bitcoin is using diffusion. The second property is the topology. What does the underlying graph topology look? Bitcoin is using a regular approximately-random construction. And the third is dynamicity, how often does the p2p graph change? For now, the p2p graph is changing much slower than the time it takes for a single transaction to propagate.
 
-# Spreading protocol: Dandelion
+## Spreading protocol: Dandelion
 
 It has two phases. There's the anonymity or stem phase, and then the spreading phase or fluff phase. Suppose the source node is this far left node. The source is going to pick exactly one of its neighbors and pass the messae to its neighbor. The neighbor will flip a coin and if it lands heads then he continues and passes it to one one neighbor. This continues until someone flips tails. And then we switch into fluff phase. The reason why we call this a dandelion is because the spreading pattern looks like a seed head from a dandelion.
 
@@ -88,7 +87,7 @@ One of the main takeways from Dandelion++paper was that maybe instead of using a
 
 We also implemented dandelion and ran some tests on mainnet. We ran 30 dandelion nodes in geographically diverse locations. We wanted to evaluate the main tradeoff, which was latency. By sending transactions across this path, you're delaying the time for everyone to get the transaction. The time for the transaction to reach 10% of the network in seconds... so as the path length increases... to about 8 seconds.. when you do have dandelion running. This 2 second overhead in latency is might be a problem in low-latency cryptocurrencies... but for bitcoin which can tolerate high-latency and high confirmation times, I think that can be very reasonable.
 
-# Take home messages
+## Take home messages
 
 Bitcoin's p2p layer has weak anonymity properties right now. Dandelion may be a lightweight solution against large-scale deanonymization attacks. Don't replace Tor-- this is just for large-scale privacy vaccination.
 
@@ -98,7 +97,7 @@ We have a draft BIP, and we would welcome feedback on this. And we have a refere
 
 <https://github.com/dandelion-org/bitcoin>
 
-# Q&A
+## Q&A
 
 Q: When you talk about flipping a coin, what is the parameter?
 

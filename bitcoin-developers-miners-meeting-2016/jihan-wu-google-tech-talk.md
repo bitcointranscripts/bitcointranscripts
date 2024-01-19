@@ -2,7 +2,7 @@
 title: Google Tech Talk (2016)
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['mining', 'proof-of-work', 'miners']
+tags: ['mining']
 speakers: ['Jihan Wu']
 ---
 
