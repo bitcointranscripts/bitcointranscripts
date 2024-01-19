@@ -2,11 +2,9 @@
 title: Changes Without Unanimous Consent
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'miners']
+tags: ['soft-fork-activation']
 speakers: ['Anthony Towns']
 ---
-
-
 I want to talk about dealing with consensus changes without so-called consensus. I am using consensus in terms of the social aspect, not in terms of the software algorithm consensus for databases. "Consensus changes without consensus". If you don't consensus on consensus, then some people are going to follow one chain and another another chain.
 
 If you have unanimous consensus, then new upgrades work just fine. Developers write software, miners run the same stuff, and then there are no splits because PoW builds on other blocks and we're all happy and the economy is all in agreement as well and everyone wins. If everyone doesn't agree, you have a bit of a problem. You can have different sorts of disagreements. I would say that the disagreements are going to be more likely as bitcoin scales and grows, for a variety of reasons. Once bitcoin becomes big enough that governments buy in, then governments are going to have different goals to decide upon. There might be incompatible goals and disagreements, where disagreements don't have compromise, and then it ends up in chain split. This might mean segwit2x vs bitcoin cash or whatever.
@@ -25,7 +23,7 @@ You can have contentious hard-forks and it ends up with a split. You can do a re
 
 So the argument is that splits are going to happen and you kind of want to deal with them.
 
-# Decision makers
+## Decision makers
 
 Who are the decision makers here? Developers, miners, users, regulators? Is it someone else? I don't think Core developers have a chance of making decisions here. In Linux, there's Linus. But in Bitcoin Core, you're not going to get that answer. Maybe different cryptocurrency implementations are going to have a developer lead, that's fine, but not in bitcoin.
 
@@ -35,25 +33,25 @@ Nodes enforce the rules but they are too easy to fire up replacements to actuall
 
 The way that the economy does things is that they buy and sell bitcoin for goods and services. They are the ones... the economy's power as such is that it sets a price for bitcoin in terms of US dollars.
 
-# Changes
+## Changes
 
 Someone proposes a consensus change like segwit to increase the block size, or bitcoin script 2.0, something that nodes will enforce and something that miners will hopefully check. There are two choices that everyone will make- either adopt the change or keep with the old rules. I am using n for the nobody changes situation, e for the eerybody changes situation, and s for the situation where there is a chain split. The hypothetical value of the original chain with old rules is a, new rules is b, and the other one is the greek letter. This is the expected probability and value of these things happening on the chain and sort of equation.
 
 If you have that model, then you want to work out the values. If the highest expected value of bitcoin is a, and a > b, then choose a, and if b is going to be in more value then you want everyone to adopt the new rules. Maybe segwit is the example, maybe the new rules are going to increase the market price somehow. Does that make sense? I hope so.
 
-# Trading coins
+## Trading coins
 
 You want to find out these values. As a person you might not know, but perhaps the economy knows. The way that the economy expresses this knowledge is by assigning values. The way they do this is by having a market and trading these potential coins. So there are three sorts of way doing this for either coins that are-- unconditional, like what Bitfinex is offering for segwit2x. You buy a token if the chain with .... if the segwit2x chain continues on it's worth something, and you can also have options for refunds, like offers to buy segwit2x coins for 7:3 or whatever it is today, from Adam Back, and a refund if there's no split. And then there's a third case where actiation doesn't happen. All 3 of these can generate different prices.
 
 We don't have enough equations to work out the unconditional values. All of the markets combined will only kind of give you conditional values. If you look at those values, like the bitfinex price of segwit2x you can't actually tell if that's a low price because the segwit2x coins might not be valuable, or it's because the market is saying that everyone is going to back off from the segwit2x thing and it's not going to happen at all. You can fix this by having a US dollar prediction market but then you have to do it in US dollars you can't do it decentralized on chain because you have correlation problems.
 
-# Price discovery
+## Price discovery
 
 If you don't have price discovery, before the split happens, you can get shocks in the price. In the Bitcoin Cash split, the price rose immdiately after by about 5%. That makes sense if people weren't able to move.
 
 If you have a split, then there are many costs and they are mostly externalities. If you are kind enough to keep the proof-of-work, unlike Bitcoin Cash and Bitcoin Gold, then you can kind of estimate what the cost of split is going to be. It's expensive, maybe not crazy expensive, and again that only applies if you have the same proof-of-work.
 
-# Making splits not horrible
+## Making splits not horrible
 
 So how do we make splits not horrible? We have 10 minutes. So this is a mini-talk. You want to have replay protection. You want your transactions for bitcoin only going to bitcoin and segwit2x only going to segwit2x, and don't give them unexpected bonuses tha tyou don't get to claim your value from. I argue that the main reason why segwit2x doesn't have replay protection is because implementing it would socially imply that they are not the real bitcoin. Bitcoin Cash implemented replay protection but they were an obvious fork. If Bitcoin Core isn't implementing replay protection, then why should segwit2x implement it? We want replay protection in place and forks this way and forks that way, everyone gets replay protection for free.
 
@@ -69,7 +67,7 @@ One of the drawbacks potentially with bip115 as specified is that a transaction 
 
 So that seems to be great for replay protection but it doesn't lead to the price discovery. The betting with roger talk from yesterday, that replay protection is not sufficient for that.
 
-# Tying transactions to soft-fork activation status (BIP commitments)
+## Tying transactions to soft-fork activation status (BIP commitments)
 
 The other proposal, which is more complex, instead of committing to a particular block, you can commit to the activation status of the bip, using pretty much the same approach. Specify a versionbit, have a sighash flag to indicate that, it does require that any forks have a versionbit that you can indicate. Bitcoin Core has to set it to active or inactive. You could argue bip102 is segwit2x or something, so that's reasonably feasible in this situation to use a versionbit. The big challenge with this is that it potentially makes every upgrade a hard-fork. So your version 19 comes out with some user acceptance soft-fork and maybe everyone agrees it's a great thing and it's not controersial and then it gets activate.d You make a transaction that insists that it's activated.. and what do people running old ersions see, do they see the transaction as valid or invalid? Is the soft-fork activated or not? So this adds the complication that you have to track the implicit status of a soft-fork.. if you see a block wit ha unch of signatures saying that the soft-fork is activated, then you have to assume it's activated.
 

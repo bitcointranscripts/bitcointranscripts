@@ -2,10 +2,11 @@
 title: Security Of Diminishing Block Subsidy
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mining', 'miners', 'fees']
-speakers: ['Miles Carlsten', 'Harry Kalodner', 'Arvind Narayanan']
+tags: ['research','mining']
+speakers: ['Miles Carlsten']
+date: 2015-09-12
+media: https://www.youtube.com/watch?v=iKDC2DpzNbw&t=2453s
 ---
-
 Miners no longer incentivized to mine all the time. The future of mining hardware. Impact on the bitcoin ecosystem. Implications and assumptions of the model.
 
 Are minting rewards and transaction fees the same? Transaction fees are time-dependent. A miner can only claim transaction fees as transactions are added to their block. As transaction fees start to dominate the block reward, they become time-dependent. We are modeling this block reward as a linear function of time, we have this factor B which might be initial minting reward, and we have some scaling factor, the block reward is like "b + at". Something that can be added to this plot is that miners have a set expense to mine, and if miners are not going to recoup their costs, it's not worth them to mine that block.

@@ -1,12 +1,12 @@
 ---
-title: Privacy Preserving Smart Contracts
+title: "Privacy-Preserving Smart Contracts"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'smart contracts', 'miners']
+tags: ['research','privacy','cryptography']
 speakers: ['Ranjit Kumaresan']
+date: 2015-09-12
+media: https://www.youtube.com/watch?v=gpJrGuZEJsY&t=858s
 ---
-
-
 <ranjit@csail.mit.edu>
 
 <http://people.csail.mit.edu/ranjit/>

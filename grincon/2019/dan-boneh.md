@@ -1,15 +1,12 @@
 ---
-title: Dan Boneh
+title: "Fireside chat with Dan Boneh"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['miners', 'mining', 'privacy', 'cryptography', 'post-quantum']
-speakers: ['Taariq Lewis']
+tags: ['cryptography', 'post-quantum']
+speakers: ['Taariq Lewis','Dan Boneh']
+media: https://www.youtube.com/watch?v=ggvqmb7np9w
+date: 2019-01-28
 ---
-
-Dan Boneh fireside chat
-
-Taariq Lewis
-
 TL: I was one of the founders of SF Bitcoin Devs with aantonop. I am also the co-founder of a company called Promise. We sponsor protocols in privacy as well as mimblewimble. If you are mining or actively looking to mine in grin, please say hello to me because we're connected with a lot of mining companies and hosting companies that are looking to host miners very cheaply. I'd love to help. This is the most important panel of the day. There is not going to be another more important panel than my guest. He has been a man of impact and a professor of awesome in cryptography at Stanford. We begged him to give us 30 minutes and to talk about post-quantum crypto and how it impacts coins like grin and other privacy tokens. Please ewlcome Professor Dan Boneh of Stanford University. We're going to ask Dan a bunch of questions.
 
 TL: Dan, you can tell us, and we won't tell anyone else-- did you or one of your students create mimblewimble?

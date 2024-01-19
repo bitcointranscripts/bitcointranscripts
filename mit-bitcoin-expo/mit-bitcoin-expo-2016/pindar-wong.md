@@ -1,15 +1,11 @@
 ---
-title: What Internet governance can learn from Bitcoin
+title: "Forked to Death: What Internet governance can learn from Bitcoin"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['forks', 'miners']
 speakers: ['Pindar Wong']
+date: 2016-03-05
+media: https://www.youtube.com/watch?v=UVuUZm4l-ss&t=24270s
 ---
-
-Pindar Wong
-
-Forked to Death: What Internet governance can learn from Bitcoin
-
 So, the last talk today is going to be from Pindar Wong. He's been involved with Internet in Hong Kong. He also helped organize the Scaling Bitcoin workshops. It's my pleasure to have him speaking today.
 
 Okay. Thank you very much for staying until the bitter end. My topic today is forked to death, what Internet governance can learn from Bitcoin. I do mean this, and I would like to explain why. This is a fork. I am holding a fork.

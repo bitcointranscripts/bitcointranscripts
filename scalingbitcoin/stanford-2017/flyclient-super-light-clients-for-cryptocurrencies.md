@@ -1,12 +1,11 @@
 ---
-title: Flyclient Super Light Clients For Cryptocurrencies
+title: "Flyclient: Super Light Client For Cryptocurrencies"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['proof-of-work', 'miners']
-speakers: ['Benedikt Bünz', 'Mahdi Zamani']
+tags: ['research','lightweight-client']
+speakers: ['Benedikt Bünz']
+media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=8400s
 ---
-
-
 As you know, the blockchain is a chain because each block connects to the previous block through these hashes. In the header of each block is a commitment to all the transactions. It's using this merkle hash tree where at each level the parent node hashes to the children and this gives you some nice properties which I will talk about later. I need to check consistency though. The first thing I need to check is that the transactions don't spend more than they have... then I need to check that the tree was onstructed correctly. Finally, the blockheaders need to be correct and they need to link to each other and the proof-of-work requirement is that blockhashes to a number that starts with a bunch of zeroes. The way this works is that miners an choose this freely and try nonsense and to find one such that the nonce hits the match.
 
 Now I can check what is my blockchain that I have received from soeomene is correct. What if I have two people saying there are two different blockchains? How will I know which one is the correct one? What is Alice going to do in this case? She can use the longest chain rule, which is only one of the rules of course. She can look for which chain has more PoW chain. And then she could assume it's right, the intuition there is that it costs more money to forge history, it's real resources, real energy to produce chains. To summarize this PoW conjecture, it says that honest mining is equilibrium, and in equilibrium the dominant strategy is to follow the rules of hte network. The other part of the conjeture is that the majority of nodes are rational, that the majority of nodes will mine honestly and follow the rules. This holds because it implies that the network will actually be honest and follow the rules of the network and it also has this nice ... property... that you can always distinguish an honest chain between non-honest chain, after being offline. So when you wake up, you download all the chains, and you can find the honest one by looking at the blockheaders and checking validity using all of the rules that was created using the rules of the network. This property does not necessarily hold for proof-of-stake, but that's a topic for another talk.

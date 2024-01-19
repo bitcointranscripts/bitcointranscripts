@@ -2,7 +2,7 @@
 title: A Flexible Limit Trading Subsidy For Larger Blocks
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['miners', 'fees']
+tags: ['soft-fork-activation']
 speakers: ['Mark Friedenbach']
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=4h27m53s
 ---
