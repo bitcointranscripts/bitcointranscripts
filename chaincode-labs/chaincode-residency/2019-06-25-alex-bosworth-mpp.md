@@ -1,18 +1,15 @@
 ---
-title: Multiple-path Payments (MPP)
-Transcript_by: Jeff Czyz, Stéphan Vuylsteke
+title: "Multiple-path Payments (MPP)"
+transcript_by: Jeff Czyz, Stéphan Vuylsteke
 categories: ['residency']
-tags: ['lightning', 'multiple-path payments']
+tags: ['multipath-payments']
 speakers: ['Alex Bosworth']
 date: 2019-06-25
 media: https://youtu.be/Og4TGERPZMY
 ---
-
-Topic: Multiple-path Payments (MPP)
-
 Location: Chaincode Residency 2019
 
-# Bigger, Faster, Cheaper - Multiplexing Payments
+## Bigger, Faster, Cheaper - Multiplexing Payments
 
 Alex: How to do multiple path payments. So there's a question: why do we even need multiple path payments? So you have a channel -- like -- we don't have them now, so are we really hurting for them? So I kind of like describing different situations where you would need it. So in the first quadrant you can see I have two channels. One of my channels has three coins on my side. I want to buy something that costs two coins. So that's actually a situation where we're fine today. That's normally you know what's happening. We want people to make channels that are big, that are going to be able to accommodate multiple repeated purchases. That's kind of like the whole idea of channels. So that's why at the moment we actually don't have a huge problem as far as needing multiplexing different channels together.
 
@@ -20,13 +17,13 @@ In the second quadrant you can actually see that if you have two channels where 
 
 So today we have these two cases where you could if you need to buy something and it costs a bunch, that these are possible ways to do it. So the third case is where we run into trouble. You have two channels and both of them have insufficient coins for what you want to buy, and so you're kinda out of luck. That's where multiplexing multi-path payments comes in as a solution.
 
-# The Wallets Have Eyes - Privacy Implications of Multiple Paths
+## The Wallets Have Eyes - Privacy Implications of Multiple Paths
 
 So there's another thing to consider with multi-path. It's not just about “can I pay” or “can I not pay”? It's also “can somebody observe that I'm paying?”. If you can look on this in the upper half I kind of show an example of somebody who's buying a Y'all's article. And so if that person A is sending 150 satoshis across the network, then person C kind of see as they pass that 150 satoshis across to yalls.org it can kind of have an idea that that payment is going to y'alls.org because it's 150 and that's like the standard cost of an article on Y'all's, so it's a pretty good idea that that's what you're doing.
 
 So one advantage of multi-path payments in the future could be that we could split up these values to make it less obvious, so we could say instead of spending a 150, A is going to spend, you know, some random amount through C and some other random amount through B, and together they're gonna add up to 150 on the other side but it makes it harder for C to tell that that payment is actually going to Y'alls.org. So that's another reason why you would want to use multi-path and a limitation of the current protocol that doesn't really have multi-path.
 
-# Link Level AMP - Smarter Edges
+## Link Level AMP - Smarter Edges
 
 So there's multiple ways to do multi-path, and one way that I'm not talking about is what we propose at Lighting Labs called “atomic multi-path payments” which uses sharded preimages, and that idea is that you would split up the preimage into multiple different components, and then the only way to put it back together is if the payment has completed atomically, so I get all of the payments together. But it's kind of complicated to implement. So we have different ideas of how we can do multi-path payments before we get to that complicated state. And one of the easiest ways to do multi-path payments is this idea called link level of multi-path payments. And I can kind of show how that works. It's very simple. So in this diagram you can see that the route begins on the left and then it goes through the router and then it gets to the end. And this is representing -- so -- at the start I have two channels and both of them have one coin. And I go to the router and my goal is -- with the router -- is that they're gonna relay my payment of both of these different one coins into a two coin payment. So if you think about how HTLCs work, it's kind of like a two-phase commit system. So I get in HTLC and then that becomes part of my commitment transaction, and then I pass forward that commitment to the next node and so on and so forth. And then only after everything is already kind of locked into the commitment transactions do we then begin the second phase of the commit which is to reveal the preimage and then roll it back.
 
@@ -40,7 +37,7 @@ Alex: Yeah I think it should be fine but you want to be a little bit careful, On
 
 Okay, so this is the smarter edges, and it only extends one peer, so that’s the benefit of it and it's also the limitation. And you know, Rene has a good point that potentially it could be extended more, and oh I'll kind of get into that now with base amp.
 
-# Base AMP - Economic Code
+## Base AMP - Economic Code
 
 So base amp is using the same principle, but it's making it a little bit more general. So in this example you can see I'm trying to buy something that costs two, and the seller is selling this thing that cost two. He has two inbound channels, and both of them have one coin only. So normally he wouldn't be able to receive the two coins because he only has these one coin channels. But if we can arrange things so that you'll wait, I can actually still pay him too. And the way that that will work is that I'll first pay him one over the top channel. So I can do that because I have two coins in my channel and then the routing node has a one coin channel. So I'll first pay him, but he won't accept that HTLC because the item cost two coins, so you know that's not enough to actually give over the item. So then what I'll do is I'll pay another payment and it'll be locked to the same preimage, and it's safe to do it because the preimage hasn't been revealed yet, and we're still in this first phase of the two-phase commit where we're just setting up our commitment transactions. So he'll get the second payment and he'll then do the math, he’ll be like oh well I can add up, I have a 1 coin incoming HTLC and have another 1 coin incoming HTLC, and now it's safe for me to reveal the preimage because I'm gonna get the payment that I want, and everybody's already locked into their positions. So it's not like you can mess around and then use that preimage to steal money from somebody. So it will then rewind back to the beginning of – in the same way that payments normally go, and you will have successfully bought something for two, even though there's no channel that exists that has two by itself.
 
