@@ -1,12 +1,12 @@
 ---
-title: Bitcoin Script V2.0 And Strengthened Payment Channels
+title: "Bitcoin Script 2.0 And Strengthened Payment Channels"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['attacks', 'p2sh']
+tags: ['lightning','scripts-addresses']
 speakers: ['Olaoluwa Osuntokun', 'Johnson Lau']
+date: 2017-11-04
+media: https://www.youtube.com/watch?v=LDF8bOEqXt4&t=8612s
 ---
-
-
 This is a brief history of bitcoin script evolution. Since bitcoin was active in 2009, there was a lot of emergency fixes for the first 2 years done by Satoshi. He found that people could skpi the signature check using OP\_RETURN and malformed scriptSigs. So those functions were removed. OP\_VER and OP\_VERIF were intended for script upgrades but it was found that after every release of bitcoin, it would become a hard-fork because of the design. So those were also removed. Also, many opcodes were removed due to potential denial-of-service attacks: CAT, SUBSTR, LEFT RIGHT, INVERT, AND, OR, XOR, 2MUL, 2DIV, MUL, DIV, MOD, LSHIFT, RSHIFT.
 
 The first new function introduced was p2sh (bip16) which allowed people to use a single address to pay for any compact script. It doesn't introduce any new functions, it just makes the..... And later there was a fix, with bip66, which was related to script due to strict DER signature format. Consensus bug due to inconsistencies in signature handling in OpenSSL.
@@ -30,10 +30,6 @@ Another proposal is OP\_PUSHTXDATA which pushes the value of different component
 There are some other useful functions like MAST which would allow for more compact scripts by hiding the other unexecuted branches. There's also aggregation that would allow n-of-n multisig to be reduced to a single signature and so on. In the elements project, they implemented CHECKSIGFROMSTACK where they don't check the transaction structure but instead they verify a message on the stack. So it could be some message like not bitcoin maybe, perhaps cross-chain swap, or another bitcoin UTXO. And also we might have some elliptic curve point addition and operations which are also useful in lightning network design.
 
 Here are some related works in progress. If you are interested in this topic, I would like to encourage you to join our discussions because it's a very active topic. jl2012 bip114 MAST, maaku's MBV, luke-jr or version-1 witness program, Simplicity, etc.
-
-categories: ['conference']
-tags: ['attacks', 'p2sh']
----
 
 so you have your script template the amount value and there is a block impactor beause we have the sha chain whih allows you to hae the hashes.. we can hae that errortate constant beause you need the HTLC chashes, to properly reoke the prior states and if you an't do that then you can't onstruct the redeem script. Right now it ineeds a signature for eery state, you need all the HTLCs, it needs the netowrk erification state, and there's another cool thing you can do with which is like trap door erification and you can include it in the transaction itself and there can be a alsue where there is some margin for it.. Which make sit powerful, and then you can make it more private with these constructs. We only have a few minutes left, we can cover this.
 

@@ -1,13 +1,12 @@
 ---
-title: UTXOs (Chaincode Decoded) - Episode 5
+title: "Chaincode Decoded: UTXOs"
 transcript_by: sasa-buklijas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=sNLbg9BUV4Y
-tags: ["utxo"]
+tags: ["bitcoin-core"]
 speakers: ["Adam Jonas", "John Newbery"]
 categories: ["Podcast"]
 date: 2020-12-01
 ---
-
 ## Introduction
 
 John Newbery: 00:00:00

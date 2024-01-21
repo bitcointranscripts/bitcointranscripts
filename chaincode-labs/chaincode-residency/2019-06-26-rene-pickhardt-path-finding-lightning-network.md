@@ -1,13 +1,12 @@
 ---
 title: Path Finding in the Lightning Network
-Transcript_by: Caralie Chrisco
+transcript_by: Caralie Chrisco
 categories: ['residency']
-tags: ['lightning', 'path-finding']
+tags: ['lightning', 'pathfinding']
 speakers: ['Rene Pickhardt']
 date: 2019-06-26
 media: https://www.youtube.com/watch?v=NT_dMqB1xuA
 ---
-
 Location: Chaincode Residency 2019
 
 ## Introduction

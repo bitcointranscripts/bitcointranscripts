@@ -5,7 +5,7 @@ categories: ['conference']
 tags: ['p2p']
 speakers: ['Andrew Stone']
 date: 2017-11-04
-https://www.youtube.com/watch?v=LDF8bOEqXt4&t=3981s
+media: https://www.youtube.com/watch?v=LDF8bOEqXt4&t=3981s
 ---
 Andrew Stone, Bitcoin Unlimited
 

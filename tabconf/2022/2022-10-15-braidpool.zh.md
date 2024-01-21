@@ -2,12 +2,11 @@
 title: Braidpool
 transcript_by: Bryan Bishop
 translation_by: Ajian
-categories: ['core-dev-tech']
-tags: ['pools', 'mining', 'p2pool']
+categories: ['conference']
+tags: ['mining']
 speakers: ['Bob McElrath']
 date: 2022-10-15
 ---
-
 ## 引言
 
 今天我准备讲讲 Braidpool，这是一种去中心化的矿池协议。希望在座有人参加了今天早些时候的矿业圆桌，尤其是关于 p2pool 的。Braidpool 是 p2pool 的后继者。很久以前我做过一次关于有向无环图（DAG）区块链的演讲。

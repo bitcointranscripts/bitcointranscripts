@@ -1,26 +1,24 @@
 ---
-title: Proof Of Stake
+title: "Proof-of-Stake Longest Chain Protocols Revisited"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'proof-of-work', 'proof-of-stake']
+tags: ['research', 'proof-of-work', 'proof-of-stake']
 speakers: ['David Tse']
+date: 2020-02-20
 ---
-
-Proof-of-stake longest chain protocols revisited
-
 <https://twitter.com/kanzure/status/1230646529230163968>
 
-# Introduction
+## Introduction
 
 Thanks. I am the last talk of the session so I better make it interesting, and if not interesting then short at least. I am going to talk about proof-of-stake. This is collaboration with a few people. Vivek Bagaria, ... et al.
 
-# Proof-of-stake prism
+## Proof-of-stake prism
 
 The starting point of this project was to come up with a proof-of-stake version of prism, which we just saw in the last talk. Prism has good latency and very high throughput and it also inherits the simplicity of the longest-chain protocol because its security is maintained by the longest chain protocol on each of the 1000 voting chains. The only potential drawback for some people is that it's proof-of-work and not proof-of-stake. So can we convert it from proof-of-work to proof-of-stake?
 
 The central problem is that because of the modular structure of the Prism protocol, the task is to convert each of the voting chains from the longest-chain protocol from proof-of-work to proof-of-stake. So the problem reduces to solving the problem of a longest-chain protocol using proof-of-stake instead of proof-of-work.
 
-# Proof-of-stake longest chain protocol
+## Proof-of-stake longest chain protocol
 
 The problem with designing a proof-of-stake longest chain protocol is not a new problem. It has been worked on by several different groups of people including from Cornell, like Snow White, and from the Cardano project we have a sequence of Ouroboros papers, which all deal with the same problem of proof-of-stake longest chain protocols. There's a lot of papers.
 
@@ -28,7 +26,7 @@ You might ask, so, since we already have these papers, why don't we just take on
 
 Is the problem solved? The problem is how to design a proof-of-stake longest chain protocol. I claim today that the problem is not solved, there's still work to be done and I'll show some results.
 
-# Ouroboros Praos
+## Ouroboros Praos
 
 I'll just focus on one of the papers, OUroboros Praos. Let's understand how it works and what the drawbacks are of this protocol. Starting with genesis, in a proof-of-stake protocol a very important thing is to keep a source of randomness around which is used to select participants that can propose blocks into the blockchain. This randomness is very important.
 
@@ -38,7 +36,7 @@ When an epoch is over, you move to another epoch and another source of randomnes
 
 But here's a question: how long is this epoch? Anyone? It's 5 days. Okay. This epoch is 5 days long. Okay. In the current implementation of Ouroboros project, in Cardano project, it's 5 days long. So what happens with such a long epoch?
 
-# Bribery attack
+## Bribery attack
 
 The attack is a bribery attack. Here's how it works. In this epoch, all the participants that are selected are already known. They already know that they are going to participate in building the blockchain during this epoch. To an adversary, they will know- they will post on a public website and says whoever wants to take a bribe can come and join me. Some of the individuals can take the bribe. What are they supposed to do by getitng the bribe is they are supposed to participate in a double-spend 51% attack.
 
@@ -54,17 +52,17 @@ The natural solution is to shorten this prediction window, in other words shorte
 
 So here's the situation... on the x-axis we have the prediction window, and on the y-axis we have the security threshold which is how much adversary power is needed to attack the system. What ouroboros shows, what the paper showed, is that as a strong secure guarantee against a 50% adaptive adversary... so very strong security guarantee, however, because this prediction window is 5 days is so long, it's subject to this bribery attack which is outside their model. So that's the problem.
 
-# Another proof-of-stake protocol
+## Another proof-of-stake protocol
 
 A natural question now is whether one can design another proof-of-stake protocol with a much shorter window, hopefully, and keep the security threshold as close to 50% as possible, and at the same time we can provide formal guarantee just as rigorous as Ouroboros? The main result of this talk is that yes we can achieve it, and this is the curve that is achieved by the protocol we designed.
 
-# Main result
+## Main result
 
 The point is that this protocol is proven-secure with these thresholds, even without consensus on randomness. No consensus on randomness, and still proven rigorously secure. The performance is very close to 50% except when c is very small. But even where c=1, you can get a security threshold of about 27%.
 
 Let me explain what happens in the c=1 case. The innovation here is realy that it's a new approach to doing security analysis. I'll briefly talk about the whole curve.
 
-# Block-by-block randomness
+## Block-by-block randomness
 
 Let's look at the protocol. Instead of an epoch window of 5 days, let's go to something with every 20 second when a new block is generated, we update the randomness. This is a totally different extreme, 5 days for Ourboros and 20 seconds for this protocol. Every time a block picks a leader, a proposer and a participant, based on the randomness r0, and then the randomness gets abated as a function of the key of this individual and the original randomness r0. You get r1, etc. etc. So participants are picked one at a time, no longer known in advance. Every 20 seconds. Every 20 seconds. One block every 20 seconds. Alright. Okay. There's no consensus on randomness.
 
@@ -72,21 +70,21 @@ What's the problem here? The protocol is "mine on the longest chain always". Thi
 
 Okay, so, what is the problem? The problem is that we have independent randomness for each of the different blocks. Okay? And that gives a lot of opportunity for the adversary to try many different blocks, to try to find an advantage over the honest guy who just keeps growing on the longest chain. This is a version of the "nothing at stake" attack.
 
-# Private attack analysis
+## Private attack analysis
 
 "Nothing at stake" is the biggest problem of this protocol. Several parties have used this protocol already, it's not new. A paper that was presented a year ago at SBC 2019 analyzed this protocol for c=1 where randomness is updated at every block. Unfortunately, they did not give a formal security analysis. What they did is a private attack analysis, in other words they looked at one particular attack, and they analyzed the security protocol. In a private attack, you give the adversary- the adversary mines- the honest guy mines on the longest chain, the adversary mines on every block which means that it can grow a tree because it can mine every block and since there's so many blocks the opportunity for you to increase, amplify the growth of this tree beyond stake of the adversary. What you get is that the growth rate of the honest.... the total growth rate... is he adversary's stake fraction, okay, and lambda times 1 - beta is therefore the honest growth rate. This is the honest growth rate. Blue. Blue is honest growth rate. Now the adversary growth rate should be lambda beta right because beta is the adversary stake. But because of the "nothing at stake" tree, it has amplification factor of e and somehow e always shows up at appropriate times or inappropriate times. e times lambda beta. Okay, so you can do the math, this means that if beta is less than 1/(1+e) then this growth rate is slower than this one, and therefore the private attack has failed, which means that if you look at the threshold on beta, then, that means you have power staked more than that, then forget it. The system is insecure there. Now the leftover issue from the paper is what happens on the left hand side? Given less than 1/(1+e), what happens? What they showed is that the private attack would fail. But what about other attacks? Can they succeed?
 
 To understand this issue about private attack vs other possible attack, let's go back to the history of the literature. Let's go back to proof-of-work, okay? Longest chain. Nakamoto proposed a protocol 12 years ago in two oh oh eight. In that paper, he showed that the Nakamoto proof-of-work longest chain is secure against the private attack. A specific attack. Six years later, a beautiful paper by ... they show that actually it's secure against all attacks. "The bitcoin backbone protocoL: Analysis and application". It takes how much effort to do this? Let's measure work by number of pages in the paper.... Nakamoto paper had 9 pages long. Everybody can read that. The backbone manuscript was 46 pages long, so it must be more complicated right? Indeed, it took us 46 days to read this damn paper. You might say, well these guys just wanted to publish at some good conference but nobody cares.... Nakamoto is okay, right?
 
-# GHOST and balance attacks
+## GHOST and balance attacks
 
 It turns out that these pages are necessary because if you try to modify a design and make a new protocol, and you think that hey like Nakamoto as long as I'm secure against the private attack then I'm okay.... like this protocol GHOST by these people where several ... it turns out, that there's an attack. This attack is a pretty famous work called a "balance attack". It takes a different type of attack, where it builds two chains to balance it. It's not secure against the balance attack. So therefore, the 46 pages are necessary. You need the 46 pages. It's a lot of work and sweat, but you have to do the work and do the sweat.
 
-# Formal security analysis
+## Formal security analysis
 
 Now we're going to sweat it out... We're not Greek, but we're still going to do it. We're going to do a formal security analysis on the proof-of-stake protcol we talked about earlier.  "Nothing at stake" provides a difficulty that is not there in proof-of-work where the argument goes as follows: 46 pages but let me summarize in 10 seconds. Basically the paper says that where there's a private attack or balance attack or whatever attack, the endpoint is that to be successful you need to build two chains, and to build the two chains the adversary needs to match the honest nodes block-by-block. If the honest chain has one-block, then the adversary needs one block. The number of adversary blocks is less than the number of nodes? Then the attack isn't possible, which implies 50% security. So the security is obtained basically by 46 pages-- it's clever counting of the number of adversary blocks. This whole argument doesn't work for proof-of-stake with nothing at stake (NaS). Look at the tree: there's an exponential number of adversarial blocks over honest blocks. If you follow the argument, you will get a trivial result: nothing at stake has 0% security. Is it true?
 
-# Nothing at stake, and adversary-proof convergence
+## Nothing at stake, and adversary-proof convergence
 
 Is nothing at stake 0% security, or is it 1/(1+e) or somewhere in between? We resolve the problem by not using the Cardano framework but we invent a totally new approach which we call adversary-proof convergence. Here's how it works.
 
@@ -94,7 +92,7 @@ The blue blocks are honest. Okay? They may not be on the chain, but these are al
 
 This analysis shows the power of the longest-chain protocol because it's able to win the race against all these trees.
 
-# Improving the security threshold
+## Improving the security threshold
 
 So what about improving the threshold? Humans are very greedy. Before, we were worried that "nothing at stake" would kill us and give us 0% security but then we got 27% with 1/(1+e). Now we can go to Hawaii and relax, right? No, we're going to work harder. We don't want to be less than Ouroboros 1/2 right, we're here to win. You want to get to 1/2. How do we do that? That's the question.
 
@@ -104,7 +102,7 @@ Instead, our idea instead is to introduce correlation in the randomness. So inst
 
 You can see that compared to Ouroboros, only very small c will already get you to very close to 50%. This operating point allows us to get a very short prediction window, and at the same time very secure against a traditional adaptive adversary. The best of both worlds. Okay.
 
-# Conclusion
+## Conclusion
 
 Let me say a few words. 30 seconds. What's the story here? Just before my talk, we heard a talk on Prism and the goal of prism is to achieve vertical scaling and scaling the performance of blockchain up to physical limits of the nodes on the network. What I just talked about is proof-of-stake which is to achieve energy scaling and reduce the energy requirement of proof-of-work.
 
