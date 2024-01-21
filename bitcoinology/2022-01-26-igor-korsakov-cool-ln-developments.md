@@ -1,27 +1,24 @@
 ---
-title: Bitcoin Lightning Network Developments
+title: "Cool Lightning Network Developments"
 transcript_by: kouloumos
 categories: ['meetup']
-tags: ['lightning', 'layer 2', 'RGB']
+tags: ['lightning', 'client-side-validation']
 speakers: ['Igor Korsakov']
 date: 2022-01-26
 media: https://www.youtube.com/watch?v=5pmfNOUQg_s?t=285
 ---
-
-Topic: Cool Lightning Network Developments
-
-# Synonym
+## Synonym
 
 Igor
 Synonym is a company that [John Carvalho](https://twitter.com/bitcoinerrorlog/) started and he is trying to put Web3 inside of Bitcoin. But what it consists of? They're using several things like identities and people hosting their own data.
 
-## AOPP
+### AOPP
 
 For identity, the first thing I want to mention is Address Ownership Proof Protocol (AOPP). This is the field that we added in BlueWallet some months ago. I think it was a Switzerland exchange that wanted this, so they sent us a pull request and we merged it ([PR#2915](https://github.com/BlueWallet/BlueWallet/pull/2770), [PR#4431](https://github.com/BlueWallet/BlueWallet/pull/4431)). Basically, the Switzerland exchange for compliance reasons, wants to be able to send out funds only to the addresses users prove they own. The way they do it is they sign an arbitrary message with this private key that's associated with an address, and this is how they prove that they own the address. So the way it works is that the user scans the QR with with his mobile wallets. He scans the QR on the Switzerland's Exchange website and this QR code says "this is the arbitrary data, please sign it with your private key and post the result to this API endpoint". So that's what wallet does. Of course it's asks you if you want to do it, if you want to proceed, this is what you're doing, if you agree with it. If you say yes, yes, yes, in the end, you sign some random data with your private key and you post it to the API endpoint. This is how you prove that you own the address.
 
 One of the ideas of the Web3 is that users can carry their identities with them and always prove that they are who they are. But how can you put it in Bitcoin? This is how you do it, not with this (AOPP), this is just a very specific thing for like some Switzerland exchange, but the general idea is that you sign some message, you prove you own the address and this is going to be your identity which you carry with you across some websites, some forums, some blogs. And since we've got HD wallets, which carry a lot of addresses, we can issue a new identity for each website we visit. I guess it works a little bit differently in Synonym but the idea is still the same. There is no way around this, you still have to sign something with your Bitcoin private keys. You've got the HD wallets, you've got lots of addresses, a lot of identities. This is how you do it.
 
-## Hypercore
+### Hypercore
 
 Now you own the address, you prove your identity and you want to share your data with some peeps on the interwebs with some blogs, forums. So how do you do it without giving up your privacy or self hosting your data? We know for a fact that people don't want to run servers. We tried that, people just don't do it, not the majority of them. So Synonym took the pretty cool thing which is called [Hypercore](https://hypercore-protocol.org/). The Hypercore is a protocol. I like to think about it as the personal torrents which are friendly for developers. The Hypercore is basically an append only binary log, which involves Merkle trees. The one who started the Hypercore can always prove that this is the data he wrote, and no one can alter it because it's authenticated by some private key. So this is the connection of owning private keys with Hypercore. I as a user can probably prove that I own this address and I can start the Hypercore with the data I own and sync it to other parties. Hypercore is very efficient. Basically acts as a torrent, so you can share it to multiple parties and it gets synced very fast and efficient. In fact, one of the cool demos I saw for hypercore is that some guy started a video streaming through hypercore and shared it to his peeps. Basically, video stream is a stream of bytes, so you can share this binary log to other people and they catch up pretty fast. They read it, they catch up to the top and there are synced. So you can watch the video from real time.
 
@@ -67,11 +64,11 @@ This is how I understood Synonym, this is what John works on. If I got it correc
 
 So this is Hypercore. Hypercore is a pretty cool thing because it wasn't made for Synonym or by Synonym. It's a pretty old product, so you can go and check it out. It's basically torrents friendly for developers. If you need some kind of a sync of binary locks on your host or something, you can try it out and maybe it will work for your own application. So just go and check out Hypercore, it's pretty cool, I tried it.
 
-## Tether
+### Tether
 
 Synonym as a company, [is a Tether-owned company](https://twitter.com/Synonym_to/status/1460781354308808705). Tether is a stable coin, the biggest one. If we could have one shitcoin, one shit token it could be one from Tether and we don't need anything else. It's funny that people are always concerned that Tether is gonna fall once people find out that there is no backing of this Tether. But who cares, dollars isn't backed by anything, british pound isn't backed by anything, like who cares? When all this ends we still use dollars. I think Tether will live long and happy life.
 
-## OMNI
+### OMNI
 
 Tether originally runs on OMNI protocol. I think about Tether as a meta coin, they adapt, they survive, they change. If Ethereum dies they don't care. they can run on Solana, if Solana dies they don't care, they can run on whatever. So a bunch of shit coins they can run on all of them. They don't care. But they keep their hand on the pulse so they can check out if it's dying and just migrate. But still, they run on that [OMNI layer](http://www.omnilayer.org/) and that's the original protocol for issuing tokens on Bitcoin blockchain.
 
@@ -126,7 +123,7 @@ I was going to say that. That's my finishing remark. I'm not a big fan of Web3, 
 
 Part of Synonym is Slash Tag. Slash Tag is basically a bit more formal definition of the protocol, of how I want to show my identities, my accounts and my data to other people. Last time I checked, it had only contacts and kind of like accounts.
 
-## Synonym compared to Strike
+### Synonym compared to Strike
 
 Audience
 How is the protocol different from what Strike is doing?
@@ -173,12 +170,12 @@ Audience
 Igor
 Well anyway, there's no token involved, lightning tokens in Strike. Anyone wants to add something? Maybe someonehere knows more about Synonym than I do, please share.
 
-# RGB
+## RGB
 
 Igor
 Next thing on my list is [RGB](https://github.com/LNP-BP/LNPBPs/blob/master/lnpbp-0011.md). RGB is a really interesting concept. Originally Synonym was supposed to run on RGB, but there were problems with RGB so John decided to move from RGB and do this thing with tether and tokens on tether. RGB is kind of like architecture to run smart contracts on BTC completely off chain and reimagine smart contracts.
 
-## Smart contracts on Ethereum
+### Smart contracts on Ethereum
 
 The way smart contracts work on Ethereum is that, Buterin said that we're going to host all the source code on the blockchain. Actually, I was reading Buterin's blog posts from back in the day, I don't know 2014 maybe. At the time he hasn't invented Ethereum yet, but he was writing blog posts about how Bitcoin works. And this is how I learned how Bitcoin works, from his blog post actually, in Python. This idea sparkles in his mind that what if we'll put a whole Turing-complete program inside of this Bitcoin script.
 
@@ -201,7 +198,7 @@ This is how it works, you keep a lot of code on the blockchain. Each call of thi
 Audience
 I just really want to correct what said earlier, the problem with having a script which is--in quotes--"Turing-complete" is not that you can have a long series of computations because you could impose a cost per step and that's what they are doing in Ethereum. Let it be a long program, let's say it does take quite a while. The problem is that I can pre-compute the block before everyone else knows about it and then publish it to the network and then everyone else has got this massive disadvantage because I'm 2-3-4 minutes ahead of everyone in the block and that's what leads to that centralization.
 
-## Rollups on Ethereum
+### Rollups on Ethereum
 
 Igor
 So this concept scales very bad. The current consensus on Ethereum world is that "let's create a side-chain"--actually they have several side-chains and those side-chains act as batching for transactions, which is basically rollups. A rollup is a side-chain where you batch several transactions into one transaction. The way they do it now is that they have zero-knowledge rollups and optimistic rollups. Zero-knowledge rollups still publish cryptographic proof that the computation happened. Optimistic rollups, they don't publish anything, they just hope that everything is correct. And some kind of validator, later, will catch the cheater and we'll punish the cheater. That's how it works. That's why optimistic roll ups are more favorable in the Ethereum community because they can process even more, because they don't do shit. They do something in zero-knowledge rollups but not in optimistic rollups.
@@ -224,7 +221,7 @@ Audience
 Igor
 Last time I read on plasma, was the fact that it died.
 
-## How RGB runs smart contracts completely off-chain
+### How RGB runs smart contracts completely off-chain
 
 Igor
 Okay, so RGB is totally a different concept from this. RGB says "Okay, guys, look, we have a contract. We don't have to keep this contract public". So if I'm buying a car, it's a contract between me and the seller of the car. We don't have to make it worldwide available. The contract is between me and the seller of the car. So we utilize this concepts of client side validation. It utilizes this concept of single-use-seals, which is a totally new concept in cryptographic world, and Directed Acyclic Graphs (DAGs). Now, let's imagine I'm creating a contract to issue tokens, and I want to _ some tokens to someone. I create a definition of the token, which is called schema in the world of RGB. I shared the schema on client side, I don't commit the schema anywhere. I shared the schema with my peer who I send some tokens, and this is going to be a mutation of a state. I am sharing all that state with my peer. And this peer has it only on client side, he sees that this is a mutation of a state, this is the source of the state, there are cryptographic proofs that this has happened, this was signed by my friend's public key. It happened, and we don't have to commit it to the blockchain. I can send some tokens again, I mutate the state, and this guy can send it somewhere else. So we end up with a graph, we end up with a directed acyclic graph. It's directed because it flows in one direction, so I can send tokens only in this direction. It's acyclic because you cannot make some crazy loop and go back. And it's a graph, so it's a DAG.
@@ -267,7 +264,7 @@ So every time you update what is between you and me, that's a different mutation
 Igor
 Yeah. So different state and this is the graph of states. But because they want something more complex, they created a virtual machine, kind of like Ethereum Virtual Machine, but not the same. They call it [AluVM](https://www.rgbfaq.com/glossary/aluvm) and this virtual machine is going to process the state mutations.
 
-## When RGB
+### When RGB
 
 The problem with RGB is that it became a very big, very complex concept. It's in development for several years and we don't see getting into production very soon. People just work on it and work on it. I don't think that they have enough manpower, I think it's [Max Orlovsky](https://github.com/dr-orlovsky) and a couple of other guys that work on it. Right now they have AluVM, which is on its infancy. They want to put this on lightning as well, so they created a brand new Lightning node. They are creating a wallet that can handle all of this, which is called [My citadel](https://github.com/mycitadel). The scope of work is really big, like a lot of stuff to do to make it fly. That's why John from Synonym, he was relying on this initially, but in the end, he decided that this is not getting into production anytime soon so we need to switch to something more realistic something we can deliver. That's why he switched to tokens on Omni Layer. Apparently it's easier to put OMNI tokens inside of lightning than make this flight. And that's RGB.
 
@@ -348,7 +345,7 @@ Well, it's very interesting concept, but I don't see it flying in this year, to 
 
 I think that's all I wanted to tell you guys.
 
-# LSPs
+## LSPs
 
 Audience
 What you gonna tell us about LSPs? I wanted to hear about LSPs, or is that another thing?

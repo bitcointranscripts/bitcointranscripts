@@ -1,13 +1,12 @@
 ---
 title: The Update Layer
-Transcript_by: Jonathan Gross
+transcript_by: Jonathan Gross
 categories: ['residency']
-tags: ['lightning', 'update layer']
+tags: ['lightning']
 date: 2019-06-26
 speakers: ['Rene Pickhardt']
 media: https://youtu.be/SoFlRCNdqDg
 ---
-
 Location: Chaincode Labs Lightning Residency 2019
 
 ## Introduction

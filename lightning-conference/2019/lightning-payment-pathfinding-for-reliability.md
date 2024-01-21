@@ -7,7 +7,6 @@ speakers: ["Joost Jager"]
 categories: ["conference"]
 date: 2019-10-18
 ---
-
 ## Introduction
 
 I'm Joost Jager. I work for Lightning Labs. At Lightning Labs, I'm a software engineer, and my main focus is on LND. Over the last month, I spent quite some time to improve pathfinding in LND. In this talk, I would like to explain how we optimize pathfinding for the reliability of paths.

@@ -1,18 +1,15 @@
 ---
-title: Spam Attacks Analysis
+title: "Hunting Moby Dick, an Analysis of 2015-2016 Spam Attacks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'p2sh', 'attacks']
+tags: ['research', 'attacks']
 speakers: ['Antoine Le Calvez']
 date: 2017-09-09
 media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=1h12m10s
 ---
-
-Hunting moby dick, an analysis of 2015-2016 spam attacks
-
 <https://twitter.com/kanzure/status/1005525351517360129>
 
-# Introduction
+## Introduction
 
 Hi. Thanks for Breaking Bitcoin to invite me to speak and to present this research on Moby Dick.
 
@@ -22,7 +19,7 @@ Who am I? I am Antoine Le Calvez. I created p2sh.info in 2014 which is a website
 
 There's been some research about what these in particular on spam attacks.. there was a published paper, but we tried to dig deeper and present insights.
 
-# A note about spam
+## A note about spam
 
 Spam is a word that is thrown around a lot, especially since the bitcoin debates got heated.
 
@@ -34,7 +31,7 @@ A lot of people saw the chart of number of UTXOs which grew steadily through 201
 
 If we look at the small UTXOs between 1k and 10k sat BTC, we see that they had these low values and match the definition of spam.
 
-# Semi-manual analysis
+## Semi-manual analysis
 
 To dive deeper into this, we used something called semi-manual analysis. It's not automated.
 
@@ -56,7 +53,7 @@ That's how it looks on the network. The second wave was the most interesting as 
 
 There were millions of UTXOs created in a matter of days or weeks. We wanted to dig deeper into this one because it had more meat. There was one where people were creating UTXOs and just claiming them later- less interesting.
 
-# Overall statistics
+## Overall statistics
 
 * 2.78 GB of block space (2.2% of current blockchain)
 * 268 BTC in fees (9.6 sat/byte average)
@@ -67,11 +64,11 @@ In 2015, 268 BTC was somewhat expensive. They had to create the UTXOs and the sp
 
 There's still 2 million UTXOs that every node has to store in memory. It looks like it's not going to go down, unless someone spends or gives away the private keys, and with the rising fees it's less economically viable for these coins to get spent. It's a burden on all the nodes.
 
-# A two step dance
+## A two step dance
 
 The main attack had a two step dance aspect where someone created outputs in days, one party. It took many months for people to spend them- the services, the attackers, it's not clear who was on the receiving side of it. It was effected by network conditions and backlogs. The effect has now dissipated after other waves of activity which are still in the UTXO set. But for this one, we-- here we start-- pure facts, we start speculating.
 
-# A strange timing
+## A strange timing
 
 There was a comment: "Don't pay attention to those spam broadcasts, as all miners have been ignoring them since October by using the minrelaytxfee command line/bitcoin.conf option" -- jtoomim, May 2016
 
@@ -79,7 +76,7 @@ You can see at the red line, it looked like these transactions would be stopped 
 
 This may have been produced for political reasons to fill blocks when there was not a big demand for it.
 
-# What can we do?
+## What can we do?
 
 We cannot people from spending their money. That's the whole point of bitcoin. But we can try to prevent inefficient use of bitcoin. I would like everyone to be able to spend their coins but to do it in a least impactful way, in a highly efficient way.
 
@@ -93,6 +90,6 @@ Better monitoring would be useful. People see the mempool clog up and assume the
 
 Coin selection algorithms could be spam-resistant if it is optimized to deal with low value outputs and to ignore those. There's incentive for some people to send low value outputs so that coin selection algorithms pick them up and spend them. People might try to do this to leak outputs together, which is bad for privacy.
 
-# Conclusion
+## Conclusion
 
 If you have any questions or ideas-- we tried our best to figure this out, but we would like to learn more in tandem with the community. The more information, the more enlightened we are. Thank you.
