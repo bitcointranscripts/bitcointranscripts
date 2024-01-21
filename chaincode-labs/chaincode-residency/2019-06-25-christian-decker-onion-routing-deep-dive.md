@@ -1,18 +1,17 @@
 ---
 title: Onion Routing Deep Dive
 transcript_by: Arik Sosman
-tags: ['lightning', 'sphinx', 'onion', 'routing']
+tags: ['lightning','routing']
 categories: ['residency']
 speakers: ['Christian Decker']
 date: 2019-06-25
 media: https://youtu.be/D4kX0gR-H0Y
 ---
-
 Location: Chaincode Residency – Summer 2019
 
-## Onion Routing Deep Dive
+## Intro
 
-But we've not seen exactly why we are using an onion, or why we chose this construction of an onion and how this
+We've not seen exactly why we are using an onion, or why we chose this construction of an onion and how this
 construction of an onion actually looks like. So my goal right now is to basically walk you through the iterations that
 onion routing packets have done so far, and why we chose this construction we have here.
 
@@ -55,23 +54,23 @@ off the entire thing. Anybody want to guess why I'm not just decrypting this par
 this? Right, but I could also, if all I care about is my part and want to send it forward, I could just have encrypted
 this part and have left the remainder singly encrypted.
 
-&#91;Audience member&#93;: _“Then if C, for example, which we don't see yet, intercepts it before you could decrypt it before B,
+[Audience member]: _“Then if C, for example, which we don't see yet, intercepts it before you could decrypt it before B,
 like everything should be encrypted with B's key and then B should decrypt all of it, and only then should C be able to
 decrypt, otherwise the last person can know from the start where it got from. If he can decrypt the package of the
 original hop…”_
 
 C can only decrypt its own hop, that's not the real reason. The reason is…
 
-&#91;Audience member&#93;: _&lt;inaudible&gt;_
+[Audience member]: _&lt;inaudible&gt;_
 
 I mean, I could decrypt the first two bytes and that tells me how many bytes you decrypt, that’s also not the
 exact reason.
 
-&#91;Audience member&#93;: _“To keep the size of the final image?”_
+[Audience member]: _“To keep the size of the final image?”_
 
 We'll get to that later but the real reason–
 
-&#91;Audience member&#93;: _“Hampering?”_
+[Audience member]: _“Hampering?”_
 
 “Hampering?” Sort of; the real reason is that if I were just to decrypt this part and keep the tail constant,
 a passive observer could associate the previous onion with a follow-up onion. So by actually decrypting the entirety of
@@ -91,11 +90,11 @@ knows that E is the final destination because there's just one more hop, which i
 are the destination,” so we are still leaking information. And of course the solution to that is to make a constant
 onion. Any ideas on how we want to create a constant onion?
 
-&#91;Audience member&#93;: _“Add random data in the end?”_
+[Audience member]: _“Add random data in the end?”_
 
 Is random really good?
 
-&#91;Audience member&#93;: _"It’s padded with zeros after the termination. So E gets its information and then everything else you
+[Audience member]: _"It’s padded with zeros after the termination. So E gets its information and then everything else you
 can throw away."_
 
 When do you add it, before or after decrypting? Okay, so then, by decrypting it, by using the decryption
@@ -109,7 +108,7 @@ head of the packet we also encrypt the trailer that we just added, the pad.
 
 No, it's actually this black that we stripped, and so we add that black here.
 
-&#91;Audience member&#93;: _&lt;inaudible&gt;_
+[Audience member]: _&lt;inaudible&gt;_
 
 Sort off yes, yeah no. I thought about it, and I wanted to make it clear that the decryption and encryption
 is basically the same operation, that's why I chose the same color. And once we have that, we can actually chop off the
@@ -128,7 +127,7 @@ the end, which is going to be shifted in with the rest of the pattern.
 
 ## HMACs
 
-&#91;Audience member&#93;: _“What happens if one of the hops &lt;inaudible&gt; rigged? Does it &lt;inaudible&gt;”_
+[Audience member]: _“What happens if one of the hops &lt;inaudible&gt; rigged? Does it &lt;inaudible&gt;”_
 
 That's an excellent question. It also ties in perfectly with the next question I had. So what happens if A,
 basically, goes here and fiddles a few bits here? So we need some mechanism of detecting tampering, right, and how do we
@@ -150,7 +149,7 @@ and this onion, it knows it can verify the integrity of the package it just rece
 HMAC does not verify, then we will just say, “hey, away, it just failed. Tear it down, the entire route, we can't go
 on.”
 
-&#91;Audience member&#93;: _“I'm sorry I keep asking the same thing, but what exactly do you do? What do you mean, ‘go away?’ What
+[Audience member]: _“I'm sorry I keep asking the same thing, but what exactly do you do? What do you mean, ‘go away?’ What
 happens, what does the product exactly do when it fails to decrypt?”_
 
 So what we do then is, we don't fail decrypting, but we fail verifying integrity. It's the same. So the
@@ -160,22 +159,22 @@ signatures, only then we go back and look at the onion, right? We have now commi
 which we have an onion. We go look at the onion, try to decrypt it, maybe fail; if we fail, we say “A, Update Fail HTLC”
 and we give it an error code that indicates that the onion failed.
 
-&#91;Audience member&#93;: _“We don’t say what exactly failed, right?”_
+[Audience member]: _“We don’t say what exactly failed, right?”_
 
 We don't say what failed, because all we can say is just that it doesn't match the HMAC I was expecting.
 
-&#91;Audience member&#93;: _“It’s best not even to say that, that’s what I’m trying to understand. Should even say if it was just
+[Audience member]: _“It’s best not even to say that, that’s what I’m trying to understand. Should even say if it was just
 HMAC or failed decryption.”_
 
 Well, there isn’t a difference between the two.
 
-&#91;Audience member&#93;: _“The HMAC can succeed and you can fail to decrypt it?”_
+[Audience member]: _“The HMAC can succeed and you can fail to decrypt it?”_
 
 So what can happen is that we failed to parse the payload, that's true. We currently distinguish those
 because we find it easier to debug with more information, but you are right, we should eventually just say, “go away”
 without further details.
 
-&#91;Audience member&#93;: _“Cause then you can use a timing attack to try and time the HMAC.”_
+[Audience member]: _“Cause then you can use a timing attack to try and time the HMAC.”_
 
 Yes, well, timing in this kind of network is kind of hard because we need to be committed first, so we have a
 whole prep it's not just “I receive an onion and I decrypt it,” but it's “I receive an onion, stash it away, and then
@@ -194,7 +193,7 @@ Now for the next hop, what we need to do is basically, we need to take this part
 the second node would add, and now we again generate the entire encryption stream, and encrypt this part here, and throw
 away the beginning. So we have one more layer of encryption.
 
-&#91;Audience member&#93;: _“Why exactly do we need to cover the filler with the HMAC? I don’t see why it would matter if someone
+[Audience member]: _“Why exactly do we need to cover the filler with the HMAC? I don’t see why it would matter if someone
 is tampering with the filler.”_
 
 If you were not to cover the filler with the HMAC, then you would have to communicate to your peer, which
@@ -203,7 +202,7 @@ going to receive this packet, “hey, you are supposed to only check the first f
 only easier, but you're actually telling A that this route is only four hops long. And here you say, “B, hey, this route
 is only three hops longer;” this guy, “hey, it's only two hops long;” and this guy—well, this guy knows he's the final.
 
-&#91;Audience member&#93;: _“The general advice is to never encrypt anything without MACing, it’s always a bad idea. Cause then you
+[Audience member]: _“The general advice is to never encrypt anything without MACing, it’s always a bad idea. Cause then you
 can manipulate tons of different stuff.”_
 
 And the reason why we HMAC not only the payload destined for the processing node is exactly that: because
@@ -226,7 +225,7 @@ because you have to reverse order a bunch of times.
 Okay, so the actual packet serialization we use in the Update HLC format is, we have a single version byte (which we
 recently found out we can never change… sort of dumb); we have an ephemeral key.
 
-&#91;Audience member&#93;: _&lt;inaudible&gt;_
+[Audience member]: _&lt;inaudible&gt;_
 
 Because if we change that, basically the entirety of the entire network needs to switch that. It’s not about
 the anonymity set, but if I give you a version 1 onion, you decrypt it, and you process it, we have not built a
@@ -261,7 +260,7 @@ changes from hop to hop. So you can't look at two onions and say, “okay, this 
 anything to do with the other one” because the entire packet basically changes.
 
 You serialize that and basically propose an Update Add HTLC to the next hop or we have some error because, well, we
-don't have a channel, &#91;the one&#93; we were supposed to use wasn't active, or something like that. So that's the unwrapping
+don't have a channel, [the one] we were supposed to use wasn't active, or something like that. So that's the unwrapping
 of the onion. This is pretty straightforward because it just goes one direction. Wrapping the onion is a bit more
 involved because it goes backwards, and then forwards again.
 
