@@ -5,10 +5,6 @@ categories: ['conference']
 tags: ['security', 'sidechains']
 speakers: ['Matt Corallo']
 ---
-
-
-Sidechains, Blockstream
-
 One second. Technical difficulties. Okay, sorry about that. Okay. Hi. I am Matt or BlueMatt for those of you know me. I swear it's not related to my hair. Nobody believes me.
 
 I got into Bitcoin three or four years ago because I was interested in the programming and computer science aspects and as well as my interest in large-scale economic incentive structures and macroeconomics and how we create incentive structures that create actions on a low level by rational actors. So this talk is a lot about how Bitcoin security model is a function of depending on rational actors from miners and providing them with economic incentive structures in the form of money to pay them to act in the best interest of Bitcoin. I recently cofounded a company called Blockstream and we are interested in bringing this trustless technology from bitcoin to a number of industries and products. Our initial technology is called sidechains which relies on a similar security model to Bitcoin, but allows you to extend it significantly and have a lot of new properties and properties that you want in a blockchain without putting in as much effort as bootstrapping a whole new currency from scratch.

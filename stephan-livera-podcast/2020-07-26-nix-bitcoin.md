@@ -1,25 +1,17 @@
 ---
-title: Nix Bitcoin
+title: "nix-bitcoin: A Security Focused Bitcoin Node"
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['security', 'privacy']
+tags: ['security']
 speakers: ['nixbitcoindev']
 date: 2020-07-26
 media: https://stephanlivera.com/episode/195/
 ---
-
-Topic: nix-bitcoin
-
-Location: Stephan Livera Podcast
-
-Date: July 26th 2020
-
-
 nix-bitcoin on GitHub: https://github.com/fort-nix/nix-bitcoin
 
 Transcript completed by: Stephan Livera Edited by: Michael Folkson
 
-# Intro
+## Intro
 
 Stephan Livera (SL): nixbitcoindev welcome to the show.
 
@@ -29,7 +21,7 @@ SL: Obviously as you’re under a pseudonym don’t dox anything about yourself 
 
 NBD: I came into Bitcoin pretty much from the privacy angle because I’ve always pretty much since I touched a computer, I’ve thought it’s really like an extension of the human brain. So it deserves the same protection security wise as the content in your brain, which is absolute. That’s really the angle I came into Bitcoin from where I saw this is this kind of money that if we use it properly, it can guarantee that level of privacy in our financial transactions. Obviously a great part of privacy on Bitcoin is running your own node and having your own hardware. I’ve been really primed always for something like nix-bitcoin. When I saw Jonas Nick working on it, I immediately saw the power in this platform. We’ll get into that later with NixOS and that’s kind of where I started to program with him. It’s been a really interesting trip from there.
 
-# What is nix-bitcoin?
+## What is nix-bitcoin?
 
 SL: Great. So let’s start with what is nix-bitcoin?
 
@@ -55,7 +47,7 @@ SL: The idea is that people could take an old laptop and run nix-bitcoin on it. 
 
 NBD: That’s right now how we use it. I use it myself, Jonas Nick uses it, Jonas’ brother with Donner Lab, their entire backend is built with nix-bitcoin. I don’t know if you know about his project but they’re doing gaming on Lightning. It works in a range of setups and we’ve had a lot of drive-by contributors deploying to virtual machines, or even NixOS containers on their own machine just to play around with it. So this is why when Jonas saw NixOS he saw it was a perfect opportunity for a Bitcoin node because it gives you the structure that you can deploy onto a range of devices with.
 
-# NixOS versus other operating systems
+## NixOS versus other operating systems
 
 SL: What’s the benefit of nix-bitcoin, over using Qubes OS or using Debian or Ubuntu?
 
@@ -65,7 +57,7 @@ SL: In order to install nix-bitcoin, does the user have to be using some flavor 
 
 NBD: I think Mac is possible, Mac works. Windows I’ve not tried it. We have had no interest in doing that. But I think that where this project is going is definitely making it accessible to everybody on a wide range of platforms and putting all that logic, all the NixOS stuff inside the box itself. Then you’ll never have to worry about having another laptop where Nix is properly installed, running and that you’ve properly secured. It would also build on the machine. So you’d never have an issue with compiling Linux software on Windows for example.
 
-# Target Audience
+## Target Audience
 
 SL: Let’s talk about the target market or the target audience. Who is nix-bitcoin for?
 
@@ -79,7 +71,7 @@ SL: c-lightning.
 
 NBD: c-lightning. I make all my Lightning payments like that. It is a living piece of software but that magic, that beauty will take its time to spread because there is a hurdle. When people hear NixOS they think “I’ve never used that. It’s really complicated.” At this moment you really just need to drop into a Nix shell with one command and then edit your configuration file, which is a text file, uncomment a few things that you want, what kind of services you want and then just deploy. That’s it. I think it’s at a good point. It’s not super finicky, it’s functional and now we’re taking it one step at a time to make it available.
 
-# nix-bitcoin versus other nodes
+## nix-bitcoin versus other nodes
 
 SL: Where is nix-bitcoin situated? Could you help us understand the difference between nix-bitcoin and some of the popular well-known plug and play Bitcoin nodes such as myNode, nodl, RaspiBlitz, RoninDojo? How would you distinguish nix-bitcoin from those? Is it mainly the security, reproducibility aspects of it? Or is there anything else?
 
@@ -93,7 +85,7 @@ SL: If you are running Lightning or if you are using JoinMarket CoinJoins or eve
 
 NBD: JoinMarket is a great piece of software. It is the best example for something that you want to be on a secure hot machine. We have a [PR](https://github.com/fort-nix/nix-bitcoin/pull/164) up right now that’s we’re reviewing at the moment. I’ve been running it on my node for the last couple of weeks without any issues. Every time I open up the node I’m really satisfied with the way that nix-bitcoin secures my funds. If you go into the JoinMarket order books, some people have a thousand Bitcoins on there, that’s really a huge risk they’re taking security wise. I think there’s definitely a place for a security and minimalist node like ours.
 
-# Security of nix-bitcoin
+## Security of nix-bitcoin
 
 SL: On the security hardening that’s available with nix-bitcoin. I’ve noticed on the Twitter feed you were chatting about access through a SSH key.
 
@@ -103,13 +95,13 @@ Number two, is the reproducibility of the code. Not only all the higher level st
 
 Number three, it’s close between defense in depth and the compartmentalization. I’ll start with the compartmentalization that we built into nix-bitcoin. Every service that we have runs in its own little box. That’s what we do with systemd. We put every service in its own little box under its own user. It can only see its own directory and now with network namespaces it can’t even scope out your entire network. It can only scope out its own network and its little Linux namespace and the ones that we’ve allowed it to see. Outside processes outside of that network namespace also can’t look inside. That’s where we spend a lot of time, taking these services apart, putting them in different boxes and then saying “Where do they need to connect? What do they actually need to see?” Only that is allowed. That offers a great deal of security because now the programs like Spark wallet that connect to your c-lightning, they’ll never see JoinMarket, they’ll never see Electrum, they’ll never see bitcoind. Every time I open my box I’m really happy about. Finally defense in depth, which means putting up multiple walls. We have users, we isolate by users. We isolate with systemd, we isolate on the network level. We try to have multiple lines of defense. Right now we’re reviewing something that Jonas and I think could be security relevant. We realized that because of the compartmentalization we’ve built in, it’s actually not that big of a security issue because we’ve spent all this time putting up multiple defenses. It’s being caught we think by one line of our defense. So we’ll be putting out a fix for that in the next few days and probably talking to other projects about this.
 
-# Qubes OS
+## Qubes OS
 
 SL: It kind of reminds me of when people talk about Qubes OS. Each application is like its own little VM and that way it’s firewalled off from the rest of the system.
 
 NBD: I think Qubes is really interesting to start off on because that’s a perfect explanation of where NixOS is great. Qubes, I use personally on my laptop, I love it. It offers so much. I recommend every developer who is working on security critical stuff to install it because you don’t want to have something malicious on your system which is able to compromise your signing keys or put in some bad code into your repositories. But it could never be used for a Bitcoin node because if you’ve ever set it up, you need to spend a lot of time setting up the individual VM,  making sure that you allow all these firewall rules. You have to do that all manually and doing that every time is unfeasible. What we’ve done with nix-bitcoin is written these text files, these code files, where you just deploy from those and you’ll get the same system with all those settings pre-installed every time you deploy it. Even on multiple machines that you’ve deployed on you’ll get the exact same state. So Qubes is a perfect example of how security can get in the way of functionality. We can have both with nix-bitcoin.
 
-# Communicating with nix-bitcoin
+## Communicating with nix-bitcoin
 
 SL: You’ve got Tor, clearnet, and WireGuard. Can you outline the ways that nix-bitcoin talks to the outside world?
 
@@ -135,7 +127,7 @@ SL: They have not exposed their nix-bitcoin directly, it’s going via their pub
 
 NBD: Yeah it is going via their public website. I don’t think it’s a good idea to put a big website on a web server that has so many different people coming in on the same server as a Bitcoin node with potentially hot funds when it comes to Lightning. Either the merchant would have a separate BTCPay Server instance which uses WireGuard to communicate with the individual services like bitcoind and the Lightning Network daemon On the network level, just a WireGuard tunnel, taking that connection on their local machine to the connection on their secure server. Or they also run a BTCPay Server inside nix-bitcoin and just expose that port 443 or 80, the HTTP port, to the outside world with the WireGuard tunnel to a WireGuard server that’s publicly reachable. They can forward traffic to that from their website.
 
-# Ease of use
+## Ease of use
 
 SL: Speaking about nix-bitcoin more broadly and generally around the question of difficulty of use. So how do you see that improving over time?
 
@@ -145,7 +137,7 @@ SL: There are lots of different node options and people have varying levels of t
 
 NBD: First of all, the risk is less with nix-bitcoin. Because of NixOS every nix-bitcoin node out there is running the same software and that’s verifiable because of the reproducibility. That’s a really strong defense against us inserting malicious code or stuff upstream getting compromised. Once we’ve pinned the hash, once we’ve verified that the software is good ourselves, within the hash it’s going to be the same software that everybody’s using. That’s number one, how we’re defending against this right now. When it comes to trusting us, we have a completely open development process. Unlike some other node projects which are closed source at the moment and want to publish their source code once it’s ready, namely nodl. That’s not the approach we’re taking. If it’s not good enough to be out in the open it’s definitely not good enough for people to risk their privacy and their security with, things that are so precious. I don’t think you should ever risk those with proprietary software. Our development process is completely open, everything is happening on GitHub. People can see our discussions, our different approaches, everything is on GitHub. The stuff that isn’t on GitHub is in our public IRC channel. Going further than that something I’m really excited about is we want to release software with some kind of multisig setup where Jonas, I and some other developers have to sign every single release. The user verifies that client side. Or and I have not really communicated this with the other developers yet, I’m looking into Frank Brown’s code chain approach which makes it impossible to target a backdoor to one person even if you have the signing keys. You need to backdoor everybody with the same source code if you’re compromised. That’s a much better security assumption because people are going to realize when it’s deployed to everybody. I think you’re based in Australia? They have this bill there which can force developers to put in targeted backdoors. I think we’re going to see that rolled out across the Western world. I’m not looking forward to it but I think it’s slowly creeping in. That’s where something like code chain comes in where we can’t target a backdoor to one user. We have to target a backdoor to every user. That’s going to get noticed very quickly because we have technical users who are going to notice that.
 
-# Technical user interest
+## Technical user interest
 
 SL: There is a natural kind of dichotomy where sometimes certain projects appeal more to a very technical user but then once a lot of newbie users turn up the more technical ones lose interest. Is that something you might foresee here? Or is it more you see this as going to be part of the underlying infrastructure and therefore there are going to be a lot of people who maintain interest?
 
@@ -155,7 +147,7 @@ SL: A small correction, you’re referring to Zelko, he’s not actually a Samou
 
 NBD: That’s always the risk. But with NixOS we’re building on an infrastructure that’s being used already so we’re not really going out there and reinventing the wheel. We’re using the wheel how it’s meant to be used. I think this standard is going to be the one because it’s usable for all use cases. So underlying infrastructure has the potential but we’re also happy about every user that finds benefits be it an enterprise or a developer or whoever. We don’t need to take over everything to make a difference and to be really happy about building good software.
 
-# nix-bitcoin community
+## nix-bitcoin community
 
 SL: It just needs to hit a certain level of users so that it kind of sustains. How many people are running nodes? If it’s one of the ones that people think of commonly, then that’s a good sign that there’s a bunch of users who are on this particular software stack. Let’s talk about the development and the community aspects of it. Obviously it’s quite small right now. What are the main ways of collaboration? You’ve got a [GitHub](https://github.com/fort-nix/nix-bitcoin), you mentioned an IRC. Are those the main ways you’d like people who want to contribute to come and chat with you and to participate?
 
@@ -165,13 +157,13 @@ SL: If somebody wants to do nix-bitcoin on a Raspberry Pi or on one of those sin
 
 NBD: Yeah. That’s how we use it right now. It is on single board computers, not Raspberry Pi right now but I’m pretty sure it works. We should try that too. The APU PC engines, single board machines, they’re really fun because they are more powerful, they can take an SSD without using a USB cable. When people have asked what kind of hardware to use I’ve always recommended that but it works on a Raspberry Pi and it works in the cloud also which is how Donner Lab is using it.
 
-# Open source hardware
+## Open source hardware
 
 SL: The last topic is around hardware and where we’re going with that. There is a little more chatter about the idea of moving towards open hardware. Some of the things you might hear people talk about are RISC-V, reduced instruction set computer, Raptor computing and things like that. The idea is trying to move towards more open hardware for security reasons. So do you have any thoughts on what sort of hardware should people be looking to run nix-bitcoin on?
 
 NBD: The APU is already pretty good because it has a core boot open source firmware. You already have a good level of hardware security with that. Different kinds of architectures, like OpenPower POWER9 which Talos uses and Raptor uses RISC-V. They’re really in the beginning right now so I don’t know if a normal user is going to be really happy with that yet. You’re going to run into a lot of issues with compiling software, stuff that you don’t want to deal with and enterprise also. It’s probably best for developers at the moment but that’s something that’s getting better every day. Right now I’d recommend to get a APU or some kind of other core booted device, and then follow the install manual. We have some tips on how to further harden your hardware on a firmware level, deactivating some features that have recently been used to do exploits. But with the hardening we built in you always have to think about how is somebody going to attack you. They don’t have a lot of attack surface with us. There’s no browser running that you’re browsing different websites with, there’s really no way to deliver an exploit properly. Even where there would be you have different kind of walls and security around that which make it even more difficult. So chaining a bunch of exploits. Using a hardware vulnerability at the moment is outside of our threat model because the people who have that threat model, you’ve really done a lot of work to get yourself there.
 
-# Business model for nix-bitcoin
+## Business model for nix-bitcoin
 
 NBD: Another topic before we close is business model. That’s something that every good project that wants to survive at some point it needs to have. I think we’re still on that front looking for something that is as elegant as the CoinJoin model which is one of the best business models probably out there. Making money on a service on a feed that also serves a security function as a denial of service protection inside the service. It’s really extremely elegant and that would be something interesting for nix-bitcoin. If we can offer some kind of service like managing a Lightning node, something complicated and you often have to make decisions about. Who are you going to open a channel with? How are you going to balance that? Are you going to establish yourself as a really good routing node? Maybe we could have some kind of API with logic running on a backend where people who call it are submitting some data and asking for the best possible decision. We charge them on on the Lightning Network on every request. That’s something that came to mind recently but that would be a business model that could sustain nix-bitcoin. Or just selling pre-installed hardware. But that comes with a bunch of security risks which we we would want to mitigate before we start shipping hardware with pre-installed software on it.
 

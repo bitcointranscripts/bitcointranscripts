@@ -1,19 +1,11 @@
 ---
-title: 51 percent mining attack
+title: "Should we be more concerned by the prospect of a 51 percent mining attack?"
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
 tags: ['mining', 'security']
 date: 2019-10-04
+media: https://www.reddit.com/r/Bitcoin/comments/ddddfl/comment/f2g9e7b/?utm_source=share&utm_medium=web2x&context=3
 ---
-
-Should we be more concerned by the prospect of a 51 percent mining attack?
-
-Location: Reddit
-
-<https://www.reddit.com/r/Bitcoin/comments/ddddfl/comment/f2g9e7b/?utm_source=share&utm_medium=web2x&context=3>
-
-# Should we be more concerned by the prospect of a 51 percent mining attack?
-
 I think questions like this are ultimately the result of a fundamental lack of understanding about what Bitcoin is doing.
 
 The problem Bitcoin is attempting to solve is getting everyone everywhere to agree on the same stable history of transactions. This is necessary because in order to prevent users from printing money from nothing the system must have a rule that you can't spend a given coin more than once-- like I have a dollar then pay both alice and bob that dollar, creating a dollar out of nothing.

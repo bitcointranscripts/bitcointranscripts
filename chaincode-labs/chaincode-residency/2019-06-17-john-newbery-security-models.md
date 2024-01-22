@@ -1,7 +1,7 @@
 ---
 title: Security Models
 transcript_by: Caralie Chrisco
-tags: ['security', 'taproot', 'cryptography']
+tags: ['security', 'lightweight-client']
 categories: ['residency']
 speakers: ['John Newbery']
 date: 2019-06-17
@@ -13,6 +13,8 @@ Topic: Security Models
 Location: Chaincode Labs 2019 Residency
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/security_models.pdf>
+
+## Intro
 
 John Newbery: Alright, Security Models. This is going to be like a quick whistle-stop tour of various things, very high-level view. I'm going to start by giving you some kind of framework to think about things. So in cryptography, we often talk about security proofs in terms of existing schemes, we talk about assumptions.
 
@@ -28,7 +30,7 @@ A lot of these things are about lowering the cost of being able to interact with
 
 So full and pruned nodes are where we're going to start. We're going to talk about light clients, of course, SPV. We're going to touch on checkpoints, assumevalid, assumeutxo, which I assume you've all heard of. Then we're going to talk about some alternative UTXO set proposals. Then a bit of further reading.
 
-# Full Nodes
+## Full Nodes
 
 So what does a full node do? That's a question as well. What does a full node do?
 
@@ -54,7 +56,7 @@ Audience Member: Somebody could be running a different node. There's no guarante
 
 John: I'm just talking about the difference between relaying unconfirmed transactions and syncing the blockchain. You're right that there's no guarantee that - we have, as an assumption that you're connected to at least one honest peer, and if you are, then you will sync to the most-work blockchain.
 
-# Pruned Nodes
+## Pruned Nodes
 
 Okay, so pruned nodes. What does a pruned node do?
 
@@ -176,7 +178,7 @@ Audience Member: Can pruned nodes relay new blocks?
 
 John: Yes. And there is a proposal to allow a pruned node to serve blocks up to some level deep. Jonas Schnelli has some of that merged into Bitcoin Core, but it's not fully merged.
 
-# SPV Nodes
+## SPV Nodes
 
 Alright, SPV nodes. The term SPV was introduced in this document, which is the Bitcoin white paper, and Satoshi said, "It is possible to verify payments without running a full network node. A user only needs to keep a copy of the block headers of the longest proof-of-work chain, which he can get by querying network nodes until he's convinced he has the longest chain, and obtain the Merkle branch linking the transaction to the block it's timestamped in. He can't check the transaction for himself, but by linking it to a place in the chain, he can see that a network node has accepted it, and blocks added after it further confirms the network has accepted it.
 
@@ -222,7 +224,7 @@ Audience member: They can't verify if the money supply has been inflated. There 
 
 John: Correct. So what can they do? So when the block's transaction's chain is valid. So when I say transaction chain, I mean the transaction or its ancestor, going back to the coinbase where those coins were minted, unless you've got a Merkle proof for every step in there.
 
-# Fraud-Proofs
+## Fraud-Proofs
 
 So, we were talking about fraud proofs. In general, they're pretty difficult. This is a [post from Luke](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013756.html) on the mailing list. The generalized case of fraud proofs is likely impossible, but he had an implementation of a fraud-proof scheme showing the block isn't over a certain size. This was during the 2x time period. People were worried that a 2x chain might fool SPV clients. This would be a way to tell an SPV client that this header you've got is committing to a block that is larger than a certain size. And you don't need to download the entire block. That's a narrow example of fraud-proof.
 
@@ -366,7 +368,7 @@ So this is a bit tongue in cheek. Some people talk about all nodes being SPV nod
 
 So this conversation has been going on for ten years, but the white paper, even back in 2009, says that the full node is the gold standard, and SPV nodes are, I would say, second class citizens.
 
-# Bloom Filters
+## Bloom Filters
 
 Okay, we'll talk about Bloom filters. I'm only going to touch this briefly because I believed Amiti talked about these last week. They're defined in BIP 37, implemented in Bitcoin Core in August 2012. They allow light clients to request their transactions without revealing everything about their addresses. They're using probabilistic filters, so you're requesting more data than you need, and that should give you some level of privacy. But in fact, they are not very good at giving privacy.
 

@@ -2,7 +2,7 @@
 title: Amiko Pay
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'lightning', 'routing']
+tags: ['lightning']
 speakers: ['Come Plooy']
 ---
 

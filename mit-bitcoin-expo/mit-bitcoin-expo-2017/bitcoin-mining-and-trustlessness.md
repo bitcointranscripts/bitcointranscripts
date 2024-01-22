@@ -1,13 +1,12 @@
 ---
-title: Bitcoin Mining And Trustlessness
+title: "Bitcoin's Miner Security Model"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'research', 'mining', 'wallet']
+tags: ['security']
 speakers: ['Matt Corallo']
 date: 2017-03-04
 media: https://www.youtube.com/watch?v=0mVOq1jaR1U&t=2h22m11s
 ---
-
 <https://twitter.com/kanzure/status/838500313212518404>
 
 Yes, something like that. As mentioned, I've been contributing to Bitcoin Core since 2011 and I've worked on various parts of bitcoin, such as the early payment channel work, some wallet stuff, and now I work for Chaincode Lab one of the sponsors-- we're a bitcoin research lab. We all kind of hang out and work on various bitcoin projects we find interesting. I want to talk about reflections on trusting trust.

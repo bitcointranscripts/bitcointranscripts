@@ -6,12 +6,7 @@ transcript_by: Michael Folkson
 tags: ['security']
 media: https://www.youtube.com/watch?v=uo58zmyXqFY
 ---
-
-Topic: Full Node and Home Network Security
-
-Location: Andreas Antonopoulos YouTube channel
-
-# Does running a Bitcoin full node attract hackers to my home network?
+## Does running a Bitcoin full node attract hackers to my home network?
 
 Q - Does running a Bitcoin full node and/or a Lightning node at home attract hackers to my IP address and home network? Also could it reveal ownership of Bitcoin and attract physical attacks? Are preconfigured full node starter kits safe to use for non-technical people or is this completely against the point of running a full node and thus non-technical people should abandon the idea?
 

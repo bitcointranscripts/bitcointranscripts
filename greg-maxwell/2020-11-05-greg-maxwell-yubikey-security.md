@@ -2,16 +2,11 @@
 title: Yubikey Security
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ['security', 'hardware wallet', 'wallet']
+tags: ['security']
 date: 2020-11-05
+media: https://www.reddit.com/r/Bitcoin/comments/jp2fp3/opinion_regarding_security/gbhojor?utm_source=share&utm_medium=web2x&context=3
+
 ---
-
-Location: Reddit
-
-https://www.reddit.com/r/Bitcoin/comments/jp2fp3/opinion_regarding_security/gbhojor?utm_source=share&utm_medium=web2x&context=3
-
-# Yubikey Security
-
 > By this logic, a yubikey would also be a great targeting vector.
 
 They would be, and if US intelligence services have not compromised yubis or at least have a perfect targeted substitution solutions for them then they should all be fired for gross incompetence and mismanagement of their funding.

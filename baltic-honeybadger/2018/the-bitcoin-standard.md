@@ -2,7 +2,6 @@
 title: The Bitcoin Standard
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security']
 speakers: ['Saifedean Ammous']
 ---
 

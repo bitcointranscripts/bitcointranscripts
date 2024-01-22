@@ -3,7 +3,6 @@ title: Invertir en negocios de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
-tags: ['seguridad']
 speakers: ['Nic Carter', 'Florian Maier']
 ---
 

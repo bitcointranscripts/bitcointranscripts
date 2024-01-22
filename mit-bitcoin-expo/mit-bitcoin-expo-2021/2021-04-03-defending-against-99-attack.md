@@ -1,23 +1,20 @@
 ---
-title: How much Security is too much Security? Defending against a 99.999% Attack
+title: "How much Security is too much Security? Defending against a 99.999% Attack"
 transcript_by: Carla Kirk-Cohen
 categories: ['conference']
-tags: ['security']
+tags: ['security','utreexo']
 date: 2021-04-03
 speakers: ['Tadge Dryja']
-media: https://mitbitcoinexpo.org/
+media: https://www.youtube.com/watch?v=rSsPViajzQQ
 ---
-
-Topic: How much Security is too much Security? Defending Against a 99.999% Attack
-
-Location: Online
-
 ## Introduction
+
 Hi everyone, it's too bad that we can't be in person but I think by next year we'll be able to do this in person. It's been a long year without conferences. And I guess for maybe many people watching the MIT Bitcoin Expo last March, was the last time I saw a bunch of people in person before this whole thing. Thanks to Neha, that was a really good start off for the day. I'm going to talk in some ways about the opposite side of things, saying, well, do we have too much security? And talking about defending against a 99.9% attack.
 
 So what is too much security? Bitcoin is pretty secure. Sure there are all these problems, but generally there haven't been big reorg attacks. We haven't seen that kind of thing. If you mined a bunch of Bitcoin in 2010, it's still there. We haven't seen these huge kinds of big breaks, which is great. It's still working. If it stopped working, we probably wouldn't be talking about it still. And more security is better, right? We need to keep strengthening this? To some extent, but maybe it's too secure. What does that mean? What does too secure mean?
 
 ## Too Much Security?
+
 I have some examples of too much security. Some of these are technical, some not so much. For example, 8000 bit RSA keys, you see these sometimes. People say, send me a RSA key so that you can log into this server and it's a giant 2 page RSA key. It works, it's slower, but it's overkill. It doesn't really meaningfully do anything meaningfully stronger than a 2000 or 4000 bit RSA key. Or maybe it does, but we can't think of a reason why it would. It seems like any computer that can break a 2000 bit RSA key before the sun burns out could probably break a 8000 bit key before the sun burns out. As far as we can tell, we don't know of anything, and can't think of a reason for this to be more secure.
 
 Similarly, 24 word BIP39 seed phrases. Some of you may use these to store your Bitcoin. It's basically a bunch of words and you write down the words, you hash that all, to turn it into a seed and then you derive your private keys from that. And this is a cool system, you can do it with 12 words and that's secure. Or you can double that and use 24 words which is more secure in a sense, I guess, but I think it's less secure because now it's longer and it's easier to screw something up or forget parts. And as far as we know it doesn't give any meaningful security gain over the 12 words. The 12 words gives you 128 bits of entropy, and the 24 gives you twice as much, 256 bits. But what computer can do 2^128 operations but not 2^256. We don't know about anything that can do that. It doesn't seem that there's any theory that can do that. So it sort of seems like, why are you doing that? Another funny example is TSA. Not that I've been through an airport in the last year, but if you remember them, you remember thinking is this even secure? It seems like you can get stuff through here. But it's a huge waste of time and everybody is taking off their shoes.
@@ -25,6 +22,7 @@ Similarly, 24 word BIP39 seed phrases. Some of you may use these to store your B
 So there are costs and there are problems with this too much security thing. And sometimes it can paradoxically reduce security. I would say something like a 24 word seed phrase can reduce security, I would use the 12 word one. It's smaller, there's just as much cryptographic security and less likelihood that you're going to lose it.
 
 ## A Security Specification for Bitcoin
+
 So we want a defined specification of the security level we are targeting. In Bitcoin there is no specification. There is a paper and there is a codebase, which keeps changing, and even the codebase, there are a bunch of different clients. Who knows? But we can look at it and generally it has 128 bit security. That seems to be the design. The meaning of that is that it resists an attacker that can perform up to 2^128 operations. And operations is a little vague, because that's hashes or elliptic curve operations, and those things are different. Hashes are a lot faster, generally, than elliptic curve operations. There's a lot of subtleties here, but generally we can say 2^128 operations are required to break this.
 
 Some things have more security than Bitcoin. A big one I keep thinking about are these 20 byte pay to pubkey hashes or pay to witness pubkey hashes. I'm sure people are familiar, if you have used Bitcoin you have used one of these types of addresses. The all lower case bc1 is the new bech32 segwit address, and the older style starts with a 1 and is mixed case, is base58 check addresses. These use 20 byte hashes, so 160 bits of output. And that's kind of overkill. If you're targeting 128 bits of security, you've not got this 160 bit hash and you don't really need it. That extra 4 bytes doesn't really do anything as far as we know. And so you could shorten these things.
@@ -32,6 +30,7 @@ Some things have more security than Bitcoin. A big one I keep thinking about are
 This is the length of a Bitcoin address, and you could shorten it to this long and still have the same security properties with no meaningful security loss. Yes it's easier now to perform a second preimage attack on the key hash, but the second preimage attack on the key hash is already much harder than just figuring out a elliptic curve private key from an elliptic curve public key, so you're always going to go for the easier attack. So with this shorter address, the second preimage and the private key attacks are both as easy as each other. And you could have shorter addresses. Not a huge difference, but you could. So this is something of an overshoot. But do we really need to switch to 16 byte pubkey hashes? Probably not. This is not a huge gain, it's already widespread, and we're switching to Taproot which is even longer, soon. So it's not a big deal but it's sort of like, huh, yeah you probably could shave off these 4 bytes with no real problem.
 
 ## Improving Inefficiencies
+
 And for those kinds of things, are there inefficiencies here that we can use to say, hey, let's tweak this, this is overshoot, we're going too far here. And we can get better efficiency and performance in other parts of the system without meaningfully getting rid of security. It's sort of too much here. On the other hand, there are some things in Bitcoin that have less than 128 bit security. For example pay to script hash. It's 80 bit security, and it's the same length as the pay to pubkey hash, they're 160 bits long. However, the tricky part is that it's a different threat model. In pay to pubkey hash, you're just making your own key and somebody sent money to it. In pay to script hash, there are potentially many cases where it's multisig, maybe most of the cases where it's multisig. Where there's multiple keys involved. And that's interactive. You may be making an multisig with people you don't trust. And if that's the case, they may be able to perform collision attacks. And say hey what's your key, here's my key but actually they have this other separate key and they can perform a collision attack and take the whole thing and do an attack and do it in 80 bits.
 
 This is a fairly limited case. It's limited to cases where you're creating multisig addresses where people are trying to attack you. Maybe you shouldn't, but the Lightning Network rests on the idea of opening multisig channels with people who might try to rip you off, and you have various defenses against it. So this is fixed with pay to witness script hash, where we're back up to 128 security. And what I want to say is yes, this is sort of theoretical, but 2^80 operations have happened. Bitcoin has done 2^90, or so, hash operations in all the proof of work ever.
@@ -43,6 +42,7 @@ Assuming that there isn't a 51% attack, which could happen, but hasn't so far. C
 But what about 99.99%? Is this secure against really powerful attackers, not 2^128, but so powerful that they could easily destroy Bitcoin. So something like this: an attacker would either need to perform 2^128 operations, or perform operations close to mining a million blocks at the current difficulty. Yeah, Bitcoin only has 600000 blocks and most of those are much easier than the current difficulty. So if you have an attacker who can re-org to genesis in the span of a few days, it might be overkill to defend against that. Current difficulty is the important part here, you can't target previous difficulty. Saying you're going to make an address shorter based on the current difficulty isn't good because your UTXO might stay there for a long time.
 
 ## Utreexo
+
 So there is an application of this which is something I have been working on for a while. If you have a secure accumulator for Bitcoin, rather than just a merkle tree for transactions in a block. Right now in Bitcoin you have a merkle tree for all the transactions in a block in a merkle tree, you take that merkle root and you put that into the block header and you hash it. We can also use this same technology to keep track of every coin in the system instead of in a regular database, we also put this into a merkle tree accumulator. This is something that's working now, it's pretty cool. This is a good application for this sort of reduction of security. Merkle trees rely on collision resistance hash functions. So in general you say okay you add these four aspects, 0,1,2,3 into this set and you hash them together so that you only have this one hash. But then people can prove that 0,1,2,3 were in the original set.
 
 So if you want to attack it, you want to insert something then prove something that you didn't insert. You need to find two and two prime, where two is not equal to two prime, these two different elements you want to insert where the hashes are the same. You insert one of them then you prove the other one, and the proof for them is the same. And you have broken the system. You've inserted two but then you can prove two prime which are different. This is a collision attack, finding two different things that hash to the same thing. This is easier than a hash preimage attack. If you have a 256 bit hash function, it only takes 2^128 to perform this type of attack. In contrast to a preimage attack where it takes the full 2^256.
@@ -56,11 +56,13 @@ So that's the general idea here. Do we need to reduce hash sizes for these thing
 And then I have this meme about hashes.
 
 ## Conclusion
+
 Thanks! I've put this out as an idea. I'm not like, hey let's decrease the security of all these things, but I do think it's an interesting topic. Are there areas here where we're leaving performance on the table? Or are we paradoxically reducing security by going too far? Questions, comments, disagreements?
 
 I want to reiterate something that Neha said at the end of the last presentation. I work at the DCI, if you're interested in this kind of stuff get in touch. Get in contact we're pretty cool. Everything is remote now, so wherever you are in the world it doesn't make much of a difference. Are there any questions?
 
 ## Audience Questions
+
 Moderator: One of our questions is, would you suggest saving the state of the blockchain in some way to reduce resource consumption?
 
 Tadge: I didn't go into this in enough detail here but the idea of the utreexo project is this accumulator I'm working on with a bunch of open source contributors. It's sort of like pruning the whole UTXO set. In Bitcoin you can store the whole blockchain which is 256 gigs, or you can prune it and say look once I have the block I don't really need to keep it around. And I can store the UTXO set which is about 4 gigs, and is the current state of who owns what. And this basically prunes that as well. Don't store the UTXO set, store a little merkle root of it. It's not quite a merkle root, but it's very small, it's less than a kilobyte. And then transactions can prove that the UTXO they're spending exists with these merkle proofs. That's one example of where we can potentially leverage smaller proofs. It is a sort of different way of pruning the UTXO set. You don't need the blockchain, you don't need the UTXO set, you can run a full node in a very small amount of space.

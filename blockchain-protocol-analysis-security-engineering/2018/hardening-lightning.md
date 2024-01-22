@@ -2,16 +2,11 @@
 title: Hardening Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'lightning', 'fees']
+tags: ['security', 'lightning']
 speakers: ['Olaoluwa Osuntokun']
 date: 2018-01-30
 media: https://www.youtube.com/watch?v=V3f4yYVCxpk
 ---
-
-Hardening lightning network
-
-Olaoluwa Osuntokun (roasbeef), Lightning Labs
-
 <https://twitter.com/kanzure/status/959155562134102016>
 
 slides: <https://docs.google.com/presentation/d/14NuX5LTDSmmfYbAn0NupuXnXpfoZE0nXsG7CjzPXdlA/edit>
@@ -20,15 +15,15 @@ previous talk (2017): <http://diyhpl.us/wiki/transcripts/blockchain-protocol-ana
 
 previous slides (2017): <https://cyber.stanford.edu/sites/default/files/olaoluwaosuntokun.pdf>
 
-# Introduction
+## Introduction
 
 I am basically going to go over some ways that I've been thinking about basically hardening <a href="http://lightning.network/">lightning network</a>, in terms of making security better and making the client more scalable itself, and then I'll talk about some issues and pain points that come up when you're doing fees on mainnet. And there's going to be some relatively minor changes that I propose to Bitcoin in this talk. We'll have to see if they have a chance of getting in. They are not big sweeping changes. One is a new sighash type and one is a new opcode and then there's covenants but that's an entirely separate story itsef of course.
 
-# Talk overview
+## Talk overview
 
 A quick overview first. I am going to give an overview of lightning's security model. I am not going to go much into lightning's overview because I kind of assume that you at least vaguely know what lightning network is. Payment channels, you connect them, you can route across them and that's the jist of it. We're going to talk about hardening the contract breach event. Some of you have talked about ways that we can do that in terms of addin more consensus changes, or going at it from the point of view of a stratey when a breach actually happens and there's a large mempool backlog. Then, I am going to introduce a new lightning channel type and a new channel design. Basically making the channels more succinct, meaning you'd have to store less history and things like making outsourcing a lot more efficient as well. And then I am going to talk about kind of like outsourcing and a newer model and a model that assumes that-- that maintains client privacy as much as possible, because if you want this to scale in the outsourcing to support a large number of clients then we want them to store as little state as possible. And then we're going to go into making lightning more succinct on chain. If it's an off-chain protocol, then we want to make sure it has the smallest on-chain footprint possible, otherwise it's not really scaling because you're hitting the chain every single time. It should be off-chain itself.
 
-# Security model
+## Security model
 
 There's a diagram of the layers of lightning over here. People always say it's like "layer 2". But to me there's a lot more layers on top of that. To me, layer 1 is bitcoin and the blockchain itself. Layer 2 is the link layer between channels. This is basically how do I open a channel between myself and Bob and how do Bob and I actually update the channels. Then there's end-to-end routing and the HTLCs and onion routing and whatever else is involved there. And then you have an application layer for things being built on top of lightning, such as exchanges.
 
@@ -40,13 +35,13 @@ We have the easy way and the hard way. Optimistically, we can do everything off-
 
 The other thing we assume is that miners or pool operators are not colluding against us. They could censor all of our transactions on the chain. As part of this assumption, we assume a certain minimum level of decentralization of the blockchain miners because otherwise you can get blacklisted or something. There are ways that you could try to make the channels blend in with everything else and all of the other transactions occurring on the blockchain, and there's some cool work on that front too.
 
-# Strategy: Hardening contract breach defense
+## Strategy: Hardening contract breach defense
 
 Moving on, let's talk about hardening contract breach defense strategy. Something that comes up a lot and people ask this is, how do I handle contract breach in the case of massive backlog? This would be the case where, for whatever reason, my fees are sky high, someone is spamming the chain and there's a contract breach. What am I going to do from there on? There's some things that people have worked on for adding new consensus changes to bitcoin, such as the timelock would stop after the block was ever so full or possibly you would have some pre-allocated arena where you could do battle for your smart contract. This is looking from a bit more strategic standpoint and looking at the dynamics on the fees in terms of handling the commitment transaction itself.
 
 Whenever someone tries to broadcast a prior state, perhaps out of order, they are basically locked to that particular state. Bob basically had $2 on the newest state and he had $10 on the other state. He's going to go back to the $10 state. At that point, Bob can only access just his money from the channel itself. Bob revoked some of the outputs. What his counterparty can do is basically start to progressively siphon Bob fees basically into miner fees. This is now a situation where there's some strategy there because Bob has two options: he can either stop, or I can keep going and I'm eventually going to siphon all of his money to miner's fees. The only way that his will actually succeed to get that prior state transaction into the chain is if he pays more in miner's fees than he actually has in his balance himself. You can either do that by using child-pays-for-parent. I think this is a pretty good approach. What we're doing here is that the justice transaction is going to be using replace-by-fee, we're going to use that to progressively bump up and the fees the money of the cheater basically into the fees. I think this is a pretty good stopgap for the way things work right now. If you have someone that can be malicious at all, you can almost always penalize this person. So even if there's a massive backlog, assuming that the miner wants the higher fee rate, then well you know Bob basically gets nothing. This adds further incentive from actually, people trying to do cheating, because now there is this strategy where basically I can just give away your money to miner's fees and the adversary gets nothing. I'm still made whole through this entire ideal, so whatever happens I'm okay, I want to penalize and punish Bob in the worst way possible and I'm going to jump into the queue in front of everything else in the mempool. I could have put maybe 20 BTC towards fees- I'm fine, I'm just punishing my counterparty, it's scorched earth, and then I wash my hands and walk away and everything's okay.
 
-# Reducing client side history storage
+## Reducing client side history storage
 
 <https://www.youtube.com/watch?v=V3f4yYVCxpk&t=5m45s>
 
@@ -54,11 +49,11 @@ Now we're going to talk about scaling lightning itself. Basically, from the clie
 
 These state transitions in the channel can be very generic, later this year we might get fancier with some cool stuff. Right now it's just adding HTLCs, removing HTLCs, and keeping track of prior state. The goal here is to reduce the amount of state that the client needs to keep track of. It would be good if they could keep track of less state, because then they could have more high-throughput transactions. It has implications for outsourcing too. If the state requirements for the client to actually act on the contract is reduced, then it makes the outsourcers more succinct as well, and if the outsourcers are more succinct then people are going to run them and if people run them then we're going to have more security so it's a reasonable goal to pursue this.
 
-# Overview of commitment invalidation
+## Overview of commitment invalidation
 
 Before we get into reducing amount of state, I am going to talk about some of the history of how to do commitment invalidation on lightning. You have a series of states. You walk forward in these states one-by-one. Each time you go to a new state, you revoke the old one. You move from state 1, you revoke it, state 2 revoked now you're on state 3. The central question to how do we channels is how do we do invalidation. One thing to note is that this only matters fo bi-directional channels where you're going both ways. If it's a uni-directional channel, every single state update I do is basically benefiting the other participant in some way and they don't really have incentive to go back on the prior states, but if you have a bi-directional channel there's probably some point in the history where one of the two counterparties was better off, where they had some incentive to try to cheat and try to go back to that prior state. We solve this by invalidating every single state once we make a new state. The penalty here is that if I ever catch you broadcasting a prior state then you basically get slashed, your money all goes away and there's some strategy there which I have already talked about a bit. Naievely, you keep all the prior states. But that's not very good because now you have this linearly growing storage as you do these updates. People like lightning and other off-chain protocols because they can be super fast, but if you have to store a new state for every single update then that's not very good. The other thing is that, say you're going to the blockchain to close-out the prior state but that's not very good because now you have control transactions going into the chain which isn't really good if you're trying to make everything succinct itself.
 
-# History of succinct commitment invalidation
+## History of succinct commitment invalidation
 
 So let's get intothe history of and how we currently do commitment invalidation.
 
@@ -70,7 +65,7 @@ What lightning does now is called commitment revocations (hash or key based). Mu
 
 The goal here is to develop a commitment scheme with symmetric state. Commitment revocations in lightning right now have asymmetric state. This is basically due to the way we ascribe-- we know what our transactions look like, if you broadcast mine on chain then I already have what I need. But that can get worrisome like multiparty channels... if we could make them symmetric, then multiparty channels wouldn't have this weird combinatorial state blowup, and also we could basically make all of the state much smaller itself.
 
-# Commitment invalidation in lightning v1.0
+## Commitment invalidation in lightning v1.0
 
 So here's a review of basically of the way we do commitment invalidation in lightning right now. Well, I put v1.1 on the slide. But we're on v1.0, I don't know. I guess I was thinking ahead. The way that it works is that every single state has this thing called a "commitment point", which is just like a EC base point. The way we derive each of the private keys for each of these points is using a shachain. You can think of a shachain as having a key k and you have an index i which gives you random element in i, and me as a receiver because of this particular structure I can collapse them. Any time I have a shachain element 10 I can forget everything else and re-derive the data by only knowing the shachain 10 were the parameters, more or less.
 
@@ -78,7 +73,7 @@ We do this key derivation scheme which is like kind of complex-ish but important
 
 This one has a few drawbacks. It gets involved because we were trying kind of defend against rogue key attacks and things like that. But I think we can make this simpler. The client storage has to store the current state and this log k state, and it's log k where k is actualy the number of state updates ever. The outsourcer needs a signature for every single state and in addition to that needs a signature for any other HTLC we have and it basically needs to collapse the log k state itself. So we need to make this simpler and more succinct.
 
-# OP\_CHECKSIGFROMSTACK
+## OP\_CHECKSIGFROMSTACK
 
 <https://www.youtube.com/watch?v=V3f4yYVCxpk&t=12m15s>
 
@@ -88,7 +83,7 @@ I am proposing an addition to bitcoin called <a href="https://blockstream.com/20
 
 This proposal isn't particularly soft-fork safe for bitcoin yet. But basically you have message, signature, public key, and maybe a version and different versions in the future. Or we could have ECDSA or Schnorr signatures or whatever else. The opcode would tell you if it's valid or whatever.
 
-# Signed sequence commitments
+## Signed sequence commitments
 
 Now on to a new commitment invalidation method. This is something I call signed sequence commitments. Rather than now us using this revocation model, what we do is every single state has a state number. We then commit to that state number, and then we sign the commitment. That signed commitment goes into the script itself. This is cool because we have this random number R so when you're looking at the script you don't know which state we're on. To do revocation, we could say, if you can open this commitment itself and because it's signed you can't forge it because it's a 2-of-2 multisig, so we can open the commitment and then show me another commitment with an R sequence value that is greater than the one in this commitment and that means that there was some point in history where two of you cooperated but then one of the counterparties went back to this prior state and tried to cheat. So this is a little bit of a simpler construction. We have a signed sequence number, you can prove a new sequence number, and we can prove it because we hide the state of it, because it can be the case that when we go to the chain we don't necessarily want to reveal how many state updates we've actually done.
 
@@ -98,7 +93,7 @@ One cool part of this is that whenever I have state 10, I don't need the prior s
 
 There's a state machine in <a href="https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md">BOLT 2</a> where you update the channel state, but that doesn't need to be changed to implement signed sequence commitments. We've dramatically simplified the state. The cool thing is that, because the state is symmetric now in mutiparty channels there's no longer this combinatorial blowup of knowing or tracking who has published and what was their state number when I published and who spent from... it's just, it's way simpler to do signed sequence commitments.
 
-# Review of state outsourcing
+## Review of state outsourcing
 
 <https://www.youtube.com/watch?v=V3f4yYVCxpk&t=15m55s>
 
@@ -106,7 +101,7 @@ Signed sequence commitments can make state outsourcing more scalable. Outsourcin
 
 There's some open questions here about doing authentication. You don't want someone to connect to the outsourcer and send a bunch of garbage, like sending them gigabytes of like random data. Instead, we want to make it somewhat more costly, which could be done with a ring signature scheme or it could be a bond or a bunch of other things. There's also some conversations and questions there like do you pay per state, do you pay when they do the action, is it a subscription model? We're working on these questions and they will be answered.
 
-# Lighter outsourcers
+## Lighter outsourcers
 
 For outsourcers, this is the really cool part. Every single outsoucer before had to store either the encrypted blob or the prior state for every state. If you did a million states, that state storage can get really large. If they have a thousand clients with a million states each, it starts to get really infeasible and prohibitive.
 
@@ -116,11 +111,11 @@ What's cool with shachain is that the old point, in the old scheme, you had to g
 
 In the signed sequence commitments scheme, we're just going to use that now encrypted blob approach, we're going to add revocation type which tells outsourcers how to act on the channel itself, we're going to give them the commitment, and the revocation info which is how they do the dispatching itself. This is pretty cool itself because now I just have constant state. But it's a little bit different because if I want to enforce how the outsourcer can sweep the funds, then I need a little bit more, I need to give them the signatures again. As is right now, hey outsourcer if you do your job then you can get all of Bob's money. It's kind of a scorched earth approach. But maybe I want to get some money and maybe there's some compensation or something and we could fix that as well.
 
-# Covenants
+## Covenants
 
 I skipped or deleted a slide. That's too bad. You can basically use <a href="https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/covenants/">covenants</a> (here's a <a href="http://fc16.ifca.ai/bitcoin/papers/MES16.pdf">paper</a>) on this approach to eliminate the signature completely. You only have one constant-sized signature. The covenant would sign Bob's key and Bob can sweep this output but when he sweeps the output he has to do it in a particular way that pays me and pays him. This is cool because I can give him this public key and this tuple and you can only spend it in that one particular way. I can add another clause that says if Bob doesn't act within three fourths of the way to the timelock expiration then anyone can sweep this. If you're willing to sacrifice a bit of privacy, then you don't have to worry about breaches because anyone can sweep the money and if anyone tries to breach then miners are going to do so immediately themselves anyway.
 
-# Outsourcer incentivization
+## Outsourcer incentivization
 
 <https://www.youtube.com/watch?v=V3f4yYVCxpk&t=20m35s>
 
@@ -132,7 +127,7 @@ There's a cool idea floating around on the lightning-dev mailing list and this g
 
 I think this is, we could do both, it just depends on how frequently we're going to see breaches in the future and how this market is going to develop around the conversation of outsourcers and paying outsourcers.
 
-# Scaling outsourcing with outsourcer static backups
+## Scaling outsourcing with outsourcer static backups
 
 One thing we could do is that some people talk about how do you actually do backups in lightning itself. This is a little bit of a challenge because wallets are more stateful. In the case of a regular on-chain wallet, you basically just have your bip32 seed and if you have that seed you can scan the chain and get everything else back. But in lightning, you also have channel data, which includes parameters of the channel, which pubkeys were used, who you opened the channel with, the sizes, etc. There's static state, and then there's dynamic state which you outsource after every state update with the outsourcer.
 
@@ -140,7 +135,7 @@ Maybe we could ask the outsourcer to also store this very small payload, like a 
 
 There's a question of basically, who watches the watchtowers? Who makes sure they are actually storing the data? You can use a proof-of-retrieviability protocol over static and dynamic states they are storing. So ask a watchtower to make sure that they are storing data, and if they are, provide me with the data. And if not, then you can pay for this again just like paying the watchtower but this time it's a watchwatchtowertower.
 
-# Second stage HTLCs
+## Second stage HTLCs
 
 <https://www.youtube.com/watch?v=V3f4yYVCxpk&t=24m5s>
 
@@ -154,7 +149,7 @@ The solution here is to use covenants in the HTLC outputs. This eliminates signa
 
 As a stopgap, you could do something with sighash flags to allow you to coalesce these transactions together. Right now if I have 5 HTLCs, I have to do that on chain, there's 5 different transactions. We could allow you to coalesce these into a single transaction by using <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-August/010759.html">more liberal sighash flags</a>, which is cool because then you have this single transaction get confirmed and after a few blocks you can sweep those into your own outputs and it works out fine.
 
-# Multi-party channels
+## Multi-party channels
 
 There's some cool work by some people at ETH doing work on multi-party channels ("<a href="https://www.tik.ee.ethz.ch/file/a20a865ce40d40c8f942cf206a7cba96/Scalable_Funding_Of_Blockchain_Micropayment_Networks%20(1).pdf">Scalable funding of bitcoin micropayment channel networks</a>"). It's a different flavor of channels because there's some issues about how to make the hierarchy flat, paying for punishment, if I have to update my own state then do I have to wait for everyone else to be online. What they did instead was they made this hierarchical model of channels itself.
 
@@ -168,7 +163,7 @@ This is pretty cool but there's some issues with state blowup on chain with this
 
 However, we could reuse the signed sequence commitments to solve some of these problems. We could use this for the hook update. This makes it more scalable. Everyone would have constant sized state independent of the number of participants in the channel, assuming that I'm keeping track of my own individual transactions. This has the same benefits as far as outsourcing. If we're using signature aggregation, then everything is very very tiny, and that works out well too.
 
-# Fee control
+## Fee control
 
 <https://www.youtube.com/watch?v=V3f4yYVCxpk&t=29m>
 
@@ -180,7 +175,7 @@ The solution is that you don't want to apply fees to the commitment transaction 
 
 I don't know if you remember it, but <a href="http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2015-02-23-scaling-bitcoin-to-billions-of-transactions-per-day/">SIGHASH\_NOINPUT was proposed a long time ago</a>. SIGHASH\_NOINPUT is so that you can sign the txid of the transaction that made the input and the position of the input. We're saying don't sign that. Only sign the script. I could have a dependent transaction that is still valid, even if the parent transaction changes, because the pubkeyscript stays the same. This gives you more control for confirmation time of your output and other things like that. You don't have to worry about fees and you can regulate fees completely, gives more control of your confirmation time of your output.
 
-# Q&A
+## Q&A
 
 Q: To sum it up, the upgrades for bitcoin script would be helpful are covenants, SIGHASH\_NOINPNUT, and OP\_CHECKSIGFROMSTACK.
 

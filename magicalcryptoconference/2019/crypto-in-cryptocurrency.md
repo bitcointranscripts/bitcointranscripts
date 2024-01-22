@@ -1,22 +1,19 @@
 ---
-title: Crypto In Cryptocurrency
+title: "The 'Crypto' In Cryptocurrency: Why Everything is Weird and Hard"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'cryptography', 'zero-knowledge']
+tags: ['cryptography', 'zero-knowledge']
 speakers: ['Andrew Poelstra']
 date: 2019-05-12
 media: https://youtu.be/mRl3c9ppO78
 ---
-
-The "crypto" in cryptocurrency: Why everything is weird and hard
-
 I do not have any slides for you. This is my attempt to keep this non-technical, by depriving myself of any ability to write equations on screen. The topic of my talk is why everything is weird and hard in cryptocurrency. What is cryptography as a mathematics and field of science? And how does this work in practice?
 
-# Encryption
+## Encryption
 
 Historically the purvue of cryptography is encryption, like trying to come up with something random looking. Security here is straightforward: if you have a key then you can decrypt something, and the idea of having a security model or threat model to describe that didn't really make sense or it did but it would be onery. In modern day, cryptography has come a long way, including zero-knowledge proofs which have computer programs that demonstrate that they do nothing but make statements about the inputs without leaking details about the input. Digital signatures and encryption are related. Signatures are like encryption where you have two keys, a public key and a private key. Anyone with the public key can encrypt data, and anyone with the decryption key or private key can decrypt the data. This can also mean encrypted data can be sent over an insecure channel.
 
-# Digital signatures
+## Digital signatures
 
 A digital signature is the opposite-- only the person with the private key can produce a signature, and only someone with the public key can verify the signature. When we get into schemes like this, if you were trying to argue the security of this scheme, it's much harder to do and harder to define. I am going to talk about digital signatures in an academic setting, and then I want to go into practical issues about random number generation and then if somehow I have time then I will talk about how this generalizes to a multisig setting.
 
@@ -30,7 +27,7 @@ Well, in bitcoin we were using ECDSA and txids were based on these signatures. S
 
 At each step, I was strengthening the idea of security, and categorically eliminating possibilities of forgeries. But somehow this categoric elimination doesn't work because my categories aren't even quite big enough. Even things like producing a signature when a signature hasn't been seen before. It's taken a while to explore this design space and look at forgeries and see what they look like in practice. For signatures, I was able to give a security game described on stage without using diagrams and arrows everywhere. Same thing gets more complex with multisignatures. When you're talking about zero-knowledge proofs, where you have a zero-knowledge proof and a simulator and all the different rules and trying to demonstrate indistinguishability of these complicated systems that are deployed from the more ideal model and so on until you get something that you can actualy say something concrete about. But nevertheless, in the real life, there is a tremendous amount of value from having provable security.
 
-# Provable security
+## Provable security
 
 In my remaining time, I want to defend this concept of provable security, even though I told you it's hard. One thing I want to talk about is this notion of random number generation. I am going to switch topics from defining security to actually deploying secure systems in practice.
 
@@ -38,6 +35,6 @@ For ECDSA or Schnorr, producing these signatures requires the generation of unif
 
 More recently, and I will be quick about this- it wasn't that the nonce was reused. You had random-looking nonces but there was some software out there that was generating nonces that were predictably biased in some way, like the first few bits were consistently 0 much more often than they should be. Even this deviation from random, given enough signatures, is enough to leak your private key. So we have these signature schemes that are proven secure in academic models, but they always require uniform randomness. We have this intuition that random can't be guessed, but here random means indistinguishable from uniform random. Just being able to distinguish it from uniform is enough to break the academic proof, and in practice you will lose your keys and coins.
 
-# Summary
+## Summary
 
 I am out of time. This stuff is difficult and subtle and if you're excited about all these new projects claiming magical things, then you should be skeptical. Bitcoin already moves really fast. We need to slow down and be careful.

@@ -2,12 +2,11 @@
 title: "Long-Term Trust and Analog Computers"
 transcript_by: kouloumos via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=kf48oPoiHX0
-tags: ["Security"]
+tags: ["codex32"]
 speakers: ["Andrew Poelstra"]
 categories: ["conference"]
 date: 2022-05-07
 ---
-
 What I am here to talk to you about are analog computers and long-term trust.
 And what I mean by long-term trust is how can you have assurance that your Bitcoin secrets, your seed words or your seed phrase or whatever have you, how can you be assured that that is stored correctly, that the data has integrity and so on, and how can you be assured of that for a long time?
 And so where trust comes into this is that traditionally, in the last 100 years, in order to verify the integrity of data, you have to put it into some sort of electronic computer.

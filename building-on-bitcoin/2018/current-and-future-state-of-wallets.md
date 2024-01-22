@@ -2,21 +2,20 @@
 title: Current And Future State Of Wallets
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'privacy', 'security', 'wallet', 'validation']
+tags: ['wallet','lightweight-client','psbt']
 speakers: ['Jonas Schnelli']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=CO2NXDWJa08
 ---
-
 <https://twitter.com/kanzure/status/1014127893495021568>
 
-# Introduction
+## Introduction
 
 I started to contribute to Bitcoin Core about 5 years ago. Since then, I have managed to get 450 commits merged. I am also the co-founder of a wallet hardware company based in Switzerland called Shift+ Cryptocurrency.
 
 Wallets is not rocket science. It's mostly about pointing the figure to things that we can do better. I prepared a lot of content.
 
-# Privacy, security and trust
+## Privacy, security and trust
 
 When I look at existing wallets, I see the triangle of privacy, security and trust. Sometimes we forget about this. The triangle is between trust, security and privacy. In privacy, I mean what Adam just talked about- who knows what you are buying or what transactions you are doing, it's about transaction and script privacy. In trust, I mean no-trust required, we want chain validation, we want consensus. If that's not true then we are doing something wrong in my opinion. And the crucial part is security around keystorage and cold-storage. Who has the keys? Who has access to the keys? We are aware of that problem in the community, in general.
 
@@ -30,7 +29,7 @@ If you look at SPV wallets like Android Wallet or BreadWallet, they do some form
 
 Electrum is another model of how it works. They do SPV validation- not with bloomfilters, it's different. There's basically no privacy here... electrum servers. Security, same problem with Bitcoin Core, there's options, but it doesn't come out of the box. You need to buy a haredware wallet, and then use a native interface.
 
-# Centralized validation
+## Centralized validation
 
 What is centralized validation? Some people think it's great or a good invention. I think it's a root of evil practices we currently do. Centralized validation means that-- let's figure out why people use centralized validation first. New users tend to use centralized services like coinbase or same like trezor or these solutions. They don't want to spend time on the validation lead time, which can take days. They don't want to spend 100 gigabytes on downloading to verify the whole blockchain. And same is true for the CPU requirements.
 
@@ -42,13 +41,13 @@ Why are people using centralized validation? Well, it's immediately usable. You 
 
 Another thing is centralized key storage. It's not like validation. It's more like key storage. I think there's no reason to do centralized key storage. You might disagree, but I think there's no reason. You don't need any security setup. On the other hand, what security elements you have to assess that centralized key storage... what algorithms do you use to analyze coinbase? In my opinion, if you use centralized key storage, you don't own bitcoin. The one owning the keys are the owners of bitcoin. You might have a right to receive those bitcoin eventually... it's different. This is why coinbase is an unlicensed futures exchange. Users think they own bitcoin here, but they just have a right to moving the coins or something.
 
-# Simplified payment verification (SPV)
+## Simplified payment verification (SPV)
 
 In simplified payment verification, which was described in Satoshi whitepaper section 8... the root idea with a merkle tree, getting leafs, then calculate the hash, or verify hte hash. What's a great thing about SPV? You can verify headers, which can be lightweight, you don't need to get all the ... to do PoW. You can inject consensus rules and download a few blocks and verify size.. There's some weak zeroconf handling. You don't know if funds coming in are really funds coming in. That's a really complex, broken concept. On a SPV level, it's even wors e. Also, you're a network leech, and you don't give anything back- you're just downloading data and not helping network health. And also, you are relying on a free service. If everyone is running SPV and full nodes are hard to run, then there might be a bottleneck there, because you are relying on a free service. And why is someone providing that free service? Maybe they are hard-core bitcoin users, or maybe its' an agency that wants to spy on the network. Free estimation is probably impossible, there's no model for doing that with SPV. Fee estimation means you need a mempool. To have a mempool you need the UTXO set, and to have a UTXO set, you need a full node right now. So fee estimation is another area where you need trust. And also, they tend to rely on DNS.
 
 On the other hand, SPV has acceptable bandwidth consumptions. Mike Hearn was the original driver behind bitcoinj before bluematt. Also, you have an acceptable amount of decentralization around validation.. He thought that using bloom filters was enough for privacy, so you just avoid telling addresses to a node, and set the false positive rate. The set is a bit bigger. But it turned out that the  priacy stuff holds..
 
-# SPV privacy
+## SPV privacy
 
 Bloom filters are used by Android Wallet and Bread Wallet.
 
@@ -60,13 +59,13 @@ Then there's the hybrid SPV way and full block SPV where you downlload all block
 
 Bloom filters, shortly... you send your transaction history or your transaction histogram to your peers, they do the filtering for you, it's CPU heavy. They provide this for free. You can send the filter, and they give back transactions, and they know what you need. A man-in-the-middle, the bitcoin p2p protocol is unencrypted. If you do it here at this event and the wifi is uncompromised, I could tell what you have bought and so on, due to the broken privacy.
 
-# bip158 compact block filters
+## bip158 compact block filters
 
 In bip158, it's a new proposal, and is in the process of getting finalized... there's some deployed versions and there's some concerns.. probably soon. The way how it works is you download filters, you don't tell nodes what to filter, and then you download filters and you figure out which blocks are relevant to my usease or wallet. Thisi s way better for privacy, but still, I'm not sure if you have two transactions and you downl oad two lbocks, then maybe someone can figure out which address you were using. Maybe there are some risks with privacy.
 
 If you do client-side filtering like in bip158, there's a lot more bandwidth consumption compared to bloom filters. If you missed a day, you have to download 2.88 MB as an estimate. If you were offline for 30 days, then you dneed to downl oad 86.4 megabytes. It's maybe okay. Mobile users don't always have a lot of bandwidth available.
 
-# Hybrid SPV
+## Hybrid SPV
 
 Full block or hybrid SPV-- you might need to download a few blocks for security. But if you go offline, and come back in a day, there's 144  megabytes you need. This is probably okay for a desktop, but definitely not a sm artphone.
 
@@ -74,7 +73,7 @@ You can slowly turn it into a full node because you have downloaded the blocks. 
 
 We have resource costs in one axis, and decentralization in another. SPV is high resource and high dcentralization. Centralized validation solutions are both low resource costs and low decentralization.
 
-# Future of wallets
+## Future of wallets
 
 So what is the future of wallets? I think this is a hard problem to solve. We should try to figure out that triangle of privacy, security and trust. We want something with green checkmarks in each area. You need som ething and it can't be just download something and it works or just buy something and it wroks. You need to confiugre, I think.
 
@@ -86,11 +85,11 @@ You can  turn partial validation into full validation by downloading all the blo
 
 This is in my opinion very important. To me, privacy and verification (no trust) is not an opt-in model. This is how it should be. I think this is very important. The whole idea of bitcoin is to keep users away from trusted third-parties.
 
-# UTXO set commitments
+## UTXO set commitments
 
 UTXO set commitments could be a way to bootstrap a full node. I think it's currently stuck with hashing the UTXO set, maybe rolling sets or somtehing. I think it's stuck there. Stuck doesn't mean no progress, stuff usually takes a lot of tiem if done right.
 
-# Partially signed bitcoin transactions
+## Partially signed bitcoin transactions
 
 Another thing that is interesting for wallets is partially signed bitcoin transaction format (PSBT) using bip174. This would allow that you can plug in any hardware wallet with every bitcoin wallet, with multisig and off-line signing. You could use bip32 paths, and raw transactions, redeem scripts, witness scripts, partial signatures. If we could have a good standard for hardware wallets, bip174 would be a good thing to work on. It's easy to understand if you have the time to read through it.
 
@@ -102,7 +101,7 @@ NODE\_NETWORK\_LIMITED has been deployed. It's a standard for how pruned peers c
 
 Bitcoin Core is great if you have up to 200 wallets, but then it starts to get to be really not ideal. If you want to serve more than 200 wallets in an an enterprise case, that works. But if you need more, you probably need other infrastructure. This is a diagram where loaded wallets in the blue line versus used RAM in the purple line.
 
-# Personal electrum server
+## Personal electrum server
 
 Another thing that might need more attention is the personal electrum server from Chris Belcher. It's a great piece of software. You can use Bitcoin Core. You can index only your wallet. If you are going to startup an eectrumX wallet just for yourself, it's silly, because it processes the whole blockchain history. You could use a personal electrum serer on your own, which woud help. I think in that direction we should do mroe work.
 
@@ -114,7 +113,7 @@ There could be multi-factor authentication. You could use multisig in a practica
 
 Integrate layer 2, like lightning stuff, I think that makes sense. We forget abotu this next one, but it needs to be easy to use. If you want more adoption, then it needs to be way more simpler to use, which means pluggig it in and it works.
 
-# Q&A
+## Q&A
 
 Q: Regarding the problem that SPV wallet gets service for free... and it's not scalable because there needs to be full nodes that serve SPV users... could an incentive system be devised with lightning to pay for the service using lightning micropayments?
 
