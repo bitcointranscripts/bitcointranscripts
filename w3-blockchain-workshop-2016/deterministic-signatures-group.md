@@ -2,7 +2,7 @@
 title: Deterministic Signatures Group
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['threshold signatures']
+tags: ['threshold-signature']
 ---
 
 Deterministic expressions (group)

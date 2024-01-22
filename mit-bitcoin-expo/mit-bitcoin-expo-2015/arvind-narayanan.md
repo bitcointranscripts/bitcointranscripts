@@ -1,11 +1,11 @@
 ---
-title: Threshold signatures
+title: "Why you need threshold signatures to protect your wallet"
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['threshold-signature']
 speakers: ['Arvind Narayanan']
+media: https://www.youtube.com/watch?v=96ULlHhia_Q&t=5037
 ---
-
 I want to tell you what threshold signatures are and I want to convince you that threshold signatures are a technology you need. This is collaborative work.
 
 There are three things I want to tell you today. The first is that the banking security model has been very very refined and has sophisticated techniques and process and controls for ensuring security. It does not translate to Bitcoin. This may seem surprising. Hopefully it will be obvious in retrospect.
