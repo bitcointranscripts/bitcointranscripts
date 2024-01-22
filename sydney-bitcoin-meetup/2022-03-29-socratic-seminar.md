@@ -2,13 +2,11 @@
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['schnorr', 'threshold signatures']
+tags: ['threshold-signature']
+speakers: ['Jesse Posner']
 date: 2022-03-29
 media: https://rumble.com/vz3i3u-frost-the-future-of-schnorr-multisignatures-on-bitcoin.html
 ---
-
-Name: Socratic Seminar w/ Jesse Posner
-
 Topic: FROST
 
 Location: Bitcoin Sydney (online)
@@ -27,7 +25,7 @@ Andrew Poelstra presentation at SF Bitcoin Devs 2019: <https://btctranscripts.co
 
 Tim Ruffing presentation at CES Summit 2019: <https://btctranscripts.com/cryptoeconomic-systems/2019/threshold-schnorr-signatures/>
 
-# Introduction
+## Introduction
 
 Lloyd Fournier (LF): This is going to be a discussion meeting with our very special guest Jesse Posner is going to tell us about what he’s been up to, what he thinks about FROST and its applications to Bitcoin. We are going to also provide him input about where we think that should go. It is an open question about how users will interact with this thing, how it will evolve and be used by Bitcoiners. I have created a slideshow of notes that we’ll go through as a way of structuring the conversation and making sure we don’t forget anything. Let me get that up.
 
@@ -35,21 +33,21 @@ Does that start quite basic, what is FROST? Or are we going straight in?
 
 LF: We are going to say quite briefly what that is, for the sake of the recording. It doesn’t really have any diagrams or anything. You probably have to go elsewhere for your basic knowledge on FROST. Unless you are happy with a very short summary.
 
-# How multisig currently works
+## How multisig currently works
 
 LF: We have this opcode called OP_CHECKMULTISIG which we put in to pay-to-script-hash (P2SH) outputs. Pay-to-witness-script-hash (P2WSH) or P2SH. If you want t of n signers, t is the threshold of signers and n is the total number of possible signers. Very common ones are 3-of-5, you need 3 signatures out of 5 possible keys. Or 2-of-3 is probably the most common one. In order to that you put your n public keys in a script and you provide t individual signatures in the witness to that transaction. That’s how it currently works.
 
-# FROST
+## FROST
 
 LF: With FROST we are moving to a model where we just have a single public key and a single signature for any number of thresholds you want.
 
-# Advantages of FROST versus existing multisignatures
+## Advantages of FROST versus existing multisignatures
 
 (With naive multisig to spend there is 96+ bytes per signer in the witness. It has bad privacy as a chain observer can learn how coins are being held onchain and can see when they leave the wallet using heuristics. With FROST regardless of the number of signers there is just 64 bytes in the witness. Spends reveal nothing.)
 
 LF: The main advantages are two things. There is much less data. For the existing multisig there is more than 96 bytes per signer. The first signer who is going to authorize this transaction, more than 96 bytes for each one. If you have got 3-of-5 it is 3 times 96 and a little more. For FROST regardless of the threshold and the number of signers it is just 64 bytes every time. It is less for a 1-of-1, that’s how Schnorr is, as you increase the number of signers it doesn’t increase at all. It is the same as a single signature. That is fantastic for reducing the blockchain footprint of multisignatures, it is also really good for privacy. If you can see the blockchain and you see someone spend with a 3-of-5 or a 2-of-3 you know how those coins are being held. If it is a lot of coins you know potentially how difficult the attack would be on those coins. How many persons own them. You’ll also see where coins go. It is very easy to see when that 3-of-5 makes a donation to an address which one is the change address, which one is the main one because one will be going to a P2SH which eventually gets spent as well with a 3-of-5 again. You’ll be able to see “That 3-of-5 is moving their coins here. Those coins are going to someone else.” It is bad for privacy and it also means that these multisig spends, which will be a large proportion of Bitcoin spends, do not contribute to the anonymity set of other types of spends like Lightning channels and so on. When Lightning channels move to MuSig(2) they will also be a single signature from Schnorr. You’d like all these multisig spends to also be single signature spends so you cannot distinguish a Lightning channel opening or any kind of protocol from a multisig spend. That would be ideal. They are the main big wins from FROST. There are other wins and there are losses as well. We are going to get into the weeds about what those are and what pathway we can take to reduce the losses and make it flexible so you can choose your trade-offs in your context and how to accentuate the gains you get from moving to this new model.
 
-# Distributed key generation
+## Distributed key generation
 
 LF: The FROST protocol starts off with distributed key generation. Jesse, this is where I am going to ask you to come in and give us the high level view on how that works and what that means for someone who wants to use FROST.
 
@@ -77,7 +75,7 @@ LF:  Exactly, a 1-of-2, if you were to follow the protocol exactly you would bot
 
 JP: You wouldn’t need to sum them in that case. In fact I think they may just define the protocol that t is greater than 1. I’m not sure.
 
-# The signing keys are not derivable
+## The signing keys are not derivable
 
 (How can users recover funds in case they have seed words but lost FROST keys?)
 
@@ -125,7 +123,7 @@ LF: The joint public key is the same, the funds don’t need to move. You do hav
 
 JP: Right.
 
-# How many rounds of communication is the protocol?
+## How many rounds of communication is the protocol?
 
 (What will the workflow be for hardware wallet setup? How will this work in a hot wallet setup?)
 
@@ -149,7 +147,7 @@ LF: We’ve got to the point where we understand how we get the key and how that
 
 Michael Folkson (MF): An alternative setup would be you have a centralized coordinator, finalizer type party. That would reduce the complexity, With FROST everyone has to receive the shares of everybody else. That requires a lot of communication, perhaps you are sending your share to every single other party involved in the threshold. The comparison would be you just send your share to the coordinator, finalizer guy. Obviously that comes with downsides. Does a scheme like this work with a centralized coordinator, finalizer?
 
-# How do you verify that the DKG worked?
+## How do you verify that the DKG worked?
 
 (How do I know that the public key we get at the end really had contributions from each of my devices? In the corporate/organisation scenario how do we verify that each branch got a correct share before we put coins into it?)
 
@@ -185,7 +183,7 @@ MF: And without the centralized coordinator, the centralized coordinator could g
 
 LF: You could set up a 2-of-3 or 3-of-5 via Signal without any coordinator. “Here’s my key, put it into the 3-of-5 that jointly owns these funds.” With this it is going to be a bit more complicated than that. We are not going to be able to send each other Signal messages. I’ve put crazy stuff in messages but we’re not going to specify that. That is a slight downside. You cannot just set it up so casually. You do need software that creates messages and talks to other people. If you are an individual it is much less of a problem. You are just doing a threshold with yourself. Or perhaps with a service like Casa or whatever. That is simple. You just have to put your hardware wallets in one after the other, go in a round robin fashion.
 
-# Proofs of possession in the protocol
+## Proofs of possession in the protocol
 
 (There are “proofs of possession” in the protocol i.e. signatures that are there just to prove you know the private key. What should they sign? Do we even need them? Can’t we use MuSig’s trick instead? Wouldn’t it be useful to have the joint key a MuSig key anyway?)
 
@@ -207,7 +205,7 @@ JP: Each participant, all they need to do is check that the hash that I signed w
 
 LF: You need it because you don’t know in the first round that it is the right people. You might be connecting to the coordinator and the coordinator is providing all the shares in the first round and produces proofs of possession for them, he owns them. He sends you everything correctly but you don’t know that the people you are communicating with in the first round are actually the right people. That still needs to be done out of band. The digest is a convenient thing to do both. The thing you can sign, it is also the thing you communicate out of band to verify the first round. Once you’ve verified the first round the second round is automatically authenticated then. I guess it is already authenticated by that check.
 
-# Once we’ve done the DKG can we use that as an XPUB to derive further addresses using BIP32?
+## Once we’ve done the DKG can we use that as an XPUB to derive further addresses using BIP32?
 
 (What would go in the second 32 bytes of the XPUB?)
 
@@ -221,7 +219,7 @@ NF: You take your joint public key as the extended public key for your wallet th
 
 LF: It is not extended yet. You need 32 bytes of something else which could be this session digest or some random 32 bytes that everyone knows. You can make an XPUB potentially. I saw a [paper](https://eprint.iacr.org/2021/1287.pdf) on the security of BIP32, it was less than expected. You cannot prove security. Combining BIP32 with FROST somehow lowers the security? It seems to lower the security theoretically of a single key. I didn’t read the paper yet. I think it is fine.
 
-# What kind of signing structures can we make?
+## What kind of signing structures can we make?
 
 (Can we make a hierarchy?)
 
@@ -245,7 +243,7 @@ MF: The key point here is that they are totally independent protocols. Maybe you
 
 LF: I think that’s the perfect description of the situation.
 
-# Can we change the signers/devices after the DKG is done?
+## Can we change the signers/devices after the DKG is done?
 
 (Could you take a proactive secret sharing approach?)
 
@@ -287,7 +285,7 @@ LF: Add people in, take people out, change whatever you want.
 
 JP: I’m pretty sure that works. This is something I just started thinking about recently and looking at the paper recently, I might be getting it wrong. This is something that is on my to do list to work on once I get this [PR](https://github.com/ElementsProject/secp256k1-zkp/pull/138) merged. To start looking at these modification algorithms, changing the setup, stuff like that. I’m pretty sure that is how it works. Chelsea (Komlo), the co-author of the FROST paper, she has some [tweets](https://twitter.com/chelseakomlo/status/1504114844819079170?s=20&t=a463gxkQjMm4DY-TKnH-6w) about these modification schemes. She linked to a couple of papers about it.
 
-# Signing phase
+## Signing phase
 
 (One round of nonce sharing, one round of signing. The first round can be precomputed so we can faithfully reproduce the signing experience with existing multisig wallets, we hope!
 
@@ -311,7 +309,7 @@ MF: I think you want independent lists of nonces everywhere. Whether that is spl
 
 LF: My device has a list of nonces for every other device that isn’t part of the possible signing set. Every device has that. Let’s say I plug it into my laptop, my laptop says “We are going to sign this message”. That device I’ve plugged in or put the SD card in from can say “Here are the nonces for each of those parties that are about to sign with.” There is no way that those nonces could be on someone’s list or be already used because I’m keeping track of when I’ve used those nonces. As soon as I give them out, let’s say the laptop starts the signing, I delete them or I increase a counter, “I’m never going to use them again no matter what”. When that bit of information that defines the signing sessions gets to the other devices it says “This is the guy who initiated the signing session and this is the index it chose for you to use a nonce at”. You re-derive that nonce, you check it matches the one you were told to use, you say “Yes ok. I am going to sign”. There should be no conflicts here. The only thing that can happen is you can run out of nonces. Each signing device may run out of nonces for any other particular signing device. It may run out of nonces for one faster than the other, this could naturally happen if there is a more common subset that sign. This is the main thing that I want to tackle now. How do we replenish these nonces? How do we replenish the nonce supply of a particular device?
 
-# How do we replenish the nonce supply?
+## How do we replenish the nonce supply?
 
 LF: It seems like you could naturally update the nonces by having each party who consumes a nonce from the initiator’s nonce list provide a new one at that point. “I am signing, I am extinguishing this nonce and I have got a new one that you can add to your list.” If it is a SD card in the case of a Coldcard kind of device, when this SD card comes back there is a directory that has already been populated with new nonces. At some point in the future that initiating device can read from that and insert it into its own nonce list. These new nonces can also be signed by the key that defines that device so you know it came from them.
 
@@ -357,7 +355,7 @@ LF: If something happens to it it deletes the Coldcard. It has to be so secure. 
 
 JP: I’m not sure how good the Coldcard’s tamper resistant mechanisms are. I know on some of the more higher grade Yubico HSMs, they have tamper resistant functions. This is a whole rabbit hole of can you even make an unhackable HSM because they all seem to get broken one way or another. That’s a whole separate topic. If these are not air gapped and they can do network calls and you don’t want to get into the problem space of pre-generated nonces you can just generate them fresh on demand when you need a signature. That’s a perfectly acceptable way of doing it if you don’t need the pre-generation.
 
-# Accountability - can we tell who spent the coins?
+## Accountability - can we tell who spent the coins?
 
 LF: Can we get accountability in this scheme? Let’s say I’m a participant in a 3-of-5, I’m in the Sydney office, some guy is in the Singapore office and there is a guy in the New York office. I can get accountability on who spent the coins from the address that we jointly own. I didn’t authorize that transaction. Obviously in that case it should be the other two. Let’s make it more interesting, a 3-of-6. Can you get accountability in this protocol?
 
@@ -439,7 +437,7 @@ JP: It is definitely an interesting idea. All of these ideas are ways of getting
 
 LF: Yes.
 
-# Q&A
+## Q&A
 
 LF: There is a [draft](https://github.com/cfrg/draft-irtf-cfrg-frost/blob/master/draft-irtf-cfrg-frost.md) IRTF, internet research task force, for secp256k1. It is going to have to be modified quite a bit by us to apply secp256k1. I did see before this they want to include secp256k1 in the specification. That is a GitHub [issue](https://github.com/cfrg/draft-irtf-cfrg-frost/issues/69). We might leave a message about that. It would be great if they could incorporate the x only keys to make it relevant to Bitcoin. Otherwise we’ll have to make a BIP or something to do it. That’s the state of art in FROST everyone.
 
