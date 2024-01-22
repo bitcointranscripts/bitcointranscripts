@@ -3,7 +3,6 @@ title: El estándar Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['conferencia']
-tags: ['seguridad']
 speakers: ['Saifedean Ammous']
 ---
 

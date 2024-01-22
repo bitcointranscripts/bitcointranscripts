@@ -2,8 +2,9 @@
 title: Competitive Fee Market Urgency
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'fees']
+tags: ['research','mining','fees']
 speakers: ['Marshall Long']
+media: https://www.youtube.com/watch?v=TgjrS-BPWDQ&t=6843s
 ---
 
 The urgency of a competitive fee market to ensure a scalable future

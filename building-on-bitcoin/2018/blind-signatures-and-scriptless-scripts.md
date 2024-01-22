@@ -2,19 +2,18 @@
 title: Blind Signatures in Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'schnorr']
+tags: ['adaptor-signatures']
 speakers: ['Jonas Nick']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=_1dcU70zhqs
 ---
-
 <https://twitter.com/kanzure/status/1014197255593603072>
 
 My name is Jonas. I work at Blockstream as an engineer. I am going to talk about some primitives about blind signatures, scriptless scripts, and blind coin swap, and I will explain how to trustlessly exchange ecash tokens using bitcoin.
 
 I want to introduce the blind Schnorr signature in a few moments.
 
-# Schnorr signature
+## Schnorr signature
 
 My assumption is not that you will completely understand <a href="http://diyhpl.us/wiki/transcripts/blockchain-protocol-analysis-security-engineering/2018/schnorr-signatures-for-bitcoin-challenges-opportunities/">Schnorr signatures</a>, but maybe you will at least agree that if you can understand Schnorr signatures then the step to blind Schnorr signatures is not a big step.
 
@@ -28,13 +27,13 @@ Verification algorithm is simple- you just check if S*G is equal to R + hash(R, 
 
 If you don't know the discrete logarithm of the public key, in this case x, then you are not able to create a signature such that this verification algorithm would return true.
 
-# Blind signatures
+## Blind signatures
 
 The blind signer does not know the message being signed. The message is blinded. After signing the message and producing a blind signature, this blind signature is unblinded such that it is unlinkable from the actual signature. Both blind signature and signature are unrelated.
 
 This system is usually explained as a two-party protocol between a client and a server where the client knows a message and the server does not, client creates blind challenge, server signs blind challenge and gives to client, then the client unblinds the signature.
 
-# Blind Schnorr signatures
+## Blind Schnorr signatures
 
 The creation of the nonce and the signing are two different algorithms here
 
@@ -42,7 +41,7 @@ This requires server\_nonce change, and gives this nonce to the client, and the 
 
 Signing, from the point of view of the signer, is almost identical to before except now the server doesn't have control over what it was signing. Previously the message would be hashed, but now it just has this challenge c value and it computes s and returns the value. The client unblinds this s value by adding alpha, and verification is the same as before. This is very important-- in every system where you have Schnorr verification, you can always use some sort of blind Schnorr signatures.
 
-# Ecash
+## Ecash
 
 Something often built with blind signatures is e-cash, which usually has a trusted server with a database to prevent double spending. The server database consists of serial numbers that have already been spent. The token is a tuple of serial number and server signature of the serial number.
 
@@ -52,7 +51,7 @@ This unlinkable property holds. The server at this point has only seen the old t
 
 This reissuance protocol is also used for payments. Alice gives Bob a full token as a payment, and Bob tries to do a reissuance protocol with the server and then Bob is able to know whether the token is valid.
 
-# Exchange discrete log for bitcoin
+## Exchange discrete log for bitcoin
 
 We would like to get to a protocol where you can buy a blind signature using bitcoin without having to trust anyone. The buyer will definitely get the blind signature, and the sellers will definitely get the bitcoin. There's no way to cheat.
 
@@ -62,7 +61,7 @@ The buyer first creates a multisig output with a seller. It would be a 2-of-2 mu
 
 On the blockchain, this looks like a single boring transaction and can't see any of this stuff happening off-chain.
 
-# Buying discrete logs on bitcoin with lightning network payments
+## Buying discrete logs on bitcoin with lightning network payments
 
 Doing this on chain is nice, but what if you could buy discrete logs with lightning network payments instead? This is currently not supported in the lightning spec. But maybe with multi-hop locks in place of HTLCs, it might become possible to buy discrete logs in the lightning network. This was discussed on lightning network mailing list under the name "scriptless scripts with lightning". A research group proved this construction is secure, they used the name multi-hop locks.
 
@@ -70,13 +69,13 @@ In HTLCs, each hash is some hash of a preimage, each hop has that hash of a prei
 
 Multi-hop locks use curve points instead of hashes. The buyer sets up a route, and the locks aren't HTLCs they are points. So say the buyer wants to buy a discrete log of some point T = t * G. The buyer can control how these points look like. So you can add randomly generated numbers by the buyer...  ...  ((other stuff)) And that's basically it.
 
-# Exchange blind signatures for bitcoin
+## Exchange blind signatures for bitcoin
 
 You need comimtted R-point signatures. This has been used in discreet log contracts. The seller creates a public nonce R, and then the buyer can compute the seller's signature s*G. The buyer cannot compute the seller's signature because otherwise the signature scheme would be broken, but you can compute s*G which is R + the hash challenge and so on.
 
 Committed R-point signatures work for blind signatures too. The client can compute the server's blind signature s * G. And then they buy the discrete log of s*G with bitcoin using on-chain or off-chain techniques.
 
-# Blind coinswaps
+## Blind coinswaps
 
 Now that we are able to buy blind signatures for bitcoin, we can look into blind coinswap.
 
@@ -88,7 +87,7 @@ The client buys a blind signature from the server and the message is only a tran
 
 Assume the server has a bunch of coins, here represented by this box with a server label. The client creates an unsigned transaction spending these coins from the server. It needs the signature from the server to spend this, of course. It creates a blind challenge from this unsigned transaction, and a blind signature using these committed R points... and then it pays for its discrete log (the actual blind signature), and then it unblinds and broadcasts the transaction. So the point here is that the payment of the client to the server, and this transaction that sends coins to the client, is completely unlinkable because it was only ever seen by the server- blinded as part of this blind signature.
 
-# Exchanging ecash tokens for bitcoin
+## Exchanging ecash tokens for bitcoin
 
 So far we have only bought blind signatures from a server. What you actually want is clients that have some kind of ecash token and can exchange that without having to trust each other.
 
@@ -98,7 +97,7 @@ Another idea would be to have the server part of a lightning payment route, and 
 
 You can have some kind of token with a locktime and you can only spend it after the locktime expires. So let's introduce ecash with more encoded attributes. Essentially they are Pedersen multicommitments of the attributes. So now you have multiple generators not just G, you have multiple Gs, and you have some attributes, and you have some blinding... Because of this simple structure, it's also possible to prove attributes of tokens in zero knowledge, such as algebraic equations as to which attributes are related to each other or whatever.
 
-# Brands credentials
+## Brands credentials
 
 <http://www.credentica.com/overview.pdf>
 
@@ -108,7 +107,7 @@ How can we have a buyer and a seller trustlessly doing this fair exchange of bit
 
 The seller gives buyer token to the buyer but without a seller secret because the buyer is going to buy the seller secret. He proves the locktime of seller token is sufficiently far in the future such taht the buyer has time to buy this token. The buyer buys SELLERSECRETS, which are just discrete logarithms of some points, it's possible to use some on-chain or off-chain payments to buy this discrete logarithm.. the seller secret.. now either the buyer can run the reissuance protocol with the server because it already knows the buyer secret, or the buyer becomes unresponsive and the seller runs the reissuance protocol with the server after some locktime.
 
-# Conclusions
+## Conclusions
 
 Blind signatures are useful in bitcoin protocol designs, including blind coinswap.
 
@@ -124,7 +123,7 @@ We see that Lightning is great but we also want scriptless scripts in lightning 
 
 <https://github.com/jonasnick/scriptless-scripts/blob/46eb506dbfa51295853bc285ce667eeb47fe35b9/md/partially-blind-swap.md>
 
-# Q&A
+## Q&A
 
 Q: Why do you use blinded Schnorr signatures compared to the traditional way of blinding?
 

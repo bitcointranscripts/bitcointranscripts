@@ -2,21 +2,20 @@
 title: Verifiable Delay Functions
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security']
+tags: ['cryptography']
 speakers: ['Dan Boneh']
 date: 2019-02-03
 media: https://www.youtube.com/watch?v=dN-1q8c50q0
 ---
-
 <https://twitter.com/kanzure/status/1152586087912673280>
 
-# Introduction
+## Introduction
 
 I'll give an overview of VDFs and make sure that we're on the same page. I want to make sure everyone knows what it is that we're talking about.
 
 The goal of a VDF is to slow things down. The question is, how do we slow things down in a verifiable way?
 
-# What is a VDF?
+## What is a VDF?
 
 I won't give a precise definition, look at the manuscripts. A VDF is basically a function that is supposed to take T steps to evaluate, even if the honest party has polynomial parallelism. You shouldn't be able to speed up the evaluation in that scenario. Also, the output should be easily verified with efficiency.
 
@@ -26,7 +25,7 @@ The evaluation function takes (pp, x) and produces an output y and a proof. This
 
 The verification algorithm takes (pp, x, y, and the proof) and it tells you quickly whether or not y is a correct evaluation of the VDF.
 
-# Security properties of verifiable delay functions
+## Security properties of verifiable delay functions
 
 There are two security properties.
 
@@ -36,11 +35,11 @@ The second property is the "epsilon-sequentiality" property which is that, even 
 
 Alright, that's as formal as I am going to get. I hope this is clear enough for everybody.
 
-# Applications: lotteries
+## Applications: lotteries
 
 So what do we need verifiable delay functions for? Well there's the question of lotteries. You want to generate verifiable randomness in the real world. Is there a way to verifiable generate randomness?
 
-# Broken method for generating randomness: distributed generation
+## Broken method for generating randomness: distributed generation
 
 This is sort of crypto 101. If you want to have n parties generate a random value.... the beacon chain has a random beacon in it. This is a dumb way to do this, nobody should use the following. We have participants, everyone posts a random value to the bulletin board, and the output is just the XOR of all the values. This looks rnadom but it's completely broken, because the last participant Zoey can choose her value so that she controls the final random value.
 
@@ -52,7 +51,7 @@ A: Yeah, but now it's a game between how many players you have colluding... yeah
 
 So this basic mechanism doesn't work. So what to do instead?
 
-# Solution: slow things down with a VDF
+## Solution: slow things down with a VDF
 
 There's a beautiful idea that says do what we were going to do before, but now we hash the outputs that everyone contributed. This isn't enough to ensure randomness, because the last participant can grind and get a hash that she likes. But instead what we're going to do is introduce a verifiable delay function.
 
@@ -88,7 +87,7 @@ There's a great paper on proof-of-sequential work. It's just hash functions and 
 
 I have to be careful with my words at this conference.
 
-# Constructions: easy with a hardware enclave
+## Constructions: easy with a hardware enclave
 
 The first construction that comes to mind is a hardware enclave. If we had hardware enclaves, then constructing VDFs is quite easy.
 
@@ -98,15 +97,15 @@ You can't imagine how many people come in and ask me how can we use hardware ass
 
 That's the first approach that comes to mind. Seems like there's consensus on the main points.
 
-# A construction from hash functions
+## A construction from hash functions
 
 You could build a verifiable delay function from hash functions. What you can do is you can build the VDF in the most natural way, which is where the public parameters are a parameters for a SNARK and the VDF is defined as a hash chain where evaluating sha256 repeatedly is going to take time T. But how do you verify the output was computed correctly? That's where SNARKs come in. But it turns out this is difficult to get to work correctly. The proof pi is a SNARK that the hashchain was computed correctly. Computing the SNARK takes more time than computing the chain, so you have to do something to counteract that. There was a paper by myself and Benedikt and others to show how to do this well, so that you can generate the proof fast enough. The verification would be a verification of a SNARK proof.
 
-# Permutation polynomials
+## Permutation polynomials
 
 We also have ideas about building verifiable delay functions from permutation polynomials, and somehow that hasn't taken off yet, but that might be a future direction. Permutation polynomials is a polynomial that is a permutation of a finite field. It's such that for any two points x and y in the field the polynomial f(x) is not going to be equal to f(y). The property that this construction uses is the fact that finding roots of a polynomial-- the input x is going to be the image of the polynomial, and the value of the VDF would be a y value such that f(y) is equal to x. The input to the VDF is a value x, and the value is to find an input to the polynomial such that when you evaluate that input at the polynomial, it evaluates to the given value x. We want to find a f(y) that is equal to x. We want to find the roots of the polynomial f - x, can we find the root of that polynomial? Because it's a permutation polynomial, we know it has a unique set of roots. If it's easy to evaluate, like a sparse polynomial, then checking the roots were computed correctly is eas,y just evaluate and see if you get zero. Finding roots of polynomials the practical way to do it is by a GCP computation which is inherently sequential. That's the idea there. So the question is, are there good permutation polynomials for which there are no shortcuts and the best way to find the roots is by GCP computations? It's another valid direction for construction of VDFs. But the research challenge is, are there good permutation polynomials that are easy to evaluate- like sparse polynomials or they have short ... or the best way to find the root of the polynomial is GCP computation and no other shortcuts?
 
-# An algebraic construction
+## An algebraic construction
 
 An algebraic construction is the one that we're all excited about. The algebraic construction starts from a finite cyclic group G which has (1, g, g^2, g^3, ...) and the assumption is that the group G has an unknown order, and nobody knows how many elements are in the group. The public parameters are going to be some hash function into the group. The way we define the evaluation of the VDF is basically, take your input x, hash it on to the group, then raise the result to 2^T and that's inherently requires T squarings. This has been used for proofs of time, timelock puzzles, Rivest-Shamir... no.. RSW. This kind of function has been used quite a bit.
 
@@ -120,7 +119,7 @@ A: So the requirement is just that you see, you shouldn't be able to find three 
 
 The issue is that-- there's another attack, not just multiplicative collisions. Imagine H(x) mapped to a number that happened to be a product of only small primes. It happens to be 3\*5\*7 and you could precompute the VDF at 3, 5 and 7 and that would let you quickly evaluate the VDF at a number H(x) that happens to be a product of a small prime. So it's important that H(x) is not only a product of a small prime. So 256 bits is definitely not enough. You would need, to avoid these ... you would probably need the output to be a thousand bits or so. But that's okay, we know how to do that. You need a hash function that outputs more than 256 bits.
 
-# Finite groups of unknown order: RSA group
+## Finite groups of unknown order: RSA group
 
 So the challenge is: how do we generate groups of unknown order? Nobody should know the order of the group. VDF would be insecure if we can compute the order of the group. What are the candidate groups?
 
@@ -130,7 +129,7 @@ The problem with the RSA group is that you require a trusted setup. How do you r
 
 So we talked about RSA groups. The issue is the trusted setup procedure.
 
-# Finite groups of unknown order: class group of an imaginary quadratic order
+## Finite groups of unknown order: class group of an imaginary quadratic order
 
 The other group that has unknown order is a class group of an imaginary quadratic order. I won't define what this is. But the amazing thing about this is that this group is specified by a prime. So literally you just choose a prime that happens to be 3 mod 4 and boom you have a group defined by this prime. The amazing thing is that if the prime is large enough, like 1000 bits, then nobody knows how to calculate the order of that group. It's just the best algorithm that we have for calculating the order of the group runs in subexponential time. You can't run the algorithm to calculate the order of the group.
 
@@ -150,7 +149,7 @@ Class groups have no setup, but there's a slow group operation (meaning slow ver
 
 Chia is going to be using this. We need to come up with a number to say whta is the right modulus size to use.
 
-# Open problems
+## Open problems
 
 Problem 1: are there other groups of unknown orders? The goal is no setup and there should be efficient group operations. Class groups have a slow parallelizable group operation, and the RSA group has trusted setup. Maybe there's a group that is a better choice.
 

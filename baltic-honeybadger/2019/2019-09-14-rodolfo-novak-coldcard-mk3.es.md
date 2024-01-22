@@ -1,38 +1,32 @@
 ---
-title: Coldcard Mk3
+title: "Coldcard Mk3 - Security in Depth"
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
-tags: ['seguridad', 'cartera hardware', 'cartera']
+tags: ['seguridad', 'cartera hardware']
 date: 2019-09-14
 speakers: ['Rodolfo Novak']
 vídeo: https://youtu.be/2IpZWSWUIVE?t=23739
 ---
-
-
-Topic: Coldcard Mk3 - Security in Depth
-
-Location: Baltic Honeybadger 2019
-
-# Intriduccióno
+## Intriduccióno
 
 Mi nombre es Rodolfo, he estado alrededor de Bitcoin por un tiempo. Hacemos hardware. Hoy quería entrar un poco en cómo hacer una billetera de hardware segura en términos un poco más legos. Ir a través del proceso de conseguir que se haga.
 
-# ¿Cuáles fueron las opciones?
+## ¿Cuáles fueron las opciones?
 
 Cuando cerré mi última empresa y decidí buscar un lugar para almacenar mis monedas, no pude encontrar un monedero que satisficiera dos cosas que necesitaba. Que era la seguridad física y el código abierto. Hay dos carteras en el mercado. Uno es físicamente seguro pero es de código cerrado. La otra no es físicamente segura pero es de código abierto. No podía soportar eso, así que creé uno nuevo. Coldcard Mk3 logra eso.
 
-# MCU + SE
+## MCU + SE
 
 Una cosa que es interesante es que hay una retórica sobre cómo realmente no se puede hacer carteras de hardware de código abierto con un elemento seguro. Eso no es cierto. Puedes crear firmwares de código abierto utilizando elementos seguros. Los elementos seguros son un chip muy especializado que hace que las cosas sean seguras. Nosotros lo hicimos. Por cierto, tampoco existe un elemento seguro de código abierto o un chip de código abierto en general. Hay algunos proyectos de aficionados, pero todo el hardware es esencialmente de código cerrado. Sólo el software que se ejecuta en él es de código abierto. Mientras no utilices la criptografía que tal vez sea de código cerrado en el chip estás bien. Si usas la tuya propia, es de código abierto y la gente puede verificarla.
 
-# Seguridad en profundidad
+## Seguridad en profundidad
 
 Jugamos con este tema de que la seguridad en profundidad es esencialmente cómo aumentar el coste de un ataque para que sea completamente asimétrico para el atacante. Quieres que sea muy caro y que cueste mucho dinero para que el atacante se sienta así.
 
 Lo que hacemos es crear muchas capas. Cada capa hace que cueste más. La primera capa para nosotros es un monedero totalmente airgapped si usted quiere que sea. Con Coldcard no tienes que conectarte nunca a un ordenador si no quieres que esté conectado a un ordenador. Esto disminuye el vector de ataque significativamente porque la mayoría de los ataques requieren que usted interactúe de alguna manera con el dispositivo para tratar de sacar las cosas del dispositivo. Tenemos formas de evitar eso.
 
-# Empezando por lo básico: La cadena de suministro local
+## Empezando por lo básico: La cadena de suministro local
 
 Lo primero que hay que hacer es controlar la cadena de suministro. Nosotros fabricamos nuestros dispositivos en Canadá. La fábrica está a unos 30 minutos de mi casa. Los micros se fabrican en Singapur, de un importante proveedor de microchips que lo hace para todos los coches que conduces, serían los mismos chips. Pero los probamos en nuestras propias instalaciones.
 
@@ -40,45 +34,45 @@ Lo primero que hay que hacer es controlar la cadena de suministro. Nosotros fabr
 
 Entonces pasamos a la siguiente etapa. ¿Cómo puedo enviar desde mi fábrica hasta usted y evitar alguna manipulación en el medio? Hemos contratado a una empresa que fabrica bolsas para que los bancos depositen el dinero en su interior. Así, si se intenta abrirla y manipularla en la aduana o algo así, se verá si está anulada. Entonces lo que hacemos es obtener el número de serie de la bolsa para evitar que la fábrica se meta contigo. Lo programamos dentro del elemento seguro de la cartera. Incluso si se las arregló para hacer las bolsas exactamente lo mismo que usted todavía necesita saber el número de serie de la bolsa y no se puede manipular que dentro del elemento seguro.
 
-# Caso claro: Inspección de dispositivos
+## Caso claro: Inspección de dispositivos
 
 La siguiente etapa es: "Bien, tengo la cartera. Compruebo la cartera, compruebo el número de serie de la cartera". Proporcionamos fotos de alta resolución del dispositivo en nuestro sitio web y la carcasa es transparente para que puedas mirar realmente dentro y ver que no hay cosas raras ahí dentro. Muchos ataques requerirían que se modificara el hardware para intentar quitarte las monedas. Digamos que todo parece exactamente como se supone, genial.
 
 ¿Cómo aseguramos los chips? El elemento seguro está aquí. Es este pequeño tipo. Está conectado directamente a los LEDs por una razón que explicaré más tarde. Ponemos epoxi en la parte superior de eso. Incluso si quieres tratar de romper la cartera, sacar el elemento de seguridad, tratar de leerlo de alguna manera, probablemente vas a romperlo tratando de sacarlo de allí. Ya has tenido que romper la carcasa para eso. También pusimos un poco de epoxi en los contactos la materia del otro microchip con el que habla.
 
-# Pelando las capas
+## Pelando las capas
 
 Entonces tenemos este sistema donde queremos ser capaces de atestiguar el hardware sin tener que hablar con el software real. Nuestro elemento seguro está conectado directamente al LED rojo y hay epoxi sobre esa conexión. No es imposible que alguien llegue allí, pero es una característica más que hay que atravesar. Empieza a costar mucho dinero para superar todo. Pero si tu dispositivo es genuino, ahí lo tienes, obtienes una luz verde después de iniciar sesión y estás listo para ir.
 
-# Split PIN con anti phishing 2 palabras ie Evil Maid: Intercambio de dispositivos/intercambio de piezas
+## Split PIN con anti phishing 2 palabras ie Evil Maid: Intercambio de dispositivos/intercambio de piezas
 
 Ahora digamos que tienes un problema donde dejaste el dispositivo desatendido en tu casa o en un hotel. Usted podría tener una criada malvada y la criada malvada podría tratar de intercambiar su dispositivo. Esto es en realidad un ataque que ocurre, no tanto para carteras de hardware todavía, no al menos conocido, pero es uno común. Esencialmente un atacante reemplazaría tu dispositivo con un dispositivo ficticio porque no vas a inspeccionar todo de nuevo. Estará en la otra habitación por ejemplo con tu dispositivo real. Pero el suyo en realidad está transmitiendo que usted escribe el PIN a él. Así que él puede entrar y sacar el dinero. Lo que hacemos es dividir el PIN en dos. Hay esencialmente dos PINs, El primer PIN, va a desbloquear estas dos palabras. Estas dos palabras son únicas para ti y el dispositivo. Entonces, una vez que usted mira el dispositivo después de poner su primera parte del PIN se ven estas dos palabras. Si las dos palabras son incorrectas significa que ese dispositivo no es tu dispositivo. Realmente no pueden cambiar eso dentro del elemento seguro. Hay unos 4 millones de combinaciones. Si las palabras están bien, entonces escribes la segunda parte del PIN. Incluso si obtuvieron la primera parte del PIN porque se transmitió a la otra habitación, ahora tienes la segunda parte del PIN protegiendo tu riqueza allí.
 
-# Generación de semillas en el aire + opción de tirar los dados
+## Generación de semillas en el aire + opción de tirar los dados
 
 Un gran problema con los monederos de hardware o cualquier tipo de criptografía en general, es que necesitas tener una semilla sólida o una clave privada. Para generar eso, los monederos usarían el generador de números aleatorios dentro de su elemento seguro. Si son buenos, tendrán verdaderos RNGs. El problema es que sigues confiando en el silicio de los chips. No puedes confiar en eso, porque si alguien tiene una puerta trasera en el chip, te vuelven a quitar tus monedas. Lo que hacemos es usar dados. Puedes lanzar los dados y se puede demostrar que estás introduciendo tu propia entropía. Te guiamos en la pantalla del dispositivo. Solo tienes que tirar unos dados y vas a obtener una clave privada sólida, es bastante demostrable matemáticamente. Lo haces completamente airgapped. La Coldcard puede funcionar sólo con una batería. Puedes conectarla a tu ordenador y tener una forma tradicional muy bonita de usar un monedero hardware, digamos para tus fondos calientes. Pero para tus cosas profundas, tu almacenamiento en frío profundo, este dispositivo hasta ahora no ha tocado una computadora. Puedes ir dentro de tu jaula de Faraday, puedes tener a Michael Flaxman haciendo guardia fuera de ella, puedes llevar tu sombrero de papel de aluminio. Puedes hacer todo este proceso sabiendo que nadie está interceptando nada.
 
-# Configuración Multi-Sig también Air-Gap
+## Configuración Multi-Sig también Air-Gap
 
 Entonces puedes pasar al siguiente nivel. Puedes hacer multisig. Lo que hacemos es que puedes crear el quórum multisig, el M-de-N de tu cartera multisig sin volver a tocar un ordenador. Vas a la primera y dices "Quiero crear un multisig". Te va a preguntar cuántos de cuántos. Luego pones la segunda, la tercera, la tarjeta microSD pasando y luego vuelve a la primera, ya tienes todo listo. Sólo tienes que cargar ese archivo en digamos Electrum y tienes una configuración multisig sin tocar nunca un ordenador. Es muy importante.
 
-# Tu semilla está encriptada en un elemento seguro con un pad de un solo uso
+## Tu semilla está encriptada en un elemento seguro con un pad de un solo uso
 
 Digamos que el dispositivo fue interceptado por alguna agencia con muchos recursos y decidieron que querían tus monedas. Definitivamente tendrán acceso físico a él. La seguridad física es muy importante, así que ¿qué hacemos? En realidad encriptamos tu clave privada dentro del elemento seguro con la almohadilla de un solo uso. La almohadilla de un solo uso es esencialmente la única criptografía demostrable e irrompible que puedes hacer para que sea secreta. Incluso si alguien envía tu dispositivo a alguna instalación, pueden pelar el chip que está sirviendo al elemento seguro. Ahora ya estamos costando cientos de miles de dólares para hacer este ataque. Se las arreglan para pelar el chip, utilizan su electro microscopio para mirar las puertas dentro de su chip y de alguna manera se las arreglan para sacar los datos. No pueden romperlo, sería muy difícil.
 
-# SE impone un máximo de 13 intentos de PIN, PIN "Brick Me" definido por el usuario
+## SE impone un máximo de 13 intentos de PIN, PIN "Brick Me" definido por el usuario
 
 Así que dejaste tu dispositivo en tu casa y no es esa agencia la que quiere tus monedas, es tu mal empleado o algo así. Ellos tratarán de externalizar algo de eso, tratarán de romper el PIN o algo así sin pasar por todo el esfuerzo de pelarlo. En esta nueva versión usamos contadores monotónicos. Se trata de contadores unidireccionales dentro del chip que no pueden ser invertidos. Este es un elemento seguro que está diseñado para eso. Si escribes el PIN mal 13 veces es puf. La cosa se convierte en un ladrillo. Es tan bueno como la basura. Esperemos que tengas una copia de seguridad de tu semilla y puedas hacer tu nuevo dispositivo en otro lugar. No creemos en los restablecimientos de fábrica. Un restablecimiento de fábrica podría ser utilizado como una puerta trasera. No queremos abrirnos a nada, preferimos simplemente tirar a la basura un dispositivo de 100 dólares. No tiene sentido tratar de salvarlo.
 
 Entonces la copia de seguridad, la copia de seguridad es súper importante. Usted va a tener su semilla en uno de estos dispositivos de metal o de papel. Pero una cosa muy importante es tener algunas copias de seguridad que son realmente más fácil y más seguro para restaurar. Hacemos eso con las tarjetas micro SD, tarjetas SD de grado industrial, tarjetas SLC. Esencialmente encriptamos la copia de seguridad y alguna información extra para ti del monedero, dentro del dispositivo en el que ya confías con tu clave privada que es tu monedero de hardware. Te damos 12 palabras que aseguran eso. Realmente puedes mantener todo esto sin tocar nunca un ordenador. Esa es la forma en que hacemos esto.
 
-# Transacciones con firma (PSBT)
+## Transacciones con firma (PSBT)
 
 Eventualmente tienes que gastar Bitcoins y no estás tocando una computadora en este escenario perfecto. Así que lo que haces es elegir el USB. Tenemos algunas protecciones para eso, el protocolo está encriptado, pero esa no es la mejor manera de hacerlo. La mejor manera de hacerlo es que tengas tu Electrum o tu HWI en Core o eventualmente tu nodo Casa y crees tu transacción allí. Lo guardas en una tarjeta micro SD. Esa tarjeta micro SD, puedes llevarla a la caja de seguridad de tu banco donde guardas esa Coldcard. Vas allí, conectas una batería, la firmas y la guardas en esta tarjeta micro SD. Puedes ir y emitir la transacción en otro lugar. O simplemente la conectas, la firmas y la envías. Pero ser capaz de hacer SneakerNet y no tocar nunca un ordenador es un gran problema. Así es como se intentarán la mayoría de los ataques. Otra cosa que hacemos mucho es que hacemos un análisis muy cuidadoso en las salidas de cambio. Muchos ataques en cualquier cosa de Bitcoin, van a tratar de obtener el dinero que estás devolviendo. En Bitcoin cuando envías una moneda no hay manera de romper eso. Esencialmente le das al sistema la dirección que quieres que reciba el cambio de esa transacción. Los otros 10 de los 100 dólares que enviaste porque querías pagar 80. Nos dimos cuenta de que muchos monederos no comprueban las salidas de cambio, no se aseguran de que esa salida sea parte de tu clave privada. Podrías perder fondos de esa manera y ellos simplemente YOLO.
 
 Este es un resumen masivo, sólo quería añadirlo ahí. Planeamos añadir Shamir's Secret y hacer un montón de otras cosas. Pensé en hacer un Q&A y responder a algunas preguntas sobre carteras de hardware y seguridad si alguien está interesado.
 
-# PREGUNTAS Y RESPUESTAS
+## PREGUNTAS Y RESPUESTAS
 
 P - .....
 

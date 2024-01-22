@@ -8,7 +8,6 @@ date: 2018-10-04
 media: https://www.youtube.com/watch?v=KLvWfUKoz9s
 aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/wallet-security]
 ---
-
 <https://twitter.com/kanzure/status/1049813559750746112>
 
 ## Intro

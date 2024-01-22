@@ -2,7 +2,7 @@
 title: How to make everyone run their own full node
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'privacy', 'wallet']
+tags: ['security']
 speakers: ['Nicolas Dorier']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=0UiMhpz9eLA

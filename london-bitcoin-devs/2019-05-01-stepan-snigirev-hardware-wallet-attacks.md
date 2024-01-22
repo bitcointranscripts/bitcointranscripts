@@ -1,54 +1,49 @@
 ---
-title: Hardware wallet attacks
+title: "Hardware Wallets (History of Attacks)"
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['hardware wallet', 'security']
+tags: ['hardware-wallet', 'attacks']
 speakers: ['Stepan Snigirev']
 date: 2019-05-01
 media: https://www.youtube.com/watch?v=P5PI5MZ_2yo
 ---
-
-Topic: Hardware Wallets (History of attacks)
-
-Location: London Bitcoin Devs
-
 Slides: <https://www.dropbox.com/s/64s3mtmt3efijxo/Stepan%20Snigirev%20on%20hardware%20wallet%20attacks.pdf>
 
 Pieter Wuille on anti covert channel signing techniques: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html>
 
-# Introduction
+## Introduction
 
 This talk is the second in the series after my previous [talk](https://vimeo.com/showcase/8372504/video/412057285) in London a few months ago at the Advancing Bitcoin conference. There I was talking mostly about general attacks on hardware, more from the theoretical perspective. I didn’t say anything bad hardware wallets that exist and I didn’t specify anything on the bad side. Here I feel a bit more free as it is a meetup not a conference so I can say bad things about everyone.
 
-# Our project
+## Our project
 
 The reason is that we are building a Bitcoin hardware platform and we are trying to make another hardware wallet plus a developer board and a toolbox for developers so they can do whatever hardware devices or Bitcoin powered devices. When you start doing something like that you obviously want to learn from others what mistakes they did. During this research I found a lot of interesting attacks and I found many interesting things, what hardware wallets do or do not do. That is what I want to share with you today.
 
-# Why hardware wallets?
+## Why hardware wallets?
 
 This I will skip because we have already discussed it.
 
-# Cast
+## Cast
 
 These are the wallets I will be talking about: Trezor, Ledger are pretty well known, Coldcard is a nice hardware wallet made in the US and allows you to use a complete air gap so you don’t need to connect it to the computer and you use a SD card to transfer transactions back and forth, and Digital Bitbox is a product of a company from Switzerland, Shift Crypto.
 
-# Table of contents
+## Table of contents
 
 I split all the attacks into four categories. The first one is f\*\*\* ups. There are not many in this section. These are very serious vulnerabilities and if you have them then your product failed to deliver what it promised. The first reason for hardware wallets to exist to protect against remote attacks. If your computer is compromised your keys should be safe. F\*\*\* ups cover these kinds of attacks where it doesn’t work. Then there are attacks on the software side. When you write something in software that is vulnerable then you have an attack and you can fix it with software. Hardware attacks due to certain features of hardware, some of them can be fixed by software and some not. And finally the architecture things. You have certain limitations when you choose how your hardware wallet works and what protocol you use, what data you use to verify stuff and also what microcontrollers you use.
 
-# Change address verification
+## Change address verification
 
 <https://sergeylappo.github.io/ledger-hack/>
 
 First the f\*\*\* ups. The first one is the pretty recent one. It was described in December 2018, a few months ago and it was on Ledger. What happens if you are trying to sign a transaction with Ledger? You connect Ledger to your computer and your computer prepares a transaction and says to the wallet “Here are the inputs. It has 1 Bitcoin and this is the derivation path you need to use to derive the private key to sign it. And these are the outputs. The first output is what we are actually sending and the second output is our change.” You don’t need to show the change on the wallet itself. You can provide the information for the hardware wallet to verify that this amount will actually end up in the address that the wallet controls. You use the derivation path to get the private key and to figure out that you actually control this address. Then on the hardware wallet side it displays to the user that you are sending 0.1 Bitcoin to this address and 0.01 Bitcoin for a fee. You don’t need to show the change address because you can verify that it will go back to you. The problem with Ledger was they trusted the computer when the computer was saying “This is the change address”. They didn’t verify it will be controlled by the private key from the wallet. You could replace this address by any other address, just send some derivation path, the Ledger didn’t check it and just remove this output from being displayed to the user. You will send 0.1 Bitcoin to the address you wanted and you will lose all your funds. This attack was fixed. I don’t know the reason why they didn’t check that but now they do check it. I would say it is a pretty critical vulnerability.
 
-# Hidden wallet feature
+## Hidden wallet feature
 
 <https://saleemrashid.com/2018/11/26/breaking-into-bitbox/>
 
 The second one is a very nice hidden wallet feature of the Digital Bitbox. We don’t like to reuse addresses. To derive new addresses and private keys we use BIP32 and master private and public keys (xprv and xpub). The master private key is a pair of 32 byte numbers, one is the chaincode, the other is the private key. Then the corresponding master public key will be the same chaincode and the public key corresponding to this private key. If our computer knows the master public key it can derive all the addresses and all the public keys underneath that. If you know the master private key you can derive corresponding private keys. Here is the flaw of this hidden wallet feature. Why do you need a hidden wallet? Imagine you were trapped and the robbers hit you with a wrench until you sent them all your Bitcoin. You tell them the password and send the Bitcoin. If you have a hidden wallet that they don’t know about then you can easily send the funds and you still have most of your funds securely stored on the hidden wallet. How did these guys implement hidden wallets? They used the same values as in the master private key but they flipped them. In the hidden wallet they used the private key of the normal wallet as a chaincode and the chaincode as a private key. What this means is if your computer knows the master public key of the normal wallet and the hidden wallet, for example you want to check your balances, then you get the chaincode from here (xpub) and the private key from here (xpub’). The whole private key for all your funds are transferred to your computer. This is kind of sad. When you try to protect yourself and use a nice feature and then it screws you up. Now they have fixed it, it was in November (2018). They fixed it by normal use of the passphrase. To derive the hidden wallet master private key you use the same mnemonic with another password. Similar to what Trezor does. Right now it is not an issue anymore but it was pretty sad to see. It was discovered by Saleem Rashid together with a few other vulnerabilities that are not that interesting.
 
-# Software
+## Software
 
 So we had two major f\*\*\* ups. Two is already enough. Now let’s move to the software side.
 
@@ -78,13 +73,13 @@ A - In general disclosing information about your funds is pretty bad.
 
 So the software part.
 
-# USB descriptor
+## USB descriptor
 
 <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>
 
 I talk a lot about Trezor in the other parts not because they are bad but because they are the oldest wallet and also they are the most collaborative I would say. I learned a lot by reading their security updates and their blog and talking to them directly. More eyes are monitoring the code of Trezor so more attacks are discovered, they fix it almost instantly. In that sense I think it is a great product and I would recommend Trezor. There are some attacks that we can learn from. One that was fixed in March 2019, a few months ago, it is pretty relevant to the talk I gave a month earlier. It is a glitch during the USB communication. When you have your hardware wallet and you plug it into your computer over USB what happens under the hood? The computer asks the hardware wallet “Who are you? What is your vendor ID? What is your description?” The wallet should send back something like “I am Trezor Model T. This is my vendor ID, blah blah blah”. It was happening before you unlocked the wallet with a PIN. Normally it is fine. Even if the computer asks for more bytes than you can deliver there was a check “If the computer is asking for more than 14 bytes then give back only 14”. This is Trezor Model T. But the problem is if you are using an application microcontroller that doesn’t have any protection against glitches. If you send this request and if you time everything correctly such that when this comparison of 500 to 14 happens you either skip this interaction or make it evaluate to a wrong value then the wallet will just send you 500 bytes. It happened that after the descriptor there was a mnemonic. Asking for 500 bytes would give you “Trezor model T” and here is my mnemonic. It was fixed very quickly and easily. First for Trezor Model 1 I think they added read protected bytes. When the microcontroller is trying to read this byte it will go into fault. It will never go after that. This is the first protection for Model 1 and for Model T they made it even easier. They didn’t respond to any request until you enter the PIN. If you know the PIN then you control the wallet so it is fine. They have these `read_protected_bytes` just in case but a pretty elegant solution I would say.
 
-# PIN side channel
+## PIN side channel
 
 <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>
 
@@ -120,55 +115,55 @@ A - There is another option. You can have a PIN code, like in banking applicatio
 
 Q - The timeout gives you plausibly deniability.
 
-# Frozen memory attack
+## Frozen memory attack
 
 <https://medium.com/@Zero404Cool/frozen-trezor-data-remanence-attacks-de4d70c9ee8c>
 
 This attack is pretty old actually. It is August 2017, it was fixed a long time ago. The problem was when you load something into the memory it stays there for a while. When you unplug the device from the power it starts to decay. At room temperature it happens pretty quickly. This is a chart of how fast it happens for different devices. At room temperature it is a few hundred milliseconds. But if you take the device, you freeze it, then it can last for 10 seconds for example. What you could do, you plug in your Trezor, it loads into the memory your PIN code and you mnemonic phrase. Then you can trigger a firmware upgrade. You unplug the device, plug it back and then start update process, you get your new firmware and then you can read out the contents of the memory. The whole procedure doesn’t require a PIN. Maybe you forgot your PIN and you just want to wipe your device or something. The solution for this was pretty easy. You just don’t load the mnemonic until the PIN is entered. With this encrypted storage it became even nicer. You don’t even know the PIN. But still it is an attack surface. You need to be careful on what you store in the memory.
 
-# Point multiplication: lookup tables
+## Point multiplication: lookup tables
 
 <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>
 
 Recent attacks, they are not directly fixed because you need to know the PIN and then you control everything. Guys are working on that in Trezor. Again, side channel, when you are computing your public key you take your private key and multiply it by the generator point of the curve. To make it efficient you normally use lookup tables. It is a huge table where you have G, 2G, 3G, 4G and many other Gs. G multiplied by many different numbers. Then when you have a private key, we show it in binary, “Here I have one, I need to add G. Here I have another one I need to add 2G. Here I have zero so I don’t need to add 6G, I go further and I add 8G here”. All these values, you don’t compute by yourself, you take them from the lookup table. It improves the performance of the signing and public key derivation by roughly a factor of 3. But the problem is when you are accessing different regions of the memory of this lookup table you provide some information to the outside. I think again it was the electromagnetic radiation. Maybe power consumption. Here the easy fix would be to not use lookup tables and multiply the numbers. But it is not really an issue, I don’t know if they will downgrade the performance or not. To ask for the public key you need to know the PIN. I see some problems with that in future. When for example you have a hardware wallet that supports Lightning Network and you want to keep it locked at home. It routes the payments for you, it does all the automatic stuff and verifies that you are only earning money. Here you can have an attack surface for these kinds of side channels. But right now it is not an issue because no one supports Lightning Network yet, even coinjoin.
 
-# Hardware
+## Hardware
 
 We are done with the software attacks, now to the hardware side.
 
-# Scalar multiplication: imul instruction
+## Scalar multiplication: imul instruction
 
 <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>
 
 Trezor again. A major player in the talk. Scalar multiplication, basically the same stuff. Even if you don’t use the lookup tables and you try to compute the public key. What you normally do during this computation, you take huge numbers, 256 bit numbers, and you need to multiply them. The microcontroller cannot multiply such huge numbers. We have 32 bit, 64 bit. So you need to split it into smaller pieces. In the current implementation they use 30 bit numbers, the leftover is 16 bits, and then you multiply them. The problem with the multiplication instruction on the hardware level, on the semiconductor level, they use slightly different implementations depending on the value of the number. When you are using 30 by 30 bit number multiplication it will be one instruction, 30 by 16 will be different, with two small numbers even more different. Another thing where performance gave you an attack surface on the side channel. Here there is a way to slightly change the implementation of the elliptic curve calculation and use roughly the same length of these words for multiplication and not one of them is much shorter than the other. Then you should be safe. It is a hardware problem that needs to be fixed by changing the software implementation.
 
-# SRAM dump
+## SRAM dump
 
 <https://blog.trezor.io/details-of-security-updates-for-trezor-one-firmware-1-8-0-and-trezor-model-t-firmware-2-1-0-408e59dc012>
 
 Another hack that was [demonstrated](https://www.youtube.com/watch?v=Y1OBIGslgGM) at the Hacker Congress in Leipzig in December by the wallet.fail guys. This was a great talk. What they showed is how you can extract the firmware including the PIN code and the mnemonic phrase from Trezor using a pretty nice tool. It looked like this. You have the thing, you put your Trezor microcontroller and you get everything. The problem there was they were able to glitch the chip in such a way that the protection level of the chip implemented by the manufacturer of the chip can be downgraded. The chip normally has three different RDP levels of access to the memory. Level 0 is full access. When you connect your debug interface you can read and write anything, both from the memory and from the Flash. Then there is Level 1 that is used by most consumer electronics. When you connect the debugger you can read only the memory but you cannot read what is in the Flash. And then finally Level 2 that doesn’t give you any access to any information. Trezor normally uses RDP Level 2 so you should be safe. This is implemented in software actually. Your microcontroller boots in Level 0, then it quickly changes it to Level 1, Level 2 and then you are fine. If you glitch at the right moment then you can downgrade from Level 2 to Level 1. What glitching does, it allows you to skip certain instructions or make them complete in a wrong way. The problem is still that the mnemonic phrase is in the Flash. Here on Level 1 you don’t have access to the Flash. What you need to do, you need to first somehow move your mnemonic to the memory and then use this glitch. What they did, they started an update process. What happens during the update process? Normally you don’t want the user to reenter your mnemonic. You just copy all the secret information into the memory and start writing into the Flash new firmware. At this moment you glitch and downgrade the protection level to Level 1, cool you have access to the memory and you have the mnemonic in your memory. You have everything.
 
-# Cortex M3 bug
+## Cortex M3 bug
 
 <https://blog.trezor.io/trezor-one-firmware-update-1-6-1-eecd0534ab95>
 
 Another problem that was fixed already by the semi-conductor manufacturers, SD Microelectronics. It was discovered on Trezor. The problem is on Cortex M3, the one that was used in the Trezor Model One, there was an annoying bug. You can set this protection level by putting a certain value into the register and committing this value to writing it on the chip. Then you should be safe. The problem was what you could do, you could write to the chip the Level 2 and then you write to the register a different value, for instance AA. The microcontroller for some reason was taking not the value that is stored in the microcontroller itself but the value in this register. You can put any value without committing it and you completely remove the read protection this way. It is also pretty annoying but it was fixed by implementing the software workaround. It is a little complicated.
 
-# F00DBABE
+## F00DBABE
 
 Another nice one is from Ledger, also from the CCC conference. The Ledger architecture, you have a secure element, then you have the microcontroller that controls your display and the buttons, then you have the USB for communication. What happens when you update the firmware on Ledger? When you start updating there is a register in part of the memory where the Ledger stores a certain magic value. When the update process starts, before the verification, the microcontroller sets this value to all zeros and after writing the full firmware it verifies that the signatures are ok, that the firmware comes from Ledger and if it is true then it puts back the F00DBABE to this register. You don’t have access to this register during the firmware update. If you don’t have a signature you still have zeros so the hardware wallet will not start at all. You need to put back the original firmware. The problem was that if you carefully read the manual for the microcontroller you will see that the same parts of the Flash can be accessed with this memory mapping, with different addresses. This meant that if you try to put something into `000_3000` it would effectively write this value to this magic memory region `800_3000`. Using the simple bug that was caused by not carefully reading the documentation of the microcontroller. It is easy to skip this thing because it is 150 pages long, the documentation for the microcontroller. It is painful to read it but if you are developing a security device you should probably read it. You can write whatever you want to whatever value you want and then it looks like valid firmware. This is the video that they demonstrated. Your device is genuine but you can play Snake on it. You still don’t have access to the secure element, to your private keys, but you do control the display and the buttons. This means that in principle by slightly changing the firmware you can encode something “Please always consider the second output as the change address and never show it to the user”. Together with a compromised computer you can steal all their funds, I still think it is an issue. It was fixed by the way.
 
-# Architecture
+## Architecture
 
 Then the architecture.
 
-# Man In The Middle
+## Man In The Middle
 
 <https://saleemrashid.com/2018/03/20/breaking-ledger-security-model/>
 
 Still about Ledger. The recent Ledger Model X, even though they advertise it as Bluetooth the real nice thing about it is they improved the architecture. Before on Ledger Nano S they had this microcontroller that is like a Man In The Middle. It controls all the important parts like the screen and the buttons. Whatever you see you see it not from the secure element but from this microcontroller. If this guy (the MCU) gets hacked then you are probably screwed because you don’t need to have access to the mnemonic itself, you just need to fool the user to get you the signature. Displaying something weird is enough. Together with a previous attack what you can have, during the supply chain attack when you slightly change the firmware here you can set entropy to zero or a defined value that is known by the attacker. Then all the users will always derive the mnemonic that you know. This is another video from Saleem Rashid where he is setting the entropy to zero. He is initializing the new device and the mnemonic looks like “abandon abandon abandon abandon…”. The last one is different. It is when everything is zero but obviously you can set it to arbitrary known by the attacker values.
 
-# Bruteforce attack
+## Bruteforce attack
 
 <https://twitter.com/FreedomIsntSafe/status/1089976828184342528>
 
@@ -180,7 +175,7 @@ A - Yes this brute force attack. To communicate to this key storage you need to 
 
 There is a solution that they decided not to take. There is another counter in this key storage that cannot be reset at all. You can design the protocol in such a way that your mnemonic is stored encrypted and is recoverable only until this counter reaches a certain value, let’s say 10. But this would mean that in total you have only 10 tries to enter the wrong PIN. After 10 tries you need to throw away your device and get a new one. But on the other hand you don’t have a brute force problem. There is a trade-off. I think they decided to go more user friendly than towards security.
 
-# Multisignature flaws
+## Multisignature flaws
 
 I wanted also to talk a bit about multisignature in general. This is an issue on most of the hardware wallets. Coldcard doesn’t support it currently, they are working on it but it is not released yet. I will tell you why afterwards. Trezor supports multisignature very nicely. They verify everything, they show you the fee, they hide the change addresses from you, they can verify that they are indeed the change addresses and so on. I saw on the Ledger website “Buy our bundle”. I used this bluetooth thing for my everyday expenses where I store a small amount and then I use 2-of-2 multisignature between these two devices to keep my life savings safe. This guy is stored somewhere in my safe at home. Even if some guys get that device, still I am safe because I’m using 2-of-2 multisignature. The problem is that when you try to display the address on the screen of the device, when you are using Ledger and multisignature, you can’t really do it. But it is important. Imagine I want to be sure that I am sending my Bitcoin to my multisignature address. How would I do it if I can’t verify it on the screen of the device? What should I rely on? This is the first problem. The second problem, I feel bad I bought this device. This is the Ledger Model Blue. It never gets the firmware updates, they dropped support for it and they don’t want to develop it anymore. I feel like I spent 300 euros for a brick. This is what the multisignature transaction looks like when you try to do it on Ledger Blue. Still even on the Ledger Nano S it will display the fee but it will not display that one of the addresses is the change address. I cannot verify that the change money is going back to my address. We really need to work more on the multisignature side of hardware wallets. Right now if you are trying to use multisignature you decrease your security and that is weird.
 
@@ -188,21 +183,21 @@ I wanted also to talk a bit about multisignature in general. This is an issue on
 
 Another problem on the protocol, this is probably the reason why Coldcard still don’t have the multisignature support. I sent an email to the mailing list. This is the missing piece in the partially signed Bitcoin transaction (PSBT) format. Imagine that we have a 2-of-4 multisignature scheme. We use 2 hardware wallets, one air gapped computer and one paper backup. And we have 4 keys, we have our addresses that use these 4 keys. If there are 2 signatures then we are fine. When we are preparing the transaction what do we want? We have the input, we have the keys there, we need to know the derivation path for these keys and then for our change address our software wallet, watch only wallet should be able to tell us that these are the keys derived from the same master keys as the inputs. Then we can consider that this thing is the change output and we are good. The problem right now is that in the PSBT you don’t have the master public key field. You only have the derivation path where you have a fingerprint and derivation indexes. This means that if I am sending this information to one of these two guys they will be able to verify that their keys are here but they have no idea about the other two. They will just have to trust that they are not replaced by something else. What the attacker can do is replace two other keys with his key and then using a pure PSBT that Coldcard is trying to do you can lose all the money because the attacker also controls this output. Hopefully we will add xpub fields to PSBT and then you are fine.
 
-# Should we trust chip manufacturers?
+## Should we trust chip manufacturers?
 
 <https://www.aisec.fraunhofer.de/content/dam/aisec/ResearchExcellence/woot17-paper-obermaier.pdf>
 
 Another thing that I want to say about architecture and hardware in general. The problem is we don’t really know what is happening inside the chips, what capabilities they have. Maybe they have backdoors. It was shown actually. These are three research papers, Skorobogatov from Cambridge, which demonstrate there is a backdoor or some hidden functionality in the debug interface of the security focused… And other things like how to make the microcontrollers work less securely than they should. I would say that what I would like to see in hardware wallets is chips from different vendors, ideally open source cores. Right now the only option for that is RISC-V architecture that has an open source core. Unfortunately there are no security focused devices based on that. Plus all the vendors take this open source core and put proprietary stuff around it. Pretty sad. But at least we have a core. Ideally we should be able to take this open source core, put some open source anti-tamper and security features around it and have a completely open source chip. That would be perfect. But for now what can we do?
 
-# Wishlist
+## Wishlist
 
 We can at least stop relying on a single manufacturer and single chip. When we have Schnorr multisignature, then we can store the keys on different parts of our device, one on the secure element, one on a microcontroller, another on another microcontroller. Maybe the third one on the computer. Then we merge them together in such a way that the full key is never assembled in a single part of the chip. Or at least to make the hardware untrusted. For that I have one proposal that I wrote sometime ago.
 
-# Bonus: if hardware wallet is hacked
+## Bonus: if hardware wallet is hacked
 
 Imagine if you have a hardware wallet and this hardware wallet is hacked. Let’s say you are super paranoid and you are using it in a completely air gapped way. You can go to a remote part, inside a Faraday cage and you do everything in a super paranoid way. How can the attacker, this malicious hardware wallet, disclose your private key? There is a way. In every signature that you are generating you have a wonderful thing called a random nonce, the blinding factor. For every signature you need to generate a random number or a pseudorandom number according to certain standards, and then use it to generate the signature itself. If the hardware wallet is compromised he can pick whatever random number he wants including not a random number. Including the number that is known to the attacker. With this signature you can leak some information about your private keys. The attacker doesn’t need to compromise your computer, it just needs to scan the blockchain for certain patterns, for certain keys or transactions with certain flags. I had a proof of concept demo where I was able to extract the master private key in roughly 24 transactions. What you could do instead, you don’t let the hardware wallet choose this random nonce. You have a software wallet that is not compromised and a hardware wallet that is compromised. It is the other way around compared to normal assumptions. Then on the software wallet you generate a random number and send the hash of this random number to the hardware wallet. The hardware wallet then needs to commit to this certain nonce that it will use. Basically after this commitment it cannot change it because otherwise you will reject the transaction. Then you tell him the random number and verify that for the signature he was using this number (k) plus this number (n). Then if one of these parts is honest then you are safe. In principle even if this (k) is not a random number, by adding a random number to it you randomize everything. Something like this is already implemented in the Schnorr MuSig protocol. We can extend it also to ECDSA.
 
-# Q&A
+## Q&A
 
 Q - …
 
@@ -284,7 +279,7 @@ Q - You went through some of the hardware issues, most of them if not all were s
 
 A - With the Cortex M3 bug it was a problem by the manufacturer. Basically they fixed it for a particular use case. It is still an issue. Maybe it was fixed by the manufacturer afterwards but you can’t update hardware itself. It was fixed in such a way that at least you can’t extract secrets from the Trezor. They had to place the secret in a certain place such that when you log the device the bootloader overrides this part during the firmware updates and things like that. It was really a workaround. As far as I know there is an attack that Ledger discovered on all Cortex M cores that are not really fixable. I think the Trezor guys will still fix it somehow in the software but unfortunately Ledger did not disclose exactly the details of the attack. So no one really knows what it is about. It is hard to fix something that people don’t give you the information for. In principle I would say most of Trezor’s problems are coming from the fact that they are using an application microcontroller. These are not designed to protect against all kinds of hardware attacks. They try really hard and really well to protect against all of them but I feel like there will be more and more in the upcoming years just because of the architecture limitations. This is why I said my dream is to make a secure thing that has internal power reference, anti tamper mechanisms and is still open source and used by all kinds of hardware wallets. You can verify that by putting it into the X-ray machine and checking the semiconductors that are there but it is not going to happen in the next couple of years. It is more like a goal for a decade. But Bitcoin is changing the world so we can also change the semiconductor industry.
 
-# Hardware wallets and Lightning
+## Hardware wallets and Lightning
 
 Q - You did a presentation on the role of hardware wallets in Lightning. I’m trying to understand how hardware wallets will be used with regards to end users and also routing nodes. I’m struggling to understand how routing nodes are going to use hardware wallets.
 

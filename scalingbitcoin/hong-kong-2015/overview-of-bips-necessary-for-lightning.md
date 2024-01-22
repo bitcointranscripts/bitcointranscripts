@@ -1,8 +1,8 @@
 ---
-title: Overview Of Bips Necessary For Lightning
+title: "Overview Of BIPs Necessary For Lightning"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'lightning', 'scalability']
+tags: ['lightning']
 speakers: ['Tadge Dryja']
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=1h5m50s
 ---

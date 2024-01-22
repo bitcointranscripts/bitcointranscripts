@@ -2,12 +2,9 @@
 title: Rootstock
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'research', 'smart contracts']
+tags: ['sidechains']
 speakers: ['Sergio Lerner', 'Alicia Bendhan', 'Lous Parker']
 ---
-
-Rootstock
-
 Sergio is co-founder and chief scientist at RSK Labs. The whitepaper was pretty good. I am happy that he is here. Thank you. Just give me a minute.
 
 Alicia Bendhan
