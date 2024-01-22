@@ -5,7 +5,7 @@ date: 2018-08-17
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['reunión']
-tags: ['bitcoin core', 'pruebas']
+tags: ['bitcoin-core', 'developer-tools']
 media: https://www.youtube.com/watch?v=sbupEpL6-J4
 ---
 
@@ -13,11 +13,11 @@ Clone este repositorio para seguir el proceso: <https://github.com/austin-bitcoi
 
 <https://twitter.com/kanzure/status/1161266116293009408>
 
-# Introducción
+## Introducción
 
 Así que el objetivo aquí como Justin dijo es conseguir el entorno regtest configurado. Las ventajas que mencionó, también existe la ventaja de que usted puede minar sus propias monedas a voluntad por lo que no tiene que perder el tiempo con grifos testnet. También puedes generar bloques, así que no tienes que esperar seis confirmaciones o lo que sea, ni siquiera los diez minutos. Las confirmaciones llegan enseguida y esa es una de las cosas que vamos a ver con Bitcoin Core que es lo que vamos a utilizar. ¿Alguien no lo tiene instalado todavía? Vamos a ir a través de ello y voy a mostrar todo con mi configuración que tengo aquí. Usted puede seguirme a lo largo del proceso. También esta este repositorio aquí, usted puede descargar este repositorio que sería útil. Una vez que tengas Bitcoin Core configurado, ejecuta algunos scripts que configurarán tres nodos en modo regtest. Así que vas a ejecutar tres nodos en tu portátil que comienza con cero bloques. Tienes un blockchain limpio y si empieza... puedes borrarlo. Realmente no tienes que preocuparte por los recursos. Es una de las ventajas de regtest. Supongo que podemos empezar a clonar el repo. ¿Me zambullo y empiezo a demostrar?
 
-# Demostración
+## Demostración
 
 En el repositorio tenemos algunos scripts. En primer lugar queremos hacer el script de ejecución que nos pondrá en marcha y obtener los tres nodos si tenemos nuestras configuraciones establecidas. Voy a ponerlo en marcha aquí. Si ustedes están listos pueden tratar de arrancarlo. Si tienen problemas podemos parar y tratar de averiguar cuales son.
 
@@ -389,7 +389,7 @@ Han pasado más de cinco minutos. Ahora tengo un bloque que se parece más a un 
 
 Está haciendo un montón de otras cosas. Tengo algunas cosas que debería haber comentado. Estoy experimentando con bloques compactos, hay algo después de la raíz Merkle. Parece que coincide. Esa es otra ventaja de la simulación. Puedes tener bloques con datos en ellos. Te llevaría un rato escribir Alice enviando a Bob y Bob enviando a Alice y hacer eso todo el día y luego intentar generar un bloque. Es una herramienta más para ayudarte. De eso se trataba. Para tener un entorno local útil donde no estás en la blockchain, no tienes que preocuparte de sincronizar cada vez, cada vez que cierras tu portátil y vuelves a subir.
 
-# PREGUNTAS Y RESPUESTAS
+## PREGUNTAS Y RESPUESTAS
 
 P - ¿Cómo funciona el simulador aleatorio?
 

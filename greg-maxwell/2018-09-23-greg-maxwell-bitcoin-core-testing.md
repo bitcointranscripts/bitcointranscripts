@@ -1,17 +1,11 @@
 ---
 title: Bitcoin Core Testing
 transcript_by: Michael Folkson
-tags: ['bitcoin core', 'testing']
+tags: ['bitcoin-core', 'developer-tools']
 speakers: ['Greg Maxwell']
 date: 2018-09-23
+media: https://bitcointalk.org/index.php?topic=5035144.msg46080218#msg46080218
 ---
-
-Location: Bitcointalk
-
-https://bitcointalk.org/index.php?topic=5035144.msg46080218#msg46080218
-
-# Bitcoin Core testing
-
 I believe slower would potentially result in less testing and not likely result in more at this point.
 
 If we had an issue that newly introduced features were turning out to frequently have serious bugs that are discovered shortly after shipping there might be a case that it would improve the situation to delay improvements more before putting them into critical operation... but I think we've been relatively free of such issues.  The kind of issues that just will be found with a bit more time are almost all already found prior to release.
