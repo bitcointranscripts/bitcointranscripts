@@ -4,16 +4,11 @@ speakers: ['Kalle Alm']
 date: 2020-02-07
 transcript_by: Michael Folkson
 categories: ['workshop']
-tags: ['taproot', 'testing']
+tags: ['taproot', 'signet']
 ---
-
-Topic: Signet Workshop
-
-Location: Advancing Bitcoin
-
 Video: No video posted online
 
-# Let’s prepare
+## Let’s prepare
 
 ```
 mkdir workspace
@@ -85,7 +80,7 @@ I have a network running with Signet Taproot right now. We will eventually switc
 
 I am sending everyone 1 Signet Bitcoin. If you go to the [Signet block explorer](https://explorer.bc-2.jp/) copy the `AddToWallet` text string and put it into the block explorer. You should see it is unconfirmed, the fees etc.
 
-# btcdeb
+## btcdeb
 
 I am going to move onto the btcdeb part. This is the Bitcoin debugger that I maintain. It has experimental support for Taproot so I figured out we could use that.
 
@@ -107,7 +102,7 @@ Q - What does the -C flag do?
 
 A - It speeds up configure when you run it multiple times because it will cache all of the outputs. But I think there is an issue with libsecp that causes this to a problem the first time. You can do without -C.
 
-# Remotes
+## Remotes
 
 Your fork of Bitcoin Core git@github.com:user/bitcoin.git
 
@@ -126,19 +121,19 @@ upstream https://github.com/bitcoin/bitcoin.git (push)
 
 Right now Signet is not in Bitcoin Core which causes complications. The [Signet PR](https://github.com/bitcoin/bitcoin/pull/18267) is in the [high priority blockers](https://github.com/bitcoin/bitcoin/projects/8) category so hopefully it will be in 0.20 which is supposed be released in May. Until then we have to juggle GitHub repositories. Eventually you will be able to use the default Signet with any supported custom upcoming features. With Taproot or OP_CHECKTEMPLATEVERIFY or any potential soft forks, in the future if there are any soft forks, as soon as they are added to the Signet miner which is just one machine, anyone can turn these on and off however they want. If you want to mine Taproot you can grab the Taproot branch. You can send Taproot transactions and you can receive them. Right now it is a little manual. We will try to set up a custom Signet for the people here. We will pick one person who is the miner or a couple of people. We could do one of everyone in here if we wanted to. I would say just pick one miner. I don’t know if you are familiar with using GitHub but there is something called a remote. By default there is only one remote, it is called origin. It is whatever you type in after git clone. But you can add remotes. You can do `git remote add name URL` and then you have another remote.  You can do `git fetch remote-name` and it will fetch that. In this case I am creating a Taproot Signet network. I have my origin which is my Bitcoin repository. Because I am using `git@github` here I am able to use RSA keys instead of having to enter a password all the time. I am adding this sipa remote because sipa is the person who is doing the work in progress Taproot [pull request](https://github.com/bitcoin/bitcoin/pull/17977). You don’t have to add this, you could pull directly the pull request but this is in some ways easier. You can pull directly. Upstream is Bitcoin, you don’t really need upstream in this case. In your case you would replace origin kallewoof with your name.
 
-# Branches
+## Branches
 
 Because Signet is not merged yet there is a `signet` branch. As soon as it is merged into Bitcoin Core we don’t have that anymore. In our GitHub we create a signet branch and then we create a `signet-vanilla-taproot` (signet and network params). We have a `taproot` upstream feature branch which is sipa’s. Then we create a `signet-taproot` branch. That is feature (`taproot`) merged on top of `signet-vanilla-taproot`.
 
-# Branches (post signet merge)
+## Branches (post signet merge)
 
 One it gets merged we won’t have a `signet` branch.
 
-# Branches (future)
+## Branches (future)
 
 In the future we will only have a feature (`taproot`) branch (upstream feature with signet params). It is going to be a little finicky today but we’ll see how far we get.
 
-# The signet branch
+## The signet branch
 
 We have already done this part and you should have built this branch already.
 
@@ -157,7 +152,7 @@ git fetch upstream pull/16411/head:signet
 git checkout signet
 ```
 
-# The signet-vanilla-feature branch
+## The signet-vanilla-feature branch
 
 (We create this once and then base our signet-feature branch off of it. If we end up wanting to reset signet-feature we do so by recreating it based on this branch.)
 
@@ -175,7 +170,7 @@ A - Yes. btcdeb is already set up to work with this.
 
 If you have done that you should now have a branch called `signet-vanilla-taproot`. We’re not going to do anything with that now but we are going to change the chain parameters later.
 
-# The feature branch
+## The feature branch
 
 (We keep this identical to owner (here “sipa”) and never diverge:
 
@@ -252,7 +247,7 @@ If you remembered to delete the signet folder in your data it should now connect
 
 If you are running into compiler errors you may have to `./autogen.sh` and `./configure` again and then `make clean`.
 
-# btcdeb
+## btcdeb
 
 While we are waiting for some compiler stuff let’s take the last few minutes to see if we can do something with this. We have the btcdeb folder.
 

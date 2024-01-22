@@ -4,7 +4,7 @@ speakers: ['Richard Bondi']
 date: 2018-08-17
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['bitcoin core', 'testing']
+tags: ['bitcoin-core', 'developer-tools']
 media: https://www.youtube.com/watch?v=sbupEpL6-J4
 ---
 
@@ -12,11 +12,11 @@ Clone this repo to follow along: <https://github.com/austin-bitcoin-developers/r
 
 <https://twitter.com/kanzure/status/1161266116293009408>
 
-# Intro
+## Intro
 
 So the goal here as Justin said is to get the regtest environment set up. The advantages he mentioned, there is also the advantage that you can mine your own coins at will so you don’t have to mess around with testnet faucets. You can generate blocks as well so you don’t have to wait for six confirmations or whatever or even the ten minutes. You get confirmations right away and that’s one of the things we will be going through. Bitcoin Core is what we are going to be using. Does anybody not have it installed yet? We’ll go through and I’ll show everything with my setup I got here. You can follow along. Also there is this repository here, if you can download this repository that would be helpful. Once you’ve got Bitcoin Core set up you run some scripts that will set up three nodes in regtest mode. So you’re going to be running three nodes on your laptop which starts with zero blocks. You’ve got a clean blockchain and if it starts… you can delete it. You don’t really have to worry about resources. It is one of the advantages of regtest. I guess we can start cloning the repo. Shall I just dive in and start demonstrating?
 
-# Demo
+## Demo
 
 In the repository we’ve got some scripts. First off we want to do the run script which will get us up and running and get all three nodes if we have our configurations set. I’m going to crank it up here. If you guys are ready you can try to crank it up. If you have problems we can stop and try to figure out what they are.
 
@@ -394,7 +394,7 @@ It has been more than five minutes. Now I have a block that looks more like a bl
 
 It is doing a bunch of other things. I’ve got some stuff I should have commented out. I’m experimenting with compact blocks, there’s something after the Merkle root. It looks like it matches. That’s another advantage of the simulation. You can have blocks with data in them. It would take you a while to type in Alice sending to Bob and Bob sending to Alice and do that all day long and then try to generate a block. It is just another tool to help help you. That was the whole point. To have a useful local environment where you’re not on the blockchain, you don’t have to worry about syncing every time, every time you close your laptop and come back up.
 
-# Q&A
+## Q&A
 
 Q - How does the random simulator work?
 

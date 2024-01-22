@@ -5,7 +5,7 @@ date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
-tags: ['taproot', 'testing']
+tags: ['taproot', 'signet']
 ---
 
 Tema: Taller Signet

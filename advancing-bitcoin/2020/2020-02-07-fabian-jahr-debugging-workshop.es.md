@@ -1,19 +1,12 @@
 ---
-title: Taller de depuración
+title: Taller de depuración de Bitcoin Core
 speakers: ['Fabian Jahr']
 date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['taller']
-tags: ['bitcoin core', 'testing']
+tags: ['bitcoin-core', 'developer-tools']
 ---
-
-Tema: Taller de depuración de Bitcoin Core
-
-Localización: El avanece de Bitcoin
-
-Día: 7 de febrero de 2020
-
 Vídeo: No se ha publicado ningún vídeo en Internet
 
 Presentación de Fabian en el Bitcoin Edge Dev++ 2019: https://btctranscripts.com/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/

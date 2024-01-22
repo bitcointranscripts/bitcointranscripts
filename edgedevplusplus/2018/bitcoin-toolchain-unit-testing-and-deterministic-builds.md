@@ -2,7 +2,7 @@
 title: "Bitcoin Toolchain, Unit Testing And Deterministic Builds"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['bitcoin-core','build systems', 'testing']
+tags: ['bitcoin-core','build-system','reproducible-builds']
 speakers: ['Marco Falke']
 media: https://www.youtube.com/watch?v=ZJ2t84trKVo
 date: 2018-10-05
@@ -11,11 +11,11 @@ aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/bitcoin-toolchain-unit-test
 
 <https://twitter.com/kanzure/status/1048103693885759489>
 
-# Introduction
+## Introduction
 
 Just to continue on what James said about the build system on Bitcoin Core... I am going to talk about deterministic builds. I am MarcoFalke and I also work at Chaincode Labs in NYC.
 
-# Bitcoin Core Build System
+## Bitcoin Core Build System
 
 The build system is based on autotools, so it should just work anywhere where autotools runs. Just run ./autogen.sh ./configure and then make, that's it.
 
@@ -23,7 +23,7 @@ We recently added support for MSVC builds mostly for Windows developers to do na
 
 For release builds, we use cross-compilation which is currently only supported on Ubuntu.
 
-# Bitcoin Core Modules and Targets
+## Bitcoin Core Modules and Targets
 
 To look at all the modules and targets that our build system supports, so James was talking about regions, but in the build system they are called modules. There's some basic modules like util which takes care of logging and random number generation. Or cryptographic primitives which provide hash functions. We have bitcoin-cli which is one build target to provide a utility command line interface to speak with a Bitcoin server to ask for maybe the chain state, mempool state, wallet state. This one depends on the basic modules. We do have some libraries included directly. For convenience, we include univalue which is not commonly distributed on major distributions. We include it for convenience. We also include the elliptic curve library, libsecp256k1, and leveldb, because they are consensus-critical. We also have dependencies on system libraries, for example openssl which we use only the random number generator and we use boost for advanced C++ language features.
 
@@ -31,11 +31,11 @@ Another build target is libbitcoin-consensus. This is a long term project. It wa
 
 We have another build target called bitcoin-tx which is a utility to create and modify bitcoin transactions. And finally, all the other targets including bitcoind, bitcoin-qt, and test\_bitcoin. They all pretty much depend on everything. bitcoind, the daemon that runs in the background, and bitcoin-qt is the GUI, and test\_bitcoin is a ton of test binaries.
 
-# Bitcoin Core Testing
+## Bitcoin Core Testing
 
 A bit about testing, I’m not going to explain testing in general. There are obvious advantages to testing. For Bitcoin Core the most important reason in my opinion is that we need to have some harness to check that consensus rules do not change accidentally. There are other advantages such as the design feedback loop when you write a new feature gives you some feedback or a hint on how to document that. Finally the nice warm and fuzzy feeling when travis-ci is green. Travis is the continuous integration we use on the GitHub project. When Travis is green it is pretty much meaningless, I will explain later what that means.
 
-# Testing Issues
+## Testing Issues
 
 To jump into some testing issues. If you look at the coverage we currently have. We have pretty good line coverage and function coverage which is greater than 80%. But then branch coverage is around 50% and then path coverage I couldn’t get a number on but I assume it is something like 0%. That is just because when you have a really large program, a lot of lines of code, a lot of branches, you can never get full path coverage. It is almost impossible. For example, look at this two line program. Let’s assume it is the only function. You call this program once then you have 100% function coverage and you also have 100% line coverage. But for branch coverage it depends on what you pass in for those booleans. You could run it once then you have 50% branch coverage. For path coverage it is even worse, you would have to run it four times to cover all of the possible paths. Let’s say first you run A and then X. You could also run A and Y or B and X or B and Y. Adding another line in this program in the same fashion makes it 8 paths and it is going up exponentially. It is impossible to test all of these cases.
 
@@ -43,7 +43,7 @@ To jump into some testing issues. If you look at the coverage we currently have.
 
 Even if we had full coverage Dijkstra said you can only ever show the presence of bugs, you can never prove that there are no bugs. In addition to tests we need some sort of other tools or techniques to prevent accidental changes to the consensus behavior. What we do is be reluctant in general towards changes. Whenever there is something that seems unnecessary just avoid making the change. If there is something that has some clear motivation it needs to go through a thorough review process. It is not really clear what thorough review means. It is not clear how many people should look at it. Even if people looked at it and acknowledged the change it is not clear when enough people have looked at it. When no one has found an issue it doesn’t mean there is no issue. In the long term there should be hopefully a formal verification tool that generally works and can prove the consensus rules at least didn’t change. This is mostly a research topic, as far as I’m aware there is no practical tool to achieve this today. We do have some tools such as a scripted-diff on the source code which was contributed by Cory Fields. Instead of making a huge change over all source files you only provide the essential change in the form of a script. Then you run this script and the script defines how the commit looks. Another way is build-for-compare which was contributed by Wladimir van der Laan which basically does an object dump before the change and then compiles the executables. It does an object dump after the changes. You can compare what changed in the object dump and figure out if it was wanted. If nothing changed, which is usually great, you can only be certain that nothing changed for that particular compiler version you used, that particular architecture you run the compiler on. It is not exhaustive.
 
-# Deterministic Builds
+## Deterministic Builds
 
 To continue on this thought, what is helpful for proving that a change didn’t change the binaries too much is deterministic builds. There’s a great website with all the information on it.
 
@@ -55,7 +55,7 @@ Some common issues we found with deterministic builds or reasons for unclean bui
 
 To give an overview on how deterministic builds look like today. To remind, it is this path from source code to binary code. As input you have digital source code and some sort of descriptor how to run the build. These need to be exactly the same for all the builders. Then our Gitian build environment is currently Ubuntu 18.04. You can run it and in the first step it is going to produce the executables for all the architectures, for Windows, MacOS, Linux architectures such as ARM and a tonne more. I think it takes on a single core to run this more than a day. Then we have another step. Windows and Mac require that these binaries that you run on the system are somehow signed with a key that is also signed off by Windows or Apple in some way. What we do is in the second step is create some detached signatures that work on those operating systems and then do another step that is really quick that combines these detached signatures with the binaries which yields the final binaries for the Windows and Mac operating system.
 
-# Deterministic Builds — Progress
+## Deterministic Builds — Progress
 
 To wrap up, some issues that we are currently working on, to give an overview of the progress. I mentioned that we use Ubuntu for the build environment which isn’t ideal. I guess we can be pretty certain that there is probably no backdoor in Ubuntu. If there was, most people run Ubuntu and if they run a non-backdoored Bitcoin Core on a backdoored Ubuntu it is not really going to help. It would be great to have a way to pin the compiler version to some defined version. If Ubuntu was to change the compiler version of the environment we are currently using we can no longer easily reproduce all the builds that happen in the past because different compiler versions means different executables. This indeed happened I think for Bitcoin Core 0.12 for something. Then another thing is where we do these detached signatures. Right now it is done for each operating system by a single person so there is some kind of bottleneck. It would be nicer if this was distributed so the trust would be spread out. It could be achieved with distributed RSA and have multiple maintainers sign off on the binaries. What works already today is of course the intermediate Gitian build results are signed by a lot of people who build them. All the signatures are put in a repository and everyone can and should compare them. That concludes my talk.
 

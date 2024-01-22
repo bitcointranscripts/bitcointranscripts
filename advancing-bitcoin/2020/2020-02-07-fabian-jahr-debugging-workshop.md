@@ -1,16 +1,11 @@
 ---
-title: Debugging Workshop
+title: Debugging Bitcoin Core Workshop
 speakers: ['Fabian Jahr']
 date: 2020-02-07
 transcript_by: Michael Folkson
 categories: ['workshop']
-tags: ['bitcoin core', 'testing']
+tags: ['bitcoin-core', 'developer-tools']
 ---
-
-Topic: Debugging Bitcoin Core Workshop
-
-Location: Advancing Bitcoin
-
 Video: No video was posted online
 
 Fabian presentation at Bitcoin Edge Dev++ 2019: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/
@@ -19,15 +14,15 @@ Debugging Bitcoin Core doc: https://github.com/fjahr/debugging_bitcoin
 
 Debugging Bitcoin Core Workshop: https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386
 
-# Introduction
+## Introduction
 
 First of all welcome to the debugging Bitcoin Core workshop. Everything I know more or less about using a debugger to learn from Bitcoin Core and to fix problems in Bitcoin Core. I didn’t go with traditional slides because I want to teach you how to use this tool, the debugger, in the context of Bitcoin Core. You may not need it in the next week but maybe you will need in three weeks. If you have forgotten about what we did here I hope you can go back to this document, look at it and use these instructions again. That’s why I structured it as a gist. [This](https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386) will stay up and will be something that you can use later on. We will learn how to use these tools. I am personally using lldb because I am on MacOS. People on Linux can install lldb but it may not be so great. gdb is also available, it has been around much longer than lldb. It is supposed to be an improved version of it. I am showing different versions of the commands so you should be able to follow using gdb in the same way. I’m using lldb but if you are using gdb and you run into any problems I will come around and help you out. We will try to figure it out. I’ll show you some basic commands and how to use them in the context of Bitcoin Core. Then I have exercises. These exercises are more drills, they are not super exciting. The point is you are using the tools. I will give you an exercise where you could find the answer to this exercise by just looking at the file in the code. I thought if I edit the code and give you a specific version that you have to fix we would all be sitting and compiling a lot. I didn’t really want to do that because that is usually where the workshop breaks and everyone is sitting compiling, different things go on for different people. We will all do this on master and look at the code. At the same time if you have something that you think is more interesting than the exercise I give you, if you have something that you want to debug, a different part of the code, please go ahead and explore. I will still come around and help you out if you have any problems. I structured for this two hours. Now we have three hours so there is a lot more time to dig into stuff as much as you want. We stay high level. You can use debuggers to dig much deeper into the code.
 
-# Why debugging with lldb and gdb?
+## Why debugging with lldb and gdb?
 
 First of all what is a debugger? A debugger is an app that you use to debug another app. There is really not that much more to it. Stepping through the code. You do that by setting breakpoints at which execution of the program stops. Then you can go through the execution of the program step by step. You can evaluate things that are happening. You can look at variables, what their contents is. You can run expressions, add variables if you want. You can look through backtrace, backtrace is the set of functions that are executing at the moment. Why does this matter to me? I come from higher level programming languages than C++. My first professional job as a programmer was using Ruby. There it was typical to jump into pry. Pry was the debugger. You also have to interact with the interactive Ruby shell. pdb is the comparable tool in Python. I was using this almost every day as I was figuring out stuff in Ruby. When I went into C++, mostly motivated by Bitcoin Core, it felt like there was no tool. Then I discovered gdb and lldb. Most people are not really using that to the extent that I would’ve thought in Bitcoin Core development. I have met quite a few people who are contributing to Bitcoin Core and they think it is too much work to use these tools. They don’t use it very often. They rather rely on print statements or something like that. Or stare at the code until it renders. That’s valid, these people are still productive but for me I wanted to have this tool in my toolchain. It is not something I use every day but I use it quite frequently, mostly when I get stuck. If I can figure out a problem within a few minutes by looking at the code and reading through it but often I will stay confused about the code. Jumping into the debugger is another way for me to explore it and get a better understanding of what is happening. That is why it is a very useful tool. It has definitely helped me in different situations. Whether you are a complete beginner, you have never contributed any code to Bitcoin Core or if you already have some contributions but you are not using a debugger very often, this will help you adopt it.
 
-# Why use the plain CLI interface?
+## Why use the plain CLI interface?
 
 We will use lldb and gdb with the plain CLI interface. I personally do this as well. The reason for this is that I generally like being on the command line. I also try to keep my setup as simple as possible. I like it to be portable. If I am on a machine that I haven’t set up myself and customized a lot usually I will still be able to find my way round. I also use Vim, it is on almost every machine. I have some custom commands but I try to keep them to a minimum because I like to be able to jump onto other people’s machine and I like pair programming. When I get the chance to collaborate with somebody, using their keyboard, that is still possible. There are some GUIs for lldb and gdb that are presenting the content in a nicer form. I looked into these but there was no obvious first choice that jumped out at me. Mostly the products that I saw there, there were no commits for multiple years. I thought I’d stick to the simplest version that I can think of. That is what we are going to use today. Nevertheless out of the box lldb and gdb also offer a GUI mode. This is displaying the stuff a little bit differently. You cannot run the same commands in there. There is an overview of information that is hiding behind commands. I will show that briefly and you can play around with it as well. In lldb you just have to type `gui`. I’ll show it but it hasn’t been that helpful for me. The preparations that hopefully everyone has run by now.
 
@@ -35,7 +30,7 @@ We will use lldb and gdb with the plain CLI interface. I personally do this as w
 
 You build Bitcoin Core the same way as described in the documentation. But you have to configure with this option `--enable-debug`. What this means is that you pass in the flags `-O0` and `-ggdb3` to the compiler. There are no optimizations. `-O0` means leaving out optimizations. Typically it is compiled with `-O2` I think. Why do we not want optimizations? Because the compiler removes information from the code and also restructures the code in a way that makes it more efficient to run it in a general sense. If you were to run this `--enable-debug` as a full node you would see some degraded performance. What we want to do is look at the code. That’s why you want to have as much information available as possible. We set optimizations to zero and this other instruction is keeping around some additional information that you can access when you are doing debugging.
 
-# Useful commands
+## Useful commands
 
 https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386#useful-commands
 
@@ -75,11 +70,11 @@ A - The rest is just an explanation of what it stands for. What `enable-debug` d
 
 You can print variables which is one of the main things that you are probably going to do when you are using a debugger. In lldb you have to make a distinction between a stack frame variable and a global variable. Whereas with gdb there is no distinction. You use `p` for both. You can interact with environment variables, I haven’t been using that much. You can evaluate expressions. This is something that I use a lot. If you want to execute a function and see what the function returns or if you want to set a variable to a specific value that is what you do with `expr`. It means run this line of code right now and then you go on. You can also look up symbol information if you have problems with variables that are coming from other libraries.
 
-# Misc tips
+## Misc tips
 
 Then I have some general tips. If you are running lldb and you find these commands to be a little too much to type you can abbreviate them and effectively do a regex match on it. The shortest match to these commands can be what you want. If you want to set a breakpoint you can also do `br s` and it will do the same thing. I like to type them out but if you want to optimize your workflow and not type as much you can do this. You can set a `/.lldbinit` file if you want. That is how you customize your environment. For example you can customize how variables are printed out. I haven’t used it yet but it is something that you can dig into if you find yourself using the debugger more and more and want to customize your environment. One detail that irritated me when I got started using a debugger is if you get into a loop and the loop is very long there is no clear instruction of how to get out of that loop. There isn’t a break out of loop command in lldb or gdb. The way we solve this is if you have a breakpoint in that loop you first set a breakpoint behind that loop and then step out of that breakpoint.
 
-# Exercises
+## Exercises
 
 Now we are finally at the exercises. I will do a small demo on how to start a debugger for this first exercise. You can explore these as much as you want. Then after some time I will walk around. Then we’ll do the second part which is where we use the debugger with functional tests.
 
@@ -133,11 +128,11 @@ A - `target variable` is for globals and `frame variable` is for stack frame.
 
 So this is pretty basic things that we have done so far. Driving the bitcoind through interactions with bitcoin-cli. There are very few cases where I would do this because they are usually very basic things that are happening. It gets much more interesting if you are using tests and you want to inspect what is going on.
 
-# Using debugging with unit tests
+## Using debugging with unit tests
 
 Unit tests basically work the same way in terms of using the debugger. But with functional tests it is much more interesting. With the unit tests you start the debugger in the same way as you were doing it up here with the CLI. The one thing that we have to be aware of is that the tests have their own executable. Instead of bitcoind you have to provide this `test_bitcoin` file. That is where the unit tests are built. You can still set breakpoints anywhere in the unit tests exactly the same way as you were doing with bitcoind. The tests will execute. If you want to run a specific test, which is usually the case, you can certify that with this parameter `--log_level=all --run_test=*/lthash_tests`. You can go to the unit test [documentation](https://github.com/bitcoin/bitcoin/tree/master/src/test) on how to run the tests. It is not that different from bitcoind and interacting with the CLI.
 
-# Using debugging with functional tests
+## Using debugging with functional tests
 
 What is much more interesting is the functional tests, what I am debugging most frequently. Usually when you are investigating stuff in Bitcoin it is not just things that are very simple it is that there are very complex steps that happened before and you get into a state that you want to investigate. We looked at regtest and generating 100 blocks, that is not that interesting. What is much more interesting is if you have a large P2P network and you want to see how the nodes are interacting with each other. If you have a full mempool and transactions get evicted from the mempool you don’t want to have to write a script to get your Bitcoin node to your point. Luckily there are already functional tests that do that for you. If you want to inspect the state of the system then I would recommend that you find the functional test that is bringing the system to that point and then inspect the system when it is being run by that functional test.
 
