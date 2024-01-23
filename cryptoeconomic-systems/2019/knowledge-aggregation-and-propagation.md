@@ -2,11 +2,10 @@
 title: Knowledge Aggregation And Propagation
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['academia', 'research', 'bitcoin core']
+tags: ['research', 'bitcoin-core']
 speakers: ['Bryan Bishop']
 date: 2019-10-06
 ---
-
 Intro
 =====
 
