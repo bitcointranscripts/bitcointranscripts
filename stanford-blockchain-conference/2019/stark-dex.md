@@ -1,30 +1,25 @@
 ---
-title: Stark Dex
+title: "The STARK truth about DEXes"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['academia', 'scalability']
+tags: ['proof-systems']
 speakers: ['Eli Ben-Sasson']
 ---
-
-The STARK truth about DEXes
-
-Eli Ben-Sasson (Starkware)
-
 <https://twitter.com/kanzure/status/1090731793395798016>
 
 Welcome to the first session after lunch. We call this the post-lunch session. The first part is on STARKs by Eli Ben-Sasson.
 
-# Introduction
+## Introduction
 
 Thank you very much. Today I will be talking about STARK proofs of DEXes. I am chief scientist at Starkware. We're a one-year startup in Israel that has raised $40m and we have a grant from the Ethereum Foundation. We have 20 team members. Most of them are engineers. Those who are not engineers are academia. Feel free to come up and talk to us.
 
 Today I am going to describe our alpha that we will deploy in roughly 2 months in April on to the ethereum testnet. It will be a scalability engine for DEXes. We've been working on this with 0x.
 
-# Topics
+## Topics
 
 The talk will cover STARKs as a scalability solution, then we will discuss decentralized exchanges, and then we apply STARKs to decentralized exchanges and settlement and StarkDEX. While we are not currently hiring in the Bay Area or San Francisco, 0x who we have been working with, is hiring.
 
-# STARKs and scalability
+## STARKs and scalability
 
 Let's describe the scalability problem in blockchain. The old world, comprised of banks and pensions funds, trust and the integrity of the system is an assumption. We assume that the system is being maintained with integrity and that banks don't abscond with our deposits. When it comes t overifying the integrity of the system, we rely on human experts to whom we delegate the task of checking the correctness of the system. We delegate accountability.
 
@@ -34,13 +29,13 @@ There are networks of nodes that are tracking and verifying every aspect of the 
 
 This raises some challenges. The first challenge is privacy where everyone sees all transactions. The second problem of inclusive accountability is scalability because you can't increase the throughput of the system without excluding some people from the system.
 
-# Scalability
+## Scalability
 
 By now you know that zero knowledge proofs can be very helpful for solving privacy problems. You can use zkNARKs without trusted setup to help with privacy. This is not the focus of this talk. I want to talk about scalability in STARKs.
 
 Let's talk about scalability of networks. Here's a nice plot. What we want to do is push the throughput of the network, like the number of transactions or operations per block, we would like to push it to the right. That's good, but at the same time if everyone is going to verify this then we are also increasing the amount of computation. While we have at our disposal pretty impressive computer resources on the cloud, nevertheless the blockchain projects have decided that the amount of computation going on chain must be small enough to allow for the principle of inclusive accountability. By moving to big servers, only a small portion of humanity will be able to verify what's going on. This is the scalability problem. It's the barrier between the green and the grey areas exactly where we bound the amount of computation either by block size or gas limit or whatever. These measures help maintain inclusive accountability which is a good thing to have.
 
-# STARKs
+## STARKs
 
 In order to address this, you can use STARKs. It's a special kind of proof system. It comes from a class of succinct zero-knowledge proofs. They are transparent, with no trusted setup. As the throughput grows and a prover generates a proof of the correctness of the system, the runtime of the prover scales quasilinearly in time, and the verifier time scales polylogarithmically in time. The point of a proof system is that you don't have to trust anything about the prover. Everything you need to know, or all your trust, is just about the verifier. You don't care who the prover is, whether it's local or on the cloud. It only matters that the verifier can check the proof because of the math in crypto.
 
@@ -48,7 +43,7 @@ We add two entities to the world: there's a prover and a verifier. STARKs come f
 
 Because of all these reasons, even though we at Starkware are familiar with other solutions and think they are good for privacy applications, we still believe that for scalability that STARKs have an advantage.
 
-# Decentralized exchanges
+## Decentralized exchanges
 
 I want to tell you about decentralized exchanges. An exchange, from a 30,000 foot view, has 3 parts to it. The exchange collects orders from traders, such as buys and sells. Then there's a second part, which is the matchmaking part where you take the different orders and you tie them to each other and match them up. The last part is the settlement, which is the crucial part where the assets are actually swapped and exchanged.
 
@@ -66,7 +61,7 @@ The total volume of decentralized exchanges is only 1% of the total volume of ce
 
 For an exchange to attract customers, it's important to have liquidity. If you don't have liquidity, then you get fewer customers. Liquidity begets liquidity.
 
-# StarkDEX
+## StarkDEX
 
 There's an on-chain part and an off-chain part. The prover will be off-chain and the verifier will be on chain. First let's look at the current solution. The decentralized exchange sends transactions to a DEX contract and it verifies signatures and parameters of trades, checks them and sends them to storage. So you can see the gas meter pumping up as the trades are settled.
 
@@ -76,11 +71,11 @@ Let's take a deeper look at what happens inside the prover. Let's zoom into a tr
 
 This is what we're going to do. I think we have time for one more thing. So I'll show you the demo.
 
-# Summary
+## Summary
 
 The current decentralized exchange world maxes out at 50 trades/block even if the whole block is for settling trades. This is a work in progress, but with StarkDEX we are proposing verification on-chain can be done for over 10k trades/block. It's less than 800 gas per StarkDEX trade which is better than the current solution.
 
-# Q&A
+## Q&A
 
 Q: What was the size of the proofs you have to submit on-chain?
 

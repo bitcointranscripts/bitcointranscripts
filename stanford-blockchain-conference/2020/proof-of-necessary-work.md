@@ -3,7 +3,7 @@ title: "Proof of Necessary Work: Succinct State Verification with Fairness Guara
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Assimakis Kattis']
-tags: ['proof-of-work','academia']
+tags: ['research','proof-systems']
 ---
 <https://twitter.com/kanzure/status/1230199429849743360>
 
@@ -13,7 +13,7 @@ tags: ['proof-of-work','academia']
 
 <https://eprint.iacr.org/2020/190>
 
-Previous talk: <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/proof-of-necessary-work/>
+Previous talk: <https://btctranscripts.com/scalingbitcoin/tel-aviv-2019/proof-of-necessary-work/>
 
 ## Introduction
 
