@@ -1,18 +1,12 @@
 ---
-title: State Of Cryptography
+title: "Cryptography for Blockchains beyond ECDSA and sha256: Signatures and Zero-Knowledge Proofs"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['cryptography', 'zero-knowledge']
+tags: ['proof-systems']
 speakers: ['Benedikt Bünz']
+media: https://www.youtube.com/watch?v=LDF8bOEqXt4&t=10570s
 ---
-
-State of cryptography for blockchains beyond ECDSA and sha256
-
-Signatures and zero-knowledge proofs
-
-Benedikt Bunz, Stanford University
-
-Am going to talk about cryptography relevant to blockchains. I'll talk about signatures and zero-knowledge proofs. It has a lot of applications to bitcoin. It turns out that bitcoin is pretty simple in terms of cryptography. It just uses a hash function (sha256) and,s eparately, ECDSA for signatures. I will be mentioning some other cryptography that bitcoin could use.
+Am going to talk about cryptography relevant to blockchains. I'll talk about signatures and zero-knowledge proofs. It has a lot of applications to bitcoin. It turns out that bitcoin is pretty simple in terms of cryptography. It just uses a hash function (sha256) and,separately, ECDSA for signatures. I will be mentioning some other cryptography that bitcoin could use.
 
 Let's start with signatures. What do signatures do? If Bob wants to say, on every e-cash system, Bob says he is going to send 1 coin to Alice, but the problem is how does Alice know whether Bob said this or was this just from someone else or how does a third person verifyin miner check that actually Bob issued this transaction? Well, what we do is use somethin called authorization. Bob signs the message with a digital signature. This signature has properties like it's unforegeable. So let's look at a more formal definition.
 
@@ -44,9 +38,9 @@ I'll skip over blind signatures for today.
 
 I want to go straight to zero-knowledge proofs of knowledge. It's a very hyped topic. There's also zk-SNARKs and NIZKs. What are the differences? What is a zero-knowledge proof of knowledge? It works as follows. Alice says she knows a solution to a complex euqation, or the decyrption of an encryption that has some properties, some knowledge. I know this, and it has some properties. And then Bob says, prove it. And one solution obviously to prove it is to give the solution. You can just give the private key for example. But what if you don't want to reveal the solution? Is it possible? Surprisingly, I can convince you that I know the solution, without giving you any information about what the solution is. The way that we do that is through this challenge response protocol.
 
-So you ask me questions that I would not be able to answer if I didn't know a solution. Hwever, the answers to these questions reveals no information about the solution. This can be in multiple rounds. In the end, Bob will have no idea what the solution is, but Alice must know it, otherwise she would not have been able to answer these questions. It's counterinuitive but it's possible. And zero-knowledge proofs have tons of applications in bitcoin, many related to confidentiality, privacy, mimblewimble, zerocash, and so on and so forth and many more.
+So you ask me questions that I would not be able to answer if I didn't know a solution. However, the answers to these questions reveals no information about the solution. This can be in multiple rounds. In the end, Bob will have no idea what the solution is, but Alice must know it, otherwise she would not have been able to answer these questions. It's counterinuitive but it's possible. And zero-knowledge proofs have tons of applications in bitcoin, many related to confidentiality, privacy, mimblewimble, zerocash, and so on and so forth and many more.
 
-Let's do a concrete example of sudoku. Say you wanted to do a zero knowledge contingent payment based on a sudoku puzzle solution, where you want the payment in exchange for the solution. So first we prove that I have the solution, and once oyu're convinced, you pay me on condition that I reveal the solution. And the payment is in the blockchain and it's irrevocable.
+Let's do a concrete example of sudoku. Say you wanted to do a zero knowledge contingent payment based on a sudoku puzzle solution, where you want the payment in exchange for the solution. So first we prove that I have the solution, and once you're convinced, you pay me on condition that I reveal the solution. And the payment is in the blockchain and it's irrevocable.
 
 There is a zero-knowledge sudoku paper from 2005 (Gradwohl et al., 2005).
 

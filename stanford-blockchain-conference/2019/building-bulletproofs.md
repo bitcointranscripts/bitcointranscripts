@@ -2,29 +2,28 @@
 title: Building Bulletproofs
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['zero-knowledge']
+tags: ['proof-systems']
 speakers: ['Henry de Valence', 'Cathie Yun']
 ---
-
 <https://twitter.com/kanzure/status/1090668746073563136>
 
-# Introduction
+## Introduction
 
 There are two parts to this talk. The first part of the talk will be building, like all the pieces we put into making the implementation of bulletproofs. We'll talk about the group we used, the Ristretto group and ristretto255 group. I'll talk about parallel lelliptic curve arithmetic, and Merlin transcripts for zero-knowledge proofs, and how all these pieces fit together.
 
 Cathie will talk in part two about constraint system proofs, cloak for a confidential assets protocol, ZkVM for zero-knowledge contracts, and aggregation multi-party computation with session types to aggregate proofs and have faster verification.
 
-# Ristretto
+## Ristretto
 
-Before I talk about ristretto, let's talk about the problem we're trying to solv.e Many prtocols you might want to implement use some prime order group like "Let G denote a cyclic group of prime order p" from the Bulletproofs paper. As an implementer, you're supposed to have one ready to use to instantiate the protocol. But how do you implement that?
+Before I talk about ristretto, let's talk about the problem we're trying to solve. Many protocols you might want to implement use some prime order group like "Let G denote a cyclic group of prime order p" from the Bulletproofs paper. As an implementer, you're supposed to have one ready to use to instantiate the protocol. But how do you implement that?
 
 Probably you want to use an elliptic curve. But which one could yo uuse? Maybe a Weierstrass curve like secp256k1, or an Edwards curve like curve25519 or FourQ. The advantage of a Weierstrass curve is that the curve gives you a prime order group which is the abstraction you want, but it has some downsides. Edwards curves have faster algorithms that are complete without special cases to deal with, and it's easy to implement them in constant time. Those are pretty big implementation advantages.
 
-# What's wrong with having a small cofactor?
+## What's wrong with having a small cofactor?
 
 The security proofs for the abstract protocol don't then apply to your implementation. Having full validation that some input point lies on the subgroup requires multiplying by that order, which negates most of the speedup yo uget. You could ad-hoc tweaks like multiplying by a cofactor in an appropriate place, but how do you pick that place? And also, are there any subtle effects on your protocol by doing that? The ansewr is probably yes.
 
-# Example of cofactor problems
+## Example of cofactor problems
 
 Ed25519 has different behavior between single and batch verification. Two implementations are freely allowed to disagree about which signatures are valid, which might be a problem for some kind of blockchain.
 
@@ -34,7 +33,7 @@ Monero had a critical vulnerability due to cofactors where having a cofactor 8 m
 
 Edwards curves are simpler, but they push complexity into the upwards into the protocol. As a curve designer, that's great for you, but implementation now becomes more complexity.
 
-# Decaf and ristretto
+## Decaf and ristretto
 
 Decaf and Ristretto is a construction to help this. Decaf lets you construct a prime order group from a non-prime-order curve. Ristretto is a variant of decaf that works with certain curves like ed25519. Ristretto255 group gives you a prime order group, canonical encoding, decoding, hash-to-group built in, you can use curve25519 internally so it's easy to extend an existing implementation but because of a really magical way that it is constructed then an implementation can swap out curve25519 for a faster curve with no problems for wire compatibility and there's now a draft for a spec for this.
 
@@ -42,7 +41,7 @@ Because you're using an Edwards curve internally, you can implement the elliptic
 
 The IFMA implementation is just barely slower than FourQ even using the patented homomorphism speedup. We also show libsecp with and without endomorphisms. Depending on how you compare, you get a prime order group that is up to 4x faster, without using assembly it's all written in rust. So that's nice.
 
-# Merlin transcripts
+## Merlin transcripts
 
 There's this thing called the Fiat-Shamir hueristic. The idea is that if you have an argument where there's a prover and a verifier and the verifier is sending random challenges to the prover, then as long as you believe in random oracles, you can replace a verifier's random challenge with the hash of the prover's message. But there's weird complications if you might want to do this in practice. You might forget to feed data into the hash, what if your data is ambuguously encoded in the hash? How are you structuring the data put into the hash? If you have a multi-round protocol, you need a challenge input and put that into the hash of the next round and stuff. If you want to have domain separators so different applications have proofs that aren't interchangeable, so nobody can take a proof from one part and stick it into another part... A lot of edge cases.
 
@@ -52,7 +51,7 @@ Merlin is built on STROBE. It allows you to implement your ptocool as if it iwas
 
 There's one more thing that this lets you go.
 
-# Case study: bad entropy for Schnorr signatures
+## Case study: bad entropy for Schnorr signatures
 
 In Schnorr signatures, you have a signer (like a prover) and at some point they have to generate a nonce which is used as a blinding factor. If they leak the blinding factor then that's bad because their secret key is recoverable. Sony had this problem with the Playstation keys. Also, leaking just a few bits of blinding over many signatures is fatal. This class of attacks presumably also applies to more complex zero-knowledge proofs.
 
@@ -60,11 +59,11 @@ You can get this defense by using a transcript. You can provide a transcript RNG
 
 When we put all these pieces together, our implementation is pretty good and fast. Using IFMA, we are 3x faster than libsecp256k1, 7x faster than Monero. Using AVX2, the speedup is 2x faster than libsecp256k1, and 4.6x faster than Monero. This was with SIMD backends in curve25519-dalek.
 
-# Building on bulletproofs
+## Building on bulletproofs
 
 After we have those building blocks, we could make bulletproofs.
 
-# Constraint system proofs
+## Constraint system proofs
 
 The first thing we did is we made a constraint system proofs over the paper. I'll tell you what it is, and show you how we built a constraint system proof.
 
@@ -76,13 +75,13 @@ So we implemented constraint systems, and then we allowed reuse of challenges. B
 
 This allows us to make smaller and more efficient constraint systems. I'll show a compact one. This is currently under research.
 
-# Shuffle gadget
+## Shuffle gadget
 
 A gadget is a term we use for a collection of constraints. You can build multiple gadgets together into one constraint system and make one proof over it. An example is a shuffle gadget where you want to prove that the outputs of the shuffle gadget are a valid output of the inputs. We could do this many ways, but we use a random challenge scalar and then use equality of polynomials when roots are permuted. If the equation holds for random x then the inputs must equal the others in any order. What we want to do is to represent this constraint using our constraint system API. I'll walk you through how we do that using the API we put in place (two\_shuffle).
 
 Full sample code: <https://github.com/interstellar/spacesuit/blob/2-shuffle/src/gadgets/two_shuffle.rs>
 
-# Cloak: Confidential assets with bulletproofs
+## Cloak: Confidential assets with bulletproofs
 
 Shuffle gadget isn't that useful on its own. But if we use multiple other gadgets, we can make a confidential assets protocol using this constraints system. We use shuffle, merge, split and range to make confidential assets protocol. Merge proves that the outputs are either a merge or a move of the inputs into two values. The range is a check that the value is not negative, which is similar to the rangeproof in the bulletproofs paper but constructed using the constraint system API. Shuffle does secret reordering of values.
 
@@ -94,13 +93,13 @@ Suppose you're a prover, and you want to make a proof that your inputs and outpu
 
 The majority of the cost of running the cloak protocol is the rangecheck, and it requires vastly more multiplications than shuffle, merges or splits. This is not much more expensive than a typical confidential transaction proof for which you'd have to do a rangecheck for anyway.
 
-# zkVM: Zero-knowledge smart contracts
+## zkVM: Zero-knowledge smart contracts
 
 It would be great if we could do more than just confidential assets. We're working on zkVM, a zero-knowledge smart contract language. Last year I presented on TxVM, which aims to have deterministic results, a safe execution environment. The zero-knowledge virtual machine zkVM takes a lot of concepts from TxVM but then adds confidentiality to it, which I think is pretty cool. We take concepts from TxVM like having values and contracts that are first-class types that have a law of conservation where you can't create or destroy value without satisfying strict checks. Also there's a deterministic transaction log so you can reason about what effects your transaction will have. Also, we have the ability to do encrypted values and contract parameters with bulletproofs, and contracts built with custom constraints, and we can protect asset flows with the cloak protocol.
 
 <https://github.com/interstellar/zkvm>
 
-# Aggregated proofs with bulletproofs using session types
+## Aggregated proofs with bulletproofs using session types
 
 An aggregated proof is smaller and faster to verify than the underlying proofs that it aggregates. The difficulty is that this requires a multi-party computation protocol with multiple parties and a dealer in order to create an aggregated proof. This can be complicated because when we implemented the aggregator ptotocol, here's the chart of all the messages being passed around and it's hard to track state changes and it's important to do it in order and only once otherwise you might leak secrets.
 
@@ -115,7 +114,7 @@ So we use session types where we encode protocol states into the rust type syste
 <https://doc-internal.dalek.rs>
 
 
-# Q&A
+## Q&A
 
 Q: Is this all open source?
 
