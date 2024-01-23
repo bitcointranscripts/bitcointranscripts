@@ -2,7 +2,7 @@
 title: "A Scalable Drop in Replacement for Merkle Trees"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['accumulators']
+tags: ['proof-systems']
 speakers: ['Benedikt Bünz']
 media: https://www.youtube.com/watch?v=IMzLa9B1_3E&t=3520
 date: 2018-10-06
@@ -18,6 +18,7 @@ Hello. Test. Okay. I am going to talk about accumulators for UTXOs. The previous
 The UTXO set is a growing problem. We had a talk this morning about dust in the UTXO talk. We have about 60 million UTXOs. The problem is that as we heard in the talk before, the blockchain is quite an inefficient data structure for UTXOs because if I want to download an old block, I need all the blockheaders in between. If I want to download an old transaction and check if it's unspent and I only have the head of the blockchain, then I need to check all the inbetween transactions and check if they spend my transaction or not.
 
 ## UTXO commitments
+
 UTXO commitments have been proposed ot solve this. As we just heard, every block gets a commitment to the current state, such as the current UTXO state. The idea here is that the consensus rules would ensure that there's an in fact a correct UTXO commitment in the header. A lite client would be able to check this. If I want to convince a lite client that this is the correct UTXO, then I neede to give him a proof that here it is in the UTXO set commitment. We could use this to turn everyone into a lite client.
 
 ## Merkle trees

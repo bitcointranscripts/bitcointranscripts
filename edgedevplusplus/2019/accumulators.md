@@ -2,7 +2,7 @@
 title: Acumulator Based Cryptography & UTreexo
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['accumulators']
+tags: ['proof-systems','utreexo']
 speakers: ['Tadge Dryja']
 media: https://www.youtube.com/watch?v=xlKQP9J88uA
 date: 2019-09-09

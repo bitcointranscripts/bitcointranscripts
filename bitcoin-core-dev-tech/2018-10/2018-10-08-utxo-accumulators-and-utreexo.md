@@ -1,18 +1,15 @@
 ---
-title: Utxo Accumulators And Utreexo
+title: "UTXO accumulators, UTXO commitments, and Utreexo"
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['accumulators']
+tags: ['proof-systems','utreexo']
 speakers: ['Tadge Dryja']
 date: 2018-10-08
 aliases: ['/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/']
 ---
-
-UTXO accumulators, UTXO commitments, and utreexo
-
 <https://twitter.com/kanzure/status/1049112390413897728>
 
-If people saw <a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/accumulators/">Benedikt's talk</a>, two days ago, it's related. It's a different construction but same goal. The basic idea is, and I think Cory kind of started to talk about this a few months ago on the mailing list... instead of storing all UTXOs in leveldb, store the hash of each UTXO, and then it's half the size, and then you could almost create it from the hash of the input, it's like 10 bytes more. Instead of storing the hashes of every UTXO, what about storing some compact representation of that and provide proofs.
+If people saw [Benedikt's talk](https://btctranscripts.com/scalingbitcoin/tokyo-2018/accumulators), two days ago, it's related. It's a different construction but same goal. The basic idea is, and I think Cory kind of started to talk about this a few months ago on the mailing list... instead of storing all UTXOs in leveldb, store the hash of each UTXO, and then it's half the size, and then you could almost create it from the hash of the input, it's like 10 bytes more. Instead of storing the hashes of every UTXO, what about storing some compact representation of that and provide proofs.
 
 In Benedikt's talk, there was RSA-based accumulators or possibly this "class group" thing which is totally unproven. I don't know. The thing I'm working on is the hash-based accumulator. The basic properties of an accumulator are that you can-- there are different constructions with different features or operations you can do. Generally you'll have some generator, make the accumulator, some kind of add operation (add an element), and then a prove function. The generator creator returns the accumulator, the add operation takes an accumulator and an element and then spits out a modified accumulator, and then the prove function is... there's a prove and then a verify. The prove function is, I want to prove that this element exists in the accumulator, and this results in some kind of proof. The verify function takes a proof against the accumulator and you get a boolean. Every accumulator construction will have at least these functions, you need to be able to add, prove and verify. Prove generates the proof, verify checks the validity of the proof against the accumulator.  Alice makes a proof, and Bob verifies or something. This is the most basic construction. You could also have a prove non inclusion function (prove not exist) and get a different proof that the thing is not in the accumulator. You can sometimes have a delete operation and delete an element from the accumulator and get back a modified accumulator.
 
@@ -76,13 +73,13 @@ It might be more elegant to not have giant states being carried around for valid
 
 You can't have an ordered-insertion thing for monero because you need to prove non-inclusion of the spend in the set of spends. You can have a spent transaction output set... ah but you don't know the spents there. This wouldn't work for monero.
 
-# Future work
+## Future work
 
 <http://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2019/utreexo/>
 
 <https://github.com/mit-dci/utreexo>
 
-# Other UTXO set commitment references
+## Other UTXO set commitment references
 
 * <https://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2017/scaling-and-utxos/>
 * <https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2017-07-08-bram-cohen-merkle-sets/>

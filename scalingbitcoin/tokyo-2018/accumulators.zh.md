@@ -3,7 +3,7 @@ title: "A Scalable Drop in Replacement for Merkle Trees"
 transcript_by: Bryan Bishop
 translation_by: Ajian
 categories: ['conference']
-tags: ['accumulators']
+tags: ['proof-systems']
 speakers: ['Benedikt Bünz']
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=IMzLa9B1_3E&t=3520
