@@ -1,40 +1,37 @@
 ---
-title: Zkvm - zero-knowledge virtual machine for fast confidential smart contracts
+title: "ZkVM: zero-knowledge virtual machine for fast confidential smart contracts"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['smart contracts', 'zero-knowledge']
+tags: ['proof-systems','utreexo','musig']
 speakers: ['Oleg Andreev']
+date: 2019-09-11
+media: https://www.youtube.com/watch?v=-gdfxNalDIc&t=8538s
 ---
-
-Fats, private, flexible blockchain contracts
-
-Oleg Andreev (Stellar) (oleganza)
-
 <https://medium.com/stellar-developers-blog/zkvm-a-new-design-for-fast-confidential-smart-contracts-d1122890d9ae> and <https://twitter.com/oleganza/status/1126612382728372224>
 
 <https://twitter.com/kanzure/status/1171711553512583169>
 
-# Introduction
+## Introduction
 
 Okay, welcome. What is zkvm? It's a multi-asset blockchain architecture that combines smart contracts and confidentiality features. It's written in pure rust from top to bottom.
 
 <https://github.com/stellar/slingshot>
 
-# Agenda
+## Agenda
 
 I'll explain the good parts, and then I'll explain away the bad parts. Sounds like a good time.
 
-# What does this have to do with bitcoin?
+## What does this have to do with bitcoin?
 
 zkvm is a unique combination of the best ideas in the blockchain space. Out of all the diversity of ideas and the various protocols, smart contracts, all these things, we have been picking the best things and trying to combine them into an elegant way. You can think about this as if you were to design bitcoin from scratch, this is all the best ideas of the past few years together.
 
-# zkvm architecture
+## zkvm architecture
 
 Uh oh, a blank screen. I guess it's a zero-knowledge presentation. Oh okay, here we go.
 
 We start with a blockchain. A blockchain has transactions. In our case, transactions are programs that manipulate value and send them from inputs to outputs. This is the UTXO model. You can also issue assets. It's a multi-asset blockchain for issued assets.
 
-# Utreexo
+## Utreexo
 
 <https://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2019/utreexo/>
 
@@ -50,7 +47,7 @@ Storage is basically free now, and this means more nodes can be full nodes. We c
 
 The problem is that every node has to update UTXO proofs. There's extra bandwidth overhead, but negligble with caching.
 
-# Program execution
+## Program execution
 
 As I said, a transaction is mostly a program. Unlike bitcoin, you don't have a hierarchical data structure with inputs and outputs and other fields. The programs in bitcoin are localized in the inputs. Instead, there's just one flat program. This was originally done with Txvm which was previous work that we did a few years ago. Zkvm is sort of an evolution of that approach and adding confidentiality.
 
@@ -64,19 +61,19 @@ This is a stack machine just like in bitcoin. Things are being changed on the st
 
 The changes to the blockchain are recorded separately in a transaction log. Once you have a validated transaction, you take this transaction log and apply it to the blockchain state. This is where you can apply it with utreexo, where you can fail a transaction if the output is already spent or something. But this is pretty cheap, and this allows you to verify transaction in parallels similar to bitcoin.
 
-# Contracts
+## Contracts
 
 This is a generalization of what the output is in bitcoin. In bitcoin, the output is effectively a script and value. The script protects the values. You have to satisfy the script in order to unlock the value. This is the same in zkvm, but you have an extended version of what the script predicate can mean. You can store multiple values too, like one value or two values or some pure data parameters that are not money but some strings or numbers. So whenever you try to spend one, you re-evaluate it inside the VM and then have to track with this.
 
 You can take the predicate as a public key and satisfy it with a signature. You can sign the whole transaction or sign a subprogram as a sort of delegation pattern. Once you satisfy this predicate with a signature, it unlocks it and puts it on the stack so you can use them. The predicate can also commit to the program itself. The program takes care of the systems and then decides what to do with them.
 
-# Taproot
+## Taproot
 
 <http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/>
 
 We use taproot. It's the same idea, but implemented in rust. You have a commitment to a key with which you can sign, and you have a commitment to a merkle tree of different program options. You can use both, or use just one. If you want to just sign, you can ignore the second part. If you always want to trigger some pre-arranged program, then you can set k to some unsignable key with some orthogonal generator. You can learn about taproot everywhere else, so we won't dive much more into that.
 
-# zkvm instruction set
+## zkvm instruction set
 
 It has some pretty high level operations in the zkvm instruction set. There's a few instructions for manipulating items on the stack. A few that manipulate constraints. There's operations to issue and mix values. There's operations for the contracts like unlocking with a signature or program, and you can also create an input or create an output.
 
@@ -84,7 +81,7 @@ It's a pretty small instruction set for the features it gives you. Bitcoin's ins
 
 Values are first-class citizens. You don't model them as entries in some virtual database table in the VM, instead the value is the actual tihng. It's a linear type that you can move around, split and merge.
 
-# Cryptography stack
+## Cryptography stack
 
 To implement all the cryptography-wrapped constraints, we use a pure rust implementation of curve25519-dalek which is a different curve from bitcoin's secp256k1 curve. The reason why we use curve25519-dalek is because it allows us to parallelize operations and gives us tremendous speed improvements at the level of doing the most basic cryptographic operations. Unfortunately this curve is not a prime order curve like the bitcoin one, so it doesn't immediately give you good options. We built ristretto255 to fix this.
 
@@ -94,13 +91,13 @@ We built our implementation of bulletproofs covering the rangeproof functionalit
 
 The interface to the zkvm instruction set... and then on top of that you can build your own protocol, like vaults, payment channels, orderbooks, etc. The cool part is that all of this is in pure rust. It's pretty efficient and the API is nice.
 
-# Constraints
+## Constraints
 
 How do the constraints work?
 
 You have the ability to express arithmetic expressions and boolean formulas. These are expressed in a typical Forth-like notation. You can multiply things, add things, check if some things are equal, and then build expressions. Behind the scenes, zkvm doesn't really vcompute anything when this happens. It assembles instead an abstract syntax tree on the fly and then what's on the stack--- high-level constraints and expressions, then when you want to verify it, it takes the root of the syntax tree and arithmetizes it and inserts it into the constraint system. This can be done very fast and it can be done on the fly. Any contract can do this while the contract is being verified.
 
-# Example of custom constraints
+## Example of custom constraints
 
 Say you want to have a contract that checks that some payment has been made and it has to satisfy some parameter. All the parameters of this formula must be kept confidential. Once it does, it unlocks the value.
 
@@ -108,11 +105,11 @@ We use a pedersen commitment, and use a variable to construct a bunch of constra
 
 Negative value is mixed with an actual payment in the cloak. A variable defines a payment constraint with borrow + output. To deal with the negative value, the only way to deal with it is to mix it with others in the cloak. You leave the negative value on the stack, so the user has to find the appropriate amount to compensate when they compute their transaction.
 
-# Linear types + capabilities
+## Linear types + capabilities
 
 This is linear types + capabilities. We can express our requirements in an expressive way. This allows us to avoid bugs like confused deputy problem because we're not doing reflection.
 
-# ZkVM tradeoffs
+## ZkVM tradeoffs
 
 The VM is not turing complete. It's optimized for financial use cases and to borow from gmaxwell, "blockchain is important" so we try to minimize any computation on-chain. Ideally, you only see some signatures on the chain and maybe a zero-knowledge proof of a single instruction. Occassionally when parties in a payment channel don't cooperate, then maybe they reveal payment conditions and zkvm enforces that. This is explicitly not designed for arbitrary computation.
 
@@ -122,7 +119,7 @@ On the bright side, SVP clients which only have blockheaders and pieces of the U
 
 If you have a trusted sourc,e then there's a standard way to bootstrap via utreexo roots. If you have a trusted root, then you don't have to replay all blocks from the beginning of time.
 
-# Privacy features of zkvm
+## Privacy features of zkvm
 
 The asset types, claled flavors, are private. Asset amounts are private. Data parameters are private, and you can always make them explicitly public if you want. Anything that happens within the transaction, if you have one giant cloak instruction, the asset flow is also encrypted.
 
@@ -134,11 +131,11 @@ On the transaction graph, the alternative is to erase the links between inputs a
 
 But on layer 2, you could use coinjoin. This is the distinction between TLS and tor. TLS gives you data confidentiality between point to point, but if you want extra anonymity then you have to do some extra work which is how tor works. That's the last tradeoff.
 
-# Performance
+## Performance
 
 This thing is fast. We use less than 1 ms per output, up to 1000 tx/sec. This gives us ample room for CPU performance. Custom constraints are relatively cheap. Rangeproofs for output values bear most of the cost. Signatures and custom constraints have 1-5% overhead. Also, this scales with privacy. This is a rare place where the search for better privacy is aligned with performance. Aggregation saves space and time, but also helps with privacy. Proof size is log(n) so the marginal cost goes to zero. Also, you have free storage with utreexo
 
-# Conclusion
+## Conclusion
 
 We have a small, pure-rust codebase. zkvm + utreexo + blockchain, 7k loc schnorr + musig + keytree + bulletproofs. We have 14k LOC for curve2519 + ristretto255. Assumptions are ECDLP on curve25519, and Keccak (shake128) is a random oracle.
 

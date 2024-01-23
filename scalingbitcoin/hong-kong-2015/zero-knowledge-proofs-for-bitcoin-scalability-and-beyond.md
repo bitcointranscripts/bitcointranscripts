@@ -2,11 +2,10 @@
 title: Zero Knowledge Proofs For Bitcoin Scalability And Beyond
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['zero-knowledge', 'scalability']
+tags: ['proof-systems']
 speakers: ['Madars Virza']
 media: https://youtube.com/watch?v=aQ1--w4uEMM&t=4133
 ---
-
 I am going to tell you about zero-knowledge proofs for Bitcoin scalability. Even though this is an overview talk, many of the results I will be telling you about are based on work done by people in the slides and also here at the conference.
 
 First I will give a brief introduction to zero knowledge proofs. Then I will try to convince you that if you care about Bitcoin scalability, then you should care about zero-knowledge proofs and you should keep them on your radar.
