@@ -1,26 +1,21 @@
 ---
-title: Libra Blockchain Intro
+title: "The Libra Blockchain & Move: A technical introduction"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['altcoin']
+tags: ['altcoins']
 speakers: ['Ben Maurer']
 ---
-
-The Libra Blockchain & Move: A technical introduction
-
-Ben Maurer
-
 <https://twitter.com/kanzure/status/1230248685319024641>
 
-# Introduction
+## Introduction
 
 We're building a new wallet for the system, Calibre, which we are launching. A bit about myself before we get started. I have been at Facebook for about 10 years now. Before Facebook, I was one of the co-founders of reCaptcha- the squiggly letters you type in before you login and register. I have been working at Facebook on performance, reliability, and working with web standards to make the web faster.
 
-# Agenda
+## Agenda
 
 To start, I am just going to give a little bit of an introduction to what the Libra Association's mission is, why it was created, and what problem it is solving. Then I want to talk about the libra blockchain which underpins the association's payments network. Then I want to talk about one of the many cool things we're working on, which is the MOVE programming language- a smart contracting language designed to make it safer and simpler to program financial applications.
 
-# Libra
+## Libra
 
 Let's talk about what Libra is doing and what its mission is.
 
@@ -36,39 +31,39 @@ As technologists, we should be uneasy that public key cryptography hasn't been w
 
 This technology is designed to bring a more modern approach to financial systems.
 
-# Financial inclusion
+## Financial inclusion
 
 How does this help the person paying a 5% fee? Libra offers users and developers direct access to a financial infrastructure. Users don't have to rely on an intermediary to store funds. There's nothing wrong with intermedaries, many of us are comfortable with them. But many intermedaries don't focus on financial inclusion, and many people who want to use the system often don't have access.
 
 Libra offers direct access to the platform and thus creates a more inclusive system. Developers can leverage a robust platform that takes the hard part of programming away and lets them focus on the applications they want to build. By enabling more developers, you can enable people to provide services to people who are not included in today's ecosystem.
 
-# Libra blockchain
+## Libra blockchain
 
 Let's talk about the details of the system that underpins this. The libra blockchain is based on byzantine fault tolerance. There's a client or end user that submits transactions to a network of validators. A leader proposes a set of transactions. You use the BFT magic to come to an agreement on a consistent ledger of transactions. Clients can observe this consistent ledger so that they can understand what the current state of the network is. Very standard, typical application of this technology.
 
-# Libra blockchain is a database
+## Libra blockchain is a database
 
 When I talk to people about what Libra is doing... a lot of people often ask, why not use a database? What's wrong with databases and why not use them? Well, remember that blockchain is a type of database. They are a versioned database that stores data that changes over time. They are authenticated. At the end of the day, they have a similar function as a database.
 
 The Libra blockchain tracks a set of states. Alice and Bob have accounts. Alice has 110 Libra and Bob has 52 Libra and there's a transaction that says send 10 from Alice to Bob and this transaction gets ordered using byzantine fault tolerance, then put into the ledger, and correspondingly changing the state of the blockchain. This is if you show it to someone who was building a traditional financial ecosystem on top of a database, they would say that makes a lot of sense. The blockchain technology is derived from that approach.
 
-# Data structure
+## Data structure
 
 In our system, like most blockchains, we use merkle trees to efficiently encode data. The validators sign this ever-growing merkle tree. This is a little different from typical blockchains. In most blockchains there's a linearly linked list of blocks. Instead of signing a connected list of blocks, we sign this ever-growing merkle tree which unlike traditional blockchains allows you to efficiently authenticate not just the current state but historical states, using logarithmically sized proofs.
 
 We store a sparse merkle tree that has the ledger state in it. We also store a list of events, which are like logs in ethereum. These are things that happen in the transaction. During this transaction, this tells you what transpired. An event tracks something that happens, and state tracks what the current or previous state of the universe was.
 
-# Key properties
+## Key properties
 
 Altogether, this system provides a few key properties. The byzantine fault tolerance provides safety and liveness: as long as 2/3rds of the network is operational and honest, you can get a consistent views of transactions and you will be able to accept transactions. You get efficient state authentication for the current state and also historical states about what events happened when. All of these queries can be efficiently authenticated using the current root hash, all in logarithmic space. You get to see all the transactions that have transpired, and the evolving state of the network.
 
-# Replicated state machines
+## Replicated state machines
 
 A replicated database is a type of replicated state machines. Everyone sees all the same transactions and should see all the transactions over time. So everyone agrees on the initial state, and then they have someone that helps them agree on transactions. You do this with byzantine fault tolerance. You agree on the initial state, and on the transactions, and on what the transactions mean, then you already agree inductively logically on the next state.
 
 How do you handle a state machine in a financial system? A lot of us are used to programming state machines when we're in full control of the system. We like to say Alice can send money to Bob but she can't take money out of Bob's account. How do you handle a programmable system that does this? You need to make sure you have a language or a scheme for representing transactions and how they evolve the system state. This is what all blockchains do, ranging from bitcoin to ethereum they have some sort of way of defining what a transaction means and what transactions are valid.
 
-# Blockchain contract programming languages
+## Blockchain contract programming languages
 
 So what do you need to have to have a blockchain programming language? These aren't novel, a lot of systems have done this. Clearly you need something deterministic. If a transaction read from local filesystem, then everyone would see different state because everyone has different local filesystems. You can't have random hash functions or whatever based on local system state. So you need a predictable system that has the same state transitions.
 
@@ -76,7 +71,7 @@ You need to make sure you have a type and memory safe system. If you were able t
 
 You need some kind of metering and ensure the responsible use of resources. Typically with a public system and no consequence for taking resources, then somebody is going to take all of them. From this insight, we need gas measuring to determine what the cost of executing a smart contract would be.
 
-# MOVE design goals and supporting features
+## MOVE design goals and supporting features
 
 I have really just focused on the basics of smart contracts. This stuff already happened before we did MOVE. Solidity meets these requirements. Whenever you create programming languages, people give you a weird face- why create a new language? We wanted to write down what do we want to do on top of these core requirements? This inspired the key requirements for MOVE.
 
@@ -88,7 +83,7 @@ Beyond just representing the Libra currency itself using MOVE, we also represent
 
 MOVE is also designed to be a language that is safe. It has a bytecode verifier that enforces type safety, reference safety, it only crashes or fails to validate the transaction for predictable circumstances- for unexpected but defined behavior like being out of bounds of an array, overflow, it's designed to have dynamic dispatch, all the call sites are static and we designed the language from the ground up to support formal verification which is where we benefit from having a lot of people in the team with cross-disciplinary experience which helped us to figure out what we would have to do to get the language support formal verification states. We limited the amount of mutability, made sure references are transient and can't be stored in global storage, having an acyclic dependency graph. It's expressive, but easy to recognize.
 
-# Assets and authority
+## Assets and authority
 
 Assets are things like libra coins, which are things like physical objects you can't duplicate or create from scratch. You have to transfer them around. Authority is more nuanced: it's, you can have certain you know pieces of code that are authorized to do something. Someone libra's account might be authorized using their public key and a signature on that public key and that is an authority that could in theory be transferred that they can duplicate but that nobody else can duplicate.
 
@@ -96,7 +91,7 @@ Again, to put MOVE in a nutshell, it's really about how do we represent this sor
 
 Unlike other types of linear types, you have to use a resource exactly once. This prevents programming errors where you forget to use something. When you think about types of bugs that people have had in certain smart contract languages, this can help address some of those core issues. To answer the question about the funny face people make at you when you make a new programming language, this is really what inspired us to say there's a need here that isn't met. This is why we built the MOVE language into the blockchain and dogfooded it as we built our system.
 
-# Still curious?
+## Still curious?
 
 There's a paper on the libra blockchain and the MOVE language. Caliba is Facebook's digital wallet which will be able to hold libra. Then we would love people to join the discussion. We have a forum where you can go and discuss the libra blockchain. The code for all of libra and MOVE is all open-source. Happy to accept pull requests from people. The association is working on a more formal governance system to be able to accept libra improvement proposals.
 
