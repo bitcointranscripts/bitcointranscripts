@@ -2,7 +2,7 @@
 title: More Core Devs
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['ux']
+tags: ['bitcoin-core']
 ---
 
 10x the number of core devs

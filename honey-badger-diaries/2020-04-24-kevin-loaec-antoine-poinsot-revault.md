@@ -1,19 +1,12 @@
 ---
-title: Revault
+title: "Revault Bitcoin vaults"
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['attacks', 'ux']
+tags: ['vaults']
 date: 2020-04-24
 speakers: ['Kevin Loaec', 'Antoine Poinsot']
 media: https://www.youtube.com/watch?v=xDTCT75VwvU
 ---
-
-Revault Bitcoin vaults
-
-Location: Honey Badger Diaries (podcast)
-
-# Transcript (abridged)
-
 Aaron: So you guys built something. First tell me are you a company? Is this a startup? What is the story here?
 
 Kevin: My personal interest in vaults started last year when Bryan Bishop published his [email](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html) on the mailing list. I was like “That is an interesting concept.” After that I started engaging with him on Twitter proposing a few different ideas. There were some limitations and some attacks around it. I didn’t go much further than that. At the end of the year a hedge fund reached out to my company Chainsmiths to architect a solution for them to be their own custodian while in a multi-stakeholder situation. They are four people in the company and they have two active traders that move funds from exchanges back to their company and stuff like that. They wanted a way to be able to have decent security within their own fund without having to rely on a third party like most funds do. I started working on that in December and quickly after that I started to reach out to other people who could help me. I reached out to Antoine and his company Leonod to help me build out the prototype and figure out the deep technical ideas about the architecture. Then Antoine helped me with the architecture as well to tweak a few things. Right now it is still a project that is open source and there is no owner of it as such. It was delivered as an open source project to our clients. Right now we are considering making it a product because it is just an architecture, it is just a prototype. Nobody can really use it today, it is just Python code, it is not secure or designed to be secure right now. We are trying to look for other people, companies that could support us either as sponsors or whatever for building the implementation. Or setting up a separate entity like a spin off of our company just to focus on that.

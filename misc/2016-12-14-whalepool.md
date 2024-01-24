@@ -1,15 +1,11 @@
 ---
-title: Whalepool
+title: The Great Debate Whalepool
 transcript_by: Bryan Bishop
-tags: ['ux', 'segwit']
+tags: ['soft-fork-activation', 'segwit']
 speakers: ['Eric Lombrozo', 'Roger Ver']
 date: 2016-12-14
+media: https://soundcloud.com/elux-2/the-great-stakehodler-debate-lombroso-petrov-potter-ver
 ---
-
-Whalepool segwit transcript
-
-<https://soundcloud.com/elux-2/the-great-stakehodler-debate-lombroso-petrov-potter-ver>
-
 <https://twitter.com/kanzure/status/809174512105295872>
 
 Host: Mr. Ver, can you hear this?
