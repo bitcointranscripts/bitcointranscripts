@@ -2,7 +2,7 @@
 title: Breaking The Chain
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mining', 'timestamping']
+tags: ['mining', 'proof-systems']
 speakers: ['Bob McElrath','Peter Todd']
 ---
 
