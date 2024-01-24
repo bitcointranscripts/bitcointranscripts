@@ -2,11 +2,8 @@
 title: How To Mine Bitcoin Profitably
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mining', 'ux', 'scalability']
+tags: ['mining']
 ---
-
-How to mine bitcoin profitability
-
 Minting money with megawatts
 
 Thank you for the introduction. We thought bitcoin was really a good idea for an unstable and inefficient financial world. I am going to dive and talk about this presentation which is how to mine bitcoin profitably. This is a short talk, it's supposed to be a short talk, so let's get straight to the crux of the matter.

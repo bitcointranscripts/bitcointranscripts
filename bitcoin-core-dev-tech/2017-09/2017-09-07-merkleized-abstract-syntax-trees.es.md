@@ -3,7 +3,7 @@ title: Árboles de sintaxis abstracta merkleizados
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['consenso', 'ux']
+tags: ['mast']
 date: 2017-09-07
 aliases: ['/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees.es/']
 ---
