@@ -2,12 +2,11 @@
 title: "Bitcoin R&D Panel"
 transcript_by: WeAreAllHodlonaut via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=UIkvHzPIgRM
-tags: ["Research","Covenants","Smart Contracts"]
+tags: ["research","covenants","scripts-addresses"]
 speakers: ["Jeremy Rubin","Gloria Zhao","Andrew Poelstra"]
 categories: ["conference"]
 date: 2022-05-07
 ---
-
 Ayush: 00:00:07
 
 My name is Ayush Khandelwal.

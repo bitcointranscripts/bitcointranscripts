@@ -2,22 +2,15 @@
 title: Socratic Seminar - Discreet Log Contracts
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['smart contracts', 'lightning']
+tags: ['dlc', 'lightning','adaptor-signatures']
 date: 2021-08-10
 media: https://www.youtube.com/watch?v=h6SkBwOCFsA
 ---
-
-Name: Socratic Seminar
-
-Topic: Discreet Log Contracts
-
-Location: London BitDevs (online)
-
 Gist of resources discussed: <https://gist.github.com/michaelfolkson/f5da6774c24f99dba5c6c16ec8d499e9>
 
 This event was livestreamed on YouTube and so comments are attributed to specific individuals by the name or pseudonym that was visible on the livestream. If you were a participant and would like your comments to be anonymized please get in touch.
 
-# Intro
+## Intro
 
 Michael Folkson (MF): Welcome to everyone on the call, welcome to people watching on YouTube. This is a Socratic Seminar, we’ve got a Zoom call and it is being livestreamed on YouTube. Anybody watching on YouTube, feel free to comment, questions and there is a reading list that I’ll share the link to and that give us some structure for the discussion, we don’t have to stick to it but we’ll see where it takes us. Let’s do intros first. We’ll start with the Suredbits guys.
 
@@ -29,7 +22,7 @@ Patrick (P): I’m non-technical, just an enthusiast and here to soak up some kn
 
 Roman (R): I also work at Suredbits working on DLCs.
 
-# Basic concept of a DLC
+## Basic concept of a DLC
 
 MF: Let’s start with the basic concept. As we were saying before there are tonnes of resources out there and I don’t want to just redo some of the conversations and interviews that have already been had. But I feel we have to go over the basic concept first before we go into the advanced stuff. What is a DLC?
 
@@ -49,7 +42,7 @@ MF: Cool, everyone should know this but Discreet Log Contracts is in a play on w
 
 CS: Most people seem to spell “discrete” but again going on the play on words it is actually “discreet”. This is the pun that Tadge (Dryja) has in his [white paper](https://adiabat.github.io/dlc.pdf) which was phenomenal of course, Tadge is great.
 
-# How DLCs compare to Ethereum smart contracts
+## How DLCs compare to Ethereum smart contracts
 
 MF: But you curse him for the naming, maybe. So why are we only now talking about discreet log contracts on Bitcoin when supposedly Ethereum has taken the smart contract use case? Why has it taken so long to start doing these kinds of smart contracts on Bitcoin? What is the difference between a DLC on Bitcoin and a smart contract on Ethereum?
 
@@ -71,7 +64,7 @@ CS: Maybe this is United States compared to the rest of the world, maybe it is d
 
 MF: London Bitcoin Regulators can discuss that conversation. London Bitcoin Devs will stick to the technical part.
 
-# Examples of DLCs in the wild
+## Examples of DLCs in the wild
 
 MF: I’ve got this reading list up. We’ve kind of covered the basic concept of a discreet log contract. Z-man has some excellent [thoughts](https://zmnscpxj.github.io/bitcoin/unchained.html) on smart contracts on Bitcoin. We’ve covered the differences between Bitcoin and Ethereum. Some of the examples that I could find, you can tell me if there are others the Suredbits guys, one was Nicolas Dorier and Chris (Stewart) entering into a [bet](https://suredbits.com/settlement-of-election-dlc/) on the election. That was organized via Twitter so does that make Twitter a matching engine? Should Twitter be under regulation? That was an election bet. Who took the oracle in that case between you and Nicolas?
 
@@ -113,7 +106,7 @@ BC: I don’t know.
 
 MF: It seems very early, I think he just posted it today or yesterday. It looked cool so I added it to the reading list.
 
-# Evolution of the DLC: adaptor signatures
+## Evolution of the DLC: adaptor signatures
 
 MF: Let’s go through the evolution of the DLC because that hasn’t really been covered I think on other forums, other podcasts, videos etc. The very first resource is Tadge’s original DLC [white paper](https://adiabat.github.io/dlc.pdf). What was the initial concept of a discreet log contract when Tadge initially released this paper?
 
@@ -145,7 +138,7 @@ MF: Wow, interesting. This is just you saying “We’ve got a better design tha
 
 NK: That’s right. The way we are doing it now we are using ECDSA adaptor signatures is going to make it much easier to transfer to using Schnorr because we are already using all of the same interfaces as Schnorr adaptor signatures and the like. It will be much closer to just swapping out ECDSA for Schnorr than it would have been if we had to do all of these changes all at once. It also helps from a development perspective where we’ve moved to the thing that’s more Schnorr like even though it is not Schnorr yet. It is better in every other way too because Schnorr is great.
 
-# Evolution of the DLC: Onchain, payment channels and Lightning routed
+## Evolution of the DLC: Onchain, payment channels and Lightning routed
 
 MF: Let’s continue with the evolution of DLCs for a moment. There are a bunch of different evolutions here. There is the adaptor signatures that you’ve just covered Nadav. Then there is the “Do we do this onchain? Do we do this in a payment channel? Perhaps in the future do we do this on a routed payment across the Lightning Network?” The examples that we showed earlier were within a payment channel were they? With no routing? Is that right?
 
@@ -187,7 +180,7 @@ MF: I get the sense roasbeef is more on the disruptive side rather than the cons
 
 NK: I have talked to him quite a bit since about generalizing channels. It is something he wants to do and it is something that he is working on. It will certainly happen, I am not worried. I think the consensus is that it is the right approach, it is just a lot of work and the work is happening slowly.
 
-# How the DLC use case could increase usage of the Lightning Network
+## How the DLC use case could increase usage of the Lightning Network
 
 Fode Diop (FD): First of all, hello everybody. I just wanted to add to what Chris was saying about number go up in Lightning. I think it will happen. Especially in Central America, we are only 3 and a half weeks away from the government wallet being released here. It is not just El Salvador, it is all the neighboring countries. If you think about it, most of the banks here are owned by foreign banks. The three major banks here are owned by Colombian banks which means that as they help the banks integrate with Lightning they are also themselves getting ready to integrate with Lightning as well. We have Colombia next door, we have Guatemala which is right next door and all exchanges here are pretty much integrating with Lightning as well. I think it is just a matter of time until we see an explosion of usage here. El Salvador alone is 6,7 million people. If you onboard an entire nation on it I think there will be an increase in usage but also a good way to stress test the Lightning Network.
 
@@ -211,7 +204,7 @@ MF: The downsides are totally different now. If we are doing parallels with Sato
 
 NK: I also think DLCs are a nice test run for doing more generalized offchain stuff. Layer 2 currently is in its first iteration where it is just payments that are happening. I think in the future, as Chris mentioned, almost everything is going to happen offchain, it is going to have to. Certainly nothing cooperative should ever happen onchain, that is a principle. There is no reason to be using a blockchain directly for anything other than assurance that if things stop being cooperative then you have a backup. As a first resort you should never actually be using a blockchain if any activity that you are doing is cooperative. In the future we are actually going to need Layer 2 to handle almost everything. We have payments down as the first step and I think DLCs are an ideal second step. They are pretty minimal in their package for what you need in a technical sense, they have immediate use cases so they are marketable to people. You can have these things get implemented and integrated, and they are not as trivial as a payment. It is not that a payment is trivial, Layer 2 took quite a while to come around, but as far as contingent payments go it is about as simple as it gets. I think in some sense it can be viewed as the natural next step after payment channels, introducing things like DLCs into offchain ecosystems.
 
-# The challenges of a routed DLC on Lightning
+## The challenges of a routed DLC on Lightning
 
 MF: I do want to have a final section on oracles before we wrap up. Just to finish the Lightning section, this is looking forward to when there are DLCs on Lightning. When we get to routed DLCs, this is looking very far ahead, not only a DLC within a payment channel but routed across multiple payment channels, the problem there is if you do a bet that settles in 6-12 months then the capital would be locked up on every hop. That is not ideal. We are kind of in the same space as [HODL invoices](https://bitcoinops.org/en/topics/hold-invoices/) with capital being locked up.
 
@@ -255,7 +248,7 @@ MF: I was looking through some of the work Tadge and other people had done in hi
 
 NK: This is the pre adaptor signature implementation by the way.
 
-# Oracles
+## Oracles
 
 MF: So let’s go onto oracles. The oracles in DLCs, this was what Tadge initially described in his paper… With a 2-of-3 multisig all the participants need to identify who the oracle is. The oracle is going to be signing in the 2-of-3. The two participants in the contract have to find an oracle who is willing to sign in case they don’t come to agreement. Tadge’s concept was that instead the oracle is just going to sign various statements and not actually know they are participating in any of these contracts. That’s what you have gone with, there are various reasons why you’ve gone with that approach. Why is it better if the oracle doesn’t know that their signed statements are being used in contracts?
 
@@ -307,7 +300,7 @@ NK: That’s right. The generalization of multisig in computer science is called
 
 MF: That’s one to look up. The oracle stuff is very cool. [Oracle failure cases](https://suredbits.com/dlc-oracle-failure-cases/), we didn’t go into this but obviously if you are only using one oracle and the oracle lies then you’ve got problems. That is where a reputation system comes in or using multiple oracles.
 
-# The impact of possible future soft forks on DLCs
+## The impact of possible future soft forks on DLCs
 
 MF: There is tonnes of stuff to do with Schnorr and Taproot. Is there anything for future soft forks that would be cool for DLCs? I saw one [blog post](https://blog.bitmex.com/taproot-you-betcha/) from Jeremy Rubin on betting on Taproot activation. This wasn’t actually using CHECKTEMPLATEVERIFY, I think he was just using his Sapio programming language to do a bet on whether Taproot would activate. I think Ben put up a Taproot activation oracle at one point on Suredbits.
 
@@ -319,7 +312,7 @@ BC: I think you can do more complex things. Say when I get paid to this address 
 
 CS: With the coinbase put contract example the tough part for creating a DLC predicated on the coinbase transaction is the fact that miners tweak the scriptSig and the witness commitment which ends up changing the funding transaction ID for your DLC every time a hash is performed. With ANYPREVOUT you abstract away what the specific funding transaction is, rather you say it just has to match this template. You can bind it to any transaction that follows this template which makes things like what I talk about in this blog post more viable in the market.
 
-# Upcoming releases
+## Upcoming releases
 
 MF: At some point in the future we’ll be doing DLCs between all of us in a channel factory. There is a lot of work to do. We’ll wrap up. What would you want people to do? Do you want people to find friends to do DLCs with, to use your software? I saw various videos of tutorials. Do you need oracles? Do you need people entering into DLCs? What do you need?
 

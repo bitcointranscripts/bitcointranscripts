@@ -1,24 +1,19 @@
 ---
-title: Arbitrum V2
+title: "Arbitrum 2.0: Faster Off-Chain Contracts with On-Chain Security"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['smart contracts', 'layer 2']
+tags: ['altcoins']
 speakers: ['Ed Felten']
 ---
-
-Arbitrum 2.0: Faster Off-Chain Contracts with On-Chain Security
-
-Ed Felten, Off-chain Labs
-
 <https://twitter.com/kanzure/status/1230191734375628802>
 
-# Introduction
+## Introduction
 
 Thank you, good morning everybody. I'm going to talk about our latest version of our Abitrum system. The first version was discussed in a paper in 2018. Since then, there's a lot of advances in my technology and a real running system has been made. This is the first working roll-up system for general smart contracts.
 
 First I will set the scene to provide some context on what we're talking about and how what we're doing fits into the larger picture. Then I'll talk about how the system works, what has changed since the last paper, and some lessons learned from building and deploying it.
 
-# Layer 2 protocols
+## Layer 2 protocols
 
 So what about layer 2 systems that support smart contracts? They generally rely on having a set of parties like validators that are responsible for tracking the state of the layer 2 chain and taking action to make sure it develops correctly.
 
@@ -34,7 +29,7 @@ In our 2018 paper, we introduced Arbitrum channels which is a hybrid of state ch
 
 I am going to be talking about Arbitrum channels- the roll-up part of the protocol, which is the most interesting and complex part of the Arbitrum channel protocols.
 
-# Drilling down
+## Drilling down
 
 Let me drill down into how a system like ours and similar ones work. So you have some amount of source code that represents a smart contract, it might be some legacy Solidity code or something out. You're going ot take that source code, run it through a custom compiler, and generate an executable program that runs on a virtual machine that the Layer 2 system is implementing. Once you have that layer 2 executable, then you can launch your chain by launching a set of validators. Each validator has an emulator for emulating the VM and it can emulate programs in that VM architecture. You run the program on that virtual machine.
 
@@ -42,13 +37,13 @@ If all goes well, and all the validators are honest, then all the validators wil
 
 If they don't agree, then they interact with an on-chain contract and that contract is responsible for the ultimate abjudication for any dispute betwee nvalidators. So the special sauce is how to make this on-chain manager contract as small and fast as possible, while still getting generality.
 
-# Design goal
+## Design goal
 
 Our first goal was to run general-purpose code and contracts. We want it fast and cheap, even with a slower layer 1. We want that any any-trust guarantees of safety, liveness and finality. Any one party acting alone can ensure that this property holds. Safety means that no bad state change will occur. Safety means that no bad thing will happen. Liveness means that some good thing will eventually happen, which combined with safety means some good thing will eventually happen. Finality means that if a valid state change is proposed and it's pending, then it will eventually be confirmed, which allows parties as "fated to be confirmed" even before they are confirmed by the protocol, which allows faster responses for users.
 
 We want to interop with the layer one chain so that you can make calls back and forth between contracts, or you want to move tokens back and forth. And we want censorship resistance as the underlying layer one chain.
 
-# Approach
+## Approach
 
 The approach we took in building this is first of all, we did obvious stuff to minimize on-chain work and try to go fast. But in particula,r here are some distinguishing factors.
 
@@ -60,7 +55,7 @@ We want to create incentives to keep the validators in the fastest mode.
 
 We also pay attention to the safe speed limit, which is the speed at which you can allow activity to happen without outrunning the ability of validators to keep up. Validators need to be able to check on everything that is happening. It's possible to propose stuff faster than validators can check it. The safe speed limit is based on how fast the validators can operate. So we want to make sure validators can always run at full speed.
 
-# Two use cases, two protocols
+## Two use cases, two protocols
 
 There's the Arbitrum Rollup protocol in which anyone can be a validator. As in any roll-up protocol, if you want anyone to be a validator then you need to make sure they can get the information to become a validator. They need to find this information on the main chain so they can get up to date. If someone gives them a recent checkpoint of the state of the system, then there needs to be enough information on-chain to verify that. In roll-up protocols, we have a protocol based on proposals, and proposals are challengeable, and if they are challenged then there's a dispute.
 
@@ -68,7 +63,7 @@ In the Arbitrum Channel protocol, there's an enumerated set of validators, it ca
 
 I'll talk about the roll-p protocol, resisting delay attacks with a branch-and-prune state management. And then how to handle time, messages and interoperability in a layer 2 situation.
 
-# Roll-up protocol
+## Roll-up protocol
 
 We have something called a roll-up block or assertion. It's a claim about the execution of a VM in a chain. This might cover many transactions worth of work. Any validator can post an on-chain assertion which is a claim about what the chain will do or has done. It consists of a set of messages that the chain is consuming from the head of its inbox. These are things like requests to the contract to execute transactions, or incoming transfers of currency. There's a number of steps that can be executed by the chain's VM. It includes a root hash of the state machine after those steps are executed. The entire machine is organized in a merkle tree so you can summarize its state in a single hash. Then it asserts a set of outputs that are allegedly produced by the execution, like events, payments, log items made by those contracts. The arbitrum protocol decides after an assertion is made, whether to accept or reject an assertion.
 
@@ -84,13 +79,13 @@ The normal state of an operating chain is like this: you have a linear pipeline 
 
 So we can make progress even when there's disputes people can keep working out the truthful branch. Honest validators can always continue building the truthful branch. Dishonest validators can build out a false branch, but everyone else can ignore it knowing that eventually that branch will be proven away.
 
-# Efficient on-chain tracking
+## Efficient on-chain tracking
 
 This might sound expensive to track this on-chain, but there are some tricks to reduce those costs. You can summarize the state. You have to track the hash of every leaf of the tree. If you have the hash of a leaf and the root of the tree, then you can prove any node is a member of the tree by using a set of merkle proofs. For each staker, you need the identity and the hash of the staking action.
 
 This gives you trustless finality. You get the trustless properties I was talking about, happy to explain why out-of-band later.
 
-# Why time is hard to handle in layer two
+## Why time is hard to handle in layer two
 
 The problem is that legacy programs like in Solidity it likes to ask what's the current block number in the first layer? The result of this is determined when the transaction is put on-chain. But in the layer 2 transaction, you have to propose what happens in the transaction. It can't be determined later when it gets adopted on-chain. So the outcome of the assertion has to be unique, and it can't change over time. Also, layer 2 execution is asynchronous from the layer one clock.
 
@@ -100,11 +95,11 @@ So what do you do when the app asks for the time? One good solution is to take t
 
 The l2 runtime system can see the current timebounds but also messages pegged in the future. We know what we're doing; the l2 runtime is able to show a consistent and sensible notion of time to the application. So this is another example of how the use of an l2 runtime is pretty beneficial.
 
-# Takeaways
+## Takeaways
 
 The branch-and-prune approach to state management allows high performance and strong guarantees of safety, liveness and finality. There's significant advantages for compiling everything into a single L2 program per chain, consisting of a substantial runtime component in that. There's also a surprising amount of "systems problem solving" needed to make this work. You have to solve a bunch of difficult problems to get this to work.
 
-# Arbitrum
+## Arbitrum
 
 Arbitrum Rollup is a commercial product. We have plugins for the standard front-end system so you can port existing applications to run in L2 and get those benefits. We have easy tooling for launching your dApp. This is the first roll-up for general contracts to be working on testnet. Also, we're hiring. Thank you.
 
