@@ -1,7 +1,0 @@
----
-title: Url.Txt
-transcript_by: Bryan Bishop
-categories: ['conference']
----
-
-https://www.youtube.com/watch?v=lIgjogLipvk

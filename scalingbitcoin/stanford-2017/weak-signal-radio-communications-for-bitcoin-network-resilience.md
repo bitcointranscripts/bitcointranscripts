@@ -1,14 +1,13 @@
 ---
-title: Weak Signal Radio Communications For Bitcoin Network Resilience
+title: "Weak-Signal Radio Communications For Bitcoin Network Resilience"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus']
-speakers: ['Nick Szabo']
+tags: ['research']
+speakers: ['Nick Szabo','Elaine Ou']
+date: 2017-11-05
+media: https://www.youtube.com/watch?v=QkYXPJMqBNk&t=4965s
 ---
-
-Weak signal radio communications for bitcoin network resilience
-
-# What is weak-signal HF radio?
+## What is weak-signal HF radio?
 
 These are called high frequency. That's the official name for these frequencies. Short wave is for historical reasons is longer waves and much higher frequency compared to our wireless internet frequencies. The terminology is backwards. I'll talk about the ionosphere and how we're bouncing signals off of it. This is really long-range stuff. This is an old Voice of America broadcast station that broadcasted radio programs across the pacific. The range of these things are long but they are also high power like 100 kW. We are going to be really low power weak signal like 5 GW or less. We want to be good citizens of the air waes because other people are using them also.
 

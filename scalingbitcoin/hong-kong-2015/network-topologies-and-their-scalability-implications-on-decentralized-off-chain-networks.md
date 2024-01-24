@@ -1,9 +1,10 @@
 ---
-title: Network Topologies And Their Scalability Implications On Decentralized Off Chain Networks
+title: "Network Topologies and their scalability implications on decentralized off-chain networks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'custody', 'lightning']
+tags: ['lightning']
 speakers: ['Joseph Poon']
+date: 2015-12-07
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=1h29m38s
 ---
 

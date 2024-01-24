@@ -2,7 +2,6 @@
 title: Law Enforcement And Anonymous Transactions
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'proof-of-work']
 speakers: ['Brian Klein', 'Baker Marquart', 'Prakash Santhana', 'James Smith']
 ---
 

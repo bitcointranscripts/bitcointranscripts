@@ -2,7 +2,7 @@
 title: Single Use Seals
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'cryptography', 'lightning']
+tags: ['proof-systems']
 speakers: ['Peter Todd']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=1U-1xkhJeEo

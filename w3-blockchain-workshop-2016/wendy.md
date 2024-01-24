@@ -2,12 +2,8 @@
 title: Intro to W3C standards
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['consensus']
 speakers: ['Wendy Seltzer']
 ---
-
-08:45–09:00 - Keynote: “Intro to W3C standards” Wendy Seltzer, W3C.
-
 https://goo.gl/3ZqAuo
 
 We are working to make a web that is global and nteroperable and usable by everyone. If you have tech that you want to work on a global working basis, and distributed manner, then the web is the platform on which to do that. W3C is the consortium and standards body that works to help keep the web open and available. We don't have police power, ew don't have police power to compel web standards, we build consensu sthrough W3C process and our open royalty-free patent policy to invite people to work together.

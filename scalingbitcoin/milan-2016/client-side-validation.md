@@ -1,13 +1,12 @@
 ---
-title: Client Side Validation
+title: "Progress on Scaling via Client-Side Validation"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'validation']
+tags: ['client-side-validation']
 speakers: ['Peter Todd']
+date: 2016-10-09
+media: https://www.youtube.com/watch?v=uO-1rQbdZuk&t=6198s
 ---
-
-Progress on scaling via client-side validation
-
 <https://twitter.com/kanzure/status/785121442602029056>
 
 <http://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/breaking-the-chain/>

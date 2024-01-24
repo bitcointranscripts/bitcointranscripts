@@ -1,17 +1,14 @@
 ---
-title: Research And Development Goals
+title: "R&D Goals & Challenges"
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['consensus']
+tags: ['research','bitcoin-core']
 speakers: ['Patrick Murck', 'Gavin Andresen', 'Cory Fields']
 aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/research-and-development-goals/']
 ---
-
-R&D Goals & Challenges
-
 We often see people saying they are testing the waters, they fixed a typo, they made a tiny little fix that doesn't impact much, they are getting used to the process. They are finding that it's really easy to contribut to Bitcoin Core. You code your changes, you submit your changes, there's not much to it.
 
-There's a difference, and the lines are fuzzy and undefined, and you cna make a change to Core that changes a spelling error or a change to policy or consensus rules, for those high-level things, for ecosystem-level things, there's several mailing lists, the dev list gets the most traffic. Things get debated there, they get debated on the social media. So it boils down to what changes you are after, so whether you're adding functionality to the program itself it's easy to do that as long as it's not controversial.
+There's a difference, and the lines are fuzzy and undefined, and you can make a change to Core that changes a spelling error or a change to policy or consensus rules, for those high-level things, for ecosystem-level things, there's several mailing lists, the dev list gets the most traffic. Things get debated there, they get debated on the social media. So it boils down to what changes you are after, so whether you're adding functionality to the program itself it's easy to do that as long as it's not controversial.
 
 Touching on what Gavin said, we are working on making things much more modular. We have confusion about the fact that we have pull requests for the pipeline as well as policy changes all in the same pipeline, as things like the wallet or things like the miner start to become broken out, we don't have to worry about thos ethings, we have just the more core central big fun changes. It's a way to weed out some of the noise. That's one of the things I'm currently working towards. As far as contributing, I would say it's actually we have a very low barrier for entry for anyone who actually has some functional changes that they want to make.
 

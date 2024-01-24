@@ -1,19 +1,11 @@
 ---
-title: Taproot Pace
+title: "Is Taproot development moving too fast or too slow?"
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ['consensus', 'taproot']
+tags: ['taproot','soft-fork-activation']
 date: 2020-07-20
+media: https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s?utm_source=share&utm_medium=web2x&context=3
 ---
-
-Is Taproot development moving too fast or too slow?
-
-Location: Reddit
-
-https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s?utm_source=share&utm_medium=web2x&context=3
-
-# Is Taproot development moving too fast or too slow?
-
 Taproot has been discussed for [2.5 years already](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html) and by the time it would activate it will certainly at this point be over three years.
 
 The bulk of the Taproot proposal, other than Taproot itself and specific encoding details, is significantly older too. (Enough that earlier versions of our proposals have been copied and activated in other cryptocurrencies already)
