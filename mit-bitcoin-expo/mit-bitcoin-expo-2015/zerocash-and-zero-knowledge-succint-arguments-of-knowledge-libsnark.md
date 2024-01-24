@@ -1,13 +1,12 @@
 ---
-title: Zerocash And Zero Knowledge Succint Arguments Of Knowledge Libsnark
+title: "Zerocash: Zero knowledge proofs and SNARKs and libsnark"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'privacy']
+tags: ['proof-systems']
 speakers: ['Madars Virza']
+date: 2015-03-08
+media: https://www.youtube.com/watch?v=96ULlHhia_Q&t=15308
 ---
-
-Zero knowledge proofs and SNARKs and libsnark
-
 I am going to tell you about zerocash and our approach of addressing Bitcoin's privacy problem. All of this is joint work with Techion, ETCH Zurich, and MIT, and Matt Green, .. and .. and..
 
 So first to get us going, I want to talk a little bit about two of my ideas around Bitcoin. There are two questions that every decentralized cryptocurrency must answer. First of them is where does the money come from. The second question is, if money is digital, if I have my digital $1 bill, can I copy it? What prevents it from double spending?

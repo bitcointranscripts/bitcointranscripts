@@ -1,26 +1,25 @@
 ---
-title: Thundercore
+title: "New and Simple Consensus Algorithms for ThunderCore’s Main-Net"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus']
+tags: ['research']
 speakers: ['Elaine Shi']
+date: 
+media: https://www.youtube.com/watch?v=iwe1NxbX40A
 ---
-
-Thundercore consensus
-
 <https://twitter.com/kanzure/status/1090773938479624192>
 
-# Introduction
+## Introduction
 
 Synchronous with a chance of partition tolerance. Thank you for inviting me. I am going to be talking about some new updates. It's joint work with my collaborators. The problem is state-machine replication, sometimes called blockchain or consensus. These terms are going to be the same thing in this talk. The nodes are trying to agree on a linearly updated transaction log.
 
-# State-machine replication
+## State-machine replication
 
 We care about consistency and liveness. Consistency is honest nodes agreeing on a log, and liveness is that whenever I make a transaction then it should get into the transaction logs fairly quickly. I don't want to wait forever for my coffee.
 
 What makes the problem challenging is that the nodes can be compromised and the corrupted nodes can behave arbitrarily. Even under adversarial conditions, we want to satisfy the important security properties as well.
 
-# This talk
+## This talk
 
 In this talk, I am going to describe thunderella consensus protocol which is a fast consensus protocol that works in a decentralized environment and it's the protocol that our engineers made. I talked about thunderella last year actually.
 
@@ -28,7 +27,7 @@ I want to focus on the more exciting part which is that Thunderella is a scalabl
 
 Upon examination, we found it's not a problem with the proofs. They are perfectly fine. It's a flaw in the undelrying synchronous model. This is a model where we have studied consensus for the past 30 years. So in the second part of the talk, I want to rethink what should be the right model for studying these practical consensus protocols and I'll talk about how to fix the problem too.
 
-# Thunderella
+## Thunderella
 
 The scenario we are considering here is the following. The guy in the center will be called the proposer or leader. We have a committee of voters that elect the leader maybe through state distribution. We look at one snapshot. And someone is corrupted. In this protocol, a block is proposed. For the rest of the talk, I am going to call this notarization. Honest nodes must vote uniquely at each epoch or sequence number. If you are honest, you are going to vote on the first proposal and only that proposal you don't vote for anything else. With this invariant in mind, I can give you a very simple consistency proof and the proof goes as follows. This assumes that less than half of the nodes are corrupt. The venn diagram must intersect at an honest node. There are only n nodes in total. The intersection of these two sets must be large. Now, if the number of correct nodes is less than the half, then we are sure that in this intersection there lives an honest guy in the intersection.. he is going to vote uniquely at every sequence number and the only reasonable explanation is that the blue is the same as the orange. So extremely simple group.
 
@@ -46,51 +45,51 @@ If on the fast path you have confirmed a transaction, then you should post it to
 
 This approach, the nice thing we can achieve is that we can achieve consistency and liveness under the stronger set of conditions. So most of the time the protocol is going to operate in this orange regime.
 
-# Recap: Thunderella
+## Recap: Thunderella
 
 Thunderella usually has a single round of voting when things are good. When things are bad, we fallback to the slowchain and then rebootstrap the fast path from that.
 
-# Also in our paper
+## Also in our paper
 
 This talk might make it sound simpler than it really is. There's leader/committee reconfiguration and many other topics in the paper.
 
-# What is the flaw in Thunderella?
+## What is the flaw in Thunderella?
 
 It's a flaw in the synchronous model. I would describe to you a scenario where this can take place. One thing that is interesting is that in this scenario, everyone is benign and nobody has malicious intent. But if a few nodes crash in a specific pattern, then a confirmed transaction can be undone.  The leader makes a proposal, everyone votes, and the leader collects a bunch of notes and notarization and sends the notarization to Coinbase. Only Coinbase has received the notarization. At this very instant, maybe the leader crashes. So he is out of the picture. Coinbase believes the transaction is confirmed. The leader went away, and everyone is going to try to fallback, and they will post the notarized transactions they have seen since the last checkpoint to the slowchain. After some time, the rest of the network comes together and have fixed the problem they have re-bootstrapped the fast path.
 
-# Paradox
+## Paradox
 
 On the one hand we have this mathematical proof, and on the other hand, it seems like I have described a pretty serious flaw. As I already explained, the problem is not with the proof. It's actually with the underlying synchronous model. It assumes a synchronous network and we don't have that.
 
-# Synchronous model
+## Synchronous model
 
 What is the synchronous model? We assume that when honest node sends message, the messages will be delivered in a bounded amount of time. The message delay is at most 1 round. In case of the temporary outage in that last scenario, no matter how short your outage is, the model will treat you as faulty. The protocol was not required to provide any security guarantees for any faulty nodes because who cares about a corrupted malicious node.
 
-# Partial synchrony
+## Partial synchrony
 
 You might be saying, Elaine, yes, we know this and it's been known for 30 years. Yes, so that's why we are also looking at asynchronous models. There, the message delay can be arbitrarily long for partial synchrony regime. If you have a protocol that is provably secure in the partial synchrony, the faulty node that just came back online, will be okay.
 
 If you want partition tolerance, you have to suffer from a well known law. Any partial synchronous protocol cannot tolerate more than 1/3rd corruption. In the synchronous model, you can tolerate <1/2 corruptions.
 
-# Can we achieve the best of both worlds?
+## Can we achieve the best of both worlds?
 
 Given the classical insights we have, the answer should be no. But perhaps it's not completely hopeless because who says that synchrony has to be binary? Why does it have to be either synchronous or not synchronous? And why does partition tolerance have to be an attribute? So we're going to carefully quantify how synchronous our network is, and how partition tolerant our protocol is.
 
 Imagine we had a set of nodes and they were honest with good network connectivity and they can send messages to each other in a single round. But maybe there's some other nodes with unstable connectivity and they go online/offline frequently, and then there's a set of corrupt nodes which we don't care about achieving anything with. But the faulty ones and the honest good connectivity ones should be able to achieve something together. We don't want to penalize offline nodes, which can't have liveness, but they should be able to have consistency and liveness when they come back online.
 
-# Lazy coauthor model
+## Lazy coauthor model
 
 So can we do this? Well, you need some assumptions. You have to assume that the green node set is larger than 1/2. For best-possible partition tolerance, it could be that-- every node may be offline at some point. No node can guarantee that they will always be online. Not even Google. The real model we work with is what I would like to call the lazy coauthor model. Some of the authors are online on Monday and others are online on other days of the week. We want to be able to write a paper in this manner and we want to be able to for instance make the next Crypto deadline. It can't be the case that at the end of the day we discover everyone has a different theorem in mind. We want everyone to be proving the same thereom. For the online nodes, the message can be received by the people who are online in the future. Whenever you are offline, your messages can get erased and there's no guarantee of delivery sent by an offline node. So how can we write the paper such that we meet the deadline and prove consistency?
 
-# Solution
+## Solution
 
 The fix has two pieces. We need to fix the fast path and the slow chain. Fixing the slow chain is a separate story on its own so I won't cover it in this talk. But I'll talk about fixing the fast path and fallback. The fast path fix is very simple. I can describe it in one slide. Earlier, assume that honest nodes vote only after the previous coin is notarized. There is a notary sequence. Let's be more patient, and let's wait for the next block to be notarized too. We're always going to chop up the last notarized block at the end. The reason for this is that if I see a notarization on a block, the only thing I am sure of is that man ypeople have voted on that block. Imagine honest nodes will only vote for the next block when the parent is notarized. So if I see notarization on the next block too, it means many people have seen a notarization for the parent. This gives me more confidence because even if I crash at this point, other people have seen the notarization of the parent chain and some of them will be online and be able to post it to the slowchain. You can formalize this into a proof.
 
-# Additional results
+## Additional results
 
 What I have talked about today is just the tip of the iceberg. There's a few papers talking about the models and practical construction. We study not just consensus but also computation. We want best possible partition tolerant protocol with optimistic responsiveness, and we want privacy. We have a practical variant with liveness only during "periods of synchrony", under standard cryptographic assumptions.
 
-# Conclusion
+## Conclusion
 
 I would like to conclude by making a couple of philosophical observations. As it turns out, this class of protocols that has best possible partition tolerance, in the white class in this picture, is a strict subset of synchronous honest majority protocols. The way to think about this is that our model is a refinement of classical synchronicity. We can tease out which of those protocols have the drawback we don't care about in practice. If we look at a bunch of existing classical synchronous protocols, perhaps non-surprisingly, none of them belong the white model set. It's not like any honest classic honest majority protocol would satisfy this property. So what this means is that if you're a blockchain company that wants to deploy a synchronous model, and you don't have a security proof then you shouldn't be able to eat or sleep. If it belongs to the yellow set that's a little better but not good enough.
 

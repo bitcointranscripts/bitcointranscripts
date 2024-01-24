@@ -2,43 +2,40 @@
 title: Attacking Bitcoin Core
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['consensus']
+tags: ['bitcoin-core','p2p','eclipse-attacks']
 speakers: ['Amiti Uttarwar']
 date: 2020-04-16
 media: https://www.youtube.com/watch?v=8TaY730YlMg
 ---
-
-Location: BitDevs LA
-
-# Intro
+## Intro
 
 I’m going to talk to you today about attacking Bitcoin Core.
 
-# Bitcoin
+## Bitcoin
 
 To start with the fundamentals. As we all know Bitcoin is a money and it is different to our existing centralized solution of money because instead we have nodes that are running all around the world.
 
-# Consensus
+## Consensus
 
 Fundamentally what is required for this to work is the idea of consensus where all the nodes must agree on the same fundamental values. Who has how much money? This is the core innovation of the blockchain. What it comes down to is the concept of each node has the ability to validate blocks and transactions independently. But there is another element in that these nodes aren’t just totally independent. They are talking to each other and interacting. The messages they send and how they find one another. These are concerns of the peer-to-peer network which is what this talk is going to be focusing on.
 
-# Node on P2P network
+## Node on P2P network
 
 Concerns of a node on a peer-to-peer network include but are not limited to what nodes to connect to, identifying if there is a sufficient number of peers, identifying which transactions to relay, managing resources such as bandwidth, privacy around revealing transactions, trying to identify if the transaction is able to get mined, trying to know if I have the latest block and trying to figure out if any peers are malicious. This is a subset of the concerns but it can give you an idea of the kinds of questions we are focused on in P2P.
 
-# Network node
+## Network node
 
 Fundamentally we can distill the concerns around three main topics which are the three pieces of inventory that get gossiped across the network. Those are blocks, the blocks of the blockchain and the transactions that are within them. There are also transactions which are the unconfirmed transactions in the mempool and addresses which identify where a node is and allow them to connect to new peers.
 
-# P2P design goals
+## P2P design goals
 
 I have come up with a framework around the design goals of the network to help incorporate all of the different aspect of what we are trying to achieve. It is still a work in progress. I welcome any feedback. Hopefully you will find it helpful for navigating the conceptual space that I am talking about. The five goals are reliable, timely, accessible, private and upgradeable. So what do I mean? Reliable means that if the node submits a valid message to the network it will eventually be delivered to all other nodes on the network. This should be done in a timely fashion which is different according to what the message is or who the user is. What is a reasonable amount of time for a transaction is different than for a block. The reasonable amount of time for a block to be propagated for a normal user versus a miner is very different as well. Each of the messages have to make it out in a reasonable amount of time. That is great if you can have a network and your messages make it out in a reasonable amount of time but you also have to get onto the network. In Bitcoin we try to keep that as a very low requirement. It is possible to run a node on a Raspberry Pi so we try to make the network very accessible. Another aspect of accessibility is the idea that a node should be in control of whether or not it is participating on the network aka an adversary shouldn’t be able to keep it off the network to disconnect it or take it down. I think these three are important for any peer-to-peer network to be successful but in Bitcoin we have two additional values: privacy and upgradeability. Privacy is important because it is money and fundamentally it comes down to the idea of not wanting to connect your real world identity with your onchain interactions. We will discuss that in more depth later. There is also this idea of upgradeability which stems from the ethos that if a user decides to buy into the rule set at a specific point in time they should always be able to transact with that rule set. If a development cycle has moved forward and is on a different software version but they haven’t participated in that or maybe they didn’t agree with it, they should still be able to transact with the rule set they initially bought into. So the majority of this comes to consensus but there are aspects that we have to consider in the peer-to-peer network. We will talk a little bit more about that as well. Here are the five goals. In this talk I want to dig into a couple of them to see why it is hard to design a system that achieves this.
 
-# Reliable
+## Reliable
 
 Let’s start with the idea of reliability. Here I have a network of nodes and say this is your node. If you form a mempool transaction you want it to get to all of the nodes which is prudent because you don’t know where the miners are. One way that it might not make it to miners is if there was a split in the network and there were no miners on your side of the split. Then your transaction wouldn’t be able to make it into a block. Another configuration with a split could be that there is a miner on your side but there is actually more hash power on the other side. In this situation this would lead to a chain split and you would be on the losing side of the fork. In this case everyone loses because Bitcoin wouldn’t be functioning as intended.
 
-# Network partitions
+## Network partitions
 
 One idea that we strive for with reliability is trying to prevent network partitions. There are a lot of ways that that can occur, some of which are unintentional. An example of this is you could imagine it would be reasonable to say “As a node I am going to give a little boost to nodes that are able to serve me transactions and blocks quicker.” You start prioritizing peers that give you the information fast. But over time it can have a very unintended side effect of a partition because it prioritizes geographic location and what could happen is that the nodes that are in Australia and New Zealand start prioritizing one another and get disconnected from the nodes in the Americas. This is a different network than the nodes in Europe and Asia. So that is one example of how unintentionally a design decision can lead to a partition over time.
 
@@ -46,7 +43,7 @@ Q - What was the attack by omission? What was that?
 
 A - There are a couple of ways that you can omit information. One is that the victim can try to send a transaction to the network and since the adversary has entire control of what the network sees they can censor those transactions. Also they can identify that that was coming from the victim. Obviously there is no privacy there. The other way they could lie is broadcast fake transactions to the victim. By fake I mean potentially conflicting with what is going on in the mempool of the main network. They can also omit information like if another node broadcasted a transaction then the victim might not be able to find out about those mempool transactions or even when it is picked up into a block. In general this adversary has so much control of the message passing that the victim is in a really bad position. They just don’t know what attacks they’ve been subjected to.
 
-# Eclipse attack
+## Eclipse attack
 
 We don’t want that to happen. There are a lot of techniques that we can use to prevent it. One of them is to increase the number of connections. You can imagine the more connections we have, the more expensive for an adversary to take control of all of those connections. But we are bounded by the idea of accessibility because bandwidth is a limited resource. It is not just limited on the individual level. There is also an aspect of limitation at the network level. What do I mean by this? There is a difference between the idea of inbound versus outbound connections. All of the nodes will have outbound connections which is how they bootstrap but not all nodes accept incoming connections. So when we are looking at the network as a whole we need to ensure that the nodes providing incoming connections are sufficient to serve all of the nodes that want outbound. These are the number that are default in Bitcoin today. We have 8 outbound and up to 125 total. Another technique is to choose diverse peers which is a great technique but we come up against the fact that we have very limited amount of information about these peers. This is mostly at the network layer and there is logic that looks at the IP addresses and buckets and chooses different outbound connections from those different buckets. This helps for making it harder for an attacker, more expensive for them to spin up nodes that have the diversity. But it is bounded in how far it can go. Another technique as a node operator is to run multiple nodes on different network interfaces. This way a malicious entity would have to identify all of your nodes and eclipse all of them. Hopefully at least one of your nodes has access to the main chain. That’s great but this is how the user runs the software. This is out of scope for what we can design for in the peer-to-peer layer of Bitcoin Core. One more technique is to value long lasting connections. The theme of increasing the cost to the adversary, the idea here is that it would be much cheaper for an adversary to spin up a node and connect to you for a hour than it would be to be running that node for a week or a month. The idea here is if it is a longer lasting connection you can give it a little bit more weight because there is a higher chance that it is a honest peer. We are going to dig into this more because the goal it comes against is that of privacy.
 
@@ -66,7 +63,7 @@ Audience: That is one of the points of Lightning?
 
 Audience: Lightning definitely would make it a lot faster and cheaper and they wouldn’t be able to see where the Bitcoin came from.
 
-# Private
+## Private
 
 I think privacy is a very complex thing. The way we all think about it is very different. It is very interesting because a lot of it is application layer. If you have an application that is able to manage your UTXO set and make it invisible for you as a user then what happens onchain might actually provide another privacy where the heuristics for a spy are insufficient to identify what your actions are. But right now the way that applications are, the way that Bitcoin is, if you truly want your transactions to be private there are features that are available but you have to be extremely involved in managing your UTXO set. You can form a transaction offline and then send it to someone via US Mail or whatever and they can broadcast it from their node. That would be really hard to link but obviously that is a terrible user experience. It is interesting and I think that this is something that has so many different layers. The privacy guarantees of Lightning are different, the privacy guarantees of software are different and the network. When we are thinking about it in the P2P network the element that we are carefully considering is trying to not let a spy link your IP address to your Bitcoin addresses. One of the easiest ways that they can do this is by identifying who is the source that initially broadcasts this transaction because then there is a really high degree of confidence that whoever initially broadcast was participating in the transaction. Specifically probably the one spending funds. An element of information that really helps with this is knowing the network topology. As we’ve said there are a lot more layers.
 
@@ -74,11 +71,11 @@ Let me talk more about the network topology idea. If this is you and you have a 
 
 But now we are talking about protection against eclipse attacks. Long lasting connections can help for reliable delivery. So between these two ideas there is a little bit of an intrinsic tension. If we zoom out to a bird’s eye view it seems kind of intuitive. Reliability is saying you want everyone to know your message but privacy is saying you don’t want them to know who you told. Said in another way you want to tell everyone your message but you don’t want them to know that it is your message. This is a tension that is really hard to design and achieve both of them at the same time.
 
-# Privacy
+## Privacy
 
 Let’s look a little closer at privacy. When we are talking about leaking node topology each message offers a unique set of information that allows an adversary to identify who your neighbors are. If you remember the beginning of the presentation there are three main messages that are gossiped around the network. Addresses, transactions and blocks. Let’s take a look at how each one of these can be used to identify neighbors.
 
-# Privacy Attack Vectors
+## Privacy Attack Vectors
 
 First, addresses. This is the network graph. This is the victim and this is the adversary. What the adversary can do is spin up another node and IP address number one and send that only to the victim. The victim tells its neighbors and when those neighbors try to connect the adversary identifies those connections. A disclaimer. This is oversimplified. This is not actually how easy it is. We have a lot more nuance to it but fundamentally this is the idea. This can help you get some intuition into how it would work. Transactions can also be used to identify topology. I’m going to put this out to the group again. Does anyone know how this can be used? How would an adversary potentially use a transaction to figure out the network graph of nodes?
 
@@ -94,23 +91,23 @@ The concept we just talked about here was that addresses, transactions and block
 
 We can put all this together for a feature called block-relay-only connections. The idea here is that a full relay uses all three of these and sends that back and forth. Block-relay-only connections as you might imagine doesn’t send addresses, doesn’t send transactions, just sends blocks. This can increase privacy and reliability.
 
-# Block-relay-only
+## Block-relay-only
 
 The idea is that on a network you have full relay connections in blue and block-relay-only connections in purple. If there is a victim and an adversary was able to take control of all of full relay connections then hopefully it will still have the block-relay-only. From that they would be able to find out what the mainchain tip is which would really reduce the set of attacks that the adversary can execute. Because the victim knows at the very least what the mainchain of the blockchain is. There are also huge guarantees for the network as a whole. If a malicious entity was able to identify the topography of the network then they could see by taking these two nodes down, maybe via a DOS service or any attack that they can use, they can cause a partition in the entire network. But block-relay-only connections can be kind of invisible and potentially keep the network on the same chain. I think it is super cool because earlier we were talking about how privacy and reliability can be in tension with one another. But here we have a feature that increases privacy and thus increases reliability bringing the two concepts together.
 
-# Bitcoin Core P2P PRs
+## Bitcoin Core P2P PRs
 
 This is something that is fairly recent. It got [merged](https://github.com/bitcoin/bitcoin/pull/15759) in September of last year. As you might be able to see in some of this content we are really talking about the heart of why this is a feature that is getting merged and is currently making Bitcoin software more robust. Based on that hebasto opened an [issue](https://github.com/bitcoin/bitcoin/issues/17326) about how we can further increase security guarantees by introducing the idea of anchors.
 
-# Anchors
+## Anchors
 
 The anchor idea is that if you are running a node and you are connected to some peers you can persist some of them. If you shut down either intentionally or unintentionally when you start up you can try to reconnect to those same peers. This is you. You can choose to.. nodes and when you restart to try to reconnect to them. That is great for reliability but because of what we were talking about with network topology and long lasting connections it would not be very good for privacy if we were to reconnect to the full relay connections. So instead we can use the block-relay-only idea and reconnect to those. The idea here is that we increase the reliability and we are ok for privacy because we are not sending transactions to these connections. This is a [PR](https://github.com/bitcoin/bitcoin/pull/17428) that is currently open. If you are interested you can go to GitHub and see all the nitty gritty of what is being discussed to consider this improvement. Another step if you are interested in learning more is that I hosted a [Bitcoin Core PR review club](https://bitcoincore.reviews/17428.html)  a couple of weeks ago on this topic. There are a lot of notes. You can read the logs on what the conversation was about. That can also be a helpful ramp up. At this point from this presentation you do have the fundamentals that would allow you to engage in the concepts that were considered when trying to implement these solutions.
 
-# Let’s review
+## Let’s review
 
 So that’s the content. I have covered a lot so let’s review. I created a framework for five design goals of the peer-to-peer network. Reliable, timely, accessible, private and upgradeable. What we mean is that we want valid messages to make it out to the network in a reasonable amount of time and for nodes to be able to get onto the network and stay on the network of their own accord. These three values seem quite important for any peer-to-peer network to be successful but in Bitcoin we have two additional. Privacy because it is money and upgradeability because of the ethos of Bitcoin. We use that to dig into reliability versus privacy and take a look at why these two can seem at odds with one another. We talked about a threat to reliability that is network partitions. And a specific type of network partition that is an eclipse attack. A malicious entity trying to isolate a victim. We took a look at how privacy and network topology can be leaked from each of the three different kinds of messages gossiped around the network. And we put it all together to present the idea of block-relay-only connections that can help increase privacy and increase reliability. We took a look at a feature that is developing on that now which is the idea of anchors and persisting connections when you restart and try to reconnect. That is all I’ve got today. Does anyone have any questions?
 
-# Q&A
+## Q&A
 
 Q - How do full nodes currently find their peers? Is it always though DNS or do they have other methods?
 

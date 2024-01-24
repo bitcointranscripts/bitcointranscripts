@@ -1,20 +1,17 @@
 ---
-title: Bitcoin Core Wallet Development
+title: "Wallet Development in Bitcoin Core"
 transcript_by: Michael Folkson
 speakers: ['John Newbery']
-tags: ['consensus', 'wallet', 'bitcoin core']
+tags: ['wallet', 'bitcoin core']
 categories: ['residency']
 date: 2019-06-19
 media: https://www.youtube.com/watch?v=j0V8elTzYAA
 ---
-
-Wallet Development in Bitcoin Core
-
 Location: Chaincode Labs 2019 Residency
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/Wallet_Development.pdf>
 
-# Intro
+## Intro
 
 I am going to talk to you about wallets. As for the previous presentation I have all of the links in this document which I will share with you. First of all why should we care about wallets? Kind of boring right? You’ve had all this fun stuff about peer-to-peer and consensus. Wallets are just on the edge. Maybe you’re not even interested in Bitcoin Core. Maybe you want to work on Lightning. I’m going to talk about the Core wallet for a hour. I think you should care about wallets because its the way that humans interact with it. It doesn’t matter about all this consensus stuff and the nodes doing peer-to-peer stuff if we don’t have a way of using the network. Wallets are the way that we interact. Even if you’re not interested in developing wallets the way we think about wallets informs the decisions we make about the peer-to-peer network. For example who is familiar with the Taproot assumption? What is the Taproot assumption?
 
@@ -26,23 +23,23 @@ Audience member: It doesn’t the sign the input so you can reassign transaction
 
 We can integrate that into Bitcoin Core. We have a high level design. But a lot of the discussion is around how we can make that safe. How we can make sure people don’t shoot themselves in the foot? That’s a consideration around wallets and how people interact with the network. What I’m trying to say is even if you don’t care about wallets, even if you don’t care about Bitcoin Core you should care about wallet design and design considerations.
 
-# Fair notice
+## Fair notice
 
 Fair notice, unapologetically I am going to talk about the Bitcoin Core wallet because I don’t know any other wallets. Sorry if you don’t care about Bitcoin Core. This presentation may contain traces of C++. Sorry if you don’t know C++ but I will try to make it understandable.
 
-# What are a wallet’s functions?
+## What are a wallet’s functions?
 
 What is a wallet? What are the functions of a wallet? I didn’t get as many as you. I have key management, transaction construction and persistence. What do I mean by those things?
 
-# Key management
+## Key management
 
 Key management identifies your own transactions. If you have a wallet you want to know when you get paid or when you pay someone. You need to generate new addresses either for handing out to people for payments or generating new keys for change outputs. And you need to determine how to sign transactions.
 
-# Transaction construction
+## Transaction construction
 
 Under transaction construction I had you need to be able parse addresses and turn them into txOuts. You need to select coins from your wallet. UTXOs that you own you need to choose which ones to use as inputs to your transaction. You need to sign them and then you need to broadcast them. Advanced features like CPFP, RBF, batching, mixing, coinjoin, payjoin, whatever advanced features you might want to use.
 
-# Persistence
+## Persistence
 
 Then persistence. You need to have some kind of permanent storage to store your keys. But also to store your coins so you don’t need to rescan the blockchain every time you start your wallet. Store your transaction history because you might be interested in payments that have come in and coins that you’ve spent. And metadata. Things like labels, how far you’ve scanned through the blockchain and so on. From a high level that is what I’m going to talk about today. There’s also a number of other things the wallet is doing but this is really the core of what a wallet needs to do.
 
@@ -58,11 +55,11 @@ Q - But it’s a separate process?
 
 A - It is the same process. It is a different component. There is a well defined interface between Qt which is the GUI, and the node. When you run Qt it is running everything the same except you also have the user interface.
 
-# Agenda
+## Agenda
 
 Before we dive in I am going to do a quick glossary of terms and objects in the wallet you will need to know about. I am going to talk about initialization of the wallet and the interfaces into the wallet. When looking at a new codebase these are probably the best places to start. To see how it starts up and see how you can interact with it from outside. I am going to talk about code management. Where this code lives, where the files are. Key management, transaction construction, persistence and then future directions for the wallet.
 
-# Glossary
+## Glossary
 
 What is a pubkey in Bitcoin?
 
@@ -96,7 +93,7 @@ Q - P2PK is completely removed?
 
 A - I’m not sure.
 
-# Initialization and interfaces
+## Initialization and interfaces
 
 Let’s talk about initialization and interfaces. It is really exciting. The wallet component is initialized through the WalletInitInterface. That lives in src/walletinitinterface.h. It is just a interface class called `WalletInitInterface` with four methods and a deconstructor. `HasWalletSupport()` `AddWalletOptions()` `ParameterInteraction()` and `Construct()`. This init interface is for starting up the wallet component. For builds with wallet the interface is overridden in src/wallet/init.cpp. It is called `WalletInit`. It inherits from `WalletInitInterface` and it implements those virtual interfaces. For `--disable-wallet` builds this WalletInitInterface is defined in src/dummywallet.cpp. You have this `DummyWalletInit`. It inherits from the `WalletInitInterface` and all of these methods are basically just null. They return true or don’t do anything at all. Those interface methods are called during node initialization. In src/wallet/init.cpp you get this global `g_wallet_init_interface`. It calls `Construct` or parameter interaction or whatever. The reason why we have this dummy class is it means that we don’t have a bunch of if defs all over the initiation function. This is the same call whether it is a build without the wallet or a build with the wallet. It is just without the wallet this would be a dummy interface and with the wallet it will actually construct the wallet component.
 
@@ -130,11 +127,11 @@ A - This `WalletInitInterface` is defined in the node. Then the wallet code inhe
 
 Q - There is probably some interface between the RPC calls and the wallet that would also be dummied out because it is rebuilding without the wallet. But that’s not part of the `WalletInitInterface`. That’s a separate interface. We’ll get onto that.
 
-# Loading
+## Loading
 
 We’ve constructed the wallet component. Now we are going to load the actual wallets. `WalletInit::Construct()` adds this client interface for the wallet and the node then tells the wallet to load/start/stop through the `ChainClient` interface. This src/interfaces/ directory contains all of those interface definitions between the node and the wallet and between the GUI and the node. `ChainClient`and that is telling it to do various things like `load` `start` `flush` `stop`. This is loading individual wallets. Most of the methods in that interface call through to functions in src/wallet/load.cpp. As you can probably imagine this file contains all of the loading code. Verifying the wallets, making sure that the wallet files are not corrupt, loading the wallets, starting the wallets, flushing them, stopping them, unloading them.
 
-# Node <-> Wallet Interface
+## Node <-> Wallet Interface
 
 The node holds a `WalletImpl` interface to call functions on the wallet. The wallet holds a `ChainImpl` interface to call functions on the node. Again those are defined in src/interfaces/. This `WalletImpl` has methods like `lock()` `unlock()` `changeWalletPassphrase()` `backupWallet()`, `getPubKey()`. This is used by the GUI. The GUI connects to the node and calls wallet functions through this interface. Then if the wallet needs to call functions on the node it uses this interface `Chain`. That has things like `findBlock` `findCoins` `hasDescendantsInMempool` `checkChainLimits` `isReadyToBroadcast`. Anything the wallet needs to know is called through this interface class.
 
@@ -232,7 +229,7 @@ Q - If I’m a miner and there is a new blockchain tip I want to make sure that 
 
 A - You’re probably not going to be running multiple wallets on that same node. It seems like an over optimization to try to make that multithreaded.
 
-# Why?!
+## Why?!
 
 At this point you might be thinking why? Why all this weird indirection?
 
@@ -246,7 +243,7 @@ Q - Before that it was…
 
 A - It was just functional calls. The node was making functional calls into the wallet. The wallet was making functional calls into the node.
 
-# Code Management
+## Code Management
 
 I am going to run through code management. Let’s have a look at the wallet directory.
 
@@ -254,7 +251,7 @@ I am going to run through code management. Let’s have a look at the wallet dir
 
 In src/wallet there are a few files. A test directory for unit tests. There is not much in there. It is not huge.
 
-# Code layout
+## Code layout
 
 We have coinselection.cpp and coinselection.h which is the branch and bound coin selection algorithm. We have crypter.cpp and crypter.h which is the code for encrypting the wallet’s private keys. walletdb.cpp and db.cpp and the header files, that’s interfacing into the wallet’s BerkeleyDB for persistent storage. init.cpp for initializing the wallet module. And load.cpp for loading up individual wallets. rpcwallet.cpp and rpcdump.cpp for the wallet’s RPC methods. wallettool.cpp is a standalone wallet util. And wallet.cpp is everything else. And then some tests. If we look at the line counts. coincontrol.cpp is pretty small. coinselection.cpp is 300 lines of code, crypter.cpp is 300 lines of code. db.cpp and walletdb.cpp together are maybe 1500 - 3000 lines. feebumper.cpp is for bumping fees, that is another 300 lines. feebumper, crypter, coinselection, coincontrol, these are all pretty small self contained functions. In fact coincontrol is just an object. fees, init, load, all pretty small. psbtwallet.cpp is pretty small, that is for the partially signed Bitcoin transaction format. RPC code is pretty big. That is maybe 6000 lines of code. That is the main interface to the wallet from the command line. wallet.cpp is 4500 lines, that is where the bulk of the logic is. wallettool.cpp, a standalone tool, is like 150 lines, nothing there. Then walletutil.cpp is just utility functions.
 

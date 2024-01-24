@@ -2,14 +2,11 @@
 title: Merkleized Abstract Syntax Trees
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['consensus', 'ux']
+tags: ['mast']
 date: 2017-09-07
 aliases: ['/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/']
 ---
-
-﻿<https://twitter.com/kanzure/status/907075529534328832>
-
-# Merkleized abstract syntax trees (MAST)
+<https://twitter.com/kanzure/status/907075529534328832>
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014932.html>
 

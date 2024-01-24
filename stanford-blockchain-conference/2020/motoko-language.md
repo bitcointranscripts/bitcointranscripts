@@ -1,14 +1,11 @@
 ---
-title: Motoko Language
+title: "Motoko, the language for the Internet Computer"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'research']
+tags: ['research','altcoins']
 speakers: ['Joachim Breitner']
 ---
-
-Motoko, the language for the Internet Computer
-
-# Introduction
+## Introduction
 
 Thanks, Byron. Glad to be here. My name is Dominic Williams. I am founder of the internet computer project at Dfinity Foundation. Last year we talked about consensus protocols. Today we are talking about tools for building on top of the internet computer which is great news and shows the progress we have made. I'm going to give some introductory context, and then our senior researcher from our languages division will talk about Motoko. Is it working? Alright.
 
@@ -18,25 +15,25 @@ It's incredibly complex to build systems. This results in high costs and entrepr
 
 We want to extend the internet so that it becomes the stack. We do this through a product called ICP which combines compute capacity from independent data centers. This adds new capabilities to the internet so that it can act like a giant computer. The idea is that people just write secure internet-native software on to the internet, and the internet now hosts and runs enterprise IT, websites and services. Our proposal is to try to leave the legacy stack behind and build on the internet instead.
 
-# What to do with an internet computer
+## What to do with an internet computer
 
 The answer is to build and deploy software canisters which are the compute unit of the internet computer. You deploy these things into a seamless universal software which is secure and scalable. This is tamperproof, unstoppable, it provides for language interoperability, so this means that if I upload some software to the internet computer and I upload some software, written in two different languages... if you share some functions with me and give me permissions to call your functions, then my software can call directly into them ((as if DCOM never happened)). It persists memory pages. We think this is an important advance for a number of reasons. You just write code. Data lives in your code. It's a fundamentaly different way of persisting data. It supports autonomous software, and it's fast and scalable. We want you to use our internet computer to build the next generation of websites, enterprise services, platforms, smart contracts, and it's worth saying that canisters runs on all the security guarantees of the smart contracts so you can use canisters as smart contracts if you want.
 
 I mentioned open internet services. A month ago, we demonstrated the bronze release of the internet computer network which is currently in incubation at Swiss data centers and we did this using an open internet service called Linkedup which is like Linkedin the professional business profile network. The computer dynamically created user experiences directly into browsers in just a few milliseconds. This is one of the pretty cool things about internet computers. It's fast. In many cases, it will be faster than today's architecture where you have hyper-scale data centers and CDNs. The internet computer is a native edge architecture and it dynamically creates content for you on the edge of the network.
 
-# Blockchain
+## Blockchain
 
 The internet computer is a blockchain computer. Canisters are roughly analogous to smart contracts. With that, I will hand you over to Joachim to talk about Motoko which is a language specialized to develop canisters.
 
-# Motoko
+## Motoko
 
 Thank you for that intro. The technical aspect is that we want language and durability. These canisters that he talked about are webassembly programs. This is a target for many languages out there like rust and C. Why do I have to learn about a new language if I want to use the internet computer? The answer is that you don't have to, but you might still want to because by designing a language tailored to the internet computer platform then you reep certain benefits.
 
-# Motoko design goals
+## Motoko design goals
 
 The design goals are easy adoption, it should be easy to use and avoid foot-guns, and it should be seamless and it should integrate seamlessly into the platform. For the rest of the presentation, I am going to show you real code and run it and try to explain to you what I mean by familiar, safe and seamless.
 
-# Demo
+## Demo
 
 This is the first piece of code I am going to show you. I don't think I have to explain to you what this code does, precisely because this language is familiar. Based on my background you might expect pure functional programming, but no we opted for something more familiar. This gets compiled into web assembly by running:
 

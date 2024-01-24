@@ -2,12 +2,11 @@
 title: Microchains
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'proof-of-work', 'scalability', 'security']
+tags: ['sidechains']
 speakers: ['David Vorick']
+date: 2017-11-05
+media: https://www.youtube.com/watch?v=3pd6xHjLbhs&t=8351s
 ---
-
-Microchains
-
 <https://twitter.com/kanzure/status/927257690685939712>
 
 I would like to see a blockchain ecosystem with 1000s of transactions/second at layer 1 with full security. And so, we have to look at blockchain differently if we are going to achieve this.

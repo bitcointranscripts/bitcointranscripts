@@ -1,15 +1,10 @@
 ---
-title: Streamlet
+title: "Streamlet: Textbook Streamlined Blockchain Protocols"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus']
+tags: ['research']
 speakers: ['Benjamin Chan']
 ---
-
-Streamlet: Textbook Streamlined Blockchain Protocols
-
-# Introduction
-
 ((.... stream went offline in the other room, had to catch up.))
 
 Show you new consensus protocol called streamlet.

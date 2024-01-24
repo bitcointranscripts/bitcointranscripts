@@ -2,18 +2,17 @@
 title: Abstract Thinking About Consensus Systems
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus']
+tags: ['consensus-enforcement']
 speakers: ['Luke Dashjr']
 media: https://www.youtube.com/watch?v=INku7GsxhXY
 date: 2018-10-05
 aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/abstract-thinking-about-consensus-systems]
 ---
-
 <https://twitter.com/kanzure/status/1048039485550690304>
 
 slides: <https://drive.google.com/file/d/1LiGzgFXMI2zq8o9skErLcO3ET2YeQbyx/view?usp=sharing>
 
-# Serialization
+## Serialization
 
 Blocks are usually thought of as a serialized data stream. But really these are only true on the network serialization or over the network. A different implementation of bitcoin could in theory use a different format. The format is only used on the network and the disk, not the consensus protocol. The format could actually be completely different.
 
@@ -23,7 +22,7 @@ There's some information required to compute the blockhash. There's a block vers
 
 Format-independence extends to transactions as well. They are a format of sequenced bytes indicating a transfer, but really this could be formatted in any way, as long as the commitment is correctly calculated. Suppose there was a new memo field, but you wanted to make it part of the consensus rules. In segwit, the signature was moved to a new witness field. The old field must be treated as empty for validation. By requiring it to be empty, it was effectively deleted. In segwit, the commitment algorithm was modified with the new witness field and some other changes. With a soft-fork, we can add a consensus rule that the transaction is only valid if the witness field validates correctly. Also, the commitment algorithm is modified where it commits to the generation transaction's output.
 
-# Objects vs serialisation thereof
+## Objects vs serialisation thereof
 
 Often when developers think of blocks, they think of a header followed by a bunch of data representing transactions.
 Usually that works fine, but it's not quite accurate, and can occasionally result in some subtle, unconscious assumptions that might make things more difficult than they need to be.
@@ -36,7 +35,7 @@ That hash commits to various abstract information.
 No matter how the block is stored or transmitted over the network, to verify the block, one must compute the correct hash.
 Therefore, the block itself is comprised of the information required for computing the correct hash, independently of what format that information is stored in.
 
-# Commitment algorithm
+## Commitment algorithm
 
 What information is needed to compute the block hash?
 First, we have the block version (which is actually a can of worms, but let's not get into that now).
@@ -45,7 +44,7 @@ These simple fields are called the block header, and are committed to simply by 
 But the block hash also commits to more information using two more complicated algorithms, call a block chain and a merkle tree, which provide extra functionality not relevant to this topic.
 Despite the additional complexity and mid-calculation hashes, at the end of the day, these are both still just committing to information.
 
-# Abstract transactions, and extending them
+## Abstract transactions, and extending them
 
 This extends to the transactions as well.
 One is tempted to just see a transaction as a sequence of formatted bytes indicating a transfer, but in reality, the transaction can be represented any way an implementer likes, so long as the commitment is correctly calculated when it is mined into a block.
@@ -61,7 +60,7 @@ Since the block does not commit to this memo field, however, it does not need to
 That makes sense, since other nodes really don't care about the memo.
 But if your counterparty does, you can send it to them using any common network protocol.
 
-# Adding consensus-critical fields to transactions
+## Adding consensus-critical fields to transactions
 
 However, what if you want to use this field in new rules?
 For example, let's look at Segwit.
@@ -75,7 +74,7 @@ None of the block, the transaction id, nor the signature commit to this new fiel
 But with a softfork, we can add a consensus rule that a block is only valid if the "witness" fields all verify correctly.
 Now, nodes must receive and validate the "witness" field even without any commitment to it.
 
-# Extending the block commitment
+## Extending the block commitment
 
 Unfortunately, without a commitment to the new information, an attacker can use a valid block hash to trigger the more CPU-time consuming signature validations for a block that is invalid because the final witness fails due to corruption.
 So, to avoid denial of service attacks, we need to have the block hash commit to any field used for validation.
@@ -90,7 +89,7 @@ Now, old nodes can be told of this fake "output" so they still calculate the cor
 
 As a result, we have cleanly replaced the "signature" field with a new "witness" field, without breaking backward compatibility, or even with any ugly hacks.
 
-# Block size vs weight
+## Block size vs weight
 
 Now, going back to the distinction between the abstract information and serialisation thereof...
 Years ago, the infamous block size limit was introduced.
