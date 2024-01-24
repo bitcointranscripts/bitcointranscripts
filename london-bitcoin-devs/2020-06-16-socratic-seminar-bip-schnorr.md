@@ -1,23 +1,19 @@
 ---
-title: Socratic Seminar - BIP Schnorr
+title: "Socratic Seminar - BBIP Schnorr (BIP 340)"
 transcript_by: Michael Folkson
 categories: ['meetup']
 date: 2020-06-16
-tags: ['schnorr']
+tags: ['schnorr-signatures']
+speakers: ['Pieter Wuille','Adam Gibson','Elichai Turkel','Tim Ruffing']
 media: https://www.youtube.com/watch?v=uE3lLsf38O4
 ---
-
-BIP Schnorr (BIP 340)
-
-Location: London BitDevs (online)
-
 Pastebin of the resources discussed: https://pastebin.com/uyktht33
 
 August 2020 update: Since this Socratic on BIP Schnorr there has been a proposed [change](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html) to the BIP revisting the squaredness tiebreaker for the R point.
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# Introductions
+## Introductions
 
 Michael Folkson (MF): This is London BitDevs, a Socratic Seminar. We are livestreaming on YouTube currently for those on the call. The plan is also to do a transcript of this conversation. The point is not to try to find gotchas with anything anybody says, this is an educational exercise. So don’t let that put you off. We can edit the video afterwards, we can edit the transcript afterwards. This is purely for education, this isn’t an authoritative resource on cryptography or any of the topics we will be discussing today. We have currently got a call on Jitsi going. Jitsi is free, open source and doesn’t collect your data. When it works it is great. It seems to be working so far. This is a Socratic Seminar in preparation for tomorrow when Tim Ruffing will be presenting. There will be a call tomorrow and there will be another livestream tomorrow with Tim Ruffing’s presentation. There will be a Q&A afterwards. Socratic Seminars, for those who haven’t been to one, they originated in New York. There is the site [bitdevs.org](https://bitdevs.org/) to help you do Socratic Seminars if you haven’t been to one before. The reading list or the agenda, there is a [Pastebin](https://pastebin.com/uyktht33) up. It is very much focused on BIP Schnorr. It is hard to get a clear dividing line between BIP Schnorr, BIP Taproot, BIP Tapscript. They do interact and they do inform the design and the code of each other. We will stray sometimes into Taproot but the focus is on cryptography and Schnorr in preparation for Tim’s presentation tomorrow. Maybe we will do a Socratic Seminar in a few weeks on Taproot. That could be good. We will start as we always do with intros. You don’t have to do an intro but if you want to there is a hand signal in the bottom left of the screen if you are on the call. If you click that I’ll be able to see that you have raised your hand and I will go to you. Your intro will be who you are, what you are working on, how much you know about Schnorr or what you would like to learn in this Socratic on Schnorr today. I do need volunteers. Does anyone want to click that hand button to get us going?
 
@@ -39,7 +35,7 @@ Volker Herminghaus (VH): I am Volker. I am here for total immersive learning abo
 
 MF: That is totally fine.
 
-# Properties of a Digital Signature Scheme
+## Properties of a Digital Signature Scheme
 
 MF: As in previous Socratics we will start from basics or from first principles. There are some pretty hardcore experts on the call today. Hopefully they will be patient for the first 10-15 minutes as we start from first principles. I do want people to get in the mindset of thinking what properties a digital signature scheme requires. Adam Gibson who is on the call did a very good [presentation](https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2018-06-12-adam-gibson-unfairly-linear-signatures/) at London Bitcoin Devs, this is on the reading list, on the things a signature scheme requires. Some basic questions. Why is a signature scheme where the message is just multiplied by 5 insecure? Why is a hash function insecure? Why do we need a more complicated scheme and what do we need from our signature scheme in terms of security? If I want to send you a message that is “5” why is a digital signature scheme that multiples that “5” by 7 not a sufficient signature scheme?
 
@@ -101,7 +97,7 @@ MF: We’ll move on. The conclusion to that is this is very complicated and ther
 
 (For more information on signature scheme security properties see this [talk](https://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2019/signature-scheme-security-properties/) from Andrew Poelstra at MIT Bitcoin Expo 2019)
 
-# Satoshi’s digital signature choices
+## Satoshi’s digital signature choices
 
 MF: Let’s move onto Bitcoin history. In 2009 Satoshi made some choices. Satoshi used ECDSA for the digital signature algorithm. He or she used secp256k1 for the elliptic curve. And he or she used the OpenSSL library for doing the digital signing and the cryptographic operations within Bitcoin. Any thoughts on those choices? Why he chose them, were they good choices?
 
@@ -121,7 +117,7 @@ TR: The choices at this time, if you don’t want to invent your own stuff, the 
 
 PW: In retrospect OpenSSL was a bad choice. We have had lots of problems. I do say in retrospect. I certainly don’t fault anyone for making that choice at the time. Since Tim brings up RSA there is a theory. The maximum size of pushes in Bitcoin script is 520 bytes. It has been pointed out that that is exactly the maximum size of a 4096 bit RSA signature in standard serialization. Maybe that was a consideration.
 
-# ECDSA and Schnorr
+## ECDSA and Schnorr
 
 https://diyhpl.us/wiki/transcripts/chaincode-labs/2019-08-16-elichai-turkel-schnorr-signatures/
 
@@ -145,7 +141,7 @@ PW: It is linked in the [BIP](https://github.com/bitcoin/bips/blob/master/bip-03
 
 ET: There is some proof but as Pieter said the proof is assuming something that wasn’t properly analyzed like discrete log. The reason behind it is probably a combination of the patent on Schnorr and some weird politics in NIST. There are some conspiracies around it but we will ignore those. We do believe that ECDSA is working and isn’t broken. There is no reason to believe otherwise. It is still nicer that Schnorr doesn’t do this weird thing. On top of the actual proof, because Schnorr doesn’t do point operation in the signing it is linear, meaning that you can add signatures, you can tweak signatures and you still get something that is valid in the framework of the signing.
 
-# Benefits of Schnorr for Bitcoin
+## Benefits of Schnorr for Bitcoin
 
 MF: Why do we want Schnorr? What does Schnorr bring us in the Bitcoin ecosystem?
 
@@ -191,7 +187,7 @@ NK: Essentially building anything on top of ECDSA that you can build on top of S
 
 TR: Or other things like encryption. With Schnorr signatures we have very easy constructions for multisignatures. If you have n parties who want to sign… There was work involved and people got it wrong a few times but we have it now and it is simple. For ECDSA even if you go for only two party signatures, 2-of-2, you can build this but it is pretty ugly. You need a lot of stuff just to make that work. For example you need to introduce a completely different new encryption scheme just to make the 2-of-2 signatures work.
 
-# Design considerations for the Schnorr implementation
+## Design considerations for the Schnorr implementation
 
 MF: Hopefully that was a convincing section on why we want Schnorr. I am going to ask some crazy questions just for the sake of education and discussion. What would Taproot look like without Schnorr? You wouldn’t be able to have the default spend be a multisig but you could still have Taproot with ECDSA and the default case just be a single sig spend. Is that correct?
 
@@ -229,7 +225,7 @@ ET: I think I remember you tweeting about it a while ago, the fact that you see 
 
 MF: So Taproot and perhaps changing priorities on what Schnorr use cases were possible. Cross input aggregation isn’t in BIP Schnorr or in a potential soft fork in the coming months or years. There is a lot of work that I understand to get to a point where that could be introduced to Bitcoin.
 
-# Dangers of implementing Schnorr too early
+## Dangers of implementing Schnorr too early
 
 MF: What could go wrong? Let’s say that there had been a Schnorr soft fork two, three years ago with the current thinking. Pre-Taproot, an OP_SCHNORR opcode was introduced. Perhaps Schnorr was introduced before some of the security concerns of multisignature schemes were discovered. What could’ve gone wrong if we had implemented Schnorr two, three years ago?
 
@@ -265,7 +261,7 @@ NK: They are the same right?
 
 MF: Yes. Greg has answered those in the YouTube chat. “The BIP 340 proposal uses exactly the same group as Bitcoin’s ECDSA (specifically to avoid adding new trust vectors but also because the obvious alternatives aren’t big improvements)”
 
-# Dangers of implementing Schnorr today
+## Dangers of implementing Schnorr today
 
 MF: This was the [roadmap](https://bitcoincore.org/en/2017/03/23/schnorr-signature-aggregation/) in 2017 in terms of Schnorr signature aggregation. Let’s have a discussion what could go wrong now. We have this Schnorr proposal. We have the BIP drafted, the code is pretty much ready, there still seems to be some minor changes. What could go wrong if BIP Schnorr and BIP Taproot were merged in say tomorrow. What would we be having nightmares over?
 
@@ -319,7 +315,7 @@ MF: You only need one person to use it and then everyone has to care about it. I
 
 ET: If there is a bug in the altstack for example it wouldn’t be the end of the world in my opinion because as far as I know almost no one uses it. You could just warn everyone against using it and use policy to deny it but I don’t think it would break Bitcoin.
 
-# Hash function requirements for Schnorr signatures
+## Hash function requirements for Schnorr signatures
 
 http://www.neven.org/papers/schnorr.pdf
 
@@ -369,7 +365,7 @@ ET: I have another use case that I think is important for batch verification whi
 
 PW: Yes that is a good point. It definitely matters to those.
 
-# Reducing Bitcoin transaction sizes with x only pubkeys
+## Reducing Bitcoin transaction sizes with x only pubkeys
 
 https://medium.com/blockstream/reducing-bitcoin-transaction-sizes-with-x-only-pubkeys-f86476af05d7
 
@@ -399,7 +395,7 @@ TR: Right. What people usually do is switch to better schemes if they fear that 
 
 AG: So what I am learning from this conversation is that directory.io is only going to be half as big as a website now is that right? Does nobody get the joke? directory.io was a website where you pull it up and it would show you the private keys of every address one by one.
 
-# BIP Schnorr (BIP 340)
+## BIP Schnorr (BIP 340)
 
 https://github.com/bitcoin/bips/blob/master/bip-0340.mediawiki
 
@@ -439,7 +435,7 @@ ET: With that you again can’t use synthetic nonces and you use 100 percent det
 
 TR: Exactly then you can’t use synthetic nonces. You need 100 percent deterministic nonces, indeed.
 
-# Bitcoin Core PR 17977 implementing BIP Schnorr
+## Bitcoin Core PR 17977 implementing BIP Schnorr
 
 https://github.com/bitcoin/bitcoin/pull/17977
 
@@ -463,7 +459,7 @@ PW: I don’t remember.
 
 TR: [Batch verification](https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/) is a very large thing because you want to have it be very efficient. Then you want to use multi-exponentiation algorithms which so far we haven’t used in libsecp. This would touch a lot of new code. The code is already there but at the moment it is not used. If we introduce batch verification then suddenly all this code would be used. We thought it was a better idea to start with a simple thing and not add batch verification.
 
-# libsecp256k1 library
+## libsecp256k1 library
 
 https://github.com/bitcoin-core/secp256k1
 
@@ -479,7 +475,7 @@ MF: You talked about this on the Chaincode Labs [podcast](https://diyhpl.us/wiki
 
 PW: It is reducing attack surface by being something that does one thing.
 
-# libsecp256kfun
+## libsecp256kfun
 
 https://github.com/LLFourn/secp256kfun
 
@@ -495,7 +491,7 @@ MF: Thanks for clarifying Elichai. Lloyd has said it is not for production. It i
 
 ET: I wanted to note this as a lot of people have looked at it.
 
-# Different Schnorr multisig and threshold schemes
+## Different Schnorr multisig and threshold schemes
 
 MF: Tim, you did say you might talk about this tomorrow. The different multisig schemes. [MuSig](https://eprint.iacr.org/2018/068.pdf), [Bellare-Neven](https://cseweb.ucsd.edu/~mihir/papers/multisignatures-ccs.pdf), [MSDL pop scheme](https://eprint.iacr.org/2018/483.pdf) (Boneh et al) and then there are the threshold schemes. Who can give a high level comparison between the multisig schemes and then there is the threshold schemes?
 
@@ -521,7 +517,7 @@ MF: So tomorrow Tim you are happy to talk about Schnorr multisig schemes because
 
 TR: That was the plan. I don’t have slides yet so I can do this.
 
-# Tim Ruffing’s thesis (Cryptography for Bitcoin and Friends)
+## Tim Ruffing’s thesis (Cryptography for Bitcoin and Friends)
 
 https://publikationen.sulb.uni-saarland.de/bitstream/20.500.11880/29102/1/ruffing2019.pdf
 

@@ -2,7 +2,7 @@
 title: Schnorr and Taproot workshop
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['taproot', 'schnorr']
+tags: ['taproot', 'schnorr-signatures','tapscript','musig']
 date: 2019-09-27
 media: https://bitcoinops.org/en/schnorr-taproot-workshop/
 aliases: ['/misc/2019-09-27-schnorr-taproot-workshop/']
@@ -18,7 +18,7 @@ Location: Chaincode Labs, NYC
 
 Run: `jupyter notebook`
 
-# See also
+## See also
 
 Schnorr signatures and taproot: <https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/>
 
@@ -28,7 +28,7 @@ Schnorr signatures and taproot: <https://diyhpl.us/wiki/transcripts/sf-bitcoin-m
 
 <https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki>
 
-# Why Schnorr and why taproot?
+## Why Schnorr and why taproot?
 
 Who here already feels comfortbale with Schnorr/Taproot? This is a proposed consensus change to bitcoin. When we talk about consensus changes, we often talk about tradeoffs and compromises. It would be irresponsible to say taproot has no downsides, but I think it's important to mention it's a clear win for bitcoin.
 
@@ -40,35 +40,35 @@ Another aspect of schnorr/taproot is that there are spending paths that are hidd
 
 Another reason is functionality, like having very large multisig like 1-of-2 or 4-of-7 or 50-of-100 and they all look the same on chain. You can have much larger scripts with different spending paths, so you can have complex spending conditions. You can have adaptor signatures, atomic swaps, blind signatures, discreet log contracts, we're just getting to explore the functionality available here.
 
-# Schnorr signatures
+## Schnorr signatures
 
 I am going to talk briefly about Schnorr signatures. They are better than ECDSA. Becaus eof the encoding used in bip-schnorr, they are 11% smaller than existing signatures. They are compatible with existing private keys; you can just use Schnorr with your current private keys. They have the same security assumption, but with a formal proof which is not available for ECDSA. Also, the verification algorithm is linear and I'll show later why that is great and allows a lot of new functionality.
 
 Schnorr uses the same elliptic curve, field and group, so your private keys can be used both with ECDSA and Schnorr without any change to the private key.
 
-# Schnorr enables key and signature aggregation
+## Schnorr enables key and signature aggregation
 
 In traditional bitcoin script, for multisig, you would place 3 public keys and 3 signatures on chain for a 3-of-3 multisig. But in Schnorr, you can use Musig to aggregate the keys and you get an aggregated key.
 
-# Script trees
+## Script trees
 
 In taproot, we can have multiple spending conditions. We can have a primary spending script and an alternative spending script. We can place these scripts into a merkle tree. When we spend one of them, like if we're revealing a spending script, we can reveal only one branch of the merkle tree of scripts and we don't need to reveal anything about the alternative scripts.
 
-# Tweaking the public key
+## Tweaking the public key
 
 We have a public key, and we tweak that with a commitment to the script. So this taproot output can either be spent with the original public key which could be a single key or an aggregated key, or it could be spent with either of these scripts in the merkle tree here.
 
 As an example, imagine you have an exchange and you have a third-party that co-signs all your withdrawals. One way to do this would be to sign a 2-of-2 which would appear as a single signature with your third-party, and you put the other 2-of-3 into a tree. The majority of the time you spend with 2-of-2, and only if you need to use your cold storage do you use one of these other script paths. We'll go into this later as well.
 
-# Why Bitcoin Optech?
+## Why Bitcoin Optech?
 
 Why are we doing this? Why is Bitcoin Optech involved? We started Optech 18 months ago because we wanted to help bitcoin companies adopt scaling technologies. At the time that was batching and fee estimation, but we're also looking at what's coming along like Schnorr, Taproot, eltoo maybe. We're also helping to get Schnorr and Taproot reviewed and later implemented by services. So we want to help drive adoption of scaling tech to bitcoin.
 
-# Why this workshop?
+## Why this workshop?
 
 Schnorr/taproot is still a few months or a year out. We still want to share the current thinking around Schnorr and taproot. Pieter and Andrew have been working very hard on this proposal. They want to share with people in the industry what the current thinking is, around taproot. We want to give you guys a chance to play with the technology, write code, and see what you can do with the technology. We also want you involved in the feedback process. Right now the proposal is going through community feedback right now, and we want you guys to be able to take part of that feedback process since you guys are the ones who will be implementing it out when this gets rolled out.
 
-# A few warnings
+## A few warnings
 
 Schonrr/taproot is a proposal. It will change. In fact, it has changed. In our notebooks, we were using 33 byte public keys. But in the proposal, they have now switched to 32 byte public keys.
 
@@ -78,7 +78,7 @@ Also, all of the code you see today is only for educational purposes, please don
 
 bitcoind v0.19 makes spend-to-taproot standard. So you can spend to these addresses. The wallet has always let you spend to v1, but they were not accepted to the mempool. So from v0.19 they will be accepted, and by default miners will include it, if it's accepted to the miner's mempool.
 
-# Elliptic curve math
+## Elliptic curve math
 
 We'll go over this quickly to refresh everyone.
 
@@ -96,7 +96,7 @@ ECKey.generate will generate a valid scalar, so that you don't have to run randr
 
 To get the negation, take the order minus the scalar. But if it's part of a bigger operation, then the modulo operator will take care of that in python. In C or rust, modulo operator doesn't work as expected on negative numbers. In python, it works as expected. In C and other compiled languages, it doesn't work like that. The negate method negates it in place, that might be confusing.
 
-# Schnorr signatures
+## Schnorr signatures
 
 Schnorr is where things get interesting.
 
@@ -184,7 +184,7 @@ Section 1.1.4, this is something interesting and important. Until now, we create
 
 There's a typo in 1.1.4 where it says pubkey in the comment, this should be the private key. If you do use the public key, then the assertion won't pass. See <https://github.com/bitcoinops/taproot-workshop/pull/104>
 
-# Musig
+## Musig
 
 Now we'll switch to talking about Musig.
 
@@ -258,7 +258,7 @@ Q: Could you prove that this was a musig, if you wanted to, by revealing the par
 
 A: Revealing partial signatures doesn't help, because you can fake partial signatures. But what you could do is prove that the public key is an aggregate of multiple public keys. You can take the partial signatures, take a random scalar, and subtract, and say here's two values that come together to be the aggregated s. But with the public keys, because the coefficients contained the original public key, I think it creates a commitment. Right Andrew? Sorry. Theoretically, could you prove a musig aggregated public key is a musig key by revealing the coefficients and they then act as a commitment. In the signature, I don't think you can prove it, but on the public keys you can do it, if you have the original public keys and the coefficients. I think the coefficients act like a taproot commitment of some sort since they contain the original public keys. If I just give you the commitments, then you can't tell that I didn't make them up. You need the full list of the original public keys to prove that the aggregated resultant key is in fact a musig key.
 
-# Taproot
+## Taproot
 
 You can add additional script encumberences to a taproot output. We have a few chapters about taproot, and then a case study, and then a write-up. It's a great idea outside, so I recommend using the deck during those five minute breaks between the sections.
 
@@ -270,7 +270,7 @@ Q: A tweaked internal key is a tweak of the..
 
 A: The taproot public key is a tweak of an internal key, and the internal key is only revealed if you want to use one of the alternative spending paths. Otherwise the internal key doesn't need to be revealed.
 
-## Segwit v1
+### Segwit v1
 
 Segwit v1 is about this high-level taproot public key. It's about how we encode it in an output. So the segwit v0 format is a version byte plus a witness program which can be 20 or 32 bytes, if it's a P2WSH. In segwit v1, we have a version 1 as the version byte, and then we have a 32 byte public key as the witness program. We have 33 byte public keys in the jupyter notebook because a previous version of the proposal used 33 byte public keys, but the latest proposal uses 32 byte public keys.
 
@@ -278,17 +278,17 @@ So there's two spending possibilities: there's the key path, where you can provi
 
 Is there anything controversial about that public key? Well, quantum resistance. Pieter Wuille's view is that there's already 5 million BTC in revealed public key outputs. So the whole economy will collapse anyway.
 
-## P2PK vs P2PKH
+### P2PK vs P2PKH
 
 V1 script is version 1 and a 32 byte public key. The v1 witness is a 64 or 65 byte signature.  In v0 script, it's 00 and a 20 byte pubkeyhash. The public key is going to be revealed anyway, so there's no disadvantage really. Another thing is that when people talk about quantum security from pubkey hashes, the idea is that maybe one day we would hard-fork in a zero-knowledge proof to let you spend those old coins to prove something. But say thta we had software that could spend all the quantum-compromised coins, and we say, if you provide a proof of your taproot derivation or something, and you do that in a quantum-resistant way, then maybe you could spend with a zero-knowledge proof. So with a zero knowledge proof, I could spend the p2pkh output without revealing the public key. Also, in a post-quantum world, if your xpub is exposed, then they know all your public keys.
 
-## Taproot sighash flags
+### Taproot sighash flags
 
 In general, taproot retains all the legacy sighash flag semantics. We have ALL, NONE, SINGLE, and ANY. There's also a new one implied all, which works as follows. Say I have my Schnorr signature with 32 bytes for the x-coord of the R point, and an s value which is also 32 bytes. If I don't use a sighashflag byte, then SIGHASH\_ALL is implied. You could use the byte, but that increases the size by a single byte.
 
 SIGHASH\_ALL is the most used and by far the most common. So you get to save a single byte. In taproot, you could add the byte for SIGHASH\_ALL if you want, but it's not required.
 
-## Taptweak
+### Taptweak
 
 Let's look at the notebooks.
 
@@ -322,7 +322,7 @@ The only tricky part is the TaprootSignatureHash which gives us the transaction 
 
 The nice thing about spending along the keypath is that the witnesses look the same regardless of how we generate the public key. Nobody can tell if it's a single party or multiparty key.
 
-# Taptweak
+## Taptweak
 
 <https://github.com/bitcoinops/taproot-workshop/blob/master/solutions/2.2-TapTweak-Solutions.txt>
 
@@ -360,7 +360,7 @@ tx.sha256 is the txid. It's poorly named. This was added back before segwit when
 
 If you get testmempoolaccept errors, you can try printing it out and sometimes it tells you a reasonable error message. It's all been straightforward so far, right? Any questions? It's 3pm, so let's start again in 15 minutes.
 
-# Tapscript
+## Tapscript
 
 Chapter 2.3 is about tapscript. So far we have looked at spending by using the keypath, but we haven't looked at committing a proper script to a segwit v1 output. Committing to a script allows us to run a script, and this in turn allows us to encode a wider range of different conditions to an output.
 
@@ -390,7 +390,7 @@ Q: I just found it interesting that OP\_ROTATE rotates the top three items. Is i
 
 A: There is a paper that is really hard to google, which I have been told exists, but I haven't been able to find it, which describes a thing called Secure Forth which bitcoin script is extremely similar to, almost identical.
 
-## Tapscript descriptors
+### Tapscript descriptors
 
 Today we have descriptors in wallets today, which are a high-level language to describe an output. So here's some examples of pay-to-pubkey descriptors:
 
@@ -406,7 +406,7 @@ There's also equivalents for checksigadd scripts:
 * ts(csaolder(k, keys, delay))
 * ts(csahasholder(k, keys, digest, delay, ...))
 
-## Committing a single tapscript to a taptweak
+### Committing a single tapscript to a taptweak
 
 We're going to have a taptweak t. So Q = P + tG. t is now a TaggedHash("TapTweak", P, tapleaf). TaggedHash is defined as H(H("tag") + H("tag") + data). The tapleaf itself is a Taggedhash("TapLeaf", ver, size, script).
 
@@ -481,7 +481,7 @@ Signing the transaction requires TaprootSignatureHash again, no surprises here. 
 
 We want to test that this timelock works. If we broadcast the transaction without any delay, without mining any blocks, then it will fail. So we call generate(delay) to generate enough blocks, the exact number of blocks, that we have chosen for the delay value. Once that has been done, we can use testmempoolaccept and this time it should pass in contrast to the output of testmempoolaccept before the delay expired.
 
-# Taptree
+## Taptree
 
 You might want to use multiple tapscripts, and we do that with a binary tree structure called taptree. We use a binary merkle tree construction, but this tree doesn't have to be balanced. This allows for certain cost optimizations. If your tapleaf is closer to the root, then your inclusion proof will be cheaper on-chain. Now we're going to be committing a taptree into that tweak.
 
@@ -515,6 +515,6 @@ If you have two identical tapleafs, can you malleate it by changing the path-- b
 
 Q: In the witness, how does the control block get consumed?
 
-# Degrading multisig output
+## Degrading multisig output
 
 We're running out of time, so let's just look at this and discuss it. This is a hypothetical scenario we're describing.  Consider we have two types of keys here, we have 3 main wallet keys, and then we have 3-of-3 multisig, and then we have two backup keys. The main wallet keys can sign interactively. The backup keys cannot sign interactively. So we want to construct a degrading multisig. As you see here, there are two delays. The first delay is 3 days, and then the next spending path becomes available after 10 days. As we go down, more backup keys are required.  We can describe this as a set of tapscripts. Given the tapscript descriptors that we have talked about today, which ones capture these locking conditions and in what order of probability would you weight those? This exercise is about when to use musig keys, and when to have individual keys that can spend with CHECKSIGADD opcodes. When I need to sign with wallet keys, I can use the musig pubkey. So 3-of-3 multisig could be an internal key tapscript. The one backup key after 3 days- would this be a single leaf? Also, we odn't want to reveal any unused public keys. So instead of a single leaf, you use multiple leaves. I think it's 5 choose 3. We need 1 backup key, and the 1 backup key has 3 conditions, because there's 3 possibly missing people. For the second degradation after 10 days, we now require both backup keys. So there are 3 permutations here, right.

@@ -2,7 +2,7 @@
 title: The Tools and The Work
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['taproot', 'schnorr']
+tags: ['taproot', 'schnorr-signatures']
 speakers: ['Pieter Wuille', 'Jonas Nick']
 date: 2019-06-09
 ---

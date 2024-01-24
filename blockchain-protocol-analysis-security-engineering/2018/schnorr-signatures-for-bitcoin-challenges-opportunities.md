@@ -1,40 +1,37 @@
 ---
-title: Schnorr Signatures For Bitcoin - Challenges and Opportunities
+title: "Schnorr Signatures For Bitcoin: Challenges and Opportunities"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'schnorr']
+tags: ['research', 'schnorr-signatures','adaptor-signatures']
 speakers: ['Pieter Wuille']
 date: 2018-01-31
 media: https://www.youtube.com/watch?v=oTsjMz3DaLs
 ---
-
-Schnorr signatures for Bitcoin: Opportunities and challenges
-
 slides: <https://prezi.com/bihvorormznd/schnorr-signatures-for-bitcoin/>
 
 <https://twitter.com/kanzure/status/958776403977220098>
 
 <https://blockstream.com/2018/02/15/schnorr-signatures-bpase.html>
 
-# Introduction
+## Introduction
 
 My name is Pieter Wuille. I work at Blockstream. I contribute to Bitcoin Core and bitcoin research in general. I work on various proposals for the bitcoin system for some time now. Today I will be talking about Schnorr signatures for bitcoin, which is a project we've been working on, on-and-off, for a couple of years now. I'll talk about the cool things that we can do that might be non-obvious, and also some non-obvious challenges that we ran into while doing this. This is, as this talk covers things we've done over a long time, there are many other people who have contributed to this work, including Greg Maxwell, Andrew Poelstra, myself, and also Russell O'Connor and some external contributors including Peter Dettttman and others. I wanted to mention them. And Jonas Nick.
 
-# Benefits of Schnorr signatures for bitcoin
+## Benefits of Schnorr signatures for bitcoin
 
 <a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/schnorr-signatures/">Schnorr signatures</a> have been <a href="http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/">talked</a> about for a while. The usual mentioned advantages of this approach are that we can decrease the on-chain size of transactions in bitcoin. We can speed up validation and reduce the computational costs. There are privacy improvements that can be made. I'll be talking about those and the problems we've encountered.
 
-# Bitcoin
+## Bitcoin
 
 For starters, let's begin by talking about bitcoin itself. Transactions consist of inputs and outputs. The outputs provide conditions for spending. Russell was talking about this in his previous talk. They are effectively predicates that need to be satisfied. Inputs provide the arguments to those predicates. Typically, in the outputs, the predicated that is included is required signature with key x. This is the most common, but it's by no means the only thing that we can do.
 
 Bitcoin also supports threshold signatures in a very naieve way. Threshold signatures are schemes where you have a group of n possible keys and you decide ahead of time that any subset k out of those n are able to provide a valid signature and with less it's not possible. Bitcoin does this naively by giving a list of all the keys and all the signatures. It's an obvious, naieve way of implementing this construction but it's by no means the best that we can do.
 
-# Predicates and signature validation
+## Predicates and signature validation
 
 Important for what I'll be talking about later is that in the blockchain model, the chain itself, meaning all the full nodes that validate the chain, do not actually care who signs. If there are multiple possible signers, for example I have wallet on my desktop computer but I want to make sure that I'm protected against software attacks maybe I also want a hardware device and I want to use a system where both wallets need to sign off on a transaction. This is 2-of-2 or 2-of-3 multisig construction. If I want someone to pay me, I am the one who is going to decide what conditions they should be creating when sending the money. I'll tell them "create an output of this much money to an address that encodes 2-of-3 multisig and these are the keys for that" and we have a compact 2-of-3 pay-to-scripthash (P2SH) implementation for that. But it is me who cares who those signers are. It's not the blockchain. The chain only sees that yep there was supposed to be a key with this signature, and then it simply sees and validates the presence of this.
 
-# Scripts
+## Scripts
 
 Bitcoin accomplishes this through scripting. It's a scripting language called Bitcoin script. It's a stack-based machine language. The most simple example you can come up with is an output that says "pubkey CHECKSIG" and then an input that contains a signature. The execution model is that you first execute the input, which results in a signature on the stack. Next, you execute the output commands which pushes the public key on to the stack and the CHECKSIG looks at both the signature and the pubkey and checks whether the transaction is good to go.
 
@@ -44,7 +41,7 @@ Going forward, we will be talking about threshold signatures. Bitcoin's way of d
 
 Other things that bitcoin scripting language can do includes hash preimages and timelocks which are used in various higher-level protocols. I should also say that bitcoin script uses ECDSA. It's a common standard. But let's talk about Schnorr signatures.
 
-# Schnorr signatures
+## Schnorr signatures
 
 Schnorr signatures are a well-known signature scheme that only relies on the discrete logarithm assumption just like ECDSA does. There are various advantages for Schnorr signatures over ECDSA. Some of them are that it supports native multisig, where multiple parties jointly produce a single signature. This is very nice because we can reduce the number of keys and number of signatures that need to go into the chain. There are various schemes that enable threshold signatures on top of Schnorr signatures. In fact, it is known that there are constructions to effectively implement any monotone boolean function. I'll talk a bit about that.
 
@@ -60,19 +57,19 @@ Simply by virtue of introducing a new signature scheme, we could get a number of
 
 Most of the things on this slide are in theory also possible with ECDSA but it comes with really complex multi-party computation protocols. I'll talk about in a minute where this is not the case.
 
-# Can we add this to Bitcoin script?
+## Can we add this to Bitcoin script?
 
 Seems like an almost obvious question and win. We can make the same security assumptions. There are only advantages. Same security assumptions. Ignoring the politics for a second, it seems like we could add a new opcode to the scripting language which is especially easy since bitcoin now has <a href="https://diyhpl.us/wiki/transcripts/scalingbitcoin/hong-kong/segregated-witness-and-its-impact-on-scalability/">segwit</a> activated and part of that system added script versioning which means we can introduce new or proposed new scripts with new semantics from scratch without much effort. There are other advantages that come from this, though. I'll talk about two of them.
 
-# Taproot
+## Taproot
 
 One scheme that can benefit from this sort of new Schnorr signature validation opcode is <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html">taproot</a>, which if you've been following the bitcoin-dev mailing list over the past few days you may have seen mentioned. Taproot is a proposal by Greg Maxwell where effectively the realization is that almost all cases where a script gets satisfied (where an actual spend occurs) and there are multiple parties involved can almost always be written as "either everyone involved agrees, or some more complex conditions are satisfied". Taproot encodes a public key or the hash of a script inside just one public key that goes on to the chain. You cannot tell from the key whether it's just a key or if it's a key that also commits to a script. The proposed semantics for this allow you to either just spend it by providing a signature with the key that is there, or you reveal that it's a commitment to a script and then you give the inputs to satisfy that script. If that signature used in the taproot proposal was a Schnorr signature, then we get all the advantages I talked about for Schnorr signatures. So not only could this be used for a single signer, but it could also be the "everyone agrees automatically" by using a native Schnorr multi-signature.
 
-# Scriptless scripts
+## Scriptless scripts
 
 Another area that Schnorr signatures can help with is the topic of scriptless scripts, an area that Andrew Poelstra has been working on. There was <a href="http://diyhpl.us/wiki/transcripts/realworldcrypto/2018/mimblewimble-and-scriptless-scripts/">a talk about this recently at RealWorldCrypto 2018</a> which I think was very good. The idea here is how much of the features of an actual scripting language can we accomplish without having a scripting language? It turns out, quite a lot. In particular there is a construction called a cross-chain atomic swap which I won't go into the details here but it allows multiple-- so, I want to sell someone some bitcoin and someone else wants to sell me some litecoin and I don't know why but assume it's the case and we want to do this in lockstep across the chains so that no party is fraudulent. Both transactions have to be reversible, so that the other party can't back out. A cool construction for this was proposed a couple of years ago. It's a cross-chain atomic swap where the second payment is dependent on using a hash preimage which gets revealed by the other transaction. We put the coins into a construction where they are locked and then when one party takes out their part of the coins, they reveal the information that I need in order to take their other coins. This makes the whole construction atomic. The normal formulation of this always requires on the hash preimage and revealing that and so on. But it's possible with just a Schnorr signature and this makes it indistinguishable from a normal payment and it also makes it smaller. Schnorr signatures will fit in well with the scriptless scripts scheme and cross-chain atomic swaps. There are many things we can do with Schnorr signatures. We want this.
 
-# Cross-input aggregation
+## Cross-input aggregation
 
 Why stop at one signature per input? Bitcoin transactions have multiple independent outputs and we don't want to restrict the ability for someone to choose them independently. All of these have public keys and signatures that are required. Why can't we combine all of those signatures into one? Schnorr signatures support multisig so this seems like an obvious win. Well, not so fast.
 
@@ -84,23 +81,23 @@ This works for multisig within a single input approach because the people who ca
 
 What we need is security in the plain public key model where there is no key setup procedure beyond just users claiming that they have a particular key. They are allowed to lie about what their key is, and the system should remain secure. This was something we noticed and we tried to come up with a solution for this rogue-key attack. We tried to publish about it, got rejected, and we were told that we should look at <a href="https://cseweb.ucsd.edu/~mihir/papers/multisignatures-ccs.pdf">a paper from Bellare-Neven 2006</a> which exactly solved this problem.
 
-# Bellare-Neven signatures
+## Bellare-Neven signatures
 
 The Schnorr multisignature is S * G = R + H(X, R, m) * X where X was the sum of the public keys. Bellare-Neven introduced a multisignature where you use a separate hash for every signer. Into every hash, goes the set of all the signers. The great thing about this paper is that it gives a very wide security proof where the attacker is allowed to pretty much do anything. An attacker can participate in multiple signing attempts with multiple people simultaneously. This looks exactly like the security model that we want. So let's go for this and start thinking about how to integrate this into Bitcoin script.
 
 Again, not so fast. There's another hurdle. We need to consider the distinction between a multisignature and an interactive aggregate signature. The distinction is that a multisig is where you have multiple signers that all sign the same message. In an interactive aggregate signature, every signer has their own message. Seems simple. In the context of bitcoin, every input is signing its own message that authorizes or specifies the claim authorizing the spend. There is a very simple conversion suggested by Bellare-Neven themselves in their paper where you can turn the multisignature scheme into an interactive aggregate signature scheme where you just concatenate the messages of all the participants. This seems so obviously correct that we didn't really think about it until my colleague Russell O'Connor pointed something out.
 
-# Russell's attack
+## Russell's attack
 
 <https://www.youtube.com/watch?v=oTsjMz3DaLs&t=22m27s>
 
 Russell pointed out that we've-- let's assume that Alice has two outputs, o1 and o2. Bob has an output o3. And we assume m1 is the message that authorizes a spend of o1, and m2 the same for o2, and so on. Alice wants to spend o1 in a coinjoin with Bob. So there's a multi-party protocol going on, mentioned in an earlier talk that coinjoin is where participants get together and move their coins at the same time and now you can't tell which outputs belonged to which inputs. It's a reasonable thing that Alice and Bob would want to do this. In this protocol, Bob would be able to claim he has the same key as Alice. It's perfectly allowed in the plain public key model. And he chooses as a message, m2, the message that authorizes the spend of Alice's second output instead of m3 his own output. And you may claim well it's perfectly possible to modify the protocol where you say don't ever sign something where someone else is claiming to have your keys. But this is a higher-level construction that we would like the underlying protocol to protect against this sort of situation. If you now look ta the validation equation becomes, you see that Alice's public key appears twice, and the concatenation of the two messages appears twice, but these two hashes are identical. So Bob can duplicate all of Alice's messages in a multi-party protocol and end up with a signature that actually authorizes the spend of Alice's second output which was unintended.
 
-# Mitigating Russell's attack
+## Mitigating Russell's attack
 
 A better solution that we are proposing is that instead of this L which is the hash of the commitment of all the participant public keys in the set, you include the messages themselves and then in the top-level hashes you include your position within that hash. Russell's attack doesn't work anymore because the messages in every hash are different so Bob can't just repeat the message and steal things. So something to learn about this, at least for myself, is that attack models in multi-party schemes can be very subtle. This was not at all an obvious construction.
 
-# Bitcoin integration
+## Bitcoin integration
 
 Here I guess I should do the slide that I had before. Sorry if I'm making you sea sick. Concretely, how do we integrate this Bellare-Neven like interactive aggregate signature scheme into bitcoin? It seems to give us a lot of advantages. We can turn all of the signatures in one input into a single signature using multisig and threshold signatures. And we can use cross-input aggregation across multiple inputs to even reduce that further and only have one signature for the entire transaction.
 
@@ -108,7 +105,7 @@ How do we do this? There's a hurdle here. Bitcoin transactions are independent. 
 
 For cross-input aggregation, we want one signature overall. The way to do it, or at least what I would propose, is to have the CHECKSIG operator and the related operators always succeed. Right now they take a public key and a signature from the stack and validate whether they correspond. Instead, make them always succeed, remember the public key and message, compute what the message woud have been signed. Continue with validation for all the inputs in a transaction. Now tha tthe transaction is validated, and if all the input predicates succeed still, but in addition there is an overall Bellare-Neven interactive aggregate signature provided in the transaction that is valid for all the delayed checks. This is a bit of I guess a layer violation but I believe it's one that is valuable because we get all these savings.
 
-# Performance
+## Performance
 
 I want to talk a bit about the actual work we've been doing towards that end. I want performance. Andrew Poelstra, Jonas Nick and myself have been looking at various algorithms for doing the scalar multiplication in the Bellare-Neven verification equation and there are various algorithms that you get better than constant speedup. You can compute the total faster in aggregate or batch than computing the multiplication operations separately and adding them up. This is a well-known result, but there's a variety of algorithms. We experimented with multiple of them. In this graph you can see how many keys were involved in the whole transaction, and then the speedup you get over just validatin those keys independently. You have two alorithms- one is Strauss and the other is Pippenger. After various benchmarks and tweaking at what the correct point is to switch over from one to another. Initially for small numbers, Strauss algorithm is significantly faster but at some point Pippenger gets faster and it realy goes up logarithmically in the number of keys. This seems to continue for quite a while. Our overall validation speeds for n keys is really n over log n if we're talking about large numbers.
 
@@ -116,11 +113,11 @@ You may think, well, there's never going to be a transaction with 10,000 keys in
 
 These performance numbers apply to all the public keys and signatures you see in a transaction, within a block, rather than just within a transaction. And within a block, we potentially see several thousands of keys and signatures, so this is a nice speedup to have.
 
-# Space savings
+## Space savings
 
 Furthermore, there are also space savings. This chart is from a simulation where we assume that if this proposal would have been active since day 1 then how much smaller would the blockchain be. Note that this does not do anything with threshold signatures or multisig and it doesn't try to incorporate how people would have differently used the system (which is where the advantages really are) but this is purely from being left with one signature per transaction and everything else is left in place. You can see between a 25% and 30% reduction in blockchain size. This is mostly a storage improvement and a bandwidth improvement in this context. It's nice.
 
-# Ongoing work
+## Ongoing work
 
 We're working on a BIP for Bellare-Neven based interactive aggregate signatures. We can present this as a signature scheme on its own. There's a separate BIP for incorporating this cross-input capable CHECKSIG and its exact semantics would be-- I lost a word here, but the recommended approaches for doing various kinds of threshold signings so that we don't need to stick with this "everyone involved in a contract needs to be independently providing a signature" scheme.
 
@@ -128,7 +125,7 @@ That's all.
 
 <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-July/016203.html">bip-schnorr</a>
 
-# Q&A
+## Q&A
 
 <https://www.youtube.com/watch?v=oTsjMz3DaLs&t=33m3s>
 

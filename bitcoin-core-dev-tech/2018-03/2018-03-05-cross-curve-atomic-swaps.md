@@ -2,7 +2,7 @@
 title: Cross Curve Atomic Swaps
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['ux', 'lightning', 'schnorr']
+tags: ['adaptor-signatures']
 date: 2018-03-05
 aliases: ['/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/']
 ---

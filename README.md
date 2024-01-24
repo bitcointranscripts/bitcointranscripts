@@ -80,7 +80,7 @@ transcript_by: Michael Folkson
 translation_by: Blue Moon
 speakers: ['Andreas Antonopoulos']
 categories: ['podcast']
-tags: ['schnorr']
+tags: ['schnorr-signatures']
 date: 2018-10-07
 media: https://www.youtube.com/watch?v=8TaY730YlMg
 ---

@@ -1,14 +1,11 @@
 ---
-title: Future Of Privacy Coins
+title: "Future Of Privacy Coins"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'taproot', 'schnorr']
+tags: ['privacy', 'taproot', 'proof-systems']
 speakers: ['Brandon Goodell', 'Andrew Poelstra', 'Alexandra Moxin']
 media: https://youtu.be/eGpa45y4_HQ
 ---
-
-Future of privacy coins
-
 AM: That's not good. Hi everyone. Thanks for coming to the future of privacy coins panel. I want to spend a minute talking ablout backgrounds and interest in this area.
 
 BG: I have a PhD in something. I got into monero a couple of years ago. I needed to pay rent, so I did some work in math in exchange for money.

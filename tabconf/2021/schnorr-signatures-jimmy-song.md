@@ -2,12 +2,11 @@
 title: "Schnorr Signatures"
 transcript_by: Shourya742 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Ubp29_DJ5rM
-tags: ["Schnorr","Signature Aggregation","Cryptography"]
+tags: ["schnorr-signatures"]
 speakers: ["Jimmy Song"]
 categories: ["conference"]
 date: 2021-11-07
 ---
-
 ## Introduction
 
 Anyway, like I said, this is a technical talk and we're going to talk about Schnorr signatures and the benefits that it brings. So let's get started.
