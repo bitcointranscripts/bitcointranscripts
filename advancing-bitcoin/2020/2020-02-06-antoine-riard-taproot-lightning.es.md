@@ -5,7 +5,7 @@ date: 2020-02-06
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['conferencia']
-tags: ['taproot', 'lightning', 'schnorr']
+tags: ['taproot', 'lightning', 'ptlc']
 media: https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 ---
 

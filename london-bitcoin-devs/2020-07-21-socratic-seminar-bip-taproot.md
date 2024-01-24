@@ -1,23 +1,19 @@
 ---
-title: Socratic Seminar - BIP Taproot
+title: "Socratic Seminar - BIP Taproot (BIP 341)"
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['schnorr', 'taproot']
+tags: ['taproot','mast','simplicity']
+speakers: ['Pieter Wuille','Elichai Turkel','Russell O’Connor']
 date: 2020-07-21
 media: https://www.youtube.com/watch?v=bPcguc108QM
 ---
-
-BIP Taproot (BIP 341)
-
-Location: London BitDevs (online)
-
 Pastebin of the resources discussed: https://pastebin.com/vsT3DNqW
 
 Transcript of Socratic Seminar on BIP-Schnorr: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# Introductions
+## Introductions
 
 Michael Folkson (MF): This is a Socratic Seminar on BIP-Taproot. Sorry for the delay for the people on the YouTube livestream. This is in partnership between London BitDevs and [Bitcoin Munich](https://www.meetup.com/Bitcoin-Munich/). We were going to have two events on the same day at the same time so we thought rather than have two events clashing we would combine them, have the same event and have people from both London and Munich on the call. But there are people from everywhere not just London and Munich. A few words on Bitcoin Munich. It is the original Bitcoin meetup in Munich. I’ve had the pleasure of attending a Socratic last year, the week before The Lightning Conference. It has been around for years, certainly a few more years than we have at London BitDevs. Socratic Seminars, we’ve had a few in the past, I don’t need to speak about Socratic Seminars. Originated at BitDevs in New York, discussion not presentation, feel free to interrupt, ask questions. Questions, comments on YouTube, we will be monitoring the YouTube, we will be monitoring Twitter and IRC \#\#ldnbitcoindevs. If you are watching the livestream questions and comments are very welcome. There will be a transcript as well but please don’t let that put you off participating. We can edit the transcript afterwards, we can edit the video afterwards, we are not trying to catch people out or whatever. This is purely for educational purposes. The subject is Taproot, Tapscript is also fine, [BIP 341](https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki), [BIP 342](https://github.com/bitcoin/bips/blob/master/bip-0342.mediawiki). We have already had a [Socratic Seminar](https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/) on BIP-Schnorr so we’ll avoid Schnorr generally but it is fine to stray onto Schnorr because obviously there is interaction between Schnorr and Taproot. What we won’t be discussing though is activation. No discussion on activation. Maybe we will have a Socratic next month on activation. If you are interested in activation join the IRC channel \#\#taproot-activation. We start with introductions. If you want to do an introduction please do, who you are, what you are working on and what you are interested in in terms of Taproot stuff.
 
@@ -33,7 +29,7 @@ Elichai Turkel (ET): Hi I’m Elichai, I work at DAGlabs and I work on Bitcoin a
 
 Will Clark (WC): I am Will, I have been working with goTenna doing some Lightning stuff over mesh networks. Like Albert and Auriol and I am interested in the privacy benefits to this.
 
-# Introduction to MAST
+## Introduction to MAST
 
 MF: There is a [reading list](https://pastebin.com/vsT3DNqW) that I shared. What we normally do is we start from basics. For the people, there are a couple of new people on the call, we’ll start with MAST and discuss and explain how MAST works. Absolute basics does someone want to explain a Merkle tree?
 
@@ -51,13 +47,13 @@ E: I understand that it is if you have different contracts for moving value on B
 
 MF: Let’s go through the reading list then because there are some interesting intricacies around MAST and it dates back to 2012, 2013 as most things do. The first [link](https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/) is the Socratic Seminar that we had on Schnorr before. Then there is the [transcript](https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-17-tim-ruffing-schnorr-multisig/) to Tim Ruffing’s presentation. Tim Ruffing presented last month on Taproot and Schnorr multisignature and threshold signature schemes. Then we have links on MAST.
 
-# Aaron van Wirdum Bitcoin Magazine article on MAST (2016)
+## Aaron van Wirdum Bitcoin Magazine article on MAST (2016)
 
 https://bitcoinmagazine.com/articles/the-next-step-to-improve-bitcoin-s-flexibility-scalability-and-privacy-is-called-mast-1476388597
 
 MF: The first link is that Aaron van Wirdum Bitcoin Magazine article on MAST. That is a good intro to what MAST is. He describes it as essentially merging the potential of P2SH with that of Merkle trees. He gives a primer of Merkle trees and says that instead of locking Bitcoin up in a single script, with MAST the same Bitcoin can be locked up into a series of different scripts which was effectively what Emzy was saying.
 
-# David Harding article on What is a Bitcoin Merklized Abstract Syntax Tree (2017)?
+## David Harding article on What is a Bitcoin Merklized Abstract Syntax Tree (2017)?
 
 https://bitcointechtalk.com/what-is-a-bitcoin-merklized-abstract-syntax-tree-mast-33fdf2da5e2f
 
@@ -65,7 +61,7 @@ MF: I found a link which I will share in the chat which was David Harding’s ar
 
 PW: I really need Russell here because he will disagree with me. I seem to recall that the first idea of breaking up a script into a Merkle tree of spendability conditions is something that arrived in a private discussion I had with Russell a number of years ago. In my mind it has always been he who came up with it but maybe he thinks different.
 
-# BIP 114 and BIP 116 MAST proposals
+## BIP 114 and BIP 116 MAST proposals
 
 https://github.com/bitcoin/bips/blob/master/bip-0114.mediawiki
 
@@ -143,7 +139,7 @@ MF: We talked a little about P2SH. We didn’t discuss OP_EVAL really.
 
 N: To discuss Auriol’s point, one thing that I think nobody addressed is and maybe the reason for the confusion is that every Taproot output commits to a Merkle root directly. So the root is given as it were. What you need to make sure is that the way that you spend it relates to a specific known root not the other way round. For the P2SH and OP_EVAL stuff it was a convenient segue for myself a few years ago reading about this to think about what you can really do with Bitcoin Script? From a theoretical computer science point of view it is not very much given that it doesn’t have looping and stuff like that. Redeem scripts and P2SH add a first order extension of that where you can have one layer of indirection where the scriptPubKey effectively calls a function which is the redeem script. But you can’t do this recursively as far as I know. [OP_EVAL](https://github.com/bitcoin/bips/blob/master/bip-0012.mediawiki) was a BIP by Gavin Andresen and I think it was basically the ability to evaluate something that is analogous to a redeem script as part of a program so you can have a finite number of nested levels. You can imagine a script that has two branches with two OP_EVALs for committing to separate redeem scripts and that structure is already very much like a MAST structure. That is why I brought it up earlier.
 
-# Pieter Wuille at SF Bitcoin Devs on Key Tree Signatures
+## Pieter Wuille at SF Bitcoin Devs on Key Tree Signatures
 
 https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2015-08-24-pieter-wuille-key-tree-signatures/
 
@@ -183,7 +179,7 @@ N: That is a definitely a convincing argument that I didn’t account for in my 
 
 MF: That covers pre-Taproot.
 
-# Andrew Poelstra on Tales From The Crypt Podcast (2019)
+## Andrew Poelstra on Tales From The Crypt Podcast (2019)
 
 https://diyhpl.us/wiki/transcripts/tftc-podcast/2019-06-18-andrew-poelstra-tftc/
 
@@ -207,7 +203,7 @@ MF: There is that conceptual switch. In this podcast transcript Greg says “Scr
 
 PW: The way to accomplish that is by saying “We are going to take the key path, take that key and tweak it with the script path in such a way that if you were able to sign for the original key path you can still sign for the tweaked version.” The tweaked version is what you put in the scriptPubKey. You are paying to a tweaked version of the aggregate of everyone’s keys. You can either spend by just signing for it, nothing else. There is no script involved at all. There is a public key and a scriptPubKey and you spend it by giving a signature. Or in the unusual case you reveal that actually this key was tweaked by something else. I reveal that something else and now I can do whatever that allowed me to do.
 
-# Greg Maxwell Bitcoin dev mailing list post on Taproot (2018)
+## Greg Maxwell Bitcoin dev mailing list post on Taproot (2018)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html
 
@@ -215,7 +211,7 @@ MF: One of the key points here once we have discussed that conceptual type stuff
 
 PW: I think the post explains the goals and what it accomplishes pretty well. It is a good read.
 
-# Andrew Poelstra at MIT Bitcoin Expo on Taproot (2020)
+## Andrew Poelstra at MIT Bitcoin Expo on Taproot (2020)
 
 https://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2020/2020-03-07-andrew-poelstra-taproot/
 
@@ -257,7 +253,7 @@ PW: Not more than what you need to spend from a P2SH. It just happens to be in a
 
 MF: With a pay-to-script-hash you still need to have that script to be able to spend from that pay-to-script-hash. In the same way  here you need to know the script to be able to spend from the pay-to-taproot.
 
-# AJ Towns on formalizing the Taproot proposal (December 2018)
+## AJ Towns on formalizing the Taproot proposal (December 2018)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html
 
@@ -269,7 +265,7 @@ MF: Perhaps all the drama and contention of the SegWit fork, did that push you d
 
 PW: Clearly we cannot just put every possible idea and every possible improvement that anyone comes up with into one proposal. How are you going to get everyone to agree on everything? Independent improvements should have some form of independence in its progression towards being active on mainnet. At the same time there are really strong incentives to not do every single thing entirely independently. Doing the Merklization aspect of BIP 341, the Taproot aspect of it and the Schnorr signature aspect, if you don’t do all three of them at the same time you get something that is seriously less efficient and less private. It is trade-off between those things. Sometimes things really interact and they really need to go together but other times they don’t.
 
-# John Newbery on reducing size of Taproot output by 1 vbyte (May 2019)
+## John Newbery on reducing size of Taproot output by 1 vbyte (May 2019)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-May/016943.html
 
@@ -285,7 +281,7 @@ MF: I don’t think this was in John’s post, I think that was a separate discu
 
 PW: It is there at the bottom. “The current proposal uses (1). Using (3) or (4) would reduce the size of a taproot output by one byte to be the same size as a P2WSH output. That means that it’s not more expensive for senders compared to sending to P2WSH.” That is part of the motivation as well. Clearly today people are fine with paying to P2WSH which has 32 byte witness programs. It could be argued that it is kind of sad that Taproot would change that to 33. But it is a very minor thing.
 
-# Steve Lee presentation on “The Next Soft Fork” (May 2019)
+## Steve Lee presentation on “The Next Soft Fork” (May 2019)
 
 https://bitcoinops.org/en/2019-exec-briefing/#the-next-softfork
 
@@ -301,7 +297,7 @@ ET: I think people are a little bit traumatized from SegWit and so don’t reall
 
 MF: A few people were dreading the conversation. But we won’t discuss activation, maybe another time, not today.
 
-# Pieter Wuille mailing list post on Taproot updates (no P2SH wrapped Taproot, tagged hashes, increased depth of Merkle tree, October 2019)
+## Pieter Wuille mailing list post on Taproot updates (no P2SH wrapped Taproot, tagged hashes, increased depth of Merkle tree, October 2019)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-October/017378.html
 
@@ -333,7 +329,7 @@ RO: People might mistakenly produce P2SH wrapped Taproot addresses because they 
 
 PW: That is fair, yeah.
 
-# Pieter Wuille at SF Bitcoin Devs on BIP-Taproot and BIP-Tapscript (December 2019)
+## Pieter Wuille at SF Bitcoin Devs on BIP-Taproot and BIP-Tapscript (December 2019)
 
 https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2019-12-16-bip-taproot-bip-tapscript/
 
@@ -345,7 +341,7 @@ MF: What is the problem specifically? Can you go into a bit more detail on why p
 
 PW: That is just a separate feature. It is one we deliberately chose not to include because the design space is too big and there are too many ways of doing this. Keep it for something after Taproot.
 
-# Potential criticisms of Taproot and arguments for alternatives on mailing list (Bitcoin Optech, Feb 2020)
+## Potential criticisms of Taproot and arguments for alternatives on mailing list (Bitcoin Optech, Feb 2020)
 
 https://bitcoinops.org/en/newsletters/2020/02/19/#discussion-about-taproot-versus-alternatives
 
@@ -353,7 +349,7 @@ MF: There hasn’t been much criticism and there doesn’t appear to have been m
 
 PW: I am not going to comment. There was plenty of good discussion on the [mailing list](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-February/017618.html) around it.
 
-# Andrew Kozlik on committing to all scriptPubKeys in the signature message (April 2020)
+## Andrew Kozlik on committing to all scriptPubKeys in the signature message (April 2020)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017801.html
 
@@ -367,7 +363,7 @@ MF: Kozlik talked about this in certain applications. So it is specific to thing
 
 PW: Right but you don’t want to make it optional because if you make it optional you are now again revealing to the world that you care about this thing. I believe that the attack was something of the form where you are lying to a hardware wallet about which inputs of a transaction are yours. Using a variant of the amount attack… I believe it is I do a Coinjoin where I try to spend both outputs from you but the first time I convince you that only one of the inputs is yours and then the second time I convince you that the other one is yours. In both times you think “I am only sending 0.1 BTC” but actually you are spending 0.2. You wouldn’t know this because your hardware wallet has no state that is kept between the two iterations. In general it makes sense to include this information because it is information you are expected to give to a hardware wallet. It is strange that they would not sign it. I think it made perfect sense as soon as the attack was described.
 
-# Coverage of Taproot eliminating SegWit fee overpayment attack in Bitcoin Optech (June 2020)
+## Coverage of Taproot eliminating SegWit fee overpayment attack in Bitcoin Optech (June 2020)
 
 https://bitcoinops.org/en/newsletters/2020/06/10/#fee-overpayment-attack-on-multi-input-segwit-transactions
 
@@ -375,7 +371,7 @@ MF: This was a nice example of Taproot solving a problem that had cropped up. Th
 
 PW: It was a known problem and we had to fix it. In any successor proposal whatever it was.
 
-# Possible extensions to Taproot that didn’t make it in
+## Possible extensions to Taproot that didn’t make it in
 
 Greg Maxwell on Graftroot (Feb 2018)
 
@@ -413,7 +409,7 @@ MF: And perhaps these extensions, we might as well do them because there is no d
 
 PW: Everything is a trade-off between how much engineering and specification and testing work is it compared to what it might gain us.
 
-# Taproot and Tapscript BIPs
+## Taproot and Tapscript BIPs
 
 https://github.com/bitcoin/bips/blob/master/bip-0341.mediawiki
 
@@ -451,7 +447,7 @@ RO: Of course.
 
 PW: Without that limit it would be quadratic, absolutely. Also in theory a different data structure for the execution stack is possible that would turn it into O(n log(n)) instead of O(n^2) to have unbounded ROLLs.
 
-# Bitcoin Core BIP 340-342 PR 17977
+## Bitcoin Core BIP 340-342 PR 17977
 
 https://github.com/bitcoin/bitcoin/pull/17977
 
@@ -471,7 +467,7 @@ RO: Yes
 
 MF: I did split it into a few commits. There are quite a few functional tests to look at on the Taproot PR. I am trying to think of an accessible way for people to start delving in and looking at the tests and running the tests is often a good first step.
 
-# Bitcoin Stack Exchange question on Simplicity and Taproot
+## Bitcoin Stack Exchange question on Simplicity and Taproot
 
 https://bitcoin.stackexchange.com/questions/97049/in-theory-could-we-skip-the-proposed-taproot-soft-fork-activate-simplicity-inst
 
@@ -501,7 +497,7 @@ RO: I think the extended functionality would be the primary benefit, extended fe
 
 PW: It also really depends on what kind of jets are implemented and with what kind of encoding. I suspect that for many things that even though it is theoretically possible to do anything in Simplicity it may become really exorbitantly expensive to do so if you need to invent your own sighash scheme or something.
 
-# Update on Simplicity
+## Update on Simplicity
 
 https://blockstream.com/2018/11/28/en-simplicity-github/
 
@@ -537,7 +533,7 @@ MF: I thought we could avoid all the activation conversations with Simplicity.
 
 RO: The point is that these jets won’t enable any more functionality that Simplicity doesn’t already have. It is just a matter of making the price for those contracts that people want to use more reasonable. You can write a SHA3 compression function in Simplicity but without a suitable set of jets it is not going to be a feasible thing for you to run. Although if we are lucky and we have a really rich set of jets it might not be infeasible to write SHA3 out of existing jets. That would be my goal of having a nice big robust set of midlevel and low level jets so that people can build these complicated, not thought of or maybe not even invented, hash functions and cryptographic operations in advance without them necessarily being exorbitantly costly even if we don’t have specific jets for them.
 
-# Q&A
+## Q&A
 
 MF: I have been very bad with YouTube because I kept checking and nothing was happening. But now lots of happened and I’ve missed it. Apologies YouTube. Luced asks when Taproot? We don’t know, we hope next year. It is probably not going to be this year we have to sort out the activation conversation that we deliberately avoided today. Spike asks “How hard would signature aggregation to implement after this soft fork?” We have key aggregation (corrected) with this soft fork or at least key aggregation schemes. We just don’t have cross input signature aggregation.
 
@@ -565,7 +561,7 @@ RO: Yeah that sounds true to me. Again I would hope that with enough midlevel je
 
 MF: Spike said “Wuille said he started looking at Schnorr specifically for cross input aggregation but they found out it will make other stuff like Taproot and MAST more complicated so it was delayed.” That sounds about right. That is the YouTube comments. I think we have got through the reading list. Are there any other last comments or any questions for anyone on the call?
 
-# Next steps for Taproot
+## Next steps for Taproot
 
 RO: Recently I got excited about Taproot pending activation and I wanted to go through and find things that need to be done before Taproot can be deployed. This might be a useful exercise for other people. I found a dangling issue on [BIP 173](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki), SegWit witness versions. There was an issue with the insertion bug or something in the specification. I thought it would be easy to fix but it turns out it is complicated. As far as I know the details for BIP 340 are not complete with regards to synthetic nonces although unrelated to Taproot the fact that Taproot depends on BIP 340 suggests that BIP 340 should be completed before Taproot is deployed. I guess my point with this comment is that there are things that should be done before Taproot is being deployed. We should go out and find all those things and try to cross them off.
 

@@ -4,12 +4,9 @@ speakers: ['Andreas Antonopoulos']
 date: 2018-10-07
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['schnorr']
+tags: ['schnorr-signatures']
 ---
-
 LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures
-
-# Schnorr signatures
 
 We’re currently using the elliptic curve digital signature algorithm (ECDSA) which is a specific way of doing digital signatures with elliptic curves but not the only way. Schnorr signatures have some unique characteristics that make them better in many ways than the ECDSA algorithm we use today in Bitcoin.
 

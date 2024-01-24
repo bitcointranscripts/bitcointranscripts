@@ -2,7 +2,7 @@
 title: "How to Design Schnorr Signatures"
 transcript_by: Shourya742 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=wjACBRJDfxc
-tags: ["schnorr", "cryptography"]
+tags: ["schnorr-signatures"]
 speakers: ["Adam Gibson"]
 categories: ["video"]
 date: 2022-03-14

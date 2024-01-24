@@ -2,7 +2,7 @@
 title: The Tools and The Work
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['taproot', 'schnorr']
+tags: ['taproot', 'schnorr-signatures']
 speakers: ['Pieter Wuille', 'Jonas Nick']
 date: 2019-06-09
 ---
@@ -21,7 +21,7 @@ Draft of BIP-Taproot: <https://github.com/sipa/bips/blob/bip-schnorr/bip-taproot
 
 Draft of BIP-Tapscript: <https://github.com/sipa/bips/blob/bip-schnorr/bip-tapscript.mediawiki>
 
-# Part 1
+## Part 1
 
 Adam: On this episode we'll be digging deeply into some of the most important changes coming soon to the Bitcoin protocol in the form of BIPs or Bitcoin Improvement Proposals focused on Taproot, Tapscript and Schnorr signatures. If you are a regular listener this won't be the first time you've heard about most of these broad ideas but today we hope to dig deeper. As such we're very pleased to be joined for today's session by Bitcoin developers Pieter, better known as sipa and Jonas Nick. Gentlemen, thank you very much for taking the time and joining us today.
 
@@ -147,7 +147,7 @@ Adam: So just to summarize here, in the old way we effectively have specific met
 
 Pieter: That sounds right.
 
-# Part 2
+## Part 2
 
 Pieter: There are a few more things that Taproot tries to achieve. One of them is better efficiency for verification because there is another feature of Schnorr signatures which is batch verifiability. Batch verifiability is a way to if you are given a thousand signatures each with their own public key and message you want to verify, you can tell whether all of them are valid faster than testing them all individually. The downside is if batch validation fails you have no idea which of the inputs were invalid. Generally in Bitcoin blocks we don't care about that. We only care about is the whole block valid or not? This property of batch verifiability which is factor 2, 3, 4 sometimes depending on how many things you aggregate together, we wanted to maintain that property even when it was integrated into the script system. In order to do so there are a few OP codes in the scripting language that are incompatible with this. One of them is CHECKMULTISIG. Interestingly we have better ways of doing multisig now but even if those were somehow not available to people the CHECKMULTISIG OP code can't remain in its existing form. You've given a number of public keys and a number of signatures and the verifier has to try to match up which public key corresponds to which signature and this trial operation, we can't batch that. So we were forced to make a few small changes to the scripting language anyway to guarantee compatibility with batch verifiability. That is what became Tapscript. Tapscript is the modifications to the scripting language for scripts under Taproot. Really it is a separate document for two reasons I think. One, BIP-Taproot was getting pretty long already. Also, and that is another feature I think that BIP-Taproot focuses on is flexibility. In the Merkle tree of BIP-Taproot every leaf is a script combined with what we're calling a leaf version. This is again a sort of versioning scheme very similar to SegWit script versioning except these aren't revealed at payment time. They're only revealed at spending time. Even more interestingly different leaves can have different versions and you only reveal the one you're actually using. You get a potential privacy advantage from say a new fancy script improvement gets made but it is only necessary on one branch of your contract. Then you're not even going to reveal this unless you actually use it. Tapscript is the proposed version 0 of the leaf version under Taproot. As there could in the future be different new ones for this it is also a separate document. If it is v0 read BIP-Tapscript, if it is something else for now it is unencumbered but later proposals may redefine this. Does that make sense?
 

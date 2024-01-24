@@ -2,12 +2,11 @@
 title: Libsec Panel
 transcript_by: fjahr via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8Z79CeBw3Nc
-tags: ["Libsecp256k1","Cryptography","FROST","Musig","Schnorr","Signature Aggregation"]
+tags: ["libsecp256k1","schnorr-signatures","threshold-signature"]
 speakers: ["Jonas Nick","Tim Ruffing","Lloyd Fournier","Jesse Posner","Rijndael","NVK"]
 categories: ["Podcast"]
 date: 2023-09-08
 ---
-
 ## Intros
 
 NVK: I have an absolute rock star team here. So why don't I start introducing the panel? Tim, hello! Do you want to tell a very brief what do you do?

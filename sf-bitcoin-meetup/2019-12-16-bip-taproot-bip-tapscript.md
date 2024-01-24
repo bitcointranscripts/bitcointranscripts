@@ -2,7 +2,7 @@
 title: BIP Taproot and BIP Tapscript
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['taproot', 'schnorr']
+tags: ['taproot', 'tapscript']
 speakers: ['Pieter Wuille']
 date: 2019-12-16
 ---
@@ -21,7 +21,7 @@ bip-schnorr: <https://github.com/sipa/bips/blob/bip-schnorr/bip-schnorr.mediawik
 
 Please try to find seats. Today we have a special treat. We have Pieter here, who is well known as a contributor to Bitcoin Core, stackexchange, the mailing list, and he has been around forever. He's the author of multiple BIPs. Today he is going to talk about taproot and tapscript which is basically what the whole Schnorr movement thing became. He's probably just giving us an update and all the small details and everything else as well. We'd like to thank our sponsors: River Financial, Square Crypto and Digital Garage for making this possible.
 
-# Introduction
+## Introduction
 
 Thank you, Mark. My name is Pieter Wuille. I do bitcoin stuff. I work at Blockstream. Today I am going to give an update on the status of really three BIPs that a number of us have been working on for a while, at least 1.5 years. These BIPs are coauthored together with Anthony Towns, Jonas Nick, Tim Ruffing and many other people.
 
@@ -31,7 +31,7 @@ Of course, the original idea of taproot is due to <a href="https://lists.linuxfo
 
 I always make <a href="https://prezi.com/view/AlXd19INd3isgt3SvW8g/">my slides</a> at the very last minute. These people have not seen my slides. If there's anything wrong on them, that's on me.
 
-# Agenda
+## Agenda
 
 Okay, so what will this talk be about? I wanted to talk about the actual BIPs and the actual changes that we're proposing to make to bitcoin to bring taproot, Schnorr signatures, and merkle trees, and a whole bunch of other things. I am mostly not going to talk about taproot as an abstract concept. <a href="https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2018-07-09-taproot-schnorr-signatures-and-sighash-noinput-oh-my/">I previously gave a talk about taproot</a> here I think 1.5 years ago in July 2018. So if you want to know more about the history or the reasoning why we want this sort of thing, then please go have a look at that talk. Here, I am going to talk about a lot of the other things that were brought in that we realized we had to change along the way or that we could and should. I am going to try to justify those things.
 
@@ -39,7 +39,7 @@ I think we're nearing the end of-- we're nearing the point where these BIPs are 
 
 So during this talk, I am really going to go over step-by-step a whole bunch of small and less small details that were introduced. Feel free to raise your hand at any time if you have questions. As I said, I am not going to talk so much about taproot as a concept, but this might mean that the justification or rationale for things is not clear, so feel free to ask. Okay.
 
-# Design goals
+## Design goals
 
 Why do we want something like taproot? The reason is that we have realized it is possible to improve the privacy, efficiency and flexibility of the <a href="https://en.bitcoin.it/wiki/Script">bitcoin script system</a>, and doing so without changing the security assumptions.
 
@@ -61,7 +61,7 @@ Another thing that is possible is graftroot, which can in some cases offer much 
 
 So let's actually stop talking about abstract stuff and move on.
 
-# Taproot
+## Taproot
 
 What is taproot? Trying to make all output scripts and most spends indistinguishable. How are we going to do that? Instead of having separate concepts for pay-to-pubkey and pay-to-scripthash, we combine them into one and make every output both. Every output will be spendable by one key and zero or more scripts. We're going to make it in such a way that spending with just a public key will be super efficient: it will only require a single signature on-chain. The downside is that spending with scripts will be slightly less efficient. It's a very interesting tradeoff you can make where you can actually choose to make one branch more efficient than the others in the script.
 
@@ -83,7 +83,7 @@ A: It's just to save the bytes. A better justification is that it literally adds
 
 Also, a relatively recent change to bip-taproot and bip-tapscript is no <a href="https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki">P2SH</a> support. The reasons for removing P2SH support are that P2SH only has 80 bits of collision resistance security. If you're jointly constructing a script with someone else, 80 bits security is not something that we expect in the long-term to hold up. Another reason is that P2SH is an inefficient use of the chain... It also reduces our ability of achieving the goal of making all outputs look identical, because if we have both P2SH outputs and non-P2SH outputs then that just gratuitously gives up bits of information or privacy. At this point, I think native segwit outputs and bech32 have been adopted sufficiently that we expect that by the time that taproot if and when it gets rolled out, the stragglers at that point probably either won't upgrade at all.
 
-# More BIP details
+## More BIP details
 
 I told you that in taproot an output is a public key that we're tweaking with the merkle root of a tree whose leaves are scripts. Here is the big trick that makes taproot work. x here is the private key to p. Let's say p is a single participant. It works for multiples too but it's easier to show this way. x is the private key to p. Q which is P+H(P && merkle root)\*G is actually equal to x + that hash times G. In other words, the private key to Q equals x plus that hash. In other words, if you have the private key to p and you know the merkle root, then you know the private key to Q. In the proposal, it says it is possible to spend any taproot output by just giving a signature with that private key to Q. Yes, we just pick a fixed parity. At signing time, if the parity is wrong, you flip your private key just before signing. So literally the only thing that goes on-chain is a single signature, in the happy case. Using schnorr signatures, that P can actually be an aggregate and cooperative spends can just use that single key.
 
@@ -111,21 +111,21 @@ Murch: If anyone has a question, just raise your hand and I'll bring you a micro
 
 sipa: We'll give it another five seconds.
 
-# Tagged hashes
+## Tagged hashes
 
 Another thing that we're proposing is that instead of just using single or double sha256 directly, we suggest to use tagged hashes. The idea is that every hash is given a tag. The goal of this is doing domain separation. So hashes used for computing a signature hash should we really don't want them to ever collide or be reinterpretable as a hash and a merkle tree, or a hash used to a derive a nonce, or a hash to tweak the public key in taproot. An easy way to do that is by tagging a hash along with every hash you compute. How we do this is we take your tag, which is an ASCII string, you hash it, you double that hash which now becomes 64 bytes, and that is a prefix before you put the data that you're hashing yourself. Now, because 64 bytes is the block size of sha256, it means that for any given constant tag, sha256 with that tag actually just becomes sha256 with a different initialization function. This costs nothing, because we precompute the new initialization vector after hashing the tag. Because nowhere today to the best of my knowledge in bitcoin is anywhere a protocol that hashes two single sha256 hashes at the beginning of another sha256 hash, this should never collide with any existing usage either. The rationale here is that bitcoin transaction merkle tree actually has had vulnerabilities in the past from not having such a separation. It uses the same algorithm for hashing the inner nodes and the leaves, and there's a whole bunch of scary bugs that result from this, some that were more recent, but the earliest was 2012 where-- you can look up the details. Anyway, these things are scary and we're providing a simple standard to avoid this.
 
 All the tags that we're using are for the leaves, for combining the scripts with the version number, that's tapleaf. For the branches of the merkle tree, it's tapbranch. For the tweaking the public key, it's taptweak. Then there's one for sighashes and inside Schnorr signatures we also use them. Many of these are very likely overkill, but I think it's good practice to start doing this.
 
-# Not a balanced merkle tree
+## Not a balanced merkle tree
 
 Another observation is that this merkle tree of all the scripts that you might want to spend a particular output with, doesn't need to be a balanced merkle tree. We're never even necessarily materializing it. You're just... the verifier clearly doesn't care if it's balanced, because he can't even observe the whole tree. You just give it a path. There's good reasons why you may not want to make it balanced. In particular, if you have some branches that are far less likely than others, then you can put them further away and make the more likely ones further up. There's actually a very simple algorithm for doing this called Huffman tree which is used in simple compression algorithms where you make a list of all your possibilities together with their probabilities and combine the smallest two and put them in a node together, and you combine them and build a tree, and that's your tree and it's in fact the optimal one. We do in the BIP today there's a limit of 128 levels which is clearly more than what is practical for a balanced tree. You're clearly not going to construct things with billions of spending possibilities... it would be too hard to even compute the address, it could easily turn into spending seconds, minutes and more. But because of this unbalancing, we still want a limit for spam protection so that you can't just dump kilobytes of text into your merkle tree. This is something to consider that may make things more efficient.
 
-# Annex
+## Annex
 
 A final thing is something we're calling the annex. The idea is that, observe that today in bitcoin transactions you have a locktime and an nSequence value. The locktime has always been there. The nSequence value was useless because its original design didn't actually work. Its semantics were later changed in bip68. To turn them into relative locktime. The question is, what if we want more of those things? What if we wanted a way to have an input that could only be spent in a chain whose blockhash at a certain height is a certain value? The obvious way would be to do something with like a nLockTime field on a transaction but there is no such field and we can't easily add one, at least not without running into all sorts of complications. So what we're doing is that, the witness stack when spending a taproot output can have a final element optionally called an annex which is just ignored. Right now there's no semantics associated with it, except that it is signed by all signatures. You can't add or remove it, as long as your transaction has signatures. It's also non-standard to use it. This would let you very elegantly say, if the first byte of the annex is this, then it's given these certain semantics. Another use case I'll get back to this once I talk about resource limits in script where you could use an annex to declare an expensive opcode and pay for it upfront because we may not want to add very expensive opcodes otherwise. I recognize that this might be the least obvious part of the presentation; is this clear?
 
-# Tapscript
+## Tapscript
 
 This is the other BIP that describes the semantics when executing a script, specifically when the leaf version is c0. This is bip-tapscript. By now, the reason that it is c0 and not 0 is because of those marker bits that let you detect that it is a taproot spend even without the inputs.
 
@@ -147,7 +147,7 @@ Another is making "minimal IF" a consensus rule. "Minimal IF" is currently a sta
 
 The last one is new code separator semantics. The OP\_CODESEPARATOR has been in bitcoin forever. It was probably originally intended as a delegation mechanism because it restricted what part of the script was being signed by signatures, and you could actually implement a delegation mechanism with this. Unfortunately, in mid 2010 when the execution of the scriptsig and the scriptpubkey was split and the CODESEPARATOR in one doesn't influence the signatures in the other, anymore, then that functionality was broken. So we looked at that and thought, well what is it useful for? There's one thing that it can still be used for, namely where you have multiple execution branches through your scripts like IF THEN ELSE and you want your signatures to commit to which of the branch you're taking... by putting a CODESEPARATOR in one of them, you change what script they are signing, and as a result indirectly lets you commit to what branch you're taking in the script. I don't know if anyone using this in production but I've certainly heard of people thinking about using this. So we're going to keep this part and drop the rest. We're just going to make signatures sign the last executed CODESEPARATOR position without those things.
 
-# Resource limits
+## Resource limits
 
 Okay, resource limits. Bitcoin script today has a 10,000 byte script size limit which we propose to drop. The reason for this is that it has no use. There is literally no data structure left in taproot whose size depends on the size of your script, or any way in which execution time is more than proportional to your script size. Before, so even in segwit, every signature hash contains the entire script being executed which means that if you have a script of 10,000 bytes and they're all CHECKSIGs, then you're going to do 10,000 CHECKSIGs that each hash 10,000 bytes and this is a new version of the quadratic hashing problem that was improved before like in segwit there's fewer quadratic hashing things left than in the legacy system that came before it, but in taproot they're all gone. We actually just pre-hash the script once, and then it gets included in the signature hash every time. So with that, we don't need that anymore.
 
@@ -189,7 +189,7 @@ sipa: Sounds like something to discuss when this becomes an issue.
 
 murch: Any more questions?
 
-# What's next
+## What's next
 
 We need to finish addressing all the comments from review. There's still a few open issues. This is the last week of the Bitcoin Optech review sessions. I hope and I think the sentiment in general is positive. I am hopeful that we will find widespread acceptance for these changes. We'll have to work on requesting a BIP number, I think we'll have it in the next few days. Then there's work on reference code, unit tests, and just review, test vectors, and need to open up a demo pull request to Bitcoin Core with an implementation... and then some unclear stuff... and then one day it will activate on the network. I am purposefully not going into details on how activation might happen. I think different people have different opinions on that aspect. That's something up to the community to decide how these things make their way forward.
 
@@ -197,7 +197,7 @@ In parallel, once it's clear that these things will happen, there's work that ca
 
 That was my talk, thank you very much.
 
-# Q&A
+## Q&A
 
 Q: What's the type of pushback if any you are seeing?
 
@@ -233,7 +233,7 @@ sipa: This is fork protection, too. I think that's the context in which it was o
 
 1h 26min
 
-# Other resources
+## Other resources
 
 <http://gnusha.org/bitmetas/>
 
