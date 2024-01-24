@@ -2,7 +2,7 @@
 title: Lightning Overview
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['lightning', 'scalability', 'layer 2']
+tags: ['amp', 'splicing','watchtowers']
 speakers: ['Conner Fromknecht']
 date: 2018-04-25
 media: https://www.youtube.com/watch?v=jzoS0tPUAiQ&t=15m10s
@@ -12,11 +12,11 @@ media: https://www.youtube.com/watch?v=jzoS0tPUAiQ&t=15m10s
 
 <https://lightning.network/>
 
-# Introduction
+## Introduction
 
 First I am going to give a brief overview of how lightning works for those of who you may not be so familiar. Then I am going to discuss three technologies we'll be working on in the next year at Lightning Labs and pushing forward.
 
-# Philosophical perspective and scalability
+## Philosophical perspective and scalability
 
 Before I do that though, following up on what Neha was saying, I want to give a philosophical perspective on how I think about layer 2 as a scalability solution.
 
@@ -28,7 +28,7 @@ There's also this efficiency-of-cooperation is what I would call it. In the gene
 
 That's my high-level introduction or the aims of how layer 2 solutions are trying to scale.
 
-# Lightning channels
+## Lightning channels
 
 Moving on, what is a lightning channel? The <a href="https://lightning.network/lightning-network-paper.pdf">lightning network paper</a> was originally written by Tadge Dryja and Joseph Poon. Tadge are you here somewhere? There he is. And Joseph Poon, back in 2015 I believe. It was an epic paper. Two years later, we have working code, we have networks, Tadge continues to work on it at MIT as well.
 
@@ -36,11 +36,11 @@ What is a lightning channel? In reality, it's a single output on the bitcoin blo
 
 The lightning network is a protocol for negotiating other transactions that can possibly spend from that UTXO. If you think the channel lifetime over the lifetime of the channel you're going to be updating with your channel partner a number of successive states where only the final one or the most recent agreement should be valid. Because of that, this is how we get the scaling. Not all of the transactions need to be broadcasted because there are economic and cryptographic assurances that only the most recent state will be executed. If people deviate from this, then they get punished. We can assume cooperation to get some more scalability benefits. As a cryptocurrency project, we still have to build trust-minimizing protocols.
 
-# Lightning network
+## Lightning network
 
 Channels on their own are great, but they aren't enough. A channel when you think about it looks like this. I have a channel forest diagram here. At each end of those lines there's one party. Maybe Alice and Bob. This is what it looks like on-chain. This is not useful on its own because if I want to pay anyone then I would have to make a channel to each person and that's O(n^2) number of channels and you would be better off just not using channels at all. The magic happens when you have a network and you have routing. The way this works is that people at the end of the channels announce they own a channel and if you notice an intersection of 3 edges in that graph then they have ownership of that and you can facilitate movement of money through that path. The density of that graph is important to making sure there's sufficient path diversity and this is how the backbone of the lightning network infrastructure is formed.
 
-# Atomic multi-path payments
+## Atomic multi-path payments
 
 <https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html>
 
@@ -64,7 +64,7 @@ You can imagine a single payment carving a knife through the network but now you
 
 We're going to be working on AMPs in the next few months.
 
-# Splicing overview
+## Splicing overview
 
 <https://lists.linuxfoundation.org/pipermail/lightning-dev/2017-May/000692.html>
 
@@ -88,7 +88,7 @@ The modification to the current channel design is we need to update and validate
 
 The only real change is the routing.. when an output is spent from and some other transaction is broadcast on the chain, most nodes are going to see that as a channel being closed (especially if they are not upgraded), and it needs to remain open. So we need a new message that says hey this is being spliced it will closed but don't worry you can keep routing through me. That's the only change for the routing layer that has to happen. So they can close nad reopeen on another channel. The upgraded nodes can continue using that one, of course.
 
-# Watchtowers
+## Watchtowers
 
 see outsourcers in <https://diyhpl.us/wiki/transcripts/blockchain-protocol-analysis-security-engineering/2018/hardening-lightning/>
 
@@ -98,7 +98,7 @@ The problem is that you might go offline, you might go on a hike, someone might 
 
 One of the hcallenges is privacy. If you're backing up these updates to different nodes then this might be a timing channel. We think we can mitigate this to a reasonable level. You also need to negotiate this with a finder, how much do you give them so that they have economic incentive? And finally, you need ways to clean up old channel states so that they are cleaned up properly and nodes don't have to unnecessarily use space.
 
-# Encrypted blobs
+## Encrypted blobs
 
 The method that I am going to describe uses encrypted blobs. Whenever a prior state is revoked, I take the commitment transaction and take the txid. I take the first 16 bytes as a hint. The second half is an encryption key. As a hash this is hard for someone to guess. The watchtower is only going to really realize that they have an encrypted blob when that transaction is published. They look at all the transactions in a block, they look at their database, then they unwrap them using their encryption keys. The channel backing up also requires signatures so that it can be swept without my presence. And finally I need to put all of this into a blob including the script template parameters to fill out all the script templates we use. And finally they encrypt and send this package of hints and encrypted blobs. You send it up to a watchtower, they ACK.
 
@@ -108,6 +108,6 @@ HTLC output scripts are a little more involved but they have script templates to
 
 And finally, in <a href="https://blockstream.com/eltoo.pdf">eltoo</a>, there's a recent proposal for <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-April/015908.html">SIGHASH\_NOINPUT</a> which is evne more liberal and it requires just one signature for all HTLCs. This will make this watchtower stuff pretty optimal in my opinion.
 
-# Watchtower upgrade proposals
+## Watchtower upgrade proposals
 
 And finally just some closing thoughts on privacy for watchtowers. We want people's anonymity to be protected so that we can't correlate across channels and watch for watchtower updates. We want to use unique keys for each brontide handhsake. Brontide is the transport protocol we use to connect on the watchtower network. We can batch these encrypted blobs. There's no requirement that I need to upload them immediately, I just need to do it before I go offline for a long time. I could save it up and broadcast on a random timer. And finally, there's the concept of blinded tokens where I can pre-negotiated and get signatures from the watchtower on redeemable tokens and present one of those when I want to actually do a watchtower update and they would authenticate that they have already seen this token or whatever. There's no requirement to use the same watchtower, you can update across many of them or you can switch intermediately. I think I'm out of time. Thank you.

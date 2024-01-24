@@ -2,10 +2,11 @@
 title: How To Charge Lightning
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['layer 2']
+tags: ['lightning']
 speakers: ['Aviv Zohar']
+date: 2017-11-05
+media: https://www.youtube.com/watch?v=3pd6xHjLbhs&t=3785s
 ---
-
 Our next talk is getting into layer 2. Leaving what needs to done at th...
 
 I am going to start with maybe a simple beginning talking about a single channel between Alice and Bob. We heard about channels yesterday so I am not going to go into details. Alice is not going to cheat Bob in my scenario. Everything is going to run as if everyone honest and doing their best effort, for my example. They open a channel and insert 10 coins. Every time Alice moves her coins to Bob or the other way around, the liquidity within the channel shifts. So you can think of it as if we are in a state space between 0 and 10. If we are just transacting in single units of bitcoin we are just moving around there. I am going to assume that just for the sake of modeling that Alice cannot predict whether she will be paying Bob next or the other way or whatever.
