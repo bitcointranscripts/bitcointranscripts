@@ -2,13 +2,12 @@
 title: Are Users Rejecting Bitcoin Forks???
 transcript_by: Radiokot via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Ua3W9p1Z_RA
-tags: ["forks", "consensus"]
+tags: ["soft-fork-activation"]
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
-categories: ["Podcast"]
+categories: ["podcast"]
 date: 2022-05-07
 ---
-
-# Intro
+## Intro
 
 Aaron: Live from Utrecht, this is **Bitcoin, Explained**. Hey Sjors.
 
@@ -46,7 +45,7 @@ Aaron: Yeah, I think that's a bit more accurate as well. All right, so before, l
 
 Sjors: No, you go ahead.
 
-# What is URSF?
+## What is URSF?
 
 Aaron: All right. So basically, there's different ways of implementing it exactly. But as the name suggests, it is a way to reject or resist. I'm going to go with reject, I think. It's a way to reject a soft fork. And the way this can be done technically, you know, there's multiple ways to do it. But the way that makes most sense if you ask me in the way it hasn't been implemented at all yet. There's no client that does this. It's more of a concept. So a little bit of background; the first time I heard about it was Jorge Timón, one of the former Bitcoin Core contributors. He came up with this concept. That's the first time I heard about it, and this was during the Taproot discussion. Now, it wasn't implemented back then, but now we have a new discussion going on about [CTV, CHECKTEMPLATEVERIFY](https://github.com/bitcoin/bips/blob/master/bip-0119.mediawiki). In that context, there has now actually been some code produced by Jeremy Rubin, who's also the main proponent of CTV. So now the concept is getting a bit more real, and it's probably a good time to start talking about this. So, what it does essentially, a software can be activated, has been activated so far through blockchain signaling. We've talked about this in previous episodes. So for example, Taproot used Speedy Trial, which required that 90% of all blocks within one difficulty period had to had an activation signal in it, which is something that miners put in the block. Once 90% of all blocks have this, then it indicates that the software is going to be active. What a URSF does is it will actually reject the last block. Let's stick to the simple example. It will reject the last signaling block before activation. So I think it's a difficulty period has 2016 blocks, 90% of that is 1815 blocks. So a URSF client will accept up to 1814 blocks that signal, but the 1815th block will be rejected. So at that point it will basically create a blockchain split and on the side of the split that the URSF is accepting, there will not be a soft fork.
 
@@ -76,7 +75,7 @@ Aaron: And then you can comment on it.
 
 Sjors: Okay.
 
-# Dealing with miners
+## Dealing with miners
 
 Aaron: All right. So basically, ideally, we want miners to signal and to activate the soft fork that way. And that's how it has been done with previous soft forks, definitely before SegWit, that's how we did soft forks. And the reason for that is that if miners enforce the soft fork, then you are sure that the network stays in consensus because even non-upgraded nodes will follow the majority chain. The problem with this, and we've talked about this in previous episodes, I'm not gonna rehash all of it, but in short the problem with this is that it allows miners to block the upgrade. Miners can just refuse to signal and then the soft fork, the upgrade, doesn't happen. Okay, now there's three ways to deal with that situation.
 
@@ -138,7 +137,7 @@ Sjors: Well, in any case, that's relevant in the case where a small minority or 
 
 Aaron: Right. Exactly.
 
-# Chain splits
+## Chain splits
 
 Aaron: Well, so far that I understand this concern at all, I think, and this actually gets to our next point. It's sort of the problem of UASFs or mandatory signaling type of UASFs. And that is that, again, there's this asymmetric advantage over enforcing it. And therefore, a small group of users may sort of impose their will on the majority.
 
@@ -164,7 +163,7 @@ Aaron: Right, yeah, obviously just my personal opinion that I'm giving on the po
 
 Sjors: Right. And this is where we probably don't really agree because I don't like the miner vetoes just as much as you don't like them, but I'm not willing to replace it with something that I think is unsafe. Which I think, well the UASF without anything else I definitely think is unsafe as I've explained in other episodes and I think this combination is still unsafe, despite it having some cool features. So I'd rather deal with the current annoying situation than to open the other can of worms. But we can explore what that can of worms looks like.
 
-# Mitigating re-org risk through futures market
+## Mitigating re-org risk through futures market
 
 Aaron: Well, I was just sort of prefacing this. I was saying, okay, given the trade-offs and my knowledge of how the system works and the risk and my personal preference, is that any soft fork should be a UASF in Core or maybe somewhere else. That's not part of this podcast discussion. I think it should be UASF with mandatory signaling and standard users should also be given the option to opt out through a URSF. So that opinion sort of stands on itself. Now to mitigate the risk, and this was what you're getting at. So to mitigate the re-org risk and that kind of stuff, I think it would be much better if this sort of battle happens without any casualties. And I think that this can be accomplished fairly well through futures markets. So instead of actually splitting the chain and only then allowing trade between the coins and now all of a sudden one coin is more valuable than another while the market is sort of figuring this out live and it's been traded live and there are replay attacks and who knows what else and then what re-orgs and, you know, the Bitcoin Core user in the middle suffers, and so instead of doing that live I think it can be done sort of virtually through futures markets.
 

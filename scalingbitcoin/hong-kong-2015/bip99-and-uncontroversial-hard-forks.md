@@ -2,7 +2,7 @@
 title: Bip99 And Uncontroversial Hard Forks
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['consensus', 'forks']
+tags: ['soft-fork-activation']
 speakers: ['Jorge Timón']
 media: https://youtube.com/watch?v=aQ1--w4uEMM&t=1121
 ---

@@ -1,14 +1,11 @@
 ---
-title: Bitcoin Script
+title: "The evolution of bitcoin scripting"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['forks', 'taproot', 'covenants', 'segwit']
+tags: ['scripts-addresses', 'op-checksigfromstack']
 speakers: ['Olaoluwa Osuntokun']
 ---
-
-Featuring roasbeef
-
-# Agenda
+## Agenda
 
 * opcodes
 * OP\_CHECKSIGFROMSTACK
@@ -26,7 +23,7 @@ Featuring roasbeef
 * restrictive endorsement (jrubin)
 * signed sequence numbers, signed sequence commitments
 
-# Restrictive endorsements
+## Restrictive endorsements
 
 OP\_CODESEPERATOR ... you might not need codesep for this. Basically, in the old bitcoin, pre-segwit tx, you could add arbitrary computation into your scriptsig. That will affect the second signature that comes on. This is a thing that used to be possible in bitcoin and has some interesting use cases where you want to say this signature is signed but I'm adding a new hashlock on it, and then you sign a new hashlock and if you don't get that then.... my script is specifying everything in the input? Recursive segwit, kind of. When you add your signature and sign all your signatures you've seen, then you could add one another script to verify against that. It's another condition you want to have checked. You could add in your scriptsig to hash something, then make an invalid signature by signing something that says 1 == 2  or 1 2 OP\_EQUALVERIFY and that would be an invalid signature. This would be useful for signing something and putting a hash preimage in it and the signature is now restricted. It's specifying additional constraints in the scriptsig. Dispatching is similar to graftroot in some situations.
 
@@ -36,7 +33,7 @@ OP\_EVAL was an alternative to p2sh. With p2sh, you use canonical pushes.
 
 jl: I'm doing signatures in a semi-honest model and if they are in a semi-honest model, and semi-honest in the sense that if you finish the signature with your other participants then you haven't leaked the data, and if you fail to finish the signature then your keys get leaked. If you're signing a restrictive endorsement then you would put a new hash preimage, add one more round, then reveal that hash and lets you convert something in the semi-honest model into the non-honest model because you have one more thing. I can add an escape clause in multisig that you didn't know about.
 
-# OP\_CHECKSIGFROMSTACK
+## OP\_CHECKSIGFROMSTACK
 
 CHECKSIGFROMSTACK is something where you can check a signature on the stack. This lets you push signatures to the stack, and then check that it verifies. The cool thing is that you can do cool things, like create a new type of lightning channel similar to eltoo but better. You can do oracles, like based on known pubkeys. You could also delegation, like a key in a script and I can sign any of your keys and then you can check the checksig after that.
 
@@ -54,7 +51,7 @@ You can't do unconfirmed spends in zcash; you can't specify an intermediate accu
 
 OP\_CHECKSIGFROMSTACK with OP\_CAT gives you covenants.
 
-# secq
+## secq
 
 This isn't secp256k1, it's secq256k1. This is related to bulletproofs. The idea of secq is that you have this cycle between secp and secq. The group has a particular order, and on secq it's reversed. You have a private key, multiply it by your generator, you have an element in the group. That element in the same group has the same size as the field in the other group. You could have a STARK or SNARK that can verify another SNARK circuit. We can verify secp and secq in bulletproofs.  You can have a signature over a message for a public key. "Scalable cycles of zero-knowledge" and they found like one curve and it took a lot of computation to find that, and somehow secq popped out and had the proper properties. The equations are the same, too. You could do recursive STARKs.
 
@@ -62,7 +59,7 @@ Imagine you're doing a swap protocol, then as a part of it one party says he is 
 
 You could also prove that a private key was generated in a certain way, and then you could verify that.
 
-# Signed sequence commitments or signed sequence numbers
+## Signed sequence commitments or signed sequence numbers
 
 It's still replace-by-version, but you do CHECKSIGFROMSTACK to sign the versions.
 
@@ -78,7 +75,7 @@ You use OP\_CSV to ensure you are always spending with a higher value. But with 
 
 You could use 2-of-2 ECDSA, CHECKSIGFROMSTACK or Schnorr to produce a signature under that number itself. This is pretty cool. The average transaction in eltoo can't use a locktime. This can use locktime. Once you can sign arbitrary messages, you can have structured constraints or constructions on what the message is itself. In this case, it's a sequence number, it could be a bunch of other things as well.
 
-# Sighash flag stuff
+## Sighash flag stuff
 
 bip118 SIGHASH\_NOINPUT is coming up lately. You can't chain transactions if the original transaction has its txid change; but if you don't have to specify the txid with SIGHASH\_NOINPUT, then your latest transaction can still be valid. You need application-specific key pairs only used for the purpose of SIGHASH\_NOINPUT. The sighash would otherwise include the previous input that you were trying to spend. So SIGHASH\_NOINPUT only signs the script; there's an output out there that satisfies this witness, and that's really powerful.
 
@@ -104,7 +101,7 @@ We should have a way of committing fee, and have something where the amount to a
 
 Explicit fee could be a 2019 soft-fork.
 
-# Stack manipulation
+## Stack manipulation
 
 What does everyone think about in a new segwit version doing an append-only stack and then pointer regressive stuff? You could just jump address wise in the stack? No, stacks are harder to analyze. This is the witness, I'm pulling out the 5th thing in the witness data.
 
@@ -116,31 +113,31 @@ Should we break up MBV.. or do you just like have a general version of it? Is it
 
 An example where it breaks down in merklebranchverify... should you be able to extract multiple elements from merklebranchverify? If it just does one thing case, it's really hard to amortize that proof. That's where MAST protocol doesn't let you do pulling multiple things out, it's just pull whatever set of keys you want and check at least a few of them. Merklebranchverify is an example where you have to go on the complicated side, not just extracting its own little branch. It's more like a union script, it's 1-of-n. The generalized case is more like "permissionless innovation". Who decides which one of these- which path we should go down?
 
-# DoS vulnerabilities in new opcodes
+## DoS vulnerabilities in new opcodes
 
 We need a new fuzzer and randomize the script you're producing, fuzz it, and see what causes a crash and research the memory, sigop count, and so on. Nobody has made one, that would be kind of cool for cross-implementation testing. This would find some random bugs that haven't been found yet.
 
 Bitcoin script is really complicated. It's not strictly interpreted; it's parsed somehow, and then interpreted. Think about OP\_IF then OP\_PUSHDATA and then an ELSE branch... there's weird stuff there. The way branches are handled are weird. The way conditionals are handled is weird. It's written in a way we can reason about, but that's not how they work.
 
-# Merkleized abstract syntax tree (MAST)
+## Merkleized abstract syntax tree (MAST)
 
 Taproot and graftroot gives you MAST. You might still want a MAST construct, because MAST inside taproot is very useful. They compose. Taproot is the probably the thing you do first because it has a bigger impact, but then you still want a MAST mechanism for other reasons. With MAST, you get a merkleized script. MAST seems way more powerful than just 1-of-n scripts. I thought it would be like branches with multiplication and addition or something, and other operations, not just hiding different multisig situations.
 
 BLS signatures would be killers. Non-interactive signature aggregation and cross-transaction and cross-block aggregation. I think someone is working on a BIP with that, for some new curve or something. They released a BLS library. The risk to introduce new signatures is pretty low; you opt-in to it, so you take on that risk of the new signature scheme. If you do a MAST, then you don't even need to reveal what that key is, and if the other keys break then you could go to ECDSA if the other schemes are broken, as long as it's already in your MAST.
 
-# New languages
+## New languages
 
 Simplicity? Ivy?
 
-# RSA
+## RSA
 
 There's something like CL signatures.. it's a proof of a signature on a committed value. They are based on RSA too. At some point Satoshi used RSA-512 and then he realized that's dumb. Unfortunately there's a high computation cost for RSA signature verification. zcash has this thing where they track the worst case block they can produce... they had a fix for quadratic hashing.
 
-# Fun with blinding
+## Fun with blinding
 
 Before tumblebit, it was blind signature verification on script itself. Jonas Nick has a few things, like ecash things. Any protocol where you're doing an exchange. Oleg had a thing a while back where he had a protocol with multisig where you have someone sign a transaction on your behalf but they wouldn't know what it was. You could have blinded multisig where you trust them to do a signature but you don't know what you're signing.
 
-# 2019 soft-forks
+## 2019 soft-forks
 
 Schnorr, new segwit version, SIGHASH\_NOINPUT, and OP\_CHECKSIGFROMSTACK. These two are relatively small in line diff. Maybe activate late 2019, early 2020. We haven't tested the waters since the last drama. Schnorr is more straightforward to do than NOINPUT. In terms of the behavior of the system changing, Schnorr changes the behaviorf of the system relatively minimally, and NOINPUT introduces tons of new functionality. In terms of review, it's easier to review NOINPUT. These two opcodes offer a lot of fungibility risk unfortunately. It's not just "don't accept those coins" but think about getting paid or a normal economy or think about where your dollars came from; every dollar is covered with cocaine, and eventually you're mixed with everything. That's the fungibility problem: if you have a weird condition, then your coins are going to be imposed by those conditions whether in a reorg or something. I'm personally okay with that but folks like Greg are vehemently opposed to that. It's like, buy coinbase outputs at that point. It's very old coinbase outputs that are non-fungible because they are worth a lot more than other coins that are spent in any other transaction.  It depends on how binding the covenants are. There would be a market for virgin unencumbered coins at this point.
 
@@ -154,7 +151,7 @@ Fixing timewarp as a soft-fork could get done in 2019. There could be consensus 
 
 Explicit fee could be a 2019 soft-fork.
 
-# Sidechains
+## Sidechains
 
 I would prefer sidechains with miners instead of federated multisig. Otherwise you're going to have frozen keys or confiscation. Once you have sidechains, then you're done and don't need further upgrades. Anything cool can go into new sidechains. Paul Sztorc has his recent drivechains, there's RSK, then there's Elements and the federated multisig approach.
 
@@ -162,21 +159,21 @@ The custodial agents could be a separate federation from whatever the implementa
 
 With the Sztorc stuff the withdrawals take multiple months, you could rescue coins with UASF in the event of a failure. UASF is the rescue plan, but the bitcoin users have to agree and do it. And they have to understand the nature of the dispute and have to do it timely; is it likely? or will it enforce a trend of miners doing nasty things? The idea of a sidechain was that it was supposed to be isolated.
 
-# OP\_PUSHTXDATA
+## OP\_PUSHTXDATA
 
 OP\_PUSHTXDATA was jl2012. You can push transactions into the stack. You can do opcodes to verify that, you can do vaults and pattern match over the structure of the transaction itself, which allows for covenants. You can restrict what the inputs did, and also reverse covenants. Chain.com did the stack-based way which was really sick. They also had pattern matching on the inputs as well, but nobody used that. jl2012 has the stack-based ones specified pretty well and they are pretty ideal. Do you allow the transaction only, the block, multiple transactions, previous transactions, transaction chains, the entire chain?
 
-# Languages
+## Languages
 
 BitML compiles down to a set of transactions. It was a calculus bitcoin script, a functional language. You could specify like a revocation clause and a nested thing, like a second-level HTLC and it would output the entire transaction tree for you to sign. You could make a turing-complete bitcoin by turning bitcoin transactions into turing complete. The next step would be to take BitML and generate the daemon, output some protobufs, compile it into something, then boom you have a full-stack actual execution code of sets of bitcoin transactions.
 
 Zero-knowledge protocols that get compiled to a set of bitcoin transactions based on knowledge exchange.
 
-# Spork
+## Spork
 
 Probabilistic soft-fork where instead of you doing versionbits, you say that if the blockhash has some additional PoW below some threshold, then it activates. Then if the miner doesn't want to activate the fork then they have to abandon their block. The cool thing is that if you set it to 6 months, you'll always have an expectation of 6 months, but it could happen at any time. You could set a minimum like at least 3 months, then you have an expectation of 6 months to get your shit together. Doing it live. You do actually want people to be ready to process those transactions before any known point. This is only for soft-forks, not hard-forks.
 
-# Takeaways
+## Takeaways
 
 Sigops are dumb. We need to somehow figure out a way to optimize that.
 

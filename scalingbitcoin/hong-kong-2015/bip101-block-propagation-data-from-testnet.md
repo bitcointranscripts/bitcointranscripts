@@ -2,7 +2,7 @@
 title: Bip101 Block Propagation Data From Testnet
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['forks']
+tags: ['soft-fork-activation']
 speakers: ['Jonathan Tomim']
 media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=2h25m20s
 ---

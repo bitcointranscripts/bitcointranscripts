@@ -2,7 +2,7 @@
 title: Socialized Costs Of Hard Forks
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['forks']
+tags: ['soft-fork-activation']
 speakers: ['Jimmy Song']
 date: 2017-09-09
 media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s
@@ -12,13 +12,13 @@ media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=5m11s
 
 KL: Can you hear me? Is it good? Okay. I hope you have practiced your French because.. no, the presentations are in English. Welcome and thank you very much for being here. This conference will very probably be the best we've had in the bitcoin sphere. The crowd is pretty crazy. I've had the ticket list and I can say the people in this room, not just the speakers, the attendees are all super amazing. I'm glad to be launching this event. We're a little late. I have a small joke. I hope you sold your bitcoin today, because we're breaking bitcoin. Thank you. Jimmy is going to start. Please welcome Jimmy Song.
 
-# Introduction
+## Introduction
 
 It is great to be here. Welcome to Breaking Bitcoin. Great event, right? Good stuff. Organizers have done a great job. I'm super excited to be here. It's great to meet people you have only met online. I had one guy that I worked with for 3 years at Armory and didn't meet him until yesterday. That tells you how spread out and decentralized the bitcoin community really is. You meet them online, but you never meet them in person. I love these events for that reason. Let's get started.
 
 My presentation is called the socialized costs of hard-forks in general. Many of you think you get free money out of this, and that's good, but my premise is that the free money wasn't really free. The free money wasn't really free.
 
-# bcash hard-fork
+## bcash hard-fork
 
 August 1, 2017 around 6:12 UTC, bitcoin did something that it had never done before. Where there was one coins, then there were now two coins. This was the timestamp of the first block found on the bcash chain. This was something that happened 10 days earlier when someone posted to bitcointalk that posted a website and they wanted 8 megabyte blocks, they hated segwit, they hated replace-by-fee, it was sort of this contingency plan for the user-activated soft-fork and then it became this offensive weapon or something... so it was this hard-fork that happened around the same time of the segwit UASF drama escalation or culmination.
 
@@ -34,7 +34,7 @@ The August 1 hard-fork, the launch of bcash, had some negative side effects. Neg
 
 The classic example of a negative externality is a factory. Maybe they are producing-- maybe it's an oil refinery and they produce a good that is good for the economy but they also produce something that is a negative externality, like pollution. It's not just something that everyone has to pay for, to clean up, or suffer from. But it's also 2nd and 3rd order effects, like more traffic going towards the factory as a result of more workers that need to go there. You might also have- you might endanger some wildlife around there. It's not that everyone has to pay for hte negative externalities, it might be specific people, like people who were previously using that road or animals that were near that factory, and they are also paying for the cost of that factory.
 
-# Positive externalities
+## Positive externalities
 
 But before we get to that, let's look at positive externalities, which are the benefits of the bcash hard-fork tha teveryone experienced. The first group are the users, who enjoyed the price increase. It's hard to remembe rnow, since the market price is $4k now. But on August 1 before the hard-fork, bitcoin was trading at $2.7k. If we look at the price of both bitcoin and bcash, it's at $5k right now. I don't know, someone check the price. That's a lot of money. For a lot of people, they sold their bcash for bitcoin, and they got something like a 6-20% increase based on whenever it was that you sold your coins. So users got more money.
 
@@ -46,13 +46,13 @@ I work for Paxos which many of you may know. And we own a NY-based bitcoin excha
 
 It's not hard to see that price appreciation was the main driver of a lot of these benefits. Whether it was unlocked value or people looking for asymmetric payoffs or whatever, the price increase is very tangible and very obvious.
 
-# Negative externalities
+## Negative externalities
 
 What's not obvious are the negative externalities, which I will talk about now.
 
 When you think about negative externalities, there's one-time costs and permanent costs. One-time costs, like in the case of the factory, are the cost of building the factory- that's a one-time cost. A permanent cost is like the ongoing pollution that the factory is creating. We have both as a result of this hard-fork.
 
-# Negative externalities: one-time costs
+## Negative externalities: one-time costs
 
 Let's start by looking at the one-time costs of the bcash hard-fork. So we have a bunch of exchanges and they had a lot of one-time costs that they had to pay. The first thing that happened is that deposits and withdrawals had to be halted for a day or two for these exchanges because they didn't know what would happen. Many of these exchanges had to dip into cold storage because their users were demanding bcash. It's part of their fidicuiary duty, they have to do that. You also have to audit the new software. This is something that we had to do at itbit. We want to spend bcash- how do we do it? We have to download electron cash? Does it have malware? We have to go and audit it. We had like 10 days to figure out if this was okay or not. And then you have to decide, are we going to just allow a one-time withdrawal, or are we going to list this new coin? For an exchange to lis ta new coin, it's not easy- there's all sorts of new procedures for cold storage, signing, deposits, withdrawals. Or you could just have this one-off event where you give them their bcash at some point and then you never think about it again. But that has its problems too. And finally, and whatever way you do it, withdrawals or listing-- you are going to need new infrastructure to work with this token in some way, even if it's a one-time withdrawal. You need some way to give these tokens to your users. Again, short-notice. Right? No time to do this, has to be done quickly.
 
@@ -70,23 +70,23 @@ And finally- the regulatory burden, is also there. How do you treat bcash as a t
 
 We've talked about one-time costs. What about some permanent ongoing costs that we have to continuoously pay as a result of hard-forks?
 
-# Negative externalities: permanent costs
+## Negative externalities: permanent costs
 
 So, the addresses look exactly the same. The addresses look exactly the same. This has a lot of consequences. If you're an exchange, you show a bitcoin address, and someone sends bcash, what are you going to do? Your duty is to give it back. And now you need all this infrastructure to detect stuff like this and give it back. If you're a wallet, what are you going to do? Someone paid you, but they paid in bcash instead of bitcoin- are you going to tell them that? Your private key can sign for bcash, how are you going to handle that. What if you're a merchant and you're paid in the wrong token? Do you have to detect that and give them their money back? If you're a user, paid p2p on bitcoin instead of the coin you want, or vice versa, now you have to handle that too. That burden often goes to the wallet you're using or the exchange you're using. These are all problems that were created as a result of this hard-fork, which we really didn't have before.
 
-# Unreliable blocks
+## Unreliable blocks
 
 The next issue is unreliable blocks. This is a problem on bcash and to some extent on bitcoin as well. Something like 40% of the total double sha256 mining power was on bcash at some point. That meant that bitcoin had like 20 minute blocks. There were hours that had 2 blocks each, for a while. So that meant congested network, higher fees, all that stuff. Of course, bcash suffered worse when they went 8 hours with only one block. So, unreliable blocks, this is a socialized cost.
 
-# Reorg attacks
+## Reorg attacks
 
 We're now a lot more vulnerable to reorg attacks. Both sides of the fork can be attacked more easily. If you had a state actor that was planning to do a 51% attack on bitcoin, now it's a lot easier because you just wait for bitcoin mining hash power to move over to bcash and then you execute your attack then. Reorg attacks become easier.
 
-# Chain hopping attacks
+## Chain hopping attacks
 
 This is an attack that has become more feasible against bitcoin as a result of a hard-fork that takes mining power. The way it works is you have a large pool of miners that are colluding or following economic incentives and they mine bitcoin and when the difficulty goes down on another chain, they move to the other chain. As a result of the hashing power moving over, the difficulty on bitcoin's chain drops, and then they move back, and back and forth. This causes unreliable blocks. It does seem to be the case for about 40% of miners right now, they just point their hash power at which one is easier to mine and more profitable to main.
 
-# Privacy loss
+## Privacy loss
 
 Any time that you are spending on bcash, it's most likely, unless you're buying freshly minted bcash, it's now linked to you. There's double the number of data points because now there's two blockchains to be able to examine. It's way easier.
 
@@ -94,13 +94,13 @@ Byteball and stellar-- who went and got those? Anyone? So only a couple of peopl
 
 Privacy loss is a huge security risk. If you're somebody that is evil, that's looking to rob someone, who do you go after? You would go after high net worth individuals. If you lose your privacy and you're a HNWI, you're going to get targeted now. That's a security risk. You can't just say you don't care about your privacy and you're getting 6%... it comes at a cost to you.
 
-# Replay attacks
+## Replay attacks
 
 Replay attacks didn't happen with bcash but it could have. We might get this with segwit2x, though. Replay attacks are sort of more of a problem for merchants because if you as a user send bitcoin to coinbase.com and someone replays that attack and your bcash also goes to coinbase.com, they are sort of obligated to send you your bcash back. But if it goes the other way, and if coinbase sends you bitcoin and it gets replayed and also sends you bcash- you're not necessarily going to give that back. That's what happend with the Ethereum Classic fork.
 
 There's a pull request on segwit2x's repository for opt-in replay protection. But this has its costs too. Because now you have to put something in OP\_RETURN and now there are larger transactions. Every wallet has to figure this out. This is a one-time cost for everyone. Every wallet has to add this, get it tested, it's not easy to handle this without native replay protection.
 
-# Future hard-forks
+## Future hard-forks
 
 It looks like there will be more hard-forks in the future. There are way too many benefits for hard-forks not to happen.
 
@@ -108,17 +108,17 @@ Hard-forks are attractive for many reasons. It's a very clean altcoin launch. Yo
 
 In a way, they are hacking the fidicuary duty of exchanges. Because exchanges are obligated to give you your value, that's much easier to get them listed on exchanges. What are the biggest problems that altcoins have? It's distribution and getting them listed on exchanges. Well, you can hack that by just hard-forking instead. It looks like this is the reality.
 
-# Bitcoin Gold GPU
+## Bitcoin Gold GPU
 
 This is a hard-fork that's announced July 30 2017 by Asiacoin or something like that on bitcointalk. Apparently they have a pull request on their repo that says October 1 is their hard-fork date. They are going to change their proof-of-work. They want to do this before segwit2x, and they want to be GPU minable.
 
-# Segwit2x
+## Segwit2x
 
 Bitcoin2x is mid to late November. There will probably be no replay protection, and if there is, it will probably be opt-in.
 
 We can sort of see a future where coinmarketcap looks like this: BItcoin, Bitcoin Money, Bitcoin Bucks, Bitcoin Cash, BItcoin Chips, Bitcoin Bits, Bitcoin Notes, Bitcoin Ounce, Bitcoin Check, Bitcoin Coin.... ((laughter))
 
-# Immunization
+## Immunization
 
 I will say though that there are some reasons for optimisim. What doesn't kill bitcoin, makes it stronger. And conferences like this prove that we're getting better at this. And really, we're getting immunized to all of these hard-forks and it's creating a better bitcoin as a result. We're securing against attacks and mitigating against these threats.
 
