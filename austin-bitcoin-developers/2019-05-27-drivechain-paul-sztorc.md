@@ -4,7 +4,7 @@ speakers: ['Paul Sztorc']
 date: 2019-05-27
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['research', 'lightning', 'layer 2', 'sidechains']
+tags: ['sidechains']
 media: https://www.youtube.com/watch?v=BH-qZhEZSrg
 ---
 
@@ -12,17 +12,17 @@ Drivechain: An interoperability layer-2, Described in terms of the lightning net
 
 <https://twitter.com/kanzure/status/1133202672570519552>
 
-# About me
+## About me
 
 Okay. So here's some things about myself. I've been a bitcoiner since 2012. I've published bitcoin research on truthcoin.info blog. I've presented at Scaling Bitcoin 1, 2, 3, 4, tabconf, and Building on Bitcoin. My background is in economics and statistics. I worked at Yale Econ Department as a statistician for 2.5 years. My boss from back then won a Nobel prize earlier this year.
 
-# Topic: Drivechain
+## Topic: Drivechain
 
 I try to call this layer 1.5 instead of layer 2. It sneaks between the lightning network and layer 1. You can have lightning network on top of this. Because each piece of software that is a sidechain is going to be the layer 1 of its own blockchain. So this fits in between.
 
 Drivechain aims to provide interoperability, primarily. It can be deployed by soft-fork. It's very slowly being assigned a bip number-- BIP300 and BIP301. The project website is drivechain.info. If you're technical, the BIPs are really good now. They are nice, short and clear. You have to find them by their pull request because only 301 has been assigned a number and luke-jr said he would get around to assigning 300 at some point whenever he gets around to it. I have links on drivechain.info to find the pull requests.
 
-# In one slide
+## In one slide
 
 Here's the idea in one slide. The problem is meta-consensus. Consensus would be getting all the nodes to look the same way. We already know how to do that, Satoshi figured it out. Meta-consensus is about humans agreeing what those nodes should be agreeing about. It's consensus about consensus. A good example is the block size debate. Whatever we set the block size to, at least in theory you can get all nodes to agree on a block history given those parameters. But we're not sure what to do about the fact that different people have different ideas about what the nodes could do. Every hypothetical change to bitcoin too, including turing-complete scripts or mimblewimble, these are all things that we could have bitcoin do but we're not sure if we should. We know how to get nodes to agree, but we're not sure how to get humans to agree.
 
@@ -30,19 +30,19 @@ The solution is to have one token that travels between many blockchains. There's
 
 The reason why this is important is because-- why compete to win? When you can simply play all the hands. You can do everything at once. Then you definitely can't lose. Then you can't lose even if someone has some dumb idea; it doesn't matter, you're doing all the things.
 
-# Interoperability
+## Interoperability
 
 Interoperability is an easy thing to understand but here's some slides about it. It's teamwork plus differences. The team is going to agree on the bare minimum number of things they have to agree on, but then they will disagree about other things. In drivechain, everyone will agree about 21 million coin limit and everyone is going to agree on which piece of software those coins are on.
 
 I had this idea here, this is a representation of that. This is a 21 million coin limit here, and some that are unmined so that's 16 million floating around. In a world with drivechain, probably most of them would be on Bitcoin. But some of them will probably be on some other funny systems like mimblewimble or ring signatures or systems using other things. It could be some really dumb ideas too, and maybe someone puts 50 BTC on it. It's just the interoperability idea.
 
-# How drivechain works
+## How drivechain works
 
 I am going to get to how drivechain works. This soft-fork allows for a new type of output, which I call a "hashrate escrow". Anyone can put bitcoin into it, but money can only be taken out of it in a deliberately slow process gated by the miners. This is more of a curse than a blessing for the miners. They can only extract money slowly and transparently. So instead of sending money to a person, you send it through this process. Escrows are a prison where miners are rewarded; you can choose to go in at any time but it's hard to get out. It's a prison metaphor.
 
 This is hard to explain. After months of trying, I just go straight to an example.
 
-# Example: A payments sidechain similar to lightning
+## Example: A payments sidechain similar to lightning
 
 Say you start with bitcoin. This is what the software looks like. Then you add, this is with bip300 and bip301. Then you adds it-- the guy working on this the most is ... he really likes Qt. So he made all of these themes, he has this dark Qt theme. It adds a tab at the top of the Bitcoin Core GUI.
 
@@ -108,7 +108,7 @@ Now Roger is going all around the world and he's giving away free bitcoin, doing
 
 There's something interesting here where I will explain a second thing, which is the blind merged mining. There's a lot to explain here before I go back to explaining drivechain.
 
-# Blind merged mining
+## Blind merged mining
 
 There's transactions within the escrow, and they generate transaction fee revenue for miners on layer 1 even if they don't see them. So they are going to try to get 100% of the transaction fees generated on other pieces of software, even if they won't see the transactions. How is that even possible?
 
@@ -170,7 +170,7 @@ A: Okay, that's one vote for proceeding.
 
 I was taking a small detour in our story to talk about blind merged mining. I tried to get it through quickly. Anyway, it generates value for the miners. It's both direct and indirect.
 
-# Sideshift, shapeshift, atomic swaps, etc.
+## Sideshift, shapeshift, atomic swaps, etc.
 
 When lay people want to settle their coins back to layer 1, leaving the escrow contract, they are going to be using Shapeshift or Sideshift which charges 1% but you get out of the escrow immediately. It's sort of like prisoner exchange. Inside the escrow, there will be a transaction where Andreas owns some coins in the escrow but in exchange on layer 1 he is going to pay out some guy Jeff. Andreas is going to pay out the customer on layer 1. So we have a new layer 1 transaction. There could have been 10 trillion transactions on the sidechain but so far the layer 1 has only seen the deposits and this different one which is an atomic swap type transaction. This isn't even a drivechain transaction, it's just a "hey if the hash is revealed" type deal. But in practice, since people don't seem to care about that, in the real world what woul dhappen is that Andreas would have a -- people would send him money in the escrow, and it will jus tlook like normal transactions. Most lay people just don't care, so there will be this fluid trust, it's much better than exchange for example. So this begs the question, how does Andreas get his money out? Even though there's specialization and one guy will be paying people out in exchange for 1%. How does Andreas get his money out? He will broadcast a message inside the sidechain software saying I want these coins out. This is the withdrawal transaction. The software aggregates all of these messages. This is what the sidechain template Bitcoin Core fork we wrote does. You're free to do whatever crazy things you want, but I think this is optimal. The software is going to look at these withdrawal requests and say, what transaction do we need to make that happen? Then let's make that happen. What do we need, and the transaction will be defined by a 32 byte txid and these 32 bytes are going to be very important. There's a step-- meanwhile there can be new deposits into the escrow, which can be changing htis. It's done cleverly, so that certain bytes are zeroed out and you can still make deposits to this.
 
@@ -232,7 +232,7 @@ Q: There is a signature, it's from the last 5,000 blocks and mining.
 
 A: I agree, that's how I think about it. The people constructing the ledger are in a dynamic membership. It's the same as the DMMS structure from the Blockstream whitepaper. They are slowly building a signature over 13,000 blocks. It's like chizzeling something into a statue or slab of marble. Other than this gate, there's no other requirement on these withdrawal transactions. There's no transaction that just shows up to the script interpreter and then the scrpit interpreter gives it a thumbs up. No. It goes through this gating process and then at the end you get your coins.
 
-# Costs and risks
+## Costs and risks
 
 This is where I start to compare it to the lightning network. With lightning, you don't necessarily need to use lightning.
 
@@ -256,7 +256,7 @@ In lightning and sideshift, the fees are percent based. And you also have at lea
 
 Tadge Dryja became twitter famous temporarily recently because he said lightning isn't useful for micropayments because when you route through hashlock contracts, it expands the transaction by 40 bytes and the fee would have to expand by much more than that and it won't work for super super tiny micropayments. It would still work in channels, is my understanding, I don't see why it wouldn't. So that's slightly different.
 
-# Miner theft
+## Miner theft
 
 I've already explained what happens when everything goes wrong: say Jihan Wu is going to steal all of Roger's money. He imagines, what transaction do I need to steal the money? He calculates the "evil 32 bytes", and he walks it through the gates, and for 3 months the sidechain nodes are going to freak out and say this doesn't match. Because of the existence of twitter, everyone else will also know. Everyone using the sidechain will know immediately. Other people using a different sidechain will take an interest in this because thye will think "oh maybe I iwll be next" or maybe they will be people pointing and laughing at the situation. Word will get out quickly. If he walks it through, he can put that transaction through and then steal all the money.
 
@@ -286,6 +286,6 @@ Q: At least that's something they are directly using. But the users on layer 1 a
 
 A: It does not require its own hashrate, because of the blind merged mining idea. These are kind of like-- plugins, or bonus blocks. It's borrowing... for some reason people are determined to say, oh the sidechain can have proof-of-stake... people ask questions, and a lot of them are possible, but I don't see why anyone would not just use the blind merged mining template the way it is? There are a lot of weird possibilities like maybe you have a second proof-of-work and maybe it alternates or something. But ultimately you don't want the sidechain to have its own hashrate because the sidechain isn't minting its own coins. The sidechain is getting the fees, so yes it could be a fee market. But you could have a nasty correlation where maybe it's 4am EST or something and the transaction fees fall to zero temporarily. Now, there's no incentive to mine the block at all. So if you had your own hashrate, then this would be awkward because you would have to wait or something and it would be strange and it might lead to panic where people say I don't want to use the sidechain because what if tomorrow at 4am this happens again and then everyon ewill abandon the sidechain and there will be no users, no transaction fees and no hashrate. Whereas instead, you could get 100% of bitcoin's hashrate with merged mining for free, and you don't lose any security assumptions. The way this works, if 51% of the miners are against you, they already have so many ways of blocking transactions or messing with withdrawals. There's no loss of security at all, really. Miners are just stopping themselves from earning more money. It's this thing that is just for free, 100% of bitcoin's hashrate really for free, and I don't see why people would do anything else. I keep getting weird emails from people that want things like even and odd blocks and other crazy things.
 
-# Summary
+## Summary
 
 This provides a new source of miner profits and revenue. Miners choice is that it can either claim the revenue or destroy it. There's also high-auditability- you can reduce all transactions down to "net transfers". You can crunching all transfers down to 32 bytes. One transfer at a time, and transfers take 3 months to settle.

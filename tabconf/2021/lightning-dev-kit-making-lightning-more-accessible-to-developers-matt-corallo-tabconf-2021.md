@@ -1,18 +1,19 @@
 ---
-title: Lightning Dev Kit - Making Lightning More Accessible to Developers
+title: "Lightning Dev Kit: Making Lightning More Accessible to Developers"
 transcript_by: ttiiggss via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=W-ajI5YleIo
-tags: ["lightning","c-lightning","lnd","wallet","layer 2"]
+tags: ["lightning"]
 speakers: ["Matt Corallo"]
 categories: ["conference"]
 date: 2021-11-05
+media: https://www.youtube.com/watch?v=W-ajI5YleIo
 ---
 
-### Introduction ###
+## Introduction
 
 So, I worked on Bitcoin Core for many many years, but I am not here to talk about that!  I now spend my time, full time at Square Crypto working on a project we call the Lightning  Dev Kit (LDK).  So, working to enable Lightning to be more accessible to developers and I'm here to talk about that and give the lay of the land for why it exists, what the state of the Lightning ecosystem is broadly, and why we think it's an important project and why Square is funding us, to work on it.
 
-### Quick History ###
+## Quick History
 
 So in order to get into why Lightning Dev Kit and why better developer tooling around  Lightning in the specific model that we have is important, we first have to kind of cover  what exists in Lightning today.
 
@@ -25,7 +26,7 @@ I think C Lightning is maybe a little less monolithic, but then of course relies
 
 So that's kind of how they came at Lightning from day one, right? C Lightning and LND were around basically on day one when Lightning was being invented.  They came at it and said, well, we need this thing that's going to be online 24/7, so we're just going to build it and target servers, because like, mobile... is weird on Lightning and whatever and so they built this really great *thing* that you run; but it is... really just targeted at that specific runtime, right? So it has SQL (Structured Query Language), fairly monolithic.
 
-### More recent Lightning implementations ###
+## More recent Lightning implementations
 
 More recently we have a few other Lightning implementations that have gotten a little more popular. Obviously [Electrum](https://electrum.org) now has a built-in Lightning implementation.  They spent many years writing from scratch a Lightning implementation to integrate with:
 
@@ -41,7 +42,7 @@ They're not things that you can use to integrate Lightning into your application
 
 Or you could go the route that Electrum did and spend multiple engineers, multiple years to build a custom from-scratch Lightning implementation. But, we think neither of these are really good answers for someone who wants to build a Lightning, especially on mobile, application.  The future of getting good user experience (UX) in Lightning and I think across Bitcoin is enabling developers to build new and creative options for how you interact with these networks.  There's not a lot today, in terms of ability to do that, but as we add better tooling and make that an easier thing for developers to do, we can have a lot more experimentation and because Lightning is this fairly early system today, we need that experimentation to grow it and to enable really slick user experiences.
 
-### Lightning Dev Kit ###
+## Lightning Dev Kit
 
 So we think that's kind of where LDK (Lightning Dev Kit) comes in.  We're not interested in competing with LND or C Lightning or Eclair or Electrum or whatever.  They're really good at what they do, but we think they only do very specific things.  So, we're targeting, especially like I was saying, existing mobile wallets or new mobile wallets, but especially existing ones.
 
@@ -70,7 +71,7 @@ But so now we have language bindings in various languages.  We have, we can add 
 
 So because it is a very lightweight library, so it's designed to scale kind of as you want right? So it works really great on mobile if you want to run a single thread and run everything  in that thread, it does fine with that.  Or if you want to run it on a 20-core machine and spawn 20 threads, it's also designed to parallelize basically as much as you want it to. So it's really kind of scalable across that entire range. Just depends on exactly how you want to integrate it, you're going to get very different scalability properties there.
 
-### Application Programming Interface Usage ###
+## Application Programming Interface Usage
 
 But everything is an API (Application Programming Interface), right?  So it doesn't do its own interaction with the OS (Operating System), so disk access, so storing all of that great lightning state is just an API. It doesn't actually call to the disk itself. It can, there's some options that you can kind of take off the shelf and run with that.  But if you want to instead call to the network instead of ever writing to the local disk, you can totally do that and we support that.
 
@@ -80,7 +81,7 @@ So chain sync is also actually multiple different APIs you can use for providing
 
 So then the actual live state machine, which is fairly small, it's just the current state of all your channels, that is a separate module from historical enforcement.  Right, so if you're familiar with the watchtower model, there's several different watchtower models.  But that's easy to implement because they're just different objects and you can serialize them and move them around to different servers and do kind of whatever you want. You have the live state machine, which is small enough, it's not quite going to *fit* in a hardware wallet, but it's trivially small enough to fit on even a super ancient Android phone or something. You can keep that runtime super tiny and then actually do the on chain enforcement somewhere  else, depending on how you set up the key storage, you can do that on the device or elsewhere; and then we support remote signing through the lightning signer project, which is one of the teams we've given a grant to, that's also going to form the back end for C Lightning's new HSMD (HSM Daemon), so you can use the same code to sign for C-Lightning channels as for LDK channels and do offline actual lightning state machine enforcement and potentially even run that in a hardware wallet.
 
-### The state of LDK ###
+## The state of LDK
 
 So hopefully there's at least one or two people who think maybe you want to build an app using this. So where are **we**?  We have a number of mainnet nodes, so we're very happy with how it works today and its stability and its performance. We think it's fairly feature complete in terms of everything you might need to run a lightning  node in a number of different configurations. And the first two kind of downstream users or really downstream applications that are being built around LDK, we're hoping to get them in production by the end of the year, but we'll see whether they both make it that quickly or whether they get delayed on other kind of decisions around how they want to integrate, how they want to build a user experience around lightning because, now they don't have to kind of worry about all of the details of the lightning state machine that LDK has kind of solved for them.
 
@@ -88,13 +89,13 @@ We have, so we're currently funded through Square, we have four full-time engine
 
 We're also, you know, we would love more people to develop using it.  We're planning on as much as we have time being very high touch for anyone who wants to build an app around LDK. So far we've been, you know, we've had a lot of interest and a lot of people penciling it in for, you know, two or three quarters from now.  And so we've been working with, working fairly closely with some of our initial customers  in terms of helping them understand exactly how everything fits together and helping them build a good user experience around LDK.
 
-### Call to arms ###
+## Call to arms
 
 And so, you know, if you want to build an app using LDK, you want to build a really slick Lightning user experience or something a little more unique than exists today or you have some clever idea of how Lightning user experience should work, we'd love to work with you.  We'd love to be really, you know, hands on and help you out in any way we can. So get in touch!
 
 And so, yeah.  So where are we going from here?  So we're, we kind of just got to the point that we're happy feature completeness wise.  And so this is of course resulted in us getting a little behind on some of the new lightning spec stuff. So things like BOLT 12 and offers and onion messages and all kinds of new channel types that are coming down the pipeline. So that's something that we're going to spend a bunch of time implementing, and also if anyone externally wants to really learn the guts of lightning protocol state machine, again, we'd love more external contributors.  There's a lot of opportunity right now to really kind of dig into real guts of lightning  and implement low level kind of next generation features.
 
-### Conclusion ###
+## Conclusion
 
 And also we're hiring.  So Square crypto itself has some headcount to we're not sure whether it's going to be 100% of new headcount on LDK or maybe some other projects.  But we are actually hiring for full time roles in addition to of course we have a very large grant program and love to fund whether it's any other Bitcoin project or also Bitcoin projects using LDK or BDK (Bitcoin Development Kit).  We love to fund that too.
 
