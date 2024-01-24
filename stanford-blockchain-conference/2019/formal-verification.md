@@ -1,30 +1,28 @@
 ---
-title: Formal Verification
+title: "Formal verification: the road to complete security of smart contracts"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'smart contracts']
+tags: ['research','security','contract-protocols']
 speakers: ['Martin Lundfall']
+media: https://www.youtube.com/watch?v=B-3eZiZ5HPE
 ---
-
-Formal verification: The road to complete security of smart contracts
-
 slides: <https://twitter.com/MartinLundfall/status/1091119463276064769>
 
 <https://twitter.com/kanzure/status/1091103595016085504>
 
-# Introduction
+## Introduction
 
 Thank you everyone. It's exciting to be here speaking about formal verification. The road to complete security of smart contracts is a sensationalist title. I'll be spending a few moments making a huge disclaimer.
 
-# Disclaimer
+## Disclaimer
 
 This can only be interpreted as a very long road or a very narrow sense in which complete security is actually cheap. There's still a sense of completeness, which is one of the aspects I want to focus on in this talk.
 
-# Formal verification
+## Formal verification
 
 Formal verification is the process of specifying and verifying the behavior of programs. That's two aspects. The first aspect is specification, which is writing a mathematical description of intended program behavior. Once you have the specification, you can proceed to the act of verification which takes the operational semantics of the language in which you're writing your program, and it takes the specification of what you intend that program to be, and if the implementation matches the specification then you can produce a proof that this is indeed the case, and this is what is being done when you perform formal verification.
 
-# Context of formal verification
+## Context of formal verification
 
 What are the assurances one could reasonably expect from this type of procedure of formal verification? I'd like to organize various assurances for smart contracts and dApps into a taxonomy that involves at least four categories or four flavors of things you might want to protect yourself again.
 
@@ -42,7 +40,7 @@ So, if we look at how to approach these various classes of behaviors or bugs in 
 
 A fifth category of assurances is ensuring the correctness of various cryptographic protocols that might be involved.
 
-# EVM bytecode verification
+## EVM bytecode verification
 
 For this talk, I'll mainly be speaking about EVM but many of the methods can be used to talk about different virtual machines as well. I'll speak about that later.
 
@@ -50,7 +48,7 @@ If you remember the type signature for verification in the operational semantics
 
 The beauty of K is that it's a general framework where after you define a language in it, you automatically get a suite of tools for analyzing that programming language. By already defining the virtual machine of Ethereum in K, you get a debugger, a symbolic execution engine, and a prover and all these things. For our work, we're using the verification engine.
 
-# Specifications and reachability claims
+## Specifications and reachability claims
 
 K as I said is based on rewriting theory, in which they deal with rewrites and proofs look similar to rewrites of the programming language. A reachability claim is the nature of a specification really, when you write it in K, takes the following form. You have this rewrite arrow that looks like an implication arrow and you say S and some condition on S leads to S prime and then some possible condition on S prime or properties of S prime. The way to understand this is that any pre-state s and big S satisfying P(s) will evaluate to a post-state s prime from the set of S prime such that P'(s(').
 
@@ -62,13 +60,13 @@ Instead, here is how we would write the same thing instead. This is a literal sp
 
 In the fail spec, we also account for the case where we might run out of gas but only if we run out of gas while the if and only if condition are false. So to cover the complete behavior of this method, we would have to generate two more cases to refine the passing case into a proper pass and the case where you had assumed all the cases in the if and only if clause to be true but you don't have enough gas. At compile time, we don't know what the gas expression is going to be. But after passing through it once, we get an exact condition for what gas really is for successful execution, and then we can refine our spec to assume either the symbolic value we start with in our gas cell is equal to or greater than this expression or lower than. If there is no if header present, then these three specs, the fail spec, the out of gas pass, and the pass, are going to be exploring the complete behavior of this method. Does that make sense?
 
-# Klab proof debugger
+## Klab proof debugger
 
 Klab is one of the tools we have developed in order to make the verification process of ethereum smart contracts a little more intuitive. The second part of Klab is a debugger. K already provides you with a proving engine, as I said, to see whether your reachability claims are faulty. But it doesn't give you that much feedback when you try to run these proofs which basically output only true or false which doesn't help you much to verify a smart contract to just learn that your spec is actually false.
 
 We built a command line tool interface that allows you to step through what a K proof looks like. You're stepping through a symbolic execution of your smart contract, which allows you to precisely see where things go wrong. I'll speak a little bit more later about how it can be used later to explore unknown ... also.  But just to give you a little preview-- I was not brave enough to give you a live demo of what it looks like, so here's a screenshot of what looks a lot like any ethereum debugger but you should notice on the stack we have some symbolic values and not concrete instantations. We're at a branching point where we're able to explore multiple branches of execution by working with this little interface that we have quantities for exploring the execution state of this method.
 
-# Interlude: Writing provable smart contracts
+## Interlude: Writing provable smart contracts
 
 Just as an interlude from the formal verification side of things, I think I was asked to talk about how to write smart contracts so that they are save and provable. So here's a bunch of opinions about how to write contracts. These opinions have been formed by working with these smart contracts for a long time, and also looking at formal verification and trying to figure out how to make smart contracts as safe as possible.
 
@@ -80,7 +78,7 @@ Avoid calls to unknown code as much as possible. If you want to have strong guar
 
 This slide is just to scare you. I'm really urging you to not write complex contracts. Contracts are complex enough as it is. This is a sketch of what multi-collateral ... this is as simple as possible, and it's still complex.
 
-# Exhaustiveness
+## Exhaustiveness
 
 As I said, once we have written specifications for methods and we have made sure that we account for all of the possible cases which in the best scenario is just one case, and if we have an exhaustive description of the behavior of that method and we have this for all of the methods in our contract or dApp then we have essentially defined the behavior of that dApp. The non-standard models that I'm speaking about here, you can define the axioms that make up contracts, you can explore what models can satisfy those axioms in the same way you can explore which bytecode satisfies the specifications that make up your methods. This gives you an indicator for how much coverage your specification and verification process really covers. Because if you actually do this spec exhaustively well enough, and you have a complete description of the contract behavior then essentially you should be protected against adversarial code.
 

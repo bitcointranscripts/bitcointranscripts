@@ -1,15 +1,14 @@
 ---
-title: Contracts in Bitcoin
+title: "Bitcoin Script: Past and Future"
 transcript_by: Caralie Chrisco
-tag: ['smart contracts']
+tag: ['scripts-addresses']
 date: 2020-04-08
 speakers: ['John Newbery']
 media: https://youtu.be/H-wH6mY9pZo?t=2549
 ---
-
 Location: She256 Onboarding to Bitcoin Webinar
 
-# Introduction
+## Introduction
 
 John: My name is John. I am a Bitcoin Protocol Engineer at Chaincode Labs in New York. I'm going to talk about contracts a little bit from a theoretical perspective, but I'm not a lawyer, and I'm not a legal scholar. For all of you legally minded people out there, I apologize in advance if I gobble this and say some nonsense.
 
@@ -21,7 +20,7 @@ So they sailed past the island, Odysseus heard the song the sirens, but he could
 
 I am going to talk about contracts and what we call smart contracts. I'm going to talk about this language we have in Bitcoin called script and then more generally talk about contracts on a public blockchain. I'll talk a bit about the history of script in bitcoins who has changed over the last 11 years, and then I'll finish up with some possible future directions for scripts and contracts in Bitcoin.
 
-# Contracts
+## Contracts
 
 What is a contract? Well, a contract is, in some ways, a meeting of the minds where two or more parties come together with shared intentions, and it's a situation where there's a common understanding in the formation of this contract. But a contract is also binding.
 
@@ -31,7 +30,7 @@ So this is similar to Odysseus, binding himself to the mast. He knows that futur
 
 The concept here is limiting future me's freedom. The freedom to renege on my debt or to order his sailors to steer to the island expands present-me's freedom because I can borrow money. This concept of contracts has existed for centuries, for millennia. It is a fundamental building block of civilization and the market economy. We naturally think of contracts as written, but oral agreements count as contracts and have been around since prehistory. People were thinking about this for many years as the internet came online, and it would be impossible to rederive all of the wisdom contained in this tradition of contract law and norms very quickly. If we start from scratch using just kind of reason and first principles it would take us many centuries to redevelop sophisticated ideas like contract law. The digital revolution is coming and is challenging us to develop new institutions in a much shorter period of time than that.
 
-# Smart Contracts
+## Smart Contracts
 
 This man named Nick Szabo and he said, "New institutions new ways to formalize the relationships and make up these institutions are now made possible by the digital revolution. I call these new contracts "smart" because they are far more functional than their inanimate paper-based ancestors. A smart contract is a set of promises specified in digital form, including protocols within which the parties perform on these promises." Nick Szabo was writing this back in 1996. If you think of smart contracts as new or introduced by Ethereum or Bitcoin or blockchains, this predates Bitcoin by over a decade, and smart contracts are possibly older than you expected.
 
@@ -39,7 +38,7 @@ A little bit more about contracts before we get into Bitcoin. I'm going to outli
 
 Another important aspect is privacy. That knowledge and control over the contents of the contract should be distributed among parties only as much as it is necessary to observe and perform that contract. Then enforceability. That probably speaks for itself, but at the same time, I should add when we design a contract, we'd like to minimize the need for enforcement or minimize the need to go to a court, for example.
 
-# Script
+## Script
 
 Enough theory. Enough armchair law. Let's talk about script in Bitcoin. Bitcoin was introduced by Satoshi Nakamoto in 2008, and we know that we can script on Bitcoin. So here's the white paper. Let's have a look for script. Oh, look at that; there's no mention of the word script in the white paper. Or maybe contracts? No mention of contracts either. Let's just scroll down a bit and look at what the white paper has to say about transactions. "We define an electronic coin as a chain of digital signatures. Each owner transfers the coins for the next by digitally signing a hash of the previous transaction and the public key of the next owner."
 
@@ -65,7 +64,7 @@ node on the blockchain needs to execute every step of every contract. We, theref
 
 This is Andrew Poelstra. He's got a really great talk from 2017 called "using chains for what they're good for." And Andrew says, "contracts executed by explicitly published code are really only using the blockchain for one thing - to get an immutable ordering of what order the transactions happen in. All that they really care about is that their transaction is not reversed and not double spent. All of the extra details of the contract execution can be done by things that are not on the blockchain."
 
-# Post's Theorem
+## Post's Theorem
 
 I'm going to have one very technical slide, and it's got some symbols in it. This is Post's Theorem. I'm going to talk a bit about logic from the 1930s. So Turing-complete languages -- Alan Turing defines these in the 50s and 60s, as computably enumerable predicates. So like we said earlier, predicate is just a function that returns a boolean true or false.
 
@@ -95,7 +94,7 @@ How does this tie into our contract design? Well, if we get everyone to compute 
 
 One final quote, this is from Greg Maxwell. "Is this mental model similar to conventional programming? No. But smart contracts aren't conventional programming, and blockchain isn't a conventional computing environment (how often does history change out from under most of your programs?). These design elements make for a clean, simple system with predictable interactions. To the extent that they make some things "harder," they do so mostly by exposing their latent complexity that might otherwise be ignored."
 
-# How Script Has Changed
+## How Script Has Changed
 
 That's the theory. I'm going now talk a little bit about how script has changed over the last 11 years, and then we'll look forward to how script and contracts in Bitcoin might change over the coming years.
 
@@ -103,7 +102,7 @@ Here's a transaction in Bitcoin. It has some metadata at the start and the end. 
 
 In the first version of Bitcoin, you take the script sig from the input and the script pubkey from the output being spent and concatenate them and then execute them, and they're all written in the same script language. You can see that from the code that I showed you earlier, `EvalScript` on the scriptsig from the inputs plus this code separator thing, then plus the script pubkey from the output. Well, that was bugged. It was a pretty big bug where anyone could spend anyone's money. Satoshi fixed that in 2010. The fix was just to separate. So, execute a scriptsig first and then execute scriptpubkey. You might think, why is the scriptsig why is that signature a script? All it's doing is providing data. And you'd be right. The scriptsig really just pushes data onto the stack. We can see from this snippet of code that first `EvalScript` is running the scriptsig, and the job there is just to push data to the stack, and then the second `EvalScript` actually runs the script, the locking script, the script pubkey.
 
-# Pay to Script Hash (P2SH)
+## Pay to Script Hash (P2SH)
 
 Then in 2012, we introduced pay to script hash. This made a change whereas previously, the script pubkey in the transaction output contained the entire script and contains the entire encoding of that contract. In pay-to-script-hash the output simply contains a hash commitment to that script, so a hash commitment to their spending conditions. Then the scriptsig contains the script itself that encodes the spending conditions and the satisfaction to that script.
 
@@ -111,7 +110,7 @@ So it's a two-step process to verify that. First of all, we check that the spend
 
 Then in 2016, we had Segregated Witness. This is pretty similar to P2SH. We have a commitment in the outputs, but when we move the spending script and the satisfactions to this separate field called the witness, and it works almost identically to P2SH. The reason we do that is because witness is not part of the txid, and that fixes a problem called transaction malleation.
 
-# How are Things Going to Change
+## How are Things Going to Change
 
 Last section. How are things going to change in Bitcoin? We hope that we'll have a soft fork in the next couple of years to introduce a new kind of signature called Schnorr signatures. Schnorr signatures are really nice because they have this property that allows us to add up public keys and add up signatures. So with a Schnorr signature, we can have a spending condition with something like a 2-of-2. So two signers out of two have to sign, or three out of five. By the time they reach the blockchain, it just looks like a single public key and a single signature. So no one else knows that it's a multisig. That's really good for privacy because you're not revealing from the entire world what the spending conditions are. It's good for scalability because there's only one signature evaluation for all the full nodes to do. It's good for fungibility as well.
 

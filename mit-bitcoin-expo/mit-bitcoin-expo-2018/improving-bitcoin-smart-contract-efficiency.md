@@ -2,14 +2,13 @@
 title: Improving Bitcoin Smart Contract Efficiency
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['taproot', 'smart contracts', 'lightning']
+tags: ['taproot', 'contract-protocols', 'dlc']
 speakers: ['Tadge Dryja']
 media: https://www.youtube.com/watch?v=i-0NUqIVVV4&t=53m14s
 ---
-
 <https://twitter.com/kanzure/status/980545280973201410>
 
-# Introduction
+## Introduction
 
 I will be talking about discreet log contracts, taproot, and graftroot. Not in that order, the order will actually be taproot, graftroot, and then discreet log contracts.
 
@@ -17,7 +16,7 @@ Quick intro: I'm Tadge Dryja. I work here at MIT down the street at Digital Curr
 
 I only have about 20 minutes and this is only meant to get you introduced to it, please bug me later if you would like even more details.
 
-# Smart contracts
+## Smart contracts
 
 So, what is a smart contract? There's no real good answer to that question. A lot of people think one thing is a smart contract while another isn't or something. All outputs in bitcoin are smart contracts because they use bitcoin script. Even pay-to-pubkeyhash with OP\_DUP OP\_HASH160 and OP\_EQUALVERIFY... So in my view, pay-to-pubkeyhash is not really a smart contract. You're just sending money. It's functionally the same as using cash.
 
@@ -27,7 +26,7 @@ What about OP\_CHECKLOCKTIMEVERIFY where there's an output and it can't be spent
 
 And then there's stuff like the <a href="https://lightning.network/">lightning network</a> where the scripts in lightning are using multisig, OP\_CHECKLOCKTIMEVERIFY and revealing secrets to revoke old state. I'd say, yeah, that's a smart contract. It's a fairly limited one compared to what people are looking at, but this is a smart contract with conditoinal payments and things like that.
 
-# Smart contracts in bitcoin
+## Smart contracts in bitcoin
 
 How do we do smart contracts in bitcoin? It's not the same model as in ethereum. You have-- there's basically two output types that you can see on bitcoin today. There's pay-to-pubkeyhash (P2PKH) and <a href="https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki">pay-to-scripthash (P2SH)</a>. In P2PKH, there's a key, you can spend to the key, pretty straightforward.
 
@@ -35,7 +34,7 @@ In P2SH, you take some kind of script or program or a predicate, you hash it, an
 
 So you have these two different output types in bitcoin. And these two different output types look different, and that's bad. Why is that bad? Well, in bitcoin, you want fungibility and uniformity. You want it so that when Chainalysis and other similar companies that when they look at the blockchain that they get nothing. Ideally they just have nothing and just see random numbers and random outputs with uniform distribution of addresses. So you want to make everything uniform. One idea to do this is something called taproot.
 
-# Taproot
+## Taproot
 
 <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/>
 
@@ -47,7 +46,7 @@ It's nice because in many cases in smart contracts, there's a bunch of people ge
 
 .... ((stream died)) ...
 
-# Graftroot
+## Graftroot
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html>
 
@@ -59,7 +58,7 @@ The downside is that you have to sign. In taproot and p2sh, it's only operating 
 
 I have 10 minutes left.
 
-# Discreet log contracts
+## Discreet log contracts
 
 <http://diyhpl.us/wiki/transcripts/discreet-log-contracts/>
 
@@ -79,7 +78,7 @@ It's a third-party oracle model. In many other oracle models like in ethereum, g
 
 There are use cases like currency futures where you can make contracts on the price of bitcoin that settles into bitcoin. It's the opposite of CME and CBOE where they do cash-settled futures. You can also do a lot of other stuff like betting and gambling which I guess people will do. The downside is that you have to enumerate all possible outcomes, so some things it doesn't work, like if there's tens and tens of millions of possible outcomes then it might become unscalable. But if you have a small finite number of outputs, and it's bounded, it's based on how much data you can store, and the only thing going into the blockchain in all cases is just the first one transaction and maybe the spending transaction.
 
-# Q&A
+## Q&A
 
 <https://www.youtube.com/watch?v=i-0NUqIVVV4&t=1h9m54s>
 

@@ -1,32 +1,27 @@
 ---
-title: Mixicles
+title: "Mixicles: Simple Private Decentralized Finance"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'smart contracts']
+tags: ['research', 'altcoins']
 speakers: ['Ari Juels']
 ---
-
-Mixicles: Simple Private Decentralized Finance
-
-Ari Juels
-
 <https://twitter.com/kanzure/status/1230666545803563008>
 
 <https://chain.link/mixicles.pdf>
 
-# Introduction
+## Introduction
 
 This work was done in my capacity as technical advisor to Chainlink, and not my Cornell or IC3 affiliation. Mixicle is a combination of the words mixers and oracles. You will see why in a moment.
 
-# DeFi and privacy
+## DeFi and privacy
 
 As of a couple of weeks ago, DeFi passed the $1 billion mark which is to say there's over $1 billion of cryptocurrency in DeFi smart contracts today. This is great, but wait just a minute. Should we know this? If DeFi transactions were private, we would only have a rough estimate of the amount of money in DeFi smart contracts today. But in fact, every single DeFi transaction is fully visible on-chain and there's no confidentiality. Also, they provide exotic niche instruments. MakerDAO is basically an automated pawn shop for cryptocurrency which can be used for leveraged exposure, and flash loans which can be used to weaponize idle cryptocurrency.
 
-# Binary options
+## Binary options
 
 Our goal with mixicles is to implement a common class of financial instruments like simple binary options. A binary option is a bet engaged in by two players, our beloved Alice and Bob who send money into a smart contract and they are betting on an event with two different outcomes. For example, they might bet on whether the value of a particular stock reaches a certain threshold at a certain time or something. If the bet goes one way, like if the threshold is reached, then one player gets the money.
 
-# Mixicle goals
+## Mixicle goals
 
 We would like to achieve the type of confidentiality that isn't presently available in DeFi instruments. We're going to work in a particular model. We'll assume Bob and Alice are fine being recognized as trading partners. They might be anonymized sufficiently the pseudonyms through which they are interacting with the DeFi instrument, or they might be financial institutions or something. What we're interested in doing is concealing the type of trade they are engaging in, and the payout amounts and how much money is involved.
 
@@ -34,11 +29,11 @@ We want this thing to be auditable. It would be nice if there was an on-chain re
 
 The main objective in Mixicles is simplicity. We want conceptual simplicity. Mixicles are very simple from a conceptual standpoint. Conceptual simplicity often translates into simple implementation. In particular, we avoid heavyweight cryptography, zero-knowledge proofs, watchtowers, etc. Complexity is the enemy of security. Zcash had a bug which in principle someone could have minted an arbitrary amount of money without detection, which is allegedly due to the complexity in zcash's design which we avoid in mixicles.
 
-# Building a Mixicle
+## Building a Mixicle
 
 We'll take a few steps to build a Mixicle. We'll conceal which of the two players have won the bet by using "payee privacy". Then we have "trigger privacy" where the trigger is the basis for the bet like the particular stock they are betting on. Then there's "payout privacy" where you conceal the amount of money being paid out to one of the players. Finally, I'll show how you can use multiple rounds to completely conceal intermediate rounds of payouts in the cases of where Alice and Bob are engaging in many transactions.
 
-# Mixers
+## Mixers
 
 A mixer is used to conceal the flow of money in a cryptocurrency system. By directing money to two different pseudonyms corresponding to the two players engaged in the mixer, these pseudonyms are corresponding but the order is randomized. To mix, Alice and Bob can flip a coin. If it comes up heads, then the first pseudonym is allocated to Alice's pseudonym or it comes first when money is output by the mixer and Bob goes second. But if the coin flip goes the other way, then they are flipped. With this simple construction protocol, we get "payee privacy", which is our first goal for a mixicle.
 
@@ -46,11 +41,11 @@ In paricular, suppose that one of these two players sends money to some subversi
 
 You can build a mixer very straightforwardly using a smart contract. Alice and Bob choose some pseudonyms, they flip a coin to figure out the ordering of the pseudonyms. They commit their pseudonyms to the smart contract, then they send money into the smart contract, and the smart contract then forwards the money to the corresponding pseudonyms.
 
-# Private payee gambling
+## Private payee gambling
 
 This can be enhanced in other ways to achieve other goals. Suppose we want to do "private payee gambling". The mixer can take as input another coin flip, the result of flipping a public coin or taking input from generated by the blockchain into the smart contract. Then payment can be determined based on the coin flip. If the coin comes up heads, the money goes to the first pseudonym and else to the second pseudoynm. This makes payee privacy and the identity of the winner is hidden on chain, which is very nice.
 
-# Oracles
+## Oracles
 
 Of course, everyone's favorite place to gamble is the stock market. We can transform this gambling smart contract into a financial instrument one based on a stock ticker for instance, fairly straightforwardly. The smart contract simply takes as an input an indication as to whether the target stock that Alice and Bob are betting on in a binary option, has gone up or down. If it goes up, then the first pseudonym gets the money, or vice versa if it goes down.
 
@@ -58,11 +53,11 @@ There's a complication though. Blockchains in general and therefore smart contra
 
 The solution to this problem is a piece of middleware known as an oracle. An oracle is an off-chain entity that goes and fetches data from a website and pushes the data on-chain. The smart contract can call the oracle, and the oracle has an on-chain frontend and it will relay information to the smart contract.
 
-# Trigger privacy
+## Trigger privacy
 
 We still have a confidentiality problem here, though. If the oracle is relaying information about a stock price moving in a certain direction, then this will be visible on chain, and the trigger will be world-readable visible to everyone and we would like to avoid that. To do this, Alice and Bob can flip another secret coin which they make visible to the oracle. The purpose of this coin is to designate what I would call a "secret trigger code". If the coin comes up heads, then the oracle in the case that Tesla goes down, which means Alice wins, is going to relay a 0-bit and if the opposite occurs it will relay a 1-bit. If the coin flip is the other way around, then the code is inverted. All that the oracle is going to deliver to the smart contract is going to be a single bit, and it's meaning is going to be randomized so it's not clear to someone observing this process what Alice and Bob are betting on. So now we have both payee privacy and trigger privacy.
 
-# Payout privacy
+## Payout privacy
 
 This is great, but we're not quite there yet. We still have a confidentiality problem. How do we achieve what I described earlier as payout privacy? It's easiest to explain payout privacy by example. Rather than having Alice and Bob pay in a dollar and sending all the money to the winner, what if they pay $2 each and send $1 each to 4 different pseudonyms?
 
@@ -72,7 +67,7 @@ So we are able to get at least partial payout privacy. We can amplify the privac
 
 The contract can be used and reused, until the players decide for a payout to occur. Players can also pay in money during intermediate rounds and also withdraw money during intermediate rounds, as you can imagine. What we get from this is an efficiency gain, but we also fully conceal intermediate payouts. The only payout visible on chain is the final one when the money is finally dispersed, and there we benefit from payout privacy that I described previously.
 
-# Further confidentiality with DECO
+## Further confidentiality with DECO
 
 We can push the confidentiality of our Mixicle construction even further. You may have noticed there's still some confidentiality issues. In particular, the oracle must know the trigger on which the mixicle is based. It after all is responsible for implementing the secret trigger code. Ideally Alice and Bob would like to hide the trigger even from the oracle itself. This might seem hard to do, but you have seen the solution in the previous talk by using DECO.
 
@@ -80,11 +75,11 @@ DECO allows users to prove things about a TLS session to an oracle. So the setup
 
 Hence, we're able to hide the trigger from the oracle.
 
-# Auditability
+## Auditability
 
 I also mentioned we would like to achieve auditability in mixicles. The players commit ciphertexts on the secret terms of the contract. All the secret parameters of the contract, to the smart contract itself. This serves two purposes. First, it allows selective disclosure of information about the trade in which Alice and Bob engaged to an auditor or regulator. It also serves the purpose of holding the oracle accountable. If the oracle cheats and provides an incorrect input, well there's a record on-chain of what it was supposed to do and the oracle has agreed to the ciphertext terms here and then it can be called out by Alice and Bob to decrypt and show that the oracle provided an incorrect report.
 
-# Discreet log contracts
+## Discreet log contracts
 
 <https://diyhpl.us/wiki/transcripts/discreet-log-contracts/>
 
@@ -94,7 +89,7 @@ Discreet logs obtain potentially stronger confidentiality than mixicles. The ora
 
 There's a few catches. Discreet log contracts are directed mainly at bitcoin and the lightning network. They assume Schnorr signatures which haven't been widely deployed, and most seriously they need beacon infrastructure for all possible triggers of interest. They remain a nice point in the design space for decentralized financial instruments.
 
-# Bells and whistles
+## Bells and whistles
 
 You can add some other bells and whistles to mixicles. You can have better payout privacy by combining it with a system that conceals transaction amounts like Aztec or Zether. This is at the cost of more expensive gas per transaction and additional complexity and assumptions. We can also create non-binary mixicles. We can have mixicles with multiple event outcomes and we can even conceal the number of possible outcomes or the cardinality of the instrument. We can have multiple players, too.
 
