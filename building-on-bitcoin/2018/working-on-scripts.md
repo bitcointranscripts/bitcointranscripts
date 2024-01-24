@@ -2,14 +2,11 @@
 title: Working on Scripts with logical opcodes
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['script','lightning']
+tags: ['scripts-addresses']
 speakers: ['Thomas Kerin']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=A4l4waikDso
 ---
-
-Building on Bitcoin 2018
-
 <https://twitter.com/kanzure/status/1014167120417091584>
 
 Bitcoin has logical opcodes in bitcoin script. Depending on whose is trying to spend coins or what information they have, they interact with logical opcodes. We could see a simple example here taken from one of the lightning network commitment transcraction scripts. It pushes a key on to the stack so that a checksig can run later. It adds a relative timelock as well. Two people can interact with that script and we can set different constraints on those.

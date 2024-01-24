@@ -2,12 +2,11 @@
 title: "Simplicity: Going Beyond Miniscript"
 transcript_by: aphilg via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=abUF4MQ7j1w
-tags: ["Script","Miniscript"]
+tags: ["simplicity"]
 speakers: ["Christian Lewe"]
 categories: ["conference"]
 date: 2023-03-01
 ---
-
 Can we welcome Christian to the stage?  I think I don't have any computer yet. Oh.. It's just okay. All right, I just, I just just read.  There's a pointer, okay, great great. I was a bit confused for a second. Can I start? great, so welcome, I'm Christian Lewe. I work for Blockstream to research where I mainly work on Simplicity and Miniscript and it's great that we just had a talk on Miniscript so you all know why Miniscript is great, why you should use Miniscript, and in my talk I want to go beyond that. So let's do a very short introduction. Could you remove like the mouse or something? Like people in the back... great... that confused me so. We just saw that Bitcoin Script is complicated. I, you know, the previous presenter did a way better job of explaining that, doing this nice quiz. That was great. I just have one slide on it, which is a very common smart contract. It's used in lightning and even though it's ubiquitous and it's not so hard, like it's what the script does is not so complicated, It looks complicated and there are many foot guns so turns out that this is represented with this very short Miniscript. It's the same.
 
 ## Miniscript vs Bitcoin Script
