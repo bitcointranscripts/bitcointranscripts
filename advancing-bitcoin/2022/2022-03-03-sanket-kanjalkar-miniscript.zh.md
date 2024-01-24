@@ -3,12 +3,11 @@ title: Miniscript
 transcript_by: Michael Folkson
 translation_by: Ajian
 categories: ['conference']
-tags: ['script', 'miniscript']
+tags: ['miniscript']
 speakers: ['Sanket Kanjalkar']
 date: 2022-03-03
 media: https://www.youtube.com/watch?v=Bn1CWsqt3VQ
 ---
-
 题目：Miniscript：可组合、可分析、更智能的比特币脚本
 
 Andrew Poelstra 论 Miniscript：<https://btctranscripts.com/london-bitcoin-devs/2020-02-04-andrew-poelstra-miniscript/>

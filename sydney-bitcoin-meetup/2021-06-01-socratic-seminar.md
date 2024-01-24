@@ -2,15 +2,10 @@
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['research', 'lightning', 'script']
+tags: ['research','covenants','op-checktemplateverify','taproot']
 date: 2021-06-01
 ---
-
-Name: Socratic Seminar
-
 Topic: Agenda in Google Doc below
-
-Location: Bitcoin Sydney (online)
 
 Video: No video posted online
 
@@ -18,7 +13,7 @@ Google Doc of the resources discussed: <https://docs.google.com/document/d/1E9mz
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# Bitcoin Problems (Lloyd Fournier)
+## Bitcoin Problems (Lloyd Fournier)
 
 <https://bitcoin-problems.github.io/>
 
@@ -50,7 +45,7 @@ Are you planning to attend Antoine Riard’s [workshops](https://lists.linuxfoun
 
 This is the particular one about fees. He writes a lot about [Lightning problems](https://github.com/ariard/L2-zoology) but he is also doing a workshop on this fee bumping, what should be the rules to evict transactions from the mempool? I have a Bitcoin problem as a [PR](https://github.com/bitcoin-problems/bitcoin-problems.github.io/pull/13) right now on that topic as I’m trying to teach myself and he has done a nice review for me. I need to go through that. Eventually there will be a Bitcoin problem on solving that. If we solve this problem out of these meetings then it can be the first Bitcoin problem to be solved.
 
-# OP_CAT and Schnorr tricks (Andrew Poelstra)
+## OP_CAT and Schnorr tricks (Andrew Poelstra)
 
 Part 1: <https://www.wpsoftware.net/andrew/blog/cat-and-schnorr-tricks-i.html>
 
@@ -128,7 +123,7 @@ The way CAT works in Liquid is its limited to some power of 2 bytes, 64 or 256 b
 
 Seems like a simple solution.
 
-# Designing Bitcoin Smart Contracts with Sapio (Jeremy Rubin)
+## Designing Bitcoin Smart Contracts with Sapio (Jeremy Rubin)
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018759.html>
 
@@ -227,7 +222,7 @@ But Miniscript would have to be extended to support CTV surely.
 
 It totally would be but the question is what happens in it? I imagine that it is just the hash that is in there. The Miniscript would be like CTV this hash and that’s the spending policy. I imagine that is the way it would work, I imagine you don’t have CTV and then properties of the transaction as parameters to the CTV Miniscript. This is clearly giving you some higher level logic over that whereas in Miniscript I guess the parameters of CTV would just be a hash. Maybe they could think up something more clever.
 
-# Taproot is going to be activated
+## Taproot is going to be activated
 
 <https://taproot.watch/>
 
