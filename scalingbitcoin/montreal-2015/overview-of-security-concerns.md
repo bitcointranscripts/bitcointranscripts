@@ -2,12 +2,9 @@
 title: Overview Of Security Concerns
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'attacks', 'validation', 'scalability']
+tags: ['security','scalability']
 speakers: ['Peter Todd']
 ---
-
-Overview of Security Concerns
-
 I am going to talk about scale-related security issues. Scale-related security issues. I said scale, not scalability. We are not talking about scalability. We're talking about changing numbers, and what are the implications, what attacks are easier or harder by changing the block size number. What are we trying to accomplish? What is the system meant to be? Nobody really agrees of course. What's interesting is that as much as we disagree about what was meant to be, there are a lot of key things about what bitcoin could be, these visions share some details.
 
 Chief among them is validation. You can ask the question, what are we trying to prevent? We're trying to prevent invalid transactions, giving money that doesn't actually exist. The SPV just sees that a transaction can be linked to some blockchain. It doesn't know whether the transaction is valid. In bitcoin, we have the ability to determine if things are valid, by going back in history and validating each step. Here transaction 0 was spent and then there was transaction 1 and so on. There are many cases. Obviously if something goes wrong, we have an invalid transaction and we'll notice this, if we go back in history and find it. Similarly the transaction may not exist in history. Money might be spent twice.
