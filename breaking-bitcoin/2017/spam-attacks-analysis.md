@@ -2,7 +2,7 @@
 title: "Hunting Moby Dick, an Analysis of 2015-2016 Spam Attacks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'attacks']
+tags: ['research', 'security-problems']
 speakers: ['Antoine Le Calvez']
 date: 2017-09-09
 media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=1h12m10s

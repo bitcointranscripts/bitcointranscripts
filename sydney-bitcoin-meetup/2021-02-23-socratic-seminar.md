@@ -2,15 +2,11 @@
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['research', 'lightning', 'attacks', 'taproot']
+tags: ['research','dual-funding','privacy-problems','lightning','ptlc','taproot','soft-fork-activation']
+speakers: ['Lloyd Fournier','Anthony Towns']
 date: 2021-02-23
 ---
-
-Name: Socratic Seminar
-
 Topic: Agenda in Google Doc below
-
-Location: Bitcoin Sydney (online)
 
 Video: No video posted online
 
@@ -18,7 +14,7 @@ Google Doc of the resources discussed: https://docs.google.com/document/d/1VAP4L
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# PoDLEs revisited (Lloyd Fournier)
+## PoDLEs revisited (Lloyd Fournier)
 
 https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002929.html
 
@@ -48,7 +44,7 @@ It sounds like it is only useful when you are deploying new funds on a Lightning
 
 Correct. You would learn new funds before they are used but they are eventually going to use them in a Lightning channel and you’ll eventually going to figure that out. Then you know the funds in the future, you just have to wait. You don’t get the information as early as you would but you will get that information eventually.
 
-# Lightning dice (AJ Towns)
+## Lightning dice (AJ Towns)
 
 https://lists.linuxfoundation.org/pipermail/lightning-dev/2021-January/002937.html
 
@@ -56,31 +52,31 @@ Slides: https://www.dropbox.com/s/xborgrl1cofyads/AJ%20Towns-%20Lightning%20Dice
 
 StackExchange question: https://bitcoin.stackexchange.com/questions/4609/how-can-a-wager-with-satoshidice-be-proven-to-be-fair
 
-## Satoshi Dice
+### Satoshi Dice
 
 A similar idea to Satoshi Dice, anyone not heard of Satoshi Dice? Satoshi Dice was way back in the day. Erik Voorhees made a whole bunch of money off it. The idea was you send some coins to an address and if Satoshi Dice thinks you won then you get more coins back and if it thinks you didn’t win then you don’t get any coins back or you get far less. It was really simple. The big idea about it was that it was a trust but verify thing. You’d have to trust it for a day but after the day you could verify that it wasn’t cheating you. I think if you do a web search you will find some comments on Reddit that at least once upon a time it went down the next day and didn’t pay out. People figured that was one way of it cheating. Those transactions, you win money and you just have to send something. If there were no fees then why not? There were millions and millions of transactions. It got to the point at some times where you couldn’t get real transactions through for all the Satoshi Dice spam. The 50 percent double your money or lose your money thing had 3 million transactions on the blockchain at the moment.
 
-## Do this with Lightning?
+### Do this with Lightning?
 
 An idea I’ve kept thinking about is how we could do this with L2 because L2 lets you do, in theory, similar stuff and it takes it all offchain so you don’t have to worry about fees or spam. The thing I’d really like to be able to do one day is have something like if you have shares as an Ethereum smart contract or something, ideally you’d like to be able to do share trading over Layer 2 instead of Layer 1. One of my things is I’d like to figure out a way of doing that sanely. That’s where my goal is for this eventually.
 
-## PTLCs
+### PTLCs
 
 The background for it is that instead of HTLCs which Lightning does at the moment we will use PTLCs because we can do math on PTLCs. With hash timelocked contracts you can reveal a hash, because of the way hashes work you stop there. With point timelocked contracts you can do ECC math, elliptic curve cryptography, and at least get addition, maybe a little bit of multiplication so that you can actually do slightly more complicated things with it. One of the things you can do with it is make a partial Schnorr signature. You create your Schnorr signature, you reveal half of it to the other guy which doesn’t actually tell them anything useful. Then once you’ve revealed a point preimage they can take that signature and it is a valid signature at that point.
 
-## Trust
+### Trust
 
 This is a “trust but verify” model, it is not a “don’t trust, verify” model. You do have to trust for a little while. Your funds could get instantly stolen but at least you will know after the fact that they have definitely been stolen, I don’t need to deal with this guy again. For something like Satoshi Dice that might be reasonable because you are only gambling 5 cents and trying to win a couple of dollars. For other things it might not be reasonable. That’s the security model. By getting away from trust there we can say that we don’t need to lock up funds. We are going to trust them anyway so locking up funds for 5 minutes while we resolve the protocol is no big deal. If we don’t lock up funds that means you can’t get your funds locked away from you while the protocol fails or whatever. That’s the trade-off there. Whether the risk of getting funds immediately stolen is worth the benefit of not having to have funds locked up for maybe 30 days until a timelock rolls out.
 
-## The wager
+### The wager
 
 To be a bit more specific about the wager here. The idea is you are having a bet on something completely random that has got no skill involved whatsoever. It has just got odds of winning and you agree on a payout if you win or not. In particular pick some numbers, add them together, if the result is less than whatever condition then you win, if it is greater than you lose. I’m using 256 bit numbers here rather than just numbers between 1 and 1000 because that way when you create a point on them it is random. If you just had the numbers 1 to 1000 then someone trying to hack you could try every single one of those and then figure out from the point you’ve got exactly which number you picked.
 
-## Protocol design
+### Protocol design
 
 The goal is to take all of those ideas and then get a protocol where we are not doing anything onchain so we can communicate over the web like HTTPS or something and we can send PTLC payments. We don’t want to use any more primitives than that and we want to make sure that it is a safe protocol. If someone stops playing, stops participating in the protocol that doesn’t let them cheat.
 
-## Steps
+### Steps
 
 That’s the specifics of it. The key concepts are you connect to the website, you decide that you want to make a bet of some sort, you pick the random number (b) and you calculate the corresponding point (`Pb=b*G`) and that lets you get started. You send the public parts of those over to the casino. The casino decides to accept the bet. If they don’t want to accept the bet because they’ve run out of funds or they are under regulatory pressure or something you just stop there and no one is any worse off. Carol picks her number (`c`), calculates the corresponding point (`Pc=c*G`) and she signs the message “Carol (C) agrees to the bet with Bob (B) with conditions `(Pb)/(Pc)`” giving a signature `(R1,s1)`. A signature on this message is later going to be what you use to say that the casino cheated you out of your money. That generates a signature `(R1,s1)` and Carol is going to send a partial signature `(R1,s1-c)` and her point (`Pc`) to the person who made the bet. The way the math works is if you get those two numbers and you add `c` to the second one you get back to the original signature. If you don’t get `c` you can’t get anything out of it because as far as you know `c` could be any number out of 0 to 2^256.
 
@@ -108,15 +104,15 @@ Like I said he works out if he won or not. If he did win he is going to sign a m
 
 (Carol checks that `b*G = Pb`, that R2 and the PTLC will be a valid signature)
 
-## Does it work?
+### Does it work?
 
 A couple of caveats with that. There’s the possibility that Bob has chosen a winning number, he gets Carol’s `c` and then he just finishes. At this point he has a signature that says Carol owes him money but he has never told Carol anything so that Carol knows that she owes him any money. If you are going to be publishing public proofs of “Carol has cheated, she owes me money, she hasn’t paid so she can’t provide the signature from me because I haven’t given anything at all to say she’s paid so she’s a cheater”. You need some way to deal with that. If you are dealing with a court where people go in person then at that point the mediator can pass stuff at all. Otherwise the mailing list post about this has some ideas for how you could use Lightning to verify a public proof of things which then has further complications. The other thing is what if Carol does an exit scam. She has got a bunch of bets, she owes half of them winnings and then she doesn’t bother paying and doesn’t do anything more ever again. She doesn’t care if her reputation is ruined.
 
-## Does this generalize?
+### Does this generalize?
 
 That’s the bad side. The good side is that absolutely none of this is onchain. It is all purely Lightning transactions, it is not even complicated ones. The stuff you do before you call the Lightning client is a bit complicated but the Lightning stuff itself is just PTLCs. The other nice thing is that all the complicated conditions on the bets are not even getting passed to Lightning. They are not onchain, the Lightning client doesn’t have to know anything about them. You can generalize that just by changing a Satoshi Dice website, Javascript, Android app, whatever. You could make that both more complicated, instead of just a dice roll you could have different levels of pay-offs, like a scratch it or something, or you could have payouts dependent on some oracle, sports betting etc. In general I think you can have pay outs of any sort of nature as long as they only end up being payouts in Bitcoin and not payouts in some other asset like cash or stocks or something because you can’t send those over Lightning in the first place. I think in theory because no funds are locked at any point as long as you trust that the casino is not going to do an exit scam on you you can extend this for bets that go over a longer period of time as well.
 
-## Implementable
+### Implementable
 
 It is pretty close to implementable. The Suredbits guys have a PTLC proof of concept that works on testnet I think and should work on mainnet. If you are doing PTLCs with Taproot then at least theoretically you can do them on Signet already. That’s my theory.
 
@@ -188,7 +184,7 @@ A - If fees go up on Lightning at least you can always make more capacity on Lig
 
 A - To have a channel, a routing node pointing towards a use case like this which is a balanced use case, you can afford to lower your fees because the traffic will be much higher. Whereas if it is a trading peer, like for example on Bitfinex everyone is just depositing, they are not withdrawing on Lightning, so the traffic is unidirectional and you need to increase your fees a lot to make back the cost of rebalancing or opening a new channel. Same is true for the Loop node, a submarine swap service, where everyone is just swapping their money out to onchain rather than doing the other way. I think it is more affordable to have low fees towards this kind of service.
 
-# Taproot activation
+## Taproot activation
 
 Taproot activation meeting 2: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
 
