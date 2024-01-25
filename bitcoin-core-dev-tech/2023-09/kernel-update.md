@@ -1,7 +1,7 @@
 ---
 title: Kernel Update
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'kernel']
+tags: ['bitcoin core', 'build-system']
 date: 2023-09-18
 speakers: [thecharlatan]
 ---

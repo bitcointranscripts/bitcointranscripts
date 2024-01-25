@@ -1,7 +1,7 @@
 ---
 title: Kernel Planning
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'kernel']
+tags: ['bitcoin core', 'build-system']
 date: 2023-09-20
 speakers: [thecharlatan]
 ---
