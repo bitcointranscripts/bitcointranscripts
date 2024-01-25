@@ -1,7 +1,7 @@
 ---
-title: Chain Defense In Depth
+title: "On-Chain Defense in Depth"
 transcript_by: Bryan Bishop
-tags: ['custody', 'wallet']
+tags: ['vaults','op-checksigfromstack','taproot']
 speakers: ['Bob McElrath']
 date: 2019-02-09
 media: https://vimeo.com/316301424
@@ -11,7 +11,7 @@ On-chain defense in depth (UCL CBT seminar)
 
 <https://twitter.com/kanzure/status/1159542209584218113>
 
-# Introduction
+## Introduction
 
 It seems strange to come to a university and put PhD on my slides because in the finance world that's weird. I put it up there.
 
@@ -23,7 +23,7 @@ In that vein, a couple of years ago, this topic got kicked off by Emin Gun Sirer
 
 There are four other ideas for how to do this.
 
-# Vaults and clawback
+## Vaults and clawback
 
 What is the basic idea we're talking about here? On-chain defense in-depth. We're going to do some things on the blockchain that will prevent other people from making transactions on the blockchain.
 
@@ -54,7 +54,7 @@ The if-else statement is fairly straightforward, but the challenge of doing this
 
 This form of encumberence was termed a "covenant" by Eyal and his collaborators in 2016.
 
-# Vault features
+## Vault features
 
 The remainder of this talk is going to be dedicated to discussing several possibilities for achieving this mechanism. Come on in guys, grab a seat.
 
@@ -154,7 +154,7 @@ Q: You said there's a need for some fork to allow some functionalities.. what is
 
 A: That's the rest of the talk.
 
-# Vaulting mechanisms
+## Vaulting mechanisms
 
 There are four mechanisms that I know of that have been proposed so far. There are probably others.
 
@@ -184,7 +184,7 @@ The last idea referenced here is from O'Connor and it's implemented in Blockstre
 
 I am going to go through these one-by-one.
 
-# OP\_CHECKOUTPUTVERIFY (Eyal 2016)
+## OP\_CHECKOUTPUTVERIFY (Eyal 2016)
 
 As the name implies, OP\_CHECKOUTPUTVERIFY examines a specific output and does computation on it. It's sort of like a regular transaction. I have placed a transaction template here. There's a pattern with placeholders, which could be pubkeys. This then encumbers the next output to say the script of the next output must be a script that matches this pattern.
 
@@ -192,7 +192,7 @@ This checks the value, for instance. This lets you encumber the value and check 
 
 Personally I think this is kind of complicated, and it's sort of like an ethereum-like approach to computation where you put everything on the stack and write a program to deal with it. This is not really how things are done in bitcoin. One of the ways we describe the difference between bitcoin and ethereum is that bitcoin requires proof-of-correct-computation for scripts, whereas ethereum actually does the computation on-chain. So my preference, I think the bitcoin's community preference is that rather than doing computation in the scrpits, which has scaling and privacy consequences, we should instead do the simplest possible thing to prove you did the right computation. At the end of the day, you can prove that you have done almost anything just by having a certain signature.
 
-# Pay-to-timelocked pre-signed transaction (P2TST) and SIGHASH\_NOINPUT
+## Pay-to-timelocked pre-signed transaction (P2TST) and SIGHASH\_NOINPUT
 
 I came up with the pay-to-timelocked pre-signed transaction (P2TST) proposal. The idea is the following. When you give someone a deposit address, instead of giving them an address to which you have the private key, you instead randomly generate a new private key at the time that they request the deposit. Then you create and pre-sign a transaction that does the vault unlocked send with one input one output. Then you delete that private key. As long as that key was really deleted, I have just created an enforcement where the funds have to move from this vault to the unlock because that's the only thing that exists at this point is the pre-signed transaction. Then I give the address for the incoming transaction on that pre-signed transaction to the user that wishes to make a deposit.
 
@@ -204,13 +204,13 @@ Instead of creating a key and delteing it, you could instead create a signature 
 
 Because the SIGHASH depends on the input txid, which in turn depends on the previous transaction's output address, which depends on the pubkey, we have a circular dependency that could only be satisfied by breaking our hash function. It's a circular dependency on the pubkey. I couldn't do this, unless I break my hash function. I can't compute the pubkey and then put it into the input hash that depends on the pubkey in the first place.
 
-# What's a SIGHASH?
+## What's a SIGHASH?
 
 The way this works is that when you do EC recovery on a signature, you have three things really-- you have a signature, a pubkey, and you've got a message. Those are the three things involved in verifying a signature. The pubkey and signature are obvious to everyone here right? The message here is really the SIGHASH. It's a concatenation of a whole bunch of data extracted from the transaction. It depends on the version, hash of the previous outputs, and the outputs, and various other things. The signature authorizes that. What we want to do is not depend on the pubkey in the input. That creates a circular dependency where you can't do EC recovery.
 
 There's a proposal out there called [SIGHASH\_NOINPUT](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016549.html) which was originally proposed for the lightning network where it would be nice to be able to take the set of outputs on the channel and be able to rearrange them, without making an on-chain transaction. If my transactions commit to the txids on-chain, then I can't do that. SIGHASH\_NOINPUT decouples your lightning transactions from those inputs and let you rearrange those, and therefore let you add more funds and remove funds from the transaction. I think it's very likely that NOINPUT will be implemented and deployed because it is so helpful to the lightning network. So, can we repurpose SIGHASH\_NOINPUT for a vault?
 
-# Schnorr BIP and SIGHASH\_NOINPUT discussion
+## Schnorr BIP and SIGHASH\_NOINPUT discussion
 
 Brief interlude on Schnorr signatures. In elliptic curves, pubkey recovery is well known. In ethereum, there's even an opcode that does it, or a common function. The way you check signatures in ethereum is often you compute the pubkey and see if it's the same. So there is now a Schnorr BIP put out by Pieter Wuille. The way it works is the following: this here basically is the equation he proposes that is satisfied by Schnorr signatures in Schnorr.
 
@@ -222,7 +222,7 @@ Assuming that we get this BIP later this year, this still has the problem of com
 
 The reason why this formula was not chosen, in favor of this other, is that I can convert a signature any (r, s) into a signature on something else by shifting the s by an elliptic curve point. This means that I can basically take a signature off the blockchain and reuse it for a different transaction, which is bad, because it might allow someone else to send funds in a way that you didn't want them to. If I take this signature and shift it by this much, it's now a valid signature for something else. Whether this is okay reduces to the question, are there any transactions that reuse the same message value m? It turns out in practice that the answer is yes, there are. So one way this might happen is that-- if you have a service provider and someone is sending them a lot of funds, it's standard practice for someone to do a penny test where they send a small amount of funds first to check if things work, and the other thing that they will do is tranche transactions where they will divide up the total amount into several smaller denominated transactions in order to lower the risk on the entire transfer. If you're sending a billion dollars all at once, and it's all lost, then it sucks. If I divide it up into 10 parts, and I only lose 1/10th of it, then that sucks less. But the consequence of this is that you will end up having transactions with exactly the same value and exactly the same address. As much as we would want to say hey client please don't reuse addresses or send to the same address twice, we technically can't prevent them from doing that. There are good reasons why they probably would reuse addresses too. If I take two different transactions and I tranche it, say I send 100 BTC to the same address, twice, this is a case where I can reuse the signature. If we then move those funds to another cold wallet or something like that, the second transaction is now vulnerable. They can take the signature off the first transaction and apply it to the second and do some tweaks and have some monkey business going on. We don't want that. The reason why this works is because of SIGHASH\_NOINPUT. If we were to use SIGHASH\_NOINPUT, which allows for removing the txid from the input, then that is a circumstance underwhich the Schnorr signature replay would work. If we don't use NOINPUT, then this is not a problem.
 
-# Half-baked idea: input-only txid (itxid)
+## Half-baked idea: input-only txid (itxid)
 
 I had a half-baked idea this morning to try to fix this. There's probably something wrong with this, and if so let me know.
 
@@ -238,7 +238,7 @@ So what if we instead introduce input-only txids called itxid. I remove the outp
 
 This is a bit complex. I literally had the idea this morning. You would have to change the txid index. Bitcoin is like a big list of txids. If I want to change that index, I basically have to double the indices. This will not go over well, I suspect.
 
-# Pre-signed transactions
+## Pre-signed transactions
 
 Your wallet is a set of pre-signed transactions, here. This is an interesting object for risk management. These objects are not funds in-of-themselves. There is a private key somewhere that is needed to do anything with them. But they can be aggregated into amounts of known denominations, such that they can be segregated and separated. It gives you an extra tool for risk management.
 
@@ -252,7 +252,7 @@ I talked around at Fidelity about the "delete the key" idea, and generally that'
 
 SIGHASH\_NOINPUT is generally unsafe for wallet usage. So, don't use it for wallets. The reason why it's okay for lightning is that lightning is a protocol with certain rules around it. People aren't just sending arbitrary funds at arbitrary times using SIGHASH\_NOINPUT to arbitrary lightning addresses; you have to follow the lightning protocol. That's why we run into the problem with penny tests and tranche testing. Whether we create tranches, it's the sender's decision and policy, not the receiver's. That's the root of the problem there.
 
-# Lau: OP\_PUSHTXDATA
+## Lau: OP\_PUSHTXDATA
 
 OP\_PUSHTXDATA seems to be created to neable arbitrary computation on transaction data. This is generally not the approach favored by most bitcoin developers, instead they prefer verification that a transaction is correctly authorized, rather than computation (which is more similar to ethereum). In my opinion, lots of fnuny things can be created with OP\_PUSHTXDATA, and there are many unintended consequences.
 
@@ -260,7 +260,7 @@ This was proposed by jl2012. It's kind of a swiss-army type opcode. What it does
 
 This was proposed I think even before Eyal's 2016 paper. It's kind of gone nowhere, though. This draft BIP never became an actual BIP. Given the philosophy of "let's not do fancy computation in scripts" this proposal is probably not going to go anywhere.
 
-# OP\_CHECKSIGFROMSTACK
+## OP\_CHECKSIGFROMSTACK
 
 The one that I am in favor of the most of the other 3, is OP\_CHECKSIGFROMSTACK. The way a vault works iwth this opcode looks like the following: you've got, so, you have this:
 
@@ -274,7 +274,7 @@ It's generally possible to create recursive covenants with this. Once you put th
 
 Another drawback of using these kinds of opcodes is that it's fairly obvious to everyone what you're doing; all your code ends up in the blockchain and now someone knows that you're doing vaults. This is revealed with every transaction, not just when you execute the clawback transaction. Any regular send reveals this information.
 
-# Taproot
+## Taproot
 
 It would be awesome if there was a way to hide the fact that I was using a vault mechanism or using OP\_CHECKSIGFROMSTACK. Just in general, it is useful to hide the existence of an alternative clawback branch in the script.
 
@@ -294,11 +294,11 @@ By "optimistic" protocol I mean the alternatives are used less freequently than 
 
 Your vault script ends up looking pretty simple, which is just a timelock and a CHECKSIG operation.
 
-# Fee-only wallets
+## Fee-only wallets
 
 You generally want to add fee wallets when you do this. If you create these pre-signed transactions or use covenant opcodes, this encumberence you create doesn't know anything about the fee market. Bitcoin has a fee market where fees go up and down based on block pressure. The time that you claim these funds or do a withdrawal request is separated in time from when the deposit happened and the fee market will not be the same. So generally you have to add a wallet that is capable of bumping the fees. There are many mechanisms of doing that.
 
-# Conclusions
+## Conclusions
 
 Vaults are a powerful tool for secure custody that have been around for at least 2-3 years and haven't gone anywhree. My read of the ecosystem is that most of the developers think it's a good idea, but we haven't done the work to make it happen. Fidelity would use vaults if we had these tools.
 
@@ -312,7 +312,7 @@ In all cases here, batching is difficult. This is one consequence of this. You g
 
 1h
 
-# Related
+## Related
 
 <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015793.html>
 

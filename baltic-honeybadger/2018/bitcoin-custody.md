@@ -2,21 +2,12 @@
 title: Bitcoin Custody
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['custody', 'regulation']
+tags: ['regulation']
 speakers: ['Bryan Bishop']
 date: 2018-09-23
 media: https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s
 ---
-
 <https://twitter.com/kanzure/status/1048014038179823617>
-
-Bitcoin Custody
-
-Baltic Honey Badger 2018 Bitcoin conference, Riga, Latvia, Day 2
-
-Schedule: https://bh2018.hodlhodl.com/
-
-Transcript
 
 Start time:  6:09:50
 
