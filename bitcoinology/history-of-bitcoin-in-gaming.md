@@ -2,13 +2,12 @@
 title: "History of Bitcoin in GAMING"
 transcript_by: masud-abdulkadir via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=CB7HM-Hqi4o
-tags: ["gaming", "lightning"]
+tags: ["lightning"]
 speakers: ["Christian Moss"]
 categories: ["meetup"]
 date: 2022-03-27
 ---
-
-## INTRO
+## Intro
 
 Christian: Before I start, it's probably a good idea to make sure you have a Lightning wallet downloaded because, at the end, I have some games we can play and actually get some Bitcoin through the games. So if you don't have a Lightning wallet installed, please do so. I recommend my company's wallet, Zebedee. So if you just type in Zebedee on my t-shirt into the Google Play or App Store, you should be able to download it. Today I'm going to talk about the history of Bitcoin in gaming. So I've been told that people here are somewhat familiar with Bitcoin. Is anybody here who's completely new to Bitcoin? Don't be shy. But everybody knows what it is, so I don't have to explain the basics. I thought I'd just give an interesting presentation on the history of Bitcoin in gaming, or the history of gaming with Bitcoin. Because, at the moment, blockchain in gaming is actually quite a buzzword. I went to a gaming conference just last week, and there's a blockchain track, but there's really no mention of Bitcoin. But it actually all started on Bitcoin with gaming, and I was there in 2013. I started to make Bitcoin games. I just want to give context. I think it's interesting so people know how it started, what went wrong, and what's getting better now with Zebedee and Lightning.
 
