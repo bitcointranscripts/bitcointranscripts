@@ -1,19 +1,19 @@
 ---
-title: Mimblewimble
+title: "Mimblewimble: Private, Massively-Prunable Blockchains"
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Andrew Poelstra']
+tags: ['adaptor-signatures','sidechains']
+date: 2016-10-08
+media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=5368s
 ---
-
-Mimblewimble: private, massively-prunable public blockchains
-
 <https://twitter.com/kanzure/status/784696648597405696>
 
 slides: <http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble-2016-scaling-bitcoin-slides.pdf>
 
 Hi, I am from Blockstream. I am here to talk about Mimblewimble. Mimblewimble is not mine. It's from the dark lord. I am going to start with the history of the paper. It has been in the news a little bit. I will talk about the transaction structure, the block structure, try to explain the trust model and argue that it's almost as strong as bitcoin. There's less data to verify than in bitcoin. If I have time, then I might talk about some extensions I have done to the protocol to make it extend the scaling beyond what was possible. And then next steps and open problems.
 
-# History
+## History
 
 This started over 2 months ago, on August 2nd, when <a href="http://gnusha.org/bitcoin-wizards/2016-08-01.log">someone on IRC, someone logged on with the nickname "majorplayer"</a> where he wrote this paper and he said here's some paper and then he signed off. Myself and Bryan Bishop, who hosts a lot of files related to bitcoin, got this file from the onion link. It was a text file, called <a href="http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble.txt">mimblewimble.txt</a>, signed "<a href="http://fr.harrypotter.wikia.com/wiki/Tom_Jedusor">Tom Elvis Jedusor</a>" which is the name of Lord Voldemort in the French Harry Potter books. It's unlikely that this is his real name. But that's the name we have.
 
@@ -23,7 +23,7 @@ Over the next couple of months, I spent some little while thinking about open pr
 
 I am not Lord Voldemort. I don't know who did it. A number of people have asked me recently who it was. I don't know.
 
-# What is mimblewimble?
+## What is mimblewimble?
 
 It was a paper, neat name, in the Harry Potter books it's a tongue-tying curse that prevents someone from revealing secrets. So this is a fungibility spell. I don't think it was described this way in canon. It's designed for a blockchain. A separate blockchain could be made to be compatible, it could be soft-forked as an extension block or something. This could be applied to bitcoin. To any currency that you can add a mimblewimble sidechain, you get the scalability and fungibility improvements on top of that original chain.
 
@@ -47,7 +47,7 @@ In the blockchain, let's considr this new verifier that downloaded the chain dat
 
 As far as fungible usable currency, it's just as strong and as usable as bitcoin's trust model. It gets you a massive scalability improvement.
 
-# Sinking signatures
+## Sinking signatures
 
 Can we aggregate the excess values in a block? This is in general hard to do. You could do some trickery with a variant of BLS signatures. If you use those, then you get aggregation within a block, but it's possible for someone who has seen a transaction to reverse a transaction by swapping inputs and outputs and putting a minus sign in front of .... and if the excess value doesn't sign itself, meaning you negate it when you... that's very bad. Historic transactions can't be reversed without rewriting blocks, but this is suddenly not the case. So instead you can do tihs scheme where every transaction signs a current blockheight, and ow the transaction the reversal can only appear in the block in which they appear. So reversing it in the same block is trivial and not important. This just by itself, this makes 20 gigabyte of historic data, can be 20 megabytes. So this is 1,000x savings. But now there's a lot of pairings to verify, which is a bit slow.
 
@@ -55,11 +55,11 @@ You can do better than this. You can use proof-of-proof-of-work or compact SPV p
 
 This does change the trust model a little bit. The way that it changes it is that when oyu do the compression, the compressed chain has the same expected amount of work as the original chain. The variance is much higher, though. In bitcoin, such an attacker has 0 chance of producing that. We can formalise this. If I give you 400k blocks of bitcoin, this is a proof of 395,000 blocks worth of work. If you did substantially less than the full 400k blocks of work, you have almost zero chance. In compact chains this is not the case. So you need to give the verifier about 5000 blocks with the full PoW work. This will prove that what I was giving them was no accident, it wasn't by fluke, someone gave them a lot of work to produce that. And I also give them a compact chain from genesis to that 5k block. So this incentivizes anyone who wants to produce a forgery, that such a forger would expect to do as much work as the original chain, so the Satoshi argument is that they would rather extend the main chain rathr than generate forgeries. One thing proposed every so often is to drop old blocks, then just verify the tip... the problem is that dropping the historic data is analogous to a cliff, where someone who does as much work can forge, because they can forge part of the chain. So we no longer get that here.
 
-# Where are we?
+## Where are we?
 
 I have been working on a consensus library for mimblewimble. I have got hung up on pairing curve selection, I'm working on that now. I am going to publish the source code I've got and encourage people to contribute and do peer review. It's an exciting project. Once that is done and there's a consensus library written, then we can start doing cool stuff, we can write a p2p layer and write wallets and so on, and it will be much easier to write and more friendlier languages and you will have a lot more freedom--- there doesn't need to be consensus on that kind of source code. Right now we're still in the boring consensus part of development. I hope to get past this soon. As far as sidechains, I've been saying, ... we can actually make mimblewimble as a sidechain. If in addition to all the unspent outputs, you commit to pegs-in and pegs-out, then you can apply an excess signature on every peg-in and peg-out. And that's it. I'm over time. So I'm going to stop there. Thank you all.
 
-# Q&A
+## Q&A
 
 Q: What curve are you using? Could you use ed25519?
 

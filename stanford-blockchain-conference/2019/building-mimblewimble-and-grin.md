@@ -1,34 +1,31 @@
 ---
-title: Building Mimblewimble And Grin
+title: "Building Mimblewimble/Grin, an implementation for privacy and scalability"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'scalability']
+tags: ['research','adaptor-signatures']
 speakers: ['Quentin Le Sceller']
+date: 2019-01-30
+media: https://www.youtube.com/watch?v=9mJV3dSs6kc
 ---
-
-Building mimblewimble and green
-
 Quentin Le Sceller (Grin Dev Team), Ignotus Peverell (Grin Dev Team), Yeastplume (Grin Dev Team), Antioch Peverell (Grin Dev Team), HashMap (Grin Dev Team), John Tromp (Grin Dev Team), Daniel Lehnberg (Grin Dev Team)
-
-Quentin Le Sceller
 
 <https://twitter.com/kanzure/status/1090662484275384320>
 
 Our first talk is from the Grin project. It was just launched a few weeks ago. Okay, let's get started.
 
-# Introduction
+## Introduction
 
 Hi everyone. My name is Quentin Le Sceller. I'm a developer at Blockcypher. I am here to talk about grin, specifically about building mimblewimble and grin an implementation for privacy and scalability. Grin is an open-source project available on github.
 
-# Grin: the theory
+## Grin: the theory
 
 When you think about a new cryptocurrency launch, you want to make it seem as fair as possible. In theory, you have a straight line from proposal to launch. But in practice, it's messy, and then you launch eventually. Today's talk is about all the building blocks in grin. Before talking about grin specifically, let's talk about mimblewimble.
 
-# Mimblewimble
+## Mimblewimble
 
 Mimblewimble is a new blockchain design that was proposed by French voldemort. It was proposed anonymously on an IRC channel called #bitcoin-wizards. The goals are to have privacy by default, be massively prunable, and it relies on proven elliptic curve cryptography. It's output-based, just like bitcoin.
 
-# Mimblewimble transactions
+## Mimblewimble transactions
 
 To understand the magic of mimblewimble, you have to look at the transaction data structure. A mimblewimble transaction has inputs, outputs, and a kernel. The inputs are references to old outputs. The outputs are confidential transactions plus range proofs. The kernels are outputs - inputs - fee, signature.
 
@@ -36,21 +33,21 @@ You can combine multiple transactions into a single transaction as long as the e
 
 See Andrew Poelstra 2016 for more details on mimblewimble.
 
-# Mimblewimble blockchain
+## Mimblewimble blockchain
 
 Miners take all of the transactions, group them, then do cut-through to remove excess data, and then publish the data. When you want to sync the mimblewimble blockchain, you don't have to store every block. You only need the state of the blockchain, which is all the blocks added together. It's a lite state of the blockchain. You still need the blockheaders, the UTXO set, and finally the kernel set.
 
 This was  a crash course in mimblewimble. So now let's move on to grin.
 
-# Grin: The beginning
+## Grin: The beginning
 
 Grin was created in October 2016 by Ignotus Peverell. It's the first implementation of mimblewimble. The idea was to create a simple blockchain. Mimblewimble in a way is simple. The guiding principles are simplicity, privacy and scalability.
 
-# Building blocks
+## Building blocks
 
 Mimblewimble is just one of the building blocks of grin. You have many more components to make a complete cryptocurrency. This includes rust, compact blocks, dandelion, schnorr signatures, mimblewimble, community, MMR, cuckoo cycle, certifiable transactions, time-locked outputs, bulletproofs, and switch commitments.
 
-# Merkle mountain range
+## Merkle mountain range
 
 <https://github.com/opentimestamps/opentimestamps-server/blob/master/doc/merkle-mountain-range.md>
 
@@ -60,11 +57,11 @@ In grin, this building block is used to store kenrels, outputs and rangeproofs. 
 
 This is a straightforward building block, but one of the most important one.
 
-# Proof-of-Work
+## Proof-of-Work
 
 Every blockchain needs a consensus algorithm. To understand why grin chose Cuckoo Cycle, let's go back to 2016. In 2016, there was no real alternative to proof-of-work and proof-of-stake was more experimental. Since the beginning of grin, John Tromp's cuckoo cycle was chosen by Ignotus Peverell. It was a simple design (only 42 line specification), it's memory-bound, and it was initially thought to be ASIC resistant because of the memory requirements to compute the result.
 
-# Dual PoWs
+## Dual PoWs
 
 In August 2018, secret ASIC mining on day 1 seemed highly plausible. We saw zcash/XMR ASICs and we figured that someone would mine on day one. This would damage the security of grin and provide most of the currency to a wealthy entity in the beginning. This would increase mining centralization and be considered unfair.
 
@@ -72,7 +69,7 @@ So the first idea was to switch to a dual proof-of-work. The primary PoW would b
 
 Also, this would be switched every 6 months to discourage ASIC manufacturers from designing dynamic chips.
 
-# Back to Cuckoo
+## Back to Cuckoo
 
 For ASICs we use Cuckatoo31 + 2^31 edges or more. It's a variant of Cuckoo PoW that simplifies ASIC design. It can be mined on 11 GB GPU initially. 10% of rewards at launch, and it linearly increases to 100% within 2 years.
 
@@ -80,7 +77,7 @@ For GPUs we're using Cuckaroo29 (2^29 edges), and initially it was believed it c
 
 We would like ASICs in the future but not at the very beginning.
 
-# Switch commitments
+## Switch commitments
 
 <https://eprint.iacr.org/2017/237.pdf>
 
@@ -92,27 +89,27 @@ A new scheme was proposed. But then switch commitments were removed a few months
 
 But finally, switch commitments came back a few months ago. Tim Ruffing came back to the mailing list with switch commitments using a new scheme. You just tweak the pedersen commitment. It does not need additional space, does not need an additional random value, and does not allow for the inclusion of arbitrary data. The grin implementation was done by jaspervdm in late December 2018 just before launch.
 
-# Community
+## Community
 
 The community is our last building block we'll highlight.
 
-# Future work
+## Future work
 
 In the near future, there's atomic swaps, relative locks, flyclient, and Dandelion++. For research, we're interested in vaults and covenants, RSA accumulators, scriptless scripts, and Boneh-Lynn-Shacham (BLS) signatures.
 
-# Flyclient
+## Flyclient
 
 <https://scalingbitcoin.org/transcript/stanford2017/flyclient-super-light-clients-for-cryptocurrencies>
 
 Flyclient was created by Lou Luu and Benedikt Bunz and presented at Scaling Bitcoin 2017. You store the MMR root in the block header to quickly check blockchain validity. There's two use cases for grin in issue 1555, one is light clients, and another is to quickly identify longest chain for full node (with near certainty). Download block headers in the background later.
 
-# RSA accumulators
+## RSA accumulators
 
 Batching techniques for accumulators with applications to IOPs and stateless blockchains 2018 <https://eprint.iacr.org/2018/1188.pdf>
 
 Right now in grin we use an MMR but we could use an RSA accumulator. The pro's are that it removes the MMRs, and the accumulator would have a fixed size. But the cons are the security assumption change, trusted setup, and it's not quantum safe.
 
-# BLS signatures
+## BLS signatures
 
 Short signatures from the Weil pairing <https://www.iacr.org/archive/asiacrypt2001/22480516.pdf>
 
