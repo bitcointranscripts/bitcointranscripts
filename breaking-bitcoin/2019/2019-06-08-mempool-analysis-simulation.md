@@ -3,7 +3,7 @@ title: Mempool Analysis & Simulation
 transcript_by: Bryan Bishop
 speakers: ['Kalle Alm']
 categories: ['conference']
-tags: ['mempool', 'developer-tools']
+tags: ['transaction-relay-policy', 'developer-tools']
 date: 2019-06-08
 media: https://www.youtube.com/watch?v=Mznn1uVyTUQ
 ---

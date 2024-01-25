@@ -2,7 +2,7 @@
 title: "Tradeoffs in Permissionless Systems"
 transcript_by: BlueeeMoon via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=s_I_Nj5GMgk
-tags: ["bitcoin-core","mempool","incentives"]
+tags: ["bitcoin-core","transaction-relay-policy","incentives"]
 speakers: ["Gloria Zhao"]
 categories: ["conference"]
 date: 2022-07-05
