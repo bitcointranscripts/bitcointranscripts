@@ -2,13 +2,14 @@
 title: Fungibility Overview
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['fungibility']
+tags: ['privacy']
 speakers: ['Matt Corallo', 'Adam Back']
+date: 2016-10-08
+media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=500s
 ---
-
 <https://twitter.com/kanzure/status/784676022318952448>
 
-# Introduction
+## Introduction
 
 Alright. So let's get started. Okay. Why fungibility? Let's start. What does fungibility mean? Bitcoin is like cash. The hope is that it's for immediate and final payments. To add some nuiance there, you might have to wait for some confirmations. Once you receive a bitcoin, you have a bitcoin and that's final. So even with banks and PayPal, who sometimes shutdown accounts for trivial reasons or sometimes no reason at all, it's typically not the case that it's someone who sent you money... if you were selling something on ebay, and someone bought an item from you, and that person had an account shutdown, the money you received will not be removed from your account. This effects-- the multiple hops of people sending you bitcoin, if they are associated with som trade on Silk Road or something like that, it turns out that some exchanges and wallets are using taint-tracing services and up to 4 hops away from you, if something is associated with Silk Road, they will ask you to freeze your funds and take your funds elsewhere. The reality is that for people using bitcoin on those services, the fungibility in bitcoin is actually worse than Paypal, because other people's actions unrelated to you-- and 4 hops away is a very long way away-- and potentially anyone who has done any trades with bitcoin is 4 hops away; it's a very interconnected system. There's a social networking theory that everyone is within 13 hops globally of everyone else. Paypal doesn't freeze your funds if your customer's customer's do something bad; and in bitcoin this is happening because of companies...
 
@@ -18,7 +19,7 @@ Fungibility can impact permissionlessness. It's a critical feature of bitcoin th
 
 <http://diyhpl.us/wiki/transcripts/bitcoin-adam3us-fungibility-privacy/>
 
-# Taint tracing
+## Taint tracing
 
 Taint tracing is backwards looking. It's not so much "who is receiving the money" but rathr backwards up to 4-hops. Who was involved in the money? It's primarily focused on grouping transactions from individual groups of senders, or the UTXOs and who owns those. This is in part.... there are a series of academic papers that look at network analysis, and there are factors about the way bitcoin is used that makes taint analysis easier. Most inputs tend to come from a single donor, so that correlates UTXOs to the belonigng to the same person.
 
@@ -30,15 +31,15 @@ Different wallets send slightly different network transactions too, because of d
 
 Transaction censorship is another attack.
 
-# Scalability
+## Scalability
 
 Fungibility can be a tradeoff with scalability. In some cases, fungibility can hurt scalability. Sometimes fungibility can bring a large scalability improvement. The reason why fungibility impacts scalability s because fungibility aims to reduce information leakage-- so this means that sometimes less information goes into the blockchain. And conversely, if we have extremely high scalability, like transaction throughput and bandwidth, this can also in the other direction help fungibility because we can use some types of fungibility that use more data like <a href="http://diyhpl.us/~bryan/papers2/bitcoin/Borromean%20ring%20signatures.pdf">ring signatures</a> and <a href="https://people.xiph.org/~greg/confidential_values.txt">confidential transactions</a> (see also <a href="http://diyhpl.us/wiki/transcripts/gmaxwell-confidential-transactions/">this talk</a>).
 
-# Transaction graph privacy: Address reuse
+## Transaction graph privacy: Address reuse
 
 Address reuse, most wallets are using hierarchical deterministic wallets, which has advantages for backup scenarios. Another type of address privacy is the "stealth address" which hasn't been so much used because it's difficult to find payments. So you have to be a full node or you have to rely on a third party service to scan the network for you.
 
-# Transaction graph privacy: inputs and outputs
+## Transaction graph privacy: inputs and outputs
 
 I think this transaction graph privacy refers to the concept of peope being able to scan th eblockchain and being able to analyze the flow of transactions, that's probably what people think of the most for fungibility. So the most obvious thing to solve fungibility is <a href="https://bitcointalk.org/index.php?topic=279249.0">coinjoin</a>. It's great. Depending on how coinjoin is done, it can be a slight improvement in scalability. It can reduce the size of transactions, some. It primarily focuses on increasing your anonymity set, making it more private as to which inputs correlate to which outputs, which makes transaction graph analysis a bit harder. It's not a massive win, but we will talk about that in a second.
 
@@ -56,7 +57,7 @@ Zcash is a bigger step towards fungibility-- it hides essentially everything abo
 
 So let's move on.
 
-# Balance privacy
+## Balance privacy
 
 A big way which people identify transactions as from the same sender is able to group and split transactions according to different groups of senders. This is balance privacy. The biggest example is that in a given transaction you can see the inputs and outputs and it's often easy to correlate which output is the change, just based on the output value. A way that people fix this in coinjoin is balance discretization, so that every output is 0.1 BTC or 1 BTC. This is obviously expensive in terms of scalability. You need more transaction outputs to represent the same value.
 
@@ -66,7 +67,7 @@ Mimblewimble of course again, it's kind of an extended version of confidential t
 
 Zcash also again, it has the same properties where you can't see anything about the transaction going in or out, but again terrible scaling.
 
-# Network attacks
+## Network attacks
 
 Let's talk about network attacks. They are kind of the biggest way that we see fungibility loss today. Across the netwrk, if you have a node online for a short period of time, there's some Chainanalysis firm that makes 50 connections to your nodes instantly. They claim to be Android wallet but they don't even have the same behavior. So they connect to everyone and do this heavily to correlate transactions and where they came from, which happens to be a good indicator of who sent the transaction.
 
@@ -80,7 +81,7 @@ In Bitcoin Core 0.14 and later, there's some work going in. But randomness has g
 
 Improving transaction relay across the network is a good start. It's still the case though that man-in-the-middle attacks, like a global passive adversary, can identify where transactoins come from. The bip151 talk tomorrow will be interesting on this front. In Bitcoin Core, there has been some research about how to do really private relay, like if you're willing to wait for transaction relay using mixnets, where you can run an external daemon and you can handle some transactions to the daemon and then it does some crazy mixnet.... it would be deeply appreciated if someone would go finish that work.
 
-# Transaction features identifications
+## Transaction features identifications
 
 A lot of chain analysis anti-fungibility services have become good at identifying which transactions come from which wallets. Coin selection is one way to determine who you are. A lot of coin selection algorithms give away which output is your chain output, and which wallet you were using based on the change output amount. Many of the coin selection methods are deterministic, so if someone wants to guess, then they can confirm whether they were right based on watching your transactions.
 
@@ -92,13 +93,13 @@ Finally, <a href="https://github.com/scipr-lab/libsnark">zkSNARK-based systems</
 
 So finally there's some non-script transaction features, like in Bitcoin Core, there is incentive compatibility where it sends all transactions with a locktime of the current blockheight so that it can only confirm at the next blockheight. This unfortunately gives away the fact that you are using Bitcoin Core.
 
-# Transaction censorship
+## Transaction censorship
 
 If someone can successfully censor your coins or any transaction that spends your coins, then your coins are less valuable. If they take 1 day to confirm or 6 hours to confirm, or they can't confirm, then that's really nasty because your coins are now worth much less than other coins. Right now there's no evidence that miners are doing anything gnarly here. However, it would be better if we could always make sure of this. In the near term, if miners continue to be honest, we would like software to notify people that miners have gone bad if they are coerced (perhaps by the US government) or something...
 
 The final one is encrypted transactions. There has been a lot of work thinking about this. You commit to a transaction, the chain knows nothing about the transaction or which coins were moving. This is great for preventing transaction censorship. If the miners don't know what they were mining, then they can't censor you.
 
-# Conclusions
+## Conclusions
 
 If you were paying close attention, you might have noticed that a lot of layer 2 solutions like <a href="http://lightning.network/">Lightning</a>, a lot of fungibility solutions involve moving transfers off-chain. As Adam mentioned, this is incredibly powerful because there's less knowledge of all the data moving around. So it's much harder to attack fungibility. Sometimes having more transactions improves your anonymity set size.
 

@@ -2,7 +2,7 @@
 title: Perspective
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['privacy', 'fungibility']
+tags: ['regulation']
 ---
 
 * Regulators should focus on consumer protection

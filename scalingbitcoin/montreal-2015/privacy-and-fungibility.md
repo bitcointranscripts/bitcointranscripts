@@ -1,12 +1,9 @@
 ---
-title: Privacy And Fungibility
+title: Privacy and Scalability
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'fungibility', 'lightning', 'scalability']
+tags: ['privacy']
 ---
-
-Privacy and scalability
-
 Even though Bitcoin is the worst privacy system ever, everyone in the community very strongly values privacy.
 
 There are at least three things:

@@ -2,18 +2,15 @@
 title: Mimblewimble
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['privacy', 'fungibility', 'scalability']
+tags: ['adaptor-signatures','sidechains']
 speakers: ['Andrew Poelstra']
 date: 2016-11-21
 ---
-
-Mimblewimble
-
 <https://www.youtube.com/watch?v=aHTRlbCaUyM>
 
 <https://twitter.com/kanzure/status/801990263543648256>
 
-# History
+## History
 
 As Denise said, I gave <a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/mimblewimble/">a talk in Milan about mimblewimble about a month ago</a> (<a href="http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble-2016-scaling-bitcoin-slides.pdf">slides</a>). This is more or less the same talk, but rebalanced a bit to try to emphasize what I think is important and add some history that has happened in the intervening time. I'll get started.
 
@@ -27,7 +24,7 @@ Cool. This is great. I had been hoping to do this and I had never found the time
 
 Over the next couple weeks, this project continued. There were even more Harry Potter characters. There's I think "<a href="http://harrypotter.wikia.com/wiki/Gellert_Grindelwald">Grendel</a>" the wine maker I think has show up, as well as <a href="http://harrypotter.wikia.com/wiki/Merope_Riddle">Voldemort's mom, Merope Riddle</a>. This is a continuing github project, although it's not something you can download and run today. Hopefully it will be runnable in the future. There is on-going work and development going into this, which is great. I'm not Ignotus Peverell, I am not Voldemort, I am not Bryan Bishop, I am not any of these people. I swear. You have my word, and nothing else. But that is my claim, and I'm sticking to it.
 
-# What is mimblewimble?
+## What is mimblewimble?
 
 So in all this history, maybe I should explain what I'm talking about. Mimblewimble is a design for a blockchain-based ledger. It's basically a replacement for the bitcoin blockchain. It's a proposal for a bitcoin-like blockchain which could be implemented as a sidechain where you have a completely separate chain and you could move bitcoins into it and bitcoins out of it, it's separate. Or potentially in the far future where we have tested and proven this technology, we could potentially soft-fork this into bitcoin itself as some sort of <a href="http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012173.html">extension block scheme</a>, which would basically be like a sidechain that is integrated into the system.
 
@@ -35,7 +32,7 @@ Where mimblewimble diffles from bitcoin is that rather than having inputs sign t
 
 Because of this design, mimblewimble does not support bitcoin script. Bitcoin script is used to do neat tricks like <a href="https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/">zero-knowledge contingent payments</a> or <a href="https://eprint.iacr.org/2016/575.pdf">tumblebit</a> which is a mixing service design that came out of MIT. Another example is <a href="https://en.bitcoin.it/wiki/Atomic_cross-chain_trading">cross-chain atomic swaps</a>, and non-interactive multisig schemes. All of this doesn't work with mimblewimble, because rather than having inputs that have meaningful signatures attached to it, the whole transaction has to sum and that sum has all the authentication in it. It's just a sum. It doesn't have a lot of features. You can't really modify it to have more features, although as we will see later in my talk there are some hacks you can do to get some of our favorite things from bitcoin to work.
 
-# Mimblewimble transactions
+## Mimblewimble transactions
 
 <https://www.youtube.com/watch?v=aHTRlbCaUyM&t=6m15s>
 
@@ -53,7 +50,7 @@ We can take this to an extreme. Within an entire block, we will combine all tran
 
 I can give a new verifier the combination of every single transaction that has ever happened. Every single input comes from an old output, except for the white ones here which are just coinbase outputs that are paying miners. Every single input can disappear and every single spent output can disappear. This new verifier needs the following data: the chain of headers showing that htis is a valid blockchain. They need the list of the unspent outputs, and also the list of excess values for every single block, which is way less data than downloading the whole chain. We have managed to get rid of a lot of outputs. Outputs in a confidential transaction scheme are pretty big and they take a lot to verify, they are like 2.5 kilobytes or something depending on how large a range you want to hide and other tweakable parameters. Most bitcoin outputs are 30-40 bytes, so getting rid of confidential transaction outputs is a huge win. This is also a big win for privacy. In this data, there is very little left of the original chain. All of these excess values are still floating around, it's all there in the history. You can't pretend that an authorization didn't happen, because you would have to rewrite the chain. And there's a 32 byte excess value hanging out in the blockchain. You don't need all the other data. We have preserved bitcoin's security model without having to keep all the data around. You can't rewrite transactions without also rewriting blocks.
 
-# Trust model
+## Trust model
 
 <https://www.youtube.com/watch?v=aHTRlbCaUyM&t=14m20s>
 
@@ -65,7 +62,7 @@ Secondly, any inputs into a transaction must be outputs of old transactions. And
 
 We preserve this. The excess value is a multisig of all the input owners and all the output owners. In particular, all the input people and all the inputs are signed-off on. And we have preserved this non-inflationary property where we can add up all the encrypted outputs and all the encrypted inputs and check that the result sums to zero. The excess value is a multisig but it's also a proof that the transaction adds up to zero at the same time. This is through a neat cryptographic trick of confidential transactions where if you have a commitment to the value zero, you can create a signature with that commitment as though it was a public key. You can't do this with any other value. Zero is special. If you see a signature with a commitment, then you know the commitmet is to zero. We can exploit this and kill two birds with one stone here.
 
-# Block verification
+## Block verification
 
 Now let's look at what happens when we put these transactions into the blockchain. Like in bitcoin, we want to say that once a transaction appears in the blockchain that the transaction cannot be removed or reordered without rewriting the block. And then there's some infrastructure to make the block difficult to rewrite. We want a transaction in a block to be as good as the block. In schemes where you delete data from old blocks, this can be difficult to preserve. One idea you might have to reduce the amount of data in the blockchain would be to say well what if we just threw out old blocks. And every block, we commit to the current state of the network and once blokcs are old enough, we throw them away. When new users show up, they download the blockchain from up to 3 months ago, and then they play transactions forward. This saves data. But it does not preserve bitcoin's security model. Somebody with the hashpower to rewrite 3 months of work would be capable of rewriting any transaction that happened prior to that 3 months of work, which is something that bitcoin specifically protects against. There is an incentive cliff where somebody who is strong enough to rewrite 3 months less a day could... someone powerful enough to rewrite 3 months of transactions would be able to rewrite all of them. So there's already a large incentive for somebody who is attacking at that rate to also rewrite just a little bit more. And mimblewimble does not have this problem, because all the blocks and all the blockheaders of the entire blockchain remain in play. What gets dropped is just the explicit old transaction contents.
 
@@ -75,33 +72,33 @@ I am going to give some numbers on the Voldemort scheme that was posted in #bitc
 
 There is a bit of cryptography we could use to shrink this. I'll talk about this at the end. These numbers are not the be-all end-all. Before I talk about new crypto, let's talk about where we're going with grin.
 
-# Grin
+## Grin
 
 This Peverell guy who showed up and said he's working on a mimblewimble implementation... his implementation is called grin. You can find this <a href="https://github.com/ignopeverell/grin">on github</a>. Right now the main focus is developing this. For the most part it's simple infrastructure, like setting up a p2p layer, figuring out encoding, setting up crypto that we need. It's not research-level work, it's just development work. A fair bit of this needs to happen before we can show this to people in a way that they can play around with. Part of that is nailing down the chain parameters. And finally, I've been talking since the Voldemort paper coming out, as implementing mimblewimble as a <a href="https://blockstream.com/sidechains.pdf">sidechain</a> or as an extension block. The design philosophy of grin is to be as simple as possible. What this means is that right now it's implemented as an altcoin. I'm not very thrilled about this, if I was involved in this then that would mean I might be issuing securities or some other legal implications, and then you need to talk with exchanges and establish market makers and float and it's risk-prone to move into it.
 
 What I would like to see is more research into extending Grin as a sidechain or both where a single chain would support multiple things. And that's something that I'm continuing to do research on. I have some cryptographic tricks that I think can be used to support this. I submitted a paper to <a href="http://fc17.ifca.ai/">Financial Crypto 2017 conference</a> to talk about this in more detail. For now that's all I'm going to say. I have some <a href="https://lists.launchpad.net/mimblewimble/msg00103.html">tricks up my sleeve</a> that I'm really excited about that I can hopefully talk about later when the time is right.
 
-# Next steps
+## Next steps
 
 That's the state of play for today. That's where we're at. Let me talk about some open problems. There's a pile of new crypto and some fun problems for those of you who are mathematically or cryptographically focused.
 
-# Unconditionally sound commitments and range proofs
+## Unconditionally sound commitments and range proofs
 
 The first open problem I want to pount is about unconditionally sound commmitments and range proofs. This is a general problem with confidential transactions which is if the underlying cryptography were broken, which would mean something like NSA revealing that they have broken all the crypto in the world, or a quantum computer or something like this, the consequences for confidential transactions today is that this would allow amounts to be forged. It would allow inflation to happen, where somebody could commit to some amount that adds up to zero, but later open it and reveal that the amount was much bigger. We would prefer this to not be possible. In the case of a mass crypto break, we would prefer that privacy be harmed but not inflation resistance and money soundness. And there is an inherent tradeoff here between unconditional soundness and unconditional hiding. Right now we have unconditional hiding which is cool but we would much rather have unconditional soundness. There's a tradeoff here. A few days ago I talked with Dan Boneh and he mentioned a scheme that can do this with about a 20% space hit which is pretty good. I think 20% is pretty small for the magnitude of the cryptographic assurance that it gives us. That's cool. I guess it's not an open problem anymore, but it's still a fun one.
 
-# Smaller range proofs? Aggregation of range proofs?
+## Smaller range proofs? Aggregation of range proofs?
 
 What about getting rid of that 20%? Can we make range proofs smaller? Can we make a pile of range proofs smaller? Can we do aggregation of range proofs? Someone is verifying a block. A block has 1000 outputs. Each output has a rangeproof. What about if you could make rangeproofs 10x bigger you could get 1000 of them much smaller? We ca do this with regular digital signatures, this is something that has been in the news for bitcoin as aggregate signatures to shrink the size of bitcoin blocks. Range proofs are a fair bit more complicated and intricate than signatures, but if we could aggregate them, that would be a huge space sizing. They are by far the bulk of the data and validation time. There ought to be something here. Often there's a shortcut.
 
-# Peer-to-peer protocol that can handle transaction merging
+## Peer-to-peer protocol that can handle transaction merging
 
 Another open problem that I didn't talk about too much is something that Grin is facing right now. How do you design a p2p protocol where it is possible to just combine transactions freely? It turns out that if you just allow free combination of transactions, this causes serious problems at the p2p layer even without Denial of Service attacks or griefing. Suppose you're a privacy-minded user, and you want to sed a coin to someone, but you don't want anyone to know this is happening. You might wait for some other transaction to come along, and when it does happen you want to broadcast a combination to the network instead of just yours. What happens if I do that, and someone else has the same idea? So now I have a combination where two transactions are conflicting, where it's missing my part but it has other parts. So now there are two conflicting transactions that conflict, and only one can geet confirmed. This is pretty bad. In practice, we need something different probably a bit more complicated than a simple flood network where people are combining all willy-nilly. For example, this might look like people sending transactions directly to miners, and they give a variant of the transaction to each miner. And then one miner knows what the original transactions were in the block, but nobody else knows. This is pretty good privacy and it's a fairly simple model to reason about, but it does require a communication channel with a miner which is a little annoying.
 
-# Quantum resistance
+## Quantum resistance
 
 A final thing would be quantum resistance. I talked about unconditional soundness, which is a step towards this. In the presence of a quantum computer, people lose their privacy but hopefully by then we will have moved on to something different, but the system would still be sound. We have to be able to do better than this. There's a whole field of cryptography devoted to the idea of crypto primitives that do not break in the face of a quantum computer. I know how to replace most parts of mimblewimble with quantum hard primitives. The big part I'm missing is the rangeproofs themselves. My friends at Stanford are convinced this exists and they just need to search the literature. Maybe this is also not actually opened. My heart is open, though.
 
-# Q&A
+## Q&A
 
 A: Yep?
 

@@ -2,8 +2,10 @@
 title: Joinmarket
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['fungibility']
+tags: ['coinjoin']
 speakers: ['Adlai Chandrasekhar']
+date: 2016-10-08
+media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=2196s
 ---
 
 <https://twitter.com/kanzure/status/784681036504522752>
@@ -18,7 +20,7 @@ I am one of the joinmarket contributors. Some of the other joinmarket developers
 
 We're trying to make their job more difficult. Another interesting quote from cypherpunks more than 2 decades before joinmarket occurred, Eric Hughes foresaw this development. "It's a way to transfer a non-private good in a more private manner". So what is anonymity and privacy?
 
-# What is privacy?
+## What is privacy?
 
 Anonymity is always within a set. An important concept is that of an <a href="https://en.wikipedia.org/wiki/Degree_of_anonymity">anonymity set</a>. You're one of a few billion people. You're one of a few million bitcoin users. You are one of a thousand joinmarket users. If you are at a protest wearing a certain mask, then you are one of those people. If you show up with the wrong mask, then suddenly your anonymity set is a lot smaller. So the purpose of fungibility is to increase your anonymity set.
 
@@ -34,11 +36,11 @@ Greg Maxwell proposed <a href="https://bitcointalk.org/index.php?topic=279249.0"
 
 Just in case someone has not seen what a coinjoin looks like, <a href="https://i.imgur.com/mys3yC9.png">here is an example</a>.
 
-# Coinjoin
+## Coinjoin
 
 This is arguably the simplest smart contract. We have two participants. One participant has this output here, the other one has two outputs, the first and the third one. They each get 0.8 BTC out. There's no way for you to look at this transaction and knows which output corresponds to the first input or the middle input.
 
-# Joinmarket goals
+## Joinmarket goals
 
 Joinmarket's goals emerged from that status quo, the prior part that I described. First of all, no counterparty risk. We don't want to be a centralized mixing service. We're not going for strong privacy. It's difficult. It uses complex mathematics, which most bitcoin users don't understand. Possibly even most people! It has to be a liquid tool. It must be highly available. You muts be able to show up with hundreds of coins and get some fungibility right away. You should be able to make coinjoins on-demand.
 
@@ -46,7 +48,7 @@ It has to be compatible with the existing "vanilla" bitcoin protocol. Some peopl
 
 It's probably pretty obvious, but we want a system that is usable. If it's not usable, then it's not useful. We're going for a working tool that people can use as soon as possible.
 
-# Joinmarket participants and users
+## Joinmarket participants and users
 
 Joinmarket's fundamental innovation, which I think several people came up with independently, is ythat you compensate people for participating in the protocol. So you incentivize people to leave their clients running. Also this brings in more liquidity. People who don't care about fungibility do care about making money. So you increase the anonymity set as a user of running joinmarket. There are people investing dozens or 100s of coins. They would usually leave them in cold storage and forget about them for a year or more. Instead they are now running hot wallets and they are increasing other people's anonymity sets.
 
@@ -54,7 +56,7 @@ Joinmarket divides participants in two different roles. There are passive partic
 
 Because the initiators are coordinating transactions, they learn some information about the other participants. So the regular participants get less privacy than the initiators. If you want the best possible privacy, then you have to pay for it.
 
-# Protocol
+## Protocol
 
 I'll run through the protocol quickly. If you want to get a precise idea, read the code.
 
@@ -68,7 +70,7 @@ This attack was known for a while. We didn't want to withhold a project with som
 
 The snoop attack is free. It doesn't cost the snooper anything. We can prevent this entirely. You can pay for the transaction and learn the mapping. So the second protocol has the same basic sequence. We add a signature on every message. The key thing here is that the takers don't just sign the encryption key with a bitcoin key. They commit with a unique commitment to some bitcoin some unspent bitcoin doesn't even have to be the same one. What does this mean that it's a unique commitment? Every bitcoin that exists currently generates one commitment. If you have seen a commitment, you can't figure out which bitcoin created it. If you see the same commitment again, you know it's the same. This lets the makers and the participants not talk to people who are initiating multiple transactions. Effectively, it puts a cost on snooping. You can still snoop, but you have to create new coins each time. We have not yet seen anyone conducting a snoop attack on this second protocol. So either this was a sufficient discouragement, or they are still writing code and collecting funds and perhaps the snoop attack will continue. Remains to be seen.
 
-# Future directions
+## Future directions
 
 We have two wallet integrations that are written, but they need more review and testing. Electrum and Core.
 
@@ -82,7 +84,7 @@ We want a tool where we can measure what privacy someone could have and could ge
 
 Also, we want to implement coinswap because the cool thing about coinswap is that whereas in coinjoin the anonymity set is the participants in that specific coinjoin, but in coinswap the anonymity set is everyone who was doing a coinswap at the same time, even if they were not coordinating with each other. Achieving that level of anonymity set increase using chained coinjoins is a lot more expensive, and I doubt that's the right strategy; the right strategy is to offer the additional protocol.
 
-# Q&A
+## Q&A
 
 Q: How does this compare to <a href="https://bitcointalk.org/index.php?topic=567625.0">coinshuffle</a>?
 
