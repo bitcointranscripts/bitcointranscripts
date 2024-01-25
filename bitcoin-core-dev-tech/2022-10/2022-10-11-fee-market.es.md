@@ -1,14 +1,12 @@
 ---
-title: Mercado de tarifas (2022-10-11)
+title: Mercado de tarifas
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['fees', 'bitcoin core']
+date: 2022-10-11
 aliases: ['/es/bitcoin-core-dev-tech/2022-10-11-fee-market/']
 ---
-
-# Mercado de tarifas
-
 Hay dos momentos en los que hemos tenido tasas sostenidas: a finales de 2017 y a principios de 2021. A finales de 2017 vimos que muchas cosas se rompían porque la gente no había escrito un software para hacer frente a las tasas variables o algo así. No sé si eso fue un problema tan grande en 2021. Lo que sí me preocupa es que esto empiece a ser una cosa. Si no hay un mercado de tarifas variables y se puede poner `1` sat/vbyte durante varios años, entonces funcionará hasta que no funcione. Así que ahora mismo los desarrolladores no tienen que preocuparse por ello. Puede ser realmente complejo con los lightning y el RBF (replace-by-fee). Muchas empresas no hacen un seguimiento de los RBF.
 
 Parece que, es raro, no es que los bloques estén vacíos. No es que tengan un promedio de 200-300k. Es que llegan al límite, entonces se obtiene un mempool persistente, entonces se va por debajo, por lo que siempre está justo en esa línea. Se siente como que hay una cosa de la economía donde la gente está apuntando. Si las tasas son persistentes y es poco fiable, entonces empiezo a consolidar o a usar otra cosa. Si las tasas son como, si los bloques están vacíos, entonces usted tiene más espacio y puede llenar eso. Parece que, no sé, parece poco probable que sea al azar para estar lleno, pero no más de ese tamaño. Eso parece aterrador a largo plazo, porque ¿cómo se financia esto? Alguien tenía esta cosa donde - habló de ello en Scaling Tokyo donde dijo que sí estamos pagando a los mineros demasiado. Vamos a hacer una bifurcación suave y empujar la recompensa minera fuera de 20 años. Eso probablemente no va a suceder, pero es una buena idea.

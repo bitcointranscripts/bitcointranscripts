@@ -1,18 +1,13 @@
 ---
-title: Channel Factories
+title: "Lightning Channel Factories"
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['topology', 'fees']
+tags: ['channel-factories','eltoo']
 speakers: ['Christian Decker']
 date: 2019-03-14
 media: https://stephanlivera.com/episode/59/
 ---
-
-Topic: Lightning Channel Factories
-
-Location: Stephan Livera Podcast
-
-# Lightning topology limitation
+## Lightning topology limitation
 
 Stephan: Christian, welcome to the show. I’m a big fan of your work.
 
@@ -22,7 +17,7 @@ Stephan: There has been a lot of chatter in the Bitcoin community on what might 
 
 Christian: The principle one is that we have this topology limitation. If we create a Lightning channel in the current Lightning network it is just locking up funds towards one other endpoint. We can’t reallocate those funds easily to another destination should that endpoint not be able to route to where we want it to or if it turns out to be offline at points. That was the original inspiration. We want to be able to use our funds in different channels depending on what our current needs are and not what we predicted a few days before. We want to make all of these funds more flexible and be able to reallocate them among channels. The idea that there will not be enough UTXOs is quite an interesting one and one that I personally hadn’t considered for a long time. It can actually work out that we can collectively manage some funds in a group of people and these funds can be represented as a single output on the Bitcoin blockchain. We basically just then hold the splitting transaction, who owns what from this output in our backpocket. All of this is a bit of a specialization of what we call offchain protocols. It really is about flexibility and extending the reach of Bitcoin and its usability in the wider economy.
 
-# Multiparty offchain protocols
+## Multiparty offchain protocols
 
 Stephan: Let’s talk more about the general concept of multiparty offchain protocols.
 
@@ -36,7 +31,7 @@ Stephan: Ultimately if Bitcoin’s block space is valuable people will be willin
 
 Christian: The basic idea is that if we want to establish some sort of chain contract then one of us or multiple of us have to put in some money. If I put ten dollars on the table and you just walk away and I don’t have any way of grabbing that money back then I’m out of money without getting anything from it. Even worse you could start blackmailing me. You could come to see and say “You could get 1 dollar back if you send the remaining nine to me. Otherwise I won’t collaborate anymore.” To remove this necessity we create what is called a refund transaction. A refund transaction is a timelocked transaction that will become valid after a certain timeout. This refund transaction will take whatever we put into this offchain contract and will split it back up. This timelock is of course a limit on the lifetime of our system. If I say “In a week you can get your money back” then all you have to do is wait a week and you can get your money back regardless of what we decided in between. This is a very common scenario for all of these systems. We can sidestep by having a trigger transaction which says we add an intermediate step. We put money on the table. If we have a trigger transaction that triggers the timeout to start ticking and we have a refund transaction. The timeout does not start ticking until we get this transaction on the blockchain. From that point of time where we have the trigger transaction we can wait for the timeout to expire and then we have this unlimited lifetime of our contract. There are two downsides here. The first one is that we suddenly have increased our onchain footprint by an additional transaction. The second one is that we have to monitor this trigger transaction to be on the blockchain. If we continuously discuss on who gets the set up output and suddenly there is this trigger transaction added to it we might get detached from what we are discussing. We were expecting only the set up transaction to be there. Now there is a trigger transaction so what do we do now. This adds some complexity but it is a really clean mechanism of extending our lifetime indefinitely for these offchain contracts.
 
-# Channel Factories
+## Channel Factories
 
 Stephan: Let’s now focus in on what Lightning Network is today versus what a possible construction might look like in a channel factory scenario. Correct me if I’m wrong. Let’s say I’m a peer and I do lncli and connect to you. I open the channel to you, that is the funding transaction. Then we exchange the states over time, changing the balance between you and me. Say I want to close that, that’s a commitment transaction, that commits to the final balance. Could you explain the difference with what the channel factories model would look like?
 
@@ -54,7 +49,7 @@ Stephan: Let’s talk about a channel factory being able to take someone in with
 
 Christian: You are referring to splicing? That sadly is an onchain transaction. The idea for splicing which we are also considering to add to Lightning itself is to temporarily close a channel and then reopen it in the same transaction. The whole security of these offchain protocols relies on the funds in that offchain protocol never being available to a single party but also being under the control of all participants in this offchain contract. If we close a channel and reopen it right away then the funds never actually are under control of a single party but always remain under the control of all parties involved. We can do this close and reopen motion without stopping updates to the channel itself and without having to wait for this splice transaction as we call it to confirm onchain. That is the basic concept of splicing. Why would you do that? For Lightning what we would like to do is be able to add funds from outside to a channel. We settle the channel, add an additional input to the close transaction and then the reopen transaction has a single output which combines the funds from both parties. If we want to look at it in a more visual way then we can think of it like me adding 10 dollars on a table and we create a channel between the two of us. Now somebody else joins the table and puts 5 dollars on a table. We wait for this 5 dollars on the table to confirm and then we decide let’s split you in. Now we have three party channel that has 15 dollars. In Lightning this joining party would need to be one of us because they are limited to two parties. With multiparty channels we can actually add or remove additional people. The reason why this is exciting for Lightning is that it allows you to add funds to an existing channel in case you start running out of money. Or what is more interesting is that we can create onchain transactions from an offchain contract. We can say “You and I have a channel open for 10 Bitcoin.” Now I have a vendor that asks me to pay 1 Bitcoin onchain. I can go to you and say “Let’s do a splice out. Let’s close the channel, split 1 Bitcoin off in the direction of the vendor I am trying to pay and then reestablish the original channel with the 9 Bitcoin that remain.” This in Lightning allows us to remove the differentiation between onchain and offchain funds because all of the funds that we have offchain are still usable onchain for transactions. This is a huge win for us because it allows us to simplify the user experience by quite a lot. With multiparty channels we can increase and reduce the set of participants in our offchain protocol quite easily by adding or removing parties. This becomes this breathing mechanism where we add and remove people as we need and as they need to join or leave our small offchain protocol. It adds a lot of flexibility to where we allocate funds and with whom we want to trade. We can do that all with a single transaction on the Bitcoin blockchain.
 
-# Risks of channel factories
+## Risks of channel factories
 
 Stephan: It might be interesting to talk about the risks of a channel factory model. What about the risk that a channel factory participant goes unresponsive or offline?
 
@@ -68,7 +63,7 @@ Stephan: It relies on a vision where people do something like a Casa node, they 
 
 Christian: That is the model I am inclined to think will evolve. It gives us these very stable nodes where you plug in at home and act as a home hub. Name squatting that hub term that people seem to like about Lightning. That would give you this uptime that you require. Failures happen and these channel factories might not be online 24/7 but as long you have a channel built on top of a channel factory that you can use for your day-to-day expenses you should be fine.
 
-# Lightning penalty mechanism and eltoo
+## Lightning penalty mechanism and eltoo
 
 Stephan: It is not as if you have to have perfect connectivity. Your phone could drop off and come back on later that day and you’d likely not lose funds. If you accidentally broadcast an old state and somebody punishes you, could you comment on that?
 

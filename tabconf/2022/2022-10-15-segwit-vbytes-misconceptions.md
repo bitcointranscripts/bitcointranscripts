@@ -1,21 +1,20 @@
 ---
 title: Misconceptions about segwit vbytes
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['segwit', 'fees']
+categories: ['conference']
+tags: ['segwit', 'fee-management']
 speakers: ['Mark Erhardt']
 date: 2022-10-15
 ---
-
-# Weighing transactions: The witness discount
+## Weighing transactions: The witness discount
 
 You've already heard from someone that this presentation will be more interactive. I probably won't get through all of my material. If you have questions during the talk, please feel free to raise your hand and we can cover it right away. I'm going to try to walk you through a transaction serialization for both a non-segwit transaction and a segwit transaction. By the end of the talk, I hope you understand how the transaction weight is calculated and how the witness discount works. At the end, we might look at a few different output types at the end.
 
-# Before segwit
+## Before segwit
 
 Before segwit activated, a transaction would look like this: it would have at least one input and one output. This here is a p2pkh input and this transaction has 4 outputs, one is a wrapped segwit, one is a legacy output, it doesn't matter too much for now. Hopefully you have seen this kind of transaction before.
 
-# Transaction serialization
+## Transaction serialization
 
 Under the hood, this looks a little more detailed. If you serialize or look at the serialization of a transaction, as colored by yogh.io, you can see that all of this data is encoded into a hex string and this hex string is covered here by the different functions.
 
@@ -25,7 +24,7 @@ If anybody has been following the recent announcement of v3 transactions, this i
 
 After looking at the transaction header, we will look at the inputs.
 
-# Input serialization
+## Input serialization
 
 If we spend a transaction input, the very first thing we have to do is tell the world which UTXO we are spending. To uniquely identify a UTXO, we use an outpoint which is a txid and the position in the output list of that transaction. This txid is in dark blue on my slide. This is the parent transaction of that UTXO. As computer scientists, we start counting at 0.
 
@@ -35,7 +34,7 @@ After that value, you insert the input script. For a p2pkh input, it's a well-kn
 
 The last field of the input is the "sequence". Using this we can indicate that the transaction is replaceable. If any one input on the transaction is lower than the maximum value, then the transaction is non-final and can be replaced. You only need to specify it on one input. That's sufficient to make a transaction non-final. What happens if this field is lower than maximum value minus 1? Then we're dealing with locktimes. I won't dwell too much on that.
 
-# Output serialization
+## Output serialization
 
 In this example transaction, we have four outputs. I have highlighted one of them. The first thing we have in the output is the "amount" which is the number of satoshis that we're signing over to this condition script that we're locking funds to. An output creates a new UTXO and a UTXO has a certain number of sats allocated to it. Then it has a locking script or condition script that codifies the conditions under which these sats can be spent.
 
@@ -49,7 +48,7 @@ A: Some people might know already, but we never use floats or doubles in protoco
 
 So we have an 8-byte field to encode the amount. It's also little-endian. We have an output script here which has an output script length followed by an output script. This is a P2SH (pay-to-scripthash) script in this case. The hashes in p2sh are 20 bytes. It's a hash160.
 
-# Native segwit
+## Native segwit
 
 I should clarify what native segwit is. A lot of people refer to the first type of native segwit output just as "native segwit". You might be familira with P2WPKH. These are addresses starting with pc1q. These are the 0th version of native segwit outputs. Recently we had a soft-fork in November 2021 almost a year ago which introduced another new output type called pay-to-taproot (P2TR) which is also a native segwit output. It's the native segwit v1 output and these addresess start with bc1p. "p" encodes 1 in bech32. My example will be a pay-to-taproot output.
 
@@ -59,7 +58,7 @@ A: Wrapped segwit is a little bit of a hybrid because wrapped segwit was made to
 
 Between wrapped and native segwit, the difference is a forwarding script that says look at the witness and that's how we can satisfy the spending conditions. Nested is different. We're also not doing nested segwit outputs for native taproot, that was only a v0 thing. Now that people can hopefully build native segwit outputs, we will leave them behind.
 
-# Native segwit v1
+## Native segwit v1
 
 Here is the very first pay-to-taproot transaction that was ever spent on the blockchain. The message was "I like Schnorr sigs and I cannot lie". This is a bc1p address that indicates it's a P2TR output and it's also spending change to a P2TR output. Let's look at its serialization.
 
@@ -77,13 +76,13 @@ A: There is a different representation of the transaction that the non-segwit no
 
 So this indicates tihs is a segwit output. Why don't we have a count of witness stacks? Well, because every input has to have a witness stack in a segwit transaction. In this tx, we have only a single input so we have a single witness stack to satisfy that input. So the first thing we have is a number of witness items, and then the length in this case the first and only witness item.
 
-# Block space in segwit
+## Block space in segwit
 
 Before segwit, we had a block size limit of 1 megabyte. We just counted the raw bytes of all the data in a block and that had to be at most 1 million and otherwise the block was invalid. With segwit we introduced a weight limit for blockspace which is 4 million weight units. Since we only give the non-witness data to old nodes, they only see this green part up here which is always smaller than 1 megabyte. But for nodes that speak segwit, we also give them the witness data so that we can exceed 1 megabyte now. In August we had a new biggest block which was 2.77 megabytes.
 
 The segwit nodes see the complete transaction. Often there was this misunderstanding that the witness is not part of the transaction or not part of the block or things like that. The segwit node sees the full segwit transaction. For the nodes that don't understand segwit, what we give them is the transaction without the witness data. This should look very familiar. It has a version, input counter, the outpoint telling what UTXO is being spent so it can be deleted from the UTXO set, we have an input string script which happens to be of length 0, and then a sequence, and then the output scripts and the locktime. All the parts are the same as pre-segwit for non-segwit nodes but they have a reduced security model because the non-segwit nodes can't actually validate the signature. We strip out the witness marker and witness section and just hand them the stripped transaction. This is smaller than the full transaction which lets us stick to the 1 megabyte block limit that the old nodes continue to enforce and it also has reduced security because the pre-segwit nodes don't get the input condition scripts to show that someone was authorized.
 
-# txid
+## txid
 
 How do we have the same txid between segwit and non-segwit nodes? Well, segwit introduced another change which is that we calculate txid for segwit transactions only from the stripped transactions. We use this as input to calculate the txid which is just a hash of the tx data. This also allows us to do things like lightning because in lightning we need to build a refund transaction that spends the output here before it is signed. You don't want to give the channel partner the funding transaction that is fully signed because then they can make sure the money goes there even without agreeing on the downstream future transactions. We have to agree on the downstream transactions like the refunding transaction before putting the commitment funding money at risk.
 
@@ -95,7 +94,7 @@ Q: If you have a transaction with multiple inputs, is there something in the wit
 
 A: There is not, no. How does that work? We have an input counter up here that tells us how many witness stacks there will be. Every input needs a witness stack. The legacy input type will have a witness stack of length 0. The second witness stack will have data for our example transaction using P2TR for example. ..... We don't really have to tell how many witness stacks there will be.
 
-# Transaction weight
+## Transaction weight
 
 For transaction weight we multiply 4 by the non-witness data and one time the witness data. That's the transaction weight when these two values are added. To get the stripped transaction, we count each byte of the non-witness data 4 times, and then the witness data is counted once. These coefficients were selected because they felt good.
 
@@ -113,7 +112,7 @@ Q: Why are you not discussing the most important feature of the witness discount
 
 A: Fine. I'll go to the next slide.
 
-# Different output types
+## Different output types
 
 I will now enumerate all possible output types.
 
