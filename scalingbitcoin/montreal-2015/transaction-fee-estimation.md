@@ -35,10 +35,6 @@ That's basically my answer to what should be done, it's conservative, it's easil
 
 That's the basics of how I think wallets should handle transaction fees.
 
-categories: ['conference']
-tags: ['wallet', 'fees']
----
-
 <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011685.html>
 
 <https://medium.com/@bramcohen/how-wallets-can-handle-transaction-fees-ff5d020d14fb>
