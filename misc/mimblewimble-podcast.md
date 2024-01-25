@@ -2,12 +2,11 @@
 title: Mimblewimble Podcast
 transcript_by: Bryan Bishop
 categories: ['podcast']
-tags: ['research', 'cryptography']
+tags: ['adaptor-signatures','sidechains']
 speakers: ['Andrew Poelstra', 'Pieter Wuille', 'Brian Deery', 'Chris Odom']
+date: 2016-08-07
+media: http://web.archive.org/web/20200926001539/https://soundcloud.com/heryptohow/mimblewimble-andrew-poelstra-peter-wuille-brian-deery-and-chris-odom
 ---
-
-<https://soundcloud.com/heryptohow/mimblewimble-andrew-poelstra-peter-wuille-brian-deery-and-chris-odom>
-
 * Andrew Poelstra (andytoshi)
 * Pieter Wuille (sipa)
 * Brian Deery
