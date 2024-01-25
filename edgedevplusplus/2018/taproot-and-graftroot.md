@@ -2,36 +2,35 @@
 title: Taproot and Graftroot
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'fungibility', 'taproot']
+tags: ['mast','p2c','taproot']
 speakers: ['Greg Sanders']
 media: https://www.youtube.com/watch?v=h2bvOal1u5k
 date: 2018-10-04
 aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/taproot-and-graftroot]
 ---
-
 <https://twitter.com/kanzure/status/1047764770265284608>
 
-# Introduction
+## Introduction
 
 Taproot and graftroot are recent proposals in the bitcoin world. Every script type looks different and they are distinct. From a privacy perspective, that's pretty bad. You watermark or fingerprint yourself all the time by showing unique scripts on the blockchain or in your transactions. This causes censorship risks and other problems for fungibility. Often you are paying for contigencies that are never used, like the whoopsies branches in your scripts. If you are storing those scripts on the blockchain then you have to pay for those all the time.
 
-# Bitcoin script
+## Bitcoin script
 
 There are two interesting cases to consider: the cooperative case where everyone behaves, signs, and updates state. In the m-of-n Schnorr case, that would be one signature for one public key. But then you might have some complex backup script as a backup measure. Perhaps you expect a threshold is not enough and too many signers go offline; after a year or so, you want to recover the funds using a smaller threshold or some alternative scheme. You can use timelocks, hash pre-images, and auditable telescoping multisig cases like I mentioned.
 
 What if we could instead optimize for the first case (cooperation) which we believe to be far more common? Participants would not have to pay for the contingency case, which also might be a much larger script.
 
-# Example
+## Example
 
 In the lightning network, there are the punishment or justice transactions, and also the unilateral closing transaction. You have to spend more money to get your money back. That's not great. Telescoping multisigs like n-of-m, with some timeout to a smaller multisig. So there's a couple cases.
 
-# Merkleized abstract syntax trees (MASTs)
+## Merkleized abstract syntax trees (MASTs)
 
 For privacy reasons, you could use a merkleized abstract syntax tree (MAST). It's a merkle tree with a logical OR, and you expose one of the leaves of that tree, and that leaf would commit to a script and as long as you satisfy that script then you could spend those funds. You could have a merkle tree with two leafs, where the left branch is the common case, and the right side is the complex script case which you never really want to share unless it really happens. You only have to spend the funds to reveal the script and lose the privacy when the contingency is stumbled upon. You can also have a subtree of many possible conditions attached. For this to be privacy preserivng, everyone would have to commit to a MAST tree, even if you don't have a contingency. Most transactions don't have contingencies like that, it's just simple multisig for the most part. So to maintain privacy, everyone would have to use it.
 
 Most transactions don't really have a requirement to use this, and the bytes used grows with the size of the tree. People would not be motivated to adopt these. And it might be hard to get it deployed in Bitcoin.
 
-# Pay-to-contract
+## Pay-to-contract
 
 But what if we can remove the additional cost of contingencies, without losing privacy?
 
@@ -41,7 +40,7 @@ Q = P + Hash(P || script) * G
 
 Only one binding using this protocol is possible at a time. Only those who can sign for P can also sign for Q. In bitcoin, consensus doesn't care about this. But you're provably committing to this. Only one binding is possible at a time. You can sign for P and have the message that is being hashed, and having the script being hashed, then you know how to spend the Q, and that's if and only if.
 
-# Taproot
+## Taproot
 
 We can commit to this contingency we talked about inside of bitcoin, while having the output script look like any other pay-to-pubkey style output. Q = P + Hash(P || script) * G where the script is the encumberance. The Q is being signed by an m-of-n federation of some sort that has done secret key sharing scheme of some kind. Every participant in that scheme knows how to compute their own shards of P and they also know the hash of P appended to the script. They are all able to sign for this.
 
@@ -49,7 +48,7 @@ The common case is that you sign for Q, verifiers have no knowledge of the exist
 
 The contingency case is that you reveal P, script, and witness to satisfy the script. Again, there is no setup time interactivity required.
 
-# Graftroot
+## Graftroot
 
 Q = P + Hash(P || script) & G
 
@@ -59,11 +58,11 @@ There can be any number of delegations, but only reveal one.
 
 This requires that the signatures be stored. Before, we had non-interactivity where as long as you knew your partner's public key shards ahead of time, you could do it without extra storage or interactivity. But in graftroot you need everyone sending signatures and storing them indefinitely. This clearly requires interactivity at setup time.
 
-# Two schools of thought
+## Two schools of thought
 
 When it comes to script, if you add expressability, it tends to lower privacy as every new script is a privacy leak. And also, if not carefully designed, it increases the denial-of-service and consensus failure risk. Every node has to compute the answer just as fast as you'd hope while also agreeing with other nodes, especially alternative implementations. The other way to look at this is to have less script or no script at all. With taproot or graftroot, you might not even need script- maybe just a template like hashlock and key, or checksequenceverify and key. You would optimize for the common cases, and add more privacy by default.
 
-# References
+## References
 
 * taproot: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html>
 

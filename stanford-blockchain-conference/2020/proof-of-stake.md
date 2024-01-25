@@ -2,7 +2,7 @@
 title: "Proof-of-Stake Longest Chain Protocols Revisited"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'proof-of-work', 'proof-of-stake']
+tags: ['research', 'altcoins']
 speakers: ['David Tse']
 date: 2020-02-20
 ---

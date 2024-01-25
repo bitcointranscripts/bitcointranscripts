@@ -2,7 +2,7 @@
 title: Technological Stability
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['privacy', 'fungibility']
+tags: ['regulation']
 date: 2020-02-18
 ---
 

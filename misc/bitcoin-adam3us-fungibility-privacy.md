@@ -2,11 +2,10 @@
 title: Fungibility and Privacy
 transcript_by: Bryan Bishop
 speakers: ['Adam Back']
-tags: ['privacy', 'fungibility']
+tags: ['privacy']
+date: 2014-02-09
+media: https://www.youtube.com/watch?v=3dAdI3Gzodo
 ---
-
-<https://www.youtube.com/watch?v=3dAdI3Gzodo>
-
 First of all I was going to explain what we mean by fungibility before bitcoin and ecash. It's an old legal concept in fact, about paper currency. It's the idea that a one ten dollar note is the same as any other ten dollar note. If you receive a note that was involved in a theft, 10 transactions ago, and the police investigate the theft, they have no right to remove the ten dollar note from your pocket. It's not your fault that it was involved in a previous crime. And so bank notes actually have serial numbers, so it would be possible for a stolen note to be traced back to you.
 
 This first arose, there was a 17th century court case where a wealthy merchant sent a couple of high-value bank notes to a colleague in the post and they never arrived. Before he sent them, he was quite paranoid that they would get stolen. He wrote down the serial numbers and made a mark on them. Sure enough they didn't arrive, so he put in a complaint with the bank, and evenutally the notes turned up at the bank. He tried to get the bank to return the notes to his ownership. The courts sided with the bank. Their reason was that if notes could be returned to their original owner after a theft, it would damage confidence in currency and it would be bad for business, the currency would become unusable because every time you received the paper note you would have to look in the newspaper whether it was reported stolen, or you would have the risk of it being taken, or you would have to rush to the bank to deposit it so that it was the bank's problem.

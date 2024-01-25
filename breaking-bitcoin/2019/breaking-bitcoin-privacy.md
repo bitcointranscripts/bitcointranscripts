@@ -2,7 +2,7 @@
 title: Breaking Bitcoin Privacy
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'fungibility']
+tags: ['privacy', 'output-linking']
 speakers: ['Chris Belcher']
 media: https://www.youtube.com/watch?v=9mvm-tdxv7o
 ---
