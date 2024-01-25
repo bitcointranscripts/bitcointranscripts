@@ -2,7 +2,7 @@
 title: Bitcoin Peer-to-Peer Network and Mempool
 transcript_by: Caralie Chrisco
 categories: ['conference']
-tags: ['p2p', 'mempool']
+tags: ['p2p', 'transaction-relay-policy']
 media: https://youtu.be/eVerdR2hOMw
 speakers: ["John Newbery"]
 aliases: [/scalingbitcoin/stanford-2017/edgeplusplus/p2p-john-newberry]

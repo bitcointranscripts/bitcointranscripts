@@ -2,7 +2,7 @@
 title: "OP_RETURN"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=NYj80OGlWGg
-tags: ["scripts-addresses"]
+tags: ["scripts-addresses","transaction-relay-policy"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-07-15
