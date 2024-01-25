@@ -2,7 +2,7 @@
 title: Attack Vectors of Lightning Network
 transcript_by: Gijs van Dam
 categories: ['residency']
-tags: ['attacks', 'lightning']
+tags: ['security-problems', 'lightning']
 speakers: ['Fabrice Drouin']
 date: 2019-06-25
 media: https://youtu.be/R5cSrftd8nc
@@ -10,11 +10,11 @@ media: https://youtu.be/R5cSrftd8nc
 
 Location: Chaincode Residency – Summer 2019
 
-# Introduction
+## Introduction
 
 All right so I'm going to introduce really quickly attack vectors on Lightning. I focus on first what you can do with the Lightning protocol, but I will mostly speak about how attacks will probably happen in real life. It's probably not going to be direct attacks on the protocol itself.
 
-# Denial of Service
+## Denial of Service
 
 So the basic attacks you can have when you're running lightning nodes are denial of service attacks basically. Lightning nodes are servers that accept incoming tcp connections, you can just overflow the servers with connections and that's something that is extremely hard to fight. Basically fighting low level connection DDoS  is really expensive. You can use services like Cloudflare but it's very expensive and if you don't what's going to happen is your host your hosting provider will eventually disconnect you from the network there's no route to you because DDoS attack against you will have an impact on everyone else in the same data centers and you will be effectively disconnected so that's really really hard to fight.
 
@@ -38,25 +38,25 @@ Audience Member: But if you're locking it up, eventually you'll get it back (ina
 
 Fabrice: Yes but it can still be a bit annoying. There's also resource usage attacks. If you look at the type of queries that Lightning nodes are supposed to serve, some of these queries can be quite expensive and especially the syncing your routing table is really expensive and using range queries can also be a bit expensive. So if you connect to a node you request routing table dump, you disconnect, you try again, you disconnect, try again, this can be really annoying for the serving node. So that could also be used to just lock up resources on your servers.
 
-# Preimage reuse
+## Preimage reuse
 
 Something that is really bad, but it's something that happens with most protocols is reusing random byte use. If you pay once, suppose Alice buys something from Carol, she pays once and for some reason Carol's website is not too good, it's reusing the same preimage. So now Alice will see... We try to pay a second time but if someone has seen that preimage, if Bob knows the preimage of a payment it's supposed to relay, it will not relay it, it will send back the preimage. This is really bad because Alice will have a valid proof of payment. She will have a payment request signed by Carol. She will have the matching preimage so she can go to Carol and say I've paid you, give me whatever you are supposed to send. It looks pretty bad and there are many, many ways you can end up with bad random generators, many ways you can end up with reusing a value that is supposed to be random. And if you try to be clever, if you try to come up with a nice scheme for generating payment hashes and payment preimages, this is a bug that you could actually hit and it's really bad.
 
-# Probing Attacks
+## Probing Attacks
 
 There are probing attacks. I think this is a topic of one of the next talks so I won't dive into it but basically with lightning, you can do probing attacks because you can use the fact that: no, it will not behave in the same way if they are the destination for a payment or if they're not. So using different error types that are returned. They help you learn who is supposed to be the final destination of a payment. You can also try to guess the balance of specific nodes using other kinds of probing attacks. So they are tedious to set up, but it works because nodes will not behave in the same way if they are or are not the destination of a payment.
 
-# Publishing Revoked States
+## Publishing Revoked States
 
 A very simple way of attacking lightning nodes is just to try to cheat and publish revoked states as we've seen if you do that there's a window, a time window during which the other node can steal all your funds so this is an open question for you, something you have to think about: How do you prevent someone from using the revocation key and steal all your funds if you're trying to cheat.  We'll get back to this later but suppose you want to cheat. What could you do to prevent the other guy from punishing you, if you provision old states?
 
 One of the things that we've done with a mobile app to fight this is to use really long CLTV delays, long penalty windows, but it's bad UX because it means because of our problem your funds are locked up for up to two weeks and if you're flying for a really long time like if you take a month off to go hiking in Nepal or whatever then you need to close all the channels otherwise you may lose them.
 
-# Watchtower
+## Watchtower
 
 So watchtowers, I think we've described how they work, but the consensus now, even though not everybody might agree with it, is that the penalty idea may not have been such a good idea after all and I don't think anyone is actually trying to cheat right now. So the few penalties transactions that have been published were published because someone messed up with an old backup and were punished for making mistakes but not punished because they were actually trying to be evil. So Eltoo -  that's my opinion - is a bit better. But I understand why some people still want the ability to punish bad actors.
 
-# "Lightning Node" Attack Surface
+## "Lightning Node" Attack Surface
 
 But honestly I don't think that attacks against Lightning nodes will attack the protocol. I used to work for a security company for some time. My first year was in the defense industry and then the security industry. We still work with security consultants and basically if someone was to attack Lightning they would not attack the Lightning protocol, they will attack the implementations. That's what is really likely to happen.
 
@@ -86,7 +86,7 @@ The wallets you use... so if you are running a Lightning node you have a hot wal
 
 Suppose you're in a big service you need to sign like big transactions all the time? How do you.. you won't have people clicking on buttons every time you want to send something, so you end up with another issue: It's very easy to over-engineer security solutions but if it's impossible to steal your keys but it's very easy to get your system to sign anything, then you don't have any kind of security. So if you focus on protecting keys but you forget that what you need to protect is the ability of people to use your keys, to get your system to sign, then you're missing the point and you're not that safe. And it's a problem with a lot of bitcoin applications and it's something that all hardware wallet vendors are working on but it's really hard because there are very few things you can check when you're signing bitcoin transactions. Lightning is a bit different. There is something you can do that will prevent, should prevent people from stealing from you. So what that is, is when you are relaying payments you can try checking that for every outgoing payment there is a matching incoming payment. But to do this you need to understand what's going on, which is a bit hard.
 
-# "Eclipse" Attack
+## "Eclipse" Attack
 
 There's something else, I think it was an attack that was described by Stepan Snigirev one or two weeks ago and I want you to think about it. So I'm Bob in the middle and I'm relaying payments and Stepan says: “What happens if the channel between Alice and Bob is closed but Bob doesn't know it? Basically what happens if you manage to stop blocks from the Bitcoin blockchain to get to Bob. You blind him and he is not seeing that the funding transaction of his channel with Alice has been spent. So the attack is Bob does not know that the upstream channel on the left is closed. He will keep on relaying payments. So do you think it is actually a problem or not? Do you think it is safe or do you think Bob is losing money because he's paying on this side and on this side where the channel is closed, so...
 

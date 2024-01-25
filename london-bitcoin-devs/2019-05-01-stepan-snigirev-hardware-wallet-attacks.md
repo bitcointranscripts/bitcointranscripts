@@ -2,7 +2,7 @@
 title: "Hardware Wallets (History of Attacks)"
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['hardware-wallet', 'attacks']
+tags: ['hardware-wallet', 'security-problems']
 speakers: ['Stepan Snigirev']
 date: 2019-05-01
 media: https://www.youtube.com/watch?v=P5PI5MZ_2yo

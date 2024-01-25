@@ -1,22 +1,19 @@
 ---
-title: Network Partitioning Attacks
+title: "Bitcoin network partitioning & network-level privacy attacks"
 transcript_by: Adam Jonas
-tags: ['privacy', 'P2P', 'attacks']
+tags: ['privacy-problems', 'p2p', 'eclipse-attacks']
 categories: ['residency']
 speakers: ['Ethan Heilman']
 date: 2019-06-12
 media: https://www.youtube.com/watch?v=StnOVBbIpD8
 ---
-
-Bitcoin network partitioning & network-level privacy attacks
-
 Location: Chaincode Labs 2019 Residency
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/ethan_heilman_p2p.pdf>
 
 Eclipse attack paper: <https://eprint.iacr.org/2015/263.pdf>
 
-# Bitcoin’s P2P Network
+## Bitcoin’s P2P Network
 
 Please interrupt me. I'm going to go through this stuff a little bit quickly because I hear that you've already read [Eclipse attack paper](https://eprint.iacr.org/2015/263.pdf) and you've already looked at some of the peer to peer stuff.
 
@@ -24,15 +21,15 @@ Bitcoin uses a peer-to-peer network to announce transactions and blocks. It make
 
 So nodes store the IP address of other nodes in two tables. The new table stores the IP addresses the node has heard of -- this might be another node that they could connect to, but they've never actually made an outgoing connection to that node, so it could just be total garbage. In fact, it's pretty easy to fill the new table up with garbage. It could give you nothing. It could give you just the stuff it wants you to know about. It decides what access you get. This is referred to in the P2P networking world as an eclipse attack. This blue node is eclipsed.
 
-# Example 1: 51 percent attack with 40 percent mining power
+## Example 1: 51 percent attack with 40 percent mining power
 
 We're going talk about later how you can eclipse a node but for this we're just gonna look at what bad things can happen when you're in that position. A malicious party controls access to information to particular nodes. One thing that can happen is that if you were to partition a miner from the rest of the network -- so you've stuck 30% of the mining power in a partition, and you're the attacker here, and you also have 40% of the mining power -- because these two miners don't learn about each other's blocks they will build independent forks. And because this is 30% and this is 30%, if the attacker has 40% of the mining power, they can build a longer chain. So by partitioning the Bitcoin network, you can actually engage in what would be a 51% attack without a majority hash rate.
 
-# Example 2: N-Confirmation Double Spending
+## Example 2: N-Confirmation Double Spending
 
 Another thing that you can do is you can partition say a merchant and some mining power -- the miner won't learn about the blocks that are being created over here so the miner will create its own fork and then you can double-spend so you can send a particular coin to the merchant you can send that same coin to yourself, the merchant doesn't see the merchant only sees this blockchain and only sees this transaction they don't even realize there's a double spend and then when you stop partitioning the merchant the Bitcoin miner their blockchain will go away and this blockchain they'll realize that this blockchain is the one with the most weight and you've double-spent. And notice in this case, you don't actually require any mining power yourself because you sort of use this miner to perform this attack by putting it in a partition, but this miner may just be an innocent victim that you've managed to partition.
 
-# Eclipse attacks: Other ramifications
+## Eclipse attacks: Other ramifications
 
 And some other bad things that can happen a lot of layer 2 protocols, including lightning, have this notion that when you see a particular transaction, you have an adjudication period to post a breach remedy transaction, and this security relies on the censorship resistance of Bitcoin so it's assumed you see someone has posted an old transaction you have the breach remedy transaction to post it, but if you're if you are eclipsed the eclipsing attacker could just censor that transaction. So if you are a lightning node and your Eclipse for the Bitcoin network, you can break the security of lightning. Lightning fundamentally assumes that Bitcoin is censorship-resistant, and you can announce your transactions. Right, so you could imagine an attack you're talking about where I know your IP address, and I also have a lightning channel with you, and every time you announce, I post an old lightning state, you announce the breach remedy transaction, and I just drop it on the ground.
 
@@ -46,13 +43,13 @@ Privacy - If you are the only connection that a node has to the Bitcoin peer-to-
 
 And then a fork, you can imagine situations where say it's less common now, but you have a two-block fork in the Bitcoin network right, and someone could just show you one side of that fork so they could double-spend a lot. And then if there's ever a two-block fork, they show you the losing side of that to block fork with the double-spend, and you think "oh well I've got one confirmation on top of that or two confirmations on top" that's good but what you don't see is there are actually 6 blocks on the other fork. Does that make sense to everyone?
 
-# On-path, Off-path, In-path Attacks
+## On-path, Off-path, In-path Attacks
 
 So how can this happen? On-path or in-path attacks. I'm going to define on-path and in-path attack on the next slide. Off-path attacks that manipulate the peer-to-peer network. So everyone read the Eclipse paper -- the Eclipse paper is generally talking about off-path attacks that manipulate the peer-to-peer network. DNS attacks that poison the tables are when a Bitcoin node to learn about the other nodes in the system use DNS when it's first booted up when it has nothing in its peer tables, you can attack it that way. And then we'll look at some other bad things that can happen.
 
 So this on-path, off-path, in-path distinction is a network security distinction. Off-path, you're basically the attacker here. You can send messages to the victim, you can receive messages to the victim, but the victim can send messages to other people that you can't see. So you can't see these, and you can't interfere with their traffic. So normally the security when you just connect to a website or an off-path attacker -- you can't see the other transactions, and you can't pretend to be other people in the network. And an on-path, the attacker can send messages to the victim and receive messages from the victim, but they can't drop packets. So they can see the packets that get sent, and they can inject their own packets, but they can't actually drop packets. And then finally, an in-path attacker, and this is usually what people think about with man the middle attacks, is the attacker is sitting directly between the victim and the rest of the network. So if the attacker sees a packet it doesn't like, it doesn't relay, it just drops it on the ground. And one of the important distinctions here between in-path and on-path is that in-path is generally very expensive for attackers, they get a lot of traffic. They have to buffer this traffic and send it on so they will introduce a lot of latency whereas on-path is much cheaper. You can just sit there and tap a network line and see the packets coming through and then inject traffic. So a lot of censorship frameworks will use on-path for large amounts of data because it's just cheaper to do, and then when they really want to do a targeted attack, they'll move to in-path. So a lot of the Great Firewall of China is on-path, not in-path. And if you look at the quantum insert, some of the NSA stuff, they were on-path attacks. They see the traffic, and they send new packets.
 
-## On-path attacks
+### On-path attacks
 
 So an on-path attacker can also eclipse you. In Bitcoin, an on-path attack actually functions a lot an in-path attack. Because Bitcoin connections are TCP connections, you can send a packet that says I want to reset a particular TCP connection, and you can drop it. You can inject traffic that will cause the host to break that TCP connection, and then they won't receive the packet -- so you have this ability to drop things. The host still receives the packet. They just discard it because they think the TCP connections has been broken.
 
@@ -64,7 +61,7 @@ So I believe there are certain packets, bad transactions, and garbage behavior t
 
 When we were writing the Eclipse attack paper, you would be more likely to connect to a peer that you had connected with recently than in the past. And so what this would do is that if you have a long life connection to someone, they would be more likely to connect back to you, and you'd be more likely to connect back to them. And so, it created this cluster of very tightly connected long life peers who were all connected to each other. And then new peers couldn't even get in because all the connections, all the incoming connections, were full. And there was another paper that looked at the peer-to-peer network and observed it wasn't actually a random graph. That had this weird property.  And so, I personally believe that it was that most recent behavior that accounted for that weird property. Since that's been removed, no one's done a study to see whether it's actually a random graph or not that I'm aware of. I guess a way to answer your question would be to look at if long-life nodes have all of their incoming connection slots filled because if they start to have behavior that, but if they don't, then a new peer would just potentially connect to one of them. But I think that's a really interesting question, and studying the Bitcoin network, there's some surprising emergent behavior.
 
-## Off-path attacks
+### Off-path attacks
 
 So now we're going to talk about off-path attacks. This is much more what the Eclipse attack paper did. You fill the node's peer table with attacker IPs. The node restarts and loses its current outgoing connections. The node makes new connections to only the attacker IPs. So you see, this node has been eclipsed by an attacker.
 
@@ -102,17 +99,17 @@ An open question that I don't have to answer to you, but my intuition is that th
 Question: It's deterministic for the node but... inaudible...
 Right, exactly. And this was in the eclipse attack paper because before it was probabilistic and deterministic actually made the attack harder.
 
-# Incoming connections
+## Incoming connections
 
 So to eclipse a node, you need to control both incoming and outgoing connections. In the Eclipse attack paper, it was really easy to control incoming connections. You could just make 117 connections from the same IP address, and you totally monopolize incoming connections. I don't know if anyone tried this attack against the network. I certainly didn't. But one thing that you could have done in that past Bitcoin is just take every single node that accepts incoming connections and just fill up all their incoming connections so when a new node joined the network, they wouldn't be able to make connections to anyone. To defend against that DoS connection exhaustion attack, Bitcoin under certain circumstances, now allows new incoming connections to evict old incoming connections. There's a set of rules for doing this. One thing that's interesting about this new rule is that when you evict an incoming connection, you're actually breaking someone else's outgoing connection. So there's a question of whether this is evil to making the Eclipse attack stronger where you can break outgoing connections by getting that outgoing connection to be evicted where it's an incoming connection. I don't know if that makes sense to everyone because I'm using incoming and outgoing -- it's a little bit confusing. But node A's outgoing connection is node B's incoming connection. And maybe if you make a bunch more incoming connections to node B, it'll break this connection because it'll replace this incoming connection with that incoming connection. I don't know if anyone's looked at how whether that helps or not. I don't know whether it works or not, but I think it's an interesting area to study. And then the other question is, let's say you want to do this connection exhaustion attack, at some point, you're just evicting yourself and locking people out. To perform this connection exhaustion attack, how many IP addresses do we need? I certainly don't have any hard numbers for that. And if you were to perform an eclipse attack, how easy would it be to eclipse the incoming connections given this eviction logic?
 
-## Incoming eviction logic
+### Incoming eviction logic
 
 So I looked at the source code none of this has been tested, so this is just from me reading the source code a couple of days ago, but this is the rules for evicting an incoming connection. So you create a list of all the incoming connections. You remove the IP addresses with a particular slash 16 -- so there's just some random slash 16 that's the protected slash 16. And you remove up to 4 IP addresses with that. You remove type 8 addresses with the lowest ping time. And each time you're removing these addresses, this is the list of connections to evict. You're now protecting those from being evicted. You remove 4 IP addresses that most recently sent us transactions. 4 IP addresses that most recently sent us blocks. And remove the oldest connections -- 50% of the list. And then there's this prefer evict setting. If any remainders on the list have prefer evict, then you evict that IP. If none of them have prefer evict, you select the IP addresses that have the most connections from a particular netgroup, a particular slash 16, and you evict the youngest connection from that netgroup. So it'd be really interesting to model this and see how well this works. What happens when you make lots of connections to it? How gameable is it? Maybe it's really robust to attacks. Maybe there are some clever games you can play with this. I don't know. This is in net.cpp line 857. There's the set of rules.
 
 I also just wonder how this is justified. A lot of the ideas that have been the people have come up within this room have been about making sure the ones that send us blocks that we keep those connections. So it seems that logic is in here. If you imagine someone got booted and they connect to another node, and you're doing a connection exhaustion attack on the whole network, and they get booted from that node. But only if they're in this netgroup. It's interesting I'd love to see quantitative models of how this works and how attackable it is, especially because it allows you to break outgoing connections. If I were writing an Eclipse attack paper, I would totally be focused on figuring out if I can use this as a tool. This would be my starting place, but I am not writing a new Eclipse attack paper.
 
-# Anomaly detection
+## Anomaly detection
 
 Can we use detection as a defense? Well, even if something is detectable, it doesn't necessarily mean that you will detect it or that system you built will detect it. I don't know how much of this exists, but it would be really great to have anomaly detection on the Bitcoin network so that if there were something that happened with chainalysis, it would be caught quickly.
 
@@ -121,7 +118,7 @@ I think this was 2015, early 2015, maybe 2014. At the time, I was obsessively re
 
 I assume some exchanges probably have some anomaly detection. I know at my company we have a whole bunch of alarms, and they've caught weird stuff happening on testnet. I don't know if anyone's built anything that, but I think it really interesting just to be something funny is happening on the network. All of a sudden there's now all of these new connections. Especially a targeted attack you're you're definitely going to miss that if you're not the target, but something that's targeting the Bitcoin peer-to-peer network as a whole. Some sort of DDoS attack or some connection exhaustion DoS attack. Also, if an attacker is aware of your anomaly detection, they can try to shape their attack to bypass that. And maybe there's attacks which are really hard or impossible to do subtly. If you're just going to connect over tor and get a bunch of tor exit nodes to spam the Bitcoin network. There was this one attack where the attacker wants to eclipse people talking to Bitcoin over tor. So what they do is they set up a tor exit node that talks to Bitcoin. And then, they talk through all the other exit nodes and get those exit nodes IPs banned on the Bitcoin network, so everyone has to talk through their exit node. And then you can eclipse it. So this is from a paper from 2015 or 2016 called [Bitcoin over Tor isn't a good idea](https://arxiv.org/pdf/1410.6079.pdf) or something that that. I don't know how effective that attack is today. But know in that case, you would notice all of a sudden a whole bunch of nodes on the network has banned the same list of IP addresses, and you might be like, "why?" For the attack to be successful, you'd want to have a majority of nodes which accept incoming connections to have been those exit nodes. Probably for a 50% attack chance, you want 50% of the nodes to have banned them.
 
-# DNS Attacks
+## DNS Attacks
 
 There are DNS attacks you can do. As we already discussed, when you first connect to the network, you don't have anything in your peers table. You have to get IP addresses from the DNS seeders. If an attacker were to control some of the seeders, they could try to perform an attack. An attacker could also just control your local DNS server. So you could just happen to connect to a malicious DNS server, which could happen if you were connecting from a cafe or something. Or you could do a DNS cache poisoning attack. I don't know if anyone has actually tried this on Bitcoin or looked into it to see how easy it is. I'll explain this more. The seeders crawl the network to find out what IP addresses to advertise. You could attempt an attack where you just tell the seeders about just your IP addresses. I don't know how easy attack 4 would be where you stuff the seeders. I believe the seeders have been designed to be resilient to it, but I don't know if anyone's in-depth attempted to attack the seeders.
 
@@ -142,6 +139,6 @@ You could not use DNS for this, and I believe some other cryptocurrencies don't 
 
 ...the hard-coded IP addresses. How are those generated? And how many of them were online? My labmate was doing these really fun UDP fragmentation attacks for injecting traffic as an off-path attacker and doing DNS cache poisoning attacks you can just inject. You request it from some resolver, and then it's sent out a packet, and you do a fragmentation attack to inject your packet without being on-path or in-path. Because it's UDP, it doesn't have the same protections. So one idea to solve this is that you could try to authenticate the seeders. Some of the DNS response could actually be a signature on the other IP addresses. So you could encode a signature in the first 2 ipv4 addresses or the first couple ipv6 addresses. So you could make this signed data and sort of just shoehorn in sign data over DNS. Since you're already hard coding in the DNS seed, you could also just hardcore code in a pubkey for that DNS seed. Or you could look at turning off DNS cache poisoning, so you always make a new request. I haven't looked at the DNS code in a while, so maybe cache poisoning was turned off. I don't actually know that this isn't already fixed. But it's an interesting thing to look at. If you're asking DNS seeds, you should almost definitely not be using whatever cache you have locally. You should at least be going off to your local resolver. You could actually just call off the DNS through Bitcoin, but almost all applications rely on the OS to do that for you.
 
-# Conclusion and project ideas
+## Conclusion and project ideas
 
 So I feel talked about all of this stuff. In general, some project ideas things that I think would be cool if people worked on. One was hardening the seeders against attacks, thinking about how to make on-path attacks harder. UDP has some interesting properties for on-path attacks. So off-path UDP is usually the easier to spoof packets because it's stateless, but if two parties send you UDP packets, you can't necessarily do these reset attacks where they just break the connection, and the person will drop packets. And then, incoming connection logic, is there any way to game this? How optimal is it? Is there some fine-tuning that would make it more secure?

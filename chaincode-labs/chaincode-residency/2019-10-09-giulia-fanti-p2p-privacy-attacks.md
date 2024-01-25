@@ -1,7 +1,7 @@
 ---
 title: P2P Privacy Attacks
 transcript_by: Caralie Chrisco
-tags: ['privacy', 'P2P', 'attacks']
+tags: ['privacy-problems', 'p2p', 'dandelion']
 categories: ['residency']
 speakers: ['Giulia Fanti']
 date: 2019-10-09
@@ -22,7 +22,7 @@ In particular the problem here is that users in the Bitcoin peer-to-peer network
 
 So whenever Alice wants to send money to Bob the first thing she does of course is to create a transaction message which is going to get broadcast over this network until all the other nodes hear about it and can start mining to add it to the blockchain.
 
-# How users can be deanonymized
+## How users can be deanonymized
 
 What about this allows users to be deanonymized? Typically when we talk about anonymity problems in the Bitcoin blockchain, people are talking about chain level attacks. Basically because the Bitcoin is just a ledger of every transaction that's ever happened, you can often link together different transactions coming from the same user. You can start making these kinds of graphs that connect together the same user doing multiple transactions with different parties. If you know who certain parties are, if you know that this group of big purple dot is Mt. Gox, you might be able to narrow down the set of users who are interacting with Mt. Gox.
 
@@ -40,7 +40,7 @@ A big part of those decisions is in coming up with the model that you use to ana
 
 Privacy and security are two areas where theoretical analysis is particularly important because for topics like efficiency, for example. It doesn't necessarily matter if you have a theoretical proof that it's efficient. If you know that it works in practice, if it's efficient in practice, it's efficient. But with things like privacy and security you might not know that it's broken until something really bad happens right? So that's the reason that it's particularly useful for privacy and security problems to have some kind of theoretical proof, so that you know the worst possible adversary can’t do more than this. Of course the flip side of that, is that your guarantees are only as good as your models. If you're able to prove some great results and you've got a model that's really restrictive, it's not that useful.
 
-# Attacks on the network layer
+## Attacks on the network layer
 
 We started this project after reading some papers from the security literature and these papers basically had the following structure. They're saying, let's suppose that we have our peer-to-peer network and we have an eavesdropper, a super node that sets up connections to everybody. The purpose of this eavesdropper is to try to figure out which node originated a particular transaction. So now when Alice starts broadcasting her transaction, she sends it to all of her regular peers but from her perspective this eavesdropper looks the same as anyone else. She'll also relay it to the eavesdropper and her peers also relay to the eavesdropper and so forth. So everyone is treating this eavesdropper just like any other node. Now if I'm the eavesdropper and I want to try to figure out who is the source node, a really natural thing for me to do is to wait for the first node that relays a transaction to me say, “okay I think you're the source.” Now this doesn't always work. Can anyone think of why this might not work all the time?
 
@@ -74,7 +74,7 @@ So in academia we care about solving impactful problems but we also care about p
 
 Let's start out with Part One: Analysis. Are there any questions so far on the model?
 
-# Analysis
+## Analysis
 
 So analysis. How bad is this problem?
 
@@ -112,7 +112,7 @@ That's the metric that we're analyzing and finally we want to understand: what e
 
 For this work we analyzed two different types of estimators. The first one we call the first-spy. This estimator basically just looks at all of the timestamps reported by each of the nodes and it picks the smallest one. This is basically saying the first person who relays to me, I'm going to say that they're the source. On this picture I think node four has the smallest timestamp. It's going to be the estimator for the first-spy adversary. The reason this is a useful estimator is because this is what's used in those security papers that I talked about earlier; it's a very natural easy estimator to run. It doesn't actually require any knowledge of the graph. Notice you can do this even if you don't know the underlying graph topology.
 
-# Maximum likelihood
+## Maximum likelihood
 
 The other estimator that we look at has a lot more power, the maximum likelihood estimator. Out of curiosity how many of you take in a class on like estimation and detection? How many of you know and a maximum likelihood estimator is? Okay alright good. Let's talk about maximum likelihood.
 
@@ -142,7 +142,7 @@ The results that I gave earlier, they’re asymptotic in a property of the graph
 
 It's kind of weird to give a result that's asymptotic and a property of the graph when the graph isn't really changing over time. You’re not expecting the degree to grow to infinity as time goes to infinity. Does that make sense?
 
-# Simulations
+## Simulations
 
 To try to understand what actually happens in practice we turn to simulations. We started by first simulating our results on trees, on regular trees again. Here we're comparing trickle and diffusion and the blue line is the theoretical prediction for diffusion and we see that they're basically identical. At least on a tree you don't expect, really any difference at all. But again this is not super representative because as we said earlier the Bitcoin graph is not a tree and here what I'm varying is the number of eavesdropper connections per node. So as the eavesdropper makes more and more connections to each node, their probability of detection is tending closer and closer to one, which is consistent with our intuition. But again this is kind of weird because we're looking at results on trees whereas the network is not really a tree.
 
@@ -206,7 +206,7 @@ Giulia: I think that's true. Back when Andrew collected this, I think there was 
 
 Audience Member: It’s still very easy to figure out.
 
-# Part two
+## Part two
 
 At the end of the last session we concluded that diffusion doesn't seem to have significantly better anonymity properties than trickle. So some of the key things that I want you guys to take away from that portion of the talk was really how to think about modeling some of these problems if you want to do any kind of theoretical analysis.
 
@@ -218,7 +218,7 @@ Matt was saying during lunch that there's some evidence of basically like botnet
 
 If these nodes were targeting one particular node what should they do? Surround it. Yeah. I guess you learned about eclipsing attacks, was that yesterday? If they were interested in this guy they should try to basically surround it completely so whatever it sends they'll know who it was. But in this case we're interested in a more broad scale adversary that's trying to deanonymize as many people as possible. This would be the goal of… for example.
 
-# Metrics for anonymity
+## Metrics for anonymity
 
 Our metric for anonymity is actually also going to get a little bit more complicated in this portion of the talk. Remember in the previous portion of the talk we were analyzing the probability of detecting the source. In this portion of the talk we're going to assume that you have lots of transactions and lots of users and the adversaries goal is to try to map transactions to users.
 
@@ -266,7 +266,7 @@ So the Dandelion network policy exists of Dandelion spreading line graph topolog
 
 If we interpret this in terms of the picture that I showed you here, this little blue region shows you the anonymity region for Dandelion. The red one shows you a lower bound on the region for detergent. It could actually be larger, this was obtained through simulation. The yellow one is what would happen if you just flooded to all of your nodes with no delay. That’s here. This is showing us that basically we're pretty close to the green triangle, remember our green triangle.
 
-# Why is Dandelion good?
+## Why is Dandelion good?
 
 Dandelion seems to have some good theoretical properties but why is it good? We give you a little bit more intuition as to why this should be the right thing to use. To try to give you some of this intuition I'm going to talk about some ideas that don't work.
 
@@ -282,7 +282,7 @@ The number one most common FAQ is why don't you just connect through Tor? The id
 
 The other thing that people ask is I2P integration. For those of you haven’t heard of I2P, it's conceptually kind of similar to Tor. You're basically building a cryptographic tunnel to another node. The end result is that this other node gets it, the tunneling is done within the peer-to-peer network that you're looking at but these guys are not actually routing the transaction. I'm oversimplifying things a little bit here. But the point is this is not relying on an external service. For example Monero is doing this integration right now. This also addresses the same problem that we're trying to protect here. This would be another way of doing it. The only potential downside that I can see with this kind of approach is that it may take a little bit longer to implement just because implementing cryptography correctly is pretty hard. It can take a while to do it right and to build up the necessary expertise. A lot of projects that we've talked to maybe didn't feel comfortable or felt like integrating I2P would be too big of a change to their codebase and so they didn't want to do that. They felt the Dandelion was like a simple enough protocol that they were maybe a trade-off in terms of just easy (inaudible).
 
-# Practical Considerations
+## Practical Considerations
 
 So now let's talk about some of these practical considerations that you all have been asking very good questions. What do you think would be one of the trade-offs that you want to make when you're thinking about whether to deploy Dandelion or not? What's one of the downsides that you can potentially see?
 
@@ -318,7 +318,7 @@ A final practical challenge that we looked at in our Dandelion++ paper is that i
 
 We also did some analysis on the privacy guarantees and showed that as the fraction of honest nodes adopting Dandelion rose from zero to one, an upper bound on your expected recall also gets closer and closer to your lower bound of “p”. Remember “p” was the recall that we expect to get for Dandelion. This has a nice property which is that it's kind of smoothly smooth degradation as fewer and fewer nodes actually adopt your protocol. Even if one node adopts it, they get some privacy benefit and as more nodes adopt it, you get more benefits, like a herd effect.
 
-# End story
+## End story
 
 The end story seems to be that complexity and robustness for the trade-off between complexity and robustness seems to be a barrier. So unclear if it would get adopted. We would like to try to see if we can make something work. I would like to try to see if something can be made workable.
 
@@ -338,7 +338,7 @@ Our objective in this work was to try to work in the obfuscation territory but t
 
 Bitmessage is a peer-to-peer messaging service that is supposed to protect your privacy. So Dandelion isn't really cryptocurrency specific, it's more like a one to all messaging service and so the way Bitmessage works is by broadcasting messages to everyone, so this was kind of aN oddly good fit.
 
-# Take-home messages
+## Take-home messages
 
 That wraps up this presentation. Three take-home messages talk one is the bitcoin’s peer-to-peer network has kind of poor anonymity guarantees because of the randomization and the way that transactions propagate. So moving from trickle to diffusion didn't help so here there's a star here that actually IT did help because it was closing down this important bug. This is more from the perspective of like the theoretical analysis that we did. And third Dandelion may be a lightweight solution for certain classes of adversaries. I want to highlight here again that the adversarial models that we're considering are a really aggregate scale for parties that are trying to denormalize lots of parties. The tool is really not designed to protect against targeted attacks.
 

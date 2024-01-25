@@ -2,12 +2,11 @@
 title: Erebus Attacks And How To Stop Them With ASMAP
 transcript_by: adamjonas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=I2ZmAPI3ebQ
-tags: ["asmap","attacks"]
+tags: ["asmap","security-problems"]
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["Podcast"]
 date: 2020-11-19
 ---
-
 Aaron van Wirdum: 00:00:07
 
 Live from Utrecht, this is The Van Wirdum Sjorsnado.

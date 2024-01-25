@@ -1,21 +1,15 @@
 ---
-title: Lightning Topics
+title: "ANYPREVOUT, MPP, Mitigating Lightning Attacks"
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['attacks', 'lightning']
+tags: ['sighash-anyprevout','eltoo','transaction-pinning','multipath-payments','trampoline-payments','privacy-problems']
 date: 2020-08-13
 speakers: ['Christian Decker']
 media: https://stephanlivera.com/episode/200/
 ---
-
-Topic: ANYPREVOUT, MPP, Mitigating Lightning Attacks
-
-Location: Stephan Livera Podcast
-
-
 Transcript completed by: Stephan Livera Edited by: Michael Folkson
 
-# Latest ANYPREVOUT update
+## Latest ANYPREVOUT update
 
 ANYPREVOUT BIP (BIP 118): https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 
@@ -27,7 +21,7 @@ SL: I wanted to chat with you about a bunch of stuff that you’ve been doing. W
 
 CD: When I wrote up the NOINPUT BIP it was just a bare bones proposal that did not consider or take into consideration Taproot at all simply because we didn’t know as much about Taproot as we do now. What I did for NOINPUT (BIP118) was to have a minimal working solution that we could use to implement eltoo on top and a number of other proposals. But we didn’t integrate it with Taproot simply because that wasn’t at a stage where we could use it as a solid foundation yet. Since then that has changed. AJ went ahead and did the dirty work of actually integrating the two proposals with eachother. That’s where ANYPREVOUT and ANYPREVOUTANYSCRIPT, the two variants, came out. Now it’s very nicely integrated with the Taproot system. Once Taproot goes live we can deploy ANYPREVOUT directly without a lot of adaption that that has to happen. That’s definitely a good change. ANYPREVOUT supersedes the NOINPUT proposal which was a bit of a misnomer. Using ANYPREVOUT we get the effects that we want to have for eltoo and some other protocols and have them nicely integrated with Taproot. We can propose them once Taproot is merged.
 
-# Eltoo
+## Eltoo
 
 Christian Decker on Eltoo at Chaincode Labs: https://diyhpl.us/wiki/transcripts/chaincode-labs/2019-09-18-christian-decker-eltoo/
 
@@ -51,7 +45,7 @@ SL: A naive question that a listener might be thinking, Christian what if I trie
 
 CD: You can certainly try. But since we are still talking about 2-of-2 multisig outputs I would have to countersign that. I might sign it but then I will make sure that if we later come to a new agreement on what the latest state should be that that state number must be higher than whatever I signed before. This later state can then override your spuriously numbered state. In fact that’s something that we propose in the paper to hide the number of updates that were performed on a channel. Not to go incrementing one by one but have different sized increment steps so that when we settle onchain we don’t tell the rest of the world “Hey, by the way we just had 93 updates.”
 
-# RBF pinning
+## RBF pinning
 
 Matt Corallo on RBF pinning: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017757.html
 
@@ -59,7 +53,7 @@ SL: From watching the Bitcoin dev mailing list, I saw some discussion around thi
 
 CD: With all of these protocols we can usually replay them only onchain and we don’t need to look at the mempool. That’s true for eltoo as it is true for Lightning penalty. Recently we had a lengthy discussion about an issue that is dubbed [RBF pinning](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-April/017757.html) attack which makes this a bit harder. The attack is a bit involved but it basically boils down to the attacker placing a placeholder transaction in the mempool of the peers making sure that that transaction does not confirm. But being in the mempool that transaction can result in rejections for future transactions. That comes into play when we are talking about HTLCs which span multiple channels. We can have effects where the downstream channel is still locked because the attacker placed a placeholder transaction in the mempool. We are frantically trying to react to this HTLC being timed out but our transaction is not making it into the mempool because it is being rejected by this poison transaction there. If that happens on a single channel that’s ok because eventually we will be able to resolve that and a HTLC is not a huge amount usually. Where this becomes a problem is if we were forwarding that payment and we have a matching upstream HTLC that now also needs to timeout or have a success. That depends on the downstream HTLC which we don’t get to see. So it might happen that the upstream timeout gets timed out. Our upstream node told us “Here’s 1 dollar. I promised to give it to you if you can show me this hash preimage in a reasonable amount of time.” You turned around and forwarded that promise and said “Hey, your attacker, here’s 1 dollar. You can have it if you give me the secret in time.” The downstream attacker doesn’t tell you in time so you will be ok with the upstream one timing out. But it turns out the downstream one can succeed. So you’re out of pocket in the end of the forwarded amount. That is a really difficult problem to solve without looking at the mempool because the mempool is the only indication that this attack is going on and therefore that that we should be more aggressive in reacting to this attack being performed. Most lightning nodes do not actually look at the mempool currently. There’s two proposals that we’re trying to do. One is to make the mempool logic a bit less unpredictable, namely that we can still make progress without reaction even though there is this poison transaction. That is something that we’re trying to get the Bitcoin core developers interested in. On the other side we are looking into mechanisms to look at the mempool, see what is happening and then start alerting nodes that “Hey you might be under attack. Please take precautions and and react accordingly.”
 
-# SIGHASH flags
+## SIGHASH flags
 
 SL: I also wanted to chat about SIGHASH flags because ANYPREVOUT and ANYPREVOUTANYSCRIPT are some new SIGHASH flags. Could you take us through some of the basics on what is a SIGHASH flag?
 
@@ -73,37 +67,37 @@ SL: For the typical user just doing single signature, their wallet is going to u
 
 CD: Exactly yes.
 
-# Difference between ANYPREVOUT and ANYPREVOUTANYSCRIPT
+## Difference between ANYPREVOUT and ANYPREVOUTANYSCRIPT
 
 SL: Could we talk about ANYPREVOUT and ANYPREVOUTANYSCRIPT? What’s the difference there?
 
 CD: What we do with SIGHASH_ANYPREVOUT is no longer explicitly saying “Hey by the way I’m spending those funds over there.” Instead what we say is “The output script and the input script have to match. Other than that we can mix these transactions however we want.” Instead of having an explicit binding saying “Hey my transaction 100 now connects to transaction 99, and then the scripts have to match. By the scripts I mean the output script would specify that the spender has to sign with public key X and the input script would contain a signature by public key X. Instead of binding by both the explicit reference and the scripts we now bind solely by the scripts. That means that as long as the output says “The spender has to sign with public key X and the input of the other transaction that is being bound to it has a valid signature for public key X in it” then we can attach these two. The difference between ANYPREVOUT and ANYPREVOUTANYSCRIPT is whether we include the output script in the hash of the spending transaction or not. For ANYPREVOUT we still commit to what script we are spending. We take a copy of the script saying that the spending transaction needs to be signed by public key X. We move that into the spending transaction and then include it into the signature computation so that if the output script is modified we cannot bind to it. Whereas the ANYPREVOUTANYSCRIPT says “We don’t take a copy of the output script into the input of the spending transaction but instead we have a blank script. We can bind it to any output whose output script matches our input script.” It is a bit more freedom but it is also something that we need for eltoo to work because the output script of the transaction we’re binding to includes the state number and that obviously changes from state to state. We still want to have the freedom of taking a later state and attaching it to any of the previous states. For eltoo we’d have to use ANYPREVOUTANYSCRIPT. There are a couple of use cases where ANYPREVOUT is suitable on its own. For example if we have any sort of transaction malleability and we still want to take a transaction that connects to a potentially malleable transaction, then we can use SIGHASH_ANYPREVOUT. If the transaction gets malleated in the public network before it is being confirmed we can still connect to it using the connection between the output script and the input script and the commitment of the output script in the spending transaction.
 
-# Transaction malleation
+## Transaction malleation
 
 SL: You were mentioning malleation there. Could you outline what is malleation?
 
 CD: Malleation is the bane of all offchain protocols. Malleation is something that that we’ve known about for well over seven years now. If you remember the MtGox hack was for some time attributed to malleability. They said “Our transactions were malleated. We didn’t recognize them anymore so we paid out multiple times.” What happens is I create a transaction and this transaction includes some information that is covered by the signature and can therefore not be changed, but it also could include some information that cannot possibly be covered by the signature. For example, the signature itself. In the input script of a transaction we need to have the signatures but we cannot include the signatures in the signature itself. Otherwise we’d have this circular argument. So while signing the input scripts are set to blank and not committed to. That means that if we then publish this transaction there are places in the transaction that can be modified without invalidating the signature anymore. Some parts of this include push operations, for example normalizations of signatures themselves. We can add prefixes to stuff. We can add dummy operations to the input script. Change how the transaction looks just slightly but not invalidating the signature itself. The transaction now looks different and is getting confirmed in this different form but we might have a dependent transaction where we’re referring to the old form by its hash, by its unchanged form. This follow up transaction that was referencing the unmodified transaction can no longer be used to spend those funds because the miner will just see this new transaction, go look for the old output that it is spending and this output doesn’t exist because it looks slightly different now because the hash changed. It will say “I don’t know where you’re getting that money from. Go away. I’m throwing away that transaction and it will not get confirmed. Whereas with SIGHASH_ANYPREVOUT we can counter this by having the transaction in the wider network, be modified, be confirmed in this modified state and then the sender of the follow up transaction can just say “Ok I see that there has been a modification to the transaction that I’m trying to spend from. Let me adjust my existing transaction by changing the reference inside of the input to this new alias that everybody else knows the old transaction.” Now we can publish this transaction. We did not have to re-sign the transaction. We did not have to modify the signature. All we had to do was take the reference and update it to point to the real confirmed transaction. That makes offchain protocols a lot easier because while having a single signer re-sign a transaction might be easy to do, if we’re talking about multisig transactions where multiple of us have to sign off on any change, that might not be so easy to implement. ANYPREVOUT gives us this freedom of reacting to stuff that happens onchain or in the network without having to go around and convince everybody “Hey please sign this updated version of this transaction because somebody did something in the network.”
 
-# Risks to everyday Bitcoin users
+## Risks to everyday Bitcoin users
 
 SL: If I understood correctly the way eltoo has been constructed, it is defending against that risk. You’re trying to use this new functionality of being able to rebind dynamically. For listeners who are concerned that maybe there’s a risk this is all opt in? It is only if you want to use Lightning in the eltoo model. You and I have this special type of SIGHASH flag where we have a special kind of output that we are doing the updates on our channel. If somebody doesn’t want to they can just not use Lightning.
 
 CD: Absolutely. It is fully opt in. It is a SIGHASH flag. We do have a couple of SIGHASH flags already but no wallet that I’m aware of implements anything but SIGHASH_ALL. So if you don’t want to use Lightning or you don’t want to use any of the offchain protocols that are based on SIGHASH_ANYPREVOUT simply don’t use a wallet that can sign with them. These are very specific escape hatches from the existing functionality that we need to implement more advanced technologies on top of the Bitcoin network. But it is by no means something that suddenly everybody should start using just because it’s a new thing that is out there. If we’re careful not to even implement SIGHASH_ANYPREVOUT in everyday consumer wallets then this will have no effect whatsoever on the users that do not want to use these technologies. It is something that has a very specific use case. It’s very useful for those use cases but by no means everybody needs to use it. We’re trying to to add as many security features as possible. For example if you sign with a SIGHASH flag that is not SIGHASH_ALL you as the signing party are the only one that is deciding whether to use the sighash flag or not. Whereas with the ANYPREVOUT changes that were introduced, AJ has done a lot of work on on this, he introduces a new public key format that explicitly says “Hey I’m available for SIGHASH_ANYPREVOUT.” Even the one that is being spent from now has the ability to opt into ANYPREVOUT being used or not. Both have to match, the public key that is being signed for has to have opted in for ANYPREVOUT and the signing party has to opt in as well. Otherwise we will fall back to existing semantics.
 
-# ANYPREVOUT reliance on Taproot
+## ANYPREVOUT reliance on Taproot
 
 SL: As I understand this BIP 118, there is a reliance on Taproot being activated first before ANYPREVOUT?
 
 CD: Obviously we would have liked to have ANYPREVOUT as soon as possible but one of the eternal truths of software development is that reviewer time is scarce. We decided to not push too hard on ANYPREVOUT being included in Taproot itself to keep Taproot very minimal, clean and easy to review. Then try to do a ANYPREVOUT soft fork at a future point in time at which we will hopefully have enough confidence in our ability to perform soft forks that we can actually roll out ANYPREVOUT in a reasonable amount of time. For now it’s more important for us to get Taproot through. Taproot is an incredible enabling technology for a number of changes, not just for Lightning or eltoo but for a whole slew of things that are based on Taproot. Any delay in Taproot would definitely not be in our interest. We do see the possibility of rolling out ANYPREVOUT without too many stumbling stones at a second stage once we have seen Taproot be activated correctly.
 
-# Signature replay
+## Signature replay
 
 SL: Also in the BIP118 document by AJ there’s a discussion around signature replay. What is signature replay? How is that being stopped?
 
 CD: Signature replay is one of the big concerns around the activation of ANYPREVOUT. It consists of if I have one transaction that can be rebound to a large number of transactions this doesn’t force me to use that transaction only in a specific context but I could use it in a different context. For example, if we were to construct an offchain protocol that was broken and couldn’t work we could end up in a situation where you have two outputs of the same value that opted in for ANYPREVOUT and you have one transaction that spends one of them. Since both opted into ANYPREVOUT and both have the identical script and the identical value, I could replay that transaction on both outputs at once. So instead of the intended effect of me giving you let’s say 5 dollars in one output you can claim 5 dollars twice by replaying this multiple times. This is true for offchain protocols that are not well developed and are broken because well designed offchain protocols will only ever have one transaction that you can bind to. You cannot have multiple outputs that all can be spent by the same ANYPREVOUT transaction. But it might still happen that somebody goes onto a blockchain explorer and looks up the address and then sends some money that happens to be the exact same value to that output. What we’re trying to do is find good ways to prevent exactly the scenario of somebody accidentally sending funds and creating an output that could potentially be claimed by SIGHASH_ANYPREVOUT by making these scripts unaddressable. We create a new script format for which there is no bech32 encoding for the script. Suddenly you cannot go on to a blockchain explorer and manually interfere with an existing offchain protocol. There are a number of steps that we are trying to do to reduce this accidental replayability. That being said in eltoo for example, the ability to rebind a transaction to any of the previous matching ones is exactly what we were trying to achieve. It is a very useful tool but it in the wrong hands it can be dangerous. So don’t go play with SIGHASH_ANYPREVOUT if you don’t know what you are doing.
 
-# Potential ANYPREVOUT activation
+## Potential ANYPREVOUT activation
 
 SL: What would the pathway be to activate ANYPREVOUT? What stage would it be in terms of people being able to review it or test it?
 
@@ -113,7 +107,7 @@ SL: Is there anything else you wanted to mention about ANYPREVOUT or shall we no
 
 CD: ANYPREVOUT is absolutely cool. We’re finding so many use cases. It’s really nice. I would so love to see it.
 
-# MPP (Multi-Part Payments)
+## MPP (Multi-Part Payments)
 
 MPP blog post: https://medium.com/blockstream/all-paths-lead-to-your-destination-bc8f1a76c53d
 
@@ -137,7 +131,7 @@ SL: Let’s say you have installed c-lightning and you’re trying to do a payme
 
 CD: Exactly. So initially what we have in the network is we see channels as total capacities. If the two of us opened a 10 dollar channel then somebody else would see it as 10 dollars. They would potentially try to send 8 dollars through this channel. Depending on the ownership of those 10 dollars this might be possible or not. For example, if we each own five there’s no way for us to send 8 dollars through this channel. We will report an error back to the sender and the sender will then know 8 was more than the capacity. I will remember this upper limit on the capacity. It might be lower but we know that we cannot send 9 Bitcoin through that channel. As we learn more about the network our information will be more and more precise and we will be able to make better predictions as to which channels are usable and which channels aren’t for a given payment of a given size. There is no point in us retrying this 8 dollar payment through our well balanced channel again, because that cannot happen. But if we split in two and now have two 4 dollar parts then one of them might go through our channels. Knowing that we have 5 and 5 it will actually go through. Now the sender is left with a much easier task of finding a second 4 dollar path from himself to the destination rather than having this one big chunk of 8 all at once.
 
-# Impact of fees on MPP
+## Impact of fees on MPP
 
 SL: From the blog post the way the fees work is there’s a base fee and there’s typically a percentage fee. If you split your MPP up into hundred different pieces you’re going to end up paying massive amount of base fee across all of those hundred pieces. Your c-lightning node node has to make a decision on how many pieces to split into.
 
@@ -155,19 +149,19 @@ SL: I think this is an interesting idea because it makes it easier for the retai
 
 CD: Absolutely. What we do with the pre-split and adaptive splitter, we make better use of the network resources that are available by spreading a single payment over a larger number of routes. We give each of the nodes on those routes a tiny sliver of fees instead of going through the usual suspects and giving them all of the fees. We make revenue from routing payments more predictable. We learn more about the network topology. While doing MPP payments we effectively probe the network and find places that are broken and will cause them to close channels that are effectively of no use anyway. Something that we’ve seen with the probing that we we did for the Lightning Network conference was that if we end up somewhere where the channel is non-functional, we will effectively close that channel and prune the network of these relics that are of no use. We also speed up the end-to-end time by doing all of this in parallel instead of sequentially where each payment attempt would be attempted one by one. We massively parallelized that to learn about the network and make better use of what we learned by speeding up the payment as well.
 
-# Privacy improvements of MPP
+## Privacy improvements of MPP
 
 SL: I also wanted to touch on the privacy elements. I guess there’s probably two different ways you could think of, multiple angles I can think of. One angle might be if somebody was trying to surveil the network and they wanted to try to understand the channel balances and ascertain or infer from the movement in the balances who is paying who, MPP changes that game a little bit. It makes it harder for them. But then maybe on the downside you might say because we haven’t moved to the Schnorr payment points PTLC idea then it’s still the same payment preimage. It is asking the same question to use the phrasing Rusty used. In that sense it might theoretically be easier for a hypothetical surveillance company to set up spy Lightning nodes and see that they’re asking the same question. What are your thoughts there?
 
 CD: There is definitely some truth in the statement that by distributing a payment over more routes and therefore involving more forwarding nodes, we are telling a larger part of the network about a payment that we are performing. That’s probably worse than our current system where even if we were using a big hub that hub would see one payment and the rest of the network would be none the wiser. On the plus side however the one big hub thing would give away the exact value you’re transferring to the big hub. Whereas if we pre-split to 1 dollar amounts and then do adaptive splitting, each of the additional nodes that are now involved in this payment learns a tiny bit about the payment being performed, namely that there is a payment, but since we use this homogeneous split of everything splits to 1 dollar, they don’t really know much more than that. They will learn that somebody is paying someone but they will not learn about the amount, they will not learn about the source and destination. And we are making traffic analysis a lot harder for ISP level attackers by really increasing the chattiness of the network itself. We make it much harder for observers to associate or to collate individual observations into one payment. It is definitely not the perfect solution to to tell a wider part of the network about the payment being done, but it is an incremental step towards the ultimate goal of making every payment indistinguishable from each other which we are getting with Schnorr and the point timelocked contracts. Once we have the point timelocked contracts we truly have a system where we are sending back and forth payments that are not collatable by payment hash as you correctly pointed out. Not even by amount, because all of the payments have roughly the same amounts. It is the combination of multiple of these partial payments that gives you the actual transferred amount. I think it’s not a clear loss or a clear win for privacy that we’re now telling a larger part of the network. But I do think that the pre-splitter and the adaptive splitting when combined with PTLC will be an absolute win no matter where you look at it.
 
-# PTLCs
+## PTLCs
 
 SL: I think that’s a very fair way to summarize. In terms of getting PTLCs, point timelocked contracts, the requirement for that would be the Schnorr Taproot soft fork? Or is there anything else that’s also required?
 
 CD: Taproot and Schnorr is the only one that is required for PTLCs. I’m expecting the Lightning Network specification to be really quick at adapting it, pushing it out to the network and actually making use of that new found freedom that we have with PTLCs and Schnorr.
 
-# Lightning onchain footprint
+## Lightning onchain footprint
 
 SL: I suppose the other component to think about and consider from a privacy perspective is the onchain footprint aspect of Lightning. Maybe some listeners might not be familiar but when you’re doing Lightning you still have to do the open and close of a channel. You did some recent work at the recent Lightning conference showing an ability to understand which ones of these were probably Lightning channel opens. That is another thing where Taproot might help particularly in the case of a collaborative close. Once we have Taproot, let’s say you and I open a channel together and it’s the happy path, the collaborative close, that channel close is indistinguishable from a normal Taproot key path spend?
 
@@ -177,7 +171,7 @@ SL: It is a question of what path you really need to be private I guess. One oth
 
 CD: That’s right. The Taproot idea comes out of this discussion for Merklized Abstract Syntax Trees. It adds a couple of new features to it as well. A Merklized Abstract Syntax Tree is a mechanism of having multiple scripts that are added to a Merkle tree and summed up until we get to the root. The root would be what we put into our output script. When we spend that output we would say “That Merkle tree corresponds to this script and here is the input that matches this script proving that I have permission to spend these coins. Taproot goes one step further and says “That Merkle tree root is not really useful. We could make that a public key and mix in the Merkle root through this tweaking mechanism.” That would allow us to say “Either we sign using the root key into which we tweak the the Merklized Abstract Syntax Tree. That’s the key path spent. Or we can say “I cannot sign with this pubkey alone but I can show the script that corresponds to this commitment. Then for that I do have all of the information I need to sign off. In the normal case for a channel close we use the root key to sign off on the close transaction. In the disputed case we say “Here’s the script that we agreed upon before. Now let’s run through it and resolve this dispute that we have by settling onchain and having the blockchain as a mediator for our dispute.”
 
-# Lightning Network attacks
+## Lightning Network attacks
 
 SL: I also wanted to talk about some of the Lightning attacks that are coming out in articles. From my understanding from chatting with yourself and some of the other Lightning protocol developers, it seems to me like there’s a bunch of these that have been known for a while but some of them are now coming out as papers. An interesting recent [one](https://arxiv.org/pdf/2006.08513.pdf) is called “Flood and Loot: A Systemic Attack on the Lightning Network. As I understand this, it requires establishing channels and then trying to send through a lot of HTLC payments. They go non-responsive and then they force the victim to try to go to chain. The problem is if they’ve done it with many people and many channels all at once they wouldn’t be able to get confirmed. That’s where the victim would lose some money. Could you help help me there? Did I explain that correctly?
 
@@ -207,7 +201,7 @@ SL: The other point there is that because we count fees in terms of sats per byt
 
 CD: Exactly. We would stop adding HTLCs before we no longer have any funds to settle it but it would still be costly if we ever end up with a large commitment transaction where something like 50 percent of our funds go to fees because it’s this huge thing.
 
-# Different Lightning usage models
+## Different Lightning usage models
 
 SL: Maybe we can step back and talk about Lightning generally, the growth of the Lightning Network and some of the different models that are out there. In terms of how people use a Lightning node today there’s the Phoenix wallet ACINQ style where it is non-custodial but there’s certain trade offs there and it’s all going through the ACINQ node. Then you’ve got Wallet of Satoshi style. They’re kind of like a Bitcoin Lightning bank and the users are customers of that bank. Then you’ve got some people who are going full mobile node Neutrino style and then maybe the more self-sovereign style where people might run node packages like myNode, Nodl or Raspiblitz and have a way to remote in with their Blue wallet or Zap or Zeus or Spark wallet. Do you have any thoughts on what models you think will be more popular over time?
 
@@ -221,7 +215,7 @@ SL: There’s a whole bunch of different models because people who just want som
 
 CD: Absolutely. It is one of my pet peeves that I have with the Bitcoin community, we have a tendency to jump right to the perfect solution and shame people that do not see this perfect solution right away. This shaming of newcomers into believing that there is this huge amount of literature they have to go through before even touching Bitcoin the first time. That can be a huge barrier to entry. I think what we need to have is a wide range of of utilities that as the user grows in their own understanding of Bitcoin he can upgrade or downgrade accordingly to reflect his own understanding of the system itself. We shouldn’t always mandate that only the most secure solution is the only one that is to be used. I think that there are trade offs when it comes to user friendliness and privacy and security, and we have to accept that some people might not care so much about the perfect setup, they might be ok with a decent one.
 
-# Trampoline routing
+## Trampoline routing
 
 Bastien Teinturier at Lightning Conference: https://diyhpl.us/wiki/transcripts/lightning-conference/2019/2019-10-20-bastien-teinturier-trampoline-routing/
 
@@ -239,7 +233,7 @@ SL: Yeah, that’s fascinating. I didn’t think about that. That’s a good poi
 
 CD: Yeah and it’s not hard to implement. We can implement trampoline routing as a plugin right now.
 
-# Privacy attacks on Lightning
+## Privacy attacks on Lightning
 
 SL: Another thing I was interested to touch on is privacy attacks on Lightning. With channel probing the idea is that people construct a false onion that they know cannot go through and then try to figure out based on that. They sort of play Price is Right. Try 800 sats, try 8 dollars and then figure it out based on knowing roughly how much is available in that channel. People say that’s violating the privacy principles of Lightning but how bad is that really? What’s the actual severity of it? Just losing some small amount of privacy in a small way that doesn’t really stop the network growing? Do you have any reflections on that?
 
