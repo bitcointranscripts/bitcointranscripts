@@ -2,7 +2,7 @@
 title: Merkleized Abstract Syntax Trees - MAST
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['taproot', 'covenants', 'validation']
+tags: ['taproot', 'covenants', 'mast']
 date: 2018-03-06
 aliases: ['/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/']
 ---
@@ -11,7 +11,7 @@ aliases: ['/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-ma
 
 See also <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/>
 
-# MAST stuff
+## MAST stuff
 
 You could directly merkleize scripts if you switch from IF, IFNOT, ELSE with IFJUMP that has the number of bytes.
 
@@ -21,7 +21,7 @@ You take every single path it has; so instead, it becomes ... certain condition,
 
 If you're doing covenants by way of showing the hierarchy inside of a taproot, bramc made the interesting point that you could have a decay rate attached to it so that the amount decreases over time. You can have a mandate any covenant enforcing a covenant, which is explicit in taproot; you could say the amount being enforced is less than or equal to the amount.... you could make it monotonic by making it decrease by 1 satoshi every time. You should pick a number like, some number of dust level. You could do something dust/weight related. And how do you get out of lock-up situations. The new taproot scheme will make covenants even better. There's taproot, graftroot, and then how do you combine this with MAST to make this growth logarithmic, all the conditions can be represented as fidxed functions, you commit to some script but you could get rid of the script, instead you commit to a merkle tree of possible conditions each of which specifies the conditions tha twould be enforced, it's not a script tha texecutes, it's just a data structure where first field might be relative locktime, second field might be a list of empty covenants, etc. If you want to covenant an output, the taptree looks like this or something, that's what you're saying. You show a derivation pathway, Anything you don't care about, you fill those in by witness upon spend. The output could be whatever, as long as you can show a merkle proof for the part of it you do care about. Attached to that covenant would be an amount.. and maybe other propreties... maybe attach arithmetic logic to that amount, and then it's only decreasing in size, or the sum of all covenants introduced by an input is only decreasing in size, and then in mathematical theory you have eliminated perpetual covenants, and if you tie this into the dust limits, then you have practically eliminated those unspendable covenants.
 
-# MAST discussion
+## MAST discussion
 
 MAST (merkleized abstract syntax tree) is a syntax tree where, you turn it into a merkle tree, yo udon't have to reveal the whole tree. This idea has changed a little bit to what we are now calling MAST. It's quite different from the original prupoposal. The original idea was that we had "if some condition", and then clause, and then else, and then some other clause. What we would do is we would hash the script (the conditional) and if it turned out that the witness, this clause here, we would reveal this other script. That was the original idea. It turns out that this is basically the same as you-- could split this into two possible scripts. There's the assert condition, and then you have something called the "then clause". And then you have the "assert not condition" which is the else clause. And so you broke one script, which had conditional execution into two scripts that are completely linearized. This can generalize for loops. As long as we have any straight run through of a script, then you can split it up into all the various possible exeuction paths. You get a condition where coins would be spendable by one of all of these possible scripts, even once linearized.
 

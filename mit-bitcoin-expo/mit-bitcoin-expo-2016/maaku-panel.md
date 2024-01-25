@@ -2,7 +2,7 @@
 title: Improvements to Bitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'validation', 'wallet']
+tags: ['research', 'lightning', 'wallet']
 speakers: ['Mark Friedenbach', 'Jonas Schnelli', 'Andrew Poelstra', 'Joseph Poon']
 ---
 
