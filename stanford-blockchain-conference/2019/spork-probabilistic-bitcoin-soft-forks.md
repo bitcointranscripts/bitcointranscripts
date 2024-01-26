@@ -2,7 +2,7 @@
 title: "Spork: Probabilistic Bitcoin Soft Forks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['soft-fork-activations']
+tags: ['soft-fork-activation']
 speakers: ['Jeremy Rubin']
 media: https://www.youtube.com/watch?v=J1CP7qbnpqA
 ---

@@ -2,14 +2,14 @@
 title: Taproot, Graftroot, Etc
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['hashlocks', 'timelocks', 'taproot']
+tags: ['contract-protocols', 'taproot']
 date: 2018-03-06
 aliases: ['/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/']
 ---
 
 <https://twitter.com/kanzure/status/972468121046061056>
 
-# graftroot
+## Graftroot
 
 The idea of graftroot is that in every contract there is a superset of people that can spend the money. This assumption is not always true but it's almost always true. Say you want to lock up these coins for a year, without any conditionals to it, then it doesn't work. But assume you have-- pubkey recovery? No... pubkey recovery is inherently incompatible with any form of aggregation, and aggregation is far superior. You could, if you didn't make it aggregate.
 
@@ -31,7 +31,7 @@ Yes, I am explaining graftroot.
 
 I want to prove that graftroot is secure. And taproot and Schnorr at the same time. You can't add more things to aggregate in a soft-fork, so you should do this all at once. The problem is that you'll have a transaction with signatures and then you have graftroot output with no script, and it wont have a public key inside its script, that signature can't be aggregated with all the other ones, if ... it's in a soft-fork.. because, there's no, aggregate signature with all of them, and not be able to validate it because it doesn't see that public key. You'd have two aggregate signatures rather than one. The benefit is much smaller if you need to have a new aggregate signature for every soft-fork version. So I want them to get in all at once. I want merkle trees.
 
-# Back to graftroot
+## Back to graftroot
 
 First I come up with my script. Then I make a random signature-- a hash of a different... and then from that signature script pair, I compute the pubkey. And then I set that pubkey. I can show you that the-- the preimage for this signature, so this is basically proving you that.... there's no... that might be possible.  you could do more than one.
 
@@ -49,7 +49,7 @@ A graftroot where you can non-interactively send to someone's multisig... to som
 
 ...
 
-# Taproot and graftroot
+## Taproot and graftroot
 
 Taproot: P = c + H(c || script) G
 

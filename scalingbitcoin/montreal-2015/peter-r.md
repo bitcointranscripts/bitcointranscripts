@@ -2,7 +2,7 @@
 title: Fee markets
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['fees']
+tags: ['fee-management']
 speakers: ['Peter Rizun']
 ---
 

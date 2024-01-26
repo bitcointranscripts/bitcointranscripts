@@ -1,7 +1,7 @@
 ---
 title: OpenSSL bug discovery
 transcript_by: Michael Folkson
-tags: ['cve', 'libsecp256k1']
+tags: ['cves', 'libsecp256k1']
 speakers: ['Greg Maxwell']
 date: 2015-01-08
 media: https://np.reddit.com/r/programming/comments/2rrc64/openssl_security_advisory_new_openssl_releases/cnilq2w/?context=3

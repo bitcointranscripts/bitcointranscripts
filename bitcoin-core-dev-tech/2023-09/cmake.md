@@ -1,11 +1,10 @@
 ---
 title: CMake Update
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'build systems']
+tags: ['bitcoin-core', 'build-system']
 date: 2023-09-21
 speakers: ['Cory Fields']
 ---
-
 ## Update
 
 Hebasto has a branch he has been PRing into his own repo. Opened a huge CMake PR for Bitcoin core.

@@ -1,12 +1,11 @@
 ---
 title: Libbitcoin kernel
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'libbitcoin kernel']
+tags: ['bitcoin core', 'build-system']
 date: 2023-04-26
 aliases: ['/bitcoin-core-dev-tech/2023-04-26-libbitcoin-kernel/']
 speakers: ['thecharlatan']
 ---
-
 ## Questions and Answers
 
 Q: bitcoind and bitcoin-qt linked against kernel the libary in the future?

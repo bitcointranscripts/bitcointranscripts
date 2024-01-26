@@ -3,7 +3,7 @@ title: Taproot, Graftroot, Etc (2018-03-06)
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['hashlocks', 'timelocks', 'taproot']
+tags: ['contract-protocols', 'taproot']
 aliases: ['/es/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/']
 ---
 

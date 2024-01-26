@@ -2,7 +2,7 @@
 title: Competitive Fee Market Urgency
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','mining','fees']
+tags: ['research','mining','fee-management']
 speakers: ['Marshall Long']
 media: https://www.youtube.com/watch?v=TgjrS-BPWDQ&t=6843s
 ---

@@ -4,7 +4,7 @@ speakers: ['Jonas Schnelli']
 date: 2019-06-08
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['version-2-p2p-transport']
+tags: ['v2-p2p-transport']
 media: https://www.youtube.com/watch?v=mcJa1YvzrFs
 ---
 

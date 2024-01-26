@@ -2,7 +2,7 @@
 title: Great Consensus Cleanup
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['consensus-cleanup-soft-fork']
+tags: ['consensus-cleanup']
 date: 2019-06-06
 aliases: ['/bitcoin-core-dev-tech/2019-06-06-great-consensus-cleanup/']
 speakers: ['Matt Corallo']
