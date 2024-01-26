@@ -2,7 +2,7 @@
 title: Trampoline Routing
 transcript_by: Michael Folkson
 categories: ['conference']
-tags: ['routing', 'wallet']
+tags: ['trampoline-payments', 'amp']
 speakers: ['Bastien Teinturier']
 date: 2019-10-20
 media: https://www.youtube.com/watch?v=1E-KhLA6Gck

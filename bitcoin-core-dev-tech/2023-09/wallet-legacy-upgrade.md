@@ -1,11 +1,10 @@
 ---
 title: Remove the legacy wallet and updating descriptors
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'wallet']
+tags: ['bitcoin-core', 'wallet']
 date: 2023-09-21
 speakers: ['Andrew Chow']
 ---
-
 ## Wallet migration + legacy wallet removal
 
 The long-term goal targeted for v29 is to delete BDB and drop the legacy

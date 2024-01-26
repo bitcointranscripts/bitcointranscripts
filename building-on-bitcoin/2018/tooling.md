@@ -1,8 +1,8 @@
 ---
-title: Tooling
+title: "Tooling Panel"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['wallet']
+tags: ['developer-tools']
 speakers: ['Eric Voskuil', 'Nicolas Dorier', 'Kevin Loaec', 'Lawrence Nahum']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=fjtmyaH6MG8
@@ -44,7 +44,7 @@ KL:It depends on the wlalet you are talkign about. It might be server-client, so
 
 EV: My knowledge of tools is limited to the tools that I write or rewrite. I can describe what Ihave. libbitcoin is a toolkit, but it's also applications built on top of the toolkit, including full node, server, client stack, admin tools, and to me that's really important if you're going to build a toolkit for other developers. You need at least one implementation that makes use of your API. libbitcoin is 10 different independent repositories on github, and an 11th which is a build sytem. We put a heavy emphasis on automation, code generation, building, testing. It's about 500k LOC. The system repo is like a crypto primitives stack, with bip38, bip39, bip32, a whole bunch, can't even remember them all. If you want to build basic bitcoin stuff from the ground up, you start there. There's a p2p network lirbary and you can build on top of that and do bitcoin protocol stuff... there's a database, which is completely hand-rolled memory mapped files, it's very efficient. There's another libbitcoin blockchain which maintains the chain. There's a node library which basically, it combines network and blockchain with a database to build a full node. It's useless unless you can communicate with it. We do continuous integration on OSX, Linux and Windows. We also have builds on Windows- pretty soon, we'll have autotools builds as well.
 
-KL:Would this be on mobile as well?
+KL: Would this be on mobile as well?
 
 EV: With C++, it's a little heavier than C, and you get robust error handling. One of the reasons... the library was started by Amri Taaki and he had his own specific use cases. What do I want to work on and stuff? If I was going to work on it, it had to be C++, even though I hadn't worked with C++ in years. It depends on what type of small device you're talking about. There's been implementations of various things built for mobile and it's not a problem. People have compiled it for raspberry pi or something. What's the bar?  Embedded, maybe what's your scenario? Devices tend to get more capable and the code stays the same. We made the decision at one point-- Amir made the decision to optimize for ssd. He figured why bother. The technology was advancing.  There's a number of... in terms of the node and database and blockchain, it was designed for the most reasonable scenario, not optimizing for everything. And on top of that other stuff, there's a client-server server stack, and there's a proprietary API which allows us to talk wit hthe node, and then you can communicate with your node in a high-performance manner.
 

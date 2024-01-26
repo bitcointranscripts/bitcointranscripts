@@ -2,15 +2,10 @@
 title: Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['wallet']
+tags: ['p2p','research','threshold-signature','sighash-anyprevout','altcoins']
 date: 2020-08-12
 ---
-
-Name: Socratic Seminar
-
 Topic: Agenda below
-
-Location: Chicago BitDevs (online)
 
 Video: No video posted online
 
@@ -18,13 +13,13 @@ BitDevs Solo Socratic 4 agenda: https://bitdevs.org/2020-07-31-solo-socratic-4
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# Bitcoin Core P2P IRC Meetings
+## Bitcoin Core P2P IRC Meetings
 
 https://github.com/bitcoin-core/bitcoin-devwiki/wiki/P2P-IRC-meetings
 
 They are starting P2P meetings for the Bitcoin protocol now. The trend for organizing backbone development for Bitcoin is starting to become more modular. They have wallet meetings for the wallet in Bitcoin Core now. You are going to have P2P network meetings for strictly the networking portion of Bitcoin and all of the technical stuff that goes into that. They had one on August 11th and they are doing them every two weeks. I thought I would give a public service announcement there.
 
-# Clark Moody Dashboard
+## Clark Moody Dashboard
 
 https://bitcoin.clarkmoody.com/dashboard/
 
@@ -46,7 +41,7 @@ I was looking at the mempool space and the fees are lower than they are on this 
 
 Most of it is 1 satoshi per byte so I think it is a trailing estimate.
 
-# Dynamic Commitments: Upgrading Channels Without On-Chain Transactions (Laolu Osuntokun)
+## Dynamic Commitments: Upgrading Channels Without On-Chain Transactions (Laolu Osuntokun)
 
 https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-July/002763.html
 
@@ -66,7 +61,7 @@ For negotiating a new funding channel, can’t you spend the old funding transac
 
 Yeah and that is discussed later in this thread. ZmnSCPxj was talking about going from Poon-Dryja to eltoo using a single transaction. Anything that requires funding transaction you don’t have to close and open, you can do it simultaneously in a splicing kind of fashion.
 
-# Advances in Bitcoin Contracting: Uniform Policy and Package Relay (Antoine Riard)
+## Advances in Bitcoin Contracting: Uniform Policy and Package Relay (Antoine Riard)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-July/018063.html
 
@@ -136,7 +131,7 @@ If you are limiting it to 100 MB you still want the highest fee 100 MB transacti
 
 You want Bitcoin to succeed and to work well. As a node operator part of what you are doing is you are trying to estimate what would make Bitcoin the most useful. If there is a really clear cogent argument for having some potentially complex mempool management policy potentially involving additional coordination with your peers or even an overlay network, I agree that we shouldn’t be surprised if people adopt that. Getting from there to saying it is something you can depend on, I don’t know how to quantify that.
 
-# Ethereum gas prices
+## Ethereum gas prices
 
 https://twitter.com/rossdefi/status/1293606969752924162?s=20
 
@@ -154,7 +149,7 @@ I disagree with that but we are going to talk about that later.
 
 It is very interesting that people are willing to pay these fees. I think it is interesting when you look at the use cases for paying these fees on Ethereum, I think the majority of people are involved in the new DeFi yield farming. They are not using it for a real business case, they are using it to get access to this new token that exists and then trying to be early for that. They are willing to pay whatever fee necessary to get in early.
 
-# High transaction usage on Ethereum
+## High transaction usage on Ethereum
 
 https://twitter.com/juscamarena/status/1285006400792354816?s=20
 
@@ -172,13 +167,13 @@ If it is true that it is a third the amount I expect from a value transfer trans
 
 A value transfer of ETH by itself is the cheapest transaction you can do. Anything that includes any amount of data costs extra. It is the other way.
 
-# Cloudflare DNS outage
+## Cloudflare DNS outage
 
 https://twitter.com/lopp/status/1284275353389862914?s=20
 
 Cloudflare had a DNS outage and there was a noticeable drop in Bitcoin transactions during this Cloudflare outage. I found that fascinating. It just goes to show who is making transactions on the network. It is probably Coinbase, Blockchain, all the big exchanges etc. It just goes to show how much influence Cloudflare has over the entire internet.
 
-# Altcoin traceability (Ye, Ojukwu, Hsu, Hu)
+## Altcoin traceability (Ye, Ojukwu, Hsu, Hu)
 
 https://eprint.iacr.org/2020/593.pdf
 
@@ -192,7 +187,7 @@ If this was presented in a fraud case or something like that would it be taken s
 
 It is better than nothing. I am sure that even in the current state there would be substantial push back by other experts. One expert against a bunch of other experts saying it is ridiculous. For what it is worth they have made revisions to the paper to make it better. It is difficult to present some of the evidence as is. It is very set to certain time periods. This chart shows the applicability. After 2017 the whole application of the paper is not very useful but this is a paper from this year. Media doesn’t know how to interpret this is one thing I wanted to point out. This is a really easy high level paper to read, just be really careful to make sure you get your time points correct. They try to look at Zcash for example and they didn’t have proper tooling available to continue to update it. They didn’t really update a lot of the data and then extrapolated it. I would love to see them run the real data not just extrapolate old findings. That would be much more useful.
 
-# Separate coinbase and non-coinbase rings on Monero
+## Separate coinbase and non-coinbase rings on Monero
 
 https://github.com/monero-project/monero/issues/6688
 
@@ -222,7 +217,7 @@ Do you recommend the paper? I wasn’t sure if there was any tangible as a resul
 
 I wouldn’t advise someone doesn’t read it and I also wouldn’t consider it an essential read. It is most useful for people who already have the context of the other papers. It updates on some of their data. It doesn’t really present much new compared to those. Part of the reason why we like to enforce behavior, this is perhaps controversial in Bitcoin implementations. Enforcing behavior gives much better desired results for privacy than not. Zcash, we constantly have people arguing Monero is better, Zcash is better. You can see the proportion of transactions that are shielded on the two networks comparatively and you can see one is a little bit more adopted. Monero, it has over 100 times as many transactions that hide the sender, receiver and amount than Zcash. That’s because instead of allowing the backwards compatibility users, exchanges and users are not forced to use the best practices, people typically don’t. I think that is because they don’t really care. Think about Bitcoin SegWit adoption. Ideally people should switch right away. But people don’t. If people aren’t going to switch for a financial incentive why are exchanges going to switch to get rid of a point of metadata that they don’t care about unless you force them. With privacy, in my opinion, it is not just whether a feature is available but whether it is enforced. More importantly whether people are actually using it. As you are evaluating implementations you should see if they are adopted or not. I know a lot of people talk about Samourai for example. This is some data on Samourai wallet usage. I want to be really clear. These numbers are not very comparable. These are interactive processes. For a 5 million satoshi pool 602 rounds occurred but those each include several participants. It is not just one participant that shows up. It might be ten participants or something. Even so if you stack all of these on top of each other which you cannot do because they are different amounts, they are denominated and they each have their own anonymity sets it is still pretty darn tiny. The implementation and encouraging good use is critically important. People think pretty highly of Samourai in general. I know the Samourai vs Wasabi feud, sometimes friendly, sometimes not so friendly. Ultimately the actual adoption is kind of small. One thing I mention is we are building these networks, we can talk about them in a research sense but we also need to talk about the sense that these are decentralized networks where it is permisisonless and anybody can send a transaction. People are going to do some weird stuff and people are not going to follow the best practices. That does matter for privacy adoption quite significantly.
 
-# Monero CLSAG audit results
+## Monero CLSAG audit results
 
 https://web.getmonero.org/2020/07/31/clsag-audit.html
 
@@ -232,7 +227,7 @@ Are you talking size efficient or time efficient?
 
 Both. They have stronger security proofs. They have about 25 percent smaller transaction size and they have 10-20 percent more efficient verification time. It is a really win-win-win across the board there.
 
-# FROST: Flexible Round-Optimized Schnorr Threshold Signatures
+## FROST: Flexible Round-Optimized Schnorr Threshold Signatures
 
 https://eprint.iacr.org/2020/852.pdf
 
@@ -254,13 +249,13 @@ Are public versions of the shards shared at any point? Is that how this is being
 
 Let me show you the key generation. If you are asking about the key generation the public key is the Shamir’s Secret and then the public shares are not additive secret shares. They are public commitments to the Shamir shares. My verdict for that paper is do read, it is interesting. Having Schnorr multisig that has low interaction has proven to be extremely useful in the design of cryptocurrency stuff.
 
-# Minsc - A Miniscript based scripting language for Bitcoin contracts
+## Minsc - A Miniscript based scripting language for Bitcoin contracts
 
 https://min.sc/
 
 For those who don’t know [Miniscript](http://bitcoin.sipa.be/miniscript/) is a language that encodes to Bitcoin Script. The thing that is cool about Miniscript is that it tracks a number of stack states as part of its type system. When you have a Miniscript expression you can understand how the subexpressions will edit the stack. The reason why you would want to do this is you have a table of satisfactions. Typically if you have some script it is complicated to calculate what the script that allows you to redeem it. With Miniscript every script that you write the type system tells you exactly what conditions you need to redeem that script. All of this geared is towards making analysis like this much more user friendly. It is very cool. Pieter Wuille put together a Policy to Miniscript compiler. Policy is just a simplified version without any of the typing rules. It has got this very simple set of combinators that you can use. Shesek put together a version of the Policy language with variable abstraction functions and some nicer syntax. This is going to be really useful for people who are experimenting with Bitcoin Script policies. It doesn’t have the full power of Miniscript because you can’t tell what is happening on the stack. If you have a Rust project you can include this as a library. But otherwise you can also compile sources using the compiler that Shesek put together. The website is also very nice. You can put in an expression, you get syntax highlighting and you get all the compiled artifacts. It is a really cool tool for playing with script. I recommend that. The GitHub [repo](https://github.com/shesek/minsc), unless you are a real Rust fan there is no need to look into the details. Most of the meat of this is in sipa’s implementation of the Policy to Miniscript compiler.
 
-# BIP 118 (ANYPREVOUT)
+## BIP 118 (ANYPREVOUT)
 
 https://github.com/ajtowns/bips/blob/bip-anyprevout/bip-0118.mediawiki
 
@@ -282,13 +277,13 @@ If you are on the Lightning dev mailing list people use NOINPUT and ANYPREVOUT i
 
 They are synonyms. You are mostly talking about higher level stuff. You want to be able to rebind your transactions. In some sense it doesn’t matter if you have to use a Tapscript or whatever special key type. You want the functionality.
 
-# Bitcoin Mining Hashrate and Power Analysis (BitOoda research)
+## Bitcoin Mining Hashrate and Power Analysis (BitOoda research)
 
 https://medium.com/@BitOoda/bitcoin-mining-hashrate-and-power-analysis-bitooda-research-ebc25f5650bf
 
 This is FCAT which is a subsidiary of Fidelity. They had a really great mining hash rate and power analysis. I am going to go through it pretty quickly. There are some interesting components to take away from this. They go into what is the common mining hardware, what is its efficiency. Roughly 50 percent of mining capacity is in China right now. I’m not really surprised there. They get into cost analysis. In their assessment 50 percent of all Bitcoin mining capacity pays 3 cents or less per kilowatt hour. They are doing energy arbitrage. They are finding pockets where it is really cheap to mine. According to them it is about 5000 dollars to mine a Bitcoin these days. Also the S9 class rigs that I think have been in the field for 3-5 years at this point. According to this research group you need sub 2 cents per kilowatt hour to break even with these S9s that are pretty old at this point. Here is the most interesting takeaway. A significant portion of the Chinese capacity migrates to take advantage of lower prices during the flood season. They go into a bunch of explanation here. What is this flood season? I was reading this and I didn’t know it is a problem. I had heard about it but I hadn’t investigated. The Southwestern provinces of Sichuan and Yunnan face heavy rainfall from May to October. This leads to huge inflows to the dams in these provinces causing a surge in production of hydroelectric power during this time. This power is sold cheaply to Bitcoin miners as the production capacity exceeds demand. Excess water is released form overflowing dams so selling cheap power is a win-win for both utilities and miners. This access of cheaper electricity prices attracts miners who migrate from nearby provinces to take advantage of the low price. Miners pay rough 2-3 cents per kWh in northern China during the dry months but sub 1 cent per kWh in Sichuan and Yunnan during the May to October wet season. They will move their mining operations from May to October down to these other provinces to take advantage of this hydroelectric power which is going on right now. This is the flood season in these provinces. Fascinating stuff. For some context this is Yunnan right here and Sichuan is here. I think they are moving from up in the northern parts here.
 
-# A mysterious group has hijacked Tor exit nodes to perform SSL stripping attacks
+## A mysterious group has hijacked Tor exit nodes to perform SSL stripping attacks
 
 https://www.zdnet.com/article/a-mysterious-group-has-hijacked-tor-exit-nodes-to-perform-ssl-stripping-attacks/
 
@@ -306,7 +301,7 @@ Is he credible? Does he actually run the exit node? It is like spewing sewage.
 
 I should practice what I preach but I would love more people to run Tor relays. If they get complaints be like “\*\*\*\* you I am running a Tor relay. This is good for freedom.” When it is your own time that you have to waste on complaints it is hard.
 
-# Taproot activation proposals
+## Taproot activation proposals
 
 https://en.bitcoin.it/wiki/Taproot_activation_proposals
 
@@ -320,7 +315,7 @@ I would say it is like 25 percent on Modern Soft Fork Activation and 75 percent 
 
 I am a BIP9 supporter for what it is worth. Tar and feather me if you must.
 
-# The fastest draw on the blockchain: Next generation front running on Ethereum
+## The fastest draw on the blockchain: Next generation front running on Ethereum
 
 https://medium.com/@amanusk/the-fastest-draw-on-the-blockchain-bzrx-example-6bd19fabdbe1
 
@@ -348,7 +343,7 @@ It is a way to get rid of front running.
 
 That is interesting. I think the majority of protocols aren’t doing that. The only thing that sounds familiar to that is the auction system in Maker DAO where you call to liquidate a position first. Then it doesn’t get confirmed until a hour later when the auction is finished. This has its own issues but that seems more similar to a commit, reveal. That is the only thing I can think of that is remotely similar.
 
-# Evidence of Mempool Manipulation on Black Thursday: Hammerbots, Mempool compression and Spontaneous Stuck Transcations
+## Evidence of Mempool Manipulation on Black Thursday: Hammerbots, Mempool compression and Spontaneous Stuck Transcations
 
 https://blog.blocknative.com/blog/mempool-forensics
 
@@ -360,7 +355,7 @@ This is fascinating stuff watching this play out on a live network and seeing pe
 
 If you want to read more on how Maker DAO responded to this incident you can check [this](https://blog.makerdao.com/the-market-collapse-of-march-12-2020-how-it-impacted-makerdao/) out.
 
-# Working with Binance to return 10,000 dollars of stolen crypto to victim
+## Working with Binance to return 10,000 dollars of stolen crypto to victim
 
 https://medium.com/mycrypto/working-with-binance-to-return-10-000-of-stolen-crypto-to-a-victim-3048bcc986a9
 
@@ -374,7 +369,7 @@ This is perfect marketing for financial regulation. “Look it sometimes doesn�
 
 That should be the Coinbase advertisement on TV or whatever.
 
-# Samourai Wallet Address Reuse Bug
+## Samourai Wallet Address Reuse Bug
 
 https://medium.com/@thepiratewhocantbenamed/samourai-wallet-address-reuse-bug-1d64d311983d
 
@@ -382,7 +377,7 @@ There is a Samourai wallet address reuse bug that can be triggered in some cases
 
 The bug is fixed now. If you are using Samourai you are good.
 
-# BasicBlocker: Redesigning ISAs to Eliminate Speculative-Execution Attacks
+## BasicBlocker: Redesigning ISAs to Eliminate Speculative-Execution Attacks
 
 https://arxiv.org/abs/2007.15919
 

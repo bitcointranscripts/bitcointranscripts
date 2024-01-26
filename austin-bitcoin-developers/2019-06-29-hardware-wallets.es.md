@@ -5,7 +5,7 @@ date: 2019-06-29
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['reunión']
-tags: ['hardware wallet', 'wallet']
+tags: ['hardware-wallet', 'security-problems']
 media: https://www.youtube.com/watch?v=rK0jUeHeDf0
 ---
 

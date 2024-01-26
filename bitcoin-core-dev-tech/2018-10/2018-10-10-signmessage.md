@@ -7,12 +7,9 @@ speakers: ['Kalle Alm']
 date: 2018-10-10
 aliases: ['/bitcoin-core-dev-tech/2018-10-10-signmessage/']
 ---
+kallewoof and others
 
 <https://twitter.com/kanzure/status/1049834659306061829>
-
-# signmessage
-
-kallewoof and others
 
 I am trying to make a new signmessage to do other things. Just use the signature system inside bitcoin to sign a message. Sign a message that someone wants. You can use proof-of-funds or whatever.
 

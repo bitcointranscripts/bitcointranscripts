@@ -1,19 +1,11 @@
 ---
-title: What Am I Working On
+title: "What am I working on?"
 transcript_by: Michael Folkson
 speakers: ['Andrew Chow']
 tags: ['wallet']
 date: 2020-07-10
+media: https://www.reddit.com/r/Bitcoin/comments/ho0t1a/what_are_bitcoin_developers_currently_working_on/fxhwqli/?context=3
 ---
-
-Topic: What am I working on?
-
-Location: Reddit (r/bitcoin)
-
-Reddit link: https://www.reddit.com/r/Bitcoin/comments/ho0t1a/what_are_bitcoin_developers_currently_working_on/fxhwqli/?context=3
-
-# What am I working on?
-
 I've been working on essentially rewriting the Bitcoin Core wallet, one piece at a time. Now when I say "the wallet", a lot of people think of the GUI. That's not what I've been working on. Rather I've been changing the internals; how keys are managed, how transactions are tracked, how inputs are selected for spending. All of those under the hood things. At some point, I will get around to changing the GUI. And in general, my focus has been on improving the user experience. Cross wallet compatibility is also something I've been working on.
 
 One of the big things I've been working on recently is descriptor wallets. What Core does right now is treat the wallet as a bag of keys. It turns these keys into scripts and addresses. But fundamentally, everything is centered around "do we have the keys to spend this script". Descriptor wallets change this. Instead, everything is centered around the script, which a descriptor describes. This makes more sense than keys as Bitcoin transactions are really script based, not key based. The keys are still there, they are just attached to a specific script as auxiliary data. By using descriptors (which map one-to-one to a script), we have an engineer readable way to write a script so they will be easier to import to other wallets. And descriptors leads us into Miniscript which will give us the ability to have and reason about complex contracts.

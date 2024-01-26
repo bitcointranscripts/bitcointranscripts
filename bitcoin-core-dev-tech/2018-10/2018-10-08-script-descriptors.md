@@ -14,14 +14,14 @@ I would like to talk about script descriptors. There's a number of projects we'r
 
 Note: there is an earlier transcript that has not been published (needs review) about script descriptors.
 
-# Agenda
+## Agenda
 
 * History of script descriptors and how we came to this.
 * What's currently in Bitcoin Core v0.17
 * Wallet integration
 * DESCRIPT
 
-# About script descriptors
+## About script descriptors
 
 The problem that I wanted to tackle was that currently in Bitcoin Core wallet we have a blob of public keys and private keys and HD chains and scripts and a bunch of other metadata and keypools. They all feed into each other and differently effect what you can sign and what we consider ours. The logic that currently exists about how we determine what outputs are ours is sort of a copy of the signing logic that says "can you sign for this". But with the caveat that for multisig, we require all the private keys to be there. At various levels, whenever through recursing the different scripts involved if there's something you consider something "watchonly" which is a separate set of scripts, then we also consider it ours. There's a distinction between what's solvable and what is watched. Solvable means, would we be able to sign this ignoring that we don't have the keys. Solvability means we can determine what the size of the spend is going ot be, useful for fee estimation, fundrawtransaction, coin selection and those kinds of things. It's very unclear what the reasoning is between the data that is in your wallet and how it effects solvability and spendability and we unintentionally made it worse in v0.17.
 
@@ -55,7 +55,7 @@ Q: What if we keep the old ismine logic for old wallets? That's painful. We have
 
 Yeah, but I think you can encapsulate the new stuff nicely where you say here's the data, apply ismine to it. There's different considerations there. I don't know what the best solution is there.
 
-# DESCRIPT
+## DESCRIPT
 
 I want to talk about some of the work we've been working on, Andrew and I and a number of other people at Blockstream. We want to deal with well what if you want to do more complex things with script? We have internal stuff that uses more complex scripts, we have lightning-related scripts, what if I want to do something like a multisig that after some time degrades into a weaker multisig? Like a 2-of-3 but after a year I can spend it with just one of those keys and stuff like that. How can you construct composable policies in script? Script is stack-based execution language that is really hard to reason about. In practice, people just pattern match a certain thing and then oh I know how to sign multisig, or p2sh multisig, or I know how to sign witness embedded multisig... but generalizing this is kind of a pain.
 
