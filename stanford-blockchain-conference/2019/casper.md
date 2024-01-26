@@ -1,5 +1,5 @@
 ---
-title: "Casper the Friendly Ghost: A "Correct-by-Construction" Blockchain Consensus Protocol"
+title: "Casper the Friendly Ghost: A 'Correct-by-Construction' Blockchain Consensus Protocol"
 transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research', 'ethereum']
