@@ -1,13 +1,12 @@
 ---
-title: Transaction Fee Estimation
+title: "How Wallets Can Handle Real Transaction Fees"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['wallet', 'fees']
+tags: ['fee-management']
 speakers: ['Bram Cohen']
+date: 2015-09-12
+media: https://www.youtube.com/watch?v=iKDC2DpzNbw&t=770s
 ---
-
-How wallets can handle real transaction fees
-
 You should have a market at this point, where some number of transactions never happen because they aren't willing to pay a fee. So you get some equilibrium of price going on. I proactively want to see this happen because we don't know what fees should be until we run the experiment and see what prices end up being. For this to happen, wallets have to do price setting in some way. For the most part they presently don't. I am going to talk about how they can be made to do that.
 
 First some groundrules, I am only talking about consumer wallets. There are other actors in the ecosystem that might want to handle fees in various ways. Also there's no microchannels, microchannels should be supported eventually but I'm dealing with the simpler case where a wallet is trying to make payments. Also I am assuming that replace-by-fee is in effect. This whole thing doesn't work without replace-by-fee. The way that you need to do payments is pretty broken unless you can replace-by-fee. You need aggressive replace-by-fee. Also you need an anti-dos mechanism, where you don't have an increase-by-epsilon every single time. They must increase it by a certain minimum amount to prevent denial-of-service on the whole network. The conclusion I come to here is that the replacement shouldn't be based on the amount that goes up, but rather that you have a policy that transactions can only be replaced once per block, it should only be after a transaction has been failed to go into a block that you should allow it to be replaced.

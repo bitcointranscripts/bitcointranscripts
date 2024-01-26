@@ -3,7 +3,7 @@ title: Arquitecturas de las wallets
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['wallet', 'bitcoin core']
+tags: ['wallet', 'bitcoin-core']
 speakers: ['Andrew Chow']
 date: 2019-06-05
 aliases: ['/bitcoin-core-dev-tech/2019-06-05-wallet-architecture.es/']
@@ -15,7 +15,7 @@ Arquitectura de la wallet de Bitcoin Core + descriptores
 
 writeup: <https://github.com/bitcoin/bitcoin/issues/16165>
 
-# Debate sobre la arquitectura de las wallets
+## Debate sobre la arquitectura de las wallets
 
 Aquí hay tres áreas principales. Una es IsMine: ¿cómo determino que una salida concreta está afectando a mi wallet? ¿Qué hay de pedir una nueva dirección, de dónde viene? Eso no es sólo obtener una nueva dirección, es obtener una dirección de cambio en bruto, es también el cambio que se crea en fundrawtransaction. El tercer problema es la firma de la cartera. El almacenamiento no es un punto de entrada, es sólo una forma de implementar estas cosas.
 
@@ -23,13 +23,13 @@ Ahora mismo IsMine es independiente de la cartera, por alguna razón. No es part
 
 ![wallet architecture](/bitcoin-core-dev-tech/2019-06/2019-06-05-wallet-architecture.jpg)
 
-# Arquitectura de wallets heredados en la actualidad
+## Arquitectura de wallets heredados en la actualidad
 
 El almacén de claves de la wallet contiene las claves privadas, scripts, cosas vigiladas. IsMine recibe consultas, y luego él mismo consulta el almacén de claves. Así es como funcionan las cosas ahora. Luego está el almacén de claves que tiene la información de la clave HD, y realmente esto es algo que se consulta de vez en cuando, se le pide que rellene el almacén de claves, y el almacén de claves pone las cosas en esa masa de datos. La única entrada de IsMine es scriptpubkey. Luego hay varias sobrecargas, una donde puedes darle un txout, entonces busca el txout y luego pasa el script a las comprobaciones de IsMine. El código de firma también llama al almacén de claves d la wallet. El código de firma utiliza un proveedor de firma, pero el proveedor de firma es implementado por el almacén de claves. Es esta cosa donde todo es volcado y consultado. Pero es de muy bajo nivel. No entiende lo que está pasando. Importas un script, importas algunas claves, y resulta que sabe que puede firmar por ello, así que vamos a llamarlo IsMine. No tiene ni idea de lo que las cosas están destinadas a ser ... también, el keypool tiene claves, pero no tiene direcciones, por lo que no puede razonar sobre qué tipo de dirección que le gustaría tener.
 
 Un caso de uso del que hemos hablado antes es que quieras obtener una dirección segwit, y no tenemos forma de importar una dirección bech32 sin importar también la correspondiente versión p2sh envuelta de la misma, y también el legado p2pkh, y p2pk que ni siquiera tiene una dirección. Así que introduce descriptores.
 
-# Registros de descriptores y gestores de scriptpubkey
+## Registros de descriptores y gestores de scriptpubkey
 
 Wallets descriptoras nativas <https://github.com/bitcoin/bitcoin/pull/15764>
 
@@ -56,11 +56,11 @@ La razón por la que el objeto CKeyStore fue creado hace mucho tiempo fue por un
 
 CWallet es su propia clase que no hereda nada. Podríamos tener un método como "firmar esta transacción", en lugar de exponer... No sé lo que es más fácil de hacer eso. Averiguar lo que los, límites de lo que esta caja debe implicar exactamente. Hay un montón de lógica para varios tipos de casos como cuando se obtiene una nueva clave pública para la que conocemos la clave privada, entonces añadimos el p2sh para el que conocemos el p2wpkh, y que también debería estar en la walle tbox para que no lo necesitemos en esta otra caja.
 
-# Serialización
+## Serialización
 
 Con respecto a la serialización... está estrechamente vinculada a CWallet y a la base de datos. Cuando cargas una wallet, empieza a instanciar objetos inmediatamente. La serialización sólo puede ser hecha por las partes de CWallet. Usted pasaría el objeto de base de datos. Hay un montón de nuevos objetos serializados que necesitan t ogo en estos, pero no todos estos. Estás leyendo objeto por objeto en la base de datos, y estás instnatiating nuevos objetos y tienen que ir en esta colección. La mayoría de estas cosas pertenecerán a una caja, por lo que diría, la bandera dice que esta es una cartera de legado, como deserializar, se ve una clave de semilla, lo pasa a la caja. Así como deserializar, se crea la caja y que acaba de empezar a tirar las cosas en ella, y si ves una cartera descriptor a continuación, empezar a tirar las cosas en esa caja. La caja descriptor es- son- tienen que ser un nuevo registro.
 
-# De vuelta a otras cosas de la wallet..
+## De vuelta a otras cosas de la wallet..
 
 Hay bastantes pruebas que dependen del tonto comportamiento "IsMine". Las pruebas funcionales. La totalidad de la cartera, básicamente. Hay un montón de cosas compartidas entre estos.
 

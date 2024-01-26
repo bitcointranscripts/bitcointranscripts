@@ -2,7 +2,7 @@
 title: Unlinkable Outsourced Channel Monitoring
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['lightning', 'scalability', 'wallet']
+tags: ['lightning', 'watchtowers']
 speakers: ['Tadge Dryja']
 ---
 

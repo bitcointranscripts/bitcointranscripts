@@ -1,32 +1,27 @@
 ---
-title: Hardware Wallets
+title: "Hardware Wallets in Bitcoin Core"
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['hardware wallet', 'PSBT', 'wallet']
+tags: ['hardware-wallet','PSBT', 'wallet','bip32','hwi']
 speakers: ['Andrew Chow']
 date: 2020-02-05
 media: https://www.youtube.com/watch?v=8mdfygEzQjE
 ---
-
-Hardware Wallets in Bitcoin Core
-
-London Bitcoin Devs
-
 Slides: https://www.dropbox.com/s/k02o32d0pagac4r/Andrew%20Chow%20slides.pdf
 
 BIP174 (PSBT): https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki
 
 PSBT Howto for Bitcoin Core: https://github.com/bitcoin/bitcoin/blob/master/doc/psbt.md
 
-# Introduction
+## Introduction
 
 Hey everyone. As you may have guessed I’m Andrew Chow. I’m Engineer at Blockstream and I also work on Bitcoin Core a lot, mostly in the wallet. I am going to be talking about hardware wallets and a bit history with them in Core and also how to integrate them in Core and how we are integrating them into Core.
 
-# What is needed for hardware wallets
+## What is needed for hardware wallets
 
 So the first thing is what do we need in order to support hardware wallets in really any software? There’s the hardware wallet side, you need to be able to communicate with it, you have to have the USB stuff and then on top of the USB you have to have other application level messages. You have the USB layer, that’s the transport and then on top everyone has their own special stuff for sending data to the device. That’s just the hardware side, there’s also the software side. The wallet needs to be able to support a few things like BIP32 public derivation. The way the hardware wallets work now is you get an xpub from the device and then the software wallet will watch that xpub and get all the transactions and stuff. It also needs to know that there is a hardware wallet and it should talk to the hardware wallet. Everyone seems to forget that is a thing you have to do.
 
-# Wire Protocols
+## Wire Protocols
 
 Let’s start with the device side of things with wire protocols. As I mentioned everyone has the USB communication layer and the application layer on top of it. Everyone at some point used this thing called HID which is Human Interface Device except Trezor and Keepkey now use a thing called WebUSB. So some of their firmware uses HID but some use WebUSB. They are two completely different things. You have to remember to support both of them if you want to support new Trezors. The other thing is the application level, this is the messages we’re sending to the device. Trezor, Keepkey and all their clones use some protobuf thing that Trezor defined ages ago. Basically you take all the messages you want, you pack them into a specific protobuf format that they define and you send over to the device. If you wanted to support the Ledger, the Ledger does something completely different. They use something called Application Protocol Data Unit which is not very specific and is completely unhelpful to know that name. These APDUs are actually from Java smartcards if anyone is familiar with that. These are completely different from protobuf, they have their own special magic numbers, their own special magic serialization.
 
@@ -36,11 +31,11 @@ A - Yes. Protobuf is Google’s protocol buffers, you can go look that up.
 
 Ledger does something different. Then BitBox, they do something different. They actually just send JSON strings. You use ASCII to make a JSON string and you send it to the device. Except that is just the BitBox01. BitBox02, I don’t have the specification here and I’m not terribly familiar with it. The last time I looked they also use protobuf but it is a different protobuf from Trezor so you can’t even share code there. All you can share is that protobuf library. The last one I’m familiar with is the Coldcard. Coldcard has defined their own binary protocol that uses some mix of ASCII and sending binary data. They also use PSBT which is ok, that is great. But everything else is some weird self defined thing. At the end of the day this all means that when you are implementing hardware wallets with Core if you want to support every different wallet you have to have special code for every single wallet. Each wallet does the same thing but in a slightly different way and they are all incompatible with each other except Trezor ones.
 
-# Do we want vendor specific stuff in Bitcoin Core itself?
+## Do we want vendor specific stuff in Bitcoin Core itself?
 
 This brings up a question that we got in Bitcoin Core which was do we want to have this vendor specific stuff in Core? Do we want to have device specific in Core? The answer to that is no. We definitely do not. First of all who is going to maintain it, who is going to write it and who is going to review it? If I implemented it that would be me but what if I stopped contributing to Core? Who is going to maintain it then? Also who is going to review it? If I wrote the code I at least have to have maybe two or three other people to review it so they also need to understand everything which is unlikely to happen. Then for changes they also need to review it and it just a huge pain in the ass. It adds a lot of complexity. An obvious answer would be to use vendor provided libraries but there aren’t any in C++ so I guess that is out of the question now. At least in Core because Core is C++. There is lots of complexity with every individual device and also each one introduces more dependencies. Just having HID and WebUSB would mean having to have [libusb](https://github.com/libusb/libusb) which does the USB driver stuff that at least someone else did the low level thing. But libusb is itself fairly large and because this would be part of the default Core installation you would run into an issue where if libusb has a vulnerability that is exploitable then anyone who is using Core can be exploited even if they are not using a hardware wallet. The hardware wallet users is still not that large. It would be a lot of users that would be affected even if they were just running Core and using the Core wallet.
 
-# Solution
+## Solution
 
 So what is our solution to this? The solution is that first of all we need to define some way to send data to the device. Mostly transaction data because the transactions were the most annoying part, everyone had done something different for every transaction. We need some common transaction format that we can send each device. Then we need to have something external to Core that Core can talk to in order to send data to the device. This external thing would contain the libusb and all the device specific drivers and whatever. At least it can be a different language. We could use a language that vendors have provided their libraries for and also it would just be active only when Core needs to use a hardware wallet. It is not always running. The last thing is we need to make some common API so that Core can just do one thing and only know that one thing and not have to figure out everything for every device. Figuring out everything for every device can be a separate driver. If you are familiar with my work you probably see where this is going. The common transaction format is PSBT. PSBT was designed with hardware wallets in mind even though they don’t fit on hardware wallets in memory. That was not a design consideration. Everything that PSBT does was created with hardware wallets in mind. That separate driver is HWI, the hardware wallet interface. That does all the device specific things and does converting from the common API that it defines into the device specific drivers. If you are going to ask me who is going to maintain the device specific drivers and the HWI the answer is not me it is actually the vendors because I am using their libraries. HWI is written in Python and every vendor has provided a Python library. I would not have done that if I had to write it all myself.
 
@@ -56,15 +51,15 @@ Q - So is the expectation that future hardware wallets will just have more memor
 
 A - Yes. Future hardware wallets hopefully, not that PSBT is public and people know about it, people will consider that and include more memory. The Coldcard takes PSBTs directly. I guess part of their design process was that they knew about PSBT and figured out how much memory they would need in order to store a PSBT.
 
-# Bitcoin Core Wallet
+## Bitcoin Core Wallet
 
 Let’s talk about the software in the Bitcoin Core wallet itself. It is actually not well suited to hardware wallets. First let’s talk about how the wallet itself is structured. A wallet has a few major components. We have key management and Bitcoin Core does this as a bag of keys. It just has a bunch of keys and everything is based on those keys. We take a key, turn it into an address, turn it into a scriptPubKey, sign things with it. Everything is based on keys. The Bitcoin Core wallet also has signing. It is actually related to key management and maybe should have been one bullet point. The wallet also does transaction tracking. It looks for the scriptPubKeys from the keys that it has and tries to see if any transactions are related to those scriptPubKeys. It also has a bunch of metadata like address labels. The part we are concerned about is key management and signing.
 
-# Timeline for BIP 32 in Core
+## Timeline for BIP 32 in Core
 
 For a bit of history, we needed to get BIP 32 into Core before we could start doing hardware wallets. Do you know how long it took BIP 32 to get into Core? Forever. BIP 32 was published in 2012. The reference implementation which was just key derivation was actually merged into Bitcoin Core but it wasn’t used anywhere, not in the wallet not in the node. It was literally just part of the test binary and a reference for people to look at. In 2015 which is three years after BIP 32 and a tonne of wallets had already done BIP 32 by this point, we got our first attempt for BIP 32 into Core. This first attempt was actually pretty big. It did things like user defined derivation paths. You could rotate out the HD seed so you could do key rotation. It also did key derivation on the fly so it wasn’t storing any private keys, it would derive them as needed. It would just store public keys. But also it only did private key derivation. This still wouldn’t have been enough for hardware wallets. Unfortunately reviewers didn’t like it and six months later we got the second attempt. This dropped a few things from the first one. It didn’t do on the fly derivation, it was still using the key pool, derive a key and drop it in the key pool. I don’t think that one did user defined derivation paths either. It wouldn’t derive on the fly and you could not change the derivation path. It still did the key rotation stuff but this one also didn’t make it. The third attempt was in May 2016, six months later. This was the absolute bare minimum for BIP 32 which means it is also enormously unuseful for hardware wallets and enormously unuseful for literally anything else but getting a backup. All it did was replace the GenerateNewKey function from generating a key randomly to derive it from this HD seed. That’s all I did, absolute minimum, nothing else was changed in the wallet. That was finally got merged and that is what we still use today. There have been a few changes since then. We can now do key rotation. That was merged I think a year ago or something. You can change the HD seed. You still can’t change the keypaths and you can’t do public derivation. There was an attempt to get that public derivation which was in 2017 and actually based on this public derivation PR someone did a full Trezor implementation and someone else did a full Ledger implementation using the whole drop vendor specific code into Core. Those were never PR’ed because I think they knew it would get nowhere. They existed and people did use them or at least the author did. That watching external xpubs thing got killed after a year unfortunately. So what we are left with is a Core wallet that still has that bare minimum BIP 32 derivation, still can’t do a public derivation and still can’t let you use your own derivation paths which kind of sucks if you want to do hardware wallets. We need those features in order to have hardware wallets. Also the hardware wallet project kind of started in 2018, at least that is when everyone else jumped onboard. I have been working on this since 2017 but that was mostly just PSBT. In order to make hardware wallets work we have finally decided that instead of jamming it into the Core wallet and trying to hack things together we are just going to fix the wallet and make it possible for us to do new things in the future. This is huge refactor of the wallet basically and it has taken the better part of a year to finally get merged. It is at least a step closer to hardware wallets.
 
-# CWallet <-> ScriptPubKeyManager
+## CWallet <-> ScriptPubKeyManager
 
 So the particular thing that we did was make this thing part of ScriptPubKeyManager. Basically what we did was take all the key management stuff, like the bag of keys thing, and really the key to ScriptPubKey part and shove it in its own box so it can be in a separate place from the wallet. It is just a layer of encapsulation and abstraction. Basically the wallet will ask the ScriptPubKeyManager for scriptPubKeys which means addresses in this case and use those scriptPubKeys to give to the user or watch for transactions. But how those scriptPubKeys came to be, how they were generated, that is all abstracted away into the ScriptPubKeyManager. The wallet doesn’t care about it. When the wallet needs to sign something, sign a transaction, it passes the transaction to the ScriptPubKeyManager and it does whatever special magic it needs to sign it. Or at least it should but I didn’t implement that way. I will probably fix that. I realized a couple of days ago that I had not done that so I need to fix it. The thing about this model is that we can make different ScriptPubKeyManagers that do different things internally. Obviously we have the thing that we do now, the bag of keys, which we throw into a thing that we call the Legacy ScriptPubKeyManager because it is legacy code and it is a legacy that we don’t want to have anymore.
 
@@ -118,11 +113,11 @@ Q - Someone needs merge rights to do that?
 
 A - Not on wikis. At least not the way that GitHub has done this wiki for some reason. It would be nice if they limited it to just organization members.
 
-# HardwareScriptPubKeyManager
+## HardwareScriptPubKeyManager
 
 This ScriptPubKeyManager thing is how we are doing hardware wallets because we are just going to make a HardwareScriptPubKeyManager. We’ve taken all the key management stuff like signing and abstracted it away so the HardwareScriptPubKeyManager can ask via HWI a hardware wallet for pubkeys, or in this case it will actually be descriptors. HWI will take the pubkeys and produce the descriptor for Core. The descriptor is what we are using to generate our scriptPubKeys. Then when we sign, the transaction goes to the HardwareScriptPubKeyManager which hands it off to HWI for signing. This is actually how we are going to do hardware wallets in Core. It is so much easier than hacking it into whatever exists right now.
 
-# Current Status
+## Current Status
 
 For the current status of all this stuff we’ve got an [issue \#14145](https://github.com/bitcoin/bitcoin/issues/14145) that tracks everything or should track everything. I don’t know if it has been updated recently. It has a bit of the motivation and some other relevant details that people might care about for hardware wallet support. This refactor ([PR \#17261](https://github.com/bitcoin/bitcoin/pull/17261)) was merged finally last week after I had written the slides. We actually do now have this ScriptPubKeyManager model and so we are finally moving forward with descriptor wallets. Our descriptor wallet is in the works. There is a [PR \#16528](https://github.com/bitcoin/bitcoin/pull/16528) for it. It is experimental, you can try it out. You might lose your money, not my fault. But descriptor wallets is a step towards our hardware wallet stuff because we use the descriptors for scriptPubKey production. We are just going to subclass the descriptor ScriptPubKeyManager and then replace the signing part with HWI basically. There is actually a [PR \#16546](https://github.com/bitcoin/bitcoin/pull/16546) that lets you use hardware wallets in Core. Sjors (Provoost) has written one. I actually don’t know how he’s implemented it but I think the design will probably change just because his thing was screwing around mostly. That implements everything if you want to try it. As for HWI itself, HWI is feature complete and completely usable. It can talk to the five devices I mentioned, Trezor, Keepkey, Ledger Nano S and X, Coldcard and BitBox 01. You can use HWI as a standalone thing and actually Wasabi and BTCPay Server are both using HWI which is kind of crazy but they found many bugs which is also kind of crazy. Thanks to them for testing my software. Hardware wallets, you can use them with HWI and Core manually. There is a command line thing. If you are not scared of the Terminal you can do it but it is also very scary for everyone else. This is what I’m going to be demoing, there have been a lot of changes to Core and to HWI recently for upcoming changes to HWI that will let you do everything from the GUI. For all the new users and the more advanced users who don’t like the Terminal there will be a GUI that you can use for everything.
 
@@ -130,13 +125,13 @@ Q - How does it work the integration between HWI and Wasabi?
 
 A - They told me that they are using it.
 
-Q - It is based on NBitcoin, the C\# library?
+Q - It is based on NBitcoin, the C\## library?
 
 A - I think so.
 
-Q - C\# talks to the Python stuff?
+Q - C\## talks to the Python stuff?
 
-A - HWI is Python but is a command line tool. In every programming language I know you can execute an external program and get its stdout results and same thing over stdin. The way that HWI is used in those software and will be used in Core is that we execute it as an external command, pass in whatever arguments and when it completes its thing it returns a result in JSON. That is how we get our stuff. That’s how they integrate it just using whatever C\# things that they need to do.
+A - HWI is Python but is a command line tool. In every programming language I know you can execute an external program and get its stdout results and same thing over stdin. The way that HWI is used in those software and will be used in Core is that we execute it as an external command, pass in whatever arguments and when it completes its thing it returns a result in JSON. That is how we get our stuff. That’s how they integrate it just using whatever C\## things that they need to do.
 
 Q - Do they use console out?
 
@@ -170,7 +165,7 @@ Q - The BitBox01 doesn’t have a screen.
 
 A - Yeah BitBox01 doesn’t have a screen and we haven’t figured out… Someone mentioned something about a mobile app that they could do something but we have not done anything with this. Also BitBox01 is officially not supported by Shift Crypto anymore which means that at some point it will officially be not supported by HWI once I decide to get rid of it like with Trezor One.
 
-# Demo
+## Demo
 
 Let me start testnet first.
 
@@ -238,7 +233,7 @@ Q - What is that step going to look like when you do it properly? You create the
 
 A - I’m not sure what it is going to be. Glen has done it but I have not reviewed and I may not get round to it. I think that will have the finalize thing and the sending part too so it will actually be entirely in the GUI. For the importing stuff, there is a plan to do it in both HWI and in Core. Greg Sanders wants the HWI GUI to call the Core RPCs and do the create wallet and do the import for you which may be useful, maybe not. I don’t know. I am also planning on adding the import dialog to Core itself. So then it will actually all be in the GUI. That’s it. Any questions?
 
-# Q&A
+## Q&A
 
 Q - The import address is actually quite practical. You said you would deprecate importing read only addresses. I find it practical.
 

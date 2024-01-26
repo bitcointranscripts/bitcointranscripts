@@ -2,12 +2,11 @@
 title: Exchange Security
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'wallet']
+tags: ['security-problems']
 speakers: ['Mitchell Dong']
 date: 2017-03-04
 media: https://www.youtube.com/watch?v=0mVOq1jaR1U&t=3h15m
 ---
-
 <https://twitter.com/kanzure/status/838517545783148545>
 
 How often do you check your wallets? Have you ever looked in your wallet and found all your bitcoin gone or missing? Last summer, somebody, a friend of mine checked his wallet and found that 100,000 bitcoin was gone. What the hell, right? But that's what happened at Bitfinex last summer. Some hacker got into their hot wallet and stole 100,000 bitcoin. This was $70 million bucks. Of which 1.5 million was mine.

@@ -3,7 +3,7 @@ title: Miniscript
 transcript_by: Michael Folkson
 translation_by: Ajian
 categories: ['conference']
-tags: ['miniscript', 'wallet']
+tags: ['miniscript']
 speakers: ['Andrew Poelstra']
 date: 2021-11-06
 media: https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s

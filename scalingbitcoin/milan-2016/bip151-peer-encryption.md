@@ -1,14 +1,11 @@
 ---
-title: BIP151 Peer Encryption
+title: "BIP151: Peer-to-Peer Encryption and Authentication from the Perspective of End-User"
 speakers: ['Jonas Schnelli']
 date: 2016-10-09
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['P2P', 'wallet']
+tags: ['v2-p2p-transport']
 ---
-
-BIP151: Peer-to-peer encryption and authentication from the perspective of end-users
-
 <https://twitter.com/kanzure/status/785046960705339392>
 
 Good morning. Thanks for having me here. I would like to talk about the end-user perspective of p2p authentication. I would like to start with a little example of how difficult it is to be aware of end-user issues that they are facing at the front. Who is using a thin client? An "SPV" wallet on your smartphone? Yeah. Who of you are on iOS? Yeah iOS has a pretty large market share, maybe not in this room. But in general, yes. And who of you are self-compiled and self-installed on iOS? Oh, two guys. Alright. Well, you can self-compile on iOS but you can't self-install unless you're participating in the expensive developer program. There is no proof that you are installing iOS app that reflects a certain git state. There is no link between the binary you download and the source code on github, unless you jailbreak your phone to hash your binaries. You can't hash an iOS application. Private key storage with iphone apps has a questionable trust and security model.

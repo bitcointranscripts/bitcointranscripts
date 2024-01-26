@@ -3,11 +3,9 @@ title: "Why is seed splitting a bad idea?"
 speakers: ['Andreas Antonopoulos']
 date: 2020-04-08
 transcript_by: Michael Folkson
-tags: ['wallet', 'security']
+tags: ['bip32', 'security-problems']
 media: https://www.youtube.com/watch?v=p5nSibpfHYE
 ---
-## Why is seed splitting a bad idea?
-
 This is something that is being discussed all the time especially on newbie forums. It really needs to be careful very carefully. A friend had the idea to achieve 2 out of 3 protection from my wallet seed by storing the seed in the following way:
 
 Location 1: seed words 1-8 and 9-16

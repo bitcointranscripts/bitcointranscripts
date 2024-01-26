@@ -4,7 +4,7 @@ speakers: ['Stepan Snigirev']
 date: 2019-06-29
 transcript_by: Bryan Bishop
 categories: ['meetup']
-tags: ['hardware wallet', 'wallet']
+tags: ['hardware-wallet', 'security-problems']
 media: https://www.youtube.com/watch?v=rK0jUeHeDf0
 ---
 
@@ -16,43 +16,43 @@ see also:
 * [The future of hardware wallets](https://btctranscripts.com/breaking-bitcoin/2019/future-of-hardware-wallets/)
 * [coredev.tech 2019 hardware wallets discussion](https://btctranscripts.com/bitcoin-core-dev-tech/2019-06-07-hardware-wallets//)
 
-# Background
+## Background
 
 A bit more than a year ago, I went through Jimmy Song's Programming Blockchain class. That's where I met M where he was the teaching assistant. Basically, you write a python bitcoin library from scratch. The API for this library and the classes and fnuctions that Jimmy uses is very easy to read and understand. I was happy with that API, and what I did afterwards was that I wanted to move out of quantum physics to working on bitcoin. I started writing a library that had a similar API- took an arduino board and wrote a similar library that had the same features, and extra things like HD keys and a few other things. I wanted to make a hardware wallet that is easy to program, inspired by Jimmy's class. That's about when I met and started CryptoAdvance. Then I made a refactored version that doesn't require arduino dependencies, so now it works with arduino, Mbed, bare metal C, with a real-time operating system, etc. I also plan to make a micropython binding and embedded rust binding.
 
-# Introduction
+## Introduction
 
 I am only considering three hardware wallets today- Trezor, Ledger and ColdCard. Basically all others have similar architectures to one of these. You might know that Trezor uses a general purpose microcontroller, like those used in microwaves or in our cars. These are more or less in every device out there. They made the choice to only use this without a secure element for a few reasons- they wanted to make the hardware wallet completely open-source and say for sure what is running on the hardware wallet. I do not think they do not have any secure element in the hardware wallet unless we develop an open-source secure element. I think our community could make that happen. Maybe we could cooperate with Trezor and Ledger and at some point develop a secure element based on the [RISC-V](https://riscv.org/) architecture.
 
-# Secure elements
+## Secure elements
 
 I think we need several types of secure elements for different security models. You want to diversify the risk. You want to use multisig with Schnorr signatures. You want different devices with different security models, and ideally each key should be stored with different hardware, and different security models in each one as well. How will the vulnerabilities appear? It could be a poorly designed protocol, hopefully you won't have a bug in that but sometimes hardware wallets fail. It could be a software vulnerability where the people who wrote the software made a mistake, like overflows or implementation bugs or some not-very-secure cryptographic primitives like leaking information through a [sidechannel](https://en.wikipedia.org/wiki/Side-channel_attack). The actual hardware can be vulnerable to hardware attacks, like glitching. There's ways to make microcontrollers not behave according to their specification. There can also be hardware bugs as well, which happen from time to time, and just because the manufacturer of the chip can also make mistakes- most of the chips are still designed not automatically but by humans. When humans put transistors and optimize this by hand, they can also make mistakes. There's also the possibility of government backdoors, which is why we want an open-source secure element.
 
-# Backdoors...
+## Backdoors...
 
 There was a talk sometime ago about instructions in x86 processors where basically, they have specific set of instructions that is not documented and not--- they call it Appendix H. They share this appendix only with trusted parties ((laughter)). Yeah. These instructions can do weird things, we don't know exactly what, but some guy was able to find all of the instructions. He was even able to get privileges from the user level, not just to the root level but to the ring-2 level, complete control that even the operating system doesn't have access to. Even if you run tails, it doesn't mean that the computer is stateless. There is still a bunch of crap running under the OS that your OS doesn't know about. You should be careful with that one. On librem computers, they have not only PureOS but also Qubes that you can run and also they use the -- which is also open-- basically you can have ... check that it is booting the real tails. The librem tool is called heads not tails. You should look at that if you are particularly paranoid.
 
 Librem computers have several options. You can eiher rune PureOS or you can run Qubes or tails if you want. The librem key checks the bootloader.
 
-# Decapping
+## Decapping
 
 Ledger hardware wallets use a secure element. They have a microcontroller also. There are two different architectures to talk about. Trezor just uses a general-purpose MCU. Then we have ColdCard which is using a general-purpose MCU plus it adds on top of that a secure-- I wouldn't call it a secure element, but it is secure key storage. The thing that is available on the market, ColdCard guys were able to convince the manufacturer to open-source this secure key storage device. So we hope we know what is running on the microcontrollers, but we can't verify that. If we give you the chip, we can't verify it. We could in theory do some decapping. With decapping, imagine a chip and you have some epoxy over the semiconductor and the rest of the space is just wires that go into the device. If you want to study what is inside the microcontroller, what you do is you put it into the laser cutter and you first make a hole on the device and then you can put here the nitric acid that you heat up to 100 degrees and it will dissolve all the plastic around it. Then you have a hole to the microcontroller, then you can put this into an optical microscope or electron microscope or whatever you have and actually study the whole surface there. There was an ATmega that someone decapped and it was still able to run. There was a talk at defcon where the guys showed how to make DIY decappers. You could take a trezor or other hardware wallet and you put it on a mount, and then you just put the stream of nitric acid to the microcontroller and it dissolves the plastic but the device itself can still operate. So while you're doing some cryptography there, you can get to the semiconductor level and put it under the microscope and observe how exactly it operates. Then when the microcontroller operates, you can see how the plastic-- not only with the microscope but even also with--- like when a transistor flips between 0 and 1, it has a small chance of emitting a photon. So you can watch for emitted photons and there's probably some information about the keys given by that. Eventually you would be able to extract the keys.  You cut the majority of the plastic then you put in the nitric acid to get to the semiconductor level. In this example, the guy was looking at the input and output buffer on the microcontroller. You can also look at the individual registers. It's slightly different for secure elements or secure key storage, though. They put engineering effort into the hardware side to make sure that it is not easy to do any decapping. When the cryptography is happening on the secure element, they do have certain regions that are dummy parts of the microcontroller. So they are operating and doing something, but they are trying to fool you about where the keys are. They have a bunch of other interesting things there. If you are working with security-focused chips, then it's much harder to determine what's going on there. The other thing though is that in the ColdCard the key storage device is pretty old so that is why the manufacturer was more willing to open-source it. If we are able to see what is running there, that means the attacker will also be able to extract our keys from there. So being able to verify the chips, also shows that it is not secure to users. So being able to verify with decapping might not be a good thing. So it's tricky.
 
-# Secure key storage element (not a secure element)
+## Secure key storage element (not a secure element)
 
 Normally the microcontroller asks the secure storage to give the key to move it to the main microcontroller, then the cryptographic operations occur, and then it is wiped from the memory of the microcontroller. How can you get this key from the secure key storage? Obviously you need to authenticate yourself. In ColdCard, you do this with a PIN code. How would you expect the wallet to behave when you enter the wrong PIN code? In Trezor, you increase a counter and increase the delay between PIN entries, or like in Ledger where you have a limited number of entry attempts before your secrets get wiped. ColdCard is using the increased delay mechanism. The problem is that this delay time delay is enforced not by the secure element but by the general-purpose microcontroller. To guess the correct PIN code, if you are able to somehow stop the microcontroller from increasing the time, then you would be able to bruteforce the PIN code.  To communicate with the key storage, the microcontroller has a secret stored here, and hwenever it uses the secret to communicate with the key storage, then the key storage will respond. If the attacker can get this secret, then he can throw away the microcontroller and use his own equipment with that secret and try all the PIN combinations until he finds the right one. This is because of the choice they did where basically you can have any amount of tries for the PIN code for the secure element. This particular secure key storage has the option to limit the number of PIN entry attempts. But the problem is that it is not resettable. This means that for the whole lifetime of the device, you can have a particular number of wrong PIN entries and then you can just as you reach this level you throw away the device. This is a security tradeoff that they did. I would prefer actually to set this limit to say 1000 PIN codes, or 1000 tries, and I doubt that I would fail to enter the PIN code 1000 times. For the ColdCard, they use a nice approach for PIN codes where you have it split into two parts. You can use arbitrary length, but they recommend something like 10 digits. They show some verification words, which helps you verify that the secure element is still the right one. So if someone flips your device for another one, in an evil maid attack, then you would see that there are different words and you can stop entering the PIN. There was actually an attack on the cold card to bruteforce it. The words are deterministic from the first part of your PIN code. Maybe you try multiple digits, and then you write down the words, and you make a table of this, and then when you do the evil maid attack, then you put in that table so that it shows the information to the user. You need to bruteforce the first few PIN numbers and get those words, but the later words are hard to figure out without knowing the PIN code.
 
-# Evil maid attacks
+## Evil maid attacks
 
 No matter what hardware wallet you have, even a Ledger with the nicest hardware-- say I take it and put it in my room and put a similar device there that has a wireless connectivity to an attacker's computer, then it's a bridged to the real Ledger, and I can have this bidirectional communication and do a man-in-the-middle attack. Whatever the real Ledger shows, I can display on this device and fool the user. I can become an ultimate man-in-the-middle here. Whatever the user enters, I can see what he enters and I know the PIN code and then I can do everything. There are two ways to mitigate this attack--- you can use a Faraday cage every time you're using the hardware wallet, and the second way is to enforce it on the hardware and I think the Blockstream guys suggested this-- you have a certain limit on the speed of light, so you can't communicate faster than the speed of right? Your device is here. If you are communicating with this device here, then you can enforce that the reply should come within a few nanoseconds. Then it is very unlikely that-- it is not possible by the laws of physics to get the signal to your real device and then get back.
 
 What about using an encrypted communication channel with the hardware wallet? The attacker is trying to get the PIN code. It's still vulnerable. Instead of entering the PIN code, you instead use a computer--- then you have your hardware wallet connected to it, and then in the potentially comrpomised situation we have this malicious attacker that has wireless connectivity to the real hardware wallet. Say our computer is not compromised. Over this encrypted channel, you can get the mask for your PIN code-- like some random numbers that you need to add to your PIN code in order to enter it on the device. Your MITM doesn't know about this unless he compromises your computer as well. Or a one-time pad situation. Every time you enter the PIN code, you enter the PIN code plus this number. Could work with a one-time pad. When you are operating with your hardware wallet, you probably want to sign a particular transaction. If the attacker is able to replace this transaction with his own, and display to you your own transaction then you are screwed. But if the transaction is passed encrypted to the real hardware wallet, then he can't replace it because yeah it would be unauthenticated.
 
-# Ephemeral disposable hardware wallets
+## Ephemeral disposable hardware wallets
 
 Another way to get rid of the secure key storage is to make the whole hardware wallet ephemeral, so you focus on guarding the seed and the passphrase and enter it each time. The hardware wallet is disposable then. You might never return to use that hardware wallet again. I was thinking about this regarding secure generation of mnemonics on a consumer device. If you have a disposable microcontroller but everything else we're sure doesn't have any digital components or memory, then each time we could replace the microcontroller with a new one and the old one we just crush with a hammer. If you already remember the mnemonic, well the PIN discourages you from remembering it. If you use disposable hardware, and it's not stored in the vault then when someone accesses the vault then they don't see anything and don't know what your setup really is.
 
-# Offline mnemonic generation and Shamir secret sharing
+## Offline mnemonic generation and Shamir secret sharing
 
 I prefer 12 word mnemonics because they are easier to remember and they still have good entropy, like 128-bit entropy. I can still remember the 12 words. I would back it up with a Shamir secret sharing scheme. We take our mnemonic and split it into pieces. If you remember the mnemonic, then you don't need to go recover your shares. Not all shares are required to recover the secret, but you can configure how many shares are required.
 
@@ -60,11 +60,11 @@ If you are worried about your random number generator, then you should be adding
 
 Regarding offline mnemonic generation or secure mnemonic generation... use a dart board, use dices, do you trust yourself to generate your entropy? I am thinking about something like that-- we have true random number generators in the chips; we can ask the chips for the random numbers, then use those numbers, and then display them to the user. The word and the corresponding index. We also know that circuits degrade over time, so random number generators could be compromised in a predictable way based on hardware failure statistics.
 
-# Entropy verification
+## Entropy verification
 
 You can roll some dice, then take a photo of it. If I'm building a malicious hardware wallet and I want to steal your bitcoin, this is by far the most easy way. Maybe the hardware is great, but the software I'm running isn't using that hardware random number generator. Or maybe there's a secret known to the attacker. You wait a few years, and then you have a great retirement account. You could also enforce a secure protocol that allows you to use a hardware wallet even if you don't trust it. You can generate a mnemonic with user entropy and verify that entropy was in fact used.
 
-# Signatures leaking private keys due to non-random nonces chosen by the hardware wallet
+## Signatures leaking private keys due to non-random nonces chosen by the hardware wallet
 
 If I am still an evil manufacturer of the hardware wallet, and I was forced by the community to include this entropy verification mechanism, and I also want the community to like me, so we say we have a completely airgapped solution with QR codes and cameras... and say you can use any software wallet you want because it works with everything. Now you have a setup like this; say you have an uncompromised computer, only a compromised hardware wallet which was manufactured by evil means. You are preparing the unsigned transaction here, you pass it to the hardware wallet using the QR codes. The hardware wallet then displays you the information and you verify everything is correct, and you verify on the computer as well. Then you sign it, and get back the signed transaction. Then you get a perfectly valid bitcoin transaction that you verify is correct and you broadcast it to the network. It's the nonce attack. Yes, exactly. The problem is that the signature in bitcoin has two numbers, one is a random nonce. Our hardware wallet can choose a deterministically-derived nonce or random nonce to blind the private key. If this nonce is chosen insecurely, either because you're using a bad random number generator that isn't producing uniformly random values, or because you're evil, then just by looking at signatures I will be able to get information about your private key. Something like this happened with yubikey recently. There was FIPS-certified yubikeys and they were leaking your private keys within 3 signatures. The stupid thing is that they introduced the vulnerability by mistake when they were preparing their device for the certification process, which asks you to use random numbers but actually you don't want to use random numbers-- you want to use deterministic derivation of nonces because you don't trust your random numbers. You can still use the random numbers, but you should use it together with deterministic nonce derivation. Say you have your private key that nobody knows, and you want to sign a certain message.... ideally it should be HMAC something.... This is the nice way, but you can't verify your hardware wallet is actually doing this. You would have to know your private key to verify this, and you don't want to put your private key in some other device. Also, you don't want your device to be able to switch to malicious nonce generation. You want to make sure your hardware wallet cannot choose arbitrary random nonces. You can force the hardware wallet to use not just the numbers it likes, but also the numbers that you like.
 
@@ -78,11 +78,11 @@ Another solution was that you can use verifiable generation of these random nonc
 
 There is also an idea about using [sign-to-contract as an anti-nonce-sidechannel measure](http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2019-02-04-threshold-signatures-and-accountability/).
 
-# Ledger and multisig
+## Ledger and multisig
 
 If you have p2sh multisig and this wallet was only one of the signatures, then even if it was malicious then it doesn't control all the keys-- and ideally you're using different hardware for the other keys. The problem with multisignature is that... well, Trezor supports it nicely. I am very happy with Trezor and multisig. ColdCard released firmware that supports multisig about a day ago. Ledger has terrible implementation of multisignature. What I was expecting from the wallet to show when you're using multisignature, you want to see your bitcoin address, and you want to see what is the amount that you are actually sending or signing? What is the change output? What are the amounts? With Ledger multisig, you always see two outputs and you don't know which one you are spending and which one is change address if any. With two Ledgers in a multisig setup, you are less secure than using a single Ledger. If anyone wants to make a pull request to the bitcoin app of Ledger, please do so. It's there, people are complaining about this issue for more than a year I think. Ledger is not very good at multisignature.
 
-# Practicality
+## Practicality
 
 I know about a few supply chain attacks, but those relied on users doing stupid things. I'm not aware of any targeted hardware attacks. Right now the easiest way to attack someone's hardware wallet is to convince them to do something stupid. I think at the moment there's just not enough hackers looking into this field. But the value is going to increase. There have definitely been software wallet attacks.
 
@@ -92,7 +92,7 @@ You should be wary of closed-source third-party hardware devices without a brand
 
 Right now it might be easier to get cryptocurrency by launching malware or starting a new altcoin or something or a hard-fork of another altcoin. Those are the easiest ways. Right now it's easy to target lightning nodes and take money there; you know their public addresses and how much money they have, so you know that if you can get to the server then you can recover your cost of attack. So those targets are much more obvious and easier to attack at this point. There are easier remote attacks at this point, than attacking hardware wallets.
 
-# Downsides of microcontrollers
+## Downsides of microcontrollers
 
 <http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/extracting-seeds-from-hardware-wallets/>
 
@@ -110,13 +110,13 @@ The mnemonic phrase on the hardware wallet was stored plaintext and the PIN veri
 
 On the hardware side, there's race conditions, sidechannel attacks, operating environment manipulation, and debug interfaces for microcontrollers. You could also decap it and shoot it with lasers or something, and make it behave in a weird way. So this can be exploited by an attacker.
 
-# Secure elements again
+## Secure elements again
 
 On the other hand, what does a secure element do? They are similar to microcontrollers, but they don't have debug interfaces. They don't have the read-write flags. They also have a bunch of different countermeasures against these attacks, for example hardware measures. There is a watchdog that monitors the voltage on the power supply PIN and as soon as it sees it goes below some value, it triggers the alarm and you can erase the keys as soon as you see this occur. Or you just stop operating. If you see the voltage supply is varying, you just stop operation. If you see the temperature is changing too much, you can also stop operation. You could either stop, or erase your secrets. There's also this mechanism that allows the microcontroller to detect if you are trying to decap, like with a simple light sensor. If you decap the chip, you have access to the semiconductor and you can see a lot of light coming out and then you stop operations. Here you definitely want to wipe your secrets clean and delete all of those. They also use a bunch of interesting techniques against sidechannel attacks. For example, they don't do just constant power consumption and constant timing, but then on top of that they introduce additional random delays and random noise on the power lines making it more and more difficult for the attacker to get any data from there. They also normally have a very limited capacity on bits. You have power supply pin, ground, maybe a few more to drive something simple like an LED on the ColdCard or on the modern Ledger Model X they are actually able to talk to the display driver to control the display which is a nice improvement on the hardware. In principle, it is not very capable. You can't expect the secure element to drive a large display or to react to user input. Button is probably fine, but definitely not the best thing.
 
 The reason why the Ledger has a tiny screen with low resolution is because they are trying to drive everything from the secure element, at least on Ledger Model X. Previously this was not the case, where they had a normal microcontroller talking to the secure element where you unlock it and then it signs whatever you want. And then this microcontroller controls the display. This was actually a big point that was pointed out by --- ... this architecture is not perfect because you have this man-in-the-middle that controls this display. You have to trust your hardware wallet has a trusted display, but with this architecture you can't because there's a man-in-the-middle. It's hard to mitigate this and figure out how to tradeoff between complete security versus user usability. I hope you get the idea of why secure elements are actually secure.
 
-# Problems with secure elements
+## Problems with secure elements
 
 There are in fact some problems with secure elements, though. They have all of these nice anti-tampering mechanisms but they also like to hide other stuff. The common practice in the security field is that when you close-source your security solution, you get some extra points on the security certification like ELF 5 and other standards. Just by closing sourcing what you wrote or what you did, you get extra points. Now what we have is the problem that we can't really find out what is running inside these devices. If you want to work with a secure element, you have to be big enough to talk to these companies and get the keys required to program it. And you also have to sign their non-disclosure agreement. And only at that point would they give you documentation; and then the problem is that you can't open-source what you wrote. Alternatively, you use a secure element that is running a [Java Card OS](https://en.wikipedia.org/wiki/Java_Card) in there so it's something like a subset of Java developed for the banking industry because bankers like Java for some reason. Basically they have this Java VM that can run your applet... so you have no idea how the thing is operating, you just trust them because it's certified and it has been there for 20-30 years already and we know all the security research institutes are trying very hard to even get a single .... and then you can completely open-source the Java Card applet that you upload to the secure element but you don't know what's running underneath it. Java Card is considered a secure element, yes.
 
@@ -124,7 +124,7 @@ By the way, the most secure Java Cards or secure elements were normally develope
 
 Also, let's talk about [the Sony Playstation 3 key compromise attack](https://en.wikipedia.org/wiki/PlayStation_3_homebrew#Private_key_compromised). They use ECDSA signing, and you're not supposed to get all the games for free right? The only way to get the game running, you need to have a proper signature on the game, so the signature from Sony. The problem was that they suppose didn't hire a cryptographer or anyone decent at cryptography... they implemented a digital signing algorithm in a way where they were reusing the same nonce over and over again. It's the same problem with the hardware wallets we described earlier today. If you are reusing the same nonce, then I can actually extract your private key just by having two signatures from you. I can then get your private key and then I can run whatever game I want because I have the Sony private key. This was for the Sony Playstation 2. I think it was the fastest hack of a gaming console ever.
 
-# QR code wallets
+## QR code wallets
 
 Constraining the unidirectionality of information. Bits can't flow backwards. The only place a decrypted key should be is in a running hardware wallet. There's a [slip39](https://github.com/satoshilabs/slips/blob/master/slip-0039.md) python implementation. Chris Howe contributed a slip39 C library.
 
@@ -136,7 +136,7 @@ Printed QR code... each packet can say it's 1-of-n, and as it reads it, it figur
 
 Signatures could be batched into a bigger output QR code on the device. So it's not a huge bottleneck yet. Packetized QR codes are an interesting area. When you parse the QR code from Christopher Allen's stuff, the QR code says what it is saying.
 
-# Recent attacks
+## Recent attacks
 
 There were some recent attacks that showed that even if you are using secure hardware, it doesn't mean you're secure. When you have an attacker that can get to your device, then you're in trouble and they can do nasty attacks against the microcontroller. Another idea is to wipe the device every time.  There are wallets that use secure elements, such as the Ledger hardware wallet.
 
@@ -154,7 +154,7 @@ TruCrypt had plausible deniability in the encryption because you could have mult
 
 Having secure hardware doesn't mean you're not vulnerable to attacks. I really think the best thing to do is to use multisignature.
 
-# Timelock
+## Timelock
 
 If you are willing to wait for a delay, you can use a timelock, or spend instantly with 2-of-2 multisig keys. You would enforce on the hardware wallet to only make these timelock transactions. The attacker provides the address. It doesn't what your wallet say; at best, your wallet has already locked it. You can't spend it in a way that locks it, because presumably the attacker wants to use their only address. You could pre-sign the transaction and delete your private key-- hope you got that fee right.
 
@@ -166,7 +166,7 @@ How could you combine a timelock with a third-party? Timelock with multisig is f
 
 We're planning to add support for miniscript, which could include timelocks. But no hardware wallet currently enforces timelocks, to my knowledge.
 
-## Miniscript
+### Miniscript
 
 [Miniscript](https://diyhpl.us/wiki/transcripts/stanford-blockchain-conference/2019/miniscript/) (or [here](http://diyhpl.us/wiki/transcripts/noded-podcast/2019-05-11-andrew-poelstra-miniscript/)) was introduced by Pieter Wuille. It's not one-to-one mapping to all possible bitcoin script, it's a subset of bitcoin script but it covers like 99.99% of all use cases observed on the network so far. The idea is you describe the logic of your script in a convenient form such that a wallet can parse this information and figure out what keys or information it needs to get in order to produce a key. This also works for many of the lightning scripts and also various multisig scripts. You can then compile this miniscript policy into bitcoin script. Then you can analyze and say this branch is the most probable that I will use most of the time, and then order the branches in the script to make it more efficiently executed on average in terms of sigops. It can optimize the script in such a way that actually your fees or your data that you have when you're signing this script will be minimal according to your priorities. So if you're mostly spending with this, then this will be superoptimal and this other branch might be a bit longer.
 
@@ -174,7 +174,7 @@ After implementing miniscript, it will be possible to use timelock. Until then, 
 
 Pieter has a proof-of-concept on his website where you can type out policies and get an actual bitcoin script. I don't think he has the demonstration of going the other way around; but it is described in many details how this all works. I think they are finishing their multiple implementations at the moment and I think it's almost ready to really get started. Some pull requests have been merged for output descriptors. In Bitcoin Core you can provide a script descriptor and feed this into the wallet, like whether it's segwit or legacy, nested segwit or native segwit etc. You can also use script descriptors for multisignature wallets, you can already use Bitcoin Core with existing hardware wallets... it's still a bit of a trouble because you need to run a command line interface and it's not super user friendly and not in the GUI yet, but if you're fine with command line interfaces and if you're willing to make a small script that will do it for you, then you're probably fine. I think integration with Bitcoin Core is very important and nice that we have this moving forward.
 
-# Advanced features for hardware wallets
+## Advanced features for hardware wallets
 
 <http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/future-of-hardware-wallets/>
 
@@ -184,7 +184,7 @@ It is pretty normal to have multiple signing of a coinjoin transaction in a shor
 
 Signing transactions with external inputs is tricky.
 
-## Hardware wallet proof of (non)-ownership
+### Hardware wallet proof of (non)-ownership
 
 Say we're a malicious wallet. I am not a coinjoin server, but a client application. I can put two identical user inputs, which is usually common in coinjoin, and you put them in the inputs and you put only one user output and then the others are other outputs. How can the hardware wallet decide if the input belongs to the user or not? Right now there's no way. So we trust the software to mark the input needed to sign. The attack is to mark only one of the user inputs as mine, and then the hardware wallet signs it and we get the signature for the first input. The software wallet then pretends the coinjoin transaction failed, and sends to the hardware transaction the same transaction but marking the second input as ours. So the hardware wallet doesn't have a way to determine which inputs were his. You could do SPV proofs to proof that an input is yours. We need a reliable way to determine if the input belongs to the hardware wallet or not. Trezor is working on this with achow101.
 
@@ -214,7 +214,7 @@ Q: How does Wasabi deal with privacy when fetching your UTXOs?
 
 A: I think they are using the [Neutrino protocol](http://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/neutrino/), they ask for the filters from the server and then they download blocks from random bitcoin nodes. You don't need to trust their central server at that point. I think it's already enabled to connect to your own node, awesome that's great. Cool. Then now you can actually get it from your Bitcoin Core node.
 
-# Lightning for hardware wallets
+## Lightning for hardware wallets
 
 Lightning is still in development, but it's already running live on mainnet. We know the software isn't super stable yet, but people were excited and they started to use it with real money. Not a lot of real money, it's like a few hundred bitcoin on the whole lightning network at this point.
 
@@ -224,7 +224,7 @@ You could partially use cold storage. You could at least make sure that when the
 
 But if he is able to get all the money through the lightning network to his node, then you're probably screwed. To store these private keys on the hardware wallet is challenging, but you could have a .... he can also do a signed channel update. If you provide enough information to the hardware wallet, that you are actually routing a transaction and that your balance is increasing, then the hot wallet hardware wallet could sign automatically. If the amount is decreasing then you definitely need to ask the user to confirm. So we're working on that.
 
-# Schnorr signatures for hardware wallets
+## Schnorr signatures for hardware wallets
 
 The advantage of Schnorr signatures for hardware wallets is key aggregation. Imagine you're using normal multisig transactions, like 3-of-5. This means that every time you're signing the transaction and putting it into the blockchain, you see there's 5 pubkeys and 3 signatures. It's a huge amount of data, and everyone in the world can see that you're using a 3-of-5 multisig setup. Terrible for privacy, and terrible in terms of fees.
 
@@ -238,7 +238,7 @@ All these watchdogs and anti-tamper mechanisms and preventions of [fault injecti
 
 There's also the IBM Power9's are also open-source at this point. Raptor Computing Systems is one of the few manufacturers that will actually sell you the device. It's a server, so not ideal, but it is actually open-source. It's a $2000 piece of equipment, it's a full computer. So it's not an ideal consumer device for hardware wallets. I believe the CPU and most of the device on the board are open-source including the core. It's an IBM architecture. Okay, I should probably look at that. Sounds interesting.
 
-# Best practices
+## Best practices
 
 I want to talk about best practices, and then talk about developing our own hardware wallet. But first about best practices.
 
@@ -262,13 +262,13 @@ There's a better way, where you don't just check the current, but you also check
 
 If you are going to wipe the keys, then you might as well pre-sign a transaction before you wipe the keys, to send the coins to backup cold storage or something.
 
-# Rolling your own hardware security
+## Rolling your own hardware security
 
 You should not expect that rolling your own hardware wallet is a good idea. Your device will probably not be as secure as Trezor or Ledger because they have large teams. But if there is a bug in the Trezor firmware, then attackers will probably try to exploit that across all Trezor users. But if you have a custom implementation that might not be super secure but it's custom, then what are the chances that the guy who comes to your place and finds a weird looking device and figures out it's a hardware wallet and then how does he figure out how to break it? Another thing you can do is hide your hardware wallet in a Trezor shell ((laughter)).
 
 Someone in a video suggested making a fake hardware wallet, and when it is powered on by someone, then it sends an alert message to a telegram group and says call 911 I'm being attacked. You could put this into the casing of Trezor. When the guy connects to it, it sends the message. Another thing you could do is install malware on the attacker's computer, and then track them and do various surveillance things. You could also claim yeah I need to use Windows XP with this setup or something equally insecure, which is plausible because maybe you set this system up 10 years ago.
 
-# Options for making a hardware wallet prototype
+## Options for making a hardware wallet prototype
 
 What can we use to make a hardware wallet? If you think making hardware is hard, it's not. You just write firmware and upload it. You can also use FPGAs which are fun to develop with. I like the boards that support micropython, which is a limited version of python. You can talk to peripherals, display QR codes and so on. Trezor and ColdCard are using micropython for their firmware. I think micropython has a long way to go though, because as soon as you move away from what has already been implemented then you end up having problems where you need to dive into the internals of micropython and you end up having to write new C code or something. But if you like everything already there, then it is extremely easy to work with.
 
@@ -292,7 +292,7 @@ No secure elements are available on the market at the moment that would allow yo
 
 To make a fully secure element that is completely open-source from the very bottom to the very top, will cost like $20 million. What we are releasing is what is accessible to us at the moment. So what we can do is we can get this secure element that has a proprietary Java Card OS on top of it, and then on top of this we can write a bitcoin-specific that can talk to the hardware and use all the elliptic curve accelerators and hardware features and can still be open-source because we don't have know how exactly this Java Card OS works so it's not fully open-source, we're just open-sourcing everything we can. In the ColdCard, they can't use the elliptic curve cryptography on the secure key storage element, but in other secure elements yes you can run ECDSA and other elliptic curve cryptography.
 
-# My design choices for my hardware wallet
+## My design choices for my hardware wallet
 
 I wanted to talk about how we designed our hardware wallet and get your feedback about whether this makes sense or not and how we can improve, especially Bryan and M. I also want to make sure that I don't build something very usable. After that, I think we can, if you guys have your laptops with you, then we can setup the development environment for tomorrow so that we can even give the boards to try out in the evening and take them home. If you just promise not to steal it, you can take some home if you want to, if you're actually going to try it. Note that I will be disturbing you all the time tomorrow, so tonight is your chance to look at this alone. Tomorrow then we can work on some crazy hardware wallets.
 
@@ -348,7 +348,7 @@ Q: If you are worried about an evil maid attack, then you could use a tamper-evi
 
 These fingerprint scanners on laptops are completely stupid. Besides, an easy place to find those fingerprints is on the keyboard itself ((laughter)). You should be encrypting your hard drive with a very long passphrase that you type in.
 
-# Statechains
+## Statechains
 
 <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-statechains/>
 
@@ -356,7 +356,7 @@ With statechains, you can transfer the private key to someone else, and then you
 
 How we can help with this is that, we can provide the functionality on the secure element that extracts the key and then-- such that you are sure that the private key is moved. You need to trust the manufacturer still, but you can diverisificate the trust of it, so that you don't have to fully trust this federation that is enforcing this policy.
 
-# Follow-up
+## Follow-up
 
 <https://bitcoin-hardware-wallet.github.io/>
 

@@ -2,7 +2,7 @@
 title: The Future Of Bitcoin Wallets
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['hardware wallet', 'wallet']
+tags: ['hardware-wallet']
 speakers: ['Pavol Rusnak', 'Lawrence Nahum', 'Giacomo Zucco']
 ---
 

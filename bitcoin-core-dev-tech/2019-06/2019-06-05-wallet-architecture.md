@@ -2,7 +2,7 @@
 title: Wallet Architecture
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['wallet', 'bitcoin core']
+tags: ['wallet', 'bitcoin-core']
 speakers: ['Andrew Chow']
 date: 2019-06-05
 aliases: ['/bitcoin-core-dev-tech/2019-06-05-wallet-architecture/']
@@ -14,7 +14,7 @@ Bitcoin Core wallet architecture + descriptors
 
 writeup: <https://github.com/bitcoin/bitcoin/issues/16165>
 
-# Wallet architecture discussion
+## Wallet architecture discussion
 
 There are three main areas here. One is IsMine: how do I determine a particular output is affecting my wallet? What about asking for a new address, where is it coming from? That's not just get new address, it's get raw change address, it's also change being created in fundrawtransaction. The third issue is wallet signing. Storage is not an entrypoint, it's just a way of implementing these things.
 
@@ -22,13 +22,13 @@ Right now IsMine is independent of the wallet, for some reason. It's not part of
 
 ![wallet architecture](/bitcoin-core-dev-tech/2019-06/2019-06-05-wallet-architecture.jpg)
 
-# Legacy wallet architecture today
+## Legacy wallet architecture today
 
 The wallet key store contains the private keys, scripts, watched things. IsMine gets queries, and then it itself queries the key store. That's how things work now. Then there's the keypool which has the HD key information, and really this is something that gets queried from time to time, asked to refill the key pool, and the key pool puts things into that blob of data. IsMine's only input is scriptpubkey. Then there's various overloads, one where you can give it a txout, so it looks up the txout and then passes the script into IsMine checks. The signing code actually also calls the wallet's keystore. The signing code uses a signing provider, but the signing provider is implemented by the key store. It's this thing where everything gets dumped in and queried from. But it's way too low level. It doesn't understand what is going on. You import a script, you import some keys, and it happens to know it can sign for it, so we are going to call it IsMine. It has no idea what things arei ntended to be... also, the keypool has keys but it doesn't have addresses, so it can't reason about what kind of address you'd like to have.
 
 One use case we talked about earlier today is you want to get a segwit address, and we have no way of importing bech32 address without also importing the corresponding p2sh wrapped version of it, and also the legacy p2pkh, and p2pk which doesn't even have an address. So enter descriptors.
 
-# Descriptor records and scriptpubkey managers
+## Descriptor records and scriptpubkey managers
 
 Native descriptor wallets <https://github.com/bitcoin/bitcoin/pull/15764>
 
@@ -56,11 +56,11 @@ The reason that the CKeyStore object was created a long time ago was because of 
 
 CWallet is its own class that doesn't inherit anything. We could have a method like "sign this transaction", instead of exposing... I don't know what is easier to do that. Figuring out what the, boundaries of what this box should exactly entail. There's a lot of logic for various kinds of edgecases like when you derive a new public key that we know the private key for then we add the p2sh that we know the p2wpkh for it, and that should also be in the walle tbox so that we don't need it in this other box anymore.
 
-# Serialization
+## Serialization
 
 With regards to serialization... it's tightly coupled to CWallet and the database. When you load a wallet, it starts instantiating objects immediately. Serialization can just be done by the CWallet parts. You would pass down the database object. There are a bunch of new serialized objects that need t ogo into these, but not all of these. You're reading object by object in the database, and you're instnatiating new objects and they need to go into this collect. Most of these things will belong to one box, so you would say, the flag says this is a legacy wallet, as you deserialize, you see a seed key, you pass it into the box. So as you deserialize, you create the box and you just start throwing things into it, and if you see a descriptor wallet then you start throwing things into that box. The descriptor box is- are- they have to be a new record.
 
-# Back to other wallet stuff..
+## Back to other wallet stuff..
 
 There's quite a few tests that rely on dumb "IsMine" behavior. The functional tests. The entirety of the wallet, basically. There's a lot of things shared between these.
 

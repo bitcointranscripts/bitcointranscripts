@@ -5,7 +5,6 @@ categories: ['conference']
 tags: ['research', 'lightning', 'wallet']
 speakers: ['Mark Friedenbach', 'Jonas Schnelli', 'Andrew Poelstra', 'Joseph Poon']
 ---
-
 This can be a broad range of topics for improvements. I am Mark Friedenbach, I have worked on Bitcoin protocol research, but I also do Core tech engineering at Blockstream. We also have Jonas, an independent Bitcoin Core developer. We also have Andrew Poelstra, who has been core to the crypto work which has been incoporated into Bitcoin,  such as libsecp256k1 which we recently integrated in the 0.12 release. It speeds up Bitcoin validation by 7-8x. We also have Joseph Poon, the co-inventor of the Lightning Network paper, and he's running his own Lightning company as well.
 
 maaku: I am going to jump into this and asking the first question to Jonas. You have been involved with the Bitcoin Core wallet and GUI. I was wondering if you could tell us about the risks and challenges with Bitcoin wallets in general.
