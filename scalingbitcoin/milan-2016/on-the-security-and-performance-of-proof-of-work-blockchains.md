@@ -1,11 +1,12 @@
 ---
-title: On The Security And Performance Of Proof Of Work Blockchains
+title: "On the Security and Performance of Proof of Work Blockchains"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'mining', 'proof-of-work', 'ethereum']
+tags: ['research','security-problems','security-enhancements','ethereum']
 speakers: ['Arthur Gervais']
+date: 2016-10-09
+media: https://www.youtube.com/watch?v=_Z0ID-0DOnc&t=8857s
 ---
-
 <https://twitter.com/kanzure/status/785066988532068352>
 
 As most of you might know, in bitcoin and blockchains, the information is very important. Every node should receive the blocks in the network. Increase latency and risk network partition. If individual peers do not get the information, they could be victims of selfish mining and so on. Multiple blockchains has been proposed, multiple reparameterizations like litecoin, dogecoin, ethereum and others. One of the key changes they did was the block interval time. Bitcoin has 10 minutes. Litecoin has 2.5 minutes. Dogecoin has 1 minute. One common misunderstanding is that-- ethereum uses the GHOST rule for its blockchain. For the difficulty calculation, it uses the longest chain. From a security perspective, we argue it's exactly the same as bitcoin. These are basically blockchains that we see out there and we would like to understand better how to compare these.

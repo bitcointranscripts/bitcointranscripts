@@ -2,7 +2,7 @@
 title: Delaware Initiative
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mining', 'proof-of-work']
+tags: ['regulation']
 speakers: ['Marco Santori']
 ---
 

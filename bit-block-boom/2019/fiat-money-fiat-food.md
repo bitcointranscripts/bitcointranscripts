@@ -2,7 +2,6 @@
 title: "Fiat Money & Fiat Food"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['proof-of-work']
 speakers: ['Saifedean Ammous']
 media: https://www.youtube.com/watch?v=ZnvAYDEUVlg
 ---
