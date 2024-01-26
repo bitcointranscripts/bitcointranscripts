@@ -2,8 +2,9 @@
 title: "Future Of Privacy Coins"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'taproot', 'proof-systems']
+tags: ['privacy-enhancements','taproot','proof-systems']
 speakers: ['Brandon Goodell', 'Andrew Poelstra', 'Alexandra Moxin']
+date: 2019-05-11
 media: https://youtu.be/eGpa45y4_HQ
 ---
 AM: That's not good. Hi everyone. Thanks for coming to the future of privacy coins panel. I want to spend a minute talking ablout backgrounds and interest in this area.

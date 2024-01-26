@@ -2,7 +2,7 @@
 title: "Coinjoin Done Right: the onchain offchain mix (and anti-Sybil with RIDDLE)"
 transcript_by: delcin-raj via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=khmLiM9xhwk
-tags: ["privacy","coinjoin", "adaptor-signatures", "timelocks", "ptlc"]
+tags: ["coinjoin", "adaptor-signatures", "timelocks", "ptlc"]
 speakers: ["Adam Gibson"]
 categories: ["conference"]
 date: 2022-12-10

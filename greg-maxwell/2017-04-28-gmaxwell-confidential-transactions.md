@@ -2,14 +2,14 @@
 title: Confidential Transactions
 speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
-tags: ['privacy']
+tags: ['privacy-enhancements']
 date: 2017-04-28
 media: http://web.archive.org/web/20171115183423/https://www.youtube.com/watch?v=LHPYNZ8i1cU&feature=youtu.be&t=1m
 ---
 
 <https://twitter.com/kanzure/status/859604355917414400>
 
-# Introduction
+## Introduction
 
 Thank you.
 
@@ -19,7 +19,7 @@ My interest in this technology is primarily driven by bitcoin, but the technolog
 
 So I want to talk a little bit about in detail about what motivates me in on working on this and why I think it's interesting. What does CT do? What are the costs and benefits of a system like CT in bitcoin? I want to talk about extensions and related technology, and maybe also the prospect of using CT with bitcoin in the future. I also have some slides to go into more detail about how CT works in more technical detail, but I'm not sure how much interest there is in getting into the really deep details. I am seeing some thumbs up, so lots of details. We'll see how the time works out on it too, because I want to leave some good time for questions and such. And if I start blabbering off in space and someone is confused, then please ask me to clarify.
 
-# Why confidential transactions?
+## Why confidential transactions?
 
 CT is a tool for improving privacy and <a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/fungibility-overview/">fungibility</a> in a system like bitcoin. Why is this important? If you look at traditional systems, like banking systems, they provide a level of privacy in their systems. And when you usually use your bank account, your neighbors don't know what you're doing with your bank account. Your bank might know, but your neighbors don't. Your counterparties know, other people generally don't know. This is important to people, both for personal reasons as well as for commercial reasons. In a business, you don't want your competition to know who is supplying your parts. You don't want to necessarily share who is getting paid what. You don't want your competition to have insight into your big sales or who your customers are and all that. There is a long list of commercial reasons as to why this kind of privacy is important.
 
@@ -37,7 +37,7 @@ And a key point that I don't have in the slide here that I should mention is tha
 
 There have been many past proposals to improve privacy in the bitcoin space. Many people have recognized there's a problem here. People have done things like, proposals to combine <a href="https://bitcointalk.org/index.php?topic=279249.0">coinjoin</a> and <a href="https://bitcointalk.org/index.php?topic=321228.0">coinswap</a>, which are completely compatible with the existing bitcoin system and use some smart contracting protocol trickery to increase user privacy. People have also used things like centralized servers where you trust a third-party, you give them the money, they make the payments for you, and that can at times improve your privacy except at the central server which usually destroys your privacy along the way. There have been cryptographic proposals, there's a proposal called zerocoin which is distinct from the zerocash stuff that exists today, which had poor scalability but interesting privacy properties. There's an interesting not-well-known proposal called <a href="https://bitcointalk.org/index.php?topic=290971.0">one-way aggregatable signatures (OWAS)</a> which showed up on bitcointalk from an anonymous author who vanished (<a href="https://bitcointalk.org/index.php?topic=1377298.0">follow-up</a>). It's a pretty interesting approach. There's the traceable ring signatures that were used in bytecoin, monero and more recently in zerocash system which is now showing up as an altcoin. The compatible things-- like coinjoin-- have mostly suffered from not having as much privacy as you would expect, due to transaction amount tracing. The idea behind coinjoin is that multiple parties come together and they jointly author a single transaction that spends all of their money and pays out to a set of addresses, and by doing that, an observer can't determine which outputs match with which inputs so that the users gain privacy from doing this, but if all the users are putting in and taking out different amounts then you can easily unravel the coinjoin and the requirement to make the amounts match to prevent the unraveling would make coinjoin hard to be usable. And then, prior to confidential transactions as a proposal, the cryptographic solutions that people proposed have broken the pruning process in bitcoin. They really have harmed the scalability of the system causing the state to balloon up forever. Today you can run a bitcoin node with something like 2 GB of space on a system, and that's all it needs in order to validate new incoming blocks and that's with all the validation and all the rules no trusting third parties. And if not for pruning, then that number would be 120 gigabytes and rapidly growing. Many of these cryptographic privacy tools have basically broken this pruning and have hurt scaling... the exception being the more recent <a href="http://diyhpl.us/~bryan/papers2/bitcoin/TumbleBit:%20An%20untrusted%20bitcoin-compatible%20anonymous%20payment%20hub%20-%202016.pdf">tumblebit</a> proposal, and <a href="http://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/tumblebit/">tumblebit</a> is a proposal like coinswap that allows two users to swap ownership of coins in a secure way without network observer being able to tell that they did this. Tumblebit improves the privacy of that by making the users themselves not able to tell who the other users were, and tumblebit doesn't break scalability, but because it only does these swaps and a few other things, it's not as flexible as many of the other options.
 
-# Confidential transactions
+## Confidential transactions
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=13m37s>
 
@@ -47,7 +47,7 @@ That's what confidential transactions does. It makes the amounts private. There 
 
 Using this kind of scheme for bitcoin was <a href="https://bitcointalk.org/index.php?topic=305791.0">proposed by Adam Back in 2013 on bitcointalk</a>. I assume these slides will be made available online, there's links on all of these things too. And Adam's post is really hard to understand and even for me.. Just knowing that he said you could do it, I went and reinvented the scheme and also came up with a much more efficient construction than he had proposed, and in fact the constructions I used for CT were by a large factor more efficient than any system in the literature previously, and that's required in order to possibly begin to think about using these things in a large scale public system such as bitcoin. I'll talk a little bit more about that.
 
-# Costs
+## Costs
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=17m19s>
 
@@ -73,7 +73,7 @@ Also it results in addresses that are 2x the length because CT needs to include 
 
 There's a complexity hit, my implementation adds about 1400 lines of code, this is pretty small compared to the rest of the crypto code in bitcoin, but it is a cost. It's as small as it is because I was able to leverage existing infrastructure in bitcoin code.
 
-# Benefits
+## Benefits
 
 What benefits do we get out of this? Well, the amounts are private, and that has some direct effects. In many cases you need fewer transactions or outputs in order to preserve privacy. Today if you were to do something like decide to pay all your staff in coins and didn't want to disclose how much your staff was paid, you would probably get your staff to provide you with lots of addresses per staff member and then you would pay the same amount to different addresses, and the people who get multiple transactions would get different total payouts. That would be reasonably private, until people go and spend those outputs in groups and reveal some of it, but it would be very inefficient because it would require larger transactions to execute that scheme. So I think making outputs private really does solve many of the commercial problems. That's the big win directly.
 
@@ -83,21 +83,21 @@ One of the side effects of the design is that there's this, I mentioned this 15-
 
 One of the other benefits of using CT in a system is that it's quite straightforward to do private solvency proofs over CT (Provisions 2015 paper). If you were to imagine that if bitcoin was using CT today, you would be able to construct a proof that says I own 1000 coins, at least 1000 coins, out of the set of all coins that exist, if everyone was using CT, the privacy set of that would be all the coins, and you could prove this to someone without revealing which coins are yours, and even without the amount, you could reveal just a threshold. You could build a system that in a bank-like situation, or an exchange, you could show that the users account balances all add up to the sum of the assets without showing what that sum is. So you could say something like Coinbase for example that the users account balances add up to the sum of the coins that Coinbase holds, without revealing the total number of users or total amounts. It's possible to do this with bitcoin without CT by layering CT on top of it, but you don't get a full privacy set because if you're the only person using that privacy proof system then you would be easily discovered so it doesn't add much privacy on the full set.
 
-# Benefits: Metadata privacy
+## Benefits: Metadata privacy
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=23m10s>
 
 So, I said that CT provides value privacy, but in fact it also indirectly provides metadata graph privacy. The reason for this is that the existing compatible non-cryptographic proposals like coinjoin for graph privacy are primarily broken by their lack of amount privacy also their usability is broken by their lack of amount privacy. Coinjoin and CT can be combined so that you can have multiple people that collaborate together to make a transaction, nobody learns any amounts, and the observer doesn't learn the matchup between inputs and outputs. You lose the coinjoin problem where inputs and output values have to match. So if you do this scheme, you can get metadata privacy and get amount privacy, it preserves the properties of CT alone. This is true for coinswap and tumblebit and many other techniques.
 
-# Benefits: Scalability
+## Benefits: Scalability
 
 Although CT has significant costs, I would actually say that one of CT's advantages is scalability. The costs involved in CT are constant factors. Pretty big constant factors, but they are constant, they don't change the asymptotic scaling of the system. All of the overhead that CT creates, or almost all of the overhead, is prunable. So it will blowup the history of the chain but the state required to run a node and continue verifying things doesn't increase that much. Other schemes for privacy result in perpetual growing states where you need to keep perpetual history on every node. CT + coinjoin and technologies based on it, like <a href="http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble.txt">mimblewimble</a> (see also <a href="http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2016-11-21-mimblewimble/">andytoshi's talk</a>), are the only strong privacy approaches that don't break scalability.
 
-# Benefits: Decentralization offset
+## Benefits: Decentralization offset
 
 Another benefit you can see from looking at something like CT is something I would call decentralization offset which is we talked before about how fungibility is important but in systems like bitcoin there is risk that miners or other ecosystem players might discriminate against coins or be forced by third-parties to participate in discrimination. If they did that, and did it enough, it would degrade the value of the system, although it might be profitable for the participating parties-- perhaps they get paid by regulators or something to discriminate against coins. There was some prepub work in this MIT chainanchor paper where they have since removed this from their paper but they suggested paying miners to mine only approved transactions. My response is to not be angry about this, it's a vulnerability in the system, let's fix it. If the system is more fungible, then issues related to decentralization limits in other parts of the system are less of an issue, because all the coins look the same and therefore you can't discriminate against coins. So that's an advantage I think.
 
-# CT soundness
+## CT soundness
 
 I mentioned before that CT is at least as strong as ECC security but actually it's potentially stronger. The scheme in our original CT publication provides what's called unconditional privacy but only computational soundness. This means that if ECC is broken the privacy is not compromised, but someone could inflate the currency. What unconditional privacy means is that even if you were to get an infinitely powerful computer that could solve any problem in one operation, you still could not remove the amount privacy in CT. The privacy part of it cannot be broken. But it only provides computational soundness, which means that if ECC is broken or if someone has an infinitely powerful computer, they can basically make CT proofs that are false and create inflation. And it's fundamentally impossible for any scheme to achieve both unconditional privacy and unconditional soundness. It could miss both, it could have one but not the other, but it cannot have both.
 
@@ -105,7 +105,7 @@ For use in bitcoin, it probably makes sense to have a system that has computatio
 
 When we first worked on CT, we knew that we could solve the soundness and make it unconditionally sound, but we thought it would make it significantly less efficient. It turns out that we found a way to make it equally efficient while preserving the unconditional soundness. And this is something that we have been working on for a while as well as Oleg Andreev for unconditional soundness for CT. We have some implementations that haven't been published yet that do this.
 
-# CT vs Zcash
+## CT vs Zcash
 
 Now let me talk some comparisons of CT with some other technologies. And I'm talking about more the technology than the altcoin in cases where this stuff is implemented. Zcash uses some very modern cryptography to do some really cool stuff, and zcash directly hides the amount and the transaction metadata and hides it completely. Among all the private transactions in zcash, you can't tell what the linkages are between any of them. That's even stronger than coinjoin can provide. It's basically perfect from that perspective, but you always have to be careful when only thinking about a little perspective at a time. Zcash isn't unconditionally sound and cannot be made unconditionally sound with current technology, not even close. In fact, zcash requires trusted setup which means that a number of trusted parties have to get together, and if they <a href="https://petertodd.org/2016/cypherpunk-desert-bus-zcash-trusted-setup-ceremony">cheat</a> then they can break the crypto and make unbounded undetectable inflation. If there's a crypto break, or a trusted setup flaw, then it's really bad news. They had a ritual to increase trust in the trusted setup, but they have to redo this procedure to upgrade the crypto over time. So it's a vulnerability.
 
@@ -115,7 +115,7 @@ There have also been recent advancements in breaking the kind of crypto that is 
 
 The real killer for zcash in practice is that the signing speed is horribly slow, we're talking about minutes to sign a private transaction. Zcash ouldn't plausibly make private transactions mandatory because of that slowness and UX, and as a result it's option and as a result very few of the transactions in the zcash blockchain are using the private transaction feature. If you look at the raw numbers, it's 24%, but that number is misleading because miners are required to pay to a private address, but most miners are pools and the pools immediately unblind those coins and if you unseparate out the mining load then maybe it's in the order of 4% of zcash transactions are private. As a result, this anonymity set that this "perfect" anonymity system is achieving system, isn't that good. I think the idea is cool but it's not the kind proposal I would want to take to bitcoin today.
 
-# CT vs Monero
+## CT vs Monero
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=32m22s>
 
@@ -127,7 +127,7 @@ So this system has the benefits of CT but it also has the disadvantages of the r
 
 The other cryptographically-private altcoin that people talk about is Dash... but it's not cryptographically private at all. I had a slide about this that was just "Dash LOL". It's snakeoil. I'm beside myself about it, personally. What they have is a system like coinjoin, they nominate nodes based on proof of stake to be coinjoin masters, and then they have done this insecurely many times in the past I have no idea if the current version is secure. It's not on the same level as zcash or monero maybe it's better than doing nothing I don't know. LOL, right?
 
-# Other risks
+## Other risks
 
 There are other risks with this technology. I guess I was talking about one of them right now. It's difficult to distinguish snakeoil from real stuff and vet claims. Maybe some of the stuff I said today was crap, like maybe someone will claim that I said CT is unconditionally private (which is something I said) but maybe because of the way it gets used it's not actually unconditionally private.... right, like it's hard to work out this stuff and figure out which complaints are legitimate, not too many experts, new area, many people that try to sound like experts, etc.
 
@@ -141,7 +141,7 @@ There's another system that is non-public but it will be public in a couple mont
 
 I don't really think that these privacy systems are really much harder than normal consensus work in cryptocurrencies, but the failures are severe and really hard or impossible to recover from, and it's a place where people are doing something interesting, it's not just the hot air stuff in altcoins, this cryptographic privacy stuff is real.
 
-# Further enhancements: Mimblewimble
+## Further enhancements: Mimblewimble
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=38m25s>
 
@@ -151,7 +151,7 @@ I would like to talk about where we could go from CT today. Maybe I should have 
 
 CT is pretty powerful when combined with coinjoin. But coinjoin is interactive and the parties have to be online and communicate with each other. Coinjoin can be made non-interactive, to allow miners to aggregate transactions to improve scalability and privacy. Some of the properties of this aggregation make it possible to sync a node without looking at history only looking at UTXO set but have same security as if you had inspected the entire history, without having to transfer the entire history. The downside is that the state size for the verifying node is massively increased. The end result is that if-- if bitcoin was mimblewimble from day one, the equivalent of the UTXO set size would be the size of the blockchain, but you wouldn't need the blockchain to sync a node. The asymptotics are good, the constant factors stink, and people are experimenting with this and enhancing this.
 
-# Further enhancements: Multi-asset
+## Further enhancements: Multi-asset
 
 <https://www.youtube.com/watch?v=LHPYNZ8i1cU&t=40m20s>
 
@@ -161,15 +161,15 @@ CT is single asset like bitcoin. But it's possible to extend CT for many assets 
 
 I think this is a cool area and we'll see where it goes. I think it's very neat that you can just combine these approaches. Perhaps other things can be combined with it.
 
-# Further enhancements: ValueShuffle
+## Further enhancements: ValueShuffle
 
 So I have mentioned many times that CT + coinjoin is pretty interesting. The normal way to do coinjoin in practice today is that you have the participants either pick a server and the server mediates it and learns things about the correspondence between users, and that's not good. It's possible to have a protocol where all the participants in the join work with each other and nobody learns the input-output mapping. I knew it was possible when CT was created, but I didn't work out the details. Fortunately, others have been working on this, and in particular the <a href="http://diyhpl.us/~bryan/papers2/bitcoin/Mixing%20confidential%20transactions:%20Comprehensive%20transaction%20privacy%20for%20bitcoin%20-%202017.pdf">valueshuffle</a> paper that works out how you can have a multi-party coinjoin with all the parties private from each other using CT.
 
-# Further enhancements: Efficiency
+## Further enhancements: Efficiency
 
 The area where I have been focusing the most on CT is efficiency. The costs are constant factors but they are big and it would be good to get them down. We have schemes right now that can make them 20% smaller or the same size but unconditionally sound. There's more optimizations out there to be worked on. This is an area that Oleg Andreev at Chain has also been working on.
 
-# Patent status
+## Patent status
 
 So I should mention about patents. I have <a href="http://diyhpl.us/~bryan/papers2/bitcoin/patent%20-%20WO2016200885%20-%20Cryptographically%20concealing%20amounts%20transacted%20on%20a%20ledger%20while%20preserving%20a%20network's%20ability%20to%20verify%20the%20transaction%20-%202016.pdf">patented</a> many of the techniques and optimizations in confidential transactions with the explicit intention and very loudly stated goal of using these patents to prevent other people from patent this stuff, and to commit to a patent nonaggression licensing scheme where anyone can use my patents as long as they commit not to sue each other into oblivion.
 
@@ -181,7 +181,7 @@ Blockstream has a very open patent policy that is purely defensive. It has been 
 
 <https://defensivepatentlicense.org/license/>
 
-# CT for bitcoin?
+## CT for bitcoin?
 
 What about using this CT thing for bitcoin?
 
@@ -193,7 +193,7 @@ There are designs for <a href="https://lists.linuxfoundation.org/pipermail/bitco
 
 So the tech is still maturing for CT. If the reason for it not be deploying right now is 15x, well is 10x enough? With improvements we can get this down to lower amounts. As the technology improves, we could make this story better. I am happy to help with other people experimenting with this. I think it's premature to do CT on litecoin today, Charlie, but I would like to see this get more use of course.
 
-# Q&A
+## Q&A
 
 Why don't I go to questions? I have slides on more details and I am happy to answer questions even in email.
 

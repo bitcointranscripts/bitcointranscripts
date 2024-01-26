@@ -2,18 +2,16 @@
 title: Socratic Seminar - Coinswap
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['privacy']
+tags: ['coinswap']
+speakers: ['Adam Gibson','Max Hillebrand','Bob McElrath','Ruben Somsen']
 date: 2020-06-23
 media: https://www.youtube.com/watch?v=u7l6rP49hIA
 ---
-
-Location: London BitDevs (online)
-
 Pastebin of the resources discussed: https://pastebin.com/zbegGmb8
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# Introductions
+## Introductions
 
 Michael Folkson (MF): This is London BitDevs, this is a Socratic Seminar. We had two events last week so it is great to see so many people on the call. I wondered if there would be lethargy after two last week. They were both great, videos and transcripts are up on BIP-Schnorr and Tim Ruffing’s presentation. Today is on CoinSwap. CoinSwap has been in the news because Chris Belcher has just got [funding](https://bitcoinmagazine.com/articles/the-human-rights-foundation-is-now-funding-bitcoin-privacy-development-starting-with-coinswap) from the Human Rights Foundation to work on it and there seems to be a lot of enthusiasm. At least a couple of people have been getting deep into CoinSwap. A couple of guys from Wasabi have been talking about CoinSwap at the [Wasabi Research Club](https://diyhpl.us/wiki/transcripts/wasabi-research-club/2020-06-15-coinswap/). This is being livestreamed. There is a call currently on Jitsi. Jitsi is free, open source and doesn’t collect your data. There will be a transcript but it can be anonymized and edited so please don’t let that put you off. This isn’t an exercise to find gotchas, this is purely for educational reasons. There is a [Pastebin](https://pastebin.com/zbegGmb8) up with the resources we will look at to bring structure to the discussion. As is normal we’ll do intros for anybody that wants to do an intro. There is a hand signal in the bottom left of your screen. If you want to do an intro, who you are, what interests or what understanding you have on CoinSwap. You don’t need to give your real name if you don’t want.
 
@@ -25,7 +23,7 @@ Openoms (O): I am contributing to the RaspiBlitz project which is a Lightning Ne
 
 Aviv Milner (AM): I am part of the Wasabi Research Club alongside Max. I am really into privacy. One thing I am really proud with, I got to interview Adam Gibson not long ago on elliptic curve math which was great.
 
-# What is an atomic swap?
+## What is an atomic swap?
 
 MF: As is custom in the previous Socratics we start from basics. I will throw out a basic question. What is an atomic swap? What is an atomic swap trying to achieve? This has been discussed for years in terms of swapping coins between chains. Can anybody explain a conventional atomic swap works?
 
@@ -59,7 +57,7 @@ BM: In the blockchain space we outsource the third party in a couple of differen
 
 AG: That is why I was saying at the beginning that the simplest way to understand it perhaps is the trade-off that we are trusting the blockchain clock is behaving as we intend it to in our timelocks. There is a lot you could say about this, we have said a lot of already.
 
-# Greg Maxwell Bitcointalk post (2013)
+## Greg Maxwell Bitcointalk post (2013)
 
 https://bitcointalk.org/index.php?topic=321228.0
 
@@ -83,7 +81,7 @@ MF: Towards the end of Greg’s post he gives the comparison to Coinjoin which i
 
 AG: Even if you just look at the introductory statements at the top of the diagram. Phase 1 “makes it so that if Bob gets paid there is no way for Carol to fail to get paid.” Of course there are such things as escrows with trust but I don’t think there is anything interesting here with regard to having trusted parties. This is about enforcing atomicity at the transaction level. The only reason it is different from a CLTV type construct is you have to use extra transactions in timelocks in the nLocktime as backouts. This isn’t about having a trusted relationship.
 
-# TierNolan scheme (2013)
+## TierNolan scheme (2013)
 
 https://bitcointalk.org/index.php?topic=193281.msg2224949#msg2224949
 
@@ -99,7 +97,7 @@ nothingmuch: If I am not mistaken the history is as follows. First there was the
 
 AG: That sounds good. Maybe it nicely illustrates that while it is natural to go down a historical route in this it might actually be better educationally to look at those two basic ideas. First we could mechanically state how an atomic swap construct works without any privacy concerns. Then we could describe as Greg laid out how you take that basic construct and you overlay a certain thing on it to make it work for privacy.
 
-# How does an atomic swap work?
+## How does an atomic swap work?
 
 AG: The basic idea of an atomic swap is this idea of a hash preimage, one side pays to a script that can only be spent out of by revealing a hash preimage. Two people are exchanging coins for whatever reason, cross blockchain or on the same blockchain, they are both able to extract two chunks of coins if they reveal the hash preimage. One of them starts with an advantage in that he knows the hash preimage. If you did it in a naive way he could claim the coins himself and then try to claim the other ones too. The basic idea of course is when you broadcast a transaction that reveals a hash preimage and the script says something like “Check that this data hashes to this previously agreed hash output.” Because you have to broadcast it in order to claim the coins that means that hash preimage by definition becomes public. A naive way to do it would be Alice has the hash preimage, tries to claim one of the outputs using the hash preimage and then Bob would see that hash preimage on the blockchain because it was published inside the scriptSig of the transaction that Alice uses to claim. He would take the hash preimage and essentially do the same thing. He would take that hash preimage and construct a valid scriptSig for the other output. He gets his one coin, they are both trying to claim one coin. The problem with that is it doesn’t have the security you want. Alice is in the preferential situation where she knows how to claim both the coins, she knows both of the hash preimages. You add another layer to it. You add that only one party can claim by adding the requirement of signing against a public key. Why do we need timeouts? If you had this setup as I described it where both sides would claim the coins if they know the preimage to a hash but also it was locked to one of their keys, it looks secure but they have a deadlock problem. If the first party refuses to reveal the hash preimage, the one that knows it, because you have had to deposit coins into these scripts the coins are locked up until that person decides to reveal it. Maybe they die or they disappear and then your money is dead. You do need a backout. The question becomes how does each side have a backout to ensure safety against the other party misbehaving. I haven’t explained that in full detail, I am sure we will at some point. How do we convert it into a private form? In talking about this you might find the diagram on Michael’s meetup page useful for this. We have got Alice and Carol and TX-0 and TX-1 on that diagram show Alice and Carol respectively funding a 2-of-2. Why do they fund a 2-of-2? Because they need to have joint control of the funds.
 
@@ -129,7 +127,7 @@ AG: That would be the answer. You can generalize this point to just custom scrip
 
 MF: We will go onto adaptor signatures, PTLCs and that kind of stuff later.
 
-# Alex Bosworth talk on submarine swaps at London Bitcoin Devs, 2019
+## Alex Bosworth talk on submarine swaps at London Bitcoin Devs, 2019
 
 https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2019-07-03-alex-bosworth-submarine-swaps/
 
@@ -147,7 +145,7 @@ MF: It felt like there was a lot more conversation going on around submarine swa
 
 AG: The public’s imagination was captured principally by the concept of an atomic swap, especially in the middle of the craze we experienced from 2016 to 2018. Partly because of all the altcoins and everybody got very excited about how you could trade trustlessly. Lightning exploded in some sense amongst a certain group of people between 2017 and 2018 when it went live on mainnet. Alex being the fountain of incredible ideas that he is, pushed this submarine swap idea. It is just another variant but it is a more complex variant of the things we are discussing here. It might make more sense to go atomic swap, CoinSwap and then talk about the more exotic things.
 
-# CoinSwapCS (2017)
+## CoinSwapCS (2017)
 
 https://github.com/AdamISZ/CoinSwapCS
 
@@ -165,7 +163,7 @@ MF: It is exactly the same concept.
 
 AG: Yeah.
 
-# Design for a CoinSwap implementation (Chris Belcher, 2020)
+## Design for a CoinSwap implementation (Chris Belcher, 2020)
 
 https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-May/017898.html
 
@@ -233,7 +231,7 @@ AG: We discussed in Payjoin the same dynamic.
 
 MF: Another question from shinobius. “Belcher’s idea of routing amounts through successive CoinSwaps and the impracticality of staggering the time between individual transactions in a chain of CoinSwaps for intervals that are too long.” This was a clarification for the previous question. Having too many successive CoinSwaps and staggering the time if there is an overlap between one CoinSwap that you are engaging in and the next CoinSwap.
 
-# Routing CoinSwaps
+## Routing CoinSwaps
 
 https://gist.github.com/chris-belcher/9144bd57a91c194e332fb5ca371d0964#routing-coinswaps-to-avoid-a-single-points-of-trust
 
@@ -305,7 +303,7 @@ BM: The original proposal had four transactions. Alice swaps with Bob. Both Alic
 
 AG: I think you are talking about Succinct Atomic Swaps which is Ruben Somsen’s thing.
 
-# CoinSwap comparison with Succinct Atomic Swaps
+## CoinSwap comparison with Succinct Atomic Swaps
 
 https://gist.github.com/RubenSomsen/8853a66a64825716f51b409be528355f
 
@@ -321,7 +319,7 @@ RS: The worst case is that your swap doesn’t go through. If your swap doesn’
 
 BM: I was really hoping this was doing swaps offchain.
 
-# CoinSwap comparison with Lightning
+## CoinSwap comparison with Lightning
 
 AG: That brings up the interesting question which is [raised](https://gist.github.com/chris-belcher/9144bd57a91c194e332fb5ca371d0964#how-are-coinswap-and-lightning-network-different) in the document which is how does this compare with Lightning? Shouldn’t we just use Lightning and he talks about several angles to that.
 
@@ -355,7 +353,7 @@ MF: Ruben is discussing in the chat submarine swaps plus statechains. I don’t 
 
 RS: That’s a whole other topic, maybe next time.
 
-# Practicalities of implementing CoinSwap
+## Practicalities of implementing CoinSwap
 
 AG: Can we address the serious practical question, CoinSwaps are an idea, they are pretty old. What is going to be the motivation? I think we all agree that it could really improve fungibility and privacy. Whether Lightning is better than it or not is not really the issue because at the end of the day we have to do transactions onchain anyway. People might say “I don’t want to do a CoinSwap because I might get a dirty UTXO.” There is that and then it is a pain. You are going to sit around and wait 100 blocks? Nobody wants to wait 100 blocks to anything at all.
 
@@ -403,7 +401,7 @@ RS: I like the argument of Coinjoining first and then using the result in a Coin
 
 nothingmuch: For completeness, submarine swaps also bridge the gap. That pertains to Adam’s point about CoinjoinXT. You can effectively have a Coinjoin transaction where one of the outputs is a submarine swap that moves some of the balance into a Lightning channel just like you can have a CoinSwap transaction either funded or settled through a Coinjoin. An interesting [post](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-June/017970.html) from the Bitcoin dev mailing list recently is about batched CoinSwaps where you have a single counterparty as a maker servicing multiple takers’ CoinSwaps simultaneously which again blurs the boundary between Coinjoins and CoinSwaps.
 
-# Succinct Atomic Swaps
+## Succinct Atomic Swaps
 
 https://gist.github.com/RubenSomsen/c9f0a92493e06b0e29acced61ca9f49a
 
@@ -439,7 +437,7 @@ RS: I think it is already outdated because there is this other [paper](https://g
 
 AG: Yeah because usually we have to symmetrically fund these two multisigs.
 
-# Externally Funded Succinct Atomic Swaps (Max Hillebrand)
+## Externally Funded Succinct Atomic Swaps (Max Hillebrand)
 
 https://github.com/MaxHillebrand/research/blob/master/ExternallyFundedSuccinctAtomicSwaps.md
 

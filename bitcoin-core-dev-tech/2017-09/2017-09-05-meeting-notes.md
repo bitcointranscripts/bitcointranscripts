@@ -2,7 +2,6 @@
 title: Meeting Notes
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['privacy']
 date: 2017-09-05
 aliases: ['/bitcoin-core-dev-tech/2017-09-05-meeting-notes/']
 ---
@@ -13,8 +12,7 @@ coredev.tech september 2017
 
 ((As always, any errors are most likely my own. etc.))
 
-<div id="intro" />
-# Introduction
+## Introduction
 
 There is significant concern regarding whether BlueMatt has become a misnomer.
 
@@ -22,8 +20,7 @@ Monday night presentation: <https://btctranscripts.com/sf-bitcoin-meetup/2017-09
 
 I think we should continue to use #bitcoin-core-dev for anything about changing Bitcoin Core and try to keep things open even though we're together here today and tomorrow and the next.
 
-<div id="rescans" />
-# Wallets and block pruning and rescans
+## Wallets and block pruning and rescans
 
 Nobody produces P2SH change when they have a native output. And producing a mixed set of outputs will tell you which one it is. So this is not ideal from a privacy standpoint.
 
@@ -137,25 +134,21 @@ So are we going to add a GUI option for what type of change address?
 
 P2SH .. witness. Default for change as of one is bare witness but that's still open for debate. If nobody debates it, then it doesn't change. Well it's up to whoever implements it. Joinmarket wants to use Bech32, openbazaar is using it, ... Alright, lunch.
 
-<div id="p2sh-adoption" />
-# P2SH adoption
+## P2SH adoption
 
 How long did it take with P2SH before you could generally assume you could send it? Well, quite a while. You can't... it took years, but blockchain.info has P2SH support now, yes. They still have it. So right now if you send to a... they don't index it, you cannot see transactions by a certain address, it shows up as ... so everyone is using them because they are "private"? It took years-- perhaps faster around this time, but still some time.
 
 blockchain.info didn't maintain their site for like 2 years. Armory didn't implement it for a long time, either. There's also special cases, like say you have a Bitcoin Core wallet. Coinbase was... bech32.. say I have an exchange ...  the particular case of sending to yourself from a service is a case that people will use quickly. Nobody wants to make an extra round trip. If I'm paying myself, I'll take it. I did have someone ask can we have the bip URI.. and I said, the problem is that it's even more things to worry about.
 
-<div id="testnet" />
-# testnet difficulty adjustment algorithm
+## testnet difficulty adjustment algorithm
 
 Testnet difficulty adjustment algorithm is why the blockheight is high on testnet3.
 
-<div id="bumpfee" />
-# bumpfee and rebroadcasting
+## bumpfee and rebroadcasting
 
 Do wallets commonly re-broadcast if the transaction is not in the blockchain after a few days? Anyonecanspend covenant utxo that it needs to create a new one of itself in its output. If you had covenants, you could somehow .... oh we could do it that other way, but it's not as cool as covenants. Replay protection with covenants would be a good use of covenants instead of some other uses of covenants. Segwit2x should add strong two-way replay protection.
 
-<div id="libevent" />
-# libevent
+## libevent
 
 <https://github.com/bitcoin/bitcoin/pull/11227>
 
@@ -165,8 +158,7 @@ The previous implementation was a single thread for networking and peers were co
 
 New plan for Cory is we'll merge his work immediately, then we will just have Cory fix the problems as they show up, and we'll rename Bitcoin Core to Bitcoin Cory.
 
-<div id="toolchain-builder" />
-# Tool chain builder
+## Tool chain builder
 
 How many turtles should we go down? Should this system attempt to be self-deterministic, or do you still run it inside of gitian to do builds? You have something that looks like depends, builds the toolchain for your system, builds whatever utilities you need, should that thing itself attempt to be produce a deterministic build between people? It would be nice, but might not be realistic. It would only be realistic if you kind of real blow-up what you build it. Maybe build your own shell, your own... It should build a compiler, a linker, and binutils. Not all the unix utilities.
 
@@ -174,21 +166,19 @@ Filesystem can impact build results, although we think we have fixed that. There
 
 Compiler, linker, assembler are absolutely required. We should assume a linux system for builds. From linux, build host environment for OSX. Have a deterministic build from gitian that is the same, even if you build on OSX. It's pushing it, I recognize. Most of the time you assume build and host are the same. But maybe you build the toolchain on linux, and then run it on osx. It's about the same effort as supporting a new platform. wumpus does (non-deterministic) builds on openbsd and freebsd.
 
-# other
+## other
 
 If you change all the transactions in history to use indexes, that's an extra 30% reduction in chain size. So you get a 20% reduction using... but if you turn all the ... it's another 30% reduction. It's really good savings. You have to have an index of...
 
-# other other
+## other other
 
 <http://bitcoin.sipa.be/bech32/demo/demo.html>
 
-<div id="signature-aggregation" />
-# Signature aggregation
+## Signature aggregation
 
 Moved to <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>
 
-<div id="coin-selection" />
-# Coin selection
+## Coin selection
 
 First time around uses branch-and-bound. And then it falls back to the other method if it fails. It's one-shot. The branch-and-bound, first time it runs, it sees if it can construct... it uses effective values for the inputs. The argument I had for not using effective values is that it causes you to grind-down change more often. So the concern about effective value is that.. [bad things but since BnB creates no change it’s not a problem]
 
@@ -234,18 +224,15 @@ If you go above the target, you cut off that branch. This gives you a small corr
 
 We have a lot of different things in the metric. Right now we just strictly prioritize things. We already have 6 confirm stuff, then 1 confirm stuff, then 0 confirm stuff, and maybe we want to treat every address as one unit, then you go on.... I'm not sure that discardfee. Maybe minimize discardfee. No, just whatever. We could minimize number of inputs, minimize amount of fee we discard....
 
-<div id="release-validation" />
-# Release validation
+## Release validation
 
 I have a pubkey in the binary. A download tool to check the binary that you've downloaded, as an alternative to asking the user to manually check that the release was signed by the bitcoin developers. verifysignature is not good for this. sha256. I am just saying minimum work. That would be a small number of lines.
 
-<div id="jenkins" />
-# jenkins
+## jenkins
 
 jenkins has standard IRC integration and we could use it to trigger builds. It also has some interaction with github pull requests. The advantage of running things on not travis-ci is that we could run a full set of tests because we wouldn't be limited to the same machines that travis-ci provides. You could also guarantee that there's nothing else running concurrently. You can build in parallel, still.
 
-<div id="conflicting-transactions" />
-# Conflicting transactions for withdrawals
+## Conflicting transactions for withdrawals
 
 We're trying to prevent transactions from expiring. We treat our change outputs as being spendable immediately. With SegWit we can avoid malleability. We can immediately spend the output from the last round in our transaction. And then we have a long-chain of unconfirmed transaction. Then we need to compute the fee rate to bump the entire chain.
 
@@ -257,8 +244,7 @@ Do child pays for parent instead of replacement. CPFP for chains of 25 transacti
 
 200 byte transaction that pays 30 sat/byte. It gets spent by a 1 sat/byte 100 kb transaction, but my bump to replace it has to pay an enormous amount of sat/byte in order to pay the thing it bumped out. It doesn't have to be the fee rate, it has to be the thing it bumped out.
 
-<div id="mast" />
-# Merkle trees and MASTs
+## Merkle trees and MASTs
 
 Moved to <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/>
 

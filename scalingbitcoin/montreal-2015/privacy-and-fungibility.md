@@ -2,7 +2,7 @@
 title: Privacy and Scalability
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy']
+tags: ['privacy-problems','privacy-enhancements']
 ---
 Even though Bitcoin is the worst privacy system ever, everyone in the community very strongly values privacy.
 

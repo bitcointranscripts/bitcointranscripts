@@ -1,11 +1,12 @@
 ---
-title: Tumblebit
+title: "TumbleBit: An Untrusted Bitcoin-Compatible Anonymous Payment Hub"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy']
+tags: ['research','privacy-enhancements']
 speakers: ['Ethan Heilman', 'Leen AlShenibr']
+date: 2016-10-08
+media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=3787s
 ---
-
 <https://twitter.com/kanzure/status/784686167052709888>
 
 Hi. So I'm going to be talking about tumblebit. It's our untrusted private bitcoin payment system. Tumblebit provides payments which are private. They provide set anonymity when used as a classic tumbler. They are untrusted. The tumbler can't violate your privacy, and can't steal your coins. It's also scalable. It's compatible and works with today's bitcoin. There are no malleability concerns. We're going to rely on the constrained opcodes that currently exist in bitcoin.

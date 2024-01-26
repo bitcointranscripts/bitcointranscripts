@@ -2,7 +2,7 @@
 title: "Privacy-Preserving Smart Contracts"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','privacy','cryptography']
+tags: ['research','privacy-enhancements','contract-protocols']
 speakers: ['Ranjit Kumaresan']
 date: 2015-09-12
 media: https://www.youtube.com/watch?v=gpJrGuZEJsY&t=858s

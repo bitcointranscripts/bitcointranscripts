@@ -1,15 +1,12 @@
 ---
-title: Blocksci Platform
+title: "BlockSci: a Platform for Blockchain Science and Exploration"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy']
+tags: ['research','developer-tools']
 speakers: ['Harry Kalodner']
+date: 2017-11-04
+media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=12082s
 ---
-
-BlockSci: a Platform for Blockchain Science and Exploration
-
-Harry Kalodner, Princeton University (Arvind Narayanan etc.)
-
 Alright well, my name is Harry Kalodner, I am a student at Princeton University and I am here to tell you about a tool I built alon with some colleagues at Princeton which could be used for analyzing the blockchain in different ways. So far most of the talks today have been constructive about new ways to use the blockchain and protocols to slightly modify bitcoin in roder to improve privacy or scaling. I am going ot take a step back and look at scaling demands beyond ... to look at why are blocks full?
 
 Why do we need analytics? We need to be able to motivate the scaling solutions. It's very cool to just present an idea and say it would increase htorughput in this way. We want ot be able to know how that is going ot effect actual kind of use cases of bitcoin. And so, using analytics, we can deliver new areas of improvement by getting better understanding of what kinds of transactions and usecases people have in practice. We can categorize these cases to see whether scaling effects some use cases more than others. It's important to keep a general view of the whole ecosystem rathe rthan getting swamped in the technical details and understanding the circumstances in which they occur.

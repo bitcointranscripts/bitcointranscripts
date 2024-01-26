@@ -3,11 +3,11 @@ title: Silent Payments and Alternatives
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 speakers: ['Ruben Somsen']
-tags: ['privacy']
+tags: ['privacy-enhancements','silent-payments']
 date: 2022-10-15
 ---
 
-# Introduction
+## Introduction
 
 I will talk about silent payments but also in general the design space around what kind of constructs you can have to pay people in a non-interactive way. In the bitcoin world, there are a couple common ways of paying someone. Making a payment is such a basic thing. ... The alternative we have is that you can generate a single address and put it in your twitter profile and everyone can pay you, but that's not private. So either you have this interactivity or some loss of privacy where you continuously reuse the same address.
 
@@ -15,7 +15,7 @@ This talk is going to be about trying to see how we can get both non-interactivi
 
 There are some protocols out there for this, but also some newer protocols. I'll show you what the range of these possibilities are.
 
-# Handing out an xpub
+## Handing out an xpub
 
 There is something that I would call a semi-interactive solution which is not non-interactive but maybe there's a minimum of interaction. One of these methods is very basic where instead of when you interact with a person you want to pay they give you an address, they could instead give you a fresh xpub or a key from which they can generate multiple addresses. Instead of every time you want to make a payment to a person, you can interact with them just once. We don't do this today, but it makes sense to me for situations. It makes it more simple, to me. I've had many situations where a friend of mine we make some payments back-and-forth and it's always a problem to get a new address and maybe they need to go to their hardware wallet to get a new address. But if you only had to do that once, it would seem to be better.
 
@@ -25,7 +25,7 @@ In this case, because you're handing out an xpub, there could be a gap on the xp
 
 This is nice for recurring payments but it's still interactive. You still have this one-time interaction.
 
-# Automated interaction
+## Automated interaction
 
 There's another class of solutions called "automated interaction" where you have a server you run and the server hands out addresses for you. This requires a secure always-online server which in practice is hard for users to do. All the developers in the room are saying sure no problem I'll do that but normies don't find that to be easy.
 
@@ -35,7 +35,7 @@ This exists today like with btcpayserver. I don't know how they handle the gapli
 
 In practice, btcpayserver- merchants have used that, but it's not as common as it could have been at least.
 
-# Trustless address server
+## Trustless address server
 
 There's another class of solutions that I haven't come across. I recently made a mailing list post called trustless address server. It's similar to btcpayserver but instead of you running your own server you let someone else run your server. One of the observations I made for why this would be reasonable to do is because we have lots of lite clients on the network that hand out keys sometimes the xpub or sometimes they generate keys and send them to a server. They already lose all of their privacy to a single server that does the blockchain scanning for them.
 
@@ -47,7 +47,7 @@ The answer is that you need a key associated with the person you want to send to
 
 This is sort of inbetween solution that we haven't really seen yet. It's only subtly different from btcpayserver. It's an interesting tradeoff. Specifically, this already assumes a non-perfect situation where you have some kind of lite client that you are exposing your privacy to anyway so you might as well use it for this. I think that this is not where we want to be in general in the bitcoin ecosystem with this kind of privacy exposure, but given that it is already happening, when you do it then this seems to be a good tradeoff.
 
-# Dealing with gaplimit abuse
+## Dealing with gaplimit abuse
 
 What happens if people just connect and request keys and do nothing with them, and therefore you can't find your funds because the gaplimit was exhausted possibly multiple times in between keys that were actually used for payments?
 
@@ -65,7 +65,7 @@ In terms of complexity, it requires on the sender's side to sign a transaction t
 
 This can also apply to btcpayserver. This is all relatively new so if anyone has any feedback let me know.
 
-# Shared secret using Diffie-Hellman
+## Shared secret using Diffie-Hellman
 
 The non-interactive solutions all rely on a single trick. I want to talk about it first without cryptography and then later with. There's this thing where if the recipient shows their pubkey in public, so everyone knows your pubkey for instance, and then the sender somehow communicates their pubkey to the recipient then with these two keys you can generate a shared secret. The shared secret basically means it's some big number and only the sender and the recipient know it. You can do this trick using Diffie-Hellman with elliptic curve cryptography. Once you have a shared secret, you tweak it so that the address goes only to the recipient. The shared secret is spendable by both parties. You need to tweak it so that only the recipient can actually spend from it.
 
@@ -73,7 +73,7 @@ Big letter is a curve point. Small letter is a scalar. You can turn a small lett
 
 To get a key that the recipient controsl, you do hash(aB)G + A where A is the recipient pubkey. This ensures that the final address is something that only the recipient can spend from.
 
-# bip47: Reusable payment codes
+## bip47: Reusable payment codes
 
 One of the protocols using DH secret sharing is bip47. Another one is paynyms. There's Samurai Wallet. Sparrow Wallet I think implements it. It has seen some use. Compared to the average number of on-chain transactions, there's very minor usage.
 
@@ -81,7 +81,7 @@ The way that bip47 works, first the recipient key is openy published off-chain l
 
 In fact, in the current bip47 implementation, there is a problem where when you create the notification you are using some of your inputs to put some notification on-chain and you link some of your inputs to the recipient. There's some information leakage there. Well, you could say, don't use inputs you would otherwise use, and it's a huge mess to deal with privacy pools of your inputs. This is a big problem, I would say, for bip47.
 
-# Why on-chain messages are controversial
+## Why on-chain messages are controversial
 
 There are two big questions that come up often here. Why are these on-chain messages so controversial? There are different opinions. Some people say well if you want to use bitcoin blockchain for on-chain messages then you should be able to, and others call it a waste. Where is this coming from? The initial thing to think about is that the blockchain is global and a notification is meant to be personal and local. It should only be between sender and recipient. Nobody else cares about this message. You're using the blockchain to do something that only concerns two people. In the blockchain, though, we do care about where all the coins are at any given time. We have all agreed to track the UTXO set. But this message is not really part of that. I think that's the fundamental philosophical disagreement there where it is possible to put the message on-chain, but really you'd rather not.
 
@@ -91,7 +91,7 @@ More generally, we do have alternatives. This is not the only way to do it. So w
 
 This doesn't solve the problem but something to think about is that you don't really need to use the bitcoin blockchain. You just need global state that everyone agrees on. Do we really need to use the bitcoin blockchain? What if we use spacechains, litecoin, or ethereum to put the message somewhere else? I think it separates out the concerns, but doesn't completely solve it because blockspace is theoretically limited everywhere.
 
-# Why the notification can't be sent off-chain
+## Why the notification can't be sent off-chain
 
 Why does the message have to go on-chain? Why can't we have Alice just send a message to Bob? Just give Bob the key? Isn't that fine? The answer is no but it's not as obvious as you might think. Say Bob gives his key to Alice, sends a message, and Alice never acknowledges that they receive it. If you start sending money before they even acknowledge that they got your key, then that's not ideal. You need someone to respond. But now you're back to interactive, and therefore we don't need a new protocol because you can just ask for a fresh address.
 
@@ -103,7 +103,7 @@ An interesting thing that the blockchain does is that it guarantees that a notif
 
 It's interesting to think about. Alice is sending a message to Bob. She is using a third-party, which is the blockchain, which is a very reliable third-party.
 
-# bip47 variant: Prague protocol
+## bip47 variant: Prague protocol
 
 We were discussing if there were any ways we could improve bip47. The idea is to solve the problem before in bip47 where you are using your own inputs to send a message to the recipietn and now you are linking some of your coins to the recipient with an intention to pay. If you could ask someone else to put it on the blockchain on your behalf, then you break the link. You can also batch these notifications. You could have a single person that agrees to do this and they put a single OP\_RETURN or some tricks to put it into witness data into a single message. There are some tricks where you can decrease the size. The key of the sender would have to be put in there, and then the recipient would have to know the message is meant for them. You can get away with saying well I will only use the first 4 bytes of the recipient key, and then there might be a collision but it turns out that the cost is not that high because it turns out that they generate an xpub and start watching is not a high cost so you shouldn't worry about those collisions.
 
@@ -111,7 +111,7 @@ There is a tradeoff where one trick that bip47 does or one design goal was to ma
 
 One obvious downside of this is that the person who is batching these notifications has to get paid out of band like through lightning network.
 
-# bip47 variant: private payments (bip351)
+## bip47 variant: private payments (bip351)
 
 Here's another variant. This took the Prague protocol and made a few small tweaks, one big change. It replaces the outsourcing to blinding. Instead of having this requirement that someone else needs to put the information into the blockchain, you can take the information and blind it in such a way that nobody can see who the recipient is. While this is a nice thing, it also introduces the other issue where the recipient doesn't know which messages are meant for them. So now they need to download all the notifications, whereas in the prior 2 protocols you only had to look at messages that had your xpub in it. So the recipients have to check all notifications.
 
@@ -119,11 +119,11 @@ On the plus side, there is no out-of-band payment required. It's a bit of a trad
 
 The person actually sending the money can put the message on-chain and put it into OP\_RETURN. This would definitely not be compatible with current software and there would need to be some way to relay the OP\_RETURN messages to the clients that want to use the protocol.
 
-# Robin Linus' stealth scheme
+## Robin Linus' stealth scheme
 
 Skipping this. I might put a link up. Follow me on twitter and when this video goes out, I'll put a link to this scheme.
 
-# Silent payments
+## Silent payments
 
 There's a different tradeoff in silent payments. We rely on the data already put on the blockchain to generate the shared secret. Given that you are paying someone, you already have a key that you use to pay someone with. You have the input key. Why not use the input key with the key that the recipient has made public? Why not use that to derive a shared secret? We can do that. It requires no extra on-chain data. The transaction looks like any other transaction. That's nice.
 
@@ -131,7 +131,7 @@ But now there is a scanning requirement: a recipient doesn't know whether or not
 
 There are some points of complexity. I won't go into it due to time.
 
-# Overview
+## Overview
 
 If you have a situation where you can at least interact once with the recipient, my recommendation would be to just hand out an xpub. Give them an xpub and let them pay you multiple times. If the server knows your keys, and you have a lite client that hands out keys to a server, then use the trustless address server. If you run your own server, you can run btcpayserver or run a trustless address server yourself. If you are okay iwth the concept of on-chain notifications, then you can use bip47 or one of the variants. If you run your own full node, then the silent payments model is the obvious way to go I think.
 
