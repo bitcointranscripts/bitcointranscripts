@@ -1,16 +1,17 @@
 ---
-title: Bolt Anonymous Payment Channels For Decentralized Currencies
+title: "BOLT Anonymous Payment Channels for Decentralized Currencies"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy']
+tags: ['research','privacy-enhancements','lightning']
 speakers: ['Ian Miers']
+date: 2017-11-04
+media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=3630s
 ---
-
 paper: <https://eprint.iacr.org/2016/701.pdf>
 
 To make questions easier, we are going to have a mic on the isle. Please line up so that we can have questions quickly. Okay, now we have Ian Miers.
 
-My name is Ian Miers. Just got my PhD at Hpkins... authors of zcash, zerocash, ... My interest in bitcoin was, first getting involved, was dealing wit hthe privacy aspect. There is also a scaling problem. I assume you are aware of that. The bottom line is... converting this to PDF doesn't work well, hm. The bottom line is that... blockchain-based payments have scaling issues. They are expensive in resources and money resource usage and just time, the time latency. This is a problem that is kind of annoying. It's next generation payments, but it's expensive? What?
+My name is Ian Miers. Just got my PhD at Hpkins... authors of zcash, zerocash, ... My interest in bitcoin was, first getting involved, was dealing with the privacy aspect. There is also a scaling problem. I assume you are aware of that. The bottom line is... converting this to PDF doesn't work well, hm. The bottom line is that... blockchain-based payments have scaling issues. They are expensive in resources and money resource usage and just time, the time latency. This is a problem that is kind of annoying. It's next generation payments, but it's expensive? What?
 
 This is something we're fmailiar with. Hve you tried to buy a drink at a bar? It has fees at the merfhant payment processor. It has a time involvement.
 
@@ -28,17 +29,17 @@ And so, the legality of the matter... the ... might actually have worse privacy 
 
 The hubs might need your real identity, depending on KYC laws or their jurisdiction. It's a long term .... It's quite easy to link these to your real world identities. You use the payment channel to pay Amazon well now they know the linkage and they can collude. Opening channels with anonymous funds.. like zcash, use coinjoin or some mixnet to get privacy in bitcoin, doesn't solve these issues, because you still have long-term pseudonyms. Bitcoin plus lightning is not particularly private. Zcash has privacy-- if you could combine that with lightning, you will lose privacy.
 
-# Solutions
+## Solutions
 
 So then we get into my work. This is BOLT. It's a set of protocols for privacy preserving payment channels. There are three versions. There's a uni-directional channel that allows Alice to send fixed amounts of money to Bob, using zcash and some cool tricks and compact e-cash scheme (not zcash sorry). Then a bi-directional scheme allowing them to exchange arbitrary values between... it's blinding signatures, zero knowledge proofs, fair exhange, etc. And then third a multi-hop chained payment network, ... third party payments.
 
-# What is the privacy for channels?
+## What is the privacy for channels?
 
 Unlike in bitcoin or zcash, a payment if you make it, ... in channel enetworks, you have to have an open channel. If I am a bartender and someone wants to pay me on a tab, they have to already have a tab. That limits the anonymity set. It's not a random person, it's someone I have already interacted with. So that's a problem. In this setting, you only have point-to-point channels. One end has t obe a known pseudonym. If someone used a ranodm identifier, you wouldn't have any guarantees of any channels. So you have channels open... but it might just be you, so every time you use it, people will know it's you.
 
 In a payment channel network, this gets better.
 
-# Atomic swaps and zero-knowledge proofs
+## Atomic swaps and zero-knowledge proofs
 
 The problem... ... but you don't actually know; you just know it differed by 5 bucks. The funny thing is that this sounds hard. But it's not cryptographically hard. If you know some cryptography, this is simple: use commitments and zero-knowledge proofs. It works out well. With those, you can transform a setting where you have an IOU for $100, the merchant is owed, the customer is owed $100 and the merchant $0, and you... where the merchant is owed $5 and the customer $95. You do this trade, you want to do it without revealing anything. It's simple. All you have to do is, use a zero-knowlede proof. This thing exists. This is the magic of zero-knowledge proofs.
 
@@ -46,19 +47,19 @@ However, I said that's not even hard. If I have an IOU for $100 and $95, and I c
 
 The first function of an IOU is that it allows you to cash out your money in the blockchain. You also want to be able to buy another IOU. It's inconvenient, but you can only get your money back. You can go restart the process if you want. It's not a big problem. It means that Alice can safely give up her ability to buy another beer without losing money. The bartender can safely sign a new IOU for $95 if Alice goes and closes the other one. You can't give her the ability to go purchase more beers.
 
-If you have your two IOUs ((are we doing e-cash here?))... you want the bartender to sign the new one. You prove that this one has been made correctly. Then you reveal the identifier to prevent you from playing this card. And then youactually get the bartender to sign the new one as valid before closing the channel. No payments have gone through, you have given him $5. Once you have a safe new one, you can destroy the old one. You can use this identifier and say it's no longer valid. If you try to close with that one, the bartender can say hey this one was stale I cna prove this. Once this is done, he can give you a new IOU, and this gives you complete privacy.
+If you have your two IOUs ((are we doing e-cash here?))... you want the bartender to sign the new one. You prove that this one has been made correctly. Then you reveal the identifier to prevent you from playing this card. And then you actually get the bartender to sign the new one as valid before closing the channel. No payments have gone through, you have given him $5. Once you have a safe new one, you can destroy the old one. You can use this identifier and say it's no longer valid. If you try to close with that one, the bartender can say hey this one was stale I cna prove this. Once this is done, he can give you a new IOU, and this gives you complete privacy.
 
-This is not a theoretical thing. We have implemented this. The details of the crypto primtiives are not interesting. It takes less than 100 ms per hop to make a payment. This doesn't use zk-SNARKs (which is not synonymous with zero-knowledge proofs). There is no trusted setup here. You can do this with well-established cryptography. This is nice, it's scaleable. The numbers are in the paper.
+This is not a theoretical thing. We have implemented this. The details of the crypto primtives are not interesting. It takes less than 100 ms per hop to make a payment. This doesn't use zk-SNARKs (which is not synonymous with zero-knowledge proofs). There is no trusted setup here. You can do this with well-established cryptography. This is nice, it's scaleable. The numbers are in the paper.
 
 You can do more than just send payments, having a bartender and a beer.... You can do multi-hop payment networks, where the participants and intermedaries are hidden. This sidesteps the issues with lightning network and collusion problems and so on. It doesn't have htis problem. We can hide payment value, participants, everything. The only thing is like maybe a sidechannel which is hard to get around. You can also do a more sophisticated stuff like more than just monetary balances... you can have an IOU for A, we are going to prove that the two IOUs differ by 5 dollars. Arbitrary state transitions, you could do something like plasma. Also you are moving out the cryptographic from the blockchain-- you are validating an ECDSA signature.
 
-# Deployment
+## Deployment
 
 One thing I would like to do is compare this to tumblebit, lightning, everything else. The difference is that tumblebit and lightning payments work in bitcoin as-is. They don't offer privacy from collusion in others in the network. In lightning, if everyone in your channel or network colludes, you can be identified. In tumblebit, if the hub... they can identify the sender. In BOLT, you can get full privacy, but at the cost of...
 
-So how do you deploy this? It ends up being the case that this can be deployed in zcash or bitcoin by adding a new opcode. I am not sure if this is a soft-fork or a hard-fork. Interesting discussion. You can deploy by adding an opcode. In bitcoin, one caveat. You need to be able to anonymize the funding of a channel. One cheat that makes this efficient is that it's a two-party protocol and you're doing exchanges back and forth. You can end up aborting.. the protocol goes dead or maybe it's malicious and you end up in an invalid state and you have to close the channel. This links a close to an abort. Yo uwant to make sure that if they link to the open channel opening, then they can't identify you.
+So how do you deploy this? It ends up being the case that this can be deployed in zcash or bitcoin by adding a new opcode. I am not sure if this is a soft-fork or a hard-fork. Interesting discussion. You can deploy by adding an opcode. In bitcoin, one caveat. You need to be able to anonymize the funding of a channel. One cheat that makes this efficient is that it's a two-party protocol and you're doing exchanges back and forth. You can end up aborting.. the protocol goes dead or maybe it's malicious and you end up in an invalid state and you have to close the channel. This links a close to an abort. You want to make sure that if they link to the open channel opening, then they can't identify you.
 
-# Q&A
+## Q&A
 
 Q: Can you talk a little bit about the requirements to... revocation keys... and what a large merchant such as large online retailer might need to build in infrastructure to deal with this?
 

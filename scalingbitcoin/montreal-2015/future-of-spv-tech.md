@@ -1,8 +1,8 @@
 ---
-title: Future Of Spv Tech
+title: "Future of SPV Technology"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'wallet']
+tags: ['lightweight-client']
 ---
 
 <https://docs.google.com/document/d/1t0bSZj5b66xBdW7xrjHlcvfqYAbTaQDB4-_T0Jvs3T4/edit#heading=h.5lm45oa6kuri>

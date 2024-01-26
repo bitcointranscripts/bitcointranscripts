@@ -1,12 +1,10 @@
 ---
-title: Lightning
+title: "Lightning work group session"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy', 'scalability']
+tags: ['lightning']
+date: 2016-10-08
 ---
-
-Lightning work group session
-
 <https://twitter.com/kanzure/status/784783992478466049>
 
 You have a network. Anyone can join the network. You have two points and you want to do route finding between those two points. To be clear, this is a network of channels. It is similar to the internet, but it is not the internet. How do you find such a route? It's easy when you find all the implements of the network. Some of the information changes frequently. Payments change the balance of the channels so that other payments become impossible. There's scalability issues there. And there is a privacy issue as well. You tell information about how many payments, how much expense you have, this is undesirable in some circumstances. Another thing is that it shows who you are connected to, which might not be desirable to show in some situations. If there are two nodes in the network and one node says I hate hte other node and you must not make that connection... so then other nodes have to make a decision, and then if you want to make a connection between two parts of the network, then you might have to hide one connection from the other network.

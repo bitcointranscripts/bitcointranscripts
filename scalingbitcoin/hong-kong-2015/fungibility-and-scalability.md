@@ -2,8 +2,9 @@
 title: Fungibility And Scalability
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy']
+tags: ['privacy-enhancements']
 speakers: ['Adam Back']
+date: 2015-12-06
 media: https://youtube.com/watch?v=aQ1--w4uEMM&t=2443
 ---
 

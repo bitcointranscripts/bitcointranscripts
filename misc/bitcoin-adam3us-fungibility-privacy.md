@@ -2,7 +2,7 @@
 title: Fungibility and Privacy
 transcript_by: Bryan Bishop
 speakers: ['Adam Back']
-tags: ['privacy']
+tags: ['privacy-problems','privacy-enhancements']
 date: 2014-02-09
 media: https://www.youtube.com/watch?v=3dAdI3Gzodo
 ---

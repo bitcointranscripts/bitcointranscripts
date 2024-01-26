@@ -1,13 +1,12 @@
 ---
-title: Multi Hop Locks
+title: "Multi-Hop Locks for Secure, Privacy-Preserving and Interoperable Payment-Channel Networks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'privacy', 'lightning']
+tags: ['research', 'multisignature','privacy-enhancements','lightning']
 speakers: ['Giulio Malavolta', 'Pedro Moreno-Sanchez', 'Matteo Maffei']
+date: 2018-10-06
+media: https://www.youtube.com/watch?v=3mJURLD2XS8&t=1717s
 ---
-
-Multi-hop locks for secure, privacy-preserving and interoperable payment-channel networks
-
 Giulio Malavolta (Friedrich-Alexander-University Erlangen-Nuernberg), Pedro Moreno-Sanchez (Purdue University), Clara Schneidewind (Vienna University of Technology), Aniket Kate (Purdue University) and Matteo Maffei (Vienna University of Technology)
 
 <https://eprint.iacr.org/2018/472.pdf>

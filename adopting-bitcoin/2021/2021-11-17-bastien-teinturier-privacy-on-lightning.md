@@ -4,15 +4,12 @@ speakers: ['Bastien Teinturier']
 date: 2021-11-17
 transcript_by: freddiekrugerrand
 categories: ['conference']
-tags: ['lightning', 'privacy']
+tags: ['lightning', 'privacy-problems']
 media: https://www.youtube.com/watch?v=gOiKlx9a1xg
 ---
-
-Topic: Privacy On Lightning
-
 Slides: <https://docs.google.com/presentation/d/1llk70vI2Mo5uQ7vnpfbl1qlr0qe0NLpySIelChIKhH4/edit>
 
-# Introduction
+## Introduction
 
 Buenos Dias San Salvador, I'm Bastien. Hopefully my slides are going to come up. Oh yay, perfect. So I'm working on the Lightning Protocol Specification and one of its main implementation at Acinq.
 
@@ -20,10 +17,12 @@ I'm here to talk to you about privacy. This is a big topic. It's not a black and
 
 I've been having some issues with slides, so I won't have time to go into everything. I'll keep the most complex stuff at the end. Let me know when I'm reaching the limit.
 
-# Aspects of Privacy in Lightning
+## Aspects of Privacy in Lightning
+
 One important thing to understand about privacy in Lightning is that there are two aspects to understand that are quite separate. There's on-chain to off-chain aspect, where you want to be able to protect the privacy of the link between your on-chain stuff and your off-chain stuff. When you open channels you want to make sure that your on-chain and off-chain activities can't be linked. And then there's the privacy of what happens once you are inside the off-chain world, the off-chain to off-chain payments. These are quite distinct and don't have the same trade offs.
 
-## On-Chain to Off-Chain
+### On-Chain to Off-Chain
+
 We'll start off explaining what happens in the on-chain to off-chain part. I will not go into details about how Lightning works, because we're talking about privacy. The only thing you need to know for now is that Lightning is a network. It's just a big graph of nodes with edges between them and each of them is a Lightning channel with an on-chain transaction called a funding transaction which happens on-chain and has a UTXO which is backing that channel. Every one of these edges between points has a corresponding funding transaction on-chain. We'll see a few things related to that. The only other thing that you need to know for privacy and this graph is that in Lightning we are actually announcing these channels to each other via a message called the channel announcement where we tell the network look there is this UTXO on-chain and it is opening a channel between this node and this node.
 
 Let's first focus on the funding transaction aspect. The way Lightning works today is that the funding transaction has an output which is a 2-of-2 multi-sig wrapped in a pay to witness script hash. When you create a channel you just broadcast this red transaction on-chain, and since it's using pay to witness script hash, people watching the chain do no know it's a Lightning channel. It just looks like any other pay to witness script hash on the network. When you close the channel and spend that output, you have to reveal the script that is wrapped in the pay to witness script hash. At that point everybody watching the chain knows that this was a 2-of-2 multi-sig, and these are not very common at all. When people see that on-chain, they can be pretty sure that this was a Lightning channel. This is bad. This is the kind of thing we want to avoid. Luckily, this one is very easy to fix with Taproot. I'm saying Taproot in many places, but we're actually using Schnorr, not the script part of Taproot. It's just here we will change the transaction, instead of using a pay to witness script hash we will use what Jonas just talked about, musig2. Instead of exposing the two different keys that went into this multi-signature, we'll be using musig so it will just look like any other key path single signature spend on the network. Anyone looking at the chain will just see that this is one Schnorr signature, it could be anything.
@@ -38,7 +37,8 @@ Fortunately we have a solution for that, and I will be shilling my own work here
 
 Now we've seen most of the on-chain to off-chain stuff. At that point you kind of know how to protect these links.
 
-## Off-Chain to Off-Chain
+### Off-Chain to Off-Chain
+
 Now we'll move on to off-chain to off-chain, once you're fully in the Lightning Network. How do you pay, what are the potential privacy issues and how do we protect against those?
 
 So first off, just a quick reminder of how payments work in the Lightning Network. We are using onion routing, onion encryption, which is great. The scheme we are using is called Sphinx, it has security proofs. It looks like everything is perfect and it is protecting our privacy. What we'll see is that we are leaking data outside of the cryptography which weakens the privacy guarantees of onion encryption. The way that onion encryption works is that the sender finds a route to the recipient. [Referring to slides.](https://docs.google.com/presentation/d/1llk70vI2Mo5uQ7vnpfbl1qlr0qe0NLpySIelChIKhH4/present#slide=id.gfd560bf0c9_0_46) Alice finds a route to Dave through Bob and Carol. She is going to encrypt in layers. She's going to encrypt first something to Dave, then for Carol and put the one for Dave inside, then for Bob and send the message to Bob. Bob is only able to decrypt the outer layer of the onion, the part that is for him that reveals that he should forward something to Carol. Then Carol receives something and discovers that it is for Dave. When Bob receives the payment he knows it came from Alice, but he doesn't know whether there were people before Alice, and he knows that it needs to got to Carol, but doesn't know whether there are people after Carol. The same for Carol, and all the nodes in the route.

@@ -1,38 +1,35 @@
 ---
-title: Lightning Network Security Analysis
+title: "Security Analysis of the Lightning Network"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security', 'privacy', 'lightning']
+tags: ['lightning']
 speakers: ['Olaoluwa Osuntokun']
 date: 2017-02-03
 media: https://www.youtube.com/watch?v=Eq_eY8iWrKI
 ---
-
-Security analysis of the lightning network
-
 <https://twitter.com/kanzure/status/957978915515092992>
 
 slides: <https://cyber.stanford.edu/sites/default/files/olaoluwaosuntokun.pdf>
 
-# Introduction
+## Introduction
 
 My name is Laolu Osuntokun and I work on lightning stuff. I go by roasbeef on the internet. I work at Lightning Labs. I am going to be giving an overview of some security properties and privacy properties of lightning.
 
-# State of the hash-lock
+## State of the hash-lock
 
 Before I start, I want to go over the state of the hash-lock which is the current progress to completion and design of lightning. We have a set of specifications called lightning-rfc where a bunch of collaborators get together and work on lightning. You should be implementing lightning fully from the specs. It goes through everything including the funding process, key derivation, p2p interaction, messages, etc. We have multipe implementations being tested on bitcoin's testnet currently. There are four implementations. I work on lnd, one of many. There's a <a href="http://faucet.lightning.community/">testnet lightning faucet</a> right now and this is basically like a way you could get some bitcoin. Instead of getting on-chain coins, you get a channel opened up with you and it's kind of a cool way to get started with lightning because you go to the website, you have the node up, you get a channel setup, and then you can use that channel to make payments on the lightning network. This gives you a gateway to the network and using that gateway you can send payments around to whoever else. Another cool thing that happened recently is that litecoin is going to be getting a malleability fix so lightning can work on litecoin. Also work is occurring for trying to get lightning to work with mimblewimble- that's alchemy, really cool stuff.
 
-# Talk outline
+## Talk outline
 
 Alright. So here's my brief outline. I'm going to do lightning in two slides because we're going to be moving kind of quickly so I figured I would explain lightning in two slides. Talk about some assumptions about the liveness of lightning, then I wil go into the peer-to-peer networking layer of the system, and how we have privacy within routes themselves, how hash-lock decorrelation works in lightning (something of a bug that we plan to fix), and then I'll talk about something called blinded channel outsourcing.
 
-# Bitcoin transactions
+## Bitcoin transactions
 
 So lightning in the first slide... basically, this is the way that bitcoin works currently, right. You basically start with Alice and Bob. Alice wants to pay Bob. They all connect to the bitcoin network. Bob gives Alice a bitcoin address. And then broadcast that to the bitcoin network. Even though this interaction was between Alice and Bob, in bitcoin the entire network needs to be involved. Miners get the transaction, they confirm the transaction, and then it gets broadcasted to everybody. Even though Alice and Bob were the only people involved in this payment, every single person in the network has to do this work. This is inefficient. We have to involve an entire network just because of a private contract between two people.
 
 There are some issues with this because now every single payment that is completed will be added to the blockchain and increase the size of the blockchain. It takes up bandwidth because everyone has to copy it to everyone else. Another thing is that confirmation times are kind of unpredictable and not instantaneous. There's a randomized schedule by which blocks get confirmed on and we don't know how long it is going to take for Alice to send the money to Bob. They could do a zero-confirmation bitcoin transaction but that could be risky.
 
-# Lightning payments
+## Lightning payments
 
 Inherently, global broadcast doesn't scale. If we want to have millions and millions of users, we can't have this scheme of connecting out to everyone else Lightning is a solution to this problem. It's basically a system for off-chain payments using off-chain contracts that are anchored in the bitcoin blockchain. Using these off-chain contracts, we can make the system more efficient and more private because all of the information isn't on the chain. In bitcoin without this, there's an entire transaction graph available from the blockchain that anyone can trace through, while with lightning we have these-- everything is more efficient and off-chain.
 
@@ -44,7 +41,7 @@ The cool thing about this is that the on-chain footprint is really minimized, we
 
 So that's lightning.
 
-# On-chain liveness
+## On-chain liveness
 
 I'm going to talk about the difference in security models between lightning and bitcoin. So, lightning actually uses bitcoin but it could be used on many other chains as well. And we basically rely on bitcoin for the ordering of transactions. This is basically so that we know which transaction happened before and after, and we can base our protocol on this.
 
@@ -56,7 +53,7 @@ There's a few proposed solutions. One possible solution is called "time-stop" an
 
 Another possible mitigation that I was kind of talking with people here earlier today is you can create a consensus-enforced dependency on the commitment transaction and the exit transaction. This means that they must get into the block at the exact same time. You might be able to use generalized covenants or, Bram had some ideas about a new opcode that could make sure the transactions themselves are kind of dependent on each other. Another way is to possibly set the fee structure on the commitment transaction and the exit transaction such that if the commitment transaction has insufficient fee and you have to use the gesture transaction to pull it into the chain itself. This doesn't work if the attack is performed by miners, but it could still be effective.
 
-# Peer-to-peer networking layer
+## Peer-to-peer networking layer
 
 Moving along to the p2p network layer. All connections between all nodes in the lightning network are always encrypted and authenticated at all times. They are encrypted for the entire duration. Nodes never send cleartext protocol messages. They don't give away version information or anything like that. We use something called brontide (<a href="https://github.com/lightningnetwork/lightning-rfc/blob/master/08-transport.md">BOLT 8</a>). It's one of the specifications. Brontide is a variant of the <a href="http://noiseprotocol.org/">noise protocol framework</a> which is used by Signal and Whatsapp and some other protocols. We tweak it a little bit to suit our needs. We also have a protocol for authenticated key agreement, it uses a series of hash functions and ECDH to do this <a href="https://signal.org/docs/specifications/x3dh/">triple diffie-hellman thing</a> to derive shared secrecy and keys. We use something called <a href="https://en.wikipedia.org/wiki/Authenticated_encryption">authenticated encryption with associated data (AEAD)</a> which wraps up authentication and encryption all in one. We can get some cool security properties from that. The other thing about the noise framework is that it solves this kind of man-in-the-middle-attack when you're sending keys over the channel because every single payload sent over the channel is actually authenticated. So if someone tries to swap out a key that I'm sending, then the MAC check will fail and then we won't move forward. In the noise framework, you can have parameters on which cryptosystem you're using for encryption, hash functions, and which group you're using. We use libsecp256k1 which is the bitcoin curve, we also use ChaChaPoly, and sha256 for our MAC. On the right in the diagram, that's the packet structure. We do some things like we encrypt the message length of the packet as well, which you could say maybe makes traffic analysis more difficult because now you can't-- normally delineate what the packet size is after the keys itself. We also rotate keys every few messages and this allows us to have backwards secrecy in the sense that if my keys get compromised then they can't go and decrypt every single message that I sent in the past before that.
 
@@ -68,7 +65,7 @@ Right now we have four signatures, which could be compressed, and we could use t
 
 Finally, we have the channel update announcement message. Within lightning, it's a graph with channels and the channels connect to different nodes. But it's actually a directed graph because you can float funds in one direction or the other direction. Each node controls which direction it can allow funds in. I can not even advertise my channel, or I could advertise certain things like my routing policy which includes timelock, fees, and what type of payments I accept. This is all signed. So what we have is basically an authenticated data structure of the channel graph itself. Nobody can forge any updates to the channel graph, and every node can use the blockchain and all the updates and we can ensure that we all have the same view of everything.
 
-# Onion encoded payment routes (sphinx)
+## Onion encoded payment routes (sphinx)
 
 <https://www.youtube.com/watch?v=Eq_eY8iWrKI&t=11m25s>
 
@@ -78,13 +75,13 @@ This gives us a number of cool security features. When a node gets this packet, 
 
 We also do a cool thing where we re-use the shared secret in the onion circuit to encrypt error messages back to the sender which helps us compartmentalize who knows what data. Maybe if you know why the payment failed, and you were an intermediate node, then you get more information about the system.
 
-# Onion encoded payment routes
+## Onion encoded payment routes
 
 Getting into a little bit more of how we use sphinx in lightning... We use something called source routing which means that the sender can currate the entire route that the payment takes. This is really good because it gives the sender total control about the route. They know how long it may take, they know who they're sending it through, and they know how many fees they will be paying, and this is really good because you can have predictable fees. One of the ways that we extended sphinx is that we added this per-hop payload. This is authenticated end-to-end. This payload does-- the payload gives information about how to forward it to the next hop. It gives them basically what timelock they should use, the amount they should forward, ensure they get the proper fee, and say you got this on the bitcoin link but forward it to the litecoin link. All of this information is authenticated and no node is able to tamper with this.
 
 Another important feature we have is protection from replay attacks. Without replay attack protection, someone could use an old packet from an old payment and inject it back into the network and see where it propagated at. We have a few things that we use to prevent that. One thing is that we commit to the payment hash inside of the sphinx packet itself. You can't take the sphinx packet and add another payment hash to it. If you wanted to try to replay, you would have to re-use the payment hash, and if you re-use the payment hash basically if people remember the payment hash then you lost money. Another thing that we can do is that we can have a log of messages that we have received. Because HTLCs have a timeout, we have an upper bound of when they could forget about that message. So say you keep it around for 1 day and then after that day you abandon it and then you know things are okay. This isn't perfect because the network is still subject to timing and traffic analysis, meaning if we could watch it and monitor it and look at packets moving around then we would be able to ascertain some information about the payment path. The other thing is that if we have poor path diversity, meaning that the graph isn't very well connected, then an adversary could figure out where a payment is going. Where if Dave is on some island and connected with only a single link then maybe we could know that I'm forwarding it to Dave or possibly if we have different payment channel capacity amounts then I can rule out which possible paths a certain payment is going to go on.
 
-# Hash-lock decorrelation
+## Hash-lock decorrelation
 
 <https://www.youtube.com/watch?v=Eq_eY8iWrKI&t=14m48s>
 
@@ -92,7 +89,7 @@ This is kind of like one thing that is not fixed in the current 2017 version of 
 
 But we know how to solve this. The problem is that the payment hash of the hash-lock is the same for the entire route. So if we could basically decorrelate that by re-randomizing it, similar to something that sphinx does. In sphinx, it has a very compact size and achieves that by using the same group element of the public key, and every node randomizes their public key along the route. This is one construction that was recently brought to the mailing list to switch from hash-locks to "key-locks" for path length y. Some people suggested using SNARKs and that's really heavy and it could take seconds to generate it. There were some other ideas like one-time use signatures and so on. But here's a version here I call "key-locks". Instead of using hashes, we use public keys to propagate payments itself. Pretend that Q is the key you received on the incoming HTLC. It's in the payload too, the payload would be extended to carry this information. And there would be a scalar called R which is also in the payload. Using Q and R you could get a point P and because of this mathematical property in elliptic curves themselves you know that Q and P are related by some scalar value. You know the private key for Q is actually P + R so you know if you get the private key for P then you could claim the incoming HTLC with Q itself and that's basically how it works in a nutshell. Bob sends out P on the outgoing payment. After it gets the private key for P, it can compute the private key for Q which is Q = R - P. And that re-randomizes it and lets us eliminate this correlation. One interesting aspect is that this enforces a causal dependency on the route itself where before if anyone found out about the hash-lock ahead of time they could still claim it. But now Dave must claim it, then Eve, then Bob, then Carol. So this is still a property that needs to be analyzed I guess.
 
-# Blinded channel outsourcing
+## Blinded channel outsourcing
 
 <https://www.youtube.com/watch?v=Eq_eY8iWrKI&t=17m10s>
 
@@ -104,7 +101,7 @@ We can't make it super-efficient, but we can make it more private. This is some 
 
 Some things about channel outsourcing. Why would the outsourcer want to do this at all? Maybe we pre-pay them with a dollar or two. Maybe that will account for their disk space and bandwidth because I'm only doing 10,000 state updates over an entire year. Maybe we could give them a bonus where if Bob tries to cheat me and you catch him then you get some bonus and that incentivizes them to do this. One problem is sybil resistance where if we don't have any authentication that we know it's a real channel then someone could give them garbage data and fill up their disk. But there's one possible solution which is that we could require the user to give the outsourcer a linkable ring signature which says here's a bunch of channels we know are on the chain and I'm going to give you a signature that proves that I am one of those channels. With this, the outsourcer could know actually okay this is a real channel in the chain with something at stake. The linkability of the linkable ring-signature allows the channel outsourcer to know if someone has signed it twice, so they know they can reject that data or information and this ensures that there's only a unique user per user. And that's everything.
 
-# Q&A
+## Q&A
 
 <https://www.youtube.com/watch?v=Eq_eY8iWrKI&t=20m24s>
 
