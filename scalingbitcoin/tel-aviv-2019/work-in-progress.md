@@ -1,34 +1,32 @@
 ---
-title: Work In Progress
+title: "Work In Progress Sessions"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['proof-of-work']
-speakers: ['Mikael Dubrovsky']
+speakers: ['Mikael Dubrovsky','Yoshinori Hashimoto','Daniel Marquez','Thomas Eizinger']
 ---
-
-Scaling Bitcoin 2019 Tel Aviv "yesod"
+((this needs to break into individual transcripts))
 
 <https://twitter.com/kanzure/status/1172173183329476609>
 
-# Optical proof of work
+## Optical proof of work
 
 Mikael Dubrovsky
 
 I am working on optical proof-of-work. I'll try to pack a lot into the 10 minutes. I spent a year and a half at Techion.
 
-## Physical scaling limits
+### Physical scaling limits
 
 Probably the three big ones are, there's first the demand for blockchain or wanting to use bitcoin more. I think more people want to use bitcoin. Most of the world does not have access to property rights. There's a lot of pent up demand for something like bitcoin. Bitcoin is $100 billion and offshore banking is $20 trillion. There is definitely demand, but that doesn't seem to be the bottleneck for now.
 
 Throughput seems like the bottleneck of this conference, so I won't address it.
 
-## Scalability of PoW
+### Scalability of PoW
 
 The energy use of bitcoin has grown monotonically or even worse with the bitcoin market cap. Nobody really knows how much energy bitcoin is using. But we do know that we're getting centralization of miner often in countries where the governments are not ideal. People mine in some of these countries because they can make deals for better electricity.
 
 Part of the problem with electricity-based PoW is that it's centralized, open to partioning attacks, it's open to regulation in general since it's next to power plants and waterfalls. It's huge, it needs cooling, it can't be hidden. It's unfairly distributed especially geographically, and it excludes nearly all large cities which excludes most living people. Also you need a lot of electricity.
 
-## Redesigning the economics of PoW
+### Redesigning the economics of PoW
 
 So instead of getting rid of PoW, can we change the economics for miners?
 
@@ -38,11 +36,11 @@ We can try to pick a computation that the optimal hardware for this computation 
 
 The benefits you would get of a high CAPEX proof-of-work would be that it would be hard to arbitrage compared to electricity. Access to capital is much more democratic. It scales better, it's geographically distributed, less partition attacks on the network, and the hashrate is more resilient to the coin price. This is a totally fake graph, but the hashrate follows the bitcoin price. The hashrate doens't grow all the time because people turn off their miners. If you buy a miner and it has a low operating cost, you wouldn't turn it off, so even if the price is volatile this hashrate wouldn't be volatile.
 
-## PoW algorithm design goals
+### PoW algorithm design goals
 
 The high level goals for a new PoW would be to have an accelerated high energy-efficient hardware, let it be digitally verifiable even if the hardware is analog, and optimal on the hardware you're targeting, and have same or better security than we have now.
 
-## Silicon photonic co-processors
+### Silicon photonic co-processors
 
 There's a number of emerging platforms for analog computing, but this one is very promising because you can go to TMSC or Global Foundries. These kinds of chips are already commercial for processing data coming out of fiber. They do a fourier transform on the optical data in the silicon chip using waveguides made of silicon. This is already commercial and lots of companies are starting to do machine learning with this stack.
 
@@ -54,67 +52,67 @@ We composed a function that you can do on the optical chip with hashes. It's "He
 
 The requirement for the function F to be acceleratable on low-opex hardware like photonic chips, to preserve entropy, and be "minimal effective hard" property.
 
-## Progress
+### Progress
 
 We have some prototypes for these chips. Here's a bench prototype. We were going to bring this, but it got stuck in customs. We hope to publish a paper soon.
 
-## Feasibility for bitcoin
+### Feasibility for bitcoin
 
 Is it time to change bitcoin's PoW to optical proof-of-work? Probably not now, but these geographical centralization issues over time are going to be an issue and at some point bitcoin is going to hit a wall.
 
-# A lucas critique of the difficulty adjusmtent algorithm of the bitcoin system
+## A lucas critique of the difficulty adjusmtent algorithm of the bitcoin system
 
 Yoshinori Hashimoto
 
-## Introduction
+### Introduction
 
 I am going to talk about our research project about difficulty adjustment algorithm. BUIDL is my employer in Japan. This is joint work with my colleagues.
 
-## Difficulty adjustment
+### Difficulty adjustment
 
 The difficulty adjustment algorithm is used to adjust the difficulty of the bitcoin system to achieve one block every 10 minutes based on recent hashrate.
 
-## Policy goal
+### Policy goal
 
 There's a winning rate, a global hash rate, and the block time is an exponential distribution with intensity W x H. The current bitcoin DAA adjusts the difficulty every 2016 blocks (every 2 weeks), and adjusts so that the block time is about 10 minutes. If block generation is too slow, then the winning rate is increased, and if it is too fast, then the winning rate is decreased.
 
-## Sample analogue
+### Sample analogue
 
 If the hashrate was directly observable, it would be easier to determine an ideal winning rate. Still we can compute an estimation of the hashrate. Bitcoin DAA achieves the policy goal by using the estimated historical hash rate.
 
-## Miners' incentive
+### Miners' incentive
 
 If we change the winning rate, then mining profitability will also change. If we increase the winning rate, then it is easier to get the mining reward and more hashrate will be provided. This increases the global hash rate. For miners, it is easy to adjust the hashrate because they can do it just by turning on and off their ASIC machines. Change in winning rate also changes the hash rate.
 
 ((.. I think he's reading from his notes, can we just copy+paste the notes into this document? Thank you.))
 
-## Policy suggestions
+### Policy suggestions
 
 We suggest upgrading Bitcoin DAA to Bitcoin Cash DAA which is a good candidate. There might be some other better one.
 
 <https://ssrn.com/abstract=3410460>
 
-# Offline transactions
+## Offline transactions
 
 Daniel Marquez
 
-## Introduction
+### Introduction
 
 The inspiration for this work came from the concept of banking the unbanked, the open money inititaive introduced me to this, and then MIT DCI's sponsorship of the ethics course and blockchain ethics course this concept of banking the unbanked. This is a subset of that that I would like to talk about, which involves offline transactions.
 
-## Use cases
+### Use cases
 
 I am interested in post-natural disasters or suboptimal infrastructure. Venezuela where the infrastructure might be down but I want to buy basic necessities or maybe a hurricane goes through Miami and I want things to work while everything is offline.
 
-## Possible solutions
+### Possible solutions
 
 There are some possible solutions like the OpenDime wallet or other HSM wallets. There's layer 2 like the lightning network.
 
-## Lightning network
+### Lightning network
 
 Why LN? It's robust, it's getting better, a lot of the talks have focused on LN. What about payment channels when parties go offline? But this doesn't fit the use case, because how can two parties instantiate offline payments?
 
-## WIP
+### WIP
 
 This is very much a work in progress. Email me or tweet at me: dmarquez@mit.edu or tweet at bumangues92. The idea is to enable these transactions over WLAN or bluetooth or something.
 
@@ -126,7 +124,7 @@ Q: I don't think they have attestations. I would want a proof that you are runni
 
 BB: You can do 2-of-2 multisig with the sender and the recipient and then delete the private key. But they can double spend it out from under you unfortunately. You can probably do offline transactions if you are willing to tolerate an on-chain delay of like 3 months.
 
-# Conditional transfer of tokens on top of bitcoin
+## Conditional transfer of tokens on top of bitcoin
 
 Thomas Eizinger (coblox.tech)
 
@@ -142,7 +140,7 @@ Constructing these transactions is non-trivial. You can make a lot of mistakes i
 
 We are working on COMIT, a framework for cryptographic protocols. We're trying to give you primitives that you will need when you build a cryptographic protocol so that you can actually focus on your work. Not just a prototype. Exchanging messages over a robust framework, or negotiating keys, or most cryptographic protocols have timeouts because parties can leave at any point so you need to watch the chain. You need some reusable pieces. You want to hide cryptographic complexity from users.
 
-# Storm: layer 2/3 storage and messaging
+## Storm: layer 2/3 storage and messaging
 
 Maxim Orlovsky (Pandora Core)
 
@@ -166,13 +164,13 @@ At setup time, Alice uses her newly derived public key for both the funding tran
 
 Why is this important? This is tech for incentivized data storage. Alice only needs to store a seed phrase. This can potentially be done on top of the lightning network, and zero transactions will reach the blockchain.
 
-# Building ultra-light clients with SNARKs
+## Building ultra-light clients with SNARKs
 
 Noah Vesely (C-Labs)
 
 .....
 
-# Signet
+## Signet
 
 Karl-Johan Alm
 
@@ -180,7 +178,7 @@ Karl-Johan Alm
 
 <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2019-06-07-signet/>
 
-# Miniscripts
+## Miniscripts
 
 Andrew Poelstra
 
@@ -188,7 +186,7 @@ Andrew Poelstra
 
 <https://diyhpl.us/wiki/transcripts/noded-podcast/2019-05-11-andrew-poelstra-miniscript/>
 
-# Vaults
+## Vaults
 
 Bryan Bishop
 
