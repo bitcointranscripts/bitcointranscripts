@@ -2,7 +2,7 @@
 title: "Splicing, Lightning's Multiparty Future"
 transcript_by: ladyanarki via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=SOKNRHyGRvQ
-tags: ["lightning","splicing","privacy (65)"]
+tags: ["splicing"]
 speakers: ["Dusty Dettmer"]
 categories: ["conference"]
 date: 2023-03-14
@@ -20,16 +20,7 @@ Okay, who runs a lightning node?
 Okay, like half.
 Cool, who runs a lightning node with more than one channel on it?
 Okay, same.
-So we're going to go over some of the lightning basics and then we're going to get into some of the more...
 
-[Audience Lisa]: "Who runs core lightning though?"
-
-Oh, who runs core lightning, that's a great question.
-Hey, there we go.
-
-[Audience 1]: "CLM maximalism."
-
-Let's go; I love it.
 So I'm gonna go over some of the basics of lightning, which, if you might already know this or you watched my talk, I covered this before, but we're gonna go over it briefly just for people that don't know, and then we're gonna get into some of the more detailed stuff relating to privacy.
 
 ## Basics of Lightning
@@ -38,7 +29,7 @@ If you imagine here, we have a mock Lightning network.
 Each of these little, well-drawn boxes are the Lightning nodes, and they have channels between them.
 When you want to make a payment through Lightning, you have to route it across these channels to get it to where you want to go.
 As you can see, this little Bitcoin is moving to where it's trying to go.
-So when we talk about working on Lightning, all of the work—development work—is on an individual channel.
+So when we talk about working on Lightning, all of the development work is on an individual channel.
 That's what we focus on, but the end result creates this mesh.
 We're gonna dive into just what a channel is for a second.
 An important thing you might not know about a channel is that it has an actual size.
@@ -98,12 +89,13 @@ It tells its peer that it wants to do a splice.
 The other peer could say, "Hey, I want to open a channel." And with the collaborative transaction protocol, they can decide to do it together.
 So when they do that, they then take their payloads, the splice payload, and the open channel payload, merge them into a single transaction, and then when that gets confirmed, they both get what they wanted through the same transaction.
 So this gives us a lot of flexibility with how we build transactions and allows us to make them into one.
-*Okay.
+
 How's everyone feeling?
-Is this all making sense so far?* Raise your hand if it's not making sense.
+Is this all making sense so far?
+Raise your hand if it's not making sense.
 Great, okay, either you're all shy or you're all following; I love it.
-Okay, so just to really drill this home, you can...
-it doesn't stop there.
+
+Okay, so just to really drill this home, it doesn't stop there.
 Say there's a third node that wants to make an on-chain payment; they can all three do it together.
 And in that case, it still again gets put into one single transaction: combine the open channel payload, the splice payload, the payment, and they all get it done.
 Collaborative transactions, otherwise called interactive transactions, is this idea of building transactions among multiple peers, and they're designed to be extensible.
@@ -146,6 +138,7 @@ Like when, which message gets sent when?"
 The ordering—well,  the ordering mostly doesn't matter, but you do have somebody who starts it.
 In this case, the top node here started the whole process, and the second middle node is responding to that request.
 So the second middle node will have some pending stuff that it wants to do, and it's gonna try to save fees, but instead of doing it right away, it's gonna wait till it gets an incoming request and then add in what it wants to add to it.
+
 [Audience Max]: "So this middle node waits for the answer until it coordinates with the right node, like, 'Hey, let's open a channel.'"
 
 Yes.
@@ -165,7 +158,6 @@ I love it.
 Any more questions?
 Please feel free to holler at any time.
 So, at the end of this, each node gets a copy of all...
-Oh yeah?
 
 [Audience 2]: "So does this also apply to channel-closing transactions?"
 You mentioned moving dead liquidity to a better channel.
@@ -191,7 +183,7 @@ Correct.
 [Audience Max]: "It's a response, so someone has to invite you so to say."
 
 Yes, yeah.
-And you know, maybe at some point nodes will; there will be some kind of service that will; they'll invite people just to invite them.
+And you know, maybe at some point there will be some kind of service that they'll invite people just to invite them.
 There's nothing stopping that from happening, but as of today, there's no reason to be invited without a prompt.
 
 [Audience Max]: "So one guy starts it and then there's a chain of invitations until that's done?"
@@ -200,7 +192,6 @@ Yep, exactly.
 
 [Audience Max]: "That's cool."
 
-Cool.
 So then each node gets a copy of all the payloads, they combine them into a single transaction again, and then once that gets confirmed on-chain, we get the splice.
 One guy gets his splice, the other guy gets his channel opened, and then the other guy gets his payment made, and it's all done in a single transaction.
 But in practice, this extends much further than just these three node examples; this is to kind of keep it simple.
@@ -251,7 +242,7 @@ Yeah?
 Is it the same exact protocol, or is it the v2 channel opening protocol a particular implementation of this collaborative thing?"
 
 Yes.
-Well, I mean, yeah, it's the same protocol.
+It's the same protocol.
 And there's a lot of benefits to being the same protocol is that it works with it.
 So if you wanted to put a dual open v2 and a splice in the same transaction because they're using the same protocol, that becomes possible.
 
@@ -282,7 +273,6 @@ So they're independent actions, the splicing and the open, but they can work tog
 [Audience 3]: "So you can't do both at the same time, even though they're using the same protocol?"
 
 Oh, you can definitely do it at the same time.
-Yeah.
 I guess it's kind of how you define are they the same?
 So the question is, can you do it at the same time?
 If you're running a node and you want to do a splice and a channel open, you would do both of them and then merge the data together.
@@ -303,13 +293,11 @@ There are a lot of ways to spin this sort of stuff.
 All right, where were we?
 Okay, so we're diving into this node's experience.
 It sees that it gets back to do the splice in 18 transactions.
-Yeah?
 
 [Audience Max]: "What about the timing of these 18 transaction requests?
 Like, might there be some timing effects?"
 
-[Audience Lisa]: "Yes.
-Yes."
+[Audience Lisa]: "Yes."
 
 Yes.
 Lisa says yes, definitely.
@@ -317,8 +305,6 @@ I mean, I imagine an implementation could do things to mitigate those, but they'
 
 [Audience Lisa]: "Yeah, I mean, there's other things you can do.
 So there's spectrum supports like adding and subtracting things, so you could add fake stuff and then remove it later.
-I guess there's..."
-
 Yeah, that'd be interesting.
 
 [Audience Lisa]: "So there is a possibility to kind of mess with it.
@@ -334,8 +320,7 @@ There is a way to add and remove stuff, yeah."
 [Audience 5]: "Or you could also just say I pass, and then on the next round you could be like, Oh, actually, I have more."
 
 [Audience Lisa]: "Yes, yeah.
-The risk of that is that your peer ends it before you do, but yeah.
-Yes."
+The risk of that is that your peer ends it before you do, but yeah."
 
 Yeah, that might work, might not; it depends.
 If you say you're done and they say they're done, then you lose it obviously.
@@ -376,7 +361,6 @@ So you end up with a plausible deniability where even if you're going just one h
 So if they're literally just doing their own stuff, you don't know that it's them.
 If they're doing other people's stuff, you don't know that it's other people's; it could be theirs.
 So it creates this problem.
-Yeah.
 
 ## Questions & Answers
 
@@ -406,15 +390,15 @@ Which is long.
 Peerswap?
 There you go.
 
-[Audience 2]: "There are guys, like, there are people that have opened channels to my node that instantly, I call it insta-nuke, where I try and make my channels balanced, and then immediately after I balance it, it goes all the way back to entirely outbound on my end.
+[Audience 2]: "There are people that have opened channels to my node that instantly, I call it insta-nuke, where I try and make my channels balanced, and then immediately after I balance it, it goes all the way back to entirely outbound on my end.
 It's Pay With Moon does it, and a couple of other of these big lightning payment processors instantly.
-I'll spend like 500 sats on two channels and then they'll just go back like that immediately, and I've suddenly only got half my liquidity...
+I'll spend like 500 sats on two channels and then they'll just go back like that immediately, and I've suddenly only got half my liquidity"
 
 Yeah, I wonder if we could get a mic on him.
 I just want to repeat what he said for the TV.
 He was saying that he gets a good lighting channel going, he balances it, and then appears like Muun instantly unbalances it for him every time.
 
-[Audience 2]: "But it's Pay With Moon, not the Muun wallet.
+[Audience 2]: "But it's Pay With Moon, not the Muun wallet."
 
 Oh, Pay With Moon.
 
@@ -425,12 +409,10 @@ Are your fees high enough?
 Maybe your fees are really low?
 
 [Audience 2]: "Yeah, I raised them really high and then tried to do a couple more, and it came to like 24,000 sats.
-Yeah, that was ...
-they stopped doing it now.
-I was wondering if that was like what you were referring to a minute ago, like someone monitoring and automatically doing it.
+They stopped doing it now.
+I was wondering if that was like what you were referring to a minute ago, like someone monitoring and automatically doing it."
 
 Most likely.
-Yeah.
 Yes.
 
 [Audience 4]: "Yeah, hi, I've got a question about the mechanics of splicing, because I've been looking at this recently and thinking about it.
@@ -455,7 +437,7 @@ Yep.
 The idea is that splicing is changing the channel balance.
 There's an old balance and a new balance.
 Whatever the lesser of the two is, then you're only allowed to route that amount until the splice confirms.
-Yeah, and the way they're done in parallel is in a typical Lightning channel: you have your funding transaction, then a pre-signed commitment transaction, and a bunch of HDLCs in there.
+Yeah, and the way they're done in parallel is in a typical Lightning channel: you have your funding transaction, then a pre-signed commitment transaction, and a bunch of HTLCs in there.
 Then, with splicing you just duplicate that.
 You have your funding transaction, and you also have the splice transaction, which is a duplicate funding transaction, but it's still pending, and then you create a commitment transaction as a child of that one and recreate everything the funding channel has.
 So essentially, it's all duplicate.
@@ -491,7 +473,7 @@ What's up?
 
 [Audience Max]: "How about the ordering of the inputs and outputs of the final transaction?"
 
-Yeah, that's a great question.
+That's a great question.
 The question is, what is the ordering of them?
 They're ordered by serial IDs which are randomly assigned.
 It ends up being deterministically in a random order.
@@ -527,6 +509,7 @@ Yeah.
 
 Yeah, so it's not designed to be secure against anything.
 It's just literally this is our deterministic way of determining the order of inputs and outputs of the final transaction.
+
 [Audience 6]: "But that means that an individual user can just choose their serial number, so they can just choose the highest one and make sure that it's still dependent on the list.
 
 Will get in first, yeah, but I mean, there is no benefit in being the first.
@@ -551,7 +534,6 @@ That's a great question.
 [Audience Max]: "So we have a coinjoin transaction with many inputs, and the transaction is only valid if every single input signs it.
 So if one single input fails to sign the coinjoin, we have a denial of service.
 The transaction does not succeed.
-And so that could be, and so the problem is, yeah, like that.
 You need to attribute that a certain person failed to sign and then ban him from entering in the future because otherwise you just keep on registering the same coin and you keep on not signing and for an indefinite amount of time you denial the service."
 
 Yeah, I think that's a great point, and I think there's a couple of things there.
@@ -566,8 +548,7 @@ What we've come to is the best idea, as we understand it, is having the person w
 [Audience Max]: "Why is signing order important?"
 
 Because there's a potential grief where you could purposely not sign to lock up people's, just to screw with them and make it so they have to double spend their UTXOs in order to get out of the risk of this thing confirming later sort of thing.
-[Audience 6]: "But see, that's in answer to your point about blame because if we know the determining signing order, then we know that that's the guy who should sign next, and therefore we ...
-blame him, can we?
+[Audience 6]: "But see, that's in answer to your point about blame because if we know the determining signing order, then we know that that's the guy who should sign next, and therefore we blame him, can we?
 Did I miss something?"
 
 [Audience 8]: "But if they have an honest reason not to sign, for example, because somebody else added a new legal output or something, you cannot distinguish between them being honest and them being adversarial.
@@ -579,8 +560,7 @@ I think that's Max's point."
 Satoshi.
 
 [Audience 8]: "All the peers could do it with coconut credentials.
-You could have a threshold issuance scheme that still uses monomorphic founding commitments in exactly the same way as ...
-verification ones."
+You could have a threshold issuance scheme that still uses monomorphic founding commitments in exactly the same way as verification ones."
 
 [Audience 9]: "I was going to ask, so why would something like a commitment transaction work the way that channel opens and closes work, where everyone has to sign, has to provide a valid signature where everyone can get their money out before the transaction even goes live?"
 
@@ -598,7 +578,7 @@ And then you're losing either time—technically,  time value much, but you're l
 So denial of service."
 
 [Audience 10]: "I guess as the number of participants goes up, the risk of such attacks increases."
-9
+
 [Audience 9]: "Or just failures, as well as attacks."
 
 Yeah, there's like, if you're a big Lightning service provider and you only have so many UTXOs, this could be a concern for you kind of thing.
