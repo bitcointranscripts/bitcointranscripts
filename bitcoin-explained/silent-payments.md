@@ -8,7 +8,7 @@ categories: ["podcast"]
 date: 2022-06-09
 ---
 
-## <Untitled Chapter 1>
+## <Chapter 1>
 
 Aaron: 00:00:20
 
@@ -66,23 +66,19 @@ Ruben: 00:00:53
 It's good to be here.
 Thank you.
 
-Aaron: 00:00:55
-
-So yeah, we're going
-
 ## Silent Payments
 
-to discuss silent payments.
-Yep.
+Aaron: 00:00:55
+
+So, we're going to discuss silent payments.
 This is a proposal you made recently, right?
 
 Ruben: 00:01:01
 
-Yeah, it's a recent proposal.
+It's a recent proposal.
 
 Aaron: 00:01:04
 
-Yeah.
 So you proposed this a couple of months ago, but I think the general idea is also older, right?
 
 Ruben: 00:01:09
@@ -95,17 +91,16 @@ It's based on an old idea called Stealth Addresses, I think, originally proposed
 
 Ruben: 00:01:16
 
-Yeah, 2014.
+2014.
 
 Aaron: 00:01:16
 
-Right.
 And this is an improvement on that, an iteration on that?
 How would you describe that?
 
 Ruben: 00:01:22
 
-Yeah, you could say that.
+You could say that.
 So yeah, the interesting thing is that the original proposal, I think the idea is kind of old, but the downside of this version is that you have to do a lot of work essentially to recognize that you got paid.
 
 Aaron: 00:01:36
@@ -145,7 +140,7 @@ What's the general problem that we're solving?
 
 Ruben: 00:02:38
 
-Yeah, so kind of a good way of putting it is that generally speaking, when you wanna make a payment, you have two options.
+So kind of a good way of putting it is that generally speaking, when you wanna make a payment, you have two options.
 Someone can give an address and you can reuse that address and continually pay that person on the same address.
 And if you do that, then you lose all privacy because every time you receive a payment, I know it's your address and then maybe, you know, Sjors sent some money to you and I can see how many Bitcoins you have, etcetera, etcetera.
 So because that's a problem, generally what we do is let's say, Aaron, if I want to send you a payment, I tell you, I say like, Hey Aaron, I want to send you some Bitcoin.
@@ -159,7 +154,6 @@ Well, I'll generate a new address every time, right?
 Ruben: 00:03:20
 
 Yeah, generate a new one.
-Yeah.
 
 Aaron: 00:03:21
 
@@ -168,7 +162,6 @@ Ideally.
 Ruben: 00:03:22
 
 Fresh one.
-Yeah.
 And so this proposal, silent payments, allows you to basically have a single static address and allow me to derive an address from that, that nobody can recognize except for you and me.
 And so this makes it basically, it makes it the same process, but now it's non-interactive where I don't have to ask you for an address.
 And that is particularly useful when you think of things like donations, where there's a cause.
@@ -177,7 +170,6 @@ So that is basically the proposal.
 
 Aaron: 00:04:00
 
-Right.
 So if I want to accept donations, then I'll post this.
 What?
 No, it's a stealth address, but you're not calling it a stealth address.
@@ -186,14 +178,12 @@ You're calling it a silent payment address, right?
 Ruben: 00:04:10
 
 Yes, just to differentiate, but it is essentially a form of stealth address.
-Yeah.
 
 Aaron: 00:04:14
 
 So I'm posting this quote unquote address on my website.
 And then you, Ruben, in this case, can generate new addresses from this and send money there and then somehow I should be able to spend from this address.
 That's kind of where the trick comes in.
-That is correct.
 Like how can I spend money from addresses that you generated?
 
 Ruben: 00:04:33
@@ -208,7 +198,7 @@ Ruben, how can I spend money from addresses that you generated?
 Ruben: 00:04:40
 
 Sure.
-Yeah, so essentially what we do is we generate a shared secret and generating a shared secret is done by taking two public keys that you have a public key, I have a public key.
+So essentially what we do is we generate a shared secret and generating a shared secret is done by taking two public keys that you have a public key, I have a public key.
 And because we both know one private key, you know your private key, I know my private key, we can do this calculation, which is basically a multiplication, that allows us to generate a number that you know and I know, but nobody else knows.
 And with this number, we can then generate a key that is sort of shared between us.
 So it's a public key.
@@ -255,7 +245,6 @@ We don't want that.
 
 Aaron: 00:07:22
 
-Yeah.
 Okay.
 I'm following you, but that's also because before we started recording, I had an hour to try to understand this.
 So to summarize this real briefly, the Diffie-Hellman exchange, two people have a public and a private key and then multiplying one public key with the other private key gets a secret number. Right?
@@ -301,25 +290,17 @@ What's that extra step, Ruben?
 
 Ruben: 00:09:15
 
-Yeah, so the extra step is that we take that shared secret, that shared key, and we add the public key of the recipients to that shared key.
+So the extra step is that we take that shared secret, that shared key, and we add the public key of the recipients to that shared key.
 
 Aaron: 00:09:25
 
 Right, so this is the same public key that I was sharing publicly, the silent payment thing that I had as a donation address.
-Yeah.
 And we now add the shared...
 No, you finish this sentence for me before I say it wrong.
 
 Ruben: 00:09:41
 
-Yeah, you add the shared key to it.
-
-Aaron: 00:09:43
-
-Right.
-
-Ruben: 00:09:44
-
+You add the shared key to it.
 Which is a derivative of the shared secret.
 
 Aaron: 00:09:45
@@ -336,7 +317,6 @@ And by adding those two together, we generate a key that only you know, because 
 
 Aaron: 00:10:42
 
-Right.
 So the two private keys that we're adding together, to be very clear, are the shared secret private key that you were able to generate in combination with my public key, and then my actual private key that corresponds to the public key that I posted.
 So that's the two that we're adding together to create a new private key and a new public key.
 Well, I'm the only one who can create a new private key because I'm the only one who has the private key that corresponds with my public.
@@ -352,7 +332,7 @@ That might even be an easier way to understand it.
 So we just explain how you make the shared key.
 And then we say we take a regular address or a regular private key.
 We just add a shared key to it so that nobody else in the world can see what's going on.
-Yeah.
+
 
 Aaron: 00:11:50
 
@@ -367,7 +347,6 @@ Because I need to know about it, right?
 
 Ruben: 00:12:17
 
-Yeah.
 So the first thing you need is you need to know the key that I used in order to generate the share secrets.
 Because you know your key, obviously, and I know your key because it was publicly online on your Twitter profile or whatever.
 And so the key that I use is one of the keys of the inputs in the transaction that I create.
@@ -380,7 +359,6 @@ Yes.
 
 Ruben: 00:12:57
 
-Yeah.
 So when I create that transaction, I pick my input.
 And that is the key that I use to generate the new address that only you can spend.
 And that is where I sent the money.
@@ -397,7 +375,7 @@ And if you're running a full node already, it's relatively not a lot more effort
 Sjors: 00:13:58
 
 So basically, every input of every transaction on the blockchain could be, as a recipient, could be for you.
-So yeah, so that means you have to inspect every single transaction that's on the blockchain and for every input of every transaction you want to add your shared key to it and then that generates an address and you then see hey is this transaction actually spending to that address?
+So that means you have to inspect every single transaction that's on the blockchain and for every input of every transaction you want to add your shared key to it and then that generates an address and you then see hey is this transaction actually spending to that address?
 If so, boom, you just essentially add that address to your own wallet, and then it just functions as any other wallet address would function.
 
 Aaron: 00:14:31
@@ -425,42 +403,22 @@ So it is significantly more work than just looking at a list.
 
 Ruben: 00:15:28
 
-Yeah, and to give a sort of approximate idea of how much work that is.
+To give a sort of approximate idea of how much work that is.
 It is as if you check every signature twice instead of once.
 That is sort of a very rough way of saying it.
 
 Sjors: 00:15:43
 
-Yeah, so it definitely increases the time you need to verify blocks.
-But yeah, if you look at that from the perspective of your node is running you know, it's already synced and it's just running then one block comes in every 10 minutes your node will verify that block in a few seconds.
+So it definitely increases the time you need to verify blocks.
+If you look at that from the perspective of your node is running you know, it's already synced and it's just running then one block comes in every 10 minutes your node will verify that block in a few seconds.
 So maybe it'll take half a second longer. That's fine that The bigger barrier is when you first want to sync the whole node.
 If you want to restore from a backup, things get a little bit more hairy.
 But I think we can-
-
-Ruben: 00:16:09
-
-Yeah.
-
-Sjors: 00:16:10
-
 ...get into that later.
-
-Speaker 3: 00:16:15
-
-Yo, what is going on guys?
-We are proud to have Voltage as a sponsor of this episode.
-How many of you developers out there have wanted a streamlined infrastructure provider for your particular project?
-Well, I'll tell you what, Voltage is the Bitcoin infrastructure provider that you have been looking for that makes building on Bitcoin quick and easy, whether it's Bitcoin nodes, Lightning nodes, BTC pay, and so much more.
-But don't take it from me.
-Just ask the guys over at Amboss, Sphinx, Podcast Index, and THNDR Games, and so many others that you guys already know and love.
-Their enterprise-grade products make it fast and easy to build, deploy and scale your next project.
-So make it easy on yourself.
-Even normie plebs can use the dashboard or API.
-Don't wait before the next block confirmation, let your team focus on building great products and let voltage handle all the rest. Voltage is your go to zero management Bitcoin infrastructure solution.
 
 Ruben: 00:17:09
 
-Yeah, that is something actually I would like to get into now perhaps because so there are-
+That is something actually I would like to get into now perhaps because so there are-
 
 Aaron: 00:17:12
 
@@ -483,7 +441,6 @@ Now.
 Ruben: 00:17:21
 
 Exactly.
-Yeah.
 So there are a couple of things you can do to make this process faster.
 And so as Sjors was saying, once you're at the tip and you're validating, a new block comes in, you just have to validate everything.
 But one of the things you can do is, there are a couple of things you can do to sort of speed it up when you re-sync a node, and you have an address, and you want to know if there's any outputs that are yours.
@@ -499,13 +456,6 @@ That is sort of a thing that saves a lot of effort right now, because we don't h
 But in time, eventually, everything's going to be a taproot transaction.
 At least that's the hope.
 So it's the kind of, it's an optimization that helps today, but won't help tomorrow, let's say.
-
-Aaron: 00:18:38
-
-Yeah.
-
-Ruben: 00:18:39
-
 And then the biggest one is that instead of validating every transaction from the entire history, What you can actually do is you can take the UTXO sets and only check those outputs and see if any of those outputs correspond to a payment that belongs to you.
 And the downside of this is that you will have no history, so you won't be able to see any outputs that were yours and were spent, but you will find all the outputs that were unspent.
 And it also requires a bit more of an additional database that ties the inputs that you might require to do this calculation to the UTXO and UTXO sets.
@@ -513,7 +463,6 @@ There's a bit more complexity there, but the benefit there is that basically ins
 
 Aaron: 00:19:36
 
-Right, yeah.
 And then you'd need to somehow get the inputs that refers to the output.
 
 Ruben: 00:18:44
@@ -522,11 +471,10 @@ Yes.
 
 Aaron: 00:19:45
 
-Yeah, okay.
+Okay.
 
 Sjors: 00:19:46
 
-Yeah.
 So when you look at how a node is actually built, and you know, Bitcoin Core is built in one way, but maybe LitBitcoin is built in a very different way, there are certain pieces of information that are very easy to access and certain pieces of information that are a little bit more work to access, and that can really matter with a proposal like this.
 Because if the information, for example, is sitting in your RAM memory, that's very quick to access.
 If on the other hand, you need to go on a disk, it's very slow to access.
@@ -546,25 +494,17 @@ And now let's try on the Raspberry Pi with the real blockchain, what performs be
 Aaron: 00:20:59
 
 Is this a good time to get into the comparison with the earlier proposals?
-
-Ruben: 00:21:03
-
-Yeah.
-
-Aaron: 00:21:04
-
-Yeah?
 Okay.
 So how does this compare to earlier proposals?
 
 Ruben: 00:21:11
 
-Yeah, sure.
+Sure.
 So the original stealth address proposal by Peter Todd, that one basically is quite similar, but the thing that was different is that because the scanning requirement was seen as something that was too much effort.
 So instead of taking the key from the input, the idea was that when you generate a payment, you add an OP_RETURN to it.
 And in the OP_RETURN, you add a key.
 And then that is the key that is being used.
-And the downside of this- Yeah.
+And the downside of this- 
 
 Aaron: 00:21:45
 
@@ -574,8 +514,6 @@ And that's included in an OP_RETURN, a bit of extra data in the transaction.
 
 Ruben: 00:22:10
 
-Yeah.
-Yeah.
 And so when you do that, obviously you add more overhead because now you have an OP_RETURN.
 And the upside from the recipient side, well, it's sort of a half upside because one of the upsides is you still have to scan every transaction, but now you only have to scan every transaction with an OP_RETURN attached to it.
 
@@ -593,7 +531,6 @@ It's a lot less math than you need to do in your proposal.
 
 Ruben: 00:22:36
 
-Yeah.
 And the database lookups and stuff are easier too, because you don't have to go back and find the inputs.
 It's right there in one of the outputs.
 So it's sort of an in-between solution that never really got popular.
@@ -602,14 +539,8 @@ And I, yeah.
 
 Aaron: 00:22:55
 
-Yeah.
 I guess one of the downsides is it makes transactions bigger because now you've got to include an OP_RETURN.
 So, you know, box fill up faster if a lot of people do that and fees go up.
-
-Ruben: 00:23:05
-
-Yeah.
-
 
 Sjors: 00:23:06
 
@@ -622,7 +553,6 @@ Even though you're not sure, but if it's an indecipherable OP_RETURN, then that 
 
 Sjors: 00:23:18
 
-Yeah.
 Well, it also means that other people looking at the blockchain can see how many friends you have, well, friends, quote unquote.
 So because the number of OP_RETURNs to your stealth address that's publicly known, people can discount them.
 Or is it not?
@@ -637,8 +567,7 @@ That's only a BIP-47 then.
 
 Ruben: 00:23:34
 
-Yeah, you're confusing it too now.
-Yeah.
+You're confusing it too now.
 No, no, so that's not quite true.
 It is sort of a general, you see a bunch of transactions with OP_RETURNs and those are all stealth payments, but you don't know who those payments are going to.
 And the recipients have to check all those specific addresses.
@@ -647,12 +576,9 @@ So it's sort of an in-between solution where you could say like, it's sort of li
 Aaron: 00:24:00
 
 And this might be a stealth payment.
-Yeah.
 
 Ruben: 00:24:03
 
-Yeah.
-Yeah.
 Well, I think it's quite obvious, unfortunately.
 
 Sjors: 00:24:06
@@ -673,7 +599,7 @@ Instead of using OP_RETURN, you would just basically use some sort of added key 
 
 Ruben: 00:24:31
 
-Yeah, yeah, So there's a lot of similarity.
+So there's a lot of similarity.
 And I think the stealth address proposal also had the suggestion of adding sort of yet another identifier of saying like, okay, well, instead of checking every OP_RETURN, we mark it where, let's say, you pick a number between, let's say, zero and 64 or something.
 And so my stealth payment is let's say 64 exactly.
 So whenever in the OP_RETURN it says number 64 and then there's a public key, I only check those.
@@ -681,17 +607,15 @@ So it reduces the anonymity set even further, but it also lowers the scanning re
 
 Sjors: 00:25:06
 
-Yeah, exactly.
+Exactly.
 Your proposal is a lot of work, but a stealth transaction will look exactly the same as any other transaction.
-
-Aaron: 00:25:13
-
-Yeah.
-Okay.
-And then there's,
 
 ## Bip 47
 
+Aaron: 00:25:13
+
+Okay.
+And then there's,
 What is it?
 BIP 47?
 
@@ -701,7 +625,6 @@ That is correct.
 
 Sjors: 00:25:18
 
-Yeah.
 And that uses the concept of a handshake, I would say.
 So you publish your stealth address or whatever it is.
 I think they use a PayNym as a term for some people.
@@ -713,7 +636,7 @@ In principle, it's BIP 47.
 
 Sjors: 00:25:36
 
-Yeah, so you publish this, essentially, public key, and then when you want to send somebody money using that, you do an announcement transaction first.
+So you publish this, essentially, public key, and then when you want to send somebody money using that, you do an announcement transaction first.
 So you send somebody, you send around a simple, I think you send a OP_RETURN payment to that address or something like that.
 
 Ruben: 00:25:54
@@ -724,33 +647,23 @@ Sjors: 00:25:54
 
 And that all that OP_RETURN address and that OP_RETURN then includes some sort of key that the recipient now knows, okay, I now have a new friend and I need to start monitoring the following addresses.
 So in this case, from one single transaction, you as the recipient can now generate a whole set of addresses that you just monitor as if you got an XPUB.
-
-Aaron: 00:26:14
-
-Right.
-
-Sjors: 00:26:16
-
 And so that's nice.
 The downside is in this case of what I said before, incorrectly for the other one, is now everybody can see how many friends you have.
 Because at this handshake address is going to be a bunch of OP_RETURN transactions to that address so you can count, you know, a maximum of the number of friends you have.
 I guess somebody could pretend that there are like five people.
-Right.
 And it adds a little bit of bloat to the blockchain.
 
 Aaron: 00:26:39
 
-Yeah.
 So that seems to be the biggest trade-off.
 Is that right?
 So your proposal, Ruben, doesn't add any extra data to the blockchain.
 And then the trade-off is that the recipient has to do quite a bit of work because it has to check all the transactions.
 While the other proposals in their own ways, they add more data to the blockchain, but then it is easier after you've done that.
-And then there's more nuances, but is this- Yeah.
+And then there's more nuances, but is this- 
 
 Ruben: 00:27:04
 
-Yeah.
 Well, with the stealth addresses, there's still a lot of work to do.
 So I think the stealth addresses are sort of just old and outdated, and I think you can just sort of leave those aside.
 But for BIP47 specifically, yes, there is not the scanning requirements.
@@ -764,9 +677,7 @@ And so there's a lot of potential there for sort of privacy leaking, unfortunate
 
 Sjors: 00:27:59
 
-Right.
 So You think you have a stealth address, you think you're sending anonymously, but actually because of that announcement, somebody else can just still see exactly, both from the sender side, they can just see that the sender was doing this, but also it means the recipient loses anonymity because if the sender screw up, you can tell the recipient received this many coins because of this correlation.
-Yeah.
 So that's a risk.
 
 Ruben: 00:28:21
@@ -796,24 +707,19 @@ Another obvious thing you can do is use Lightning because with Lightning, you ha
 Once that's finalized, we'll make it just very easy to receive money, but it means some...
 That puts a bit more burden on the sender, definitely not as much burden on the recipient, because what you're proposing doesn't sound more difficult than running a Lightning Node.
 At least not more resource intense than running a Lightning node.
-Yeah.
 But for the sender, of course, they have to run a Lightning node.
 
 Ruben: 00:30:36
 
-Yeah, it's interactive, essentially, when you use Lightning.
-
-Sjors: 00:30:38
-
-Yeah.
+It's interactive, essentially, when you use Lightning.
 
 Aaron: 00:30:40
 
-Yeah, but Ruben just promoted to the base chain, so.
+But Ruben just promoted to the base chain, so.
 
 Ruben: 00:30:43
 
-Yeah, now we're moving back to the base..
+Now we're moving back to the base..
 
 Aaron: 00:30:47
 
@@ -833,28 +739,18 @@ I wonder how they solved that problem, actually, because you have the same issue
 
 Sjors: 00:31:11
 
-Yeah, but an XPUB represents a thousand addresses, so your problem is a thousand times bigger, but it's the same type of problem.
+But an XPUB represents a thousand addresses, so your problem is a thousand times bigger, but it's the same type of problem.
 
 Ruben: 00:31:18
 
-Yeah, yeah, true.
+True.
 And so just to sort of generalize, I think the sort of the trade-offs that you're mentioning here is one of interactivity, where with silent payments, the nice thing is it is just entirely non-interactive.
 But you are absolutely correct that, you know, given sort of like the complexity of what you said, it is possible to solve this with interaction.
 And that is essentially what we started off with, with me saying, okay, well, if Aaron just gives me a new address every time I want to send a payment to him, that works too.
 
 Aaron: 00:31:49
 
-Right.
-Yeah.
 The whole point is to make this non-interactive.
-
-Ruben: 00:31:51
-
-Yeah.
-
-Aaron: 00:31:52
-
-Yeah.
 
 Sjors: 00:31:53
 
@@ -869,8 +765,8 @@ So from a usage point of view, it's very nice to have these static identifiers.
 
 Ruben: 00:32:50
 
-Yeah, I see what you mean.
-Yeah, that's interesting.
+I see what you mean.
+That's interesting.
 
 Sjors: 00:32:53
 
@@ -889,7 +785,6 @@ Like saying like, okay, don't send coins to me after this block height.
 That would just be part of the standard.
 And then you scan a few hundred thousand or you scan like 10,000 bucks extra, just to be sure.
 But, But you definitely want to make sure that people can opt out of this stuff.
-Yeah.
 Because with Bolt 12, that's not a problem, right?
 With Lightning, you still have to ask an invoice.
 And if the server doesn't respond, you don't send money to it.
@@ -897,7 +792,6 @@ But with this, if somebody sends you money 50 years from now, like your descenda
 
 Ruben: 00:33:46
 
-Yeah.
 That is a good point.
 And that's something I hadn't really thought about.
 But I agree that it would be nice to support maybe a date at which you stop, well, either you stop using the address or you have to refresh the address as to say like, okay, well now I'm going to accept it for longer.
@@ -944,7 +838,7 @@ I've covered everything I wanted to cover, but...
 
 Ruben: 00:34:48
 
-Yeah, I guess the one thing...
+I guess the one thing...
 
 Aaron: 00:34:50
 
@@ -953,7 +847,7 @@ Go on, Ruben.
 
 Ruben: 00:34:52
 
-Yeah, just one thing I wanted to mention maybe is that I think what's good to point out here is that the scanning downside really is mainly a downside if you're not running a full node.
+Just one thing I wanted to mention maybe is that I think what's good to point out here is that the scanning downside really is mainly a downside if you're not running a full node.
 If you're running a full node, the way I look at it is that we still have to get these benchmarks.
 And so as Sjors already mentioned, there's a pseudonym called W0XLT, who I'm trying to collaborate with a little bit now in order to get these benchmarks.
 And he's already created an implementation.
@@ -988,7 +882,7 @@ Cool, talk about it.
 Sjors: 00:36:50
 
 So that was fun.
-Yeah, so the pseudonym you talked about, let's call him Ox.
+So the pseudonym you talked about, let's call him Ox.
 
 Ruben: 00:36:56
 
@@ -1024,20 +918,18 @@ Sjors: 00:38:32
 No, and a couple of reasons for that is because it essentially requires another index, which takes up space and it is, you know, like you said, it's maybe not the worst extra performance downside, but it's still pretty significant.
 You know, it still adds.
 So I think Bitcoin Core would not very quickly commit to a feature that it has to maintain forever that really eats a lot of resources and may screw with other proposals that might enhance scaling, like how does this combine with assume UTXO or how does this combine with U3XO or...
-Yeah.
 So that's why I think it's better to go for a separate tool.
 On the other hand, any demo that works, I'm happy with it.
 I don't really care how it's done, whether the demo is a modified version of Bitcoin Core or a little Python script.
 I don't think it matters as long as people play with the demo because standards will get much better when people actually try them.
 Otherwise you get things like BIP32 and like, oh, gap limits.
-Yeah, I guess we should have thought about that before we defined a standard.
+I guess we should have thought about that before we defined a standard.
 So yeah, I'm happy to see that.
 I just would want to caution the listener and this is probably gonna take a while.
 
 Ruben: 00:39:43
 
-Yeah, I agree with that.
-And yeah.
+I agree with that.
 
 Sjors: 00:39:45
 
@@ -1051,7 +943,7 @@ So yeah, it's tricky.
 
 Ruben: 00:40:11
 
-Yeah, there's some complexity there.
+There's some complexity there.
 But yeah, at a high level, I agree with you.
 And so one of the things that's sort of tricky for me is that actually Space Chains is sort of the project that I'm currently focused on.
 And now this silent payment thing, it was supposed to be sort of a side project where I thought like, okay, I'm just going to put this out on a gist and then I'm done with it.
@@ -1061,7 +953,7 @@ So I'm being pulled into multiple directions, but it's a good thing because it's
 
 Aaron: 00:40:48
 
-Yeah, I mean, space change is literally a side project, right?
+I mean, space change is literally a side project, right?
 
 Ruben: 00:40:52
 
@@ -1095,7 +987,7 @@ Okay, I think that covers everything.
 
 Ruben: 00:41:12
 
-Yeah, is there anything, Aaron, I think there's something you wanted to bring up still, or am I mistaken here?
+Is there anything, Aaron, I think there's something you wanted to bring up still, or am I mistaken here?
 
 Aaron: 00:41:17
 
@@ -1119,7 +1011,7 @@ I think we should briefly look at the worms.
 
 Ruben: 00:41:38
 
-Yeah, yeah, I agree.
+I agree.
 Now that's actually a good one to point out.
 So I think this is one of these things that I feel most uncomfortable with in terms of, like, because ideally what you want to do is you want this protocol to not get in the way of how people do transactions.
 And so far, the way we've described it, it sort of works really well if there is one sender, if I create the transaction.
@@ -1132,10 +1024,10 @@ And then one of the recipients is a stealth address.
 
 Ruben: 00:42:17
 
-Yeah, exactly.
+Exactly.
 Yes, yes.
 That's good to add.
-Yeah, thank you.
+Thank you.
 So the first issue is sort of that you have two variants that you could do for a sign of payments.
 Well, there are more variants, but these are the two sort of main ones, which is either you pick one input and you use that to generate the shared secret, or you pick the combination of all the inputs.
 And this is particularly relevant with Coinjoins because if you pick just one input, then what that means is that if someone pays you in a CoinJoin, then the recipient normally doesn't know what your input was.
@@ -1145,7 +1037,7 @@ And so that leaks some privacy for the sender.
 
 Aaron: 00:43:03
 
-Yeah, you can see which input pays you because that's the one that adds up to your new address.
+You can see which input pays you because that's the one that adds up to your new address.
 
 Ruben: 00:43:08
 
@@ -1173,14 +1065,10 @@ A lot of worms.
 
 Sjors: 00:43:49
 
-Yeah, and you're actually making the single, the simple case, you're making that more complicated by aggregating the signatures.
+And you're actually making the single, the simple case, you're making that more complicated by aggregating the signatures.
 Because normally when I use a wallet to make this silent payment, I just need to pick one coin, one input, and then if the wallet needs to, it can just add more inputs to that transaction and it will still work.
 But if you want to have all the inputs count towards the shared key, then I need to decide before I have the destination address, I need to decide which coins I'm going to use.
 And so then you have the coin selection process separate from the payment process and that at least in Bitcoin Core, that's going to give you another can of worms that I recommend not opening.
-
-Ruben: 00:44:27
-
-Yeah.
 
 Sjors: 00:44:27
 
@@ -1188,7 +1076,6 @@ There are solutions to it.
 
 Ruben: 00:44:28
 
-Yeah.
 Well, the other thing that's sort of nice about adding all the input keys together and why I sort of gravitate towards that is that it essentially cuts down the scanning requirement in half, because now instead of having to scan every individual input, you can scan the aggregation of all the inputs.
 And on average, a transaction has two inputs.
 
@@ -1214,7 +1101,6 @@ Aaron: 00:45:41
 Okay.
 I think that's our episode.
 Sjors, what do you think?
-Yeah.
 
 Sjors: 00:45:46
 
