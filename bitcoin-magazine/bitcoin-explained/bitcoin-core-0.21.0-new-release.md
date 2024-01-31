@@ -8,53 +8,13 @@ categories: ["podcast"]
 date: 2021-01-21
 ---
 
-
-######
-Title: Bitcoin Core 0.21.0 - New Release
----
-Speakers: Aaron van Wirdum and Sjors Provost
----
-Date: 2021-01-22
----
-Media: https://www.youtube.com/watch?v=kM4912dv39o
-
-##  Sponsor of the Show - Stacks 2.0 Blockchain
-
-Aaron van Wirdum: 00:00:00
-
-Before the show, a quick word from our sponsor.
-
-Stacks Representative: 00:00:04
-
-Stacks 2.0, they're no longer block stacks. It's now the Stacks 2.0 blockchain and they're really orienting around Bitcoin. Right? So the whole idea is it's a blockchain. They have a proof of transfer, POX, and you peg in Bitcoin, and Bitcoin is the money on the blockchain. They also have a governance and staking token to support that blockchain, STX, but you don't need that token to use the blockchain.
-
-And that blockchain, it takes on a lot of the features that, you know, you can't build directly into the Bitcoin blockchain, things that other altcoin chains are trying to do. And it brings it to a Bitcoin denominated world. So I think that the world is going to start denominating in Bitcoin and the closer and more trustless you can get to using Bitcoin, the more people are going to want to use those applications. 
-
-So it's exciting to see what Blockstacks is doing here and them committing to Bitcoin. We're starting to really see the narrative of Bitcoin, not blockchain, like their marketing, their branding is all about "We are part of Bitcoin" and we're leveraging the most important, the most prevalent blockchain and Bitcoin is money on our blockchain. 
-
-So I like that turn of directions, go check out stacks2.com. So that's S T A C K S 2 (the number two).COM and learn more if you're, especially if you're a developer. But if you want to just poke around and see their blockchain based decentralized apps and DeFi stuff, again, they're doing that all on the Stacks2 blockchain.
+###### Title: Bitcoin Core 0.21.0 - New Release
 
 ##  Intro
 
 Aaron van Wirdum: 00:01:35
 
-Live from Utrecht, this is The Van Wirdum Sjorsnado.
-
-Sjors Provost: 00:01:37
-
-Hello.
-
-Aaron van Wirdum: 00:01:38
-
-Episode 24.
-
-Sjors Provost: 00:01:40
-
-That's right.
-
-Aaron van Wirdum: 00:01:41
-
-And in episode 24, we're going to discuss Bitcoin Core 21.
+Live from Utrecht, this is The Van Wirdum Sjorsnado. Episode 24, we're going to discuss Bitcoin Core 21.
 
 Sjors Provost: 00:01:46
 
@@ -70,8 +30,7 @@ Probably yes.
 
 Aaron van Wirdum: 00:01:54
 
-That's what I understand.
-The next one, the 22 will actually be Bitcoin Core 22.
+That's what I understand. The next one, the 22 will actually be Bitcoin Core 22.
 
 Sjors Provost: 00:01:59
 
@@ -99,8 +58,7 @@ Yeah, we already discussed some of it. So what we're going to do for this episod
 
 Sjors Provost: 00:02:56
 
-That's right.
-And in the show notes you can find the full release notes which are very long.
+That's right. And in the show notes you can find the full release notes which are very long.
 
 Aaron van Wirdum: 00:03:01
 
@@ -130,7 +88,7 @@ Isn't it 15 minutes?
 
 Sjors Provost: 00:03:27
 
-Yeah 15 minutes. So it would very frequently broadcast its own transactions because the wallet really wants to make sure that the rest of the world hears about its transactions. The problem with that...
+Yeah 15 minutes. So it would very frequently broadcast its own transactions because the wallet really wants to make sure that the rest of the world hears about its transactions. 
 
 Aaron van Wirdum: 00:03:37
 
@@ -148,10 +106,6 @@ Sjors Provost: 00:04:03
 
 Exactly. So the long-term goal here, which has not been achieved in this specific change, but we always do little micro steps.
 
-Aaron van Wirdum: 00:04:11
-
-Uh huh
-
 Sjors Provost: 00:04:11
 
 The long-term goal is to get to a place where the node will just treat its own transactions, its own wallet transactions, just like it would transactions from another peer. So it will not prioritize its own transactions. And there's some downside to that because you have to keep your wallet open probably a little bit longer to make sure that it does get broadcast. But yeah, then it would be indistinguishable. So I think one of the long-term goals is to say, we're going to wait until the wallet transaction fee is close to what it would be for the next block, because you can order transactions by fee.
@@ -167,10 +121,6 @@ Exactly and this also creates a better separation between because then you know 
 Aaron van Wirdum: 00:05:25
 
 Yeah, but this, what we're describing right now, is actually not included in Bitcoin Core 21 right now. We've seen one micro step towards this in Bitcoin Core 21.
-
-Sjors Provost: 00:05:26
-
-Yeah.
 
 Aaron van Wirdum: 00:05:26
 
@@ -200,10 +150,6 @@ Aaron van Wirdum: 00:05:59
 
 And it's a small step towards a bigger plan.
 
-Sjors Provost: 00:06:01
-
-Yeah.
-
 ## Tor Version 3 Support
 
 Aaron van Wirdum: 00:06:02
@@ -218,10 +164,6 @@ Aaron van Wirdum: 00:06:31
 
 That's the very short version.
 
-Sjors Provost: 00:06:32
-
-Yes.
-
 Aaron van Wirdum: 00:06:33
 
 And I think that's good enough for now. So yeah, episode 13 for anyone who wants to hear more.
@@ -229,14 +171,6 @@ And I think that's good enough for now. So yeah, episode 13 for anyone who wants
 Sjors Provost: 00:06:38
 
 Right, because this also includes a new way to gossip addresses. So that's, you know, that's actually a bigger change. 
-
-Aaron van Wirdum: 00:06:39
-
-Yeah.
-
-Sjors Provost: 00:06:40
-
-Which we also...
 
 Aaron van Wirdum: 00:06:44
 
@@ -250,15 +184,7 @@ Aaron van Wirdum: 00:07:04
 
 Right. So now Bitcoin Core supports version 3, which means it's compatible with Tor even a year from now.
 
-Sjors Provost: 00:07:05
-
-That's right.
-
 ## Anchors - Eclipse Attacks 
-
-Aaron van Wirdum: 00:07:09
-
-Okay, point 3.
 
 Sjors Provost: 00:07:15
 
@@ -268,23 +194,7 @@ Aaron van Wirdum: 00:07:55
 
 Yeah, I think especially episode 17. Yeah, both 17 and 18, I think most of this specific change was in episode 17. So this was included in Bitcoin Core 21 as well. So Eclipse attacks are now harder to pull off against Bitcoin Core 21 nodes.
 
-Sjors Provost: 00:08:15
-
-Yes.
-
-Aaron van Wirdum: 00:08:16
-
-Nice.
-
-Sjors Provost: 00:08:16
-
-All right.
-
 ## BIP-157 "Neutrino Filters"
-
-Aaron van Wirdum: 00:08:17
-
-Next point.
 
 Sjors Provost: 00:08:18
 
@@ -336,7 +246,7 @@ That's why you remember the exact number.
 
 Sjors Provost: 00:09:42
 
-Precisely, it's very hard to remember. There are lots of trade-offs when it comes to these filters, so I think we should go into that for another episode. It's not enforced by consensus, so you're kind of trusting that the list is real. Although if you...Let's say the list gives you a bunch of nonsense results and you start downloading those blocks and you don't see what you're expecting, well then you know that whoever gave you those filters was lying to you.
+Precisely, it's very hard to remember. There are lots of trade-offs when it comes to these filters, so I think we should go into that for another episode. It's not enforced by consensus, so you're kind of trusting that the list is real. Let's say the list gives you a bunch of nonsense results and you start downloading those blocks and you don't see what you're expecting, well then you know that whoever gave you those filters was lying to you.
 But it gets a little complicated. So we'll talk about that some other time. But it's there and it was already used in the wild a lot, especially by the mobile lightning wallets. So far there was only specialized nodes that would serve that, usually running BTCD. And now, you know, every Bitcoin Core wallet can do it.Yeah, if you turn it on.
 
 Aaron van Wirdum: 00:10:22
@@ -353,13 +263,11 @@ That's what's new.
 
 Sjors Provost: 00:10:46
 
-Yeah, the filter has been around there. So as usual, you have this filter but you can't really use it.
-And now you can use it. Next one?
+Yeah, the filter has been around there. So as usual, you have this filter but you can't really use it. And now you can use it. Next one?
 
 Aaron van Wirdum: 00:10:53
 
-Yeah, so we'll get back to this in another episode.
-I think this is the short version of it.
+Yeah, so we'll get back to this in another episode. I think this is the short version of it.
 
 ## Signet Signup
 
@@ -383,8 +291,7 @@ Correct.
 
 Sjors Provost: 00:11:04
 
-In great detail. But the very short version is, it is like testnet, but heavily centralized.
-And everybody can make their own if you want to. And it's awesome.
+In great detail. But the very short version is, it is like testnet, but heavily centralized. And everybody can make their own if you want to. And it's awesome.
 
 Aaron van Wirdum: 00:11:16
 
@@ -409,7 +316,7 @@ So this was included in Bitcoin Core 21. What does that mean exactly, to have it
 
 Sjors Provost: 00:13:11
 
-Well, it means that you can start Bitcoin Core with the Dash SIGNET, just like you can start it with dash testnet and your icon will have a nice different color and there's a faucet out there that you can go to and you can get signet coins which you get by the dozen I think so it's nice yeah you can use it yeah and we'll go back to it again in the well I guess we can skip to that item now because it makes sense. Because the other thing that's included is Taproot.
+Well, it means that you can start Bitcoin Core with the Dash SIGNET, just like you can start it with dash testnet and your icon will have a nice different color and there's a faucet out there that you can go to and you can get signet coins which you get by the dozen I think so it's nice yeah you can use it yeah and we'll go back to it again in the well I guess we can skip to that item now because it makes sense. Because the other thing that's included is taproot.
 
 Aaron van Wirdum: 00:13:36
 
@@ -417,11 +324,11 @@ Right yeah okay.
 
 Sjors Provost: 00:13:38
 
-And Taproot is active on Signet.
+And taproot is active on Signet.
 
 Aaron van Wirdum: 00:13:41
 
-Yeah so we now have Taproot on Signet.
+Yeah so we now have taproot on Signet.
 
 Sjors Provost: 00:13:43
 
@@ -451,26 +358,18 @@ Sjors Provost: 00:14:38
 
 Yeah, I think you'd see it as a release candidate.
 
-Aaron van Wirdum: 00:14:40
-
-Right.
-
 Sjors Provost: 00:14:41
 
-Because even if Taproot activates on mainnet in the future with a new version of Bitcoin Core, this old version of Bitcoin Core won't do anything with that.
-
-Aaron van Wirdum: 00:14:49
-
-Right, yeah.
+Because even if taproot activates on mainnet in the future with a new version of Bitcoin Core, this old version of Bitcoin Core won't do anything with that.
 
 Sjors Provost: 00:14:50
 
-So, even if the rules change now, there's no problem with your 0.21 node.It will not get confused if Taproot changes. Of course, hopefully it doesn't.
+So, even if the rules change now, there's no problem with your 0.21 node.It will not get confused if taproot changes. Of course, hopefully it doesn't.
 
 Aaron van Wirdum: 00:14:59
 
 Sure, But about that, so yeah, the taproot code is included in Bitcoin Core 21.
-This also means that probably the next minor version of Bitcoin Core, which would be Bitcoin Core 21.1, well, Bitcoin Core 0.21.1, will have the actual activation logic for TapRoot.
+This also means that probably the next minor version of Bitcoin Core, which would be Bitcoin Core 21.1, well, Bitcoin Core 0.21.1, will have the actual activation logic for taproot.
 
 Sjors Provost: 00:15:22
 
@@ -487,15 +386,11 @@ That's the thing with an anarchistic system, right? It's what we did the last ti
 
 Aaron van Wirdum: 00:15:47
 
-Isn't it time for you to take charge, Sjors? I'm assuming that there will be a minor release which has a Taproot activation in it. It's just gonna be my assumption.
+Isn't it time for you to take charge, Sjors? I'm assuming that there will be a minor release which has a taproot activation in it. It's just gonna be my assumption.
 
 Sjors Provost: 00:15:58
 
 I'm optimistic, but I have not followed any of the, we discussed taproot activation possibilities in episode 3 I believe and taproot itself in episode 2 or the other way around.
-
-Aaron van Wirdum: 00:16:08
-
-Right yep.
 
 Sjors Provost: 00:16:09
 
@@ -510,7 +405,7 @@ Yeah there's more on that discussion indeed in episode 3 and taproot itself in e
 Sjors Provost: 00:16:22
 
 yeah so we'll jump back in our little queue to BIP339 witness transaction id relay or WTXID so here's the thing a long long time ago before there was SegWit, transactions had a hash.
-And this hash represented, you know, the entire transaction. But...
+And this hash represented, you know, the entire transaction.
 
 Aaron van Wirdum: 00:16:43
 
@@ -522,12 +417,7 @@ Exactly. Yeah. But then we created SegWit. And segwit added data to the transact
 
 Aaron van Wirdum: 00:17:04
 
-yeah this was kind of why segwit worked to solve malleability because previously the transaction before segwit the transaction had all the transaction details how many bitcoins are involved where they going plus the signature and this was all hashed and this hash was a transaction ID. However, it turned out that slightly different signatures could all be valid and therefore a signature could be changed in flight for example you send a transaction to the network someone on that network slightly changes the signature the transaction is still valid but all of a sudden the transaction ID changed because the hash changed because the signature changed.
-So to solve that, this was a problem for things like Lightning. So to solve this, SegWit separated the transaction details from the signature and the transaction details were still hashed to create the transaction ID and the signature was put in a separate part of a block, a segwit part of the block, and therefore malleability was solved.
-
-Sjors Provost: 00:18:15
-
-That's right.
+yeah this was kind of why segwit worked to solve malleability because previously the transaction before segwit the transaction had all the transaction details how many bitcoins are involved where they going plus the signature and this was all hashed and this hash was a transaction ID. However, it turned out that slightly different signatures could all be valid and therefore a signature could be changed in flight for example you send a transaction to the network someone on that network slightly changes the signature the transaction is still valid but all of a sudden the transaction ID changed because the hash changed because the signature changed. So to solve that, this was a problem for things like Lightning. So to solve this, SegWit separated the transaction details from the signature and the transaction details were still hashed to create the transaction ID and the signature was put in a separate part of a block, a segwit part of the block, and therefore malleability was solved.
 
 Aaron van Wirdum: 00:18:16
 
@@ -547,11 +437,11 @@ What this change is, is not about how the consensus works, but it's how transact
 
 Aaron van Wirdum: 00:19:27
 
-Do you think this has something to do with potentially sharing a transaction with an invalid signature and therefore... That's my theory, because I should have read it, but my guess is that indeed you would send
+Do you think this has something to do with potentially sharing a transaction with an invalid signature. That's my theory, because I should have read it, but my guess is that indeed you would send
 
 Sjors Provost: 00:19:41
 
-another node a transaction hash and they would ask for the transaction and you would give it a fake transaction because you would just add your own signature to it and it would just be nonsense. And then the other node would say, okay, this transaction is dumb. I'm just going to ignore that moving forward. And then another node would give the real one, but this node is now rejecting it because it's already seen it and it thought it was fake. So you want to prevent that.
+Another node a transaction hash and they would ask for the transaction and you would give it a fake transaction because you would just add your own signature to it and it would just be nonsense. And then the other node would say, okay, this transaction is dumb. I'm just going to ignore that moving forward. And then another node would give the real one, but this node is now rejecting it because it's already seen it and it thought it was fake. So you want to prevent that.
 
 Aaron van Wirdum: 00:20:02
 
@@ -559,7 +449,7 @@ Right and that's what this new change might solve is your speculation but neithe
 
 Sjors Provost: 00:20:10
 
-That's right. Read the BIP fellows. I also know this was done...
+That's right. Read the BIP fellows. I also know this was done.
 
 Aaron van Wirdum: 00:20:15
 
@@ -568,14 +458,6 @@ And it's BIP which one is it? 339.
 Sjors Provost: 00:20:17
 
 Yes I also know this was done before taproot because it has some sort of utility there too.
-
-Aaron van Wirdum: 00:20:23
-
-Right.
-
-Sjors Provost: 00:20:23
-
-All right next item.
 
 ## RPC Changes
 
@@ -601,14 +483,11 @@ What does that mean actually, Sjors?
 
 Sjors Provost: 00:20:44
 
-It basically means if you're running a Bitcoin node, then you can issue commands to it.
-And if you're a desktop user, you would just click on buttons. But if you're in the command line, well, you would type Bitcoin client, then some command.
+It basically means if you're running a Bitcoin node, then you can issue commands to it. And if you're a desktop user, you would just click on buttons. But if you're in the command line, well, you would type Bitcoin client, then some command.
 
 Sjors Provost: 00:20:56
 
-But if you are on the network, you probably want to send some JSON to it and get some JSON back from it over the network. And that's what these RPC calls are for. So you can send the commands over the network and get a response back. And if you've built some sort of complicated server, you want to make sure nothing breaks. And BitConcord is always very careful. It tries not to make breaking changes in that RPC. So, for example, a situation you might be in is you run a block explorer of some sort, and you have one little server machine that has a Bitcoin full node on it and we'll get to that actually with the CMQ explanation but I guess we'll transition to that.So you'll have one node that runs Bitcoin core on it and another that runs a 
- database and another that runs the website because usually you know they try to split all these things up so the web server might ask the node questions like what is the current block height or you know what's in your mempool that that's done via RPC That might or it might say send a transaction to this person that's also done via RPC. So that's all scripts and code so you want to make sure that your code is still doing what you think it's doing when you upgrade the node.
-But which brings us to the next point ZeroMQ feature improvement. So you can read in, if you find this interesting, you can read in the release note exactly what.
+But if you are on the network, you probably want to send some JSON to it and get some JSON back from it over the network. And that's what these RPC calls are for. So you can send the commands over the network and get a response back. And if you've built some sort of complicated server, you want to make sure nothing breaks. And BitConcord is always very careful. It tries not to make breaking changes in that RPC. So, for example, a situation you might be in is you run a block explorer of some sort, and you have one little server machine that has a Bitcoin full node on it and we'll get to that actually with the CMQ explanation but I guess we'll transition to that.So you'll have one node that runs Bitcoin core on it and another that runs a database and another that runs the website because usually you know they try to split all these things up so the web server might ask the node questions like what is the current block height or you know what's in your mempool that that's done via RPC That might or it might say send a transaction to this person that's also done via RPC. So that's all scripts and code so you want to make sure that your code is still doing what you think it's doing when you upgrade the node. But which brings us to the next point ZeroMQ feature improvement. So you can read in, if you find this interesting, you can read in the release note exactly what.
 
 Aaron van Wirdum: 00:22:22
 
@@ -618,64 +497,24 @@ Sjors Provost: 00:22:25
 
 Well ZeroMQ is not actually RPC, but it's also a way to communicate.
 
-Aaron van Wirdum: 00:22:31
-
-Okay.
-
 Sjors Provost: 00:22:32
 
 So with RPC you have the Bitcoin node is listening and you send a command to it and you get a response back. That's how RPC works. But in ZeroMQ it's push-based. So what you're doing is the Bitcoin Node is constantly broadcasting and you can listen to that broadcast through a channel and so the broadcast could be every new block. So then you're listening to a certain channel and you get the block as soon as the node sees it. Or you can listen to transactions or I believe you can even listen to transactions at a certain address. This might be useful if you have a block explorer with a live page where you're looking at an address and then the notes sees a new transaction on that address, it sends a message to your ZMQ to the web server and the web server sends a WebSocket message to the browser so your browser updates without having to hit the refresh button, something like that.
-
-Aaron van Wirdum: 00:23:24
-
-Okay.
-
-Sjors Provost: 00:23:24
-
-So that's nice for people who care about that. Next item.
-
-Aaron van Wirdum: 00:23:27
-
-Okay. Yep.
 
 ## Send RPC
 
 Sjors Provost: 00:23:28
 
 There is a new Send RPC by yours truly, which is cool. It basically, if you want to send coins through the command line, I mean, you can do it with the graphical interface, but if you're, you know, the cool kids want to do it with the command line, it's very tedious. You know, when the first version of Bitcoin Core came out, but it wasn't even Bitcoin Core. I think you just had a command called send to address and you gave it an address and an amount and that was it.
-And that's still out there. But the problem is that command got expanded, but it doesn't have all the features you may want. And at the same time, there were commands to create PSBTs that we talked about in an earlier episode.Those commands were very....
-
-Aaron van Wirdum: 00:24:05
-
-Partially Signed Bitcoin transactions....
+And that's still out there. But the problem is that command got expanded, but it doesn't have all the features you may want. And at the same time, there were commands to create PSBTs that we talked about in an earlier episode.Those commands were partially Signed Bitcoin transactions.
 
 Sjors Provost: 00:24:06
 
-.....Exactly.And those were very powerful. You could do all sorts of cool things to your transaction, including coin selection, for example, through the command line. But it was very tedious because if you want to make a PSBT then you have to make it and then sign it and then finalize it and do a bunch of things. So the problem was you had a very simple way to send coins with the very old Satoshi time RPC methods, just send to an address but you couldn't configure it. Or you had a super powerful method that was extremely hard to use. And so the new SendRPC is easier to use and powerful.
-
-Aaron van Wirdum: 00:24:41
-
-And you made this?
-
-Sjors Provost: 00:24:42
-
-Yes, and it's been improved since.
-
-Aaron van Wirdum: 00:24:44
-
-Thank you, Sjors..
-
-Sjors Provost: 00:24:45
-
-Hopefully you're welcome. It's marked experimental, so if you....
-
-Aaron van Wirdum: 00:24:47
-
-I'm not one of the cool kids anyway, so I just use the GUI.
+Exactly and those were very powerful. You could do all sorts of cool things to your transaction, including coin selection, for example, through the command line. But it was very tedious because if you want to make a PSBT then you have to make it and then sign it and then finalize it and do a bunch of things. So the problem was you had a very simple way to send coins with the very old Satoshi time RPC methods, just send to an address but you couldn't configure it. Or you had a super powerful method that was extremely hard to use. And so the new SendRPC is easier to use and powerful.
 
 Sjors Provost: 00:24:51
 
-....Well, it's especially useful if you're experimenting with newer features, like hardware wallet integration and stuff. Then you want to experiment on the command line and then hopefully later do it in the GUI.
+It's especially useful if you're experimenting with newer features, like hardware wallet integration and stuff. Then you want to experiment on the command line and then hopefully later do it in the GUI.
 
 Aaron van Wirdum: 00:25:01
 
@@ -703,8 +542,7 @@ Yeah and Andrew Chow was on it as well. And I mean the final picture we thought 
 
 Sjors Provost: 00:25:28
 
-Well, that's pretty much done. Part of it was descriptor wallets, which we'll get to next.
-So that's been done and the thing I've been working on as a work in progress is a expansion of this send command in RPC that will let you talk to a hardware wallet directly from the command line and The second one is a graphical interface around that. And those pull requests exist, they get a little bit of review, but they're not moving forward very quickly. Eventually it might happen.
+Well, that's pretty much done. Part of it was descriptor wallets, which we'll get to next. So that's been done and the thing I've been working on as a work in progress is a expansion of this send command in RPC that will let you talk to a hardware wallet directly from the command line and The second one is a graphical interface around that. And those pull requests exist, they get a little bit of review, but they're not moving forward very quickly. Eventually it might happen.
 
 Aaron van Wirdum: 00:25:56
 
@@ -712,19 +550,7 @@ But it's still moving.
 
 Sjors Provost: 00:25:58
 
-It's still moving, and also there are great other solutions out there. So there's the Spectre open source project which just runs a little web server on your own computer and then it magically talks to the RPC again with these RPC calls that we talked about and it creates wallets and it's...it's very very nice very slick we wouldn't be able to get it that slick. But if you can get more support inside of Bitcoin Core, it means fewer software that you need to download from places that you then need to trust.
-
-Aaron van Wirdum: 00:26:23
-
-Exactly.
-
-Sjors Provost: 00:26:24
-
-So there is something to be said for continuing this.
-
-Aaron van Wirdum: 00:26:26
-
-All right, next point.
+It's still moving, and also there are great other solutions out there. So there's the Spectre open source project which just runs a little web server on your own computer and then it magically talks to the RPC again with these RPC calls that we talked about and it creates wallets and it's very very nice very slick we wouldn't be able to get it that slick. But if you can get more support inside of Bitcoin Core, it means fewer software that you need to download from places that you then need to trust.
 
 ## Experimental Descriptor Wallets and SQLight Support
 
@@ -732,17 +558,9 @@ Sjors Provost: 00:26:28
 
 The next point is called experimental descriptor wallets and SQLite support. So two things.So descriptor wallets, I don't think we've talked about that yet.
 
-Aaron van Wirdum: 00:26:39
-
-I don't think so.
-
 Sjors Provost: 00:26:40
 
 So the general idea is that when Bitcoin Core started, it was just a single address type, pay to public key. I think we did discuss that. And then there was a new address format, pay to public key hash. And so that was added to the wallet. And then SegWit came along and pay to script hash came along. And now there's the wallet is just a giant mess of backwards compatible things.
-
-Aaron van Wirdum: 00:27:02
-
-Right.
 
 ## The Descriptor Wallet
 
@@ -759,7 +577,7 @@ Yeah so this could be for example you have a bunch of multi-sig addresses and th
 Sjors Provost: 00:27:53
 
 Yeah so for a hardware wallet is a nice example usually a hardware wallet will give you an xpub you know if you plug it in it can spit out an xpub and xpub is a way to derive multiple addresses.
-And so a multi-sig address...
+And so a multi-sig address.
 
 Aaron van Wirdum: 00:28:05
 
@@ -767,8 +585,7 @@ We did discuss that in, I think, one of the first episodes. I don't have the num
 
 Sjors Provost: 00:28:12
 
-Yeah, could be. And basically, You can say, okay, here's a multi-sig address consisting of these three XPUBS and then what you need to do to these XPUBS to get the individual addresses.
-So you can describe very complicated wallets. And if we add mini-script support in the future, you can describe even more wildly complicated wallets that way.
+Yeah, could be. And basically, You can say, okay, here's a multi-sig address consisting of these three XPUBS and then what you need to do to these XPUBS to get the individual addresses. So you can describe very complicated wallets. And if we add mini-script support in the future, you can describe even more wildly complicated wallets that way.
 
 Aaron van Wirdum: 00:28:32
 
@@ -781,7 +598,7 @@ So if a new version of SQLite comes out, you have pretty strong guarantees that 
 
 Aaron van Wirdum: 00:29:19
 
-Yeah, I was just going to ask that. So if you upgrade to Bitcoin Core 21, you're...
+Yeah, I was just going to ask that. So if you upgrade to Bitcoin Core 21.
 
 Sjors Provost: 00:29:27
 
@@ -793,9 +610,7 @@ Nothing interesting happens. Nothing worrisome happens.
 
 Sjors Provost: 00:29:31
 
-No, if you already have a wallet it is not converted to descriptor wallets, it is not converted to SQLite, nothing happens.There are manual commands that if you like to you can do that, but we still consider both of these things somewhat experimental, So you probably don't want to do that.
-But the goal in the future is that new wallets will be descriptor wallets and will be stored using the SQLite database. And then, you know, more far into the future, there'll be an automatic migration tool or like at least some button that says, you know, you probably want to migrate this.
-Right. Then even further into the future when you start it up, it'll say, okay, I'm not going to start up, please migrate the wallet first using this tool or something. And then later on it's like, please download an older version. Now, I guess there'll always be a conversion tool because you want to be nice.
+No, if you already have a wallet it is not converted to descriptor wallets, it is not converted to SQLite, nothing happens.There are manual commands that if you like to you can do that, but we still consider both of these things somewhat experimental, So you probably don't want to do that. But the goal in the future is that new wallets will be descriptor wallets and will be stored using the SQLite database. And then, you know, more far into the future, there'll be an automatic migration tool or like at least some button that says, you know, you probably want to migrate this. Right. Then even further into the future when you start it up, it'll say, okay, I'm not going to start up, please migrate the wallet first using this tool or something. And then later on it's like, please download an older version. Now, I guess there'll always be a conversion tool because you want to be nice.
 
 Aaron van Wirdum: 00:30:21
 
@@ -804,10 +619,6 @@ I like my backwards compatibility, in short. Please keep that for me.
 Sjors Provost: 00:30:25
 
 Yeah, I guess it depends on how horrendous it is to keep all that old code around. But I guess one thing we might end up doing is write just the code that's necessary to read one of those old Berkeley databases, no longer to be able to write it. So you wouldn't need the whole library, you know we talked about libraries, we would just need enough to be able to read it.
-
-Aaron van Wirdum: 00:30:44
-
-Right.
 
 Sjors Provost: 00:30:44
 
@@ -821,10 +632,6 @@ Sjors Provost: 00:30:52
 
 Yeah, at the RPC level, you can now specify your fee in Satoshi per byte.
 
-Aaron van Wirdum: 00:30:57
-
-Finally.
-
 Sjors Provost: 00:30:58
 
 Yeah, so it used to be Satoshi per kilobyte or BTC per kilobyte, some weird unit.
@@ -837,13 +644,9 @@ Sjors Provost: 00:31:05
 
 Yeah, exactly, because now all the websites will use Satoshi per byte
 
-Aaron van Wirdum: 00:31:08
-
-and
-
 Sjors Provost: 00:31:10
 
-yeah the annoying thing about the standard that it was using before is if you type one because you intended one satoshi per byte, you're actually saying, I don't know, a thousand satoshi per byte, or some really obscene number that would be very expensive if you don't know what you're doing. There is actually protection against that since a few years.
+Yeah the annoying thing about the standard that it was using before is if you type one because you intended one satoshi per byte, you're actually saying, I don't know, a thousand satoshi per byte, or some really obscene number that would be very expensive if you don't know what you're doing. There is actually protection against that since a few years.
 
 Aaron van Wirdum: 00:31:29
 
