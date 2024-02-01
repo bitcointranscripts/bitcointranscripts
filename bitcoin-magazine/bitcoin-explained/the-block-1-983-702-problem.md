@@ -1,10 +1,9 @@
 ---
 title: "The Block 1,983,702 Problem"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: kouloumos via review.btctranscripts.com
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-87-the-block-1-983-702-problem-s7s3j
-tags: []
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
-categories: ['podcast']
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
+categories: ["podcast"]
 date: 2023-12-21
 ---
 Speaker 0: 00:00:19
@@ -24,18 +23,16 @@ Nice.
 I forgot all about the jingle.
 You haven't read any toots, what's it called?
 Boost.
-You haven't read any Boost for
+You haven't read any Boost for a while.
 
 Speaker 1: 00:00:46
 
-a while.
 What's going on with that?
 No, we might do that later again.
 Because we've gone this hyper-commercialized entity now with sponsors and stuff.
 
 Speaker 0: 00:00:52
 
-True, yeah.
 Shors, do you know who our sponsor is?
 It's CoinKite.
 And they produce the cold card.
@@ -70,11 +67,10 @@ Speaker 0: 00:01:45
 
 Right, okay, I see.
 So there was a bug, now there's no bug, but there's still a problem which is not a bug.
-Well, it's
 
 Speaker 1: 00:01:52
 
-kind of a bug, but it's not like a dangerous bug like the original thing.
+Well, it's kind of a bug, but it's not like a dangerous bug like the original thing.
 
 Speaker 0: 00:01:55
 
