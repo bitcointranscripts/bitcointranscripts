@@ -1,10 +1,9 @@
 ---
 title: "Foundational Math, ECDSA and Transactions"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: kouloumos via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=e6voIwB-An4
-tags: ['cryptography']
-speakers: ['Jimmy Song']
-categories: []
+tags: ["cryptography"]
+speakers: ["Jimmy Song"]
 date: 2017-11-02
 ---
 All right, so I was sitting there and looking at my own slide and I realized that there was a couple of very embarrassing mistakes.
@@ -153,8 +152,8 @@ We can also do multiplication and exponentiation.
 Again, same as modular arithmetic.
 So two times four is eight, that's not very interesting because it's sort of the same intuitive understanding of multiplication that you have.
 But when you get above 19 or above, that's when your intuitive understanding might change a little bit.
-Seven times three is 21.
-21 mod 19 is two.
+`7 x 3 = 21`.
+`21 mod 19 = 2`.
 So seven times three is actually two in field arithmetic.
 And similar with exponentiation, you could do 11 to the third power, it's actually 1331, mine 19 is actually one, so 11 to the third is one.
 Again, a little bit unintuitive, but that's what it is.
