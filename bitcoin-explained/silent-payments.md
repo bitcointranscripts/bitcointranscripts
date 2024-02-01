@@ -501,8 +501,8 @@ Ruben: 00:21:11
 
 Sure.
 So the original stealth address proposal by Peter Todd, that one basically is quite similar, but the thing that was different is that because the scanning requirement was seen as something that was too much effort.
-So instead of taking the key from the input, the idea was that when you generate a payment, you add an OP_RETURN to it.
-And in the OP_RETURN, you add a key.
+So instead of taking the key from the input, the idea was that when you generate a payment, you add an `OP_RETURN´ to it.
+And in the `OP_RETURN´, you add a key.
 And then that is the key that is being used.
 And the downside of this- 
 
@@ -510,16 +510,16 @@ Aaron: 00:21:45
 
 So in that case, the sender's key, in your proposal, the sender's key is actually just the Bitcoin key, the one you're using to send money from.
 In this earlier proposal by Peter Todd, there's sort of a special key that's not the same key as the one that you used to spend money from, right?
-And that's included in an OP_RETURN, a bit of extra data in the transaction.
+And that's included in an `OP_RETURN´, a bit of extra data in the transaction.
 
 Ruben: 00:22:10
 
-And so when you do that, obviously you add more overhead because now you have an OP_RETURN.
-And the upside from the recipient side, well, it's sort of a half upside because one of the upsides is you still have to scan every transaction, but now you only have to scan every transaction with an OP_RETURN attached to it.
+And so when you do that, obviously you add more overhead because now you have an `OP_RETURN´.
+And the upside from the recipient side, well, it's sort of a half upside because one of the upsides is you still have to scan every transaction, but now you only have to scan every transaction with an `OP_RETURN´ attached to it.
 
 Sjors: 00:22:30
 
-And you only have to look at that OP_RETURN.
+And you only have to look at that `OP_RETURN´.
 
 Ruben: 00:22:31
 
@@ -539,7 +539,7 @@ And I, yeah.
 
 Aaron: 00:22:55
 
-I guess one of the downsides is it makes transactions bigger because now you've got to include an OP_RETURN.
+I guess one of the downsides is it makes transactions bigger because now you've got to include an `OP_RETURN´.
 So, you know, box fill up faster if a lot of people do that and fees go up.
 
 Sjors: 00:23:06
@@ -549,12 +549,12 @@ There's also a privacy downside.
 Aaron: 00:23:08
 
 It's sort of an indicator that it might be a stealth payment, right?
-Even though you're not sure, but if it's an indecipherable OP_RETURN, then that seems kind of likely.
+Even though you're not sure, but if it's an indecipherable `OP_RETURN´, then that seems kind of likely.
 
 Sjors: 00:23:18
 
 Well, it also means that other people looking at the blockchain can see how many friends you have, well, friends, quote unquote.
-So because the number of OP_RETURNs to your stealth address that's publicly known, people can discount them.
+So because the number of `OP_RETURN´s to your stealth address that's publicly known, people can discount them.
 Or is it not?
 
 Aaron: 00:23:32
@@ -569,7 +569,7 @@ Ruben: 00:23:34
 
 You're confusing it too now.
 No, no, so that's not quite true.
-It is sort of a general, you see a bunch of transactions with OP_RETURNs and those are all stealth payments, but you don't know who those payments are going to.
+It is sort of a general, you see a bunch of transactions with `OP_RETURN´s and those are all stealth payments, but you don't know who those payments are going to.
 And the recipients have to check all those specific addresses.
 So it's sort of an in-between solution where you could say like, it's sort of like my proposal, but instead there's a tag that says, okay, this is a stealth payment.
 
@@ -584,8 +584,8 @@ Well, I think it's quite obvious, unfortunately.
 Sjors: 00:24:06
 
 So, OK.
-So the OP_RETURN is only indicating that it's a stealth payment.
-And then after the OP_RETURN is the shared key.
+So the `OP_RETURN´ is only indicating that it's a stealth payment.
+And then after the `OP_RETURN´ is the shared key.
 
 Ruben: 00:24:12
 
@@ -595,14 +595,14 @@ Sjors: 00:24:12
 
 OK.
 So that case, you could probably do that with just combining signatures, and then you're pretty much back to your proposal, right?
-Instead of using OP_RETURN, you would just basically use some sort of added key or tweak key, and you just have to check every key.
+Instead of using `OP_RETURN´, you would just basically use some sort of added key or tweak key, and you just have to check every key.
 
 Ruben: 00:24:31
 
 So there's a lot of similarity.
-And I think the stealth address proposal also had the suggestion of adding sort of yet another identifier of saying like, okay, well, instead of checking every OP_RETURN, we mark it where, let's say, you pick a number between, let's say, zero and 64 or something.
+And I think the stealth address proposal also had the suggestion of adding sort of yet another identifier of saying like, okay, well, instead of checking every `OP_RETURN´, we mark it where, let's say, you pick a number between, let's say, zero and 64 or something.
 And so my stealth payment is let's say 64 exactly.
-So whenever in the OP_RETURN it says number 64 and then there's a public key, I only check those.
+So whenever in the `OP_RETURN´ it says number 64 and then there's a public key, I only check those.
 So it reduces the anonymity set even further, but it also lowers the scanning requirements.
 
 Sjors: 00:25:06
@@ -637,7 +637,7 @@ In principle, it's BIP 47.
 Sjors: 00:25:36
 
 So you publish this, essentially, public key, and then when you want to send somebody money using that, you do an announcement transaction first.
-So you send somebody, you send around a simple, I think you send a OP_RETURN payment to that address or something like that.
+So you send somebody, you send around a simple, I think you send a `OP_RETURN´ payment to that address or something like that.
 
 Ruben: 00:25:54
 
@@ -645,11 +645,11 @@ That's correct.
 
 Sjors: 00:25:54
 
-And that all that OP_RETURN address and that OP_RETURN then includes some sort of key that the recipient now knows, okay, I now have a new friend and I need to start monitoring the following addresses.
+And that all that `OP_RETURN´ address and that `OP_RETURN´ then includes some sort of key that the recipient now knows, okay, I now have a new friend and I need to start monitoring the following addresses.
 So in this case, from one single transaction, you as the recipient can now generate a whole set of addresses that you just monitor as if you got an XPUB.
 And so that's nice.
 The downside is in this case of what I said before, incorrectly for the other one, is now everybody can see how many friends you have.
-Because at this handshake address is going to be a bunch of OP_RETURN transactions to that address so you can count, you know, a maximum of the number of friends you have.
+Because at this handshake address is going to be a bunch of `OP_RETURN´ transactions to that address so you can count, you know, a maximum of the number of friends you have.
 I guess somebody could pretend that there are like five people.
 And it adds a little bit of bloat to the blockchain.
 
