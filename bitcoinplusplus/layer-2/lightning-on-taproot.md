@@ -1,10 +1,10 @@
 ---
 title: "Lightning on Taproot"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: kouloumos via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=E_z4hjvVzoQ
-tags: ['lightning', 'taproot']
-speakers: ['Arik Sosman']
-categories: ['conference']
+tags: ["lightning","taproot"]
+speakers: ["Arik Sosman"]
+categories: ["conference"]
 date: 2023-07-18
 ---
 My name is Arik.
@@ -17,10 +17,10 @@ And I wanna really dig deep into the math that some of the vulnerabilities that 
 So first of all, obviously we know that Haproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on half-route.
 I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to know here.
 Is there privacy?
-Great.
+
 Yeah, so the biggest reason, of course, is that we have privacy improvements.
 At least, you know, assuming that eventually everybody is going to be using hatred haproot addresses.
-As you know, haproot is segwit v1.
+As you know, Taproot is segwit v1.
 Segwit was segwit v0, that was our new software mechanism.
 If at some point we decide that we need segwit v2, then all of the old lightening haproot channels that aren't human support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
 So that is one of the benefits.
