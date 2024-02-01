@@ -1,6 +1,6 @@
 ---
 title: "Scaling to Billions of Users"
-transcript_by: martinfer13 via review.btctranscripts.com
+transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=5yPVp6vNHiY
 tags: ["scalability","sidechains","custody"]
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
@@ -81,13 +81,6 @@ If you insist, I can read it to you.
 Aaron: 00:01:18
 
 I'm not insisting at all, but if you want to, I'll do the jingle.
-
-Sjors: 00:01:22
-
-All right.
-
-Aaron: 00:01:24
-
 Oh god.
 Sjors stack sats, Sjors stack sats, Sjors stacks sats.
 
@@ -118,7 +111,6 @@ He's a Bitcoin developer.
 
 Aaron: 00:02:28
 
-Yeah.
 He's one of the most prolific Coin Core developers.
 So Anthony Towns wrote a blog post called putting the B in BTC.
 That's B for billions of people he writes in his blogpost.
@@ -146,13 +138,12 @@ You can probably draw another one, but it's fine.
 
 Aaron: 00:04:26
 
-Yeah.
 So we've had the block size wars a couple of years ago, of course, and this was sort of the central, you know, it's kind of a continuation of that debate we had back then.
 And there were indeed different ideas.
 
 Sjors: 00:04:43
 
-So yeah, and back in the days, people were especially doing number one in practice, making the tech more efficient.
+And back in the days, people were especially doing number one in practice, making the tech more efficient.
 You know, I've done an experiment in 2017 where I would take identical computers and try to sync the blockchain of that date using older and older versions of Bitcoin Core.
 And what you can see is that for the same blockchain and the same computer Bitcoin Core was getting objectively faster every year.
 But that has slowed down a bit.
@@ -171,7 +162,7 @@ Anthony shared some thoughts on each of these approaches.
 So let's just kind of walk through them.
 So improving the tech.
 He gives some examples of projects that are in development right now that would accomplish this.
-So, one of them is U3XO, which I think we did a whole episode on, right?
+So, one of them is Utreexo, which I think we did a whole episode on, right?
 
 Sjors: 00:05:29
 
@@ -179,24 +170,23 @@ Yes, we did.
 
 Aaron: 00:05:29
 
-Well, what is U3XO?
+Well, what is Utreexo?
 Do you want to summarize this in...
 
 Sjors: 00:05:33
 
-Yeah, U3XO helps with one of the many bottlenecks in Bitcoin.
+Utreexo helps with one of the many bottlenecks in Bitcoin.
 I would say memory usage.
 So basically what happens is...
 One second.
 So basically what happens, is that you have this thing called the UTXO set, which is the list of who owns which coin.
 And you try to keep, your node keeps track of the list who owns which coin.
 And that if, you know, if billions of people own a coin, then that list gets extremely long.
-And so U3XO fixes that by putting the entire ownership list in a Merkle tree and then rather than everybody having the full list when you want to spend a coin you need to prove that that coin exists in the first place. So I don't have to as a node operator, I don't have to remember who owns which coin.
+And so Utreexo fixes that by putting the entire ownership list in a Merkle tree and then rather than everybody having the full list when you want to spend a coin you need to prove that that coin exists in the first place. So I don't have to as a node operator, I don't have to remember who owns which coin.
 If you think you own a coin, you have to prove it to me and send me some data.
 
 Aaron: 00:06:23
 
-Yeah.
 So as we mentioned, there are, I mean, there are essentially several bottlenecks when you want to scale Bitcoin up.
 If everyone wants to check every transaction, then one of the things they need to do is keep this UTXO set.
 So they need to keep a record of who owns what essentially.
@@ -223,24 +213,23 @@ And that would help at least new users, which is part of the reasons why it's ha
 
 Aaron: 00:07:47
 
-Right.
 So that's another one of the bottlenecks that it could potentially help resolve.
 So if one of the bottlenecks is the size of the UTXO set, then another bottleneck is the time it takes to sync the entire blockchain.
 
 Sjors: 00:07:58
 
-Yeah, and assume UTXO is another approach to do that, where instead of delivering any proofs, or maybe you can combine these things, right?
+Assume UTXO is another approach to do that, where instead of delivering any proofs, or maybe you can combine these things, right?
 You just say, okay, this is the UTXO set as of so many years ago, and then you're just kind of trusting that the past is real.
 But maybe you can combine that.
 
 Aaron: 00:08:16
 
-Right.
+
 Another example that Anthony mentioned is silenced payments which I think we also did an episode on with Ruben right?
 
 Sjors: 00:08:23
 
-Yeah so that's not an example of a scaling technology but that is an example of saying why it is important to be able to check every single transaction in every single block.
+So that's not an example of a scaling technology but that is an example of saying why it is important to be able to check every single transaction in every single block.
 Because in order to use silent payments, which we have done an episode about, you as the recipient, as a sender it doesn't matter, but as a recipient, you have to scan every block and every transaction in a block to see if there is a payment to you.
 And so if blocks become massive, or yeah, then that scanning effort becomes a problem.
 It isn't right now it seems pretty lightweight but it could be if we make blocks a hundred times bigger.
@@ -265,7 +254,7 @@ So that's bucket one, improving the tech, which will help us grow a bit, but it'
 So then we move to category two: Solutions, which is don't validate.
 So here we really get into what the block size wars were about for a big part.
 I think is that some people, and they still exist on other blockchains, they have this vision that it's actually not necessary for every user to validate every transaction.
-Yeah, which can go in two directions, right?
+Which can go in two directions, right?
 
 Sjors: 00:10:24
 
@@ -287,7 +276,7 @@ No, that's a scenario where everybody checks not all the things.
 
 Sjors: 00:10:58
 
-Yeah, that's the same thing.
+That's the same thing.
 
 Aaron: 00:11:00
 
@@ -306,35 +295,20 @@ Sjors: 00:11:06
 
 But some people will only check some things.
 Now, there's other blockchains, I think, like probably things like Solana, where really there is just a small number of people who check all the things, maybe.
-
-Aaron: 00:11:16
-
-Right.
-
-Sjors: 00:11:17
-
 But most people check nothing, basically.
 So it's very black and white.
 
 Aaron: 00:11:20
 
-Yeah.
 So basically, some people check everything and then everyone else asks these people, hey, what's going on?
 Right?
 That's essentially what it comes down to.
-
-Sjors: 00:11:28
-
-Yeah.
-
-Aaron: 00:11:29
-
 I mean, it's automated, obviously.
 People are using APIs and that kind of stuff but that's what it comes down to.
 
 Sjors: 00:11:34
 
-Yeah and if you push that too far you know you have a centralized point of failure which they could either lie or they could exclude you from the system you know you basically go back to Paypal, worst case.
+And if you push that too far you know you have a centralized point of failure which they could either lie or they could exclude you from the system you know you basically go back to Paypal, worst case.
 
 Aaron: 00:11:46
 
@@ -342,22 +316,22 @@ Yes, the people that are checking everything they could either collude to change
 
 Sjors: 00:12:02
 
-Yeah and just add my own thoughts here I think you could probably think about something in the middle where some people validate some things and some people validate other things but it's it's hard to reason whether or not that's gonna be safe.
+And just add my own thoughts here I think you could probably think about something in the middle where some people validate some things and some people validate other things but it's it's hard to reason whether or not that's gonna be safe.
 We know the current approach works, it's like everybody checks everything. And how much of that you can, you know, how far you can go on the gray scale towards one person checking everything.
 There's some point at which it goes horribly wrong.
 So it's better to be on the safe side, I think.
 
 Aaron: 00:12:29
 
-Yeah, well, essentially, so this option, it's included in the blog, sort of more as an example of what not to do, right?
+Well, essentially, so this option, it's included in the blog, sort of more as an example of what not to do, right?
 
 Sjors: 00:12:38
 
-Yeah, and he also says that even this pushes to the limits of even those few people that validate if they really want to process every transaction of every person on the planet still becomes a problem or it's a fragile system that's easy to mess with.
+And he also says that even this pushes to the limits of even those few people that validate if they really want to process every transaction of every person on the planet still becomes a problem or it's a fragile system that's easy to mess with.
 
 Aaron: 00:12:53
 
-Right. Okay so then we get to the third option which is kind of I would say the heart of the article like this is kind of deficient really which is get off the blockchain.
+So then we get to the third option which is kind of I would say the heart of the article like this is kind of deficient really which is get off the blockchain.
 
 Sjors: 00:13:03
 
@@ -375,7 +349,7 @@ Just a few tens of millions.
 
 Aaron: 00:13:44
 
-Yeah. The problem with that is that even if you use Lightning, you still need some transactions on the blockchain, right?
+The problem with that is that even if you use Lightning, you still need some transactions on the blockchain, right?
 
 Sjors: 00:13:50
 
@@ -398,7 +372,7 @@ like drivechains and other things.
 
 Aaron: 00:14:35
 
-Yeah, basically every time Ruben was here, it was something sidechain-ish, right?
+Basically every time Ruben was here, it was something sidechain-ish, right?
 
 Sjors: 00:14:40
 
@@ -422,20 +396,19 @@ So in a worst case, you're depending on a custodian actually giving you money ba
 
 Aaron: 00:15:50
 
-Yeah, well in the case of Liquid, it's not necessarily one custodian, right?
+Well in the case of Liquid, it's not necessarily one custodian, right?
 It's allegedly at least a federation of custodians.
 We don't know who's in the Federation, but it's supposedly a group of companies that all hold sort of keys to a multi-sig.
 
 Sjors: 00:16:06
 
-Yeah, and they've, you know, they've built in a lot of automation, etc, etc.
+They've, you know, they've built in a lot of automation, etc, etc.
 And you can swap with other people.
 So it's not horrible, but it's still not as secure as Bitcoin itself.
 
 Aaron: 00:16:15
 
-Right.
-Yes, there's a trade-off there.
+There's a trade-off there.
 So that's an idea.
 Another idea which is newer is something like Fedimint, right?
 Have we done an episode of Fedimint?
@@ -465,13 +438,6 @@ Again, yes, you still have to sort of trust them.
 Sjors: 00:16:57
 
 I mean, a federation could also just be one company that has three different staff members in different parts of the world.
-
-Aaron: 00:17:02
-
-Sure.
-
-Sjors: 00:17:04
-
 But in any case, it at least makes, you know, you can make custodians suck less.
 I think that might be one way to frame it.
 So Liquid makes custodians suck less because the custodians are spread out over different companies and they use a bunch of automation and they can't necessarily see what you're doing.
@@ -480,25 +446,7 @@ And then, I think as the article says, there are just regular old custodians.
 
 Aaron: 00:17:34
 
-Yeah, exchanges, for example, and hosted wallets, that kind of stuff.
-
-Speaker 2: 00:17:42
-
-Yo, what is going on guys?
-We are proud to have Voltage as a sponsor of this episode.
-How many of you developers out there have wanted a streamlined infrastructure provider for your particular project?
-Well, I'll tell you what, Voltage is the Bitcoin infrastructure provider you have been looking for that makes building on Bitcoin quick and easy, whether it's Bitcoin nodes, Lightning nodes, BTC pay, and so much more.
-But don't take it from me.
-Just ask the guys over at Amboss, Sphinx, Podcast Index, and Thunder Games, and so many others that you guys already know and love.
-Their Enterprise-grade products make it fast and easy to build, deploy, and scale your next project.
-So make it easy on yourself.
-Even normie plebs can use the dashboard or API.
-Don't wait before the next block confirmation.
-Let your team focus on building great products and let Voltage handle all the rest.
-Voltage is your go-to zero management Bitcoin infrastructure solution.
-
-Aaron: 00:18:37
-
+Exchanges, for example, and hosted wallets, that kind of stuff.
 So what's the idea here?
 Sjors, do you just want to get to the point of the article, I guess, at this point?
 
@@ -511,7 +459,7 @@ And then it would fit with the current transaction counts.
 
 Aaron: 00:19:02
 
-Yeah, I think if you do some back of a napkin math, the idea sort of is that if you have a lot of custodians that suck a little bit less, and they are connected through Lightning, then you can actually get to the point where Bitcoin could support billions of users.
+I think if you do some back of a napkin math, the idea sort of is that if you have a lot of custodians that suck a little bit less, and they are connected through Lightning, then you can actually get to the point where Bitcoin could support billions of users.
 So anyone can sort of choose the custodian and the trade-offs that they want.
 So that can be a sidechain, it can be a venement kind of thing, it can be like an actual custodian of an exchange.
 And these custodians in general would talk with each other over Lightning.
@@ -520,7 +468,7 @@ I think that's kind of the summary of the article that sort of considering the t
 
 Sjors: 00:20:06
 
-Yeah, though my concern with custodians is that generally in economics you get this power law distribution of one or two massive custodians and then you know 10,000 very small ones and my issue is not with those 10,000 very small ones but with those very big ones that could have some pretty undue influence over the whole protocol and of course... 
+Though my concern with custodians is that generally in economics you get this power law distribution of one or two massive custodians and then you know 10,000 very small ones and my issue is not with those 10,000 very small ones but with those very big ones that could have some pretty undue influence over the whole protocol and of course... 
 
 Aaron: 00:20:29
 
@@ -571,7 +519,7 @@ Now that might change if you know the whole world is using Bitcoin.
 Hopefully there'll be far more competent people.
 Well hopefully in the sense that it'll be good for Bitcoin but not hopefully in the sense that these very competent people will be working for those companies.
 So, because they're paying the money.
-So yeah, I'm basically worried about-
+I'm basically worried about-
 
 Aaron: 00:21:56
 
@@ -588,30 +536,14 @@ Aaron: 00:22:21
 Well, no, not exactly.
 So I think the better way of understanding this vision, so to say, is We are keeping the block size limited explicitly so that people can still validate the rules.
 
-Sjors: 00:22:37
-
-Yeah.
-
-Aaron: 00:22:38  
-
-So-
-
 Sjors: 00:22:39
 
 Even if I guess you could say it's true that you could use a custodian, but still run a full node, right?
-
-Aaron: 00:22:40
-
-Yeah.
-
-Sjors: 00:22:42
-
 It's just that your coins are not on it.
 All you know is where your coins are maybe within the custodian.
 
 Aaron: 00:22:48
 
-Right.
 So you still know that there are only 21 million coins.
 Now, I guess the more realistic risk, which is or the risk that I would be more concerned about, which is also mentioned in the article, is more like fractional reserve kind of problems.
 So there's still only 21 million Bitcoin, that can change that you're still validating that.
@@ -623,18 +555,17 @@ So that's, I guess my opinion about this is this seems to me like the most viabl
 
 Sjors: 00:24:09
 
-Yeah, I mean there's one other option, which is that you just don't get billions of users, you only get a few tens of millions of users, in which case, you know, Bitcoin would not be the global reserve currency, but it might be the global international trade currency or something like that.
+I mean there's one other option, which is that you just don't get billions of users, you only get a few tens of millions of users, in which case, you know, Bitcoin would not be the global reserve currency, but it might be the global international trade currency or something like that.
 In that case, you know, we don't need too many massive technological breakthroughs because it'll work.
 
 Aaron: 00:24:31
 
-Right.
 So in that, so in that vision, Bitcoin is kind of the currency you use when the other things don't work.
 You would usually just use PayPal, except if you want to buy drugs.
 
 Sjors: 00:24:42
 
-Yeah, or maybe slightly better than that.
+Maybe slightly better than that.
 Maybe it is the preferred currency if you're doing international trade, say outside, you know, from Europe to America or something like that.
 But I don't know if that's even likely.
 I mean, that is an option.
@@ -646,13 +577,6 @@ But so far I don't really see a way to do that other than, yeah, I guess what's 
 Aaron: 00:25:13
 
 I mean it's not perfect, But it's good to have at least an idea of how you can scale if we need to, right?
-
-Sjors: 00:25:19
-
-Yeah.
-
-Aaron: 00:25:20
-
 That's what I think anyways.
 
 Sjors: 00:25:22
@@ -670,7 +594,7 @@ It's, you know, stuff.
 
 Sjors: 00:25:50
 
-Yeah, I think what he's describing here is a phenomenon that we only, developers only fix problems when they become actual problems.
+I think what he's describing here is a phenomenon that we only, developers only fix problems when they become actual problems.
 So we all know the theoretical things that can go wrong with Lightning, but until they actually start happening, until Burak hits the button and blows up a bunch of nodes, bugs don't get fixed.
 So I think what he's saying here is that at some point, more and more people start using Lightning, then we start running into the bottlenecks, the known ones, but also maybe some surprises.
 And as those get fixed, well, at some point we'll also hit the hard limits of what these systems can do, you know, as we work through the bottlenecks.
@@ -685,7 +609,7 @@ Let's run into the bottlenecks and then people will find alternatives, right?
 
 Sjors: 00:26:45
 
-Yeah, exactly.
+Exactly.
 So fee pressure could go up that can force people to go to alternatives or other usabilities could cause that too.
 So that's just a, yeah, sort of a guess of how it could, how the network might scale in practice.
 So not smoothly, but more in, I guess, in bumps and innovations.
@@ -721,52 +645,3 @@ Thank you for listening to Bitcoin
 Aaron: 00:27:23
 
 Explained.
-
-Speaker 4: 00:27:44
-
-Thank you fellor Bitcoiners, you brought Bitcoin to the global stage.
-
-Speaker 3: 00:27:52
-
-Bitcoin came, but Bitcoin was not expected by anybody.
-
-Speaker 4: 00:27:54
-
-Joining our three-day ride on a mission of hyper-Bitcoinization with brilliant minds that raised the bar worldwide.
-
-Speaker 5: 00:28:04
-
-But it goes far deeper than that.
-
-Speaker 4: 00:28:06
-
-You listened to different angles and seen various perspectives.
-You dared to stand up and speak out.
-
-Speaker 6: 00:28:17
-
-If you love somebody, tell them to buy Bitcoin.
-
-Speaker 4: 00:28:22
-
-You were there to learn, teach and inspire, discover opinions and arise with vision.
-
-Speaker 7: 00:28:31
-
-And everything less than that is pure madness.
-
-Speaker 4: 00:28:35
-
-You came together to collaborate and celebrate side by side for the greatest financial innovation.
-You came to Amsterdam and you made history.
-
-Speaker 3: 00:29:19
-
-Thank you Miami for the last three years in this amazing city.
-The whole world shut down, but Miami welcomed us with open arms.
-We want to show Bitcoin to the whole world.
-We are taking the conference on the road to set the stage for Bitcoin in a new city.
-Nashville.
-Bitcoin 2024 is coming to Nashville in Tennessee.
-A city that is known as a music and Freedom City.
-Bitcoin 2024 in Nashville from July 25th to 27th.
