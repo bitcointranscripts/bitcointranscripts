@@ -1,6 +1,6 @@
 ---
 title: "Accounts for Bitcoin, Easypaysy!"
-transcript_by: martinfer13 via review.btctranscripts.com
+transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=AyjU0EJZjR8
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["podcast"]
@@ -45,7 +45,7 @@ Well I already signed up for it, a week ago so I think it exists but I had the U
 
 Aaron: 00:00:45
 
-Yeah but that's the RSS feed because you're a technical wizard.
+But that's the RSS feed because you're a technical wizard.
 Most people just click subscribe in their podcast app.
 
 Sjors: 00:00:53
@@ -87,7 +87,7 @@ It's so convenient isn't it
 
 Sjors: 00:01:18
 
-Yeah, it just makes you feel like you know your exchange if you're sending them money they know everything about you and they like that right?
+It just makes you feel like you know your exchange if you're sending them money they know everything about you and they like that right?
 
 Aaron: 00:01:26
 
@@ -157,7 +157,6 @@ I think that's what we want.
 
 Aaron: 00:03:05
 
-Right.
 So, Jose Femenas Canoelo, that's probably a severe mispronunciation of his name, but Spanish developer Jose Femenas Canoelo, he also believes so.
 He believes Bitcoin would benefit from an account system.
 It's called Easypaysy, which is short for Easy Payment System, I think.
@@ -174,8 +173,6 @@ So it's pretty clever and we'll get to possible downsides later, but let's first
 
 Sjors: 00:03:41
 
-Yeah.
-Yeah.
 How does it work?
 Because this time you're going to explain how this thing works.
 
@@ -202,12 +199,12 @@ Okay, so how do I generate an account?
 
 Aaron: 00:04:24
 
-Right, so an account is basically a transaction.
+So an account is basically a transaction.
 That's in this proposal what an account is.
 And this transaction consists of one input, so one address where coins are sent from, but this one input is a multi-sig input, so it has two public keys.
 It also has one output, which is a, what's it called?
-No, OP_RETURN, sorry.
-So one OP_RETURN output.
+No, `OP_RETURN´, sorry.
+So one `OP_RETURN´ output.
 
 Sjors: 00:04:52
 
@@ -223,15 +220,15 @@ So the input does need to send some money, which is the fee, and then the output
 
 Sjors: 00:05:17
 
-Right, and so the reason why we need a 2 of 2 multisig is...
+And so the reason why we need a 2 of 2 multisig is...
 
 Aaron: 00:05:22
 
-Yeah, okay, so there's two public keys in there.
+So there's two public keys in there.
 So these are basically your public keys at this point.
 When you're making this transaction, you're announcing to the world, these are my two public keys.
 One public key is your identity public key or...
-Yeah, so, well, one of them is for communication anyways.
+So, well, one of them is for communication anyways.
 I forget, there's a term for it, which I'm, which is slipping my mind right now, but one of them is for communication.
 So if you want to send me some kind of message, you use this public key, which I think is the first of the two, like it's just an order.
 The first one is for communication.
@@ -245,28 +242,28 @@ So that's why there's two basically.
 
 Sjors: 00:06:35
 
-Yeah and it might be worth reminding the listener that so what you're doing here is you're funding your own or like putting a trivial amount in your own multi-sig address and then immediately spending from that multi-sig address and the reason you have to do the latter is because you reveal the keys when you're spending not when you're receiving.
+It might be worth reminding the listener that so what you're doing here is you're funding your own or like putting a trivial amount in your own multi-sig address and then immediately spending from that multi-sig address and the reason you have to do the latter is because you reveal the keys when you're spending not when you're receiving.
 So in order for the rest of the world to see what your keys are you have to spend from it.
 
 Aaron: 00:06:58
 
-Right, yeah that's a good addition indeed when you're spending to...
+That's a good addition indeed when you're spending to...
 Well anyway no need to repeat you're right.
 Okay so
 
 Sjors: 00:07:05
 
-Then the OP_RETURN message that's in the outputs of this transaction can communicate any other piece of information to the world.
+Then the `OP_RETURN´ message that's in the outputs of this transaction can communicate any other piece of information to the world.
 
 Aaron: 00:07:12
 
-Yeah, you can basically communicate text in this output.
+You can basically communicate text in this output.
 So the text we're communicating here is a JSON message, and it includes the instructions for how to pay to this account.
 That's the main thing it includes.
 
 Sjors: 00:07:26
 
-Yeah, I doubt it's actually JSON.
+I doubt it's actually JSON.
 
 Aaron: 00:07:29
 
@@ -285,7 +282,7 @@ You think that's probably a simplification?
 Sjors: 00:07:44
 
 Well I don't know I didn't read it in that level of detail.
-So there's only 80 bytes available in OP_RETURN.
+So there's only 80 bytes available in `OP_RETURN´.
 So you could use those 80 bytes to write as key characters, you know, with an opening bracket and colons and all this stuff.
 But you can also agree on a serialization format that could put way more information in a smaller space.
 
@@ -310,14 +307,12 @@ Sjors: 00:08:35
 
 It's even worse than that, I guess, because you're announcing, hey, this is where the money is going to the whole world.
 And then it's reusing addresses with everyone that you receive money from, plus everyone you're not even receiving money from.
-Right.
 
 Aaron: 00:08:49
 
-Yeah.
 It's bad.
 It's in there because it's just an option for people to use.
-You can choose not to use it, but you know if we're making this protocol, that was Jose's reasoning.
+You can choose not to use it, but if we're making this protocol, that was Jose's reasoning.
 We might as well include it for people who do want to use it.
 It's a little bit like donation addresses.
 Some people do use a donation address, which is just one address they post on a website somewhere, and anyone can pay to this address.
@@ -352,7 +347,7 @@ But this to me sounds like what we're already doing, where giving people unique 
 
 Aaron: 00:10:06
 
-Yeah, this is pretty similar to that indeed.
+This is pretty similar to that indeed.
 So this is just one of the options in the account system.
 It's not all groundbreaking.
 
@@ -386,24 +381,24 @@ Okay.
 Aaron: 00:11:16
 
 So the money is going there.
-In this transaction, he also includes another OP_RETURN in which the public key is included.
+In this transaction, he also includes another `OP_RETURN´ in which the public key is included.
 The public key he generated himself and with this public key, the account holder can use this public key to regenerate the new key pair and thereby he can spend the funds.
 Okay.
 So the way this works if you're an account holder is you need to know that this transaction happened.
 There's two ways of figuring that out.
-One of them is that the sender just tells you like, hey, I sent you some money, look at that transaction and you can use it with the information in OP_RETURN to generate a private key which you can use to spend the money or the account holder just needs to scan the blockchain to see if there are any transactions with an OP_RETURN in there and if there is see if there's information in there that he can use to generate this new key pair that actually matches and that actually lets him spend the coins. In which case you know he just finds money on the blockchain basically so he knows he's been paid. This is a little bit of a hassle of course, because you know it requires scanning of the blockchain and all of that.
+One of them is that the sender just tells you like, hey, I sent you some money, look at that transaction and you can use it with the information in `OP_RETURN´ to generate a private key which you can use to spend the money or the account holder just needs to scan the blockchain to see if there are any transactions with an `OP_RETURN´ in there and if there is see if there's information in there that he can use to generate this new key pair that actually matches and that actually lets him spend the coins. In which case you know he just finds money on the blockchain basically so he knows he's been paid. This is a little bit of a hassle of course, because you know it requires scanning of the blockchain and all of that.
 But it is very private because even though it's relatively private, because even though the value key was revealed in his account, this new money isn't sent to anything that anyone can link to the account by just looking at the blockchain.
 It's sent to a completely new address, which even the recipients, the account holder, didn't know at first and had to figure out.
 So therefore, it does offer nice privacy features.
 
 Sjors: 00:12:57
 
-Yeah, I'd say that's quite nice.
+I'd say that's quite nice.
 The privacy gotcha there that I would think about is that when you as the recipient you first publish you know your identifier your account.
 
 Aaron: 00:13:08
 
-Yeah so let's so I first explain that or and then you get to the privacy gotcha.
+So let's so I first explain that or and then you get to the privacy gotcha.
 I do like what the identifier is?
 
 Sjors: 00:13:16
@@ -412,7 +407,7 @@ Oh what the identifier is yeah sure you can do that.
 
 Aaron: 00:13:19
 
-Right, so how do people find your account?
+So how do people find your account?
 As mentioned, it's just a transaction.
 It's a Bitcoin transaction that's going to be included in the blockchain.
 So the place where it is included in the blockchain, that is the identifier.
@@ -446,13 +441,6 @@ That's not the right word.
 Sjors: 00:14:45
 
 I think what you were going to say is it's going to convert to some nice mnemonic style.
-
-Aaron: 00:14:49
-
-Yeah.
-
-Sjors: 00:14:50
-
 So a couple of words like rabbit, big, fish.
 
 Aaron: 00:14:54
@@ -471,7 +459,7 @@ That's much easier to remember.
 
 Sjors: 00:15:07
 
-Yeah that makes sense.
+That makes sense.
 
 Aaron: 00:15:08
 
@@ -495,7 +483,7 @@ So the first time you're using this as a recipient, so you're going to create an
 If then later on you receive coins, we're going to assume you use this third methodology, the nice privacy thing, it's going to arrive on different addresses.
 So that's very nice.
 But, if you're stupid, or if your wallet is stupid, it's going to combine coins that, you know, are related to that first transaction.
-The first transaction itself is not spendable because it's an OP_RETURN, but maybe it comes from another coin.
+The first transaction itself is not spendable because it's an `OP_RETURN´, but maybe it comes from another coin.
 
 Aaron: 00:16:04
 
@@ -505,18 +493,11 @@ Sjors: 00:16:05
 
 And now you start combining coins and somebody can link your identity to everything you received.
 So you still need to be very wary of this cluster analysis risk.
-
-Aaron: 00:16:14
-
-Yeah, you need to...
-
-Sjors: 00:16:05
-
 A new wallet could avoid that and warn you about it.
 
 Aaron: 00:16:17
 
-Yeah, no, that's true.
+No, that's true.
 You have coins in your wallet which you're going to use to pay the fee.
 You probably have more in your wallet than just the fees, so you have change and it's then sort of linked to your account.
 And then after which the coins can be linked to even the coins you received privately.
@@ -530,13 +511,6 @@ If you're an exchange, you know what you're doing, you're not gonna make those p
 And one of the cool things is that you can, you can, you know, add a DNS record is one of the suggestions so that people can verify that, hey, this DNS record matches this big fish thing.
 And that's a nice way to double check.
 I could imagine hardware wallets could also embed some of these well-known codes so that if you're sending to Kraken or whatever, your hardware wallet could say, oh yeah that's actually an address that belongs to that exchange, at least the last time we we updated the firmware to know these accounts.
-
-Aaron: 00:17:28
-
-Mmm...
-
-Sjors: 00:17:29
-
 It's kind of nice against clipboard attacks and that sort of stuff.
 But that's for these schemes in general.
 I don't think you need to have this announcement into blockchain specifically.
@@ -566,7 +540,7 @@ So the recipient will watch the handshake address and every time it sees a trans
 
 Aaron: 00:19:07
 
-Right, okay so that does require more blockchain transactions then.
+Okay so that does require more blockchain transactions then.
 
 Sjors: 00:19:12
 
@@ -576,7 +550,6 @@ You can just have an identifier that you send via email and yeah it's not as sho
 
 Aaron: 00:19:48
 
-Right.
 Well, you want to get into the benefits of this system?
 
 Sjors: 00:19:51
@@ -626,7 +599,7 @@ No, we haven't mentioned that, that's a good one.
 
 Aaron: 00:20:34
 
-Yeah, so recurring payments, so you want to pay rent every month, so your landlord would have to generate a new address every month and, wait, why is this a problem?
+So recurring payments, so you want to pay rent every month, so your landlord would have to generate a new address every month and, wait, why is this a problem?
 
 Sjors: 00:20:46
 
@@ -634,7 +607,7 @@ Well, you could say it's annoying for the landlord to have to send you an email 
 
 Aaron: 00:20:51
 
-Right, exactly.
+Exactly.
 
 Sjors: 00:20:52
 
@@ -643,7 +616,7 @@ But I would immediately say there's a downside to that, because if, let's say my
 
 Aaron: 00:21:18
 
-Yeah, he can call you, right?
+He can call you, right?
 He knows where you live.
 
 Sjors: 00:21:22
@@ -652,7 +625,7 @@ He does know where you live.
 
 Aaron: 00:21:24
 
-Yeah, he probably does. He can ring the bell.
+He probably does. He can ring the bell.
 
 Sjors: 00:21:25
 
@@ -718,11 +691,11 @@ So you make some sort of order, I don't know, you order to buy a laptop or a tea
 
 Sjors: 00:24:13
 
-Yeah, a teapot.
+A teapot.
 
 Aaron: 00:24:15
 
-Oh yeah, that's what it is.
+That's what it is.
 That's what you're ordering and then the seller receives the money and after it doesn't ship the order and then when you complain, he says, hey, I never received any money.
 I don't know what you're talking about.
 I don't know who you are.
@@ -773,7 +746,6 @@ So you do agree there's a benefit now?
 Sjors: 00:25:45
 
 I think in general there's a benefit of having receipts essentially.
-Right.
 And basically when you receive an invoice, you really need to have some evidence that you really got that invoice.
 So normally if you send an invoice by PDF or via email, it should have the address in it.
 And that email should be signed by something, maybe just the standard email DKIM whatever stuff.
@@ -783,7 +755,6 @@ Great.
 
 Aaron: 00:26:16
 
-Yeah.
 But there's more.
 There's more.
 
@@ -799,7 +770,6 @@ There's updates to the protocol.
 
 Sjors: 00:26:23
 
-Right.
 Because just for the listener, this protocol was announced in December.
 Then there were some distractions in the world and I guess.
 
@@ -809,8 +779,6 @@ Oh, last December?
 
 Sjors: 00:26:31
 
-Yeah.
-Okay.
 Now he's back on it.
 
 Aaron: 00:26:34
@@ -844,7 +812,7 @@ And interactive payments, was that the second method you were talking about?
 
 Aaron: 00:27:01
 
-Yeah, I think so.
+I think so.
 
 Sjors: 00:27:02
 
@@ -872,7 +840,7 @@ The stealthy address.
 
 Aaron: 00:27:22
 
-Okay okay so IOC transactions don't need the OP_RETURN anymore so easy peasy transactions can be as lean as any regular Bitcoin transaction now.
+Okay okay so IOC transactions don't need the `OP_RETURN´ anymore so easy peasy transactions can be as lean as any regular Bitcoin transaction now.
 
 Sjors: 00:27:33
 
@@ -888,11 +856,11 @@ There is a new discovery mechanism that allows for simple support for SPV wallet
 
 Sjors: 00:27:48
 
-Right, because we didn't really touch on that, but if you need to monitor the blockchain, that's a little bit more difficult for lightweight wallets to do than for full-fledged wallets.
+Because we didn't really touch on that, but if you need to monitor the blockchain, that's a little bit more difficult for lightweight wallets to do than for full-fledged wallets.
 
 Aaron: 00:27:56
 
-Yeah, so apparently that's solved.
+So apparently that's solved.
 
 Sjors: 00:27:58
 
@@ -940,7 +908,6 @@ Which is Samurai?
 
 Sjors: 00:28:53
 
-Yeah.
 So I do think we need something like this.
 So in that sense, I am happy that people are working on trying to figure out a good standard for some sort of identity, not in the KYC sense, but in the sense that I know that I'm actually paying this shop that I think I'm paying and some sort of way to make address reuse really hard.
 Although I think part of that is already solved.
@@ -970,7 +937,7 @@ But the thing is, I think there should also be systems like this for just regula
 
 Aaron: 00:30:48
 
-Yeah, what you're saying is it's basically solved for Lightning or there's a very, you know, but
+What you're saying is it's basically solved for Lightning or there's a very, you know, but
 
 Sjors: 00:30:53
 
@@ -978,7 +945,6 @@ Sjors: 00:30:53
 
 Aaron: 00:30:58
 
-Right.
 And yes, and that's one of the critiques that I've heard of this solution as well, that why focus on on-chain, let's just move this type of stuff to Lightning.
 
 Sjors: 00:31:09
@@ -1012,7 +978,7 @@ I was just thinking of that XRCP or whatever XKCD cartoon about standards.
 
 Sjors: 00:32:26
 
-Oh yeah, let's make another situation.
+Let's make another situation.
 
 Aaron: 00:32:28
 
