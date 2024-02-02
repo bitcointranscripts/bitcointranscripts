@@ -1,15 +1,12 @@
 ---
-title: " Bitcoin Explained - Episode 81: Bitcoin Core 25.0 "
+title: "Bitcoin Core 25.0"
 transcript_by: edilmedeiros via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=TN2P9xwd6ZU
-tags: ["bitcoin-core","miniscript","merkle trees","spv","wallet"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
-categories: ["Podcast"]
+tags: ["bitcoin-core","miniscript","wallet","compact-block-filters","transaction-relay-policy"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
+categories: ["podcast"]
 date: 2023-06-26
 ---
-
-# Bitcoin Core 25
-
 Aaron van Wirdum: 00:00:21
 
 Live from Utrecht, this is Bitcoin...
@@ -32,7 +29,8 @@ Mostly Prague.
 
 Aaron van Wirdum: 00:00:38
 
-You were in Prague for a while. That's where we recorded the previous episode about Stratum V2. 
+You were in Prague for a while.
+That's where we recorded the previous episode about Stratum V2.
 Now we're back in Utrecht, and we're gonna talk about Bitcoin Core 25, the latest Bitcoin Core release, but it came out a couple of weeks ago.
 Because we were traveling, we didn't have time to record this episode, but dear listener, we won't disappoint you.
 Here we are with our episode on Bitcoin Core 25.
@@ -46,7 +44,7 @@ Aaron van Wirdum: 00:01:16
 
 I will be honest with you, Sjors, I am starting to regret doing the jingle myself.
 I do feel like I painted myself in the corner with this one.
-But here we go! 
+But here we go!
 (Singing) Sjors stacks sats, Sjors stacks sats, Sjors stacks sats!
 
 Sjors Provoost: 00:01:35
@@ -151,7 +149,8 @@ That's right.
 
 Aaron van Wirdum: 00:04:30
 
-Okay. So, number one.
+Okay.
+So, number one.
 There are some performance improvements when it comes to huge transaction loads, and they have something to do with BRC20.
 Is that right?
 
@@ -159,7 +158,6 @@ Sjors Provoost: 00:04:45
 
 Yeah, that's right.
 More in general, what we've seen in the last few months is the inscriptions, the ordinals, and then the BRC20 hypes; and also the stamps hype that we talked about in an earlier episode.
-It just causes...
 
 Aaron van Wirdum: 00:05:02
 
@@ -228,19 +226,12 @@ Aaron van Wirdum: 00:06:57
 Right.
 We don't have to re-explain how inscriptions work: you just put this data in the witness, and most nodes wouldn't even look at it.
 They're very small, like you said because not much else is happening with the transaction.
-
-Sjors Provoost: 
-
-Right.
-
-Aaron van Wirdum: 
-
 This is the idea. Okay, go on.
 
 Sjors Provoost: 00:07:14
 
 It does mean they're a little smaller than expected.
-Then, if you really look at how Bitcoin Core deals with things like the mempool and how transactions are relayed to other nodes before they go in a block: they were assuming that was happening at about seven transactions per second. 
+Then, if you really look at how Bitcoin Core deals with things like the mempool and how transactions are relayed to other nodes before they go in a block: they were assuming that was happening at about seven transactions per second.
 With SegWit, that increased a bit.
 For this type of usage, it should be slightly higher, too.
 The new release contains some improvements to handle these higher numbers.
@@ -257,7 +248,6 @@ This new Bitcoin Core release takes this new way of using Bitcoin into account w
 
 Sjors Provoost: 00:08:29
 
-Yeah.
 The bigger picture here is that in blocks, we have a very hard limit.
 There are only so many megabytes that go into a block, so it's much easier to reason about the worst case.
 But for the mempool, there are not really any rules because it's not consensus.
@@ -280,12 +270,12 @@ Aaron van Wirdum: 00:09:19
 ...require less resources.
 Okay, I like my computer cooler, so that's good.
 
-## Updates related to miniscripts
+## Updates related to miniscript
 
 Aaron van Wirdum: 00:09:19
 
-Next point: there are some updates with Miniscripts.
-We've done a whole episode on Miniscripts.
+Next point: there are some updates with Miniscript.
+We've done a whole episode on Miniscript.
 Do you remember what episode that was?
 
 Sjors Provoost: 00:09:40
@@ -295,12 +285,13 @@ I do not.
 Aaron van Wirdum: 00:09:42
 
 Look it up.
-In a previous Bitcoin Core Core release episode, we mentioned that something related to Miniscript was implemented, but it wasn't quite there.
+In a previous Bitcoin Core release episode, we mentioned that something related to Miniscript was implemented, but it wasn't quite there.
 It sounds like a new step has been made, right?
 
 Sjors Provoost: 00:09:57
 
-Yeah. We described Miniscript several years ago, I think it was one of the first episodes.
+Yeah.
+We described Miniscript several years ago, I think it was one of the first episodes.
 It's not a consensus change, it's not a soft fork.
 A miniscript is a way to write scripts in a sane manner, because writing Bitcoin scripts by hand is the best way to lose your money.
 Using miniscript allows you to write scripts in a safe way.
@@ -352,29 +343,22 @@ It means you can give it a piece of Miniscript and it understands how to create 
 
 Aaron van Wirdum: 00:12:17
 
-But you still, MiniScript is literally script.
+But Miniscript is literally script.
 It's still something you code as a programmer, right?
 
-Sjors Provoost: 
+Sjors Provoost: 00:12:23
 
 Yeah.
 
-Aaron van Wirdum: 
+Aaron van Wirdum: 00:12:24
 
 So you give that code to the Bitcoin Core wallet.
-
-Sjors Provoost: 
-
-Yeah.
-
-Aaron van Wirdum: 
-
 We're not talking about the GUI, then.
 You have to go into the command line, you paste a piece of code there and this is what Bitcoin Core will understand.
 
 Sjors Provoost: 00:12:37
 
-I mean, some people may have been used to pasting xpubs around. 
+I mean, some people may have been used to pasting xpubs around.
 The way miniscript works in practice is just an xpub with a bunch of extra script around it saying what to do with the xpub.
 
 Aaron van Wirdum: 00:12:50
@@ -383,20 +367,15 @@ Okay this is what you paste in the command line.
 
 Sjors Provoost: 00:12:53
 
-Yeah. You paste it in the command line, but there's no reason this could not be added to the user interface too.
+Yeah.
+You paste it in the command line, but there's no reason this could not be added to the user interface too.
 It's just that you'll have to paste something magical that you probably don't understand so that's a bit dangerous.
 
 Aaron van Wirdum: 00:13:07
 
-Okay. So far, Bitcoin Core could understand it, and you could receive the coins.
+Okay.
+So far, Bitcoin Core could understand it, and you could receive the coins.
 But they were sitting there in your wallet, and you couldn't actually spend them.
-
-Sjors Provoost: 00:13:08
-
-Yeah.
-
-Aaron van Wirdum: 
-
 Sounds like being able to spend them is a pretty good upgrade.
 
 Sjors Provoost: 00:13:15
@@ -405,14 +384,14 @@ It's one of the nicer features of Bitcoin, although it's good for inflation if p
 
 Aaron van Wirdum: 00:13:21
 
-Okay, so I guess. Wait, but this is still sort of limited.
-It doesn't...
+Okay, so I guess.
+Wait, but this is still sort of limited.
 
 Sjors Provoost: 00:13:30
 
 Yeah, I think for most cases that you've described, it'll work.
 You can create a PSBT because there are now, I believe, two hardware wallets or maybe three.
-The Ledger was first. 
+The Ledger was first.
 Then I believe it was Coldcard or Bitbox, one of those two, that added support for Miniscript, which means you can make like a multisig wallet with three physically different devices with each of having their own trade-offs.
 In order to do that you need PSBTs to move between these devices.
 But there are some limits to what you can do.
@@ -427,7 +406,7 @@ Also, it doesn't work with Taproot yet.
 Sjors Provoost: 00:14:16
 
 Yeah, that's a bigger drawback, I would say.
-MiniScript was designed quite a while ago before Taproot.
+Miniscript was designed quite a while ago before Taproot.
 It was initially designed for use with SegWit, basically SegWit script.
 There's also a Miniscript standard for pre-SegWit script, I think.
 But, at least, it was designed for SegWit scripts.
@@ -462,17 +441,17 @@ Soon, TM.
 Aaron van Wirdum: 00:15:35
 
 Two weeks.
-We've mentioned two improvements so far. 
+We've mentioned two improvements so far.
 One of which was the transaction loads, BRC20.
 And then we now mentioned Miniscript.
 Now we're getting to the third one.
 And that's actually the last one already.
 
-Sjors Provoost: 
+Sjors Provoost:
 
 Fast wallet rescan.
 
-Aaron van Wirdum: 
+Aaron van Wirdum:
 
 Fast wallet rescan.
 Sjors, explain.
@@ -480,10 +459,10 @@ Sjors, explain.
 Sjors Provoost: 00:15:54
 
 So, Bitcoin Core has a wallet built into it.
-Let's say you first used that in 2012 and you received some Bitcoin. 
+Let's say you first used that in 2012 and you received some Bitcoin.
 Then you were like: "okay, let me put this wallet on a USB stick, put it in a vault somewhere physically, so the whole wallet, not just the backup codes, the actual file and remove it from my computer because I'm traveling around with it".
 Your node just keeps updating, keeps syncing, keeps syncing, keeps syncing.
-Now you come back and you put the USB stick back into your computer. 
+Now you come back and you put the USB stick back into your computer.
 Maybe that's a bad idea if there's a lot of money on it, but let's say you do.
 Then, your wallet is behind, in a sense, because the new transactions that happened since 2012 would not be in that wallet file, because it was in your vault.
 And your node doesn't really track them either, not specifically, it just has all the blocks.
@@ -516,24 +495,6 @@ So you are restoring, you're reinstalling Bitcoin Core, and you're recovering yo
 You're trying to see if there are any coins in that wallet and find the transactions.
 The only way to do that is to go through all the blocks and check if there's something useful in that block.
 This takes a long time, it could be several hours.
-
-### Advertisement 
-
-Advertisement narrator: 00:18:00
-
-We are prond to have Voltage as a sponsor of this episode. 
-How many of you developers out there have wanted a streamlined infrastructure provider for your particular project.
-Well, I'll tell you what: Voltage is the Bitcoin infrastructure provider you have been looking for that makes building on Bitcoin quick and easy, whether it's Bitcoin nodes, Lightning nodes, BTCPay, and so much more.
-But don't take it from me.
-Just ask the guys over at Amboss, Sphinx, Podcast Index, Thunder Games, and so many others that you guys already know and love.
-Their enterprise-grade products make it fast and easy to build, deploy, and scale your next project.
-So make it easy on yourself.
-Even normie plebs can use the dashboard or API.
-Don't wait before the next block confirmation.
-Let your team focus on building great products, and let Voltage handle all the rest.
-Voltage is your go-to zero management Bitcoin infrastructure solution.
-
-### Back to fast wallet rescan
 
 Aaron van Wirdum: 00:18:49
 
@@ -569,14 +530,14 @@ And so it'll scan fewer blocks, which is faster.
 Aaron van Wirdum: 00:19:50
 
 Wait.
-So if I have a wallet.dat file on a USB stick, as we discussed, that's the example we're using.
+So if I have a `wallet.dat` file on a USB stick, as we discussed, that's the example we're using.
 I buy a new computer tomorrow and I sync Bitcoin Core.
-Now I get the wallet.dat file.
-Somehow Bitcoin Core would know which blocks to download based on the wallet.dat?
+Now I get the `wallet.dat` file.
+Somehow Bitcoin Core would know which blocks to download based on the `wallet.dat`?
 
 Sjors Provoost: 00:20:12
 
-The wallet.dat file contains the addresses that belong to your wallet.
+The `wallet.dat` file contains the addresses that belong to your wallet.
 Depending on how old it is, that's gonna be somewhere between 2000 and 8000, because it basically creates a cache of addresses.
 It knows these addresses, and yet, using these filters which Bitcoin Core will also have created, it's able to know which blocks are relevant and which blocks are not, because these filters are like a compressed summary of the blocks.
 It looks at the filters and it says: "Okay, if I run my addresses through this filter, does it say yes or no?"
@@ -591,18 +552,20 @@ You do need to have all the blocks available.
 
 Sjors Provoost: 00:21:09
 
-Correct. At the moment, it does not work with a pruned node.
+Correct.
+At the moment, it does not work with a pruned node.
 If you have these filters on your computer, but have pruned blocks, you would be able to know which blocks to download again which currently you can only do with some manual magic.
 It is possible with the pruned node, but then you need a script.
 I've tried this myself, like experimenting with it.
-You can... Yeah, you can scan...
+You can scan...
 I don't know if I tried this myself, I may not.
 No, I think I'm lying here.
 In theory, it's possible to download all the blocks that you're missing and then scan them, but the wallet will be very confused.
 
 Aaron van Wirdum: 00:21:44
 
-Okay. I don't understand how this works, but that's probably because I forgot how Neutrino works.
+Okay.
+I don't understand how this works, but that's probably because I forgot how Neutrino works.
 So, if I want to understand that, I would have to go back to our own episode and listen to that.
 
 Sjors Provoost: 00:21:53
@@ -633,13 +596,6 @@ I mean, I understand the idea. I just don't understand why that...
 Sjors Provoost: 00:22:07
 
 Why it works?
-
-Aaron van Wirdum: 
-
-I don't understand.
-
-Sjors Provoost: 
-
 It's magical math.
 
 Aaron van Wirdum: 00:22:09
@@ -649,7 +605,7 @@ I feel that at some point I understood it more than just magical math, but not r
 
 Sjors Provoost: 00:22:18
 
-The magical math basically says that you've done some calculations before to make a filter from a block and then you can check against the filter. 
+The magical math basically says that you've done some calculations before to make a filter from a block and then you can check against the filter.
 You say "do these addresses belong to this block or not?"
 That is it.
 
@@ -680,13 +636,6 @@ I think you will bring up the RBF, the full RBF.
 Sjors Provoost: 00:22:49
 
 No, no, no, no.
-
-Aaron van Wirdum: 
-
-Wait, we missed another topic.
-
-Sjors Provoost: 
-
 The 65 byte transactions.
 
 Aaron van Wirdum: 00:22:53
@@ -708,11 +657,11 @@ Sjors Provoost: 00:23:12
 
 Yes.
 
-Aaron van Wirdum: 
+Aaron van Wirdum: 00:23:13
 
 Okay, explain.
 
-Sjors Provoost: 
+Sjors Provoost: 00:23:14
 
 Remember there is consensus, which are the rules for the blocks, and there's standardness, which are rules for the mempool.
 Generally, the standardness rules are stricter than the consensus rules.
@@ -759,7 +708,7 @@ Why?
 
 Sjors Provoost: 00:24:32
 
-There's some use for it. 
+There's some use for it.
 I think the idea is that it makes it a little bit easier to burn coins if you need to.
 
 Aaron van Wirdum: 00:24:42
@@ -778,7 +727,6 @@ Okay.
 Sjors Provoost: 00:24:50
 
 I think it's easier to do that with smaller transactions.
-But the...
 
 Aaron van Wirdum: 00:24:55
 
@@ -832,17 +780,20 @@ Luckily, I know what you're talking about.
 
 Sjors Provoost: 00:26:20
 
-All right. Well, maybe you can explain it.
+All right.
+Well, maybe you can explain it.
 
 Aaron van Wirdum: 00:26:22
 
-Yes. So you mentioned the original number, and you said that it was 82.
+Yes.
+So you mentioned the original number, and you said that it was 82.
 So that's the confusing part.
 No. The original number was 64.
 That was a minimum of 64.
 And then it was increased?
 
 Sjors Provoost: 00:26:34
+
 No, there was no minimum.
 But it had to be increased above 64.
 
@@ -901,7 +852,8 @@ That's right.
 
 Aaron van Wirdum: 00:27:30
 
-What was wrong with? Why is 64 a magical number?
+What was wrong with?
+Why is 64 a magical number?
 
 Sjors Provoost: 00:27:36
 
@@ -917,8 +869,7 @@ Probably multiple times.
 
 Sjors Provoost: 00:27:54
 
-What it looks like is you take two transactions side by side, and then you hash.
-No, you take two transactions, you hash each of them, and you put the hash of the first transaction on the left, the hash of the second transaction on the right.
+What it looks like is you take two transactions, you hash each of them, and you put the hash of the first transaction on the left, the hash of the second transaction on the right.
 And the hash of a transaction is how many bytes?
 
 Aaron van Wirdum: 00:28:15
@@ -927,14 +878,7 @@ Aaron van Wirdum: 00:28:15
 
 Sjors Provoost: 00:28:16
 
-No. 
-
-Aaron van Wirdum: 
-
-Oh.
-
-Sjors Provoost: 
-
+No.
 The hash of a transaction is...
 
 Aaron van Wirdum: 00:28:19
@@ -946,13 +890,6 @@ Sjors Provoost: 00:28:20
 It's called SHA256.
 The 256 stands for the number of bits.
 256 divided by 8 is 32.
-
-Aaron van Wirdum: 
-
-Okay.
-
-Sjors Provoost: 
-
 So, the hash is 32 bytes.
 You put two of them next to each other.
 That is 64.
@@ -1000,7 +937,7 @@ I just want to clarify...
 Sjors Provoost: 00:29:45
 
 They look the same.
-That is where multiple attacks have come from, including much older ones where you could create a block, then you would pretend that the block is invalid and send the same thing again. 
+That is where multiple attacks have come from, including much older ones where you could create a block, then you would pretend that the block is invalid and send the same thing again.
 All sorts of nasty things.
 
 Aaron van Wirdum: 00:30:00
@@ -1008,27 +945,22 @@ Aaron van Wirdum: 00:30:00
 I want to clarify: we're getting really into the weeds with weird niche, but interesting attacks, here.
 So, yeah, okay.
 The transaction hash is 32 bytes...
-I'm not going to try to re-explain this one even, but I was kind of following you. 
+I'm not going to try to re-explain this one even, but I was kind of following you.
 
 Sjors Provoost: 00:30:16
 
 Transaction height is 32 bytes.
 You put two of them next to each other, and now you have 64 bytes.
-
-Aaron van Wirdum: 
-
-Yes.
-
-Sjors Provoost: 
-
 So, what does that mean?
 Well, I think it was Sergio who...
 
-Aaron van Wirdum: 00:30:24 
+Aaron van Wirdum: 00:30:24
 
 Sergio Demian Lerner.
 
-Sjors Provoost: ... who wrote a [blog post in 2017](https://bitslog.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/) explaining exactly what you can do to attack the user of an SPV wallet.
+Sjors Provoost:
+
+... who wrote a [blog post in 2017](https://bitslog.com/2018/06/09/leaf-node-weakness-in-bitcoin-merkle-tree-design/) explaining exactly what you can do to attack the user of an SPV wallet.
 
 Aaron van Wirdum: 00:30:36
 
@@ -1056,7 +988,7 @@ This is where I get confused.
 The idea here is, because a transaction is hashed into 32 bytes, and there are two of them next to each other, that means that you can basically start making a...
 How do you say this?
 There are certain parts of the transactions that can be whatever you want.
-So you don't have actually to find a SHA256 preimage. 
+So you don't have actually to find a SHA256 preimage.
 You have to try far fewer random transactions to be able to craft a transaction that looks like this.
 One of the tricks he does is he doesn't care about the amount in advance, so how many amounts can there be?
 There are just several bytes worth of what the amounts can be.
@@ -1076,22 +1008,15 @@ If you are receiving more than a few million, you should absolutely run a full n
 
 Aaron van Wirdum: 00:32:58
 
-There are some weird quirks in the Bitcoin protocol and miner incentives. 
+There are some weird quirks in the Bitcoin protocol and miner incentives.
 SPV is not secure for that.
 
 Sjors Provoost: 00:33:04
 
 No, and this attack also requires collaboration from a miner.
 If you have collaboration from the miner anyway, you might as well do a noble double spend.
-
-Aaron van Wirdum: 
-
-Right.
-
-Sjors Provoost: 
-
-I think the target audience for this attack was automated systems that use SPV proofs. 
-I think, at the time, Liquid and RSK had some components that were fully automated and would use these SPV proofs. 
+I think the target audience for this attack was automated systems that use SPV proofs.
+I think, at the time, Liquid and RSK had some components that were fully automated and would use these SPV proofs.
 They would have lots of money in them.
 
 Aaron van Wirdum: 00:33:27
@@ -1121,12 +1046,14 @@ I didn't study it in enough detail.
 
 Aaron van Wirdum: 00:34:19
 
-Okay. Anyway, so now the limit is 65.
+Okay.
+Anyway, so now the limit is 65.
 However, even now, that's only a policy change.
 
 Sjors Provoost: 00:34:25
 
-Yeah. The irony is this never prevented the attack because the attack as described actually requires being a miner or at least working with a miner.
+Yeah.
+The irony is this never prevented the attack because the attack as described actually requires being a miner or at least working with a miner.
 It's ironic because a miner doesn't care about standards and rules.
 It was a step, like, okay.
 But there's something called defense in depth where you say, "okay, we think only a miner can do this, but maybe somebody else figures out a way to do it without the help of a miner".
@@ -1166,7 +1093,8 @@ I think we've covered four of them.
 
 Aaron van Wirdum: 00:35:28
 
-Good. Are we done with the episode?
+Good.
+Are we done with the episode?
 
 Sjors Provoost: 00:35:31
 
@@ -1214,11 +1142,11 @@ Aaron van Wirdum: 00:36:47
 Bitcoin Core 25 is released.
 Where can people find it?
 
-Sjors Provoost: 
+Sjors Provoost: 00:36:49
 
 BitcoinCore.org.
 
-Aaron van Wirdum: 
+Aaron van Wirdum: 00:36:51
 
 There you go.
 
@@ -1229,16 +1157,3 @@ Thank you for listening to Bitcoin...
 Aaron van Wirdum: 00:36:54
 
 Explained.
-
-## Bitcoin 2024 Conference Advertisement
-
-Advertisement narrator: 00:37:13
-
-Thank you Miami, for the last three years in this amazing city.
-The whole world shut down, but Miami welcomed us with open arms.
-We want to show Bitcoin to the whole world.
-We are taking the conference on the road to set the stage for Bitcoin in a new city: Nashville.
-Bitcoin 2024 is coming to Nashville,Tennessee.
-A city that is known as a music and freedom city.
-Bitcoin 2024 in Nashville from July 25th to 27th.
-
