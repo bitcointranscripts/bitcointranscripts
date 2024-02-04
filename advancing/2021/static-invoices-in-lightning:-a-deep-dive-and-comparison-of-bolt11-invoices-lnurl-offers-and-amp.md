@@ -1,7 +1,5 @@
 ---
-title: "Static Invoices in Lightning: 
-
-A Deep Dive and Comparison of Bolt11 Invoices, LNURL, Offers and AMP"
+title: "Static Invoices in Lightning: A Deep Dive and Comparison of Bolt11 Invoices, LNURL, Offers and AMP"
 transcript_by: b3h3rkz via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=WsSa00gUvZw
 tags: ["lightning"]
@@ -9,36 +7,28 @@ speakers: ["Elle Mouton"]
 categories: ["conference"]
 date: 2022-03-03
 ---
-
-[Moderator]: And the slide is kind of given away already.
-So please welcome Elle Mouton from Lightning Labs.
-
-[Elle]: Hello, hello.
-Is this working?
-Okay, cool, awesome.
+## Intro
 
 Hi guys, I'm Elle, and I'm going to be talking about static invoices in the Lightning Network.
-So as most of you probably know, in Lightning, currently if you want to be paid, you have to create a new invoice every time.
+As most of you probably know, in Lightning, currently if you want to be paid, you have to create a new invoice every time.
 And this is a bit of a difficult thing for people to understand who don't know anything about the space.
-So today I'm going to just be diving into exactly why it's a mission for us to have these static invoices, and then just outlining the three various proposals LNURL, Offers and AMP that people have been discussing.
+Today I'm going to just be diving into exactly why it's a mission for us to have these static invoices, and then just outlining the three various proposals LNURL, Offers and AMP that people have been discussing.
 
 Before I carry on, I just want to mention a few things.
-So first of all, if you're a Lightning developer, this talk is really not for you.
+First of all, if you're a Lightning developer, this talk is really not for you.
 I just want more people to be able to join the discussion.
-So it's just making sure everybody understands the various components, right?
-So yeah, to the Lightning developers, if I say anything incorrect, please shout at me.
-And then another thing is, the one thing that all these three proposals have in common is they give us these static invoices, but each of them have other features that are really cool, and I will mention those as well.
-
+So it's just making sure everybody understands the various components.
+To the Lightning developers, if I say anything incorrect, please shout at me.
+The one thing that all these three proposals have in common is they give us these static invoices, but each of them have other features that are really cool, and I will mention those as well.
 We can't really compare them.
-Okay, just a quick talk overview.
-So I feel it's very important to make sure everybody understands what the issue is, so I'm going to spend a little bit of time on a payment deep dive.
 
+Okay, just a quick talk overview.
+I feel it's very important to make sure everybody understands what the issue is, so I'm going to spend a little bit of time on a payment deep dive.
 Not a deep dive, just an overview so everyone understands what we need to have payments work in the Lightning network.
 From that, we'll understand why Bolt11 invoices are a thing.
 Then I'll talk about the issues with those things, and then from there we can go into the various proposals.
 And then I'll just give a quick high level overview and mention some of the arguments that people have been talking about on Twitter.
 And leave you with some questions to think about.
-
 
 ## Lightning Payments 101
 
@@ -46,49 +36,48 @@ Okay, so as all of you probably know, Lightning is made up of a bunch of channel
 So really cool, if the whole Lightning network is made up of channel between every person, static invoices are solved, not a problem.
 I can finish my talk right now.
 
-But the thing is, this doesn't scale, right?
+But the thing is, this doesn't scale.
 You can't have a UTXO open with every single person in the world that you're gonna wanna have to pay, so this doesn't work.
 And the beauty of Lightning network is that Alice's view can look a little bit more something like this, and all she needs to do to pay someone like Dave is find a route to Dave.
 
-Cool, so let's look at that a bit.
-So she finds a route to Dave, and she just needs to focus on that.
-Cool, so now how does Alice pay Dave, right?
+Let's look at that a bit.
+She finds a route to Dave, and she just needs to focus on that.
+So now, how does Alice pay Dave.
 Why can't this be static?
-Why can't she just tell her node, please pay Dave's node ID this amount of Bitcoin.
-That's a static thing, right?
+Why can't she just tell her node, "please pay Dave's node ID this amount of Bitcoin".
+That's a static thing.
 
-So the naive way would be Alice just tells Bob, "hey Bob, please help me out.
-I'm gonna tip you, I'm gonna leave one Bitcoin with you, and please just push two over to Charlie, and tell him to do the same with Dave."
+The naive way would be Alice just tells Bob, "hey Bob, please help me out.
+I'm gonna tip you, I'm gonna leave one Bitcoin with you, and please just push two over to Charlie, and tell him to do the same with Dave".
 Cool, that's great, Dave got paid.
-That doesn't work, because in Bitcoin we can't trust Bob, right?
-So in reality, if Alice pushes money over to Bob, there's nothing stopping Bob from just running away at this point.
+That doesn't work, because in Bitcoin we can't trust Bob.
+In reality, if Alice pushes money over to Bob, there's nothing stopping Bob from just running away at this point.
 Okay, so Lightning payments don't work like that.
 
 How do they work?
 What we actually do is, before the payment can happen, before we even touch the Lightning network, Alice says, "hey Dave, I'm gonna pay you, please be aware."
 Dave goes ahead and generates a secret, takes the hash of that secret, and sends it back to Alice.
 This happens all outside of the Lightning network.
-Okay, now Alice goes again to Bob, but this time she tells him, "hey Bob, you can have these 3 Bitcoin, but only if you can unlock this hash.
+Now Alice goes again to Bob, but this time she tells him, "hey Bob, you can have these 3 Bitcoin, but only if you can unlock this hash.
 If you can't unlock it, I'm gonna get the money back after some time lock".
 So Bob sees this, realizes he's only gonna get a tip if he continues the pattern onto Charlie so that he can eventually get the secret.
 
-So now he does the same thing with Charlie, Charlie does the same thing with Dave.
+Now he does the same thing with Charlie, Charlie does the same thing with Dave.
 Dave has the secret, so Dave can unlock this hash, get his funds, and Charlie can then do the same with Bob, and Bob can do the same with Alice.
 And at this point, Alice has the secret, and Dave has been successfully paid, and her having the secret is what we call a proof of payment.
 
-Okay, so that's kind of the payments 101 complete, and there's two things you should take away from this.
-The first thing is, it's actually just one thing, but the first thing is, there had to be this dance between Alice and Dave happening outside the network before the payment could actually happen.
-And then just leading on from that is, okay, why?
+That's kind of the payments 101 complete, and there's two things you should take away from this.
+It's actually just one thing, but the first thing is, there had to be this dance between Alice and Dave happening outside the network before the payment could actually happen.
+And then just leading on from that is: okay, why?
 
 Dave had to send her this thing called a hash, but there's actually quite a few other things that Dave needs to tell Alice.
 And that's where Bolt11 invoices comes in.
 
-
 ## Bolt11 Invoices
 
-So what Bolt11 invoices are is this just, Bolt11 just specs out how Dave should structure the information that he sends to Alice.
+Bolt11 just specs out how Dave should structure the information that he sends to Alice.
 So that any wallet can just know how to structure its information, how to read the information.
-So I'm sure you've all seen a Bolt11 invoice.
+I'm sure you've all seen a Bolt11 invoice.
 It's usually displayed as a QR code or some LN something something.
 Notice this is a regtest invoice because it's not safe to pay to this, and I'll get to that in a second.
 
@@ -96,8 +85,8 @@ Just diving into a little bit more about what Bolt11 invoices look like, you'll 
 Now, I've already mentioned that one of the pieces of data is this payment hash, and it's very important because it's the only way payment can be secure, so that's the first thing.
 The other thing is, it needs to contain a node ID.
 
-Alice, if she walks into Dave's coffee shop, needs to know how to find him in the network, okay, so it needs to be a node ID.
-The other thing is it optionally needs to include something called Hop-Hints, because perhaps Alice's network view looks something more like this, where Dave only has private channels, and so Alice doesn't know where he is. 
+Alice, if she walks into Dave's coffee shop, needs to know how to find him in the network, so it needs to be a node ID.
+The other thing is it optionally needs to include something called Hop-Hints, because perhaps Alice's network view looks something more like this, where Dave only has private channels, and so Alice doesn't know where he is.
 
 So he has to actually tell her which UTXOs those private channels are if she's ever gonna find him in the network.
 So the invoice needs to include that.
@@ -105,13 +94,11 @@ Maybe it contains a description, "this is for one cup of coffee", and then some 
 So it's just a way for Dave to say to Alice, "hey, I'm aware of this payment or this feature", etc.
 
 And then some other stuff, but I'm just gonna focus on those.
-Okay, cool, so what's wrong with this?
-So the main thing I wanna focus on.
-Okay, it's single use, so I think people will often say, okay, invoice is single use, and people say, yes, that's insecure.
-But I just wanna, not insecure, unsecure.
-And I just wanna demonstrate exactly why.
+So, what's wrong with this?
+The main thing I wanna focus on: it's single use, so I think people will often say, "okay, invoice is single use, yes, that's unsecure".
+I just wanna demonstrate exactly why.
 
-So let's say Alice and Bob both walk into Dave's coffee shop, okay?
+Let's say Alice and Bob both walk into Dave's coffee shop.
 Dave generates an invoice because he wants to be paid.
 Creates a Bolt11 invoice, displays it.
 And Alice goes ahead, pays this as we saw before.
@@ -125,48 +112,47 @@ And get the money from Bob.
 Bob thinks, "yay, I've got proof of payment."
 And Dave has not been paid.
 He's only been paid once.
-Okay, so you can see that if you are paying an invoice, it's very important to you that no one else has paid this invoice before.
+So you can see that if you are paying an invoice, it's very important to you that no one else has paid this invoice before.
 It's very important.
 
-And this leads me on to my next point, which is that this is a very weak proof of payment.
+This leads me on to my next point, which is that this is a very weak proof of payment.
 I've just said that both Alice and Bob have this proof of payment.
 So really, having the secret just reveals that the payment has been complete at some point, does not prove that you have paid it.
 
-Okay, and then just a few other issues is, I've mentioned that Dave needs to maybe include hop hints in his invoice.
-If all his channels are private, and this kind of defeats the point, it's not, they're no longer really private channels.
+Then just a few other issues is, I've mentioned that Dave needs to maybe include hop-hints in his invoice.
+If all his channels are private, this kind of defeats the point, they're no longer really private channels.
 Alice can sell that information.
 So that's not ideal.
 
 The other thing is sender and receiver privacy.
-So if in this example that I showed where Alice pays Dave, Dave has zero privacy, right?
+In this example that I showed where Alice pays Dave, Dave has zero privacy.
 Alice knows exactly where this payment is going.
 But Alice has a lot of privacy.
 Dave doesn't know where this payment is coming from, unless Alice now wants a refund, in which case she has to give up where she is in the network, which is not a nice decision to make.
 
 And then a small thing is that the Bolt11 signature that Dave makes to just prove that he created it, is over the entire thing as a flat structure.
 Which is just not great if you wanna go and show that invoice and now you have to reveal all these pieces of information if you wanna show that the signature is valid.
-Okay, some bad UX.
-So this is a valid Bolt11 invoice, just stuffed with 20 hop hints.
-And you can see this is not ideal, right?
+
+Some bad UX.
+This is a valid Bolt11 invoice, just stuffed with 20 hop-hints.
+And you can see this is not ideal.
 People at the back are not gonna be able to scan this with their phones.
 And it just demonstrates that you're kind of very much limited.
 There's a limit to how much information Dave can send to Alice using this method.
-And then it's just a little bit of an awkward flow, right?
+And then it's just a little bit of an awkward flow.
 
 We're used to paying directly to a static bank account that doesn't change.
-Now we have to tell users, okay, if you wanna be paid, someone needs to tell you first they wanna pay you.
+Now we have to tell users, "okay, if you wanna be paid, someone needs to tell you first they wanna pay you".
 You tell your node, please give me a new invoice.
 And then you send it back to the person, and then they can tell their node to pay it.
 And it's just a little bit awkward.
+
 And then another awkward flow is the withdrawal flow.
-
-So let's say Dave is an exchange, and you wanna withdraw some money from the exchange.
-Let's say you are interfacing with your exchange on your desktop, but your node is on your phone, okay?
-So now what you have to do is go on your phone, generate an invoice.
-
-Now you have to somehow get it to your desktop, email it to yourself, I don't know, and then send it to Dave, the exchange.
-Who can then go pay the invoice?
-And this is a bit of a, just an awkward flow.
+Let's say Dave is an exchange, and you wanna withdraw some money from the exchange.
+Let's say you are interfacing with your exchange on your desktop, but your node is on your phone.
+Now what you have to do is go on your phone, generate an invoice
+Now you have to somehow get it to your desktop, email it to yourself, I don't know, and then send it to Dave, the exchange, who can then go pay the invoice.
+This is just an awkward flow.
 All right, now I'm gonna dive into the various proposals.
 
 
@@ -187,12 +173,12 @@ So this is really cool, as you can see, short and sweet.
 
 And then you can have a similar idea with the withdrawal flow.
 And if you wanna know more about that, ask the guys upstairs, Coincorner, because their cards are using LNURL-withdrawal.
-Okay, so it allows me, for example, to throw up a code like this, show it safely to an audience, right?
-I could not do this with a Bolt11 invoice, it wouldn't be safe, right?
+Okay, so it allows me, for example, to throw up a code like this, show it safely to an audience.
+I could not do this with a Bolt11 invoice, it wouldn't be safe.
 And yeah, so it would be safe to hit the same point.
 Ha, so much beer for me.
 
-Okay, and what's also cool is that I can change the parameters of the invoice underneath this, and this doesn't need to change, right?
+Okay, and what's also cool is that I can change the parameters of the invoice underneath this, and this doesn't need to change.
 So today I decide I wanna charge 10 sats for a beer.
 Tomorrow I decide 20 sats, and this can stay the same, okay?
 And then this at the bottom is just an example of a small extension to LNURL-pay, called a Lightning address.
@@ -236,26 +222,26 @@ And now, what Alice can use this information to find Dave within the network and
 Dave gets this message, his node gets the message rather, and he sends the invoice back, again, through the network.
 And now Alice can go ahead and pay it.
 
-Awesome, right?
+Awesome.
 Seems really cool and simple, but there's actually a lot that goes into getting this invoice retrieval within the network to happen.
 So let's dive into that a bit.
 So first of all, we need to be able to send a message like this.
-So messaging in Lightning Network, can we use some of our existing messages, right?
+So messaging in Lightning Network, can we use some of our existing messages.
 So the messages we currently have in the Lightning Network is we have gossip messages.
-So these are the messages you wanna broadcast, you wanna kinda flood them to the whole network, right?
+So these are the messages you wanna broadcast, you wanna kinda flood them to the whole network.
 
 You wanna tell the whole network, "hey, new channel, new node, node channel updates", etc.
 So this is not ideal, we don't want the whole network to know that we're requesting an invoice, and we definitely don't want the whole network to get that invoice.
 
-And we quite heavily rate limit this, right?
-So a lot of nodes will batch the gossip that they send out, so it can be quite slow, right?
+And we quite heavily rate limit this.
+So a lot of nodes will batch the gossip that they send out, so it can be quite slow.
 You have to wait a bit, so this is not ideal for this scenario.
-The other types of messages that we have are the payment specific messages, right?
+The other types of messages that we have are the payment specific messages.
 
 So in that example I showed before, Alice has to tell Bob and Charlie how they should go about forwarding their payments on, which channels they should use.
-So this is a bit closer to what we want, right?
+So this is a bit closer to what we want.
 because it's along a specific route that Alice chooses.
-But the thing is, they're payment specific messages, right?
+But the thing is, they're payment specific messages.
 Add HTLC, fail HTLC.
 
 And so you have to kind of create a payment to do this.
@@ -286,7 +272,7 @@ And there's many more other things you can do with Onion Messages.
 It's not just, so I've just mentioned the invoice request message and the invoice message, but you just think of, you can send any message.
 
 So there's a lot more things to come, so I'm not gonna go into that now, but watch this space.
-Okay, and then a few things you'll hear, especially on Twitter, is people will say, no, DoS, right?
+Okay, and then a few things you'll hear, especially on Twitter, is people will say, no, DoS.
 People can spam the network, people are gonna stream movies over the network, etc.
 So that's kind of a big argument that people will have, and just because the current proposal doesn't have a solution for that built in.
 
@@ -299,7 +285,7 @@ Which we know we do in Bitcoin anyways with transactions.
 
 Okay, and then I just wanna say watch the space as well, because in the last two weeks, there have been some proposals coming out for how we can prevent this DoS vector.
 
-Okay, and then a few other really cool bells and whistles that Offers has is, first of all, I've spoken about hop hints and why that's an issue and how we're revealing the UTXOs we actually intended to keep private, so Offers builds on using blinded paths instead of these hop hints.
+Okay, and then a few other really cool bells and whistles that Offers has is, first of all, I've spoken about hop-hints and why that's an issue and how we're revealing the UTXOs we actually intended to keep private, so Offers builds on using blinded paths instead of these hop-hints.
 
 And this is basically a way for Dave to tell Alice how she can find him in the network, or rather how she can construct a route to him in the network without revealing to her where he is in the network.
 Yeah, so I'm not gonna go into detail of that, but definitely look into it.
@@ -338,13 +324,13 @@ But that's been removed for the time being.
 
 ### Pros and cons.
 
-So it's really cool that it's lightning native, right?
+So it's really cool that it's lightning native.
 So you can spin up this node and already get the benefits without needing to worry about this extra server.
 Improved privacy for both sender and receiver because of blinded paths.
 And again, because of the static invoicing, we have a better UX, fantastic proof of payments.
 And then, okay, some cons is this network-wide upgrade, which I've mentioned isn't, I don't think, that big of an issue.
 And then currently the issue is this dust protection isn't, there's no set solution for it yet.
-And then another thing what people will just say is, it depends on a lot of things, right?
+And then another thing what people will just say is, it depends on a lot of things.
 I've already mentioned onion messaging, route blinding.
 Yeah, it's just a lot to implement if you wanna use offers.
 And then it does bring some application level stuff into the network, which some people aren't happy with.
@@ -360,7 +346,7 @@ And kind of as a side effect, you can use a static invoice.
 ### Single Path Case
 
 So I'm gonna describe the static invoice thing first, and I'm just gonna use a single path to describe it.
-So basically, Dave creates a Bolt11 invoice, right?
+So basically, Dave creates a Bolt11 invoice.
 And I've described before what kind of things the Bolt11 invoice includes.
 And the reason it needs to change every time is because you need this payment hash to be different every time.
 
@@ -370,7 +356,7 @@ And now, AMP needs to obviously understand this feature.
 And before I go into the next point, so we have up until now assumed that Dave always needs to be the one who creates the secret and gets the hash and sends it to Alice.
 
 But AMP flips that on its head like he sent, and Alice will be the one who comes up with the secret, gets the hash.
-She will encrypt the secret such that only Dave can decrypt it, right?
+She will encrypt the secret such that only Dave can decrypt it.
 Do the whole onion encryption thing.
 And now she'll go ahead with a payment to this hash.
 She will attach this as metadata to that message.
@@ -380,15 +366,15 @@ So awesome, two things to take away from this.
 The first is Alice could do this without informing Dave of this beforehand.
 
 So it allows for these spontaneous payments.
-And the second thing is Alice has no proof of payment here, right?
+And the second thing is Alice has no proof of payment here.
 So her knowing the secret means nothing because she's the one who produced the secret.
 Okay, so now I wanna just demonstrate the true kind of beauty of AMP and just show how it works visually.
-So basically Alice maybe wants to use all her channels to pay Dave, right?
+So basically Alice maybe wants to use all her channels to pay Dave.
 
 So what she's gonna do is she's gonna come up with this thing called a root seed, which is just a big blob of data.
 And she's gonna deterministically produce four different secrets, okay?
 And get the hash of those secrets.
-Now, four because she wants to use all four of her channels, right?
+Now, four because she wants to use all four of her channels.
 And now what she's gonna do is she's gonna split that root seed into four parts.
 She's gonna take the first hash, make the whole payment to that hash, attach the first part of the root seed.
 Gets to Dave, note that he cannot claim this payment back yet, because there's no way for him to know what the secret necessary is, is for.
@@ -427,7 +413,7 @@ So a few points of discussion.
 Just if you're looking at arguments on Twitter, these are kind of the things that people argue about.
 Okay, so the first is how important is this proof of payment?
 So I've been speaking about how current Bolt11 invoicing has a kind of semi-weak proof of payment.
-AMP doesn't really have one yet, right?
+AMP doesn't really have one yet.
 Taproot and PTLCs changes things.
 And then offers us a really strong proof of payment.
 
