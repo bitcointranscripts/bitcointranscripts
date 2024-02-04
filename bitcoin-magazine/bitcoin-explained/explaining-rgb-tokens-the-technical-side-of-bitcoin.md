@@ -114,19 +114,11 @@ Sjors Provoost: 00:02:50
 Well, I think it's just a reference to the color scheme - Red, Green, Blue.
 But it doesn't actually mean anything in the context that we're going to talk about it.
 It's just the letters.
-
-Ruben Somsen: 00:02:59
-
-Yeah.
-And I think it's because...
-
-Sjors Provoost: 00:03:00
-
 Unless they made it a backronym, I don't know.
 
 Ruben Somsen: 00:03:02
 
-...no, no, I don't think there's an acronym.
+No, no, I don't think there's an acronym.
 It's referring to colored coins, right?
 So the colored coin idea of having other coins on the Bitcoin blockchain, the word color, RGB, that's how it's connected.
 
@@ -144,7 +136,6 @@ The RGB System.
 Aaron van Wirdum: 00:03:22
 
 The RGB System.
-Yeah.
 Okay, where do we start?
 Ruben?
 
@@ -165,8 +156,7 @@ Aaron van Wirdum: 00:04:07
 Yeah, so the idea is that addresses, as our listeners will probably know, they're just a bunch of numbers and letters.
 They're effectively a number in the end.
 And you're manipulating these addresses, you're just creating addresses.
-Even though you don't have the private key, you're sending some coins to these
-And a special software can interpret these numbers and turn them into whatever data you want.
+Even though you don't have the private key, you're sending some coins to these and a special software can interpret these numbers and turn them into whatever data you want.
 
 Sjors Provoost: 00:04:33
 
@@ -177,73 +167,52 @@ The technicalities don't really matter.
 But exactly, there is no private key with which to spend these coins.
 Because the public key, or even the hash of the public key, was generated as if it wasn't really a public key.
 It was just a series of bytes that look like a public key, but actually just contain the contents of a file.
-And this means that money is un-spendable, which is very annoying.
-And the reason for that is that we have this thing called the UTXO set.
+And this means that money is unspendable, which is very annoying.
+And the reason for that is, we have this thing called the UTXO set.
 The UTXO set is the set of coins that exist on the blockchain that can be spent by anyone and nodes keep that in RAM.
 So when a new block comes in, the node will check whether or not it's spending money that actually exists.
 And this check is done using the UTXO set, which generally is kept in RAM, could be 10 gigabytes.
-And so it's very annoying when there's something in that blob of memory that everybody needs to keep track of.
-Something that has no meaning, that can never be spent because the node doesn't know it can't be spent.
+And so it's very annoying when there's something in that blob of memory that everybody needs to keep track of, that has no meaning, that can never be spent because the node doesn't know it can't be spent.
 The node just thinks anytime somebody could spend this, even though we know, no, it's the Bitcoin PDF, you can't spend it.
 
 Aaron van Wirdum: 00:05:54
 
 Yeah, so what you're saying so far is that people were using, basically abusing the Bitcoin system in a way.
 They were manipulating addresses and sending coins to these addresses, not a lot, but just some coins to have these addresses on the blockchain.
-This translated into data that could be images or the Bitcoin Whitepaper or other pieces of text or memes or whatever people felt like they were uploading.
+That translated into data that could be images or the Bitcoin Whitepaper or other pieces of text or memes or whatever people felt like they were uploading.
 And because normal Bitcoin software can't really tell the difference, normal Bitcoin software just sees addresses.
-So now all these normal Bitcoin nodes like mine and yours and all our listeners' who are running Bitcoin nodes.
-All these normal Bitcoin nodes actually have to check if they have to check the coins on these addresses.
+So now all these normal Bitcoin nodes like mine and yours and all our listeners' who are running Bitcoin nodes, they actually have to check if they have to check the coins on these addresses.
 Am I saying that right?
 
 Sjors Provoost: 00:06:36
 
 They have to keep those addresses in mind.
-So there's two things that happen...
-
-Aaron van Wirdum: 00:06:39
-
-Right?
-
-Sjors Provoost: 00:06:39
-
-...because these things were put in the blockchain, well, you have to download the blockchain.
+So there's two things that happen.
+Because these things were put in the blockchain, well, you have to download the blockchain.
 So that's just wasted bandwidth for downloading, but that's not too bad.
 The problem is that it has to be interpreted as potentially valid coins.
 And as an optimization, you want to keep in memory those coins that could potentially be spent and there's no way to drop them from memory.
-
-Ruben Somsen: 00:06:58
-
-Yeah.
-
-Sjors Provoost: 00:06:58
-
 At least there wasn't.
 
 Ruben Somsen: 00:06:59
 
 So the problem is that you think they are spendable as a regular full node, but actually they are not.
 But there's no way of knowing, other than kind of externally figuring out, that this is just a Whitepaper.
-But, you know-
 
 Sjors Provoost: 00:07:12
 
 Yeah, but you couldn't add that to the node, right?
-If, say, we made a change to the Bitcoin Core assets...
-You know what?
-We know that's the Whitepaper.
-Let's just skip those coins.
+If, say, we made a change to the Bitcoin Core that says, "You know what? We know that's the Whitepaper, let's just skip those coins".
 
 Ruben Somsen: 00:07:22
 
-I guess theoretically you could throw it out of UTXO sets if you're certain they're un-spendable.
+I guess theoretically you could throw it out of UTXO sets if you're certain they're unspendable.
 
 Sjors Provoost: 00:07:27
 
 That's the problem.
-If you're certain, what if some really really smart alien actually made it look like it's just the Whitepaper!
-But no no no, it's really there are private keys for it and one day this alien tries to spend the Whitepaper...
-...and we accidentally soft fork those coins out of existence and this alien gets really angry because he's like, "Hey, you can't just confiscate my money!"
+If you're certain, what if some really really smart alien actually made it look like it's just the Whitepaper,
+but no no no, there are private keys for it and one day this alien tries to spend the Whitepaper and we accidentally soft fork those coins out of existence and this alien gets really angry because he's like, "Hey, you can't just confiscate my money!"
 
 Ruben Somsen: 00:07:48
 
@@ -252,26 +221,18 @@ Depends on, I guess, how it's done.
 
 Sjors Provoost: 00:07:53
 
-Maybe the person who created the Whitepaper actually generated lots of public keys from private keys...
-...and then reordered them in such a way that it created a readable Whitepaper.
-
-Ruben Somsen: 00:08:05
-
-Oh yeah.
-
-Sjors Provoost: 00:08:06
-
+Maybe the person who created the Whitepaper actually generated lots of public keys from private keys and then reordered them in such a way that it created a readable Whitepaper.
 I don't think that's even practical.
 
 Ruben Somsen: 00:08:07
 
 No, but to your point, maybe there is a way in which it is actually valid and we can't be 100% certain.
-But one thing I wanted to add-
+But one thing I wanted to add...
 
 Aaron van Wirdum: 00:08:14
 
-There's also a thing of where do you draw the line because we do have vanity addresses and you can sort of use those as well to create stuff...
-...and where, at what point are you sure it's a vanity address and at what point (trails off)
+There's also a thing of where do you draw the line because we do have vanity addresses and you can sort of use that as well to create stuff.
+At what point are you sure it's a vanity address and at what point [trails off]
 
 Sjors Provoost: 00:08:26
 
@@ -289,19 +250,14 @@ But the problem is we can't really prove that.
 
 Ruben Somsen: 00:08:45
 
-Yeah, but yeah, so one thing that I wanted to add is that it is actually important, that if you want to put data on the Bitcoin blockchain, it needs to be a valid transaction.
-So you can't just, that's why we're talking about these addresses, right?
+One thing that I wanted to add is that it is actually important, that if you want to put data on the Bitcoin blockchain, it needs to be a valid transaction.
+That's why we're talking about these addresses, right?
 Because you can't just take the Bitcoin Whitepaper, just put it there and just be like, "Hey, please put this in the blockchain!"
-No! You need to do it in a format that the blockchain recognizes and that's how you end up with these addresses.
-
-Sjors Provoost: 00:09:09
-
-Yeah okay.
+No, you need to do it in a format that the blockchain recognizes and that's how you end up with these addresses.
 
 Aaron van Wirdum: 00:09:11
 
-Yeah okay so that was the original problem - people were just bloating the blockchain with all sorts of nonsense.
-Nonsense that most of us don't care about and we still need to all validate it and store it or whatever.
+That was the original problem, people were just bloating the blockchain with all sorts of nonsense that most of us don't care about and we still need to all validate it and store it or whatever.
 That needs to be solved, Sjors.
 How do we solve that?
 
