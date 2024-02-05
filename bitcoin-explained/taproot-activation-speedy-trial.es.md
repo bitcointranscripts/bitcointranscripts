@@ -3,21 +3,14 @@ title: Taproot Activación con Speedy Trial
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
-tags: ['taproot']
+tags: ['taproot','soft-fork-activation']
 date: 2021-03-12
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=oCPrjaw3YVI
+aliases: ['/es/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial']
 ---
-
-Tema: Taproot Activación con Speedy Trial
-
-Localización: Bitcoin Magazine (en línea)
-
 Propuesta Speedy Trial: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
-
-Transcripción por: Michael Folkson
-
-# Introducción
+## Introducción
 
 Aaron van Wirdum (AvW): En directo desde Utrecht este es el van Wirdum Sjorsnado. Sjors, ¿cuál es tu juego de palabras de la semana?
 
@@ -35,7 +28,7 @@ AvW: Hablamos mucho [hace dos semanas](https://diyhpl.us/wiki/transcripts/bitcoi
 
 SP: Así es.
 
-# Propuesta de Speedy Trial
+## Propuesta de Speedy Trial
 
 Propuesta de Speedy Trial: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 
@@ -67,7 +60,7 @@ AvW: Por ahora, para recapitular muy brevemente, Speedy Trial significa liberar 
 
 SP: Volvemos entonces a donde estábamos hace unas semanas pero con más datos.
 
-# La evolución de la propuesta de Speedy Trial
+## La evolución de la propuesta de Speedy Trial
 
 AvW: Exactamente. Quiero referirme brevemente a cómo hemos llegado hasta aquí. Discutimos todo el asunto de LOT=true y LOT=false y parecía haber un bloqueo. Algunos no querían LOT=true, otros no querían LOT=false y entonces entró en juego una tercera propuesta. No era nueva, pero no era una parte importante de la discusión, un simple día de la bandera. Un simple día de bandera habría significado que el código de Bitcoin Core habría incluido una fecha en el futuro o una altura de bloque en el futuro, momento en el que la actualización de Taproot se activaría independientemente de la potencia de hash hasta ese momento.
 
@@ -87,7 +80,7 @@ SP: Sí, el BIP 8. Supongo que podemos entrar en los detalles técnicos, lo que 
 
 AvW: ¿Algún detalle técnico en el que quieras entrar?
 
-# Diferentes enfoques de la aplicación de Speedy Trial
+## Diferentes enfoques de la aplicación de Speedy Trial
 
 Intercambio de información sobre la altura de los bloques frente a la combinación de la altura de los bloques y el MTP: https://bitcoin.stackexchange.com/questions/103854/should-block-height-or-mtp-or-a-mixture-of-both-be-used-in-a-soft-fork-activatio/
 
@@ -121,7 +114,7 @@ AvW: Supongo que la mayor desventaja de usar BIP 8 es que supone un cambio mayor
 
 SP: Sí, pero ayer revisé ese código y escribí algunas pruebas para él. Andrew Chow y Luke Dashjr ya han implementado gran parte de él. Ya ha sido revisado por la gente. En realidad no está tan mal. Parecen 50 líneas de código. Sin embargo, si hay un error en él es muy, muy malo. Sólo porque se trata de unas pocas líneas de código, podría ser más seguro utilizar algo que ya existe. Pero no estoy terriblemente preocupado por ello.
 
-# El umbral de potencia del hash
+## El umbral de potencia del hash
 
 AvW: Luego está el umbral de potencia de hash. ¿Es 90 o 95?
 
@@ -143,13 +136,13 @@ AvW: O podemos mencionar muy brevemente que el beneficio de tener el umbral más
 
 SP: Pero como estamos haciendo una activación retardada, pasa mucho tiempo entre la señalización y la activación, mientras que normalmente se señala y se activa inmediatamente, o al menos en dos semanas. Ahora puede tardar mucho, mucho más. Eso significa que los mineros tienen más tiempo para actualizar. Hay un poco menos de riesgo de orfandad incluso si tienes un umbral de señalización más bajo.
 
-# Activación retardada
+## Activación retardada
 
 AvW: Cierto. Creo que ese era el tercer punto al que querías llegar de todos modos. La activación retardada.
 
 SP: Lo que ocurre normalmente es que se cuentan los votos en el último periodo de dificultad. Si supera el umbral, el estado de la bifurcación suave pasa de [STARTED](https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki#state-transitions), es decir, lo sabemos y lo estamos contando, a LOCKED_IN. El estado LOCKED_IN durará normalmente 2 semanas o un periodo de retargeting, y entonces las reglas entrarán realmente en vigor. Lo que ocurre con el Speedy Trial, la parte de activación retardada, es que este estado LOCKED_IN durará mucho más tiempo. Puede durar meses. Está BLOQUEADO_IN durante meses y luego las reglas entran realmente en vigor. Este cambio es sólo dos líneas de código que es bastante agradable.
 
-# Inconvenientes y riesgos de esta propuesta
+## Inconvenientes y riesgos de esta propuesta
 
 AvW: Bien, ¿pasamos a algunos de los inconvenientes de esta propuesta?
 
@@ -247,7 +240,7 @@ AvW: Ahora mismo no hay ningún defensor de la UASF que piense que es una buena 
 
 SP: Hasta ahora no los hay. Pero ya hablamos, en septiembre creo, de esta teoría de los vaqueros. Estoy seguro de que hay alguien por ahí que intentará un UASF incluso en el Speedy Trial.
 
-# ¿Speedy Trial como plantilla para futuras activaciones de soft fork?
+## ¿Speedy Trial como plantilla para futuras activaciones de soft fork?
 
 AvW: No se puede excluir la posibilidad al menos. Hay otro argumento en contra del Speedy Trial, encuentro este argumento bastante convincente en realidad, que es que salimos de 2017 con mucha incertidumbre. Acabo de mencionar la incertidumbre al principio de este episodio, parte de ella al menos. Algunos pensaron que la UASF fue un gran éxito, otros pensaron que fue una imprudencia. Ambas cosas son parcialmente ciertas, hay verdad en ambas. Ahora tenemos un soft fork, Taproot, que parece gustar a todo el mundo, a los usuarios, a los desarrolladores, a los mineros, a todos. Lo único que tenemos que hacer es actualizarlo. Ahora podría ser una muy buena oportunidad para limpiar el desorden de 2017 en cierto modo. Acordar qué son exactamente las bifurcaciones suaves, cuál es la mejor manera de desplegar una bifurcación suave y luego usar eso. De esta manera se convierte en una plantilla que podemos utilizar en tiempos más polémicos en el futuro cuando tal vez hay otra guerra civil en marcha o hay más FUD siendo lanzado en Bitcoin. Parece que estamos en aguas tranquilas ahora mismo. Tal vez este sea un buen momento para hacerlo bien, lo que nos ayudará a avanzar en el futuro. Mientras que Speedy Trial, nadie piensa que este sea realmente el camino correcto. Está bien, necesitamos algo así que hagámoslo. Podría decirse que es una patada a la lata de la discusión realmente grande que necesitamos tener en el camino.
 

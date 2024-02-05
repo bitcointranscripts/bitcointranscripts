@@ -6,21 +6,15 @@ tags: ['taproot']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-04-23
 media: https://www.youtube.com/watch?v=SHmEXPvN6t4
+summary: "In this episode of \u201CThe Van Wirdum Sjorsnado,\u201D hosts Aaron van Wirdum and Sjors Provoost discussed the final implementation details of Speedy Trial, the Taproot activation mechanism included in Bitcoin Core 0.21.1. Van Wirdum and Provoost also compared Speedy Trial to the alternative BIP 8 LOT=true activation client.\n\nAfter more than a year of deliberation, the Bitcoin Core project has merged Speedy Trial as the (first) activation mechanism for the Taproot protocol upgrade. Although van Wirdum and Provoost had already covered Taproot, the different possible activation mechanisms and Speedy Trial specifically in previous episodes, in this episode they laid out the final implementation details of Speedy Trial."
+aliases: ['/bitcoin-magazine/2021-04-23-taproot-activation-update']
 ---
-
-Topic: Taproot Activation Update: Speedy Trial and the LOT=true client
-
-Location: Bitcoin Magazine (online)
-
 Previous episode on lockinontimeout (LOT): <https://btctranscripts.com/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout/>
 
 Previous episode on Speedy Trial: <https://btctranscripts.com/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial/>
 
 Aaron van Wirdum on “There are now two Taproot activation clients, here’s why”: <https://bitcoinmagazine.com/technical/there-are-now-two-taproot-activation-clients-heres-why>
-
-Transcript by: Michael Folkson
-
-# Intro
+## Intro
 
 Aaron van Wirdum (AvW): Live from Utrecht this is the van Wirdum Sjorsnado.
 
@@ -60,7 +54,7 @@ SP: There was a slight change.
 
 AvW: Let’s hear it Sjors. What are the finalized parameters for Speedy Trial? How is Bitcoin Core going to upgrade to Taproot?
 
-# Bitcoin Core finalized activation parameters
+## Bitcoin Core finalized activation parameters
 
 Bitcoin Core 0.21.1 release notes: <https://github.com/bitcoin/bitcoin/blob/0.21/doc/release-notes.md>
 
@@ -126,7 +120,7 @@ SP: Exactly. It is a low cost experiment. If it wins we get Taproot. If not then
 
 AvW: I also want to clarify. We don’t know what it is going to look like yet. That will have to be figured out then. We could start figuring it out now but that hasn’t been decided yet, what the deployment would look like.
 
-# Alternative to Bitcoin Core (Bitcoin Core 0.21.0-based Taproot Client)
+## Alternative to Bitcoin Core (Bitcoin Core 0.21.0-based Taproot Client)
 
 Update on Taproot activation releases: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
 
@@ -174,7 +168,7 @@ AvW: There is a lot of discussion on the name of the client and what people shou
 
 SP: You could call it the “Slow UASF” or something.
 
-# Implications of having two alternative clients
+## Implications of having two alternative clients
 
 AvW: I have also seen the name User Enforced Miner Activated Soft Fork (UEMASF). People are coming up with names. The basic facts are clear now I hope. Let’s get into the implications. There are some potential incompatibilities between these two activation clients. Everyone agrees that Taproot is great. Everyone wants Taproot. Everyone agrees that it would be preferable if miners activate it. The only thing where there is some disagreement on is what’s the backup plan. That is where the incompatibilities come in. Do you agree?
 
@@ -212,7 +206,7 @@ AvW: It would still be November so there is still room to prepare in that case.
 
 SP: Ok, then I guess what I said before is nonsense. The easier solution would be to do a flag date where the new release would say “It is going to activate on November 12th or whatever that block height is without any signaling.” Signaling exists but people have different interpretations about it. That could be a way.
 
-# Recap
+## Recap
 
 AvW: I am still completely clear about what we are talking about it here but I am not sure if our listeners are catching up at this point. Shall we recap? If miners activate during the Speedy Trial then everything is fine, everyone is in consensus.
 
@@ -230,7 +224,7 @@ AvW: I find it very hard to predict what Bitcoin Core developers in this case ar
 
 SP: I agree but this is one possibility.
 
-# A likelier way that the two clients could be incompatible?
+## A likelier way that the two clients could be incompatible?
 
 AvW: That was one way the two clients can become incompatible potentially. There is another way which is maybe more likely or at least it is not as complicated.
 
@@ -292,7 +286,7 @@ AvW: I want to mention real quick is the reason I’m not too concerned about th
 
 SP: The problem with this sort of stuff is if it doesn’t work out fine it is really, really bad. Then we get to say retroactively “I guess it didn’t work out fine.”
 
-# Development process of LOT=true client
+## Development process of LOT=true client
 
 AvW: I want to bring something up before you bring up whatever you wanted to bring up. I have seen some concerns by Bitcoin Core developers about the development process of the LOT=true client. I think this gets down to the Gitian building, Gitian signing which we also discussed in another [episode](https://www.youtube.com/watch?v=_qdhc5WLd2A).
 
@@ -336,7 +330,7 @@ SP: That’s just my opinion. Everyone is free to run whatever they want to run.
 
 AvW: Was there anything else you wanted to bring up?
 
-# What would Bitcoin Core release if Speedy Trial failed to activate?
+## What would Bitcoin Core release if Speedy Trial failed to activate?
 
 SP: Yeah we talked about true signaling or false signaling on bit 1 but a very real possibility I think if this activation fails and we want to try something else then we probably don’t want to use the same bit if it is before the timeout window. That could create a scenario where you might start saying “Let’s use another bit to do signaling.” Then you could get some confusion where there is a new Bitcoin Core release that activates using bit 3 for example but the LOT=true folks don’t see it because they are looking at bit 1. That may or may not be an actual problem. The other thing is that there could be all sorts of other ways to activate this thing. One could be a flag day. If Bitcoin Core were to release a flag day then there won’t be any signaling. The LOT=true client won’t know that Taproot is active and they will demand signaling at some point even though Taproot is already active.
 
@@ -360,7 +354,7 @@ AvW: I agree with that. The reason I am not concerned is what I mentioned before
 
 SP: I guess the futures market would predict exactly that. That would not be good. Depending on your confidence in futures markets which for me is not that amazing.
 
-# Block height versus MTP
+## Block height versus MTP
 
 <https://github.com/bitcoin/bitcoin/pull/21377#issuecomment-818758277>
 

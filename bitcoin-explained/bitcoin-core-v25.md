@@ -6,6 +6,7 @@ tags: ["bitcoin-core","miniscript","wallet","compact-block-filters","transaction
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-06-26
+aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v25']
 ---
 Aaron van Wirdum: 00:00:21
 

@@ -6,6 +6,7 @@ tags: ["transaction-relay-policy","mining","incentives"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-11-26
+aliases: ['/bitcoin-magazine/bitcoin-explained/death-to-the-mempool-long-live-the-mempool']
 ---
 ## Preamble
 

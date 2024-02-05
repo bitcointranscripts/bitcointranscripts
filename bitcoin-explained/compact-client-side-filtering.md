@@ -6,6 +6,7 @@ tags: ["compact-block-filters"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-01-29
+aliases: ['/bitcoin-magazine/bitcoin-explained/compact-client-side-filtering']
 ---
 ## Introduction
 

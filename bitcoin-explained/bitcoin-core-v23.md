@@ -6,6 +6,7 @@ tags: ["bitcoin-core"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-04-24
+aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v23']
 ---
 ## Intro
 

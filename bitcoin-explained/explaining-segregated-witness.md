@@ -6,6 +6,7 @@ tags: ["segwit","soft-fork-activation"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-03-18
+aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-segregated-witness']
 ---
 
 Aaron: 00:01:46

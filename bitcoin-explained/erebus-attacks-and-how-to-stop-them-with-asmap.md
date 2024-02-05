@@ -6,6 +6,7 @@ tags: ["security-enhancements","security-problems"]
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["Podcast"]
 date: 2020-11-19
+aliases: ['/bitcoin-magazine/bitcoin-explained/erebus-attacks-and-how-to-stop-them-with-asmap']
 ---
 Aaron van Wirdum: 00:00:07
 

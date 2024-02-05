@@ -2,20 +2,14 @@
 title: Taproot Activation with Speedy Trial
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['taproot']
+tags: ['taproot','soft-fork-activation']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-03-12
 media: https://www.youtube.com/watch?v=oCPrjaw3YVI
+aliases: ['/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial']
 ---
-
-
-Location: Bitcoin Magazine (online)
-
 Speedy Trial proposal: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
-
-Transcript by: Michael Folkson
-
-# Intro
+## Intro
 
 Aaron van Wirdum (AvW): Live from Utrecht this is the van Wirdum Sjorsnado. Sjors, what is your pun of the week?
 
@@ -33,7 +27,7 @@ AvW: We talked a lot [two weeks ago](https://diyhpl.us/wiki/transcripts/bitcoin-
 
 SP: That’s right.
 
-# Speedy Trial proposal
+## Speedy Trial proposal
 
 Speedy Trial proposal: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 
@@ -67,7 +61,7 @@ AvW: For now, to recap really briefly, Speedy Trial means release the software f
 
 SP: We are then back to where we were a few weeks ago but with more data.
 
-# The evolution of the Speedy Trial proposal
+## The evolution of the Speedy Trial proposal
 
 AvW: Exactly. I want to briefly touch on how we got here. We discussed the whole LOT=true and LOT=false thing and there appeared to be a gridlock. Some people definitely didn’t want LOT=true, some people definitely didn’t want LOT=false and then a third proposal entered the mix. It wasn’t brand new but it wasn’t a major part of the discussion, a simple flag day. A simple flag day would have meant that the Bitcoin Core code would have included a date in the future or a block height in the future, at which point the Taproot upgrade would activate regardless of hash power up until that point.
 
@@ -87,7 +81,7 @@ SP: Yeah BIP 8. I guess we can get into the technical details, what I am trying 
 
 AvW: Some technical details you want to get into?
 
-# Different approaches of implementing Speedy Trial
+## Different approaches of implementing Speedy Trial
 
 Stack Exchange on block height versus mix of block height and MTP: https://bitcoin.stackexchange.com/questions/103854/should-block-height-or-mtp-or-a-mixture-of-both-be-used-in-a-soft-fork-activatio/
 
@@ -121,7 +115,7 @@ AvW: I guess the biggest disadvantage of using BIP 8 is that it is a bigger chan
 
 SP: Yeah but I’ve looked at that code yesterday and wrote some tests for it. Andrew Chow and Luke Dashjr have already implemented a lot of it. It has already been reviewed by people. It is actually not too bad. It looks like 50 lines of code. However, if there is a bug in it it is really, really bad. Just because it is only a few lines of code, it might be safer to use something that is already out there. But I am not terribly worried about it.
 
-# The hash power threshold
+## The hash power threshold
 
 AvW: Then there is the hash power threshold. Is it 90 or 95?
 
@@ -143,13 +137,13 @@ AvW: Or we can mention really briefly is that the benefit of having the higher t
 
 SP: But because we are doing a delayed activation, there’s a long time between signaling and activation, whereas normally you signal and immediately, or at least within 2 weeks, it activates. Right now it can take much, much longer. That means miners have a longer time to upgrade. There is a little less risk of orphaning even if you have a lower signaling threshold.
 
-# Delayed activation
+## Delayed activation
 
 AvW: True. I think that was the third point you wanted to get at anyway. The delayed activation.
 
 SP: What happens normally is you tally the votes in the last difficulty period. If it is more than whatever the threshold is then the state of the soft fork goes from [STARTED](https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki#state-transitions), as in we know about it and we are counting, to LOCKED_IN. The state LOCKED_IN will normally last for 2 weeks or one retargeting period, and then the rules actually take effect. What happens with Speedy Trial, the delayed activation part, is that this LOCKED_IN state will go on for much longer. It might go on for months. It is LOCKED_IN for months and then the rules actually take effect. This change is only two lines of code which is quite nice.
 
-# Downsides and risks for this proposal
+## Downsides and risks for this proposal
 
 AvW: Ok. Shall we get to some of the downsides of this proposal?
 
@@ -247,7 +241,7 @@ AvW: There are no UASF proponents out there right now who think this is a good i
 
 SP: So far there are not. But we talked about, in September I think, this cowboy theory. I am sure there is somebody out there that will try a UASF even on the Speedy Trial.
 
-# Speedy Trial as a template for future soft fork activations?
+## Speedy Trial as a template for future soft fork activations?
 
 AvW: You can’t exclude the possibility at least. There is another argument against Speedy Trial, I find this argument quite compelling actually, which is we came out of 2017 with a lot of uncertainty. I just mentioned the uncertainty at the beginning of this episode, some of it at least. Some people thought UASF was a great success, some people thought it was reckless. Both are partly true, there is truth in both. Now we have a soft fork, Taproot, that everyone seems to love, users seem to like it, developers seem to like it, miners seem to like it, everyone likes it. The only thing we need to do is upgrade it. Now might be a very good opportunity to clean up the mess from 2017 in a way. Agree on what soft forks are exactly, what is the best way to deploy a soft fork and then use that. That way it becomes a template that we can use in more contentious times in the future when maybe there is another civil war going or there is more FUD being thrown at Bitcoin. We seem to be in calm waters right now. Maybe this is a really good time to do it right which will help us moving into the future. While Speedy Trial, no one thinks this is actually the right way. It is fine, we need something so let’s do it. It is arguably kicking the can of the really big discussion we need to have down the road.
 

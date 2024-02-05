@@ -1,5 +1,5 @@
 ---
-title: Activación de Taproot
+title: "Cómo activar un nuevo Soft Fork"
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
@@ -8,16 +8,13 @@ date: 2020-08-03
 speakers: ['Eric Lombrozo', 'Luke Dashjr']
 media: https://www.youtube.com/watch?v=yQZb0RDyFCQ
 ---
-
-Topic: Cómo activar un nuevo Soft Fork
-
 Location: Bitcoin Magazine (en línea)
 
 Aaron van Wirdum Aaron van Wirdum en Bitcoin Magazine sobre el BIP 8, el BIP 9 o la activación del Soft Fork moderno: https://bitcoinmagazine.com/articles/bip-8-bip-9-or-modern-soft-fork-activation-how-bitcoin-could-upgrade-next
 
 David Harding sobre las propuestas de activación de Taproot: https://gist.github.com/harding/dda66f5fd00611c0890bdfa70e28152d
 
-# Introducción
+## Introducción
 
 Aaron van Wirdum (AvW): Eric, Luke bienvenido. Feliz Día de la Independencia de Bitcoin. ¿Cómo están?
 
@@ -53,7 +50,7 @@ AvW: Luke, ¿estás de acuerdo con este análisis? ¿Es así como lo ves?
 
 LD: Más o menos sí.
 
-# SegWit y BIP 148
+## SegWit y BIP 148
 
 AvW: En algún momento hubo una solución para salir del estancamiento que era un UASF. Esto finalmente tomó forma en el [BIP 148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki). Luke, creo que usted participó en el primer proceso de decisión. ¿Cuál era la idea que había detrás del PIF 148?
 
@@ -121,7 +118,7 @@ AvW: Una última pregunta. Para resumir esta parte de la historia de Bitcoin, ¿
 
 EL: Creo que es muy importante que intentemos evitar politizar este tipo de cosas. Lo ideal es que no queramos que la capa base del protocolo cambie mucho. Cada vez que se produce un cambio, se introduce un vector de ataque. Enseguida la gente podría intentar insertar vulnerabilidades o exploits o intentar dividir a la comunidad o crear ataques de ingeniería social o cosas así. Cada vez que se abre la puerta a cambiar las reglas, se está abriendo a los ataques. Ahora estamos en un punto en el que es imposible actualizar el protocolo sin tener algún tipo de proceso. Pero cuanto más intentamos ampliarlo, más tiende a convertirse en algo político. Espero que Taproot no cree el mismo tipo de contención y no se politice. No creo que sea un buen precedente que estas cosas sean controvertidas. Al mismo tiempo, no quiero que esto sea un proceso habitual. No quiero convertir en un hábito la activación de las horquillas blandas todo el tiempo. Creo que Taproot es una adición muy importante a Bitcoin y parece tener mucho apoyo de la comunidad. Sería muy bueno incluirlo ahora. Creo que si esperamos va a ser más difícil activarlo más adelante.
 
-# BIP 8 como una posible mejora de BIP 9
+## BIP 8 como una posible mejora de BIP 9
 
 AvW: Has mencionado que en 2017 se produjo este periodo de controversia, la guerra civil del escalado, como quieras llamarlo. ¿Hubo realmente un problema con el PIF 9 o solo fue un periodo de controversia y a estas alturas el PIF 9 volvería a estar bien?
 
@@ -223,7 +220,7 @@ LD: No sé si hay un incentivo para intentar vetar cuando sólo se va a retrasar
 
 EL: Sí.
 
-# Activación de la horquilla suave moderna
+## Activación de la horquilla suave moderna
 
 AvW: La otra perspectiva en este debate sería, por ejemplo, la de Matt Corallo [Modern Soft Fork Activation](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017547.html). Supongo que lo conoce. Yo mismo lo explicaré rápidamente. Modern Soft Fork Activation, la idea es que básicamente se utiliza el proceso de actualización del BIP 9 a la vieja usanza durante un año. Deja que los mineros lo activen durante un año. Si no funciona entonces los desarrolladores lo reconsiderarán durante 6 meses, verán si después de todo había un problema con Taproot en este caso, algo que se les había pasado por alto, alguna preocupación que los mineros tenían con él. Revisarlo durante 6 meses, si después de los 6 meses se encuentra que no había ningún problema real y los mineros estaban retrasando por cualquier razón, entonces la activación se vuelve a desplegar con un plazo duro de activación a los 2 años. ¿Qué opina de esto?
 
@@ -253,7 +250,7 @@ EL: Sin duda, cuantos más ojos lo miren, mejor, pero creo que es de suponer que
 
 LD: En ese momento, si se encuentra un problema, habrá que preguntarse: "¿Merece la pena volver a hacer todo esto sólo para solucionar ese problema o deberíamos seguir adelante de todas formas?". Si el problema es lo suficientemente grave, los mineros podrían activarse simplemente por el problema porque quieren aprovecharse de él. No queremos que se active si hay un gran problema. Tenemos que estar completamente seguros de que no hay problemas antes de llegar a la fase de activación.
 
-# BIP 8 con señalización forzada
+## BIP 8 con señalización forzada
 
 AvW: Déjame lanzar otra idea que ha estado circulando. ¿Y si hacemos un BIP 8 con señalización forzada hacia el final pero le damos un tiempo largo? Después de un tiempo siempre se puede acelerar con un nuevo cliente que incluya algo que obligue a los mineros a señalar antes.
 
@@ -271,7 +268,7 @@ AvW: I could throw another idea out there but I expect your answer will be the s
 
 EL: Yeah.
 
-# Protocolo de osificación
+## Protocolo de osificación
 
 AvW: La última pregunta, creo. A mucha gente le gusta la osificación del protocolo. Les gusta que Bitcoin, al menos en algún momento del futuro, no pueda actualizarse.
 
@@ -309,7 +306,7 @@ EL: Posiblemente. No estoy seguro. No creo que nadie tenga una respuesta complet
 
 LD: La definición de "suficientemente bueno" puede cambiar a medida que mejore la tecnología que invade la privacidad. Si los gobiernos, ni siquiera los gobiernos, cualquiera mejora en la invasión de la privacidad de todos lo que tenemos que proteger contra eso podría muy bien subir el listón.
 
-# Taproot
+## Taproot
 
 AvW: Podemos hablar un poco de Taproot. ¿Es una buena idea? ¿Qué tiene de bueno Taproot? ¿Por qué lo apoya si lo apoya?
 

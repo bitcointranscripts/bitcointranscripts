@@ -1,15 +1,13 @@
 ---
-title: Taproot activation and LOT=true vs LOT=false
+title: "Taproot activation and LOT=true vs LOT=false"
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['taproot']
+tags: ['taproot','soft-fork-activation']
 date: 2021-02-26
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=7ouVGgE75zg
+aliases: ['/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout']
 ---
-
-Location: Bitcoin Magazine (online)
-
 BIP 8: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 
 Arguments for LOT=true and LOT=false (T1-T6 and F1-F6): https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
@@ -18,7 +16,7 @@ Additional argument for LOT=false (F7): https://lists.linuxfoundation.org/piperm
 
 Aaron van Wirdum article on LOT=true or LOT=false: https://bitcoinmagazine.com/articles/lottrue-or-lotfalse-this-is-the-last-hurdle-before-taproot-activation
 
-# Intro
+## Intro
 
 Aaron van Wirdum (AvW): Live from Utrecht, this is the van Wirdum Sjorsnado. Sjors, make the pun.
 
@@ -34,7 +32,7 @@ SP: That was on September 25th so about 5 months, yeah.
 
 AvW: It has been a while and by now the discussion has reached its final stage I would say. At this point the discussion is about the lot parameter, true or false. First to recap very briefly Sjors can you explain what are we doing here? What is a soft fork?
 
-# What is a soft fork?
+## What is a soft fork?
 
 SP: The idea of a soft fork is you make the rules more strict. That means that from the point of view of a node that doesn’t upgrade nothing has changed. They are just seeing transactions that are valid to them from the nodes that do upgrade. Because they have stricter rules they do care about what happens. The nice thing about soft forks is that as a node user you can upgrade whenever you want. If you don’t care about this feature you can upgrade whenever you want.
 
@@ -46,7 +44,7 @@ AvW: The nice thing about soft forks is that if a majority of hashpower enforces
 
 SP: That’s right. A node would check, for example every two weeks, how many blocks signaled this thing and if yes, then it says “Ok the soft fork is now active. I am going to assume that the miners will enforce this.”
 
-# The ability for miners to block a soft fork upgrade
+## The ability for miners to block a soft fork upgrade
 
 AvW: Right. The problem with this upgrade mechanism is that it also means miners can block the upgrade.
 
@@ -60,7 +58,7 @@ AvW: Yeah. In the case of SegWit that was in the end resolved through UASF, or a
 
 SP: Right, at the same time and perhaps as a consequence as that, a group of miners and other companies agreed that they would start signaling for SegWit. There were a whole bunch of other things going on at the same time. Whatever happened on 1st August, the thing activated, or a little bit earlier I think.
 
-# The lockinontimeout (LOT) parameter
+## The lockinontimeout (LOT) parameter
 
 AvW: Now we are four years ahead in time, it is four years later and now the Taproot upgrade is ready to go. What happened a couple of years ago is now spurring new debate on the Taproot upgrade. That brings us to the lockinontimeout (LOT) parameter which is a new parameter. Although it is inspired by things from that SegWit upgrade period.
 
@@ -144,7 +142,7 @@ SP: Yeah. The irony is of course that if there is complete consensus and everybo
 
 AvW: You are right but we are digressing. The point is that the really complicated scenarios arise when some parts of the network are running LOT=true, some parts of the network are running LOT=false or some parts of the network are running neither because they haven’t upgraded. Or some combination of these, half of the network has LOT=true, half of the network has neither. That’s where things get very complicated and Sjors, you’ve thought about it, what do you think? Tell me what the risks are.
 
-# The chain split scenario
+## The chain split scenario
 
 SP: I thought about this stuff during the SegWit2x debacle as well as the UASF debacle which were similar in a way but also very different because of who was explaining and whether it was a hard fork or a soft fork. Let’s say you are running the LOT=true version of Bitcoin Core. You downloaded it, maybe it was released by Bitcoin Core or maybe you self compiled it, but it says LOT=true. You want Taproot to activate. But the scenario here is that the rest of the world, the miners aren’t really doing this. The day arrives and you see a block, it is not signaling correctly but you want it to signal correctly so you say “This block is now invalid. I am not going to accept this block.” I’m just going to wait until another miner comes with a block that does meet my criteria. Maybe that happens once in every 10 blocks for example. You are seeing new blocks but they are coming in very, very slowly. So somebody sends you a transaction, you want Bitcoin from somebody, they send you a transaction and this transaction has a fee and it is probably going to be wrong. Let’s say you are receiving a transaction from somebody who is running a node with LOT=false. They are on a chain that is going ten times faster than you are, in this intermediate state. Their blocks might be just full, their fees are pretty low, and you are receiving it. But you are on this shorter, slower moving chain so your mempool is really full and your blocks are completely full, so that transaction probably won’t confirm on your side. It is just going to be sitting in the mempool, that is one complexity. That’s actually a relatively good scenario because you don’t accept unconfirmed transactions. You will have a disagreement with your counterparty, you’ll say “It hasn’t confirmed” and they’ll say “It has confirmed”. Then at least you might realize what is going on, you read about the LOT war or whatever. So that’s one scenario. The other scenario is where somehow it does confirm on your side and it also confirms on the other side. That is kind of good because then you are safe either way. If it is confirmed on both sides then whatever happens in a future re-org that transaction is actually on the chain, maybe in a different block. Another scenario could be because there are two chains, one short chain and one long chain, but they are different. If you are receiving coins that are sent from a coinbase transaction on one side or the other then there is no way it can be valid on your side. This can also be a feature, it is called replay protection essentially. You receive a transaction and you don’t even see it in your mempool, you call the other person and say “This doesn’t make any sense.” That’s good. But now suddenly the world changes its mind and says “No we do want Taproot, we do want LOT=true, we are now LOT=true diehards” and all the miners start mining on top of your shorter chain. Your short chain becomes the very long chain. In that case you are pretty happy in most of the scenarios we’ve discussed.
 
@@ -184,7 +182,7 @@ AvW: That’s bad. That’s basically the worst case scenario that no one wants 
 
 SP: Yeah. You can translate this also to people who are using hardware wallet software that hasn’t been updated, they are using remote nodes or they are using SPV nodes that don’t check the rules but only check the work. They’ll have similar experiences where suddenly the longest chain changes so your SPV wallet, which we explained in an earlier episode, its history disappears. At least for the lightweight nodes you could do some victim shaming and say “You should be running a full node. If bad things happen you should have run a full node.” But I still don’t think that’s good safety engineering, to tell people “If you don’t use your safety belt in the correct position the car might explode.” But at least for the unupgraded full node that is an explicit case that Bitcoiners want to support. You want to support people not upgrading and not suddenly losing their coins in a situation like this. That is why I’m not a LOT=true person.
 
-# Avoiding a chain split scenario
+## Avoiding a chain split scenario
 
 AvW: That’s what I want to get that. Everyone agrees or at least we both agree and I think most people would agree that this scenario we just painted, that’s horrible, we don’t want that. So the next question is how do you avoid this scenario? That’s also one of the things where LOT=true and LOT=false people differ in their opinions. LOT=false proponents like yourself argue against LOT=true because the chain split was caused by LOT=true and therefore if we don’t want chain splits we don’t want LOT=true and the thing we just described won’t happened. The worst case scenario is that we don’t have Taproot, it will just expire. That’s not as bad as this poor Korean guy losing his honest day’s work.
 

@@ -5,6 +5,7 @@ media: https://www.youtube.com/watch?v=Js-5PZi6Uow
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["podcast"]
 date: 2023-02-08
+aliases: ['/bitcoin-magazine/bitcoin-explained/inscriptions']
 ---
 
 ## Introduction

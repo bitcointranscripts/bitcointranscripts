@@ -6,6 +6,7 @@ tags: ["scripts-addresses", "bech32"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-02-19
+aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-bitcoin-addresses']
 ---
 Aaron van Wirdum: 00:01:45
 

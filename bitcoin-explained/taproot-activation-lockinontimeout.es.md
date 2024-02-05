@@ -1,16 +1,14 @@
 ---
-title: Activación de Taproot y LOT=true vs LOT=false
+title: "Activación de Taproot y LOT=true vs LOT=false"
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
-tags: ['taproot']
+tags: ['taproot','soft-fork-activation']
 date: 2021-02-26
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=7ouVGgE75zg
+aliases: ['/es/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout']
 ---
-
-Localización: Bitcoin Magazine (en línea)
-
 BIP 8: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 
 Argumentos para LOT=true and LOT=false (T1-T6 and F1-F6): https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
@@ -19,7 +17,7 @@ Argumento adicional para LOT=false (F7): https://lists.linuxfoundation.org/piper
 
 Artículo de Aaron van Wirdum en LOT=true or LOT=false: https://bitcoinmagazine.com/articles/lottrue-or-lotfalse-this-is-the-last-hurdle-before-taproot-activation
 
-# Introducción
+## Introducción
 
 Aaron van Wirdum (AvW): En directo desde Utrecht, este es el van Wirdum Sjorsnado. Sjors, haz el juego de palabras.
 
@@ -35,7 +33,7 @@ SP: Eso fue el 25 de septiembre, así que unos cinco meses, sí.
 
 AvW: Ha pasado un tiempo y ahora la discusión ha llegado a su fase final, diría yo. En este momento la discusión es sobre el parámetro del lote, true o false. En primer lugar, para recapitular muy brevemente, Sjors, ¿puedes explicar qué estamos haciendo aquí? ¿Qué es una bifurcación suave?
 
-# ¿Qué es una bifurcación suave?
+## ¿Qué es una bifurcación suave?
 
 SP: La idea de una bifurcación suave es que haces las reglas más estrictas. Eso significa que desde el punto de vista de un nodo que no se actualiza nada ha cambiado. Sólo ven las transacciones que son válidas para ellos de los nodos que sí se actualizan. Debido a que tienen reglas más estrictas se preocupan por lo que sucede. Lo bueno de las bifurcaciones suaves es que como usuario de un nodo puedes actualizar cuando quieras. Si no te importa esta característica, puedes actualizar cuando quieras.
 
@@ -47,7 +45,7 @@ AvW: Lo bueno de las bifurcaciones suaves es que si la mayoría del poder de has
 
 SP: Así es. Un nodo comprobaría, por ejemplo cada dos semanas, cuántos bloques señalaron esta cosa y si es así, entonces dice "Ok la bifurcación suave está ahora activa. Voy a suponer que los mineros van a aplicar esto".
 
-# La capacidad de los mineros para bloquear una actualización de la bifurcación suave
+## La capacidad de los mineros para bloquear una actualización de la bifurcación suave
 
 AvW: Correcto. El problema con este mecanismo de actualización es que también significa que los mineros pueden bloquear la actualización.
 
@@ -61,7 +59,7 @@ AvW: Sí. En el caso de SegWit eso se resolvió al final a través de UASF, o al
 
 SP: Correcto, al mismo tiempo y tal vez como consecuencia de eso, un grupo de mineros y otras empresas acordaron que comenzarían a señalar para SegWit. Hubo un montón de otras cosas que sucedieron al mismo tiempo. Lo que ocurrió el 1 de agosto, la cosa se activó, o un poco antes creo.
 
-# El parámetro lockinontimeout (LOT)
+## El parámetro lockinontimeout (LOT)
 
 AvW: Ahora nos adelantamos en el tiempo, han pasado cuatro años y ahora la actualización de Taproot está lista para salir. Lo que ocurrió hace un par de años está provocando un nuevo debate sobre la actualización de Taproot. Eso nos lleva al parámetro lockinontimeout (LOT) que es un parámetro nuevo. Aunque está inspirado en cosas de ese periodo de actualización de SegWit.
 
@@ -145,7 +143,7 @@ SP: Sí. La ironía es, por supuesto, que si hay un consenso total y todo el mun
 
 AvW: Tienes razón, pero estamos divagando. La cuestión es que los escenarios realmente complicados surgen cuando algunas partes de la red tienen LOT=true, algunas partes de la red tienen LOT=false o algunas partes de la red no tienen ninguna de las dos cosas porque no se han actualizado. O una combinación de estos, la mitad de la red tiene LOT=true, la mitad de la red no tiene ninguno. Ahí es donde las cosas se complican mucho y Sjors, tú has pensado en ello, ¿qué piensas? Dime cuáles son los riesgos.
 
-# El escenario de división de la cadena
+## El escenario de división de la cadena
 
 SP: Pensé en estas cosas durante la debacle de SegWit2x, así como la debacle de UASF, que fueron similares en cierto modo, pero también muy diferentes debido a quién estaba explicando y si era un hard fork o un soft fork. Digamos que estás ejecutando la versión LOT=true de Bitcoin Core. La descargaste, tal vez fue liberada por Bitcoin Core o tal vez la autocompilaste, pero dice LOT=true. Usted quiere que Taproot se active. Pero el escenario aquí es que el resto del mundo, los mineros no están haciendo esto. Llega el día y ves un bloque, no está señalando correctamente, pero quieres que señale correctamente, así que dices "Este bloque es ahora inválido. No voy a aceptar este bloque". Voy a esperar hasta que otro minero venga con un bloque que sí cumpla mis criterios. Tal vez eso ocurra una vez cada 10 bloques, por ejemplo. Estás viendo nuevos bloques, pero están llegando muy, muy lentamente. Así que alguien te envía una transacción, quieres Bitcoin de alguien, te envían una transacción y esta transacción tiene una tarifa y probablemente va a estar mal. Digamos que estás recibiendo una transacción de alguien que está ejecutando un nodo con LOT=false. Están en una cadena que va diez veces más rápido que tú, en este estado intermedio. Sus bloques pueden estar apenas llenos, sus tarifas son bastante bajas, y tú la estás recibiendo. Pero tú estás en esta cadena más corta y de movimiento más lento, así que tu mempool está realmente lleno y tus bloques están completamente llenos, así que esa transacción probablemente no se confirmará en tu lado. Simplemente va a estar sentado en el mempool, que es una complejidad. En realidad es un escenario relativamente bueno porque no aceptas transacciones no confirmadas. Tendrás un desacuerdo con tu contraparte, dirás "No se ha confirmado" y ellos dirán "Se ha confirmado". Entonces por lo menos te darás cuenta de lo que está pasando, leerás sobre la guerra de LOT o lo que sea. Así que ese es un escenario. El otro escenario es cuando de alguna manera se confirma en tu lado y también se confirma en el otro lado. Eso es bastante bueno porque entonces estás a salvo de cualquier manera. Si se confirma en ambos lados, entonces, pase lo que pase en una futura reorganización, esa transacción está realmente en la cadena, tal vez en un bloque diferente. Otro escenario podría ser porque hay dos cadenas, una cadena corta y otra larga, pero son diferentes. Si usted está recibiendo monedas que se envían de una transacción de coinbase en un lado o en el otro, entonces no hay manera de que pueda ser válido en su lado. Esto también puede ser una característica, se llama la protección de repetición esencialmente. Recibes una transacción y ni siquiera la ves en tu mempool, llamas a la otra persona y dices "Esto no tiene sentido". Eso es bueno. Pero ahora, de repente, el mundo cambia de opinión y dice "No, sí queremos Taproot, sí queremos LOT=true, ahora somos incondicionales de LOT=true" y todos los mineros empiezan a minar encima de tu cadena más corta. Tu cadena corta se convierte en la cadena muy larga. En ese caso estás bastante contento en la mayoría de los escenarios que hemos discutido.
 
@@ -189,7 +187,7 @@ AvW: Eso es malo. Creo que ese es el peor escenario que nadie quiere.
 
 SP: Sí. Esto se puede trasladar también a las personas que utilizan un software de cartera de hardware que no se ha actualizado, que utilizan nodos remotos o que utilizan nodos SPV que no comprueban las reglas sino que sólo comprueban el trabajo. Tendrán experiencias similares en las que, de repente, la cadena más larga cambia, por lo que su monedero SPV, que explicamos en un episodio anterior, su historia desaparece. Al menos para los nodos ligeros podrías hacer algo de victim shaming y decir "Deberías estar ejecutando un nodo completo. Si pasan cosas malas deberías haber ejecutado un nodo completo". Pero sigo pensando que eso no es una buena ingeniería de seguridad, decirle a la gente "Si no usas el cinturón de seguridad en la posición correcta el coche puede explotar". Pero al menos para el nodo completo no actualizado es un caso explícito que los Bitcoiners quieren apoyar. Quieren apoyar que la gente no se actualice y no pierda repentinamente sus monedas en una situación como esta. Por eso no soy una persona LOT=true.
 
-# Evitar un escenario de ruptura en cadena
+## Evitar un escenario de ruptura en cadena
 
 AvW: Eso es lo que quiero conseguir. Todo el mundo está de acuerdo, o al menos ambos estamos de acuerdo, y creo que la mayoría de la gente estaría de acuerdo en que este escenario que acabamos de pintar es horrible, no queremos eso. Así que la siguiente pregunta es ¿cómo evitar este escenario? Esa es también una de las cosas en las que las personas de LOT=true y LOT=false difieren en sus opiniones. Los defensores de LOT=false, como tú, argumentan en contra de LOT=true porque la ruptura de la cadena fue causada por LOT=true y, por lo tanto, si no queremos rupturas en cadena, no queremos LOT=true y lo que acabamos de describir no ocurrirá. El peor escenario es que no tengamos Taproot, simplemente expirará. Eso no es tan malo como que este pobre coreano pierda su honesto día de trabajo.
 

@@ -6,6 +6,7 @@ tags: ["scripts-addresses","transaction-relay-policy"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-07-15
+aliases: ['/bitcoin-magazine/bitcoin-explained/op_return']
 ---
 ## Intro
 

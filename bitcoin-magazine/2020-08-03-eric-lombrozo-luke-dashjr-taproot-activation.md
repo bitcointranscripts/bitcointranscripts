@@ -1,5 +1,5 @@
 ---
-title: Taproot Activation
+title: "How to Activate a New Soft Fork"
 transcript_by: Michael Folkson
 categories: ['podcast']
 tags: ['taproot', 'soft-fork-activation']
@@ -7,16 +7,13 @@ speakers: ['Eric Lombrozo', 'Luke Dashjr']
 date: 2020-08-03
 media: https://www.youtube.com/watch?v=yQZb0RDyFCQ
 ---
-
-Topic: How to Activate a New Soft Fork
-
 Location: Bitcoin Magazine (online)
 
 Aaron van Wirdum in Bitcoin Magazine on BIP 8, BIP 9 or Modern Soft Fork Activation: https://bitcoinmagazine.com/articles/bip-8-bip-9-or-modern-soft-fork-activation-how-bitcoin-could-upgrade-next
 
 David Harding on Taproot activation proposals: https://gist.github.com/harding/dda66f5fd00611c0890bdfa70e28152d
 
-# Intro
+## Intro
 
 Aaron van Wirdum (AvW): Eric, Luke welcome. Happy Bitcoin Independence Day. How are you doing?
 
@@ -30,7 +27,7 @@ AvW: Good thanks. It is cool to have you guys on Bitcoin Independence Day. Obvio
 
 EL: We don’t want to repeat what happened a few years ago. We want to do it better this time.
 
-# Previous soft fork activations
+## Previous soft fork activations
 
 AvW: That’s what I want to discuss with you guys and why it is great to have you on. Let’s start with that Eric. A couple years ago, apparently something went wrong. Shall we first very briefly mention there was this process called [BIP 9](https://github.com/bitcoin/bips/blob/master/bip-0009.mediawiki). Do you want to explain very briefly what that was and then you can get into why that was a problem or what went wrong?
 
@@ -52,7 +49,7 @@ AvW: Luke do you agree with this analysis? Is this how you see it?
 
 LD: More or less yeah.
 
-# SegWit and BIP 148
+## SegWit and BIP 148
 
 AvW: At some point there was this solution to break the deadlock which was a UASF. This ultimately took shape in the form of [BIP 148](https://github.com/bitcoin/bips/blob/master/bip-0148.mediawiki). Luke I think you were involved with the early process of deciding this. What was the idea behind BIP 148?
 
@@ -120,7 +117,7 @@ AvW: One last question. To sum up this part of Bitcoin history, what were the le
 
 EL: I think it is very important that we try to avoid politicizing this kind of stuff. Ideally we don’t want the protocol base layer to be changing very much. Anytime there is a change to that it introduces an attack vector. Right away people could try to insert vulnerabilities or exploits or try to split the community or create social engineering attacks or stuff like that. Anytime you open the door to changing the rules you are opening yourself up to attacks. We are at a point now where it is impossible to upgrade the protocol without having some kind of process. But the more we try to scale this the more that it tends to become political. I am hoping that Taproot does not create the same kind of contention and it does not become politicized. I don’t think it is a good precedent to set that these things are controversial. At the same time I don’t want this to be a regular process. I don’t want to make a habit out of activating soft forks all the time. I do think Taproot is a very important addition to Bitcoin and it seems to have a lot of community support. It would be really nice to include it now. I think if we wait it is going to get harder to activate it later.
 
-# BIP 8 as a possible improvement to BIP 9
+## BIP 8 as a possible improvement to BIP 9
 
 AvW: You mentioned that 2017 was this period of controversy, the scaling civil war, whatever you want to call it. Was there really a problem with BIP 9 or was it just a controversial time and by now BIP 9 would be fine again?
 
@@ -222,7 +219,7 @@ LD: I don’t know if there is an incentive to try to veto when it is just going
 
 EL: Yeah.
 
-# Modern Soft Fork Activation
+## Modern Soft Fork Activation
 
 AvW: The other perspective in this debate would be for example Matt Corallo’s [Modern Soft Fork Activation](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-January/017547.html). I assume that you are aware of that. I will explain it real quick myself. Modern Soft Fork Activation, the idea is that basically you use the old fashioned BIP 9 upgrade process for a year. Let miners activate it for a year. If it doesn’t work then developers will reconsider for 6 months, see if there was a problem with Taproot in this case after all, something that they had missed, some concern miners had with it. Review it for 6 months, if after the 6 months it is found there was no actual problem and miners were delaying for whatever reason then activation is redeployed with a hard deadline activation at 2 years. What do you think of this?
 
@@ -252,7 +249,7 @@ EL: For sure the more eyes that look at it the better but I think nothing would 
 
 LD: At that point if there was an issue found there is going to be a question of “Is it worth redoing all this just to fix that issue or should we just go ahead anyway?” If the issue is bad enough miners could activate simply because of the issue because they want to take advantage of it. We don’t want it to activate if there is a big issue. We need to be completely sure there are no issues before we get to the activation stage.
 
-# BIP 8 with forced signaling
+## BIP 8 with forced signaling
 
 AvW: Let me throw out another idea that has been circulating. What if we do a BIP 8 with forced signaling towards the end but give it a long time? After a while you can always speed it up with a new client that includes something forcing miners to signal sooner.
 
@@ -270,7 +267,7 @@ AvW: I could throw another idea out there but I expect your answer will be the s
 
 EL: Yeah.
 
-# Protocol ossification
+## Protocol ossification
 
 AvW: Last question I think. A lot of people out there like protocol ossification. They like it if Bitcoin, at least some point in the future, proves unable to upgrade.
 
@@ -308,7 +305,7 @@ EL: Possibly. I am not sure. I don’t think anyone has a complete answer to thi
 
 LD: The definition of “good enough” may change as privacy invading technology improves. If the governments, not even governments, anyone gets better at invading everyone’s privacy what we need to protect against that could very well raise the bar.
 
-# Taproot
+## Taproot
 
 AvW: We can discuss Taproot itself a little bit. Is that a good idea? What is great about Taproot? Why do you support it if you support it?
 

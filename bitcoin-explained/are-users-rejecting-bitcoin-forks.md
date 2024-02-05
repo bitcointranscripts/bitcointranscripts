@@ -6,6 +6,7 @@ tags: ["soft-fork-activation"]
 speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["podcast"]
 date: 2022-05-07
+aliases: ['/bitcoin-magazine/bitcoin-explained/are-users-rejecting-bitcoin-forks']
 ---
 ## Intro
 
