@@ -7,23 +7,16 @@ speakers: ["Sjors Provoost","Mike Schmidt","James O'Beirne","Rodolfo Novak"]
 categories: ["podcast"]
 date: 2023-02-22
 ---
-
-## Demystifying and Understanding Bitcoin Core Development
-
 ## Intro
 
-NVK: 00:00:08
+NVK: 00:00:40
 
-Hello and welcome to Bitcoin.review podcast.
-This is an ad-free pod.
-Thank you so much for streaming those Sats.
-If you're a new listener, I'm NVK and I run CoinKite, where we've been helping people secure their bitcoins for over a decade.
-We make products like the QuoteCard, and BlockLock, and we have a bunch of other projects.
-You can find more information on CoinKite.com.
 Today, we're going to be talking about Bitcoin Core development and trying to demystify it, maybe sort of like shed some light.
 So, some of the FUD goes away and new FUD comes in maybe, who knows?
 
 ## Guest introductions
+
+NVK: 00:00:51
 
 I have this awesome panel with me.
 I have a James O'Beirne.
@@ -58,8 +51,9 @@ Do you guys want to tell the audience what you guys do related to Core?
 James O'Beirne: 00:01:12
 
 So yeah, my name is James And I've done work on Bitcoin Core since 2015, when I made a patch that's actually kind of coming back into relevance.
-It obfuscated the chain state contents, anything that's loaded into memory because We were having this problem where Norton Antivirus software on Windows platforms would actually wipe out the chain data because Someone had embedded viral signatures in the operations Which is pretty funny.
-Now, we're talking about doing that for blocks, of course with the rise of inscriptions, but I so I since 2018 I've worked full-time on Bitcoin Core and related projects.
+It obfuscated the chain state contents, anything that's loaded into memory because we were having this problem where Norton Antivirus software on Windows platforms would actually wipe out the chain data because someone had embedded viral signatures in the operations which is pretty funny.
+Now, we're talking about doing that for blocks, of course with the rise of inscriptions.
+Since 2018 I've worked full-time on Bitcoin Core and related projects.
 
 NVK: 00:01:57
 
@@ -68,7 +62,7 @@ Sjors.
 
 Sjors Provoost: 00:01:59
 
-Yeah, I've been working on Bitcoin Core since 2017.
+I've been working on Bitcoin Core since 2017.
 I mostly review stuff hanging around in the wallet, but I also like to test completely random stuff and review it.
 So I've looked at some of James' work and other people's.
 
@@ -79,82 +73,80 @@ Cool, and Mike?
 Mike Schmidt: 00:02:15
 
 I've never contributed to Bitcoin Core.
-So I'm the outsider on this panel, but I do have some I think interesting insights into the funding world around Bitcoin Core, as well as some of the supporting efforts that aren't necessarily the zeros and ones that James and Sjors are doing, but support some of those efforts in terms of funding, education, and news.
+I'm the outsider on this panel, but I do have some I think interesting insights into the funding world around Bitcoin Core, as well as some of the supporting efforts that aren't necessarily the zeros and ones that James and Sjors are doing, but support some of those efforts in terms of funding, education, and news.
 So I actually got my sort of break into the Bitcoin world by working at Blockstream and then actually met James through Bitcoin Optech, one of the initiatives that he helped start.
 And so I helped contribute at Optech and also executive director at Brink where we actually fund Bitcoin open source developers.
 So that's sort of my background and perspective.
 
 NVK: 00:03:07
 
-And I guess you're being very short there on Optech, which is an absolutely fantastic resource that I believe started to try to educate the industry on what's going on with Bitcoin Core development, right?
-Because, you know, realistically speaking, I mean, industry has very few sort of devs that often can understand or contribute to Bitcoin Core.
-You know, people are busy building stuff to ship to customers.
-And, and there was always this like huge gap between like what's going on in Bitcoin, which can seem a little messy and sort of like very opaque.
-And, and how can we sort of like let people know that like, you know, these are the things that people are working on.
+You're being very short there on Optech, which is an absolutely fantastic resource that I believe started to try to educate the industry on what's going on with Bitcoin Core development, right?
+Because, realistically speaking, industry has very few sort of devs that often can understand or contribute to Bitcoin Core.
+People are busy building stuff to ship to customers.
+And there was always this huge gap between what's going on in Bitcoin, which can seem a little messy and very opaque.
+How can we sort of like let people know that these are the things that people are working on.
 
 Mike Schmidt: 00:03:47
 
 Yeah, I think James could probably provide a bit more of the history, but I think it was a suggestion by Adam Back that the communication lines should be opened between developers and Bitcoin businesses.
 And I think Optech has done a pretty good job of digesting developments in the technical Bitcoin dev space and surfacing those to a less technical or less involved audience, including Bitcoin businesses.
-And I think we've done a good job of that and maybe less of a good job.
-And maybe there's more potential for getting more feedback from Bitcoin businesses or Bitcoin users about how folks are using the software and feedback on that.
+I think we've done a good job of that and maybe less of a good job, and maybe there's more potential for getting more feedback from Bitcoin businesses or Bitcoin users about how folks are using the software and feedback on that.
 
 NVK: 00:04:35
 
-So I think it's an interesting thread that the reason why I started pulling on from there is because traditionally Bitcoin Core development was sort of opaque because it's like anarchic, right?
+I think it's an interesting thread and the reason why I started pulling on from there is because traditionally Bitcoin Core development was sort of opaque because it's like anarchic.
 People work on what they want to work.
 They may not even be on GitHub per-say.
-And there is sort of like nobody decides what gets worked on.
-So there's like a lot of initiatives going on at the same time and they may not have like people's priorities in mind.
-It's whatever people want to work on, right?
+Nobody decides what gets worked on.
+There's a lot of initiatives going on at the same time and they may not have people's priorities in mind.
+It's whatever people want to work on.
 It's very hard to keep track of that stuff.
 It's very hard to understand half the time what people are working on because of the technical complexity.
-And correct me if I'm wrong, but I imagine the motivation behind Optech was around the block wars where there was a lot of opacity, not due to anybody's intent, but it's just that like, you know, there's this like completely like galaxy brain shit that people are working on.
-And then there's the industry trying to say, Hey, the fees are high.
-Like it's just like this very sort of like, you know, grub brain, sort of like fees high.
-I need a solution.
-And then there is like this like millions of things going on in Bitcoin Core development that may or may not affect that.
-And I got a vibe that like, you know, the intent of Optech was sort of like, okay, look, there's this massive gap.
-Can we start bridging this and involving the industry and sort of educating the industry and sort of keeping tabs on what people are working on?
+And correct me if I'm wrong, but I imagine the motivation behind Optech was around the Block Wars where there was a lot of opacity, not due to anybody's intent, but it's just that there's this completely galaxy brain shit that people are working on.
+And then there's the industry trying to say, "Hey, the fees are high".
+This sort of like, grub brain, "fees high - I need solution".
+Then there is this like millions of things going on in Bitcoin Core development that may or may not affect that.
+And I got a vibe that the intent of Optech was sort of like, "Okay, look, there's this massive gap.
+Can we start bridging this and involving (the) industry and sort of educating (the) industry and sort of keep tab of what people are working on".
 
 Sjors Provoost: 00:06:03
 
-I mean, the newsletter helps developers keep tabs on what's going on.
+The newsletter helps developers keep tab on what's going on.
 
 NVK: 00:06:08
 
-it's true.
+It's true.
 
 James O'Beirne: 00:06:10
 
 That's true.
 It's really the best resource week to week for what's kind of going on.
 But yeah, you're right.
-I mean, Optech was founded in 2018 on the heels of the 2017 bull run fee market.
-And, you know, initially, there was a lot of emphases when we would go out and talk to various members of the industry about how to kind of manage the fee market and how to use things like RBF so that exchanges were making the most efficient use of block space that they could.
+Optech was founded in 2018 on the heels of the 2017 bull run fee market.
+Initially, there was a lot of emphases when we would go out and talk to various members of the industry about how to kind of manage the fee market and how to use things like RBF so that exchanges were making the most efficient use of block space that they could.
 What I think we found in practice many times was that exchanges were aware that they were inefficient, but they just had kind of bigger fish to fry from the standpoint of being a corporate entity with shareholders and profits to make.
-And so like the conclusion that I kind of came to was, well, If a business wants to ignore best practices and basically penalize themselves with fees, you know, it's fine with me to subsidize miners and create a robust fee market.
-So I kind of like exited that conversation a little bit just because I found it was very hard to get uptake and it wasn't my position to try and sort of like push people.
+The conclusion that I kind of came to was, well, If a business wants to ignore best practices and basically penalize themselves with fees, you know, it's fine with me to subsidize miners and create a robust fee market.
+So I kind of exited that conversation a little bit just because I found it was very hard to get uptake and it wasn't my position to try and sort of like push people.
 
 NVK: 00:07:19
 
 Yeah, It's a tough position to be in just generally speaking.
-I mean, like Bitcoin has a set of incentives, you know, it's money for your enemies, and everybody's sort of like using differently and they have both like overt and covert like incentives or sort of like intentions, right?
-And we can't read people's minds, right?
-We can just work with the network thinking of like sort of like the worst case scenario and the best case scenario and sort of like, you know, aim somewhere where it makes sense for each feature.
+Bitcoin has a set of incentives, it's money for your enemies, and everybody is using it differently and they have both overt and covert incentives or sort of intentions.
+And we can't read people's minds.
+We can just work with the network thinkin the worst case scenario and the best case scenario and aim somewhere where it makes sense for each feature.
 
 
-So like, let's sort of like go back in time.
-How does this whole thing start?
+Let's go back in time.
+How does this whole thing started?
 How did Bitcoin development start?
-Right, I mean, you have Satoshi release the paper, right?
-He released the source code, which I think was on SourceForge at the time.
-And conversations were had via email and on Bitcoin Talk if I remember right.
-My memory is also failing at that time.
-So that's sort of like how it starts, right?
-I mean, Satoshi has very sort of like unilateral decisions that he pushes into Bitcoin, right?
-Like, oh, I don't want Bitcoin block to be 32 megabytes.
-It's going to be one.
+I mean, you have Satoshi, releases the paper.
+He releases the source code, I think was on SourceForge at the time.
+And conversations were had on email and on Bitcoin Talk, if I remember right.
+My memory is also failing of that time.
+So that's sort of like how it starts.
+Satoshi has very unilateral decisions that he pushes into Bitcoin.
+Like, "oh, I don't want Bitcoin block to be 32 megabytes.
+It's going to be one".
 So like, boom, made a change.
 Push.
 Nobody says anything.
@@ -163,17 +155,17 @@ Nobody says anything.
 
 Sjors Provoost: 00:08:28
 
-I read some of the discussion on the Bitcoin Talk forum about when Satoshi made those changes.
-And I think the change to one megabyte, the discussion wasn't even about that change.
-There was another change in that in a pull request.
+I read some of the discussion on the Bitcoin Talk forum for when Satoshi made those changes.
+I think the change to one megabyte, the discussion wasn't even about that change.
+There was another change in a pull request.
 I'm saying between scarecrows because he just pushed change.
-Yeah, there were people commenting on that, even though two lines above, there was a block size decrease.
-So that then makes you wonder whether there was some private communication about that change, or whether there was just no communication about the change and people didn't even know about it until much later.
+There were people commenting on that, even though two lines above, there was the block size decrease.
+That then makes you wonder whether there was some private communication about that change, or whether there was just no communication about the change and people didn't even know about it until much later.
 
 NVK: 00:09:00
 
 I like to assume there is always private communication.
-You know, I think it's a better mental model for these things.
+I think it's a better mental model for these things.
 You have to assume that people are colluding, good or bad, to try to get their preference ahead.
 It's just a normal human thing to do.
 It's the natural market thing to do.
@@ -185,57 +177,52 @@ And we know that Satoshi communicated directly with some people because some of 
 NVK: 00:09:23
 
 So we start that way.
-It's like, you know, there's 50 people using Bitcoin at a time.
-Like, you know, then a hundred and two hundred, like it kind of grew a little fast, like to a few thousand people within that sort of timeline.
-And the software is sort of like, you know 
-it's very low stakes too
-Like everybody who, in their right mind would assume that this crazy idea would work.
-You have to be either a liar or crazy.
+There's 50 people using Bitcoin at a time.
+Then a hundred and two hundred, it kind of grew a little fast, to a few thousand people within that sort of timeline.
+And the software is sort of like, nobody, it's very low stakes too.
+Who in their right mind would assume that this crazy idea would work.
+You'd have to be either a liar or crazy.
 Especially if you're around those days you'd understand this.
-Like I mean it's absolutely batshit crazy.
-So things are progressing right.
-It's lower stakes so people are less intense about things and people have a lot less of their bags depending on Bitcoin.
-And then we started having other people sort of like coming in and like you have like personalities like Gavin who sort of like you know tried to bring a little bit of the Linux sort of let's call it that was the benevolent dictator which was I don't think he lasted more than just a few months.
-I think everybody sort of like was very sort of affirmative on the fact that he should sidestep that kind of intention.
+It's absolutely batshit crazy.
+So things are progressing, it's lower stakes so people are less intense about things and people have a lot less of their bags depending on Bitcoin.
+Then we started having other people coming in and you have personalities like Gavin who tried to bring a little bit of the Linux, let's call it the benevolent dictator, which I don't think he lasted more than just a few months.
+I think everybody was very sort of affirmative on the fact that he should sidestep that kind of intention.
 
 James O'Beirne: 00:10:31
 
-And maybe Sjors you can help me here with the history because I'm a little bit fuzzy, but I think one of the things that he kind of pushed through pretty controversially was pay to script hash.
+Maybe Sjors you can help me here with the history because I'm a little bit fuzzy, but I think one of the things that he kind of pushed through pretty controversially was pay to script hash.
 Is that right?
-
-NVK: 00:10:42
-
-Yes, P2SH was.
 
 Sjors Provoost: 00:10:43
 
-My understanding is that this is true, but I've only read one long-form article about it.
-I have not actually done any digging myself into that history.
+My understanding (is) that that is true, but I've only read one long-form article about it.
+I have not actually done any digging myself in that history.
 
 NVK: 00:10:51
 
-Yeah, there's also OP_EVAL that had like a recursive bug or something like that.
+Yeah, there's also `OP_EVAL` that had like a recursive bug or something like that.
 And it had to be rewinded.
 
 Sjors Provoost: 00:10:58
 
-Well, the word eval just scares the hell out of me because like in JavaScript, that's one of the ways you can get any kind of payload to execute in a browser.
-So if it was doing anything like that, like just evaluating stuff.
+Well, the word "eval" just scares the hell out of me because like in JavaScript, that's one of the ways you can get any kind of payload to execute in a browser.
+So if it was doing anything like that, like just evaluating stuff-
 
 NVK: 00:11:11
 
-There was a lot of stuff that was like, it could be seen as either incompetence or sketchy.
+There was a lot of stuff that could be seen as either incompetence or sketchy.
 This is around the time when Mike Hearn was also around and known, I don't know if it's true or not, as the guy who put the backdoor on Gmail.
-I'm not going to get into it because like the point of this pod is not to create drama, or to put any of the guests in any position where they don't want to be.
-You know, and this history is very complex, long, and unclear as well.
+I'm not going to get into it because the point of this pod is not to create drama, to put any of the guests in any position where they don't want to be.
+This history is very complex, long, and unclear as well.
 We're not here to discuss that on specifics.
 It's not the point.
-It's just to sort of like give a picture to people that don't know, like that the story on this is not like your traditional sort of like open source project where, you know, there is a core amount of people and some people actually like to have the literal power to decide what goes in the next release, you know, it's a much more complex and fluid system, right?
+It's just to give a picture to people that don't know, that the story on this is not like your traditional open-source project where there is a core amount of people and some people actually have the literal power to decide what goes in the next release.
+It's a much more complex and fluid system.
 
 Sjors Provoost: 00:11:59
 
-Yeah, in the beginning, I'm guessing it was more like a normal open-source project and it started evolving 
-to the point where developers realized they couldn't just unilaterally change things.
+In the beginning, I'm guessing it was more like a normal open-source project and it started evolving 
+to the point where developers realized they can't  just unilaterally change things.
 
 ## Modern Bitcoin development
 
