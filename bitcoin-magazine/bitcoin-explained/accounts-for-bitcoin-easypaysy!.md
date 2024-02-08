@@ -6,73 +6,7 @@ speakers: ["Sjors Provoost","Aaron Van Wirdum"]
 categories: ["podcast"]
 date: 2020-10-02
 ---
-
-## Amazing announcement.
-
-Aaron: 00:00:07
-
-Live from Utrecht, this is the The Van Wirdum Sjorsnado.
-Hello! Sjors, I have amazing news.
-
-Sjors: 00:00:14
-
-You have amazing news, tell me.
-
-Aaron: 00:00:16
-
-Are you ready for this?
-
-Sjors: 00:00:17
-
-I don't know.
-
-Aaron: 00:00:19
-
-The Van Wirdum Sjorsnado, now, has its own feed.
-
-Sjors: 00:00:24
-
-Its own RSS feed.
-
-Aaron: 00:00:26
-
-Yes so in your own podcast app you can find The Van Wirdum Sjorsnado or maybe not yet I think it usually takes a few days for these things to pop up, longer than you would expect.
-Like it could take up to two weeks maybe.
-
-Sjors: 00:00:39
-
-Well I already signed up for it, a week ago so I think it exists but I had the URL.
-
-Aaron: 00:00:45
-
-But that's the RSS feed because you're a technical wizard.
-Most people just click subscribe in their podcast app.
-
-Sjors: 00:00:53
-
-I did it in iTunes.
-I subscribed directly to the podcast feed.
-Yep.
-
-Aaron: 00:00:55
-
-It's there?
-Okay, it's not in my app yet, but it will show up soon.
-So we have our own feed.
-This is also for our listeners.
-
-Sjors: 00:01:02
-
-Yep.
-
-Aaron: 00:01:13
-
-Ladies and gentlemen, The Van Wirdum Sjorsnado has his own feed for you to subscribe to.
-
-Sjors: 00:01:08
-
-Yes sir
-
+## Intro
 Aaron: 00:01:10
 
 Sjors how do you like reusing addresses?
@@ -119,35 +53,35 @@ You're giving away all your privacy.
 I guess that's the main problem, right?
 You're just giving away your privacy.
 I guess In the long run, there's maybe some sort of quantum risk, but we mostly care about privacy.
-You're giving away your own privacy, and also you're giving away...
-You're compromising the privacy of everyone you're interacting with.
-Because if you give away your privacy, that means everyone who's paying you, you know, blockchain analysts can figure out that they're paying you and the other way around if you're paying people.
+You're giving away your own privacy, and also you're compromising the privacy of everyone you're interacting with.
+Because if you give away your privacy, that means everyone who's paying you, blockchain analysts can figure out that they're paying you and the other way around if you're paying people.
 So it's compromising everyone's privacy.
-So while it's very convenient, it's something we shouldn't be doing, is it, Sjors?
+While it's very convenient, it's something we shouldn't be doing, is it, Sjors?
 
 Sjors: 00:02:17
 
 Exactly.
-So that's why most wallets have a button called get new address and some good wallets will actually automatically make a new address whenever you even click on receive. Some wallets don't.
-All right
+That's why most wallets have a button called get new address and some good wallets will actually automatically make a new address whenever you even click on receive.
+Some wallets don't.
 
 Aaron: 00:02:30
 
-So that works we need We need to generate a new address for each payment we receive.
+All right, so that works.
+We need to generate a new address for each payment we receive.
 However, Sjors, this is a little bit inconvenient as well, isn't it?
 
 Sjors: 00:02:38
 
 It can be.
 
-Aaron: 00:02:39
 
-So, here's the solution.
-We need an account system for
 
 ## Why accounts would be useful intro to Easypaysy
 
-Bitcoin.
+Aaron: 00:02:39
+
+So, here's the solution.
+We need an account system for Bitcoin.
 Or at least, it's possible to create an account system on Bitcoin and it could be useful.
 
 Sjors: 00:02:49
@@ -157,10 +91,10 @@ I think that's what we want.
 
 Aaron: 00:03:05
 
-So, Jose Femenas Canoelo, that's probably a severe mispronunciation of his name, but Spanish developer Jose Femenas Canoelo, he also believes so.
+So, Jose Femenias Canuelo, that's probably a severe mispronunciation of his name, but Spanish developer Jose Femenias Canuelo, he also believes so.
 He believes Bitcoin would benefit from an account system.
 It's called Easypaysy, which is short for Easy Payment System, I think.
-Easypaysy, And that's what we're going to discuss today.
+Easypaysy, and that's what we're going to discuss today.
 
 Sjors: 00:03:33
 
@@ -168,26 +102,26 @@ All right.
 
 Aaron: 00:03:33
 
-Okay.
-So it's pretty clever and we'll get to possible downsides later, but let's first just explain how it works.
+It's pretty clever and we'll get to possible downsides later, but let's first just explain how it works.
 
 Sjors: 00:03:41
 
 How does it work?
 Because this time you're going to explain how this thing works.
 
-Aaron: 00:03:44
 
-I'm going to do
 
 ## what is Easypaysy?
-most of the explaining this time.
+
+Aaron: 00:03:44
+
+I'm going to do most of the explaining this time.
 All right, so to generate an account, one of the clever things about this proposal is that it uses nothing outside of the Bitcoin blockchain itself, necessarily.
 There's options to that, but we can do it all without any outside of blockchain thing.
 
 Sjors: 00:04:06
 
-Well, by thing you don't mean wallets, but you mean there's no communication protocol, you don't have to run a server to communicate with the other person?
+By "thing" you don't mean wallets, but you mean there's no communication protocol, you don't have to run a server to communicate with the other person?
 
 Aaron: 00:04:14
 
@@ -199,12 +133,10 @@ Okay, so how do I generate an account?
 
 Aaron: 00:04:24
 
-So an account is basically a transaction.
+An account is basically a transaction.
 That's in this proposal what an account is.
 And this transaction consists of one input, so one address where coins are sent from, but this one input is a multi-sig input, so it has two public keys.
-It also has one output, which is a, what's it called?
-No, `OP_RETURN´, sorry.
-So one `OP_RETURN´ output.
+It also has one output, which is one `OP_RETURN` output.
 
 Sjors: 00:04:52
 
@@ -214,9 +146,9 @@ Aaron: 00:04:59
 
 No input.
 You're basically sending no money but you do need to pay a fee.
-So that's the only money that's involved in this transaction.
+That's the only money that's involved in this transaction.
 You're not actually spending anything to anyone, but you need a little bit of funds to have it confirmed.
-So the input does need to send some money, which is the fee, and then the output receives nothing, right?
+The input does need to send some money, which is the fee, and then the output receives nothing.
 
 Sjors: 00:05:17
 
@@ -224,21 +156,20 @@ And so the reason why we need a 2 of 2 multisig is...
 
 Aaron: 00:05:22
 
-So there's two public keys in there.
-So these are basically your public keys at this point.
+There's two public keys in there.
+These are basically your public keys at this point.
 When you're making this transaction, you're announcing to the world, these are my two public keys.
 One public key is your identity public key or...
-So, well, one of them is for communication anyways.
+One of them is for communication anyways.
 I forget, there's a term for it, which I'm, which is slipping my mind right now, but one of them is for communication.
-So if you want to send me some kind of message, you use this public key, which I think is the first of the two, like it's just an order.
-The first one is for communication.
-And then the second one is for value.
-One of the reasons there's two, or I think the main reason there's two is that one is even more important than the other.
-Like if you lose your communication key, that's a problem, but at least you're not losing money.
-Well, if you lose the value key, you're actually losing money.
-So what you can do is you can put the value key in cold storage in a safe, somewhere secure while you can still talk with people, communicate with people.
-So that way even if your computer is compromised and only your communication is compromised you still keep your funds.
-So that's why there's two basically.
+If you want to send me some kind of message, you use this public key, which I think is the first of the two - it's just an order.
+The first one is for communication, and then the second one is for value.
+I think the main reason there's two is that one is even more important than the other.
+If you lose your communication key, that's a problem, but at least you're not losing money.
+If you lose the value key, you're actually losing money.
+What you can do is you can put the value key in cold storage in a safe, somewhere secure while you can still talk with people, communicate with people.
+That way even if your computer is compromised and only your communication is compromised you still keep your funds.
+That's why there's two basically.
 
 Sjors: 00:06:35
 
@@ -253,12 +184,12 @@ Okay so
 
 Sjors: 00:07:05
 
-Then the `OP_RETURN´ message that's in the outputs of this transaction can communicate any other piece of information to the world.
+Then the `OP_RETURN` message that's in the outputs of this transaction can communicate any other piece of information to the world.
 
 Aaron: 00:07:12
 
 You can basically communicate text in this output.
-So the text we're communicating here is a JSON message, and it includes the instructions for how to pay to this account.
+The text we're communicating here is a JSON message, and it includes the instructions for how to pay to this account.
 That's the main thing it includes.
 
 Sjors: 00:07:26
@@ -282,8 +213,8 @@ You think that's probably a simplification?
 Sjors: 00:07:44
 
 Well I don't know I didn't read it in that level of detail.
-So there's only 80 bytes available in `OP_RETURN´.
-So you could use those 80 bytes to write as key characters, you know, with an opening bracket and colons and all this stuff.
+There's only 80 bytes available in `OP_RETURN`.
+You could use those 80 bytes to write ASCII characters, with an opening bracket and colons and all this stuff.
 But you can also agree on a serialization format that could put way more information in a smaller space.
 
 Aaron: 00:08:03
@@ -297,7 +228,7 @@ Sure, you can do it inefficient if there's not much data, but if you want more d
 Aaron: 00:08:16
 
 Okay, fair enough.
-Well, anyway, so there's three ways of receiving funds on these accounts.
+Anyway, so there's three ways of receiving funds on these accounts.
 The first way is not recommended.
 It's to receive payments on your value publicly.
 So now we're back to reusing addresses.
@@ -305,21 +236,25 @@ We don't actually want that, but it's an option.
 
 Sjors: 00:08:35
 
-It's even worse than that, I guess, because you're announcing, hey, this is where the money is going to the whole world.
+It's even worse than that, I guess, because you're announcing, "hey, this is where the money is going" to the whole world.
 And then it's reusing addresses with everyone that you receive money from, plus everyone you're not even receiving money from.
 
 Aaron: 00:08:49
 
 It's bad.
 It's in there because it's just an option for people to use.
-You can choose not to use it, but if we're making this protocol, that was Jose's reasoning.
-We might as well include it for people who do want to use it.
+You can choose not to use it, but if we're making this protocol, that was Jose's reasoning, we might as well include it for people who do want to use it.
 It's a little bit like donation addresses.
 Some people do use a donation address, which is just one address they post on a website somewhere, and anyone can pay to this address.
-So while it's not ideal, it's an option for people that insist on compromising their privacy.
+While it's not ideal, it's an option for people that insist on compromising their privacy.
+
+Sjors: 00:09:21
+
 Okay, what's the other option?
-Okay, so the one I just described was, that's type one, that's how Jose called it.
-Then type, no, that was type zero, sorry.
+
+Aaron: 00:09:23
+
+Okay, so the one I just described, that's type zero.
 And then type one is the next option, which uses the communication key basically to request an address.
 
 Sjors: 00:09:43
@@ -339,7 +274,7 @@ Okay, so this is where you do need some back and forth communication.
 Aaron: 00:09:52
 
 Yes, this one is interactive.
-So you can request it through email or maybe signal or maybe some other, maybe snail mail, however you want.
+You can request it through email or maybe signal or maybe some other, maybe snail mail, however you want.
 
 Sjors: 00:10:02
 
@@ -348,62 +283,53 @@ But this to me sounds like what we're already doing, where giving people unique 
 Aaron: 00:10:06
 
 This is pretty similar to that indeed.
-So this is just one of the options in the account system.
+This is just one of the options in the account system.
 It's not all groundbreaking.
 
 Sjors: 00:10:13
 
-So tell me about this groundbreaking third option, because before I fall asleep.
+Tell me about this groundbreaking third option, before I fall asleep.
 No, just kidding.
 Keep going.
 
 Aaron: 00:10:19
 
-Well, one of the interesting things here, I would argue, is that you're still signing it with your communication key to sort of prove that it's you who's requesting the payment, which can come in handy later on.
+One of the interesting things here, I would argue, is that you're still signing it with your communication key to sort of prove that it's you who's requesting the payment, which can come in handy later on.
+That was type one.
 
-Sjors: 00:10:32
-
-Okay.
-
-Aaron: 00:10:32
-
-Okay, so that was type one.
-And then type two, this closely resembles stealth addresses.
-So this is where it gets a little bit more complicated.
+Then type two, this closely resembles stealth addresses.
+This is where it gets a little bit more complicated.
 This is where the sender of the transaction takes the recipients, so the account holders value key, and the sender himself generates a public key and a private key.
 He uses his key pair in combination with the recipients, the account holders public key to generate a new key pair.
 And then he sends the funds to the public key or to the address that corresponds to this newly generated key pair.
-
-Sjors: 00:11:16
-
-Okay.
-
-Aaron: 00:11:16
-
 So the money is going there.
-In this transaction, he also includes another `OP_RETURN´ in which the public key is included.
+In this transaction, he also includes another `OP_RETURN` in which the public key is included.
 The public key he generated himself and with this public key, the account holder can use this public key to regenerate the new key pair and thereby he can spend the funds.
-Okay.
-So the way this works if you're an account holder is you need to know that this transaction happened.
+
+
+The way this works, if you're an account holder, is you need to know that this transaction happened.
 There's two ways of figuring that out.
-One of them is that the sender just tells you like, hey, I sent you some money, look at that transaction and you can use it with the information in `OP_RETURN´ to generate a private key which you can use to spend the money or the account holder just needs to scan the blockchain to see if there are any transactions with an `OP_RETURN´ in there and if there is see if there's information in there that he can use to generate this new key pair that actually matches and that actually lets him spend the coins. In which case you know he just finds money on the blockchain basically so he knows he's been paid. This is a little bit of a hassle of course, because you know it requires scanning of the blockchain and all of that.
-But it is very private because even though it's relatively private, because even though the value key was revealed in his account, this new money isn't sent to anything that anyone can link to the account by just looking at the blockchain.
+One of them is that the sender just tells you like, "hey, I sent you some money, look at that transaction and you can use it with the information in `OP_RETURN` to generate a private key which you can use to spend the money".
+Or the account holder just needs to scan the blockchain to see if there are any transactions with an `OP_RETURN` in there and if there is see if there's information in there that he can use to generate this new key pair that actually matches and that actually lets him spend the coins.
+In which case he just finds money on the blockchain basically so he knows he's been paid.
+This is a little bit of a hassle of course, because it requires scanning of the blockchain and all of that.
+It's relatively private, because even though the value key was revealed in his account, this new money isn't sent to anything that anyone can link to the account by just looking at the blockchain.
 It's sent to a completely new address, which even the recipients, the account holder, didn't know at first and had to figure out.
-So therefore, it does offer nice privacy features.
+Therefore, it does offer nice privacy features.
 
 Sjors: 00:12:57
 
 I'd say that's quite nice.
-The privacy gotcha there that I would think about is that when you as the recipient you first publish you know your identifier your account.
+The privacy gotcha there that I would think about is that when you as the recipient you first publish you know your identifier, your account...
 
 Aaron: 00:13:08
 
-So let's so I first explain that or and then you get to the privacy gotcha.
-I do like what the identifier is?
+Let's first explain that and then you get to the privacy gotcha.
+Like what the identifier is?
 
 Sjors: 00:13:16
 
-Oh what the identifier is yeah sure you can do that.
+Oh what the identifier is, yeah sure you can do that.
 
 Aaron: 00:13:19
 
@@ -430,27 +356,27 @@ You're one of those old schoolers that still remembers blocks in the 500,000 ran
 Aaron: 00:13:52
 
 No, I think that's what I used in my article when I wrote this.
-So that's why it's still sort of stuck in my head.
+That's why it's still sort of stuck in my head.
 I didn't use this exact number, but somewhere in the 500k range, I think.
 And then it's like the 738th in the blockchain and then the actual account identifier is, if I'm recalling correctly, it starts with the actual blockchain.
-So if it's Bitcoin, it's like BTC at 500, whatever number I just used in the 500k range dot and then 700 whichever one I just used and then I think there's a slash and there's a checksum.
-So then you have this identifier, which is based on the place in the blockchain.
+If it's Bitcoin, it's like BTC at 500, whatever number I just used in the 500k range, dot and then 700, whichever one I just used, and then I think there's a slash and there's a checksum.
+Then you have this identifier, which is based on the place in the blockchain.
 There are ways where you can revert.
 That's not the right word.
 
 Sjors: 00:14:45
 
 I think what you were going to say is it's going to convert to some nice mnemonic style.
-So a couple of words like rabbit, big, fish.
+So a couple of words like "rabbit, big, fish".
 
 Aaron: 00:14:54
 
 Exactly.
-Right now I was unable to remember the exact numbers I used, but if I would have used a mnemonic in the first place, Rabbit, fish, I already forgot.
+Right now I was unable to remember the exact numbers I used, but if I would have used a mnemonic in the first place, "Rabbit, fish", I already forgot.
 
 Sjors: 00:15:03
 
-Yeah, rabbit, big fish.
+Yeah, "rabbit, big, fish".
 
 Aaron: 00:15:04
 
@@ -463,15 +389,15 @@ That makes sense.
 
 Aaron: 00:15:08
 
-So then you can remember it and you can tell people and you know, you don't forget.
+Then you can remember it and you can tell people and you don't forget.
 It's much easier to remember.
 
 Sjors: 00:15:13
 
-And you can go on TV and say, you know, remember rabbit, big, fish.
-Then people can send money to rabbit, big, fish.
+And you can go on TV and say, remember "rabbit, big, fish".
+Then people can send money to "rabbit, big, fish".
 And maybe that's slightly easier than giving them an address, though I'm a little skeptical whether that short name is such a big deal.
-But this is kind of where we get privacy and also the stealth address part.
+But this is kind of where we get the privacy gotcha and also the stealth address part.
 
 Aaron: 00:15:31
 
@@ -479,11 +405,11 @@ Let's hear it.
 
 Sjors: 00:15:32
 
-So the first time you're using this as a recipient, so you're going to create an account, you're going to put a transaction on the blockchain.
+The first time you're using this as a recipient, you're going to create an account, you're going to put a transaction on the blockchain.
 If then later on you receive coins, we're going to assume you use this third methodology, the nice privacy thing, it's going to arrive on different addresses.
 So that's very nice.
 But, if you're stupid, or if your wallet is stupid, it's going to combine coins that, you know, are related to that first transaction.
-The first transaction itself is not spendable because it's an `OP_RETURN´, but maybe it comes from another coin.
+The first transaction itself is not spendable because it's an `OP_RETURN`, but maybe it comes from another coin.
 
 Aaron: 00:16:04
 
@@ -523,16 +449,14 @@ And then I think there is an announcement on the blockchain, but it's done by th
 Aaron: 00:18:15
 
 It's always done by the sender.
-Well, at least the payment is...
+At least the payment is...
 Oh, there's a separate announcement from the payment?
-
-Sjors: 00:18:21
-
-So in the scheme we just talked about in Easypaysy, it's the recipient who has to announce
 
 ## explaining stealth address identities
 
-their identity on the blockchain, essentially once.
+Sjors: 00:18:21
+
+So in the scheme we just talked about in Easypaysy, it's the recipient who has to announce their identity on the blockchain, essentially once.
 But then when you want to send to them, there's some back and forth.
 But here in the stealth addresses scheme, it is the sender that needs to make an announcement on the blockchain saying, to a standard address, hey, so they get a payment code and they send one transaction to a standardized address, which is always the same thing, as a handshake.
 And then using the handshake, that's how you come up with the unique addresses that you're actually going to use.
@@ -546,20 +470,18 @@ Sjors: 00:19:12
 
 I don't know about the number of blockchain transactions, maybe a little bit, but the nice thing is that it's the senders that are sort of sacrificing their privacy, but only really to the recipient and they're doing that anyway, because they're paying the recipient, rather than the recipient revealing it, you know, lowering its privacy.
 But I don't think it's a huge deal and all of these schemes you can choose to just do more off-chain.
-You can just have an identifier that you send via email and yeah it's not as short, that's a downside, but It's just a public key in that case and you can do fun things with it.
+You can just have an identifier that you send via email and yeah it's not as short, that's a downside, but it's just a public key in that case and you can do fun things with it.
 
 Aaron: 00:19:48
 
-Well, you want to get into the benefits of this system?
-
-Sjors: 00:19:51
-
-Well, we did some benefits and some downsides.
-I would
+You want to get into the benefits of this system
 
 ## debating use cases for easypaysy
 
-like to remind the listeners of a chicken-egg problem that was brought up by the infamous ZMNSCPXJ.
+Sjors: 00:19:51
+
+We did some benefits and some downsides.
+I would like to remind the listeners of a chicken-egg problem that was brought up by the infamous ZmnSCPxj.
 
 Aaron: 00:20:04
 
@@ -569,7 +491,6 @@ Sjors: 00:20:05
 
 Z-Man, or as the Canadians say, Zetman.
 If you're a new Bitcoin user and you want to use this system, you don't have coins to send anywhere.
-Sure.
 So that's a problem, but there might be ways around it, especially if you're buying coins from an exchange, maybe they can help you set it up.
 
 Aaron: 00:20:23
@@ -603,7 +524,7 @@ So recurring payments, so you want to pay rent every month, so your landlord wou
 
 Sjors: 00:20:46
 
-Well, you could say it's annoying for the landlord to have to send you an email with an address every month.
+You could say it's annoying for the landlord to have to send you an email with an address every month.
 
 Aaron: 00:20:51
 
@@ -840,7 +761,7 @@ The stealthy address.
 
 Aaron: 00:27:22
 
-Okay okay so IOC transactions don't need the `OP_RETURN´ anymore so easy peasy transactions can be as lean as any regular Bitcoin transaction now.
+Okay okay so IOC transactions don't need the `OP_RETURN` anymore so easy peasy transactions can be as lean as any regular Bitcoin transaction now.
 
 Sjors: 00:27:33
 
