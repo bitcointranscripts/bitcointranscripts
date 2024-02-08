@@ -33,7 +33,7 @@ I think the problem was that a lot of people have no idea what the hell a Van We
 
 Aaron: 00:00:46
 
-Apparently, no one had any idea what Femware and Shoresnado means or even how to pronounce it so we decided to go for a new name.
+Apparently, no one had any idea what Van Weerdam and Shoresnado means or even how to pronounce it so we decided to go for a new name.
 
 Sjors: 00:00:54
 
@@ -206,9 +206,6 @@ A surprising number of Bitcoin Core developers use the graphical interface too a
 Aaron: 00:06:37
 
 Right.
-
-## Which Hardware Wallets Are Supported
-
 So, which hardware wallets are supported?
 
 Sjors: 00:06:41
@@ -277,61 +274,9 @@ Aaron: 00:08:29
 
 Great.
 
-Speaker 2: 00:08:34
-
-All right, Bitcoiners, I want to tell you about our newest sponsor.
-This show is brought to you by Ledn.io.
-I have been super, super impressed with the guys over at Ledn.
-I've actually known the co-founders, Adam and Mauricio, for a very long time.
-I've had the pleasure to watch them build Ledn up from a tiny, tiny startup to now a super impressive institutional grade Bitcoin and crypto lender.
-Y'all, I'm so impressed with these guys.
-They are offering some of the best rates out there.
-I don't think anyone even comes close to touching them.
-You can get six point one percent APY on your first two Bitcoin that you deposit into ledn interest accounts, and you can get eight point five percent US on USDC deposits.
-I mean, I know all the competitors, they're not even close.
-If you're gonna put your crypto and your Bitcoin into an interest account, Ledn is by far the best.
-And on top of that, like I said, these guys are hardcore Bitcoiners and they know the products and the services that Bitcoiners want and appreciate.
-They came up with B2X.
-It allows you to put your Bitcoin in, they leverage it up, and you can, with one click of the mouse, get twice the exposure to Bitcoin.
-So if you're super bullish, Ledn has you covered with a super, super easy way to get leverage with B2X.
-And then on top of that, they know that Bitcoiners care about your reserves.
-They know that Bitcoiners don't like under-reserved and not full-reserved financial institutions.
-So they are pushing the frontier in transparency in the digital asset lending space.
-And they are the first digital asset lender to do a full proof of reserves and proof of attestation through a Mariano LLC, a public accounting firm.
-So the Ledn guys, they know what Bitcoin is like.
-They are legit.
-I encourage you guys to check them out.
-Do your own research and go to Ledn.io that is L E D N dot IO and learn more.
-Bitcoiners, I want to tell you about the deep dive.
-The deep dive is Bitcoin magazine's premium market intelligence newsletter.
-This is a no fluff, hard hitting, incredible newsletter going deep into the market, helping you understand what's happening with derivatives, what's happening on chain, what's happening in macro, what's happening with the narrative and what's happening with the tech.
-My man, Dylan LeClair, is an absolute savant.
-He is making his name known in the Bitcoin community, getting shout outs left and right, getting on podcasts left and right.
-And him and his team are bringing you everything that you need to know about Bitcoin.
-You don't even have to be on Bitcoin Twitter.
-You can ignore every other newsletter.
-This is the newsletter to rule them all.
-Go over to members.bitcoinmagazine.com, sign up today.
-And if you use promo code macro, you get a full month for free.
-You have nothing to lose.
-What are you waiting for?
-Sign up, see the incredible work that Dylan and his team are putting out.
-And if you don't like it, just unsubscribe.
-You don't pay a dime.
-But if you do, You know, it's going to be well worth the sass in investment and understanding Bitcoin and gating the confidence to continue to invest in Bitcoin and making the right moves around Bitcoin.
-And it's going to be well worth every single Satoshi.
-Again, can't recommend it enough.
-That is members.bitcoinmagazine.com promo code macro.
-Do it today.
-
 Aaron: 00:11:56
 
-Next up,
-
-## I2p Search
-
-I2P.
-Sjors, what is I2P?
+Next up, I2P. What is I2P?
 
 Sjors: 00:12:01
 
@@ -342,17 +287,9 @@ But the good news is that Bitcoin Core can now use it.
 
 Aaron: 00:12:24
 
-Exactly.
-Yeah.
-It's a privacy layer on top of the internet, a lot like Tor.
-Tor uses onion routing so messages are encrypted and routed across different users that all have a sort of encryption step on the way.
-And therefore you gain Privacy.
-I2P is similar and the differences are pretty subtle.
-It seems that I2P has a more distributed way of mapping the network.
-I don't think either of us knows the details of how that works exactly, but it's more distributed than with Tor.
-And somehow, I2P is more dedicated to...
-What's it called?
-Sjors what's it called?
+Exactly. It's a privacy layer on top of the internet, a lot like Tor. Tor uses onion routing so messages are encrypted and routed across different users that all have a sort of encryption step on the way.
+And therefore you gain Privacy. I2P is similar and the differences are pretty subtle. It seems that I2P has a more distributed way of mapping the network.
+I don't think either of us knows the details of how that works exactly, but it's more distributed than with Tor. And somehow, I2P is more dedicated to... What's it called?
 
 Sjors: 00:13:20
 
@@ -393,13 +330,7 @@ And this mechanism is now more generic, which means that in the future if other 
 
 Aaron: 00:15:23
 
-Right.
-Speaking of these kinds of topics,
-
-## Tor Version 3
-
-you already mentioned Tor version 3.
-Tor version 2 has now been fully deprecated, right?
+Speaking of these kinds of topics, you already mentioned Tor version 3. Tor version 2 has now been fully deprecated, right?
 
 Sjors: 00:15:33
 
@@ -517,15 +448,7 @@ And now they also let you do that for Taproot.
 Aaron: 00:20:25
 
 I think descriptors also allow you to sort of categorize your funds into specific types of funds, right?
-So you
-
-Sjors: 00:20:34
-
-Hmm hmm
-
-Aaron: 00:20:34
-
-can say, these are all my Taproot funds, locked in Taproot stuff, and these are all my Multisig funds, like the Multisig stuff, sorry, Multisig addresses.
+So you can say, these are all my Taproot funds, locked in Taproot stuff, and these are all my Multisig funds, like the Multisig stuff, sorry, Multisig addresses.
 And the descriptors sort of let you label these, right?
 
 Sjors: 00:20:48
@@ -567,16 +490,7 @@ It just means you can't spend the coins, right?
 Sjors: 00:21:48
 
 No, if you're receiving money on a Taproot address before Taproot activates, then that's anyone can spend.
-
-Aaron: 00:21:55
-
-Yeah, right.
-Right.
-
-Sjors: 00:21:57
-
-So yeah, that's a bad idea.
-So this is a little basically anti-food gun measure.
+So yeah, that's a bad idea. So this is a little basically anti-food gun measure.
 
 Aaron: 00:22:03
 
@@ -621,61 +535,20 @@ Info?
 Yeah.
 Okay, great.
 
-Speaker 2: 00:22:49
-
-Bitcoiners, let's take a break from the content.
-And I want to tell you about CoolBitX.
-CoolBitx is an awesome Bitcoin hardware wallet that has been around for a really long time.
-They are building an amazing Bitcoin wallet called the CoolWallet Pro.
-The CoolWallet pro is state of the art bitcoin hardware wallet technology.
-Its form factor is like a credit card.
-You can put it into your wallet and it is designed to go with you on the go.
-So that way, Even when you're on the go, you can have the benefit of a two factor hardware wallet design when you're trying to spend your Bitcoin.
-So you can have your Bitcoin wallet, UX on your phone and make it really easy to scan, decide what you want to do.
-But then you sign with a CoolBitX, which is in your back pocket.
-It is tamper-proof, it is waterproof, it is flexible.
-It has an awesome secure element in it.
-And it is a really awesome way in order to have some more flexibility, yet security, when you're taking your Bitcoin on the go.
-I personally am a fan of this idea of making Bitcoin into a medium of exchange and making it into something that people use.
-I know it's gonna take time, but they are working on the UX for making that possible and is secure a way possible.
-So have some peace of mind.
-Check out the cool wallet pro from coolbitX.
-And yeah, thank you to them for sponsoring this podcast.
-Bitcoiners,
-
-## The Texas Blockchain Summit
-
-I want to tell you about the Texas Blockchain Summit put on by the Texas Blockchain Council.
-This conference is all about Bitcoin and man, their lineup is absolutely spectacular.
-Cynthia Lummis, Hester Pierce, Warren Davidson, Nick Bhatia, Alex Gladstein, Will Cole.
-That is just the tip of the spear.
-There are so many big names going to be a part of this event.
-The Texas Blockchain Council is doing an absolute incredible job and They are 100% focused on Bitcoin and self sovereignty that comes from adopting Bitcoin.
-The most sovereign place in America is Texas.
-Austin is the capital.
-October 8th is the place.
-Go to the Texas Blockchain Summit.
-You can save a beautiful 25% if you use code BTC in all caps.
-That is the special code for the Bitcoin Magazine audience.
-Use code BTC, save 25% off your ticket.
-Don't miss it.
-This is going to be absolutely sick.
-Peace.
-
 Aaron: 00:25:25
 
 So yeah, hardware wallet support, I2P, Taproot.
-And then The fourth notable change that we're going to discuss is there's an update to test mempool accepts.
+And then The fourth notable change that we're going to discuss is there's an update to `testmempool accept`.
 Am I saying that right?
 That's right.
-Or is test mempool accept newly included?
+Or is `testmempool accept` newly included?
 
 Sjors: 00:25:43
 
-No, test mempool accept has been around.
-So test mempool accept is an RPC method, right?
+No, `testmempool accept` has been around.
+So `testmempool accept` is an RPC method, right?
 So the RPC is a way to programmatically talk to a node, maybe from a Python script or just manually.
-And what testMempoolAccept does is it takes a transaction, and it says, yeah, If you were to broadcast this transaction, it would be valid.
+And what `testmempoolaccept` does is it takes a transaction, and it says, yeah, If you were to broadcast this transaction, it would be valid.
 Or it would say, no, this transaction is invalid because the signature is wrong.
 So it's just a way to check if a transaction is correct before actually sending it.
 And one of the things I believe it checks against is whether the fee is high enough to even make it into your mempool, because your mempool might be very full and if it's too low it'll say no fee is not high enough.
@@ -717,7 +590,7 @@ Aaron: 00:30:07
 
 Got it.
 Yeah, that makes sense.
-So this test mempool accept is a small step in improving that process.
+So this `testmempool accept` is a small step in improving that process.
 Yep.
 Another incremental improvement.
 
@@ -737,7 +610,6 @@ One small one is add multi-sig address.
 I think we talked about that.
 Well, basically the multi-signature support inside the RPC.
 You can now use it for 20 public keys instead of 16.
-This is...
 Which is something that SegWit supports.
 
 Aaron: 00:30:43
@@ -767,11 +639,7 @@ Yeah, it was always possible according to the consensus rules, but not according
 Sjors: 00:31:27
 
 Yeah.
-So another thing we can mention that is, I think, fun
-
-## Support for NAT-PMP
-
-is support for NAT-PMP.
+So another thing we can mention that is, I think, fun is support for NAT-PMP.
 Basically when you have a router like if you're running a node at home and you usually have a router that will cause your node to not listen to anything else.
 Your node can connect outbound but other nodes can't connect to you because they can't see you.
 And the way you solve that is by opening a port on the router, forwarding that port to your node.
@@ -821,8 +689,7 @@ Yeah I think that's that's basically it.
 
 Aaron: 00:34:38
 
-Yeah so the main changes were hardware wallet hardware wallet supported in the GUI, I2P support, first release to have taproot which includes receiving very basic taproot transactions.
-Testmempool accept was updated as an incremental step towards package relay.
+Yeah so the main changes were hardware wallet hardware wallet supported in the GUI, I2P support, first release to have taproot which includes receiving very basic taproot transactions. `Testmempool accept` was updated as an incremental step towards package relay.
 
 Sjors: 00:34:58
 
