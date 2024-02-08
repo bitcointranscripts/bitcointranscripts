@@ -10,11 +10,7 @@ date: 2020-12-11
 Speaker 0: 00:00:07
 
 Live from Utrecht, this is the fan with Shorsnedo.
-Hello! Shors, I have another announcement to make.
-
-Speaker 1: 00:00:13
-
-Exciting, tell me.
+Hello! Shors, I have another announcement to make
 
 Speaker 0: 00:00:14
 
