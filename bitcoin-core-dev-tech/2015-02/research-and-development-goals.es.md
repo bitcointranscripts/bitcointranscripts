@@ -5,9 +5,7 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['consensus']
 speakers: ['Patrick Murck', 'Gavin Andresen', 'Cory Fields']
-aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/research-and-development-goals/']
 ---
-
 Objetivos y retos de R&D 
 
 A menudo vemos gente diciendo que están probando las aguas, que han corregido un error tipográfico, que han hecho una pequeña corrección que no tiene mucho impacto, que se están acostumbrando al proceso. Se están dando cuenta de que es muy fácil contribuir a Bitcoin Core. Codificas tus cambios, envías tus cambios, no hay mucho que hacer.
