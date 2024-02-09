@@ -1,10 +1,10 @@
 ---
 title: "Lightning on Taproot"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: MunirGRANDE via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=E_z4hjvVzoQ
-tags: ['lightning', 'taproot']
-speakers: ['Arik Sosman']
-categories: ['conference']
+tags: ["lightning","taproot"]
+speakers: ["Arik Sosman","Adam Back"]
+categories: ["conference"]
 date: 2023-07-18
 ---
 My name is Arik.
