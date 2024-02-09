@@ -393,7 +393,7 @@ Is it remote for the person sending it or is it remote for the recipient?
 It's a pain to read and understand this protocol because music 2 is kind of annoying.
 If we could make the stipulation that a local nonce is ever going to be used for a signature once, then of course the local nonce would only ever need to be exchanged once because we wouldn't have to worry about signature use, but that is not a stipulation that you can safely make.
 There's a ton of back and forth on the spec, and I just hope that one day soon, hopefully Q2, We will have an interrupt for the simple half of channels Honestly, I don't even know whether it makes sense to work on that first and not on the gossip because as I was just saying earlier Gossip is actually more important But with the gossip you have this nested stuff and you have to do the aggregation where you are going to have extra round trips.
-It's a lot of work and maybe honestly I should be asking you to not contribute to the spec because the fewer people are applying changes to it, the sooner we are able to get it merged.
+It's a lot of work and maybe honestly, I should be asking you to not contribute to the spec because the fewer people are applying changes to it, the sooner we are able to get it merged.
 Yeah, just like, you know, just hack it.
 Send it in.
 Yeah, that's good.
