@@ -2,11 +2,13 @@
 title: "Accounts for Bitcoin, Easypaysy!"
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=AyjU0EJZjR8
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["silent-payments"]
 categories: ["podcast"]
 date: 2020-10-02
 ---
 ## Intro
+
 Aaron: 00:01:10
 
 Sjors how do you like reusing addresses?
@@ -74,8 +76,6 @@ Sjors: 00:02:38
 
 It can be.
 
-
-
 ## Why accounts would be useful intro to Easypaysy
 
 Aaron: 00:02:39
@@ -108,8 +108,6 @@ Sjors: 00:03:41
 
 How does it work?
 Because this time you're going to explain how this thing works.
-
-
 
 ## what is Easypaysy?
 
@@ -440,11 +438,11 @@ I could imagine hardware wallets could also embed some of these well-known codes
 It's kind of nice against clipboard attacks and that sort of stuff.
 But that's for these schemes in general.
 I don't think you need to have this announcement into blockchain specifically.
-So if you go to stealth addresses, which I believe is BIP 47, mechanism there was slightly different, though I might remember it incorrectly.
+So if you go to stealth addresses, which I believe is BIP47, mechanism there was slightly different, though I might remember it incorrectly.
 But the idea there is that you generate a payment code, which is longer, but it's not something you have to put on the blockchain.
 And so you can give that code to somebody else, and that's your identity, but that identity is not tied to anything in the blockchain.
 And then you do the same magic trick with somebody takes their own key and adds it and does a bunch of math and then sends it to an address.
-And then I think there is an announcement on the blockchain, but it's done by the sender. So...
+And then I think there is an announcement on the blockchain, but it's done by the sender.
 
 Aaron: 00:18:15
 
@@ -452,7 +450,7 @@ It's always done by the sender.
 At least the payment is...
 Oh, there's a separate announcement from the payment?
 
-## explaining stealth address identities
+## Explaining Stealth Address Identities
 
 Sjors: 00:18:21
 
@@ -476,7 +474,7 @@ Aaron: 00:19:48
 
 You want to get into the benefits of this system
 
-## debating use cases for easypaysy
+## Debating Use Cases for Easypaysy
 
 Sjors: 00:19:51
 
@@ -533,7 +531,7 @@ Exactly.
 Sjors: 00:20:52
 
 And then it's nice if you can generate, if you can predict these addresses yourself.
-But I would immediately say there's a downside to that, because if, let's say my landlord has this magic box that he receives his Bitcoin on and then his magic box breaks but he can't give you a phone call to say hey yo don't send me any more Bitcoins then your rent just goes into the ether.
+But I would immediately say there's a downside to that, because if, let's say my landlord has this magic box that he receives his Bitcoin on and then his magic box breaks but he can't give you a phone call to say "hey yo don't send me any more Bitcoins" then your rent just goes into the ether.
 
 Aaron: 00:21:18
 
@@ -546,7 +544,8 @@ He does know where you live.
 
 Aaron: 00:21:24
 
-He probably does. He can ring the bell.
+He probably does.
+He can ring the bell.
 
 Sjors: 00:21:25
 
@@ -554,7 +553,7 @@ But maybe the postal service is down because of some election issue.
 So, you know, it can be tricky.
 And more generally, let's say you are a very sophisticated recipient of these Bitcoins, maybe you are a landlord and initially you just have a you know you have one tenant that pays rent that way and you just use your little hardware wallet and you generate these addresses that way.
 All is good and well then you have lots of customers and you have a lot of money.
-Maybe you want to set up a multi-sit cold storage.
+Maybe you want to set up a multi-sig cold storage.
 Oh but now you have to tell all your clients or your renters to basically use this new payment code.
 So it's nice if you can just give a new address every month then the customer doesn't have to care how you generate that address.
 You can do it yourself.
@@ -573,15 +572,12 @@ Sjors: 00:22:46
 But then we really don't need anything in this scheme.
 Because now what you're talking about is saying okay, our landlord has some sort of public key identifier that you somehow trust, maybe trust on first use.
 It could be a PGP key or it could be some other, just a Bitcoin key, that your wallet and then there's a protocol where your wallet, where they can request payments from you.
-Whether that's push-based or pull-based, maybe your wallet is running and it's pulling the landlord's server every day to say, hey do you have an invoice for me? Do you have an invoice for me? And then based on some rules you automatically pay it.
-
-Aaron: 00:23:21
-
-Mmm...
+Whether that's push-based or pull-based, maybe your wallet is running and it's pulling the landlord's server every day to say, "hey do you have an invoice for me, do you have an invoice for me?".
+And then based on some rules you automatically pay it.
 
 Sjors: 00:23:21
 
-I don't I don't think this scheme makes that easier.
+I don't think this scheme makes that easier.
 The biggest complication there is just the okay what does the server look like that you're going to ping what's expected from a wallet should it ping every day, every week, every month, what if it doesn't?
 So that is an interesting problem to solve but I think that's almost perpendicular to this.
 
@@ -593,12 +589,11 @@ Sjors: 00:23:44
 
 Tell me what is repudiation and what is non-repudiation?
 
+## Aaron explaining what non-repudiation is
+
 Aaron: 00:23:47
 
 So I don't know what repudiation is, but I can perfectly explain what non-repudiation is.
-
-## Aaron explaining what non repudiation is
-
 So I guess repudiation will be the opposite of that.
 It means that once you've paid someone, you can prove that you've paid someone.
 
@@ -710,7 +705,7 @@ Sjors: 00:26:37
 
 Okay.
 
-## updates to the easypeasy protocol
+## Updates to the Easypaysy Protocol
 
 Aaron: 00:26:38
 
@@ -721,7 +716,7 @@ Interactive payments: most of the scaling solutions, and a few other minor thing
 
 Sjors: 00:26:50
 
-Okay, we didn't really talk about the the relations to Lightning because that's even more complicated, but what was the first bit again?
+Okay, we didn't really talk about the relations to Lightning because that's even more complicated, but what was the first bit again?
 
 Aaron: 00:26:56
 
@@ -743,13 +738,12 @@ Aaron: 00:27:06
 
 Cool.
 Okay.
-B: leaner and more powerful transactions.
+(Update) B: leaner and more powerful transactions.
 Do you know what IOC transactions are?
 
 Sjors: 00:27:14
 
-I think that was the back and forth protocol.
-No, sorry, the cryptographic protocol we were talking about.
+I think that was the cryptographic protocol we were talking about.
 
 Aaron: 00:27:19
 
@@ -761,7 +755,7 @@ The stealthy address.
 
 Aaron: 00:27:22
 
-Okay okay so IOC transactions don't need the `OP_RETURN` anymore so easy peasy transactions can be as lean as any regular Bitcoin transaction now.
+Okay okay so IOC transactions don't need the `OP_RETURN` anymore so easypaysy transactions can be as lean as any regular Bitcoin transaction now.
 
 Sjors: 00:27:33
 
@@ -771,8 +765,7 @@ Okay.
 
 Aaron: 00:27:40
 
-C.
-Support for SPV wallets.
+(Update) C: Support for SPV wallets.
 There is a new discovery mechanism that allows for simple support for SPV wallets.
 
 Sjors: 00:27:48
@@ -789,7 +782,7 @@ Okay, great.
 
 Aaron: 00:27:59
 
-The business model.
+(Update) D: The business model.
 As a side effect, the discovery mechanism needed to support SPV wallets opens up the door to having a business model for Easypaysy, since it will now generate revenue for investors and wallet developers.
 
 Sjors: 00:28:14
@@ -821,7 +814,7 @@ you sound mildly...
 
 Sjors: 00:28:45
 
-I was around in the BIP 47 days, and there's still only I think one wallet that sort of supports it.
+I was around in the BIP47 days, and there's still only I think one wallet that sort of supports it.
 
 Aaron: 00:28:51
 
@@ -858,23 +851,19 @@ But the thing is, I think there should also be systems like this for just regula
 
 Aaron: 00:30:48
 
-What you're saying is it's basically solved for Lightning or there's a very, you know, but
+What you're saying is it's basically solved for Lightning or there's a very, but..
 
 Sjors: 00:30:53
 
-..not solved for Lightning, but it is easier to solve for Lightning, because Lightning you have to have a running node anyway.
+It's not solved for Lightning, but it is easier to solve for Lightning, because Lightning you have to have a running node anyway.
 
 Aaron: 00:30:58
 
-And yes, and that's one of the critiques that I've heard of this solution as well, that why focus on on-chain, let's just move this type of stuff to Lightning.
+And that's one of the critiques that I've heard of this solution as well, that why focus on on-chain, let's just move this type of stuff to Lightning.
 
 Sjors: 00:31:09
 
-You could for smaller payments, but
-
-Sjors: 00:31:11
-
-I don't want to pay my rent with Lightning.
+You could for smaller payments, but I don't want to pay my rent with Lightning.
 
 Aaron: 00:31:12
 
@@ -885,7 +874,7 @@ Sjors: 00:31:21
 
 No, but I'm not saying there's any other specific way to go.
 My guess is because there's so many different ways to go and not a lot of people are enthusiastic about building it, it's gonna be in a bike shedding-ish state for many more years.
-So my hope is that on Lightning we'll get all this sorted out more quickly and then maybe whatever happens on Lightning can be used, can be, can inspire on chain.
+So my hope is that on Lightning we'll get all this sorted out more quickly and then maybe whatever happens on Lightning can inspire on chain.
 Or for that matter maybe you just run your Lightning Node software and let it hand out some on-chain addresses when needed.
 So Lightning might be the default, but for big payments you do use on-chain, but you use all the Lightning protocol stuff, including the encryption and the routing and the 24-7 server to take care of generating on-chain addresses and verifying payments.
 Something like that.
@@ -899,7 +888,7 @@ I was just thinking of that XRCP or whatever XKCD cartoon about standards.
 
 Sjors: 00:32:26
 
-Let's make another situation.
+Oh yeah, let's make another standard.
 
 Aaron: 00:32:28
 
