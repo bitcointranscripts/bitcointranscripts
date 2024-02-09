@@ -2,7 +2,7 @@
 title: "Demystifying and Understanding Bitcoin Core Development"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=uOhkN4nefpI
-tags: ["bitcoin-core"]
+tags: ["bitcoin-core","developer-tools","soft-fork-activation"]
 speakers: ["Sjors Provoost","Mike Schmidt","James O'Beirne","Rodolfo Novak"]
 categories: ["podcast"]
 date: 2023-02-22
@@ -671,6 +671,7 @@ So that's an example of you can hire an existing developer to do something speci
 And this didn't work out because it was just too hard for one person to do.
 
 ## Who chooses what gets merged?
+
 NVK: 00:39:00
 
 Yeah, so that sort of like leads me to sort of like the next thing, which is like who chooses what gets merged and how does something gets actually merged because You know if one thing I think a lot of people already understand is that like changes are excruciatingly reviewed, right?
