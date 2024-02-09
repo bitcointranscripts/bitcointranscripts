@@ -36,7 +36,7 @@ How do you like the weather?
 
 Aaron van Wirdum: 00:00:29
 
-Yeah, well, It was too hot all summer and then it was nice for about a week and now we're back to too cold.
+It was too hot all summer and then it was nice for about a week and now we're back to too cold.
 
 Sjors Provoost: 00:00:36
 
@@ -63,7 +63,7 @@ I mean ultimately you can just get up whenever you want to get up right unless y
 Aaron van Wirdum: 00:01:19
 
 But you are kind of reliant on the rest of society around you, right?
-Like stores close at a certain time and people get out of work at a certain time, might be your friends, or you want to record a podcast at a certain time because you want to eat at a certain time.
+Stores close at a certain time and people get out of work at a certain time, might be your friends, or you want to record a podcast at a certain time because you want to eat at a certain time.
 So I don't have that full flexibility that you suggest because of all these people around me.
 
 Okay, Sjors, I'm going to shill the conference one more time.
@@ -83,7 +83,7 @@ Real quick for maybe there are some new listeners, What does it mean that there'
 
 Sjors Provoost: 00:02:18
 
-Yeah, so because Bitcoin Core does not have a roadmap or anything like that, there is just a new release every six months or so.
+Because Bitcoin Core does not have a roadmap or anything like that, there is just a new release every six months or so.
 And things that are ready go into that new release and things that are not ready may go into another release.
 So there's nothing very special about these releases.
 And so it's time for number 24.
@@ -116,7 +116,7 @@ But the idea is that people who know what they're doing should be downloading th
 
 Aaron van Wirdum: 00:03:39
 
-Right so if there's no report of anything breaking then this release candidate will basically be the release right?
+If there's no report of anything breaking then this release candidate will basically be the release right?
 
 Sjors Provoost: 00:03:45
 
@@ -129,7 +129,7 @@ okay yeah, and I think in previous Bitcoin core releases there were an average o
 Sjors Provoost: 00:03:56
 
 Yeah, I'd say that's typical.
-So usually there's two weeks between them, So you release it and then maybe after a week or so, people start fixing things, and then after two weeks there is a new one.
+So usually there's two weeks between them, So you release it and then maybe after a week or so, people start fixing things, and then after two weeks, there is a new one.
 
 Aaron van Wirdum: 00:04:06
 
