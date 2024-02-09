@@ -2,7 +2,7 @@
 title: "Static Invoices in Lightning: A Deep Dive and Comparison of Bolt11 Invoices, LNURL, Offers and AMP"
 transcript_by: b3h3rkz via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=WsSa00gUvZw
-tags: ["lightning"]
+tags: ["lnurl","offers","amp"]
 speakers: ["Elle Mouton"]
 categories: ["conference"]
 date: 2022-03-03
@@ -155,7 +155,6 @@ Now you have to somehow get it to your desktop, email it to yourself, I don't kn
 This is just an awkward flow.
 All right, now I'm gonna dive into the various proposals.
 
-
 ## LNURL
 
 By the way, I'm gonna be focusing mostly on the pay scenario, not the withdrawal scenario.
@@ -184,10 +183,6 @@ Tomorrow I decide 20 sats, and this can stay the same, okay?
 And then this at the bottom is just an example of a small extension to LNURL-pay, called a Lightning address.
 But it pretty much works the same, but it's easy for me to dictate over the phone, please pay to this thing that sounds like an email address, which is nice.
 
-
-
-
-
 ### Pros and Cons
 
 Okay, short and sweet, as you've seen.
@@ -202,7 +197,6 @@ So yeah, that's not ideal if you're running your node on your phone, for example
 And then the other thing is, again, if you're not using Tor, it's a bit of a privacy leak for both sender and receiver.
 Because you now have this server, and before I've said that Alice has a lot of anonymity because Dave doesn't know where the payment's coming from.
 But now she's making this get request to this HTTP server first, so she's revealing her IP address there.
- 
 
 ## Offers
 
@@ -302,7 +296,6 @@ And then another really cool thing is just that the signature for an offer messa
 So if you need to go reveal it to someone, you can reveal only the information you would need to reveal.
 Okay, it doesn't solve stuck payments, but let me just describe this first.
 
-
 ### Stuck-less Payments
 
 So basically what a stuck payment is, is if I go to the coffee shop and I get an invoice, make a payment, it gets stuck.
@@ -336,8 +329,7 @@ Yeah, it's just a lot to implement if you wanna use offers.
 And then it does bring some application level stuff into the network, which some people aren't happy with.
 Like I've said, with specifying the amounts in other currencies.
 
-
-## Atomic Multipath Payments.
+## Atomic Multipath Payments
 
 So first, before I go into this, just wanna mention that the kind of true beauty of AMP is it allows you to atomically use all your channels or many of your channels to make a single payment.
 And kind of as a side effect, you can use a static invoice.
@@ -437,21 +429,3 @@ Yeah, so I'm not answering these questions.
 I'm just leaving you with them.
 Yeah, that's it.
 Cool.
-
-[Moderator]: Any questions?
-
-[Audience]: Will your deck be published somewhere?
-
-[Elle]: Sorry?
-
-[Audience]: Will your deck be published somewhere?
-
-[Elle]: I can publish them, yeah, sure, sure, will do.
-
-[Elle]: Yeah, I'm glad you like them.
-
-[Elle]: Thank you.
-
-[Elle]: Cool, awesome.
-
-[Moderator]: Great, thank you, Elle.
