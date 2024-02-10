@@ -1,15 +1,14 @@
 ---
 title: "Building Trustless Bridges"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: mulluke via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=M40yzuv6DNY
-tags: ['scalability', 'sidechains', 'statechains']
-speakers: ['John Light']
-categories: ['conference']
+tags: ["scalability","sidechains","statechains"]
+speakers: ["John Light"]
+categories: ["conference"]
 date: 2023-04-29
-summary: "Many mechanisms have been created that enable users to lock BTC on the mainchain, transfer a claim on the BTC in some offchain system, and then later redeem the claim and take ownership of the underlying BTC. Colloquially known as \"bridges\", these mechanisms offer a diverse range of security and usability properties for users to choose from depending on their risk tolerance and cost preferences. This talk will give an overview of the different types of BTC bridges that exist, how they work, and how they can be improved."
 ---
 Thank you all for coming to my talk.
-As is titled, I'll be talking about how we can build trustless bridges for Bitcoin.
+As it is titled, I'll be talking about how we can build trustless bridges for Bitcoin.
 So my name is John Light.
 I'm working on a project called Sovereign.
 We actually utilize a bridge, the Rootstock-Cowpeg Bridge, because our project was built on a Rootstock side chain.
@@ -209,7 +208,7 @@ But they can't just like pick an address and say like oh that address has a lot 
 But in the case of a hash rate escrow, they can pick any hash rate escrow and say, I want all those coins and just take those coins.
 So you're right about the freezing in a way, but the stealing, it is a different trust model.
 We'll hold other questions to the end because I've got to blaze through this in like 20 minutes.
-So Hashrate escrow also I think sits in this upper left quadrant, although we're getting closer to the can't freeze, can't steal quadrant.
+So Hash rate escrow also I think sits in this upper left quadrant, although we're getting closer to the can't freeze, can't steal quadrant.
 There are collateralized custodians.
 In this case, you have either a single custodian or a federation of custodians and they've got some kind of collateral.
 And this collateral is usually held on another blockchain like Ethereum or some alt chain.
