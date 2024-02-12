@@ -1,13 +1,11 @@
 ---
 title: "Replace By Fee (RBF)"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=E9L1CRP3W8k
-tags: ['rbf']
-speakers: ['Aaron van Wirdum', 'Sjors Provoost']
-categories: ['podcast']
+tags: ["rbf","fee-management"]
+speakers: ["Aaron van Wirdum","Sjors Provoost"]
+categories: ["podcast"]
 date: 2021-02-05
-summary: "In this episode of The Van Wirdum Sjorsnado, hosts Aaron van Wirdum and Sjors Provoost discuss Replace By Fee (RBF). Aaron and Sjors explain three advantages of RBF: the option the “speed up” a transaction (1), which can in turn result in a more effective fee market for block space (2), as well as the potential to make more efficient use of block space by updating transactions to include more recipients (3). The main disadvantage of RBF is that it makes it slightly easier to double spend unconfirmed transactions, which was also at the root of last week’s “double spend” controversy that dominated headlines. Aaron and Sjors discuss some solutions to diminish this risk, including “opt-in RBF” which is currently implemented in Bitcoin Core. Finally, Sjors explains in detail how opt-in RBF works in Bitcoin Core, and which conditions must be met before a transaction is considered replaceable. He also notes some complications with this version of RBF, for example in the context of the Lightning Network."
-aliases: ['/bitcoin-magazine/bitcoin-explained/replace-by-fee-rbf']
 ---
 Speaker 0: 00:01:33
 
