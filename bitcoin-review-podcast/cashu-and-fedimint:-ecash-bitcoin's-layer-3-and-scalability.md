@@ -7,9 +7,11 @@ speakers: ["Calle","Eric Sirion","Rijndael","Matt Odell"]
 categories: ["podcast"]
 date: 2023-04-13
 ---
-
 ## Introduction
 
+If you haven't had your brain completely destroyed by the segregated witness episode, I hope that the e-cash episode will finalize.
+It's going to be fatality of your brain on this one.
+So I have with me a really good group of folks, two of them who are working on the biggest projects, who are deploying E-cash out there in the world.
 
 ## Guest introductions
 
@@ -47,7 +49,7 @@ Eric: 00:01:58
 
 I'm working on Fedimint, which is a federated e-cash protocol on top of Bitcoin with connectivity via Lightning.
 
-NVK: 00:02:06
+NVK: 00:02:06Matt Odell
 
 Nice.
 Rijndael, thanks for coming back, sir.
@@ -1175,7 +1177,7 @@ And if they're four village elders or four, probably not elders because they nee
 
 NVK: 01:02:39
 
-Well, I mean, it's better than being a single signer,
+Well, I mean, it's better than being a single signer.
 
 Eric: 01:02:42
 
@@ -1956,13 +1958,14 @@ Thanks.
 Rijndael: 01:51:01
 
 All right.
-Now that Matt's gone, let's get into the real talk about privacy. I'm just kidding.
+Now that Matt's gone, let's get into the real talk about privacy.
+I'm just kidding.
 
 NVK: 01:51:06
 
 Well, you have nothing to hide, so.
 
-## Scriptable ecash01:59:36 Nostr + ecash
+## Scriptable ecash
 
 Rijndael: 01:51:08
 
@@ -2063,21 +2066,15 @@ That's something I really want to see because then we could test out OpCTV, we c
 
 NVK: 01:59:20
 
-Whatever makes the conversation of drive chains go away is worth
-
-Calle: 01:59:25
-
-pursuing.
-.
-
-NVK: 01:59:26
-
+Whatever makes the conversation of drive chains go away is worth pursuing.
 Anything really.
 I mean, same for a Tail Emissions, whatever makes it go away as a conversation, I'll take it.
 
 Calle: 01:59:34
 
 That's good.
+
+## Nostr + ecash
 
 NVK: 01:59:36
 
@@ -2152,7 +2149,7 @@ That's right.
 
 Calle: 02:03:48
 
-you need some kind of proof of work or something to get rid of fake identities.
+You need some kind of proof of work or something to get rid of fake identities.
 
 ## Naming ecash units of account
 
@@ -2180,7 +2177,6 @@ That's gone.
 We can't use the word token anymore because, you know, it's going to just feel it's a shit coin,
 So I feel when people who are not as technical are sort of discussing this and discussing ideas and maybe what they want to invent as companies that add value add and whatever.
 They often need a term, right, to describe it so that it really represents, you know, this e-cash token.
-
 
 Eric: 02:05:31
 
