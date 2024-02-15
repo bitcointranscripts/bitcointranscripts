@@ -98,7 +98,7 @@ Sjors Provoost: 00:03:05
 
 Exactly, so stay with us and you'll learn more.
 
-## What is Replace By Fee (RBF), and its benefits and detriments?
+## RBF Overview
 
 Aaron van Wirdum: 00:03:08
 
@@ -138,7 +138,8 @@ Yeah, and that's a very  reasonable use case, you're sending a transaction with 
 
 Aaron van Wirdum: 00:04:25
 
-Or after a month. Right now we have transactions in the mempool that have been there for a month that pay one satoshi.
+Or after a month.
+Right now we have transactions in the mempool that have been there for a month that pay one satoshi.
 This is the first time ever I think this has happened.
 
 Sjors Provoost: 00:04:34
@@ -206,7 +207,8 @@ And the third one is more block space efficiency.
 
 Sjors Provoost: 00:07:26
 
-Yeah, and I can mention a fourth one that will actually create a nice bridge to the downside. Which is, let's say you make a one satoshi per byte transaction to an exchange, and that exchange is called Mt. Gox, and you read on Twitter that this is maybe not a very good exchange.
+Yeah, and I can mention a fourth one that will actually create a nice bridge to the downside.
+Which is, let's say you make a one satoshi per byte transaction to an exchange, and that exchange is called Mt. Gox, and you read on Twitter that this is maybe not a very good exchange.
 So you're like, okay maybe I don't want to do this anymore, and you can cancel a transaction because you can create a transaction with a higher fee that just goes back to you.
 
 Aaron van Wirdum: 00:07:50
@@ -301,7 +303,7 @@ Sjors Provoost: 00:11:05
 
 Well, we at least brought up the point that we don't want to rely on people being nice and people using default settings.
 
-### "First-seen-safe" RBF
+## "First-seen-safe" RBF
 
 Aaron van Wirdum: 00:11:11
 
@@ -387,7 +389,7 @@ I've never seen this proposal myself.
 I was not active at all in Bitcoin Core when this played out.
 So, maybe this argument has been mentioned, maybe not.
 
-### Opt-in Replace By Fee
+## Opt-in RBF
 
 Aaron van Wirdum: 00:13:41
 
