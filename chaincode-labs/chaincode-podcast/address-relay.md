@@ -2,10 +2,12 @@
 title: "Address Relay"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Martin-Zumsande-and-Address-Relay---Episode-20-e1if91d
-tags: []
+tags: ['bitcoin-core', 'p2p']
 speakers: ['Martin Zumsande']
 categories: ['podcast']
 date: 2022-05-13
+episode: 20
+summary: "Martin Zumsande joins us to tell us about the address spam in the summer of 2021 and his interests in AddrRelay and Bitcoin Core development."
 ---
 Speaker 0: 00:00:00
 
@@ -208,11 +210,10 @@ Speaker 0: 00:08:29
 Yeah, and some things just happen because people choose different ways to participate in the Bitcoin network.
 For example, I just recently was really surprised to see that there are like so many nodes using Tor right now.
 So I think there are even if you look at some statistics website, there are bit nodes, there are even more peers in the network that are using Tor than that are using IPv4.
-So
 
-Speaker 1: 00:08:51
+Speaker 1: 00:08:50
 
-reachable nodes.
+So reachable nodes.
 
 Speaker 0: 00:08:52
 
@@ -232,14 +233,7 @@ And if you have a Tor connection, you basically do that automatically.
 You are configured to receive from outside.
 So I think that might have something to do with it.
 And also that people that run Lightning nodes, especially don't want to reveal their IP address.
-
-Speaker 0: 00:09:31
-
-Because It
-
-Speaker 1: 00:09:32
-
-sort of is a hot wallet.
+Because It sort of is a hot wallet.
 
 ## What's the purpose of the Address Manager (AddrMan)?
 
@@ -552,11 +546,10 @@ In a getAddress response, we would just send random addresses.
 Speaker 2: 00:22:53
 
 Do you think it should be preselected?
-Yeah, I think it would
 
-Speaker 0: 00:22:55
+Speaker 0: 00:22:54
 
-make sense, because for example, in many nodes, they would have a lot more addresses in the new table than in the tried table.
+Yeah, I think it would make sense, because for example, in many nodes, they would have a lot more addresses in the new table than in the tried table.
 So that would mean that we're also like in a get other message, we would have a larger percentage of notes on a new table.
 And the new tables, they are not really filter for quality.
 So I think it might make sense to think about like including a certain percentage of addresses from the try table that we know are quality and are good, and are actually a piece on the Bitcoin Core network, and include them in a get-out-of-response network.
@@ -664,15 +657,15 @@ Speaker 2: 00:27:06
 
 Like, getAdder messages were taken advantage of by, in the Coinscope paper, where they used specific timestamps that were proliferated through the network to understand network topology.
 And then Gleb added the cached responses, because otherwise you could scrape the Scrape Adderman if you just kept querying.
-So it's
+So it's like-
 
 Speaker 1: 00:27:24
 
-like- I seem to remember that there was something that made sure that you never share more than 30% or
+I seem to remember that there was something that made sure that you never share more than 30% or 23%-
 
-Speaker 2: 00:27:29
+Speaker 2: 00:27:30
 
-23%- 23%, yes.
+23%, yes.
 
 Speaker 1: 00:27:32
 
@@ -732,11 +725,10 @@ Yeah, I think for me personally, before I didn't really have the energy to do la
 So I just did a small review there and a small PR there, like changing smaller things.
 Now that I have more time, I'm concentrating on larger things like multi-index project is one of them, but I would also try to review larger PR and more complicated PRs. So recently I've become interested in the indexes and there's a large PR by Russ and I'm currently trying to review that, which is, it takes a lot of time because it's a large change.
 And yeah, I want to spend more time on more complicated changes.
-We have an
 
-Speaker 2: 00:30:02
+Speaker 2: 00:30:01
 
-Ack Russ t-shirt we have to get in your hands then.
+We have an Ack Russ t-shirt we have to get in your hands then.
 I don't know if we have your size, but cool.
 Thank you for sitting down with us and telling us about your days on Bitcoin.
 

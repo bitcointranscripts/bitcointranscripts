@@ -2,10 +2,11 @@
 title: "Ocean Tides"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-86-ocean-tides-hktbg
-tags: []
+tags: ['mining']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
-categories: []
+categories: ['podcast']
 date: 2023-12-06
+summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what features are offered by Ocean, the relaunched and rebranded Eligius mining pool. They discuss how payouts from this pool are (partially) non-custodial, how the block template creation is fully transparent, and how payout distribution is determined. Aaron and Sjors also briefly touch on the “spam” filtering employed by Ocean, and how that potentially affects profitability of the pool."
 ---
 Speaker 0: 00:00:21
 
@@ -62,14 +63,7 @@ Well, it was quite nice actually.
 There was like this hydro plant, a very, what's a good English word for this?
 Rustic?
 I don't know if that's the right word.
-
-Speaker 1: 00:01:35
-
-Maybe, but
-
-Speaker 0: 00:01:36
-
-it was nice.
+Maybe, but it was nice.
 Let's just say it was nice, nice environment.
 And yeah, they launched this pool.
 So it's really the relaunch or re-brand or re something of Elytius.
@@ -150,11 +144,10 @@ But with this new Ocean Pool, as much as possible, the coin-based transactions g
 Right.
 With the caveat that you cannot do that for all mine transactions.
 Not for all miners.
-And there are two
+And there are two reasons for that.
 
 Speaker 0: 00:05:41
 
-reasons for that.
 Okay, so let's get into that.
 First let's point out some advantages of this.
 And the biggest one is probably, so right now, if you're a hasher and you want to join a pool, most pools have sort of KYC stuff going on, like you need to actually tell the pool who you are, at least some of the big ones have this.
@@ -178,18 +171,10 @@ Speaker 0: 00:06:23
 
 but in any case, they aren't doing KYC stuff.
 That's for sure.
-Right
 
 Speaker 1: 00:06:26
 
-now, you can just plug
-
-Speaker 0: 00:06:27
-
-in and start mining.
-
-Speaker 1: 00:06:28
-
+Right now, you can just plug in and start mining.
 One thing that they're doing very practically is that you as a miner don't create an account or you don't have to.
 You just provide a Bitcoin address straight as you're directly from the miner.
 
@@ -205,14 +190,7 @@ Yeah, and that extent is quite limited because of two reasons.
 One is a Coinbase transaction can only have this many outputs.
 Or even if you could have as many as you want, at some point it's just not worth paying the fees.
 Or not so much paying the fees because the Coinbase transaction doesn't pay fees, but you are forgoing, you know, you're using up space that others could pay, that other people are paying you fees as a pool.
-
-Speaker 0: 00:07:17
-
-So if
-
-Speaker 1: 00:07:17
-
-you make a one megabyte Coinbase transaction, then you can do that and you pay zero fees for it, but you are now no longer mining anything.
+So if you make a one megabyte Coinbase transaction, then you can do that and you pay zero fees for it, but you are now no longer mining anything.
 
 Speaker 0: 00:07:25
 
@@ -244,14 +222,7 @@ Speaker 1: 00:07:56
 I think it's just a regular transaction, whatever that limit is.
 It might not be one.
 Okay.
-
-Speaker 0: 00:08:01
-
-I
-
-Speaker 1: 00:08:01
-
-should know that, I guess.
+I should know that, I guess.
 So the second limit, the second limit is a little bit more mundane.
 Apparently some of the mining hardware out there starts to panic if you put more than 20 outputs in a coin based transaction.
 So that has nothing to do with the Bitcoin limits.
@@ -498,19 +469,11 @@ How X is calculated, you mean?
 Speaker 1: 00:17:48
 
 Yeah.
-So let's
+So let's try and explain this.
 
 Speaker 0: 00:17:50
 
-try and explain this.
-
-Speaker 1: 00:17:50
-
-I've never really looked into that
-
-Speaker 0: 00:17:51
-
-and let's skip that.
+I've never really looked into that and let's skip that.
 That's the easiest thing to do here.
 And let's get into how Ocean actually does it.
 
@@ -552,14 +515,7 @@ So the number of hashes, or sorry, the number of shares it would take statistica
 You know, with my miner that would be, I don't know, two million years worth of blocks or something.
 Or two million years worth of mining, let's say, and for you the same thing.
 But as soon as the mining pool has more shares than that, it starts discarding all shares,
-
-Speaker 0: 00:20:15
-
-or
-
-Speaker 1: 00:20:15
-
-at least it starts ignoring them.
+or at least it starts ignoring them.
 So in practice, let's take another example where we actually have two really fast miners.
 In fact, our miners are as fast as the whole Bitcoin network.
 Somehow we've turned off all the other miners in the network, and so this this Elysium pool, sorry, the Ocean pool is now the only pool and we are continuing with the Bitcoin network at the same hash power.
@@ -580,14 +536,7 @@ Mm-hmm.
 So then the question is what happens?
 Initially I Turn it on first, right?
 So initially I get everything for the first block, second block, third block, fourth block,
-
-Speaker 0: 00:21:37
-
-because I
-
-Speaker 1: 00:21:37
-
-was the only one mining and I'm the only one in the history, ignoring that there's a further past.
+because I was the only one mining and I'm the only one in the history, ignoring that there's a further past.
 Now You turn on your miner and I've turned off mine.
 So what happens in the next block?
 Well, it's looking back at the equivalent of eight blocks, which is more than so far what we've collected.
@@ -672,11 +621,10 @@ Right.
 But if I then take over, you will continue to get rewards for the next eight blocks or so.
 It'll decrease as your, your work goes back into the past.
 So I think it works out.
-But
 
 Speaker 0: 00:23:40
 
-wasn't there a thing, wasn't there a thing that with the first, like the actual first eight blocks, so including the actual first eight blocks that I think Ocean is mining, the logic is a bit different.
+But wasn't there a thing, wasn't there a thing that with the first, like the actual first eight blocks, so including the actual first eight blocks that I think Ocean is mining, the logic is a bit different.
 So aren't you now explaining the logic that will work fine later on, but not for the first eight?
 
 Speaker 1: 00:24:01
@@ -699,22 +647,7 @@ Like in your example, you mined the first four and I mined the last eight and we
 Speaker 1: 00:24:31
 
 So you've mined the last eight, but you still will get rewards in the future, right?
-So you haven't
-
-Speaker 0: 00:24:36
-
-had it
-
-Speaker 1: 00:24:37
-
-yet, but you will get it
-
-Speaker 0: 00:24:38
-
-right, right, right, right.
-
-Speaker 1: 00:24:39
-
+So you haven't had it yet, but you will get it right, right, right, right.
 But somebody has to do the mining.
 So the question then is when, when is that game done?
 Well, if I then take over, you will get the part that you still owed.
@@ -810,15 +743,7 @@ So as long as you don't go over that boundary, the math is pretty simple.
 But this is, I believe, also one reason why alt shares are not thrown away.
 Because you could be in a situation where the difficulty goes up and now the equivalent of 8 days is more than it was before and so you need to go back in time and look into the log of the people that were doing something a little bit before the window.
 Let's say the difficulty doubles, right, overnight.
-Now you're looking at the equivalent of eight days, which is in reality would have been 16 days of actual work
-
-Speaker 0: 00:28:16
-
-if
-
-Speaker 1: 00:28:17
-
-you're looking at the past.
+Now you're looking at the equivalent of eight days, which is in reality would have been 16 days of actual work if you're looking at the past.
 So you cannot throw away the past, or at least, you know, not unreasonably.
 
 Speaker 0: 00:28:22
@@ -853,11 +778,10 @@ Let's stick to Ocean for now.
 There's one other aspect about it that's kind of controversial, which is that they're filtering for quote unquote spam.
 They're filtering transactions that they consider to be spam.
 So the most often...
-Yeah, so
 
 Speaker 1: 00:29:26
 
-I believe to be precise, they are using Bitcoin Nod's default settings.
+Yeah, so I believe to be precise, they are using Bitcoin Nod's default settings.
 So that's an alternative version of Bitcoin Core by Luke Dasher.
 And it does not relay transactions with an operator of more than 20 bytes, I believe.
 So that's less than the default in Bitcoin Core.
@@ -870,11 +794,10 @@ They don't include transactions over, I think it's 400 kilobyte.
 Speaker 0: 00:30:20
 
 Right.
-So
 
 Speaker 1: 00:30:20
 
-this pool doesn't put anything in there with opportunities more than 20 bytes.
+So this pool doesn't put anything in there with opportunities more than 20 bytes.
 
 Speaker 0: 00:30:25
 

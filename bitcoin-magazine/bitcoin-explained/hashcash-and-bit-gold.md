@@ -6,6 +6,7 @@ tags: []
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 categories: ['podcast']
 date: 2024-01-03
+summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss two electronic cash projects that predate Bitcoin: Adam Back’s Hashcash and Nick Szabo’s Bit Gold. As detailed in Aaron’s new book, The Genesis Book, these systems introduced design element that were later utilized by Satoshi Nakamoto. Aaron and Sjors explain what these elements are, and how they inspired Bitcoin’s design."
 ---
 Speaker 0: 00:00:18
 
@@ -55,14 +56,7 @@ So we're publishing it tomorrow, January 3rd, but that's like midnight actually,
 So it's like one hour time.
 So in a couple of hours, Jors, my book will be live.
 Yeah.
-So that's
-
-Speaker 2: 00:01:26
-
-kind of cool.
-
-Speaker 0: 00:01:26
-
+So that's kind of cool.
 So that's kind of cool.
 It is called the Genesis book Shorts, And it tells the prehistory of Bitcoin, the origin story of Bitcoin.
 It's the story of the people and projects that inspired Bitcoin.
@@ -85,11 +79,10 @@ Speaker 2: 00:01:57
 
 Well, no, hang on.
 We also did the episode about the Tornado Cash.
-That was actually
 
-Speaker 0: 00:02:01
+Speaker 0: 00:02:00
 
-not about Bitcoin, kind of.
+That was actually not about Bitcoin, kind of.
 
 Speaker 1: 00:02:03
 
@@ -265,17 +258,17 @@ Speaker 1: 00:08:14
 
 Yeah, and They did not come from a cypherpunk background.
 They came from it with a just, hey, we are people using email and we don't like spam background.
-And so they- – Well,
+And so they-
+– Well,
 
 Speaker 0: 00:08:27
 
 they were for IBM, right?
 They were computer pros.
-–
 
 Speaker 1: 00:08:31
 
-Yeah, they weren't random people, but they were not saying, how can we prevent the government coming into this email world?
+– Yeah, they weren't random people, but they were not saying, how can we prevent the government coming into this email world?
 It's just like, how do we get rid of spam?
 And so they invented, essentially They came up with the idea of introducing proof of work for email, and they came up with three different work algorithms.
 
@@ -285,7 +278,8 @@ Yeah, and to be clear, the term proof of work didn't exist yet at this time.
 
 Speaker 1: 00:08:55
 
-I don't know exactly what they call it, but something along the lines of like a challenge or… But basically, they picked three algorithms, and I think one of them boiled down to finding, if you take a number and you wanna figure out which two primes are necessary, can be multiplied to get to the number.
+I don't know exactly what they call it, but something along the lines of like a challenge or…
+But basically, they picked three algorithms, and I think one of them boiled down to finding, if you take a number and you wanna figure out which two primes are necessary, can be multiplied to get to the number.
 So let's say you pick the number 100 and you say tell me which two prime numbers multiply to 100 and you would say I don't know because it's 10 times 10 so that's not those are not prime.
 
 Speaker 0: 00:09:28
@@ -295,14 +289,7 @@ Kind of a bad example.
 Speaker 1: 00:09:30
 
 No it's a fine example but it shows that as soon as you give me the right answer, I can very quickly verify that, yes, these two numbers multiply to this total.
-
-Speaker 0: 00:09:38
-
-Actually, I
-
-Speaker 1: 00:09:38
-
-think you didn't have to find prime numbers, it's just modular prime number.
+Actually, I think you didn't have to find prime numbers, it's just modular prime number.
 
 Speaker 0: 00:09:43
 
@@ -311,16 +298,14 @@ I think the way it works is you have two very big prime numbers, these are facto
 Speaker 1: 00:09:56
 
 I think that's RSA, but not what this here.
-Oh, this
 
 Speaker 0: 00:10:01
 
-works a bit different?
-I think
+Oh, this works a bit different?
 
 Speaker 1: 00:10:02
 
-this was much simpler.
+I think this was much simpler.
 This was something called modulo a prime number.
 So if you take a much smaller number we know the number 13 is prime, right?
 And so you would say okay here's the number 10.
@@ -375,11 +360,10 @@ Yeah, so because we should maybe spell this out for those who haven't realized t
 So Naor and Dwork were not using hashes for the proof of work.
 They were using, what's it called?
 Is there a better term for what they were?
-They were
 
 Speaker 1: 00:12:25
 
-just using math problems.
+They were just using math problems.
 
 Speaker 0: 00:12:26
 
@@ -429,11 +413,10 @@ Right, so then, yeah, you would send the email, you include this hash, and then 
 If not, the email would just bounce.
 Exactly.
 So I guess that was the same with Nowrintworks system.
-I didn't
 
-Speaker 1: 00:14:54
+Speaker 1: 00:14:53
 
-spell that.
+I didn't spell that.
 
 Speaker 0: 00:14:54
 
@@ -498,11 +481,10 @@ But the idea here is that you, with a hash function, you may or may not get the 
 So sometimes you find the right solution instantly, other times it takes a very long time.
 Whereas with these earlier algorithms, There's a sort of a guaranteed time of how long it takes to find the square root, for example, of two numbers.
 So I suppose you could maybe make it random, but assuming you use a standard algorithm, it'll take a fixed amount of time to find a solution.
-And you might think-
 
-Speaker 0: 00:17:46
+Speaker 0: 00:17:45
 
-let me give an analogy that I've used, not in the book, actually, I think, but in an article I wrote earlier, it's kind of the difference between, let's say there's a hundred lottery tickets and one person buys 40 tickets and another buys 60.
+And you might think- let me give an analogy that I've used, not in the book, actually, I think, but in an article I wrote earlier, it's kind of the difference between, let's say there's a hundred lottery tickets and one person buys 40 tickets and another buys 60.
 So now the person that has 60 has more chance to win 60%.
 But the person that bought 40 still has 40% to win as well.
 While if you take, you know, two cyclists and one of them can ride his bike 60 miles an hour and the other 40 miles, then any time they do a race, the one that can cycle 60 miles an hour will just win like every time.
@@ -611,11 +593,10 @@ So, what in between?
 So, Sabo put it in slightly more mathy terms.
 And the analogy we could get into, I guess, is the one-way function, or what it's comparing it with.
 So we talked about one-way functions in an earlier episode, where you actually were correct and I was wrong.
-So I
 
-Speaker 0: 00:23:16
+Speaker 0: 00:23:15
 
-remember that.
+So I remember that.
 Good.
 
 Speaker 1: 00:23:18
@@ -634,25 +615,17 @@ So let's just try and explain it correctly, because I don't even remember exactl
 
 Speaker 0: 00:23:30
 
-Go
+Go on.
 
 Speaker 1: 00:23:31
 
-on.
 A one-way function is a function that is very easy to go in one way, like checking that a hash is correct, but very hard to go the other way.
 She's like trying to produce a fake hash, no, a fake original, basically.
 And there are a bunch of one-way functions out there.
 One is finding the factors in a big number, or these prime factors as you mentioned with RSA.
 Another is a discrete logarithm problem, or that's sort of a more generic one, but that is used for public and private key cryptography, like the elliptic curve.
 And then there's cryptographic hash functions like SHA-256, which so far has not been broken.
-
-Speaker 2: 00:24:21
-
-The
-
-Speaker 1: 00:24:22
-
-problem is there is no mathematical proof that this actually exists.
+The problem is there is no mathematical proof that this actually exists.
 So we think these functions are one-way, and They better be one-way, but it may turn out that some mathematician somewhere proves that they're not.
 And then you get into the whole P is NP stuff that we're not going to get into.
 Now, there is a special kind of one-way function called the Trapdoor One-Way Function.
@@ -680,29 +653,23 @@ It can't be a one-way function because then you'll never go back.
 So if you go to the Wikipedia article about one-way functions, it defines this little thing like, okay, for any blah, blah, blah function that you try a hundred thousand times or whatever, statistically you should almost never find the correct answer.
 That's sort of how they defined it.
 And then Szabo basically writes a similar formula, but then explaining what this secure benchmark function should look like.
-And
 
-Speaker 0: 00:25:58
+Speaker 0: 00:25:57
 
-the...
+And the...
 Sure, Are we still just making a bridge?
 
 Speaker 1: 00:26:02
 
 Yes, we are.
-This is
 
 Speaker 0: 00:26:03
 
-a big bridge you're building here.
-
-Speaker 2: 00:26:04
-
-I'm almost
+This is a big bridge you're building here.
 
 Speaker 1: 00:26:04
 
-done with the bridge.
+I'm almost done with the bridge.
 One thing that is interesting there is that when it comes to these one-way functions, it doesn't matter what hardware you have.
 They just seem like you can have the whole universe and you still cannot crack it.
 You can have a Dyson and you can't crack it.
@@ -734,30 +701,18 @@ I don't know if there's much specifically to introduce unless I you know, I can 
 
 Speaker 1: 00:28:04
 
-I think it might be interesting to mention the, I think it was like seven points that he describes that this system should
+I think it might be interesting to mention the, I think it was like seven points that he describes that this system should do.
 
 Speaker 0: 00:28:12
 
-do.
 Well, that was Adam Back.
 
 Speaker 1: 00:28:15
 
 Oh, I thought the BitGold paper also lists like seven properties of the system.
-Basically like it has to be
-
-Speaker 0: 00:28:20
-
-in the BitGold paper.
-
-Speaker 1: 00:28:22
-
+Basically like it has to be in the BitGold paper.
 Yeah.
-Or at least it's
-
-Speaker 0: 00:28:23
-
-been a while since I read it.
+Or at least it's been a while since I read it.
 
 Speaker 2: 00:28:24
 
@@ -813,19 +768,11 @@ So the way it works is you start with a candidate string.
 The candidate string can be anything, I guess.
 It doesn't really matter, but let's just say a random string of numbers.
 And then with a proof of work or a secure benchmark function, as you just explained, that's how Nixarbo called it in his paper, I believe.
-At least in one of his posts, he very specifically
+At least in one of his posts, he very specifically called it that.
 
-Speaker 2: 00:30:03
+Speaker 1: 00:30:03
 
-called it that.
-
-Speaker 0: 00:30:03
-
-Yeah, I think in
-
-Speaker 1: 00:30:04
-
-the post I read, he just used all of the terms, but then made this benchmark a more specific definition.
+Yeah, I think in the post I read, he just used all of the terms, but then made this benchmark a more specific definition.
 
 Speaker 0: 00:30:11
 
@@ -1027,11 +974,10 @@ Speaker 0: 00:39:41
 
 No, no, the market doesn't have to.
 If the market doesn't do that, that's even better.
-Then
 
 Speaker 1: 00:39:45
 
-it's highly inflationary.
+Then it's highly inflationary.
 So you mine your coins in 1999, you have a hundred of these coins, and now a hundred units of work.
 And now ten years later, somebody makes a hundred units of work in a fraction of a second.
 So either your hundred units of work are worth nothing in the future, or they are valued because they are old.
@@ -1045,14 +991,7 @@ Yeah, or like I think the misprints of certain postage stamps or something were 
 Yeah, anyways, yeah, so indeed he does argue that.
 So the idea that he proposed was we'll create a market for these strings, for these hashes.
 And on these markets, people can trade them against each other.
-
-Speaker 2: 00:40:39
-
-So
-
-Speaker 0: 00:40:40
-
-that's how the markets can figure out how much is a, you know, 2005 hash worth in relation to a 2015 hash.
+So that's how the markets can figure out how much is a, you know, 2005 hash worth in relation to a 2015 hash.
 So maybe one 2005 hash is worth 10 2015 hashes.
 I should note all these hashes are also timestamped.
 Like first of all, they're of course made in order.
@@ -1087,11 +1026,10 @@ Yes, we're in 1998, So yes.
 
 Speaker 1: 00:41:50
 
-Yeah, when all these triple A rated buckets and I'm thinking about what happened
+Yeah, when all these triple A rated buckets and I'm thinking about what happened there.
 
-Speaker 0: 00:41:53
+Speaker 0: 00:41:54
 
-there.
 Right, right, right.
 Yeah, has nothing to do with this short, but thanks for that color.
 So in my example earlier, where one 2005 hash is worth 10 2015 hashes, one bucket could consist of one 2005 hash and another bucket could consist of 10 2015 hashes.
@@ -1151,14 +1089,7 @@ So change wasn't a problem in the original system.
 Change is also not a problem in Bitcoin because the transaction itself creates a change.
 But in this system these strings don't have change so what you could do is somebody could make lots of small little pieces of work and distribute those just like you would distribute small change and then you go to a shop and you get these little strings back for your change but it may be easier to do all this on a second layer and just have big buckets somewhere that don't need to be changed all the time.
 Because also it would mean having to track all the movement of all these mini-strings.
-
-Speaker 2: 00:44:35
-
-Like
-
-Speaker 1: 00:44:35
-
-tracking the movement of every penny on the planet essentially.
+Like tracking the movement of every penny on the planet essentially.
 
 Speaker 0: 00:44:39
 

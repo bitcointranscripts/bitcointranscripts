@@ -1,11 +1,12 @@
 ---
-title: "Bitcoin Core 26.0 (And F2Pool’s OFAC Compliant Mining Policy)"
+title: "Bitcoin Core 26.0 (And F2Pool's OFAC Compliant Mining Policy)"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-85-bitcoin-core-26-0-and-f2pool-s-ofac-compliant-mining-policy-ainlt
-tags: ["mining"]
+tags: ['bitcoin-core']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 categories: ['podcast']
 date: 2023-11-23
+summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 0.26 release. They also briefly discuss recent developments concerning the transaction inclusion policy of mining pool F2Pool, which appears to have been compliant with the OFAC sanctions list."
 ---
 Speaker 0: 00:00:20
 
@@ -191,11 +192,11 @@ Wangchun?
 Speaker 1: 00:05:37
 
 Yes, who says, will disable the TX filtering patch for now until the community reaches a more comprehensive consensus on this topic.
-So basically… So that is
+So basically…
 
-Speaker 0: 00:05:47
+Speaker 0: 00:05:46
 
-a confirmation that he was in fact filtering out OFAC transactions in breach of the OFAC list.
+So that is a confirmation that he was in fact filtering out OFAC transactions in breach of the OFAC list.
 
 Speaker 1: 00:05:54
 
@@ -232,27 +233,26 @@ I don't know if we have a way to get things out of your mempool once it's in the
 Speaker 0: 00:06:24
 
 Anyways so Wangchun F2Pool was using a patch, maybe self-written, maybe not, to filter these transactions out of blocks to comply with the OFAC list.
-And now he's… Well,
+And now he's…
+Well,
 
 Speaker 1: 00:06:39
 
 we don't know if it was to comply with the OFAC list.
-Josh, why
 
 Speaker 0: 00:06:41
 
-are you hedging everything so much?
+Josh, why are you hedging everything so much?
 It's pretty obvious at this point, right?
 You did the analysis.
 
 Speaker 1: 00:06:46
 
 No, because there are some unconfirmed tweets that suggest that...
-And he
 
-Speaker 0: 00:06:49
+Speaker 0: 00:06:48
 
-confirms it on Twitter.
+And he confirms it on Twitter.
 
 Speaker 1: 00:06:50
 
@@ -262,11 +262,10 @@ But in any case, we know that these transactions were deliberately filtered.
 Speaker 0: 00:06:58
 
 But what's the alternative motivation?
-Well, it
 
 Speaker 1: 00:07:00
 
-might be that he just doesn't like those particular people.
+Well, it might be that he just doesn't like those particular people.
 
 Speaker 0: 00:07:03
 
@@ -283,11 +282,10 @@ Okay but then still he's filtering transactions.
 Speaker 1: 00:07:09
 
 Yes.
-Like there's still
 
-Speaker 0: 00:07:10
+Speaker 0: 00:07:09
 
-some form of censorship happening right?
+Like there's still some form of censorship happening right?
 
 Speaker 1: 00:07:12
 
@@ -297,11 +295,10 @@ One is you're afraid of some government like the US government making your life 
 Speaker 0: 00:07:22
 
 Okay.
-But we
 
 Speaker 1: 00:07:22
 
-have no idea which of those two is the true motivation.
+But we have no idea which of those two is the true motivation.
 I'm just saying either is possible.
 
 Speaker 0: 00:07:26
@@ -356,11 +353,11 @@ Okay.
 That's a, this was a long intro.
 I guess the reason this is worth bringing up is because, I mean, it seems.
 This is kind of the thing that Bitcoin, Bitcoin developers and journalists, maybe as well, sometimes have been like talking about and warning about for many years, and this is sort of the first time it's actually happening.
-So there's actually a reason now for… If
+So there's actually a reason now for…
 
 Speaker 1: 00:09:22
 
-you go through, you know, this, if you just assume a slippery slope, which is always a problematic type of argument, but if you do, then The ultimate outcome of this is you're back to PayPal because all transactions have to be KYC'd in permission before they go into a block.
+If you go through, you know, this, if you just assume a slippery slope, which is always a problematic type of argument, but if you do, then The ultimate outcome of this is you're back to PayPal because all transactions have to be KYC'd in permission before they go into a block.
 Now we're nowhere near that, but does this make sense to worry about this?
 
 Speaker 0: 00:09:39
@@ -400,14 +397,7 @@ At this point, where are we in the release process?
 Speaker 1: 00:10:58
 
 There have been two release candidates.
-
-Speaker 0: 00:11:00
-
-As far
-
-Speaker 1: 00:11:00
-
-as I know, the second candidate does not have many problems, so maybe it's the last one, maybe there'll be another one.
+As far as I know, the second candidate does not have many problems, so maybe it's the last one, maybe there'll be another one.
 
 Speaker 0: 00:11:07
 
@@ -514,11 +504,10 @@ Right.
 So that means that, that internet service providers can see exactly which transactions and blocks you're sending.
 And I guess the main problem is that this would allow ISPs to sort of see where transactions originate.
 Is that the main problem?
-Yeah, I'd say that's
 
 Speaker 1: 00:15:09
 
-one problem.
+Yeah, I'd say that's one problem.
 And the other is it makes censorship easier because if it's very easy to detect that it's a Bitcoin node, it's also very easy to block it.
 Now that's still easy with this encryption in place for other reasons, but having encryption, it makes it one step easier to get around censorship.
 
@@ -550,23 +539,15 @@ But it's not preferential.
 Speaker 0: 00:15:53
 
 Okay, so it still connects to other nodes randomly, but they will first sort of try, hey, are you using encryption?
-No, they will only
 
-Speaker 1: 00:16:01
+Speaker 1: 00:16:00
 
-try if they think the other side can use it.
+No, they will only try if they think the other side can use it.
 
 Speaker 0: 00:16:03
 
 Oh, so how do that?
-
-Speaker 1: 00:16:05
-
-So how
-
-Speaker 0: 00:16:05
-
-would my notes think that your note is using encryption?
+So how would my notes think that your note is using encryption?
 
 Speaker 1: 00:16:08
 
@@ -668,23 +649,16 @@ Speaker 1: 00:20:44
 You basically, Bitcoin Core wouldn't care.
 You would just give it a block, say assume this one is correct.
 You just download that from somebody on the internet that you trust.
-
-Speaker 0: 00:20:53
-
-And
-
-Speaker 1: 00:20:53
-
-then you'll find out if it was right or not, but it'll take a while.
+And then you'll find out if it was right or not, but it'll take a while.
 
 Speaker 0: 00:20:56
 
 Right, I see.
-And obviously, so- So that
+And obviously, so-
 
 Speaker 1: 00:21:00
 
-means there's no centralized group of people to pressure or to corrupt.
+So that means there's no centralized group of people to pressure or to corrupt.
 But the downside is you will get scammed left and right because everybody can just make their own fake one.
 
 Speaker 0: 00:21:10
@@ -722,15 +696,7 @@ Speaker 0: 00:21:28
 Right.
 It's only on testnet now, and Cygnet, which is a version of testnet.
 So yeah, so you mentioned, even if it would be on mainnet, the attack would be expensive because you need to create a fake block and you need to, at least in the current version, corrupt the developers.
-Plus it would only work temporarily because it's kind of a stopgap until you've actually synced from
-
-Speaker 1: 00:21:50
-
-yeah basically once you've synced from the genesis block the note would crash
-
-Speaker 0: 00:21:54
-
-it's kind of a yeah right it's sort of a solution until in the meantime yeah and therefore it's obviously also optional you can just opt to actually wait until it's fully synced before you receive any transaction.
+Plus it would only work temporarily because it's kind of a stopgap until you've actually synced from yeah basically once you've synced from the genesis block the note would crash it's kind of a yeah right it's sort of a solution until in the meantime yeah and therefore it's obviously also optional you can just opt to actually wait until it's fully synced before you receive any transaction.
 
 Speaker 1: 00:22:05
 
@@ -802,14 +768,7 @@ Yeah.
 So basically the Tor feature so far just does not guarantee that you actually connect to a Tor node.
 You may or may not.
 And so this new change makes sure that you do.
-
-Speaker 0: 00:24:35
-
-It
-
-Speaker 1: 00:24:35
-
-makes sure that at least, I don't know what the percentage is, but let's say at least one connection will go to Tor if you have Tor on.
+It makes sure that at least, I don't know what the percentage is, but let's say at least one connection will go to Tor if you have Tor on.
 And it will basically, if that connection disappears it will make another one.
 
 Speaker 0: 00:24:45
@@ -820,11 +779,10 @@ Speaker 1: 00:24:49
 
 No, this just works.
 This just works.
-Out of
 
-Speaker 0: 00:24:52
+Speaker 0: 00:24:51
 
-the box.
+Out of the box.
 
 Speaker 1: 00:24:52
 
@@ -877,17 +835,17 @@ Speaker 0: 00:26:27
 So Tor is kind of a lifeline to still get the latest blocks in case they're being censored in some sort of eclipse attack scheme.
 Yeah, exactly.
 Okay, so this is also new in Bitcoin Core.
-You'll… so network diversity is embedded more and more thoroughly.
+You'll…
+so network diversity is embedded more and more thoroughly.
 Then I'm seeing you selected, there's a Taproot Miniscript upgrade.
 
 Speaker 1: 00:26:52
 
 Yes, so we covered Miniscript in episode 4.
-A very long
+A very long time ago.
 
 Speaker 0: 00:26:56
 
-time ago.
 Really?
 Yep.
 
@@ -937,14 +895,7 @@ Okay.
 So this was already available in Bitcoin Core.
 So what this means specifically is I think you can connect wallets that use this to Bitcoin Core.
 I don't think I'm saying that right.
-
-Speaker 1: 00:28:55
-
-Can you
-
-Speaker 0: 00:28:56
-
-say that right?
+Can you say that right?
 
 Speaker 1: 00:28:56
 
@@ -970,11 +921,10 @@ So where, I think I'm skipping ahead.
 Speaker 1: 00:29:25
 
 So where Taproot comes in.
-I don't
 
 Speaker 0: 00:29:28
 
-want to go there yet.
+I don't want to go there yet.
 Where is this?
 I don't know how else to ask it.
 Is this in the Bitcoin Core wallet or is this in the Bitcoin Core like node software?
@@ -1126,14 +1076,7 @@ Speaker 0: 00:34:01
 Yeah, hang on, you got to emphasize.
 So when they say this has not enough fee, the fee is too low.
 What they even mean is the fee is too low for the mempool.
-
-Speaker 1: 00:34:11
-
-They're
-
-Speaker 0: 00:34:11
-
-not even going to include it in the mempool.
+They're not even going to include it in the mempool.
 Yes.
 So yes, it would not fit in the block.
 Now that's fine because it usually goes into the mempool and then you can use the child pays for bear tricks that I explained.
@@ -1187,34 +1130,24 @@ So there's now something in Bitcoin Core, it's a baby step, it's a step towards 
 That's just a way to think about it.
 Yeah.
 It's not, it's actually kind of useless in itself.
-Or is there, you just speculated about a potential maybe use
+Or is there, you just speculated about a potential maybe use case of a miner?
 
 Speaker 1: 00:36:33
 
-case of a miner?
 Yeah, and the other is like at least it would be in your mempool and so maybe once the fees go down, you know, it's a bit easier to...
 
 Speaker 0: 00:36:38
 
-Rebroadcast it
+Rebroadcast it or something.
 
-Speaker 1: 00:36:39
+Speaker 1: 00:36:40
 
-or something.
 But rebroadcasting is also not automatic.
 So yeah, no, it's not there yet.
 
 Speaker 0: 00:36:44
 
-It's basically useless, but it is a step towards package relay which itself is a useful and important upgrade one day hopefully
-
-Speaker 1: 00:36:53
-
-right yes
-
-Speaker 0: 00:36:55
-
-okay great so these are we've now discussed six five of the most important upgrades in Bitcoin Core.
+It's basically useless, but it is a step towards package relay which itself is a useful and important upgrade one day hopefully right yes okay great so these are we've now discussed six five of the most important upgrades in Bitcoin Core.
 That's the episode actually, right?
 
 Speaker 1: 00:37:06

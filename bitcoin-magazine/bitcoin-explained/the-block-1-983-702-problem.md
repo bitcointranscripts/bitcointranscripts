@@ -1,10 +1,12 @@
 ---
 title: "The Block 1,983,702 Problem"
-transcript_by: kouloumos via review.btctranscripts.com
+transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-87-the-block-1-983-702-problem-s7s3j
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
-categories: ["podcast"]
+tags: []
+speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+categories: ['podcast']
 date: 2023-12-21
+summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss the so-called “block 1,983,702 problem”. They explain how a bug in early Bitcoin implementations could in rare cases cause a loss of funds, or in a worst-case scenario even lead to consensus failures, while they also explain how BIP 30 and BIP 34 solved this problem. As it turns out, however, BIP 34 introduced a new problem, that could become an issue about twenty years from now…"
 ---
 Speaker 0: 00:00:19
 
@@ -33,6 +35,7 @@ Because we've gone this hyper-commercialized entity now with sponsors and stuff.
 
 Speaker 0: 00:00:52
 
+True, yeah.
 Shors, do you know who our sponsor is?
 It's CoinKite.
 And they produce the cold card.
@@ -68,7 +71,7 @@ Speaker 0: 00:01:45
 Right, okay, I see.
 So there was a bug, now there's no bug, but there's still a problem which is not a bug.
 
-Speaker 1: 00:01:52
+Speaker 1: 00:01:51
 
 Well, it's kind of a bug, but it's not like a dangerous bug like the original thing.
 
@@ -211,7 +214,7 @@ And if that happens twice, if you say you mine two blocks in a row, it's going t
 
 Speaker 1: 00:05:54
 
-Yeah, however, it also would have to be the same amount.
+Yeah, however, it also would have to be the same amount, right?
 So this would be either a block with no transactions in it, so no fees.
 So the Coinbase amount would be exactly 50 Bitcoin back in the day, or it would be coincidentally the exact same total fees.
 The thing is, it only happened twice.
@@ -329,15 +332,7 @@ That's one way, but let's say you mine one transaction.
 Sorry, yeah, let's do it again.
 You mine one transaction, you mine a couple other blocks, and then you mine the transaction again.
 Now, if there's a reorg, the blockchain undoes your most recent block, and then creates some other blocks.
-That means that your transaction has now disappeared
-
-Speaker 0: 00:10:27
-
-from your
-
-Speaker 1: 00:10:28
-
-point of view.
+That means that your transaction has now disappeared from your point of view.
 
 Speaker 0: 00:10:29
 
@@ -385,11 +380,10 @@ Yeah, you're right actually.
 In the real case, some nodes would actually think the coins don't exist at all anymore because yes, I see what you're saying.
 Yeah, you're right.
 Anyways, the important part is that the UTXO set or what, Sorry, why do you not call it the UTXO set?
-Did you say back in the day was-
 
-Speaker 1: 00:12:18
+Speaker 1: 00:12:17
 
-So this is the part I'm a little vague on, but initially the concept that we call the UTXO set, so a list of coins that exist, is not something that Satoshi invented as such.
+Did you say back in the day was- So this is the part I'm a little vague on, but initially the concept that we call the UTXO set, so a list of coins that exist, is not something that Satoshi invented as such.
 I think we'll cover that again maybe in a future episode.
 But this idea of having a database of which coin exists and you just add and remove coins from it, I think at the time it was not like that.
 It was just a list of all transactions that were still relevant or something like that.
@@ -400,11 +394,10 @@ Speaker 0: 00:12:58
 
 Okay.
 So, let's just...
-But this
 
-Speaker 1: 00:13:00
+Speaker 1: 00:12:59
 
-less efficient implementation had the same problem.
+But this less efficient implementation had the same problem.
 The modern UTXO set would definitely have this problem.
 And my understanding is the original one had two, even though it stored more data than we do now.
 
@@ -440,31 +433,21 @@ Well, no, then we would have the problem, right?
 
 Speaker 1: 00:14:17
 
-Well maybe we are
-
-Speaker 0: 00:14:18
-
-the surviving
-
-Speaker 1: 00:14:19
-
-chain where that didn't happen, but there may have been other chains where it did happen and it didn't survive.
+Well maybe we are the surviving chain where that didn't happen, but there may have been other chains where it did happen and it didn't survive.
 
 Speaker 0: 00:14:23
 
 Well we would have probably heard it then at some point, don't you think?
-Because then there would have been nodes with these different transaction records, UTXO, set, whatever you want to
+Because then there would have been nodes with these different transaction records, UTXO, set, whatever you want to call it.
 
 Speaker 1: 00:14:32
 
-call it.
 Yeah, but I mean, if this was long enough ago, maybe they just restarted the computer and just didn't care, but probably didn't happen.
 Fair.
-All
 
 Speaker 0: 00:14:40
 
-right.
+All right.
 So this was the, again, this was the OG Satoshi bug.
 And This bug was fixed.
 
@@ -499,11 +482,10 @@ Now, let's say they do that, they make a coinbase,
 
 Speaker 0: 00:15:32
 
-then they spend it, then they can make
+then they spend it, then they can make the same coinbase again.
 
-Speaker 1: 00:15:34
+Speaker 1: 00:15:36
 
-the same coinbase again.
 That's no problem.
 So BIP30 does allow that.
 Right, okay.
@@ -537,14 +519,7 @@ I don't know how much, if it's like 1% or 10%, but it's annoying.
 Speaker 0: 00:17:00
 
 And also just in general, you want miners to be able to check the validity of new blocks or all nodes.
-
-Speaker 1: 00:17:07
-
-You want
-
-Speaker 0: 00:17:07
-
-them to be able to check for the as soon as possible.
+You want them to be able to check for the as soon as possible.
 
 Speaker 1: 00:17:10
 
@@ -617,11 +592,10 @@ Speaker 0: 00:19:15
 
 Right.
 Okay.
-However, so I guess this is why we're making
+However, so I guess this is why we're making this episode.
 
 Speaker 1: 00:19:18
 
-this episode.
 No, Gavin Andresen.
 
 Speaker 0: 00:19:19
@@ -633,11 +607,10 @@ Gavin, you messed up.
 Speaker 1: 00:19:25
 
 Well, I don't know.
-I mean, it's just he's the author, so it doesn't mean that he came up
+I mean, it's just he's the author, so it doesn't mean that he came up with it.
 
-Speaker 0: 00:19:29
+Speaker 0: 00:19:30
 
-with it.
 It was a joke, but maybe it's a kind of a sensitive joke at this point in time.
 Sure, go on.
 Because there is a problem.
@@ -738,11 +711,10 @@ Yeah, so as the episode suggests, some miner put the number 1,983,702 in the Coi
 Speaker 0: 00:22:41
 
 Right.
-They
 
-Speaker 1: 00:22:42
+Speaker 1: 00:22:41
 
-didn't actually put that number in there, they were probably just writing their name, and the name, if you map it into how a computer reads it, might have looked like a big number.
+They didn't actually put that number in there, they were probably just writing their name, and the name, if you map it into how a computer reads it, might have looked like a big number.
 
 Speaker 0: 00:22:50
 
@@ -788,11 +760,10 @@ So if you wanted to reproduce this, your Coinbase transaction would have to crea
 It would have to spend 107 Bitcoin.
 That is only allowed if there is 107 Bitcoin worth of fees in that block.
 So that's never going to happen accidentally.
-The other thing that has to
 
-Speaker 0: 00:24:16
+Speaker 0: 00:24:15
 
-happen is that the attacker would have to actually probably pay these fees himself and then burn it in this block.
+The other thing that has to happen is that the attacker would have to actually probably pay these fees himself and then burn it in this block.
 
 Speaker 1: 00:24:22
 
@@ -803,14 +774,7 @@ But the other problem is it would have to be a non-SegWit block, because there w
 Well, you can't add that to the Coinbase, because then it would be a different block.
 So that means all the fees would have to be in non-SegWit transactions.
 There's all sorts of problems with this attack.
-
-Speaker 0: 00:25:05
-
-One problem
-
-Speaker 1: 00:25:05
-
-I can think about is that the next miner might be like, hey, there's a lot of fees in that original block, let me reorg it and mine it myself.
+One problem I can think about is that the next miner might be like, hey, there's a lot of fees in that original block, let me reorg it and mine it myself.
 But anyway, so but this could be done.
 And then you would have an identical transaction.
 
@@ -955,11 +919,10 @@ Speaker 0: 00:28:38
 I'm not sure.
 No, probably I did.
 Yeah, no, I did upgrade since 2018.
-There are
 
-Speaker 1: 00:28:42
+Speaker 1: 00:28:41
 
-so many security vulnerabilities in old Bitcoin nodes that this is the last of your problems.
+There are so many security vulnerabilities in old Bitcoin nodes that this is the last of your problems.
 
 Speaker 0: 00:28:47
 
@@ -1050,11 +1013,10 @@ You can code shorts on that.
 
 Speaker 1: 00:31:23
 
-I'm not saying you're not introducing
+I'm not saying you're not introducing a new problem.
 
-Speaker 0: 00:31:24
+Speaker 0: 00:31:25
 
-a new problem.
 Are you pushing for a hard fork?
 
 Speaker 1: 00:31:27
@@ -1172,11 +1134,10 @@ Yeah, and so right now, every time there is a SegWit block, yes, that's happened
 
 Speaker 0: 00:33:53
 
-Okay, has there
+Okay, has there been...
 
 Speaker 1: 00:33:53
 
-been...
 But empty blocks or blocks with no SegWit transactions do not commit to SegWit.
 But definitely empty blocks don't.
 However, they can, they just don't.
@@ -1188,14 +1149,7 @@ Speaker 0: 00:34:04
 okay, you have to...
 Let me ask this question real quick.
 So, because I was going to ask, has there been any block mined that doesn't include any segwit transactions?
-
-Speaker 1: 00:34:14
-
-Since
-
-Speaker 0: 00:34:14
-
-segwit is out and that would be empty blocks.
+Since segwit is out and that would be empty blocks.
 
 Speaker 1: 00:34:16
 
@@ -1212,14 +1166,7 @@ Speaker 1: 00:34:17
 Okay, go on.
 So basically, you know, the difficulty then would just be, okay, when you propose an empty block, which you have to do as a miner sometimes, very briefly, just make sure that it's a segwit block.
 So that would be a fairly simple soft fork.
-
-Speaker 0: 00:34:32
-
-But
-
-Speaker 1: 00:34:32
-
-there are other ideas out there.
+But there are other ideas out there.
 
 Speaker 0: 00:34:35
 
@@ -1355,11 +1302,10 @@ Speaker 1: 00:38:00
 
 You want to keep it simple?
 So the funny thing is there was in 2019 a proposal...
-I'm just
 
 Speaker 0: 00:38:04
 
-thinking of soft forks that were introduced after 2015 to make me sound smart.
+I'm just thinking of soft forks that were introduced after 2015 to make me sound smart.
 But yeah, SegWit is the obvious thing here.
 Go on.
 
@@ -1374,23 +1320,14 @@ A fix for this specific problem?
 Speaker 1: 00:38:29
 
 Yeah, it was not in there.
-So why
 
-Speaker 0: 00:38:32
+Speaker 0: 00:38:31
 
-do you even bring it up?
+So why do you even bring it up?
 
 Speaker 1: 00:38:33
 
-Because I was curious whether the great consensus cleanup
-
-Speaker 0: 00:38:35
-
-would
-
-Speaker 1: 00:38:36
-
-clean this up.
+Because I was curious whether the great consensus cleanup would clean this up.
 
 Speaker 0: 00:38:36
 
@@ -1423,11 +1360,10 @@ Yeah, well, I mean, sounds to me like SegWit is the easy way to go, and also...
 
 Speaker 1: 00:38:57
 
-We have a few decades
+We have a few decades to figure this out.
 
-Speaker 0: 00:38:58
+Speaker 0: 00:39:00
 
-to figure this out.
 We can think about it a while.
 All right, thanks, Jors.
 

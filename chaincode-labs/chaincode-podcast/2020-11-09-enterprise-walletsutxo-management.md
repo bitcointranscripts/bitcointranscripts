@@ -6,6 +6,7 @@ tags: ["utxo","wallet","fee management","coin selection","fees","segwit","taproo
 speakers: ["Mark Erhardt"]
 categories: ["Podcast"]
 date: 2020-11-09
+episode: 8
 ---
 
 Mark Erhardt: 00:00:00

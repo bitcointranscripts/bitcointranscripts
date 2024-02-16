@@ -2,10 +2,12 @@
 title: "Block Building"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Block-Building-with-Clara-and-Murch---Episode-18-e1dmitu
-tags: ['research']
-speakers: ['Clara Shikhelman', 'Mark Erhardt']
+tags: ['research', 'mining','bitcoin-core']
+speakers: ['Clara Shikhelman']
 categories: ['podcast']
 date: 2022-02-01
+episode: 18
+summary: "Postdoc Researcher Clara joins Murch to discuss their block building research. They cover their proposal, which outlines suggested improvements to the current Bitcoin Core block building algorithm using candidate sets"
 ---
 Speaker 0: 00:00:00
 
@@ -30,11 +32,10 @@ We're so excited to have you here.
 Speaker 2: 00:00:43
 
 I'm also very excited to be here.
-And
 
-Speaker 1: 00:00:46
+Speaker 1: 00:00:45
 
-today we're going to talk about block building.
+And today we're going to talk about block building.
 So maybe you could start us off a little bit about, Claire, how did you get to Chaincode?
 Like, what are you doing here?
 What are you spending your time on?
@@ -257,11 +258,10 @@ Because Segwit's been active.
 
 Speaker 2: 00:11:14
 
-Yay Segwit!
+Yay Segwit! Right.
 
-Speaker 0: 00:11:16
+Speaker 0: 00:11:17
 
-Right.
 Note that this ancestor set fee rate for the transaction does include all the ancestors and the transaction itself.
 The observation here is that the transaction with the highest ancestor set fee rate, including that and all of its ancestors will be the most profitable next step in building a block template.
 
@@ -470,14 +470,7 @@ Speaker 0: 00:27:55
 You have a very good guess, but I think especially for transactions that were just broadcast on the network, you don't have a good guess whether the miner has it already included in the block template.
 Even if the mining pool operator has seen it already, they give out templates to all the mining machines only whenever the mining machine has exhausted the template they're working on.
 So even for like 10-20 seconds after the pool operator has built a new block template, the machine will maybe still work on traversing the extra non-space for that block, for the previous block template.
-
-Speaker 3: 00:28:35
-
-So there is a little
-
-Speaker 0: 00:28:36
-
-bit of a latency between a new block template being created and that actually being what mining machines work on, so you could be missing some transactions and that would not be a huge problem.
+So there is a little bit of a latency between a new block template being created and that actually being what mining machines work on, so you could be missing some transactions and that would not be a huge problem.
 You would just not have them in your look ahead block template.
 But you might also have some transactions that are precious to the miner, because say they also have a wallet business on the side and they prioritize the transactions of their customers or they have an accelerator service and include some transactions that are actually not in the very top of the mempool but maybe would be in the lookahead block.
 So even if you have the lookahead block, you can't really use it until you've evaluated that it has no conflicts with the previously found block.
@@ -650,11 +643,10 @@ And that would be the incentive for miners to switch over and start using the ne
 Speaker 2: 00:42:08
 
 We already see this sort of crowdsourcing behavior in the mempool.
-So
 
-Speaker 0: 00:42:15
+Speaker 0: 00:42:14
 
-We found a few interesting clusters when we were analyzing mempool snapshots.
+So We found a few interesting clusters when we were analyzing mempool snapshots.
 We have this data set where we have when a new block came in, the node took a snapshot of what was currently in their mempool and we can then compare what we see in the block and what was available for block building and that's what we use to build our alternative blockchains in this Monte Carlo approach and We found some curious clusters already with over 800 transactions where there's a lot of children spending from the same parent and stuff like that.
 So there is some of that going on already, but currently of course mining doesn't exploit that so people aren't doing it on purpose.
 It's just people that are, I don't know, withdrawing from a broker and the broker has such a volume that they pay out to a hundred people at the same time and five of them are immediately try to spend it at the same time but they're competing with each other because it's getting evaluated as five separate child pays for parent attempts whereas we would be evaluating it as a single descendants pay for ancestor constellation.
@@ -693,13 +685,9 @@ So it's kind of fun how it works out.
 We want people to build the best possible blocks and we want for example to have these constellations of multiple children to bump a parent together and it turns out that if a minor does find these constellations they also make more money.
 So if there's only one miner out of 20 that adopts this, they'll make more money than the other 19, and other miners will also adopt this new algorithm.
 
-Speaker 0: 00:45:58
-
-That's a
-
 Speaker 1: 00:45:58
 
-nice incentive.
+That's a nice incentive.
 And then my other question is, obviously, mining is a cutthroat game.
 And so when you're talking about the speed of serving these block templates and these optimized blocks, where's the edge of speed versus the optimization of the fees?
 
@@ -729,15 +717,13 @@ Speaker 3: 00:47:39
 
 Well, careful asking around a little bit what might need to happen for such an algorithm to get integrated into Bitcoin Core seems to indicate that there might be either a need to make it run separate and The architectural challenge of that would be easy, or if you want to integrate it properly into the mempool.
 Mempool is such a central part of how everything fits together in Bitcoin Core, that would be a pretty invasive change.
-So I'm a little bearish on the timeline okay
 
-Speaker 1: 00:48:22
+Speaker 1: 00:48:16
 
-all right very good well thank you both for your time enjoy the conversation and we'll look forward to getting Claire on soon again thanks
+So I'm a little bearish on the timeline okay all right very good well thank you both for your time enjoy the conversation and we'll look forward to getting Claire on soon again thanks Thanks.
 
 Speaker 3: 00:48:30
 
-Thanks.
 Thanks.
 
 Speaker 2: 00:48:45

@@ -3,16 +3,14 @@ title: Reproducible Builds
 transcript_by: Michael Folkson
 speakers: ['Carl Dong']
 categories: ['podcast']
-tag: ['build systems']
+tags: ['reproducible-builds']
 date: 2020-11-30
 media: https://www.youtube.com/watch?v=Y5Gfli3x6rI
+episode: 9
 ---
-
-Location: Chaincode Labs Podcast (Episode 9 and 10)
-
 Carl Dong’s presentation at Breaking Bitcoin 2019 on “Bitcoin Build System Security”: https://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
 
-# Intro
+## Intro
 
 Adam Jonas (AJ): Welcome to the Chaincode podcast Carl.
 
@@ -30,7 +28,7 @@ AJ: We’ll try not to take it too personally. Today we are going to talk about 
 
 CD: I’ve been doing a lot of stuff. I’ve been continuing my work on reproducible builds and the build system in general. And also I’ve been getting into the codebase, looking at some cleanup stuff that can be done and what features they may lead to.
 
-# Reproducible builds
+## Reproducible builds
 
 Bitcoin Build System Security presentation: https://diyhpl.us/wiki/transcripts/breaking-bitcoin/2019/bitcoin-build-system/
 
@@ -90,7 +88,7 @@ AJ: Reproducibly as one might say.
 
 M: Upgrading systems and architectures
 
-# Reproducibility bug in GCC
+## Reproducibility bug in GCC
 
 CD: Reproducibly, portably, nicely is another thing. This arises out of the fact that build systems, another word I guess for a build system is a toolchain. It is literally what it is. It is a chain of tools that are supposed to work together nicely. Unfortunately they always overpromise and underdeliver. Tools say “We support this and that” and then they actually support this set of features on the code path that is tested most. On all the other code paths nothing works properly. It is a mess. I had to go into a lot of this. I remember clearly when I was doing Windows builds the hardest thing was to get the builds to be reproducible. We had the builds working but we had these massive diffs between the outputs of the bitcoind’s that were built and we had no idea where they were coming from. We took a look inside of the binaries but they were just a mess. The approach that I took was look at where it is in the binary and sometimes you can figure it out. Sometimes you can’t. What you have to do is compare to intermediate byproducts of the build system. For example if it is an archive file, archive files are made by archiving all of the object files. If the archived files are different across two builds let’s look at the object files. Are they different? All of these things play into whether it is reproducible or not. The end result of doing Windows builds was that we found that GCC8 had a reproducibility bug in how it built [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/faq.html). libstdc++ is the standard C++ library with things like vectors and all of that. It is shipped inside GCC. When you build GCC it will build libstdc++ because we configure GCC to enable C++ as a language. `libstdc++.a` as in the archive file was non-reproducible but all the object files that make up this archive file were reproducible. It was actually the ordering of these object files inside this archive file that was non-reproducible. If you think about an archive file as multiple object files. When you put objects in an archive file sometimes some build scripts will use `find`. They will do find all `.o` files and put them in an archive file. That is actually wrong. That is non-reproducible because when you do `find` the order of objects that find returns is dependent on whatever the filesystem wants. They can return whatever the filesystem wants to return and so you have to sort the output of that.
 
@@ -114,11 +112,11 @@ M: It sounds like there is a broader movement of more projects caring about that
 
 CD: That bug from before, it is even trickier than I described. After GCC8, in GCC9 they fixed this in GCC9’s own version of libtool. When I was doing this at first I didn’t realize that they had already fixed it because this was fixed upstream in libtool in version 2.7.7b. In GCC when they pulled it into their codebase they pulled 2.7.7a and then fixed it locally without pulling the change from upstream. It was just a mess. People vendoring different stuff and getting it fixed. That is all described on the reproducible builds wiki entry that I put in there just in case it helps somebody in the future. That was a big thing.
 
-# Look at what Debian does
+## Look at what Debian does
 
 CD: One of the things that I learned that might be helpful for anybody else who tries to do reproducible build stuff or just build systems in general, is look at what Debian does. So many times I’ve been stumped by this reproducibility thing or this build error for days and then I think “Let’s go to the Debian repos.” The Debian folks have all the patches that they apply, the build scripts that they do, they are all in Git. I go there and I look at their patches and I have a lot of patches that fix reproducibility issues. That’s why it was so helpful for me that we started out with Gitian. Gitian uses Ubuntu which is based on Debian. I had a source of truth to look to. For example when we were making Windows builds reproducible. A toolchain consists of a lot of main things. The main part is a compiler driver like GCC along with all of its binaries and Binutils which are the utilities that you use to manipulate binaries. It is one of those things where it is supposed to work together but sometimes it doesn’t. Binutils is supposed to be compiler driver agnostic but it really isn’t. In Binutils, in recent releases, they haven’t added a configure flag which enables determinism in their tools. This is again great. This is a community wide effort to get things to be deterministic and reproducible. However, when you turn that flag on in configure it makes all the tools deterministic but in the LD linker specifically for Windows builds it doesn’t turn on the determinism flag. This is the overarching context, things are supposed to work well together but they don’t. This is one of the things that I’ve found in Debian’s repository that was extremely helpful. That flag makes sure when we link together it sets… Deterministic mostly means the user ID is zero, the group ID is zero. Those are the easy things to leak into non-determinism. The timestamp is one or something reasonable. And deterministic ordering. One of the things about sorting find output or sorting directory listings or sorting symbols or anything like that is it is actually not enough to use sort. Because sort is locale dependent so you actually need to set your locale to a deterministic locale before you sort. This is again one of those things where it is like “Why doesn’t it work the way I want it to?” We found another DLL tool which is Windows specific. The files it outputs have prefixes tied to that tool’s process ID. Its PID is the prefix of all the files that it outputs. It makes no sense at all to me but that’s the way it works. That’s the source of non-determinism. Your PID could be any number basically. Obviously things like gendef which includes a date in its output which is a big source of non-determinism. It is like whacking things, making them work.
 
-# User choice in their security model
+## User choice in their security model
 
 M: Turtles all the way down. We talked about how multiple people might reproduce a build in order to provide the binary on say bitcoincore.org or bitcoin.org and other sources from which you might retrieve Bitcoin. They start out with the same inputs with the release tag, built from source, using Gitian or Guix, set up to have a shared toolchain that is reproducible as well. Then they arrive at the same package. Should everybody do that at home? Is that something that every single Bitcoin user should do?
 
@@ -130,7 +128,7 @@ CD: Exactly, that’s mostly the maintainers. But it could be run by anybody.
 
 M: There are a few people that aren’t even code contributors that have figured out how to run the Gitian builds and they add their signatures to it. That is great actually because they are not part of the developer cabal. You can still make the attestation that you took a specific release tag of code and ran it on a separate machine and you got the hash I guess is what you end up comparing. While you might not have compared the code itself you compare the process and you show that you could reproduce the building step of it. Then there are other people who might review the code and attest that the code is fine in a release. People sign off on a release before it is tagged.
 
-# Making the process accessible
+## Making the process accessible
 
 CD: This also ties back to another thing that I wanted to talk about which was we want to make this process accessible to as many people as possible. For example, when I first started to try to run Gitian builds it was extremely hard because I think there were two tested paths that were on Ubuntu and Fedora and I was running Arch Linux at the time. Things would break. I was on LXC version 3 and the instructions were for LXC version 2. The only thing that worked was Docker on Ubuntu. That was the only easy path that worked. Being able to get it on Guix where everything runs on a Docker container, where we have pinned everything. For example we use the nicely named Guix time machine command to roll the system to a specific commit of the Guix distro. It is really nice for being able to reproduce bugs, being able to look at that. I think the requirements for Guix are a sane Linux kernel with namespaces enabled which has been enabled since a few LTS versions ago. I think that will be very nice. I hope that with that we can encourage who run different distros, not only Debian based distros, to be able to run this build for themselves. They don’t need to attest publicly in Gitian but they can if they want to. They can prove to themselves.
 
@@ -138,7 +136,7 @@ AJ: Those hashes. How are they produced? Is this just a hash over the binary?
 
 CD: Yes. They are just a very simple SHA256sum over the binary.
 
-# Mac OS X Toolchain & SDK and cross-compiling
+## Mac OS X Toolchain & SDK and cross-compiling
 
 AJ: Do you want to talk about your Mac toolchain?
 
@@ -148,7 +146,7 @@ AJ: That’s how Steve Jobs wanted it.
 
 CD: Exactly. The way we got this to work, this was before I was around, one of Cory (Fields) first contributions, making Mac OS cross compiles work for Bitcoin. The way that he got that to work was to lock everything down. As in what we use for our toolchain is a version of Clang that is downloaded from llvm.org, a trusted binary, that targets the Ubuntu distro. That means you can’t run cross builds from things like Arch Linux or any other thing to Mac OS. He pinned it at this specific binary because when Apple releases a SDK it couples this SDK with this specific Clang and toolchain. When he was doing this they released the SDK and the SDK was pinned to Clang 3.x. Throughout the years when we bump our Apple SDK we also bump the toolchain to match that. That’s how normally our thing is constructed. Let’s talk about how we do this. I don’t think cross building for Mac is something that most developers have done just because it is such a big hassle. One of the things I wanted to do when making Guix build for Mac OS’ system is make it less of a hassle. It really doesn’t need to be that way. The SDK, one of the things about making the SDK is that you need an Apple developer account. There is no URL to wget the SDK. You need to go in and you need to have the authentication cookie set so that you can download this SDK. We download this SDK and it is in a proprietary format that ends with `.xip`. It is a zip file but not with a `z`. The way to extract that is we need to compile a program called xar and a program called pbzx. Then pipe this `xip` file through xar and then pbzx and then cpio. Finally we get an Xcode.app that is like multiple gigabytes which is not the best. From that Xcode.app we have documentation on what I would call our incantations. I feel like these are not invocations, these are incantations because we are compiling with Clang with fixed rpaths. These are incantations to extract the SDK from this Xcode.app. Then we can use this SDK with our toolchain. There are so many ways to fail in every step in this incantation. It is incredible. One of the things I did with this was to Python all the things. What I found is that the Python standard library, this is one of the great things about programming languages that are universally available with a big standard library, is that Python has this great standard library that is more flexible than command line tools. I tried to write this in bash first because I love bash but I found it to be much easier in Python. I wrote a Python script that was able to extract SDKs in the right way and then Cory contributed a part of this. He was able to extract the `.xip` file without needing to compile xar or pbzx. He did some nice bit fiddling. Now it is just two Python scripts that you run on one file and there is no compiling this application with Clang and having to do all of this stuff which was really great. That has simplified a lot of stuff. Hopefully it will lead to many more people being able to do this process in the future.
 
-# Core contributors to the build system
+## Core contributors to the build system
 
 AJ: There are not a lot of you doing this process of review and looking at your PRs. It is you, fanquake, Cory, Sjors is doing a decent amount of testing. How do we move forward when there are four people who we are all relying on.
 
@@ -164,88 +162,4 @@ CD: Exactly. The fact that this is reproducible in the other sense, as in reprod
 
 M: Even if you don’t program or don’t want to go through the codebase yourself you could pay someone to review what exactly is in the release tag and to do the reproducible build. Basically do an audit.
 
-# Part 2
-
-AJ: Do you want to talk about isolating the consensus engine?
-
-CD: Sure. More recently I have dove into the codebase a little bit more. That started with looking at Matt’s async ProcessNewBlock [work](https://github.com/bitcoin/bitcoin/pull/16175) and playing around with that. Learning from that how do you make a change to the core engine of Bitcoin Core.
-
-# Matt Corallo’s PR on async ProcessNewBlock
-
-https://github.com/bitcoin/bitcoin/pull/16175
-
-AJ: Can you talk about that PR a little bit and what it would do?
-
-CD: Basically right now when we process new blocks from a peer we block everything. That is bad in software that is supposed to be performant and also it is bad for embedded systems or systems with less processing power. The basic gist of it is that asynchronous ProcessNewBlock allows us to be able to process new blocks somewhat asynchronously. I looked into that a little bit. One of the things that I had talked about with Matt and Cory a few years ago was very interesting, which was modularizing our consensus engine. Capturing what our consensus engine is right now, as ugly as it is with warts and all, and seeing if we can perhaps physically separate it from the rest of the codebase. Obviously those are much future steps.
-
-# Carl’s De-globalize ChainstateManager PR
-
-PR: https://github.com/bitcoin/bitcoin/pull/20158
-
-PR review club on this PR: https://bitcoincore.reviews/20158
-
-CD: Right now one of the major problems with the consensus engine is that we have so much global mutable state. Having global mutable state is really bad because when you are looking at a function you consider its inputs to just be its parameters and what class it is a member of but you don’t consider that global mutable state can influence the execution of functions and macros greatly. For something as important as our consensus code we should probably modularize it so that it relies on less and less global mutable state and be able to work nicely. After we have modularized it perhaps we can separate it out. Perhaps into a library like people said about libconsensus a few years ago. Perhaps do something else. That is the first step. This is why recently I’ve been working on this PR to de-globalize a class called ChainstateManager. ChainstateManager was introduced as this manager class that manages multiple chain states. Basically chain states encapsulate our view of a chain and the UTXO set and blocks.
-
-M: For example if there are stale blocks or two competing chain tips, they would have multiple chain states.
-
-CD: That would be one chain state, one chain but two block trees. I think that is what it is. I will explain why there might be multiple chain states. We have multiple chain states in the case of [assumeutxo](https://github.com/jamesob/assumeutxo-docs/tree/2019-04-proposal/proposal). ChainstateManager was introduced for assumeutxo where we will have multiple chain states that are progressing. The active one may switch between one or the other. That’s why we have a chain state. If you look at what our consensus engine encompasses, it encompasses ChainstateManager and all of the objects that it owns and references. That is what I am trying to encapsulate and trying to de-globalize. Because before we had this one `gchainman` that was referenced from everywhere in the codebase. That was getting to be a mess. Also one of the things that is interesting for people who are into the nitty gritty of C++ is that global variables cannot be instantiated with things that are determined after main starts. That is why we have had some very weird ways to initialize these global variables where we initialize an empty one globally and then in main we want to make sure as soon as possible to initialize it with actual contents. There is like a three, four phase initialization. We also initialize it differently between bitcoind and bitcoin-qt and our test code. The combination of having a three, four phase initialization and those means you can have discrepancies between the test code and the main code when you are initializing stuff. It leads to a lot of bugs that are very hard to reason about.
-
-M: Because it is so hard to reproduce.
-
-CD: Yes exactly.
-
-AJ: Nice callback. This is a lot of code that you are changing. The PR that we are talking about is PR 20158. It is 82 commits and 800 lines of sensitive code. How do you test this? How do you structure this for code review? How do you make sure that we’re not breaking Bitcoin?
-
-CD: The mantra stands of getting it to work in a hacky way is very easy but getting it to work in a nice way… Especially if you are needing review from others, it is much harder. I had this working a long time ago but because of how much of the code I was touching I needed to structure it in a way so that every commit made a lot of sense. The review experience that I wanted for this was for reviewers to be able to look at every commit and be like “This is trivial. This is trivial. This is trivial.” By the end they’re like “I just reviewed a bunch of trivial commits.” In aggregate they do something big. This is why I have this piece of paper at home, I think I threw it in the trash, I should have kept it, where I mapped out all the calls within our codebase that relates to ChainstateManager. It looked like a tree and I started pruning the tree from the bottom up. From the bottom these are direct references to `gchainman`. I just said “If you are referencing gchainman then you should probably take in a parameter that is chainman and use that instead.” I basically pruned the tree all the way up and each commit prunes one node all the way up to the top where I remove `gchainman` and all of its things. In the middle I saw that one of the things that could lead to problems is the notion of the active chain state. Most of these functions, what they reach for is the chainman’s active chain state. Now you are passing in a parameter that is chain state but you have no idea which chain state this is. This could be the active one, this could be the inactive one. To make sure I put in a lot of review only assertions. I put in all these assertions that were like “Let’s assert that this chain state that is being passed in is the active chain state.” I put all of these in so that reviewers can run the code themselves and see that there was no assertion error and nothing failed. In the end I have one quick [scripted diff](https://github.com/bitcoin/bitcoin/blob/dca80ffb45fcc8e6eedb6dc481d500dedab4248b/doc/developer-notes.md#scripted-diffs) to get all of them out. Scripted diffs were really helpful during this, especially with large refactors like this where you’re like “I’m inserting a parameter. Oh no it is being called from 30 different places.” Being able to do a scripted diff is not only easier for me to rebase, it is also easier for reviewers because they can just look at the sed script and be like “Ok that makes sense.”
-
-# Consensus engine
-
-AJ: Can I ask some more meta questions? This path is littered with dead bodies of people who have tried to encapsulate our consensus engine. First of all consensus engine seems very deliberate. That phrase is not something that I’ve heard before. Where does that come from?
-
-CD: It comes from the need to not say “consensus critical code.” Because people have a very specific understanding of consensus critical code and people have very differing understandings of consensus critical code. Is LevelDB part of consensus critical code? They might have different answers.
-
-AJ: It was in [0.8](https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki)
-
-CD: Exactly. That’s for sure.
-
-AJ: The reason that is funny?
-
-CD: In 0.8 there was an upgrade from BDB to LevelDB which caused a bug because of how many locks were available in each one, the limitation on locking. It is very deliberate. I get this phrase from Matt who texted it to me. I was like “I’m going to steal that.” Our consensus code as it is right now, everything it depends on and all the auxiliary things that are needed for it to work, whether it be caching or storage or whatever. That is very deliberate phrasing that I’m using to make sure that I’m being correct with how I say things.
-
-# Past efforts such as Jorge Timon’s libconsensus project
-
-https://github.com/bitcoin/bitcoin/projects/6
-
-AJ: So you are slowly teasing this out and unbundling it. Can you tell us about others who have made past efforts? It sounds like Matt started doing this.
-
-CD: Going chronologically backwards, the last effort was Matt’s effort. Matt is the one who introduced `CChainstate`. Before `CChainstate` there was a primordial soup of global mutable state in validation. He brought a lot of that together into `CChainstate`. That was supposed to be exported as a libbitcoinconsensus but that never happened. That is one of the first steps and I stand on the shoulders of giants. These are advancements that make my job much easier right now. I think before that Jorge had a big project to complete our libbitcoinconsensus into something that is more whole and encapsulates the consensus engine. Perhaps a good piece of context to give right now is that we do have a libbitcoinconsensus right now. It only does script verification, it doesn’t do anything else. It doesn’t connect blocks, it doesn’t do anything else. It is not a full consensus engine. Again to me these are lofty goals that are pretty far away. I want to look at what are some concrete steps where we can move towards a world where it is possible to do something like that to complete a library. What are some concrete steps that would benefit our codebase right now that move towards that. I think it is foolish to try to think about what would a perfect libbitcoinconsensus look like? Or what would perfect organization look like? I think it is good to take concrete steps that benefit us and then take a look from there. Once we get there we might have very different understandings of how the codebase should work. Maybe we discover new things and we take it a step at a time and learn and talk and discuss.
-
-AJ: Wouldn’t multiple implementations come in handy for this? We have to copy the bugs as they are part of consensus. Wouldn’t that be handy right now to have other people who are thinking about this and trying to isolate what consensus is?
-
-CD: One of the understandings of an [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) is the bug interface. Bitcoin is unique in that it is a consensus system. You almost want to replicate the bugs. It sounds very weird to say. That’s basically what it is.
-
-AJ: Not want to, you have to.
-
-CD: Exactly. You have to replicate the bugs. This is very far off but if someday, maybe in the next ten years, we get to a place where we have a library that other applications can pull in and get a consensus engine that matches exactly with Bitcoin Core’s, then they can implement alternative implementations of Bitcoin without fear of being out of sync with the main chain. They can implement alternative implementations with different policies, mempool policies, different priorities.
-
-M: One of the things that were introduced by previous alternative implementations was that you could serve unconfirmed transactions or serve parts of the UTXO set. Or think about block explorers. Bitcoin Core does not have a full transaction index by default. You can start it with `txindex` but then you still don’t have address balances for example.
-
-CD: Exactly. This touches on one of the things that I felt was very compelling to me when I thought more about why I want to do this. It is a technical solution to a somewhat social problem. It can’t be that people try to cram all of the features that they want into Bitcoin Core. That is unmaintainable and not what we want. We don’t want a hundred different indexes to serve every single need. But if people have drastically different ways that they want to implement their node, having a library is so much more useful than telling them to fork the codebase. Forking the codebase means a major rebase every few years, that is not a practical thing to do.
-
-M: And you inherit all the design decisions. You have to move away from that. Bitcoin Core’s codebase is rather quirky.
-
-CD: For sure.
-
-AJ: Another lesson of why not to put a proof of concept into production.
-
-M: It kind of works.
-
-AJ: It does. Any parting shots? Any other things to talk about in terms of the modularizing?
-
-CD: I would encourage anyone listening to this to review the code. I have made it so that every commit is somewhat trivial to review. The more involved ones have very long commit messages to describe why it is the way it is.
-
-M: Does a full node need to have a wallet?
-
-CD: Maybe not.
-
-AJ: It certainly doesn’t need a GUI. Thank you for joining us. We have been trying for months to get you on. Appreciate the conversation.
+CD: Exactly, that's exactly what it is.

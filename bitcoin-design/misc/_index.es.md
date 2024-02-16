@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Design
+title: Miscellaneous
 ---
 
 {{< childpages >}}
