@@ -1,13 +1,11 @@
 ---
-title: Guía de Bitcoin Core
+title: Reunión introductoria de la GUI de Bitcoin Core
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 tag: ['bitcoin-diseño']
 date: 2020-08-20
+aliases: ['/es/bitcoin-design/2020-08-20-bitcoin-core-gui']
 ---
-
-Name: Reunión introductoria de la GUI de Bitcoin Core
-
 Tema: Enlace del orden del día publicado a continuación
 
 Ubicación: Diseño de Bitcoin (en línea)
@@ -18,7 +16,7 @@ Agenda: https://github.com/BitcoinDesign/Meta/issues/8
 
 La conversación se ha anonimizado por defecto para proteger la identidad de los participantes. Aquellos que han expresado su preferencia por que se atribuyan sus comentarios son atribuidos. Si usted ha participado y quiere que sus comentarios sean atribuidos, póngase en contacto con nosotros.
 
-# Revisión de Bitcoin Core PR
+## Revisión de Bitcoin Core PR
 
 Parece que hay mucho que aprender sobre los antecedentes de Bitcoin Core, cómo se hace el trabajo, lo que debería ser, lo que es ahora mismo, por qué es como es ahora mismo. Tengo curiosidad por aprender más allí.
 
@@ -36,7 +34,7 @@ Soy razonablemente técnico, quiero jugar con la construcción. No estoy seguro 
 
 Lo que me gusta es que en Figma o Sketch, o cualquier otra herramienta de diseño que tengamos, se reproduce uno a uno el software real. Primero se hace un diseño antes del desarrollo y, cuando éste llega, todos los problemas de la interfaz de usuario se han discutido y resuelto. Esto simplifica el desarrollo porque no hay que construir la interfaz de usuario de una manera y luego rehacerla. Ya has resuelto muchas de esas cosas. Cómo deben llamarse, dónde están ubicados y todas estas cosas. Requiere un montón de coordinación porque en la fase inicial de planificación y discusión, es donde se hace el estilo y el diseño inicial. Al principio es más trabajo de planificación y coordinación, pero luego la implementación se hace más fácil. Eso facilita la colaboración de los diseñadores.
 
-# Diseñando para múltiples sistemas operativos
+## Diseñando para múltiples sistemas operativos
 
 Como codificador, ¿cómo van a soportar los diseñadores múltiples... la misma UI para MacOS, Windows, Linux?
 
@@ -62,7 +60,7 @@ La interfaz gráfica de Bitcoin Core utiliza el framework multiplataforma Qt, qu
 
 ¿Eso es sólo para el onboarding? Cuando llegas a la GUI real no estás usando las plantillas por defecto, ¿verdad?
 
-# Haciendo cambios en la GUI de Bitcoin Core
+## Haciendo cambios en la GUI de Bitcoin Core
 
 Está el desarrollo de características, está la capa de estilo visual y luego está la mejora o el trabajo en la capa de interacción. El flujo de incorporación que no añade ninguna característica, pero hace que la interacción sea más agradable para los nuevos usuarios para configurar las cosas. Entonces, acabamos de hablar del estilo visual. Personalmente, mi impresión es que el estilo visual es mucho menos prioritario que el nivel de características y algunos de los niveles de interacción. El nivel de características es la creación de nuevas cosas y en el nivel de interacción yo incluiría la introducción de algunas funcionalidades que existen en la API o en la línea de comandos y llevarlas a la GUI. Incluiría eso en la mejora del modelo de interacción. ¿Es correcta mi suposición?
 
@@ -84,7 +82,7 @@ Estaría encantado de ayudar en las pruebas si pudiera poner en marcha el materi
 
 Creo que es plausible ponerlo en marcha haciendo eso. No creo que sea difícil construir PRs. Volviendo a la discusión de la revisión no tienes que firmar todo. No es como si al hacer una revisión tuvieras que decir "Este código está bien. No hay errores. He mirado todos los aspectos de este RP y todo está bien". Puedes escoger un aspecto y decir "En la cuestión del diseño pienso esto pero no he revisado el código, no he hecho esto". La revisión es realmente importante y todo el valor que podamos obtener de cualquier conjunto de habilidades que alguien tenga, mejor. Ciertamente hay un valor que puedes aportar con tu experiencia.
 
-# Conseguir el consenso para los cambios de la interfaz gráfica de usuario
+## Conseguir el consenso para los cambios de la interfaz gráfica de usuario
 
 En el consenso, cuando trabajaba en la GUI de Monero lo que ocurría a menudo es que yo sugería algo a los desarrolladores y ellos decían "No nos lo digas a nosotros, díselo a la comunidad". Así que lo publiqué en Reddit con 150.000 personas. Con las características más grandes, las cosas más nuevas, el primer paso era lanzarlo al público para ver lo que todo el mundo piensa. Luego, sólo después, el equipo trabajaría en las cosas. Podían dar su opinión, pero la idea era ponerlo en el espacio público. Hubo un proceso en el que las ideas se probaron primero en una fase pública y se ajustaron las buenas. En un momento dado, pasaban al desarrollo real. Podía desarrollarse una pequeña cosa o el conjunto, tal vez se tardaba medio año más o menos. Era un proceso bastante lento. Si lo miras en una línea de tiempo más larga, es mucho más fácil para mucha gente pensar en ello y crear un consenso sobre algo. El consenso no se produce a nivel de relaciones públicas y asuntos, pero es un proceso más largo. ¿Está ocurriendo algo así?
 
@@ -100,7 +98,7 @@ Si te gusta hacerlo entonces hazlo. Si no crees que sea la mejor manera de obten
 
 Podría ser que el asistente de diez pasos viva en el espacio público y se discuta mucho mientras se implementa el primer paso. El resto se sigue discutiendo y cuando llega el momento de implementar el paso 2 o 3 ya se ha discutido mucho.
 
-# Interacción de los diseñadores con los desarrolladores de Core
+## Interacción de los diseñadores con los desarrolladores de Core
 
 Tengo una pregunta sobre la interacción entre el diseñador y el codificador. He visto bocetos en Figma pero como codificador necesito el tamaño de la ventana y los píxeles. ¿La ventana es fija? Necesito los nombres de las fuentes y el tamaño de las mismas. ¿Cómo funcionan estas interacciones? ¿Debería un diseñador abrir un tema en nuestro repositorio para describir estos elementos que el codificador debería implementar?
 
@@ -126,7 +124,7 @@ Fanquake hace mucho trabajo en el sistema de construcción, Luke hace mucho trab
 
 Lo que pasó en Monero fue interesante. Yo sólo tenía un diseño por diversión, lo publiqué en Reddit. Un desarrollador que había querido ayudar en la GUI de Monero, lo cogió y dijo "quiero implementar esto". Para él fue una oportunidad de unirse al proyecto porque ese era su interés pero no tenía algo con lo que trabajar. Coincidimos en este diseño. Era su manera de empezar. Tal vez si hubiera cosas interesantes por ahí que estuvieran abiertas y disponibles, entonces tal vez hubiera alguien que estuviera interesado en entrar. Poner las cosas ahí fuera a veces es todo lo que se necesita. No está garantizado. También tengo un diseño en el repositorio de Monero que ha estado allí durante un año y nadie ha hecho nada con él, lo que también está bien. A veces puede funcionar así.
 
-# Usuarios objetivo
+## Usuarios objetivo
 
 En los diseños actuales de Figma ([aquí](https://www.figma.com/file/FJ02rY3m8V9ZCDvoXjW39W/Bitcoin-Core?node-id=281%3A0) y [aquí](https://www.figma.com/file/FJ02rY3m8V9ZCDvoXjW39W/Bitcoin-Core?node-id=462%3A655)) ¿qué tipo de usuario teníais en mente para esto?
 

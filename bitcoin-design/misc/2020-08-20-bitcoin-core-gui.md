@@ -1,12 +1,10 @@
 ---
-title: Bitcoin Core Gui
+title: Bitcoin Core GUI introductory meeting
 transcript_by: Michael Folkson
-tag: ['bitcoin-design']
+tags: ['bitcoin-core']
 date: 2020-08-20
+aliases: ['/bitcoin-design/2020-08-20-bitcoin-core-gui']
 ---
-
-Name: Bitcoin Core GUI introductory meeting
-
 Topic: Agenda link posted below
 
 Location: Bitcoin Design (online)
@@ -17,7 +15,7 @@ Agenda: https://github.com/BitcoinDesign/Meta/issues/8
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
-# Bitcoin Core PR review
+## Bitcoin Core PR review
 
 There seems to be a lot to learn about the background of Bitcoin Core, how work gets done, what it should be, what it is right now, why it is the way it is right now. I am curious to learn more there.
 
@@ -35,7 +33,7 @@ I’m reasonably technical, I do want to play around with building it. I am not 
 
 What I like is that in Figma or Sketch or whatever design tool we have there is a one-to-one reproduction of the actual live software. You do a design first ahead of development and by the time development comes around all the UI issues are discussed and resolved. It simplifies the development because you don’t have to build the UI one way and then redo it again. You have already resolved a lot of those things. What they should be called, where they are located and all this stuff. It does require a whole bunch of coordination because in the initial planning and discussion phase, that’s where you do initial styling and design. It is more planning work and coordination work at first but then the implementation becomes easier. That makes it easier for designers to collaborate to.
 
-# Designing for multiple operating systems
+## Designing for multiple operating systems
 
 As a coder how are you as designers going to support multiple… the same UI for MacOS, Windows, Linux?
 
@@ -61,7 +59,7 @@ Bitcoin Core GUI uses the multiplatform framework Qt which was chosen because of
 
 That’s only for the onboarding? When you get to the actual GUI you aren’t using the default templates right?
 
-# Making changes to the Bitcoin Core GUI
+## Making changes to the Bitcoin Core GUI
 
 There is feature development, there is the visual styling layer and then there is the improving or working on the interaction layer. Onboarding flow that doesn’t add any features but makes the interaction nicer for new users to set things up. Then just now we were talking about visual styling. Personally my impression is that the visual styling is much lower priority than the feature level and some of the interaction level. The feature level is creating new things and in the interaction level I would include introducing some functionality that exists in the API or the command line and bringing that into the GUI. Include that in improving the interaction model. Is my assumption there accurate?
 
@@ -83,7 +81,7 @@ I would be happy to help testing if I could just get the development stuff runni
 
 I think it is plausible to get you up and running doing that. I don’t think it is hard to build PRs. Going back to the review discussion you don’t have to sign off on everything. It is not like when you do a review you need to say “This code is fine. There are no bugs. I have looked at every aspect of this PR and it is all fine.” You can just pick one aspect and say “On the design question I think this but I haven’t reviewed the code, I haven’t done this.” Review is really important and whatever value we can get from whatever skillset somebody has the better. There is certainly value you can bring with your background.
 
-# Getting consensus for GUI changes
+## Getting consensus for GUI changes
 
 On consensus, when I worked on the Monero GUI what would often happen is that I would suggest something to the developers and they would say “Don’t tell us, tell the community.” So I posted on Reddit with 150,000 people. With bigger features, newer things the first step was to throw it out to the public to see what everybody thinks. Then afterwards only later would the team work on things. They could give their input but the idea was to put it into the public space. There was a process where the ideas were first tested in a public phase and the good ones were adjusted. At some point later they trickled into actual development. A small thing might be developed or the whole thing, maybe it took half a year or so. It was a pretty slow process. If you look at it on a longer timeline it is much easier for many people to think about it and build consensus on something. Consensus doesn’t happen at the PR and Issue level but it is a longer process. Is there anything like that happening?
 
@@ -99,7 +97,7 @@ If you like doing that then do that. If you don’t think that is the best way t
 
 It could be that the ten step wizard lives in the public space and gets discussed a lot while the first step is being implemented. The rest is still being discussed and by the time it comes to implementing Step 2 or 3 then there was already a lot of discussion.
 
-# Designers interacting with Core developers
+## Designers interacting with Core developers
 
 I have a question on interaction between designer and coder. I saw sketches on Figma but as a coder I need window size and pixels. Is the window fixed? I need font names, font size. How do these interactions work? Should a designer open an issue in our repo to describe these elements the coder should implement?
 
@@ -125,7 +123,7 @@ Fanquake does a lot of work on the build system, Luke does a lot of work outside
 
 What happened in Monero was interesting. I had just a design for fun, I posted it on Reddit. A developer who had been wanting to help on the Monero GUI, he picked it up and said “I want to implement this.” For him it was an opportunity to join the project because that was his interest but he didn’t have something to work with. We matched up on this design. It was his way to get started. Maybe if there were some interesting things out there that are open and up for grabs then maybe there is someone who is interested in coming in. Putting things out there sometimes is all that is needed. It is not guaranteed. I also have a design in the Monero repo that has been there for one year and nobody has done anything with it which is fine too. Sometimes it can work out that way.
 
-# Targeted users
+## Targeted users
 
 On the current Figma designs ([here](https://www.figma.com/file/FJ02rY3m8V9ZCDvoXjW39W/Bitcoin-Core?node-id=281%3A0) and [here](https://www.figma.com/file/FJ02rY3m8V9ZCDvoXjW39W/Bitcoin-Core?node-id=462%3A655)) what kind of user did you have in mind for this?
 

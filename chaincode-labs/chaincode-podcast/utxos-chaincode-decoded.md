@@ -4,8 +4,10 @@ transcript_by: sasa-buklijas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=sNLbg9BUV4Y
 tags: ["bitcoin-core"]
 speakers: ["Adam Jonas", "John Newbery"]
-categories: ["Podcast"]
-date: 2020-12-01
+categories: ["podcast"]
+date: 2020-02-26
+episode: 5
+aliases: ['/chaincode-labs/chaincode-podcast/utxos-chaincode-decoded']
 ---
 ## Introduction
 

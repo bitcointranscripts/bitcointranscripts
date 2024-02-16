@@ -6,21 +6,19 @@ tags: ['lightning']
 speakers: ['Matt Corallo']
 date: 2021-05-12
 media: https://podcast.chaincode.com/2021/05/12/matt-corallo-13.html
+episode: 13
 ---
-
-Location: Chaincode Labs Podcast (Episode 13)
-
 Matt Corallo presentation at Advancing Bitcoin 2019: <https://btctranscripts.com/advancing-bitcoin/2019/2019-02-07-matt-corallo-rust-lightning/>
 
 rust-lightning repo: <https://github.com/rust-bitcoin/rust-lightning>
 
-# Intro
+## Intro
 
 Adam Jonas (AJ): Welcome back to the office Matt, glad to have you back on the podcast.
 
 Matt Corallo (MC): Thank you.
 
-# Update on LDK
+## Update on LDK
 
 AJ: We are going to start with LDK. Where are we at? What is going on?
 
@@ -28,7 +26,7 @@ MC: If listeners are aware LDK kind of grew out of a project that I started a fe
 
 Murch (M): Let me try to catch up everyone else. You are building a library in Rust and the idea is to make it usable for all sorts of other languages as if it were a native library for those.
 
-# Language bindings challenges
+## Language bindings challenges
 
 MC: Yeah, the core is written in Rust. Then we have different sample implementations, we have a number of different interfaces for it. It is a Lightning library not a Lightning node. Things like how you write the seed to disk, how it gets backed up, that kind of stuff is all dynamic and pluggable, there is just an interface for it. You have to do that yourself but then of course we have a number of different implementations that you might use off the shelf or sample implementations in a number of different languages. We invested an inordinate amount of time into building language binding support that are in a state we are really proud of. It took a lot more work than I ever guessed. It turns out all the language binding systems that exist that we came across in our research are really designed to stub out a function. You have some complicated function that takes a long time to run and you simplify it into a pure function probably, you stub that out into C or some other language and you call that from whatever your host language is. They are really not designed for a full object orientated interface with interfaces that the user might be able to plug into and that kind of thing. And especially, as far as I’m aware, no language binding systems except from the one that we built are really designed to map different memory models. LDK and rust-lightning are written in Rust and Rust has very clear object ownership semantics. Something owns an object, you can optionally have but you generally don’t have a lot of references flying around. You have references for short periods but they have clear ownership semantics. This being the exact opposite of languages like Java, Javascript etc where everything is basically an atomic reference counted pointer, a shared pointer in C++ terminology. It is assumed that everything just takes another reference count to this object. There is no clear ownership semantics anywhere so you really have to do a lot of work to map. If you have some Rust library and then you have Java objects that own these things you really have to map those ownership semantics correctly and do a lot of work with the [FFI](https://en.m.wikipedia.org/wiki/Foreign_function_interface) boundaries. We spent a lot of time building out stuff like that but we are really happy with where we ended up. We do have pretty good Java bindings now, we have Swift bindings, we have C and C++ bindings, we are working on Javascript bindings. We are happy with where we ended up but it took about a full year to really get there.
 
@@ -36,13 +34,13 @@ AJ: Is there ongoing maintenance as you upgrade the library? Is that something t
 
 MC: Yeah over the last few months we’ve gone from having demo applications written in Rust to users working on integrating LDK into their system in other languages, at least in a few cases in Java. When you get the first external people playing with a rich API you find all kinds of stuff. “This API is confusing, this isn’t clear. The easy way to do this is wrong.” We have been doing a lot of work on that front as well over the past number of months to really clean up the API and make sure that the easy way to do things, or the way that you might naively do things if you don’t read the docs closely enough, is also the right way and the safe way to use the library. We have been doing a lot of work on that front. Of course also keeping up with the Lightning spec that changes although slowly. We have a lot of things that we are trying to juggle right now.
 
-# Interoperability of Lightning
+## Interoperability of Lightning
 
 AJ: How do you think about interoperability with the other projects because that is clearly something that is an issue in the ecosystem?
 
 MC: It is interesting, the core of Lightning is pretty robustly interoperable across all the implementations that exist or that are actively maintained. But the edges have ended up very fragmented. There are brand names for all the different things. If you look at [zero value invoices](https://suredbits.com/zero-amount-invoices/). You generate an invoice with a zero value attached to it and some clients will treat that as any value. You enter a value or the sender enters a value. Some clients treat that as zero, some clients fail. That is one thing. There are a lot of these little “features” that have been added to different clients and they may be interoperable, they may not be interoperable. It depends on the UX and what client you are using. There are some issues that have cropped up there but at the same time this is also the experimentation phase of Lightning. You have different clients doing different things and experimenting. Then slowly things go back to the spec. You can look at the push payment stuff, I think the common brand name for it is [keysend](https://bitcoinops.org/en/topics/spontaneous-payments/). That is something that was experimented on, there are a few different designs. A number of clients have adopted now a common implementation of that but also it will probably be replaced with something else that is a little better that ends up in the formal spec. Part of it is that it is kind of a crappy UX right now in a lot of ways and also it is just these features that slowly migrate from experimentation and weird cross compatibility issues towards the spec. People agreeing with “We tested this, we’ve experimented with it, we’ve found something that works really well and now it is in the spec.” Because we’ve had so many other priorities we haven’t been as active in the experimentation area. That is also something where we have a fairly flexible API and you can do a lot of that experimentation at the next level. If you take LDK and use it to build a map you can experiment a lot with different potential Lightning features. That is something we haven’t spent as much time on as we probably should. We will get back to that as we round out some of the language binding features we’ve been working on. We have been keeping up with the spec.
 
-# LDK features
+## LDK features
 
 M: How does it plugin? You run a Bitcoin Core or some other Bitcoin software? You have your business logic somewhere else? That makes calls to the LDK library? You mentioned you have a broad and evolving interface? Have you thought about versioning that already because eventually Lightning will evolve to? How does that work?
 
@@ -62,7 +60,7 @@ MC: That is another area where we have an API, we don’t demand anything specif
 
 M: Bring your own blockchain data.
 
-# Bitcoin not having a spec versus Lightning having a spec
+## Bitcoin not having a spec versus Lightning having a spec
 
 AJ: You have spent most of your time in Bitcoin working on Bitcoin Core. Now you have transitioned to a different kind of project that has a spec which people open PRs to and have conversations about which is very different. Then there is also this environment of multiple implementations as opposed to one reference implementation that dominates the network. What are the pros and cons of that dynamic?
 
@@ -72,7 +70,7 @@ AJ: It might be interpreting that English in a very different way? Does that hap
 
 MC: Yeah and that has also been an issue for Lightning in the past. It has got a lot better but there were a number of issues early on, you still find things occasionally, where if two implementations disagree on the current state of a channel or the rules about what you can and can’t do in a channel they will force close. That can be a relatively critical denial of service vulnerability in the network. If you imagine c-lightning and lnd have understood the English of the spec slightly differently in some context and think the rules of the game are slightly different then a user might be able to forward a payment across any c-lightning to lnd or lnd to c-lightning channel and cause them to close the channel and potentially split the network. Split the Lightning Network such that no one can relay a payment between c-lighting and lnd or lnd and eclair or Electrum and eclair or whatever. It is fraught with these kinds of issues and it is something that is really tough to get right. There are a lot of things to do with Lightning. It is written, there’s this thing, it is working but there are a lot of edge cases and a lot of things that need tuning. Part of it can’t really be tuned until there is real world experience with people running this thing and people testing it, something that is being gathered. Part of it is a lot of work and really hard. Issues like this where you have to make sure that nodes exactly agree on what is going on, maybe you can reduce the likelihood of these kinds of issues with countermeasure strategies. It is a very different world from Bitcoin Core in that sense. With Bitcoin Core you are really worried about issues where you might split the network between old versions and new versions of Bitcoin Core but at least it is the same codebase so you can review an individual patch and say “This in the patch might split between something that does have this patch and something that doesn’t have this patch.” Not “I have to go read some Go code, some C code, some Rust code and some Python code and make sure that they are all doing the same thing.”
 
-# The state of the Lightning Network
+## The state of the Lightning Network
 
 AJ: I guess you have been talking about different vulnerabilities and different denial of service in Lightning. What is the state of the network now? Have we moved beyond reckless? How robust is this?
 
@@ -82,7 +80,7 @@ AJ: Are you observing cheaters on the network? Is that happening?
 
 MC: I think for the most part we haven’t seen much. Certainly occasionally someone might restore an old backup and accidentally broadcast an old state. I am not aware of any cases where someone has performed any of these kinds of long range, poor fee estimation attacks that anchor and such prevents. They are much more complicated, there is lower hanging fruit. I don’t think we have seen that. We also haven’t seen [channel jamming](https://bitcoinops.org/en/topics/channel-jamming-attacks/). It is something that gets talked about on the mailing list left and right and academic papers written about it. It is not like it is not out there. It is not like people aren’t aware of the potential for someone to denial of service attack the Lightning Network. But for the most part we haven’t seen it because why bother? It is a problem, people are working on fixing it. If it did happen payments would get stuck for a while and then people would work around it a little bit. But also it is one of these griefing attack denial of service things. There are a lot of issues to solve but it is also not something that is harming the immediate UX that people have today.
 
-# Eltoo and the punishment dynamic
+## Eltoo and the punishment dynamic
 
 AJ: I wanted to go back to the punishment dynamic. Clearly with [eltoo](https://bitcoinops.org/en/topics/eltoo/) those dynamics change. It doesn’t look like eltoo is going to be around the corner given how hard soft forks are. I would be interested in your take on punishment versus a little bit more forgiving dynamic with eltoo.
 
@@ -92,7 +90,7 @@ M: How would you even push for a punishment in eltoo where update transactions a
 
 MC: That is a good question. I don’t know offhand. It is possible you might have to reintroduce asymmetry, I don’t know if that is necessarily the worst thing in the world. The big win with eltoo is of course is you don’t have to store old states. You can just store one state. Having to store two states is not very different from one state. As long as you don’t have to store n states. Maybe there is a way to do that, I haven’t dug into that kind of thing. You have to have something. You can’t just say “If someone broadcasts an old state the counterparty has to spend onchain fees and a CPFP in order to get to the latest state”. Because again onchain fees can be non-trivial and you are exposed to some amount there. You have to do something but it is unclear exactly how you would require that.
 
-# Regulatory and KYC issues
+## Regulatory and KYC issues
 
 M: I have seen a few times the argument be made that you sort of have to trust your channel partners. They infer from that that the network is going to trend more towards trust relationships, at least for the major channels. It may become overlaid with KYC. Is that something that concerns you?
 
@@ -102,7 +100,7 @@ M: This week there was an [update](https://www.fatf-gafi.org/media/fatf/document
 
 MC: It is not something that we are worried about but it is also not our domain. It is more the domain of advocates. I think it is understood that that’s not really the current policy. As far as I’m aware no regulators have tried to push that as policy. There is uncertainty about it because regulators haven’t clarified that that’s absolutely never going to happen. That’s a question for policy advocates less us developers or potentially even lawyers. There’s a lot of issues with where the puck is going for regulation around Bitcoin payments. A lot of users, certainly almost everyone gets into Bitcoin by buying Bitcoin on some centralized platform. Those are really obvious chokepoints. That’s the key area that people like FATF are going after and targeting. Basically bringing any other named entity that they can under those kinds of regulations. There’s a world where they try to argue that any Lightning node is also bound by those regulations. That’s not really materially different from them arguing that every node is bound by those regulations or that anyone who has a wallet is bound by regulations that say they have to KYC their counterparty. From a technical perspective they can argue that but it doesn’t really change anything. If you are a Coinbase or someone and you are running a Lightning node and FATF says “Any payment you send or receive period including on your Lightning node needs KYC”, that is a problem in of itself. Lightning is unrelated. You see things like decentralized mixing services, regulators would love to shut that down but at the end of the day it is just this pure technical thing that exists. You can’t really go after that directly. The same is true for Lightning, the same is true for Bitcoin broadly, the same is true for decentralized mixers. The real question is what kind of KYC requirements are they going to try to apply to anyone making a Bitcoin transaction and to these exchanges that people buy from? Are you going to be able to withdraw your coins onto your own wallet without having to KYC anyone you ever transact with? Those are big questions. How that applies to Lightning, it could apply to Lightning but so what? It applies to everything and that is a problem in of itself. It is not specific to Lightning.
 
-# Future of LDK
+## Future of LDK
 
 AJ: Where does LDK go from here?
 
