@@ -2,12 +2,11 @@
 title: "Bitcoin Core 24.0"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=3UfrB7_ZOx0
-tags: ["bitcoin-core"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+tags: ["bitcoin-core","rbf","coin-selection","descriptors","miniscript"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-10-07
 ---
-
 ## Intro
 
 Aaron van Wirdum: 00:00:20
@@ -150,7 +149,7 @@ But we, Sjors and Aaron, we made the selection.
 
 Sjors Provoost: 00:04:59
 
-Yeah, I mean, you can look at all the commits, so all the atomic changes that go into a release, and there could be a thousand of them, but most of them are very boring, or at least they are very boring unless you are really into details of how compilers work or into cleaning up code for the sake of cleaning it up.
+You can look at all the commits, so all the atomic changes that go into a release, and there could be a thousand of them, but most of them are very boring, or at least they are very boring unless you are really into details of how compilers work or into cleaning up code for the sake of cleaning it up.
 So there's a lot of changes that are just not very interesting to discuss, although they are important and they should be, they are being, you know, they always get reviewed because any of those changes could of course be a really scary thing.
 
 Aaron van Wirdum: 00:05:29
@@ -158,7 +157,7 @@ Aaron van Wirdum: 00:05:29
 Yeah, I'm just saying we made a selection of some of the changes that we think are probably the most interesting
 to you, our dear listener.
 
-## Peer-to-Peer network changes
+## Download headers from peers
 
 Sjors Provoost: 00:05:38
 
@@ -181,11 +180,10 @@ Peer-to-peer networking.
 Aaron van Wirdum: 00:05:57
 
 Let's move on.
-So it says that there's a change and you're gonna explain to me what this is That's the format of the podcast in case you forgot.
-It says download headers from peers so the downloading from Downloading of headers from peers has been reworked.
+So it says that there's a change and you're gonna explain to me what this is.
+That's the format of the podcast in case you forgot.
+It says download headers from peers so downloading of headers from peers has been reworked.
 That's right somehow.
-
-## Download headers from peers
 
 Sjors Provoost: 00:06:18
 
@@ -205,9 +203,7 @@ Well, the amount of proof of work follows in the hash.
 Aaron van Wirdum: 00:06:52
 
 It's basically hash plus some extra info.
-Yes.
 So it's not the whole block.
-Okay.
 So first you start downloading not the whole block, or not all of the blocks, but you start downloading the headers, right?
 
 Sjors Provoost: 00:07:04
@@ -223,7 +219,7 @@ Okay, that was already the case.
 So even in Bitcoin Core 23, you would already start with downloading only the headers and only later the blocks.
 Okay, so what has changed?
 
-## Download headers twice
+### Download headers twice
 
 Sjors Provoost: 00:07:41
 
@@ -298,7 +294,7 @@ Aaron van Wirdum: 00:10:05
 
 Just to be very clear, what is a checkpoint?
 
-## Checkpoints
+### Checkpoints
 
 Sjors Provoost: 00:10:07
 
@@ -316,7 +312,6 @@ That's the worst case.
 Aaron van Wirdum: 00:10:34
 
 Well, that should be after some of, well
-
 
 Sjors Provoost: 00:10:37
 
@@ -365,7 +360,6 @@ This means it does not use any of your disk space.
 Then if you see enough work at the end, if you checked all the headers and you see the proof of work is enough, it's the longest chain, Then you ask the peer, hey, can you send them again, please?
 And you download them again.
 
-
 Aaron van Wirdum: 00:12:21
 
 I think I mentioned yesterday when we went over this in our preparation, this is kind of how my attention span usually works.
@@ -413,7 +407,7 @@ So every 50,000 headers you store a zero or a one depending on the contents of t
 That is very little information but it turns out that it's actually quite difficult for anybody to fake that information.
 So it's for anybody to create fake headers that do match your checksum, even though it's a very small checksum.
 
-## checksums
+### checksums
 
 Aaron van Wirdum: 00:13:36
 
@@ -422,13 +416,6 @@ Right, yeah, a checksum is essentially you add up all kinds of numbers and you g
 Sjors Provoost: 00:13:46
 
 If you add up the same numbers you're gonna get the same checksum.
-
-Aaron van Wirdum: 00:13:48
-
-Right, exactly.
-
-Sjors Provoost: 00:13:49
-
 So if you have 50,000 headers, you add all those up together, then you get either a one or a zero.
 If you change any of the headers, well, you'll either get a one or a zero, but it might be a different one.
 Now that, of course, is a 50-50 chance.
@@ -477,15 +464,17 @@ Sjors Provoost: 00:15:36
 
 Yeah, and of course, you know, there has to be some additional discussion to make sure that that was really the last thing we needed, that the checkpoints are not also protecting against something else that we forgot about.
 
+## Full-RBF
+
 Aaron van Wirdum: 00:15:44
 
 Okay, well, that's the peer-to-peer part of Bitcoin 24.
-Then the next point is Mempool uses full RBF now or can use full RBF?
+Then the next point is Mempool uses full-RBF now or can use full RBF?
 
 Sjors Provoost: 00:15:57
 
-Can use full RBF.
-So it used to be that if You wanted, I think we've done an episode about replace by fee, RBF.
+Can use full-RBF.
+So it used to be that if you wanted, I think we've done an episode about replace by fee, RBF.
 So I think the listeners should listen to that.
 
 Aaron van Wirdum: 00:16:06
@@ -523,7 +512,8 @@ Sjors Provoost: 00:17:54
 I don't know how long that idea has been around because the idea of being stuck in a mempool, that concept didn't even exist until 2015 or 2016.
 That was never a problem.
 
-## RBF summary
+### RBF summary
+
 Aaron van Wirdum: 00:18:04
 
 But it was the flag was introduced around that time and definitely in the context of that, that was the debate.
@@ -540,7 +530,7 @@ Yeah, I think that if you turn this setting on, then the flag does no longer hav
 
 Aaron van Wirdum: 00:18:56
 
-So in my case if so far I was running a Bitcoin Core node let's say what was the previous one 23 of course So far I was running Bitcoin Core 23 and then my node would not forward a transaction even if it had a higher fee and it conflicted with the previous transaction.
+So in my case, if so far I was running Bitcoin Core 23, my node would not forward a transaction even if it had a higher fee and it conflicted with the previous transaction.
 It would not do that.
 But now with Bitcoin 24 I can switch the setting and now it will actually forward that transaction.
 
@@ -550,7 +540,7 @@ Yeah, I think that's it and it basically means that if you're relying on this op
 
 Aaron van Wirdum: 00:19:37
 
-Yeah, well, I mean, it was almost, well, I don't know about almost certainly, but there's definitely a much bigger chance that a conflict in a transaction will make it to a miner now, right?
+I don't know about almost certainly, but there's definitely a much bigger chance that a conflict in a transaction will make it to a miner now, right?
 Because I think there only needs to be a relatively small amount of notes on the network that actually do it for a transaction to just find its way over the entire network.
 
 Sjors Provoost: 00:19:54
@@ -560,12 +550,11 @@ There was a patch by Peter Todd which was pretty small and you could use that to
 So there's already some nodes doing it.
 Now there's more, presumably.
 
-## Merchants
+### Merchants
 
 Aaron van Wirdum: 00:21:06
 
 So does this mean that some merchants are going to be unhappy?
-
 
 Sjors Provoost: 00:21:12
 
@@ -600,7 +589,6 @@ So it's not entirely without trade-offs.
 
 ## Descriptor Wallet Migration
 
-
 Aaron van Wirdum: 00:22:39
 
 All right, let's move on to the third point.
@@ -615,8 +603,7 @@ It used to be just a bag of keys and then given a private key, the wallet would 
 I think in one of the first episodes we explained what scripts are.
 
 But the simplest scripts is just that anybody with the public key can spend this coin.
-The second simplest script is that anybody with the hash of the public key, like, you know, can spend the coin or anybody with the, you know, the public key for which the hash is blah, blah, blah.
-Yeah.
+The second simplest script is that anybody with the hash of the public key can spend the coin or anybody with the public key for which the hash is blah, blah, blah.
 And then there was, but then later on came SegWit and that created another two variations of how you could spend the coins.
 Because you had the address of BC1, and you had the address that looked like a P2SH address with SegWit wrapped in it.
 So the wallet just became a giant mess.
@@ -659,10 +646,6 @@ Sjors Provoost: 00:24:45
 And for the simplest cases, you know, if you created a wallet in the last couple years and you didn't do anything super fancy, very complicated, multi-sig setups, whatever, this will work.
 If you did do something complicated, then please test it.
 It'll make a backup, but maybe make your own backup too.
-
-
-Sjors Provoost: 00:25:01
-
 And we'd like to see bug reports basically, because maybe you have some super complicated wallet setup that does not migrate properly.
 
 Aaron van Wirdum: 00:25:09
@@ -702,7 +685,7 @@ I mean, descriptors have already been used to allow taproot.
 So if you wanted to use Taproot, you either need to create a whole new wallet or you need to migrate to a descriptor wallet and then add Taproot to it.
 So there is that too.
 
-## Mini Script Support
+## Miniscript Support
 
 Aaron van Wirdum: 00:26:04
 
@@ -710,10 +693,8 @@ Okay, there's been moving on to the fourth point, Miniscript support.
 Has Miniscript support been added to Bitcoin Core?
 
 Sjors Provoost: 00:26:11
+
 Yes, in very limited fashion.
-
-Sjors Provoost: 00:26:13
-
 I think we have done a whole episode about Miniscript, but it basically lets you do very advanced scripting systems.
 So something like I want to spend with two keys or I want two signatures or after five years I want one signature Or if somebody has the pre-image of this SHA-256 hash, then they only need one signature plus whatever.
 Miniscript allows you to do fairly arbitrarily complicated things.
@@ -722,9 +703,7 @@ You cannot spend from it yet.
 
 Aaron van Wirdum: 00:26:48
 
-I mean, the other way to put it, the simple way to put it maybe is mini script allows for smart contracting type of stuff, right?
-
-## Mini Script
+I mean, the other way to put it, the simple way to put it maybe is miniscript allows for smart contracting type of stuff, right?
 
 Sjors Provoost: 00:26:59
 
@@ -768,13 +747,6 @@ No, well, yeah, in order to create the miniscript itself, you will need separate
 There is a miniscript compiler, but you can write miniscript by hand too if you want to.
 So, in principle, you don't need a second piece of software.
 Now, the idea is that a future version of Bitcoin Core will also be able to sign for it.
-
-Aaron van Wirdum: 00:28:16
-
-Sure, yeah.
-
-Sjors Provoost: 00:28:17
-
 But you shouldn't count on that, you shouldn't use it until it does.
 
 Aaron van Wirdum: 00:28:21
@@ -894,7 +866,6 @@ Aaron van Wirdum: 00:32:08
 
 Yeah, it wouldn't really harm them in any way, would it?
 
-
 Sjors Provoost: 00:32:12
 
 I don't know, maybe people are using that service to send coins to some other service that does not like it when transactions are RBF.
@@ -935,7 +906,7 @@ It says that's what it says.
 Sjors Provoost: 00:32:52
 
 It's very cool.
-Yeah, so basically this has to do I mean I don't know the precise change, But the general problem is that when you're looking at the blockchain, you can kind of guess which address is changed and which address is not changed if you have an assumption about how the wallet picks coins.
+Yeah, so basically this has to do I mean I don't know the precise change, but the general problem is that when you're looking at the blockchain, you can kind of guess which address is changed and which address is not changed if you have an assumption about how the wallet picks coins.
 So if the wallet is very efficient, it will look for the smallest coin possible to spend and then it will create as little change as possible.
 But that means that generally when you see two outputs to a transaction, the biggest one is probably the amount that's being sent and the smallest one is probably the change.
 
@@ -953,7 +924,7 @@ Sjors Provoost: 00:33:44
 
 Let's say you, well, if there is, depends on how much there is available, right?
 But you're looking at the chain, so you don't know what was available.
-But if your wallet is looking at a bag of coins, it might, you know, start with the smallest coin saying, nah, it's not big enough.
+But if your wallet is looking at a bag of coins, it might start with the smallest coin saying, nah, it's not big enough.
 And then keep looking and then find one coin that's big enough.
 And then use that to spend it.
 And it doesn't really matter, but if you know what software the person was using based on some other fingerprinting aspects, you can start then.
@@ -967,20 +938,19 @@ Sjors Provoost: 00:34:22
 
 It's using a bunch of algorithms.
 
-
 Aaron van Wirdum: 00:34:25
 
 Oh several, and do you know which ones or no?
 
 Sjors Provoost: 00:34:26
 
-No, I should ask Merch.
-Okay.
+No, I should ask Murch.
 He wrote a whole thesis on it and implemented a bunch of things.
+One of them is-
 
 Aaron van Wirdum: 00:34:31
 
-But one of them is- Something changed.
+But something changed.
 
 Sjors Provoost: 00:34:33
 
@@ -1013,7 +983,7 @@ Okay, so we're basically gonna keep using the algorithm that we were using, or a
 
 Sjors Provoost: 00:35:59
 
-Yeah, I think That doesn't change.
+Yeah, I think that doesn't change.
 
 Aaron van Wirdum: 00:36:01
 
@@ -1058,6 +1028,7 @@ So there might be trade-offs that we're not completely clear on, but the general
 That's ultimately the benefit, right?
 
 Sjors Provoost: 00:37:09
+
 Yeah. I suppose one day we should do an episode about coin selection.
 This is also something I haven't specialized in.
 
@@ -1143,7 +1114,7 @@ And I think that makes for another successful episode, Sjors.
 
 Sjors Provoost: 00:39:45
 
-We'll see thank you for listening to bitcoin 
+We'll see thank you for listening to Bitcoin
 
 Aaron van Wirdum: 00:40:45
 
