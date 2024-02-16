@@ -4,8 +4,9 @@ transcript_by: Michael Folkson
 categories: ['podcast']
 tag: ['op_checktemplateverify']
 speakers: ['Jeremy Rubin']
-date: 2020-02-11
+date: 2020-01-30
 media: https://www.youtube.com/watch?v=Lqcpk5o1Y2E
+episode: 3
 ---
 CTV BIP review workshop transcript: <https://diyhpl.us/wiki/transcripts/ctv-bip-review-workshop/>
 

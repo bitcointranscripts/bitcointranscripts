@@ -3,11 +3,11 @@ title: "Payment Points"
 transcript_by: tvpeter via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Y2mTjCldRAU
 speakers: ["Nadav Kohen"]
-categories: ["Podcast"]
+categories: ["podcast"]
 tags: ["ptlc"]
 date: 2020-03-30
+episode: 7
 ---
-
 Nadav Kohen: 00:00:00
 
 Right now in the Lightning Network, if I were to make a payment every single hop along that route, they would know that they're on the same route, because every single HTLC uses the same hash. It's a bad privacy leak. It's actually a much worse privacy leak now that we have multi-path payments, because every single path along your multi-path payment uses the same hash as well.
