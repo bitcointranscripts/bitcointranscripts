@@ -1,17 +1,16 @@
 ---
 title: "Building Trustless Bridges"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: mulluke via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=M40yzuv6DNY
-tags: ['scalability', 'sidechains', 'statechains']
-speakers: ['John Light']
-categories: ['conference']
-date: 2023-04-29
-summary: "Many mechanisms have been created that enable users to lock BTC on the mainchain, transfer a claim on the BTC in some offchain system, and then later redeem the claim and take ownership of the underlying BTC. Colloquially known as \"bridges\", these mechanisms offer a diverse range of security and usability properties for users to choose from depending on their risk tolerance and cost preferences. This talk will give an overview of the different types of BTC bridges that exist, how they work, and how they can be improved."
+tags: ["scalability","sidechains","statechains"]
+speakers: ["John Light"]
+categories: ["conference"]
+date: 2023-04-28
 ---
 Thank you all for coming to my talk.
 As is titled, I'll be talking about how we can build trustless bridges for Bitcoin.
 So my name is John Light.
-I'm working on a project called Sovereign.
+I'm working on a project called Sovyrn.
 We actually utilize a bridge, the Rootstock-Cowpeg Bridge, because our project was built on a Rootstock side chain.
 And we're interested in how we can improve the quality of that bridge.
 Currently it's a federated bridge, we would like to upgrade to a trustless bridge.
