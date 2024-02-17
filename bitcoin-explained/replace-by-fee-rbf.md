@@ -229,7 +229,7 @@ So it's easier to double spend unconfirmed transactions with RBF.
 Sjors Provoost: 00:08:20
 
 Yeah, and this was of course a big discussion, say in 2015, 2016, when this, what we're going to talk about was introduced.
-You know, a lot of merchant applications would like to be able to just have an instant confirmation essentially, but it wouldn't be confirmed.
+A lot of merchant applications would like to be able to just have an instant confirmation essentially, but it wouldn't be confirmed.
 So that's inherently risky, but as I guess we'll explain, by default, if everybody played reasonably nice, it wasn't very risky.
 But of course, in Bitcoin, we think long term and we don't want to rely on something that just requires too much kumbaya.
 
@@ -749,12 +749,11 @@ Sjors Provoost: 00:28:29
 You can't even add your own RBF anymore because one of the descendants is now opting out.
 And there's various shenanigans like that.
 You could add a chain of 99 transactions to it, so you violate the 100 maximum rule.
-You add 99 transactions with a super low fee.
-Now the other side cannot add number 100 or 101.
+You add 99 transactions with a super low fee, now the other side cannot add number 100 or 101.
 And all sorts of annoying shenanigans that if you go to a Lightning Developer mailing list, it is full of this sort of pure headache.
 I don't think that just going for a full RBF would really solve that, because the other problem we talked about in another episode is just package relay in general.
 Like, what do you do with these if somebody wants to replace a chain of 100 transactions?
-Yeah, that kind of worm, I'm just going to leave it open, just saying that every now and then on the mailing list you'll see threads and people proposing different solutions and then people explaining why that doesn't work.
+That can of worms, I'm just going to leave it open, just saying that every now and then on the mailing list you'll see threads and people proposing different solutions and then people explaining why that doesn't work.
 
 ## The double spend that wasn't.
 
