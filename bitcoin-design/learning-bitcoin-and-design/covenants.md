@@ -3,7 +3,7 @@ title: "Covenants"
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=rCQKqe2XCqI
 tags: ["covenants","ux"]
-speakers: ["Christoph Ono","Michael Haase","Owen Kemeys"]
+speakers: ["Christoph Ono","Michael Haase","Owen Kemeys","Yashraj"]
 categories: ["video"]
 date: 2024-01-19
 ---
@@ -105,7 +105,7 @@ Awesome, thanks.
 
 Yashraj: 00:09:57
 
-Sorry Christoph, I just wanted to say thanks to Owen for joining in.
+Sorry Christof, I just wanted to say thanks to Owen for joining in.
 Those two Twitter threads are super duper useful.
 I am happy that I've gone through at least the first one a couple of times and I'm still not completely there.
 I think I have to read it again and try to do more research, but it was super, super, duper useful, man.
