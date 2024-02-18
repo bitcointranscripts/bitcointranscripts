@@ -1,17 +1,23 @@
 ---
 title: "Exploring P2P Hashrate Markets V2"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=IvfmfcAX9wU
-tags: ['mining']
-speakers: ['Nico Preti']
-categories: ['conference']
+tags: ["mining","p2p"]
+speakers: ["Nico Preti"]
+categories: ["conference"]
 date: 2023-04-29
-summary: "Using multisig to protect hashrate delivery so everyone can mine bitcoin again while figuring out how to pay out coinbase sats over lightning."
 ---
+
+## Introduction
+
 Hi everybody, I'm Nico.
-I work, I'm one of the co-founders at Wrigley, and we are a peer-to-peer hashrate market.
-The way this talk is kind of broken up is the first part we're going to go through a little bit how hash rate, what is hash rate, how the protocol for mining works across the network, and then a little bit on how hash rate markets have come around, and then finally how we can potentially do hash rate with root layer two, which is obviously given the kind of subject matter of the conference, apropos.
-Okay, so hash rate.
+I work, I'm one of the co-founders at Rigly, and we are a peer-to-peer hashrate market.
+The way this talk is kind of broken up is the first part we're going to go through what is hash rate, how the protocol for mining works across the network, and then a little bit on how hash rate markets have come around, and then finally how we can potentially do hash rate with root layer two, which is obviously given the kind of subject matter of the conference, apropos.
+
+
+## Hashrate
+
+Okay, so hashrate.
 What is hash rate?
 Well, it's the output of a hash function, right?
 A hash function you have a pre-image that gets passed into through a function that outputs an image, right?
@@ -65,9 +71,9 @@ And that gets calculated as part of the Merkle group.
 Okay, so what actually ends up changing there in the block header is the Merkle group.
 Cool, so if you guys didn't know, we usually measure any one miner today, you measure in tera hashes, right?
 So we're talking about a trillion there.
-Then if we're talking about a group of miners usually, so a mining farm, you measure in peta hashes.
-And then finally, when we're talking about network hash rate, we're talking about Exa hashes.
-So right now I think we're around 350 Exa hashes on the network.
+Then if we're talking about a group of miners usually, so a mining farm, you measure in Peta hashes.
+And then finally, when we're talking about network hashrate, we're talking about Exa hashes.
+So right now, I think we're around 350 Exa hashes on the network.
 Your standard miner today runs about 100 Tera hashes per second, and your average mining farm will be something like 10 Peta hashes.
 Cool.
 So the mining protocol.
@@ -76,7 +82,7 @@ It's a little bit more involved.
 So right now we use Stratum V1.
 You guys I'm sure have heard about Stratum V2, which is a very hot topic at the moment.
 It's a little bit beyond the scope of this talk.
-I'll go and I'll kind of add a few bits here and there that'll tell you what the main difference is in a couple slides, but just know that right now we're talking about strategy one.
+I'll go and I'll kind of add a few bits here and there that'll tell you what the main difference is in a couple slides, but just know that right now we're talking about Stratum V1.
 And mining and mining pools really are just TCP connections, right?
 So we open a TCP port with a pool that a miner communicates with, and that communication is JSON RPC, right?
 So it's really straightforward.
@@ -87,12 +93,12 @@ It's really simple.
 Here you see a little bit I gave some background of what's happening.
 So subscribe is the first thing that happens.
 It's like the miner says, hey, I'm here, I'm ready to start mining, please register me with your pool and give me a job ID.
-And it also starts to send over the extranauts info.
-So this is the really important part of Strato, That was actually an innovation back when they first started Stravins here in 2013, 2014.
-One of the guys who wrote Stravins here.
-But in any case, the extranauts information, that's where we're able to localize most of the work that a miner needs to do with the actual miner rather than having to go back and forth with the pool.
+And it also starts to send over the extra nons info.
+So, this is the really important part of Stratum, that was actually an innovation back when they first started here in 2013, 2014.
+One of the guys who wrote Stratum here.
+But anyways, the extra nons information, that's where we're able to localize most of the work that a miner needs to do with the actual miner rather than having to go back and forth with the pool.
 That would have a lot more overhead if every time you need to iterate through proof of work, you had to be talking, you had to be getting that information from the pool.
-So the pool sends over some extra non-sync that says, hey, start with this and then iterate on it.
+So, the pool sends over some extra nons info that says, hey, start with this and then iterate on it.
 And that basically is what you're sending over right at the beginning with subscribe.
 The other thing that happens is with authorization, you're basically getting your worker.
 So you can have an individual pool account, but you can have many workers, which usually corresponds to multiple different machines.
@@ -110,15 +116,15 @@ Once the miner knows what difficulty it needs to be mining at, it then needs to 
 And that information is what we just went over before.
 Which is basically this information.
 What's in the block header that I need to put together.
-And the main thing that the miner is going to individually be working on is this extra knots field.
-So the main bits that it gets, like I said in the subscription, is you get extra knots one and two.
-One is kind of a fixed variable, but then what needs to get iterated on by that specific miner is the length of that extra dots field.
-And then it has basically the beginning of the coinbase, which is just the address for where the mining pool payout needs to go, and the end of the point base, which is basically just extra information I've added.
-Meijer will iterate through this extra-nonce-2 field until it finds a target hash, or an output hash just below the target difficulty for that share.
-It does that by concatenating basically all these fields, hashing it together, and then we go and we create the Merkle root.
-So if In every block, the Coinbase transaction is always the leftmost leaf over here.
-So in order to calculate the Merkle root, this is the difference between strategy one and strategy two basically.
-In v1, you're not getting the full tree.
+And the main thing that the miner is going to individually be working on is this extra nonce field.
+So, the main bits that it gets, like I said in the subscription, is you get extra nonce one and two.
+One is kind of a fixed variable, but then what needs to get iterated on by that specific miner is the length of that extra nonce field.
+And then it has basically the beginning of the coinbase, which is just the address for where the mining pool payout needs to go, and the end of the coinbase, which is basically just extra information I've added.
+Miner will iterate through this `Extranonce2` field until it finds a target hash, or an output hash just below the target difficulty for that share.
+It does that by concatenating basically all these fields, hashing it together, and then we go, and we create the Merkle root.
+So, if in every block, the Coinbase transaction is always the leftmost leaf over here.
+So, in order to calculate the Merkle root, this is the difference between Stratum V1 and Stratum V2 two basically.
+In V1, you're not getting the full tree.
 You're only getting the branch, the branches that you need to get this root.
 So if this is the coinbase and what you're iterating on is only this transaction that you get, they give you this transaction, they give you this transaction to get here, and then They give you this transaction to get here, and then they give you this transaction to get here, this hash, not transactions, to get over here, and then this one to create the root.
 So you can go all the way up and create the Merkle root that is obviously the most important problem component of your service string.
@@ -127,22 +133,29 @@ So, once you have a Merkle root, you're basically iterating through time.
 You can add the rest of the components together.
 You hash that all together, and that's what goes to your mining software to get pushed out to the pool, right?
 And try and get paid for these shares, or try and submit shares that are under the target.
+
+
+## Mining Pools
+
 Cool, so mining pools.
-I'm not gonna go through this entire graph, But this is in essence how a mining pool is put together, and this will be on Revlit, so if you guys do want to refer to it, you can.
-Did you name that Kafka, or is that actually the name of some protocol?
+I'm not gonna go through this entire graph, but this is in essence how a mining pool is put together, and this will be on Revlit, so if you guys do want to refer to it, you can.
+**Someone from the Audience: ** *Did you name that Kafka, or is that actually the name of some protocol?*
 Oh, that's the name of, yeah, it's like a piece of software.
 No, I didn't name it.
-Some mining pools use Kafka, some others, it's arbitrary.
-But the essence of a mining pool is that you have a node that's connected to the network, it's scraping for those transactions, those transactions get put together then into a block, and that, well, It gets put together into the branches of the Merkle tree that we just described that then gets fed into a job Through the stratum server to the miners, right?
+**Someone from the Audience: ** *Some mining pools use Kafka, some others, it's arbitrary.*
+But the essence of a mining pool is that you have a node that's connected to the network, it's scraping for those transactions, those transactions get put together then into a block, and that, well, it gets put together into the branches of the Merkle tree that we just described that then gets fed into a job Through the stratum server to the miners, right?
 And then the miners work on that until they have they find a valid share And then hopefully one of those shares will be below, or one of those hashes will be below the network's difficulty, right?
 And then that's what gets pushed back to the nodes and gossip throughout the network.
-Payouts.
-So we have, there's a lot of different payout mechanisms for pools.
-The two main ones that are used are PPL and S, which is pay per last number of shares, and FPBS, which is full pay per share.
-The basic difference is that in PPL&S, which for example is what Brains uses, or formerly the Slush Pool, You're paid when the pool finds a block.
-So whenever the pool finds a block, there is a last number of shares that were issued prior to finding that block that then goes to the miners based on the work that they contributed for finding that specific block.
+
+
+## Payouts
+
+So, we have, there's a lot of different payout mechanisms for pools.
+The two main ones that are used are PPLNS, which is pay per last number of shares, and FPPS, which is full pay per share.
+The basic difference is that in PPLNS, which for example is what Braiins uses, or formerly the Slush Pool, you're paid when the pool finds a block.
+So, whenever the pool finds a block, there is a last number of shares that were issued prior to finding that block that then goes to the miners based on the work that they contributed for finding that specific block.
 Part of the reason for how they do the last number of shares is to avoid switching between different pools, so that you only are rewarded if you are mining on the block within that time period when the block was found.
-At PPS, you're guaranteed, basically, if the mining pool doesn't run out of money, to get paid per share.
+At FPPS, you're guaranteed, basically, if the mining pool doesn't run out of money, to get paid per share.
 So for whatever amount of shares you produce in that day, you will be paid out of their liquidity pool for the shares that you produce or you contribute to the pool that day.
 So it's independently of whether that pool finds blocks or not.
 So that obviously begs the question, well, what happens if the mining pool doesn't find any blocks in the day, or over two days, or three days, or what have you, then how do you pay out of the FPPS pool?
@@ -151,9 +164,8 @@ Whereas in PPL&S, you basically push that risk onto the miner.
 So you could be going days where the pool doesn't find any blocks, but the pool is only paying when they find blocks.
 So the pool itself doesn't actually take on that risk.
 Instead, the miners have to take on the risk of potentially not getting paid for multiple days.
-Has there been any cases of a mining pool running out?
+**Someone from the Audience: ** * Has there been any cases of a mining pool running out? That's what happens in that case.*
 Oh yeah.
-That's what happens in that case.
 They get bought out by a bigger mining pool.
 Or a financier comes in and basically takes over to pay the IOUs. So at Poolin, for example, They were commingling some of their mining pool funds with some of some DeFi investments they had made.
 So when 3Eros Capital went down, a lot of their funds for the pool were actually tied with that with that with those DeFi protocols.
@@ -188,7 +200,7 @@ So you end up having very high interest rates.
 Or you have kind of new loan kind of scenarios using something like ASIC-backed loans where people like Knighted, for example, that after the company goes bankrupt, they end up having all these ASICs that they don't have anywhere to put because the company went bankrupt.
 This happened last year a lot.
 I'm sure you guys heard the news.
-And basically there's no good way for miners to hedge on any of this risk.
+And basically, there's no good way for miners to hedge on any of this risk.
 So there's no real like liquid markets where a miner can try and lock in their revenue, which they shouldn't be making over the course of whatever, six months, a year, two, three years, given whatever miner they're running, and their logistic price, and say, hey, I know Bitcoin's price is going to do something, and I know that difficulty will probably go up and hash price will go down.
 So let me just like lock in a price on a depreciating curve, let's say two, 3% per month or 1% difficulty adjustment, whatever you wanna call it.
 And I'll just like lock that in, right?
@@ -239,6 +251,10 @@ Oh, wow, okay.
 That was fast.
 Well, I'm gonna run through this really quick.
 Thank you.
+
+
+## P2P Hashrates
+
 So our model is where you go, we have auctions set up in order to have price discovery.
 We have multi-sig where the payment to the seller of the hash rate, or the miner, only occurs after the hash rate's been delivered, and we deliver the hash rate through a proxy.
 So we're able to see exactly how much hash rate ends up getting delivered.
@@ -252,10 +268,14 @@ And finally, you can actually obviously remove your funds from your account mode
 So you have your hot dog shape.
 And the way in which we actually are able to ensure that that delivery is happening is that we have a proxy that we can read that the hash rate is getting delivered to that pool account.
 So we have a demo running right now, which you can sign up using this QR code, which I'll give another link to in a second.
-This is the basic flow of what's happening with our model, but basically we have an event-driven system where as soon as you make a payment to us, we'll switch a hash rate that is currently pointed elsewhere on our proxy straight to your guys' pool account, the pool account that you have registered with us and our database.
+This is the basic flow of what's happening with our model, but basically, we have an event-driven system where as soon as you make a payment to us, we'll switch a hash rate that is currently pointed elsewhere on our proxy straight to your guys' pool account, the pool account that you have registered with us and our database.
+
+
+## Lightning 
+
 Last notes on lightning, we want to be able to bring mining pool payouts over lightning.
 The issue with that is that, I mean this is, I don't know if you guys saw the Jade, basically it produces hashes.
-And the idea here is like, okay, well, we have 10 sats per terahash per second per hour.
+And the idea here is like, we have 10 sats per terahash per second per hour.
 How would you be able to stream that over lightning?
 Would that be possible?
 Could we use every spare or wasted jewel and convert that into hashes or gigahashes or whatever it may be?
@@ -273,11 +293,10 @@ The question here becomes where does the pool sit and how do you actually includ
 So this could be a situation where hopefully maybe splicing could come into play and you could actually splice in new UTXOs into existing channel balances.
 And then what actually ends up getting closed at the end is that marginal difference on what the contract, like the terms were, right?
 So if you, let's say as the buyer, wanted to make X percent of margin on that bet that you took, will that channel close and end up reflecting basically whether you were on the right side of the bet or the miner was on the right side of the bet on that futures curve, right?
-Finally another potentially easier way of doing this rather than going straight over Lightning, is to use a pedicool.
+Finally, another potentially easier way of doing this rather than going straight over Lightning, is to use a Fedipool.
 So, I'll leave it there.
 Yeah, we'd love to include, basically, the hash rate marking over Nostr.
 We think that'd be, it's really fertile ground to try and use static IDs to issue payouts.
 So, yeah.
 You guys wanna try out the demo, that's QR code.
 And we'll see you all there.
-Woo!
