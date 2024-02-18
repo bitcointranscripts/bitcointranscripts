@@ -2,14 +2,14 @@
 title: "Covenants"
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=rCQKqe2XCqI
-tags: ["covenants","ux"]
+tags: ["covenants","ux","op-checktemplateverify"]
 speakers: ["Christoph Ono","Michael Haase","Owen Kemeys","Yashraj","Mogashni"]
 categories: ["video"]
 date: 2024-01-19
 ---
 ## Introductions
 
-Christof Ono: 00:00:01
+Christoph Ono: 00:00:01
 
 Welcome to our first Learning Bitcoin and Design call of 2024.
 We haven't had one of these in a while, but we're picking them back up again.
@@ -22,7 +22,7 @@ Yashraj: 00:01:00
 
 River, I think River.
 
-Christof Ono: 00:01:01
+Christoph Ono: 00:01:01
 
 River?
 Okay, cool.
@@ -64,7 +64,7 @@ This is from three, four years back, but in the last few months, it has picked u
 My perspective on this is this is too technical and I love understanding all this stuff, but as a designer, I'm trying to think what are the use cases, what are the features that will help people.
 Not thinking from the programmability point of view, but scaling and privacy and those things, I think that is something that we require nowadays, in 2023, 2024, and I'm excited to see how it can help.
 
-Christof Ono: 00:06:04
+Christoph Ono: 00:06:04
 
 I think it would be helpful if we take a step all the way back, because like you said, there's this programmability stuff and the dev conversations.
 These all seem to be pretty much already sold in, they're not even talking about what this thing is for, they're just talking about how it can work.
@@ -99,13 +99,13 @@ But I don't think it's impossible.
 I started to think about this stuff before I even got invited to this meeting, and I have some ideas already, but I haven't had a chance to start working on them yet.
 Maybe I'll stop talking for a minute and let someone else speak.
 
-Christof Ono: 00:09:54
+Christoph Ono: 00:09:54
 
 Awesome, thanks.
 
 Yashraj: 00:09:57
 
-Sorry Christof, I just wanted to say thanks to Owen for joining in.
+Sorry Christoph, I just wanted to say thanks to Owen for joining in.
 Those two Twitter threads are super duper useful.
 I am happy that I've gone through at least the first one a couple of times and I'm still not completely there.
 I think I have to read it again and try to do more research, but it was super, super, duper useful, man.
@@ -118,7 +118,7 @@ Owen Kemeys: 00:10:25
 Yeah, no problem, and it felt like an area I could add some value to the conversation, because I recognized there was a lot of technical people that got how it worked, and a lot of normal people like us who just can't understand how this stuff is useful at all yet.
 I spent the last six months or so, just gradually learning and learning about use cases and things, so I could start visualizing how you can actually use this and explain it to people or we're never going to get anywhere with it.
 
-Christof Ono: 00:10:50
+Christoph Ono: 00:10:50
 
 In the Bitcoin Design guide, we have a whole section called "how it works", and it's very similar to what you put together there.
 It's private key management, like here's a whole thing about how multi-key systems work.
@@ -133,7 +133,7 @@ Yeah, sure.
 Take whatever you think is useful from it.
 I'm happy to comment if you want as well.
 
-Christof Ono: 00:11:47
+Christoph Ono: 00:11:47
 
 Awesome.
 I wanted to take one step further back.
@@ -164,7 +164,7 @@ But lots of people are very wary about opening Pandora's box and doing something
 I mean, none of this stuff is going to break Bitcoin, but some of the stuff is just too complex to rationalize about what its limitations are, whereas CTV is quite tightly scoped and also very well studied.
 It's been around many years now at this point.
 
-Christof Ono: 00:14:56
+Christoph Ono: 00:14:56
 
 So a question there around the two use cases that you found.
 So the multi-sig vault, I find that pretty easy and that seems like it's a user-facing thing.
@@ -188,7 +188,7 @@ I don't think it's that difficult, that's somewhat interesting.
 But the interesting ones are where the tree structure is built by someone else, and it allows you to be paid inside that tree.
 That's the really tricky one and that's where work needs to be applied.
 
-Christof Ono: 00:16:50
+Christoph Ono: 00:16:50
 
 Gotcha.
 Right now, if I want to do six months of rent payments, I can make six different transactions and batch them.
@@ -327,7 +327,7 @@ Yes, you need to make an on-chain transaction to move out of the cold channel co
 It doesn't have to be moved out to a regular private key address and then moved on again.
 You can chain these things together because they're all just addresses on-chain that don't need negotiation first.
 
-Christof Ono: 00:31:38
+Christoph Ono: 00:31:38
 
 Sounds like we have two potential user flows we could mock up here.
 One, the vault, and then the cold channel one.
@@ -341,7 +341,7 @@ It makes sense to start small.
 A cold channel is basically a vault structure on top of with a multi-sig as well, you've just reshuffled who the parties are, but everything is basically either starting time locks or using keys to spend a different way.
 It might make sense to come back to the tree stuff later on because it's just a bigger version of all the stuff that we're covering already.
 
-Christof Ono: 00:32:31
+Christoph Ono: 00:32:31
 
 Yeah, I tried to understand the tree stuff.
 There's a point where I just didn't get through it.
@@ -353,7 +353,7 @@ Mogashni: 00:32:53
 Yeah, I'm going to sit in the tree right now and enjoy the view.
 That's where I'm feeling the trees right now.
 
-Christof Ono: 00:33:00
+Christoph Ono: 00:33:00
 
 But what questions do you have?
 What can we clarify, or what would you like to?
@@ -363,7 +363,7 @@ Mogashni: 00:33:06
 I think if it's explained in an example, if someone gets paid, I would be more able to understand it if it's an actual mock-up in a user flow, it would make a bit more sense to me.
 I'm not, it's just not quite there.
 
-Christof Ono: 00:33:28
+Christoph Ono: 00:33:28
 
 Which part?
 
@@ -540,7 +540,7 @@ So we have a reference design Christoph, for exactly this use case.
 So somewhere we have exactly that, where you have a condition that if it's less than something, only one signature is enough.
 But these are, I mean, these are the practical use cases, I'd say.
 
-Christof Ono: 00:48:28
+Christoph Ono: 00:48:28
 
 No, that's a different, that's the assisted custody one, where you have an auto signer that signs transactions below a certain amount to facilitate low amount payments.
 Then for larger amounts that you're not comfortable with being automatically approved, that's where you need to get your extra keys out, but it's the same key configuration there's just the software kind of enforces them.
@@ -550,7 +550,7 @@ Owen Kemeys: 00:48:54
 So in that example you're trusting the signer software or the custody partner or whatever to not sign if they don't meet your terms.
 This is what CTV kind of does is it allows us to take things that were previously trusted and make the chain be the only trusted thing instead, which is obviously an improvement for many things.
 
-Christof Ono: 00:49:15
+Christoph Ono: 00:49:15
 
 Yeah, so I feel like I get some of this stuff, right?
 So I was just trying to diagram a few things here, I made lots of other diagrams here earlier today for explaining fiat over Lightning with synthetic fiat and all of this stuff.
@@ -599,7 +599,7 @@ So it's _how much_ and _where to_.
 With some of the more flexible covenant ones, you can pick and choose which bits of the transaction you want to constrain.
 It's easier to think about if you're using CTV as a starting point, where it's just - this is exactly how it must be spent and nothing else.
 
-Christof Ono: 00:52:09
+Christoph Ono: 00:52:09
 
 I had one question on here, and that wasn't clear to me.
 Alice can say, here are the rules, but what is the unique thing that only allows Charles to spend them?
@@ -613,7 +613,7 @@ So anyone who has this information can just broadcast it straight away.
 Think of it like a PSBT that can't be spent differently.
 The rule is the Bitcoin has to go to Charles's address.
 
-Christof Ono: 00:52:47
+Christoph Ono: 00:52:47
 
 So Alice has to know Charles's address in advance when she comes up with those rules?
 
@@ -623,7 +623,7 @@ Yes.
 That's one of the useful limiting factors of CTV because you can only bake as much in as you can coordinate in advance.
 That's what stops things from going completely off the rails.
 
-Christof Ono: 00:53:03
+Christoph Ono: 00:53:03
 
 Okay, so we need a thing here - where Alice talks to Charles and says "Give me some addresses."
 Then she can bake those in the...
@@ -711,7 +711,7 @@ Yeah, this was super helpful.
 I really learned a ton today and from the threads.
 It was really, really helpful.
 
-Christof Ono: 00:57:51
+Christoph Ono: 00:57:51
 
 Yeah, for sure.
 We could do a design huddle where we collaboratively try to design some flows for it.
@@ -725,7 +725,7 @@ Michael Hasse: 00:58:27
 We could also in a design huddle have these real world use cases, like the one with the rent, and the one with something else, and then we give that to Owen.
 He then makes the table with all the different covenant proposals and he said "okay you can do that with CTV, with AnyPrevOut" or with all these different things, so we can compare them.
 
-Christof Ono: 00:58:58
+Christoph Ono: 00:58:58
 
 Okay, and here in my background, to wrap things up are some AI generated trees made of Bitcoin addresses.
 At least that's what MidJourney thinks it looks like.
@@ -783,7 +783,7 @@ Christoph is showing some stuff on the screen.
 Was it about that?
 What's on the screen right now?
 
-Christof Ono: 01:02:43
+Christoph Ono: 01:02:43
 
 I think the question is like, what does Alice actually give him?
 The understanding is she gives him a ready to broadcast transaction almost.
@@ -800,14 +800,14 @@ No, she she will give him this little chunk of information.
 So think of it as if we were doing it with PSBT, with signed transactions.
 If we weren't using covenants, she could give him a pre-signed transaction and say, look, here's everything you need to withdraw some coins from my address and send them to yourself, signed by me.
 But he can't trust that, because she could spend the coin differently before he broadcasts it, so he has to broadcast it now and get it mined, to be sure that it's his.
-But in a world of covenants, she can say, here is that same PSPT, but you can also see that the address they're in, I can't spend them any different way than by broadcasting this transaction that sends them to you.
+But in a world of covenants, she can say, here is that same PSBT, but you can also see that the address they're in, I can't spend them any different way than by broadcasting this transaction that sends them to you.
 So you're using the transaction as the key that opens the lock now, rather than just a regular key.
 By doing that, he may not even need to bother broadcasting them at all until he needs to go and buy a car next year or something, because he knows they can't go anywhere.
 They're effectively, they are his.
 They're not able to be moved by anyone apart from him.
 So although they're not in his address yet, he can consider them his because there's nowhere else they can go.
 
-Christof Ono: 01:04:36
+Christoph Ono: 01:04:36
 
 Yeah, I guess the one addition is that it's tied to that piece of information.
 It's not an address generated by his wallet.
