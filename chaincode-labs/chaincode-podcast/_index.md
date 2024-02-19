@@ -5,4 +5,4 @@ source: "https://anchor.fm/s/12fe0620/podcast/rss"
 transcription_coverage: full
 ---
 
-{{< childpages >}}
+{{< childpages sort=date >}}

@@ -6,6 +6,7 @@ tags: ["signet"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-09-25
+episode: 10
 aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-signet']
 ---
 ## Intro

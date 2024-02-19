@@ -6,6 +6,7 @@ tags: []
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 categories: ['podcast']
 date: 2023-12-21
+episode: 87
 summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss the so-called “block 1,983,702 problem”. They explain how a bug in early Bitcoin implementations could in rare cases cause a loss of funds, or in a worst-case scenario even lead to consensus failures, while they also explain how BIP 30 and BIP 34 solved this problem. As it turns out, however, BIP 34 introduced a new problem, that could become an issue about twenty years from now…"
 ---
 Speaker 0: 00:00:19

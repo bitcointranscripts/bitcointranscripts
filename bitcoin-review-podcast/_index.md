@@ -2,4 +2,4 @@
 title: Bitcoin Review Podcast
 ---
 
-{{< childpages >}}
+{{< childpages sort=date >}}

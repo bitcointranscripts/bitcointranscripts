@@ -6,6 +6,7 @@ tags: ['bitcoin-core']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 categories: ['podcast']
 date: 2023-11-23
+episode: 85
 summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 0.26 release. They also briefly discuss recent developments concerning the transaction inclusion policy of mining pool F2Pool, which appears to have been compliant with the OFAC sanctions list."
 ---
 Speaker 0: 00:00:20

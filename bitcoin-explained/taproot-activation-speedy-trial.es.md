@@ -5,6 +5,7 @@ translation_by: Blue Moon
 categories: ['podcast']
 tags: ['taproot','soft-fork-activation']
 date: 2021-03-12
+episode: 31
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=oCPrjaw3YVI
 aliases: ['/es/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial']

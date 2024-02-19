@@ -6,6 +6,8 @@ tags: ['taproot','soft-fork-activation']
 date: 2021-02-26
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=7ouVGgE75zg
+episode: 29
+summary: "In this episode of \"The Van Wirdum Sjorsnado,\" hosts Aaron van Wirdum and Sjors Provoost discussed activation of the Taproot soft fork upgrade, and more specifically, the lock-in on timeout (LOT) parameter. \n\nThe LOT parameter can be set to either 'true' (LOT=true) or 'false' (LOT=false). LOT=false resembles how several previous soft forks were activated. Miners would have one year to coordinate Taproot activation through hash power; if and when a supermajority (probably 90 percent) of miners signal readiness for the upgrade, the soft fork will activate. But if this doesn't happen within (probably) a year, the upgrade will expire. (After which it could be redeployed.) LOT=true also lets miners activate the soft fork through hash power, but if they fail to do this within that year, nodes will activate the soft fork regardless. \n\nVan Wirdum and Provoost discussed the benefits and detriments of each option. This also includes possible scenarios of what could happen if some users set LOT to true, while other users set LOT to false, and the associated risks. Finally, the hosts discussed what they think is most likely going to happen with Taproot activation."
 aliases: ['/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout']
 ---
 BIP 8: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki

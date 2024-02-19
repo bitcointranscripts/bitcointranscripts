@@ -6,6 +6,8 @@ tags: ["bitcoin-core","rbf","coin-selection","descriptors","miniscript"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-10-07
+episode: 65
+aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v24']
 ---
 ## Intro
 

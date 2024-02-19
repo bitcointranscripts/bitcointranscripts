@@ -6,6 +6,9 @@ speakers: ["Sjors Provoost","Aaron van Wirdum"]
 tags: ["silent-payments"]
 categories: ["podcast"]
 date: 2020-10-02
+episode: 11
+summary: "In this episode Sjors and Aaron discuss Jose Femenias' Easypaysy proposal, an account system for Bitcoin, on Bitcoin"
+aliases: ['/bitcoin-magazine/bitcoin-explained/accounts-for-bitcoin-easypaysy']
 ---
 ## Intro
 

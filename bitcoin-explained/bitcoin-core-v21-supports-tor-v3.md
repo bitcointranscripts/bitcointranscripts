@@ -6,6 +6,7 @@ tags: ["bitcoin-core","anonymity-networks"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-10-15
+episode: 24
 ---
 ## Introduction
 

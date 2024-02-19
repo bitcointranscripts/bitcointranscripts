@@ -6,6 +6,7 @@ tags: ["erlay","minisketch"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-04-08
+episode: 34
 aliases: ['/bitcoin-magazine/bitcoin-explained/scaling-bitcoin-with-the-erlay-protocol']
 ---
 ## Preamble

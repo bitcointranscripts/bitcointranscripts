@@ -1,11 +1,12 @@
 ---
-title: "Bitcoin Update: Bitcoin Core 23.0"
+title: "Bitcoin Core 23.0"
 transcript_by: edilmedeiros via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=bMMG91sJXpM
 tags: ["bitcoin-core"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2022-04-24
+episode: 56
 aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v23']
 ---
 ## Intro

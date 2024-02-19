@@ -1,11 +1,12 @@
 ---
-title: "Death to the Mempool, Long Live The Mempool"
+title: "The Mempool (And Why We Need It)"
 transcript_by: davidgumberg via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=SPOESGI4xnw
 tags: ["transaction-relay-policy","mining","incentives"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-11-26
+episode: 50
 aliases: ['/bitcoin-magazine/bitcoin-explained/death-to-the-mempool-long-live-the-mempool']
 ---
 ## Preamble

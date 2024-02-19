@@ -5,4 +5,4 @@ source: "https://bitcoinexplainedpodcast.com/@nado/feed.xml"
 transcription_coverage: full
 ---
 
-{{< childpages >}}
+{{< childpages sort=date >}}

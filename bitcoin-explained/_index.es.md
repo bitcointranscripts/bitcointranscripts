@@ -2,4 +2,4 @@
 title: Bitcoin Explained
 ---
 
-{{< childpages >}}
+{{< childpages sort=date >}}

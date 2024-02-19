@@ -3,9 +3,10 @@ title: "Replace-by-Fee Bug (CVE-2021-31876)"
 transcript_by: 0xB10C via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=OHx55vjX_Ig
 tags: ["rbf", "cves", "bitcoin-core"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["Podcast"]
 date: 2021-05-21
+episode: 38
 ---
 ## Intro
 

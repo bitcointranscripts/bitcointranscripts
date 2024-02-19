@@ -6,6 +6,8 @@ tags: ["bitcoin-core","anonymity-networks","eclipse-attacks","compact-block-filt
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-01-21
+episode: 24
+aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v0-21']
 ---
 ##  Intro
 

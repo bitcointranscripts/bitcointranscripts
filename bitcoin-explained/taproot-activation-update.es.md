@@ -6,6 +6,7 @@ categories: ['podcast']
 tags: ['taproot']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 date: 2021-04-23
+episode: 36
 media: https://www.youtube.com/watch?v=SHmEXPvN6t4
 aliases: ['/es/bitcoin-magazine/2021-04-23-taproot-activation-update']
 ---
