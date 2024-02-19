@@ -11,7 +11,7 @@ date: 2023-04-29
 ## Introduction
 
 Hi everybody, I'm Nico.
-I work, I'm one of the co-founders at Rigly, and we are a peer-to-peer hashrate market.
+I'm one of the co-founders at Rigly, and we are a peer-to-peer hashrate market.
 The way this talk is kind of broken up is the first part we're going to go through what is hash rate, how the protocol for mining works across the network, and then a little bit on how hash rate markets have come around, and then finally how we can potentially do hash rate with root layer two, which is obviously given the kind of subject matter of the conference.
 
 
@@ -23,8 +23,8 @@ Well, it's the output of a hash function.
 A hash function you have a pre-image that gets passed into through a function that outputs an image.
 If you've looked at a Bitcoin block explorer, you'll notice that the hash at the bottom has a series of zeros in hex format.
 So that is a result of what Adam Back did with Hashcash.
-So, we base Bitcoin's hash rate is all based on the hash-cache algorithm.
-And kind of a quick math here on how this works is that, see over here, we have zero to the power of K.
+Bitcoin's hash rate is all based on the hashcash algorithm.
+And kind of a quick math here on how this works is that, see over here, we have zero to the power of k (`0^k`).
 The output or the image here on the right, it's supposed to start with a certain amount of zeros.
 And that zero to the power of K is basically the difficulty of how many zeros this hash will start with.
 So if we do this algebraically, you have the function which is the hash of X, takes the input X, and is supposed to output a zero or a string of zeros.
@@ -34,21 +34,21 @@ And the service string is what gives the hash actual purpose.
 Because otherwise you're just hashing through a bunch of things, you can prove that, okay, this was the number that went into giving this hash, but it doesn't have any actual utility.
 So the service string is the utility in the case of Bitcoin blocks.
 That service string is going to be all the transactions that we're actually trying to put into the network, which is consolidated into the block header.
-So hash pass was SHA-1, which I think was 160 bits.
+So hashcash was SHA-1, which I think was 160 bits.
 Usually the standard for that was, I think K was 20.
 That gave you about a million tries to be able to find a correct pre-image.
 Bitcoin uses 256 bits, so it's much larger, a lot more tries.
-And yeah, we have a, one of the main differences between Hashcash and Bitcoin is that you can only, Hashcash is 2 to the power of K.
+One of the main differences between hashcash and Bitcoin is that hashcash is 2 to the power of k (`2^k`) for that difficulty, which means you can either only double or half the difficulty in any one period.
 For that difficulty, which means you can either only double or half the difficulty in any one period.
 Whereas with Bitcoin we need to be much more granular with how we adjust difficulty every 2016 blocks.
 So instead of that, We turn the integer K into a floating point, so we can be a lot more precise with how we change difficulty.
 So yeah, every 2016 blocks, we have this difficulty adjustment that comes in, and what ends up getting changed there is that floating point.
 It's like, what are we trying to do?
-And the kind of full expression there of what the map looks like is you have S as your service string, X is your random starting point, which for most miners ends up actually being the coinbase transaction that then you compute into the `Merkle root`.
+And the kind of full expression there of what the math looks like is you have `s` as your service string, `x` is your random starting point, which for most miners ends up actually being the coinbase transaction that then you compute into the Merkle Root.
 We'll go into that in a second.
 But that's kind of your random starting point because every miner is changing the coinbase transaction.
 And then you have, instead of it equaling zero, we're going for less than a certain difficulty target.
-Target equals to the power of mine's day, and That gets all put over one usually.
+Target equals `2^(n-k)`, and that gets [inaudible] over one usually.
 But yeah, so this is a little bit of a kind of math behind how this works.
 
 ## Mining Process Overview
@@ -64,8 +64,8 @@ So, we have like the version, what's the version of the software that you're run
 We're chaining the blocks together, so we need the previous block hash.
 You have the `Merkle root`, which is what I was just describing, all the transactions that get hashed together in the form of a tree.
 The current block, like timestamp, right, that gets updated every few seconds, So that actually is another bit of entropy that gets added into the equation there.
-You have bits, which is just the target that's in hex usually.
-And finally, the nonce, that's the counter.
+You have `Bits`, which is just the target that's in hex usually.
+And finally, the `Nonce`, that's the counter.
 The nonce field is actually really, really small.
 So, there's 32 bits, you run through them with miners nowadays really quickly, right?
 So that's where you have to go to what we call the extranonce field, which sits in the Coinbase.
@@ -89,7 +89,7 @@ And mining and mining pools really are just `TCP` connections.
 So, we open a `TCP` port with a pool that a miner communicates with, and that communication is `JSON RPC`.
 So, it's really straightforward.
 The messages are literally these that we see here.
-So, mining.subscribe, authorize, set target, notify, and submit.
+So, `mining.subscribe`, `mining.authorize`, `mining.set_target`, `mining.notify`, and `mining.submit`.
 That's pretty much everything that there is to the Stratum protocol.
 It's really simple.
 Here you see a little bit I gave some background of what's happening.
@@ -142,7 +142,7 @@ And try and get paid for these shares or try and submit shares that are under th
 Cool, so mining pools.
 I'm not gonna go through this entire graph, but this is in essence how a mining pool is put together, and this will be on Revlit, so if you guys do want to refer to it, you can.
 
-*[Audience]: Did you name that Kafka, or is that actually the name of some protocol?*
+[Audience]: "Did you name that Kafka, or is that actually the name of some protocol?"
 
 Oh, that's the name of, yeah, it's like a piece of software.
 No, I didn't name it.
@@ -154,7 +154,7 @@ And then that's what gets pushed back to the nodes and gossip throughout the net
 
 ## Bitcoin Transactions and Verification
 
-So, we have, there's a lot of different payout mechanisms for pools.
+There's a lot of different payout mechanisms for pools.
 The two main ones that are used are `PPLNS`, which is pay per last number of shares, and `FPPS`, which is full pay per share.
 The basic difference is that in `PPLNS`, which for example is what Braiins uses, or formerly the Slush Pool, you're paid when the pool finds a block.
 So, whenever the pool finds a block, there is a last number of shares that were issued prior to finding that block that then goes to the miners based on the work that they contributed for finding that specific block.
@@ -253,10 +253,10 @@ What about the duration of this contract?
 So for the most part, if you look at marketplaces like NiceHash and Mining Regret tools, you have pretty short contract durations there, which makes it okay if you're kind of trying to do the betting in one direction or another, but it's fairly short.
 So you're not really buying something and then just kind of letting it sit there and do its thing.
 And then in terms of the actual non-deliverables or like the swaps, like contracts, well, it's, you know, you're buying kind of like a traditional financial instrument and it's not code.
-Oh, wow, okay.
+[Note: Speaker reacts to being informed they are almost out of time.]: "Oh, wow, okay.
 That was fast.
 Well, I'm gonna run through this really quick.
-Thank you.
+Thank you."
 
 
 ## P2P Hashrates
@@ -267,11 +267,10 @@ So we're able to see exactly how much hash rate ends up getting delivered.
 So Here we have a little model of how this works.
 So we create this little agreement here in the middle.
 The agreement, the purchase part here in orange at the bottom is held on chain in multisig.
-The delivery for The terms of delivery are held through the pool account.
+The terms of delivery are held through the pool account.
 So the hash rate gets pointed here from the miner to a pool where eventually a coinbase hits the pool and the payout goes to a mining pool account.
 And that's where this part of the agreement comes into play.
-And finally, you can actually obviously remove your funds from your account model to the next model.
-So you have your hot dog shape.
+And finally, you can actually obviously remove your funds from your account model to the next model, so you have your [inaudible] shape.
 And the way in which we actually are able to ensure that that delivery is happening is that we have a proxy that we can read that the hash rate is getting delivered to that pool account.
 So we have a demo running right now, which you can sign up using this QR code, which I'll give another link to in a second.
 This is the basic flow of what's happening with our model, but basically, we have an event-driven system where as soon as you make a payment to us, we'll switch a hash rate that is currently pointed elsewhere on our proxy straight to your guys' pool account, the pool account that you have registered with us and our database.
@@ -284,7 +283,7 @@ The issue with that is that, I mean this is, I don't know if you guys saw the Ja
 And the idea here is like, we have 10 sats per terahash per second per hour.
 How would you be able to stream that over lightning?
 Would that be possible?
-Could we use every spare or wasted jewel and convert that into hashes or gigahashes or whatever it may be?
+Could we use every spare or wasted joule and convert that into hashes or gigahashes or whatever it may be?
 Well, as things stand right now, no, you definitely couldn't.
 Over lightning, well, maybe.
 Lightning allows us to do that.
