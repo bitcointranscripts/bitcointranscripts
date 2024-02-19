@@ -3,7 +3,7 @@ title: "CoinShuffle"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=dVZDeEfSdcI
 tags: ["research","coinjoin"]
-speakers: ["Aviv Milner","Tim Ruffing"]
+speakers: ["Aviv Milner","Tim Ruffing","Igor Korsakov"]
 categories: ["club"]
 date: 2020-01-20
 ---
