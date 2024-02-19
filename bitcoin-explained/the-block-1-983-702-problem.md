@@ -2,7 +2,7 @@
 title: "The Block 1,983,702 Problem"
 transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-87-the-block-1-983-702-problem-s7s3j
-tags: ["bitcoin-core","bip32"]
+tags: ["bitcoin-core","bip32","security-problems"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-12-21
