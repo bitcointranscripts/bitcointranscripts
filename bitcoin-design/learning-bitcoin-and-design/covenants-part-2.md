@@ -1,12 +1,10 @@
 ---
 title: "Covenants Part 2"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=zk_EEKeAFuY
-tags: ['covenants', 'ux']
-speakers: ['Christoph Ono', 'Michael Haase']
-categories: []
+tags: ["covenants","ux"]
+speakers: ["Christoph Ono","Michael Haase","Mogashni"]
 date: 2024-02-02
-summary: "Continuing our discussion from our first call, we dove into how covenants might play out in scenarios around chaining transactions, payment pools, and cold lightning channels. We made good progress, but also still have questions."
 ---
 Speaker 0: 00:00:01
 
