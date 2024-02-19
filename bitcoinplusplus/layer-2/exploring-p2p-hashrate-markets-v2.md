@@ -73,18 +73,18 @@ And that gets calculated as part of the Merkle group.
 Okay, so what actually ends up changing there in the block header is the Merkle group.
 Cool, so if you guys didn't know, we usually measure any one miner today, you measure in tera hashes.
 So we're talking about a trillion there.
-Then if we're talking about a group of miners usually, so a mining farm, you measure in Peta hashes.
-And then finally, when we're talking about network hashrate, we're talking about Exa hashes.
-So right now, I think we're around 350 Exa hashes on the network.
-Your standard miner today runs about 100 Tera hashes per second, and your average mining farm will be something like 10 Peta hashes.
+Then if we're talking about a group of miners usually, so a mining farm, you measure in Petahashes.
+And then finally, when we're talking about network hashrate, we're talking about Exahashes.
+So right now, I think we're around 350 Exahashes on the network.
+Your standard miner today runs about 100 Terahashes per second, and your average mining farm will be something like 10 Petahashes.
 Cool.
 So the mining protocol.
 So, this was kind of how actual hash rate or hashing works, but then how do we organize that over the network?
 It's a little bit more involved.
-So right now, we use `Stratum V1`.
-You guys I'm sure have heard about `Stratum V2`, which is a very hot topic at the moment.
+So right now, we use Stratum V1.
+You guys I'm sure have heard about Stratum V2, which is a very hot topic at the moment.
 It's a little bit beyond the scope of this talk.
-I'll go and I'll kind of add a few bits here and there that'll tell you what the main difference is in a couple slides, but just know that right now we're talking about `Stratum V1`.
+I'll go and I'll kind of add a few bits here and there that'll tell you what the main difference is in a couple slides, but just know that right now we're talking about Stratum V1.
 And mining and mining pools really are just `TCP` connections.
 So, we open a `TCP` port with a pool that a miner communicates with, and that communication is `JSON RPC`.
 So, it's really straightforward.
@@ -125,7 +125,7 @@ And then it has basically the beginning of the coinbase, which is just the addre
 Miner will iterate through this `Extranonce2` field until it finds a target hash, or an output hash just below the target difficulty for that share.
 It does that by concatenating basically all these fields, hashing it together, and then we go, and we create the `Merkle root`.
 So, if in every block, the Coinbase transaction is always the leftmost leaf over here.
-So, in order to calculate the `Merkle root`, this is the difference between `Stratum V1` and `Stratum V2` two basically.
+So, in order to calculate the `Merkle root`, this is the difference between Stratum V1 and Stratum V2 two basically.
 In V1, you're not getting the full tree.
 You're only getting the branch, the branches that you need to get this root.
 So if this is the coinbase and what you're iterating on is only this transaction that you get, they give you this transaction, they give you this transaction to get here, and then They give you this transaction to get here, and then they give you this transaction to get here, this hash, not transactions, to get over here, and then this one to create the root.
@@ -152,22 +152,34 @@ And then the miners work on that until they have, they find a valid share and th
 And then that's what gets pushed back to the nodes and gossip throughout the network.
 
 
-## Bitcoin Transactions and Verification
+## Pool Payout Formats
 
 There's a lot of different payout mechanisms for pools.
 The two main ones that are used are `PPLNS`, which is pay per last number of shares, and `FPPS`, which is full pay per share.
 The basic difference is that in `PPLNS`, which for example is what Braiins uses, or formerly the Slush Pool, you're paid when the pool finds a block.
-So, whenever the pool finds a block, there is a last number of shares that were issued prior to finding that block that then goes to the miners based on the work that they contributed for finding that specific block.
+
+## PPLNS: Pay Per Last N Shares
+
+Whenever the pool finds a block, there is a last number of shares that were issued prior to finding that block that then goes to the miners based on the work that they contributed for finding that specific block.
 Part of the reason for how they do the last number of shares is to avoid switching between different pools, so that you only are rewarded if you are mining on the block within that time period when the block was found.
+
+## FPPS: Full Pay Per Share
+
 At `FPPS`, you're guaranteed, basically, if the mining pool doesn't run out of money, to get paid per share.
 So for whatever amount of shares you produce in that day, you will be paid out of their liquidity pool for the shares that you produce or you contribute to the pool that day.
 So it's independently of whether that pool finds blocks or not.
-So that obviously begs the question, well, what happens if the mining pool doesn't find any blocks in the day, or over two days, or three days, or what have you, then how do you pay out of the `FPPS` pool?
+
+## Understanding Payout Risks
+
+That obviously begs the question, well, what happens if the mining pool doesn't find any blocks in the day, or over two days, or three days, or what have you, then how do you pay out of the `FPPS` pool?
 Well, that is basically the risk of running an `FPPS` pool, is that you could potentially be having to pay out your miners, but not be bringing in enough Bitcoin to issue those payments.
 Whereas in PPL&S, you basically push that risk onto the miner.
 So you could be going days where the pool doesn't find any blocks, but the pool is only paying when they find blocks.
 So the pool itself doesn't actually take on that risk.
 Instead, the miners have to take on the risk of potentially not getting paid for multiple days.
+
+## Instances of Mining Pool Risks
+
 
 *[Audience]:  Has there been any cases of a mining pool running out? *
 
@@ -180,13 +192,22 @@ So instead of you saying, oh, let me get my Bitcoin out, It's like, no, no, you 
 Right, so that's a typical example.
 I used to work at pool, so no hate there.
 Cool.
+
+## Mining Markets
+
 So kind of the meat of the talk now, what are these mining markets?
 Because if we have pools, and pools are in essence a kind of marketplace because you have hash rate that's considered being sold to the pool because the pool is then turning around and mining big one with it and getting percentage off that and then distributing those funds to all these miners, and in essence that acts like a form of market, but what if we could try and take it one step further?
-So, the idea was originally, this is from the white paper, that proof of work is essentially one CPU, one vote.
+
+## Evolution of Mining Hardware
+
+The idea was originally, this is from the white paper, that proof of work is essentially one CPU, one vote.
 Satoshi had originally had that idea.
 Well, long gone are the days where you can mine with a CPU.
 We went from CPUs to GPUs very quickly, then to FPGAs pretty much at the exact same time.
 And finally, for ASICs, I think started rolling around, coming out 12, 13, around there.
+
+## Challenges in Modern Mining
+
 And from then on, you really need to buy pretty sophisticated hardware that was not inexpensive.
 You couldn't just be running this with like your hardware at home.
 After a few years, even if you did buy that hardware, You needed to find really cheap electricity to run that hardware on.
@@ -287,7 +308,7 @@ Could we use every spare or wasted joule and convert that into hashes or gigahas
 Well, as things stand right now, no, you definitely couldn't.
 Over lightning, well, maybe.
 Lightning allows us to do that.
-The problem is, as Lisa calls it, we have terabat liquidity issues with mining pool payouts to miners over lightning, Because we're only pushing liquidity in one direction.
+The problem is, as Lisa calls it, we have terribad liquidity issues with mining pool payouts to miners over lightning, Because we're only pushing liquidity in one direction.
 You're going to exhaust those channel capacities immediately.
 And that just isn't how lightning works.
 We need to have payment flows in two directions.
