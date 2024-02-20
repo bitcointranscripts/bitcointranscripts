@@ -4,7 +4,6 @@ transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=zk_EEKeAFuY
 tags: ["covenants","ux"]
 speakers: ["Christoph Ono","Michael Haase","Mogashni"]
-categories: ["video"]
 date: 2024-02-02
 ---
 ## Introduction
