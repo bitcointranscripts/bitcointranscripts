@@ -24,9 +24,10 @@ Michael Hasse: 00:00:50
 
 Well, I'm feeling bullish on covenants (laughter).
 I think they open up fascinating capabilities that I would personally probably want, but in terms of the technical soundness or the security implications there's nothing I can contribute.
-In general I'm kind of more interested in this kind of bolting or  scripting stuff than scaling.
+In general I'm kind of more interested in this kind of bolting or scripting stuff than scaling.
 But that's just the nature of what I'm working on currently, so that's not at all some kind of judgment or so.
-But it's just in terms of the scaling question I'm not sure how valid any of the things that I have to say or think is relevant. But it's really interesting, and what stuck from the last call was I think Owen said, in terms of scaling, you can transfer ownership without on-chain transactions and have the same assurances.
+But it's just in terms of the scaling question I'm not sure how valid any of the things that I have to say or think is relevant.
+But it's really interesting, and what stuck from the last call was I think Owen said, in terms of scaling, you can transfer ownership without on-chain transactions and have the same assurances.
 So that's definitely something interesting.
 
 ## Covenants scaling example
@@ -35,17 +36,16 @@ Christoph Ono: 00:02:45
 
 So Owen's threads here, he has three threads, they're really awesome.
 I tried to sit down earlier and actually understand that specific part.
-I tried to understand how does this enable any sort of scaling?
-How do you transfer ownership off chain?
+I tried to understand how does this enable any sort of scaling and how do you transfer ownership off chain?
 There's this one thread here, on the one hand, it kind of makes sense, but there was something I was missing from it too... and let me try to explain.
-There was one thread with an example that I thought was pretty good.\
+There was one thread with an example that I thought was pretty good.
 So here's what I came up with, which helps maybe with the scaling stuff.
 I tried to create a very simple example of this.
-There are three people, Alice, Robert, and Charles, right?
+There are three people, Alice, Robert, and Charles.
 Robert owes Alice 0.1 Bitcoin, and Charles owes Robert 0.2 Bitcoin.
 What they would do right now is, Robert sends Alice 0.1 Bitcoin and Charles sends Robert 0.2 Bitcoin.
 Two transactions done.
-Cool.\
+Cool.
 Now let's make this way more complicated.
 So, Alice gives Robert the address, like Alice's address 1.
 Cool.
@@ -62,7 +62,7 @@ So those are rules baked into this address, right?
 Then Robert gives this address to Charles, Charles puts the 0.2 Bitcoin in.
 Now we have this Robert's address with 0.2 Bitcoin, and that address cannot be freely spent.
 0.1 has to go to Alice and 0.1 has to go to this Lightning channel with Dan.
-That's it.\
+That's it.
 Only Robert knows this because he baked this into the address.
 No one else knows about this, right?
 On the blockchain, it's like, "hey, there's an address with 0.2 Bitcoin."
@@ -110,6 +110,7 @@ Christoph Ono: 00:08:56
 Your point was Alice's address could also hold promises to other people.
 
 Michael Hasse: 00:09:00
+
 Exactly, and that's also something that nobody else knows.
 
 Christoph Ono: 00:09:10
@@ -119,7 +120,7 @@ The thing is, if Robert forgets the rules, then no one can recover them.
 No one will know them, because they're not saved anywhere on-chain.
 They only exist because he baked them in, and if he forgets them and doesn't share, then they're gone.
 That's where I have a whole bunch of questions.
-Can all of this fall apart if someone forgets something, right?
+Can all of this fall apart if someone forgets something?
 And then all this stuff gets locked or is there always a way out to unwind it where anyone can just back out of this whole system, screw it, I don't like these shenanigans.
 And if let's say you do that three times in a row, and I'm secretly paying Mo, and I'm like "yeah you know these Bitcoin they're actually yours", but really they're in Michael's address you have with this rule, but then they're in Lois's address in this rule, and he paid me before with that rule, and then they're actually Bitcoin that my mom sent four years ago with that other rule and then it came over there.
 It's like do I need to do all that stuff, or do I not, or how do I prove them that, and will you accept it when you're like "this is way too complicated for me just give me my money."
@@ -140,8 +141,9 @@ If I would think of a very practical use case, I would just think of a family us
 The kid has their own Bitcoin savings for their university or whatever they want to study for, and the couple has an account and it's a joint Bitcoin account, and both of them earn in Bitcoin.
 Every time money comes in they both agree that there's a rule that 5% of that goes to the kid's university fund.
 It's a covenant between them.
-Then it's safe, tt's trusted, it's the husband and the wife.
+Then it's safe, it's trusted, it's the husband and the wife.
 There's not too many people making promises.
+
 Then maybe between the husband and wife, they have their own covenant, which is like, OK, certain percentages, 10% goes for a holiday and then that is that own covenant.
 I'm just trying to think of a very practical use case, in a situation which I think would practically work, but I think the more people you add on to this - "I promise, he promises, she promised" is a problem.
 
@@ -167,7 +169,7 @@ Yeah, that's true.
 Michael Hasse: 00:14:11
 
 Automate it basically.
-If I'm in the middle of this of this whole sequence, I don't need to know what's before it, and I also don't need to know what's after it.
+If I'm in the middle of this whole sequence, I don't need to know what's before it, and I also don't need to know what's after it.
 I just need to know that whatever comes into this address can be spent the way I want.
 That's it.
 
@@ -191,7 +193,6 @@ Exactly, but you should be able to say okay now I received this 0.1 Bitcoin and 
 So these are then your rules, right?
 It's basically one up after that.
 The question that Christoph raises, does it break at some point?
-Right?
 Or can you do this forever?
 
 Mogashni: 00:15:55
@@ -368,7 +369,7 @@ Michael Hasse: 00:29:54
 A feature, exactly, a feature or a use case.
 Vault is a use case, but for me, and I'm a technical layman, but I have the feeling it's more helpful to think of vaults as the feature, or the thing that you want to achieve, rather than the way of achieving it.
 
-# UI - Owen's Figma Prototype
+## UI - Owen's Figma Prototype
 
 Christoph Ono: 00:30:17
 
@@ -386,7 +387,7 @@ I'll share that link [here](https://figma.com/proto/o4sxu0rEIR1zmletrxtXRn/Phoen
 So he mocked up the idea of cold channels.
 So earlier in the example, I think Alice, Robert, whoever said part of this deposit is dedicated to a Lightning channel, right?
 So that Lightning channel is not technically active, there are no nodes talking to each other and stuff, but the funds are dedicated to it, right?
-it's kind of secretly committed to this Lightning channel, and so typically you do need to create a new on-chain transaction to get funds into that state, but here you have that automatically.
+It's kind of secretly committed to this Lightning channel, and so typically you do need to create a new on-chain transaction to get funds into that state, but here you have that automatically.
 So it saves you a transaction and you have this secret - what he calls cold channels, or in this case reserves.
 So let's say you're in Phoenix here, and someone sent you 0.1 Bitcoin or whatever, and you've created an on-chain address with this cold channel option.
 So then that would go into what he calls reserves.
@@ -400,7 +401,6 @@ Then I want more liquidity and then I can see here are all these different depos
 And then I activate one, I confirm it, cool, sweet.
 I have now 300,000 more sats that I can spend on Lightning, basically for free, and instant, I think there just needs to be this connection established with the other node.
 But because on-chain transactions are taken care of already, you save those 10 minutes, or that block confirmation.
-Yeah.
 How does that sound?
 
 Mogashni: 00:33:31
@@ -481,7 +481,8 @@ You have to pay another fee, takes 10 minutes.
 You can kind of collapse this into one using covenants.
 So you get these funds and it's like they're just primed for a Lightning channel.
 The channel is not active, but it's all ready for it, it's all set up.
-So you don't need to wait another 10 minutes, you don't need to pay the extra fee, you just need to say "let's go" and the channel is right there. You don't have to, it's a free option to have a Lightning channel.
+So you don't need to wait another 10 minutes, you don't need to pay the extra fee, you just need to say "let's go" and the channel is right there.
+You don't have to, it's a free option to have a Lightning channel.
 
 Joaquin: 00:36:29
 
@@ -563,7 +564,7 @@ Yeah.
 So the way it works here is that this other person doesn't even know that you want to have this channel with them.
 You haven't revealed that yet.
 So you baked into your address, you said "I want to have the option for these funds to have a Lightning channel with Michael", but I'm not gonna tell him, I'm just gonna bake that in.
-Then at some point when you say well "Finally it's time I want this Lightning channel with Michael."
+Then at some point when you say well "Finally it's time I want this Lightning channel with Michael".
 But maybe Michael's node is just not online right now, then you just can't make that connection.
 Maybe he got a new wallet or changed his node, or whatever it is.
 If you waited six months, then maybe that connection cannot be made anymore.
@@ -711,7 +712,7 @@ So my understanding is just exactly that.
 It's like a connection between the real world and the blockchain.
 If something gets evaluated, how do you get the current price of a euro, how do you get the temperature, if there's a betting thing how do you get the end result of some soccer game, how do you get that in there?
 So I feel like it's just basically just a fancy word for an API call.
-So I guess a price API and you just at some point you're like, okay, API, what's the what's the price or value?
+So I guess a price API and you just at some point you're like, "okay, API, what's the what's the price or value?".
 Yeah, right.
 Thanks for joining.
 
