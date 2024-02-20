@@ -2,18 +2,16 @@
 title: "Exploring P2P Hashrate Markets V2"
 transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=IvfmfcAX9wU
-tags: ["mining","p2p"]
+tags: ["mining"]
 speakers: ["Nico Preti"]
 categories: ["conference"]
 date: 2023-04-29
 ---
-
 ## Introduction
 
 Hi everybody, I'm Nico.
 I'm one of the co-founders at Rigly, and we are a peer-to-peer hashrate market.
 The way this talk is kind of broken up is the first part we're going to go through what is hash rate, how the protocol for mining works across the network, and then a little bit on how hash rate markets have come around, and then finally how we can potentially do hash rate with root layer two, which is obviously given the kind of subject matter of the conference.
-
 
 ## Hash Functions and Hash Rate
 
@@ -26,28 +24,27 @@ So that is a result of what Adam Back did with Hashcash.
 Bitcoin's hash rate is all based on the hashcash algorithm.
 And kind of a quick math here on how this works is that, see over here, we have zero to the power of k (`0^k`).
 The output or the image here on the right, it's supposed to start with a certain amount of zeros.
-And that zero to the power of K is basically the difficulty of how many zeros this hash will start with.
-So if we do this algebraically, you have the function which is the hash of X, takes the input X, and is supposed to output a zero or a string of zeros.
-The kind of proper expression for this function would be that you have a hash with a service string and a counter.
+And that `0^k` is basically the difficulty of how many zeros this hash will start with.
+So if we do this algebraically, you have the function which is the hash of X (`H(x)`), takes the input `x`, and is supposed to output a zero or a string of zeros.
+The kind of proper expression for this function would be that you have a hash (`H(s,c)`) with a service string (`s`) and a counter (`c`).
 The counter gets incremented.
 And the service string is what gives the hash actual purpose.
 Because otherwise you're just hashing through a bunch of things, you can prove that, okay, this was the number that went into giving this hash, but it doesn't have any actual utility.
 So the service string is the utility in the case of Bitcoin blocks.
 That service string is going to be all the transactions that we're actually trying to put into the network, which is consolidated into the block header.
 So hashcash was SHA-1, which I think was 160 bits.
-Usually the standard for that was, I think K was 20.
+I think `k` was 20.
 That gave you about a million tries to be able to find a correct pre-image.
 Bitcoin uses 256 bits, so it's much larger, a lot more tries.
 One of the main differences between hashcash and Bitcoin is that hashcash is 2 to the power of k (`2^k`) for that difficulty, which means you can either only double or half the difficulty in any one period.
-For that difficulty, which means you can either only double or half the difficulty in any one period.
 Whereas with Bitcoin we need to be much more granular with how we adjust difficulty every 2016 blocks.
-So instead of that, We turn the integer K into a floating point, so we can be a lot more precise with how we change difficulty.
+So instead of that, we turn the integer `k` into a floating point, so we can be a lot more precise with how we change difficulty.
 So yeah, every 2016 blocks, we have this difficulty adjustment that comes in, and what ends up getting changed there is that floating point.
 It's like, what are we trying to do?
 And the kind of full expression there of what the math looks like is you have `s` as your service string, `x` is your random starting point, which for most miners ends up actually being the coinbase transaction that then you compute into the Merkle Root.
 We'll go into that in a second.
 But that's kind of your random starting point because every miner is changing the coinbase transaction.
-And then you have, instead of it equaling zero, we're going for less than a certain difficulty target.
+And then you have, instead of it equaling zero, we're going for less than a certain difficulty target (`H(s,x,c) < 2^(n-k)`).
 Target equals `2^(n-k)`, and that gets [inaudible] over one usually.
 But yeah, so this is a little bit of a kind of math behind how this works.
 
@@ -60,24 +57,28 @@ This is actually pretty important.
 Usually, people look into this when you first read about Bitcoin, but then they kind of forget about it.
 It goes to the back of your mind, and you don't really ever remember what's actually going into these blocks.
 And it's kind of important, right?
-So, we have like the version, what's the version of the software that you're running, the hash of the previous block. That's what actually creates the blockchain.
+So, we have like the `Version`, what's the version of the software that you're running, the hash of the previous block (`hashPrevBlock`).
+That's what actually creates the blockchain.
 We're chaining the blocks together, so we need the previous block hash.
-You have the `Merkle root`, which is what I was just describing, all the transactions that get hashed together in the form of a tree.
-The current block, like timestamp, right, that gets updated every few seconds, So that actually is another bit of entropy that gets added into the equation there.
+You have the `hashMerkleRoot`, which is what I was just describing, all the transactions that get hashed together in the form of a tree.
+The current block timestamp (`Time`) that gets updated every few seconds.
+So that actually is another bit of entropy that gets added into the equation there.
 You have `Bits`, which is just the target that's in hex usually.
 And finally, the `Nonce`, that's the counter.
 The nonce field is actually really, really small.
 So, there's 32 bits, you run through them with miners nowadays really quickly, right?
-So that's where you have to go to what we call the extranonce field, which sits in the Coinbase.
-And that gets calculated as part of the Merkle group.
-Okay, so what actually ends up changing there in the block header is the Merkle group.
-Cool, so if you guys didn't know, we usually measure any one miner today, you measure in tera hashes.
+So that's where you have to go to what we call the `extranonce` field, which sits in the Coinbase.
+And that gets calculated as part of the Merkle Root.
+Okay, so what actually ends up changing there in the block header is the Merkle Root.
+Cool, so if you guys didn't know, we usually measure any one miner today, you measure in Terahashes.
 So we're talking about a trillion there.
 Then if we're talking about a group of miners usually, so a mining farm, you measure in Petahashes.
 And then finally, when we're talking about network hashrate, we're talking about Exahashes.
 So right now, I think we're around 350 Exahashes on the network.
 Your standard miner today runs about 100 Terahashes per second, and your average mining farm will be something like 10 Petahashes.
-Cool.
+
+## The Mining Protocol
+
 So the mining protocol.
 So, this was kind of how actual hash rate or hashing works, but then how do we organize that over the network?
 It's a little bit more involved.
@@ -147,58 +148,52 @@ I'm not gonna go through this entire graph, but this is in essence how a mining 
 Oh, that's the name of, yeah, it's like a piece of software.
 No, I didn't name it.
 Some mining pools use Kafka, some others, it's arbitrary.
-But the essence of a mining pool is that you have a node that's connected to the network, it's scraping for those transactions, those transactions get put together then into a block, and that, well, it gets put together into the branches of the Merkle tree that we just described that then gets fed into a job Through the Stratum server to the miners.
+But the essence of a mining pool is that you have a node that's connected to the network, it's scraping for those transactions, those transactions get put together then into a block, and that, well, it gets put together into the branches of the Merkle tree that we just described that then gets fed into a job through the Stratum server to the miners.
 And then the miners work on that until they have, they find a valid share and then hopefully one of those shares will be below, or one of those hashes will be below the network's difficulty.
 And then that's what gets pushed back to the nodes and gossip throughout the network.
 
 
-## Pool Payout Formats
+### Pool Payout Formats
 
 There's a lot of different payout mechanisms for pools.
 The two main ones that are used are `PPLNS`, which is pay per last number of shares, and `FPPS`, which is full pay per share.
 The basic difference is that in `PPLNS`, which for example is what Braiins uses, or formerly the Slush Pool, you're paid when the pool finds a block.
 
-## PPLNS: Pay Per Last N Shares
-
 Whenever the pool finds a block, there is a last number of shares that were issued prior to finding that block that then goes to the miners based on the work that they contributed for finding that specific block.
 Part of the reason for how they do the last number of shares is to avoid switching between different pools, so that you only are rewarded if you are mining on the block within that time period when the block was found.
-
-## FPPS: Full Pay Per Share
 
 At `FPPS`, you're guaranteed, basically, if the mining pool doesn't run out of money, to get paid per share.
 So for whatever amount of shares you produce in that day, you will be paid out of their liquidity pool for the shares that you produce or you contribute to the pool that day.
 So it's independently of whether that pool finds blocks or not.
 
-## Understanding Payout Risks
+### Understanding Payout Risks
 
 That obviously begs the question, well, what happens if the mining pool doesn't find any blocks in the day, or over two days, or three days, or what have you, then how do you pay out of the `FPPS` pool?
 Well, that is basically the risk of running an `FPPS` pool, is that you could potentially be having to pay out your miners, but not be bringing in enough Bitcoin to issue those payments.
-Whereas in PPL&S, you basically push that risk onto the miner.
+Whereas in `PPLNS`, you basically push that risk onto the miner.
 So you could be going days where the pool doesn't find any blocks, but the pool is only paying when they find blocks.
 So the pool itself doesn't actually take on that risk.
 Instead, the miners have to take on the risk of potentially not getting paid for multiple days.
 
-## Instances of Mining Pool Risks
+### Instances of Mining Pool Risks
 
-
-*[Audience]:  Has there been any cases of a mining pool running out? *
+[Audience]: "Has there been any cases of a mining pool running out?"
 
 Oh yeah.
 They get bought out by a bigger mining pool.
 Or a financier comes in and basically takes over to pay the IOUs. So at Poolin, for example, They were commingling some of their mining pool funds with some of some DeFi investments they had made.
-So when 3Eros Capital went down, a lot of their funds for the pool were actually tied with that with that with those DeFi protocols.
+So when Three Arrows Capital went down, a lot of their funds for the pool were actually tied with that with that with those DeFi protocols.
 And all of a sudden, everybody, all the miners around Poland got Bitcoin IOUs, is what it said on the mining pool site.
 So instead of you saying, oh, let me get my Bitcoin out, It's like, no, no, you have a Bitcoin, I have you.
 Right, so that's a typical example.
 I used to work at pool, so no hate there.
-Cool.
 
 ## Mining Markets
 
 So kind of the meat of the talk now, what are these mining markets?
 Because if we have pools, and pools are in essence a kind of marketplace because you have hash rate that's considered being sold to the pool because the pool is then turning around and mining big one with it and getting percentage off that and then distributing those funds to all these miners, and in essence that acts like a form of market, but what if we could try and take it one step further?
 
-## Evolution of Mining Hardware
+### Evolution of Mining Hardware
 
 The idea was originally, this is from the white paper, that proof of work is essentially one CPU, one vote.
 Satoshi had originally had that idea.
@@ -206,7 +201,7 @@ Well, long gone are the days where you can mine with a CPU.
 We went from CPUs to GPUs very quickly, then to FPGAs pretty much at the exact same time.
 And finally, for ASICs, I think started rolling around, coming out 12, 13, around there.
 
-## Challenges in Modern Mining
+### Challenges in Modern Mining
 
 And from then on, you really need to buy pretty sophisticated hardware that was not inexpensive.
 You couldn't just be running this with like your hardware at home.
