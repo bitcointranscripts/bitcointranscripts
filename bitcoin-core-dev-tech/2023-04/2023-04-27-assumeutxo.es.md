@@ -4,10 +4,8 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['bitcoin core', 'assumeutxo']
 date: 2023-04-27
-aliases: ['/bitcoin-core-dev-tech/2023-04-27-assumeutxo/']
 speakers: ["James O'Beirne"]
 ---
-
 ## Objetivos
 
 - permitir a los nodos obtener un conjunto utxo rápidamente (1h)
@@ -54,6 +52,3 @@ las señales `validationinterface` son recogidas por los índices
 - ¿Realmente necesitamos la sincronización en segundo plano?
 - No hacer la sincronización en segundo plano es más simple, pero cambia los supuestos de seguridad.
 - Además, se eliminaría la necesidad de que cada nodo debe ser capaz de sincronizar la cadena
-
-
-
