@@ -3,7 +3,7 @@ title: "CoinShuffle"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=dVZDeEfSdcI
 tags: ["research","coinjoin"]
-speakers: ["Aviv Milner","Adam Gibson","Lucas Ontivero"]
+speakers: ["Aviv Milner","Adam Gibson","Lucas Ontivero","Max Hillebrand"]
 categories: ["club"]
 date: 2020-01-20
 ---
