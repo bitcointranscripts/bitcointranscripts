@@ -4,7 +4,6 @@ transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=rCQKqe2XCqI
 tags: ["covenants","ux","op-checktemplateverify"]
 speakers: ["Christoph Ono","Michael Haase","Owen Kemeys","Yashraj","Mogashni"]
-categories: ["video"]
 date: 2024-01-19
 ---
 ## Introductions
@@ -27,20 +26,21 @@ Christoph Ono: 00:01:01
 River?
 Okay, cool.
 And that post said, hey, we really need people to dig into this covenant stuff from a design perspective.
-So that kind of kicked that off a little bit, and then we decided to create this learning call.\
+So that kind of kicked that off a little bit, and then we decided to create this learning call.
+
 I don't know how about how everyone else is on this topic.
 Until a month ago or so, I basically heard about that it exists, and that there were a bunch of technical proposals called CTV, that basically make no sense if you hear them and you're not familiar with anything.
 The term "covenant" didn't really tell us anything.
 I put Alien Covenant in the background because literally that's the only time in my life that I've ever heard the term covenant.
 Couldn't even figure out what that's supposed to do.
-I did listen to some podcasts recently, by Stefan Livera, that were extremely helpful and have this great overview, and I don't think it's actually that difficult after listening to those podcasts.\
+I did listen to some podcasts recently, by Stephan Livera, that were extremely helpful and have this great overview, and I don't think it's actually that difficult after listening to those podcasts.
 We're here on this call now that we can kind of shed some light on this stuff, and then hopefully we can work towards some of these design explorations and figure out how this technical mumbo jumbo can actually make Bitcoin more useful, for more people.
 And maybe address scaling.
 I don't know, what is everyone else bringing into this conversation here?
 
 Michael Hasse: 00:02:30
 
-I came across covenants relatively early, during or after my grant started. 
+I came across covenants relatively early, during or after my grant started.
 It can help to improve the programmability of Bitcoin, of wallets, of transactions.
 In terms of, let's say, automated inheritance or vaulting features that might be helpful.
 I focus more on Miniscript, which is something that exists today and can do something limited, something similar.
@@ -78,15 +78,17 @@ Owen Kemeys: 00:06:43
 
 Hi, I was asked to join this call.
 I haven't joined a Bitcoin design call before, but it's good to get involved.
-As you can see with those threads [[1]](https://x.com/OwenKemeys/status/1741575353716326835?s=20) [[2]](https://x.com/OwenKemeys/status/1744181234417140076?s=20), I put a lot of thought recently into trying to visualize how this stuff works, because it's very difficult for people to wrap their heads around how these functions work and what you can go on to do with them.
+As you can see with those threads ([1](https://x.com/OwenKemeys/status/1741575353716326835), [2](https://x.com/OwenKemeys/status/1744181234417140076)), I put a lot of thought recently into trying to visualize how this stuff works, because it's very difficult for people to wrap their heads around how these functions work and what you can go on to do with them.
 It's not actually that alien or strange, it's just different to how we do things today.
 I started off with CTV because it's the most simple and sort of easy to rationalize about how it works and what you can do with it.
 Other forms of covenant are more flexible versions of that, that I think might be wise to put to one side for the purposes of designing stuff, for now.
+
 The way you can think of CTV is it's quite similar to PSBT, to having a pre-signed transaction where I could technically pay you by signing a transaction to spend my coins to your address and then just giving it to you, rather than broadcasting it to the blockchain.
 However, you still have to trust that I'm not going to spend those coins differently first before you get it, so you can't consider that PSBT a payment, right?
 Because I could spend them any other way before you broadcast it and they're not your coins anymore.
-So today we're using only the chain itself to log ownership changes, and what covenants allow us to do are ownership changes off-chain, as long as you can plan them in advance.\
+So today we're using only the chain itself to log ownership changes, and what covenants allow us to do are ownership changes off-chain, as long as you can plan them in advance.
 There's a couple of use cases in those threads I gave, if you haven't read them already, I highly recommend starting there.
+
 In the second thread, I got onto the actual use cases, and the more I've looked at this stuff, the more I've realized there's kind of two basic principles that covenants are useful for here, you end up with these kind of meta primitives.
 Technically speaking, it's what I said a minute ago about having a pre-signed transaction that I can't spend differently, so you can consider yourself paid as soon as you have it.
 The use cases tend to be vault type structures, which are kind of using the chain to trigger a time lock, because in Bitcoin's technical design at the moment, we don't have ways where a key expires in a multi-sig or something.
@@ -143,12 +145,12 @@ But right now, it's basically you need to have the private key, right?
 There's one rule how you can spend it.
 It's the private key.
 If you have that, you can spend it, right?
-That's the default that everyone knows.\
+That's the default that everyone knows.
 The second one that Michael has been looking into a lot is the time locks.
-You can spend it after a certain amount of time if you have a key.\
+You can spend it after a certain amount of time if you have a key.
 In covenants, the idea there is to just really open that door much, much further, that you can have all kinds of complex predefined rules about how this can be spent by multiple people with different scenarios.
 I found that a pretty good starting point.
-Then the other thing I learned that was interesting is that CTV and all of these abbreviations and all this stuff, they're all trying to do the same thing technically. 
+Then the other thing I learned that was interesting is that CTV and all of these abbreviations and all this stuff, they're all trying to do the same thing technically.
 They take different approaches that end up with some that are a little bit more complex, some a little bit easier, some of them have a little bit more flexibility, others are a little bit more rigid, but they're all kind of trying to do the same thing.
 Then as you dig through those, you probably end up with different use cases.
 One thing I found interesting, too, because the more complex proposals, they enable more, but they are more risky in terms of things that can go wrong, unforeseen circumstances and all of that.
@@ -159,7 +161,7 @@ Owen Kemeys: 00:13:53
 
 Yeah, I think that's a fair characterization and the simplicity - this is why I started with CTV because it's the easiest to think about, and it's the most tightly constrained, but it still unlocks a huge possibility space of interesting things we can do.
 I use the word constructs because just a CTV by itself isn't that interesting, but the stuff it allows you to do is more.
-Then a lot of the developers I speak to are thinking, okay, we'll start with this, we can build a ton of useful stuff already, and then as we learn more familiarity with how to use these covenant type structures and so on, we can start to realize where we need a little bit more power and a little bit more flexibility and maybe add those in later on with another fork down the road.\
+Then a lot of the developers I speak to are thinking, okay, we'll start with this, we can build a ton of useful stuff already, and then as we learn more familiarity with how to use these covenant type structures and so on, we can start to realize where we need a little bit more power and a little bit more flexibility and maybe add those in later on with another fork down the road.
 But lots of people are very wary about opening Pandora's box and doing something really complicated on day one.
 I mean, none of this stuff is going to break Bitcoin, but some of the stuff is just too complex to rationalize about what its limitations are, whereas CTV is quite tightly scoped and also very well studied.
 It's been around many years now at this point.
@@ -182,7 +184,7 @@ On the one hand, users might build these trees themselves.
 That's if you've got a number of payments you want to make to several different people for different reasons, but maybe not all of them right now, but you know I'm gonna pay rent next month and the month after and the month after.
 So maybe next time I get my salary arrive, I could construct a tree myself, and that turns into just a regular receive address that I could give to the payroll company.
 They pay to that address, and I know I've got my rent payments for the next six months kind of locked into the chain ready to go.
-I don't need to make another on-chain transaction just by giving them that one address.\
+I don't need to make another on-chain transaction just by giving them that one address.
 So that's an example of a user wanting to construct a tree, and I can kind of picture in my head what a UX for that might roughly look like.
 I don't think it's that difficult, that's somewhat interesting.
 But the interesting ones are where the tree structure is built by someone else, and it allows you to be paid inside that tree.
@@ -224,22 +226,24 @@ So at the moment, all the addresses you generate with your regular today's walle
 That's what we're all used to.
 In a world where we're using CTV, the address that you generate will say - you're not allowed to spend these coins unless the spending transaction looks exactly like this, that I've predefined.
 So to the rest of the world, on-chain it just looks like some coins going to some address, but as soon as I show someone the spending transaction, which would be sending coins to the landlord or whatever, then he is able to verify that that transaction, that spending transaction, is the only spending condition for that address.
-So if he's not able to verify that, because maybe you've got some secondary spending condition where Mikey can still spend it after two weeks or something, where you can try and rug pull, if he's not satisfied that that spending transaction is the only way to spend those coins, which he can calculate for himself as soon as he had said information, then he should not consider himself paid.\
+So if he's not able to verify that, because maybe you've got some secondary spending condition where Mikey can still spend it after two weeks or something, where you can try and rug pull, if he's not satisfied that that spending transaction is the only way to spend those coins, which he can calculate for himself as soon as he had said information, then he should not consider himself paid.
+
 Maybe it might be easier to have a look at another example, which is the cold channel example, because that's a much more immediately visualizable, useful thing.
 I mean, we can't read it in the background, Christoph, but maybe you can scroll up a little bit, because that's easy to understand.
 The cold channel construct is something useful for Lightning.
 So at the moment, when you want to open a Lightning channel, you need to deposit coins into the multisig address with the channel partner, and there's normally several stages of on-chain hops before then, because you know you're getting paid your salary or something, you're not going to have that sent straight to the Lightning address because you and the channel partner need to negotiate in advance what the balance is going to be, and get everyone to pre-sign all the revocation transactions, all that stuff, so you don't tend to deposit straight into the Lightning channel address today.
-You tend to, maybe it goes to your cold storage first and then later on you decide you want to have some more liquidity on Lightning, so you send it - and then all the node packages tend to want you to send it into the node's single custody first, so it can then do the negotiating stuff with the channel partner.
+Maybe it goes to your cold storage first and then later on you decide you want to have some more liquidity on Lightning, so you send it - and then all the node packages tend to want you to send it into the node's single custody first, so it can then do the negotiating stuff with the channel partner.
 Then only once the negotiation stuff is agreed, do you then deposit coins into the channel address, and then you can start using it.
-But that's using several on-chain transactions just to get this off-chain transacting started.\
+But that's using several on-chain transactions just to get this off-chain transacting started.
+
 With CTV, we can do this thing called a cold channel, where using a couple of different spending routes, which are in one of the other slides, you can create an address that is a Lightning channel already, but the counterparty doesn't know about it yet.
 To everyone else in the world, it just looks like a regular deposit address.
 Then you can leave it there for months, years.
-No one else knows there's any other way to spend it, it just looks like a regular signature address.
+No one else knows there's any (other) way to spend it, it just looks like a regular signature address.
 But when you decide you want to start spending those, you can reach out to that counterparty and say, hey, by the way, this address here, this was actually a Lightning channel between us the whole time.
 If they're responsive, then you can start using it like a regular channel without any more on-chain transactions happening at all.
 So you don't need to move funds from that address into a channel address or anything.
-It's already a channel address and all that needs to happen is you give a little piece of extra information to the channel partner, and now he has everything necessary to start operating it as a regular channel with you.\
+It's already a channel address and all that needs to happen is you give a little piece of extra information to the channel partner, and now he has everything necessary to start operating it as a regular channel with you.
 So why that is interesting is not only does it cut out several on-chain transactions, but it also means that you can treat this as cold storage basically.
 So you might as well receive all of your salary payments into these cold channels, because you get a free option to start using it as Lightning immediately at any time that you so wish without a security trade-off.
 Whereas today, your channel partner knows all the channels that you have together, and that means that they have the opportunity to try and steal from you, because Lightning is this sort of like cooperative, but also adversarial protocol.
@@ -259,7 +263,7 @@ How do you think existing user flows will change if we deployed cold channels?
 That's the first question.
 The second is, are there any new user flows that are enabled by this?
 Of course the first question was how does it change the existing user flows, for example in Phoenix we have deposited on-chain, so there is that kind of a user flow where you have to deposit funds first.
-But then the way that Muun Wallet does it - is it does these submarine swaps and kind of avoids it all together.
+But then the way that Muun Wallet does it - is that it does these submarine swaps and kind of avoids it all together.
 So it seems like around the channel stuff, there are a bunch of user flows, how would you say CTV impacts those, or improves those?
 
 Owen Kemeys: 00:25:32
@@ -267,6 +271,7 @@ Owen Kemeys: 00:25:32
 So how I think it would look is, first of all you construct this cold channel by yourself without needing anyone else's cooperation.
 You just need the channel partners, public key or something like that, something that they publish that isn't risky to them.
 So this would probably be like an LSP and they would probably publicize that they do this because it gets them more liquidity.
+
 So what I imagine the UX sort of flow would look like is - you need to construct this address first of all, because you're going to give it to your payroll process, or your exchange, or whoever to do the withdrawal to, so you would need to pick who the channel partner is going to be, which LSP, which probably seems like a dropdown or something like Async or Zeus or whoever.
 And then it seems like the wallet in the background would do all of the CTV construction stuff, because the user doesn't even need to see or care about any of that.
 It's like a standard template that you would just deploy.
@@ -278,7 +283,7 @@ It's just that that step does not require an on-chain transaction, just requires
 So it seems to me you naturally end up with like a cash account or something, which is your actual Lightning available sats right now.
 Then maybe like checking account or something, which is like sats that are available on Lightning, but you need to unseal them first, or we need to come up with a term that makes sense to people, but they're ready to go, you need to complete the communications loop first.
 So they're sort of like reserves or something like that.
-The unsealing seems like it could just be a regular button or something that starts a communications loop with the LSP, and you ping them and say "hello are you awake", and they go "yeah we're still here, everything's fine", and then you go "Bang here you go, this was actually a cold channel with you the whole time". 
+The unsealing seems like it could just be a regular button or something that starts a communications loop with the LSP, and you ping them and say "hello are you awake", and they go "yeah we're still here, everything's fine", and then you go "Bang here you go, this was actually a cold channel with you the whole time".
 You're happy to start spending it and they go "yeah sure, whatever", and then you can move it into the available funds.
 
 Yashraj: 00:28:01
@@ -303,6 +308,7 @@ Maybe these would just supersede the on-chain balance stuff.
 Yashraj: 00:29:02
 
 Right, because right now in Phoenix wallet, you try to make some transactions - from the user perspective, it seems at some random time, the wallet will tell you that no, now you need to pay $5 or something, and we don't know what's happening in the background - is the channel being made larger and all of these things.
+
 What it seems like you might be saying is that the users will never have to think about that again.
 It will simplify all of those those mechanics.
 
@@ -310,10 +316,12 @@ Owen Kemeys: 00:29:42
 
 Yeah, in an ideal world I think so.
 I mean there is still a trade-off to make.
+
 What we didn't talk about already is in the case where you've got one of these cold channels, you deposit some funds there, and then you call the LSP that it's a channel with and say - "I'd like to start using it please", and they don't respond for whatever reason, then you need to move from that address to another one, because as part of the assurances that you need to provide to the LSP that you're not going to rug them, that means that the only routes to spending the cold channel are the cooperative case, which is the multi-sig like now, or the "something's gone wrong and I need to move on" case, which adds a time lock, which is how he's got an assurance that you can't rug pull him.
+
 So if he doesn't respond, you do need to make an on-chain transaction and move to another address.
 So we will still have to factor that in, but hopefully with a professional LSP, this is a very rare occurrence, like in the Phoenix situation.
-Phoenix is so tightly integrated with async, they're not ever going to be offline, it shouldn't really ever be an issue. 
+Phoenix is so tightly integrated with ACINQ, they're not ever going to be offline, it shouldn't really ever be an issue.
 But you do need to have that in the back pocket somewhere like how you would resolve that.
 But it should be quite rare and it's kind of no worse than today where you have an on-chain balance that you still can't use without spending some money on another transaction anyway.
 
@@ -332,6 +340,8 @@ Christoph Ono: 00:31:38
 Sounds like we have two potential user flows we could mock up here.
 One, the vault, and then the cold channel one.
 That would be really interesting to see some UI explorations on those, on exactly what we just talked about.
+
+## Payment Trees
 
 Owen Kemeys: 00:31:51
 
@@ -374,12 +384,12 @@ Just tell the story of how this thing works with the rent.
 Like the example, if I think, okay, I want to post-date a bunch of rent.
 Is that a good place to start?
 I've talked with my landlord, and I'm going to stay in this apartment for a year, but then all of a sudden the water heater goes, and I have to move.
-Okay? How would I how would I run that scenario at month six, even though I gave him a bunch of post-dated checks, how do I stop from month six to month twelve, and move and not pay him until he fixes the water heater?
+How would I run that scenario at month six, even though I gave him a bunch of post-dated checks, how do I stop from month six to month twelve, and move and not pay him until he fixes the water heater?
 
 Owen Kemeys: 00:34:30
 
 I think the rent example was not a good place to start.
-I wanted to move to the cold channels, because I think once you understand that a cold channel is just an address, the same as any other address, but it has Lightning like optional functionality, then you can start to see how that is a very useful thing for everyone to have for  every payment they receive from anything, because Lightning payments are just better if you can make it work.
+I wanted to move to the cold channels, because I think once you understand that a cold channel is just an address, the same as any other address, but it has Lightning like optional functionality, then you can start to see how that is a very useful thing for everyone to have for every payment they receive from anything, because Lightning payments are just better if you can make it work.
 The main hurdle is that you need to get the sats into Lightning in the first place, and we're kind of removing that concern.
 So rather than the landlord rent example, if you think of it as next time I make a withdrawal from an exchange, I can only give them one address.
 Let's say they're a dumb exchange that doesn't do Lightning or anything yet, they just do boring old on-chain transactions to one address, and they're going to charge me 50 bucks to withdraw or something.
@@ -448,6 +458,7 @@ So remember, the address encodes the spending conditions, so you've decided what
 The covenant is almost more useful as a way to prove to someone else that I can't spend it any other way.
 So maybe another example, and this is still a little bit abstract, it's not that useful by itself, but we can use it for payments between three people.
 We've already covered the compression thing, we can give this one address to the exchange and it has many different things inside it.
+
 Imagine that there are three branches and they are each branch is owned by one particular person.
 Alice, Bob, Charlie.
 Let's say we set it up so that the template route is - exactly one third goes to each member.
@@ -476,7 +487,6 @@ Yeah, it's not that useful by itself, but it's very powerful primitive when we c
 
 Yashraj: 00:41:50
 
-Right.
 Right, so I was trying to think about it in the lens of something that you mentioned earlier.
 What are the new new use cases it enables?
 How does it improve some of the existing use cases?
@@ -501,13 +511,12 @@ But we need to start small with things we can design right now for sure.
 Yashraj: 00:44:17
 
 Yeah, yeah.
-I hear what you just said and I think, yeah, so improves scalability privacy.
+I hear what you just said, so this is scalability and improves privacy.
 Like these use cases could be, so if it's just one UTXO shared by a dozen people, and then there is a spend from that, you don't know who was the owner of the previous one and who's the owner of a new one and things like that.
 
 Owen Kemeys: 00:44:47
 
-So right.
-So with what you can surveil on-chain, you're just seeing one UTXO, and we're all kind of familiar with it with Lightning already where it's one UTXO on-chain but it's owned by two people, but the sats in it - when we broadcast the closed channel state - and I have 5,000 fewer sats you know that I've paid them to the channel partner, but you don't know where he sent them onto because I've routed it through the whole Lightning network, so the privacy improves significantly.\
+So with what you can surveil on-chain, you're just seeing one UTXO, and we're all kind of familiar with it with Lightning already where it's one UTXO on-chain but it's owned by two people, but the sats in it - when we broadcast the closed channel state - and I have 5,000 fewer sats you know that I've paid them to the channel partner, but you don't know where he sent them onto because I've routed it through the whole Lightning network, so the privacy improves significantly.
 A simple way to think about it is that you have that effect but with more than two people inside that UTXO, and you actually don't even know how many people are inside that UTXO.
 It could be two, or it could be a million, there's no real way to know.
 You get a lot of privacy for free.
@@ -552,19 +561,21 @@ This is what CTV kind of does is it allows us to take things that were previousl
 
 Christoph Ono: 00:49:15
 
-Yeah, so I feel like I get some of this stuff, right?
+Yeah, so I feel like I get some of this stuff.
 So I was just trying to diagram a few things here, I made lots of other diagrams here earlier today for explaining fiat over Lightning with synthetic fiat and all of this stuff.
 So I'm just reusing those.
 So, here's my understanding.
-So Alice comes up with a bunch of rules, right?
-Like I can spend these 2 Bitcoin after one year.
-But Charles, he can spend 1 of those Bitcoin after one month, and he can spend another 1 Bitcoin after two months, whatever the rules may be, right.
+
+So Alice comes up with a bunch of rules.
+Like, I can spend these 2 Bitcoin after one year, but Charles, he can spend 1 of those Bitcoin after one month, and he can spend another 1 Bitcoin after two months, whatever the rules may be.
 Then I kind of compress them and turn them into this address.
+
 Then I tell Bob, Robert, who is my employer, so I give him this address, it looks like general address, and they're like, "Okay, here's your salary."
 That means these Bitcoin here will be locked to the conditions saved in this address.
 So now we have rules and we have bitcoins tied to them, and from then on, all interactions with these Bitcoin are governed by these rules.
-No one knows about those rules, only Alice does, right?
-So my landlord, which is this guy here, Charles, I have to tell him about those rules, right?
+No one knows about those rules, only Alice does.
+
+So my landlord, which is this guy here, Charles, I have to tell him about those rules.
 So I have to give him an address.
 And it's like, here's my address, there are two Bitcoin in there, and here's a rule that I baked into this address, and Charles can verify from the address like that, that's actually accurate, and there are no other rules, where Alice can secretly take things away.
 And he's like, okay, cool, I can spend one of those Bitcoin next month and then another one in two months, right?
@@ -573,6 +584,7 @@ Like no one can change these rules anymore.
 And we're all kind of tied to them.
 And that's kind of it.
 So that's my understanding.
+
 How do we get here from trees and trees and billions of scale?
 Maybe it needs another 400 diagrams.
 
@@ -630,8 +642,8 @@ Then she can bake those in the...
 
 Owen Kemeys: 00:53:25
 
-Yes. Who knows what the addresses of Charles's are.
-They might be just vault addresses, or they might be regular keys, or they might be trees, or they might be vaults, or they might be cold channels, or God only knows what he's doing with them.
+Yes.
+And who knows what the addresses of Charles's are, they might be just vault addresses, or they might be regular keys, or they might be trees, or they might be vaults, or they might be cold channels, or God only knows what he's doing with them.
 As far as you're concerned, it's just an address.
 
 Michael Hasse: 00:53:39
@@ -642,8 +654,8 @@ Okay.
 
 Yashraj: 00:53:42
 
-Yeah.
-Owen, I think we spent the whole hour talking only about CTV, and there are like a dozen more proposals and stuff. What's the...
+Owen, I think we spent the whole hour talking only about CTV, and there are like a dozen more proposals and stuff.
+What's the...
 
 Owen Kemeys: 00:54:03
 
@@ -654,7 +666,7 @@ Yashraj: 00:54:05
 Oh, sorry.
 I was asking what about some of the other proposals?
 This is just all about CTV.
-What about but what about LNHANCE and `OP_VAULT` and CSFS?
+What about but what about LNHANCE and `OP_VAULT` and CSFS (`OP_CHECKSIGFROMSTACK`)?
 There are so many of these, I don't even know what those are.
 
 Michael Hasse: 00:54:28
@@ -663,7 +675,7 @@ You have to wait for the next tweet thread.
 
 Owen Kemeys: 00:54:32
 
-LNHANCE packages CTV plus CSFS and something else to make a suite of soft forks bundled into one that are particularly very useful for Lightning.
+LNHANCE packages CTV plus CSFS and something else (`OP_INTERNALKEY`) to make a suite of soft forks bundled into one that are particularly very useful for Lightning.
 CSFS, just a way to think of it holistically is that CTV is the most constrained version because you specify everything, every element of the spending transaction in advance.
 CSFS and other proposals allow you to say, maybe I constrain the amount, but not the destination, or vice versa, but you're generally making it more flexible.
 There's other technical differences, like exactly how they go about that inside the code, and which bit gets hashed when, and which bytes are used for that, whatever, and so on, which is way beyond me.
@@ -677,7 +689,7 @@ One of these things I seem to remember, and I hope I remember it correctly, is t
 
 Owen Kemeys: 00:55:56
 
-And that's any AnyPrevOut, APO.
+And that's any AnyPrevOut, APO (`SIGHASH_ANYPREVOUT`).
 
 Michael Hasse: 00:55:58
 
@@ -718,7 +730,6 @@ We could do a design huddle where we collaboratively try to design some flows fo
 I'm thinking about basic stuff where you look at your coins in there.
 You're going to have to look at your balance or your transactions, and there has to be a little thing that says this one has extra rules attached, and then you'd have to somehow see those extra rules.
 Then you would have to think of the whole backup flow, because this is off-chain data so that it doesn't get lost.
-Yeah.
 
 Michael Hasse: 00:58:27
 
@@ -728,7 +739,7 @@ He then makes the table with all the different covenant proposals and he said "o
 Christoph Ono: 00:58:58
 
 Okay, and here in my background, to wrap things up are some AI generated trees made of Bitcoin addresses.
-At least that's what MidJourney thinks it looks like.
+At least that's what Midjourney thinks it looks like.
 Looks more like broccoli, but that can be our next topic.
 
 Owen Kemeys: 00:59:14
@@ -752,8 +763,9 @@ Think of all the stuff you do with the covenants, the CTVs or whatever, as how f
 So, you know... no, I won't give an example, that's more confusing.
 There's only so far ahead that we can plan and collaborate and things can actually work.
 Once you reach the end of that and you need to change the structure altogether, you will need to go on-chain, but it doesn't have to be that every single member of the shared UTXO have to all exit out of the chain and then all start again.
+
 You can work together and say, if you're doing a payment pool structure, and Bob wants to leave or something, Bob needs to do something he can't possibly do inside this structure anymore.
-The rest of us sat well I'm fine still staying in here, I don't need to get my own UTXO on-chain and then organize pooling together again in another one.
+The rest of us can be like well I'm fine still staying in here, I don't need to get my own UTXO on-chain and then organize pooling together again in another one.
 Why don't the five of the rest of us, we'll all just hop across at the same time that Bob exits, and start another pool or join an existing pool somewhere else.
 The way we use Bitcoin today is kind of quite crude and simplistic, and we need to start realizing that the chain is for _logging commitments_ that you can't go back from, basically, rather than _ownership transfers_, because we can now achieve ownership transfers off-chain, but there just comes a point where we will need to do something that we can't do off-chain and we can capture that change in an on-chain transaction, but it doesn't have to be splintering it into a million pieces and starting from scratch.
 We can still collaborate to move from one tree to another, but this is the stuff that's super hard to visualize, so I may not have explained anything at all.
@@ -839,8 +851,8 @@ Yeah.
 
 Yashraj: 01:06:00
 
-I think about it a bit like  PayJoin, just like one set, because that also involves the PSBT's and all that stuff.
-So basically Charles could construct the transaction or like construct something, send it to Alice and then she does her stuff, adds her keys or signatures or  whatever, and then she sends it back, and that's like the transaction that's like ready to broadcast.
+I think about it a bit like  PayJoin, just like one set, because that also involves the PSBTs and all that stuff.
+So basically Charles could construct the transaction or like construct something, send it to Alice and then she does her stuff, adds her keys or signatures or whatever, and then she sends it back, and that's like the transaction that's like ready to broadcast.
 Is that the right way to think about it at all?
 
 Owen Kemeys: 01:06:35
