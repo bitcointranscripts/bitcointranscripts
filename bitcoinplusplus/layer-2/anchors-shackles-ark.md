@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=OBt1nS14Ac4
 tags: ["ark"]
 speakers: ["Burak Keceli"]
 categories: ["conference"]
-date: 2023-04-24
+date: 2023-04-23
 ---
 So hey guys, my name is Borat.
 Today I'll be talking about something that I've been working on for the past, let's say, six months or so.
