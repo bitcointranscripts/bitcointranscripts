@@ -2,7 +2,6 @@
 title: "Anchors & Shackles (Ark)"
 transcript_by: Refisa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=OBt1nS14Ac4
-tags: ["ark"]
 speakers: ["Burak Keceli"]
 categories: ["conference"]
 date: 2023-04-24
