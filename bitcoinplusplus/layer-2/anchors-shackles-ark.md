@@ -1,11 +1,11 @@
 ---
 title: "Anchors & Shackles (Ark)"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: Refisa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=OBt1nS14Ac4
-tags: ['ark']
-speakers: ['Burak Keceli']
-categories: ['conference']
-date: 2023-06-24
+tags: ["ark"]
+speakers: ["Burak Keceli","Adam Back"]
+categories: ["conference"]
+date: 2023-06-23
 ---
 So hey guys, my name is Borat.
 Today I'll be talking about something that I've been working on for the past, let's say, six months or so.
