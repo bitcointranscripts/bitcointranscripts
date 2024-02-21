@@ -71,56 +71,109 @@ Yeah, but what if someone just says they didn't get my message or whatever?
 Burak: Oh yeah, it's atomic.
 So I'm DMing you a message, right?
 I sent you a coin. If you don't get the message, After two weeks, I get a timeout refund. I mean, then I'm able to, as a sender, redeem the coins I've sent. You put The whole thing you pull on to layer one? The whole thing is off-chain. The closures are on the chain. I mean, the closures—you have the ability. In the first two weeks, the recipient can only add an ATLC. In the last two weeks, the center has
-First participant: I've been saying this all. I've been saying this for 15 days, and nothing's happening. I just want to get my money back out of this factory. I want to go to a different factory.
+
+## First participant:
+ I've been saying this all. I've been saying this for 15 days, and nothing's happening. I just want to get my money back out of this factory. I want to go to a different factory.
 Burak: No, no, no—the same factory. Because the TILF has remained unchanged. You're still on the same client.
 First participant: How many people do you think would be in each factory?
-Burak: A thousand. I mean, if it's an update, template, update, or verify design, it's millions.
-First participant: Yeah, but don't you think, like, I thought the factory design was really flawed in that if any single person in the factory stops responding, the whole thing has to be drawn?
-Burak: Yeah, exactly the disaster scenario.
-First participant: Yeah, I mean, it's crazy that more than like 20 right, that would be like already pushing.
-Burak: Yeah, I mean, the disaster scenario also goes for a lightning. If someone broadcasts all states, I mean, it's a disastrous scenario.
-First participant: I get it, but you easily join the factory with like zero coins or like five dollars, and then what would it take to bring the factory on chain? So a factory transaction is like 20, 40 times the size of a normal transaction.
-Burak: Yeah. So ideally, in the end, we should have a top-level update verifier designed for the coins so that you're only redeeming the coins you're interested in. But yeah, I mean the coin is below dust, like one satin, worthless coin. In theory, you can claim it, but economically, it doesn't make sense. But what the protocol does is set the incentives right so that the factory operator doesn't cheat. I think that also goes for lightning. But you have the ability to claim that one Satoshi, although it's not economically...
-First participant: But I was just trying to make sure that I understood, because I think I don't understand it, right? So it's like a bunch of off-chain coin joins, and then on layer one you spend in, you join the factory.
-Burak: So you have coins, right?
+
+## Burak: 
+A thousand. I mean, if it's an update, template, update, or verify design, it's millions.
+
+## First participant: 
+Yeah, but don't you think, like, I thought the factory design was flawed in that if any single person in the factory stops responding, the whole thing has to be drawn?
+
+## Burak: 
+Yeah, exactly the disaster scenario.
+
+## First participant:
+ Yeah, I mean, it's crazy that more than like 20 right, that would be like already pushing.
+
+## Burak:
+ Yeah, I mean, the disaster scenario also goes for lightning. If someone broadcasts all states, I mean, it's a disastrous scenario.
+
+## First participant:
+ I get it, but you easily join the factory with zero coins or like five dollars, and then what would it take to bring the factory on a chain? So a factory transaction is like 20, or 40 times the size of a normal transaction.
+
+## Burak:
+ Yeah. So ideally, in the end, we should have a top-level update verifier designed for the coins so that you're only redeeming the coins you're interested in. But yeah, I mean the coin is below dust, like one satin, worthless coin. In theory, you can claim it, but economically, it doesn't make sense. But what the protocol does is set the incentives right so that the factory operator doesn't cheat. I think that also goes for lightning. But you have the ability to claim that one Satoshi, although it's not economically...
+
+## First participant:
+ But I was just trying to make sure that I understood, because I think I don't understand it, right? So it's like a bunch of off-chain coin joins, and then on layer one you spend in, you join the factory.
+
+## Burak: 
+So you have coins, right?
 I mean, you're assuming you have coins, but I mean, in the first place...
-I said that I have Bitcoin on layer one. Okay, so the first step is: how do you onboard to the protocol, right? You have one machine, you take it on the Bitcoin chain, and you want to onboard. You were using—it could be—you can withdraw from Bitfinex or something—an exchange that supports the protocol, right? So that the exchange has points already in the protocol. You can get paid from it, but if you have Bitcoin,.
-First participant: Because someone has already onboarded to Layer 2.
-Burak: Yeah, you onboarded to Layer 2. You have Bitcoin on your chain.
-First participant: But the first person opens the channel.
-Burak: There are no channels here. Maybe the factory is there.
-Second participant: No, like they have a wallet. I tell you, hey, do you know what bitcoin is? You say no. Okay, you go to the wallet; I go to the wallet, and I send you some stocks. That means I have to marry Satoshi. That's the first step. You could try to peel the oranges, but I believe that is extremely difficult. I think this is what he's saying: there are no nodes, no channels; it's just wallets.
-Burak: Right, okay. I'll count on that as what you're saying.
-First and third participants: Yeah, so if anyone has one, that's the question. The first is if Biffin X is already onboarded into the factory, like they already have the coins. Yeah, we have to call them some days. We call them a Barack coin. They're the next to have these two coins. I can get them, and I can send my public keys. Yeah, and then I have a wall that supports this. When they refresh it every five seconds, they refresh it into something where it swaps out the, there's a new Merkle root or whatever that has, instead of something that never contained my key, it's now something that contains my key. So now I'm on board with this scheme.
-Burak: So the flow is like you have Bitfinex, and Bitfinex assumes it has already collected a protocol, and you want to withdraw from Bitfinex to your business protocol wallet. You have, like, a dedicated public key. You paste the public key into the Bitfinex interface, and they make you a payout. And Bitfinex offers coins. Two of the coins are exchanged between the factory operator, and Bitfinex joins the factory operator in the next session and creates new coins. He spends his coins and creates new coins for you, the payout coins for you.
-And you're a cosigner on this; you're a cosigner of your coins, but you can do a refund. It has a script for refund closure. If you get a coin, yes, under a new factory, Bitfinex can prove it. It's a launch commitment. I can prove it to you. Okay, I paid you. You have a new coin, you have a bunch of coins under a new factory, or Bitfinex can also DM you, okay?
+I said that I had Bitcoin on layer one. Okay, so the first step is: how do you onboard to the protocol, right? You have one machine, you take it on the Bitcoin chain, and you want to onboard. You were using—it could be—you can withdraw from Bitfinex or something—an exchange that supports the protocol, right? So that the exchange has points already in the protocol. You can get paid for it, but if you have Bitcoin,.
+
+## First participant:
+ Because someone has already been onboarded to Layer 2.
+
+## Burak:
+ Yeah, you were onboarded to Layer 2. You have Bitcoin on your chain.
+
+## First participant:
+ But the first person opens the channel.
+
+## Burak:
+ There are no channels here. Maybe the factory is there.
+
+## Second participant:
+ No, like they have a wallet. I tell you, hey, do you know what Bitcoin is? You say no. Okay, you go to the wallet; I go to the wallet, and I send you some stocks. That means I have to marry Satoshi. That's the first step. You could try to peel the oranges, but I believe that is extremely difficult. I think this is what he's saying: there are no nodes, no channels; it's just wallets.
+
+## Burak:
+ Right, okay. I'll count on that as what you're saying.
+
+## First and third participants: 
+Yeah, so if anyone has one, that's the question. The first is if Biffin X is already onboarded into the factory like they already have the coins. Yeah, we have to call them some days. We call them a Barack coin. They're the next to have these two coins. I can get them, and I can send my public keys. Yeah, and then I have a wall that supports this. When they refresh it every five seconds, they refresh it into something where it swaps out the, there's a new Merkle root or whatever that has, instead of something that never contained my key, it's now something that contains my key. So now I'm on board with this scheme.
+
+## Burak: 
+So the flow is like you have Bitfinex, and Bitfinex assumes it has already collected a protocol, and you want to withdraw from Bitfinex to your business protocol wallet. You have, like, a dedicated public key. You paste the public key into the Bitfinex interface, and they make you a payout. And Bitfinex offers coins. Two of the coins are exchanged between the factory operator, and Bitfinex joins the factory operator in the next session and creates new coins. He spends his coins and creates new coins for you, the payout coins for you. And you're a cosigner on this; you're a cosigner of your coins, but you can do a refund. It has a script for refund closure. If you get a coin, yes, under a new factory, Bitfinex can prove it. It's a launch commitment. I can prove it to you. Okay, I paid you. You have a new coin, you have a bunch of coins under a new factory, or Bitfinex can also DM you, okay?
  
-First participant: Bitfinex also, every block rolling over, like an output or something?
+
+## First participant:
+ Bitfinex also, every block rolling over, like an output or something?
 It must be because my public key is making it into something.
-Burak: When Bitfinex joins, I mean, if they're paying constant payouts into Bitfinex, Bitfinex joins the factory session every five seconds, yes.
-First participant: Yeah, but isn't there something that's at least 32 bytes long on layer one that has to change when I onboard, right?
-Burak: So, are you asking about the first onboarding step?
-First participant: Yeah, I have on-chain layer one Bitcoin now joined.
-Burak: How do you join? How do you have a coin? Okay, so the first initial onboarding protocol step. So you have a layer one UTXO, and you have a hardware bullet, and you want to convert that Bitcoin into the protocol coins. So you deposit your single set, you have created a type of coin, and you deposit it into a two-of-two chain. On a chain of Bitcoin, you take two of two, just like coins, but coins are... It's like a channel, but a one-time-use-only channel.
+
+## Burak: 
+When Bitfinex joins, I mean, if they're paying constant payouts into Bitfinex, Bitfinex joins the factory session every five seconds, yes.
+
+## First participant:
+ Yeah, but isn't there something that's at least 32 bytes long on layer one that has to change when I onboard, right?
+
+## Burak:
+ So, are you asking about the first onboarding step?
+
+## First participant:
+ Yeah, I have on-chain layer one Bitcoin now joined.
+
+## Burak:
+ How do you join? How do you have a coin? Okay, so the first initial onboarding protocol step. So you have a layer one UTXO, and you have a hardware bullet, and you want to convert that Bitcoin into the protocol coins. So you deposit your single set, you have created a type of coin, and you deposit it into a two-of-two chain. On a chain of Bitcoin, you take two of two, just like coins, but coins are... It's like a channel, but a one-time-use-only channel.
 Two of two, and from there, you can even pay away any money.
 So if it's a real channel, or you can, because you can get paid from an HDLC Nested coin in the protocol, or you can, coins are off-chain, but you created an on-chain coin, right, two of two, and you can join a coin with that on-chain coin. You can register that coin, the on-chain coin, for the next coin join session, the fact-check session.
-First participant:: I just wanted to really quickly recap it in my mind to make sure I understood it, and then ask my question. So the factory is putting money into this transaction to create coins. And then, if I have money, I want to buy into this contract, and we're going to have some secret that we share out of band where I can control where you spend those coins.
+
+## First participant: 
+I just wanted to quickly recap it in my mind to make sure I understood it, and then ask my question. So the factory is putting money into this transaction to create coins. And then, if I have money, I want to buy into this contract, and we're going to have some secret that we share out of band where I can control where you spend those coins.
 So you're using the connectors to do it in an atomic way?
-Burak: Yeah, you use connectors in an atomic way; someone pays you, and in the factory, you're not aware of it. I mean the factory is there, whether it's confirmed or not, factory is there, you're in the way, but you realize, okay, I have a DM, okay, someone says, okay, I paid you, in this factory, go check it out, and you go check it out, okay, real, I know the factory content, because he sent me, the center sent me the factory content and the factory ID, the transaction ID, and go check it out, okay, there is a factory, there are coins, you'll verify the content and all that, and okay, I see there are a bunch of coins, and then with each coin, I mean, the sender can tell you the index in what index your coins are in the factory, and then you check it out, okay, calculate the script tab key, okay, and my cosigner key is this, with this tweak at, and the cosigner key is null, publicly null, the LSB, I mean the factor of it is publicly null, you calculate the tap script, and okay, this is coin, this is the script pubkey, this coin is mine.
-First participant: Okay, so are the connectors also their own outputs?
-Burak: Connectors are also transaction outputs. Yes, just like coins.
+
+## Burak:
+ Yeah, you use connectors in an atomic way; someone pays you, and in the factory, you're not aware of it. I mean the factory is there, whether it's confirmed or not, the factory is there, you're in the way, but you realize, okay, I have a DM, okay, someone says, okay, I paid you, in this factory, go check it out, and you go check it out, okay, real, I know the factory content because he sent me, the center sent me the factory content and the factory ID, the transaction ID, and go check it out, okay, there is a factory, there are coins, you'll verify the content and all that, and okay, I see there are a bunch of coins, and then with each coin, I mean, the sender can tell you the index in what index your coins are in the factory, and then you check it out, okay, calculate the script tab key, okay, and my cosigner key is this, with this tweak at, and the cosigner key is null, publicly null, the LSB, I mean the factor of it is publicly null, you calculate the tapping script, and okay, this is a coin, this is the script pubkey, this coin is mine.
+
+## First participant:
+ Okay, so are the connectors also their outputs?
+
+## Burak:
+ Connectors are also transaction outputs. Yes, just like coins.
  
 They're commitments. Yes, just like coins. The difference is that connectors are not told to do anything, and they carry dust value.
-First participant: Okay, I sort of understood that.
-One thing that you brought up that I didn't understand is the XOR operation as a penalty.
+
+## First participant: 
+Okay, I sort of understood that. One thing that you brought up that I didn't understand is the XOR operation as a penalty.
 Yeah. Can you explain that a little bit? That's the right way.
-Burak: Sure. So you're receiving a coin. You have this coin, i.e., coin number one.
-Let's say it carries 1,000 sets. You have this coin. The factory is not confirmed.
-It's in my memory. But you demand your own settlement.
-What happens is the factory; you can accept it as Zeroconf as it is.
-You can say, Okay, I consider this payment, payout, instant, settled.
- 
-Although it's not confirmed because the factory operator is to double spend on this factory transaction, you forge the factory operator's private key. And if you have previously spent coins in the protocol, you have coins in the past; you spent them already, but because you can forge the factory operators with 202, the private key, you can forge with 202, and you can claim your previously spent points.
+
+## Burak:
+ Sure. So you're receiving a coin. You have this coin, i.e., coin number one. Let's say it carries 1,000 sets. You have this coin. The factory is not confirmed. It's in my memory. But you demand your settlement. What happens is the factory; you can accept it as Zeroconf as it is. You can say, Okay, I consider this payment, payout, instant, settled.
+ Although it's not confirmed because the factory operator is to double spend on this factory transaction, you forge the factory operator's private key. And if you have previously spent coins in the protocol, you have coins in the past; you spent them already, but because you can forge the factory operators with 202, the private key, you can forge with 202, and you can claim your previously spent points.
 
 ## First participant:
  Okay, so because you've already done business, are you using data from an existing transaction and this new transaction to try and forge the factory operators?
@@ -132,7 +185,7 @@ If you're already on board, assuming you already have, just like Lightning, when
  Do you run into issues with fees for the transaction clearing?
 
 ## Burak:
- So this is a liquidity network, just like Lightning. So they're launching fees, but it's a factory commitment. So, this is like 250 bytes, like one transaction, right? It's a launching transaction, and they'll have, say, 1,000 participants, and the fees are divided by that number of participants; that's like 25,000 subs, divided by that number of participants, plus liquidity fees. It's lightning, and there's all liquidity networks. This liquidity is used less efficiently here.
+ So this is a liquidity network, just like Lightning. So they're launching fees, but it's a factory commitment. So, this is like 250 bytes, like one transaction, right? It's a launching transaction, and they'll have, say, 1,000 participants and the fees are divided by that number of participants; that's like 25,000 subs, divided by that number of participants, plus liquidity fees. It's lightning, and there's all liquidity networks. This liquidity is used less efficiently here.
 
 ## First participant:
  Thank you. Sure. All right, cool. Can I ask one question? So, in this diagram, the stuff on the left is confirmed. So you can see three outputs, and then that coin's output is sort of an Opsy TV kind of thing that you can expand out to 100. So, when everyone uses this, they can see that my share is coming from that. Okay, so then there's this four-week delay. Let's say there's a scenario where everyone's aware, like, okay, this operator, this factory guy, he's offline, he's dead. So, we know, why wait four weeks? We need to close. What is the process that any, let's say, large and there is a hundred? Is it the case that any of the? 100 can then close at the current state, or do you need it? Like, what is the process?
