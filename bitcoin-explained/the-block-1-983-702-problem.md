@@ -37,7 +37,7 @@ Because we've gone this hyper-commercialized entity now with sponsors and stuff.
 Aaron van Wirdum: 00:00:52
 
 True, yeah.
-Sure, do you know who our sponsor is?
+Sjors, do you know who our sponsor is?
 It's Coinkite.
 And they produce the cold card.
 You know what I love about the cold card?
@@ -60,7 +60,7 @@ Well, there was a bug in the Bitcoin protocol.
 
 Aaron van Wirdum: 00:01:35
 
-Right, but there's still a problem.
+But there's still a problem.
 
 Sjors Provoost: 00:01:38
 
@@ -69,7 +69,7 @@ There's still a problem, but not a bug.
 
 Aaron van Wirdum: 00:01:45
 
-Right, okay, I see.
+Okay, I see.
 So, there was a bug, now there's no bug, but there's still a problem which is not a bug.
 
 Sjors Provoost: 00:01:51
@@ -90,7 +90,6 @@ Or the block "1,983,702" problem.
 
 Aaron van Wirdum: 00:02:14
 
-Right.
 So, this will be a problem in.
 
 Sjors Provoost: 00:02:18
@@ -124,7 +123,6 @@ And to be clear, It's a problem, it's not like bad.
 
 Aaron van Wirdum: 00:02:49
 
-Right.
 Okay, but it is something that needs to be solved eventually, in some way or another.
 
 Sjors Provoost: 00:02:55
@@ -135,7 +133,7 @@ That's definitely a problem.
 
 Aaron van Wirdum: 00:03:05
 
-Right, this is not a problem that's going to require a consensus change.
+Is this not a problem that's going to require a consensus change?
 
 Sjors Provoost: 00:03:09
 
@@ -144,7 +142,7 @@ But not a hard fork.
 
 Aaron van Wirdum: 00:03:12
 
-Right, okay.
+Okay.
 How did you find about it?
 Like I said, I'd never heard of this.
 Is this just something you, this is your hobby you look for very niche things that no one else has heard about?
@@ -182,13 +180,6 @@ It was or wasn't?
 Sjors Provoost: 00:04:35
 
 It was possible.
-
-Aaron van Wirdum: 00:04:35
-
-It was possible.
-
-Sjors Provoost: 00:04:37
-
 And this was creating a problem because, well, when the transaction exists twice, then the original one essentially just disappears.
 This has to do with how transactions work.
 
@@ -234,7 +225,6 @@ I didn't look at those specific blocks.
 
 Aaron van Wirdum: 00:06:24
 
-Right.
 Anyways, that is the most likely reason why that would happen.
 Is it plausible that it could happen in any other circumstance to identical transactions?
 
@@ -280,7 +270,7 @@ It's possible, it was possible to be exact, but the bug is that it creates probl
 
 Aaron van Wirdum: 00:07:52
 
-Right, so the miner in this case?
+So the miner in this case?
 
 Sjors Provoost: 00:07:53
 
@@ -330,17 +320,15 @@ Sjors Provoost: 00:09:41
 Because you deleted one entry.
 So this can lead to quite strange situations.
 For example, let's say you mine a transaction once and then a couple blocks later you mine it again and then you spend it and so then it disappeared, right?
-That's one way, but let's say you mine one transaction.
-Sorry, yeah, let's do it again.
-You mine one transaction, you mine a couple other blocks, and then you mine the transaction again.
-Now, if there's a reorg, the blockchain undoes your most recent block, and then creates some other blocks.
+That's one way, but let's say you mine one transaction,
+you mine a couple other blocks, and then you mine the transaction again.
+Now, if there's a re-org, the blockchain undoes your most recent block, and then creates some other blocks.
 That means that your transaction has now disappeared from your point of view.
 
 Aaron van Wirdum: 00:10:29
 
-Yeah, yeah, Yeah, okay, I get it.
-So, oh yeah.
-So, yeah, let me try to re-explain that, even though it was kind of clear to me, but maybe if I re-explain that might help one other person out there.
+Yeah, okay, I get it.
+So, let me try to re-explain that, even though it was kind of clear to me, but maybe if I re-explain that might help one other person out there.
 So, yeah, you're creating a blockchain, obviously, and then the first coinbase transaction is included in block three, and then the next one is included in block seven.
 But then there's another block seven, and that's the blockchain that the network goes with.
 That becomes the longest chain.
@@ -395,7 +383,6 @@ So, I think in 2018 or 2017, it was refactored into what we would now consider t
 Aaron van Wirdum: 00:12:58
 
 Okay.
-So, let's just...
 
 Sjors Provoost: 00:12:59
 
@@ -414,7 +401,7 @@ Sjors Provoost: 00:13:35
 
 Yeah, and as far as I know, what did happen was there were two instances of these duplicate coinbases.
 Basically miners losing 50 BTC.
-But I don't think there were cases of also re-orcs on top of that that would have created this mess.
+But I don't think there were cases of also re-org on top of that that would have created this mess.
 But maybe there was and nobody noticed it.
 Because the mess would not have been...
 Well, I think we would have noticed it now, yeah.
@@ -423,7 +410,7 @@ Aaron van Wirdum: 00:13:58
 
 Probably right.
 That would have been very unlucky as well.
-Like, you've got to have an exact re-orc exactly on that block where this exact block happened.
+Like, you've got to have an exact re-org exactly on that block where this exact block happened.
 
 Sjors Provoost: 00:14:07
 
@@ -450,7 +437,7 @@ Fair.
 Aaron van Wirdum: 00:14:40
 
 All right.
-So this was the, again, this was the OG Satoshi bug.
+So this was the OG Satoshi bug.
 And This bug was fixed.
 
 Sjors Provoost: 00:14:47
@@ -479,20 +466,9 @@ The Bitcoin network nodes, my node, your node, would just say, this is not valid
 Sjors Provoost: 00:15:25
 
 Exactly.
-
-Aaron van Wirdum: 00:15:26
-
-Right.
-
-Sjors Provoost: 00:15:27
-
 Now, let's say they do that, they make a coinbase, then they spend it, then they can make the same coinbase again.
 That's no problem.
 So BIP30 does allow that.
-
-Aaron van Wirdum: 00:15:38
-
-Right, okay.
 
 Sjors Provoost: 00:15:40
 
@@ -505,7 +481,6 @@ Like, hey, now that I've checked that all the inputs are valid, or whichever seq
 
 Aaron van Wirdum: 00:16:25
 
-Right.
 So that was the case in 2012, for a brief while, at least, after BIP30 was deployed.
 And this sounds like it's an especially annoying or burdensome check because it's so unlikely that it's necessary, especially for all non-coinbase transactions.
 But just technically...
@@ -529,7 +504,7 @@ And also, in general, you want miners and all nodes to be able to check the vali
 
 Sjors Provoost: 00:17:10
 
-Yeah, so every second you can shave off the checking time is better.
+Yeah, so every second you can shave off, the checking time is better.
 So, BIP34 was introduced, which made this process more efficient.
 
 Aaron van Wirdum: 00:17:18
@@ -600,8 +575,6 @@ I think the original one was Peter Wuille and the second one was Russell O'Conno
 
 Aaron van Wirdum: 00:19:15
 
-Right.
-Okay.
 However, so I guess this is why we're making this episode.
 
 Sjors Provoost: 00:19:18
@@ -641,7 +614,6 @@ Good job, Gavin.
 Sjors Provoost: 00:19:52
 
 However...
-Oh. Exactly.
 So Gavin, whatever it was, he didn't do anything wrong.
 
 Aaron van Wirdum: 00:19:55
@@ -717,20 +689,10 @@ For instance, there could have been an early miner who, for whatever reason, pla
 Sjors Provoost: 00:22:34
 
 Yeah, so as the episode suggests, some miner put the number 1,983,702 in the coinbase.
-
-Aaron van Wirdum: 00:22:41
-
-Right.
-
-Sjors Provoost: 00:22:41
-
 They didn't actually put that number in there, they were probably just writing their name, and the name, if you map it into how a computer reads it, might have looked like a big number.
 
 Aaron van Wirdum: 00:22:50
 
-Right.
-So, that's...
-Okay.
 So, there was a block in, like, say 2009, that starts with the number 1,900,000 something.
 So, by the time we actually get to block number 1,900,000, and that number has to be put in the coinbase, there's a risk that it was a pretty, that's not gonna happen, right?
 
@@ -749,7 +711,6 @@ And then could, if they wanted to, wouldn't happen accidentally, make the rest o
 
 Aaron van Wirdum: 00:23:29
 
-Right.
 So, yeah, so it would just have to spend the same amount of...
 Well, no, because there's 50 coins in the original coinbase.
 
@@ -909,7 +870,7 @@ Which means we have 30 years to actually solve the problem but if we don't solve
 
 Aaron van Wirdum: 00:28:16
 
-Right, okay. So, in 20 years, if you haven't upgraded your Bitcoin Core node...
+So, in 20 years, if you haven't upgraded your Bitcoin Core node...
 Your Bitcoin Core node today, if left unupgraded, will still begin checking for BIP30 two decades from now?
 
 Sjors Provoost: 00:28:31
@@ -982,10 +943,6 @@ Sjors Provoost: 00:30:01
 So, this is like an asteroid heading toward Earth, and NASA says, "Oh, we found an asteroid coming toward Earth, but don't worry, it's going to miss us by at least the distance between here and the moon."
 It's fine.
 The only thing is we found out like two hours ago so if it had not missed us we would be dead and we would not have noticed it.
-
-Aaron van Wirdum: 00:30:17
-
-Right, right, right.
 
 Sjors Provoost: 00:30:18
 
@@ -1096,14 +1053,6 @@ And that is to basically make SegWit mandatory.
 And why?
 Right now...
 
-Aaron van Wirdum: 00:33:11
-
-Wait, wait.
-
-Sjors Provoost: 00:33:13
-
-SegWit commitments...
-
 Aaron van Wirdum: 00:33:14
 
 SegWit for every transaction mandatory?
@@ -1163,7 +1112,6 @@ Yes.
 
 Aaron van Wirdum: 00:34:16
 
-Right.
 Yeah.
 Makes sense.
 Okay, go on.
@@ -1206,10 +1154,6 @@ I'm just pointing out that even that might have some pushback.
 Sjors Provoost: 00:35:37
 
 Yeah, and the other solutions have this same, I think, have the same property, is that every miner would have to do it, or they might lose a block if they mine an empty block.
-
-Aaron van Wirdum: 00:35:44
-
-Right.
 
 Sjors Provoost: 00:35:45
 
