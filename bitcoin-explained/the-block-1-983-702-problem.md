@@ -151,7 +151,7 @@ Is this just something you, this is your hobby you look for very niche things th
 
 Sjors Provoost: 00:03:23
 
-Well, we sometimes need to scrape the bottle of the barrel for episodes titles, but in this case, I was trying to understand a bug in Stratum V2, something I'm working on recently, and had something to do with the Coinbase transactions and whether or not it has a witness.
+Well, we sometimes need to scrape the bottle of the barrel for episodes titles, but in this case, I was trying to understand a bug in Stratum V2, something I'm working on recently, and had something to do with the coinbase transactions and whether or not it has a witness.
 Turns out it does have a witness, or at least it can have a witness, which I didn't know, and That's why I kept banging my head against it.
 But as I was trying to understand how the code works, I was reading the code comments, and I came across this like almost full-page story about this problem.
 
@@ -202,7 +202,7 @@ Sjors Provoost: 00:04:56
 Same hash.
 So, the same hash means it's the same content.
 So, it's the same inputs, the same outputs.
-And so typically you would expect this in a Coinbase transaction in the early days, because a Coinbase transaction doesn't have any inputs, or maybe it is the name of your pool, which would be the same if you were mining multiple blocks.
+And so typically you would expect this in a coinbase transaction in the early days, because a coinbase transaction doesn't have any inputs, or maybe it is the name of your pool, which would be the same if you were mining multiple blocks.
 And then the outputs might be the address that you're paying yourself to, which might also be the same of your pool.
 So, if you mined in the early days two blocks to the same address and with the same pool name and you were like, I guess that...
 
@@ -217,7 +217,7 @@ Sjors Provoost: 00:05:54
 
 Yeah, however, it also would have to be the same amount, right?
 So, this would be either a block with no transactions in it, so no fees.
-So the Coinbase amount would be exactly 50 Bitcoin back in the day, or it would be coincidentally the exact same total fees.
+So the coinbase amount would be exactly 50 Bitcoin back in the day, or it would be coincidentally the exact same total fees.
 The thing is, it only happened twice.
 
 Aaron van Wirdum: 00:06:14
@@ -241,9 +241,9 @@ Is it plausible that it could happen in any other circumstance to identical tran
 Sjors Provoost: 00:06:36
 
 Well, it could happen as a child of the coin.
-So if the Coinbase transactions are identical, then you could make another transaction.
-Basically, you could just replay another transaction from the past that spends that Coinbase transaction.
-So the whole history of that Coinbase could be repeated.
+So if the coinbase transactions are identical, then you could make another transaction.
+Basically, you could just replay another transaction from the past that spends that coinbase transaction.
+So the whole history of that coinbase could be repeated.
 So if somebody mines a block and then they send it to the Pirate Bay and they download a movie, you could redo all that history.
 
 Aaron van Wirdum: 00:07:00
@@ -287,7 +287,7 @@ Sjors Provoost: 00:07:53
 Yeah, so the miner mines, say, 50 Bitcoin and doesn't spend it, and then a week later, he mines 50 Bitcoin and also doesn't spend it.
 Now he's like, oh, I've got 100 Bitcoins, how am I gonna spend this?
 Oh, I'm gonna make a transaction and this transaction points to a previous transaction, that's what a transaction is to do.
-So you would point to the original Coinbase transaction by its hash and then also by the position of the output in the Coinbase transaction.
+So you would point to the original coinbase transaction by its hash and then also by the position of the output in the coinbase transaction.
 But then the question is, which one do you mean?
 And the Bitcoin Core software would simply look at the most recent one and would spend that.
 And There was only one entry, so it would just be overwritten.
@@ -341,10 +341,10 @@ Aaron van Wirdum: 00:10:29
 Yeah, yeah, Yeah, okay, I get it.
 So, oh yeah.
 So, yeah, let me try to re-explain that, even though it was kind of clear to me, but maybe if I re-explain that might help one other person out there.
-So, yeah, you're creating a blockchain, obviously, and then The first Coinbase transaction is included in block three, and then the next one is included in block seven.
+So, yeah, you're creating a blockchain, obviously, and then the first coinbase transaction is included in block three, and then the next one is included in block seven.
 But then there's another block seven, and that's the blockchain that the network goes with.
 That becomes the longest chain.
-So now your second Coinbase transaction is deleted from your UTXO set, basically, or your database, and it's not like the one before that is not like automatically restored either.
+So now your second coinbase transaction is deleted from your UTXO set, basically, or your database, and it's not like the one before that is not like automatically restored either.
 So now you lost both.
 
 Sjors Provoost: 00:11:12
@@ -473,24 +473,29 @@ As in, if you create a transaction right now, it's not allowed to already exist 
 Aaron van Wirdum: 00:15:08
 
 Okay, but it's just an invalid transaction.
-So if the same thing would happen, if the miner would create this Coinbase transaction where he pays himself to the same address.
+So if the same thing would happen, if the miner would create this coinbase transaction where he pays himself to the same address.
 The Bitcoin network nodes, my node, your node, would just say, this is not valid, you just wasted your energy, we're going to wait for a valid block.
+
+Sjors Provoost: 00:15:25
+
 Exactly.
+
+Aaron van Wirdum: 00:15:26
+
 Right.
 
 Sjors Provoost: 00:15:27
 
-Now, let's say they do that, they make a coinbase,
-
-Aaron van Wirdum: 00:15:32
-
-then they spend it, then they can make the same coinbase again.
-
-Sjors Provoost: 00:15:36
-
+Now, let's say they do that, they make a coinbase, then they spend it, then they can make the same coinbase again.
 That's no problem.
 So BIP30 does allow that.
+
+Aaron van Wirdum: 00:15:38
+
 Right, okay.
+
+Sjors Provoost: 00:15:40
+
 So that was great and that worked.
 The only problem is that this rule is a bit difficult to check, because it means that whenever you get a new block, for every transaction in that block, you have to make sure that it doesn't already exist, the transaction itself.
 So right now, whenever you check a block, you go through every transaction and you check that all its inputs exist, so it's spending from something that exists, but you do not check if the transaction itself exists, or at least you don't now because of what we'll discuss.
@@ -520,21 +525,20 @@ I don't know how much, if it's like 1% or 10%, but it's annoying.
 
 Aaron van Wirdum: 00:17:00
 
-And also just in general, you want miners to be able to check the validity of new blocks or all nodes.
-You want them to be able to check for the as soon as possible.
+And also, in general, you want miners and all nodes to be able to check the validity of new blocks as soon as possible.
 
 Sjors Provoost: 00:17:10
 
 Yeah, so every second you can shave off the checking time is better.
-So, bit 34 was introduced, which made this process more efficient.
+So, BIP34 was introduced, which made this process more efficient.
 
 Aaron van Wirdum: 00:17:18
 
 When was this?
 
-Sjors Provoost: 00:17:18
+Sjors Provoost: 00:17:20
 
-Same year, just a half a year later.
+Same year, just half a year later.
 That is to say...
 
 Aaron van Wirdum: 00:17:21
@@ -547,25 +551,29 @@ Sjors Provoost: 00:17:29
 
 I think so.
 So, the little background is that BIP30 was a relatively simple software that could be deployed very quickly because they realized the problem and they wanted to fix it as quickly as possible so nobody would deliberately exploit it.
-BIP-34 was something that was deployed a bit more carefully, very much like the BIP9 style soft fork.
+BIP34 was something that was deployed a bit more carefully, very much like the BIP9 style soft fork.
 So there was some signaling involved, block version number went up and you had like so many percent of the miners had to signal it, et cetera, et cetera.
 So BIP34 was a more thorough solution, but it was also deployed more carefully.
 So what does BIP34 do?
-Well, it makes sure that, well, that was the idea, that the Coinbase transaction is unique by definition by adding the block height to it.
-So every Coinbase transaction must start with the block height.
-And because it must start with the block height, it's going to be different than previous transactions which had a different block height, or previous Coinbase transactions had a different block height, so you won't have the duplicates.
+Well, it makes sure that, well, that was the idea, that the coinbase transaction is unique by definition by adding the block height to it.
+So every coinbase transaction must start with the block height.
+And because it must start with the block height, it's going to be different than previous transactions which had a different block height, or previous coinbase transactions had a different block height, so you won't have the duplicates.
 That is to say moving forward, you don't have to duplicate.
 
 Aaron van Wirdum: 00:18:33
 
 Yeah, okay, yeah, this makes sense.
-This way every Coinbase necessarily is unique, like every Coinbase transaction necessarily is unique because it's in a new block that has new block height.
-And therefore every transaction that comes from, that's spent from that coin is also unique.
+This way every coinbase necessarily is unique, like every coinbase transaction necessarily is unique because it's in a new block that has new block height.
+And therefore every transaction that is spent from that coin is also unique.
 So now every transaction has to be unique.
+
+Sjors Provoost: 00:17:52
+
 Yes.
+
+Aaron van Wirdum: 00:18:53
 Okay, yeah, makes sense.
-Yeah.
-Good solution, Shorts, I like it.
+Good solution, Sjors, I like it.
 Who came up with this?
 
 Sjors Provoost: 00:18:58
@@ -614,7 +622,7 @@ I mean, it's just he's the author, so it doesn't mean that he came up with it.
 Aaron van Wirdum: 00:19:30
 
 It was a joke, but maybe it's a kind of a sensitive joke at this point in time.
-Sure, go on.
+Sjors, go on.
 Because there is a problem.
 It introduced a problem.
 
@@ -627,12 +635,12 @@ So just having this rule is fine.
 Aaron van Wirdum: 00:19:49
 
 Okay.
-However...
 Good job, Gavin.
-However...
+
 
 Sjors Provoost: 00:19:52
 
+However...
 Oh. Exactly.
 So Gavin, whatever it was, he didn't do anything wrong.
 
@@ -642,7 +650,7 @@ Okay.
 
 Sjors Provoost: 00:19:56
 
-However, then in 2015, somebody tried to be smart and said, hey, we have this BIP 34, which means that we don't need to check for BIP 30 anymore.
+However, then in 2015, somebody tried to be smart and said, hey, we have this BIP34, which means that we don't need to check for BIP30 anymore.
 We can make it faster.
 So perhaps I said before in the episode, oh this was the reason the performance thing was the reason to introduce it.
 Maybe not.
@@ -661,10 +669,10 @@ Sjors Provoost: 00:20:37
 I don't know.
 So, in 2015, that optimization was merged.
 And well, then in 2018, so three years later, somebody realized, oh, oops!
+that doesn't actually work.
 
 Aaron van Wirdum: 00:20:53
 
-that doesn't actually work.
 Wait, wait, wait, sorry, I lost the plot.
 Where are we now?
 What's the year?
@@ -674,7 +682,7 @@ Sjors Provoost: 00:20:57
 Well, the year of the fix is 2018, but I guess the year of the realization was late 2017.
 So somewhere, I think it was October 2017, but this wasn't documented, but it kind of follows.
 Somebody realized, oh wait a minute, there are exceptions to this convenient rule.
-Remember that the rule of BIP-34 is that you put the height of the block at the beginning of the coinbase.
+Remember that the rule of BIP34 is that you put the height of the block at the beginning of the coinbase.
 So block number one would have height number one, etc.
 But that rule only applies starting with block, I don't know, 200,000 something.
 
@@ -687,11 +695,11 @@ Sjors Provoost: 00:21:39
 Yeah, and it started being applied from height number 220,000 or something like that.
 So then the question, and so from there on this rule is correct, but the problem is, and that's what people realize, is that it doesn't apply earlier.
 The rule wasn't active earlier.
-So what is actually in those earlier Coinbase transactions?
-Might there be numbers in those earlier Coinbase transactions, numbers that could represent a block height?
+So what is actually in those earlier coinbase transactions?
+Might there be numbers in those earlier coinbase transactions, numbers that could represent a block height?
 The answer is yes.
 There were numbers in there.
-So there were older Coinbase transactions that had numbers in there that represented blocks that might occur in the future.
+So there were older coinbase transactions that had numbers in there that represented blocks that might occur in the future.
 
 Aaron van Wirdum: 00:22:12
 
@@ -704,11 +712,11 @@ Yeah, either it was a very smart miner that foresaw that this problem was going 
 
 Aaron van Wirdum: 00:22:25
 
-Like let's say, like there could have been an early miner that for whatever reason put the number a million in the Coinbase.
+For instance, there could have been an early miner who, for whatever reason, placed the number one million in the coinbase.
 
 Sjors Provoost: 00:22:34
 
-Yeah, so as the episode suggests, some miner put the number 1,983,702 in the Coinbase.
+Yeah, so as the episode suggests, some miner put the number 1,983,702 in the coinbase.
 
 Aaron van Wirdum: 00:22:41
 
@@ -724,12 +732,12 @@ Right.
 So, that's...
 Okay.
 So, there was a block in, like, say 2009, that starts with the number 1,900,000 something.
-So, by the time we actually get to block number 1,900,000, and that number has to be put in the Coinbase, there's a risk that it was a pretty, that's not gonna happen, right?
-Normally this would not happen,
+So, by the time we actually get to block number 1,900,000, and that number has to be put in the coinbase, there's a risk that it was a pretty, that's not gonna happen, right?
 
 Sjors Provoost: 00:23:16
 
-But in theory, somebody could put, would have to put the same number in it.
+Normally this would not happen,
+But in theory, somebody would have to put the same number in it.
 
 Aaron van Wirdum: 00:23:21
 
@@ -737,19 +745,19 @@ Yes.
 
 Sjors Provoost: 00:23:22
 
-And then could, if they wanted to, wouldn't happen accidentally, make the rest of the Coinbase identical to that original transaction.
+And then could, if they wanted to, wouldn't happen accidentally, make the rest of the coinbase identical to that original transaction.
 
 Aaron van Wirdum: 00:23:29
 
 Right.
 So, yeah, so it would just have to spend the same amount of...
-Well, no, because there's 50 coins in the original Coinbase.
+Well, no, because there's 50 coins in the original coinbase.
 
 Sjors Provoost: 00:23:37
 
 Much more.
 So, Merge looked at this specific transaction, and it turns out that that was a very lucky block.
-So, not only did it get a 50 Bitcoin Coinbase subsidy, which modern blocks don't get, it also got, I think, 50 or so BTC in fees.
+So, not only did it get a 50 Bitcoin coinbase subsidy, which modern blocks don't get, it also got, I think, 50 or so BTC in fees.
 
 Aaron van Wirdum: 00:23:55
 
@@ -758,7 +766,7 @@ That's good.
 Sjors Provoost: 00:23:56
 
 Yeah, so that's a very nice little block in the past.
-So if you wanted to reproduce this, your Coinbase transaction would have to create about 107 Bitcoin.
+So if you wanted to reproduce this, your coinbase transaction would have to create about 107 Bitcoin.
 It would have to spend 107 Bitcoin.
 That is only allowed if there is 107 Bitcoin worth of fees in that block.
 So that's never going to happen accidentally.
@@ -770,10 +778,10 @@ The other thing that has to happen is that the attacker would have to actually p
 Sjors Provoost: 00:24:22
 
 Yes, because he cannot send it to some arbitrary destination.
-He has to reproduce the original Coinbase transaction, which means that his 107 Bitcoin has to go to the original owner of that Coinbase transaction.
+He has to reproduce the original coinbase transaction, which means that his 107 Bitcoin has to go to the original owner of that coinbase transaction.
 And so maybe this miner, you know, was frozen and wakes up and decides that this is a fun joke because he can just get the 107 Bitcoin back after doing this.
-But the other problem is it would have to be a non-SegWit block, because there was no SegWit back then, and SegWit adds something to the Coinbase.
-Well, you can't add that to the Coinbase, because then it would be a different block.
+But the other problem is it would have to be a non-SegWit block, because there was no SegWit back then, and SegWit adds something to the coinbase.
+Well, you can't add that to the coinbase, because then it would be a different block.
 So that means all the fees would have to be in non-SegWit transactions.
 There's all sorts of problems with this attack.
 One problem I can think about is that the next miner might be like, hey, there's a lot of fees in that original block, let me reorg it and mine it myself.
@@ -789,15 +797,15 @@ Sjors Provoost: 00:25:21
 
 So if the attacker did that, they would have an identical transaction.
 And this is what people realized back in 2017, 2018.
-That's bad because that is a BIP-30 violation.
-But we are not checking BIP-30 anymore.
-So we should check BIP-30 again.
+That's bad because that is a BIP30 violation.
+But we are not checking BIP30 anymore.
+So we should check BIP30 again.
 That's the solution, basically.
 But it was a realization, like, oh, if we don't fix this, let me, you know, they would have to look at all the other numbers that were in all the transactions and see if this could happen earlier.
 
 Aaron van Wirdum: 00:25:50
 
-Okay, also, there could still be nodes that are checking BIP-30, right, in theory?
+Okay, also, there could still be nodes that are checking BIP30, right, in theory?
 
 Sjors Provoost: 00:25:54
 
@@ -844,7 +852,7 @@ What's the actual risk?
 
 Sjors Provoost: 00:26:48
 
-Well, the first risk, and again, this has been fixed, but if it had not been fixed, the first risk is that they could violate bit 30.
+Well, the first risk, and again, this has been fixed, but if it had not been fixed, the first risk is that they could violate BIP30.
 And that means that if you had a node from before 2015, it would not accept the block.
 New nodes would accept the block.
 So you get a chain split.
@@ -880,11 +888,11 @@ Oh, it's solved already?
 
 Sjors Provoost: 00:27:48
 
-Yes, in 2018, once they realized this problem was solved, and the solution is very simple, as of block 1,983,702, we just checked BIP-30 again.
+Yes, in 2018, once they realized this problem was solved, and the solution is straightforward. As of block 1,983,702, we simply started checking BIP30 again.
 
 Aaron van Wirdum: 00:28:01
 
-Oh, we're back to checking BIP-30 with all these inefficiencies?
+Oh, so we're back to checking BIP30 with all these inefficiencies?
 
 Sjors Provoost: 00:28:05
 
@@ -893,7 +901,7 @@ We won't now, but we will check it from that block onward.
 
 Aaron van Wirdum: 00:28:09
 
-Oh okay yeah that makes sense.
+Oh okay. Yeah, that makes sense.
 
 Sjors Provoost: 00:28:11
 
@@ -901,8 +909,8 @@ Which means we have 30 years to actually solve the problem but if we don't solve
 
 Aaron van Wirdum: 00:28:16
 
-Right okay so in 20 years, so my Bitcoin Core node, well, I haven't upgraded my...
-Your Bitcoin Core node today, if you don't upgrade it, will still start checking for BIP-30 in 20 years from now?
+Right, okay. So, in 20 years, if you haven't upgraded your Bitcoin Core node...
+Your Bitcoin Core node today, if left unupgraded, will still begin checking for BIP30 two decades from now?
 
 Sjors Provoost: 00:28:31
 
@@ -914,13 +922,13 @@ Oh, okay, interesting.
 
 Sjors Provoost: 00:28:33
 
-So, will your node probably, unless you didn't upgrade before 2018?
+So, your node will likely do so unless you haven't upgraded since before 2018, right?
 
 Aaron van Wirdum: 00:28:38
 
 I'm not sure.
 No, probably I did.
-Yeah, no, I did upgrade since 2018.
+Yeah, I did upgrade since 2018.
 
 Sjors Provoost: 00:28:41
 
@@ -928,7 +936,7 @@ There are so many security vulnerabilities in old Bitcoin nodes that this is the
 
 Aaron van Wirdum: 00:28:47
 
-I might be like three versions behind, but not that bad.
+I might be like three versions behind, but it's not that bad.
 
 Sjors Provoost: 00:28:50
 
@@ -971,7 +979,7 @@ Interesting.
 
 Sjors Provoost: 00:30:01
 
-So this is like the asteroid coming towards the earth and NASA says oh we found an asteroid coming towards the earth but don't worry it's going to miss us by like at least a distance between here and the moon.
+So, this is like an asteroid heading toward Earth, and NASA says, "Oh, we found an asteroid coming toward Earth, but don't worry, it's going to miss us by at least the distance between here and the moon."
 It's fine.
 The only thing is we found out like two hours ago so if it had not missed us we would be dead and we would not have noticed it.
 
@@ -990,10 +998,10 @@ Well, I mean, the bug could have been harmful if someone wants to exploit it.
 Sjors Provoost: 00:30:31
 
 No. So basically, by looking at the original transaction, they could see that it was not possible to exploit this.
-And the reason is because that Coinbase, yes, you could duplicate it, but it was already spent.
-And so you then need to reproduce the transactions that spent the Coinbase.
-And that is impossible because one of those transactions was spending another Coinbase.
-And that other Coinbase had a number in it, it's like 5 billion or some insane number.
+And the reason is because that coinbase, yes, you could duplicate it, but it was already spent.
+And so you then need to reproduce the transactions that spent the coinbase.
+And that is impossible because one of those transactions was spending another coinbase.
+And that other coinbase had a number in it, it's like 5 billion or some insane number.
 And we can never get to block 5 billion, at least not in the current code, right?
 Because it stops in 2106.
 
@@ -1023,9 +1031,7 @@ Are you pushing for a hard fork?
 
 Sjors Provoost: 00:31:27
 
-No, you can just wait until 2006.
-Right.
-2106.
+No, you can just wait until 2106.
 
 Aaron van Wirdum: 00:31:30
 
@@ -1037,10 +1043,10 @@ Anything else?
 Sjors Provoost: 00:31:46
 
 Yes, so the fix was shipped in 2018.
-It just basically says, okay, from this block, gonna check bit 30.
+It just basically says, okay, from this block, gonna check BIP30.
 So anybody running a modern node doesn't have to worry too much.
-Except on testnet, I think on testnet, I think on testnet, it's already checking bit 30 now.
-But who cares about testnet?
+Except on TestNet.,I think on TestNet, it's already checking BIP30 now.
+But who cares about TestNet.?
 Because TestNet had the same kind of problem.
 
 Aaron van Wirdum: 00:32:11
@@ -1061,12 +1067,12 @@ And I think in TestNet there was another block like that in block 2,200,000 or s
 
 Aaron van Wirdum: 00:32:21
 
-I don't care about testnet.
+I don't care about TestNet..
 
 Sjors Provoost: 00:32:22
 
 Testnet is already at block 2,500,000.
-So I think it's already checking BIP 30.
+So I think it's already checking BIP30.
 
 Aaron van Wirdum: 00:32:26
 
@@ -1074,7 +1080,7 @@ Okay.
 
 Sjors Provoost: 00:32:27
 
-And there's a little code comment saying like, oh, I'm sure somebody will fix it before then.
+And there's a little code comment saying like, "Oh, I'm sure somebody will fix it before then."
 
 Aaron van Wirdum: 00:32:32
 
@@ -1085,7 +1091,7 @@ Like, is this just it, or do we have other ways out of this conundrum that we fi
 Sjors Provoost: 00:32:41
 
 So ideally, you want to have something in every block that we know was not in those blocks before BIP34 activated.
-And there's a bunch of candidates that were mentioned back in the day, but one candidate that I saw on Twitter, I think it was Kelvin Kim that said it, but I don't know if he came up with it or heard it from somebody else.
+And there's a bunch of candidates that were mentioned back in the day, but one candidate that I saw on Twitter, I think it was Calvin Kim that said it, but I don't know if he came up with it or heard it from somebody else.
 And that is to basically make SegWit mandatory.
 And why?
 Right now...
@@ -1108,14 +1114,13 @@ No, just say for every block.
 
 Aaron van Wirdum: 00:33:18
 
-For every Coinbase transaction?
-Yes.
-Yeah, okay, that makes sense.
+For every coinbase transaction?
 
 Sjors Provoost: 00:33:21
 
+Yes.
 So every block has to commit to SegWit, has to include the SegWit commitment.
-The SegWit commitment is an up-return that refers to the tree of SegWit transactions.
+The SegWit commitment is an `OP_RETURN` that refers to the tree of SegWit transactions.
 
 Aaron van Wirdum: 00:33:30
 
@@ -1128,7 +1133,7 @@ So the transactions in the block don't have to be segwit.
 Aaron van Wirdum: 00:33:36
 
 Oh, so what you're saying is there could still be a block mine that has zero segwit transactions.
-But as soon as there's one segwit transaction in a block, you need the segwit thing in the Coinbase and therefore the transaction ID is different.
+But as soon as there's one segwit transaction in a block, you need the segwit thing in the coinbase and therefore the transaction ID is different.
 
 Sjors Provoost: 00:33:48
 
@@ -1148,7 +1153,6 @@ So the change would be to say,
 
 Aaron van Wirdum: 00:34:04
 
-okay, you have to...
 Let me ask this question real quick.
 So, because I was going to ask, has there been any block mined that doesn't include any segwit transactions?
 Since segwit is out and that would be empty blocks.
@@ -1162,10 +1166,11 @@ Aaron van Wirdum: 00:34:16
 Right.
 Yeah.
 Makes sense.
+Okay, go on.
 
 Sjors Provoost: 00:34:17
 
-Okay, go on.
+
 So basically, you know, the difficulty then would just be, okay, when you propose an empty block, which you have to do as a miner sometimes, very briefly, just make sure that it's a segwit block.
 So that would be a fairly simple soft fork.
 But there are other ideas out there.
@@ -1208,7 +1213,7 @@ Right.
 
 Sjors Provoost: 00:35:45
 
-So I think another one was, okay, we just add the block height again, but we add it to a different field, like the lock time of the Coinbase transaction.
+So I think another one was, okay, we just add the block height again, but we add it to a different field, like the lock time of the coinbase transaction.
 
 Aaron van Wirdum: 00:35:54
 
@@ -1240,10 +1245,10 @@ Sjors Provoost: 00:36:27
 
 Well, we would have to very carefully study block 1,983,702.
 Well not this block, but the original block that created it.
-And that Coinbase has been spent so it can already be recreated but you have to look at all the descendants.
+And that coinbase has been spent so it can already be recreated but you have to look at all the descendants.
 So this thing was spent to like around 10 different addresses and those could spend and those could spend.
-And if you can show that for every transaction descending from it, it was also using a Coinbase transaction that cannot be duplicated, maybe you can prove that it, you know, you could write a proof that it can never happen, gives you another 20 years.
-I think that's a stupid exercise compared to the simple software.
+And if you can show that for every transaction descending from it, it was also using a coinbase transaction that cannot be duplicated, maybe you can prove that it, you know, you could write a proof that it can never happen, gives you another 20 years.
+I think that's a stupid exercise compared to the simple soft fork.
 
 Aaron van Wirdum: 00:37:04
 
@@ -1257,12 +1262,13 @@ Aaron van Wirdum: 00:37:11
 
 Sure, do you even do?
 What do you do for this podcast?
-Nothing.
+
 
 Sjors Provoost: 00:37:16
 
+Nothing.
 Moving on.
-I did actually run a script to check that there are no upreturn transactions before BIP324 activated.
+I did actually run a script to check that there are no `OP_RETURN` transactions before BIP324 activated.
 
 Aaron van Wirdum: 00:37:26
 
@@ -1270,7 +1276,7 @@ Wait, sorry, can you repeat that just for me?
 
 Sjors Provoost: 00:37:28
 
-There were no upreturn transactions in the Coinbase before BIP324 activated.
+There were no `OP_RETURN` transactions in the coinbase before BIP324 activated.
 
 Aaron van Wirdum: 00:37:33
 
@@ -1286,8 +1292,8 @@ Okay.
 
 Sjors Provoost: 00:37:35
 
-Which means that you don't even have to commit to SegWit, you just have to put Upperturn in a Coinbase transaction.
-That will be the rule.
+Which means that you don't even have to commit to SegWit; you just have to put Upperturn in a coinbase transaction. 
+That will be the rule. 
 But of course, it's easier to just say SegWit.
 
 Aaron van Wirdum: 00:37:46
@@ -1312,7 +1318,7 @@ Go on.
 
 Sjors Provoost: 00:38:12
 
-Yeah, so there was a great consensus cleanup proposal back in 2019 by Matt Corallo, Blue Matt, which contained a bunch of these very small fixes, kind of similar to this one, but not actually this one.
+Yeah, so there was a great consensus cleanup proposal back in 2019 by Matt Corallo, BlueMatt, which contained a bunch of these very small fixes, kind of similar to this one, but not actually this one.
 
 Aaron van Wirdum: 00:38:27
 
@@ -1371,4 +1377,7 @@ All right, thanks, Sjors.
 Sjors Provoost: 00:39:02
 
 All right and thank you for listening to Bitcoin.
+
+Aaron van Wirdum: 00:39:05
+
 Explained.
