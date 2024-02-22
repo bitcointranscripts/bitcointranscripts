@@ -2,56 +2,24 @@
 title: "The Block 1,983,702 Problem"
 transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-87-the-block-1-983-702-problem-s7s3j
-tags: ["bitcoin-core","bip32","security-problems","segwit"]
+tags: ["bitcoin-core","security-problems"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-12-21
 episode: 87
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss the so-called “block 1,983,702 problem”. They explain how a bug in early Bitcoin implementations could in rare cases cause a loss of funds, or in a worst-case scenario even lead to consensus failures, while they also explain how BIP 30 and BIP 34 solved this problem. As it turns out, however, BIP 34 introduced a new problem, that could become an issue about twenty years from now…"
+summary: "The episode from \"Bitcoin Explained\" podcast, hosted by Aaron van Wirdum and Sjors Provoost, discusses a complex issue in the Bitcoin protocol known as the \"Block 1,983,702 Problem.\" The dialogue delves into the historical bug in Bitcoin's protocol that allowed for the existence of duplicate transactions, leading to potential consensus failure and the loss of Bitcoin for miners. This problem, stemming from an \"OG Satoshi bug,\" has been partially addressed over time through various Bitcoin Improvement Proposals (BIPs), specifically BIP30 and BIP34, which aimed to prevent duplicate transactions by ensuring unique coinbase transactions in each block.\n\nHowever, a subsequent realization highlighted a loophole: early blocks (pre-BIP34) could contain numerical sequences in their coinbase transactions that might accidentally be replicated in future blocks, posing a potential risk of creating duplicate transactions again. This issue, dubbed the \"Block 1,983,702 Problem,\" could theoretically allow an attacker to exploit this loophole, though it would require significant resources and specific conditions to be feasible.\n\nTo mitigate this risk, a temporary fix was implemented in 2018, deciding to reinstate BIP30 checks from block 1,983,702 onwards, giving the Bitcoin community time to find a more permanent solution. Several potential fixes are discussed, including making SegWit mandatory for all blocks, which would inherently prevent the duplication issue by ensuring a unique identifier in each block that was not present in pre-BIP34 blocks.\n\nThroughout the conversation, Provoost and van Wirdum explore the technical nuances of the problem, the historical context of its discovery, and the implications for Bitcoin's security and consensus mechanism. They emphasize the importance of proactive problem-solving in the Bitcoin community while acknowledging the complexities involved in implementing changes to the protocol."
 ---
+## Introduction
+
 Aaron van Wirdum: 00:00:19
 
 Live from Utrecht, this is Bitcoin Explained.
 Hey Sjors.
 
-Sjors Provoost: 00:00:24
+[omitted sponsors segment]
 
-So last time I read the sponsor, and it was a complete disaster.
-So, this time you're going to do it.
-As the song goes, Aaron reads ads, Aaron reads ads, Aaron reads ads.
+Aaron van Wirdum: 00:01:20
 
-Aaron van Wirdum: 00:00:36
-
-Nice.
-I forgot all about the jingle.
-You haven't read any toots, what's it called?
-Boost.
-You haven't read any Boost for a while.
-
-Sjors Provoost: 00:00:46
-
-What's going on with that?
-No, we might do that later again.
-Because we've gone this hyper-commercialized entity now with sponsors and stuff.
-
-Aaron van Wirdum: 00:00:52
-
-True, yeah.
-Sjors, do you know who our sponsor is?
-It's Coinkite.
-And they produce the cold card.
-You know what I love about the cold card?
-Besides the fact that they are our sponsor, Sjors.
-I love that they're Bitcoin only.
-I love that they're a hardware wallet.
-It's secure.
-It's for your Bitcoin.
-It's to store your Bitcoin on.
-How long is our read, Sjors?
-Did I get there yet?
-I think you're good.
-The cold card is great, get it.
-That's right.
 Sjors, today we're discussing a very niche bug that I had never heard of, but apparently there's a bug in the Bitcoin protocol.
 
 Sjors Provoost: 00:01:31
@@ -75,6 +43,8 @@ So, there was a bug, now there's no bug, but there's still a problem which is no
 Sjors Provoost: 00:01:51
 
 Well, it's kind of a bug, but it's not like a dangerous bug like the original thing.
+
+## Explaining the Bug and Its Implications
 
 Aaron van Wirdum: 00:01:55
 
@@ -440,6 +410,8 @@ All right.
 So this was the OG Satoshi bug.
 And This bug was fixed.
 
+## Addressing the Bug: BIP30's Role
+
 Sjors Provoost: 00:14:47
 
 Exactly.
@@ -469,13 +441,10 @@ Exactly.
 Now, let's say they do that, they make a coinbase, then they spend it, then they can make the same coinbase again.
 That's no problem.
 So BIP30 does allow that.
-
-Sjors Provoost: 00:15:40
-
 So that was great and that worked.
 The only problem is that this rule is a bit difficult to check, because it means that whenever you get a new block, for every transaction in that block, you have to make sure that it doesn't already exist, the transaction itself.
 So right now, whenever you check a block, you go through every transaction and you check that all its inputs exist, so it's spending from something that exists, but you do not check if the transaction itself exists, or at least you don't now because of what we'll discuss.
-But with Bit.30, you would have to do that.
+But with BIP30, you would have to do that.
 You'd have to do an extra check for every transaction.
 Like, hey, now that I've checked that all the inputs are valid, or whichever sequence we're going to do, does this transaction exist?
 
@@ -501,6 +470,8 @@ I don't know how much, if it's like 1% or 10%, but it's annoying.
 Aaron van Wirdum: 00:17:00
 
 And also, in general, you want miners and all nodes to be able to check the validity of new blocks as soon as possible.
+
+## Efficiency and BIP34: A Solution with Caveats
 
 Sjors Provoost: 00:17:10
 
@@ -636,12 +607,14 @@ Yeah, like I explained just now.
 I immediately got it.
 Why did it take these Bitcoin core developers so long, Sjors?
 
-Sjors Provoost: 00:20:37 
+Sjors Provoost: 00:20:37
 
 I don't know.
 So, in 2015, that optimization was merged.
 And well, then in 2018, so three years later, somebody realized, oh, oops!
 that doesn't actually work.
+
+## The Unforeseen Consequences of Optimizations
 
 Aaron van Wirdum: 00:20:53
 
@@ -851,6 +824,8 @@ Sjors Provoost: 00:27:48
 
 Yes, in 2018, once they realized this problem was solved, and the solution is straightforward. As of block 1,983,702, we simply started checking BIP30 again.
 
+## Averting a Potential Crisis: The Fix and Its Implications
+
 Aaron van Wirdum: 00:28:01
 
 Oh, so we're back to checking BIP30 with all these inefficiencies?
@@ -943,9 +918,6 @@ Sjors Provoost: 00:30:01
 So, this is like an asteroid heading toward Earth, and NASA says, "Oh, we found an asteroid coming toward Earth, but don't worry, it's going to miss us by at least the distance between here and the moon."
 It's fine.
 The only thing is we found out like two hours ago so if it had not missed us we would be dead and we would not have noticed it.
-
-Sjors Provoost: 00:30:18
-
 So this is one of those cases where yes, the bug isn't actually harmful, but if it had been harmful, there would have been only two weeks to deal with it.
 
 Aaron van Wirdum: 00:30:26
@@ -1044,6 +1016,8 @@ Aaron van Wirdum: 00:32:32
 Oh, I was going to ask, are there others?
 So we got 20 years, are there other solutions?
 Like, is this just it, or do we have other ways out of this conundrum that we find ourselves in?
+
+## Future Proofing Bitcoin Against Similar Issues
 
 Sjors Provoost: 00:32:41
 
@@ -1154,9 +1128,6 @@ I'm just pointing out that even that might have some pushback.
 Sjors Provoost: 00:35:37
 
 Yeah, and the other solutions have this same, I think, have the same property, is that every miner would have to do it, or they might lose a block if they mine an empty block.
-
-Sjors Provoost: 00:35:45
-
 So I think another one was, okay, we just add the block height again, but we add it to a different field, like the lock time of the coinbase transaction.
 
 Aaron van Wirdum: 00:35:54
@@ -1236,8 +1207,8 @@ Okay.
 
 Sjors Provoost: 00:37:35
 
-Which means that you don't even have to commit to SegWit; you just have to put Upperturn in a coinbase transaction. 
-That will be the rule. 
+Which means that you don't even have to commit to SegWit; you just have to put `OP_RETURN` in a coinbase transaction.
+That will be the rule.
 But of course, it's easier to just say SegWit.
 
 Aaron van Wirdum: 00:37:46
