@@ -3,27 +3,27 @@ title: "CoinShuffle"
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=dVZDeEfSdcI
 tags: ["research","coinjoin"]
-speakers: ["Aviv Milner","Adam Gibson","Lucas Ontivero","Max Hillebrand"]
+speakers: ["Aviv Milner","Adam Fiscor","Lucas Ontivero","Max Hillebrand"]
 categories: ["club"]
 date: 2020-01-20
+summary: "CoinShuffle is a decentralized coinjoin protocol that aims to address the privacy and centralization issues of traditional coinjoins. Participants can anonymously submit their addresses in a process that uses encryption to prevent linking the addresses to specific individuals. The addresses are then shuffled using secure multi-party computation, creating coinjoin outputs that include inputs from all participants. CoinShuffle eliminates the need for a central coordinator and is resilient to denial of service attacks. However, the decryption process is sequential and the time cost increases with the number of participants. The protocol also has measures to handle misbehaving participants and failed rounds. Additionally, alternative approaches such as using mixnets and integrating with other infrastructures like the Lightning Network are discussed. Overall, CoinShuffle provides a viable solution for decentralized and coordinated coinjoins, but the performance is dependent on the number of participants. Further we discuss the importance of integrating second layer technologies like the Lightning Network in a private way and the challenges of achieving efficiency in coin mixing. They propose steps to improve the space efficiency of coin mixing and finding algorithms that perform well in simulations. They also explore the trade-off between space efficiency and privacy, suggesting that higher coin denominations could be more efficient and private. They discuss the idea of using existing data to simulate mixing transactions and score mixes based on real-world data. They also mention the possibility of using the knapsack algorithm for scoring and discuss the challenge of arranging inputs and outputs in a trustless manner. The speakers plan to explore different mixing networks and techniques, such as cache fusion, to improve coordination and trustlessness."
 ---
-## Intro
+## Introduction to CoinShuffle
 
 Aviv Milner: 00:00:00
 
-Excellent.
 Today we're talking about CoinShuffle, practical decentralized coin mixing for Bitcoin.
 So, let's get started.
 So we're looking at a 2014 paper by Ruffing, Moreno-Sanchez, and Kate.
 Everything is obviously posted on GitHub.
 Here is the paper itself.
 
-## Last meeting review
-
 Last week, just a reminder, we talked about SNICKER CoinJoin, and the summary was that we can have a non-interactive CoinJoin between two participants if the proposer, if one of the two participants assumes likely UTXOs, tweaks a revealed public key with a Diffie-Hellman shared secret, and then takes this partially signed Bitcoin transaction and broadcasts it to a public forum where the other participants may sign it when they see it.
 So essentially we talked about non-interactive CoinJoins.
-So far we've talked about knapsack CoinJoins, snicker, today's coin shuffle, and then next week's will be decided at the end of this call.
+
+So far we've talked about Knapsack CoinJoins, SNICKER, today's CoinShuffle, and then next week's will be decided at the end of this call.
 You can find out everything on our Wasabi Research Club github.
+
 Okay, so we're going to reintroduce last week's topic, which is the problem with current CoinJoins.
 So the problem that we talked about last week, we're talking about this week as well, is that they require coordination.
 So last week it was more about interactivity, this week it's about coordination.
@@ -35,12 +35,10 @@ You know, inputs and outputs, change outputs, aren't necessarily anonymous, so p
 But we also have to find out all of the participants' mixed outputs, so their anonymous outputs.
 And we need to find this out without having them reveal the link between their outputs and the fact that they belong in the CoinJoin.
 
-Aviv Milner: 00:02:30
-
 So if we look at how Wasabi does this with a coordinator, well, Wasabi uses what's called secure multi-party computation, or essentially just Schnorr signatures, Schnorrian blind signing of outputs in order to allow for outputs to be anonymously submitted.
 So users, for example, will register their inputs and they'll have a blinded output signed by the server, at which point later they will submit the unblinded output to the coordinator and the coordinator doesn't know who is the person that submitted the output, only that that person is valid because the coordinator did a blind signing of the output.
 Okay, so CoinShuffle in summary is just Wasabi without the coordinator.
-So using dissent protocol for communicating anonymous outputs by participants, and we'll look at that briefly and then, there are no questions so far, right?
+So using Dissent protocol for communicating anonymous outputs by participants, and we'll look at that briefly and then, there are no questions so far, right?
 Or comments?
 
 Lucas Ontivero: 00:03:43
@@ -52,7 +50,7 @@ No.
 Aviv Milner: 00:03:45
 
 Okay.
-So, coin shuffle.
+So, CoinShuffle.
 So we can imagine six participants.
 In particular, we want to imagine an ordered set of six participants.
 So we'll have that the left, the red individual is the first, and the last participant is the purple, and there's all the participants in-between.
@@ -60,7 +58,7 @@ Just for the purpose of illustration, it's easier if they're colorful.
 Essentially what we want to do is that these participants, they want to submit their inputs, they want to submit their change outputs, but they also want to submit a blinded output, an output that no one, that is completely anonymous to the rest of the participants.
 And they want to do this without a coordinator that is essentially controlling how this goes.
 So essentially what you have here is what the CoinJoin will look like at the end, is it should look like a bunch of inputs from all six participants, some change outputs and some outputs that are equal size that we don't know who they belong to.
-So we have six ordered participants and we have an anonymous coin join output.
+So we have six ordered participants and we have an anonymous CoinJoin output.
 So it's trivial to get the change outputs done and the inputs done because those can be linked together And participants don't have to hide the fact that they are the ones submitting that information.
 Now we're going to see how a participant, in this case, is going to anonymously submit an anonymous output.
 So in this case what we have is we have the first participant is the red participant.
@@ -85,9 +83,7 @@ The other five addresses are completely a mystery.
 And from yellow, it's the same idea.
 And from red.
 
-## Are messages broadcasted sequentially or at once ?
-
-Adam Gibson: 00:07:38
+Adam Fiscor: 00:07:38
 
 Can you just go back because I think it's incorrect.
 Yes go back like two more or something.
@@ -104,7 +100,7 @@ Yeah, so it definitely can be incorrect.
 I don't claim that I'm 100 percent, but I think the idea overall, or the aim is so that all participants in an ordered fashion can submit their addresses and not have the address linked to them.
 And it's done exactly in this sort of way.
 
-Adam Gibson: 00:08:52
+Adam Fiscor: 00:08:52
 
 I got it.
 
@@ -116,12 +112,12 @@ So in this order, you create this onion layers, right?
 And is that how Aviv is telling us now?
 I think it's correct.
 
-Adam Gibson: 00:09:41
+Adam Fiscor: 00:09:41
 
 Okay, so let me explain what is incorrect about this.
 Is that, as you said, first announcement, announcing the public key.
 So everyone here, Aviv, Igor, Lucas, Max, O, I don't know if you want pseudonym or real name, Sorry, Rafael and me.
-So everyone announces his own public key and everyone has to think of a message or an output, right, a Bitcoin address.
+So everyone announces his own public key and everyone has to think of a message or an output, a Bitcoin address.
 And we have to encrypt that Bitcoin address.
 Everyone has to encrypt it in a specific order.
 So first to Aviv, then to Igor, then to Lucas and so on.
@@ -136,7 +132,7 @@ No. What I understood is what Aviv is saying.
 It is in order, yes, and the message is passing one by one and everybody decrypts the coins with their public keys, shuffles the encrypted addresses, yes, and pass that to the next one.
 So, in the end, the latest one, the latest participant, the one in the final step, can finally decrypt all the addresses, except of course, the one that belong to him.
 
-Adam Gibson: 00:11:46
+Adam Fiscor: 00:11:46
 
 Ok so i think it's correct and there might be only a misunderstanding.
 Aviv can you go back to red?
@@ -147,7 +143,7 @@ Aviv Milner: 00:12:15
 
 Only two.
 
-Adam Gibson: 00:12:18
+Adam Fiscor: 00:12:18
 
 No, that's what's incorrect.
 Orange has all the encrypted messages.
@@ -161,7 +157,7 @@ Aviv Milner: 00:12:56
 
 It actually seems like what Adam is saying makes a lot of sense So there's no reason why everyone couldn't submit all of their addresses like the way Red did it.
 
-Adam Gibson: 00:13:16
+Adam Fiscor: 00:13:16
 
 And that's how you can put it into a peer-to-peer network where everyone broadcasts every message.
 It's not really passing along.
@@ -173,7 +169,7 @@ I did think that it was sequential in that red had to communicate to orange and 
 And that it wasn't like, I mean, I guess you could do it publicly because you can keep announcing everything and only the right person can decrypt that layer.
 But I did think that it was sequential.
 
-Adam Gibson: 00:14:06
+Adam Fiscor: 00:14:06
 
 I mean, just think about it.
 What if red, because in this case red doesn't shuffle anything, then red cannot make sure that the things are shuffled correctly.
@@ -185,7 +181,7 @@ Aviv Milner: 00:14:40
 
 I'm very happy to concede this because I think that the points is the same, that the goal is the same, is that these peers want to essentially mix these outputs and not have connection between who submitted what, right?
 
-Adam Gibson: 00:14:56
+Adam Fiscor: 00:14:56
 
 All right, let's move on then.
 
@@ -198,10 +194,10 @@ Adam says that all six addresses are shuffled with every single step, and that c
 But at the end, you have six addresses that are unlinked.
 So here is the, in the paper it's explained.
 So you can see in the top right, Alice has this layered encryption and she passes off to Bob who decrypts, who passes it off to Charlie, decrypts and you can see this sort of mixed network.
-Yeah and on the bottom left you have a CoinJoin that's been signed, on the bottom right you have a coin join that's not been signed because someone tampered with the addresses and added an invalid address to the CoinJoin.
+Yeah and on the bottom left you have a CoinJoin that's been signed, on the bottom right you have a CoinJoin that's not been signed because someone tampered with the addresses and added an invalid address to the CoinJoin.
 So the big thing to talk about with CoinJoin...
 
-Adam Gibson: 00:16:54
+Adam Fiscor: 00:16:54
 
 Sorry Aviv, can I show my code that maybe you understand it better based on that?
 I am sharing my screen, right?
@@ -210,7 +206,7 @@ Aviv Milner: 00:17:23
 
 Okay.
 
-Adam Gibson: 00:17:24
+Adam Fiscor: 00:17:24
 
 Do you see it?
 
@@ -218,7 +214,7 @@ Max Hillebrand: 00:17:27
 
 Yeah.
 
-Adam Gibson: 00:17:28
+Adam Fiscor: 00:17:28
 
 Okay, then it's a problem because it's not in the video, just like last time I had to cut it out.
 And anyway, very quickly, then we have Oli's, Bob and Satoshi, and everyone broadcasts their public keys.
@@ -243,44 +239,48 @@ They also did a similar test of the shuffle time for 44 nodes with varying size.
 Here, it's one megabyte of data, of encrypted data that's being shuffled over 44 nodes.
 You can see it takes several minutes, so 15 minutes by 44 nodes.
 And over here it was three minutes by 40 or 50 participants.
-So yeah, in summary, Rather than have a secure multi-party computation with a coordinator, CoinShuffle aims to solve the problem of constructing a CoinJoin with just participants themselves.
+So yeah, in summary, rather than have a secure multi-party computation with a coordinator, CoinShuffle aims to solve the problem of constructing a CoinJoin with just participants themselves.
 Using the Dissent messaging protocol, CoinShuffle participants shuffle their anonymous outputs until all outputs are made available to all participants without a link from any participant to an output.
 And the biggest drawback is the time cost as the number of participants grows and then the advantage is that there's no coordinator to attack, do a denial of service.
 That's pretty much what I think needs to be said about this so yeah we'll leave it at that.
 
-Adam Gibson: 00:21:52
+## Questions
+
+Adam Fiscor: 00:21:52
 
 Thank you Aviv.
-Let's continue with questions and discussions and then ideas and at the later on topic for next week So yeah, who has questions?
+Let's continue with questions and discussions and then ideas and at the later on topic for next week.
+So yeah, who has questions?
 
 Lucas Ontivero: 00:22:11
 
 I have a comment.
 Well, first of all, I think I don't know what your implementation is based on.
-Probably it's in a new version that we are not, that we don't know.
-But I, again, I understood the same that Aviv explained to us.
+Probably it's in a new version that we don't know.
+But I understood the same that Aviv explained to us.
 And in fact, there is a very simplified version or very simplified explanation in BitcoinTalk about it by Tim, one of the creators of this scheme.
-I understand the same whatever I read it but anyway that's one point. 
+I understand the same whatever I read it but anyway that's one point.
 
-Adam Gibson: 00:22:57
+Adam Fiscor: 00:22:57
 
 If red doesn't have all the onions then who's gonna decrypt his onions for other people?
 
 Lucas Ontivero: 00:23:17
 
 No Alice in this case the red, doesn't decrypt, he only encrypts the output, right?
-Encrypts the output with all the public keys of the other participants in order So the next one in this case the orange the orange one the crypt with his public key it remove one layer, yes, and just encrypt everything again.
+Encrypts the output with all the public keys of the other participants in order.
+So the next one, in this case the orange one, decrypts with his public key.
+It remove one layer, yes, and just encrypt everything again.
 The latest layer is the yellow one, right?
 So yellow, decrypt remove that layer, mix those addresses and encrypt again with, yes, this is what Aviv is doing.
-So in the end, all the addresses has only one layer of encryption that is the one belonging to the to the to that guy the what color is that?
-Purple, I think.
+So in the end, all the addresses has only one layer of encryption that is the one belonging to that guy, the purple, I think.
 Okay, so purple decrypts all the addresses, yes, except the one that belongs to him, and performs just the latest shuffle and broadcasts that list of outputs to everyone.
-So, after that is the phase, the next step is creating the transaction so nobody knows what output belong to the rest.
+So, after that, the next step is creating the transaction so nobody knows what output belong to the rest.
 
-Adam Gibson: 00:25:12
+Adam Fiscor: 00:25:12
 
-I see okay maybe then I don't know it I didn't understand it properly then.
-Uh-huh.
+I see okay maybe then I don't know it.
+I didn't understand it properly then.
 Because of course both schemes work.
 I mean, I know that my scheme is working.
 And now that you explained what you're doing, it seems to me that's working too.
@@ -290,27 +290,29 @@ So, yeah, okay.
 Yeah, I think you're right.
 All right.
 
+### Idea for a change on this scheme
+
 Lucas Ontivero: 00:26:00
 
 I have an idea here for this scheme, because if in the first phase, I mean in the announcement phase, participants could announce their public keys and also how much money they want to participate with, for example Alice can say this is my public key and I want to participate with one Bitcoin, Bob, this is my public key and I want to participate with 0.83 bitcoins.
 
-Adam Gibson: 00:26:37
+Adam Fiscor: 00:26:37
 
 They have to announce their inputs with their public keys.
 
 Lucas Ontivero: 00:26:42
 
 Yes, but my idea is changing the protocol just a bit, right?
-Because if everybody knows the public keys and the amounts that other participants want to participate with, then what participants can do is creating the outputs, yes, not only the addresses but also the amount of that addresses using the snapshots, right?
-Because remember that was one of the ideas that the latest proposal that was never published by, I don't remember the name of the guy that was with us in the Knapsack episode, let's say.
-He said, there is a new version that I never published that is the participants only know only need to know the amounts of the other participants so they can split their outputs in such a way yes that they can create a Knapsack transaction, right?
+Because if everybody knows the public keys and the amounts that other participants want to participate with, then what participants can do is creating the outputs, not only the addresses but also the amount of that addresses using the snapshots, right?
+Because remember that was one of the ideas that the latest proposal that was never published by, I don't remember the name of the guy that was with us in the Knapsack episode.
+He said, there is a new version that I never published that is the participants only need to know the amounts of the other participants so they can split their outputs in such a way that they can create a Knapsack transaction, right?
 So in that way, we could encrypt more than one address but also the amount.
 So you don't need to shuffle, right?
 Because the idea of, oh, well, yes, you need to shuffle.
 So you can shuffle, but in the end, what the purple guy will receive is a lot of output transactions, yes, with not only the script, but also the amount, and that will be a Knapsack transaction.
 So it could be used for unequal outputs too, using what we learned in the first episode
 
-Adam Gibson: 00:28:40
+Adam Fiscor: 00:28:40
 
 I think that's a very important idea that's a good job Lucas seriously.
 
@@ -318,7 +320,7 @@ Lucas Ontivero: 00:28:49
 
 Thank you.
 
-Adam Gibson: 00:28:53
+Adam Fiscor: 00:28:53
 
 So, anyone have questions or should I go with mine?
 Okay, Aviv.
@@ -332,12 +334,12 @@ Aviv Milner: 00:29:10
 
 No, you ask your question first.
 
-## How to defend against sybil attacks
+### How to defend against sybil attacks
 
 Max Hillebrand: 00:29:16
 
 Okay, it was a general question about denial of service or other sybil attacks.
-I mean we can use a central coordinator to ban UTXOs and we have a fee to have economic disincentives to sybil attacks, but there are no signatures in Coinbase.
+I mean we can use a central coordinator to ban UTXOs and we have a fee to have economic disincentives to sybil attacks, but there are no signatures in coinbase.
 So how can we defend against sybil attacks?
 
 Aviv Milner: 00:29:38
@@ -348,14 +350,14 @@ So the phases, you know, there's the first phase is the announcement phase, then
 What happens later is that if after the shuffling phase, if you get to an undesired outcome, namely, the addresses that are appearing are not belonging to all the participants.
 You know, someone added two addresses or someone didn't shuffle correctly.
 There is a way to go through the blame phase where essentially all the participants reenact what they did and you can tell if someone did something bad.
-So you can do blame but that also takes time and it's arguable that it would be, it's easier to attack this sort of system than a Wasabi coordinator.
+So you can do blame but that also takes time and it's arguable that it's easier to attack this sort of system than a Wasabi coordinator.
 
-Adam Gibson: 00:30:36
+Adam Fiscor: 00:30:36
 
-Can I please your answer?
+Can I rephrase your answer?
 It was correct.
 I just want maybe easier to say this way that if someone misbehaves that obviously everyone detects it because the final CoinJoin doesn't happen.
-So everyone just exposes all the actions that they take without except their outputs, except their Bitcoin addresses.
+So everyone just exposes all the actions that they take except their outputs, except their Bitcoin addresses.
 So, and the protocol can run, because If you give out all the actions that you take during the run of the protocol to everyone that, hey, here is my private key, for example, I signed my messages with this, then you can tell exactly who misbehaved and you can rule him out and you can run the protocol with the remaining honest participants.
 This is something that was a little bit unhelpful.
 
@@ -373,7 +375,7 @@ It is easy to see, to know that.
 So, you can just ban that coin, as we do, and try again.
 Sooner or later, That guy will run out of money and probably is not the best, right?
 
-Adam Gibson: 00:33:06
+Adam Fiscor: 00:33:06
 
 That doesn't work, Lucas.
 
@@ -381,17 +383,16 @@ Lucas Ontivero: 00:33:08
 
 Why?
 
-Adam Gibson: 00:33:10
+Adam Fiscor: 00:33:10
 
 Let's think about what if Purple just switches one of the addresses of the outputs.
 Max, I cannot hear anything, sorry.
-
 
 Lucas Ontivero: 00:33:57
 
 Max, do you have some software or feature that mutes you when you are not speaking or something like that because I see that you are muting and unmuting and in high frequency.
 
-Adam Gibson: 00:34:22
+Adam Fiscor: 00:34:22
 
 Anyway, Lucas, can you reply to my question?
 
@@ -400,9 +401,9 @@ Lucas Ontivero: 00:34:28
 Sorry, I didn't hear your question.
 Can you repeat please?
 
-## How dishonest participants are figured out/punished
+### How dishonest participants are figured out/punished
 
-Adam Gibson: 00:34:35
+Adam Fiscor: 00:34:35
 
 What if purple, the last one, changes the address, changes let's say red's address to his own address, then it's going to be red who doesn't sign.
 So you cannot really ban red, right?
@@ -421,7 +422,7 @@ Aviv Milner: 00:35:32
 So in this protocol unfortunately you can't apply the same banning heuristics as with Wasabi.
 So with Wasabi you can ban the coin that did not sign.
 In this protocol, if you end up with an unsigned CoinJoin, there are two reasons.
-Either someone is not signing on purpose, or in which case you can ban the coin they did not sign or someone did the protocol wrong.
+Either someone is not signing on purpose, in which case you can ban the coin they did not sign or someone did the protocol wrong.
 In the case Adam gave, Purple is the last person with all of the addresses and Purple dumps Red's address and adds two of Purple's addresses to the mixed outputs.
 So how do you know that happened?
 
@@ -455,7 +456,7 @@ So I think it's just not practical to do CoinJoins this way.
 
 ## Difference between CoinShuffle and Wasabi
 
-Adam Gibson: 00:39:00
+Adam Fiscor: 00:39:00
 
 One more thing that's interesting in this is that here, the DOS protection, so here the CoinJoin happens between the honest participants.
 In Wasabi, We always forget the state.
@@ -468,7 +469,7 @@ Aviv Milner: 00:39:47
 Can you say that again?
 I don't think I understood.
 
-Adam Gibson: 00:39:51
+Adam Fiscor: 00:39:51
 
 Sorry.
 Yeah, I was not clear enough.
@@ -481,37 +482,37 @@ Aviv Milner: 00:40:45
 
 I want to say yes but I honestly don't think I understood.
 
-Adam Gibson: 00:40:51
+Adam Fiscor: 00:40:51
 
 Okay, so there is a round Wasabi CoinJoin, Wasabi or CoinShuffle doesn't matter the round fails what happens in CoinShuffle?
 The same participants will CoinJoin.
-It is coinshuffle.
+It is CoinShuffle.
 In Wasabi it's not the same participants.
 Wasabi just lowers the required number with the number of malicious participants but still in that round anyone can register.
 
 Aviv Milner: 00:41:32
 
 Okay so two things about that then.
-So firstly, coinshuffle, if a coinshuffle round fails, it goes through the blame phase, it points out someone to blame, and then it does a CoinJoin another coinshuffle without that participant that's what I understood.
+So firstly, CoinShuffle, if a CoinShuffle round fails, it goes through the blame phase, it points out someone to blame, and then it does a CoinJoin, another CoinShuffle without that participant that's what I understood.
 
-Adam Gibson: 00:41:53
+Adam Fiscor: 00:41:53
 
 Yes, exactly.
 
 Aviv Milner: 00:41:53
 
-And in terms of Wasabi, I thought Wasabi was you know if a coinjoin fails It's because someone didn't sign and that one coin that didn't sign is banned for example and all the coins try again minus that one coin.
+And in terms of Wasabi, I thought Wasabi was you know if a CoinJoin fails It's because someone didn't sign and that one coin that didn't sign is banned for example and all the coins try again minus that one coin.
 So I guess I'm confused on both issues.
 
-Adam Gibson: 00:42:15
+Adam Fiscor: 00:42:15
 
-You are right except the end that not all the coins who already registered it's not those who are redoing the exact same failing round without the malicious person but it's a completely new round anyone can come the malicious person is banned but any new coin can come in, in coinshuffle new coin cannot come in okay
+You are right except the end that not all the coins who already registered it's not those who are redoing the exact same failing round without the malicious person but it's a completely new round anyone can come the malicious person is banned but any new coin can come in, in CoinShuffle new coin cannot come in okay
 
 Aviv Milner: 00:42:52
 
 okay so that that I had that I understand and I didn't know that was the case and it's a bit, yeah, it's a very small detail but yeah, I guess it's important.
 
-Adam Gibson: 00:43:09
+Adam Fiscor: 00:43:09
 
 All right, next question.
 What is secure multiparty computation?
@@ -521,7 +522,7 @@ Aviv Milner: 00:43:21
 Is that for me?
 Because I can just read a Wikipedia definition.
 
-Adam Gibson: 00:43:24
+Adam Fiscor: 00:43:24
 
 No, it's a question for the author.
 Next time when Coinshuffle++ will be.
@@ -548,11 +549,11 @@ Max Hillebrand: 00:45:10
 But actually, I mean I was giggling when I read the paper and the shout out to Zerolink.
 But then the question that I have is I mean we could also do ZeroLink not on Tor but on a mixnet would that work too?
 
-Adam Gibson: 00:45:26
+Adam Fiscor: 00:45:26
 
-Bear in mind that all the coinshuffle implementations are actually using a server and you know in theory you can use just a bulletin board server where participants are posting their messages but they are actually using for coordination and host protection and things like that I think.
-So yes, you can say that coinshuffle is wasabi without TOR and you know what I mean.
-So yes, definitely, but then you will call it coinshuffle because CoinShuffle is using a mixnet, that's the thing about it.
+Bear in mind that all the CoinShuffle implementations are actually using a server and you know in theory you can use just a bulletin board server where participants are posting their messages but they are actually using for coordination and host protection and things like that I think.
+So yes, you can say that CoinShuffle is wasabi without TOR and you know what I mean.
+So yes, definitely, but then you will call it CoinShuffle because CoinShuffle is using a mixnet, that's the thing about it.
 
 Aviv Milner: 00:46:23
 
@@ -563,7 +564,7 @@ Lucas Ontivero: 00:46:36
 Okay, sorry.
 Anyway, I understand what you say.
 
-## Knapsack and CoinShuffle, Would that work ?
+## Combining Knapsack with CoinShuffle
 
 Max Hillebrand: 00:46:40
 
@@ -580,7 +581,7 @@ And those outputs, when you analyze those outputs, there will be more than one t
 So, it is basically a knapsack transaction.
 Is it clear?
 
-Adam Gibson: 00:48:30
+Adam Fiscor: 00:48:30
 
 Wouldn't that lead to like spam in the chain?
 Too many UTXOs or would there be like some kind of minimal amount?
@@ -599,73 +600,70 @@ Something that we thought we cannot do.
 So, the server will not be able to know who message belongs to whom, right?
 But the IP address is still there.
 
-Adam Gibson: 00:50:00
+Adam Fiscor: 00:50:00
 
 Oh, that's a very good point because in Wasabi the server doesn't know that if someone registers to the CoinJoin, did he used Wasabi before or not.
 The server doesn't know because it's on a new Tor stream.
 But with CoinShuffle, if you don't use Tor, then you can tell that which participants, which person participated in which CoinJoins.
 So now you can correlate.
-So you actually have to use TOR for coinshuffle.
+So you actually have to use TOR for CoinShuffle.
 
 Lucas Ontivero: 00:50:47
 
 Yes, that's my point.
 
-Adam Gibson: 00:50:53
+Adam Fiscor: 00:50:53
 
-Okay, I only have one discussion thing or rather interesting thing regarding coin shuffle is that, I don't know if you guys knew it, but on BitcoinTalk the very first page of conversation was about a replay attack And then Tim Ruffing noted that the thing about encryption schemes is that all secure encryption schemes always use randomness for encryption to make sure that encrypting the same message twice does not yield the same ciphertext.
+Okay, I only have one discussion thing or rather interesting thing regarding CoinShuffle is that, I don't know if you guys knew it, but on BitcoinTalk the very first page of conversation was about a replay attack And then Tim Ruffing noted that the thing about encryption schemes is that all secure encryption schemes always use randomness for encryption to make sure that encrypting the same message twice does not yield the same ciphertext.
 The odd randomness is built in the encryption algorithm itself.
 One does not have to add randomness manually to a message before giving it to the algorithm.
 Try it, take an encryption tool and try to encrypt the same message twice.
 So anyway, it's just good to know.
-
-Adam Gibson: 00:52:00
-
-Just good to know.
 So do you guys have any presentations, questions, discussions, ideas?
-Or Should I move on to something more?
-Interesting
+Or should I move on to something more interesting?
 
 Lucas Ontivero: 00:52:24
 
-I Have no idea sir question just something that we could have in mind that could improve our CoinJoin transaction is researching if is there any way to identify the offender in order to remove it and create a new conjoin without that attacker, that could be great.
-I think it's not possible, but it could be good to, if, I don't know, if we can say, okay, someone didn't sign, provide proof of something, I don't know, just to avoid creating a new round again.
+I have no idea or question just something that we could have in mind that could improve our CoinJoin transaction is researching if is there any way to identify the offender in order to remove it and create a new conjoin without that attacker, that could be great.
+I think it's not possible, but it could be good to, if we can say, okay, someone didn't sign, provide proof of something, just to avoid creating a new round again.
 So that would be really good.
 
 ## Wasabi Research Club roadmap
 
-Adam Gibson: 00:53:17
+Adam Fiscor: 00:53:17
 
 I think it's possible, I think it can be done and not even hard, but I'm not sure it makes sense, because Then what's the attack?
-The attack is that the sybil comes, the malicious sybil comes and tries to, I don't know.
+The attack is that the sybil comes, the malicious sybil comes and tries to...
+I don't know.
 It's an interesting question to explore definitely.
 All right.
 So, before we would get into the next topic, I want to talk about something, is that what direction should this research club take.
 Now I want to talk about just an idea of how should we, how can we make, What's the most, what's the best thing to research in Bitcoin privacy?
 And I have a small roadmap-ish thing and we could adjust the researches to that later on.
-Right now we will, of course, as we discussed, we will go through the coinshuffle line, but after that.
+Right now we will, of course, as we discussed, we will go through the CoinShuffle line, but after that.
 So please, opinion, It's something that I've been thinking about for a year now and it's getting more and more solid based on the opinions, but I would like to hear yours too and adjust it.
+
 So this is the roadmap to Bitcoin privacy.
-Okay.
 Very first thing to do is to figure out the most block space efficient way of mixing coins.
-Second thing to do is to figure out how to send money in a mix instead of sending to yourself, mixing to yourself.
+Second thing to do is to figure out how to send money in a mix instead of mixing to yourself.
 The third thing to do is after these things are figured out, we have to figure out how to do it trustlessly.
-Fourth thing to do is figure out how to do it in a decentralized way, which I am not interested in, but for completeness, This is something that people might be interested in.
+Fourth thing to do is figure out how to do it in a decentralized way, which I am not interested in, but for completeness, this is something that people might be interested in.
 And the fifth thing to do is figure out how to integrate other infrastructures into this new mixing technology that's just being researched.
 What are these infrastructures?
 Those are relevant.
 Light clients, how to do it with a light client, how to do it on mobile, how to do it with hardware wallets, and are there any ways to integrate it to the lightning network somehow and rolling to the lightning network or something like this.
-So figure out the most block space efficient way of mixing, figure out how to send in a mix, how to send in a mix instead of mixing to self, figure out how to do it trustlessly.
+So figure out the most block space efficient way of mixing, figure out how to send in a mix instead of mixing to self, figure out how to do it trustlessly.
 This three step is what the Wasabi Research Club should be about.
 The integrations and later things are, I don't know, it's 10 years down the line or 20.
 So do you guys agree that This is a logical sequence of research that we could take later on when we learn more things.
 
 Aviv Milner: 00:57:30
 
-I would, it might be a good idea to start talking about what the, how we would measure efficiency in a CoinJoin, you know, against the block space that it's consuming.
-I've been thinking a lot, I don't know if we have time right now to talk about it.
+I definetly agree.
+It might be a good idea to start talking about how we would measure efficiency in a CoinJoin, against the block space that it's consuming.
+I've been thinking a lot, I don't know if we have time right now to talk about like the perfect...
 
-Adam Gibson: 00:57:54
+Adam Fiscor: 00:57:54
 
 This would be my next topic to be honest, that I have sub steps for the very first step.
 So I don't know, should I say the sub steps or do you want to say what you are saying right now?
@@ -676,9 +674,9 @@ Yeah, I mean, I'll just say what I've been thinking about because you know we're
 When I think about the perfect privacy on Bitcoin given what Bitcoin allows barring layer two solutions, To me that perfect solution is essentially, you know, every block contains one transaction and all inputs and outputs from all transactions are collapsed into a single transaction.
 And then there are some optimization happening where people are breaking down their inputs and they have common outputs of similar size and then there's knapsacking and all sorts of fancy stuff.
 But the idea is that the asymptote of privacy, the best place privacy can go, this is an intuition, I could be completely wrong about this, is just every single block is just these massive transactions, that's where I think things would be going.
-And so that kinda points to what Adam was saying about how to figure out how to send in a coin join as well, because that means that if you can receive and send and mix all in one coin join, then all transactions could be coin joins in the future.
+And so that kinda points to what Adam was saying about how to figure out how to send in a CoinJoin as well, because that means that if you can receive and send and mix all in one CoinJoin, then all transactions could be CoinJoins in the future.
 
-Adam Gibson: 00:59:31
+Adam Fiscor: 00:59:31
 
 So yeah, we will probably never get there or not probably we definitely never get there but it's it's a good idea to take imagine what could be the perfect at the best that that's possible and start to work backwards from there.
 Yeah, that's good.
@@ -695,7 +693,7 @@ So doing, you know, CoinJoins into a Lightning Channel factory, for example, or 
 But this somewhat goes together with sending and receiving within a CoinJoin.
 Though not just into a single public key, but more advanced second layer script.
 
-Adam Gibson: 01:01:04
+Adam Fiscor: 01:01:04
 
 So the reason is why the Lightning Network integration is at the very very end, because everything depends on the CoinJoin scheme.
 So first you really have to figure out how to do on-chain transactions and then you can move on to Lightning Network.
@@ -708,12 +706,12 @@ First, we have to figure out how to score mixes and second, since finding the ma
 Lucas Ontivero: 01:01:58
 
 Okay, sorry, you asked for feedback.
-I not totally agree, Because I know that your goal has been your goal for probably years, right?
-But I mean, finding the most space efficient way to make this to build this conjoin transactions but I will say that our goal should be the most private way to create the conjoin transactions I mean, probably it is more expensive.
-Well, yes, but I think the first filter or the first goal should be to maximize the privacy, even when probably it's not the most space efficient solution.
+I not totally agree, because I know that your goal has been your goal for probably years, right?
+I mean, finding the most space efficient way to make this, to build this conjoin transactions, but I will say that our goal should be the most private way to create the conjoin transactions, (which) probably it is more expensive.
+But I think the first filter or the first goal should be to maximize the privacy, even when probably it's not the most space efficient solution.
 Just that.
 
-Adam Gibson: 01:02:57
+Adam Fiscor: 01:02:57
 
 That is obvious what provides the most privacy.
 If you know the common greatest divisor, you have a set of inputs, you get the common greatest divisor of them and every output gets that, right?
@@ -724,32 +722,32 @@ The best privacy while not wasting that much block space so you know
 
 Lucas Ontivero: 01:03:41
 
-yes that's clear it's exactly the same that I thought when you say it is obvious.
+Yes that's clear it's exactly the same that I thought when you say it is obvious.
 Yes, it is obvious.
 But I mean, we have to have like a minimum requirement, right?
 We cannot worsen the privacy level that we have now.
 
-Lucas Ontivero: 01:04:12
-
 The problem is it's not easy to know what our users want, right?
-What, you know, they sometimes want to be able to mix more money and faster.
-Sometimes they want to be able to participate with less money or it's not easy, yes?
+They sometimes want to be able to mix more money and faster.
+Sometimes they want to be able to participate with less money, it's not easy, yes?
 So probably it could be more efficient, space efficient to mix higher coins, right?
 For example, instead of now we are using 0.1, 0.2, 0.4, of course it would be more private to split all in 0.1 coins, right?
-All in 0.1 coins, right?
-But I don't know if the solution is in the, if trying to achieve a more space efficient solution, if that will not require to mix bigger coins I mean to have bigger outputs.
+But I don't know if trying to achieve a more space efficient solution, if that will not require to mix bigger coins I mean to have bigger outputs.
 
-Adam Gibson: 01:05:31
+Adam Fiscor: 01:05:31
+
 We are on the same page here, Lucas.
 I understand what you're saying.
 
-Adam Gibson: 01:05:40
+Adam Fiscor: 01:05:40
+
 I just have a roadmap to how to get there.
 My idea is that we take the existing data, the existing Wasabi data of what happened with Wasabi, what amounts people are coming in a mix, or just existing blockchain data.
 The point is that you build a software that makes this simulation.
-And when I say the first step is how to score mixes, what I actually mean is to figure out how to score a chain of mix. 
+And when I say the first step is how to score mixes, what I actually mean is to figure out how to score a chain of mix.
 
-Step one figure out how to score one mix and Step two figure out how to score a chain of mix based on real world world data simulation So right now we are just scoring, we are not really mixing, we put some naive mixing algorithm and we try to figure out, we see a transaction chain of, mixed transaction chain, and we try to figure out how the hell should we score that mix.
+Step one figure out how to score one mix and Step two figure out how to score a chain of mix based on real world world data simulation.
+So right now we are just scoring, we are not really mixing, we put some naive mixing algorithm and we try to figure out, we see a transaction chain of, mixed transaction chain, and we try to figure out how the hell should we score that mix.
 And then we say, okay, let's use Knapsack for that.
 And we run Knapsack for the exact same data that we run our previous naive mix and then we compare our scores that hey, did Knapsack score better or the previous naive mix score better.
 Does that make sense for you?
@@ -760,22 +758,22 @@ Yes, it makes sense.
 It is backtesting basically with different algorithm.
 The only thing that we have to have in mind probably is that given we mix 0.1 at a time, yes, basically, yes, people with a lot of money, I don't know, probably 1000 bitcoins, it's not currently mixing with with wasabi probably, yes, because it will take if they want to make it right, it will take a lot.
 So probably what we see in our conjoin transactions, that information is already constrained by our outputs, right?
-So, That's just what's a common.
+That's just what's a common.
 
-Adam Gibson: 01:08:21
+Adam Fiscor: 01:08:21
 
 That's something we have to figure out implementation time that Should we take the wasabi real-world data or should we look at instead wasabi mixed data instead?
 Should we look at the input amounts on the blockchain just randomly.
 Yeah that's a methodology issue and that's something to figure out.
-And now going back to the Wasabi Research Club, because this is the first step that we should think about how to arrange the inputs and the outputs and we went down the path of coinshuffle, I think we can use it for our advantage because the thing is even after we figure out how to arrange the inputs and the outputs, we have to figure out how to do it in a trustless way and it's like, it's a really hard problem.
-But that's when the coinshuffle line of research comes in.
+And now going back to the Wasabi Research Club, because this is the first step that we should think about how to arrange the inputs and the outputs and we went down the path of CoinShuffle, I think we can use it for our advantage because the thing is even after we figure out how to arrange the inputs and the outputs, we have to figure out how to do it in a trustless way and it's like, it's a really hard problem.
+But that's when the CoinShuffle line of research comes in.
 And at the end of that line of research there is CashFusion, which is probably solving this problem, and which is something that I wouldn't take as it is, but I would really love to know the techniques that they are using.
-So we can go through the coinshuffle line of research, which is with this coin shuffle now.
-Next time as Lucas suggested we do something about the mixed networks and Tim Ruffing, the author of coinshuffle, suggested to look into the dining cryptographers networks.
+So we can go through the CoinShuffle line of research, which is with this CoinShuffle now.
+Next time as Lucas suggested we do something about the mixed networks and Tim Ruffing, the author of CoinShuffle, suggested to look into the dining cryptographers networks.
 It's a paper.
 And then of course, CoinShuffle++ and then CashFusion.
 And after we look into CashFusion, which our hope is that it either solves our problem or provides or armors us with the necessary tools to tackle later the trustlessness problem.
-Then we can move on to CoinJoin analysis and after the coin shuffler things we can move on to CoinJoin analysis stuff like CoinJoin Sudoku, Boltzmann, maybe Knapsack code or whatever.
+Then we can move on to CoinJoin analysis and after the CoinShuffler things we can move on to CoinJoin analysis stuff like CoinJoin Sudoku, Boltzmann, maybe Knapsack code or whatever.
 So we drop the coordination issue, we get into the subset sum issue.
 What we started with Knapsack, that's my idea.
 So and at that point we could actually start to research how to arrange the amounts, how to score the mixes, right?
@@ -786,7 +784,7 @@ Aviv Milner: 01:11:35
 
 I have an intuition about scoring mixes that it will be quite hard to do this and you know I know that we can apply some basic heuristics you know for example take the volume and multiply by the number of participants or this or that, but it's just not trivial thinking about how to score a mix, especially because if we decide, you know, some function accurately consumes a transaction and gives a good score whatever function we decide will shape the direction of the mixing in the future so I think that this will be quite a tough thing to not just present a function to score mix but also to justify why this function is the best approximation.
 
-Adam Gibson: 01:12:27
+Adam Fiscor: 01:12:27
 
 I think Knapsack is perfect, the Knapsack paper is a perfect basis for that.
 Because what they did there is they counted the likelihood between inputs and outputs to belong together.
@@ -797,10 +795,10 @@ I think that could work like that.
 
 Aviv Milner: 01:13:20
 
-Is it feasible to calculate the subset sum of a large coin join efficiently?
+Is it feasible to calculate the subset sum of a large CoinJoin efficiently?
 Can we do that?
 
-Adam Gibson: 01:13:31
+Adam Fiscor: 01:13:31
 
 Not at all.
 It's five inputs, five outputs that could be done.
@@ -814,9 +812,9 @@ Max Hillebrand: 01:13:44
 
 We have constraints here, yes.
 
-Adam Gibson: 01:13:57
+Adam Fiscor: 01:13:57
 
-So The coinshuffle line at the end with CashFusion, is this good for the next three weeks?
+So The CoinShuffle line at the end with CashFusion, is this good for the next three weeks?
 So next, dining cryptographer networks, then CoinShuffle++, then CashFusion.
 And then we can move on to the first step.
 
