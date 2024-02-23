@@ -25,7 +25,6 @@ And it came up in the mailing list, I think a couple of months ago.
 And now it's sort of reemerged, there's now a IRC channel where it's being debated, there's a Telegram's channel.
 I wrote an article on it.
 It's back on the death list.
-And...
 
 Sjors Provoost:
 
@@ -38,7 +37,6 @@ And after an hour I gave up, but you spent your entire Saturday I believe?
 Aaron van Wirdum:
 
 I spent most of my Saturday reading through all of the logs and sort of trying to summarize it into an article.
-Yes.
 I didn't read past Saturday, so if there was any sort of big discussion or development since Saturday, I might be out of the loop a little bit, but that wasn't really my impression.
 I think I covered most of it.
 So I think we can cover most of it in the podcast as well.
@@ -70,13 +68,6 @@ But basically kosher food is a subset of regular food.
 So there's a few things you don't eat.
 So often you might not notice it.
 There's a lot of soft drinks that are kosher and you wouldn't know the difference.
-
-Aaron van Wirdum:
-
-Yes.
-
-Sjors Provoost:
-
 But sometimes you would know the difference and that could be a problem.
 But with Bitcoin, there is no such problem.
 Because the things that are no longer allowed after soft fork are very stupid things.
@@ -117,7 +108,6 @@ So he put in a limit and then later on when it was already active, he said, "Oh,
 
 Aaron van Wirdum:
 
-Yeah.
 So that's an interesting example that I didn't mention in my article for Bitcoin magazine, which is...
 I mean, we're going to discuss how to implement soft forks, how to upgrade the protocol.
 And one of the examples that's Satoshi used was to basically just snuck it in there.
@@ -154,13 +144,6 @@ Aaron van Wirdum:
 
 Yeah.
 So you're going to say like, "One year from now," so that's like July 24th when this is being published I think.
-
-Sjors Provoost:
-
-Mm-hmm (affirmative).
-
-Aaron van Wirdum:
-
 "July 24th, 2021, that's when the new rules are enacted."
 
 Sjors Provoost:
@@ -181,7 +164,6 @@ Some block height in the future, at this point the new rule is enacted.
 
 Sjors Provoost:
 
-Yeah.
 But there was still a problem there, which is that you want to make sure that everybody's actually running the new software.
 And especially that miners are running the new software, because they kind of have to enforce those new rules.
 I mean, it's really nice if they enforce the new rules.
@@ -202,7 +184,6 @@ If a majority of miners enforces the new rules, but a minority doesn't, they cou
 
 Aaron van Wirdum:
 
-Yeah.
 The minority could mine an invalid block and then have their block orphaned.
 
 Sjors Provoost:
@@ -220,7 +201,6 @@ So it's nice if miners signal that they're ready to do this upgrade, so that you
 
 Aaron van Wirdum:
 
-Yes.
 So that's sort of the other upgrade strategy, apart from just stuffing it in there without telling anyone.
 
 Sjors Provoost:
@@ -235,13 +215,6 @@ You have flag days and you have miner activation.
 So signaling.
 So the signaling works as a coordination mechanism for the network to figure out, "Okay, enough miners have upgraded now." This signals to everyone the network is ready.
 And through this signaling mechanism, a date or a time, or a block height is communicated essentially.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 That's embedded in the code, that if enough signals are included in the blockchain, then we all know at block height X, the new rules will go into effect.
 
 Sjors Provoost:
@@ -252,7 +225,6 @@ And if it's above a certain threshold, for example, 95%, then you know that two 
 
 Aaron van Wirdum:
 
-Yes.
 That was BIP 9.
 Is what you're explaining now.
 The Bitcoin Improvements Proposal 9 uses this difficulty period, 95%.
@@ -265,12 +237,10 @@ And now the question is, what are you going to do for Taproot? And what have we 
 
 Aaron van Wirdum:
 
-Yeah.
 So mention why BIP 9 is a problem?
 
 Sjors Provoost:
 
-Well.
 So BIP 9 was used a couple of times to deploy some features, I believe.
 But when it was time to deploy SegWit, it took a long time.
 Like we don't know if it would've happened eventually, but I think for at least half a year or so that the code was ready, it just didn't activate.
@@ -286,14 +256,6 @@ Sjors Provoost:
 
 Yes, exactly.
 I mean it's possible that some miners were just completely not interested.
-
-Aaron van Wirdum:
-
-Yes.
-That's all-
-
-Sjors Provoost:
-
 But there was definitely miners that were actively not signaling in.
 
 Aaron van Wirdum:
@@ -311,8 +273,6 @@ So they picked April 1st, 2017 and basically said, "Well, our nodes are now goin
 
 Aaron van Wirdum:
 
-Yeah.
-Yeah.
 But hang on.
 So to explain this real quick, like the downside of BIP 9 was that miners were blocking the upgrade, because they wanted either political leverage, or they were secretly benefiting from something that the upgrade would've fixed without telling anyone that that was the case.
 
@@ -324,13 +284,6 @@ Aaron van Wirdum:
 
 Or both.
 But there were bad reasons basically for the miners to block this upgrade and this made Bitcoin core developers and other Bitcoiners realize that, "Okay, that's actually kind of a downside to BIP 9."
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 Because it gives miners this leverage, which they shouldn't have at all.
 Like they're treating it like a vote and they're sort of abusing their vote in ways that's bad.
 Why it's not even meant to be a vote, it's just meant to be a coordination mechanism.
@@ -350,7 +303,6 @@ So I guess that.
 
 Aaron van Wirdum:
 
-Yeah.
 So ultimately this is what you were getting at.
 This was resolved in some way or another, and there's still debate to this day how it was resolved exactly.
 
@@ -372,7 +324,6 @@ Some of them had guns.
 Aaron van Wirdum:
 
 [crosstalk 00:10:29].
-Yeah.
 That's true.
 I think they were like...
 
@@ -383,7 +334,6 @@ In the forest, defending the Bitcoin.
 Aaron van Wirdum:
 
 Yes.
-That's true.
 That's true.
 And I think [inaudible 00:10:35] had like a knife.
 Whatever.
@@ -408,13 +358,11 @@ But one thing they were doing is called BIP 91 and they were basically, "Lower t
 
 Aaron van Wirdum:
 
-Yeah.
 Well, to be a little bit more precise, what they did in the end was use 75% forced signaling.
 So it was like BIP 148, but it was like a soft fork to activate a soft fork.
 
 Sjors Provoost:
 
-Yeah.
 So basically you had to signal that you were going to activate the soft fork.
 
 Aaron van Wirdum:
@@ -451,7 +399,6 @@ So it's something you want to avoid.
 Aaron van Wirdum:
 
 Yes.
-Yes.
 And let's skip the details.
 But there was a risk of it becoming a pretty big mess.
 I think that we both agree on that.
@@ -464,7 +411,6 @@ I was worried for quite a while it would be an absolute clusterfuck.
 
 Aaron van Wirdum:
 
-Yes.
 So, new ideas.
 How are we going to think about soft forks and soft fork activating from now on?
 
@@ -503,13 +449,6 @@ Sjors Provoost:
 Right.
 So what it is now at least, that's probably the most useful thing to describe.
 Is the signaling is still there with some tweaks, but there is also a built in option to have a flag date.
-
-Aaron van Wirdum:
-
-Mm-hmm (affirmative).
-
-Sjors Provoost:
-
 And now BIP is just a sort of a proposal of how you could do things.
 And so you could use a flag date or you could not use the flag date.
 But the proposal now explains, okay, if you have a flag date, this is how you do it.
@@ -525,22 +464,13 @@ Well, you can release a new client that doesn't have the flag date of course.
 
 Sjors Provoost:
 
-Yeah.
 But now you have a mess, because you have...
 
 Aaron van Wirdum:
 
-You have...
 Well, one of the nice things about BIP 8 is actually that it doesn't have a flag date purely.
 It has a forced signaling deadline.
 So it's kind of like BIP 148 before, where if you have the flag date on, so let's just call it the flag date for now.
-
-Sjors Provoost:
-
-Mm-hmm (affirmative).
-
-Aaron van Wirdum:
-
 Then it doesn't mean that it activates the soft fork itself.
 It means that if near the end any block that's not mining activation, not mining support for the soft fork, that block will be orphaned.
 
@@ -568,7 +498,6 @@ They're still seeing the signaling.
 
 Aaron van Wirdum:
 
-Yes.
 Exactly, so that's a slight change from previous BIP 8.
 
 Sjors Provoost:
@@ -640,7 +569,6 @@ Sjors Provoost:
 
 Yeah.
 That's pretty useless, but you could.
-Yeah.
 
 Aaron van Wirdum:
 
@@ -650,7 +578,6 @@ So now you sort of have pieces of the puzzle and then you can think of ways to p
 
 Sjors Provoost:
 
-Yeah.
 But you can also imagine that there's going to be a lot of permutations.
 And so this could be a byte shedding nightmare.
 
@@ -658,7 +585,6 @@ And so this could be a byte shedding nightmare.
 
 Aaron van Wirdum:
 
-Yes.
 Yes it could.
 But should we cover some of the sort of general ideas that are floating around?
 
@@ -716,62 +642,25 @@ That's more of a detail and it's probably not controversial to force the signali
 
 Aaron van Wirdum:
 
-Yeah.
 I think that wouldn't be very controversial.
 
 Sjors Provoost:
 
-Yeah.
 Just makes it more compatible with what other people are doing.
 
 Aaron van Wirdum:
 
 Yes, exactly.
 So that would probably be, yeah.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 Okay.
 So that's one idea, it has the benefits of sort of taking it easy and reconsidering if there's maybe something wrong with the proposal.
 And if there is something wrong with the proposal that people don't have to actually need to upgrade their soft fork, they can just keep running whatever they were running.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 Because there was a time out anyway in the soft fork, it just didn't happen.
 And it's sort of fine, there's no sort of emergency upgrades needed at all or anything like that.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 The downside is that if miners don't cooperate, it's going to take a long time before the soft fork actually is live on the network, like three and a half years.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 So that means App developers have to wait three and a half years.
 Everyone's just sort of stuck waiting for three and a half years for basically no good reason.
 So that's why some people really don't like this proposal.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 What do you think?
 
 Sjors Provoost:
@@ -802,13 +691,6 @@ Aaron van Wirdum:
 Sure.
 So another idea is BIP 8, let's say with like a year deadline at which time forced signaling happens.
 Almost kind of like a basic proposal.
-
-Sjors Provoost:
-
-Mm-hmm (affirmative).
-
-Aaron van Wirdum:
-
 Would this be...
 So to first ask you about that, do you think that's too fast? One year, forced signaling?
 
@@ -816,13 +698,6 @@ Sjors Provoost:
 
 So my problem with the forced signal is, if you ship this thing and you say, "Okay, miners can signal for it.
 But if they don't, it's going to activate." You kind of lock yourself into that outcome.
-
-Aaron van Wirdum:
-
-Mm-hmm (affirmative).
-
-Sjors Provoost:
-
 There's no real way to object anymore.
 Because even if miners come up and say, "Hey, wait a minute, there is a problem." Then you can't cancel it anymore, because people are this new soft fork and they have the forced signaling in.
 So lots of people would see their nodes just stop.
@@ -849,7 +724,6 @@ It's just going to activate.
 
 Aaron van Wirdum:
 
-Yeah.
 Well the idea behind any soft fork-
 
 Sjors Provoost:
@@ -861,13 +735,6 @@ Aaron van Wirdum:
 Yeah.
 Although the idea behind any soft fork including Taproot presumably, is that there shouldn't be a problem with it if it's going to be shipped at all.
 Like at the point of it being shipped, there shouldn't be any problems with it.
-
-Sjors Provoost:
-
-Yeah, but-
-
-Aaron van Wirdum:
-
 And after that, it's just a matter of coordinating the upgrade.
 
 Sjors Provoost:
@@ -887,7 +754,6 @@ Why are they reducing the block reward?"
 Aaron van Wirdum:
 
 Right.
-Yes.
 That's one of Matt's arguments as well.
 That people and miners will only really consider it when the code is out there and the software is out there.
 
@@ -895,21 +761,7 @@ Sjors Provoost:
 
 And it's an expensive signal too, right? As a developer, you're really shipping this software.
 That's a bigger commitment than saying, "Okay, looks good and get up."
-
-Aaron van Wirdum:
-
-Right.
-
-Sjors Provoost:
-
 So I think that is a critical moment and you can't expect review to happen after that.
-
-Aaron van Wirdum:
-
-Right.
-
-Sjors Provoost:
-
 Or review to happen after that.
 So that's why I don't think you should put the date in stone, at least not the first try.
 Maybe a half a year later.
@@ -917,7 +769,6 @@ Maybe you don't have to wait for the whole year.
 
 Aaron van Wirdum:
 
-Yeah.
 So a related idea and it's almost kind of the same idea I guess, but it's Luke-Jr.
 
 Sjors Provoost:
@@ -955,7 +806,6 @@ Maybe he's lying.
 Aaron van Wirdum:
 
 Oh no.
-No.
 He's not allowed to lie according to his religion.
 
 Sjors Provoost:
@@ -983,7 +833,6 @@ Someone just picks one or it's sort of coordinated in some slack channel, like w
 
 Sjors Provoost:
 
-Yeah.
 The problem is, like we discussed before.
 If you have multiple dates, you're going to get the cowboy bias.
 Because whoever picks the most aggressive date, that's the party you kind of have to listen to.
@@ -1002,13 +851,6 @@ Aaron van Wirdum:
 
 Yes.
 But then that's the downside in itself.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 So if people in general think, "Okay, this is too aggressive.
 Like this isn't good for Bitcoin to do this aggressively." Then that's the reason itself, I think, it might fail.
 So there's-
@@ -1017,21 +859,12 @@ Sjors Provoost:
 
 But the problem with this is the minority rule.
 The intransigent minority rule that Taleb likes to talk about.
-
-Aaron van Wirdum:
-
-Yeah.
-
-Sjors Provoost:
-
-So.
 The most fanatic group.
 So probably the most fanatic group is going to say the earliest date, and the rest will have to just go along with that earliest date.
 
 Aaron van Wirdum:
 
 No they don't.
-No.
 Not if the rest really dislikes the solution.
 The only reason it works with sodas is because most people don't care either way.
 
@@ -1045,7 +878,6 @@ But if most people really cared about what was in their soda, then the minority 
 
 Sjors Provoost:
 
-Right.
 I would prefer if you went this route and there's some merit to it.
 I would still like at least the development community, like people on the mailing list to agree on a date.
 And then once that date is agreed on, we say, "Okay, we're not going to endorse this thing, but if you do this thing, here's the download and we all have the same date in mind.
@@ -1098,7 +930,6 @@ I'm not necessarily endorsing that, but-
 
 Sjors Provoost:
 
-Yeah.
 But let me give you a bad scenario-
 
 Aaron van Wirdum:
@@ -1137,20 +968,12 @@ That's going to be the Leroy Jenkins.
 
 Sjors Provoost:
 
-Yeah.
 So two weeks into that scheme, the miners actually start reviewing.
 Because like we just talked about, people might only review code when it's ready.
 Now they find a critical bug.
 And most of the core developers would agree, "Okay, this is actually a bug.
 We should abort.
 Soft fork miners, please don't signal for it."
-
-Aaron van Wirdum:
-
-Mm-hmm (affirmative).
-
-Sjors Provoost:
-
 But at the same time you have this super loud group, who's already canceled everybody who doesn't agree with them to activate this thing.
 So that's why I like the idea of having at least some decent amount of time and some community agreement on, "When are we going to flag date this thing?" And it shouldn't be within a few months.
 You should give people a decent amount of time.
@@ -1188,7 +1011,6 @@ I think at was about [crosstalk 00:31:20].
 
 Aaron van Wirdum:
 
-Oh that...
 No, that was a security something....
 
 Sjors Provoost:
@@ -1197,8 +1019,6 @@ Oh, it was unconfirmed transactions.
 
 Aaron van Wirdum:
 
-Oh yeah.
-That was the...
 Oh yeah.
 That was the thing.
 
@@ -1226,14 +1046,6 @@ Sjors Provoost:
 This was a very extreme example.
 But less extreme would be, I think miners should have some time to review this code after it's shipped.
 And some people might say, "No, they should have reviewed it earlier, because like we don't want to set the incentive."
-
-Aaron van Wirdum:
-
-Yeah.
-
-Sjors Provoost:
-
-So.
 I think it could be messy.
 So that's why waiting longer, I think is just better.
 
@@ -1251,13 +1063,6 @@ Aaron van Wirdum:
 So this basically means you're going to deploy BIP 8, I think with a long signaling period.
 Like could even be three years or whatever, like something that's similar to Matt's proposal.
 After these three years, three and a half, whatever it is, the activation is triggered.
-
-Sjors Provoost:
-
-Mm-hmm (affirmative).
-
-Aaron van Wirdum:
-
 So there's a long lead up.
 In the meantime though, you're going to see what happens.
 So for example, if after a year it's still not activated, then developers can sort of try to find out why it hasn't activated again, sort of similar to Matt's idea.
@@ -1290,13 +1095,6 @@ What I am worried about, and maybe that was discussed, is what if there's a bug?
 Aaron van Wirdum:
 
 Right.
-
-Sjors Provoost:
-
-And...
-
-Aaron van Wirdum:
-
 Well then, so that's-
 
 Sjors Provoost:
@@ -1318,7 +1116,6 @@ Not if it's not activated yet.
 
 Sjors Provoost:
 
-Yeah.
 But you don't know that.
 
 Aaron van Wirdum:
@@ -1327,7 +1124,6 @@ What do you mean?
 
 Sjors Provoost:
 
-So.
 The problem is people who are running the first version, they're just waiting for that 95%.
 They're waiting for three years until this thing activates.
 But then if there's a bug fix, then you need to have a new signal flag to indicate the new version of Taproot that you're going to activate.
@@ -1337,13 +1133,6 @@ Aaron van Wirdum:
 
 Soft fork is a tightening of the rules.
 So now you say any soft fork, any Taproot, anything is just not allowed.
-
-Sjors Provoost:
-
-Well-
-
-Aaron van Wirdum:
-
 You're not going to include it in blocks.
 
 Sjors Provoost:
@@ -1354,7 +1143,6 @@ Right.
 
 Aaron van Wirdum:
 
-Yes.
 That would be soft fork.
 
 Sjors Provoost:
@@ -1382,14 +1170,6 @@ Sjors Provoost:
 
 And yeah, it's kind of annoying to have to wait for a year.
 But then if there really is a bug in a thing that was ready to be deployed, that really warrants a year of thinking really, really well about how the hell that could happen.
-
-Aaron van Wirdum:
-
-Yeah.
-
-Sjors Provoost:
-
-So.
 
 Aaron van Wirdum:
 
@@ -1437,13 +1217,6 @@ And yeah, the old nodes won't be confused, because they see the signaling.
 Aaron van Wirdum:
 
 Yep.
-
-Sjors Provoost:
-
-So yeah.
-
-Aaron van Wirdum:
-
 Pretty much.
 So what's your preference here? It sounds like you're kind of conservative.
 
@@ -1455,22 +1228,11 @@ Say it has a year of a window.
 You wait for six months and then you still don't see any signaling, but you also don't see the miners that reviewed your code and found problems.
 Then maybe you say, "Okay, let's do a flag date." So it's like, "That's not super patient." And then you ship, you have that flag date within six months.
 
-Aaron van Wirdum:
-
-Mm-hmm (affirmative).
-
 Sjors Provoost:
 
 But I'm not sure.
 In the short run it's nice to have all this stuff fast.
 In the long run it's kind of scary if something can happen fast.
-
-Aaron van Wirdum:
-
-Yeah.
-
-Sjors Provoost:
-
 Because it gives you less time to stop it if it's bad.
 But again, just being slow for the sake of being slow, doesn't make any sense either.
 So I can see why these IRC threads are going to be really long.
@@ -1520,16 +1282,8 @@ You get a whole holy war over the exact details of how you activate a soft fork 
 
 Aaron van Wirdum:
 
-Yeah.
 Do you think it's...
 I mean, that's one of the reasons it could be like a holy war, is some people think that it's a very important precedent to like the way you're enforcing a soft fork.
-
-Sjors Provoost:
-
-Mm-hmm (affirmative).
-
-Aaron van Wirdum:
-
 The way you're activating a soft fork that really matters going forward for the next soft fork.
 And it really sort of defines Bitcoin almost in a way.
 
@@ -1636,7 +1390,6 @@ I want to leave it as a cliff hanger.
 
 Aaron van Wirdum:
 
-Okay.
 Oh yeah.
 That's even better.
 So we discussed it in another episode?
@@ -1650,7 +1403,6 @@ Aaron van Wirdum:
 I like that.
 Yeah.
 Maybe never.
-Yeah.
 Maybe we're doing a lost cliffhanger.
 You'll just never get the answer.
 
