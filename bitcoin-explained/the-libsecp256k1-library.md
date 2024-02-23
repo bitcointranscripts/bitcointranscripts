@@ -139,7 +139,6 @@ And even if you include in the download, you can be surprised by what happens to
 
 Aaron van Wirdum:
 
-Right.
 So in the case of, let's stick to Bitcoin Core 19.
 
 Sjors Provoost:
@@ -149,13 +148,6 @@ Well, in this case maybe take an older one because I think it was Bitcoin Core 0
 Aaron van Wirdum:
 
 Let's take Bitcoin Core, I don't know where you're going with this, but lets take that one.
-
-Sjors Provoost:
-
-Yeah.
-
-Aaron van Wirdum:
-
 So someone else is maintaining this library?
 
 Sjors Provoost:
@@ -202,13 +194,6 @@ Aaron van Wirdum:
 
 Right.
 And that's what actually happened.
-
-Sjors Provoost:
-
-Well, yes.
-
-Aaron van Wirdum:
-
 That's the BIP 66 one? Is that what we're talking about here?
 
 Sjors Provoost:
@@ -231,7 +216,6 @@ I don't think I knew that, okay.
 
 Sjors Provoost:
 
-Well, yeah.
 OpenSSL essentially improved itself by becoming more strict, but that made it a consensus change because what's consensus code it's also whatever your libraries are doing.
 So basically OpenSSL introduced a soft fork but without saying, "Oh, there's no deployment date in the OpenSSL update," it just randomly happened.
 
@@ -387,7 +371,6 @@ So that's good, but you don't want to make a habit of this, and in fact they do 
 
 Aaron van Wirdum:
 
-Right.
 Okay, so that's the library.
 Bitcoin has its own library now.
 Is this used by any other programs?
@@ -430,7 +413,6 @@ So you could write an encrypted chat application that uses this curve if you wan
 
 Aaron van Wirdum:
 
-Yeah.
 Okay, so that's libsecp256k1, I keep having to pronounce this.
 
 Sjors Provoost:
@@ -484,7 +466,6 @@ Yeah, I think it just lapsed or something, yeah.
 
 Sjors Provoost:
 
-Yeah.
 But either way, you don't just want to write this stuff from scratch.
 And if you try and develop a world changing thing, you don't want to then spend three years just implementing the cryptography, given how long it takes to really do this.
 But actually Schnorr is simpler, and I think we may have explained this in an earlier episode.
@@ -528,7 +509,6 @@ So what does that mean exactly, where does this get us?
 
 Sjors Provoost:
 
-Right.
 So what that means is there now is an updated version of this library, but nobody's using that library yet.
 And another change is that Bitcoin Core was changed I think a few days ago to include that new version of the library.
 To include it, not to actually use it in any way.
@@ -607,7 +587,6 @@ Yes.
 
 Aaron van Wirdum:
 
-Okay.
 So, that's what a library is.
 That's what a libsecp256k1 library specifically.
 Now you also know what Schnorr is, actually we didn't even get into what Schnorr is.
