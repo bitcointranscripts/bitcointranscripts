@@ -48,7 +48,6 @@ scripts, Bitcoin Scripts.
 
 Sjors Provoost:
 
-Yeah.
 I think, two episodes ago, we explained that it was actually good to add constraints to money.
 
 Aaron van Wirdum:
@@ -97,17 +96,14 @@ These were removed early on.
 
 Sjors Provoost:
 
-Yes.
 I mean, Ethereum had a similar experience in 2015, right? Where complex programs could do all sorts of unexpected things, but Bitcoin had that in the beginning too.
 
 Aaron van Wirdum:
 
-Yeah.
 So just to remind our listeners, what kind of restrictions can they put on a transaction? What kind of restrictions are we talking about here?
 
 Sjors Provoost:
 
-Yeah.
 So the main restriction would be that only the owner of a specific public key can spend this transaction.
 I think that's the typical pay to public key hash transaction.
 And maybe we want to demonstrate how that works.
@@ -118,7 +114,6 @@ Go for it.
 
 Sjors Provoost:
 
-Yeah.
 So, it's a stack-based language and a stack like a stack of plates.
 You can put plates on it and you can take the top plate off, but generally you don't want to just take a plate out of the middle.
 And this is just easy to implement as a programming language in general.
@@ -233,7 +228,6 @@ Yes, or you could have a script that says you either need a valid signature or y
 
 Sjors Provoost:
 
-Yeah.
 You can do very strange things.
 
 Aaron van Wirdum:
@@ -302,7 +296,6 @@ It's completely absurd.
 
 Aaron van Wirdum:
 
-Right.
 Or another analogy I think you gave before this recording, correct me if this is not the right way of explaining this analogy, but it's like you have a contract and it says, you're buying this house and these are all the conditions.
 And then there's a small letter, which says, unless there's two commas in a row, somewhere in this contract, in which case all your base are belong to us.
 
@@ -316,7 +309,6 @@ Okay, that's the script interpreter of all the consensus rules, which are quite 
 
 Aaron van Wirdum:
 
-Yes.
 Okay.
 So I think we've now broken down the problem with scripts.
 It's a shitty programming language or at least it's easy to make mistakes or hide bugs in there and make all sorts of complex arrangements that people might or might not notice and then your money goes to places where you don't want it to go.
@@ -347,13 +339,6 @@ This is Miniscript?
 Sjors Provoost:
 
 Yes.
-
-Aaron van Wirdum:
-
-Yes.
-
-Sjors Provoost:
-
 It lists a few dozen templates.
 It not use all of the available Bitcoin Script, it uses a subset of it.
 
@@ -435,7 +420,6 @@ Like a Multisig kind of set-up.
 
 Sjors Provoost:
 
-Yeah.
 And so, normally when you set up a Multisig, the way you kind of set it up is everybody gives their key, their master key, their expo, for example, and you create a very simple script that has three keys and three people sign.
 But the problem is, because you're a big business that offers a service, you have some really complicated internal accounting department and you maybe want have five different signatures by specific people in God knows what complexity, but you don't want to-
 
@@ -497,7 +481,6 @@ Yeah.
 
 Aaron van Wirdum:
 
-Yeah.
 One of the things that I, so, I mean, we're making a podcast, so we can't actually see show this, unfortunately, but Poelstra for example, he's drawn this out.
 You can actually draw out what a contract would look like.
 Apparently that's not really possible with this script.
@@ -510,10 +493,8 @@ I mean, I imagine the people from Liquid, for example, that have a 13 of five Mu
 
 Aaron van Wirdum:
 
-Yeah.
 Okay.
 So, that's probably drawn out at some point.
-Yeah.
 But with Miniscript, it's actually fairly simple to draw it out.
 And you can show this to a CEO who has no idea about scripts or Miniscripts.
 You can just look at the picture and figure A, yep, that's sort of what I want the blue and red squares to be.
@@ -574,7 +555,6 @@ Because you have this in mind already.
 
 Sjors Provoost:
 
-So yeah.
 So let me just quickly explain-
 
 Aaron van Wirdum:
@@ -587,7 +567,6 @@ Well to understand why you might want to do really complicated stuff, I need to 
 
 Aaron van Wirdum:
 
-Yes.
 Okay.
 Go for it.
 
@@ -599,7 +578,6 @@ And the nice thing is in policy language-
 
 Aaron van Wirdum:
 
-Okay.
 So to be clear, the policy language is the stuff like if someone like you Sjors, you're building a wallet.
 I don't know you're doing something on your computer, improving Bitcoin, then you're typing.
 And the stuff that comes out of your fingers is policy language.
@@ -615,7 +593,6 @@ So that's super-trivial.
 
 Aaron van Wirdum:
 
-Yeah.
 Okay.
 So whoever wrote the policy language, and I know Pieter Wuille, for example, wrote the policy language for this.
 It was him, it was his brain basically.
@@ -623,7 +600,6 @@ He figured out all the best ways to compile this policy language into Miniscript
 
 Sjors Provoost:
 
-Yeah.
 He wrote a compiler.
 
 Aaron van Wirdum:
@@ -701,7 +677,6 @@ It must have come from Pieter Wuille's brain in this case.
 Sjors Provoost:
 
 Of course.
-Yeah.
 Everything comes out of Pieter Wuille's brain.
 
 Aaron van Wirdum:
@@ -753,7 +728,6 @@ Well, you can guess the policy language.
 
 Aaron van Wirdum:
 
-But okay.
 You can.
 Yeah, I guess so.
 Yes.
@@ -766,7 +740,6 @@ Absolutely.
 
 Aaron van Wirdum:
 
-Okay.
 So now there are some limitations when you're using, I guess, this policy language or Miniscripts in general.
 But these are limitations that no one actually suffers from is, is how I understood it.
 
@@ -789,7 +762,6 @@ You really want to make sure there's nothing in Miniscript that brings back thos
 
 Aaron van Wirdum:
 
-Yeah.
 Well, and to be clear, in cases, this isn't clear to anyone, Miniscripts is an addition to what there is already, like script is going nowhere, Bitcoin still use script, and that's the way it's going to be.
 It's just, this is an extra tool for people who want to use that.
 
