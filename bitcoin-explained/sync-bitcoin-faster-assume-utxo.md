@@ -68,7 +68,6 @@ And I would send you megabyte size blocks or even bigger with all the secret stu
 Aaron van Wirdum:
 
 Sure.
-Yeah.
 Just to be clear, even though the difficult is low, that doesn't make it any easier for my nodes to verify the transactions?
 
 Sjors Provoost:
@@ -126,7 +125,6 @@ It's mostly going to be the same maybe except the last few.
 
 Aaron van Wirdum:
 
-Yeah.
 You mentioned SPV security very briefly.
 Technically that would be possible, right? Even though Bitcoin Core doesn't do that right now.
 It would be possible to bootstrap your nodes get started with SPV security at first.
@@ -139,7 +137,6 @@ But I don't think you would know your transaction history because you do need th
 
 Aaron van Wirdum:
 
-Sure.
 But you would still have SPV security and there was a proposal to implement something like this in Bitcoin Core a while ago.
 
 Sjors Provoost:
@@ -153,7 +150,6 @@ Starting at the present basically.
 
 Aaron van Wirdum:
 
-Yeah.
 You're at least sure that more miners think it's a valid transaction or at least they're spending hash power telling you it's a valid transaction.
 
 Sjors Provoost:
@@ -183,13 +179,6 @@ No, it doesn't.
 Aaron van Wirdum:
 
 Right now it's just a trick to avoid having to download all of these fake chains potentially instead only download the chain that has the most proof of work.
-
-Sjors Provoost:
-
-Yes.
-
-Aaron van Wirdum:
-
 That's that's what Headers First is?
 
 Sjors Provoost:
@@ -222,7 +211,6 @@ Just to be clear, this is actually in Bitcoin Core today?
 Sjors Provoost:
 
 Yes.
-Yes.
 It's been there for a few years.
 So it, it is a hash of a recent block as in recent, before the release.
 And a lot of the different Bitcoin Core developers and anybody else who is on Github can see what that hash is.
@@ -241,7 +229,6 @@ Do you still download the signatures?
 
 Sjors Provoost:
 
-Yeah.
 You download everything.
 
 Aaron van Wirdum:
@@ -342,7 +329,6 @@ Compile into binaries if you want to.
 
 Sjors Provoost:
 
-Yeah.
 You can do that and then you'll see this hash and you trust that part of the source code isn't sneaky.
 Because you can look at the source code, but there could be some really sneaky obscure C plus plus code in there that you have no idea what it's doing and it's stealing your coins.
 
@@ -358,7 +344,6 @@ We need more people like you to make sure that doesn't happen.
 Aaron van Wirdum:
 
 I wish that was true.
-Okay.
 So this is actually in Bitcoin Core and its been in Bitcoin Core for a while.
 
 Sjors Provoost:
@@ -367,7 +352,6 @@ Yeah, I think a couple years.
 
 Aaron van Wirdum:
 
-Yeah.
 And apparently everyone's comfortable enough with this.
 
 Sjors Provoost:
@@ -395,7 +379,6 @@ Yes.
 
 Aaron van Wirdum:
 
-Right.
 So what is the difference? What is AssumeUTXO then?
 
 Sjors Provoost:
@@ -405,7 +388,6 @@ So every time you send somebody money that creates a UTXO and it destroys the UT
 
 Aaron van Wirdum:
 
-Yeah.
 It's the current state of balances is how I generally call it.
 
 Sjors Provoost:
@@ -415,7 +397,6 @@ Although, yeah...
 
 Aaron van Wirdum:
 
-Yeah.
 Yeah.
 I know.
 Technically, you object to the term balances.
@@ -456,7 +437,6 @@ And if the snapshot is not correct, it starts screaming.
 
 Aaron van Wirdum:
 
-Right.
 I'm assuming it still does the Headers First syncing, right? First it checks out which chain is the longest one.
 
 Sjors Provoost:
@@ -487,7 +467,6 @@ So there's no plan right now to not check history because that's still a bit con
 
 Aaron van Wirdum:
 
-Yeah.
 You mean check history after...
 
 Sjors Provoost:
@@ -507,27 +486,17 @@ That's right.
 And so the question is, could you eventually in the future opt out of doing that? And what are you sacrificing when you do that? And well, some things you're not sacrificing.
 So the nice thing is if you start at the snapshot and you create a new address and you receive coins on it and they get into a block, then you kind of know that block is valid.
 At least unless there's another chain out there because otherwise like a lot of miners are wasting a lot of proof of work on a chain that's not valid.
-
-Aaron van Wirdum:
-
-Sure.
-
-Sjors Provoost:
-
 Which could be true.
 
 Aaron van Wirdum:
 
 Which could be true.
-Yes.
-Yeah.
 Which is a trade off.
 You're trusting that miners are being honest there, you're trusting that they're not burning resources just to screw with you.
 
 Sjors Provoost:
 
 Not screw with you, screw with everyone.
-Yeah.
 But there could be some conspiracy where the snapshot is fake and the core developers and the miners collude and create a fake snapshot that has a couple of extra coins in it that all the miners agree that they will approve blocks with that coin in it.
 So you could sneak in a hard fork.
 That's the scary thing about it, which is why, again, you need people to check whether the snapshot is real.
@@ -559,7 +528,6 @@ It's not included in the source code and there's no way to serve it over the pee
 
 Aaron van Wirdum:
 
-Right.
 The only thing that's included in the source code would be the hash of the UTXO set? Not the UTXO set itself because it's too big.
 
 Sjors Provoost:
@@ -577,7 +545,6 @@ Because all these web servers that are incredibly slow.
 
 Aaron van Wirdum:
 
-Right.
 So right now, Bitcoin Core can make snapshot of a UTXO set, but it doesn't actually do anything with it?
 
 Sjors Provoost:
@@ -591,18 +558,10 @@ Then in an upcoming release it's going to be able to download UTXO set?
 Sjors Provoost:
 
 No it's going to be able to load a UTXO set that you downloaded.
-
-Aaron van Wirdum:
-
-Right.
-
-Sjors Provoost:
-
 Somewhere.
 
 Aaron van Wirdum:
 
-Okay.
 And then maybe in the future version after that, then it's going to complete the package and you might have something called Assume UTXO in Bitcoin Core.
 
 Sjors Provoost:
@@ -632,7 +591,6 @@ I mean, something is controversial when people decide it's controversial.
 
 Aaron van Wirdum:
 
-Yeah.
 But that hasn't been decided yet then?
 
 Sjors Provoost:
@@ -666,7 +624,6 @@ You're embedding a hash into the block.
 Aaron van Wirdum:
 
 Sure.
-Yeah.
 
 Sjors Provoost:
 
@@ -699,7 +656,6 @@ At some point I will.
 
 Sjors Provoost:
 
-Yeah.
 All right.
 
 Aaron van Wirdum:
@@ -720,7 +676,6 @@ At a trade off.
 
 Sjors Provoost:
 
-Yeah.
 And then the smallest possible trade off.
 So I think this is a very interesting project, so I'm happy to test it.
 That's usually what I do.
@@ -737,4 +692,3 @@ Try to break something and then complain or get up.
 Aaron van Wirdum:
 
 All right.
-
