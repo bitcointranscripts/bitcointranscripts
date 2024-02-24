@@ -29,7 +29,6 @@ No, no.
 
 Aaron van Wirdum:
 
-Okay.
 This episode, we're going to discuss open source?
 
 Sjors Provoost:
@@ -45,14 +44,9 @@ Are you on the free software train or on the open source train?
 Sjors Provoost:
 
 I'm on every train.
-
-Aaron van Wirdum:
-
-Do you know-
-
-Sjors Provoost:
-
 I like trains, but tell me-
+
+## Open source philosophy
 
 Aaron van Wirdum:
 
@@ -80,15 +74,12 @@ It doesn't mean free as in free beer.
 
 Sjors Provoost:
 
-Yeah.
 So in Dutch we have the word, vrijheid, which means freedom and gratis which means free beer.
 So, we can intuitively understand this.
 
 Aaron van Wirdum:
 
-Yeah.
 We actually have two different words for that.
-Yeah, exactly.
 
 Sjors Provoost:
 
@@ -100,7 +91,7 @@ Probably.
 Where was I?
 So, that was Stallman's vision.
 Then I think in the early nineties, there was a difference.
-I can't remember the guy who wrote it, but there was this paper about the cathedral and the bizarre, the bizarre and the cathedral, something like that, It was like a Linux contributor.
+I can't remember the guy who wrote it, but there was this paper about the cathedral and the bazzar, the bazzar and the cathedral, something like that, It was like a Linux contributor.
 And he explained the benefits of free software as it was just called until then from a different perspective where he explained how free software could actually provide high quality code.
 Because there's a lot of people checking the code, enough eyeballs make all box shallow, that's the saying.
 So he came up with a more sort of pragmatic reason why free software was a good idea.
@@ -135,7 +126,6 @@ Yes.
 
 Aaron van Wirdum:
 
-Okay.
 So we're just going to discuss open source.
 Okay.
 So Bitcoin is an open source project?
@@ -143,6 +133,8 @@ So Bitcoin is an open source project?
 Sjors Provoost:
 
 Yes.
+
+## Why open source is important for Bitcoin
 
 Aaron van Wirdum:
 
@@ -155,7 +147,6 @@ That would be bad.
 
 Aaron van Wirdum:
 
-Yeah.
 That would be bad.
 
 Sjors Provoost:
@@ -166,7 +157,6 @@ Aaron van Wirdum:
 
 Yep.
 Well, this is actually...
-This is exactly...
 I just gave you the spying example of Stallman, but this would obviously be another great example where you don't want to trust the developers to not steal your coins.
 You want-
 
@@ -201,6 +191,8 @@ Sjors Provoost:
 Yeah.
 Because one thing is you want whatever Bitcoin code is running to be open source so you can see what it is.
 But most computer programs, as we talked about in the first episode, use libraries or dependencies, use some other piece of software, that in turn uses some other piece of software, that in turn uses some other piece of software.
+
+## Bitcoin Core
 
 Aaron van Wirdum:
 
@@ -302,7 +294,6 @@ So there's not that many, but hopefully, it's improving or it's getting easier, 
 
 Sjors Provoost:
 
-Yeah.
 Getting a little bit of help from all these altcoins, which are cloning the Bitcoin code.
 Not all altcoins are, but many are.
 And they're cloning it and they're working on it, and they might occasionally find bucks, too.
@@ -354,21 +345,12 @@ He ran a command and he got the binary.
 
 Aaron van Wirdum:
 
-Yeah.
 And by he ran a command, you mean he put it through some other piece of software that produces binaries from the open source software?
 
 Sjors Provoost:
 
 Yeah.
 A compiler and a bunch of other tools.
-
-Aaron van Wirdum:
-
-Yeah.
-
-Sjors Provoost:
-
-Yeah.
 So, that's great.
 But then the question is how do you know?
 
@@ -380,13 +362,6 @@ Sjors Provoost:
 
 And here it gets a little bit more complicated.
 Ideally, what you do is you run the same command and you also compile it, and then hopefully, you get the same result.
-
-Aaron van Wirdum:
-
-Right.
-
-Sjors Provoost:
-
 And sometimes that works with some project, but as a project got really complicated, it often doesn't work because it can depend on some very specific details on your computer system what the exact binary file is going to be.
 So for example, the software uses libraries and those libraries are living on your system.
 So we talked about that in one of the first episodes about libraries in general.
@@ -424,13 +399,6 @@ Sjors Provoost:
 
 Yeah.
 So you, as somebody who wants to make sure that no shenanigan is going on, you go to Bitcoincore.org, you download the binary, you just put it in a nice place, and then you compile it yourself, and you say, "Hey, is this the same?" If not, you go on Twitter and on the news media and you say, "Hey, there's malware on this website."
-
-Aaron van Wirdum:
-
-Right.
-
-Sjors Provoost:
-
 However, that is not trivial because, for example, these libraries that might be slightly different.
 So you get a different checksum, even though there are no shenanigans going on.
 It's just your computer is different.
@@ -489,7 +457,6 @@ And then you build Bitcoin Core, and then you look at the checksums inside that 
 Aaron van Wirdum:
 
 Right.
-Yeah.
 So it's kind of like running a computer within your actual computer-
 
 Sjors Provoost:
@@ -547,14 +514,9 @@ Some, but a lot of them, even if they've cloned Bitcoin Core, they've stopped do
 Aaron van Wirdum:
 
 Right.
-
-Sjors Provoost:
-
-But, okay.
-
-Aaron van Wirdum:
-
 So far so good.
+
+## Dependencies
 
 Sjors Provoost:
 
@@ -571,9 +533,7 @@ And so you have to inspect those things, too.
 
 Aaron van Wirdum:
 
-Yeah.
 Dependencies, these are called.
-Yeah.
 
 Sjors Provoost:
 
@@ -669,7 +629,6 @@ This was actually done.
 
 Sjors Provoost:
 
-Yeah.
 In a dependency of a dependency of a dependency.
 So what they did is they found some random, far away dependency deep down in the tree that's actually used by millions of projects, and that dependency was no longer maintained.
 So somebody wrote it, everybody uses it, and then the guy or girl no longer maintained it.
@@ -730,6 +689,8 @@ It's relatively shallow.
 So you'd have to go after those dependencies directly to attack.
 So, that's good news.
 
+## Gitean 
+
 Aaron van Wirdum:
 
 Okay, Sjors.
@@ -752,7 +713,6 @@ So it still have deterministic builds because everybody would be using the same 
 
 Aaron van Wirdum:
 
-Yeah.
 I guess that's a dependency in itself then, right?
 That's like a dependency for Ubuntu, or am I saying that right?
 
@@ -764,7 +724,6 @@ But the other dependency, and that's a real can of worms, are all the tools that
 
 Aaron van Wirdum:
 
-Yeah.
 So if the tools you use to build Bitcoin Core is corrupt, then you still have a problem because all of the developers are getting to solve the same binaries from their Gitean process, but if that's corrupted...
 Anyways, I think our listeners get it.
 So what's the-
@@ -779,6 +738,8 @@ Aaron van Wirdum:
 
 How do we get more paranoid?
 How do we solve this problem?
+
+## Geeks 
 
 Sjors Provoost:
 
@@ -973,7 +934,6 @@ Yeah, this sounds super fascinating to me, the fact that this is possible.
 
 Sjors Provoost:
 
-Yeah.
 And then at least you have this ginormous spider web of code.
 All of it is code and you know that it produces a binary, and then you just need lots and lots of people to review every single piece of code in there and be very conservative about updating any of it.
 Because if you update any of it, well, it could be malware again.
@@ -988,7 +948,6 @@ And most people are used to automatically updating the computer.
 
 Aaron van Wirdum:
 
-Okay.
 Well, so this is how we're going to make Bitcoin truly trustless, essentially?
 
 Sjors Provoost:
@@ -1008,6 +967,8 @@ Aaron van Wirdum:
 
 Nightmare.
 
+## Open source hardware
+
 Sjors Provoost:
 
 Open source hardware is another movement that are trying to get rid of all these weird chips on your computer that are doing arbitrary things.
@@ -1015,7 +976,6 @@ You have no idea what it is doing.
 
 Aaron van Wirdum:
 
-Yeah.
 Do we want to give a shout out to walletscrutiny.com?
 
 Sjors Provoost:
@@ -1026,13 +986,6 @@ So walletscrutiny.com is a website that looks at various wallets, whether they a
 Aaron van Wirdum:
 
 And a lot of them aren't.
-
-Sjors Provoost:
-
-Yep.
-
-Aaron van Wirdum:
-
 That's pretty scary.
 There's dozens of wallets that aren't even open source.
 
@@ -1042,7 +995,6 @@ Yeah.
 So the only way to verify those wallets would be to inspect the binaries, which there are tools to make that also slightly less painful than it sounds.
 So if there's some very obvious code in those wallets that says steal coins, somebody will probably still find it.
 But it's not good.
-Yeah.
 And then you have wallets that have source published, but if you have that source and you want to make sure that the binary they give you in the play store is the same, it's not that easy.
 Sometimes they don't offer any feature functionalities for it.
 Sometimes they do, but it doesn't work because it hasn't been maintained, because not a lot of-
@@ -1067,13 +1019,6 @@ So the app you're downloading on your Android phone, you can check the checksum 
 Sjors Provoost:
 
 Yeah.
-
-Aaron van Wirdum:
-
-Okay.
-
-Sjors Provoost:
-
 I think so, but I don't think they've done it for iOS yet.
 And I don't even know if you can do it with iOS.
 
@@ -1098,7 +1043,6 @@ Because all the Node.js tooling and all that stuff is not designed to make repro
 
 Aaron van Wirdum:
 
-Yeah.
 So, okay.
 So walletscrutiny.com, it's a project by [Leo Van der Schlepp 00:33:36] and it categorizes wallets into custodial, not even open source, so not custodial, but also not open source, which is probably even worse than custodial.
 I don't know what you think.
