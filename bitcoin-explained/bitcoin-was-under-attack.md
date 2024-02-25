@@ -1,11 +1,11 @@
 ---
-title: ""
+title: "Bitcoin Was Under ATTACK!"
 transcript_by: Sjors, edilmedeiros
-media: 
-tags: ["bitcoin-core"]
+media: https://www.youtube.com/watch?v=XmKfOCUdH8k
+tags: ["bitcoin-core", "security", "p2p"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
-date: 
+date: 2021-11-11
 episode: 49
 ---
 
@@ -47,6 +47,8 @@ Sjors Provoost:
 
 Yeah.
 I mean there's David Gerard's book, you know, Attack of the 50 Foot Blockchain, but this is the attack of the fake peers, yep.
+
+## The attack of fake peers
 
 Aaron van Wirdum:
 
@@ -169,6 +171,8 @@ Sjors Provoost:
 And the other node doesn't really know.
 But you can give up to 10 and that's kind of the mechanism that this attack is exploiting is kind of saying, hello, here's 10 IP addresses and the usual assumption is if that's a new node then, you know, the first one is probably that node.
 So they were kind of abusing the way that nodes used to introduce themselves to the network because once your address has been gossiped around, then people can connect to you and give you good stuff.
+
+## The attack severity
 
 Aaron van Wirdum:
 
@@ -353,6 +357,8 @@ Fair enough.
 Sjors Provoost:
 
 Often probably just for research, but who knows, you know, there might be some evil army out there that's looking for a way.
+
+## Countermeasures 
 
 Aaron van Wirdum:
 
