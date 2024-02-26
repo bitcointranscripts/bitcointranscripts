@@ -7,9 +7,8 @@ speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-07-31
 episode: 4
+summary: "The podcast episode \"What is Miniscript\" delves into Miniscript, a simplified version of Bitcoin Script developed by Pieter Wuille, Andrew Poelstra, and Sanket Kanjalkar from Blockstream. Miniscript is described as a template of Bitcoin Script, aimed at making it easier to write, analyze, and reason about Bitcoin smart contracts. The discussion covers the basics of Bitcoin Script, its problems such as complexity and potential for errors, and how Miniscript addresses these issues by providing a standardized way to use a subset of Bitcoin Script's functionality. The episode also introduces the concept of a policy language, a higher-level programming language that can be compiled into Miniscript, facilitating even easier script creation for developers. Additionally, the limitations of Miniscript and its place within the Bitcoin ecosystem are discussed, highlighting its role as a tool for developers rather than a consensus change."
 ---
-
-
 Aaron van Wirdum:
 
 Miniscript.
@@ -44,7 +43,7 @@ So let's get started.
 First things first.
 scripts, Bitcoin Scripts.
 
-## Bitcoin Scripts
+## Bitcoin Script
 
 Sjors Provoost:
 
@@ -96,11 +95,13 @@ These were removed early on.
 
 Sjors Provoost:
 
-I mean, Ethereum had a similar experience in 2015, right? Where complex programs could do all sorts of unexpected things, but Bitcoin had that in the beginning too.
+I mean, Ethereum had a similar experience in 2015, right?
+Where complex programs could do all sorts of unexpected things, but Bitcoin had that in the beginning too.
 
 Aaron van Wirdum:
 
-So just to remind our listeners, what kind of restrictions can they put on a transaction? What kind of restrictions are we talking about here?
+So just to remind our listeners, what kind of restrictions can they put on a transaction?
+What kind of restrictions are we talking about here?
 
 Sjors Provoost:
 
@@ -120,8 +121,8 @@ And this is just easy to implement as a programming language in general.
 So when people make early computer processors, it was just easier to have a memory where you could only put things on top of it and take the top element off.
 You didn't have addresses, like with memory, you have to say which part of the memory do you want, with a stack you just say, put something on it, take something away from it.
 So the standard Bitcoin Script reads as follows, it's very beautiful.
-It's OP\_DUP as in double, duplicate, then OP\_HASH160 as in take the 160 SHA hash.
-And RIPMED hash, then the public key and then OP\_EQUAL\_VERIFY.
+It's `OP_DUP` as in double, duplicate, then `OP_HASH160` as in take the 160 SHA hash.
+And RIPMED hash, then the public key and then `OP_EQUAL_VERIFY`.
 
 Sjors Provoost:
 
@@ -149,11 +150,11 @@ So in this case, what you put on the stack is your signature and your public key
 Okay.
 So we start with a stack that has two plates.
 Plate 1 at the bottom is your signature and on top of that is a plate with your public key.
-And then the script says OP\_DUP.
-And what OP\_DUP does is takes the top element of the stacks, takes the top plate, the public key and duplicates it.
+And then the script says `OP_DUP`.
+And what `OP_DUP` does is takes the top element of the stacks, takes the top plate, the public key and duplicates it.
 So now you have two plates with a public key at the top of the stack.
 And your signature's still at the bottom.
-Then the next code, the next instruction is OP\_HASH160.
+Then the next code, the next instruction is `OP_HASH160`.
 
 Sjors Provoost:
 
@@ -179,9 +180,11 @@ So, at the bottom is the six, still the signature, then there's a public key and
 So the next operation is pubKeyHash.
 So that is the hash of your public key again.
 So now the top of the stack is two times the hash of your public key.
-And then the next operation is OP\_EQUAL\_VERIFY.
-So that basically takes the two things off the top of the stack says, hey, are these the same? Yes.
-So indeed, did you put the hash of your public key? And then, the last thing that's left on the stack is only again, your signature and your public key, and it calls object six.
+And then the next operation is `OP_EQUAL_VERIFY`.
+So that basically takes the two things off the top of the stack says, hey, are these the same?
+Yes.
+So indeed, did you put the hash of your public key?
+And then, the last thing that's left on the stack is only again, your signature and your public key, and it calls object six.
 So it checks the signature using your public key.
 And then, the stack is empty and everything is happy.
 That's how the Bitcoin program is run.
@@ -258,19 +261,20 @@ And another question is, if you're are just sending money to yourself, you only 
 But let's say you're collaborating, you want to do a Multisig.
 Now there's actually an instruction to do Multisig, but let's say that didn't exist.
 So one way you could do a Multisig is say the script we just explained with my public key in it or my public key hash.
-And then, the script we just explained with your public key hash, just in sequence, right? So that if that's executed, I will not repeat the process we just did before.
+And then, the script we just explained with your public key hash, just in sequence, right?
+So that if that's executed, I will not repeat the process we just did before.
 But you essentially start with those two public keys and two signatures on the stack and you run both of these scripts in sequence, and then if both people signed, it's all good.
 So you have a poor man's Multisig.
 
-## Problems associated with Bitcoin script
+## Problems associated with Bitcoin Script
 
 Sjors Provoost:
 
 But if I'm evil or stupid, I could make this a REKT-man, Multisig, sorry for the joke.
-And that is achieved by, in the middle, inserting an op code called OP\_RETURN.
-And the OP\_RETURN code basically says, all right, stop evaluating this program, you're done.
+And that is achieved by, in the middle, inserting an op code called `OP_RETURN`.
+And the `OP_RETURN` code basically says, all right, stop evaluating this program, you're done.
 Now, if I had an electronic lawyer that wanted to check that this Multisig is what it says it does, or in fact, if you had that lawyer, your lawyer might say, "Well, I see that my signature's being checked and whatever the rest of the script does, I don't care, but my signature's being checked, so I'm happy with this," but of course, you shouldn't be happy with this.
-So your electronic lawyer should see that OP\_RETURN statement and warn you.
+So your electronic lawyer should see that `OP_RETURN` statement and warn you.
 But the problem is there's a trillion ways in which scripts can go wrong and that is why you need a standardized way of dealing with these scripts.
 And that's where Miniscript is-
 
@@ -278,7 +282,8 @@ Aaron van Wirdum:
 
 I'll read a little fragment from Andrew Poelstra, who I interviewed a long time ago when I wrote an article on this.
 So the example he gave was, and I'm not going to pretend like I understand everything he said in this quote, but that was sort of the point of the quote for me, that it was exemplifying the complexity of potential ways to mess around with script.
-Anyways, so the quote was, "There are op codes of Bitcoin Script, which do really absurd things like interpret a signature as a true false value, branch on that, convert that Boolean to a number and then index into the stack and rearrange the stack based on that number. And the specific rules for how it does this are super-nuts."
+Anyways, so the quote was, "There are op codes of Bitcoin Script, which do really absurd things like interpret a signature as a true false value, branch on that, convert that Boolean to a number and then index into the stack and rearrange the stack based on that number.
+And the specific rules for how it does this are super-nuts."
 You probably actually follow that perfectly.
 
 Sjors Provoost:
@@ -302,7 +307,8 @@ And then there's a small letter, which says, unless there's two commas in a row,
 Sjors Provoost:
 
 Exactly.
-Except that this will be like the law, right? So the contract doesn't say that at all.
+Except that this will be like the law, right?
+So the contract doesn't say that at all.
 It's just that the law that's in this country has that stupid rule.
 If there are two commas in a contract, you're giving away your money.
 Okay, that's the script interpreter of all the consensus rules, which are quite complicated.
@@ -326,7 +332,7 @@ I think we're on the same page.
 Yes.
 Okay, so solutions we're getting to the solution part of the story.
 
-## How Miniscript solves Bitcoin script's problems
+## How Miniscript solves Bitcoin Script's problems
 
 Sjors Provoost:
 
@@ -461,7 +467,8 @@ You can do that with script or with Taproot, but how do I, as a customer know, I
 And if only there was a way you could check that and Miniscript is done such that you can check that as long as the script that you're getting is compatible with Miniscript, because Miniscript to normal script is two ways.
 So you can take any Miniscript, turn it into a normal script.
 You can take any normal script and turn it into a Miniscript.
-Well, unless it doesn't match, right? If there's codes in it that don't apply, then it just doesn't compile or doesn't translate.
+Well, unless it doesn't match, right?
+If there's codes in it that don't apply, then it just doesn't compile or doesn't translate.
 So, and if you can turn something into Miniscript, then you can analyze it using all sorts of tools that can analyze any Miniscript.
 
 Sjors Provoost:
@@ -588,7 +595,7 @@ Sjors Provoost:
 Yeah.
 I mean, you could just write the script directly or you could write the Miniscript directly, but the nice thing about writing the policy language is that you can have a compiler that can be very smart.
 So a simple policy language might be just give me two of two signatures.
-And the policy language would probably convert that to OP\_MULTISIG or we'll convert that to Multisig in Miniscript and Multisig in Miniscript is just OP\_MULTISIG.
+And the policy language would probably convert that to `OP_MULTISIG` or we'll convert that to Multisig in Miniscript and Multisig in Miniscript is just `OP_MULTISIG`.
 So that's super-trivial.
 
 Aaron van Wirdum:
@@ -596,7 +603,8 @@ Aaron van Wirdum:
 Okay.
 So whoever wrote the policy language, and I know Pieter Wuille, for example, wrote the policy language for this.
 It was him, it was his brain basically.
-He figured out all the best ways to compile this policy language into Miniscript, right? He must have somehow figured it out then.
+He figured out all the best ways to compile this policy language into Miniscript, right?
+He must have somehow figured it out then.
 
 Sjors Provoost:
 
@@ -653,13 +661,15 @@ They're very instructions like put this on the stack, take that away from the st
 And the Miniscript is essentially the same.
 It's just only a subset of it, but it's slightly more readable, but it's still extremely low level.
 The policy language is slightly higher level.
-So what you do is you start at the higher level, which is easier for a programmer to write and then a computer looks at that high level language and says how can I write this into low level machine readable stuff as efficiently as possible? So in the case of the Multisig thing, I might say, I just want two out of two signatures.
+So what you do is you start at the higher level, which is easier for a programmer to write and then a computer looks at that high level language and says how can I write this into low level machine readable stuff as efficiently as possible?
+So in the case of the Multisig thing, I might say, I just want two out of two signatures.
 I don't care how you do that.
 Then the compiler knows that there are multiple ways to do that.
 
 Aaron van Wirdum:
 
-But how does compiler know this? I hope there's listeners out there that knows little about this as I do.
+But how does compiler know this?
+I hope there's listeners out there that knows little about this as I do.
 So they might learn something.
 How does the compiler know this?
 
@@ -686,7 +696,8 @@ And there we go.
 Sjors Provoost:
 
 But basically, the compiler knows, okay, there's maybe two or three ways to do this, this to execute his intention.
-And then, the question is, which of the three of them am I going to pick? Well, then it depends on the transaction weight and the fees that you might be involved, but also you can tell it, okay.
+And then, the question is, which of the three of them am I going to pick?
+Well, then it depends on the transaction weight and the fees that you might be involved, but also you can tell it, okay.
 I think most of the time it's condition A, but only 10% of the time it's condition B.
 And then the compiler can try condition A nine times, condition B nine one time and then figure out what the expected fee is.
 So it can optimize for typical use cases, worst case scenarios, all these things, and it can then spit out a Bitcoin Script or a Miniscript that then becomes a Bitcoin Script.
@@ -806,7 +817,10 @@ Or maybe we will have the one of those [inaudible 00:25:36].
 Sjors Provoost:
 
 But I can tell you from what I know about the policy language is that you're still some steps away from having a practical tool where you and I can set up a very complicated Multisig wallet.
-There's all sorts of questions you want to answer like, how exactly do you do this setup? What are you emailing to each other? Are you emailing your keys or are you emailing something a little bit more abstract that you agree on first and then you exchange keys? Those very practical things that are not solved inside a Miniscript.
+There's all sorts of questions you want to answer like, how exactly do you do this setup?
+What are you emailing to each other?
+Are you emailing your keys or are you emailing something a little bit more abstract that you agree on first and then you exchange keys?
+Those very practical things that are not solved inside a Miniscript.
 
 Aaron van Wirdum:
 
@@ -830,7 +844,8 @@ Aaron van Wirdum:
 
 Minsc with a C.
 Yeah, that's some extra info.
-All right, Sjors, is this the end of our episode? Did we cover everything we needed to cover from Miniscripts?
+All right, Sjors, is this the end of our episode?
+Did we cover everything we needed to cover from Miniscripts?
 
 Sjors Provoost:
 
