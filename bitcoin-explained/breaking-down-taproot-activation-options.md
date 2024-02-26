@@ -7,8 +7,8 @@ speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-07-25
 episode: 3
+summary: "This podcast episode delves into the nuances of Bitcoin soft fork activation, with a particular focus on the upcoming Taproot activation. Hosts Aaron van Wirdum and Sjors Provoost discuss the history and mechanisms of soft fork activation, including the challenges faced during previous activations such as SegWit. They explore different proposals for activating Taproot, weighing the merits and drawbacks of methods like BIP 9, BIP 91, BIP 148 (UASF), and the newer BIP 8. The discussion highlights the importance of achieving consensus within the community and the complexities involved in coordinating upgrades across the decentralized Bitcoin network. The episode concludes with considerations for future soft fork activations, emphasizing patience, thorough review, and the potential for innovative solutions like \"sporks\" to address these challenges"
 ---
-
 Aaron van Wirdum:
 
 We're going to discuss Taproot activation, or more generally soft fork activation.
@@ -20,7 +20,8 @@ Yeah.
 Aaron van Wirdum:
 
 This has become a topic again in the sort of Bitcoin debate community public discourse.
-How do we activate soft forks? Because Taproot is getting to the point where it sort of ready to be deployed almost I think, so now the next question is, "Okay, how are we actually going to activate this?" This has been an issue in the past with several soft forks.
+How do we activate soft forks?
+Because Taproot is getting to the point where it sort of ready to be deployed almost I think, so now the next question is, "Okay, how are we actually going to activate this?" This has been an issue in the past with several soft forks.
 And it came up in the mailing list, I think a couple of months ago.
 And now it's sort of reemerged, there's now a IRC channel where it's being debated, there's a Telegram's channel.
 I wrote an article on it.
@@ -78,7 +79,8 @@ Yeah, so hang on.
 The thing you're saying is that soft fork is backwards compatible in the context of Bitcoin.
 And the reason for that is like let's say I go to a restaurant every day because I love the food there, and then one day they introduce kosher foods and the food is still great.
 I can still go there, because I don't care if it's kosher or not.
-Right? So there're tiny rules.
+Right?
+So there're tiny rules.
 I didn't care about whether or not it's kosher, so it's fine for me.
 
 Sjors Provoost:
@@ -231,9 +233,12 @@ The Bitcoin Improvements Proposal 9 uses this difficulty period, 95%.
 
 Sjors Provoost:
 
-So these are the three main mechanisms, right? You can just randomly do this.
+So these are the three main mechanisms, right?
+You can just randomly do this.
 You can announce a date and you can have miner signal up to a certain threshold.
-And now the question is, what are you going to do for Taproot? And what have we done in the past? And maybe you want to combine some of these methods.
+And now the question is, what are you going to do for Taproot?
+And what have we done in the past?
+And maybe you want to combine some of these methods.
 
 Aaron van Wirdum:
 
@@ -268,7 +273,8 @@ Sure.
 Sjors Provoost:
 
 So what happened then, is a number of different things happened outside the blockchain.
-There was basically a group of people that said, "Hey, you know what? We're just going to, instead of the signaling, we're just going to go back to the old flag day approach." And that was called BIP 148.
+There was basically a group of people that said, "Hey, you know what?
+We're just going to, instead of the signaling, we're just going to go back to the old flag day approach." And that was called BIP 148.
 So they picked April 1st, 2017 and basically said, "Well, our nodes are now going to enforce these rules."
 
 Aaron van Wirdum:
@@ -309,7 +315,8 @@ This was resolved in some way or another, and there's still debate to this day h
 Sjors Provoost:
 
 Right.
-Because two things happened at the same time, right? You had the BIP 148 (UASF) rules, the guys with the guns and the nodes.
+Because two things happened at the same time, right?
+You had the BIP 148 (UASF) rules, the guys with the guns and the nodes.
 And-
 
 Aaron van Wirdum:
@@ -514,7 +521,8 @@ If you decide on the flag date, you want to have a very large consensus on what 
 Aaron van Wirdum:
 
 Maybe.
-I mean, it depends, right? Like even if you don't have consensus, but at least miners don't want to see splits.
+I mean, it depends, right?
+Like even if you don't have consensus, but at least miners don't want to see splits.
 Or they could play it safe.
 That's sort of how BIP 148 happens.
 Right?
@@ -581,7 +589,7 @@ Sjors Provoost:
 But you can also imagine that there's going to be a lot of permutations.
 And so this could be a byte shedding nightmare.
 
-# Different proposals for taproot activation
+## Different proposals for taproot activation
 
 Aaron van Wirdum:
 
@@ -629,7 +637,8 @@ I think Matt's original idea was flag day on the end, but he's probably open to 
 
 Sjors Provoost:
 
-I mean, the question is if you have a flag day, what do you do on the flag day? And one thing you can do with the flag day is enforce the soft fork and the other is you can force the signaling, which then triggers the soft fork.
+I mean, the question is if you have a flag day, what do you do on the flag day?
+And one thing you can do with the flag day is enforce the soft fork and the other is you can force the signaling, which then triggers the soft fork.
 
 Aaron van Wirdum:
 
@@ -665,7 +674,8 @@ What do you think?
 
 Sjors Provoost:
 
-Well, you're going to think in the long run, right? So it's nice if you can have these improvements ship very quickly.
+Well, you're going to think in the long run, right?
+So it's nice if you can have these improvements ship very quickly.
 But if there is a tradition that developers decide on a soft fork and it gets activated quickly, well then maybe a government starts calling developers and saying, "Hey, we have this KYC soft fork.
 And since nobody really pays attention and miners are run anything you want, why don't you just make that soft fork and don't worry about the review process?" So you don't want to put too much power in the hands of the developers.
 They don't want that kind of power because it means they're going to get very unpleasant phone calls at some point.
@@ -692,7 +702,8 @@ Sure.
 So another idea is BIP 8, let's say with like a year deadline at which time forced signaling happens.
 Almost kind of like a basic proposal.
 Would this be...
-So to first ask you about that, do you think that's too fast? One year, forced signaling?
+So to first ask you about that, do you think that's too fast?
+One year, forced signaling?
 
 Sjors Provoost:
 
@@ -739,7 +750,8 @@ And after that, it's just a matter of coordinating the upgrade.
 
 Sjors Provoost:
 
-But the question is when are people going to bother to review it? And I could imagine that if I'm a miner and like, "Oh, I have to run this new version, let's see what it's doing."
+But the question is when are people going to bother to review it?
+And I could imagine that if I'm a miner and like, "Oh, I have to run this new version, let's see what it's doing."
 
 Aaron van Wirdum:
 
@@ -759,7 +771,8 @@ That people and miners will only really consider it when the code is out there a
 
 Sjors Provoost:
 
-And it's an expensive signal too, right? As a developer, you're really shipping this software.
+And it's an expensive signal too, right?
+As a developer, you're really shipping this software.
 That's a bigger commitment than saying, "Okay, looks good and get up."
 So I think that is a critical moment and you can't expect review to happen after that.
 Or review to happen after that.
@@ -825,7 +838,8 @@ What do you think of that idea?
 
 Sjors Provoost:
 
-Well, how do you coordinate the date? Is that-
+Well, how do you coordinate the date?
+Is that-
 
 Aaron van Wirdum:
 
@@ -1006,7 +1020,8 @@ It's hard to predict.
 But that could be a mess and that could be on CNN.
 And then there's like, "Oh, Bitcoin is broken," on CNN.
 And Bitcoin was already broken two podcasts ago.
-Remember? I don't know what the topic was.
+Remember?
+I don't know what the topic was.
 I think at was about [crosstalk 00:31:20].
 
 Aaron van Wirdum:
@@ -1090,7 +1105,8 @@ Yes, which in turn triggers the higher threshold.
 Sjors Provoost:
 
 So I like the idea of lowering the threshold over time.
-What I am worried about, and maybe that was discussed, is what if there's a bug? Because if this thing has a three year window, that means there is three years in which this thing could activate, even though everybody agrees, it shouldn't activate.
+What I am worried about, and maybe that was discussed, is what if there's a bug?
+Because if this thing has a three year window, that means there is three years in which this thing could activate, even though everybody agrees, it shouldn't activate.
 
 Aaron van Wirdum:
 
@@ -1189,7 +1205,8 @@ Aaron van Wirdum:
 
 Yes.
 All right.
-So then there was another idea which is, I guess, is it the opposite as a previous one? Maybe not.
+So then there was another idea which is, I guess, is it the opposite as a previous one?
+Maybe not.
 You take BIP 8 with a long period, but without forced signaling at the end.
 Then you still keep an eye on what's happening.
 If after a while you find that there is no problem with it, but miners aren't signaling for it because they're just apathetic or they have another bad reason.
@@ -1218,7 +1235,8 @@ Aaron van Wirdum:
 
 Yep.
 Pretty much.
-So what's your preference here? It sounds like you're kind of conservative.
+So what's your preference here?
+It sounds like you're kind of conservative.
 
 Sjors Provoost:
 
@@ -1430,4 +1448,3 @@ Thank you For listening to the Van Wirdum Sjorsnado.
 Aaron van Wirdum:
 
 There we go.
-
