@@ -2,11 +2,10 @@
 title: Libbitcoin kernel
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'libbitcoin kernel']
+tags: ['bitcoin core', 'build-system']
 date: 2023-04-26
 speakers: ['thecharlatan']
 ---
-
 ## Preguntas y respuestas
 
 Q: bitcoind y bitcoin-qt vinculado contra el núcleo de la biblioteca en el futuro?
