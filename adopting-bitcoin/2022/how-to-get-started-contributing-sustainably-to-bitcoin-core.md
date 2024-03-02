@@ -1,11 +1,11 @@
 ---
 title: "How to get started contributing sustainably to Bitcoin Core"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: chippsmith via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Bduon80-4CE
-tags: ['bitcoin-core']
-speakers: ['Jon Atack', 'Stephan Livera']
-categories: ['conference']
-date: 2022-11-16
+tags: ["bitcoin-core","developer-tools"]
+speakers: ["Jon Atack","Stephan Livera"]
+categories: ["conference"]
+date: 2022-11-15
 ---
 Speaker 0: 00:00:00
 
