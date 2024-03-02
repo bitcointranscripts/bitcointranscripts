@@ -397,10 +397,11 @@ date: 2022-11-13
     I believe we should be prudent and reasonable.
 
 ## Community Discustions About Bitcoin Core
-
 [Bitcoin Core Review Club](https://bitcoincore.reviews/)
 
 [Bitcoin Optech Newsletter](https://bitcoinops.org/en/newsletters/)
+
+[Bitcoin IRC Channels Wiki](https://en.bitcoin.it/wiki/IRC_channels)
     
 
     Stephan: 00:25:30
