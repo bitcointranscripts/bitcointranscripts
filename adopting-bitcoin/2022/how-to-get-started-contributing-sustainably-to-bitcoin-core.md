@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=Bduon80-4CE
 tags: ["bitcoin-core","developer-tools"]
 speakers: ["Jon Atack","Stephan Livera"]
 categories: ["conference"]
-date: 2022-11-14
+date: 2022-11-13
 ---
 ## Introduction
 
