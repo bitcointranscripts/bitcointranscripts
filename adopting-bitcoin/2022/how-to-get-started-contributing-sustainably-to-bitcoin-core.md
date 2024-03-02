@@ -33,7 +33,7 @@ date: 2022-11-12
 
 ## Jon's Background and Motivation
 
-    [jonatack.github.io](https://jonatack.github.io/)
+[jonatack.github.io](https://jonatack.github.io/)
 
     Stephan: 00:01:06
 
