@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=Bduon80-4CE
 tags: ["bitcoin-core","developer-tools"]
 speakers: ["Jon Atack","Stephan Livera"]
 categories: ["conference"]
-date: 2022-11-13
+date: 2022-11-12
 ---
 ## Introduction
 
@@ -32,6 +32,8 @@ date: 2022-11-13
     Yeah, we met and at that point I'd been working on Bitcoin Core since seven months.
 
 ## Jon's Background and Motivation
+
+    [jonatack.github.io](https://jonatack.github.io/)
 
     Stephan: 00:01:06
 
