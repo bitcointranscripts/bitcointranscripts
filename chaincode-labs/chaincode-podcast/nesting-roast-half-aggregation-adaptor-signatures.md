@@ -7,13 +7,9 @@ speakers: ['Pieter Wuille', 'Tim Ruffing']
 categories: ['podcast']
 date: 2022-12-27
 ---
-Speaker 0: 00:00:00
-
-Just as
-
 Speaker 1: 00:00:00
 
-a warning, so don't do this at home.
+Just as a warning, so don't do this at home.
 
 Speaker 0: 00:00:01
 
@@ -68,11 +64,10 @@ First, because of privacy, maybe I just don't want to reveal it, but also just f
 So I don't want to reveal that I use a two of three, not only for privacy reasons, but also to keep the specification simple because then whenever, like let's say in the future, I want to do something else with my keys for every new use case in a sense, or a key setup case, you would need to change the Lightning specification.
 That's not what we want to do.
 So this is the rough application idea of nesting.
-In this example, it would be a frost inside the music, but you could also think of arbitrary combinations, like a music inside the music, music inside the frost, and arbitrary trees you
+In this example, it would be a frost inside the music, but you could also think of arbitrary combinations, like a music inside the music, music inside the frost, and arbitrary trees you can build.
 
-Speaker 0: 00:03:21
+Speaker 0: 00:03:22
 
-can build.
 And in addition, we have other things too, like we have BIP32 derivation, like can you do a frost setup between participants and then get the next pub out that you can derive multiple keys from that all of them now may be signable.
 We believe that's the case, but.
 Yeah, and yeah.
@@ -81,11 +76,10 @@ And this is kind of interesting because that's actually what we today expect peo
 We don't actually have a security proof that a combination of those two is a secure thing.
 We have a proof for Taproot signing, we have a proof for music signing.
 We have very good reasons to assume that you can just combine the two, but.
-Right, so this is like, there are
 
-Speaker 1: 00:04:08
+Speaker 1: 00:04:07
 
-a few open research questions here.
+Right, so this is like, there are a few open research questions here.
 So the first, like the thing you mentioned is just nesting that I talked about now.
 So in fact, when we came up with music too, what we actually wanted to solve was this nesting thing, because we were thinking about nested music.
 How can we have a music inside a music?
@@ -104,19 +98,11 @@ I mean, I kept thinking about it for like every few months.
 I spent a week on this and it was never successful until it was, so I was pretty happy about it.
 But anyway, this is how this idea of having two rounds started.
 And actually, like, Music 2 is designed with this use case in mind.
-Just we didn't include it in the Music 2 paper because we first wanted to have the two-round scheme then, and nesting basically was out of scope of
-
-Speaker 2: 00:05:20
-
-the paper.
-
-Speaker 1: 00:05:21
-
-I just
+Just we didn't include it in the Music 2 paper because we first wanted to have the two-round scheme then, and nesting basically was out of scope of the paper.
 
 Speaker 2: 00:05:21
 
-want to double-click on that epiphany moment, because I've obviously never had one of those myself.
+I just want to double-click on that epiphany moment, because I've obviously never had one of those myself.
 But as an engineer, sometimes you have the, I'm trying this thing, I'm trying this thing, I can't figure out an elegant way, and then it clicks.
 Does it feel like that?
 Or is it like, I'm throwing, like, sort of from a research perspective, like, I'm throwing a lot of different ideas at this thing, and trying to prove them out, and one of them clicks?
@@ -150,13 +136,9 @@ So you sort of have something that's, you want to cut down on the interactivity 
 You were sort of able to attack this kind of problem in music world.
 Is it, is there a world where you can take those lessons and apply it to something that's totally novel?
 
-Speaker 0: 00:07:34
-
-I don't
-
 Speaker 1: 00:07:34
 
-know.
+I don't know.
 I think like research mostly is idea driven in one sense.
 So you like you get some idea and then some neat trick maybe that you discover and then you try to find applications for that trick.
 And then if you already know about problems in the space, it's more likely that you find an application where it's actually relevant.
@@ -165,11 +147,10 @@ That's basically how it works.
 Speaker 0: 00:07:59
 
 In a way, I think the same can be said about Music because its research was originally driven by this cross input signature aggregation thing but we sort of like wait no we have a really cool multi signature scheme and that's like well analyzed and much easier to think about and has like much more clear way to production than this other thing.
-Let's focus on that
+Let's focus on that first.
 
-Speaker 1: 00:08:24
+Speaker 1: 00:08:25
 
-first.
 Music too was built with this nesting idea in mind in the sense that, but we like we didn't include it in the paper, but we think we have a way to do it, but like, or we thought we have a way to do it now, like a month ago, we discovered it doesn't really work.
 So it's still like an open research question.
 It's not like, if you look at the scheme, you could think you could do it today, but please, please don't do it because it's still an open problem.
@@ -181,18 +162,10 @@ When you say a way to do it that both encompasses like what the actual algorithm
 Because today...
 Security and functionality, yeah.
 Right, because you like, Music 2 is specifically designed to support nesting, originally designed to support nesting.
-So it, If you just look at the spec and do the naive thing, like it is a
 
-Speaker 1: 00:09:20
+Speaker 1: 00:09:13
 
-natural thing you could do to make nesting work in a sense that like
-
-Speaker 0: 00:09:26
-
-you get valid signatures, right?
-
-Speaker 1: 00:09:27
-
+So it, If you just look at the spec and do the naive thing, like it is a natural thing you could do to make nesting work in a sense that like you get valid signatures, right?
 You can create a signature and the signature would verify but it doesn't mean that this specific way is secure and this is the problem we still need to solve.
 
 Speaker 0: 00:09:35
@@ -226,14 +199,7 @@ It's interesting that I think if we would have come up with a new digital signat
 Well at this somewhat higher level of combining things, it seems unnecessary to ask these questions.
 And I think that that's a bit the same of like the lower level and the higher level there's more of an expectation to have an academically rigorous look at the lower cryptography part and less at like you know this security of composition.
 I'm overgeneralizing obviously.
-
-Speaker 1: 00:11:48
-
-Yeah I mean if you say it's it seems unnecessary it sounds like the famous last words of the applied copter it works until it doesn't work but yeah
-
-Speaker 0: 00:11:58
-
-I mean I agree with you I don't mean to say we shouldn't ask this, I'm saying it seems that people are okay with the question not being asked.
+Yeah I mean if you say it's it seems unnecessary it sounds like the famous last words of the applied copter it works until it doesn't work but yeah I mean I agree with you I don't mean to say we shouldn't ask this, I'm saying it seems that people are okay with the question not being asked.
 Yes.
 
 ## ROAST
@@ -293,17 +259,15 @@ And ROST really makes sense, and also frost really makes sense if you scale up t
 If you have large N and large T and 11 or 15 is maybe, yeah, it's larger than 2 or 3, but it could be maybe like 50 of 100 or 60 of 100.
 And this is doable with frost and roast with this specific combination.
 So, and I think this is where it's going to be used.
-It's probably roast is nothing that you would use in your two or three at home, or even like
+It's probably roast is nothing that you would use in your two or three at home, or even like a three or five at home or something like that.
 
-Speaker 0: 00:17:54
+Speaker 0: 00:17:56
 
-a three or five at home or something like that.
 But maybe because for your two of three, you really just don't want to use a threshold signature scheme in the first place.
-That's why
 
 Speaker 1: 00:18:02
 
-I mentioned also 305.
+That's why I mentioned also 305.
 Like even let's say you have a 305 at home, I guess you wouldn't need Roast because it's like, okay, like I picked those three hardware wallets to make a signature or some of it failed, what like, yeah, replace the one that failed with another one and try again.
 You could do this restarting of Frost sessions basically manually.
 So Roast really I think is helpful when you have some federation of nodes around the world that are running automatically.
@@ -316,11 +280,10 @@ But it's good for these federation use cases, but I think this is really like a 
 Speaker 2: 00:18:49
 
 So Peter, you have mentioned cross-input aggregation as the inspiration for a lot of the work that actually has been done to date.
-Let's talk about signature aggregation, maybe start with interactive floor aggregation and sort of the cross-input aggregation history, and then we'll
+Let's talk about signature aggregation, maybe start with interactive floor aggregation and sort of the cross-input aggregation history, and then we'll explore some other ways.
 
-Speaker 0: 00:19:10
+Speaker 0: 00:19:11
 
-explore some other ways.
 Let's first say what signature aggregation is.
 It's very closely related to a multi-signature.
 But the difference is really, think of a multi-signature with multiple participants each signing, but they can all be signing a different message rather than signing all different, allow all messages to be different rather than the same.
@@ -328,11 +291,10 @@ Now signature aggregation can be done interactively or non-interactively, which 
 Is it possible for them to just create their partial signature now once, their individual one, and can a third party aggregate them, or do they really need to collaborate in order to produce that signature?
 Now if we're restricting ourselves to interactive ones, which is certainly the easier thing to build, there is a trivial way of turning any multi-signature scheme into an aggregated signature scheme, namely, everyone just signs everybody's message.
 Because it's interactive, they're talking anyway, like effectively the message could be like, here are all the messages and all the signers.
-Yeah, you just take
 
 Speaker 1: 00:20:27
 
-all the individual messages, concatenate them, this forms the message you put into the multi-signature scheme.
+Yeah, you just take all the individual messages, concatenate them, this forms the message you put into the multi-signature scheme.
 
 Speaker 0: 00:20:32
 
@@ -349,11 +311,10 @@ But just as a warning, so don't do this at home.
 Speaker 0: 00:20:56
 
 Yes, of course.
-Don't
 
 Speaker 1: 00:20:57
 
-phone your crypt, I'm so sorry.
+Don't phone your crypt, I'm so sorry.
 
 Speaker 0: 00:20:59
 
@@ -499,11 +460,10 @@ And if we do this in a music style, this key aggregation, then this key aggregat
 So we couldn't batch it together with a signature validation or with a taproot commitment openings.
 So probably there are other signature aggregation schemes that more different from music that would actually allow for fetch validation.
 So yeah, really, it's like, as you say, like you could construct it basically from music, but music is overkill.
-And that's the reason not to
+And that's the reason not to do that.
 
-Speaker 0: 00:33:00
+Speaker 0: 00:33:01
 
-do that.
 The Belaraneva scheme is simpler and would work.
 
 Speaker 1: 00:33:05
@@ -537,11 +497,10 @@ Speaker 1: 00:34:37
 
 Like what we talked about so far is what we also call full aggregation.
 And it's, we call it full aggregation because if you have ends, in a sense, like you have N parties, they all have their public keys, they all have their messages or their transactions, and the resulting signature you aggregate is really just, it looks like one, or it has the size of one signature.
-So it's really like you compress it to, like you have n parties involved, n
+So it's really like you compress it to, like you have n parties involved, n messages involved.
 
-Speaker 0: 00:35:04
+Speaker 0: 00:35:05
 
-messages involved.
 Let's give numbers, like a Schnorr signature today, 64 bytes.
 Without aggregation, if you have n signatures, it's 64 times n bytes.
 With full aggregation, it's 64 bytes, regardless of how many signatures you have.
@@ -600,11 +559,10 @@ So that is a 32 bytes per signature over the whole block that disappears.
 
 Speaker 1: 00:38:08
 
-It is of course would be yeah the savings would be huge and that's why it is a very interesting idea but like because it's really like not it's crossing transaction borders like
+It is of course would be yeah the savings would be huge and that's why it is a very interesting idea but like because it's really like not it's crossing transaction borders like the issues it could create potentially are...
 
-Speaker 0: 00:38:20
+Speaker 0: 00:38:23
 
-the issues it could create potentially are...
 So for example, what this would mean like pre-SegWit, this would have been a huge problem because it would mean the miner is changing the transaction IDs. That's thankfully no longer the case with SegWit, but it's still the case, like we have this WTX ID, which is the witness transaction ID, which is a hash of all the data in the transaction together with it witnesses, the version that ends up in a block would have a different WTXID than the version that's relayed on the network.
 So these aren't fundamental problems, but there are some engineering challenges for like caching and nodes will validate signatures as they come in individual transactions and cache the results.
 Now they see a different version of that transaction in the block because that half thing is stripped out.
@@ -612,11 +570,7 @@ Is there a way to leverage the cash they have or do they need to recompute from 
 
 Speaker 1: 00:39:21
 
-One maybe more fundamental problem which is still open or we should really look
-
-Speaker 0: 00:39:28
-
-at it is how this interacts with adapter signatures.
+One maybe more fundamental problem which is still open or we should really look at it is how this interacts with adapter signatures.
 
 ## Adaptor signatures and atomic swaps
 
@@ -642,11 +596,10 @@ Speaker 0: 00:41:14
 
 Yeah, yeah.
 It can be, yes.
-It can
 
 Speaker 1: 00:41:16
 
-be, yeah.
+It can be, yeah.
 
 Speaker 2: 00:41:17
 

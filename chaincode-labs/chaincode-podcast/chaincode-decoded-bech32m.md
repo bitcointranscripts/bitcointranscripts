@@ -2,10 +2,25 @@
 title: "Chaincode Decoded: Bech32m"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Bech32m---Episode-11-ev1jnc
-tags: []
+tags: ['bech32', 'segwit', 'taproot']
 speakers: ['Mark Erhardt']
 categories: ['podcast']
+summary: "This revisits a segment we call Chaincode Decoded. In this episode, we'll learn how to say Bech32 and also what it and Bech32m are. Enjoy!"
+episode: 11
 date: 2021-04-16
+additional_resources:
+-   title: mailing list post
+    url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html
+-   title: BIP350
+    url: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki
+-   title: 'Pieter Wuille: New Address Type for SegWit Addresses (presentation)'
+    url: https://www.youtube.com/watch?v=NqiN9VFE4CU
+-   title: Sipa demo
+    url: http://bitcoin.sipa.be/bech32/demo/demo.html
+-   title: Bech32 adoption
+    url: https://en.bitcoin.it/wiki/Bech32_adoption
+-   title: (Some of) the math behind Bech32 addresses
+    url: https://medium.com/@MeshCollider/some-of-the-math-behind-bech32-addresses-cf03c7496285
 ---
 Speaker 0: 00:00:00
 
@@ -70,14 +85,7 @@ So it's either allowed to be lowercase or uppercase, but mixed case is explicitl
 Speaker 0: 00:02:08
 
 And so it's 32, which gives you the alphabet, which is 26, plus some numbers.
-
-Speaker 1: 00:02:15
-
-So What
-
-Speaker 0: 00:02:15
-
-characters are we removing?
+So What characters are we removing?
 
 ## Correction: The characters removed from the set are 1 B I O
 
@@ -250,9 +258,8 @@ Speaker 0: 00:14:33
 It's that bull run.
 Yeah.
 Everybody's upset about the bull run.
-Price should
 
 Speaker 1: 00:14:36
 
-be going down so I can buy more.
+Price should be going down so I can buy more.
 We'll see you next time.
