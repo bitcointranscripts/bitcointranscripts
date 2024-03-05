@@ -5,9 +5,9 @@ media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-88-hashcash-an
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2024-01-03
+episode: 88
+summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss two electronic cash projects that predate Bitcoin: Adam Back’s Hashcash and Nick Szabo’s Bit Gold. As detailed in Aaron’s new book, The Genesis Book, these systems introduced design element that were later utilized by Satoshi Nakamoto. Aaron and Sjors explain what these elements are, and how they inspired Bitcoin’s design."
 ---
-## Introduction
-
 Aaron van Wirdum: 00:00:18
 
 Live from Utrecht, this is Bitcoin Explained.
@@ -17,7 +17,7 @@ Sjors Provoost: 00:00:21
 
 Yo, yo.
 
-(Removed sponsor section)
+[removed sponsor segment]
 
 ## Aaron's book - "The Genesis Book"
 
@@ -118,6 +118,8 @@ Sjors Provoost: 00:03:05
 
 Yeah, from what I've been reading, you cover Austrian economic stories, and sort of alternate the digital money story versus the political story.
 
+## Introduction
+
 Aaron van Wirdum: 00:03:16
 
 Anyway, enough with the shilling, let's get to the actual episode.
@@ -174,7 +176,7 @@ This would be a problem because if governments have to fight spam, then the way 
 
 Aaron van Wirdum: 00:06:36
 
-Yeah, plus the government would then have to make a judgment call about what is spam and (that's) kind of relevant to Bitcoin these days, with the whole ordinal thing.
+Yeah, plus the government would then have to make a judgment call about what is spam and (that's) kind of relevant to Bitcoin these days, with the whole Ordinals thing.
 But yeah, then governments have to make a judgment call about what is spam, so what actually is legal?
 Then by the time they can find a spammer, yeah, that would have to be some sort of identification.
 
@@ -191,7 +193,7 @@ So Adam Back wanted to come up with digital postage.
 Sjors Provoost: 00:07:19
 
 First I think we should go back in time, right?
-Because everybody talks about Hashcash and how Adam Beck invented that, and he did, but it was not the first time it was invented, as so often happens in history.
+Because everybody talks about Hashcash and how Adam Back invented that, and he did, but it was not the first time it was invented, as so often happens in history.
 
 Aaron van Wirdum: 00:07:30
 
@@ -449,7 +451,7 @@ It's just not going to happen.
 Sjors Provoost: 00:18:35
 
 So if you translate that to the context of Bitcoin mining as it is today, let's say we had picked a non-stochastic form of Proof-of-Work, based on that original paper.
-So if Adam Beck had known about the original paper and had not bothered to implement something based on a hash function, because there's already a solution out there, then you would have the biggest miner, whoever that is, will just always find the next block first, because they would always find that big prime number or whatever the challenge is.
+So if Adam Back had known about the original paper and had not bothered to implement something based on a hash function, because there's already a solution out there, then you would have the biggest miner, whoever that is, will just always find the next block first, because they would always find that big prime number or whatever the challenge is.
 They would always find it first.
 
 Aaron van Wirdum: 00:19:04
@@ -581,7 +583,7 @@ One is finding the factors in a big number, or these prime factors as you mentio
 Another is the discrete logarithm problem, or that's sort of a more generic one, but that is used for public and private key cryptography, like the elliptic curve.
 Then there's cryptographic hash functions like SHA-256, which so far has not been broken.
 The problem is there is no mathematical proof that this actually exists.
-We think these functions are one-way, and they better be one-way, but it may turn out that some mathematician somewhere proves that they're not, and then you get into the whole P is NP stuff that we're not going to get into.
+We think these functions are one-way, and they better be one-way, but it may turn out that some mathematician somewhere proves that they're not, and then you get into the whole `P = NP` stuff that we're not going to get into.
 Now, there is a special kind of one-way function called the [trapdoor one-way function](https://en.wikipedia.org/wiki/Trapdoor_function).
 That is public key - private key cryptography, where it is very hard to go back, it is very hard to go from a public key to a private key, in fact (it would) take the age of the universe, unless you know the private key.
 Then it's trivial.
@@ -905,8 +907,8 @@ Then it's highly inflationary.
 So you mine your coins in 1999, you have a hundred of these coins, and now a hundred units of work.
 Ten years later, somebody makes a hundred units of work in a fraction of a second, so either your hundred units of work are worth nothing in the future, or they are valued because they are old.
 Whether the market will pick one of these two, I don't think there's any guarantee.
-He does argue that there are some precedent(s), like that older collector items are worth more, a bit like ordinals, I guess.
-But that's not the part of ordinals that's taking off the most.
+He does argue that there are some precedent(s), like that older collector items are worth more, a bit like Ordinals, I guess.
+But that's not the part of Ordinals that's taking off the most.
 
 Aaron van Wirdum: 00:40:18
 
