@@ -2,12 +2,14 @@
 title: "What Is Utreexo?"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=sWK7aqPjQLI
-tags: ["bitcoin-core", "utreexo"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["utreexo"]
+speakers: ["Sjors Provoost","Aaron van Wirdum", "Ruben Somsen"]
 categories: ["podcast"]
 date: 2020-10-30
 episode: 15
+summary: "The discussion revolves around Utreexo, a novel proposal aimed at enhancing Bitcoin's scalability by optimizing the UTXO set storage through a compact, Merkle tree-based structure. Utreexo seeks to address the challenges of node synchronization speeds and RAM usage by allowing nodes to store a much smaller representation of the UTXO set, thus potentially accelerating the syncing process and making the network more efficient. The conversation delves into the technical mechanisms of Utreexo, its implementation challenges, and the practical benefits it offers, including reduced memory requirements and the facilitation of faster node operations. While acknowledging Utreexo's promising advantages for Bitcoin's scalability, the participants also weigh its potential downsides, such as increased bandwidth for block transmission and the necessity for significant network adoption to realize its full benefits."
 ---
+## Introduction
 
 Aaron van Wirdum:
 
@@ -55,7 +57,7 @@ So they're not involved with MIT or DG Labs.
 DG Labs mainly works on DLC.
 That's one of their main projects.
 
-## The problem with the utxo set
+## The UTXO Set and Its Challenges
 
 Aaron van Wirdum:
 
@@ -238,6 +240,8 @@ So the burden of evidence is reversed here.
 You need to prove that a transaction exists.
 And then the question is how are we going to do that?
 
+## Technical Mechanisms of Utreexo
+
 Aaron van Wirdum:
 
 Okay, so we're reversing the burden of proof.
@@ -387,6 +391,8 @@ The outputs are under blocks, right?
 Ruben Somsen:
 
 Yeah, so that's really, I think, the very elegant side of Utreexo, where the same proofs that are proving that these UTXOs are in the UTXO set, are also exactly what you need to remove them from the set, update your root hash and add the new UTXOs from the latest block, so that works out quite elegantly.
+
+## Implementation and Practical Considerations
 
 Aaron van Wirdum:
 
@@ -550,7 +556,7 @@ Ruben Somsen:
 Yeah, so personally at least, I think this is not likely to happen until we really get a UTXO set bloating issue where the UTXO set becomes so big that people start liking this trade-off to the point where it's preferable.
 I think as long as we're not at that point, I don't think we'll see this as a soft fork, but that's my personal view.
 
-## Potential benefits of utreexo
+## Potential Benefits of Utreexo
 
 Sjors Provoost:
 
@@ -730,6 +736,8 @@ This is just something that's conceptually simple.
 If other people than us explain it and you see it in front of you, it's very simple with the Merkle trees, but there's been other proposals, like an RSA accumulator.
 There's all sorts of cool cryptographic math you can do to just add things to a set and remove them from a set, essentially.
 Perhaps another mechanism would be used eventually.
+
+## Challenges and Downsides of Utreexo
 
 Ruben Somsen:
 
