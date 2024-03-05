@@ -1,5 +1,5 @@
 ---
-title: "The Bitcoin Core Wallet"
+title: "Bitcoin Core Wallet"
 transcript_by: chippsmith via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Andrew-Chow-and-the-Bitcoin-Core-Wallet---Episode-30-e204vdj
 tags: ["bitcoin-core","coin-selection","descriptors","hardware-wallet","hwi","psbt","wallet"]
@@ -157,7 +157,7 @@ But the security and soundness principles, you're not going to find anywhere els
 
 Andrew Chow: 00:05:02
 
-I'm going to contest you on the Asmor review.
+I'm going to contest you on the it has more review.
 
 Adam Jonas: 00:05:04
 
@@ -179,7 +179,7 @@ Andrew Chow: 00:05:28
 Yeah, a little bit.
 I mean, It's been getting more review, more work on it.
 But the area that we have, there's always some focus that most contributors are looking at any one time.
-It's not intentional, but I've noticed this over the years that there'll be a focus on P2P, a focus on validation, a focus on networking, a focus on the wallet.
+It's not intentional, but I've noticed this over the years that there will be a focus on P2P, a focus on validation, a focus on networking, a focus on the wallet.
 And it moves around.
 So a couple years ago, we had a pretty big focus on the wallet, and we've kind of moved off that, just naturally, I think.
 
@@ -288,7 +288,7 @@ Andrew Chow: 00:10:23
 
 No, like just in doing the refactor, I learned a lot about how the wallet itself actually works.
 
-## Refactoring the Wallet codebase to build Output Descriptors 
+## Refactoring the Wallet Codebase to Build Output Descriptors 
 
 Andrew Chow: 00:10:29
 
@@ -774,7 +774,7 @@ Of the respondents of the survey.
 Andrew Chow: 00:28:11
 
 Yeah, of the respondents.
-There are people who use Bitcoin Core because they were using Spectre and it says, use Bitcoin Core.
+There are people who use Bitcoin Core because they were using Specter and it says, use Bitcoin Core.
 So there's a mix of both of people who want just Bitcoin Core because it's full node and people who are like, I wanted something that was full node and the software I'm using said use Bitcoin Core.
 We didn't really get any data on how people were using the wallet.
 Although one other thing I did learn is that no one changes their defaults.
@@ -885,7 +885,7 @@ So if we can improve the GUI so that people don't feel like they need to switch 
 Adam Jonas: 00:31:59
 
 It just feels like all the elements are there for the big use case, which I think continues to be lacking in the ecosystem.
-I know there's Sparrow and I know there's Spectre and there's some other solutions out there, Electrum of course, but a really nice multi-sig with hardware wallet integration, I think that would be a game changer.
+I know there's Sparrow and I know there's Specter and there's some other solutions out there, Electrum of course, but a really nice multi-sig with hardware wallet integration, I think that would be a game changer.
 
 Andrew Chow: 00:32:17
 
@@ -1005,7 +1005,7 @@ And then someone had the foresight of saying that if we wanted bare multisigs, t
 But this was a breaking change, right?
 So if you were, for some reason, expecting a bare multisig to be seen by your wallet as belonging to it.
 And then you upgraded that new version that had this change of required explicit bare multsig import, suddenly those would no longer be yours.
-But also, no one does bare multistake, so it doesn't matter.
+But also, no one does bare multisig, so it doesn't matter.
 
 Murch: 00:38:45
 
