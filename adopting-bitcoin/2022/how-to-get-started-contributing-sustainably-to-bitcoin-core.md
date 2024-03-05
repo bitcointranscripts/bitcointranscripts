@@ -409,7 +409,7 @@ Stephan: 00:25:30
 
 I think that's a fair approach to take.
 Can we chat a little bit about some of the various ways that people skill up.
-One good example would be Bitcoin Review Club.  [Bitcoin Core Review Club](https://bitcoincore.reviews/)
+One good example would be [Bitcoin Core Review Club](https://bitcoincore.reviews/).
 Can you tell us a little bit about that and why that's useful for people?
 
 Jon: 00:25:47
@@ -432,7 +432,7 @@ So could you just elaborate a little bit on some of those methods of the discuss
 
 Jon: 00:26:54
 
-First of all, you reminded me to say I highly recommend subscribing by email to the Bitcoin Optech newsletters.  [Bitcoin Optech Newsletter](https://bitcoinops.org/en/newsletters/)
+First of all, you reminded me to say I highly recommend subscribing by email to the [Bitcoin Optech Newsletters](https://bitcoinops.org/en/newsletters/).
 They're written by Dave Harding every week with a competent team of reviewers, of which I did that for two years, and wrote articles as well.
 It's a great way to keep up with developments in the space.
 Subscribe to the mailing list.
