@@ -7,10 +7,23 @@ speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-10-23
 episode: 14
+summary: "On this episode of The Van Wirdum Sjorsnado, Aaron and Sjors discuss \u201CAssume UTXO,\u201D a proposal and project by Chaincode Labs alumnus James O\u2019Beirne.\n \nOne of the biggest, if not the biggest, bottlenecks for scaling Bitcoin is initial block download: the time it takes for a Bitcoin node to synchronize with the Bitcoin network, as it needs to process all historic transactions and blocks in order to construct the latest UTXO-set: the current state of bitcoin-ownership.\n \nAaron and Sjors explain some of the ways sync-time has been sped up over time. First, sync-time was improved through \u201CHeaders First\u201D synchronization, which ensures that new Bitcoin nodes don\u2019t waste time validating (potentially) weaker blockchains. In recent years, sync-time has been improved with \u201CAssume Valid,\u201D an optional shortcut that lets nodes skip signature verification of older transactions, instead trusting that the Bitcoin Core development process in combination with the resource-expensive nature of mining offers a reliable version of transaction history.\n\nFinally, they explain how the security assumptions underpinning Assume Valid could be extended to allow for the potential future upgrade Assume UTXO to offer new Bitcoin Core users a speedy solution to get up to speed with the Bitcoin network, sacrificing a minimal amount of security during the initial bootstrapping phase."
 ---
+## Introduction
 
 Aaron van Wirdum:
 
+Sjors, this week we are going to create a carbon copy of the Chaincode Podcast.
+They had an episode with James O’Beirne on AssumeUTXO, and we are going to make an episode on AssumeUTXO.
+
+Sjors Provoost:
+
+And we are going to follow roughly the same structure.
+
+Aaron van Wirdum:
+
+We're just going to create the same podcast, just with our voices this time.
+We're gonna do it step by step.
 First step is, Headers First.
 That's how they did it, so that's how we're going to do it.
 
