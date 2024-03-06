@@ -80,21 +80,21 @@ Unknown speaker  16:3
 Yeah. And then, we also found the blind signature scheme that works with pedders and commitments. So the coordinator can give us something from what we can create a signature own, or values, which is cool, because then we can just come at output registration, that, hey, I'm registering the 0.1 bitcoin output, and I have a signature on it. And with another anonymity, network identity, hey, I'm registering the 0.9 bitcoin output, and I have a signature on it. So this is the breaking part. And the merging part is different because we couldn't figure out with pedders and commitments range proofs. And, yeah, of course, there needs to be range proof, along with the pedders and commitment, but I think that's obvious. Anyway, we couldn't figure it out with the blind signature scheme on pedders and commitment, but we actually had to use BLS signatures. And with that, we could figure out how to merge together more than one commitment. Yeah, so it's pretty cool. Yeah, any question on that or we can get back to this paper?
 
 Jonas  18:10  
-Yeah, I don't quite understand why that wouldn't work. Let's say have a point one and a point nine bitcoin token, right? 
+Yeah, I don't quite understand why that wouldn't work. Let's say have a 0.1 and a 0.9 bitcoin token, right? 
 
-Unknown speaker  18:  
+Unknown speaker  18:22  
 Yes.
 
-Jonas  18:Unknown speaker4  
+Jonas  18:24  
  Don't you just have to show to the server that both tokens sum up, or maybe even better you create a new token with a one bitcoin value. You don't show the server the value of the new token, and but you show the server, that the sum of the old tokens is the value of the new token. Wouldn't that work? For lodging,
 
-Unknown speaker  18:5 
+Unknown speaker  18:52 
 Your first suggestion. Yes, that works. It's just there is some probably negligible of privacy loss, right? Like you expose the server that you have 0.1 bitcoin and 0.9 bitcoin, pedders and commitments and the share.
 
 Jonas  19:13  
 At least with anonymous credential slide, I don't think you have to do that necessarily. I think you can show that the sum is the value of your new token and you don't have to show anything more to the server I think.
 
-Unknown speaker  19:3  
+Unknown speaker  19:32  
 With your first suggestion, I was talking about that, right.
 
 Jonas  19:37  
@@ -108,56 +108,56 @@ I thought I was only making one suggestion and so perhaps I'm not sure what the 
 
 ## Reissuance of tokens.
 
-Unknown speaker   
+Unknown speaker  20:06 
 So your first suggestion was to take two blind signature of 0.1 and 0.9 and register them tog to the coordinator, is that correct?
 
-Jonas    
+Jonas  20:24  
 Perhaps I wouldn't call this registering, I would just call this like, perhaps like just the reissuance, we've used that term before you have a token, and you will just want to get a new one with a new serial number. And these tokens are unlinkable. And the same would work if you show two tokens. And a new token where the new token is the sum of the former tokens, and you don't have to show the actual values to the server, you just have to show that the sum matches to the new value. And then you wouldn't have the privacy loss of having to show the individual values of the old tokens.
 
-Unknown speaker   
+Unknown speaker   21:11
 Yes, so the thing is, we get the blind the signature on the data itself, which means if we want a reissuance phase there, then we will have to expose the values. 
 
-Jonas    
+Jonas  21:33  
 Okay.
 
 ## Are denominations required by anonymous credentials?
 
-Unknown speaker    
+Unknown speaker   21:34 
  So, there might be some scheme that works with the with BLS signature, we actually figured it out how to do that, because they're the signatures actually has the message itself. So it's really fresh, I just learned about it today. And something like that you can give the two blinded BLS signature to the coordinator and prove that their sum is this value. And because of the blind BLS signatures are the unique tokens there, this way, we won't have problems. So with anonymous credentials, I think you would have to, to create a bunch of bunch of denominations, right?
 
-Jonas    
+Jonas    22:46
 I don't think so. I think this is exactly the magic of these anonymous credentials that you can do these. Some proofs. Similar to what you just described with the BLS signatures.
 
-Unknown speaker  
+Unknown speaker  23:05
 That's really similar with what we came up with indeed, but I'm not sure in this paper. Maybe I just didn't go into it.
 
-Jonas    
+Jonas  23:22  
 If I remember correctly, perhaps they're not showing this in this paper. But this is something that is like a central concept in the Brand's PhD thesis. I believe you can do the same thing with anonymous credentials, because both types of credentials look actually very similar.
 
-Unknown speaker  
+Unknown speaker  23:52
 All right. Would it make sense to start investigating this instead of doing it with BLS signatures?
 
 ## Anonymous credentials vs BLS signatures
 
-Jonas   
+Jonas  24:08 
 Actually, I think I don't know. I will do whatever is easiest, actually. Because I guess for your application, or in general, it doesn't make too big of a difference. If you use BLS. I mean, if you think that parents are secure and BLS signatures are secure, and this whole bunch of crypto sanctions that I think you can just use that if that's easier. I don't think you have to restrict yourself to something that works in the discrete logarithm paradigm.
 
-Unknown speaker   
+Unknown speaker  24:46 
 Aren't BLS signatures work on the discrete logarithm paradigm?
 
-Jonas    
+Jonas  24:51  
 No, they use pairings. So it's different curves and different crypto assumptions.
 
-Unknown speaker    
+Unknown speaker  24:59  
 Okay. All right. So yeah, I'm not sure it is easier for us because the implementation since ours, I think still lacking behind of the BLS signature implementations. So, on the other hand it's such a simple scheme that even they could even explain it to me who doesn't understand crypto that much.
 
-Jonas    
+Jonas  25:30  
 The BLS thing doesn't have an implementation. And if so, how is it called? So I can find it?
 
-Unknown speaker  
+Unknown speaker  25:37
 I think it does not have implementation in C. It has for a couple of languages. I think the main implementation is C++. And there is bindings for that.
 
-Jonas   
+Jonas  25:55 
 I think there's an implementation of Brands credentials in C, right. That's see your proof library.
 
 Unknown speaker  6:01  
@@ -165,163 +165,160 @@ Yes, I was playing around with that. In fact, I ported it to dotnet core. And it
 
 ## Problem's with proof. / Brands' credentials.
 
-Jonas   
-Well, what's the problem with your proof?
+Jonas  26:21 
+But what's the problem with your proof?
 
-Unknown speaker   
+Unknown speaker  26:26 
 Well, that doesn't solve our problem. As far as I understand it, you do need a bunch of stuff. To deal with that. Also, people are talking about that it's not very secure, and things like that.
 
-Jonas    
+Jonas  26:48  
 No one's found in vulnerability yet. Brands credential. So as far as I know. I know, it's a difficult question. But I think the the sum proof that I mentioned earlier, should work just as well with Brands credentials, you don't need multiple denominations.
 
-Unknown speaker   
+Unknown speaker  27:14 
 Because Brands credentials would be able to prove the sum. So how would the range proofs apply to that?
 
-Jonas  
+Jonas  27:34
 Yeah, you probably still have to do this range proofs to show that the values don't overflow. But I am not sure if the you prove library does that already for you? And really looked into the library?
 
-Unknown speaker   
+Unknown speaker  27:49 
 How about the merging of the coins? I think that could be a problem there that you cannot merge two attributes together in a way that it both prevents double spending. And and you don't expose the attribute, you know, the values only the some of them? I'm not sure that's possible?
 
-Jonas   
+Jonas 28:29  
 I think it is. I think that's the point of Brand's credential. If you do a reissuance, you don't have to show all the attributes. You prove to the server that your new token doesn't have any other value than the sum of your old tokens combined. I think and this is possible with Brands credentials.
 
-Unknown speaker   
-You don't need a ressuarence there.
+Unknown speaker   29:01
+You don't need a reissuance there.
 
 Jonas    
 Yeah, you wouldn't need the reissuance.
 
-Unknown speaker  Unknown speaker9:07  
+Unknown speaker  29:07  
 Finally, there is an argument why our scheme is better. Because we don't need reissuance scheme there.
 
-Jonas    
+Jonas  29:22  
 That sounds like something that BLS or parents could do. Like merging different credentials together without communication with the server, so nice to me that sounds plausible.
 
 ## Unlinkable re-use of credentials.
 
-Unknown speaker    
+Unknown speaker  29:40  
 I 'm just going to read a few things about here is that you prove from the the article that to be for everyone knows what we're talking about. From the efficiency point of view. Therefore, the you prove credential system based on Brands work acquired and implemented by Microsoft seem attractive, you prove does not allow unlinkable reuse of credentials in order to unlink ability, use a credential again, in order to unlinkable user credential again, a user must get it re issued. Which actually suggests that, in fact that this paper doesn't have linkable credentials, only unlinkable one. These lines don't suggest that, but that's what's in the paper. Let me see one more thing there. When such proof is carried out, it cannot be linked to previous users of the same credential, or any other identifying information about the user. Is what I what I'm talking about here, we actually want the opposite. In order to avoid the worst spending, we want a use to be linked to previous users of the same credential. Which brands provide and this scheme does not? I'm not sure how hard would it be to to implement it? Would it be only a simplification, or this would be a major headache to implement linkable credentials on top of ESEA construct?
 
-Jonas   
+Jonas  32:00 
 On top of what construct?
 
-Unknown speaker   
+Unknown speaker  32:03 
 It's like the speaker's anonymous credentials like ACR?
 
-Jonas  
+Jonas  32:09
 Yeah, I think that's easy, because one of the attributes would just be the serial number that the server stores, I mean, the service does have the serial numbers, of course that have been used, right? You wouldn't need the ratio once again to show your serial number, and then you get a new token.
 
-Unknown speaker    
+Unknown speaker  32:35  
 That would also ruin the sum stuff that we talked about with.
 
-Jonas    
+Jonas  32:40  
 No why?
 
-Unknown speaker    
+Unknown speaker  32:43  
 If you put a serial number into the attribute, then you cannot prove the sum. I mean, the serial number is there, you know.
 
-Jonas  3:09  
+Jonas  33:00  
 So what you do is, you show your old credentials can be multiple, you show the serial numbers for each of those credentials, you prove that the serial numbers are actually the ones contained in your credentials, the server checks that the serial numbers have not been used. Your show the new token, that you created with a fresh serial number, serial number that you chose randomly. And then you do the sum proof. That way, you don't have to show anything to the server, but the serial numbers.
 
-Unknown speaker  3:49  
+Unknown speaker  33:55  
 I don't know. 
 
-Jonas  4:07  
+Jonas  33:57  
 Yeah, the problem is with blind signatures, right? As you blind signatures as unstructured, you just have this message and then you can put different things into the message, but then you cannot efficiently prove anything about these individual attributes in your message. And this is why these credential schemes are superior to the normal blind signatures.
 
-Unknown speaker  4:30  
+Unknown speaker  34:24  
 There may be something here, too.
 
-Jonas  4:44  
+Jonas  34:34  
 Yeah, I'd also like to look into this BLS stuff. Definitely that seems interesting.
 
-Unknown speaker  
+Unknown speaker  34:44
 I'm going to link the repository in the comment here, but don't share it yet because we did not figure out the name and we have a stupid name for now. 
 
-Jonas  5:17  
+Jonas  35:08  
 Okay. I see it. 
 
-Unknown speaker  :  
+Unknown speaker  35:12  
 Do you guys have anything to ask or talk about regarding anything maybe? Everyone is really silent. Go ahead, Lucas.
 
-Lucas  5:48  
+Lucas  35:38  
 No, I have no question because I am not either know this primitives yet. I have to study a bit more.
 
 ## E-cash.
 
-Jonas  6:05  
+Jonas  35:55  
 I learned most of that from Adam Beck he wants gave a presentation about brands credentials at Block Stream. I learned a lot from him. But that wasn't public unfortunately. I think I have the slides, but I don't think they're very helpful. So perhaps the best starting point is still Brands PhD thesis, it's very long, but just have to check out some parts of it, I think. Because especially the things like this anonymous credential slide, there seems to be like the difficult thing about or to grasp about it is not I mean, this scheme exists. But the question is, how do you use it? And how do you use it with serial numbers and to get E-cash tokens with multiple denominations, right? That's not in the anonymous credentials, light paper. That's something that Brands talks a little bit more about.
 
-Unknown speaker  7:07  
-Even more, because, as we reviewed this paper, and we looked into that, well, how could we use it for E-cash kind of stuff, then we just stumbled upon a tremendous amount of literature there. That's how to do divisibility cash systems, and three, like, a couple of 100 of paper is going on on this issue. But the thing is, they are solving things that we don't need to solve because CoinJoin sorry, inherently secure. If someone doesn't see their outputs then it's not going to sign. And that's up here. So our job is basically to simplify what they have.
+Unknown speaker  36:56  
+Even more, because, as we reviewed this paper, and we looked into that, well, how could we use it for E-cash kind of stuff, then we just stumbled upon a tremendous amount of literature there. That's how to do divisibility cash systems, and three, like, a couple of 100 of paper is going on on this issue. But the thing is, they are solving things that we don't need to solve because Coinjoin sorry, inherently secure. If someone doesn't see their outputs then it's not going to sign. And that's up here. So our job is basically to simplify what they have.
 
-Jonas  8:04  
+Jonas  37:54  
 Right? There's also the concept of offline E-cash, which also doesn't seem to be very practical in the bitcoin world. Because in offline E-cash, if you double spend, you reveal your secret key, which perhaps as if you're an attacker, that's not a big problem to you, because you already have your bitcoins. So you don't care about the secret keys in your token, you have twice as many bitcoins as you would have normally. So they don't seem to apply.
 
-Unknown speaker  8:35  
+Unknown speaker  38:25  
 Yeah, that's not even a requirement here. Because everyone is online. In fact, even all the participants are online, although you're not.
 
 ## Next steps.
 
-Jonas  8:48  
+Jonas  38:39  
 This idea of merging inputs and so on. That's really interesting, I think.
 
-Unknown speaker  8:55  
-We are going to work on that and either look into that issue, that's where we figured out how things should be. But we are going to create a draft and send it to the bitcoin dev mailing list then and things like that. And also for the next Wasabi Research Club each one is going to write down exactly this scheme, the cryptography part of it. That's what I would like to propose for the next Wasavi Research Club, because as we looked through E-cash papers and anonymous credential papers and every kind of papers it looks like this is the simplest and most straightforward solution for really arbitrary coin joins, which we are not going to do but we would like to have that flexibility and that's what lets us improve upon it in the future. Max asked, what about farewell decided equal value outputs? Anyone understands the question?
+Unknown speaker  38:45  
+We are going to work on that and either look into that issue, that's where we figured out how things should be. But we are going to create a draft and send it to the bitcoin dev mailing list then and things like that. And also for the next Wasabi Research Club each one is going to write down exactly this scheme, the cryptography part of it. That's what I would like to propose for the next Wasabi Research Club, because as we looked through E-cash papers and anonymous credential papers and every kind of papers it looks like this is the simplest and most straightforward solution for really arbitrary coin joins, which we are not going to do but we would like to have that flexibility and that's what lets us improve upon it in the future. Max asked, what about farewell decided equal value outputs? Anyone understands the question?
 
-Jonas  10:  
+Jonas  40:11  
  No. 
 
-Unknown speaker  10:  
-All right, sorry, Max. We can't reply you. One more interesting thing is that. Max figured out that for tiny one of the author of this paper we are talking about actually had some involvement in tamber bit. I'm not sure exactly what but she was doing something tamber bit.
+Unknown speaker  40:15  
+All right, sorry, Max. We can't reply you. One more interesting thing is that. Max figured out that for tiny one of the author of this paper we are talking about actually had some involvement in tamber bit. I'm not sure exactly what but she was doing something tamber bit. If no one would like to say anything, because this was quite a difficult paper, then we can cut this short, unlike other conversations and we can go. Do you guys have anything else you would like to talk about?
 
-Jonas  10:56  
-If no one would like to say anything, because this was quite a difficult paper, then we can cut this short, unlike other conversations and we can we can go. Do you guys have anything else you would like to talk about?
-
-Rafael  11:31  
+Rafael  41:21  
 Not yet ready. I'm just fascinated about things that you guys talked about.
 
-Jonas  11:40  
+Jonas  41:31  
 I talked about almost everything I know about it. So let me know how this progresses. And what do you find out?
 
-Unknown speaker  11:5  
+Unknown speaker  41:42  
 Yeah, definitely. We are going to talk about our scheme in the next Wasabi Research Club. If no one has an objection  or alternatively, we could review Adam Gibbs from zero knowledge to bullet proofs paper, I think that could be useful, or our scheme which might make more sense, to be honest. But it could change. Maybe we figure out how there is something utterly wrong with this and then next week would be would be pointless. But I doubt at this point, we really reviewed a lot of things last week. Should the next generation Wasabi mixing technology be the topic of the next Wasabi Research Club? What do you guys think?
 
 ## Equal value denominations.
 
-Rafael  13:09  
+Rafael  24:59  
 I think it's good. But there was a question from Max. And that is the difference of users who want to be a part of the equal value denomination and those who want only specific amounts?
 
-Unknown speaker    
+Unknown speaker  43:14  
 Yeah, no, there is no difference. It's equal value denominations, as I imagine it right now or we did not work this out at all. But I think that could be something that the users create by themselves. So if I participate in a mix, then I'm going to parties I'm going to ask for outputs of some standard denominations that I guess, I estimate other users, I suspect other users are going to do too. But I could create outputs in any way shape, or form up to the maximum limits, of course, as I would like to even do a pay to endpoint transaction in a coin join, which would be neat. 
 
-Rafael  14:  
+Rafael  44:16  
 It sounds good.
 
-Unknown speaker  14:  
+Unknown speaker  44:19  
  As a really interesting thing, we just had a talk with doge. Not going pronounce it. One of the guy who came up with the Lightning Network and he actually came up with the coin swap protocol. There is still some denial of service issues he didn't figure out, but he came up with the coinswap protocol that after top priorities in snore, and priorities in bitcoin. And then he could do coinswaps those could be completely unnoticeable. That's really exciting. I just wanted to share this fresh information. Thank you guys, and sorry for this unconventional Wasabi Research Club now. Usually Aviv does a very good job at explaining the concept at the beginning but he couldn't make it last minute. So no one could really prepare but Nick gave a great summary of the paper.
 
 ## End.
 
-Rafael  16:04  
+Rafael  45:54  
 Absolutely. You guys did a good job. Thanks for that.
 
-Unknown speaker  16:10  
+Unknown speaker  46:00  
 Yes, thank you Nick. And thank you for inviting this special guest.
 
-Jonas  16:15  
+Jonas  46:08  
 What an honor.
 
-Unknown speaker  16: 
+Unknown speaker  46:12 
 I guess that's it. Like, share and subscribe. Bye bye.
 
-Jonas  16:33  
+Jonas  46:23  
  Bye, everyone.
 
-Lucas  16:33  
+Lucas  46:25  
 Bye, guys.
 
-Rafael  16:34  
+Rafael  46:26  
 Bye.
 
