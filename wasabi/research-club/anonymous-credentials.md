@@ -30,7 +30,7 @@ Unknown speaker  5:Unknown speaker6
 Thank you. Did you finish?
 
 Jonas  5:31  
-Yeah, that's almost everything I wanted to say. Like, the other thing I wanted to say is that these tokens are pretty flexible compared to just Schnorr signatures. So at the building on Bitcoin Conference, Unknown speaker018, I talked about how to use this to basically swap a token that is in or that is most created with an anonymous credential with an on chain or off chain Bitcoin on lightning without the server knowing that this happened and without having to trust the other party.
+Yeah, that's almost everything I wanted to say. Like, the other thing I wanted to say is that these tokens are pretty flexible compared to just Schnorr signatures. So at the building on Bitcoin Conference 2018, I talked about how to use this to basically swap a token that is most created with an anonymous credential with an on chain or off chain Bitcoin on lightning without the server knowing that this happened and without having to trust the other party.
 
 ## Improvement on Brands' credentials.
 
