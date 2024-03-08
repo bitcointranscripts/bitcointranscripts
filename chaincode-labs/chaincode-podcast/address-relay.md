@@ -1,13 +1,11 @@
 ---
 title: "Address Relay"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: markon1-a via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Martin-Zumsande-and-Address-Relay---Episode-20-e1if91d
-tags: ['bitcoin-core', 'p2p']
-speakers: ['Martin Zumsande']
-categories: ['podcast']
+tags: ["bitcoin-core","p2p"]
+speakers: ["Martin Zumsande"]
+categories: ["podcast"]
 date: 2022-05-13
-episode: 20
-summary: "Martin Zumsande joins us to tell us about the address spam in the summer of 2021 and his interests in AddrRelay and Bitcoin Core development."
 ---
 Speaker 0: 00:00:00
 
@@ -18,22 +16,16 @@ So at some point, at least in the past, you know, they were your peers at some p
 
 Speaker 1: 00:00:19
 
-Right.
-And you also need to make sure that you get some fresh blood in there, so you don't get sequestered into some part of the network.
-And then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore.
-You need to constantly keep hearing about new nodes.
-Hi, Jonas.
+Right. And you also need to make sure that you get some fresh blood in there, so you don't get sequestered into some part of the network. And then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore. You need to constantly keep hearing about new nodes. Hi, Jonas.
 
 Speaker 2: 00:00:45
 
 Hey, Murch.
-Glad to get you back in the studio before you rush off to London.
-And we're gonna be talking to Martin today, huh?
+Glad to get you back in the studio before you rush off to London. And we're gonna be talking to Martin today?
 
 Speaker 1: 00:00:53
 
-Yeah, yeah.
-We heard a talk by him yesterday already, so we're kind of prepped.
+Yeah, yeah. We heard a talk by him yesterday already, so we're kind of prepped.
 
 Speaker 2: 00:00:57
 
@@ -142,7 +134,7 @@ Speaker 0: 00:04:07
 
 I think I've been interested mostly in P2P from the start.
 It's just that I have more time now to work on these problems.
-It is the field that interests me most, And mostly because I think it's not only about the code, I'm gonna say in the code, but about the network, like how all these different agents run their own code, some different versions of Bitcoin Core, some other implementations, whatever, they all work together.
+It is the field that interests me most, and mostly because I think it's not only about the code, I'm gonna say in the code, but about the network, like how all these different agents run their own code, some different versions of Bitcoin Core, some other implementations, whatever, they all work together.
 And on a systems level, some behavior comes into play that is larger than just the parts.
 So it all works together, and it needs to be secured.
 There are several ways one could attack Bitcoin Core or the Bitcoin network and making sure that this works well when everyone plays nice together and it's also resistance against attacks.
@@ -150,14 +142,14 @@ That is something that I find really interesting.
 
 Speaker 1: 00:04:59
 
-Yeah, I think One of the interesting things is that the credo is never to trust another node for what they tell you, because they might be lying.
+Yeah, I think one of the interesting things is that the credo is never to trust another node for what they tell you, because they might be lying.
 So on the one hand, you have to make it work locally and you have to have an emergent behavior across the whole set of participants that is not wasteful, but still gets everybody all the information they need.
 I can see the appeal.
 
 Speaker 2: 00:05:26
 
 How do you approach the different trade-offs?
-Because when we talked to, We've had Peter on the podcast talking about P2P.
+We've had Peter on the podcast talking about P2P.
 We've had a media on the podcast talking about P2P.
 It's seemed very nuanced.
 How do you think about those trade-offs and understanding when you pull this lever, something else pops up over there?
