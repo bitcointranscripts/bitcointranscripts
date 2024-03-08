@@ -1,5 +1,5 @@
 ---
-title: Bitcoinops
+title: Bitcoin Optech
 ---
 
-{{< childpages >}}
+{{< childpages sort=date >}}
