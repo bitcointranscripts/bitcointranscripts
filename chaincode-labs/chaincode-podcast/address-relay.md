@@ -463,7 +463,7 @@ Speaker 2: 00:20:15
 I want to hear a little bit more about simulations.
 And you've done some simulations for Adderley, but you also have a prior history of science and simulations.
 And I'd love to hear sort of how you think about creating simulations and using that past experience.
-Is there any crossover to creating simulations for Adderley?
+Is there any crossover to creating simulations for Addrelay?
 Yeah.
 How do you go about it?
 
@@ -528,7 +528,7 @@ Speaker 0: 00:22:42
 
 Yeah, but there is not really a selection for this.
 We just get random addresses that we just would send away.
-In a getAddress response, we would just send random addresses.
+In a get address response, we would just send random addresses.
 
 Speaker 2: 00:22:53
 
@@ -561,7 +561,7 @@ So if you were to restart and reconnect to the same outbound peer again, you wou
 
 Speaker 0: 00:24:06
 
-Yes, but if you do this within 24 hours, you would get the same response because we don't want to be able to make use of this to scrape our Adorama database to be able to see all the nodes that are in there.
+Yes, but if you do this within 24 hours, you would get the same response because we don't want to be able to make use of this to scrape our AdderMan database to be able to see all the nodes that are in there.
 
 Speaker 1: 00:24:20
 
@@ -593,7 +593,7 @@ I think it was reduced at some point in the past recently, but it's under 50 I t
 
 Speaker 1: 00:25:41
 
-Okay, so I'm a new node, I connect to a DNS seed, I get under 50 addresses from a DNS and they are basically tried addresses.
+Okay, so I'm a new node, I connect to a DNS seed, I get under 50 addresses from a DNS seed and they are basically tried addresses.
 Right.
 And not new addresses.
 
@@ -624,11 +624,11 @@ Yes and all the let's say 10 nodes that we connected to when we disconnect them 
 
 Speaker 1: 00:26:46
 
-Right Although we do not get any new addresses from blocks-only relay connections, right?
+Right. Although we do not get any new addresses from blocks-only relay connections, right?
 
 Speaker 0: 00:26:51
 
-Right, but I think the block-only connections themselves that we connect to, their address will still be promoted to Trite.
+Right, but I think the block-only connections themselves that we connect to their address will still be promoted to tried.
 
 Speaker 1: 00:26:59
 
