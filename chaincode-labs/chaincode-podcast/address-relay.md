@@ -18,16 +18,16 @@ Speaker 1: 00:00:19
 
 Right. And you also need to make sure that you get some fresh blood in there, so you don't get sequestered into some part of the network. And then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore. You need to constantly keep hearing about new nodes. Hi, Jonas.
 
-Speaker 2: 00:00:45
+Jonas: 00:00:45
 
-Hey, Murch.
+Hey, Murck.
 Glad to get you back in the studio before you rush off to London. And we're gonna be talking to Martin today?
 
 Speaker 1: 00:00:53
 
 Yeah, yeah. We heard a talk by him yesterday already, so we're kind of prepped.
 
-Speaker 2: 00:00:57
+Jonas: 00:00:57
 
 That's better than usual, isn't it?
 
@@ -37,7 +37,7 @@ Yeah, we have a good idea what we'll be talking about already.
 We did a few peer-to-peer topics already earlier with Amiti and Peter.
 But I think we're going to look at different aspects of peer-to-peer this time.
 
-Speaker 2: 00:01:12
+Jonas: 00:01:12
 
 Very good.
 Well, Martin's been with us for a couple of weeks.
@@ -48,14 +48,14 @@ Martin: 00:01:32
 
 Hi, thank you for having me here.
 
-Speaker 2: 00:01:34
+Jonas: 00:01:34
 
 Absolutely.
 It's great to have you in the office these last couple of weeks.
 
 ## His background
 
-Speaker 2: 00:01:37
+Jonas: 00:01:37
 
 So today we want to hear a little bit more about your background, sort of how you got to working on Bitcoin Core, and then some of the things you're working on.
 So tell us, where do you come from?
@@ -65,7 +65,7 @@ Martin: 00:01:48
 Yeah, I'm originally from Germany, and I'm a physicist.
 I did my diploma and PhD in physics.
 
-Speaker 2: 00:01:56
+Jonas: 00:01:56
 
 And what specifically in physics?
 Physics is pretty broad.
@@ -78,13 +78,13 @@ So somehow I tried to apply some physical techniques on problems from Biology su
 So that's what I did.
 But that's been a long time ago I left science to work in the industry and I worked as a consultant for banks until I found about Bitcoin.
 
-Speaker 2: 00:02:38
+Jonas: 00:02:38
 
 Well, having a physicist who's now spent some time at banks, I can see the progression to something like Bitcoin.
 
 ## Getting interested in Bitcoin
 
-Speaker 2: 00:02:45
+Jonas: 00:02:45
 
 How did you follow up on Bitcoin Core and how did you start working on it?
 
@@ -99,7 +99,7 @@ And I got interested in Bitcoin Core and started contributing the small thing fi
 Also, I still had a job at the same time, so I couldn't do this full-time.
 So I picked some smaller project, reviewed some PR, participated in the review club, which was great, which also started at the same time when I got interested in Bitcoin, and yeah, here I am.
 
-Speaker 2: 00:03:40
+Jonas: 00:03:40
 
 Very good.
 I think Waxwing is a physicist, isn't he?
@@ -109,7 +109,7 @@ Speaker 1: 00:03:45
 
 He's a mathematician, I think.
 
-Speaker 2: 00:03:46
+Jonas: 00:03:46
 
 Okay, well.
 
@@ -117,7 +117,7 @@ Speaker 1: 00:03:47
 
 I think he used to be a math teacher.
 
-Speaker 2: 00:03:50
+Jonas: 00:03:50
 
 Cool.
 Well, we'll edit that part out.
@@ -125,7 +125,7 @@ I was wrong about that.
 
 ## How to approach P2P
 
-Speaker 2: 00:03:55
+Jonas: 00:03:55
 
 So you seem to spend more of your time at Bitcoin Core lately in the P2P area.
 So tell us why that area and what's interesting you there.
@@ -146,7 +146,7 @@ Yeah, I think one of the interesting things is that the credo is never to trust 
 So on the one hand you have to make it work locally and you have to have an emergent behavior across the whole set of participants that is not wasteful, but still gets everybody all the information they need.
 I can see the appeal.
 
-Speaker 2: 00:05:26
+Jonas: 00:05:26
 
 How do you approach the different trade-offs?
 We've had Peter on the podcast talking about P2P.
@@ -191,7 +191,7 @@ So these magic values that were picked, how many peers people or nodes have, mig
 So it's not only that the code and all the Bitcoin core node around it changes, but also the reality of the network changes.
 So it's sort of multivariable emergent behavior.
 
-Speaker 2: 00:08:15
+Jonas: 00:08:15
 
 Yeah, it will continue to emerge because we continue to try to encourage people running their nodes on Raspberry Pis in remote locations.
 And what may be good for decentralization may not be so great for bootstrapping and initial block download and things like that.
@@ -212,7 +212,7 @@ Reachable nodes.
 And that is something like a very new development.
 I don't think it was like this three or four years ago.
 
-Speaker 2: 00:08:57
+Jonas: 00:08:57
 
 I feel like that's the Umbral effect.
 
@@ -260,7 +260,7 @@ They will get a preference and the old one might be replaced by them.
 
 ## Peering differences to LN nodes
 
-Speaker 2: 00:11:00
+Jonas: 00:11:00
 
 I think there's a big difference between something like this and the Lightning Network is that these ephemeral connections between Bitcoin nodes.
 I was surprised when I first booted up a node to watch those connections turnover and find them in your logs, as opposed to Lightning, which is much more like you want to establish yourself as a good member of the community and consistent.
@@ -284,13 +284,13 @@ That is something that is, I think in Lightning Network, it's being published, b
 
 ## Ethan Heilman's talk on Network Partitioning Attacks
 
-Speaker 2: 00:12:10
+Jonas: 00:12:10
 
 Yeah, I think one of the clearest explanations of the trade-offs here was Ethan Heilman give a talk at the residency and there's a video, we can put that in the show notes, where he talks about just sort of like, I mean, it's really in the context of Eclipse attacks, but he really dives into the new and tried table and the different considerations there.
 
 ## Adderman and eclipse attacks
 
-Speaker 2: 00:12:27
+Jonas: 00:12:27
 
 And then there's a wiki page on the DevWiki that goes into how that's evolved over the last seven years since that paper came out, seven years?
 So anyway, if you're interested in more reading, there's stuff there.
@@ -299,7 +299,7 @@ Martin: 00:12:38
 
 Yeah, it's a great article.
 
-Speaker 2: 00:12:39
+Jonas: 00:12:39
 
 So we did a couple episodes with Amiti 15 and 16, that was in October.
 And then Peter joined for that for episode 16.
@@ -309,7 +309,7 @@ So why those areas of the code?
 
 ## AddrRelay and the role of node addresses
 
-Speaker 2: 00:12:55
+Jonas: 00:12:55
 
 What is interesting there?
 And yeah, and why spend so much time?
@@ -354,7 +354,7 @@ And that is how nodes self-advertisements relate to the network.
 
 ## Address spam in summer 2021 and peer distribution
 
-Speaker 2: 00:15:06
+Jonas: 00:15:06
 
 So we've seen even within the last year, people try to mess with that.
 I know that Peter and Amiti will be feeling over this in their episode, but what did you observe and how are we addressing that going forward?
@@ -368,7 +368,7 @@ They connected to random peers, send them like 5,000 addresses, and disconnected
 And there were like maybe 30, 40 peers doing this at the same time.
 And this was going on for quite a long time, like for two months or so.
 
-Speaker 2: 00:15:49
+Jonas: 00:15:49
 
 And what's your theory?
 Research, harming the network, what's the motivation?
@@ -377,7 +377,7 @@ Martin: 00:15:54
 
 Yeah, I can only speculate because I think it is not known.
 
-Speaker 2: 00:15:58
+Jonas: 00:15:58
 
 Could have been you.
 You don't have to speculate.
@@ -422,7 +422,7 @@ And that is an important measurement to show about the topology of a network and
 And there could be a power law, there could be like very random, like very evenly distributed.
 And maybe the attacker just wanted to know how it is for the Bitcoin and peer distributions.
 
-Speaker 2: 00:18:45
+Jonas: 00:18:45
 
 Yeah, that's interesting.
 I mean, I'm trying to think of the value of that.
@@ -437,7 +437,7 @@ Speaker 1: 00:19:18
 
 It could be a fingerprinting.
 
-Speaker 2: 00:19:18
+Jonas: 00:19:18
 
 We haven't seen a paper come out yet associated with it, as far as I can tell.
 
@@ -458,7 +458,7 @@ And so I think this is something, I don't know if the attacker wanted to know th
 
 ## Simulating the network
 
-Speaker 2: 00:20:15
+Jonas: 00:20:15
 
 I want to hear a little bit more about simulations.
 And you've done some simulations for Adderley, but you also have a prior history of science and simulations.
@@ -472,7 +472,7 @@ Martin: 00:20:33
 Yeah, I think there's definitely, I've done a lot of simulations in the past, but it's something I would want to pursue much deeper in the future, because I think for a lot of decision, if we want to change some things, for example, in address relay, change a little thing there, we can say that makes sense locally.
 We can understand why it should be good, but we are not really sure what this will do for the network.
 
-Speaker 2: 00:20:54
+Jonas: 00:20:54
 
 I mean, there's lots of things.
 There's early, there's transaction rebroadcast, there's, you know, the list goes on and on.
@@ -487,7 +487,7 @@ And I think it would be great if there was some agreed upon or like widely used 
 So it would be good to have that out of the box.
 Just take one of the realistic scenarios and see how this affects the simulation.
 
-Speaker 2: 00:21:37
+Jonas: 00:21:37
 
 Yeah, I know that, you know, Suhas has his simulator.
 Gleb has his simulator.
@@ -497,13 +497,13 @@ Martin: 00:21:43
 
 Yes.
 
-Speaker 2: 00:21:43
+Jonas: 00:21:43
 
 Obviously, there could be some shared nodes there.
 
 ## Requesting addresses from peers
 
-Speaker 2: 00:21:46
+Jonas: 00:21:46
 
 So there's a third way that nodes on the network learn about addresses.
 And what's that third way?
@@ -519,7 +519,7 @@ They might be, they're also being cached right now.
 So with the get utter message, we would only send out one set of thousand addresses to our peers within 24 hours.
 So they are something, yeah, a little bit more long living ones.
 
-Speaker 2: 00:22:32
+Jonas: 00:22:32
 
 But there's a grab bag there.
 You have maybe some junk in there, maybe some stuff that's in the tried table, and maybe some actual connections that the node would be paired with, right?
@@ -530,7 +530,7 @@ Yeah, but there is not really a selection for this.
 We just get random addresses that we just would send away.
 In a get address response, we would just send random addresses.
 
-Speaker 2: 00:22:53
+Jonas: 00:22:53
 
 Do you think it should be preselected?
 
@@ -541,7 +541,7 @@ So that would mean that we're also like in a get other message, we would have a 
 And the new tables, they are not really filter for quality.
 So I think it might make sense to think about like including a certain percentage of addresses from the try table that we know are quality and are good, and are actually a piece on the Bitcoin Core network, and include them in a get-out-of-response network.
 
-Speaker 2: 00:23:28
+Jonas: 00:23:28
 
 And what circumstances would you actually ask for these messages?
 So you have the bootstrapping mechanism through DNS seeds, and you have the gossip.
@@ -634,13 +634,13 @@ Speaker 1: 00:26:59
 
 Yeah, makes sense.
 
-Speaker 2: 00:27:00
+Jonas: 00:27:00
 
 Yeah, I mean, as I listen to this and as I'm sort of catching up on my reading, it just seems so nuanced.
 
 ## Coinscope paper
 
-Speaker 2: 00:27:06
+Jonas: 00:27:06
 
 Like, getAdder messages were taken advantage in the Coinscope paper, where they used specific timestamps that were proliferated through the network to understand network topology.
 And then Gleb added the cached responses, because otherwise you could scrape the Scrape AdderMan if you just kept querying.
@@ -650,7 +650,7 @@ Speaker 1: 00:27:24
 
 I seem to remember that there was something that made sure that you never share more than 30% or 23%-
 
-Speaker 2: 00:27:30
+Jonas: 00:27:30
 
 23%, yes.
 
@@ -658,7 +658,7 @@ Speaker 1: 00:27:32
 
 23% of your address.
 
-Speaker 2: 00:27:34
+Jonas: 00:27:34
 
 And Peter doesn't claim full responsibility for that, but I'm sure we can look up the code.
 
@@ -667,7 +667,7 @@ Martin: 00:27:38
 I think it was introduced by Peter.
 Maybe he found it from somewhere else.
 
-Speaker 2: 00:27:42
+Jonas: 00:27:42
 
 That's right.
 
@@ -683,7 +683,7 @@ Speaker 1: 00:27:50
 
 All right.
 
-Speaker 2: 00:27:50
+Jonas: 00:27:50
 
 I want to talk a little bit about just what it's like to be a Bitcoin Core contributor and sort of how you think about spending your time, what kind of code review you pick up, how you look for ways to contribute.
 
@@ -700,7 +700,7 @@ You can do this like one evening maybe, and yeah, you fix some small bug there.
 And that is something I really like.
 And you also learned something about some part of the code base that was not familiar to you before.
 
-Speaker 2: 00:29:08
+Jonas: 00:29:08
 
 What's the difference between doing this on nights and weekends and having the opportunity to do this full time and making this your regular job?
 Like, How does it change your approach or how do you pace yourself?
@@ -713,7 +713,7 @@ So I just did a small review there and a small PR there, like changing smaller t
 Now that I have more time, I'm concentrating on larger things like multi-index project is one of them, but I would also try to review larger PR and more complicated PRs. So recently I've become interested in the indexes and there's a large PR by Russ and I'm currently trying to review that, which is, it takes a lot of time because it's a large change.
 And yeah, I want to spend more time on more complicated changes.
 
-Speaker 2: 00:30:01
+Jonas: 00:30:01
 
 We have an Ack Russ t-shirt we have to get in your hands then.
 I don't know if we have your size, but cool.
@@ -724,7 +724,7 @@ Martin: 00:30:10
 Yeah, it was great.
 Thank you very much.
 
-Speaker 2: 00:30:25
+Jonas: 00:30:25
 
 So, any takeaways from our conversation?
 
@@ -734,7 +734,7 @@ I thought that the AdderMan spam was really interesting.
 The spam attack that was trying to either leverage the exact behavior of Bitcoincore on what it will relay to learn the node peering distribution, but maybe also just didn't know exactly what was going happen and then didn't get all their addresses relayed as wanted.
 That was an interesting thing there.
 
-Speaker 2: 00:30:53
+Jonas: 00:30:53
 
 It must have been a government op.
 Didn't read the code close enough.
@@ -744,7 +744,7 @@ Speaker 1: 00:30:58
 I don't know.
 And I just find it fascinating how much a little change at the local level changes the global emergent behavior.
 
-Speaker 2: 00:31:06
+Jonas: 00:31:06
 
 Yeah, which is why we have our best physicist on the case.
 Something happens over here and something else happens over there.
@@ -753,7 +753,7 @@ Speaker 1: 00:31:12
 
 Quantum entanglement.
 
-Speaker 2: 00:31:13
+Jonas: 00:31:13
 
 That's right.
 Yeah, it was great to have Martin in the office these last couple of weeks and yeah, I really enjoyed the conversation with him.
