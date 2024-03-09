@@ -9,7 +9,7 @@ date: 2022-05-13
 ---
 Speaker 0: 00:00:00
 
-In Adromain you also have this distinction between the new and the tried tables.
+In AdderMan you also have this distinction between the new and the tried tables.
 So the new tables are for unverified addresses that someone just sent you and you don't know whether they are good, whether there's really a Bitcoin node behind them.
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were your peers at some point.
@@ -242,7 +242,7 @@ You also only have a limited amount of addresses you can save.
 You don't want to have a system where it can overwhelm you like write up your disk.
 So you also need to have like a limited amount.
 So you have like a restricted number of addresses that fit there.
-And in Adromain you also have this distinction between the new and the tried tables.
+And in AdderMann you also have this distinction between the new and the tried tables.
 So the new tables are for unverified addresses that someone just sent you and you don't know whether they are good, whether there's really a Bitcoin node behind them.
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were valid peers and they were your peers at some point.
@@ -270,8 +270,7 @@ And like, unless you're going on chain, those are pretty permanent connections.
 
 Speaker 1: 00:11:21
 
-Right.
-Especially since you want to talk about a channel you have with them, you would be permanently peering with those.
+Right. Especially since you want to talk about a channel you have with them, you would be permanently peering with those.
 But with Bitcoin peers, it's, it's very exchangeable.
 You just need somebody that talks to you, right?
 So on the one hand, you do want some persistence because you don't want to give an opportunity to an attacker to completely replace all your peers and eclipse you.
@@ -292,7 +291,7 @@ Speaker 2: 00:12:10
 
 Yeah, I think one of the clearest explanations of the trade-offs here was Ethan Heilman give a talk at the residency and there's a video, we can put that in the show notes, where he talks about just sort of like, I mean, it's really in the context of Eclipse attacks, but he really dives into the new and tried table and the different considerations there.
 
-## Addrman and eclipse attacks
+## Adderman and eclipse attacks
 
 Speaker 2: 00:12:27
 
@@ -421,8 +420,7 @@ And that way, while an attacker could measure the peer degree of the node, right
 
 Speaker 0: 00:18:16
 
-Yes.
-The thing that is, it's called in network science, I think it's called degree distribution, which says like how many peers have how many other peers that they are connected to and to make a distribution out of that.
+Yes. The thing that is, it's called in network science, I think it's called degree distribution, which says like how many peers have how many other peers that they are connected to and to make a distribution out of that.
 And that is an important measurement to show about the topology of a network and that different ways that peer distributions can be.
 And there could be a power law, there could be like very random, like very evenly distributed.
 And maybe the attacker just wanted to know how it is for the Bitcoin and peer distributions.
@@ -757,12 +755,12 @@ Something happens over here and something else happens over there.
 
 Speaker 1: 00:31:12
 
-So quantum entanglement.
+Quantum entanglement.
 
 Speaker 2: 00:31:13
 
 That's right.
 Yeah, it was great to have Martin in the office these last couple of weeks and yeah, I really enjoyed the conversation with him.
-He's a really approachable guy and I mean, he's been working sort of moonlighting on Bitcoin now for a couple years, but really excited to see him working full-time with a grant through Rink.
+He's a really approachable guy and I mean, he's been working sort of moonlighting on Bitcoin now for a couple years, but really excited to see him working full-time with a grant through Brink.
 So very good.
-We'll try to get this out soon and get into the studio again probably in the next couple weeks.
+We'll try to get this out soon and get into the studio again probably in the next couple of weeks.
