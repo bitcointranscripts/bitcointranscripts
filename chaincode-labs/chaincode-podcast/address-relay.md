@@ -303,7 +303,7 @@ Speaker 2: 00:12:39
 
 So we did a couple episodes with Amiti 15 and 16, that was in October.
 And then Peter joined for that for episode 16.
-We covered a little bit of AdderMan and AdderRelay.
+We covered a little bit of AdderMan and AddrRelay.
 But those are some areas that you're also spending some time into.
 So why those areas of the code?
 
