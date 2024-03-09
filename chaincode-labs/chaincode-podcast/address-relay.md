@@ -389,7 +389,7 @@ Speaker 0: 00:16:03
 
 Yeah.
 There are different theories.
-I mean, the attacker, they might have had the intention to attack the network, to just, they might have had the intention to do harm to the network, make it impossible for new nodes to find peers.
+I mean, the attacker, they might have had the intention to attack the network, they might have had the intention to do harm to the network, make it impossible for new nodes to find peers.
 But that's just one theory.
 And it's also possible that these were researchers that were people who wanted to analyze the topology of the network because they did this in a very special way.
 They didn't send huge chunks of addresses that would only reach the victim that would receive them and the victim wouldn't propagate them any further.
@@ -403,7 +403,7 @@ And you can do the math there and you can figure out this node, our victim node 
 Speaker 1: 00:17:20
 
 You talked about this yesterday to us already, so I understand I think how it works now.
-Every time a node receives an announcement of addresses with up to 10 addresses, For each address separately, they'll randomly pick two peers to forward it to.
+Every time a node receives an announcement of addresses with up to 10 addresses. For each address separately, they'll randomly pick two peers to forward it to.
 So if you send say 500 packages of 10 addresses and a node has a hundred peers, they'll randomly decide for each of those 5,000 addresses which two peers to relay that to.
 So now if there's another peer connected to the attack node, this receiver or observer node would probably get some 50 addresses.
 
