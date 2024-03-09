@@ -335,7 +335,7 @@ Speaker 0: 00:13:51
 
 Yeah, there are different ways of getting addresses.
 Like for a new node in the network, they would query the DNS seeds.
-Those are like centralized seeds that are run by Bitconners and they will give you a small number of addresses that will help you bootstrap.
+Those are like centralized seeds that are run by Bitcoiners and they will give you a small number of addresses that will help you bootstrap.
 They are not meant to be a source of addresses forever but ideally just once when you are new to the network they will give you something to start with and then you build up your own address database and use that in the future.
 But for that to be possible you need more ways of relaying addresses to the network and there are two ways I would say.
 
