@@ -7,7 +7,7 @@ speakers: ["Martin Zumsande","Jonas Nick","Patrick Murck"]
 categories: ["podcast"]
 date: 2022-05-13
 ---
-Speaker 0: 00:00:00
+Martin: 00:00:00
 
 In AdderMan you also have this distinction between the new and the tried tables.
 So the new tables are for unverified addresses that someone just sent you and you don't know whether they are good, whether there's really a Bitcoin node behind them.
@@ -44,7 +44,7 @@ Well, Martin's been with us for a couple of weeks.
 We finally dragged him in the studio and hope you enjoy the episode.
 Welcome to the Chaincode Podcast, Martin.
 
-Speaker 0: 00:01:32
+Martin: 00:01:32
 
 Hi, thank you for having me here.
 
@@ -60,7 +60,7 @@ Speaker 2: 00:01:37
 So today we want to hear a little bit more about your background, sort of how you got to working on Bitcoin Core, and then some of the things you're working on.
 So tell us, where do you come from?
 
-Speaker 0: 00:01:48
+Martin: 00:01:48
 
 Yeah, I'm originally from Germany, and I'm a physicist.
 I did my diploma and PhD in physics.
@@ -70,7 +70,7 @@ Speaker 2: 00:01:56
 And what specifically in physics?
 Physics is pretty broad.
 
-Speaker 0: 00:01:58
+Martin: 00:01:58
 
 Yeah, I was doing statistical mechanics for my diploma thesis, like doing mostly simulations already, so a lot of computational work.
 And then for my PhD, I worked in the field of systems biology, which is like a mix of Physics, Math, and Biology.
@@ -88,7 +88,7 @@ Speaker 2: 00:02:45
 
 How did you follow up on Bitcoin Core and how did you start working on it?
 
-Speaker 0: 00:02:49
+Martin: 00:02:49
 
 Well, I got interested in this space at first, not so much technical, but trying to understand how Bitcoin works.
 There was an essay I read that I liked very much and made me feel like I understood Bitcoin better, which was by also a physicist, I think, Michael Nielsen.
@@ -130,7 +130,7 @@ Speaker 2: 00:03:55
 So you seem to spend more of your time at Bitcoin Core lately in the P2P area.
 So tell us why that area and what's interesting you there.
 
-Speaker 0: 00:04:07
+Martin: 00:04:07
 
 I think I've been interested mostly in P2P from the start.
 It's just that I have more time now to work on these problems.
@@ -157,7 +157,7 @@ And also the history and the context of P2P, because some of it in some cases ca
 There still seems to be some DOS vectors in there.
 So how do you think about all that?
 
-Speaker 0: 00:05:57
+Martin: 00:05:57
 
 One thing is to try to really read the code and not read it once, but read it many times and try to find new nuances.
 Why is that that way?
@@ -171,7 +171,7 @@ Speaker 1: 00:06:42
 So you're saying Bitcoin developers are like peer-to-peer nodes.
 They don't trust what other people have done?
 
-Speaker 0: 00:06:48
+Martin: 00:06:48
 
 Yeah, I mean you should never really trust the code that it works.
 I mean it's not necessarily that someone has written bad code on purpose, but maybe something that used to work once stopped working because of something that was done in another part of the code base and there are many ways that things could go wrong.
@@ -196,7 +196,7 @@ Speaker 2: 00:08:15
 Yeah, it will continue to emerge because we continue to try to encourage people running their nodes on Raspberry Pis in remote locations.
 And what may be good for decentralization may not be so great for bootstrapping and initial block download and things like that.
 
-Speaker 0: 00:08:29
+Martin: 00:08:29
 
 Yeah, and some things just happen because people choose different ways to participate in the Bitcoin network.
 For example, I just recently was really surprised to see that there are like so many nodes using Tor right now.
@@ -206,7 +206,7 @@ Speaker 1: 00:08:50
 
 So reachable nodes.
 
-Speaker 0: 00:08:52
+Martin: 00:08:52
 
 Reachable nodes.
 And that is something like a very new development.
@@ -232,7 +232,7 @@ Speaker 1: 00:09:33
 
 So Adderman, what's the goal of the address manager?
 
-Speaker 0: 00:09:36
+Martin: 00:09:36
 
 The goal of the address manager, I would say, is to have a good variety of peers to find to connect to.
 So you don't want to have all your peers be from the same IP range.
@@ -252,7 +252,7 @@ Right. And you also need to make sure that you get some fresh blood in there.
 So you don't get sequestered into some part of the network and then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore or things like that.
 So you need to constantly keep hearing about new nodes.
 
-Speaker 0: 00:10:43
+Martin: 00:10:43
 
 Yes, and that means that old nodes will be overwritten at some point.
 If you haven't heard from them for a long time, they will be like new nodes that have a higher probability of actually being there on the network still.
@@ -275,7 +275,7 @@ So on the one hand, you do want some persistence because you don't want to give 
 But on the other hand, you do want some mixed through.
 So you keep being well connected to the whole Bitcoin network.
 
-Speaker 0: 00:11:48
+Martin: 00:11:48
 
 And there is one important thing that is different from the Lightning Network in Bitcoin.
 You don't want to be the network public.
@@ -295,7 +295,7 @@ Speaker 2: 00:12:27
 And then there's a wiki page on the DevWiki that goes into how that's evolved over the last seven years since that paper came out, seven years?
 So anyway, if you're interested in more reading, there's stuff there.
 
-Speaker 0: 00:12:38
+Martin: 00:12:38
 
 Yeah, it's a great article.
 
@@ -314,7 +314,7 @@ Speaker 2: 00:12:55
 What is interesting there?
 And yeah, and why spend so much time?
 
-Speaker 0: 00:12:59
+Martin: 00:12:59
 
 Yeah, I mean, I'm very interested in AddrRelay.
 It's different than the other types of relay like blocks where you need proof of work, transactions where you spend some Bitcoin, whereas for an address to relay you don't really have to do any kind of work to relay it.
@@ -331,7 +331,7 @@ Speaker 1: 00:13:38
 So maybe we can briefly give an overview of how nodes get addresses in the first place.
 If you start with a fresh node, how do you get connected to the network and how do you hear more about other peers in the network after?
 
-Speaker 0: 00:13:51
+Martin: 00:13:51
 
 Yeah, there are different ways of getting addresses.
 Like for a new node in the network, they would query the DNS seeds.
@@ -341,7 +341,7 @@ But for that to be possible you need more ways of relaying addresses to the netw
 
 ## Self-announcements
 
-Speaker 0: 00:14:24
+Martin: 00:14:24
 
 One of them is the address gossip relay.
 So basically once a day a node will self advertise its address to the network, send it to its peers, and those peers will take it, pick it up, and add it to their address database, but also will relay it a bit further to some of their peers, usually two, sometimes between one or two.
@@ -359,7 +359,7 @@ Speaker 2: 00:15:06
 So we've seen even within the last year, people try to mess with that.
 I know that Peter and Amiti will be feeling over this in their episode, but what did you observe and how are we addressing that going forward?
 
-Speaker 0: 00:15:16
+Martin: 00:15:16
 
 Yeah, actually, that was in last summer, There was suddenly a huge spike in the traffic of addresses being relayed and it was really interesting to see this unravel in real time.
 It was some kind of attacker who would use a botnet to spam the network with addresses that were not its own, They were just randomly generated IPv4 addresses.
@@ -373,7 +373,7 @@ Speaker 2: 00:15:49
 And what's your theory?
 Research, harming the network, what's the motivation?
 
-Speaker 0: 00:15:54
+Martin: 00:15:54
 
 Yeah, I can only speculate because I think it is not known.
 
@@ -385,7 +385,7 @@ It could have been you.
 Yeah.
 You seem to know a lot about it.
 
-Speaker 0: 00:16:03
+Martin: 00:16:03
 
 Yeah.
 There are different theories.
@@ -415,7 +415,7 @@ If there were only 10 peers connected to the attack node, they'll receive 500.
 So the observer will basically get n divided by a number of peers of these randomly generated addresses forwarded.
 And that way, while an attacker could measure the peer degree of the node, right?
 
-Speaker 0: 00:18:16
+Martin: 00:18:16
 
 Yes. The thing that is, it's called in network science, I think it's called degree distribution, which says like how many peers have how many other peers that they are connected to and to make a distribution out of that.
 And that is an important measurement to show about the topology of a network and that different ways that peer distributions can be.
@@ -441,14 +441,14 @@ Speaker 2: 00:19:18
 
 We haven't seen a paper come out yet associated with it, as far as I can tell.
 
-Speaker 0: 00:19:21
+Martin: 00:19:21
 
 I mean, actually, there is a paper, not by the attacker, but by a team in Karlsruhe.
 They are a team of researchers there.
 
 ## Estimating the Node Degree of Public Peers and Detecting Sybil Peers Based on Address Messages in the Bitcoin P2P Network by Matthias Grundmann
 
-Speaker 0: 00:19:27
+Martin: 00:19:27
 
 And they actually have a note that monitors the whole network and probably put the link there in the show notes.
 They also published a paper on archive about this and they were actually in a position because they are connected to most nodes to calculate the degree distributions.
@@ -467,7 +467,7 @@ Is there any crossover to creating simulations for Addrelay?
 Yeah.
 How do you go about it?
 
-Speaker 0: 00:20:33
+Martin: 00:20:33
 
 Yeah, I think there's definitely, I've done a lot of simulations in the past, but it's something I would want to pursue much deeper in the future, because I think for a lot of decision, if we want to change some things, for example, in address relay, change a little thing there, we can say that makes sense locally.
 We can understand why it should be good, but we are not really sure what this will do for the network.
@@ -480,7 +480,7 @@ It goes back to my original question of how you think about when you pull a leve
 If you're changing how the network interacts, those variables can cause unintended consequences.
 So having simulations to go along with the code review obviously gives you more confidence.
 
-Speaker 0: 00:21:15
+Martin: 00:21:15
 
 Exactly.
 And I think it would be great if there was some agreed upon or like widely used simulation framework so that each time I want to simulate something that interests me, like that I know about it, I wouldn't need to worry about creating a realistic degree distribution.
@@ -493,7 +493,7 @@ Yeah, I know that, you know, Suhas has his simulator.
 Gleb has his simulator.
 The Carnegie Mellon team.
 
-Speaker 0: 00:21:43
+Martin: 00:21:43
 
 Yes.
 
@@ -508,7 +508,7 @@ Speaker 2: 00:21:46
 So there's a third way that nodes on the network learn about addresses.
 And what's that third way?
 
-Speaker 0: 00:21:52
+Martin: 00:21:52
 
 That way is the get other message.
 So when a node makes an outgoing connection, not for inbound, just for outgoing ones, we send this get other message to them once, and then they will answer this with a huge chunk of addresses, up to a thousand addresses.
@@ -524,7 +524,7 @@ Speaker 2: 00:22:32
 But there's a grab bag there.
 You have maybe some junk in there, maybe some stuff that's in the tried table, and maybe some actual connections that the node would be paired with, right?
 
-Speaker 0: 00:22:42
+Martin: 00:22:42
 
 Yeah, but there is not really a selection for this.
 We just get random addresses that we just would send away.
@@ -534,7 +534,7 @@ Speaker 2: 00:22:53
 
 Do you think it should be preselected?
 
-Speaker 0: 00:22:54
+Martin: 00:22:54
 
 Yeah, I think it would make sense, because for example, in many nodes, they would have a lot more addresses in the new table than in the tried table.
 So that would mean that we're also like in a get other message, we would have a larger percentage of notes on a new table.
@@ -549,7 +549,7 @@ And so it's sort of like that in-between state of, I know about a few, and I'm g
 Is that sort of the best?
 Is that the best use of...
 
-Speaker 0: 00:23:46
+Martin: 00:23:46
 
 I'd say it's currently being done just once.
 When you start a new connection to outbound peer, you just ask them once for this big chunk at the beginning of the connection.
@@ -559,7 +559,7 @@ Speaker 1: 00:24:00
 
 So if you were to restart and reconnect to the same outbound peer again, you would ask again.
 
-Speaker 0: 00:24:06
+Martin: 00:24:06
 
 Yes, but if you do this within 24 hours, you would get the same response because we don't want to be able to make use of this to scrape our AdderMan database to be able to see all the nodes that are in there.
 
@@ -570,7 +570,7 @@ We add that only to our new table, right?
 So we get a big chunk of a thousand new addresses from each outbound connection, add that to our new table.
 And if we ever need later some more outbound connections, or with our feeler connection every two minutes, we would try some of the new tables and potentially move them to tried.
 
-Speaker 0: 00:24:44
+Martin: 00:24:44
 
 Exactly.
 The distinction between new and tried it makes a lot of sense because whenever we would make an outbound connection we would toss a coin and with a probability of 50% we would pick one address from the new table, just one, whatever it is, or we would pick one from the tried table.
@@ -586,7 +586,7 @@ So if you're a completely new node, you would connect to a DNS seed.
 How much do you get from a DNS seed?
 Is that like just a few connections or is that a thousand?
 
-Speaker 0: 00:25:35
+Martin: 00:25:35
 
 It's just a few.
 I think it was reduced at some point in the past recently, but it's under 50 I think.
@@ -597,7 +597,7 @@ Okay, so I'm a new node, I connect to a DNS seed, I get under 50 addresses from 
 Right.
 And not new addresses.
 
-Speaker 0: 00:25:51
+Martin: 00:25:51
 
 They are tried for the DNS.
 So the DNS is internally.
@@ -608,7 +608,7 @@ Speaker 1: 00:26:03
 So we're a little less paranoid towards DNS seeds.
 But that's kind of makes sense because we're completely new here and we don't know that we can trust.
 
-Speaker 0: 00:26:10
+Martin: 00:26:10
 
 But we still store these in the new table, in our new table.
 So we don't just believe the DNS seed, if they are good, we just put them to tried.
@@ -618,7 +618,7 @@ Speaker 1: 00:26:18
 And then of course, the node would make eight outbound connections to blocks only connections and a feeler connection would start going through the remaining new and then each outbound connection would give us 1000 new addresses again.
 And so very quickly, we would build up some stock of new addresses in our new table.
 
-Speaker 0: 00:26:35
+Martin: 00:26:35
 
 Yes and all the let's say 10 nodes that we connected to when we disconnect them we would also like promote them to the try table because now we have been able to connect to them.
 
@@ -626,7 +626,7 @@ Speaker 1: 00:26:46
 
 Right. Although we do not get any new addresses from blocks-only relay connections, right?
 
-Speaker 0: 00:26:51
+Martin: 00:26:51
 
 Right, but I think the block-only connections themselves that we connect to their address will still be promoted to tried.
 
@@ -662,7 +662,7 @@ Speaker 2: 00:27:34
 
 And Peter doesn't claim full responsibility for that, but I'm sure we can look up the code.
 
-Speaker 0: 00:27:38
+Martin: 00:27:38
 
 I think it was introduced by Peter.
 Maybe he found it from somewhere else.
@@ -687,7 +687,7 @@ Speaker 2: 00:27:50
 
 I want to talk a little bit about just what it's like to be a Bitcoin Core contributor and sort of how you think about spending your time, what kind of code review you pick up, how you look for ways to contribute.
 
-Speaker 0: 00:28:02
+Martin: 00:28:02
 
 Yeah, I think there are many different ways of being a Bitcoincore contributor.
 And I think every person has to find a way that works best for them and for their interests.
@@ -706,7 +706,7 @@ What's the difference between doing this on nights and weekends and having the o
 Like, How does it change your approach or how do you pace yourself?
 Or I mean, you're a few months in, so what has that transition been like?
 
-Speaker 0: 00:29:22
+Martin: 00:29:22
 
 Yeah, I think for me personally, before I didn't really have the energy to do large projects because I was just doing this on the side.
 So I just did a small review there and a small PR there, like changing smaller things.
@@ -719,7 +719,7 @@ We have an Ack Russ t-shirt we have to get in your hands then.
 I don't know if we have your size, but cool.
 Thank you for sitting down with us and telling us about your days on Bitcoin.
 
-Speaker 0: 00:30:10
+Martin: 00:30:10
 
 Yeah, it was great.
 Thank you very much.
