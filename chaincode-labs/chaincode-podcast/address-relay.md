@@ -511,7 +511,7 @@ And what's that third way?
 Speaker 0: 00:21:52
 
 That way is the get other message.
-So when a node makes an outgoing connection, not for inbound, just for outgoing ones, we ask them, we send this get other message to them once, and then they will answer this with a huge chunk of addresses, up to a thousand addresses.
+So when a node makes an outgoing connection, not for inbound, just for outgoing ones, we send this get other message to them once, and then they will answer this with a huge chunk of addresses, up to a thousand addresses.
 And those addresses, they randomly pick from the other man.
 And yeah, so that gives, they are not filtered for recency or something.
 So they might be a bit older.
