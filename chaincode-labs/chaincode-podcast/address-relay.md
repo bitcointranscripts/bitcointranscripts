@@ -316,7 +316,7 @@ And yeah, and why spend so much time?
 
 Speaker 0: 00:12:59
 
-Yeah, I mean, I'm very interested in AdderRelay.
+Yeah, I mean, I'm very interested in AddrRelay.
 It's different than the other types of relay like blocks where you need proof of work, transactions where you spend some Bitcoin, whereas for an address to relay you don't really have to do any kind of work to relay it.
 But we still need those.
 Nodes need addresses to find other nodes to connect to.
