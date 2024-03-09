@@ -33,8 +33,8 @@ That's better than usual, isn't it?
 
 Speaker 1: 00:00:59
 
-Yeah, yeah, We have a good idea what we'll be talking about already.
-We did a few peer-to-peer topics already earlier with Amitie and Peter.
+Yeah, we have a good idea what we'll be talking about already.
+We did a few peer-to-peer topics already earlier with Amiti and Peter.
 But I think we're going to look at different aspects of peer-to-peer this time.
 
 Speaker 2: 00:01:12
@@ -73,8 +73,8 @@ Physics is pretty broad.
 Speaker 0: 00:01:58
 
 Yeah, I was doing statistical mechanics for my diploma thesis, like doing mostly simulations already, so a lot of computational work.
-And then for my PhD, I worked in the field of systems biology, which is like a mix of physics, math, and biology.
-So somehow I tried to apply some physical techniques on problems from biology such as bone remodeling or some signal pathways in the cells.
+And then for my PhD, I worked in the field of systems biology, which is like a mix of Physics, Math, and Biology.
+So somehow I tried to apply some physical techniques on problems from Biology such as bone remodeling or some signal pathways in the cells.
 So that's what I did.
 But that's been a long time ago I left science to work in the industry and I worked as a consultant for banks until I found about Bitcoin.
 
@@ -111,7 +111,7 @@ He's a mathematician, I think.
 
 Speaker 2: 00:03:46
 
-Oh, okay, Well.
+Okay, well.
 
 Speaker 1: 00:03:47
 
@@ -143,7 +143,7 @@ That is something that I find really interesting.
 Speaker 1: 00:04:59
 
 Yeah, I think one of the interesting things is that the credo is never to trust another node for what they tell you, because they might be lying.
-So on the one hand, you have to make it work locally and you have to have an emergent behavior across the whole set of participants that is not wasteful, but still gets everybody all the information they need.
+So on the one hand you have to make it work locally and you have to have an emergent behavior across the whole set of participants that is not wasteful, but still gets everybody all the information they need.
 I can see the appeal.
 
 Speaker 2: 00:05:26
@@ -159,13 +159,12 @@ So how do you think about all that?
 
 Speaker 0: 00:05:57
 
-Well, I think the one thing is to try to really read the code and not read it once, but read it many times and try to find new nuances.
+One thing is to try to really read the code and not read it once, but read it many times and try to find new nuances.
 Why is that that way?
 If you find something that interests you, and one of the things that you should do if there is something that you don't really understand, but then often you have the urge to say, I'm sure someone has thought about it and I'll maybe think of it another time and let's concentrate on something else for now.
 And I think these exactly are the points where most people do the same and where it's interesting to look deeper and really answer the questions you have yourself and until you know or are sure you have a solution.
-And sometimes, yeah, you found something that some people haven't thought of before.
+And sometimes, yeah, if you found something that some people haven't thought of before.
 And then you maybe create PR to fix this.
-And yeah.
 
 Speaker 1: 00:06:42
 
@@ -180,7 +179,7 @@ And so I think it's always best to check for yourself how the code works and tha
 I think it's sometimes it's good just to read code and try to make sure you really understand it well.
 And that's where you find ideas for ways to improve the code by yourself.
 Sometimes better than going into a code section like with the purpose.
-I'm going to change this now, because this might lead to changes that are not So great.
+I'm going to change this now, because this might lead to changes that are not so great.
 
 ## The network is changing
 
@@ -242,15 +241,14 @@ You also only have a limited amount of addresses you can save.
 You don't want to have a system where it can overwhelm you like write up your disk.
 So you also need to have like a limited amount.
 So you have like a restricted number of addresses that fit there.
-And in AdderMann you also have this distinction between the new and the tried tables.
+And in AdderMan you also have this distinction between the new and the tried tables.
 So the new tables are for unverified addresses that someone just sent you and you don't know whether they are good, whether there's really a Bitcoin node behind them.
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were valid peers and they were your peers at some point.
 
 Speaker 1: 00:10:25
 
-Right.
-And you also need to make sure that you get some fresh blood in there.
+Right. And you also need to make sure that you get some fresh blood in there.
 So you don't get sequestered into some part of the network and then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore or things like that.
 So you need to constantly keep hearing about new nodes.
 
@@ -271,10 +269,10 @@ And like, unless you're going on chain, those are pretty permanent connections.
 Speaker 1: 00:11:21
 
 Right. Especially since you want to talk about a channel you have with them, you would be permanently peering with those.
-But with Bitcoin peers, it's, it's very exchangeable.
+But with Bitcoin peers, it's very exchangeable.
 You just need somebody that talks to you, right?
 So on the one hand, you do want some persistence because you don't want to give an opportunity to an attacker to completely replace all your peers and eclipse you.
-But on the other hand, you do want some mixed fruit.
+But on the other hand, you do want some mixed through.
 So you keep being well connected to the whole Bitcoin network.
 
 Speaker 0: 00:11:48
@@ -282,7 +280,6 @@ Speaker 0: 00:11:48
 And there is one important thing that is different from the Lightning Network in Bitcoin.
 You don't want to be the network public.
 So you don't want your peers or anyone else to know which nodes you are currently connected to.
-Right.
 That is something that is, I think in Lightning Network, it's being published, but at least for the public nodes and in Bitcoin Core, this is something that nobody should be able to get this information out of you.
 
 ## Ethan Heilman's talk on Network Partitioning Attacks
@@ -324,7 +321,7 @@ It's different than the other types of relay like blocks where you need proof of
 But we still need those.
 Nodes need addresses to find other nodes to connect to.
 So it's on the one hand, it's easy to spam the network with addresses.
-On the other hand, it's important that Address Realize still works as good as possible so that nodes have a good variety of peers to connect to, that they can find peers quickly and to get all of these different goals and make them work together.
+On the other hand, it's important that address relay still works as good as possible so that nodes have a good variety of peers to connect to, that they can find peers quickly and to get all of these different goals and make them work together.
 And that is something I find really challenging and interesting.
 
 ## Getting connected to the network
@@ -348,11 +345,11 @@ Speaker 0: 00:14:24
 
 One of them is the address gossip relay.
 So basically once a day a node will self advertise its address to the network, send it to its peers, and those peers will take it, pick it up, and add it to their address database, but also will relay it a bit further to some of their peers, usually two, sometimes between one or two.
-And this helps an address propagate over the network, But there's like a certain system for this, some algorithm in place that makes it sure that it doesn't go on forever.
+And this helps an address propagate over the network, but there's like a certain system for this, some algorithm in place that makes it sure that it doesn't go on forever.
 We don't want to spend the network with a given address.
 So this will only work for like 10 minutes or so.
 And after that it will stop.
-And maybe on the next day we try again, But yeah, that is the gossip relay.
+And maybe on the next day we try again, but yeah, that is the gossip relay.
 And that is how nodes self-advertisements relate to the network.
 
 ## Address spam in summer 2021 and peer distribution
