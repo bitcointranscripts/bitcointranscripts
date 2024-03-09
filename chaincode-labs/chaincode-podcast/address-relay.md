@@ -642,8 +642,8 @@ Yeah, I mean, as I listen to this and as I'm sort of catching up on my reading, 
 
 Speaker 2: 00:27:06
 
-Like, getAdder messages were taken advantage of by, in the Coinscope paper, where they used specific timestamps that were proliferated through the network to understand network topology.
-And then Gleb added the cached responses, because otherwise you could scrape the Scrape Adderman if you just kept querying.
+Like, getAdder messages were taken advantage in the Coinscope paper, where they used specific timestamps that were proliferated through the network to understand network topology.
+And then Gleb added the cached responses, because otherwise you could scrape the Scrape AdderMan if you just kept querying.
 So it's like-
 
 Speaker 1: 00:27:24
@@ -689,10 +689,10 @@ I want to talk a little bit about just what it's like to be a Bitcoin Core contr
 
 Speaker 0: 00:28:02
 
-Yeah, I think there are many different ways of being a Bitcoin Core contributor.
+Yeah, I think there are many different ways of being a Bitcoincore contributor.
 And I think every person has to find a way that works best for them and for their interests.
-But what I personally like is I don't want to spend all of my time on projects like the Multi Index Adderman and I want to spend a lot of time on review, reviewing other things because that's the way you learn especially if you're a relatively new contributor.
-I think that is important to not get lost in some like esoteric area and spend all your time there, but also get to know other parts of Bitcoin Core better.
+But what I personally like is I don't want to spend all of my time on projects like the Multi Index AdderMan and I want to spend a lot of time on review, reviewing other things because that's the way you learn especially if you're a relatively new contributor.
+I think that is important to not get lost in some like esoteric area and spend all your time there, but also get to know other parts of Bitcoincore better.
 And something that I personally really like is just look at the list of issues.
 Maybe there's some intermittent failure in some functional tests and just try to see what has happened, try to find a fix, make a small PR there.
 And yeah, this can take some time, but it's usually not a huge project.
@@ -730,9 +730,8 @@ So, any takeaways from our conversation?
 
 Speaker 1: 00:30:28
 
-I thought that the Adderman spam was really interesting.
-The spam attack that was trying to either leverage the exact behavior of Bitcoin Core on what it will relay to learn the node peering distribution, but maybe also just didn't know exactly what was gonna happen and then didn't get all their addresses relayed as wanted.
-Right.
+I thought that the AdderMan spam was really interesting.
+The spam attack that was trying to either leverage the exact behavior of Bitcoincore on what it will relay to learn the node peering distribution, but maybe also just didn't know exactly what was going happen and then didn't get all their addresses relayed as wanted.
 That was an interesting thing there.
 
 Speaker 2: 00:30:53
