@@ -2,7 +2,7 @@
 title: "How to get started contributing sustainably to Bitcoin Core"
 transcript_by: chippsmith via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Bduon80-4CE
-tags: ["bitcoin-core","developer-tools"]
+tags: ["bitcoin-core"]
 speakers: ["Jon Atack","Stephan Livera"]
 categories: ["conference"]
 date: 2022-11-11
@@ -11,7 +11,7 @@ date: 2022-11-11
 
 Host: 00:00:00
 
-Now we are going to have a panel conversation; a kind of fireside chat between Stephan Livera and Jon Atack and the name is how to get started contributing sustainably to Bitcoin core so if you are a dev and are looking to start to contribute to Bitcoin Core, this is your talk.
+Now we are going to have a panel conversation; a kind of fireside chat between Stephan Livera and Jon Atack and the name is how to get started contributing sustainably to Bitcoin Core so if you are a dev and are looking to start to contribute to Bitcoin Core, this is your talk.
 
 Stephan: 00:00:32
 
@@ -41,7 +41,7 @@ Yeah, we met and at that point I'd been working on Bitcoin Core since seven mont
 Stephan: 00:01:06
 
 Let's get into this today.
-We're gonna chat a little bit about your journey and offer some insights for people here, or anyone on the stream, if they are thinking about what it's like being a Bitcoin core contributor, and if they want to get involved, how they would do this.
+We're gonna chat a little bit about your journey and offer some insights for people here, or anyone on the stream, if they are thinking about what it's like being a Bitcoin Core contributor, and if they want to get involved, how they would do this.
 Tell us a little bit about your motivation.
 Why did you want to go down this pathway?
 
@@ -49,7 +49,7 @@ Jon: 00:01:27
 
 That's a great question.
 So I'd have been aware of Bitcoin since several years before I began, and I had in the back of my mind the goal that someday I would stop taking freelance missions.
-I was a freelance software developer working for large corporations, saving their ass on missions that they were in trouble with, and the whole time I was thinking, I'm saving up money, I'm stacking, And someday I'm gonna quit this and I'm going to work on Bitcoin.
+I was a freelance software developer working for large corporations, saving their ass on missions that they were in trouble with, and the whole time I was thinking, I'm saving up money, I'm stacking, and someday I'm gonna quit this and I'm going to work on Bitcoin.
 It was an idea I had, years beforehand, and something has to happen to kind of kick you in the rear, and to kick-start you into doing it, and that something for me was totally unplanned.
 It was end of February 2019, on Twitter, I saw Chaincode labs saying last minute to apply for the summer residency at Chaincode Labs this summer.
 In 2019, Chaincode Labs did a very large residency program.
@@ -102,11 +102,12 @@ There's so much accumulated context and experience that the long-term contributo
 It took me literally, back then, one year to be funded.
 Thank you to Jack Dorsey who created Square Crypto, now since renamed Spiral.
 I didn't actually do anything to get a grant.
-I was showing proof of work and after a while people will push grantees to you, I suppose nowadays you can apply for grants with a project. 
+You are just showing proof of work and after a while people will push grantees to...
+I suppose nowadays you can apply for grants with a project. 
 But I never had a project. 
 My only project was to review and to contribute and to fix things that I saw.  
 I never had a project dropped into my lap. 
-Like I'm going to implement this, I'm going to do fedimint, or I'm going to do you know payjoin, or joinmarket or bip324 implementation or bip155 implementation.
+Like I'm going to implement this, I'm going to do fedimint, or I'm going to do you know payjoin, or joinmarket or BIP324 implementation or BIP155 implementation.
 I never had anything like that.
 All I did was review and basically do the things that no one else wanted to do, but that needed to be done, like reviewing and testing and fixing things.
 And after a while, that worked.
@@ -136,7 +137,7 @@ Maybe they're wrong.
 You need to come to these conclusions and pretty much you do it on your own.
 Well I've always worked alone.
 Some people work in large organizations, some people work at Spiral, some people work at Chaincode, some people work at Blockstream.
-But even Blockstream, they only support one Bitcoin core developer, Andrew Chow, and I believe he works mostly alone unless you travel into an office.
+But even Blockstream, they only support one Bitcoin Core developer, Andrew Chow, and I believe he works mostly alone unless you travel into an office.
 So a lot of it is just alone time with a code, reading things, reading the mailing list, coming to your conclusions.
 
 Stephan: 00:08:17
@@ -176,11 +177,11 @@ So, yeah, but if I can do it, I think anyone can.
 I arrived and I taught myself C++ while doing it.
 Python came quickly because it's similar to Ruby.
 But yeah, it's not impossible for you to show up and to learn these two languages and become a core developer if that is your goal.
-Note that there isn't just Bitcoin core and I think that's important to underline.
+Note that there isn't just Bitcoin Core and I think that's important to underline.
 There are many other valuable projects in the space besides Bitcoin Core.  
-There are wallets, miners, lightning implementations, lightning development, specification, bolts, bips.
+There are wallets, miners, lightning implementations, lightning development, specification, bolts, BIPs.
 There are many super valuable projects.
-It doesn't have to be Bitcoin core and even it doesn't have to be open source, you could work on closed source.
+It doesn't have to be Bitcoin Core and even it doesn't have to be open source, you could work on closed source.
 There's lots of jobs out there now for Bitcoin Developers, and it doesn't just have to be a developer, you could also find a place for yourself if you're a product manager, a designer, a writer, we need people like that in the space.
 Maybe not on Bitcoin Core, which is just developers, but in other areas.
 Or you could become a startup founder.
@@ -261,7 +262,6 @@ So could you just explain a little bit about that?
 
 Jon: 00:14:52
 
-Right?
 You're right.
 I'm pretty much a free-roaming independent person and I like to self-learn.
 I've never found it very useful for me to learn in a classroom situation.
@@ -306,7 +306,6 @@ Jon: 00:17:37
 
 It was Adam Jonas at Chaincode who mentioned to me the value of long-term context in history and why it's important to keep long-term contributors.
 
-
 Stephan: 00:17:55
 
 Well, a common thing is various Ideas get shared and actually that idea was on Bitcoin talk in 2011.
@@ -337,10 +336,10 @@ For a long time you feel like you're the new person who's struggling, and nobody
 And then in a flick of a second, and all of a sudden people are talking to you differently and you're seen as established.
 It's very odd, and it's a bit surprising.
 Your grants renewed, and suddenly you're sort of an OG, or one of the most experienced remaining contributors on the project because people drop out and leave.
-The event that affected me personally the most on Bitcoin core was the lead maintainer Vladimir Vanderland.
+The event that affected me personally the most on Bitcoin Core was the lead maintainer Wladimir van der Laan.
 10 years he was lead maintainer.
-I haven't said this here but he was the reason I was inspired originally to work on Bitcoin core, because I really appreciated his maintainership style.
-In addition to being interested in Bitcoin, Vladimir followed me on Twitter maybe three or four years before I began working on Bitcoin Core.
+I haven't said this here but he was the reason I was inspired originally to work on Bitcoin Core, because I really appreciated his maintainership style.
+In addition to being interested in Bitcoin, Wladimir followed me on Twitter maybe three or four years before I began working on Bitcoin Core.
 And I listened to him, and read his tweets, and following how he treated people on Bitcoin Core, which he was lead maintainer of for so long, he was kind, he was humble, service-oriented, he was lifting people up, and I thought that he was just the kind of leader I wanted to work with.
 And I'm honestly very, very sad.
 It was time for him to step down he needed to for himself.
@@ -364,7 +363,7 @@ It's helpful to read meditations by Marcus Aurelius.
 And I also prefer people who say their position once without flooding over and over again and coming back and attacking anyone who disagrees with them.
 There are characters like that in space.
 That's not my cup of tea, and that's how I prefer to deal with it.
-For example, the mempool full RBF recent discussions.
+For example, the mempool full-RBF recent discussions.
 There was one person who was flooding all the threads everywhere on all the social networks and on the PR.
 My personal opinion is that's, well, maybe they got what they wanted.
 But I don't think that's the right way to have the debate.
@@ -382,7 +381,7 @@ Is that the right way that people should debate things or what is the right way?
 
 Jon: 00:23:51
 
-Well in theory this is about rough content consensus right.
+Well in theory this is about rough consensus.
 Rough consensus isn't voting. 
 There's an article on it written back in the 90s by the internet standards committee back in the day, where rough consensus is humming or something like that, where basically everyone needs to feel heard.
 And I thought it was important on a process like the taproot activation one, which drew out for months and months.
@@ -391,7 +390,7 @@ It's important for people to feel that validation, okay I was able to get out wh
 And I think that's fine.
 If people want to say something, they can.
 At the same time, there's a delicate balance.
-For example, in the recent mempool full RBF, there's a whole bunch of people who have, say, an 80 percent understanding of the topic.
+For example, in the recent mempool full-RBF, there's a whole bunch of people who have, say, an 80 percent understanding of the topic.
 Some people have a 90 percent, some people maybe a 95 percent.
 And there's maybe two or three people who I would say have a 99.9 percent understanding of the topic.
 The deepest, most experienced, long-term, active researchers and contributors in the space, in my opinion, were shouted down, perhaps.
@@ -447,7 +446,7 @@ Jon: 00:27:32
 
 Definitely follow the IRC discussions in whatever project that you're working on.
 There are IRC channels for lnd, c-lightning, Lightning Protocol Development, Bitcoin Core Dev.
-All the projects, Join Market, they all have IRC channels.
+All the projects, JoinMarket, they all have IRC channels.
 
 ## Specialization vs Generalization
 
@@ -511,14 +510,14 @@ And yet, these are, in my opinion, the most important things.
 I'm not talking about refactoring or making the code cleaner or prettier, I'm talking about making the code base as robust as it possibly can be, and finding and fixing bugs.
 Sometimes they're not talked about.
 Sometimes they're fixed in a way that people don't see.
-This to me is more important than adding new features, but that's personal other people have a project, this person is supposed to implement this bip, this person is supposed to bring this into the project, and that's fine.
+This to me is more important than adding new features, but that's personal other people have a project, this person is supposed to implement this BIP, this person is supposed to bring this into the project, and that's fine.
 And generally I see my role is reviewing those things.
 
-Stephan: 00::32:01
+Stephan: 00:32:01
 
 And I think it's fair to point out that there are debates even amongst the community about how much change Bitcoin should have right, I don't want to get too political, but it's almost like a similarity of like progressives and conservatives.
 You have like people who just say no, just focus on the reliability and then maybe there are other people who have let's say this big new feature, that they that they want.
-And so I suppose there are, even on Bitcoin core, there are people with a different focus
+And so I suppose there are, even on Bitcoin Core, there are people with a different focus.
 
 Jon: 00:32:31
 
@@ -556,9 +555,10 @@ So can we just get a runner, down the back I think was first.
 
 ## Audience Questions
 
-Audience Question: 00:34:40
+Audience: 00:34:40
 
-So yeah, we got Bitcoin core... in your humble opinion should anyone even bother with BTCD or other implementations. As far as contributing to Bitcoin Core, is it worth looking at the other implementations as well?
+So yeah, we got Bitcoin Core... in your humble opinion should anyone even bother with btcd or other implementations.
+As far as contributing to Bitcoin Core, is it worth looking at the other implementations as well?
 
 Jon: 00:35:00
 
@@ -571,7 +571,7 @@ Stephan: 00:35:12
 Next question, anyone?
 We've got one at the second row here.
 
-Audience Question: 00:35:20
+Audience: 00:35:20
 
 Thanks very much for your talk, it was enlightening.
 You mentioned about being funded to work on Bitcoin Core through a grant.
@@ -598,7 +598,7 @@ It depends on what you're used to and where you live.
 For example, I don't believe that they're geo-adjusting the grants.
 For example, Spiral offers the same grant amount to everyone and then it's up to you to geo-arbitrage if you need to.
 
-Audience Response: 00:37:30
+Audience: 00:37:30
 
 Okay, thank you.
 
@@ -607,7 +607,7 @@ Stephan: 00:37:32
 We've got time for one more.
 We've got Jon over there 
 
-Audience Question: 00:37:33
+Audience: 00:37:33
 
 I really appreciate your comment about people wanting to be heard in the process.
 What do you think is the best way for not only users and merchants to actually be heard but also feel heard in the process while they are not actually part of core engineers or really familiar with the culture of how to interface With that community.
@@ -642,7 +642,7 @@ Stephan: 00:40:17
 One up the back there.
 Got to keep it quick, though, or we might run over.
 
-Audience Question: 00:40:25
+Audience: 00:40:25
 
 What would you say is the main reason that people leave?
 
