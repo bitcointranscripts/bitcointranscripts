@@ -3,9 +3,22 @@ title: "Chaincode Decoded: Blockchain"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Blockchain---Episode-14-e11n7tl
 tags: ["mining"]
-speakers: ["Mark Erhardt"]
+speakers: ["Mark Erhardt","Adam Jonas"]
 categories: ["podcast"]
+summary: "In this Chaincode Decoded segment we talk about the fundamental role of Bitcoin's blockchain and some of its peculiarities."
+episode: 14
 date: 2021-05-27
+additional_resources:
+-   title: Episode 1 with Pieter Wuille
+    url: https://podcast.chaincode.com/2020/01/27/pieter-wuille-1.html
+-   title: 'Episode 5: The UTXO set'
+    url: https://podcast.chaincode.com/2020/02/26/utxos-5.html
+-   title: 'Majority is not Enough: Bitcoin Mining is Vulnerable'
+    url: https://www.cs.cornell.edu/~ie53/publications/btcProcFC.pdf
+-   title: Entropy sources in the block header
+    url: https://bitcoin.stackexchange.com/a/96442/5406
+-   title: Eschaton block
+    url: https://twitter.com/orionwl/status/969903330523865088
 ---
 ## Introduction
 
@@ -15,7 +28,7 @@ However long it has been since the last block (has) been found, the next block i
 So if you have been waiting for 10 minutes, or hashing for 10 minutes already, next block is still in about 10 minutes.
 Even if it's been an hour, it's going to take 10 minutes until the next block comes.
 
-Host: 00:00:28
+Adam Jonas: 00:00:28
 
 Welcome to the Chaincode Podcast.
 I'm here with Murch.
@@ -24,7 +37,7 @@ Let's get to it.
 
 ## Purpose of the blockchain
 
-Host: 00:00:40
+Adam Jonas: 00:00:40
 
 Let's start from the very beginning.
 Why do we need a blockchain?
@@ -43,7 +56,7 @@ All of that in a distributed way without having someone decide.
 
 ## Mining is a lottery, not a race
 
-Host: 00:01:56
+Adam Jonas: 00:01:56
 
 And so you use the word lottery and not something like race.
 Why isn't it just a race?
@@ -56,7 +69,7 @@ Every time they try with a block template (whether it) hashes to a valid block, 
 When the ticket wins, they have found a new valid block, they send it to the network and update everybody to the new state of the network, and the lottery starts over.
 Sure, there's complicated math involved in hashing, but it's not complex work that they're doing, they're not solving a riddle, they're buying tickets in a lottery.
 
-Host: 00:02:53
+Adam Jonas: 00:02:53
 
 Right, so having a lot of hash power doesn't give you the advantage in that you can add it up to be able to go faster than someone else to find (the solution to) this complex problem.
 It just gives you more lottery tickets.
@@ -70,7 +83,7 @@ If you've done 10 hashes already, you're no way ahead from somebody that's just 
 This is what makes it (more) a lottery, and not - the fastest miner always wins.
 Every single attempt has the same likelihood of winning, and you don't know whether any of the tickets are more likely to win until you try them.
 
-Host: 00:03:48
+Adam Jonas: 00:03:48
 
 When you say fastest, you mean more hashes per second compared to another miner, like more other hardware that isn't computing as quickly?
 
@@ -87,7 +100,7 @@ Even if it's been an hour, it's going to take 10 minutes until the next block co
 
 ## Why doesn't the same miner always win?
 
-Host: 00:05:04
+Adam Jonas: 00:05:04
 
 Right, so that does lend itself to the lottery analogy more than the race analogy, and you're not getting to a certain point...
 Why doesn't the same miner or the same pool, with the most hashrate just win every time?
@@ -97,11 +110,11 @@ Mark Erhardt: 00:05:19
 The important points here are everybody works on a unique set of inputs due to having different addresses that they're trying to pay the block reward to, and there's no progress in mining.
 So every single block template being hashed, every single hash attempt, is an independent random event with a minuscule chance of succeeding.
 If you do a random event generator again and again, eventually you will win.
-You might win after 10 tries, while somebody else has done 5 million tries already.
+But you might win after 10 tries, while somebody else has done 5 million tries already.
 
 ## What happens if two blocks are found at the same height?
 
-Host: 00:05:55
+Adam Jonas: 00:05:55
 
 That's just how lotteries work.
 So there's this lottery, and the lottery pretty much entitles the pool to not only pay themselves through the reward, but also print the block, which then is distributed to the network.
@@ -119,7 +132,7 @@ It's not part of the best chain, it's irrelevant, right?
 So they can both have the same transactions in the same block, and any transactions that were not included, they're still in the mempool of the node that accepted the other competing block.
 Eventually, one of the two blocks will sire another successor block, and every node will say - "That's the best chain because it has the most work", reorganize back to that chain tip, and all the transactions that were previously confirmed in the competing block, either they're already included in the two competing blocks now, in the new best chain, or they're still in the mempool, so the miners can just pick them in a future block.
 
-Host: 00:07:59
+Adam Jonas: 00:07:59
 
 Are they reintroduced to the mempool?
 Because you would imagine if there's that reorg...
@@ -130,7 +143,7 @@ Mark Erhardt: 00:08:18
 
 Right, a temporarily embarrassed best chain.
 
-Host: 00:08:22
+Adam Jonas: 00:08:22
 
 Okay, so the transaction that was in that block is then reintroduced to the mempool?
 
@@ -138,14 +151,14 @@ Mark Erhardt: 00:08:30
 
 Yes.
 So operationally, what a bitcoin node does is it actually rolls back to the last shared block between those.
-Then, using the reverts(?) that are stored for every block, it builds the new blocks from that previous shared ancestor.
+Then, using the reverts (`rev*.dat` files) that are stored for every block, it builds the new blocks from that previous shared ancestor.
 I think it does all of this in memory, it doesn't really write back everything to the UTXO set and then take it right out again, because there's such a large overlap usually between two competing blocks.
 It just does it in memory.
 Basically that's exactly what it does, it goes back, puts everything back in the mempool, then applies the two new blocks.
 
 ## The longest reorgs
 
-Host: 00:09:11
+Adam Jonas: 00:09:11
 
 So there's this assumption that these reorgs are never particularly deep.
 In what circumstances have we seen some big reorgs?
@@ -156,7 +169,7 @@ Mark Erhardt: 00:09:23
 Let's distinguish between natural reorgs and other events that caused a large reorg.
 The longest natural reorgs we've seen were four blocks deep, and those last happened in 2012, so some time has passed.
 
-Host: 00:09:39
+Adam Jonas: 00:09:39
 
 Four doesn't seem that much either.
 
@@ -170,7 +183,7 @@ Since then, the latency on the network has dropped a lot.
 We have header first synchronization, which also means that you don't have to send a whole megabyte of block, but just 80 bytes to announce the new header.
 On the one hand, it's not that long, but on the other hand, it still sounds pretty insane.
 
-Host: 00:10:27
+Adam Jonas: 00:10:27
 
 Then you said there were some maybe unnatural reorgs that had happened in the past.
 What are some of those?
@@ -180,7 +193,7 @@ Mark Erhardt: 00:10:34
 We had a value overflow bug in August 2010, where somebody created 184 billion bitcoins, and obviously that got reorged out.
 I think that actually took a patch, and the patch had to get distributed, but then 2010 was really the nascent...
 
-Host: 00:10:55
+Adam Jonas: 00:10:55
 
 Right in the beginning, yeah.
 
@@ -189,7 +202,7 @@ Mark Erhardt: 00:10:57
 Another one that we saw was...
 Was it the 0.8 upgrade for Bitcoin where there was a mismatch in the behavior of the LevelDB and Berkeley DB - when that was switched?
 
-Host: 00:11:10
+Adam Jonas: 00:11:10
 
 It was the number of locks, yeah.
 Peter goes over that in his episode, and it was a quirk.
@@ -200,7 +213,7 @@ Basically it was a hard fork.
 It was a hard fork that happened to get triggered by a block actually exhibiting the behavior that was different.
 I think it was more than 30 blocks that got reorged out.
 
-Host: 00:11:30
+Adam Jonas: 00:11:30
 
 Yeah, that had to be a coordinated effort to pretty much stop the chain and restart.
 There's some debate as to whether that's a hard fork, but it was definitely something.
@@ -216,7 +229,7 @@ Nowadays we have a fairly decent propagation on the network, and we see one bloc
 
 ## How does the blockchain work?
 
-Host: 00:12:16
+Adam Jonas: 00:12:16
 
 So this is why we need a blockchain.
 How does a blockchain work?
@@ -232,17 +245,17 @@ You take the Genesis block, which was a little more arbitrary because it doesn't
 You can't stuff anything in between.
 You can't change anything back in the history without making everything that follows invalid.
 
-Host: 00:13:20
+Adam Jonas: 00:13:20
 
 A couple of questions come out of that.
 One, how does someone get a Genesis block when they're syncing for the first time?
 
 Mark Erhardt: 00:13:26
 
-The Genesis block is hard-coded in the software, right?
+The Genesis block is hard-coded in the software.
 It's sort of like the anchor point for the whole blockchain.
 
-Host: 00:13:33
+Adam Jonas: 00:13:33
 
 And two, wouldn't it make sense when one is syncing and getting the whole history, that they can ask a bunch of different nodes out of order and then assemble it locally?
 That would be faster, right?
@@ -262,7 +275,7 @@ That ensures that the transactions are kept exactly in that order.
 They need to be byte for byte exactly the same, itherwise, the hash is incorrect, and then of course it doesn't fit to the block header.
 Yes, you can collect the data from peers to assemble later locally, but generally, you want to check it in order, in order to be able to build one block on the other and to assemble the UTXO set.
 
-Host: 00:15:10
+Adam Jonas: 00:15:10
 
 Right.
 We also did an episode on the UTXO set with John, that was our first Chaincode decoded.
@@ -270,7 +283,7 @@ And we also have the Ultra Prune episode with Peter, which we'll link to.
 
 ## Why does Bitcoin converge on one chain?
 
-Host: 00:15:21
+Adam Jonas: 00:15:21
 
 Why does Bitcoin converge on one chain?
 You would imagine that miners are competing and often flooding the network with different chains because they want to get the miner reward.
@@ -280,9 +293,9 @@ Mark Erhardt: 00:15:35
 
 Miners spend an actual real-world cost to do mining.
 They have to first buy hardware, and then they spend electricity, which cannot be converted back from the Proof-of-Work they've done to perform Proof-of-Work.
-So they have a real world cost and they only get paid when they find blocks - blocks that are part of the best chain and mature for at least 100 blocks because coinbases only get coinbase(?) rewards.
+So they have a real world cost and they only get paid when they find blocks - blocks that are part of the best chain and mature for at least 100 blocks.
 
-Host: 00:16:04
+Adam Jonas: 00:16:04
 
 To be clear, we have to probably differentiate between pools and miners because there's not a lot of solo miners out there, so when we're saying they, it's probably pools.
 Miners get paid in a different way, which we'll maybe go into in another episode.
@@ -297,7 +310,7 @@ It turns out that if you try to compete against the whole network that has conve
 There was a widely regarded [paper](https://www.cs.cornell.edu/~ie53/publications/btcProcFC.pdf) on selfish mining a while ago, and it shows that once you have 33% of the total global hashrate, it can be profitable to do shenanigans in that way.
 But if we're assuming that miners and operators do not control that much hashrate, or (are) not interested in playing games, they usually always are incentivized to just continue the best chain they know of, because competing will make them less money.
 
-Host: 00:17:27
+Adam Jonas: 00:17:27
 
 Makes sense, so that's why miners accept blocks found by other miners because it's just in their best economic interest.
 
@@ -308,7 +321,7 @@ So this actual real-world cost is actually one part of the incentives to work fo
 
 ## Will we always find a new block?
 
-Host: 00:17:54
+Adam Jonas: 00:17:54
 
 So we have this system where miners are looking for blocks and there's quite a variance in when blocks are actually found.
 How can we be sure that there's actually going to be another block found?
@@ -335,7 +348,7 @@ Mark Erhardt: 00:19:30
 I think it's very important to note that every miner is working on a completely unique set of block templates.
 Why is that?
 When miners try to get paid, they build the first transaction in the block, the coinbase transaction, and it's the only transaction that's allowed to have no inputs.
-What it does is it pays out the transaction fees and the block subsidy - the block reward in total - to the miner's address, right?
+What it does is it pays out the transaction fees and the block subsidy - the block reward in total - to the miner's address.
 When a miner builds a block template, they include their own address as the recipient of the reward in their template.
 When they find a valid block, this transaction is included, so each miner pays themselves.
 By winning the distributed lottery and becoming the sole author of the block at a specific height, they get to print new money - up to the block subsidy amount - and send it to themselves.
@@ -347,7 +360,7 @@ So no miner will ever repeat the work of other people.
 I've just shown you that it has (approximately) some 330 bits of entropy, which is bigger than 256 bit of the digest space.
 So I think we're good, we will be able to find some input.
 
-Host: 00:21:36
+Adam Jonas: 00:21:36
 
 For a while.
 
@@ -355,7 +368,7 @@ Mark Erhardt: 00:21:38
 
 Yeah, up to the [Eschaton Block](https://bitcoin.stackexchange.com/questions/119223/is-there-a-well-defined-last-block), right?
 
-Host: 00:21:41
+Adam Jonas: 00:21:41
 
 It's not like Satoshi foresaw that there would be this much hashrate on the network because otherwise the nonce-space would be bigger, right?
 
@@ -363,12 +376,12 @@ Mark Erhardt: 00:21:49
 
 Right, right, right.
 But the difficulty and the hashrate grow in tandem, right?
-In fact, the hashrate grows and that makes the difficulty rise to meet the new hashrate to reset the interval to roughly 10 minutes, right?
+In fact, the hashrate grows and that makes the difficulty rise to meet the new hashrate to reset the interval to roughly 10 minutes.
 Unless suddenly overnight, 90% of the hashrate drops off the face of the earth.
 Even then, they just need to take about 10 times as long until they find the random block template that happens to hash to a valid block.
 Then given that there's a ton of people waiting with their transactions at that point, they'd be incentivized to add more hashrate and it would be settled.
 
-Host: 00:22:28
+Adam Jonas: 00:22:28
 
 We saw a little bit of this with the Bcash forks and playing around with trying to adjust the hashrate to the difficulty, and it got a little messy on that chain.
 
@@ -376,7 +389,7 @@ Mark Erhardt: 00:22:37
 
 But it was pretty smooth on the Bitcoin side, actually.
 
-Host: 00:22:40
+Adam Jonas: 00:22:40
 
 Well, the market took care of that for us.
 Great.
