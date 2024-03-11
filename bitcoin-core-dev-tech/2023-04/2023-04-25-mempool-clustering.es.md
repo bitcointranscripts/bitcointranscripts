@@ -2,11 +2,10 @@
 title: Agrupación de Mempool 
 translation_by: Blue Moon
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'mempool']
+tags: ['cluster-mempool']
 date: 2023-04-25
 speakers: ['Suhas Daftuar', 'Pieter Wuille']
 ---
-
 ## Problemas Actuales
 
 Muchos problemas en el mempool
