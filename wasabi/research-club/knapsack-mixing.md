@@ -44,7 +44,7 @@ So there's nothing in Bitcoin that bars us from doing this currently at the mome
 So how does this look like?
 On our left we have two unique transactions by two individuals and I've highlighted in red the output that likely represents sending funds to a third party or to someone else.
 And on the right, what we do is we just take those inputs and outputs and we merge them into a single transaction.
-Now when we look at this from the outside we have to ask ourselves is it possible to unravel the previous transaction that we, the two sub transactions we merged together.
+Now when we look at this from the outside we have to ask ourselves is it possible to unravel the two sub transactions we merged together.
 So we can start by taking an output like this one here, valued at 50, and we could try to find inputs that exactly match the value of the sum of the outputs.
 So in this case, we try these two and it turns out there's no way we could come up with an output on the right that would match the two inputs on the left.
 And we try again and we find that yes, actually we can break this transaction down into two pieces once again because we see that the bottom two inputs and the bottom two outputs equal exactly 64 and the top two inputs and two outputs exactly equal 33.
@@ -90,13 +90,13 @@ What that means is that a non-derived sub-transaction is a sub-transaction that 
 
 Speaker 0: 00:06:35
 
-So the way that we look at anonymity or privacy in this model is we essentially take a transaction which has all these inputs and outputs And it has all these mappings, all the possible ways we could cut up the transaction.
+So the way that we look at anonymity or privacy in this model is we essentially take a transaction which has all these inputs and outputs. And it has all these mappings, all the possible ways we could cut up the transaction.
 And we essentially say that a specific coin on the left-hand side and any other coin on the right-hand side or on the left-hand side is linked to that coin in a probabilistic way depending on how many mappings, of the total mappings there are, how many of them include the two coins being in the same sub-transaction.
 So I think there's probably an easier way to think about this.
 Here it is formalized in the paper, but intuitively it makes a lot of sense.
 And I think we'll see an example of it in just the next slide.
 But that's the idea, it's a probabilistic framework.
-So in this case here, If we go back and recreate what we did, and we split these up into two sub-transactions, we would say that, for example, Output 3 is directly linked to input 3 with 100% probability, because there's only one way to partition this coin join.
+So in this case here, if we go back and recreate what we did, and we split these up into two sub-transactions, we would say that, for example, output 3 is directly linked to input 3 with 100% probability, because there's only one way to partition this coinjoin.
 And output 3 appears with input 3 100% of the time.
 And we'll see later how that can be done differently.
 
@@ -106,7 +106,7 @@ Speaker 0: 00:08:06
 
 So in the paper, they essentially create a bunch of random transactions and then essentially purposefully combine them together, and then observe the time it takes to recreate the sub-transactions from the coupled transactions.
 So here we see that in the orange, if you have five sub-transactions with four inputs each, that takes about a second for a computer to be able to unravel that coin joining to its relevant sub-transactions.
-And then we notice here that the number of non-derived mappings isn't very high, even as there are as many as four or five sub-transactions because, like we did in the first example, we can typically unravel coin joints and have very little overlap in terms of other ways we could map inputs and outputs.
+And then we notice here that the number of non-derived mappings isn't very high, even as there are as many as four or five sub-transactions because, like we did in the first example, we can typically unravel coinjoints and have very little overlap in terms of other ways we could map inputs and outputs.
 So in here we see that only with 6 sub-transactions and 4 inputs per sub-transaction do we see more than just a few non-derived mappings.
 
 ## Idea #2 - Knapsack Mixing
