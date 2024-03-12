@@ -7,14 +7,14 @@ speakers: ["NVK","Rijndael","Antoine Poinsot","James O'Beirne","Ben Carman"]
 categories: ["podcast"]
 date: 2023-02-11
 ---
-Introduction
+## Introduction
 
 NVK: 00:00:40
 
 Today we have an absolute all-star panel here.
-We're going to be talking about the Bitcoin OP_Vault.
+We're going to be talking about the Bitcoin `OP_VAULT`.
 It's a new proposal by James.
- any new proposals to Bitcoin, there is a lot to go over.
+And like any new proposals to Bitcoin, there is a lot to go over.
 And It's a very big, interesting topic.
 So today we have Rijndael.
 
@@ -32,7 +32,7 @@ We have Ben de Carman, a return guest.
 Ben: 00:01:26
 
 Hey, thanks for having me on again.
-I'm guessing I'm here because I posted to the mail as well how you could do  the CTV optimization with, for DLCs, you can optimize them with Covenants and I showed how you could do it with OpVaults as well.
+I'm guessing I'm here because I posted to the mail as well how you could do the CTV optimization with, for DLCs, you can optimize them with Covenants and I showed how you could do it with `OP_VAULT`s as well.
 
 NVK: 00:01:42
 
@@ -54,7 +54,7 @@ James: 00:02:03
 Hey guys.
 I'm a Bitcoin developer.
 I spend a lot of my days working on core, but for the last few years, I've been really interested in custody systems and the promise of vaults.
-And last year, I actually implemented a similar vault design on top of OP_CTV, which I'm sure we've covered at some point on the show.
+And last year, I actually implemented a similar vault design on top of `OP_CTV`, which I'm sure we've covered at some point on the show.
 But I was kind of dissatisfied with those implementations for various reasons, and so decided to come up with this proposal.
 So just want to say that to make this a lively discussion, you should do your best to rip into this and you won't offend me, kind of regardless of whatever you say,  NVK said, any new proposal for Bitcoin has to be kind of shredded apart and scrutinized.
 So totally ready and welcoming of that.
@@ -62,24 +62,24 @@ So totally ready and welcoming of that.
 NVK: 00:02:57
 
 So guys, there is a lot of confusion because there's a lot of stuff going on in terms of the Bitcoin Twitter drama and Bitcoin list.
-I think a lot of people  me had the list muted for a few months due to tail emissions, RBF, there's been a lot of stuff that happened in the last few months.
-So I kind of got the vibe that a lot of people  kind of missed OP_Vault, some of the discussions that happened because it was kind of  lost in the noise.
-And also sort of  confuses it with  the ordinals and all this other stuff.
- we just posted some questions this morning on Twitter.
+I think a lot of people like me had the list muted for a few months due to tail emissions, RBF, there's been a lot of stuff that happened in the last few months.
+So I kind of got the vibe that a lot of people  kind of missed `OP_VAULT`, some of the discussions that happened because it was kind of  lost in the noise.
+And also sort of confuses it with the ordinals and all this other stuff.
+We just posted some questions this morning on Twitter.
 And we were sort of  talking about ordinals.
 
-## Overview of OP_VAULT
+## Overview of `OP_VAULT`
 
 NVK: 00:03:40
 
 So let's just sort of  box in.
-What is OP_Vault?
+What is `OP_VAULT`?
 The elevator pitch first, just so we can get people to just sort of get it.
 
 James: 00:03:49
 
 Yeah, so I guess I can field this one.
-To be really brief, op_Vault is basically just a really practical, low overhead way of introducing this way that you can lock up your coins in such a way that if you wanna spend those coins, you have to navigate through this delay period.
+To be really brief, `OP_VAULT` is basically just a really practical, low overhead way of introducing this way that you can lock up your coins in such a way that if you wanna spend those coins, you have to navigate through this delay period.
 You have to wait for the coins to kind of settle, aside from the fact that you can sweep it at any time before that final withdrawal to a pre-specified, what I call, recovery path.
 So the idea is, you can set up your coins to have some ultra secure, totally impractical, completely offline recovery wallet, or you could even do something kind of interesting  have a social recovery type thing where your friends hold keys and maybe you need three out of five friend signatures to actually recover the coins or something.
 So basically it just gives you a way of introducing, key storage or a fallback mechanism that  isn't really practical for day to day use.
@@ -95,7 +95,7 @@ So  you kind of have  an if and else sort of  if this, then that kind of thing o
 Right.
 So I'll give a very brief example.
 Say, for example, I put the coins in this script, right?
-This oP_vault that uses oP_vault that says, you can only spend one BTC per block.
+This `OP_vAULT` that uses `OP_vAULT` that says, you can only spend one BTC per block.
 And if you try to do more, I'm going to send the coins to this other address.
 That is  a recovery.
 So for example, if somebody tries to send more, the coins are going to simply go somewhere else.
@@ -127,24 +127,24 @@ I've got my stash in cold storage and I just want to have really good security f
 NVK: 00:07:56
 
 So how does the blockchain know what's going on?
-How does, because this is not  we have a Turing complete between quotes blockchain contract system here.
+How does, because this is not like we have a Turing complete between quotes blockchain contract system here.
 So how does your script know that somebody tried to do something?
 And what, how does it know what to do next?
 And how does that get triggered?
 
 James: 00:08:17
 
-Yeah, so NVK, to get back to the example you brought up earlier, which is this idea of kind of  thresholding some kind of transfer rate, I just want to be clear that OpVault doesn't actually get into specifying things  thresholds because that gets really, really complicated.
+Yeah, so NVK, to get back to the example you brought up earlier, which is this idea of kind of  thresholding some kind of transfer rate, I just want to be clear that `OP_VAULT` doesn't actually get into specifying things  thresholds because that gets really, really complicated.
 And Antoine can probably talk about that because Revault is a way of basically enabling very fine grained thresholding and spending conditions kind of at a higher layer with multi-sig.
 Now, Re-Vault could probably make use of Op-Vault almost certainly.
-And actually, if you wanted to do the scheme that you were talking about where you're thresholding some transfer amount sort of per block, It's possible you could  tranche up your coins into different OpVault invocations, but I'm not as sure about that.
-But OpVault is a much more kind of simple mechanism than Specimen Exertion.
+And actually, if you wanted to do the scheme that you were talking about where you're thresholding some transfer amount sort of per block, It's possible you could tranche up your coins into different `OP_VAULT` invocations, but I'm not as sure about that.
+But `OP_VAULT` is a much more kind of simple mechanism than Specimen Exertion.
 
 Rijndael: 00:09:15
 
-Yeah, Maybe something that might help explain OpVault is maybe we can spend a few minutes talking about how you would do a system  this today with just multi-sig and ephemeral keys and pre-signed transactions.
+Yeah, Maybe something that might help explain `OP_VAULT` is maybe we can spend a few minutes talking about how you would do a system like this today with just multi-sig and ephemeral keys and pre-signed transactions.
 Because all of these use cases that we're talking about, you could actually do today, but there's some real trade-offs in terms of liveliness, availability, and security of funds.
-And I think what James' OpVault proposal does, or NVK, if I can say the C word on your show, what other Covenant proposals enable, is letting you get rid of some of those trade-offs by having consensus rules encoded.
+And I think what James' `OP_VAULT` proposal does, or NVK, if I can say the C word on your show, what other Covenant proposals enable, is letting you get rid of some of those trade-offs by having consensus rules encoded.
 
 NVK: 00:09:52
 
@@ -157,23 +157,23 @@ In a Miami meetup during the conference last time.
 And I don't think most people even know about that, aside from people who are very close to core work.
 So maybe we can touch up on it, but I'm not sure if there is much value in sort of  expanding too much on that.
 
-## Practical examples of OP_VAULT
+## Practical examples of `OP_VAULT`
 
 NVK: 00:10:34
 
 Why don't you give us  some some examples of what you could do right now?
- give us some practical stuff.
+Give us some practical stuff.
 
 James: 00:10:41
 
- as a 30 second kind of overview of how you could do vaults today.
-There are really  two techniques.
+As a 30 second kind of overview of how you could do vaults today.
+There are really two techniques.
 Number one is to generate these temporary keys and basically use those keys to sign, a number of transactions that spend coins in certain ways.
 And then you delete those keys.
 And so after you've sent the coins into those transactions that are controlled by the keys that you just deleted, they're basically locked into a covenant structure.
-The other thing that you can do is kind of  the way that Revault works, where you have sort of a big array,  a big multi-sig setup.
+The other thing that you can do is kind of the way that Revault works, where you have sort of a big array, a big multi-sig setup.
 And some of those keys are controlled by computers that will just kind of auto sign on the basis of certain conditions.
-An so I think in the in the pre-signed transaction ephemeral key thing it's tricky because  you say key deletion is really tough and you have to kind of , you're locked into all the parameters that you choose when you're creating the vault,  what key it's going to get transferred to, what amount, who's managing the fees, and you have to keep track of all that transaction information.
+An so I think in the in the pre-signed transaction ephemeral key thing it's tricky because you say key deletion is really tough and you have to kind of, you're locked into all the parameters that you choose when you're creating the vault, what key it's going to get transferred to, what amount, who's managing the fees, and you have to keep track of all that transaction information.
 And then if you're going to go with the more  sort of flexible revault implementation, there's a big infrastructure burden, or I mean, bigger infrastructure burden in terms of  running all those auto signers and making sure everything's online and available and all that.
 
 Antoine: 00:11:59
@@ -195,16 +195,16 @@ Whereas if it's encoded in a covenant, you can check it on your signing device.
 NVK: 00:14:29
 
 I mean, all computers are compromised.
-, I mean, we're past that point now and the incentives are to become further compromised by even more actors compromising them, right?
+I mean, we're past that point now and the incentives are to become further compromised by even more actors compromising them, right?
 Because now the money is in the computer and more people have the money in their computers.
 
 ## Anchors and fee management mechanisms
 
 NVK: 00:14:44
 
-So let's say that we have oP_vault gets in, right?
+So let's say that we have `OP_vAULT` gets in, right?
 And also anchors so that we can change fees.
-Because you can't realistically have oP_vaults without having a way to changing fees or adding more fees.
+Because you can't realistically have `OP_vAULT`s without having a way to changing fees or adding more fees.
 
 James: 00:14:57
 
@@ -224,14 +224,14 @@ Do you want to give us  a quick Brief on that?
 James: 00:15:15
 
 Yeah, sure.
-So basically in OpVault, you have to make a decision about whether your recovery path is authenticated or not.
+So basically in `OP_VAULT`, you have to make a decision about whether your recovery path is authenticated or not.
 And what I mean by that is so when you create the vault, you have to declare  where the funds can be recovered to.
-In OpVault, you can optionally specify an additional script that has to be satisfied to even trigger that recovery.
-And so the reason originally that we needed anchors for fee management in OpVault was if you're doing what I call an unauthenticated recovery, which is basically just , if someone knows your recovery path, the way that OP_Vault works is when you create the vault, you hash the recovery path, and then you add that as a parameter.
+In `OP_VAULT`, you can optionally specify an additional script that has to be satisfied to even trigger that recovery.
+And so the reason originally that we needed anchors for fee management in `OP_VAULT` was if you're doing what I call an unauthenticated recovery, which is basically just , if someone knows your recovery path, the way that `OP_VAULT` works is when you create the vault, you hash the recovery path, and then you add that as a parameter.
 So basically  the ability to recover is correlated with the ability to reveal that pre-image.
 So if you do that you can sweep.
 So it's sort of  you're not to get really technical you're not signing it with Sighash all and so there's some  pinning problems that can happen.
-But what I found was that if you actually requir an authorization for the recovery if you choos some key It could be based on  sort of a passphrase you memorize or a wallet that sits in your closet.
+But what I found was that if you actually require an authorization for the recovery if you choos some key It could be based on  sort of a passphrase you memorize or a wallet that sits in your closet.
 It's okay if it gets lost actually.
 But if you use that key, then you can basically roll in unrelated inputs and outputs to both the recovery and to the unvault transaction.
 And so you can use that as your fee management mechanism when you're actually doing the recovery or the unvaulting, you can roll in unrelated coins, or you can rely on the ephemeral anchor approach.
@@ -267,7 +267,7 @@ NVK: 00:17:45
 
 So  how would you practically do that?
 Because the vault might be 10 year sort of plan here?
- if people are doing this, they're thinking  they're kids, right?
+if people are doing this, they're thinking  they're kids, right?
 I guess you leave your key,  a key to a safe deposit box that has say, 1%, 5% of your stash in it, that is just sort of  the backup plan to handle things, because You don't know relative to your transaction how much that may cost in 20, 50 years from now, right?
 It could actually be a lot more than 5, 10% of the actual stash itself, depending on how the UTXO set is, right?
 So just curious,  how do you sort of  see that?
@@ -293,13 +293,13 @@ And this is actually fantastic.
 Because multi-sig is a shit coin.
 okay.
 we have a way now to handle the fees.
-Maybe it's, there is an oP_vault for the oP_vault.
- maybe there's a simpler oP_vault that you built that just handles fees in case you need more fees.
+Maybe it's, there is an `OP_vAULT` for the `OP_vAULT`.
+ maybe there's a simpler `OP_vAULT` that you built that just handles fees in case you need more fees.
 That's  your fee wallet.
 
 Rijndael: 00:19:58
 
-And the other thing that's really nice about oP_vault as opposed to other vaulting schemes that rely on pre-signed transactions is that you don't have to pre-bake them.
+And the other thing that's really nice about `OP_vAULT` as opposed to other vaulting schemes that rely on pre-signed transactions is that you don't have to pre-bake them.
 If you're DCAing into your savings every month or something, you can then have one unvault or a few and then a series of recovery transactions.
 That makes the fee management in the future more flexible than if every time you deposit into your savings, you have to pre-bake a transaction.
 And now you have hundreds of these things and you have to worry about, how do I do fee bumping across this set of hundreds of pre-signed transactions from the 20 years that I was DCAing or something.
@@ -313,8 +313,8 @@ How practically speaking would a user get a list of addresses or generate new ad
 James: 00:20:44
 
 Yeah, so you have a lot of choices there.
-And this is kind of where I need to spend a lot, I mean, we need to spend a lot of time thinking about  what kind of the recommended usage patterns are because let me describe to you  all the variability that you have in terms of what goes into an oP_vault address, right?
-So in simple terms, when you lock up coins in a vault, you're creating a pay-to-taproot transaction to a taproot script that looks  op-vault, and then the first parameter is the hash of your recovery path with that optional authorization key.
+And this is kind of where I need to spend a lot, I mean, we need to spend a lot of time thinking about  what kind of the recommended usage patterns are because let me describe to you  all the variability that you have in terms of what goes into an `OP_vAULT` address, right?
+So in simple terms, when you lock up coins in a vault, you're creating a pay-to-taproot transaction to a taproot script that looks  `OP_vAULT`, and then the first parameter is the hash of your recovery path with that optional authorization key.
 Second parameter is the spend delay.
 And the third parameter is the hash of the key that you use to actually trigger the unvault process.
 So that's what goes into the script.
@@ -329,7 +329,7 @@ And this is good.
 
 NVK: 00:22:20
 
- let's say we're doing this deterministically, right?
+Let's say we're doing this deterministically, right?
 Because that's the best way to generate addresses , and you don't want to dox the pile.
 So, I'm generating addresses there.
 And I'm depositing to new ones because I have this XPUB somewhere.
@@ -362,13 +362,13 @@ NVK: 00:23:42
 Exactly.
 This is beautiful that way.
 
-## Use cases for OP_VAULT
+## Use cases for `OP_VAULT`
 
 NVK: 00:23:44
 
 Yeah.
 So let's say we get it in.
- somehow we get it into Bitcoin.
+somehow we get it into Bitcoin.
 
 Antoine: 00:23:50
 
@@ -393,10 +393,10 @@ That would be also safe.
 James: 00:24:21
 
 And I know I'll have to hand it off to Rijndael to cover because I know he's got some, but I do have a few.
-Number one is  the brain dead improvement security that everybody could make at pretty much minimal effort, which is basically just introduce,  use OpVault and have your recovery path be a sort of separate hardware manufacturer kind of wallet technique than you have right now, even if it's as stupid as  some software wallet that you spun up on a computer one time, as long as it's not correlated with the way that you store your coins right now, there's essentially no cost.
+Number one is  the brain dead improvement security that everybody could make at pretty much minimal effort, which is basically just introduce,  use `OP_VAULT` and have your recovery path be a sort of separate hardware manufacturer kind of wallet technique than you have right now, even if it's as stupid as  some software wallet that you spun up on a computer one time, as long as it's not correlated with the way that you store your coins right now, there's essentially no cost.
 I mean, the cost that you pay is  a slight delay to spend your coins, but there's no cost to introducing kind of an uncorrelated path to do recovery.
 So really anybody could do that.
-The second pretty easy scenario to set up, which I think is pretty cool, is if you're worried about  a hostage situation, you can actually, and really, I mean, OpVault is kind of uniquely allows you to do this.
+The second pretty easy scenario to set up, which I think is pretty cool, is if you're worried about  a hostage situation, you can actually, and really, I mean, `OP_VAULT` is kind of uniquely allows you to do this.
 You can set up a configuration where let's say that your spend delay is a week.
 And let's say that your recovery path points to a taproot script, which is only spendable after a month.
 You can have a situation where you can prove to your attacker, hey, look, I can't touch these coins, even if you start the process moving.
@@ -471,7 +471,7 @@ There's a lot of moving pieces there, but because this is built on taproot, ther
 NVK: 00:28:48
 
 If we just use the imagination, the idea is I no longer need to make hardware wallets, right?
-, no, seriously, it's , I make a device that is a safe device for you to construct the transactions outside of computers, right?
+no, seriously, it's , I make a device that is a safe device for you to construct the transactions outside of computers, right?
 Or construct the scripts outside of computers.
 And you're in your starship going somewhere else, and the vault just exists in chain.
 And you just continue rolling, and nobody needs to touch it.
@@ -479,11 +479,11 @@ And it doles out funds based on your trust's actual trust rules.
 And you have trustee keys.
 And you can really represent the trust rules, for example, on a script.
 It really is not that hard so that you're complying with the law.
-And , it's quite amazing when you sort of really extend this out.
+And it's quite amazing when you sort of really extend this out.
 I know it's , there's a lot of moving parts and things, but I get excited about that because seeing users have single SIG plus passphrase being way more sane than cool multi-sig stuff that you can do, and people lose money with that.
 I think that what we have is amazing.
 It's an incredible upgrade from fiat and from gold vaults and things  that, but it's completely unsustainable.
- I cannot see,  a billion, two billion people, with  hardware wallets that look  the ones we make, maybe the cards, but , even then it's , there is a limit to this, right?
+I cannot see,  a billion, two billion people, with  hardware wallets that look  the ones we make, maybe the cards, but , even then it's , there is a limit to this, right?
 And most people also won't have enough money or wealth that will be worth the device.
 And we can make sort of  poor people's vaults.
 Right?
@@ -519,7 +519,7 @@ And it's not a non-trivial number.
 Rijndael: 00:31:56
 
 Well, the reason why I started talking to James about this is I think that a really underappreciated use case of vaults is for inheritance planning.
- everybody has this problem of I want to make sure that either my kids or my wife or whomever can get to my Bitcoin if I get hit by a bus.
+everybody has this problem of I want to make sure that either my kids or my wife or whomever can get to my Bitcoin if I get hit by a bus.
 But I also don't want to have  a spat with my wife and then she runs away with all my Bitcoin.
 Or I don't want my kids to decide that they want a new car and they  go upstairs into the family firebox and  steal all the Bitcoin.
 So it'd be really great if I could give my kids or my heirs or whomever some easy way to get to my Bitcoin, but there's time as an additional sort of authentication factor.
@@ -560,8 +560,8 @@ And then
 
 Rijndael: 00:34:19
 
-it's so simple.
- there's not many moving parts.
+It's so simple.
+There's not many moving parts.
 
 NVK: 00:34:22
 
@@ -610,7 +610,7 @@ Well, I think the challenge is sort of this thing of I think there's been enough
 But I think when you start getting into more interesting scripts and more interesting spend paths, people are less sure about How do I back up my descriptors or whatever other metadata I need to actually spend those coins?
 And so, there's a lot of just, people are figuring out new places to hide a piece of metal with seed words stamped on them.
 We haven't really gotten to that level of creativity for what do I do with my descriptor?
- I haven't seen somebody, tattoo their blood type and their descriptor on their butt cheek yet.
+I haven't seen somebody, tattoo their blood type and their descriptor on their butt cheek yet.
 But I'm sure it's coming.
 And I think that how we back up that metadata is a super important question.
 
@@ -629,16 +629,16 @@ And just every time we start thinking about practical security, we try to go bac
 Seriously, this is how we think about this stuff.
 And it's OK, I am a guy trying to flee some country that's in war, and computers are not available or compromised.
 I need to take my money with me and I have to go naked.
-How do you actually go through that process, based on this complex stuff and that kind of leads me to the further picking and risks that I'm trying to sort of think through on OpVault are the practical ones.
+How do you actually go through that process, based on this complex stuff and that kind of leads me to the further picking and risks that I'm trying to sort of think through on `OP_VAULT` are the practical ones.
 
-## OP_VAULT practical applications
+## `OP_VAULT` practical applications
 
 NVK: 00:38:42
 
 I think we can still go through a little bit more of the technical stuff in terms the actual, interesting parts of how this works, but the practical stuff, needs a lot of thoughts still.
- how do you manage these keys?
+How do you manage these keys?
 How do you manage the nuclear codes?
-Do you do an op-vault, on op-vault, on op-vault?
+Do you do an `op_vAULT`, on `op_vAULT`, on `op_vAULT`?
 So  you have some recursive way of  moving stuff around.
 How would wallet UXs address the vaults and create all the stuff?
 And, what kinds of things you guys have sort of thought through in this sort of practical space?
@@ -648,19 +648,20 @@ James: 00:39:30
 I think that's a lot of the work that remains to be done.
 I mean, I think the framework right now gives the end user a lot of configurability.
 And in designing it, I'm trying to avoid any particular configuration that would be just blatantly unsafe and any use that just wouldn't make any sense.
-But at the same time, I mean, things for your recovery path, are you using a static address there or are you varying it over a descriptor, that does have implications.
+But at the same time, I mean, things like for your recovery path, are you using a static address there or are you varying it over a descriptor?
+That does have implications.
 Is your optional recovery off parameter, is that derived from maybe the descriptor of your cold wallet?
 Or is that a separate key that has its own life cycle and is independent?
 All these choices do have implications.
 And I think we're really going to have to spend the next year, a few years, kind of figuring out what the right usages are and  really nailing those.
 But my concern, you have to balance kind of getting the usages exactly right with the fact that right now custody for everybody is nerve-wracking.
 It's totally nerve-wracking.
-Jameson Lopp has this great article where he talks about vaults, a little bit about the history, a little bit about OpVault.
+Jameson Lopp has this great article where he talks about vaults, a little bit about the history, a little bit about `OP_VAULT`.
 And he introduced this framework for thinking about things, which is right now we have proactive security, which is you do your best to build your fortress, set up your keys in the right way.
 But I mean notable developers have been compromised and it's probably that they went to great lengths to do this proactive security and build this wonderful fortress that fell down.
-Something OpVault gives you reactive security where you can see, okay,  I've been compromised, an attack is happening, what can I do about it?
+Something `OP_VAULT` gives you reactive security where you can see, okay,  I've been compromised, an attack is happening, what can I do about it?
 How am I going to respond?
-And so OpVault's really the first on-chain mechanism for doing something like that.
+And so `OP_VAULT`'s really the first on-chain mechanism for doing something like that.
 And I think we have an acute need for it, especially at the corporate level.
 look, I mean, individuals holding Bitcoin is my favorite and most important use case, but , we all know that micro strategy holds a lot of Bitcoin, one plausible argument for a better future is for someone  like America, to hold Bitcoin as a reserve in their central bank.
 To do things that, you need an ironclad nuclear level strategy.
@@ -683,8 +684,8 @@ Because this is a very easy to steal asset.
 its best feature is its solubility and, fungibility and transportability.
 So how do you do that cheaper, which everybody cares about, and safer
 And I think this is great for enterprise that has to deal with insurance.
-And soon enough, we're going to see even individuals seeking insurance
-That's what the guys from  Anchor Watch and things  that are trying to do.
+And soon enough, we're going to see even individuals seeking insurance.
+That's what the guys from  AnchorWatch and things like that are trying to do.
 But it's hard, because you can't prove that you lost a key.
 You can't prove that it was not a boat accident.
 It's very tricky, say the cops break into your house because somebody did a swatting on you, and they opened your safe, and they took a look at the keys.
@@ -698,15 +699,15 @@ Now, I think we can do a lot more complex stuff.
 And, that's why I brought Ben here.
 Ben is interested in the shitcoining layer of Bitcoin.
 I'm just kidding.
-He's going to talk a little bit about DLCs and lightning stuff and all the things that we could maybe do with OpVault as another primitive in Bitcoin.
+He's going to talk a little bit about DLCs and lightning stuff and all the things that we could maybe do with `OP_VAULT` as another primitive in Bitcoin.
 
 ## Covenants and discreet log contracts
 
 Ben: 00:44:34
 
-Yeah, I mean, to preface it if we want to do all this stuff, we probably don't want to use OpVault for it.
+Yeah, I mean, to preface it if we want to do all this stuff, we probably don't want to use `OP_VAULT` for it.
 We should use  CTV or APO or I mean, things that are  more custom tailored for it.
-The way you do it with OpVault is kind of a hack.
+The way you do it with `OP_VAULT` is kind of a hack.
 But basically , we want these primitives where, today with  Bitcoin script, you can't really say it has to be spent.
 It's only locking it under these conditions.
 You're not saying it must be spent with this amount or to this address and anything  that.
@@ -805,7 +806,7 @@ you could deposit in the Coinbase and do the bet and then, withdraw, but we saw 
 We saw, the other thousand before them worked out as well.
 we need to kind of wait to do this natively.
 And I think there is demand  and the shitcoin space,  a lot of people are using , all their trading stuff on there That's  a uni swap and blah blah blah just to  trade stuff quote-unquote trustlessly 
-So there actually is demand for this and it seems I'd rather people use Bitcoin than shitcoins to do it So I hope...
+So there actually is demand for this and I'd rather people use Bitcoin than shitcoins to do it.
 
 James: 00:52:15
 
@@ -880,14 +881,14 @@ So
 
 Rijndael: 00:56:18
 
-I mean  one of the things I like about the oP_vault proposal is that I think it is more specific, and I think it's easier for people to see a straight line from that proposal to actually use cases that gain market traction and actually add value for Bitcoin users.
+I mean  one of the things I like about the `OP_vAULT` proposal is that I think it is more specific, and I think it's easier for people to see a straight line from that proposal to actually use cases that gain market traction and actually add value for Bitcoin users.
 I think you can have a really good debate about, do we want to have a really general purpose covenant structure that takes a long time to figure out if it's safe, or do we want to just hold tight for simplicity?
 If the goal is that eventually we're going to have either super general covenants or simplicity but that's in the future, I think there's a reasonable case to be made that okay, in the near term, let's do something sooner that adds value now but doesn't try to go 90% of the way to a super general purpose covenant scheme.
-I think I'd be less inclined to say, let's do really super generic covenants and then also try to do simplicity, because there's a little bit too much overlap there, whereas something  like OpVault, I think, is much more targeted and kind of adds value to that.
+I think I'd be less inclined to say, let's do really super generic covenants and then also try to do simplicity, because there's a little bit too much overlap there, whereas something  like `OP_VAULT`, I think, is much more targeted and kind of adds value to that.
 
 James: 00:57:24
 
-I'm definitely gonna shill OpVault in the short term, but I do think, I mean, if you look at the patch set for CTV. 
+I'm definitely gonna shill `OP_VAULT` in the short term, but I do think, I mean, if you look at the patch set for CTV. 
 it's a very well-scoped, limited change.
 A lot of people have spent a lot of time, trying to pick it apart.
 God knows everybody wants to dunk on Jeremy.
@@ -897,7 +898,7 @@ Rijndael: 00:57:41
 
 And there's money there to be made if you bring the problem.
 
-## OP_VAULT benefits
+## `OP_VAULT` benefits
 
 NVK: 00:57:44
 
@@ -905,11 +906,11 @@ So just before we go into activation and a path to sale, it's a sales job, one m
 Because right now Lightning doesn't scale, right?
 I mean , it's cute and all we can have say a hundred to  50 million people using it, but we cannot have say  half a billion people using Lightning.
 It's  actually impossible.
-So do we get some extra sort of  breathing room on Lightning with OpVault?
+So do we get some extra sort of  breathing room on Lightning with `OP_VAULT`?
 
 James: 00:58:24
 
-I think it's plausible that OpVault might help to compress the witness sizes for Lightning transactions a little bit.
+I think it's plausible that `OP_VAULT` might help to compress the witness sizes for Lightning transactions a little bit.
 But to be honest, I think that might be marginal.
 I mean, you'd need someone who's really in the weeds on Lightning to sit here and tell you whether or not there is some kind of significant kind of game changing improvement there.
 But from my impression, I think it's it'd be a nice little marginal compression maybe, but it wouldn't be  a game changer.
@@ -930,18 +931,18 @@ James: 00:59:25
 So the trade off there, if you do sort of more low level granular opcodes,  TLOV or check outputs, then everybody comes up with this standardized vault construction that you have to encode in script.
 And everybody's basically doing the same thing, but the script sizes are huge.
 And so these transactions end up being very costly.
-And I'm not even sure, to be honest, if you can get the same behavior from OpVault that you can just with those two opcodes, because there is some special logic around supporting immediate re-vaults during un-vaults and things like  that.
-So it's, I think  something  vaults is a really good example of even if you had the super futuristic flying car covenants, it's , well, maybe you still want to op_vault because it's a very common usage that you want to compress.
+And I'm not even sure, to be honest, if you can get the same behavior from `OP_VAULT` that you can just with those two opcodes, because there is some special logic around supporting immediate re-vaults during un-vaults and things like  that.
+So it's, I think  something  vaults is a really good example of even if you had the super futuristic flying car covenants, it's , well, maybe you still want to `Op_vAULT` because it's a very common usage that you want to compress.
 
 Antoine: 01:00:19
 
 Well, we don't know if it's yet a very useful, very used, well, very common use case.
 We don't know yet.
-And I don't think, well, I'm not buying that it would be so much more expensive to do with WP-5D to verify what you're doing with OpVault.
+And I don't think, well, I'm not buying that it would be so much more expensive to do with WP-5D to verify what you're doing with `OP_VAULT`.
 
 James: 01:00:34
 
-It could be, buT, nobody's shown me the scripts,  nobody's written me the scripts,  Show me the code.
+It could be, but, nobody's shown me the scripts,  nobody's written me the scripts,  Show me the code.
 People come up with these highfalutin proposals and it's , okay, maybe that sounds good and if I squint at it, I can interpret it in such a way, but , where are the patches?
 
 Rijndael: 01:00:51
@@ -953,9 +954,10 @@ Antoine: 01:00:52
 
 Yeah.
 I agree.
-I agree with regard to the implementation and that's something that I was, I was wanting to, to look into, I wanted to implement a Taply Third Date Verify on ReVault,  just implementing ReVault with Taply Third Date Verify, which would basically give upvault in a bit more generic way, but I never came to do it.
+I agree with regard to the implementation and that's something that I was wanting to look into, I wanted to implement a `OP_TAPLEAF_UPDATE_VERIFY` on ReVault.  
+Just implementing ReVault with `OP_TAPLEAF_UPDATE_VERIFY`, which would basically give `OP_vAULT` in a bit more generic way, but I never came to do it.
 But AJ in this original Taply Third Date Verify post as a vault construction that is close.
-Well, it's not really a freeze all my funds recovery path  you have on Opvaults, but it's a revault path that keeps revolting.
+Well, it's not really a freeze all my funds recovery path  you have on `OP_vAULT`s, but it's a revault path that keeps revolting.
 It's a decent vault construction with the detail of the scripts that seems to work.
 
 James: 01:01:34
@@ -986,11 +988,11 @@ And, Personally, if I could do this for my own funds, I would sleep a lot better
 There's just a million different ways you can get popped.
 And I don't want to rely on having built the perfect fortress and pre-anticipated everything.
 And so I want to be able to have reactive security.
-And I think OpVault is today  kind of the most straightforward, easiest to use way to do that.
+And I think `OP_VAULT` is today  kind of the most straightforward, easiest to use way to do that.
 
 NVK: 01:03:24
 
-So , essentially you get end user, sort of  amazing security with like you can build some fairly safe, straightforward scripts that handle normal people's money problems.
+So , essentially you get end user, sort of amazing security with like you can build some fairly safe, straightforward scripts that handle normal people's money problems.
 You can have institutional problems resolved.
 You can create.
 
@@ -1009,7 +1011,7 @@ So, you get the DLCs
 we can finally have some interesting dynamic stable coins or any other kinds of dynamic contracts really being represented in the actual chain, right?
 Or protected by the chain.
 And we get some simplicity.
-I mean opVault it's a small patch.
+I mean `OP_VAULT` it's a small patch.
 It's a small, I mean, compared to other things that do covenants, this is my new school.
 I think, at least I have not bumped into very reasonable, very strong opposition from anybody who understands this stuff.
 So I don't know.
@@ -1239,8 +1241,8 @@ I mean,  it's just , I don't think my brain can comprehend what can be done with
 
 James: 01:20:03
 
-I think that's the thing, with I mean, so CTV,  you said, it's a very small patch set, but to your point, evaluating something  CTV, evaluating  Opcat,  these are very, they're simple mechanisms that can build a lot of different stuff.
-And the conceptual surface area of what can be built is a lot higher than a proposal  check, lock, time, verify, or oP_vault, where You can fuzz test the shit out of the interface and be reasonably certain that you've  kind of exercised the full span of the space that it enables.
+I think that's the thing, with I mean, so CTV,  you said, it's a very small patch set, but to your point, evaluating something  CTV, evaluating `OP_CAT`,  these are very, they're simple mechanisms that can build a lot of different stuff.
+And the conceptual surface area of what can be built is a lot higher than a proposal  check, lock, time, verify, or `OP_vAULT`, where You can fuzz test the shit out of the interface and be reasonably certain that you've  kind of exercised the full span of the space that it enables.
 Whereas  with these more open ended things, it's harder to get an intuition for what's actually possible.
 
 NVK: 01:20:49
@@ -1278,7 +1280,7 @@ Because also it's trying to do something completely different.
 And I think Galaxy Brain sort of starts to get a little lost in what's acceptable to a certain purpose versus another.
 And a lot of the pushback into new features and things on Bitcoin comes from this sort of , hey, can we not break this incredible amazing thing by just adding this one more thing that we really want.
 Maybe this is a good segue to sort of start thinking , OK, great.
-Let's say Opvault,  extreme low risk, at least it is in my view, adds an incredible amount of security that Bitcoiners are going to need, if we don't want to go to jail or get killed for our coins.
+Let's say `OP_vAULT`,  extreme low risk, at least it is in my view, adds an incredible amount of security that Bitcoiners are going to need, if we don't want to go to jail or get killed for our coins.
 And I think that on itself is the sale pitch.
 It's , listen, you don't want to get killed, kidnapped or  arrested
 For your coins.
@@ -1324,7 +1326,7 @@ Are you going to have Casey on?
 Yes.
 Oh, that'll be fun.
 
-## Activating OP_VAULT
+## Activating `OP_VAULT`
 
 NVK: 01:23:03
 
@@ -1381,7 +1383,7 @@ Completely.
 Look,  I work on core as my full time job and I have to routinely reread, the BIPS for SegWit and Taproot because I forget all the details, and I forget all the nuance.
 And when the ordinals and the inscriptions came out, I forgot that Taproot had removed the 10,000 byte limit on witness scripts.
 So these changes are massive.
-OP_vault, not massive.
+`OP_vAULT`, not massive.
 And I hope activation can be,
 
 NVK: 01:25:23.
@@ -1423,8 +1425,8 @@ Even if it was  maybe  not fully featured?
 
 Ben: 01:27:56
 
-I think something to keep in mind as well is  we don't have to do OpVault and that's it for Covenants.
-we could do OpVault and TTV and APO.
+I think something to keep in mind as well is  we don't have to do `OP_VAULT` and that's it for Covenants.
+we could do `OP_VAULT` and TTV and APO.
 
 Ben: 01:28:04
 
@@ -1436,7 +1438,7 @@ NVK: 01:28:06
 But the way that the people  if you use some EQ here, right, the way that...
 A lot's true.
 Yes.
-Listen,  Bitcoin is politics.
+Listen, Bitcoin is politics.
 It's people and you have to convince people.
 So this is why I'm asking.
 It's , what is the best way we can sort of  dip our toes into this?
@@ -1453,7 +1455,7 @@ So the implementation's all there.
 You can see exactly how it works.
 So my hope is that I can put it out there and people can spend time getting familiar with it, maybe sketch out some, really do some in-depth thinking on what the use cases actually look  for end users.
 And then hopefully it just becomes obvious that it's something we want and we activate it with a speedy trial or something like  that.
-But I think Antoine makes a good point about not activating too quickly, but I do wanna push back a little bit and say, look, I'm not wedded to OpVault.
+But I think Antoine makes a good point about not activating too quickly, but I do wanna push back a little bit and say, look, I'm not wedded to `OP_VAULT`.
 I came up with it,  it originated as a thought experiment.
 I just wanted a benchmark against , what would the perfect vault construction be?
 I wasn't even thinking about implementing it.
@@ -1479,12 +1481,12 @@ The point that I wanted to make, though, is that custody is a real problem right
 I mean, people are losing coins.
 Insurance is basically not doable.
 The situation right now is pretty bad, and we're all used to it, and so maybe we don't realize how bad it is, but it could be a lot better.
-So I'm not really wild about the prospect of waiting three years for some ultra-perfect covenant proposal to come along that  maybe kind of emulates OpVault, I think I'd  to put the proposal out there, see what the objections are.
+So I'm not really wild about the prospect of waiting three years for some ultra-perfect covenant proposal to come along that  maybe kind of emulates `OP_VAULT`, I think I'd  to put the proposal out there, see what the objections are.
 And if someone is , hey, I really don't  that we can, do this DLC thing with the pack
 
 NVK: 01:30:46
 
-if I have to , sort of  really address what I think it's gonna happen, is that it's not gonna necessarily, I don't think the criticism is gonna come regarding the actual nuances of OpVault
+if I have to , sort of  really address what I think it's gonna happen, is that it's not gonna necessarily, I don't think the criticism is gonna come regarding the actual nuances of `OP_VAULT`
 It's gonna be activation.
 Is the idea is , the problem is, I think Speedy Trial  pissed off enough people.
 Yep.
@@ -1503,7 +1505,7 @@ And you need the people who understand the code base to sort of upgrade it for n
 And there's all these things that need to change.
 when my good friend Steve says, fire the devs, I understand why it feels that way.
 And I kind of agree in a way because,  core, I addressed this in the last episode.
-It kind of feels  this, it's  Internet Explorer has 99% of the market.
+It kind of feels like this, it's like Internet Explorer has 99% of the market.
 It doesn't rule the internet, but kind of rules the internet.
 And, it has this sort of  bad taste by the CTV people as well, where, hey, if you don't get the right people on court to like your idea, It doesn't get activated to you.
 So these are the gatekeepers.
@@ -1513,7 +1515,7 @@ And very few people have the full picture of that code base.
 And those people are often not the best people who are selling themselves or selling the code
 So I think  Bitcoin is sort of  suffering at this right now.
 that's the current sort of  cold and sneeze that Bitcoin has.
-And, maybe OpVault is the simple thing that helps us find a better way of activating things and sort of talking about these things.
+And, maybe `OP_VAULT` is the simple thing that helps us find a better way of activating things and sort of talking about these things.
 So maybe James, you're very good at sort of  tech and also dealing with people.
 Maybe you should champion this.
 
@@ -1609,7 +1611,7 @@ But I don't know if you guys have other thoughts.
 Rijndael: 01:37:06
 
 Well, I mean, so another thing that is a relatively recent development is I think AJ set up Bitcoin Inquisition, which is,  let's proactively merge different software proposals into a SIGNET so that people can play with them on a shared network.
-And so unlike some of the more ambiguous, ambitious big change proposals, Because OpVault is really targeted at a very specific shape of use cases, maybe there's an easier path here of it ends up on something  Bitcoin Acquisition, people can build little dummy wallets, and normal users can get a little bit of stick time playing with what would custody in a post-oP_vault world look like and demonstrate that this is better.
+And so unlike some of the more ambiguous, ambitious big change proposals, Because `OP_VAULT` is really targeted at a very specific shape of use cases, maybe there's an easier path here of it ends up on something  Bitcoin Acquisition, people can build little dummy wallets, and normal users can get a little bit of stick time playing with what would custody in a post-`OP_vAULT` world look like and demonstrate that this is better.
 Even if you don't know whether or not the mechanic is trying to screw you, you can at least take it for a test drive first.
 There might be some stuff  that where it's less about how do we go and win the rhetorical fight on Reddit, and it's more about what can we do to incrementally de-risk their proposal so that the community understands what they're signing up for.
 
@@ -1653,7 +1655,7 @@ And so, yeah, I think that did put a very high, not high bar, but reasonable bar
 
 Rijndael: 01:40:03
 
-Well,  Shnorr is for a similar thing people have been wanting Shnorr in Bitcoin for years.
+Well, Shnorr is for a similar thing people have been wanting Shnorr in Bitcoin for years.
 
 NVK: 01:40:08
 
@@ -1792,7 +1794,7 @@ Rijndael: 01:47:27
 
 Yeah, I mean,  one of the longest running debates in Bitcoin, which is , I think one of the juicier debates is should Bitcoin be money or should it be smart contract fuel?
 I think that anytime somebody tries to introduce a change that allows for more expressibility of script or allows for more novel peg-in mechanisms or whatever, one of the pushbacks is, okay, well, Bitcoin isn't for arbitrary program execution, it's for money.
-What's, hopefully the thing that people can distinguish is that OpVault or something like it is doubling down on custody.
+What's, hopefully the thing that people can distinguish is that `OP_VAULT` or something like it is doubling down on custody.
 It's making the money part better.
 
 
@@ -1818,12 +1820,12 @@ We need to get things that are completely absurd at rest and raised even by us.
 It's , oh, what if SHA-256 is broken?
 Well, I mean, airplanes fall from the sky
 Everybody can understand that.
-So , 51% attack every all time high.
+So, 51% attack every all time high.
 It comes back to Bitcoin.
-Right, oh, it's not  that.
+Right, oh, it's not like that.
 So  you have to have this sort of  very attainable China.
 You have to have this very attainable, very  rug brain explanations of things because my pocket doesn't care about how complex and cool Bitcoin is, I don't want to have to think too deeply about these concerns with my money.
-And I don't know, I feel  you've been doing a very good job from the things I've read and sort of seen about OpVault.
+And I don't know, I feel  you've been doing a very good job from the things I've read and sort of seen about `OP_VAULT`.
 I guess that's where I wanted to do with this episode, is sort of  address it, see if we can pursue some paths here, reflect a little bit on it.
 Is there  anything else you guys feel  we should address it or that we missed?
 
@@ -1847,7 +1849,7 @@ I think you're approaching this with  a good cool head and  the correct humblene
 NVK: 01:51:37
 
 It's essentially a kick in the nuts every day.
-So , thanks Rijndael and thanks Ben, your contribution here was  super, super amazing.
+So, thanks Rijndael and thanks Ben, your contribution here was  super, super amazing.
 Thanks Antoine, who had to leave a little early.
 So guys, I guess  any final thoughts and maybe  further material for people to read, that would be great.
 So Rijndael.
@@ -1857,7 +1859,7 @@ Rijndael: 01:52:00
 Yeah, I think Antoine already left, but for me, I think one of the first times that the notion of Vault really clicked was I was actually reading the docs for ReVault.
 So if you go to ReVault's page, they have a link about how it works.
 And ReVault is really aimed at institutions, so you have to kind of squint at it and imagine how it would scale down.
-But I think between that and the paper that James wrote about OpVault, if you read those, I think it kind of plants a good seed in the back of your head to start thinking about what vaults are, how they're useful, and how that could go forward.
+But I think between that and the paper that James wrote about `OP_VAULT`, if you read those, I think it kind of plants a good seed in the back of your head to start thinking about what vaults are, how they're useful, and how that could go forward.
 So if you're interested in that, I would definitely look at those two things.
 
 NVK: 01:52:40
@@ -1867,7 +1869,7 @@ Ben?
 
 Ben: 01:52:42
 
-Yeah, I just want to say, I think opvaults or any sort of a covenant proposal,  should we need this eventually in Bitcoin?
+Yeah, I just want to say, I think `OP_vAULT`s or any sort of a covenant proposal,  should we need this eventually in Bitcoin?
 And we have some really good proposals on it right now and we should probably decide on one in the next few years and try to activate it.
 This isn't going to be a whole re-architecture  we did with Taproot or Segwit having to as Coinbase said, support the setting to this.
 This is gonna be super minimal and  a much smaller change set.
@@ -1879,7 +1881,7 @@ James: 01:53:18
 
 I can say it better than those two guys just did.
 So thanks for bringing us on, man.
-If anybody wants to find the opVault paper, you can just go to my Twitter at JamesOB.
+If anybody wants to find the `OP_VAULT` paper, you can just go to my Twitter at JamesOB.
 It's linked right there.
 
 NVK: 01:53:28
