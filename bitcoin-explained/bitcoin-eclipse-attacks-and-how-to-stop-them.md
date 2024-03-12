@@ -7,7 +7,9 @@ speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-11-13
 episode: 17
+summary: "The discussion revolves around eclipse attacks against Bitcoin's peer-to-peer network, as described in a 2015 paper. Eclipse attacks isolate a node, controlling its network connections to manipulate transaction visibility and block information. The transcript outlines the mechanism of these attacks, including the strategic overflow of a node's address list and inducing node restarts. It also covers the potential for facilitating double-spend attacks and splitting the miner network. Mitigation strategies implemented in Bitcoin Core are discussed, including improvements in peer selection and connection management. These measures increase the resilience of the network against eclipse attacks by reducing attackers' ability to monopolize a node's view of the blockchain, showcasing the ongoing efforts to secure Bitcoin against such vulnerabilities."
 ---
+## Introduction
 Sjors Provoost: 00:01:01
 
 We're going to discuss a paper about eclipse attacks.
@@ -43,7 +45,7 @@ Sjors Provoost: 00:01:55
 Correct.
 A lot of things have already been done.
 
-## What are eclipse attacks
+## Understanding Eclipse Attacks
 
 Aaron van Wirdum: 00:01:57
 
@@ -86,6 +88,8 @@ So basically you connect to all these nodes because you want to ask them for new
 And so if you're only talking to one person eventually, then that person can decide not to give you certain transactions and not to give you certain blocks.
 Now they cannot make fake things entirely, right? 
 They can't fake signatures because you're still checking all the consensus rules.
+
+## Potential Consequences of Eclipse Attacks
 
 Aaron van Wirdum: 00:03:23
 
@@ -190,6 +194,8 @@ Ideally, it should be impossible to eclipse anyone.
 Aaron van Wirdum: 00:07:52
 
 So luckily it's getting harder over time because we're getting more solutions to make it harder.
+
+## Executing an Eclipse Attack
 
 Sjors Provoost: 00:08:00
 
@@ -323,6 +329,8 @@ Exactly.
 
 Aaron van Wirdum: 00:13:05
 
+## Mitigations and Solutions for Eclipse Attacks
+
 So now are we going to solve it?
 
 Sjors Provoost: 00:13:08
@@ -333,8 +341,6 @@ So what are we going to do about it?
 Aaron van Wirdum: 00:13:10
 
 What are we going to do about it Sjors?
-
-## Approach to solve eclipse attacks
 
 Sjors Provoost: 00:13:12
 
