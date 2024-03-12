@@ -3,7 +3,7 @@ title: "Address Relay"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Martin-Zumsande-and-Address-Relay---Episode-20-e1if91d
 tags: ["bitcoin-core","p2p"]
-speakers: ["Martin Zumsande","Jonas Nick","Patrick Murck"]
+speakers: ["Martin Zumsande"]
 categories: ["podcast"]
 date: 2022-05-13
 episode: 20
@@ -16,7 +16,7 @@ So the new tables are for unverified addresses that someone just sent you and yo
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were your peers at some point.
 
-Patrick: 00:00:19
+Mark Erhardt: 00:00:19
 
 Right. And you also need to make sure that you get some fresh blood in there, so you don't get sequestered into some part of the network. And then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore. You need to constantly keep hearing about new nodes. Hi, Jonas.
 
@@ -25,7 +25,7 @@ Jonas: 00:00:45
 Hey, Murck.
 Glad to get you back in the studio before you rush off to London. And we're gonna be talking to Martin today?
 
-Patrick: 00:00:53
+Mark Erhardt: 00:00:53
 
 Yeah, yeah. We heard a talk by him yesterday already, so we're kind of prepped.
 
@@ -33,7 +33,7 @@ Jonas: 00:00:57
 
 That's better than usual, isn't it?
 
-Patrick: 00:00:59
+Mark Erhardt: 00:00:59
 
 Yeah, we have a good idea what we'll be talking about already.
 We did a few peer-to-peer topics already earlier with Amiti and Peter.
@@ -107,7 +107,7 @@ Very good.
 I think Waxwing is a physicist, isn't he?
 Is Waxwing a physicist?
 
-Patrick: 00:03:45
+Mark Erhardt: 00:03:45
 
 He's a mathematician, I think.
 
@@ -115,7 +115,7 @@ Jonas: 00:03:46
 
 Okay, well.
 
-Patrick: 00:03:47
+Mark Erhardt: 00:03:47
 
 I think he used to be a math teacher.
 
@@ -142,7 +142,7 @@ So it all works together, and it needs to be secured.
 There are several ways one could attack Bitcoin Core or the Bitcoin network and making sure that this works well when everyone plays nice together and it's also resistance against attacks.
 That is something that I find really interesting.
 
-Patrick: 00:04:59
+Mark Erhardt: 00:04:59
 
 Yeah, I think one of the interesting things is that the credo is never to trust another node for what they tell you, because they might be lying.
 So on the one hand you have to make it work locally and you have to have an emergent behavior across the whole set of participants that is not wasteful, but still gets everybody all the information they need.
@@ -168,7 +168,7 @@ And I think these exactly are the points where most people do the same and where
 And sometimes, yeah, if you found something that some people haven't thought of before.
 And then you maybe create PR to fix this.
 
-Patrick: 00:06:42
+Mark Erhardt: 00:06:42
 
 So you're saying Bitcoin developers are like peer-to-peer nodes.
 They don't trust what other people have done?
@@ -185,7 +185,7 @@ I'm going to change this now, because this might lead to changes that are not so
 
 ## The network is changing
 
-Patrick: 00:07:31
+Mark Erhardt: 00:07:31
 
 Yeah, this actually reminds me of one of the topics that came up at BitDevs this week, where we talked about Jameson Lobs' observation that the network appears to get slower because more and more of the nodes are on home connections and core connections.
 So there's fewer slots on IPv4 available for other participants.
@@ -204,7 +204,7 @@ Yeah, and some things just happen because people choose different ways to partic
 For example, I just recently was really surprised to see that there are like so many nodes using Tor right now.
 So I think there are even if you look at some statistics website, there are bit nodes, there are even more peers in the network that are using Tor than that are using IPv4.
 
-Patrick: 00:08:50
+Mark Erhardt: 00:08:50
 
 So reachable nodes.
 
@@ -218,7 +218,7 @@ Jonas: 00:08:57
 
 I feel like that's the Umbral effect.
 
-Patrick: 00:09:00
+Mark Erhardt: 00:09:00
 
 Yeah, Raspi, Blitz and Umbral and a few other of those home node packages are configured to automatically only connect to Tor.
 I think it's part of it is that it is not trivial to puncture NAT, local area network and open up the ports.
@@ -230,7 +230,7 @@ Because It sort of is a hot wallet.
 
 ## What's the purpose of the Address Manager (AddrMan)?
 
-Patrick: 00:09:33
+Mark Erhardt: 00:09:33
 
 So `AddrMan`, what's the goal of the address manager?
 
@@ -248,7 +248,7 @@ So the new tables are for unverified addresses that someone just sent you and yo
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were valid peers and they were your peers at some point.
 
-Patrick: 00:10:25
+Mark Erhardt: 00:10:25
 
 Right. And you also need to make sure that you get some fresh blood in there.
 So you don't get sequestered into some part of the network and then, I don't know, you go on vacation and your node was offline for a week and you come back and nobody's online anymore or things like that.
@@ -268,7 +268,7 @@ I think there's a big difference between something like this and the Lightning N
 I was surprised when I first booted up a node to watch those connections turnover and find them in your logs, as opposed to Lightning, which is much more like you want to establish yourself as a good member of the community and consistent.
 And like, unless you're going on chain, those are pretty permanent connections.
 
-Patrick: 00:11:21
+Mark Erhardt: 00:11:21
 
 Right. Especially since you want to talk about a channel you have with them, you would be permanently peering with those.
 But with Bitcoin peers, it's very exchangeable.
@@ -328,7 +328,7 @@ And that is something I find really challenging and interesting.
 
 ## Getting connected to the network
 
-Patrick: 00:13:38
+Mark Erhardt: 00:13:38
 
 So maybe we can briefly give an overview of how nodes get addresses in the first place.
 If you start with a fresh node, how do you get connected to the network and how do you hear more about other peers in the network after?
@@ -401,7 +401,7 @@ So you can do this.
 I mean, you need one attacker node that sends the addresses and you need one detection node that would also connect to the victim and just see how many addresses get relayed to this node.
 And you can do the math there and you can figure out this node, our victim node has 100 connections or something.
 
-Patrick: 00:17:20
+Mark Erhardt: 00:17:20
 
 You talked about this yesterday to us already, so I understand I think how it works now.
 Every time a node receives an announcement of addresses with up to 10 addresses. For each address separately, they'll randomly pick two peers to forward it to.
@@ -432,7 +432,7 @@ And so a node that has a thousand connections is some sort of flag as to what it
 It might be a spy, it might be a miner, it might be just, there's a reason that it would have more connections.
 So I don't know, I'm just sort of thinking about why someone would do this.
 
-Patrick: 00:19:18
+Mark Erhardt: 00:19:18
 
 It could be a fingerprinting.
 
@@ -554,7 +554,7 @@ I'd say it's currently being done just once.
 When you start a new connection to outbound peer, you just ask them once for this big chunk at the beginning of the connection.
 And then never again while the connection lasts.
 
-Patrick: 00:24:00
+Mark Erhardt: 00:24:00
 
 So if you were to restart and reconnect to the same outbound peer again, you would ask again.
 
@@ -562,7 +562,7 @@ Martin: 00:24:06
 
 Yes, but if you do this within 24 hours, you would get the same response because we don't want to be able to make use of this to scrape our `AddrMan` database to be able to see all the nodes that are in there.
 
-Patrick: 00:24:20
+Mark Erhardt: 00:24:20
 
 So and obviously, since we don't trust any of our peers, we're very paranoid.
 We add that only to our new table, right?
@@ -579,7 +579,7 @@ Well, if we have some errors in the try table, if we don't have done we are out 
 
 ## Walking through first connection of a node
 
-Patrick: 00:25:25
+Mark Erhardt: 00:25:25
 
 So if you're a completely new node, you would connect to a DNS seed.
 How much do you get from a DNS seed?
@@ -590,7 +590,7 @@ Martin: 00:25:35
 It's just a few.
 I think it was reduced at some point in the past recently, but it's under 50 I think.
 
-Patrick: 00:25:41
+Mark Erhardt: 00:25:41
 
 Okay, so I'm a new node, I connect to a DNS seed, I get under 50 addresses from a DNS seed and they are basically tried addresses.
 Right.
@@ -601,7 +601,7 @@ Martin: 00:25:51
 They are tried for the DNS seed.
 So the DNS seeds internally, they have a crawler which tries to connect to Bitcoin Core nodes and will only give those that actually exist on the network.
 
-Patrick: 00:26:03
+Mark Erhardt: 00:26:03
 
 So we're a little less paranoid towards DNS seeds.
 But that's kind of makes sense because we're completely new here and we don't know that we can trust.
@@ -611,7 +611,7 @@ Martin: 00:26:10
 But we still store these in the new table, in our new table.
 So we don't just believe the DNS seed, if they are good, we just put them to tried.
 
-Patrick: 00:26:18
+Mark Erhardt: 00:26:18
 
 And then of course, the node would make eight outbound connections to blocks only connections and a feeler connection would start going through the remaining new and then each outbound connection would give us 1000 new addresses again.
 And so very quickly, we would build up some stock of new addresses in our new table.
@@ -620,7 +620,7 @@ Martin: 00:26:35
 
 Yes and all the let's say 10 nodes that we connected to when we disconnect them we would also like promote them to the try table because now we have been able to connect to them.
 
-Patrick: 00:26:46
+Mark Erhardt: 00:26:46
 
 Right. Although we do not get any new addresses from blocks-only relay connections, right?
 
@@ -628,7 +628,7 @@ Martin: 00:26:51
 
 Right, but I think the block-only connections themselves that we connect to, their address will still be promoted to tried.
 
-Patrick: 00:26:59
+Mark Erhardt: 00:26:59
 
 Yeah, makes sense.
 
@@ -644,7 +644,7 @@ Like, getAdder messages were taken advantage in the Coinscope paper, where they 
 And then Gleb added the cached responses, because otherwise you could scrape the Scrape `AddrMan` if you just kept querying.
 So it's like-
 
-Patrick: 00:27:24
+Mark Erhardt: 00:27:24
 
 I seem to remember that there was something that made sure that you never share more than 30% or 23%-
 
@@ -652,7 +652,7 @@ Jonas: 00:27:30
 
 23%, yes.
 
-Patrick: 00:27:32
+Mark Erhardt: 00:27:32
 
 23% of your address.
 
@@ -669,7 +669,7 @@ Jonas: 00:27:42
 
 That's right.
 
-Patrick: 00:27:44
+Mark Erhardt: 00:27:44
 
 Illuminati.
 Cool.
@@ -677,7 +677,7 @@ Hopefully that gets cut.
 
 ## Being a Bitcoin Core contributor
 
-Patrick: 00:27:50
+Mark Erhardt: 00:27:50
 
 All right.
 
@@ -726,7 +726,7 @@ Jonas: 00:30:25
 
 So, any takeaways from our conversation?
 
-Patrick: 00:30:28
+Mark Erhardt: 00:30:28
 
 I thought that the `AddrMan` spam was really interesting.
 The spam attack that was trying to either leverage the exact behavior of Bitcoincore on what it will relay to learn the node peering distribution, but maybe also just didn't know exactly what was going happen and then didn't get all their addresses relayed as wanted.
@@ -737,7 +737,7 @@ Jonas: 00:30:53
 It must have been a government op.
 Didn't read the code close enough.
 
-Patrick: 00:30:58
+Mark Erhardt: 00:30:58
 
 I don't know.
 And I just find it fascinating how much a little change at the local level changes the global emergent behavior.
@@ -747,7 +747,7 @@ Jonas: 00:31:06
 Yeah, which is why we have our best physicist on the case.
 Something happens over here and something else happens over there.
 
-Patrick: 00:31:12
+Mark Erhardt: 00:31:12
 
 Quantum entanglement.
 
