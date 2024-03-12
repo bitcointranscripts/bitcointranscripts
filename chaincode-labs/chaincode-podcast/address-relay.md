@@ -6,10 +6,12 @@ tags: ["bitcoin-core","p2p"]
 speakers: ["Martin Zumsande","Jonas Nick","Patrick Murck"]
 categories: ["podcast"]
 date: 2022-05-13
+episode: 20
+summary: "Martin Zumsande joins us to tell us about the address spam in the summer of 2021 and his interests in AddrRelay and Bitcoin Core development."
 ---
 Martin: 00:00:00
 
-In AdderMan you also have this distinction between the new and the tried tables.
+In `AddrMan` you also have this distinction between the new and the tried tables.
 So the new tables are for unverified addresses that someone just sent you and you don't know whether they are good, whether there's really a Bitcoin node behind them.
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were your peers at some point.
@@ -230,7 +232,7 @@ Because It sort of is a hot wallet.
 
 Patrick: 00:09:33
 
-So Adderman, what's the goal of the address manager?
+So `AddrMan`, what's the goal of the address manager?
 
 Martin: 00:09:36
 
@@ -241,7 +243,7 @@ You also only have a limited amount of addresses you can save.
 You don't want to have a system where it can overwhelm you like write up your disk.
 So you also need to have like a limited amount.
 So you have like a restricted number of addresses that fit there.
-And in AdderMan you also have this distinction between the new and the tried tables.
+And in `AddrMan` you also have this distinction between the new and the tried tables.
 So the new tables are for unverified addresses that someone just sent you and you don't know whether they are good, whether there's really a Bitcoin node behind them.
 And the tried table is addresses that you've been connected to in the past.
 So at some point, at least in the past, you know, they were valid peers and they were your peers at some point.
@@ -288,7 +290,7 @@ Jonas: 00:12:10
 
 Yeah, I think one of the clearest explanations of the trade-offs here was Ethan Heilman give a talk at the residency and there's a video, we can put that in the show notes, where he talks about just sort of like, I mean, it's really in the context of Eclipse attacks, but he really dives into the new and tried table and the different considerations there.
 
-## Adderman and eclipse attacks
+## AdderMan and eclipse attacks
 
 Jonas: 00:12:27
 
@@ -303,7 +305,7 @@ Jonas: 00:12:39
 
 So we did a couple episodes with Amiti 15 and 16, that was in October.
 And then Peter joined for that for episode 16.
-We covered a little bit of AdderMan and AddrRelay.
+We covered a little bit of `AddrMan` and `AddrRelay`.
 But those are some areas that you're also spending some time into.
 So why those areas of the code?
 
@@ -316,7 +318,7 @@ And yeah, and why spend so much time?
 
 Martin: 00:12:59
 
-Yeah, I mean, I'm very interested in AddrRelay.
+Yeah, I mean, I'm very interested in `AddrRelay`.
 It's different than the other types of relay like blocks where you need proof of work, transactions where you spend some Bitcoin, whereas for an address to relay you don't really have to do any kind of work to relay it.
 But we still need those.
 Nodes need addresses to find other nodes to connect to.
@@ -382,7 +384,6 @@ Jonas: 00:15:58
 Could have been you.
 You don't have to speculate.
 It could have been you.
-Yeah.
 You seem to know a lot about it.
 
 Martin: 00:16:03
@@ -407,9 +408,7 @@ Every time a node receives an announcement of addresses with up to 10 addresses.
 So if you send say 500 packages of 10 addresses and a node has a hundred peers, they'll randomly decide for each of those 5,000 addresses which two peers to relay that to.
 So now if there's another peer connected to the attack node, this receiver or observer node would probably get some 50 addresses.
 
-## Correction: The peer would not get addresses-divided-by-peers addresses, but 2×addresses-divided-by-peers addresses as the addresses get forwarded to two peers each.
-
-Patrick: 00:17:59
+(Correction: The peer would not get addresses-divided-by-peers addresses, but 2×addresses-divided-by-peers addresses as the addresses get forwarded to two peers each.)
 
 If there were only 10 peers connected to the attack node, they'll receive 500.
 So the observer will basically get n divided by a number of peers of these randomly generated addresses forwarded.
@@ -561,7 +560,7 @@ So if you were to restart and reconnect to the same outbound peer again, you wou
 
 Martin: 00:24:06
 
-Yes, but if you do this within 24 hours, you would get the same response because we don't want to be able to make use of this to scrape our AdderMan database to be able to see all the nodes that are in there.
+Yes, but if you do this within 24 hours, you would get the same response because we don't want to be able to make use of this to scrape our `AddrMan` database to be able to see all the nodes that are in there.
 
 Patrick: 00:24:20
 
@@ -599,9 +598,8 @@ And not new addresses.
 
 Martin: 00:25:51
 
-They are tried for the DNS.
-So the DNS is internally.
-They have a crawler which tries to connect to Bitcoin core nodes and will only give those that actually exist on the network.
+They are tried for the DNS seed.
+So the DNS seeds internally, they have a crawler which tries to connect to Bitcoin Core nodes and will only give those that actually exist on the network.
 
 Patrick: 00:26:03
 
@@ -628,7 +626,7 @@ Right. Although we do not get any new addresses from blocks-only relay connectio
 
 Martin: 00:26:51
 
-Right, but I think the block-only connections themselves that we connect to their address will still be promoted to tried.
+Right, but I think the block-only connections themselves that we connect to, their address will still be promoted to tried.
 
 Patrick: 00:26:59
 
@@ -643,7 +641,7 @@ Yeah, I mean, as I listen to this and as I'm sort of catching up on my reading, 
 Jonas: 00:27:06
 
 Like, getAdder messages were taken advantage in the Coinscope paper, where they used specific timestamps that were proliferated through the network to understand network topology.
-And then Gleb added the cached responses, because otherwise you could scrape the Scrape AdderMan if you just kept querying.
+And then Gleb added the cached responses, because otherwise you could scrape the Scrape `AddrMan` if you just kept querying.
 So it's like-
 
 Patrick: 00:27:24
@@ -691,7 +689,7 @@ Martin: 00:28:02
 
 Yeah, I think there are many different ways of being a Bitcoincore contributor.
 And I think every person has to find a way that works best for them and for their interests.
-But what I personally like is I don't want to spend all of my time on projects like the Multi Index AdderMan and I want to spend a lot of time on review, reviewing other things because that's the way you learn especially if you're a relatively new contributor.
+But what I personally like is I don't want to spend all of my time on projects like the Multi Index `AddrMan` and I want to spend a lot of time on review, reviewing other things because that's the way you learn especially if you're a relatively new contributor.
 I think that is important to not get lost in some like esoteric area and spend all your time there, but also get to know other parts of Bitcoincore better.
 And something that I personally really like is just look at the list of issues.
 Maybe there's some intermittent failure in some functional tests and just try to see what has happened, try to find a fix, make a small PR there.
@@ -703,7 +701,7 @@ And you also learned something about some part of the code base that was not fam
 Jonas: 00:29:08
 
 What's the difference between doing this on nights and weekends and having the opportunity to do this full time and making this your regular job?
-Like, How does it change your approach or how do you pace yourself?
+How does it change your approach or how do you pace yourself?
 Or I mean, you're a few months in, so what has that transition been like?
 
 Martin: 00:29:22
@@ -730,7 +728,7 @@ So, any takeaways from our conversation?
 
 Patrick: 00:30:28
 
-I thought that the AdderMan spam was really interesting.
+I thought that the `AddrMan` spam was really interesting.
 The spam attack that was trying to either leverage the exact behavior of Bitcoincore on what it will relay to learn the node peering distribution, but maybe also just didn't know exactly what was going happen and then didn't get all their addresses relayed as wanted.
 That was an interesting thing there.
 
