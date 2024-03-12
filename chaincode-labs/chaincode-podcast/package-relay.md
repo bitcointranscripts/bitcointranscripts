@@ -3,7 +3,7 @@ title: "Package Relay"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Gloria-Zhao-and-Package-Relay---Episode-21-e1j0ii3
 tags: ["package-relay","security"]
-speakers: ["Gloria Zhao","Mark Erhardt"]
+speakers: ["Gloria Zhao","Mark Erhardt","Adam Jonas"]
 categories: ["podcast"]
 date: 2022-05-24
 ---
