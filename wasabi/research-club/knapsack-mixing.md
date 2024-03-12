@@ -1,25 +1,24 @@
 ---
 title: "Knapsack Mixing"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=XDCQI7hrB58
-tags: ['research']
-speakers: ['Felix Maurer']
-categories: ['club']
+tags: ["research"]
+speakers: ["Felix Maurer"]
+categories: ["club"]
 date: 2020-01-06
-summary: "In this video, the participants of the Wasabi Research Club discuss the concept of knapsack mixing and its potential for privacy in Bitcoin transactions. They explain the process of merging inputs and outputs to create sub-transactions, and how different versions of the knapsack mixing algorithm have improved over time. However, they acknowledge that perfect anonymity is difficult to achieve and there are computational complexities involved. They also discuss the challenges of handling transaction fees and the difficulty of implementing efficient algorithms for finding all possible mappings and partitions. Overall, the speaker believes that knapsack mixing has the potential for anonymity but more research and testing is needed.\nFurthermore, they discuss various aspects of knapsack mixing, including the potential benefits and limitations. They explore the possibility of combining multiple inputs in a transaction and its impact on privacy. The necessity of calculating mappings in Wasabi is also debated, with the suggestion that it could help identify bottlenecks in blockchain analysis companies. The participants discuss the idea of setting a lower bound for the number of participants and outputs in a transaction to ensure computational privacy. Additionally, they consider the possibility of allowing non-mixing participants to participate in Wasabi transactions for stronger privacy. The conversation then shifts to the concept of users participating in knapsack-type coin joints for spending purposes only, which could be offered as a separate service in Wasabi. They also touch upon topics like blockchain with lists of inputs and outputs, determining conjoined transactions, RBF in transactions, and feedback for improving future episodes of the club. Overall, the participants engage in an informative discussion on knapsack mixing and its implications."
 ---
 Speaker 0: 00:00:00
 
-So we're talking about knapsack coin joins today.
+So we're talking about knapsack coinjoins today.
 I'm just going to run through this slide and then hopefully Felix will jump in to clarify questions as they come or if I make a mistake.
 
 ## Anonymous Coin Join Transactions with Arbitrary Values (2017)
 
 Speaker 0: 00:00:15
 
-So yeah, this is the paper, Anonymous Coin Trade Transaction with Arbitrary Values.
+So yeah, this is the paper, Anonymous CoinJoin Transaction with Arbitrary Values.
 We have one of the authors with us.
-The PowerPoint, this PowerPoint will be made available if anyone wants it.
+This PowerPoint will be made available if anyone wants it.
 Very straightforward.
 
 ## The privacy problem with Bitcoin
