@@ -150,13 +150,13 @@ Speaker 2: 00:14:53
 Yeah, and that's exactly the third algorithm I came up with.
 I will have to read my own work again to understand what I did because two years now that I was working on it.
 But I had a third version of the algorithm which was working without knowing all the outputs.
-So for each, everybody needs to know all the inputs, but each participant only needs to know his own outputs.
+So everybody needs to know all the inputs, but each participant only needs to know his own outputs.
 
 ## Concluding Thoughts
 
 Speaker 0: 00:15:22
 
-Okay, so would it be, everybody just needs to know all the inputs.
+Okay, so everybody just needs to know all the inputs.
 Okay, so interesting.
 So upper bound anonymity, it's like, if we look at this way of looking at transaction anonymity and we apply it to Zerolink, we see that Zerolink is like a perfect knapsack coin join.
 So that sort of provides us the upper bound anonymity, which is essentially the number of total participants that are doing this knapsack coin join.
