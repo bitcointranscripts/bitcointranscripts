@@ -1140,13 +1140,12 @@ So it gets really, really bad.
 
 Speaker 5: 01:22:01
 
-OK, Yeah, I think I get it.
+Okay, Yeah, I think I get it.
 And with RBF, you like expose which one of the addresses or outputs are like the actual change.
 
 Speaker 1: 01:22:10
 
 Yes.
-Right.
 That might be the most obvious one.
 I didn't even do this for a very long time.
 Then things just start to click, you know.
@@ -1176,18 +1175,17 @@ You mentioned it like 5 minutes ago or something.
 Speaker 1: 01:22:51
 
 Yes, I was explaining the history of CoinShuffle.
-It started with CoinShuffle, then they came up with a new protocol that doesn't require TOR, that's called DiceMix, and they incorporated it into CoinShuffle, and they called it CoinShuffle++, and then they figured out how to do CoinShuffle with confidential transactions and that is called ValueShuffle.
+It started with CoinShuffle, then they came up with a new protocol that doesn't require TOR, that's called `DiceMix`, and they incorporated it into CoinShuffle, and they called it CoinShuffle++, and then they figured out how to do CoinShuffle with confidential transactions and that is called `ValueShuffle`.
 
 Speaker 6: 01:23:30
 
 Can you send me a reference link or something on that?
-I'm already done the Go in it, but it could be a bit faster and more helpful.
+I'm already done the go in it, but it could be a bit faster and more helpful.
 CoinShuffle++?
-Just
 
 Speaker 1: 01:23:43
 
-Google value shuffle.
+Just google valueshuffle.
 Or wait, value
 
 Speaker 6: 01:23:46
@@ -1219,7 +1217,7 @@ Yeah, bring it to next episode and we will see.
 I think there is some interesting things to learn from me too.
 I would give you a vote for that.
 
-Speaker 4: 01:24:49
+Speaker 6: 01:24:49
 
 Thank you.
 Good.
@@ -1232,7 +1230,7 @@ Do you guys have anything else?
 
 Speaker 3: 01:25:02
 
-No. Not
+No.
 
 Speaker 4: 01:25:03
 
@@ -1241,7 +1239,7 @@ I
 
 Speaker 6: 01:25:05
 
-have my homework.
+Have done my homework.
 
 Speaker 5: 01:25:09
 
@@ -1259,25 +1257,25 @@ Do you have any recommendations how to improve these conversations?
 
 Speaker 5: 01:25:52
 
-At least Abib's presentation was pretty damn good in my opinion.
-I mean like a short recap of what was what and what's the point of Knapsack.
+At least Aviv's presentation was pretty damn good in my opinion.
+I mean like a short recap of what was what and what's the point of `Knapsack`.
 So it makes a pretty good, like, yeah, just a video in itself.
 But of course, also these talks too.
 
 Speaker 1: 01:26:15
 
 Yeah, I was kind of afraid that Felix is going to leave.
-We have to grab Felix at the beginning because he's gonna leave.
+We have to grab Felix at the beginning because he's going to leave.
 Yeah, definitely.
 
 Speaker 3: 01:26:29
 
 Yes, From my point of view, the participation of Felix was great.
-So, for Sneakers, if we can have Adam here, it could be great too.
+So, for `Sneakers`, if we can have Adam here, it could be great too.
 
 Speaker 1: 01:26:50
 
-I will ask him I can't I can't promise Felix didn't promise it to either he said he will try So that's why I didn't even send out a tweet or anything.
+I will ask him I can't I can't promise Felix didn't promise it to either he said he will try. So that's why I didn't even send out a tweet or anything.
 Hey, Felix is going to be here because if he's not...
 Anyway, I will tell Adam to come.
 Yeah, definitely.
@@ -1296,7 +1294,7 @@ Speaker 1: 01:28:14
 
 All right guys, so if no one has anything, then thank you all for coming and if this is published and you are listening it on YouTube or something, then definitely everything that we talked about, the paper, Felix's code, our code, everything is going to be in the description.
 So you can follow up and maybe change the word by getting some ideas.
-Alright, thank you guys.
+All right, thank you guys.
 Thank you.
 All right.
 
