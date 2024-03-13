@@ -211,25 +211,31 @@ But in that case, it wouldn't be a very safe system, because you could take ever
 So for all the users who don't have a hash power majority, there's no way for them to like unilaterally get their points out of the system.
 They have to rely on the miners to upvote their withdrawal requests.
 And I see a question.
-I mean, just like, does this not apply, if you look at Bitcoin, this applies to any single transfer, right?
-I mean, these two negative points, like I trust miners to process my transfer and if it's part of the consensus that, you know, like a drive chain, that you have to process it, you know, you'd have to fork the chain.
+
+[Audience]: 
+
+Does this not apply, if you look at Bitcoin, this applies to any single transfer, right?
+I mean, these two negative points, like I trust miners to process my transfer and if it's part of the consensus that, like a drive chain, that you have to process it, you'd have to fork the chain.
 So it's kind of the same security model as your normal payments, is it not?
 So it's like it's shown as negative, but it's kind of the same security model as the underlying chain.
 So maybe it's being overly strict of kind of saying it's an extra risk, I guess.
-Maybe in the case of freezing, you could make that case because a majority of miners could just decide not to mine your transaction in a layer 1 block, but they can't arbitrarily steal money.
+
+John Light:
+
+Maybe in the case of freezing, you could make that case because a majority of miners could just decide not to mine your transaction in a Layer 1 block, but they can't arbitrarily steal money.
 So they can only double spend funds that they have themselves like spent in the past and typically only in the recent past because the deeper you try to reorg the more expensive it is and the harder it is.
-But they can't just like pick an address and say like oh that address has a lot of Bitcoin, I wanna steal that Bitcoin.
-But in the case of a hash rate escrow, they can pick any hash rate escrow and say, I want all those coins and just take those coins.
+But they can't just like pick an address and say like that address has a lot of Bitcoin, I want to steal that Bitcoin.
+But in the case of a hash rate escrow, they can pick any hashrate escrow and say, I want all those coins and just take those coins.
 So you're right about the freezing in a way, but the stealing, it is a different trust model.
 We'll hold other questions to the end because I've got to blaze through this in like 20 minutes.
 So Hashrate escrow also I think sits in this upper left quadrant, although we're getting closer to the can't freeze, can't steal quadrant.
 There are collateralized custodians.
 In this case, you have either a single custodian or a federation of custodians and they've got some kind of collateral.
-And this collateral is usually held on another blockchain like Ethereum or some alt chain.
-And they collectively control a multi-sig and if they try to take the user's funds out of the multi-sig without the user's authorizations, then their collateral will actually get slashed, And then some of the systems will actually give the collateral to the user to compensate them.
-So some examples would be Interlay or TBTC v1.
+And this collateral is usually held on another blockchain like Ethereum or some alt-chain.
+And they collectively control a multi-sig and if they try to take the user's funds out of the multi-sig without the user's authorizations, then their collateral will actually get slashed, and then some of the systems will actually give the collateral to the user to compensate them.
+So some examples would be `Interlay` or `TBTC v1`.
 I think it was probably the first production implementation of this.
-NOMIC is another example.
+`NOMIC` is another example.
 And these systems, they have high throughput.
 You can have a custom execution environment.
 
@@ -238,29 +244,29 @@ You can have a custom execution environment.
 There's endogenous, meaning internal, like honesty incentives because they have this collateral that will get seized or slashed if they get if they were dishonest.
 And then you know optionally you could have no single point of failure most of the systems that are designed like this way use multi-sigs of some sort.
 But it's more expensive.
-You have to, like for every Bitcoin that you put into the system, you usually have to have more than a Bitcoin worth of collateral.
+Like for every Bitcoin that you put into the system, you usually have to have more than a Bitcoin worth of collateral.
 And so it's relatively capital intensive.
 And there's still no unilateral redemption mechanism.
 Users still have to rely on the custodians to actually make a withdrawal from the multi-sig.
-So collateralized custodians are, I put them right there on the edge of like we're almost getting to layer two.
+So collateralized custodians I put them right there on the edge of like we're almost getting to Layer 2.
 But technically they can still freeze or still use your funds.
-There's a system called a state chain and in this system you have the user Alice and Bob who would be a state chain entity.
+There's a system called a `statechain` and in this system you have the user Alice and Bob who would be a statechain entity.
 They create a multi-sig transaction and then for every transaction Alice is going to get a redemption transaction.
 Alice can use the redemption transaction to get her coins out of the bridge if Bob is ever uncooperative.
 Once she has that redemption transaction, she can safely put funds into the bridge or receive funds on the system.
 And then she gets issued some IOUs on the state chain, can transfer them around and eventually get her stats back out on the main chain.
-So state chains are cool because they have high throughput.
+So statechains are cool because they have high throughput.
 
 ## Statechain
 
 It's the first system we've talked about that has a unilateral redemption mechanism.
-You could optionally have improved privacy with blind signatures.
+You could optionally have improved privacy with blind-signatures.
 You could optionally have no single point of failure, because some designs for state chains that use a single state chain entity, some use a federation, which would have no single point of failure if they have a fault tolerant signing policy.
-But the downsides are you still don't have a fully custom execution environment, And you have limited spending denominations is actually one of the interesting limitations of the state chain system.
+But the downsides are you still don't have a fully custom execution environment. And you have limited spending denominations is actually one of the interesting limitations of the state chain system.
 Recipients must be online in order to receive funds because they have to like co-sign and acknowledge the receipt of transactions.
 And compromised state chain entities can steal funds from payment recipients.
-So this is a somewhat subtle attack, but basically The state chain entity could collude with previous owners of a coin that has been sent to you in order to use the unilateral redemption transaction to withdraw the coin before you notice that this has happened.
-So yeah, it's like a subtle attack that they try to solve with hardware security modules, but it is like a fundamental limitation of the state chain model.
+So this is a somewhat subtle attack, but basically the state chain entity could collude with previous owners of a coin that has been sent to you in order to use the unilateral redemption transaction to withdraw the coin before you notice that this has happened.
+It's like a subtle attack that they try to solve with hardware security modules, but it is like a fundamental limitation of the state chain model.
 So for recipients of state chain transactions, the state chain entity can't freeze user funds because they have the unilateral redemption transaction, but they can steal your funds by colluding with earlier owners of the coins.
 For state chain senders, that is people who put coins into the system and then send those coins to somebody else, the state chain entity can't steal those coins.
 And if they use a hardware security module and you trust the hardware security module, then they also can't steal.
