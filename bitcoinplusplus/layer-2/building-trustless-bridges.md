@@ -151,7 +151,7 @@ Do you have a question?
 
 [Audience]: 
 
-Yeah, when you have also like the single point, let's say you have a multisig that requires three sign-offs, and there's three people involved in this transaction.
+Yeah, when you have also like the single point, let's say you have a multi-sig that requires three sign-offs, and there's three people involved in this transaction.
 You have a single, each of those people is a point of failure because if they don't sign off on the transaction, then everything just stays locked.
 
 John Light:
