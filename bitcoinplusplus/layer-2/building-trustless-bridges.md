@@ -271,7 +271,7 @@ So for recipients of state chain transactions, the state chain entity can't free
 For state chain senders, that is people who put coins into the system and then send those coins to somebody else, the state chain entity can't steal those coins.
 And if they use a hardware security module and you trust the hardware security module, then they also can't steal.
 So this is actually a pretty decent model if you accept those security assumptions.
-And then there's the Lightning Network, where Alice is a user and Bob is Alice's channel partner.
+And then there's the `Lightning Network`, where Alice is a user and Bob is Alice's channel partner.
 They create a multi-sig together with some revocation secrets that enable each party to keep the other honest.
 Once they have that set up, they can put funds into the bridge and then transfer coins around the Lightning Network.
 And then at any time, if Bob becomes uncooperative, Alice can use her most recent channel state to get her funds out of the system, and then if Bob tries to cheat and close his channel with an earlier channel state, Alice can use the revocation secret to take all of the funds in the channel and kind of penalize Bob for trying to steal from her.
@@ -285,36 +285,36 @@ There's a unilateral redemption capability.
 There's internal or endogenous honesty incentives due to the revocation transaction.
 But there are some fundamental limitations of this bridge.
 Users have limited inbound payment capacity due to the channel liquidity situation.
-There's limited onboarding and offboarding capacity because you need to make a layer one transaction to onboard new users and you also need to make a layer one transaction to get your funds out onto layer one to offboard.
+There's limited onboarding and offboarding capacity because you need to make a Layer 1 transaction to onboard new users and you also need to make a Layer 1 transaction to get your funds out onto Layer 1 to offboard.
 Recipients must be online and there's no custom execution environment, like you can only do simple payments.
 A dishonest hash power majority can steal sats that are sent to channel partners.
 So this is kind of far-fetched, but it's still a theoretical possibility.
-Basically the idea is that a hash power majority could collude with Bob and say, go ahead, send the earliest channel state where you had the most money in the channel after you've already sent most of your money to Alice, and we will censor any revocation transactions that Alice or her watchtowers tried to send on layer one.
-And they censor the red vacation transaction for the duration of the challenge period and eventually Bob gets all of his money out of the channel even though technically he already sent it to Alice.
-So for Lightning's senders, nobody can steal the Sass in the channel, nobody can freeze the Sass in the channel, but for recipients, they're actually trusting the hash power majority not to be colluding with Bob to censor the revocation transaction.
-I'm gonna skip the optimistic rollup, which is more like a theoretical bridge that you can't build on Bitcoin today.
+Basically the idea is that a hash power majority could collude with Bob and say, go ahead, send the earliest channel state where you had the most money in the channel after you've already sent most of your money to Alice, and we will censor any revocation transactions that Alice or her watchtowers tried to send on Layer 1.
+And they censor the revocation transaction for the duration of the challenge period and eventually Bob gets all of his money out of the channel even though technically he already sent it to Alice.
+So for Lightning's senders, nobody can steal the sats in the channel, nobody can freeze the sats in the channel, but for recipients, they're actually trusting the hash power majority not to be colluding with Bob to censor the revocation transaction.
+I'm going to skip the `optimistic rollup`, which is more like a theoretical bridge that you can't build on Bitcoin today.
 
 ## L2 optimistic rollup
 
-And go straight to the last bridge that I wanted to cover which is the L2 validity rollup.
+And go straight to the last bridge that I wanted to cover which is the `L2 validity rollup`.
 So this is another bridge that like you can't build on Bitcoin today but it is a bridge design that has been proposed and actually implemented on other blockchains.
-And the basic idea is that you have this validity rollup operator, Alice, and for every new block that gets created in the destination system, Alice is going to include a validity proof along with the data of the block in a transaction that gets posted to the rollup script on layer 1.
+And the basic idea is that you have this validity rollup operator, Alice, and for every new block that gets created in the destination system, Alice is going to include a validity proof along with the data of the block in a transaction that gets posted to the rollup script on Layer 1.
 And with that, users can be certain that when they put funds into the bridge, they can always get their money out.
 And also that neither Alice nor anyone else is able to steal their money out of the bridge.
-So L2 validity roll-ups are nice because they give you a custom execution environment.
+So `L2 validity roll-ups` are nice because they give you a custom execution environment.
 
 ## L2 validity rollup
 
-It could support L2 validity roll-up would be a destination system that can support any kind of execution environment.
-It could be a Simplicity smart contract or Ethereum, you know, EVM smart contracts or Zcash-style private transactions.
-It doesn't matter As long as you can make a validity proof that you can put on L1 and L1 nodes can verify, you can have any kind of execution environment you want.
+It could support `L2 validity roll-up` would be a destination system that can support any kind of execution environment.
+It could be a Simplicity smart contract or Ethereum, EVM smart contracts or Zcash-style private transactions.
+It doesn't matter. As long as you can make a validity proof that you can put on L1 and L1 nodes can verify, you can have any kind of execution environment you want.
 There's no single point of failure because the user can always get their funds out of the bridge, even if the validity rollup operator is uncooperative.
 So it also has a unilateral redemption mechanism that way.
-The compromised rollup operator cannot steal Sats that are locked in the bridge because they can't forge validity proofs that convince L1 users that their withdrawal transaction is valid even though it's invalid.
+The compromised rollup operator cannot steal sats that are locked in the bridge because they can't forge validity proofs that convince L1 users that their withdrawal transaction is valid even though it's invalid.
 These are cryptographic proofs.
-If they don't have the private keys that own the SASS, then they can't withdraw the SASS from the bridge.
-And it also has double spend resistance that is equivalent to layer 1.
-So this is important because it means that, yeah, if you trust that you're not going to get double spent on layer one because it's so expensive to pre-org a block, then you can also have that same level of trust or assurance on layer two validity rollup.
+If they don't have the private keys that own the sats, then they can't withdraw the sats from the bridge.
+And it also has double spend resistance that is equivalent to Layer 1.
+So this is important because it means that, if you trust that you're not going to get double spent on layer one because it's so expensive to pre-org a block, then you can also have that same level of trust or assurance on layer two validity rollup.
 All of these qualities put together make the layer two validity rollup bridge completely trustless.
 There are no new trust assumptions compared to holding or transacting in SACs on Layer 1.
 The downsides of this are that there is high throughput, but not unlimited throughput.
