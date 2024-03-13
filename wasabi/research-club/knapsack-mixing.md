@@ -816,7 +816,7 @@ I'm not sure if it's only a good thing if the mapping is hard to calculate.
 Speaker 1: 01:02:47
 
 Mapping is not necessary to do in order to build a system.
-What's interesting about calculating these mappings is that we can actually see that where are the bottlenecks of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
+What's interesting about calculating these mappings is that we can actually see that where are the `bottlenecks` of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
 
 Speaker 5: 01:03:15
 
@@ -824,16 +824,15 @@ Yeah that's what I was thinking also I mean if we could just use it as a benefit
 
 Speaker 1: 01:03:23
 
-Yeah, back to the, for example, the idea that I said before that Felix actually estimated the lower bound for the subset sum analysis here.
+Yeah, for example, the idea that I said before that Felix actually estimated the lower bound for the subset sum analysis here.
 And we could say that, hey, okay, we need at least this many inputs and outputs.
 And if 10, I think 10 is pretty, let's say if 10 inputs and outputs are present, then that already provides computational privacy.
 So we could set a lower bound for, okay, yeah, we want to target 10 as the minimum number of participants or something like that.
-So That's an interesting idea, yes.
+So, that's an interesting idea, yes.
 
 Speaker 0: 01:04:21
 
 Adam, can I add something before I have to run here?
-It seems like a lot of privacy benefits would come from having...
 Right now we've split the mixing and the sending as two separate features, but it seems like privacy would be much stronger if people that weren't doing mixing could still participate in a Wasabi transaction.
 It's just something that I thought about.
 
@@ -853,7 +852,7 @@ why
 
 Speaker 5: 01:05:18
 
-that There will be like more people linked to the coin joins, even if they don't actually use Wasabi.
+That there will be like more people linked to the coin joins, even if they don't actually use Wasabi.
 
 Speaker 4: 01:05:31
 
@@ -861,10 +860,10 @@ Yeah, what I mean to
 
 Speaker 0: 01:05:32
 
-say is that What if a user just wanted to send someone money and essentially wanted to participate in these knapsack type coin joins for spending?
+say is that what if a user just wanted to send someone money and essentially wanted to participate in these knapsack type coinjoins for spending?
 Then that could be a separate service that could be added to Wasabi.
 
-Speaker 6: 01:05:53
+Speaker 0: 01:05:53
 
 Right?
 
@@ -879,7 +878,6 @@ Speaker 1: 01:06:23
 Yeah, yes, of course.
 Even if you don't do any mixing, right?
 More problems there are with, let's say, how do you get all the participants of a block agree on the fee?
-I don't know.
 It raises more questions than it answers, I think.
 
 Speaker 3: 01:07:00
@@ -889,7 +887,7 @@ Lucas, because
 
 Speaker 1: 01:07:06
 
-Avi is leaving, before Avi leaves, can we decide on what should be our next...
+Aviv is leaving, before Avi leaves, can we decide on what should be our next...
 What should be next Monday, What should we look into?
 You guys have ideas?
 
