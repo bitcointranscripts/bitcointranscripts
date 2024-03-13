@@ -347,11 +347,7 @@ And the reason why you need this is so that in the case of a validity rollup, li
 And with that, they can also prove that they own money or stats in the current state of the system, and they can make a withdrawal for that amount of stats.
 So they need to know the current state so that they can prove, I own some stats in that state and I want to make a withdrawal from the bridge.
 If I had time, I was going to discuss one more, but I'm going to skip that.
-I produced a report about Kubernetes rollups that goes into much more detail about their history and how they work and how we can build them on Bitcoin.
-It's at Bitcoin roll ups.org if you want to check it out.
+I produced a report about validity rollups that goes into much more detail about their history and how they work and how we can build them on Bitcoin.
+It's at `bitcoinrollups.org` if you want to check it out.
 And I'm happy to take any questions if you have time for questions.
-Thank you.
-That was me.
-Please come on up to the next one.
-Thank you very much.
 Thank you.
