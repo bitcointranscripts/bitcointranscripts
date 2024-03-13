@@ -66,21 +66,21 @@ So what we've done instead is we come up with this way to have the Bitcoin main 
 And we have this bridge that connects the two so that you can move sats back and forth.
 Then you have your Raspberry Pi nodes that are like validating the Bitcoin main chain.
 They're super happy because the block size limit can stay small and Bitcoin script stays very simple so they can easily verify Bitcoin transactions.
-And then on the destination system, we don't really care what kind of nodes run the destination system if users want to opt into a destination system Where they have to have you know some beefy server thing then you know that's fine like they're free to do that But the main chain users are unaffected.
+And then on the destination system, we don't really care what kind of nodes run the destination system if users want to opt into a destination system where they have to have you know some beefy server thing then you know that's fine like they're free to do that. But the main chain users are unaffected.
 So let's talk about the different types of bridges that exist or could exist.
 But before we do, I want to take a little semantics detour.
-There are a couple of jargony terms that I'm gonna use in this talk.
-One I've already referenced in the title of the talk, which is trustless.
+There are a couple of jargony terms that I'm going to use in this talk.
+One I've already referenced in the title of the talk, which is `trustless`.
 So what do we mean by trustless?
-I'm gonna define trustless as saying that a bridge is trustless if it does not introduce any new trust assumptions compared to holding and transacting or using SAS on the Bitcoin main chain.
+I'm going to define trustless as saying that a bridge is trustless if it does not introduce any new trust assumptions compared to holding and transacting or using Sats on the Bitcoin main chain.
 And so therefore a trusted bridge is a bridge that introduces one or more new trust assumptions.
 I know that there's not currently like a total consensus on what the definition of trustless is, but I think that in this context, I think this is a reasonable definition.
 So just keep that definition in mind when I use that term throughout this talk.
-I'm also going to use the phrase Layer 2 because this is a conference about Layer 2s.
-So I want to be clear about what I mean when I say Layer 2.
-There are a few definitions that have been proposed for Layer 2.
-Georgios Konstantopoulos says, what makes a Layer 2 special is when Layer 2 security is equal to Layer 1 security.
-So he's basically saying Layer 2 is an off-chain system that has ownership security and double spend resistance equal to the main chain.
+I'm also going to use the phrase `Layer 2` because this is a conference about Layer 2s.
+So I want to be clear about what I mean when I say `Layer 2`.
+There are a few definitions that have been proposed for `Layer 2`.
+Georgios Konstantopoulos says, what makes a `Layer 2` special is when `Layer 2` security is equal to `Layer 1` security.
+So he's basically saying `Layer 2` is an off-chain system that has ownership security and double spend resistance equal to the main chain.
 This definition isn't very satisfying to me.
 He actually contradicts himself like in his tweet.
 So he says layer two security is equal to layer one security, but then he says, you know, that includes this, you know, it would include a system where you play a fixed duration game where honest players are guaranteed to win, but that's not how Layer 1 works.
