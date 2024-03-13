@@ -357,8 +357,8 @@ Speaker 2: 00:29:23
 
 Actually, no.
 To analyze it, I implemented an algorithm which enumerates all the possible subsets of the inputs and outputs and tries to match them.
-So yeah, I think, I don't know, I don't remember how I did it, but I sped it up with a Bloom filter.
-And I realized that implementing a fast algorithm is, should probably intuitively be more difficult if the sums did not match.
+So yeah, I think, I don't remember how I did it, but I sped it up with a Bloom filter.
+And I realized that implementing a fast algorithm should probably intuitively be more difficult if the sums did not match.
 So my thinking was that maybe it does not make the mathematical problem harder, but it makes it much harder to implement an efficient algorithm to actually find all the possible mappings or the possible partitions.
 
 Speaker 3: 00:30:20
@@ -373,8 +373,8 @@ okay, it has to match, It is hard to
 Speaker 3: 00:30:31
 
 in a range, right?
-It has to, okay, if it is more or less this value, so yes, it's a pain in the ass, but...
-You cannot use a bloom filter, of course, so you have to keep it in memory, which is even worse.
+If it is more or less this value, so yes, it's a pain in the ass, but...
+You cannot use a Bloom filter, of course, so you have to keep it in memory, which is even worse.
 But the question was about how can we make the participants pay a fee in such a way that it doesn't provide additional information to the chain analyzers?
 
 Speaker 2: 00:31:20
@@ -387,9 +387,9 @@ Speaker 1: 00:31:45
 Yeah, I agree with that.
 It doesn't provide additional information.
 It makes it even harder to do the analysis.
-And I did the analysis with the precision and the only real difficulty with the tunnel is this is how do you set the precision and what I realized for normal coin joins you can set the precision as the mining fee because the mining fees the maximum amount one participant can pay.
+And I did the analysis with the precision and the only real difficulty with the tunnel is this is how do you set the precision and what I realized for normal coinjoins you can set the precision as the mining fee because the mining fees the maximum amount one participant can pay.
 With joint market transactions, it's mining fee plus a random, I don't know what it should be, random whatever the joint market transaction agreement was on the fees that the taker pays for the makers.
-On Wasabi It's a mining fee plus 1% and that produces a bunch of unreliability, of course.
+On Wasabi it's a mining fee plus 1% and that produces a bunch of unreliability, of course.
 So, yeah, I don't see how it would provide more information.
 
 Speaker 3: 00:33:03
@@ -405,8 +405,8 @@ What does it mean one?
 
 Speaker 3: 00:33:21
 
-Ok, one satoshi per byte.
-If the fill rate is one satoshi per byte, for example, and you see that you can take all the partitions, right?
+Okay, one satoshi per byte.
+If the fee rate is one satoshi per byte, for example, and you see that you can take all the partitions, right?
 And say, okay, the sum of these inputs, minus the sum of these outputs gives you the fee, right?
 So, that fee, given the size of the transaction, you know how much it paid.
 What is the fee rate?
@@ -420,7 +420,7 @@ It could be that all of them paid together.
 
 Speaker 3: 00:34:18
 
-Yes, well, in that case, if only one pay the fee, ok, yes, it makes sense, but in that case also is a problem because you can say, ok, if it match exactly, yes, then this is one of those that didn't pay any fee.
+Yes, well, in that case, if only one pay the fee, yes, it makes sense, but in that case also is a problem because you can say, if it match exactly, then this is one of those that didn't pay any fee.
 
 Speaker 1: 00:34:38
 
@@ -428,18 +428,17 @@ You may say exactly but I don't understand.
 
 Speaker 3: 00:34:42
 
-If the sum of the input and the sum of the outputs is
+If the sum of the input and the sum of the outputs is exact.
 
 Speaker 1: 00:34:46
 
-exact.
 Then you can say that this participant did not pay anything.
 Why would you say that?
 There are many other sub-mappings that could be possible, even if you found one that all the duff like that, if you find other mappings that those are just as likely as that your first impression.
 
 Speaker 2: 00:35:15
 
-I think I understand what you mean, Lukas.
+I think I understand what you mean, Lucas.
 So if all the participants pay exactly the same fee, and we have one mapping where all the input and the difference between the inputs and the outputs exactly matches this fee.
 Then we would assume that this must be the true mapping.
 But I'm not sure whether there would only be one such mapping.
@@ -458,11 +457,11 @@ So you mean when you have multiple mappings and then the difference between the 
 
 Speaker 3: 00:37:09
 
-yes exactly exactly
+Yes, exactly
 
 Speaker 2: 00:37:16
 
-yeah could be I mean obviously I have to add this is more or less an empirical analysis.
+Yeah, obviously I have to add this is more or less an empirical analysis.
 It's not really a mathematical proof of this concept.
 So I think the idea is really good and I think it would work combined because of the reason that it's likely infeasible to find out which mapping is correct.
 And also difficult to actually find the mappings once the transactions get big enough, but it's not provably correct or provably anonymous in a more strict sense, I guess.
