@@ -120,7 +120,7 @@ In this case, we're trying to optimize the way to have outputs that they fill gi
 So the algorithm is pretty simple.
 The idea is to compare the two output sets and to essentially try to break down one of the values of the output is the difference between the two sets.
 So in this case, the number 31 is the difference between the green and the orange.
-And so here you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coin joint transaction and now when we try to figure out the sub transactions we actually get two sub transactions.
+And so here you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coinjoint transaction and now when we try to figure out the sub-transactions we actually get two sub transactions.
 We get this one here which connects the two on the left with the three on the right, but we also get this sub-transaction here.
 And so the result is that if you asked, for example, is O1 linked with I3, the answer is that there's a 50-50 chance that O1 and I3 are linked because of the two sub-transactions that we have, in half of them O1 and I3 are not linked and the other half they are.
 To have a probability of one to be matched with another input or another output?
@@ -138,7 +138,6 @@ Speaker 0: 00:13:40
 
 Okay, well very cool.
 So I think the important thing to note here is that we still have a problem where some inputs are connected with other inputs and some inputs are connected with other outputs.
-So we don't have a perfect...
 We have some coins that are achieving no additional anonymity except for the computational complexity that it takes to unravel the coin join.
 So that's pretty much the end here.
 There's some anonymity here in the computational complexity that's required to figure out how to break down these coin joins, especially if we start talking about 10 participants, 30 participants, 50 participants.
@@ -149,7 +148,7 @@ This is the most important trade-off I think, is that currently from what I've r
 Speaker 2: 00:14:53
 
 Yeah, and that's exactly the third algorithm I came up with.
-I will have to read my own work again to understand what I did because it's, I think, two years now that I was working on it.
+I will have to read my own work again to understand what I did because two years now that I was working on it.
 But I had a third version of the algorithm which was working without knowing all the outputs.
 So for each, everybody needs to know all the inputs, but each participant only needs to know his own outputs.
 
