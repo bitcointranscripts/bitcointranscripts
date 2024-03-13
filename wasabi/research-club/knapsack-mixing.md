@@ -654,16 +654,14 @@ Yes, it's a problem.
 But not.
 And anyway, I just like to say that these conversations, I would really like to make these as a learning conversations and not necessarily how to integrate it or implement it into Wasabi or how to do anything with Wasabi.
 Because there are like 600 more papers that I want to review and maybe at the end when we learn about everything, then we can come up with something, then we can use different techniques from different papers.
-What my thinking is right now, is that it's just a vague idea, but if we could figure out scaling quality, if we could make, if we could give a number to, hey, we mix this way and this mix is this efficient.
-If we could scale the efficiency of the mix, if we could tell how efficient one mix is, then we could come up with a bunch of mixing solutions and we would know that, hey, this mixing solution gives the best blockchain space per anonymity gained number.
-Right?
+What my thinking is right now, is that it's just a vague idea, but if we could give a number to, hey, we mix this way and this mix is this efficient.
+If we could scale the efficiency of the mix, if we could tell how efficient one mix is, then we could come up with a bunch of mixing solutions and we would know that, hey, this mixing solution gives the best blockchain space per anonymity gained number, right?
 And what would be the anonymity gained?
 What is this Knapsack paper is doing pretty well that it is...
 I was always thinking about just breaking the link with how much anonymity set, but this Knapsack paper pointed me that, hey, you actually can break the link between the inputs, you can break the link between the outputs, and of course you can break the link between inputs and outputs.
 So that makes the anonymity gained metric much better.
 So that's great.
-Alright, do you guys have any presentations?
-Who has presentations here?
+All right, do you guys have any presentations?
 Who has presentations here?
 
 Speaker 2: 00:55:24
