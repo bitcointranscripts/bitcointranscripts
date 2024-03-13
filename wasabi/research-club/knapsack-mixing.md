@@ -942,27 +942,27 @@ So I don't know if it brings something new to us.
 
 Speaker 1: 01:10:06
 
-Yeah, that was kind of my idea there, that we could look at someone else's work on the same topic that's actually a part of the Knapsack paper and we could compare that.
-Oh there is also sneaker.
+Yeah, that was kind of my idea there, that we could look at someone else's work on the same topic that's actually a part of the knapsack paper and we could compare that.
+So there is also sneaker.
 
 Speaker 3: 01:10:32
 
-Oh sneakers too, yeah sneakers can be too.
-Probably sneakers is better than coin shuffle because coin shuffle has some communication schemes that is pretty hard.
+Sneakers too, yeah sneakers can be too.
+Probably sneakers is better than coinshuffle because coin shuffle has some communication schemes that is pretty hard.
 I don't know if it can be implemented really.
-So yeah.
+So, yeah.
 
 Speaker 1: 01:10:52
 
 Okay, let's start it again then and I will note how much are the votes and let's get over with.
-So, CoinShuffle is from EmRuffing and it's about mixing transactions.
-It's similar to Zerolink in that sense.
-CoinJoin Sudoku is from Christoph Atlas and it is how do you de-anonymize coinjoins.
+So, `CoinShuffle` is from EmRuffing and it's about mixing transactions.
+It's similar to `Zerolink` in that sense.
+`CoinJoin` Sudoku is from Christoph Atlas and it is how do you de-anonymize coinjoins.
 I think it's solving the subset sum problem somehow.
 This is a smaller thing.
 Secure multiparty computation.
-I have no idea what is this but I think it's something that will come back Because it came back many times sneaker is from Adam Gibson and This is a this is coin join Some some interesting idea to do coin joins.
-Okay, Aviv, coin shuffle, coin joins, Sudoku, Secure multiparty computation, sneaker, you can vote for multiple things.
+I have no idea what is this but I think it's something that will come back because it came back many times `sneaker` is from Adam Gibson and this is a this is coinjoin. Some interesting idea to do coin joins.
+Okay, Aviv, coinshuffle, coinjoins Sudoku, Secure multiparty computation, sneaker, you can vote for multiple things.
 
 Speaker 0: 01:12:02
 
@@ -971,7 +971,7 @@ I think the coin shuffle or the sneaker would be interesting.
 Speaker 1: 01:12:06
 
 Okay, coin shuffle one vote, sneaker one vote.
-Lukas?
+Lucas?
 
 Speaker 3: 01:12:12
 
@@ -979,21 +979,20 @@ The sneaker.
 Only sneaker?
 Yes, Igor
 
-Speaker 4: 01:12:42
+Speaker 1: 01:12:42
 
 I cannot
 
 Speaker 1: 01:12:42
 
-hear you Couldn't hear anything.
-Anything.
+hear you. Couldn't hear anything.
 
 Speaker 0: 01:13:03
 
 I'm going to head out.
 I trust your judgment to vote.
 
-Speaker 4: 01:13:06
+Speaker 0: 01:13:06
 
 I'm gonna head out I trust you
 
@@ -1003,7 +1002,7 @@ your judgment to vote and I'll read whatever is submitted for next week
 
 Speaker 3: 01:13:15
 
-perfect see you Aviv thank you
+Perfect see you Aviv thank you
 
 Speaker 6: 01:13:19
 
@@ -1020,18 +1019,18 @@ Thanks guys.
 Speaker 1: 01:13:26
 
 Thank you.
-Alright, O, would you like to keep your eye on him?
+Alright, who would you like to keep your eye on him?
 
 Speaker 6: 01:13:38
 
-I would dive more deeper into what Adam Gibson does on this topic, because I know the man and Yeah, I'm really curious what he's doing especially with regards to what you guys are researching.
-So yeah
+I would dive more deeper into what Adam Gibson does on this topic, because I know the man and yeah, I'm really curious what he's doing especially with regards to what you guys are researching.
+So yeah.
 
 Speaker 1: 01:13:53
 
-All right,
+All right.
 
-Speaker 4: 01:13:54
+Speaker 6: 01:13:54
 
 and the name is yeah
 
@@ -1058,27 +1057,27 @@ All right.
 Well, it doesn't really matter what I wrote.
 It's going to be Snicker.
 Because that has four votes.
-Okay so it's going to be sneaker than next next meeting and Lucas you were saying something that I disrupted you so go ahead.
+Okay, so it's going to be sneaker than next next meeting and Lucas you were saying something that I disrupted you so go ahead.
 
 Speaker 3: 01:14:50
 
-Yes, just a comment that those SnapSack transactions for an observer, an external observer, It is not easy to realize it is a conjoined, because I mean it can be a batch transaction, a pay-to-many transaction.
+Yes, just a comment that those snapsack transactions for an observer, an external observer, It is not easy to realize it is a conjoined, because I mean it can be a batch transaction, a pay-to-many transaction.
 I mean in the blockchain there are lots and lots and lots of transactions with more than, I don't know, 5 inputs and 10 outputs that are not conjoined, right?
 So, It is not easy to know that that's a conjoint transaction.
 So there is not a clear fingerprint.
 So you have to analyze the transaction and then you say, hey, this transaction has a lot of ambiguity, so it has to be a conjoined transaction.
 But otherwise, it's not easy.
-And, ok, you know, you say, ok, this is a conjoined transaction, a knapsack transaction, but who has created that transaction or how many participants it has.
+And, okay, this is a conjoined transaction, a knapsack transaction, but who has created that transaction or how many participants it has.
 So, it's not so easy.
 For example, in Wasabi we...
 
 Speaker 1: 01:16:19
 
-I disagree completely because there are just so many fingerprints in the blockchain that you can't tell exactly which wallet created that transaction by just looking at the endlock time let's say you know
+I disagree completely because there are just so many fingerprints in the blockchain that you can't tell exactly which wallet created that transaction by just looking at the endlock time let's say you know.
 
 Speaker 3: 01:16:35
 
-yes yes yes sure it is possible but anyway if you for example cannot know so easily how many participants are.
+Yes yes yes sure it is possible but anyway if, for example, cannot know so easily how many participants are.
 In Wasabi it is easy because you count how many equal outputs are.
 If there are 66 equal outputs then there are 66 participants.
 In this case it's a bit harder.
@@ -1094,8 +1093,8 @@ That different wallets are using different fees, different nlock times.
 They either use it or not, or they either use a specific number.
 They might bump the transaction able to do RBF.
 You see there is a set of features.
-Those features sometimes have like a run on a, let's say the fee.
-You have to decide what fee you will do in the transaction and if that fee, that exact fee that transaction is being made with can only be produced with Electrum.
+Those features sometimes have like a run on a let's say the fee.
+You have to decide what fee you will do in the transaction and if that exact fee that transaction is being made with can only be produced with Electrum.
 Electrum is a bad example because Electrum, Bitcoin Core and Wasabi kind of can produce each other's fees.
 But if that can only be produced with Electrum, then it's going to be a transaction with Electrum.
 Okay, so now we figured out that this is a transaction with Electrum.
@@ -1113,11 +1112,11 @@ I was fighting a lot against it previously, but I just realized it's not possibl
 Speaker 5: 01:19:29
 
 And If I may ask another stupid question is what exactly is analog time?
-And I mean, I think I've heard about it, but I just don't remember anything Or what does it like conclude
+And I mean, I think I've heard about it, but I just don't remember anything. Or what does it like conclude
 
 Speaker 1: 01:19:45
 
-Because
+Lucas.
 
 Speaker 3: 01:19:49
 
@@ -1132,7 +1131,7 @@ Okay, yeah, alright, thanks.
 
 Speaker 1: 01:20:17
 
-For example, Bitcoin Core and Electrum are using an n-lock time that is in order to discourage fee sniping, which whatever it is, it's not on top of my mind, but you know, like things like this.
+For example, Bitcoin Core and Electrum are using an n-lock time that is in order to discourage fee sniping, which whatever it is, it's not on top of my mind, but like things like this.
 Or the RBF, that's like if you send a transaction and you have RBF enabled, then only that information that this transaction can do RBF.
 Just, okay, now look at which wallets can do RBF and it must be, it's probably from those wallets.
 Now if you do an RBF transaction, if you bump the fee then oh that's a lot more information to expose because you can only bump the fee from removing the change, then you just exposed where you are sending the money, which would be exposed by the transaction chain anyway later on.
