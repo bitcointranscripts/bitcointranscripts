@@ -178,7 +178,7 @@ And in the case of rootstock, it's like 7 of 12 or something.
 So they generally try to set this N to be very high and then M to be some fault-tolerant subset of that.
 But very good point.
 Thank you for mentioning.
-Federated multisigs, they don't have exogenous honesty incentives.
+Federated multi-sigs, they don't have exogenous honesty incentives.
 So again, they're just relying on reputation or the legal system or something to keep them honest.
 And there's no unilateral redemption mechanism.
 So the users are relying on this federation to like, co-sign transactions in order to so users can get their funds out of the bridge.
