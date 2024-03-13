@@ -882,13 +882,12 @@ It raises more questions than it answers, I think.
 
 Speaker 3: 01:07:00
 
-One more thing, the Napsax transactions...
-Lucas, because
+One more thing, the napsack transactions...
 
 Speaker 1: 01:07:06
 
-Aviv is leaving, before Avi leaves, can we decide on what should be our next...
-What should be next Monday, What should we look into?
+Lucas, because Aviv is leaving, before Aviv leaves, can we decide on what should be our next...
+What should be next Monday. What should we look into?
 You guys have ideas?
 
 Speaker 3: 01:07:25
@@ -897,18 +896,17 @@ No. Coinshopper?
 
 Speaker 1: 01:07:33
 
-All right, Coinshopper one idea.
-All right, Coinshuffle, one idea.
+All right, `Coinshuffle`, one idea.
 
 Speaker 0: 01:07:41
 
-There are some papers that were cited by Felix's paper that I thought were interesting but I think coin shuffle was one of them.
+There are some papers that were cited by Felix's paper that I thought were interesting but I think `coinshuffle` was one of them.
 
 Speaker 1: 01:07:59
 
-There is also a coinjoin Sudoku from Christovatas, you know, anonymizing all the blockchain info shared
+There is also a coinjoin Sudoku from Christovatas, anonymizing all the blockchain info shared
 
-Speaker 4: 01:08:16
+Speaker 1: 01:08:16
 
 Also,
 
@@ -925,7 +923,7 @@ I prefer coin shuffle and there is another variant, I don't remember this, it is
 
 Speaker 1: 01:09:15
 
-There is coin shuffle plus plus and there is value shuffle Which is coin shuffle++ with confidential transactions So anyway Let's go from left to right Aviv, coin shuffle, coin join sudoku, secure multi-party Computation?
+There is coin shuffle plus plus and there is value shuffle. Which is coinshuffle++ with confidential transactions. So anyway Let's go from left to right Aviv, coin shuffle, coinjoin sudoku, secure multi-party computation?
 
 Speaker 0: 01:09:39
 
@@ -933,7 +931,7 @@ I guess I'll vote for CoinShuffle.
 
 Speaker 1: 01:09:43
 
-Ok, Lucas, CoinShuffle.
+Okay, Lucas, CoinShuffle.
 Igor?
 
 Speaker 3: 01:09:48
