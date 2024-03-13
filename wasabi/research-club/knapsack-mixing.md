@@ -182,17 +182,17 @@ And then we would end with deciding on what should be the next paper on next wee
 So, let's start with some more fun things.
 Felix, I would like to know what was the story behind the Knapsack paper?
 How did you come work on it?
-And yeah, Can you tell us about it?
+And yeah, can you tell us about it?
 
 Speaker 2: 00:18:02
 
 Yeah, of course.
 Actually, it started as my master thesis.
-So more or less, when the most of the content of the paper is also my master thesis, I omitted a bit of, yeah, more of the related work, which was also a big part of my thesis.
-And some of the results have not been part of my thesis, but more or less the idea and the general, yeah, most of the work is basically my master thesis.
+So more or less, when the most of the content of the paper is also my master thesis, I omitted more of the related work, which was also a big part of my thesis.
+And some of the results have not been part of my thesis, but more or less the idea and the general, most of the work is basically my master thesis.
 So after I finished the thesis, I wrote a paper based on it.
-And I think the one interesting thing is also that the term Knapsack for this mixing is not my idea.
-It was, I picked up the idea from two papers, which basically in one or two sentences describe that something like this could be done but did not really go into it.
+And I think the interesting thing is also that the term Knapsack for this mixing is not my idea.
+I picked up the idea from two papers, which basically in one or two sentences describe that something like this could be done but did not really go into it.
 So yeah, this is how I came up with this idea or why I started working on this idea.
 
 Speaker 1: 00:19:18
@@ -232,8 +232,8 @@ Most of the difficulties I encountered is the deciphering the pseudocode.
 
 Speaker 2: 00:21:08
 
-Yeah, no, all the, I was just looking into the code, everything's there.
-It's written in Rust, I don't know if you have experience with Rust, but it should be readable for anybody who is used to imperative languages.
+Yeah, no, I was just looking into the code, everything's there.
+It's written in `Rust`, I don't know if you have experience with `Rust`, but it should be readable for anybody who is used to imperative languages.
 I think the Interesting part is in the main source folder, the distribution.rs file.
 In there are the different mixing algorithms that I used.
 
@@ -262,11 +262,11 @@ Let me see.
 It's in the code.
 It's this line.
 Basically, the idea is that you broadcast to all participants all the inputs, but you can also do that in a fashion that you don't know which input belongs to which participant.
-And then you can split your own outputs based on the all the inputs that you That you've seen without telling anybody all the outputs
+And then you can split your own outputs based on the all the inputs that you you've seen without telling anybody all the outputs
 
 Speaker 3: 00:23:32
 
-Yeah Sorry, where are you sharing the links?
+Yeah sorry, where are you sharing the links?
 
 Speaker 2: 00:23:36
 
@@ -278,7 +278,7 @@ I saved them.
 
 Speaker 3: 00:23:43
 
-OK, thank you.
+Okay, thank you.
 
 Speaker 1: 00:23:47
 
@@ -291,7 +291,7 @@ Yeah, well,
 
 Speaker 4: 00:24:05
 
-okay.
+Okay.
 
 Speaker 3: 00:24:07
 
@@ -301,9 +301,9 @@ First, I was playing with this concept for a while and what I do is I sort the o
 It's just a special case, right?
 And I used two outputs, one is the payment, another is the change.
 I realized that in this scheme, with this modification, well I don't know if it is with this modification only, but it creates for example 1.5 outputs for each original output.
-For example, if I have a two participant coin join with four outputs, it creates six outputs.
+For example, if I have a two participant coinjoin with four outputs, it creates six outputs.
 If I have three participants with 2 outputs, I mean 6 outputs in total, it creates 9 outputs.
-And that, I don't know if you have some comments about this, but I want to know how many participants are in that conjoin.
+I don't know if you have some comments about this, but I want to know how many participants are in that conjoin.
 Is it that I'm doing something wrong or it's just because I'm sorting the outputs?
 Or, well, I can answer my question just by coding a bit more, but I don't know if it's something that you can share with us about that.
 
@@ -315,37 +315,31 @@ So this is something I would look into.
 
 Speaker 3: 00:26:31
 
-Ok, and my second question is about the phi, because in the paper you don't analyze the phi, you say basically that the phi adds some kind of noise, right?
-Match the partitions by equality because the sum of the inputs and the sum of the outputs are not equal, so it will be a bit harder to find the sub-transactions.
-To find the sub-transactions.
-But, I was playing with this concept and I don't know if you have some idea about what's the best way to handle the fee because if the participants use the same fee rate that is for example pretty common in wasabi, right?
+Okay, and my second question is about the phi, because in the paper you don't analyze the phi, you say basically that the phi adds some kind of noise, right?
+So you cannot match the partitions by equality because the sum of the inputs and the sum of the outputs are not equal, so it will be a bit harder to find the sub-transactions.
+But I was playing with this concept and I don't know if you have some idea about what's the best way to handle the phi because if the participants use the same fee rate that is for example pretty common in Wasabi, right?
 
-Speaker 4: 00:27:32
+Speaker 2: 00:27:32
 
-No. No?
+No.
 
 Speaker 3: 00:27:33
 
-For example in wasabi, right?
+No?
 
-Speaker 4: 00:27:35
+Speaker 2: 00:27:37
 
-Then...
-No. No?
+I was actually trying to create transactions, this analysis on Wasabi transactions, and it's really bad because we can go up to 1% plus mining fees and this unreliability makes it really interesting.
 
-Speaker 1: 00:27:37
-
-I was actually trying to create transactions, this analysis on wasabi transactions, and it's really bad because we can go up to 1% plus mining fees and this unreliability makes it really interesting.
-
-Speaker 4: 00:28:04
+Speaker 3: 00:28:04
 
 Well, yes, what I mean is that
 
 Speaker 3: 00:28:08
 
-if the coordinator, one coordinator that is coordinating this NAPCSAC transaction, right?
+if the coordinator, one coordinator that is coordinating this knapsack-transaction, right?
 If everybody uses the same fee rate, even the inputs are bigger than the outputs, so they pay more fee.
-If they pay proportional to their transactions, then that gives us a clue about, I mean
+If they pay proportional to their transactions,
 
 Speaker 4: 00:28:54
 
