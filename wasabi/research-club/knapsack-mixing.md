@@ -721,7 +721,7 @@ Let's say that if this wasn't for payments where there is an exact number or som
 
 Speaker 0: 00:57:08
 
-Yeah, so the idea is you would get a more efficient knapsack mix if you just allowed for infinite outputs, because they would get very small and then it would take more time to compute but there's the trade-off that you don't want to have lots of outputs so the simple knapsack idea here was just take regular transactions that have no special features and for every two transactions take the larger one, the one with the larger output and break down a large output into two parts where in this case the number 31 is the difference between the green and the orange brown values.
+Yeah, so the idea is you would get a more efficient knapsack mix if you just allowed for infinite outputs, because they would get very small and then it would take more time to compute, but there's the trade-off that you don't want to have lots of outputs so the simple knapsack idea here was just take regular transactions that have no special features and for every two transactions take the larger one, the one with the larger output and break down a large output into two parts where in this case the number 31 is the difference between the green and the orange brown values.
 So in this knapsack method, you only add one output for every two transactions that combine.
 
 Speaker 5: 00:58:08
@@ -781,13 +781,13 @@ Okay.
 
 Speaker 5: 00:59:24
 
-Okay, well, just going back to the Abibis presentation thing.
-I was just thinking about, you know, if it wasn't for payments, and there would be like any kind of set amount that you would have to reach on as output.
+Okay, well, just going back to the Aviv's presentation thing.
+I was just thinking about, if it wasn't for payments, and there would be like any kind of set amount that you would have to reach on as output.
 I understand that we wouldn't like to like use too many or break it down into too many UTXOs. But in like, in some sense, I think it could kind of work.
-I'm not sure if it's just too expensive or something for after why it's like combining all these UTXOs or something like that, but, you know, like breaking it down onto the smallest possible input that there is.
-And, you know, not maybe like, like the smallest one, but, you know, just breaking it down into a smaller and exact the same outputs, you know, like you could combine many inputs and the fee would go like a static, depending on how many inputs you're putting.
-And then it would just, you know, give you either like, for example, a bigger sum or a smaller sum.
-They could be like different kind of knapsacks, coin joins.
+I'm not sure if it's just too expensive or something for after why it's like combining all these UTXOs or something like that, but, like breaking it down onto the smallest possible input that there is.
+And, not maybe like, like the smallest one, but, just breaking it down into a smaller and exact the same outputs, like you could combine many inputs and the fee would go like a static, depending on how many inputs you're putting.
+And then it would just, give you either like, for example, a bigger sum or a smaller sum.
+They could be like different kind of knapsacks, coinjoins.
 I'm not sure if I'm explaining this correctly.
 Did you guys get any of that?
 
@@ -797,7 +797,7 @@ I think I understand what you're saying.
 There's some problems with that idea as well.
 I mean, inefficiency is one of them.
 But another issue that I see with these knapsack examples is we don't think about how transactions look like over a longer period of time.
-So for example, Let's say you have many, many, many change outputs.
+So for example, let's say you have many, many, many change outputs.
 If you decide to then spend many of these change outputs together in a transaction down the road, it undoes all of the privacy gains from the knapsack for the most part.
 So I think those are one concern.
 Is there something else you wanted to say?
