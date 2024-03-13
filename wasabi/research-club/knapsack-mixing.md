@@ -3,7 +3,6 @@ title: "Knapsack Mixing"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=XDCQI7hrB58
 tags: ["research"]
-speakers: ["Felix Maurer"]
 categories: ["club"]
 date: 2020-01-06
 ---
