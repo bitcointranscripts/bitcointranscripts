@@ -112,13 +112,13 @@ So in here we see that only with 6 sub-transactions and 4 inputs per sub-transac
 
 Speaker 0: 00:09:40
 
-So there's a solution to this problem because right now what we see is that it doesn't take a lot of time to unpack these coin joints and when you do there are very few non-derived mappings which means there's very little ambiguity in terms of what's linked.
+So there's a solution to this problem because right now what we see is that it doesn't take a lot of time to unpack these coinjoints and when you do there are very few non-derived mappings which means there's very little ambiguity in terms of what's linked.
 So could we increase this?
-Well, you know, here's knapsack mixing.
+Well, you know, here's `knapsack mixing`.
 The idea is how to optimize filling a knapsack with various things of different weights.
 In this case, we're trying to optimize the way to have outputs that they fill given inputs.
 So the algorithm is pretty simple.
-The idea is to compare the two output sets and to essentially try to break down one of the outputs so that one of the values of the output is the difference between the two sets.
+The idea is to compare the two output sets and to essentially try to break down one of the values of the output is the difference between the two sets.
 So in this case, the number 31 is the difference between the green and the orange.
 And so here we've done it with, you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coin joint transaction and now when we try to figure out the sub transactions we actually get two sub transactions.
 We get this one here which connects the two on the left with the three on the right, but we also get this sub-transaction here.
