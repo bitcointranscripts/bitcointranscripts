@@ -83,30 +83,28 @@ Georgios Konstantopoulos says, what makes a `Layer 2` special is when `Layer 2` 
 So he's basically saying `Layer 2` is an off-chain system that has ownership security and double spend resistance equal to the main chain.
 This definition isn't very satisfying to me.
 He actually contradicts himself like in his tweet.
-So he says layer two security is equal to layer one security, but then he says, you know, that includes this, you know, it would include a system where you play a fixed duration game where honest players are guaranteed to win, but that's not how Layer 1 works.
-There's no fixed duration game when you're holding funds on Layer 1.
+So he says layer two security is equal to layer one security, but then he says, you know, that includes this, you know, it would include a system where you play a fixed duration game where honest players are guaranteed to win, but that's not how `Layer 1` works.
+There's no fixed duration game when you're holding funds on `Layer 1`.
 So yeah, this kind of is not an internally consistent definition, so I reject it.
-Munib Ali from the SACS project has proposed the definition where he basically says Layer 2 is an off-chain system that gets full double-spend resistance from the main chain.
+Muneeb Ali from the Stacks project has proposed the definition where he basically says `Layer 2` is an off-chain system that gets full double-spend resistance from the main chain.
 This definition is also not very satisfying because it would actually exclude lightning, which I think is weird.
-It also doesn't completely accurately describe his system stacks because after the Nakamoto release stacks will only get full security after I think 100 blocks.
+It also doesn't completely accurately describe his system stacks because after the Nakamoto release Stacks will only get full security after I think 100 blocks.
 So there's like a caveat there like okay, eventually you get like full double spend resistance from the mainchain.
 But anyways, just because it excludes like lightning it just doesn't seem very satisfying to me, so I also reject that definition.
-And then there's this third definition where layer two is like any off-chain SAS transfer system.
+And then there's this third definition where `Layer 2` is like any off-chain Sats transfer system.
 And there are lots of people who express this kind of viewpoint.
-Not Groobles on Twitter says, lightning, Fetimint, and liquid are all layer twos.
-This guy, Matt.biff, says like Coinbase is a layer two.
-Kali from Cashew says, you know, Opendime is layer two.
-Instagib says altcoins are layer twos.
-Kali from Cashew says OpenDime is layer 2.
-Instant Gibbs says altcoins are layer 2.
-Of all the definitions I've mentioned so far, this is probably my favorite because it's at least consistent.
-Right, you can say, okay, any off-chain transfer system is a layer two, but it still just doesn't feel very satisfying to me to say like Coinbase is layer two or OpenDiamond is layer two.
-So I'm introducing a new definition, which is like a bridge, a layer two bridge, if users can unilaterally redeem their IOUs, like on the destination system, for main chain SATs. That means they don't require any cooperation from any third parties to get their stats out of the system.
+Notgrubles on Twitter says, lightning, fedimint, and liquid are all Layer 2s.
+This guy, matt.bit, says like Coinbase is a `Layer 2`.
+Calle from Cashew says, Opendime is `Layer 2`.
+Instagib says altcoins are `Layer 2`.
+Of all the definitions I've mentioned so far, this is probably my favorite because at least consistent.
+Right, you can say, okay, any off-chain transfer system is a layer two, but it still just doesn't feel very satisfying to me to say like Coinbase is Layer 2 or Opendime is Layer 2.
+So I'm introducing a new definition, which is like a bridge, a Layer 2 bridge, if users can unilaterally redeem their IOUs, like on the destination system, for main chain sats. That means they don't require any cooperation from any third parties to get their stats out of the system.
 And then this redemption process is actually enforced by the main chain consensus rules.
-And so therefore, a non-layer 2 bridge is a bridge that does not let users unilaterally redeem their IOUs. For mainchain SaaS, you need some sort of cooperation with a third party to get your money out of the system.
+And so therefore, a `non-layer 2` bridge is a bridge that does not let users unilaterally redeem their IOUs for mainchain sats, you need some sort of cooperation with a third party to get your money out of the system.
 So that's the terminology that I'll be using.
 And so I've laid out this quadrant.
-On the top, systems that are close to the top are systems where, yeah, systems on the top half are systems where some third parties can steal user funds.
+On the top, systems on the top half are systems where some third parties can steal user funds.
 Systems on the bottom half are systems where third parties cannot steal user funds.
 Systems on the left hand, I'm calling not layer two systems because third parties can freeze funds, meaning that users cannot actually get their funds out of the system.
 And then the systems on the right are all going to be layer two systems because third parties cannot freeze user funds.
