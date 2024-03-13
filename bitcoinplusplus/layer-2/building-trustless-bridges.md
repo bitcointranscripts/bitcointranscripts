@@ -7,6 +7,8 @@ speakers: ["John Light"]
 categories: ["conference"]
 date: 2023-04-29
 ---
+John Light:
+
 Thank you all for coming to my talk.
 As is titled, I'll be talking about how we can build trustless bridges for Bitcoin.
 So my name is John Light.
@@ -146,11 +148,25 @@ There's no single point of failure because you have multiple custodians that hav
 But even still, if that quorum is compromised, then the custodians could freeze or steal the sats that are locked in the bridge.
 I see a hand.
 Do you have a question?
+
+[Audience]: 
+
 Yeah, when you have also like the single point, let's say you have a multisig that requires three sign-offs, and there's three people involved in this transaction.
 You have a single, each of those people is a point of failure because if they don't sign off on the transaction, then everything just stays locked.
-Yeah, so The question was, if you have a multi-sig, and it's like a three of three, so that means all of the signers have to sign off in order to move funds, then any one signer who decides not to sign could block a transfer.
+
+John Light:
+
+Yeah, so the question was, if you have a multi-sig, and it's like a three of three, so that means all of the signers have to sign off in order to move funds, then any one signer who decides not to sign could block a transfer.
 That is true.
-And so you might amend this to say, like, if you have a fault tolerance multi-sig, like a two of three instead of a three of three Yes, there's a there's a safety versus liveness trade-off In that model, but you still in that case You don't you still don't have a centralized a single point of failure in that case.
+And so you might amend this to say, like, if you have a fault tolerance multi-sig, like a two of three instead of a three of three. 
+
+[Audience]: 
+
+You are balancing out like how much safety do you want in terms of agreement versus how much slacks do you want in terms of assembly dies of whatever.
+
+John Light:
+
+Yes, there's a safety versus liveness trade-off In that model, but you still in that case You don't you still don't have a centralized a single point of failure in that case.
 You have two points of failure.
 I've never compromised two though.
 Yeah.
@@ -158,7 +174,7 @@ Yeah.
 Yeah.
 I mean, it's better than one, but it's maybe two of three, like marginally better.
 But in the case of liquid, it's like 11 of 15, I think.
-And in the case of rootstock, it's like seven of 12 or something.
+And in the case of rootstock, it's like 7 of 12 or something.
 So they generally try to set this N to be very high and then M to be some fault-tolerant subset of that.
 But very good point.
 Thank you for mentioning.
