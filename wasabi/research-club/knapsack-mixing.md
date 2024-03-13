@@ -615,14 +615,14 @@ So we need something different.
 Speaker 1: 00:50:20
 
 Yes, I agree.
-There are solutions for that, like stat addresses or give me an Onion, your Onion node, Onion address, and we could maybe work it out, but it's a lot of work.
+There are solutions for that, like stat addresses or give me your Onion address, and we could maybe work it out, but it's a lot of work.
 Yes.
-However, maybe it's possible to do a variation of Knapsack where you kind of keep the payment as it is, but you are only mixing on the changes.
+However, maybe it's possible to do a variation of `knapsack` where you kind of keep the payment as it is, but you are only mixing on the changes.
 It should be an easier thing.
 
 Speaker 2: 00:51:05
 
-Actually, I'm quite sure I've read about special kinds of Bitcoin addresses where you can for the receiver of the transaction generate as many addresses as you want And I don't remember how it was.
+Actually, I'm quite sure I've read about special kinds of Bitcoin addresses where you can for the receiver of the transaction generate as many addresses as you want. And I don't remember how it was.
 It was kind of like a public private key scheme where you can generate new addresses and only the receiver is able to use these addresses.
 I guess the only remaining problem would be for the receiver to notice transactions which contain addresses that belong to him.
 But I will try to find out what they were called.
@@ -653,8 +653,8 @@ Speaker 1: 00:52:41
 Yes, it's a problem.
 But not.
 And anyway, I just like to say that these conversations, I would really like to make these as a learning conversations and not necessarily how to integrate it or implement it into Wasabi or how to do anything with Wasabi.
-Because there are like 600 more papers that I want to review and maybe at the end when everything is, we learned about everything, then we can come up with something, then we can use different techniques from different papers.
-What my thinking is right now, is that it's just a vague idea, but if we could figure out, if we could figure out scaling quality, if we could make, if we could give a number to, hey, we mix this way and this mix is this efficient.
+Because there are like 600 more papers that I want to review and maybe at the end when we learn about everything, then we can come up with something, then we can use different techniques from different papers.
+What my thinking is right now, is that it's just a vague idea, but if we could figure out scaling quality, if we could make, if we could give a number to, hey, we mix this way and this mix is this efficient.
 If we could scale the efficiency of the mix, if we could tell how efficient one mix is, then we could come up with a bunch of mixing solutions and we would know that, hey, this mixing solution gives the best blockchain space per anonymity gained number.
 Right?
 And what would be the anonymity gained?
