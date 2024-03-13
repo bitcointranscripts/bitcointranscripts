@@ -1,36 +1,35 @@
 ---
 title: "Building Trustless Bridges"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=M40yzuv6DNY
-tags: ['scalability', 'sidechains', 'statechains']
-speakers: ['John Light']
-categories: ['conference']
+tags: ["scalability","sidechains","statechains"]
+speakers: ["John Light"]
+categories: ["conference"]
 date: 2023-04-29
-summary: "Many mechanisms have been created that enable users to lock BTC on the mainchain, transfer a claim on the BTC in some offchain system, and then later redeem the claim and take ownership of the underlying BTC. Colloquially known as \"bridges\", these mechanisms offer a diverse range of security and usability properties for users to choose from depending on their risk tolerance and cost preferences. This talk will give an overview of the different types of BTC bridges that exist, how they work, and how they can be improved."
 ---
 Thank you all for coming to my talk.
 As is titled, I'll be talking about how we can build trustless bridges for Bitcoin.
 So my name is John Light.
-I'm working on a project called Sovereign.
+I'm working on a project called Sovryn.
 We actually utilize a bridge, the Rootstock-Cowpeg Bridge, because our project was built on a Rootstock side chain.
 And we're interested in how we can improve the quality of that bridge.
 Currently it's a federated bridge, we would like to upgrade to a trustless bridge.
 And this talk will describe one way that we can build a trustless bridge.
 So just to kind of introduce this concept, what is a Bitcoin bridge?
 So a Bitcoin bridge is a system that enables users to lock stats on the Bitcoin main chain and then receive an equivalent amount of IOUs for stats on some destination system.
-And then, perhaps most importantly, It enables the user to burn the IOUs on the destination system in exchange for an equivalent amount of stats on the main chain.
+And then, perhaps most importantly, it enables the user to burn the IOUs on the destination system in exchange for an equivalent amount of stats on the main chain.
 This is also referred to in the literature as a two-way peg, but nowadays most people call these bridges.
 So the destination system could be blockchains, it could be tangles or hashgraphs, fediments, state channel networks, centralized or federated databases, really any kind of system for transferring BTC or Sats, however you prefer.
 So at a very high level, the bridging process works like this.
-Some, a user will take some Sats, they will lock some Sats in a address on the main chain.
+A user will take some Sats, they will lock some Sats in a address on the main chain.
 There's a bridge system that does some stuff.
-And then the user will, on the destination system, they'll get issued an IOU for an equivalent amount of sats, and then they can use those sats in the destination system.
+And then on the destination system, they'll get issued an IOU for an equivalent amount of sats, and then they can use those sats in the destination system.
 So that's the deposit process.
 And then a withdrawal works the same way in reverse.
 So the user is going to burn some sats on the IOUs on the destination system.
 The bridge is going to do some stuff, and then the user will get some sats unlocked and sent to their mainchain address.
 The bridge does some stuff is really where all of the differences between the different bridge designs comes into play and I'll describe what that landscape of the design space looks like currently.
-But first I wanna talk about why are we even doing this?
+But first I want to talk about why are we even doing this?
 Why would users give up control of their stats to a bridge?
 So the first reason is we want to increase transaction throughput.
 So Hal Finney said back in the day that Bitcoin itself cannot scale to have every single financial transaction in the world.
@@ -50,7 +49,7 @@ The other motivating factor is we want to be able to add new functionality to Bi
 So everyone knows, or at least people who are familiar with Bitscreen's script know that it's kind of limited in its capabilities.
 There are only a few primitives that you can combine together to create Bitcoin smart contracts.
 People have come up with all kinds of new ideas of things that we could do with blockchains, other than what is already possible with Bitcoin today.
-Satoshi Nakamoto referenced this when he was talking about this idea called BitDNS, which is like a precursor to Namecoin.
+Satoshi Nakamoto referenced this when he was talking about this idea called `BitDNS`, which is like a precursor to Namecoin.
 He said, piling every proof-of-work quorum system in the world into one data set doesn't scale.
 Bitcoin and BitDNS can be used separately.
 Users shouldn't have to download all or both, use one or the other.
@@ -58,7 +57,7 @@ BitDNS users may not want to download everything the next several unrelated netw
 So he's basically referring to this tension between having a blockchain that has limited expressivity that maybe only supports one or a few small numbers of applications, and then a blockchain that has full expressivity that you can pile all of these different types of applications into a single blockchain.
 Do we really want that or do we want to try to firewall these things and have it separation of concerns so that users who are only interested in one application can use one system, and then users who are interested in another application can use some other systems.
 So we want solutions to this problem that don't harm the decentralization and the security of the Bitcoin main chain.
-And so we've come up with this idea of bridges so that we can increase transaction throughput and add new functionality by transferring SACs to other systems, and those other systems take on the burden of increasing transaction throughput or adding new functionality.
+And so we've come up with this idea of bridges so that we can increase transaction throughput and add new functionality by transferring sats to other systems, and those other systems take on the burden of increasing transaction throughput or adding new functionality.
 So one way that you could solve this problem is just by piling all of this stuff into the Bitcoin main chain so we could have more transactions per block, more blocks per day, more expressivity, more everything.
 But your Raspberry Pi node is not going to be very happy about that.
 And eventually, as the BitFury study shows, it'll just get kicked off of the network.
