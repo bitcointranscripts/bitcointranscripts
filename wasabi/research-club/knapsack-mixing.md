@@ -16,7 +16,7 @@ I'm just going to run through this slide and then hopefully Felix will jump in t
 
 Speaker 0: 00:00:15
 
-So yeah, this is the paper, Anonymous CoinJoin Transaction with Arbitrary Values.
+So yeah, this is the paper, Anonymous Conjoin Transaction with Arbitrary Values.
 We have one of the authors with us.
 This PowerPoint will be made available if anyone wants it.
 Very straightforward.
