@@ -1309,5 +1309,4 @@ Thank
 
 Speaker 5: 01:28:50
 
-you.
 Bye.
