@@ -120,7 +120,7 @@ In this case, we're trying to optimize the way to have outputs that they fill gi
 So the algorithm is pretty simple.
 The idea is to compare the two output sets and to essentially try to break down one of the values of the output is the difference between the two sets.
 So in this case, the number 31 is the difference between the green and the orange.
-And so here we've done it with, you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coin joint transaction and now when we try to figure out the sub transactions we actually get two sub transactions.
+And so here you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coin joint transaction and now when we try to figure out the sub transactions we actually get two sub transactions.
 We get this one here which connects the two on the left with the three on the right, but we also get this sub-transaction here.
 And so the result is that if you asked, for example, is O1 linked with I3, the answer is that there's a 50-50 chance that O1 and I3 are linked because of the two sub-transactions that we have, in half of them O1 and I3 are not linked and the other half they are.
 To have a probability of one to be matched with another input or another output?
