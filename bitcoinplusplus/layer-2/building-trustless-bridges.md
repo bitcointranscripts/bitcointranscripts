@@ -314,26 +314,33 @@ The compromised rollup operator cannot steal sats that are locked in the bridge 
 These are cryptographic proofs.
 If they don't have the private keys that own the sats, then they can't withdraw the sats from the bridge.
 And it also has double spend resistance that is equivalent to Layer 1.
-So this is important because it means that, if you trust that you're not going to get double spent on layer one because it's so expensive to pre-org a block, then you can also have that same level of trust or assurance on layer two validity rollup.
+So this is important because it means that, if you trust that you're not going to get double spent on layer one because it's so expensive to pre-org a block, then you can also have that same level of trust or assurance on Layer 2 validity rollup.
 All of these qualities put together make the layer two validity rollup bridge completely trustless.
-There are no new trust assumptions compared to holding or transacting in SACs on Layer 1.
+There are no new trust assumptions compared to holding or transacting in sats on Layer 1.
 The downsides of this are that there is high throughput, but not unlimited throughput.
-Because you have to post the block of every layer 2 validity rollup inside of a layer 1 block, your throughput capacity is limited by your carrying capacity on layer 1.
+Because you have to post the block of every Layer 2 validity rollup inside of a Layer 1 block, your throughput capacity is limited by your carrying capacity on Layer 1.
 In the case of Bitcoin, it would be like 4 megabytes per block.
 It's also relatively expensive because validity proofs require a high computational capabilities.
 It's not as computationally intensive as mining Bitcoin, but it's more computationally expensive than just signing transactions on a multi-sig or something like that.
-So validity roll-ups go in the lowest, farthest right quadrant of this where this is totally trustless, like no one can steal or freeze funds, and it's, at least it's, the same trust model, the same security model is like pulling SASS on layer one.
+So validity roll-ups go in the lowest, farthest right quadrant of this where this is totally trustless, like no one can steal or freeze funds, and it's the same security model is like holding sats on Layer 1.
 You have about five minutes.
+
+[Audience]:
+
+You got 5 minutes.
+
+John Light:
+
 Thank you.
 
 ## Ingredients for a trustless bridge
 
-So the ingredients that you need to have a trustless bridge like this and the validity you roll up has all of these ingredients is that layer one needs to know what the rules of the destination system are, or at least needs to know a hash of the rules.
+So the ingredients that you need to have a trustless bridge like this and the validity you roll up has all of these ingredients is that Layer 1 needs to know what the rules of the destination system are, or at least needs to know a hash of the rules.
 Because with that, we can verify that destination system state updates are valid according to the rules of the system.
-And that ensures that People can't, for example, make an invalid withdrawal from the bridge, claiming that they are withdrawing Sats that they own, which they do not actually own.
+And that ensures that people can't, for example, make an invalid withdrawal from the bridge, claiming that they are withdrawing sats that they own, which they do not actually own.
 We need to know what the current canonical state root of the destination system is, so that users can't effectively double-spend the bridge by withdrawing sats that they've already transferred to somebody else.
-We need to enforce that a state update must build on the last known canonical state, meaning that the destination system cannot reorganize independently of Bitcoin layer 1.
-And This ensures that when a user receives coins on layer 2 or the destination system, that the security of that transaction is equivalent to if they were receiving Bitcoin on layer one.
+We need to enforce that a state update must build on the last known canonical state, meaning that the destination system cannot reorganize independently of Bitcoin Layer 1.
+And this ensures that when a user receives coins on Layer 2 or the destination system, that the security of that transaction is equivalent to if they were receiving Bitcoin on Layer 1.
 And finally, we need a strong data availability assurance for state update data.
 We need to have at least enough data stored somewhere with a high degree of data availability assurance that we can fully reconstruct the current canonical state of the system.
 And the reason why you need this is so that in the case of a validity rollup, like the user needs to know what the current state of the system is so they know how much money they have.
