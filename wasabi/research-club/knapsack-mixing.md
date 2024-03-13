@@ -470,7 +470,7 @@ Speaker 3: 00:38:13
 
 One more question, I'm curious.
 Your analysis, how many sub-transactions, inputs, outputs did you use?
-I mean, did you try with bigger, with a bigger number of participants, with more inputs and more outputs than those in the paper?
+I mean, did you try with a bigger number of participants, with more inputs and more outputs than those in the paper?
 
 Speaker 2: 00:38:40
 
@@ -478,20 +478,20 @@ Actually, no.
 And the reason was that the time it took to find the mappings would just grow too much.
 And it didn't run on my workstation.
 I had a bit bigger server with lots of RAM and multiple cores, I think 64 cores.
-Now, obviously, you could have a really much bigger, yeah, a bigger computing computer or server or server farm.
+Now, obviously, you could have a really much bigger computer or server or server farm.
 But yeah, for us, it was really the case that it became just too difficult to find all the, or not difficult, but it took too much time to find all the mappings.
 
 Speaker 3: 00:39:29
 
-Yes, I know, I tried with eight sub-transactions and it was running all all the day and didn't finish.
+Yes, I know, I tried with eight sub-transactions and it was running all the day and didn't finish.
 So I canceled the process.
-Yeah, okay, Thank you.
+Yeah, okay. Thank you.
 
 Speaker 2: 00:39:50
 
 And if my analysis of the theoretical complexity is not completely wrong, then I think the computing time it takes, depending on the inputs and output really increases by a lot when you increase the inputs and outputs.
 I have it here, but it's not written down in an easy way.
-I think two to the power of n times m where n is the Which n is that assess n
+I think two to the power of n times m which n is that assess n.
 
 Speaker 1: 00:40:32
 
@@ -507,7 +507,7 @@ I think it makes sense what I've read on the internet, on Wikipedia, that the be
 
 Speaker 2: 00:41:07
 
-Yeah, so I think if you would, I mean, the sizes of this mixed transactions in the paper I think should be only in an academical setting.
+Yeah, so I think, the sizes of this mixed transactions in the paper I think should be only in an academical setting.
 If you can automate it, and the idea was, you can join an arbitrary transactions because the sum or the value of the inputs doesn't matter.
 It doesn't need to be a fixed amount for each input.
 Then you can create for each transaction that you do, you can create with other peers for each transaction such a coin transaction of a huge size if enough people use the same wallet at the same time.
@@ -515,8 +515,8 @@ Then you can create for each transaction that you do, you can create with other 
 Speaker 1: 00:42:01
 
 Since we are going into it, I'd like to say an idea of mine that one of the most frequent question in Wasabi was that why do we have the 100 anonymity set and like that.
-But and the reason is because I sent out emails and that seemed like the consensus that okay that should be fine, 100 participants, but your lower bound estimation could actually give us a mathematic formula to set a minimum participants, right, for any coin joins.
-Okay, you kind of need at least this many participants in order to make, in order to reach this computational hardness in deciphering the coin joins.
+But and the reason is because I sent out emails and that seemed like the consensus that okay that should be fine, 100 participants, but your lower bound estimation could actually give us a mathematic formula to set a minimum participants, right, for any coinjoins.
+Okay, you kind of need at least this many participants in order to reach this computational hardness in deciphering the coinjoins.
 Does that make sense guys?
 
 Speaker 2: 00:43:07
