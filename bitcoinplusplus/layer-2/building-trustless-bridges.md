@@ -106,11 +106,11 @@ So that's the terminology that I'll be using.
 And so I've laid out this quadrant.
 On the top, systems on the top half are systems where some third parties can steal user funds.
 Systems on the bottom half are systems where third parties cannot steal user funds.
-Systems on the left hand, I'm calling not layer two systems because third parties can freeze funds, meaning that users cannot actually get their funds out of the system.
-And then the systems on the right are all going to be layer two systems because third parties cannot freeze user funds.
+Systems on the left hand, I'm calling not Layer 2 systems because third parties can freeze funds, meaning that users cannot actually get their funds out of the system.
+And then the systems on the right are all going to be Layer 2 systems because third parties cannot freeze user funds.
 Users can always make a transaction on the main chain to get their money out of the bridge.
 So the first type of bridge is the classic centralized custodian.
-An example of this would be like WBTC on Ethereum or even your centralized exchanges like Mt. Docks or Silk Road or something like that.
+An example of this would be like `WBTC` on Ethereum or even your centralized exchanges like Mt. Docks or Silk Road or something like that.
 So the centralized custodian fully controls the bridge.
 They usually just give the users an address, users send their stats to the address, they get an equivalent amount of IOUs like in the custodian's database.
 In the case of WBTC, it's like a token on a different blockchain.
@@ -130,7 +130,7 @@ And the users cannot unilaterally redeem their IOUs for Bitcoin.
 They have to like ask the custodian, please give me my stats back and maybe this custodian complies, maybe they don't.
 So they go up here.
 They're like the most trusted, most risky kind of bridge that you could use.
-Then there's federated multi-sig.
+Then there's `federated multi-sig`.
 This is improving the custodial model a bit.
 In this case, you don't have one custodian, you have multiple custodians and they have to collaborate together using a multi-state contract in order to control the bridge.
 Some quorum of the custodians have to sign off on a transaction in order to effectuate withdrawals from the bridge.
@@ -139,13 +139,13 @@ Some quorum of the custodians have to sign off on a transaction in order to effe
 
 Similar to the centralized custodians, they're cheap, they have really high throughput, you can just spin these up as many as you need.
 You can have custom execution environments.
-For example, you know, Liquid sidechain is like a federated multi-sig.
+For example, `Liquid sidechain` is like a federated multi-sig.
 It has a new type of blockchain with confidential transactions and recursive covenants.
-Fetty Mints have like Chami and eCash, Rootstock has EVM contracts, so you get a lot of flexibility from your execution environment.
+Fedimints have like Chamian eCash, Rootstock has EVM contracts, so you get a lot of flexibility from your execution environment.
 There's no single point of failure because you have multiple custodians that have to collude to move the funds.
 But even still, if that quorum is compromised, then the custodians could freeze or steal the sats that are locked in the bridge.
 I see a hand.
-You have a question?
+Do you have a question?
 Yeah, when you have also like the single point, let's say you have a multisig that requires three sign-offs, and there's three people involved in this transaction.
 You have a single, each of those people is a point of failure because if they don't sign off on the transaction, then everything just stays locked.
 Yeah, so The question was, if you have a multi-sig, and it's like a three of three, so that means all of the signers have to sign off in order to move funds, then any one signer who decides not to sign could block a transfer.
