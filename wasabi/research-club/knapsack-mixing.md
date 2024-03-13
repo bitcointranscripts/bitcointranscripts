@@ -158,8 +158,8 @@ Speaker 0: 00:15:22
 
 Okay, so everybody just needs to know all the inputs.
 Okay, so interesting.
-So upper bound anonymity, it's like, if we look at this way of looking at transaction anonymity and we apply it to Zerolink, we see that Zerolink is like a perfect knapsack coin join.
-So that sort of provides us the upper bound anonymity, which is essentially the number of total participants that are doing this knapsack coin join.
+So upper bound anonymity, it's like, if we look at this way of looking at transaction anonymity and we apply it to `ZeroLink`, we see that `Zerolink` is like a perfect knapsack coin join.
+So that sort of provides us the upper bound anonymity, which is essentially the number of total participants that are doing this knapsack coinjoin.
 
 Speaker 1: 00:16:01
 
@@ -175,7 +175,7 @@ Speaker 1: 00:16:28
 
 Yeah, so thank you, Aviv.
 It's a nice introduction to get everyone catch up with the paper and we can go into the details here and there.
-I was thinking that if Felix appears, then we would start with some questions to Felix and then we would continue with the, if anyone has some small presentations then we would continue with those and then we would end up with discussions, questions, what did we not understood in the paper.
+I was thinking that if Felix appears, then we would start with some questions to Felix and then if anyone has some small presentations then we would continue with those and then we would end up with discussions, questions, what did we not understood in the paper.
 Although this could be bring here right now because Felix is still here.
 So and we would finally discuss some things like if you have any ideas that came to your mind with this paper.
 And then we would end with deciding on what should be the next paper on next week.
