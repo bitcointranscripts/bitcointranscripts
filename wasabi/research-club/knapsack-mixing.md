@@ -539,7 +539,7 @@ All right.
 Speaker 3: 00:44:39
 
 One more thing.
-I remember in the paper you said that if you spend one of those outputs in another Knapsack transaction, the difficulty could be similar to the one, I mean the problem of finding all the mappings across different, across a chain of NAPSA transactions, the difficulty also increases similar to the process of mining blocks, mining a chain of blocks, right?
+I remember in the paper you said that if you spend one of those outputs in another `knapsack transaction`, the problem of finding all the mappings across a chain of `knapsack transactions`, the difficulty also increases similar to the process of mining a chain of blocks, right?
 Do you have any additional numbers about that?
 Because I agree intuitively that that is true.
 But do you have any numbers about that?
@@ -548,7 +548,7 @@ Have you tried that?
 Speaker 2: 00:45:44
 
 No, sorry, that's something I didn't try.
-And I'd like to add that intuitively, I think that the difficulty or the problem would be that if enough people would use this kind of transactions, and you would have a continuous flow of these transactions, which could create kind of a backlog of coin join transactions that you need to find the mappings for, which is what I mean in the complexity increases when you have when you use it continuously.
+And I'd like to add that intuitively, I think that the difficulty or the problem would be that if enough people would use this kind of transactions, and you would have a continuous flow of these transactions, which could create kind of a backlog of coinjoin transactions that you need to find the mappings for, which is what I mean in the complexity increases when you use it continuously.
 On the other hand, linking, for example, two outputs together could actually be more easy if they both appear again as inputs in the next coinjoin transactions.
 That is one of the open questions, one of the open problems.
 
@@ -566,7 +566,7 @@ I only have a couple of basic, maybe a little bit stupid questions, but are you 
 
 Speaker 0: 00:47:35
 
-Coin join like for payments whereas the zero link currently does coin joins as I think I can
+Coin join like for payments whereas the Zerolink currently does coinjoins as I think I can
 
 Speaker 3: 00:47:42
 
@@ -583,19 +583,17 @@ payments, whereas Zerolink currently does
 Speaker 0: 00:47:43
 
 Coinjoins as mixing transactions.
-This is actually the question I wanted to ask Felix was, you know, if he knows anything about how Wasabi currently works and, you know, the distinction between a coin join for mixing and a coin join for sending.
-And I feel like having read this paper, I feel like Wasabi being able to send in a coin join might open doors for more privacy.
+This is actually the question I wanted to ask Felix was, if he knows anything about how Wasabi currently works and, you know, the distinction between a coin join for mixing and a coinjoin for sending.
+And I feel like having read this paper, I feel like Wasabi being able to send in a coinjoin might open doors for more privacy.
 
 Speaker 2: 00:48:19
 
-Yeah, To be honest, I didn't know about Wasabi until now because I really I'm not keeping up with the current developments on Bitcoin anymore or other other cryptocurrencies.
-But yeah, what was my idea was that actually, that's the point of the Knapsack mixing, that you can use coin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
+Yeah, To be honest, I didn't know about Wasabi until now because I really I'm not keeping up with the current developments on Bitcoin anymore or other cryptocurrencies.
+But yeah, my idea was that actually, that's the point of the Knapsack mixing, that you can use coin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
 So you can in the same step, send coins to a third party and do the mixing.
-Okay,
 
 Speaker 4: 00:49:01
 
-thanks.
 Okay, thanks.
 
 Speaker 3: 00:49:08
@@ -609,9 +607,9 @@ Many addresses, probably by sure more than the payment and the change.
 You need to be able to generate more addresses.
 So, it is not hard to do, I think, but it is something that is not so easy with the existing culture, let's say.
 Because if I want to pay you, Aviv, I ask you for one address.
-Imagine I say, OK, Aviv, I want to pay you.
+Imagine I say, okay, Aviv, I want to pay you.
 Send me 10 of your addresses.
-It is not, it is unusual, right?
+It is unusual, right?
 So we need something different.
 
 Speaker 1: 00:50:20
