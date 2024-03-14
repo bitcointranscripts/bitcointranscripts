@@ -583,11 +583,11 @@ Lisa Neigut: 00:41:11
 Yeah, so let's talk about why that is, though.
 Yeah, so like Jonathan mentioned, the current construction uses, I think they're called `Poon-Dryja channels`, is the technical name of the current implement protocol that channels use.
 And the way that it works is that every time you update the current state of the money in a Lightning contract between the two parties, you kind of have to remember almost every previous state and also in order to invalidate, so you have state updates on this contract, right, and the state that you're updating is the amount of balance of who owns what between the two parties in that channel.
-Every time you update that state, the way that you prevent your channel party from publishing an older state such that they can't roll back time basically to a state where maybe they had all the money in the channel and then they paid it to you over like 10 updates, so you're now at the 10th update, but then they go back and publish the first update such that now they have all the money again and that's what's officially on record on chain and so they spent money but didn't actually spend the money because they were able to get it back on layer one.
-The way that the Poon/Dryja channel construction helps prevent this problem is by issuing something that we call a revocation key, or revocation, yeah I think it's a revocation key is the technical name for it, that kind of makes each of those past transaction states sort of like toxic waste for the other party, such that if they ever publish an older state, that is what gets committed to chain, and that the other party then has this key that allows them to take all of the money that was originally locked into the two-party contract, so to speak.
+Every time you update that state, the way that you prevent your channel party from publishing an older state such that they can't roll back time basically to a state where maybe they had all the money in the channel and then they paid it to you over like 10 updates, so you're now at the 10th update, but then they go back and publish the first update such that now they have all the money again and that's what's officially on record on chain and so they spent money but didn't actually spend the money because they were able to get it back on Layer 1.
+The way that the Poon-Dryja channel construction helps prevent this problem is by issuing something that we call a revocation key is the technical name for it, that kind of makes each of those past transaction states sort of like toxic waste for the other party, such that if they ever publish an older state, that is what gets committed to chain, and that the other party then has this key that allows them to take all of the money that was originally locked into the two-party contract, so to speak.
 So, the waste is toxic in the sense that you can't get rid of it.
 If you accidentally forget what the most recent state was and publish an older state to chain, it exposes you to complete and total loss because your channel peer is able to take all that money out of the channel for themselves.
-It makes it such, yeah, so then if you do have this database backup, like total loss that we're talking about, even if you are able to figure out who your peers are, in order to continue using that contract and not have to do an emergency shutdown or whatever, you basically can't because you don't know what the current state is, so you don't have any information that you can then keep advancing it.
+So then if you do have this database backup, like total loss that we're talking about, even if you are able to figure out who your peers are, in order to continue using that contract and not have to do an emergency shutdown or whatever, you basically can't because you don't know what the current state is, so you don't have any information that you can then keep advancing it.
 Also, you're at a lot of risk at that point at your channel partner publishing a past date that you don't have the ability to revoke the keys from, etc.
 
 ## Summary
@@ -596,7 +596,7 @@ Jeremy Rubin: 00:43:50
 
 Okay, so I think unfortunately we're basically almost out of time here, as if somebody can tell me if that's the case.
 Yeah, so we're going to wrap up.
-I guess just sort of trying to summarize and synthesize from everything that I'm hearing is that lightning as it is today, we're gonna be able to get to maybe a million, maybe 10 million people or something like that who are able to self-sovereignly host themselves, maybe a lot more, who are gonna be able to use services that are maybe of good reputation, and those services themselves will be completely self-hosted, and maybe that's a way of bringing in a lot more people.
+I guess just sort of trying to summarize and synthesize from everything that I'm hearing is that Lightning as it is today, we're gonna be able to get to maybe a million, maybe 10 million people or something like that who are able to self-sovereignly host themselves, maybe a lot more, who are gonna be able to use services that are maybe of good reputation, and those services themselves will be completely self-hosted, and maybe that's a way of bringing in a lot more people.
 Unfortunately, it's difficult with what we have today to actually run one of these services at large scale and might require a lot of storage.
 You're at a very competitive marketplace where your competitors are willing to do the work you're trying to do for money for free.
 And so that might be very, very tight and competitive if you're trying to make money out of it.
@@ -608,7 +608,6 @@ Would you say that that's like a summary of where Lightning is at today?
 Rene Pickhardt: 00:45:05
 
 Yeah.
-Okay.
 Maybe.
 Yeah, I mean, it's work in progress.
 I think that's the important thing to note here, right?
