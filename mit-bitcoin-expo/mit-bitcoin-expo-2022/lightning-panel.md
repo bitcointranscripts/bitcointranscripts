@@ -143,13 +143,13 @@ So it's possible that there's like thousands of people and payments that are bei
 
 Jeremy Rubin: 00:09:43
 
-Yeah, I think I'm more trying to get a sense of what's the maximum that we could do, and if we're gonna hit a wall with that, as opposed to how many people are actually doing it.
+Yeah, I think I'm more trying to get a sense of what's the maximum that we could do, and if we're going to hit a wall with that, as opposed to how many people are actually doing it.
 I do believe it seems to be a lot of people, but do we hit some sort of obstacle of, well, so many people fit into a train car, so that the T, local Boston subway, probably you can only get a couple hundred people per 10 minutes or something.
 
 Lisa Neigut: 00:10:12
 
 Right.
-OK.
+Okay.
 So when we're talking about theoretical maximum limits of the system, right?
 Okay, so I think there's a couple interesting things to look at here.
 The one that I like to think about is in terms of liquidity and Lightning.
