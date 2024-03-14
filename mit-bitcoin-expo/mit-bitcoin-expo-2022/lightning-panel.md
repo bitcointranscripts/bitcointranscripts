@@ -266,12 +266,12 @@ So I think it's like, there's two questions here, right?
 Is Lightning Bitcoin scaling solution and is that its sole purpose?
 Or is Lightning a technology of how to transfer value in a very decentralized manner that can have other types of value locked into it that it's then transacting.
 If it's just Bitcoin, then how many Satoshis, how many transactions to open channels can you fit into a block?
-So like, you know, and that's important because it's like, okay, there's like X billion people that want to open a Lightning channel because that's the only way they can get onboarded onto the network.
-How many blocks would it take to get X billion channel opens done given the current constraints of the Bitcoin layer one, right?
-I feel like this is a question that comes up a lot with lightning.
+That's important because it's like, okay, there's like X billion people that want to open a Lightning channel because that's the only way they can get onboarded onto the network.
+How many blocks would it take to get X billion channel opens done given the current constraints of the Bitcoin Layer 1, right?
+I feel like this is a question that comes up a lot with Lightning.
 Again, that assumes that those X billion people aren't using centralized service providers that are managing those channels for them, but rather that they're all self-sovereign and basically running their own Lightning infrastructure, et cetera.
 So those are all questions that are useful and important for asking when you're looking at Lightning as a way to scale the number of Bitcoin transactions per second that can happen.
-I think that if you kind of take Lightning and look at it as a view is what Jonathan, I think, suggested, and that Lightning is a technology for contracting and for building payment networks that are decentralized and hopefully more anonymized, then if it's decoupled from the L1 in terms of the value you're transacting, and I'm not saying that there's plans to make that happen or anything anytime soon, but then I think these questions suddenly become a lot murkier and it's kind of a bigger, like, okay, is lightning the technology and standard set of how you transact value over more generalized forms of cryptocurrency contracts or is it just the Bitcoin one?
+I think that if you kind of take Lightning and look at it as a view is what Jonathan, suggested, and that Lightning is a technology for contracting and for building payment networks that are decentralized and hopefully more anonymized, then if it's decoupled from the L1 in terms of the value you're transacting, and I'm not saying that there's plans to make that happen or anything anytime soon, but then I think these questions suddenly become a lot murkier and it's kind of a bigger, like, okay, is Lightning the technology and standard set of how you transact value over more generalized forms of cryptocurrency contracts or is it just the Bitcoin one?
 
 ## Lightning and the role of Taproot
 
