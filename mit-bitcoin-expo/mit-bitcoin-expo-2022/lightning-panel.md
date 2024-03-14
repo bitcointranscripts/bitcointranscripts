@@ -139,7 +139,7 @@ That means that there's no public ledger of all of the transactions that you've 
 Instead, every time you make a transaction, you send it through a series of channels, like a series of tubes, and the record of that transaction is rather ephemeral, right?
 Because there's no written record of that transaction that happens that's publicly visible that someone can go and count.
 Only the parties that were involved in the routing of that transaction would even know that it happened.
-So it's possible that there's like thousands of people and payments that are being processed by Lightning, but because of how decentralized it is, there's no single person or view of the network that will ever be able to give you a good, I think, number of the amount of transactions that are currently happening on Lightning.
+So it's possible that there's like thousands of people and payments that are being processed by Lightning, but because of how decentralized it is, there's no single person or view of the network that will ever be able to give you a good, number of the amount of transactions that are currently happening on Lightning.
 
 Jeremy Rubin: 00:09:43
 
