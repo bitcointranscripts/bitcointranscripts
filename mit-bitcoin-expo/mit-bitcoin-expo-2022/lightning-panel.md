@@ -198,21 +198,21 @@ I'm like kind of like a big tent-like person.
 I would say that at the end of the day, the value of that transaction is being settled in Bitcoin using the Lightning Network, right?
 The number of parties that are involved in that transaction is not merely peer-to-peer at that point, right?
 It's kind of like having two financial institutions transacting on your behalf at that point, and the medium that they're using to transfer the value just so happens to be Bitcoin over the Lightning network.
-So to some extent, that relationship that you have between a Lightning service provider, I think that's what they're calling themselves, is like, I mean, you're transacting over Lightning, but you're asking someone else to effectuate that exchange over lightning on your behalf, right?
+So to some extent, that relationship that you have between a Lightning service provider, I think that's what they're calling themselves, I mean, you're transacting over Lightning, but you're asking someone else to effectuate that exchange over Lightning on your behalf, right?
 
 Jeremy Rubin: 00:14:37
 
 Okay, so I'm going to kick it up to Jonathan for a second, who's looking down on all of us now.
 So blessed.
-So Jonathan, we started off by just kind of asking everybody, philosophically, what is lightning to you?
+So Jonathan, we started off by just kind of asking everybody, philosophically, what is Lightning to you?
 If you were to be transported 100 years into the future, and you saw people doing something, and you're like, that's lightning, versus maybe the implementation of it today being a different concept.
-And then answering that same question of like, how many people do you think we can get, you know, onboarded into that current vision?
+And then answering that same question of like, how many people do you think we can get, onboarded into that current vision?
 
 Jonathan Harvey Buschel: 00:15:11
 
 Sure.
-So, I mean, I mean, this is the basic protocol that we want to use to move, you know, mostly Bitcoin around right now.
-So I'd say it's like on the same plane as, you know, email, which kind of maybe didn't go the way we expected or the way it was intended, where there's a bunch of variety of services running email servers.
+So, I mean, this is the basic protocol that we want to use to move, mostly Bitcoin around right now.
+So I'd say it's like on the same plane as, email, which kind of maybe didn't go the way we expected or the way it was intended, where there's a bunch of variety of services running email servers.
 And there's kind of some open network.
 I think with Lightning, we have a better shot at that just in terms of how teams have worked on the protocol and how easy it is to participate in currently.
 But I think at the base, it's just a non-custodial, trust-minimized way to move some value around.
@@ -220,12 +220,12 @@ It doesn't have to be just Bitcoin.
 We just happen to have implemented it here.
 So I'm not sure if that answers your question.
 But to look also at the scaling side of things, I think I wanted to add on to what Rene mentioned of like there are these bottlenecks in the network, right?
-So the gossip, for every Lightning node running, they need to keep up with the state of the network.
-And if we're, I don't know, multiplying the number of nodes by like 10X, probably not everybody's gonna be running a server in their house, right?
+For every Lightning node running, they need to keep up with the state of the network.
+And if we're, multiplying the number of nodes by like 10X, probably not everybody's going to be running a server in their house, right?
 Not everybody does that right now.
 You can buy some cheap computer and like put it in your basement and pull it off now but as the network grows like maybe that isn't something that's feasible but I would still say that you're using Lightning if you like have ownership of your funds if the service you're using is non-custodial and it may be that you know I'm running this server in my basement, and I've got all my friends that happen to be using that.
 Or maybe we have some shared ownership of some node running in the cloud.
-But still, we have nice guarantees about the security of our funds and what's actually happening with that note.
+But still, we have nice guarantees about the security of our funds and what's actually happening with that node.
 
 Jeremy Rubin: 00:17:08
 
@@ -236,9 +236,8 @@ I just want to know, when I'm thinking about this, are we going to get to a numb
 Rene Pickhardt: 00:17:23
 
 So you won't get that number from me, but I will give you a better answer.
-Right?
-So, so The question you're asking indirectly, as I understand it, is can we onboard 7 billion people to the Lightning Network?
-And my answer would be not 7 billion people in the world want to be onboarded directly to the Lightning Network.
+So, the question you're asking indirectly, as I understand it, is can we onboard 7 billion people to the Lightning Network?
+And my answer would be not 7 billion people in the world want to be onboarded directly to the Lightning Network, right?
 Take email as an example.
 We just had a presentation about Lightning Address that is, like, to some sense similar to the user experience of email.
 But many people are using web mail where they trust a certain service provider because they just don't want that.
