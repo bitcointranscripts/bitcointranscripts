@@ -277,25 +277,25 @@ I think that if you kind of take Lightning and look at it as a view is what Jona
 
 Jeremy Rubin: 00:21:35
 
-Cool, yeah, so I guess as we're kind of looking at where things are evolving to support more of that vision, who here has heard of Taproot?
+Cool, yeah, so I guess as we're kind of looking at where things are evolving to support more of that vision, who here has heard of `Taproot`?
 Raise your hand, all right.
 So we got a lot of people who've heard of Taproot.
-If you haven't, Taproot is a recently activated new feature for Bitcoin.
-And a lot of what I've seen online suggests that, like, Taproot fixes a lot of these things, and Taproot's really good.
+If you haven't, `Taproot` is a recently activated new feature for Bitcoin.
+And a lot of what I've seen online suggests that, like, Taproot fixes a lot of these things, and `Taproot` is really good.
 So what's going on with Taproot and the Lightning Network, and how might this thing that has been activated, but doesn't necessarily mean it's deployed yet, how might that change the shape of what's possible?
 
 Jonathan Harvey Buschel: 00:22:15
 
 I could give some answers here.
-So I think one thing that Taproot can fix, assuming it's widely deployed, is the privacy of channel openings.
+So I think one thing that `Taproot` can fix, assuming it's widely deployed, is the privacy of channel openings.
 So we have this on-chain footprint when we open a channel and we close the channel, and we have these scripts in there, right, to give some guarantees about refunds and making sure that we're like locking up the funds for the channel correctly and then exiting correctly.
 And right now that is very obvious, right?
 If you look on chain, you can find, you know, channel opens and closes.
-But we can move those scripts into, I guess, hide them by using a taproot transaction.
-And then we get on-train transactions that look a lot like, you know, other on-train transactions, assuming other wallets adopt Taproot, which they probably would.
+But we can hide them by using a taproot transaction.
+And then we get on-train transactions that look a lot like, other on-train transactions, assuming other wallets adopt Taproot, which they probably would.
 So that's something nice.
 Another benefit for Taproot is that we have this whole, like other way to embed information now in transactions and in channel updates.
-So with this protocol, Taro to embed acid information in the taproot tree.
+So with this protocol, Taro to embed asset information in the taproot tree.
 And the nice thing about that is that this doesn't impose a cost to people who aren't using it or to people who aren't participating.
 And I'd be looking forward to see actually what other protocols come out that are embedding data in that tree or make good use of that.
 I think right now we're still at the point where base libraries and implementations are adding support for Taproot.
@@ -304,15 +304,15 @@ But then you also have to figure out how to upgrade the network, right?
 So right now, we have a bunch of channels out there.
 And ideally, we don't close every single channel and then reopen it with a Taproot funding transaction.
 That would be a lot of strain on the network.
-So there are some proposals as well to figure out a better way to upgrade the channel types so that we can better support taproot use in channels overall.
+So there are some proposals as well to figure out a better way to upgrade the channel types so that we can better support Taproot use in channels overall.
 
 Lisa Neigut: 00:24:22
 
-I was gonna say, I think to kind of build on one of the cool things about, so taproot in terms of privacy, I think the on-chain footprint part, it's actually only, I would say, like maybe 30% of helping hide where your channels are on the network.
-There's a whole nother thing that we'll have to fix that Taproot doesn't solve before we can improve that measurably at all, really.
-However, moving over to Taproot in terms of privacy is good for decorrelating payment paths through the network.
+I think to kind of build on one of the cool things about, so taproot in terms of privacy, I think the on-chain footprint part, it's actually only, I would say, like maybe 30% of helping hide where your channels are on the network.
+There's a whole other thing that we'll have to fix that `Taproot` doesn't solve before we can improve that measurably at all, really.
+However, moving over to `Taproot` in terms of privacy is good for decorrelating payment paths through the network.
 So right now, if for some reason you had multiple nodes on the network and a payment got sent through multiple hops on the network, the data that you use to basically lock those funds into escrow as it moves across the network can be correlated.
-By moving over to Taproot, I believe we're able to move over to something called PTLCs instead of HTLCs, which is a point time locked instead of hash
+By moving over to Taproot, I believe we're able to move over to something called `PTLCs` instead of `HTLCs`, which is a point time locked instead of hash
 
 Rene Pickhardt: 00:25:24
 
@@ -327,7 +327,7 @@ I don't know what it is.
 Lisa Neigut: 00:25:28
 
 Yeah, hang on, let me finish this thought really fast, and then we can loop back around to what an HTLC is.
-But the general idea then is with Taproot, you'd be able to use tweaks to use unique identifiers per hop, such that if for some reason someone's running multiple nodes, or your payment looped through the same node multiple times before reaching its destination, every payment that went through would be, you wouldn't be able to correlate it to any other particular hop that it made, so to speak.
+But the general idea then is with Taproot, you'd be able to use tweaks to use unique identifiers per hop, such that if for some reason someone's running multiple nodes, or your payment looped through the same node multiple times before reaching its destination, you wouldn't be able to correlate it to any other particular hop that it made, so to speak.
 Yeah, okay, so what is a HTLC?
 Rene, do you want to take this one?
 
@@ -348,8 +348,8 @@ Yep.
 
 Jeremy Rubin: 00:27:09
 
-So like, if we're just like on stage and I wanna hand a quarter, which you know, we're using analog, you know, fiat money, analog energy.
-So if we want to use our analog energy and I hand a little lump of metal, what you're kind of saying is I don't let it go, but I, you know, Lisa's holding onto it and then she hands you a piece, and then she lets go at the same time that I let go.
+So like, if we're just like on stage and I wanna hand a quarter, which you know, we're using analog, fiat money, analog energy.
+So if we want to use our analog energy and I hand a little lump of metal, what you're kind of saying is I don't let it go, but Lisa's holding onto it and then she hands you a piece, and then she lets go at the same time that I let go.
 Is that sort of what you're explaining?
 
 Rene Pickhardt: 00:27:37
@@ -365,7 +365,7 @@ Yeah, I don't trust Lisa.
 
 Rene Pickhardt: 00:27:52
 
-Yeah, so that's why you keep your hand on it, and she has to have a second quota that she gives to me, and she has to prove to you that she let go, and this is exactly how the secret of the hash is being released in the hash time lock contract.
+Yeah, so that's why you keep your hand on it, and she has to have a second quarter that she gives to me, and she has to prove to you that she let go, and this is exactly how the secret of the hash is being released in the hash time lock contract.
 
 ## Difference between HTLC and PTLC
 
@@ -375,8 +375,8 @@ And so when we go from HTLCs to PTLCs, like what's concretely changing under the
 
 Lisa Neigut: 00:28:14
 
-Yeah, So I just wanted to like kind of maybe reiterate what you guys just said there's kind of this two phases of sending payments, right?
-There's a commitment phase and there's a settlement phase Commitment phase requires there to be like a hash which is like an identifier of that payment Which also acts as a secret that gets committed to at every channel.
+Yeah, so I just wanted to like kind of maybe reiterate what you guys just said there's kind of this two phases of sending payments, right?
+There's a commitment phase and there's a settlement phase. Commitment phase requires there to be like a hash which is like an identifier of that payment. Which also acts as a secret that gets committed to at every channel.
 So if there's a channel between me and Jeremy, we would commit to that hash, we'd allocate funds, put them in escrow, and it's basically locked with that hash, so to speak, in a contract, such that the only way that we could get the money out is via a secret that matches that hash or through a timeout, basically, the money would exit escrow.
 So there's two paths for money in a channel to exit escrow after it's been placed into it.
 And that's what the HTLC kind of stands for.
@@ -388,13 +388,13 @@ If it fails at some point, then those basically have to be rolled back, those co
 And then you retry and you have to use the same hash.
 That's just the way the payments work right now.
 You have to use the same hash when you retry it because that's how the person you're paying is going to be able to effectuate the settlement after the contracts have been.
-So you commit, the payment makes it all the way to the node that's able to furnish the, we call it pre-image, but basically the unlock that will pull those funds out of escrow and each of the channels that it's been committed to.
-So basically, you have to provide, you can't use a different thing on payment reattempts.
+So you commit, the payment makes it all the way to the node that's able to furnish, we call it pre-image, but basically the unlock that will pull those funds out of escrow and each of the channels that it's been committed to.
+So basically, you can't use a different thing on payment reattempts.
 So to some extent, depending on what visibility and how many parties you're exposing that to, to some extent it exposes your intent of that identifier to make a payment, right?
 So, PTLC is the ability that at every hop that you make, and I don't know enough about the proposal.
 I think Andrew Poelstra was the first one to propose it.
 I'm going to get that name wrong.
-The cool thing about it is it allows you to have a separate identifier for every contract that you're committed to, you commit the funds to in escrow.
+The cool thing about it is it allows you to have a separate identifier for every contract that you commit the funds to in escrow.
 So every escrow key to unlock those funds is unique across every channel contract, so to speak, that the funds get escrowed in.
 
 Jeremy Rubin: 00:31:20
@@ -404,12 +404,12 @@ How much stuff are we talking about keeping track of, and what sort of stuff do 
 
 Rene Pickhardt: 00:31:40
 
-So there is this kind of like famous note coming on the Lightning Network currently that is called zero fee routing.
+So there is this kind of like famous node coming on the Lightning Network currently that is called `zero fee routing`.
 Because this person basically made the claim that for various reasons it might be useful to just have zero fees at all in routing.
 
 Jeremy Rubin: 00:31:57
 
-Well you got zero base fee on your shirt, is that your note?
+Well you got zero base fee on your shirt, is that your node?
 
 Rene Pickhardt: 00:32:00
 
@@ -436,37 +436,36 @@ So yeah.
 Lisa Neigut: 00:33:00
 
 I think, is this the thing that we call toxic waste?
-Am I, is that the right, I think that's the topic of the lightning topic.
+I think that's the topic of the Lightning topic.
 
 Jeremy Rubin: 00:33:07
 
-Yeah, maybe, I'm just trying to figure out, like if I go to Best Buy, I could buy a terabyte or two for 100 bucks, so am I gonna earn 100 bucks for, is this guy making a hundred bucks a day?
+Yeah, maybe, I'm just trying to figure out, like if I go to Best Buy, I could buy a terabyte or two for 100 bucks, so am I going earn 100 bucks for, is this guy making a hundred bucks a day?
 Because then maybe he can just go to Best Buy.
 I might have a coupon.
 
 Rene Pickhardt: 00:33:22
 
-So, so, so I don't know his financials, but I know that he takes something like initially 2,000 PPM to open a channel.
-So that's like 0.2% of the liquidity in the channel and he guarantees the channel to be open for one or two months, I think I think he recently increased the prices and changed something.
-I don't know but Yeah,
+So, I don't know his financials, but I know that he takes something like initially 2,000 PPM to open a channel.
+So that's like 0.2% of the liquidity in the channel and he guarantees the channel to be open for one or two months, I think. I think he recently increased the prices and changed something.
+I don't know but yeah,
 
 Lisa Neigut: 00:33:42
 
-I think we're conflating a bunch of different topics here all at once So maybe we should like
+I think we're conflating a bunch of different topics here all at once. So maybe we should like.
 
 Jeremy Rubin: 00:33:47
 
-you want to break it down a little bit?
-Yeah.
+You want to break it down a little bit?
 What's going on, where are we off the rails?
 
 ## Cost of opening and closing a channel
 
 Lisa Neigut: 00:33:51
 
-Yeah, so we were talking about how expensive is it to open a channel, and how much do you, like what helps cover that cost of opening a channel, right?
+Yeah, so we were talking about how expensive is it to open a channel, and what helps cover that cost of opening a channel, right?
 Which you guys brought up a node that's pretty famous on the Lightning Network called Zero-Fee Routing, which famously doesn't charge any money to route payments through it, right?
-So the big question with his node tends to be, okay, if he's not charging money to route payments, opening and closing channels has a physical, like real world Bitcoin cost in the layer one, you have to pay an on-chain fee to open and close a channel.
+So the big question with his node tends to be, okay, if he's not charging money to route payments, opening and closing channels has a physical, like real world Bitcoin cost in the Layer 1, you have to pay an on-chain fee to open and close a channel.
 So if this node is not routing, is like not making any money by moving money, like moving Bitcoin across the channels that he's opened, is he just net losing Bitcoin every time he opens and closes a channel, I think is one part of it.
 That's distinct from the toxic waste part that we were talking about a little bit earlier, which is that has to do with the amount of state that your lightning node individually needs to keep track of and on disk and for how long for all of these payments that happen and why that is, et cetera.
 
