@@ -152,9 +152,9 @@ Right.
 Okay.
 So when we're talking about theoretical maximum limits of the system, right?
 Okay, so I think there's a couple interesting things to look at here.
-The one that I like to think about is in terms of liquidity and Lightning.
-So the way that Lightning works is that in order to have a balance to transact, you have to commit Bitcoin to basically a contract that is on chain, and the creation of that contract basically grants you like X units of Bitcoin that you can then transact with over the Lightning Network, right?
-So theoretically, the maximum amount of credits that could be transacted over the Lightning Network at any one point in time would be 21 million worth of Bitcoin, though, Okay, that's assuming all the Bitcoin has been mined, like subtracting out all the amount that's been lost, et cetera, et cetera.
+The one that I like to think about is in terms of liquidity and `Lightning`.
+So the way that `Lightning` works is that in order to have a balance to transact, you have to commit Bitcoin to basically a contract that is on chain, and the creation of that contract basically grants you like X units of Bitcoin that you can then transact with over the Lightning Network, right?
+So theoretically, the maximum amount of credits that could be transacted over the Lightning Network at any one point in time would be 21 million worth of Bitcoin, that's assuming all the Bitcoin has been mined, like subtracting out all the amount that's been lost, et cetera, et cetera.
 So like, theoretical maximum in terms of amount of liquidity that's available on Lightning is going to be the total amount of Bitcoin that's been locked into the Lightning network, right?
 So unless we're like locking all of the Bitcoin that exists into Lightning, at some point, that's going to, I think, be like the maximum total value of exchange that can happen at any one point in time.
 
