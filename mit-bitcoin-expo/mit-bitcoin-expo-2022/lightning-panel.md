@@ -1,6 +1,6 @@
 ---
 title: "Lightning Panel"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=hlTfA42b_uI
 tags: ["lightning","taproot","ptlc"]
 speakers: ["Jeremy Rubin","Rene Pickhardt","Lisa Neigut","Jonathan Harvey Buschel"]
@@ -12,14 +12,14 @@ date: 2022-07-05
 Jeremy Rubin: 00:00:07
 
 I was hoping that we can have our panelists, and maybe we'll start with Rene.
-Just introduce themselves quickly, and also answer the question, What is Lightning to you?
+Just introduce themselves quickly, and also answer the question, what is `Lightning` to you?
 And I mean that sort of in the long run.
 Lightning is a thing today, but what is the philosophical Lightning to you?
 
 Rene Pickhardt: 00:00:26
 
-So I'm Rene Pickard, a researcher and developer for the Lightning Network.
-And for me personally, the Lightning Network is the means to really create this peer-to-peer electronic cash system so to use Bitcoin in a decentralized way and fast way.
+So I'm Rene Pickardt, a researcher and developer for the `Lightning Network`.
+And for me personally, the `Lightning Network` is the means to really create this peer-to-peer electronic cash system so to use Bitcoin in a decentralized way and fast way.
 
 Lisa Neigut: 00:00:45
 
