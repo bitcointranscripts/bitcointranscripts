@@ -175,14 +175,14 @@ Jeremy Rubin: 00:12:31
 So I guess just asking very concretely, because I think that for my benefit and also for the audience's, are we talking a billion people that can do it?
 Are we talking like 100 million people?
 Are we talking about 10 million people?
-One million?
-How many people actually could operationally, you know, Lightning would be something they're using?
+1 million?
+How many people actually could operationally, Lightning would be something they're using?
 
 Lisa Neigut: 00:12:55
 
 That's a really hard question to answer because I think it depends on what you count as Lightning users.
-So we just saw a great presentation by Andre Neves about the Lightning address stuff, and a lot of the projects that he was showing that adopted it are what I would call custodial lightning services.
-I wish, I don't know if that's so much, correct me if I'm wrong, but my point is that all of the users of those networks are probably using lightning to do their transactions, but they're probably using channels that someone else is using and managing.
+So we just saw a great presentation by Andre Neves about the Lightning address stuff, and a lot of the projects that he was showing that adopted it are what I would call `custodial lightning services`.
+I wish, I don't know if that's so much, correct me if I'm wrong, but my point is that all of the users of those networks are probably using Lightning to do their transactions, but they're probably using channels that someone else is using and managing.
 
 Jeremy Rubin: 00:13:35
 
@@ -195,7 +195,7 @@ Lisa Neigut: 00:13:43
 I see.
 Let's see.
 I'm like kind of like a big tent-like person.
-I would say that at the end of the day, the settlement, the value of that transaction is being settled in Bitcoin using the Lightning Network, right?
+I would say that at the end of the day, the value of that transaction is being settled in Bitcoin using the Lightning Network, right?
 The number of parties that are involved in that transaction is not merely peer-to-peer at that point, right?
 It's kind of like having two financial institutions transacting on your behalf at that point, and the medium that they're using to transfer the value just so happens to be Bitcoin over the Lightning network.
 So to some extent, that relationship that you have between a Lightning service provider, I think that's what they're calling themselves, is like, I mean, you're transacting over Lightning, but you're asking someone else to effectuate that exchange over lightning on your behalf, right?
