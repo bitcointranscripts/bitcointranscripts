@@ -61,14 +61,14 @@ But I think a lot of times you're not going to see a lot of return on the Lightn
 
 Jeremy Rubin: 00:04:21
 
-Okay, so I'm convinced, and I'm gonna take all my Bitcoin and put them into Lightning channels, because you sold me.
-And then the year is, I don't know, 2042 or something like that.
+Okay, so I'm convinced, and I'm going to take all my Bitcoin and put them into Lightning channels, because you sold me.
+And then the year is, 2042 or something like that.
 And then everybody's doing everything in Lightning, blocks are full.
-There's a fee market, And when am I not going to be able to use Lightning, and what circumstances will it make sense for me to do on-chain transactions as an individual?
+There's a fee market, and when am I not going to be able to use Lightning, and what circumstances will it make sense for me to do on-chain transactions as an individual?
 
 Rene Pickhardt: 00:04:55
 
-Okay, so first of all about convincing you, maybe you don't want to put all your Bitcoin into a lightning node.
+Okay, so first of all about convincing you, maybe you don't want to put all your Bitcoin into a Lightning node.
 
 Jeremy Rubin: 00:05:01
 
@@ -76,7 +76,7 @@ Too late, I did it.
 
 Rene Pickhardt: 00:05:03
 
-Yeah, so I mean, one of the known downsides of the lightning network protocol is that you cannot really operate a lightning node in a cold storage fashion.
+Yeah, so I mean, one of the known downsides of the Lightning network protocol is that you cannot really operate a lightning node in a cold storage fashion.
 You have to really be online all the time.
 Your keys are on an online or hot wallet, so there's a certain risk if your computer or your note gets compromised that you are screwed basically, you have a bolting accident or whatever the lingo is, right?
 So you may not want to use all your Bitcoins on the Lightning Network.
@@ -88,7 +88,7 @@ I think there's no developments with anchor outputs that you can basically reall
 
 Jeremy Rubin: 00:06:19
 
-Gotcha.
+Got you.
 So how many people are actually using Lightning today, or how many channels are there?
 Like, I don't care about people, just like how much usage is there under some metric?
 
@@ -100,14 +100,14 @@ Maybe Rene?
 
 Rene Pickhardt: 00:06:38
 
-I don't know the exact number right now, but I think we have something like 70,000 channels that we see on Gossip.
+I don't know the exact number right now, but I think we have something like 70,000 channels that we see on `Gossip`.
 Those are the announced channels.
-There are quite some services that don't announce the channels to the Gossip Network because they are represented by nodes that do not really want to engage into routing.
+There are quite some services that don't announce the channels to the `Gossip Network` because they are represented by nodes that do not really want to engage into routing.
 So yeah, that's currently the number, I guess.
 
 Jeremy Rubin: 00:06:59
 
-Okay, And could we do like 140,000 announced channels?
+Okay, and could we do like 140,000 announced channels?
 
 Rene Pickhardt: 00:07:05
 
