@@ -2,7 +2,7 @@
 title: "Lightning Panel"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=hlTfA42b_uI
-tags: ["lightning","taproot","ptlc"]
+tags: ["lightning","taproot","ptlc","htlc"]
 speakers: ["Jeremy Rubin","Rene Pickhardt","Lisa Neigut","Jonathan Harvey Buschel"]
 categories: ["conference"]
 date: 2022-07-05
