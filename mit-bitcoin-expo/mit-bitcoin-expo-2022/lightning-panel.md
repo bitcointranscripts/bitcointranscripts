@@ -120,7 +120,7 @@ Of course, you then have to wonder about what will happen if channels closes, ho
 
 Jeremy Rubin: 00:07:36
 
-So what is that maximum number if you just had to throw out a number of, if you saw this many announced channels, you'd be like, this seems like enough or the maximum.
+So what is that maximum number if you just had to throw out a number if you saw this many announced channels, you'd be like, this seems like enough or the maximum.
 
 Rene Pickhardt: 00:07:51
 
@@ -136,7 +136,7 @@ Like what's the total number of people that are using the network?
 I think that the answer to that is really hard to get and part of the reason for that is how decentralized these payments are, right?
 So the idea with the Lightning Network is that you can remove the transactions that you're making with Bitcoin off-chain.
 That means that there's no public ledger of all of the transactions that you've made.
-Instead, every time you make a transaction, you send it through a series of channels, like a series of tubes, and the record of that transaction is rather, I'm gonna call it ephemeral, right?
+Instead, every time you make a transaction, you send it through a series of channels, like a series of tubes, and the record of that transaction is rather ephemeral, right?
 Because there's no written record of that transaction that happens that's publicly visible that someone can go and count.
 Only the parties that were involved in the routing of that transaction would even know that it happened.
 So it's possible that there's like thousands of people and payments that are being processed by Lightning, but because of how decentralized it is, there's no single person or view of the network that will ever be able to give you a good, I think, number of the amount of transactions that are currently happening on Lightning.
