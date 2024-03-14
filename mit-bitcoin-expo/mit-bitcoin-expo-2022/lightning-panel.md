@@ -23,9 +23,9 @@ And for me personally, the `Lightning Network` is the means to really create thi
 
 Lisa Neigut: 00:00:45
 
-Cool, hey everyone I am Lisa Neigut I work at Blockstream on Core Lightning, which is a implementation of Lightning.
-To me, I guess, yeah, so I see Lightning as probably, We call it Bitcoin scaling, like the thing that's gonna scale Bitcoin.
-I'm gonna like totally get this wrong.
+Cool, hey everyone I am Lisa Neigut. I work at Blockstream on Core Lightning, which is a implementation of Lightning.
+I see Lightning as probably Bitcoin scaling, like the thing that's going to scale Bitcoin.
+I'm going like totally get this wrong.
 It's cool.
 I see it as like payment rails of the future.
 I think it's like definitely the way to scale the number of people that are able to make Bitcoin transactions.
@@ -39,9 +39,9 @@ Okay, and then we'll hopefully get Jonathan in here in a second.
 But Jonathan is also a fellow MIT Bitcoin Club person.
 He was, I believe, the second president of the club and hosted the expo and currently works at Lightning Labs.
 Where is Jonathan EOM is a little bit of a meme around MIT, so we're looking for Jonathan.
-So one question I have is, I don't have any lightning channels and I'm okay.
-So when do I actually want to use lightning?
-When am I going to be like, I better use lightning right now?
+So one question I have is, I don't have any Lightning channels and I'm okay.
+So when do I actually want to use Lightning?
+When am I going to be like, I better use Lightning right now?
 
 Rene Pickhardt: 00:02:16
 
@@ -52,12 +52,12 @@ With Lightning I usually know this much faster.
 Lisa Neigut: 00:02:45
 
 Yeah so I mean I think the thing about Lightning is Lightning makes a lot of sense when you're trying to make repeated number of payments, I think, between a number of parties, right?
-And so Lightning is really Scaling in the sense that you've got a certain number of channel parties, maybe channel parties isn't the right term there, but that are kind of all embedded in this network.
+And so Lightning is really scaling in the sense that you've got a certain number of channel parties, maybe channel parties isn't the right term there, but that are kind of all embedded in this network.
 And the idea is that it's a bunch of people that are transacting between each other over kind of an extended period of time.
 So I think Lightning channels to some extent like express relationships of commerce between parties that have set up basically like sort of long running infrastructure to help manage that to some extent.
-So I think if you're like, I think kind of what I'm hinting at here in terms of like, when does lightning make sense is if you're just gonna pay someone one time, it doesn't make sense to open a Lightning channel to do that to a large extent, just because of the way that the infrastructure is set up.
+I think kind of what I'm hinting at here in terms of like, when does lightning make sense is if you're just going to pay someone one time, it doesn't make sense to open a Lightning channel to do that to a large extent, just because of the way the infrastructure is set up.
 Well, okay, sort of depends on a lot of things here.
-But I think a lot of times you're not gonna see a lot of return on the Lightning payment stuff until you start getting into more congestion on the main network, so it'll be cheaper, or you're doing a lot of transacting with Bitcoin, at which point it can drive down the cost of the transacting you're doing.
+But I think a lot of times you're not going to see a lot of return on the Lightning payment stuff until you start getting into more congestion on the main network, so it'll be cheaper, or you're doing a lot of transacting with Bitcoin, at which point it can drive down the cost of the transacting you're doing.
 
 Jeremy Rubin: 00:04:21
 
