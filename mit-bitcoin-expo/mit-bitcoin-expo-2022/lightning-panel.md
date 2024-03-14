@@ -471,18 +471,18 @@ That's distinct from the toxic waste part that we were talking about a little bi
 
 Jeremy Rubin: 00:35:04
 
-Gotcha, so I guess if I could restate it, there's no amount of money that would make me not lose my keys every time I'm at home and I put my keys somewhere.
-So it's not really, there's a question of How much money would you pay to solve this problem?
+Got you, so I guess if I could restate it, there's no amount of money that would make me not lose my keys every time I'm at home and I put my keys somewhere.
+So there's a question of how much money would you pay to solve this problem?
 And there's a question of like can people actually solve this problem?
 
 Lisa Neigut: 00:35:20
 
-Wait, okay, so what do you can you restate the question about the keys thing?
-I don't quite
+Wait, okay, so can you restate the question about the keys thing?
+I don't quite follow.
 
 Jeremy Rubin: 00:35:24
 
-I just mean like you know like you go home And then you like you know lose track of your stuff or like you you know You get a you know in this context a database corruption And so there's really a question of things that economically might be in your interest to pay for and things that are just like, even if they're in your economic interest, might be operationally hard for you to do, like not losing your belongings.
+I just mean like you know like you go home and then you like you know lose track of your stuff or like, you get a you know in this context a database corruption. And so there's really a question of things that economically might be in your interest to pay for and things that are just like, even if they're in your economic interest, might be operationally hard for you to do, like not losing your belongings.
 
 Lisa Neigut: 00:35:44
 
@@ -516,7 +516,7 @@ I see.
 
 Jeremy Rubin: 00:36:34
 
-And you know also that if I lose that then I'm gonna lose all my money.
+And you know also that if I lose that then I'm going to lose all my money.
 So like now I'm like I'm a little bit more skeptical.
 So like how might we get around those problems?
 
@@ -526,7 +526,7 @@ Yeah so I think some of the some of what kind of Jeremy's talking about is this 
 So one general class of, okay, what do I need to remember?
 What kind of state am I storing?
 Is the first most basic step is, okay, who do I have channels with?
-If you were to take your, let's pretend your keys, the private key material that you use to update the contracts that make Lightning channels, right?
+Let's pretend the private key material that you use to update the contracts that make Lightning channels, right?
 Like the Bitcoin transactions.
 So you have a key that signs those.
 Okay, let's say you've got that.
@@ -536,11 +536,11 @@ Your Lightning node goes down.
 All of the data on your Lightning Node is wiped, right?
 Okay, first thing you probably need to figure out and would be good information is to know which peers you had contracts with, right?
 The way that Lightning contracts work today is that they're two of two signed contracts, which means you basically enter into a Bitcoin transaction agreement with another peer, that there is an output on the Bitcoin blockchain that both of you must create signatures in order to spend that output.
-So any transaction that spends this output on the Bitcoin network, that is lightning channel.
+So any transaction that spends this output on the Bitcoin network, that is Lightning channel.
 That output in the transaction set that must be signed by two parties, and those are your channel peers, right?
 Okay, so you still have your key, but you don't know who you have any channels with, you're in a lot of trouble, because you don't know who to go back and ask, hey, I need you to sign something for me, right?
 So even if you could magically recreate all of the transactions that you had signed, or that maybe you know, for some reason, you know what all of your outputs are, so you've backed up what keys are, and you've backed up what all the out points are, unless you can figure out what the other party of that two of two was to sign those outputs so you can get your funds back, you're kind of out of luck, right?
-So that's kind of, I think, the first layer of information that you need to remember about a lightning thing, right?
+So that's kind of, I think, the first layer of information that you need to remember about a Lightning thing, right?
 So your funds are out there, but there's another party and you need to remember who that is because if you lose all your stuff then.
 
 Jeremy Rubin: 00:39:01
@@ -558,12 +558,12 @@ Jonathan Harvey Buschel: 00:39:14
 
 So there are alternate channel constructions, right?
 So right now we have like the original kind of paper from Taj and Joseph that the amount of state and like toxic waste we need to keep, right, is linear in how many updates we do, right?
-So the reason that guy, that zero fee node probably has so much state to keep track of is like for every payment that is routed through them, for every channel update, they need to store that kind of indefinitely until they close the channel.
+So the reason that that zero fee node probably has so much state to keep track of is like for every payment that is routed through them, for every channel update, they need to store that kind of indefinitely until they close the channel.
 And there are alternate constructions like L2 where the amount of data that you'd need to store is kind of static, right?
 So you just store basically the latest state and I think some extra information and you would be able to get kind of the same security guarantees there.
 I think that's an upgrade that isn't deployable right now.
 It's still kind of far down the road, but that would help a lot in terms of what you need to store and not reducing what could be forgotten, but at least kind of the risk and the resource requirements.
-And that also would be helpful for thinking about like clients, you know, and like, what can I do with some device that's like my phone or something that's intermittently online or that doesn't have a lot of storage, you know, can I participate?
+And that also would be helpful for thinking about like clients, what can I do with some device that's like my phone or something that's intermittently online or that doesn't have a lot of storage, can I participate?
 I think that's also helpful in that respect.
 
 Lisa Neigut: 00:40:34
@@ -581,8 +581,8 @@ I might write down in my wallet on one business card who got the last round, but
 Lisa Neigut: 00:41:11
 
 Yeah, so let's talk about why that is, though.
-Yeah, so Like Jonathan mentioned, the current construction uses, I think they're called Poon/Dryja channels, is the technical name of the current implement protocol that channels use.
-And the way that it works is that every time you update the current state of the money in a Lightning contract between the two parties, you have to remember every, you don't have to remember every, you kind of have to remember almost every previous state and also in order to invalidate, so you have state updates on this contract, right, and the state that you're updating is the amount of balance of who owns what between the two parties in that channel.
+Yeah, so like Jonathan mentioned, the current construction uses, I think they're called `Poon-Dryja channels`, is the technical name of the current implement protocol that channels use.
+And the way that it works is that every time you update the current state of the money in a Lightning contract between the two parties, you kind of have to remember almost every previous state and also in order to invalidate, so you have state updates on this contract, right, and the state that you're updating is the amount of balance of who owns what between the two parties in that channel.
 Every time you update that state, the way that you prevent your channel party from publishing an older state such that they can't roll back time basically to a state where maybe they had all the money in the channel and then they paid it to you over like 10 updates, so you're now at the 10th update, but then they go back and publish the first update such that now they have all the money again and that's what's officially on record on chain and so they spent money but didn't actually spend the money because they were able to get it back on layer one.
 The way that the Poon/Dryja channel construction helps prevent this problem is by issuing something that we call a revocation key, or revocation, yeah I think it's a revocation key is the technical name for it, that kind of makes each of those past transaction states sort of like toxic waste for the other party, such that if they ever publish an older state, that is what gets committed to chain, and that the other party then has this key that allows them to take all of the money that was originally locked into the two-party contract, so to speak.
 So, the waste is toxic in the sense that you can't get rid of it.
