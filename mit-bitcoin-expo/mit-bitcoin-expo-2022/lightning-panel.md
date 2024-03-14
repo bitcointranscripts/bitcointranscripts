@@ -243,7 +243,7 @@ We just had a presentation about Lightning Address that is, like, to some sense 
 But many people are using web mail where they trust a certain service provider because they just don't want that.
 The beauty about Lightning Network is everybody can join it if they want to take the hustle.
 And I think in that respect, we should probably be able to onboard a million or maybe even 10 million self-sovereign users.
-Of course, as Jonathan just said, there are limitations also to gossip.
+Of course, as Jonathan just said, there are limitations also to Gossip.
 There are many things that we need to work on.
 But I think from the Bitcoin network perspective, I mean, that is like a really hard constraint, right?
 I mean, everything else is how Lightning is currently designed, but the Bitcoin blockchain really gives a bottleneck.
@@ -255,7 +255,7 @@ Jeremy Rubin: 00:18:42
 
 All right, cool.
 Yeah, I think that's helpful context.
-And I think part of what I'm hearing is that it's not, and you could be wrong.
+And I think part of what I'm hearing is that you could be wrong.
 Like if we went to 100 million channels operating independently from there, it's not even necessarily that there would be some sort of big security risk or something.
 It's more that it would just sort of structurally not be possible to assemble a network like that given the constraint of how many Satoshis are available.
 
