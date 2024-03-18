@@ -3,9 +3,11 @@ title: "AssumeUTXO"
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=knBHvzKsIOY
 tags: ["assumeutxo","bitcoin-core"]
-speakers: ["James O'Beirne","Adam Jonas"]
+speakers: ["James O'Beirne"]
 categories: ["podcast"]
 date: 2020-02-13
+episode: 4
+summary: "Next in the studio, we caught James O'Beirne, who until recently was a co-worker of ours at Chaincode. We talked to James about his experience at the Chaincode residency, his most recent project AssumeUTXO and how he champions and effects change in Bitcoin Core."
 ---
 James O'Beirne: 00:00:00
 
@@ -14,35 +16,35 @@ Even people who are really experienced with the code base still have a really ha
 
 ## Introduction
 
-John(?): 00:00:25
+John Newberry: 00:00:25
 
 Hi Jonas.
-Hi Carly.
+Hi Caralie.
 
-Carly: 00:00:27
+Caralie: 00:00:27
 
 Hi guys.
 
-John: 00:00:29
+John Newberry: 00:00:29
 
-We have Carly in the studio.
-Carly is our producer and she's been helping us with the episodes.
+We have Caralie in the studio.
+Caralie is our producer and she's been helping us with the episodes.
 
-Carly: 00:00:34
+Caralie: 00:00:34
 
 Yeah, it's been a lot of fun.
 It's been really great working with you guys and getting to meet all of the wonderful guests that you guys have had on.
 
-John: 00:00:41
+John Newberry: 00:00:41
 
 Great to have you here.
 
-Carly: 00:00:42
+Caralie: 00:00:42
 
 Thank you.
 Who do you guys have up next?
 
-John: 00:00:46
+John Newberry: 00:00:46
 
 Well, this week we talked to James O'Beirne who until very recently was a co-worker here at Chaincode Labs.
 I first met James a couple of years ago, back in 2017, 2018 at a conference in Stanford and then a meetup in San Francisco.
@@ -50,17 +52,17 @@ It was obvious from when I met him that he was very passionate about Bitcoin and
 He was so enthusiastic I think he applied the very first day that we opened applications for the residency in 2018.
 So he came to the residency in 2018 and then went on to join Chaincode and he's been a friend and a co-worker for the last two years.
 
-Carly: 00:01:22
+Caralie: 00:01:22
 
 I love that.
 What did you guys talk about?
 
 Adam Jonas: 00:01:24
 
-We talked a little bit about how he decides the projects that he works on, and his most recent project which is `assumeutxo`.
+We talked a little bit about how he decides the projects that he works on, and his most recent project which is `AssumeUTXO`.
 Then we talked a little bit about how he advocates and affects changes in Bitcoin Core.
 
-John: 00:01:36
+John Newberry: 00:01:36
 
 We really love talking to James and we hope you enjoy the episode.
 We'll be back at the end.
@@ -86,7 +88,7 @@ James O'Beirne: 00:02:13
 
 Sure thing.
 I came to Chaincode in the winter of 2018, I think it was February 1st.
-I had been talking to John previously, because we had collaborated to some extent on a few things in the repo, and I had met him in California at a conference out there and had told him that I'd like to apply to the [residency.](https://medium.com/@ChaincodeLabs/chaincode-residency-2018-26cd8a65d5f7)
+I had been talking to John previously, because we had collaborated to some extent on a few things in the repo, and I had met him in California at a conference out there and had told him that I'd like to apply to the [residency](https://medium.com/@ChaincodeLabs/chaincode-residency-2018-26cd8a65d5f7).
 So he encouraged me to do so, I did that, and somehow got in.
 So I showed up in New York during the winter of 2018 and started the residency, which was a lot of fun.
 Through that, got acquainted with Chaincode and that led to a full-time position.
@@ -99,7 +101,7 @@ James O'Beirne: 00:03:13
 
 Correct.
 
-John: 00:03:13
+John Newberry: 00:03:13
 
 Oh yeah, we were coming off that hot 2017 bull run.
 
@@ -109,7 +111,7 @@ Yeah, yeah, mixed emotions.
 But it was a really great time.
 The residents were all awesome, and the sessions that we had were really interesting because it was a smallish group, it was maybe 15 total, I think, maybe a bit more than that.
 
-John: 00:03:41
+John Newberry: 00:03:41
 
 It was two sessions of two weeks and six or seven in each, I think.
 
@@ -118,7 +120,7 @@ James O'Beirne: 00:03:47
 Oh, is it that small in terms of people there?
 Okay.
 
-John: 00:03:49
+John Newberry: 00:03:49
 
 Pretty small.
 Yeah.
@@ -134,8 +136,7 @@ So at a certain point, I kind of tuned out and was just ready to start coding, b
 
 One of the things that I think about a lot when working on Bitcoin is that it's really easy to get hung up on how many smart people are here and you can get in your own head about like what can I actually contribute?
 It's a really easy rabbit hole to spiral down because there are incredibly talented people working on Bitcoin.
-But what you've got to realize is that there are different kinds of smart,
-everybody has different skill sets.
+But what you've got to realize is that there are different kinds of smart, everybody has different skill sets.
 I kind of like putting one foot in front of the other, and having consistent engineering hygiene, and trying lots of things and iterating quickly.
 That makes me really good at some things, it makes me really not good at other things.
 I think what's cool about development of Bitcoin is that there is actually space for a lot of different approaches.
@@ -205,9 +206,7 @@ The other thing to keep in mind is that the blockchain is just going to keep gro
 There's linear growth there, and I think there has to come a point where we say, okay, we have to stem this somehow, because if we want this to keep going on forever, IBD time can't scale with forever.
 So we needed to truncate somehow.
 
-## Initial Block Download (IBD)
-
-John: 00:11:01
+John Newberry: 00:11:01
 
 Okay, so let's talk about [IBD, initial block download](https://btcinformation.org/en/glossary/initial-block-download).
 What is a node doing when you switch it on for the first time?
@@ -217,21 +216,20 @@ James O'Beirne: 00:11:10
 Well, I think the first thing it does is check to see if it's got any data, and if it doesn't, then it tries to find peers.
 If it doesn't know any peers right off the bat, it'll consult these [DNS seeds](https://stackoverflow.com/questions/41673073/how-does-the-bitcoin-client-determine-the-first-ip-address-to-connect) that are run by various people and it'll get a random set of peers.
 
-It'll connect to those peers and it'll ask them, I think what the best block that they know about is.
+It'll connect to those peers and it'll ask them, I think, what the best block that they know about is.
 Is that right?
 So in doing that, your node then gets the headers chain, which is basically an abbreviated version of the blockchain.
 That's the vital information, the vital metadata about blocks without the transaction data itself.
-Once it has all that, it figures out what the most work valid headers chain is, and then starts the initial block download process, which is where it's actually obtaining the data in the blocks, the full blocks themselves.
-Then it re-assembles the blockchain, which basically amounts to building a few indexes, the most important of which is the [UTXO set](https://btcinformation.org/en/glossary/unspent-transaction-output), which is its own data structure.
+Once it has all that, it figures out what the most work valid headers chain is, and then starts the initial block download process, which is where it's actually obtaining the data in the blocks, the full blocks themselves, reassembling the blockchain, which basically amounts to building a few indexes, the most important of which is the [UTXO set](https://btcinformation.org/en/glossary/unspent-transaction-output), which is its own data structure.
 
 ## UTXO set
 
 James O'Beirne: 00:12:33
 
 At the end of all that, you end up with this set of unspent coins, which you can then use to decide whether an incoming block is valid or invalid.
-That whole process takes, at the moment, anywhere from four hours if you've got a really good internet connection and really good hardware, to an unbounded amount of time, depending on your hardware and bandwidth.
+That whole process takes, at the moment, anywhere from four hours, if you've got a really good internet connection and really good hardware, to an unbounded amount of time, depending on your hardware and bandwidth.
 
-John: 00:13:00
+John Newberry: 00:13:00
 
 Okay, so you start by getting this headers chain, which is the block headers, and that contains the Proof-of-Work, so just from that small amount of data, 80 bytes per block, you can figure out which chain has the most work.
 At this point you're not validating transactions, so you don't know whether it's a valid chain, but you know that it's got the most work.
@@ -240,10 +238,10 @@ Then you go back and download the blocks.
 As you're downloading blocks, you're validating them and building this UTXO set, which is a set of coins, a set of unspent transactions.
 So that takes a long time.
 It takes a long time to download that data.
-There's I/O there because you're writing to disk, and there's computation there because you're validating the signatures.
+There's IO there because you're writing to disk, and there's computation there because you're validating the signatures.
 The blockchain is getting bigger all the time, so if you do this in a year's time, it will take longer.
 So what are some of the strategies that we've had so far before us?
-We're going to talk about `assumeutxo`, but before we get there, what are some of the strategies that we've had to make this take less time?
+We're going to talk about `AssumeUTXO`, but before we get there, what are some of the strategies that we've had to make this take less time?
 
 ## Parallelized signature validation
 
@@ -276,9 +274,9 @@ All `assumevalid` does is it makes part of the review process a sort of commonly
 It doesn't really dictate what the right chain is, because let's say there's a massive reorg where somebody secretly forked, started working on a fork at some point before that `assumevalid` mark, that alternate fictional chain could still potentially overtake the chain that's been deemed `assumevalid`.
 It's just basically Bitcoin users coming together and saying, hey, look, yeah, this is the chain that we've all previously validated, we know it's valid, and it gets reviewed like any other piece of the code.
 
-## Different than checkpoints
+### Different than checkpoints
 
-John: 00:17:31
+John Newberry: 00:17:31
 
 So this is [different from checkpoints](https://en.bitcoin.it/wiki/Bitcoin_Core_0.11_(ch_5):_Initial_Block_Download#Checkpoints), a hard-coded checkpoint in the source code, because if there's a competing chain with more work, you can reorg to that chain and you'll get into consensus with that longer, more work chain.
 
@@ -286,7 +284,7 @@ James O'Beirne: 00:17:50
 
 Yep.
 
-John: 00:17:51
+John Newberry: 00:17:51
 
 Whereas with a checkpoint, it precludes that.
 A checkpoint would hard-code the exact chain that you would have to follow.
@@ -300,11 +298,11 @@ This kind of change is interesting because when you think about it, from a threa
 Even people who are really experienced with the code base still have a really hard time determining, in some cases, whether a change is safe or not.
 So when you kind of crystallize your security assumptions in a place where almost everybody can review it...
 
-## Updating `assumevalid` value in the code
+### Updating `assumevalid` value in the code
 
 James O'Beirne: 00:18:51
 
-So for example, the way that we [update the `assumevalid` value](https://github.com/bitcoin/bitcoin/pull/9484), [(0.19](https://github.com/bitcoin/bitcoin/pull/17002), [0.18)](https://github.com/bitcoin/bitcoin/pull/15429), because we do that typically with every release, is somebody will post a modification of that value, and then a number of people will chime in on the pull request and say, yeah, so I used the node that I previously provisioned with the initial block download process, and I ran this RPC command, and it told me that this hash that you mentioned in the source code is actually in my chain.
+So for example, the way that we [update the `assumevalid` value](https://github.com/bitcoin/bitcoin/pull/9484), ([0.19](https://github.com/bitcoin/bitcoin/pull/17002), [0.18])(https://github.com/bitcoin/bitcoin/pull/15429), because we do that typically with every release, is somebody will post a modification of that value, and then a number of people will chime in on the pull request and say, yeah, so I used the node that I previously provisioned with the initial block download process, and I ran this RPC command, and it told me that this hash that you mentioned in the source code is actually in my chain.
 So I agree to this.
 That's something that you don't have to be an expert in C++ to be able to do, you don't even necessarily need to be a software engineer to do that.
 So the use of this technique allows you to get way more widespread review over a pretty security critical change.
@@ -323,7 +321,7 @@ So it really brings more people into the fold than otherwise would be on somethi
 Because I could post a pull request tomorrow that claims to be some kind of optimization to the UTXO set, and it could contain some vulnerability.
 The number of people who are currently able to find that vulnerability is very, very limited relative to the number of people who can run an RPC command and say, no, no, no, this doesn't match up with what I have.
 
-John: 00:20:55
+John Newberry: 00:20:55
 
 Yeah, and it should also be noted for the mountain men who, sorry, and mountain women (laughter), we don't preclude any people who live on mountains, but you can switch off this feature and validate every signature from Genesis to the tip.
 
@@ -335,7 +333,7 @@ Yeah, exactly, very important.
 
 Adam Jonas: 00:21:15
 
-So does that mean we're going to transition to `assumeutxo` ([GitHub issue](https://github.com/bitcoin/bitcoin/issues/15605), [proposal](https://github.com/jamesob/assumeutxo-docs/tree/2019-04-proposal/proposal), [talk](https://www.youtube.com/watch?v=PoEoG6sP1hw)), and how you arrived at that solution?
+So does that mean we're going to transition to `AssumeUTXO` ([GitHub issue](https://github.com/bitcoin/bitcoin/issues/15605), [proposal](https://github.com/jamesob/assumeutxo-docs/tree/2019-04-proposal/proposal), [talk](https://www.youtube.com/watch?v=PoEoG6sP1hw)), and how you arrived at that solution?
 
 James O'Beirne: 00:21:20
 
@@ -365,13 +363,13 @@ On top of that, in the preliminary testing I did, the results were great in term
 I think the latest numbers are something like an hour and a half from start to finish to get up and running on my computer.
 So pretty good results so far.
 
-John: 00:24:44
+John Newberry: 00:24:44
 
 Okay, so let's just dig in a bit into how it's different from `assumevalid`, and why you get that significant performance improvement, or lower time to sync to the tip.
 With `assumevalid`, you get the headers chain, you download all the blocks, and then you're building this UTXO set, but you're not validating signatures as you build up to the `assumevalid` block.
 That building of the UTXO set itself is quite expensive.
 Maybe you can talk a little bit about why that is, and the coins cache, and flushing to disk and that kind of thing.
-Whereas with `assumeutxo`, you don't need to build that UTXO set, you get a snapshot.
+Whereas with `AssumeUTXO`, you don't need to build that UTXO set, you get a snapshot.
 So you just fast forward through the first 500,000 - 600,000 blocks, whatever it is, the height of the assumed UTXO block.
 So maybe just a bit about where you're saving time when you do this?
 
@@ -389,7 +387,7 @@ On other platforms, we're limited by memory, and so we have to write out part of
 So depending on your platform, it can get really expensive to do operations on this set when it gets big.
 That's indeed where a lot of the time is spent when you're doing initial block download on, say, a machine that has 2 gigs of memory and maybe an old spinning disk.
 You spend a lot of time flushing the in-memory coins down to disk and then reading coins that you haven't found in your in-memory part of the cache from disk.
-So with `assumeutxo`, when you're given this serialized snapshot, and you can just load it in from a certain point in the height, a certain point in the chain, you've foregone doing a lot of disk writes and reads.
+So with `AssumeUTXO`, when you're given this serialized snapshot, and you can just load it in from a certain point in the height, a certain point in the chain, you've foregone doing a lot of disk writes and reads.
 
 ## Criticisms
 
@@ -403,16 +401,16 @@ I think a lot of people read it and they are initially very skeptical, which I c
 It seems like a too good to be true kind of thing.
 
 The tricky part is that conceptually, it's much easier to sneak in, say, an illegitimate unspent coin than with `assumevalid`.
-So for example, if you could convince someone to accept an `assumeutxo` hash that they had constructed specifically, it's very easy for an attacker to then serialize a modified version of the UTXO set that matches that hash, and then basically convince someone to accept an illegitimate spend.
-Oh, and I guess it's worth noting an important part of the proposal is that unlike in `assumevalid`, you cannot specify the `assumeutxo` hashes through the command line, and this is a pretty intentional.
+So for example, if you could convince someone to accept an `AssumeUTXO` hash that they had constructed specifically, it's very easy for an attacker to then serialize a modified version of the UTXO set that matches that hash, and then basically convince someone to accept an illegitimate spend.
+Oh, and I guess it's worth noting an important part of the proposal is that unlike in `assumevalid`, you cannot specify the `AssumeUTXO` hashes through the command line, and this is a pretty intentional.
 I think that would just be a huge foot gun because then you could pre-format the `bitcoind` command and trick somebody that way.
 
-Okay, short of the malicious command line that you might give somebody, what you would have to do is modify the source code somehow to accept that malicious `assumeutxo` value.
+Okay, short of the malicious command line that you might give somebody, what you would have to do is modify the source code somehow to accept that malicious `AssumeUTXO` value.
 The thing to keep in mind is that if you can modify somebody's binary, then you're cooked in the first place.
 Because if you can modify their binary, it's much easier to just add some little conditional into the coins cache code that accepts their spend, or does any variety of things.
 So in actuality, this doesn't open the potential for any attacks because we're still relying on the threat model of not being able to have your binary modified.
 
-John: 00:30:03
+John Newberry: 00:30:03
 
 I think there's a maybe more philosophical, subtle argument against, which is kind of a slippery slope argument that we want validation to be quick and IBD to be quick, and taking a shortcut like this is kind of kicking the can.
 If people come to rely on this as the only way to validate the full chain, we might get ourselves into a position where it actually is impossible to fully validate the full chain.
@@ -430,9 +428,9 @@ I think the thing is that when we introduced pruning, we kind of went through th
 Obviously, if you run a pruned node, that means that you only keep around a certain number of the most recent blocks.
 Obviously, if we don't want to use disk space, then everybody should run a pruning node, and at that point, nobody's serving blocks.
 
-I guess this is a little bit different in the sense that, yeah, if everybody's starting in `assumeutxo` mode, and not back validating the chain, which is a sort of mandatory part of the current proposal...
-Yeah, it's worth pointing out that if you are using `assumeutxo` in its current incarnation, you're doing a background validation from scratch.
-So I think that kind of alleviates that concern, but there are people who argue that if you're willing to buy into the `assumeutxo` security model before you have done the back validation, then why even do the back validation?
+I guess this is a little bit different in the sense that, yeah, if everybody's starting in `AssumeUTXO` mode, and not back validating the chain, which is a sort of mandatory part of the current proposal...
+Yeah, it's worth pointing out that if you are using `AssumeUTXO` in its current incarnation, you're doing a background validation from scratch.
+So I think that kind of alleviates that concern, but there are people who argue that if you're willing to buy into the `AssumeUTXO` security model before you have done the back validation, then why even do the back validation?
 There are a lot of people who have thought a lot about this and still sort of hold that opinion, but I think the nice thing is that if we all agree that that's the case, then it's a pretty simple matter to make the background validation optional or disabled at some point, but for now, we can be conservative and still do that.
 
 ## Championing a big change in Bitcoin Core
@@ -475,7 +473,7 @@ James O'Beirne: 00:35:25
 
 So, yeah, it's a multifaceted thing and kind of any way you can shill your change, it's probably good.
 
-John: 00:35:35
+John Newberry: 00:35:35
 
 Thanks, James.
 
@@ -489,7 +487,7 @@ Thank you guys.
 
 ## Wrap up
 
-John: 00:35:43
+John Newberry: 00:35:43
 
 Okay, I really enjoyed that talk.
 What did you think, Jonas?
@@ -498,19 +496,19 @@ Adam Jonas: 00:35:46
 
 Yeah, I really liked the conversation about IBD and the `assumevalid` conversation, those were my two highlights.
 
-John: 00:35:52
+John Newberry: 00:35:52
 
 And we're certainly going to miss James here in the office.
 
-Carly: 00:35:55
+Caralie: 00:35:55
 
 Yeah, it was great that you guys got to sit down with him before he took off for his next adventure.
 
-John: 00:35:59
+John Newberry: 00:35:59
 
 Good luck, James.
 We'll see you here.
 
-Carly: 00:36:01
+Caralie: 00:36:01
 
 Good luck, James! Bye!
