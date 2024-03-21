@@ -708,7 +708,7 @@ Yeah, yes.
 Sorry, I lost connection.
 Okay, what I want to show you is the difficulty with the free [inaudbile].
 
-Lucas Ontivero: 00:59:02
+Adam Fiscor: 00:59:02
 
 I don't know if it's going to work (referring to other speaker's connection issues).
 
@@ -747,7 +747,7 @@ I mean, let's say that there would be like, let's say, five participants, which 
 And yeah, for example, getting that well, X amount of outputs.
 I'm not sure if it's only a good thing if the mapping is hard to calculate.
 
-Lucas Ontivero: 01:02:47
+Adam Fiscor: 01:02:47
 
 Mapping is not necessary to do in order to build a system.
 What's interesting about calculating these mappings is that we can actually see that where are the bottlenecks of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
