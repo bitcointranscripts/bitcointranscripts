@@ -2,7 +2,7 @@
 title: "Knapsack Mixing"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=XDCQI7hrB58
-tags: ["research"]
+tags: ["research", "coinjoin"]
 speakers: ["Aviv Milner","Felix Maurer","Lucas Ontivero"]
 categories: ["club"]
 date: 2020-01-06
@@ -90,7 +90,8 @@ What that means is that a non-derived sub-transaction is a sub-transaction that 
 
 Aviv Milner: 00:06:35
 
-So the way that we look at anonymity or privacy in this model is we essentially take a transaction which has all these inputs and outputs. And it has all these mappings, all the possible ways we could cut up the transaction.
+So the way that we look at anonymity or privacy in this model is we essentially take a transaction which has all these inputs and outputs.
+And it has all these mappings, all the possible ways we could cut up the transaction.
 And we essentially say that a specific coin on the left-hand side and any other coin on the right-hand side or on the left-hand side is linked to that coin in a probabilistic way depending on how many mappings, of the total mappings there are, how many of them include the two coins being in the same sub-transaction.
 So I think there's probably an easier way to think about this.
 Here it is formalized in the paper, but intuitively it makes a lot of sense.
@@ -105,23 +106,23 @@ And we'll see later how that can be done differently.
 Aviv Milner: 00:08:06
 
 So in the paper, they essentially create a bunch of random transactions and then essentially purposefully combine them together, and then observe the time it takes to recreate the sub-transactions from the coupled transactions.
-So here we see that in the orange, if you have five sub-transactions with four inputs each, that takes about a second for a computer to be able to unravel that coin joining to its relevant sub-transactions.
-And then we notice here that the number of non-derived mappings isn't very high, even as there are as many as four or five sub-transactions because, like we did in the first example, we can typically unravel coinjoints and have very little overlap in terms of other ways we could map inputs and outputs.
+So here we see that in the orange, if you have five sub-transactions with four inputs each, that takes about a second for a computer to be able to unravel that coinjoining to its relevant sub-transactions.
+And then we notice here that the number of non-derived mappings isn't very high, even as there are as many as four or five sub-transactions because, like we did in the first example, we can typically unravel coinjoins and have very little overlap in terms of other ways we could map inputs and outputs.
 So in here we see that only with 6 sub-transactions and 4 inputs per sub-transaction do we see more than just a few non-derived mappings.
 
 ## Idea #2 - Knapsack Mixing
 
 Aviv Milner: 00:09:40
 
-So there's a solution to this problem because right now what we see is that it doesn't take a lot of time to unpack these coinjoints and when you do there are very few non-derived mappings which means there's very little ambiguity in terms of what's linked.
+So there's a solution to this problem because right now what we see is that it doesn't take a lot of time to unpack these coinjoins and when you do there are very few non-derived mappings which means there's very little ambiguity in terms of what's linked.
 So could we increase this?
-Well, you know, here's `knapsack mixing`.
+Well, you know, here's knapsack mixing.
 The idea is how to optimize filling a knapsack with various things of different weights.
 In this case, we're trying to optimize the way to have outputs that they fill given inputs.
 So the algorithm is pretty simple.
-The idea is to compare the two output sets and to essentially try to break down one of the values of the output is the difference between the two sets.
+The idea is to compare the two output sets and to essentially try to break down one of the outputs so that one of the values of the output is the difference between the two sets.
 So in this case, the number 31 is the difference between the green and the orange.
-And so here you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coinjoint transaction and now when we try to figure out the sub-transactions we actually get two sub transactions.
+And so here we've done it with, you can see that we've split up the 50 into 31 and 19, and on the right we've recombined them to make a single coinjoint transaction and now when we try to figure out the sub-transactions we actually get two sub transactions.
 We get this one here which connects the two on the left with the three on the right, but we also get this sub-transaction here.
 And so the result is that if you asked, for example, is O1 linked with I3, the answer is that there's a 50-50 chance that O1 and I3 are linked because of the two sub-transactions that we have, in half of them O1 and I3 are not linked and the other half they are.
 To have a probability of one to be matched with another input or another output?
@@ -139,9 +140,9 @@ Aviv Milner: 00:13:40
 
 Okay, well very cool.
 So I think the important thing to note here is that we still have a problem where some inputs are connected with other inputs and some inputs are connected with other outputs.
-We have some coins that are achieving no additional anonymity except for the computational complexity that it takes to unravel the coin join.
+We have some coins that are achieving no additional anonymity except for the computational complexity that it takes to unravel the coinjoin.
 So that's pretty much the end here.
-There's some anonymity here in the computational complexity that's required to figure out how to break down these coin joins, especially if we start talking about 10 participants, 30 participants, 50 participants.
+There's some anonymity here in the computational complexity that's required to figure out how to break down these coinjoins, especially if we start talking about 10 participants, 30 participants, 50 participants.
 There's still a link between inputs and outputs.
 The entire sub-transaction partition must be known in order to apply the algorithm.
 This is the most important trade-off I think, is that currently from what I've read it seems that this can't be done in a trustless way where someone isn't coordinating all the transactions.
@@ -149,7 +150,7 @@ This is the most important trade-off I think, is that currently from what I've r
 Felix Maurer: 00:14:53
 
 Yeah, and that's exactly the third algorithm I came up with.
-I will have to read my own work again to understand what I did because two years now that I was working on it.
+I will have to read my own work again to understand what I did because it's two years now that I was working on it.
 But I had a third version of the algorithm which was working without knowing all the outputs.
 So everybody needs to know all the inputs, but each participant only needs to know his own outputs.
 
@@ -159,7 +160,7 @@ Aviv Milner: 00:15:22
 
 Okay, so everybody just needs to know all the inputs.
 Okay, so interesting.
-So upper bound anonymity, it's like, if we look at this way of looking at transaction anonymity and we apply it to `ZeroLink`, we see that `Zerolink` is like a perfect knapsack coin join.
+So upper bound anonymity, it's like, if we look at this way of looking at transaction anonymity and we apply it to ZeroLink, we see that ZeroLink is like a perfect knapsack coinjoin.
 So that sort of provides us the upper bound anonymity, which is essentially the number of total participants that are doing this knapsack coinjoin.
 
 Lucas Ontivero: 00:16:01
@@ -192,7 +193,7 @@ Actually, it started as my master thesis.
 So more or less, when the most of the content of the paper is also my master thesis, I omitted more of the related work, which was also a big part of my thesis.
 And some of the results have not been part of my thesis, but more or less the idea and the general, most of the work is basically my master thesis.
 So after I finished the thesis, I wrote a paper based on it.
-And I think the interesting thing is also that the term Knapsack for this mixing is not my idea.
+And I think the one interesting thing is also that the term Knapsack for this mixing is not my idea.
 I picked up the idea from two papers, which basically in one or two sentences describe that something like this could be done but did not really go into it.
 So yeah, this is how I came up with this idea or why I started working on this idea.
 
@@ -212,7 +213,7 @@ I have more more in topic questions now.
 
 Unknown speaker: 00:20:10
 
-Hi, well I would like to know about the test, the validation of this hypothesis, if you have published the the source code for this paper?
+Hi, well I would like to know about the test, the validation of this hypothesis, if you have published the source code for this paper?
 
 Lucas Ontivero: 00:20:28
 
@@ -234,8 +235,8 @@ Most of the difficulties I encountered is the deciphering the pseudocode.
 Felix Maurer: 00:21:08
 
 Yeah, no, I was just looking into the code, everything's there.
-It's written in `Rust`, I don't know if you have experience with `Rust`, but it should be readable for anybody who is used to imperative languages.
-I think the Interesting part is in the main source folder, the distribution.rs file.
+It's written in Rust, I don't know if you have experience with Rust, but it should be readable for anybody who is used to imperative languages.
+I think the interesting part is in the main source folder, the `distribution.rs` file.
 In there are the different mixing algorithms that I used.
 
 Lucas Ontivero: 00:21:46
@@ -263,7 +264,7 @@ Let me see.
 It's in the code.
 It's this line.
 Basically, the idea is that you broadcast to all participants all the inputs, but you can also do that in a fashion that you don't know which input belongs to which participant.
-And then you can split your own outputs based on the all the inputs that you you've seen without telling anybody all the outputs
+And then you can split your own outputs based on the all the inputs that you've seen without telling anybody all the outputs.
 
 Unknown speaker: 00:23:32
 
@@ -316,7 +317,7 @@ So this is something I would look into.
 
 Unknown speaker: 00:26:31
 
-Okay, and my second question is about the fee, because in the paper you don't analyze the fee, you say basically that the phi adds some kind of noise, right?
+Okay, and my second question is about the fee, because in the paper you don't analyze the fee, you say basically that the fee adds some kind of noise, right?
 So you cannot match the partitions by equality because the sum of the inputs and the sum of the outputs are not equal, so it will be a bit harder to find the sub-transactions.
 But I was playing with this concept and I don't know if you have some idea about what's the best way to handle the fee because if the participants use the same fee rate that is for example pretty common in Wasabi, right?
 
@@ -334,9 +335,9 @@ I was actually trying to create transactions, this analysis on Wasabi transactio
 
 Unknown speaker: 00:28:04
 
-Well, yes, what I mean is that if the coordinator, one coordinator that is coordinating this knapsack-transaction, right?
+Well, yes, what I mean is that if the coordinator, one coordinator that is coordinating this knapsack transaction, right?
 If everybody uses the same fee rate, even the inputs are bigger than the outputs, so they pay more fee.
-If they pay proportional to their transactions, I can find the the sub-transactions, the partitions and check if the fee paid matches the sum transaction transaction or not.
+If they pay proportional to their transactions, I can find the the sub-transactions, the partitions and check if the fee paid matches the sum transaction or not.
 So it is a strong clue for the chain analyzer.
 So do you have, Felix, any idea how to handle this?
 What can we do?
@@ -353,15 +354,7 @@ So my thinking was that maybe it does not make the mathematical problem harder, 
 Unknown speaker: 00:30:20
 
 Yes, that's clear, because I'm suffering with that problem.
-It is really hard because you say
-
-Speaker 4: 00:30:30
-
-okay, it has to match, It is hard to
-
-Unknown speaker: 00:30:31
-
-in a range, right?
+It is hard to match in a range, right?
 If it is more or less this value, so yes, it's a pain in the ass, but...
 You cannot use a Bloom filter, of course, so you have to keep it in memory, which is even worse.
 But the question was about how can we make the participants pay a fee in such a way that it doesn't provide additional information to the chain analyzers?
@@ -377,7 +370,7 @@ Yeah, I agree with that.
 It doesn't provide additional information.
 It makes it even harder to do the analysis.
 And I did the analysis with the precision and the only real difficulty with the tunnel is this is how do you set the precision and what I realized for normal coinjoins you can set the precision as the mining fee because the mining fees the maximum amount one participant can pay.
-With joint market transactions, it's mining fee plus a random, I don't know what it should be, random whatever the joint market transaction agreement was on the fees that the taker pays for the makers.
+With JoinMarket transactions, it's mining fee plus a random, I don't know what it should be, random whatever the JoinMarket transaction agreement was on the fees that the taker pays for the makers.
 On Wasabi it's a mining fee plus 1% and that produces a bunch of unreliability, of course.
 So, yeah, I don't see how it would provide more information.
 
@@ -528,7 +521,7 @@ All right.
 Unknown speaker: 00:44:39
 
 One more thing.
-I remember in the paper you said that if you spend one of those outputs in another `knapsack transaction`, the problem of finding all the mappings across a chain of `knapsack transactions`, the difficulty also increases similar to the process of mining a chain of blocks, right?
+I remember in the paper you said that if you spend one of those outputs in another knapsack transactio, the problem of finding all the mappings across a chain of knapsack transactions, the difficulty also increases similar to the process of mining a chain of blocks, right?
 Do you have any additional numbers about that?
 Because I agree intuitively that that is true.
 But do you have any numbers about that?
@@ -551,34 +544,18 @@ Anyone would like to chime in who did not talk yet?
 
 Unknown speaker: 00:47:02
 
-I only have a couple of basic, maybe a little bit stupid questions, but are you guys intending this knapsack coin join as a method of like payment for like straight up to for the, for example on some service or it is like basic coin join like it's the output will come to me the both outputs.
-
-Aviv Milner: 00:47:35
-
-Coin join like for payments whereas the Zerolink currently does coinjoins as I think I can
-
-Unknown speaker: 00:47:42
-
-answer this question.
-
-Speaker 4: 00:47:43
-
-Coinjoin for
-
-Unknown speaker: 00:47:43
-
-payments, whereas Zerolink currently does
+I only have a couple of basic, maybe a little bit stupid questions, but are you guys intending this knapsack coinjoin as a method of like payment for like straight up to for the, for example on some service or it is like basic coinjoin like it's the output will come to me the both outputs.
 
 Aviv Milner: 00:47:43
 
-Coinjoins as mixing transactions.
-This is actually the question I wanted to ask Felix was, if he knows anything about how Wasabi currently works and, you know, the distinction between a coin join for mixing and a coinjoin for sending.
+[inaudbile] coinjoin for payments, whereas ZeroLink currently does coinjoins as mixing transactions.
+This is actually the question I wanted to ask Felix was, if he knows anything about how Wasabi currently works and, you know, the distinction between a coinjoin for mixing and a coinjoin for sending.
 And I feel like having read this paper, I feel like Wasabi being able to send in a coinjoin might open doors for more privacy.
 
 Felix Maurer: 00:48:19
 
 Yeah, To be honest, I didn't know about Wasabi until now because I really I'm not keeping up with the current developments on Bitcoin anymore or other cryptocurrencies.
-But yeah, my idea was that actually, that's the point of the Knapsack mixing, that you can use coin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
+But yeah, my idea was that actually, that's the point of the Knapsack mixing, that you can use coinjoin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
 So you can in the same step, send coins to a third party and do the mixing.
 
 Speaker 4: 00:49:01
@@ -606,12 +583,12 @@ Lucas Ontivero: 00:50:20
 Yes, I agree.
 There are solutions for that, like stat addresses or give me your Onion address, and we could maybe work it out, but it's a lot of work.
 Yes.
-However, maybe it's possible to do a variation of `knapsack` where you kind of keep the payment as it is, but you are only mixing on the changes.
+However, maybe it's possible to do a variation of knapsack where you kind of keep the payment as it is, but you are only mixing on the changes.
 It should be an easier thing.
 
 Felix Maurer: 00:51:05
 
-Actually, I'm quite sure I've read about special kinds of Bitcoin addresses where you can for the receiver of the transaction generate as many addresses as you want. And I don't remember how it was.
+Actually, I'm quite sure I've read about special kinds of Bitcoin addresses where you can for the receiver of the transaction generate as many addresses as you want, I don't remember how it was.
 It was kind of like a public private key scheme where you can generate new addresses and only the receiver is able to use these addresses.
 I guess the only remaining problem would be for the receiver to notice transactions which contain addresses that belong to him.
 But I will try to find out what they were called.
@@ -619,8 +596,9 @@ But I will try to find out what they were called.
 Lucas Ontivero: 00:51:47
 
 I know too, both of them have some very serious trade-offs.
-Say if it's one of them or if it's not, then I would like to investigate.
-One is stat addresses, you were actually mentioning that in the paper and the other one is payment codes.
+Say if it's one of them.
+If it's not, then I would like to investigate.
+One is stealth addresses, you were actually mentioning that in the paper, and the other one is payment codes.
 Is it one of it?
 
 Felix Maurer: 00:52:12
@@ -640,8 +618,7 @@ But I thought that that might not be a problem.
 Lucas Ontivero: 00:52:41
 
 Yes, it's a problem.
-But not.
-And anyway, I just like to say that these conversations, I would really like to make these as a learning conversations and not necessarily how to integrate it or implement it into Wasabi or how to do anything with Wasabi.
+And anyway, I just like to say that I would really like to make these as a learning conversations and not necessarily how to integrate it or implement it into Wasabi or how to do anything with Wasabi.
 Because there are like 600 more papers that I want to review and maybe at the end when we learn about everything, then we can come up with something, then we can use different techniques from different papers.
 What my thinking is right now, is that it's just a vague idea, but if we could give a number to, hey, we mix this way and this mix is this efficient.
 If we could scale the efficiency of the mix, if we could tell how efficient one mix is, then we could come up with a bunch of mixing solutions and we would know that, hey, this mixing solution gives the best blockchain space per anonymity gained number, right?
@@ -729,50 +706,18 @@ Unknown speaker: 00:58:20
 
 Yeah, yes.
 Sorry, I lost connection.
-Okay, what I want to show you
-
-Speaker 4: 00:58:41
-
-is
-
-Unknown speaker: 00:58:45
-
-the difficulty with the free spans.
-Okay, I'm
-
-Speaker 4: 00:58:51
-
-leaving with you.
-
-Felix Maurer: 00:58:51
-
-I call it a
-
-Unknown speaker: 00:58:51
-
-with Okay, I'm with you okay Three seconds
+Okay, what I want to show you is the difficulty with the free [inaudbile].
 
 Lucas Ontivero: 00:59:02
 
-I don't know if it's going to work.
-
-Unknown speaker: 00:59:04
-
-The number of...
-
-Lucas Ontivero: 00:59:19
-
-Okay.
-
-Speaker 4: 00:59:22
-
-Okay.
+I don't know if it's going to work (referring to other speaker's connection issues).
 
 Unknown speaker: 00:59:24
 
 Okay, well, just going back to the Aviv's presentation thing.
 I was just thinking about, if it wasn't for payments, and there would be like any kind of set amount that you would have to reach on as output.
-I understand that we wouldn't like to like use too many or break it down into too many UTXOs. But in like, in some sense, I think it could kind of work.
+I understand that we wouldn't like to use too many or break it down into too many UTXOs.
+But in some sense, I think it could kind of work.
 I'm not sure if it's just too expensive or something for after why it's like combining all these UTXOs or something like that, but, like breaking it down onto the smallest possible input that there is.
 And, not maybe like, like the smallest one, but, just breaking it down into a smaller and exact the same outputs, like you could combine many inputs and the fee would go like a static, depending on how many inputs you're putting.
 And then it would just, give you either like, for example, a bigger sum or a smaller sum.
@@ -805,7 +750,7 @@ I'm not sure if it's only a good thing if the mapping is hard to calculate.
 Lucas Ontivero: 01:02:47
 
 Mapping is not necessary to do in order to build a system.
-What's interesting about calculating these mappings is that we can actually see that where are the `bottlenecks` of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
+What's interesting about calculating these mappings is that we can actually see that where are the bottlenecks of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
 
 Unknown speaker: 01:03:15
 
@@ -833,30 +778,16 @@ Sorry.
 Aviv Milner: 01:05:09
 
 Yeah.
-I mean, so
-
-Unknown speaker: 01:05:13
-
-why
+I mean, so, why...
 
 Unknown speaker: 01:05:18
 
-That there will be like more people linked to the coin joins, even if they don't actually use Wasabi.
+That there will be like more people linked to the coinjoins, even if they don't actually use Wasabi.
 
-Speaker 4: 01:05:31
+Aviv Milner: 01:05:31
 
-Yeah, what I mean to
-
-Aviv Milner: 01:05:32
-
-say is that what if a user just wanted to send someone money and essentially wanted to participate in these knapsack type coinjoins for spending?
+Yeah, what I mean to say is that what if a user just wanted to send someone money and essentially wanted to participate in these knapsack type coinjoins for spending?
 Then that could be a separate service that could be added to Wasabi.
-
-Aviv Milner: 01:05:53
-
-Right?
-
-Aviv Milner: 01:05:56
 
 Like, imagine if the entire blockchain didn't have transactions, but just had lists of inputs and outputs.
 I think we can agree that it would be computationally very hard for people to successfully unravel the entire block of inputs and outputs.
@@ -871,48 +802,47 @@ It raises more questions than it answers, I think.
 
 Unknown speaker: 01:07:00
 
-One more thing, the napsack transactions...
+One more thing, the knapsack transactions...
+
+## Deciding Next Meeting's topic
 
 Lucas Ontivero: 01:07:06
 
 Lucas, because Aviv is leaving, before Aviv leaves, can we decide on what should be our next...
-What should be next Monday. What should we look into?
+What should be next Monday.
+What should we look into?
 You guys have ideas?
 
 Unknown speaker: 01:07:25
 
-No. Coinshopper?
+oinshuffle?
 
 Lucas Ontivero: 01:07:33
 
-All right, `Coinshuffle`, one idea.
+All right, Coinshuffle, one idea.
 
 Aviv Milner: 01:07:41
 
-There are some papers that were cited by Felix's paper that I thought were interesting but I think `coinshuffle` was one of them.
+There are some papers that were cited by Felix's paper that I thought were interesting but I think Coinshuffle was one of them.
 
 Lucas Ontivero: 01:07:59
 
-There is also a coinjoin Sudoku from Christovatas, anonymizing all the blockchain info shared
+There is also [coinjoin Sudoku](https://github.com/kristovatlas/coinjoin-sudoku) from kristovatlas, de-anonymizing all the blockchain.info SharedCoin coinjoins.
 
-Lucas Ontivero: 01:08:16
-
-Also,
-
-Lucas Ontivero: 01:08:22
-
-also secure multiparty computation, which came up in the paper, but I've seen that came up so many times in so many papers in the coinshuffle paper too by the way that I'm just as interested what the heck that would be.
+Also, secure multiparty computation, which came up in the paper, but I've seen that came up so many times in so many papers in the coinshuffle paper too by the way that I'm just as interested what the heck that would be.
 So anyway any more ideas or decide on these three now?
 Or vote, let's vote for these three.
 Or something else in the mix, do you want to add?
 
 Unknown speaker: 01:09:04
 
-I prefer coin shuffle and there is another variant, I don't remember this, it is coin shuffle plus plus or something like that
+I prefer Coinshuffle and there is another variant, I don't remember this, it is Coinshuffle++ or something like that.
 
 Lucas Ontivero: 01:09:15
 
-There is coin shuffle plus plus and there is value shuffle. Which is coinshuffle++ with confidential transactions. So anyway Let's go from left to right Aviv, coin shuffle, coinjoin sudoku, secure multi-party computation?
+There is Coinshuffle++ and there is value shuffle, which is Coinshuffle++ with confidential transactions.
+So anyway, let's go from left to right.
+Aviv, Coinshuffle, coinjoin sudoku, secure multi-party computation?
 
 Aviv Milner: 01:09:39
 
@@ -926,72 +856,62 @@ Igor?
 Unknown speaker: 01:09:48
 
 Probably yes.
-Or yes, also CoinJoin Sudoku, but I think it's pretty much the same that we have discussed today, finding the partitions.
+Also CoinJoin Sudoku, but I think it's pretty much the same that we have discussed today, finding the partitions.
 So I don't know if it brings something new to us.
 
 Lucas Ontivero: 01:10:06
 
 Yeah, that was kind of my idea there, that we could look at someone else's work on the same topic that's actually a part of the knapsack paper and we could compare that.
-So there is also sneaker.
+There is also Snicker.
 
 Unknown speaker: 01:10:32
 
-Sneakers too, yeah sneakers can be too.
-Probably sneakers is better than coinshuffle because coin shuffle has some communication schemes that is pretty hard.
+Oh, Snicker too, yeah Snicker can be too.
+Probably Snicker is better than coinshuffle because coinshuffle has some communication schemes that is pretty hard.
 I don't know if it can be implemented really.
-So, yeah.
 
 Lucas Ontivero: 01:10:52
 
 Okay, let's start it again then and I will note how much are the votes and let's get over with.
-So, `CoinShuffle` is from EmRuffing and it's about mixing transactions.
-It's similar to `Zerolink` in that sense.
-`CoinJoin` Sudoku is from Christoph Atlas and it is how do you de-anonymize coinjoins.
+So, Coinshuffle is from Tim Ruffing and it's about mixing transactions.
+It's similar to ZeroLink in that sense.
+CoinJoin Sudoku is from Kristov Atlas and it is how do you de-anonymize coinjoins.
 I think it's solving the subset sum problem somehow.
 This is a smaller thing.
 Secure multiparty computation.
-I have no idea what is this but I think it's something that will come back because it came back many times `sneaker` is from Adam Gibson and this is a this is coinjoin. Some interesting idea to do coin joins.
-Okay, Aviv, coinshuffle, coinjoins Sudoku, Secure multiparty computation, sneaker, you can vote for multiple things.
+I have no idea what is this but I think it's something that will come back because it came back many times.
+Snicker is from Adam Gibson and this is some interesting idea to do coinjoins.
+Okay, Aviv, coinshuffle, coinjoins Sudoku, Secure multiparty computation, Snicker, you can vote for multiple things.
 
 Aviv Milner: 01:12:02
 
-I think the coin shuffle or the sneaker would be interesting.
+I think the coinshuffle or the Snicker would be interesting.
 
 Lucas Ontivero: 01:12:06
 
-Okay, coin shuffle one vote, sneaker one vote.
+Okay, coinshuffle one vote, Snicker one vote.
 Lucas?
 
 Unknown speaker: 01:12:12
 
-The sneaker.
-Only sneaker?
-Yes, Igor
+The Snicker.
+
 
 Lucas Ontivero: 01:12:42
 
-I cannot
-
-Lucas Ontivero: 01:12:42
-
-hear you. Couldn't hear anything.
+Igor?
+(Igor doesn't respond)
+I cannot hear you.
+Couldn't hear anything.
 
 Aviv Milner: 01:13:03
 
 I'm going to head out.
-I trust your judgment to vote.
-
-Aviv Milner: 01:13:06
-
-I'm gonna head out I trust you
-
-Aviv Milner: 01:13:06
-
-your judgment to vote and I'll read whatever is submitted for next week
+I trust your judgment to vote and I'll read whatever is submitted for next week.
 
 Unknown speaker: 01:13:15
 
-Perfect see you Aviv thank you
+Perfect see you Aviv thank you.
 
 Unknown speaker: 01:13:19
 
@@ -1008,28 +928,23 @@ Thanks guys.
 Lucas Ontivero: 01:13:26
 
 Thank you.
-Alright, who would you like to keep your eye on him?
+Alright, O, would you like to keep your [inaudible]?
 
 Unknown speaker: 01:13:38
 
 I would dive more deeper into what Adam Gibson does on this topic, because I know the man and yeah, I'm really curious what he's doing especially with regards to what you guys are researching.
-So yeah.
 
 Lucas Ontivero: 01:13:53
 
 All right.
 
-Unknown speaker: 01:13:54
-
-and the name is yeah
-
 Lucas Ontivero: 01:13:58
 
-The rough file
+Rafael?
 
 Unknown speaker: 01:14:01
 
-Yeah, I like the idea of shuffle and sneakers.
+Yeah, I like the idea of shuffle and Snickers.
 
 Unknown speaker: 01:14:06
 
@@ -1039,18 +954,17 @@ Lucas Ontivero: 01:14:12
 
 Yahya?
 Yahya, are you with us?
-Yahya, are you with us?
 Okay, I see what you wrote.
 You're not familiar with any of it.
 All right.
 Well, it doesn't really matter what I wrote.
 It's going to be Snicker.
 Because that has four votes.
-Okay, so it's going to be sneaker than next next meeting and Lucas you were saying something that I disrupted you so go ahead.
+Okay, so it's going to be Snicker, the next next meeting, and Lucas you were saying something that I disrupted you so go ahead.
 
 Unknown speaker: 01:14:50
 
-Yes, just a comment that those snapsack transactions for an observer, an external observer, It is not easy to realize it is a conjoined, because I mean it can be a batch transaction, a pay-to-many transaction.
+Yes, just a comment that those knapsack transactions for an observer, an external observer, It is not easy to realize it is a conjoined, because I mean it can be a batch transaction, a pay-to-many transaction.
 I mean in the blockchain there are lots and lots and lots of transactions with more than, I don't know, 5 inputs and 10 outputs that are not conjoined, right?
 So, It is not easy to know that that's a conjoint transaction.
 So there is not a clear fingerprint.
@@ -1062,11 +976,11 @@ For example, in Wasabi we...
 
 Lucas Ontivero: 01:16:19
 
-I disagree completely because there are just so many fingerprints in the blockchain that you can't tell exactly which wallet created that transaction by just looking at the endlock time let's say you know.
+I disagree completely because there are just so many fingerprints in the blockchain that you can't tell exactly which wallet created that transaction by just looking at the `nLocktime`.
 
 Unknown speaker: 01:16:35
 
-Yes yes yes sure it is possible but anyway if, for example, cannot know so easily how many participants are.
+Yes yes yes sure it is possible but anyway if you, for example, cannot know so easily how many participants are.
 In Wasabi it is easy because you count how many equal outputs are.
 If there are 66 equal outputs then there are 66 participants.
 In this case it's a bit harder.
@@ -1074,16 +988,16 @@ So it's something to have in mind.
 
 Unknown speaker: 01:17:15
 
-By the way, if I can ask a weird question, then what did it mean, Nopara, about being able to know which wallet created the transaction by the nlock time?
+By the way, if I can ask a weird question, then what did it mean, Nopara, about being able to know which wallet created the transaction by the `nLocktime`?
 
 Lucas Ontivero: 01:17:29
 
-That different wallets are using different fees, different nlock times.
+That different wallets are using different fees, different `nLocktime`s.
 They either use it or not, or they either use a specific number.
 They might bump the transaction able to do RBF.
 You see there is a set of features.
-Those features sometimes have like a run on a let's say the fee.
-You have to decide what fee you will do in the transaction and if that exact fee that transaction is being made with can only be produced with Electrum.
+Those features sometimes run on a...
+Let's say the fee, you have to decide what fee you will do in the transaction and if that exact fee that transaction is being made with can only be produced with Electrum.
 Electrum is a bad example because Electrum, Bitcoin Core and Wasabi kind of can produce each other's fees.
 But if that can only be produced with Electrum, then it's going to be a transaction with Electrum.
 Okay, so now we figured out that this is a transaction with Electrum.
@@ -1101,7 +1015,8 @@ I was fighting a lot against it previously, but I just realized it's not possibl
 Unknown speaker: 01:19:29
 
 And If I may ask another stupid question is what exactly is analog time?
-And I mean, I think I've heard about it, but I just don't remember anything. Or what does it like conclude
+And I mean, I think I've heard about it, but I just don't remember anything.
+Or what does it like conclude?
 
 Lucas Ontivero: 01:19:45
 
@@ -1109,8 +1024,8 @@ Lucas.
 
 Unknown speaker: 01:19:49
 
-It's when that transaction can be mine, basically.
-You say, okay, this transaction can be mine right now, can be mine after this block height.
+It's when that transaction can be mined, basically.
+You say, okay, this transaction can be mined right now, can be mined after this block height.
 So basically that's all.
 It's a field in the transaction where you specify when that transaction can be mined.
 
@@ -1120,7 +1035,8 @@ Okay, yeah, alright, thanks.
 
 Lucas Ontivero: 01:20:17
 
-For example, Bitcoin Core and Electrum are using an n-lock time that is in order to discourage fee sniping, which whatever it is, it's not on top of my mind, but like things like this.
+For example, Bitcoin Core and Electrum are using an `nLocktime` that is in order to discourage fee sniping, which whatever it is, it's not on top of my mind.
+But, you know, things like this.
 Or the RBF, that's like if you send a transaction and you have RBF enabled, then only that information that this transaction can do RBF.
 Just, okay, now look at which wallets can do RBF and it must be, it's probably from those wallets.
 Now if you do an RBF transaction, if you bump the fee then oh that's a lot more information to expose because you can only bump the fee from removing the change, then you just exposed where you are sending the money, which would be exposed by the transaction chain anyway later on.
@@ -1143,28 +1059,20 @@ Unknown speaker: 01:22:25
 
 Okay, good to know.
 
-Lucas Ontivero: 01:22:28
-
-Alright, what else
-
-Speaker 4: 01:22:30
-
-do we have?
-
 Lucas Ontivero: 01:22:31
 
-What else do we have?
+Alright, what else do we have?
 
 Unknown speaker: 01:22:34
 
-Nopora, I have a question.
+Nopara, I have a question.
 You said about the paper that had information about confidential assets and mixing or something like that?
 You mentioned it like 5 minutes ago or something.
 
 Lucas Ontivero: 01:22:51
 
 Yes, I was explaining the history of CoinShuffle.
-It started with CoinShuffle, then they came up with a new protocol that doesn't require TOR, that's called `DiceMix`, and they incorporated it into CoinShuffle, and they called it CoinShuffle++, and then they figured out how to do CoinShuffle with confidential transactions and that is called `ValueShuffle`.
+It started with CoinShuffle, then they came up with a new protocol that doesn't require TOR, that's called DiceMix, and they incorporated it into CoinShuffle, and they called it CoinShuffle++, and then they figured out how to do CoinShuffle with confidential transactions and that is called ValueShuffle.
 
 Unknown speaker: 01:23:30
 
@@ -1174,17 +1082,15 @@ CoinShuffle++?
 
 Lucas Ontivero: 01:23:43
 
-Just google valueshuffle.
-Or wait, value
+Just google ValueShuffle.
 
 Unknown speaker: 01:23:46
 
-shuffle.
 Okay.
 
 Lucas Ontivero: 01:23:52
 
-Are you interested in Coinshopper++?
+Are you interested in CoinShuffle++?
 
 Unknown speaker: 01:23:56
 
@@ -1198,7 +1104,7 @@ Yeah, that's something that we could contribute later on.
 Unknown speaker: 01:24:20
 
 Okay, well, that could be the topic that I might be prepared for.
-So yeah, thanks for explaining that again, Alamoglu.
+So yeah, thanks for explaining that again.
 
 Lucas Ontivero: 01:24:32
 
@@ -1217,18 +1123,9 @@ Lucas Ontivero: 01:24:53
 All right.
 Do you guys have anything else?
 
-Unknown speaker: 01:25:02
-
-No.
-
-Speaker 4: 01:25:03
-
-me.
-I
-
 Unknown speaker: 01:25:05
 
-Have done my homework.
+Nothing, I have my homework.
 
 Unknown speaker: 01:25:09
 
@@ -1237,7 +1134,7 @@ Yeah, me too.
 Lucas Ontivero: 01:25:12
 
 All right.
-Then Next episode is going to be sneaker.
+The next episode is going to be Snicker.
 And yeah, thanks for coming and I will publish it to, I don't know where, if the recording is good I will publish it to probably the Wasabi channel.
 And we'll see.
 What are your thoughts about how was this so far?
@@ -1247,7 +1144,7 @@ Do you have any recommendations how to improve these conversations?
 Unknown speaker: 01:25:52
 
 At least Aviv's presentation was pretty damn good in my opinion.
-I mean like a short recap of what was what and what's the point of `Knapsack`.
+I mean like a short recap of what was what and what's the point of Knapsack.
 So it makes a pretty good, like, yeah, just a video in itself.
 But of course, also these talks too.
 
@@ -1260,16 +1157,16 @@ Yeah, definitely.
 Unknown speaker: 01:26:29
 
 Yes, From my point of view, the participation of Felix was great.
-So, for `Sneakers`, if we can have Adam here, it could be great too.
+So, for Snickers, if we can have Adam here, it could be great too.
 
 Lucas Ontivero: 01:26:50
 
-I will ask him I can't I can't promise Felix didn't promise it to either he said he will try. So that's why I didn't even send out a tweet or anything.
-Hey, Felix is going to be here because if he's not...
+I will ask him, I can't promise.
+Felix didn't promise it to either, he said he will try.
+So that's why I didn't even send out a tweet or anything, "Hey, Felix is going to be here" because if he's not...
 Anyway, I will tell Adam to come.
 Yeah, definitely.
 I hope he can.
-Yeah.
 
 Unknown speaker: 01:27:21
 
