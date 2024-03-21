@@ -2,7 +2,7 @@
 title: "Knapsack Mixing"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=XDCQI7hrB58
-tags: ["research", "coinjoin"]
+tags: ["research","coinjoin"]
 speakers: ["Aviv Milner","Felix Maurer","Lucas Ontivero"]
 categories: ["club"]
 date: 2020-01-06
@@ -69,7 +69,7 @@ And essentially the set of all mappings below here is just the set of all, I thi
 So again, this is just saying that we can take a transaction and create a list of all possible ways we could cut it up, essentially figuring out different ways we could get sub-transactions, and the entire list of all ways we could cut it up is denoted in M.
 I hope I haven't lost anyone so far, but good idea to maybe pause and ask, have I lost anyone so far?
 
-Lucas Ontivero: 00:05:12
+Adam Fiscor: 00:05:12
 
 No, I think it's a great introduction.
 I just want to say for some administration that since Felix appeared in this conversation, welcome Felix, he is one of the authors of the paper and I think after your presentation we could move on to pick his brain and in order to not waste his time too much and then after that we can move on to other people's presentations and ideas and discussions about that.
@@ -163,7 +163,7 @@ Okay, so interesting.
 So upper bound anonymity, it's like, if we look at this way of looking at transaction anonymity and we apply it to ZeroLink, we see that ZeroLink is like a perfect knapsack coinjoin.
 So that sort of provides us the upper bound anonymity, which is essentially the number of total participants that are doing this knapsack coinjoin.
 
-Lucas Ontivero: 00:16:01
+Adam Fiscor: 00:16:01
 
 I don't agree with a lot of things here, and I think this is your last slide.
 So can we come back to it later and discuss everything, every concluding thoughts, one by one?
@@ -173,7 +173,7 @@ Aviv Milner: 00:16:16
 Sure, sure.
 So yeah, I'll leave it to Felix, because that's pretty much it for introducing the paper.
 
-Lucas Ontivero: 00:16:28
+Adam Fiscor: 00:16:28
 
 Yeah, so thank you, Aviv.
 It's a nice introduction to get everyone catch up with the paper and we can go into the details here and there.
@@ -197,7 +197,7 @@ And I think the one interesting thing is also that the term Knapsack for this mi
 I picked up the idea from two papers, which basically in one or two sentences describe that something like this could be done but did not really go into it.
 So yeah, this is how I came up with this idea or why I started working on this idea.
 
-Lucas Ontivero: 00:19:18
+Adam Fiscor: 00:19:18
 
 Nice, and did you follow up on things, writing the paper or what did you move on to?
 
@@ -206,7 +206,7 @@ Felix Maurer: 00:19:27
 No, actually, after my thesis I started doing a PhD at the RWTH in Aachen but after after one year I realized that it's not the right environment for me so I moved on and I'm now working at Fraunhofer Institute, which is not at all related to what I've done before.
 So unfortunately, since two years, I am not working on the topic at all anymore.
 
-Lucas Ontivero: 00:19:59
+Adam Fiscor: 00:19:59
 
 I see anyone has any general questions?
 I have more more in topic questions now.
@@ -215,7 +215,7 @@ Unknown speaker: 00:20:10
 
 Hi, well I would like to know about the test, the validation of this hypothesis, if you have published the source code for this paper?
 
-Lucas Ontivero: 00:20:28
+Adam Fiscor: 00:20:28
 
 That would be my question too.
 
@@ -226,7 +226,7 @@ I have published the code that I was used to produce the results of the paper.
 I'm not sure if it's linked anywhere, but it's a public repository on GitLab.
 Let me paste the link for you.
 
-Lucas Ontivero: 00:20:54
+Adam Fiscor: 00:20:54
 
 Thank you.
 It's great, thank you.
@@ -239,7 +239,7 @@ It's written in Rust, I don't know if you have experience with Rust, but it shou
 I think the interesting part is in the main source folder, the `distribution.rs` file.
 In there are the different mixing algorithms that I used.
 
-Lucas Ontivero: 00:21:46
+Adam Fiscor: 00:21:46
 
 Yeah, thank you.
 Lucas here wrote code for it too, and actually I wrote code for it too.
@@ -248,7 +248,7 @@ Felix Maurer: 00:21:54
 
 Yeah, perfect.
 
-Lucas Ontivero: 00:21:57
+Adam Fiscor: 00:21:57
 
 So we can validate.
 I have one last question that only you can answer is that on the paper at the end you wrote that however currently our output splitting algorithm requires knowledge of all sub-transactions.
@@ -274,7 +274,7 @@ Felix Maurer: 00:23:36
 
 In the Hangouts chat.
 
-Lucas Ontivero: 00:23:40
+Adam Fiscor: 00:23:40
 
 I saved them.
 
@@ -282,7 +282,7 @@ Unknown speaker: 00:23:43
 
 Okay, thank you.
 
-Lucas Ontivero: 00:23:47
+Adam Fiscor: 00:23:47
 
 So that was all my questions that only Felix could answer.
 Anyone has any questions to Felix?
@@ -364,7 +364,7 @@ Felix Maurer: 00:31:20
 I'm not sure whether it actually provides additional information.
 I would have to think about it because it would only provide more information if it would help you distinguish between subsets that are more likely the real or mappings that are more likely the real mappings than others, right?
 
-Lucas Ontivero: 00:31:45
+Adam Fiscor: 00:31:45
 
 Yeah, I agree with that.
 It doesn't provide additional information.
@@ -380,7 +380,7 @@ No, it does, it provides more information.
 In fact, I mean, if you for example, you know that the feed rate is, I don't know, 1, yes?
 And you have all the set partition.
 
-Lucas Ontivero: 00:33:17
+Adam Fiscor: 00:33:17
 
 Oh no, explain it.
 What does it mean one?
@@ -393,7 +393,7 @@ And say, okay, the sum of these inputs, minus the sum of these outputs gives you
 So, that fee, given the size of the transaction, you know how much it paid.
 What is the fee rate?
 
-Lucas Ontivero: 00:34:05
+Adam Fiscor: 00:34:05
 
 You don't know who paid the fee.
 There are many participants.
@@ -404,7 +404,7 @@ Unknown speaker: 00:34:18
 
 Yes, well, in that case, if only one pay the fee, yes, it makes sense, but in that case also is a problem because you can say, if it match exactly, then this is one of those that didn't pay any fee.
 
-Lucas Ontivero: 00:34:38
+Adam Fiscor: 00:34:38
 
 You may say exactly but I don't understand.
 
@@ -412,7 +412,7 @@ Unknown speaker: 00:34:42
 
 If the sum of the input and the sum of the outputs is exact.
 
-Lucas Ontivero: 00:34:46
+Adam Fiscor: 00:34:46
 
 Then you can say that this participant did not pay anything.
 Why would you say that?
@@ -475,7 +475,7 @@ And if my analysis of the theoretical complexity is not completely wrong, then I
 I have it here, but it's not written down in an easy way.
 I think two to the power of n times m which n is that assess n.
 
-Lucas Ontivero: 00:40:32
+Adam Fiscor: 00:40:32
 
 Are you talking about the van number or your lower bound estimation?
 
@@ -483,7 +483,7 @@ Felix Maurer: 00:40:40
 
 My lower bound estimation.
 
-Lucas Ontivero: 00:40:47
+Adam Fiscor: 00:40:47
 
 I think it makes sense what I've read on the internet, on Wikipedia, that the best algorithms known for solving subset sum is still exponential.
 
@@ -494,7 +494,7 @@ If you can automate it, and the idea was, you can join an arbitrary transactions
 It doesn't need to be a fixed amount for each input.
 Then you can create for each transaction that you do, you can create with other peers for each transaction such a coin transaction of a huge size if enough people use the same wallet at the same time.
 
-Lucas Ontivero: 00:42:01
+Adam Fiscor: 00:42:01
 
 Since we are going into it, I'd like to say an idea of mine that one of the most frequent question in Wasabi was that why do we have the 100 anonymity set and like that.
 But and the reason is because I sent out emails and that seemed like the consensus that okay that should be fine, 100 participants, but your lower bound estimation could actually give us a mathematic formula to set a minimum participants, right, for any coinjoins.
@@ -506,7 +506,7 @@ Felix Maurer: 00:43:07
 I think the theoretical bound is difficult to translate in and concrete amount of time it needs to find the partitioning.
 But it's only really good for explaining how fast it gets more complex or how fast the time increases that you need to find a partition depending on the number of people who participate?
 
-Lucas Ontivero: 00:43:42
+Adam Fiscor: 00:43:42
 
 Yes, it's not a perfect fit but the main problem is that there must be a number chosen of what's the minimum number of participants that we want to do and that's why I thought this formula, your lower bound estimation would be actually somewhat useful in deciding on that number that we kind of choose, let's say arbitrarily or with educated guesses, I don't know.
 
@@ -514,7 +514,7 @@ Felix Maurer: 00:44:19
 
 Yes, I guess you could, based on the time it takes for some simple examples, you could extrapolate using that function for more complex cases where more participants with more inputs to take part.
 
-Lucas Ontivero: 00:44:36
+Adam Fiscor: 00:44:36
 
 All right.
 
@@ -538,7 +538,7 @@ Unknown speaker: 00:46:45
 
 Okay, thank you.
 
-Lucas Ontivero: 00:46:51
+Adam Fiscor: 00:46:51
 
 Anyone would like to chime in who did not talk yet?
 
@@ -578,7 +578,7 @@ Send me 10 of your addresses.
 It is unusual, right?
 So we need something different.
 
-Lucas Ontivero: 00:50:20
+Adam Fiscor: 00:50:20
 
 Yes, I agree.
 There are solutions for that, like stat addresses or give me your Onion address, and we could maybe work it out, but it's a lot of work.
@@ -593,7 +593,7 @@ It was kind of like a public private key scheme where you can generate new addre
 I guess the only remaining problem would be for the receiver to notice transactions which contain addresses that belong to him.
 But I will try to find out what they were called.
 
-Lucas Ontivero: 00:51:47
+Adam Fiscor: 00:51:47
 
 I know too, both of them have some very serious trade-offs.
 Say if it's one of them.
@@ -606,7 +606,7 @@ Felix Maurer: 00:52:12
 I'm not sure.
 I thought it was something with blind signatures.
 
-Lucas Ontivero: 00:52:17
+Adam Fiscor: 00:52:17
 
 That would be actually awesome.
 
@@ -615,7 +615,7 @@ Felix Maurer: 00:52:22
 Maybe I'm remembering something wrong, but I can try to look it up and try to find what I was reading.
 But I thought that that might not be a problem.
 
-Lucas Ontivero: 00:52:41
+Adam Fiscor: 00:52:41
 
 Yes, it's a problem.
 And anyway, I just like to say that I would really like to make these as a learning conversations and not necessarily how to integrate it or implement it into Wasabi or how to do anything with Wasabi.
@@ -639,7 +639,7 @@ But if you have any questions, you can contact me at any time.
 I send you my new email address in the chat.
 So feel free to ask me if you have any more questions.
 
-Lucas Ontivero: 00:55:50
+Adam Fiscor: 00:55:50
 
 Yeah, thanks a lot for coming.
 It was a pleasure to...
@@ -658,7 +658,7 @@ Felix Maurer: 00:56:10
 Thanks.
 So thanks and goodbye, maybe until some time later.
 
-Lucas Ontivero: 00:56:19
+Adam Fiscor: 00:56:19
 
 All right, bye bye.
 
@@ -698,7 +698,7 @@ Unknown speaker: 00:58:11
 
 I'm back.
 
-Lucas Ontivero: 00:58:15
+Adam Fiscor: 00:58:15
 
 Yeah, you can go ahead.
 
