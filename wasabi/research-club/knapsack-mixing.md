@@ -536,7 +536,7 @@ Yeah, to be honest, I didn't know about Wasabi until now because I really I'm no
 But yeah, my idea was that actually, that's the point of the Knapsack mixing, that you can use coinjoin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
 So you can in the same step, send coins to a third party and do the mixing.
 
-Speaker 4: 00:49:01
+nopara73 -: 00:49:01
 
 Okay, thanks.
 
