@@ -814,17 +814,17 @@ Lucas Ontivero: 01:09:04
 
 I prefer Coinshuffle and there is another variant, I don't remember this, it is Coinshuffle++ or something like that.
 
-Lucas Ontivero: 01:09:15
+Adam Fiscor: 01:09:15
 
-There is Coinshuffle++ and there is value shuffle, which is Coinshuffle++ with confidential transactions.
+There is coinshuffle, there is coinshuffle++ and there is valueshuffle, which is Coinshuffle++ with confidential transactions.
 So anyway, let's go from left to right.
-Aviv, Coinshuffle, coinjoin sudoku, secure multi-party computation?
+Aviv, coinshuffle, coinjoinsudoku, secure multi-party computation?
 
 Aviv Milner: 01:09:39
 
-I guess I'll vote for CoinShuffle.
+I guess I'll vote for coinShuffle.
 
-Lucas Ontivero: 01:09:43
+Adam Fiscor: 01:09:43
 
 Okay, Lucas, CoinShuffle.
 Igor?
@@ -832,21 +832,21 @@ Igor?
 Lucas Ontivero: 01:09:48
 
 Probably yes.
-Also CoinJoin Sudoku, but I think it's pretty much the same that we have discussed today, finding the partitions.
+Also coinjoinsudoku, but I think it's pretty much the same that we have discussed today, finding the partitions.
 So I don't know if it brings something new to us.
 
-Lucas Ontivero: 01:10:06
+Adam Fiscor: 01:10:06
 
 Yeah, that was kind of my idea there, that we could look at someone else's work on the same topic that's actually a part of the knapsack paper and we could compare that.
 There is also Snicker.
 
 Lucas Ontivero: 01:10:32
 
-Oh, Snicker too, yeah Snicker can be too.
+Snicker too, yeah Snicker can be too.
 Probably Snicker is better than coinshuffle because coinshuffle has some communication schemes that is pretty hard.
 I don't know if it can be implemented really.
 
-Lucas Ontivero: 01:10:52
+Adam Fiscor: 01:10:52
 
 Okay, let's start it again then and I will note how much are the votes and let's get over with.
 So, Coinshuffle is from Tim Ruffing and it's about mixing transactions.
@@ -857,13 +857,13 @@ This is a smaller thing.
 Secure multiparty computation.
 I have no idea what is this but I think it's something that will come back because it came back many times.
 Snicker is from Adam Gibson and this is some interesting idea to do coinjoins.
-Okay, Aviv, coinshuffle, coinjoins Sudoku, Secure multiparty computation, Snicker, you can vote for multiple things.
+Okay, Aviv, coinshuffle, coinjoinssudoku, secure multiparty computation, Snicker, you can vote for multiple things.
 
 Aviv Milner: 01:12:02
 
 I think the coinshuffle or the Snicker would be interesting.
 
-Lucas Ontivero: 01:12:06
+Adam Fiscor: 01:12:06
 
 Okay, coinshuffle one vote, Snicker one vote.
 Lucas?
@@ -872,8 +872,14 @@ Lucas Ontivero: 01:12:12
 
 The Snicker.
 
+Adam Fiscor: 01:12:14
+
+Only Snicker?
 
 Lucas Ontivero: 01:12:42
+Yes.
+
+Adam Fiscor:
 
 Igor?
 (Igor doesn't respond)
