@@ -953,7 +953,7 @@ And, okay, this is a conjoined transaction, a knapsack transaction, but who has 
 So, it's not so easy.
 For example, in Wasabi we...
 
-Lucas Ontivero: 01:16:19
+Adam Fiscor: 01:16:19
 
 I disagree completely because there are just so many fingerprints in the blockchain that you can't tell exactly which wallet created that transaction by just looking at the `nLocktime`.
 
@@ -965,11 +965,11 @@ If there are 66 equal outputs then there are 66 participants.
 In this case it's a bit harder.
 So it's something to have in mind.
 
-Lucas Ontivero: 01:17:15
+nopara73 -: 01:17:15
 
 By the way, if I can ask a weird question, then what did it mean, Nopara, about being able to know which wallet created the transaction by the `nLocktime`?
 
-Lucas Ontivero: 01:17:29
+Adam Fiscor: 01:17:29
 
 That different wallets are using different fees, different `nLocktime`s.
 They either use it or not, or they either use a specific number.
@@ -983,21 +983,21 @@ Okay, so now we figured out that this is a transaction with Electrum.
 Now we have to just apply our heuristic that what is the likelihood that this Electrum is going to create a pay-to-endpoint transaction.
 So that's what I'm saying, that there are so many metadata in the transactions that you can probably tell what wallet created it.
 
-Lucas Ontivero: 01:19:03
+nopara73 -: 01:19:03
 
-Okay, yeah, thanks for clarifying that.
+Thanks for clarifying that.
 
-Lucas Ontivero: 01:19:09
+Adam Fiscor: 01:19:09
 
 I was fighting a lot against it previously, but I just realized it's not possible to hide anything because there is always something.
 
-Lucas Ontivero: 01:19:29
+nopara73 -: 01:19:29
 
 And If I may ask another stupid question is what exactly is analog time?
 And I mean, I think I've heard about it, but I just don't remember anything.
 Or what does it like conclude?
 
-Lucas Ontivero: 01:19:45
+Adam Fiscor: 01:19:45
 
 Lucas.
 
@@ -1008,11 +1008,11 @@ You say, okay, this transaction can be mined right now, can be mined after this 
 So basically that's all.
 It's a field in the transaction where you specify when that transaction can be mined.
 
-Lucas Ontivero: 01:20:14
+nopara73 -: 01:20:14
 
-Okay, yeah, alright, thanks.
+All right, thanks.
 
-Lucas Ontivero: 01:20:17
+Adam Fiscor: 01:20:17
 
 For example, Bitcoin Core and Electrum are using an `nLocktime` that is in order to discourage fee sniping, which whatever it is, it's not on top of my mind.
 But, you know, things like this.
@@ -1022,7 +1022,7 @@ Now if you do an RBF transaction, if you bump the fee then oh that's a lot more 
 But you just exposed at that point where you are sending the money and if the fee bump has such a specific number that, okay, let's say Bitcoin Core always bumps the fee with this number or with this fee rate, then you can further narrow the range of possible wallets that can do that.
 So it gets really, really bad.
 
-Lucas Ontivero: 01:22:01
+nopara73 - : 01:22:01
 
 Okay, Yeah, I think I get it.
 And with RBF, you like expose which one of the addresses or outputs are like the actual change.
@@ -1034,83 +1034,87 @@ That might be the most obvious one.
 I didn't even do this for a very long time.
 Then things just start to click, you know.
 
-Lucas Ontivero: 01:22:25
+nopara73 - : 01:22:25
 
-Okay, good to know.
+Good to know.
 
-Lucas Ontivero: 01:22:31
+Adam Fiscor: 01:22:31
 
 All right, what else do we have?
 
-Lucas Ontivero: 01:22:34
+Unknown Speaker 1: 01:22:34
 
 Nopara, I have a question.
 You said about the paper that had information about confidential assets and mixing or something like that?
 You mentioned it like 5 minutes ago or something.
 
-Lucas Ontivero: 01:22:51
+Adam Fiscor: 01:22:51
 
 Yes, I was explaining the history of CoinShuffle.
 It started with CoinShuffle, then they came up with a new protocol that doesn't require TOR, that's called DiceMix, and they incorporated it into CoinShuffle, and they called it CoinShuffle++, and then they figured out how to do CoinShuffle with confidential transactions and that is called ValueShuffle.
 
-Lucas Ontivero: 01:23:30
+Unknown Speaker 1: 01:23:30
 
 Can you send me a reference link or something on that?
 I'm already done the go in it, but it could be a bit faster and more helpful.
 CoinShuffle++?
 
-Lucas Ontivero: 01:23:43
+Adam Fiscor: 01:23:43
 
 Just google ValueShuffle.
 
-Lucas Ontivero: 01:23:46
+Unknown Speaker 1: 01:23:46
 
 Okay.
 
-Lucas Ontivero: 01:23:52
+Adam Fiscor: 01:23:52
 
 Are you interested in CoinShuffle++?
 
-Lucas Ontivero: 01:23:56
+Unknown Speaker 1: 01:23:56
 
 Well, I'm interested in mixing and confidential assets involvement in that.
 Because it is, well, I want to know if there is something that I can bring for RGB.
 
-Lucas Ontivero: 01:24:12
+Adam Fiscor: 01:24:12
 
 Yeah, that's something that we could contribute later on.
 
-Lucas Ontivero: 01:24:20
+Unknown Speaker 1: 01:24:20
 
 Okay, well, that could be the topic that I might be prepared for.
 So yeah, thanks for explaining that again.
 
-Lucas Ontivero: 01:24:32
+Adam Fiscor: 01:24:32
 
 Yeah, bring it to next episode and we will see.
 I think there is some interesting things to learn from me too.
 I would give you a vote for that.
 
-Lucas Ontivero: 01:24:49
+Unknown Speaker 1: 01:24:49
 
 Thank you.
 Good.
 Thanks.
 
-Lucas Ontivero: 01:24:53
+Adam Fiscor: 01:24:53
 
 All right.
 Do you guys have anything else?
 
-Lucas Ontivero: 01:25:05
+Lucas Ontivero: 01:25:03
+
+No.
+
+Unknown Speaker 1: 01:25:05
 
 Nothing, I have my homework.
 
-Lucas Ontivero: 01:25:09
+nopara73 - : 01:25:09
 
 Yeah, me too.
 
-Lucas Ontivero: 01:25:12
+Adam Fiscor: 01:25:12
 
 All right.
 The next episode is going to be Snicker.
@@ -1120,25 +1124,28 @@ What are your thoughts about how was this so far?
 Did you enjoy it?
 Do you have any recommendations how to improve these conversations?
 
-Lucas Ontivero: 01:25:52
+nopara73 - : 01:25:52
 
 At least Aviv's presentation was pretty damn good in my opinion.
 I mean like a short recap of what was what and what's the point of Knapsack.
 So it makes a pretty good, like, yeah, just a video in itself.
 But of course, also these talks too.
 
-Lucas Ontivero: 01:26:15
+Adam Fiscor: 01:26:15
 
 Yeah, I was kind of afraid that Felix is going to leave.
 We have to grab Felix at the beginning because he's going to leave.
+
+nopara73 - : 01:26:27
+
 Yeah, definitely.
 
 Lucas Ontivero: 01:26:29
 
-Yes, From my point of view, the participation of Felix was great.
+Yes, from my point of view, the participation of Felix was great.
 So, for Snickers, if we can have Adam here, it could be great too.
 
-Lucas Ontivero: 01:26:50
+Adam Fiscor: 01:26:50
 
 I will ask him, I can't promise.
 Felix didn't promise it to either, he said he will try.
@@ -1147,7 +1154,7 @@ Anyway, I will tell Adam to come.
 Yeah, definitely.
 I hope he can.
 
-Lucas Ontivero: 01:27:21
+Unknown Speaker 1: 01:27:21
 
 Yeah, I think this format was very good.
 On one hand, you had a person within the team who introduced the brief recap of the article, and then on the other hand, you had the actual author of the article that could contribute online and fix mistakes, misunderstandings and everything.
@@ -1155,7 +1162,7 @@ And also knowing that he's not working anymore, like Felix is not working anymor
 So yeah, having an author of paper is very good here.
 And of course the discussion afterwards, as always, just marvelous.
 
-Lucas Ontivero: 01:28:14
+Adam Fiscor: 01:28:14
 
 All right guys, so if no one has anything, then thank you all for coming and if this is published and you are listening it on YouTube or something, then definitely everything that we talked about, the paper, Felix's code, our code, everything is going to be in the description.
 So you can follow up and maybe change the word by getting some ideas.
@@ -1163,15 +1170,15 @@ All right, thank you guys.
 Thank you.
 All right.
 
-Speaker 4: 01:28:48
+Lucas Ontivero: 01:28:48
 
 Thank you guys.
 
-Lucas Ontivero: 01:28:49
+Unknown Speaker 1: 01:28:49
 
 Bye-bye.
 Thank you.
 
-Lucas Ontivero: 01:28:50
+nopara73 -: 01:28:50
 
 Bye.
