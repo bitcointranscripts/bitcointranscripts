@@ -3,7 +3,7 @@ title: "Knapsack Mixing"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=XDCQI7hrB58
 tags: ["research","coinjoin"]
-speakers: ["Aviv Milner","Felix Maurer","Lucas Ontivero"]
+speakers: ["Aviv Milner","Felix Maurer","Lucas Ontivero","Adam Fiscor"]
 categories: ["club"]
 date: 2020-01-06
 ---
@@ -879,7 +879,7 @@ Only Snicker?
 Lucas Ontivero: 01:12:42
 Yes.
 
-Adam Fiscor:
+Adam Fiscor: 01:12:45
 
 Igor?
 (Igor doesn't respond)
@@ -893,15 +893,15 @@ I trust your judgment to vote and I'll read whatever is submitted for next week.
 
 Lucas Ontivero: 01:13:15
 
-Perfect see you Aviv thank you.
+Perfect. See you Aviv, thank you.
 
-Lucas Ontivero: 01:13:19
+Unknown Speaker 1: 01:13:19
 
 Cheers, thanks.
 
-Lucas Ontivero: 01:13:20
+nopara73 -: 01:13:20
 
-Thanks, an awesome presentation.
+Thanks, and awesome presentation.
 
 Aviv Milner: 01:13:24
 
@@ -910,29 +910,26 @@ Thanks guys.
 Lucas Ontivero: 01:13:26
 
 Thank you.
-Alright, O, would you like to keep your [inaudible]?
+All right, who would you like to keep your [inaudible]?
 
-Lucas Ontivero: 01:13:38
+Unknown Speaker 1: 01:13:38
 
 I would dive more deeper into what Adam Gibson does on this topic, because I know the man and yeah, I'm really curious what he's doing especially with regards to what you guys are researching.
 
 Lucas Ontivero: 01:13:53
 
 All right.
-
-Lucas Ontivero: 01:13:58
-
 Rafael?
 
-Lucas Ontivero: 01:14:01
+nopara73 -: 01:14:01
 
 Yeah, I like the idea of shuffle and Snickers.
 
-Lucas Ontivero: 01:14:06
+Unknown Speaker 1: 01:14:06
 
 Everyone is hungry probably.
 
-Lucas Ontivero: 01:14:12
+Adam Fiscor: 01:14:12
 
 Yahya?
 Yahya, are you with us?
