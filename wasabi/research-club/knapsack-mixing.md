@@ -678,7 +678,7 @@ I'm back.
 
 Adam Fiscor: 00:58:15
 
-Yeah, you can go ahead.
+Yeah, you can go ahead with us.
 
 Lucas Ontivero: 00:58:20
 
