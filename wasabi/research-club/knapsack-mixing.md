@@ -520,7 +520,7 @@ Adam Fiscor: 00:46:51
 
 Anyone would like to chime in who did not talk yet?
 
-nopara73 -: 00:47:02
+Rafael: 00:47:02
 
 I only have a couple of basic, maybe a little bit stupid questions, but are you guys intending this knapsack coinjoin as a method of like payment for like straight up to for the, for example on some service or it is like basic coinjoin like it's the output will come to me the both outputs.
 
@@ -536,7 +536,7 @@ Yeah, to be honest, I didn't know about Wasabi until now because I really I'm no
 But yeah, my idea was that actually, that's the point of the Knapsack mixing, that you can use coinjoin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
 So you can in the same step, send coins to a third party and do the mixing.
 
-nopara73 -: 00:49:01
+Rafael: 00:49:01
 
 Okay, thanks.
 
@@ -690,7 +690,7 @@ Adam Fiscor: 00:59:02
 
 I don't know if it's going to work (referring to other speaker's connection issues).
 
-nopara73 -: 00:59:24
+Rafael: 00:59:24
 
 Okay, well, just going back to the Aviv's presentation thing.
 I was just thinking about, if it wasn't for payments, and there would be like any kind of set amount that you would have to reach on as output.
@@ -714,7 +714,7 @@ If you decide to then spend many of these change outputs together in a transacti
 So I think those are one concern.
 Is there something else you wanted to say?
 
-nopara73 -: 01:01:44
+Rafael: 01:01:44
 
 Yeah, I'm not sure.
 I mean I just thought about this thing right now.
@@ -730,7 +730,7 @@ Adam Fiscor: 01:02:47
 Mapping is not necessary to do in order to build a system.
 What's interesting about calculating these mappings is that we can actually see that where are the bottlenecks of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
 
-nopara73 -: 01:03:15
+Rafael: 01:03:15
 
 Yeah that's what I was thinking also I mean if we could just use it as a benefit.
 
@@ -758,7 +758,7 @@ Aviv Milner: 01:05:09
 Yeah.
 I mean, so, why...
 
-nopara73 -: 01:05:18
+Rafael: 01:05:18
 
 That there will be like more people linked to the coinjoins, even if they don't actually use Wasabi.
 
@@ -899,7 +899,7 @@ Unknown Speaker 1: 01:13:19
 
 Cheers, thanks.
 
-nopara73 -: 01:13:20
+Rafael: 01:13:20
 
 Thanks, and awesome presentation.
 
@@ -921,7 +921,7 @@ Lucas Ontivero: 01:13:53
 All right.
 Rafael?
 
-nopara73 -: 01:14:01
+Rafael: 01:14:01
 
 Yeah, I like the idea of shuffle and Snickers.
 
@@ -965,7 +965,7 @@ If there are 66 equal outputs then there are 66 participants.
 In this case it's a bit harder.
 So it's something to have in mind.
 
-nopara73 -: 01:17:15
+Rafael: 01:17:15
 
 By the way, if I can ask a weird question, then what did it mean, Nopara, about being able to know which wallet created the transaction by the `nLocktime`?
 
@@ -983,7 +983,7 @@ Okay, so now we figured out that this is a transaction with Electrum.
 Now we have to just apply our heuristic that what is the likelihood that this Electrum is going to create a pay-to-endpoint transaction.
 So that's what I'm saying, that there are so many metadata in the transactions that you can probably tell what wallet created it.
 
-nopara73 -: 01:19:03
+Rafael: 01:19:03
 
 Thanks for clarifying that.
 
@@ -991,7 +991,7 @@ Adam Fiscor: 01:19:09
 
 I was fighting a lot against it previously, but I just realized it's not possible to hide anything because there is always something.
 
-nopara73 -: 01:19:29
+Rafael: 01:19:29
 
 And If I may ask another stupid question is what exactly is analog time?
 And I mean, I think I've heard about it, but I just don't remember anything.
@@ -1008,7 +1008,7 @@ You say, okay, this transaction can be mined right now, can be mined after this 
 So basically that's all.
 It's a field in the transaction where you specify when that transaction can be mined.
 
-nopara73 -: 01:20:14
+Rafael: 01:20:14
 
 All right, thanks.
 
@@ -1022,7 +1022,7 @@ Now if you do an RBF transaction, if you bump the fee then oh that's a lot more 
 But you just exposed at that point where you are sending the money and if the fee bump has such a specific number that, okay, let's say Bitcoin Core always bumps the fee with this number or with this fee rate, then you can further narrow the range of possible wallets that can do that.
 So it gets really, really bad.
 
-nopara73 - : 01:22:01
+Rafael : 01:22:01
 
 Okay, Yeah, I think I get it.
 And with RBF, you like expose which one of the addresses or outputs are like the actual change.
@@ -1034,7 +1034,7 @@ That might be the most obvious one.
 I didn't even do this for a very long time.
 Then things just start to click, you know.
 
-nopara73 - : 01:22:25
+Rafael : 01:22:25
 
 Good to know.
 
@@ -1110,7 +1110,7 @@ Unknown Speaker 1: 01:25:05
 
 Nothing, I have my homework.
 
-nopara73 - : 01:25:09
+Rafael : 01:25:09
 
 Yeah, me too.
 
@@ -1124,7 +1124,7 @@ What are your thoughts about how was this so far?
 Did you enjoy it?
 Do you have any recommendations how to improve these conversations?
 
-nopara73 - : 01:25:52
+Rafael : 01:25:52
 
 At least Aviv's presentation was pretty damn good in my opinion.
 I mean like a short recap of what was what and what's the point of Knapsack.
@@ -1136,7 +1136,7 @@ Adam Fiscor: 01:26:15
 Yeah, I was kind of afraid that Felix is going to leave.
 We have to grab Felix at the beginning because he's going to leave.
 
-nopara73 - : 01:26:27
+Rafael : 01:26:27
 
 Yeah, definitely.
 
@@ -1179,6 +1179,6 @@ Unknown Speaker 1: 01:28:49
 Bye-bye.
 Thank you.
 
-nopara73 -: 01:28:50
+Rafael: 01:28:50
 
 Bye.
