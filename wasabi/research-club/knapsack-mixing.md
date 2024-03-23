@@ -532,7 +532,7 @@ And I feel like having read this paper, I feel like Wasabi being able to send in
 
 Felix Maurer: 00:48:19
 
-Yeah, To be honest, I didn't know about Wasabi until now because I really I'm not keeping up with the current developments on Bitcoin anymore or other cryptocurrencies.
+Yeah, to be honest, I didn't know about Wasabi until now because I really I'm not keeping up with the current developments on Bitcoin anymore or other cryptocurrencies.
 But yeah, my idea was that actually, that's the point of the Knapsack mixing, that you can use coinjoin transactions for actually performing the transactions that you want to do, and not only for anonymizing coins.
 So you can in the same step, send coins to a third party and do the mixing.
 
