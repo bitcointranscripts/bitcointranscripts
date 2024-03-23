@@ -690,7 +690,7 @@ Adam Fiscor: 00:59:02
 
 I don't know if it's going to work (referring to other speaker's connection issues).
 
-Lucas Ontivero: 00:59:24
+nopara73 -: 00:59:24
 
 Okay, well, just going back to the Aviv's presentation thing.
 I was just thinking about, if it wasn't for payments, and there would be like any kind of set amount that you would have to reach on as output.
@@ -714,7 +714,7 @@ If you decide to then spend many of these change outputs together in a transacti
 So I think those are one concern.
 Is there something else you wanted to say?
 
-Lucas Ontivero: 01:01:44
+nopara73 -: 01:01:44
 
 Yeah, I'm not sure.
 I mean I just thought about this thing right now.
@@ -730,7 +730,7 @@ Adam Fiscor: 01:02:47
 Mapping is not necessary to do in order to build a system.
 What's interesting about calculating these mappings is that we can actually see that where are the bottlenecks of blockchain analysis companies so that's that's why I am interested in calculating the mappings.
 
-Lucas Ontivero: 01:03:15
+nopara73 -: 01:03:15
 
 Yeah that's what I was thinking also I mean if we could just use it as a benefit.
 
@@ -748,7 +748,7 @@ Adam, can I add something before I have to run here?
 Right now we've split the mixing and the sending as two separate features, but it seems like privacy would be much stronger if people that weren't doing mixing could still participate in a Wasabi transaction.
 It's just something that I thought about.
 
-Lucas Ontivero: 01:05:06
+Adam Fiscor: 01:05:06
 
 I'm not sure I understand.
 Sorry.
@@ -758,7 +758,7 @@ Aviv Milner: 01:05:09
 Yeah.
 I mean, so, why...
 
-Lucas Ontivero: 01:05:18
+nopara73 -: 01:05:18
 
 That there will be like more people linked to the coinjoins, even if they don't actually use Wasabi.
 
@@ -766,12 +766,11 @@ Aviv Milner: 01:05:31
 
 Yeah, what I mean to say is that what if a user just wanted to send someone money and essentially wanted to participate in these knapsack type coinjoins for spending?
 Then that could be a separate service that could be added to Wasabi.
-
 Like, imagine if the entire blockchain didn't have transactions, but just had lists of inputs and outputs.
 I think we can agree that it would be computationally very hard for people to successfully unravel the entire block of inputs and outputs.
 So I think that's sort of what I was thinking about.
 
-Lucas Ontivero: 01:06:23
+Adam Fiscor: 01:06:23
 
 Yeah, yes, of course.
 Even if you don't do any mixing, right?
@@ -784,7 +783,7 @@ One more thing, the knapsack transactions...
 
 ## Deciding Next Meeting's topic
 
-Lucas Ontivero: 01:07:06
+Adam Fiscor: 01:07:06
 
 Lucas, because Aviv is leaving, before Aviv leaves, can we decide on what should be our next...
 What should be next Monday.
@@ -793,20 +792,19 @@ You guys have ideas?
 
 Lucas Ontivero: 01:07:25
 
-oinshuffle?
+No. Coinshuffle?
 
-Lucas Ontivero: 01:07:33
+Adam Fiscor: 01:07:33
 
-All right, Coinshuffle, one idea.
+All right, coinshuffle, one idea.
 
 Aviv Milner: 01:07:41
 
-There are some papers that were cited by Felix's paper that I thought were interesting but I think Coinshuffle was one of them.
+There are some papers that were cited by Felix's paper that I thought were interesting but I think coinshuffle was one of them.
 
-Lucas Ontivero: 01:07:59
+Adam Fiscor: 01:07:59
 
-There is also [coinjoin Sudoku](https://github.com/kristovatlas/coinjoin-sudoku) from kristovatlas, de-anonymizing all the blockchain.info SharedCoin coinjoins.
-
+There is also [coinjoin Sudoku](https://github.com/kristovatlas/coinjoin-sudoku) from kristovatlas, de-anonymizing all the blockchain.info SharedCoincoinjoins that I had in mind.
 Also, secure multiparty computation, which came up in the paper, but I've seen that came up so many times in so many papers in the coinshuffle paper too by the way that I'm just as interested what the heck that would be.
 So anyway any more ideas or decide on these three now?
 Or vote, let's vote for these three.
