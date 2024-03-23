@@ -520,7 +520,7 @@ Adam Fiscor: 00:46:51
 
 Anyone would like to chime in who did not talk yet?
 
-Lucas Ontivero: 00:47:02
+nopara73 -: 00:47:02
 
 I only have a couple of basic, maybe a little bit stupid questions, but are you guys intending this knapsack coinjoin as a method of like payment for like straight up to for the, for example on some service or it is like basic coinjoin like it's the output will come to me the both outputs.
 
