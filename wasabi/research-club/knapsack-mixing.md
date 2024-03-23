@@ -527,7 +527,7 @@ I only have a couple of basic, maybe a little bit stupid questions, but are you 
 Aviv Milner: 00:47:43
 
 [inaudbile] coinjoin for payments, whereas ZeroLink currently does coinjoins as mixing transactions.
-This is actually the question I wanted to ask Felix was, if he knows anything about how Wasabi currently works and, you know, the distinction between a coinjoin for mixing and a coinjoin for sending.
+This is actually the question I wanted to ask Felix was, if he knows anything about how Wasabi currently works and, the distinction between a coinjoin for mixing and a coinjoin for sending.
 And I feel like having read this paper, I feel like Wasabi being able to send in a coinjoin might open doors for more privacy.
 
 Felix Maurer: 00:48:19
