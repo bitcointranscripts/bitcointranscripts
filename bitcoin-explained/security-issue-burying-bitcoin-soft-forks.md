@@ -13,9 +13,9 @@ Aaron van Wirdum: 00:00:20
 
 Live from Utrecht, this is Bitcoin Explained.
 I love it.
-Here we are again.
+Sjors here we are again.
 It feels very retro.
-We just recorded three quarters of an episode before you realized you weren't actually recording anything.
+We just recorded three-quarters of an episode before you realized you weren't recording anything.
 
 ## No Counter
 
@@ -25,27 +25,37 @@ Yep, there's this little device and you have to put the SD card in it.
 Otherwise you'll press the record button and you'll see all the volume and all that stuff.
 It looks very good, but there is no counter.
 
-Speaker 0: 00:00:46
+Aaron van Wirdum: 00:00:46
 
 Yeah, I think that used to happen almost every time in the first couple of months.
 
 ## Introduction
 
-Speaker 1: 00:00:50
+Sjors Provoost: 00:00:50
 
 No, I think we've only done it once.
 No, more than a few minutes.
 
-Speaker 0: 00:00:55
+Aaron van Wirdum: 00:00:55
 
 What?
-No, we did it all the time, George.
-Oh, did you forget about that?
+No, we did it all the time, Sjors.
+Did you forget about that?
+
+Sjors Provoost: 00:00:59
+
 Maybe I suppressed the memory.
-Anyways, so this time I hope you're recording and we're gonna go for take two.
+
+Aaron van Wirdum: 00:01:00
+
+Anyways, so this time I hope you're recording and we're going for take two.
+
+Sjors Provoost: 00:01:06
 I see a clock ticking, so that's good.
+
+Aaron van Wirdum: 00:01:08
 Nice.
-We're gonna discuss burying soft forks.
+We're going to discuss `burying soft forks`.
 
 Speaker 1: 00:01:13
 
