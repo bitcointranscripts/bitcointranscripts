@@ -568,7 +568,7 @@ So yeah, whether or not it's a checkpoint or some kind of checkpoint or some kin
 The important part here is that one group of developers, I guess mostly in Bitcoin Core, figure that if there's a reorg this big, then Bitcoin is screwed anyways.
 While someone like Foscale will argue, you know, there's no single point where you can make that argument.
 There's no point where Bitcoin will be that if the reorg is that bad.
-It just, you know, gets incrementally worse for, you know, every extra block that's being reorg.
+It just, gets incrementally worse for, every extra block that's being reorg.
 But there's no objective point you can point to and therefore the only sort of logic that you can apply is simply long as spell chain, that's what will you accept to be Bitcoin.
 
 ## What is signaling
