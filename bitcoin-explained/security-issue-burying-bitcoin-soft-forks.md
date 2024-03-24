@@ -454,7 +454,7 @@ But if you're a new node under this this little cleanup you're going to say no n
 So that means if if the new blocks are written at the low enough, then yeah, it's going to be a problem.
 And it could even be worse.
 Like Taproot could never activate at all, according to the old nodes.
-Because if you go back before the speed trial, if the aliens basically re-orc back to 2020, they then, and then replay again, they might just decide to not signal for taproot and say taproot never happened.
+Because if you go back before the speed trial, if the aliens basically re-org back to 2020, they then, and then replay again, they might just decide to not signal for taproot and say taproot never happened.
 Now the reason we don't care about that this much is that this scenario is really, really, really bad.
 So the analogy might be to say, well, if all of the Netherlands is flooded, are we really going to argue about this street name in Rotterdam that we have issues about?
 
