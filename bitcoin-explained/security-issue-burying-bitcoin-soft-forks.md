@@ -333,7 +333,7 @@ So yeah, you can actually maybe remove some code net, but I don't know v
 Speaker 0: 00:12:56
 
 Well, that wasn't really the point I was getting at.
-I was just, in general, just not having to check for the activation signals for this specific software.
+I was just, in general, not having to check for the activation signals for this specific software.
 
 ## Scaffold
 
@@ -360,7 +360,6 @@ It activated, everyone agreed that it activated on this specific block.
 Speaker 1: 00:13:36
 
 Yeah, arguably both are scaffolds because the idea that you're going to start applying rules from a certain block is also a scaffold compared to just applying the rules all the time.
-Well,
 
 Speaker 0: 00:13:49
 
@@ -374,7 +373,7 @@ We're ready.
 Speaker 0: 00:13:59
 
 Right.
-So We've just mentioned that the main benefits are all kind of code cleanup related.
+So we've just mentioned that the main benefits are all kind of code cleanup related.
 They benefit, you could argue they benefit developers, indirectly anything that benefits developers benefits users because developers work for users, but they are things that benefit developers and they shouldn't affect users.
 And they arguably don't affect users.
 
