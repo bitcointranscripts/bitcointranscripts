@@ -221,13 +221,12 @@ Oh, that's very nice.
 
 Speaker 0: 00:07:27
 
-Not very important in the context of the rest of this episode, but a
+Not very important in the context of the rest of this episode, but a little detail.
 
 ## Exception block
 
 Speaker 1: 00:07:31
 
-little detail.
 No, and it turns out Something like this has happened in the past with PIV16 that introduced, back in 2012, that introduced pay-to-script hash.
 There was also one exception block.
 So there has been, there is precedent of having an exception block in the Bitcoin source code in this way.
