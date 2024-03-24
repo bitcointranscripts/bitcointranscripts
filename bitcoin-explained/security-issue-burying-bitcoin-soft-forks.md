@@ -405,15 +405,7 @@ Alright now...
 
 Speaker 1: 00:15:23
 
-Which means that people do not have to upgrade their nodes immediately when there's a soft fork, and that's kind of nice,
-
-Speaker 0: 00:15:28
-
-because you
-
-Speaker 1: 00:15:28
-
-don't want to force people to upgrade.
+Which means that people do not have to upgrade their nodes immediately when there's a soft fork, and that's kind of nice, because you don't want to force people to upgrade.
 
 Speaker 0: 00:15:30
 
@@ -421,11 +413,10 @@ Yeah, they can upgrade a bit later if they want or potentially even never.
 
 ## Edge Case
 
-Speaker 0: 00:15:34
 
 Okay.
 In this case, a new Bitcoin Core node would assume that the taproot rules have always applied.
-Now, what this means is that, and this is the edge case, if there is a very big reorg, so someone starts mining on top of a block from a year ago or whatever it is, and that someone, you know, aliens have come to earth, I think is the analogy.
+Now, what this means is that, and this is the edge case, if there is a very big reorg, so someone starts mining on top of a block from a year ago or whatever it is, and that someone, aliens have come to earth, I think is the analogy.
 
 Speaker 1: 00:16:07
 
@@ -438,7 +429,6 @@ They start mining on a block from a year ago, and they actually claim the longes
 
 ## Taproot Rules
 
-Speaker 0: 00:16:23
 
 Now in that chain, they make a transaction that is...
 And they do this before the original taproot activation block.
@@ -446,12 +436,11 @@ They make a transaction that breaks the taproot rules.
 
 Speaker 1: 00:16:37
 
-That's
+That's right..
 
 Speaker 0: 00:16:37
 
-right.
-So all nodes, all Bitcoin Core nodes, for example, will accept this chain because it's the longest valid chain.
+All Bitcoin Core nodes, for example, will accept this chain because it's the longest valid chain.
 While new Bitcoin Core nodes who are enforcing all their taproot rules, no sorry, who are enforcing taproot rules from the beginning, they will reject this chain because it's an invalid chain.
 
 Speaker 1: 00:16:58
