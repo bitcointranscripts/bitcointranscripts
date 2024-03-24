@@ -248,14 +248,7 @@ Right.
 Yes.
 Okay.
 So if you currently run a Bitcoin core node, better yet, if you sync a Bitcoin core node,
-
-Speaker 1: 00:08:13
-
-so
-
-Speaker 0: 00:08:13
-
-if you start from the Genesis block, You start from the very first block that was released by Satoshi, and then you go through the entire blockchain to verify every transaction, every block.
+so if you start from the Genesis block. You start from the very first block that was released by Satoshi, and then you go through the entire blockchain to verify every transaction, every block.
 Then what your Bitcoin Core node is currently doing is at some point it will check if there is blockchain signaling going on, and then it sees that there is in fact blockchain signaling going on.
 And then from a certain block, it will start to enforce the taproot rules.
 That's how a Bitcoin Core node right now works when it comes to taproot.
