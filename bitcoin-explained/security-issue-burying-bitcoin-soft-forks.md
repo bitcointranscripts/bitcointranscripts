@@ -227,9 +227,9 @@ Not very important in the context of the rest of this episode, but a little deta
 
 Speaker 1: 00:07:31
 
-No, and it turns out Something like this has happened in the past with PIV16 that introduced, back in 2012, that introduced pay-to-script hash.
+No, and it turns out Something like this has happened in the past with PIV16 that introduced, back in 2012, that introduced `pay-to-script hash`.
 There was also one exception block.
-So there has been, there is precedent of having an exception block in the Bitcoin source code in this way.
+So there is precedent of having an exception block in the Bitcoin source code in this way.
 So the taproot would just have another exception block.
 
 Speaker 0: 00:07:51
@@ -238,8 +238,8 @@ So let me recap that real quick.
 
 Speaker 1: 00:07:54
 
-Okay, and with SegWit, I just add is there is no exception necessary.
-So SegWit rules can be applied from the Genesis block perfectly.
+Okay, and with `SegWit`, I just add is there is no exception necessary.
+So `SegWit` rules can be applied from the Genesis block perfectly.
 There's no exception.
 
 Speaker 0: 00:08:02
