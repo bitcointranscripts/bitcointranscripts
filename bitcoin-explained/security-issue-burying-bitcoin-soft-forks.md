@@ -213,7 +213,7 @@ Speaker 0: 00:07:00
 They were sent to Brink, actually.
 There's a blog post that was, while we're discussing it, let me just mention that real quick.
 So it was actually taken by, or at least the Bitcoin developer named 0xb10c.
-He sort of initiated it and then it was included by F2Pool, and it was sent, so these coins that were sent to Brink at the time.
+He sort of initiated it and then it was included by `F2Pool`, and it was sent, so these coins that were sent to Brink at the time.
 
 Speaker 1: 00:07:27
 
