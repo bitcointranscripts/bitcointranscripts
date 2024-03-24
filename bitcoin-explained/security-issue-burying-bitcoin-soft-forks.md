@@ -580,21 +580,21 @@ Like should nodes only look at the blockchain or should nodes keep into account 
 And that gets back to what signaling means.
 Is signaling something that must occur on the blockchain and then a soft fork is active?
 Or is it a way to coordinate the activation of a new set of rules in a point in?
-And so in essence, does a soft fork activate on a chain or does it activate in a chronological point in, you know, the space-time continuum?
+And so in essence, does a soft fork activate on a chain or does it activate in a chronological point in, the space-time continuum?
 So can we say as of November 21 or whatever date it was, 2021, Taproot is active.
 If you produce blocks in the future, even no matter what the height of those new blocks is, it's still after November 21, 2022, and therefore you should know that Taproot is active and you should just enforce it.
 That is, of course, also a philosophical question you can have.
-And If you agree with the latter, if you say Taproot should be considered active after a chronological point in time, well then this deep re-orker is not a problem because you'll enforce Taproot.
+And If you agree with the latter, if you say Taproot should be considered active after a chronological point in time, well then this deep reorg is not a problem because you'll enforce Taproot.
 
 ## Two visions
 
 Speaker 0: 00:26:28
 
 Well, I think there's two issues here.
-Or, or at least there's one thing to point out, and I think that's what you're getting at.
+Or at least there's one thing to point out, and I think that's what you're getting at.
 So there are sort of two visions on what the activation logic is in the first place.
 So everyone agrees basically what a soft fork is, and that's, you've explained it a couple minutes ago, and I think everyone will agree on that.
-But then there's the activation of the soft fork, sort of the activation logic, like you must signal or the signaling logic itself, which is something some developers will itself consider a soft fork, while other developers will argue that's the word you used before, that's scaffolding, That shouldn't be considered a consensus change.
+But then there's the activation of the soft fork, sort of the activation logic, like you must signal or the signaling logic itself, which is something some developers will itself consider a soft fork, while other developers will argue that's the word you used before, that's scaffolding. That shouldn't be considered a consensus change.
 So I think that the arguments, at least if you hold the second opinion, of removing the signaling logic from the code, that's a much easier argument to make, which I also mentioned before, I think.
 
 Speaker 1: 00:27:30
