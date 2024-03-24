@@ -531,24 +531,21 @@ The only thing you could argue, and I think maybe that's what Voskall was arguin
 Speaker 0: 00:21:41
 
 No it is in a way a checkpoint.
-A checkpoint says
 
-Speaker 1: 00:21:46
+Speaker 1: 00:21:45
 
-this specific block has to exist.
+A checkpoint says this specific block has to exist.
 
 Speaker 0: 00:21:48
 
 Yes.
-This
 
-Speaker 1: 00:21:48
+Speaker 1: 00:21:49 
 
-just says these rules have to apply,
+This just says these rules have to apply, regardless of what the blocks are.
 
-Speaker 0: 00:21:50
+Speaker 0: 00:21:53
 
-regardless of what the blocks are.
 No, sure.
 But it does have sort of the similar implications for it, because you're assuming that before that block, no split could have possibly happened.
 Otherwise, you would have to check, right?
