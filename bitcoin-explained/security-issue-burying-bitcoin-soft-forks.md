@@ -399,7 +399,12 @@ Now the great benefit of soft fork is that if a majority of hash power is enforc
 Speaker 1: 00:15:20
 
 Yeah.
+
+Speaker 0: 00:15:22
 Alright now...
+
+Speaker 1: 00:15:23
+
 Which means that people do not have to upgrade their nodes immediately when there's a soft fork, and that's kind of nice,
 
 Speaker 0: 00:15:28
