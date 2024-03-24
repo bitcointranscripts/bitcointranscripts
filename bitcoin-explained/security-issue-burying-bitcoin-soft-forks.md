@@ -436,7 +436,7 @@ They make a transaction that breaks the taproot rules.
 
 Speaker 1: 00:16:37
 
-That's right..
+That's right.
 
 Speaker 0: 00:16:37
 
