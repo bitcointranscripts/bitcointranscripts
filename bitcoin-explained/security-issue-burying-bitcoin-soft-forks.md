@@ -252,7 +252,7 @@ so if you start from the Genesis block. You start from the very first block that
 Then what your Bitcoin Core node is currently doing is at some point it will check if there is blockchain signaling going on, and then it sees that there is in fact blockchain signaling going on.
 And then from a certain block, it will start to enforce the taproot rules.
 That's how a Bitcoin Core node right now works when it comes to taproot.
-And then this proposal, which has been done with other softworks before, is that it will actually start applying the taproot rules from block 0, from the very beginning, with the exception for this one block that has an invalid spend in it under the taproot rules, and we'll just ignore that.
+And then this proposal, which has been done with other soft fork  before, is that it will actually start applying the taproot rules from the very beginning, with the exception for this one block that has an invalid spend in it under the taproot rules, and we'll just ignore that.
 Right?
 This is the recap.
 This is how it would work.
