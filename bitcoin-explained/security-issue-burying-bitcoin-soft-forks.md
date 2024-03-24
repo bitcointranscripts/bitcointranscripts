@@ -268,16 +268,16 @@ So I think the first thing to say is that this is not a dramatic benefit that we
 It's somewhat marginal.
 However, we're dealing with very critical code.
 So the less headache basically for developers, the more likely they spend their time finding real bugs.
-It basically, First of all, it makes the code a little bit simpler, but that's very marginal.
+First of all, it makes the code a little bit simpler, but that's very marginal.
 So instead of saying, after this block, do X, it says, do X all the time, except for this block.
 And the other side is that it makes testing the code easier.
-So Bitcoin Core itself has tests that are run in something called the RegTest framework from regression.
+So Bitcoin Core itself has tests that are run in something called the `RegTest framework` from regression.
 And these tests, what these tests do is they simulate a fresh blockchain, so with a fresh genesis block or maybe the real genesis block, and then they create very low difficulty blocks.
 So they very quickly can build a blockchain with 100 blocks or 200 blocks on it.
 And then they can, you know, check all the rules basically.
 So there's a test that says, okay, make sure that before Taproot activates, these rules apply and these blocks are still valid.
-And then after Taproot activates, you wanna, you know, the test might check that the Taproot rules are actually enforced.
-And so if you just pretend that Taproot has always been there, 1984 style, Then basically the test can be simplified because you only need to test for the enforcement of TAPRIC rules.
+And then after Taproot activates, you want to, the test might check that the Taproot rules are actually enforced.
+And so if you just pretend that Taproot has always been there, 1984 style. Then basically the test can be simplified because you only need to test for the enforcement of Taproot rules.
 You don't have to test anymore for pre-activation scenarios.
 So that's basically a simplification there.
 
@@ -302,8 +302,6 @@ So I think we can actually summarize it as it just cleans up the code.
 It's a code cleanup.
 
 ## Code Cleanup
-
-Speaker 0: 00:11:16
 
 And the idea is essentially that the soft fork activated so long ago that it doesn't really make a difference.
 Am I saying it right?
