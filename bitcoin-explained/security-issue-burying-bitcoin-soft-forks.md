@@ -450,15 +450,8 @@ It will just like basically do everything in reverse and when all the coins that
 And so if it goes indeed, if it goes before taproot activation, then yeah, taproot rules didn't apply.
 If you're an old node, you would say, okay, taproot is no longer active because you've gone back in time.
 And those blocks can just do whatever they want.
-But if you're a new node under this this little cleanup you're gonna say no no taproot rules are always active so if if anything violates taproot rules I'm going to complain.
-So that means if if the new blocks are written at the low enough, then yeah, it's going to be
-
-Speaker 0: 00:17:49
-
-a problem.
-
-Speaker 1: 00:17:49
-
+But if you're a new node under this this little cleanup you're going to say no no taproot rules are always active so if if anything violates taproot rules I'm going to complain.
+So that means if if the new blocks are written at the low enough, then yeah, it's going to be a problem.
 And it could even be worse.
 Like Taproot could never activate at all, according to the old nodes.
 Because if you go back before the speed trial, if the aliens basically re-orc back to 2020, they then, and then replay again, they might just decide to not signal for taproot and say taproot never happened.
