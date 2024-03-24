@@ -327,12 +327,11 @@ That's the benefit, essentially.
 
 Speaker 1: 00:12:41
 
-Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than bib9.
-So yeah, you can actually maybe remove some code net, but I don't know
+Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than `BIP9`.
+So yeah, you can actually maybe remove some code net, but I don't know v
 
 Speaker 0: 00:12:56
 
-if that's a bad thing.
 Well, that wasn't really the point I was getting at.
 I was just, in general, just not having to check for the activation signals for this specific software.
 
