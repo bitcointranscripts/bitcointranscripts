@@ -379,7 +379,6 @@ And they arguably don't affect users.
 
 ## Softfork
 
-Speaker 0: 00:14:25
 
 But there are some edge cases where it could actually affect users.
 So when we were discussing at the beginning of the episode, I think that was this one and not the one we erased.
