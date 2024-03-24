@@ -469,14 +469,14 @@ Speaker 1: 00:18:45
 Or maybe at least you probably have to do some human intervention to decide what on earth you're going to do about this situation because it means that probably lots of people's coins won't exist anymore.
 All the transactions may or may not be replayed again.
 So unless you bought Bitcoin in 2011 and you just huddled and never moved them, you're gonna be impacted by this event.
-And the whole point of a money system, you know, kind of goes away if that much changes.
+And the whole point of a money system, kind of goes away if that much changes.
 It's Very similar to in a fiat system, if suddenly your bank account is zero or a million, depending on some random historical glitch, are you really going to just keep on going with the bank balance or are you going to do something else?
 It's a big disaster if this happens.
 
 Speaker 0: 00:19:28
 
 Yeah.
-Well, so On the other side of the debate is, for example, Eric Voskow, who's the lead developer of Libitcoin.
+Well, so on the other side of the debate is, for example, Eric Voskow, who's the lead developer of Libitcoin.
 
 ## Eric Fossel
 
