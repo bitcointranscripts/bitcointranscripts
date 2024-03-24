@@ -312,8 +312,8 @@ Well, we'll get to that, I think.
 There's a second part to the cleanup that I want to emphasize, and then we can say that analogy.
 The second thing is, now that we've said taproot has always existed, as in the 1984 example, we still have these signals that happened in blocks.
 And, well, there's no point in looking at those signals anymore because we've already said segwit is always there or taproot is always there so why do we look at the signals.
-So the second cleanup would be to simply not check those signals anymore so to remove the speedy trial essentially in this case and that has again somewhat of a benefit for developers What it allows developers to do is say, hey, we want to change the activation mechanism itself.
-Maybe we want to change the BIP 9 system to something more like a BIP 8 system.
+So the second cleanup would be to simply not check those signals anymore so to remove the speedy trial essentially in this case and that has again somewhat of a benefit for developers. What it allows developers to do is say, hey, we want to change the activation mechanism itself.
+Maybe we want to change the `BIP 9` system to something more like a `BIP 8` system.
 And then we can just change the code, basically.
 We don't have to copy the code and write a new piece of code.
 We can change it entirely because the code is no longer used for anything.
@@ -327,7 +327,7 @@ That's the benefit, essentially.
 
 Speaker 1: 00:12:41
 
-Yeah, so especially if you understand that BIP 8, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than bib9.
+Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than bib9.
 So yeah, you can actually maybe remove some code net, but I don't know
 
 Speaker 0: 00:12:56
