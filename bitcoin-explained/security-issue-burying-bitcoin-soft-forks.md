@@ -51,13 +51,15 @@ Aaron van Wirdum: 00:01:00
 Anyways, so this time I hope you're recording and we're going for take two.
 
 Sjors Provoost: 00:01:06
+
 I see a clock ticking, so that's good.
 
 Aaron van Wirdum: 00:01:08
+
 Nice.
 We're going to discuss `burying soft forks`.
 
-Speaker 1: 00:01:13
+Sjors Provoost: 00:01:13
 
 All right.
 
@@ -73,12 +75,12 @@ But then we were desperate to find a new topic and I found it and you found it i
 Speaker 0: 00:01:45
 
 Yeah, I thought it was actually kind of interesting.
-It's one of these topics that, you know, it might be niche, but it still has some sort of broader implications about, you know, how do we think about Bitcoin.
+It's one of these topics that, it might be niche, but it still has some sort of broader implications about, how do we think about Bitcoin.
 In a way, I've always found protocol changes the most interesting part of Bitcoin because it kind of gives you a very existential idea of what Bitcoin actually is.
 Like if it can change, then you can sort of think about what conditions can you change it then or what is Bitcoin then?
 You can get very philosophical about it if you want to.
-But I don't think we're really going to do that today, but we are going to discuss worrying stuff for it.
-So yeah, we have discussed Taproot and Taproot Activation in multiple episodes
+But I don't think we're really going to do that today, but we are going to discuss `burying soft forks`.
+So yeah, we have discussed `Taproot` and `Taproot Activation` in multiple episodes
 
 Speaker 1: 00:02:29
 
@@ -99,16 +101,16 @@ That's right.
 Speaker 0: 00:02:45
 
 Probably the last one.
-Probably this will be the last entry because at this point, we're going to discuss, you know, the soft fork happened, activation happened, it all went great.
+Probably this will be the last entry because at this point, we're going to discuss, the soft fork happened, activation happened, it all went great.
 And at this point, the question is sort of, how do we move forward from there?
 How do we now retroactively kind of deal with the activation code and with taproot?
-And that's what burying softworks is about.
+And that's what `burying soft forks` is about.
 
 Speaker 1: 00:03:13
 
 Yeah.
 So one analogy that can be used, although we'll get to the philosophical discussion about that, is that activation code is a scaffold.
-It's like when you have a, you know, when there's a soft fork, it's like building a new house.
+It's like when there's a soft fork, it's like building a new house.
 And when you're building a house, there's a scaffold next to it.
 And then the question is, what do you do with the scaffold when the house is done?
 And that's kind of what we're going to talk about.
