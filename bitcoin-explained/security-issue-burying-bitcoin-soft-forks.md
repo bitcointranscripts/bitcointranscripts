@@ -480,8 +480,6 @@ Well, so on the other side of the debate is, for example, Eric Voskow, who's the
 
 ## Eric Fossel
 
-Speaker 0: 00:19:36
-
 And he argues, or at least one of his arguments is that this threshold that you just...
 Like at what point is this the case?
 At what point doesn't it matter anymore that there's a big reorg?
@@ -494,11 +492,10 @@ And his argument would be, or is, I think, well, I need to be careful to represe
 
 Speaker 1: 00:20:16
 
-We could say a hypothetical argument could be whether or not somebody makes
+We could say a hypothetical argument could be whether or not somebody makes the argument.
 
 Speaker 0: 00:20:19
 
-the argument.
 Maybe that's better.
 Yeah.
 The only consistent arguments there is that there is no threshold.
