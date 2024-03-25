@@ -41,21 +41,27 @@ Speaker 3: 00:01:53
 
 Yeah, thanks.
 Good to be here.
+
+Speaker 0: 00:01:52
+
 Greg.
+
+Speaker 2: 00:01:57
+
 Hi. Sometimes a listener, first time caller.
 
 Speaker 0: 00:01:59
 
 For the people that don't know you, you want to just give us the elevator pitch on why you're here?
 
-Speaker 3: 00:02:04
+Speaker 2: 00:02:04
 
 Yeah, so I just I've been working with James a little bit on this OpVault proposal and that's why I'm here.
 
 Speaker 0: 00:02:11
 
 Glad to have you.
-Ben DeCartman.
+Ben Carman.
 
 Speaker 4: 00:02:15
 
