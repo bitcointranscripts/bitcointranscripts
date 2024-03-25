@@ -672,17 +672,16 @@ Yeah, no, there's one other thing we do need to bring up.
 Okay, we're jumping around now, so the episode's getting confusing.
 Sorry, people.
 But there is this other...
-Sort of what it ultimately comes down to this discussion, I think, is whether burying a soft fork, As we've explained throughout this episode, whether that should be considered a consensus change or not, and by extension, whether it should be a BIP, Bitcoin Improvement Proposal.
+Sort of what it ultimately comes down to this discussion, I think, is whether burying a soft fork, as we've explained throughout this episode, whether that should be considered a consensus change or not, and by extension, whether it should be a BIP, Bitcoin Improvement Proposal.
 
 ## Bibs
 
-Speaker 0: 00:31:15
 
-So if you see it as
+So if you see it as...
 
 Speaker 1: 00:31:16
 
-a consensus BIP, because you can have an informational BIP that's not a consensus BIP.
+A consensus BIP, because you can have an informational BIP that's not a consensus BIP.
 
 Speaker 0: 00:31:20
 
