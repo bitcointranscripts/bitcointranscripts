@@ -6,6 +6,7 @@ tags: ["research","coinjoin"]
 speakers: ["Aviv Milner","Felix Maurer","Lucas Ontivero","Adam Fiscor"]
 categories: ["club"]
 date: 2020-01-06
+summary: "In this video, the participants of the Wasabi Research Club discuss the concept of knapsack mixing and its potential for privacy in Bitcoin transactions. They explain the process of merging inputs and outputs to create sub-transactions, and how different versions of the knapsack mixing algorithm have improved over time. However, they acknowledge that perfect anonymity is difficult to achieve and there are computational complexities involved. They also discuss the challenges of handling transaction fees and the difficulty of implementing efficient algorithms for finding all possible mappings and partitions. Overall, the speaker believes that knapsack mixing has the potential for anonymity but more research and testing is needed.\nFurthermore, they discuss various aspects of knapsack mixing, including the potential benefits and limitations. They explore the possibility of combining multiple inputs in a transaction and its impact on privacy. The necessity of calculating mappings in Wasabi is also debated, with the suggestion that it could help identify bottlenecks in blockchain analysis companies. The participants discuss the idea of setting a lower bound for the number of participants and outputs in a transaction to ensure computational privacy. Additionally, they consider the possibility of allowing non-mixing participants to participate in Wasabi transactions for stronger privacy. The conversation then shifts to the concept of users participating in knapsack-type coin joints for spending purposes only, which could be offered as a separate service in Wasabi. They also touch upon topics like blockchain with lists of inputs and outputs, determining conjoined transactions, RBF in transactions, and feedback for improving future episodes of the club. Overall, the participants engage in an informative discussion on knapsack mixing and its implications."
 ---
 Aviv Milner: 00:00:00
 
@@ -14,12 +15,16 @@ I'm just going to run through this slide and then hopefully Felix will jump in t
 
 ## Anonymous Coin Join Transactions with Arbitrary Values (2017)
 
+Aviv Milner: 00:00:15
+
 So yeah, this is the paper, Anonymous Conjoin Transaction with Arbitrary Values.
 We have one of the authors with us.
 This PowerPoint will be made available if anyone wants it.
 Very straightforward.
 
 ## The privacy problem with Bitcoin
+
+Aviv Milner: 00:00:31
 
 So what's the problem in Bitcoin?
 Transactions are public.
@@ -28,6 +33,8 @@ That's the problem.
 We're trying to obfuscate the transaction graph.
 
 ## Idea #1 - Joining Transactions
+
+Aviv Milner: 00:00:48
 
 So a simple idea from 2013 or even earlier is just joining transactions.
 So suppose you have two transactions on the left here.
@@ -48,6 +55,8 @@ So this isn't very good.
 So most of the time we'll be able to unravel these transactions.
 
 ## Formal Definitions
+
+Aviv Milner: 00:03:14
 
 So If we look at the work done in this paper, what they've done is they've formalized some basic ideas.
 So transactions have inputs, outputs, and values.
@@ -72,11 +81,15 @@ Yeah so this is pretty much almost over I think we're probably two thirds of the
 
 ## In simpler terms
 
+Aviv Milner: 00:06:00
+
 So yeah now moving on to results so yeah in simpler terms we want to be able to break down transactions into sub-transactions, a combination of inputs and outputs.
 In the paper, they clarify between derived and non-derived sub-transactions.
 What that means is that a non-derived sub-transaction is a sub-transaction that isn't composed of smaller sub-transactions inside of it, and we're only concerned with non-derived sub-transactions for simplicity.
 
 ## Anonymity in this framework
+
+Aviv Milner: 00:06:35
 
 So the way that we look at anonymity or privacy in this model is we essentially take a transaction which has all these inputs and outputs.
 And it has all these mappings, all the possible ways we could cut up the transaction.
@@ -91,6 +104,7 @@ And we'll see later how that can be done differently.
 
 ## Evaluation of Joined Transactions
 
+Aviv Milner: 00:08:06
 
 So in the paper, they essentially create a bunch of random transactions and then essentially purposefully combine them together, and then observe the time it takes to recreate the sub-transactions from the coupled transactions.
 So here we see that in the orange, if you have five sub-transactions with four inputs each, that takes about a second for a computer to be able to unravel that coinjoining to its relevant sub-transactions.
@@ -98,6 +112,8 @@ And then we notice here that the number of non-derived mappings isn't very high,
 So in here we see that only with 6 sub-transactions and 4 inputs per sub-transaction do we see more than just a few non-derived mappings.
 
 ## Idea #2 - Knapsack Mixing
+
+Aviv Milner: 00:09:40
 
 So there's a solution to this problem because right now what we see is that it doesn't take a lot of time to unpack these coinjoins and when you do there are very few non-derived mappings which means there's very little ambiguity in terms of what's linked.
 So could we increase this?
