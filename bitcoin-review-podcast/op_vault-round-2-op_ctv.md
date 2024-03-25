@@ -386,10 +386,10 @@ I don't have to read the spec to know I can do that.
 Speaker 0: 00:21:34
 
 Okay, so what's the expectation here?
-Are we gonna have like, you know, like, I mean, cause Miniscript is already kind of like that.
-Are we gonna have a miniscripttemplates.org where you go and you find like, you know, 10 different safe scripts, because people will fuck this up.
+Are we gonna have like, like, I mean, cause Miniscript is already kind of like that.
+Are we gonna have a miniscripttemplates.org where you go and you find like, 10 different safe scripts, because people will fuck this up.
 I mean, people can barely serialize and un-serialize stuff with JavaScript, right?
-So is this like the future we see where like there is like essentially banks of scripts that people can use And then there's the ones that maybe like the wallets are going to have like two, three things that like, here, you can do this with your coins.
+So is this like the future we see where like there is like essentially banks of scripts that people can use. And then there's the ones that maybe like the wallets are going to have like two, three things that like, here, you can do this with your coins.
 Is this sort of like the, because you can order corporate enterprise for a second, right.
 That has, you know, budgets and people that can audit things and can come up with new ideas.
 I'm talking about like 90% of the people who actually even have coins to do this.
@@ -397,16 +397,16 @@ Is this sort of like template libraries, how we see the future going?
 
 Speaker 1: 00:22:28
 
-I just think it's It boils down to wallet developers, right?
+I just think it boils down to wallet developers, right?
 Like no user of Bitcoin out there is like, I'm not sitting here writing mini scripts to manage my coins and I'm a core dev.
 Like it doesn't work that way.
 You use some wallet software that you trust, hopefully that you've vetted somehow.
 And so I think really when you're working on a proposal like this, you're thinking about how can I make it easy for wallet developers to actually adopt this stuff and implement it safely?
-And yeah, and like the guys are saying, how can I mesh with the existing ecosystem things like mini script and output descriptors?
+And yeah, and like the guys are saying, how can I mesh with the existing ecosystem things like miniscript and output descriptors?
 
 Speaker 0: 00:23:05
 
-OK, so I mean, you know, output descriptors just seem to be like now the show.
+So I mean, output descriptors just seem to be like now the show.
 And then we got into mini script was essentially like just a fancy way of doing output descriptors.
 
 Speaker 3: 00:23:15
@@ -425,13 +425,12 @@ So like script is assembly, output descriptors are C, we now have Python and so 
 
 Speaker 3: 00:23:36
 
-So also the good news is Jeremy Rubin already has a branch of Miniscript with CTV.
-So he's already done that hard work
+So also the good news is Jeremy Rubin already has a branch of miniscript with CTV.
+So he's already done that hard work for us.
 
 Speaker 1: 00:23:42
 
-for us.
-And the CTV stuff is dead simple in terms of coming up with the templates.
+And the CTV is as dead simple in terms of coming up with the templates.
 It's like a eight line Python script basically.
 
 ## OP_VAULT criticisms
