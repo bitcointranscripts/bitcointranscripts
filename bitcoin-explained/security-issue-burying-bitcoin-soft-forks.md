@@ -830,4 +830,4 @@ Yeah.
 
 Speaker 1: 00:36:45
 
-So anyway, thank You
+So anyway, thank all for listening to the Bitcoin Explained.
