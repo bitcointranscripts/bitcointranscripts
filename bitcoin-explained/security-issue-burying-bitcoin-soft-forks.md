@@ -624,7 +624,7 @@ They would have to downgrade their software, basically.
 
 Speaker 0: 00:28:50
 
-That's not something everyone agrees on, Sjoerd.
+That's not something everyone agrees on, Sjors.
 
 Speaker 1: 00:28:53
 
