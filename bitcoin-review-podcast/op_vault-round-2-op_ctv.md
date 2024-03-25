@@ -660,18 +660,17 @@ And there's a trade off then between how often you have to rotate your coins and
 
 Speaker 0: 00:36:23
 
-There's a few problems there too right I mean you lose your privacy once those coins move right or depending on how it's set up but it's like high risk of privacy loss, high risk of, you know, your target recovery path having issues too.
+There's a few problems there too right I mean you lose your privacy once those coins move right or depending on how it's set up but it's like high risk of privacy loss, high risk of, your target recovery path having issues too.
 Like it's just one more thing you're getting forced to use, even though you weren't going to use.
 
 ## OP_VAULT Opsec
 
-Speaker 0: 00:36:44
 
-You know, One funny thing I think it's gonna happen with the best version of OpVault that comes out is that some dude is gonna point his, say whatever, like a million SATs to a phone wallet when he was building the script.
+One funny thing I think it's going to happen with the best version of OpVault that comes out is that some dude is going to point his, say whatever, like a million Sats to a phone wallet when he was building the script.
 50 years pass and nobody touches that.
 And that vault sort of goes to that phone as recovery.
 And all of a sudden the guy has $10 million on his phone and hopefully he has a backup.
-That's where the people fuck up, Right?
+That's where the people fuck up, right?
 Like it's like, it's in this sort of like, it's very hard to think in the future.
 So having things that the clock starts are kind of a problem too, because that execution will happen if you don't do anything, right?
 It's like starting a fuse.
@@ -679,16 +678,16 @@ It's like starting a fuse.
 Speaker 5: 00:37:32
 
 And like, I think that operational complexity gets worse when you think about the ways that people actually spend and use Bitcoin.
-So if you're doing some weekly or monthly DCA and every single one of those UTXOs has its own timer that starts the minute it hits your wallet, you now have a ton of operational complexity to deal with like, oh great, every month I have this laddering, rolling, expiring time lock that I have to flip.
+So if you're doing some weekly or monthly `DCA` and every single one of those UTXOs has its own timer that starts the minute it hits your wallet, you now have a ton of operational complexity to deal with like, great, every month I have this laddering, rolling, expiring time lock that I have to flip.
 Instead of just saying all of these go to a common vault construction, and then when I want to be able to spend for my savings, I start the clock.
-When I hit spend, it takes three months or whatever, And then I have a recovery path or I have my normal spending path.
+When I hit spend, it takes three months or whatever, and then I have a recovery path or I have my normal spending path.
 
 Speaker 1: 00:38:19
 
 Right.
-And it's worth pointing out that we're only even talking about the op vault use where like op vault protects you if you lose your key.
-We're not talking about intervening in a key theft or preventing the theft of your bitcoins.
-There's just like simply no way of doing that today, especially when you start talking about all the cool kind of recovery methods that you could use, you know, whether whether it is like some kind of crazy offline, you know, cypher wheel key that you generate, or whether it's a three of five social recovery that you distribute to your family, or whether it's some kind of like long time lock thing, or whether it's like all these conditions under a single taproot tree, like you can really, really get an incredible degree of security that you hopefully never have to use.
+And it's worth pointing out that we're only even talking about the opvault use where like opvault protects you if you lose your key.
+We're not talking about intervening in a key theft or preventing the theft of your Bitcoins.
+There's just like simply no way of doing that today, especially when you start talking about all the cool kind of recovery methods that you could use, whether whether it is like some kind of crazy offline, cypher wheel key that you generate, or whether it's a three of five social recovery that you distribute to your family, or whether it's some kind of like long time lock thing, or whether it's like all these conditions under a single taproot tree, like you can really, really get an incredible degree of security that you hopefully never have to use.
 And then in the meantime, you can feel very confident about using, say, just a single cold card or even a software wallet, honestly, if you have the right kind of watchtowers in place for really convenient transactions.
 But you still sleep at night because you know, okay, I have, you know, let's say a two day time lock.
 Someone, you know, like there's no way someone's going to walk away with my coins and I'm not going to intervene kind of in a period like that.
