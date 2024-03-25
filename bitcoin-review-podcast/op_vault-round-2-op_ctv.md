@@ -489,11 +489,10 @@ And in fact, today you can do that with multisig.
 Speaker 5: 00:27:44
 
 Terrible way.
-Yeah, I
 
 Speaker 0: 00:27:45
 
-mean, multisig would be a lot better.
+Yeah, I  mean, multisig would be a lot better.
 It would be a lot better.
 
 Speaker 1: 00:27:48
