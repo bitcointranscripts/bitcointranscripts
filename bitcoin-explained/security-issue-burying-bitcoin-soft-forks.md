@@ -63,16 +63,16 @@ Sjors Provoost: 00:01:13
 
 All right.
 
-Speaker 0: 00:01:14
+Aaron van Wirdum: 00:01:14
 
 Yeah, this is one of these topics that I sort of knew was a thing that was sometimes discussed by developers, but also based on the discussion that I was sort of eyeing on the Bitcoin development mailing list, I could tell that it was kind of a niche, not super important, kind of big deal sort of thing that only developers that are very far into the weeds kind of cared about.
 So I never really paid attention to it.
 
-Speaker 1: 00:01:40
+Sjors Provoost: 00:01:40
 
 But then we were desperate to find a new topic and I found it and you found it interesting.
 
-Speaker 0: 00:01:45
+Aaron van Wirdum: 00:01:45
 
 Yeah, I thought it was actually kind of interesting.
 It's one of these topics that, it might be niche, but it still has some sort of broader implications about, how do we think about Bitcoin.
@@ -82,23 +82,23 @@ You can get very philosophical about it if you want to.
 But I don't think we're really going to do that today, but we are going to discuss `burying soft forks`.
 So yeah, we have discussed `Taproot` and `Taproot Activation` in multiple episodes
 
-Speaker 1: 00:02:29
+Sjors Provoost: 00:02:29
 
 so far.
 Five episode epic story.
 
-Speaker 0: 00:02:32
+Aaron van Wirdum: 00:02:32
 
 It's like a mini-series within our podcast.
 From start to finish, we sort of covered the whole Taproot activation saga.
 And in a way, this is a new entry in that mini-series.
 So I like it.
 
-Speaker 1: 00:02:45
+Sjors Provoost: 00:02:45
 
 That's right.
 
-Speaker 0: 00:02:45
+Aaron van Wirdum: 00:02:45
 
 Probably the last one.
 Probably this will be the last entry because at this point, we're going to discuss, the soft fork happened, activation happened, it all went great.
@@ -106,7 +106,7 @@ And at this point, the question is sort of, how do we move forward from there?
 How do we now retroactively kind of deal with the activation code and with taproot?
 And that's what `burying soft forks` is about.
 
-Speaker 1: 00:03:13
+Sjors Provoost: 00:03:13
 
 Yeah.
 So one analogy that can be used, although we'll get to the philosophical discussion about that, is that activation code is a scaffold.
@@ -116,17 +116,17 @@ And then the question is, what do you do with the scaffold when the house is don
 And that's kind of what we're going to talk about.
 Can we just remove it somehow?
 
-Speaker 0: 00:03:36
+Aaron van Wirdum: 00:03:36
 
 Yeah.
 So this has happened before, but soft burying, soft forks, it's not a completely new concept.
 It is being discussed again, at least sort of on GitHub, not really on the Bitcoin dev list this time, I think, because I guess Bitcoin Core developers have already sort of agreed that this is kind of the way to go.
 
-Speaker 1: 00:03:55
+Sjors Provoost: 00:03:55
 
 Well, it's still open, so.
 
-Speaker 0: 00:03:57
+Aaron van Wirdum: 00:03:57
 
 All right.
 So it is being discussed again, but it has happened before.
@@ -135,17 +135,17 @@ What is burying a soft fork?
 
 ## What is a software
 
-Speaker 1: 00:04:06
+Sjors Provoost: 00:04:06
 
 Well, I think you wanted to recap first what a soft fork is.
 
-Speaker 0: 00:04:09
+Aaron van Wirdum: 00:04:09
 
 Yeah, sure.
 Let's start with that.
 You're right for those listeners that don't know that.
 
-Speaker 1: 00:04:14
+Sjors Provoost: 00:04:14
 
 It's also relevant to explain how the burying works.
 So a soft fork is a tightening of the rules.
@@ -157,13 +157,13 @@ And so you can make all sorts of addresses, quote unquote, that you can send coi
 And then anybody can take the money from those addresses.
 And generally, you don't want to do that.
 
-Speaker 0: 00:04:43
+Aaron van Wirdum: 00:04:43
 
 Yeah, you don't even need a signature.
 There's just no requirements.
 You can just take the money from these outputs or addresses, like you say.
 
-Speaker 1: 00:04:50
+Sjors Provoost: 00:04:50
 
 So what a soft fork does, in practice, at least some soft forks do, is to say, well, there's now going to be slightly fewer ways to throw away your money.
 So if you make this specific type of transaction, we're now going to call that taproot and you can only spend that with a valid Schnorr signature etc.
@@ -174,17 +174,17 @@ So there's only one historical transaction that happened before Taproot activate
 And more importantly, somebody else took that money.
 And that taking of the money would not be compliant with the modern Taproot rules.
 
-Speaker 0: 00:05:46
+Aaron van Wirdum: 00:05:46
 
 Yes.
 Well, actually, I'll have to correct you there a little bit.
 So actually several people sent money to a Taproot address before Taproot was active.
 
-Speaker 1: 00:05:56
+Sjors Provoost: 00:05:56
 
 But only one took it.
 
-Speaker 0: 00:05:57
+Aaron van Wirdum: 00:05:57
 
 Yes.
 It's only been taken one time.
@@ -192,7 +192,7 @@ Now Sending to such an address was always okay, of course, and is still okay, an
 It's a taken from that address that since Taproot is active, you cannot do that anymore.
 But before Taproot was active, you could just take that money.
 
-Speaker 1: 00:06:15
+Sjors Provoost: 00:06:15
 
 That's right.
 Okay.
@@ -200,49 +200,49 @@ And so this presents an opportunity to look at the Bitcoin Core source code, whi
 What you can do instead is say, don't worry about the signaling, just apply the taproot rules from the Genesis block onwards, pretend that taproot has always existed with one exception.
 And that exception would be hard-coded in the source code, saying, well, Zaproot is always active except for this specific block.
 
-Speaker 0: 00:06:53
+Aaron van Wirdum: 00:06:53
 
 Yes, and that block would be the block that includes the transaction that I just mentioned that took these coins.
 
-Speaker 1: 00:07:00
+Sjors Provoost: 00:07:00
 
 Yeah.
 
-Speaker 0: 00:07:00
+Aaron van Wirdum: 00:07:00
 
 They were sent to Brink, actually.
 There's a blog post that was, while we're discussing it, let me just mention that real quick.
 So it was actually taken by, or at least the Bitcoin developer named 0xb10c.
 He sort of initiated it and then it was included by `F2Pool`, and it was sent, so these coins that were sent to Brink at the time.
 
-Speaker 1: 00:07:27
+Sjors Provoost: 00:07:27
 
 That's very nice.
 
-Speaker 0: 00:07:27
+Aaron van Wirdum: 00:07:27
 
 Not very important in the context of the rest of this episode, but a little detail.
 
 ## Exception block
 
-Speaker 1: 00:07:31
+Sjors Provoost: 00:07:31
 
 No, and it turns out Something like this has happened in the past with PIV16 that introduced, back in 2012, that introduced `pay-to-script hash`.
 There was also one exception block.
 So there is precedent of having an exception block in the Bitcoin source code in this way.
 So the taproot would just have another exception block.
 
-Speaker 0: 00:07:51
+Aaron van Wirdum: 00:07:51
 
 So let me recap that real quick.
 
-Speaker 1: 00:07:54
+Sjors Provoost: 00:07:54
 
 Okay, and with `SegWit`, I just add is there is no exception necessary.
 So `SegWit` rules can be applied from the Genesis block perfectly.
 There's no exception.
 
-Speaker 0: 00:08:02
+Aaron van Wirdum: 00:08:02
 
 Right.
 Yes.
@@ -261,7 +261,7 @@ Why is it better to start from block zero?
 
 ## Benefits
 
-Speaker 1: 00:09:12
+Sjors Provoost: 00:09:12
 
 Yeah.
 So I think the first thing to say is that this is not a dramatic benefit that we're going to talk about.
@@ -281,21 +281,21 @@ And so if you just pretend that Taproot has always been there, 1984 style. Then 
 You don't have to test anymore for pre-activation scenarios.
 So that's basically a simplification there.
 
-Speaker 0: 00:10:42
+Aaron van Wirdum: 00:10:42
 
 Right.
 So you've now mentioned two benefits.
 One of them, it cleans up the actual code of the Bitcoin Core codebase.
 And the other way is it simplifies tests that you might run because now there's less scenarios.
 
-Speaker 1: 00:10:56
+Sjors Provoost: 00:10:56
 
 Well, those tests are in the Bitcoin source code too.
 So yeah, there's fewer permutations to test, right?
 Especially if you add up multiple soft forks.
 Like, okay, we have to test before segwit, and then after segwit, but before taproot, those kind of combinations.
 
-Speaker 0: 00:11:11
+Aaron van Wirdum: 00:11:11
 
 Okay.
 So I think we can actually summarize it as it just cleans up the code.
@@ -306,7 +306,7 @@ It's a code cleanup.
 And the idea is essentially that the soft fork activated so long ago that it doesn't really make a difference.
 Am I saying it right?
 
-Speaker 1: 00:11:28
+Sjors Provoost: 00:11:28
 
 Well, we'll get to that, I think.
 There's a second part to the cleanup that I want to emphasize, and then we can say that analogy.
@@ -320,57 +320,57 @@ We can change it entirely because the code is no longer used for anything.
 So it's safer to just change it.
 Again, that's marginal, but it's still nice.
 
-Speaker 0: 00:12:35
+Aaron van Wirdum: 00:12:35
 
 Yeah, and it's also still code cleanup, right?
 That's the benefit, essentially.
 
-Speaker 1: 00:12:41
+Sjors Provoost: 00:12:41
 
 Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than `BIP9`.
 So yeah, you can actually maybe remove some code net, but I don't know v
 
-Speaker 0: 00:12:56
+Aaron van Wirdum: 00:12:56
 
 Well, that wasn't really the point I was getting at.
 I was just, in general, not having to check for the activation signals for this specific software.
 
 ## Scaffold
 
-Speaker 1: 00:13:05
+Sjors Provoost: 00:13:05
 
 Yeah, it saves, again, a little bit of code.
 
-Speaker 0: 00:13:08
+Aaron van Wirdum: 00:13:08
 
 So that makes a lot of sense to me.
 I can barely think of any downsides to that, and that is sort of what you were getting at earlier, where you mentioned scaffolds, right?
 I think that was in this recording, not in the one we erased.
 
-Speaker 1: 00:13:24
+Sjors Provoost: 00:13:24
 
 Yeah, we brought it up in this recording.
 
-Speaker 0: 00:13:26
+Aaron van Wirdum: 00:13:26
 
 Or maybe in both.
 Anyway, so for the second benefit, you're basically removing the scaffolds.
 It activated, everyone agreed that it activated on this specific block.
 
-Speaker 1: 00:13:36
+Sjors Provoost: 00:13:36
 
 Yeah, arguably both are scaffolds because the idea that you're going to start applying rules from a certain block is also a scaffold compared to just applying the rules all the time.
 
-Speaker 0: 00:13:49
+Aaron van Wirdum: 00:13:49
 
 I think that's where the discussion comes in.
 So I think we're ready to point out where some of the disagreement stems from, right?
 
-Speaker 1: 00:13:58
+Sjors Provoost: 00:13:58
 
 We're ready.
 
-Speaker 0: 00:13:59
+Aaron van Wirdum: 00:13:59
 
 Right.
 So we've just mentioned that the main benefits are all kind of code cleanup related.
@@ -384,11 +384,11 @@ But there are some edge cases where it could actually affect users.
 So when we were discussing at the beginning of the episode, I think that was this one and not the one we erased.
 I hope we mentioned anyways that a soft fork can in fact split the blockchain or even a hard fork any...
 
-Speaker 1: 00:14:49
+Sjors Provoost: 00:14:49
 
 No, I don't think we've said that in this recording yet.
 
-Speaker 0: 00:14:51
+Aaron van Wirdum: 00:14:51
 
 So, yeah.
 Maybe, do you want to point it out?
@@ -396,18 +396,18 @@ Well, I'll just point it out.
 So basically, either a soft fork or a hard fork can split the blockchain between users that are using the old rules and users that are using new rules.
 Now the great benefit of soft fork is that if a majority of hash power is enforcing the soft fork rules then the chain should not split and the upgrade should be backwards compatible as they call it.
 
-Speaker 1: 00:15:20
+Sjors Provoost: 00:15:20
 
 Yeah.
 
-Speaker 0: 00:15:22
+Aaron van Wirdum: 00:15:22
 Alright now...
 
-Speaker 1: 00:15:23
+Sjors Provoost: 00:15:23
 
 Which means that people do not have to upgrade their nodes immediately when there's a soft fork, and that's kind of nice, because you don't want to force people to upgrade.
 
-Speaker 0: 00:15:30
+Aaron van Wirdum: 00:15:30
 
 Yeah, they can upgrade a bit later if they want or potentially even never.
 
@@ -418,11 +418,11 @@ Okay.
 In this case, a new Bitcoin Core node would assume that the taproot rules have always applied.
 Now, what this means is that, and this is the edge case, if there is a very big reorg, so someone starts mining on top of a block from a year ago or whatever it is, and that someone, aliens have come to earth, I think is the analogy.
 
-Speaker 1: 00:16:07
+Sjors Provoost: 00:16:07
 
 Yeah, it's either the aliens or some secret government agency.
 
-Speaker 0: 00:16:13
+Aaron van Wirdum: 00:16:13
 
 Yeah, someone has a lot of hash power for whatever reason.
 They start mining on a block from a year ago, and they actually claim the longest chain.
@@ -434,16 +434,16 @@ Now in that chain, they make a transaction that is...
 And they do this before the original taproot activation block.
 They make a transaction that breaks the taproot rules.
 
-Speaker 1: 00:16:37
+Sjors Provoost: 00:16:37
 
 That's right.
 
-Speaker 0: 00:16:37
+Aaron van Wirdum: 00:16:37
 
 All Bitcoin Core nodes, for example, will accept this chain because it's the longest valid chain.
 While new Bitcoin Core nodes who are enforcing all their taproot rules, no sorry, who are enforcing taproot rules from the beginning, they will reject this chain because it's an invalid chain.
 
-Speaker 1: 00:16:58
+Sjors Provoost: 00:16:58
 
 Yeah, so basically when a new chain appears, what the node will do is it will just roll back its blockchain.
 It will just like basically do everything in reverse and when all the coins that are spent are recreated until it gets to the forking point and then follows the longest chain all the way up checking the rules for that new longest chain.
@@ -458,13 +458,13 @@ Because if you go back before the speed trial, if the aliens basically re-org ba
 Now the reason we don't care about that this much is that this scenario is really, really, really bad.
 So the analogy might be to say, well, if all of the Netherlands is flooded, are we really going to argue about this street name in Rotterdam that we have issues about?
 
-Speaker 0: 00:18:25
+Aaron van Wirdum: 00:18:25
 
 Right, yes.
 The argument, I'll just...
 You explained it clearly, I think, but still to reiterate, the argument is that if a reorg happens that is this bad, then Bitcoin is screwed either way and it's not worth considering even essentially, right?
 
-Speaker 1: 00:18:45
+Sjors Provoost: 00:18:45
 
 Or maybe at least you probably have to do some human intervention to decide what on earth you're going to do about this situation because it means that probably lots of people's coins won't exist anymore.
 All the transactions may or may not be replayed again.
@@ -473,7 +473,7 @@ And the whole point of a money system, kind of goes away if that much changes.
 It's Very similar to in a fiat system, if suddenly your bank account is zero or a million, depending on some random historical glitch, are you really going to just keep on going with the bank balance or are you going to do something else?
 It's a big disaster if this happens.
 
-Speaker 0: 00:19:28
+Aaron van Wirdum: 00:19:28
 
 Yeah.
 Well, so on the other side of the debate is, for example, Eric Voskow, who's the lead developer of Libitcoin.
@@ -490,11 +490,11 @@ Where is this threshold?
 And I guess he values consistency a lot when it comes to these kinds of things.
 And his argument would be, or is, I think, well, I need to be careful to represent his arguments because he might disagree with my explanation of it.
 
-Speaker 1: 00:20:16
+Sjors Provoost: 00:20:16
 
 We could say a hypothetical argument could be whether or not somebody makes the argument.
 
-Speaker 0: 00:20:19
+Aaron van Wirdum: 00:20:19
 
 Maybe that's better.
 Yeah.
@@ -505,46 +505,46 @@ And it's kind of how we apply it already.
 Like, one confirmation is not as secure as two confirmation is not as secure as three.
 And this change would imply that there's some hard cutoff to that logic, rather than it's just always going to be incrementally safer to wait longer.
 
-Speaker 1: 00:21:01
+Sjors Provoost: 00:21:01
 
 Now there is actually a real cutoff because very old versions of Bitcoin Core use checkpoints, but that hasn't been done for many, many years.
 But a checkpoint basically meant that that specific block had to exist.
 So there are a couple of blocks in the source code that say this block must exist, otherwise the chain is not valid.
 
-Speaker 0: 00:21:18
+Aaron van Wirdum: 00:21:18
 
 Yes, but that's not, you know, that is itself also controversial.
 
-Speaker 1: 00:21:22
+Sjors Provoost: 00:21:22
 
 Yeah, I think it's good that those don't exist anymore.
 
-Speaker 0: 00:21:25
+Aaron van Wirdum: 00:21:25
 
 Right, exactly.
 
-Speaker 1: 00:21:25
+Sjors Provoost: 00:21:25
 
 But this is not as strong as a checkpoint.
 The only thing you could argue, and I think maybe that's what Voskall was arguing, is that the fact that you're now retroactively, in a certain sense, activating taproot is in a way a hard fork.
 
-Speaker 0: 00:21:41
+Aaron van Wirdum: 00:21:41
 
 No it is in a way a checkpoint.
 
-Speaker 1: 00:21:45
+Sjors Provoost: 00:21:45
 
 A checkpoint says this specific block has to exist.
 
-Speaker 0: 00:21:48
+Aaron van Wirdum: 00:21:48
 
 Yes.
 
-Speaker 1: 00:21:49 
+Sjors Provoost: 00:21:49 
 
 This just says these rules have to apply, regardless of what the blocks are.
 
-Speaker 0: 00:21:53
+Aaron van Wirdum: 00:21:53
 
 No, sure.
 But it does have sort of the similar implications for it, because you're assuming that before that block, no split could have possibly happened.
@@ -552,7 +552,7 @@ Otherwise, you would have to check, right?
 Am I saying that right?
 I think so.
 
-Speaker 1: 00:22:06
+Sjors Provoost: 00:22:06
 
 Well, I mean, the problem with checkpoints is you could have almost completely arbitrary rules, right?
 It gives too much power to the people who decide what is a checkpoint.
@@ -562,7 +562,7 @@ It's like there's not a specific person who stands to benefit from whether or no
 We can't predict what the disaster is going to look like.
 So that's why I think it's not as bad as a checkpoint.
 
-Speaker 0: 00:22:37
+Aaron van Wirdum: 00:22:37
 
 So yeah, whether or not it's a checkpoint or some kind of checkpoint or some kind of subcategory of a checkpoint is maybe not the important part.
 The important part here is that one group of developers, I guess mostly in Bitcoin Core, figure that if there's a reorg this big, then Bitcoin is screwed anyways.
@@ -573,7 +573,7 @@ But there's no objective point you can point to and therefore the only sort of l
 
 ## What is signaling
 
-Speaker 1: 00:23:27
+Sjors Provoost: 00:23:27
 
 So this reminded me of the other argument that you can have here, which is, do we look at only the blockchain?
 Like should nodes only look at the blockchain or should nodes keep into account sort of the social consensus?
@@ -588,7 +588,7 @@ And If you agree with the latter, if you say Taproot should be considered active
 
 ## Two visions
 
-Speaker 0: 00:26:28
+Aaron van Wirdum: 00:26:28
 
 Well, I think there's two issues here.
 Or at least there's one thing to point out, and I think that's what you're getting at.
@@ -597,14 +597,14 @@ So everyone agrees basically what a soft fork is, and that's, you've explained i
 But then there's the activation of the soft fork, sort of the activation logic, like you must signal or the signaling logic itself, which is something some developers will itself consider a soft fork, while other developers will argue that's the word you used before, that's scaffolding. That shouldn't be considered a consensus change.
 So I think that the arguments, at least if you hold the second opinion, of removing the signaling logic from the code, that's a much easier argument to make, which I also mentioned before, I think.
 
-Speaker 1: 00:27:30
+Sjors Provoost: 00:27:30
 
 Yeah, I mean, we presented these two parts of the burying, right?
 So the first part is we're going to apply the rules from Genesis, and the second part is we don't check the rules.
 And in that order, that's one way to look at it in that order, but you can look at it in the other order.
 I guess that's what you're saying now, if you just drop the signaling requirement.
 
-Speaker 0: 00:27:48
+Aaron van Wirdum: 00:27:48
 
 Yeah, but you were making a point about social consensus applying to time.
 But you can still apply social consensus to the blockchain itself.
@@ -612,7 +612,7 @@ So you can still argue that there's no reason for the signaling other than infor
 
 ## Signaling history
 
-Speaker 1: 00:28:15
+Sjors Provoost: 00:28:15
 
 You could, but if you go back to the history of soft forks, you know, we did that in another episode, but basically the reason miners started signaling, that wasn't the case.
 The earlier Softworks and Satoshi's code were just activating at a certain height.
@@ -622,11 +622,11 @@ But the reason for the signaling is to make sure that miners actually upgrade an
 And there's no reason to assume that with a big reorg they're suddenly unready.
 They would have to downgrade their software, basically.
 
-Speaker 0: 00:28:50
+Aaron van Wirdum: 00:28:50
 
 That's not something everyone agrees on, Sjors.
 
-Speaker 1: 00:28:53
+Sjors Provoost: 00:28:53
 
 That's fine.
 That's sort of the point I'm trying to make.
@@ -636,7 +636,7 @@ In that case, you might say, no, if time is undone, it's like real time travel.
 We've really changed history and taproot never happened or did or some other time.
 That's a potential discussion you can have.
 
-Speaker 0: 00:29:36
+Aaron van Wirdum: 00:29:36
 
 Yeah, well that's interesting you bring that up.
 I think that's right.
@@ -649,24 +649,24 @@ And that's really the reason for signaling.
 So, I think we're getting really into the weeds at this point.
 I think it's interesting, but We might be losing some listeners by now.
 
-Speaker 1: 00:30:17
+Sjors Provoost: 00:30:17
 
 That's fine.
 We've shown the listeners where the weed is.
 
-Speaker 0: 00:30:27
+Aaron van Wirdum: 00:30:27
 
 Right.
 Where the weed is?
 
-Speaker 1: 00:30:28
+Sjors Provoost: 00:30:28
 
 Yeah, maybe not the best analogy.
 We've shown them very deep into the rabbit hole.
 They can explore more for themselves by just reading these mailing list threads.
 We'll probably put them in the show notes.
 
-Speaker 0: 00:30:38
+Aaron van Wirdum: 00:30:38
 
 Yeah, no, there's one other thing we do need to bring up.
 Okay, we're jumping around now, so the episode's getting confusing.
@@ -679,37 +679,37 @@ Sort of what it ultimately comes down to this discussion, I think, is whether bu
 
 So if you see it as...
 
-Speaker 1: 00:31:16
+Sjors Provoost: 00:31:16
 
 A consensus BIP, because you can have an informational BIP that's not a consensus BIP.
 
-Speaker 0: 00:31:20
+Aaron van Wirdum: 00:31:20
 
 Yeah, can you though?
 
-Speaker 1: 00:31:21
+Sjors Provoost: 00:31:21
 
 You can basically write a BIP that says, hey, if you're writing a full note, you could consider burying the soft fork because it will make your life easier.
 But keep in mind that, if this time travel thing happens, you have a problem.
 
-Speaker 0: 00:31:36
+Aaron van Wirdum: 00:31:36
 
 It's not really the point of BIPs though, Sjors, is it?
 
-Speaker 1: 00:31:39
+Sjors Provoost: 00:31:39
 
 Well, we've done an episode about BIPs. There are informational BIPs and there are consensus BIPs.
 
-Speaker 0: 00:31:43
+Aaron van Wirdum: 00:31:43
 
 Well, yeah, but they need to be relevant for other nodes.
 
-Speaker 1: 00:31:48
+Sjors Provoost: 00:31:48
 
 Well, they are.
 It's good to explain to other nodes what you've done in your implementation that, under extreme circumstances can make a difference.
 
-Speaker 0: 00:31:55
+Aaron van Wirdum: 00:31:55
 
 Well, you can make a very general informational BIP of this is a thing you can do, but then that BIP doesn't need to include a specific block height, right?
 Well, that's the debate then.
@@ -717,11 +717,11 @@ Is this a consensus change?
 In other words, if there would be this big of a reorg, should we expect all nodes to accept this reorg or reject it?
 Like should they do the same thing?
 
-Speaker 1: 00:32:23
+Sjors Provoost: 00:32:23
 
 Yeah, so this comes down to the little street in Rotterdam situation that I was talking about.
 
-Speaker 0: 00:32:27
+Aaron van Wirdum: 00:32:27
 
 Hang on, let me finish this sentence.
 Or is this just a thing that developers can do as a shortcut in their own code.
@@ -739,7 +739,7 @@ Like if in this unlikely scenario would happen, then would the buried version be
 That the nodes that have the buried soft fork, would that be the real Bitcoin?
 Or would they fork themselves off of the real Bitcoin network?
 
-Speaker 1: 00:33:18
+Sjors Provoost: 00:33:18
 
 Yeah, so we're talking about a specific deep re-org that actually violates the taproot rule, right?
 Because there is a good chance that they don't violate taproot in the deep re-org.
@@ -757,7 +757,7 @@ And it probably means Bitcoin would be completely broken in that case.
 But maybe not.
 Maybe there is a rational way to deal with it.
 
-Speaker 0: 00:34:30
+Aaron van Wirdum: 00:34:30
 
 That's the difference of opinion, right?
 Some people like Eric Fosker will say Bitcoin isn't broken, Bitcoin is working as intended, long as valid chain still applies.
@@ -765,7 +765,7 @@ There was a long re-org that's part of the Bitcoin consensus system.
 
 ## Conclusion
 
-Speaker 1: 00:34:46
+Sjors Provoost: 00:34:46
 
 Yeah, but the question is, can you use it for practical transactions if that can happen again and again and again and again?
 I would probably say no.
@@ -773,19 +773,19 @@ It's just the same reason with lots of altcoins that try to use `SHA-256` and th
 It's just that nobody uses them anymore.
 So I think it's good to have some sort of thought about what to do with the alien invasion.
 
-Speaker 0: 00:35:13
+Aaron van Wirdum: 00:35:13
 
 So I want to close off this episode, but I want to ask you then, personally, should this be considered a consensus change?
 
-Speaker 1: 00:35:23
+Sjors Provoost: 00:35:23
 
 No, I think this is sort of...
 
-Speaker 0: 00:35:24
+Aaron van Wirdum: 00:35:24
 
 Or is this a developer shortcut at their own risk?
 
-Speaker 1: 00:35:29
+Sjors Provoost: 00:35:29
 
 Yeah, I think it's a developer shortcut, but the idea of a one-year re-org is undefined behavior, I think.
 So I think there is no consensus rule for a one-year re-org.
@@ -797,24 +797,24 @@ You know, what's the can you still go into a hospital without a mask?
 I don't know.
 It's undefined. But maybe it should be defined.
 
-Speaker 0: 00:35:59
+Aaron van Wirdum: 00:35:59
 
 I mean, I guess I disagree with you.
 I think it's deviant as long as it's a valid chain.
 That's it.
 
-Speaker 1: 00:36:09
+Sjors Provoost: 00:36:09
 
 That's fine.
 
-Speaker 0: 00:36:09
+Aaron van Wirdum: 00:36:09
 
 Well, then I guess that's the episode, Sjors.
 We've reached the point, we've kept pulling the threads to the point where sort of the disagreement emerges, I think, of the broader discussion.
 I hope our listeners could follow.
 I think it was maybe a bit messy because it's a complicated topic, but I thought it was kind of interesting.
 
-Speaker 1: 00:36:29
+Sjors Provoost: 00:36:29
 
 Yeah, I think so too.
 Yeah, especially the fact that we're talking about hypothetical time machines in a situation where we lost one recording.
@@ -823,11 +823,11 @@ Did we say this before?
 Was it really set?
 Because we said it without recording it.
 
-Speaker 0: 00:36:43
+Aaron van Wirdum: 00:36:43
 
 I'm sure that didn't help.
 Yeah.
 
-Speaker 1: 00:36:45
+Sjors Provoost: 00:36:45
 
 So anyway, thank all for listening to the Bitcoin Explained.
