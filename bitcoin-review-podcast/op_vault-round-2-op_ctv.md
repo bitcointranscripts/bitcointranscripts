@@ -109,7 +109,7 @@ So operationally it gets a bit simpler.
 
 Speaker 0: 00:05:51
 
-Can you, I guess, like, since we're crossing a little bit in CTV here, which is like a whole other can of worms.
+I guess, like, since we're crossing a little bit in `CTV` here, which is like a whole other can of worms.
 
 Speaker 1: 00:05:57
 
@@ -117,14 +117,13 @@ Yeah, and we'll get into that.
 
 Speaker 0: 00:06:00
 
-Do you want to give us a sort of like, without CTV, like if a little bit of like technical explanation of like how the vault is created, right?
+Do you want to give us a sort of like, without `CTV`, like if a little bit of like technical explanation of like how the vault is created, right?
 And then the trade-offs and then maybe like, okay, now if we use CTV, like how the vault is created and what other set of trade-offs are we getting?
 
 Speaker 1: 00:06:17
 
 Yeah, for sure.
 So in Bitcoin today, if you want to create a vault, you have to decide the allowable flow of transactions.
-So you might say, OK, we're going to pick this wallet that.
 So we're going to pick a few things to start with.
 We're going to pick our recovery path or like our super secret nuclear cold wallet that's kind of going to be used to interrupt any unexpected transaction.
 We're going to pick our like warm wallet that's going to be used to actually initiate the withdrawal that can be then interrupted by the recovery wallet.
