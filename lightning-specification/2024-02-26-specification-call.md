@@ -1,12 +1,11 @@
 ---
 title: "Lightning Specification Meeting - Agenda 1142"
-transcript_by: Gurwinder Sahota via tstbtc v1.0.0 --needs-review
+transcript_by: Gurwinder Sahota via tstbtc v1.0.0
 tags: ['lightning']
 speakers: []
 categories: []
 date: 2024-02-26
 ---
-
 Agenda: <https://github.com/lightning/bolts/issues/1142>
 
 Speaker 0: [redacted] said they won't be able to attend, but they’ve nicely created an agenda for us as usual. So I can take a look and run through the list. First up, so I think this has sort of went back and forth a few times. This is the very long-lived request to just have a zero value in reserve basically, like a first class type. [redacted] made this PR, so it's spec PR 1140. I think there's a back and forth thing. We realize that you also need to signal that you actually accept it — not just that you'll send it — just to make sure that things are just work without having some manual intervention. Pretty straightforward. We were wary of getting into a state inadvertently where a channel gets stuck because of some weird fee situation. So one thing we're doing now in 0.18 — something I think that was a very long and old portion — basically, I think that buffer thing. We didn't have the fee buffer. So basically, at times, we would have issues. Also, we do a thing now where we have some first compatibility with C-Lightning, where we would update the fee too quickly basically, we have to update [inaudible] as well. But that's the only thing I think of implementation-wise as far as zero reserve. I know people do it in the wild, but that doesn't mean they aren't hitting a fee-related XP.
