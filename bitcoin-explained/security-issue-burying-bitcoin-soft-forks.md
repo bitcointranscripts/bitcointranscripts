@@ -689,12 +689,12 @@ Yeah, can you though?
 
 Speaker 1: 00:31:21
 
-You can basically write a BIP that says, hey, if you're writing this type of, if you're writing a full note, you could consider burying the soft fork because it will make your life easier.
-But keep in mind that, you know, if this time travel thing happens, you have a problem.
+You can basically write a BIP that says, hey, if you're writing a full note, you could consider burying the soft fork because it will make your life easier.
+But keep in mind that, if this time travel thing happens, you have a problem.
 
 Speaker 0: 00:31:36
 
-It's not really the point of BIPs though, Sjoerd, is it?
+It's not really the point of BIPs though, Sjors, is it?
 
 Speaker 1: 00:31:39
 
@@ -703,21 +703,19 @@ Well, we've done an episode about BIPs. There are informational BIPs and there a
 Speaker 0: 00:31:43
 
 Well, yeah, but they need to be relevant for other nodes.
-Well, they are.
-It's good
 
 Speaker 1: 00:31:48
 
-to explain to other nodes what you've done in your implementation that, you know, under extreme circumstances can make a difference.
+Well, they are.
+It's good to explain to other nodes what you've done in your implementation that, under extreme circumstances can make a difference.
 
 Speaker 0: 00:31:55
 
-Well, you could, you can make a very general informational BIP of this is a thing you can do, but then that BIP doesn't need to include a specific block height, right?
-That doesn't require...
+Well, you can make a very general informational BIP of this is a thing you can do, but then that BIP doesn't need to include a specific block height, right?
 Well, that's the debate then.
 Is this a consensus change?
-In other words, if there would be this big of a reorg, Should we expect all nodes to accept this reorg or reject it?
-Like, should they do the same thing?
+In other words, if there would be this big of a reorg, should we expect all nodes to accept this reorg or reject it?
+Like should they do the same thing?
 
 Speaker 1: 00:32:23
 
@@ -731,12 +729,11 @@ And then, essentially, if it does go wrong, that's the wrong problem.
 That's a problem of that specific implementation.
 That would essentially mean that that specific implementation has forked itself of the network.
 I think if you really go into this debate, that's sort of ultimately what it's about.
-And that's why I mentioned at the beginning of this episode that, you know, consensus changes are kind of interesting because it sort of says something about how do you define Bitcoin, what is Bitcoin.
+And that's why I mentioned at the beginning of this episode that, consensus changes are kind of interesting because it sort of says something about how do you define Bitcoin, what is Bitcoin.
 And this is an example where that actually applies.
 
 ## What is Bitcoin
 
-Speaker 0: 00:33:05
 
 Like if in this unlikely scenario would happen, then would the buried version be the real Bitcoin?
 That the nodes that have the buried soft fork, would that be the real Bitcoin?
@@ -746,21 +743,14 @@ Speaker 1: 00:33:18
 
 Yeah, so we're talking about a specific deep re-org that actually violates the taproot rule, right?
 Because there is a good chance that they don't violate taproot in the deep re-org.
-
-Speaker 0: 00:33:27
-
-So
-
-Speaker 1: 00:33:27
-
-I think in general, it's a good idea to think about an extreme scenario like this.
-But I think if you do that, you'll end up thinking, you'll end up seeing this is a really big problem.
+So, I think in general, it's a good idea to think about an extreme scenario like this.
+But I think if you do that, you'll end up seeing this is a really big problem.
 There's all sorts of things we need to solve in such an event.
-And this little thing about buried consensus rules is somewhere on the to-do list of that giant project of okay what are we gonna do?
+And this little thing about buried consensus rules is somewhere on the to-do list of that giant project of okay what are we going to do?
 Like is there some threshold that we say if this alien shows up?
 I guess in general we need a scenario what to do with the aliens.
-The aliens might have extreme hash power, They might be able to just completely double spend everyone on the planet because they have some alien ASIC that can double spend any block at any depth and they can create Bjorks out of spite.
-So or the secret government agency basically.
+The aliens might have extreme hash power. They might be able to just completely double spend everyone on the planet because they have some alien ASIC that can double spend any block at any depth and they can create Bjorks out of spike.
+Or the secret government agency basically.
 It might be useful to have a plan for that.
 I just think that this won't be the most interesting part of the plan because it's a really bad situation.
 And it probably means Bitcoin would be completely broken in that case.
@@ -779,7 +769,7 @@ Speaker 1: 00:34:46
 
 Yeah, but the question is, can you use it for practical transactions if that can happen again and again and again and again?
 I would probably say no.
-It's just the same reason with lots of altcoins that try to use SHA-256 and those altcoins are completely, you know, yeah, technically they're still valid chains.
+It's just the same reason with lots of altcoins that try to use `SHA-256` and those altcoins are completely, yeah, technically they're still valid chains.
 It's just that nobody uses them anymore.
 So I think it's good to have some sort of thought about what to do with the alien invasion.
 
@@ -789,11 +779,10 @@ So I want to close off this episode, but I want to ask you then, personally, sho
 
 Speaker 1: 00:35:23
 
-No, I think this is
+No, I think this is sort of...
 
 Speaker 0: 00:35:24
 
-sort of...
 Or is this a developer shortcut at their own risk?
 
 Speaker 1: 00:35:29
@@ -806,25 +795,22 @@ There's just no contingency plan.
 It's like saying what do we do if the 55 nukes go off over Amsterdam?
 You know, what's the can you still go into a hospital without a mask?
 I don't know.
-It's undefined But maybe it should be defined.
+It's undefined. But maybe it should be defined.
 
 Speaker 0: 00:35:59
 
 I mean, I guess I disagree with you.
-I think it's deviant as long as it's ValorChain.
+I think it's deviant as long as it's a valid chain.
 That's it.
-That's fine.
-Well, then I guess that's the episode, Shors.
 
 Speaker 1: 00:36:09
 
-That's
+That's fine.
 
 Speaker 0: 00:36:09
 
-right.
+Well, then I guess that's the episode, Sjors.
 We've reached the point, we've kept pulling the threads to the point where sort of the disagreement emerges, I think, of the broader discussion.
-Yeah.
 I hope our listeners could follow.
 I think it was maybe a bit messy because it's a complicated topic, but I thought it was kind of interesting.
 
