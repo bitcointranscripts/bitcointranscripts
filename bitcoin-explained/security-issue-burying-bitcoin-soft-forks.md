@@ -614,7 +614,7 @@ So you can still argue that there's no reason for the signaling other than infor
 
 Speaker 1: 00:28:15
 
-You could, but if you go back to the history of Softworks, you know, we did that in another episode, but basically the reason miners started signaling, that wasn't the case.
+You could, but if you go back to the history of soft forks, you know, we did that in another episode, but basically the reason miners started signaling, that wasn't the case.
 The earlier Softworks and Satoshi's code were just activating at a certain height.
 That was a problem.
 So the idea was to have miners signal for it and there were various ways to do that signaling and eventually we ended up with PIP 9.
