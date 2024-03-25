@@ -944,31 +944,31 @@ Yeah, the ordinal stuff, like it's all just Bitcoin and UTXOs and like this work
 So it works.
 I mean, I think there's kind of something in there that you hit on that I think is important.
 There's a lot of, well, why don't we do this software instead of that one and we can emulate everything else?
-And I think, you know, something that's important to remember is that block space is the constrained resource.
+And I think, something that's important to remember is that block space is the constrained resource.
 And so if there's going to be common cases that lots and lots of users of Bitcoin are going to be doing then it makes sense to have kind of optimal implementations for those use cases to be more space efficient.
 
 Speaker 0: 00:51:18
 
-I mean, but dude, like, I mean, seriously, like this stuff is like minuscule compared to like half of the, the multi-sig, the complex multi-sig, like not complex, but just multi-sig with like enough inputs and outputs, like this stuff is still minuscule, right?
+I mean, but dude, like, I mean, seriously, like this stuff is like minuscule compared to like half of the multi-sig, the complex multi-sig, like not complex, but just multi-sig with like enough inputs and outputs, like this stuff is still minuscule, right?
 Like I mean, like, or compared to JPEG.
 This is ridiculously small when it actually comes down to actual transactions.
 
-Speaker 5: 00:51:42
+Speaker 3: 00:51:42
 
 Well, but you know, like store value is the dominant use case for Bitcoin right now, I would argue, outside of just like pure spot speculation.
-And so if we think in a couple of years, if this got activated in a couple of years, I'd bet that most wallets would have some kind of vaulting functionality.
+And so if this got activated in a couple of years, I'd bet that most wallets would have some kind of vaulting functionality.
 And so it makes sense to kind of have like the most compact vault implementation that we can rather than emulate it in some other covenant scheme and waste some bytes.
 
 Speaker 1: 00:52:09
 
 Totally.
-Yeah, Rheindel is right.
+Yeah, Rijndael is right.
 I mean, you have to multiply all this stuff by a billion users, potentially.
-I mean, like, I don't know what the right scaling number is, but I think a
+I mean, like, I don't know what the right scaling number is, but I think...
 
 Speaker 0: 00:52:18
 
-billion users can use Bitcoin based layer.
+A billion users can use Bitcoin based layer.
 
 Speaker 1: 00:52:21
 
@@ -977,28 +977,27 @@ Yeah, right.
 Speaker 0: 00:52:22
 
 Certainly not even close.
-Yeah, certainly not in its
 
 Speaker 1: 00:52:24
 
-current form.
+Yeah, certainly not in its current form.
 
 Speaker 0: 00:52:25
 
-They're going to be using Cashew.
+They're going to be using `cashew`.
 
 Speaker 1: 00:52:27
 
-But like the most scarce resource here is Chainspace.
+But like the most scarce resource here is `Chainspace`.
 And, you know, as a runner up, it's time to verify, time to download the entire blockchain or, you know, some kind of equally secure form of it.
-So Randall's point's really good, I think.
+So Rijndael's point's really good, I think.
 
 ## Use in chaumian mints/ecash
 
 Speaker 5: 00:52:42
 
-So NVK, you just mentioned Cashew, you know, We just talked about Chami and Mints not that long ago.
-This would actually also be great to add to Chami and Mints, right?
+So NVK, you just mentioned Cashew, we just talked about `Chaumi` and `Mints` not that long ago.
+This would actually also be great to add to Chaumi and Mints, right?
 So if you have either a Feti Mint or a Cashew Mint and you want to say, all right, we're going to have our Mint's treasury in a vault that has like a, you know, this time locked predestined withdrawal path so that if either one of the functionaries of the mint or if somebody pwns the software and tries to like run away with the money, then we can claw it back.
 This fits in really, really well with the idea that maybe we'll have some collaborative custodyments for a lot of users.
 
