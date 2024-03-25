@@ -439,8 +439,8 @@ Speaker 0: 00:23:52
 
 So, you know, I can picture this future.
 I can sort of like be pretty excited about it, but at the same time it's like, okay, holy shit, we're adding all this complication to Bitcoin now.
-You know, and, and some of these concepts have been sort of like heavily debated and have a lot of contention.
-So, so maybe like, let's start sort of addressing some things and sort of exploring this a little, because, you know, the original OpVault was like, Hey, look, I have this simple new primitive, right.
+You know, and, some of these concepts have been sort of like heavily debated and have a lot of contention.
+So, so maybe like, let's start sort of addressing some things and sort of exploring this a little, because, the original OpVault was like, hey, look, I have this simple new primitive, right.
 That like, you know, like, please let's activate this kind of thing.
 Right.
 And then now it has sort of like expanding, like all software studying and development happens.
@@ -450,7 +450,7 @@ So, CTV was essentially dead.
 And there's a lot of cool stuff in it.
 There's a lot of scary stuff in it.
 Nobody so far has been able to show me what's actually bad about it.
-So, why don't we sort of like maybe still men some criticisms and then try to sort of break it down because you know I think that by opening CTV up like essentially opening up this proposal to to more grief even though it might be the right solution.
+So, why don't we sort of like maybe steam in some criticisms and then try to sort of break it down because you know I think that by opening CTV up like essentially opening up this proposal to to more grief even though it might be the right solution.
 
 Speaker 5: 00:25:19
 
