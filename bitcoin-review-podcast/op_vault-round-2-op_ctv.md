@@ -1215,33 +1215,29 @@ And these fuckers just keep on transferring to each other without transferring t
 So they're all printing Bitcoin essentially right now at this moment.
 I'm sure it's just a latency issue on the clearing, right?
 Just enough to add a little margin to that position.
-So like, what I like is that because say for example, River, right?
-So Alex Lishman, you know, even though he's going to write it in Elixir, which is going to be a problem.
-So let's say, Is he
+What I like is that because say for example, River, right?
+So Alex Lishman, even though he's going to write it in Elixir, which is going to be a problem.
 
 Speaker 3: 01:04:45
 
-really?
 Yeah.
 
 Speaker 0: 01:04:47
 
-Yeah.
-Yeah.
-So, so let's say like, you know, he has this company that is sort of like a mid to small size, you know, Bitcoin brokerage.
+So, let's say like,he has this company that is sort of like a mid to small size, Bitcoin brokerage.
 Right.
 The problem is like it's going to be very hard for him to find more capital to increase his liquidity.
 Right.
 To be bigger because he's not going to find insurance.
-He's not going to be able to, to do the kind of the diligence you're going to need to do.
+He's not going to be able to to do the kind of the diligence you're going to need to do.
 Like all this stuff around the DD, right?
-That he's going to have to do in order to grow to the next stage of his company, he's gonna have to go to Fireblocks because they hit the check boxes.
+That he's going to have to do in order to grow to the next stage of his company, he's going to have to go to Fireblocks because they hit the check boxes.
 Right.
 That's the check box people.
-So what do you do if you don't wanna go to the check box people?
+So what do you do if you don't want go to the check box people?
 We had that problem as a company way back in the day.
 Like, it's like, fuck the check box people.
-We're just simply not gonna do it.
+We're just simply not going to do it.
 
 Speaker 5: 01:05:33
 
@@ -1249,12 +1245,12 @@ Or just more generally, like if you have unlimited budget, like you could build 
 
 Speaker 0: 01:05:40
 
-Like it's not gonna be certified.
+Like it's not going to be certified.
 
 Speaker 5: 01:05:41
 
 Well, right.
-Well, and it's not gonna be cheap, right?
+Well, and it's not going to be cheap, right?
 Like If you have a lot of money, a lot of people, and a lot of hardware in geographically distributed locations, you can build a kick-ass vaulting system.
 I think one of the things that's cool about OpVault is it lets anybody build a kick-ass vaulting system just out of Bitcoin script.
 If you're an individual hodler who wants to be able to move money from their phone, but then if they get robbed, then they drive to the bunker, dig the thing out from underneath their well, then you get kind of the same grade of security as somebody who has a shitload of HSMs on three continents.
