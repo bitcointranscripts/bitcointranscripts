@@ -1028,31 +1028,30 @@ And then you have the clearing of essentially Bitcoin is wires, right?
 Eventually, you're going to have people just clearing between each other, like large amounts of of economical value in a smaller possible transaction, because the blocks will be full.
 And then you have this L3 solutions, right, where they don't necessarily clear to Bitcoin, but they're leveraging Bitcoin either to Lightning or directly to create even further atomization of those economic movements, right?
 So because Lightning also does not scale to 8 billion people.
-So you're gonna keep on creating this atomization on top of atomization, right?
+So you're going to keep on creating this atomization on top of atomization, right?
 But at the end of the day, you still have a problem.
 Where's the Bitcoin private key?
 
 Speaker 4: 00:55:45
 
-That's
+That's right.
 
 Speaker 0: 00:55:45
 
-right.
 Right?
 And it's a lot of money on those as we keep on moving into this like higher levels of trade offs.
-And I keep on going back to the op vault.
+And I keep on going back to the opvault.
 That's what my interest is in.
 It's like, how do you do this stuff?
 And like, you can't do it with just ECC calculators.
 Right.
 We need to do this with programmatic money.
-So that's like my little short rant, optimistic rant there.
+So that's like my little optimistic rant there.
 
 Speaker 1: 00:56:15
 
 I think you're 100% right.
-If you imagine there's a likely world where Bitcoin success is kind of like you have a constellation of 10,000 Feddy-like systems that are all interconnected, maybe with something that looks like lightning.
+If you imagine there's a likely world where Bitcoin success is kind of like you have a constellation of 10,000 fedi-like systems that are all interconnected, maybe with something that looks like Lightning.
 You need a bomb proof way for each of those little subsystems to secure their big pool of capital.
 Like this just unquestionably secure.
 Like so we need to develop patterns where if you're running a FEDI installation, you just know you're not going to get hacked.
@@ -1069,9 +1068,9 @@ I've heard that you like DLCs.
 Speaker 4: 00:57:04
 
 I'm a fan.
-Yeah, we talked about it a bunch on the previous episode, but I think it was Lloyd Fournier released a post on the mailing list a few years ago saying, oh look, if we had CTVs, or basically kind of any Covenant, I think Jonas Nick showed you could do with any privout, and I showed you could do with old op vault.
+Yeah, we talked about it a bunch on the previous episode, but I think it was Lloyd Fournier released a post on the mailing list a few years ago saying, look, if we had CTVs, or basically kind of any covenant, I think Jonas Nick showed you could do with any privout, and I showed you could do with old op vault.
 And now that new op vault has a CTV again, you could do it the same way.
-But basically, like, 10x the usability of DLCs, because say, right, like, if I want to do a DLC like on the Bitcoin price with you, Rodolfo, like it's going to be, you know, like probably like 80,000 signatures and that, you know, doing that on the phone is like, you know, a ton of like processing time and data we need to send.
+But basically, like, 10x the usability of DLCs, because say, right, like, if I want to do a DLC like on the Bitcoin price with you, Rodolfo, like it's going to be, you know, like probably like 80,000 signatures and that, doing that on the phone is like, you know, a ton of like processing time and data we need to send.
 So it's not really usable for the layman, at least as much as we'd like it to be.
 But with CTV, or any company, you just distill that into, we both need to generate the same address, and if we do, then we have the same DLC contracts.
 That explodes the usability, I think, and as well as the composability because now you could, with CTV, you could have DLCs that are paid out to, not just my address, we could have it paid out to another DLC or another, some thing where it's like, this goes into an address that then splits it among five people safely instead of having to trust a multi-state configuration or something like that.
