@@ -128,11 +128,11 @@ So we're going to pick a few things to start with.
 We're going to pick our recovery path or like our super secret nuclear cold wallet that's kind of going to be used to interrupt any unexpected transaction.
 We're going to pick our like warm wallet that's going to be used to actually initiate the withdrawal that can be then interrupted by the recovery wallet.
 And with Bitcoin today, if you're going to do this, you have to pick your target ahead of time.
-So like when we start the withdrawal process for this vault, which wallet are the funds actually gonna flow into on their way to the final destination where you actually kind of want to put the Bitcoin, you know, whether that's sending it to somebody or uploading to an exchange or whatever.
+So like when we start the withdrawal process for this vault, which wallet are the funds actually going to flow into on their way to the final destination where you actually kind of want to put the Bitcoin, you know, whether that's sending it to somebody or uploading to an exchange or whatever.
 So you pick the various parameters that are involved.
 And then what you have to do to actually get this behavior in Bitcoin today is you have to decide on what all the possible flows are of funds.
-So that might be, OK, I want to create a path where I'm putting in 10 Bitcoin to my vault, I wish, right?
-And then I'm going to allow, you know, a withdrawal of five Bitcoin at a time, or I'm going to allow a withdrawal of, you know, one Bitcoin at a time.
+So that might be, I want to create a path where I'm putting in 10 Bitcoin to my vault, I wish, right?
+And then I'm going to allow, a withdrawal of five Bitcoin at a time, or I'm going to allow a withdrawal of, one Bitcoin at a time.
 So you basically have to decide on like what the structure of this vault is going to be.
 And then you have to generate this temporary key, this ephemeral key.
 And what you do is you send your Bitcoin to this ephemeral key, you pre-sign this whole flow of transactions, kind of whatever you come up with, and then you delete that key and you make sure that nobody else can ever use that key to spend Bitcoin because if they did, they'd have a backdoor into your vault.
@@ -145,12 +145,11 @@ Like, how do you prove that you deleted a key, which is nearly impossible.
 
 Speaker 1: 00:08:23
 
-It's literally impossible, you know, to prove to yourself, to prove to auditors, whatever.
-So like, you know, You can come up with schemes where you have a pretty good assurance that you deleted the key and you know, so maybe you're comfortable with that, maybe not.
+It's literally impossible, to prove to yourself, to prove to auditors, whatever.
+You can come up with schemes where you have a pretty good assurance that you deleted the key and, so maybe you're comfortable with that, maybe not.
 
 ## How is CHECKTEMPLATEVERIFY achieved?
 
-Speaker 1: 00:08:37
 
 The advantage of then using check template verify or something like it, you can use any prev out.
 But basically what you need is a way of at the consensus layer on layer one, locking the coins to travel a certain path.
