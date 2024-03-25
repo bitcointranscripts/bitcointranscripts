@@ -299,12 +299,12 @@ They're smart enough if they're listening to this.
 Speaker 1: 00:15:43
 
 Yeah, yeah, yeah.
-But there's some really cool, I mean, like if you think about having this divorce between recovery keys and like your warm key or everyday key or whatever, you can do some amazing things.
+If you think about having this divorce between recovery keys and like your warm key or everyday key or whatever, you can do some amazing things.
 Like you can generate offline keys that are only on paper and only get exercise in the recovery path, in the unlikely recovery path versus your everyday stuff.
 But anyway, so all that to say, I think it's really important use case.
 So we came up with this proposal, OpVault, which takes CTV and builds on top of it.
 Initially, I just came up with a completely separate thing that was the simplest thing that achieves vaults, but then I realized that that actually encompasses CTV as Ben pointed out on the mailing list pretty quickly after I put the proposal out there.
-But so yeah, last time, since last time I came on here and was talking about Vaults, Greg and AJ have really made some substantial improvements to the proposal in the sense that when I designed it, It was kind of from a naive standpoint.
+But so yeah, last time, since last time I came on here and was talking about vaults, Greg and AJ have really made some substantial improvements to the proposal in the sense that when I designed it. It was kind of from a naive standpoint.
 I haven't done like a tremendous amount of scripts, certainly not as much as Greg has.
 And I kind of came at it really just like kind of designing for one particular use case for vaults, which I think is pretty general, but it doesn't compose well with like the rest of Bitcoin.
 So it introduced a lot of like weird requirements for changes to the script interpreter that like aren't that like long in terms of lines of code, but conceptually, they're pretty big changes.
@@ -312,39 +312,38 @@ Like I had this thing where you commit to the recovery path that you're going to
 
 ## Simplification of OP_VAULT proposal
 
-Speaker 1: 00:17:26
 
-So there's just like all this kind of Additional stuff that I had to introduce but Greg and AJ kind of found a simpler way That's more idiomatic to taproot that really I think simplifies and makes the proposal more and more composable Greg do you feel like you want to like talk a little bit about what your thought process was there?
+So there's just like all this kind of Additional stuff that I had to introduce but Greg and AJ kind of found a simpler way that's more idiomatic to taproot that really I think simplifies and makes the proposal more and more composable, Greg do you feel like you want to like talk a little bit about what your thought process was there?
 
-Speaker 3: 00:17:48
+Speaker 2: 00:17:48
 
 Yeah.
 So like you were mentioning, there's some stuff that wasn't what you call Bitcoin script idiomatic, right?
-And so kind of, I looked at this first, I think the first thing I did was how to incorporate taproot to it.
+I think the first thing I did was how to incorporate taproot to it.
 Cause I think the original one didn't even really incorporate taproot.
 So I did that first and then I still wasn't super happy with the abstraction.
 And then I kind of sat there for a couple hours or something like that, just trying to make it more taproot idiomatic, actually.
-And I came up with kind of the halfway step measure, which is saying, you know, let's use the tapstructure to kind of flex the conditional kind of script we actually want, this recovery versus unvaulting path functionality.
+And I came up with kind of the halfway step measure, which is saying, let's use the tapstructure to kind of flex the conditional kind of script we actually want, this recovery versus unvaulting path functionality.
 And that's where I came up with this forwarding idea, where you take such a script you want to forward this to as the staging area, and then leave everything else the same.
 The recovery path just stays there, doesn't get changed.
 But everything else gets the trigger path gets changed.
-And then from there, once AJ read that, he went and went even further with kind of making the, this forwarding script more, compose even further composable resulting in kind of this, T love tap leaf update, verify like mechanism, which is pretty nice.
+And then from there, once AJ read that, he went and went even further with kind of making this forwarding script more even further composable resulting in kind of this, T love tap leaf update, verify like mechanism, which is pretty nice.
 Yeah.
 Too.
-And then, we called it flu at the time forward leap update, but, then it became backer named to
+We called it flu at the time forward leap update, but, then it became backer named to
 
 Speaker 1: 00:19:17
 
 COVID.
 
-Speaker 3: 00:19:17
+Speaker 2: 00:19:17
 
 Yeah.
-I've COVID up up five G to, that, That is now what we call up vault right so the vault part is the part It's kind of putting this value into the staging area with this forwarded script
+I've COVID up up five G to. That is now what we call opvault right so the vault part is the part it's kind of putting this value into the staging area with this forwarded script
 
 Speaker 1: 00:19:32
 
-Mm-hmm and so like Greg was saying the composability got a lot better and the way that that kind of manifests is when I presented the original proposal, Luke Jr. On the mailing list piped in and he was like, hey, you know, okay, this is all right.
+So like Greg was saying the composability got a lot better and the way that that kind of manifests is when I presented the original proposal, Luke Jr. on the mailing list piped in and he was like, hey, you know, okay, this is all right.
 But what if I want to say lock my coins up in a vault and then instead of, you know, triggering a withdrawal to certain outputs, what if I just want to delegate the coins to a new key?
 And the new proposal actually like facilitates that use case because instead of necessarily like locking in use of say, CTV or any particular like triggering process, it actually allows the wallet designer to specify that triggering process as the script template that gets this update verify thing.
 
