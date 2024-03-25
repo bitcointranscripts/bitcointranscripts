@@ -455,33 +455,27 @@ So, why don't we sort of like maybe steam in some criticisms and then try to sor
 Speaker 5: 00:25:19
 
 So I feel like we have to start with the classic covenant FUD, right?
-Which is like, okay, so and maybe for folks who haven't listened to all the other prior episodes, whenever we're talking about covenants, you know, the way that Bitcoin works is when you have a transaction you're spending inputs and you are unlocking those outputs and then you lock them to a new set of outputs and All of the restrictions that we can put on Bitcoin are restrictions on how those coins are unlocked, like on the input side.
+Which is like, okay, so and maybe for folks who haven't listened to all the other prior episodes, whenever we're talking about covenants, the way that Bitcoin works is when you have a transaction you're spending inputs and you are unlocking those outputs and then you lock them to a new set of outputs and all of the restrictions that we can put on Bitcoin are restrictions on how those coins are unlocked, like on the input side.
 And so covenants let you put restrictions on the output side.
 So it's not just how they can be unlocked, but it's like where they can be spent.
 And so CTV is a really, really simple covenant scheme.
 There's more complicated covenant schemes.
 OpVault is a covenant scheme, right?
 You're saying when these coins are spent, they can only be spent into this holding zone and then after six months, eight blocks, whatever you specify, then they can be sent somewhere else.
-So the classic concern that people have is, okay, if there's a way of saying these coins can only be sent to certain destinations, then what if I go and withdraw from an exchange and the exchange sends me these tainted coins that can only be sent to like white listed addresses and this is how the state is going to lean on regulated exchanges and make it so that I end up with like Chinese social credit score Bitcoin that I can only send my Bitcoin to People on the approved list and if I you know eat too much beef or something then then I can't spend my Bitcoin This is like the classic as soon as you say Vault CTV like I asked on Nostr before this episode like what what questions should I ask James about op fault?
+So the classic concern that people have is, okay, if there's a way of saying these coins can only be sent to certain destinations, then what if I go and withdraw from an exchange and the exchange sends me these tainted coins that can only be sent to like white listed addresses and this is how the state is going to lean on regulated exchanges and make it so that I end up with like Chinese social credit score Bitcoin that I can only send my Bitcoin to people on the approved list and if I you know eat too much beef or something then then I can't spend my Bitcoin. This is like the classic as soon as you say Vault CTV like I asked on Nostr before this episode like what questions should I ask James about opfault?
 And I got two answers and one of them was about this
-
-Speaker 0: 00:27:13
-
 All right.
-
-Speaker 5: 00:27:13
-
-So like this is this is where everybody goes
+So like this is this is where everybody goes so..
 
 Speaker 0: 00:27:15
 
-so specifically about beef
+Specifically about beef?
 
 Speaker 5: 00:27:17
 
 Specifically beef.
 It's all beef and Bitcoin.
-So the concern is, you know, I'm going to hit withdraw and the coins that I get are going to have these restrictions on them that I did not opt into.
+So the concern is, I'm going to hit withdraw and the coins that I get are going to have these restrictions on them that I did not opt into.
 That's going to control how I can spend my Bitcoin.
 And it's no longer my Bitcoin.
 It's my Bitcoin at the pleasure of the exchange or the state or whatever.
