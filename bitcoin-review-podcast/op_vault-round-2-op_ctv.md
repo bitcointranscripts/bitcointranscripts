@@ -344,7 +344,7 @@ I've COVID up up five G to. That is now what we call opvault right so the vault 
 Speaker 1: 00:19:32
 
 So like Greg was saying the composability got a lot better and the way that that kind of manifests is when I presented the original proposal, Luke Jr. on the mailing list piped in and he was like, hey, you know, okay, this is all right.
-But what if I want to say lock my coins up in a vault and then instead of, you know, triggering a withdrawal to certain outputs, what if I just want to delegate the coins to a new key?
+But what if I want to say lock my coins up in a vault and then instead of, triggering a withdrawal to certain outputs, what if I just want to delegate the coins to a new key?
 And the new proposal actually like facilitates that use case because instead of necessarily like locking in use of say, CTV or any particular like triggering process, it actually allows the wallet designer to specify that triggering process as the script template that gets this update verify thing.
 
 Speaker 3: 00:20:25
@@ -353,33 +353,33 @@ Yeah, so the trick here is it can forward to any single key.
 So this covers any time you can aggregate a key.
 So think music two or frost or something like that, or single, just a single normal key.
 But this is where we're really hitting limits in the Bitcoin script kind of design is where it's very difficult to compose it further without kind of a radical upgrade to Bitcoin script.
-So it's kind of like that's kind of like the limit we're hitting there.
+So that's kind of like the limit we're hitting there.
 
 Speaker 1: 00:20:51
 
-But I think it's in a really good place in the sense that
+But I think it's in a really good place in the sense that..
 
 Speaker 0: 00:20:54
 
-it solves the problem.
+It solves the problem.
 
 Speaker 1: 00:20:55
 
-It solves it.
+It solves.
 It really it just obliterates the problem in a way that I think is going to be like very, very useful.
 And it's like simple.
 It's It winds up being simpler than the original proposal, which is great.
 
 Speaker 5: 00:21:07
 
-Well, and having it composable means that if you're trying to write some more complicated policy in something like Miniscript, being able to incorporate fault in there without having to like throw out all that tooling.
+Well, and having it composable means that if you're trying to write some more complicated policy in something like `miniscript`, being able to incorporate fault in there without having to like throw out all that tooling.
 And, you know.
 
 Speaker 3: 00:21:20
 
-It also probably composes better with things like Miniscript because now it's, I need an authorization policy on this state transition.
+It also probably composes better with things like miniscript because now it's, I need an authorization policy on this state transition.
 Just add it, right?
-There's no, I don't have to read the spec to know I can do that.
+I don't have to read the spec to know I can do that.
 
 ## Script libraries and CTV templates
 
