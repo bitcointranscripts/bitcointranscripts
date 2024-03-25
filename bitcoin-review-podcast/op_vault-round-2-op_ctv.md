@@ -1072,9 +1072,9 @@ Yeah, we talked about it a bunch on the previous episode, but I think it was Llo
 And now that new op vault has a CTV again, you could do it the same way.
 But basically, like, 10x the usability of DLCs, because say, right, like, if I want to do a DLC like on the Bitcoin price with you, Rodolfo, like it's going to be, you know, like probably like 80,000 signatures and that, doing that on the phone is like, you know, a ton of like processing time and data we need to send.
 So it's not really usable for the layman, at least as much as we'd like it to be.
-But with CTV, or any company, you just distill that into, we both need to generate the same address, and if we do, then we have the same DLC contracts.
+But with CTV, or any covenant, you just distill that into, we both need to generate the same address, and if we do, then we have the same DLC contracts.
 That explodes the usability, I think, and as well as the composability because now you could, with CTV, you could have DLCs that are paid out to, not just my address, we could have it paid out to another DLC or another, some thing where it's like, this goes into an address that then splits it among five people safely instead of having to trust a multi-state configuration or something like that.
-So it makes the like you can kind of get into like the world of like we're now again some really fancy kind of contracts are like almost competing with like eth, degen stuff but like in an actual safe way that's not just like, you know, retarded like JavaScript on the blockchain kind of stuff.
+So it makes like you can kind of get into like the world of like we're now again some really fancy kind of contracts are like almost competing with like eth-degen stuff but like in an actual safe way that's not just like, retarded like JavaScript on the blockchain kind of stuff.
 
 Speaker 1: 00:58:52
 
@@ -1083,7 +1083,7 @@ It's like mostly off chain, right?
 Speaker 4: 00:58:54
 
 Yeah, it's all off chain.
-We're just like, you know, doing hashes and signatures.
+We're just like, doing hashes and signatures.
 But you're able to like do the really complex stuff that's just like a chain of transactions.
 
 Speaker 0: 00:59:04
@@ -1094,14 +1094,13 @@ That's not a joke.
 
 ## How do we activate OP_VAULT?
 
-Speaker 0: 00:59:10
 
 So, okay, great.
 We love this.
 This is very cool.
 How do we activate this?
 Especially now that CTV sort of been added to the hat?
-This is going to be, I mean, Bitcoin activation should be excruciatingly painful.
+Bitcoin activation should be excruciatingly painful.
 I know engineers don't like to hear that, but it kind of should.
 That's a defense mechanism.
 But how do we get there?
@@ -1109,29 +1108,26 @@ But how do we get there?
 Speaker 1: 00:59:31
 
 From here, it goes to AJ Towns Inquisition.
-And what's nice about that is that it's going to allow me and anybody who thinks this is worthwhile to create some example wallet software to play with it, to make sure it's the right thing, you know, to vet it against, like, other outstanding proposals.
+And what's nice about that is that it's going to allow me and anybody who thinks this is worthwhile to create some example wallet software to play with it, to make sure it's the right thing, to vet it against, like, other outstanding proposals.
 Like what's cool about Inquisition is you've got active right now on Inquisition, you've got APO, CTV, some of Greg's mempool stuff.
 So we'll get to see how it plays with some of the other proposals out there.
-But, I mean, so I'm obviously biased.
+I'm obviously biased.
 I've been working on it a lot.
 I'm going to continue to work on it, obviously, and do whatever I can technically.
 But probably there need to be other people who advocate this.
-You know, if other people find this important, they're going to need to speak up and, you know, kind of signal that they actually want it because I'm not in the business of selling, you know, consensus changes.
+You know, if other people find this important, they're going to need to speak up and, kind of signal that they actually want it because I'm not in the business of selling, consensus changes.
 
 Speaker 0: 01:00:22
 
-Oh, but you are, you have to, that's how it works.
+But you are, you have to, that's how it works.
 
 Speaker 5: 01:00:26
 
 That's what this is now.
-But, like the,
 
 Speaker 0: 01:00:28
 
-this is literally what this is.
-Yeah.
-Yeah.
+Because this is literally what this is.
 
 Speaker 5: 01:00:32
 
@@ -1144,7 +1140,7 @@ Welcome to hell.
 Speaker 5: 01:00:36
 
 So the Inquisition thing, I think it's super important, right?
-Because like, I think one of the problems that CTV ran into, for example, is, and like, I don't want to beat up on CTV.
+Because like, I think one of the problems that CTV ran into, for example, is, I don't want to beat up on CTV.
 I think it's just a good illustration.
 
 Speaker 0: 01:00:48
@@ -1161,20 +1157,12 @@ What am I going to get out of this?
 Why does this make Bitcoin better for me?
 And I think it was hard for a lot of people to connect the dots of what they were going to get out of CTV.
 And what's cool about OpVault being active on something like Inquisition is we can go and build wallet software to say, hey, look, here's a single SIG wallet that is as easy to use as a normal phone wallet.
-Maybe it's a command line app,
-
-Speaker 0: 01:01:31
-
-Maybe it's a phone wallet, maybe it's a
-
-Speaker 5: 01:01:31
-
-command line app, maybe it's a phone wallet, maybe it's a web page, whatever.
+Maybe it's a command line app, maybe it's a phone wallet, maybe it's a command line app, maybe it's a phone wallet, maybe it's a web page, whatever.
 But hey, look, if somebody steals your money, here's how you would intervene and recover it.
 Or, hey, here's a wallet that has a built-in inheritance flow.
 Or, hey, here's a wallet that has complex spending conditions for this other use case.
 And people can actually try it out and start building some intuition for how they would actually use these things in their life.
-And I think the way, if we want to do, I'll call it a community-driven or a user-driven activation of a fork, I think people have to really understand, like if I'm gonna go and run this other software on my node and opt into this new set of rules, like what's the economic benefit for me?
+And I think the way, if we want to do, I'll call it a community-driven or a user-driven activation of a fork, I think people have to really understand, like if I'm going to go and run this other software on my node and opt into this new set of rules, like what's the economic benefit for me?
 And so giving people tangible ways of feeling that I think is really important.
 
 Speaker 0: 01:02:19
@@ -1185,12 +1173,10 @@ It is surprisingly like surprising how much these things touch you as soon as yo
 
 ## Is there enough interest to do the work?
 
-Speaker 0: 01:02:43
-
-So, okay, so there was like, for example, say Liana, right, Where they're trying to do some of this sort of fake covenants by just doing a bunch of pre-signed scripts.
+So, okay, so there was like, for example, say Liana, right, where they're trying to do some of this sort of fake covenants by just doing a bunch of pre-signed scripts.
 You know, zero interest from people really.
 I mean, realistically speaking, nobody cares, nobody's interested.
-So How do we get some of this apathy combated?
+So how do we get some of this apathy combated?
 Because nobody's going to do SIGNET.
 Nobody's going to try with fake coins.
 Is this like a whole other, let's make little videos, let's do this, let's do that.
@@ -1199,16 +1185,16 @@ Is there enough appetite, enough budget really, from people that care enough abo
 Speaker 1: 01:03:19
 
 It's a really good question.
-And I think there, I mean, from my perspective, there isn't a big solution for it.
+From my perspective, there isn't a big solution for it.
 I think my approach has been to come up with this solution and put it out there.
 And hopefully, maybe it'll take time for people to actually say, hey, no, we really want this.
 I mean, I think luckily there's a lot of interest, like certainly from large custodians.
-You know, Alex Leishman of River.com has been like really, he went on like a tear when he read the paper.
+You know, Alex Leishman of River.com has went on like a tear when he read the paper.
 And he said like this is like an order of magnitude improvement in my custodial operations.
 This will make me like actually sleep at night.
 So I think like there is definitely industrial interest.
 And obviously that's going to like maybe trigger people a little bit.
-But it's it's really coming from the best.
+But it's it's really coming from the best place.
 
 Speaker 0: 01:04:02
 
