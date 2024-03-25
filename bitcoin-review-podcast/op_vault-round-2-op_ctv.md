@@ -998,8 +998,8 @@ Speaker 5: 00:52:42
 
 So NVK, you just mentioned Cashew, we just talked about `Chaumi` and `Mints` not that long ago.
 This would actually also be great to add to Chaumi and Mints, right?
-So if you have either a Feti Mint or a Cashew Mint and you want to say, all right, we're going to have our Mint's treasury in a vault that has like a, you know, this time locked predestined withdrawal path so that if either one of the functionaries of the mint or if somebody pwns the software and tries to like run away with the money, then we can claw it back.
-This fits in really, really well with the idea that maybe we'll have some collaborative custodyments for a lot of users.
+So if you have either a FediMint or a CashewMint and you want to say, all right, we're going to have our Mint's treasury in a vault that has like a, this time locked predestined withdrawal path so that if either one of the functionaries of the mint or if somebody pawns the software and tries to like run away with the money, then we can claw it back.
+This fits in really, really well with the idea that maybe we'll have some collaborative custody mints for a lot of users.
 
 ## Managing security between L1 & L2
 
@@ -1007,7 +1007,7 @@ Speaker 0: 00:53:25
 
 So what I'm seeing now, just conceptually, there is a trend, right?
 We now understand Bitcoin doesn't scale, right?
-I mean, we knew that from like, you know, 14 years ago.
+I mean, we knew that from like, 14 years ago.
 But like everybody else is sort of starting to catch up with the fact that Bitcoin, even if you make the block size 10 times bigger, right.
 Like it doesn't scale right to 8 billion by the time that we are done with this is going to be 10 billion people in the world, right?
 So we have to find solutions to keep the extreme high value transactions safe, right?
@@ -1016,14 +1016,14 @@ These are not going to be people's phone wallets on base layer.
 And we have to manage to keep all the L2 stuff safe.
 So you have the vaults that feed liquidity into lightning pools, right?
 That sort of fund all the LSPs and all that stuff.
-So you need to keep the coins that feed those safe in enterprise environments or in sort of like, you know, small business sort of solutions, right?
+So you need to keep the coins that feed those safe in enterprise environments or in sort of like, small business sort of solutions, right?
 And we have to do this trans nationally, which makes things extremely complicated from a regulatory point of view and an actual operations.
 Right.
-So like you have, say block has a head office in Canada, head office in the U S, a head office in Germany.
+So like you have, say block has a head office in Canada, head office in the U.S, a head office in Germany.
 They all have three different sets of laws.
 They all want to put everybody in jail.
-So like, you know, how do you resolve these problems with like the whole compliance shit and not get robbed, right?
-So the trend is like, how do we resolve all these ill to custody of a lot of monies?
+So like, how do you resolve these problems with like the whole compliance shit and not get robbed, right?
+So the trend is like, how do we resolve all these L2 custody of a lot of monies?
 And then you have the clearing of essentially Bitcoin is wires, right?
 Eventually, you're going to have people just clearing between each other, like large amounts of of economical value in a smaller possible transaction, because the blocks will be full.
 And then you have this L3 solutions, right, where they don't necessarily clear to Bitcoin, but they're leveraging Bitcoin either to Lightning or directly to create even further atomization of those economic movements, right?
