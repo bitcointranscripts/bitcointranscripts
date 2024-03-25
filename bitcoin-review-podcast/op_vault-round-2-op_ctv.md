@@ -1253,23 +1253,22 @@ Well, right.
 Well, and it's not going to be cheap, right?
 Like If you have a lot of money, a lot of people, and a lot of hardware in geographically distributed locations, you can build a kick-ass vaulting system.
 I think one of the things that's cool about OpVault is it lets anybody build a kick-ass vaulting system just out of Bitcoin script.
-If you're an individual hodler who wants to be able to move money from their phone, but then if they get robbed, then they drive to the bunker, dig the thing out from underneath their well, then you get kind of the same grade of security as somebody who has a shitload of HSMs on three continents.
+If you're an individual hodler who wants to be able to move money from their phone, but then if they get robbed, then they drive to the bunker, dig the thing out from underneath their well, then you get kind of the same grade of security as somebody who has a shitload of `HSMs` on three continents.
 
 Speaker 0: 01:06:17
 
 Well, actually better because, you know, the HSMs could be hacked, the vault can't.
-So, no, but it gets weird, right?
+But it gets weird, right?
 Because see, the Fireblocks have all the FIPS certifications, right?
 So if you wanna get those at that level, you're going to be spending millions of dollars on just the certification.
 Right.
 And it doesn't mean it's secure.
 It means it just has the correct back doors for FIPS.
-So, so like, you know, what's really cool about this is that you're enabling like all this mid-sized businesses to have like the checkboxes needed for them to be big businesses, for insurance purposes, for all the investor due diligence stuff, without having to go and deal with Fireblocks, for example.
-Well, it's
+So, so like, what's really cool about this is that you're enabling like all this mid-sized businesses to have like the checkboxes needed for them to be big businesses, for insurance purposes, for all the investor due diligence stuff, without having to go and deal with Fireblocks, for example.
 
 Speaker 1: 01:07:00
 
-funny you mentioned the insurance stuff because I think, I don't want to put words in his mouth, but I think I recall Rob from Anchor Watch really expressing a lot of support for a proposal like this, this proposal particularly.
+Well, it's funny you mentioned the insurance stuff because I think, I don't want to put words in his mouth, but I think I recall Rob from Anchor Watch really expressing a lot of support for a proposal like this, this proposal particularly.
 And for anybody who isn't familiar, Anchor Watch proposes to be in the business of insuring theft.
 So if you set up a wallet, you know, per some specification that they would give you, they'll say, OK, this is like a good enough setup that we're going to actually insure this against law.
 So if those coins somehow get stolen, you know, we pay you out.
