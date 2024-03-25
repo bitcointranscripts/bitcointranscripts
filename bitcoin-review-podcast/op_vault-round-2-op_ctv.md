@@ -805,20 +805,8 @@ Is that where that came from?
 
 Speaker 1: 00:44:17
 
-So I think if
-
-Speaker 3: 00:44:18
-
-I remember right when we talked about this, it was using the op-vault-recover path.
-So you basically have additional recover paths that point to like a new...
-
-Speaker 5: 00:44:29
-
-It's the same
-
-Speaker 3: 00:44:30
-
-vault, so to speak, but it has to be slightly different because you can't commit to itself.
+So I think if I remember right when we talked about this, it was using the op-vault-recover path.
+It's the same vault, so to speak, but it has to be slightly different because you can't commit to itself.
 But you basically have a cancel path.
 
 Speaker 1: 00:44:37
@@ -840,15 +828,15 @@ So here's a cool thing, right?
 Say, you know, that home issue happened, right?
 The guy hopefully didn't kill me.
 He saw that, you know, like really there's nothing I can do.
-And, but I still feel like the, the S the system is, is like reasonable and say, for example, I have a two week waitout period, right.
+And, but I still feel like the system is, is like reasonable and say, for example, I have a two week waitout period, right?
 That I can still cancel, but to cancel that I have to travel to like a very distant land where I have a specific key that triggers the cancellation.
 The whole beauty of this is that nothing moved.
 Right?
 Like coins not moving is a feature, not a bug.
 Right.
 So like my, that's where like my head is at with a lot of this stuff.
-It's like, how can I build this, the scenarios and, and like, I don't know, like, I hope that at some point soon we start having like some interesting user stories, right?
-Like of like things that you can do and how you actually achieve them, you know, and how do you construct them and like both script wise, but also like how do you deploy them, right?
+It's like, how can I build the scenarios and, and like, I don't know, like, I hope that at some point soon we start having like some interesting user stories, right?
+Like of like things that you can do and how you actually achieve them, and how do you construct them and like both script wise, but also like how do you deploy them, right?
 Okay.
 So is there other aspects of this that should be part of this, of this specific moment of the conversation?
 
@@ -856,7 +844,7 @@ Speaker 1: 00:46:03
 
 Yeah, I think so.
 Like there's another thing people have worried about in the past, which was a surprising one to me, but in hindsight it's understandable.
-I think a few people on Twitter have asked like, okay, well if you've got this ObVault thing and I go and, you know, send some coins to a merchant when I'm buying something.
+I think a few people on Twitter have asked like, okay, well if you've got this OpVault thing and I go and, send some coins to a merchant when I'm buying something.
 But I have this ability to cancel and claw back.
 Can't you scam the merchant by trying to pay, by unvaulting and then reclaiming your coins?
 And yeah, the answer is, of course, like the merchant's wallet expects the coins to be sent to a specific address and you can't actually get to that specific address until you're out of the withdrawal period or the trigger period.
@@ -872,38 +860,36 @@ It's only you, the receiver, that can control that forward.
 
 ## Why do OP_VAULT along with CTV?
 
-Speaker 0: 00:47:30
 
 What other issues do we foresee people having here?
 
 Speaker 1: 00:47:35
 
-So let's just like just so we make sure we address this one.
+So let's just make sure we address this one.
 I want to say kind of, okay, well, now OpVault's all modular and composable, and it doesn't have a strict reliance on CTV.
 Like, why am I recommending we do this along with CTV?
 Like, why can't we wait for something else?
 And the answer there is, so number one, like to do vaults, you need some way of saying, okay, I'm publicly committing to these coins going to a fixed set of outputs.
 So you just kind of need that behavior.
 Number two, CTV winds up being the safest way to do that and the simplest way to do that.
-Like, when I started this proposal, I wanted to, I mean, I love Jeremy, I love his work, we're friends.
-I think the world of CTV, but I didn't want to go out and just do CTV because I knew there was going to be a bunch of drama and controversy, yada, yada, yada.
+I love Jeremy, I love his work, we're friends.
+I think the world of CTV, but I didn't want to go out and just do CTV because I knew there was going to be a bunch of drama and controversy.
 But this convergent evolution thing happened where the solution that we came to, it just wound up encompassing CTV.
 Jeremy's already written a bunch of tests, like the change set is really very small to do the whole CTV thing.
 So I figured I'll just reuse that.
 He's already got a bit like pull that in.
-The union of the CTV changes and the OpVault changes wind up being about 5,000 lines, which is, I'd have to check the numbers, but I'm gonna say it's like an order of magnitude less change than like Taproot or SegWit.
+The union of the CTV changes and the OpVault changes wind up being about 5,000 lines, which is, I'd have to check the numbers, but I'm going to say it's like an order of magnitude less change than like Taproot or SegWit.
 So you're looking at a potential.
-Or elements.
-Or, oh yeah, I mean like, you know.
 
 Speaker 0: 00:49:09
 
+Or elements.
 Is it 80,000?
 
 Speaker 1: 00:49:10
 
 The simplicity, yeah, the simplicity branch on elements.
-And I don't wanna trash like that.
+And I don't want to trash like that.
 
 Speaker 0: 00:49:14
 
@@ -916,7 +902,7 @@ Speaker 1: 00:49:21
 Yeah.
 Yeah, exactly.
 Exactly.
-And so that's I guess my point is like I want to return to an era where like we can look at small soft forks Because Segwit and Taproot were complete reimaginings almost of like various aspects of Bitcoin.
+I guess my point is like I want to return to an era where like we can look at small soft forks Because Segwit and Taproot were complete reimaginings almost of like various aspects of Bitcoin.
 And there were massive, massive like engine overhauls.
 And this is a change that's a lot like check sequence verify or check time lock verify or check lock time verify, like really well contained, pretty modest, simple changes.
 And so both CTV and OpVault are a very manageable, kind of small set.
