@@ -1,13 +1,28 @@
 ---
-title: "Bitcoin Core Wallet"
+title: "The Bitcoin Core Wallet"
 transcript_by: chippsmith via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Andrew-Chow-and-the-Bitcoin-Core-Wallet---Episode-30-e204vdj
-tags: ["bitcoin-core","coin-selection","descriptors","hardware-wallet","hwi","psbt","wallet"]
-speakers: ["Andrew Chow","Adam Jonas"]
+tags: ["bitcoin-core","coin-selection","descriptors","hwi","psbt","wallet"]
+speakers: ["Andrew Chow"]
 categories: ["podcast"]
+summary: "The discussion with Andrew Chow explores the evolution of the Bitcoin Core wallet, emphasizing significant developments like descriptor wallets and PSBT for enhancing functionality and interoperability. The conversation highlights the continuous efforts to refactor and improve the wallet's codebase, addressing challenges and introducing innovations in coin selection and transaction management. The importance of maintaining high security and review standards is underscored, reflecting the wallet's role in supporting Bitcoin's core principles. Future directions include improving the wallet's performance, user experience, and GUI."
+episode: 30
 date: 2023-03-09
+additional_resources:
+-   title: Hardware Wallet Integration (HWI)
+    url: https://bitcoinops.org/en/topics/hwi/
+-   title: Partially Signed Bitcoin Transactions (PSBT
+    url: https://bitcoinops.org/en/topics/psbt/
+-   title: Survey Results
+    url: https://github.com/achow101/2021-core-survey
+-   title: Bitcoin Core GUI
+    url: https://github.com/bitcoin-Core/gui
+-   title: Bitcoin Core GUI-QML
+    url: https://github.com/bitcoin-Core/gui-qml
+-   title: Descriptor
+    url: https://bitcoinops.org/en/topics/output-script-descriptors/
 ---
-## Opening
+## Intro
 
 Andrew Chow: 00:00:00
 
@@ -109,7 +124,7 @@ But if you just keep moving your funds about three times a year, it'll remain un
 
 Adam Jonas: 00:03:09
 
-That's the re-vault folks.
+That's the Revault folks.
 
 Murch: 00:03:11
 
@@ -131,7 +146,7 @@ The other thing is, well, Bitcoin Core has always had a wallet.
 
 Murch: 00:03:25
 
-There are some people that will not trust other Bitcoins other than using Bitcoin Core.
+There are some people that will not trust other Bitcoin software other than Bitcoin Core.
 
 Andrew Chow: 00:03:32
 
@@ -272,7 +287,7 @@ So you did the refactor, you got descriptor wallets in.
 Are you happy with where things are at?
 I disagree in terms of you're not getting attention.
 There's the guy sitting at the table with us.
-There's Ferzi.
+There's Furszy.
 There's Josie.
 What else do you want, man?
 
@@ -322,9 +337,9 @@ Murch: 00:11:38
 
 So I looked the first time really at the wallet in 2014 when I got interested in coin selection.
 And you could probably pretty easily still figure out that all of Bitcoin was a part of a single file at some point, almost.
-It all came out of main.cpp and people had then pulled out a few things.
+It all came out of `main.cpp` and people had then pulled out a few things.
 For example the coin selection stuff had not really been touched since 2011.
-Somebody introduced an knapsack then.
+Somebody introduced knapsack then.
 Before that, I think it was just either largest first selection or oldest first selection.
 
 Murch: 00:12:12
@@ -365,7 +380,7 @@ Murch: 00:12:54
 Yeah, anyway, somebody put in knapsack.
 Knapsack is terrible.
 We still have knapsack.
-And then I think Alex Marcos fixed something about the looping behavior after my master thesis, and then nobody touched that part of the wallet until 2018.
+And then I think Alex Morcos fixed something about the looping behavior after my master thesis, and then nobody touched that part of the wallet until 2018.
 
 Andrew Chow: 00:13:14
 
@@ -391,7 +406,7 @@ What kind of coins do we want?
 What fee rates?
 All that stuff.
 None of that was really in consideration, I think.
-And it was mostly here's a thing that we inherited from people who wrote something several years ago, and now it doesn't work.
+And it was mostly, here's a thing that we inherited from people who wrote something several years ago, and now it doesn't work.
 It's completely black magic.
 We don't know why it doesn't work.
 We don't know what the hell it's actually doing.
@@ -407,11 +422,14 @@ Andrew Chow: 00:14:24
 This started when I was interning at Blockstream in 2017.
 And one of my projects then was to implement Murch's coin selection algorithm in Bitcoin Core.
 And of course, because coin selection was at that time a black box, no one knew how it actually worked.
-There was a question of can you demonstrate that this is better for some definition of better that is still undefined?
+There was a question of, can you demonstrate that this is better for some definition of better that is still undefined?
 
-Adam Jonas: 00:14:48
+Murch: 00:14:48
 
 So I wrote a whole thesis about that.
+
+Adam Jonas: 00:14:52
+
 What's the framework of better, then?
 
 Murch: 00:14:54
@@ -470,13 +488,16 @@ And then in doing that, you know, learn about how coin selection works, and does
 And this also led to another refactor that ended up being delayed quite a long time.
 To clean up coin selection and get rid of some other dumb behavior that we had in it.
 
-## Partially Signed Bitcoin Transactions (PSBT)
+## Wallet interoperability
+
+### Partially Signed Bitcoin Transactions (PSBT)
 
 Adam Jonas: 00:17:09
 
 So you've taken us on this tour of getting to coin selection and talking about simulating behavior, which gives us actually some criteria to compare against, which seems like a good idea.
 But these aren't your only projects.
-You've also been thinking about PSBTs. There's hardware integration.
+You've also been thinking about, like, You led the effort on PSBTs.
+There's hardware integration.
 How do these all fit together?
 
 Andrew Chow: 00:17:35
@@ -486,11 +507,11 @@ Turns out, because it's very hard.
 
 Murch: 00:17:45
 
-So basically you were saying I want to be able to transfer an unsigned transaction between one device and another device and I need a standardized format for that.
+So basically you were saying, "I want to be able to transfer an unsigned transaction between one device and another device and I need a standardized format for that".
 And it turns out that introducing a format for talking about unsigned or half-signed or partially signed transactions is something that a lot of people actually also need and have implemented before, but having a single standard for it was pretty awesome.
 And down the road, what it makes much, much easier is multi-party transactions.
 
-## Hardware Wallet Integration (HWI)
+### Hardware Wallet Integration (HWI)
 
 Andrew Chow: 00:18:20
 
@@ -512,11 +533,10 @@ Digital Bitbox.
 They had a really simple protocol that I could implement in Python.
 And there might have also been a Python library.
 So I did it all in Python, mostly for myself.
-And I found out that I can get a thing that Bitcoin Core can watch.
+And I found out that I can get a thing that Bitcoin Core can watch for.
 But how do I get transactions out of Bitcoin Core into the script and get that to all the devices, including all the other information that they need to sign?
 And that stuff includes, for each of those devices, they have different protocols.
 So you now need to take it in some common format that I can give to my program, that needs to convert it into all these other protocols that I can send out to the device.
-
 
 Murch: 00:19:27
 
@@ -539,10 +559,8 @@ What other things are using this kind of thing?
 Andrew Chow: 00:20:17
 
 Well, so the other thing is like multi-party transactions.
-It allows us to do things like multi-sigs, or....
-Coinjoins.
-PayJoins.
-Anything that required having multiple people involved was made easier by having PSPT because now it was a common data format that contained all the information you needed to know in order to sign it, except for the private keys, obviously.
+It allows us to do things like multi-sigs, or coinjoins, PayJoins.
+Anything that required having multiple people involved was made easier by having PSBT because now it was a common data format that contained all the information you needed to know in order to sign it, except for the private keys, obviously.
 And so you can just pass it around to everyone, they can sign it, and it just makes life a lot easier.
 
 Murch: 00:20:48
@@ -682,10 +700,8 @@ Well, I will not say this is like an unreasonable approach for a first implement
 Adam Jonas: 00:25:14
 
 Sure, but this is, you know, Satoshi's been gone for a little bit.
-Interesting.
 
 Andrew Chow: 00:25:20
-
 
 So the next thing I want to do in this rewrite of the wallet is to change how we do UTXO tracking, to actually store UTXOs and to do things where we load in a bunch of transactions that are completely irrelevant because every single output's been spent.
 Or we load in transactions because they exist on disk and maybe they are completely irrelevant.
@@ -839,7 +855,7 @@ But then you tell us that it actually doesn't.
 Andrew Chow: 00:30:16
 
 I don't like responses like that.
-I don't know if I collected this in the survey, but I think most people who use Bitcoin core actually use it actually as a wallet, use it through the GUI, including myself.
+I don't know if I collected this in the survey, but I think most people who use Bitcoin Core use it actually as a wallet, use it through the GUI, including myself.
 When I want to use it as a wallet, I use it through the GUI because I'm lazy.
 So having a good user experience in the GUI is important.
 
@@ -890,7 +906,7 @@ I know there's Sparrow and I know there's Specter and there's some other solutio
 Andrew Chow: 00:32:17
 
 Yeah, probably.
-And I think there are some people who have been working on stuff like that, but not necessarily in a nice GUI form
+And I think there are some people who have been working on stuff like that, but not necessarily in a nice GUI form.
 
 ## Switch to Descriptor-based wallets
 
@@ -904,7 +920,7 @@ Can you tell us a little bit about that?
 Andrew Chow: 00:32:52
 
 Yeah.
-So descriptor wallets, after we did the whole refactor, it turned out, because descriptor wallets was so fundamentally different that we had to do the refactor, they're just completely incompatible with the old style of wallet, which we would call legacy wallets.
+So descriptor wallets, after we did the whole refactor, because descriptor wallets was so fundamentally different that we had to do the refactor, they're just completely incompatible with the old style of wallet, which we would call legacy wallets.
 Legacy is not a great term to be using here.
 It's used in too many places.
 
@@ -929,9 +945,9 @@ People would freak out.
 Andrew Chow: 00:33:53
 
 Yeah.
-We wanted to have a way to one, to, to just convert those kinds of wallets to descriptive wallets after we get rid of the legacy wallet.
+We wanted to have a way to one, to, to just convert those kinds of wallets to descriptor wallets after we get rid of the legacy wallet.
 And then we also want to have a smoothed-out deployment timeline.
-So We introduce Descriptive Wallets as a new thing, but it's not the default.
+So We introduce descriptor wallets as a new thing, but it's not the default.
 Then we change it to the default.
 Then we say, if you start loading a legacy wallet, we're going to tell you, hey, this thing is deprecated and it's going to go away eventually.
 And then we upgrade that later to, hey, this thing is deprecated and it's going to go away soon.
@@ -980,7 +996,7 @@ Sometimes.
 We don't really have benchmarks for this, so it's hard to say.
 So one of the things with legacy wallets is that there was no explicitly defined set of scripts that we are watching for.
 And actually this set was unbounded for a very long time.
-So there's the obvious ones like, if you would see some script, and we'd say, figure out what kind of script is this.
+The way that it would work is you would see some script, and we'd say, figure out what kind of script is this.
 Like, is it P2PKH?
 Is it P2WPKH?
 Is it P2SH?
@@ -1013,13 +1029,14 @@ Yeah, because they write the data now to inputs instead.
 
 Adam Jonas: 00:38:50
 
-Does any of this matter?
 Awesome.
 Thank you for the discussion.
 We covered a lot of ground here.
 Good talking with you.
 
 ## Closing
+
+Adam Jonas: 00:39:07
 
 All things wallet.
 I don't know if we can talk about wallets anymore.
