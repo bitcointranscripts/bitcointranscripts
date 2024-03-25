@@ -153,7 +153,7 @@ You can come up with schemes where you have a pretty good assurance that you del
 
 The advantage of then using check template verify or something like it, you can use any prev out.
 But basically what you need is a way of at the consensus layer on layer one, locking the coins to travel a certain path.
-And that's all CheckTemplateVerify does.
+And that's all `CheckTemplateVerify` does.
 
 Speaker 0: 00:08:55
 
@@ -161,12 +161,12 @@ How is that achieved?
 
 Speaker 1: 00:08:57
 
-So what you do is, what CheckTemplateVerify says is, it has one argument, which is the hash.
-So you do like in your script, you know, where in your script you might say, hey, I require a signature from the private key that has this corresponding public key.
+What CheckTemplateVerify says is, it has one argument, which is the hash.
+So you do like in your script, where in your script you might say, hey, I require a signature from the private key that has this corresponding public key.
 The way that CheckTemplateVerify works instead is like, hey, I require the outputs and some other information about the spending transaction to look this way, to hash to this value.
-So it basically just uses one half of what's called the SIG hash right now.
+So it basically just uses one half of what's called the `SIG hash` right now.
 It uses basically the output side of the SIG hash as well as some other stuff to just lock some coins into being spent into a particular set of outputs.
-But then what you can do is, maybe the programmers out there will start to follow, You can recursively use check template verify to build out this like tree of transactions that you're pre committing to.
+But then what you can do is, maybe the programmers out there will start to follow, you can recursively use check template verify to build out this like tree of transactions that you're pre committing to.
 And it turns out you can use that technique then to build a vault that removes the need for this temporary key.
 So you get rid of the key deletion problem if you actually use check template verify.
 And you also get rid of the need to persist all the signature data for your pre-signed vaults.
@@ -180,28 +180,28 @@ It makes vaults quite a bit simpler operationally.
 But where it still falls down is in CheckTemplateVerify, it's very, very constrained because you have to spell out exactly what the nature is of all the outputs that you're going to be using.
 And so you have to decide on which wallet you're actually unvaulting to.
 You have to decide on what kind of fee rate you're paying or what your fee structure is.
-Like maybe you have some, you know, child pays for parent outputs.
+Like maybe you have some, child pays for parent outputs.
 So you're still kind of locked into a very particular flow of funds, a very particular set of parameters.
 
 Speaker 0: 00:11:25
 
 Right.
-So I mean, do we still need the nuclear key, something that we have a full backup from on CTV, I guess that's not possible, right?
+Do we still need the nuclear key, something that we have a full backup from on CTV, I guess that's not possible, right?
 You're now truly committed to that template and to what comes out of that, right?
 You no longer have your nuclear option really.
 Is that right?
 
 Speaker 1: 00:11:46
 
-So you still, with CTV, you still have your like recovery path.
-And in fact, like in CTV, you could have a little escape hatch where you say, okay, at any time I spend the full balance of this vault to, you know, a certain, a certain key pair Like CTV lets you do that.
+With CTV, you still have your like recovery path.
+And in fact, like in CTV, you could have a little escape hatch where you say, okay, at any time I spend the full balance of this vault to, a certain, a certain key pair Like CTV lets you do that.
 So CTV really lets you do anything.
 All CTV makes you do is kind of pre-commit to how the coins can be spent.
 
 Speaker 5: 00:12:11
 
-Well, and because of Taproot, you could have a tap leaf that's like, you know, anything you want with a particular key or with, you know, some quorum of keys or something.
-So you could say, I'm going to do a CTV spend path for like my normal spending paths, but then I have some other tap leaf that's, you know, unencumbered, except by like normal checks of operations.
+Well, and because of `Taproot`, you could have a tap leaf that's like, anything you want with a particular key or with, some quorum of keys or something.
+So you could say, I'm going to do a CTV spend path for like my normal spending paths, but then I have some other tap leaf that's, unencumbered, except by like normal checks of operations.
 
 Speaker 0: 00:12:33
 
@@ -210,7 +210,7 @@ But that's only if you're using Taproot.
 Speaker 1: 00:12:36
 
 No, no.
-Well, even so Taproot makes it more efficient, but even before Taproot, you can still have conditional scripts.
+Taproot makes it more efficient, but even before Taproot, you can still have conditional scripts.
 Right.
 And so with CTV, you can still kind of lock in those conditional scripts and say there could be any number of spend conditions.
 
@@ -218,11 +218,10 @@ Speaker 0: 00:12:51
 
 Okay.
 So what you're saying is now like your proposal is sort of like, it's kind of still the same, but you're added the fact that now if you have CTV on it, right?
-I mean, you can make the vaults more usable and more realistic and sort of, you know, not make them so convoluted as they were before because of the ephemeral key issue.
+I mean, you can make the vaults more usable and more realistic and sort of, not make them so convoluted as they were before because of the ephemeral key issue.
 
 ## Fee issues on CTV
 
-Speaker 0: 00:13:12
 
 How are you resolving the fee issues on CTV?
 
@@ -232,18 +231,18 @@ Yeah, yeah.
 And so to be clear, we're still talking about like history.
 This isn't anything to do with the new vault proposal.
 This is kind of like how we got to the new vault proposal.
-But so yeah, you know, fee management's really an important thing to worry about when you're thinking about vaults, because you're locking coins up for potentially, you might leave these coins in this vault for years and years and years, you might withdraw it next week, but it also might stay there for a long time.
+But so yeah, fee management's really an important thing to worry about when you're thinking about vaults, because you're locking coins up for potentially, you might leave these coins in this vault for years and years and years, you might withdraw it next week, but it also might stay there for a long time.
 
 Speaker 0: 00:13:43
 
-Other years.
+100 years.
 
 Speaker 1: 00:13:44
 
-Yeah, Yeah, exactly.
+Yeah, yeah, exactly.
 And so if in the meantime, the fee market's gone crazy, as maybe we all hope it will in some sense, and fees are much, much higher than when you initially created the vault, you can get into a lot of trouble if the fee rate that you actually put onto these pre-formulated transactions isn't high enough.
 And so one technique that you can use is basically locking in some outputs that are just used for fee control.
-Like you could have a sort of a dummy output that maybe anybody can spend or you know goes to a.
+Like you could have a sort of a dummy output that maybe anybody can spend or you know goes to a...
 
 Speaker 5: 00:14:22
 
@@ -276,7 +275,7 @@ One is people call it bring your own fee where you add an input and a change out
 Right.
 So you can add this dynamically.
 And the other is child pays for parent where again, you have this anchor and you spend it.
-So basically for James Obfolt idea, He had to kind of shoehorn one of those ideas in there.
+So basically for James Opvault idea. He had to kind of shoehorn one of those ideas in there.
 
 ## How has the proposal evolved?
 
