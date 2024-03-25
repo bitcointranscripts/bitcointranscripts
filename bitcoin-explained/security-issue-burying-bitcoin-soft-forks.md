@@ -640,11 +640,9 @@ Speaker 0: 00:29:36
 
 Yeah, well that's interesting you bring that up.
 I think that's right.
-So these are sort of two ways of looking at signaling, whether it's informing Miners or whether it really means readiness signaling, which is definitely a term that has been used, but recently during the Taproot debates, there was also sort of this idea that signaling is really for users.
+So these are sort of two ways of looking at signaling, whether it's informing miners or whether it really means readiness signaling, which is definitely a term that has been used, but recently during the Taproot debates, there was also sort of this idea that signaling is really for users.
 
 ## Weeds
-
-Speaker 0: 00:29:57
 
 So users know that a certain change will activate, which also allows them to fork off if they disagree with the change, for example.
 And that's really the reason for signaling.
@@ -655,10 +653,10 @@ Speaker 1: 00:30:17
 
 That's fine.
 We've shown the listeners where the weed is.
-Right.
 
 Speaker 0: 00:30:27
 
+Right.
 Where the weed is?
 
 Speaker 1: 00:30:28
