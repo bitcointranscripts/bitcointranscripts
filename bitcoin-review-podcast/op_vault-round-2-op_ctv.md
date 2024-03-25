@@ -493,6 +493,9 @@ Terrible way.
 Speaker 0: 00:27:45
 
 Yeah, I  mean, multisig would be a lot better.
+
+Speaker 5: 00:27:48
+
 It would be a lot better.
 
 Speaker 1: 00:27:48
@@ -505,7 +508,7 @@ For a lot of reasons, right?
 So one of the problems with covenants is you have to go and figure out all of these conditions in the future when things get changed.
 So if you have your allow list or your white list of where these coins are allowed to go.
 Every time you update that list, you have to go and like recompute the covenants and you have to get everybody to like reroll their coins.
-It's a lot simpler if you just say, hey, your coins are now in a two of two multi-sig and I have a co-signing Oracle and my co-signing server will refuse to sign a transaction with you unless they're going to an approved destination like that's that's how you would actually build Fedcoin.
+It's a lot simpler if you just say, hey, your coins are now in a two of two multi-sig and I have a co-signing Oracle and my co-signing server will refuse to sign a transaction with you unless they're going to an approved destination like that's that's how you would actually build `Fedcoin`.
 
 Speaker 0: 00:28:27
 
@@ -514,7 +517,7 @@ Also like how is the exchange going to make this happen?
 Speaker 3: 00:28:32
 
 They can't, so that's the point.
-You hand the exchange an address, This address commits to all the spending conditions.
+You hand the exchange an address. This address commits to all the spending conditions.
 So don't include those spending conditions.
 And you're okay.
 Right?
@@ -524,12 +527,12 @@ That's the end.
 Speaker 0: 00:28:46
 
 Yeah.
-I mean, you're still like, you know, holding the bag next.
+I mean, you're still like, holding the bag next.
 I mean, it's still yours and Bitcoin is very good that way.
-So you're already pre defended against, against deeds.
+So you're already pre defended against deeds.
 Let's put it this way.
 Unwanted new deeds on your coin.
-Ben, I think you want to add something?
+Ben, do you want to add something?
 
 Speaker 4: 00:29:03
 
@@ -550,7 +553,7 @@ So just don't do that.
 
 Speaker 0: 00:30:07
 
-I guess like the next one sounds kind of, you know, kind of silly, but, Oh my God, recursive stuff, right?
+I guess like the next one sounds kind of, kind of silly, but, my God, recursive stuff, right?
 Like are we at OPIVO again?
 
 Speaker 1: 00:30:18
@@ -561,7 +564,7 @@ Right.
 Speaker 0: 00:30:19
 
 You know, What are the issues that we could have here?
-Or at least what are the, there really is no issues, but like what are the perceived issues that we could have here if we have like recursive things happening in the base layer?
+There really is no issues, but like what are the perceived issues that we could have here if we have like recursive things happening in the base layer?
 
 Speaker 1: 00:30:34
 
@@ -570,9 +573,9 @@ The first concern is, oh no, what if I get coins caught in some infinite loop an
 And my answer to that is kind of like, well, you can burn coins in a number of ways today.
 So like, feel free to burn your coin.
 But the second more nuanced and definitely the thing that I worried about with covenants when I first encountered them was what kind of like on-chain contagion could you see?
-Like, are you going to like, We don't want to go anywhere near having Ethereum-like execution characteristics on-chain in Bitcoin.
+We don't want to go anywhere near having Ethereum-like execution characteristics on-chain in Bitcoin.
 That's obviously nobody in the right mind wants to do that.
-And so if you talk about, you know, the thing that scared me when I first started hearing about covenants was this unbounded opcat execution, where you can just have the script interpreter go crazy because it's trying to do this really complicated thing and maybe blowing up in space or time or whatever.
+And so if you talk about, the thing that scared me when I first started hearing about covenants was this unbounded opcat execution, where you can just have the script interpreter go crazy because it's trying to do this really complicated thing and maybe blowing up in space or time or whatever.
 And I think that's a completely legitimate concern and something to look at.
 The irony, I think, specifically with CTV is it's what's called a limited or non-recursive covenant.
 And so like with CTV, you can't have an unending tree of transactions that the covenant locks the coins up in.
