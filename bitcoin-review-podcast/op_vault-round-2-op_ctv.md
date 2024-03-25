@@ -583,9 +583,9 @@ With OpVault, OpVault is actually a fully recursive covenant.
 And that's kind of part of the value is you don't want to be bounded in the number of times you can withdraw from your vault.
 If you want to maintain that vault for your whole life, you should be able to do that.
 But the important thing to address is that there's no on-chain pollution in terms of resource use.
-And, you know, in the case of OpCTV, it's literally just doing a hash.
-It's like It's less expensive than elliptic curve operations.
-Basically the whole Internet's been trying to break CTV to, you know, like, hassle Jeremy since it came out and nobody's been able to.
+And, in the case of OpCTV, it's literally just doing a hash.
+It's less expensive than elliptic curve operations.
+Basically the whole Internet's been trying to break CTV to, like, hassle Jeremy since it came out and nobody's been able to.
 I mean, I tried.
 There's been multiple Bitcoin bounty.
 So CTV is like the Galaxy Brain criticism of CTV when it was on the table was, it doesn't go far enough.
@@ -598,11 +598,10 @@ Well, we don't have even a proposal for that.
 
 Speaker 1: 00:32:50
 
-Yeah, I mean, there's kind of...
 There's ideas.
 Yeah, there are ideas for using CAT and CheXIG from Stack to do these very messy script, giant programs that people put on chain.
 I'm very skeptical of all that.
-And frankly, like, if you think about what are the things that you actually want to use Covenants for, I have two things I'm excited about.
+And frankly, like, if you think about what are the things that you actually want to use covenants for, I have two things I'm excited about.
 Number one is vaults, which like literally everybody using Bitcoin should care about because it's about safer custody.
 And number two is something like coin pools, where you could actually scale Bitcoin by sharing UTXO ownership in a trustless way.
 Coin pools is still a science experiment.
@@ -610,35 +609,35 @@ And I hope to God it happens because we need it.
 But it's very much a science experiment.
 Nobody really understands it.
 Vaults are extremely well understood.
-And so I don't really care about general covenant mechanisms because I like the two things that I'm excited about are kind of like squared away in my mind.
-And, you know, OpVault hits the first use case really well.
+And so I don't really care about general covenant mechanisms because like the two things that I'm excited about are kind of like squared away in my mind.
+And, OpVault hits the first use case really well.
 
 Speaker 0: 00:33:49
 
-Okay so what are there, I mean we can get more into the CTV stuff but is there like other sort of criticisms?
-I'm trying to essentially like what I want to know is like what do we expect once we start putting this out there as like, Hey, I think it's done.
+We can get more into the CTV stuff but is there like other sort of criticisms?
+I'm trying to essentially like what I want to know is like what do we expect once we start putting this out there as like, hey, I think it's done.
 Let's let's activate.
 Right.
 I mean, it's still going to take a while, but like, it's going to happen.
 Right.
-And, and I want to just preemptively understand like, you know, what's coming here and how do we address it?
-Because, you know, this is Bitcoin.
+And, I want to just preemptively understand like, what's coming here and how do we address it?
+Because, this is Bitcoin.
 
 ## Do we need OP_VAULT? Why change Bitcoin?
 
 Speaker 5: 00:34:21
 
-I think like another question that I've seen around is, you know, hey, we have mini script is like getting better.
+I think like another question that I've seen around is, hey, we have mini script is like getting better.
 People are building better tooling for doing Bitcoin script, do we need this?
 What does this give us that we can't already do?
 And I think that that's probably not a question coming from a place of trying to tear apart UpVault.
 It's more a general question of anytime we add anything, we should say, like, do we really need this?
-It's fair.
 
 Speaker 0: 00:34:53
 
+It's fair.
 It's a fair question.
-It's like Bitcoin works with like, original pre-BIP32, like, you know, pay-to-key.
+It's like Bitcoin works with like, original pre-BIP32, like, pay-to-key.
 So like, I mean, why do we need more stuff?
 Right.
 I mean, like it works.
@@ -654,7 +653,7 @@ We may have to chew on it a little bit to kind of fully articulate it well.
 But the idea is that right now, like without OpVault, there is no way of starting a relative time lock, like at any point you choose.
 So right now you can lock up some coins and you can say, okay, I have this crazy taproot tree that has all these different spending conditions.
 One of them is that in a year, the coins are going to go to my recovery key or are spendable by my recovery key.
-You're like, oh yeah, I've got vaults.
+You're like, yeah, I've got vaults.
 But you actually don't because when you actually create that UTXO, the clock has started on that year long kind of march towards the recovery.
 And so what you wind up having to do is like, say, rotate your coins every so often.
 And there's a trade off then between how often you have to rotate your coins and when they become accessible by the recovery path.
