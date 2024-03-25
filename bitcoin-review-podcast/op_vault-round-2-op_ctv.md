@@ -1,17 +1,17 @@
 ---
 title: "OP_VAULT Round 2 & OP_CTV"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=h4ReIIapN8Y
-tags: ['vaults', 'op-checktemplateverify', 'dlc', 'soft-fork-activation']
-speakers: ["James O'Beirne", 'Greg Sanders', 'Rijndael', 'NVK', 'Ben Carman']
-categories: ['podcast']
+tags: ["vaults","op-checktemplateverify","dlc","soft-fork-activation"]
+speakers: ["James O'Beirne","Greg Sanders","Rijndael","NVK","Ben Carman"]
+categories: ["podcast"]
 date: 2023-05-11
 ---
 ## Introductions
 
 Speaker 0: 00:01:25
 
-Today, we're going to get back to OBVault, just kidding, UpVault, this new awesome proposal on how we can make people's money safe in the future.
+Today, we're going to get back to OPVault, just kidding, OpVault, this new awesome proposal on how we can make people's money safe in the future.
 And in my opinion, one of very good ways of scaling Bitcoin self-custody in a sane way.
 And with that, let me introduce today's guests, Mr. James.
 And welcome back.
@@ -21,7 +21,7 @@ Speaker 1: 00:01:32
 Hey, thanks.
 It's always good to be here.
 This is quickly becoming my favorite Bitcoin podcast.
-It's not official yet, so don't, you know, go bandying that about, but we're on the road.
+It's not official yet, so don't go bandying that about, but we're on the road.
 
 Speaker 0: 00:01:43
 
