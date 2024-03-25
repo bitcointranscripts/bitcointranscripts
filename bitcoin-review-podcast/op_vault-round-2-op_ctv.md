@@ -689,12 +689,12 @@ And it's worth pointing out that we're only even talking about the opvault use w
 We're not talking about intervening in a key theft or preventing the theft of your Bitcoins.
 There's just like simply no way of doing that today, especially when you start talking about all the cool kind of recovery methods that you could use, whether whether it is like some kind of crazy offline, cypher wheel key that you generate, or whether it's a three of five social recovery that you distribute to your family, or whether it's some kind of like long time lock thing, or whether it's like all these conditions under a single taproot tree, like you can really, really get an incredible degree of security that you hopefully never have to use.
 And then in the meantime, you can feel very confident about using, say, just a single cold card or even a software wallet, honestly, if you have the right kind of watchtowers in place for really convenient transactions.
-But you still sleep at night because you know, okay, I have, you know, let's say a two day time lock.
-Someone, you know, like there's no way someone's going to walk away with my coins and I'm not going to intervene kind of in a period like that.
+But you still sleep at night because you know, okay, I have, let's say a two day time lock.
+Someone, like there's no way someone's going to walk away with my coins and I'm not going to intervene kind of in a period like that.
 
 Speaker 0: 00:39:30
 
-One thing I'd love to do is, I kind of wanted to do this with CodeCard before, which is you integrate the hardware device into your home alarm system.
+One thing I'd love to do is, I kind of wanted to do this with `CodeCard` before, which is you integrate the hardware device into your home alarm system.
 And this is totally doable.
 It's just kind of cost and not yet interested in the complexity.
 But, and this could be wireless too, which poses other trade-offs, but let's say it's wired.
@@ -706,7 +706,7 @@ And if you don't stop the device timer, the coins go away or the device bricks i
 Right, like super, super easy to do.
 Like you can ship it tomorrow kind of thing.
 But the problem is I don't feel safe doing this unless I have other recovery methods that are involved on this, right?
-Because again, 10 years pass that you had that set up on because the device is good, the setup is good, And ideally you don't touch your shit once it's working.
+Because again, 10 years pass that you had that set up on because the device is good, the setup is good. And ideally you don't touch your shit once it's working.
 Right.
 So 10 years past, I can't remember anymore.
 Is that key, the recovery key really backed up?
@@ -715,15 +715,14 @@ That kind of stuff.
 I can't remember.
 Maybe I hit the head in the something and I just forget.
 The people forget.
-And if I have like a proper like recovery, like part of the recovery path, not part of your script path, like, but there is for that key where the money goes.
-Whereas a pre signed thing, you feel a lot more secure without having to remember all this stuff.
+And if I have like a proper like part of the recovery path, not part of your script path, like, but there is for that key where the money goes.
+Whereas a pre-signed thing, you feel a lot more secure without having to remember all this stuff.
 That could live in a vault somewhere of your will and you're probably still alive hopefully and you go, you check it.
-Oh yeah, of course, it goes here.
+Yeah, of course, it goes here.
 So you didn't get robbed and the money is not gone.
 Right.
 That's huge.
 This is the kind of stuff that I think we're going to like start getting into as the years and attack like the physical attacks will start to increase, especially as you will see a billion dollar Bitcoin for the year.
-So
 
 Speaker 5: 00:41:33
 
@@ -739,7 +738,7 @@ Fuck Raspberry Pis.
 Speaker 5: 00:41:45
 
 Sure.
-But you could like run that on a low power, you know, Unix machine of your choice, you know, hook it up to your alarm system, get a signal over MQTT or something, and then have a cold card plugged in in CK bunker mode and have it just automatically send your coins if somebody opens the door between 2 a.m. And 6 a.m. Or something.
+But you could like run that on a low power, Unix machine of your choice, you know, hook it up to your alarm system, get a signal over `MQTT` or something, and then have a cold card plugged in in CK bunker mode and have it just automatically send your coins if somebody opens the door between 2 a.m. and 6 a.m. Or something.
 
 Speaker 0: 00:42:08
 
@@ -748,7 +747,7 @@ That's how banks work.
 Speaker 5: 00:42:09
 
 Yeah, for sure.
-And so, but anybody who does that is gonna have this moment of like, oh shit, I've got this unlocked live device that can now send all my money anywhere.
+But anybody who does that is going to have this moment of like, oh shit, I've got this unlocked live device that can now send all my money anywhere.
 
 Speaker 0: 00:42:19
 
@@ -761,16 +760,16 @@ But it's still this risk of like, how much do I really trust this thing?
 
 Speaker 0: 00:42:24
 
-Oh, of course.
+Of course.
 
 Speaker 5: 00:42:24
 
-So by having having a vault construction, you could say like, oh, no, if somebody goes and like hacks this device, then I still have a cancellation path.
-Like I still have some way of clawing my money back so that it's, you know, it doesn't completely compromise everything.
+So by having having a vault construction, you could say like, no, if somebody goes and like hacks this device, then I still have a cancellation path.
+Like I still have some way of clawing my money back so that it's, it doesn't completely compromise everything.
 
 Speaker 0: 00:42:41
 
-Yeah, it's, I guess like the goal, at least in my mind to the bias to the things I do, the idea is like, how do you sleep at night?
+I guess like the goal at least in my mind to the bias to the things I do, the idea is like, how do you sleep at night?
 And the problem is once you have too many nights, well slept, you forget.
 You forget what he did.
 You forget what stuff is.
@@ -778,8 +777,8 @@ You forget who has what.
 And I like this idea that it's not a person.
 It's the chain, right?
 I mean, in one way or another, it's like my stuff lives on chain.
-So that like, okay, like at least, you know, like it's not all lost, right?
-And then you start sort of like digging through the notes and figuring out what's gonna happen next.
+So that like, okay, like at least, like it's not all lost, right?
+And then you start sort of like digging through the notes and figuring out what's going to happen next.
 And you also have time, right?
 Like you have like a decent amount of time that who knows, maybe even rewind it.
 It goes back to the original wallet, right?
@@ -787,9 +786,8 @@ Or maybe there is a way to cancel it.
 
 ## Cancel paths
 
-Speaker 0: 00:43:29
 
-I don't know, Like, does the current proposal have a means for you to cancel something once it's in the time period that it's going to say, something is going to happen in, say, 10 blocks, right?
+Does the current proposal have a means for you to cancel something once it's in the time period that it's going to say, something is going to happen in, say, 10 blocks, right?
 Is there a way for me to say, hey, no, stop that?
 
 Speaker 1: 00:43:45
