@@ -924,7 +924,7 @@ So you're using, I think it's something on the order of like 32 more bytes to do
 
 Speaker 0: 00:50:28
 
-Okay, so another question that everybody has, Can I vault my dick butts?
+Okay, so another question that everybody has, can I vault my dick butts?
 
 Speaker 1: 00:50:37
 
@@ -936,14 +936,14 @@ There you go.
 
 Speaker 1: 00:50:40
 
-Rheindahl, you want to talk about that?
+Rijndael, you want to talk about that?
 
-Speaker 5: 00:50:41
+Speaker 3: 00:50:41
 
-Well, I mean, yeah, the Ordinal stuff, Like it's all just Bitcoin and UTXOs and like this works with Bitcoin.
+Yeah, the ordinal stuff, like it's all just Bitcoin and UTXOs and like this works with Bitcoin.
 So it works.
 I mean, I think there's kind of something in there that you hit on that I think is important.
-There's a lot of, you know, well, why don't we do this software instead of that one and we can emulate everything else?
+There's a lot of, well, why don't we do this software instead of that one and we can emulate everything else?
 And I think, you know, something that's important to remember is that block space is the constrained resource.
 And so if there's going to be common cases that lots and lots of users of Bitcoin are going to be doing then it makes sense to have kind of optimal implementations for those use cases to be more space efficient.
 
