@@ -77,9 +77,7 @@ So a lot changed.
 
 ## Primer on OP_VAULT
 
-Speaker 0: 00:02:35
-
-So, James, do you want to just sort of like first give the people who may not know what OpVault is, just give us like a quick primer on it and then we can get into a bit of, you know, what changed and everything else.
+So, James, do you want to just sort of like first give the people who may not know what OpVault is, just give us like a quick primer on it and then we can get into a bit of, what changed and everything else.
 
 Speaker 1: 00:02:47
 
@@ -92,7 +90,7 @@ And so for a long time, there's been this idea floating around of vaults.
 I think the earliest mention I could find was 2013 in some Bitcoin talk forums.
 And the basic idea with vaults is you can lock up your coins in such a way that they're still spendable by you, of course, but if you want to spend them somewhere, you basically say beforehand, okay, when I spend this coin, I'm going to wait some period, whether that's 10 blocks or two days, whatever it might be.
 And you publicly declare the intent to spend that coin to some particular destination.
-And during that period, you can come in and say, oh, wait a second, I don't recognize that spend, or I didn't mean to do that spend, or NVK backdoored my hardware wallet, and so now I want to recover those coins or claw them back or cancel that transaction.
+And during that period, you can come in and say, oh, wait a second, I don't recognize that spend, or I didn't mean to do that spend, or `NVK` backdoored my hardware wallet, and so now I want to recover those coins or claw them back or cancel that transaction.
 And so that's the basic idea of vault.
 It's a really, really powerful concept.
 I think it's something that almost everybody would wanna do in some form if it were costless.
@@ -103,10 +101,10 @@ You have to worry about fee management.
 You have to worry about fixing addresses that the coins ultimately flow into.
 So if you're a really, really big company, maybe you can do this and maybe you can eke out some security benefits.
 But if you're an individual or you know kind of a smaller operation it's really not as practical.
-So I've been kind of involved in various custody efforts including my own for a while and I've been thinking about how to use vaults and I did like a very simple implementation using OPCHECK template verify And this makes vaults kind of more achievable, but there were still some downsides.
-Basically, OPTCHECK template verify is just a way of saying, hey, we're gonna lock these coins up and they're spendable into this particular set of outputs with like no signature or anything else.
+So I've been kind of involved in various custody efforts including my own for a while and I've been thinking about how to use vaults and I did like a very simple implementation using `OPCHECK` template verify. And this makes vaults kind of more achievable, but there were still some downsides.
+Basically, `OPCHECK` template verify is just a way of saying, hey, we're going to lock these coins up and they're spendable into this particular set of outputs with like no signature or anything else.
 And it may be kind of counterintuitive, but you can use that to create these like pre-existing graphs of transactions that are allowable.
-So you can use that to create the vault structure without having to do this, this temporary key thing.
+So you can use that to create the vault structure without having to do this temporary key thing.
 So operationally it gets a bit simpler.
 
 Speaker 0: 00:05:51
