@@ -1862,19 +1862,18 @@ Speaker 0: 01:33:16
 
 Greg.
 
-Speaker 3: 01:33:18
+Speaker 2: 01:33:18
 
 Last thoughts.
 I guess I would echo James' last thought, which was basically we're not married to this, but it's the best we've got.
 And I'd love to see people's feedback, like directed feedback at the proposal as it is now.
 There are some things I wish the proposal could do, but I just think Bitcoin's script is a little too limited to do it.
 But maybe I've overlooked something.
-And so looking at if we can make something better, I'd be all ears to
+And so looking at if we can make something better, I'd be all ears to it.
 
 Speaker 0: 01:33:44
 
-it.
-Ben, the car man.
+Ben Carman.
 
 Speaker 4: 01:33:47
 
