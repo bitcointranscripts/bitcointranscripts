@@ -1759,14 +1759,14 @@ That's starting to become accessible in your pocket, multi-sig.
 And I think once you play with multi-sig long enough, you start asking a couple questions.
 Ask anybody who's doing a lot of multi-sig.
 And two of the questions that they're trying to figure out are, how do I balance accessibility and recoverability?
-And oh my God, I now have this treasure hunt that you have to do for all of my keys.
+My God, I now have this treasure hunt that you have to do for all of my keys.
 What happens when I hit by a bus?
 And I think as multi-sig tooling and as better wallet software, whether it's Liana or other things that start incorporating vault-like features, starts working its way more into the ecosystem, people are going to look at things and say, man, this is great, but it kind of sucks that I have to either trust this company to run all these watchtowers for me, or I've got this like weird ephemeral key thing that I'm trusting, or I've got this like co-signing server somewhere, or like whatever the thing is.
-And so I just wonder if maybe in, you know, call it late 23 or mid 24, when there's been more design and more code review of this and people are starting to like really talk about it, if more people in the community are going to be more receptive to the, you know, maybe the answer isn't just throw more keys at it.
+And so I just wonder if maybe in, call it late 23 or mid 24, when there's been more design and more code review of this and people are starting to like really talk about it, if more people in the community are going to be more receptive to the, maybe the answer isn't just throw more keys at it.
 
 Speaker 0: 01:28:36
 
-Well, I mean, when you look at this, it's like, you know, it's a distribution thing.
+Well, I mean, when you look at this it's like a distribution thing.
 On the first few years of Bitcoin, very few people had a lot of coin, right?
 So there were very few people who actually had to care about serious amounts of money being held in an individual level.
 Right.
