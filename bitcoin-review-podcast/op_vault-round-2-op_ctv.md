@@ -1556,12 +1556,11 @@ It's a frustrating state of affairs when something like CTV and Jeremy to his cr
 
 Speaker 0: 01:16:11
 
-I think like his delivery was was not a
+I think like his delivery was was not ideal.
 
 Speaker 3: 01:16:15
 
-I don't agree.
-This is issue, but we could debate about that later.
+I don't agree with his issue, but we could debate about that later.
 
 Speaker 4: 01:16:19
 
@@ -1579,14 +1578,14 @@ Right.
 You have to understand that there is like all these other people that just won't be able to like understand it, period.
 So now it becomes a point of like, it is also your job as the people who came up with the idea to sell it.
 Right.
-I mean, the top root people did a fantastic job selling it.
+I mean, the top Taproot people did a fantastic job selling it.
 Right.
 Like so much so that there was zero contention, except me saying I'm not putting my money on this shit forever until like I became comfortable with it.
 Right.
 And the contention became just on the activation mechanism.
 Right.
 So the whole fight around that stuff was around around speedy trial, which I still don't like.
-But like, you know, like it's very possible that if the sales job is done right, then I mean this is like not insidious sales, just like an honest sort of attempt at like really getting people to understand this stuff at a level that they can understand.
+But like, like it's very possible that if the sales job is done right, then I mean this is like not insidious sales, just like an honest sort of attempt at like really getting people to understand this stuff at a level that they can understand.
 And hopefully it's just going to be a fight over how we activate it, not over what's in the package.
 
 Speaker 5: 01:17:35
