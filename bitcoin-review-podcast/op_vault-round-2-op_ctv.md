@@ -1619,36 +1619,32 @@ So it's recursive in the most limited sense, I would call it.
 
 Speaker 0: 01:19:03
 
-That's a very
-
-Speaker 3: 01:19:04
-
-good point to bring up.
+That's a very a good point to bring up.
 
 Speaker 1: 01:19:05
 
-A good point.
+A very good point.
 
 Speaker 3: 01:19:06
 
 Because you have to pre-commit up front to all the other paths, essentially, or at least the form of the path.
-And so the only recursive part is it allows you to go back to the same coin, same address.
+And so the only recursive part is it allows you to go back to the same address.
 
 Speaker 0: 01:19:16
 
-Well, I mean, that's what separates Bitcoin from Ethereum, right?
+That's what separates Bitcoin from Ethereum, right?
 We literally don't have a way for you to create a full recursiveness there without having those things pre-committed.
 
 Speaker 3: 01:19:26
 
-So if we had like elements, tap script, all those crazy introspection, you could, but I'm just saying op bolt is actually like not that recursive.
+So if we had like elements, tap script, all those crazy introspection, you could, but I'm just saying opvault is actually like not that recursive.
 It's not recursive in the way people are talking about usually.
 
 Speaker 5: 01:19:37
 
 I mean, the other thing that's important, right.
 Is other networks like a theory, have like global state and in Bitcoin, your transaction is still scoped just to the inputs and outputs of your transaction.
-So even, you know, like it's just a completely different animal.
+So even, like it's just a completely different animal.
 
 ## OP_VAULT main selling points
 
@@ -1657,10 +1653,10 @@ Speaker 0: 01:19:53
 Yeah.
 Okay, guys.
 Listen, I think we covered a lot of ground and I can feel the resistance over talking about activation.
-I think we should still explore, maybe not on this episode, but I think we should still explore a little bit of the, how do we bring people over to this?
+I think we should still explore, maybe not on this episode, but I think we should still explore a little bit of how do we bring people over to this?
 Because it's going to be hard.
 And I think if we leave people behind on this one, it's going to become even more complicated.
-You know, you look at, I think just like by pointing to people that you're not going to get a new form of dick butts on chain because of this change is already like, I mean, huge, like, listen guys, like, look, it makes the dick butts even be like worst or something.
+I think just like by pointing to people that you're not going to get a new form of dick butts on chain because of this change is already like, I mean, huge, like, listen guys, like, look, it makes the dick butts even be like worst or something.
 You know what I mean?
 Like it's just pointing out like the fears that most people have, even if they're unfounded, I think it's a huge part of this.
 
