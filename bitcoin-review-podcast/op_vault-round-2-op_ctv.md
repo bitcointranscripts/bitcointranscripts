@@ -11,7 +11,7 @@ date: 2023-05-11
 
 Speaker 0: 00:01:25
 
-Today, we're going to get back to OPVault, just kidding, OpVault, this new awesome proposal on how we can make people's money safe in the future.
+Today, we're going to get back to OpVault, just kidding, OpVault, this new awesome proposal on how we can make people's money safe in the future.
 And in my opinion, one of very good ways of scaling Bitcoin self-custody in a sane way.
 And with that, let me introduce today's guests, Mr. James.
 And welcome back.
