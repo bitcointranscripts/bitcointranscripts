@@ -37,7 +37,7 @@ NVK: 00:01:52
 
 Welcome back.
 
-Speaker 3: 00:01:53
+Rijndael: 00:01:53
 
 Yeah, thanks.
 Good to be here.
@@ -54,7 +54,7 @@ NVK: 00:01:59
 
 For the people that don't know you, you want to just give us the elevator pitch on why you're here?
 
-Speaker 2: 00:02:04
+Greg Sanders: 00:02:04
 
 Yeah, so I just I've been working with James a little bit on this OpVault proposal and that's why I'm here.
 
@@ -198,7 +198,7 @@ And in fact, like in CTV, you could have a little escape hatch where you say, ok
 So CTV really lets you do anything.
 All CTV makes you do is kind of pre-commit to how the coins can be spent.
 
-Speaker 5: 00:12:11
+Rijndael: 00:12:11
 
 Well, and because of `Taproot`, you could have a tap leaf that's like, anything you want with a particular key or with, some quorum of keys or something.
 So you could say, I'm going to do a CTV spend path for like my normal spending paths, but then I have some other tap leaf that's, unencumbered, except by like normal checks of operations.
@@ -244,7 +244,7 @@ And so if in the meantime, the fee market's gone crazy, as maybe we all hope it 
 And so one technique that you can use is basically locking in some outputs that are just used for fee control.
 Like you could have a sort of a dummy output that maybe anybody can spend or you know goes to a...
 
-Speaker 5: 00:14:22
+Rijndael: 00:14:22
 
 Would that be kind of like an anchor output or something?
 
@@ -266,7 +266,7 @@ James O'Beirne: 00:14:47
 But the point is, fees are really hard.
 And with our relay policies today, it's still almost a non-starter for CTV based vaults.
 
-Speaker 3: 00:14:57
+Rijndael: 00:14:57
 
 Yeah.
 Can I pipe in just real quick?
@@ -336,7 +336,7 @@ James O'Beirne: 00:19:17
 
 COVID.
 
-Speaker 2: 00:19:17
+Greg Sanders: 00:19:17
 
 Yeah.
 I've COVID up up five G to. That is now what we call opvault right so the vault part is the part it's kind of putting this value into the staging area with this forwarded script
@@ -347,7 +347,7 @@ So like Greg was saying the composability got a lot better and the way that that
 But what if I want to say lock my coins up in a vault and then instead of, triggering a withdrawal to certain outputs, what if I just want to delegate the coins to a new key?
 And the new proposal actually like facilitates that use case because instead of necessarily like locking in use of say, CTV or any particular like triggering process, it actually allows the wallet designer to specify that triggering process as the script template that gets this update verify thing.
 
-Speaker 3: 00:20:25
+Rijndael: 00:20:25
 
 Yeah, so the trick here is it can forward to any single key.
 So this covers any time you can aggregate a key.
@@ -370,12 +370,12 @@ It really it just obliterates the problem in a way that I think is going to be l
 And it's like simple.
 It's It winds up being simpler than the original proposal, which is great.
 
-Speaker 5: 00:21:07
+Rijndael: 00:21:07
 
 Well, and having it composable means that if you're trying to write some more complicated policy in something like `miniscript`, being able to incorporate fault in there without having to like throw out all that tooling.
 And, you know.
 
-Speaker 3: 00:21:20
+Rijndael: 00:21:20
 
 It also probably composes better with things like miniscript because now it's, I need an authorization policy on this state transition.
 Just add it, right?
@@ -409,7 +409,7 @@ NVK: 00:23:05
 So I mean, output descriptors just seem to be like now the show.
 And then we got into mini script was essentially like just a fancy way of doing output descriptors.
 
-Speaker 3: 00:23:15
+Rijndael: 00:23:15
 
 Yeah, it's a super set.
 They fall under the same umbrella now, apparently.
@@ -418,12 +418,12 @@ NVK: 00:23:20
 
 Yeah, I mean, we're going to have now, what, like, CTV templates, right?
 
-Speaker 5: 00:23:27
+Rijndael: 00:23:27
 
 Yeah, well, it's like, you know, output descriptors are C, right?
 So like script is assembly, output descriptors are C, we now have Python and so eventually we'll have JavaScript.
 
-Speaker 3: 00:23:36
+Rijndael: 00:23:36
 
 So also the good news is Jeremy Rubin already has a branch of miniscript with CTV.
 So he's already done that hard work for us.
@@ -452,7 +452,7 @@ There's a lot of scary stuff in it.
 Nobody so far has been able to show me what's actually bad about it.
 So, why don't we sort of like maybe steam in some criticisms and then try to sort of break it down because you know I think that by opening CTV up like essentially opening up this proposal to to more grief even though it might be the right solution.
 
-Speaker 5: 00:25:19
+Rijndael: 00:25:19
 
 So I feel like we have to start with the classic covenant FUD, right?
 Which is like, okay, so and maybe for folks who haven't listened to all the other prior episodes, whenever we're talking about covenants, the way that Bitcoin works is when you have a transaction you're spending inputs and you are unlocking those outputs and then you lock them to a new set of outputs and all of the restrictions that we can put on Bitcoin are restrictions on how those coins are unlocked, like on the input side.
@@ -471,7 +471,7 @@ NVK: 00:27:15
 
 Specifically about beef?
 
-Speaker 5: 00:27:17
+Rijndael: 00:27:17
 
 Specifically beef.
 It's all beef and Bitcoin.
@@ -486,7 +486,7 @@ Right.
 So and the obvious counter to that is that like covenants are a really bad way to do that.
 And in fact, today you can do that with multisig.
 
-Speaker 5: 00:27:44
+Rijndael: 00:27:44
 
 Terrible way.
 
@@ -494,7 +494,7 @@ NVK: 00:27:45
 
 Yeah, I  mean, multisig would be a lot better.
 
-Speaker 5: 00:27:48
+Rijndael: 00:27:48
 
 It would be a lot better.
 
@@ -502,7 +502,7 @@ James O'Beirne: 00:27:48
 
 That's right.
 
-Speaker 5: 00:27:48
+Rijndael: 00:27:48
 
 For a lot of reasons, right?
 So one of the problems with covenants is you have to go and figure out all of these conditions in the future when things get changed.
@@ -514,7 +514,7 @@ NVK: 00:28:27
 
 Also like how is the exchange going to make this happen?
 
-Speaker 3: 00:28:32
+Rijndael: 00:28:32
 
 They can't, so that's the point.
 You hand the exchange an address. This address commits to all the spending conditions.
@@ -541,7 +541,7 @@ But at that point, just make it all custodial and you get the same benefit.
 And it's cheaper.
 So there's really no reason to ever do that.
 
-Speaker 5: 00:29:17
+Rijndael: 00:29:17
 
 The thing that Greg just said I think is really important, and it's a fundamental misunderstanding that I think a lot of people have about how Bitcoin works that leads this concern.
 Which is the address that you generate commits to the spending conditions for when those coins can be spent.
@@ -625,7 +625,7 @@ Because, this is Bitcoin.
 
 ## Do we need OP_VAULT? Why change Bitcoin?
 
-Speaker 5: 00:34:21
+Rijndael: 00:34:21
 
 I think like another question that I've seen around is, hey, we have mini script is like getting better.
 People are building better tooling for doing Bitcoin script, do we need this?
@@ -675,7 +675,7 @@ Like it's like, it's in this sort of like, it's very hard to think in the future
 So having things that the clock starts are kind of a problem too, because that execution will happen if you don't do anything, right?
 It's like starting a fuse.
 
-Speaker 5: 00:37:32
+Rijndael: 00:37:32
 
 And like, I think that operational complexity gets worse when you think about the ways that people actually spend and use Bitcoin.
 So if you're doing some weekly or monthly `DCA` and every single one of those UTXOs has its own timer that starts the minute it hits your wallet, you now have a ton of operational complexity to deal with like, great, every month I have this laddering, rolling, expiring time lock that I have to flip.
@@ -724,7 +724,7 @@ Right.
 That's huge.
 This is the kind of stuff that I think we're going to like start getting into as the years and attack like the physical attacks will start to increase, especially as you will see a billion dollar Bitcoin for the year.
 
-Speaker 5: 00:41:33
+Rijndael: 00:41:33
 
 I think that's a great example, right?
 Because like you could that set up that you described, you could go and build today.
@@ -735,7 +735,7 @@ NVK: 00:41:44
 
 Fuck Raspberry Pis.
 
-Speaker 5: 00:41:45
+Rijndael: 00:41:45
 
 Sure.
 But you could like run that on a low power, Unix machine of your choice, you know, hook it up to your alarm system, get a signal over `MQTT` or something, and then have a cold card plugged in in CK bunker mode and have it just automatically send your coins if somebody opens the door between 2 a.m. and 6 a.m. Or something.
@@ -744,7 +744,7 @@ NVK: 00:42:08
 
 That's how banks work.
 
-Speaker 5: 00:42:09
+Rijndael: 00:42:09
 
 Yeah, for sure.
 But anybody who does that is going to have this moment of like, oh shit, I've got this unlocked live device that can now send all my money anywhere.
@@ -753,7 +753,7 @@ NVK: 00:42:19
 
 It could still be locked, but yeah.
 
-Speaker 5: 00:42:21
+Rijndael: 00:42:21
 
 Right.
 But it's still this risk of like, how much do I really trust this thing?
@@ -762,7 +762,7 @@ NVK: 00:42:24
 
 Of course.
 
-Speaker 5: 00:42:24
+Rijndael: 00:42:24
 
 So by having having a vault construction, you could say like, no, if somebody goes and like hacks this device, then I still have a cancellation path.
 Like I still have some way of clawing my money back so that it's, it doesn't completely compromise everything.
@@ -797,7 +797,7 @@ So one of the benefits of the new formulation of the proposal is originally that
 But what you could do now is you can include a tap leaf that is like all these coins are immediately spendable back to the original vault.
 And that gets preserved in the tap tree as the triggering process happens.
 
-Speaker 5: 00:44:07
+Rijndael: 00:44:07
 
 Is that the T-love change to it?
 Is like, as long as this tap leaf is in the output, then you're good?
@@ -813,7 +813,7 @@ James O'Beirne: 00:44:37
 
 Greg, I'm even thinking you could, if you just had a leaf in the tap tree that was the same exact vault parameters as like what you had originally started, that's like an always cancel or always go back to vault initiation.
 
-Speaker 5: 00:44:52
+Rijndael: 00:44:52
 
 It always resets back to the initial state.
 Right.
@@ -994,7 +994,7 @@ So Rijndael's point's really good, I think.
 
 ## Use in chaumian mints/ecash
 
-Speaker 5: 00:52:42
+Rijndael: 00:52:42
 
 So NVK, you just mentioned Cashew, we just talked about `Chaumi` and `Mints` not that long ago.
 This would actually also be great to add to Chaumi and Mints, right?
@@ -1121,7 +1121,7 @@ NVK: 01:00:22
 
 But you are, you have to, that's how it works.
 
-Speaker 5: 01:00:26
+Rijndael: 01:00:26
 
 That's what this is now.
 
@@ -1129,7 +1129,7 @@ NVK: 01:00:28
 
 Because this is literally what this is.
 
-Speaker 5: 01:00:32
+Rijndael: 01:00:32
 
 Welcome to the sales job, James.
 
@@ -1137,7 +1137,7 @@ Ben Carman: 01:00:35
 
 Welcome to hell.
 
-Speaker 5: 01:00:36
+Rijndael: 01:00:36
 
 So the Inquisition thing, I think it's super important, right?
 Because like, I think one of the problems that CTV ran into, for example, is, I don't want to beat up on CTV.
@@ -1148,7 +1148,7 @@ NVK: 01:00:48
 No, please beat it up.
 It's going to be all brought up again.
 
-Speaker 5: 01:00:53
+Rijndael: 01:00:53
 
 CTV could do a lot of things.
 I think a lot of people had trouble connecting the dots between, okay, I have Bitcoin, it works for me now.
@@ -1218,7 +1218,7 @@ Just enough to add a little margin to that position.
 What I like is that because say for example, River, right?
 So Alex Lishman, even though he's going to write it in Elixir, which is going to be a problem.
 
-Speaker 3: 01:04:45
+Rijndael: 01:04:45
 
 Yeah.
 
@@ -1239,7 +1239,7 @@ We had that problem as a company way back in the day.
 Like, it's like, fuck the check box people.
 We're just simply not going to do it.
 
-Speaker 5: 01:05:33
+Rijndael: 01:05:33
 
 Or just more generally, like if you have unlimited budget, like you could build a really kick-ass vaulting system.
 
@@ -1247,7 +1247,7 @@ NVK: 01:05:40
 
 Like it's not going to be certified.
 
-Speaker 5: 01:05:41
+Rijndael: 01:05:41
 
 Well, right.
 Well, and it's not going to be cheap, right?
@@ -1278,7 +1278,7 @@ NVK: 01:07:46
 
 Disclosure, I'm an investor.
 
-Speaker 3: 01:07:48
+Rijndael: 01:07:48
 
 Do they actually watch the anchors and like sweep them or something?
 Because as an insurance company- I don't know how it actually-
@@ -1287,7 +1287,7 @@ NVK: 01:07:53
 
 No, it has nothing to do with actual anchor watch, like actual watch towers or anything like that.
 
-Speaker 3: 01:07:58
+Rijndael: 01:07:58
 
 Okay, because an insurance company should be incentivized to do things like that.
 Right.
@@ -1298,7 +1298,7 @@ NVK: 01:08:05
 
 That's just the name of the company because it's like a thing that used to happen in the Navy.
 
-Speaker 5: 01:08:09
+Rijndael: 01:08:09
 
 Yeah.
 It's a nautical term.
@@ -1351,7 +1351,7 @@ James O'Beirne: 01:10:03
 
 Wait, 324 is peer to peer encryption.
 
-Speaker 5: 01:10:05
+Rijndael: 01:10:05
 
 Does 324 actually need a soft fork?
 Because 324 is just P2P.
@@ -1397,7 +1397,7 @@ So anyway, so it does look like it's going to be just this.
 I don't have another bone to throw because I was going to put the 324 in there.
 Hey, look, there is something else that comes with this.
 
-Speaker 5: 01:10:38
+Rijndael: 01:10:38
 
 324 is going to be awesome.
 And maybe the timing works out like at the same time.
@@ -1409,7 +1409,7 @@ James O'Beirne: 01:11:08
 One thing I've been thinking about, and maybe Greg can chime in on this, what if we eventually proposed a fork that was up all CTV and APO?
 Because I know you know a lot of people have wanted a peel for a while. Obviously, I can't judge the use in L2, but the size of that fork is..
 
-Speaker 5: 01:11:30
+Rijndael: 01:11:30
 
 James Ellen symmetry.
 
@@ -1419,7 +1419,7 @@ Yeah, I you know you're up.
 Thank you.
 Thank you.
 
-Speaker 3: 01:11:35
+Rijndael: 01:11:35
 
 Thanks James for bringing this up.
 Just today I got an LN Symmetry channel close onto Signet by the way.
@@ -1446,7 +1446,7 @@ it's going to be very interesting if there is a soft fork for this much stuff to
 
 ## Taproot & Segwit complexity VS OP_VAULT
 
-Speaker 3: 01:13:02
+Rijndael: 01:13:02
 
 Still smaller than Segwit.
 
@@ -1460,7 +1460,7 @@ NVK: 01:13:07
 Yeah, I know.
 But it has one name.
 
-Speaker 3: 01:13:09
+Rijndael: 01:13:09
 
 And Segwit was even scarier.
 I was there.
@@ -1487,7 +1487,7 @@ NVK: 01:13:47
 
 I still don't put money in Taproot.
 
-Speaker 3: 01:13:49
+Rijndael: 01:13:49
 
 I do, James.
 James, I used it today.
@@ -1497,7 +1497,7 @@ James O'Beirne: 01:13:54
 
 And I'm not talking to any of you guys, but I'm talking to dear listener, like, were you lobbying for Taproot and did you really understand what was in it?
 
-Speaker 5: 01:14:00
+Rijndael: 01:14:00
 
 Well, I mean, like a lot of people are shocked that Taproot is actually three BIPs, right?
 Like Taproot isn't one thing.
@@ -1558,7 +1558,7 @@ NVK: 01:16:11
 
 I think like his delivery was was not ideal.
 
-Speaker 3: 01:16:15
+Rijndael: 01:16:15
 
 I don't agree with his issue, but we could debate about that later.
 
@@ -1588,7 +1588,7 @@ So the whole fight around that stuff was around around speedy trial, which I sti
 But like, like it's very possible that if the sales job is done right, then I mean this is like not insidious sales, just like an honest sort of attempt at like really getting people to understand this stuff at a level that they can understand.
 And hopefully it's just going to be a fight over how we activate it, not over what's in the package.
 
-Speaker 5: 01:17:35
+Rijndael: 01:17:35
 
 Well, that's where I was trying to go talking about things like inquisition or other places to have people actually understand what this change is for.
 If everybody can wrap their head around the behavior of this change, what it can do, what it can't do.
@@ -1609,7 +1609,7 @@ Right.
 
 ## Recursiveness of OP_VAULT
 
-Speaker 3: 01:18:47
+Rijndael: 01:18:47
 
 So I have one, one quick technical point.
 So also a vault is only very slightly recursive.
@@ -1625,7 +1625,7 @@ James O'Beirne: 01:19:05
 
 A very good point.
 
-Speaker 3: 01:19:06
+Rijndael: 01:19:06
 
 Because you have to pre-commit up front to all the other paths, essentially, or at least the form of the path.
 And so the only recursive part is it allows you to go back to the same address.
@@ -1635,12 +1635,12 @@ NVK: 01:19:16
 That's what separates Bitcoin from Ethereum, right?
 We literally don't have a way for you to create a full recursiveness there without having those things pre-committed.
 
-Speaker 3: 01:19:26
+Rijndael: 01:19:26
 
 So if we had like elements, tap script, all those crazy introspection, you could, but I'm just saying opvault is actually like not that recursive.
 It's not recursive in the way people are talking about usually.
 
-Speaker 5: 01:19:37
+Rijndael: 01:19:37
 
 I mean, the other thing that's important, right.
 Is other networks like a theory, have like global state and in Bitcoin, your transaction is still scoped just to the inputs and outputs of your transaction.
@@ -1660,7 +1660,7 @@ I think just like by pointing to people that you're not going to get a new form 
 You know what I mean?
 Like it's just pointing out like the fears that most people have, even if they're unfounded, I think it's a huge part of this.
 
-Speaker 5: 01:20:52
+Rijndael: 01:20:52
 
 That specifically is a thing that I've heard a lot around this, is we thought Taproot was going to give us better smart contracts and instead it gave us inscriptions.
 So what is OpVault going to do?
@@ -1695,7 +1695,7 @@ NVK: 01:23:48
 
 There you go.
 
-Speaker 5: 01:23:49
+Rijndael: 01:23:49
 
 It's now more expensive for dick bots because there's going to be less coins on the market.
 
@@ -1711,7 +1711,7 @@ Like you can find a way to create a script and only your 10th generation ahead w
 Right?
 Like if you really want to go Valhalla style.
 
-Speaker 5: 01:24:29
+Rijndael: 01:24:29
 
 Yeah.
 When folks were talking about interesting new covenants or anytime somebody brings up simplicity or something else, there's this pushback of, well, you don't need super programmable money.
@@ -1751,7 +1751,7 @@ And that's often kind of what he would demo when he would go out and talk about 
 I get why he did it because he had a bunch of use cases that were kind of cool and, like interesting, but that was a big complicated system and so I think people maybe kind of got lost in the fact that CTV isn't Sapio.
 CTV is just this really simple primitive.
 
-Speaker 5: 01:26:39
+Rijndael: 01:26:39
 
 Yeah, I think something that has me cautiously optimistic about Op_Vault finding kind of product market fit or at least having a better PR campaign with with everybody is you, a couple years later multi-sig has gotten a lot more accessible and I think people are thinking a little bit more deeply about the custody of their coins.
 If you look at for example, what like `Nunchuck` is doing, for example, with like you can do a multi-sig that's a key on your phone, a key on a tap signer, and a key on like a hardware wallet like a cold card or something.
@@ -1812,7 +1812,7 @@ James O'Beirne: 01:30:55
 
 Couldn't say it better myself.
 
-Speaker 5: 01:30:56
+Rijndael: 01:30:56
 
 What I'm hearing is the real answer is we need to be telling people to set up really high cardinality multi-sigs.
 And then once they do it and they say, wow, that sucks.
