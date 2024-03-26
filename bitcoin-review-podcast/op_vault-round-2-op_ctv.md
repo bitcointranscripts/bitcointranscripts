@@ -1674,22 +1674,14 @@ Yeah, I think it's really tough to be in a position where you don't have the tec
 But what I'll say is that I think most developers for OpVault, for CTV, and for APO can go in and read the code and go, all right, this is pretty clearly bounded.
 The number of things that can go wrong with this is pretty limited.
 Whereas with SegWit or Taproot, that's a much more difficult exercise.
-And even people who are familiar with the code, you know, have a much harder time kind of bounding the, you know, the implications.
-But what's your answer, Rheindahl?
+And even people who are familiar with the code, have a much harder time kind of bounding the, the implications.
+But what's your answer, Rijndael?
 
-Speaker 5: 01:22:00
+Speaker 3: 01:22:00
 
-Well, I mean, so my answer is like two of the fundamental, like one of the fundamental things that Segwit did, arguably the fundamental thing is it changed like the structure of transactions and like how we store and how we like relay transactions around.
-We like relay transactions around.
-
-Speaker 0: 01:22:18
-
-And
-
-Speaker 5: 01:22:18
-
-that made it cheaper to store arbitrary data on the blockchain.
-And then Taproot explicitly was trying to make it easier to do larger, more complicated scripts, which made it easier to store larger dickbutts in single inputs.
+So my answer is like like one of the fundamental things that Segwit did, arguably the fundamental thing is it changed like the structure of transactions and like how we store and how we like relay transactions around.
+And that made it cheaper to store arbitrary data on the blockchain.
+And then Taproot explicitly was trying to make it easier to do larger, more complicated scripts, which made it easier to store larger dick bots in single inputs.
 OpVault is really aimed at letting you put restrictions on the output side of a transaction to let you specify that when these coins are spent, if you break into my house and steal my key or if you steal my phone and steal my key, you can't spend those coins anywhere.
 You can only spend them on this predetermined path that has an escape hatch and that has a time lock so that I can be sure that my coins are going where they're supposed to be going.
 And so constraining the rules on the output side is like a much slimmer design space for unintended consequences.
@@ -1697,15 +1689,15 @@ Like I hope that people come up with interesting, new, innovative use cases for 
 
 Speaker 4: 01:23:36
 
-Can we market OpVault as you're guaranteeing your coins will never go into an inscription because you're locking them up forever and then they'll, you know, make sure I won't put it into some stupid dick but
+Can we market OpVault as you're guaranteeing your coins will never go into an inscription because you're locking them up forever and then make sure I won't put it into some stupid dick bot.
 
 Speaker 0: 01:23:48
 
-there you go.
+There you go.
 
 Speaker 5: 01:23:49
 
-It's now more expensive for dick butts because there's gonna be less coins on the market.
+It's now more expensive for dick bots because there's going to be less coins on the market.
 
 Speaker 0: 01:23:52
 
