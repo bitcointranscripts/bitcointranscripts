@@ -1481,11 +1481,10 @@ People like people are constantly the victim for as much as there's like the who
 Like people say taproot like they know what it means.
 I didn't know what taproot meant fully when it deployed.
 Like how familiar are you with the specifics of the annex and the way that that works.
-Do you even know that there's
+Do you even know that there's an annex?
 
 Speaker 0: 01:13:47
 
-an annex?
 I still don't put money in Taproot.
 
 Speaker 3: 01:13:49
@@ -1494,13 +1493,9 @@ I do, James.
 James, I used it today.
 I know what it is.
 
-Speaker 0: 01:13:53
-
-And I'm not talking to any of
-
 Speaker 1: 01:13:54
 
-you guys, but I'm talking, dear listener, like, were you lobbying for Taproot and did you really understand what was in it?
+And I'm not talking to any of you guys, but I'm talking to dear listener, like, were you lobbying for Taproot and did you really understand what was in it?
 
 Speaker 5: 01:14:00
 
@@ -1509,13 +1504,11 @@ Like Taproot isn't one thing.
 
 Speaker 0: 01:14:07
 
-Yeah.
 I mean, people still don't understand that we added another cryptographic primitive to Bitcoin.
 
 Speaker 1: 01:14:13
 
 Yeah.
-So like,
 
 Speaker 0: 01:14:15
 
@@ -1523,11 +1516,11 @@ It's kind of a big deal.
 
 Speaker 1: 01:14:17
 
-It's just funny to me that these software we're talking about here are extremely narrow, extremely well-scoped, extremely well-understood.
-And yet, because of the marketing machinations, like, you know, we got, I mean, and don't get me wrong.
+It's just funny to me that these soft forks we're talking about here are extremely narrow, extremely well-scoped, extremely well-understood.
+And because of the marketing machinations, and don't get me wrong.
 I love Taproot.
 I'm happy we got Taproot.
-I love, you know, all the stuff that it enables, but like there, there was not the like broad consensus that people think that they had because they were very comfortable, like delegating their, their technical opinions to other people.
+I love, you know, all the stuff that it enables, but like there was not the like broad consensus that people think that they had because they were very comfortable, like delegating their technical opinions to other people.
 
 Speaker 0: 01:14:51
 
@@ -1544,14 +1537,14 @@ That's true for a lot of Bitcoin stuff.
 Like, I mean, people do trust some people to give them some, like, that's where they infer from, right?
 I think that's part of the reason why there is this backlash.
 I want to call it almost like ludistic on new features and things.
-It's because, you know, Bitcoin is a really complex to begin with.
+It's because, Bitcoin is a really complex to begin with.
 Right.
 And it's progressively becoming ultra complex.
-And, you know, people just they won't understand.
+And, people just they won't understand.
 Like, I mean, it's just it's just not possible.
-The same way, You know, I don't understand how the brain really works.
+The same way, I don't understand how the brain really works.
 Right, like you can tell me as a scientist who studies brains, right?
-Like, I mean, you know, like there is a limit.
+Like, I mean, like there is a limit.
 So I have to trust that you're poking in the right place with your knife, right, kind of thing.
 
 Speaker 1: 01:15:45
@@ -1559,7 +1552,7 @@ Speaker 1: 01:15:45
 And I'm not trying to criticize at all Segwit and Taproot the way they were handled by the people who helped activate them.
 I mean, again, great changes.
 They were communicated kind of as clearly as you possibly could, I think.
-But I'm just, you know, it's a frustrating state of affairs when something like CTV and Jeremy to his credit pointed out a lot of stuff with Paproot He pointed out a lot of the issues with the annex and nobody listened cuz crazy Jeremy
+It's a frustrating state of affairs when something like CTV and Jeremy to his credit pointed out a lot of stuff with Taproot. He pointed out a lot of the issues with the annex and nobody listened because crazy Jeremy.
 
 Speaker 0: 01:16:11
 
