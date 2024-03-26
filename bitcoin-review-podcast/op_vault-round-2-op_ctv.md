@@ -1779,21 +1779,21 @@ Right.
 And Bitcoin keeps on going in the cycles where it's redistribution.
 Right.
 And then price goes up and then now people have to give a shit again.
-So the issue is like, as soon as like the majority of people start to realize how fragile their setups are, right.
+So the issue is like, as soon as like the majority of people start to realize how fragile their setups are, right?
 Like versus how much money it actually is worth is normally when the questions start to come.
 You know, I always joke that like Ledger is a funnel sales for us, right?
 Because they go, they buy a Ledger, they put the stuff with their shit coins on it and they don't think about it.
-But then they go, Oh shit, I have this wallet, it's mixing my shit coins.
+But then they go, shit, I have this wallet, it's mixing my shit coins.
 I don't have a passphrase on it.
 I don't understand.
 And then they start reading.
-And then they start understanding and like, oh, okay.
+And then they start understanding and like, okay.
 Maybe I should put a passphrase on my coins.
 Well, if I'm going to do that, how am I going to do that?
 Right?
 Like where does the metal go?
-You know, Like now I have two pieces of metal.
-Oh, I actually have to have a second piece of metal for the best phrase.
+You know, like now I have two pieces of metal.
+I actually have to have a second piece of metal for the passphrase.
 And that's not even to start touching to the multisig.
 I absolutely hate multisig.
 I use it, but I hate it because It is inherently flawed.
@@ -1801,9 +1801,9 @@ It's a terrible, terrible system.
 You just essentially create multiple points of failure that have to be mitigated with some complex sort of alternative solution.
 And as a majority of the people who are not necessarily super technical, but now understand a little bit more and have to give a shit because they have more money, start to sort of really get into this.
 I really think OpVault's going to sell itself.
-It's going to be like, oh, great.
+It's going to be like great.
 I don't have to have 50 pieces of metal around the world.
-You know, like I don't have to trust all the hardware wallets.
+Like I don't have to trust all the hardware wallets.
 I don't have to do this.
 I don't have to do that.
 Like that to me is what helps it sell itself.
@@ -1826,7 +1826,7 @@ I mean, isn't that what the Wookiee wanted?
 Everybody to use 12 DVDs with burning laptops from Walmart.
 That definitely going to keep your coin safe.
 All right, guys.
-Like, is there anything else that you think should be part of this in case somebody is listening to this as the only thing they heard about UpVault?
+Like, is there anything else that you think should be part of this in case somebody is listening to this as the only thing they heard about OpVault?
 
 Speaker 1: 01:31:27
 
