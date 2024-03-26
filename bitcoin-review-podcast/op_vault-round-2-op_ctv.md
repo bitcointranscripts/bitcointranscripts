@@ -1832,10 +1832,10 @@ Speaker 1: 01:31:27
 
 I think all I'll say is I welcome a better proposal.
 I think none of us are married to this thing.
-Now that, you know, Greg and AJ have a big part of them is now in this proposal, which makes me feel good because, you know, obviously a little bit of self-consciousness about like designing this thing in isolation.
+Now that, Greg and AJ have a big part of them is now in this proposal, which makes me feel good because, obviously a little bit of self-consciousness about like designing this thing in isolation.
 But if there's a better proposal, I welcome it.
 I really just want vaults in Bitcoin.
-I really just want better custody for every individual, every, you know, industrial operation that's doing interesting, good things with Bitcoin.
+I really just want better custody for every individual, every industrial operation that's doing interesting, good things with Bitcoin.
 It's something we all care about and we need to make it bomb proof.
 So really, however we get vaults, so far, this is the simplest thing that I've seen.
 But however we get vaults, as long as we get them sometime in the next few years, I'll be happy.
@@ -1847,11 +1847,11 @@ Speaker 0: 01:32:14
 Very cool.
 All right, guys.
 So how about a round of last final thoughts here?
-Rindell?
+Rijndael?
 
-Speaker 5: 01:32:23
+Speaker 3: 01:32:23
 
-Yeah, the thing that made Vault concrete for me was a couple of years ago, I read the docs for ReVault, which is like the company behind Liana and also an open source project for doing vaults at an institutional level.
+Yeah, the thing that made vaults concrete for me was a couple of years ago, I read the docs for revault, which is like the company behind Liana and also an open source project for doing vaults at an institutional level.
 They have a really nice architectural description of their system and it uses a bunch of co-signing servers and oracles and stuff.
 But if you read that description and what it accomplishes, and then you imagine, what if we're able to kind of like get rid of all of the servers and all of the watchtowers?
 I think that that's maybe if you've listened to this whole episode and you're like, I still don't really get like what vaults are or why I would care, I would encourage you to go and check that out.
