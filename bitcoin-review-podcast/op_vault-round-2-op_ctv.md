@@ -1363,20 +1363,19 @@ I think it's just implementation.
 Speaker 0: 01:10:10
 
 No, doesn't it?
-I could swear it needed a soft fork for something on it, But maybe I'm wrong.
+I could swear it needed a soft fork for something on it, but maybe I'm wrong.
 
 Speaker 1: 01:10:16
 
-I sure hope it
+I sure hope it does.
 
 Speaker 4: 01:10:16
-
-does.
+.
 It's just P2P, so it should be fine.
 
 Speaker 0: 01:10:19
 
-OK, it's just a P2P part?
+Okay, it's just a P2P part?
 
 Speaker 1: 01:10:20
 
@@ -1384,7 +1383,7 @@ Yeah.
 
 Speaker 0: 01:10:21
 
-OK, wonderful.
+Okay, wonderful.
 So we're going to just argue about clients and connections.
 Great.
 
@@ -1407,8 +1406,8 @@ But the timing might work out that way.
 
 Speaker 1: 01:11:08
 
-One thing I've been thinking about, and maybe Greg can chime in on this, is like what if we did, What if we eventually proposed a fork that was up all CTV and APO?
-Because I know you know a lot of people have wanted a peel for a while Obviously, I can't judge the use in l2, but the size of that fork is
+One thing I've been thinking about, and maybe Greg can chime in on this, what if we eventually proposed a fork that was up all CTV and APO?
+Because I know you know a lot of people have wanted a peel for a while. Obviously, I can't judge the use in L2, but the size of that fork is..
 
 Speaker 5: 01:11:30
 
@@ -1416,18 +1415,17 @@ James Ellen symmetry.
 
 Speaker 1: 01:11:31
 
-Oh, yeah, you know you're up.
+Yeah, I you know you're up.
 Thank you.
 Thank you.
-Yeah, I want to I want
 
 Speaker 3: 01:11:35
 
-to Oh, thanks James for bringing this up.
-Just today I got an LN Symmetry channel close onto Cygnet by the way.
+Thanks James for bringing this up.
+Just today I got an LN Symmetry channel close onto Signet by the way.
 So, you know, show that later.
-But yeah, I mean, so these soft forks are all aimed at very specific use cases, improving things we have today, right?
-We have channels today, like lightning channels, we can make them better with IPO.
+So these soft forks are all aimed at very specific use cases, improving things we have today, right?
+We have channels today, like Lightning channels, we can make them better with IPO.
 We have vaults today, but we can make them better without vault.
 We have DLCs, you can make them better with CTV.
 That's sort of the notion.
@@ -1438,8 +1436,8 @@ I don't think we're there yet, but we have communities that are motivated for th
 
 Speaker 1: 01:12:23
 
-I just, from my standpoint, it feels to me like CTV and APO are very, very baked, and they're very, very small changes.
-So I could almost, I think from a deployment complexity standpoint, it makes sense to me that if OpVault in the next few months here or whatever gets really well vetted and people feel very comfortable with it, it's not a lot of code.
+From my standpoint, it feels to me like CTV and APO are very, very baked, and they're very, very small changes.
+I think from a deployment complexity standpoint, it makes sense to me that if OpVault in the next few months here or whatever gets really well vetted and people feel very comfortable with it, it's not a lot of code.
 And so the three of them together, I could see maybe atomically activating just because that way, you know, you can test the shit out of something like that.
 And
 
