@@ -1264,24 +1264,23 @@ So if you wanna get those at that level, you're going to be spending millions of
 Right.
 And it doesn't mean it's secure.
 It means it just has the correct back doors for FIPS.
-So, so like, what's really cool about this is that you're enabling like all this mid-sized businesses to have like the checkboxes needed for them to be big businesses, for insurance purposes, for all the investor due diligence stuff, without having to go and deal with Fireblocks, for example.
+So, what's really cool about this is that you're enabling like all this mid-sized businesses to have like the checkboxes needed for them to be big businesses, for insurance purposes, for all the investor due diligence stuff, without having to go and deal with Fireblocks, for example.
 
 Speaker 1: 01:07:00
 
 Well, it's funny you mentioned the insurance stuff because I think, I don't want to put words in his mouth, but I think I recall Rob from Anchor Watch really expressing a lot of support for a proposal like this, this proposal particularly.
 And for anybody who isn't familiar, Anchor Watch proposes to be in the business of insuring theft.
-So if you set up a wallet, you know, per some specification that they would give you, they'll say, OK, this is like a good enough setup that we're going to actually insure this against law.
-So if those coins somehow get stolen, you know, we pay you out.
-I don't know too much about their company, but I know, you know, something like this makes, de-risks them quite a bit because if there's like super high security, then, you know, they're gonna have fewer payout events.
+So if you set up a wallet, per some specification that they would give you, they'll say, okay, this is like a good enough setup that we're going to actually insure this against law.
+So if those coins somehow get stolen, we pay you out.
+I don't know too much about their company, but I know, something like this makes, de-risks them quite a bit because if there's like super high security, then, they're gonna have fewer payout events.
 
 Speaker 0: 01:07:46
 
 Disclosure, I'm an investor.
-Do
 
 Speaker 3: 01:07:48
 
-they actually watch the anchors and like sweep them or something?
+Do they actually watch the anchors and like sweep them or something?
 Because as an insurance company- I don't know how it actually-
 
 Speaker 0: 01:07:53
