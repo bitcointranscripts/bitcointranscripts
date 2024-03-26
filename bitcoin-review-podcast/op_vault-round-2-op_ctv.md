@@ -1309,7 +1309,7 @@ Yeah.
 So essentially like what they're trying to do is create some standards.
 Right.
 That are insurable.
-So they're going back to, to reinsurers and, you know, all the underwriters and everybody sort of say, Hey, you know, this is how we think we could do it so that the coins are actually safe, can insure this, right?
+So they're going back to, to reinsurers and, all the underwriters and everybody sort of say, hey, you know, this is how we think we could do it so that the coins are actually safe, can insure this, right?
 So they're trying to find the packages that meet the technology that can be done.
 And they're sort of like a mini script sort of makes their life easier to, yeah, no, nothing to do with ephemeral and CoreWatch.
 So they're trying to just create policies based on setups.
@@ -1317,14 +1317,13 @@ And if you want to get your ear talked off, just go to ask Rob about Miniscript.
 
 ## Now really, how do we activate OP_VAULT??
 
-Speaker 0: 01:08:56
 
 So yeah, guys, what else here?
 Okay, so let's go back to the painful topic, which is like, how do we activate this?
 
 Speaker 1: 01:09:02
 
-Reyndall's shaking his head.
+Rijndael is shaking his head.
 
 Speaker 3: 01:09:04
 
@@ -1333,13 +1332,13 @@ So I'll pipe in a little bit.
 I think we still need review cycles.
 So people read the bit and the documentation about like use cases are all fired up, but not many people are fired up about reading specs and trying to see what makes sense.
 So I've been spending some more time on that too, back and forth with James and others, and I think that's got to continue for a little longer while we figure out the SIGNET stuff.
-So that's my, my intention at least.
+So that's my intention at least.
 
 Speaker 0: 01:09:33
 
 Yeah.
 So like I'm not suggesting we're like imminent to activate this.
-I know there's still like, you know, months, if not, like maybe a year or two on how like we're sort of like, OK, this is it.
+I know there's still like, you know, months, if not, like maybe a year or two on how like we're sort of like, okay, this is it.
 Right.
 Like everything is great.
 Everybody agrees it's great.
