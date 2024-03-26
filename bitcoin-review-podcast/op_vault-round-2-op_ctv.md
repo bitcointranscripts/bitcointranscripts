@@ -11,7 +11,7 @@ date: 2023-05-11
 
 NVK: 00:01:25
 
-Today, we're going to get back to OpVault, just kidding, OpVault, this new awesome proposal on how we can make people's money safe in the future.
+Today, we're going to get back to opvault, just kidding, opvault, this new awesome proposal on how we can make people's money safe in the future.
 And in my opinion, one of very good ways of scaling Bitcoin self-custody in a sane way.
 And with that, let me introduce today's guests, Mr. James.
 And welcome back.
@@ -56,7 +56,7 @@ For the people that don't know you, you want to just give us the elevator pitch 
 
 Greg Sanders: 00:02:04
 
-Yeah, so I just I've been working with James a little bit on this OpVault proposal and that's why I'm here.
+Yeah, so I just I've been working with James a little bit on this opvault proposal and that's why I'm here.
 
 NVK: 00:02:11
 
