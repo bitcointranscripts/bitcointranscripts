@@ -1877,9 +1877,9 @@ Ben Carman.
 
 Speaker 4: 01:33:47
 
-Yeah, I think a lot of the conversation around Vault or Covenants for the last few years has been like, you know, these are all cool proposals, but we're waiting for like the good one, the right one.
-And this kind of feels like, you know, OpVault was like a really cool implementation in the first version, and now the second version is the culmination of all the proposals we've had over the years into one beautiful thing.
-Similarly to with Taproot where we had these ideas of Schnorr and Mast and we figured out a way to make it beautifully work together and evolve this 2.0 version because it's kind of done that I think.
+Yeah, I think a lot of the conversation around Vault or Covenants for the last few years has been like, these are all cool proposals, but we're waiting for like the good one, the right one.
+And this kind of feels like, OpVault was like a really cool implementation in the first version, and now the second version is the culmination of all the proposals we've had over the years into one beautiful thing.
+Similarly to with Taproot where we had these ideas of Schnorr and Mast and we figured out a way to make it beautifully work together in opvault like this 2.0 version because it's kind of done that I think.
 So that makes me really happy to see, okay, this is the official, well thought out version of Covenants that our great core devs have figured out.
 Maybe someone will figure out something better, but to me it's looking great right now.
 This is kind of our best approach that we've had so far, by far.
@@ -1894,27 +1894,27 @@ I can't improve upon what Ben just said.
 
 Speaker 0: 01:34:44
 
-So Where can people find information about it, where they should be reading and how they can find you?
+Where can people find information about it, where they should be reading and how they can find you?
 
 Speaker 1: 01:34:50
 
 Yeah.
 So the BIP number now is 345.
 So hopefully if you Google BIP 345, it should take you to everything you need to see.
-In case it doesn't, you can go to my paper at jameso.be.vaults.pdf.
+In case it doesn't, you can go to my paper at jameso.be/vaults.pdf.
 And that's a paper I wrote before the proposal was really fleshed out in any meaningful way.
 So it's kind of just about the background, but it does link to the BIP and I think the Bitcoin Inquisition pull request.
 And so, yeah, if you want to actually scrutinize the code yourself and get in there and get your hands dirty, there is a pull request up on AJ Towns' Bitcoin Inquisition project.
 I can't remember the number for that, but it's up there with all the pertinent details and test cases.
 I mean, if you want to see how vaults are actually implemented using it, the functional tests in there are pretty comprehensive and they show you how to set everything up.
 It's maybe not the most legible because it's obviously meant for testing, but it's kind of feature complete as being an example.
-So yeah, I mean, thanks again for having us and putting together a great panel and giving the proposal some airtime.
+So yeah, I mean, thanks again for having us and putting together a great panel and giving the proposal some air time.
 
 Speaker 0: 01:36:02
 
 Fantastic.
 Okay, guys.
-As usual, another, I hope that we bored everybody to death and I think we've accomplished.
+As usual, I hope that we bored everybody to death and I think we've accomplished.
 Thanks for coming.
 This was fun.
 Thanks for listening.
@@ -1922,4 +1922,3 @@ For more resources, check the show notes.
 We put a lot of effort into them.
 And remember, we don't have a crystal ball, so let us know about your project.
 Visit bitcoin.review to find out how to get in touch.
-You
