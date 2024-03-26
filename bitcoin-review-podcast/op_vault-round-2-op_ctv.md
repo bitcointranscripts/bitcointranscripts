@@ -1590,14 +1590,14 @@ And hopefully it's just going to be a fight over how we activate it, not over wh
 
 Speaker 5: 01:17:35
 
-Well, that's where I was trying to go talking about things like Inquisition or other places to have people actually understand what this change is for.
+Well, that's where I was trying to go talking about things like inquisition or other places to have people actually understand what this change is for.
 If everybody can wrap their head around the behavior of this change, what it can do, what it can't do.
 OpVault does not turn Bitcoin into the surveillance permission coin.
 It does not enable all these crazy, horrible 1984 use cases, what it does do is it lets you better secure and better custody your Bitcoin.
-And having people really understand that and understand the ends of it, I think is going to be a lot of the work and it's going to be, yeah, I mean some amount of, and I don't mean this in a scummy way, but like marketing, frankly, right.
+And having people really understand that and understand the ends of it, I think is going to be a lot of the work and I don't mean this in a scummy way, but like marketing, frankly, right.
 And like helping people like understand it and understand like what it does and doesn't do.
 And then from there, yeah, it's a question of like, are we doing, you know, BIP-8?
-Are we doing something like, you know, what do we do to actually turn this on?
+Are we doing something like, what do we do to actually turn this on?
 
 Speaker 0: 01:18:35
 
