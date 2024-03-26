@@ -1438,12 +1438,11 @@ Speaker 1: 01:12:23
 
 From my standpoint, it feels to me like CTV and APO are very, very baked, and they're very, very small changes.
 I think from a deployment complexity standpoint, it makes sense to me that if OpVault in the next few months here or whatever gets really well vetted and people feel very comfortable with it, it's not a lot of code.
-And so the three of them together, I could see maybe atomically activating just because that way, you know, you can test the shit out of something like that.
-And
+And so the three of them together, I could see maybe atomically activating just because that way,  you can test the shit out of something like that.
 
 Speaker 0: 01:12:55
 
-it's going to be very interesting if there is a softbark for this much stuff together.
+it's going to be very interesting if there is a soft fork for this much stuff together.
 
 ## Taproot & Segwit complexity VS OP_VAULT
 
@@ -1454,12 +1453,11 @@ Still smaller than Segwit.
 Speaker 1: 01:13:03
 
 Well, if you think about it, like Tapper contained way more.
-Segwit contained
+Segwit contained way more.
 
 Speaker 0: 01:13:07
 
-way more.
-Oh yeah, I know.
+Yeah, I know.
 But it has one name.
 
 Speaker 3: 01:13:09
@@ -1472,7 +1470,7 @@ It's a lot of code.
 Speaker 0: 01:13:13
 
 Yes.
-But there is one, just one name of the thing, right?
+But there is just one name of the thing, right?
 Like people are counting the things.
 
 Speaker 1: 01:13:19
