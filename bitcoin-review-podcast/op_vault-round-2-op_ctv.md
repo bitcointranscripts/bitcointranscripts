@@ -1703,10 +1703,10 @@ Speaker 0: 01:23:52
 
 There you go.
 It's kind of fascinating.
-What I like about the op vaults sort of it looks like something that would align with the huddlers.
+What I like about the opvaults sort of it looks like something that would align with the huddlers.
 Right.
-Like or like or the most sort of like a traditional sort of the people who want Bitcoin to change the least, move the coins the least, right?
-And sort of like huddle forever, like upvotes is for you, Right?
+Like the most sort of like a traditional sort of the people who want Bitcoin to change the least, move the coins the least, right?
+And sort of like huddle forever, like upvotes is for you, right?
 Like you can find a way to create a script and only your 10th generation ahead will get it.
 Right?
 Like if you really want to go Valhalla style.
@@ -1714,7 +1714,7 @@ Like if you really want to go Valhalla style.
 Speaker 5: 01:24:29
 
 Yeah.
-A lot of people are, when folks were talking about interesting new covenants or anytime somebody brings up simplicity or something else, there's this pushback of, oh, well, you don't need super programmable money.
+When folks were talking about interesting new covenants or anytime somebody brings up simplicity or something else, there's this pushback of, well, you don't need super programmable money.
 It just needs to be money.
 It doesn't need to do all these interesting things.
 And OpVault just makes it easier for you to securely hold your money.
@@ -1723,15 +1723,15 @@ It makes it harder for your money to run away from you.
 
 Speaker 0: 01:24:52
 
-You know, I was in Nashville last week and they had the design week there.
+I was in Nashville last week and they had the design week there.
 So a lot of people who were designers interested in working on open source, which is like kind of like good luck, right?
-It's very hard for PMs and designers to participate in anarchic FOSS sort of projects at all.
-Like maybe them creating like wonderful graphical explanations and sort of like, you know, helping people chew on this or even trying to explain to them what this does.
-My radio sort of clarified to you, James and whoever else is championing this, like how to best sort of inform people about it, how to create the correct narrative for this.
+It's very hard for PMs and designers to participate in anarchic `FOSS` sort of projects at all.
+Like maybe them creating like wonderful graphical explanations and sort of like, helping people chew on this or even trying to explain to them what this does.
+Might already sort of clarified to you, James and whoever else is championing this, like how to best sort of inform people about it, how to create the correct narrative for this.
 Because so far, I think we're doing a disservice, right?
-Like we've sort of, oh, it's CTV, oh, it does this, oh, it does that.
+Like we've sort of, it's CTV, oh, it does this, it does that.
 Like people don't get it.
-It just sounds like we're gonna have some insane thing on Bitcoin.
+It just sounds like we're going to have some insane thing on Bitcoin.
 I mean, I was scared of CTV when it came out.
 So I don't know.
 I feel like like the education part is going to be like 90% of the problem.
@@ -1745,16 +1745,16 @@ That's right.
 
 Speaker 1: 01:26:04
 
-As an aside on CTV, I think maybe people understandably got confused between CTV and Sapio.
+As an aside on CTV, I think maybe people understandably got confused between CTV and `Sapio`.
 And Sapio was like a really big, wide-reaching, futuristic system that Jeremy wrote that, frankly, was very complicated.
 And that's often kind of what he would demo when he would go out and talk about CTV sometimes.
-And I mean, I get why he did it because he had a bunch of use cases that were kind of cool and, you know, like interesting, But that was a big complicated system And so I think people maybe kind of got lost in the fact that CTV isn't safe.
-You know, CTV is just this really simple primitive
+I get why he did it because he had a bunch of use cases that were kind of cool and, like interesting, but that was a big complicated system and so I think people maybe kind of got lost in the fact that CTV isn't Sapio.
+CTV is just this really simple primitive.
 
 Speaker 5: 01:26:39
 
-Yeah, I think something that has me cautiously optimistic about Op-Vault finding kind of product market fit or at least having a better PR campaign with with everybody is you know now a couple years later multi-sig has gotten a lot more accessible and I think people are thinking a little bit more deeply about the custody of their coins.
-I mean, you know, if you look at for example, what like Nunchuck is doing for example with like you can do a multi-sig that's a key on your phone, a key on a tap signer, and a key on like a hardware wallet like a cold card or something.
+Yeah, I think something that has me cautiously optimistic about Op_Vault finding kind of product market fit or at least having a better PR campaign with with everybody is you, a couple years later multi-sig has gotten a lot more accessible and I think people are thinking a little bit more deeply about the custody of their coins.
+If you look at for example, what like `Nunchuck` is doing, for example, with like you can do a multi-sig that's a key on your phone, a key on a tap signer, and a key on like a hardware wallet like a cold card or something.
 That's starting to become accessible in your pocket, multi-sig.
 And I think once you play with multi-sig long enough, you start asking a couple questions.
 Ask anybody who's doing a lot of multi-sig.
