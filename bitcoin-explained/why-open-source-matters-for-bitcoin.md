@@ -2,12 +2,14 @@
 title: "Why Open Source Matters For Bitcoin"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=_qdhc5WLd2A
-tags: ["bitcoin-core"]
+tags: ["bitcoin-core","reproducible-builds"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-12-18
 episode: 21
+summary: "In this episode of \"The Van Wirdum Sjorsnado,\" hosts Aaron van Wirdum and Sjors Provoost discussed why it matters that Bitcoin software is open source and why even open-source software doesn't necessarily solve all software-specific trust issues.\n\nIn theory, the fact that most Bitcoin nodes, wallets and applications are open source should ensure that developers can\u2019t include malicious code in the programs: anyone can inspect the source code for malware. In practice, however, the number of people with enough expertise to do this is limited, while the reliance of some Bitcoin projects on external code libraries (\u201Cdependencies\u201D) makes it even harder.\n\nFurthermore, even if the open-source code is sound, this doesn\u2019t guarantee that the binaries (computer code) really correspond with the open-source code. Van Wirdum and Provoost explain how this risk is largely mitigated in Bitcoin through a process called Gitian building, where several Bitcoin Core developers sign the binaries if, and only if, they all produced the exact same binaries from the same source code. This requires special compiler software.\n\nFinally, the hosts discuss Guix, a relatively new project that goes above and beyond the Gitian process to minimize the level of trust required to turn source code into binaries \u2014 including trust in the compiler itself."
 ---
+## Intro
 
 Aaron van Wirdum:
 
@@ -16,16 +18,6 @@ Live from Utrecht, this is the Van Wirdum Sjorsnado.
 Sjors Provoost:
 
 Hello.
-
-Aaron van Wirdum:
-
-Sjors, we're recording this on Wednesday evening, Dutch time.
-Bitcoin just broke 20K dollars.
-Are you ecstatic?
-
-Sjors Provoost:
-
-No, no.
 
 Aaron van Wirdum:
 
@@ -192,7 +184,7 @@ Yeah.
 Because one thing is you want whatever Bitcoin code is running to be open source so you can see what it is.
 But most computer programs, as we talked about in the first episode, use libraries or dependencies, use some other piece of software, that in turn uses some other piece of software, that in turn uses some other piece of software.
 
-## Bitcoin Core
+## The Importance of Open Source in Bitcoin
 
 Aaron van Wirdum:
 
@@ -209,7 +201,7 @@ Aaron van Wirdum:
 Right, okay.
 Sorry.
 Thanks for that correction.
-So it's on GIT app, so anyone with the skills can look at this source code and check that it does what it's supposed to do.
+So it's on GitHub, so anyone with the skills can look at this source code and check that it does what it's supposed to do.
 So, Sjors-
 
 Sjors Provoost:
@@ -315,6 +307,8 @@ Aaron van Wirdum:
 
 Oh, what's the next problem?
 
+## Deterministic Builds
+
 Sjors Provoost:
 
 Well, there's a lot of problems.
@@ -328,14 +322,14 @@ So one thing that open source projects almost always do is publish a checksum, w
 That's one thing you can do, but then can you trust the checksum that you downloaded?
 I don't know, because whoever hacked the site might have also hacked the checksum.
 So then what you do is you sign the checksum.
-So, for example, a well-known person, in this case, Vladimir [inaudible 00:10:19], he signs the checksum with a signature, with a key, with a PGP key that's publicly known.
+So, for example, a well-known person, in this case, Wladimir van der Laan, he signs the checksum with a signature, with a key, with a PGP key that's publicly known.
 It's been the same for 10 years.
 So then at least you have something to check.
 
 Aaron van Wirdum:
 
 Okay.
-So how does Vladimir know that the binaries he got actually reflects the open source code from the GIT?
+So how does Wladimir know that the binaries he got actually reflects the open source code from the GIT?
 
 Sjors Provoost:
 
@@ -366,7 +360,7 @@ And sometimes that works with some project, but as a project got really complica
 So for example, the software uses libraries and those libraries are living on your system.
 So we talked about that in one of the first episodes about libraries in general.
 These libraries might live in your system and these libraries get updated all the time.
-And maybe you updated two months ago and Vladimir is very accurate and he updated yesterday.
+And maybe you updated two months ago and Wladimir is very accurate and he updated yesterday.
 And so the final product contains a different version of a library.
 And if you only change one letter in a computer program, then boom, your checksum doesn't work anymore.
 So that's one of the things that can go wrong.
@@ -375,7 +369,7 @@ Aaron van Wirdum:
 
 Hang on.
 One step at a time.
-Why do I even need to care that my checksum matches whatever Vladimir signed if I compiled it myself?
+Why do I even need to care that my checksum matches whatever Wladimir signed if I compiled it myself?
 
 Sjors Provoost:
 
@@ -516,7 +510,7 @@ Aaron van Wirdum:
 Right.
 So far so good.
 
-## Dependencies
+## The Problem with Dependencies
 
 Sjors Provoost:
 
@@ -739,13 +733,13 @@ Aaron van Wirdum:
 How do we get more paranoid?
 How do we solve this problem?
 
-## Geeks 
+## GUIX 
 
 Sjors Provoost:
 
 Well, the key there is to make everything open source and everything a deterministic build.
 So not just Bitcoin is an deterministic build, but every dependency of Bitcoin is a deterministic build, and every tool that is used to build Bitcoin is a deterministic build, including the compiler.
-And this is where we introduce Geeks.
+And this is where we introduce GUIX.
 This is a project Carl Dong has been working on and has given several talks on that.
 We'll probably link to in the show notes.
 
@@ -774,7 +768,7 @@ Exactly.
 
 Sjors Provoost:
 
-So the ambition of Geeks is roughly as follows.
+So the ambition of GUIX is roughly as follows.
 You start with about, I think it's 150 bytes, of actual machine code.
 So that is binary code that you must trust, but it's only 150 bytes, and the whole world can study it and put it on a temple wall or something like that.
 But from that 150 bytes, all you need to do now is read source and compile source.
