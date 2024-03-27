@@ -575,16 +575,15 @@ It's a trust system that they're not not under collateralized.
 
 Speaker 1: 00:45:45
 
-That just the idea of the automated bank run is really wild that just the idea of like having this like what if you have some kind of like third-party lightning node that's like trying to hold the mint accountable for the community It's like constantly like they have enough, you know, Bitcoin in the lightning nodes so that they can constantly like at random times try to like make obscenely large redemptions just to kind of keep them honest.
+That just the idea of the automated bank run is really wild that just the idea of like having this like what if you have some kind of like third-party lightning node that's like trying to hold the mint accountable for the community It's like constantly like they have enough, Bitcoin in the lightning nodes so that they can constantly like at random times try to like make obscenely large redemptions just to kind of keep them honest.
 
 Speaker 2: 00:46:15
 
 Yeah.
-I mean, this is like one.
 Yeah, there's a lot of thinking there, but it's kind of one of these ideas where everyone's like, oh, inflation is bad, right?
 They all think inflation is bad.
 They get into Bitcoin.
-It's like, oh, wait, maybe inflation isn't bad.
+It's like, wait, maybe inflation isn't bad.
 It's kind of one of those ideas.
 Well, maybe a bank run is actually a good thing, right?
 Like frequent bank runs are good.
