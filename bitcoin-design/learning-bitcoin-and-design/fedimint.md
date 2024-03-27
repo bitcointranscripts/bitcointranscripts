@@ -238,7 +238,6 @@ Go for it.
 
 Speaker 4: 00:17:33
 
-Okay.
 So two questions, actually.
 One is, are mints interchangeable?
 Can I take an IOU from Steven's mint and redeem it at your mint?
