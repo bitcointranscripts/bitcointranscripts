@@ -634,21 +634,21 @@ Speaker 2: 00:49:17
 
 Well, I will mention one other thing just based on my experience where like, I was saying, this would be a good problem for designer is like, what should the initial setup be when you run the server?
 Right?
-Like, you know, just to get because I wanted to if you think of be put be negative here it's like how would this fail well one reason this would fail is because it's an awful lot of running the servers right which people aren't good at right like people aren't good at passwords people aren't good at servers and so making the server setup here is like there's a technical component we're trying to solve.
-We're trying to make the software like really easy to run, but there's a design problem too because you know you need to run the software and a little web page will show up and it'd be like, OK, who else?
+Like, just to get because I wanted to if you think of be put be negative here it's like how would this fail well one reason this would fail is because it's an awful lot of running the servers right which people aren't good at right like people aren't good at passwords people aren't good at servers and so making the server setup here is like there's a technical component we're trying to solve.
+We're trying to make the software like really easy to run, but there's a design problem too because you know you need to run the software and a little web page will show up and it'd be like, okay, who else?
 Where you know what are the addresses in the public keys of the other servers, right?
-Like there's a big life customer lifecycle there and then OK, once the server is up and running, what's the first step?
-Like what's the first like win you get, you know, you want your user to have like a win, right?
-So like how do you get to the point where they can send their first lightning payment, right?
-Or receive their first, you know, something like that, deposit the first, you know, like that sort of life, customer life, lifecycle, whatever you call it, is like some design thinking would go a long ways there, because it's currently just developers thinking about it, mostly.
+Like there's a big life customer lifecycle there and then okay, once the server is up and running, what's the first step?
+Like what's the first like win you get, you want your user to have like a win, right?
+So like how do you get to the point where they can send their first Lightning payment, right?
+Or receive their first, something like that, deposit the first, like that sort of life, customer life, lifecycle, whatever you call it, is like some design thinking would go a long ways there, because it's currently just developers thinking about it, mostly.
 
-Speaker 5: 00:50:32
+Speaker 6: 00:50:32
 
-Is it going to just rely on AWS at that point?
+Is it going to just rely on AWS at that point? 
+I mean, I don't know if you remember this old tools like fantastical and cPanel where you would like one click install WordPress or some
 
 Speaker 2: 00:50:35
-
-I mean, I don't know if you remember this old tools like fantastical and cPanel where you would like one click install WordPress or some yeah I think it'll be diversity right like I think there will be really easy setup hopefully we can get to it like having really easy setups in stuff like umbral, Raspi Blitz, some of these things where people are already running.
+Yeah I think it'll be diversity right like I think there will be really easy setup hopefully we can get to it like having really easy setups in stuff like umbral, Raspi Blitz, some of these things where people are already running.
 It's helpful for people who are already running one but it's also like if you want to have like your own self-hosted server it's probably like your own hardware it's probably easier to set that up from scratch and try to attempt it yourself so that's one option another option is like I think it's been very a BC space had a lot of success with like Luna node, right?
 So they built a little series of configuration forms.
 You'd set up a VPN or VPC and then it would fire up a little configure or no, there was like a couple of forms you'd fill out and that would actually fire up the VPC, like the cloud server for you.
