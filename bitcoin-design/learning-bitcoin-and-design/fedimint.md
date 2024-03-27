@@ -162,16 +162,16 @@ Speaker 2: 00:11:05
 Yeah great question.
 It's been a research project for like kind of like a couple of years.
 Eric Syrian the creator had this idea a few years ago and then there's a lot of cryptography and stuff that he needed to develop before it would actually be usable.
-So he's working with Blockstream at the time so he got a lot of valuable basically mentorship from people like Tim Ruffing, some of the other cryptographers that, let me know if this is too windy by the way, if it's making a bunch of noise.
-So, you know, so that was kind of going on for like the last two years or so and so now it's at a point where it's starting to become usable like so you can you can run it on your computer and you can run like a lightning node to lightning nodes and you can have you know you can do lightning payments with it running on one computer over there I could bring it later on we have a stack of four Raspberry Pis that are our first like federation so we've deployed it on one it's still like testing but it like one actual thing where the each one is running on a different server and that works and so we're currently basically trying to set up the first one that we have a prototype mobile app that can just send and receive lightning.
+So he's working with Blockstream at the time so he got a lot of valuable basically mentorship from people like Tim Ruffing, let me know if this is too windy by the way, if it's making a bunch of noise.
+So, that was kind of going on for like the last two years or so and so now it's at a point where it's starting to become usable like so you can you can run it on your computer and you can run like 2 Lightning nodes and you can do lightning payments with it running on one computer. Over there I could bring it later on we have a stack of four Raspberry Pis that are our first like federation so we've deployed it on one it's still like testing but it like one actual thing where each one is running on a different server and that works and so we're currently basically trying to set up the first one that we have a prototype mobile app that can just send and receive Lightning.
 And so we're currently in the process of trying to get our first deployment that can send and receive with fake Bitcoin, like RegTest or Signet, something like that, Bitcoin.
 So it's getting to the point where it's usable, but definitely not on main net.
-And so hopefully, we're hoping like maybe three months from now, four months from now, kind of like October timeframe, really, we could start having our first testing on main net of the Federation.
+And so hopefully, we're hoping like maybe three months from now, four months from now, kind of like October timeframe, really, we could start having our first testing on main net of the federation.
 So it's kind of like alpha, pre-alpha.
 But the foundation is really strong.
 That's a really great thing about this from the software point of view, is that the software is extraordinarily high quality from my point of view.
 So while it's not quite ready, like the foundation is really strong.
-So hopefully, you know, the testing will be successful.
+So hopefully, the testing will be successful.
 We won't have to go back to the drawing board very much.
 
 ## Self-custody vs. Community-custody
