@@ -247,7 +247,7 @@ Or is it bound to a specific mint and is it possible to find out like here's an 
 Speaker 2: 00:17:54
 
 Yeah that's a great question.
-So basically what a token is, so like underneath, So this is like the idea here of so Feddy Mint, right?
+So basically what a token is, so like underneath, So this is like the idea here of so FediMint, right?
 It's a it's a I need to learn this word It's it's concatenated two words Feddy for Federation and mint for Chami and mint Chami and mint is I described Federation I haven't described Chami and mint yet.
 So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Steven would have an IOU and the Mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chom invented this idea and so so yeah what the IOU actually is is it's it's just like a little piece of data you know it's a couple hundred characters long and so if I run a let's say I am a chameleon mint and Steven is a chameleon mint and we don't know each other if a user presents a token from my charm in mint to Steven, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
 He would look at it and be like, well, I have no, I don't know of this token.
