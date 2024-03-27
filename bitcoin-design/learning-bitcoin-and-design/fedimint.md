@@ -222,14 +222,13 @@ That's what people are using.
 And so it'd be nice if we could have something where it's like you know Stephen's neighbor accesses it through Stephen because Stephen's an expert right.
 Christoph's landlord access it to Christoph and you know people in their community who are like the experts that would be an improvement, right? And we have to be realistic about you know how you know whether how much effort people need to be spending on their Bitcoin stuff, right?
 Like ideally, we shouldn't all be spending a part-time job just to use Bitcoin properly, right?
-Like that's a lot of it is like, can we create like good default, default privacy, right?
+Like that's a lot of it is like, can we create like good default privacy, right?
 Like, cause you can get really good privacy today, but it takes a lot of effort.
 And it would be nice if we had a little bit more like default privacy that doesn't require any effort.
-Yeah.
 
 ## Are mints interoperable? How chaumian mints work
 
-Speaker 1: 00:17:30
+Speaker 4: 00:17:30
 
 I have a question.
 
