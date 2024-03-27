@@ -493,22 +493,22 @@ Speaker 6: 00:38:47
 
 I just didn't have a comment.
 Yes, so I was wondering if with this architecture there would be any kind of like data store.
-And I guess like as I say that I realized that there might be some privacy drawbacks of doing so and the reason that I'm asking about data storage because there's some additional kind of information that a wallet may need to store, for example, labels and contact data and whatever within the Mint.
-And that could even be stored on, as you mentioned, something like Google Cloud or iCloud if it's using something like Photon, but yeah, there's just like a mass amount of like arbitrary data that someone's wallet within the Mint might want to store.
+And I guess like as I say that I realized that there might be some privacy drawbacks of doing so and the reason that I'm asking about data storage because there's some additional kind of information that a wallet may need to store, for example, labels and contact data and whatever within the mint.
+And that could even be stored on, as you mentioned, something like Google Cloud or iCloud if it's using something like Photon, but yeah, there's just like a mass amount of like arbitrary data that someone's wallet within the mint might want to store.
 Settings, for example, different configurations.
 Is something like that being considered or is it just going to be like left for like a plugin based system?
 
 Speaker 2: 00:40:01
 
-Yeah so I mean on the server side like each server has a database And that's what basically the what the federation member, the servers send messages back and forth is basically to just ensure they have exactly synchronized database.
+Yeah so I mean on the server side like each server has a database. And that's what basically the what the federation member, the servers send messages back and forth is basically to just ensure they have exactly synchronized database.
 And so with the, these recovery ideas, like sending a shard of your seed to one of these servers, it would just go on their database.
 Right.
-And so there's like, that's kind of the interesting thing is like it already has a database.
-And so for certain things like this, you know, backing up of pieces of a seed, right.
+And so that's kind of the interesting thing is like it already has a database.
+And so for certain things like this, backing up of pieces of a seed, right?
 Like you have this new design constraint, like, oh, we could stick it in that database that we've been carefully curating, right?
-And so the, yeah, the, there's that.
-And so, but on the client side, on the actual, like the end user app, for example, there's not as much, like, there's not that much data required, you know, like you have to store these tokens, but every token is like, you know, a couple hundred bytes, like 100 bytes or something.
-And so there's, you know, and you might have like a couple hundred, you might have a hundred tokens at any given time just to be able to represent different amounts.
+And so there's that.
+But on the client side, on the actual, like the end user app, for example, there's not as much, like, there's not that much data required, like you have to store these tokens, but every token is like, a couple hundred bytes, like 100 bytes or something.
+And so there's, and you might have like a couple hundred, you might have a hundred tokens at any given time just to be able to represent different amounts.
 It's the data storage on the actual phone is very, very minimal, which is a nice.
 Go ahead.
 
