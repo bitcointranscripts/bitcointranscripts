@@ -436,27 +436,27 @@ But basically you convince them, hey, I'm me and you have my shard of my seed an
 And so if they say yes to that, then they can send it back to your wallet and you can reconstitute the seed and go discover all your tokens again.
 So potentially we can leverage this like local trust architecture eventually and to make like nice recovery schemes.
 But this is kind of still like a research topic.
-I think there's a lot of really interesting options, but it's like a fundamental trade-off that you get where like, you know, if you end up with a seed, it is a little weird, but I think there's a lot of interesting backup potentials due to these trusted servers.
+I think there's a lot of really interesting options, but it's like a fundamental trade-off that you get where like, if you end up with a seed, it is a little weird, but I think there's a lot of interesting backup potentials due to these trusted servers.
 Because again, the whole point revolves around the fact that you trust the people running the servers.
 That's the whole foundation here.
-But that would be, this would be like, in terms of like, like where designers could contribute.
-I think this would be a really fascinating thing to just think of all the different ways that this, you know, these, these recovery schemes might work.
-There was an interesting proposal in our discord today, chat.fedMint.org if you want to go to where the developers are.
-I try to come pop by the Slack, design Slack every once in a while, but I'm just on the discord a lot more.
-If you want to think about, there was an interesting discussion of using biometrics as a, you know, like have some biometric information, encrypt it and store it with the federations.
+But that this would be like, in terms of like, where designers could contribute.
+I think this would be a really fascinating thing to just think of all the different ways that this, these, these recovery schemes might work.
+There was an interesting proposal in our Discord today, chat.fedMint.org if you want to go to where the developers are.
+I try to come pop by the Slack, design Slack every once in a while, but I'm just on the Discord a lot more.
+Tere was an interesting discussion of using biometrics as a, like have some biometric information, encrypt it and store it with the federations.
 Like that's kind of an interesting idea.
 There's downsides to that.
-You know, you could, yeah, there's kind of a lot of interesting things and you know you could combine two of them or something.
+There's kind of a lot of interesting things and you know you could combine two of them or something.
 I was just talking with Tankred today about Photon maybe using something like Photon to store the secret in the cloud.
 There's a bunch of options for that.
-But I think the leveraging the trust in the servers is probably the, it's the novel one, right?
+But I think the leveraging the trust in the servers is probably the novel one, right?
 Like it's different from normal key management.
 
 Speaker 1: 00:36:40
 
-Yeah, I think that, oh, sorry, go ahead.
+Sorry, go ahead.
 
-Speaker 5: 00:36:43
+Speaker 6: 00:36:43
 
 No, you go ahead first.
 
@@ -470,26 +470,26 @@ Yeah.
 So that's that's kind of like ideally over the long term we could have a forgot password a flow like a forgot password.
 Like, you know, there's a thousand details there.
 Maybe we'll never achieve it.
-But I think on paper we could get to, we could get not only to something like that, but hopefully many different options.
-And that's, that's interesting about Fediment is that it's like, it's technically, it's very module based.
-And so like, like this is a difference between Fediment and Liquid, right?
+But I think on paper we could get not only to something like that, but hopefully many different options.
+And that's, that's interesting about FediMint is that it's technically, it's very module based.
+And so this is a difference between FediMint and Liquid, right?
 Liquid is like a one federation deployment.
 That's very, it's exactly what they want and you can't tweak anything.
 There's one federation and it works like Blockstream says it works, right?
 Which is great because you know, they're, they do a good job.
 But if two different groups of people would like different features, they just have to hope that the features they want get in.
-And if they're conflicting, you know, they might not.
-So, FedMets is very modular.
+And if they're conflicting, they might not.
+So, FediMints is very modular.
 So some deployments might use, you know, recovery method A, some other deployments might use recovery method B.
-And then from an ecosystem point of view, I think it would be very interesting to see a diversity of deployments and then in the wild, discover what are the best ways of using it, you know, through testing, you know, with small amounts of money and in different places, like, you know, you can actually figure out through testing what people like rather than, you know, having to just guess and build your one system and hope it's right.
+And then from an ecosystem point of view, I think it would be very interesting to see a diversity of deployments and then in the wild, discover what are the best ways of using it,, through testing, with small amounts of money and in different places, like, you can actually figure out through testing what people like rather than, having to just guess and build your one system and hope it's right.
 
 ## Backing up other user wallet metadata
 
-Speaker 0: 00:38:44
+Speaker 1: 00:38:44
 
-Tristan, you had a comment.
+Triston, you had a comment.
 
-Speaker 5: 00:38:47
+Speaker 6: 00:38:47
 
 I just didn't have a comment.
 Yes, so I was wondering if with this architecture there would be any kind of like data store.
@@ -522,7 +522,7 @@ Speaker 2: 00:41:59
 
 Yeah, no, these are these are all great ideas.
 I mean, these are totally unexplored at this point, but in order to get this in the wild, we'll need solutions for these things.
-So yeah, these are things that we'll have, apps being built on FedEvent we'll have to solve kind of similar to any other system.
+So yeah, these are things that we'll have, apps being built on FediMit we'll have to solve kind of similar to any other system.
 I mean, there could be interesting ways to have the Federation servers be able to relay messages, being able to store metadata.
 It's an interesting option.
 It's like you can kind of think of the servers as like your own private cloud in a sense as long as you can you know there might be some system in order to like request that you can do that but it's it's the federations are like a private cloud you just can't store too much in there right Because you have to have redundant copies and it's a bit of a tragedy of the commons, right?
