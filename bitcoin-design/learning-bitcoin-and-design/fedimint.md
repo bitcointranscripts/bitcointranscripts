@@ -515,8 +515,8 @@ Go ahead.
 Speaker 5: 00:41:15
 
 Yeah.
-Like the question isn't so much like like the capacity needed to storage capacity needed on the device but more like you know if I'm migrating to a different device I want to have like some metadata about my transactions you know and that's something that Bitcoin applications like really feel on or I want at least for my my configurations to be the same and then we could extend that even further with some kind of like messaging system.
-As you said, there's already some mechanism in there for that where I want to be able to through a contact be able to request a payment to someone else who I could identify within the Mint.
+Like the question isn't so much like like the capacity needed to storage capacity needed on the device but more like you know if I'm migrating to a different device I want to have like some metadata about my transactions you know and that's something that Bitcoin applications like really feel on or I want at least for my configurations to be the same and then we could extend that even further with some kind of like messaging system.
+As you said, there's already some mechanism in there for that where I want to be able to through a contact be able to request a payment to someone else who I could identify within the mint.
 
 Speaker 2: 00:41:59
 
