@@ -201,27 +201,26 @@ I don't want to have to maintain anything.
 I don't have to think.
 And I would like it to be private.
 So like I would personally love to use this for a spending wallet for Lightning in addition to multi-sig cold storage.
-And I don't know, you see this on, there's, if you ever had like the taco truck at a Bitcoin conference and look at the wallets people are using, you'll notice that a lot of people's lightning wallets who are hardcore, you know, self custody maxis are, you know, they're using custodial lightning wallets.
-So, yeah, so I think it's Yeah, those are two angles.
+If you ever had like the taco truck at a Bitcoin conference and look at the wallets people are using, you'll notice that a lot of people's Lightning wallets who are hardcore, self custody maxis are using custodial lightning wallets.
+So, I think those are two angles.
 
 Speaker 1: 00:15:52
 
 Yeah, that makes sense.
-And, you know, another another kind of thing I've been you know I'm not sure if anybody else on the call has been like kind of following up with like all the Fed emit podcasts and stuff but one other angle I thought was interesting is just the idea that like if you're going to have a custodian it might as well be like someone you trust in your community.
-That's a great point.
-Yeah.
-And I guess what I.
+And, another another kind of thing I've been you know I'm not sure if anybody else on the call has been like kind of following up with like all the FediMint podcasts and stuff but one other angle I thought was interesting is just the idea that like if you're going to have a custodian it might as well be like someone you trust in your community.
 
 Speaker 2: 00:16:18
 
+That's a great point.
+Yeah.
 There's an Uncle Jim aspect of it too, right?
-Like we've talked about this Uncle Jim idea of having, you know, there's a big question, how are normal people going to access Bitcoin?
+Like we've talked about this Uncle Jim idea of having, there's a big question, how are normal people going to access Bitcoin?
 Right?
-And currently, the answer is finance, right?
-Like that's the if we're being honest, that's the answer currently is like, is finance coinbase FTX.
+And currently, the answer is Binance, right?
+If we're being honest, that's the answer currently is like, is Binance, Coinbase, FTX.
 That's what people are using.
-And So it'd be nice if we could have something where it's like you know Stephen's neighbor accesses it through Stephen because Stephen's an expert right.
-Christoph's landlord access it to Christoph and you know people in their community who are like the experts that would be like an interesting point of that would be an that would be an improvement right and we have to be realistic about you know how you know whether how much effort people need to be spending on their Bitcoin stuff, right?
+And so it'd be nice if we could have something where it's like you know Stephen's neighbor accesses it through Stephen because Stephen's an expert right.
+Christoph's landlord access it to Christoph and you know people in their community who are like the experts that would be an improvement, right? And we have to be realistic about you know how you know whether how much effort people need to be spending on their Bitcoin stuff, right?
 Like ideally, we shouldn't all be spending a part-time job just to use Bitcoin properly, right?
 Like that's a lot of it is like, can we create like good default, default privacy, right?
 Like, cause you can get really good privacy today, but it takes a lot of effort.
