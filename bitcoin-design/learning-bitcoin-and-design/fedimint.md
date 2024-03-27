@@ -321,15 +321,15 @@ This Mint would gain some Bitcoin and then in response to gaining that Bitcoin t
 Speaker 2: 00:22:43
 
 So actually it's a good try but that's not exactly how it works.
-One interesting thing about Fetty Mint is that it's it the idea is that the mint in order to do anything useful the mint has to custody Bitcoin.
+One interesting thing about FediMint is that in order to do anything useful the mint has to custody Bitcoin.
 So it all starts with a deposit.
 Someone deposits some Bitcoin in and then tokens are issued.
 And one of the important things is the amount of all issued tokens and the amount custody should always match each other.
-And this is actually one of the limitations of Fediment is that since it's so private, it's kind of the same problem that like Mero has, for example.
+And this is actually one of the limitations of FediMint is that since it's so private, it's kind of the same problem that like Mero has, for example.
 And this is probably one of the reasons why Bitcoin will never have really strong on-chain privacy, is that if you add a ton of privacy and you make it's not everything public, then it becomes difficult.
-It basically becomes like you can, a FedEman can do a proof of reserves.
+FediMint can do a proof of reserves.
 It can prove the reserves they have, but it can't prove the liabilities because they would have to basically de-anonymize all their users, right?
-They would have to like, there's just not really a good way, like it can't prove its liabilities, but internally in the system, it always tries to make the, like if the system is running as expected right if no one is tinkering with it and trying to make it work incorrectly the assets and the liabilities would be equal at all times And that's like we do a lot of work to ensure that.
+They would have to like, there's just not really a good way, like it can't prove its liabilities, but internally in the system, like if the system is running as expected right if no one is tinkering with it and trying to make it work incorrectly the assets and the liabilities would be equal at all times And that's like we do a lot of work to ensure that.
 And so to the question of how does a payment between Mint one and Mint two work.
 So Stephen was saying like oh well one of the mints loses Bitcoin and one of them gains Bitcoin.
 And that could work if the Mint itself actually ran a Lightning Node.
