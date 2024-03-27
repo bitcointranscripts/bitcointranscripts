@@ -608,25 +608,24 @@ Right.
 
 ## Hypothetical: remove some privacy features and add more proof-of-liabilities
 
-Speaker 2: 00:47:08
 
-No, but I mean, as I should mention also that like Fetiment is interesting.
-Like if you didn't have the private, like if you were, if you removed some of the privacy features, you could do much more.
+But I mean, as I should mention also that like Fetiment is interesting.
+Like if you didn't have the private, like if you removed some of the privacy features, you could do much more.
 You could, you could make a better attempt at proving liabilities as well.
-And so like, that's something that will be fun to experiment right like could you do just a purely kind of custody optimized thing like like optimized for holding as opposed to spending right and so like you could kind of have a savings you could have a fed amount with a savings account and checking account, right?
-The savings account has, or the checking account has blinded IOUs where they're indistinguishable.
+And so like, that's something that will be fun to experiment right like could you do just a purely kind of custody optimized thing like optimized for holding as opposed to spending right and so like you could kind of have a savings you could have a fed amount with a savings account and checking account, right?
+The checking account has blinded IOUs where they're indistinguishable.
 Maybe the checking account or the savings account does not have blinded IOUs. It's just plain text IOUs. And so these could be published at any time.
-You could check whether the Mint is publishing.
-Every wallet could check whether the Mint is publishing their IOUs. So like all the clients would keep that Mint honest.
+You could check whether the mint is publishing.
+Every wallet could check whether the mint is publishing their IOUs. So like all the clients would keep that mint honest.
 Like they tried to publish a proof of liabilities and that user's liability wasn't in there.
-They could, you know, send a message around to all the other users being like, Hey, we're being cheated, something like that.
-Then, you know, this is like a theoretical feature, but like, this is that that would be doable.
+They could, send a message around to all the other users being like, hey, we're being cheated, something like that.
+Then, this is like a theoretical feature, but like, that would be doable.
 
 Speaker 1: 00:48:46
 
 Yes sir we're getting pretty close to the hour here.
 This has been a fascinating conversation.
-I want to just kind of open it up to the room again and just kind of see, you know, I mean, I could probably talk about this all day, but I just want to see if there's any kind of like, you know, designer level questions about like what, what, you know, how this, you know, what kinds of work needs to be done on Fedament or how certain things might work.
+I want to just kind of open it up to the room again and just kind of see, you know, I mean, I could probably talk about this all day, but I just want to see if there's any kind of like, you know, designer level questions about like what, what, you know, how this, you know, what kinds of work needs to be done on FediMint or how certain things might work.
 Any other questions from the room here?
 
 ## What should the initial setup of a FediMint server look like?
