@@ -1,10 +1,9 @@
 ---
 title: "FediMint"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: Ringoz1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=lQ0dETyS28o
-tags: ['ecash', 'ux']
-speakers: ['Stephen DeLorme', 'Justin Sun']
-categories: []
+tags: ["ecash","ux"]
+speakers: ["Stephen DeLorme","Justin Sun"]
 date: 2022-07-29
 ---
 ## Introduction
@@ -19,18 +18,18 @@ All right.
 Welcome, everybody.
 This is the Learning Bitcoin and Design Call.
 It's July 26, 2022.
-And our topic this week is Fediment.
+And our topic this week is FediMint.
 And we have Justin Moon here with us and several designers and product folks in the room here that are interested in learning about this.
 So I've got a FigJam open here where we can toss images, ideas, text, links, whatever we want to consolidate during the call.
 And anyone on the call right now can find that in the Jitsi chat if you want to jump in there with me.
 But without further ado, I'll just turn it over to Justin and I'll let you kind of take this wherever you want to take it.
 If you want to center this around specific questions, we can do that.
-Or if you just want to take it away and give us an overview of Fediment, that's cool too.
+Or if you just want to take it away and give us an overview of FediMint, that's cool too.
 
 Speaker 2: 00:01:00
 
 Yeah.
-So Fediment is kind of hard to explain.
+So FediMint is kind of hard to explain.
 
 ## Justin introduces FediMint
 
