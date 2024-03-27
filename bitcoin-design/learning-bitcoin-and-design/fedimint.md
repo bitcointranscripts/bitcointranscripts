@@ -160,7 +160,7 @@ Is this a very new idea that's just kind of starting to take shape or how far is
 Speaker 2: 00:11:05
 
 Yeah great question.
-Yes it's kind of a it's it's been a research project for like kind of like a couple of years.
+It's been a research project for like kind of like a couple of years.
 Eric Syrian the creator had this idea a few years ago and then there's a lot of cryptography and stuff that he needed to develop before it would actually be usable.
 So he's working with Blockstream at the time so he got a lot of valuable basically mentorship from people like Tim Ruffing, some of the other cryptographers that, let me know if this is too windy by the way, if it's making a bunch of noise.
 So, you know, so that was kind of going on for like the last two years or so and so now it's at a point where it's starting to become usable like so you can you can run it on your computer and you can run like a lightning node to lightning nodes and you can have you know you can do lightning payments with it running on one computer over there I could bring it later on we have a stack of four Raspberry Pis that are our first like federation so we've deployed it on one it's still like testing but it like one actual thing where the each one is running on a different server and that works and so we're currently basically trying to set up the first one that we have a prototype mobile app that can just send and receive lightning.
