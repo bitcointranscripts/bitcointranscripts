@@ -779,11 +779,11 @@ Speaker 1: 00:59:51
 
 And so if anybody's interested in FediMint, just go join the FediMint discord.
 I think this is the fediment.org website.
-And there should be, I'm assuming there's a discord link on there somewhere.
+I'm assuming there's a discord link on there somewhere.
 
 Speaker 2: 01:00:02
 
-Yeah, chat.fediment.org.
+Yeah, chat.fedimint.org.
 We should probably feature it a little more.
 
 Speaker 1: 01:00:08
@@ -793,9 +793,9 @@ So that's where you'll go if you want to.
 Speaker 2: 01:00:10
 
 Yeah.
-I'll also try to get a couple more people from over there to hang out in the design discord too because you know it's a lot or the design slack because there's I see a lot of interest here so we'll try it out be a little more responsive I show up there like once a week so I'll try to show up a little more frequently.
+I'll also try to get a couple more people from over there to hang out in the design discord too because you know it's a lot or the design slack because there's I see a lot of interest here so we'll try it out be a little more responsive. I show up there like once a week so I'll try to show up a little more frequently.
 
 Speaker 1: 01:00:27
 
 Awesome.
-Well, thanks Justin and yeah, Christophe, could you go ahead and cut it off here.
+Well, thanks Justin and yeah, Christoph, could you go ahead and cut it off here.
