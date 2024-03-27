@@ -313,12 +313,10 @@ And Mint 1 and Ellen Merchant can also interoperate, because like, Lightning is 
 
 Speaker 1: 00:22:13
 
-We've got this LSP over here, and let's say like someone in that one decides that they want to pay somebody over here and met two.
-Yeah.
-Well, you would end up with is this lightning transaction between these two LSPs here.
+We've got this LSP over here, and let's say like someone in that one decides that they want to pay somebody over here and Mint 2.
+Well, you would end up with is this Lightning transaction between these two LSPs here.
 And so this Mint would lose some of its Bitcoin.
-This Mint would gain some Bitcoin and then in response to gaining that Bitcoin they're Mint.
-They then have to Mint eCash tokens to represent those.
+This Mint would gain some Bitcoin and then in response to gaining that Bitcoin they then have to Mint eCash tokens to represent those.
 
 Speaker 2: 00:22:43
 
