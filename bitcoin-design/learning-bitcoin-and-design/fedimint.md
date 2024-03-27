@@ -58,35 +58,33 @@ There's all kinds of difficulty in terms of being able to send a payment across 
 It's difficult for a mobile phone to be able to do this, for example.
 And also it's capital intensive.
 You have to lock money into a channel, right?
-And so, FedEment also helps scale Liquid because you could have a lot of users share one Lightning channel, for example.
+And so, Fedint also helps scale Liquid because you could have a lot of users share one Lightning channel, for example.
 And so, it allows for a little more specialization there too.
-So for example, you can have one really expert lightning node operator serve like, let's say, a thousand people in the FedInventor, 10,000 people.
-So it's a little more specialization there and that these lightning node operators can compete based on how good they are at completing lightning payments.
+So for example, you can have one really expert Lightning node operator serve like, let's say, a thousand people in the FediMint, 10,000 people.
+So it's a little more specialization there and that these Lightning node operators can compete based on how good they are at completing Lightning payments.
 And so usually when you have these trade-offs for scalability, for outsourcing stuff like running a lightning node, usually the privacy is terrible.
 Usually that's the trade-off.
 It's more convenient, but the privacy is terrible.
 
 ## Privacy
 
-Speaker 2: 00:03:51
 
-And so one of the things that's very interesting about Fediment is that while it helps with the scalability, while it helps with a simpler user experience, the privacy is actually better than with Lightning or with Bitcoin.
-And I won't give, you don't need to know too much about it, but I'll give just like a simple example.
-So how FedEvent works is users deposit money into it and can withdraw from it.
+And so one of the things that's very interesting about FediMint is that while it helps with the scalability, while it helps with a simpler user experience, the privacy is actually better than with Lightning or with Bitcoin.
+You don't need to know too much about it, but I'll give just like a simple example.
+So how FediMint works is users deposit money into it and can withdraw from it.
 So it's custodial.
 And when you deposit money into it, you get an IOU.
 And the IOUs have an interesting property where any two IOUs, once they're issued, let's say I'm issued an IOU, I deposit and I get an IOU.
 Steven deposits and gets an IOU.
-When Steven goes to redeem that IOU, the Mint can't tell if it was him or me.
+When Steven goes to redeem that IOU, the mint can't tell if it was him or me.
 So every one of these IOUs looks exactly the same.
 And so that's where the privacy comes from, is that you get these little IOUs and everyone looks the same.
 And this is why it has to be kind of a custodial system because it's IOU based.
-And So yeah, you can think of it that way.
-It's very good for custody or it's very good for scalability and it's also very good for privacy and And so now let's talk a little bit about the custody side so you have to deposit into a mint.
+And so yeah, you can think of it that way.
+It's very good for custody or it's very good for scalability and it's also very good for privacy and so now let's talk a little bit about the custody side so you have to deposit into a mint.
 
 ## Custody with a federated mint
 
-Speaker 2: 00:05:13
 
 What is a mint?
 So usually when you deposit into something it's like one entity, right?
