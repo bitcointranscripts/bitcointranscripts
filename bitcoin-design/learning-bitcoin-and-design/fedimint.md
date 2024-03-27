@@ -267,7 +267,11 @@ They actually happen between a mint and a lightning node operator.
 This is really cool because it's not trying to compete with Lightning or anything it's trying to add something you know it's kind of like tarot for example right like tarot is and to introduce this idea of like assets and stable coins into Bitcoin and so a good thing about it is building on top of lightning. So if it works it'll make lightning bigger and more liquid.
 I think the same thing is true of FediMints as well.
 Like if it works it'll just make will make Lightning better.
-So in a way someone's dropping in.
+
+Speaker 1: 00:21:01
+
+Someone's dropping in.
+Go ahead.
 
 Speaker 5: 00:21:05
 
