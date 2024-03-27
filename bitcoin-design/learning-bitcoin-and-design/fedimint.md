@@ -520,16 +520,16 @@ As you said, there's already some mechanism in there for that where I want to be
 
 Speaker 2: 00:41:59
 
-Yeah, no, these are these are all great ideas.
+Yeah, these are all great ideas.
 I mean, these are totally unexplored at this point, but in order to get this in the wild, we'll need solutions for these things.
-So yeah, these are things that we'll have, apps being built on FediMit we'll have to solve kind of similar to any other system.
+So yeah, these are things that we'll have, apps being built on FediMint we'll have to solve kind of similar to any other system.
 I mean, there could be interesting ways to have the Federation servers be able to relay messages, being able to store metadata.
 It's an interesting option.
-It's like you can kind of think of the servers as like your own private cloud in a sense as long as you can you know there might be some system in order to like request that you can do that but it's it's the federations are like a private cloud you just can't store too much in there right Because you have to have redundant copies and it's a bit of a tragedy of the commons, right?
+It's like you can kind of think of the servers as like your own private cloud in a sense as long as you can you know there might be some system in order to like request that you can do that but it's it's the federations are like a private cloud you just can't store too much in there, right? Because you have to have redundant copies and it's a bit of a tragedy of the commons, right?
 You don't want to be uploading videos, but that is a new constraint that you could design stuff around.
 But yeah, no plans for that so far.
 
-Speaker 5: 00:42:58
+Speaker 6: 00:42:58
 
 All right.
 Thank you.
@@ -541,10 +541,13 @@ Bitcoin walls do really suck it.
 
 ## Checking the status of the mint or proof-of-funds
 
-Speaker 4: 00:43:04
 
-You set a new one up it's like oh there's nothing in here you know I have a question it seems like a lot of user interactions between the users and the Mint managers to figure out.
-And I was wondering if there's, I would assume users also want to know, like, is this Mint still running?
+You set a new one up it's like there's nothing in here you know. 
+
+Speaker 4: 00:43:09
+
+I have a question it seems like a lot of user interactions between the users and the mint managers to figure out.
+I would assume users also want to know, like, is this mint still running?
 Are they doing a good job?
 Do they have all the funds?
 Is there a way to, I don't know, to provide some insight into what's going on.
@@ -554,21 +557,21 @@ Speaker 2: 00:43:39
 
 Yeah.
 So you'll be able to see if it's running very easily.
-Like it'll just check whether, you know, the phone will just send a message and it can see whether servers are offline.
+Like it'll just check whether, the phone will just send a message and it can see whether servers are offline.
 In terms of whether it's doing a good job, I guess you could see whether a critical number of servers are offline or something like that.
 Although I don't know how much of that information like the user would actually want to know maybe some kind of health indicator or something.
-And the tricky thing is in terms of like you can't ever really know whether a Mint is properly collateralized or not, right?
-Like the software, if running correctly should never allow, like basically if it discovers that anything was created or destroyed, Like if stuff doesn't add up to zero in any given epoch like a block, it will just stop.
+And the tricky thing is in terms of like you can't ever really know whether a mint is properly collateralized or not, right?
+Like the software, if running correctly should never allow, like basically if it discovers that anything was created or destroyed, like if stuff doesn't add up to zero in any given epoch like a block, it will just stop.
 Right.
 So but you could have something that looks like federation servers, but some malicious person modified the code to print tokens out of thin air, for example.
-And so, yeah, that's like a fundamental problem that we can't like, there's no way to prove that the mint is properly collateralized just because like, you can't see the liabilities because that's where the privacy comes from.
+And so, yeah, that's like a fundamental problem that there's no way to prove that the mint is properly collateralized just because like, you can't see the liabilities because that's where the privacy comes from.
 One solution here is something like automated bank runs.
-Just like every once in a while I'll see like, hey, let's just everyone try to exit and re-enter the Mint, for example.
+Just like every once in a while I'll see like, hey, let's just everyone try to exit and re-enter the mint, for example.
 Something like that would be kind of interesting.
-You know like that lightning gate with the LSP for example could could you know could attempt that just like can I get my money in and out and publish for proof that they did?
+You know like that Lightning gate with the LSP for example could you know could attempt that just like can I get my money in and out and publish for proof that they did?
 I don't know.
 There's probably other options here, but yeah, that's like one of the drawbacks here is you can't really, you basically trust that the Federation is not screwing you over.
-It's a trust system that they're not, that they're not under collateralized.
+It's a trust system that they're not not under collateralized.
 
 Speaker 1: 00:45:45
 
