@@ -399,16 +399,16 @@ And so it gets me thinking that the data structure of this is much different tha
 We're used to thinking of a Bitcoin wallet as being a seed phrase.
 And as long as I have the seed phrase and two or three other pieces of information, I can regenerate the whole wallet.
 If I have lightning wallet I need that plus some kind of channel backup and I can regenerate the whole node or sweep those force close, sweep the funds on chain.
-But the whole backup recovery process seems like this would be very, uses much different data in the federated model.
+But the whole backup recovery process uses much different data in the federated model.
 
 Speaker 2: 00:31:07
 
 Totally.
-So the way these eCash tokens, these tokens work, these IOUs, eCash tokens means these like anonymous, like private IOUs, you know, they're indistinguishable IOUs. And so like first off the user, hopefully the user, like this is kind of an implementation detail.
+So the way these eCash tokens, these tokens work, these IOUs, eCash tokens means these like anonymous, like private IOUs, they're indistinguishable IOUs. Like this is kind of an implementation detail.
 Most users in the future I don't think will necessarily even know this is happening.
 Kind of like a channel.
 Like someday I don't think most users will even know what the channel is potentially or like a UTXO you know you might be a Bitcoin user you might have a Bitcoin you know wallet but you might not actually know what a UTXO is that terminology isn't hopefully we could get to a future where you don't need to know all this terminology.
-Okay so so yeah the the token the is a little piece of data and you'll actually have a lot of tokens.
+Okay so yeah the token a little piece of data and you'll actually have a lot of tokens.
 So basically the tokens have to have a fixed amount.
 This is kind of a little in the weeds, but it's interesting to think about.
 They have to have a fixed amount because your anonymity set comes from all the people that have the token of the same denomination.
@@ -419,10 +419,10 @@ And these are combined to make payments, to express an arbitrary amount.
 Someday I think we'll be able to use fancy cryptography to encode the amount like in a zero knowledge proof but that doesn't exist yet.
 So we don't we wouldn't need these denominations.
 So inside the wallet you have a bunch of these little tokens kind of like dollar like like quarters and dimes and nickels in the US you know.
-And so and importantly these are you know these are bearer instruments IOUs. And so if you lose them, you can't prove that you should have had, you should, you actually own them, right?
+And so and importantly these are you know these are bearer instruments IOUs. And so if you lose them, you can't prove that you actually own them, right?
 And that's where the privacy comes from.
-And so if you lose them currently as it exists now your money's gone big big UX hurdle right and so one one thing that we will eventually do is implement recovery schemes and So how that would work is that the some of the data inside the token could be represented with like a seed, right?
-And so it's a little weird to think about this because like the whole idea was, you know, it's a custodial system, but now we have a seed again what's going on here right I think there's some really interesting things we can do because we have this federation of trusted servers right so like one one one option is you could seed and you just store it like you and any other wallet but it's a little weird because you lose some self-sovereignty in terms of self custody but you gain a lot of privacy.
+And so if you lose them currently as it exists now your money's gone big big UX hurdle right and so one one thing that we will eventually do is implement recovery schemes and. So how that would work is that some of the data inside the token could be represented with like a seed, right?
+And so it's a little weird to think about this because like the whole idea was, it's a custodial system, but now we have a seed again what's going on here right I think there's some really interesting things we can do because we have this federation of trusted servers right so like one one one option is you could seed and you just store it like you and any other wallet but it's a little weird because you lose some self-sovereignty in terms of self custody but you gain a lot of privacy.
 So personally, as someone who knows how to deal with seed, I might like that.
 I might use that.
 But most users we envision using that, this is not a great option for them.
