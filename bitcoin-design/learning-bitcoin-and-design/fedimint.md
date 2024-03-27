@@ -18,10 +18,10 @@ All right.
 Welcome, everybody.
 This is the Learning Bitcoin and Design Call.
 It's July 26, 2022.
-And our topic this week is FediMint.
+And our topic this week is `FediMint`.
 And we have Justin Moon here with us and several designers and product folks in the room here that are interested in learning about this.
-So I've got a FigJam open here where we can toss images, ideas, text, links, whatever we want to consolidate during the call.
-And anyone on the call right now can find that in the Jitsi chat if you want to jump in there with me.
+So I've got a `FigJam` open here where we can toss images, ideas, text, links, whatever we want to consolidate during the call.
+And anyone on the call right now can find that in the `Jitsi` chat if you want to jump in there with me.
 But without further ado, I'll just turn it over to Justin and I'll let you kind of take this wherever you want to take it.
 If you want to center this around specific questions, we can do that.
 Or if you just want to take it away and give us an overview of FediMint, that's cool too.
@@ -33,11 +33,10 @@ So FediMint is kind of hard to explain.
 
 ## Justin introduces FediMint
 
-Speaker 2: 00:01:03
 
 It's a little bit like Bitcoin and there are sort of different facets to it.
 So, let me think how to best explain it.
-So I guess one way I'll start from just like the obvious thing.
+I'll start from just like the obvious thing.
 So one thing that it's a layer two technology basically or you know whatever you layer two layer three whatever you want to call it.
 And it it works really well with the layer two technologies like with Bitcoin and then with lightning.
 So that's kind of how to think of it.
