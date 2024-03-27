@@ -125,21 +125,20 @@ Right.
 So it's a trust based system.
 So the security comes from trust and not from proof of work or proof of stake or any of these other consensus mechanisms.
 And from my point of view, that would be completely inappropriate for like a global money like Bitcoin.
-But like, I don't know, one example we talk about the land registry, right.
-A way to register land titles and like a local area not global just a local area this would probably a lot better than a proof of work mind blockchain or something it's just simpler and clearly trust based so yeah so these are kind of some of the different angles of pediment and just to sort of summarize this Like, you know, what the hell is this used for?
+But like, one example we talk about the land registry, right.
+A way to register land titles and like a local area not global just a local area this would probably a lot better than a proof of work mind blockchain or something it's just simpler and clearly trust based. So these are kind of some of the different angles of FediMint and just to sort of summarize this like, what the hell is this used for?
 
 ## Community banking use case
 
-Speaker 2: 00:09:23
 
-We think it could be really interesting thing for like community banking kind of like Galoy Has been used so far.
+We think it could be really interesting thing for like community banking kind of like `Galoy` Has been used so far.
 So, you know last week there was a company announced FDI.
 We're not going to talk about that in the call but that's just an example of like the use case there will be community banking to try to actually deploy these in areas that are under, that really a lot of these places just don't really have much of a financial infrastructure like we have in the West.
 I have in the West for example.
 And yeah, they also have a lot stronger trust relationships in their local communities.
 It's less institutionalized in the West for example, but on the other side, the trust relationships at a local level are much stronger in the US.
 For example, a lot of people don't trust their neighbors at all, which is kind of sad.
-So yeah, with that, I'll pause and kick it back to Steven and Chris.
+So yeah, with that, I'll pause and kick it back to Steven and Christoph.
 
 Speaker 1: 00:10:19
 
