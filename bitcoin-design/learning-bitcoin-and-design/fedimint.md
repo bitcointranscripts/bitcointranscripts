@@ -89,30 +89,23 @@ It's very good for custody or it's very good for scalability and it's also very 
 What is a mint?
 So usually when you deposit into something it's like one entity, right?
 There's one entity that runs it and if that entity decides to treat you poorly, you're just out of luck.
-And so how Fetiment works is it's something called a federation.
+And so how FediMint works is it's something called a `federation`.
 And a federation just means that instead of one entity running it, there's multiple entities.
 And one example of this is Liquid.
 Liquid is a federation, right?
 So it's a second layer blockchain that has a bunch of features that don't exist on Bitcoin.
-For example, confidential transactions.
+For example, `confidential transactions`.
 These are transactions where the amount is hidden or confidential assets.
-These are, I think you can't even see what the asset is and you can't see the amount either.
-And so, Fetiment works similarly underneath and why is that useful?
-Well, if you have a custodial thing that adds a bunch of, that has great privacy features, maybe it's a target of tax, for example.
+I think you can't even see what the asset is and you can't see the amount either.
+And so, FediMint works similarly underneath and why is that useful?
+Well, if you have a custodial thing that has great privacy features, maybe it's a target of tax, for example.
 And so if you spread out who runs it it might be a little harder to shut down for example and so and I guess so one last interesting thing about this.
 So, yeah, Federation is basically, it's like a multi-sig.
 It's a multi-sig.
-Each one of these servers, there's like, let's say me, Steven, and Christophe are running Fetiment, right?
-We'll each have a server and the server just runs one program, Fediment, a little, very simple, relatively simple program.
-And so underneath me, my server, Steven's server,
-
-Speaker 3: 00:06:41
-
-and Christophe's server all have one key and a two of three multi-sequence site.
-
-Speaker 2: 00:06:46
-
-And so we just have, and then the server itself has a bunch of logic for what to do with that custody of Bitcoin, right?
+Each one of these servers, there's like, let's say me, Steven, and Christophe are running FediMint, right?
+We'll each have a server and the server just runs one program, relatively simple program.
+And so underneath me, my server, Steven's server, and Christophe's server all have one key and a two of three multi-sequence site.
+And then the server itself has a bunch of logic for what to do with that custody of Bitcoin, right?
 Like whether to accept the deposit, whether to issue a withdrawal, whether to issue these e-cash tokens, and lastly, whether to use these e-cash tokens to basically incentivize a Lightning node to do payments for them.
 And so the federation is the multi-sig and then there's some logic inside that my server, Steven's server, and Christophe's server need to agree on that allows basically smart contracting.
 So it's kind of like underneath, it's kind of like a smart contract as well.
@@ -120,10 +113,10 @@ And the smart contracting so far is very blunt, but one of the, they can only do
 But I think one of the promises over time is that all the smart contracts and that exists on we'll call them altcoins could exist here in a federation.
 And when you really think about it, most of these altcoins are basically federations, right?
 They're not terribly decentralized.
-There's a handful of entities that basically control what the rules are and you know they they pretend to be something very distributed and organic like Bitcoin but we know that most of them, all of them besides Bitcoin really aren't this way, especially, you know, and some of them aren't even close.
-And so, you know, if you had like a let's say you had a federation with 100 servers, that's probably more distributed than Ethereum is.
-You know, that's probably more, there's probably less centralized trust there.
-And so if, if, if smart contracting is a good idea, like if there are a lot of use cases, potentially it could happen on a system like Fediment that's a federation and it would work just as well as on Ethereum and plus there aren't, it's all trust-based.
+There's a handful of entities that basically control what the rules are and they they pretend to be something very distributed and organic like Bitcoin but we know that all of them besides Bitcoin really aren't this way, especially, and some of them aren't even close.
+And so, if you had like a let's say you had a federation with 100 servers, that's probably more distributed than Ethereum is.
+You there's probably less centralized trust there.
+And so if smart contracting is a good idea, like if there are a lot of use cases, potentially it could happen on a system like FediMint that's a federation and it would work just as well as on Ethereum and plus it's all trust-based.
 So you have to trust who runs the servers.
 That's an important thing.
 To use it, you need to trust me and Christophe and Steven, right?
