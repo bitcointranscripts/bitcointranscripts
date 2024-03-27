@@ -38,23 +38,22 @@ It's a little bit like Bitcoin and there are sort of different facets to it.
 So, let me think how to best explain it.
 I'll start from just like the obvious thing.
 So one thing that it's a layer two technology basically or you know whatever you layer two layer three whatever you want to call it.
-And it it works really well with the layer two technologies like with Bitcoin and then with lightning.
+And it it works really well with the layer two technologies like with Bitcoin and then with Lightning.
 So that's kind of how to think of it.
 It's a layer two technology.
 And so what is it used for?
-Like One thing that it's very good for is scalability.
+Like one thing that it's very good for is scalability.
 
 ## Scalability
 
-Speaker 2: 00:01:50
 
-So it's basically like you set up, it's kind of like a, think of it like a side chain, like Liquid or something like that, that allows people to transact without having to go on Bitcoin.
-So a lot of new people, for example, one FedeMint Federation can run on a couple of Raspberry Pis and it can do about as many transactions as Bitcoin.
+Think of it like a side chain, like Liquid or something like that, that allows people to transact without having to go on Bitcoin.
+For example, one FediMint Federation can run on a couple of Raspberry Pis and it can do about as many transactions as Bitcoin.
 So if you can think of a world where like there's 10,000 of these out there, then you just increase the amount of transactions that Bitcoin can support by 10,000 times, something like that.
-So that's one thing that it's a way of moving transactions off of bit coin.
-So it helps bit coin scale.
-It also helps lightning scale.
-One problem with lightning is that it's kind of difficult to run a lightning node just because it's not just a UX problem, there's UX problems, but it's just a complicated protocol and there's, you know, so you have to manage liquidity, you have to manage channels, you have to stay online all the time.
+So that's one thing that it's a way of moving transactions off of Bitcoin.
+So it helps Bitcoin scale.
+It also helps Lightning scale.
+One problem with Lightning is that it's kind of difficult to run a Lightning node just because it's not just a UX problem, there's UX problems, but it's just a complicated protocol and there's, you know, so you have to manage liquidity, you have to manage channels, you have to stay online all the time.
 There's all kinds of difficulty in terms of being able to send a payment across a bunch of routes and have every single peer really online and everything.
 It's difficult for a mobile phone to be able to do this, for example.
 And also it's capital intensive.
