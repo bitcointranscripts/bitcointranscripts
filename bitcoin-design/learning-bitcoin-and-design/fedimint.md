@@ -291,7 +291,7 @@ So I'm curious to dig into this graphic that somebody dropped in here.
 
 
 User one requests Lightning invoice A from LSP3 and then two.
-So this is what user one meant to That's the LSP right there.
+So this is what user one meant to. That's the LSP right there.
 
 Speaker 2: 00:21:36
 
@@ -300,20 +300,20 @@ It's a great.
 
 Speaker 3: 00:21:42
 
-It's a great complex tool.
+That might be a bit complex to walkthrough.
 
 Speaker 2: 00:21:43
 
 Yeah.
 It's kind of like how it works.
-But yeah, it's a great, it's a great, I mean, it illustrates how like, see the three, like this mint A and mint B, those are Federation mints.
+It illustrates how like, see the three, like this mint A and mint B, those are Federation mints.
 LN merchant, it doesn't know anything about Federation, doesn't even know they exist.
-The cool thing is you can still, Mint A and Mint B can interoperate, or Mint 1 and 2.
+The cool thing is, Mint A and Mint B can interoperate, or Mint 1 and 2.
 And Mint 1 and Ellen Merchant can also interoperate, because like, Lightning is the lingua franca.
 
 Speaker 1: 00:22:13
 
-And so I guess, you know, we've got this LSP over here, and let's say like someone in that one decides that they want to pay somebody over here and met two.
+We've got this LSP over here, and let's say like someone in that one decides that they want to pay somebody over here and met two.
 Yeah.
 Well, you would end up with is this lightning transaction between these two LSPs here.
 And so this Mint would lose some of its Bitcoin.
