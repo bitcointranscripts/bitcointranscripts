@@ -329,37 +329,37 @@ And this is actually one of the limitations of FediMint is that since it's so pr
 And this is probably one of the reasons why Bitcoin will never have really strong on-chain privacy, is that if you add a ton of privacy and you make it's not everything public, then it becomes difficult.
 FediMint can do a proof of reserves.
 It can prove the reserves they have, but it can't prove the liabilities because they would have to basically de-anonymize all their users, right?
-They would have to like, there's just not really a good way, like it can't prove its liabilities, but internally in the system, like if the system is running as expected right if no one is tinkering with it and trying to make it work incorrectly the assets and the liabilities would be equal at all times And that's like we do a lot of work to ensure that.
-And so to the question of how does a payment between Mint one and Mint two work.
+They would have to like, there's just not really a good way, like it can't prove its liabilities, but internally in the system, like if the system is running as expected right if no one is tinkering with it and trying to make it work incorrectly the assets and the liabilities would be equal at all times. And that's like we do a lot of work to ensure that.
+And so to the question of how does a payment between Mint 1 and Mint 2 work.
 So Stephen was saying like oh well one of the mints loses Bitcoin and one of them gains Bitcoin.
-And that could work if the Mint itself actually ran a Lightning Node.
-But actually, the Mint itself does not run a Lightning Node.
-The Mint custodies Bitcoin and it has like a little smart contract system.
-And a Lightning Node operator, LSP1 or LSP2, they basically like serve at the...
+And that could work if the mint itself actually ran a Lightning node.
+But actually, the Mint itself does not run a Lightning node.
+The mint custodies Bitcoin and it has like a little smart contract system.
+And a Lightning node operator, LSP1 or LSP2, they basically like serve at the...
 We envision like a free competition for these LSPs to be able to go and serve federations.
 And so what does that mean?
 So the LSP has to trust the federation because they'll have to hold a balance of these IOU tokens, right?
 And so if the Federation is a bunch of liars and they issue fraudulent tokens that they don't redeem later, then the Lightning Gateway would lose money, right?
-So the Lightning Gateway has to trust the Federation, but the federation does not have to trust the lightning gateway which is which is very nice because it kind of hopefully it will allow like a healthy competitive environment where you know the LSP's compete to serve federations in terms of how good they are at competing Lightning payments.
+So the Lightning Gateway has to trust the Federation, but the federation does not have to trust the lightning gateway which is which is very nice because it kind of hopefully it will allow like a healthy competitive environment where the LSP's compete to serve federations in terms of how good they are at competing Lightning payments.
 And this is how you might get like very, very reliable quick transactions.
-And so, yeah, the LSPs have to hold a balance of tokens.
+And so, the LSPs have to hold a balance of tokens.
 And so the way the transactions actually work is like, let's say there's a user in Mint 1 and he's trying to pay a user in Mint 2.
 What will happen is his tokens in Mint 1, the user in Mint 1's tokens will be sent to the LSP attached to Mint 1.
 Does that make sense?
 So LSP 1 will get a little bit of tokens.
-Like, OK, just because this is a little complicated, but it's worth seeing.
+Like, okay, just because this is a little complicated, but it's worth seeing.
 There's a user in Mint 1.
 He wants to pay a user in Mint 2, right?
 So some of the user in Mint 1's tokens will go to LSP 1.
 LSP 1 now owns a little more tokens.
 Now LSP 1 will send some Lightning to LSP 3.
-So now he has, he's, he's gained, or she's gained in eCash tokens and lost Lightning.
-And probably there's a, they probably gained a little total to represent a small fee right and so now LSP3 has a little bit more Lightning balance and so what they'll do now is they'll give a little bit of their eCash an equal amount of their eCash balance to the user inside Mint2 right so that's the way it works like The LSPs are kind of like a money changer between the token, the IOU token, and Lightning Network itself.
+So now he's gained, or she's gained in e-Cash tokens and lost Lightning.
+And probably there's a, they probably gained a little total to represent a small fee right and so now LSP3 has a little bit more Lightning balance and so what they'll do now is they'll give a little bit of their e-Cash an equal amount of their e-Cash balance to the user inside Mint2 right so that's the way it works like The LSPs are kind of like a money changer between the token, the IOU token, and Lightning Network itself.
 And so the way it works is it's basically an escrow underneath.
 And the agent, it's an escrow between the user and the gateway, the LSP and the user, and the federation basically judges whether the transaction worked by basically checking whether pre-images are correct.
 So it's very simple.
-It's just the gate, it's an escrow and the gateway is the judge or the sorry the federation is the judge.
-It's not important to understand like that aspect of it but just like the you know you know the flow of funds is kind of interesting.
+It's an escrow and the gateway is the judge or the sorry the federation is the judge.
+It's not important to understand like that aspect of it but just like the you know the flow of funds is kind of interesting.
 
 Speaker 1: 00:27:15
 
