@@ -623,16 +623,16 @@ Then, this is like a theoretical feature, but like, that would be doable.
 
 Speaker 1: 00:48:46
 
-Yes sir we're getting pretty close to the hour here.
+Yes we're getting pretty close to the hour here.
 This has been a fascinating conversation.
-I want to just kind of open it up to the room again and just kind of see, you know, I mean, I could probably talk about this all day, but I just want to see if there's any kind of like, you know, designer level questions about like what, what, you know, how this, you know, what kinds of work needs to be done on FediMint or how certain things might work.
+I want to just kind of open it up to the room again and just kind of see, I mean, I could probably talk about this all day, but I just want to see if there's any kind of like, designer level questions about what kinds of work needs to be done on FediMint or how certain things might work.
 Any other questions from the room here?
 
 ## What should the initial setup of a FediMint server look like?
 
 Speaker 2: 00:49:17
 
-Well, I will mention one other thing just based on my experience where like, I was saying, Oh, this would be a good problem for designer is like, what should the initial setup be when you run the server?
+Well, I will mention one other thing just based on my experience where like, I was saying, this would be a good problem for designer is like, what should the initial setup be when you run the server?
 Right?
 Like, you know, just to get because I wanted to if you think of be put be negative here it's like how would this fail well one reason this would fail is because it's an awful lot of running the servers right which people aren't good at right like people aren't good at passwords people aren't good at servers and so making the server setup here is like there's a technical component we're trying to solve.
 We're trying to make the software like really easy to run, but there's a design problem too because you know you need to run the software and a little web page will show up and it'd be like, OK, who else?
