@@ -178,30 +178,30 @@ We won't have to go back to the drawing board very much.
 
 Speaker 1: 00:13:21
 
-So it's curious to know, how do you think about the custodial nature of FedEmit because I think you know for a lot of people in open source you know we think about you know you know self custodying the seed phrase or having you know a channel backup of your lightning node or something like that and this this project is interesting because it's actually being like no we are custodial we're just custodial in a different way so you can tell us your thoughts a little bit about how you think about that.
+So it's curious to know, how do you think about the custodial nature of FediMit because I think you know for a lot of people in open source you know we think about self custodying the seed phrase or having you know a channel backup of your Lightning node or something like that and this this project is interesting because it's actually being like no we are custodial we're just custodial in a different way so you can tell us your thoughts a little bit about how you think about that.
 
 Speaker 2: 00:13:47
 
 Yeah.
 So I mean I love self custody.
 I have a very paranoid multi-sig personally.
-So we're pro you know we're pro self custody.
-And on the other hand almost everybody uses custodial heavily centralized custodial services today And many of them indirectly steal from you by selling you fake Bitcoin as if it's the real thing.
+So you know we're pro self custody.
+And on the other hand almost everybody uses heavily centralized custodial services today. And many of them indirectly steal from you by selling you fake Bitcoin as if it's the real thing.
 And so I don't know.
-This is one of the you know, when we see in the kind of the community discussions, like there's a lot of discussion about importance of self custody, but there's a little bit of a blindness to the fact that all the normal people use heavily centralized custodial third parties that are not your friend.
-So a lot of the idea with Fetiment is to try to find something between hardcore self-custody and not just hardcore but like self-custody and these super centralized third-party custodians.
+When we see in the kind of the community discussions, like there's a lot of discussion about importance of self custody, but there's a little bit of a blindness to the fact that all the normal people use heavily centralized custodial third parties that are not your friend.
+So a lot of the idea with FediMint is to try to find something between hardcore self-custody and not just hardcore but like self-custody and these super centralized third-party custodians.
 So that's one aspect and there's another aspect of it too.
-Like, you know, I have self custody.
+Like, I have self custody.
 I've done it for a long time, a while, and I'm comfortable with it.
-But I would still like to use this because I don't really care so much about self custody for my lightning node for payments.
+But I would still like to use this because I don't really care so much about self custody for my Lightning node for payments.
 What I want for my Lightning node for Lightning is I want the payment to work every single time.
 I want it to never fail.
 I want it to work quickly.
 I don't want to have to maintain anything.
 I don't have to think.
 And I would like it to be private.
-That's what, so like I would personally love to use this for a spending wallet for Lightning in addition to multi-sig gold storage.
-And I don't know, you see this on, you know, there's, if you ever had like the taco truck at a Bitcoin conference and look at the wallets people are using, you'll notice that a lot of people's lightning wallets who are hardcore, you know, self custody maxis are, you know, they're using custodial lightning wallets.
+So like I would personally love to use this for a spending wallet for Lightning in addition to multi-sig cold storage.
+And I don't know, you see this on, there's, if you ever had like the taco truck at a Bitcoin conference and look at the wallets people are using, you'll notice that a lot of people's lightning wallets who are hardcore, you know, self custody maxis are, you know, they're using custodial lightning wallets.
 So, yeah, so I think it's Yeah, those are two angles.
 
 Speaker 1: 00:15:52
