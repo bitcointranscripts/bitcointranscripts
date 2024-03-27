@@ -645,31 +645,31 @@ Or receive their first, something like that, deposit the first, like that sort o
 Speaker 6: 00:50:32
 
 Is it going to just rely on AWS at that point? 
-I mean, I don't know if you remember this old tools like fantastical and cPanel where you would like one click install WordPress or some
+I mean, I don't know if you remember this old tools like fantastical and cPanel where you would like one click install WordPress or some...
 
 Speaker 2: 00:50:35
 Yeah I think it'll be diversity right like I think there will be really easy setup hopefully we can get to it like having really easy setups in stuff like umbral, Raspi Blitz, some of these things where people are already running.
 It's helpful for people who are already running one but it's also like if you want to have like your own self-hosted server it's probably like your own hardware it's probably easier to set that up from scratch and try to attempt it yourself so that's one option another option is like I think it's been very a BC space had a lot of success with like Luna node, right?
 So they built a little series of configuration forms.
 You'd set up a VPN or VPC and then it would fire up a little configure or no, there was like a couple of forms you'd fill out and that would actually fire up the VPC, like the cloud server for you.
-And then, you know, like 10 minutes later, you'd see a little web form at that URL that would be like, okay, initial block downloads happening.
+And then, like 10 minutes later, you'd see a little web form at that URL that would be like, okay, initial block downloads happening.
 Right.
 I think something like that would be very successful.
 And it's also nice.
-It's not like there are benefits to not being on AWS for this because you know like a lot of these like Luna node you can just pay with Bitcoin right like you don't have to go through a whole you know maybe it's harder to be censored on something like that some of these niche ones and you know something like AWS and some of these are good too, because it's, you know, people are really familiar with it.
+It's not like there are benefits to not being on AWS for this because you know like a lot of these like Luna node you can just pay with Bitcoin right like you don't have to go through a whole you know maybe it's harder to be censored on something like that some of these niche ones and you know something like AWS and some of these are good too, because it's, people are really familiar with it.
 So I think some federations could have a mix, right?
 Hopefully, someday it can be like people's own hardware, but that's just we don't live in that world quite yet.
-But I think, you know, some of these Bitcoin companies like Start9, Umbral, they're helping us get to that future.
+But I think, some of these Bitcoin companies like Start9, Umbral, they're helping us get to that future.
 
 ## There can be many FediMints and each can try different design patterns
 
 Speaker 3: 00:52:22
 
 I think on that point I'll just add something from sitting in the telegram group and trying to ask, like answer a lot of questions on this.
-Like one of the common misconceptions people have when they come into this is that it's called FedeMin so there is a FedeMin when the actual fact is there's probably going to be thousands to hundreds of thousands of these things and they're all going to vary depending on the particular group that you've set it up for.
+Like one of the common misconceptions people have when they come into this is that it's called FediMint so there is a FediMint when the actual fact is there's probably going to be thousands to hundreds of thousands of these things and they're all going to vary depending on the particular group that you've set it up for.
 So there's quite a large design space for looking at all of these different problems and how you might actually go through them.
-So there's those questions earlier about a guy who's setting up masts in villages in Tanzania to blanket the local area with network connectivity, you know, how would that work and what are the different failure modes that come to that.
-It's pretty interesting from a design point of view to look at the many variations of, you know, like backups for instance.
+So there's those questions earlier about a guy who's setting up masts in villages in Tanzania to blanket the local area with network connectivity, how would that work and what are the different failure modes that come to that.
+It's pretty interesting from a design point of view to look at the many variations of, like backups for instance.
 There's not necessarily going to be one answer to that there could be the backup for your mum versus the backup for your friends versus the backup for your local community might just be quite different so there could be like a good recipe list of stuff that can be developed.
 
 Speaker 2: 00:53:34
@@ -678,9 +678,9 @@ Yeah.
 From like a high level, you can think that like Bitcoin and Lightning are kind of haunted by this problem where like everyone has to agree on a change, right?
 Like more or less, right?
 Everyone has to agree on a Bitcoin software.
-Basically everyone has to agree on like a big lightning protocol thing like bolt 12 or something right because everything has to be interoperable.
-Fetamints don't have to be interoperable on their own.
-They can use lightning to interoperate right so like the different fetamints can be very very diverse as long as they can speak lightning for whatever things are expressible in terms of send and receive or maybe other lightning features eventually.
+Basically everyone has to agree on like a big Lightning protocol thing like bolt 12 or something right because everything has to be interoperable.
+FediMints don't have to be interoperable on their own.
+They can use lightning to interoperate right so like the different FediMints can be very very diverse as long as they can speak lightning for whatever things are expressible in terms of send and receive or maybe other lightning features eventually.
 Those things can be interoperable between mints, but like you can have a lot of diversity between them, which is really exciting from a design point of view.
 Also from a developer point of view, right?
 Like Bitcoin core lightning developers sometimes aren't the happiest folks because you know, it's so slow to get your stuff accepted.
