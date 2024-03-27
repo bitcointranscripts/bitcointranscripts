@@ -691,15 +691,15 @@ It's almost like the farther away you get from the main protocol, the more wild 
 Bitcoin development has to be very, very conservative and it has to be very slow because you're talking about the world's money supply.
 And then when you move a layer up on Lightning, you can be a little bit more reckless there because you don't have to worry about if you try some experimental new technique for a channel and mess something up, it only hurts you and your channel partner, doesn't hurt the rest of the network.
 And then you could take that even, I know you also consider a fedimental layer too.
-In my mind, I keep thinking of it as kind of a third layer, just because I think of the Fed is using lightning, that may not be technically accurate.
-But if you think about moving layer above that with Fed, each federation could just completely do its own thing.
-And then they can interoperable be interoperable because of lightning.
+In my mind, I keep thinking of it as kind of a third layer, just because I think of the FediMint is using lightning, that may not be technically accurate.
+But if you think about moving layer above that with FediMint each federation could just completely do its own thing.
+And then they can be interoperable because of Lightning.
 
 Speaker 2: 00:55:18
 
-Yeah, I guess I mean the terminology never really goes anywhere, you know, there's an endless bike shed, but I think it's kind of a peer to lightning, right?
+Yeah, I guess I mean the terminology never really goes anywhere, there's an endless bike shed, but I think it's kind of a peer to Lightning, right?
 Like they can talk to each other, but they also both access Bitcoin directly.
-And yeah, I think it's just a compliment to lightning, right?
+And yeah, I think it's just a compliment to Lightning, right?
 The things that, yeah, it's very complimentary, which is exciting.
 
 Speaker 4: 00:55:45
