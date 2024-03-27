@@ -144,14 +144,13 @@ Speaker 1: 00:10:19
 
 That's awesome and I'll go ahead and say if anybody has any questions feel free to you know chime in throughout this call.
 These are usually pretty open.
-I can think of one but maybe before I ask one does anybody else in the room have any questions like for Justin having having heard that overview of what Fedimate does?
+I can think of one but maybe before I ask one does anybody else in the room have any questions like for Justin having having heard that overview of what FediMint does?
 Cool, well I'll jump in with one.
 
 ## Where is the FediMint project right now?
 
-Speaker 1: 00:10:50
 
-Oh sorry go ahead Christoph.
+Sorry go ahead Christoph.
 
 Speaker 4: 00:10:51
 
