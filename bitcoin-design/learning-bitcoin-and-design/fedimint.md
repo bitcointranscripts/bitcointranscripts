@@ -246,27 +246,27 @@ Or is it bound to a specific mint and is it possible to find out like here's an 
 Speaker 2: 00:17:54
 
 Yeah that's a great question.
-So basically what a token is, so like underneath, So this is like the idea here of so FediMint, right?
-It's a it's a I need to learn this word It's it's concatenated two words Feddy for Federation and mint for Chami and mint Chami and mint is I described Federation I haven't described Chami and mint yet.
-So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Steven would have an IOU and the Mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chom invented this idea and so so yeah what the IOU actually is is it's it's just like a little piece of data you know it's a couple hundred characters long and so if I run a let's say I am a chameleon mint and Steven is a chameleon mint and we don't know each other if a user presents a token from my charm in mint to Steven, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
-He would look at it and be like, well, I have no, I don't know of this token.
-I have never, I've never issued this myself.
+So basically what a token is, so like underneath, so this is like the idea here of so FediMint, right?
+It's a it's a I need to learn this word It's it's concatenated two words Fedi for Federation and mint for `Chaumi` and Chaumi and mint is I described Federation I haven't described Chami and mint yet.
+So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Steven would have an IOU and the mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chaum invented this idea. What the IOU actually is just like a little piece of data you know it's a couple hundred characters long and so let's say I am a chaumian mint and Steven is a chaumian mint and we don't know each other, if a user presents a token from my charm in mint to Steven, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
+He would look at it and be like, well, I don't know of this token.
+I have never issued this myself.
 I know that I did not issue it's actually the token with the signature, right?
 So the signature would be wrong.
-And so the answer to the question is our mints wouldn't be able to interoperate at all.
+And so the answer to the question is are our mints wouldn't be able to interoperate at all.
 And this is a big problem with this idea historically is that it wouldn't really, it would struggle to plug you into like the broader commercial world.
 And so that's where lightning comes in.
-It's you can think of these these mints as like kind of little enclaves.
+You can think of these mints as like kind of little enclaves.
 Right.
-But they're connected by like a road that is lightning.
+But they're connected by like a road that is Lightning.
 Right.
 So lightning is like the instant settlement layer between these mints.
-So if I'm in like, let's say if I'm in mint A and Steven is in mint B, then I can generate an invoice that will, when paid, I will receive tokens in my mint and he can pay that invoice using tokens from his mint and you know, it's not, you know, between the mints, it's just a normal lightning payment.
-So in a sense, you can think of it as kind of like an extension to lightning where like the first or last hops on a route don't actually happen in lightning at all.
+So if I'm in like, let's say if I'm in mint A and Steven is in mint B, then I can generate an invoice that when paid, I will receive tokens in my mint and he can pay that invoice using tokens from his mint and, between the mints, it's just a normal Lightning payment.
+So in a sense, you can think of it as kind of like an extension to lightning where like the first or last hops on a route don't actually happen in Lightning at all.
 They actually happen between a mint and a lightning node operator.
-And like, this is really cool because it like it's not trying to compete with lightning or anything it's trying to add something you know it's kind of like tarot for example right like tarot is and to introduce this idea of like assets and stable coins into Bitcoin and so it's a good thing about it is building on top of lightning So if it works it'll make lightning bigger and more liquid.
-I think the same thing is true of of of impediments as well.
-Like if it works it'll just make liquid it will make lightning better.
+This is really cool because it's not trying to compete with Lightning or anything it's trying to add something you know it's kind of like tarot for example right like tarot is and to introduce this idea of like assets and stable coins into Bitcoin and so a good thing about it is building on top of lightning. So if it works it'll make lightning bigger and more liquid.
+I think the same thing is true of FediMints as well.
+Like if it works it'll just make will make Lightning better.
 So in a way someone's dropping in.
 
 Speaker 5: 00:21:05
