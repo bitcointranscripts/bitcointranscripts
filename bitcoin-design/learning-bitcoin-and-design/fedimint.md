@@ -275,8 +275,8 @@ Go ahead.
 
 Speaker 5: 00:21:05
 
-I was just saying in a way it's settling like, like strike advertisers.
-Well, for Bitcoin, basically, and then like settle backs into another token.
+I was just saying in a way it's settling like strike advertisers.
+Well, for Bitcoin, basically, and then like settle back into another token.
 
 Speaker 2: 00:21:16
 
@@ -289,9 +289,8 @@ So I'm curious to dig into this graphic that somebody dropped in here.
 
 ## Connecting mints over lightning
 
-Speaker 1: 00:21:27
 
-User one requests lightning invoice A from LSP three and then two.
+User one requests Lightning invoice A from LSP3 and then two.
 So this is what user one meant to That's the LSP right there.
 
 Speaker 2: 00:21:36
