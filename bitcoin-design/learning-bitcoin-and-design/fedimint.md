@@ -727,29 +727,29 @@ And then you've got this other class of user which is the actual federation like
 Speaker 2: 00:57:15
 
 Yep.
-So from that point of view you know it's like a little I mean it's like lightning right Like you need the actual node running first.
-And then, you know, the people, you know, it's, it's complicated.
+So from that point of view you know it's like a little I mean it's like Lightning right Like you need the actual node running first.
+And then, the people, you know, it's, it's complicated.
 It's a, it's a potential failure.
 If it's hard to set up servers, then no one ever gets to the privacy benefits, right?
-Or not enough people.
+Not enough people.
 
 Speaker 1: 00:57:32
 
 And it seems like there's almost a couple of different ways that this user could get get their first Feddy wallet.
 Like, you know, it could be someone who already holds Bitcoin.
-They're like, oh, I want to deposit some of this with the Mint and get this kind of privacy shield, get my eCash tokens, where somebody else could be starting from absolute zero.
-Someone could say, you know, hey, I want to pay you.
-I want to pay you in eCash.
+They're like, I want to deposit some of this with the Mint and get this kind of privacy shield, get my e-Cash tokens, where somebody else could be starting from absolute zero.
+Someone could say, hey, I want to pay you.
+I want to pay you in e-Cash.
 Is that cool?
 Download this wallet.
 And they're starting from completely zero.
-Maybe they've never even touched Bitcoin or lightning before in their entire life.
-Maybe maybe they've used, you know, Venmo or something like that.
+Maybe they've never even touched Bitcoin or Lightning before in their entire life.
+Maybe maybe they've used, Venmo or something like that.
 Or maybe this is their first experience with any kind of digital interaction around money to begin with.
 
 Speaker 2: 00:58:16
 
-Yeah, I know there's an interesting point of view, you know, like the, we think where does a circular economy come from?
+Yeah, I know there's an interesting point of view, like the, we think where does a circular economy come from?
 Well, it's probably not going to be people buying the money.
 You know, they're probably going to get their hands on the money in a different way.
 They're probably going to earn it.
@@ -757,13 +757,14 @@ They're probably going to, maybe it's remittances.
 Maybe it's something else.
 Right.
 But it's probably not going to be buying it.
-It's not like really a, I think the circular economies will emerge through actual usage probably.
-And so that's like an interesting thing about this too, is like, if you can get, since it's kind of like naturally like a community local thing like it might you know if you can get the buy-in to actually run one of these keep it up and you know have the interaction between all these people maybe that actually helps form a circular economy as well you know no one's no one's really succeeded there yet so it'll be interesting to see well this has been so awesome thank you so much Justin I want to I think we're a little past the hour here.
+I think the circular economies will emerge through actual usage probably.
+And so that's like an interesting thing about this too, is like, if you can get, since it's kind of like naturally like a community local thing like it might you know if you can get the buy-in to actually run one of these keep it up and you know have the interaction between all these people maybe that actually helps form a circular economy as well you know. No one's really succeeded there yet so it'll be interesting to see.
 
 ## Closing
 
 Speaker 1: 00:59:13
 
+Well this has been so awesome. Thank you so much Justin. I think we're a little past the hour here.
 So I want to be respectful of Justin's time and kind of formally end this.
 Just yes, that he feels free to go.
 But if people want to hang out and keep chatting in the channel, please feel free to do so.
@@ -772,12 +773,12 @@ And thank you so much, Justin, for taking time to share all this with us.
 
 Speaker 2: 00:59:36
 
-Yeah thanks it's fun to talk to you guys you know it's fun to have the designer point of view and everything you know it's just like a different I get code brain right now so I just think of everything in terms of how it works and then you know It's really nice to see the diversity of opinion.
+Yeah thanks it's fun to talk to you guys you know it's fun to have the designer point of view and everything. I get code brain right now so I just think of everything in terms of how it works and then you know It's really nice to see the diversity of opinion.
 
 Speaker 1: 00:59:51
 
-And so if anybody's interested in Fediment, just go join the Fediment discord.
-I think this is the Fediment.org website.
+And so if anybody's interested in FediMint, just go join the FediMint discord.
+I think this is the fediment.org website.
 And there should be, I'm assuming there's a discord link on there somewhere.
 
 Speaker 2: 01:00:02
