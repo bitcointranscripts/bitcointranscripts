@@ -373,22 +373,22 @@ You know the alternative is also like somebody in the mint just wants their frie
 
 Speaker 1: 00:28:00
 
-So it's almost like the node operator, there has to be like some kind of software plugin or something that they can hook up to their lightning node that basically allows them to hold this token balance in addition to sending out the light, you know, ordinary lightning transactions and lighting messages that they usually do.
+So it's almost like the node operator, there has to be like some kind of software plugin or something that they can hook up to their Lightning node that basically allows them to hold this token balance in addition to sending out the ordinary lightning transactions and Lighting messages that they usually do.
 
 Speaker 2: 00:28:18
 
-Yeah, So the way this works is we only support core lightning so far.
-Formerly known as C lightning.
-And so basically all it is, there's just one file.
+Yeah, so the way this works is we only support core lightning so far.
+Formerly known as `C-lightning`.
+And so basically there's just one file.
 So core lightning has this thing called plugins.
 If you want to add extra functionality core lightning, you run a plugin.
 What is a plugin?
 It's just one little file, a little computer program.
-And you stick in a folder that you tell core lightning here This is the folder with all my plugins right and some plugins are for rebalancing channels other plugins are for you know doing stuff like that and so we just have a little plugin that allows that teaches the gateway how to hold an e-cash balance and and you know a couple other details with you know when a when a payment comes in that might be a Federman payment like what to do with that and how a user can tell the gateway like here I'd like to do an outgoing payment right but it's basically just you copy one file into a folder and rerun C lightning which is so it's really really simple and LND will work roughly the same way they have this thing called an HTLC interceptor.
+And you stick in a folder that you tell core lightning here this is the folder with all my plugins right and some plugins are for rebalancing channels other plugins are for you know doing stuff like that and so we just have a little plugin that teaches the gateway how to hold an e-cash balance and and you know a couple other details with you know when a when a payment comes in that might be a FediMint payment like what to do with that and how a user can tell the gateway like here I'd like to do an outgoing payment, right? But it's basically just you copy one file into a folder and rerun C lightning which is so it's really really simple and LND will work roughly the same way they have this thing called an `HTLC interceptor`.
 It's just like one little file you got to run.
-And so hopefully this could be something very, very simple if you're doing on the command line as command line go command line can get very complicated.
-Just run one little file and and hopefully in you know, hopefully eventually there will be integrations and stuff like voltage, some of these node offerings, maybe VTC pay, some of these things that have like, or maybe umbral, some of these things that build UIs for your lightning node.
-They could just have a couple buttons like, hey, would you like to become a gateway okay what what is the config file for the federation you want to serve right and that just has the addresses like the you know the URLs for the federation servers right and so you just like paste that in or scan a QR code and now you're a gateway and you just have to decide how much e-cash tokens you want to hold and there's probably, someday there will probably be options for, you know, like auto, automatic rebalancing between the two, but that's just a dream at this point.
+And so hopefully this could be something very simple if you're doing on the command line as command line go command line can get very complicated.
+Just run one little file and and hopefully eventually there will be integrations and stuff like voltage, some of these node offerings, maybe VTC pay, some of these things that have like, or maybe umbral, some of these things that build UIs for your Lightning node.
+They could just have a couple buttons like, hey, would you like to become a gateway okay what what is the config file for the federation you want to serve right and that just has the addresses like the you know the URLs for the federation servers, right? And so you just like paste that in or scan a QR code and now you're a gateway and you just have to decide how much e-cash tokens you want to hold and someday there will probably be options for, like automatic rebalancing between the two, but that's just a dream at this point.
 
 ## Backups for FediMint users
 
