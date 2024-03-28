@@ -1,12 +1,11 @@
 ---
 title: "Anonymous Credentials"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: mulluke via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=pgErjQSQQsg
-tags: ['research', 'privacy-enhancements', 'cryptography', 'bls-signatures']
-speakers: ['Jonas Nick']
-categories: ['club']
-date: 2020-04-14
-summary: "Jonas Nick discusses anonymous credentials and their applications in this section. Anonymous credentials involve getting a blinded token signed by a server, where the server does not see the message being signed. These tokens contain attributes that can be selectively revealed, and range proofs can be used to verify attributes without revealing additional information. The speaker highlights the flexibility and security of anonymous credentials and how they improve on traditional signatures. They also discuss advancements in these credentials, such as mercurial signatures and delegateable anonymous credentials. The speaker mentions the work of Del Tauri and their solution for creating a divisible e-cash system using homomorphic cryptographic commitments, range proofs, and blind signature schemes. They also discuss the merging and breaking of anonymous credentials, as well as reissuing tokens without exposing the individual values. The implementation and linkability of credentials are also explored in the conversation. Overall, the participants express the need for further study and propose focusing on the cryptography part of the scheme in the next session."
+tags: ["research","privacy-enhancements","cryptography","bls-signatures"]
+speakers: ["Jonas Nick"]
+categories: ["club"]
+date: 2020-04-13
 ---
 ## Introduction to credentials. / Selective signing of attributes. / Range proof. / "Rethinking Public Key Infrastructures and Digital Certificates" (Stefan Brands, 1999)
 
