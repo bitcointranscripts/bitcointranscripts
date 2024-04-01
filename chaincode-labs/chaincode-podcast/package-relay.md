@@ -3,9 +3,24 @@ title: "Package Relay"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Gloria-Zhao-and-Package-Relay---Episode-21-e1j0ii3
 tags: ["package-relay","security"]
-speakers: ["Gloria Zhao","Mark Erhardt","Adam Jonas"]
+speakers: ["Gloria Zhao"]
 categories: ["podcast"]
+summary: "Gloria Zhao sits down with us to discuss her package relay proposal and what it is like as a relative newcomer to propose a big change."
 date: 2022-05-24
+episode: 21
+aditional_resources:
+-   title: 'Mailing List: Package Relay Proposal'
+    url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
+-   title: 'Mailing List: Package Mempool Accept and Package RBF'
+    url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
+-   title: 'Brink Podcast: Ep1 Mempool Policy'
+    url: https://brink.dev/podcast/1-mempool-policy/
+-   title: 'Censorship and DoS Attacks: An intro to Mempool Policy'
+    url: https://vimeo.com/704956163
+-   title: Transaction Relay Policy for L2 Developers
+    url: https://www.youtube.com/watch?v=fbWSQvJjKFs
+-   title: Mempool Garden
+    url: https://github.com/glozow/bitcoin-notes/tree/master/mempool_garden
 ---
 ## Introduction
 
@@ -122,7 +137,7 @@ By that I mean, when you have this layer two contracting protocol, you're trying
 The idea is you and some untrusted counterparty are going to create transactions that you're not going to broadcast, hopefully.
 But if something goes wrong, then you can go and settle on-chain.
 The way that they usually do this, is they'll create these transactions that lock you into these spending paths.
-And there's N spending paths, for example.
+And there's `N` spending paths, for example.
 
 One is the happy case, you move on together because you agreed on something new, and another is, okay, counterparty tries to cheat.
 The honest party is able to then revoke or redeem the funds that are rightfully theirs before a certain time lock.
@@ -205,7 +220,7 @@ How'd you figure that out?
 
 Gloria Zhao: 00:08:01
 
-Because I would just talk to people and they would be like -"Oh, it would be so nice if we had package relay, cause then we could have XYZ," and it's like, "Oh, we can't do this yet because there's no package relay, so this is insecure."
+Because I would just talk to people and they would be like, "Oh, it would be so nice if we had package relay, cause then we could have XYZ," and it's like, "Oh, we can't do this yet because there's no package relay, so this is insecure."
 
 Adam Jonas: 00:08:13
 
@@ -223,7 +238,7 @@ That's what we're all here for (laughter).
 
 Gloria Zhao: 00:08:28
 
-I think just the process of figuring out the design space, figuring out what really is the commonality between all of these constraints that people have, and abstractly us being able to come here and say - "Yeah, in summary, it's pre-signed, and it's untrusted, and they need fee bumping."
+I think just the process of figuring out the design space, figuring out what really is the commonality between all of these constraints that people have, and abstractly us being able to come here and say, "Yeah, in summary, it's pre-signed, and it's untrusted, and they need fee bumping."
 That's something that was figured out recently, right?
 
 Then you need a good idea of what the L2 projects out there are.
@@ -241,7 +256,9 @@ As you're thinking about the complexity, have you been able to clean up things a
 
 Gloria Zhao: 00:09:36
 
-Yeah, I think that that's my approach. Not to make it more spaghetti, and also I think refactoring helps clarify the interface for everyone. So for example, part of [Package RBF](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html) was modularizing and documenting our current Replace-by-Fee policy and pushing that into its own module.
+Yeah, I think that that's my approach.
+Not to make it more spaghetti, and also I think refactoring helps clarify the interface for everyone.
+So for example, part of [Package RBF](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html) was modularizing and documenting our current Replace-by-Fee policy and pushing that into its own module.
 Now it's just five helper functions and Package RBF, as I've implemented it now, is just calling those same functions with a few different arguments.
 So that's nice, and now we hopefully understand RBF better.
 But that kind of also opened a can of worms, and now people want all of the RBF pinning attacks to be solved.
@@ -294,9 +311,9 @@ I can attest to that.
 Gloria Zhao: 00:12:33
 
 I've gotten a lot of help from people who have worked on mempool, like Suhas and Blue Matt and John.
-So having those people there to be like - "Hey, Glory, you actually can't do that.
-That's going to be really dangerous."
-It's like - "Woah, I didn't realize."
+So having those people there to be like, "Hey, Gloria, you actually can't do that.
+That's going to be really dangerous".
+It's like, "Woah, I didn't realize".
 
 Adam Jonas: 00:12:47
 
@@ -307,7 +324,7 @@ Gloria Zhao: 00:13:06
 
 Yeah, I do think as a beginner, we maybe have a bit less of the instinct people often have when reviewing code, where they see what they want to see instead of what's actually there.
 I think we don't take as many things for granted.
-I think Martin talked about this on his podcast of just like - "Is that really true? Let's go and verify it."
+I think Martin talked about this on his podcast of just like, "Is that really true? Let's go and verify it".
 For me, it's literally like, I don't even know how this works, so I have to go and maybe spend a day white-boarding it.
 Yeah.
 
@@ -334,13 +351,13 @@ Mark Erhardt: 00:14:17
 
 Well, maybe let me take this one.
 I've read some of the notes that Gloria has written, and it's made it much easier for me to understand what sort of problems we get from basically giving everybody permission to send data to us.
-I've also seen reactions to her mailing list contributions where people who only see part of the problem maybe say - "Oh, isn't that much easier though?"
-But it really isn't, when you when you start reading and looking into it more and more, you have this huge conflict between the huge attack surface that you have, but also wanting it because you need it to allow everybody to use Bitcoin in a censorship-free way.
+I've also seen reactions to her mailing list contributions where people who only see part of the problem maybe say, "Oh, isn't that much easier though?".
+But it really isn't, when you start reading and looking into it more and more, you have this huge conflict between the huge attack surface that you have, but also wanting it because you need it to allow everybody to use Bitcoin in a censorship-free way.
 So yeah, there are these notes, there are these mailing list posts that are probably going to be seminal pieces that we point people at - read this, then come back and talk.
 
 Gloria Zhao: 00:15:02
 
-Yeah, especially when they'll talk about like - "Oh, we have this in block relay, why don't you do this in transaction relay?"
+Yeah, especially when they'll talk about like, "Oh, we have this in block relay, why don't you do this in transaction relay?"
 Block relay is easy.
 When you send a header that's 80 bytes, they had to put a Proof-of-Work on it to make it valid.
 That's easy to deal with (laughs).
@@ -453,7 +470,7 @@ And can't you use historical data to figure out the transaction constellations?
 
 Gloria Zhao: 00:19:47
 
-Yes, yes, but it's also we're trying to enable transactions that couldn't be relayed before.
+Yes, yes, but it's also like we're trying to enable transactions that couldn't be relayed before.
 
 Adam Jonas: 00:19:53
 
@@ -513,7 +530,7 @@ That's a very diplomatic way of saying that.
 Gloria Zhao: 00:22:03
 
 Yeah, so I don't pretend to know how Lightning works.
-The BOLT I visit the most is BOLT 3, which is the transaction's structure, but other than that, I don't know really anything.
+The BOLT I visit the most is BOLT3, which is the transaction's structure, but other than that, I don't know really anything.
 I don't know anything about networking and in lightning.
 I just ask like - hey we have to define a clear interface between our code and your code, our network and your network, because we rely on each other, right?
 Bitcoin cannot do thousands of transactions per second and Lightning transactions are Bitcoin transactions.
@@ -524,7 +541,7 @@ Well, maybe not Bitcoin Core, but there's other Bitcoin implementations (laughte
 So, thanks for joining us, and we are going to link your [Brink podcast about mempool policy.](https://brink.dev/podcast/1-mempool-policy/)
 We are going to link to your [talk at Advancing Bitcoin](https://vimeo.com/704956163), which is the intro to mempool policy.
 We are going to link to your [talk about mempool policy](https://www.youtube.com/watch?v=fbWSQvJjKFs) for L2 devs.
-We are going to link to your [diagrams.](https://github.com/glozow/bitcoin-notes/tree/master/mempool_garden)
+We are going to link to your [diagrams](https://github.com/glozow/bitcoin-notes/tree/master/mempool_garden).
 I mean, you're pretty good at code, but your diagrams seem to be your real talent (laughter).
 You might want to be thinking about a professional diagrammer.
 
