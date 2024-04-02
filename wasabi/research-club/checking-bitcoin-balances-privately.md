@@ -23,7 +23,7 @@ And Samir, please tell us how all the magic works.
 Speaker 1: 00:01:26
 
 Yeah, that was a great introduction.
-Honestly, a little better than the one I had.
+Honestly, it's a little better than the one I had.
 Thank you.
 Yeah, that's exactly what it is.
 That's kind of what got me into this field is that it does sound like magic and it does sound like you probably shouldn't be able to do something like that, but you can.
