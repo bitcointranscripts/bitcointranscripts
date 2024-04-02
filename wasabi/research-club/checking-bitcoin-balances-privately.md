@@ -3,20 +3,24 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","Max"]
+speakers: ["Samir Menon","Max","Elsa"]
 categories: ["club"]
 date: 2022-09-27
 ---
 Speaker 0: 00:00:00
 
 So hello and welcome to the Wasabi Wallet Research Club.
-Today we are speaking from with Samir from Spiral, which is the title of a fancy cryptography paper of homomorphic value encryption or homomorphic encryption and private information retrieval.
-The gist of this cryptomagic is that a client can request data from a server, but the server does not know which data was requested.
-And there are different variants of the CryptoMagick for different use cases.
-And there are currently two proof of concept apps.
-One is a Wikipedia, so where I think six gigabytes of text entries, no pictures, can be queried so that the server doesn't know which article you're interested in.
-And the second, more pressing and important for us, is an anonymous block explorer so that you can query the UTXO set and request an address and the server will give you the balance of that address.
+Today we are speaking with Samir from Spiral, which is the title of a fancy cryptography paper on homomorphic value encryption or homomorphic encryption and private information retrieval.
+
+The gist of this crypto magic is that a client can request data from a server, but the server does not know which data was requested.
+And there are different variants of the Crypto Magic for different use cases.
+
+And there are currently two proof-of-concept apps.
+One is Wikipedia, where I think six gigabytes of text entries, no pictures, can be queried so that the server doesn't know which article you're interested in.
+
+The second, more pressing and important for us, is an anonymous block explorer so that you can query the UTXO set and request an address and the server will give you the balance of that address.
 And well, the server doesn't know which address you're actually requesting.
+
 So that sounds like impossible magic.
 And Samir, please tell us how all the magic works.
 
@@ -28,111 +32,98 @@ Thank you.
 Yeah, that's exactly what it is.
 That's kind of what got me into this field is that it does sound like magic and it does sound like you probably shouldn't be able to do something like that, but you can.
 So yeah.
+
 I'm actually going to just mostly, I'll talk a little bit about the internals of how Spiral works at the end, but I'll kind of first just like, let's just try to situate, you know, the security model of a server that doesn't learn what you query is kind of complicated.
-And so let's just first try to compare it to all the other ways you can check a Bitcoin balance.
-And let's just like situate it amongst the many, many alternative ways, you know, one could look up the balance of a Bitcoin address.
+And so let's just first try to compare it to all the other ways you can check a Bitcoin balance. And let's just like situate it amongst the many, many alternative ways, you know, one could look up the balance of a Bitcoin address.
+
 A little background on me, I was a graduate student at Stanford and this PAR project was kind of my senior project for my master's and it was advised by Dan Bonet but it kind of I went and got a real job, and so I stopped working on it for a little bit.
+
 Then the itch came back and I worked on this again and published this paper, I believe, I guess I presented it in May of this year.
 So we're starting a company, I'm quitting my job soon.
 So yeah, yeah.
 And we're trying to start a company around this technology.
-All right, so today, I think you guys and me probably have a very similar goal, which is what we want our private-like clients.
-We want clients that don't have to run a full node, but also do not leak information to third parties or as little information as possible.
-Today, third parties learn a lot of information when you use them directly.
-So if you're a like client and you just over the regular internet connect to a full node, you are going to tell them a lot of information.
-In particular, they're going to get both your IP address and your actual Bitcoin wallet addresses as you query them.
-So that's pretty bad.
-You're kind of linking this very identity correlated feature, an IP address with your money.
-You can use a public block explorer to do this instead of connecting to a full node directly, but it's kind of the same picture.
-You're still sending your IP address and your wallet address to a third party who can link them.
-A really good frontline solution is to use Tor.
-So a very simple thing to do is to remove this network level identifier, the IP address, from the information that the public block explorer gets.
-There is still some leakage.
-And in particular, the leakage is gonna come from the fact that you typically query many more than one address.
-And even using something like Tor, even if you actually build a new circuit every time, even if you appear to the public block explorer, like someone coming from many different clients, you're going to still leak actually the metadata, if you will, that you're querying all these addresses at the same time and over Tor.
-It depends on the actual practical circumstances, but there's still even just timing will lead actually that these addresses are related.
-And of course, like figuring out that addresses are related is actually a pretty big deal because some of the point of like things like CoinJoin is to actually hide that exact information that two addresses are controlled by the same person.
-So this linkability problem is important, we think.
-There's another solution in BIP 157 and 158.
-I think it was implemented by the Neutrino wallet also, which is this block filter solution.
+
+All right, so today, I think you guys and me probably have a very similar goal, which is what we want our private-like clients. We want clients that don't have to run a full node, but also do not leak information to third parties or as little information as possible.
+
+Today, third parties learn a lot of information when you use them directly. So if you're a client and you just over the regular internet connection to a full node, you are going to tell them a lot of information.
+In particular, they're going to get both your IP address and your actual Bitcoin wallet addresses as you query them. So that's pretty bad. You're kind of linking this very identity-correlated feature, an IP address with your money.
+
+You can use a public block explorer to do this instead of connecting to a full node directly, but it's kind of the same picture. You're still sending your IP address and your wallet address to a third party who can link them. A really good frontline solution is to use Tor. So a very simple thing to do is to remove this network level identifier, the IP address, from the information that the public block explorer gets.
+
+There is still some leakage. And in particular, the leakage is gonna come from the fact that you typically query many more than one address. And even using something like Tor, even if you actually build a new circuit every time, even if you appear to the public block explorer, like someone coming from many different clients, you're going to still leak actually the metadata, if you will, that you're querying all these addresses at the same time and over Tor. It depends on the actual practical circumstances, but there's still even just timing will lead actually that these addresses are related.
+
+And of course, like figuring out that addresses are related is actually a pretty big deal because some of the point of like things like CoinJoin is to actually hide that exact information that two addresses are controlled by the same person. So this linkability problem is important, we think.
+
+There's another solution in BIP 157 and 158. I think it was implemented by the Neutrino wallet also, which is this block filter solution.
 
 ## Block Filter Solution
 
 Speaker 1: 00:05:42
 
-So basically what happens here, I'm sure you guys know, but it's basically compact data about the transactions in each block is kind of streamed to the client continuously.
-And then when the client sees that a block contains a relevant transaction, it just fetches the full block.
+So basically what happens here, I'm sure you guys know, but it's basically compact data about the transactions in each block is kind of streamed to the client continuously. And then when the client sees that a block contains a relevant transaction, it just fetches the full block.
+
 So there's like a couple complications with this way of doing things.
-One, I guess, practical thing is that the blocks are kind of big.
-The blocks are one megabyte up to one megabyte each.
-And for kind of privacy reasons, you can't just get a subset of the block.
-If you have a wallet that's kind of busy, like if you use your wallet, say, every hour, you have to download a megabyte an hour.
-So as frequently as your addresses are making transactions, that's how much data you need to kind of stream.
-The filters themselves are also, you know, a kind of continuous ongoing cost, because you've got to monitor.
-So if you're offline for some time, you need to kind of scan through all the filters and see if you're offline.
+One, I guess, practical thing is that the blocks are kind of big. The blocks are one megabyte up to one megabyte each. And for kind of privacy reasons, you can't just get a subset of the block.
+
+If you have a wallet that's kind of busy, like if you use your wallet, say, every hour, you have to download a megabyte an hour. So as frequently as your addresses are making transactions, that's how much data you need to kind of stream.
+
+The filters themselves are also, you know, a kind of continuous ongoing cost, because you've got to monitor. So if you're offline for some time, you need to kind of scan through all the filters and see if you're offline.
+
 And maybe in a different way, there's kind of this leakage problem.
-So one problem is the act of fetching the block is not protected.
-I mean, we announce which block we're trying to fetch.
-But what we do is, I mean, as a mitigation, you know, if we did this all with the same node, that would be bad because the node could kind of pretty easily tell from the blocks that you fetch which address you're interested in.
+So one problem is the act of fetching the block is not protected. I mean, we announce which block we're trying to fetch. But what we do is, I mean, as a mitigation, you know, if we did this all with the same node, that would be bad because the node could kind of pretty easily tell from the blocks that you fetch which address you're interested in.
 You could just kind of do an intersection attack, can work quite well.
-The mitigation is generally that you connect to different peers for each block.
-So you connect to a different peer to download each block.
-But you know again here the timing really trips us up right again just knowing that just watching it even if I'm not like even if I'm not a Tor adversary, I'm not able to like, you know, de-anonymize you on Tor.
-If I'm just like your university network administrator, and I just watch your bandwidth consumption, I will just notice a one megabyte download on some cadence, right?
-And if I just like kind of correlate that with blocks on the chain, then I just kind of see, it seems like you might have downloaded block 379 and 24.
-It doesn't become terribly difficult to figure out an address.
-So there's some leakage.
-I think in all of these examples, the attack I outlined is kind of theoretical, but it's mostly just to illustrate that there is leakage that's still kind of there.
-There are some other options which people kind of suggest.
-I don't know if you guys are the audience who would exactly suggest this.
+
+The mitigation is generally that you connect to different peers for each block. So you connect to a different peer to download each block. But you know again here the timing really trips us upright again just knowing that just watching it even if I'm not like even if I'm not a Tor adversary, I'm not able to like, you know, de-anonymize you on Tor.
+If I'm just like your university network administrator, and I just watch your bandwidth consumption, I will just notice a one-megabyte download on some cadence, right?
+
+And if I just kind of correlate that with blocks on the chain, then I just kind of see, it seems like you might have downloaded blocks 3，7，9, and 24. It doesn't become terribly difficult to figure out an address.
+
+So there's some leakage. I think in all of these examples, the attack I outlined is kind of theoretical, but it's mostly just to illustrate that there is leakage that's still kind of there.
+
+There are some other options which people kind of suggest. I don't know if you guys are the audience who would exactly suggest this.
 I guess industry kind of more, I don't know, the A16Z folks or whatever would say, oh, why don't you just run it on AWS?
+
 But of course, kind of just replacing a box with a different box, right?
 Here, now you're just trusting the cloud provider kind of to do everything.
-And I guess another suggestion folks have is running a full node.
-And I think that, you know, to be honest, that is a great suggestion.
-If you want really sovereign kind of control over the data, I think running a full node yourself is a good idea.
-It is just kind of hard.
-I mean, you have to make it remotely accessible.
-It's kind of annoying to set up and maintain.
-If we could find a way without having to run a full node, allow clients to kind of privately query the blockchain, that would still be a good thing because we want to reduce the barrier to entry, we want more people to use this.
-Yeah, I mean, there aren't that many full nodes, so not that many people do something like this.
-So the way Spiral works is it uses homomorphic encryption to remove the wallet addresses piece of the query.
-So the server is still learning your IP address, but now there's no useful data to correlate with that IP address.
+
+And I guess another suggestion folks have is running a full node. And I think that, you know, to be honest, that is a great suggestion. If you want really sovereign kind of control over the data, I think running a full node yourself is a good idea.
+
+It is just kind of hard. I mean, you have to make it remotely accessible.
+It's kind of annoying to set up and maintain. If we could find a way without having to run a full node, allow clients to kind of privately query the blockchain, that would still be a good thing because we want to reduce the barrier to entry, we want more people to use this. Yeah, I mean, there aren't that many full nodes, so not that many people do something like this.
+
+So the way Spiral works is it uses homomorphic encryption to remove the wallet addresses piece of the query. So the server is still learning your IP address, but now there's no useful data to correlate with that IP address.
+
 The basic idea is a spiral uses homomorphic encryption to encrypt your query when it leaves your device, and then it's able to process your query and return an encrypted answer without learning anything about your query.
-The guarantee is it's not statistical, this is not like a mixing or any kind of thing like that.
-This is, it's not like hashing, it's not buckets, it's a full cryptographic guarantee that the server cannot learn anything about the query, even if they're actively malicious.
-It does incur higher computational costs for the server.
-In particular, the server has to do work that's linear in the size of the database.
+
+The guarantee is it's not statistical, this is not like a mixing or any kind of thing like that. This is, it's not like hashing, it's not buckets, it's a full cryptographic guarantee that the server cannot learn anything about the query, even if they're actively malicious. It does incur higher computational costs for the server. In particular, the server has to do work that's linear in the size of the database.
+
 So if the database gets bigger, so today the database is a bunch of Bitcoin balances, if we wanted to include, you know, when we added transaction data or if we want to include more data say about individual transactions, that will make the server's runtime longer.
-But On the other hand, the communication is better, and there's kind of no ongoing syncing really needed.
-The server can kind of keep its database up to date, and whenever the client wants to get the most up-to-date information, they can make another query.
+
+On the other hand, the communication is better, and there's kind of no ongoing syncing really needed. The server can kind of keep its database up to date, and whenever the client wants to get the most up-to-date information, they can make another query.
+
 Today, we only support balances and the five most recent UTXOs. That's because of this thing I talked about earlier where the computational cost for the server is linear in the size of the database.
 So if we wanted to make it 10 most recent, it would cost more.
 So we need to think carefully about how we can make that kind of scale to at least a use case that's useful.
-And yeah, of course, the code is open source, and there's a paper and everything.
-And I'm happy to answer any questions about how it works.
-I have a slide that kind of explains more of the technical underpinnings of Spiral.
-So if you want, I can just go through that slide if you want to hear more about homomorphic encryption stuff.
+
+And yeah, of course, the code is open source, and there's a paper and everything. And I'm happy to answer any questions about how it works.
+I have a slide that kind of explains more of the technical underpinnings of Spiral. So if you want, I can just go through that slide if you want to hear more about homomorphic encryption stuff.
 
 ## Open Questions
 
 Speaker 1: 00:12:00
 
 But before I do that, I'll just kind of say, yeah, I think the open questions for us are, you know, what minimum set of data is enough?
+
 I think balance is on its own, it's not quite enough.
-I think if I was, When I run a wallet software, I kind of expect more than just the balance in all my addresses.
-We obviously need to think about fetching more than one address.
-Because today there's like a website and you can fetch one address, but you know, wallets have more than one address.
-And yeah, I think there's a couple options on how we do that.
-We need to think a little bit about the pay or incentivization structure for servers.
-This is a kind of class in computation.
-So how can we make it feasible or practical for them?
-And long term, I think I would like to see an open standard for PIR for this data.
-So what we want is something that's not tied to a company or a person or an organization, but just kind of ideally, like maybe a BIP or something that allows us to not tie ourselves to any particular scheme and do this PAR thing as an extension of our current way of, you know, say doing a get block RPC or whatever.
-So yeah.
-Would you like me to just go through the homomorphic encryption step?
-Because I got the idea.
-Would that be interesting?
+I think if I was, When I run a wallet software, I kind of expect more than just the balance in all my addresses. We obviously need to think about fetching more than one address.
+
+Because today there's like a website and you can fetch one address, but you know, wallets have more than one address. And yeah, I think there's a couple options on how we do that. We need to think a little bit about the pay or incentivization structure for servers.
+
+This is a kind of class in computation. So how can we make it feasible or practical for them?
+
+And long term, I think I would like to see an open standard for PIR for this data. So what we want is something that's not tied to a company or a person or an organization, but just kind of ideally, like maybe a BIP or something that allows us to not tie ourselves to any particular scheme and do this PAR thing as an extension of our current way of, you know, say doing a get block RPC or whatever.
+
+So yeah. Would you like me to just go through the homomorphic encryption step? Because I got the idea. Would that be interesting?
 Yeah.
 
 Speaker 2: 00:13:32
@@ -154,27 +145,27 @@ Speaker 1: 00:13:57
 
 Sure.
 So I guess today what we do is we take the UTXO set and we kind of summarize it.
-So today we take the UTXO set and for every address we take the top five UTXOs if there are up to five.
-And we also compute its balance.
+
+So today we take the UTXO set and for every address we take the top five UTXOs if there are up to five. And we also compute its balance.
 And that's the data we do today.
+
 If you wanted to, say, query the entire UTXO set, that would be slightly bigger than what I outlined, but not that much bigger.
-If you want a sense of the size of the computational cost, maybe the simplest summary would be, you know, for every, yeah, I guess, if you think of the database size, the computational cost is about 300 megabytes per second.
-So what that means is like, if the database is one gig, it takes three CPUs to do this task.
-So the task is fully parallelizable.
-So you can think of computation as just a cost.
-You know, like if you did it with three cores, you know, you would take one second.
-But yeah, it's around 300 megabytes per second.
+
+If you want a sense of the size of the computational cost, maybe the simplest summary would be, you know, for every, yeah, I guess, if you think of the database size, the computational cost is about 300 megabytes per second. So what that means is like, if the database is one gig, it takes three CPUs to do this task.
+
+So the task is fully parallelizable. So you can think of computation as just a cost. You know, like if you did it with three cores, you know, you would take one second. But yeah, it's around 300 megabytes per second.
 
 Speaker 2: 00:15:15
 
 I see.
 So the big situation here is that for WasabiWallet, we would want, as like an MVP for us to work, the amounts simply wouldn't be enough.
-Our users, they want proof.
-They want to know that it's connected to block headers that are in the chain with the most proof of work.
-But on top of that, we also need to know that the server isn't in some ways deceiving us.
-For example, just lowering the balances of all the users or just omitting certain UTXOs. Block filters do a nice job of this because you're, you know, you're just hoping the server does an accurate job of creating the filters and you're clearing the blocks and you get these entire blocks.
+Our users, they want proof. They want to know that it's connected to block headers that are in the chain with the most proof of work.
+
+But on top of that, we also need to know that the server isn't in some ways deceiving us. For example, just lowering the balances of all the users or just omitting certain UTXOs. Block filters do a nice job of this because you're, you know, you're just hoping the server does an accurate job of creating the filters and you're clearing the blocks and you get these entire blocks.
+
 So the only way that you're going to have an incorrect balance is if the server somehow malleates a filter but there's not really a good, you know, it's kind of a weird, unclear attack vector.
-So how practical would it be to actually get some kind of proofs on top of the balance that you're already producing?
+
+So how practical would it be to actually get some kind of proof on top of the balance that you're already producing?
 
 Speaker 1: 00:16:35
 
@@ -185,21 +176,17 @@ So, so, so, I'm sure the exact name of this is so, so what we want is a Merkle i
 
 Speaker 1: 00:16:45
 
-We, we, We just want to say that this transaction is part of this block and to do that we need the log, if n is the number of transactions, we need log n kind of hashes to show inclusion.
-I think we use this kind of vertical proof of inclusion somewhere else, but I'm forgetting.
-I think there's a wallet that that uses these.
-But yeah, so to include those that would be more costly.
-And yeah, to be clear, today we definitely do not have any kind of, you know, there's no proof that the server is really serving you the right data.
-So that is a big problem.
-Obviously, we need to kind of have some proof.
-The good news is, yeah, we could always add Merkle proofs of inclusion.
-If you do the math on the size of those, it's like roughly, I think I looked at this before, it was something like on the order of hundreds of bytes, maybe 200 bytes or something.
+We, we, We just want to say that this transaction is part of this block and to do that we need the log, if n is the number of transactions, we need log n kind of hashes to show inclusion. I think we use this kind of vertical proof of inclusion somewhere else, but I'm forgetting. I think there's a wallet that uses these.
+
+But yeah, so to include those that would be more costly. And yeah, to be clear, today we definitely do not have any kind of, you know, there's no proof that the server is really serving you the right data. So that is a big problem. Obviously, we need to kind of have some proof.
+
+The good news is, yeah, we could always add Merkle proofs of inclusion. If you do the math on the size of those, it's like roughly, I think I looked at this before, it was something like on the order of hundreds of bytes, maybe 200 bytes or something.
+
 So, it would be a significant increase, but possible.
 I'll highlight one alternative way of doing this, which is actually suggested in the bit, in bit 157.
 There, what we could instead do is actually continue to use block filters, but use PIR for the block retrieval part.
-So you would retrieve blocks using PIR, but you would use client block filters as normal.
-I think the problem there is it doesn't save on your bandwidth.
-I could be wrong, but I think most of the bandwidth is coming from the filters and coming from the streaming to the client of the filter data.
+
+So you would retrieve blocks using PIR, but you would use client block filters as normal. I think the problem there is it doesn't save on your bandwidth. I could be wrong, but I think most of the bandwidth is coming from the filters and coming from the streaming to the client of the filter data.
 So you wouldn't say that.
 
 Speaker 0: 00:18:28
@@ -210,20 +197,20 @@ So the server doesn't incur the block download cost.
 Speaker 1: 00:18:41
 
 Oh, okay.
-So is the main cost for you guys right now actually the filters because you incur that cost as I see.
-Yeah, it's a large outgoing cost.
-I'm sure your hosting provider is charging you.
+So is the main cost for you guys right now actually the filters because you incur that cost as I see. Yeah, it's a large outgoing cost. I'm sure your hosting provider is charging you.
 Yeah, okay.
+
 Yeah, So, yeah, actually doing proofs of inclusion is possible, but yeah, it's good to know, yeah, you need that kind of to deploy this for real.
 If I can ask a follow-up question, do you guys, do you guys, to do this, do you, Are you mostly querying the UTXO set, the full set of transactions, just balances?
+
 Like what kind of data is crucial?
 
 Speaker 0: 00:19:30
 
 We do want the full transaction history list.
-Yeah.
+
 And so that's what we get in the filters right now.
-Wasabi is SecWit only, so we don't have to create filters pre-SecWit, August 2018 or something, or 17.
+Wasabi is SecWit only, so we don't have to create filters pre-SecWit, August 2018 or something, or 2017.
 Okay.
 Yeah.
 
@@ -238,9 +225,12 @@ Sorry, say that one more time.
 Speaker 2: 00:19:57
 
 The filters are all essentially a compact representation of all BEC 32 addresses in a block.
+
+Speaker 0: 00.20.05
 Single public key.
-Okay, yeah.
-Single public key BEC 32 addresses.
+
+Speaker 2: 00:20:07
+Okay, yeah. Single public key BEC 32 addresses.
 So they're very compact, you know, three years ago, because it was a minority of people use those addresses more and more they become larger and larger but they're they're they're very space efficient I would I don't know the exact details maybe Max can answer but the exact
 
 Speaker 0: 00:20:31
@@ -267,16 +257,15 @@ Speaker 2: 00:20:56
 That's right.
 When it's not exact, then there are some false positives, but there are no false negatives.
 That's the goal.
-You'll never miss.
+You'll never miss it.
 
 Speaker 0: 00:21:08
 
 But you will get more.
 Yeah, that false negative, that false positive rate can be configured.
-And the lower you want that first positive rate, the larger the filter size is.
-I'm not exactly sure where we fall in the line of tradeoff here.
+And the lower you want that first positive rate, the larger the filter size is. I'm not exactly sure where we fall in the line of tradeoff here.
 Yeah, I don't know details like that.
-Lucas is in the call, so maybe he knows.
+Lucas is on the call, so maybe he knows.
 
 Speaker 1: 00:21:34
 
