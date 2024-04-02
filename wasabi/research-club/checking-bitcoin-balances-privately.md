@@ -3,7 +3,7 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)","Adam(4)"]
+speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)","Adam(4)","Peter(5)"]
 categories: ["club"]
 date: 2022-09-27
 ---
@@ -939,24 +939,23 @@ Hey, Adam.
 Glad that you're here.
 Catch the recording.
 It was very good.
+
+Speaker 4: 00:59:34
 I do have another question, and that is about the...
-So I saw the client on GitHub and mentioned that this is free open source.
+So I saw the client on GitHub and mentioned that this is free open-source.
 What about the server?
 
 Speaker 1: 00:59:42
 
-So the server does not need to be open source because of homomorphic encryption guarantees.
-But I think we still are open sourcing it.
-So the server is at my GitHub.
-It's at this one.
-I think this is our old repo.
+So the server does not need to be open source because of homomorphic encryption guarantees. But I think we still are open sourcing it. So the server is at my GitHub. It's at this one. I think this is our old repo.
+
 So I can message it in the chat.
 So there is a server here.
 So we also have the server open source in public.
-I do think that the really crucial part is to get kind of reproducible builds and stuff on the client.
-Because the client, as long as you trust the client, everything else is fine.
+
+I do think that the really crucial part is to get kind of reproducible builds and stuff on the client. Because the client, as long as you trust the client, everything else is fine.
 So yeah.
-But obviously for an open standard, we're going to need open source clients and servers.
+But obviously, for an open standard, we're going to need open source clients and servers.
 
 Speaker 0: 01:00:35
 
@@ -965,13 +964,13 @@ Cool, thank you.
 Speaker 4: 01:00:36
 
 So I just arrived.
-Is there a way to summarize whole Spiral work in a, like, like on five?
+Is there a way to summarize the whole Spiral work in a, like, like on five?
 
 Speaker 1: 01:00:54
 
-That's magic.
 Sure, sure, sure.
 Yeah, I think the summary, the best summary is honestly Max's at the beginning, which was just like, basically Spiral is a way to retrieve an item from a database without letting it ever learn what item you retrieved.
+
 And the way it works is kind of complicated but
 
 Speaker 4: 01:01:14
@@ -983,43 +982,28 @@ Speaker 1: 01:01:18
 
 Okay, okay, I can do a little, I can explain a little more.
 So, so yeah, the way it works intuitively is basically the client sends this kind of encrypted vector of bits.
+
 Encrypted vector of bits and the server does like an encrypted dot product between the bits that the client sends and the items in the database.
+
 And the point is, you know, The one bit will kind of be the item that we want, and the zero bits will kind of cancel out all the items we don't want.
+
 And the server will add these all up and send it back to the client.
 And the point is the server never learned, you know, what the encrypted bits were.
-It never learns what the sum of everything was.
-It just kind of does the computation and sends the encrypted result back to the client.
+
+It never learns what the sum of everything was. It just kind of does the computation and sends the encrypted result back to the client.
 
 Speaker 4: 01:02:12
 
 Oh, okay.
-Okay, it's like a cryptographic challenge
+Okay, it's like a cryptographic challenge protocol.
+That's like the server is sending bytes, but those bytes are not the address, but somehow be the client-server challenge, you can establish the address or the information that the server is sending on the client.
 
-Speaker 0: 01:02:16
-
-protocol
-
-Speaker 4: 01:02:20
-
-that's like the server is sending bytes, but those bytes are not the address, but somehow be the client server challenge, you can establish the address or the information that the
-
-Speaker 1: 01:02:40
-
-server is sending
-
-Speaker 4: 01:02:41
-
-on the client.
-Holy shit,
+Holy shit, that's something.
 
 Speaker 1: 01:02:44
 
-that's something.
-Yeah, so the client is sending an encrypted version of its query and it gets an encrypted response.
-And the point is the server never decrypts anything.
-Yeah, that's the point.
-Everything stays encrypted.
-So it's kind of like, it's almost like end to end encryption.
+Yeah, so the client is sending an encrypted version of its query and it gets an encrypted response. And the point is the server never decrypts anything. Yeah, that's the point. Everything stays encrypted.
+So it's kind of like, it's almost like end-to-end encryption.
 Like, like end-to-end encryption.
 The catch is that it's expensive for the server to do the computation.
 So you know the server has to invest a lot of effort to kind of answer your query.
@@ -1027,31 +1011,31 @@ So you might need to eventually pay them or like in some way incentivize their t
 
 Speaker 4: 01:03:23
 
-How expensive is it so expensive as?
-For the entire Bitcoin transaction history Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
+How expensive is it so expensive as
+For the entire Bitcoin transaction history, Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
 
 Speaker 1: 01:03:40
 
 That's a good question.
 I mean, it used to be impossibly big.
 It used to be like, you know, I would say years, you know, to do a single Bitcoin address lookup.
-But today it's not so bad.
-So today there's been a lot of innovation.
-Today you can look up a balance of an address today at our site, like, very easily, and our server costs, I think, like, 50 bucks a month to run or something.
-It's not an expensive server that we run.
+
+But today it's not so bad. So today there's been a lot of innovation.
+Today you can look up a balance of an address today at our site, like, very easily, and our server costs, I think, like, 50 bucks a month to run or something. It's not an expensive server that we run.
+
 So, today, it's not too bad.
-I think doing all of the transaction history is definitely more costly, but it's not infeasibly costly.
-I think it gets maybe really bad if you are trying to query tens of thousands of addresses.
+I think doing all of the transaction history is definitely more costly, but it's not infeasibly costly. I think it gets maybe really bad if you are trying to query tens of thousands of addresses.
+
 Then we'll have to think of a better way to kind of batch your queries.
 
 Speaker 0: 01:04:38
 
 Yeah, so Adam, there's multiple layers of why this might be very difficult for us to use.
-One is we might want the transaction history, so this is the whole TX outset instead of the
+
+One is we might want the transaction history, so this is the whole TX outset instead of the UTXO set.
 
 Speaker 4: 01:04:49
 
-UTXO set.
 We definitely want that, so we cannot get that?
 
 Speaker 0: 01:04:55
@@ -1064,22 +1048,25 @@ Speaker 4: 01:05:05
 
 issue is because- But how large?
 Like so large that we cannot run on a server or we can buy that big server for it?
+
 I mean, come on, like seriously, if this is the issue and we could buy a server for it, like I think it would be worth it because, you know, this is the single most problematic thing that we have performance-wise in Wasabi Wallet.
-But this is why we are not like Blue Wallet.
-This is the reason and if it would be feasible, then I think it would be worth it.
+
+But this is why we are not like Blue Wallet. This is the reason and if it would be feasible, then I think it would be worth it.
 
 Speaker 0: 01:05:53
 
-But let me try to summarize the complexity of why it might still not be feasible.
-Yeah, there are other...
-Exactly, there are others.
-So one is the size of the database.
+But let me try to summarize the complexity of why it might still not be feasible. Exactly, there are others. So one is the size of the database.
+
 The other is the number of addresses that a single client is looking for.
-And my client often has over 10,000 used addresses.
-And so we would need to query all of them.
-And not just once, but every time you load the wallet.
-And so we have I don't know 10 000 users with each 10 000 addresses making queries over the entire blockchain database so to say that's that turns very expensive very quick And however a solution around this is...
+And my client often has over 10,000 used addresses. And so we would need to query all of them. And not just once, but every time you load the wallet.
+
+And so we have I don't know 10 000 users with each 10 000 addresses making queries over the entire blockchain database so to say that's that turns very expensive very quick however a solution around this is...
+
+Speaker 4: 01:06:38
+
 You would have to only do it once.
+
+Speaker 0: 01:06:41
 Well, next time you open the wallet, you might have received a coin to one of those many addresses.
 
 Speaker 4: 01:06:49
@@ -1092,25 +1079,26 @@ Speaker 1: 01:06:53
 So I think there's a couple of layers.
 So yeah, Max and I went through this.
 There's a couple of layers of mitigation you can do.
-So one layer is you can also just look at which addresses were because of kind of this homomorphic encryption thing, because you can query kind of arbitrary data as long as the server kind of forms it for you.
+
+So one layer is you can also just look at which addresses were because of kind of this homomorphic encryption thing because you can query kind of arbitrary data as long as the server kind of forms it for you.
+
 You could have a database that says, when were these wallets last interacted with?
-You could just query that database and you could find out, okay, 9,000 of these addresses, nothing happened on them since I last opened this app.
-Right.
-And then for the thousand that are remaining, you could look and see, you know, which, which ones of them have a balance still or are still active.
-And then you could retrieve each of their transaction histories kind of individually.
+
+You could just query that database and you could find out, okay, 9,000 of these addresses, nothing happened on them since I last opened this app. Right.
+
+And then for the thousand that are remaining, you could look and see, you know, which, which ones of them have a balance still or are still active. And then you could retrieve each of their transaction histories kind of individually.
+
 It's not perfect, but something I'll do is I think I will, I will try to build up a number of addresses in my wallet that's large enough to kind of test with.
-And I would love to play around and see how this could work or at least, yeah.
-Yeah, I think it's a kind of urgent challenge.
-So, yeah, and it's cool tech.
+
+And I would love to play around and see how this could work or at least, yeah. Yeah, I think it's a kind of urgent challenge. So, yeah, and it's cool tech.
 
 ## Private Information Retrieval from a Database
 
 Speaker 0: 01:08:20
 
-Another interesting, like, the cool thing is like private information retrieval from a database.
-It seems massively big as a concept.
-And we can use it in many different areas.
-One, for example, might be to query the mempool of someone else, which you boot up your client and you have unconfirmed transactions and this way you could be able to get them.
+Another interesting, like, the cool thing is like private information retrieval from a database. It seems massively big as a concept. And we can use it in many different areas.
+
+One, for example, might be to query the mempool of someone else, which you boot up your client and you have unconfirmed transactions, and this way you could be able to get them.
 
 Speaker 4: 01:08:45
 
@@ -1119,32 +1107,31 @@ I was querying the entire mempool of all the nodes I'm connected to, but it got 
 
 Speaker 1: 01:09:02
 
-If you're interested in the checking addresses you don't own, I think that's also very feasible.
-I don't know if that's interesting.
-But I think that today your options are pretty bad.
+If you're interested in checking addresses you don't own, I think that's also very feasible. I don't know if that's interesting. But I think that today your options are pretty bad.
+
 So I think at least on that front, yeah, we're kind of clearly better than the best way you have today to kind of look up the address of a balance that you don't already have in your wallet, of an address.
 
 Speaker 4: 01:09:35
 
 So that is a super important point and that might...
-So what are people looking in block explorers?
-They are looking at quite a few things there.
-But building a private block explorer based on this protocol might actually be possible.
-Yes, that's a huge thing, really huge.
+
+So what are people looking in block explorers? They are looking at quite a few things there. But building a private block explorer based on this protocol might actually be possible. Yes, that's a huge thing, really huge.
+
 Right now, people are putting in, and people, I mean, I do that as well.
-We are putting in our addresses in block exporters to check if everything is going well or how well was constructing wasabi this transaction, stuff like that.
+We are putting in our addresses in block explorers to check if everything is going well or how well was constructing wasabi this transaction, stuff like that.
+
 And well, that's a huge database that block explorers have.
-So that's pretty problematic, I hope.
-It's not gonna be like that well-known fact that they are going for block explorers to disclose data.
+So that's pretty problematic, I hope. It's not gonna be like that well-known fact that they are going for block explorers to disclose data.
 You know?
 
 Speaker 1: 01:11:00
 
 Yeah, I mean, if I was, I would definitely subpoena Block Explorer.
 I think Ledger keeps their logs on Ledger Live for like five years or something.
+
 So yeah, I think, I think, Yeah, I don't know if you guys are interested.
-I think that's another angle we're interested in is this hardware wallet kind of integration.
-I think it's kind of funny how you go to kind of you're currently able to go to Greatlands and kind of keep all your private keys on hardware.
+I think that's another angle we're interested in is this hardware wallet kind of integration. I think it's kind of funny how you go to kind of you're currently able to kind of keep all your private keys on hardware.
+
 But then when you want to just like know how much money you have, you kind of have to, you have to just, you end up kind of just going to a block explorer or ledger or whoever, and kind of just telling them your address and your IP address and stuff.
 So yeah.
 
