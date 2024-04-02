@@ -3,7 +3,7 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)"]
+speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)","Adam(4)"]
 categories: ["club"]
 date: 2022-09-27
 ---
@@ -263,7 +263,7 @@ Speaker 0: 00:21:08
 
 But you will get more.
 Yeah, that false negative, that false positive rate can be configured.
-And the lower you want that first positive rate, the larger the filter size is. I'm not exactly sure where we fall in the line of tradeoff here.
+And the lower you want that first positive rate, the larger the filter size is. I'm not exactly sure where we fall in the line of tradeoffs here.
 Yeah, I don't know details like that.
 Lucas is on the call, so maybe he knows.
 
@@ -275,7 +275,7 @@ Speaker 3: 00:21:38
 
 Hello, guys.
 It's quite nice to be here.
-I don't have any strong background in crypto and higher order math, but as a layman, you know, is there a way to simplify the explanation of how homomorphic encryption works?
+I don't have any strong background in crypto and higher-order math, but as a layman, you know, is there a way to simplify the explanation of how homomorphic encryption works?
 I have tried to see the, you know, the information on the internet, but it's just not possible for a basic layman like me.
 Would that be possible on this call, or is it not?
 
@@ -301,36 +301,34 @@ Yes.
 Yeah.
 Yes.
 So the total size of our database is roughly one gig right now.
-We translate every, all UTXOs kind of reduced down to about a gig of data.
-If we instead made the set all UTXOs and we didn't just take the five most recent ones for every address, the database would not be much larger.
-It would be like a small multiple, like maybe three or four times larger, that would be kind of feasible.
-I guess when I'm thinking about it, I suppose it helps that you guys only support the BEC 32 addresses, because That means there's kind of a limited set of addresses that are on chain that have transactions for that.
-But yeah, we need to think about how big would it be to include all transaction history?
+We translate, all UTXOs kind of reduced down to about a gig of data.
+If we instead made the set all UTXOs and we didn't just take the five most recent ones for every address, the database would not be much larger. It would be like a small multiple, like maybe three or four times larger, that would be kind of feasible.
+
+I guess when I'm thinking about it, I suppose it helps that you guys only support the BEC 32 addresses because That means there's kind of a limited set of addresses that are on chain that have transactions for that.
+But yeah, we need to think about how big would it be to include all transaction history.
 Because UTXOs are very different than every transaction.
 So, yeah.
 OK, It's good to know what the...
 Yeah.
 And just to ask one more time.
+
 So, the problem that you guys face with block filters is Mostly that you have to download this gigabyte of things to get started.
 Is that the issue?
 Mostly?
 
 Speaker 0: 00:24:08
 
-So you have to download, first of all, the server has to generate filters, which can take weeks.
-Then the clients have to download all the filters, which we do over Tor, which also can take an hour maybe.
+So you have to download, first of all, the server has to generate filters, which can take weeks. Then the clients have to download all the filters, which we do over Tor, which also can take an hour maybe.
+
+Speaker 1: 00:24:20
 I see, right.
 I forgot it's all over Tor.
-
-Speaker 1: 00:24:23
-
 So that also… Exactly.
 Yes.
 
 Speaker 0: 00:24:29
 
-And Then for block downloads, we spin up a new Tor identity for every Bitcoin peer that we download a block from.
-So all of this together is, if you have a really big wallet and you're making a full rescan, I mean, it can take a couple of weeks, if not a month.
+And then for block downloads, we spin up a new Tor identity for every Bitcoin peer that we download a block from. So all of this together is, if you have a really big wallet and you're making a full rescan, I mean, it can take a couple of weeks, if not a month.
 
 Speaker 1: 00:24:47
 
@@ -345,6 +343,7 @@ Let me just add one more thing.
 So when you use Wasabi Wallet, you're making many addresses because you're you're quenching so you have to make a new address every time and if you use the wallet regularly you might go through something like 300 addresses or 400 or thousand over time that means that what you're looking for in the filters is actually quite broad.
 And so you get more and more false positives.
 And so if you just think it through, you're going to have a thousand blocks or more.
+
 And each block is actually more than a megabyte typically.
 And so you might end up with a gigabyte of blocks that you have to query, and each one is queried from a different node over a different Tor circuit.
 Not necessarily a different node, just a different Tor circuit.
@@ -354,10 +353,13 @@ Speaker 1: 00:26:00
 So I guess there are two things to ask here.
 One is, so one thing to notice, it's perfectly fine to use this homomorphic stuff with Tor.
 They're orthogonal.
+
 One hides your IP and one hides the content of your queries.
 Doing both is probably a good thing.
 But I wonder if what homomorphic encryption could allow you to do is not construct a new circuit like every time.
+
 So if the query is encrypted, in some sense you don't need to use Tor, but if you'd like to also kind of hide your network level identifier, you could do both and use Tor, but not build a new circuit every time and instead just make many private queries to the same node.
+
 This would be presumably faster because Tor circuits can reach decent bandwidth, right, but not if they're, I think, freshly constructed every time, right?
 Then you're going to pay the latency.
 
@@ -369,17 +371,18 @@ Speaker 1: 00:27:10
 
 Yeah, yeah.
 So if you notice today, no, right?
-I mean, we just have like a text field with an address.
+I mean, we just have a text field with an address.
 We want to support that.
 There's actually a lot of theory and research about doing batch requests kind of more efficiently.
-So Yeah, I think it's really useful to hear that a very typical use case is like hundreds of addresses, because that says a lot about how we need to build this to make it usable.
+
+So Yeah, I think it's really useful to hear that a very typical use case is like hundreds of addresses because that says a lot about how we need to build this to make it usable.
 So yeah, OK.
 Yes, so batching is possible, but it's in the works.
 
 Speaker 0: 00:27:56
 
 Yeah, by the way, it's way more than just a thousand.
-I'm checking a not even that old wallet and it has well 8,000 addresses here 13,000 addresses so since we do you know we do we attempt many coin joins and a lot of them fail and we generate new addresses for each attempted coin join and you can register up to 8 outputs in a round so let's say a round fails, I don't know, 5 times before it succeeds so that's 5 times 8 addresses that we have to add to your gap limit.
+I'm checking a not-even-that-old wallet and it has well 8,000 addresses here 13,000 addresses so since we do you know we do we attempt many coin joins and a lot of them fail and we generate new addresses for each attempted coin join and you can register up to 8 outputs in a round so let's say a round fails, I don't know, 5 times before it succeeds so that's 5 times 8 addresses that we have to add to your gap limit.
 
 Speaker 1: 00:28:35
 
@@ -404,7 +407,7 @@ I guess to start the Coinjoin it has some value in it.
 Speaker 0: 00:29:09
 
 No, sorry.
-So we spend inputs that are addresses with money on them, but then on the output side we create new addresses that are not yet used without money on it.
+So we spend inputs that are addresses with money on them, but then on the output side, we create new addresses that are not yet used without money on them.
 
 Speaker 1: 00:29:18
 
@@ -434,10 +437,12 @@ I see.
 I see.
 Yeah.
 So an easy way to actually resolve that will be to actually just make a set of addresses that have any money.
+
 So this is a technique we actually use for the current service.
 What you can do is instead create another database that just says, like, does this address have any money at all?
 And that database can be very small, right?
-Because again, we can use like the classic Bloom filter thing where we, it's not quite a Bloom filter because the addresses are already random.
+
+Because again, we can use the classic Bloom filter thing where we, it's not quite a Bloom filter because the addresses are already random.
 So just take the X top X bits of every address that has money in it and send these to the client or allow them to fetch them using PIR, right?
 So, yeah.
 And WasabiWallet already handles the mempool, right?
@@ -466,6 +471,7 @@ The problem is going to be, well, the problem is going to be twofold.
 One, there's a significant cost to running a query.
 So a query costs today like six CPU seconds, right?
 So six CPU seconds is not nothing, but it's also, it's something, you know?
+
 Like It's a significant cost.
 So 10,000 addresses times six CPU seconds is 60,000, it's a thousand hours of computation.
 So it'll be tough.
@@ -479,7 +485,7 @@ So it's not going to be that feasible.
 
 Speaker 0: 00:33:00
 
-Actually, to this I have a question, because I saw on the website that the first request, the client needs to send more data, and for every following it's less.
+Actually, to this, I have a question, because I saw on the website that the first request, the client needs to send more data, and for every following it's less.
 
 Speaker 1: 00:33:09
 
@@ -488,6 +494,7 @@ Why is that?
 Yeah, it's because the first request contains what's called the setup data or the public parameters.
 Basically, the server sends essentially like an extended, like a large public key to the server.
 So the server uses this public key to kind of let it do the query processing.
+
 So it's state that the server needs to store on a per client basis, but it has no privacy implication.
 It's just used for the homomorphic processing.
 So that's why it's big.
@@ -517,24 +524,27 @@ So, so I think like, It is difficult, especially from a cost perspective, I thin
 It's difficult to see this scaling to, I check 10,000 addresses kind of regularly.
 Like Every day I check 10,000 addresses and there's like 10,000 users.
 That will quickly become difficult for the server.
+
 But I think there's two things.
 One is the set of active addresses is not 10,000.
 So what can we do to kind of like reduce the number?
+
 Two, it is just a cost for the server.
 You know, computation is just money, as we know from proof of work, right?
 So A question is, you know, if clients were willing to pay for it, if I was willing to pay for six CPU seconds for my query, maybe that would be okay.
 I might not be willing to pay 10,000 times six CPU seconds.
 So we'd have to see what clients are kind of, you know, quote unquote willing to pay.
+
 And then also, I guess the last thing I would say is it would be very feasible to use PAR just for blocks.
 So if you think that the privacy leakage is an issue or you're interested in that kind of angle on it, I think just doing PIR, just in that block retrieval phase of the standard client block header thing, if you want to do PIR, I think that is very feasible.
 Is very, very feasible.
 One other thing, I think that there's kind of like a, there's also like a kind of narrow use case for just like onboarding or just like set up.
+
 I think if you're like a client is setting up and it's taking weeks to sink your wallet, I think it's really powerful that in the meantime you can, you can make queries, for, for addresses.
-You can see if you've been paid
+You can see if you've been paid privately.
 
 Speaker 0: 00:37:21
 
-privately.
 Yeah, exactly.
 Right, to just get the active wallet balance really quickly.
 
@@ -543,6 +553,7 @@ Speaker 1: 00:37:26
 And yeah, so no syncing, no.
 Right.
 So actually it might even make sense just as a kind of, yeah, as a fallback or even kind of as a like setup thing.
+
 I mean, the fact that you don't incrementally have to do anything, like each query costs the same and, or I guess the first one costs a little more, but basically there's no sinking, right?
 There's no like client state that I'm trying to get into sync with the chain.
 I'm just kind of, I can make a query kind of one-off.
@@ -551,11 +562,10 @@ I think you can add a public watch address but you can't you can't actually use 
 
 Speaker 0: 00:38:08
 
-Yeah, you cannot and the problem is you would have to run this address through all the filters, download all the past false positive blocks And so it would take a
+Yeah, you cannot and the problem is you would have to run this address through all the filters, download all the past false positive blocks And so it would take a long time.
 
 Speaker 1: 00:38:18
 
-long time.
 I don't know if that's a feature.
 Yeah, I don't know if it's a feature you guys are interested in, but I think it would be useful to be able to just say, hey, what, you know, like, yeah, how much is at this address?
 Because today, you know, the option is to go to a Chrome tab and type it in and send it to, you know, who knows, send it to blockchain.com or whoever.
@@ -567,7 +577,7 @@ So you, sorry, the input amount of that transaction, because that's on the block
 It's on the previous transaction output.
 And then you cannot do effective fee bumping in a child pays for parent transaction.
 Because you'd...
-So this is an issue that we have of kind of quote-unquote stuck payments that you received.
+So this is an issue that we have of kind of quote-unquote stock payments that you received.
 And maybe something like that might be helpful.
 And so you can query the amount of that input and then do better fee bumping.
 
@@ -616,7 +626,7 @@ Speaker 0: 00:41:12
 
 Definitely.
 Oh yeah, by the way, to jump back.
-So you say the client needs to upload his Quantico public key to the server.
+So you say the client needs to upload his public key to the server.
 So then all the queries are connected to the same public key?
 
 Speaker 1: 00:41:26
@@ -628,14 +638,14 @@ So it's not, the queries, I guess, are identifiably from the same party.
 But what the queries are for is not.
 So I guess there's some there, you're right, there's some meta metadata almost that's that's still visible, right?
 Because you can see, I guess, the main leakage is timing.
-So you can see that some party made five queries over this period of time.
+So you can see that some parties made five queries over this period of time.
 
 Speaker 0: 00:42:12
 
 I see.
 So you want to go extreme and even hide this type of metadata, then we'll use a different public key or key pair each time.
-So then that means upload more data for every query.
-And then do some randomization of the timing as well, plus new for circuits.
+So then that means uploading more data for every query.
+And then do some randomization of the timing as well, plus new circuits.
 And then it gets a lot more inefficient as well.
 
 Speaker 1: 00:42:32
@@ -673,7 +683,7 @@ Speaker 1: 00:44:12
 The client has to wait for as long as it wants to, almost directly in proportion to how much it's willing to pay.
 So I mean, if you want to make a thousand queries, right, let's say it's, you know, 5000 seconds of computation, right?
 If you pay the server, as you know, computation is like, kind of cheap and parallelizable.
-So you can imagine a server, especially like in a search look, basically like a cloud provider or something that just goes, okay, if you pay me 5000 times one cent, or, you know, point one cents or whatever.
+So you can imagine a server, especially like in a search look, basically like a cloud provider or something that just goes, okay, if you pay me 5000 times one cent, or, you know, point one cent or whatever.
 I'll, I'll process your query in one second, cause I'll just throw 5,000 cores at it.
 So, so it is kind of, it is infinitely divisible.
 It's, it's naively parallel as an algorithm.
@@ -696,15 +706,17 @@ Okay, I think I'm pretty much out of questions for now.
 Does anyone else have any?
 No, then would be nice to get a bit more into the crypto magic.
 If you could.
-Sure.
-Sure.
+
 
 Speaker 1: 00:45:30
 
+Sure.
+Sure.
 I I'm If this altitude is kind of too much or too little, let me know.
 The slide is kind of gross looking.
 But I'll just walk through the basics of how this works.
 So, here's how this kind of works on the inside.
+
 So, basically, remember we have a client and a server.
 And we'd like the client would like to retrieve an item from this database of items without letting the server learn which one in queries.
 So basically, if we imagine our index is three, like we want the third item of the database, what we're going to do is we're going to have the client create a kind of bit vector.
@@ -714,6 +726,7 @@ So it's a column vector of bits where it's a one-hot encoding.
 If you've been around machine learning, you might have heard the term one-hot before.
 But basically that means there's a one in the location that I want to retrieve and zeros everywhere else.
 So there's a zero in these entries and there's a one at the desired index.
+
 So I'm going to form this vector.
 It's just a plain text bits on my client.
 And then I'm going to encrypt each of them.
@@ -723,15 +736,17 @@ And just like if you AES encrypted them, the server can't tell what any of these
 It's kind of crucial to remember that the encryption of zero and the encryption of zero, they don't look the same.
 Every time you encrypt zero, you get a different looking random thing.
 And the server cannot distinguish whether you encrypted the same thing or a different thing.
+
 So that property applies.
 It's called chosen plaintext security or semantic security.
 But basically, yeah, this vector of encrypted bits, it's not visible to the server which ones are 0 or which ones are 1.
 So that gets sent to the server.
 And then how does the server actually figure out the answer to your query?
-Well, if you look at the plaintext database elements in green, it does this kind of special.
-This is the special property of the encryption.
+
+Well, if you look at the plaintext database elements in green, it does this kind of special. This is the special property of the encryption.
 The encrypted zero gets multiplied by the plain text eight here.
 And what we get is the encrypted product of them.
+
 So if we multiply encrypted zero by six, we'll get zero.
 If we multiply encrypted one by seven, we'll get encrypted seven.
 So the point is this ability to do this multiplication, that's not normal.
@@ -765,12 +780,13 @@ Speaker 0: 00:49:27
 Nice.
 Thanks.
 Continue,
+please.
 
 Speaker 1: 00:49:29
 
-please.
 So then you can do the same thing just like we multiplied, you can also, you're allowed to add.
 So if you add encrypted zero and encrypted seven, you get encrypted seven and so on.
+
 So you kind of add all of the results and now you have a single encrypted result that you can send back to the client.
 The client can decrypt and get the item that it wanted.
 So this is how it's kind of, let's say, possible to do this.
@@ -778,22 +794,24 @@ You should, there's probably one glaring problem with this toy example, which is
 So, our query is very, very big.
 You know?
 So, that's a problem.
+
 So, in the real scheme, there's kind of a whole bunch of complicated stuff you can do to mitigate that.
-Basically, you can kind of structure the database as a cube and kind of send bits that correlate to each kind of dimension or axis on the cube, and then you can multiply and reduce that way.
-And that makes the query smaller, you know.
-So, but this is the gist of it.
+Basically, you can kind of structure the database as a cube and kind of send bits that correlate to each kind of dimension or axis on the cube, and then you can multiply and reduce that way. And that makes the query smaller, you know.
+So, this is the gist of it.
 This is how it works.
+
 So, the point is, now you can maybe conceptualize how if there was an encryption scheme that did these things, then you could do PIR.
 You know, If there was an encryption scheme that had this multiplication and this addition operation, then it would all work.
 So then the question becomes, okay, well, how do you get an encryption scheme like that?
 It's not something that AES does.
 It's not something that even ECC really does.
 So, yeah.
+
 The process of getting that is more involved.
 But that's the gist of this is the gist of how this scheme works.
 Any questions?
-I know it's like a super, it's complicated, so I'm happy to answer anything.
-I haven't given this talk that many times, so it's a little, I'm happy to answer anything.
+
+I know it's like a super, it's complicated, so I'm happy to answer anything. I haven't given this talk that many times, so it's a little, I'm happy to answer anything.
 
 Speaker 0: 00:51:31
 
@@ -807,16 +825,16 @@ So no.
 So all the orange blocks have the exact same size.
 So that's a very good point.
 Like this vector of encrypted 0's and 1's, it's not small, Because every one of them is big enough to hold a plain text element, so it's pretty big.
+
 There are a bunch of things you can do to kind of not actually send encrypted zeros and encrypted...
 So I guess I can just explain it this way.
-So the operations we have are homomorphic multiplication by a plaintext item.
-And like here, and addition.
-I don't know your familiarity with linear algebra or something, but that's a not quite complete set.
+
+So the operations we have are homomorphic multiplication by a plaintext item. And like here, and addition. I don't know your familiarity with linear algebra or something, but that's a not quite complete set.
 If you were also able to multiply two encrypted numbers, you can kind of do the...
+
 You can think about it and see that actually you can compute any function on encrypted data if you have addition and multiplication.
-You know, addition and multiplication kind of...
-Every computation is like a composition of adding and multiplying.
-All our computers do are add and multiply.
+You know, addition and multiplication kind of... Every computation is like a composition of adding and multiplying. All our computers do is add and multiply.
+
 So there are ways to compute an arbitrary function on encrypted data.
 So what that means is the query is now much smaller and you perform this arbitrary computation to make all of these encrypted zeros and ones in a big way while keeping the query small.
 So yeah.
@@ -827,24 +845,21 @@ Let's go to more.
 
 Speaker 3: 00:53:42
 
-OK, this is where I saw this illustration, because I sent maybe the link to it before.
+OK, this is where I saw this illustration because I sent maybe the link to it before.
 My question is what is the mathematical principle that enables this?
 I'm a bit familiar with linear algebra.
 So that's, yeah.
 Yeah.
 So, yeah.
-Yeah.
 
 Speaker 1: 00:54:09
 
-So the main principle is that it's difficult to kind of invert matrices when they have noise.
-So I can say more about that, but basically what that means is like if you have a matrix, a large random matrix, and you multiply it by a vector, The outputs are easy to determine.
-The output and the input vector are kind of correlated.
-It's easy to invert the matrix and figure out what the input was from the output.
+So the main principle is that it's difficult to kind of invert matrices when they have noise. So I can say more about that, but basically what that means is that if you have a matrix, a large random matrix, and you multiply it by a vector, The outputs are easy to determine. The output and the input vector are kind of correlated. It's easy to invert the matrix and figure out what the input was from the output.
+
 So if you have A, S, you know, if I give you A, S and I give you A, it's easy to find S, because finding the inverse of a matrix is not hard.
-But the key insight, the algebraic insight that enables this is that, Well, if I give you AS plus E, where E is just some very small noise, suddenly the problem is very hard.
-It's very hard to figure out S from AS plus E.
-The post has, I think, like further down kind of a discussion of like learning with errors and stuff.
+But the key insight, the algebraic insight that enables this is that, Well, if I give you AS plus E, where E is just some very small noise, suddenly the problem is very hard. It's very hard to figure out S from AS plus E.
+
+The post has, I think, like further down kind of a discussion of learning with errors and stuff.
 
 Speaker 3: 00:55:23
 
@@ -855,28 +870,28 @@ Speaker 1: 00:55:34
 
 No, no.
 So it's not like super small.
-I mean, when I say small, I don't mean like infinitesimally small like epsilon.
-I just mean that it's small relative to the size of the of the of the data.
+
+I mean, when I say small, I don't mean like infinitesimally small like epsilon. I just mean that it's small relative to the size of the of the data.
 Yeah, so it's small enough that when the client decrypts, it can kind of round away the error.
+
 So you can think of it, it's less like epsilon, more like error.
 Like that floating point error where you add 1.00001 and 1.00001 and you get 2, because of that floating pointer, it's analogous to that.
-It's more like there's the small error that you can ignore at the end.
+It's more like there's a small error that you can ignore at the end.
 Also to Max's point, I remember I forgot to mention something which is interesting, which is you asked whether this left and right thing are different.
+
 And they are, to the attacker, they're indistinguishable.
 But something that is happening that is kind of interesting is that each ciphertext contains noise.
+
 So what's happening every time we do one of these operations is the noise inside the ciphertext is growing.
-And when I say noise, it's kind of sounds fuzzy, but basically there's noise inside every ciphertext.
-And as you do operations to it, noise grows.
-And when the noise is too big, when you decrypt, you'll get the wrong answer.
-You'll get an incorrect decryption and you won't know it.
-So part of it is that there is something happening when you do these multiplications and these additions.
-The noise is growing.
-You can't do it an unlimited number of times.
+
+And when I say noise, it's kind of sounds fuzzy, but basically there's noise inside every ciphertext. And as you do operations to it, noise grows. And when the noise is too big, when you decrypt, you'll get the wrong answer. You'll get an incorrect decryption and you won't know it.
+So part of it is that there is something happening when you do these multiplications and these additions. The noise is growing. You can't do it an unlimited number of times.
+
 Otherwise, the ciphertext will kind of become garbage.
 
 Speaker 3: 00:57:19
 
-Okay, that's the way you explained it in the terms of matrices.
+Okay, that's the way you explained it in terms of matrices.
 Yeah, I think it clicks something on me.
 You know?
 
@@ -889,19 +904,20 @@ Speaker 3: 00:57:33
 
 Yeah, sure.
 Another thing is that how do you get this kind of noise?
-Does it, when you deal with the floating numbers, just a little bit of noise can throw off calculations like in physics and stuff.
+Does it, when you deal with floating numbers, just a little bit of noise can throw off calculations like in physics and stuff.
+
 How is that dealt with this encryption scheme?
 
 Speaker 1: 00:57:55
 
 Yeah, it's a good question.
-So we, yeah, I mean, for the noise we use is sampled from the Gaussian distribution, so like a normal distribution.
-And what we do is like we kind of, before we run a computation, we kind of almost like predict or check ourselves.
-We check, okay, if we do this computation, what's going to happen to the noise distribution?
-And we kind of calculate like a bound.
-We calculate the standard deviation of the noise distribution at the end, in advance.
+So we, yeah, I mean, for the noise we use is sampled from the Gaussian distribution, so like a normal distribution. And what we do is like we kind of, before we run a computation, we kind of almost like predict or check ourselves.
+
+We check, okay, if we do this computation, what's going to happen to the noise distribution? And we kind of calculate like a bound. We calculate the standard deviation of the noise distribution at the end, in advance.
+
 And we make sure that the noise distribution is not so wide as to make the ciphertext unreadable, as to cause an error in the decryption.
 So basically what we do is we bound the standard deviation of the output noise.
+
 And by doing that, we can say the noise will always be within six standard deviations of the mean and we know the standard deviation is going to be x and so we know that we will decrypt correctly.
 
 Speaker 3: 00:59:11
