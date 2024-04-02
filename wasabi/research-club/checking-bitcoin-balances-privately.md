@@ -1,12 +1,11 @@
 ---
 title: "Checking Bitcoin balances privately"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
-tags: ['research', 'privacy-enhancements', 'cryptography']
-speakers: ['Samir Menon']
-categories: ['club']
+tags: ["research","privacy-enhancements","cryptography"]
+speakers: ["Samir Menon","Max"]
+categories: ["club"]
 date: 2022-09-27
-summary: "In this video, the Wasabi Research Club delves into the topic of checking Bitcoin balances privately. They discuss the use of homomorphic encryption and private information retrieval to protect users' privacy when querying data from a server. They explore different solutions and strategies to address challenges such as address linkability, block retrieval, and the scalability and cost of checking balances. The team also emphasizes the need for an open standard for private information retrieval to ensure decentralization. They discuss the use of Tor and homomorphic encryption together, as well as the possibility of batching requests to improve efficiency. The video concludes by highlighting the ongoing research and exploration of potential solutions to ensure private querying of Bitcoin balances and more..."
 ---
 Speaker 0: 00:00:00
 
