@@ -3,7 +3,7 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","Elsa(speaker3)"]
+speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)"]
 categories: ["club"]
 date: 2022-09-27
 ---
