@@ -3,7 +3,7 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)","Adam(4)","Peter(5)"]
+speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)","Adam(4)","Peter(5)","Lucas(6)"]
 categories: ["club"]
 date: 2022-09-27
 ---
@@ -1138,7 +1138,13 @@ So yeah.
 Speaker 5: 01:11:46
 
 You could connect it to your own node, right?
+
+Speaker 1: 01:11:51
+
 Yes, yes.
+
+Speaker 5: 01:11:52
+
 I guess, to it and stuff, so yeah.
 
 Speaker 1: 01:11:53
@@ -1149,33 +1155,34 @@ Yeah, no, go ahead.
 
 Speaker 0: 01:11:58
 
-You know, even when you connect to your own node, which is the scenario you brought up earlier.
-But the problem with this is you still put your sensitive information on another computer.
-And sure, you're the one mainly in control of that computer, but maybe you get hacked, or maybe you are already hacked.
-And So the less information you store on someone or on another computer, the better.
+You know, even when you connect to your own node, which is the scenario you brought up earlier. But the problem with this is you still put your sensitive information on another computer.
+
+And sure, you're the one mainly in control of that computer, but maybe you get hacked, or maybe you are already hacked. And So the less information you store on someone or on another computer, the better.
+
 Like an existing example is ElectrumX versus ElectrumPersonalServer.
 ElectrumPersonalServer stores your extended public key on the server versus ElectrumX only receives an address and then forgets it later.
 Right, so if someone walks into your house and takes your Electrum personal server, he knows your XPAL, versus if he takes your ElectrumX, he knows nothing.
+
 So this is better in the sense like I would want to run a Spiral block explorer on top of my own node, just so that if someone gets hold of my computer, he still doesn't know anything.
 
 Speaker 1: 01:13:00
 
 Yeah, I think another way to think about it would be, you know, if you want to just kind of like not do the management, but get all the privacy, I think this is the way to do it.
-If you run Spiral in AWS, you know, like you can be very confident that they don't learn anything about what you query.
-But you also don't have to take it with you when you move and figure out your ISPs, like static IP situations so you can use it on your phone when you're going somewhere or something like that.
+
+If you run Spiral in AWS, you know, like you can be very confident that they don't learn anything about what you query. But you also don't have to take it with you when you move and figure out your ISPs, like static IP situations so you can use it on your phone when you're going somewhere or something like that.
 
 Speaker 4: 01:13:35
 
 So if I understand it correctly, the reason why we cannot use it is because There are two problems here.
-First, if we want to have the entire transaction history of an address, then we would have to run a server that might be too big for us.
-There is no such a server existing in this world to run that.
-And this question could be investigated, right?
-And the other issue is that when you have tens of thousands of addresses, like it is taking long to make those tens of thousands of cryptography key challenge exchanges to figure out the entire transaction history.
-So this might be taking like half an hour or how long?
+
+First, if we want to have the entire transaction history of an address, then we would have to run a server that might be too big for us. There is no such a server existing in this world to run that. And this question could be investigated, right?
+
+And the other issue is that when you have tens of thousands of addresses, like it is taking long to make those tens of thousands of cryptography key challenge exchanges to figure out the entire transaction history. So this might be taking like half an hour or how long?
 
 Speaker 5: 01:14:43
 
-If I may add something, you can have multiple servers, let's say in Amazon, and running them in parallel with Spiral on.
+If I may add something, you can have multiple servers, let's say in Amazon, and run them in parallel with Spiral on.
+
 So it should be costly, but still more fast.
 
 Speaker 0: 01:15:01
@@ -1197,37 +1204,37 @@ Speaker 1: 01:15:30
 
 No, not really.
 I think you'll run into memory at some point.
-I mean, you'll want to, you know, you'll start thinking, okay, well, if you put 5000 cores on a system with 8 gigs, you might get bottlenecked by other things.
-So there is kind of a thing.
-I will say, I don't think it's super feasible.
-CPUs are cheap, but they're not that cheap.
-So I don't want to...
+I mean, you'll want to, you know, you'll start thinking, okay, well, if you put 5000 cores on a system with 8 gigs, you might get bottlenecked by other things. So there is kind of a thing.
+
+I will say, I don't think it's super feasible. CPUs are cheap, but they're not that cheap. So I don't want to...
+
 I think I agree with Max's assessment that for this to be feasible, we need to find a way to do this for large numbers of addresses and not have it be like, you know, dollars per lookup, you know, like significant amount of money per lookup, because I think that's, that's if the goal is to lower the barrier to entry and to like, make it better, right, that's, that's going to be a roadblock.
-It's going to be tough to, to want to pay a dollar every time you want to know how much money you have, you know.
-So, I believe we can work on this.
-I'm not, I haven't lost all hope.
+
+It's going to be tough, to want to pay a dollar every time you want to know how much money you have, you know.
+
+So, I believe we can work on this. I'm not, I haven't lost all hope.
 I think it's really useful to hear that people have so many addresses and I want to know more about like what those addresses look like.
+
 You kind of explained that they're kind of the outputs of a, of a, their output addresses as a result of a coin join, sometimes a failed coin join.
-But yeah, the more I can kind of understand that, the more I think it could be feasible kind of to make progress.
+
+But yeah, the more I can kind of understand that the more I think it could be feasible kind of to make progress.
 
 Speaker 0: 01:17:12
 
-Yeah, but I would guess the vast majority of these addresses are unused.
-So they never made it on the blockchain.
-And then only a rather smaller number made it on the blockchain and is already spent.
-And so not in the UTXO set anymore.
-And then the smallest percentage is going to be the unspent UTXO addresses.
+Yeah, but I would guess the vast majority of these addresses are unused. So they never made it on the blockchain. 
+
+And then only a rather smaller number made it on the blockchain and is already spent. And so not in the UTXO set anymore. And then the smallest percentage is going to be the unspent UTXO addresses.
 
 Speaker 1: 01:17:38
 
 Okay.
 Certainly, I mean, spent.
 So something cool about spent coins is that like, you know, once they're spent, they can't come back.
-So yeah, we can exploit that.
+So yeah, we can explore that.
 
 Speaker 4: 01:17:56
 
-Lucas, what's your take about all this?
+Lucas, what's your taste about all this?
 Can we use Spiral somehow, if not even if it's a, can we use it to make Wasabi like really light?
 Or even should we, even if we could work it out?
 Mike, you are the one who wrote the Columbus Rites Theater stuff, so you put a lot of thoughts into around here.
