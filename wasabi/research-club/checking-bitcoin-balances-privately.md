@@ -3,11 +3,11 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","MAX(0)","Adam(4)","Peter(5)","Lucas(6)","Juma(3)","fabrizio(7)"]
+speakers: ["Samir Menon","Adam(4)","Peter(5)","Lucas(6)","Juma(3)","fabrizio(7)"]
 categories: ["club"]
 date: 2022-09-27
 ---
-Speaker 0: 00:00:00
+Max: 00:00:00
 
 So hello and welcome to the Wasabi Wallet Research Club.
 Today we are speaking with Samir from Spiral, which is the title of a fancy cryptography paper on homomorphic value encryption or homomorphic encryption and private information retrieval.
@@ -24,7 +24,7 @@ And well, the server doesn't know which address you're actually requesting.
 So that sounds like impossible magic.
 And Samir, please tell us how all the magic works.
 
-Speaker 1: 00:01:26
+Speaker(Samir): 00:01:26
 
 Yeah, that was a great introduction.
 Honestly, it's a little better than the one I had.
@@ -58,7 +58,7 @@ There's another solution in BIP 157 and 158. I think it was implemented by the N
 
 ## Block Filter Solution
 
-Speaker 1: 00:05:42
+Speaker(Samir): 00:05:42
 
 So basically what happens here, I'm sure you guys know, but it's basically compact data about the transactions in each block is kind of streamed to the client continuously. And then when the client sees that a block contains a relevant transaction, it just fetches the full block.
 
@@ -110,7 +110,7 @@ I have a slide that kind of explains more of the technical underpinnings of Spir
 
 ## Open Questions
 
-Speaker 1: 00:12:00
+Speaker(Samir): 00:12:00
 
 But before I do that, I'll just kind of say, yeah, I think the open questions for us are, you know, what minimum set of data is enough?
 
@@ -126,22 +126,22 @@ And long term, I think I would like to see an open standard for PIR for this dat
 So yeah. Would you like me to just go through the homomorphic encryption step? Because I got the idea. Would that be interesting?
 Yeah.
 
-Speaker 2: 00:13:32
+Listener(Not sure h. name): 00:13:32
 
 Go. Max, actually, maybe we can take an intermission just to ask a few questions and then we'll continue with
 
-Speaker 1: 00:13:39
+Speaker(Samir): 00:13:39
 
 the- That sounds great.
 Yeah.
 
-Speaker 2: 00:13:42
+Listener(Not sure h. name): 00:13:42
 
 Sure.
 Because I think a lot of people are going to have questions here and I'll just start myself.
 Can you kind of give us a ballpark of the cost of the server per UTXO?
 
-Speaker 1: 00:13:57
+Speaker(Samir): 00:13:57
 
 Sure.
 So I guess today what we do is we take the UTXO set and we kind of summarize it.
@@ -155,10 +155,10 @@ If you want a sense of the size of the computational cost, maybe the simplest su
 
 So the task is fully parallelizable. So you can think of computation as just a cost. You know, like if you did it with three cores, you know, you would take one second. But yeah, it's around 300 megabytes per second.
 
-Speaker 2: 00:15:15
+Listener(Not sure his name): 00:15:15
 
 I see.
-So the big situation here is that for WasabiWallet, we would want, as like an MVP for us to work, the amounts simply wouldn't be enough.
+So th.big situation here is that for WasabiWallet, we would want, as like an MVP for us to work, the amounts simply wouldn't be enough.
 Our users, they want proof. They want to know that it's connected to block headers that are in the chain with the most proof of work.
 
 But on top of that, we also need to know that the server isn't in some ways deceiving us. For example, just lowering the balances of all the users or just omitting certain UTXOs. Block filters do a nice job of this because you're, you know, you're just hoping the server does an accurate job of creating the filters and you're clearing the blocks and you get these entire blocks.
@@ -167,14 +167,14 @@ So the only way that you're going to have an incorrect balance is if the server 
 
 So how practical would it be to actually get some kind of proof on top of the balance that you're already producing?
 
-Speaker 1: 00:16:35
+Speaker(Samir): 00:16:35
 
 Yeah, yeah, that's a great question.
 So, so, so, I'm sure the exact name of this is so, so what we want is a Merkle inclusion proof, right?
 
 ## Miracle Inclusion Proof
 
-Speaker 1: 00:16:45
+Speaker(Samir): 00:16:45
 
 We, we, We just want to say that this transaction is part of this block and to do that we need the log, if n is the number of transactions, we need log n kind of hashes to show inclusion. I think we use this kind of vertical proof of inclusion somewhere else, but I'm forgetting. I think there's a wallet that uses these.
 
@@ -189,12 +189,12 @@ There, what we could instead do is actually continue to use block filters, but u
 So you would retrieve blocks using PIR, but you would use client block filters as normal. I think the problem there is it doesn't save on your bandwidth. I could be wrong, but I think most of the bandwidth is coming from the filters and coming from the streaming to the client of the filter data.
 So you wouldn't say that.
 
-Speaker 0: 00:18:28
+Max: 00:18:28
 
 Just as a heads up for you, we're downloading the filters from our server, like the Wasabi backend server, but then the blocks are downloaded from the Bitcoin peer-to-peer network.
 So the server doesn't incur the block download cost.
 
-Speaker 1: 00:18:41
+Speaker(Samir): 00:18:41
 
 Oh, okay.
 So is the main cost for you guys right now actually the filters because you incur that cost as I see. Yeah, it's a large outgoing cost. I'm sure your hosting provider is charging you.
@@ -205,7 +205,7 @@ If I can ask a follow-up question, do you guys, do you guys, to do this, do you,
 
 Like what kind of data is crucial?
 
-Speaker 0: 00:19:30
+Max: 00:19:30
 
 We do want the full transaction history list.
 
@@ -214,52 +214,51 @@ Wasabi is SecWit only, so we don't have to create filters pre-SecWit, August 201
 Okay.
 Yeah.
 
-Speaker 2: 00:19:48
+Listener(Not sure h. name): 00:19:48
 
 And the filters are as large as the number of BEC 32 addresses in the blocks?
 
-Speaker 1: 00:19:55
+Speaker(Samir): 00:19:55
 
 Sorry, say that one more time.
 
-Speaker 2: 00:19:57
+Listener(Not sure his name): 00:19:57
 
-The filters are all essentially a compact representation of all BEC 32 addresses in a block.
+The f.ters are all essentially a compact representation of all BEC 32 addresses in a block.
 
-Speaker 0: 00.20.05
+Max: 00.20.05
 Single public key.
 
-Speaker 2: 00:20:07
+Listener(Not sure his name): 00:.:07
 Okay, yeah. Single public key BEC 32 addresses.
 So they're very compact, you know, three years ago, because it was a minority of people use those addresses more and more they become larger and larger but they're they're they're very space efficient I would I don't know the exact details maybe Max can answer but the exact
 
-Speaker 0: 00:20:31
+Max: 00:20:31
 
 number of megabytes or something I think it's below a gigabyte I might be off here but it's not that much.
 
-Speaker 2: 00:20:39
+Listener(Not sure his name): 00:20:39
 
-Oh below a gigabyte for the entire four years.
+Oh below a g.abyte for the entire four years.
 
-Speaker 0: 00:20:43
+Max: 00:20:43
 
 That might be complete bullshit But I think yes.
 
-Speaker 1: 00:20:47
+Speaker(Samir): 00:20:47
 
 That sounds right.
 I mean, it's not that much data, right?
 Because it's also statistical, right?
 It's a Bloom filter-esque thing, right?
 
-Speaker 2: 00:20:56
+Listener(Not sure his name): 00:20:56
 
-That's right.
-When it's not exact, then there are some false positives, but there are no false negatives.
+That's right.When it's not exact, then there are some false positives, but there are no false negatives.
 That's the goal.
 You'll never miss it.
 
-Speaker 0: 00:21:08
+Max: 00:21:08
 
 But you will get more.
 Yeah, that false negative, that false positive rate can be configured.
@@ -267,11 +266,11 @@ And the lower you want that first positive rate, the larger the filter size is. 
 Yeah, I don't know details like that.
 Lucas is on the call, so maybe he knows.
 
-Speaker 1: 00:21:34
+Speaker(Samir): 00:21:34
 
 Happy to take any other questions, Elsa.
 
-Speaker 3: 00:21:38
+Jumar: 00:21:38
 
 Hello, guys.
 It's quite nice to be here.
@@ -279,23 +278,23 @@ I don't have any strong background in crypto and higher-order math, but as a lay
 I have tried to see the, you know, the information on the internet, but it's just not possible for a basic layman like me.
 Would that be possible on this call, or is it not?
 
-Speaker 1: 00:22:17
+Speaker(Samir): 00:22:17
 
 Yeah, I have a slide.
 Let's talk a little bit more about Wasabi Wallet and privacy, but then I can give that explanation.
 Does that sound good?
 
-Speaker 3: 00:22:28
+Jumar: 00:22:28
 
 Yes, thank you very much.
 Thank you.
 
-Speaker 0: 00:22:34
+Max: 00:22:34
 
 What I do wonder is, you do need to know the input, like the value of the UTXO that you're trying to spend.
 Does your database include amounts?
 
-Speaker 1: 00:22:49
+Speaker(Samir): 00:22:49
 
 Yes.
 Yeah.
@@ -316,28 +315,28 @@ So, the problem that you guys face with block filters is Mostly that you have to
 Is that the issue?
 Mostly?
 
-Speaker 0: 00:24:08
+Max: 00:24:08
 
 So you have to download, first of all, the server has to generate filters, which can take weeks. Then the clients have to download all the filters, which we do over Tor, which also can take an hour maybe.
 
-Speaker 1: 00:24:20
+Speaker(Samir): 00:24:20
 I see, right.
 I forgot it's all over Tor.
 So that also… Exactly.
 Yes.
 
-Speaker 0: 00:24:29
+Max: 00:24:29
 
 And then for block downloads, we spin up a new Tor identity for every Bitcoin peer that we download a block from. So all of this together is, if you have a really big wallet and you're making a full rescan, I mean, it can take a couple of weeks, if not a month.
 
-Speaker 1: 00:24:47
+Speaker(Samir): 00:24:47
 
 I see the issue.
 Yeah, so there, yeah, weeks if not a month.
 Yeah, okay.
 So,
 
-Speaker 2: 00:24:57
+Listener(Not sure his name): 00:24:57
 
 Let me just add one more thing.
 So when you use Wasabi Wallet, you're making many addresses because you're you're quenching so you have to make a new address every time and if you use the wallet regularly you might go through something like 300 addresses or 400 or thousand over time that means that what you're looking for in the filters is actually quite broad.
@@ -348,7 +347,7 @@ And each block is actually more than a megabyte typically.
 And so you might end up with a gigabyte of blocks that you have to query, and each one is queried from a different node over a different Tor circuit.
 Not necessarily a different node, just a different Tor circuit.
 
-Speaker 1: 00:26:00
+Speaker(Samir): 00:26:00
 
 So I guess there are two things to ask here.
 One is, so one thing to notice, it's perfectly fine to use this homomorphic stuff with Tor.
@@ -363,11 +362,11 @@ So if the query is encrypted, in some sense you don't need to use Tor, but if yo
 This would be presumably faster because Tor circuits can reach decent bandwidth, right, but not if they're, I think, freshly constructed every time, right?
 Then you're going to pay the latency.
 
-Speaker 0: 00:27:02
+Max: 00:27:02
 
 Can we actually make batch requests with Spiral, like requesting multiple addresses simultaneously?
 
-Speaker 1: 00:27:10
+Speaker(Samir): 00:27:10
 
 Yeah, yeah.
 So if you notice today, no, right?
@@ -379,59 +378,59 @@ So Yeah, I think it's really useful to hear that a very typical use case is like
 So yeah, OK.
 Yes, so batching is possible, but it's in the works.
 
-Speaker 0: 00:27:56
+Max: 00:27:56
 
 Yeah, by the way, it's way more than just a thousand.
 I'm checking a not-even-that-old wallet and it has well 8,000 addresses here 13,000 addresses so since we do you know we do we attempt many coin joins and a lot of them fail and we generate new addresses for each attempted coin join and you can register up to 8 outputs in a round so let's say a round fails, I don't know, 5 times before it succeeds so that's 5 times 8 addresses that we have to add to your gap limit.
 
-Speaker 1: 00:28:35
+Speaker(Samir): 00:28:35
 
 I see.
 So are the addresses that you create there, are they unspent?
 Do they contain any...
 I mean, If you create an address and no one hears about it, did it really get created?
 
-Speaker 0: 00:28:50
+Max: 00:28:50
 
 Well, in this case, yes, because the CoinJoin coordinator hears about it.
 And probably also the other CoinJoin signers.
 So it's semi-public.
 
-Speaker 1: 00:29:00
+Speaker(Samir): 00:29:00
 
 Yes, but it never...
 Will it store value?
 It will, right?
 I guess to start the Coinjoin it has some value in it.
 
-Speaker 0: 00:29:09
+Max: 00:29:09
 
 No, sorry.
 So we spend inputs that are addresses with money on them, but then on the output side, we create new addresses that are not yet used without money on them.
 
-Speaker 1: 00:29:18
+Speaker(Samir): 00:29:18
 
 Oh, I see.
 So they can be empty output addresses.
 
-Speaker 0: 00:29:22
+Max: 00:29:22
 
 Exactly.
 Those are addresses that never were on the blockchain in an output with any amount of stats.
 It's just unused addresses, so to speak.
 
-Speaker 1: 00:29:32
+Speaker(Samir): 00:29:32
 
 So then those would not need to actually hit any kind of...
 We don't need to query the blockchain for them at all, right?
 
-Speaker 0: 00:29:41
+Max: 00:29:41
 
 Well, but the client doesn't know if an address is empty or not.
 So we need to query all of them.
 Just a lot of them, the server will say there's nothing on here.
 
-Speaker 1: 00:29:50
+Speaker(Samir): 00:29:50
 
 I see.
 I see.
@@ -448,22 +447,22 @@ So, yeah.
 And WasabiWallet already handles the mempool, right?
 You guys already kind of privately listen to everything on a mempool and then cross-reference it with the addresses you have and all that.
 
-Speaker 0: 00:30:52
+Max: 00:30:52
 
 Yeah, we build a local mempool.
 The issue is when we're offline, we of course don't know it.
 So maybe actually some private information retrieval over someone else's mempool might be another interesting use case.
 
-Speaker 1: 00:31:07
+Speaker(Samir): 00:31:07
 
 Yeah, so.
 
-Speaker 0: 00:31:12
+Max: 00:31:12
 
 So, sorry, a bit more about the batch requests.
 So, like, would it be possible to just send 10,000 addresses to the server and he responds in a single package?
 
-Speaker 1: 00:31:26
+Speaker(Samir): 00:31:26
 
 So it's definitely possible.
 I mean, the simple way is, yeah, You can send 10,000 queries, you can upload them all, and then just kind of the server can just do all the computation and send you all the responses.
@@ -483,11 +482,11 @@ So 10,000 times 14 kilobytes is, you know, a lot.
 And then that's a lot of 140 megabytes to upload.
 So it's not going to be that feasible.
 
-Speaker 0: 00:33:00
+Max: 00:33:00
 
 Actually, to this, I have a question, because I saw on the website that the first request, the client needs to send more data, and for every following it's less.
 
-Speaker 1: 00:33:09
+Speaker(Samir): 00:33:09
 
 Yes, yeah.
 Why is that?
@@ -501,22 +500,22 @@ So that's why it's big.
 And you might have noticed it's pretty big.
 It's like eight megabytes or something.
 
-Speaker 0: 00:33:59
+Max: 00:33:59
 
 And Does that size depend on the database size?
 
-Speaker 1: 00:34:02
+Speaker(Samir): 00:34:02
 
 It does not.
 Or it only logarithmically does.
 So it's like very, I mean, like if the database was 100 times bigger, it would be like 12 megabytes or something.
 
-Speaker 0: 00:34:17
+Max: 00:34:17
 
 Yeah, like, I mean, just general, like, it's a very broad question, but is it, so if we want to have the full TX outset of all, like, of, but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all sacred and taproot outputs yep and let's say we have I don't know 10,000 users or so and each of them has let's say, a thousand addresses or so.
 And this is still rather small scale, but is this completely crazy?
 
-Speaker 1: 00:35:03
+Speaker(Samir): 00:35:03
 
 Yeah, no, no, no, you're asking a very, very good question.
 So, so I think that the way that it's not so so that's, that's very true.
@@ -543,12 +542,12 @@ One other thing, I think that there's kind of like a, there's also like a kind o
 I think if you're like a client is setting up and it's taking weeks to sink your wallet, I think it's really powerful that in the meantime you can, you can make queries, for, for addresses.
 You can see if you've been paid privately.
 
-Speaker 0: 00:37:21
+Max: 00:37:21
 
 Yeah, exactly.
 Right, to just get the active wallet balance really quickly.
 
-Speaker 1: 00:37:26
+Speaker(Samir): 00:37:26
 
 And yeah, so no syncing, no.
 Right.
@@ -560,17 +559,17 @@ I'm just kind of, I can make a query kind of one-off.
 Something I noticed is, can you query the balance of an address that's not in your wallet today?
 I think you can add a public watch address but you can't you can't actually use it like a block explorer, right?
 
-Speaker 0: 00:38:08
+Max: 00:38:08
 
 Yeah, you cannot and the problem is you would have to run this address through all the filters, download all the past false positive blocks And so it would take a long time.
 
-Speaker 1: 00:38:18
+Speaker(Samir): 00:38:18
 
 I don't know if that's a feature.
 Yeah, I don't know if it's a feature you guys are interested in, but I think it would be useful to be able to just say, hey, what, you know, like, yeah, how much is at this address?
 Because today, you know, the option is to go to a Chrome tab and type it in and send it to, you know, who knows, send it to blockchain.com or whoever.
 
-Speaker 0: 00:38:40
+Max: 00:38:40
 
 Yeah, and by the way, if you receive a transaction and you want to, Then you don't know the inputs of that transaction.
 So you, sorry, the input amount of that transaction, because that's on the blockchain, not in the transaction itself, right?
@@ -581,40 +580,40 @@ So this is an issue that we have of kind of quote-unquote stock payments that yo
 And maybe something like that might be helpful.
 And so you can query the amount of that input and then do better fee bumping.
 
-Speaker 1: 00:39:24
+Speaker(Samir): 00:39:24
 
 I see.
 I see.
 So to summarize, You know you received a payment, but you just don't know how much it is, essentially, because that information is just kind of not local.
 
-Speaker 0: 00:39:38
+Max: 00:39:38
 
 No, so you receive a transaction where on the output side your address is.
 That's why the transaction was hit in the filter.
 But you don't know the value of the inputs exactly, because that's in the previous transaction output.
 So you don't know the fee rate that this current transaction has.
 
-Speaker 1: 00:40:00
+Speaker(Samir): 00:40:00
 
 You know that it's less than or equal to, but you don't know what gap was left for the minor in the form of the fee.
 I see.
 
-Speaker 0: 00:40:08
+Max: 00:40:08
 
 Exactly.
 And then you can't do child pays for parent fee calculations.
 
-Speaker 1: 00:40:14
+Speaker(Samir): 00:40:14
 
 So that is a, yeah, that is...
 
-Speaker 0: 00:40:17
+Max: 00:40:17
 
 It's just one of those edge cases where we thought it would be nice to be able to just well search for an address.
 Yeah.
 But then we realized, yeah, it'll take minutes, you know, hours.
 
-Speaker 1: 00:40:30
+Speaker(Samir): 00:40:30
 
 Right.
 I think, yeah, so long term, I guess I have a slide on this, but, oh, no.
@@ -622,14 +621,14 @@ I think long term, we would like to build a, like an SDK, so that we're not kind
 So the dream is that there's like a piece of code that you point a bunch of, like basically an array app, and then there's an endpoint that you can privately query that data using.
 So certainly for all these kinds of smaller things that you want to do, that really kind of makes sense.
 
-Speaker 0: 00:41:12
+Max: 00:41:12
 
 Definitely.
 Oh yeah, by the way, to jump back.
 So you say the client needs to upload his public key to the server.
 So then all the queries are connected to the same public key?
 
-Speaker 1: 00:41:26
+Speaker(Samir): 00:41:26
 
 So all of the queries are made using the same, yes, each query is connected to the same, let's say, key pair.
 The crucial part is that every query is encrypted.
@@ -640,7 +639,7 @@ So I guess there's some there, you're right, there's some meta metadata almost t
 Because you can see, I guess, the main leakage is timing.
 So you can see that some parties made five queries over this period of time.
 
-Speaker 0: 00:42:12
+Max: 00:42:12
 
 I see.
 So you want to go extreme and even hide this type of metadata, then we'll use a different public key or key pair each time.
@@ -648,7 +647,7 @@ So then that means uploading more data for every query.
 And then do some randomization of the timing as well, plus new circuits.
 And then it gets a lot more inefficient as well.
 
-Speaker 1: 00:42:32
+Speaker(Samir): 00:42:32
 
 Yeah, some mitigations for timing are just pacing.
 So a simple thing you can do is just kind of like just paste requests and send dummy requests.
@@ -658,11 +657,11 @@ Yeah, I mean, today, if you want to do the same thing for block filters, you are
 I mean, the timing alone of your request is going to kind of correlate them.
 So yeah, it is kind of a tough problem.
 
-Speaker 0: 00:43:08
+Max: 00:43:08
 
 That's why batch requests are also very important, I would say.
 
-Speaker 1: 00:43:13
+Speaker(Samir): 00:43:13
 
 Yeah, yeah, certainly a batch request where we round up the size.
 So like, it would be important to kind of like, not reveal the exact number of addresses you have in your wallet, just because that is probably kind of identifiable.
@@ -672,13 +671,13 @@ It's very useful.
 Thank you so much for like talking to us and letting us hear your problems and stuff.
 I think it would be useful to go back and look at batching and see if it can be practical.
 
-Speaker 0: 00:43:57
+Max: 00:43:57
 
 Super cool.
 So then, how long does the request take?
 So let's say we want to look up a thousand addresses or so, how long does the client have to wait?
 
-Speaker 1: 00:44:12
+Speaker(Samir): 00:44:12
 
 The client has to wait for as long as it wants to, almost directly in proportion to how much it's willing to pay.
 So I mean, if you want to make a thousand queries, right, let's say it's, you know, 5000 seconds of computation, right?
@@ -689,18 +688,18 @@ So, so it is kind of, it is infinitely divisible.
 It's, it's naively parallel as an algorithm.
 So.
 
-Speaker 0: 00:45:01
+Max: 00:45:01
 
 That's really interesting to hear.
 
-Speaker 1: 00:45:06
+Speaker(Samir): 00:45:06
 
 So yeah, there's a nice, Yeah.
 There's an interesting intersection with the fact that this is all for a payment system, right?
 So It would be interesting to think about.
 Yeah.
 
-Speaker 0: 00:45:19
+Max: 00:45:19
 
 Okay, I think I'm pretty much out of questions for now.
 Does anyone else have any?
@@ -708,7 +707,7 @@ No, then would be nice to get a bit more into the crypto magic.
 If you could.
 
 
-Speaker 1: 00:45:30
+Speaker(Samir): 00:45:30
 
 Sure.
 Sure.
@@ -755,34 +754,34 @@ So if you AES encrypt zero and then like multiply by eight, you will just get ga
 There's no, it does not become like encrypted zero.
 This is...
 
-Speaker 0: 00:48:38
+Max: 00:48:38
 
 Sorry, on the left and right hand side, the number four, E zero times eight equals E zero.
 Is the two times E zero, is that this exact same thing or just a different encrypted blob with the same zeros clean text?
 
-Speaker 1: 00:48:55
+Speaker(Samir): 00:48:55
 
 It is not the exact same thing.
 So do you mean on the left and right, like this encrypted zero and this encrypted zero?
 
-Speaker 0: 00:49:02
+Max: 00:49:02
 
 Yes.
 
-Speaker 1: 00:49:04
+Speaker(Samir): 00:49:04
 
 Yeah, so they are not the same thing.
 They actually, again, to the attacker, look completely indistinguishable and random.
 So they both look, what they encrypt looks completely hidden to the server.
 
-Speaker 0: 00:49:27
+Max: 00:49:27
 
 Nice.
 Thanks.
 Continue,
 please.
 
-Speaker 1: 00:49:29
+Speaker(Samir): 00:49:29
 
 So then you can do the same thing just like we multiplied, you can also, you're allowed to add.
 So if you add encrypted zero and encrypted seven, you get encrypted seven and so on.
@@ -813,12 +812,12 @@ Any questions?
 
 I know it's like a super, it's complicated, so I'm happy to answer anything. I haven't given this talk that many times, so it's a little, I'm happy to answer anything.
 
-Speaker 0: 00:51:31
+Max: 00:51:31
 
 Yeah, that's, it's pretty nice.
 The data size in number 4 for the orange boxes on the right, so E0, E0, E7, E0, and then underneath the sum of E7 again, So is the data size of these orange blobs different, especially the sum?
 
-Speaker 1: 00:51:52
+Speaker(Samir): 00:51:52
 
 Yeah, it's a great question.
 So no.
@@ -839,11 +838,11 @@ So there are ways to compute an arbitrary function on encrypted data.
 So what that means is the query is now much smaller and you perform this arbitrary computation to make all of these encrypted zeros and ones in a big way while keeping the query small.
 So yeah.
 
-Speaker 0: 00:53:39
+Max: 00:53:39
 
 Let's go to more.
 
-Speaker 3: 00:53:42
+Jumar: 00:53:42
 
 OK, this is where I saw this illustration because I sent maybe the link to it before.
 My question is what is the mathematical principle that enables this?
@@ -852,7 +851,7 @@ So that's, yeah.
 Yeah.
 So, yeah.
 
-Speaker 1: 00:54:09
+Speaker(Samir): 00:54:09
 
 So the main principle is that it's difficult to kind of invert matrices when they have noise. So I can say more about that, but basically what that means is that if you have a matrix, a large random matrix, and you multiply it by a vector, The outputs are easy to determine. The output and the input vector are kind of correlated. It's easy to invert the matrix and figure out what the input was from the output.
 
@@ -861,12 +860,12 @@ But the key insight, the algebraic insight that enables this is that, Well, if I
 
 The post has, I think, like further down kind of a discussion of learning with errors and stuff.
 
-Speaker 3: 00:55:23
+Jumar: 00:55:23
 
 In programming we have this concept of you know in IEEE floating numbers there's epsilon.
 Was that related to that E?
 
-Speaker 1: 00:55:34
+Speaker(Samir): 00:55:34
 
 No, no.
 So it's not like super small.
@@ -889,18 +888,18 @@ So part of it is that there is something happening when you do these multiplicat
 
 Otherwise, the ciphertext will kind of become garbage.
 
-Speaker 3: 00:57:19
+Jumar: 00:57:19
 
 Okay, that's the way you explained it in terms of matrices.
 Yeah, I think it clicks something on me.
 You know?
 
-Speaker 1: 00:57:28
+Speaker(Samir): 00:57:28
 
 Yeah, sure.
 Yeah, feel free to reach out if you have other questions.
 
-Speaker 3: 00:57:33
+Jumar: 00:57:33
 
 Yeah, sure.
 Another thing is that how do you get this kind of noise?
@@ -908,7 +907,7 @@ Does it, when you deal with floating numbers, just a little bit of noise can thr
 
 How is that dealt with this encryption scheme?
 
-Speaker 1: 00:57:55
+Speaker(Samir): 00:57:55
 
 Yeah, it's a good question.
 So we, yeah, I mean, for the noise we use is sampled from the Gaussian distribution, so like a normal distribution. And what we do is like we kind of, before we run a computation, we kind of almost like predict or check ourselves.
@@ -920,7 +919,7 @@ So basically what we do is we bound the standard deviation of the output noise.
 
 And by doing that, we can say the noise will always be within six standard deviations of the mean and we know the standard deviation is going to be x and so we know that we will decrypt correctly.
 
-Speaker 3: 00:59:11
+Jumar: 00:59:11
 
 Yeah.
 Okay, cool.
@@ -928,11 +927,11 @@ That's all for me.
 Thank you so much.
 Yeah.
 
-Speaker 4: 00:59:19
+Adam: 00:59:19
 
 Hello, guys.
 
-Speaker 0: 00:59:23
+Max: 00:59:23
 
 Hello.
 Hey, Adam.
@@ -940,12 +939,12 @@ Glad that you're here.
 Catch the recording.
 It was very good.
 
-Speaker 4: 00:59:34
+Adam: 00:59:34
 I do have another question, and that is about the...
 So I saw the client on GitHub and mentioned that this is free open-source.
 What about the server?
 
-Speaker 1: 00:59:42
+Speaker(Samir): 00:59:42
 
 So the server does not need to be open source because of homomorphic encryption guarantees. But I think we still are open sourcing it. So the server is at my GitHub. It's at this one. I think this is our old repo.
 
@@ -957,28 +956,28 @@ I do think that the really crucial part is to get kind of reproducible builds an
 So yeah.
 But obviously, for an open standard, we're going to need open source clients and servers.
 
-Speaker 0: 01:00:35
+Max: 01:00:35
 
 Cool, thank you.
 
-Speaker 4: 01:00:36
+Adam: 01:00:36
 
 So I just arrived.
 Is there a way to summarize the whole Spiral work in a, like, like on five?
 
-Speaker 1: 01:00:54
+Speaker(Samir): 01:00:54
 
 Sure, sure, sure.
 Yeah, I think the summary, the best summary is honestly Max's at the beginning, which was just like, basically Spiral is a way to retrieve an item from a database without letting it ever learn what item you retrieved.
 
 And the way it works is kind of complicated but
 
-Speaker 4: 01:01:14
+Adam: 01:01:14
 
 yeah.
 What does that mean?
 
-Speaker 1: 01:01:18
+Speaker(Samir): 01:01:18
 
 Okay, okay, I can do a little, I can explain a little more.
 So, so yeah, the way it works intuitively is basically the client sends this kind of encrypted vector of bits.
@@ -992,7 +991,7 @@ And the point is the server never learned, you know, what the encrypted bits wer
 
 It never learns what the sum of everything was. It just kind of does the computation and sends the encrypted result back to the client.
 
-Speaker 4: 01:02:12
+Adam: 01:02:12
 
 Oh, okay.
 Okay, it's like a cryptographic challenge protocol.
@@ -1000,7 +999,7 @@ That's like the server is sending bytes, but those bytes are not the address, bu
 
 Holy shit, that's something.
 
-Speaker 1: 01:02:44
+Speaker(Samir): 01:02:44
 
 Yeah, so the client is sending an encrypted version of its query and it gets an encrypted response. And the point is the server never decrypts anything. Yeah, that's the point. Everything stays encrypted.
 So it's kind of like, it's almost like end-to-end encryption.
@@ -1009,12 +1008,12 @@ The catch is that it's expensive for the server to do the computation.
 So you know the server has to invest a lot of effort to kind of answer your query.
 So you might need to eventually pay them or like in some way incentivize their their behavior
 
-Speaker 4: 01:03:23
+Adam: 01:03:23
 
 How expensive is it so expensive as
 For the entire Bitcoin transaction history, Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
 
-Speaker 1: 01:03:40
+Speaker(Samir): 01:03:40
 
 That's a good question.
 I mean, it used to be impossibly big.
@@ -1028,23 +1027,23 @@ I think doing all of the transaction history is definitely more costly, but it's
 
 Then we'll have to think of a better way to kind of batch your queries.
 
-Speaker 0: 01:04:38
+Max: 01:04:38
 
 Yeah, so Adam, there's multiple layers of why this might be very difficult for us to use.
 
 One is we might want the transaction history, so this is the whole TX outset instead of the UTXO set.
 
-Speaker 4: 01:04:49
+Adam: 01:04:49
 
 We definitely want that, so we cannot get that?
 
-Speaker 0: 01:04:55
+Max: 01:04:55
 
 We could, but then the size of the database gets larger because you need to store all outputs, not just the unspent ones.
 And so that's the first issue.
 The second
 
-Speaker 4: 01:05:05
+Adam: 01:05:05
 
 issue is because- But how large?
 Like so large that we cannot run on a server or we can buy that big server for it?
@@ -1053,7 +1052,7 @@ I mean, come on, like seriously, if this is the issue and we could buy a server 
 
 But this is why we are not like Blue Wallet. This is the reason and if it would be feasible, then I think it would be worth it.
 
-Speaker 0: 01:05:53
+Max: 01:05:53
 
 But let me try to summarize the complexity of why it might still not be feasible. Exactly, there are others. So one is the size of the database.
 
@@ -1062,19 +1061,19 @@ And my client often has over 10,000 used addresses. And so we would need to quer
 
 And so we have I don't know 10 000 users with each 10 000 addresses making queries over the entire blockchain database so to say that's that turns very expensive very quick however a solution around this is...
 
-Speaker 4: 01:06:38
+Adam: 01:06:38
 
 You would have to only do it once.
 
-Speaker 0: 01:06:41
+Max: 01:06:41
 Well, next time you open the wallet, you might have received a coin to one of those many addresses.
 
-Speaker 4: 01:06:49
+Adam: 01:06:49
 
 Oh, yeah, you're right.
 Yes.
 
-Speaker 1: 01:06:53
+Speaker(Samir): 01:06:53
 
 So I think there's a couple of layers.
 So yeah, Max and I went through this.
@@ -1094,24 +1093,24 @@ And I would love to play around and see how this could work or at least, yeah. Y
 
 ## Private Information Retrieval from a Database
 
-Speaker 0: 01:08:20
+Max: 01:08:20
 
 Another interesting, like, the cool thing is like private information retrieval from a database. It seems massively big as a concept. And we can use it in many different areas.
 
 One, for example, might be to query the mempool of someone else, which you boot up your client and you have unconfirmed transactions, and this way you could be able to get them.
 
-Speaker 4: 01:08:45
+Adam: 01:08:45
 
 So I did that in hidden wallet.
 I was querying the entire mempool of all the nodes I'm connected to, but it got expensive pretty fast.
 
-Speaker 1: 01:09:02
+Speaker(Samir): 01:09:02
 
 If you're interested in checking addresses you don't own, I think that's also very feasible. I don't know if that's interesting. But I think that today your options are pretty bad.
 
 So I think at least on that front, yeah, we're kind of clearly better than the best way you have today to kind of look up the address of a balance that you don't already have in your wallet, of an address.
 
-Speaker 4: 01:09:35
+Adam: 01:09:35
 
 So that is a super important point and that might...
 
@@ -1124,7 +1123,7 @@ And well, that's a huge database that block explorers have.
 So that's pretty problematic, I hope. It's not gonna be like that well-known fact that they are going for block explorers to disclose data.
 You know?
 
-Speaker 1: 01:11:00
+Speaker(Samir): 01:11:00
 
 Yeah, I mean, if I was, I would definitely subpoena Block Explorer.
 I think Ledger keeps their logs on Ledger Live for like five years or something.
@@ -1135,25 +1134,25 @@ I think that's another angle we're interested in is this hardware wallet kind of
 But then when you want to just like know how much money you have, you kind of have to, you have to just, you end up kind of just going to a block explorer or ledger or whoever, and kind of just telling them your address and your IP address and stuff.
 So yeah.
 
-Speaker 5: 01:11:46
+Peter: 01:11:46
 
 You could connect it to your own node, right?
 
-Speaker 1: 01:11:51
+Speaker(Samir): 01:11:51
 
 Yes, yes.
 
-Speaker 5: 01:11:52
+Peter: 01:11:52
 
 I guess, to it and stuff, so yeah.
 
-Speaker 1: 01:11:53
+Speaker(Samir): 01:11:53
 
 Yeah, yeah.
 Especially from mobile clients and stuff.
 Yeah, no, go ahead.
 
-Speaker 0: 01:11:58
+Max: 01:11:58
 
 You know, even when you connect to your own node, which is the scenario you brought up earlier. But the problem with this is you still put your sensitive information on another computer.
 
@@ -1165,13 +1164,13 @@ Right, so if someone walks into your house and takes your Electrum personal serv
 
 So this is better in the sense like I would want to run a Spiral block explorer on top of my own node, just so that if someone gets hold of my computer, he still doesn't know anything.
 
-Speaker 1: 01:13:00
+Speaker(Samir): 01:13:00
 
 Yeah, I think another way to think about it would be, you know, if you want to just kind of like not do the management, but get all the privacy, I think this is the way to do it.
 
 If you run Spiral in AWS, you know, like you can be very confident that they don't learn anything about what you query. But you also don't have to take it with you when you move and figure out your ISPs, like static IP situations so you can use it on your phone when you're going somewhere or something like that.
 
-Speaker 4: 01:13:35
+Adam: 01:13:35
 
 So if I understand it correctly, the reason why we cannot use it is because There are two problems here.
 
@@ -1179,28 +1178,28 @@ First, if we want to have the entire transaction history of an address, then we 
 
 And the other issue is that when you have tens of thousands of addresses, like it is taking long to make those tens of thousands of cryptography key challenge exchanges to figure out the entire transaction history. So this might be taking like half an hour or how long?
 
-Speaker 5: 01:14:43
+Peter: 01:14:43
 
 If I may add something, you can have multiple servers, let's say in Amazon, and run them in parallel with Spiral on.
 
 So it should be costly, but still more fast.
 
-Speaker 0: 01:15:01
+Max: 01:15:01
 
 Yeah, for your info, this is a CPU heavier, but it's parallelizable.
 So if we get a server with 50,000 CPU cores, then it would be super quick.
 
-Speaker 5: 01:15:12
+Peter: 01:15:12
 
 And you can have multiple of them.
 
-Speaker 0: 01:15:15
+Max: 01:15:15
 
 But I don't think that's needed, right?
 If you can just multiply CPU cores?
 Is there a speed difference between having two servers with each five CPU cores versus one server with ten CPU cores?
 
-Speaker 1: 01:15:30
+Speaker(Samir): 01:15:30
 
 No, not really.
 I think you'll run into memory at some point.
@@ -1219,27 +1218,27 @@ You kind of explained that they're kind of the outputs of a, of a, their output 
 
 But yeah, the more I can kind of understand that the more I think it could be feasible kind of to make progress.
 
-Speaker 0: 01:17:12
+Max: 01:17:12
 
 Yeah, but I would guess the vast majority of these addresses are unused. So they never made it on the blockchain. 
 
 And then only a rather smaller number made it on the blockchain and is already spent. And so not in the UTXO set anymore. And then the smallest percentage is going to be the unspent UTXO addresses.
 
-Speaker 1: 01:17:38
+Speaker(Samir): 01:17:38
 
 Okay.
 Certainly, I mean, spent.
 So something cool about spent coins is that like, you know, once they're spent, they can't come back.
 So yeah, we can explore that.
 
-Speaker 4: 01:17:56
+Adam: 01:17:56
 
 Lucas, what's your taste about all this?
 Can we use Spiral somehow, if not even if it's a, can we use it to make Wasabi like really light?
 Or even should we, even if we could work it out?
 Mike, you are the one who wrote the Columbus Rites Theater stuff, so you put a lot of thoughts into around here.
 
-Speaker 6: 01:18:37
+Lucas: 01:18:37
 
 Honestly, I don't know.
 I would like to know more about the technology, but when I entered into the meeting, they were already discussing things that I mean, how to use the technology, but know what the technology really is.
@@ -1271,7 +1270,7 @@ Before, the first time I read something about this, three servers were required 
 I'm pretty sure about it.
 
 
-Speaker 1: 01:22:38
+Speaker(Samir): 01:22:38
 
 Yeah, yeah, yeah.
 I, I, I, that your, your point about the multiple servers is, is funny.
@@ -1285,7 +1284,7 @@ I mean, if you use Wasabi wallet, but then use a public block explorer, you're k
 
 So I hope at least those two things sound kind of complimentary.
 
-Speaker 6: 01:23:28
+Lucas: 01:23:28
 
 Sorry, yes, I completely agree.
 In fact, many times we say, okay, how can we, for example, provide more information to the users, right?
@@ -1299,7 +1298,7 @@ So, sometimes you want to say, okay, how can I ask for this to a central server 
 
 So that kind of thing is something that, that's why I say that we have to keep an eye on this technology.
 
-Speaker 1: 01:24:33
+Speaker(Samir): 01:24:33
 
 Yeah, so that's a great point.
 So I know I'm kind of more familiar, I have been in cryptography, but not crypto. So I'm kind of like, I was really into Bitcoin in like 2015, in our class, and then I like totally checked out.
@@ -1309,15 +1308,15 @@ Yeah, so I'm a little unfamiliar, but what kind of metadata, what kind of like d
 So I can think of like in the kind of Ethereum version, I can think of like, you know, I don't know, they like, I don't know, some NFT thing, they like, pull up some image or, you know, there's like that kind of data.
 But what are you thinking of that is global that these explorers would show?
 
-Speaker 6: 01:25:28
+Lucas: 01:25:28
 
 Well, of course, we don't know, right?
 
-Speaker 4: 01:25:31
+Adam: 01:25:31
 
 It's- IP address, Bitcoin address.
 
-Speaker 1: 01:25:35
+Speaker(Samir): 01:25:35
 
 Ah, I see.
 So what IP submitted this address?
@@ -1325,22 +1324,22 @@ So what IP submitted this address?
 Are there, there's also, is there like a kind of naming, is there like a DNS equivalent, like people who use like op return to kind of store data in some kind of structured way to register a name or whatever.
 That kind of data is also, while it's in the transaction, the metadata about it is not, right?
 
-Speaker 0: 01:26:12
+Max: 01:26:12
 
 Maybe to combine the block explorer with a lightning explorer, so you would for example see which on-chain transactions are associated to a certain Lightning node publicly.
 
-Speaker 1: 01:26:24
+Speaker(Samir): 01:26:24
 
 I see.
 Yes, so that's information that's not local normally.
 So today, I guess there's almost no private way to look that up.
 I guess you just, your best bet is to use Tor and to use a public block explorer and be careful.
 
-Speaker 0: 01:26:45
+Max: 01:26:45
 
 Different question, but since Lukas brought up that private information retrieval isn't a new thing, like why is Spiral new, or how does it improve upon what came before?
 
-Speaker 1: 01:26:56
+Speaker(Samir): 01:26:56
 
 Sure, that's a great question.
 So yeah, I mean, there's so private information retrieval as a problem was posed. Yeah, like in the 80s.
@@ -1366,14 +1365,14 @@ So we found ways to exploit the fact that, you know, with fully homomorphic encr
 So we kind of, we encrypt a function that expands the query.
 So we can send a very small query and then the server can do work to expand it into a vector.
 
-Speaker 0: 01:29:00
+Max: 01:29:00
 
 That's pretty cool.
 Yeah, okay,
 And then somewhat related, but like, how does peer review work for such a paper?
 Because it seems to me it's not a new cryptography, just as you say, applying old concepts, but how was the peer review process?
 
-Speaker 1: 01:29:14
+Speaker(Samir): 01:29:14
 
 So it's a good question.
 I remember my advisor was like, yeah, are we are we is this going to be kind of like publishable? And we we actually after we had that conversation, we did come up with some new cryptography.
@@ -1388,24 +1387,24 @@ And I think our work was kind of one of several works that took it from being im
 
 It was like, if you were looking up a sensitive medical condition in theory and if you wanted to you know there's a lot of like hypotheticals so yeah
 
-Speaker 0: 01:30:39
+Max: 01:30:39
 
 yeah the MVP demos are pretty great
 
-Speaker 1: 01:30:44
+Speaker(Samir): 01:30:44
 
 yeah if you have ideas for other ones let me know I I want to do Ethereum and I want to do, sorry, a password checker.
 
 ## Password Checker
 
-Speaker 1: 01:30:54
+Speaker(Samir): 01:30:54
 
 So I know, I don't know if you guys have seen, have I been pwned, but they have like a site where you put in a password to see if it's been leaked but you know of course you're just giving them your password.
 They do some hashing and stuff they say it's okay but you know you could do much better with PIR.
 
 So I think DNS is also something we're interested in, although there are complications there, but yeah, DNS is also exciting.
 
-Speaker 6: 01:31:24
+Lucas: 01:31:24
 
 Sorry, this is not about this topic, right?
 But just curiosity, how do you see the, how, I don't know how to ask, homomorphic encryption?
@@ -1413,7 +1412,7 @@ How far do you think we are from fully, I mean, something that I, for example, c
 And I can, for example, I don't know, add information to that file, to that encrypted file.
 Do you think we will see something like that?
 
-Speaker 1: 01:32:21
+Speaker(Samir): 01:32:21
 
 It's a great question, honestly.
 Yeah, it's a great question.
@@ -1433,46 +1432,46 @@ So, the thing I want to build is basically like WhatsApp or Signal, but they don
 And we have to do this foundational work of making PIR practical first.
 But once we do that, I think building a messenger, I hope I can in five years tell you, yeah, you can go and message people and the service will never learn who you talk to.
 
-Speaker 0: 01:34:52
+Max: 01:34:52
 
 It's pretty sweet.
 Just a fun fact.
 But the Signal groups use the key to verify anonymous credential cryptography scheme that we use for our Wabi Sabi coin joins.
 So it would be nice if we throw your homomorphic encryption on top and...
 
-Speaker 1: 01:35:10
+Speaker(Samir): 01:35:10
 
 So what is that called?
 It's a key, what is key?
 
-Speaker 0: 01:35:14
+Max: 01:35:14
 
 Key verified anonymous credentials.
 
-Speaker 1: 01:35:19
+Speaker(Samir): 01:35:19
 
 Okay. This is for context or for a setup of the conversation?
 
 
-Speaker 0: 01:35:23
+Max: 01:35:23
 
 We use it as basically eCash token for access rights.
 
-Speaker 1: 01:35:29
+Speaker(Samir): 01:35:29
 
 Okay.
 
-Speaker 0: 01:35:30
+Max: 01:35:30
 
 The token gets created during input registration and you can only register an output if you present such a token and it's anonymous e-cash so to say.
 Very rough explanation.
 
-Speaker 4: 01:35:43
+Adam: 01:35:43
 
 Cool.
-Are you familiar with the Chaum blind signatures?
+Are you familiar with the Chaum's blind signatures?
 
-Speaker 1: 01:35:49
+Speaker(Samir): 01:35:49
 
 Chowmian blind signatures?
 I'm familiar with the name Chowmian, but no, I haven't heard of Chowmian blind signatures.
@@ -1480,14 +1479,14 @@ Blind Signatures probably did a piece set about that, but I could not off the to
 It's for voting, right?
 I think.
 
-Speaker 4: 01:36:09
+Adam: 01:36:09
 
 Yeah.
 So key verified anonymous credentials are a generalization of the blind signatures.
 In Wasabi, at 1.0, we used blind signatures.
 In 2.0, we used key-verified anonymous credentials.
 
-Speaker 1: 01:36:27
+Speaker(Samir): 01:36:27
 
 Oh, so this is actually a homomorphism too.
 It's actually, yeah, so if you want to think of it, if you want to think of it this way, I mean, you're exploiting, these signatures also exploit a homomorphism in RSA.
@@ -1496,23 +1495,23 @@ Yeah, so homomorphic encryption is a little bit of, if you want to think of it t
 There's kind of like, that's a very specific homomorphism for ECC, but yeah.
 Yeah, they're connected.
 
-Speaker 0: 01:37:06
+Max: 01:37:06
 
 As far as I remember we do use Peterson commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
 
-Speaker 1: 01:37:15
+Speaker(Samir): 01:37:15
 
 Ah okay
 
-Speaker 5: 01:37:17
+Peter: 01:37:17
 
 yes
 
-Speaker 1: 01:37:18
+Speaker(Samir): 01:37:18
 
 yeah so those are again yeah homomorphic right sorry go ahead.
 
-Speaker 6: 01:37:22
+Lucas: 01:37:22
 
 Yes because we have to the server needs to verify that the operation that we realized with the amount is correct without knowing the amount itself.
 So, yes.
@@ -1520,13 +1519,13 @@ But it's something I mean, I don't know what I don't know exactly how to define 
 
 ## Homomorphic Encryption
 
-Speaker 6: 01:37:51
+Lucas: 01:37:51
 
 Because homomorphic encryption, like, in the concept, It's okay, but it sounds like something that is not still possible, right?
 So homomorphic encryption and the scope is this for most of the time.
 It's something like what we do is basically we operate in a committed value and that value is basically a point in an elliptic curve and that's it.
 
-Speaker 1: 01:38:36
+Speaker(Samir): 01:38:36
 
 It's funny, I think elliptic curves are way more complicated.
 I'm always like, I think lattice-based cryptography and homomorphic stuff, which is lattice-based and, you know, was initially pioneered for post-quantum resistance and stuff.
@@ -1542,12 +1541,12 @@ If you guys are just sitting around thinking about Henderson commitments and hom
 I promise homomorphic encryption is is it's also is in some ways much easier to understand.
 So yeah.
 
-Speaker 6: 01:39:32
+Lucas: 01:39:32
 
 We are not cryptographers here.
 I mean, we are.
 
-Speaker 1: 01:39:36
+Speaker(Samir): 01:39:36
 
 We are.
 Yes.
@@ -1555,52 +1554,52 @@ It looks like a duck and talks like a duck.
 I don't know.
 You guys are as much cryptographers as anyone, I think.
 
-Speaker 4: 01:39:48 
+Adam: 01:39:48 
 
 Self-taught cryptographers.
 
-Speaker 0: 01:39:53
+Max: 01:39:53
 The most dangerous kind.
 
-Speaker 6: 01:39:55
+Lucas: 01:39:55
 
 Oh, yes, yes.
 
-Speaker 1: 01:39:56
+Speaker(Samir): 01:39:56
 
 It's true.
 I suppose academic cryptographers are less dangerous.
 You know, I think we mostly write papers and that's it.
 
-Speaker 4: 01:40:05
+Adam: 01:40:05
 
 So to be fair, we hired a cryptographer for this, so that's okay.
 But he's not here.
 
-Speaker 0: 01:40:18
+Max: 01:40:18
 
 Plus, we didn't roll over on crypto, but we're script kiddies and just copied it from an existing paper.
 So should be all right.
 
-Speaker 1: 01:40:25
+Speaker(Samir): 01:40:25
 
 That's what a cryptographer would do, right?
 That's that's exactly they would say, we're not going to roll around, we're going to get a library, right?
 So you did the right thing.
 
-Speaker 4: 01:40:34
+Adam: 01:40:34
 
 We kind of did it all, right?
 Like we wrote a lot of cryptography code.
 
-Speaker 0: 01:40:44
+Max: 01:40:44
 Yep, did not use a library.
 
-Speaker 4: 01:40:45
+Adam: 01:40:45
 But Lucas,  Lucas, would you say we rolled our own crypto or not?
 Good question.
 
-Speaker 6: 01:40:58
+Lucas: 01:40:58
 
 No, I mean, the crypto that we are using is just a very specific case of one more general case which is the one that describes the signal white paper for anonymous groups.
 
@@ -1613,43 +1612,43 @@ But so, yes, we implemented that because there are no libraries for that. There 
 However, the good part is that in my case at least I made so many mistakes before that I think I learned by doing and by making mistakes and and also the code is extremely reviewed.
 So I think we did it really, really well this time.
 
-Speaker 0: 01:42:30
+Max: 01:42:30
 
 Samir, do you still have time?
 Are we just bothering you?
 
-Speaker 1: 01:42:33
+Speaker(Samir): 01:42:33
 
 I have about 10 or 15 more minutes if you guys want to keep chatting.
 
-Speaker 0: 01:42:39
+Max: 01:42:39
 
 Cool.
 Well, most important questions first.
 Guys, what do you have for Samir for the next 15?
 
-Speaker 4: 01:42:46
+Adam: 01:42:46
 
 How about a big one?
 All right, go ahead, Jumar.
 
-Speaker 0: 01:42:55
+Max: 01:42:55
 
 You have to bring a big not now.
 
-Speaker 3: 01:42:59
+Jumar: 01:42:59
 
 Sorry about that.
 This is one question that I've been meaning to ask, is that given that the homomorphic encryption has addition and multiplication, as far as I know about abstract algebra, does that enable Turing-complete machines or computations?
 
-Speaker 1: 01:43:22
+Speaker(Samir): 01:43:22
 
 Yep, yep, yeah.
 That's what the, sometimes you see this abbreviated as fully homomorphic encryption, that's what the fully means. So yeah, you can do arbitrary computation, encrypted.
 
 Anything you can compute on regular data, it's possible to compute on encrypted data,
 
-Speaker 3: 01:43:39
+Jumar: 01:43:39
 
 yeah.
 I see.
@@ -1657,7 +1656,7 @@ So you can, In a hypothetical scenario, how does one implement, for example, say
 Yeah, yeah, absolutely.
 How does that translate into homomorphic operations?
 
-Speaker 1: 01:44:03
+Speaker(Samir): 01:44:03
 
 Yeah, so there are some homomorphic schemes that actually operate directly on the bit level. So they actually implement a NAND gate in the scheme, basically.
 
@@ -1675,43 +1674,37 @@ We don't use that part of it because it's quite slow.
 But it does exist.
 It is possible.
 
-Speaker 3: 01:45:15
+Jumar: 01:45:15
 
 I don't suppose you can make a mini computer out of a fully homomorphic interface.
 
-Speaker 1: 01:45:22
+Speaker(Samir): 01:45:22
 
 No, you absolutely can.
 In fact, people are working on it for roll-ups and stuff.
 Yeah, it's possible.
 
-Speaker 3: 01:45:30
+Jumar: 01:45:30
 
 If I may ask Fabrizio, is that implementable in lookup tables and FPGAs and stuff?
 
-Speaker 1: 01:45:40
+Speaker(Samir): 01:45:40
 
 Yeah, it's not that amenable to hardware acceleration.
 
-Speaker 7: 01:45:44
+Fabrizio: 01:45:44
 
 You preceded me with the question I was going to ask.
 If the implementation on FBAs or ASICs could constitute a significant improvement.
 
-Speaker 0: 01:45:58
+Speaker(Samir): 01:45:58
 
-It's a
-
-Speaker 1: 01:45:58
-
-great question.
+It's a great question.
 So we've actually tried GPUs and GPUs are really well suited for this.
-NVIDIA actually has like an instruction set extension and a library that they put out that helps you do this.
-So It's not, I think they might have, yeah, I don't know what the status of it is, but they are thinking about this.
-ASICs and FPGAs are kind of not very useful because you need, what you need is, you need a fairly significant amount of memory because the database needs to fit in memory.
-And GPUs have a lot of effort invested in really, really good memory access, right?
-So, actually, GPUs are kind of optimal.
-We tried it.
+NVIDIA actually has like an instruction set extension and a library that they put out that helps you do this. So It's not, I think they might have, yeah, I don't know what the status of it is, but they are thinking about this.
+
+ASICs and FPGAs are kind of not very useful because you need, what you need is, you need a fairly significant amount of memory because the database needs to fit in memory. And GPUs have a lot of effort invested in really, really good memory access, right? So, actually, GPUs are kind of optimal. We tried it.
+
 At the time, GPUs were really expensive.
 So, we actually, it didn't become cost effective.
 It was it was cool.
@@ -1721,23 +1714,23 @@ I have to have to like revisit it.
 But yeah.
 Yeah.
 
-Speaker 0: 01:47:05
+Max: 01:47:05
 
 I show you a question because you just said the database has to be kept in memory.
 Like, is that the case in Spiral?
 
-Speaker 1: 01:47:11
+Speaker(Samir): 01:47:11
 
 Yes.
 
-Speaker 0: 01:47:12
+Max: 01:47:12
 
 Oh, okay.
 But then, I mean, if we have a large data data set, for example, the full blockchain, you know, many hundreds of gigabytes.
 Right.
 All of that needs to be in memory?
 
-Speaker 1: 01:47:23
+Speaker(Samir): 01:47:23
 
 Yeah, yeah, it does.
 I will say the memory cost usually kind of pales in terms of in comparison to the compute cost.
@@ -1745,7 +1738,7 @@ So I mean, making everything fit in memory is, I mean, hundreds of gigs of memor
 And once you have everything fitting in memory, you can throw as many compute cores as you want at it.
 So it's a limit, but it's not crazy.
 
-Speaker 3: 01:47:55
+Jumar: 01:47:55
 
 Out of topic question for Fabricio.
 I've been quite interested in FPGA development.
@@ -1754,59 +1747,54 @@ Have you looked into the open source hardware's beta log synthesis stuff like Ic
 Ah, sorry, project starts with that.
 I forgot.
 
-Speaker 7: 01:48:23
+Fabrizio: 01:48:23
 
 But actually, these are crypto project guarding FPGA, because actually I'm dealing with FPGA for actually for genomic recognition.
 But actually regarding crypto, I actually I didn't look yet, let's say.
-But actually if you, let's say regarding, for example, the primitive function
+But actually if you, let's say regarding, for example, the primitive function to, for example, do hashing stuff or cryptographic primitives, I think you can improve probably one order of magnitude if you implement some cryptographic computation and hashing on FPGAs. 
 
-Speaker 3: 01:48:58
+This is something that I think is worth looking at, definitely.
 
-to, for example,
-
-Speaker 7: 01:49:01
-
-do hashing stuff or cryptographic primitives, I think you can improve probably one order of magnitude if you implement some cryptographic computation and hashing on FPGAs. This is something that I think is worth looking at, definitely.
-
-Speaker 3: 01:49:28
+Jumar: 01:49:28
 
 Cool.
 Last question for you.
 Has it been feasible, given that is it been in FPGAs, you are bound with a manufacturer's tooling?
-And lately, there has been some developments regarding open source tooling for like uses and stuff.
+And lately, there has been some developments regarding open-source tooling for like uses and stuff.
 Have you used those tools before or is it still vendor locked?
 
-Speaker 7: 01:50:03
+Fabrizio: 01:50:03
 
 Well at the moment we we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at the say open source opportune source development regarding that I will have a look
 
-Speaker 3: 01:50:33
+Jumar: 01:50:33
 
 so much thank you so much
 
-Speaker 0: 01:50:37
+Max: 01:50:37
 
 well Samir, thank you very much for coming here.
 That was really kind of you.
 
-Speaker 1: 01:50:43
+Speaker(Samir): 01:50:43
 
 Yeah, thanks so much for...
-I learned so much.
-I'm learning so much about what Bitcoin people want, the need and stuff.
+I learned so much. I'm learning so much about what Bitcoin people want, the need and stuff.
 You guys are super helpful.
 So thank you so much.
-I want to, the only thing I want to say is, you know, let's keep in touch, especially as we get closer to building something that looks less like just a balance checker and more like a private block explorer, I would love to see if there's kind of a synergy between what we offer.
-I would love to see if people who use Wasabi Wallet also wanna use a private block Explorer.
-So yeah, if that sounds good, I would love to keep in touch.
 
-Speaker 0: 01:51:21
+I want to, the only thing I want to say is, you know, let's keep in touch, especially as we get closer to building something that looks less like just a balance checker and more like a private block explorer, I would love to see if there's kind of a synergy between what we offer.
+
+I would love to see if people who use Wasabi Wallet also wanna use a private block Explorer. So yeah, if that sounds good, I would love to keep in touch.
+
+Max: 01:51:21
 
 Yeah, definitely.
 I mean, especially if you run the server and we don't have to, and we can use it for small niche things, like finding out the amount of the input of a payment transaction so that we can pre-bump it.
-These types of small things where it doesn't really make sense for us to make huge infrastructure changes for those very, very niche case things.
 
-Speaker 1: 01:51:46
+These types of small things where it doesn't really make sense for us to make huge infrastructure changes for those very, very niche  case things.
+
+Speaker(Samir): 01:51:46
 
 No, we'd love to.
 We'd love to mostly, we'd love to see people use the server.
@@ -1814,43 +1802,42 @@ We'd love to see like what your pain points are.
 We're absolutely happy to host and run those kinds of things.
 So yeah, absolutely.
 
-Speaker 0: 01:51:59
+Max: 01:51:59
 
 Pretty sweet.
 And I'm really curious what we can come up with to use this other than just blockchain sync and wallet balance sync.
 
-Speaker 1: 01:52:08
+Speaker(Samir): 01:52:08
 
 Yeah.
 
-Speaker 0: 01:52:10
+Max: 01:52:10
 
 Pretty cool.
 
-Speaker 6: 01:52:12
+Lucas: 01:52:12
 
 Yeah, sorry, just one comment.
-You know, it's not obvious what we can do with this technology.
-I don't know if everybody understands.
-In fact, I think the white paper is not a good starting point for, in fact, it is the, you know, So, sometimes you need to know the tools that you have available.
-So, when you say, okay, we can fix the, oh, there is this technology that we can use, and this is exactly for this.
-So if you have documentation or presentations or examples or snippets or whatever or use cases, right?
-That's also cool.
-I'm pretty interested in this stuff.
+You know, it's not obvious what we can do with this technology. I don't know if everybody understands.
 
-Speaker 1: 01:53:05
+In fact, I think the white paper is not a good starting point for, in fact, it is the, you know, So, sometimes you need to know the tools that you have available.
+
+So, when you say, okay, we can fix the, oh, there is this technology that we can use, and this is exactly for this. So if you have documentation or presentations or examples or snippets or whatever or use cases, right?
+That's also cool. I'm pretty interested in this stuff.
+
+Speaker(Samir): 01:53:05
 
 I will definitely send you guys that stuff.
 You're totally right.
 You have to kind of know what the tool is before you can really see where it makes sense to use.
 Absolutely.
 
-Speaker 6: 01:53:17
+Lucas: 01:53:17
 
 Okay.
 Thank you guys.
 
-Speaker 0: 01:53:20
+Max: 01:53:20
 
 Yeah, then I guess that's it for the recorded part of this week's Wasabi Research Club.
 Thanks for all the guests joining us here and all the viewers online.
@@ -1859,17 +1846,17 @@ Again, thanks Samir for coming here.
 Real pleasure, real honor.
 Let's stay in touch.
 
-Speaker 1: 01:53:40
+Speaker(Samir): 01:53:40
 
 Yeah, absolutely.
 Thank you so much.
 
-Speaker 0: 01:53:43
+Max: 01:53:43
 
 See you on the next show.
 Bye-bye.
 
-Speaker 1: 01:53:44
+Speaker(Samir): 01:53:44
 
 Yeah, See you.
 Bye.
