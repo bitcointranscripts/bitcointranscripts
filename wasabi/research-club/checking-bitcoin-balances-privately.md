@@ -3,7 +3,7 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","Elsa(speaker3)","MAX(0)","Adam(4)","Peter(5)","Lucas(6)"]
+speakers: ["Samir Menon","MAX(0)","Adam(4)","Peter(5)","Lucas(6)"]
 categories: ["club"]
 date: 2022-09-27
 ---
@@ -1243,83 +1243,75 @@ Speaker 6: 01:18:37
 
 Honestly, I don't know.
 I would like to know more about the technology, but when I entered into the meeting, they were already discussing things that I mean, how to use the technology, but know what the technology really is.
+
 So, I tried to do my best to understand.
 Basically, what I think is the technology is clearly good.
 Right?
-So, I'm sure there are many scenarios that we can, many problems that we used to have can be solved by this.
-But I don't know exactly how can we use it for our, let's say, for reconstructing our local UTXO set.
+
+So, I'm sure there are many scenarios that we can, many problems that we used to have can be solved by this. But I don't know exactly how can we use it for our, let's say, for reconstructing our local UTXO set.
 I mean, the UTXO set that is relevant for the wallet, right?
 And all the transactions and all the information.
 I cannot see it.
-Basically because the problem that we have is mainly for new users, right?
-Or users that have to, for some reason, to resynchronize the wallet.
-But I use the wallet more or less frequently, right?
-And it takes nothing for me to open, to synchronize.
-It's just, to me, it's exactly the same as blue wallet, right?
-It's very good.
+
+Basically because the problem that we have is mainly for new users, right? Or users that have to, for some reason, to resynchronize the wallet.
+
+But I use the wallet more or less frequently, right? And it takes nothing for me to open, to synchronize. It's just, to me, it's exactly the same as blue wallet, right? It's very good.
+
 So I think it, no, I think it doesn't worth the effort to even if the technology, no, no, the technology, even if the requirement of the technology in terms of bandwidth, storage, CPU, even if we can afford that, I don't know if we can afford to change the architecture of the wallet to use this technology, right?
-And even if we can afford all of that, I don't know if the result will be so good because we have to do a lot of requests, lots.
-And the process of discovering the wallet is the same, right?
+
+And even if we can afford all of that, I don't know if the result will be so good because we have to do a lot of requests, lots. And the process of discovering the wallet is the same, right?
+
 I don't know what's the keys.
-So I have to query one key, one key, one key, one key, one key, and we will discover that, oh, well, now I have to try with the next 21 keys or the next, I don't know, some of our users have minimum gap limits of, I don't know, 600.
-I don't know.
-So I have to query the next 600 keys.
-No, I don't think it is possible.
+So I have to query one key, one key, one key, one key, one key, and we will discover that, oh, well, now I have to try with the next 21 keys or the next, I don't know, some of our users have minimum gap limits of, I don't know, 600. I don't know.
+
+So I have to query the next 600 keys. No, I don't think it is possible.
 However, I'm sure this is something, because the PIR technologies have been improving a lot and now it seems this is like something great, a great achievement, right?
-Before, first time I read something about this, three servers were required for this because one server keep one table, the other server keep a different kind of information.
-It was a feeling mess, but now it's getting, it seems it's getting better and better.
-And so we have to have an eye on this technology, but no for synchronizing the wallet.
+
+Before, the first time I read something about this, three servers were required for this because one server kept one table, and the other server kept a different kind of information. It was a feeling of mess, but now it's getting, it seems it's getting better and better. And so we have to have an eye on this technology, but not for synchronizing the wallet.
 I'm pretty sure about it.
 
-Speaker 1: 01:22:36
-
-I think that
-
-Speaker 2: 01:22:37
-
-makes a
-
-Speaker 0: 01:22:37
-
-lot of sense.
-Yeah, absolutely.
 
 Speaker 1: 01:22:38
 
 Yeah, yeah, yeah.
 I, I, I, that your, your point about the multiple servers is, is funny.
-Yeah.
-I mean, it used to be that you had to trust that the servers don't collude, which is kind of a silly assumption.
-Yeah, we've come a long way.
-Yeah, yeah.
+Yeah. I mean, it used to be that you had to trust that the servers don't collude, which is kind of a silly assumption.
+
+Yeah, we've come a long way. Yeah, yeah.
 I think I'm really interested in this in this private block explorer thing.
 And I think it might not be part of Wasabi wallet, but I think it's obviously part of like an ecosystem of private Bitcoin.
-I mean, if you use Wasabi wallet, but then use a public block explorer, you're kind of fucking it up, you know, you're kind of not, you're kind of defeating some of the purpose of the wallet.
+
+I mean, if you use Wasabi wallet, but then use a public block explorer, you're kind of fucking it up, you know, you're kind of not, you're kind of defeating some of the purposes of the wallet.
+
 So I hope at least those two things sound kind of complimentary.
 
 Speaker 6: 01:23:28
 
 Sorry, yes, I completely agree.
 In fact, many times we say, okay, how can we, for example, provide more information to the users, right?
+
 Because basically a server has a global view of the blockchain while a client has only a local view of the blockchain, right?
+
 So basically, the client many times can take advantage of information that only the server knows, but you cannot ask the server, hey, can you, could you please tell me this?
+
 Because, well, in that case, you are revealing information to the server.
 So, sometimes you want to say, okay, how can I ask for this to a central server without revealing my identity or my intentions, right?
-So that kind of things is something that, that's why I say that we have to keep an eye on this technology.
+
+So that kind of thing is something that, that's why I say that we have to keep an eye on this technology.
 
 Speaker 1: 01:24:33
 
 Yeah, so that's a great point.
-So I know I'm kind of more familiar, I have been in cryptography, but not crypto.
-So I'm kind of like, I was really into Bitcoin in like 2015, I TA'd our class and then I like totally checked out.
+So I know I'm kind of more familiar, I have been in cryptography, but not crypto. So I'm kind of like, I was really into Bitcoin in like 2015, in our class, and then I like totally checked out.
+
 Yeah, so I'm a little unfamiliar, but what kind of metadata, what kind of like data do block explorers provide about an address that is kind of that global state.
+
 So I can think of like in the kind of Ethereum version, I can think of like, you know, I don't know, they like, I don't know, some NFT thing, they like, pull up some image or, you know, there's like that kind of data.
 But what are you thinking of that is global that these explorers would show?
-Well,
 
 Speaker 6: 01:25:28
 
-of course we don't know, right?
+Well, of course, we don't know, right?
 
 Speaker 4: 01:25:31
 
@@ -1329,7 +1321,7 @@ Speaker 1: 01:25:35
 
 Ah, I see.
 So what IP submitted this address?
-Yep.
+
 Are there, there's also, is there like a kind of naming, is there like a DNS equivalent, like people who use like op return to kind of store data in some kind of structured way to register a name or whatever.
 That kind of data is also, while it's in the transaction, the metadata about it is not, right?
 
@@ -1346,53 +1338,54 @@ I guess you just, your best bet is to use Tor and to use a public block explorer
 
 Speaker 0: 01:26:45
 
-Different question, but since Lukas brought up that private information retrieval isn't a new thing, like why is Spiral new or how does it improve upon what came before?
+Different question, but since Lukas brought up that private information retrieval isn't a new thing, like why is Spiral new, or how does it improve upon what came before?
 
 Speaker 1: 01:26:56
 
 Sure, that's a great question.
-So yeah, I mean, there's so private information retrieval as a problem was posed.
-Yeah, like in the 80s.
-And there's been like a bunch of kind of talk about it.
-But it never was practical.
-My best my my biggest thing I always make fun of is like, I think IBM had like a big demo where you could look up like the 50 US states privately.
-And it was like a big demo in 20, you know, I think 2019 or something, that you could look up 50 states.
-It wasn't like a very large database.
-It was like the capitals of the 50 US states.
+So yeah, I mean, there's so private information retrieval as a problem was posed. Yeah, like in the 80s.
+
+And there's been like a bunch of kind of talk about it. But it never was practical.
+
+My best my my biggest thing I always make fun of is like, I think IBM had like a big demo where you could look up like the 50 US states privately. And it was like a big demo in 20, you know, I think 2019 or something, that you could look up 50 states. It wasn't like a very large database. It was like the capitals of the 50 US states.
+
 The reason we've come a long way and what Spiral does, what advancement kind of Spiral made was basically just, it wasn't something super special.
+
 It was a lot of, it was the accumulation of a lot of research tricks that like we kind of knew about but hadn't implemented or just hadn't tried in the particular way that we did.
+
 I think we are definitely like the accumulation of years of research rather than like some kind of fundamental like we noticed something that no one else did.
-We just brought to bear like a lot of techniques all at once, kind of very analogously to how ZK stuff has grown in cryptography.
-Like years of research from smart people eventually makes some problems feasible.
+
+We just brought to bear like a lot of techniques all at once, kind of very analogously to how ZK stuff has grown in cryptography. Like years of research from smart people eventually makes some problems feasible.
+
 So yeah, in particular, what we really did, what we really focused on was making queries smaller.
+
 So a big problem with most previous schemes that were efficient on the server side was that then the queries were like hundreds of megabytes.
+
 So we found ways to exploit the fact that, you know, with fully homomorphic encryption, you can compute any function on encrypted data.
+
 So we kind of, we encrypt a function that expands the query.
 So we can send a very small query and then the server can do work to expand it into a vector.
 
-Speaker 4: 01:29:00
+Speaker 0: 01:29:00
 
 That's pretty cool.
 Yeah, okay,
-
-Speaker 0: 01:29:03
-
 And then somewhat related, but like, how does peer review work for such a paper?
-Because it seems to me it's not a new cryptography, just as you say, applying old concepts, but how was the peer review
+Because it seems to me it's not a new cryptography, just as you say, applying old concepts, but how was the peer review process?
 
 Speaker 1: 01:29:14
 
-process?
 So it's a good question.
-I remember my advisor was like, yeah, are we are we is this going to be kind of like publishable?
-And we we actually after we had that conversation, we did come up with some new cryptography.
+I remember my advisor was like, yeah, are we are we is this going to be kind of like publishable? And we we actually after we had that conversation, we did come up with some new cryptography.
+
 So we did end up kind of creating some some new techniques, kind of constructing a kind of variation or change to old schemes.
+
 So we did end up publishing it and I presented it at Oakland, which is like the kind of top security conference for academics.
-So I think we were in less of a, we were not in like a theoretical cryptography venue.
-We were in like a privacy enhancing technologies kind of venue, but it was still, yeah.
-I mean, it was a big deal for the reason you pointed out, which is it hasn't been practical.
-And I think our work was kind of one of several works that took it from being impractical to practical.
-There are now a couple, but at the time we were kind of one of the early ones that, yeah, I mean, when we told people, you know, you go to this site, and we could read Wikipedia, that was like a big deal, because I think everything else had been kind of speculative.
+
+So I think we were in less of a, we were not in like a theoretical cryptography venue. We were in like a privacy enhancing technologies kind of venue, but it was still, yeah. I mean, it was a big deal for the reason you pointed out, which is it hasn't been practical.
+
+And I think our work was kind of one of several works that took it from being impractical to practical. There are now a couple, but at the time we were kind of one of the early ones that, yeah, I mean, when we told people, you know, you go to this site, and we could read Wikipedia, that was like a big deal, because I think everything else had been kind of speculative.
+
 It was like, if you were looking up a sensitive medical condition in theory and if you wanted to you know there's a lot of like hypotheticals so yeah
 
 Speaker 0: 01:30:39
@@ -1408,22 +1401,15 @@ yeah if you have ideas for other ones let me know I I want to do Ethereum and I 
 Speaker 1: 01:30:54
 
 So I know, I don't know if you guys have seen, have I been pwned, but they have like a site where you put in a password to see if it's been leaked but you know of course you're just giving them your password.
-They do some hashing and stuff they say it's okay but you know you could do much better with PAR.
+They do some hashing and stuff they say it's okay but you know you could do much better with PIR.
+
 So I think DNS is also something we're interested in, although there are complications there, but yeah, DNS is also exciting.
 
 Speaker 6: 01:31:24
 
 Sorry, this is not about this topic, right?
 But just curiosity, how do you see the, how, I don't know how to ask, homomorphic encryption?
-How far do you think we are from fully, I mean, something that I, for example, can operate in a remote on data, on encrypted data in a remote, I don't know, for example, I save something in Google, in Google Drive,
-
-Speaker 1: 01:32:06
-
-for
-
-Speaker 6: 01:32:06
-
-example, right?
+How far do you think we are from fully, I mean, something that I, for example, can operate in a remote on data, on encrypted data in a remote, I don't know, for example, I save something in Google, in Google Drive, for example, right?
 And I can, for example, I don't know, add information to that file, to that encrypted file.
 Do you think we will see something like that?
 
@@ -1432,22 +1418,18 @@ Speaker 1: 01:32:21
 It's a great question, honestly.
 Yeah, it's a great question.
 I think there's a lot of companies, there's a surprising number of companies trying to do this who will tell you like, yes.
-I take a fairly pessimistic stance on this.
-I think something companies are really excited about is encrypted machine learning.
+I take a fairly pessimistic stance on this. I think something companies are really excited about is encrypted machine learning.
 What they really want to do is do machine learning on encrypted data, Which of course is kind of just like a way of using cryptography to violate your privacy instead of using it to, what they want to do is do like machine learning on your encrypted, on your end to end encrypted photos or your end to end encrypted, you know, messages.
 So it's kind of like, almost like the evil version.
-I think the good news is those are really impractical.
-I think it's just like, people in the field know this, but encrypted machine learning is just like, you could do it if you want, but it's really expensive.
-And it'll never be, it'll always be like 100 times more expensive than doing it the regular way.
-So as the regular way gets more expensive, and people now want to do like DALI, and they want to do GPT-3, now paying a hundred times that cost is too hard.
-We're just barely able to do private machine learning from like 2010.
-So I'm not super optimistic on that front.
+
+I think the good news is those are really impractical. I think it's just like, people in the field know this, but encrypted machine learning is just like, you could do it if you want, but it's really expensive. And it'll never be, it'll always be like 100 times more expensive than doing it the regular way.
+
+So as the regular way gets more expensive, and people now want to do like DALI, and they want to do GPT-3, now paying a hundred times that cost is too hard. We're just barely able to do private machine learning from like 2010. So I'm not super optimistic on that front.
+
 I think something that is really quite realistic that I'm really personally excited about, part of why I'm founding this company, is I would like to find a way to kind of raise money and fund the building of metadata private messaging services.
-So, the thing I want to build is basically like WhatsApp or Signal, but they don't learn who you talk to.
-So, that is something you can use homomorphic encryption for.
-And then that is amazing, because obviously, who you talk to is really sensitive.
-And if we could hide that data, even more than what you say, but also who you who you talk to, that would be really cool.
-So so that's, that's, that's something I see as as really realistic.
+
+So, the thing I want to build is basically like WhatsApp or Signal, but they don't learn who you talk to. So, that is something you can use homomorphic encryption for. And then that is amazing, because obviously, who you talk to is really sensitive. And if we could hide that data, even more than what you say, but also who you who you talk to, that would be really cool. So so that's, that's, that's something I see as as really realistic.
+
 And we have to do this foundational work of making PIR practical first.
 But once we do that, I think building a messenger, I hope I can in five years tell you, yeah, you can go and message people and the service will never learn who you talk to.
 
@@ -1455,7 +1437,7 @@ Speaker 0: 01:34:52
 
 It's pretty sweet.
 Just a fun fact.
-But the Signal groups use the key to verified anonymous credential cryptography scheme that we use for our Wabi Sabi coin joins.
+But the Signal groups use the key to verify anonymous credential cryptography scheme that we use for our Wabi Sabi coin joins.
 So it would be nice if we throw your homomorphic encryption on top and...
 
 Speaker 1: 01:35:10
@@ -1469,19 +1451,11 @@ Key verified anonymous credentials.
 
 Speaker 1: 01:35:19
 
-Okay.
+Okay. This is for context or for a setup of the conversation?
 
-Speaker 0: 01:35:20
-
-This is for
-
-Speaker 1: 01:35:21
-
-context or for a setup
 
 Speaker 0: 01:35:23
 
-of the conversation?
 We use it as basically eCash token for access rights.
 
 Speaker 1: 01:35:29
@@ -1496,14 +1470,13 @@ Very rough explanation.
 Speaker 4: 01:35:43
 
 Cool.
-Are you familiar with the Chowmian blind signatures?
+Are you familiar with the Chaum blind signatures?
 
 Speaker 1: 01:35:49
 
 Chowmian blind signatures?
-Yes.
 I'm familiar with the name Chowmian, but no, I haven't heard of Chowmian blind signatures.
-Blind signatures probably did a piece set about that, but I could not off the top of my head say what exactly it is.
+Blind Signatures probably did a piece set about that, but I could not off the top of my head say what exactly it is.
 It's for voting, right?
 I think.
 
@@ -1512,7 +1485,7 @@ Speaker 4: 01:36:09
 Yeah.
 So key verified anonymous credentials are a generalization of the blind signatures.
 In Wasabi, at 1.0, we used blind signatures.
-In 2.0, we used key verified anonymous credentials.
+In 2.0, we used key-verified anonymous credentials.
 
 Speaker 1: 01:36:27
 
@@ -1525,7 +1498,7 @@ Yeah, they're connected.
 
 Speaker 0: 01:37:06
 
-As far as I remember we do use peterson commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
+As far as I remember we do use Peterson commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
 
 Speaker 1: 01:37:15
 
@@ -1541,7 +1514,7 @@ yeah so those are again yeah homomorphic right sorry go ahead.
 
 Speaker 6: 01:37:22
 
-Yes because we have to the server needs to verify that the operation that we realized with the amount are correct without knowing the amount itself.
+Yes because we have to the server needs to verify that the operation that we realized with the amount is correct without knowing the amount itself.
 So, yes.
 But it's something I mean, I don't know what I don't know exactly how to define homomorphic encryption, right?
 
@@ -1550,28 +1523,21 @@ But it's something I mean, I don't know what I don't know exactly how to define 
 Speaker 6: 01:37:51
 
 Because homomorphic encryption, like, in the concept, It's okay, but it sounds like something that is not still possible, right?
-So homomorphic encryption, and the scope is this for most of the time.
+So homomorphic encryption and the scope is this for most of the time.
 It's something like what we do is basically we operate in a committed value and that value is basically a point in an elliptic curve and that's it.
 
 Speaker 1: 01:38:36
 
 It's funny, I think elliptic curves are way more complicated.
 I'm always like, I think lattice-based cryptography and homomorphic stuff, which is lattice-based and, you know, was initially pioneered for post-quantum resistance and stuff.
+
 I think it's way easier to understand than elliptic curves.
 Because what is an elliptic curve, really?
-I'm always very confused.
-Not confused, but it's always very abstract for me.
-Whereas lattices are just, you know, it's matrices and it's noise.
-And I understand that a lot better.
-It's like a lot easier for me.
+I'm always very confused. Not confused, but it's always very abstract for me. Whereas lattices are just, you know, it's matrices and it's noise.
+And I understand that a lot better. It's like a lot easier for me.
+
 So it's funny, you should you guys are, guys are real crypto people.
-If you guys are just sitting around thinking about Henderson commitments and
-
-Speaker 0: 01:39:21
-
-homo.
-
-Speaker 1: 01:39:24
+If you guys are just sitting around thinking about Henderson commitments and homomorphic encryption.
 
 I promise homomorphic encryption is is it's also is in some ways much easier to understand.
 So yeah.
@@ -1589,9 +1555,11 @@ It looks like a duck and talks like a duck.
 I don't know.
 You guys are as much cryptographers as anyone, I think.
 
-Speaker 0: 01:39:48
+Speaker 4: 01:39:48 
 
 Self-taught cryptographers.
+
+Speaker 0: 01:39:53
 The most dangerous kind.
 
 Speaker 6: 01:39:55
@@ -1612,11 +1580,10 @@ But he's not here.
 Speaker 0: 01:40:18
 
 Plus, we didn't roll over on crypto, but we're script kiddies and just copied it from an existing paper.
-So should be
+So should be all right.
 
 Speaker 1: 01:40:25
 
-all right.
 That's what a cryptographer would do, right?
 That's that's exactly they would say, we're not going to roll around, we're going to get a library, right?
 So you did the right thing.
@@ -1625,36 +1592,34 @@ Speaker 4: 01:40:34
 
 We kind of did it all, right?
 Like we wrote a lot of cryptography code.
+
+Speaker 0: 01:40:44
 Yep, did not use a library.
-But Lucas, we didn't roll.
-Lucas, would you say we rolled our own crypto or not?
+
+Speaker 4: 01:40:45
+But Lucas,  Lucas, would you say we rolled our own crypto or not?
 Good question.
 
 Speaker 6: 01:40:58
 
-No, I mean, the crypto that we are using is just a very specific case of one more general case that is the one that describes the signal white paper for anonymous groups.
+No, I mean, the crypto that we are using is just a very specific case of one more general case which is the one that describes the signal white paper for anonymous groups.
+
 So they have a general case and we use only one specific case of that.
-So we are not doing that.
-Now the problem is in the implementation.
-I mean, the code, someone has to write the code, right?
-And that is where developers always make mistakes, huge mistakes.
-But so, yes, we implemented that because there are no libraries for that.
-There is no, it's not, I mean, it's so basically, let's say we implemented our own crypto library, right?
+So we are not doing that. Now the problem is in the implementation.
+I mean, the code, someone has to write the code, right? And that is where developers always make mistakes, huge mistakes.
+
+But so, yes, we implemented that because there are no libraries for that. There is no, it's not, I mean, it's so basically, let's say we implemented our own crypto library, right?
+
 However, the good part is that in my case at least I made so many mistakes before that I think I learned by doing and by making mistakes and and also the code is extremely reviewed.
 So I think we did it really, really well this time.
 
 Speaker 0: 01:42:30
 
 Samir, do you still have time?
-Are we just boring you
-
-Speaker 3: 01:42:33
-
-at this
+Are we just bothering you?
 
 Speaker 1: 01:42:33
 
-point?
 I have about 10 or 15 more minutes if you guys want to keep chatting.
 
 Speaker 0: 01:42:39
