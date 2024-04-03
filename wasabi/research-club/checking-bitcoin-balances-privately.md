@@ -3,7 +3,7 @@ title: "Checking Bitcoin balances privately"
 transcript_by: a-god-of-death via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8L725ufc-58
 tags: ["research","privacy-enhancements","cryptography"]
-speakers: ["Samir Menon","MAX(0)","Adam(4)","Peter(5)","Lucas(6)","Juma(3)"]
+speakers: ["Samir Menon","MAX(0)","Adam(4)","Peter(5)","Lucas(6)","Juma(3)","fabrizio(7)"]
 categories: ["club"]
 date: 2022-09-27
 ---
@@ -1645,8 +1645,8 @@ This is one question that I've been meaning to ask, is that given that the homom
 Speaker 1: 01:43:22
 
 Yep, yep, yeah.
-That's what the, sometimes you see this abbreviated as fully homomorphic encryption, that's what the fully means.
-So yeah, you can do arbitrary computation, encrypted.
+That's what the, sometimes you see this abbreviated as fully homomorphic encryption, that's what the fully means. So yeah, you can do arbitrary computation, encrypted.
+
 Anything you can compute on regular data, it's possible to compute on encrypted data,
 
 Speaker 3: 01:43:39
@@ -1659,10 +1659,12 @@ How does that translate into homomorphic operations?
 
 Speaker 1: 01:44:03
 
-Yeah, so there are some homomorphic schemes that actually operate directly on the bit level.
-So they actually implement a NAND gate in the scheme, basically.
+Yeah, so there are some homomorphic schemes that actually operate directly on the bit level. So they actually implement a NAND gate in the scheme, basically.
+
 In fact, the scheme basically just is a way to compute a homomorphic NAND gate and then everything else just goes from there.
+
 Something to note, I guess, about the fully part of fully homomorphic encryption, something we kind of mentioned, but the homomorphic encryption that Spiral uses is bounded depth.
+
 What that means is there's a certain depth of the computation of the circuit that you can compute, and then after that it doesn't work.
 So that kind of bounded depth-ness is not fully homomorphic, right?
 You can't do anything Turing complete in bounded depth.
@@ -1685,12 +1687,11 @@ Yeah, it's possible.
 
 Speaker 3: 01:45:30
 
-If I may ask Fabricio, is that implementable in lookup tables and FPGAs and stuff?
-Yeah, it's
+If I may ask Fabrizio, is that implementable in lookup tables and FPGAs and stuff?
 
 Speaker 1: 01:45:40
 
-not that amenable to hardware acceleration.
+Yeah, it's not that amenable to hardware acceleration.
 
 Speaker 7: 01:45:44
 
