@@ -191,7 +191,7 @@ I would be curious to hear your thoughts on that.
 
 Fabian Jahr: 00:18:52
 
-So, for the second question, we currently from bring have an enterprise, testing, license basically that I'm currently using.
+So, for the second question, we currently from Brink have an enterprise, testing, license basically that I'm currently using.
 The idea there was, so we asked GitLab to give us that and they give it out for free in some cases to open source projects.
 So that's probably why I'm not really running into these limitations if they are relevant to us.
 But of course, it's not for everyone.
