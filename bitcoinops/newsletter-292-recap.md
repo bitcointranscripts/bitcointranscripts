@@ -13,7 +13,7 @@ Good morning.
 This is Optech Newsletter #292 Recap.
 And as you can hear, Mike is not here today and I'm filling in as the main host.
 Today we have four news items, two releases and release candidates, and four PRs to talk about in our notable code and documentation changes.
-I'm Merch and I work at `Chaincode Labs` and bring you weekly this OpTech newsletter recap.
+I'm Merch and I work at `Chaincode Labs` and bring you weekly this Optech newsletter recap.
 Today I'm joined by Dave.
 
 Dave Harding: 00:04:41
