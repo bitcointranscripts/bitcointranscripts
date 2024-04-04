@@ -590,12 +590,12 @@ And so the idea that I was describing, which is pretty straightforward, since th
 A standard idea in this case is to just use one random number and then derive all the other numbers in the same session, pseudo-randomly, using a cryptographically secure pseudo-random number generator.
 And the reason I thought it was good to have this audited properly is that, well, when you're implementing cryptographic protocols, there are many ways that things can go wrong.
 And so I thought it's very useful to have this first audited and judged by other people who are more experts.
-I already had this discussed with Janik Surin who's one of the authors of the Music 2 paper but it was on previous drafts that were not written in the same level of detail and I thought anyway if it took me some time to figure out it could be helpful also for other people to express, like to write down what I thought it could be a good solution.
+I already had this discussed with Yannick Seurin, who's one of the authors of the MuSig 2 paper but it was on previous drafts that were not written in the same level of detail and I thought anyway if it took me some time to figure out it could be helpful also for other people to express, like to write down what I thought it could be a good solution.
 And yeah, the solution is exactly as you said, that you basically use one random number for the PSBT level session.
-And then for each of the individual music to sign-in sessions, you can derive the initial randomness in a pseudo-random way so that you can continue the protocol by keeping only a small amount of state which is just potentially 32 bytes for the whole transaction rather than for each input.
+And then for each of the individual MuSig 2 sign-in sessions, you can derive the initial randomness in a pseudo-random way so that you can continue the protocol by keeping only a small amount of state which is just potentially 32 bytes for the whole transaction rather than for each input.
 And yeah, the protocol received some comments also from...
-I mean the approach received some comments also from Jonas, Nick and Tim Rufing, the other authors of the Music2 Paper.
-So I'm happy that I didn't break music.
+I mean the approach received some comments also from Jonas, Nick and Tim Rufing, the other authors of the MuSig 2 Paper.
+So I'm happy that I didn't break MuSig.
 And So I look forward to try to implement it.
 
 Mark Erhardt: 00:57:49
