@@ -557,7 +557,7 @@ Josie Baker: 00:51:37
 
 Thanks, everybody, for the great questions.
 
-## PSBTs for multiple concurrent MuSig2 signing sessions
+## PSBTs for multiple concurrent MuSig 2 signing sessions
 
 Mark Erhardt: 00:51:40
 
@@ -913,7 +913,7 @@ So, if you were waiting to read it, now is your chance.
 Mark Erhardt: 01:27:39
 
 All right, so we're through our newsletter this week.
-Thank you for joining us for the OpTech recap.
+Thank you for joining us for the Optech recap.
 Thank you to our guests Salvatore, Fabian and Josie and also for Mike to jump in and ask us some additional questions.
 And a lot of thanks to Dave, who's writing most of these newsletters all the time and has lots of things to add here in our recap.
 Thank you, and hear you next time.
