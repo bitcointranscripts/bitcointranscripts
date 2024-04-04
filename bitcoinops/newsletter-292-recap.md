@@ -147,7 +147,7 @@ Fabian Jahr: 00:14:17
 Yeah, so that's something where this actually is kind of cool from GitLab, but also we're running into limitations and this is really like part of why it was hard for me to figure this out.
 And so you see some comments and PRs and issues or so being attributed like to an actual account.
 And then you see others that are actually attributed to the root administrator.
-And then you will see like a comment inside of the text of the comment, yeah?
+And then you will see like a comment inside of the text of the comment.
 And that in the top says, for example, user F-Y-R, yeah?
 So, and the distinction between the two is because some people have their email as public set on their GitHub account.
 And then a lot of other people have it set as private.
@@ -155,8 +155,8 @@ And so what GitLab does for the people that have set it as public is it creates 
 And then if somebody like, for example, if Fanquake has their email public, then you can go in and you basically log in, you basically do a password reset and then you have the account and you have everything basically just like it was on GitHub.
 But most people, myself included, have the email private.
 It's kind of, I mean, it's for the people that contribute actively, it's in the commits anyway, then you can probably think about setting it just public in your GitHub profile as well.
-And then, but then this feature goes away And then you have this like inline comment in there that where it's still clear historically that you made that comment, but for example, you will not be able to go back and just edit that comment later on.
-It's not a huge deal, but yeah, for maximum convenience, If you care about this, set your email to public and then you will be able to just switch over and it's really going to feel not much different to before.
+But then this feature goes away and then you have this like inline comment in there that where it's still clear historically that you made that comment, but for example, you will not be able to go back and just edit that comment later on.
+It's not a huge deal, but yeah, for maximum convenience, if you care about this, set your email to public and then you will be able to just switch over and it's really going to feel not much different to before.
 
 Mark Erhardt: 00:16:32
 
@@ -182,7 +182,7 @@ Super, so play around and let Fabian know if you find anything curious.
 We got a question from the audience.
 Mike, go ahead.
 
-Speaker 5: 00:18:08
+Michael Tidwell: 00:18:08
 
 Hey, apologies my voice is messed up right now, but Fabian, are there any concerns with hosting upgrade security of GitLab and then the second one is, are there, I mean the plain Jane, you know, free GitLab version is pretty feature incomplete with roles and different RBAC controls and stuff.
 Is any of that concern?
