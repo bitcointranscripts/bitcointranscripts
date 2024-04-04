@@ -760,8 +760,8 @@ Dave Harding: 01:14:34
 
 I think you did a great job.
 Yeah, this is a really interesting class of problems that we've hit a couple times in Bitcoin Core in the past.
-Anybody really interested in this should click on the link in the newsletter to newsletter number 37 which goes into a lot more detail about two of these cases and also we do cover briefly in MASH from Bitcoin the 2012 bug CVE 2012 2459 and It's just you know It's interesting.
-It's it's basically the way the attack works is or the the problem It's not necessarily an attack, But the problem works is because Bitcoin uses a Merkle tree and there's some problems in its Merkle tree designs, it's possible to construct multiple different Merkle trees that hash to the same Merkle root, which is in the block header, and the hash to the block header is how we identify blocks in Bitcoin.
+Anybody really interested in this should click on the link in the newsletter to newsletter number 37 which goes into a lot more detail about two of these cases and also we do cover briefly in Mastering from Bitcoin, the 2012 bug CVE-2012-2459 and It's just you know It's interesting.
+It's it's basically the way the attack works is or the the problem It's not necessarily an attack. But the problem works is because Bitcoin uses a merkle tree and there's some problems in its merkle tree designs, it's possible to construct multiple different merkle trees that hash to the same merkle root, which is in the block header, and the hash to the block header is how we identify blocks in Bitcoin.
 So it's possible to create what look like two different blocks, that look like they have the same ID.
 So we just end up looking at one of them and saying that's invalid.
 And now we don't want to download that same block from our other potentially 124 peers.
@@ -773,7 +773,7 @@ Now we only reject blocks while the node is still running.
 So if you restart your node, they go back and double check and maybe download those valid blocks again.
 But it's a potential attack.
 It could potentially be used to steal money, especially if you're using something like Lightning where you need to be getting the most recent blocks.
-And so This PR just very early in the process, we look at a block and we see if it has one of these things that would make the block invalid but also could later cause us to cache the header and we just stop processes in that block at that point.
+And so this PR just very early in the process, we look at a block and we see if it has one of these things that would make the block invalid but also could later cause us to cache the header and we just stop processes in that block at that point.
 We don't catch anything, cache anything.
 We just throw away that block and move on.
 And I just think that's a really good solution to this problem that we've hit twice.
@@ -781,7 +781,7 @@ Like we've hit this problem twice.
 It was when you hit it once you fix that immediate bug.
 When you hit it twice you got to try to figure out the root cause and stop it.
 So I'm really thankful for this PR coming in and just making us safer.
-It doesn't, as far as I know, it doesn't fix any active vulnerability in Bitcoin Core right now.
+As far as I know, it doesn't fix any active vulnerability in Bitcoin Core right now.
 But it just means we're less likely to have vulnerabilities in the future.
 
 Mark Erhardt: 01:17:43
