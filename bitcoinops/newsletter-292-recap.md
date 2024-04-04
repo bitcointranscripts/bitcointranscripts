@@ -19,7 +19,7 @@ Today I'm joined by Dave.
 Dave Harding: 00:04:41
 
 Hi, I'm Dave Harding.
-I'm co-author of the OpTec newsletter and co-author of the third edition of Mastering Bitcoin.
+I'm co-author of the Optech Newsletter and co-author of the third edition of Mastering Bitcoin.
 
 Mark Erhardt: 00:04:48
 
