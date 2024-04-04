@@ -380,17 +380,17 @@ Are you going to try to update BIP21?
 Are you writing a new BIP that supersedes BIP21?
 Does anyone else have questions or comments on this one?
 
-Josibake: 00:36:14
+Josie Baker: 00:36:14
 
 Yeah, regarding the updating or superseding, I think it's like the big question, right?
 Like what makes the most sense?
-I think that the, the idea of following like a strict reading of the bit processes, we should write a new bit that supersedes it.
+I think that the idea of following like a strict reading of the BIP processes, we should write a new BIP that supersedes it.
 I would kind of, you know, whatever makes the most sense, right?
 If it makes sense to just write a new BIP, I think that makes sense.
 I think Matt actually, so there was some discussion on the Delving post, mostly just between Matt and myself.
 Reuben Thompson chimed in as well.
-I think Matt, the blue Matt, went ahead and opened a PR to update BIP 21, kind of with his version of how he thinks it should be updated.
-So just to, I think, summarize his version, he says we instead say anything that falls into this whitelisted set of addresses, which is taproot, segwit, pagescript, hash, and legacy, those can go in the root.
+I think the blue Matt, went ahead and opened a PR to update BIP21, kind of with his version of how he thinks it should be updated.
+I think, summarize his version, he says we instead say anything that falls into this whitelisted set of addresses, which is taproot, segwit, pagescript, hash, and legacy, those can go in the root.
 And then everything else has to go in key value parameters.
 And then once the things in key value parameters have received, like once we're sure that they're near universally supported, then you can omit the root entirely.
 So you'd have Bitcoin colon key value pair, key value pair.
@@ -400,8 +400,8 @@ I don't think it solves the future extensibility problem.
 I still think it creates some ambiguity of what goes in the route and whatnot.
 So I responded on that PR with the things that I'm proposing.
 I don't know, just kind of like see where it goes.
-At some point, you know, if it kind of just deadlocks on no agreement on how to update BIP 21, I might just open a new BIP just to see, you know, like, hey, here's a new BIP that's kind of superseding BIP 21, learning from the past.
-And then it's kind of up to people, you know, you can keep implementing that 21, you can go with a new BIP.
+At some point, if it kind of just deadlocks on no agreement on how to update BIP21, I might just open a new BIP just to see, you know, like, hey, here's a new BIP that's kind of superseding BIP21, learning from the past.
+And then it's kind of up to people, you can keep implementing that 21, you can go with a new BIP.
 But I think just having more clarity for wallets would help a lot.
 Especially with interoperability and everything.
 
