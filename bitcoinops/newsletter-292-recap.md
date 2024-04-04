@@ -36,7 +36,7 @@ Salvatore.
 
 Salvatore Ingala: 00:05:00
 
-Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on Musique.
+Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on Musig.
 
 Mark Erhardt: 00:05:06
 
