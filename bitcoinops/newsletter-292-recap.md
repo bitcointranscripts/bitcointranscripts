@@ -601,9 +601,9 @@ And So I look forward to try to implement it.
 Mark Erhardt: 00:57:49
 
 Yeah.
-Thank you for going down that rabbit hole and seeking the, well, feedback of all this community already in advance.
+Thank you for going down that rabbit hole and seeking well, feedback of all this community already in advance.
 So this seems to be very specifically to hardware wallets.
-Would that mean that anyone else has to change how they use music too?
+Would that mean that anyone else has to change how they use MuSig 2?
 Or is this just at the hardware wallet level, you act differently than other people in how you contribute your announcements?
 
 Salvatore Ingala: 00:58:22
@@ -611,7 +611,7 @@ Salvatore Ingala: 00:58:22
 No, this is just at the level of a single signer.
 Even non-hardware wallets could do it, but for them maybe it's less relevant because If you have a transaction with 100 inputs and you want to store some 32 bytes for each 100 inputs, it's like 3 kilobytes of data.
 So outside of embedded devices, maybe it's much less pressing.
-It could still be useful outside because maybe you want to be able to sign 100 transactions in parallel and each of them has 100 inputs, you know.
+It could still be useful outside because maybe you want to be able to sign 100 transactions in parallel and each of them has 100 inputs.
 And so not having to think in advance about hard limits could help, but it's definitely more relevant in the context of harder wallets because state, like having to persist state in memory, it's a much bigger limitation because even if the secure element has some small amount of persistent memory, it's not a lot.
 So reducing the amount of state to a small amount per transaction, it's definitely going to make implementations in practice a lot easier.
 
