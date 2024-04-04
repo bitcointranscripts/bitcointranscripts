@@ -795,18 +795,16 @@ Sending us invalid blocks is just a no-no, and we don't want to talk to them any
 We drop them on the street.
 And therefore, even if we get an invalid block and we waste that bandwidth to download the block header and the transaction ID list, maybe if it's a compact block relay.
 We only do that once per peer.
-So this is naturally already limited in the amount of DOS or abuse that it can lever on us.
-And then you also have to remember, A block always has to have proof of work because that's the first thing we check.
+So this is naturally already limited in the amount of DoS or abuse that it can lever on us.
+And then you also have to remember, a block always has to have proof of work because that's the first thing we check.
 We look at the header and if the header doesn't pass the proof of work requirement, we'll never request the rest of the body of the block.
-So actually this mutated block thing cannot really be used for dosing much, only for, well, for example, making you drop something or stop following the best chain.
-I see that there's a question from the audience.
-Dave, did you want to say something?
+So actually this mutated block thing cannot really be used for DoSing much, only for, well, for example, making you drop something or stop following the best chain.
 
 Dave Harding: 01:19:20
 
-Oh, just really quickly.
+Just really quickly.
 All the peer can do is waste your bandwidth.
-When you process a block for this code, which runs really early on, like you said, the proof of work happens, So it has to be a mutated valid block.
+When you process a block for this code, which runs really early on, like you said, the proof of work happens, so it has to be a mutated valid block.
 So that peer can get you to download a whole block and run some hashes.
 Hashes are really quick computationally.
 A block is something we already have the memory to process.
@@ -820,16 +818,16 @@ Mark Erhardt: 01:19:58
 No, thanks for clarifying.
 So, Mike, you have a question here?
 
-Speaker 5: 01:20:03
+Michael Tidwell: 01:20:03
 
-Yeah, I think he was actually clarifying as I came up on stage, but I might have missed it What was the idea with two Merkle roots with different trees with the same hash, or did I misunderstand that?
+Yeah, I think he was actually clarifying as I came up on stage, but I might have missed it. What was the idea with two merkle roots with different trees with the same hash, or did I misunderstand that?
 
 Dave Harding: 01:20:23
 
-Yeah, so Bitcoin's Merkle tree design, When you have an odd number of nodes in a Merkle tree, you have to do something.
-And in any Merkle tree design, what Bitcoin does is it hashes the node with a copy of itself.
+Yeah, so Bitcoin's merkle tree design, when you have an odd number of nodes in a merkle tree, you have to do something.
+And in any merkle tree design, what Bitcoin does is it hashes the node with a copy of itself.
 And what this allows an attacker to do is to create a block that looks like it has two copies of the same transaction.
-Now ever since VIP30 and VIP34, we really haven't had duplicate transactions in Bitcoin.
+Now ever since BIP30 and BIP34, we really haven't had duplicate transactions in Bitcoin.
 And the idea was we'd never had them in the first place.
 But you can make a block that looks like it has a duplicate transaction that has the same TXID.
 And so you can create a version of the block that has only one transaction with a particular ID and a version of the block that has two transactions with the same TXID.
