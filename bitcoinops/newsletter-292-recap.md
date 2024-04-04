@@ -509,10 +509,11 @@ I guess, I don't want to go into too much detail here.
 I can always post on the thread, but I guess I'm just thinking about the other query parameters that it passed.
 For example, if you pass an amount parameter, might there be a case where that amount parameter would apply to legacy addresses and base 32 addresses and silent payments, but it might not apply to Lightning.
 You might be passing a bulk 12 URL where you want the person to get the amount from the offer rather than the amount parameter, but you want to include the amount parameter in the thing.
-That's not a great example because presumably anybody with- I think it's a perfect example.
+That's not a great example because presumably anybody with-
 
-Josibake: 00:48:57
+Jose Baker: 00:48:57
 
+I think it's a perfect example.
 I had the same question reading BIP21 as written where we do have these optional parameters like amount, message, etc.
 And then I think the most common pattern that you see people using Bit21 today is called the unified QR code, where you have Bitcoin address, then you have a lightning equals parameter, and that lightning equals then specifies a Bolt11 invoice.
 But the Bolt11 invoice, if I understand correctly, also encodes an amount into the bolt 11 invoice.
