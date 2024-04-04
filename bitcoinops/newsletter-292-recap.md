@@ -67,7 +67,7 @@ Fabian Jahr: 00:06:56
 
 Yeah, exactly.
 So I mean, to just give a little additional recap from my side.
-So 18 months ago, many people probably remember this, we had the `TornadoCash` incident where, aside from the other legal action that happened, the repository just disappeared from GitHub completely.
+So 18 months ago, many people probably remember this, we had the `Tornado Cash` incident where, aside from the other legal action that happened, the repository just disappeared from GitHub completely.
 And that kind of triggered me to look into this topic again more deeply and basically put it as one of my high priority projects in the last year.
 And so the idea is clear, like as you said, we have a lot of mechanisms to back up the code.
 We have a lot of mechanisms to back up like the comments and reviews.
@@ -75,8 +75,8 @@ For these there's a lot of scripts that people can run and just like save the ra
 Then a developer B1OX has something that also displays the data then again, nicely and kind of like a similar format to GitHub so you can then read the backup again in kind of the fashion that you're used to.
 But what we're really missing so far is kind of something where we can have the data transferred and then continue working on it in a similar workflow that we are used to with GitHub in case the GitHub repository goes away.
 And then it's a related question if we were to do this only and keep this kind of only for the worst case scenario, or if we want to do the switch at some point soon in the future.
-Yeah, and so the, What I did is I basically, yeah, set up a self-hosted GitLab.
-So this is not about GitLab.com, the kind of the comparable to GitHub.com, but you can self-host GitLab.
+What I did is I basically set up a self-hosted GitLab.
+So this is not about GitLab.com, the kind of the comparable to gitHub.com, but you can self-host GitLab.
 The nice thing is the code is almost all open source.
 So they say the core code is open source.
 There's some modules that you can pay for then that you get in addition.
@@ -84,7 +84,7 @@ But all that I'm using is open source.
 And so you can host that.
 And if you know GitLab, it looks very similar to GitHub.
 And then you have syncing mechanisms and they also have some additional tools that you can use.
-And so they have one functionality that they call mirroring, which is kind of allowing you to do this like live following of another repository.
+And so they have one functionality that they call `mirroring`, which is kind of allowing you to do this like live following of another repository.
 That was originally my goal to use this, which is what was called being like a live feature.
 Unfortunately, that doesn't work for our use case right now.
 I made a writer where I described a bit more, but they simply haven't built it out for this direction from github.com to a self-hosted GitLab.
@@ -97,7 +97,7 @@ Then there's quite a lot of configuration that was the reason why it took so muc
 But yeah, that is all documented now what you have to configure.
 There's some things that you have to turn off, some things that you have to switch on, so that the syncing process just doesn't fail at some point after 28 hours or something like that.
 Yeah, and so with that in theory, at least it's possible for us to run this practice is possible for us to run this.
-And then if the GitLab, if GitHub.com repository would go away, we could continue working on a self-hosted GitLab instance.
+And then if GitHub.com repository would go away, we could continue working on a self-hosted GitLab instance.
 
 Mark Erhardt: 00:11:14
 
