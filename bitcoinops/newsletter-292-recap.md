@@ -681,21 +681,21 @@ It's not really related to Bitcoin Core.
 And in that, we track proposals to the Bitcoin protocol or just public write-ups on methods and ideas that are useful to many different implementers or groups in the Bitcoin ecosystem.
 And we call those the Bitcoin improvement proposals.
 Currently we have 135 open pull requests in this repository.
-And the process has been frustrating for a few developers to the end that recently we had AJ Towns start the Banana repository as a parallel mechanism where you can post an idea publicly so that a distributed discussion of an idea can reference a single document and everybody knows exactly what we're talking about.
-So another approach here is now, Eva Chow posted to the Bitcoin developer mailing list the suggestion that we add more editors because the main editor that is currently shepherding the repository has stated that he's not getting around to doing all the work that is necessary and is to time constraints.
+And the process has been frustrating for a few developers to the end that recently we had AJ Towns start the BINANA repository as a parallel mechanism where you can post an idea publicly so that a distributed discussion of an idea can reference a single document and everybody knows exactly what we're talking about.
+So another approach here is now, Ava Chow posted to the Bitcoin developer mailing list the suggestion that we add more editors because the main editor that is currently shepherding the repository has stated that he's not getting around to doing all the work that is necessary and is to time constraints.
 So we're at a point where there's a few people proposed and the discussion hasn't really progressed much since then.
 So yeah, if you are interested in that topic, you can find it on the mailing list.
 Dave, do you have more information or ideas on where this is going?
 
 Dave Harding: 01:05:57
 
-No, but it would be nice if we could make more progress on BIPs or people can just switch to bananas or however you like to host your documentation.
+No, but it would be nice if we could make more progress on BIPs or people can just switch to BINANAs or however you like to host your documentation.
 
 Mark Erhardt: 01:06:09
 
 Yeah.
 Maybe to jump in a little more.
-One of the points of frustration is the Understanding is that a BIP is owned by the authors of the BIP because they're proposing their idea and it becomes a public document for everyone to talk about, but it's still sort of their writeup.
+One of the points of frustration is the understanding is that a BIP is owned by the authors of the BIP because they're proposing their idea and it becomes a public document for everyone to talk about, but it's still sort of their writeup.
 So one thing that is supposed to be allowed is that the authors, as they develop their idea, especially while it's still in draft status, but potentially even after it has been published, can add to the BIP or make minor changes like typo corrections.
 Or if an example was not 100% clear, like add a clarifying sentence, things like that should always be possible for the BIP owners.
 And the other thing that has been holding up processes, the BIP process states that not only should BIPs be obviously from the sphere of Bitcoin interesting topics, but they have to be technically sound.
