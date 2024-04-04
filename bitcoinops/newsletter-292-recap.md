@@ -363,8 +363,8 @@ SegWit addresses came out and they did not define a BIP21 key, pay to script has
 And I think that that just kind of indicates that process doesn't scale really well.
 That like every new BIP needs to be aware of BIP21 and define something for it in order for it to work in this future extensible way.
 So yeah, that's kind of the crux of the proposal.
-That learn from how we're using things to kind of update the spec for BIP-21 so that the spec actually is a little bit more reflective of how it's being used, and then also allow for this more future extensible method of using BIP-21 that doesn't require all these BIPs out there, both existing and new, to kind of go back and retroactively define key value pairs.
-And in the case of batch 32, M encoded stuff or batch 32, defining a key value for a batch 32 address kind of seems silly because the, like you mentioned earlier, Merge, the, the HRP is already functioning as a key.
+That learn from how we're using things to kind of update the spec for BIP21 so that the spec actually is a little bit more reflective of how it's being used, and then also allow for this more future extensible method of using BIP21 that doesn't require all these BIPs out there, both existing and new, to kind of go back and retroactively define key value pairs.
+And in the case of batch32M encoded stuff or batch32, defining a key value for a batch32 address kind of seems silly because like you mentioned earlier, the HRP is already functioning as a key.
 So I'll stop there.
 Questions or.
 
@@ -376,8 +376,8 @@ Maybe while we're at it, we could also say, if there's multiple things, the orde
 And finally, I think there's also an issue around whether Bitcoin has to be lowercase or uppercase, Because in the QR codes, we can encode stuff more efficiently if it's all uppercase, but the spec, for example, demands that it's all lowercase, I believe.
 So sort of just a chance to update everything.
 So what do you think?
-Are you going to try to update BIP 21?
-Are you writing a new BIP that supersedes BIP 21?
+Are you going to try to update BIP21?
+Are you writing a new BIP that supersedes BIP21?
 Does anyone else have questions or comments on this one?
 
 Josibake: 00:36:14
