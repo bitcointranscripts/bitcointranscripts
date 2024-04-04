@@ -243,9 +243,9 @@ And as I understand it, the original BIP 21 suggests that the first item after B
 Now, especially I have been vocal on this topic, but pay to public key hash is not the most block space efficient method of receiving funds anymore.
 And a lot of people have been using the scheme basically non-spec compliant and have been putting other Bitcoin addresses there or have been labeling the addresses that they give with various schemes.
 So my understanding is that Josie has taken some time to investigate how the spec is specified versus how it's actually used in the wild and is suggesting how we could improve it to cater to what we're seeing the actual use to be like and how that would be future-proof and compatible with going forward.
-Josi, do you want to take it from here?
+Josie, do you want to take it from here?
 
-Josibake: 00:24:06
+Josie Baker: 00:24:06
 
 Yeah, sure.
 Thanks for having me on to discuss it.
