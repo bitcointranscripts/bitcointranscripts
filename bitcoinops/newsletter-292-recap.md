@@ -275,24 +275,23 @@ Mark Erhardt: 00:26:34
 It's kind of funny because the human readable parts, the HRPs on all of the addresses actually tell you what it is already.
 So needing to have that parameter label that tells you what the following data part is, is kind of funny because that's already done by the HRP itself.
 Sorry.
-Yeah.
 
-Josibake: 00:26:57
+Josie Baker: 00:26:57
 
 No, yeah, I think that's a great point.
 And I think this is where like context is helpful.
-So I went back and I reread BIP 21.
+So I went back and I reread BIP21.
 And kind of the first thing that jumped out to me is the spec says, the the root there needs to be a pay to pubkey hash a legacy address.
 And it says, you know, Bitcoin address is base 58 encoded.
 And you read that and you're like, nah, that's kind of weird.
 Like nobody does that.
-And I've seen, you know, BIP21 URIs and QR codes that, you know, even like Bitcoin Core does like Bitcoin colon the address.
+And I've seen, BIP21 URIs and QR codes that, even like Bitcoin Core does like Bitcoin colon the address.
 So that was already kind of like, okay, well that's kind of annoying.
 And then reading through, I think the original intent of BIP21 is any new address format that we came up with was going to get its own extension key using the language of BIP21.
 So you'd have your legacy addresses, which was the only thing at the time.
 Then we came out with pay to script hash.
-And I think if everyone had been following the bit 21 philosophy, they would have defined a key, you know, pay to script hash equals blah.
-And then that way it's usable in bit 21.
+And I think if everyone had been following the BIP21 philosophy, they would have defined a key, pay to script hash equals blah.
+And then that way it's usable in BIP21.
 Same with segwit, We would have defined a new key and so on and so forth.
 What that would give us in theory is a fully backwards compatible URI, meaning I as a receiver can post this URI in a QR code.
 One QR code, someone can scan it and their wallet will pick the key that it understands.
