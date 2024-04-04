@@ -831,7 +831,7 @@ Now ever since BIP30 and BIP34, we really haven't had duplicate transactions in 
 And the idea was we'd never had them in the first place.
 But you can make a block that looks like it has a duplicate transaction that has the same TXID.
 And so you can create a version of the block that has only one transaction with a particular ID and a version of the block that has two transactions with the same TXID.
-The second block is invalid, But it hashes to the same Merkle root as the first block There's other ways to cause problems particularly with 64 byte transactions a Merkle Node is the result of two 32 byte hashes And so you can do weird things with 64 byte transactions.
+The second block is invalid, but it hashes to the same merkle root as the first block. There's other ways to cause problems particularly with 64 byte transactions a merkle Node is the result of two 32 byte hashes. And so you can do weird things with 64 byte transactions.
 That's also considered in this pull request.
 But basically you can create different block contents that hash to the same Merkle root.
 Again, the Merkle root is included in the block header.
