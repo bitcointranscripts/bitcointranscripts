@@ -36,7 +36,7 @@ Salvatore.
 
 Salvatore Ingala: 00:05:00
 
-Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on Musig.
+Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on MuSig.
 
 Mark Erhardt: 00:05:06
 
@@ -53,8 +53,8 @@ Mark Erhardt: 00:05:16
 
 Super.
 So Fabian asked that we could move forward the GitLab backup topic because he has a limited time window.
-So I propose that for the people that are following along with the newsletter, We actually start with the fourth newsletter item.
-And so, yeah, let me try to put it together in one sentence and then Fabian can maybe give a bigger, better overview.
+So I propose that for the people that are following along with the newsletter, we actually start with the fourth newsletter item.
+Let me try to put it together in one sentence and then Fabian can maybe give a better overview.
 So for a very long time, we have been thinking about that we do not like very much how we're tied to GitHub.
 And since occasionally stuff just disappears on the internet, we would be in a lot of trouble if our 30,000 or so issues and pull requests and all the comments written there were not available anymore.
 So for a long time, we've already been doing backups.
