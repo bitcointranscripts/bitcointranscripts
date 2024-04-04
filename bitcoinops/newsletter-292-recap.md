@@ -107,7 +107,7 @@ So previously we only had archives and we would be able to search for previous c
 And that's what you've been working on.
 My understanding is that it takes 36 hours to sync the whole repository.
 So for all the active conversations, you might actually, if they're earlier in the process, already be a day late, but that's definitely a lot better than nothing.
-Is there any way to sort of just get the diff and add to, to things you've sent before?
+Is there any way to sort of just get the diff and add to things you've sent before?
 
 Fabian Jahr: 00:11:59
 
@@ -140,7 +140,7 @@ You just go there and it looks slightly different than what you're used to, but 
 If we actually moved to that site, I noticed all the issues and PRs were correctly attributed to an account with the same name as the GitHub account.
 So Fanquake stuff was attributed to Fanquake and so on.
 How much work would it be for people to claim those accounts?
-Because I mean, obviously, you didn't copy over their GitHub credentials, would you have to be sitting there and, you know, emailing everybody and saying, here, here's your one time password, log in and change it and all that kind of stuff?
+Because I mean, obviously, you didn't copy over their GitHub credentials, would you have to be sitting there and, emailing everybody and saying, ''here's your one time password, log in and change it'', and all that kind of stuff?
 
 Fabian Jahr: 00:14:17
 
