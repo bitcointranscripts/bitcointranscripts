@@ -725,35 +725,31 @@ Dave Harding: 01:09:51
 Not really.
 I just want to just echo that these are really cool features and I think it's just it's great that Eclair and their team there, they've been really active in working on not just adding these features to their software, but the specifications.
 They've been working on, as they implement it, going back and taking their discoveries and talking it over and tweaking the specifications on those things.
-So this is the dual funding and the offers and displacing are all compatible with the Boltz protocols for those.
+So this is the dual funding and the offers and displacing are all compatible with the Bolt protocols for those.
 So I think it's just really great seeing a team not just using open source work and releasing open source software, but contributing to the specifications for those.
 
 Mark Erhardt: 01:10:43
 
-Yeah, especially if you look at how small the Assign team is, it's really impressive how on top of the spec work they are.
+Yeah, especially if you look at how small the ACINQ team is, it's really impressive how on top of the spec work they are.
 
 ## Bitcoin Core 26.1rc1
 
-Mark Erhardt: 01:10:53
-
 All right, we have one more release candidate in the section.
 We have seen the release candidate one for the Bitcoin Core version 26.1. So this is the maintenance release in the 26 branch.
-So if you're currently running Bitcoin Core version 26 and you want to not directly upgrade to the upcoming 27 version, but want to maybe wait a little for the new version to, to settle in and just want to be up to date with the latest bug fixes.
+So if you're currently running Bitcoin Core version 26 and you want to not directly upgrade to the upcoming 27 version, but want to maybe wait a little for the new version to settle in and just want to be up to date with the latest bug fixes.
 26.1 looks to come out in the next few weeks once the release candidate process is over.
-If you're, depending on that, maybe try running it in your testnet setup and give feedback if, for example, you've encountered some of the bugs that are being fixed, whether it works for you.
+If you're, depending on that, maybe try running it in your testnet setup and give feedback for example, you've encountered some of the bugs that are being fixed, whether it works for you.
 I've looked over the release notes, and to me it looks like there's only a bunch of small issues and bug fixes that are in there.
 Nothing really big that we've talked much about.
 
 ## Bitcoin Core #29412
-
-Mark Erhardt: 01:12:06
 
 All right, we get to our notable code and documentation changes section.
 We have four different pull requests that we're going to discuss this time.
 If you have any questions or comments, please, now is a good time to search for the speaker request button and let us know that you want to contribute to this recap.
 So the first one that we'll get into is Bitcoin Core 29,412.
 And this one fixes an interesting problem, which is dealing with mutated blocks.
-So one of the problems that we've encountered in the past is when a node just gives you bad data, but it is bad in specific ways that the peers that receive it think, oh, generally anything announced to me with this identifier, I do not have to look at again, because it can cause the peers to, for example, not follow the best chain anymore or not to accept a transaction that is valid on the network because they first saw a garbled version of it.
+So one of the problems that we've encountered in the past is when a node just gives you bad data, but it is bad in specific ways that the peers that receive it think, generally anything announced to me with this identifier, I do not have to look at again, because it can cause the peers to, for example, not follow the best chain anymore or not to accept a transaction that is valid on the network because they first saw a garbled version of it.
 In the context of blocks, for example, someone could temper witness data or change the witness commitment such that it actually no longer matches the block header, but indicates, of course, that the block is invalid.
 And I think there was a bug, from what I understand, where the node would actually process such an invalid block and then store partial information and therefore poison itself against the real block.
 So what this pull request does is it really gets into all the ways that you can mutate a block and change like little pieces of it to turn them invalid, but make them still propagate and test that Bitcoin Core behaves correctly in that it does not process this mutated block but discards it and stays open to receive an alternative correct version of it.
