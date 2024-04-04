@@ -196,27 +196,27 @@ The idea there was, so we asked GitLab to give us that and they give it out for 
 So that's probably why I'm not really running into these limitations if they are relevant to us.
 But of course, it's not for everyone.
 Not everyone can get this license.
-So, but from just like, but, but maybe I'm not seeing these limitations, but from what I was seeing in the documentation in terms of the syncing features, like I think we, like what I'm actually doing now, because the mirroring is not possible as I said that was originally the idea but it wasn't possible after all.
+Maybe I'm not seeing these limitations, but from what I was seeing in the documentation in terms of the syncing features, like what I'm actually doing now, because the mirroring is not possible as I said that was originally the idea but it wasn't possible after all.
 But the syncing should be possible with the community edition as well, same way that I'm doing.
 But with actually running it as administrators like the maintainers do on GitHub right now, I haven't played around that much with it.
 And I'm also not a maintainer myself, so I don't have full overview of all the tools that they are using on GitHub.
-So That would be probably also a good step to put on to-do list to explore this a bit more with one of the maintainers who can give feedback, like if they were going to switch over and they wanted to fulfill the role the same as before, that, if that would require additional, adjustments to, to their workflow, yeah.
+So that would be probably also a good step to put on to-do list to explore this a bit more with one of the maintainers who can give feedback, like if they were going to switch over and they wanted to fulfill the role the same as before, if that would require additional adjustments to their workflow, yeah.
 Sorry, the first one I didn't fully understand.
 
-Speaker 5: 00:20:44
+Michael Tidwell: 00:20:44
 
 The first one.
 So running a GitLab server.
-So first off, just to follow up, you know, having the enterprise license is a big deal for free, because GitLab can get quite expensive.
+So first off, just to follow up, having the enterprise license is a big deal for free, because GitLab can get quite expensive.
 We're talking $100 per developer using the server.
 If you get all that for free, that's pretty powerful.
 The first question was, and again, sorry for my voice.
-The first question was, is there any, GitLab is a constant battle in my opinion of like making sure it's secured and upgraded, you know, it's, especially when you have a lot of users using it, is there any concern with who's going to actually maintain that GitLab server if and when it would be used as like a source of truth for the think of GitHub's, or sorry, Bitcoin's source code?
+The first question was, is there any, GitLab is a constant battle in my opinion of like making sure it's secured and upgraded, it's, especially when you have a lot of users using it, is there any concern with who's going to actually maintain that GitLab server if and when it would be used as like a source of truth for the think of GitHub's, or sorry, Bitcoin's source code?
 
 Fabian Jahr: 00:21:35
 
 Unfortunately, I haven't put that much thought into this as well.
-It was really for now developed as like the worst case scenario backup, right?
+For now developed as like the worst case scenario backup, right?
 Like if GitHub just goes away, this is better than what we had before.
 And yeah, this would still need to be figured out.
 Like right now, there's two people that have access to the server.
