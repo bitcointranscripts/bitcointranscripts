@@ -408,26 +408,26 @@ Especially with interoperability and everything.
 Mark Erhardt: 00:38:19
 
 Yeah.
-Thinking about how I would like to use BIP 21 in a future where we have silent payments would be, I would probably not even want to have a potential address reuse permanent address there.
+Thinking about how I would like to use BIP21 in a future where we have silent payments would be, I would probably not even want to have a potential address reuse permanent address there.
 I would just want to post a silent payments address.
 And if I'm not allowed to do that by the new BIP, I guess, yeah, I would suggest that we should allow any subset of the addresses.
 And if they read it and they can't use it, well, maybe I don't want to receive a payment that doesn't follow the payment instructions.
 Dave.
 
-Josibake: 00:38:54
+Josie Baker: 00:38:54
 
 Yeah.
 I want to comment on that really quickly because I think that's super important.
 That's actually where some of my initial, why I didn't initially want to specify anything in BIP352 about BIP21 is because if you're using silent payments, it indicates to me you're a privacy conscious user, right?
-And if you were to add a silent payments address in a URI with a static, you know, reused address, there are real privacy implications, right?
+And if you were to add a silent payments address in a URI with a static, reused address, there are real privacy implications, right?
 Like if someone pays your reused address and then someone else makes a silent payment, and then you spend those coins together, you're effectively linking an address that was intended to be silent to this reused address.
-So I was like, I don't really want to put this in bit three 52, because then I'm going to have to write this massive explainer about why you really shouldn't do this.
+So I was like, I don't really want to put this in BIP352, because then I'm going to have to write this massive explainer about why you really shouldn't do this.
 On the other hand, I think Matt has a good point that some people might not care and they might just want the UX benefits of silent payments.
-And in that sense, they should be able to use it in BIP 21.
+And in that sense, they should be able to use it in BIP21.
 And so that kind of got me thinking of like, all right, well, I don't want to define it in this, but because I think there's privacy problems, but I also don't want to stonewall anyone from using it.
-So why don't we just update BIP 21 in a way where, you know, things can just kind of automatically be included without us requiring to go and have every single BIP, you know, promote something about it.
-So I agree with your sentiment and, you know, I think that's going to be the better middle ground.
-Like let the users of BIP 21 use what they want to use and let the other BIPs kind of stay focused on the thing that they're supposed to be focused on, which in the case of silent payments, I think is a much stronger focus on privacy.
+So why don't we just update BIP21 in a way where, things can just kind of automatically be included without us requiring to go and have every single BIP, promote something about it.
+So I agree with your sentiment and, I think that's going to be the better middle ground.
+Like let the users of BIP21 use what they want to use and let the other BIPs kind of stay focused on the thing that they're supposed to be focused on, which in the case of silent payments, I think is a much stronger focus on privacy.
 Go ahead, Dave, you had a question?
 
 Dave Harding: 00:40:32
