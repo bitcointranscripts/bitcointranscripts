@@ -701,10 +701,10 @@ Or if an example was not 100% clear, like add a clarifying sentence, things like
 And the other thing that has been holding up processes, the BIP process states that not only should BIPs be obviously from the sphere of Bitcoin interesting topics, but they have to be technically sound.
 And so it takes a lot of work for the technical editors of the BIP repository to assess, well, is this actually technically sound?
 Is this a well-enough described idea that it can be implemented or not?
-And one of the participants in the discussion has proposed, really the documents should have some formal requirements like is it complete, does it not have any references to outside things, is it well written, Does it specify an idea that is about Bitcoin?
+And one of the participants in the discussion has proposed, really the documents should have some formal requirements like is it complete, does it not have any references to outside things, is it well written, does it specify an idea that is about Bitcoin?
 And then whether or not it is technically sound should perhaps be more the job of the readers of the BIPs rather than the BIP editor.
 So yeah, the discussion seems to be a little bit in the air right now.
-The two proposed participants are Ruben Sommersen and Kanzer that have both been around for a long time and would probably be well capable of assessing at least whether the documents are fully fleshed out and whether they're about Bitcoin.
+The two proposed participants are Ruben Somsen and Kanzure, that have both been around for a long time and would probably be well capable of assessing at least whether the documents are fully fleshed out and whether they're about Bitcoin.
 There's been also a couple of self-nominations.
 So anyway, That's where I understand the discussion to be.
 
