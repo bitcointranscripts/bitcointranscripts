@@ -252,29 +252,21 @@ Thanks for having me on to discuss it.
 I think I'll give a little bit of background as kind of how I got interested in this topic.
 And then I want to mention briefly something about like why I think it's important when we talk about spec compliant versus non-spec compliant.
 And then kind of maybe talk through the meat of the proposal.
-But this came up for Ruben Thompson and I, because as we've been writing the silent payments, but we thought a lot about how do we not contribute to new address format fatigue, which is in Bitcoin, I'm a wallet developer, I build a wallet, and then next week somebody comes out with a new thing, a new address, a new protocol, and then I gotta go and I gotta update that.
+But this came up for Ruben Thompson and, because as we've been writing the silent payments, but we thought a lot about how do we not contribute to new address format fatigue, which is in Bitcoin, I'm a wallet developer, I build a wallet, and then next week somebody comes out with a new thing, a new address, a new protocol, and then I got to go and I got to update that.
 But then it's not really gonna work until other wallets understand it.
 So we kind of have this problem where as we innovate and come up with cool new stuff, there's then this rollout and adoption phase, which is very frustrating.
-I think Taproot is probably the best example of this.
-There are people who really want to use Taproot and there are wallets that want to support Taproot, but it's hard from a developer's standpoint to do the work of supporting something like Taproot if you know that every single user of Gemini, Coinbase, Binance is not going to be able to withdraw from those exchanges to their wallet because those exchanges don't recognize the address format.
+I think `taproot` is probably the best example of this.
+There are people who really want to use taproot and there are wallets that want to support Taproot, but it's hard from a developer's standpoint to do the work of supporting something like Taproot if you know that every single user of Gemini, Coinbase, Binance is not going to be able to withdraw from those exchanges to their wallet because those exchanges don't recognize the address format.
 So this is this like, I think, known pain point that people feel a lot.
-So I think naturally when you see someone coming along being like, hey, I've got a new address format, there's like people kind of grit their teeth, like,
-
-Mark Erhardt: 00:25:47
-
-Oh no,
-
-Josibake: 00:25:47
-
-not again.
+So I think naturally when you see someone coming along being like, ''hey, I've got a new address format'', there's like people kind of grit their teeth, like, oh no, not again.
 So Ruben and I had been thinking about that.
 And when we were designing silent payments, we were like, cool, let's just try to make this as close to a silent, I'm sorry, a taproot address as we can.
-So we reuse the batch 32M encoding.
+So we reuse the `batch32M` encoding.
 You know, came up with a HRP and identifier.
-And then it was kind of brought up like, well, if you want to use this in bit 21, you got to define a key for it.
-And that seemed kind of weird to me that like every bit that wants to be compatible with bit 21 has to define a key in their own bit.
+And then it was kind of brought up like, well, if you want to use this in BIP21, you got to define a key for it.
+And that seemed kind of weird to me that like every bit that wants to be compatible with BIP21 has to define a key in their own BIP.
 So I started to kind of look into it a little bit.
-And that led me to actually read the text of that 21.
+And that led me to actually read the text of BIP21.
 And I see there's a hand up there.
 I can pause if you have a question.
 
