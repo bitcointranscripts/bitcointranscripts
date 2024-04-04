@@ -838,7 +838,7 @@ Again, the merkle root is included in the block header.
 The block header, and the hash of the block header is how we identify blocks on the network.
 Does that answer your question?
 
-Speaker 5: 01:22:07
+Michael Tidwell: 01:22:07
 
 Well, okay, so I'm still a little bit confused because I'm like thinking, well, if anything in the tree changes, the merkle root should be different.
 So if I wanted to do some homework and look this up, what phrasing would I type in to like look up what this is, like what is this called?
@@ -846,15 +846,15 @@ So if I wanted to do some homework and look this up, what phrasing would I type 
 Dave Harding: 01:22:27
 
 What I would suggest you do is go to the newsletter on this news item, the BitcoinCore29412, in the notable code and documentation changes, we have a link to newsletter number 37.
-And in newsletter number 37, we have a link to CVE 2012-2459.
+And in newsletter number 37, we have a link to CVE-2012-2459.
 It's a write-up on Bitcoin talk by the guy who invented P2P pool.
 He discovered the vulnerability.
-Also that newsletter number 37 includes a very informative PDF written by Suhas Daktwar who fixed one of these bugs, actually introduced one of these bugs and also fixed one of these bugs.
+Also that newsletter number 37 includes a very informative PDF written by Suhas Daftuar, who fixed one of these bugs, actually introduced one of these bugs and also fixed one of these bugs.
 That PDF goes into a lot of detail about this.
 There's an illustration in newsletter number 37.
 So I would basically just go to news number 37 and you'll get all the information about this that I think you could possibly ever need.
 
-Speaker 5: 01:23:20
+Michael Tidwell: 01:23:20
 
 Hey, thank you so much.
 
