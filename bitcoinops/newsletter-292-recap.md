@@ -13,13 +13,13 @@ Good morning.
 This is Optech Newsletter #292 Recap.
 And as you can hear, Mike is not here today and I'm filling in as the main host.
 Today we have four news items, two releases and release candidates, and four PRs to talk about in our notable code and documentation changes.
-I'm Merch and I work at Chaincode Labs and bring you weekly this OpTech newsletter recap.
+I'm Merch and I work at `Chaincode Labs` and bring you weekly this OpTech newsletter recap.
 Today I'm joined by Dave.
 
 Dave Harding: 00:04:41
 
 Hi, I'm Dave Harding.
-I'm co-author of the Optech Newsletter and co-author of the third edition of Mastering Bitcoin.
+I'm co-author of the Optech Newsletter and co-author of the third edition of `Mastering Bitcoin`.
 
 Mark Erhardt: 00:04:48
 
@@ -36,7 +36,7 @@ Salvatore.
 
 Salvatore Ingala: 00:05:00
 
-Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on MuSig.
+Hi, I'm Salvatore and I work on the `Ledger Bitcoin` app and right now I'm working on `MuSig`.
 
 Mark Erhardt: 00:05:06
 
@@ -45,14 +45,14 @@ Fabian?
 Fabian Jahr: 00:05:09
 
 Hi, I'm Fabian.
-I work on Bitcoin Core and some related projects and I'm supported by Brink.
+I work on `Bitcoin Core` and some related projects and I'm supported by `Brink`.
 
 ## GitLab backup for Bitcoin Core GitHub project
 
 Mark Erhardt: 00:05:16
 
 Super.
-So Fabian asked that we could move forward the GitLab backup topic because he has a limited time window.
+So Fabian asked that we could move forward the `GitLab` backup topic because he has a limited time window.
 So I propose that for the people that are following along with the newsletter, we actually start with the fourth newsletter item.
 Let me try to put it together in one sentence and then Fabian can maybe give a better overview.
 So for a very long time, we have been thinking about that we do not like very much how we're tied to GitHub.
@@ -61,18 +61,18 @@ So for a long time, we've already been doing backups.
 We have just mirrors where people write out all the comments and issues and pull requests that are created.
 Obviously the code itself is backed up to all the contributors that have copies of the repositories and their own local branches.
 But it looks like Fabian has spent quite some time to investigate on how syncing with GitLab would work for the Bitcoin GitHub account.
-And yeah, so my understanding is that you figured out how to make this work for good, but not live, just you can get everything synced over.
+So my understanding is that you figured out how to make this work for good, but not live, just you can get everything synced over.
 
 Fabian Jahr: 00:06:56
 
 Yeah, exactly.
 So I mean, to just give a little additional recap from my side.
-So 18 months ago, many people probably remember this, we had the TornadoCache incident where, aside from the other legal action that happened, the repository just disappeared from GitHub completely.
+So 18 months ago, many people probably remember this, we had the `TornadoCash` incident where, aside from the other legal action that happened, the repository just disappeared from GitHub completely.
 And that kind of triggered me to look into this topic again more deeply and basically put it as one of my high priority projects in the last year.
 And so the idea is clear, like as you said, we have a lot of mechanisms to back up the code.
 We have a lot of mechanisms to back up like the comments and reviews.
-For these there's a lot of scripts that people can run and just like save the raw data as Jason locally.
-Then a developer B1 OX has something that also displays the data then again, nicely and kind of like a similar format to GitHub so you can then read the backup again in kind of the fashion that you're used to.
+For these there's a lot of scripts that people can run and just like save the raw data as JSON locally.
+Then a developer B1OX has something that also displays the data then again, nicely and kind of like a similar format to GitHub so you can then read the backup again in kind of the fashion that you're used to.
 But what we're really missing so far is kind of something where we can have the data transferred and then continue working on it in a similar workflow that we are used to with GitHub in case the GitHub repository goes away.
 And then it's a related question if we were to do this only and keep this kind of only for the worst case scenario, or if we want to do the switch at some point soon in the future.
 Yeah, and so the, What I did is I basically, yeah, set up a self-hosted GitLab.
