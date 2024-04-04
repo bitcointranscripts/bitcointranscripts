@@ -706,11 +706,9 @@ And then whether or not it is technically sound should perhaps be more the job o
 So yeah, the discussion seems to be a little bit in the air right now.
 The two proposed participants are Ruben Somsen and Kanzure, that have both been around for a long time and would probably be well capable of assessing at least whether the documents are fully fleshed out and whether they're about Bitcoin.
 There's been also a couple of self-nominations.
-So anyway, That's where I understand the discussion to be.
+So anyway, that's where I understand the discussion to be.
 
 ## Eclair v0.10.0
-
-Mark Erhardt: 01:08:35
 
 All right, we're moving on to the releases and release candidates section.
 The first release that we have is Eclair version 10, sorry, version 0.10.0, which is a new major release for the Lightning Node implementation, the Eclair Lightning Node implementation.
@@ -718,8 +716,8 @@ So Eclair Version 0.10.0 adds a dual funding feature.
 It adds Bolt 12 offers and it has a fully working splicing prototype.
 So This sounds like a pretty cool big new release.
 We've seen a bunch of these topics out in the wild lately.
-We've had T-Best on to talk about dual funding before and about splicing.
-Yeah, I don't know if there's many other people that also use the Eclair node besides Sank, but yeah, sounds like a bunch of cool new features, especially if you're using Phoenix Wallet, you'll see what comes down the pipeline there.
+We've had t-bast on to talk about dual funding before and about splicing.
+Yeah, I don't know if there's many other people that also use the Eclair node besides ACINQ, but yeah, sounds like a bunch of cool new features, especially if you're using Phoenix Wallet, you'll see what comes down the pipeline there.
 Dave, do you have something here?
 
 Dave Harding: 01:09:51
