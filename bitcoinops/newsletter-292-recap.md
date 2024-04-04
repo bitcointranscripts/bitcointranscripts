@@ -644,13 +644,13 @@ So this makes it a lot easier to make sure that, well, it can never happen that 
 
 Mark Erhardt: 01:02:31
 
-Oh, yeah, that's a really important idea.
+Yeah, that's a really important idea.
 If your session randomness is tied to the PSPT and isn't specific to an output, you can of course track on the PSPT level whether the session has ended or has to be restarted.
 So that sounds cleaner, actually, at the implementation level.
 
 Salvatore Ingala: 01:02:55
 
-Yeah, it's something that, I mean, it's not really a change to BIP-327, because this is something that I do on top to make the implementation mostly more auditable.
+Yeah, it's something that, I mean, it's not really a change to BIP327, because this is something that I do on top to make the implementation mostly more auditable.
 But I thought it was a good thing to write down because I think it's a useful detail in implementations.
 
 Mark Erhardt: 01:03:15
