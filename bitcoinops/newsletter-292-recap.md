@@ -348,7 +348,7 @@ And this is just one idea of how to do it, but this is the one that feels the mo
 So then you don't really have this key, you don't really have a root and then key value pairs.
 You just kind of have self-describing things with a separator.
 The nice thing about this is, the thing that's most attractive to me about this as a solution is, now anybody who uses the batch32, batch32M encoding scheme, which really, when I say batch32, I really just mean batch32 M since that's like the latest and greatest.
-So batch 32 M, let's say one of these new proposals like Arc was like, okay, we need a new address type to signify like, if you pay to this, you're going to join the arc network or whatever.
+So batch32M, let's say one of these new proposals like Arc was like, okay, we need a new address type to signify like, if you pay to this, you're going to join the arc network or whatever.
 If they encode it as batch32M and they choose an HRP and encode their data, they are automatically able to be included in BIP21 URIs without developers needing to change anything, Right?
 No, well, more specifically, not needing to change anything about their BIP21 parsing.
 If they can parse an arc address, it just works.
@@ -437,7 +437,7 @@ First of all, thank you for working on this.
 And also, I find it very interesting how your silent payments work has basically brought you to every level of the protocol stack.
 Like you're just basically you know rewriting all of Bitcoin in little pieces everywhere just to you know make sure everything just works really well with this silent payments.
 It's just very interesting to me how what's basically a very simple idea, it's just got you going everywhere.
-So a couple comments there is, first of all, I didn't actually realize that BIP 21 was only PDBKH addresses.
+So a couple comments there is, first of all, I didn't actually realize that BIP21 was only PDBKH addresses.
 I had not even thought of that.
 So you're right, we need to document that, as you call it, the tribal knowledge.
 My suggestions for what to do with regard to updating the BIPs is, I think the BIP 21, and this is not what the BIP process says you should do.
@@ -457,9 +457,9 @@ Actually I think they closed the channel for some of the stuff because it's clea
 And with Bitcoin URIs, again, we're talking about changing money and software that parses them needs to know what's optional and what's required.
 So I just wanted to know if you had any thoughts on that, is that something you considered?
 
-Josibake: 00:44:02
+Josie Baker: 00:44:02
 
-Yeah, yeah, Great questions.
+Yeah, great questions.
 To your first comment about silent payments kind of touching everything, that was certainly not my intent.
 You started with this like really small idea and you're like, oh, this would be a pretty simple project.
 Next thing you know, it's like, it's everywhere.
@@ -469,16 +469,16 @@ I think the reason for that is, sign-on payments and just this whole idea, it's 
 Like, we have to, You and I have to agree on how to communicate how I want to receive money and how you're able to send money.
 And this is kind of like the core idea of Bitcoin, which is why I think when you get into something like silent payments, it does start to touch a lot of different stuff.
 To your second question, I want to say let's talk about a simplified world where everything is batch 32m encoded, meaning it has an HRP and a data part, and the HRP is kind of what describes what it is.
-And we're kind of, we're allowed to redesign BIP 21 however we want.
+And we're kind of, we're allowed to redesign BIP21 however we want.
 So BIP 21 had this notion already of like optional versus required parameters and optional parameters are just what's in there by default, right?
 You throw some stuff in there And then whoever's parsing it, the sender actually decides what's important to them.
 So Merch earlier had mentioned, you know, kind of like some order dependence.
 BIP21 says no, there's a root address, which is a legacy address, which everyone can pay.
 And then there's these optional key value parameters that come after it.
 And the sender actually gets to decide which one they want to use, not the receiver.
-So in the case of like unified QR codes and BIP21, there's a lightning key that you attach on.
-And the sender says, ah, if I understand lightning, I'm going to use lightning.
-And then everyone was like, oh, shouldn't they always use lightning?
+So in the case of like unified QR codes and BIP21, there's a Lightning key that you attach on.
+And the sender says, ah, if I understand Lightning, I'm going to use Lightning.
+And then everyone was like, oh, shouldn't they always use Lightning?
 I was like, well, no, like what if the lightning payment is so large that the on-chain would actually be cheaper for the sender.
 So then the sender might prefer to use the on-chain one.
 So the idea of BIP21 and kind of what I'm proposing too as well is the sender is actually the one that decides what's important.
@@ -487,9 +487,9 @@ Now the receiver also has some ability to communicate how they want to be paid a
 And that if the receiver doesn't post a URI with lots of options for you, so let's use sign of payments as an example.
 I'm a very privacy conscious sign of payments user.
 I want to post a URI that just has a sign of payments address in it.
-And I don't, if you can't understand silent payments, then I don't want an on-chain fallback because that would lead to address reuse for you and me or loss of privacy.
-So in that sense, I'm gonna post a URI and I accept that whoever tries to pay this, if they can't pay silent payments, it's gonna fail.
-And the reason it would fail for the user, the sender is they would try to parse that URI and they wouldn't see anything that they recognize just by looking at the HRPs. Another example would be I post a silent payment address and I also include a tap root address because I'm like, all right, maybe they don't understand some of the payments and I'd rather get paid even if it's in a non-private way.
+If you can't understand silent payments, then I don't want an on-chain fallback because that would lead to address reuse for you and me or loss of privacy.
+So in that sense, I'm gonna post a URI and I accept that whoever tries to pay this, if they can't pay silent payments, it's going to fail.
+And the reason it would fail for the sender is they would try to parse that URI and they wouldn't see anything that they recognize just by looking at the HRPs. Another example would be I post a silent payment address and I also include a tap root address because I'm like, all right, maybe they don't understand some of the payments and I'd rather get paid even if it's in a non-private way.
 So then I include a taproot address.
 Then the receiver, I'm sorry, the sender would parse that URI and they would look for an HRP that they recognize.
 They don't recognize the SP HRP.
@@ -497,15 +497,15 @@ They do recognize the BC HRP.
 They split that BC1P.
 They know how to pay a taproot address.
 They're good to go.
-This is, I think, functionally equivalent to how it works today in BIP21, where instead of looking for an HRP, people just look for a key.
+I think, functionally equivalent to how it works today in BIP21, where instead of looking for an HRP, people just look for a key.
 And as soon as they find a key that they're interested in and aware of, they just ignore everything else and they try to pay that key.
 So I think that's kind of how they solve the ambiguity problem.
-I guess the biggest difference between kind of where I'm leaning and the existing BIP-21 is BIP-21 is pretty opinionated.
+I guess the biggest difference between kind of where I'm leaning and the existing BIP21 is BIP21 is pretty opinionated.
 There should always be something there that they can pay, which is the legacy address.
 
 Dave Harding: 00:48:04
 
-I guess, I don't wanna go into too much detail here.
+I guess, I don't want to go into too much detail here.
 I can always post on the thread, but I guess I'm just thinking about the other query parameters that it passed.
 For example, if you pass an amount parameter, might there be a case where that amount parameter would apply to legacy addresses and base 32 addresses and silent payments, but it might not apply to Lightning.
 You might be passing a bulk 12 URL where you want the person to get the amount from the offer rather than the amount parameter, but you want to include the amount parameter in the thing.
