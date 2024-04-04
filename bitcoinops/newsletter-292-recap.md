@@ -833,14 +833,14 @@ But you can make a block that looks like it has a duplicate transaction that has
 And so you can create a version of the block that has only one transaction with a particular ID and a version of the block that has two transactions with the same TXID.
 The second block is invalid, but it hashes to the same merkle root as the first block. There's other ways to cause problems particularly with 64 byte transactions a merkle Node is the result of two 32 byte hashes. And so you can do weird things with 64 byte transactions.
 That's also considered in this pull request.
-But basically you can create different block contents that hash to the same Merkle root.
-Again, the Merkle root is included in the block header.
+But basically you can create different block contents that hash to the same merkle root.
+Again, the merkle root is included in the block header.
 The block header, and the hash of the block header is how we identify blocks on the network.
 Does that answer your question?
 
 Speaker 5: 01:22:07
 
-Well, okay, so I'm still a little bit confused because I'm like thinking, well, if anything in the tree changes, the Merkle root should be different.
+Well, okay, so I'm still a little bit confused because I'm like thinking, well, if anything in the tree changes, the merkle root should be different.
 So if I wanted to do some homework and look this up, what phrasing would I type in to like look up what this is, like what is this called?
 
 Dave Harding: 01:22:27
