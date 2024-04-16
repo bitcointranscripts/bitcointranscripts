@@ -1,10 +1,10 @@
 ---
 title: "Lightning Privacy & Splice Panel"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: yami-py via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=SjLPbjs9LkI
-tags: ['splicing', 'rv-routing', 'offers', 'privacy-enhancements']
-speakers: ['NVK', 'Bastien Teinturier', 'Jeff Czyz', 'Dusty Dettmer', 'Tony Giorgio', 'Vivek']
-categories: ['podcast']
+tags: ["splicing","rv-routing","offers","privacy-enhancements"]
+speakers: ["NVK","Bastien Teinturier","Jeff Czyz","Dusty Dettmer","Tony Giorgio","Vivek","T-Bast"]
+categories: ["podcast"]
 date: 2023-05-12
 ---
 ## Housekeeping
@@ -14,7 +14,7 @@ Speaker 0: 00:01:17
 Today we're going to be talking about Lightning privacy, splicing and other very cool things with an absolute amazing panel here.
 Just before that, I have a couple of things that I want to set out some updates.
 So OpenSats is now taking grants for a Bitcoin application, sorry, taking grant applications for Bitcoin projects and Nostra projects and Lightning projects.
-And there is about five mil for an OSTER, five mil for Bitcoin.
+And there is about five million for an OSTER, five million for Bitcoin.
 So do apply.
 I joined as a board member and Gigi joined as the Ops person and we're gonna get those SATs flying.
 So let's get that funding going.
