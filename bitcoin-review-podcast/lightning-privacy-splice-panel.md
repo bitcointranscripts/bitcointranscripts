@@ -2,7 +2,7 @@
 title: "Lightning Privacy & Splice Panel"
 transcript_by: yami-py via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=SjLPbjs9LkI
-tags: ["splicing","rv-routing","privacy-enhancements"]
+tags: ["splicing","rv-routing","privacy-enhancements","scalability"]
 speakers: ["NVK","Jeff Czyz","Dusty Dettmer","Tony Giorgio","Vivek","T-Bast"]
 categories: ["podcast"]
 date: 2023-05-12
