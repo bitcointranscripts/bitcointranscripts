@@ -6,7 +6,7 @@ date: 2024-04-10
 ---
 ## QML GUI
 
-[Slides](files/2024-04-gui-qml-berlin-coredev.pdf)
+[Slides](https://github.com/kouloumos/bitcointranscripts/blob/temp_core_dev_slides/bitcoin-core-dev-tech/2024-04/files/2024-04-gui-qml-berlin-coredev.pdf)
 
 Q&A
 
@@ -23,7 +23,7 @@ Q&A
 
 ## Integrated GUI Cost/Benefit
 
-[Slides](files/2024-04-CoreDev-integrated-gui.pdf)
+[Slides](https://github.com/kouloumos/bitcointranscripts/blob/temp_core_dev_slides/bitcoin-core-dev-tech/2024-04/files/2024-04-CoreDev-integrated-gui.pdf)
 
 Discussion
 

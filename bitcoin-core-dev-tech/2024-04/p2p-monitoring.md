@@ -4,7 +4,7 @@ categories: ['core-dev-tech']
 tags: ['bitcoin core', 'p2p', 'developer-tools']
 date: 2024-04-09
 ---
-[Slides](files/2024-04-Peer-observer-CoreDev-Berlin-2024.pdf)
+[Slides](https://github.com/kouloumos/bitcointranscripts/blob/temp_core_dev_slides/bitcoin-core-dev-tech/2024-04/files/2024-04-Peer-observer-CoreDev-Berlin-2024.pdf)
 
 - Started working on this about 2 years ago; in 2021. After we accidentally observed the address flooding anomaly/attack
 - Primarily uses https://github.com/0xB10C/peer-observer to extract data from Bitcoin Core nodes with tracepoints.
