@@ -1,10 +1,9 @@
 ---
 title: Great Consensus Cleanup
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'consensus', 'consensus-cleanup']
+tags: ['bitcoin core', 'consensus-cleanup']
 date: 2024-04-08
 ---
-
 How bad are the bugs?
 
 How good are the mitigations?

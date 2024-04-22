@@ -1,7 +1,7 @@
 ---
 title: Cross Input Signature Aggregation
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'signature-aggregation']
+tags: ['bitcoin core', 'cisa']
 date: 2024-04-08
 ---
 

@@ -1,11 +1,9 @@
 ---
 title: GUI Discussions
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'gui']
+tags: ['bitcoin core', 'ux']
 date: 2024-04-10
 ---
-
-
 ## QML GUI
 
 [Slides](files/2024-04-gui-qml-berlin-coredev.pdf)

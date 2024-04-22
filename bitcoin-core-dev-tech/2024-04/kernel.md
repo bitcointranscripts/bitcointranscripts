@@ -1,10 +1,9 @@
 ---
 title: Kernel
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'libbitcoinkernel']
+tags: ['bitcoin core', 'build-system']
 date: 2024-04-10
 ---
-
 The kernel project is just about done with its first stage (separating the validation logic into a separate library), so a discussion about the second stage of the project, giving the library a usable external API was held. Arguments around two questions were collected and briefly debated.
 
 1. Should a C API for the kernel library be developed with the goal of eventually shipping with releases?

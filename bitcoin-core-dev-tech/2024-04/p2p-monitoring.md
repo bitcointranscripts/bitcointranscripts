@@ -1,10 +1,9 @@
 ---
 title: P2P Monitoring
 categories: ['core-dev-tech']
-tags: ['bitcoin core', 'p2p']
+tags: ['bitcoin core', 'p2p', 'developer-tools']
 date: 2024-04-09
 ---
-
 [Slides](files/2024-04-Peer-observer-CoreDev-Berlin-2024.pdf)
 
 - Started working on this about 2 years ago; in 2021. After we accidentally observed the address flooding anomaly/attack
