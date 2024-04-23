@@ -34,7 +34,7 @@ Discussion
 * Core GUI is mostly wallet, few node UI features
 * Considerations of additional work for the build system contributors
 * Examples of the project’s toolchain bumps being held back by qt, dependencies
-    * QML potentially worse. C++23 problem for android
+    * QML potentially worse. C++20 problem for android
     * If you have a GUI at all, there will be dependencies
 * Maybe use Bitcoin Core master as a github sub tree project dependency
     * Separate release schedules between GUI and Core
