@@ -1,33 +1,30 @@
 ---
 title: "Lightning on Taproot"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: Dayvvo via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=E_z4hjvVzoQ
-tags: ['lightning', 'taproot']
-speakers: ['Arik Sosman']
-categories: ['conference']
+tags: ["lightning","taproot"]
+speakers: ["Arik Sosman"]
+categories: ["conference"]
 date: 2023-07-18
 ---
-My name is Arik.
-I work at Spiral.
-And most recently I've been working on adding support for taproot channels.
-At least I try to work on that, but I'm getting pulled back into Swift bindings.
-And this presentation is supposed to be about why the taproot spec is laid out the way it is.
-What are some of the motivations, the constraints, limitations that are driving the design.
-And I wanna really dig deep into the math that some of the vulnerabilities that we're trying to avoid as well as how we're solving those issues.
-So first of all, obviously we know that Haproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on half-route.
-I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to know here.
-Is there privacy?
-Great.
-Yeah, so the biggest reason, of course, is that we have privacy improvements.
-At least, you know, assuming that eventually everybody is going to be using hatred haproot addresses.
-As you know, haproot is segwit v1.
-Segwit was segwit v0, that was our new software mechanism.
-If at some point we decide that we need segwit v2, then all of the old lightening haproot channels that aren't human support yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
+# INTRODUCTION
+Hi my name is Arik. I work at Spiral. And most recently I've been working on adding support for taproot channels.
+At least I try to work on that, but I'm getting pulled back into Swift bindings. And this presentation is supposed to be about why the taproot spec is laid out the way it is. And what are some of the motivations, constraints, limitations that are driving the design. And I wanna really dig deep into the math that's some of the vulnerabilities that we're trying to avoid as well as how we're solving those issues.
+
+
+## MOTIVATION
+So first of all, obviously we know that Taproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on Taproot.
+I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to volunteer.
+
+Yeah, so the biggest reason, of course, is that we have privacy improvements. At least, you know, assuming that eventually everybody is going to be using Pay to Taproot addresses. As you know, Taproot is segwit v1. Segwit was segwit v0, that was our new soft fork mechanism. If at some point we decide that we need segwit v2, then all of the old lightning haproot channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
+ 
 So that is one of the benefits.
 We are also able to improve privacy by decorrelating payments.
-That is PTLCs. And that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because there the primary issue that we have with HDLCs right now is that if we were to have multiple channels that have the same inflight HDLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, you know, link one channel to the other.
-There are hopefully also some security improvements such as directional signatures, but it's still very much a research phase.
+That is PTLCs. And that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because they are the primary issues that we have with HTLCs right now that if we were to have multiple channels that have the same in-flight HTLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, you know, link one channel to the other.
+
+There are hopefully also some security improvements such as threshold signatures, but it's still very much a research phase.
 So you know, mostly I think the greatest benefit really is privacy.
+
 There is also something to be said about the fact that with the way that Taproot works and the way that Lightning requires a bunch of different spend paths, with Taproot Taptrees we are able to make a bunch of those pen paths much cheaper, and we are also able to not reveal the ones that are being unused.
 So it's also a bit of a cost reduction there, which will save us some fees.
 But first of all, why do we have better privacy?
