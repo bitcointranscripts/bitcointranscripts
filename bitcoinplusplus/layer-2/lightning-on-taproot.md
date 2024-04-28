@@ -226,9 +226,9 @@ And that is where I really struggled with the visualization. So the PTLCs are tr
 
 So then Carol sends a PTLC to Dave where she takes her incoming PTLC and tweaks it by the elliptic curve point corresponding to the secret that she extracted from, from the onion. And Dave does the same. And then ultimately, Emily receives one. But the secret that Emily receives is not some random number that Alice generated for her, but it is the sum of all the random numbers that Alice generated.
 
-And why does it work? Well, let's work our way backwards. So Emily has received a PTLC that is locked to the sum of all of these points, uppercase A plus B plus C plus D, as well as her own invoice. She is able to unlock it because she obviously knows her own secret, her own lowercase z, and she knows the sum of the other points, albeit not any one of them individually. The reason she knows that sum is because Alice sent it to her in the onion packet. So then when she unlocks it, This is where the PTLC magic is coming in.
+And why does it work? Well, let's work our way backwards. So Emily has received a PTLC that is locked to the sum of all of these points, uppercase A + B + C plus D, as well as her own invoice. She is able to unlock it because she obviously knows her own secret, her own lowercase z, and she knows the sum of the other points, albeit not any one of them individually. The reason she knows that sum is because Alice sent it to her in the onion packet. So then when she unlocks it, This is where the PTLC magic is coming in.
 
-So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A plus B plus C plus D plus Z. And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PLC from Carol.And that propagates all the way to the bottom. Where the last step has Alice subtracting her own secret from the thing that was unlocked by Bob, and then she gets lowercase z, which is now our proof of payment, which is really elegant. You can see that each hop has a completely random PTLC value.
+So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A + B + C + D + Z. And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PLC from Carol.And that propagates all the way to the bottom. Where the last step has Alice subtracting her own secret from the thing that was unlocked by Bob, and then she gets lowercase z, which is now our proof of payment, which is really elegant. You can see that each hop has a completely random PTLC value.
 
 Now the magic is, how do we design a system where we are able to extract the secret? Where the proceeding hop, just based on the signature, is able to know, okay, this is how they are able to create a valid signature for the other op that came before that. This is where adaptor signatures come in. There's always a lot of talk about adapter signatures, but I think I'll leave it. I think it's helpful to just talk a little bit about how precisely they work.
 
@@ -415,7 +415,7 @@ And this, I'm pretty sure everybody can tell, is a very simple linear equation s
 So what we do is we simply multiply each one of these equations with the coefficient from the other one.
 And then we can simplify the equation, and we can extract x.
 We can extract the private key.
-You know, if I hadn't simplified this, if I had also included the other partial nons, then we simply would have done this elimination step twice because, you know, we're trying to eliminate multiple variables, but we have sufficient equations to do so.
+You know, if I hadn't simplified this, if I had also included the other partial nonce, then we simply would have done this elimination step twice because, you know, we're trying to eliminate multiple variables, but we have sufficient equations to do so.
 So why do we care about this?
 That is because we don't really trust our counterparty.
 Because in a multi-state setup, we don't really worry about the rest of the world attacking us and knowing what our private key is.
@@ -542,7 +542,7 @@ So Emily has received a PTLC that is locked to the sum of all of these points, u
 She is able to unlock it because she obviously knows her own secret, her own lowercase z, and she knows the sum of the other points, albeit not any one of them individually.
 The reason she knows that sum is because Alice sent it to her in the onion packet.
 So then when she unlocks it, This is where the PTLC magic is coming in.
-So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A plus B plus C plus D plus Z.
+So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A + B + C + D + Z.
 And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PLC from Carol.
 And that propagates all the way to the bottom.
 Smooth sliding animation.
@@ -571,21 +571,20 @@ It's a MuSig two just for this particular PTLC.
 So Carol generates some random key and some random nonce pair, Dave generates some random key and some random nonce pair.
 Dave generates some random key and some random nonce pair, and they use that pair solely for this particular PTLC.
 They then, instead of signing it regularly, they commit to a partial signature that is broken and that is tweaked by whatever the PTLC has to be.
-Here the PTLC has to be a plus b plus c plus z.
-So therefore, a plus b plus c plus z is our tweak, which means that then, once we find out the valid signature later on, that that tweak is going to be lowercase a plus b plus c plus z.
-And guess what Carol needs to know in order to be able to spend Bob's PPLC?
-She needs to learn what a plus b plus c plus z.
-And guess what?
-Carol needs to know in order to be able to spend Bob's PTLC.
-She needs to learn what a plus b plus c plus z is, because then she can subtract her own secret that she received in the onion, and that way she can spend Bob's PTLC.
-So now the question of course is, I think you guys can figure it out, especially with this slide, why are we bothering with this MuSig complication here?
-Why do we have to have MuSig just to create an adapter signature that is tweaked damaged broken Whatever terminology when I use No, come on The same reasons you don't want the nodes private key leads, you don't want the payment point linked as well, if you're not doing the same knots, you know, computations or anything.
-Not quite.
-Just depending on that payment not to be there in general.
-Not quite.
-I mean, I guess, you know, what would happen if it were to be...
-What scenario are we trying to avoid?
-A payment being redeemed without it.
+Here the PTLC has to be A + B + C + Z.
+So therefore, A + B + C + Z is our tweak, which means that then, once we find out the valid signature later on, that that tweak is going to be lowercase A + B + C + Z.
+And guess what Carol needs to know in order to be able to spend Bob's PgLC?
+She needs to learn what A + B + C + Z.
+And guess what? Carol needs to know in order to be able to spend Bob's PTLC.
+She needs to learn what A + B + C + Z is, because then she can subtract her own secret that she received in the onion, and that way she can spend Bob's PTLC.
+So now the question of course is, I think you guys can figure it out, especially with this slide, why are we bothering with this MuSig complication here? Why do we have to have MuSig just to create an adapter signature that is tweaked damaged broken Whatever terminology when I use No, come on 
+
+Answer: The same reasons you don't want the nodes private key leads, you don't want the payment point linked as well, if you're not doing the same nonce , you know, computations or anything.
+
+Arik: Not quite. Just depending on that payment not to be there in general. Not quite.I mean, I guess, you know, what would happen if it were to be...What scenario are we trying to avoid?
+
+Answer: A payment being redeemed without it.
+
 Having gone through, yes.
 All right, you know what?
 I'll just tell you.
