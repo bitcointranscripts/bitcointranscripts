@@ -7,14 +7,14 @@ categories: ["podcast"]
 date: 2022-06-06
 ---
 **Tracepoints and monitoring the Bitcoin network**
-
+Speakers: Adam Jonas, Mark Erhardt, 0xB10C
 Adam Jonas: 00:00:00
 
 Hey, Merch. What up? We are back in the studio.
 
 Mark Erhardt: 00:00:02
 
-Who are we talking to today? We’re talking to OXB10C.
+Who are we talking to today? We’re talking to 0XB10C.
 
 Adam Jonas: 00:00:06
 
