@@ -177,101 +177,63 @@ One would hope.
 But, no idea.
 It's, it's still kind of up in the air.
 And I do hope that maybe some of you will also add your input to it on the spec discussion.
-So this, of course, is a situation where we weren't able to provide the pre-imagined time, and so the original person that offered the HTLC wants to spend it again because it never went through and there we have quite trivial one-to-one matching of what the script looked like before taproot and what it's going to look like after taproot.
-So nothing really all that complicated to get big into there.
-And yeah, I really think that the script path spence are not the difficult part of taproot.
-It's really going to be understanding and making sure that the cryptography is sound and safe.
-Now if you have a Taproot channel open and there are some other nodes in the network, then in principle What do you think?
-Are those other nodes able to send a payment if they don't support Taproot through a channel somewhere in the middle of the route that is a Taproot channel, or should they not be?
-Should be able to.
-Should be able to.
-In fact, cryptographically speaking, there isn't really anything preventing them from being able to do so, right?
-Well, here's the thing about Taproot, though.
-The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with taproot channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support taproot, in order to so much as be aware of the fact that there are taproot channels out there available for routing, they will need to understand taproot gossip before they even support actual taproot channels themselves.
-So this is one of the issues that has to be discussed.
-Now, El has a proposal up which says that for captured gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one.
-So you reduce the footprint of the gossip signature by a considerable amount.
-It's just, you have to actually do that aggregation, so it will add a little extra communication that is going to be necessary between nodes just as they are opening the channel.
+So this, of course, is a situation where we weren't able to provide the pre-imagined time, and so the original person that offered the HTLC wants to spend it again because it never went through and there we have quite trivial one-to-one matching of what the script looked like before taproot and what it's going to look like after taproot. So nothing really all that complicated to get big into there.
+
+And yeah, I really think that the script path spence are not the difficult part of taproot. It's really going to be understanding and making sure that the cryptography is sound and safe. Now if you have a taproot channel open and there are some other nodes in the network, then in principle What do you think? Are those other nodes able to send a payment if they don't support Taproot through a channel somewhere in the middle of the route that is a Taproot channel, or should they not be?
+
+Audience: Should be able to.
+
+Arik: In fact, cryptographically speaking, there isn't really anything preventing them from being able to do so, right?
+Well, here's the thing about Taproot, though. The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with taproot channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support taproot, in order to so much as be aware of the fact that there are taproot channels out there available for routing, they will need to understand taproot gossip before they even support actual taproot channels themselves. So this is one of the issues that has to be discussed.
+
+Now, L has a proposal up which says that for taproot gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one. So you reduce the footprint of the gossip signature by a considerable amount. It's just, you have to actually do that aggregation, so it will add a little extra communication that is going to be necessary between nodes just as they are opening the channel.
 And you also need to make sure that nodes understand what this gossip is supposed to look like even before they necessarily support taproot.
-So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot.
-So just going back to the beginning, so far we have talked about how in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as Now, because we're using Taproot and therefore we need to use Tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like.
-So it's quite a dependency tree, and I hope it gave you a little bit of an overview of what the constraints and design decisions and the vulnerabilities are that are driving the spec and why it is the way it is.
-However, there is some really cool stuff that Caput enables that I also want to dig into, and that is BTLCs. BTLCs are also going to be driven by a bunch of very similar considerations.
+
+So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot. So just going back to the beginning, so far we have talked about in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as Now, because we're using taproot and therefore we need to use tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like. So it's quite a dependency tree, and I hope it gave you a little bit of an overview of what the constraints and design decisions and the vulnerabilities are that are driving the spec and why it is the way it is.
+However, there is some really cool stuff that Taproot enables that I also want to dig into, and that is PTLCS. PTLCs are also going to be driven by a bunch of very similar considerations.
 But before I move on to PLCs, I was wondering if anybody had any questions so far.
 Yes?
-Does the fact that you have to explicitly announce the fact that you're on the gossip, does that get rid of any of the privacy issues, or any of the privacy methods that you get on-chain?
-Yeah, yeah.
-So if you're monitoring the Gaussian from lightning, then you would know the particular output on chain of course corresponds to the Lightning channel.
-And that is a privacy consideration that you're facing right now already.
-That is why there's talk about Gossipy 2, which would essentially be only committing to a fraction of the money that you have put up.
-But that is its own can of worms.
-So honestly, I can certainly recommend watching Matt Corralo's talk from CapConf last year, where he...
-Well, it was titled, Lightning Has Broken the Stock.
-And One of the major breakages is privacy.
-Lightning has atrocious privacy today.
-Even though with Tampered we improve on-chain privacy, if, say, Chainalysis and therefore the IRS—not, of course, that they're bad guys, but you know what I mean.
-If they were to monitor the Lightning Network, then they would also know what the outputs are, tampered outputs on-chain.
-So, Yeah, it's actually a big subject of research.
+
+Question: Does the fact that you have to explicitly announce the fact that you're on the gossip, does that get rid of any of the privacy issues, or any of the privacy methods that you get on-chain?
+
+Arik: Yeah. So if you're monitoring the Gaussian from lightning, then you would know the particular output on-chain of course corresponds to the Lightning channel. And that is a privacy consideration that we're facing right now already.
+That is why there's talk about Gossip v2, which would essentially be only committing to a fraction of the money that you have put up. But that is its own can of worms. So honestly, I can certainly recommend watching Matt Corralo's talk from CapConf last year, It was titled, Lightning Has Broken the Stock. And one of the major breakages is privacy.
+Lightning has atrocious privacy today. Even though with Tampered we improve on-chain privacy. If, say, Chainalysis and therefore the IRS—not, of course, that they're bad guys, but you know what I mean. If they were to monitor the Lightning Network, then they would also know what the outputs are, tampered outputs on-chain.
+
+So, it's actually a big subject of research.
 I don't think there is consensus quite yet, but I guess that v2 is the way to move forward, although I think it's slowly building.
-We'll see.
-I'm extremely curious to see how it's going to go, because it's definitely cause for concern.
-Because as long as you have these privacy considerations, if you want to extend—as long as you have privacy considerations, you also have censorship considerations.
-Because as long as anybody knows who payment initiators or secants are, they can be censored.
-So I think it's a major issue for the full kind of research and investigation on Lightning.
-But That being said, another aspect where we can somewhat impropriate the STTLCs, because of the issue that I mentioned earlier, where payments in hops could not be correlated.
-Even though, to be quite frank, today already the odds of multiple hop All right.
-Even today, the odds of multiple hops being correlated on chain are fairly low because you have to have multiple channels go on chain with HTLCs in flight, which, let's be honest, is not a big risk.
-What this does help though with is wormhole attacks, for example, where somebody can see, if somebody has multiple nodes that they're controlling and those nodes are talking to one another and it just so happens that multiple of those nodes are involved in the same route of payment, then they would know that they are involved in the same payment and they would be able to steal some money.
-With BTLCs, they wouldn't know because there is no correlation whatsoever.
-So how do BTLCs work precisely?
-Actually who here already knows how BTLCs work?
-All right, cool.
-I'm really glad that I'm finally able to actually bring up something that people here are not as familiar with.
-Let's say that Alice is trying to pay Emily, or more precisely, Emily is trying to get paid by Alice.
-I'm using this particular phrasing because Emily is the one that has to initiate the whole flow by creating an invoice.
-Her invoice is no longer going to be a hatch.
-What Emily does is she generates some random number z, some number of which is within the finite field we're using for our elliptic curve, and she multiplies it with a generator point, as we always do, so essentially the public point corresponding to that private integer, and she sends uppercase Z to Alice.
-So that uppercase Z is now the invoice.
-So the invoice, instead of being a hash, is and will be curve point.
-What Alice does is the following.
-So Alice sees that there are a bunch of intermediate moms, namely Bob, Carol, and Faith.
-And Alice generates four random numbers, one for herself and one for each of the intermediate moms.
-Those random numbers are A, B, C, and D, quite easy to keep track of.
-And she sends her first PTLC message to Bob.
-What does it contain?
-It contains Bob's own secret number, B, as well as a PTLC that is locked to Alice's public point corresponding to her secret number, so uppercase A, and the addition of that, and uppercase Z, which Alice originally received from Emily.
-Then Bob, having received this PTLC, he sends a PTLC to Carol, because he knows who the next hop is.
-And that PTLC to Carol is locked to the thing, the value that it was locked to from Alice, A plus B, plus uppercase B, which Bob is trivially able to calculate by simply taking his own secret number that he received and multiplying it to the generated point.
-However, how then is Bob able to send a PTLC to Carol or how is Carol able to send a BTLC today?
-The interesting thing is that the BTLC that Bob sends to Carol in the Onion message also contains the secret number that Alice generated for Carol.
+We'll see. I'm extremely curious to see how it's going to go, because it's definitely cause for concern. Because as long as you have these privacy considerations, if you want to extend—as long as you have privacy considerations, you also have censorship considerations. Because as long as anybody knows who payment initiators or secants are, they can be censored. So I think it's a major issue for the full kind of research and investigation on Lightning.
+
+But That being said, another aspect where we can somewhat improve privacy as PTLCs, because of the issue that I mentioned earlier, where payments in hops could not be correlated. Even though, to be quite frank, today already the odds of multiple hops.
+
+Even today, the odds of multiple hops being correlated on-chain are fairly low because you have to have multiple channels go on-chain with HTLCs in-flight, which, let's be honest, is not a big risk. What this does help though with is wormhole attacks, for example, where somebody can see, if somebody has multiple nodes that they're controlling and those nodes are talking to one another and it just so happens that multiple of those nodes are involved in the same route of payment, then they would know that they are involved in the same payment and they would be able to steal some money.
+With PTLCs, they wouldn't know because there is no correlation whatsoever.
+
+So how do PTLCs work precisely? Actually who here already knows how PTLCs work?
+
+All right, cool.I'm really glad that I'm finally able to actually bring up something that people here are not as familiar with.
+Let's say that Alice is trying to pay Emily, or more precisely, Emily is trying to get paid by Alice. I'm using this particular phrasing because Emily is the one that has to initiate the whole flow by creating an invoice. Her invoice is no longer going to be a hatch. What Emily does is she generates some random number z, some number of which is within the finite field we're using for our elliptic curve, and she multiplies it with a generator point, as we always do, so essentially the public point corresponding to that private integer, and she sends uppercase Z to Alice.
+
+So that uppercase Z is now the invoice.So the invoice, instead of being a hash, is and will be curve point.
+What Alice does is the following. So Alice sees that there are a bunch of intermediate hops, namely Bob, Carol, and Faith.
+And Alice generates four random numbers, one for herself and one for each of the intermediate hops.
+Those random numbers are A, B, C, and D, quite easy to keep track of. And she sends her first PTLC message to Bob.
+What does it contain? It contains Bob's own secret number, B, as well as a PTLC that is locked to Alice's public point corresponding to her secret number, so uppercase A, and the addition of that, and uppercase Z, which Alice originally received from Emily. Then Bob, having received this PTLC, he sends a PTLC to Carol, because he knows who the next hop is. And that PTLC to Carol is locked to the thing, the value that it was locked to from Alice, A plus B, plus uppercase B, which Bob is trivially able to calculate by simply taking his own secret number that he received and multiplying it to the generated point.
+
+However, how then is Bob able to send a PTLC to Carol or how is Carol able to send a PTLC to Dave? The interesting thing is that the PTLC that Bob sends to Carol in the Onion message also contains the secret number that Alice generated for Carol.
 Bob doesn't know it because it's in the onion, but Carol does.
-And that is where I really struggled with the visualization.
-So the PTLCs are truly peer-to-peer, but this thing that is originating from the very beginning, you know, those lowercase b, c, d, and the sum here, those are meant to be in the onion packet that Alice sends.
-And so those are only ever unwrapped at that corresponding point.
-So then Carol sends a PTLC to Dave where she takes her incoming PTLC and tweaks it by the elliptic curve point corresponding to the secret that she extracted from, from the onion.
-And Dave does the same.
-And then ultimately, Emily receives one.
-But the secret that Emily receives is not some random number that Alice generated for her, but it is the sum of all the random numbers that Alice generated.
-And why does it work?
-Well, let's work our way backwards.
-So Emily has received a PTLC that is locked to the sum of all of these points, uppercase A plus B plus C plus D, as well as her own invoice.
-She is able to unlock it because she obviously knows her own secret, her own lowercase z, and she knows the sum of the other points, albeit not any one of them individually.
-The reason she knows that sum is because Alice sent it to her in the onion packet.
-So then when she unlocks it, This is where the PTLC magic is coming in.
-So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A plus B plus C plus D plus Z.
-And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PLC from Carol.
-And that propagates all the way to the bottom.
-Smooth sliding animation.
-Where the last step has Alice subtracting her own secret from the thing that was unlocked by Bob, and then she gets lowercase z, which is now our proof of payment, which is really elegant.
-You can see that each hop has a completely random PTLC value.
-Now the magic is, how do we design a system where we are able to extract the secret?
-Where the proceeding hop, just based on the signature, is able to know, okay, this is how they are able to create a valid signature for the other op that came before that.
-This is where adapter signatures come in.
-There's always a lot of talk about adapter signatures, but I think I'll leave it.
-I think it's helpful to just talk a little bit about how precisely they work.
-An adapter signature looks almost exactly...
-No, drop that.
-It looks exactly like a Schnorr signature, except it is invalid.
+
+And that is where I really struggled with the visualization. So the PTLCs are truly peer-to-peer, but this thing that is originating from the very beginning, you know, those lowercase b, c, d, and the sum here, those are meant to be in the onion packet that Alice sends.And so those are only ever unwrapped at that corresponding point.
+
+So then Carol sends a PTLC to Dave where she takes her incoming PTLC and tweaks it by the elliptic curve point corresponding to the secret that she extracted from, from the onion. And Dave does the same. And then ultimately, Emily receives one. But the secret that Emily receives is not some random number that Alice generated for her, but it is the sum of all the random numbers that Alice generated.
+
+And why does it work? Well, let's work our way backwards. So Emily has received a PTLC that is locked to the sum of all of these points, uppercase A plus B plus C plus D, as well as her own invoice. She is able to unlock it because she obviously knows her own secret, her own lowercase z, and she knows the sum of the other points, albeit not any one of them individually. The reason she knows that sum is because Alice sent it to her in the onion packet. So then when she unlocks it, This is where the PTLC magic is coming in.
+
+So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A plus B plus C plus D plus Z. And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PLC from Carol.And that propagates all the way to the bottom. Where the last step has Alice subtracting her own secret from the thing that was unlocked by Bob, and then she gets lowercase z, which is now our proof of payment, which is really elegant. You can see that each hop has a completely random PTLC value.
+
+Now the magic is, how do we design a system where we are able to extract the secret? Where the proceeding hop, just based on the signature, is able to know, okay, this is how they are able to create a valid signature for the other op that came before that. This is where adaptor signatures come in. There's always a lot of talk about adapter signatures, but I think I'll leave it. I think it's helpful to just talk a little bit about how precisely they work.
+
+An adapter signature looks almost exactly... It looks exactly like a Schnorr signature, except it is invalid.
 It is tweaked.
 As you can see here, we have, you know, if we ignore the T here, we have exactly the thing that we would expect from a Schnorr signature, but our commitment in the hash is not to all random nods, but our random nods plus some tweaked T.
 So what happens is, in order to be able to spend it, we need to find out what the tweak is, and then we can fix our little signature.
@@ -513,13 +475,9 @@ But just reading this, people might be confused because they'll say, oh, if CHEC
 But if OP CHECKSIG does not verify, then we have a 0, and then we have 0 OP CHECKSQUENCEVERIFY.
 And The question is, would it then mean that without a valid signature, we would be able to spend it without delay?
 Well, it doesn't, because OP CSV has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals. But just reading the script, nobody would know.
-So this is something where we are still figuring out what the stack ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility.
-I guess that is kind of the perennial debate within Bitcoin's script.
-Maybe simplicity will make things simpler.
-One would hope.
-But, no idea.
-It's, it's still kind of up in the air.
-And I do hope that maybe some of you will also add your input to it on the spec discussion.
+So this is something where we are still figuring out what the spec ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility. I guess that is kind of the perennial debate within Bitcoin's script.
+Maybe simplicity will make things simpler. One would hope. But, no idea. It's, it's still kind of up in the air. And I do hope that maybe some of you will also add your input to it on the spec discussion.
+
 So this, of course, is a situation where we weren't able to provide the pre-imagined time, and so the original person that offered the HTLC wants to spend it again because it never went through and there we have quite trivial one-to-one matching of what the script looked like before taproot and what it's going to look like after taproot.
 So nothing really all that complicated to get big into there.
 And yeah, I really think that the script path spence are not the difficult part of taproot.
@@ -533,8 +491,7 @@ Well, here's the thing about Taproot, though.
 The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with taproot channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support taproot, in order to so much as be aware of the fact that there are taproot channels out there available for routing, they will need to understand taproot gossip before they even support actual taproot channels themselves.
 So this is one of the issues that has to be discussed.
 Now, El has a proposal up which says that for captured gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one.
-So you reduce the footprint of the gossip signature by a considerable amount.
-It's just, you have to actually do that aggregation, so it will add a little extra communication that is going to be necessary between nodes just as they are opening the channel.
+So you reduce the footprint of the gossip signature by a considerable amount. It's just, you have to actually do that aggregation, so it will add a little extra communication that is going to be necessary between nodes just as they are opening the channel.
 And you also need to make sure that nodes understand what this gossip is supposed to look like even before they necessarily support taproot.
 So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot.
 So just going back to the beginning, so far we have talked about how in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as Now, because we're using Taproot and therefore we need to use Tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like.
