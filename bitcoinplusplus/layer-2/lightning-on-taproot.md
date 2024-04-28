@@ -19,6 +19,7 @@ I guess I should have asked this question before showing this slide, but let me 
 
 
 ### BETTER PRIVACY
+
 Arik: Yeah, so the biggest reason, of course, is that we have privacy improvements. At least, you know, assuming that eventually everybody is going to be using Pay to Taproot addresses. As you know, Taproot is segwit v1. Segwit was segwit v0, that was our new soft fork mechanism. If at some point we decide that we need segwit v2, then all of the old lightning Taproot channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
  
 We are also able to improve privacy by decorrelating payments.That is PTLCs. And that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because they are the primary issues that we have with HTLCs right now that if we were to have multiple channels that have the same in-flight HTLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, you know, link one channel to the other.
@@ -217,7 +218,7 @@ So the way that the unlocking is supposed to work is It's supposed to reveal to 
 
 ### ADAPTOR SIGNATURES
 
-Now the magic is, how do we design a system where we are able to extract the secret? Where the proceeding hop, just based on the signature, is able to know; okay, this is how they are able to create a valid signature for the other op that came before that. This is where adaptor signatures come in. There's always a lot of talk about adapter signatures, but I think I'll leave it. I think it's helpful to just talk a little bit about how precisely they work.
+Now the magic is, how do we design a system where we are able to extract the secret? Where the proceeding hop, just based on the signature, is able to know; okay, this is how they are able to create a valid signature for the other hop that came before that. This is where adaptor signatures come in. There's always a lot of talk about adapter signatures, but I think I'll leave it. I think it's helpful to just talk a little bit about how precisely they work.
 
 An adapter signature looks almost exactly... It looks exactly like a Schnorr signature, except it is invalid. It is tweaked.
 As you can see here, we have, you know, if we ignore the T here, we have exactly the thing that we would expect from a Schnorr signature, but our commitment in the hash is not to all random nonce, but our random nonce plus some tweaked T.
@@ -261,13 +262,17 @@ Arik: It's an extra round trip. So now an HTLC round trip is 1.5 round trips. He
 Question: Do the nonces need as an input the PTLC point transfer? Can you sort of pre-share, like here's the next 10 nonces and you can do pre-sharing. 
 
 Arik: Well, you can always do pre-sharing, but then with pre-sharing, you have to figure out, okay, how many do you have to share, how frequently do you have to share? You're still moving the round trips. I guess you can do it slightly less frequently.It also depends on how frequent your payments are. If you have like a million payments per hour, that pre-sharing isn't going to be much good. But that is exactly the sort of thing that I think warrants research. The only issue is right now we can't do the research because I keep getting pulled back into Swift stuff, so I don't need to come here. Simple, backward channels. It's just not ready.I sincerely apologize for being here talking about this stuff instead of actually implementing it.
-Here we are. Are there any questions? I'm sorry it took so long, because it's been 51 minutes. But I hope it was actually elucidating to some degree.
+Here we are. 
+
+### CONCLUSION
+
+Are there any questions? I'm sorry it took so long, because it's been 51 minutes. But I hope it was actually elucidating to some degree.
 
 Question: So just in terms of, you're working on it in LDK. I know that Rose Creek's doing it on the side. Is every implementation sort of on board and getting all these things, or is it sort of one set of people's going?
 
 Arik: No, I think the spec hasn't been merged yet and there are still new comments popping up. And initially we had agreement to...So one of the things that I was really excited about initially, still am to be quite honest, with the channel opening, if you read the spec, you have all of those different, you know, the remote, local non-spare, remote non-spare, partial signature for this, partial signature for that. I was hoping to simplify the messaging a little bit to say, you know, if we have this partial signature, the partial signature only ever contains the remote nonce because that is the only situation where it's relevant.
 
-So create a new message type that is partial signature with nonce such that the other party would immediately know what it is they're dealing with. And as they are processing and verifying the signature, the same blob would already contain the partial nonce that they need to verify the Musig2 aggregation against. And delay it to the point where it's needed, such that you do everything just in time and you do semantic aggregation so people understand the meaning and have an easier time following the protocol. But there has been some back and forth on that, and moving when messages are supposed to be back to the original and then splitting the partial signature nonce back into a partial signature and the nonce, where now you have to understand what the hell a remote nonce even means. 
+Arik: So create a new message type that is partial signature with nonce such that the other party would immediately know what it is they're dealing with. And as they are processing and verifying the signature, the same blob would already contain the partial nonce that they need to verify the Musig2 aggregation against. And delay it to the point where it's needed, such that you do everything just in time and you do semantic aggregation so people understand the meaning and have an easier time following the protocol. But there has been some back and forth on that, and moving when messages are supposed to be back to the original and then splitting the partial signature nonce back into a partial signature and the nonce, where now you have to understand what the hell a remote nonce even means. 
 
 Is it remote for the person sending it or is it remote for the recipient? It's a pain to read and understand this protocol because MuSig2 is kind of annoying. If we could make the stipulation that a local nonce is ever going to be used for a signature once, then of course the local nonce would only ever need to be exchanged once because we wouldn't have to worry about signature reuse, but that is not a stipulation that you can safely make.
 
