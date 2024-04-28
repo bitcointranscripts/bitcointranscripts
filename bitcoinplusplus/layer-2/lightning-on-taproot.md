@@ -488,8 +488,7 @@ Does the fact that you have to explicitly announce the fact that you're on the g
 Yeah, yeah.
 So if you're monitoring the Gaussian from lightning, then you would know the particular output on chain of course corresponds to the Lightning channel.
 And that is a privacy consideration that you're facing right now already.
-That is why there's talk about Gossipy 2, which would essentially be only committing to a fraction of the money that you have put up.
-But that is its own can of worms.
+That is why there's talk about Gossip v2, which would essentially be only committing to a fraction of the money that you have put up. But that is its own can of worms.
 So honestly, I can certainly recommend watching Matt Corralo's talk from CapConf last year, where he...
 Well, it was titled, Lightning Has Broken the Stock.
 And One of the major breakages is privacy.
