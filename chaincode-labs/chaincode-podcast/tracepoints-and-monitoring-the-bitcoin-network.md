@@ -244,7 +244,7 @@ Other, other things that you’ve observed running the mining pool observer as t
 
 Yeah, of course, like the mining pool observer, it works by comparing a block that was recently mined to a block template that was recently created from my node. So obviously there are some differences between the my nodes mempool and the mining pools mempool and we can’t exactly time when the mining pool actually created his block template but we can still compare the template, my template and the pools block and figure out, for example, which transactions are shared. We hope that’s a big part, but we can actually see transactions that are missing from the block that we think should be in the block. We can also see transactions that are extra to the block. So one transaction that’s always extra is the coinbase. We don’t have that in our block template. Some other times we for example see the payouts and consideration transactions from pools which they sometimes include via a zero fee payment. So they don’t specify any fees, they are not related on the network and we can detect them being included there. And of course transaction accelerators for example ERPTC runs a transaction accelerator, you pay an out-of-band fee and they include your low fee transaction really early on in their block and we can see that for example.
 
-Speaker 1: 00:10:32
+Mark Erhardt: 00:10:32
 
 So you would say that generally you see all the mining pools you’re observing as using the same block building as Bitcoin Core? Yes. But they sometimes prioritize transactions because of out of band or their own usage.
 
