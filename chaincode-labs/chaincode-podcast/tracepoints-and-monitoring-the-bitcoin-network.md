@@ -2,12 +2,13 @@
 title: "Tracepoints and monitoring the Bitcoin network"
 transcript_by: ttiiggss via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Tracepoints-and-monitoring-the-Bitcoin-network-e1jipel
+tags: ["mining"]
 speakers: ["0xB10C","Adam Jonas","Mark Erhardt"]
 categories: ["podcast"]
 date: 2022-06-06
 ---
 **Tracepoints and monitoring the Bitcoin network**
-Speakers: Adam Jonas, Mark Erhardt, 0xB10C
+
 Adam Jonas: 00:00:00
 
 Hey, Merch. What up? We are back in the studio.
