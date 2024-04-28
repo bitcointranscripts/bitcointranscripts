@@ -316,7 +316,7 @@ And initially we had agreement to...
 So one of the things that I was really excited about initially, still am to be quite honest, with the channel opening, if you read the spec, you have all of those different, you know, the remote, local non-spare, remote non-spare, partial signature for this, partial signature for that.
 I was hoping to simplify the messaging a little bit to say, you know, if we have this partial signature, the partial signature only ever contains the remote nonce because that is the only situation where it's relevant.
 So create a new message type that is partial signature with nonce such that the other party would immediately know what it is they're dealing with.
-And as they are processing and verifying the signature, the same blob would already contain the partial nonce that they need to verify the mustic2 aggregation against.
+And as they are processing and verifying the signature, the same blob would already contain the partial nonce that they need to verify the Musig2 aggregation against.
 And delay it to the point where it's needed, such that you do everything just in time and you do semantic aggregation so people understand the meaning and have an easier time following the protocol.
 But there has been some back and forth on that, and moving when messages are supposed to be back to the original and then splitting the partial signature nonce back into a partial signature and the nonce, where now you have to understand what the hell a remote nonce even means.
 Is it remote for the person sending it or is it remote for the recipient?
@@ -496,8 +496,8 @@ And you also need to make sure that nodes understand what this gossip is suppose
 So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot.
 So just going back to the beginning, so far we have talked about how in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as Now, because we're using Taproot and therefore we need to use Tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like.
 So it's quite a dependency tree, and I hope it gave you a little bit of an overview of what the constraints and design decisions and the vulnerabilities are that are driving the spec and why it is the way it is.
-However, there is some really cool stuff that Caput enables that I also want to dig into, and that is BTLCs. BTLCs are also going to be driven by a bunch of very similar considerations.
-But before I move on to PLCs, I was wondering if anybody had any questions so far.
+However, there is some really cool stuff that Caput enables that I also want to dig into, and that is PTLCs. PTLCs are also going to be driven by a bunch of very similar considerations.
+But before I move on to PTLCs, I was wondering if anybody had any questions so far.
 Yes?
 Does the fact that you have to explicitly announce the fact that you're on the gossip, does that get rid of any of the privacy issues, or any of the privacy methods that you get on-chain?
 Yeah, yeah.
@@ -522,9 +522,9 @@ But That being said, another aspect where we can somewhat impropriate the STTLCs
 Even though, to be quite frank, today already the odds of multiple hop All right.
 Even today, the odds of multiple hops being correlated on chain are fairly low because you have to have multiple channels go on chain with HTLCs in flight, which, let's be honest, is not a big risk.
 What this does help though with is wormhole attacks, for example, where somebody can see, if somebody has multiple nodes that they're controlling and those nodes are talking to one another and it just so happens that multiple of those nodes are involved in the same route of payment, then they would know that they are involved in the same payment and they would be able to steal some money.
-With BTLCs, they wouldn't know because there is no correlation whatsoever.
-So how do BTLCs work precisely?
-Actually who here already knows how BTLCs work?
+With PTLCs, they wouldn't know because there is no correlation whatsoever.
+So how do PTLCs work precisely?
+Actually who here already knows how PTLCs work?
 All right, cool.
 I'm really glad that I'm finally able to actually bring up something that people here are not as familiar with.
 Let's say that Alice is trying to pay Emily, or more precisely, Emily is trying to get paid by Alice.
@@ -542,8 +542,8 @@ What does it contain?
 It contains Bob's own secret number, B, as well as a PTLC that is locked to Alice's public point corresponding to her secret number, so uppercase A, and the addition of that, and uppercase Z, which Alice originally received from Emily.
 Then Bob, having received this PTLC, he sends a PTLC to Carol, because he knows who the next hop is.
 And that PTLC to Carol is locked to the thing, the value that it was locked to from Alice, A plus B, plus uppercase B, which Bob is trivially able to calculate by simply taking his own secret number that he received and multiplying it to the generated point.
-However, how then is Bob able to send a PTLC to Carol or how is Carol able to send a BTLC today?
-The interesting thing is that the BTLC that Bob sends to Carol in the Onion message also contains the secret number that Alice generated for Carol.
+However, how then is Bob able to send a PTLC to Carol or how is Carol able to send a PTLC today?
+The interesting thing is that the PTLC that Bob sends to Carol in the Onion message also contains the secret number that Alice generated for Carol.
 Bob doesn't know it because it's in the onion, but Carol does.
 And that is where I really struggled with the visualization.
 So the PTLCs are truly peer-to-peer, but this thing that is originating from the very beginning, you know, those lowercase b, c, d, and the sum here, those are meant to be in the onion packet that Alice sends.
