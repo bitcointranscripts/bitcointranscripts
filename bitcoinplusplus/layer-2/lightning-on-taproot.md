@@ -7,18 +7,19 @@ speakers: ["Arik Sosman"]
 categories: ["conference"]
 date: 2023-07-18
 ---
+
 # INTRODUCTION
-Hi my name is Arik. I work at Spiral. And most recently I've been working on adding support for taproot channels.
+Arik: Hi my name is Arik. I work at Spiral. And most recently I've been working on adding support for taproot channels.
 At least I try to work on that, but I'm getting pulled back into Swift bindings. And this presentation is supposed to be about why the taproot spec is laid out the way it is. And what are some of the motivations, constraints, limitations that are driving the design. And I wanna really dig deep into the math that's some of the vulnerabilities that we're trying to avoid as well as how we're solving those issues.
 
 
 ## MOTIVATION
-So first of all, obviously we know that Taproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on Taproot.
+Arik: So first of all, obviously we know that Taproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on Taproot.
 I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to volunteer.
 
 
 ### BETTER PRIVACY
-Yeah, so the biggest reason, of course, is that we have privacy improvements. At least, you know, assuming that eventually everybody is going to be using Pay to Taproot addresses. As you know, Taproot is segwit v1. Segwit was segwit v0, that was our new soft fork mechanism. If at some point we decide that we need segwit v2, then all of the old lightning Taproot channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
+Arik: Yeah, so the biggest reason, of course, is that we have privacy improvements. At least, you know, assuming that eventually everybody is going to be using Pay to Taproot addresses. As you know, Taproot is segwit v1. Segwit was segwit v0, that was our new soft fork mechanism. If at some point we decide that we need segwit v2, then all of the old lightning Taproot channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
  
 We are also able to improve privacy by decorrelating payments.That is PTLCs. And that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because they are the primary issues that we have with HTLCs right now that if we were to have multiple channels that have the same in-flight HTLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, you know, link one channel to the other.
 
@@ -36,38 +37,44 @@ And the cool thing about Schnorr signatures is that they allow us to have quite 
 
 So nobody monitoring the chain would know that channel open is actually a channel open because it would be theoretically indistinguishable from just regular transaction to a single key.And I hope that you all remember how Schnorr signatures look.
 You know, we see we have this big entity called S, and we have a public key point called R.We commit to our pub key, so here in this slide the example is Alice, So her public key is uppercase A, her private key is lowercase a.
-And Alice's signature is a commitment to the nonce that she used, her public key, and the message.
-In order to make sure that the signature doesn't leak her private key, we tweak the hash of her commitment with the message multiplied with her private key by a little random value called r.
-And we tweak that because if we weren't to tweak that, then somebody would trivially be able to apply the modular multiplicative inverse to lowercase s here and extract Alice's private key, which, of course, we seek to avoid.
-But even doing everything correctly here, there are some risks with creating two of two signatures, for example.
-One of those risks is naive key aggregation.
-The other one that I'm gonna talk about later is not so used, but what do I mean by naive key aggregation?
+And Alice's signature is a commitment to the nonce that she used, her public key, and the message. In order to make sure that the signature doesn't leak her private key, we tweak the hash of her commitment with the message multiplied with her private key by a little random value called r. And we tweak that because if we weren't to tweak that, then somebody would trivially be able to apply the modular multiplicative inverse to lowercase s here and extract Alice's private key, which, of course, we seek to avoid. 
+
+### RISK OF CREATING TWO SIGNATURES
+
+#### NAIVE KEY AGGREEGATION 
+Arik:  But even doing everything correctly here, there are some risks with creating two of two signatures, for example.
+One of those risks is naive key aggregation. The other one that I'm gonna talk about later is not so used, but what do I mean by naive key aggregation?
 So let's say that we have Alice and Bob, who are trying to open a channel between the two of them.
 And specifically, they're trying to figure out what their shared public key is gonna be.
 Obviously, somebody has gotta start in that protocol.
 So let's say that Alice initiates the conversation and she sends her public key to Bob, and then Bob is supposed to send his public key to Alice, and the sum of those two pubkeys is going to be the pubkey that's going to be the shared public key for the store signature.
+
 Well, Bob can quite trivially do an attack where having received Alice's public key first, he first generates his own pubkey, but then instead of sending his random pubkey back to Alice, he subtracts Alice's pubkey.
 And then as a result, we have that the sum of the two pubkeys that they calculate is one that completely eliminates Alice's.
 So It ends up that Bob has the capability to unilaterally create a signature.
-And of course, you do not want lightning channels where one of the parties is able to just unilaterally close it and unilaterally update the state without the other parties spying.
+And of course, you do not want lightning channels where one of the parties is able to just unilaterally close it and unilaterally update the state without the other parties spying. So that is one of the issues that require some solution.
 
-So that is one of the issues that require some solution.
+#### NONCE REUSE
 Another issue, of course, is nonce reuse.
 So here I have a quite simple equation where we have two separate signatures for different messages, m' and m'', but we're using the same nonce. As you can tell, lowercase r, which is a random number, and uppercase R, which is the same random number multiplied by the generator point, are equivalent.
 
 So what does the attack look like? Well first of all, we can subtract one signature from the other, and then we see that we simply — so the r's cancel each other out, and we end up with an equation that is just the private key multiplied with this expression that we can actually quite trivially calculate ourselves because we know the public key, we know the public nonce point, and we also know both messages.
+
 So knowing those, we apply the modular multiplicative inverse, and we have just solved for x, which is the private key.
 So not great, and really highlights how trivial it is to attack and to extract a private key if you have two signatures that have reused the same nonce.
 
 It's really, like I wish this equation were written out more frequently because I think people understate quite how trivial of an attack this is. I mean you can write Python code in like two minutes.
 
-Cody: That's how Sony got pawned, they were reusing nonces on all of their ECBSA signatures. It was the same nonce for all the signatures for all the Playstations.
+Remark : That's how Sony got pawned, they were reusing nonces on all of their ECBSA signatures. It was the same nonce for all the signatures for all the Playstations.
 
-Arik: Yeah, that is true. I believe that was the PlayStation 3, right?
+Arik: Yeah, that is true. I believe that was the PlayStation 3, right? Although for ECBSA signatures, so the thing about Schnorr is the math is so simple, it's just additional application.
 
-Although for ECBSA signatures, so the thing about Schnorr is the math is so simple, it's just additional application.
 You don't have any of the ECSA complications, so here you don't even have to think that long about why this attack is trivial.
-However, obviously we need to mitigate these attacks. So Musig2 comes to the rescue. I'm sure all of you have heard about Musig2 many times. And essentially, the main thing that Musig2 does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
+However, obviously we need to mitigate these attacks. 
+
+### MUSIG2 TO THE RESUCE
+
+So Musig2 comes to the rescue. I'm sure all of you have heard about Musig2 many times. And essentially, the main thing that Musig2 does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
 
 And those coefficients are deterministic. They are based on just hashing some of the data, and each participant hashes slightly different data. And that results in not being able to execute such targeted hacks, because if you were to try to execute a hack where you feed Alice an adversarial pub key, that would actually completely modify all the coefficients, and then you would be back to square one. So that's what MuSig does.
 
@@ -81,15 +88,15 @@ The important thing is just that you know which public key corresponds to which 
 And then, say if you're Alice and your pub key also comes first, so your index is 1, because in math, indices don't start at 0.
 If Alice's index is 1, then she simply takes her own pubkey, concatenates it with a hash of the sequence of all the pubkeys, which in this case would be first hers, then Bob's. That thing is hashed, and that hash is concatenated with her own pubkey, then we hash that again, and so, you know, because of elliptic curve photography, we can simply interpret hashes as big integers, you know, we take that hash, we take that hash and simply use that as a big integer that is a coefficient for her public key.
 
-Now, if you have been reading the MuSig2 protocol, then you will know that this is not actually true, because we have an exception for the second index.But in the grand scheme of things, it doesn't really matter. So I think for understanding what problem MuSig solves and how it does that, this is kind of deep enough. So I hope I haven't confused anybody yet.? All right, because next is Nonce segregation.
+Now, if you have been reading the MuSig2 protocol, then you will know that this is not actually true, because we have an exception for the second index. But in the grand scheme of things, it doesn't really matter. So I think for understanding what problem MuSig solves and how it does that, this is kind of deep enough. So I hope I haven't confused anybody yet.? All right, because next is Nonce segregation.
 
-###NONCE SEGREGATION
 And with nonces, we really do the same thing.And one might actually wonder, why, if we're already doing this stuff with keys, Do we even have to bother with nonce segregation and adding coefficients to our nonces? And actually, this is probably a good point where I should poll the audience. Any guesses as to why we care about nonce coefficients also?
 
-Yeah?
-Speaker 1: You could fool people into nonce-reuse, right?
+Arik: Yeah?
 
-Arik: You could fool people into non-serious, yeah. That is one thing. And you could also construct a nonce adversarily in such a way that you would then be able to unilaterally create a signature with MuSig2. So it's really pretty much the same thing.
+Question : You could fool people into nonce-reuse, right?
+
+Arik: You could fool people into non-reuse, yeah. That is one thing. And you could also construct a nonce adversarily in such a way that you would then be able to unilaterally create a signature with MuSig2. So it's really pretty much the same thing.
 
 And with Nonces, the protocol is a little more complicated. But I really still want to go through it, because one of the innovations with MuSig2 is how this protocol can work with just one round trip as opposed to multiple round trips that we had with regular MuSig. So the way this works is as follows. Each participant generates not one lowercase r that we had here Yeah, but they generate two So a MuSig2 nonce is actually not one nonce, but it is two nonces. Let me get back here.
 
@@ -99,8 +106,7 @@ And the coefficient we're using is actually the sum of the nonces with index 1, 
 
 So then, really, it's just a matter of aggregating all of those partial signatures with those nonces. But yeah, really the interesting trick, the cool innovation with MuSig is the fact that each participant sends two nonces at once, and that we then aggregate the nonces by their index across all the participants.
 However, even in MuSig2, you would think, all right, now we have this thing where we are calculating coefficient, so really, MuSig2 is guaranteeing that there should be no nonce reuse.
-Well, what happens if one of the participants were to reuse their original nonce, or their original nonce pair, across multiple partial signatures?
-So here I have simplified the equation a little bit, because really what we would get is, you know, this expression at first, the hash multiplied with a private key, plus, in principle, it ought to be C' , which times rA, and then plus rB, because we have those two.
+Well, what happens if one of the participants were to reuse their original nonce, or their original nonce pair, across multiple partial signatures? So here I have simplified the equation a little bit, because really what we would get is, you know, this expression at first, the hash multiplied with a private key, plus, in principle, it ought to be C' , which times rA, and then plus rB, because we have those two.
 
 But really, for the purposes of mathematical simplification, we're going to ignore the one that doesn't have a coefficient, because I think the coefficient one is more interesting.
 And this, I'm pretty sure everybody can tell, is a very simple linear equation system. So what we do is we simply multiply each one of these equations with the coefficient from the other one.And then we can simplify the equation, and we can extract x. We can extract the private key. You know, if I hadn't simplified this, if I had also included the other partial nonce, then we simply would have done this elimination step twice because, you know, we're trying to eliminate multiple variables, but we have sufficient equations to do so.
