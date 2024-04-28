@@ -74,7 +74,7 @@ However, obviously we need to mitigate these attacks.
 
 ### MUSIG2 TO THE RESUCE
 
-So Musig2 comes to the rescue. I'm sure all of you have heard about Musig2 many times. And essentially, the main thing that Musig2 does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
+Arik: So Musig2 comes to the rescue. I'm sure all of you have heard about Musig2 many times. And essentially, the main thing that Musig2 does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
 
 And those coefficients are deterministic. They are based on just hashing some of the data, and each participant hashes slightly different data. And that results in not being able to execute such targeted hacks, because if you were to try to execute a hack where you feed Alice an adversarial pub key, that would actually completely modify all the coefficients, and then you would be back to square one. So that's what MuSig does.
 
@@ -109,9 +109,10 @@ However, even in MuSig2, you would think, all right, now we have this thing wher
 Well, what happens if one of the participants were to reuse their original nonce, or their original nonce pair, across multiple partial signatures? So here I have simplified the equation a little bit, because really what we would get is, you know, this expression at first, the hash multiplied with a private key, plus, in principle, it ought to be C' , which times rA, and then plus rB, because we have those two.
 
 But really, for the purposes of mathematical simplification, we're going to ignore the one that doesn't have a coefficient, because I think the coefficient one is more interesting.
+
 And this, I'm pretty sure everybody can tell, is a very simple linear equation system. So what we do is we simply multiply each one of these equations with the coefficient from the other one.And then we can simplify the equation, and we can extract x. We can extract the private key. You know, if I hadn't simplified this, if I had also included the other partial nonce, then we simply would have done this elimination step twice because, you know, we're trying to eliminate multiple variables, but we have sufficient equations to do so.
 
-So why do we care about this?That is because we don't really trust our counterparty. Because in a multi-state setup, we don't really worry about the rest of the world attacking us and knowing what our private key is.We also really want to make sure that each one of the participants in a multi-signature cannot know what the other participant's private key is either.
+So why do we care about this? That is because we don't really trust our counterparty. Because in a multi-state setup, we don't really worry about the rest of the world attacking us and knowing what our private key is.We also really want to make sure that each one of the participants in a multi-signature cannot know what the other participant's private key is either.
 Because as soon as they do, we have lost the whole benefit of having a multi-sig setup.So now that we know that these are the steps that we need to do in order to avoid the pitfalls with Schnorr.We need to use MuSig2.
 
 How then do we transcript to actually creating and signing Lightning commitments? And before we'll dig into that, we need to first consider what the properties of Lightning commitments are. First of all, without SIGHASH, any Provout, or Covenants, or anything of the sort, we are going to have to rely on asymmetrical commitment transactions, which means that when Alice and Bob open a channel with one another, their commitment transactions are not going to look identical because we have the read-sharmony branch and the to-self delay is going to apply to different outputs depending on whether you're looking at the commitment transaction from Alice's or from Bob's perspective.
@@ -132,20 +133,12 @@ So that is why we have been proposing a little simplification of the protocol, w
 And the way it works is when Alice opens a channel, she doesn't even bother in theory sending any nonsense whatsoever because she doesn't even know whether Bob's going to accept the channel yet.
 So why generate any sort of cryptographic material if you're never going to end up using it.
 So if Bob Huber does opt to open a channel with Alice and accept it, then he can generate a local nonce pair for himself.
-And he then sends his own local nonce, which is still a pair, we have to remember that now even though it's called a nonce, it's still a nonce pair because of the whole MuSig2 thing.
-So he generates this local nonce pair and sends it to Alice.
-Now Alice knows what nonce of Bob she needs to combine her remote one with.
-And she can just trivially create a partial signature.
-And the nice thing is that now, because she has pre-committed her remote nonce, she can generate that partial signature and the nonce all in one step.
-So she needn't ever store her own remote nonce.
-In fact, you can just toss it out.
-She'll send it with Funding Creative and never, ever worry about it again.
-The other thing that she's gonna send with a Funding Creative message is also her own local nonce, such that Bob can later create a partial signature and then it's gonna be signed with Bob's own remote nonce and Alice's local one.
-And this scenario, once again, because Bob has not pre-committed to his own remote nonce, he can very trivially generate it randomly as he's doing the signature and then as soon as he has a signature he can toss it out because he will never ever need it again.
-With the channel operation we have pretty much the same thing.
-You know we have the commitment sign and remote and act messages where we do pretty much the same nonce exchanges.
-And we really...
-When we send a commitment sign, we just need to send the remote nonce, such that Bob can then use a partial signature and revoke an act, as well as any revoke an act, he will send one for the next step.
+And he then sends his own local nonce, which is still a pair, we have to remember that now even though it's called a nonce, it's still a nonce pair because of the whole MuSig2 thing. So he generates this local nonce pair and sends it to Alice.
+
+Now Alice knows what nonce of Bob she needs to combine her remote one with. And she can just trivially create a partial signature. And the nice thing is that now, because she has pre-committed her remote nonce, she can generate that partial signature and the nonce all in one step. So she needn't ever store her own remote nonce. In fact, you can just toss it out. She'll send it with Funding Creative and never, ever worry about it again. The other thing that she's gonna send with a Funding Creative message is also her own local nonce, such that Bob can later create a partial signature and then it's gonna be signed with Bob's own remote nonce and Alice's local one.
+
+And this scenario, once again, because Bob has not pre-committed to his own remote nonce, he can very trivially generate it randomly as he's doing the signature and then as soon as he has a signature he can toss it out because he will never ever need it again. With the channel operation we have pretty much the same thing.
+You know we have the commitment sign and remote and act messages where we do pretty much the same nonce exchanges. And we really...When we send a commitment sign, we just need to send the remote nonce, such that Bob can then use a partial signature and revoke an act, as well as any revoke an act, he will send one for the next step.
 He'll send the local nonce for the following iteration of the channel exchange.
 But really, there isn't much of a difference between channel opening and channel operation.
 Really the most important thing is that you have to have separate non-fairs for your own local commitment transaction and for the remote commitment transaction and it's something that can be a bit of a pain to keep track of.
@@ -170,12 +163,11 @@ But there's going to be a follow-up case where there's going to be a bigger ques
 So for HTLC offers, and I don't really want to go into accepted HTLCs because they're so similar to offered HTLCs. We still have the same situation that the revocation key is the unencumbered spend path.
 And for that reason, it becomes the key spend.
 For script spend paths, We now have two situations.
-So one of them is if we are able to provide the hash preimage, which is marked in green here, And the script looks a little complicated, but the point is, once OPTCHECKSIG verifies here, then it should be 1, and then we have OPTCHECKSQUENCEVERIFY.
-But if OPTCHECKSIG does not verify, then we have a 0, and then we have 0 OPTCHECKSQUENCEVERIFY.
+So one of them is if we are able to provide the hash preimage, which is marked in green here, And the script looks a little complicated, but the point is, once OP CHECKSIG verifies here, then it should be 1, and then we have OP CHECKSQUENCEVERIFY.
+But if OP CHECKSIG does not verify, then we have a 0, and then we have 0 OP CHECKSQUENCEVERIFY.
 And The question is, would it then mean that without a valid signature, we would be able to spend it without delay?
-Well, it doesn't, because Ops CSV has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals.
-But just reading the script, nobody would know.
-So this is something where we are still figuring out what the stack ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility.
+Well, it doesn't, because OP CSV has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals.
+But just reading the script, nobody would know. So this is something where we are still figuring out what the stack ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility.
 I guess that is kind of the perennial debate within Bitcoin's script.
 Maybe simplicity will make things simpler.
 One would hope.
