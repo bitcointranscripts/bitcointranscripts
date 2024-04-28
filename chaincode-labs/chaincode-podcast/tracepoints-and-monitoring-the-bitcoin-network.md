@@ -10,19 +10,15 @@ date: 2022-06-06
 
 Speaker 0: 00:00:00
 
-Hey, Merch.
-What up?
-We are back in the studio.
+Hey, Merch. What up? We are back in the studio.
 
 Speaker 1: 00:00:02
 
-Who are we talking to today?
-We're talking to OXB10C.
+Who are we talking to today? We’re talking to OXB10C.
 
 Speaker 0: 00:00:06
 
-I know him as Timo.
-So we're going to call him Timo.
+I know him as Timo. So we’re going to call him Timo.
 
 Speaker 1: 00:00:09
 
@@ -30,35 +26,27 @@ OK, fine.
 
 Speaker 0: 00:00:12
 
-It doesn't quite roll off the tongue.
-Is there anything in particular that you're interested in learning from Timo today?
+It doesn’t quite roll off the tongue. Is there anything in particular that you’re interested in learning from Timo today?
 
 Speaker 1: 00:00:17
 
-Yeah, I think we need to talk about Tether.
-What he's doing with Tether and Bitcoin.
+Yeah, I think we need to talk about Tether. What he’s doing with Tether and Bitcoin.
 
 Speaker 0: 00:00:22
 
-I'm not sure everybody's going to get that joke.
+I’m not sure everybody’s going to get that joke.
 
 Speaker 1: 00:00:24
 
-That's fine.
+That’s fine.
 
 Speaker 0: 00:00:25
 
-That's it?
-You got to explain that?
+That’s it? You got to explain that?
 
 Speaker 1: 00:00:29
 
-All right, fine.
-USDT is user space statically defined tracing.
-Also rolls off the tongue.
-Totally.
-Also a short moniker for tether.
-That's why.
+All right, fine. USDT is user space statically defined tracing. Also rolls off the tongue. Totally. Also a short moniker for tether. That’s why.
 
 Speaker 2: 00:00:42
 
@@ -66,41 +54,29 @@ Got it.
 
 Speaker 0: 00:00:42
 
-That's the term.
-Well, we will talk to Timo about trace points.
+That’s the term. Well, we will talk to Timo about trace points.
 
 Speaker 1: 00:00:45
 
-Anything else?
-Temperate activation and mining pool observation.
+Anything else? Temperate activation and mining pool observation.
 
 Speaker 0: 00:00:49
 
-Yeah.
-That's what I think.
-He knows all that stuff.
-Yeah.
-All right.
-Well looking forward to our conversation.
-Hope you enjoy it, too.
+Yeah. That’s what I think. He knows all that stuff. Yeah. All right. Well looking forward to our conversation. Hope you enjoy it, too.
 
 ## What he's been up to since the residency
 
 Speaker 0: 00:01:05
 
-Timo, welcome back to the Chaincode office.
-You've been here before.
-Correct, yes.
-Yes.
+Timo, welcome back to the Chaincode office. You’ve been here before. Correct, yes. Yes.
 
 Speaker 2: 00:01:13
 
-Tell us last time.
-Yeah, it has been three years now.
+Tell us last time. Yeah, it has been three years now.
 
 Speaker 0: 00:01:15
 
-Nothing's happened since then.
+Nothing’s happened since then.
 
 Speaker 2: 00:01:16
 
@@ -108,66 +84,45 @@ No, nothing at all.
 
 Speaker 0: 00:01:17
 
-No, it's been the same.
-Timo was in the 2019 residency, the last in-person residency that we ran.
-And in this very room was heckling our various presenters about Bitcoin and Lightning.
-And we did those two weeks of seminars.
-So since then, what have you been up to?
-What happened after that?
+No, it’s been the same. Timo was in the 2019 residency, the last in-person residency that we ran. And in this very room was heckling our various presenters about Bitcoin and Lightning. And we did those two weeks of seminars. So since then, what have you been up to? What happened after that?
 
 Speaker 2: 00:01:37
 
-After that, actually, I joined a startup in Zurich, the Shift Crypto guys.
-We worked on Plug and Play Bitcoin node.
-And I later moved on to Coinmetrics, did some mempool monitoring there, did some mining pool monitoring there, for example, which blocks mining pools mine on and so on, connecting to these certain pools and seeing what they're giving out to the miners.
+After that, actually, I joined a startup in Zurich, the Shift Crypto guys. We worked on Plug and Play Bitcoin node. And I later moved on to Coinmetrics, did some mempool monitoring there, did some mining pool monitoring there, for example, which blocks mining pools mine on and so on, connecting to these certain pools and seeing what they’re giving out to the miners.
 
 Speaker 0: 00:02:00
 
-And so was that closed source?
-Was that open source?
-Cause you clearly sort of gone into the...
+And so was that closed source? Was that open source? Cause you clearly sort of gone into the…
 
 Speaker 2: 00:02:05
 
-That's industry work.
-That's closed source.
-There are products using that behind the scenes.
+That’s industry work. That’s closed source. There are products using that behind the scenes.
 
 Speaker 0: 00:02:09
 
-Got it.
-Okay.
-And so since then you've been in the monitoring world.
-Great.
+Got it. Okay. And so since then you’ve been in the monitoring world. Great.
 
 Speaker 2: 00:02:14
 
-Yeah.
-I'm really interested in what is happening on the Bitcoin network and what people are doing there and what they are not doing.
+Yeah. I’m really interested in what is happening on the Bitcoin network and what people are doing there and what they are not doing.
 
 Speaker 0: 00:02:22
 
-So tell us, what's the motivation to do that?
-Why did you gravitate towards those kinds of projects?
+So tell us, what’s the motivation to do that? Why did you gravitate towards those kinds of projects?
 
 Speaker 2: 00:02:28
 
-So Bitcoin is an open system.
-You can do and you cannot do anything you like in the realms of, for example, policy or consensus.
-So it's really interesting to see how people behave in such an open system.
-And we often can gather insights and feed them back into development and improve things and make things easier or align incentives better in some way or another.
+So Bitcoin is an open system. You can do and you cannot do anything you like in the realms of, for example, policy or consensus. So it’s really interesting to see how people behave in such an open system. And we often can gather insights and feed them back into development and improve things and make things easier or align incentives better in some way or another.
 
 ## Monitoring the mempool
 
 Speaker 0: 00:02:53
 
-Cool.
-So the first project that I recall you were doing, the Mempool Observer.
+Cool. So the first project that I recall you were doing, the Mempool Observer.
 
 Speaker 2: 00:02:57
 
-Correct.
-Yeah.
+Correct. Yeah.
 
 Speaker 0: 00:02:58
 
@@ -175,66 +130,39 @@ So tell me about that project and then what did that morph into?
 
 Speaker 2: 00:03:01
 
-So really early on, when I got started working on open source projects for Bitcoin, this was one of my first projects just mimicking Jochen Hoeneke's Mempool queue site, just because I wanted to try it out myself.
-And I'm seeing where I got there.
-Then did another version of that in 2019, actually during the residency here, added a more like a live transaction monitor to that.
-So we actually plot the transactions by time they entered by mempool and their fee rate they paid.
-And from that we actually can see some patterns.
-We can see people following fee rates or the estimates of the fee rates.
-We can actually see people doing consolidations, doing best payments, doing RBF and so on.
-That's really interesting to observe and learn from and see the patterns emerging there.
+So really early on, when I got started working on open source projects for Bitcoin, this was one of my first projects just mimicking Jochen Hoeneke’s Mempool queue site, just because I wanted to try it out myself. And I’m seeing where I got there. Then did another version of that in 2019, actually during the residency here, added a more like a live transaction monitor to that. So we actually plot the transactions by time they entered by mempool and their fee rate they paid. And from that we actually can see some patterns. We can see people following fee rates or the estimates of the fee rates. We can actually see people doing consolidations, doing best payments, doing RBF and so on. That’s really interesting to observe and learn from and see the patterns emerging there.
 
 Speaker 1: 00:03:51
 
-One pattern that I really enjoyed looking at was multi-sig.
-You could split out the specific types of multi-sig and fee rate estimations as an overlay.
-And it was fairly easy to discover some of the market participants that way.
-Correct.
+One pattern that I really enjoyed looking at was multi-sig. You could split out the specific types of multi-sig and fee rate estimations as an overlay. And it was fairly easy to discover some of the market participants that way. Correct.
 
 Speaker 2: 00:04:05
 
-Yeah.
-Actually, I did a whole series of blog posts on that.
-Based on the data I observed there, for example, observing the blockchain.com wallet, you can closely follow their fee rate estimates and actually see the people using these wallets.
-So back at the time, they claimed to have one third of the market share in transactions.
-And I think that's true based on the data I've observed.
+Yeah. Actually, I did a whole series of blog posts on that. Based on the data I observed there, for example, observing the blockchain.com wallet, you can closely follow their fee rate estimates and actually see the people using these wallets. So back at the time, they claimed to have one third of the market share in transactions. And I think that’s true based on the data I’ve observed.
 
 ## Monitoring Mining pools
 
 Speaker 0: 00:04:27
 
-So as you do these monitoring projects, and you did, you started with mempool, but that morphed into mining pool as well.
-So why mining pool?
-Why is that an interesting difference?
+So as you do these monitoring projects, and you did, you started with mempool, but that morphed into mining pool as well. So why mining pool? Why is that an interesting difference?
 
 Speaker 2: 00:04:37
 
-One key property of Bitcoin is this interstitial resistance.
-And we were fine as long as one mining pool says, okay, I don't mine one transaction.
-I don't allow this transaction to be included in my block.
-We're fine.
-But once we see multiple pools doing that, or all pools doing that, blocking or filtering certain transactions, then this property of Bitcoin doesn't hold anymore.
-And I think that's really important for us to know if that happens and maybe to react to that if we can, if we even can.
+One key property of Bitcoin is this interstitial resistance. And we were fine as long as one mining pool says, okay, I don’t mine one transaction. I don’t allow this transaction to be included in my block. We’re fine. But once we see multiple pools doing that, or all pools doing that, blocking or filtering certain transactions, then this property of Bitcoin doesn’t hold anymore. And I think that’s really important for us to know if that happens and maybe to react to that if we can, if we even can.
 
 Speaker 0: 00:05:06
 
-I'm sure there are shenanigans happening.
-So like, how do you raise the flag or how do you call that to the community's attention?
-Or is that our job?
+I’m sure there are shenanigans happening. So like, how do you raise the flag or how do you call that to the community’s attention? Or is that our job?
 
 Speaker 2: 00:05:15
 
-Well, yeah, I like I built the tool and if I observe something I would raise a flag.
-I don't know, I would tweet about it, I would blog about it.
+Well, yeah, I like I built the tool and if I observe something I would raise a flag. I don’t know, I would tweet about it, I would blog about it.
 
 ## Mining pools not mining P2TR at Taproot activation
 
 Speaker 1: 00:05:23
 
-I mean that works, right?
-Looking at the taproot activation, your mining pool observer picked up that some mining pools were not mining paid to Taproot transactions, even though it was active at that point.
-Yeah.
-And yeah, that definitely got seen.
+I mean that works, right? Looking at the taproot activation, your mining pool observer picked up that some mining pools were not mining paid to Taproot transactions, even though it was active at that point. Yeah. And yeah, that definitely got seen.
 
 Speaker 0: 00:05:38
 
@@ -242,8 +170,7 @@ And that was some of it by accident, right?
 
 Speaker 2: 00:05:40
 
-Correct.
-Yeah.
+Correct. Yeah.
 
 Speaker 0: 00:05:42
 
@@ -251,37 +178,23 @@ Tell us that story.
 
 Speaker 2: 00:05:43
 
-Yeah.
-So actually I was running like a live stream up on Taproot activation.
-Activation is always interesting.
-There might be stuff happening that we didn't foresee, but we should have.
-We hope that everything goes smooth, but sometimes stuff happens.
-In the very night of Taproot activation, actually early morning for me, Taproot activated and we saw a lot of people broadcasting their first Taproot spends into the mempool, including up-to-time messengers saying I'm the first one to spend Taproot, for example.
-Then the first block arrived, didn't include any Taproot spend.
-These high-fee mempool transactions not included.
-So we started, okay, is there anything wrong with our code?
-Is there anything we didn't test?
-Then the second block arrived.
+Yeah. So actually I was running like a live stream up on Taproot activation. Activation is always interesting. There might be stuff happening that we didn’t foresee, but we should have. We hope that everything goes smooth, but sometimes stuff happens. In the very night of Taproot activation, actually early morning for me, Taproot activated and we saw a lot of people broadcasting their first Taproot spends into the mempool, including up-to-time messengers saying I’m the first one to spend Taproot, for example. Then the first block arrived, didn’t include any Taproot spend. These high-fee mempool transactions not included. So we started, okay, is there anything wrong with our code? Is there anything we didn’t test? Then the second block arrived.
 
 Speaker 0: 00:06:24
 
-Because you had done a, was it with the F2 pool?
-Who had you actually done like a trial with before it was activated?
+Because you had done a, was it with the F2 pool? Who had you actually done like a trial with before it was activated?
 
 Speaker 2: 00:06:30
 
-Oh yeah, right, Okay, so yeah, even before activation actually, we did with F2Pool, we spent a few taproot outputs that were like low value, related them to bring just to show and learn how that's done and show that the software activates actually anyone can spend or are not yet unspendable.
+Oh yeah, right, Okay, so yeah, even before activation actually, we did with F2Pool, we spent a few taproot outputs that were like low value, related them to bring just to show and learn how that’s done and show that the software activates actually anyone can spend or are not yet unspendable.
 
 Speaker 0: 00:06:48
 
-And so how do you like arrange something like that?
-You reach out to the various pools or just them and just say, I want to try this.
+And so how do you like arrange something like that? You reach out to the various pools or just them and just say, I want to try this.
 
 Speaker 2: 00:06:54
 
-I reached out to two pools.
-One of them was F2 pool and they said, hey, let's go.
-Yeah.
+I reached out to two pools. One of them was F2 pool and they said, hey, let’s go. Yeah.
 
 Speaker 0: 00:06:58
 
@@ -289,17 +202,11 @@ Okay, cool.
 
 Speaker 2: 00:06:58
 
-Yeah.
-And going back to the earlier story In this very night of taproot activation actually, the second block arrived from f2 pool this time and didn't include any taproot spans.
-Third block arrived, didn't include any taproot spans.
-So by the time the fourth block arrived, all these taproot spans were confirmed.
-And it later turned out that these pools had upgraded in time, burned for signaling, but the issue was that their peers were old and they had some weird manual peer configuration, which then caused problems for them.
-Their peers couldn't relay these pay-to-type-root spans because they are non-standard for them.
+Yeah. And going back to the earlier story In this very night of taproot activation actually, the second block arrived from f2 pool this time and didn’t include any taproot spans. Third block arrived, didn’t include any taproot spans. So by the time the fourth block arrived, all these taproot spans were confirmed. And it later turned out that these pools had upgraded in time, burned for signaling, but the issue was that their peers were old and they had some weird manual peer configuration, which then caused problems for them. Their peers couldn’t relay these pay-to-type-root spans because they are non-standard for them.
 
 Speaker 1: 00:07:34
 
-So basically they were up to date and ready to go and actually correctly signaling, but just didn't see the Taproot transactions because their peers filtered them out and dropped them as nonstandard.
-Correct.
+So basically they were up to date and ready to go and actually correctly signaling, but just didn’t see the Taproot transactions because their peers filtered them out and dropped them as nonstandard. Correct.
 
 Speaker 2: 00:07:45
 
@@ -307,23 +214,15 @@ Yeah.
 
 Speaker 0: 00:07:46
 
-So what was remediation for that?
-You chat with them, you figure it out.
-They change their peers and then off and running?
+So what was remediation for that? You chat with them, you figure it out. They change their peers and then off and running?
 
 Speaker 2: 00:07:53
 
-Yeah, they had some custom code and I think they dropped that.
-I think they now keep more closely to the Bitcoin core releases than before.
-And then after a few weeks, the AMP pool took a bit longer.
-We don't know exactly because the communication was a bit more difficult, but we know, they know my page attack would span just as all other pools are.
+Yeah, they had some custom code and I think they dropped that. I think they now keep more closely to the Bitcoin core releases than before. And then after a few weeks, the AMP pool took a bit longer. We don’t know exactly because the communication was a bit more difficult, but we know, they know my page attack would span just as all other pools are.
 
 Speaker 0: 00:08:13
 
-Cool.
-And so, I mean, this is the service that you provide to the community.
-Correct.
-It's open source and you're being supported by Brink currently.
+Cool. And so, I mean, this is the service that you provide to the community. Correct. It’s open source and you’re being supported by Brink currently.
 
 ## Why monitor the network?
 
