@@ -2,7 +2,7 @@
 title: "Tracepoints and monitoring the Bitcoin network"
 transcript_by: ttiiggss via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Tracepoints-and-monitoring-the-Bitcoin-network-e1jipel
-speakers: ["0xB10C","0xB10C"]
+speakers: ["0xB10C"]
 categories: ["podcast"]
 date: 2022-06-06
 ---
