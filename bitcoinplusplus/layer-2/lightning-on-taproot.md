@@ -61,7 +61,6 @@ So not great, and really highlights how trivial it is to attack and to extract a
 
 It's really, like I wish this equation were written out more frequently because I think people understate quite how trivial of an attack this is. I mean you can write Python code in like two minutes.
 
-Yes Cody?
 Cody: That's how Sony got pawned, they were reusing nonces on all of their ECBSA signatures. It was the same nonce for all the signatures for all the Playstations.
 
 Arik: Yeah, that is true. I believe that was the PlayStation 3, right?
@@ -233,52 +232,38 @@ So the way that the unlocking is supposed to work is It's supposed to reveal to 
 
 Now the magic is, how do we design a system where we are able to extract the secret? Where the proceeding hop, just based on the signature, is able to know, okay, this is how they are able to create a valid signature for the other op that came before that. This is where adaptor signatures come in. There's always a lot of talk about adapter signatures, but I think I'll leave it. I think it's helpful to just talk a little bit about how precisely they work.
 
-An adapter signature looks almost exactly... It looks exactly like a Schnorr signature, except it is invalid.
-It is tweaked.
-As you can see here, we have, you know, if we ignore the T here, we have exactly the thing that we would expect from a Schnorr signature, but our commitment in the hash is not to all random nods, but our random nods plus some tweaked T.
-So what happens is, in order to be able to spend it, we need to find out what the tweak is, and then we can fix our little signature.
-The tweak, when we learn what it is, the tweak can actually be used to embed a little secret in there.
-So if the tweak is exactly the secret value that you're looking for, then once there is a valid signature, you can use that to, you know, calculate the difference between those two signatures and extract the tweak and use the tweak to create a valid signature for your preceding hop.
-So let's think about it a little bit more thoroughly.
-So let's say Carol wants to send a PTLC to Dave, right?
-And she wants to make sure that they come up with an adapter signature that is initially invalid.
-Because initially, if we look at this slide, this PTLC, We need an adapter signature for it, which means we need some sort of signature that is not correct, but that is gonna be correct once the right value comes in.
-So how precisely, how do we do it, and what is that adapter signature gonna look like?
-So we then decide that Carol and Dave do a MuSig two with one another, which is completely unrelated to their channel opening.
-It's a MuSig two just for this particular PTLC.
-So Carol generates some random key and some random nonce pair, Dave generates some random key and some random nonce pair.
-Dave generates some random key and some random nonce pair, and they use that pair solely for this particular PTLC.
-They then, instead of signing it regularly, they commit to a partial signature that is broken and that is tweaked by whatever the PTLC has to be.
-Here the PTLC has to be a plus b plus c plus z.
-So therefore, a plus b plus c plus z is our tweak, which means that then, once we find out the valid signature later on, that that tweak is going to be lowercase a plus b plus c plus z.
-And guess what Carol needs to know in order to be able to spend Bob's PPLC?
-She needs to learn what a plus b plus c plus z.
-And guess what?
-Carol needs to know in order to be able to spend Bob's PTLC.
-She needs to learn what a plus b plus c plus z is, because then she can subtract her own secret that she received in the onion, and that way she can spend Bob's PTLC.
-So now the question of course is, I think you guys can figure it out, especially with this slide, why are we bothering with this MuSig complication here?
-Why do we have to have MuSig just to create an adapter signature that is tweaked damaged broken Whatever terminology when I use No, come on The same reasons you don't want the nodes private key leads, you don't want the payment point linked as well, if you're not doing the same knots, you know, computations or anything.
-Not quite.
-Just depending on that payment not to be there in general.
-Not quite.
-I mean, I guess, you know, what would happen if it were to be...
-What scenario are we trying to avoid?
-A payment being redeemed without it.
-Having gone through, yes.
-All right, you know what?
-I'll just tell you.
-So...
-So one of the important things about this tweak thing is we want to guarantee that if there is a valid signature, it can only be the untweaked signature.
-We must not have any valid signature for this message that is not exactly using this tweak from this nonce.
-Which means Because, why is it so important for us?
-Because if, say, it were to be spent on chain, because, I don't know, the channel had to close and it had to have a unilateral withdrawal, then we need to be able to extract the signature from on-chain and still be able to claim the PTLC that is incoming to us from our preceding hop.
+An adapter signature looks almost exactly... It looks exactly like a Schnorr signature, except it is invalid. It is tweaked.
+As you can see here, we have, you know, if we ignore the T here, we have exactly the thing that we would expect from a Schnorr signature, but our commitment in the hash is not to all random nonce, but our random nonce plus some tweaked T.
+So what happens is, in order to be able to spend it, we need to find out what the tweak is, and then we can fix our little signature.The tweak, when we learn what it is, the tweak can actually be used to embed a little secret in there. So if the tweak is exactly the secret value that you're looking for, then once there is a valid signature, you can use that to calculate the difference between those two signatures and extract the tweak and use the tweak to create a valid signature for your preceding hop.
+
+So let's think about it a little bit more thoroughly. Let's say Carol wants to send a PTLC to Dave, right? And she wants to make sure that they come up with an adapter signature that is initially invalid. Because initially, if we look at this slide, this PTLC, We need an adapter signature for it, which means we need some sort of signature that is not correct, but that is gonna be correct once the right value comes in. So how precisely, how do we do it, and what is that adaptor signature gonna look like? 
+
+So we then decide that Carol and Dave do a MuSig2 with one another, which is completely unrelated to their channel opening. It's a MuSig2 just for this particular PTLC. So Carol generates some random key and some random nonce pair, Dave generates some random key and some random nonce pair. Dave generates some random key and some random nonce pair, and they use that pair solely for this particular PTLC.
+
+They then, instead of signing it regularly, commit to a partial signature that is broken and that is tweaked by whatever the PTLC has to be. Here the PTLC has to be a + b + c + z. So therefore, a + b + c + z is our tweak, which means that then, once we find out the valid signature later on, that that tweak is going to be lowercase a + b + c + z.
+
+And guess what Carol needs to know in order to be able to spend Bob's PTLC? She needs to learn what a + b + c + z.
+And guess what? Carol needs to know in order to be able to spend Bob's PTLC.
+She needs to learn what a + b + c + z is , because then she can subtract her own secret that she received in the onion, and that way she can spend Bob's PTLC. 
+
+So now the question of course is, I think you guys can figure it out, especially with this slide, why are we bothering with this MuSig complication here? Why do we have to have MuSig just to create an adapter signature that is tweaked damaged broken Whatever terminology when I use No, come on?
+
+Answer: The same reasons you don't want the nodes private key leaked, you don't want the payment point linked as well, if you're not using the same nonce, you know, computations or anything.
+
+Arik: Not quite. Just depending on that payment not to be there in general. I mean, I guess, you know, what would happen if it were to be... What scenario are we trying to avoid?
+
+Answer: A payment being redeemed without it.
+
+Arik: Having gone through, yes. All right, you know what? I'll just tell you.
+
+Arik: So one of the important things about this tweak thing is we want to guarantee that if there is a valid signature, it can only be the untweaked signature.  We must not have any valid signature for this message that is not exactly using this tweak from this nonce. Because, why is it so important for us?
+
+Because if, say, it were to be spent on-chain, because, I don't know, the channel had to close and it had to have a unilateral withdrawal, then we need to be able to extract the signature from on-chain and still be able to claim the PTLC that is incoming to us from our preceding hop.
+
 In order to guarantee that the only way a valid signature is using this particular commitment and this particular tweak, rather not using this particular tweak or not using any tweak at all, is by making sure that neither party can unilaterally create a valid signature.
-Let's say if instead of using MuSig2, our PTLC basis for the adapter signature were offered by Carol.
-So Carol just uses her own random public key when she sends a PTLC to Dave.
-Well, guess what?
-She doesn't have to wait for any sort of payment to go through.
-She can just create a different signature because she has the private key already and go on chain with that stuff.
-Then Dave is off in the cold.
+
+Let's say if instead of using MuSig2, our PTLC basis for the adapter signature were offered by Carol. So Carol just uses her own random public key when she sends a PTLC to Dave. Well, guess what? She doesn't have to wait for any sort of payment to go through. She can just create a different signature because she has the private key already and go on chain with that stuff. Then Dave is off in the cold.
+
 Similarly, if Dave were to be able to unilaterally dictate which key were to be used for the PTLC, then Dave would be able to, when claiming his own incoming PTLC, do so on chain using a different key in such a way that Carol wouldn't be able to extract the tweak because, you know, Dave would be using a different nonce, and then Carol is left out in the cold.
 So that is why we need to make sure that They both pre-agree on what the nonces are a priori, such that the only way there can ever be a valid adapter signature, or a valid de-adapted adapter signature, untweaked signature, is using the nonce and the public key that the decree agreed upon, such that the arithmetic always holds.
 But once you do that, well, you already know what happens once you do that, but what is the complication?
@@ -611,12 +596,7 @@ We must not have any valid signature for this message that is not exactly using 
 Which means Because, why is it so important for us?
 Because if, say, it were to be spent on chain, because, I don't know, the channel had to close and it had to have a unilateral withdrawal, then we need to be able to extract the signature from on-chain and still be able to claim the PTLC that is incoming to us from our preceding hop.
 In order to guarantee that the only way a valid signature is using this particular commitment and this particular tweak, rather not using this particular tweak or not using any tweak at all, is by making sure that neither party can unilaterally create a valid signature.
-Let's say if instead of using MuSig2, our PTLC basis for the adapter signature were offered by Carol.
-So Carol just uses her own random public key when she sends a PTLC to Dave.
-Well, guess what?
-She doesn't have to wait for any sort of payment to go through.
-She can just create a different signature because she has the private key already and go on chain with that stuff.
-Then Dave is off in the cold.
+Let's say if instead of using MuSig2, our PTLC basis for the adapter signature were offered by Carol. So Carol just uses her own random public key when she sends a PTLC to Dave. Well, guess what? She doesn't have to wait for any sort of payment to go through. She can just create a different signature because she has the private key already and go on chain with that stuff. Then Dave is off in the cold.
 Similarly, if Dave were to be able to unilaterally dictate which key were to be used for the PTLC, then Dave would be able to, when claiming his own incoming PTLC, do so on chain using a different key in such a way that Carol wouldn't be able to extract the tweak because, you know, Dave would be using a different nonce, and then Carol is left out in the cold.
 So that is why we need to make sure that They both pre-agree on what the nonces are a priori, such that the only way there can ever be a valid adapter signature, or a valid de-adapted adapter signature, untweaked signature, is using the nonce and the public key that the decree agreed upon, such that the arithmetic always holds.
 But once you do that, well, you already know what happens once you do that, but what is the complication?
