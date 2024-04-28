@@ -39,9 +39,9 @@ So nobody monitoring the chain would know that channel open is actually a channe
 You know, we see we have this big entity called S, and we have a public key point called R.We commit to our pub key, so here in this slide the example is Alice, So her public key is uppercase A, her private key is lowercase a.
 And Alice's signature is a commitment to the nonce that she used, her public key, and the message. In order to make sure that the signature doesn't leak her private key, we tweak the hash of her commitment with the message multiplied with her private key by a little random value called r. And we tweak that because if we weren't to tweak that, then somebody would trivially be able to apply the modular multiplicative inverse to lowercase s here and extract Alice's private key, which, of course, we seek to avoid. 
 
-### RISK OF CREATING TWO SIGNATURES
+## RISK OF CREATING TWO SIGNATURES
 
-#### NAIVE KEY AGGREEGATION 
+### NAIVE KEY AGGREEGATION 
 Arik:  But even doing everything correctly here, there are some risks with creating two of two signatures, for example.
 One of those risks is naive key aggregation. The other one that I'm gonna talk about later is not so used, but what do I mean by naive key aggregation?
 So let's say that we have Alice and Bob, who are trying to open a channel between the two of them.
@@ -54,7 +54,7 @@ And then as a result, we have that the sum of the two pubkeys that they calculat
 So It ends up that Bob has the capability to unilaterally create a signature.
 And of course, you do not want lightning channels where one of the parties is able to just unilaterally close it and unilaterally update the state without the other parties spying. So that is one of the issues that require some solution.
 
-#### NONCE REUSE
+### NONCE REUSE
 Another issue, of course, is nonce reuse.
 So here I have a quite simple equation where we have two separate signatures for different messages, m' and m'', but we're using the same nonce. As you can tell, lowercase r, which is a random number, and uppercase R, which is the same random number multiplied by the generator point, are equivalent.
 
@@ -71,6 +71,7 @@ Arik: Yeah, that is true. I believe that was the PlayStation 3, right? Although 
 
 You don't have any of the ECSA complications, so here you don't even have to think that long about why this attack is trivial.
 However, obviously we need to mitigate these attacks. 
+
 
 ### MUSIG2 TO THE RESUCE
 
@@ -155,25 +156,19 @@ Because it's unencumbered by any sort of check sequence, verify, delays, whateve
 So In Taproot, the cheapest way to spend a commitment transaction is going to be using their vacation fee.
 With the ScriptSend path, for the regular local output, it just has a self-delay.
 We don't really need any other scripts that has other than the one that has this to self delay.
-There is some discussion, there's some discussion as to whether we want to prepend one or something to object sequence verify, but you know, this is, I don't think the discussion is quite done yet.
-The idea is that we're gonna beat the scripts into a manuscript parsers and generators and then see what the optimal script output is.
-But just reading this, people might be confused because they'll say, oh, if check safe passed, but say 2-sulfulate is 0, will it go through?
-To solve the layout, this should never be 0.
-But there's going to be a follow-up case where there's going to be a bigger question.
+
+There is some discussion, there's some discussion as to whether we want to prepend one or something to object sequence verify, but you know, this is, I don't think the discussion is quite done yet. The idea is that we're gonna feed the scripts into MINISCRIPT parsers and generators and then see what the optimal script output is.
+
+But just reading this, people might be confused because they'll say, oh, if CHECK SAFE passed, but say 2-sulfulate is 0, will it go through? To solve the layout, this should never be 0. But there's going to be a follow-up case where there's going to be a bigger question.
+
 So for HTLC offers, and I don't really want to go into accepted HTLCs because they're so similar to offered HTLCs. We still have the same situation that the revocation key is the unencumbered spend path.
-And for that reason, it becomes the key spend.
-For script spend paths, We now have two situations.
-So one of them is if we are able to provide the hash preimage, which is marked in green here, And the script looks a little complicated, but the point is, once OP CHECKSIG verifies here, then it should be 1, and then we have OP CHECKSQUENCEVERIFY.
-But if OP CHECKSIG does not verify, then we have a 0, and then we have 0 OP CHECKSQUENCEVERIFY.
-And The question is, would it then mean that without a valid signature, we would be able to spend it without delay?
-Well, it doesn't, because OP CSV has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals.
-But just reading the script, nobody would know. So this is something where we are still figuring out what the stack ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility.
-I guess that is kind of the perennial debate within Bitcoin's script.
-Maybe simplicity will make things simpler.
-One would hope.
-But, no idea.
-It's, it's still kind of up in the air.
-And I do hope that maybe some of you will also add your input to it on the spec discussion.
+
+And for that reason, it becomes the key spend. For script spend paths, We now have two situations.
+So one of them is if we are able to provide the hash preimage, which is marked in green here, And the script looks a little complicated, but the point is, once OP CHECKSIG verifies here, then it should be 1, and then we have OP CHECKSQUENCEVERIFY. But if OP CHECKSIG does not verify, then we have a 0, and then we have 0 OP CHECKSQUENCEVERIFY. And The question is, would it then mean that without a valid signature, we would be able to spend it without delay?
+
+Well, it doesn't, because OP CSV has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals. But just reading the script, nobody would know. So this is something where we are still figuring out what the stack ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility.
+I guess that is kind of the perennial debate within Bitcoin's script. Maybe simplicity will make things simpler. One would hope. But, no idea.  it's still kind of up in the air .And I do hope that maybe some of you will also add your input to it on the spec discussion.
+
 So this, of course, is a situation where we weren't able to provide the pre-imagined time, and so the original person that offered the HTLC wants to spend it again because it never went through and there we have quite trivial one-to-one matching of what the script looked like before taproot and what it's going to look like after taproot. So nothing really all that complicated to get big into there.
 
 And yeah, I really think that the script path spence are not the difficult part of taproot. It's really going to be understanding and making sure that the cryptography is sound and safe. Now if you have a taproot channel open and there are some other nodes in the network, then in principle What do you think? Are those other nodes able to send a payment if they don't support Taproot through a channel somewhere in the middle of the route that is a Taproot channel, or should they not be?
@@ -188,7 +183,7 @@ And you also need to make sure that nodes understand what this gossip is suppose
 
 So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot. So just going back to the beginning, so far we have talked about in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as Now, because we're using taproot and therefore we need to use tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like. So it's quite a dependency tree, and I hope it gave you a little bit of an overview of what the constraints and design decisions and the vulnerabilities are that are driving the spec and why it is the way it is.
 However, there is some really cool stuff that Taproot enables that I also want to dig into, and that is PTLCS. PTLCs are also going to be driven by a bunch of very similar considerations.
-But before I move on to PLCs, I was wondering if anybody had any questions so far.
+But before I move on to PTLCs, I was wondering if anybody had any questions so far.
 Yes?
 
 Question: Does the fact that you have to explicitly announce the fact that you're on the gossip, does that get rid of any of the privacy issues, or any of the privacy methods that you get on-chain?
@@ -197,18 +192,17 @@ Arik: Yeah. So if you're monitoring the Gaussian from lightning, then you would 
 That is why there's talk about Gossip v2, which would essentially be only committing to a fraction of the money that you have put up. But that is its own can of worms. So honestly, I can certainly recommend watching Matt Corralo's talk from CapConf last year, It was titled, Lightning Has Broken the Stock. And one of the major breakages is privacy.
 Lightning has atrocious privacy today. Even though with Tampered we improve on-chain privacy. If, say, Chainalysis and therefore the IRS—not, of course, that they're bad guys, but you know what I mean. If they were to monitor the Lightning Network, then they would also know what the outputs are, tampered outputs on-chain.
 
-So, it's actually a big subject of research.
-I don't think there is consensus quite yet, but I guess that v2 is the way to move forward, although I think it's slowly building.
-We'll see. I'm extremely curious to see how it's going to go, because it's definitely cause for concern. Because as long as you have these privacy considerations, if you want to extend—as long as you have privacy considerations, you also have censorship considerations. Because as long as anybody knows who payment initiators or secants are, they can be censored. So I think it's a major issue for the full kind of research and investigation on Lightning.
+So, it's actually a big subject of research. I don't think there is consensus quite yet, but I guess that v2 is the way to move forward, although I think it's slowly building  We'll see. I'm extremely curious to see how it's going to go, because it's definitely cause for concern. Because as long as you have these privacy considerations, if you want to extend—as long as you have privacy considerations, you also have censorship considerations. Because as long as anybody knows who payment initiators or secants are, they can be censored. So I think it's a major issue for the full kind of research and investigation on Lightning.
 
 But That being said, another aspect where we can somewhat improve privacy as PTLCs, because of the issue that I mentioned earlier, where payments in hops could not be correlated. Even though, to be quite frank, today already the odds of multiple hops.
 
 Even today, the odds of multiple hops being correlated on-chain are fairly low because you have to have multiple channels go on-chain with HTLCs in-flight, which, let's be honest, is not a big risk. What this does help though with is wormhole attacks, for example, where somebody can see, if somebody has multiple nodes that they're controlling and those nodes are talking to one another and it just so happens that multiple of those nodes are involved in the same route of payment, then they would know that they are involved in the same payment and they would be able to steal some money.
 With PTLCs, they wouldn't know because there is no correlation whatsoever.
 
-So how do PTLCs work precisely? Actually who here already knows how PTLCs work?
+### HOW TO PTLCS WORK
 
-All right, cool.I'm really glad that I'm finally able to actually bring up something that people here are not as familiar with.
+Arik: So how do PTLCs work precisely? Actually who here already knows how PTLCs work? All right, cool.I'm really glad that I'm finally able to actually bring up something that people here are not as familiar with.
+
 Let's say that Alice is trying to pay Emily, or more precisely, Emily is trying to get paid by Alice. I'm using this particular phrasing because Emily is the one that has to initiate the whole flow by creating an invoice. Her invoice is no longer going to be a hatch. What Emily does is she generates some random number z, some number of which is within the finite field we're using for our elliptic curve, and she multiplies it with a generator point, as we always do, so essentially the public point corresponding to that private integer, and she sends uppercase Z to Alice.
 
 So that uppercase Z is now the invoice.So the invoice, instead of being a hash, is and will be curve point.
