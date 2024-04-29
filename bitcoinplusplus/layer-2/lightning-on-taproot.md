@@ -7,7 +7,7 @@ speakers: ["Arik Sosman"]
 categories: ["conference"]
 date: 2023-07-18
 ---
-# INTRODUCTION
+# Introduction
 
 Arik: Hi my name is Arik.
 I work at Spiral.
@@ -17,22 +17,23 @@ And this presentation is supposed to be about why the taproot spec is laid out t
 And what are some of the motivations, constraints, limitations that are driving the design.
 And I wanna really dig deep into the math that's some of the vulnerabilities that we're trying to avoid as well as how we're solving those issues.
 
-## MOTIVATION
+## Motivation
 
-Arik: So first of all, obviously we know that Taproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on Taproot.
+So first of all, obviously we know that Taproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on Taproot.
 I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to volunteer.
 
-### BETTER PRIVACY
+### Better Privacy
 
-Arik: Yeah, so the biggest reason, of course, is that we have privacy improvements.
+Yeah, so the biggest reason, of course, is that we have privacy improvements.
 At least, you know, assuming that eventually everybody is going to be using Pay to Taproot addresses.
 As you know, Taproot is segwit v1.
 Segwit was segwit v0, that was our new soft fork mechanism.
 If at some point we decide that we need segwit v2, then all of the old lightning Taproot channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
 
-We are also able to improve privacy by decorrelating payments.That is PTLCs. And that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because they are the primary issues that we have with HTLCs right now that if we were to have multiple channels that have the same in-flight HTLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, you know, link one channel to the other.
+We are also able to improve privacy by decorrelating payments.
+That is PTLCs, and that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because they are the primary issues that we have with HTLCs right now that if we were to have multiple channels that have the same in-flight HTLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, you know, link one channel to the other.
 
-### BETTER SECURITY
+### Better Security
 
 There are hopefully also some security improvements such as threshold signatures, but it's still very much a research phase.
 So you know, mostly I think the greatest benefit really is privacy.
@@ -43,19 +44,21 @@ So it's also a bit of a cost reduction there, which will save us some fees.
 But first of all, why do we have better privacy?
 The primary reason that we have better privacy is because right now, Lightning channels on chain have a signature of a 2 of 2 multisig.
 The big improvement, or one of the two big improvements that Taproot brings is Schnorr signatures.
-And the cool thing about Schnorr signatures is that they allow us to have quite trivial n of n signatures that still look like they are single Sig.
+And the cool thing about Schnorr signatures is that they allow us to have quite trivial `n` of `n` signatures that still look like they are single Sig.
 
-So nobody monitoring the chain would know that channel open is actually a channel open because it would be theoretically indistinguishable from just regular transaction to a single key.And I hope that you all remember how Schnorr signatures look.
-You know, we see we have this big entity called S, and we have a public key point called R.We commit to our pub key, so here in this slide the example is Alice, So her public key is uppercase A, her private key is lowercase a.
+So nobody monitoring the chain would know that channel open is actually a channel open because it would be theoretically indistinguishable from just regular transaction to a single key.
+I hope that you all remember how Schnorr signatures look.
+You know, we see we have this big entity called `S`, and we have a public key point called `R`.
+We commit to our pub key, so here in this slide the example is Alice, So her public key is uppercase `A`, her private key is lowercase `a`.
 And Alice's signature is a commitment to the nonce that she used, her public key, and the message.
-In order to make sure that the signature doesn't leak her private key, we tweak the hash of her commitment with the message multiplied with her private key by a little random value called r.
-And we tweak that because if we weren't to tweak that, then somebody would trivially be able to apply the modular multiplicative inverse to lowercase s here and extract Alice's private key, which, of course, we seek to avoid.
+In order to make sure that the signature doesn't leak her private key, we tweak the hash of her commitment with the message multiplied with her private key by a little random value called `r`.
+And we tweak that because if we weren't to tweak that, then somebody would trivially be able to apply the modular multiplicative inverse to lowercase `s` here and extract Alice's private key, which, of course, we seek to avoid.
 
-## RISK OF CREATING TWO SIGNATURES
+## Risk of Creating Two Signatures
 
-### NAIVE KEY AGGREEGATION
+### Naive Key Aggreegation
 
-Arik:  But even doing everything correctly here, there are some risks with creating two of two signatures, for example.
+But even doing everything correctly here, there are some risks with creating two of two signatures, for example.
 One of those risks is naive key aggregation.
 The other one that I'm gonna talk about later is not so used, but what do I mean by naive key aggregation?
 So let's say that we have Alice and Bob, who are trying to open a channel between the two of them.
@@ -69,34 +72,34 @@ So It ends up that Bob has the capability to unilaterally create a signature.
 And of course, you do not want lightning channels where one of the parties is able to just unilaterally close it and unilaterally update the state without the other parties spying.
 So that is one of the issues that require some solution.
 
-### NONCE REUSE
+### Nonce Reuse
 
 Another issue, of course, is nonce reuse.
-So here I have a quite simple equation where we have two separate signatures for different messages, m' and m'', but we're using the same nonce.
-As you can tell, lowercase r, which is a random number, and uppercase R, which is the same random number multiplied by the generator point, are equivalent.
+So here I have a quite simple equation where we have two separate signatures for different messages, `m'` and `m''`, but we're using the same nonce.
+As you can tell, lowercase `r`, which is a random number, and uppercase `R`, which is the same random number multiplied by the generator point, are equivalent.
 
 So what does the attack look like?
-Well first of all, we can subtract one signature from the other, and then we see that we simply — so the r's cancel each other out, and we end up with an equation that is just the private key multiplied with this expression that we can actually quite trivially calculate ourselves because we know the public key, we know the public nonce point, and we also know both messages.
+Well first of all, we can subtract one signature from the other, and then we see that we simply — so the `r`'s cancel each other out, and we end up with an equation that is just the private key multiplied with this expression that we can actually quite trivially calculate ourselves because we know the public key, we know the public nonce point, and we also know both messages.
 
-So knowing those, we apply the modular multiplicative inverse, and we have just solved for x, which is the private key.
+So knowing those, we apply the modular multiplicative inverse, and we have just solved for `x`, which is the private key.
 So not great, and really highlights how trivial it is to attack and to extract a private key if you have two signatures that have reused the same nonce.
 
 It's really, like I wish this equation were written out more frequently because I think people understate quite how trivial of an attack this is.
 I mean you can write Python code in like two minutes.
 
-Remark : That's how Sony got pawned, they were reusing nonces on all of their ECBSA signatures.
-It was the same nonce for all the signatures for all the Playstations.
+[Audience]: "That's how Sony got pawned, they were reusing nonces on all of their ECDSA signatures.
+It was the same nonce for all the signatures for all the Playstations."
 
-Arik: Yeah, that is true.
+Yeah, that is true.
 I believe that was the PlayStation 3, right?
-Although for ECBSA signatures, so the thing about Schnorr is the math is so simple, it's just additional application.
+Although for ECDSA signatures, so the thing about Schnorr is the math is so simple, it's just additional application.
 
-You don't have any of the ECSA complications, so here you don't even have to think that long about why this attack is trivial.
+You don't have any of the ECDSA complications, so here you don't even have to think that long about why this attack is trivial.
 However, obviously we need to mitigate these attacks.
 
 ### MUSIG2 TO THE RESUCE
 
-Arik: So Musig2 comes to the rescue.
+So Musig2 comes to the rescue.
 I'm sure all of you have heard about Musig2 many times.
 And essentially, the main thing that Musig2 does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
 
@@ -106,8 +109,10 @@ And that results in not being able to execute such targeted hacks, because if yo
 So that's what MuSig does.
 
 And specifically, you know, let's dig into the math because it's actually not too complicated, at least with the key side here.
-The way MuSig works is we have these coefficients that are applied to each public key.So maybe if we start, if we work our way from the bottom up, all right.
-So if you see at the end, the resulting public key that we end up with is ultimately just the first public key multiplied with a coefficient, and the second public key multiplied with a different coefficient, the coefficient being C1 and C2.So really the interesting aspect here is how are these coefficients calculated?
+The way MuSig works is we have these coefficients that are applied to each public key.
+So maybe if we start, if we work our way from the bottom up, all right.
+So if you see at the end, the resulting public key that we end up with is ultimately just the first public key multiplied with a coefficient, and the second public key multiplied with a different coefficient, the coefficient being C1 and C2.
+So really the interesting aspect here is how are these coefficients calculated?
 
 So one of the things that is important is that the coefficients are calculated by hashing something, and one component of the hash is all the public keys that all the participants are using, which means that in order for the hashes to work out, we need to know a priority.
 What order those public keys are gonna be used in.
