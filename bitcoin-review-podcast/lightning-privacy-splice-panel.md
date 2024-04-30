@@ -13,7 +13,7 @@ NVK: 00:01:17
 
 Today we're going to be talking about Lightning privacy, splicing and other very cool things with an absolute amazing panel here.
 Just before that, I have a couple of things that I want to set out some updates.
-So OpenSats is now taking grants for a Bitcoin application, sorry, taking grant applications for Bitcoin projects and Nostra projects and Lightning projects.
+So OpenSats is now taking grants for a Bitcoin application, sorry, taking grant applications for Bitcoin projects and Nostr projects and Lightning projects.
 And there is about five mil for an OSTER, five mil for Bitcoin.
 So do apply.
 I joined as a board member and Gigi joined as the Ops person and we're gonna get those SATs flying.
@@ -799,7 +799,7 @@ And I think kind of going back to the conversation too, about like application l
 It's great that we have people experimenting on top of Lightning and that allows for that.
 I guess what it does also is it puts a spotlight on some of the shortcomings of Lightning.
 Seeing, like you said, people building fast because they can't do something on Lightning now, but they want to do it.
-So while there are privacy shortcomings of LNURL, it's a spotlight on what we need to do to help fix the protocol level with, for instance, both 12 point paths.
+So while there are privacy shortcomings of LNURL, it's a spotlight on what we need to do to help fix the protocol level with, for instance, BOLT 12 blind paths.
 
 ## Payment descriptions
 
@@ -816,7 +816,7 @@ Putting descriptions in memos, I think, was a bad decision for Lightning.
 And not just putting it there, requiring it.
 Requiring that field or a description hash is required and the reason that you know And at the time it was a good idea, right?
 Because you want to know that when you pay an invoice That it's gonna be for a specific order like you could have an order number, It could have a list of the items in the description.
-It's practical for it to be there, but what is ending up happening, especially when we have large custodians on the Lightning Network as more chain analysis starts aggregating more data, but the invoice is being collected, you start to now see you start to attach the receivers pub key to the reason for payment.
+It's practical for it to be there, but what is ending up happening, especially when we have large custodians on the Lightning Network as more chain analysis starts aggregating more data, but the invoice is being collected, you start to now see you start to attach the receivers pubkey to the reason for payment.
 And that gets if that's getting shared and aggregated around, you can now start correlating people with the reasons that they were paid.
 And that's not good.
 In my opinion.
@@ -825,25 +825,25 @@ And there's been a...
 NVK: 00:46:21
 
 Also, it's pretty annoying, to be honest, as a user, like, stop asking me, forcing me to put a Goddamn f*cking note.
-Like, I don't want to put a note.
-Like, You know, it's the same with wallets that require an amount.
-Like, I don't want to, like, just leave me alone.
-You know, it's weird.
-Cause like, you know, I'm a, I'm a base layer boomer.
-You know, I kind of feel that way.
-You know, when I come sometimes to Lightning, It's like, there's all this weird, different dynamics that like annoy me.
+I don't want to put a note.
+It's the same with wallets that require an amount.
+I don't want to, just leave me alone.
+It's weird.
+I'm a base layer boomer.
+I kind of feel that way.
+When I come sometimes to Lightning, there's all this weird, different dynamics that like annoy me.
 I get that there's limitations and stuff, but it's nice to see that like people starting to see that way too.
 
 Tony: 00:46:54
 
 Yeah.
-And so when an invoice is created for Mutiny, like we, there, there is a optional tag field you can put in there, but that's only saved internally.
-We are specifically never going to create an invoice with a description and we kind of refuse to because I think it's a privacy leak that, you know, I'm trying to be out here like expressing, hey, don't put descriptions in your invoices, like this leaks metadata and everyone does it anyway.
-So I'm just going to build a wallet that doesn't do that. And...
+And so when an invoice is created for Mutiny, there is a optional tag field you can put in there, but that's only saved internally.
+We are specifically never going to create an invoice with a description and we kind of refuse to because I think it's a privacy leak that, you know, I'm trying to be out here like expressing, hey, don't put descriptions in your invoices, this leaks metadata and everyone does it anyway.
+So I'm just going to build a wallet that doesn't do that.
 
 Jeff: 00:47:22
 
-How does Build12 fix this?
+How does BOLT12 fix this?
 
 Tony: 00:47:24
 
@@ -894,12 +894,12 @@ That's probably a question for T-Bast, Tony, and maybe Jeff.
 I'd say T-Bast is also extremely well-rounded because Eclair ships Phoenix as well as their implementation and everything.
 So it's like one comprehensive thing.
 So he probably has great insight.
-Yeah, to be honest, I haven't had time to follow everything that's happening around Nuster.
+Yeah, to be honest, I haven't had time to follow everything that's happening around Nostr.
 So yeah, I don't know, to be honest.
 
 Tony: 00:49:08
 
-Yeah, I'm very concerned about Lightning usage on Nuster for both the Zaps aspect and also the custodial integrations like Wallet Connect.
+Yeah, I'm very concerned about Lightning usage on Nostr for both the Zaps aspect and also the custodial integrations like Wallet Connect.
 You know, there's a side of it where it's like, we can be up here preaching about lighting privacy all day long and then someone connects their node up with AMBOSS and shares the balance.
 Like, we can't stop that on a protocol level.
 And all we can do is educate and tell people why it's dumb, why you why you shouldn't do that, why you shouldn't use custodians.
@@ -907,7 +907,7 @@ We can preach this all day long, but then someone goes and do it.
 
 NVK: 00:49:44
 
-I mean, we can't say anything like saying won't change behavior, offering tools that fix the behavior that are easier to use will fix the problem, Right?
+I mean, we can't say anything like saying won't change behavior, offering tools that fix the behavior that are easier to use will fix the problem.
 Like and this is why I'm bringing this up because you know like when you actually look at like the transaction graph I mean like it looks like Nostr's like what like 70% of all the Lightning transactions at least was the peak.
 
 Vivek: 00:50:08
@@ -958,7 +958,7 @@ NVK: 00:52:06
 
 Okay.
 So, so, okay.
-So, so like, is that, Dusty he also like the Nostra stuff is not something you're paying attention right now?
+So, so like, is that, Dusty he also like the Nostr stuff is not something you're paying attention right now?
 
 Dusty Damon: 00:52:13
 
@@ -991,7 +991,8 @@ So base layer takes us from like, you know, having cuck money, right?
 Having a central bank to not having a central bank, right?
 Like, and, and, you know, like it's more akin to Fedwire.
 Hey, great.
-We can now send each other a million dollars for like reasonable fees and nobody can stop us, Right? Now we can't buy coffee on Bayes layer as people are, I don't know, somehow people are surprised that the fees are going to be high, you know, like sure it's the DGN right now who are clogging up the pipes, but like soon is going to be just the population of the world, Right?
+We can now send each other a million dollars for like reasonable fees and nobody can stop us.
+Now we can't buy coffee on Bayes layer as people are, I don't know, somehow people are surprised that the fees are going to be high, you know, like sure it's the DGN right now who are clogging up the pipes, but like soon is going to be just the population of the world, Right?
 And Lightning is like fully dependent on base layer, right?
 So there is also a scaling limit to Lightning as is.
 I mean, you know, maybe you guys can educate me on like very cool things on how we can do things better and more scalable, but Lightning, Yeah, we're going to get there.
@@ -1064,7 +1065,7 @@ Let's explore the three major aspects of this.
 Dusty Damon: 00:56:42
 
 Yes, let's plant my flag.
-I did the first splice on Chain last year in May and I finished my Splicing Limitation around October.
+I did the first splice on-chain last year in May and I finished my Splicing Limitation around October.
 But like things in Lightning aren't normally considered done until two Limitations do it, sort of like the way that things do it, call it interop.
 And so I'm working on interop with T-Bast and once we get two Limitations that have it done, then it's officially like, you know, considered launched or whatever.
 
@@ -1506,9 +1507,8 @@ That's huge.
 NVK: 01:19:38
 
 So like here's the thing, right.
-So, for example, joint market, unfortunately, like kind of like it has volume that kind of comes and goes.
+So, for example, JoinMarket, unfortunately, has volume that kind of comes and goes.
 But it's not dissimilar to what you're describing.
-Right.
 I mean, you have a market maker in your case will be the liquidity provider probably.
 And, and then you have people who are just the takers there.
 And for some weird reason, I mean, it might, it could be the UI problem, right?
@@ -1534,25 +1534,22 @@ If you're doing splicing, you're literally saving money.
 It's cheaper to join the splice to your own transaction.
 And I think what that means is it's going to encourage a lot of people that wanna do something on chain to be like, you know what, I don't need this today.
 I could wait a week, put it in a queue, wait for someone else to start a splice, someone to make that market, and then just automatically join it.
-And I think if you look in the long run, this should create a lot more sustainable activity in the splice network compared to something like, I don't know, join market, you know?
+And I think if you look in the long run, this should create a lot more sustainable activity in the splice network compared to something like, I don't know, JoinMarket?
 
 
 
 ## Payjoins and keysend
-NVK: 01:22:02
-
-Yeah.
 
 NVK: 01:22:02
 
-Could you, like expanding on this, like, could we do a pay join, for example, also with something like this?
-Because I don't know, like, I can't see why you wouldn't be able to just like do the pay join and get even one more privacy set.
+Could you, like expanding on this, like, could we do a payjoin, for example, also with something like this?
+Because I don't know, like, I can't see why you wouldn't be able to just like do the payjoin and get even one more privacy set.
 
 Dusty Damon: 01:22:18
 
 100%, yeah.
-You can put whatever you want in these things and pay joins are a great idea that I think it'd be.
-I think like I've been - I've been toying around with some proposals of like how we can get wallets to integrate with pay join splicing compatible protocols, right?
+You can put whatever you want in these things and payjoins are a great idea that I think it'd be.
+I think like I've been - I've been toying around with some proposals of like how we can get wallets to integrate with payjoin splicing compatible protocols, right?
 So the challenge, like it's totally doable.
 There's nothing stopping it from happening other than just basically evangelizing to wallets to do it.
 And I probably give them on like a specs, they're all doing it the same way kind of thing.
@@ -1560,20 +1557,18 @@ But that's probably the future.
 
 NVK: 01:22:45
 
-Yeah, cause like the problem with pay join is that like it requires like coordination and and Bitcoin one of the most beautiful things about like base layer Bitcoin is that it doesn't have to be interactive, right?
-Somebody posts a Bitcoin address an invoice, right?
-You pay that You don't need to be online at the same time.
+Yeah, cause like the problem with payjoin is that like it requires coordination and Bitcoin one of the most beautiful things about base layer Bitcoin is that it doesn't have to be interactive, right?
+Somebody posts a Bitcoin address - an invoice, right?
+You pay that, you don't need to be online at the same time.
 You don't need to talk.
-You don't need anything like you're essentially completely like can leave, go your own separate ways.
-But because Lightning is interactive, you're already having that like trade off, right.
-Of having to be online and talking to each other.
+You don't need anything, like you're essentially completely like can leave, go your own separate ways.
+But because Lightning is interactive, you're already having that like trade off, of having to be online and talking to each other.
 Well, then might as well talk about a few other things, right?
 Like, hey, is this your happy conversation?
 You know, do you also want to exchange some UTXOs?
 I got a whole one here for you.
-You know, like, And you can add like quite a few more things there.
+And you can add like quite a few more things there.
 It's like, why not?
-So like.
 
 Vivek: 01:23:35
 
@@ -1582,7 +1577,6 @@ Yeah, you're not crying about the interactivity about three rounds of going to t
 NVK: 01:23:42
 
 That's right.
-Right.
 So I don't know, like it really feels natural, right?
 Like to do these things with Lightning and payments are like one of the most privacy needed parts of the whole money experience, right?
 Like, you know, maybe you find some privacy in your savings, right?
@@ -1596,7 +1590,7 @@ I mean, I could finally buy a latte and nobody's going to know about it.
 
 Vivek: 01:24:30
 
-I guess like the hacky way people are doing that today would probably be with like Key sends and amp right Tony.
+I guess like the hacky way people are doing that today would probably be with like keysends and AMP.
 That's probably the closest tool that people are using.
 
 Tony: 01:24:43
@@ -1605,25 +1599,19 @@ For what specifically?
 
 Vivek: 01:24:44
 
-buying coffees on lightning like with privacy or whatever...
+Buying coffees on lightning like with privacy or whatever...
 
 Tony: 01:24:49
 
-Yeah, I mean, I mean just a normal so normal invoice would would work there.
-I mean,
-
-Dusty Damon: 01:24:54
-
-yes
+Yeah, so normal invoice would work there.
 
 Tony: 01:24:55
 
-Yeah, I don't think people key send for actual payments.
+Yeah, I don't think people keysend for actual payments.
 I think that's mostly for donations as the selling point.
 Like, you know, value for value stuff.
-Not even Nostra uses a key send based approach.
-Yeah.
-I haven't thought I haven't thought about key send in a while, to be honest.
+Not even Nostr uses a keysend based approach.
+I haven't thought about keysend in a while, to be honest.
 
 Dusty Damon: 01:25:12
 
@@ -1637,14 +1625,10 @@ Tony: 01:25:17
 
 I just use cash.
 
-NVK: 01:25:18
-
-I don't know.
-
 Vivek: 01:25:20
 
 Dusty, I need to give you some of our Sats cards.
-You know, they're perfect for this use case.
+They're perfect for this use case.
 You put $10 on here.
 It's also off chain scalings.
 We're doing our best.
@@ -1653,7 +1637,7 @@ NVK: 01:25:33
 
 You know, we do it mountain man style, right?
 Like here's private key, take private key.
-You know, like you guys are doing all this complicated shit, You know, like some crazy interactive cryptography.
+You guys are doing all this complicated shit, like some crazy interactive cryptography.
 Like here's the private key.
 Just f*cking take it.
 
@@ -1665,7 +1649,7 @@ So for like all of this privacy benefits, it sounds fantastic to me.
 How is the transition to it on a heuristic change approach?
 You know, we're switching into Taproot outputs on-chain.
 The non-sets are slightly shifting because of the UTXO set.
-I guess Taproot is in more usage because of the BRC20 Dgens too.
+I guess Taproot is in more usage because of the BRC20 degens too.
 Like we're in an odd place now.
 How do you guys feel about it?
 What's going on with the heuristics?
@@ -1673,23 +1657,21 @@ What's going on with the heuristics?
 Dusty Damon: 01:26:20
 
 Oh man, splicing is more important than ever with all the spam going on, Right?
-Like I think I think
 
 NVK: 01:26:25
 
-they're valid.
-Shitcoin transactions.
+I think they're valid shitcoin transactions.
 There is no such thing as spam in Bitcoin.
 I will repeat this 50 times.
 If it's a valid transaction is a valid transaction.
 
 Dusty Damon: 01:26:38
 
-I think it's a weird it's a weird match for - for Spicing where it's like I think people are paying more attention to Spicing now because of all the legitimate on-chain activity.
+I think it's a weird match for splicing where I think people are paying more attention to splicing now because of all the legitimate on-chain activity.
 
 NVK: 01:26:49
 
-DGN complete retard activity.
+Degen complete retard activity.
 Sure.
 
 But it's still valid transactions.
@@ -1697,7 +1679,8 @@ But it's still valid transactions.
 Dusty Damon: 01:26:57
 
 Oh man.
-But it's kind of funny that the bedfellow of getting Spice and getting more attention is these DGNs. Doing whatever they're doing on-chain, which the more I look into it, the more I'm like, what am I looking at?
+But it's kind of funny that the bedfellow of getting splice and getting more attention is these degens.
+Doing whatever they're doing on-chain, which the more I look into it, the more I'm like, what am I looking at?
 I'm wasting my time trying to understand this at all.
 But, splicing like really does increase the on-chain efficiency.
 And I think you just go back like six months ago, that was like, oh, theoretically that matters.
@@ -1717,7 +1700,7 @@ I mean, if there is 5 million Bitcoiners right now, it's like, we're probably ex
 I love like, you know, sure the VCs and all the startups claimed, you know, Bitcoin has a hundred million users, 200 million users, 500 million.
 It's all bulls*it.
 I mean, if there is 5 million people right now on Bitcoin, it's like, you know, pushing it.
-So can you just imagine like, it's a great dry run in my opinion, for us to sort of like get a little taste of what it's like when there is not just price, Because when the price goes up, you know, all the retail comes in, they all want to buy their, you know, their 615 bitcoin.
+So can you just imagine like, it's a great dry run in my opinion, for us to sort of like get a little taste of what it's like when there is not just price, Because when the price goes up, you know, all the retail comes in, they all want to buy their 6.15 bitcoin.
 But like now we have other people coming in with all these other users that, you know, are completely yotic.
 But they do set a floor, right, for transactions.
 And, you know, Lightning has to get its s*it together.
@@ -1726,8 +1709,7 @@ Because Lightning was never in scale around a high fee market.
 
 Dusty Damon: 01:28:54
 
-I think this brings up a great point of if you look at there's some apps like the Muun Wallet, maybe people will try it.
-M U U and Moon Wallet, where they're they're trying to be this wallet where you can pay to an on-chain destination and also to a Lightning destination, right?
+I think this brings up a great point of if you look at there's some apps like the Muun Wallet, where they're trying to be this wallet where you can pay to an on-chain destination and also to a Lightning destination, right?
 But their concept is storing all the Bitcoin on-chain and moving it to Lightning on-demand.
 That works fine when on-chain fees are like 10 cents, but now that they're like $10, suddenly every Lightning payment, which should be basically free, costs $10 on Muun.
 So that kind of app isn't sustainable, but splicing enables you to make a Muun wallet in the reverse.
@@ -1737,7 +1719,7 @@ Like, if you look at a lot of the apps that are out there, they tend to have sep
 They have a Bitcoin on-chain balance and a Bitcoin lightning balance, right?
 And they don't really merge them together.
 When they are merged together, the app developers doing all this crazy compromises, either making them charging the users a ton of money or making it slow or both, Right?
-And I think Spice is going to just change that game.
+And I think splice is going to just change that game.
 And Eclair, obviously, with the Phoenix wall is the first one that's going to be doing this.
 But eventually, I think all of them are gonna have to switch over to it.
 And this is gonna be a big UX improvement for new users.
@@ -1757,8 +1739,8 @@ Vivek: 01:30:44
 Really?
 
 NVK: 01:30:46
-Yeah
-So Roy explained to me on a DM, I kind of forgot.
+
+Yeah, so Roy explained to me on a DM, I kind of forgot.
 It's been like, what, a year now since that happened.
 But it's just, you know, users are going to be users and they're going to do stupid s*it.
 And they're not going to read the fine print.
@@ -1780,7 +1762,7 @@ And then the wallet is completely non-custodial.
 
 T-Bast: 01:32:05
 
-they have to wait a bit when things are confirming but with splicing it makes it much easier to tell users how much fees they need to pay on chain for things to be confirmed soon.
+They have to wait a bit when things are confirming but with splicing it makes it much easier to tell users how much fees they need to pay on chain for things to be confirmed soon.
 They will have better control on the on-chain fees of all their swaps, all their splice basically.
 And yeah, it's gonna give more control to the users while making it simpler for them and making usability better.
 So I'm really excited about this.
@@ -1809,7 +1791,7 @@ You're going to pay a lot.
 Vivek: 01:33:04
 
 It's still operational, though.
-Some other wallets had to completely shut off because, you know, they weren't so keen on full RBF and the DeGens definitely solved that debate.
+Some other wallets had to completely shut off because, you know, they weren't so keen on full RBF and the degens definitely solved that debate.
 
 NVK: 01:33:19
 
@@ -1833,15 +1815,15 @@ Vivek: 01:34:04
 I wanted you guys to finish up the heuristics because we are switching to taproot channels, right?
 I know LND and LDK have championed that.
 How does that change with like P2WSH on-chain for unilateral versus P2TR or whatever on-chain.
-And then, you know, because Lightning implementations are first other than the DGENs, are the DGENs actually giving more cover to Lightning users now?
-Like How did the heuristics adapt and change?
+And then, you know, because Lightning implementations are first other than the degens, are the degens actually giving more cover to Lightning users now?
+How did the heuristics adapt and change?
 
 Tony: 01:34:35
 
 I can chime in a little bit on some of that.
 And Jeff, you were talking about gossip earlier.
 You may be a good one to talk about a little bit further.
-But the concept of Tapper channels, I'm excited from them.
+But the concept of taproot channels, I'm excited from them.
 I mean, we get PTLCs, it's one step closer to PTLCs, which I'm really excited about.
 It's probably still years away, but it's one step closer.
 We need Tapper channels for that.
@@ -2006,7 +1988,7 @@ NVK: 01:42:29
 It's like, Let's say we're both like big liquidity providers, right.
 Or whatever.
 Or you're a big wallet and I'm a big liquidity provider.
-So, you know, we have some, and we have some off like a side channel sort of like coordination as well, right.?
+So, you know, we have some, and we have some off like a side channel sort of like coordination as well.
 And you know, I want to use some proper HSMs on my end.
 So do you, cause you know, say we have like, you know a hundred thousand coins to make liquidity for Bitcoin lightning, you know we definitely don't want all that money to be hot.
 So we, but we want to also like pre prepare things.
@@ -2184,7 +2166,7 @@ It's just a huge step up in privacy.
 NVK: 01:50:41
 
 You know, one of the reasons why I bring this up is not because it's just the next new shiny thing.
-It's, It's because like, at least to me, like, I really believe that between Nostra and eCash is like where most of the lightning demand is going to come in the next couple of years.
+It's, It's because like, at least to me, like, I really believe that between Nostr and eCash is like where most of the lightning demand is going to come in the next couple of years.
 I don't think it's going to be from people, normies trying to buy coffee.
 I think it's going to be from this sort of like side technologists trying to address some problems with like very specific solutions.
 So like, it's going to be like, you know, people trying to do mining Fetty pools, right?
@@ -2268,7 +2250,7 @@ Yeah, I'm just excited for the future.
 I think that splicing is here, lightning is getting better and better And there's endless challenges, but we're tackling them all.
 I put together a little site if you were looking for more information on splicing.
 I got lightningsplice.com and the goal is to put all the resources that help try to explain things to people there in one spot.
-So check that out lightningsplice.com.
+So check that out [lightningsplice.com](https://lightningsplice.com/).
 
 NVK: 01:55:17
 
@@ -2286,7 +2268,7 @@ Jeff, you can chime in on who.
 Jeff: 01:55:46
 
 Yeah.
-So Dodkin's doing some of the permitting work, also fuel funding.
+So Dodkin's doing some of the permitting work, also dual-funding.
 And then Jervis and myself will be our sort of working on splicing, but early stages.
 
 Vivek: 01:55:56
@@ -2340,15 +2322,15 @@ So, thank you.
 
 Vivek: 01:57:37
 
-Hey, when lightning at a coin kite store?
+Hey, when lightning at a coinkite store?
 
 NVK: 01:57:41
 
 So in a good fashion, like a good enterprise, we are seeking a fully managed solution because there is real customers trying to give us real money and I do not wanna deal with that.
-So we, and it's only inbound liquidity which is a nightmare to manage too.
+And it's only inbound liquidity which is a nightmare to manage too.
 And the invoices are not small.
-So, you know, if people are trying to give you a grand like all the time, it's a problem.
-So we're, you know, we're working on it.
+If people are trying to give you a grand like all the time, it's a problem.
+We're working on it.
 We're talking to a bunch of different providers and hopefully people take off their, for our hands.
 And as we get more versed into non-boomer chain, bunker coin, then we can, we'll do it ourselves.
 We have, listen, we have a sea lightning node now running for, I don't know how long, a year or two, still running.
@@ -2376,5 +2358,3 @@ I mean, I think the server has like five or seven year uptime, so I'm not messin
 All right, guys.
 Thank you so much.
 You guys have a great day.
-
-
