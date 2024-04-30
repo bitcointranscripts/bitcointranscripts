@@ -490,16 +490,16 @@ And that's Taproot, right?
 And it's a way that you can do all of these things.
 
 **RH**: It's the best of both worlds.  
-And additionally, something that's may not fully understood with Taproot, they actually got rid of OPCHECK multisig.  
-Because OPCHECK multisig is a for loop and it's very computationally inefficient.  
-Whereas in Taproot to do a multisig, you do OPCHECKSIGAD.  
-And then you just add up the signatures and either it's a zero or a one, right?  
+And additionally, something that's may not fully understood with Taproot, they actually got rid of `OP_CHECKMULTISIG`.  
+Because `OP_CHECKMULTISIG` is a for loop and it's very computationally inefficient.  
+Whereas in Taproot to do a multisig, you do `OP_CHECKSIGADD`.  
+And then you just add up the signatures and either it's a zero or a one.  
 Is it a valid signature or not?  
 And then you get to the end and you compare it to what your threshold is.  
 So it's computationally more efficient as well.  
-And additionally, with the Schnorr signatures, you can, as we mentioned earlier, since you're using Schnorr signatures in Taproot, you can have a single public key on chain and it's actually its own aggregated T of N behind the scenes using FROST or an N of N using MuSig too.
+And additionally, with the Schnorr signatures, you can, as we mentioned earlier, since you're using Schnorr signatures in Taproot, you can have a single public key on chain and it's actually its own aggregated `T` of `N` behind the scenes using FROST or an `N` of `N` using MuSig too.
 
-**R**: So I mean, it sounds like the real like best case scenario is that we actually build, you know, a tree of script leaves for the different spending conditions that we want and then within those script trees, those individual leafs, we use aggregated signatures to save space and to make it more efficient to check.
+**R**: It sounds like the real like best case scenario is that we actually build a tree of script leaves for the different spending conditions that we want and then within those script trees, those individual leafs, we use aggregated signatures to save space and to make it more efficient to check.
 
 **RH**: That sounds like a reasonable compromise.
 
@@ -509,22 +509,22 @@ And additionally, with the Schnorr signatures, you can, as we mentioned earlier,
 Just kidding.  
 For the folks listening, I'm having a terrible fucking connection here.  
 It's hard to keep track.  
-So so anyways, guys, you know, it's fascinating that we went like everywhere and also like managed to cover a lot in only 45 minutes.  
+So anyways, guys, it's fascinating that we went like everywhere and also like managed to cover a lot in only 45 minutes.  
 Where do we go from here?
 
-**R**: Yeah, I was going to say, like, I think, you know, what's cool is that with Taproot, we can construct addresses and construct wallets where, you know, in kind of the happy path, like when you're just spending your money, it just looks like a single SIG on chain.  
-And whether that's actually a single key behind it, or if it's like a FROST or a MuSig aggregation, nobody really knows or cares, except for you, It's just your business.  
-But then if you want to do something really complex, like you want to have a time decaying multi-sig or in a post-covenant world, if you want to have amount-based spend conditions, or want to have key hierarchies that have hash locks or time locks attached, then you get a script and you only reveal that script when you actually spend it.  
+**R**: What's cool is that with Taproot, we can construct addresses and construct wallets where in kind of the happy path, when you're just spending your money, it just looks like a single SIG on chain.  
+And whether that's actually a single key behind it, or if it's like a FROST or a MuSig aggregation, nobody really knows or cares, except for you, it's just your business.  
+But then if you want to do something really complex, like you want to have a time decaying multi-sig or in a post-covenant world, if you want to have amount-based spend conditions, or want to have key hierarchies that have hash locks or timelocks attached, then you get a script and you only reveal that script when you actually spend it.  
 I think one of the problems, in addition to just this stuff is complicated to build, is that there's a handful of exchanges and wallets and Bitcoin ATMs that don't support pay-to-Taproot yet.  
 So If Rob goes off and builds a really kick-ass Taproot wallet that has all these really advanced features in them, but people can't get their coins into it, out of Coinbase, then a whole bunch of people aren't going to use that wallet.  
 It's going to be a big question about whether or not Rob wants to lean on those features in the first place.  
 I think something that we need to do is we need to get exchanges and other service providers to support pay-to-Taproot like today.  
 Taproot came out more than a year ago and it's a few line changes for most people to be able to support pay-to-Taproot.  
-They have to be able to correctly parse H32M addresses.
-There's a website called wintaproot.org and it lists which exchanges support Taproot and which ones don't.  
-That doesn't even mean receiving Taproot, just pay to Taproot.
+They have to be able to correctly parse bech32m addresses.
+There's a website called [whentaproot.org](https://whentaproot.org/) and it lists which exchanges support Taproot and which ones don't.  
+That doesn't even mean receiving Taproot, just pay-to-Taproot.
 It's literally a two or four line change.  
-So I would encourage everybody to like go on that website, find your exchange, and if they don't support pay to Taproot, you should open support tickets or blow them up on Twitter and say, when can I withdraw my Taproot wallet?  
+So I would encourage everybody to like go on that website, find your exchange, and if they don't support pay-to-Taproot, you should open support tickets or blow them up on Twitter and say, when can I withdraw my Taproot wallet?  
 
 **RH**: Yeah, just to name and shame, the remaining ones are Binance, Binance US, Bitfinex, Coinbase, Crypto.com, Fireblocks, Gemini are really like the big ones left.
 Venmo and PayPal too.  
