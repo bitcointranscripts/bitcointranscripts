@@ -11,7 +11,7 @@ date: 2023-07-18
 
 Arik: Hi my name is Arik.
 I work at Spiral.
-And most recently I've been working on adding support for taproot channels.
+And most recently I've been working on adding suport for taproot channels.
 At least I try to work on that, but I'm getting pulled back into Swift bindings.
 And this presentation is supposed to be about why the taproot spec is laid out the way it is.
 And what are some of the motivations, constraints, limitations that are driving the design.
