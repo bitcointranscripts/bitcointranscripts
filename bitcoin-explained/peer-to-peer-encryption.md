@@ -2,11 +2,12 @@
 title: "Peer-to-peer Encryption"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=jvFdPwssv_E
-tags: ["bitcoin-core", "security", "p2p"]
+tags: ["bitcoin-core", "v2-p2p-transport"]
 speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-04-24
 episode: 77
+summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss BIP 324, the proposal by Dhruv, Pieter Wuille and Tim Ruffing to add peer-to-peer (P2P) encryption to the Bitcoin protocol. They explain why this is needed, how it would work, and which problems it would, and wouldn\u2019t solve."
 ---
 
 Aaron van Wirdum: 
@@ -95,7 +96,7 @@ We did an episode about the coin improvement process basically, but we did not g
 Aaron van Wirdum:
 
 Okay, so what we're talking about is encrypting communication between Bitcoin nodes.
-Right now, nodes send three things between each other, which are blocks, transactions, and each other's IP addresses (IP addresses of other nodes).
+Right now, nodes send three things between each other, which are blocks, transactions, and each other's IP addresses, IP addresses of other nodes.
 They do all of this unencrypted.
 Now, the idea is to encrypt this.
 That's the very short, sort of bird's-eye thing.
@@ -119,7 +120,7 @@ They are spying on us…
 Basically, the problem is that Bitcoin nodes are talking to each other in a way that anybody with access to the network can eavesdrop on it.
 Especially, people with physical access to the network, so they could have a machine on the wire.
 This could be somebody monitoring your home, this could be your internet provider monitoring all their customers, this could be a spy agency monitoring all the internet companies, even without the internet companies knowing that this is happening.
-And they can basically see exactly which node is sending which transaction to which other node (if they wanted to).
+And they can basically see exactly which node is sending which transaction to which other node, if they wanted to.
 I don't know if they're doing that.
 Maybe they really don't care.
 I haven't seen any evidence that they're doing it.
@@ -144,7 +145,7 @@ The idea of just looking at the whole network and seeing what's going on, that's
 Aaron van Wirdum:
 
 I'm gonna try an example.
-If I send a Bitcoin transaction (I spend my own bitcoin) that transaction would have to originate from my node.
+If I send a Bitcoin transaction, I spend my own bitcoin, that transaction would have to originate from my node.
 In that case, my internet service provider would see that, 'Oh, look! That transaction came from Aaron's node, these must be Aaron's bitcoin.'
 And that's the type of spying we're talking about.
 If that connection from me to the network would be encrypted, they wouldn't see that that specific transaction originated from me.
@@ -204,7 +205,8 @@ What is a handshake?
 Sjors Provoost:
 
 The handshake is basically saying, 'Here's my key,' and then you say, 'Here's my key.'
-There's a little bit more to it, of course, but the general idea is they called a Diffie-Hellman key exchange (if you Google that, you'll find it. We've talked about it in other podcasts too).
+There's a little bit more to it, of course, but the general idea is they called a Diffie-Hellman key exchange, if you Google that, you'll find it.
+We've talked about it in other podcasts too.
 It basically means, I get your public key, you get my public key, and we can combine those keys into a shared key - a key that both of us know.
 
 Aaron van Wirdum:
@@ -502,13 +504,13 @@ That's not what we are now.
 Sjors Provoost:
 
 No.
-The general thing that you're gonna need for that is called traffic shaping, which means that instead of sending your data the most efficient way possible (e.g. I need to send you a block, I'm just going to send you one megabyte as fast as I can), you're going to make it look like something else.
+The general thing that you're gonna need for that is called traffic shaping, which means that instead of sending your data the most efficient way possible, e.g. I need to send you a block, I'm just going to send you one megabyte as fast as I can, you're going to make it look like something else.
 Instead of sending you the block very quickly, I'm going to send it very slowly, and instead of sending you individual transactions, maybe I'm always going to send you 10 bytes per minute.
 Sometimes those 10 bytes are empty, sometimes those 10 bytes are actual things.
 It’s just going to look like something else.
 Maybe I'm going to send a signal to you looking like a YouTube video.
 That's basically the goal.
-Bitcoin Core might not be doing that itself, maybe there would be some additional software that's doing that on top of Bitcoin Core, but in order to do that, it has to have very moldable material (like clay), it has to be able to change everything, it has to be able to make messages longer, make them shorter (well not too much shorter).
+Bitcoin Core might not be doing that itself, maybe there would be some additional software that's doing that on top of Bitcoin Core, but in order to do that, it has to have very moldable material, like clay, it has to be able to change everything, it has to be able to make messages longer, make them shorter, well not too much shorter.
 The function of this garbage in the beginning is to have an extra space that you could use if you needed in order to hide what you're trying to do.
 Beyond that, you don't have to send everything at once.
 In the future, you should be able to send 10 bytes and then nothing, and then 10 bytes and then another 10 bytes so that even the handshake would be broken up into smaller pieces, or made part of a bigger piece, whatever is necessary to hide from the sensors.
@@ -646,4 +648,4 @@ That was clear enough for me, hopefully for our dear listeners as well.
 
 Sjors Provoost:
 
-I can also do a shout out to Stephan Livera’s podcast (episode 433) where he has all of the authors on the call also explaining conceptually why it's cool and that could make a nice addition to this episode.
+I can also do a shout out to Stephan Livera’s podcast, episode 433, where he has all of the authors on the call also explaining conceptually why it's cool and that could make a nice addition to this episode.
