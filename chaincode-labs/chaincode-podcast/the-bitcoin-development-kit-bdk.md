@@ -5,7 +5,7 @@ media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Alekos-Filini-
 tags: ["descriptors","hwi","wallet"]
 speakers: ["Alekos Filini","Daniela Brozzoni","Mark Erhardt","Adam Jonas"]
 categories: ["podcast"]
-date: 2023-05-24
+date: 2023-05-02
 ---
 Speaker 0: 00:00:06
 
