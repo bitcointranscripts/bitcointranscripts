@@ -3,7 +3,7 @@ title: "The Bitcoin Development Kit (BDK)"
 transcript_by: nymius via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Alekos-Filini--Daniela-Brozzoni-and-the-Bitcoin-Development-Kit-BDK---Episode-32-e24m4o1
 tags: ["descriptors","hwi","wallet","multisignature"]
-speakers: ["Alekos Filini","Daniela Brozzoni","Adam Jonas"]
+speakers: ["Alekos Filini","Daniela Brozzoni"]
 categories: ["podcast"]
 date: 2023-05-24
 ---
