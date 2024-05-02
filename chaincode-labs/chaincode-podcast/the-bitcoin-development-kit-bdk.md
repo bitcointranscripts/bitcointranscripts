@@ -59,7 +59,7 @@ Although when I founded it, it wasn't called BDK.
 It was called Magical Bitcoin library because it was like the library that supported the magical Bitcoin wallet, which was like the UI, which I don't think we've ever released.
 It was terrible.
 Like we kind of developed it and then throw it away.
-But anyway, this magical Bitcoin wallet started when I was at Blockstream.
+But anyway, this Magical Bitcoin wallet started when I was at Blockstream.
 So it was kind of a fun project that some of the Blockstream employees and I developed in our free time, essentially, just to kind of experiment and see.
 Essentially the question was, we were all working on the Green team, so on the Green wallet, and the question was, what if we had to remake Green today?
 What would we change?
@@ -212,14 +212,14 @@ And then you just use one API, and everything works fine.
 And this is in terms of features and in terms of like platforms, the library works well on desktop, works on mobile.
 Now with the refactoring of BDK 1.0 it's going to work on embedded hardware as well.
 So it's going to be no std in technical terms.
-So, yeah, the idea is basically to build something that works anywhere and can kind of do anywhere, everything.
+So, yeah, the idea is basically to build something that works anywhere and can kind of do everything.
 And yeah, in terms of the limitation that there are today, I think where it kind of starts breaking down is when you want to monitor multiple descriptors and you want to spend from all of them at the same time.
 
 ## Pain points
 
 Alekos Filini: 00:09:11
 
-So if you are an enterprise and you're managing multiple different clients wallets, it's fine because normally you don't want to spend funds of like different users together unless you want to do batching or but you can still do it there's an option to from the perspective of a wallet you can say add this UTXO which doesn't belong to this wallet but you can add it as an input and spend it as well.
+So if you are an enterprise and you're managing multiple different clients wallets, it's fine because normally you don't want to spend funds of like different users together unless you want to do batching or you can still do it there's an option to from the perspective of a wallet you can say add this UTXO which doesn't belong to this wallet but you can add it as an input and spend it as well.
 So you can do it but it's a bit more involved I guess.
 And yeah, any other thing where it breaks down is if you use async Rust basically because the wallet structure is not thread safe so when you use async normally you want something that can be moved around threads because you don't know which thread is going to run a specific task.
 And the BDK wallet is not thread safe, so you have to work around it and use mutex and stuff.
@@ -322,7 +322,7 @@ You can use any type for your amount as long as you can basically sum two amount
 So the idea was if I, for Bitcoin you would use an unsigned 64 bit integer but for liquid you would use their, whatever, Pedersen commitment type, because you can sum them together, but you can't really compare them, so you can't say is this greater than this one because it's binary, so I tried to implement that and it was a mess, so I stopped.
 So yeah, I think that that's one of the roadblocks, otherwise they would probably be happy to use it, I think.
 
-AJ & Mark Erhardt: 00:16:21
+Adam Jonas & Mark Erhardt: 00:16:21
 
 Interesting.
 
@@ -473,6 +473,7 @@ Daniela Brozzoni: 00:22:33
 Can talk more about what's new with BDK 1.0, if you want that?
 
 Adam Jonas: 00:22:36
+
 Yeah, tell us about it.
 
 Daniela Brozzoni: 00:22:37
@@ -590,6 +591,13 @@ I think especially it's interesting to build a library around the use of descrip
 The musig too, BIP has been merged now.
 We are hearing that there will be a multi-sig hardware wallet coming out eventually.
 So everything will happen eventually.
+
+Adam Jonas: 00:30:48
+
+Really? It would happen eventually?
+
+Mark Erhardt: 00:30:50
+
 Well, it's starting to look more ready than it used to.
 So I think there's quite the charm of having this generic descriptor-based approach.
 I think more people should look at BDK.
