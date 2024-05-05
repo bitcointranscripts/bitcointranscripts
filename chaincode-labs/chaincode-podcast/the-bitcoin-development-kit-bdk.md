@@ -5,7 +5,7 @@ media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Alekos-Filini-
 tags: ["descriptors","hwi","wallet","multisignature"]
 speakers: ["Alekos Filini","Daniela Brozzoni"]
 categories: ["podcast"]
-date: 2023-05-24
+date: 2023-05-23
 ---
 ## Intro
 
@@ -274,7 +274,7 @@ There was the 1-of-2 or 2-of-2 multi-sig with a decay and I think there was also
 
 Alekos Filini: 00:13:36
 
-Yeah so Green is interesting because it's a very old product, old in terms of Bitcoin years, Bitcoin age and so it kind of started in a way and then kind of evolved with Bitcoin where OP_CSV at some point became available so they started using it.
+Yeah so Green is interesting because it's a very old product, old in terms of Bitcoin years, Bitcoin age and so it kind of started in a way and then kind of evolved with Bitcoin where `OP_CSV` at some point became available so they started using it.
 So internally Green supports the old 2-of-2 it's like it's a normal 2-of-2 but they email you a pre-signed transaction with a future lock time.
 So the service disappears you have this email with a pre-signed transaction, you can just apply your signature and recover the funds.
 Then they introduce the 2-of-2 with CSV.
