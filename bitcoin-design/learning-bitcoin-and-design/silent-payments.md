@@ -1,12 +1,10 @@
 ---
 title: "Silent Payments"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+transcript_by: nymius via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Cqmk2cZ2IjM
-tags: ['silent-payments']
-speakers: ['Christoph Ono', 'Josibake']
-categories: []
-date: 2024-02-08
-summary: "Josi gave us a great introduction to silent payments in this conversation. We talked about the history of similar efforts, benefits and drawbacks, how it works, status of the project, adoption path, and lots more."
+tags: ["silent-payments","privacy"]
+speakers: ["Christoph Ono","Josibake"]
+date: 2024-02-07
 ---
 Speaker 0: 00:00:02
 
