@@ -2,7 +2,7 @@
 title: "Silent Payments"
 transcript_by: nymius via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Cqmk2cZ2IjM
-tags: ["silent-payments","privacy","privacy-enhancements"]
+tags: ["silent-payments","privacy","privacy-enhancements","transaction-origin-privacy"]
 speakers: ["Christoph Ono","Josibake"]
 date: 2024-02-07
 ---
