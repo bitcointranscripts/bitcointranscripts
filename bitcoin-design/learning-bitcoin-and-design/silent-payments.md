@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=Cqmk2cZ2IjM
 tags: ["silent-payments","privacy","privacy-enhancements","transaction-origin-privacy"]
 speakers: ["Josibake"]
 categories: ["club"]
-date: 2024-02-06
+date: 2024-01-31
 ---
 Christoph Ono: 00:00:02
 
