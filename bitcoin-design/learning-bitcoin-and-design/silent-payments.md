@@ -4,6 +4,7 @@ transcript_by: nymius via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Cqmk2cZ2IjM
 tags: ["silent-payments","privacy","privacy-enhancements","transaction-origin-privacy"]
 speakers: ["Josibake"]
+categories: ["club"]
 date: 2024-02-06
 ---
 Christoph Ono: 00:00:02
