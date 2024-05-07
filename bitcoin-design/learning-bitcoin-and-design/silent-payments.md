@@ -3,7 +3,7 @@ title: "Silent Payments"
 transcript_by: nymius via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Cqmk2cZ2IjM
 tags: ["silent-payments","privacy","privacy-enhancements","transaction-origin-privacy"]
-speakers: ["Christoph Ono","Josibake"]
+speakers: ["Christoph Ono","Josibake","Yashraj"]
 date: 2024-02-06
 ---
 Christoph Ono: 00:00:02
@@ -351,7 +351,7 @@ So any wallet that's using ElectrumX as a backend is just telling ElectrumX ever
 Can you tell me anything about this address?
 Can you tell me anything about this address?
 And so that server could be logging all of that, keeping track of that information, and now you have very limited privacy.
-I think really the only private like client wallet protocol that I'm aware of today is BIP 158, which was originally kind of conceived for these lightning nodes that wanted kind of a private way to ask for information about what's spent in a block.
+I think really the only private light client wallet protocol that I'm aware of today is BIP 158, which was originally kind of conceived for these lightning nodes that wanted kind of a private way to ask for information about what's spent in a block.
 And this you can actually use privacy with the tradeoff that it takes a little bit more bandwidth.
 So in the BIP 158 world, full nodes kind of create this compact filter for the whole block and they say within this filter we encode every script pubkey that was spent or created and then the light clients ask for these filters and all that the node or the wallet provider learns at that point is okay a client was interested in this block, but they don't know anything about which addresses they were interested in or anything like that.
 They just know they wanted a block.
@@ -364,7 +364,7 @@ So this to me is like, this is really the best that we have right now.
 And it's not really widely used by wallets.
 And I think a lot of people defer to using this Electrum style thing where you're just kind of telling the server, hey, this is exactly the transaction and the output that I'm listed in.
 So TLDR, to kind of go back to the original, if you're not running your own node, you're just not running a private light client today for the majority of wallets.
-How this kind of matters to silent payments is, as we started talking about silent payments and in how we wanted to support like clients, in theory, it would work totally fine for a silent payments user to just hand their scan key to somebody else.
+How this kind of matters to silent payments is, as we started talking about silent payments and in how we wanted to support light clients, in theory, it would work totally fine for a silent payments user to just hand their scan key to somebody else.
 You just be like, hey, so maybe it was worth mentioning.
 In the silent payments protocol, the address is composed of two keys, a spend key and a scan key.
 The scan key is used for finding the transactions.
@@ -376,7 +376,7 @@ So in theory, silent payments could also be used in a non-private way where some
 This is very similar to how it works currently with Electrum.
 For me, that's not super interesting.
 I can't stop anybody from building that, but that's not interesting to me because the whole point of silent payments to me is like usability along with privacy.
-So one of the things that I've been working on and researching is, how could we use something like BIP 157 and 158 for supporting silent payments like clients?
+So one of the things that I've been working on and researching is, how could we use something like BIP 157 and 158 for supporting silent payments light clients?
 So I have some proof of concepts and some ideas there where what you would get from a full node is you would ask them, hey for a block give me all of the tweak data that I need which is going to be about 33 bytes per transaction that would be a silent payment transaction.
 And also give me a BIP 158 filter for this block.
 You're asking for two pieces of data.
@@ -443,7 +443,7 @@ If you have ElectrumX, you know, an Electrs personal server running as your wall
 The only way that that server knows to send you the notification is because it knows the transaction, which means you've lost all your privacy to the thing that is sending you the notification.
 So I think this is another way where we kind of have to educate people of like, you're going to use stuff more privately, you're not going to have the same user experience as maybe non-private alternatives.
 Maybe there's some really clever way that, you know, I'm not aware of that we can do notifications in a more private way.
-But what I imagine would be more the use cases, I have a Bitcoin mobile wallet on my phone and I'm using it on my phone because I don't want to run a full node or I don't have the ability to run a full node.
+But what I imagine would be more the use case is: I have a Bitcoin mobile wallet on my phone and I'm using it on my phone because I don't want to run a full node or I don't have the ability to run a full node.
 But I had this Bitcoin wallet that I'm using like somewhat infrequently.
 I wouldn't expect that I'm pulling it up and using it every single day.
 So I turn it on and I wanna, maybe there's some user initiated action of like, hey, scan for recent payments, or maybe when the app opens, it just starts scanning in the background and it tells you like, hey I'm downloading all of these filters so I can check for payments, you know give me a second and then I'll tell you if there's any new payments.
@@ -470,7 +470,7 @@ Like if you scanned once a day, I think last time I looked at the numbers, it wa
 So if you're scanning for once of a day, you're already cutting down on 50% of the data that you need.
 So I think we should be totally upfront about this and being like, hey, look, if we're going to build private mobile client experiences, it's going to be really difficult if we expect the exact same level of UX from a non-private mobile wallet.
 And we shouldn't make that our goal, right?
-We shouldn't be trying to provide a Venmo or Cash App-like experience on something that is just fundamentally different in that it has privacy or reduced trust as kind of the things that it values the most.
+We shouldn't be trying to provide a Venmo or Cash App like experience on something that is just fundamentally different in that it has privacy or reduced trust as kind of the things that it values the most.
 So we need to kind of highlight like, hey, here are the trade-offs you're making, here's what you're getting for it.
 And so that makes it challenging.
 But I'm also hopeful that like the more we push the boundary and research these and kind of like actual prototype things, we may find that the user experience degradation is really not as bad as we think it is.
@@ -511,7 +511,7 @@ Now you need to scan the full chain and that will give you your full wallet hist
 So I think we're really trying to keep it as close to an experience as any other wallet is possible.
 And we don't want the user to have to go around backing up extra information.
 I think one of the nice properties of silent payments is as long as you have access to the Bitcoin blockchain, or as long as you can get access to it, the full chain, you can always recover your full transaction history and your full wallet balance.
-Where I'm not trying to FUD BIP 32 or anything like that, but when you go into a BIP 32 style world where we have like the gap limit and look ahead, there is kind of this complex management of, you know, you're scanning, but you're scanning.
+Where I'm not trying to FUD BIP 32 or anything like that, but when you go into a BIP 32 style world where we have like the gap limit and look ahead, there is kind of this complex management of, you know, you're scanning, **but you're scanning**.
 You need to check these derivation paths, you need to make sure you're looking far enough ahead with the gap limit to make sure that you're actually recovering all of your money.
 Whereas in silent payments, it's like, hey, you look at a transaction, you take the inputs of that transaction, you do Diffie-Hellman with this private key.
 If something doesn't show up in the outputs, this was not a payment to you.
@@ -526,7 +526,7 @@ Go ahead, Yash.
 
 Yash: 00:49:34
 
-Sorry, so I on this one, like so when I'm when I just add a wallet, add a wallet into an application and it, and it checks for addresses sequentially, it is like often able to like detect all the payments in a few seconds or a couple of minutes.
+Sorry, so I on this one, like so when I'm when I just add a wallet into an application and it checks for addresses sequentially, it is like often able to detect all the payments in a few seconds or a couple of minutes.
 But if we have silent payment addresses, it would take longer because it has to do a lot more computation, a lot more downloading data and stuff.
 
 Josie Baker: 00:50:05
@@ -588,13 +588,13 @@ So I think of it as the number of users times the number of connections those us
 But I think it's still not that bad because they can pre-generate what all of these addresses would be and put them in some sort of database.
 On the silent payment side, and again, this is something where I'm like, I wouldn't recommend that people build it this way, but let's just say the server said, hey look, I've got an index for silent payments, just give me your scan key, I'll do the scanning for you, and now I've got a million users.
 That does mean that that server would have to do a million ECDH steps, so a million elliptic curve multiplications to check for all of their users, which is going to be more work than the `xpub` lookup in a database style of doing things.
-I think really, the way you push for payment adoption is I think we keep investing in these more private like client protocols because you know what I was describing earlier with BIP 157 and 158 it's another one of these nice ones that I think it's private, but it also scales better right because one single server computes these indexes and distributes them to clients.
+I think really, the way you push for payment adoption is I think we keep investing in these more private light client protocols because you know what I was describing earlier with BIP 157 and 158 it's another one of these nice ones that I think it's private, but it also scales better right because one single server computes these indexes and distributes them to clients.
 The server does the computation of the index one time, and then they give it to whoever asked for it.
 If the server does the work once, it gives it to many clients.
 So this is like a good client-server model.
 Then each individual client does a little bit of work relevant to themselves.
 So, if I have a million silent payments users, and they're all using this more private protocol, they'll ask for the filter data from the node a million times.
-So the node would compute it once, give it to people a million times, and then you have a million phones each doing their own ECDH calculations to check for payments, which distributes that calculation a lot better, rather than having a single server just chewing through ECDH calculations to support n number of users.
+So the node would compute it once, give it to people a million times, and then you have a million phones each doing their own ECDH calculations to check for payments, which distributes that calculation a lot better, rather than having a single server just chewing through ECDH calculations to support N number of users.
 
 Christoph Ono: 00:56:07
 
@@ -642,7 +642,7 @@ You know, we need more reviewers in Bitcoin Core because it moves very slowly th
 But that's where I'll keep putting a lot of my attention, just continuing to work and get that.
 But I don't think, you know, nobody needs to wait for it to be on Bitcoin Core for people to start using this.
 You know, obviously it's nice.
-And I think for like clients, we're going to have to have something in Bitcoin Core, whether that be an index or some protocol for distributing the stuff.
+And I think for light clients, we're going to have to have something in Bitcoin Core, whether that be an index or some protocol for distributing the stuff.
 But yeah, I think we're in the phase now where we've spent a lot of time grinding on the protocol, working out the edge cases, making sure that we're happy with it.
 Now I'm fully in implementation mode for Bitcoin Core and I'd be excited to see other people starting to run with it and implement it.
 I guess it's ready.
@@ -656,7 +656,7 @@ Josie Baker: 00:59:58
 
 Yeah, I think that'd be awesome.
 Yeah, and I think there's a lot of fun, you know, to me, there's a lot of fun design space around silent payments, right?
-It's not just, you know, you know, I have I have this dream in my head someday that we'll have like usernames for Bitcoin.
+It's not just, you know, I have this dream in my head someday that we'll have like usernames for Bitcoin.
 And it kind of feels like, yeah, we could start thinking about like, what would the UX and design around a username be for something like a silent payment address.
 Another thing that I'm really excited in starting to do is reach out to exchanges and talk to them about it, about how exchanges could start doing silent payment support.
 Instead of sending to a static address to deposit your money to the exchange, you can now have a silent payment address that's unique to you.
@@ -670,7 +670,7 @@ So there's a lot of things that are just like beyond strictly wallet and user ex
 Yash: 01:01:35
 
 Yeah, I'm super excited about this.
-And I'm Christoph like not just in the Bitcoin Core app, but in the design guide that we have, I think like if like Josie saying that hey like people can can run with it even right now and if in the Bitcoin Design Guide we have some sort of guidance around that and we might say people who want to implement this, we could save people some effort on the design aspect of it.
+And I'm Christoph like not just in the Bitcoin Core app, but in the design guide that we have, I think if like Josie saying that people can can run with it even right now and if in the Bitcoin Design Guide we have some sort of guidance around that and we might say people who want to implement this, we could save people some effort on the design aspect of it.
 Yeah, so I'm super excited for it.
 Want to work on it.
 Yeah.
@@ -689,7 +689,7 @@ Christoph Ono: 01:02:50
 
 Let's wrap it up here in a minute, but I just have one question because you mentioned it.
 Actual usernames on Bitcoin.
-I know that BIP 47 people, they have these paynyms and it's basically a centralized server, which I don't think that's what we want to shoot for.
+I know that BIP 47 people, they have these Paynyms and it's basically a centralized server, which I don't think that's what we want to shoot for.
 Do you think it's possible in any other way?
 I mean,
 
@@ -704,7 +704,7 @@ Now you can just hit me at josie.com and your wallet will retrieve the sign of p
 Something like that would be really cool.
 There's obviously some threat leveling of like, oh, but someone could get in between and modify the address or whatever.
 So I've been thinking a little bit about this of like, how could we combine something like the silent payment address with our domains, with some way of signing and authenticating that data?
-I do agree, there's some less impressive ways to do it, which is just running a paynym style thing where like, yeah, centralized server just maps the paynym to the static code, but we're leaking a lot of information and we really aren't authenticating any of the data.
+I do agree, there's some less impressive ways to do it, which is just running a Paynym style thing where like, yeah, centralized server just maps the Paynym to the static code, but we're leaking a lot of information and we really aren't authenticating any of the data.
 Like in the centralized server handing out silent payment addresses, how do you know the server isn't just replacing every address with their own?
 
 Christoph Ono: 01:04:34
