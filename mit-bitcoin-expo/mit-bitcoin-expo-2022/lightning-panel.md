@@ -23,7 +23,8 @@ And for me personally, the Lightning Network is the means to really create this 
 
 Lisa Neigut: 00:00:45
 
-Cool, hey everyone I am Lisa Neigut. I work at Blockstream on Core Lightning, which is a implementation of Lightning.
+Cool, hey everyone I am Lisa Neigut.
+ I work at Blockstream on Core Lightning, which is a implementation of Lightning.
 I see Lightning as probably Bitcoin scaling, like the thing that's going to scale Bitcoin.
 I'm going like totally get this wrong.
 It's cool.
@@ -557,7 +558,7 @@ But yeah.
 Jonathan Harvey Buschel: 00:39:14
 
 So there are alternate channel constructions, right?
-So right now we have like the original kind of paper from Taj and Joseph that the amount of state and like toxic waste we need to keep, right, is linear in how many updates we do, right?
+So right now we have like the original kind of paper from Tadge and Joseph that the amount of state and like toxic waste we need to keep, right, is linear in how many updates we do, right?
 So the reason that that zero fee node probably has so much state to keep track of is like for every payment that is routed through them, for every channel update, they need to store that kind of indefinitely until they close the channel.
 And there are alternate constructions like L2 where the amount of data that you'd need to store is kind of static, right?
 So you just store basically the latest state and I think some extra information and you would be able to get kind of the same security guarantees there.
