@@ -18,8 +18,8 @@ Lightning is a thing today, but what is the philosophical Lightning to you?
 
 Rene Pickhardt: 00:00:26
 
-So I'm Rene Pickardt, a researcher and developer for the `Lightning Network`.
-And for me personally, the `Lightning Network` is the means to really create this peer-to-peer electronic cash system so to use Bitcoin in a decentralized way and fast way.
+So I'm Rene Pickardt, a researcher and developer for the Lightning Network.
+And for me personally, the Lightning Network is the means to really create this peer-to-peer electronic cash system so to use Bitcoin in a decentralized way and fast way.
 
 Lisa Neigut: 00:00:45
 
@@ -31,7 +31,7 @@ I see it as like payment rails of the future.
 I think it's like definitely the way to scale the number of people that are able to make Bitcoin transactions.
 I also see it as being the most decentralized L2 that exists today, which is cool.
 
-## When does it make sense to use lightning? 
+## When does it make sense to use Lightning? 
 
 Jeremy Rubin: 00:01:27
 
@@ -76,7 +76,7 @@ Too late, I did it.
 
 Rene Pickhardt: 00:05:03
 
-Yeah, so I mean, one of the known downsides of the Lightning network protocol is that you cannot really operate a lightning node in a cold storage fashion.
+Yeah, so I mean, one of the known downsides of the Lightning network protocol is that you cannot really operate a Lightning node in a cold storage fashion.
 You have to really be online all the time.
 Your keys are on an online or hot wallet, so there's a certain risk if your computer or your note gets compromised that you are screwed basically, you have a bolting accident or whatever the lingo is, right?
 So you may not want to use all your Bitcoins on the Lightning Network.
@@ -100,9 +100,9 @@ Maybe Rene?
 
 Rene Pickhardt: 00:06:38
 
-I don't know the exact number right now, but I think we have something like 70,000 channels that we see on `Gossip`.
+I don't know the exact number right now, but I think we have something like 70,000 channels that we see on Gossip.
 Those are the announced channels.
-There are quite some services that don't announce the channels to the `Gossip Network` because they are represented by nodes that do not really want to engage into routing.
+There are quite some services that don't announce the channels to the Gossip Network because they are represented by nodes that do not really want to engage into routing.
 So yeah, that's currently the number, I guess.
 
 Jeremy Rubin: 00:06:59
@@ -116,7 +116,7 @@ So basically, whenever you want to announce a channel, you basically have in the
 So you can open as many channels theoretically as there are Bitcoin transactions per day possible on the Bitcoin network.
 Of course, you then have to wonder about what will happen if channels closes, how much congestion do they put on the blockchain.
 
-## What are the estimated maximum channels that can be on lightning?
+## What are the estimated maximum channels that can be on Lightning?
 
 Jeremy Rubin: 00:07:36
 
@@ -152,11 +152,11 @@ Right.
 Okay.
 So when we're talking about theoretical maximum limits of the system, right?
 Okay, so I think there's a couple interesting things to look at here.
-The one that I like to think about is in terms of liquidity and `Lightning`.
-So the way that `Lightning` works is that in order to have a balance to transact, you have to commit Bitcoin to basically a contract that is on chain, and the creation of that contract basically grants you like X units of Bitcoin that you can then transact with over the Lightning Network, right?
+The one that I like to think about is in terms of liquidity and Lightning.
+So the way that Lightning works is that in order to have a balance to transact, you have to commit Bitcoin to basically a contract that is on chain, and the creation of that contract basically grants you like X units of Bitcoin that you can then transact with over the Lightning Network, right?
 So theoretically, the maximum amount of credits that could be transacted over the Lightning Network at any one point in time would be 21 million worth of Bitcoin, that's assuming all the Bitcoin has been mined, like subtracting out all the amount that's been lost, et cetera.
 So like, theoretical maximum in terms of amount of liquidity that's available on Lightning is going to be the total amount of Bitcoin that's been locked into the Lightning network, right?
-So unless we're like locking all of the Bitcoin that exists into `Lightning`, at some point, that's going to be like the maximum total value of exchange that can happen at any one point in time.
+So unless we're like locking all of the Bitcoin that exists into Lightning, at some point, that's going to be like the maximum total value of exchange that can happen at any one point in time.
 
 Rene Pickhardt: 00:11:33
 
@@ -181,7 +181,7 @@ How many people actually could operationally, Lightning would be something they'
 Lisa Neigut: 00:12:55
 
 That's a really hard question to answer because I think it depends on what you count as Lightning users.
-So we just saw a great presentation by Andre Neves about the Lightning address stuff, and a lot of the projects that he was showing that adopted it are what I would call `custodial lightning services`.
+So we just saw a great presentation by Andre Neves about the Lightning address stuff, and a lot of the projects that he was showing that adopted it are what I would call custodial Lightning services.
 I wish, I don't know if that's so much, correct me if I'm wrong, but my point is that all of the users of those networks are probably using Lightning to do their transactions, but they're probably using channels that someone else is using and managing.
 
 Jeremy Rubin: 00:13:35
@@ -277,17 +277,17 @@ I think that if you kind of take Lightning and look at it as a view is what Jona
 
 Jeremy Rubin: 00:21:35
 
-Cool, yeah, so I guess as we're kind of looking at where things are evolving to support more of that vision, who here has heard of `Taproot`?
+Cool, yeah, so I guess as we're kind of looking at where things are evolving to support more of that vision, who here has heard of Taproot?
 Raise your hand, all right.
 So we got a lot of people who've heard of Taproot.
-If you haven't, `Taproot` is a recently activated new feature for Bitcoin.
-And a lot of what I've seen online suggests that, like, Taproot fixes a lot of these things, and `Taproot` is really good.
+If you haven't, Taproot is a recently activated new feature for Bitcoin.
+And a lot of what I've seen online suggests that, like, Taproot fixes a lot of these things, and Taproot is really good.
 So what's going on with Taproot and the Lightning Network, and how might this thing that has been activated, but doesn't necessarily mean it's deployed yet, how might that change the shape of what's possible?
 
 Jonathan Harvey Buschel: 00:22:15
 
 I could give some answers here.
-So I think one thing that `Taproot` can fix, assuming it's widely deployed, is the privacy of channel openings.
+So I think one thing that Taproot can fix, assuming it's widely deployed, is the privacy of channel openings.
 So we have this on-chain footprint when we open a channel and we close the channel, and we have these scripts in there, right, to give some guarantees about refunds and making sure that we're like locking up the funds for the channel correctly and then exiting correctly.
 And right now that is very obvious, right?
 If you look on chain, you can find, you know, channel opens and closes.
@@ -309,10 +309,10 @@ So there are some proposals as well to figure out a better way to upgrade the ch
 Lisa Neigut: 00:24:22
 
 I think to kind of build on one of the cool things about, so taproot in terms of privacy, I think the on-chain footprint part, it's actually only, I would say, like maybe 30% of helping hide where your channels are on the network.
-There's a whole other thing that we'll have to fix that `Taproot` doesn't solve before we can improve that measurably at all, really.
-However, moving over to `Taproot` in terms of privacy is good for decorrelating payment paths through the network.
+There's a whole other thing that we'll have to fix that Taproot doesn't solve before we can improve that measurably at all, really.
+However, moving over to Taproot in terms of privacy is good for decorrelating payment paths through the network.
 So right now, if for some reason you had multiple nodes on the network and a payment got sent through multiple hops on the network, the data that you use to basically lock those funds into escrow as it moves across the network can be correlated.
-By moving over to Taproot, I believe we're able to move over to something called `PTLCs` instead of `HTLCs`, which is a point time locked instead of hash
+By moving over to Taproot, I believe we're able to move over to something called PTLCs instead of HTLCs, which is a point time locked instead of hash
 
 Rene Pickhardt: 00:25:24
 
@@ -404,7 +404,7 @@ How much stuff are we talking about keeping track of, and what sort of stuff do 
 
 Rene Pickhardt: 00:31:40
 
-So there is this kind of like famous node coming on the Lightning Network currently that is called `zero fee routing`.
+So there is this kind of like famous node coming on the Lightning Network currently that is called zero fee routing.
 Because this person basically made the claim that for various reasons it might be useful to just have zero fees at all in routing.
 
 Jeremy Rubin: 00:31:57
@@ -486,7 +486,7 @@ I just mean like you know like you go home and then you like you know lose track
 
 Lisa Neigut: 00:35:44
 
-Yeah, I feel like This is yet a third kind of topic with lightning stuff.
+Yeah, I feel like This is yet a third kind of topic with Lightning stuff.
 Yeah, which gets into the, what do you call it, like recovery of funds or like, I have funds that are committed to lightning channels.
 You know, with Bitcoin, I know if I lose my keys, I'm in a lot of trouble.
 On Lightning, what is the equivalent of losing your keys for Lightning, right?
@@ -581,7 +581,7 @@ I might write down in my wallet on one business card who got the last round, but
 Lisa Neigut: 00:41:11
 
 Yeah, so let's talk about why that is, though.
-Yeah, so like Jonathan mentioned, the current construction uses, I think they're called `Poon-Dryja channels`, is the technical name of the current implement protocol that channels use.
+Yeah, so like Jonathan mentioned, the current construction uses, I think they're called Poon-Dryja channels, is the technical name of the current implement protocol that channels use.
 And the way that it works is that every time you update the current state of the money in a Lightning contract between the two parties, you kind of have to remember almost every previous state and also in order to invalidate, so you have state updates on this contract, right, and the state that you're updating is the amount of balance of who owns what between the two parties in that channel.
 Every time you update that state, the way that you prevent your channel party from publishing an older state such that they can't roll back time basically to a state where maybe they had all the money in the channel and then they paid it to you over like 10 updates, so you're now at the 10th update, but then they go back and publish the first update such that now they have all the money again and that's what's officially on record on chain and so they spent money but didn't actually spend the money because they were able to get it back on Layer 1.
 The way that the Poon-Dryja channel construction helps prevent this problem is by issuing something that we call a revocation key is the technical name for it, that kind of makes each of those past transaction states sort of like toxic waste for the other party, such that if they ever publish an older state, that is what gets committed to chain, and that the other party then has this key that allows them to take all of the money that was originally locked into the two-party contract, so to speak.
