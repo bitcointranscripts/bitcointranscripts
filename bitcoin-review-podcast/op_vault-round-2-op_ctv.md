@@ -6,13 +6,12 @@ tags: ["vaults","op-checktemplateverify","soft-fork-activation"]
 speakers: ["James O'Beirne","Greg Sanders","Rijndael","NVK","Ben Carman"]
 categories: ["podcast"]
 date: 2023-05-11
-summary: "The episode is focused on Bitcoin's proposed `OP_VAULT` feature, aimed at enhancing self-custody and security measures for Bitcoin holders. In the discussion, James O'Beirne, the primary advocate, explains the conceptual framework of `OP_VAULT` which leverages the existing Bitcoin script capabilities to create a more secure form of Bitcoin vaults. This vaulting mechanism allows users to pre-set conditions under which the coins can be spent, including delays and recovery options, making unauthorized access and theft significantly more difficult. The mechanism discussed intends to provide a structured yet flexible way to secure Bitcoin without adding undue complexity or overhead. The dialogue covers the evolution of the proposal, its implications, and its potential integration with other Bitcoin improvements like `OP_CHECKTEMPLATEVERIFY` (CTV) to streamline operations and enhance security further without compromising the decentralized ethos of Bitcoin."
 ---
 ## Introductions
 
 NVK: 00:01:25
 
-Today, we're going to get back to opvault, just kidding, opvault, this new awesome proposal on how we can make people's money safe in the future.
+Today, we're going to get back to `OP_VAULT`, just kidding, `OP_VAULT`, this new awesome proposal on how we can make people's money safe in the future.
 And in my opinion, one of very good ways of scaling Bitcoin self-custody in a sane way.
 And with that, let me introduce today's guests, Mr. James.
 And welcome back.
@@ -71,7 +70,7 @@ Big fan.
 
 NVK: 00:02:18
 
-So guys, a lot has happened in OpVault since we had you here.
+So guys, a lot has happened in `OP_VAULT` since we had you here.
 I think it was episode 23.
 And at that time, you had not even made the BIP public yet.
 So a lot changed.
@@ -91,7 +90,7 @@ And so for a long time, there's been this idea floating around of vaults.
 I think the earliest mention I could find was 2013 in some Bitcoin talk forums.
 And the basic idea with vaults is you can lock up your coins in such a way that they're still spendable by you, of course, but if you want to spend them somewhere, you basically say beforehand, okay, when I spend this coin, I'm going to wait some period, whether that's 10 blocks or two days, whatever it might be.
 And you publicly declare the intent to spend that coin to some particular destination.
-And during that period, you can come in and say, oh, wait a second, I don't recognize that spend, or I didn't mean to do that spend, or `NVK` backdoored my hardware wallet, and so now I want to recover those coins or claw them back or cancel that transaction.
+And during that period, you can come in and say, oh, wait a second, I don't recognize that spend, or I didn't mean to do that spend, or NVK backdoored my hardware wallet, and so now I want to recover those coins or claw them back or cancel that transaction.
 And so that's the basic idea of vault.
 It's a really, really powerful concept.
 I think it's something that almost everybody would wanna do in some form if it were costless.
@@ -102,8 +101,8 @@ You have to worry about fee management.
 You have to worry about fixing addresses that the coins ultimately flow into.
 So if you're a really, really big company, maybe you can do this and maybe you can eke out some security benefits.
 But if you're an individual or you know kind of a smaller operation it's really not as practical.
-So I've been kind of involved in various custody efforts including my own for a while and I've been thinking about how to use vaults and I did like a very simple implementation using `OPCHECK` template verify. And this makes vaults kind of more achievable, but there were still some downsides.
-Basically, `OPCHECK` template verify is just a way of saying, hey, we're going to lock these coins up and they're spendable into this particular set of outputs with like no signature or anything else.
+So I've been kind of involved in various custody efforts including my own for a while and I've been thinking about how to use vaults and I did like a very simple implementation using `OP_CHECKTEMPLATEVERIFY`. And this makes vaults kind of more achievable, but there were still some downsides.
+Basically, `OP_CHECKTEMPLATEVERIFY` is just a way of saying, hey, we're going to lock these coins up and they're spendable into this particular set of outputs with like no signature or anything else.
 And it may be kind of counterintuitive, but you can use that to create these like pre-existing graphs of transactions that are allowable.
 So you can use that to create the vault structure without having to do this temporary key thing.
 So operationally it gets a bit simpler.
@@ -576,7 +575,7 @@ With OpVault, OpVault is actually a fully recursive covenant.
 And that's kind of part of the value is you don't want to be bounded in the number of times you can withdraw from your vault.
 If you want to maintain that vault for your whole life, you should be able to do that.
 But the important thing to address is that there's no on-chain pollution in terms of resource use.
-And, in the case of OpCTV, it's literally just doing a hash.
+And, in the case of OP_CTV, it's literally just doing a hash.
 It's less expensive than elliptic curve operations.
 Basically the whole Internet's been trying to break CTV to, like, hassle Jeremy since it came out and nobody's been able to.
 I mean, I tried.
@@ -592,7 +591,7 @@ Well, we don't have even a proposal for that.
 James O'Beirne: 00:32:50
 
 There's ideas.
-Yeah, there are ideas for using CAT and CheXIG from Stack to do these very messy script, giant programs that people put on chain.
+Yeah, there are ideas for using `OP_CAT` and `OP_CHECKSIGFROMSTACK` to do these very messy script, giant programs that people put on chain.
 I'm very skeptical of all that.
 And frankly, like, if you think about what are the things that you actually want to use covenants for, I have two things I'm excited about.
 Number one is vaults, which like literally everybody using Bitcoin should care about because it's about safer custody.
@@ -902,7 +901,7 @@ And so both CTV and OpVault are a very manageable, kind of small set.
 
 NVK: 00:49:57
 
-How does this relate to, say, like just in comparison to say any prev out?
+How does this relate to, say, like just in comparison to say `ANYPREVOUT`?
 
 James O'Beirne: 00:50:01
 
@@ -987,7 +986,7 @@ So Rijndael's point's really good, I think.
 
 Rijndael: 00:52:42
 
-So NVK, you just mentioned Cashu, we just talked about Chaumian mints not that long ago.
+So NVK, you just mentioned Cashew, we just talked about Chaumian mints not that long ago.
 This would actually also be great to add to Chaumi and Mints, right?
 So if you have either a FediMint or a CashuMint and you want to say, all right, we're going to have our Mint's treasury in a vault that has like a, this time locked predestined withdrawal path so that if either one of the functionaries of the mint or if somebody pawns the software and tries to like run away with the money, then we can claw it back.
 This fits in really, really well with the idea that maybe we'll have some collaborative custody mints for a lot of users.
@@ -1688,7 +1687,6 @@ NVK: 01:23:52
 There you go.
 It's kind of fascinating.
 What I like about the opvaults sort of it looks like something that would align with the huddlers.
-Right.
 Like the most sort of like a traditional sort of the people who want Bitcoin to change the least, move the coins the least, right?
 And sort of like huddle forever, like upvotes is for you, right?
 Like you can find a way to create a script and only your 10th generation ahead will get it.
