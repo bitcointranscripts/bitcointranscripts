@@ -2,96 +2,18 @@
 title: "Scaling to Billions of Users"
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=5yPVp6vNHiY
-tags: ["scalability","sidechains","custody"]
-speakers: ["Sjors Provoost","Aaron Van Wirdum"]
+tags: ["scalability","sidechains"]
+speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-07-10
+episode: 82
+summary: "In this episode, Aaron and Sjors discuss a recent blog post by Bitcoin Core developer Anthony Towns, \u201CPutting the B in BTC\u201D, in which he outlines a vision for scaling Bitcoin to facilitate billions of users. As Aaron and Sjors walk through the article, they explain what some of Towns\u2019 proposed solutions are, and which tradeoffs they entail."
 ---
-
-Aaron: 00:00:20
-
-Live from Utrecht, this is Bitcoin Explained.
-Hey Sjors, you want to show one of your new projects, is that right?
-
-Sjors: 00:00:28
-
-Yes, I do.
-If you are in Amsterdam for the Bitcoin Conference in October, then two days before that I am giving an in-person course, which will be interesting for you if you are interested in learning how to contribute to Bitcoin Core.
-And if you want to find out more, go to learnbitcoincore.com.
-
-Aaron: 00:00:45
-
-What's the date?
-
-Sjors: 00:00:46
-
-October 10th.
-
-Aaron: 00:00:47
-
-What's the price?
-
-Sjors: 00:00:49
-
-It depends.
-
-Aaron: 00:00:45
-
-Depends on what?
-
-Sjors: 00:00:51
-
-On when you read this, when you listen to this.
-
-Aaron: 00:00:54
-
-Are you going to do the thing where it gets more expensive as we get closer to the date?
-
-Sjors: 00:00:59
-
-Maybe, but I know that people listen to these podcasts months later. So...
-
-Aaron: 00:01:03
-
-You might just decide to change the price when you feel like it.
-
-Sjors: 00:01:06
-
-Exactly.
-
-Aaron: 00:01:07
-
-Okay.
-All right.
-What was the website?
-
-Sjors: 00:01:08
-
-Learnbitcoincore.com.
-
-Aaron: 00:01:14
-
-Did you stack any sats?
-Sjors?
-
-Sjors: 00:01:17
-
-If you insist, I can read it to you.
-
-Aaron: 00:01:18
-
-I'm not insisting at all, but if you want to, I'll do the jingle.
-Oh god.
-Sjors stack sats, Sjors stack sats, Sjors stacks sats.
-
-Sjors: 00:01:30
-
-So in general there was some discussion about whether or not we should read the sats and some people vehemently said we should read the sats. So we cannot you know disappoint the audience, of course though you could have skipped it.
-So I'll read one from Loki ten thousand sats. The sats shall get stacked thanks for the technical information and musical wonders you're welcome and then the reply to that is duh
+## Introduction
 
 Aaron: 00:01:54
 
-sure stacked set sure today we're gonna discuss It's a little bit of a different episode as usual because we're now really going to discuss one particular technical topic.
+It's a little bit of a different episode as usual because we're now really going to discuss one particular technical topic.
 We're more describing an outline of a vision for Bitcoin.
 And To be precise, it's going to be Anthony Towns' sort of scaling vision.
 Right?
@@ -112,7 +34,7 @@ He's a Bitcoin developer.
 Aaron: 00:02:28
 
 He's one of the most prolific Coin Core developers.
-So Anthony Towns wrote a blog post called putting the B in BTC.
+So Anthony Towns wrote a blog post called "[Putting the B in BTC](https://www.erisian.com.au/wordpress/2023/06/21/putting-the-b-in-btc)".
 That's B for billions of people he writes in his blogpost.
 So the plan is we want to scale Bitcoin to billions of people and now he wrote a blog post on how we can do this.
 So to start what we're gonna do is we're gonna kind of just run through this blog post and you're gonna comment on it and maybe I'll comment on it as well a little bit but we're kind of just For people that are too lazy to read it, we're going to just sort of explain what the idea is.
@@ -148,6 +70,8 @@ You know, I've done an experiment in 2017 where I would take identical computers
 And what you can see is that for the same blockchain and the same computer Bitcoin Core was getting objectively faster every year.
 But that has slowed down a bit.
 
+## Technological Innovations
+
 Aaron: 00:05:08
 
 Okay, so...
@@ -182,7 +106,8 @@ One second.
 So basically what happens, is that you have this thing called the UTXO set, which is the list of who owns which coin.
 And you try to keep, your node keeps track of the list who owns which coin.
 And that if, you know, if billions of people own a coin, then that list gets extremely long.
-And so Utreexo fixes that by putting the entire ownership list in a Merkle tree and then rather than everybody having the full list when you want to spend a coin you need to prove that that coin exists in the first place. So I don't have to as a node operator, I don't have to remember who owns which coin.
+And so Utreexo fixes that by putting the entire ownership list in a Merkle tree and then rather than everybody having the full list when you want to spend a coin you need to prove that that coin exists in the first place.
+So I don't have to as a node operator, I don't have to remember who owns which coin.
 If you think you own a coin, you have to prove it to me and send me some data.
 
 Aaron: 00:06:23
@@ -246,6 +171,8 @@ We mentioned the zero sync idea of catching up from start, but you could also im
 So instead of validating every block as it comes in, you can say, well, I'm just going to wait, you know, a month and then check whatever happened, get a compressed summary of the last month.
 That could also be a way to keep track of a much bigger blockchain.
 But you can't do that with something like silent payments because then you'd have to wait a month to know that you got paid.
+
+## Challenges in Validation
 
 Aaron: 00:09:47
 
@@ -329,6 +256,8 @@ Sjors: 00:12:38
 
 And he also says that even this pushes to the limits of even those few people that validate if they really want to process every transaction of every person on the planet still becomes a problem or it's a fragile system that's easy to mess with.
 
+## Off-Blockchain Transactions
+
 Aaron: 00:12:53
 
 So then we get to the third option which is kind of I would say the heart of the article like this is kind of deficient really which is get off the blockchain.
@@ -344,7 +273,7 @@ So what does that look like?
 
 Sjors: 00:13:11
 
-Well, I mean, the most obvious example of that is Lightning, where instead of every time you want to send a satoshi you create a bitcoin transaction now you create a bitcoin transaction to open a channel you use the lightning network for a while to make a bunch of payments and then after a while you close the channel either because you want to or because you're forced to. Unfortunately if you run the numbers on that, which has been done by Dash Dryjab seven years ago, I think, you still end up with like, it's not going to fit the whole population.
+Well, I mean, the most obvious example of that is Lightning, where instead of every time you want to send a satoshi you create a bitcoin transaction now you create a bitcoin transaction to open a channel you use the lightning network for a while to make a bunch of payments and then after a while you close the channel either because you want to or because you're forced to. Unfortunately if you run the numbers on that, which has been done by Tadge Dryja seven years ago, I think, you still end up with like, it's not going to fit the whole population.
 Just a few tens of millions.
 
 Aaron: 00:13:44
@@ -357,6 +286,8 @@ Yes, if you do the math on like every person opens one channel per year or close
 So you still have to answer the question that we asked before.
 Like, okay, does that mean some people don't use the blockchain or do we make blocks bigger and then do we not validate them, etcetera.
 So that doesn't solve it all the way.
+
+## Sidechains and Federated Systems
 
 Aaron: 00:14:16
 
