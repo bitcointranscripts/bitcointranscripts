@@ -12,7 +12,7 @@ date: 2022-07-05
 Jeremy Rubin: 00:00:07
 
 I was hoping that we can have our panelists, and maybe we'll start with Rene.
-Just introduce themselves quickly, and also answer the question, what is `Lightning` to you?
+Just introduce themselves quickly, and also answer the question, what is Lightning to you?
 And I mean that sort of in the long run.
 Lightning is a thing today, but what is the philosophical Lightning to you?
 
