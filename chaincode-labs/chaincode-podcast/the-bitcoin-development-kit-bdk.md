@@ -2,10 +2,21 @@
 title: "The Bitcoin Development Kit (BDK)"
 transcript_by: nymius via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Alekos-Filini--Daniela-Brozzoni-and-the-Bitcoin-Development-Kit-BDK---Episode-32-e24m4o1
-tags: ["descriptors","hwi","wallet","multisignature"]
+tags: ["descriptors","hwi","wallet"]
 speakers: ["Alekos Filini","Daniela Brozzoni"]
 categories: ["podcast"]
+summary: "Alekos Filini and Daniela Brozzoni visit the podcast to discuss the Bitcoin Development Kit (BDK)"
 date: 2023-05-23
+episode: 32
+additional_resources:
+-   title: Bitcoin Development Kit (BDK)
+    url: https://bitcoindevkit.org/
+-   title: BDK Discord
+    url: https://discord.com/invite/dstn4dQ
+-   title: Rust HWI
+    url: https://github.com/bitcoindevkit/rust-hwi
+-   title: Greenwallet
+    url: https://blockstream.com/green/
 ---
 ## Intro
 
