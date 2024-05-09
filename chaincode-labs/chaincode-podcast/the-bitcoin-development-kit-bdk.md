@@ -211,7 +211,7 @@ The idea we wanted to build was something that can kind of generalize.
 And then you just use one API, and everything works fine.
 And this is in terms of features and in terms of like platforms, the library works well on desktop, works on mobile.
 Now with the refactoring of BDK 1.0 it's going to work on embedded hardware as well.
-So it's going to be no std in technical terms.
+So it's going to be no `std` in technical terms.
 So, yeah, the idea is basically to build something that works anywhere and can kind of do everything.
 And yeah, in terms of the limitation that there are today, I think where it kind of starts breaking down is when you want to monitor multiple descriptors and you want to spend from all of them at the same time.
 
@@ -253,8 +253,8 @@ So I don't know, if I were developing something I would do that extra step, mayb
 Daniela Brozzoni: 00:12:17
 
 Yeah, I think we have some work to do on the documentation side of things, because I realized recently just looking at the questions that people had, that our documentation assumed that people would have a good knowledge of how Bitcoin works.
-And if you're building a wallet, I mean, you should know something about Bitcoin, of course, but you don't have to know exactly what's a ccache and what's a lock time, etc.
-And I know, I mean, those are basic concepts, but if you really just want, okay, I'll create a single seed wallet, whatever, you don't want to have a documentation that just assumes that you know everything.
+And if you're building a wallet, I mean, you should know something about Bitcoin, of course, but you don't have to know exactly what's a `ccache` and what's a lock time, etc.
+Those are basic concepts, but if you really just want, okay, I'll create a single seed wallet, whatever, you don't want to have a documentation that just assumes that you know everything.
 So we do have some work to do on that side.
 
 Alekos Filini: 00:12:55
@@ -309,9 +309,8 @@ So for the Rust library, do they use BDK?
 Alekos Filini: 00:15:09
 
 No, actually.
-But yeah, going back to the BDK question, I know, I mean, I don't know from the high ups if they agree with that.
-I know the actual devs, our ex-colleagues working on the wallet.
-I know they would like to use BDK.
+But yeah, going back to the BDK question, I don't know from the high ups if they agree with that.
+I know the actual devs, our ex-colleagues working on the wallet, I know they would like to use BDK.
 The problem is their library, which is called GDK, which is Green Development Kit, does Bitcoin and Liquid together.
 And BDK is Bitcoin only.
 So I think that's the main roadblock there.
@@ -319,25 +318,21 @@ So we kind of explored the ideas for...
 So at one point I wanted to make BDK generic over the amount type.
 So the idea was to use Rust generic so that you can have...
 You can use any type for your amount as long as you can basically sum two amounts so you can compare them so I can say this is greater than that.
-So the idea was if I, for Bitcoin you would use an unsigned 64 bit integer but for liquid you would use their, whatever, Pedersen commitment type, because you can sum them together, but you can't really compare them, so you can't say is this greater than this one because it's binary, so I tried to implement that and it was a mess, so I stopped.
+So the idea was if I, for Bitcoin you would use an unsigned 64 bit integer but for Liquid you would use their, whatever, Pedersen commitment type, because you can sum them together, but you can't really compare them, so you can't say is this greater than this one because it's binary, so I tried to implement that and it was a mess, so I stopped.
 So yeah, I think that that's one of the roadblocks, otherwise they would probably be happy to use it, I think.
 
-Adam Jonas & Mark Erhardt: 00:16:21
+Adam Jonas: 00:16:21
 
 Interesting.
-
-Alekos Filini: 00:16:22
-
-Yeah.
 
 ## If you have a working wallet, should you switch to BDK?
 
 Daniela Brozzoni: 00:16:23
 
-I mean, I think that's a nice question, because if you already have a wallet that's working, should you switch to BDK?
-And I don't think it's, it's not like, yes, you should.
-I mean, it does take time to just port your code from whatever you're using to BDK, because that's just refactoring, right?
-So I mean, I'm not sure they should.
+I think that's a nice question, because if you already have a wallet that's working, should you switch to BDK?
+It's not like, yes, you should.
+It does take time to just port your code from whatever you're using to BDK, because that's just refactoring, right?
+I'm not sure they should.
 
 Alekos Filini: 00:16:45
 
@@ -462,7 +457,7 @@ Nowadays there are five or six different devices you cannot really implement all
 
 Mark Erhardt: 00:22:14
 
-I think some inroads has been made with descriptors and PSPT, especially as a transfer format.
+I think some inroads has been made with descriptors and PSBT, especially as a transfer format.
 And I think that some, at least that has been adopted by hardware signing devices.
 Can't make any more promises beyond that.
 
@@ -479,7 +474,7 @@ Yeah, tell us about it.
 Daniela Brozzoni: 00:22:37
 
 Okay, so another big thing that's coming, it's a new syncing mechanism, let's say.
-So right now in BDK, we do have one Rust trait, which defines how you sync the wallet and just for context we have this structure called Wallet and what it has inside it's the transactions of the user and the UTXOs so that you can just build new transactions, right?
+So right now in BDK, we do have one Rust trait, which defines how you sync the wallet and just for context we have this structure called `Wallet` and what it has inside it's the transactions of the user and the UTXOs so that you can just build new transactions, right?
 So, sync basically means either you go to a service like Esplora, Electrum, or Bitcoin Core RPC, or maybe you use compact block filters, and somehow you update your internal state.
 And so, you basically just update the list of transactions you made, adding new transactions if they happen, removing transactions if some reorg happened or if they were invalidated or something, and you update the list of UTXOs. So right now we have this method for doing the sync and it's really monolithic.
 So you call sync and you have to sync everything at once.
@@ -488,9 +483,9 @@ It's basically locked.
 And if you think about syncing, you can think about it as in three different steps.
 The first one is some network call, let's say, where you just go to Esplora, go to Electrum, go to Bitcoin Core RPC, and just say, hey, what do you have for me?
 The second step is some kind of processing.
-So you get this answer and you just process it and you just try to understand what's happening.
+You get this answer and you just process it and you just try to understand what's happening.
 And the third step is saving what you just found out.
-So you do need locking, you do need to lock the wallet for the second and the third step because you don't want someone to modify the wallet while you are processing data or while you are saving it, but you don't want to lock the wallet while you're just doing network calls and network calls usually take more time, right?
+So you do need locking, you do need to lock the wallet for the second and the third step because you don't want someone to modify the wallet while you are processing data or while you are saving it, but you don't want to lock the wallet while you're just doing network calls and network calls usually take more time.
 So we are updating the API so that, first of all, you don't have to sync all at once.
 And while you're syncing and doing the actual network calls, you don't have to lock the wallet.
 And you can still use it to get the balance and to create new transactions.
