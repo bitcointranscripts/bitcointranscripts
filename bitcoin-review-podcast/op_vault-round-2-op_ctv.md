@@ -100,7 +100,7 @@ You have to worry about all kinds of things there, like deleting that temporary 
 You have to worry about fee management.
 You have to worry about fixing addresses that the coins ultimately flow into.
 So if you're a really, really big company, maybe you can do this and maybe you can eke out some security benefits.
-But if you're an individual or you know kind of a smaller operation it's really not as practical.
+But if you're an individual or, kind of a smaller operation it's really not as practical.
 So I've been kind of involved in various custody efforts including my own for a while and I've been thinking about how to use vaults and I did like a very simple implementation using `OP_CHECKTEMPLATEVERIFY`. And this makes vaults kind of more achievable, but there were still some downsides.
 Basically, `OP_CHECKTEMPLATEVERIFY` is just a way of saying, hey, we're going to lock these coins up and they're spendable into this particular set of outputs with like no signature or anything else.
 And it may be kind of counterintuitive, but you can use that to create these like pre-existing graphs of transactions that are allowable.
@@ -128,7 +128,7 @@ So we're going to pick a few things to start with.
 We're going to pick our recovery path or like our super secret nuclear cold wallet that's kind of going to be used to interrupt any unexpected transaction.
 We're going to pick our like warm wallet that's going to be used to actually initiate the withdrawal that can be then interrupted by the recovery wallet.
 And with Bitcoin today, if you're going to do this, you have to pick your target ahead of time.
-So like when we start the withdrawal process for this vault, which wallet are the funds actually going to flow into on their way to the final destination where you actually kind of want to put the Bitcoin, you know, whether that's sending it to somebody or uploading to an exchange or whatever.
+So like when we start the withdrawal process for this vault, which wallet are the funds actually going to flow into on their way to the final destination where you actually kind of want to put the Bitcoin, whether that's sending it to somebody or uploading to an exchange or whatever.
 So you pick the various parameters that are involved.
 And then what you have to do to actually get this behavior in Bitcoin today is you have to decide on what all the possible flows are of funds.
 So that might be, I want to create a path where I'm putting in 10 Bitcoin to my vault, I wish, right?
@@ -242,7 +242,7 @@ James O'Beirne: 00:13:44
 Yeah, yeah, exactly.
 And so if in the meantime, the fee market's gone crazy, as maybe we all hope it will in some sense, and fees are much, much higher than when you initially created the vault, you can get into a lot of trouble if the fee rate that you actually put onto these pre-formulated transactions isn't high enough.
 And so one technique that you can use is basically locking in some outputs that are just used for fee control.
-Like you could have a sort of a dummy output that maybe anybody can spend or you know goes to a...
+Like you could have a sort of a dummy output that maybe anybody can spend or, goes to a...
 
 Rijndael: 00:14:22
 
@@ -382,7 +382,7 @@ Are we gonna have a miniscripttemplates.org where you go and you find like, 10 d
 I mean, people can barely serialize and un-serialize stuff with JavaScript, right?
 So is this like the future we see where like there is like essentially banks of scripts that people can use. And then there's the ones that maybe like the wallets are going to have like two, three things that like, here, you can do this with your coins.
 Is this sort of like the, because you can order corporate enterprise for a second, right.
-That has, you know, budgets and people that can audit things and can come up with new ideas.
+That has, budgets and people that can audit things and can come up with new ideas.
 I'm talking about like 90% of the people who actually even have coins to do this.
 Is this sort of like template libraries, how we see the future going?
 
@@ -411,7 +411,7 @@ Yeah, I mean, we're going to have now, what, like, CTV templates, right?
 
 Rijndael: 00:23:27
 
-Yeah, well, it's like, you know, output descriptors are C, right?
+Yeah, well, it's like, output descriptors are C, right?
 So like script is assembly, output descriptors are C, we now have Python and so eventually we'll have JavaScript.
 
 Rijndael: 00:23:36
@@ -428,11 +428,11 @@ It's like a eight line Python script basically.
 
 NVK: 00:23:52
 
-So, you know, I can picture this future.
+So, I can picture this future.
 I can sort of like be pretty excited about it, but at the same time it's like, okay, holy shit, we're adding all this complication to Bitcoin now.
 You know, and, some of these concepts have been sort of like heavily debated and have a lot of contention.
 So, so maybe like, let's start sort of addressing some things and sort of exploring this a little, because, the original OpVault was like, hey, look, I have this simple new primitive, right.
-That like, you know, like, please let's activate this kind of thing.
+That like, like, please let's activate this kind of thing.
 Right.
 And then now it has sort of like expanding, like all software studying and development happens.
 It's always like that, right?
@@ -441,7 +441,7 @@ So, CTV was essentially dead.
 And there's a lot of cool stuff in it.
 There's a lot of scary stuff in it.
 Nobody so far has been able to show me what's actually bad about it.
-So, why don't we sort of like maybe steam in some criticisms and then try to sort of break it down because you know I think that by opening CTV up like essentially opening up this proposal to to more grief even though it might be the right solution.
+So, why don't we sort of like maybe steam in some criticisms and then try to sort of break it down because you, I think that by opening CTV up like essentially opening up this proposal to to more grief even though it might be the right solution.
 
 Rijndael: 00:25:19
 
@@ -453,7 +453,7 @@ And so CTV is a really, really simple covenant scheme.
 There's more complicated covenant schemes.
 OpVault is a covenant scheme, right?
 You're saying when these coins are spent, they can only be spent into this holding zone and then after six months, eight blocks, whatever you specify, then they can be sent somewhere else.
-So the classic concern that people have is, okay, if there's a way of saying these coins can only be sent to certain destinations, then what if I go and withdraw from an exchange and the exchange sends me these tainted coins that can only be sent to like white listed addresses and this is how the state is going to lean on regulated exchanges and make it so that I end up with like Chinese social credit score Bitcoin that I can only send my Bitcoin to people on the approved list and if I you know eat too much beef or something then then I can't spend my Bitcoin.
+So the classic concern that people have is, okay, if there's a way of saying these coins can only be sent to certain destinations, then what if I go and withdraw from an exchange and the exchange sends me these tainted coins that can only be sent to like white listed addresses and this is how the state is going to lean on regulated exchanges and make it so that I end up with like Chinese social credit score Bitcoin that I can only send my Bitcoin to people on the approved list and if I, eat too much beef or something then then I can't spend my Bitcoin.
 This is like the classic as soon as you say Vault CTV like I asked on Nostr before this episode like what questions should I ask James about opfault?
 And I got two answers and one of them was about this
 All right.
@@ -555,7 +555,7 @@ Right.
 
 NVK: 00:30:19
 
-You know, What are the issues that we could have here?
+What are the issues that we could have here?
 There really is no issues, but like what are the perceived issues that we could have here if we have like recursive things happening in the base layer?
 
 James O'Beirne: 00:30:34
@@ -681,7 +681,7 @@ And it's worth pointing out that we're only even talking about the opvault use w
 We're not talking about intervening in a key theft or preventing the theft of your Bitcoins.
 There's just like simply no way of doing that today, especially when you start talking about all the cool kind of recovery methods that you could use, whether whether it is like some kind of crazy offline, cypher wheel key that you generate, or whether it's a three of five social recovery that you distribute to your family, or whether it's some kind of like long time lock thing, or whether it's like all these conditions under a single taproot tree, like you can really, really get an incredible degree of security that you hopefully never have to use.
 And then in the meantime, you can feel very confident about using, say, just a single cold card or even a software wallet, honestly, if you have the right kind of watchtowers in place for really convenient transactions.
-But you still sleep at night because you know, okay, I have, let's say a two day time lock.
+But you still sleep at night because, okay, I have, let's say a two day time lock.
 Someone, like there's no way someone's going to walk away with my coins and I'm not going to intervene kind of in a period like that.
 
 NVK: 00:39:30
@@ -729,7 +729,7 @@ Fuck Raspberry Pis.
 Rijndael: 00:41:45
 
 Sure.
-But you could like run that on a low power, Unix machine of your choice, you know, hook it up to your alarm system, get a signal over `MQTT` or something, and then have a cold card plugged in in CK bunker mode and have it just automatically send your coins if somebody opens the door between 2 a.m. and 6 a.m. Or something.
+But you could like run that on a low power, Unix machine of your choice, hook it up to your alarm system, get a signal over `MQTT` or something, and then have a cold card plugged in in CK bunker mode and have it just automatically send your coins if somebody opens the door between 2 a.m. and 6 a.m. Or something.
 
 NVK: 00:42:08
 
@@ -818,7 +818,7 @@ NVK: 00:44:55
 So here's a cool thing, right?
 Say, you know, that home issue happened, right?
 The guy hopefully didn't kill me.
-He saw that, you know, like really there's nothing I can do.
+He saw that, like really there's nothing I can do.
 And, but I still feel like the system is, is like reasonable and say, for example, I have a two week waitout period, right?
 That I can still cancel, but to cancel that I have to travel to like a very distant land where I have a specific key that triggers the cancellation.
 The whole beauty of this is that nothing moved.
@@ -979,7 +979,7 @@ They're going to be using `cashew`.
 James O'Beirne: 00:52:27
 
 But like the most scarce resource here is chainspace.
-And, you know, as a runner up, it's time to verify, time to download the entire blockchain or, you know, some kind of equally secure form of it.
+And, as a runner up, it's time to verify, time to download the entire blockchain or, some kind of equally secure form of it.
 So Rijndael's point's really good, I think.
 
 ## Use in chaumian mints/ecash
@@ -1246,7 +1246,7 @@ If you're an individual hodler who wants to be able to move money from their pho
 
 NVK: 01:06:17
 
-Well, actually better because, you know, the HSMs could be hacked, the vault can't.
+Well, actually better because, the HSMs could be hacked, the vault can't.
 But it gets weird, right?
 Because see, the Fireblocks have all the FIPS certifications, right?
 So if you wanna get those at that level, you're going to be spending millions of dollars on just the certification.
@@ -1298,7 +1298,7 @@ Yeah.
 So essentially like what they're trying to do is create some standards.
 Right.
 That are insurable.
-So they're going back to, to reinsurers and, all the underwriters and everybody sort of say, hey, you know, this is how we think we could do it so that the coins are actually safe, can insure this, right?
+So they're going back to, to reinsurers and, all the underwriters and everybody sort of say, hey, this is how we think we could do it so that the coins are actually safe, can insure this, right?
 So they're trying to find the packages that meet the technology that can be done.
 And they're sort of like a Miniscript sort of makes their life easier to, yeah, no, nothing to do with ephemeral and CoreWatch.
 So they're trying to just create policies based on setups.
@@ -1327,7 +1327,7 @@ NVK: 01:09:33
 
 Yeah.
 So like I'm not suggesting we're like imminent to activate this.
-I know there's still like, you know, months, if not, like maybe a year or two on how like we're sort of like, okay, this is it.
+I know there's still like, months, if not, like maybe a year or two on how like we're sort of like, okay, this is it.
 Right.
 Like everything is great.
 Everybody agrees it's great.
@@ -1395,7 +1395,7 @@ But the timing might work out that way.
 James O'Beirne: 01:11:08
 
 One thing I've been thinking about, and maybe Greg can chime in on this, what if we eventually proposed a fork that was up all CTV and APO?
-Because I know you know a lot of people have wanted a peel for a while.
+Because I know, a lot of people have wanted a peel for a while.
 Obviously, I can't judge the use in L2, but the size of that fork is..
 
 Rijndael: 01:11:30
@@ -1404,14 +1404,14 @@ Rijndael: 01:11:30
 
 James O'Beirne: 01:11:31
 
-Yeah, I you know you're up.
+Yeah, I, you're up.
 Thank you.
 
 Rijndael: 01:11:35
 
 Thanks James for bringing this up.
 Just today I got an LN-Symmetry channel close onto Signet by the way.
-So, you know, show that later.
+So, show that later.
 So these soft forks are all aimed at very specific use cases, improving things we have today, right?
 We have channels today, like Lightning channels, we can make them better with APO.
 We have vaults today, but we can make them better with `OP_VAULT`.
@@ -1508,7 +1508,7 @@ It's just funny to me that these soft forks we're talking about here are extreme
 And because of the marketing machinations, and don't get me wrong.
 I love Taproot.
 I'm happy we got Taproot.
-I love, you know, all the stuff that it enables, but like there was not the like broad consensus that people think that they had because they were very comfortable, like delegating their technical opinions to other people.
+I love, all the stuff that it enables, but like there was not the like broad consensus that people think that they had because they were very comfortable, like delegating their technical opinions to other people.
 
 NVK: 01:14:51
 
@@ -1580,7 +1580,7 @@ OpVault does not turn Bitcoin into the surveillance permission coin.
 It does not enable all these crazy, horrible 1984 use cases, what it does do is it lets you better secure and better custody your Bitcoin.
 And having people really understand that and understand the ends of it, I think is going to be a lot of the work and I don't mean this in a scummy way, but like marketing, frankly, right.
 And like helping people like understand it and understand like what it does and doesn't do.
-And then from there, yeah, it's a question of like, are we doing, you know, BIP-8?
+And then from there, yeah, it's a question of like, are we doing, BIP-8?
 Are we doing something like, what do we do to actually turn this on?
 
 NVK: 01:18:35
