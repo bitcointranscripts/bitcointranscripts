@@ -2,10 +2,10 @@
 title: "Silent Payments"
 transcript_by: nymius via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Cqmk2cZ2IjM
-tags: ["silent-payments","privacy","privacy-enhancements","transaction-origin-privacy"]
-speakers: ["Josibake"]
-categories: ["club"]
+tags: ["silent-payments"]
+speakers: ["Christoph Ono","Michael Haase","Yashraj","Josibake"]
 date: 2024-01-31
+summary: "Josi gave us a great introduction to silent payments in this conversation. We talked about the history of similar efforts, benefits and drawbacks, how it works, status of the project, adoption path, and lots more."
 ---
 Christoph Ono: 00:00:02
 
@@ -19,7 +19,7 @@ And so I'll just hand it over to Josie to kick us off and we can just organicall
 And so feel free to kick us off if you'd like to, you can just talk to us for 20 minutes, give an overview, or if you prefer a more conversational format that works as well.
 And hopefully we have lots of time for everyone to ask questions and get those answered too.
 
-Josie Baker: 00:01:01
+Josibake: 00:01:01
 
 Yeah, for me personally, first I'll preface, you guys got the bait and switch.
 I'm not the super expert.
@@ -79,12 +79,12 @@ Go ahead.
 There's a hand up there from Yash.
 Yeah.
 
-Yash: 00:07:00
+Yashraj: 00:07:00
 
 So why did we make this decision about making the silent payment address visually recognizable by a regular person?
 Can't we simply delegate all of that to the wallet software or something?
 
-Josie Baker: 00:07:17
+Josibake: 00:07:17
 
 Yeah, that's a great question.
 So already, addresses are meant to kind of be this human readable component for Bitcoin, right?
@@ -103,12 +103,12 @@ What's a silent payment address?
 So to kind of go off that same design, the silent payment address is supposed to be something that people will recognize.
 And then the wallet can parse that address and take care of actually doing the silent payments protocol.
 
-Yash: 00:09:03
+Yashraj: 00:09:03
 
 Yeah.
 Another question on that one is like if the wallet that I use does not support silent payment addresses, can these addresses be used like a regular address?
 
-Josie Baker: 00:09:19
+Josibake: 00:09:19
 
 Yeah, that's another good question.
 This is something that we discussed early on.
@@ -144,7 +144,7 @@ The chicken and egg adoption type of problem seems like a common thing.
 I also remember the same with multi-language recovery phrases, where the first step was just to be able to read them.
 And then to have one aspect of it that's easier, that kind of gets things rolling, and then hopefully leads to a full adoption then later on.
 
-Josie Baker: 00:13:07
+Josibake: 00:13:07
 
 It's particularly hard in an ecosystem like Bitcoin where you know you can't just go force people to do stuff you have to really meet them where they're at and and try to make things as easy for, I mean, a lot of wallets are run by volunteers or people who aren't getting paid, it's just passion projects.
 So when you go and you're like, hey, I made this new protocol, I don't care about that protocol.
@@ -155,7 +155,7 @@ Christoph Ono: 00:13:40
 
 Do you feel like that was a problem with adoption of the previous attempts at this or do you think there were different reasons?
 
-Josie Baker: 00:13:49
+Josibake: 00:13:49
 
 It's hard to say.
 I mean, always when you look back at history, it's difficult to know what was going on at the time.
@@ -222,7 +222,7 @@ Christoph Ono: 00:21:53
 
 Come for the static ID stay for the privacy.
 
-Josie Baker: 00:21:57
+Josibake: 00:21:57
 
 Yeah, right I mean, it sounds like.
 
@@ -234,7 +234,7 @@ So it sounds like it's similar in principle to BOLT 12 for Lightning, right?
 It's the same kind of routing number or unique identifier that in the background then generates kind of all the magic happens in the background.
 So that's really cool.
 
-Josie Baker: 00:22:32
+Josibake: 00:22:32
 
 Yeah, BOLT 12 is another great example.
 I think BOLT 12 is the analogy of this for Lightning, where in Lightning right now, Lightning is even more interactive than in Bitcoin, where, you know, if I give you a Bitcoin address, you can send money to it whenever you want.
@@ -255,7 +255,7 @@ If you have questions, you're welcome to put them in the chat, put them in the d
 Trying to take some notes.
 Feel free to ask anything.
 
-Yash: 00:24:07
+Yashraj: 00:24:07
 
 Yeah.
 I think, Josie, that was a very good explanation.
@@ -264,7 +264,7 @@ I love that.
 Yeah, so I think people could just listen to the conversation and like get like a quick summary.
 That's awesome.
 
-Josie Baker: 00:24:26
+Josibake: 00:24:26
 
 Yeah, I guess, like you said, I think I've done a good job of mentioning the benefits of silent payments, maybe I should spend a second and talk about some of the trade-offs because there's no such thing as a free lunch.
 Ruben and I have not stumbled upon some mystery of the universe that nobody else thought of.
@@ -310,7 +310,7 @@ We have to do more scanning on the node side to find that data and do that and u
 To me, I think this is a great trade-off because of the benefits we get.
 But I think it's worth mentioning.
 
-Yash: 00:29:00
+Yashraj: 00:29:00
 
 Yeah, Quickly jumping in on that one.
 Yeah, so I think that was a very good one that we have made this trade out wherein we are replacing interaction and some other things that we used to do with just computing a lot of stuff.
@@ -322,12 +322,12 @@ But now that I'm using silent payment addresses, my assumption, and I might be w
 Is that true?
 And if yes, what is the privacy implication of that?
 
-Josie Baker: 00:30:18
+Josibake: 00:30:18
 
 So could you rephrase the first question again real quick?
 And we'll start there, then maybe jump on to the second one.
 
-Yash: 00:30:23
+Yashraj: 00:30:23
 
 Yeah, yeah.
 So I think my first question was regarding the fact that not a lot of people run full nodes already.
@@ -335,7 +335,7 @@ And so when they don't, there are some other trade-offs, like some other downsid
 So what would that be?
 And then the second one was just focusing on the privacy aspect of that when it comes to the user and their wallet provider.
 
-Josie Baker: 00:30:48
+Josibake: 00:30:48
 
 So I think, you know, this is kind of bigger than just the topic of silent payments.
 And it's something that I care a lot about and have been doing a lot of thinking about is essentially, if you do not run your own full node today, there is no private wallet for you.
@@ -392,12 +392,12 @@ So instead of Electrum uses the least bandwidth, I think.
 BIP 158 uses a little bit more for the filters, and then silent payments would use more than that.
 So it's kind of like, at least now, I think we're giving users the option of, like, hey, if you want to run a light client, you don't want to run a full node, here's an option for you to use a light client privately with more bandwidth than it would cost you to do it non-privately but less bandwidth than it would cost you to run a full node.
 
-Yash: 00:36:42
+Yashraj: 00:36:42
 
 Yeah quickly I'm jumping on that.
 So, what you just described like this can keep providing that all of that stuff so the user does not explicitly need to do any of this themselves, the wallet software can do this in the background.
 
-Josie Baker: 00:37:01
+Josibake: 00:37:01
 
 Exactly, from a user experience standpoint, I'll take BDK as an example.
 In BDK, they have this work where they have like composable backends where you want to set up a wallet, you're building with BDK, and then you pick a backend.
@@ -427,7 +427,7 @@ I mean, one of the points is that you can send asynchronously, right?
 So you're not even in contact.
 So that wallet could kind of in regular intervals scan for incoming transactions and it would alert you only when you you know when it found something so then then it would all already be kind of I don't know how realistic that is or or whether that's feasible but the implications might not even be that bad because you're probably a lot of the time you're not even expecting it, except if you really synchronously interact with the person paying you.
 
-Josie Baker: 00:39:32
+Josibake: 00:39:32
 
 Yeah, I agree.
 I mean, I think there's a lot of usage patterns where it wouldn't generally matter.
@@ -490,7 +490,7 @@ The wallet should probably tell me that, cool, you might need more bandwidth now
 And make sure to back this up, or if you use this wallet in another application that not all transfers might show up if it doesn't support this feature or something.
 There's something that people might have to be aware of if they assume that they can put their seed in any place and everything will just be the same because it might just not be because of some choices they made, right?
 
-Josie Baker: 00:46:22
+Josibake: 00:46:22
 
 Yeah, this is another area where we wanted to be really careful when designing the protocol.
 So, one of the reasons we decided to keep everything within the transaction.
@@ -523,22 +523,22 @@ Christoph Ono: 00:49:31
 That's great.
 Go ahead, Yash.
 
-Yash: 00:49:34
+Yashraj: 00:49:34
 
 Sorry, so I on this one, like so when I'm when I just add a wallet into an application and it checks for addresses sequentially, it is like often able to detect all the payments in a few seconds or a couple of minutes.
 But if we have silent payment addresses, it would take longer because it has to do a lot more computation, a lot more downloading data and stuff.
 
-Josie Baker: 00:50:05
+Josibake: 00:50:05
 
 Yeah.
 
-Yash: 00:50:06
+Yashraj: 00:50:06
 
 So if I'm checking sequentially, it's like really easy, right?
 20 addresses, 100 addresses.
 But if I'm doing silent payments, it's like almost an unbounded number of addresses that I have to check for?
 
-Josie Baker: 00:50:18
+Josibake: 00:50:18
 
 I think when you're checking addresses sequentially, you are relying on that gap limit heuristic, right?
 You're kind of like assuming you didn't use more than the look ahead window and everything like that.
@@ -554,11 +554,11 @@ If you want wallet history, then both wallets.
 There is no fast way for an `xpub` wallet to recover a wallet history or a sound payment wallet.
 You are going to have to scan the full chain.
 
-Yash: 00:51:40
+Yashraj: 00:51:40
 
 Yeah, and I think even if it takes longer or needs more data, we could always convey that up front so the user can know that this is the trade-off and they can make the decision based on that, I guess.
 
-Josie Baker: 00:51:54
+Josibake: 00:51:54
 
 Yeah, absolutely.
 I think it's always expectation setting.
@@ -568,12 +568,12 @@ Let's say today I have like my descriptor wallet set up and I decide to rescan t
 With silent in payments, I would expect it's probably going to take maybe like 2 hours and 15 minutes or 2 hours and a half.
 I don't think it's going to take much longer, but there is a little bit of extra work in there because of the ECDH step.
 
-Yash: 00:52:42
+Yashraj: 00:52:42
 
 Yeah, does that increase the work that the wallet providers might have to do because like now we we might have in the future it might have thousands of users using silent payment addresses and now for each of those users the wallet provider who does the full node has to do all of this extra work.
 And so that is just like a trade-off.
 
-Josie Baker: 00:53:06
+Josibake: 00:53:06
 
 Yeah, that's another one that I'm interested to look at.
 So again, we're always talking about the non-private scenario here, right?
@@ -607,7 +607,7 @@ Is it to do more of this benchmarking, testing, consensus building?
 Is this accepted as a solution by the ecosystem?
 Or is it possible to tell even?
 
-Josie Baker: 00:56:36
+Josibake: 00:56:36
 
 Great, great question.
 The nice thing about silent payments is it does not require a soft fork.
@@ -651,7 +651,7 @@ Christoph Ono: 00:59:52
 It's awesome.
 Hey, Yash, sounds like something we could do a side project on the Bitcoin Core app for.
 
-Josie Baker: 00:59:58
+Josibake: 00:59:58
 
 Yeah, I think that'd be awesome.
 Yeah, and I think there's a lot of fun, you know, to me, there's a lot of fun design space around silent payments, right?
@@ -666,7 +666,7 @@ Well, if we had sign of payment support, you go to the exchange one time, you re
 And now, for the rest of the duration of your account with that exchange, you can always withdraw to that same address and never have to go through this painful process of updating every time.
 So there's a lot of things that are just like beyond strictly wallet and user experience that I'm kind of excited to start talking to people about and exploring the design space for.
 
-Yash: 01:01:35
+Yashraj: 01:01:35
 
 Yeah, I'm super excited about this.
 And Christoph, like not just in the Bitcoin Core app, but in the design guide that we have.
@@ -676,7 +676,7 @@ Want to work on it.
 Yeah.
 I love this.
 
-Josie Baker: 01:02:13
+Josibake: 01:02:13
 
 That would be awesome.
 Like that was one thing I was really hoping to come out of a call like this because it's a fundamentally different user experience, right?
@@ -692,7 +692,7 @@ Actual usernames on Bitcoin.
 I know that BIP 47 people, they have these Paynyms and it's basically a centralized server, which I don't think that's what we want to shoot for.
 Do you think it's possible in any other way?
 
-Josie Baker: 01:03:09
+Josibake: 01:03:09
 
 It's something I've kicked the tires on a little bit.
 You know, one idea is, let's say you did have a centralized server that was handing out silent payment addresses.
@@ -710,7 +710,7 @@ Christoph Ono: 01:04:34
 
 Yeah.
 
-Josie Baker: 01:04:34
+Josibake: 01:04:34
 
 Right?
 So I've been thinking about stuff like that.
