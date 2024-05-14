@@ -62,7 +62,7 @@ But the problem is that same address shows up on chain multiple times.
 So now someone from the outside can say, ah, whoever owns this address has received X number of payments, holds this much.
 They can see the transactions that paid them.
 And you can now start to cluster a lot of activity.
-And when enough people do this, when you can cluster things, so like exchanges are big offenders here we'll post static deposit addresses and then everybody knows that any transactions to that address are actually someone depositing to an exchange it limits the anonimity set of everybody else who's not doing that.
+And when enough people do this, when you can cluster things, so like exchanges are big offenders here we'll post static deposit addresses and then everybody knows that any transactions to that address are actually someone depositing to an exchange it limits the anonymity set of everybody else who's not doing that.
 So it makes it easier to kind of hurt the privacy of everybody who's using Bitcoin when we have this widespread on-chain address reuse.
 It also hurts your own privacy.
 So if I post an address on my Twitter profile and say, look, hey, If you're happy with the work I'm doing on Bitcoin, send me some Bitcoin.
@@ -88,15 +88,15 @@ Josie Baker: 00:07:17
 
 Yeah, that's a great question.
 So already, addresses are meant to kind of be this human readable component for Bitcoin, right?
-Because if we think about what a Bitcoin address is, we've got the script pubkey, and the script pubkey is actually what goes into the blockchain, but that's cumbersome.
-So we encode script pubkeys into addresses, and the addresses have this recognizable format to them.
+Because if we think about what a Bitcoin address is, we've got the `scriptPubKey`, and the `scriptPubKey` is actually what goes into the blockchain, but that's cumbersome.
+So we encode `scriptPubKey`s into addresses, and the addresses have this recognizable format to them.
 So like, segwit addresses always start with the `bc1q` or `bc1p`, right?
 So we have SegWit version 0 addresses, which is our `bc1q`, and then we have Taproot SegWit version 1, which is `bc1p`.
 So just looking at the address as a human, you can be like, ah, that's a Taproot address, so that's a SegWit address.
-They're also a little bit more compact than the full script pubkey.
+They're also a little bit more compact than the full `scriptPubKey`.
 The `bech32` and `bech32m` encodings are meant to remove ambiguous characters, so that a human can quickly look at an address and verify, okay, this looks correct.
 Addresses are already kind of this convention of, these are meant for humans to be using.
-And then the wallet software is what takes care of decoding the address into the appropriate script pubkeys that the wallet understands.
+And then the wallet software is what takes care of decoding the address into the appropriate `scriptPubKey`s that the wallet understands.
 So with silent payments, we wanted to go the same direction and say we want something that you could show to a human being and they'd be like, oh, that's a silent payment address.
 And it would be very clear that it's not a regular Bitcoin address because we didn't want any confusion of like, what's a Bitcoin address?
 What's a silent payment address?
@@ -216,7 +216,7 @@ You don't have to pay for this one-time notification.
 You don't have to pay for any extra data in the transaction.
 It's just a regular old Bitcoin transaction as if you had just been reusing the same address.
 It also doesn't look any different than any other Bitcoin transaction, which is a nice property that, you know, someone from the outside can't tell that these things are silent payments.
-But if you're a user who just does not care about privacy at all, and then someone tells you like, hey, here's this way to send and receive Bitcoin that's a little bit more like a username or a routing number, I think it kind of Trojan horses the privacy in for them were like oh, yeah this is like much easier than asking someone for a fresh address every time and it doesn't cost me anything more than what I would do to do a normal transaction user experience seems pretty much the same __"why wouldn't I use this?"__ and then we've got people using bitcoin more privately than they were before
+But if you're a user who just does not care about privacy at all, and then someone tells you like, hey, here's this way to send and receive Bitcoin that's a little bit more like a username or a routing number, I think it kind of Trojan horses the privacy in for them were like oh, yeah this is like much easier than asking someone for a fresh address every time and it doesn't cost me anything more than what I would do to do a normal transaction user experience seems pretty much the same "why wouldn't I use this?" and then we've got people using bitcoin more privately than they were before.
 
 Christoph Ono: 00:21:53
 
@@ -228,9 +228,10 @@ Yeah, right I mean, it sounds like.
 
 Michael: 00:22:00
 
-Hey, I'm Michael. By the way, nice to meet you.
+Hey, I'm Michael.
+By the way, nice to meet you.
 So it sounds like it's similar in principle to BOLT 12 for Lightning, right?
-So it's, I mean, it's the same kind of routing number or unique identifier that in the background then generates kind of all the magic happens in the background.
+It's the same kind of routing number or unique identifier that in the background then generates kind of all the magic happens in the background.
 So that's really cool.
 
 Josie Baker: 00:22:32
@@ -279,22 +280,21 @@ So we don't have any of that problem and then they manage their state.
 So that's one idea there.
 But the benefit of the `xpub` approach is I can pre-compute these keys and then I can check for them to see if anybody has sent money to them.
 And I can do that check just kind of using the UTXO set.
-Like the UTXO set says, hey, these are the script pubkeys that are currently unspent.
-And then you go to the UTXO set and you're like, oh, well, I have these keys, which could be turned into script pubkeys.
-Let me see if any of those script pubkeys currently have any Bitcoin.
+Like the UTXO set says, hey, these are the `scriptPubKey`s that are currently unspent.
+And then you go to the UTXO set and you're like, oh, well, I have these keys, which could be turned into `scriptPubKey`s.
+Let me see if any of those `scriptPubKey`s currently have any Bitcoin.
 And that's kind of an easy way for you to scan.
 And if you want your wallet history, you've got to fall back and scan the whole chain.
-Right.
 With silent payments, it's a little different in that you can't pre-generate anything because the sender is actually going to generate that address.
 You have no knowledge of that address until the sender actually decides to send you money.
 The sender generates the address and then uses it in a transaction.
 So it kind of flips it.
 The problem with that is to be aware of that, you need to scan the chain.
-You need to be looking for transactions that have script pubkeys, that look like they might've been generated with your silent payment address.
+You need to be looking for transactions that have `scriptPubKey`s, that look like they might've been generated with your silent payment address.
 So you can also scan the UTXO set, right?
 Where the trade-off I would say between like an `xpub` style way of doing things or a BIP 32 where you pre-generate the addresses and the silent payment one, you have to scan the UTXO set for these outputs that are paying to you.
 And in order to do that, you need access to the input data of the transaction that was to create that.
-So it's you don't quite have to scan the whole chain but let's say for you know like a an `xpub` style way of doing things all you need is the `xpub` and the script pubkeys in the UTXO set.
+So it's you don't quite have to scan the whole chain but let's say for you know like a an `xpub` style way of doing things all you need is the `xpub` and the `scriptPubKey`s in the UTXO set.
 For silent payments, you need the UTXO set and the inputs to the transaction that created that output in the UTXO set.
 So for full nodes, this is very easy.
 They already have full access to the blockchain, all of the transactions, So it's always available to them.
@@ -303,7 +303,7 @@ For a light client, this is a little more tricky.
 Now they need this input data, which without getting too deep into the weeds, that input data is really just one single pubkey, which represents the sum of the pubkeys used in that transaction.
 So it's about 33 bytes of data per transaction.
 So some light client that doesn't have access to the full chain now needs access to this 33 bytes per transaction to be able to check whether or not outputs in the UTXO set belong to them.
-So there was a really good talk that Taj gave at Baltic Honeybadger where I think he said it better than I had been able to express is, in silent payments, we are making the process overall less interactive.
+So there was a really good talk that Tadge gave at Baltic Honeybadger where I think he said it better than I had been able to express is, in silent payments, we are making the process overall less interactive.
 The sender and receiver do not need to interact in order to complete a payment.
 And in order to facilitate that non-interaction, we're spending more in just raw compute.
 We have to do more scanning on the node side to find that data and do that and use that data.
@@ -348,16 +348,14 @@ And I think there's been some arguments about this in the past, where people hav
 The server could, now you can claim, okay, well, they're not doing it.
 But if nothing prevents them from doing it, from a privacy threat modeling, you kind of have to assume they're doing it.
 You can't just take someone's word like, oh, we're not collecting logs.
-So any wallet that's using ElectrumX as a backend is just telling ElectrumX every single address that they're interested in.
-Can you tell me anything about this address?
-Can you tell me anything about this address?
+So any wallet that's using ElectrumX as a backend is just telling ElectrumX every single address that they're interested in - "Can you tell me anything about this address?".
 And so that server could be logging all of that, keeping track of that information, and now you have very limited privacy.
 I think really the only private light client wallet protocol that I'm aware of today is BIP 158, which was originally kind of conceived for these lightning nodes that wanted kind of a private way to ask for information about what's spent in a block.
 And this you can actually use privacy with the tradeoff that it takes a little bit more bandwidth.
-So in the BIP 158 world, full nodes kind of create this compact filter for the whole block and they say within this filter we encode every script pubkey that was spent or created and then the light clients ask for these filters and all that the node or the wallet provider learns at that point is okay a client was interested in this block, but they don't know anything about which addresses they were interested in or anything like that.
+So in the BIP 158 world, full nodes kind of create this compact filter for the whole block and they say within this filter we encode every `scriptPubKey` that was spent or created and then the light clients ask for these filters and all that the node or the wallet provider learns at that point is okay a client was interested in this block, but they don't know anything about which addresses they were interested in or anything like that.
 They just know they wanted a block.
 The light client then gets that block and they have this way of testing for existence.
-So if they have a script pubkey they want to check, they can test if it exists in that filter.
+So if they have a `scriptPubKey` they want to check, they can test if it exists in that filter.
 If it does exist in that filter, then they ask for the block, either from the same person or a different node to better preserve their privacy.
 They download the full block and then they have all the information they need to process the transaction they care about.
 And the nodes don't learn anything about the specific transaction.
@@ -396,12 +394,13 @@ So it's kind of like, at least now, I think we're giving users the option of, li
 
 Yash: 00:36:42
 
-Yeah quickly I'm jumping on that. So, what you just described like this can keep providing that all of that stuff so the user does not explicitly need to do any of this themselves right the wallet software can do this in the background.
+Yeah quickly I'm jumping on that.
+So, what you just described like this can keep providing that all of that stuff so the user does not explicitly need to do any of this themselves, the wallet software can do this in the background.
 
 Josie Baker: 00:37:01
 
-Exactly yeah you know from a user experience standpoint you know I'll take BDK as an example.
-In BDK, they have this work where they have like composable backends where, you know, you want to set up a wallet, you're building with BDK, and then you pick a backend.
+Exactly, from a user experience standpoint, I'll take BDK as an example.
+In BDK, they have this work where they have like composable backends where you want to set up a wallet, you're building with BDK, and then you pick a backend.
 And I think they're working on compact block filters, BIP 158 as a backend, though it's not ready yet.
 But you could say like, hey, I want an Electrum backend.
 I want an RPC backend.
@@ -496,7 +495,7 @@ Josie Baker: 00:46:22
 Yeah, this is another area where we wanted to be really careful when designing the protocol.
 So, one of the reasons we decided to keep everything within the transaction.
 There's no extra data.
-There's no `OP_RETURNS`.
+There's no `OP_RETURN`s.
 There's no anything outside of the transaction itself as we didn't want the user to have to back up any additional information.
 So what the recommendation currently is on the BIP is we've proposed a new derivation path with the silent payments BIP number.
 So this is very in the same style as BIP 43, BIP 44, and like those that have followed, where they say, hey, look, if you're using a BIP 32 style seed, whether that be a BIP 39 seed phrase or BIP 32, this derivation path by the constant 352, this is reserved for silent payments keys.
@@ -512,8 +511,7 @@ Now you need to scan the full chain and that will give you your full wallet hist
 So I think we're really trying to keep it as close to an experience as any other wallet is possible.
 And we don't want the user to have to go around backing up extra information.
 I think one of the nice properties of silent payments is as long as you have access to the Bitcoin blockchain, or as long as you can get access to it, the full chain, you can always recover your full transaction history and your full wallet balance.
-Where I'm not trying to FUD BIP 32 or anything like that, but when you go into a BIP 32 style world where we have like the gap limit and look ahead, there is kind of this complex management of, you know, you're scanning, **but you're scanning**.
-You need to check these derivation paths, you need to make sure you're looking far enough ahead with the gap limit to make sure that you're actually recovering all of your money.
+Where I'm not trying to FUD BIP 32 or anything like that, but when you go into a BIP 32 style world where we have like the gap limit and look ahead, there is kind of this complex management of, you know, you're scanning, but You need to check these derivation paths, you need to make sure you're looking far enough ahead with the gap limit to make sure that you're actually recovering all of your money.
 Whereas in silent payments, it's like, hey, you look at a transaction, you take the inputs of that transaction, you do Diffie-Hellman with this private key.
 If something doesn't show up in the outputs, this was not a payment to you.
 If something does show up in the outputs, you get a match, then this was a payment to you, and now you have all the data you need to spend.
@@ -547,7 +545,7 @@ You're kind of like assuming you didn't use more than the look ahead window and 
 And so I think what you really should be doing is kind of checking the whole UTXO set to see if you have a match.
 So like I think it is faster, But for me, it's faster with less peace of mind, because really what I should do to be doubly sure that I'm getting all of the money from that BIP 32 chain is I should be brute forcing way ahead on the gap limit, which is going to take a lot longer.
 So the fact that it's quick is good.
-And if you're scanning, if you're re-scanning, let's say you import a silent payment address and you're scanning the UTXO set, you are, it is going to take longer because now instead of pre-generating stuff and checking, you're going to check every unspent taproot output, right?
+And if you're scanning, if you're re-scanning, let's say you import a silent payment address and you're scanning the UTXO set, it is going to take longer because now instead of pre-generating stuff and checking, you're going to check every unspent taproot output, right?
 Because any unspent taproot output could be a silent payment to you.
 So you're gonna have to check all of those in one pass.
 We haven't benchmarked this yet, but it's not crazy, right?
@@ -671,7 +669,8 @@ So there's a lot of things that are just like beyond strictly wallet and user ex
 Yash: 01:01:35
 
 Yeah, I'm super excited about this.
-And I'm Christoph like not just in the Bitcoin Core app, but in the design guide that we have, I think if like Josie saying that people can can run with it even right now and if in the Bitcoin Design Guide we have some sort of guidance around that and we might say people who want to implement this, we could save people some effort on the design aspect of it.
+And Christoph, like not just in the Bitcoin Core app, but in the design guide that we have.
+I think if Josie saying that people can run with it even right now and if in the Bitcoin Design Guide we have some sort of guidance around that and we might say people who want to implement this, we could save people some effort on the design aspect of it.
 Yeah, so I'm super excited for it.
 Want to work on it.
 Yeah.
@@ -692,11 +691,10 @@ Let's wrap it up here in a minute, but I just have one question because you ment
 Actual usernames on Bitcoin.
 I know that BIP 47 people, they have these Paynyms and it's basically a centralized server, which I don't think that's what we want to shoot for.
 Do you think it's possible in any other way?
-I mean,
 
 Josie Baker: 01:03:09
 
-it's yeah, it's something I've kicked the tires on a little bit.
+It's something I've kicked the tires on a little bit.
 You know, one idea is, let's say you did have a centralized server that was handing out silent payment addresses.
 So like I say, I want some username at domain.com and then the domain just returns.
 Like let's say I own the domain Josie, josie.com.
