@@ -87,6 +87,8 @@ There's nothing preventing you from jumping in.
 And it doesn't matter who you are if you're able to add value.
 This means that you're going to work with some of the most talented people on the planet and they don't care about your experience or your background.
 
+## The People of Bitcoin
+
 A few examples to illustrate my point.
 
 I met Gloria Zhao in the spring of 2019 as a junior at Berkeley.
@@ -99,8 +101,8 @@ Two years later, she was nominated for maintainership, and today she's one of fi
 She had the drive, she made the time, she acquired the skills, and she earned her opportunity.
 And bitcoin is better because Gloria is here.
 
-As you might imagine in a privacy-focused project originally authored by NIM, NIMs are pretty common and their contributions are just as useful as anyone else's.
-ZMN-SCPXJ, more easily referred to as Zman, showed up in 2017 on the Lightning-Dev and Bitcoin-Dev Mailing Lists.
+As you might imagine, in a privacy-focused project originally authored by a nym, nyms are pretty common. Their contributions are just as useful as anyone else's.
+ZmnSCPxj, more easily referred to as Zman, showed up in 2017 on the Lightning-dev and Bitcoin-dev Mailing Lists.
 Zman's posts were long, thoughtful, and deeply, deeply technical.
 For years, no one knew who Zman was or where he came from.
 But seven years on, Zman is as trusted as anyone.
