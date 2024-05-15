@@ -3,6 +3,7 @@ title: "Choosing a Career in Bitcoin Open Source Development"
 transcript_by: aassoiants via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Qas090xjdGw
 speakers: ["Adam Jonas"]
+categories: ["podcast"]
 date: 2024-05-13
 ---
 ## Introduction
