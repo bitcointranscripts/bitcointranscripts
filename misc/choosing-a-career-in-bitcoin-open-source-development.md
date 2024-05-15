@@ -8,63 +8,57 @@ date: 2024-05-13
 ---
 ## Introduction
 
-Why choose a career in Bitcoin open source?
-My name is Adam Jonas.
-I work at Chaincode Labs, and I'm here to hunt unicorns.
+Why choose a career in bitcoin open source?
+My name is Adam Jonas. I work at Chaincode Labs, and I'm here to hunt unicorns.
 
 ## The Current Landscape
 
 We're gonna start off with a couple of numbers that might surprise you.
-There are roughly a hundred and fifty people in the world that work on Bitcoin open source infrastructure.
-Around 30 of those work full-time on Bitcoin Core.
+There are roughly 150 people in the world that work on bitcoin open source infrastructure. Around 30 of those work full-time on Bitcoin Core.
 I'm looking for 31.
 
-To find out if you're this special person, let's start with a quick inventory.
-What motivates you?
-Is it money?
-Professional freedom?
-Interesting problems or working in a meritocracy?
-Building for the long term?
-Having impact or prestige?
-If these things light you up, then we should talk.
+To find out if you're this special person, let's start with a quick inventory. What motivates you?
+* Is it money?
+* Professional freedom?
+* Interesting problems or working in a meritocracy?
+* Building for the long term?
+* Having impact or prestige?
 
-Now I think it's a reasonable thing to say that in many ways our modern world is a ridiculous place.
-Isn't it ridiculous that your money loses 10% of its value every year?
-Isn't it ridiculous that I can't send $5 to billions of people around the world?
-Isn't it ridiculous that every single digital payment that you make is tracked?
-And isn't it ridiculous that any government can extrajudicially seize your money if you speak out against them?
-If you agree that these things are ridiculous, if you think there should exist the ability to freely send a digital transfer of value between two consenting parties, then you probably recognize that our money is due for an update.
+If these things [professional freedom, interesting problems, meritocracy, building for the long term, impact] light you up, then we should talk.
 
 ## The Vision of Bitcoin
+Now I think it's a reasonable thing to say that in many ways our modern world is a ridiculous place.
+* Isn't it ridiculous that your money loses 10% of its value every year?
+* Isn't it ridiculous that I can't send $5 to billions of people around the world?
+* Isn't it ridiculous that every single digital payment that you make is tracked?
+* And isn't it ridiculous that any government can extrajudicially seize your money if you speak out against them?
 
-Now money is a technology that's been around as long as society itself.
+If you agree that these things are ridiculous. If you think there should exist the ability to freely send a digital transfer of value between two consenting parties, then you probably recognize that our money is due for an update.
+
+Money is a technology that's been around as long as society itself.
 And it's awe-inspiring to imagine reinventing our money from scratch in an open digital form.
-Bitcoin is narrowly focused on being a true native currency for the internet age rather than contouring our old money into something ostensibly digital.
+Bitcoin is narrowly focused on being a true native currency for the internet age rather than contorting our old money into something ostensibly digital.
 Bitcoin is not a refactor, it's a rewrite.
 
-This isn't disruption in the way that you'll find in the standard pitch deck.
-This is a rejection of the status quo.
-And so while Bitcoin is a peaceful resistance, it's a resistance nonetheless.
+This isn't disruption in the way that you'll find in the standard pitch deck. This is a rejection of the status quo.
+And so, while bitcoin is a peaceful resistance, it's a resistance nonetheless.
+
 The cyberpunks discussed this kind of project for decades, and then one of them made it.
 
 Bitcoin is a check on the powers who seek to control their citizenry through financial controls and mass surveillance.
 Bitcoin was created to cause trouble.
-And Bitcoin is here to do nothing less than pull off one of the biggest hacks of all time, to replace the world's money with a new money, a better money, built by an ideologically driven group of nerds who think that they can do better.
+And bitcoin is here to do nothing less than pull off one of the biggest hacks of all time: to replace the world's money with a new money, a better money. Built by an ideologically driven group of nerds who think that they can do better.
 
 ## Building for the Future
 
-I'd argue that this is a unique period in the arc of this project, and I'm not entirely certain they're going to be able to realize the audacious goal of making this new money the default standard for the world.
+I'd argue that this is a unique period in the arc of this project. And I'm not entirely certain that we're going to be able to realize the audacious goal of making this new money the default standard for the world.
 But you've got to admit, we've gotten surprisingly far.
-People are using Bitcoin in real ways to evade repressive regimes and store their savings in a sovereign way.
+People are using bitcoin in real ways to evade repressive regimes and store their savings in a sovereign way.
 
-To pull this off, we need to build something that can last.
-Something that can weather the changes of history and outlive us all.
-We're building a digital cathedral.
-Something beautiful, something full of meaning and purpose.
-Something to be proud of.
+To pull this off, we need to build something that can last. Something that can weather the changes of history and outlive us all. We're building a digital cathedral. Something beautiful, something full of meaning and purpose. Something to be proud of.
 
 From the start, this was not meant to be a move fast and break things kind of endeavor.
-The cryptography is battle-tested, and the pace of development is deliberate because this is our one chance.
+The cryptography is battle-tested. And the pace of development is deliberate, because this is our one chance.
 This long-term vision was coded in the first release.
 The halvings are programmed until 2140.
 Have you ever heard of a piece of software that was designed to last over 100 years?
@@ -72,12 +66,11 @@ Have you ever heard of a piece of software that was designed to last over 100 ye
 ## The People Behind Bitcoin
 
 For this to succeed over the long term, we need craftspeople who care deeply.
-Not because someone told them to care or they're trying to collect accolades for their resume or looking for a promotion, but because they believe in what they're doing and are willing to raise their hand to do the work that needs to be done.
+Not because someone told them to care or they're trying to collect accolades for their resume, or looking for a promotion. But because they believe in what they're doing and are willing to raise their hand to do the work that needs to be done.
 We need people that will defend the decentralization properties that makes this valuable over the centralized alternatives.
 
-What the world sees is an ultra-reliable network with no service interruptions.
-And since software is supposed to break at some point, the fact that Bitcoin just works has outsiders assuming that nothing is being changed or updated.
-What they don't see are those stepping up to write that fuzz test, to attest to that reproducible build, to monitor the upstream dependencies and all the other things that keep Bitcoin going.
+What the world sees is an ultra-reliable network with no service interruptions. And since software is supposed to break at some point, the fact that bitcoin just works has outsiders assuming that nothing is being changed or updated.
+What they don't see are those stepping up to write that fuzz test, to attest to that reproducible build, to monitor the upstream dependencies, and all the other things that keep bitcoin going.
 They don't see the decentralized swarm, each individual choosing how to contribute and what needs to be done.
 
 There is no manager to tell you what to do.
