@@ -1,11 +1,9 @@
 ---
-title: "Choosing a career in bitcoin open source development"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+title: "Choosing a Career in Bitcoin Open Source Development"
+transcript_by: aassoiants via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Qas090xjdGw
-tags: []
-speakers: ['Adam Jonas']
-categories: []
-date: 2024-05-14
+speakers: ["Adam Jonas"]
+date: 2024-05-13
 ---
 ## Introduction
 
