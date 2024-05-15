@@ -3,7 +3,7 @@ title: "Choosing a Career in Bitcoin Open Source Development"
 transcript_by: aassoiants via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Qas090xjdGw
 speakers: ["Adam Jonas"]
-categories: ["podcast"]
+categories: ["video"]
 date: 2024-05-13
 ---
 ## Introduction
@@ -64,7 +64,7 @@ This long-term vision was coded in the first release.
 The halvings are programmed until 2140.
 Have you ever heard of a piece of software that was designed to last over 100 years?
 
-## The People Behind Bitcoin
+## Contributing to Bitcoin's Decentralization Properties
 
 For this to succeed over the long term, we need craftspeople who care deeply.
 Not because someone told them to care. Or they're trying to collect accolades for their resume. Or looking for a promotion. But because they believe in what they're doing and are willing to raise their hand to do the work that needs to be done.
@@ -82,15 +82,16 @@ It takes a special person to be excited by such lack of constraints.
 
 ## Joining the Bitcoin Community
 
-So if this speaks to you, the good news is there are no gatekeepers, no HR screens, no minimum requirements or pedigree required.
+So if this speaks to you, the good news is there are no gatekeepers, no HR screens, no minimum requirements, or pedigree required.
 There's nothing preventing you from jumping in.
 And it doesn't matter who you are if you're able to add value.
 This means that you're going to work with some of the most talented people on the planet and they don't care about your experience or your background.
 
 A few examples to illustrate my point.
+
 I met Gloria Zhao in the spring of 2019 as a junior at Berkeley.
-Soon after I rejected her from the Chaincode residency program because she hadn't made any real effort to contribute to Bitcoin open source projects.
-But a few months later, she compiled bitcoin Core for the first time and got hooked.
+Soon after I rejected her from the Chaincode residency program because she hadn't made any real effort to contribute to bitcoin open source projects.
+But a few months later, she compiled Bitcoin Core for the first time and got hooked.
 Luckily for us, she had a lot of downtime in 2020 and spent most of it on Bitcoin Core.
 Over that summer, she'd wake up at 5 AM to get her work in on Core before her Google internship started.
 And after excelling at both jobs, she turned down an offer from Google to work full-time on bitcoin at Brink.
