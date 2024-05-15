@@ -3,8 +3,10 @@ title: "The Bitcoin Core wallet and wrangling bitcoin data"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Josibake--the-Bitcoin-Core-wallet-and-wrangling-bitcoin-data---episode-24-e1piaje
 tags: ["bitcoin-core","signature-aggregation","wallet"]
-speakers: ["Josibake","Mark Erhardt"]
+speakers: ["Josibake"]
 categories: ["podcast"]
+summary: "Josibake joins us to talk about his work on the Bitcoin Core wallet, bitcoin data and onboarding to bitcoin development."
+episode: 24
 date: 2022-10-21
 ---
 ## Introduction
@@ -196,7 +198,7 @@ Like, that's odd, let's keep pulling at that thread, oh, we found this whole thi
 So that's kind of my goal.
 I also think there's a storytelling aspect with data.
 We can find interesting anomalies in history and make people aware of them, and that makes Bitcoin interesting.
-It makes the whole thing kind of like, what happened in 2020 or 2021 when all the miners shot(?) offline?
+It makes the whole thing kind of like, what happened in 2020 or 2021 when all the miners shot offline?
 Okay, let's tell a story in data about that.
 
 Adam Jonas: 00:08:40
@@ -245,7 +247,7 @@ Adam Jonas: 00:09:32
 
 There were a couple of studies.
 There's an MIT-sponsored study and then a Spiral-sponsored study on Bitcoin Core wallet users.
-HL(?) helped design the survey that went out.
+Achow helped design the survey that went out.
 
 Josibake: 00:09:41
 
@@ -359,7 +361,7 @@ Josibake: 00:13:45
 
 Yeah, I would agree with that.
 
-### Only use one input type when building transaction
+## Only use one input type when building transaction
 
 Adam Jonas: 00:13:44
 
@@ -407,7 +409,7 @@ So that got me thinking about coin selection and well, why don't we just try to 
 Like if my wallet has some native SegWit and some P2SH that I've acquired through matching change outputs, and in the future I'm gonna pay a P2SH or anything really, group those UTXOs together, and it breaks this heuristic of being able to look at the next hop.
 It started as what seemed like a simple idea, and then got deep into the weeds of the wallet and coin selection, and I learned a ton about it and I had a lot of fun and we were able to also quantify the improvement.
 
-So in parallel, H.I.(?) had been working on a wallet simulation script, a framework, whatever you want to call it, and we started using that to be like, all right, let's make a change to coin selection.
+So in parallel, Achow had been working on a wallet simulation script, a framework, whatever you want to call it, and we started using that to be like, all right, let's make a change to coin selection.
 Let's see how often this new logic would get triggered or not triggered.
 Let's measure the waste metric.
 Let's measure all these other things and ensure that we're not increasing the fees that a user would pay over time, et cetera.
@@ -422,13 +424,13 @@ Where usually it's like, it's more private, but it's gonna cost a lot, or it's r
 
 Adam Jonas: 00:17:08
 
-You just make all the change outputs Pay-to-Taproot outputs, and then you can get your win tap root.(?)
+You just make all the change outputs Pay-to-Taproot outputs, and then you can get your "When Taproot".
 
 Josibake: 00:17:13
 
 I'm not gonna touch that.
 
-### How is working on the wallet?
+## How is working on the wallet?
 
 Adam Jonas: 00:17:15
 
@@ -598,7 +600,7 @@ Yeah I think that as more regulated entities enter the space and have opinions o
 
 Adam Jonas: 00:26:46
 
-Given that the largest pool(?) is now in the United States, it just becomes more complicated.
+Given that the largest pool is now in the United States, it just becomes more complicated.
 
 Mark Erhardt: 00:26:51
 
