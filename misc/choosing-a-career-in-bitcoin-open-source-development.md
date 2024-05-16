@@ -3,6 +3,7 @@ title: "Choosing a Career in Bitcoin Open Source Development"
 transcript_by: aassoiants via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Qas090xjdGw
 speakers: ["Adam Jonas"]
+tags: ["career"]
 categories: ["video"]
 date: 2024-05-13
 ---
@@ -29,7 +30,7 @@ What motivates you?
 * Building for the long term?
 * Having impact or prestige?
 
-If these things [(professional freedom, interesting problems, meritocracy, building for the long term, impact)] light you up, then we should talk.
+If these things (professional freedom, interesting problems, meritocracy, building for the long term, impact) light you up, then we should talk.
 
 ## The Vision of Bitcoin
 
@@ -121,19 +122,19 @@ For years, no one knew who Zman was or where he came from.
 But seven years on, Zman is as trusted as anyone.
 Bitcoin is better because Zman is here.
 
-There's Hibasto.
-In 2018, Hibasto started contributing to Bitcoin Core on nights and weekends while working IT at a university in Ukraine.
+There's Hebasto.
+In 2018, Hebasto started contributing to Bitcoin Core on nights and weekends while working IT at a university in Ukraine.
 He contributed a lot of code and a ton of review, and was able to transition to full-time work on Core.
 When his country was invaded, he had already spent years building the very technology that allowed him to walk his life savings over the border in an undetectable way while others struggled to access their bank accounts.
-Bitcoin is better because Hibasto is here.
+Bitcoin is better because Hebasto is here.
 
-There's Ashana.
-Ashana started working on Bitcoin Core as a 15-year-old. Her ideas have far outpaced her experience.
+There's Ishaana.
+Ishaana started working on Bitcoin Core as a 15-year-old. Her ideas have far outpaced her experience.
 She taught herself the code and started to concentrate on the Bitcoin Core wallet.
 A couple of years in, she's one of the most promising contributors to the project.
 Not because of how many years she has in software or even on this earth, but because she's curious, humble, and driven.
 Open source isn't about your credentials, it's about what you can contribute.
-Bitcoin is better because Ashana is here.
+Bitcoin is better because Ishaana is here.
 
 ## Recruiter's Pitch for Working in Bitcoin
 
@@ -202,7 +203,7 @@ It's a network that is constrained by the physical world to protect against larg
 A network where miners optimize both silicon and algorithms.
 A network where the economically motivated support the system as a whole.
 
-Bitcoin is a playground of game theory with the incentive structure [that], at least so far, has encouraged participants to be good actors.
+Bitcoin is a playground of game theory with the incentive structure (that), at least so far, has encouraged participants to be good actors.
 All with a trillion dollars on the line.
 
 Bitcoin has taken advantage of the available state-of-the-art in computer science, but it's also paved the way in many other ways.
@@ -221,13 +222,13 @@ They are waiting to tell us that we were wrong. That our little toy is of no rea
 That we have no alternative but to turn back to the status quo and the machinations that power it.
 If bitcoin breaks, this experiment is over.
 
-And so all that remains is to ask the question, are you [Bitcoin Core developer number] 31?
+And so all that remains is to ask the question, are you (Bitcoin Core developer number) 31?
 
 You'll have the option to join a startup or start your own.
 Big tech will always be there.
 But selfishly, I'm here to recruit you because I want you to be part of a structural change to bitcoin open source development.
 
-Together with Gloria, Zman, Hibasto, and Ashana, you can usher in a new era of builders.
+Together with Gloria, Zman, Hebasto, and Ishaana, you can usher in a new era of builders.
 Who lend new energy and fresh perspectives to the problems that bitcoin is designed to solve.
 
 If you've gotten this far, then you have all the tailwinds behind you to do great things.
