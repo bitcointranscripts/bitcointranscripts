@@ -9,17 +9,20 @@ date: 2024-05-13
 ## Introduction
 
 Why choose a career in bitcoin open source?
-My name is Adam Jonas. I work at Chaincode Labs. I'm here to hunt unicorns.
+My name is Adam Jonas. I work at Chaincode Labs.
+I'm here to hunt unicorns.
 
 ## The Current State of Bitcoin Development
 
 We're gonna start off with a couple of numbers that might surprise you.
-There are roughly 150 people in the world that work on bitcoin open source infrastructure. Around 30 of those work full-time on Bitcoin Core.
+There are roughly 150 people in the world that work on bitcoin open source infrastructure.
+Around 30 of those work full-time on Bitcoin Core.
 I'm looking for 31.
 
 ## What Drives Bitcoin Core Developers
 
-To find out if you're this special person, let's start with a quick inventory. What motivates you?
+To find out if you're this special person, let's start with a quick inventory.
+What motivates you?
 * Is it money?
 * Professional freedom?
 * Interesting problems or working in a meritocracy?
@@ -36,7 +39,8 @@ Now I think it's a reasonable thing to say that in many ways our modern world is
 * Isn't it ridiculous that every single digital payment that you make is tracked?
 * Isn't it ridiculous that any government can extrajudicially seize your money if you speak out against them?
 
-If you agree that these things are ridiculous. If you think there should exist the ability to freely send a digital transfer of value between two consenting parties, then you probably recognize that our money is due for an update.
+If you agree that these things are ridiculous.
+If you think there should exist the ability to freely send a digital transfer of value between two consenting parties, then you probably recognize that our money is due for an update.
 
 Money is a technology that's been around as long as society itself.
 It's awe-inspiring to imagine reinventing our money from scratch in an open digital form.
@@ -46,7 +50,8 @@ Bitcoin is not a refactor, it's a rewrite.
 This isn't disruption in the way that you'll find in the standard pitch deck. This is a rejection of the status quo.
 So, while bitcoin is a peaceful resistance, it's a resistance nonetheless.
 
-The cyberpunks discussed this kind of project for decades. Then, one of them made it.
+The cyberpunks discussed this kind of project for decades.
+Then, one of them made it.
 
 Bitcoin is a check on the powers who seek to control their citizenry through financial controls and mass surveillance.
 Bitcoin was created to cause trouble.
@@ -54,7 +59,8 @@ Bitcoin is here to do nothing less than pull off one of the biggest hacks of all
 
 ## Building the Digital Cathedral
 
-I'd argue that this is a unique period in the arc of this project. I'm not entirely certain that we're going to be able to realize the audacious goal of making this new money the default standard for the world.
+I'd argue that this is a unique period in the arc of this project.
+I'm not entirely certain that we're going to be able to realize the audacious goal of making this new money the default standard for the world.
 But you've got to admit, we've gotten surprisingly far.
 
 People are using bitcoin in real ways to evade repressive regimes and store their savings in a sovereign way.
@@ -70,11 +76,14 @@ Have you ever heard of a piece of software that was designed to last over 100 ye
 ## Contributing to Bitcoin's Decentralization Properties
 
 For this to succeed over the long term, we need craftspeople who care deeply.
-Not because someone told them to care. Or they're trying to collect accolades for their resume. Or looking for a promotion. But because they believe in what they're doing and are willing to raise their hand to do the work that needs to be done.
+Not because someone told them to care. Or they're trying to collect accolades for their resume.
+Or looking for a promotion.
+But because they believe in what they're doing and are willing to raise their hand to do the work that needs to be done.
 
 We need people that will defend the decentralization properties that makes this valuable over the centralized alternatives.
 
-What the world sees is an ultra-reliable network with no service interruptions. And since software is supposed to break at some point, the fact that bitcoin just works has outsiders assuming that nothing is being changed or updated.
+What the world sees is an ultra-reliable network with no service interruptions.
+And since software is supposed to break at some point, the fact that bitcoin just works has outsiders assuming that nothing is being changed or updated.
 What they don't see are those stepping up to write that fuzz test, to attest to that reproducible build, to monitor the upstream dependencies, and all the other things that keep bitcoin going.
 They don't see the decentralized swarm, each individual choosing how to contribute and what needs to be done.
 
@@ -104,7 +113,8 @@ Two years later, she was nominated for maintainership, and today she's one of fi
 She had the drive, she made the time, she acquired the skills, and she earned her opportunity.
 Bitcoin is better because Gloria is here.
 
-As you might imagine, in a privacy-focused project originally authored by a nym, nyms are pretty common. Their contributions are just as useful as anyone else's.
+As you might imagine, in a privacy-focused project originally authored by a nym, nyms are pretty common.
+Their contributions are just as useful as anyone else's.
 ZmnSCPxj, more easily referred to as Zman, showed up in 2017 on the Lightning-dev and Bitcoin-dev Mailing Lists.
 Zman's posts were long, thoughtful, and deeply, deeply technical.
 For years, no one knew who Zman was or where he came from.
@@ -120,7 +130,8 @@ Bitcoin is better because Hibasto is here.
 There's Ashana.
 Ashana started working on Bitcoin Core as a 15-year-old. Her ideas have far outpaced her experience.
 She taught herself the code and started to concentrate on the Bitcoin Core wallet.
-A couple of years in, she's one of the most promising contributors to the project. Not because of how many years she has in software or even on this earth, but because she's curious, humble, and driven.
+A couple of years in, she's one of the most promising contributors to the project.
+Not because of how many years she has in software or even on this earth, but because she's curious, humble, and driven.
 Open source isn't about your credentials, it's about what you can contribute.
 Bitcoin is better because Ashana is here.
 
@@ -187,7 +198,8 @@ An answer is the Lightning Network, a network of payment channels based on multi
 
 But Bitcoin isn't just software.
 To think of bitcoin as only software neglects the fact that bitcoin is an ecosystem of both bits and atoms.
-It's a network that is constrained by the physical world to protect against large-scale attackers. A network where miners optimize both silicon and algorithms.
+It's a network that is constrained by the physical world to protect against large-scale attackers.
+A network where miners optimize both silicon and algorithms.
 A network where the economically motivated support the system as a whole.
 
 Bitcoin is a playground of game theory with the incentive structure [that], at least so far, has encouraged participants to be good actors.
@@ -205,7 +217,8 @@ But while reading and getting oriented is a valuable use of time, the simple for
 ## Will You Be Part of the Change? 
 
 The powers that be are rooting for us to fail.
-They are waiting to tell us that we were wrong. That our little toy is of no real use. That we have no alternative but to turn back to the status quo and the machinations that power it.
+They are waiting to tell us that we were wrong. That our little toy is of no real use.
+That we have no alternative but to turn back to the status quo and the machinations that power it.
 If bitcoin breaks, this experiment is over.
 
 And so all that remains is to ask the question, are you [Bitcoin Core developer number] 31?
@@ -214,13 +227,16 @@ You'll have the option to join a startup or start your own.
 Big tech will always be there.
 But selfishly, I'm here to recruit you because I want you to be part of a structural change to bitcoin open source development.
 
-Together with Gloria, Zman, Hibasto, and Ashana, you can usher in a new era of builders. Who lend new energy and fresh perspectives to the problems that bitcoin is designed to solve.
+Together with Gloria, Zman, Hibasto, and Ashana, you can usher in a new era of builders.
+Who lend new energy and fresh perspectives to the problems that bitcoin is designed to solve.
 
-If you've gotten this far, then you have all the tailwinds behind you to do great things. So I have no doubt that you're going to succeed.
+If you've gotten this far, then you have all the tailwinds behind you to do great things.
+So I have no doubt that you're going to succeed.
 
 The question is, will it matter?
 
 There's a career waiting for you that requires no interview and can change the world as we know it.
 If you think you are 31, it's my job to help you.
 
-We need more troublemakers. So I hope that you'll join us.
+We need more troublemakers.
+So I hope that you'll join us.
