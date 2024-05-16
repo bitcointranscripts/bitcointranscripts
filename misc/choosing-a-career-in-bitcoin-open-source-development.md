@@ -5,7 +5,8 @@ media: https://www.youtube.com/watch?v=Qas090xjdGw
 speakers: ["Adam Jonas"]
 tags: ["career"]
 categories: ["video"]
-date: 2024-05-13
+date: 2024-04-21
+summary: "Adam Jonas, from Chaincode Labs, presents a compelling case for choosing a career in Bitcoin open-source development. Highlighting the limited number of full-time developers, he seeks individuals driven by professional freedom, long-term impact, and innovative challenges. Jonas emphasizes Bitcoin's potential to address systemic issues like inflation, financial surveillance, and government overreach, presenting it as a revolutionary technology with a focus on decentralization. He shares inspiring stories of contributors like Gloria Zhao and ZmnSCPxj, illustrating the merit-based, inclusive nature of the community. Jonas outlines Bitcoin's technical challenges and innovations, such as the Lightning Network and ASMap project, inviting passionate individuals to join and contribute to this transformative project"
 ---
 ## Introduction
 
