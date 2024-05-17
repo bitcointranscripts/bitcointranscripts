@@ -5,7 +5,7 @@ tags: ['lightning']
 speakers: []
 categories: []
 date: 2024-04-22
-—
+---
 
 Agenda: <https://github.com/lightning/bolts/issues/1155>
 
