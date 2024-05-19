@@ -3,7 +3,7 @@ title: "Anonymous Credentials"
 transcript_by: mehdimzf via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=pgErjQSQQsg
 tags: ["research","privacy-enhancements","cryptography","bls-signatures"]
-speakers: ["Jonas Nick","Lucas Ontivero"]
+speakers: ["Jonas Nick","Lucas Ontivero","Rafael"]
 categories: ["club"]
 date: 2020-04-14
 ---
