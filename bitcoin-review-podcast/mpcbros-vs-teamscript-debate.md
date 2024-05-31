@@ -27,10 +27,12 @@ On my right side, Rob for Team Script with variable sizing, so we don't know.
 Is this already a loss?
 We don't know, let's find out.
 Hello, gentlemen, welcome to the show.
-Rijndale (R): 00:01:40
+
+Rijndael: 00:01:40
 
 Hey, how's it going?
-Rob Hamilton (RH): 00:01:41
+
+Rob Hamilton: 00:01:41
 
 Thanks for having me.
 
@@ -45,7 +47,8 @@ NVK: 00:01:52
 
 So guys, well, let's start here with Rijndael.
 Can you please give us a little bit of a primer on Team MPC?
-Rijndale (R): 00:02:01
+
+Rijndael: 00:02:01
 
 Something that you've been able to do in really complicated and convoluted ways for years with 'ECDSA' is you've been able to do what's called multi-party computation, where you have multiple actors or multiple devices work together in order to create a shared public-private key pair and then sign transactions.
 This is really useful if you want to have segregated signers or have other kind of multi-party protocols like Mercury Wallet uses state chains.
@@ -57,7 +60,7 @@ NVK: 00:03:24
 
 But is MPC even Bitcoin?
 
-R: 00:03:28
+Rijndael: 00:03:28
 
 MPC is a general class of algorithms and protocols, multi-party computation.
 There's MPC outside of Bitcoin, but we can use MPC to do Bitcoin things.
@@ -66,7 +69,7 @@ NVK: 00:03:43
 
 So it's not Bitcoin?
 
-R: 00:03:45
+Rijndael: 00:03:45
 
 It's still Bitcoin.
 
@@ -80,7 +83,8 @@ Well, we're going to find out.
 NVK: 00:03:49
 
 Mr. Rob, do you want to give us a primer on TeamScript?
-Rob Hamilton (RH): 00:03:54
+
+Rob Hamilton: 00:03:54
 
 TeamScript has a rich, deep history in Bitcoin starting in block 170 when Satoshi paid Hal Finney.
 It's very the grub brain equivalent of just you have a key, you present a public key and then you present a signature for it.
@@ -91,7 +95,7 @@ And it's been around since the start of Bitcoin.
 
 ## Simplicity
 
-R: 00:04:24
+Rijndael: 00:04:24
 
 Hold on.
 No, that's not Team Script.
@@ -103,7 +107,7 @@ It's like the purest expression of Bitcoin.
 Rob is trying to get everybody to put multiple pubkeys on chain and multiple signatures on the chain, and then use a for loop and counting to figure out whether or not your spend is allowed.
 It's insanity.
 
-RH: 00:05:07
+Rob Hamilton: 00:05:07
 
 This is just your typical MPC rhetoric.
 It is absurd.
@@ -116,14 +120,14 @@ And it's a beautiful thing because it's all sitting there on the chain.
 
 ## Auditability
 
-RH: 00:05:31
+Rob Hamilton: 00:05:31
 
 Here's something that we really in Bitcoin, we value the idea of auditability, right?
 With MPC, you have this weird concocted security scheme that exists off-chain, and then you don't even know who actually signed at the end of the day.
 You have no verifiability, right?
 You want to actually have accountability of who actually signed that signature and you lose that all with MPC.
 
-R: 00:05:52
+Rijndael: 00:05:52
 
 On the other hand, if you have auditable, recognizable setups on chain, then one of two things happens.
 Either you have to use one of the really common script setups, so you're either doing 'SingleSig' or maybe you're doing two of three or a small number of people do three or five, or you end up standing out like a sore thumb because if you build some really interesting time decaying 'MultiSig' or if you end up building some really exotic 13 of 15 'MultiSig' because that's what makes sense for you as an individual or an organization, then that ends up being very identifiable on-chain because nobody is doing it.
@@ -136,7 +140,7 @@ NVK: 00:07:06
 Yeah, but see, you guys are just blabbing now.
 You know, I want to I want to hear use cases here, real-world use cases, none of this 'MiniScript' pipe dream.
 
-RH: 00:07:16
+Rob Hamilton: 00:07:16
 
 What are you even talking about?
 'MiniScript' yet?
@@ -148,17 +152,17 @@ This is a really great point too, NVK, talking about pipe dreams here.
 Rijndael, what wallet it's out there right now, you mentioned Mercury Wallet, but like, if I wanted to do on chain MPC, what does that even look like right now?
 It sounds like it's a whole pipe dream to me.
 
-R: 00:07:46
+Rijndael: 00:07:46
 
 Well, I mean, you don't even know because, you can't identify those spends on chain.
 So they could be happening right now and you would have no idea.
 
-RH: 00:07:55
+Rob Hamilton: 00:07:55
 
 Oh, cool.
 So which wallet can I use to actually do this?
 
-R: 00:08:01
+Rijndael: 00:08:01
 
 You know, maybe we should like take a step back and explain.
 
@@ -166,7 +170,7 @@ NVK: 00:08:04
 
 That was a good bunch.
 
-RH: 00:08:11
+Rob Hamilton: 00:08:11
 
 Yeah, talking about pipe dreams, man, like every single wallet I can, Sparrow uses scripts, you know, Spectre uses scripts, all of the hardware wallets use Script.
 Like it's all live.
@@ -178,7 +182,7 @@ NVK: 00:08:23
 
 Let's talk about interactivity.
 
-R: 00:08:25
+Rijndael: 00:08:25
 
 Yeah, let's let's talk about interactivity.
 So, you know, the way that Bitcoin script works, if you have to go and set up a 'MultiSig', right?
@@ -194,7 +198,7 @@ NVK: 00:09:36
 
 This sounds complicated.
 
-R: 00:09:38
+Rijndael: 00:09:38
 
 Yeah, but you know, like we have software.
 Software is really good at automating complicated things.
@@ -205,7 +209,7 @@ NVK: 00:09:48
 
 Yeah, but how are bunker coin people in their bunkers in a cave gonna do this on the wall with chalk?
 
-R: 00:09:55
+Rijndael: 00:09:55
 
 Well, they're not gonna be spending their Bitcoin, so it's fine.
 
@@ -213,7 +217,7 @@ NVK: 00:09:59
 
 That's then a good point.
 
-RH: 00:10:01
+Rob Hamilton: 00:10:01
 
 Yeah, and then, so I feel like we kind of skipped over a huge piece here, right?
 Because with the output, first off, output descriptors streamline the script redemption path, right?
@@ -230,7 +234,7 @@ You know, we can do this.
 You know, we had a whole episode on 'FROST' where I think we can store nonce securely and not repeat them.
 I think it's possible.
 
-R: 00:10:51
+Rijndael: 00:10:51
 
 Yeah, and the danger is something for protocol designers to figure out, right?
 Like we used to have nonce problems with just normal single-sig Bitcoin before, and then we standardized on using deterministic nonces.
@@ -248,7 +252,7 @@ NVK: 00:11:49
 
 Didn't [blockchain.info](https://www.blockchain.com/explorer) have that problem?
 
-R: 00:11:52
+Rijndael: 00:11:52
 
 Yeah, exactly.
 Like nonce mishandling is just a problem with digital signatures.
@@ -258,7 +262,7 @@ NVK: 00:11:59
 
 For people that don't know, it's a number once.
 
-R: 00:12:02
+Rijndael: 00:12:02
 
 But I mean, getting back to something that Rob said, right?
 So I mean, if you're using a complex script to manage your funds, then you need to handle the availability and durability of your Redeem script.
@@ -272,7 +276,7 @@ One part that I don't like about the interactivity is that it has to happen.
 You have to share those nonces at some point.
 Normally, you'd say when you do the setup and you have to store them securely unless we have deterministic nonces.
 
-RH: 00:12:56
+Rob Hamilton: 00:12:56
 
 Well, you have to store them securely and then there's the metadata you then need to keep track of right as the nonce counter, right?
 So if you start a signing process and you decide to, you know, halfway through, like rotate out, like then you necessarily need to increment your nonce because, and the reason why specifically this is important is that if you have a malicious person in your MPC arrangement and nonces start getting reused, they can start unilaterally signing and taking over the money, removing the security because it's only one public key on chain.
@@ -282,7 +286,7 @@ NVK: 00:13:34
 
 Has anybody been working on resolving the nonce issue, the unique nonce issue, like maybe deterministically like we do with standard script or something else?
 
-R: 00:13:45
+Rijndael: 00:13:45
 
 So you don't want to do deterministic nonces, but people are playing with different mechanisms to not make it be its own round.
 So if you read the 'FROST' paper, for example, the way that it's written is you do nonce commitment as a discrete step.
@@ -295,7 +299,7 @@ NVK: 00:14:31
 
 So you ratchet it.
 
-R: 00:14:32
+Rijndael: 00:14:32
 
 There are also implementations where when you trade nonce commitments, you don't just trade one nonce commitment, you actually pass around a big bag of nonce commitments.
 You say, I have 100 nonces from Rob.
@@ -307,7 +311,7 @@ NVK: 00:15:00
 So what you're really saying is that this is really cool, we have some ideas, but we're not quite there yet.
 We're just waiting for some very smart Galaxy Brain to email the mailing list saying, 'I figured it out'.
 
-R: 00:15:11
+Rijndael: 00:15:11
 
 I don't even think it's there.
 I think people are implementing it, you know, right now.
@@ -320,7 +324,7 @@ NVK: 00:15:22
 Okay.
 Didn't 'BitGo' add 'MuSig' too?
 
-R: 00:15:25
+Rijndael: 00:15:25
 
 They did.
 So 'BitGo' is responsible for a large portion of value transacted on the Bitcoin network every day and their enterprise customers can start moving over to 'MuSig2', which is pretty cool.
@@ -352,7 +356,7 @@ And traditionally, like, you know, a lot of the Bitcoin brokerages and big enter
 So on, actually, no, on the BigGo case, it's coming from the customer's wallet, So they are paying the fee.
 So maybe they were complaining that BigGo was overpaying fees and spending their money.
 
-R: 00:18:29
+Rijndael: 00:18:29
 
 Yeah.
 I mean, it could be, especially if you have a transaction with lots and lots of inputs.
@@ -361,7 +365,7 @@ NVK:
 
 Miners.
 
-R:
+Rijndael:
 
 Yeah, miners or exchanges where they've been taking lots of little deposits and then they need to do a consolidation.
 You have to provide a valid witness for every input in a transaction.
@@ -372,7 +376,7 @@ If you can do this key aggregation.
 
 ## Shitcoin use
 
-RH: 00:19:26
+Rob Hamilton: 00:19:26
 
 There's another context here, though, for the reason that 'BitGo' and all these entities use MPC.
 There's a third option, Rodolfo.
@@ -388,7 +392,7 @@ They use a type of MPC that has nothing to do with the coins.
 It's just how they secure the keys, essentially.
 The 'BitGo', I didn't read the specifics, and I don't even know if they released the specifics, I wonder if it's useful for the Shitcoins.
 
-R: 00:20:24
+Rijndael: 00:20:24
 
 Well, like if you do, so there have been some MPC 'ECDSA' wallets like I think Coinbase has one in their custody offering.
 And those are actually useful for other coins that do 'ECDSA'.
@@ -404,7 +408,7 @@ NVK: 00:21:08
 That's what I thought.
 By the way, 'BLS signatures', aren't those new and shiny and shouldn't be used yet for something like that?
 
-R: 00:21:18
+Rijndael: 00:21:18
 
 They rely on bilinear pairings, which is like much newer cryptography.
 I think one of the things that the Bitcoin ecosystem is very conservative about is relying on new cryptographic assumptions and pairings are a new cryptographic assumption.
@@ -417,7 +421,7 @@ Hey, we have Adam back chiming in here.
 He's like, I'm not sure I'd put 'MuSig' and 'FROST' in the same category as MPC constructs, which in my opinion, is complex for agile risk of crypto implementations mistake.
 The 'Damgerd-Jurik-based ECDSA' construct is a bit complex in itself, though, while not generic MPCs, so similar critique for that.
 
-R: 00:22:01
+Rijndael: 00:22:01
 
 Yeah, I mean, like MPC is like a really general term.
 And I think Adam's right, which is that 'MuSig' and 'FROST' are much more, I'd say, constrained and much more tightly defined than a general MPC signing scheme.
@@ -425,7 +429,7 @@ In a really strict sense, they are a multi-party computation, but they are very 
 One of the things that was interesting about 'FROST' actually came with security proof, right?
 So like we have proof that 'FROST' kind of reduces down to the same cryptographic hardness assumptions that we normally rely on for 'Schnorr signatures'.
 
-RH: 00:22:45
+Rob Hamilton: 00:22:45
 
 Yeah, I mean, there's an interesting point here too, just to briefly talk about 'Schnorr signatures', is that they were originally around and available during the Bitcoin white paper, but it had a patent on it.
 So when the patent expired, they were able to do the part of that upgrade.
@@ -440,7 +444,7 @@ NVK: 00:23:46
 So guys, I mean, like, you know, it's kind of interesting that like we have like a wrench thrown in here, which is 'Taproot', and the capacity of having all this in the same vehicle.
 So maybe there is a path in which we can address both?
 
-R: 00:24:08
+Rijndael: 00:24:08
 
 Yeah, I mean, so the thing that's really cool about Bitcoin script, right, is there's a bunch of operations that we can do in Bitcoin.
 So we can check signatures.
@@ -471,7 +475,7 @@ NVK: 00:26:48
 So since, you know, everything can be done together now with 'Taproot', why don't we switch sides here and make each other's points?
 Rob, how do you save MPC from losing this battle?
 
-RH: 00:27:02
+Rob Hamilton: 00:27:02
 
 Oh, MPC.
 This is a really incredible point here, is that every single time you want to rotate out these signers, it's an on-chain transaction, right?
@@ -487,7 +491,7 @@ NVK: 00:28:02
 
 Well, this is through Rust, right?
 
-R: 00:28:05
+Rijndael: 00:28:05
 
 Rust makes 'FROST' more asynchronous and more robust because like one of the things that Rob you know, left out when he was painting this rosy picture of a 'post FROST' future for us.
 It's so easy to leave out the details, but you know what, Rob?
@@ -501,7 +505,7 @@ NVK: 00:29:17
 
 Is somebody mowing their grass?
 
-R: 00:29:20
+Rijndael: 00:29:20
 
 Yeah, that's me, sorry.
 
@@ -512,7 +516,7 @@ NVK: 00:29:21
 OK, guys, so I think we get to a point here where I still defend the fact that I don't think, you know, 'FROST' is ready, but I don't think anybody does.
 We did a whole 'FROST' episode, which people should really listen to.
 
-R: 00:29:37
+Rijndael: 00:29:37
 
 I mean, one of the things that's just great about Script, is you can do 'MultiSig' constructions in Script today.
 They work.
@@ -527,7 +531,7 @@ You know, thinking just sort of like pragmatically here in terms of enterprise, 
 And the groups are provable in chain.
 So at least you have some auditability on the signing that happened.
 
-RH: 00:30:46
+Rob Hamilton: 00:30:46
 
 You know, technology moves over time and progresses and there are evolutions, right?
 Just because today we don't have these things doesn't mean down the road we're not going to be able to do this.
@@ -546,7 +550,7 @@ Question for you guys.
 Do you guys know what the new wallet from Block uses on their, because they have some kind of threshold signing in terms of spending capacity?
 So that means to me that they must have something or is that just like business logic?
 
-RH: 00:31:46
+Rob Hamilton: 00:31:46
 
 To my understanding, it's a two of three, right?
 You have a key on the phone, you have a key on the hardware wallet and you have a key in the server.
@@ -559,7 +563,7 @@ NVK: 00:32:13
 
 Okay, so it's just a standard 'MultiSig'.
 
-R: 00:32:15
+Rijndael: 00:32:15
 
 Yeah, we don't, There's been a bunch of conversations about covenants all over the place, including on this show.
 And something that would actually be really great is if we had some transaction introspection 'OpCodes'.
@@ -572,7 +576,7 @@ You know, it gets even more interesting, right?
 You know, if we had a way for transactions to know the amounts, you could have time-locks on thresholds, which really, really makes stuff interesting, right?
 Now you can have spending velocity, which is one of the most useful things that HSMs offer.
 
-R: 00:33:35
+Rijndael: 00:33:35
 
 Absolutely.
 And you could use this all over the place where you say, hey I've got my mobile wallet, and this is exactly a spending velocity use case, But just to say it for the people who are still awake, you know, hey, I've got my mobile wallet and I can spend up to, you know, $100.
@@ -586,18 +590,18 @@ But you know that the current covenant proposal, UpVault, does not...
 Well, I mean, they did expand UpVault to have 'CTV' as part of the package, didn't they?
 And 'CTV' does provide the capacity for this introspection.
 
-R: 00:34:31
+Rijndael: 00:34:31
 
 I think you might be able to do something similar with 'APO'.
 There's a trick to be able to get the transaction hash on chain.
 And then I think if you have 'OpCat', you could construct the transaction in your script and then do a comparison.
 But it's a lot more moving parts.
 
-RH: 00:34:52
+Rob Hamilton: 00:34:52
 
 Doesn't 'OpCat' bring recursion back?
 
-R: 00:34:58
+Rijndael: 00:34:58
 
 I don't know.
 And frankly, I don't think that that's actually a bad thing.
@@ -617,7 +621,7 @@ Just the amount of computation you need for that.
 I feel so bad for the exchanges that support Ethereum and all its contracts.
 I don't think people appreciate how insane it is to keep balance.
 
-R: 00:35:44
+Rijndael: 00:35:44
 
 Yeah, I mean it's pretty nuts because the way that all these token contracts work.
 So like if you have either an NFT or a fungible token in Ethereum, the way that it works is like your account doesn't have a balance of that token.
@@ -629,7 +633,7 @@ And instead of saying, what's your token balance per contract, they say, what's 
 And like, that's why, you know, all these Ethereum wallets hit like the same API endpoint because they have to build this giant index and track the whole thing.
 It's absolutely insane.
 
-RH: 00:36:42
+Rob Hamilton: 00:36:42
 
 I was looking at 'Bitcoin Optech', as I often do to go deep in the weeds on stuff.
 And this is where another option of 'TLOV' becomes an option, 'TapLeaf Update Verify', where you actually can have an amount of introspection become part of the logic of the tap leaves for like, how you're spending things and looking here, it says it would require an additional 'OP_CODE'.
@@ -637,7 +641,7 @@ But then you would be able to do this too, which is basically a different approa
 
 ## 'Taproot'
 
-R: 00:37:06
+Rijndael: 00:37:06
 
 And I mean, like just kind of pulling it a little bit back more towards what we were talking about earlier, right?
 Like the thing that's so cool about 'Taproot', hopefully, if people are still awake, they understand this about 'Taproot'.
@@ -659,7 +663,7 @@ You only pay for that in terms of block space, and you only reveal that in terms
 And that's 'Taproot', right?
 And it's a way that you can do all of these things.
 
-RH: 00:39:23
+Rob Hamilton: 00:39:23
 
 It's the best of both worlds.
 Additionally, something that's may not fully understood with 'Taproot', they actually got rid of 'OP_CHECKMULTISIG'.
@@ -671,15 +675,15 @@ And then you get to the end and you compare it to what your threshold is.
 So it's computationally more efficient as well.
 Additionally, with the 'Schnorr signatures', you can, as we mentioned earlier, since you're using 'Schnorr signatures' in 'Taproot', you can have a single public key on chain and it's actually its own aggregated 'T' of 'N' behind the scenes using 'FROST' or an 'N' of 'N' using 'MuSig' too.
 
-R: 00:40:09
+Rijndael: 00:40:09
 
 So I mean, it sounds like the real like best case scenario is that we actually build, you know, a tree of script leaves for the different spending conditions that we want and then within those script trees, those individual leaves, we use aggregated signatures to save space and to make it more efficient to check.
 
-RH: 00:40:34
+Rob Hamilton: 00:40:34
 
 That sounds like a reasonable compromise.
 
-R: 00:40:37
+Rijndael: 00:40:37
 
 Yeah, so why don't we do that?
 
@@ -692,7 +696,7 @@ It's hard to keep track.
 So anyways, guys, it's fascinating that we went like everywhere and also like managed to cover a lot in only 45 minutes.
 Where do we go from here?
 
-R: 00:41:05
+Rijndael: 00:41:05
 
 Yeah, I was going to say, like, I think, you know, what's cool is that with 'Taproot', we can construct addresses and construct wallets where, you know, in kind of the happy path, like when you're just spending your money, it just looks like a single SIG on chain.
 And whether that's actually a single key behind it, or if it's like a 'FROST' or a 'MuSig' aggregation, nobody really knows or cares, except for you, It's just your business.
@@ -708,7 +712,7 @@ That doesn't even mean receiving 'Taproot', just 'pay-to-Taproot'.
 It's literally a two or four-line change.
 So I would encourage everybody to go on that website, find your exchange, and if they don't support pay to 'Taproot', you should open support tickets or blow them up on Twitter and say, 'When can I withdraw to my 'Taproot' wallet?'
 
-RH: 00:43:31
+Rob Hamilton: 00:43:31
 
 Yeah, just to name and shame, the remaining ones are Binance, Binance US, Bitfinex, Coinbase, [Crypto.com](https://crypto.com), Fireblocks, Gemini are really like the big ones left.
 Venmo and PayPal too.
@@ -723,7 +727,7 @@ But like, you know, this is not like, you know, the thing holding us back becaus
 They're not going to send from their exchanges to whatever they're going to do directly.
 By the way, we see sometimes people paying from an exchange to an invoice, and can take a day or two for the exchange to process the payment out.
 
-R: 00:44:31
+Rijndael: 00:44:31
 
 Yeah, it's nuts.
 
@@ -734,7 +738,7 @@ I think the bottleneck is just that this shit is complicated.
 And I don't think people are seeing the like 10x, 100x sort of like immediate magical upgrade in UX or in price or in anything really.
 And that's sort of like what's really holding people back.
 
-RH: 00:44:53
+Rob Hamilton: 00:44:53
 
 Well, I think it goes to just starting to build out these features, right?
 In that, I mean, I directly like was starting to mess around with a 'mini TapScript'.
@@ -757,7 +761,7 @@ It's like something goes in the market that's just like remarkably better than e
 And then everybody starts switching to it and starts like, I wanna put my stuff in it, right?
 That's how you get the demand to happen.
 
-RH: 00:46:33
+Rob Hamilton: 00:46:33
 
 Very fair.
 Yeah, that's hopefully some of the stuff I'm working on right now kind of starts doing that, having Bitcoin have more flexibility in doing different things.
@@ -775,7 +779,7 @@ So like on the custody side, you know, it's like sort of a company.
 Why is it that Nunchuk, Casa, and Unchain don't have it?
 Because they would be to me the first, sort of like non, they assisted more company-like kind of entities that would be the first people to have more interesting 'Taproot' solutions.
 
-RH: 00:47:56
+Rob Hamilton: 00:47:56
 
 So for Casa specifically, Nick Newman was on the Galaxy Brains podcast and he said specifically the mini script stuff is really interesting as an added feature set.
 So I think they're starting, they've already like, I don't know if they're actually at the second building on it, but it's definitely caught their attention.
@@ -786,7 +790,7 @@ So there's gonna be a little bit of a lag because companies have roadmaps and ob
 So you have to go into some sort of quarterly sync-up of like, what's the next set of features you add for the next quarter, right?
 So there's gonna be a little bit of a lag, but I see, you know, a year from now, there's gonna be multiple companies that are gonna be implementing this for more advanced custody use cases that better empower users to manage their money on their own terms.
 
-R: 00:48:40
+Rijndael: 00:48:40
 
 Well, we have Liana Wallet, which is doing a bunch of stuff with 'MiniScript', mostly for either an inheritance use case or a backup key use case, right?
 So after some 'timelock' expires, and you get to use a different key.
@@ -807,7 +811,7 @@ The challenge that I see with something like Liana is that essentially 'UTXO' ro
 So it's like dead on water.
 So until we can overcome those issues, it feels like just sort of jerking off.
 
-R: 00:50:33
+Rijndael: 00:50:33
 
 The thing that would be useful, because in order to solve that problem, you have to do one of two things.
 You either need to have a server that does key deletion and you do a vault setup with pre-signed transactions, or we need covenants that support vaults.
@@ -820,7 +824,7 @@ That's pointless because it's not provable and it doesn't end well.
 I mean, realistically speaking, at least in my view, we can't move on from this impasse until we have covenants.
 On-chain.
 
-R: 00:51:22
+Rijndael: 00:51:22
 
 I think that's right, but maybe this is just helping prove out demand.
 
@@ -828,11 +832,11 @@ NVK: 00:51:28
 
 Nobody's going to use it if they have to rotate their 'UTXOs'.
 
-R: 00:51:32
+Rijndael: 00:51:32
 
 Yeah, that's probably true.
 
-RH: 00:51:33
+Rob Hamilton: 00:51:33
 
 So this is an interesting third way, just as opposed to key deletion or waiting for the protocols to get updated.
 I've been debating the usability of this, where you can use LockTime to basically pocket a pre-signed transaction, and then you can auto-broadcast the refresh later.
@@ -847,18 +851,18 @@ And then you sequence that so that it's before the 'timelock' threshold expires.
 Then you can just auto-broadcast the transaction hex.
 And the network won't look at it until it's ready to actually be broadcast.
 
-R: 00:52:47
+Rijndael: 00:52:47
 
 You're delegating the interactivity requirements to somebody else, right?
 So instead of you having to come online and rotate all your 'UTXOs' every six months, you say, like, all right, I'm gonna have the server rotate all my 'UTXOs' every six months.
 
-RH: 00:53:02
+Rob Hamilton: 00:53:02
 
 Yeah.
 No, you do have interactivity because you have to actually hit it to the network when it's ready to go.
 You can also have paid services though, that like provably, like when they broadcast it, you know, you could find some sort of ways of monetizing where I think Pablo built something like this where he would hold your 'UTXO', your transaction hex for you and then it would broadcast at the set time and he'd get paid over lightning or something to be able to manage that service and Then you can give it to multiple services because you only need one person to actually successfully broadcast the transaction for it to work.
 
-R: 00:53:33
+Rijndael: 00:53:33
 
 Sure.
 I mean, the real answer is covenants, right?
@@ -874,7 +878,7 @@ So I rather not have the false positive.
 Like we believe there is demand and you know, we're gonna build it and we're gonna 'UASF' it.
 Wait, did I just say we're gonna 'UASF'?
 
-RH: 00:54:25
+Rob Hamilton: 00:54:25
 
 You did.
 
@@ -882,7 +886,7 @@ NVK: 00:54:26
 
 Confidence?
 
-RH: 00:54:28
+Rob Hamilton: 00:54:28
 
 You did.
 
@@ -890,7 +894,7 @@ NVK: 00:54:30
 
 Oh boy, did I just start something?
 
-RH: 00:54:31
+Rob Hamilton: 00:54:31
 
 Yeah, that's gonna wake everyone up if they were asleep.
 
@@ -902,7 +906,7 @@ And then I think the gears are going to start to move.
 
 ## Covenants
 
-R: 00:54:55
+Rijndael: 00:54:55
 
 I mean, it's kind of funny that it's like an accident of history that we don't have covenants.
 Like, you know, We turned off a couple of 'OP_CODEs', otherwise, we would probably have the kind of functionality that we want.
@@ -919,13 +923,13 @@ I don't remember, my memories already failing on this, but I don't remember any 
 But this is way, way back or any sort of work on anything like it in the Satoshi days.
 There was OpEvol, but there was a disaster and there was Gavin.
 
-R: 00:56:15
+Rijndael: 00:56:15
 
 So there's a trick to get the signature of the current or the hash of the current transaction onto the stack.
 And then if you have 'Op_Cat', you can construct, like, here's what all the outputs should be, here's what all the inputs should be, and then you hash it and you should get the 'SIGHASH'.
 Right, so like you can use that to do like a really basic covenant.
 
-RH: 00:56:43
+Rob Hamilton: 00:56:43
 
 Yeah, and for all of these different 'OpCodes', I usually look to like, and we talked about this on the Bitcoin script project, like the episode that we did with Alex, like there's almost like a, like a two dimensional, like the kind of the feature richness of a given opcode and also like how production-ready it is.
 It is something like a white paper or is it actually like implemented code, right?
@@ -946,7 +950,7 @@ Because it's amazing stuff, amazing tech, no doubt.
 But the problem is it's like, almost 100,000 diff, right?
 It's not gonna get merged period ever.
 
-RH: 00:58:05
+Rob Hamilton: 00:58:05
 
 No, no, you would never have to merge everything.
 There's a difference between simplicity and everything versus just OP_CHECKSIG from stack.
@@ -956,7 +960,7 @@ NVK: 00:58:18
 
 I don't think you can.
 
-RH: 00:58:21
+Rob Hamilton: 00:58:21
 
 Okay.
 
@@ -973,14 +977,14 @@ Guys, is there anything else that we sort of like forgot to explore in the knife
 
 ## Roundup
 
-RH: 00:59:20
+Rob Hamilton: 00:59:20
 
 I think we hit everything.
 I'm not sure if there's anything that you had, Rijndael, on your side.
 This has been a very fun shit post-war to have something fun to actually talk about in the bear market as opposed to price models.
 I'll say that it's been, it's been a real, it's been a pleasure being in the knife fight with you.
 
-R: 00:59:38
+Rijndael: 00:59:38
 
 Yeah, thanks.
 You too.
@@ -1005,7 +1009,7 @@ Yeah, I mean, I really that was that was very refreshing.
 Very high signal posts with proper memes, too.
 It was it was very expertly executed and I hope it continues.
 
-RH: 01:01:15
+Rob Hamilton: 01:01:15
 
 It will continue.
 This isn't over.
@@ -1026,7 +1030,7 @@ I think shit's going to get weird.
 And the Lightning companies, they need to close those channels, right?
 So they are going to be pushing a lot of the stack too, because it's in their interest to make the block size, the block space be used more efficiently, even by the people not doing Lightning, or they're out of business.
 
-RH: 01:02:23
+Rob Hamilton: 01:02:23
 
 Absolutely, yeah.
 And then the covenants to unlock things like coin pools and sharing 'UTXOs', it just makes it more feasible because like the scaling conversation is, you know, you have a set throughput that we made in the block size war of how many transactions can be in a block.
@@ -1048,7 +1052,7 @@ We're talking about actual mother 'LibSec'.
 Mother 'LibSec' is essentially, I think, the best sort of heuristic of like, should be used, should not be used?
 And it's like sort of nice to have things like that because it prevents people from losing money.
 
-RH: 01:03:53
+Rob Hamilton: 01:03:53
 
 And everyone uses that same library.
 
@@ -1064,7 +1068,7 @@ NVK: 01:03:57
 Yeah, it's very cool.
 Rob, do you wanna tell us a little bit about Trident and what you're working on?
 
-RH: 01:04:06
+Rob Hamilton: 01:04:06
 
 Yeah.
 So Trident is the name of the wallet I'm building at AnchorWatch.
@@ -1106,7 +1110,7 @@ Unless they have some serious people in the dev team who are very specialized in
 So leveraging something like this is very similar to leveraging something like LibSec.
 It gives you the correct primitives, the correct way of building the scripts so that people don't lose money because Bitcoin kills you on the edge cases.
 
-R: 01:08:05
+Rijndael: 01:08:05
 
 Yeah.
 And the thing that we want to cut out here is undifferentiated heavy lifting.
@@ -1117,7 +1121,7 @@ They just use what's in 'BDK'.
 So Rob, in your system, the thing that you were describing of you guys is a co-signer, but then after a 'timelock' it decays, I imagine that you could also do, kind of like a key hierarchy, right?
 Where maybe it's like, Oh yeah, like the, like maybe you guys are always a required signer, but then for one of the other, you know, signatories, like there's some optionality of it's like, it's always you guys, and then it's either like party A or party B, and then it's always two of parties C, D, and E, something like that.
 
-RH: 01:09:16
+Rob Hamilton: 01:09:16
 
 Yeah, and this is where it gets really interesting like in a traditional, just like an event, like 'MultiSig' world, one key represents one vote.
 Whereas with 'MiniScript', you can break it out and have multiple, let's say two of three, right?
@@ -1135,7 +1139,7 @@ NVK: 01:10:24
 
 Well, I mean, ideally your script mimics your organization's business logic, right?
 
-RH: 01:10:33
+Rob Hamilton: 01:10:33
 
 Exactly.
 The process.
@@ -1145,7 +1149,7 @@ NVK: 01:10:34
 The process, right?
 Ideally, that's what you have, right?
 
-RH: 01:10:37
+Rob Hamilton: 01:10:37
 
 Yep.
 
@@ -1155,7 +1159,7 @@ But Bitcoin, you know, is Bitcoin.
 And, you know, it can't do that yet or it can't do that specifically like that ever, but we can definitely get closer to that.
 Maybe, especially with 'CTV'.
 
-RH: 01:10:53
+Rob Hamilton: 01:10:53
 
 Yeah, no, definitely with 'CTV', you can encode all of those spending policies and limits, but it gets it closer rather than having it.
 And I got this like mental model actually talking with Will Cole, like application versus protocol-level security.
@@ -1168,7 +1172,7 @@ Yeah.
 You can't, right?
 Servers get hacked.
 
-RH: 01:11:49
+Rob Hamilton: 01:11:49
 
 Exactly.
 
@@ -1180,7 +1184,7 @@ Dev keys get leaked and then they go and they change the policies because if som
 But you can't change a script.
 That's the beauty of using a script as the HSM.
 
-RH: 01:12:31
+Rob Hamilton: 01:12:31
 
 Exactly.
 No, that's exactly it, right?
@@ -1195,11 +1199,11 @@ NVK: 01:12:24
 
 Let's make every problem be a key security problem, not a computer security problem.
 
-RH: 01:12:31
+Rob Hamilton: 01:12:31
 
 Exactly.
 
-R: 01:12:33
+Rijndael: 01:12:33
 
 The stuff that we can enforce in the script is limited by what we can express in the script, which is why we need more complex 'OpCodes'.
 But I mean, Rob, that example was probably a really good one because what you guys are saying is, all right, if you have multiple organizations that all have shared custody of some basket of funds, then for your signing, you're gonna rely on whatever internal controls you have.
@@ -1208,13 +1212,13 @@ But then you still have some consensus level enforcement of, two out of these th
 It might be that within one organization, somebody's able to get escalated privileges and sign a thing that they aren't supposed to, but that doesn't necessarily mean money gone because you still have to have somebody else in another organization sign for it.
 And so you're kind of using 'MultiSig' to control the spending across organizational boundaries, but then you're relying on whatever internal controls people have within XBoundary.
 
-RH: 01:13:47
+Rob Hamilton: 01:13:47
 
 That's exactly right.
 And what's really interesting, I mean, at the moment, since we're not using MPC for anything, we can specifically, someone can hand us a transaction, and we're like, hey, your VP of sales signed this transaction, was this supposed to happen?
 And you then know for a fact which key got compromised, which helps just like with audits and governance checks, right, and like having multiple bands of communication to kind of verify these things in a way where you're not ultimately, you know this human element is so critical for making sure that you're doing things the right way and you have this audit log, which is the PSBT of what signatures are currently present.
 
-R: 01:14:24
+Rijndael: 01:14:24
 
 In a post-'FROST' world, if you guys did this naively and you just said, we're going to do everything with the key path on 'Taproot' and it just always looks like 'SingleSig' on chain, then you'd lose that auditability.
 And so if you wanted to keep that auditability, you'd have to do something like have a tap script for each combination of signers, and you'd get kind of the auditability by looking at the control block and like which tap leaf got revealed.
@@ -1225,7 +1229,7 @@ And then the other signature is a 'MuSig' or a 'FROST'.
 And so you're literally doing script-based 'MultiSig', but one of the signatures is actually an aggregated signature.
 And so you kind of get the best of both worlds where it's like two of two on chain, but that second key might be, you know, 15 of 20 or something.
 
-RH: 01:15:48
+Rob Hamilton: 01:15:48
 
 Yeah, it gets really interesting too.
 So just as a quick note, when you're doing pay-to-witness script hash, you're committing to the entire script path, right?
@@ -1239,12 +1243,12 @@ NVK: 01:16:14
 
 Would it be a challenge to pre-compute this?
 
-RH: 01:16:17
+Rob Hamilton: 01:16:17
 
 That, yeah, that definitely would get more challenging.
 But I'm talking in a future state where the tooling has already kind of been largely figured out.
 
-R: 01:16:23
+Rijndael: 01:16:23
 
 Yeah, because like you do you do commit to all of it.
 You have to precompute all of them and then you use the root of the 'Merkle Tree' to tweak your internal public key.
@@ -1256,18 +1260,18 @@ NVK: 01:16:34
 Is there anybody working on some more advanced stuff like this already?
 Like that's like out there as like, you know, prototypes, scripts.
 
-RH: 01:16:44
+Rob Hamilton: 01:16:44
 
 So you mentioned earlier, right?
 Nick Farah was working on this new 'FROST'-like wallet right now, like starting to get this tooling out there.
 
-R: 01:16:54
+Rijndael: 01:16:54
 
 Yeah, or you know if people want to see really weird 'Taproot' script construction programmatically believe it or not the Ordinals project I'd like that wallet has a very unusual tap script embedded in it.
 So if you just want to understand like, what does it look like programmatically to build up a tree of tap scripts and then use that to generate an address.
 That's actually a really good source to go and check out.
 
-RH: 01:17:26
+Rob Hamilton: 01:17:26
 
 Yeah, it's a wide-open space of opportunity.
 And one last thing that also gets really nice with Tap scripts versus Pay-to-Witness script hash, specifically with 'MiniScript', you can't have a duplicate public key in the stack.
@@ -1279,12 +1283,12 @@ But if it's all on 'Taproot', you don't have to worry about a duplicate public k
 So you only have one account that you need to manage ever for a given signing device, which is definitely a better UX perspective and it makes it much more straightforward.
 It's all, yeah.
 
-R: 01:18:12
+Rijndael: 01:18:12
 
 I got bit by that.
 Why can't you have duplicate pubkeys in 'MiniScript'?
 
-RH: 01:18:17
+Rob Hamilton: 01:18:17
 
 Oh yeah, so you can't have duplicate pubkeys because within the same script stack, because when you sign it, you can't prove that someone isn't gonna like malleate the transaction and have that signature for that pubkey appear in a different branch.
 And it also breaks the composability.
@@ -1292,12 +1296,12 @@ It breaks the, it's a common sub-expression, sub-expression issue.
 That's me just repeating a word that Andrew Pulsar said without me fully understanding the technical ramifications of it.
 Like, that's a good oracle to use.
 
-R: 01:18:48
+Rijndael: 01:18:48
 
 It's usually a good strategy.
 Yeah, for sure.
 
-RH: 01:18:50
+Rob Hamilton: 01:18:50
 
 But many script policies are also composable, right?
 So that's the idea too.
@@ -1305,7 +1309,7 @@ I think it breaks down the composability.
 I'm saying using this pubkey in a different branch, like then you start having collisions, especially if it pays to witness script hash, then like if you're signing, like if the key appears multiple times, that signature is valid for the whole stack.
 So it violates the malleability aspect of things.
 
-R: 01:19:13
+Rijndael: 01:19:13
 
 That makes sense.
 Yeah, cause like With 'Taproot', that wouldn't be an issue because you only reveal just the leaf that you're actually using and then the control block.
@@ -1314,11 +1318,11 @@ So when you go to spend it, you provide a little data structure called a control
 It provides the sibling hashes all the way up the tree, back up to the root, to prove that the script that you're spending was actually included in that address.
 Because you have this Merkle inclusion proof that commits to a specific location in the tree, somebody couldn't take that signature and like play it in a different branch of the script because you haven't revealed the script.
 
-RH: 01:20:16
+Rob Hamilton: 01:20:16
 
 Exactly.
 
-R: 01:20:17
+Rijndael: 01:20:17
 
 Yeah, it makes a lot of sense.
 
@@ -1326,7 +1330,7 @@ NVK: 01:20:18
 
 Yeah, guys, I kind of got dropped, but I think I'm back now.
 
-RH: 01:20:22
+Rob Hamilton: 01:20:22
 
 Everyone's falling asleep, including Rodolfo, who fell asleep.
 Now he's back.
@@ -1338,7 +1342,7 @@ So, okay guys, I guess the last thing here is, Rijndael, what are you working on
 
 ## Team script custody tooling (Rijndael Project)
 
-R: 01:20:43
+Rijndael: 01:20:43
 
 I'm working on using interesting Bitcoin script constructions to help people with more interesting custody setups.
 So I'm pivoting hard into TeamScript and working on custody tooling.
@@ -1347,7 +1351,7 @@ NVK: 01:21:01
 
 Okay, no specifics we can hear about the tooling?
 
-R: 01:21:05
+Rijndael: 01:21:05
 
 Not today.
 
@@ -1356,7 +1360,7 @@ NVK: 01:21:05
 Okay, fair enough.
 Rijndael is a mysterious man.
 
-R: 01:21:09
+Rijndael: 01:21:09
 
 That's right.
 
@@ -1371,7 +1375,7 @@ I think you guys did a fantastic job.
 I need to declare a winner.
 And the winner is Elon Musk for rugging my connection again.
 
-RH: 01:21:43
+Rob Hamilton: 01:21:43
 
 Yeah, this is a Congrats, Elon.
 You deserve it.
@@ -1380,13 +1384,13 @@ And that's what was great.
 We started seeing meta memes of people watching the debate and seeing that there's a lot about Bitcoin that people don't know about.
 And that's what we wanted to have fun and a nice little drama wrapper, have people start learning more about, you know, how Bitcoin actually works under the hood and getting people to think about like the opportunities of solutions and products that can be built on top of more advanced scripting and MPCs.
 
-R: 01:22:18
+Rijndael: 01:22:18
 
 Yeah, you know, I'd love to see more fake drama around really obscure Bitcoin topics.
 Like maybe the next wave is maybe we can get some package relay-like meme warfare started.
 That'd be pretty cool.
 
-RH: 01:22:31
+Rob Hamilton: 01:22:31
 
 I love it.
 We didn't even talk about the 'Taproot' Annex.
@@ -1397,7 +1401,7 @@ NVK: 01:22:35
 Or we should dig the version, the original client.
 Satoshi original, an original client start showing all the poker code blocks.
 
-R:
+Rijndael:
 
 That would be awesome.
 
@@ -1408,7 +1412,7 @@ That always helps.
 Listen, guys, thank you so much.
 Any final thoughts, Rijndael?
 
-R: 01:22:57
+Rijndael: 01:22:57
 
 No, just, you know, be the memes that you want to see in the world.
 There's lots to do in Bitcoin.
@@ -1418,7 +1422,7 @@ NVK: 01:23:04
 
 Rob.
 
-RH: 01:23:10
+Rob Hamilton: 01:23:10
 
 Yeah, it's a bear market.
 You should be building and learning about Bitcoin.
@@ -1435,12 +1439,12 @@ The other guy is like winning.
 I can't remember.
 It was...
 
-R: 01:23:41
+Rijndael: 01:23:41
 
 It was like the sad guy, it was drive chain arguments, price things, 'SCC', all these things.
 And then the happy guy was like 'MuSig', 'FROST', 'MiniScript', 'Taproot'.
 
-RH: 01:23:57
+Rob Hamilton: 01:23:57
 
 That's right.
 Why in 2023 Are we talking about stock-to-flow and price model guys?
@@ -1450,7 +1454,7 @@ NVK: 01:24:06
 
 No, I mean, the best part is that everybody is an expert on clawbacks, right?
 
-R: 01:24:08
+Rijndael: 01:24:08
 
 That's right.
 
@@ -1458,7 +1462,7 @@ NVK: 01:24:09
 
 And now everybody is an expert on superconductors.
 
-RH: 01:24:12
+Rob Hamilton: 01:24:12
 
 That's right.
 
@@ -1467,7 +1471,7 @@ NVK: 01:24:14
 By the way, I am starting a pod, the superconductors.review, I have the domain and I'm going to have some Bitcoin experts weigh in on the superconductors because Bitcoiners know everything and Bitcoiners are always right about everything.
 So...
 
-R: 01:24:32
+Rijndael: 01:24:32
 
 And NVK, so here's the format for the podcast.
 Every week you come on, you do your intro and then you say: 'Has anybody reproduced the paper?'
@@ -1487,7 +1491,7 @@ By the way, that material, the LK99 medium stuff, it's very easy to make.
 You just need a small kiln that sells on Alibaba.
 And I'm certain that people are gonna do it.
 
-RH: 01:25:01
+Rob Hamilton: 01:25:01
 
 Yeah, there was like this random guy that had an anime avatar in Russia, and he was doing side-by-side separate productions, and like it's accessible enough.
 People are just going to start running off and trying to do it.
@@ -1496,7 +1500,7 @@ NVK: 01:25:11
 
 I support home labs.
 
-RH: 01:25:14
+Rob Hamilton: 01:25:14
 
 Absolutely.
 The favorite detail, though, I thought you would have picked up on that meme, comparing the two, I posted in the chat here, is the Barbienheimer meme.
@@ -1508,7 +1512,7 @@ I saw that.
 I actually did see that.
 That was something.
 
-RH: 01:25:34
+Rob Hamilton: 01:25:34
 
 That was American Hodl's idea.
 American Hodl said you need to do the Barbenheimer meme with the black and pink gold card.
@@ -1517,7 +1521,7 @@ NVK: 01:25:40
 
 Where does the glow fit in?
 
-RH: 01:25:45
+Rob Hamilton: 01:25:45
 
 We'll have to figure that out.
 Glow in the dark.
@@ -1527,7 +1531,7 @@ NVK: 01:25:50
 
 Listen guys, we're going to do this again, either with the next drama or with the expansion of this drama, because I don't think the Bitcoin script versus MPC drama is ever going to go away.
 
-RH: 01:26:05
+Rob Hamilton: 01:26:05
 
 It's never going to go away.
 
