@@ -67,7 +67,7 @@ Yeah, I've been talking about lighting privacy for a while, so looking forward t
 NVK: 00:02:55
 
 Very cool.
-Bastien Teinturier.
+Bastien Teinturier
 
 Bastien Teinturier: 00:02:58
 
