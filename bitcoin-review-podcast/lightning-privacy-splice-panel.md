@@ -1767,10 +1767,10 @@ Like I can see like splicing should probably help if you receive too much coin i
 
 Bastien Teinturier: 01:31:33
 
-Yeah, it's just that whenever you were using splicing and you're going to receive too much, we're going to splice those in.
+Yeah, it's just that whenever you were using splicing and you're going to receive too much, we're going to splice those in. 
 And we can do that zero-conf because we know we're not going to double spend ourselves.
 And the user, If they want to send those funds out, why did Zeroconf are trusting us?
-But they can just wait and they can just wait for a transaction to confirm.
+But they can just wait and they can just wait for a transaction to confirm. 
 Or if they want to do to you to be completely self-custodial, they just have to turn off Zeroconf in the wallet.
 And then the wallet is completely non-custodial.
 
