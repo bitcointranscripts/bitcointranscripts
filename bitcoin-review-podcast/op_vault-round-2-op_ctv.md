@@ -200,7 +200,7 @@ All CTV makes you do is kind of pre-commit to how the coins can be spent.
 
 Rijndael: 00:12:11
 
-Well, and because of `Taproot`, you could have a tapleaf that's like, anything you want with a particular key or with, some quorum of keys or something.
+Well, and because of Taproot, you could have a tapleaf that's like, anything you want with a particular key or with, some quorum of keys or something.
 So you could say, I'm going to do a CTV spend path for like my normal spending paths, but then I have some other tapleaf that's, unencumbered, except by like normal checks of operations.
 
 NVK: 00:12:33
@@ -327,8 +327,8 @@ And I came up with kind of the halfway step measure, which is saying, let's use 
 And that's where I came up with this forwarding idea, where you take such a script you want to forward this to as the staging area, and then leave everything else the same.
 The recovery path just stays there, doesn't get changed.
 But everything else gets the trigger path gets changed.
-And then from there, once AJ read that, he went and went even further with kind of making this forwarding script more even further composable resulting in kind of this, T love tapleaf update, verify like mechanism, which is pretty nice.
-We called it `FLU` at the time - `FORWARD_LEAF_UPDATE.
+And then from there, once AJ read that, he went and went even further with making this forwarding script even further composable resulting in kind of this, `TLUV` - `TAPLEAFUPDATEVERIFY` like mechanism, which is pretty nice.
+We called it `FLU` at the time - `FORWARD_LEAF_UPDATE`.
 
 That is now what we call `OP_VAULT`.
 The vault part is the part it's kind of putting this value into the staging area with this forwarded script.
@@ -342,7 +342,7 @@ Rijndael: 00:20:25
 
 Yeah, so the trick here is it can forward to any single key.
 So this covers any time you can aggregate a key.
-So think music two or frost or something like that, or single, just a single normal key.
+So think MuSig2 or FROST or something like that, or single, just a single normal key.
 But this is where we're really hitting limits in the Bitcoin script kind of design is where it's very difficult to compose it further without kind of a radical upgrade to Bitcoin script.
 So that's kind of like the limit we're hitting there.
 
@@ -363,7 +363,7 @@ It's It winds up being simpler than the original proposal, which is great.
 
 Rijndael: 00:21:07
 
-Well, and having it composable means that if you're trying to write some more complicated policy in something like `miniscript`, being able to incorporate fault in there without having to like throw out all that tooling.
+Well, and having it composable means that if you're trying to write some more complicated policy in something like miniscript, being able to incorporate fault in there without having to like throw out all that tooling.
 And, you know.
 
 Rijndael: 00:21:20
@@ -500,7 +500,7 @@ For a lot of reasons, right?
 So one of the problems with covenants is you have to go and figure out all of these conditions in the future when things get changed.
 So if you have your allow list or your white list of where these coins are allowed to go.
 Every time you update that list, you have to go and like recompute the covenants and you have to get everybody to like reroll their coins.
-It's a lot simpler if you just say, hey, your coins are now in a two of two multi-sig and I have a co-signing Oracle and my co-signing server will refuse to sign a transaction with you unless they're going to an approved destination like that's that's how you would actually build `Fedcoin`.
+It's a lot simpler if you just say, hey, your coins are now in a two of two multi-sig and I have a co-signing Oracle and my co-signing server will refuse to sign a transaction with you unless they're going to an approved destination like that's that's how you would actually build "Fedcoin".
 
 NVK: 00:28:27
 
@@ -686,7 +686,7 @@ Someone, like there's no way someone's going to walk away with my coins and I'm 
 
 NVK: 00:39:30
 
-One thing I'd love to do is, I kind of wanted to do this with `CodeCard` before, which is you integrate the hardware device into your home alarm system.
+One thing I'd love to do is, I kind of wanted to do this with coldcard before, which is you integrate the hardware device into your home alarm system.
 And this is totally doable.
 It's just kind of cost and not yet interested in the complexity.
 But, and this could be wireless too, which poses other trade-offs, but let's say it's wired.
@@ -974,7 +974,7 @@ Yeah, certainly not in its current form.
 
 NVK: 00:52:25
 
-They're going to be using `cashew`.
+They're going to be using Cashu.
 
 James O'Beirne: 00:52:27
 
@@ -986,8 +986,8 @@ So Rijndael's point's really good, I think.
 
 Rijndael: 00:52:42
 
-So NVK, you just mentioned Cashew, we just talked about Chaumian mints not that long ago.
-This would actually also be great to add to Chaumi and Mints, right?
+So NVK, you just mentioned Cashu, we just talked about Chaumian mints not that long ago.
+This would actually also be great to add to Chaumian mints, right?
 So if you have either a FediMint or a CashuMint and you want to say, all right, we're going to have our Mint's treasury in a vault that has like a, this time locked predestined withdrawal path so that if either one of the functionaries of the mint or if somebody pawns the software and tries to like run away with the money, then we can claw it back.
 This fits in really, really well with the idea that maybe we'll have some collaborative custody mints for a lot of users.
 
@@ -1306,6 +1306,7 @@ And if you want to get your ear talked off, just go to ask Rob about Miniscript.
 
 ## Now really, how do we activate OP_VAULT??
 
+NVK 0: 01:08:56
 
 So yeah, guys, what else here?
 Okay, so let's go back to the painful topic, which is like, how do we activate this?
