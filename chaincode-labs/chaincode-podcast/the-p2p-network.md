@@ -3,9 +3,19 @@ title: "The P2P network"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Amiti-Uttarwar-and-the-P2P-network---Episode-15-e18v7oq
 tags: ["bitcoin-core","eclipse-attacks","p2p"]
-speakers: ["Amiti Uttarwar","Mark Erhardt"]
+speakers: ["Amiti Uttarwar"]
 categories: ["podcast"]
 date: 2021-10-18
+episode: 15
+additional_resources:
+-   title: 'Searchable #bitcoin-core IRC logs'
+    url: http://bitcoin-irc.chaincode.com/bitcoin-core-dev/
+-   title: Eclipse Attacks
+    url: https://bitcoinops.org/en/topics/eclipse-attacks/
+-   title: Altnet
+    url: https://github.com/ariard/altnet-proposals
+-   title: Transaction download on Bitcoin's p2p network comic
+    url: https://github.com/amitiuttarwar/bitcoin-bytes/blob/master/tx-download.jpg
 ---
 Amiti Uttarwar: 00:00:00
 
@@ -360,7 +370,7 @@ Mark Erhardt: 00:20:20
 
 I've seen reports of ham radio transfer of transactions, but also on some radio frequencies the latest blocks are being broadcast.
 
-## `AltNet`
+## AltNet
 
 Adam Jonas: 00:20:30
 
@@ -423,7 +433,7 @@ Adam Jonas: 00:24:23
 So in that world of interesting things, what's most interesting to you?
 What are you working on?
 
-## `AddrRelay` and `AddrMan`
+## AddrRelay and AddrMan
 
 Amiti Uttarwar: 00:24:31
 
@@ -433,7 +443,7 @@ But generally I do think `AddrRelay` is an area that's so hard to comprehend tha
 Adam Jonas: 00:25:00
 
 Can you maybe start from the top?
-So yeah, I'm breaking down `AddrRelay` to be address relay, which means that I'm relaying addresses via my node.
+'m breaking down `AddrRelay` to be address relay, which means that I'm relaying addresses via my node.
 To what end?
 Where do those come from?
 How do they get to me?
@@ -552,7 +562,7 @@ Someone should make a video and superimpose this on top of like peacocks putting
 
 Amiti Uttarwar: 00:32:17
 
-Yes, a projack.(?)
+Yes, a projack[unclear].
 
 Adam Jonas: 00:32:18
 
