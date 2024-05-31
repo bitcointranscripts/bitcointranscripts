@@ -6,6 +6,7 @@ tags: ["vaults","op-checktemplateverify","soft-fork-activation"]
 speakers: ["James O'Beirne","Greg Sanders","Rijndael","NVK","Ben Carman"]
 categories: ["podcast"]
 date: 2023-05-11
+summary: "The podcast episode discusses the OP_VAULT proposal for enhancing Bitcoin self-custody and security. NVK hosts a panel with James O'Beirne, Rijndael, Greg Sanders, and Ben Carman, who delve into the technical aspects and benefits of OP_VAULT. The proposal aims to improve Bitcoin custody by introducing vaults, allowing users to lock their coins with predetermined spend conditions, enhancing security against theft and accidental loss. They compare OP_VAULT with other proposals like CTV and ANYPREVOUT, highlighting its simplicity and operational efficiency. The conversation also addresses potential concerns about covenants and the importance of community engagement and education to facilitate the proposal's acceptance and activation. The episode emphasizes the need for better custody solutions to secure large amounts of Bitcoin, especially as the user base grows and the value of Bitcoin increases."
 ---
 ## Introductions
 
