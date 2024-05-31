@@ -1,11 +1,24 @@
 ---
-title: "Lightning Privacy & Splice Panel"
-transcript_by: yami-py via review.btctranscripts.com
-media: https://www.youtube.com/watch?v=SjLPbjs9LkI
-tags: ["splicing","rv-routing","privacy-enhancements","scalability","ptlc","taproot","ecash"]
-speakers: ["NVK","Jeff Czyz","Dusty Dettmer","Tony Giorgio","Vivek","T-Bast"]
-categories: ["podcast"]
-date: 2023-05-12
+title: 'Lightning Privacy & Splice Panel'
+transcript_by: 'YeamlaksiraKebede via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=SjLPbjs9LkI'
+date: '2023-05-12'
+tags:
+  - 'splicing'
+  - 'rv-routing'
+  - 'privacy-enhancements'
+  - 'scalability'
+  - 'ptlc'
+  - 'taproot'
+  - 'ecash'
+speakers:
+  - 'NVK'
+  - 'Jeff Czyz'
+  - 'Dusty Dettmer'
+  - 'Tony Giorgio'
+  - 'Vivek'
+categories:
+  - 'podcast'
 ---
 ## Housekeeping
 
@@ -53,11 +66,11 @@ Yeah, I've been talking about lighting privacy for a while, so looking forward t
 NVK: 00:02:55
 
 Very cool.
-T-Bast.
+Bastien Teinturier.
 
-T-Bast: 00:02:58
+Bastien Teinturier: 00:02:58
 
-Hey, I'm T-Bast.
+Hey, I'm Bastien Teinturier.
 I've been working at Async on the lighting specification and our implementation Eclair and also our Phoenix wallet.
 And I've done a lot of things around lighting privacy as well, like blinded paths.
 So excited to be talking about that here.
@@ -139,9 +152,9 @@ Like Where are we in Lightning in terms of like things that are privacy related 
 Let's not talk about things that are going to come in sort of like, you know, months from now still.
 Like just right now, what's going on?
 Who wants to take that?
-Go ahead, T-Bast.
+Go ahead, Bastien Teinturier.
 
-T-Bast: 00:05:05
+Bastien Teinturier: 00:05:05
 
 So basically I'd say that why once you are inside Lightning, sender privacy is good, receiver privacy is not.
 When you are interacting with the chain, like opening channels or everything you do on chain, privacy is not great.
@@ -156,7 +169,7 @@ NVK: 00:05:41
 Okay.
 So, so like if you want to get a little bit more like, like detailed on this, like, you know, why is it that receiver privacy is bad right now?
 
-T-Bast: 00:05:51
+Bastien Teinturier: 00:05:51
 
 Receiver privacy is bad for many reasons.
 First of all, if you when you receive a payment at the cryptographic level, because of onion routing, the guy just before you shouldn't be able to infer that you are the final recipient.
@@ -174,7 +187,7 @@ NVK: 00:06:59
 
 How do Blinded Paths work?
 
-T-Bast: 00:07:01
+Bastien Teinturier: 00:07:01
 
 Okay, so Blinded Paths are if you, I guess everyone has a vague idea of how rendezvous routing works in Onion, in Onion networks, where the receiver, when you want to receive a message, instead of directly giving your address or your Node ID, you find paths to yourself that take a few hops to reach you.
 You encrypt those and you just tell people get to that introduction point and they will know how to reach me with this encrypted blob that I'm giving you.
@@ -197,7 +210,7 @@ Like I never touch protocol code.
 I'm just like right above it, like you know, fine grain analyzing it.
 But are you guys like taking into consideration like how you actually select which introductory node for the users to maintain their privacy?
 
-T-Bast: 00:09:18
+Bastien Teinturier: 00:09:18
 
 Yeah, sure.
 That's something we are working on.
@@ -222,7 +235,7 @@ The Bolt 12 Onion spec.
 So at least it's only being leaked to the sender and not the whole world.
 I believe, I could be wrong, even if you post a Bolt 12 invoice on the internet, sure, other people can try to query it at least, but once that invoice is expired, some may not expire, but once the invoice is expired, no one will see your routes again, right?
 
-T-Bast: 00:11:31
+Bastien Teinturier: 00:11:31
 
 Yeah, but there are potentially issues as well, because someone's sending you an invoice request of an unknown message to get an invoice with blinded paths.
 If you refresh and change your blinded paths too often to change the introduction points you select, that guy can just make it look like they just failed to use the previous blinded path because of a liquidity issue somewhere in the network.
@@ -264,7 +277,7 @@ Unless you're using like a custodial sort of like KYC Lightning solution, right?
 But you still get more privacy.
 It's just that they know your stuff, but the other side doesn't know your
 
-T-Bast: 00:14:21
+Bastien Teinturier: 00:14:21
 
 stuff.
 100%.
@@ -314,12 +327,12 @@ And there's definitely aggregators like Tony was saying, and that's always been 
 I remember when Ellen Big showed up, everyone was like, oh!, these guys are the feds or there's some other agency.
 But you know, you just kinda, you're happy to get that inbound liquidity at the end of the day.
 I actually want to go higher level and just get our principles first, fundamentals established for the Lightning Network, the challenges for the privacy.
-I think I've heard T-Bast and Tony explain it for those who haven't checked out their contributions, You should definitely check it out.
-T-Bast has an amazing chapter in the Mastering Lightning book, which I recommend nonstop.
+I think I've heard Bastien Teinturier and Tony explain it for those who haven't checked out their contributions, You should definitely check it out.
+Bastien Teinturier has an amazing chapter in the Mastering Lightning book, which I recommend nonstop.
 And then Tony just sprung onto the scene, I think in 2021 with a massive privacy article describing issues with payment hashes, hash correlation, long paths.
-So from a high level approach, T-Bast, can you explain how, I guess, is it Bolt1 or something, the init messages with noisexk, basically how the sender is always unknown and the receiver used to be known and the challenges with that in regards to unannounced channels which were mistakenly called private channels back in the day.
+So from a high level approach, Bastien Teinturier, can you explain how, I guess, is it Bolt1 or something, the init messages with noisexk, basically how the sender is always unknown and the receiver used to be known and the challenges with that in regards to unannounced channels which were mistakenly called private channels back in the day.
 
-T-Bast: 00:17:51
+Bastien Teinturier: 00:17:51
 
 Okay, so I'm not sure I'm going to be exactly answering your question, but I think it will encompass what you'd like.
 Our goal with Lightning, once you are inside Lightning and sending Lightning payments, our goal is that any node that is in the route can only infer who a previous node was and who the next node was, and nothing more than that.
@@ -385,7 +398,7 @@ So the LSP does see that.
 
 ## PTLCs
 
-T-Bast: 00:21:57
+Bastien Teinturier: 00:21:57
 
 With PTLC that changes though, because with PTLC the sender can force the payment to go outside before coming back to the LSP and getting to the final destination.
 And that's something that the recipient can do.
@@ -397,10 +410,10 @@ But I think there are ways to make it better, to at least make it not completely
 
 Jeff: 00:22:49
 
-T-bast, would you say then that like for that scenario, the LSP wouldn't be the introduction point on the blinded route?
+Bastien Teinturier, would you say then that like for that scenario, the LSP wouldn't be the introduction point on the blinded route?
 And if so, how would a mobile user choose a different introductory point?
 
-T-Bast: 00:23:02
+Bastien Teinturier: 00:23:02
 
 Either the mobile user just syncs a local neighborhood, for example, every node that is two hubs away from them, if they're only connected to one LSP, they cannot just sync it from that LSP if they don't trust that LSP because the LSP will just filter out everything else.
 But if they are connecting to a few LSPs, they could just sync their local neighborhood and make sure that they make payment bounce between LSPs because in your blinded path, you can force the payment to bounce from one LSP to the other if you're using PTLCs from a list of LSPs. Or you can just even assume that without even knowledge of a graph, you can assume that some big nodes have good connectivity and benefit from their user base.
@@ -417,7 +430,7 @@ Would that mobile client then, in order to do this sort of local sync of the gos
 Does that require then like a sort of custom implementation for the mobile wall to do that sort of local sync?
 Now in the LDK side we have like this rapid gossip sync which makes it pretty quick.
 
-T-Bast: 00:24:46
+Bastien Teinturier: 00:24:46
 
 And the other idea is in the very old trampoline PRs I had like three years ago, there was a proposal to do gossip filters that would be applied that you ask your peers to apply some gossip filters so that they forward to you only a subset of the gossip that interests you, so that mobile wallets can get a fraction of the gossip that they're interested in without wasting too much bandwidth.
 But this is still waiting for people to play with Trampoline before we do something like that.
@@ -476,9 +489,9 @@ I don't know if anyone else wants to jump in on that, probably a little more det
 
 NVK: 00:27:27
 
-T-Bast, you wanted to bring up something about the features that are sort of slow to?
+Bastien Teinturier, you wanted to bring up something about the features that are sort of slow to?
 
-T-Bast: 00:27:33
+Bastien Teinturier: 00:27:33
 
 Yeah, just quickly and I think it's a general comment about how things are added to Lightning nowadays.
 A lot of the features that we are finally shipping now have been discussed for years.
@@ -661,9 +674,9 @@ Is it the wrong way?
 It's a big market and people are going to want different things.
 So it's kind of cool to see that like the implementations are getting less fighty and more sort of like finding their own niche.
 So they're not sort of like so much on top of each other because there's only so many customers too for now.
-Sorry, T-bast.
+Sorry, Bastien Teinturier.
 
-T-Bast: 00:36:38
+Bastien Teinturier: 00:36:38
 
 From the spec point of view, I'm really happy that there's a fourth implementation because the way, the best, the ideal thing when you start working on a new big spec feature is to have another implementation, start working on it almost at the same time as you, because doing it on your own means that whenever someone will come one year later, they will want to change everything potentially for good reason, but you're wasting a bit of time.
 But when we only had three implementations and since people have different short term focus and everything we're doing takes a lot of time, so people cannot be working on all the things at the same time, we have a better chance at finding two implementations that work on the same stuff for almost each big feature that we are working on.
@@ -692,7 +705,7 @@ It's ginormous, but it does allow for a bunch of new cool sh*t that it can do.
 Now, the question always is, like, is the new cool sh*t actually useful to the users, like, soon?
 Or is it just like catnip, you know, developer make work because, you know, every developer wants to work on the new cruise ship.
 
-T-Bast: 00:39:06
+Bastien Teinturier: 00:39:06
 
 Depends on what you mean by soon.
 Is soon 5 years?
@@ -744,7 +757,7 @@ Tony: 00:41:13
 Yeah, I think the skill too is being able to be, and I say this from the application to oversight because this is where I really shine.
 But knowing when you can do things at the application level and when you shouldn't, and them doing LNURL doesn't break interoperability with Lightning, right?
 This is a scenario where, I'm not going to use the word allowable, but it's incentivized to them to be able to do it and it doesn't break anything.
-I think another interesting example, T-Bast, you guys I believe had Trampoline and Phoenix since day one, right?
+I think another interesting example, Bastien Teinturier, you guys I believe had Trampoline and Phoenix since day one, right?
 This is another scenario where yes, Phoenix and Eclair, another implementation of, Eclair is another implementation of Lightning Node, but them adding Trampoline to their node and then to their end-users wallet, that doesn't break interoperability anywhere on the Lightning Network.
 That's a place where you can add application-specific logic.
 And then, NVK, you brought up LNProxy.
@@ -890,8 +903,8 @@ How are you guys like sort of going about it?
 
 Vivek: 00:48:43
 
-That's probably a question for T-Bast, Tony, and maybe Jeff.
-I'd say T-Bast is also extremely well-rounded because Eclair ships Phoenix as well as their implementation and everything.
+That's probably a question for Bastien Teinturier, Tony, and maybe Jeff.
+I'd say Bastien Teinturier is also extremely well-rounded because Eclair ships Phoenix as well as their implementation and everything.
 So it's like one comprehensive thing.
 So he probably has great insight.
 Yeah, to be honest, I haven't had time to follow everything that's happening around Nostr.
@@ -1010,7 +1023,7 @@ NVK: 00:54:39
 So it sounds like, splicing has both like this amazing privacy aspects to it.
 And then it has very cool scaling things too.
 And also incredible like economic advances too.
-So who wants to explain Spicy?
+So who wants to explain splicing?
 
 Dusty Damon: 00:54:57
 
@@ -1041,9 +1054,9 @@ Vivek: 00:55:54
 
 Dusty shipped it for himself, right?
 I don't know if he's revealed like any of the script, but he did point to a mainnet transaction.
-And I believe T-Bast also has done that.
+And I believe Bastien Teinturier also has done that.
 
-T-Bast: 00:56:04
+Bastien Teinturier: 00:56:04
 
 And we are we are actually going to ship it in at least not the final spec version.
 And it's a simplified one because in Phoenix, since we don't have public channels, It's it makes it seem like it removes the aspect of the gossip part.
@@ -1067,7 +1080,7 @@ Dusty Damon: 00:56:42
 Yes, let's plant my flag.
 I did the first splice on-chain last year in May and I finished my Splicing Limitation around October.
 But like things in Lightning aren't normally considered done until two Limitations do it, sort of like the way that things do it, call it interop.
-And so I'm working on interop with T-Bast and once we get two Limitations that have it done, then it's officially like, you know, considered launched or whatever.
+And so I'm working on interop with Bastien Teinturier and once we get two Limitations that have it done, then it's officially like, you know, considered launched or whatever.
 
 Vivek: 00:57:04
 
@@ -1101,7 +1114,7 @@ Just pull one trick out of our hat to get 8x that and we're good forever, right?
 Population will never grow.
 So. So. So.
 
-T-Bast: 00:58:41
+Bastien Teinturier: 00:58:41
 
 So. So. And you just update that UTXO, but right now we need multiple UTXOs per users.
 With splicing, you only need one, but it's still one UTXO per user.
@@ -1114,7 +1127,7 @@ NVK: 00:58:47
 So tell me what we know now.
 Like what can we do now and how does splicing works with a single UTXO?
 
-T-Bast: 00:58:54
+Bastien Teinturier: 00:58:54
 
 Yeah, this part is really simple.
 Right now, that means you have a lot of channels.
@@ -1184,7 +1197,7 @@ Tony: 01:01:57
 
 Some of the transaction v3 stuff to kind of help against paying tax on Lightning.
 
-T-Bast: 01:02:03
+Bastien Teinturier: 01:02:03
 
 In the short term, I would really like to see package relay and ephemeral anchors, because that's something that's only a policy change.
 So in theory...
@@ -1194,7 +1207,7 @@ NVK: 01:02:11
 Package relay shouldn't be hard to change.
 It's not consensus.
 
-T-Bast: 01:02:15
+Bastien Teinturier: 01:02:15
 
 Yeah, so it should be easier to train.
 It's actually, people are working on that.
@@ -1354,7 +1367,7 @@ I think.
 
 Vivek: 01:09:16
 
-We got to talk about that for sure, how you probed all of T-Bast' private channels because he was the biggest node.
+We got to talk about that for sure, how you probed all of Bastien Teinturier' private channels because he was the biggest node.
 
 Tony: 01:09:25
 
@@ -1493,7 +1506,7 @@ Tony: 01:18:12
 
 Well, not immediately, but it is something that we even written about.
 Lightningprivacy.com, me, Ben Carman, Paul Miller, a few other people, Evan Kludis, we worked on this.
-We actually, both T-Bast and Dusty came and presented some of their concepts to our research group while we were going through it.
+We actually, both Bastien Teinturier and Dusty came and presented some of their concepts to our research group while we were going through it.
 And this is one of the biggest things that we're interested in the most when we actually get splicing and we can use it, is the concept of being able to do coin joins from splicing rounds.
 I mean, not just for privacy standpoint, but also a scalability standpoint, too.
 I mean, I think some of the free rate stuff kind of shows that, you know, we sort of need collaborative transactions to be able to help scale Bitcoin on chain usage even more.
@@ -1751,7 +1764,7 @@ You know, with all the self-custody solutions or semi-self-custody solutions, yo
 Like you're kind of having to handle all the scenarios.
 Like I can see like splicing should probably help if you receive too much coin in your, because you can now break them apart, right?
 
-T-Bast: 01:31:33
+Bastien Teinturier: 01:31:33
 
 Yeah, it's just that whenever you were using splicing and you're going to receive too much, we're going to splice those in.
 And we can do that zero-conf because we know we're not going to double spend ourselves.
@@ -1760,7 +1773,7 @@ But they can just wait and they can just wait for a transaction to confirm.
 Or if they want to do to you to be completely self-custodial, they just have to turn off Zeroconf in the wallet.
 And then the wallet is completely non-custodial.
 
-T-Bast: 01:32:05
+Bastien Teinturier: 01:32:05
 
 They have to wait a bit when things are confirming but with splicing it makes it much easier to tell users how much fees they need to pay on chain for things to be confirmed soon.
 They will have better control on the on-chain fees of all their swaps, all their splice basically.
@@ -1774,7 +1787,7 @@ NVK: 01:32:41
 So when do I get my update?
 Like two weeks for splicing on my Phoenix wallet?
 
-T-Bast: 01:32:47
+Bastien Teinturier: 01:32:47
 
 If you want it on the testnet, I can give that to you in two weeks.
 If you want it on the phoenix net, it's going to be definitely this year, hopefully before the end of the summer.
@@ -1784,7 +1797,7 @@ NVK: 01:32:55
 Because my Fenix right now has a Bitcoin mempool is full and fees are high.
 See how Fenix is affected.
 
-T-Bast: 01:33:02
+Bastien Teinturier: 01:33:02
 
 You're going to pay a lot.
 
@@ -1844,7 +1857,7 @@ So if you're freely able to gossip without having to actually lock Bitcoin into 
 So we still want that property.
 And so with Gossipy 2, there needs to be a way, it looks like zero knowledge proofs would be the idea to still say that you have Bitcoin locked up, but not saying exactly where it is and how much.
 
-T-Bast: 01:37:30
+Bastien Teinturier: 01:37:30
 
 Yeah.
 I'd say that the state of that proposal is basically zero knowledge proofs, magic maths, details left as an exercise to the reader, but we'll see.
@@ -1854,7 +1867,7 @@ Vivek: 01:37:40
 So I've kind of declined in my LN whatever, keeping up with it.
 Gossip V2, correct me if I'm wrong, is Alex Meyer's proposal that has incorporated mini-sketch or is that 1.5? Okay.
 
-T-Bast: 01:37:56
+Bastien Teinturier: 01:37:56
 
 Yeah, there are a lot of things about gossip that we need to fix because gossip is basically the simplest form of gossip we could get away with that was easy to implement.
 Nobody is ever satisfied with it, but it's really hard to make it good, to do something that's really good.
@@ -1865,7 +1878,7 @@ NVK: 01:38:25
 
 And good luck with that
 
-T-Bast: 01:38:26
+Bastien Teinturier: 01:38:26
 
 people still don't know what the system is gonna be the one that people will still care about in two years.
 So it's really-
@@ -1887,14 +1900,14 @@ It's a good rule.
 Tony: 01:39:08
 
 Yeah.
-Even Tapper channels themselves, they in order to broadcast them, you need a gossip chain.
+Even Taproot channels themselves, they in order to broadcast them, you need a gossip chain.
 So like we could get There's been some, I think, testing, interrupt testing between it right now.
 You can have private, unannounced Tapper channels.
 You can't have public Tapper channels yet without a gossip chain.
 So that in and of itself, I don't know, could take five years.
 Who knows?
 
-T-Bast: 01:39:31
+Bastien Teinturier: 01:39:31
 
 Yeah, but one of the interesting things with Gossip is that it's not a critical system of lighting, it's something that we can evolve.
 If there's a flow in the cryptography here, it's not the end of the world.
@@ -1922,11 +1935,11 @@ A fully Frost sold Frost maximalist.
 
 Dusty Damon: 01:40:38
 
-Are you Roast sold though?
+Are you Frost sold though?
 
 NVK: 01:40:39
 
-I mean, the Roast can get interested.
+I mean, the Frost can get interested.
 Yeah.
 No, but the Frost stuff is just amazing.
 We won't get into this on this episode, but.
@@ -2225,9 +2238,9 @@ And I'm really excited about some of the scalable solutions that could very well
 
 NVK: 01:54:22
 
-T-Bast.
+Bastien Teinturier.
 
-T-Bast: 01:54:23
+Bastien Teinturier: 01:54:23
 
 Yeah, thanks everyone.
 That was fun.
