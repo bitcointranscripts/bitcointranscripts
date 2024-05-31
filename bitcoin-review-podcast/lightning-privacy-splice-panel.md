@@ -17,6 +17,7 @@ speakers:
   - 'Dusty Dettmer'
   - 'Tony Giorgio'
   - 'Vivek'
+  - 'Bastien Teinturier'
 categories:
   - 'podcast'
 ---
