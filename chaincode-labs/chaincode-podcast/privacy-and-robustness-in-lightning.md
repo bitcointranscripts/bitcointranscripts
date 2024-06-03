@@ -36,7 +36,7 @@ Speaker 1: 00:00:39
 Yeah.
 So this is one of my favorite podcast guests to listen to, and I'm very happy that-
 
-Speaker 0:
+Speaker 1:
 
 Why?
 
@@ -47,14 +47,10 @@ Ugly truth, sort of.
 Very nice for engineers to actually talk about the elephants in the room.
 So I'm expecting that we'll hear a little bit about what's still broken and Lightning where the ship is sailing.
 
-Speaker 0:
+Speaker 1:
 
 Okay, here come the elephants.
-Welcome,
-
-Speaker 2: 00:01:21
-
-Rusty.
+Welcome, Rusty.
 It's great to have you here.
 
 Speaker 2: 00:01:22
@@ -77,8 +73,8 @@ Thank you for that.
 Speaker 2: 00:01:39
 
 It was delightful.
-You are here for the lightning summit.
-Let's talk about lighting.
+You are here for the Lightning summit.
+Let's talk about Lighting.
 Just sort of just get into it.
 
 Speaker 0: 00:01:46
