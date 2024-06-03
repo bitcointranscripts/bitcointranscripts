@@ -149,16 +149,22 @@ If we can get LN symmetry, which used to be called L2, but LN symmetry is a much
 Sorry to question who named L2.
 He blames me.
 I blame him.
-But that, for example, sidesteps a whole heap of, it reduces robustness by introducing simplicity.
+For example, sidesteps a whole heap of, it reduces robustness by introducing simplicity.
 It does make it a lot simpler to maintain your Lightning channel.
 There's no longer toxic waste that you have to worry about, old states and stuff like that.
 Watchtower has become now almost trivial.
 So that adds some simplicity.
 
-Speaker 2: 00:05:05
+Speaker 0: 00:05:05
 
 Can we take a quick side route on that?
+
+Speaker 2:
+
 Sure.
+
+Speaker 0:
+
 Because we've talked about LN symmetry specifically with Instagibs.
 
 ## Do we want LN Symmetry to be symmetrical?
@@ -188,7 +194,7 @@ Yeah, okay.
 We can do that.
 Right now, so what we found in practice is that usually what happens is you screw up, I take your money, and I feel really sorry about it, and I try to give it back to you.
 Right?
-So, the current scheme is actually a little bit too harsh for the world that we actually live in, because we rarely see people actually trying to cheat, and we often see them do it accidentally because they're a store from backups and oops, that was bad, right?
+So, the current scheme is actually a little bit too harsh for the world that we actually live in, because we rarely see people actually trying to cheat, and we often see them do it accidentally because they're a store from backups and, that was bad, right?
 With the LN symmetry approach, simply if you screw up, I just fix up, right?
 There's no massive penalty for you doing so.
 The danger is then, have I created an incentive problem where you might try to cheat because it doesn't cost you anything?
@@ -216,7 +222,7 @@ Yes.
 But on the simple protocol level, you go, well, you didn't lose anything.
 But on a higher level, I'm not going to trust you again because you're obviously doing weird because they restored from backup.
 But you know, if you start doing this a lot, people are gonna be like, no, no, I don't trust them anymore.
-So, so if the potential benefit for you is so small, that that social convention that that, you know, if I want to become a big node, I'm not going to get there because I people have noticed that I keep double spending because it's really clear on chain.
+So, so if the potential benefit for you is so small, that that social convention that that, if I want to become a big node, I'm not going to get there because I people have noticed that I keep double spending because it's really clear on chain.
 
 Speaker 2: 00:07:47
 
@@ -225,12 +231,17 @@ I mean, you start making it more difficult for people to...
 
 Speaker 0: 00:07:55
 
-Ah, but now, remember, in a high fee environment, the cost for you to do a unilateral close is much higher.
+But now, remember, in a high fee environment, the cost for you to do a unilateral close is much higher.
+
+Speaker 2:
+
 I see.
-Right?
+
+Speaker 0:
+
 You want to do a mutual close.
 So the only case where it really comes out is when I'm unavailable you can't do mutual close.
-You're gonna use the last three close anyway and now you're like well I might as well try to cheat.
+You're going to use the last three close anyway and now you're like well I might as well try to cheat.
 So you're already kind of in a corner case because that's already sending more money than if you just spoke to me and closed your channel.
 
 Speaker 1: 00:08:16
@@ -245,7 +256,7 @@ Speaker 0: 00:08:42
 Simplicity is a virtue in itself, right?
 So you can try to increase fairness.
 If you reduce simplicity, you end up actually often stepping backwards.
-So the thing that really appeals about element symmetry is it's simple.
+So the thing that really appeals about LN symmetry is it's simple.
 And every scheme to fix things by introducing more fairness and try to reintroduce penalties and everything else ends up destroying the simplicity that, for me, is like, well, it depends on the ratio of attacks, right?
 At some point, how much engineering, how much effort is going in to save a few cents statistically on your attack probability.
 And so I've come around to the idea that making watchtowers ubiquitous is enough by itself to then go for a very simple and dumb protocol that at the end of the day will be far simpler to implement and have fewer corner cases and those things than trying to get fancy and bring back everything.
@@ -258,7 +269,7 @@ The other argument for breaking symmetry is you can then tell who screwed up.
 If everything's symmetrical, I can make it look like you screwed up by just spending the n minus one transaction the nth transaction and then go, you spent that one and actually it was me.
 There's some cost to doing that, I'm going to have to pay fees on both of them.
 But no one can canonically assign blame for that kind of screw up.
-So you start to go, well, maybe we do make the mason metric but then you're like yeah you're reintroducing complexity and the real appeal is simplicity and simplicity is often underrated as far as going you know there's enough moving parts in lightning as we've discovered without making the base protocol.
+So you start to go, well, maybe we do make the mason metric but then you're like yeah you're reintroducing complexity and the real appeal is simplicity and simplicity is often underrated as far as going you know there's enough moving parts in Lightning as we've discovered without making the base protocol.
 So I find the simplicity more compelling I think now than I did when the first idea was introduced.
 So I've definitely come along.
 The good news is that we need a soft fork, we need to roll this thing out, it's not going to happen overnight, we're going to have both side by side, and we will find the engineering tradeoffs, to be honest.
@@ -267,7 +278,7 @@ There's no huge hurry in this process.
 
 Speaker 1: 00:11:02
 
-Of course, people that still want a penalty can just continue to use ln penalty.
+Of course, people that still want a penalty can just continue to use LN penalty.
 
 Speaker 0: 00:11:07
 
@@ -277,7 +288,7 @@ Now, to be fair, you can migrate from LN penalty to LN symmetry, but you will ha
 I can't come up with any scheme where you can just retro in and attach on.
 It's theoretically possible, but it's not actually possible as far as I can tell.
 So you will need to still be able to have your penalty code, even if you no longer open new ones.
-If you've got existing channels that have not been spliced or otherwise had some kind of on-chain commitment, you will still need to have the code that handles, oh crap, they spent the old one, I now have to do a penalty thing or whatever else.
+If you've got existing channels that have not been spliced or otherwise had some kind of on-chain commitment, you will still need to have the code that handles, crap, they spent the old one, I now have to do a penalty thing or whatever else.
 It's not a huge amount of code, it's not as complicated as some of the other parts, but it will still be there until the point where you go, no.
 Everyone has all those channels are dead.
 We've got all new channels.
@@ -290,14 +301,14 @@ I don't know.
 
 Speaker 1: 00:12:29
 
-And it might actually, it makes it way easier to have more than two parties, right?
+It makes it way easier to have more than two parties, right?
 So it might be the roads to channel factories or you can still share your schemes.
 
 Speaker 0: 00:12:40
 
 So yeah, your point about opening the door to channel factories and multi-party channels and all that is definitely a huge impetus to do LN Symmetry because we can go multiparty, we can do all these wild and wonderful things on top.
-So I'm like, oh, we simplify it and then we add all new complexity by building another layer on top.
-But, you know, that's all good because I'm hoping that that won't be my problem and somebody else can do the implementation on top.
+So I'm like, we simplify it and then we add all new complexity by building another layer on top.
+But, that's all good because I'm hoping that that won't be my problem and somebody else can do the implementation on top.
 
 Speaker 2: 00:13:04
 
@@ -308,7 +319,7 @@ Yeah, I mean, what else do you have in mind when you're talking about that princ
 Speaker 0: 00:13:12
 
 So at the moment, we have a fairly complicated state machine with just the way that we deal with updates.
-And when Greg implemented L2, he did roll in the simplified update proposal that I made a couple years ago now, where basically instead of both of us proposing changes at the same time, So the basic way our peer-to-peer protocol works is that I go, okay, add this, add this, add this, resolve this, resolve this.
+And when Greg implemented L2, he did roll in the simplified update proposal that I made a couple years ago now, where basically instead of both of us proposing changes at the same time. So the basic way our peer-to-peer protocol works is that I go, okay, add this, add this, add this, resolve this, resolve this.
 
 ## Peer to peer protocol
 
