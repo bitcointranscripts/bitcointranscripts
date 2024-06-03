@@ -136,17 +136,17 @@ Speaker 0: 00:04:07
 So, robustness on some extent is always something we need to think about.
 But also, I think like the recent fee spike showed us that there are definitely places we can improve.
 Robustness from the protocol level means we want stuff where we become more immune to fee issues.
-I think that's something definitely, you know, we need longer term.
-The assumption is fees are going to go up, they're going to get more volatile, we're going to have these spikes, We need to handle that really well.
-And I certainly hope that we, you know, we have a number of tricks we can do.
+I think that's something definitely, we need longer term.
+The assumption is fees are going to go up, they're going to get more volatile, we're going to have these spikes, we need to handle that really well.
+And I certainly hope that we, we have a number of tricks we can do.
 Some of which is like, well, we want some soft forks, right?
 
 ## LN symmetry
 
 Speaker 0: 00:04:39
 
-If we can get L and symmetry, which used to be called L2, but L and symmetry is a much better name.
-Sorry to Christian who named L2.
+If we can get LN symmetry, which used to be called L2, but LN symmetry is a much better name.
+Sorry to question who named L2.
 He blames me.
 I blame him.
 But that, for example, sidesteps a whole heap of, it reduces robustness by introducing simplicity.
