@@ -996,19 +996,17 @@ But still, our job is going to be to just continue that incremental engineering 
 
 Speaker 1: 00:43:36
 
-Saurabh Mishra What are the things that you're excited to see being built on top of Lightning?
+What are the things that you're excited to see being built on top of Lightning?
 Well, I'll let you answer first, but I might have follow up.
 
 Speaker 0: 00:43:43
 
-Jason Tucker Oh, yeah.
 What is exciting?
-I always said that there will be some killer application of lightning that I will think is stupid because I'm old.
-And you know,
+I always said that there will be some killer application of Lightning that I will think is stupid because I'm old.
 
 Speaker 1: 00:43:52
 
-how I feel about inscriptions.
+And you know, how I feel about inscriptions.
 
 Speaker 0: 00:43:55
 
@@ -1017,24 +1015,23 @@ You know, it'll be you know, I don't even know what it will be.
 And part of that is just the problem is that when you don't have a technology, when you don't have a way of making micro payments, what we would call real micro payments, not like making tiny payments, by definition, any business model or things or infrastructure that would require that do not exist because they can't.
 And so there's an inertia behind that, right?
 You create a technology, but then there's no immediate use for it.
-There are a few fringe uses and people who can use it and, you know, they can kind of like enhance things they're already doing.
+There are a few fringe uses and people who can use it and, they can kind of like enhance things they're already doing.
 But the whole Greenfields thing of things that didn't exist or didn't make sense before that suddenly makes sense.
-And you know, I think at this point, Noster tipping is probably something where people think, oh, it didn't make sense before.
+And you know, I think at this point, Noster tipping is probably something where people think, it didn't make sense before.
 You couldn't really do that with credit cards.
 
 Speaker 1: 00:44:43
 
 It didn't.
 I must admit, like on Stacker News, when I want to tip a post, and the little lightning zooms across the screen when I tip.
-Yeah.
-It's just like I started Lightning Wallet, but I put in a few thousand sets and I got some tips back, bigger account number now.
+It's just like I started Lightning wallet, but I put in a few thousand sets and I got some tips back, bigger account number now.
 It's neat.
 If I ever want to get those sets back, I can just pull them back to my Lightning wallet.
 It's pretty neat.
 
 Speaker 0: 00:45:08
 
-And look at Cashew and some of the other things, the Fetty Mint and stuff using Lightning as a glue, right?
+And look at Cashew and some of the other things, the Fedimint and stuff using Lightning as a glue, right?
 
 Speaker 1: 00:45:12
 
@@ -1060,9 +1057,9 @@ It's hard to see the potential of the black box thing when you're in the nitty g
 Speaker 0: 00:45:59
 
 That's right.
-Yeah, And I'm sure any guesses that I would make about what it would do will become horribly dated and will be wrong.
+Yeah, and I'm sure any guesses that I would make about what it would do will become horribly dated and will be wrong.
 Because you're a product of the pre-existing conditions, right?
-It will take someone for whom someone lightning native will come along and do something that yeah, probably the shaggiest, dumbest thing I've ever heard of.
+It will take someone for whom someone Lightning native will come along and do something that yeah, probably the shaggiest, dumbest thing I've ever heard of.
 It'll turn out to be a huge success and it shows that I knew.
 That's why I'm not a business guy.
 I'm just an engineer.
@@ -1118,7 +1115,7 @@ Do you take this?
 Speaker 1: 00:47:54
 
 I don't think it's like block times.
-It's more like building a new protocol and also getting that person that will be a lightning network that builds the killer use case just takes a generation maybe.
+It's more like building a new protocol and also getting that person that will be a Lightning network that builds the killer use case just takes a generation maybe.
 Anything really big that changes stuff progresses in 10 year steps.
 So two steps.
 Yeah, I think so.
@@ -1126,4 +1123,4 @@ Yeah, I think so.
 Speaker 2: 00:48:15
 
 Cool.
-Well, hope you enjoyed listening to it and we'll see you
+Well, hope you enjoyed listening to it and we'll see you next time.
