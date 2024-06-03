@@ -55,10 +55,10 @@ Welcome,
 Speaker 2: 00:01:21
 
 Rusty.
-
-Speaker 0: 00:01:22
-
 It's great to have you here.
+
+Speaker 2: 00:01:22
+
 Thank you.
 I am fresh off the boat.
 I literally arrived less than 24 hours before from the other side of the world.
@@ -91,7 +91,7 @@ Speaker 2: 00:01:47
 
 Tell us what you think this group should be thinking about as you're as you're gathering together.
 There's going to be specific conversations that happen about specific proposals.
-But I guess more generally, as lightning has grown up, What are the kinds of things that you're thinking about and concerned about?
+But I guess more generally, as lightning has grown up. What are the kinds of things that you're thinking about and concerned about?
 
 Speaker 0: 00:02:04
 
@@ -100,7 +100,7 @@ That's a fair question.
 There are obviously specific things that we're going to talk about at the summit.
 Definite concrete proposals and that's all great.
 This is always a fantastic time for everyone to come together.
-I think if we step back a bit, This is like eight years now for the Lightning Network.
+I think if we step back a bit. This is like eight years now for the Lightning Network.
 So we've been doing this for a while.
 And there are a couple of things that I think we really need to make sure we keep focusing on because it's easy to get in the weeds of specific things and I would love to go into those and we can totally go there.
 But I think robustness and privacy are the two things that are rarely actually on fire, but are always important.
