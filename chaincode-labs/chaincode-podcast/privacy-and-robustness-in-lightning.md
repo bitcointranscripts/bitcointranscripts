@@ -398,15 +398,14 @@ But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
 And the answer would be, check-sig from stack.
 And the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
-AJ would definitely be the person unfortunately he's not here in New York he's kind of you know done a fair bit of travel recently he was like no I'm not going.
+AJ would definitely be the person unfortunately he's not here in New York he's kind of, done a fair bit of travel recently he was like no I'm not going.
 So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate any prep out.
 That's if you're listening, AJ, I hope you're going to make that prophecy come true.
-I think, you know, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
-Anyprepout by itself is a fairly simple piece.
+I think, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
+Any prep out by itself is a fairly simple piece.
 
 Speaker 2: 00:18:21
 
-Now.
 Not a precluding piece to other things that we can do in the future.
 
 Speaker 0: 00:18:24
@@ -419,9 +418,9 @@ This is the two-way door, one-way door kind of thing.
 
 Speaker 0: 00:18:28
 
-In this case, we will want anyprepout even when we have full covenants and everything else.
+In this case, we will want any prep out even when we have full covenants and everything else.
 So I'm pretty confident to say this is something that we should enable.
-Right.
+Right?
 Now that said the detail the fine details you know hand wave hand wave I know try not to spend too much time coming over details but I'm pretty happy that you know somebody will come up with a proposal.
 We will vet it and make sure that it works.
 And away we go.
