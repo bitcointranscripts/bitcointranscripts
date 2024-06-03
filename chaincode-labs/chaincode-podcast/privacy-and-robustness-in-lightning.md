@@ -1,11 +1,16 @@
 ---
-title: "Privacy and robustness in Lightning"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Rusty-Russell-and-privacy-and-robustness-in-Lightning---episode-34-e27t6go
-tags: ['lightning', 'eltoo', 'privacy-enhancements']
-speakers: ['Rusty Russell']
-categories: ['podcast']
-date: 2023-08-09
+title: 'Privacy and robustness in Lightning'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Rusty-Russell-and-privacy-and-robustness-in-Lightning---episode-34-e27t6go'
+date: '2023-08-09'
+tags:
+  - 'lightning'
+  - 'eltoo'
+  - 'privacy-enhancements'
+speakers:
+  - 'Rusty Russell'
+categories:
+  - 'podcast'
 episode: 34
 ---
 Speaker 0: 00:00:00
@@ -13,7 +18,7 @@ Speaker 0: 00:00:00
 Simplicity is a virtue in itself, right?
 So you can try to increase fairness.
 If you reduce simplicity, you end up actually often stepping backwards.
-So I really, the thing that really appeals about element symmetry is it's simple.
+The thing that really appeals about element symmetry is it's simple.
 And every scheme to fix things by introducing more fairness and try to reintroduce penalties and everything else ends up destroying the simplicity.
 
 Speaker 1: 00:00:27
@@ -30,11 +35,20 @@ Speaker 1: 00:00:39
 
 Yeah.
 So this is one of my favorite podcast guests to listen to, and I'm very happy that-
+
+Speaker 0:
+
 Why?
+
+Speaker 2:
+
 Because he has the capacity to cut through a lot of the noise and get to the crux of things, say them as they are.
 Ugly truth, sort of.
 Very nice for engineers to actually talk about the elephants in the room.
-So I'm expecting that we'll hear a little bit about what's still broken and lightning where the ship is sailing.
+So I'm expecting that we'll hear a little bit about what's still broken and Lightning where the ship is sailing.
+
+Speaker 0:
+
 Okay, here come the elephants.
 Welcome,
 
