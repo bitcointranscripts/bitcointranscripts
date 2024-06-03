@@ -421,7 +421,7 @@ Speaker 0: 00:18:28
 In this case, we will want any prep out even when we have full covenants and everything else.
 So I'm pretty confident to say this is something that we should enable.
 Right?
-Now that said the detail the fine details you know hand wave hand wave I know try not to spend too much time coming over details but I'm pretty happy that you know somebody will come up with a proposal.
+Now that said the detail the fine details you know hand wave hand wave I know try not to spend too much time coming over details but I'm pretty happy that, somebody will come up with a proposal.
 We will vet it and make sure that it works.
 And away we go.
 Greg Sanders, of course, will be the person to talk to.
@@ -431,25 +431,25 @@ I trust them to weed through all the different possibilities, come out with a pr
 
 Speaker 1: 00:19:07
 
-So Yeah, I believe it's live in inquisition already.
+Yeah, I believe it's live in inquisition already.
 
 Speaker 0: 00:19:11
 
 Yeah, exactly.
-So, you know, I think we're, you know, we're well on the way to getting that.
-Now, just to set expectations correctly, even if we saw for tomorrow and it activated the week after, you know, there's a leer latency involved here, right?
-We still need to then go through and implement it, roll it out, you know, it gets it gets spec'd out, it gets, you know, packed together, then it gets, then we ratify it, We get two different independent implementations both to implement it and interoperate and make sure that works.
+So, you know, I think we're, we're well on the way to getting that.
+Now, just to set expectations correctly, even if we saw for tomorrow and it activated the week after, there's a leer latency involved here, right?
+We still need to then go through and implement it, roll it out, it gets it gets spec'd out, it gets, packed together, then it gets, then we ratify it, We get two different independent implementations both to implement it and interoperate and make sure that works.
 Then it's spec final.
 Then everyone else can go ahead and implement it.
 Then it can roll out on the network.
 Then everyone can upgrade.
 Then once both your peers are upgraded, then now you can open a new channel.
-A new channel will be one of these cool, you know, L2 channels and everything else.
-So, you know, this is a long road, right?
+A new channel will be one of these cool, L2 channels and everything else.
+So, this is a long road, right?
 
 Speaker 1: 00:19:57
 
-Yeah, we were just talking with El and Oli, how one and a half years after Taproot's been active, simple Taproot channels are close to being spec'd out.
+Yeah, we were just talking with El and Oli, how one and a half years after Taproot's been active, simple Taproot channels are close to being spec out.
 
 Speaker 0: 00:20:07
 
@@ -486,16 +486,16 @@ Speaker 0: 00:21:07
 How do you push those forward?
 You have that internal compass of, you need to spend a certain amount of your time on stuff that's literally broken on fire and everything else.
 You need to spend a certain amount of time on other things.
-As an engineer, this is the eternal battle between, you know, so just look at me personally, right?
+As an engineer, this is the eternal battle between, so just look at me personally, right?
 So I lead the core lightning team.
 There's a certain amount of just dealing with time sheets and just doing random managerial overhead that I have to do.
 There's a certain amount of like peering on random podcasts to talk about stuff.
-There's a certain amount of actual coding that I have to do on core lightning features that people want because, you know, scalability, whatever thing it is, right?
+There's a certain amount of actual coding that I have to do on core lightning features that people want because, scalability, whatever thing it is, right?
 Oh, well, this is a cool new feature.
 We should do that.
 And then there's the protocol work as well right so there's always more things to do well in any fun job like working on this there's always more things to do than you necessarily have time for you have to prioritize so to answer your question how do you do that And the answer is that you have to reserve a certain amount of time for long-term work.
 You just have to.
-And you have to be aware through experience that if you do not explicitly reinvent some of your time, It'll never be a good time.
+And you have to be aware through experience that if you do not explicitly reinvent some of your time, it'll never be a good time.
 Right.
 
 ## The dynamics of developing a spec with commercially associated implementations
@@ -514,28 +514,28 @@ I like that.
 Speaker 2: 00:22:35
 
 And so, well, they have to be, I mean, they're companies, if the companies don't exist, do these implementations exist, I guess?
-So that is a very good philosophical question.
 
 Speaker 0: 00:22:45
 
+So that is a very good philosophical question.
 And hey, I work for a startup, right?
-And you should always be thinking what happens if my startup collapses because almost by definition right that's the the endgame for most startups is like they fail right and so when you have an open source project and you're like well I'm running this what what happens what happens after this to some extent the answer is you know I'm gonna keep working on this whatever happens unfortunately my wife has given explicit approval for me to take some time off and work.
+And you should always be thinking what happens if my startup collapses because almost by definition right that's the the endgame for most startups is like they fail right and so when you have an open source project and you're like well I'm running this what what happens what happens after this to some extent the answer is, I'm gonna keep working on this whatever happens unfortunately my wife has given explicit approval for me to take some time off and work.
 Should all of us fail?
 We've had this discussion, right?
 She's been like, cool, that's okay.
 You can go do that.
 At least for a while before you have to get a real job again.
-So I feel fairly confident to go, you know, we're going to move forward.
+So I feel fairly confident to go, we're going to move forward.
 And maybe not as fast as we are at the moment.
 But, you know, there's some future there.
 
 Speaker 2: 00:23:24
 
-Now, I guess my other bit of that was Because they're commercially associated, maybe not driven, commercially associated.
+I guess my other bit of that was Because they're commercially associated, maybe not driven, commercially associated.
 That means that features get pushed to the front of the line.
 Because I've worked for companies, I know how it works.
-So when you're talking about, you know, ring fencing things and making sure that we're, you know, thinking long term.
-These are different than just like building a product that's, you know, in JavaScript and you know, can wow an investor.
+So when you're talking about, ring fencing things and making sure that we're, thinking long term.
+These are different than just like building a product that's, in JavaScript and, can wow an investor.
 There is a philosophical side to what's happening here.
 And there is a collaboration side of no implementation can do it by themselves.
 
@@ -545,20 +545,20 @@ Yes.
 
 Speaker 2: 00:24:07
 
-And so those dynamics just don't seem to add up to a, a long term thinking and long term, you know, moving, moving the ball forward in these kinds of dimensions.
+And so those dynamics just don't seem to add up to a long term thinking and long term, moving, moving the ball forward in these kinds of dimensions.
 
 Speaker 0: 00:24:21
 
-So the piece that you're missing here is the pie is still growing, right?
+So the piece that you're missing here is the pi is still growing, right?
 And so there is more emphasis on growing that pie and doing those bold new things because the world is still in front of us right light network as it is in 10 years time is much bigger than light network today with that assumption how do you lead how do you become the one everyone wants to be and the answer is you do the cool new things.
 And that's not so much features.
-It is that focus on the next, basically the light in 2.0. What are the cool new things coming down the pipe?
+It is that focus on the next, basically the light in 2.0. What are the cool new things coming down the pi?
 Is it L2?
-Is it L-unsymmetry?
+Is it LN symmetry?
 Have you already got those, right?
-Is it taproot channels?
-Like look at LNDs, you know, huge amount of resources they're putting in to doing that.
-Now, you know, a lot of that is commercially driven.
+Is it Taproot channels?
+Like look at LNDs, huge amount of resources they're putting in to doing that.
+Now, a lot of that is commercially driven.
 Why?
 Because it gives them cool points and it makes the rest of us sweat.
 And we have to then catch up, right?
@@ -568,8 +568,8 @@ And I'm going, on the one hand, I'm going, wow, that's amazing.
 On the hand, I'm going, shit.
 Now we have to do that.
 Right?
-So it is, there is definitely a commercial reason to do these things.
-Now, is it theoretically possible that you could avoid doing any real work and just concentrate on, you know, adding features to your own implementation.
+There is definitely a commercial reason to do these things.
+Now, is it theoretically possible that you could avoid doing any real work and just concentrate on, adding features to your own implementation.
 I think it's too early.
 At the moment, you can't do that because no one else is doing that and you will get left behind.
 There are four implementations out there and there is choice in what you can run.
@@ -605,10 +605,10 @@ Speaker 0: 00:26:21
 So there's certainly other implementations to come up.
 And I actually expect to some extent that LN symmetry may open some new opportunities because people go, actually, I can implement that now.
 That is a serious subset.
-If I just implement that, maybe I've got an advantage over the others who have legacy they've got to still handle whereas I can just have a clean implementation that just does this new thing so we're gonna see these you know these new kids coming up with their you know I don't know Kotlin implementation I've heard of those I know some some some some of them one of those languages you know you're like you implemented in what I've heard of that kind of thing.
+If I just implement that, maybe I've got an advantage over the others who have legacy they've got to still handle whereas I can just have a clean implementation that just does this new thing so we're gonna see these, these new kids coming up with their, I don't know Kotlin implementation I've heard of those I know some some some some of them one of those languages, you're like you implemented in what I've heard of that kind of thing.
 That may be the next thing.
 And that's exciting for me.
-I think, you know, that brings, you know, new blood, just a new design space, a new point of view to the implementations, and that's always great.
+I think, that brings, new blood, just a new design space, a new point of view to the implementations, and that's always great.
 
 ## Privacy revisited
 
@@ -621,7 +621,7 @@ What's on your mind about privacy?
 
 Speaker 0: 00:27:11
 
-Well, privacy, I think, you know, privacy is a bottomless well, right?
+Well, privacy, I think, privacy is a bottomless well, right?
 You can keep going on privacy for just about forever.
 There are some fairly obvious things you can know on privacy.
 I think some of them are just like a quality of implementation.
@@ -639,13 +639,12 @@ Speaker 0: 00:27:53
 
 That's right.
 Yeah.
-So basically you fake a couple of...
 You act as if the payment may have gone out multiple channels.
 You artificially restrict their capacity by some amount, in the case where your maximum HTLC size has hit the bounds of the capacity.
 So it doesn't actually make a difference in a lot of cases, because for most implementations, you set the maximum HTLC size that they can go through to, say, 10% of your channel capacity anyway.
 So as long as you've got more than 10%, they can't tell.
 They literally cannot tell.
-When you're under 10 you know the question is like when you're on the boundary you can you can start probing and so at that point you start the Oakland protocol and well you know we're going to actually let you use slightly less capacity than we actually have because we don't want to leak that we didn't send the HTLC out through there.
+When you're under 10, the question is like when you're on the boundary you can you can start probing and so at that point you start the Oakland protocol and well, we're going to actually let you use slightly less capacity than we actually have because we don't want to leak that we didn't send the HTLC out through there.
 
 Speaker 1: 00:28:34
 
@@ -656,12 +655,12 @@ Speaker 0: 00:28:45
 Exactly.
 So you can do it with multiple probes, but the Oakland protocol basically restricts it because it gives you a fixed point where you go.
 And some implementations actually restrict the total HLC in flight.
-So they can't, you can have like a, you have another thing that they can't basically exhaust the whole channel.
+So you have another thing that they can't basically exhaust the whole channel.
 So there's that, there's low-hanging fruit like that.
 There's splicing, which just messes up your graph a little bit, so it makes it harder to...
 Dual funding particularly allows you to combine multiple things into one transaction, just the common ownership heuristics starts to break down.
 This is useful.
-There's a whole pile of different fun things you can do once you've got splicing and you can splice in and out and everything else And just mess people up which is kind of nice Particularly if we start to see things like page join of things coming out of splices and really really kind of a lot more So once your lightning channel is also used for unchain things through splicing, I think it becomes a lot more complicated to see exactly what's going on, which is just a nice low-hanging fruit that we're going to get.
+There's a whole pile of different fun things you can do once you've got splicing and you can splice in and out and everything else. And just mess people up which is kind of nice Particularly if we start to see things like page join of things coming out of splices and really really kind of a lot more So once your Lightning channel is also used for unchain things through splicing, I think it becomes a lot more complicated to see exactly what's going on, which is just a nice low-hanging fruit that we're going to get.
 
 Speaker 1: 00:29:40
 
