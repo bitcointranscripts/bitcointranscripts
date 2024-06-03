@@ -679,14 +679,14 @@ One proposal is that you prove that you have some funds and that allows you to a
 Cool.
 Just prove that you have some funds.
 So you can't claim, hey, I've got all these giant channels without some anti-spam requirement.
-But we could loosen it out and say, cool, you know, you proved you got a million sats.
+But we could loosen it out and say, cool, you proved you got a million sats.
 You can advertise eight million sats worth of channels.
 Right.
 To hand wave, there have to be some other restrictions in there.
 But that would potentially allow us to break this heuristic where you're basically announcing your channels.
 Now, the gossip announcement, that's my fault actually, because I put that in the protocol.
 And I was thinking, well, you're public anyway, it's fine.
-But it turns out, of course, that leaking that one piece of information then often leads to a lot of other information that you did not intend to be leaked, particularly about unannounced channels, which we've recently had improvements on, right, with with SCID aliases, you know, we're no longer leaking those, but indirectly you can now start to tell what's happening with private channels, which was, or unannounced channels, which was never the intention.
+But it turns out, of course, that leaking that one piece of information then often leads to a lot of other information that you did not intend to be leaked, particularly about unannounced channels, which we've recently had improvements on, right, with with SCID aliases, we're no longer leaking those, but indirectly you can now start to tell what's happening with private channels, which was, or unannounced channels, which was never the intention.
 
 Speaker 1: 00:31:04
 
@@ -710,14 +710,14 @@ Yeah.
 Speaker 1: 00:31:28
 
 And I was curious what what broke for various lightning implementations.
-
-Speaker 0: 00:31:32
-
 Can we get a little bit into that?
 
-Speaker 1: 00:31:33
+Speaker 0: 00:31:33
 
 Yeah, absolutely.
+
+Speaker 1:
+
 Robustness for fees folks.
 
 Speaker 0: 00:31:36
@@ -734,7 +734,7 @@ So you have to have some agreement.
 We tend to be pretty broad.
 Now it turns out if you restart BitcoinD it seems that it often just drops a bundle of shit and starts to think that the floor for fees has dropped back down.
 So people will restart the BitcoinD, it would go, no, no, min relay fees, all good.
-We're, you know, we're back on like, you know, one set or whatever.
+We're, you know, we're back on like, one set or whatever.
 And you would propose that to your peer who has not restarted and you fucking want no, and you could get forced closures that way.
 
 Speaker 1: 00:32:29
@@ -751,7 +751,7 @@ You just go, we're going to ratchet it up to a certain amount.
 And then if it's been there for an hour and we're still getting, okay, then we start to let it down.
 This is a workaround for that.
 There's another issue that the Eclair people spotted that I think actually Bastien spotted, which is where you go on chain, you go to redeem an HLC, you go, it's actually not worth me paying the fee that would be involved to redeem this because fees are high, whatever else, so I'm not going to, you still have to close it upstream at that point.
-Normally you'd wait till it spans and then you go, whatever, but if you're not going to spend or you're not gonna push paying a fee to force it through, you now need to make the call to fail it upstream.
+Normally you'd wait till it spans and then you go, whatever, but if you're not going to spend or you're not going to push paying a fee to force it through, you now need to make the call to fail it upstream.
 You're at risk at that point because you could lose the HTLC, but you've already decided to write that money off because it's not worth.
 But if you don't close it upstream, upstream then closes on you because you've left this HTLC and clock's ticking.
 Upstream goes, right, I'm going to close the news.
@@ -760,7 +760,6 @@ So you can end up with channel failure because of this issue.
 Speaker 1: 00:33:37
 
 Right, so you have an HTLC that's so small that at a high fee, it's not worth claiming.
-That's right.
 You write it off, but you have to.
 
 Speaker 0: 00:33:44
@@ -774,13 +773,11 @@ Speaker 1: 00:33:56
 
 Could you clarify?
 So the fee in a commitment transaction is paid by the channel proposer?
-Yes.
 Like the person that started the channel.
 So it's always the one that started the channel that has to cough up the fees.
 
 Speaker 0: 00:34:09
 
-Okay.
 Yes.
 But remember with modern anchor channels, your fee is actually pretty low ball.
 It's just going to be enough to get you into the mempool, and you're going to use child pays for parent on one of the anchor outputs to actually bump the fee where it is.
@@ -828,22 +825,14 @@ Yeah, sure.
 Speaker 0: 00:35:14
 
 And in a more efficient way than child pays for parent, you actually bring your own fees on the board, which is really cool.
-
-Speaker 1: 00:35:18
-
-Anyway,
-
-Speaker 0: 00:35:22
-
-so this means that then the person closing actually is the one who bumps it and then pays fees above some de minimis level at the moment.
+Anyway, so this means that then the person closing actually is the one who bumps it and then pays fees above some de minimis level at the moment.
 So that actually works a little bit better and is a bit more incentive compatible.
 So you want to close the channel, you're paying the fees.
-Whereas the moment like, you know, sometimes you want to close the channel, it's just like, I'm paying the fees.
+Whereas the moment like, sometimes you want to close the channel, it's just like, I'm paying the fees.
 That's not right.
 Right.
 So, so it does help to some extent to solve that.
 So yeah.
-Okay.
 
 Speaker 1: 00:35:42
 
@@ -855,30 +844,31 @@ Speaker 0: 00:35:57
 That's right.
 Now you've got some time, you have a longer delay on your channel, you've got some time to get it in.
 So a transient spike doesn't hurt you so much, but you do have to get in.
-And this is one of the reasons that we talk about, you know, Bitcoin Core traditionally has divided rules into like the hard rules of what can go in a block and then the software rules about what can propagate.
+And this is one of the reasons that we talk about, Bitcoin Core traditionally has divided rules into like the hard rules of what can go in a block and then the software rules about what can propagate.
 It's like when you're using it at a layer two, you don't care.
-Like if you, you don't care why your transaction doesn't go in, whether it's because it's illegal or whether it's because it's considered immoral by the network, right?
+Like if you don't care why your transaction doesn't go in, whether it's because it's illegal or whether it's because it's considered immoral by the network, right?
 Just these soft rules don't actually make a difference to you.
 They're both really good, really important rules.
 And so there's been more focus than there perhaps has been in the past, where these soft rules about what's allowed to propagate through the network have been seen as less important.
 Yes, to some extent they are because they're changeable, but in a sense of you're operating, building on top of it, they're both really good.
-So there's been a proposal to have a workaround where we actually start spraying things through the Lightning Network so that people will jam them into their local nodes.
+So there's been a proposal to have a workaround where we actually start spraying things through the Lightning network so that people will jam them into their local nodes.
 It may still happen at some point if we really need to.
 As long as we can get them to miners.
 
 Speaker 1: 00:36:57
 
-Oh, is that the third approach next to Nostra and- Yeah, that's right.
+Is that the third approach next to Nostra. 
 
 Speaker 0: 00:37:00
 
+Yeah, that's right.
 Exactly.
 You know, we just all you separate them over all the networks as long as there's a minor missing, you might pick them up.
 I know there was there was a proposal to have some kind of local package relay where you could kind of inject a package locally.
 And then we could just paper over the rest if we needed to.
-Obviously, we'd like to just go all the way to the you know, hey, do the whole peer-to-peer protocol for an upgrade, we're all good.
+Obviously, we'd like to just go all the way to the, hey, do the whole peer-to-peer protocol for an upgrade, we're all good.
 But you know, that's something that we could potentially do if we had to.
-But you know, in the meantime, it's interesting to see the phenomenon.
+But, in the meantime, it's interesting to see the phenomenon.
 This stuff happened because fees were so low for so long that it got pushed to the back of the line, right?
 Even we were one of the first people to implement the old anchor system, which had fees built in.
 And then when people implemented it, they went, actually, we want zero fee anchors.
@@ -893,19 +883,19 @@ The one good thing about volatility like this is it does shake your priorities u
 
 Speaker 1: 00:38:11
 
-Pushes adoption of best practices, better fee estimation, better output type usage, your excel management, you know, all the things.
+Pushes adoption of best practices, better fee estimation, better output type usage, your excel management, all the things.
 
 Speaker 0: 00:38:20
 
 All these things that are not important until they suddenly are and you put the engineering work in.
-Look, you know, life's all about trade-offs and I actually can't, you can't be too harsh on people for going well, you know, I decided to defer that.
+Look, life's all about trade-offs and I actually can't, you can't be too harsh on people for going well, you know, I decided to defer that.
 Like people give crap to Moon Wallet for example for using on-chain transactions.
 I'm like look it's an engineering trade-off that's fine you know as long as you go in with your eyes open.
-Now sure your timing isn't gonna be perfect but hell if you'd asked me two years ago I would have said no no this stuff is critical you know fees are going up you've got to do it.
+Now sure your timing isn't going to be perfect but hell if you'd asked me two years ago I would have said no no this stuff is critical you know fees are going up you've got to do it.
 I mean really?
 You actually had two years to get away with it.
 And you could kind of bumble your way through the recent fees spike and go, okay, for all I know, we'll have another two years of low fees.
-And you go, oh, okay, maybe you panicked a bit too hard.
+And you go, okay, maybe you panicked a bit too hard.
 Just for the record, I do not think that's true.
 And you should totally get your shit together now.
 But I can't blame anyone else who made the same kind of decision and went, well, actually, if you're not on fire right now.
@@ -917,11 +907,11 @@ Speaker 1: 00:39:19
 
 Right.
 So the rainbows and unicorns in this case look like v3 transactions with ephemeral anchors, zero fee commitment transactions, package relay.
-Package relay.
-And L2 also solves some of these problems.
 
 Speaker 0: 00:39:33
 
+Package relay.
+And L2 also solves some of these problems.
 But we have similar incentive problems, and you need to have the package relay as well, and v3, I think, for it to get L2 to be secure as well.
 We currently have two anchor outputs, and that makes your transactions bigger.
 So in a low fee environment, you could argue that you shouldn't implement anchors because you're just making a bigger transaction for unilateral closes.
@@ -938,8 +928,8 @@ Speaker 0: 00:40:10
 
 Yeah, that point, the ephemeral anchor, it shrinks right down.
 So it's pretty good.
-And at that point, you start to go, yeah, OK, it's a bit of a wash.
-And output's still not free, but you know, it's cheap nine bytes nine bytes Someone's on the math.
+And at that point, you start to go, yeah, it's a bit of a wash.
+And output's still not free, but, it's cheap nine bytes nine bytes Someone's on the math.
 Cool.
 So yeah, yeah that look that that's definitely the where we want to get to and again, it's an Maybe no one will notice if it takes a while to get there, but definitely it's one of those, the engineers look at these things and see problems.
 And this is one of the problems we see and we crossed off the list and then we'll work on the next one.
@@ -948,7 +938,6 @@ Speaker 1: 00:40:38
 
 Yeah, Gloria and I have been writing, waiting for confirmation series and uptake newsletter.
 Next week we're going to talk about mempool policy as an interface for layer 2 protocols.
-Yeah.
 So, not preparing for that yet, but I'm thinking already.
 
 Speaker 0: 00:40:56
@@ -968,35 +957,34 @@ I think my mind is still somewhere over the Pacific Ocean right now.
 So I'm not sure that it's all present.
 Look, as I said, we've been going eight years on this and it's been a fantastic journey just to go through with this incredibly bright set of inspired engineers.
 I'm not a morning person, but I still get up for 5.30 a.m. Calls every two weeks on Tuesday, my time, Monday, everyone else's time, to hang out and like, and collaborate on the SPAC and do everything else.
-And, you know, it was really interesting to go through those days when there was excitement about lightning in the early days, and then everyone was pretty much pivoted to, no, Bitcoin's a store of value, payments aren't important.
+And, it was really interesting to go through those days when there was excitement about lightning in the early days, and then everyone was pretty much pivoted to, no, Bitcoin's a store of value, payments aren't important.
 And we're like, but we're working on payments.
 Like, we're working really hard, you know.
-And you know, to see it kind of come back around, now people are like, wow, this is actually usable.
+And, to see it kind of come back around, now people are like, wow, this is actually usable.
 Like, it's really cool.
 I think it's a little bit of, it's a little bit gratifying to kind of, everyone to kind of come back to oh yeah this is this is actually pretty nice thank you that's good but you know we still have so much more to do and I think everyone's pretty aware of that to some extent you know this is a job that will never be finished, but it's going to get harder and harder as the network grows to change things.
 And so there's a lot of effort on trying to make sure that we've got things correct now, we've laid the foundation correctly.
-So that, you know, while, you know, unlike Bitcoin, which is completely, you know, ground into stone.
+So that, you know, while, unlike Bitcoin, which is completely, ground into stone.
 We do have some ability to move on the protocol, but over time it will become less and less just because of the weight and the inertia of things.
 I look at the IPv4 to v6 transition, right?
 It's going great.
-It's going great.
 Any day now, right?
 Two weeks, TM.
-You know, so, so, you know, and there were things that we put in the protocol that were way overkill.
+You know, so, and there were things that we put in the protocol that were way overkill.
 The onion stuff, like the onion routing, but just with everyone was very clear that while nobody's screaming for this today, it is a critical component that needs to be in the version zero.
 It needs to be in there before anything else.
-So I think we're in, you know, all up.
+So I think we're in, all up.
 You step back and you were in reasonably good shape.
 And yeah, as I said, engineers tend to focus on the problem.
 We tend to focus on this needs fixing and this needs fixing.
 We need to do this and this.
-We don't often look back and go look at, you know, all the things that we've achieved over this time.
+We don't often look back and go look at, all the things that we've achieved over this time.
 And so for me, this week is a little bit of both.
 A little bit of kind of going, yeah, look at all the stuff that we've done.
 Look at the excitement that has moved up.
 The people building things on top of what we're doing.
 That's really exciting.
-And that's where more people will come into there and they're going to come into the low level and go, you know what I want to do?
+And that's where more people will come into there and they're going to come into the low level and go, what I want to do?
 I want to implement Lightning Protocols from scratch.
 You know, I welcome the crazies.
 If you're listening to this and going, that's what I want to do, I want to implement that.
