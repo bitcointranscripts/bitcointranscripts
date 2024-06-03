@@ -13,7 +13,7 @@ categories:
   - 'podcast'
 episode: 34
 ---
-Speaker 0: 00:00:00
+Rusty Russell: 00:00:00
 
 Simplicity is a virtue in itself, right?
 So you can try to increase fairness.
@@ -65,7 +65,7 @@ Speaker 2: 00:01:30
 Our budget is for this podcast is incredible.
 We fly people from all over the world to this office.
 
-Speaker 0: 00:01:36
+Rusty Russell: 00:01:36
 
 I must say that private jet was lovely.
 Thank you for that.
@@ -77,7 +77,7 @@ You are here for the Lightning summit.
 Let's talk about Lighting.
 Just sort of just get into it.
 
-Speaker 0: 00:01:46
+Rusty Russell: 00:01:46
 
 Let's do that.
 Yeah.
@@ -89,7 +89,7 @@ Tell us what you think this group should be thinking about as you're as you're g
 There's going to be specific conversations that happen about specific proposals.
 But I guess more generally, as lightning has grown up. What are the kinds of things that you're thinking about and concerned about?
 
-Speaker 0: 00:02:04
+Rusty Russell: 00:02:04
 
 Yeah, okay.
 That's a fair question.
@@ -115,7 +115,7 @@ It's different though, in terms of layer one versus layer two, because layer two
 Now things have broken, but I guess not to the same extent that I think people are trusting it.
 I mean, there's serious money on the line.
 
-Speaker 0: 00:03:42
+Rusty Russell: 00:03:42
 
 Yeah.
 
@@ -127,7 +127,7 @@ And that's up to you if you want to put that much money in there.
 But we, we still need to experiment.
 And again, it is a robustness speed trade off in terms of what you can do.
 
-Speaker 0: 00:04:07
+Rusty Russell: 00:04:07
 
 So, robustness on some extent is always something we need to think about.
 But also, I think like the recent fee spike showed us that there are definitely places we can improve.
@@ -139,7 +139,7 @@ Some of which is like, well, we want some soft forks, right?
 
 ## LN symmetry
 
-Speaker 0: 00:04:39
+Rusty Russell: 00:04:39
 
 If we can get LN symmetry, which used to be called L2, but LN symmetry is a much better name.
 Sorry to question who named L2.
@@ -151,7 +151,7 @@ There's no longer toxic waste that you have to worry about, old states and stuff
 Watchtower has become now almost trivial.
 So that adds some simplicity.
 
-Speaker 0: 00:05:05
+Rusty Russell: 00:05:05
 
 Can we take a quick side route on that?
 
@@ -159,7 +159,7 @@ Speaker 2:
 
 Sure.
 
-Speaker 0:
+Rusty Russell:
 
 Because we've talked about LN symmetry specifically with Instagibs.
 
@@ -169,7 +169,7 @@ Speaker 2: 00:05:12
 
 But I'd be interested in getting your take on, given that asymmetry seems to be healthy for the network, do you want it to be exactly symmetrical?
 
-Speaker 0: 00:05:21
+Rusty Russell: 00:05:21
 
 Okay, so this is a good question.
 So at the moment, let's step back.
@@ -184,7 +184,7 @@ Speaker 2: 00:05:31
 Tadge is over there, too.
 We can pull him in.
 
-Speaker 0: 00:05:33
+Rusty Russell: 00:05:33
 
 Yeah, okay.
 We can do that.
@@ -212,7 +212,7 @@ Speaker 1: 00:07:09
 
 But it still costs you the same to broadcast in the old state or the newest state, so you don't lose anything, right?
 
-Speaker 0: 00:07:16
+Rusty Russell: 00:07:16
 
 Yes.
 But on the simple protocol level, you go, well, you didn't lose anything.
@@ -225,7 +225,7 @@ Speaker 2: 00:07:47
 Yeah, but that also changes with high fee environments, right?
 I mean, you start making it more difficult for people to...
 
-Speaker 0: 00:07:55
+Rusty Russell: 00:07:55
 
 But now, remember, in a high fee environment, the cost for you to do a unilateral close is much higher.
 
@@ -233,7 +233,7 @@ Speaker 2:
 
 I see.
 
-Speaker 0:
+Rusty Russell:
 
 You want to do a mutual close.
 So the only case where it really comes out is when I'm unavailable you can't do mutual close.
@@ -247,7 +247,7 @@ There was also a proposal where you would have some sort of penalty for the init
 So you would have to add a second input to provide additional funds.
 Could we talk about that proposal?
 
-Speaker 0: 00:08:42
+Rusty Russell: 00:08:42
 
 Simplicity is a virtue in itself, right?
 So you can try to increase fairness.
@@ -276,7 +276,7 @@ Speaker 1: 00:11:02
 
 Of course, people that still want a penalty can just continue to use LN penalty.
 
-Speaker 0: 00:11:07
+Rusty Russell: 00:11:07
 
 No, we'll rip the damn thing out as soon as we can.
 I mean, the simplicity argument only applies if you don't have to support both.
@@ -300,7 +300,7 @@ Speaker 1: 00:12:29
 It makes it way easier to have more than two parties, right?
 So it might be the roads to channel factories or you can still share your schemes.
 
-Speaker 0: 00:12:40
+Rusty Russell: 00:12:40
 
 So yeah, your point about opening the door to channel factories and multi-party channels and all that is definitely a huge impetus to do LN Symmetry because we can go multiparty, we can do all these wild and wonderful things on top.
 So I'm like, we simplify it and then we add all new complexity by building another layer on top.
@@ -312,14 +312,14 @@ So we've covered robustness.
 Are there other things?
 Yeah, I mean, what else do you have in mind when you're talking about that principle?
 
-Speaker 0: 00:13:12
+Rusty Russell: 00:13:12
 
 So at the moment, we have a fairly complicated state machine with just the way that we deal with updates.
 And when Greg implemented L2, he did roll in the simplified update proposal that I made a couple years ago now, where basically instead of both of us proposing changes at the same time. So the basic way our peer-to-peer protocol works is that I go, okay, add this, add this, add this, resolve this, resolve this.
 
 ## Peer to peer protocol
 
-Speaker 0: 00:13:37
+Rusty Russell: 00:13:37
 
 At the same time, you can be proposing changes and we commit to each other and we kind of roll this thing in and eventually it's okay.
 That protocol was something that is optimal, but also introduces a significant amount of complexity.
@@ -363,14 +363,14 @@ Maybe AJ, maybe InstaGibs.
 The list gets very short after that.
 So, like, how are you able to communicate those needs down to the lower layer?
 
-Speaker 0: 00:16:47
+Rusty Russell: 00:16:47
 
 Well, I think the any prep out cases have been pretty strong for a long time.
 The question's always been, do we want other soft fork as well?
 
 ## CTV
 
-Speaker 0: 00:16:54
+Rusty Russell: 00:16:54
 
 And people are like, oh, if we had obstacle the check sick from stack, we can also do it.
 Sure.
@@ -381,7 +381,7 @@ Speaker 2: 00:17:09
 
 Could you do that?
 
-Speaker 0: 00:17:12
+Rusty Russell: 00:17:12
 
 A theoretical engineer probably could do that.
 I could not do that.
@@ -404,7 +404,7 @@ Speaker 2: 00:18:21
 
 Not a precluding piece to other things that we can do in the future.
 
-Speaker 0: 00:18:24
+Rusty Russell: 00:18:24
 
 Absolutely.
 
@@ -412,7 +412,7 @@ Speaker 2: 00:18:25
 
 This is the two-way door, one-way door kind of thing.
 
-Speaker 0: 00:18:28
+Rusty Russell: 00:18:28
 
 In this case, we will want any prep out even when we have full covenants and everything else.
 So I'm pretty confident to say this is something that we should enable.
@@ -429,7 +429,7 @@ Speaker 1: 00:19:07
 
 Yeah, I believe it's live in inquisition already.
 
-Speaker 0: 00:19:11
+Rusty Russell: 00:19:11
 
 Yeah, exactly.
 So, you know, I think we're, we're well on the way to getting that.
@@ -447,7 +447,7 @@ Speaker 1: 00:19:57
 
 Yeah, we were just talking with El and Oli, how one and a half years after Taproot's been active, simple Taproot channels are close to being spec out.
 
-Speaker 0: 00:20:07
+Rusty Russell: 00:20:07
 
 Yes, exactly.
 
@@ -455,7 +455,7 @@ Speaker 1: 00:20:08
 
 We know what you mean.
 
-Speaker 0: 00:20:10
+Rusty Russell: 00:20:10
 
 And the other thing is that, look, it enables simplicity, it makes things a lot nicer for us, and it makes it cleaner, but not immediately.
 At the moment, it's just work.
@@ -477,7 +477,7 @@ And so, yeah, how do you push those to the front of the line and put them front 
 Is it because they can come in the form of new features that it's time for?
 Like, yeah, how do you push those forward?
 
-Speaker 0: 00:21:07
+Rusty Russell: 00:21:07
 
 How do you push those forward?
 You have that internal compass of, you need to spend a certain amount of your time on stuff that's literally broken on fire and everything else.
@@ -501,7 +501,7 @@ Speaker 2: 00:22:18
 So, but okay, I have two, I have two things to push back on.
 One is LDK is a little bit of a maybe a question mark for me, but the others are three commercially driven implementations.
 
-Speaker 0: 00:22:30
+Rusty Russell: 00:22:30
 
 I didn't realize we were commercially driven.
 Okay, good.
@@ -511,7 +511,7 @@ Speaker 2: 00:22:35
 
 And so, well, they have to be, I mean, they're companies, if the companies don't exist, do these implementations exist, I guess?
 
-Speaker 0: 00:22:45
+Rusty Russell: 00:22:45
 
 So that is a very good philosophical question.
 And hey, I work for a startup, right?
@@ -535,7 +535,7 @@ These are different than just like building a product that's, in JavaScript and,
 There is a philosophical side to what's happening here.
 And there is a collaboration side of no implementation can do it by themselves.
 
-Speaker 0: 00:24:07
+Rusty Russell: 00:24:07
 
 Yes.
 
@@ -543,7 +543,7 @@ Speaker 2: 00:24:07
 
 And so those dynamics just don't seem to add up to a long term thinking and long term, moving, moving the ball forward in these kinds of dimensions.
 
-Speaker 0: 00:24:21
+Rusty Russell: 00:24:21
 
 So the piece that you're missing here is the pi is still growing, right?
 And so there is more emphasis on growing that pie and doing those bold new things because the world is still in front of us right light network as it is in 10 years time is much bigger than light network today with that assumption how do you lead how do you become the one everyone wants to be and the answer is you do the cool new things.
@@ -580,7 +580,7 @@ Speaker 1: 00:25:54
 
 Isn't it five, meanwhile, with Electrum also in the mix now?
 
-Speaker 0: 00:25:58
+Rusty Russell: 00:25:58
 
 Electrum has been in the mix for a while, but we haven't really seen them pushing the boundaries of the spec process.
 They're quite happy to kind of follow along and meet the requirements.
@@ -589,14 +589,14 @@ Speaker 1: 00:26:08
 
 Okay, so you're talking about four that are participating in the spec.
 
-Speaker 0: 00:26:12
+Rusty Russell: 00:26:12
 
 There are three other teams I can hit up when I want someone else to interoperate with on some new feature who are really going to drive it forward.
 And those are really reliable.
 
 ## Expecting new implementations
 
-Speaker 0: 00:26:21
+Rusty Russell: 00:26:21
 
 So there's certainly other implementations to come up.
 And I actually expect to some extent that LN symmetry may open some new opportunities because people go, actually, I can implement that now.
@@ -615,7 +615,7 @@ Privacy, yes.
 So we were talking about sort of the robustness dimension and that sort of that principle.
 What's on your mind about privacy?
 
-Speaker 0: 00:27:11
+Rusty Russell: 00:27:11
 
 Well, privacy, I think, privacy is a bottomless well, right?
 You can keep going on privacy for just about forever.
@@ -631,7 +631,7 @@ Speaker 1: 00:27:48
 
 As a reminder, that was basically just under-reporting your channel capacity.
 
-Speaker 0: 00:27:53
+Rusty Russell: 00:27:53
 
 That's right.
 Yeah.
@@ -646,7 +646,7 @@ Speaker 1: 00:28:34
 
 Couldn't prober still send multiple payments, lock up more funds and then probe like the 40 to 50% by having four other 10%?
 
-Speaker 0: 00:28:45
+Rusty Russell: 00:28:45
 
 Exactly.
 So you can do it with multiple probes, but the Oakland protocol basically restricts it because it gives you a fixed point where you go.
@@ -662,7 +662,7 @@ Speaker 1: 00:29:40
 
 Especially if we no longer announce which UTXO a channel is from.
 
-Speaker 0: 00:29:46
+Rusty Russell: 00:29:46
 
 The gossip question, right?
 Do we break the linkage between for anti-spam reasons?
@@ -688,7 +688,7 @@ Speaker 1: 00:31:04
 
 Just through taint on on-chain transactions and pedigree?
 
-Speaker 0: 00:31:08
+Rusty Russell: 00:31:08
 
 Yeah, well, just the fact that now you can see, okay, I know this channel came from you, and therefore I can see this other UTXO went to a Lightning channel, I'm pretty much sure that that is yours as well.
 And you know, you can start to join things together just doing things like that.
@@ -699,7 +699,7 @@ Speaker 1: 00:31:22
 
 So I would like to call back to you said a bunch of things broke when the fee rates spiked.
 
-Speaker 0: 00:31:27
+Rusty Russell: 00:31:27
 
 Yeah.
 
@@ -708,7 +708,7 @@ Speaker 1: 00:31:28
 And I was curious what what broke for various lightning implementations.
 Can we get a little bit into that?
 
-Speaker 0: 00:31:33
+Rusty Russell: 00:31:33
 
 Yeah, absolutely.
 
@@ -716,7 +716,7 @@ Speaker 1:
 
 Robustness for fees folks.
 
-Speaker 0: 00:31:36
+Rusty Russell: 00:31:36
 
 So yeah, so part of the problem at the moment is that you basically have to agree on what fee you're going to pay.
 Now there's there's now only one side pays fees.
@@ -738,7 +738,7 @@ Speaker 1: 00:32:29
 Sure.
 Yeah, this is meant to run consistently, and we don't get good fee estimates until a couple blocks have been found.
 
-Speaker 0: 00:32:36
+Rusty Russell: 00:32:36
 
 That's right.
 So some of that is just a learning experience, right?
@@ -758,7 +758,7 @@ Speaker 1: 00:33:37
 Right, so you have an HTLC that's so small that at a high fee, it's not worth claiming.
 You write it off, but you have to.
 
-Speaker 0: 00:33:44
+Rusty Russell: 00:33:44
 
 But you don't actually close it out to the peer.
 So that's a quality of implementation issue and you end up closing another channel, not just the first one, right?
@@ -772,7 +772,7 @@ So the fee in a commitment transaction is paid by the channel proposer?
 Like the person that started the channel.
 So it's always the one that started the channel that has to cough up the fees.
 
-Speaker 0: 00:34:09
+Rusty Russell: 00:34:09
 
 Yes.
 But remember with modern anchor channels, your fee is actually pretty low ball.
@@ -785,7 +785,7 @@ Speaker 1: 00:34:30
 So I can spend this.
 The dynamic mempool minimum fee.
 
-Speaker 0: 00:34:32
+Rusty Russell: 00:34:32
 
 Yeah, that's right.
 
@@ -793,7 +793,7 @@ Speaker 1: 00:34:34
 
 Which can be higher in the last few months.
 
-Speaker 0: 00:34:36
+Rusty Russell: 00:34:36
 
 It's not actually that much of an easier problem, but at least the number is probably less.
 So, you can lowball fees to some extent, whereas before we had to bump fees up quite a lot.
@@ -807,7 +807,7 @@ Speaker 1: 00:35:03
 
 But even with L2, you still need to have a mechanism to be able to broadcast on-chain.
 
-Speaker 0: 00:35:07
+Rusty Russell: 00:35:07
 
 But in that case, we use a SIGHASH signal.
 Anyone can pay.
@@ -818,7 +818,7 @@ Speaker 2: 00:35:13
 
 Yeah, sure.
 
-Speaker 0: 00:35:14
+Rusty Russell: 00:35:14
 
 And in a more efficient way than child pays for parent, you actually bring your own fees on the board, which is really cool.
 Anyway, so this means that then the person closing actually is the one who bumps it and then pays fees above some de minimis level at the moment.
@@ -835,7 +835,7 @@ Speaker 1: 00:35:42
 So, so basically the commitment transaction must at least with anchor output still meet the dynamic minimum of the mempool.
 We've seen that spike to above 10, I think 15 maybe in the last few months.
 
-Speaker 0: 00:35:57
+Rusty Russell: 00:35:57
 
 That's right.
 Now you've got some time, you have a longer delay on your channel, you've got some time to get it in.
@@ -855,7 +855,7 @@ Speaker 1: 00:36:57
 
 Is that the third approach next to Nostra. 
 
-Speaker 0: 00:37:00
+Rusty Russell: 00:37:00
 
 Yeah, that's right.
 Exactly.
@@ -881,7 +881,7 @@ Speaker 1: 00:38:11
 
 Pushes adoption of best practices, better fee estimation, better output type usage, your excel management, all the things.
 
-Speaker 0: 00:38:20
+Rusty Russell: 00:38:20
 
 All these things that are not important until they suddenly are and you put the engineering work in.
 Look, life's all about trade-offs and I actually can't, you can't be too harsh on people for going well, you know, I decided to defer that.
@@ -904,7 +904,7 @@ Speaker 1: 00:39:19
 Right.
 So the rainbows and unicorns in this case look like v3 transactions with ephemeral anchors, zero fee commitment transactions, package relay.
 
-Speaker 0: 00:39:33
+Rusty Russell: 00:39:33
 
 Package relay.
 And L2 also solves some of these problems.
@@ -920,7 +920,7 @@ Speaker 1: 00:40:06
 
 And the ephemeral anchor is smaller because it's just an uptrue.
 
-Speaker 0: 00:40:10
+Rusty Russell: 00:40:10
 
 Yeah, that point, the ephemeral anchor, it shrinks right down.
 So it's pretty good.
@@ -936,7 +936,7 @@ Yeah, Gloria and I have been writing, waiting for confirmation series and uptake
 Next week we're going to talk about mempool policy as an interface for layer 2 protocols.
 So, not preparing for that yet, but I'm thinking already.
 
-Speaker 0: 00:40:56
+Rusty Russell: 00:40:56
 
 Yeah, I look forward to reading it.
 It's going to be interesting.
@@ -946,7 +946,7 @@ Speaker 2: 00:40:58
 What else is on your mind, Rusty?
 Anything else to mention?
 
-Speaker 0: 00:41:02
+Rusty Russell: 00:41:02
 
 Okay.
 I think my mind is still somewhere over the Pacific Ocean right now.
@@ -995,7 +995,7 @@ Speaker 1: 00:43:36
 What are the things that you're excited to see being built on top of Lightning?
 Well, I'll let you answer first, but I might have follow up.
 
-Speaker 0: 00:43:43
+Rusty Russell: 00:43:43
 
 What is exciting?
 I always said that there will be some killer application of Lightning that I will think is stupid because I'm old.
@@ -1004,7 +1004,7 @@ Speaker 1: 00:43:52
 
 And you know, how I feel about inscriptions.
 
-Speaker 0: 00:43:55
+Rusty Russell: 00:43:55
 
 Yeah, yeah, exactly.
 You know, it'll be you know, I don't even know what it will be.
@@ -1025,7 +1025,7 @@ It's neat.
 If I ever want to get those sets back, I can just pull them back to my Lightning wallet.
 It's pretty neat.
 
-Speaker 0: 00:45:08
+Rusty Russell: 00:45:08
 
 And look at Cashew and some of the other things, the Fedimint and stuff using Lightning as a glue, right?
 
@@ -1036,7 +1036,7 @@ And just international payments.
 So simple.
 I traveled to Central America a while back and being able to just go and pay with my money there, everywhere, that made it very real, much more real than all this theoretical pondering on what the world will look like.
 
-Speaker 0: 00:45:35
+Rusty Russell: 00:45:35
 
 Yeah, absolutely.
 And which of these will be the, is it like slow accretion of all these things?
@@ -1050,7 +1050,7 @@ Speaker 1: 00:45:54
 
 It's hard to see the potential of the black box thing when you're in the nitty gritty building the black box.
 
-Speaker 0: 00:45:59
+Rusty Russell: 00:45:59
 
 That's right.
 Yeah, and I'm sure any guesses that I would make about what it would do will become horribly dated and will be wrong.
@@ -1067,7 +1067,7 @@ Thank you.
 Thank you for doing this.
 Thank you.
 
-Speaker 0: 00:46:30
+Rusty Russell: 00:46:30
 
 Thanks for having me.
 
