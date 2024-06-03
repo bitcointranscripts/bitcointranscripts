@@ -334,17 +334,17 @@ So if you're really being hammered in both ways, you don't lose.
 Right?
 The latency of individual payments may go up, but the latency of the whole system is better because we end up just you end up doing five commitments at once because you've been waiting.
 So with that in mind, I think simplifying the pure level protocol can help us somewhat.
-And in fact, that simplification leads to it's a subset of the current state machine, in fact, so it turns out to be pretty nice.
+And in fact, that simplification is a subset of the current state machine, in fact, so it turns out to be pretty nice.
 And once we've got that, we have then the ability to knack changes.
 So at the moment, I expressed to your node, there are certain things I will not allow.
 Here's your maximum of HTLCs, here's your maximum HTLC size, all these restrictions because there's no way in the protocol for you to send an update and me go, no, no, no, I don't like that one.
 We have to go through a whole round and then I have to close it out.
 At some point, I'm left holding the commitment transaction with that thing that you put in.
 I have to tell you what you can't do.
-If we have a NAC protocol where you're going to know I'm going to reject that and force you to go around again, then that means that I no longer have to tell you what my restrictions are.
+If we have a Knack protocol where you're going to know I'm going to reject that and force you to go around again, then that means that I no longer have to tell you what my restrictions are.
 You can try everything and I just go no that doesn't work and close it out.
 Right.
-It's a fairly simple protocol change But if we tried to do it in the existing protocol where we can have change from both sides in flight, it's a bit of a nightmare.
+It's a fairly simple protocol change. But if we tried to do it in the existing protocol where we can have change from both sides in flight, it's a bit of a nightmare.
 Whereas when we've got this turn taking protocol, it's much, much easier.
 The other thing that happens with the turn taking protocol is if we want to do some kind of upgrade to the channel, we want to splice or we want to upgrade to a new kind of channel.
 It turns out with the current protocol, we have to have a whole quiescence protocol to go, hold on, I want you to stop sending updates.
@@ -361,7 +361,7 @@ And it turns out that supporting both is actually pretty easy.
 
 Speaker 2: 00:16:10
 
-So you're talking about when we were talking about L2, you're talking about changes and you're sort of casually mentioning the soft fork piece of it.
+When we were talking about L2, you're talking about changes and you're sort of casually mentioning the soft fork piece of it.
 I mean, there's not going well, there's Greg Sanders will be there and he's obviously thinking about this, but you don't really have the people at the table that are actually doing like would be pulling the soft fork together that are that really understand the lightning case, I guess.
 Maybe AJ, maybe InstaGibs.
 The list gets very short after that.
@@ -393,11 +393,11 @@ I'm not crafty at all.
 But, okay.
 That is probably an aside.
 We don't need to go down.
-But, you know, check sync from stack is like, oh, it's cool that you can even make that work.
+But, you know, check sync from stack is like, it's cool that you can even make that work.
 But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
-And the answer would be, you know, check-sig from stack.
-So any prep-out is a – and the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
+And the answer would be, check-sig from stack.
+And the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
 AJ would definitely be the person unfortunately he's not here in New York he's kind of you know done a fair bit of travel recently he was like no I'm not going.
 So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate any prep out.
 That's if you're listening, AJ, I hope you're going to make that prophecy come true.
