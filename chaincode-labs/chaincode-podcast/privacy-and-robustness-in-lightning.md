@@ -121,20 +121,19 @@ I mean, there's serious money on the line.
 
 Speaker 0: 00:03:42
 
-Oh yeah.
+Yeah.
 
 Speaker 2: 00:03:43
 
 And I guess the question is, do you have to react to the amount of money that's in the system?
 Or is it still, well, we're still figuring this thing out.
 And that's up to you if you want to put that much money in there.
-But we, you know, we still need to experiment.
+But we, we still need to experiment.
 And again, it is a robustness speed trade off in terms of what you can do.
-Yep.
 
 Speaker 0: 00:04:07
 
-So, okay, so robustness on some extent is always something we need to think about.
+So, robustness on some extent is always something we need to think about.
 But also, I think like the recent fee spike showed us that there are definitely places we can improve.
 Robustness from the protocol level means we want stuff where we become more immune to fee issues.
 I think that's something definitely, you know, we need longer term.
