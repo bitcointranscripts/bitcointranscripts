@@ -106,8 +106,8 @@ And there are a couple of things that I think we really need to make sure we kee
 But I think robustness and privacy are the two things that are rarely actually on fire, but are always important.
 And they're both areas where we can definitely make incremental improvements, and I think we should.
 Privacy in particular is something that everyone cares about until you need to put the engineering effort in and there's other stuff.
-There's bugs, there's issues, there's, you know, there are always other things that are more urgent, even if they're not more important.
-And so I definitely try to keep the perspective of going, you know, if not now, when?
+There's bugs, there's issues, there's, there are always other things that are more urgent, even if they're not more important.
+And so I definitely try to keep the perspective of going, if not now, when?
 And I think, you know, privacy is something that we definitely need to put more effort in.
 
 Speaker 2: 00:03:07
