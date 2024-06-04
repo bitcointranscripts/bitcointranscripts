@@ -17,7 +17,7 @@ summary: 'Postdoc Researcher Clara joins Murch to discuss their block building r
 Speaker 0: 00:00:00
 
 The idea is we want the set of miners to be an open set where anybody can enter and exit as they wish.
-And if we now had obvious optimizations that people had to implement to be as competitive as possible, That would make it harder for new miners to enter this place.
+And if we now had obvious optimizations that people had to implement to be as competitive as possible, that would make it harder for new miners to enter this place.
 
 
 Speaker 1: 00:00:32
