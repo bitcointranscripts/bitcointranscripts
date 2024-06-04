@@ -221,7 +221,7 @@ Speaker 0: 00:09:04
 Maybe one more comment.
 There's a special transaction that has to be in every block, which is the coinbase transaction or the generating transaction.
 It's the one that goes first in the block and that can collect a transaction fee and create new bitcoins.
-And after that, a miner may include zero to a full block of transactions, and they can pick any transactions they want, as long as they follow these rules that They're not spending any funds that don't exist yet and so forth.
+And after that, a miner may include zero to a full block of transactions, and they can pick any transactions they want, as long as they follow these rules that they're not spending any funds that don't exist yet and so forth.
 It's completely up to the miner to pick what they want to include, but generally is the goal of the miner to collect as much money as possible.
 So we expect miners to build the most profitable block.
 
@@ -248,7 +248,7 @@ So any transactions that topologically precedes another transaction, we call an 
 
 Speaker 2: 00:10:44
 
-Okay, so For each transaction, we're looking at all of the other transactions we will need to include in the block beforehand for the block to be valid.
+For each transaction, we're looking at all of the other transactions we will need to include in the block beforehand for the block to be valid.
 We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole...
 
 Speaker 3: 00:11:07
@@ -258,12 +258,15 @@ Per byte.
 Speaker 0: 00:11:08
 
 Per byte.
+
+Speaker 0: 00:11:09
+
 Or better yet, per Vbyte.
 Because Segwit's been active.
 
 Speaker 2: 00:11:14
 
-Yay Segwit! Right.
+Segwit!
 
 Speaker 0: 00:11:17
 
@@ -280,7 +283,7 @@ How does it work?
 Speaker 0: 00:11:49
 
 Yes, so the call get block template, it uses the mempool, which is already a list of all the unconfirmed transactions with its ancestor set information.
-And then it just looks at which ancestor set will give me the most fees per VBYTE and includes that first.
+And then it just looks at which ancestor set will give me the most fees per Vbyte and includes that first.
 And then it updates all the other transactions that are impacted by this ancestor set getting confirmed, recalculating their ancestor set information, and then pops the next one from the top.
 It does that until nothing fits into the block anymore, block template is done.
 
@@ -291,7 +294,6 @@ Or until the mempool is empty.
 Speaker 0: 00:12:28
 
 Yes.
-Okay.
 
 Speaker 2: 00:12:30
 
@@ -339,7 +341,6 @@ So in the current algorithm, we're just looking at a transaction and all of its 
 
 ## Is there something better?
 
-Speaker 2: 00:15:47
 
 In what we are suggesting to do, we want to do something slightly more complicated where we look at sets of transactions and all of their ancestors, right?
 Because we can't put transactions without all of their ancestor set, but our starting point would not be a single transaction, but we could have many transactions.
@@ -385,7 +386,7 @@ Speaker 0: 00:19:11
 
 Exactly.
 Right.
-So, as you might imagine, This is no longer searchable just in the order of the size of transactions, because now we have to essentially search through the power set of all the transactions in every cluster.
+So, as you might imagine, this is no longer searchable just in the order of the size of transactions, because now we have to essentially search through the power set of all the transactions in every cluster.
 That explodes very hard in the complexity, and that gets us in trouble with, we want us to run really, really fast.
 Our idea is we would continue to quickly build a fairly good block using the ancestor set based block building that we have already.
 And then we would perhaps in the background have a second process that searches for a more profitable block using these candidate sets that we have been discussing.
@@ -399,10 +400,10 @@ Even when we focus ourselves only on valid subsets, we can also do things a litt
 
 Speaker 0: 00:20:29
 
-Right, yeah, There's a few nifty little tricks that we found while we have been writing our research code for this.
+Right, yeah, there's a few nifty little tricks that we found while we have been writing our research code for this.
 We start our search in the cluster by a number of initial candidate sets, and since we have them already, we just initialize with the ancestor sets that exist in the cluster, which is for every single transaction in the cluster, we have already a starting set.
 The next observation we had was when we have an ancestor set in a cluster that has fee rate x, any leave in the cluster, as in any childless transaction in the cluster, that has a lower fee rate than that, can never lead to a better candidate set than this.
-So, if you have a transaction A that pays 5 satoshi per byte, that has a child which pays 4, you will never get a better candidate set by including this child with 4 when you already have something that pays 5 satoshi per byte.
+So, if you have a transaction A that pays 5 satoshi per byte, that has a child which pays 4, you will never get a better candidate set by including this child with 4 when you already have something that pays 5 satoshi per vbyte.
 
 Speaker 2: 00:21:30
 
