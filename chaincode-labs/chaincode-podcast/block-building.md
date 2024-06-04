@@ -675,7 +675,7 @@ Speaker 2: 00:44:45
 Well, if there aren't a lot of transactions in the mining pool, that is the whole current mining pool can fit inside of a block, you don't need any sophisticated algorithm.
 You just need the block to be verifiable and have the transactions in the correct order, and you send it off.
 It doesn't matter what you're doing.
-Our algorithm becomes important only when you want, only when there is actual competition for block space.
+Our algorithm becomes important only when there is actual competition for block space.
 And in that case, you're assuming there are more and more transactions coming in.
 So yes, you're taking the transactions now, but there's going to be more transactions later on for the next block.
 
@@ -715,17 +715,18 @@ When do we see it in the wild?
 
 Speaker 3: 00:47:39
 
-Well, careful asking around a little bit what might need to happen for such an algorithm to get integrated into Bitcoin Core seems to indicate that there might be either a need to make it run separate and The architectural challenge of that would be easy, or if you want to integrate it properly into the mempool.
+Well, careful asking around a little bit what might need to happen for such an algorithm to get integrated into Bitcoin Core seems to indicate that there might be either a need to make it run separate and the architectural challenge of that would be easy, or if you want to integrate it properly into the mempool.
 Mempool is such a central part of how everything fits together in Bitcoin Core, that would be a pretty invasive change.
+So I'm a little bearish on the timeline 
 
 Speaker 1: 00:48:16
 
-So I'm a little bearish on the timeline okay all right very good well thank you both for your time enjoy the conversation and we'll look forward to getting Claire on soon again thanks Thanks.
+All right very good well thank you both for your time enjoy the conversation and we'll look forward to getting Claire on soon again.
+
+Speaker 2: 00:48:17
+
+Thanks.
 
 Speaker 3: 00:48:30
 
 Thanks.
-
-Speaker 2: 00:48:45
-
-You
