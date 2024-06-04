@@ -460,9 +460,7 @@ Of course the problem is when a new block gets found and when we want to have a 
 
 ## How easy would it be to guess the next block?
 
-Speaker 0: 00:27:20
-
-So we should, when it's supposed to be as quick as possible, we should use the ancestor set based approach and respond with that first.
+When it's supposed to be as quick as possible, we should use the ancestor set based approach and respond with that first.
 
 Speaker 2: 00:27:31
 
@@ -518,14 +516,14 @@ Where did they hear about these transactions at all?
 
 Speaker 0: 00:32:30
 
-Oh, I mean, for example, they could have payouts to their pool contributors or there is one mining pool that was closely associated with a wallet service for a while.
+I mean, for example, they could have payouts to their pool contributors or there is one mining pool that was closely associated with a wallet service for a while.
 You could just beat those.
-But on the other hand, That seems a little far-fetched because if you have a wallet service, people want to transact.
+But on the other hand, that seems a little far-fetched because if you have a wallet service, people want to transact.
 They don't want to wait for that transaction to go through.
 
 Speaker 2: 00:32:54
 
-So actually as a mining pool, if I want to pay the miners, It does make sense to, instead of mining on an empty block, mining on my rewards if I'm paying out of previous block rewards, because I know there's not going to be a conflict.
+So actually as a mining pool, if I want to pay the miners, it does make sense to, instead of mining on an empty block, mining on my rewards if I'm paying out of previous block rewards, because I know there's not going to be a conflict.
 These are fresh coin, just minted.
 Nobody could have touched them besides me.
 Do we see this behavior?
@@ -543,8 +541,6 @@ Cool.
 
 ## Empty blocks and SegWit
 
-Speaker 2: 00:33:45
-
 How often do we see empty blocks?
 
 Speaker 0: 00:33:47
@@ -553,16 +549,14 @@ Not that often anymore.
 We actually saw a fairly sharp decline in empty blocks when SegWit happened, because SegWit required miners to update their software.
 And for a long time, miners had been running older software, and all the efficiency improvements in the peer-to-peer layer and block building and stuff like that suddenly came to pass in the software upgrade.
 And we saw two things.
-We saw especially that there was a lot fewer mini blockchain forks where there was latency and or validation was slower and two mining pools found blocks at the same height And that was especially because the compact block relay happened between whatever they were running and SegWit.
+We saw especially that there was a lot fewer mini blockchain forks where there was latency or validation was slower and two mining pools found blocks at the same height. And that was especially because the compact block relay happened between whatever they were running in SegWit.
 And then I think also a little bit faster block validation and build.
 
 Speaker 2: 00:34:45
 
-So this is what we have on our plate now, but we're already talked a bit about what might happen in the future, but We also have a few thoughts about What else can we do to make block building even better?
+So this is what we have on our plate now, but we're already talked a bit about what might happen in the future, but we also have a few thoughts about what else can we do to make block building even better?
 
 ## How to improve on the candidate set algorithm e.g., linear programming
-
-Speaker 2: 00:35:02
 
 So there is linear programming solutions that solve, to some extent at least, the other problem we've talked about with blocks.
 
@@ -572,7 +566,7 @@ The optimal use of all the available block space.
 
 Speaker 2: 00:35:21
 
-Right, because sometimes when you're doing greedy things, you, so a very crude example would be, I can fit two kilos into my knapsack.
+Right, because sometimes when you're doing greedy things, so a very crude example would be, I can fit two kilos into my knapsack.
 And thanks for everybody who giggled because they know what's the knapsack problem.
 So you can put two kilos in your knapsack and you want to put as many items as you want.
 You have one item who weights a kilo and a half and two items that weight one kilo.
@@ -608,7 +602,7 @@ Yeah, definitely.
 Even if we're thinking right now, this week we just crossed 90% of all bitcoins being in circulation.
 In 2036 it'll be 99%.
 In, I think, 2046 it'll be, or 2050, it'll be 99.9. And as the block subsidy keeps halving, even just a regular full block at minimum fee rate will eventually have more fees than new coins.
-I think that's reached by 2060 with one Satoshi per VBITE and four million white units.
+I think that's reached by 2060 with one Satoshi per vbyte and four million white units.
 
 Speaker 2: 00:38:38
 
@@ -634,7 +628,7 @@ And for this we want to use a simulation, of course, that does the following.
 So we have snapshots of the mempool.
 And then at any moment we know that a block is built.
 We're going to flip a coin that tells us are we going to use the old algorithm or the new algorithm.
-And then a block, we build a block, we update the mempool, there's new transactions coming in, again find a block, flip a coin, and decide.
+And then we build a block, we update the mempool, there's new transactions coming in, again find a block, flip a coin, and decide.
 Some of the listeners might be familiar with Monte Carlo and things like that, so if this is where your mind went, you are absolutely correct.
 And by doing this, we can compare how much can a miner gain when they move to the new algorithm, especially in an environment where the old algorithm is still running.
 This might also affect the changes, how quickly will the algorithm be taken by the other miners, because If you can already do much better by being the only one that does it, that's a very nice incentive.
@@ -652,7 +646,7 @@ We already see this sort of crowdsourcing behavior in the mempool.
 
 Speaker 0: 00:42:14
 
-So We found a few interesting clusters when we were analyzing mempool snapshots.
+We found a few interesting clusters when we were analyzing mempool snapshots.
 We have this data set where we have when a new block came in, the node took a snapshot of what was currently in their mempool and we can then compare what we see in the block and what was available for block building and that's what we use to build our alternative blockchains in this Monte Carlo approach and We found some curious clusters already with over 800 transactions where there's a lot of children spending from the same parent and stuff like that.
 So there is some of that going on already, but currently of course mining doesn't exploit that so people aren't doing it on purpose.
 It's just people that are, I don't know, withdrawing from a broker and the broker has such a volume that they pay out to a hundred people at the same time and five of them are immediately try to spend it at the same time but they're competing with each other because it's getting evaluated as five separate child pays for parent attempts whereas we would be evaluating it as a single descendants pay for ancestor constellation.
