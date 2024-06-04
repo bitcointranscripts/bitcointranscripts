@@ -1,27 +1,33 @@
 ---
-title: "Block Building"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Block-Building-with-Clara-and-Murch---Episode-18-e1dmitu
-tags: ['research', 'mining','bitcoin-core']
-speakers: ['Clara Shikhelman']
-categories: ['podcast']
-date: 2022-02-01
+title: 'Block Building'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Block-Building-with-Clara-and-Murch---Episode-18-e1dmitu'
+date: '2022-02-01'
+tags:
+  - 'research'
+  - 'mining'
+  - 'bitcoin-core'
+speakers:
+  - 'Clara Shikhelman'
+categories:
+  - 'podcast'
 episode: 18
-summary: "Postdoc Researcher Clara joins Murch to discuss their block building research. They cover their proposal, which outlines suggested improvements to the current Bitcoin Core block building algorithm using candidate sets"
+summary: 'Postdoc Researcher Clara joins Murch to discuss their block building research. They cover their proposal, which outlines suggested improvements to the current Bitcoin Core block building algorithm using candidate sets'
 ---
 Speaker 0: 00:00:00
 
 The idea is we want the set of miners to be an open set where anybody can enter and exit as they wish.
 And if we now had obvious optimizations that people had to implement to be as competitive as possible, That would make it harder for new miners to enter this place.
-Hey, Murch.
+
 
 Speaker 1: 00:00:32
 
-Hey,
+Hey, Murch.
+Hey, Clara.
 
 Speaker 2: 00:00:35
 
-Clara.
+Hi.
 
 Speaker 1: 00:00:38
 
@@ -62,7 +68,7 @@ Speaker 2: 00:01:35
 So I think that there are a lot of really, really fascinating questions inside the space.
 And as a mathematician, I felt like I want better motivations for the questions I'm answering.
 And more, I think people in applied math might also think this way.
-So I think people just need to know that There are really cool questions here waiting to be solved.
+So I think people just need to know that there are really cool questions here waiting to be solved.
 
 Speaker 1: 00:02:04
 
