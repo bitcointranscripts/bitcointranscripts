@@ -452,10 +452,10 @@ We don't do this when we build the block and we're in a hurry.
 
 Speaker 0: 00:26:26
 
-Oh absolutely, we should be pre-calculating the whole block Actually, not just cluster information.
+Aabsolutely, we should be pre-calculating the whole block actually, not just cluster information.
 The cluster information is somewhat ephemeral anyway.
 As soon as you pop the best candidate set out of the cluster, you have to recluster and research for the best candidate set, right?
-So Just pre-calculating the clusters is sure a little benefit, but actually just pre-calculating the whole block template in the background on a loop, say every time we add new transactions or every minute or so, and then having something at the ready when the user calls getBlockTemplate would be maybe interesting.
+So just pre-calculating the clusters is sure a little benefit, but actually just pre-calculating the whole block template in the background on a loop, say every time we add new transactions or every minute or so, and then having something at the ready when the user calls get block template would be maybe interesting.
 Of course the problem is when a new block gets found and when we want to have a new block template quickly, it might be slow to do all the candidate set search on every cluster and all that.
 
 ## How easy would it be to guess the next block?
