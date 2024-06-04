@@ -9,12 +9,13 @@ tags:
   - 'bitcoin-core'
 speakers:
   - 'Clara Shikhelman'
+  - 'Patrick Murck'
 categories:
   - 'podcast'
 episode: 18
 summary: 'Postdoc Researcher Clara joins Murch to discuss their block building research. They cover their proposal, which outlines suggested improvements to the current Bitcoin Core block building algorithm using candidate sets'
 ---
-Speaker 0: 00:00:00
+Speaker 3: 00:00:00
 
 The idea is we want the set of miners to be an open set where anybody can enter and exit as they wish.
 And if we now had obvious optimizations that people had to implement to be as competitive as possible, that would make it harder for new miners to enter this place.
