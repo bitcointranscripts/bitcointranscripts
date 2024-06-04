@@ -439,7 +439,7 @@ And that's a few of our optimizations so far, I guess.
 Speaker 2: 00:25:45
 
 Yeah, and I guess that if we would have other pre-calculations, we could have made things quicker.
-Because we're starting now only with the Ancestry sets for each transaction, but we could have pre-calculated such clusters or something like that.
+Because we're starting now only with the ancestry sets for each transaction, but we could have pre-calculated such clusters or something like that.
 
 Speaker 0: 00:26:05
 
