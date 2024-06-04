@@ -80,7 +80,7 @@ So the block building one that we will discuss later, it's a very clean algorith
 It's very similar to knapsack.
 It's very classical kind of optimization, things that people were working on for a while.
 So it has a new context and it's nice to look at it from there.
-I'm working a lot on the lightning network.
+I'm working a lot on the Lightning network.
 So there's a lot of economy and other things coming in, but at the end it boils down to network or graph theory.
 So there's very, very nice questions that have to do with optimization and evolution of random graphs and similar things.
 
@@ -94,7 +94,7 @@ We might.
 
 Speaker 1: 00:02:59
 
-OK, so those are the kinds of problems you're currently working on?
+So those are the kinds of problems you're currently working on?
 
 Speaker 2: 00:03:02
 
@@ -110,21 +110,21 @@ Why were you attracted to this?
 Speaker 2: 00:03:12
 
 So It's very clear, I think, to anybody that comes from the algorithmic world that what's happening now, it's a straightforward, greedy algorithm.
-And In most cases, this would not be the optimal solution.
+And in most cases, this would not be the optimal solution.
 So when somebody from math or CS sees a not optimal algorithm happening, it scratches.
 
 Speaker 1: 00:03:46
 
 Got it.
-And merge.
+And Murch.
 So from a Bitcoin perspective, why does this matter?
 Why are we spending our time on this?
 
 Speaker 3: 00:03:52
 
-So what you don't want is that there is a huge amount of potential for somebody to do better than everybody else, Because that will mean that they can make more money building blocks than other people and can get an undue amount of reward for the same work.
-So what we want Bitcoin Core to do is to out of the box do very well, maybe optimally, but reasonably well, that there is no huge advantage for somebody else to come in and Find a proprietary solution that that blows everything else out of the water.
-So One of the reasons to look at block building carefully is to make sure that there is no such hidden potential there.
+So what you don't want is that there is a huge amount of potential for somebody to do better than everybody else, because that will mean that they can make more money building blocks than other people and can get an undue amount of reward for the same work.
+So what we want Bitcoin Core to do is to out of the box do very well, maybe optimally, but reasonably well, that there is no huge advantage for somebody else to come in and find a proprietary solution that that blows everything else out of the water.
+So one of the reasons to look at block building carefully is to make sure that there is no such hidden potential there.
 
 Speaker 1: 00:04:37
 
@@ -149,14 +149,13 @@ Sure.
 And in two more years, we'll have another halving.
 And in a few more years, it'll get into the range of a full block at min relay fee where it's interesting.
 I mean, for 20 years.
-So if you already know how blocks are built and where fees and block subsidy come from, That's what we'll cover in the first section.
-Sure.
+So if you already know how blocks are built and where fees and block subsidy come from, that's what we'll cover in the first section.
 And you might want to skip that, we'll put something into our show.
 
 Speaker 1: 00:05:35
 
 Well, I'm excited to talk about this.
-Actually, this one I'm sitting out, so I'm just gonna let you two talk, and then we'll wrap it up.
+Actually, this one I'm sitting out, so I'm just going to let you two talk, and then we'll wrap it up.
 
 ## Building a valid block 101
 
