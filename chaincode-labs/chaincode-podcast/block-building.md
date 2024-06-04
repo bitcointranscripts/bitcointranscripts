@@ -15,7 +15,7 @@ categories:
 episode: 18
 summary: 'Postdoc Researcher Clara joins Murch to discuss their block building research. They cover their proposal, which outlines suggested improvements to the current Bitcoin Core block building algorithm using candidate sets'
 ---
-Speaker 3: 00:00:00
+Patrick Murck: 00:00:00
 
 The idea is we want the set of miners to be an open set where anybody can enter and exit as they wish.
 And if we now had obvious optimizations that people had to implement to be as competitive as possible, that would make it harder for new miners to enter this place.
@@ -23,10 +23,10 @@ And if we now had obvious optimizations that people had to implement to be as co
 
 Speaker 1: 00:00:32
 
-Hey, Murch.
+Hey, Murck.
 Hey, Clara.
 
-Speaker 2: 00:00:35
+Clara Shikhelman: 00:00:35
 
 Hi.
 
@@ -36,7 +36,7 @@ Hi. Welcome to the Chaincode Podcast.
 Clara, for you, your first episode.
 We're so excited to have you here.
 
-Speaker 2: 00:00:43
+Clara Shikhelman: 00:00:43
 
 I'm also very excited to be here.
 
@@ -48,7 +48,7 @@ Like, what are you doing here?
 What are you spending your time on?
 Tell us a little bit about yourself.
 
-Speaker 2: 00:00:57
+Clara Shikhelman: 00:00:57
 
 Okay.
 So my background is in mathematics.
@@ -64,7 +64,7 @@ Speaker 1: 00:01:30
 So how does a mathematician get into Bitcoin?
 Because we need more of them.
 
-Speaker 2: 00:01:35
+Clara Shikhelman: 00:01:35
 
 So I think that there are a lot of really, really fascinating questions inside the space.
 And as a mathematician, I felt like I want better motivations for the questions I'm answering.
@@ -75,7 +75,7 @@ Speaker 1: 00:02:04
 
 And what kind of cool questions are you pursuing?
 
-Speaker 2: 00:02:06
+Clara Shikhelman: 00:02:06
 
 So the block building one that we will discuss later, it's a very clean algorithmical question.
 It's very similar to knapsack.
@@ -89,7 +89,7 @@ Speaker 1: 00:02:54
 
 It sounds like we're going to have to record another episode.
 
-Speaker 2: 00:02:58
+Clara Shikhelman: 00:02:58
 
 We might.
 
@@ -97,7 +97,7 @@ Speaker 1: 00:02:59
 
 So those are the kinds of problems you're currently working on?
 
-Speaker 2: 00:03:02
+Clara Shikhelman: 00:03:02
 
 Yes.
 
@@ -108,7 +108,7 @@ So yeah, we'll look forward to getting that on tape at some point soon.
 Tell me maybe like this specific problem of block building.
 Why were you attracted to this?
 
-Speaker 2: 00:03:12
+Clara Shikhelman: 00:03:12
 
 So It's very clear, I think, to anybody that comes from the algorithmic world that what's happening now, it's a straightforward, greedy algorithm.
 And in most cases, this would not be the optimal solution.
@@ -117,11 +117,11 @@ So when somebody from math or CS sees a not optimal algorithm happening, it scra
 Speaker 1: 00:03:46
 
 Got it.
-And Murch.
+And Murck.
 So from a Bitcoin perspective, why does this matter?
 Why are we spending our time on this?
 
-Speaker 3: 00:03:52
+Patrick Murck: 00:03:52
 
 So what you don't want is that there is a huge amount of potential for somebody to do better than everybody else, because that will mean that they can make more money building blocks than other people and can get an undue amount of reward for the same work.
 So what we want Bitcoin Core to do is to out of the box do very well, maybe optimally, but reasonably well, that there is no huge advantage for somebody else to come in and find a proprietary solution that that blows everything else out of the water.
@@ -133,7 +133,7 @@ That makes sense.
 It's hard to get miners to upgrade but it seems like they probably make their own patches and you know try to get an edge.
 So writing their own custom software is, you know.
 
-Speaker 3: 00:04:48
+Patrick Murck: 00:04:48
 
 You'd think that they'd be super curious to tickle out the last little bit.
 But on the other hand, blocks have been not full.
@@ -144,7 +144,7 @@ Speaker 1: 00:05:04
 
 Today, but you know, a year ago, people were all, fees were all the rage.
 
-Speaker 3: 00:05:09
+Patrick Murck: 00:05:09
 
 Sure.
 And in two more years, we'll have another halving.
@@ -160,7 +160,7 @@ Actually, this one I'm sitting out, so I'm just going to let you two talk, and t
 
 ## Building a valid block 101
 
-Speaker 2: 00:05:47
+Clara Shikhelman: 00:05:47
 
 So, before we talk about building the blocks, we need to understand what are the Lego pieces we're putting into the block, right?
 
@@ -170,7 +170,7 @@ So blocks contain transactions.
 Blocks are limited in a number of ways.
 They have to be valid, and they cannot be bigger than 4 million write units.
 
-Speaker 2: 00:06:09
+Clara Shikhelman: 00:06:09
 
 Now, for example, I do know what are the limits on the block, but what are my options?
 Where are the transactions?
@@ -184,7 +184,7 @@ And then after validating, they forward it to their peers.
 So to see whether a transaction is valid, a full node will look at what pieces of Bitcoin exist, look at their local copy of the UTXO set, and see that the transaction only spends funds that are still available for spending.
 And eventually those unconfirmed transactions will land in the mempool of a miner and miners will pick from the mempool a block template of unconfirmed transactions that they're trying to build a valid block from.
 
-Speaker 2: 00:07:04
+Clara Shikhelman: 00:07:04
 
 Cool.
 So now we know that we have the mempool, it has this unconfirmed transactions, and then we want to build a valid block.
@@ -198,7 +198,7 @@ And transactions have to be in the correct order, right?
 You cannot spend funds that don't exist yet.
 So if you, for example, have a transaction that spends funds from another unconfirmed transaction, the parent transaction has to go first to create the outputs that the second transaction then uses in its input.
 
-Speaker 2: 00:07:51
+Clara Shikhelman: 00:07:51
 
 Are there other ways that the transaction can be invalid?
 Well signatures obviously.
@@ -213,7 +213,7 @@ You could have an invalid script or invalid signature, or you could have a trans
 So if you naively just check that a transaction only spends one set of inputs and no other transaction does, you might miss that you spent the same funds twice.
 So I don't know the whole set of rules by heart, but there's a bunch of them.
 
-Speaker 2: 00:08:49
+Clara Shikhelman: 00:08:49
 
 So, in this space of block building, I think we'll mostly focus on the limit on the block size and only spending available UTXOs or existing UTXOs.
 
@@ -226,7 +226,7 @@ And after that, a miner may include zero to a full block of transactions, and th
 It's completely up to the miner to pick what they want to include, but generally is the goal of the miner to collect as much money as possible.
 So we expect miners to build the most profitable block.
 
-Speaker 2: 00:09:46
+Clara Shikhelman: 00:09:46
 
 So how would they do that?
 
@@ -236,7 +236,7 @@ Well, currently we assume that most miners are using Bitcoin Core and Bitcoin Co
 Get block template will look at the full nodes mempool, the queue of unconfirmed transactions.
 And for each transaction in the mempool, it has stored the size and fees of all of its ancestors plus itself.
 
-Speaker 2: 00:10:14
+Clara Shikhelman: 00:10:14
 
 What do you mean by ancestors?
 
@@ -247,12 +247,12 @@ So we had previously mentioned, if there are transactions that depend on each ot
 Because the output has to exist before it can be an input for another transaction.
 So any transactions that topologically precedes another transaction, we call an ancestor.
 
-Speaker 2: 00:10:44
+Clara Shikhelman: 00:10:44
 
 For each transaction, we're looking at all of the other transactions we will need to include in the block beforehand for the block to be valid.
 We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole...
 
-Speaker 3: 00:11:07
+Patrick Murck: 00:11:07
 
 Per byte.
 
@@ -265,7 +265,7 @@ Speaker 0: 00:11:09
 Or better yet, per Vbyte.
 Because Segwit's been active.
 
-Speaker 2: 00:11:14
+Clara Shikhelman: 00:11:14
 
 Segwit!
 
@@ -276,7 +276,7 @@ The observation here is that the transaction with the highest ancestor set fee r
 
 ## The current getblocktemplate algorithm
 
-Speaker 2: 00:11:38
+Clara Shikhelman: 00:11:38
 
 Given these rules for blocks, there is a current algorithm that gives us a block template, right?
 How does it work?
@@ -288,7 +288,7 @@ And then it just looks at which ancestor set will give me the most fees per Vbyt
 And then it updates all the other transactions that are impacted by this ancestor set getting confirmed, recalculating their ancestor set information, and then pops the next one from the top.
 It does that until nothing fits into the block anymore, block template is done.
 
-Speaker 2: 00:12:26
+Clara Shikhelman: 00:12:26
 
 Or until the mempool is empty.
 
@@ -296,7 +296,7 @@ Speaker 0: 00:12:28
 
 Yes.
 
-Speaker 2: 00:12:30
+Clara Shikhelman: 00:12:30
 
 So in general this is a greedy algorithm.
 At every step, we look at a transaction, what would we need to put in to have this transaction in the block, what are the dependencies, we choose the optimal one, looking at its ancestors, put it into the block, and then continue with this question.
@@ -312,7 +312,7 @@ If it just has collected some stuff already and nothing else fits anymore, it wo
 
 ## Child pays for parent
 
-Speaker 2: 00:13:37
+Clara Shikhelman: 00:13:37
 
 Given the current algorithm, it also motivates some wallet behavior.
 
@@ -324,7 +324,7 @@ So when you have multiple of these situations in parallel, where say one parent 
 And you can get now situations where the three children taken together with the parent would have a greater fee rate than what is currently being included in the block, but we would not notice because we evaluate them separately.
 We noticed that if we could search in the mempool data for constructions where this is the case, we actually can find sometimes constellations in which we change what block template would be built and make blocks more profitable for miners by including these sets of transactions together first.
 
-Speaker 2: 00:15:12
+Clara Shikhelman: 00:15:12
 
 The current algorithm just looks at child, parent, parent's parent, and so on and so forth.
 So in some sense it's very one-dimensional, right?
@@ -336,7 +336,7 @@ Well, you can have multiple parents.
 So it's a DAG or a Directed Acyclic Graph.
 Yes, it's fairly one-dimensional because you basically just look at a transaction with all of its ancestors.
 
-Speaker 2: 00:15:41
+Clara Shikhelman: 00:15:41
 
 So in the current algorithm, we're just looking at a transaction and all of its ancestors.
 
@@ -352,7 +352,7 @@ Essentially, you can think of what we're searching for as an overlap of multiple
 So if you have a single child that pays for its parent, you would want to combine it with the ancestor set of another child of the same parent.
 So they need to have some overlap in their ancestry, they need to be connected in the graph in some way, but the overall situation is such that through the shared ancestry their set fee rate for the whole set of transactions is higher than for any of the individual ancestor sets.
 
-Speaker 2: 00:16:49
+Clara Shikhelman: 00:16:49
 
 That sounds great, but as we know, one of the main things that we want from a block building algorithm is for it to run quickly.
 
@@ -362,7 +362,7 @@ Yes, so especially in the moment after a new block is found, we want miners to b
 And miners often build an empty block template intermittently because they don't know for sure which transactions they can include until they have evaluated the parent block.
 But we want them to be able to switch over as quickly as possible to a full block at the next height.
 
-Speaker 2: 00:17:29
+Clara Shikhelman: 00:17:29
 
 So let's talk implementation a bit.
 
@@ -378,7 +378,7 @@ And then in this cluster, we want to find the best subset, best as in the highes
 Obviously, we can only include sets of transactions for which all the ancestors are included.
 So we're looking at some overlap of ancestor sets and we call this a candidate set.
 
-Speaker 2: 00:18:44
+Clara Shikhelman: 00:18:44
 
 So this candidate sets could be ancestor sets as we've seen in the current algorithm, but because we're allowed to traverse up and down from child to parent to parent back to child, we get a more complicated structure.
 But to keep the block valid, we need to make sure that at the end, whatever we're trying to put into the block has all of the ancestry.
@@ -392,7 +392,7 @@ That explodes very hard in the complexity, and that gets us in trouble with, we 
 Our idea is we would continue to quickly build a fairly good block using the ancestor set based block building that we have already.
 And then we would perhaps in the background have a second process that searches for a more profitable block using these candidate sets that we have been discussing.
 
-Speaker 2: 00:19:57
+Clara Shikhelman: 00:19:57
 
 But of course we don't actually need to look at the power set of all the transactions.
 So the first thing we need to remember that a lot of subsets of transactions are just not allowed into the block.
@@ -406,7 +406,7 @@ We start our search in the cluster by a number of initial candidate sets, and si
 The next observation we had was when we have an ancestor set in a cluster that has fee rate x, any leave in the cluster, as in any childless transaction in the cluster, that has a lower fee rate than that, can never lead to a better candidate set than this.
 So, if you have a transaction A that pays 5 satoshi per byte, that has a child which pays 4, you will never get a better candidate set by including this child with 4 when you already have something that pays 5 satoshi per vbyte.
 
-Speaker 2: 00:21:30
+Clara Shikhelman: 00:21:30
 
 I think an important point to make is that when we're thinking about fee, we're talking about effective fee rate.
 So we're not interested in fee that this transaction would give us.
@@ -437,7 +437,7 @@ When we include a candidate set into our block, we naturally need to remove it f
 And we only look at them again if any of those single transactions bubble to the top by fee rate before we fill the block.
 And that's a few of our optimizations so far, I guess.
 
-Speaker 2: 00:25:45
+Clara Shikhelman: 00:25:45
 
 Yeah, and I guess that if we would have other pre-calculations, we could have made things quicker.
 Because we're starting now only with the ancestry sets for each transaction, but we could have pre-calculated such clusters or something like that.
@@ -446,7 +446,7 @@ Speaker 0: 00:26:05
 
 Well, the downside of pre-calculating all the clusters is that we would have to cluster all the 300 megabytes of mempool potentially, when in the end we actually want to only include about one megabyte.
 
-Speaker 2: 00:26:18
+Clara Shikhelman: 00:26:18
 
 Right, but we get to do it to some extent in our off time.
 We don't do this when we build the block and we're in a hurry.
@@ -463,7 +463,7 @@ Of course the problem is when a new block gets found and when we want to have a 
 
 When it's supposed to be as quick as possible, we should use the ancestor set based approach and respond with that first.
 
-Speaker 2: 00:27:31
+Clara Shikhelman: 00:27:31
 
 I wonder how easy it is for us to guess what's the next block we're going to see.
 So to calculate both the block we want to mine now and the block we will want to mine once we'll hear about the block.
@@ -482,7 +482,7 @@ So even if you have the lookahead block, you can't really use it until you've ev
 
 ## Do we have a better idea than initially mining an empty block?
 
-Speaker 2: 00:29:27
+Clara Shikhelman: 00:29:27
 
 Do we have a better solution than mining on an empty block in the beginning?
 Should we guess a block and take the risk that it won't be actually valid or should we go for an empty block?
@@ -499,7 +499,7 @@ So those two things together, I think, led to us essentially having abundant blo
 And whereas in the first half of the year, the reward was about one-sixth transaction fee, in the past half year it's been more like maybe less than 5%, 2 or 3%.
 The risk of having an invalid block and losing the newly minted coins is probably going to outweigh the reward of including transactions in the block.
 
-Speaker 2: 00:31:14
+Clara Shikhelman: 00:31:14
 
 But we can expect sometime in the future a sharp threshold moment or just a threshold moment as the block reward is having after, give or take, four years.
 
@@ -510,7 +510,7 @@ The problem is if they always include them in their block templates, they would 
 So I haven't thought this through enough to make sure that it's a viable idea, but I think that empty block mining will remain a thing.
 What we want to do is to make block validation as quickly as possible, and then to make block building as quick as possible so that there's as little delay as possible between a miner hearing about a new block and starting to mine a new full block.
 
-Speaker 2: 00:32:18
+Clara Shikhelman: 00:32:18
 
 I do find the concept of a miner having secret transactions, so to say, that they keep on the side.
 Where did they hear about these transactions at all?
@@ -522,7 +522,7 @@ You could just beat those.
 But on the other hand, that seems a little far-fetched because if you have a wallet service, people want to transact.
 They don't want to wait for that transaction to go through.
 
-Speaker 2: 00:32:54
+Clara Shikhelman: 00:32:54
 
 So actually as a mining pool, if I want to pay the miners, it does make sense to, instead of mining on an empty block, mining on my rewards if I'm paying out of previous block rewards, because I know there's not going to be a conflict.
 These are fresh coin, just minted.
@@ -536,7 +536,7 @@ I'm also kind of expecting that given there's very frequent payments of small am
 I've taken a lot of time to say that.
 I expect empty blocks to remain nothing.
 
-Speaker 2: 00:33:44
+Clara Shikhelman: 00:33:44
 
 Cool.
 
@@ -553,7 +553,7 @@ And we saw two things.
 We saw especially that there was a lot fewer mini blockchain forks where there was latency or validation was slower and two mining pools found blocks at the same height. And that was especially because the compact block relay happened between whatever they were running in SegWit.
 And then I think also a little bit faster block validation and build.
 
-Speaker 2: 00:34:45
+Clara Shikhelman: 00:34:45
 
 So this is what we have on our plate now, but we're already talked a bit about what might happen in the future, but we also have a few thoughts about what else can we do to make block building even better?
 
@@ -565,7 +565,7 @@ Speaker 0: 00:35:18
 
 The optimal use of all the available block space.
 
-Speaker 2: 00:35:21
+Clara Shikhelman: 00:35:21
 
 Right, because sometimes when you're doing greedy things, so a very crude example would be, I can fit two kilos into my knapsack.
 And thanks for everybody who giggled because they know what's the knapsack problem.
@@ -580,7 +580,7 @@ Speaker 0: 00:36:42
 
 So basically by running linear programming we would be able to find out how close to the optimal solution we can get with just a candidate set-based approach.
 
-Speaker 2: 00:36:55
+Clara Shikhelman: 00:36:55
 
 Any other thoughts on the future?
 
@@ -591,7 +591,7 @@ Speaker 0: 00:36:58
 Maybe we should touch on why it's important that Bitcoin Core has really good block building.
 The idea is we want the set of miners to be an open set where anybody can enter and exit as they wish, especially the entering is interesting obviously, and if we now had obvious optimizations that people had to implement to be as competitive as possible, that would make it harder for new miners to enter this place.
 
-Speaker 2: 00:37:32
+Clara Shikhelman: 00:37:32
 
 So I would like to comment that even if now the mining fees from transactions are not a crucial part, in the future they either will become something important or mining won't make sense.
 As the block subsidy is going down, the fees become more and more important.
@@ -605,7 +605,7 @@ In 2036 it'll be 99%.
 In, I think, 2046 it'll be, or 2050, it'll be 99.9. And as the block subsidy keeps halving, even just a regular full block at minimum fee rate will eventually have more fees than new coins.
 I think that's reached by 2060 with one Satoshi per vbyte and four million white units.
 
-Speaker 2: 00:38:38
+Clara Shikhelman: 00:38:38
 
 I think this is already something Satoshi mentioned in the white paper.
 
@@ -621,7 +621,7 @@ Speaker 0: 00:38:55
 So Clara, tell me, we had an idea how we should be measuring whether our candidate set-based approach makes sense and is a good improvement.
 Can you tell us a little more about that?
 
-Speaker 2: 00:39:09
+Clara Shikhelman: 00:39:09
 
 So there are a few ways we can compare different block building techniques, one of which is just looking at a certain mempool and then saying which block building algorithm will do better, which is a valid point of view, which we're exploring.
 But another very interesting thing to look at is what happens if, say, 2% of the miners use our new algorithm while the rest are using the old one.
@@ -641,7 +641,7 @@ So when we actively search for situations in which multiple children or descenda
 We wouldn't be discovering that right now at all with ancestor set-based block building, but we would discover that with candidate set-based block building, and then maybe if there's a few, two, three, four percent of the miners already using that, people might start to say, all right, I'll chip in and try to spend it already and together we'll get withdrawal confirmed more quickly.
 And that would be the incentive for miners to switch over and start using the new block building algorithm for mining.
 
-Speaker 2: 00:42:08
+Clara Shikhelman: 00:42:08
 
 We already see this sort of crowdsourcing behavior in the mempool.
 
@@ -654,7 +654,7 @@ It's just people that are, I don't know, withdrawing from a broker and the broke
 So we do the Monte Carlo approach, we run that alternative blockchain that we're building a few times with say 2% of t miners using our new algorithm already.
 What do we do then?
 
-Speaker 2: 00:43:37
+Clara Shikhelman: 00:43:37
 
 And then we compare how better did the miners that use the new algorithm did comparing to the ones that use the old algorithm.
 So that's another viewpoint for comparing these two algorithms.
@@ -671,7 +671,7 @@ Speaker 1: 00:44:33
 Maybe just sort of to wrap things up, I have two questions of listening to that episode.
 The first one is, if you can get more fees into this current block, doesn't that just pull fees from a future block?
 
-Speaker 2: 00:44:45
+Clara Shikhelman: 00:44:45
 
 Well, if there aren't a lot of transactions in the mining pool, that is the whole current mining pool can fit inside of a block, you don't need any sophisticated algorithm.
 You just need the block to be verifiable and have the transactions in the correct order, and you send it off.
@@ -680,7 +680,7 @@ Our algorithm becomes important only when there is actual competition for block 
 And in that case, you're assuming there are more and more transactions coming in.
 So yes, you're taking the transactions now, but there's going to be more transactions later on for the next block.
 
-Speaker 3: 00:45:27
+Patrick Murck: 00:45:27
 
 So it's kind of fun how it works out.
 We want people to build the best possible blocks and we want for example to have these constellations of multiple children to bump a parent together and it turns out that if a minor does find these constellations they also make more money.
@@ -692,7 +692,7 @@ That's a nice incentive.
 And then my other question is, obviously, mining is a cutthroat game.
 And so when you're talking about the speed of serving these block templates and these optimized blocks, where's the edge of speed versus the optimization of the fees?
 
-Speaker 2: 00:46:18
+Clara Shikhelman: 00:46:18
 
 So in some cases, you'll find miners even mining empty blocks in the beginning.
 So you can think about it as a stepped process.
@@ -700,7 +700,7 @@ You start with an empty block, then you use the quickest algorithm that gives yo
 And then after a while, if you haven't found a block, you look for a better block.
 And you can think about other algorithms even better than what we're proposing now that are even slower using linear programming or something like that, that would also be like the third block template that you serve if you find that you have enough time.
 
-Speaker 3: 00:46:57
+Patrick Murck: 00:46:57
 
 What happens when you run a mining pool is that you don't create one black template and then your miners are working on that for the whole duration until the block is found.
 You keep updating that as more transactions come in.
@@ -714,7 +714,7 @@ Makes sense.
 So this sounds better in every way.
 When do we see it in the wild?
 
-Speaker 3: 00:47:39
+Patrick Murck: 00:47:39
 
 Well, careful asking around a little bit what might need to happen for such an algorithm to get integrated into Bitcoin Core seems to indicate that there might be either a need to make it run separate and the architectural challenge of that would be easy, or if you want to integrate it properly into the mempool.
 Mempool is such a central part of how everything fits together in Bitcoin Core, that would be a pretty invasive change.
@@ -724,10 +724,10 @@ Speaker 1: 00:48:16
 
 All right very good well thank you both for your time enjoy the conversation and we'll look forward to getting Claire on soon again.
 
-Speaker 2: 00:48:17
+Clara Shikhelman: 00:48:17
 
 Thanks.
 
-Speaker 3: 00:48:30
+Patrick Murck: 00:48:30
 
 Thanks.
