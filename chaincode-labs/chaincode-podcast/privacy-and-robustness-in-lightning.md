@@ -151,15 +151,15 @@ There's no longer toxic waste that you have to worry about, old states and stuff
 Watchtower has become now almost trivial.
 So that adds some simplicity.
 
-Rusty Russell: 00:05:05
+Rusty Russell: 00:05:04
 
 Can we take a quick side route on that?
 
-Speaker 2:
+Speaker 2: 00:05:07
 
 Sure.
 
-Rusty Russell:
+Rusty Russell: 00:05:09
 
 Because we've talked about LN symmetry specifically with Instagibs.
 
@@ -546,7 +546,7 @@ And so those dynamics just don't seem to add up to a long term thinking and long
 Rusty Russell: 00:24:21
 
 So the piece that you're missing here is the pi is still growing, right?
-And so there is more emphasis on growing that pie and doing those bold new things because the world is still in front of us right light network as it is in 10 years time is much bigger than light network today with that assumption how do you lead how do you become the one everyone wants to be and the answer is you do the cool new things.
+And so there is more emphasis on growing that pi and doing those bold new things because the world is still in front of us right light network as it is in 10 years time is much bigger than light network today with that assumption how do you lead how do you become the one everyone wants to be and the answer is you do the cool new things.
 And that's not so much features.
 It is that focus on the next, basically the light in 2.0. What are the cool new things coming down the pi?
 Is it  Eltoo?
