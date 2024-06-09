@@ -141,8 +141,8 @@ Some of which is like, well, we want some soft forks, right?
 
 Rusty Russell: 00:04:39
 
-If we can get LN symmetry, which used to be called L2, but LN symmetry is a much better name.
-Sorry to question who named L2.
+If we can get LN symmetry, which used to be called  Eltoo, but LN symmetry is a much better name.
+Sorry to question who named  Eltoo.
 He blames me.
 I blame him.
 For example, sidesteps a whole heap of, it reduces robustness by introducing simplicity.
@@ -315,7 +315,7 @@ Yeah, I mean, what else do you have in mind when you're talking about that princ
 Rusty Russell: 00:13:12
 
 So at the moment, we have a fairly complicated state machine with just the way that we deal with updates.
-And when Greg implemented L2, he did roll in the simplified update proposal that I made a couple years ago now, where basically instead of both of us proposing changes at the same time. So the basic way our peer-to-peer protocol works is that I go, okay, add this, add this, add this, resolve this, resolve this.
+And when Greg implemented  Eltoo, he did roll in the simplified update proposal that I made a couple years ago now, where basically instead of both of us proposing changes at the same time. So the basic way our peer-to-peer protocol works is that I go, okay, add this, add this, add this, resolve this, resolve this.
 
 ## Peer to peer protocol
 
@@ -351,13 +351,13 @@ When it's my turn, by definition, you haven't got anything in flight.
 So I can say, hey, it's time to upgrade.
 And it's much simpler in that way too.
 So this is something that we just learned through experience that we over-designed the original protocol.
-And now whether this becomes a separate change or goes in with an L2 change or not, this is something we're going to discuss at the summit.
+And now whether this becomes a separate change or goes in with an  Eltoochange or not, this is something we're going to discuss at the summit.
 But from my point of view, we end up with a more robust and simple protocol at the end of this.
 And it turns out that supporting both is actually pretty easy.
 
 Speaker 2: 00:16:10
 
-When we were talking about L2, you're talking about changes and you're sort of casually mentioning the soft fork piece of it.
+When we were talking about  Eltoo, you're talking about changes and you're sort of casually mentioning the soft fork piece of it.
 I mean, there's not going well, there's Greg Sanders will be there and he's obviously thinking about this, but you don't really have the people at the table that are actually doing like would be pulling the soft fork together that are that really understand the lightning case, I guess.
 Maybe AJ, maybe InstaGibs.
 The list gets very short after that.
@@ -440,7 +440,7 @@ Then everyone else can go ahead and implement it.
 Then it can roll out on the network.
 Then everyone can upgrade.
 Then once both your peers are upgraded, then now you can open a new channel.
-A new channel will be one of these cool, L2 channels and everything else.
+A new channel will be one of these cool,  Eltoo channels and everything else.
 So, this is a long road, right?
 
 Speaker 1: 00:19:57
@@ -549,7 +549,7 @@ So the piece that you're missing here is the pi is still growing, right?
 And so there is more emphasis on growing that pie and doing those bold new things because the world is still in front of us right light network as it is in 10 years time is much bigger than light network today with that assumption how do you lead how do you become the one everyone wants to be and the answer is you do the cool new things.
 And that's not so much features.
 It is that focus on the next, basically the light in 2.0. What are the cool new things coming down the pi?
-Is it L2?
+Is it  Eltoo?
 Is it LN symmetry?
 Have you already got those, right?
 Is it Taproot channels?
@@ -800,12 +800,12 @@ So, you can lowball fees to some extent, whereas before we had to bump fees up q
 We used a magnifying factor to go, well, I could go as high as this.
 The ultimate answer to this is to package relay, version 3, all those things.
 So we can actually have no fees here and have all the fees in the child.
-Well, the ultimate answer for this is L2 and everything else.
+Well, the ultimate answer for this is  Eltoo and everything else.
 But meanwhile, package relay lets us not have-
 
 Speaker 1: 00:35:03
 
-But even with L2, you still need to have a mechanism to be able to broadcast on-chain.
+But even with  Eltoo, you still need to have a mechanism to be able to broadcast on-chain.
 
 Rusty Russell: 00:35:07
 
@@ -907,8 +907,8 @@ So the rainbows and unicorns in this case look like v3 transactions with ephemer
 Rusty Russell: 00:39:33
 
 Package relay.
-And L2 also solves some of these problems.
-But we have similar incentive problems, and you need to have the package relay as well, and v3, I think, for it to get L2 to be secure as well.
+And  Eltoo also solves some of these problems.
+But we have similar incentive problems, and you need to have the package relay as well, and v3, I think, for it to get  Eltoo to be secure as well.
 We currently have two anchor outputs, and that makes your transactions bigger.
 So in a low fee environment, you could argue that you shouldn't implement anchors because you're just making a bigger transaction for unilateral closes.
 And you're spending, basically, your transaction is almost twice as big because it's got these two extra outputs.
