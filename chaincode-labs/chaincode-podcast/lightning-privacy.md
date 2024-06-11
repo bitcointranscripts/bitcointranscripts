@@ -136,16 +136,14 @@ And perhaps it's worth taking a step back and explaining just basics of Lightnin
 
 ## Lightning basics
 
-Speaker 0: 00:02:50
 
 So I'm sure many of the listeners are familiar with that, but to put everyone on the same page, I would just say that Lightning is an additional network, an additional protocol on top of Bitcoin that allows for very fast payments and that utilizes Bitcoin scripts in a very clever way to make it very secure with some kind of additional security assumptions.
-But I would say They do not diminish security very much.
+But I would say they do not diminish security very much.
 So the point is that Lightning nodes form a network and Alice can send a payment, not only to Bob, with whom she has a direct channel, that is some coins locked up into a multi-signature account.
 But also Alice can send money to Charlie through Bob using what is called multi-hop payments.
 
 ## Why LN payments fail
 
-Speaker 0: 00:03:38
 
 And this is the essential functionality of Lightning.
 But the problem with this approach is that these channels that pairs of nodes may have between each other, they have the capacity, that is, the total number of coins that is locked into the channel.
@@ -167,7 +165,6 @@ Why do you think that privacy is important?
 
 ## Why privacy is important
 
-Speaker 2: 00:05:27
 
 And maybe as we zoom back a little bit and think about maybe, you also mentioned trade-offs in your intro.
 What are the trade-offs between the different layers and what are the trade-offs in terms of how Lightning is constructed?
@@ -175,7 +172,7 @@ And where does privacy fit into that compared to the other goals of Lightning?
 
 Speaker 0: 00:05:48
 
-So generally speaking, I would say that privacy is a very important property of a monetary system, of a money system, which we are trying to develop here with Bitcoin and additional technologies such as Lightning on top of.
+So generally speaking, I would say that privacy is a very important property of a money system, which we are trying to develop here with Bitcoin and additional technologies such as Lightning on top of.
 Bitcoin, if we don't have privacy, then in the worst case scenario, it means that everyone knows about everyone else's affairs, about everyone else's monetary situation, which is just bad.
 And It's bad for business, bad for just human dignity in some cases.
 And it opens the door to abuses of power, to discriminating against people based on their transactions.
