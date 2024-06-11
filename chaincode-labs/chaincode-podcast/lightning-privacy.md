@@ -212,13 +212,13 @@ So the attacker or the prober creates payments targeted at the victim node, just
 And of course, such payments cannot succeed, they will fail.
 But the question is how exactly they fail.
 So there are two scenarios how this payment will fail.
-The first one, if it gets through the whole route towards the receiver, and the receiver looks up in the database and says, oh, I don't know the preimage of this hash, something must be wrong, and I reject this payment.
+The first one, if it gets through the whole route towards the receiver, and the receiver looks up in the database and says, I don't know the preimage of this hash, something must be wrong, and I reject this payment.
 This is one scenario.
 And another scenario is if somewhere along the route a balance is insufficient in an intermediary channel.
-And then this intermediary node would say, oh, I don't have enough balance to forward this probe, because intermediaries don't know that this is fake, they cannot distinguish between a fake random value and a real hash.
+And then this intermediary node would say, I don't have enough balance to forward this probe, because intermediaries don't know that this is fake, they cannot distinguish between a fake random value and a real hash.
 And therefore they will propagate the error back to the sender so that the sender knows that, okay, this channel doesn't have sufficient balance, so I should avoid this channel and choose another route, another path around it.
 And the prober distinguishes between these two error cases, between these two error messages, and can therefore understand whether the balance...
-Okay, there are kind of two scenarios.
+There are kind of two scenarios.
 Either the attacker connects directly to the target channel, and then the attacker can make the following observations, that the balance in the target channel is either greater than the amount of the probe or less than the amount of the probe.
 And repeating this process in a binary search, the attacker can narrow down the range of the estimates to basically arbitrarily low value.
 If we don't account for dust limits, don't account for fees, but basically, very precisely, the attacker can learn the balance.
@@ -226,7 +226,6 @@ In a more generalized setting, the attacker can do the same thing through a mult
 
 ## Why is balance discovery bad?
 
-Speaker 0: 00:11:31
 
 So this is the basics of probing.
 
@@ -238,23 +237,21 @@ Because everybody announces their channel already having X amount of balance and
 
 Speaker 0: 00:11:51
 
-I mean, sure, the nodes...
 First of all, the nodes, when they establish a channel, they do not have to advertise a channel.
 This is a voluntary activity.
 And when you open up explorers like explorer.async.io or other Lightning explorers that report number of channels and nodes, this only reports the public nodes and channels.
 And If I'm a Lightning user, I do not have to announce my channel at all.
 But even if I do announce it, that kind of assumes that I want some payments to be routed through me and potentially earn fees from these routing operations.
 Still, there is just privacy to my financial situation.
-So, I mean, similarly to Bitcoin on layer one, I wouldn't want some third parties whom I don't know.
+I mean, similarly to Bitcoin on layer one, I wouldn't want some third parties whom I don't know.
 I don't know what they're up to.
 I don't know what other information they have on me.
 I don't want them in general to know the balance of my Bitcoin wallet and to connect my seemingly unrelated addresses to just one identity and link it to some exchange address or something.
 
 ## Persistent identities in Lightning
 
-Speaker 0: 00:12:56
 
-Similarly in Lightning, Another way in which Lightning is, I would say, less private, or at least this is a consideration that we have to make, is that the identities of nodes in Lightning are relatively persistent.
+Another way in which Lightning is, I would say, less private, or at least this is a consideration that we have to make, is that the identities of nodes in Lightning are relatively persistent.
 So contrary to Bitcoin nodes, if I establish a Bitcoin node, I exchange some data with other peers, it doesn't matter very much which peers I connect to, as long as I'm not fully eclipsed, as long as I have at least one honest connection to the real Bitcoin network, then by comparing the proof of work, I will know which chain is the heaviest, which chain is valid.
 Contrary to that, in Lightning, when I establish a Lightning node, I create an identity, a node ID, and then if I establish a channel to some other node, then this connection is persistent.
 We have locked up some coins, and I remember the node ID of my partner, and my partner remembers my node ID.
@@ -266,7 +263,7 @@ And this is something also to think about.
 Speaker 2: 00:14:24
 
 Yeah, I mean, we're certainly getting a little bit off of the topic of probing, but I think the idea of persistent identity versus ephemeral identity is an important one to recognize.
-And then based on that, I think that goes back to Merge's question, is if you have a persistent identity and you are trying to establish yourself as a good member of the network, then showing that you have a large balance actually is a helpful way to do that.
+And then based on that, I think that goes back to Mark's question, is if you have a persistent identity and you are trying to establish yourself as a good member of the network, then showing that you have a large balance actually is a helpful way to do that.
 
 Speaker 3: 00:14:54
 
