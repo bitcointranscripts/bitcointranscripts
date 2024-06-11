@@ -21,46 +21,46 @@ If you reduce simplicity, you end up actually often stepping backwards.
 The thing that really appeals about element symmetry is it's simple.
 And every scheme to fix things by introducing more fairness and try to reintroduce penalties and everything else ends up destroying the simplicity.
 
-Speaker 1: 00:00:27
+Adam Jonas: 00:00:27
 
 So soon again.
 
-Speaker 2: 00:00:28
+Mark Erhardt: 00:00:28
 
 Yes.
 For those of you that aren't tracking us in real time, we are getting a bunch recorded today.
 So had Rusty Russell in the office.
 
-Speaker 1: 00:00:39
+Adam Jonas: 00:00:39
 
 Yeah.
 So this is one of my favorite podcast guests to listen to, and I'm very happy that-
 
-Speaker 1:
+Adam Jonas:
 
 Why?
 
-Speaker 2:
+Mark Erhardt:
 
 Because he has the capacity to cut through a lot of the noise and get to the crux of things, say them as they are.
 Ugly truth, sort of.
 Very nice for engineers to actually talk about the elephants in the room.
 So I'm expecting that we'll hear a little bit about what's still broken and Lightning where the ship is sailing.
 
-Speaker 1:
+Adam Jonas:
 
 Okay, here come the elephants.
 Welcome, Rusty.
 It's great to have you here.
 
-Speaker 2: 00:01:22
+Mark Erhardt: 00:01:22
 
 Thank you.
 I am fresh off the boat.
 I literally arrived less than 24 hours before from the other side of the world.
 So I hope this will be coherent.
 
-Speaker 2: 00:01:30
+Mark Erhardt: 00:01:30
 
 Our budget is for this podcast is incredible.
 We fly people from all over the world to this office.
@@ -70,7 +70,7 @@ Rusty Russell: 00:01:36
 I must say that private jet was lovely.
 Thank you for that.
 
-Speaker 2: 00:01:39
+Mark Erhardt: 00:01:39
 
 It was delightful.
 You are here for the Lightning summit.
@@ -83,7 +83,7 @@ Let's do that.
 Yeah.
 Okay.
 
-Speaker 2: 00:01:47
+Mark Erhardt: 00:01:47
 
 Tell us what you think this group should be thinking about as you're as you're gathering together.
 There's going to be specific conversations that happen about specific proposals.
@@ -106,7 +106,7 @@ There's bugs, there's issues, there's, there are always other things that are mo
 And so I definitely try to keep the perspective of going, if not now, when?
 And I think, you know, privacy is something that we definitely need to put more effort in.
 
-Speaker 2: 00:03:07
+Mark Erhardt: 00:03:07
 
 Yeah, I imagine that privacy goes to the end of the line pretty much every time.
 But can we talk about robustness for a moment?
@@ -119,7 +119,7 @@ Rusty Russell: 00:03:42
 
 Yeah.
 
-Speaker 2: 00:03:43
+Mark Erhardt: 00:03:43
 
 And I guess the question is, do you have to react to the amount of money that's in the system?
 Or is it still, well, we're still figuring this thing out.
@@ -155,7 +155,7 @@ Rusty Russell: 00:05:04
 
 Can we take a quick side route on that?
 
-Speaker 2: 00:05:07
+Mark Erhardt: 00:05:07
 
 Sure.
 
@@ -165,7 +165,7 @@ Because we've talked about LN symmetry specifically with Instagibs.
 
 ## Do we want LN Symmetry to be symmetrical?
 
-Speaker 2: 00:05:12
+Mark Erhardt: 00:05:12
 
 But I'd be interested in getting your take on, given that asymmetry seems to be healthy for the network, do you want it to be exactly symmetrical?
 
@@ -175,11 +175,11 @@ Okay, so this is a good question.
 So at the moment, let's step back.
 LN penalty, as it's retronamed into, is the current scheme where basically if you screw up, I take your money.
 
-Speaker 1: 00:05:31
+Adam Jonas: 00:05:31
 
 Yeah,
 
-Speaker 2: 00:05:31
+Mark Erhardt: 00:05:31
 
 Tadge is over there, too.
 We can pull him in.
@@ -208,7 +208,7 @@ They see it, they drop it to chain, we're done.
 So the fact that watchtowers are much more scalable means that while your risk is reduced as an attacker, your probability of success is reduced even more.
 So there is less of an incentive problem than you might have originally thought with going for LN symmetry.
 
-Speaker 1: 00:07:09
+Adam Jonas: 00:07:09
 
 But it still costs you the same to broadcast in the old state or the newest state, so you don't lose anything, right?
 
@@ -220,7 +220,7 @@ But on a higher level, I'm not going to trust you again because you're obviously
 But you know, if you start doing this a lot, people are gonna be like, no, no, I don't trust them anymore.
 So, so if the potential benefit for you is so small, that that social convention that that, if I want to become a big node, I'm not going to get there because I people have noticed that I keep double spending because it's really clear on chain.
 
-Speaker 2: 00:07:47
+Mark Erhardt: 00:07:47
 
 Yeah, but that also changes with high fee environments, right?
 I mean, you start making it more difficult for people to...
@@ -229,7 +229,7 @@ Rusty Russell: 00:07:55
 
 But now, remember, in a high fee environment, the cost for you to do a unilateral close is much higher.
 
-Speaker 2:
+Mark Erhardt:
 
 I see.
 
@@ -240,7 +240,7 @@ So the only case where it really comes out is when I'm unavailable you can't do 
 You're going to use the last three close anyway and now you're like well I might as well try to cheat.
 So you're already kind of in a corner case because that's already sending more money than if you just spoke to me and closed your channel.
 
-Speaker 1: 00:08:16
+Adam Jonas: 00:08:16
 
 So we've talked quite a bit about LN symmetry and how we want to retain the symmetric aspect of it.
 There was also a proposal where you would have some sort of penalty for the initiator of the closing transaction by having a larger output on the commitment transaction than input.
@@ -272,7 +272,7 @@ The good news is that we need a soft fork, we need to roll this thing out, it's 
 If I'm wrong and we end up going, no, actually, we want some hybrid scheme, or we prefer LN penalty or everything else, but we'll get there as well.
 There's no huge hurry in this process.
 
-Speaker 1: 00:11:02
+Adam Jonas: 00:11:02
 
 Of course, people that still want a penalty can just continue to use LN penalty.
 
@@ -295,7 +295,7 @@ We're only going to implement the new one.
 And that may well be what carries us forward.
 I don't know.
 
-Speaker 1: 00:12:29
+Adam Jonas: 00:12:29
 
 It makes it way easier to have more than two parties, right?
 So it might be the roads to channel factories or you can still share your schemes.
@@ -306,7 +306,7 @@ So yeah, your point about opening the door to channel factories and multi-party 
 So I'm like, we simplify it and then we add all new complexity by building another layer on top.
 But, that's all good because I'm hoping that that won't be my problem and somebody else can do the implementation on top.
 
-Speaker 2: 00:13:04
+Mark Erhardt: 00:13:04
 
 So we've covered robustness.
 Are there other things?
@@ -355,7 +355,7 @@ And now whether this becomes a separate change or goes in with an  Eltoochange o
 But from my point of view, we end up with a more robust and simple protocol at the end of this.
 And it turns out that supporting both is actually pretty easy.
 
-Speaker 2: 00:16:10
+Mark Erhardt: 00:16:10
 
 When we were talking about  Eltoo, you're talking about changes and you're sort of casually mentioning the soft fork piece of it.
 I mean, there's not going well, there's Greg Sanders will be there and he's obviously thinking about this, but you don't really have the people at the table that are actually doing like would be pulling the soft fork together that are that really understand the lightning case, I guess.
@@ -377,7 +377,7 @@ Sure.
 I can probably build a car out of matchsticks and snot, but I don't want to.
 And don't make me do it.
 
-Speaker 2: 00:17:09
+Mark Erhardt: 00:17:09
 
 Could you do that?
 
@@ -400,7 +400,7 @@ That's if you're listening, AJ, I hope you're going to make that prophecy come t
 I think, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
 Any prep out by itself is a fairly simple piece.
 
-Speaker 2: 00:18:21
+Mark Erhardt: 00:18:21
 
 Not a precluding piece to other things that we can do in the future.
 
@@ -408,7 +408,7 @@ Rusty Russell: 00:18:24
 
 Absolutely.
 
-Speaker 2: 00:18:25
+Mark Erhardt: 00:18:25
 
 This is the two-way door, one-way door kind of thing.
 
@@ -425,7 +425,7 @@ He's been doing both sides.
 I know he and AJ are all over this.
 I trust them to weed through all the different possibilities, come out with a proposal, and then we'll tear it apart and then go again and do it properly.
 
-Speaker 1: 00:19:07
+Adam Jonas: 00:19:07
 
 Yeah, I believe it's live in inquisition already.
 
@@ -443,7 +443,7 @@ Then once both your peers are upgraded, then now you can open a new channel.
 A new channel will be one of these cool,  Eltoo channels and everything else.
 So, this is a long road, right?
 
-Speaker 1: 00:19:57
+Adam Jonas: 00:19:57
 
 Yeah, we were just talking with El and Oli, how one and a half years after Taproot's been active, simple Taproot channels are close to being spec out.
 
@@ -451,7 +451,7 @@ Rusty Russell: 00:20:07
 
 Yes, exactly.
 
-Speaker 1: 00:20:08
+Adam Jonas: 00:20:08
 
 We know what you mean.
 
@@ -466,7 +466,7 @@ But we have to trade through a lot of unicorn crap.
 
 ## Pushing privacy and robustness to the front of the line
 
-Speaker 2: 00:20:35
+Mark Erhardt: 00:20:35
 
 This goes back to the open, which is privacy and robustness.
 They always go to the end of the line.
@@ -496,7 +496,7 @@ Right.
 
 ## The dynamics of developing a spec with commercially associated implementations
 
-Speaker 2: 00:22:18
+Mark Erhardt: 00:22:18
 
 So, but okay, I have two, I have two things to push back on.
 One is LDK is a little bit of a maybe a question mark for me, but the others are three commercially driven implementations.
@@ -507,7 +507,7 @@ I didn't realize we were commercially driven.
 Okay, good.
 I like that.
 
-Speaker 2: 00:22:35
+Mark Erhardt: 00:22:35
 
 And so, well, they have to be, I mean, they're companies, if the companies don't exist, do these implementations exist, I guess?
 
@@ -525,7 +525,7 @@ So I feel fairly confident to go, we're going to move forward.
 And maybe not as fast as we are at the moment.
 But, you know, there's some future there.
 
-Speaker 2: 00:23:24
+Mark Erhardt: 00:23:24
 
 I guess my other bit of that was Because they're commercially associated, maybe not driven, commercially associated.
 That means that features get pushed to the front of the line.
@@ -539,7 +539,7 @@ Rusty Russell: 00:24:07
 
 Yes.
 
-Speaker 2: 00:24:07
+Mark Erhardt: 00:24:07
 
 And so those dynamics just don't seem to add up to a long term thinking and long term, moving, moving the ball forward in these kinds of dimensions.
 
@@ -572,11 +572,11 @@ There are four implementations out there and there is choice in what you can run
 So everyone is sweating at the moment a little bit.
 There's something of a treadmill effect.
 
-Speaker 2: 00:25:51
+Mark Erhardt: 00:25:51
 
 My other side of that.
 
-Speaker 1: 00:25:54
+Adam Jonas: 00:25:54
 
 Isn't it five, meanwhile, with Electrum also in the mix now?
 
@@ -585,7 +585,7 @@ Rusty Russell: 00:25:58
 Electrum has been in the mix for a while, but we haven't really seen them pushing the boundaries of the spec process.
 They're quite happy to kind of follow along and meet the requirements.
 
-Speaker 1: 00:26:08
+Adam Jonas: 00:26:08
 
 Okay, so you're talking about four that are participating in the spec.
 
@@ -608,7 +608,7 @@ I think, that brings, new blood, just a new design space, a new point of view to
 
 ## Privacy revisited
 
-Speaker 2: 00:27:02
+Mark Erhardt: 00:27:02
 
 Privacy.
 Privacy, yes.
@@ -627,7 +627,7 @@ I can tell therefore that that payment that went through me went out this channe
 So we can actually shield a lot of that using the Oakland protocol.
 So that requires widespread implementation.
 
-Speaker 1: 00:27:48
+Adam Jonas: 00:27:48
 
 As a reminder, that was basically just under-reporting your channel capacity.
 
@@ -642,7 +642,7 @@ So as long as you've got more than 10%, they can't tell.
 They literally cannot tell.
 When you're under 10, the question is like when you're on the boundary you can you can start probing and so at that point you start the Oakland protocol and well, we're going to actually let you use slightly less capacity than we actually have because we don't want to leak that we didn't send the HTLC out through there.
 
-Speaker 1: 00:28:34
+Adam Jonas: 00:28:34
 
 Couldn't prober still send multiple payments, lock up more funds and then probe like the 40 to 50% by having four other 10%?
 
@@ -658,7 +658,7 @@ Dual funding particularly allows you to combine multiple things into one transac
 This is useful.
 There's a whole pile of different fun things you can do once you've got splicing and you can splice in and out and everything else. And just mess people up which is kind of nice Particularly if we start to see things like page join of things coming out of splices and really really kind of a lot more So once your Lightning channel is also used for unchain things through splicing, I think it becomes a lot more complicated to see exactly what's going on, which is just a nice low-hanging fruit that we're going to get.
 
-Speaker 1: 00:29:40
+Adam Jonas: 00:29:40
 
 Especially if we no longer announce which UTXO a channel is from.
 
@@ -684,7 +684,7 @@ Now, the gossip announcement, that's my fault actually, because I put that in th
 And I was thinking, well, you're public anyway, it's fine.
 But it turns out, of course, that leaking that one piece of information then often leads to a lot of other information that you did not intend to be leaked, particularly about unannounced channels, which we've recently had improvements on, right, with with SCID aliases, we're no longer leaking those, but indirectly you can now start to tell what's happening with private channels, which was, or unannounced channels, which was never the intention.
 
-Speaker 1: 00:31:04
+Adam Jonas: 00:31:04
 
 Just through taint on on-chain transactions and pedigree?
 
@@ -695,7 +695,7 @@ And you know, you can start to join things together just doing things like that.
 
 ## What broke when fee rate spiked?
 
-Speaker 1: 00:31:22
+Adam Jonas: 00:31:22
 
 So I would like to call back to you said a bunch of things broke when the fee rates spiked.
 
@@ -703,7 +703,7 @@ Rusty Russell: 00:31:27
 
 Yeah.
 
-Speaker 1: 00:31:28
+Adam Jonas: 00:31:28
 
 And I was curious what what broke for various lightning implementations.
 Can we get a little bit into that?
@@ -712,7 +712,7 @@ Rusty Russell: 00:31:33
 
 Yeah, absolutely.
 
-Speaker 1:
+Adam Jonas:
 
 Robustness for fees folks.
 
@@ -733,7 +733,7 @@ So people will restart the BitcoinD, it would go, no, no, min relay fees, all go
 We're, you know, we're back on like, one set or whatever.
 And you would propose that to your peer who has not restarted and you fucking want no, and you could get forced closures that way.
 
-Speaker 1: 00:32:29
+Adam Jonas: 00:32:29
 
 Sure.
 Yeah, this is meant to run consistently, and we don't get good fee estimates until a couple blocks have been found.
@@ -753,7 +753,7 @@ But if you don't close it upstream, upstream then closes on you because you've l
 Upstream goes, right, I'm going to close the news.
 So you can end up with channel failure because of this issue.
 
-Speaker 1: 00:33:37
+Adam Jonas: 00:33:37
 
 Right, so you have an HTLC that's so small that at a high fee, it's not worth claiming.
 You write it off, but you have to.
@@ -765,7 +765,7 @@ So that's a quality of implementation issue and you end up closing another chann
 So you end up this cascade effect.
 So we had a little bit of that.
 
-Speaker 1: 00:33:56
+Adam Jonas: 00:33:56
 
 Could you clarify?
 So the fee in a commitment transaction is paid by the channel proposer?
@@ -780,7 +780,7 @@ It's just going to be enough to get you into the mempool, and you're going to us
 So it reduces the problem that we have.
 Just like I have to guess what the fee rate is going to be in future whenever I want to spend this to, I have to guess what the min fee is going to be in future.
 
-Speaker 1: 00:34:30
+Adam Jonas: 00:34:30
 
 So I can spend this.
 The dynamic mempool minimum fee.
@@ -789,7 +789,7 @@ Rusty Russell: 00:34:32
 
 Yeah, that's right.
 
-Speaker 1: 00:34:34
+Adam Jonas: 00:34:34
 
 Which can be higher in the last few months.
 
@@ -803,7 +803,7 @@ So we can actually have no fees here and have all the fees in the child.
 Well, the ultimate answer for this is  Eltoo and everything else.
 But meanwhile, package relay lets us not have-
 
-Speaker 1: 00:35:03
+Adam Jonas: 00:35:03
 
 But even with  Eltoo, you still need to have a mechanism to be able to broadcast on-chain.
 
@@ -814,7 +814,7 @@ Anyone can pay.
 You have to bring your own fees.
 And you bring your own fees through, right?
 
-Speaker 2: 00:35:13
+Mark Erhardt: 00:35:13
 
 Yeah, sure.
 
@@ -830,7 +830,7 @@ Right.
 So, so it does help to some extent to solve that.
 So yeah.
 
-Speaker 1: 00:35:42
+Adam Jonas: 00:35:42
 
 So, so basically the commitment transaction must at least with anchor output still meet the dynamic minimum of the mempool.
 We've seen that spike to above 10, I think 15 maybe in the last few months.
@@ -851,7 +851,7 @@ So there's been a proposal to have a workaround where we actually start spraying
 It may still happen at some point if we really need to.
 As long as we can get them to miners.
 
-Speaker 1: 00:36:57
+Adam Jonas: 00:36:57
 
 Is that the third approach next to Nostra. 
 
@@ -877,7 +877,7 @@ And it is going to get merged because I'm release captain and it's damn well goi
 So we're finally fixing that.
 The one good thing about volatility like this is it does shake your priorities up a bit and reminds you that you've got to address these things.
 
-Speaker 1: 00:38:11
+Adam Jonas: 00:38:11
 
 Pushes adoption of best practices, better fee estimation, better output type usage, your excel management, all the things.
 
@@ -899,7 +899,7 @@ But yeah, it is part of a robustness approach means addressing these things.
 I think we are slowly moving our way through the list, but there will always be things that you wish you had done earlier, but that's engineering.
 You can't do all the things.
 
-Speaker 1: 00:39:19
+Adam Jonas: 00:39:19
 
 Right.
 So the rainbows and unicorns in this case look like v3 transactions with ephemeral anchors, zero fee commitment transactions, package relay.
@@ -916,7 +916,7 @@ With package relay and v3, I think we only need one anchor that we can share.
 We're still in anchors.
 You know, you're still a little bit bigger.
 
-Speaker 1: 00:40:06
+Adam Jonas: 00:40:06
 
 And the ephemeral anchor is smaller because it's just an uptrue.
 
@@ -930,7 +930,7 @@ Cool.
 So yeah, yeah that look that that's definitely the where we want to get to and again, it's an Maybe no one will notice if it takes a while to get there, but definitely it's one of those, the engineers look at these things and see problems.
 And this is one of the problems we see and we crossed off the list and then we'll work on the next one.
 
-Speaker 1: 00:40:38
+Adam Jonas: 00:40:38
 
 Yeah, Gloria and I have been writing, waiting for confirmation series and uptake newsletter.
 Next week we're going to talk about mempool policy as an interface for layer 2 protocols.
@@ -941,7 +941,7 @@ Rusty Russell: 00:40:56
 Yeah, I look forward to reading it.
 It's going to be interesting.
 
-Speaker 2: 00:40:58
+Mark Erhardt: 00:40:58
 
 What else is on your mind, Rusty?
 Anything else to mention?
@@ -990,7 +990,7 @@ But I just accept that most people will be building on layers above us.
 And that's where the excitement will move up to.
 But still, our job is going to be to just continue that incremental engineering and just making it better, little by little, and those wins will accumulate.
 
-Speaker 1: 00:43:36
+Adam Jonas: 00:43:36
 
 What are the things that you're excited to see being built on top of Lightning?
 Well, I'll let you answer first, but I might have follow up.
@@ -1000,7 +1000,7 @@ Rusty Russell: 00:43:43
 What is exciting?
 I always said that there will be some killer application of Lightning that I will think is stupid because I'm old.
 
-Speaker 1: 00:43:52
+Adam Jonas: 00:43:52
 
 And you know, how I feel about inscriptions.
 
@@ -1016,7 +1016,7 @@ But the whole Greenfields thing of things that didn't exist or didn't make sense
 And you know, I think at this point, Noster tipping is probably something where people think, it didn't make sense before.
 You couldn't really do that with credit cards.
 
-Speaker 1: 00:44:43
+Adam Jonas: 00:44:43
 
 It didn't.
 I must admit, like on Stacker News, when I want to tip a post, and the little lightning zooms across the screen when I tip.
@@ -1029,7 +1029,7 @@ Rusty Russell: 00:45:08
 
 And look at Cashew and some of the other things, the Fedimint and stuff using Lightning as a glue, right?
 
-Speaker 1: 00:45:12
+Adam Jonas: 00:45:12
 
 Yeah.
 And just international payments.
@@ -1046,7 +1046,7 @@ It is fantastic to see people actually use this and explore things.
 And these people will build things that I could not even conceive of.
 I certainly couldn't have built myself.
 
-Speaker 1: 00:45:54
+Adam Jonas: 00:45:54
 
 It's hard to see the potential of the black box thing when you're in the nitty gritty building the black box.
 
@@ -1060,7 +1060,7 @@ It'll turn out to be a huge success and it shows that I knew.
 That's why I'm not a business guy.
 I'm just an engineer.
 
-Speaker 2: 00:46:25
+Mark Erhardt: 00:46:25
 
 Where are we at?
 Thank you.
@@ -1071,15 +1071,15 @@ Rusty Russell: 00:46:30
 
 Thanks for having me.
 
-Speaker 1: 00:46:31
+Adam Jonas: 00:46:31
 
 Yeah, thanks.
 
-Speaker 2: 00:46:39
+Mark Erhardt: 00:46:39
 
 So did that live up to your expectations?
 
-Speaker 1: 00:46:42
+Adam Jonas: 00:46:42
 
 Yeah, I think so.
 Looking back eight years in with people that got in really early that had a 20-year vision for it from the get-go.
@@ -1089,11 +1089,11 @@ Yes, there's been a lot done.
 It's getting used by people.
 It's very cool.
 
-Speaker 2: 00:47:05
+Mark Erhardt: 00:47:05
 
 So eight out of 20 means we're 40 percent and are we 40 percent there?
 
-Speaker 1: 00:47:09
+Adam Jonas: 00:47:09
 
 I don't know.
 Maybe it'll be a little faster.
@@ -1103,12 +1103,12 @@ I mean, last year I could buy pupusas in a place with stomped earth ground but l
 So yeah, maybe 40% is a good value.
 I don't know if 20 years is the right amount, but taking that sort of approach and having that in mind makes it easier to.
 
-Speaker 2: 00:47:49
+Mark Erhardt: 00:47:49
 
 Is it always just 20 years out?
 Do you take this?
 
-Speaker 1: 00:47:54
+Adam Jonas: 00:47:54
 
 I don't think it's like block times.
 It's more like building a new protocol and also getting that person that will be a Lightning network that builds the killer use case just takes a generation maybe.
@@ -1116,7 +1116,7 @@ Anything really big that changes stuff progresses in 10 year steps.
 So two steps.
 Yeah, I think so.
 
-Speaker 2: 00:48:15
+Mark Erhardt: 00:48:15
 
 Cool.
 Well, hope you enjoyed listening to it and we'll see you next time.
