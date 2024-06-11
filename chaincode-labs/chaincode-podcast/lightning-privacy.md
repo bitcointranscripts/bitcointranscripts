@@ -70,7 +70,7 @@ Speaker 3: 00:00:55
 
 Well, today we're going to talk to Sergey.
 He's our new colleague at Chaincode.
-He's been doing his PhD and he's been looking at lightning stuff a lot, channel probing especially with the focus on what happens if you have multiple channels, multiple parallel channels between two peers.
+He's been doing his PhD and he's been looking at lightning stuff a lot, channel probing especially with the focus on what happens if you have multiple parallel channels between two peers.
 
 Speaker 2: 00:01:14
 
@@ -81,12 +81,14 @@ Speaker 1: 00:01:24
 
 Nice.
 Well, I look forward to listening.
+
+Speaker 2: 00:01:25
+
 Hi Jonas.
-Hey,
 
 Speaker 3: 00:01:29
 
-Merch.
+Hey, Merch.
 What are we doing today?
 Talking to Sergey.
 
@@ -122,7 +124,7 @@ I'm interested in privacy in Lightning, reliability and the related topics, whic
 Speaker 2: 00:02:22
 
 Yeah, that sounds cool.
-Tell us, so most recently, what kind of work have you been doing in terms of the academic research you've been up to?
+Most recently, what kind of work have you been doing in terms of the academic research you've been up to?
 
 Speaker 0: 00:02:31
 
