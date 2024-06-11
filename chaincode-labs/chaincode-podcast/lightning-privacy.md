@@ -89,16 +89,19 @@ Hi Jonas.
 Speaker 3: 00:01:29
 
 Hey, Merch.
+
+Speaker 2: 00:01:29
+
 What are we doing today?
-Talking to Sergey.
 
 Speaker 2: 00:01:36
 
+Talking to Sergey.
 Sergey.
-Hey, what's up?
 
 Speaker 0: 00:01:39
 
+Hey, what's up?
 Glad to be here.
 
 Speaker 2: 00:01:40
@@ -118,7 +121,7 @@ Speaker 0: 00:01:49
 I've been interested in Bitcoin for quite a while.
 I've done some research at the University of Luxembourg.
 I did my PhD on Bitcoin and other related, blockchain-related topics, so to say.
-I've done some smart contract research, some Bitcoin peer-to-peer research, And for the past, I would say three years, my main focus has been layer two protocols on Bitcoin, in particular Lightning.
+I've done some smart contract research, some Bitcoin peer-to-peer research, and for the past, I would say three years, my main focus has been layer two protocols on Bitcoin, in particular Lightning.
 I'm interested in privacy in Lightning, reliability and the related topics, which are kind of entanglement of different trade-offs that we will try during this podcast to untangle a little bit, I hope so.
 
 Speaker 2: 00:02:22
