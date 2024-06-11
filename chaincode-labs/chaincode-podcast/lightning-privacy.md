@@ -181,11 +181,10 @@ And in terms of Bitcoin, there has been lots of research about Bitcoin privacy s
 
 ## Privacy potential of Lightning vs L1 Bitcoin
 
-Speaker 0: 00:06:40
 
 People have been writing about clustering transactions and labeling transaction clusters.
 And there are huge companies like Genelysis built on top of this premise that monetize on this expertise and sell basically the service of de-anonymizing users.
-And, okay, Bitcoin privacy on layer one is kind of more or less understood.
+Bitcoin privacy on layer one is kind of more or less understood.
 We understand what's bad about this and it can be to some extent improved using techniques like mixing, coin joins and so on.
 But with Lightning, we have a different set of tradeoffs, a different system.
 I see a huge potential here for privacy because Lightning is a layer two network.
@@ -197,12 +196,11 @@ It can be analyzed years and years down the line.
 In Lightning, this is not the case.
 So first of all, we have this very good baseline for privacy, which is transaction only happens between peers and some intermediary nodes.
 But on the other hand, there are some new privacy challenges that layer one doesn't face, such as protecting the balance of the channels.
-So on the one hand, nodes do not advertise their balances, And it just seems to me logical that if I run Lightning Node, by default, I want to keep my balances private because this is part of my private financial information.
+So on the one hand, nodes do not advertise their balances, and it just seems to me logical that if I run Lightning node, by default, I want to keep my balances private because this is part of my private financial information.
 But As it turns out, and as we have, okay, we haven't discovered it, it has been discovered before, we kind of built on top of previous work and I will explain it in a bit, like what exactly does that mean.
 
 ## How probing works
 
-Speaker 0: 00:08:39
 
 But the probing attack that we've been focusing on allows an adversary to reveal the balance of some remote channel by sending a series of fake payments that we call probes.
 And these payments are fake in the sense that in the normal course of operation in Lightning, the receiver first creates some secret, the payment secret, then sends the hash of the secret to the sender.
