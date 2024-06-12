@@ -269,19 +269,18 @@ Speaker 3: 00:14:54
 
 The point that I was actually getting at is, if you are able to track which balances change at what time, and you can pinpoint the channels that were involved in the routed payment.
 You can actually de-anonymize who paid whom, what amount.
-And I think it'll be hard to keep a probing attack on the network stable to that degree where you can actually do this, but in combination with having a large number of the Lightning nodes, say certain blockchain surveillance companies recently announced that they're now monitoring Lightning Network as well, if they have say a third of all nodes on it.
+And I think it'll be hard to keep a probing attack on the network stable to that degree where you can actually do this, but in combination with having a large number of the Lightning nodes, say certain blockchain surveillance companies recently announced that they're now monitoring Lightning network as well, if they have say a third of all nodes on it.
 And in addition to having timing attacks when the payment goes through multiple of their nodes where the hash pre-image matches on multiple forwarding hops and the amounts also match.
 And then seeing like certain channel balances change due to putting probing attacks out there, they might be able to tell.
-The basic privacy assumption of Lightning, where the sender has pretty good anonymity because he is not revealing himself at all when he sends to the receiver, and the receiver having okay anonymity, Depending on how many hops he's away because you cannot tell whether payment goes further than then the next forward or not You might be able to to tell who was the last hop and how much they got and from whom.
+The basic privacy assumption of Lightning, where the sender has pretty good anonymity because he is not revealing himself at all when he sends to the receiver, and the receiver having okay anonymity, depending on how many hops he's away because you cannot tell whether payment goes further than then the next forward or not. You might be able to to tell who was the last hop and how much they got and from whom.
 That's where I was going.
 
 Speaker 2: 00:16:35
 
-But essentially, I mean, this is where, again, we start getting into Taproot and some other pieces of revealing more information than you might otherwise.
+This is where, again, we start getting into Taproot and some other pieces of revealing more information than you might otherwise.
 Like a noob user might imagine, based on reputation alone, that Lightning is much more private.
 But essentially this all ends up on-chain.
 And so when you have a balance that ends up on-chain, the timing and the...
-Certainly the...
 What happens in the black box of sending lightning payments seems like that should be private.
 But at the end of the day, it all ends up in a transparent way on the chain.
 
@@ -294,7 +293,7 @@ And you don't know who got which part, but with a timing attack, or with a probi
 Speaker 2: 00:17:36
 
 In the same way you don't know which is the change that you get in the transaction.
-I mean, you know, machine learning can probably figure this stuff out.
+I mean, machine learning can probably figure this stuff out.
 
 Speaker 3: 00:17:43
 
@@ -304,7 +303,7 @@ To a degree.
 
 Speaker 0: 00:17:45
 
-I mean, This is all a multilayered process.
+I mean, this is all a multilayered process.
 There is no silver bullet and there is no one fix that we can apply either to Bitcoin or to Lightning and say, okay, now this is private.
 Of course, there are multiple attacks and the more attack vectors we leave open, the more information the potential adversary can gather and combine together and so on.
 So I think our job as protocol developers and researchers is to come up with ways to fix what can be fixed and what cannot be fixed.
@@ -338,7 +337,7 @@ And they have this disclaimer that by logging in into Twitter, you're linking yo
 So they actually made the joke turn into reality.
 This is something that-
 
-Speaker 1: 00:20:54
+Speaker 2: 00:20:54
 
 We'll have to put it in the show notes.
 
@@ -352,22 +351,21 @@ But so not only do we have to try to make it as private as possible, but we also
 
 Speaker 2: 00:21:46
 
-Yeah, And I also think it starts becoming even more dangerous within the walled gardens of wallets and custodial wallets integrating Lightning.
+Yeah, and I also think it starts becoming even more dangerous within the walled gardens of wallets and custodial wallets integrating Lightning.
 So we have Lightning integration in Cash App now.
 
 ## Lightning integrations and walled gardens
 
-Speaker 2: 00:22:01
 
 And if you can imagine a beginner thinking that, well, I've heard Lightning is private, but I'm using it within this walled garden of Cash App.
 It may not have all of the bells and whistles that you think it might.
 
 Speaker 0: 00:22:16
 
-It reminds me of the conversation about end-to-end encryption, like the companies like Facebook, for example, at least as far as I can understand it, that try to kind of turn this conversation about privacy from, okay, I want my conversations to be private from Facebook towards, oh, we're encrypting end-to-end, and no one except you and Facebook knows what you're talking about.
+It reminds me of the conversation about end-to-end encryption, like the companies like Facebook, for example, at least as far as I can understand it, that try to kind of turn this conversation about privacy from, I want my conversations to be private from Facebook towards, oh, we're encrypting end-to-end, and no one except you and Facebook knows what you're talking about.
 And this is kind of the way to put it to make themselves look good.
 So the same with the walled gardens.
-I mean, I'm not saying that CacheApp is deliberately trying to push this narrative, probably they don't, but users may perceive it as, okay, everything is private within this world garden.
+I mean, I'm not saying that Cash App is deliberately trying to push this narrative, probably they don't, but users may perceive it as, okay, everything is private within this world garden.
 But I think we should aim for even more ambitious target to make it private, even from the owners or from the operators of this one garden.
 So this is what peer-to-peer protocols are about.
 
@@ -377,8 +375,8 @@ Speaker 2: 00:23:05
 
 Yeah, and I also think terminology becomes important here because as we're sort of pushing the label of lightning service providers versus users, that distinction is important of how you actually interact with lightning.
 And I think, you know, I sort of, I stopped going to meetups over COVID.
-So I sort of, when I reemerged, I kept hearing people talk about LSPs, but that really wasn't a thing in, you know, early 2020.
-Like now that is a way to describe how to interact with lightning.
+So I sort of, when I reemerged, I kept hearing people talk about LSPs, but that really wasn't a thing in, early 2020.
+Like now that is a way to describe how to interact with Lightning.
 But that term wasn't being used all that much in late 2019.
 
 Speaker 0: 00:23:49
