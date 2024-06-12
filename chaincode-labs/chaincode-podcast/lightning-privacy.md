@@ -445,7 +445,7 @@ I just wanted to take a step back and mention the point that you mentioned about
 But I would say that my concern would be the opposite.
 What if large nodes set very low fees and check the majority of payments and with their economic power and their quasi-monopoly or oligopoly status, they track the majority of payments and then it would become much easier for them to collude in the anonymized users or censor and ban users that they don't like, something of that nature.
 I think this is something that we should be thinking about and protecting against.
-And while, of course, the protocol is open and the implementations are open source, And of course, technically, you can establish a channel to whoever you want.
+And while, of course, the protocol is open and the implementations are open source, and of course, technically, you can establish a channel to whoever you want.
 But the question is, how practical would it be?
 And if most of the liquidity will be locked up in huge LSPs, of course, you could probably route $10 or $100 through your friends.
 But if you want to route $1,000, it may not be possible, or it would cost many failed payment attempts or something like that.
