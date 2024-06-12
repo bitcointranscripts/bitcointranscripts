@@ -381,7 +381,7 @@ But that term wasn't being used all that much in late 2019.
 
 Speaker 0: 00:23:49
 
-I mean, I think whatever term we use, the network is getting more centralized, or at least it was quite centralized from the beginning, as multiple research papers show the graph coefficients that show the distribution of nodes by their connectivity or by the amount of funds that they hold, the distribution is very uneven.
+I think whatever term we use, the network is getting more centralized, or at least it was quite centralized from the beginning, as multiple research papers show the graph coefficients that show the distribution of nodes by their connectivity or by the amount of funds that they hold, the distribution is very uneven.
 A very small fraction of nodes actually hold most of the value and are on the paths between the majority of like potential pairs of senders and receivers.
 And this is, I mean, we may not like it.
 We may have preferred kind of mesh-like topology, everyone connecting to their neighbors or something like that.
@@ -398,16 +398,12 @@ But can't you both have the idea of this hub-and-spoke topology for people that 
 
 Speaker 3: 00:25:25
 
-Yeah, that's sort of the thing that makes me excited about Lightning Network is, While there is participants that have invariably a higher balance and more nodes that they're connected with, if they start charging too much fees, the network will route around them because It's a peer-to-peer network where there is no power levels or anything like that.
-Where everybody...
+Yeah, that's sort of the thing that makes me excited about Lightning network is, while there is participants that have invariably a higher balance and more nodes that they're connected with, if they start charging too much fees, the network will route around them because It's a peer-to-peer network where there is no power levels or anything like that.
 A scale-free network.
 
 Speaker 2: 00:25:53
 
 There's some power levels because Ellen Big had his...
-Had his...
-Her...
-His...
 I don't know.
 Their booth in El Salvador is just an Ellen Big booth.
 I don't really understand what it was advertising.
