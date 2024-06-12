@@ -463,7 +463,7 @@ Speaker 0: 00:28:36
 So returning to the probing, so if we agree that probing is a problem, the focus of our paper was the following.
 So from the point of view of the attacker, okay, the basic construction has already been described in prior papers and it works well and it has been shown to work, but one complication that lightning topology may present for the attacker is the so-called parallel channels.
 So the lightning protocol allows two nodes to share multiple channels between them, each with its own capacity, each with its own balance.
-And If the attacker wants to know what balance all these individual channels contain, it is, strictly speaking, not possible with the method I described earlier.
+If the attacker wants to know what balance all these individual channels contain, it is, strictly speaking, not possible with the method I described earlier.
 Because when the probe is being routed through this multi-channel hop, the node, like the first node on the path, is free to choose any of the parallel channels, whichever has enough balance to forward the probe.
 So when the probe returns to the attacker, or rather when the result returns to the attacker, the error happened at the receiver or the error happened previously.
 It is not clear which channel was that.
@@ -489,8 +489,6 @@ So long story short, for three channel hops, four channel hops, five channel hop
 
 ## Combining probing with jamming
 
-Speaker 0: 00:33:00
-
 But we suggest a way to fix it for the attacker, namely to combine the probing attack with another attack that also has been known, it just hasn't ever been combined with probing.
 And the second attack is called jamming.
 I should probably explain what jamming is shortly.
@@ -512,22 +510,18 @@ But if I didn't try to cheat, this is my money, I can take it on chain anytime.
 And to make it happen, the transaction that encodes the current state of the channel must be below some limit in terms of buys, so that it fits into the Bitcoin consensus rules or policy rules, propagation rules, and so on.
 It must be standard in other way.
 And this limits the number of outputs that such transaction might have.
-Therefore, it limits the number of so-called hanging HTLCs or in-flight HTLCs that the Lightning Channel can have at any one time.
+Therefore, it limits the number of so-called hanging HTLCs or in-flight HTLCs that the Lightning channel can have at any one time.
 And there is only, I'm not sure I remember the exact number, but on the order of 500 something or 400 something...
 
 ## The limit on in-flight payments
 
-Speaker 0: 00:36:03
 
-— 463?
-— 483.
-— 883?
-— 483 in-flight payments.
+ 483 in-flight payments.
 
 Speaker 3: 00:36:10
 
-— Is that really limited because of the standardness of transactions?
-Because transactions are standard up to 100,000 Vbytes, So 483 outputs shouldn't be that large.
+Is that really limited because of the standardness of transactions?
+Because transactions are standard up to 100,000 Vbytes. So 483 outputs shouldn't be that large.
 
 Speaker 0: 00:36:22
 
@@ -536,7 +530,7 @@ Because I think I read this Bitcoin Stack Exchange answer that explained it this
 
 Speaker 2: 00:36:31
 
-Did Merge write the answer?
+Did Mark write the answer?
 
 Speaker 0: 00:36:32
 
@@ -548,7 +542,7 @@ Probably not.
 Most of the lightning stuff was written by Rene.
 Okay, so you have a limit of how many HTLCs you can have open per channel.
 I think it's more of a sanity limit than an actual standardness limit.
-And if you can fill up that whole limit, you can...
+And if you can fill up that whole limit.
 Yeah, what can you do then?
 
 Speaker 0: 00:36:58
@@ -561,7 +555,7 @@ And this allows the attacker to overcome this dimensionality issue and by probin
 
 Speaker 3: 00:37:50
 
-All right, so your paper describes how you can still find out the balance of the two participants even if they have multiple channels between each other and you do it by jamming the remaining channels and then probing and one of the channels for the exact balance and then moving through the channels accordingly to jam and all the others and measure the one that that's there.
+All right, so your paper describes how you can still find out the balance of the two participants even if they have multiple channels between each other and you do it by jamming the remaining channels and then probing one of the channels for the exact balance and then moving through the channels accordingly to jam and all the others and measure the one that that's there.
 So there's been this question that's been at the back of my mind listening to your explanation.
 What would happen if every Lightning participant wouldn't allow you to route the full amount of the channel, but basically only ever allow up to the next discrete amount available in their channel.
 To make it simple, you make 10%, 20%, 30% and so forth, just 10% steps.
@@ -573,7 +567,7 @@ Speaker 0: 00:39:12
 
 Yeah, that's a good idea.
 Basically, I think that can be a countermeasure.
-So the nodes, okay, so I would agree that the probing attack, at least as we have it in our model, and as far as I'm aware, other papers have this as well.
+I would agree that the probing attack, at least as we have it in our model, and as far as I'm aware, other papers have this as well.
 So they assume that if the forwarding node can forward this balance, then it will forward this balance.
 Modular fees, like you can try to account for fees, but basically, if technically I can forward this, I will forward this.
 A potential countermeasure indeed could be that I will reject some of the payments that technically I could have forwarded.
@@ -581,24 +575,22 @@ Yeah, I mean, that could work, but of course it has its own trade-offs, right?
 Because if I'm a commercial routing node, it means that I will reject some of the potential revenue from these payments.
 And also if the attacker knows which exact pattern does the victim apply, like this rule about 51% to 59% or 50% something like that, then the prober also can, can factor this in into the calculations and extract some information.
 But I mean, I don't have a direct answer.
-I mean,
 
 Speaker 2: 00:40:24
 
-that's to the detriment of the network, right?
+That's to the detriment of the network, right?
 
 Speaker 3: 00:40:27
 
 I mean, it reduces the forwarding capacity, but it gets rid of...
 So one other thing that comes to mind is probing has a legitimate and a mischievous use.
-So legitimate use is you know you are gonna route a payment in a moment and you start probing already whether you can find a path that will support your payment and then once you actually get the instruction to make the payment you execute on your already refreshed information and improve your user experience.
+So legitimate use is you know you are going to route a payment in a moment and you start probing already whether you can find a path that will support your payment and then once you actually get the instruction to make the payment you execute on your already refreshed information and improve your user experience.
 Maybe people or users configure their nodes to do this regularly with routes that they use a lot or whatever.
 So they keep an up-to-date view of what paths they can use.
 That seems like a legitimate use.
 
 ## Bad and good probing
 
-Speaker 3: 00:41:19
 
 I'm wondering whether if everybody did that, that would lock up a lot of capacity in the network already and reduce the routing capacity for others.
 But The mischievous use would be, of course, to try to reduce the financial privacy of everyone and to learn the exact balances of channels and to perhaps even pinpoint who pays whom.
