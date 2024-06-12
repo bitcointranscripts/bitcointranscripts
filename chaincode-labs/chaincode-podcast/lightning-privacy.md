@@ -403,11 +403,11 @@ A scale-free network.
 
 Speaker 2: 00:25:53
 
-There's some power levels because Ellen Big had his...
+There's some power levels because LNBIG had his...
 I don't know.
-Their booth in El Salvador is just an Ellen Big booth.
+Their booth in El Salvador is just an LNBIG booth.
 I don't really understand what it was advertising.
-But when I went to adopting Bitcoin in November, there was just a booth for Ellen Big.
+But when I went to adopting Bitcoin in November, there was just a booth for LNBIG.
 
 Speaker 0: 00:26:16
 
@@ -416,9 +416,8 @@ With no one behind the booth because they're anonymous.
 Speaker 2: 00:26:18
 
 I didn't I didn't see anybody there.
-But it was like there was a banner and it was just it's an for for context.
-Ellen big is a huge market maker.
-Yeah, market maker on lightning.
+But it was like there was a banner and it was just for context.
+Yeah, market maker on Lightning.
 
 Speaker 0: 00:26:30
 
@@ -433,7 +432,7 @@ Speaker 3: 00:26:39
 
 They basically just got really rich through Bitcoin, presumably, and wanted to give back.
 And we're really excited early on already about the Lightning Network, from what I gather.
-And for a while when you started a Lightning Node, they'd just open a channel to you to give you inbound capacity of like significant amounts.
+And for a while when you started a Lightning node, they'd just open a channel to you to give you inbound capacity of like significant amounts.
 They changed their behavior since because so many of their channels remained unused.
 They've gotten a little more selective.
 But yeah, they still have a huge portion of the capacity on the network.
