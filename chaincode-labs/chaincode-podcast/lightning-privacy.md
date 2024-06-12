@@ -617,7 +617,7 @@ This long we are saying that a future that I want to avoid for Lightning would b
 To open a channel to a large node, you have to prove who you are.
 And the nodes have a very valid justification for that.
 They would say, okay, if you don't, if you don't denonymize yourself up front, then you could attack us, or you can forward some probes or jams or whatever malicious traffic through your node.
-And because of the onion routing, we don't know whether it's you, whether it's someone else.
+And because of the on routing, we don't know whether it's you, whether it's someone else.
 So please be responsible for the traffic that goes through you.
 And we only want to open connections to trusted peers.
 
@@ -643,15 +643,15 @@ Uptime, number of channels, total downloads.
 
 Speaker 0: 00:46:12
 
-Yeah, but I mean, I think there is some kind of distinction between such metrics and something connected to my human identity or some corporate entity that I might establish.
+I think there is some kind of distinction between such metrics and something connected to my human identity or some corporate entity that I might establish.
 So in terms of the metrics, everything I have to do to become a good citizen by these metrics is just run a node reliably and forward payments and follow the protocol and it's just my regular activity as opposed to disclosing some information that, I don't know, that I cannot withdraw that is not strictly within the bounds of the protocol, that links my protocol behavior to my behavior somewhere outside of the protocol.
 
 Speaker 2: 00:46:54
 
 Yeah, but you had already talked about sort of this bias towards hub-and-spoke topology.
 And so that's going to lend itself to it being less decentralized and less trustless.
-So if that's our future, it's for those that are, that care about privacy, trustlessness, decentralization, then that may not be the kind of network you wanna participate in, which is sort of going back to my previous point of, can't we, is there not a world of both?
-Is there not a world of, you know, the public nodes bootstrapping you and getting you to where you need to go in terms of channel connections, but also the world of private connections that maybe is less convenient.
+So if that's our future, it's for those that care about privacy, trustlessness, decentralization, then that may not be the kind of network you want to participate in, which is sort of going back to my previous point of, is there not a world of both?
+Is there not a world of, the public nodes bootstrapping you and getting you to where you need to go in terms of channel connections, but also the world of private connections that maybe is less convenient.
 
 Speaker 0: 00:47:47
 
@@ -677,7 +677,6 @@ Yeah, for example, with multi-hub and PTLCs, you can have different relationship
 
 ## Hub-and-spoke terminology and aviation analogy
 
-Speaker 3: 00:49:01
 
 So I think even if we have, say, a superhighway in the center that is composed of a few supernodes, I don't like hub too much.
 Supernode in the sense that a node has a huge balance and a lot of connections.
@@ -741,12 +740,12 @@ Speaker 3: 00:51:04
 
 No, no, no, fine.
 So one thing we're seeing a little bit already, at least my understanding is that some of the hubs are already limiting channels to have a minimum size so that some users just cannot open channels to hubs because they don't want to tie up that much funds.
-And what we see is that People sort of get a multi-level hierarchy now, where there's a medium tier of hubs that connect to the actual hubs, so to speak.
-And now they sort of guarantee that the traffic there, their routing is good.
-But these sub networks, I think, that are created that way, they may well just, If they become important enough, take the role of an actual hub or route around the actual hubs if there's some deficiencies there.
+And what we see is that people sort of get a multi-level hierarchy now, where there's a medium tier of hubs that connect to the actual hubs, so to speak.
+And now they sort of guarantee that the traffic their routing is good.
+But these sub networks, I think, that are created that way. If they become important enough, take the role of an actual hub or route around the actual hubs if there's some deficiencies there.
 And so inherently it is a scale-free network that is self-healing if there's any shenanigans.
-And if we look around how sentiment can be driven by narratives, I think Also that hubs that, for example, obviously get sponsored in order to sell information and things like that would just not get routed through.
-And maybe to a degree, lightning could be self-mending.
+And if we look around how sentiment can be driven by narratives, I think also that hubs that, for example, obviously get sponsored in order to sell information and things like that would just not get routed through.
+And maybe to a degree, Lightning could be self-mending.
 
 Speaker 0: 00:52:48
 
@@ -764,7 +763,7 @@ Exactly.
 
 Speaker 2: 00:53:00
 
-To Tell us how the future will look.
+To tell us how the future will look.
 
 Speaker 3: 00:53:02
 
@@ -792,14 +791,13 @@ Try to invent some metrics, try to come up with some specific questions, what yo
 And in particular in the Lightning and Bitcoin world, I think this is a very interesting and very promising research subject.
 So if any of the researchers, including academic researchers, of course, and the universities listening to this podcast.
 Please contact me if you don't know where to start and you want to do Bitcoin research.
-I think this is a very nice topic because, First of all, it's an intersection of multiple fields.
+I think this is a very nice topic because, first of all, it's an intersection of multiple fields.
 And whether you are a cryptographer, a mathematician, a computer scientist, or economist, of course, someone closer to financial sciences and more of a social science, the social dynamics are also fascinating.
 Bitcoin can offer you everything and everything is intersected and influences like different various parts of the ecosystem influence each other in fascinating ways.
 If we focus more on the computer science side of things, and in particular security and privacy side of things that I have been focused on during the past years, this is fascinating because we have this permissionless network launched by some pseudonymous person.
 
 ## Why Bitcoin is unique
 
-Speaker 0: 00:55:18
 
 No one knows who that is and where they are now.
 And now it's evolving as a living organism and it just blows my mind.
