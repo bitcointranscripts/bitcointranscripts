@@ -808,10 +808,10 @@ Because this is a big reason why I'm focused on Bitcoin.
 This is what makes Bitcoin unique.
 Chaincode, as you might know, of course, is Bitcoin-only and Bitcoin-focused organization.
 I'm not strictly a Bitcoin maximalist.
-I also have my interest outside of this space, outside of the Bitcoin space, in other like blockchain stuff.
+I also have my interest outside of the Bitcoin space, in other like blockchain stuff.
 But Bitcoin is absolutely unique in that it has a very clear mission.
 It has a very clear vision.
-We want to implement basically digitally native money that is apolitical, that doesn't depend on any subjective decisions of any particular person or group of people.
+We want to implement basically digitally native money that is a political, that doesn't depend on any subjective decisions of any particular person or group of people.
 And I think this mission is important.
 I think Bitcoin has a very high chance of achieving it, at least to a large extent.
 And this is what makes me excited and what makes me want to work on.
@@ -848,7 +848,10 @@ Speaker 2: 00:59:12
 Or better yet, you can just be Sipa and just do both.
 Talk to yourself.
 Be fine.
-Thank you for joining us, Sergey, and excited to have you on the podcast here and have you at Jain Code.
+
+Speaker 1: 00:59:15
+
+Thank you for joining us, Sergey, and excited to have you on the podcast here and have you at Chaincode.
 
 Speaker 0: 00:59:24
 
