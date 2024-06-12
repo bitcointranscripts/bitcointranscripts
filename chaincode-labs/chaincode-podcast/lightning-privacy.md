@@ -594,8 +594,8 @@ That seems like a legitimate use.
 
 I'm wondering whether if everybody did that, that would lock up a lot of capacity in the network already and reduce the routing capacity for others.
 But The mischievous use would be, of course, to try to reduce the financial privacy of everyone and to learn the exact balances of channels and to perhaps even pinpoint who pays whom.
-And that certainly would require an amount of probing that if, say, there's multiple different actors that try to probe the whole lightning network, it would just result in a cacophony of failing payments.
-So if we actually discretize our response to this, sure, we limit how much can be routed through us, but we might actually reduce the amount of probing that goes on and therefore make all the noise that comes with people trying to observe us much less and make lightning more useful.
+And that certainly would require an amount of probing that if, say, there's multiple different actors that try to probe the whole Lightning network, it would just result in a cacophony of failing payments.
+So if we actually discretize our response to this, sure, we limit how much can be routed through us, but we might actually reduce the amount of probing that goes on and therefore make all the noise that comes with people trying to observe us much less and make Llightning more useful.
 So here's my counter.
 
 Speaker 0: 00:42:26
@@ -604,7 +604,7 @@ I mean, it's kind of tricky when we're talking about peer-to-peer network.
 I think in terms of we can do this or we can do that, we should always remember that this is a network of independent actors who pursue their own interests as they see them.
 It may be purely commercial interests, it may be some malicious interests, or it may be some altruistic behavior.
 We don't know.
-But what I would say is that the situation when people think they have the privacy, but they can be easily probed, This is undesirable.
+But what I would say is that the situation when people think they have the privacy, but they can be easily probed, this is undesirable.
 And we can kind of separate it into two scenarios for the cases that I want to reveal my, disclose my balance, reveal my privacy, or refuse to have privacy for the sake of reliability versus having as much privacy as possible.
 On the other hand, as long as the protocol becomes permissionless, anyone can send payments, right?
 And as long as the hash function is not broken and we cannot distinguish between a random number and a hash of some value, the forwarding nodes cannot distinguish between probes and honest payments.
@@ -613,7 +613,7 @@ And probing or some other activity that involves sending deliberately incorrect 
 However, one potential countermeasure, not directly against probing, but against just unwanted activity in general that has also been discussed, are think, I mean, there are multiple proposals that are often discussed in the context of anti-jamming countermeasures.
 But if we make a point that jams and probes are just two subtypes of the type of unwanted traffic on the Lightning Network, we can say that anti-jamming countermeasures may mitigate probing to some extent as well.
 And I'm talking about things like upfront payments or things like some kind of reputation-ish systems, which is a dangerous path, I agree, but whatever we think of that, it may merge organically, and maybe we should think about that and how to make it less bad than it would be otherwise.
-Just, I mean, this long we are saying that a future that I want to avoid for Lightning would be that everything is K by seed, everything is like...
+This long we are saying that a future that I want to avoid for Lightning would be that everything is KYC, everything is like...
 To open a channel to a large node, you have to prove who you are.
 And the nodes have a very valid justification for that.
 They would say, okay, if you don't, if you don't denonymize yourself up front, then you could attack us, or you can forward some probes or jams or whatever malicious traffic through your node.
