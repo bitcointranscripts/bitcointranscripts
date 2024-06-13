@@ -1,8 +1,8 @@
 ---
-title: "Lightning on `Taproot`"
+title: "Lightning on Taproot"
 transcript_by: Dayvvo via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=E_z4hjvVzoQ
-tags: ["lightning","`taproot`"]
+tags: ["lightning","taproot"]
 speakers: ["Arik Sosman"]
 categories: ["conference"]
 date: 2023-07-18
@@ -11,24 +11,24 @@ date: 2023-07-18
 
 Hi my name is Arik.
 I work at Spiral.
-And most recently I've been working on adding support for `taproot` channels.
+And most recently I've been working on adding support for taproot channels.
 At least I try to work on that, but I'm getting pulled back into Swift bindings.
-And this presentation is supposed to be about why the `taproot` spec is laid out the way it is.
+And this presentation is supposed to be about why the taproot spec is laid out the way it is.
 And what are some of the motivations, constraints, limitations that are driving the design.
 And I wanna really dig deep into the math that's some of the vulnerabilities that we're trying to avoid as well as how we're solving those issues.
 
 ## Motivation
 
-So first of all, obviously we know that `Taproot` has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on `Taproot`.
+So first of all, obviously we know that taproot has not been active for a while, but why are we actually bothering with modifying the way that lightning channels are opened such that we can have lightning channels operate on taproot.
 I guess I should have asked this question before showing this slide, but let me just go back and see if the audience has any suggestions they want to volunteer.
 
 ### Better Privacy
 
 So the biggest reason, of course, is that we have privacy improvements.
-At least assuming that eventually everybody is going to be using Pay to `Taproot` addresses.
-As ``Taproot` is segwit v1.
+At least assuming that eventually everybody is going to be using Pay to taproot addresses.
+As taproot is segwit v1.
 Segwit was segwit v0, that was our new soft fork mechanism.
-If at some point we decide that we need segwit v2, then all of the old lightning `Taproot` channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
+If at some point we decide that we need segwit v2, then all of the old lightning taproot channels that aren't human supported yet, that are going to be using SegWit v1, are going to lose their privacy status and they're going to once again start sticking out like a sore thumb.
 We are also able to improve privacy by decorrelating payments.
 That is PTLCs, and that is a privacy benefit that is actually going to persist even if we have a SegWit V2 or V3, because they are the primary issues that we have with HTLCs right now that if we were to have multiple channels that have the same in-flight HTLC go on-chain, then that hash would be correlatable and we would be able to link the payment chain, link one channel to the other.
 
@@ -36,12 +36,12 @@ That is PTLCs, and that is a privacy benefit that is actually going to persist e
 
 There are hopefully also some security improvements such as threshold signatures, but it's still very much a research phase.
 Mostly I think the greatest benefit really is privacy.
-There is also something to be said about the fact that with the way that `Taproot` works and the way that Lightning requires a bunch of different spend paths, with `taproot` taptrees we are able to make a bunch of those spend paths much cheaper, and we are also able to not reveal the ones that are being unused.
+There is also something to be said about the fact that with the way that taproot works and the way that Lightning requires a bunch of different spend paths, with taproot taptrees we are able to make a bunch of those spend paths much cheaper, and we are also able to not reveal the ones that are being unused.
 
 So it's also a bit of a cost reduction there, which will save us some fees.
 But first of all, why do we have better privacy?
 The primary reason that we have better privacy is because right now, Lightning channels on chain have a signature of a 2 of 2 multisig.
-The big improvement, or one of the two big improvements that `Taproot` brings is Schnorr signatures.
+The big improvement, or one of the two big improvements that taproot brings is Schnorr signatures.
 And the cool thing about Schnorr signatures is that they allow us to have quite trivial `n` of `n` signatures that still look like they are single Sig.
 
 So nobody monitoring the chain would know that channel open is actually a channel open because it would be theoretically indistinguishable from just regular transaction to a single key.
@@ -97,9 +97,9 @@ However, obviously we need to mitigate these attacks.
 
 ### MUSIG2 TO THE RESUCE
 
-So `Musig2` comes to the rescue.
-I'm sure all of you have heard about `Musig2` many times.
-And essentially, the main thing that `Musig2` does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
+So MuSig2 comes to the rescue.
+I'm sure all of you have heard about MuSig2 many times.
+And essentially, the main thing that MuSig2 does, it's like the same approach that eliminates the attack vector for both the naive key aggregation and the nonce reuse, is it introduces coefficients.
 
 And those coefficients are deterministic.
 They are based on just hashing some of the data, and each participant hashes slightly different data.
@@ -107,7 +107,7 @@ And that results in not being able to execute such targeted hacks, because if yo
 So that's what MuSig does.
 
 And specifically, let's dig into the math because it's actually not too complicated, at least with the key side here.
-The way `MuSig` works is we have these coefficients that are applied to each public key.
+The way MuSig works is we have these coefficients that are applied to each public key.
 So maybe if we start, if we work our way from the bottom up, all right.
 So if you see at the end, the resulting public key that we end up with is ultimately just the first public key multiplied with a coefficient, and the second public key multiplied with a different coefficient, the coefficient being C1 and C2.
 So really the interesting aspect here is how are these coefficients calculated?
@@ -122,7 +122,7 @@ And then, say if you're Alice and your pub key also comes first, so your index i
 If Alice's index is 1, then she simply takes her own pubkey, concatenates it with a hash of the sequence of all the pubkeys, which in this case would be first hers, then Bob's.
 That thing is hashed, and that hash is concatenated with her own pubkey, then we hash that again, and so, because of elliptic curve photography, we can simply interpret hashes as big integers, we take that hash, we take that hash and simply use that as a big integer that is a coefficient for her public key.
 
-Now, if you have been reading the `MuSig2` protocol, then you will know that this is not actually true, because we have an exception for the second index.
+Now, if you have been reading the MuSig2 protocol, then you will know that this is not actually true, because we have an exception for the second index.
 But in the grand scheme of things, it doesn't really matter.
 So I think for understanding what problem MuSig solves and how it does that, this is kind of deep enough.
 So I hope I haven't confused anybody yet?
@@ -138,13 +138,13 @@ Yeah?
 
 You could fool people into non-reuse, yeah.
 That is one thing.
-And you could also construct a nonce adversarily in such a way that you would then be able to unilaterally create a signature with `MuSig2`.
+And you could also construct a nonce adversarily in such a way that you would then be able to unilaterally create a signature with MuSig2.
 So it's really pretty much the same thing.
 
 And with Nonces, the protocol is a little more complicated.
-But I really still want to go through it, because one of the innovations with `MuSig2` is how this protocol can work with just one round trip as opposed to multiple round trips that we had with regular `MuSig`
+But I really still want to go through it, because one of the innovations with MuSig2 is how this protocol can work with just one round trip as opposed to multiple round trips that we had with regular MuSig
 So the way this works is as follows.
-Each participant generates not one lowercase r that we had here Yeah, but they generate two So a `MuSig2` nonce is actually not one nonce, but it is two nonces.
+Each participant generates not one lowercase r that we had here Yeah, but they generate two So a MuSig2 nonce is actually not one nonce, but it is two nonces.
 Let me get back here.
 
 So then both of these nonces are then sent to the other participants, and what then happens is that we calculate a hash that we then use as a coefficient, and that coefficient is applied only to the second nonce.
@@ -158,7 +158,7 @@ And the coefficient we're using is actually the sum of the nonces with index 1, 
 So it's just a matter of aggregating all of those partial signatures with those nonces.
 But the cool innovation with MuSig is the fact that each participant sends two nonces at once, and that we then aggregate the nonces by their index across all the participants.
 
-However, even in `MuSig2`, you would think, now we have this thing where we are calculating coefficient. So really, `MuSig2` is guaranteeing that there should be no nonce reuse.
+However, even in MuSig2, you would think, now we have this thing where we are calculating coefficient. So really, MuSig2 is guaranteeing that there should be no nonce reuse.
 What happens if one of the participants were to reuse their original nonce, or their original nonce pair, across multiple partial signatures?
 So here I have simplified the equation a little bit, because really what we would get is, this expression at first, the hash multiplied with a private key, plus, in principle, it ought to be C' , which times rA, and then plus rB, because we have those two.
 But for the purposes of mathematical simplification, we're going to ignore the one that doesn't have a coefficient, because I think the coefficient one is more interesting.
@@ -172,7 +172,7 @@ So why do we care about this?
 That is because we don't really trust our counterparty.
 Because in a multi-state setup, we don't really worry about the rest of the world attacking us and knowing what our private key is.
 We also really want to make sure that each one of the participants in a multi-signature cannot know what the other participant's private key is either.
-Because as soon as they do, we have lost the whole benefit of having a multi-sig setup.So now that we know that these are the steps that we need to do in order to avoid the pitfalls with Schnorr.We need to use `MuSig2`.
+Because as soon as they do, we have lost the whole benefit of having a multi-sig setup.So now that we know that these are the steps that we need to do in order to avoid the pitfalls with Schnorr.We need to use MuSig2.
 
 How then do we transcript to actually creating and signing Lightning commitments?
 And before we'll dig into that, we need to first consider what the properties of Lightning commitments are.
@@ -201,7 +201,7 @@ And the way it works is when Alice opens a channel, she doesn't even bother in t
 
 So why generate any sort of cryptographic material if you're never going to end up using it.
 So if Bob Huber does opt to open a channel with Alice and accept it, then he can generate a local nonce pair for himself.
-And he then sends his own local nonce, which is still a pair, we have to remember that now even though it's called a nonce, it's still a nonce pair because of the whole `MuSig2` thing.
+And he then sends his own local nonce, which is still a pair, we have to remember that now even though it's called a nonce, it's still a nonce pair because of the whole MuSig2 thing.
 So he generates this local nonce pair and sends it to Alice.
 
 Now Alice knows what nonce of Bob she needs to combine her remote one with.
@@ -224,15 +224,15 @@ One thing I will note is if you think that your node setup is such that you will
 However, it is something that is very hard to guarantee, so for the purpose of safety, please ignore I said that.
 Well, we have pretty much covered the thing that Hackroot enables with the nonce communication.
 Even though on-chain the footprint is smaller, with the nonces we do have this additional headache that all of you who are implementing Lightning protocols are going to have to be cognizant of.
-But that is not the only thing that `taproot` does.
+But that is not the only thing that taproot does.
 
-`Taproot` also, as I have alluded to earlier, allows us to have half trees, where instead of having just one massive, dare I say, inscrutable script, especially with all this up-if, up-else nesting, we can very cleanly divide the spend paths into their separate tap branches.
+taproot also, as I have alluded to earlier, allows us to have half trees, where instead of having just one massive, dare I say, inscrutable script, especially with all this up-if, up-else nesting, we can very cleanly divide the spend paths into their separate tap branches.
 And one of them just happens to be so trivial that we don't even need a script spend for it.
 We can just use the keyspend path.
 
 So with our vacation pubkey, or with our vacation key, we can sign and spend a transaction lightning immediately.
 Because it's unencumbered by any sort of check sequence, verify or delays, that is the obvious candidate that is going to end up as the key spend path.
-So In `Taproot`, the cheapest way to spend a commitment transaction is going to be using their vacation fee.
+So In taproot, the cheapest way to spend a commitment transaction is going to be using their vacation fee.
 With the ScriptSend path, for the regular local output, it just has a self-delay.
 We don't really need any other scripts that has other than the one that has this to self delay.
 
@@ -260,30 +260,30 @@ But, no idea.
 It's still kind of up in the air.
 And I do hope that maybe some of you will also add your input to it on the spec discussion.
 
-So this is a situation where we weren't able to provide the pre-imaged time, and so the original person that offered the HTLC wants to spend it again because it never went through and there we have quite trivial one-to-one matching of what the script looked like before `taproot` and what it's going to look like after `taproot`.
+So this is a situation where we weren't able to provide the pre-imaged time, and so the original person that offered the HTLC wants to spend it again because it never went through and there we have quite trivial one-to-one matching of what the script looked like before taproot and what it's going to look like after taproot.
 So nothing really all that complicated to dig into there.
 
-And I really think that the script path spends are not the difficult part of `taproot`.
+And I really think that the script path spends are not the difficult part of taproot.
 It's really going to be understanding and making sure that the cryptography is sound and safe.
-Now if you have a `taproot` channel open and there are some other nodes in the network, then in principle What do you think?
-Are those other nodes able to send a payment if they don't support `taproot` through a channel somewhere in the middle of the route that is a `Taproot` channel, or should they not be?
+Now if you have a taproot channel open and there are some other nodes in the network, then in principle What do you think?
+Are those other nodes able to send a payment if they don't support taproot through a channel somewhere in the middle of the route that is a taproot channel, or should they not be?
 
 [Audience]: "Should be able to".
 
 In fact, cryptographically speaking, there isn't really anything preventing them from being able to do so, right?
-Well, here's the thing about `Taproot`, though.
-The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with `taproot` channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support `taproot`, in order to so much as be aware of the fact that there are `taproot` channels out there available for routing, they will need to understand `taproot` gossip before they even support actual `taproot` channels themselves.
+Well, here's the thing about taproot, though.
+The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with taproot channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support taproot, in order to so much as be aware of the fact that there are taproot channels out there available for routing, they will need to understand taproot gossip before they even support actual taproot channels themselves.
 So this is one of the issues that has to be discussed.
 
-Now, L has a proposal up which says that for `taproot` gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one.
+Now, L has a proposal up which says that for taproot gossip, you have the possibility of combining and aggregating a signature across both the on-chain Bitcoin keys and the off-chain node public keys into one.
 So you reduce the footprint of the gossip signature by a considerable amount.
 It's just, you have to actually do that aggregation, so it will add a little extra communication that is going to be necessary between nodes just as they are opening the channel.
-And you also need to make sure that nodes understand what this gossip is supposed to look like even before they necessarily support `taproot`.
+And you also need to make sure that nodes understand what this gossip is supposed to look like even before they necessarily support taproot.
 
-So that is unfortunately one of the drawbacks of `taproot`, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on `taproot`.
-So just going back to the beginning, so far we have talked about in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use `MuSig2` for key aggregation and non-key aggregation, as well as now, because we're using `taproot` and therefore we need to use tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like.
+So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot.
+So just going back to the beginning, so far we have talked about in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as now, because we're using taproot and therefore we need to use tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like.
 So it's quite a dependency tree, and I hope it gave you a little bit of an overview of what the constraints and design decisions and the vulnerabilities are that are driving the spec and why it is the way it is.
-However, there is some really cool stuff that `taproot` enables that I also want to dig into, and that is PTLCS.
+However, there is some really cool stuff that taproot enables that I also want to dig into, and that is PTLCS.
 PTLCs are also going to be driven by a bunch of very similar considerations.
 But before I move on to PTLCs, I was wondering if anybody had any questions so far.
 
@@ -368,7 +368,7 @@ You can see that each hop has a completely random PTLC value.
 
 Now the magic is, how do we design a system where we are able to extract the secret?
 Where the proceeding hop, just based on the signature, is able to know; okay, this is how they are able to create a valid signature for the other hop that came before that.
-This is where `adaptor signatures` come in.
+This is where adaptor signatures come in.
 There's always a lot of talk about adapter signatures, but I think I'll leave it.
 I think it's helpful to just talk a little bit about how precisely they work.
 
@@ -385,8 +385,8 @@ And she wants to make sure that they come up with an adapter signature that is i
 Because initially, if we look at this slide, this PTLC, We need an adapter signature for it, which means we need some sort of signature that is not correct, but that is gonna be correct once the right value comes in.
 So how precisely, how do we do it, and what is that adaptor signature gonna look like?
 
-So we then decide that Carol and Dave do a `MuSig2` with one another, which is completely unrelated to their channel opening.
-It's a `MuSig2` just for this particular PTLC.
+So we then decide that Carol and Dave do a MuSig2 with one another, which is completely unrelated to their channel opening.
+It's a MuSig2 just for this particular PTLC.
 So Carol generates some random key and some random nonce pair, Dave generates some random key and some random nonce pair.
 Dave generates some random key and some random nonce pair, and they use that pair solely for this particular PTLC.
 
@@ -424,7 +424,7 @@ Because if, say, it were to be spent on-chain, because, I don't know, the channe
 
 In order to guarantee that the only way a valid signature is using this particular commitment and this particular tweak, rather not using this particular tweak or not using any tweak at all, is by making sure that neither party can unilaterally create a valid signature.
 
-Let's say if instead of using `MuSig2`, our PTLC basis for the adapter signature were offered by Carol.
+Let's say if instead of using MuSig2, our PTLC basis for the adapter signature were offered by Carol.
 So Carol just uses her own random public key when she sends a PTLC to Dave.
 Well, guess what?
 She doesn't have to wait for any sort of payment to go through.
@@ -434,7 +434,7 @@ Then Dave is off in the cold.
 Similarly, if Dave were to be able to unilaterally dictate which key were to be used for the PTLC, then Dave would be able to, when claiming his own incoming PTLC, do so on chain using a different key in such a way that Carol wouldn't be able to extract the tweak because, Dave would be using a different nonce, and then Carol is left out in the cold.
 
 So that is why we need to make sure that They both pre-agree on what the nonces are a priori, such that the only way there can ever be a valid adapter signature, or a valid de-adapted adapter signature, untweaked signature, is using the nonce and the public key that they pre-agreed agreed upon, such that the arithmetic always holds.But once you do that, well, you already know what happens once you do that, but what is the complication?What is the issue with that thing?The hint is right here.
-What is the issue with requiring that you have a `MuSig2` exchange for the whole PTLC stuff?
+What is the issue with requiring that you have a MuSig2 exchange for the whole PTLC stuff?
 
 [Audience]: "It's an extra round trip".
 
@@ -473,15 +473,15 @@ So one of the things that I was really excited about initially, still am to be q
 I was hoping to simplify the messaging a little bit to say, if we have this partial signature, the partial signature only ever contains the remote nonce because that is the only situation where it's relevant.
 
 So create a new message type that is partial signature with nonce such that the other party would immediately know what it is they're dealing with.
-And as they are processing and verifying the signature, the same blob would already contain the partial nonce that they need to verify the `Musig2` aggregation against.
+And as they are processing and verifying the signature, the same blob would already contain the partial nonce that they need to verify the MuSig2 aggregation against.
 And delay it to the point where it's needed, such that you do everything just in time and you do semantic aggregation so people understand the meaning and have an easier time following the protocol.
 But there has been some back and forth on that, and moving when messages are supposed to be back to the original and then splitting the partial signature nonce back into a partial signature and the nonce, where now you have to understand what the hell a remote nonce even means.
 
 Is it remote for the person sending it or is it remote for the recipient?
-It's a pain to read and understand this protocol because `MuSig2` is kind of annoying.
+It's a pain to read and understand this protocol because MuSig2 is kind of annoying.
 If we could make the stipulation that a local nonce is ever going to be used for a signature once, then of course the local nonce would only ever need to be exchanged once because we wouldn't have to worry about signature reuse, but that is not a stipulation that you can safely make.
 
-There's a ton of back and forth on the spec, and I just hope that one day soon, hopefully Q2, We will have an interrupt for the simple `taproot` channels Honestly, I don't even know whether it makes sense to work on that first and not on the gossip because as I was just saying earlier Gossip is actually more important But with the gossip you have this nested stuff and you have to do the aggregation where you are going to have extra round trips.
+There's a ton of back and forth on the spec, and I just hope that one day soon, hopefully Q2, We will have an interrupt for the simple taproot channels Honestly, I don't even know whether it makes sense to work on that first and not on the gossip because as I was just saying earlier Gossip is actually more important But with the gossip you have this nested stuff and you have to do the aggregation where you are going to have extra round trips.
 
 It's a lot of work and maybe honestly I should be asking you to not contribute to the spec because the fewer people are applying changes to it, the sooner we are able to get it merged.
 Yeah, just like, just hack it.
