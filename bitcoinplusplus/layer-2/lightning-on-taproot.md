@@ -9,7 +9,7 @@ date: 2023-07-18
 ---
 # Introduction
 
-[Arik]: Hi my name is Arik.
+Hi my name is Arik.
 I work at Spiral.
 And most recently I've been working on adding support for `taproot` channels.
 At least I try to work on that, but I'm getting pulled back into Swift bindings.
@@ -86,9 +86,9 @@ I wish this equation were written out more frequently because I think people und
 I mean you can write Python code in like two minutes.
 
 [Audience]: "That's how Sony got pawned, they were reusing nonces on all of their ECDSA signatures.
-It was the same nonce for all the signatures for all the Playstations."
+It was the same nonce for all the signatures for all the Playstations".
 
-[Arik]: Yeah, that is true.
+Yeah, that is true.
 I believe that was the PlayStation 3, right?
 Although for ECDSA signatures, so the thing about Schnorr is the math is so simple, it's just additional application.
 
@@ -132,11 +132,11 @@ And with nonces, we really do the same thing.And one might actually wonder, why,
 And actually, this is probably a good point where I should poll the audience.
 Any guesses as to why we care about nonce coefficients also?
 
-[Arik]: Yeah?
+Yeah?
 
-Question : You could fool people into nonce-reuse, right?
+[Audience]: "You could fool people into nonce-reuse, right?"
 
-[Arik]: You could fool people into non-reuse, yeah.
+You could fool people into non-reuse, yeah.
 That is one thing.
 And you could also construct a nonce adversarily in such a way that you would then be able to unilaterally create a signature with `MuSig2`.
 So it's really pretty much the same thing.
@@ -268,9 +268,9 @@ It's really going to be understanding and making sure that the cryptography is s
 Now if you have a `taproot` channel open and there are some other nodes in the network, then in principle What do you think?
 Are those other nodes able to send a payment if they don't support `taproot` through a channel somewhere in the middle of the route that is a `Taproot` channel, or should they not be?
 
-[Audience]: Should be able to.
+[Audience]: "Should be able to".
 
-[Arik]: In fact, cryptographically speaking, there isn't really anything preventing them from being able to do so, right?
+In fact, cryptographically speaking, there isn't really anything preventing them from being able to do so, right?
 Well, here's the thing about `Taproot`, though.
 The way that gossip works today, you have signatures that match on-chain outputs, and those on-chain outputs are signed using ECDSA, with `taproot` channels that wouldn't work because we now have Schnorr signatures, which means that even nodes that don't support `taproot`, in order to so much as be aware of the fact that there are `taproot` channels out there available for routing, they will need to understand `taproot` gossip before they even support actual `taproot` channels themselves.
 So this is one of the issues that has to be discussed.
@@ -287,11 +287,11 @@ However, there is some really cool stuff that `taproot` enables that I also want
 PTLCs are also going to be driven by a bunch of very similar considerations.
 But before I move on to PTLCs, I was wondering if anybody had any questions so far.
 
-[Arik]: Yes?
+Yes?
 
 [Question]: Does the fact that you have to explicitly announce the fact that you're on the gossip, does that get rid of any of the privacy issues, or any of the privacy methods that you get on-chain?
 
-[Arik]: Yeah.
+Yeah.
 So if you're monitoring the Gaussian from lightning, then you would know the particular output on-chain of course corresponds to the Lightning channel.
 And that is a privacy consideration that we're facing right now already.
 That is why there's talk about Gossip v2, which would essentially be only committing to a fraction of the money that you have put up.
@@ -320,7 +320,7 @@ With PTLCs, they wouldn't know because there is no correlation whatsoever.
 
 ### HOW TO PTLCS WORK
 
-[Arik]: So how do PTLCs work precisely?
+So how do PTLCs work precisely?
 Actually who here already knows how PTLCs work?
 All right, cool. I'm really glad that I'm finally able to actually bring up something that people here are not as familiar with.
 
@@ -404,23 +404,23 @@ So now the question of course is, I think you guys can figure it out, especially
 Why are we bothering with this MuSig complication here?
 Why do we have to have MuSig just to create an adapter signature that is tweaked damaged broken Whatever terminology when I use No, come on?
 
-[Answer]: The same reasons you don't want the nodes private key leaked, you don't want the payment point linked as well, if you're not using the same nonce, computations or anything.
+[Audience]: "The same reasons you don't want the nodes private key leaked, you don't want the payment point linked as well, if you're not using the same nonce, computations or anything".
 
-[Arik]: Not quite.
+Not quite.
 Just depending on that payment not to be there in general.
 What scenario are we trying to avoid?
 
-[Answer]: A payment being redeemed without it.
+[Audience]: "A payment being redeemed without it".
 
-[Arik]: Having gone through, yes.
+Having gone through, yes.
 All right, you know what?
 I'll just tell you.
 
-[Arik]: So one of the important things about this tweak thing is we want to guarantee that if there is a valid signature, it can only be the untweaked signature.
+So one of the important things about this tweak thing is we want to guarantee that if there is a valid signature, it can only be the untweaked signature.
 We must not have any valid signature for this message that is not exactly using this tweak from this nonce.
 Because, why is it so important for us?
 
-[Arik]: Because if, say, it were to be spent on-chain, because, I don't know, the channel had to close and it had to have a unilateral withdrawal, then we need to be able to extract the signature from on-chain and still be able to claim the PTLC that is incoming to us from our preceding hop.
+Because if, say, it were to be spent on-chain, because, I don't know, the channel had to close and it had to have a unilateral withdrawal, then we need to be able to extract the signature from on-chain and still be able to claim the PTLC that is incoming to us from our preceding hop.
 
 In order to guarantee that the only way a valid signature is using this particular commitment and this particular tweak, rather not using this particular tweak or not using any tweak at all, is by making sure that neither party can unilaterally create a valid signature.
 
@@ -436,9 +436,9 @@ Similarly, if Dave were to be able to unilaterally dictate which key were to be 
 So that is why we need to make sure that They both pre-agree on what the nonces are a priori, such that the only way there can ever be a valid adapter signature, or a valid de-adapted adapter signature, untweaked signature, is using the nonce and the public key that they pre-agreed agreed upon, such that the arithmetic always holds.But once you do that, well, you already know what happens once you do that, but what is the complication?What is the issue with that thing?The hint is right here.
 What is the issue with requiring that you have a `MuSig2` exchange for the whole PTLC stuff?
 
-[Audience]: It's an extra round trip.
+[Audience]: "It's an extra round trip".
 
-[Arik]: It's an extra round trip.
+It's an extra round trip.
 So now an HTLC round trip is 1.5 round trips.
 Here, that will become 2.5. So it's because you also have to have the commitment sign and then revoke an act, and you can also combine multiple messages in one TCP message.
 But it's an initial complication.
@@ -448,7 +448,7 @@ We are going to have to see whether it adversely affects scalability, but we'll 
 [Question]: Do the nonces need as an input the PTLC point transfer?
 Can you sort of pre-share, like here's the next 10 nonces and you can do pre-sharing.
 
-[Arik]: Well, you can always do pre-sharing, but then with pre-sharing, you have to figure out, okay, how many do you have to share, how frequently do you have to share?
+Well, you can always do pre-sharing, but then with pre-sharing, you have to figure out, okay, how many do you have to share, how frequently do you have to share?
 You're still moving the round trips.
 I guess you can do it slightly less frequently.It also depends on how frequent your payments are.
 If you have like a million payments per hour, that pre-sharing isn't going to be much good.
@@ -468,7 +468,7 @@ But I hope it was actually elucidating to some degree.
 I know that Rose Creek's doing it on the side.
 Is every implementation sort of on board and getting all these things, or is it sort of one set of people's going?
 
-[Arik]: No, I think the spec hasn't been merged yet and there are still new comments popping up.
+No, I think the spec hasn't been merged yet and there are still new comments popping up.
 So one of the things that I was really excited about initially, still am to be quite honest, with the channel opening, if you read the spec, you have all of those different, the remote, local non-spare, remote non-spare, partial signature for this, partial signature for that.
 I was hoping to simplify the messaging a little bit to say, if we have this partial signature, the partial signature only ever contains the remote nonce because that is the only situation where it's relevant.
 
