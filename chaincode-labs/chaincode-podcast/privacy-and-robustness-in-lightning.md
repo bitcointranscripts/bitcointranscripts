@@ -237,7 +237,7 @@ Rusty Russell:
 
 You want to do a mutual close.
 So the only case where it really comes out is when I'm unavailable you can't do mutual close.
-You're going to use the last three close anyway and now you're like well I might as well try to cheat.
+You're going to use the unilateral close anyway and now you're like well I might as well try to cheat.
 So you're already kind of in a corner case because that's already sending more money than if you just spoke to me and closed your channel.
 
 Mark Erhardt: 00:08:16
@@ -372,7 +372,7 @@ The question's always been, do we want other soft fork as well?
 
 Rusty Russell: 00:16:54
 
-And people are like, oh, if we had obstacle the check sick from stack, we can also do it.
+And people are like, oh, if we had obstacle the `CHECKSIG` from stack, we can also do it.
 Sure.
 I can probably build a car out of matchsticks and snot, but I don't want to.
 And don't make me do it.
@@ -389,10 +389,10 @@ I'm not crafty at all.
 But, okay.
 That is probably an aside.
 We don't need to go down.
-But, you know, check sync from stack is like, it's cool that you can even make that work.
+But, you know, `CHECKSIG` from stack is like, it's cool that you can even make that work.
 But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
-And the answer would be, check-sig from stack.
+And the answer would be, `CHECKSIG` from stack.
 And the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
 AJ would definitely be the person unfortunately he's not here in New York he's kind of, done a fair bit of travel recently he was like no I'm not going.
 So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate any prep out.
