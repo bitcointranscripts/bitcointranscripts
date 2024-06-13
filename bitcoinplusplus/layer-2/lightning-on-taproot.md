@@ -7,7 +7,7 @@ speakers: ["Arik Sosman"]
 categories: ["conference"]
 date: 2023-07-18
 ---
-# Introduction
+## Introduction
 
 Hi my name is Arik.
 I work at Spiral.
@@ -95,7 +95,7 @@ Although for ECDSA signatures, so the thing about Schnorr is the math is so simp
 You don't have any of the ECDSA complications, so here you don't even have to think that long about why this attack is trivial.
 However, obviously we need to mitigate these attacks.
 
-### MUSIG2 TO THE RESUCE
+### MuSig2 to the Rescue
 
 So MuSig2 comes to the rescue.
 I'm sure all of you have heard about MuSig2 many times.
@@ -231,13 +231,13 @@ And one of them just happens to be so trivial that we don't even need a script s
 We can just use the keyspend path.
 
 So with our vacation pubkey, or with our vacation key, we can sign and spend a transaction lightning immediately.
-Because it's unencumbered by any sort of check sequence, verify or delays, that is the obvious candidate that is going to end up as the key spend path.
-So In taproot, the cheapest way to spend a commitment transaction is going to be using their vacation fee.
-With the ScriptSend path, for the regular local output, it just has a self-delay.
+Because it's unencumbered by any sort of `OP_CHECKSEQUENCEVERIFY` or delays, that is the obvious candidate that is going to end up as the key spend path.
+So in taproot, the cheapest way to spend a commitment transaction is going to be using their vacation fee.
+With the script path spend, for the regular local output, it just has a self-delay.
 We don't really need any other scripts that has other than the one that has this to self delay.
 
-There is some discussion, there's some discussion as to whether we want to prepend one or something to object sequence verify, but this is, I don't think the discussion is quite done yet.
-The idea is that we're gonna feed the scripts into MINISCRIPT parsers and generators and then see what the optimal script output is.
+There is some discussion, there's some discussion as to whether we want to prepend one or something to `OP_CHECKSEQUENCEVERIFY`, but this is, I don't think the discussion is quite done yet.
+The idea is that we're gonna feed the scripts into miniscript parsers and generators and then see what the optimal script output is.
 
 But just reading this, people might be confused because they'll say, oh, if CHECK SAFE passed, but say 2-sulfulate is 0, will it go through?
 To solve the layout, this should never be 0.
@@ -246,10 +246,10 @@ But there's going to be a follow-up case where there's going to be a bigger ques
 So for HTLC offers, and I don't really want to go into accepted HTLCs because they're so similar to offered HTLCs. We still have the same situation that the revocation key is the unencumbered spend path.And for that reason, it becomes the key spend.
 
 For script spend paths, We now have two situations.
-So one of them is if we are able to provide the hash preimage, which is marked in green here, And the script looks a little complicated, but the point is, once OP CHECKSIG verifies here, then it should be 1, and then we have OP CHECKSQUENCEVERIFY.
-But if OP CHECKSIG does not verify, then we have a 0, and then we have 0 OP CHECKSQUENCEVERIFY.
+So one of them is if we are able to provide the hash preimage, which is marked in green here, And the script looks a little complicated, but the point is, once `OP_CHECKSIG` verifies here, then it should be 1, and then we have `OP_CHECKSEQUENCEVERIFY` (`OP_CSV`).
+But if `OP_CHECKSIG` does not verify, then we have a 0, and then we have 0 `OP_CHECKSEQUENCEVERIFY`.
 And The question is, would it then mean that without a valid signature, we would be able to spend it without delay?
-Well, it doesn't, because OP CSV has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals.
+Well, it doesn't, because `OP_CSV` has some weird consideration where a transaction can never actually be spent with a zero sequence because it's doing greater than and not greater equals.
 But just reading the script, nobody would know.
 So this is something where we are still figuring out what the stack ought to look like and whether we want to optimize for minimal cost or whether we want to optimize for legibility.
 
@@ -283,7 +283,7 @@ And you also need to make sure that nodes understand what this gossip is suppose
 So that is unfortunately one of the drawbacks of taproot, that by using a different signature algorithm and different on-chain footprint, unless you have support for gossip from the very beginning, you're going to have part of the network otherwise unable and even unaware of the fact that there is a part of the network that is now based on taproot.
 So just going back to the beginning, so far we have talked about in order to leverage the benefits of Schnorr for improved privacy, to mitigate the risks of Schnorr, we have to use MuSig2 for key aggregation and non-key aggregation, as well as now, because we're using taproot and therefore we need to use tapscripts, we have to modify where those individual spent paths are located, as well as how the gossip looks like.
 So it's quite a dependency tree, and I hope it gave you a little bit of an overview of what the constraints and design decisions and the vulnerabilities are that are driving the spec and why it is the way it is.
-However, there is some really cool stuff that taproot enables that I also want to dig into, and that is PTLCS.
+However, there is some really cool stuff that taproot enables that I also want to dig into, and that is PTLCs.
 PTLCs are also going to be driven by a bunch of very similar considerations.
 But before I move on to PTLCs, I was wondering if anybody had any questions so far.
 
@@ -296,12 +296,12 @@ So if you're monitoring the Gaussian from lightning, then you would know the par
 And that is a privacy consideration that we're facing right now already.
 That is why there's talk about Gossip v2, which would essentially be only committing to a fraction of the money that you have put up.
 But that is its own can of worms.
-So honestly, I can certainly recommend watching Matt Corralo's talk from CapConf last year, It was titled, Lightning Has Broken the Stock.
+So honestly, I can certainly recommend watching Matt Corralo's talk from TabConf last year, It was titled, Lightning Has Broken the Stock.
 And one of the major breakages is privacy.
 Lightning has atrocious privacy today.
-Even though with Tampered we improve on-chain privacy.
+Even though with taproot we improve on-chain privacy.
 If, say, Chainalysis and therefore the IRS, not, of course, that they're bad guys, but you know what I mean.
-If they were to monitor the Lightning Network, then they would also know what the outputs are, tampered outputs on-chain.
+If they were to monitor the Lightning Network, then they would also know what the outputs are, taproot outputs on-chain.
 
 So, it's actually a big subject of research.
 I don't think there is consensus quite yet, but I guess that v2 is the way to move forward, although I think it's slowly building.
@@ -318,7 +318,7 @@ Even today, the odds of multiple hops being correlated on-chain are fairly low b
 What this does help though with is wormhole attacks, for example, where somebody can see. If somebody has multiple nodes that they're controlling and those nodes are talking to one another and it just so happens that multiple of those nodes are involved in the same route of payment, then they would know that they are involved in the same payment and they would be able to steal some money.
 With PTLCs, they wouldn't know because there is no correlation whatsoever.
 
-### HOW TO PTLCS WORK
+### How do PTLCs Work
 
 So how do PTLCs work precisely?
 Actually who here already knows how PTLCs work?
@@ -326,19 +326,19 @@ All right, cool. I'm really glad that I'm finally able to actually bring up some
 
 Let's say that Alice is trying to pay Emily, or more precisely, Emily is trying to get paid by Alice.
 I'm using this particular phrasing because Emily is the one that has to initiate the whole flow by creating an invoice.
-Her invoice is no longer going to be a hatch.
-What Emily does is she generates some random number z, some number of which is within the finite field we're using for our elliptic curve, and she multiplies it with a generator point, as we always do, so essentially the public point corresponding to that private integer, and she sends uppercase Z to Alice.
+Her invoice is no longer going to be a hash.
+What Emily does is she generates some random number `z`, some number of which is within the finite field we're using for our elliptic curve, and she multiplies it with a generator point, as we always do, so essentially the public point corresponding to that private integer, and she sends `Z` (`Z = z * G`) to Alice.
 
-So that uppercase Z is now the invoice.So the invoice, instead of being a hash, is and will be curve point.
+So that `Z` is now the invoice, so the invoice, instead of being a hash, will be curve point.
 What Alice does is the following.
 So Alice sees that there are a bunch of intermediate hops, namely Bob, Carol, and Faith.
 And Alice generates four random numbers, one for herself and one for each of the intermediate hops.
-Those random numbers are A, B, C, and D, quite easy to keep track of.
+Those random numbers are `a`, `b`, `c`, and `d`, quite easy to keep track of.
 And she sends her first PTLC message to Bob.
 What does it contain?
-It contains Bob's own secret number, B, as well as a PTLC that is locked to Alice's public point corresponding to her secret number, so uppercase A, and the addition of that, and uppercase Z, which Alice originally received from Emily.
+It contains Bob's own secret number, `b`, as well as a PTLC that is locked to Alice's public point corresponding to her secret number, so `A`, and the addition of that and `Z`, which Alice originally received from Emily (`PTLC(A + Z)`).
 Then Bob, having received this PTLC, he sends a PTLC to Carol, because he knows who the next hop is.
-And that PTLC to Carol is locked to the thing, the value that it was locked to from Alice, A plus B, plus uppercase B, which Bob is trivially able to calculate by simply taking his own secret number that he received and multiplying it to the generated point.
+And that PTLC to Carol is locked to the value that it was locked to from Alice, `A + B`, which Bob is trivially able to calculate by simply taking his own secret number that he received and multiplying it to the generated point.
 
 However, how then is Bob able to send a PTLC to Carol or how is Carol able to send a PTLC to Dave?
 The interesting thing is that the PTLC that Bob sends to Carol in the Onion message also contains the secret number that Alice generated for Carol.
@@ -360,11 +360,11 @@ The reason she knows that sum is because Alice sent it to her in the onion packe
 So then when she unlocks it, This is where the PTLC magic is coming in.
 
 So the way that the unlocking is supposed to work is It's supposed to reveal to the preceding hop What the secret is going to be so the preceding hop sees this unlock using A + B + C + D + Z.
-And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PLC from Carol.And that propagates all the way to the bottom.
+And then by subtracting their own secret, which Dave still has because it is lowercase D that Dave originally received in the onion packet from Alice, Dave is then able to subtract lowercase D and using that, unlock the PTLC from Carol, and that propagates all the way to the bottom.
 Where the last step has Alice subtracting her own secret from the thing that was unlocked by Bob, and then she gets lowercase z, which is now our proof of payment, which is really elegant.
 You can see that each hop has a completely random PTLC value.
 
-### ADAPTOR SIGNATURES
+### Adaptor Signatures
 
 Now the magic is, how do we design a system where we are able to extract the secret?
 Where the proceeding hop, just based on the signature, is able to know; okay, this is how they are able to create a valid signature for the other hop that came before that.
@@ -375,8 +375,9 @@ I think it's helpful to just talk a little bit about how precisely they work.
 An adapter signature looks almost exactly...
 It looks exactly like a Schnorr signature, except it is invalid.
 It is tweaked.
-As you can see here, we have, if we ignore the T here, we have exactly the thing that we would expect from a Schnorr signature, but our commitment in the hash is not to all random nonce, but our random nonce plus some tweaked T.
-So what happens is, in order to be able to spend it, we need to find out what the tweak is, and then we can fix our little signature.The tweak, when we learn what it is, the tweak can actually be used to embed a little secret in there.
+As you can see here, if we ignore the `T` here, we have exactly the thing that we would expect from a Schnorr signature, but our commitment in the hash is not to all random nonce, but our random nonce plus some tweaked `T`.
+So what happens is, in order to be able to spend it, we need to find out what the tweak is, and then we can fix our little signature.
+When we learn what it is, the tweak can actually be used to embed a little secret in there.
 So if the tweak is exactly the secret value that you're looking for, then once there is a valid signature, you can use that to calculate the difference between those two signatures and extract the tweak and use the tweak to create a valid signature for your preceding hop.
 
 So let's think about it a little bit more thoroughly.
@@ -458,7 +459,7 @@ Simple, backward channels.
 It's just not ready.I sincerely apologize for being here talking about this stuff instead of actually implementing it.
 Here we are.
 
-### CONCLUSION
+### Conclusion
 
 Are there any questions?
 I'm sorry it took so long, because it's been 51 minutes.
