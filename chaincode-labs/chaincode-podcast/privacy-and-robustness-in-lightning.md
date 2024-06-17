@@ -367,7 +367,7 @@ So, like, how are you able to communicate those needs down to the lower layer?
 
 Rusty Russell: 00:16:47
 
-Well, I think the any prep out cases have been pretty strong for a long time.
+Well, I think the `ANYPREVOUT` cases have been pretty strong for a long time.
 The question's always been, do we want other soft fork as well?
 
 ## CTV
@@ -391,13 +391,13 @@ I'm not crafty at all.
 But, okay.
 That is probably an aside.
 We don't need to go down.
-But, you know, `CHECKSIG` from stack is like, it's cool that you can even make that work.
+But,`CHECKSIG` from stack is like, it's cool that you can even make that work.
 But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
 And the answer would be, `CHECKSIG` from stack.
 And the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
 AJ would definitely be the person unfortunately he's not here in New York he's kind of done a fair bit of travel recently he was like "no I'm not going".
-So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate any prep out.
+So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate `ANYPREVOUT`.
 That's if you're listening, AJ, I hope you're going to make that prophecy come true.
 I think, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
 ANYPREVOUT by itself is a fairly simple piece.
@@ -416,10 +416,10 @@ This is the two-way door, one-way door kind of thing.
 
 Rusty Russell: 00:18:28
 
-In this case, we will want any prep out even when we have full covenants and everything else.
+In this case, we will want `ANYPREVOUT` even when we have full covenants and everything else.
 So I'm pretty confident to say this is something that we should enable.
 Right?
-Now that said the detail the fine details you know hand wave hand wave I know try not to spend too much time coming over details but I'm pretty happy that, somebody will come up with a proposal.
+Now that said the detail the fine details you know hand wave hand wave I know try not to spend too much time coming over details but I'm pretty happy that somebody will come up with a proposal.
 We will vet it and make sure that it works.
 And away we go.
 Greg Sanders, of course, will be the person to talk to.
@@ -544,7 +544,7 @@ Yes.
 
 Adam Jonas: 00:24:07
 
-And so those dynamics just don't seem to add up to a long term thinking and long term, moving, moving the ball forward in these kinds of dimensions.
+And so those dynamics just don't seem to add up to a long term thinking and long term moving the ball forward in these kinds of dimensions.
 
 Rusty Russell: 00:24:21
 
