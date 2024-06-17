@@ -106,7 +106,7 @@ And they're both areas where we can definitely make incremental improvements, an
 Privacy in particular is something that everyone cares about until you need to put the engineering effort in and there's other stuff.
 There's bugs, there's issues, there's, there are always other things that are more urgent, even if they're not more important.
 And so I definitely try to keep the perspective of going, if not now, when?
-And I think, you know, privacy is something that we definitely need to put more effort in.
+And I think, privacy is something that we definitely need to put more effort in.
 
 Adam Jonas: 00:03:07
 
