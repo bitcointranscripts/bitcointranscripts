@@ -400,7 +400,7 @@ AJ would definitely be the person unfortunately he's not here in New York he's k
 So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate any prep out.
 That's if you're listening, AJ, I hope you're going to make that prophecy come true.
 I think, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
-Any prep out by itself is a fairly simple piece.
+ANYPREVOUT by itself is a fairly simple piece.
 
 Adam Jonas: 00:18:21
 
