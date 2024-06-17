@@ -13,6 +13,8 @@ categories:
   - 'podcast'
 episode: 34
 ---
+## Introduction
+
 Rusty Russell: 00:00:00
 
 Simplicity is a virtue in itself, right?
@@ -372,7 +374,7 @@ The question's always been, do we want other soft fork as well?
 
 Rusty Russell: 00:16:54
 
-And people are like, oh, if we had obstacle the `CHECKSIG` from stack, we can also do it.
+And people are like, oh, if we had `OP_CTV` and `OP_CHECKSIGFROMSTACK`, we can also do it.
 Sure.
 I can probably build a car out of matchsticks and snot, but I don't want to.
 And don't make me do it.
@@ -394,7 +396,7 @@ But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
 And the answer would be, `CHECKSIG` from stack.
 And the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
-AJ would definitely be the person unfortunately he's not here in New York he's kind of, done a fair bit of travel recently he was like no I'm not going.
+AJ would definitely be the person unfortunately he's not here in New York he's kind of done a fair bit of travel recently he was like "no I'm not going".
 So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate any prep out.
 That's if you're listening, AJ, I hope you're going to make that prophecy come true.
 I think, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
@@ -434,13 +436,14 @@ Rusty Russell: 00:19:11
 Yeah, exactly.
 So, you know, I think we're well on the way to getting that.
 Now, just to set expectations correctly, even if we saw for tomorrow and it activated the week after, there's a little latency involved here, right?
-We still need to then go through and implement it, roll it out, it gets spec'd out, it gets, packed together, then it gets, then we ratify it, We get two different independent implementations both to implement it and interoperate and make sure that works.
+We still need to then go through and implement it, roll it out, it gets spec'd out, it gets packed together, then we ratify it.
+We get two different independent implementations both to implement it and interoperate and make sure that works.
 Then it's spec final.
 Then everyone else can go ahead and implement it.
 Then it can roll out on the network.
 Then everyone can upgrade.
 Then once both your peers are upgraded, then now you can open a new channel.
-A new channel will be one of these cool,  Eltoo channels and everything else.
+A new channel will be one of these cool, Eltoo channels and everything else.
 So, this is a long road, right?
 
 Mark Erhardt: 00:19:57
@@ -482,8 +485,9 @@ Rusty Russell: 00:21:07
 How do you push those forward?
 You have that internal compass of, you need to spend a certain amount of your time on stuff that's literally broken on fire and everything else.
 You need to spend a certain amount of time on other things.
-As an engineer, this is the eternal battle between, so just look at me personally, right?
-So I lead the core lightning team.
+As an engineer, this is the eternal battle between...
+Just look at me personally, right?
+I lead the core lightning team.
 There's a certain amount of just dealing with time sheets and just doing random managerial overhead that I have to do.
 There's a certain amount of like peering on random podcasts to talk about stuff.
 There's a certain amount of actual coding that I have to do on core lightning features that people want because, scalability, whatever thing it is, right?
@@ -492,13 +496,12 @@ We should do that.
 And then there's the protocol work as well right so there's always more things to do well in any fun job like working on this there's always more things to do than you necessarily have time for you have to prioritize so to answer your question how do you do that And the answer is that you have to reserve a certain amount of time for long-term work.
 You just have to.
 And you have to be aware through experience that if you do not explicitly reinvent some of your time, it'll never be a good time.
-Right.
 
 ## The dynamics of developing a spec with commercially associated implementations
 
 Adam Jonas: 00:22:18
 
-So, but okay, I have two, I have two things to push back on.
+I have two things to push back on.
 One is LDK is a little bit of a maybe a question mark for me, but the others are three commercially driven implementations.
 
 Rusty Russell: 00:22:30
@@ -515,7 +518,7 @@ Rusty Russell: 00:22:45
 
 So that is a very good philosophical question.
 And hey, I work for a startup, right?
-And you should always be thinking what happens if my startup collapses because almost by definition right that's the the endgame for most startups is like they fail right and so when you have an open source project and you're like well I'm running this what what happens what happens after this to some extent the answer is, I'm gonna keep working on this whatever happens unfortunately my wife has given explicit approval for me to take some time off and work.
+And you should always be thinking what happens if my startup collapses because almost by definition right that's the endgame for most startups is like they fail right and so when you have an open source project and you're like well I'm running this what happens after this to some extent the answer is, I'm gonna keep working on this whatever happens unfortunately my wife has given explicit approval for me to take some time off and work.
 Should all of us fail?
 We've had this discussion, right?
 She's been like, cool, that's okay.
@@ -527,11 +530,11 @@ But, you know, there's some future there.
 
 Adam Jonas: 00:23:24
 
-I guess my other bit of that was Because they're commercially associated, maybe not driven, commercially associated.
+I guess my other bit of that was because they're commercially associated, maybe not driven, commercially associated.
 That means that features get pushed to the front of the line.
 Because I've worked for companies, I know how it works.
-So when you're talking about, ring fencing things and making sure that we're, thinking long term.
-These are different than just like building a product that's, in JavaScript and, can wow an investor.
+So when you're talking about, ring fencing things and making sure that we're thinking long term.
+These are different than just like building a product that's in JavaScript and can wow an investor.
 There is a philosophical side to what's happening here.
 And there is a collaboration side of no implementation can do it by themselves.
 
@@ -656,7 +659,9 @@ So there's that, there's low-hanging fruit like that.
 There's splicing, which just messes up your graph a little bit, so it makes it harder to...
 Dual funding particularly allows you to combine multiple things into one transaction, just the common ownership heuristics starts to break down.
 This is useful.
-There's a whole pile of different fun things you can do once you've got splicing and you can splice in and out and everything else. And just mess people up which is kind of nice Particularly if we start to see things like Payjoin of things coming out of splices and really really kind of a lot more So once your Lightning channel is also used for onchain things through splicing, I think it becomes a lot more complicated to see exactly what's going on, which is just a nice low-hanging fruit that we're going to get.
+There's a whole pile of different fun things you can do once you've got splicing and you can splice in and out and everything else and just mess people up, which is kind of nice.
+Particularly if we start to see things like Payjoin of things coming out of splices and really really kind of a lot more.
+So once your Lightning channel is also used for onchain things through splicing, I think it becomes a lot more complicated to see exactly what's going on, which is just a nice low-hanging fruit that we're going to get.
 
 Mark Erhardt: 00:29:40
 
@@ -799,17 +804,16 @@ So, you can lowball fees to some extent, whereas before we had to bump fees up q
 We used a magnifying factor to go, well, I could go as high as this.
 The ultimate answer to this is to package relay, version 3, all those things.
 So we can actually have no fees here and have all the fees in the child.
-Well, the ultimate answer for this is  Eltoo and everything else.
+Well, the ultimate answer for this is Eltoo and everything else.
 But meanwhile, package relay lets us not have-
 
 Adam Jonas: 00:35:03
 
-But even with  Eltoo, you still need to have a mechanism to be able to broadcast on-chain.
+But even with Eltoo, you still need to have a mechanism to be able to broadcast on-chain.
 
 Rusty Russell: 00:35:07
 
-But in that case, we use a SIGHASH signal.
-Anyone can pay.
+But in that case, we use a `SIGHASH_ANYONECANPAY` signal.
 You have to bring your own fees.
 And you bring your own fees through, right?
 
@@ -906,7 +910,7 @@ So the rainbows and unicorns in this case look like v3 transactions with ephemer
 Rusty Russell: 00:39:33
 
 Package relay.
-And  Eltoo also solves some of these problems.
+And Eltoo also solves some of these problems.
 But we have similar incentive problems, and you need to have the package relay as well, and v3, I think, for it to get  Eltoo to be secure as well.
 We currently have two anchor outputs, and that makes your transactions bigger.
 So in a low fee environment, you could argue that you shouldn't implement anchors because you're just making a bigger transaction for unilateral closes.
@@ -939,7 +943,7 @@ And this is one of the problems we see and we crossed off the list and then we'l
 
 Mark Erhardt: 00:40:38
 
-Yeah, Gloria and I have been writing, waiting for confirmation series and uptake newsletter.
+Yeah, Gloria and I have been writing, "Waiting for Confirmation" series on the Optech newsletter.
 Next week we're going to talk about mempool policy as an interface for layer 2 protocols.
 So, not preparing for that yet, but I'm thinking already.
 
@@ -959,8 +963,8 @@ Okay.
 I think my mind is still somewhere over the Pacific Ocean right now.
 So I'm not sure that it's all present.
 Look, as I said, we've been going eight years on this and it's been a fantastic journey just to go through with this incredibly bright set of inspired engineers.
-I'm not a morning person, but I still get up for 5.30 a.m. Calls every two weeks on Tuesday, my time, Monday, everyone else's time, to hang out and like, and collaborate on the SPAC and do everything else.
-And, it was really interesting to go through those days when there was excitement about lightning in the early days, and then everyone was pretty much pivoted to, no, Bitcoin's a store of value, payments aren't important.
+I'm not a morning person, but I still get up for 5.30 a.m. calls every two weeks on Tuesday, my time, Monday, everyone else's time, to hang out and like, and collaborate on the spec and do everything else.
+It was really interesting to go through those days when there was excitement about lightning in the early days, and then everyone was pretty much pivoted to, no, Bitcoin's a store of value, payments aren't important.
 And we're like, but we're working on payments.
 Like, we're working really hard, you know.
 And, to see it kind of come back around, now people are like, wow, this is actually usable.
@@ -988,7 +992,7 @@ Look at the excitement that has moved up.
 The people building things on top of what we're doing.
 That's really exciting.
 And that's where more people will come into there and they're going to come into the low level and go, what I want to do?
-I want to implement Lightning Protocols from scratch.
+I want to implement Lightning protocols from scratch.
 You know, I welcome the crazies.
 If you're listening to this and going, that's what I want to do, I want to implement that.
 You're my people.
@@ -1009,12 +1013,12 @@ I always said that there will be some killer application of Lightning that I wil
 
 Mark Erhardt: 00:43:52
 
-And you know, how I feel about inscriptions.
+And you know how I feel about inscriptions.
 
 Rusty Russell: 00:43:55
 
 Yeah, yeah, exactly.
-You know, it'll be you know, I don't even know what it will be.
+I don't even know what it will be.
 And part of that is just the problem is that when you don't have a technology, when you don't have a way of making micro payments, what we would call real micro payments, not like making tiny payments, by definition, any business model or things or infrastructure that would require that do not exist because they can't.
 And so there's an inertia behind that, right?
 You create a technology, but then there's no immediate use for it.
@@ -1034,7 +1038,7 @@ It's pretty neat.
 
 Rusty Russell: 00:45:08
 
-And look at Cashew and some of the other things, the Fedimint and stuff using Lightning as a glue, right?
+And look at Cashu and some of the other things, the Fedimint and stuff using Lightning as a glue, right?
 
 Mark Erhardt: 00:45:12
 
@@ -1098,7 +1102,8 @@ It's very cool.
 
 Adam Jonas: 00:47:05
 
-So eight out of 20 means we're 40 percent and are we 40 percent there?
+So 8 out of 20 means we're 40% in.
+Are we 40% there?
 
 Mark Erhardt: 00:47:09
 
