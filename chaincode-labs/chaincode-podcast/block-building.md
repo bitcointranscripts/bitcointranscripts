@@ -250,7 +250,7 @@ So any transactions that topologically precedes another transaction, we call an 
 Clara Shikhelman: 00:10:44
 
 For each transaction, we're looking at all of the other transactions we will need to include in the block beforehand for the block to be valid.
-We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole.
+We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many Satoshis per bit we will get from this whole.
 
 Patrick Murck: 00:11:07
 
