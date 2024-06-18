@@ -43,7 +43,7 @@ I'm also very excited to be here.
 Speaker 1: 00:00:45
 
 And today we're going to talk about block building.
-So maybe you could start us off a little bit about, Claire, how did you get to Chaincode?
+So maybe you could start us off a little bit about, Clara, how did you get to Chaincode?
 Like, what are you doing here?
 What are you spending your time on?
 Tell us a little bit about yourself.
@@ -250,7 +250,7 @@ So any transactions that topologically precedes another transaction, we call an 
 Clara Shikhelman: 00:10:44
 
 For each transaction, we're looking at all of the other transactions we will need to include in the block beforehand for the block to be valid.
-We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole
+We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole.
 
 Patrick Murck: 00:11:07
 
