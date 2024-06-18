@@ -250,7 +250,7 @@ So any transactions that topologically precedes another transaction, we call an 
 Clara Shikhelman: 00:10:44
 
 For each transaction, we're looking at all of the other transactions we will need to include in the block beforehand for the block to be valid.
-We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole...
+We sum up the weights of all of these transactions, we sum up the fees of all of these transactions, and from this we discover how many satoshis per bit we will get from this whole
 
 Patrick Murck: 00:11:07
 
@@ -403,7 +403,7 @@ Patrick Murck: 00:20:29
 
 Right, yeah, there's a few nifty little tricks that we found while we have been writing our research code for this.
 We start our search in the cluster by a number of initial candidate sets, and since we have them already, we just initialize with the ancestor sets that exist in the cluster, which is for every single transaction in the cluster, we have already a starting set.
-The next observation we had was when we have an ancestor set in a cluster that has fee rate x, any leave in the cluster, as in any childless transaction in the cluster, that has a lower fee rate than that, can never lead to a better candidate set than this.
+The next observation we had was when we have an ancestor set in a cluster that has fee rate x, any leaf in the cluster, as in any childless transaction in the cluster, that has a lower fee rate than that, can never lead to a better candidate set than this.
 So, if you have a transaction A that pays 5 satoshi per byte, that has a child which pays 4, you will never get a better candidate set by including this child with 4 when you already have something that pays 5 satoshi per vbyte.
 
 Clara Shikhelman: 00:21:30
@@ -453,15 +453,14 @@ We don't do this when we build the block and we're in a hurry.
 
 Patrick Murck: 00:26:26
 
-Aabsolutely, we should be pre-calculating the whole block actually, not just cluster information.
+Absolutely, we should be pre-calculating the whole block actually, not just cluster information.
 The cluster information is somewhat ephemeral anyway.
-As soon as you pop the best candidate set out of the cluster, you have to recluster and research for the best candidate set, right?
+As soon as you pop the best candidate set out of the cluster, you have to re-cluster and research for the best candidate set, right?
 So just pre-calculating the clusters is sure a little benefit, but actually just pre-calculating the whole block template in the background on a loop, say every time we add new transactions or every minute or so, and then having something at the ready when the user calls get block template would be maybe interesting.
 Of course the problem is when a new block gets found and when we want to have a new block template quickly, it might be slow to do all the candidate set search on every cluster and all that.
+When it's supposed to be as quick as possible, we should use the ancestor set based approach and respond with that first.
 
 ## How easy would it be to guess the next block?
-
-When it's supposed to be as quick as possible, we should use the ancestor set based approach and respond with that first.
 
 Clara Shikhelman: 00:27:31
 
@@ -553,12 +552,11 @@ And we saw two things.
 We saw especially that there was a lot fewer mini blockchain forks where there was latency or validation was slower and two mining pools found blocks at the same height. And that was especially because the compact block relay happened between whatever they were running in SegWit.
 And then I think also a little bit faster block validation and build.
 
+## How to improve on the candidate set algorithm e.g., linear programming
+
 Clara Shikhelman: 00:34:45
 
 So this is what we have on our plate now, but we're already talked a bit about what might happen in the future, but we also have a few thoughts about what else can we do to make block building even better?
-
-## How to improve on the candidate set algorithm e.g., linear programming
-
 So there is linear programming solutions that solve, to some extent at least, the other problem we've talked about with blocks.
 
 Patrick Murck: 00:35:18
@@ -651,7 +649,7 @@ We found a few interesting clusters when we were analyzing mempool snapshots.
 We have this data set where we have when a new block came in, the node took a snapshot of what was currently in their mempool and we can then compare what we see in the block and what was available for block building and that's what we use to build our alternative blockchains in this Monte Carlo approach and we found some curious clusters already with over 800 transactions where there's a lot of children spending from the same parent and stuff like that.
 So there is some of that going on already, but currently of course mining doesn't exploit that so people aren't doing it on purpose.
 It's just people that are, I don't know, withdrawing from a broker and the broker has such a volume that they pay out to a hundred people at the same time and five of them are immediately try to spend it at the same time but they're competing with each other because it's getting evaluated as five separate child pays for parent attempts whereas we would be evaluating it as a single descendants pay for ancestor constellation.
-So we do the Monte Carlo approach, we run that alternative blockchain that we're building a few times with say 2% of t miners using our new algorithm already.
+So we do the Monte Carlo approach, we run that alternative blockchain that we're building a few times with say 2% of the miners using our new algorithm already.
 What do we do then?
 
 Clara Shikhelman: 00:43:37
@@ -702,7 +700,7 @@ And you can think about other algorithms even better than what we're proposing n
 
 Patrick Murck: 00:46:57
 
-What happens when you run a mining pool is that you don't create one black template and then your miners are working on that for the whole duration until the block is found.
+What happens when you run a mining pool is that you don't create one block template and then your miners are working on that for the whole duration until the block is found.
 You keep updating that as more transactions come in.
 So you're constantly re-computing the block template anyway.
 If some of those happen to just have a little more fees a little later after you switch to a new height.
@@ -722,7 +720,7 @@ So I'm a little bearish on the timeline
 
 Speaker 1: 00:48:16
 
-All right very good well thank you both for your time enjoy the conversation and we'll look forward to getting Claire on soon again.
+All right very good well thank you both for your time enjoyed the conversation and we'll look forward to getting Clara on soon again.
 
 Clara Shikhelman: 00:48:17
 
