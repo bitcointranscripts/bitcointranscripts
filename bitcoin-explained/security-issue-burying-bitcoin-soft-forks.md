@@ -1,11 +1,16 @@
 ---
-title: "Burying Soft Forks"
-transcript_by: Ringoz1 via review.btctranscripts.com
-media: https://www.youtube.com/watch?v=C7wG2ngayy8
-tags: ["security","taproot"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
-categories: ["podcast"]
-date: 2022-02-25
+title: 'Burying Soft Forks'
+transcript_by: 'Ringoz1 via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=C7wG2ngayy8'
+date: '2022-02-25'
+tags:
+  - 'security'
+  - 'taproot'
+speakers:
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
+categories:
+  - 'podcast'
 ---
 ## Intro
 
@@ -326,7 +331,7 @@ That's the benefit, essentially.
 
 Sjors Provoost: 00:12:41
 
-Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than `BIP9`.
+Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with `LOT=false` that we talked about, is essentially simpler than `BIP9`.
 So yeah, you can actually maybe remove some code net, but I don't know
 
 Aaron van Wirdum: 00:12:56
@@ -459,8 +464,7 @@ So the analogy might be to say, well, if all of the Netherlands is flooded, are 
 
 Aaron van Wirdum: 00:18:25
 
-Right, yes.
-The argument, I'll just...
+The argument.
 You explained it clearly, I think, but still to reiterate, the argument is that if a reorg happens that is this bad, then Bitcoin is screwed either way and it's not worth considering even essentially, right?
 
 Sjors Provoost: 00:18:45
@@ -475,7 +479,7 @@ It's a big disaster if this happens.
 Aaron van Wirdum: 00:19:28
 
 Yeah.
-Well, so on the other side of the debate is, for example, Eric Voskow, who's the lead developer of Libitcoin.
+Well, so on the other side of the debate is, for example, Eric Voskuil, who's the lead developer of Libitcoin.
 
 ## Eric Fossel
 
@@ -565,7 +569,7 @@ Aaron van Wirdum: 00:22:37
 
 So yeah, whether or not it's a checkpoint or some kind of checkpoint or some kind of subcategory of a checkpoint is maybe not the important part.
 The important part here is that one group of developers, I guess mostly in Bitcoin Core, figure that if there's a reorg this big, then Bitcoin is screwed anyways.
-While someone like Foscale will argue, you know, there's no single point where you can make that argument.
+While someone like Voskuil will argue, you know, there's no single point where you can make that argument.
 There's no point where Bitcoin will be that if the reorg is that bad.
 It just, gets incrementally worse for, every extra block that's being reorg.
 But there's no objective point you can point to and therefore the only sort of logic that you can apply is simply long as spell chain, that's what will you accept to be Bitcoin.
@@ -671,7 +675,7 @@ Yeah, no, there's one other thing we do need to bring up.
 Okay, we're jumping around now, so the episode's getting confusing.
 Sorry, people.
 But there is this other...
-Sort of what it ultimately comes down to this discussion, I think, is whether burying a soft fork, as we've explained throughout this episode, whether that should be considered a consensus change or not, and by extension, whether it should be a BIP, Bitcoin Improvement Proposal.
+Sort of what it ultimately comes down to this discussion, I think, is whether burying a soft fork, as we've explained throughout this episode, whether that should be considered a consensus change or not, and by extension, whether it should be a BIP16.
 
 ## BIPS
 
@@ -756,7 +760,7 @@ Maybe there is a rational way to deal with it.
 Aaron van Wirdum: 00:34:30
 
 That's the difference of opinion, right?
-Some people like Eric Fosker will say Bitcoin isn't broken, Bitcoin is working as intended, long as valid chain still applies.
+Some people like Eric Voskuil will say Bitcoin isn't broken, Bitcoin is working as intended, long as valid chain still applies.
 There was a long re-org that's part of the Bitcoin consensus system.
 
 ## Conclusion
