@@ -232,8 +232,8 @@ So how would they do that?
 
 Patrick Murck: 00:09:48
 
-Well, currently we assume that most miners are using Bitcoin Core and Bitcoin Core has a function called get block template.
-Get block template will look at the full nodes mempool, the queue of unconfirmed transactions.
+Well, currently we assume that most miners are using Bitcoin Core and Bitcoin Core has a function called `getblocktimestamp`.
+`getblocktimestamp` will look at the full nodes mempool, the queue of unconfirmed transactions.
 And for each transaction in the mempool, it has stored the size and fees of all of its ancestors plus itself.
 
 Clara Shikhelman: 00:10:14
@@ -283,7 +283,7 @@ How does it work?
 
 Patrick Murck: 00:11:49
 
-Yes, so the call get block template, it uses the mempool, which is already a list of all the unconfirmed transactions with its ancestor set information.
+Yes, so the call `getblocktimestamp`, it uses the mempool, which is already a list of all the unconfirmed transactions with its ancestor set information.
 And then it just looks at which ancestor set will give me the most fees per Vbyte and includes that first.
 And then it updates all the other transactions that are impacted by this ancestor set getting confirmed, recalculating their ancestor set information, and then pops the next one from the top.
 It does that until nothing fits into the block anymore, block template is done.
@@ -456,7 +456,7 @@ Patrick Murck: 00:26:26
 Absolutely, we should be pre-calculating the whole block actually, not just cluster information.
 The cluster information is somewhat ephemeral anyway.
 As soon as you pop the best candidate set out of the cluster, you have to re-cluster and research for the best candidate set, right?
-So just pre-calculating the clusters is sure a little benefit, but actually just pre-calculating the whole block template in the background on a loop, say every time we add new transactions or every minute or so, and then having something at the ready when the user calls get block template would be maybe interesting.
+So just pre-calculating the clusters is sure a little benefit, but actually just pre-calculating the whole block template in the background on a loop, say every time we add new transactions or every minute or so, and then having something at the ready when the user calls `getblocktimestamp` would be maybe interesting.
 Of course the problem is when a new block gets found and when we want to have a new block template quickly, it might be slow to do all the candidate set search on every cluster and all that.
 When it's supposed to be as quick as possible, we should use the ancestor set based approach and respond with that first.
 
