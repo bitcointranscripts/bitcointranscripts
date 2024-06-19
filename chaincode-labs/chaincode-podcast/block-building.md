@@ -21,7 +21,7 @@ The idea is we want the set of miners to be an open set where anybody can enter 
 And if we now had obvious optimizations that people had to implement to be as competitive as possible, that would make it harder for new miners to enter this place.
 
 
-Speaker 1: 00:00:32
+Adam Jonas: 00:00:32
 
 Hey, Murck.
 Hey, Clara.
@@ -30,7 +30,7 @@ Clara Shikhelman: 00:00:35
 
 Hi.
 
-Speaker 1: 00:00:38
+Adam Jonas: 00:00:38
 
 Hi. Welcome to the Chaincode Podcast.
 Clara, for you, your first episode.
@@ -40,7 +40,7 @@ Clara Shikhelman: 00:00:43
 
 I'm also very excited to be here.
 
-Speaker 1: 00:00:45
+Adam Jonas: 00:00:45
 
 And today we're going to talk about block building.
 So maybe you could start us off a little bit about, Clara, how did you get to Chaincode?
@@ -59,7 +59,7 @@ And then I decided to pursue it as a postdoc.
 So I spent some time at Berkeley and at Caltech, but I felt like I need to be in a place where people are really into Bitcoin.
 And here I am.
 
-Speaker 1: 00:01:30
+Adam Jonas: 00:01:30
 
 So how does a mathematician get into Bitcoin?
 Because we need more of them.
@@ -71,7 +71,7 @@ And as a mathematician, I felt like I want better motivations for the questions 
 And more, I think people in applied math might also think this way.
 So I think people just need to know that there are really cool questions here waiting to be solved.
 
-Speaker 1: 00:02:04
+Adam Jonas: 00:02:04
 
 And what kind of cool questions are you pursuing?
 
@@ -85,7 +85,7 @@ I'm working a lot on the Lightning network.
 So there's a lot of economy and other things coming in, but at the end it boils down to network or graph theory.
 So there's very, very nice questions that have to do with optimization and evolution of random graphs and similar things.
 
-Speaker 1: 00:02:54
+Adam Jonas: 00:02:54
 
 It sounds like we're going to have to record another episode.
 
@@ -93,7 +93,7 @@ Clara Shikhelman: 00:02:58
 
 We might.
 
-Speaker 1: 00:02:59
+Adam Jonas: 00:02:59
 
 So those are the kinds of problems you're currently working on?
 
@@ -101,7 +101,7 @@ Clara Shikhelman: 00:03:02
 
 Yes.
 
-Speaker 1: 00:03:04
+Adam Jonas: 00:03:04
 
 Okay.
 So yeah, we'll look forward to getting that on tape at some point soon.
@@ -114,7 +114,7 @@ So It's very clear, I think, to anybody that comes from the algorithmic world th
 And in most cases, this would not be the optimal solution.
 So when somebody from math or CS sees a not optimal algorithm happening, it scratches.
 
-Speaker 1: 00:03:46
+Adam Jonas: 00:03:46
 
 Got it.
 And Murck.
@@ -127,7 +127,7 @@ So what you don't want is that there is a huge amount of potential for somebody 
 So what we want Bitcoin Core to do is to out of the box do very well, maybe optimally, but reasonably well, that there is no huge advantage for somebody else to come in and find a proprietary solution that that blows everything else out of the water.
 So one of the reasons to look at block building carefully is to make sure that there is no such hidden potential there.
 
-Speaker 1: 00:04:37
+Adam Jonas: 00:04:37
 
 That makes sense.
 It's hard to get miners to upgrade but it seems like they probably make their own patches and you know try to get an edge.
@@ -140,7 +140,7 @@ But on the other hand, blocks have been not full.
 And at one satoshi per byte, Even if the block is full, that's 10 milli Bitcoin in reward.
 Right?
 
-Speaker 1: 00:05:04
+Adam Jonas: 00:05:04
 
 Today, but you know, a year ago, people were all, fees were all the rage.
 
@@ -153,7 +153,7 @@ I mean, for 20 years.
 So if you already know how blocks are built and where fees and block subsidy come from, that's what we'll cover in the first section.
 And you might want to skip that, we'll put something into our show.
 
-Speaker 1: 00:05:35
+Adam Jonas: 00:05:35
 
 Well, I'm excited to talk about this.
 Actually, this one I'm sitting out, so I'm just going to let you two talk, and then we'll wrap it up.
@@ -664,7 +664,7 @@ Yeah, we published a thing about basically comparing one algorithm with another 
 Now we're doing the let's build a whole blockchain instead because that's more fair because we won't reuse the same transactions again.
 Say there's a constellation for a candidate site that should get preferred, we would be including it maybe for multiple blocks in a row if we don't build in a whole alternative blockchain.
 
-Speaker 1: 00:44:33
+Adam Jonas: 00:44:33
 
 Maybe just sort of to wrap things up, I have two questions of listening to that episode.
 The first one is, if you can get more fees into this current block, doesn't that just pull fees from a future block?
@@ -684,7 +684,7 @@ So it's kind of fun how it works out.
 We want people to build the best possible blocks and we want for example to have these constellations of multiple children to bump a parent together and it turns out that if a minor does find these constellations they also make more money.
 So if there's only one miner out of 20 that adopts this, they'll make more money than the other 19, and other miners will also adopt this new algorithm.
 
-Speaker 1: 00:45:58
+Adam Jonas: 00:45:58
 
 That's a nice incentive.
 And then my other question is, obviously, mining is a cutthroat game.
@@ -706,7 +706,7 @@ So you're constantly re-computing the block template anyway.
 If some of those happen to just have a little more fees a little later after you switch to a new height.
 I don't think sure it might not be mined on in the first half minute or so but generally if it's transparent it'll just snap into place.
 
-Speaker 1: 00:47:32
+Adam Jonas: 00:47:32
 
 Makes sense.
 So this sounds better in every way.
@@ -718,7 +718,7 @@ Well, careful asking around a little bit what might need to happen for such an a
 Mempool is such a central part of how everything fits together in Bitcoin Core, that would be a pretty invasive change.
 So I'm a little bearish on the timeline 
 
-Speaker 1: 00:48:16
+Adam Jonas: 00:48:16
 
 All right very good well thank you both for your time enjoyed the conversation and we'll look forward to getting Clara on soon again.
 
