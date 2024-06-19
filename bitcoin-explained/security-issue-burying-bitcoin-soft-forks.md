@@ -80,11 +80,10 @@ In a way, I've always found protocol changes the most interesting part of Bitcoi
 Like if it can change, then you can sort of think about what conditions can you change it then or what is Bitcoin then?
 You can get very philosophical about it if you want to.
 But I don't think we're really going to do that today, but we are going to discuss `burying soft forks`.
-So yeah, we have discussed `Taproot` and `Taproot Activation` in multiple episodes
+So yeah, we have discussed `Taproot` and `Taproot Activation` in multiple episodes so far.
 
 Sjors Provoost: 00:02:29
 
-so far.
 Five episode epic story.
 
 Aaron van Wirdum: 00:02:32
@@ -119,7 +118,7 @@ Can we just remove it somehow?
 Aaron van Wirdum: 00:03:36
 
 Yeah.
-So this has happened before, but soft burying, soft forks, it's not a completely new concept.
+So this has happened before, but burying soft forks, it's not a completely new concept.
 It is being discussed again, at least sort of on GitHub, not really on the Bitcoin dev list this time, I think, because I guess Bitcoin Core developers have already sort of agreed that this is kind of the way to go.
 
 Sjors Provoost: 00:03:55
@@ -130,7 +129,7 @@ Aaron van Wirdum: 00:03:57
 
 All right.
 So it is being discussed again, but it has happened before.
-So I'll just let you explain, Sjoerd, what does it mean?
+So I'll just let you explain, Sjors, what does it mean?
 What is burying a soft fork?
 
 ## What is a software
@@ -328,7 +327,7 @@ That's the benefit, essentially.
 Sjors Provoost: 00:12:41
 
 Yeah, so especially if you understand that `BIP 8`, at least the simple version of BIP 8 with LatticeFalse that we talked about, is essentially simpler than `BIP9`.
-So yeah, you can actually maybe remove some code net, but I don't know v
+So yeah, you can actually maybe remove some code net, but I don't know
 
 Aaron van Wirdum: 00:12:56
 
@@ -382,7 +381,7 @@ And they arguably don't affect users.
 
 But there are some edge cases where it could actually affect users.
 So when we were discussing at the beginning of the episode, I think that was this one and not the one we erased.
-I hope we mentioned anyways that a soft fork can in fact split the blockchain or even a hard fork any...
+I hope we mentioned anyways that a soft fork can in fact split the blockchain or even a hard fork.
 
 Sjors Provoost: 00:14:49
 
@@ -430,7 +429,7 @@ They start mining on a block from a year ago, and they actually claim the longes
 ## Taproot Rules
 
 
-Now in that chain, they make a transaction that is...
+Now in that chain, they make a transaction.
 And they do this before the original taproot activation block.
 They make a transaction that breaks the taproot rules.
 
@@ -470,7 +469,7 @@ Or maybe at least you probably have to do some human intervention to decide what
 All the transactions may or may not be replayed again.
 So unless you bought Bitcoin in 2011 and you just huddled and never moved them, you're gonna be impacted by this event.
 And the whole point of a money system, kind of goes away if that much changes.
-It's Very similar to in a fiat system, if suddenly your bank account is zero or a million, depending on some random historical glitch, are you really going to just keep on going with the bank balance or are you going to do something else?
+It's Very similar to a fiat system, if suddenly your bank account is zero or a million, depending on some random historical glitch, are you really going to just keep on going with the bank balance or are you going to do something else?
 It's a big disaster if this happens.
 
 Aaron van Wirdum: 00:19:28
@@ -615,9 +614,9 @@ So you can still argue that there's no reason for the signaling other than infor
 Sjors Provoost: 00:28:15
 
 You could, but if you go back to the history of soft forks, you know, we did that in another episode, but basically the reason miners started signaling, that wasn't the case.
-The earlier Softworks and Satoshi's code were just activating at a certain height.
+The earlier Softforks and Satoshi's code were just activating at a certain height.
 That was a problem.
-So the idea was to have miners signal for it and there were various ways to do that signaling and eventually we ended up with PIP 9.
+So the idea was to have miners signal for it and there were various ways to do that signaling and eventually we ended up with BIP 9.
 But the reason for the signaling is to make sure that miners actually upgrade and are actually ready.
 And there's no reason to assume that with a big reorg they're suddenly unready.
 They would have to downgrade their software, basically.
@@ -674,10 +673,7 @@ Sorry, people.
 But there is this other...
 Sort of what it ultimately comes down to this discussion, I think, is whether burying a soft fork, as we've explained throughout this episode, whether that should be considered a consensus change or not, and by extension, whether it should be a BIP, Bitcoin Improvement Proposal.
 
-## Bibs
-
-
-So if you see it as...
+## BIPS
 
 Sjors Provoost: 00:31:16
 
@@ -800,7 +796,7 @@ It's undefined. But maybe it should be defined.
 Aaron van Wirdum: 00:35:59
 
 I mean, I guess I disagree with you.
-I think it's deviant as long as it's a valid chain.
+I think it's defined as long as it's a valid chain.
 That's it.
 
 Sjors Provoost: 00:36:09
