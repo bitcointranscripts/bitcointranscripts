@@ -175,7 +175,7 @@ So far it's clear?
 Yep.
 So far it's clear?
 Yep.
-So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my patterns and commitments.
+So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my Pedersen  commitments.
 By the way, we create more patterns and commitments with zeros, but it doesn't matter for now.
 
 Speaker 0: 00:16:31
