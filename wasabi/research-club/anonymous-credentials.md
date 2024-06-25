@@ -248,7 +248,7 @@ So your first suggestion was to take two blind signature of 0.1 and 0.9 and regi
 
 Speaker 0: 00:20:24
 
-Perhaps I wouldn't call this registering, I would just call this like, perhaps like just a reissuance, We've used that term before.
+Perhaps I wouldn't call this registering, I would just call this like, perhaps like just a reinssuance, We've used that term before.
 You have a token and you just want to get a new one with a new serial number and these tokens are unlinkable and the same would work if you show two tokens and a new token where the new token is the sum of the former tokens and you don't have to show the actual values to the server you just have to show that the sum matches to the new value
 
 Speaker 1: 00:21:03
@@ -262,7 +262,7 @@ then you wouldn't have that privacy loss of having to show the individual values
 Speaker 1: 00:21:11
 
 Yes, so the thing is we get the signature, the blind signature on the data itself.
-Which means if we want a reassurance phase there, then we would have to expose the values.
+Which means if we want a reinssurance phase there, then we would have to expose the values.
 
 Speaker 0: 00:21:33
 
