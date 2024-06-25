@@ -248,7 +248,7 @@ So your first suggestion was to take two blind signature of 0.1 and 0.9 and regi
 
 Speaker 0: 00:20:24
 
-Perhaps I wouldn't call this registering, I would just call this like, perhaps like just a reinssuance, We've used that term before.
+Perhaps I wouldn't call this registering, I would just call this like, perhaps like just a reissuance, We've used that term before.
 You have a token and you just want to get a new one with a new serial number and these tokens are unlinkable and the same would work if you show two tokens and a new token where the new token is the sum of the former tokens and you don't have to show the actual values to the server you just have to show that the sum matches to the new value
 
 Speaker 1: 00:21:03
@@ -262,7 +262,7 @@ then you wouldn't have that privacy loss of having to show the individual values
 Speaker 1: 00:21:11
 
 Yes, so the thing is we get the signature, the blind signature on the data itself.
-Which means if we want a reinssurance phase there, then we would have to expose the values.
+Which means if we want a reissurance phase there, then we would have to expose the values.
 
 Speaker 0: 00:21:33
 
@@ -449,14 +449,14 @@ So at least to me that sounds plausible.
 
 Speaker 1: 00:29:40
 
-Yeah, actually, I'm just going to read a few things about here is that you prove about you prove from the article that to be for everyone knows what we are talking about.
+Yeah, actually, I'm just going to read a few things about here is that U-Prove about U-Prove from the article that to be for everyone knows what we are talking about.
 
 ## Unlinkable re-use of credentials.
 
 Speaker 1: 00:29:58
 
-From the efficiency point of view, therefore, the YouProve credential system based on Brand's work acquired and implemented by Microsoft, seems attractive.
-Uprove does not allow unlinkable reuse of credentials.
+From the efficiency point of view, therefore, the U-Prove credential system based on Brand's work acquired and implemented by Microsoft, seems attractive.
+U-Prove does not allow unlinkable reuse of credentials.
 In order to unlinkably use a credential again, a user must get it reissued, which actually suggests that, in fact, that this paper doesn't have linkable credentials, only unlinkable.
 These lines don't suggest that, but that's what's in the paper.
 Let me see One more thing there.
