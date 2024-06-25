@@ -1,12 +1,18 @@
 ---
-title: "Anonymous Credentials"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=pgErjQSQQsg
-tags: ['research', 'privacy-enhancements', 'cryptography', 'bls-signatures']
-speakers: ['Jonas Nick']
-categories: ['club']
-date: 2020-04-14
-summary: "Jonas Nick discusses anonymous credentials and their applications in this section. Anonymous credentials involve getting a blinded token signed by a server, where the server does not see the message being signed. These tokens contain attributes that can be selectively revealed, and range proofs can be used to verify attributes without revealing additional information. The speaker highlights the flexibility and security of anonymous credentials and how they improve on traditional signatures. They also discuss advancements in these credentials, such as mercurial signatures and delegateable anonymous credentials. The speaker mentions the work of Del Tauri and their solution for creating a divisible e-cash system using homomorphic cryptographic commitments, range proofs, and blind signature schemes. They also discuss the merging and breaking of anonymous credentials, as well as reissuing tokens without exposing the individual values. The implementation and linkability of credentials are also explored in the conversation. Overall, the participants express the need for further study and propose focusing on the cryptography part of the scheme in the next session."
+title: 'Anonymous Credentials'
+transcript_by: 'Johnycrown via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=pgErjQSQQsg'
+date: '2020-04-14'
+tags:
+  - 'research'
+  - 'privacy-enhancements'
+  - 'cryptography'
+  - 'bls-signatures'
+speakers:
+  - 'Jonas Nick'
+categories:
+  - 'club'
+summary: 'Jonas Nick discusses anonymous credentials and their applications in this section. Anonymous credentials involve getting a blinded token signed by a server, where the server does not see the message being signed. These tokens contain attributes that can be selectively revealed, and range proofs can be used to verify attributes without revealing additional information. The speaker highlights the flexibility and security of anonymous credentials and how they improve on traditional signatures. They also discuss advancements in these credentials, such as mercurial signatures and delegateable anonymous credentials. The speaker mentions the work of Del Tauri and their solution for creating a divisible e-cash system using homomorphic cryptographic commitments, range proofs, and blind signature schemes. They also discuss the merging and breaking of anonymous credentials, as well as reissuing tokens without exposing the individual values. The implementation and linkability of credentials are also explored in the conversation. Overall, the participants express the need for further study and propose focusing on the cryptography part of the scheme in the next session.'
 ---
 ## Introduction to credentials. / Selective signing of attributes. / Range proof. / "Rethinking Public Key Infrastructures and Digital Certificates" (Stefan Brands, 1999)
 
@@ -62,7 +68,7 @@ But one problem with it was that so far, every attempt at proving it secure in t
 And this is where this anonymous credentials light paper comes in because they have a construction that is provably secure And you can do basically the same things or very similar things as with brands credentials.
 There might be one minor problem.
 Last time I looked at it, I did not really solve because in the paper they say for 128-bit security, we recommend using a group of 576 bits.
-And Of course, our SecP group is only 256 bits.
+And Of course, our SECP (Secure Elliptic Curve Protocol) group is only 256 bits.
 So it's not sure if we can use that.
 It's often the case that due to the proof, these groups need to be much larger than they are used in practice.
 Even for Schnorr signatures, our SecP group would actually be too small for 128-bit security.
@@ -110,7 +116,7 @@ Speaker 1: 00:08:04
 Yes, it's called I think Ray Schwentz or that's what usually comes up.
 Anyway, so a bit more there because the same authors were working on this for probably a decade after this paper and they actually came up with something called Mercurial Signatures where they don't need so much crypto as much as in this paper, but in a very straightforward way they could achieve the exact same thing with these mercurial signatures.
 And even more, they were working on something called delegatable anonymous credentials.
-And the trick is that you could actually delegate the ownership of the credential to someone else.
+And the three keys that you could actually delegate the ownership of the credential to someone else.
 So in our case, that would be, I think, giving money to someone and I wouldn't be able to redeem it, but you would, which is actually pretty nice.
 Oh my God, I wasn't talking.
 
