@@ -13,6 +13,7 @@ speakers:
   - 'Elle Mouton'
   - 'Oliver Gugger'
   - 'Jonas Foss-Hellmuth'
+  - 'Paul Matzkoff'
 categories:
   - 'podcast'
 summary: 'Elle Mouton and Oliver Gugger join us to talk with us about the Simple Taproot Channel proposal.'
