@@ -176,7 +176,7 @@ Yep.
 So far it's clear?
 Yep.
 So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my Pedersen  commitments.
-By the way, we create more patterns and commitments with zeros, but it doesn't matter for now.
+By the way, we create more Pedersen  commitments with zeros, but it doesn't matter for now.
 
 Speaker 0: 00:16:31
 
@@ -184,12 +184,12 @@ Yeah, that makes sense.
 
 Speaker 1: 00:16:32
 
-Yeah, And then we also found a blind signature scheme that works with feathers and commitments.
+Yeah, And then we also found a blind signature scheme that works with Pedersen  commitments.
 So the coordinator can give us something from what we can create a signature on our values, which is cool because then we can just come at output registration that, hey, I'm registering this 0.1 Bitcoin output and I have a signature on it.
 And with another anonymity network identity, hey I'm registering this 0.9 Bitcoin output and I have a signature on it.
 So this is the breaking part.
-And the merging part is different because we couldn't figure out with the, with Pedersen commitments, range proofs and, yeah, of course, there needs to be a range proof along with the patterns and commitments, but I think that's obvious.
-Anyway, we couldn't figure it out with the blind signature scheme on patterns and commitment, but we actually had to use BLS signatures.
+And the merging part is different because we couldn't figure out with the, with Pedersen commitments, range proofs and, yeah, of course, there needs to be a range proof along with the Pedersen  commitments, but I think that's obvious.
+Anyway, we couldn't figure it out with the blind signature scheme on Pedersen  commitment, but we actually had to use BLS signatures.
 And with that, we could figure out how to merge together more than one commitment.
 Yeah, so it's pretty cool.
 Yeah.
@@ -212,7 +212,7 @@ Wouldn't that work for merging?
 Speaker 1: 00:18:52
 
 Your first suggestion, yes, that works.
-It just, there is some probably negligible privacy loss, right, Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin pedders and commitments on the server.
+It just, there is some probably negligible privacy loss, right, Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin Pedersen  commitments on the server.
 
 Speaker 0: 00:19:13
 
