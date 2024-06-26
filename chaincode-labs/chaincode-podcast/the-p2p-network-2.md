@@ -87,10 +87,10 @@ Pieter Wuille: 00:01:32
 Yeah, that's a hard and I guess good question.
 I think address relay is a really not well-defined problem, because we're still figuring out what its exact goals should be.
 It's not like transactions or blocks, where we have this fairly strict requirement that every node eventually learns about all of them.
-So clearly there's some desire for IP addresses to propagate well on the network, for some metric of well, but maybe that doesn't need to be - everyone needs to hear about everything all the time - because that's clearly an unscalable problem if the number of nodes goes up, and they all broadcast their existence on the network at a fixed frequency, eventually all the bandwidth will be eaten up by such messages.
+So clearly, there's some desire for IP addresses to propagate well on the network, for some metric of 'well,' but maybe that doesn't mean everyone needs to hear about everything all the time, because that's clearly an unscalable problem. If the number of nodes goes up and they all broadcast their existence on the network at a fixed frequency, eventually all the bandwidth will be eaten up by such messages.
 
 So that's a difficulty but at the same time, as I said, it's maybe not a strict requirement that everyone hears about everything.
-So ultimately the reason why IP addresses are rumored is to have a network that's connected, that's resistant to partitioning - that is partitioning being the unintentional splitting of the network - and I guess eclipse attacks being the term for when it's an attacker driven attempt to break someone's connectivity with the network.
+So ultimately, the reason why IP addresses are rumored to have a network that's connected, that's resistant to partitioning: that is, partitioning being the unintentional splitting of the network, and I guess eclipse attacks being the term for when it's an attacker driven attempt to break someone's connectivity with the network.
 Both of those, but just in general, it's both a hard problem and a not very well defined goal.
 
 Amiti Uttarwar: 00:03:14
@@ -371,7 +371,7 @@ Pieter Wuille: 00:19:48
 The big issue with outbound connections is, somewhere early on in Bitcoin's history, I don't remember exactly, there was a time when the network ran out of connectable inbound slots.
 Every node has a finite number of connections on the inbound side it accepts.
 Sum all of those up, that is an upper bound on the number of connections that can be made.
-At the time, Bitcoin didn't have any NAT-PMP or or mini-UPnP to automatically open firewalls.
+At the time, Bitcoin didn't have any NAT-PMP or mini-UPnP to automatically open firewalls.
 Probably a vast majority of nodes were running behind home routers.
 This explains the hesitancy that developers have had to increase the number of outbound connections.
 In an attack scenario, an easy way to increase your partition resistance is adding more connections.
@@ -483,7 +483,7 @@ So this is a known technique in networking called the [leaky buckets rate limite
 
 What this gives you is a mix between a relatively low sustained rate, but at the same time also permitting occasional spikes that go way beyond it, without really changing the long-term average, because ultimately everything is limited by the rate at which these tokens are added to the buckets.
 This was necessary because the existing behavior on the network is very spiky due to the way these things are buffered and sent out every so often.
-Obviously the big question with a design like this is - is it exploitable?
+Obviously, the big question with a design like this is: is it exploitable?
 Can someone overload you?
 
 The answer is yes, I think.
@@ -672,7 +672,7 @@ Pieter Wuille: 00:36:15
 Amiti Uttarwar: 00:36:16
 
 Yeah.
-So in the logs that shows a bunch of disconnecting - connecting, even if that might not actually change your long lasting peers.
+So in the logs, that shows a bunch of disconnecting and connecting, even if that might not actually change your long-lasting peers.
 Similarly we have one for when we haven't gotten a block in a long time, that might be normal, or you might be eclipsed so as this last ditch effort you make a full relay connection to an additional node and say...
 
 Pieter Wuille: 00:36:43
