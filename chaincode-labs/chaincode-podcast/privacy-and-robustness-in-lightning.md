@@ -391,7 +391,7 @@ I'm not crafty at all.
 But, okay.
 That is probably an aside.
 We don't need to go down.
-But,`CHECKSIG` from stack is like, it's cool that you can even make that work.
+But `CHECKSIG` from stack is like, it's cool that you can even make that work.
 But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
 And the answer would be, `CHECKSIG` from stack.
@@ -526,7 +526,7 @@ You can go do that.
 At least for a while before you have to get a real job again.
 So I feel fairly confident to go, we're going to move forward.
 And maybe not as fast as we are at the moment.
-But, you know, there's some future there.
+But, there's some future there.
 
 Adam Jonas: 00:23:24
 
