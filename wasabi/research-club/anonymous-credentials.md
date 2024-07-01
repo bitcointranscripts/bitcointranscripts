@@ -1,12 +1,18 @@
 ---
-title: "Anonymous Credentials"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=pgErjQSQQsg
-tags: ['research', 'privacy-enhancements', 'cryptography', 'bls-signatures']
-speakers: ['Jonas Nick']
-categories: ['club']
-date: 2020-04-14
-summary: "Jonas Nick discusses anonymous credentials and their applications in this section. Anonymous credentials involve getting a blinded token signed by a server, where the server does not see the message being signed. These tokens contain attributes that can be selectively revealed, and range proofs can be used to verify attributes without revealing additional information. The speaker highlights the flexibility and security of anonymous credentials and how they improve on traditional signatures. They also discuss advancements in these credentials, such as mercurial signatures and delegateable anonymous credentials. The speaker mentions the work of Del Tauri and their solution for creating a divisible e-cash system using homomorphic cryptographic commitments, range proofs, and blind signature schemes. They also discuss the merging and breaking of anonymous credentials, as well as reissuing tokens without exposing the individual values. The implementation and linkability of credentials are also explored in the conversation. Overall, the participants express the need for further study and propose focusing on the cryptography part of the scheme in the next session."
+title: 'Anonymous Credentials'
+transcript_by: 'Johnycrown via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=pgErjQSQQsg'
+date: '2020-04-14'
+tags:
+  - 'research'
+  - 'privacy-enhancements'
+  - 'cryptography'
+  - 'bls-signatures'
+speakers:
+  - 'Jonas Nick'
+categories:
+  - 'club'
+summary: 'Jonas Nick discusses anonymous credentials and their applications in this section. Anonymous credentials involve getting a blinded token signed by a server, where the server does not see the message being signed. These tokens contain attributes that can be selectively revealed, and range proofs can be used to verify attributes without revealing additional information. The speaker highlights the flexibility and security of anonymous credentials and how they improve on traditional signatures. They also discuss advancements in these credentials, such as mercurial signatures and delegateable anonymous credentials. The speaker mentions the work of Del Tauri and their solution for creating a divisible e-cash system using homomorphic cryptographic commitments, range proofs, and blind signature schemes. They also discuss the merging and breaking of anonymous credentials, as well as reissuing tokens without exposing the individual values. The implementation and linkability of credentials are also explored in the conversation. Overall, the participants express the need for further study and propose focusing on the cryptography part of the scheme in the next session.'
 ---
 ## Introduction to credentials. / Selective signing of attributes. / Range proof. / "Rethinking Public Key Infrastructures and Digital Certificates" (Stefan Brands, 1999)
 
@@ -62,7 +68,7 @@ But one problem with it was that so far, every attempt at proving it secure in t
 And this is where this anonymous credentials light paper comes in because they have a construction that is provably secure And you can do basically the same things or very similar things as with brands credentials.
 There might be one minor problem.
 Last time I looked at it, I did not really solve because in the paper they say for 128-bit security, we recommend using a group of 576 bits.
-And Of course, our SecP group is only 256 bits.
+And Of course, our SECP (Secure Elliptic Curve Protocol) group is only 256 bits.
 So it's not sure if we can use that.
 It's often the case that due to the proof, these groups need to be much larger than they are used in practice.
 Even for Schnorr signatures, our SecP group would actually be too small for 128-bit security.
@@ -110,7 +116,7 @@ Speaker 1: 00:08:04
 Yes, it's called I think Ray Schwentz or that's what usually comes up.
 Anyway, so a bit more there because the same authors were working on this for probably a decade after this paper and they actually came up with something called Mercurial Signatures where they don't need so much crypto as much as in this paper, but in a very straightforward way they could achieve the exact same thing with these mercurial signatures.
 And even more, they were working on something called delegatable anonymous credentials.
-And the trick is that you could actually delegate the ownership of the credential to someone else.
+And the three keys that you could actually delegate the ownership of the credential to someone else.
 So in our case, that would be, I think, giving money to someone and I wouldn't be able to redeem it, but you would, which is actually pretty nice.
 Oh my God, I wasn't talking.
 
@@ -169,8 +175,8 @@ So far it's clear?
 Yep.
 So far it's clear?
 Yep.
-So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my patterns and commitments.
-By the way, we create more patterns and commitments with zeros, but it doesn't matter for now.
+So, and then you register that two Pedersen commitment and Pedersen commitment for your 1Bitcoin input and you of course tell the coordinator that hey this 1Bitcoin input I'm going to prove that it is mine and this is the sum of my Pedersen  commitments.
+By the way, we create more Pedersen  commitments with zeros, but it doesn't matter for now.
 
 Speaker 0: 00:16:31
 
@@ -178,12 +184,12 @@ Yeah, that makes sense.
 
 Speaker 1: 00:16:32
 
-Yeah, And then we also found a blind signature scheme that works with feathers and commitments.
+Yeah, And then we also found a blind signature scheme that works with Pedersen  commitments.
 So the coordinator can give us something from what we can create a signature on our values, which is cool because then we can just come at output registration that, hey, I'm registering this 0.1 Bitcoin output and I have a signature on it.
 And with another anonymity network identity, hey I'm registering this 0.9 Bitcoin output and I have a signature on it.
 So this is the breaking part.
-And the merging part is different because we couldn't figure out with the, with Pedersen commitments, range proofs and, yeah, of course, there needs to be a range proof along with the patterns and commitments, but I think that's obvious.
-Anyway, we couldn't figure it out with the blind signature scheme on patterns and commitment, but we actually had to use BLS signatures.
+And the merging part is different because we couldn't figure out with the, with Pedersen commitments, range proofs and, yeah, of course, there needs to be a range proof along with the Pedersen  commitments, but I think that's obvious.
+Anyway, we couldn't figure it out with the blind signature scheme on Pedersen  commitment, but we actually had to use BLS signatures.
 And with that, we could figure out how to merge together more than one commitment.
 Yeah, so it's pretty cool.
 Yeah.
@@ -206,7 +212,7 @@ Wouldn't that work for merging?
 Speaker 1: 00:18:52
 
 Your first suggestion, yes, that works.
-It just, there is some probably negligible privacy loss, right, Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin pedders and commitments on the server.
+It just, there is some probably negligible privacy loss, right, Like you expose the server that you have a 0.1 Bitcoin and a 0.9 Bitcoin Pedersen  commitments on the server.
 
 Speaker 0: 00:19:13
 
@@ -256,7 +262,7 @@ then you wouldn't have that privacy loss of having to show the individual values
 Speaker 1: 00:21:11
 
 Yes, so the thing is we get the signature, the blind signature on the data itself.
-Which means if we want a reassurance phase there, then we would have to expose the values.
+Which means if we want a reissurance phase there, then we would have to expose the values.
 
 Speaker 0: 00:21:33
 
@@ -443,14 +449,14 @@ So at least to me that sounds plausible.
 
 Speaker 1: 00:29:40
 
-Yeah, actually, I'm just going to read a few things about here is that you prove about you prove from the article that to be for everyone knows what we are talking about.
+Yeah, actually, I'm just going to read a few things about here is that U-Prove about U-Prove from the article that to be for everyone knows what we are talking about.
 
 ## Unlinkable re-use of credentials.
 
 Speaker 1: 00:29:58
 
-From the efficiency point of view, therefore, the YouProve credential system based on Brand's work acquired and implemented by Microsoft, seems attractive.
-Uprove does not allow unlinkable reuse of credentials.
+From the efficiency point of view, therefore, the U-Prove credential system based on Brand's work acquired and implemented by Microsoft, seems attractive.
+U-Prove does not allow unlinkable reuse of credentials.
 In order to unlinkably use a credential again, a user must get it reissued, which actually suggests that, in fact, that this paper doesn't have linkable credentials, only unlinkable.
 These lines don't suggest that, but that's what's in the paper.
 Let me see One more thing there.
