@@ -1,6 +1,7 @@
 ---
 title: "Lightning History and everything else"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/67106159/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-22%2Fb3897f77-3011-9016-5c7a-8531e5b51825.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Tadge-Dryja-and-Lightning-History-and-everything-else---Episode-31-e20udtf
 tags: ['eltoo', 'lightning', 'segwit', 'sighash-anyprevout', 'trimmed-htlc']
 speakers: ['Tadge Dryja']

@@ -1,6 +1,7 @@
 ---
 title: "The Bitcoin Core Wallet"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/66272115/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-2-10%2F3aec2280-957d-3f13-b373-37ecf993c057.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Andrew-Chow-and-the-Bitcoin-Core-Wallet---Episode-30-e204vdj
 tags: ['bitcoin-core', 'coin-selection', 'descriptors', 'hardware-wallet', 'hwi', 'psbt', 'wallet']
 speakers: ['Andrew Chow']

@@ -1,6 +1,7 @@
 ---
 title: "SIGHASH_ANYPREVOUT, ephemeral anchors and LN symmetry (ELTOO)"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/65106755/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-1-15%2Fcd8370c5-7c59-e360-c0e4-7fa671994d49.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Greg-Sanders--SIGHASH_ANYPREVOUT--ephemeral-anchors-and-LN-symmetry-ELTOO---Episode-29-e1v1dc3
 tags: ['eltoo', 'ephemeral-anchors', 'package-relay', 'rbf', 'sighash-anyprevout']
 speakers: ['Greg Sanders']

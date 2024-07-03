@@ -1,6 +1,7 @@
 ---
 title: "Privacy and robustness in Lightning"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/74405848/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-7-9%2F1c76adef-4390-2bb8-1bec-e1e6358ca143.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Rusty-Russell-and-privacy-and-robustness-in-Lightning---episode-34-e27t6go
 tags: ['lightning', 'eltoo', 'privacy-enhancements']
 speakers: ['Rusty Russell']

@@ -1,6 +1,7 @@
 ---
 title: "Address Relay"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: "https://anchor.fm/s/12fe0620/podcast/play/51929581/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-4-13%2Ff8968bbe-0d13-4db9-afe5-2dcca8fff92a.mp3"
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Martin-Zumsande-and-Address-Relay---Episode-20-e1if91d
 tags: ['bitcoin-core', 'p2p']
 speakers: ['Martin Zumsande']

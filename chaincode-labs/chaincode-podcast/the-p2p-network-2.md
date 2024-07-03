@@ -1,6 +1,7 @@
 ---
 title: "The P2P network"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/42369447/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-9-26%2Fe2b8de66-96bb-0262-100b-c307e04bbfc5.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille--Amiti-Uttarwar-and-the-P2P-network---Episode-16-e19bgv7
 tags: ['erlay', 'p2p']
 speakers: ['Pieter Wuille', 'Amiti Uttarwar']

@@ -1,6 +1,7 @@
 ---
 title: "Block Building"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/46926206/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-0-31%2Fa0c95a17-a1dc-20b5-097d-5ed00e3066c8.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Block-Building-with-Clara-and-Murch---Episode-18-e1dmitu
 tags: ['research', 'mining','bitcoin-core']
 speakers: ['Clara Shikhelman']

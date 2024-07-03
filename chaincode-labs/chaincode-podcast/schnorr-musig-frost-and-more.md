@@ -1,6 +1,7 @@
 ---
 title: "Schnorr, MuSig, FROST and more"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/62274005/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-11-16%2F21bed2ba-2527-8c4f-b406-cdb955f43061.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing--Schnorr--MuSig--FROST-and-more---Episode-26-e1sav0l
 tags: ['cryptography', 'musig', 'schnorr-signatures']
 speakers: ['Pieter Wuille', 'Tim Ruffing']

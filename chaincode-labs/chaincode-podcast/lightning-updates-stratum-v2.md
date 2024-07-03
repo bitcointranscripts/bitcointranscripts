@@ -1,6 +1,7 @@
 ---
 title: "Lightning updates / Stratum V2"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/58233427/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-8-28%2F8283bffc-5c08-4ded-d83c-858c5a6348d0.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Steve-Lee-and-Lightning-updates--Stratum-V2---Episode-23-e1ofl4j
 tags: ['lightning', 'zero-conf-channels', 'stratum-v2']
 speakers: ['Steve Lee']

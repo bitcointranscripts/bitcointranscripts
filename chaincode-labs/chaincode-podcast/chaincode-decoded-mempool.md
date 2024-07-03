@@ -1,6 +1,7 @@
 ---
 title: "Chaincode Decoded: Mempool"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/32260353/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-3-26%2Fdc6f12e7-a547-d872-6ef6-7acfe755a692.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Mempool---Episode-12-evn0q1
 tags: ['anchor-outputs', 'cpfp', 'package-relay', 'rbf']
 speakers: ['Mark Erhardt']

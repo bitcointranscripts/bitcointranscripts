@@ -5,6 +5,7 @@ speakers: ['Carl Dong']
 categories: ['podcast']
 tags: ['build-system']
 date: 2020-12-15
+source_file: https://anchor.fm/s/12fe0620/podcast/play/24012484/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2020-11-15%2F93f2f9aa-76f9-7e21-2479-34a099b1cbd4.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Carl-Dong-and-Modularizing-the-Bitcoin-Consensus-Engine---Episode-10-enra84
 episode: 10
 ---

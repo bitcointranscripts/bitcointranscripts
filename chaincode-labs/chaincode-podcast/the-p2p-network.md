@@ -1,6 +1,7 @@
 ---
 title: "The P2P network"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/41966810/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-9-18%2F4bec062e-5ccc-96b3-26a2-f406eedee214.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Amiti-Uttarwar-and-the-P2P-network---Episode-15-e18v7oq
 tags: ['bitcoin-core', 'eclipse-attacks', 'p2p']
 speakers: ['Amiti Uttarwar']

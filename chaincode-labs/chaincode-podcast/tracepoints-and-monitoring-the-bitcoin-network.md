@@ -1,6 +1,7 @@
 ---
 title: "Tracepoints and monitoring the Bitcoin network"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/53093269/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-5-6%2F1232c21f-4b91-dfe9-8959-728bac4df94e.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/0xB10C--Tracepoints-and-monitoring-the-Bitcoin-network-e1jipel
 tags: []
 speakers: ['0xB10C']

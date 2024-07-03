@@ -1,6 +1,7 @@
 ---
 title: "Simple Taproot Channels"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/73519445/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-6-17%2F34ee82c7-857a-16b7-73bb-c5352bce9876.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Elle-Mouton--Oliver-Gugger-and-Simple-Taproot-Channels---Episode-33-e2724sl
 tags: ['anchor-outputs', 'cpfp-carve-out', 'ptlc', 'simple-taproot-channels', 'taproot']
 speakers: ['Elle Mouton', 'Oliver Gugger']

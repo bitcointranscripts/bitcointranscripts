@@ -1,6 +1,7 @@
 ---
 title: "Miniscript"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/43197580/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-10-11%2Fd5519665-1145-2009-f74d-c05d43698b4d.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sanket-Kanjalkar-and-Miniscript---Episode-17-e1a4pmc
 tags: ['descriptors', 'htlc', 'miniscript', 'psbt', 'taproot']
 speakers: ['Sanket Kanjalkar']

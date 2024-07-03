@@ -1,6 +1,7 @@
 ---
 title: "Chaincode Decoded: Bech32m"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/31558828/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-3-16%2F36603850-a01a-02d8-d651-4def404c9c73.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Bech32m---Episode-11-ev1jnc
 tags: ['bech32', 'segwit', 'taproot']
 speakers: ['Mark Erhardt']

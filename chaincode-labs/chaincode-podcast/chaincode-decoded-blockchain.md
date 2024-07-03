@@ -1,6 +1,7 @@
 ---
 title: "Chaincode Decoded: Blockchain"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/34364789/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2021-4-27%2F35f77e29-0c57-3d73-6c82-6407aade5a4f.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Blockchain---Episode-14-e11n7tl
 tags: ['mining']
 speakers: ['Mark Erhardt']

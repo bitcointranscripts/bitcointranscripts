@@ -1,6 +1,7 @@
 ---
 title: "The Bitcoin Core wallet and wrangling bitcoin data"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/59369518/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-9-21%2Fe08b2432-2f59-101e-2bd1-92fd34f8c3a1.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Josibake--the-Bitcoin-Core-wallet-and-wrangling-bitcoin-data---episode-24-e1piaje
 tags: ['bitcoin-core', 'signature-aggregation', 'wallet']
 speakers: ['Josibake']

@@ -1,6 +1,7 @@
 ---
 title: "Lightning privacy"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/47776302/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-1-17%2F4969f7c9-b338-867d-c946-47fe670c71e0.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergei-Tikhomirov-and-Lightning-privacy---Episode-19-e1egh3e
 tags: ['lightning', 'research', 'security', 'topology']
 speakers: ['Sergei Tikhomirov']

@@ -1,6 +1,7 @@
 ---
 title: "The Bitcoin Development Kit (BDK)"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/71028929/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-4-25%2F8ab73b8d-a824-fc44-fa03-8ce523cb5d4f.mp3
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Alekos-Filini--Daniela-Brozzoni-and-the-Bitcoin-Development-Kit-BDK---Episode-32-e24m4o1
 tags: ['descriptors', 'hwi', 'wallet']
 speakers: ['Alekos Filini', 'Daniela Brozzoni']

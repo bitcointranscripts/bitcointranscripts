@@ -1,6 +1,7 @@
 ---
 title: "Channel Jamming on the Lightning Network"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://anchor.fm/s/12fe0620/podcast/play/61104292/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2022-10-23%2F298871731-44100-2-f311e379afdf1.m4a
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4
 tags: ['lightning', 'research', 'ux', 'watchtowers']
 speakers: ['Clara Shikhelman', 'Sergei Tikhomirov']
