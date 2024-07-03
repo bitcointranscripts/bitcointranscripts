@@ -1,6 +1,7 @@
 ---
 title: "Ocean Tides"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+source_file: https://bitcoinexplainedpodcast.com/audio/@nado/episode-86-ocean-tides-hktbg.mp3
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-86-ocean-tides-hktbg
 tags: ['mining']
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
