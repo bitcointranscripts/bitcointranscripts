@@ -5,7 +5,43 @@ media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-
 tags: ["erlay","p2p"]
 speakers: ["Pieter Wuille","Amiti Uttarwar"]
 categories: ["podcast"]
+summary: "P2P experts Amiti Uttarwar and Pieter Wuille discuss various aspects of peer-to-peer communication in Bitcoin, with Adam Jonas facilitating the conversation. They delve into the challenges and objectives of address relay, highlighting its complexities and the importance of propagating IP addresses to maintain network connectivity and prevent partitioning and eclipse attacks. The discussion covers the design and evolution of AddrMan, introduced in 2012 to manage IP addresses, and the impact of changes like rate-limiting address gossip to mitigate spam. Pieter and Amiti also touch on the significance of maintaining separate network stacks for different network protocols and the potential of employing ASMAP to improve network resilience. The conversation underscores ongoing efforts and future directions for enhancing Bitcoin's P2P network."
+episode: 16
 date: 2021-10-26
+additional_resources:
+-   title: FIBRE Episode with Matt Corallo
+    url: https://podcast.chaincode.com/2020/03/12/matt-corallo-6.html
+-   title: 'PR #787'
+    url: https://github.com/bitcoin/bitcoin/pull/787
+-   title: Eclipse Attack paper
+    url: https://eprint.iacr.org/2015/263.pdf
+-   title: Sybil attack
+    url: https://en.wikipedia.org/wiki/Sybil_attack
+-   title: Addrman and eclipse attacks wiki page
+    url: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Addrman-and-eclipse-attacks
+-   title: 'Anchors connections - PR #17428'
+    url: https://github.com/bitcoin/bitcoin/pull/17428
+-   title: Connection exhaustion issue
+    url: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/Addrman-and-eclipse-attacks#open-questions-and-areas-for-research
+-   title: paper
+    url: https://arxiv.org/abs/1905.10518
+-   title: BIP
+    url: https://github.com/naumenkogs/bips/blob/bip_0330_updates/bip-0330.mediawiki
+-   title: 'Limiting addr black holes - PR #21528'
+    url: https://github.com/bitcoin/bitcoin/pull/21528
+-   title: Rate limiting on address gossip in 22.0
+    url: https://github.com/bitcoin/bitcoin/pull/22387
+-   title: Leaky bucket rate limiter
+    url: https://en.wikipedia.org/wiki/Leaky_bucket
+-   title: Estimating the Node Degree of Public Peers and Detecting Sybil Peers Based
+        on Address Messages in the Bitcoin P2P Network
+    url: https://arxiv.org/abs/2108.00815
+-   title: Coinscope paper
+    url: https://www.cs.umd.edu/projects/coinscope/coinscope.pdf
+-   title: TxProbe
+    url: https://arxiv.org/abs/1812.00942
+-   title: ASMAP
+    url: https://blog.bitmex.com/call-to-action-testing-and-improving-asmap/
 ---
 ## Introduction
 
