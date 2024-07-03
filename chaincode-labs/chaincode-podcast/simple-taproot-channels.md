@@ -2,7 +2,7 @@
 title: 'Simple Taproot Channels'
 transcript_by: 'TheFrayy via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Elle-Mouton--Oliver-Gugger-and-Simple-Taproot-Channels---Episode-33-e2724sl'
-date: '2023-07-16'
+date: '2023-07-15'
 tags:
   - 'anchor-outputs'
   - 'cpfp-carve-out'
@@ -24,6 +24,8 @@ additional_resources:
   - title: 'PTLCs'
     url: 'https://bitcoinops.org/en/topics/ptlc/'
 ---
+## Introduction
+
 Elle Mouton: 00:00:00
 
 Then we get to Gossip 2.0, which is the bigger jump here, which would be instead of tying a UTXO proof to every channel, you instead tie a proof to every node announcement.
@@ -69,8 +71,7 @@ Thank you.
 Adam Jonas: 00:01:09
 
 It's been a while, but we have two great guests today.
-Welcome to Chaincode.
-It's great to have you here.
+Welcome to Chaincode, It's great to have you here.
 And I'm excited to talk about Simple Taproot channels.
 
 Oliver Gugger: 00:01:18
@@ -100,21 +101,18 @@ Sure.
 Oliver Gugger: 00:01:27
 
 So yeah, you might've all heard of Taproot having been activated quite a while ago.
-So everyone's asking, Hey, when do we get all these cool privacy benefits out of Taproot transactions and simple Taproot channels with the emphasis on simple, because that's just the first step is yeah, as I said, the first step towards getting there.
+So everyone's asking, Hey, when do we get all these cool privacy benefits out of Taproot transactions and simple Taproot channels with the emphasis on simple, because that's just the first step towards getting there.
 And basically what they do is just replace the funding output, which so far has been a two of two Pay-to-Witness-Script-Hash funding output with musig2, sell two of two signature, but it's a musig2 key funding output.
 And while we're doing that, it's also changing up some of the scripts to get some of the benefits in chain space savings and privacy benefits.
 
 Mark Erhardt: 00:02:24
 
 All right, so to recap, Taproot's been out for about one and a half years And Lightning Wallets can probably already send to Taproot outputs and probably receive Taproot outputs on-chain.
-But now we're going to make the funding output, the 'UTXO' that the channel is built upon, Taproot as well.
-Which means that we can have something that looks like a single-sig output using music and we, well, yes.
+But now we're going to make the funding output, the UTXO that the channel is built upon, Taproot as well.
+Which means that we can have something that looks like a single-sig output using musig and we, well, yes.
 So you said that we're also going to see some changes in the scripts.
 That sounds like something that is the business of all Lightning implementations.
 What's the status there?
-
-Mark Erhardt: 00:03:06
-
 Can you maybe walk us a little through that?
 
 Elle Mouton: 00:03:08
@@ -122,7 +120,7 @@ Elle Mouton: 00:03:08
 I mean, just the status of the of the spec.
 Yeah.
 OK, well, so the one and only Roasbeef proposed the spec about a year ago, I think now, and like has gotten really good feedback from kind of all parties.
-And I think, so the 'LND' implementation is pretty close to being done, and I think 'LDK', but I'm not sure, has also made quite a bit of progress.
+And I think, so the LND implementation is pretty close to being done, and I think LDK, but I'm not sure, has also made quite a bit of progress.
 The spec is not merged yet, but hopefully with the spec meeting coming up, we can make some progress there and get it merged.
 But all parties seem to be pretty happy with how it's turned out.
 
@@ -154,7 +152,7 @@ That sounds very cool.
 
 Mark Erhardt: 00:04:30
 
-So basically the benefits would include that if a unannounced channel gets closed for somebody that doesn't have more information about that transaction, if there are no unsettled 'HTLCs' or 'PTLCs' attached, it will look just like a single-sig payment.
+So basically the benefits would include that if a unannounced channel gets closed for somebody that doesn't have more information about that transaction, if there are no unsettled HTLCs or PTLCs attached, it will look just like a single-sig payment.
 That's one of the privacy benefits that we talked about.
 
 Oliver Gugger: 00:04:54
@@ -169,13 +167,13 @@ So how about we talk a little bit what the other outputs, the more revealing out
 
 Elle Mouton: 00:05:07
 
-Yeah, first of all, like one great benefit is like so a lot of the outputs have multiple branches, right?
-So that's like a great thing about Taproot is we can just like put things in multiple branches and we only reveal the branch that gets spent.
+Yeah, first of all, one great benefit is a lot of the outputs have multiple branches, right?
+So that's a great thing about Taproot is we can just like put things in multiple branches and we only reveal the branch that gets spent.
 So in majority of the cases, even in a forced close, it's going to be a smaller onchained footprint.
 
 Mark Erhardt: 00:05:24
 
-So you're talking about having different 'leaf scripts' in the 'taproot tree'?
+So you're talking about having different leaf scripts in the taproot tree?
 
 Elle Mouton: 00:05:28
 
@@ -198,9 +196,9 @@ Mark Erhardt: 00:06:06
 
 In the key path spend, we get to benefit from that in what case.
 So let's remind ourselves when we have multi-hub payments, we create a smart contract that locks in funds.
-There's two locks right now with the 'HTLCs'. There's a hash lock and a time lock.
+There's two locks right now with the HTLCs. There's a hash lock and a time lock.
 Also, why am I explaining this lightning stuff to you people?
-But in the case, Well, in the best case, of course, the payment goes through and it gets folded back into the main balance of the channel.
+But in the case, well, in the best case, of course, the payment goes through and it gets folded back into the main balance of the channel.
 But in a failure case where some party disappears or the contract times out, either the receiving party needs to get the funds or the sending party needs to get the funds.
 And those two cases, one makes use of the hash lock, one makes use of the time lock.
 In which case would we be able to make use of the key path spend?
@@ -209,12 +207,12 @@ Elle Mouton: 00:07:00
 
 Okay.
 So it also depends on which commitment we're talking about, if it's my commitment or your commitment.
-And the important thing to remember is that any output on my commitment that goes to me needs to be locked by at least one CSV because of the anchor, if you're using anchor outputs, which simple type of channels does do.
+And the important thing to remember is that any output on my commitment that goes to me needs to be locked by at least one CSV because of the anchor, if you're using anchor outputs, which simple taproot channels does do.
 So to preserve the whole, what's it called?
 CPFP carve out rule.
 Any output needs to be locked by one CSV, which requires a script.
 So mostly we get to make use of this on any output that goes to you.
-So like, for example, if I have got an incoming 'HTLC' to me, then it has to have a 'revocation path' to you.
+So like, for example, if I have got an incoming HTLC to me, then it has to have a revocation path to you.
 That doesn't need to be locked by CSV.
 So that can be the key path spend.
 
@@ -228,19 +226,19 @@ So all funds that go to you in your commitment transaction need to be locked, ri
 Elle Mouton: 00:08:09
 
 Yes, I actually, and I just realized I kind of mixed it up a little bit.
-Even outputs that go to you need to be locked by a 1CSV on my commitment transaction for the 'CPFB' carve out.
+Even outputs that go to you need to be locked by one CSV on my commitment transaction for the CPFB carve out.
 
 ## Refresher on CPFP carve-out and Anchor Outputs
 
 Mark Erhardt: 00:08:19
 
-Wait, can you explain the 'CPFB' carve out in that context?
+Wait, can you explain the CPFB carve out in that context?
 
 Elle Mouton: 00:08:22
 
 OK, cool.
 So, Simple Taproot Channels uses anchor outputs.
-And the reason for that is if we need to force close, then we can use the anchors to ''CPFB'', so child pays for parents, the transaction, so it gets in.
+And the reason for that is if we need to force close, then we can use the anchors to CPFB, so child pays for parents, the transaction, so it gets in.
 
 Mark Erhardt: 00:08:37
 
@@ -259,9 +257,9 @@ I'm already in ephemeral anchors world.
 Elle Mouton: 00:08:52
 
 We wish we could be there already.
-So there has to be, there's one that only you can use and there's one that only I can use and the whole idea is that, So there's one output that you can use to 'CPFB' the thing.
+So there has to be, there's one that only you can use and there's one that only I can use and the whole idea is that, So there's one output that you can use to CPFB the thing.
 And even if you try and like pin the transaction, like basically hitting all the mempool limits, right.
-To prevent me from getting it in, then the 'CPFB' carve out rule allows this like this one more that's yours, that doesn't have a time lock, always needs to have, well, it doesn't have like the big time lock, still needs to have a one block CSV time block.
+To prevent me from getting it in, then the CPFB carve out rule allows this like one more that's yours, that doesn't have a time lock, always needs to have, well, it doesn't have like the big time lock, still needs to have a one block CSV time block.
 So, and just to kind of come back to the start of the question is even that output can't make use of the key parts spend.
 
 Mark Erhardt: 00:09:31
@@ -281,11 +279,12 @@ So my follow-up question would be, why are there two anchor outputs and does tha
 
 Elle Mouton: 00:10:30
 
-Okay, so the reason there are two is so that we have this 'CPFB' carve out ability, right?
+Okay, so the reason there are two is so that we have this CPFB carve out ability, right?
 So you have the ability to spend even if I'm trying to pin you and the other way around.
 So no, they don't live forever.
-And this is like a really cool thing that was thought of like even in the current implementation of anchor channels, which basically says you're allowed to spend it for 16 blocks and then it becomes an anyone can spend, which is really cool, because then you get these people who just try and sweep all the anchors.
-And so we have to, and that was like a big thing in the simple tapper channel proposal, so we have to keep this ability so that we don't litter the 'UTXO' set.
+And this is like a really cool thing that was thought of even in the current implementation of anchor channels, which basically says you're allowed to spend it for 16 blocks and then it becomes an anyone can spend.
+Which is really cool, because then you get these people who just try and sweep all the anchors.
+And so we have to, and that was like a big thing in the simple tapper channel proposal, so we have to keep this ability so that we don't litter the UTXO set.
 Because it's like 330 satoshis.
 
 Mark Erhardt: 00:11:08
@@ -307,7 +306,7 @@ So someone does, not sure who.
 
 Elle Mouton: 00:11:48
 
-But yeah, that was a really cool, like, interesting, we almost, like, I think Ali, I think you spotted this, that we like almost lost that ability, like, with the design of the simple Tafrit outputs, because, so we like, we have this anchor output, we can use the key path spent because it's like, it only needs your pub key, right?
+But yeah, that was a really cool, like, interesting, we almost, like, I think Ali, I think you spotted this, that we like almost lost that ability, like, with the design of the simple Taproot outputs, because, so we like, we have this anchor output, we can use the key path spent because it's like, it only needs your pub key, right?
 So awesome, that's the key path.
 And then it's got this anyone can spend thing.
 But if that third party wants to come in and spend it, they need to provide the internal key.
@@ -316,7 +315,7 @@ Okay, well, they would know your internal key if you spend the two remotes becau
 
 Mark Erhardt: 00:12:24
 
-So if you use another leaf script, you would provide the internal key and.
+So if you use another leaf script, you would provide the internal key.
 
 Oliver Gugger: 00:12:31
 
@@ -353,10 +352,10 @@ Exactly.
 So the two remotes is really easy because there's only one script, right?
 So it's basically people who want to spend the anchor just need to wait till the remote party spends it, they'll learn the key, it's fine.
 The problem is on the two local, because you've got two paths.
-One is to me after time lock, the other one is 'revocation path' to you, right, if I'm cheating.
-And then so we originally had the 'revocation path' as the key spend, because it's like, that's a nice benefit, But then if it does, if that gets spent, then you could have this anchor just left over forever.
+One is to me after time lock, the other one is revocation path to you, right, if I'm cheating.
+And then so we originally had the revocation path as the key spend, because it's like, that's a nice benefit, But then if it does, if that gets spent, then you could have this anchor just left over forever.
 So we had to make, we had to get rid of the key, the key spend path in the to local.
-And unfortunately we had to put the 'revocation path' in the script and like just stuff the to local key there.
+And unfortunately we had to put the revocation path in the script and like just stuff the to local key there.
 So it doesn't even do anything.
 You just pop it on and drop it.
 
@@ -369,7 +368,6 @@ And I'm just thinking maybe there's a nifty way of encoding it in some fashion.
 Oliver Gugger: 00:14:16
 
 Maybe I mean, there were a couple of ideas floating around.
-I'm sure y'all have thought of that sort of stuff too.
 Maybe someone will come up with a clever idea this week.
 I mean, it is not really nice to just put these 33 bytes on chain or 32, I'm not sure which including 32.
 Yeah, okay.
@@ -380,14 +378,14 @@ Yeah, especially for an anchor output, which is kind of...
 
 Elle Mouton: 00:14:40
 
-Yeah, but it's like, I think it's really cool that we were like, hey, we wanna make this decision so that we don't end up unintentionally littering the 'UTXO'.
+Yeah, but it's like, I think it's really cool that we were like, hey, we wanna make this decision so that we don't end up unintentionally littering the UTXO.
 Sure.
 
 Mark Erhardt: 00:14:50
 
 I think that's more important.
 No, no, I agree that that is the priority.
-We don't want to litter the 'UTXO'.
+We don't want to litter the UTXO.
 I'm currently writing an article for the Uptick newsletter exactly on that topic, how we are protective of global resources in the network.
 But yeah, so I agree on the priorities here.
 I am just wondering, especially for an anchor output that of which always only at most one of the two will be spent, It feels kind of sad if it's extra large.
@@ -401,7 +399,7 @@ Mark Erhardt: 00:15:22
 
 Well, the spending of the anchor will require an additional 33 bytes to have a script path spend instead of a key path spend.
 Yeah, anyway, also it's only temporary, right?
-We're hopefully getting v3 transactions and fml anchors and then you can have a single anchor for both parties.
+We're hopefully getting v3 transactions and ephemeral anchors and then you can have a single anchor for both parties.
 Maybe, hopefully.
 For that, maybe check out our next podcast.
 If everything goes well.
@@ -417,21 +415,22 @@ What's the, what's the high level goals?
 Oliver Gugger: 00:16:04
 
 So basically it's setting us up for the next step, which would be the, some changes to the gossip protocol.
-And then the pen, the, the ultimate, upgrade will be, to PTLC, which requires, tap roots, funding outputs, But because that last step is such a big step, we're doing it incrementally just to reduce the complexity of each step and gain some experience, figure out all these complications such as we discussed before.
+And then the pen, the ultimate, upgrade will be, to PTLC, which requires, tap roots, funding outputs, But because that last step is such a big step, we're doing it incrementally just to reduce the complexity of each step and gain some experience
+Figure out all these complications such as we discussed before.
 Yeah, because doing it, everything in one step is big thing.
 
-## Why do 'PTLCs' need Taproot funding outputs?
+## Why do PTLCs need Taproot funding outputs?
 
 Mark Erhardt: 00:16:43
 
 Sorry, I have a follow up question there.
-My understanding was that 'PTLCs' requires both parties in the channel to be able to understand taproot, but why does it need a taproot funding output?
+My understanding was that PTLCs requires both parties in the channel to be able to understand taproot, but why does it need a taproot funding output?
 Wouldn't it also be able to have a PTLC output on a pay-to-witness script hash anchor?
 Sorry, funding output?
 
 Elle Mouton: 00:17:03
 
-You technically could, but remember that, so 'PTLCs', importantly, the whole route needs to be,
+You technically could, but remember that, so PTLCs, importantly, the whole route needs to be,
 
 Mark Erhardt: 00:17:09
 
@@ -449,14 +448,13 @@ Oh, okay.
 Oliver Gugger: 00:17:17
 
 Okay.
-And I'm not very up to date on PTLC, so this might be wrong, but I thought that, some information in the funding key, like the nonces used, are also used in, in some of the adapter signature set up for the 'PTLCs' in order for the revocation stuff to become a bit more deterministic.
-So I think that's why we need, but This could be wrong.
+And I'm not very up to date on PTLC, so this might be wrong, but I thought that, some information in the funding key, like the nonces used, are also used in, in some of the adapter signature set up for the PTLCs in order for the revocation stuff to become a bit more deterministic.
+So I think that's why we need, but this could be wrong.
 
 Mark Erhardt: 00:17:47
 
 Okay.
-So it's part of the arcane details of how exactly 'PTLCs' are going to work under the hood.
-I think so.
+So it's part of the arcane details of how exactly PTLCs are going to work under the hood.
 
 Oliver Gugger: 00:17:53
 
@@ -470,11 +468,9 @@ I think there's going to be a lot of discussion on that in the next, in the foll
 Mark Erhardt: 00:17:59
 
 Right.
-Right.
-Yeah.
-So to recap, we're only talking about making the funding output paid to Taproot and 'PTLCs' is future music right now.
+So to recap, we're only talking about making the funding output paid to Taproot and PTLCs is future music right now.
 
-## Potential updates for the gossip protocol: Gossip 1.5 or Gossip 2.0
+## Potential updates for the gossip protocol
 
 Mark Erhardt: 00:18:11
 
@@ -489,11 +485,12 @@ Yeah, so This is like a very big open space for discussion still.
 So I can just talk around it kind of.
 But basically, so this is also why simple type of channels is initially just for unannounced channels because the gossip layer isn't updated yet.
 And why do we need to update the gossip layer?
-Because currently the channel announcement message, you know, I get the two keys in this message, I go and reconstruct the 'P2WSH' output, I go look on chain, I'm like this definitely looks like a Lightning channel, I'm going to trust it, I'm going to pop it in my graph and I'm going to use it.
+Because currently the channel announcement message, you know, I get the two keys in this message, I go and reconstruct the P2WSH output.
+I go look on chain, I'm like this definitely looks like a Lightning channel, I'm going to trust it, I'm going to pop it in my graph and I'm going to use it.
 So that whole proof completely changes now, right?
 So we have to redo that as the first thing.
 So nodes need to know how to verify that a channel is like a taproot-looking channel.
-And then there's this whole discussion of like, so the gossip 1.5 kind of proposal is like just doing that, right?
+And then there's this whole discussion of like, so the gossip 1.5 kind of proposal is just doing that, right?
 So it works exactly as is today, basically just that we now, the nodes need to go verify this music output.
 
 Mark Erhardt: 00:19:26
@@ -503,19 +500,19 @@ Yes.
 
 Elle Mouton: 00:19:35
 
-And you still tie each channel that you want to announce to a 'UTXO' chain.
+And you still tie each channel that you want to announce to a UTXO chain.
 
 Mark Erhardt: 00:19:40
 
 Right.
-So you would still continue to announce public channels with a specific 'UTXO'.
-And of course that would sort of deny some of the privacy benefits of moving to pay-to-tab route, which makes all outputs look, all music outputs look like single-sig outputs and if we could get away with not announcing the funding output explicitly, that would make Lightning way more private, right?
+So you would still continue to announce public channels with a specific UTXO.
+And of course that would sort of deny some of the privacy benefits of moving to pay-to-tab route, which makes all outputs look, all musig outputs look like single-sig outputs and if we could get away with not announcing the funding output explicitly, that would make Lightning way more private, right?
 
 Elle Mouton: 00:20:09
 
 Absolutely, absolutely.
-So that's like the, then we get to Gossip 2.0, which is like the bigger jump here, which is, would be instead of tying a 'UTXO' proof to every channel, you instead tie a proof to every node announcement.
-So you just say, hey, I own a channel, like I definitely own this 'UTXO', I'm showing you, I'm like, you know, I got it straight from the exchange.
+So that's like the, then we get to Gossip 2.0, which is like the bigger jump here, which is, would be instead of tying a UTXO proof to every channel, you instead tie a proof to every node announcement.
+So you just say, hey, I own a channel, like I definitely own this UTXO, I'm showing you, I'm like, you know, I got it straight from the exchange.
 I don't like this is my KYC to like show that I've got capital.
 And then we come up with a multiplier, let's say 10x.
 And then that's so let's say I have a proof I have one Bitcoin, one Bitcoin output, 10x.
@@ -526,7 +523,8 @@ You just, you know, I've already proved, I've already like,
 
 Mark Erhardt: 00:20:54
 
-you've already verified the commitment to this one Bitcoin and you know that this node has sort of some credibility for up to an amount that they can announce, then you have to keep track though how many channels have been announced by specific nodes, right?
+you've already verified the commitment to this one Bitcoin and you know that this node has sort of some credibility for up to an amount that they can announce.
+Then you have to keep track though how many channels have been announced by specific nodes, right?
 
 Elle Mouton: 00:21:11
 
@@ -563,12 +561,12 @@ That must be part of the discussion, right?
 Elle Mouton: 00:21:56
 
 Absolutely.
-So I could be like, Hey guys, I can, you know, you can use my 'UTXO' as proof and then you can like.
+So I could be like, Hey guys, I can, you know, you can use my UTXO as proof and then you can like.
 
 Mark Erhardt: 00:22:02
 
 Sure, sure.
-But I mean, a, that channel, the channel partner would also have to agree that the channel is based on credit and there's no actual 'UTXO'.
+But I mean, a, that channel, the channel partner would also have to agree that the channel is based on credit and there's no actual UTXO.
 Yes.
 The risk is only, as far as I understood, I looked into this a while back.
 The risk is only that of the two channel participants, because of course they also have an ephemeral HTLC and when a payment times out, the on-chain settlement would be interrupted at that point, right?
@@ -603,12 +601,17 @@ Mark Erhardt: 00:23:16
 
 Right, but you could announce a one Bitcoin channel if you have 1.1 for privacy reasons.
 If you have a higher capacity than you announce that will work, right?
+
+Elle Mouton: 00:23:26
+
 Sorry, can you say that again?
-So let's say we are getting now the privacy benefit of having this unrelated 'UTXO' as the credit-establishing funding output, not funding output, but we still need an actual funding output if we set up a legit channel.
+
+Mark Erhardt: 00:23:28
+
+So let's say we are getting now the privacy benefit of having this unrelated UTXO as the credit-establishing funding output, not funding output, but we still need an actual funding output if we set up a legit channel.
 So let's say we had a unique amount of satoshis in that funding output with like eight digits per session.
-If we announce that, people might look at the 'UTXO' set, find a specific 'UTXO' of that amount and they're like, ah, that fits the time of the channel announcement, that must be it.
+If we announce that, people might look at the UTXO set, find a specific UTXO of that amount and they're like, ah, that fits the time of the channel announcement, that must be it.
 So I could go and say, if I, for example, have 115 Satoshis more than one Bitcoin, I announce one Bitcoin instead for privacy purposes and announcing a smaller capacity should work, right?
-Yeah, totally.
 Maybe I'm getting too much in the mood.
 
 Elle Mouton: 00:24:15
@@ -623,12 +626,12 @@ Okay, so we talked a little bit about Gossip 1.5, 2.0. This is also part of what
 
 Elle Mouton: 00:24:33
 
-Katie Robinson Definitely, because it's a big change, right?
+Definitely, because it's a big change, right?
 Changing the gossip layer and 2.0, we get way more privacy benefits, but it is a big jump.
 
 Adam Jonas: 00:24:42
 
-Guy Podjarny And what are you most concerned about, I guess, in terms of that big jump?
+And what are you most concerned about, I guess, in terms of that big jump?
 
 Elle Mouton: 00:24:45
 
@@ -652,14 +655,14 @@ So you never get the privacy benefits maybe?
 
 Elle Mouton: 00:25:11
 
-So, but you get to test things, you get to like iterate faster, you get, we can get 'PTLCs' maybe a bit faster than if we were to wait for the big proposal.
+But you get to test things, you get to like iterate faster, you get, we can get PTLCs maybe a bit faster than if we were to wait for the big proposal.
 So yeah, there's pros and cons.
-Cool.
 
 Mark Erhardt: 00:25:22
 
-So 'PTLCs', we touched on them a little bit, but you said that it is based on needing pay to taproot funding outputs first.
-Then also 'PTLCs' can only be used if all hops along a route are support 'PTLCs'. The benefit, of course, is that it becomes more private because it's harder to tie, for example, back when a surveillance is multiple participants in a long chain of hops, because now it's not just a single pre-image, but every hop has a different pre-image.
+So PTLCs, we touched on them a little bit, but you said that it is based on needing pay to taproot funding outputs first.
+Then also PTLCs can only be used if all hops along a route are support PTLCs. The benefit, of course, is that it becomes more private because it's harder to tie.
+For example, back when a surveillance is multiple participants in a long chain of hops, because now it's not just a single pre-image, but every hop has a different pre-image.
 What's the timeline for this?
 This is super cool.
 We've been hearing a lot about it for what, three years now?
@@ -667,7 +670,8 @@ We've been hearing a lot about it for what, three years now?
 Elle Mouton: 00:26:08
 
 I don't know.
-So there's been a few kind of, there was initially like a big bang proposal, I think from AJ Towns with Taproot channels and that immediately included 'PTLCs'. I think T-Best also gave an updated proposal of that.
+So there's been a few kind of, there was initially like a big bang proposal.
+I think from AJ Towns with Taproot channels and that immediately included PTLCs. I think T-Best also gave an updated proposal of that.
 So I think again, like in the next few weeks, we'll hear more about that.
 People are currently just focusing on getting the Taproot channels out first, but you know, two weeks TM.
 
@@ -683,13 +687,12 @@ Oh, I think so.
 
 Oliver Gugger: 00:26:38
 
-Yeah.
 And it's not just all the protocol updates that are needed and all the scripts that change.
 It's also, yeah, I would even say new cryptography that we haven't used in Lightning before with adapter signatures and all of that.
 So, I mean, it's probably not that big of a deal to implement because it's all just elliptic curve cryptography, but because it's a new thing, it could still be that we find some issue with the cryptography protocol or leak of information or whatever.
 So It's just quite a big step on all of them.
 
-## Iterative approach or big push
+## Iterative approach or big push?
 
 Adam Jonas: 00:27:18
 
@@ -700,7 +703,7 @@ So if you know where you're going, why not just rip off the bandaid now as oppos
 
 Elle Mouton: 00:27:53
 
-Edith Winkler-Ross I mean, it just seems like so far when each big proposal we've seen in Lightning, we just keep discussing it for years on end.
+I mean, it just seems like so far when each big proposal we've seen in Lightning, we just keep discussing it for years on end.
 And so I think initially I would have said, yes, do the big thing now.
 Because if you do the iterative thing, you always have to keep one foot in the legacy world and one in the new.
 
@@ -728,7 +731,8 @@ It's got to work.
 
 Mark Erhardt: 00:28:58
 
-It's also hard to see how going to PGLCs is going to have a good bang for the buck quickly, because only once many nodes have updated and have created new channels based on taproot outputs, you would actually start being able to send multi-hop payments, because only when all hops have it, you can, right?
+It's also hard to see how going to PGLCs is going to have a good bang for the buck quickly.
+Because only once many nodes have updated and have created new channels based on taproot outputs, you would actually start being able to send multi-hop payments, because only when all hops have it, you can, right?
 So, I mean, sure, you need to get it out there in order for people to be ready for it.
 
 Adam Jonas: 00:29:24
@@ -740,9 +744,7 @@ Mark Erhardt: 00:29:34
 Right, sure.
 And they're short, not many hops, right?
 So in the direct vicinity of Lightning Service providers, probably the upgrade speed would be faster.
-But if you get the taproot funding outputs first, then the software update to enable 'PTLCs' would also immediately have already that infrastructure of taproot channels that could use it.
-Exactly.
-Right.
+But if you get the taproot funding outputs first, then the software update to enable PTLCs would also immediately have already that infrastructure of taproot channels that could use it.
 
 Oliver Gugger: 00:29:57
 
@@ -755,7 +757,7 @@ And also the small steps, that's what I also mentioned, is if you can agree on s
 
 Adam Jonas: 00:30:32
 
-Adam Jonas If it's providing value.
+If it's providing value.
 This is something we see in other projects as well, is that you're sort of working towards an end goal and everybody seems to concept act the end goal.
 And so you start, and you start merging in these smaller chunks and then people start having doubts as to what the end goal is.
 Maybe this isn't the right approach.
@@ -782,7 +784,8 @@ But as long as each step provides value on itself, I think you're moving towards
 Oliver Gugger: 00:31:33
 
 Yeah.
-And, and for us, this, this first step of doing taproot channels, even if they're simple taproot channels is on chain, we already have what we require for 'PTLCs'. And one thing that we need to mention here is that there's also proposal for dynamic commitment.
+And, and for us, this, this first step of doing taproot channels, even if they're simple taproot channels is on chain, we already have what we require for PTLCs.
+And one thing that we need to mention here is that there's also proposal for dynamic commitment.
 So basically you can upgrade a channel in flight without needing to close it.
 So if we have simple taproot channels and they're already quite widespread, then the upgrade to PTLC channels would be like an online upgrade.
 Right.
@@ -793,8 +796,7 @@ Cool.
 Should we upgrade the channel?
 Done.
 No on-chain footprint.
-Right.
-So.
+Right?
 
 Mark Erhardt: 00:32:18
 
@@ -837,13 +839,13 @@ Oliver Gugger: 00:33:04
 
 Doesn't need to be edited in early.
 
-## Recoverability of channel funds
+## Recoverability of channel funds and brute force closures
 
 Oliver Gugger: 00:33:06
 
 Yeah, just one thing that, I noticed during review is that, the right original spec had for the two remote outputs.
 So basically if I go on chain with force closed and my, my remote party can, can spend it immediately.
-Use the internal key for the internal key, use the music to funding key of, which is the same as in the funding output because we thought, yeah, we're never going to agree on spending through that.
+Use the internal key for the internal key, use the musig2 to funding key of, which is the same as in the funding output because we thought, yeah, we're never going to agree on spending through that.
 So it could just be a point that is never going to be used.
 But one thing I noticed while writing Chantools, which is a utility that helps people recover funds is that a lot of people don't really do have their channel backup files.
 So they cannot sweep funds even if the remote party closed and they would be accessible.
@@ -855,7 +857,7 @@ No, it's not more complicated, but it now uses a so-called nums key, nothing up 
 So everyone knows what the key is.
 So that's basically the internal key.
 It can never be spent through that path.
-But then the, the, the CSV one scripts that we have in there is, is basically allows us to, to brute force this again, if someone doesn't have their channel backup.
+But then the CSV one scripts that we have in there is, is basically allows us to, to brute force this again, if someone doesn't have their channel backup.
 
 Mark Erhardt: 00:35:05
 
@@ -892,7 +894,15 @@ It's just an internal key that is a well-known key now.
 Mark Erhardt: 00:36:02
 
 Cool.
-I have the impression that lunch may have yeah we should not miss lunch yeah thank you very much thanks guys that was awesome thanks for coming on all right merch what'd you learn?
+I have the impression that lunch may have arrived.
+Yeah thank you very much, thanks for coming on. 
+
+Adam Jonas: 00:36:21
+
+All right merch what'd you learn?
+
+Mark Erhardt: 00:36:22
+
 I feel pretty caught up again on how Lightning is going to work.
 Pretty excited about Taproot channels coming to pass.
 Definitely need to get the pay-to-Taproot outputs up on the chain.
@@ -904,4 +914,4 @@ Adam Jonas: 00:36:52
 Yeah, it does sound like we're getting pretty close to delivering some of this stuff.
 So yeah, thanks to El and Oli for coming in.
 And we don't get them in the office very often, so it was nice to have them.
-Cool, see you
+Cool, see you next time.
