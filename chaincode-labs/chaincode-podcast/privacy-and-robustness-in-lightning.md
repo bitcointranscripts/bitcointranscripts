@@ -391,16 +391,16 @@ I'm not crafty at all.
 But, okay.
 That is probably an aside.
 We don't need to go down.
-But `CHECKSIG` from stack is like, it's cool that you can even make that work.
+But `OP_CHECKSIGFROMSTACK` is like, it's cool that you can even make that work.
 But it is a terrible basis for just about anything.
 And it's more like a game we could play as far as what's the most obscure way we could do some kind of introspection.
-And the answer would be, `CHECKSIG` from stack.
+And the answer would be, `OP_CHECKSIGFROMSTACK`.
 And the proposals that are in that cluster, and there are a few, are pretty clean, pretty well understood.
 AJ would definitely be the person unfortunately he's not here in New York he's kind of done a fair bit of travel recently he was like "no I'm not going".
 So I'm hoping that while we're in New York he is in his mountain lair somewhere coming up with a scheme to activate `ANYPREVOUT`.
 That's if you're listening, AJ, I hope you're going to make that prophecy come true.
 I think, we understand that we want this and we've wanted it for a fair period of time and nothing else has come up that's gone, oh no, we want this instead.
-ANYPREVOUT by itself is a fairly simple piece.
+`ANYPREVOUT` by itself is a fairly simple piece.
 
 Adam Jonas: 00:18:21
 
