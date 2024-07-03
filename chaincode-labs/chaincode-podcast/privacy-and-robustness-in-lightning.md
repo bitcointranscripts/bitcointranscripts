@@ -12,6 +12,7 @@ speakers:
 categories:
   - 'podcast'
 episode: 34
+summary: "In this technical discussion, Rusty Russell, Mark Erhardt, and Adam Jonas delve into the intricacies of the Lightning Network (LN) after eight years of development. They emphasize the importance of simplicity and robustness in the protocol, noting how attempts to increase fairness often complicate the system. Russell highlights the ongoing need for improvements in privacy and robustness, pointing out that while these areas aren't usually urgent, they are crucial for long-term stability. They discuss the LN symmetry (formerly Eltoo) proposal, which aims to simplify the protocol by eliminating penalties for unintentional errors, thus making the network easier to maintain. The conversation also touches on the challenges posed by recent fee spikes and the need for better fee management and protocol upgrades. They conclude by acknowledging the significant progress made and the continuous efforts required to keep improving the network"
 ---
 ## Introduction
 
