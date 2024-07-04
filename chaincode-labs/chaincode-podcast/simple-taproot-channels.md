@@ -102,7 +102,7 @@ Oliver Gugger: 00:01:27
 
 So yeah, you might've all heard of Taproot having been activated quite a while ago.
 So everyone's asking, Hey, when do we get all these cool privacy benefits out of Taproot transactions and simple Taproot channels with the emphasis on simple, because that's just the first step towards getting there.
-And basically what they do is just replace the funding output, which so far has been a two of two Pay-to-Witness-Script-Hash funding output with musig2, sell two of two signature, but it's a musig2 key funding output.
+And basically what they do is just replace the funding output, which so far has been a 2-of-2 Pay-to-Witness-Script-Hash funding output with musig2, still 2-of-2 signature, but it's a musig2 key funding output.
 And while we're doing that, it's also changing up some of the scripts to get some of the benefits in chain space savings and privacy benefits.
 
 Mark Erhardt: 00:02:24
@@ -731,7 +731,7 @@ It's got to work.
 
 Mark Erhardt: 00:28:58
 
-It's also hard to see how going to PGLCs is going to have a good bang for the buck quickly.
+It's also hard to see how going to PTLCs is going to have a good bang for the buck quickly.
 Because only once many nodes have updated and have created new channels based on taproot outputs, you would actually start being able to send multi-hop payments, because only when all hops have it, you can, right?
 So, I mean, sure, you need to get it out there in order for people to be ready for it.
 
@@ -899,7 +899,7 @@ Yeah thank you very much, thanks for coming on.
 
 Adam Jonas: 00:36:21
 
-All right merch what'd you learn?
+All right murch what'd you learn?
 
 Mark Erhardt: 00:36:22
 
@@ -912,6 +912,6 @@ And yeah, it's all these privacy benefits and upgrades and cost savings that we'
 Adam Jonas: 00:36:52
 
 Yeah, it does sound like we're getting pretty close to delivering some of this stuff.
-So yeah, thanks to El and Oli for coming in.
+So yeah, thanks to Elle and Oli for coming in.
 And we don't get them in the office very often, so it was nice to have them.
 Cool, see you next time.
