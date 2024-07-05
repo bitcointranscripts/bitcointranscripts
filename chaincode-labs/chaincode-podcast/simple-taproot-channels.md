@@ -102,14 +102,14 @@ Oliver Gugger: 00:01:27
 
 So yeah, you might've all heard of Taproot having been activated quite a while ago.
 So everyone's asking, Hey, when do we get all these cool privacy benefits out of Taproot transactions and simple Taproot channels with the emphasis on simple, because that's just the first step towards getting there.
-And basically what they do is just replace the funding output, which so far has been a 2-of-2 Pay-to-Witness-Script-Hash funding output with musig2, still 2-of-2 signature, but it's a musig2 key funding output.
+And basically what they do is just replace the funding output, which so far has been a 2-of-2 Pay-to-Witness-Script-Hash funding output with MuSig2, still 2-of-2 signature, but it's a MuSig2 key funding output.
 And while we're doing that, it's also changing up some of the scripts to get some of the benefits in chain space savings and privacy benefits.
 
 Mark Erhardt: 00:02:24
 
-All right, so to recap, Taproot's been out for about one and a half years And Lightning Wallets can probably already send to Taproot outputs and probably receive Taproot outputs on-chain.
+All right, so to recap, Taproot's been out for about one and a half years And Lightning Wallets can probably already send to Taproot outputs and probably receive Taproot outputs onchain.
 But now we're going to make the funding output, the UTXO that the channel is built upon, Taproot as well.
-Which means that we can have something that looks like a single-sig output using musig and we, well, yes.
+Which means that we can have something that looks like a single-sig output using MuSig and we, well, yes.
 So you said that we're also going to see some changes in the scripts.
 That sounds like something that is the business of all Lightning implementations.
 What's the status there?
@@ -169,7 +169,7 @@ Elle Mouton: 00:05:07
 
 Yeah, first of all, one great benefit is a lot of the outputs have multiple branches, right?
 So that's a great thing about Taproot is we can just like put things in multiple branches and we only reveal the branch that gets spent.
-So in majority of the cases, even in a forced close, it's going to be a smaller onchained footprint.
+So in majority of the cases, even in a forced close, it's going to be a smaller onchain footprint.
 
 Mark Erhardt: 00:05:24
 
@@ -194,14 +194,14 @@ So I don't know where you were.
 
 Mark Erhardt: 00:06:06
 
-In the key path spend, we get to benefit from that in what case.
+In the keypath spend, we get to benefit from that in what case.
 So let's remind ourselves when we have multi-hub payments, we create a smart contract that locks in funds.
-There's two locks right now with the HTLCs. There's a hash lock and a time lock.
+There's two locks right now with the HTLCs. There's a hashlock and a timelock.
 Also, why am I explaining this lightning stuff to you people?
 But in the case, well, in the best case, of course, the payment goes through and it gets folded back into the main balance of the channel.
 But in a failure case where some party disappears or the contract times out, either the receiving party needs to get the funds or the sending party needs to get the funds.
-And those two cases, one makes use of the hash lock, one makes use of the time lock.
-In which case would we be able to make use of the key path spend?
+And those two cases, one makes use of the hashlock, one makes use of the timelock.
+In which case would we be able to make use of the keypath spend?
 
 Elle Mouton: 00:07:00
 
@@ -214,7 +214,7 @@ Any output needs to be locked by one CSV, which requires a script.
 So mostly we get to make use of this on any output that goes to you.
 So like, for example, if I have got an incoming HTLC to me, then it has to have a revocation path to you.
 That doesn't need to be locked by CSV.
-So that can be the key path spend.
+So that can be the keypath spend.
 
 Mark Erhardt: 00:07:43
 
@@ -226,19 +226,19 @@ So all funds that go to you in your commitment transaction need to be locked, ri
 Elle Mouton: 00:08:09
 
 Yes, I actually, and I just realized I kind of mixed it up a little bit.
-Even outputs that go to you need to be locked by one CSV on my commitment transaction for the CPFB carve out.
+Even outputs that go to you need to be locked by one CSV on my commitment transaction for the CPFP carve out.
 
 ## Refresher on CPFP carve-out and Anchor Outputs
 
 Mark Erhardt: 00:08:19
 
-Wait, can you explain the CPFB carve out in that context?
+Wait, can you explain the CPFP carve out in that context?
 
 Elle Mouton: 00:08:22
 
 OK, cool.
 So, Simple Taproot Channels uses anchor outputs.
-And the reason for that is if we need to force close, then we can use the anchors to CPFB, so child pays for parents, the transaction, so it gets in.
+And the reason for that is if we need to force close, then we can use the anchors to CPFP, so child pays for parents, the transaction, so it gets in.
 
 Mark Erhardt: 00:08:37
 
@@ -257,10 +257,10 @@ I'm already in ephemeral anchors world.
 Elle Mouton: 00:08:52
 
 We wish we could be there already.
-So there has to be, there's one that only you can use and there's one that only I can use and the whole idea is that, So there's one output that you can use to CPFB the thing.
+So there has to be, there's one that only you can use and there's one that only I can use and the whole idea is that, So there's one output that you can use to CPFP the thing.
 And even if you try and like pin the transaction, like basically hitting all the mempool limits, right.
-To prevent me from getting it in, then the CPFB carve out rule allows this like one more that's yours, that doesn't have a time lock, always needs to have, well, it doesn't have like the big time lock, still needs to have a one block CSV time block.
-So, and just to kind of come back to the start of the question is even that output can't make use of the key parts spend.
+To prevent me from getting it in, then the CPFP carve out rule allows this like one more that's yours, that doesn't have a timelock, always needs to have, well, it doesn't have like the big timelock, still needs to have a one block CSV time block.
+So, and just to kind of come back to the start of the question is even that output can't make use of the keypath spend.
 
 Mark Erhardt: 00:09:31
 
@@ -279,7 +279,7 @@ So my follow-up question would be, why are there two anchor outputs and does tha
 
 Elle Mouton: 00:10:30
 
-Okay, so the reason there are two is so that we have this CPFB carve out ability, right?
+Okay, so the reason there are two is so that we have this CPFP carve out ability, right?
 So you have the ability to spend even if I'm trying to pin you and the other way around.
 So no, they don't live forever.
 And this is like a really cool thing that was thought of even in the current implementation of anchor channels, which basically says you're allowed to spend it for 16 blocks and then it becomes an anyone can spend.
@@ -306,8 +306,8 @@ So someone does, not sure who.
 
 Elle Mouton: 00:11:48
 
-But yeah, that was a really cool, like, interesting, we almost, like, I think Ali, I think you spotted this, that we like almost lost that ability, like, with the design of the simple Taproot outputs, because, so we like, we have this anchor output, we can use the key path spent because it's like, it only needs your pub key, right?
-So awesome, that's the key path.
+But yeah, that was a really cool, like, interesting, we almost, like, I think Ali, I think you spotted this, that we like almost lost that ability, like, with the design of the simple Taproot outputs, because, so we like, we have this anchor output, we can use the keypath spend because it's like, it only needs your pub key, right?
+So awesome, that's the keypath.
 And then it's got this anyone can spend thing.
 But if that third party wants to come in and spend it, they need to provide the internal key.
 And how do they know the internal key?
@@ -344,7 +344,7 @@ Exactly.
 Mark Erhardt: 00:12:56
 
 So how do you learn it after?
-Oh, is that why we cannot use the key path?
+Oh, is that why we cannot use the keypath?
 
 Elle Mouton: 00:13:02
 
@@ -352,7 +352,7 @@ Exactly.
 So the two remotes is really easy because there's only one script, right?
 So it's basically people who want to spend the anchor just need to wait till the remote party spends it, they'll learn the key, it's fine.
 The problem is on the two local, because you've got two paths.
-One is to me after time lock, the other one is revocation path to you, right, if I'm cheating.
+One is to me after timelock, the other one is revocation path to you, right, if I'm cheating.
 And then so we originally had the revocation path as the key spend, because it's like, that's a nice benefit, But then if it does, if that gets spent, then you could have this anchor just left over forever.
 So we had to make, we had to get rid of the key, the key spend path in the to local.
 And unfortunately we had to put the revocation path in the script and like just stuff the to local key there.
@@ -369,7 +369,7 @@ Oliver Gugger: 00:14:16
 
 Maybe I mean, there were a couple of ideas floating around.
 Maybe someone will come up with a clever idea this week.
-I mean, it is not really nice to just put these 33 bytes on chain or 32, I'm not sure which including 32.
+I mean, it is not really nice to just put these 33 bytes onchain or 32, I'm not sure which including 32.
 Yeah, okay.
 
 Mark Erhardt: 00:14:37
@@ -386,7 +386,7 @@ Mark Erhardt: 00:14:50
 I think that's more important.
 No, no, I agree that that is the priority.
 We don't want to litter the UTXO.
-I'm currently writing an article for the Uptick newsletter exactly on that topic, how we are protective of global resources in the network.
+I'm currently writing an article for the Optech newsletter exactly on that topic, how we are protective of global resources in the network.
 But yeah, so I agree on the priorities here.
 I am just wondering, especially for an anchor output that of which always only at most one of the two will be spent, It feels kind of sad if it's extra large.
 Anyway, getting a little bit.
@@ -397,7 +397,7 @@ The anchor itself won't be extra large.
 
 Mark Erhardt: 00:15:22
 
-Well, the spending of the anchor will require an additional 33 bytes to have a script path spend instead of a key path spend.
+Well, the spending of the anchor will require an additional 33 bytes to have a script path spend instead of a keypath spend.
 Yeah, anyway, also it's only temporary, right?
 We're hopefully getting v3 transactions and ephemeral anchors and then you can have a single anchor for both parties.
 Maybe, hopefully.
@@ -448,7 +448,7 @@ Oh, okay.
 Oliver Gugger: 00:17:17
 
 Okay.
-And I'm not very up to date on PTLC, so this might be wrong, but I thought that, some information in the funding key, like the nonces used, are also used in, in some of the adapter signature set up for the PTLCs in order for the revocation stuff to become a bit more deterministic.
+And I'm not very up to date on PTLC, so this might be wrong, but I thought that, some information in the funding key, like the nonces used, are also used in, in some of the adaptor signature set up for the PTLCs in order for the revocation stuff to become a bit more deterministic.
 So I think that's why we need, but this could be wrong.
 
 Mark Erhardt: 00:17:47
@@ -486,7 +486,7 @@ So I can just talk around it kind of.
 But basically, so this is also why simple type of channels is initially just for unannounced channels because the gossip layer isn't updated yet.
 And why do we need to update the gossip layer?
 Because currently the channel announcement message, you know, I get the two keys in this message, I go and reconstruct the P2WSH output.
-I go look on chain, I'm like this definitely looks like a Lightning channel, I'm going to trust it, I'm going to pop it in my graph and I'm going to use it.
+I go look onchain, I'm like this definitely looks like a Lightning channel, I'm going to trust it, I'm going to pop it in my graph and I'm going to use it.
 So that whole proof completely changes now, right?
 So we have to redo that as the first thing.
 So nodes need to know how to verify that a channel is like a taproot-looking channel.
@@ -495,7 +495,7 @@ So it works exactly as is today, basically just that we now, the nodes need to g
 
 Mark Erhardt: 00:19:26
 
-So basically just look up, is there a pay to taproot output that fits this transaction output out point.
+So basically just look up, is there a P2TR output that fits this transaction output out point.
 Yes.
 
 Elle Mouton: 00:19:35
@@ -506,7 +506,7 @@ Mark Erhardt: 00:19:40
 
 Right.
 So you would still continue to announce public channels with a specific UTXO.
-And of course that would sort of deny some of the privacy benefits of moving to pay-to-tab route, which makes all outputs look, all musig outputs look like single-sig outputs and if we could get away with not announcing the funding output explicitly, that would make Lightning way more private, right?
+And of course that would sort of deny some of the privacy benefits of moving to pay-to-tab route, which makes all outputs look, all MuSig outputs look like single-sig outputs and if we could get away with not announcing the funding output explicitly, that would make Lightning way more private, right?
 
 Elle Mouton: 00:20:09
 
@@ -518,7 +518,7 @@ And then we come up with a multiplier, let's say 10x.
 And then that's so let's say I have a proof I have one Bitcoin, one Bitcoin output, 10x.
 So now it gives me the ability to advertise 10 Bitcoin worth of channels.
 Right.
-And then I can give a channel announcement and you kind of just, you don't need to, you don't go verify it on chain.
+And then I can give a channel announcement and you kind of just, you don't need to, you don't go verify it onchain.
 You just, you know, I've already proved, I've already like,
 
 Mark Erhardt: 00:20:54
@@ -549,13 +549,12 @@ Yes.
 And then there's other complexities such as like, I've got this allowance for 10 Bitcoin worth of channels, and now I want to open more.
 Now what do I do?
 Do nodes assume that the other ones are closed?
-Because now nodes can't go look on chain to see if the channel's closed, right?
+Because now nodes can't go look onchain to see if the channel's closed, right?
 So that is different now.
 
 Mark Erhardt: 00:21:45
 
 I kind of, maybe I'm jumping too far, but I kind of wonder that sort of also enables people to have credit based channels, right?
-Yeah.
 That must be part of the discussion, right?
 
 Elle Mouton: 00:21:56
@@ -569,7 +568,7 @@ Sure, sure.
 But I mean, a, that channel, the channel partner would also have to agree that the channel is based on credit and there's no actual UTXO.
 Yes.
 The risk is only, as far as I understood, I looked into this a while back.
-The risk is only that of the two channel participants, because of course they also have an ephemeral HTLC and when a payment times out, the on-chain settlement would be interrupted at that point, right?
+The risk is only that of the two channel participants, because of course they also have an ephemeral HTLC and when a payment times out, the onchain settlement would be interrupted at that point, right?
 So, but yeah, so is that, is that a big part of whether it's gossip 1.5 or 2.0 that you're going to, or is that settled meanwhile?
 
 Elle Mouton: 00:22:43
@@ -635,7 +634,7 @@ And what are you most concerned about, I guess, in terms of that big jump?
 
 Elle Mouton: 00:24:45
 
-Katie Robinson I guess, first of all, taking long, because there's just so many different changes.
+I guess, first of all, taking long, because there's just so many different changes.
 And so then it takes just way longer for users to get those benefits.
 And you know, big changes means more bugs and more testing and it just takes long.
 Right.
@@ -657,6 +656,8 @@ Elle Mouton: 00:25:11
 
 But you get to test things, you get to like iterate faster, you get, we can get PTLCs maybe a bit faster than if we were to wait for the big proposal.
 So yeah, there's pros and cons.
+
+## PTLCs
 
 Mark Erhardt: 00:25:22
 
@@ -688,7 +689,7 @@ Oh, I think so.
 Oliver Gugger: 00:26:38
 
 And it's not just all the protocol updates that are needed and all the scripts that change.
-It's also, yeah, I would even say new cryptography that we haven't used in Lightning before with adapter signatures and all of that.
+It's also, yeah, I would even say new cryptography that we haven't used in Lightning before with adaptor signatures and all of that.
 So, I mean, it's probably not that big of a deal to implement because it's all just elliptic curve cryptography, but because it's a new thing, it could still be that we find some issue with the cryptography protocol or leak of information or whatever.
 So It's just quite a big step on all of them.
 
@@ -697,7 +698,7 @@ So It's just quite a big step on all of them.
 Adam Jonas: 00:27:18
 
 But I think philosophically, and not being as involved with the Lightning community, what is sort of the approach in terms of iterative small changes and working towards a larger goal, or larger changes and getting them out and seeing what the bugs might be.
-The many steps, as Mertz alluded to, mean that you may not get to that end point for a really long time, if at all.
+The many steps, as Murch alluded to, mean that you may not get to that end point for a really long time, if at all.
 And as the system grows and more money gets put into the system, the stakes get higher.
 So if you know where you're going, why not just rip off the bandaid now as opposed to doing half measures?
 
@@ -784,7 +785,7 @@ But as long as each step provides value on itself, I think you're moving towards
 Oliver Gugger: 00:31:33
 
 Yeah.
-And, and for us, this, this first step of doing taproot channels, even if they're simple taproot channels is on chain, we already have what we require for PTLCs.
+And, and for us, this, this first step of doing taproot channels, even if they're simple taproot channels is onchain, we already have what we require for PTLCs.
 And one thing that we need to mention here is that there's also proposal for dynamic commitment.
 So basically you can upgrade a channel in flight without needing to close it.
 So if we have simple taproot channels and they're already quite widespread, then the upgrade to PTLC channels would be like an online upgrade.
@@ -795,7 +796,7 @@ Oh yeah, me too.
 Cool.
 Should we upgrade the channel?
 Done.
-No on-chain footprint.
+No onchain footprint.
 Right?
 
 Mark Erhardt: 00:32:18
@@ -844,8 +845,8 @@ Doesn't need to be edited in early.
 Oliver Gugger: 00:33:06
 
 Yeah, just one thing that, I noticed during review is that, the right original spec had for the two remote outputs.
-So basically if I go on chain with force closed and my, my remote party can, can spend it immediately.
-Use the internal key for the internal key, use the musig2 to funding key of, which is the same as in the funding output because we thought, yeah, we're never going to agree on spending through that.
+So basically if I go onchain with force closed and my, my remote party can, can spend it immediately.
+Use the internal key for the internal key, use the MuSig2 to funding key of, which is the same as in the funding output because we thought, yeah, we're never going to agree on spending through that.
 So it could just be a point that is never going to be used.
 But one thing I noticed while writing Chantools, which is a utility that helps people recover funds is that a lot of people don't really do have their channel backup files.
 So they cannot sweep funds even if the remote party closed and they would be accessible.
@@ -861,7 +862,7 @@ But then the CSV one scripts that we have in there is, is basically allows us to
 
 Mark Erhardt: 00:35:05
 
-Okay, so the internal key always is the same and it is, so that will reveal on chain of course that you're recovering from an incomplete HTLC.
+Okay, so the internal key always is the same and it is, so that will reveal onchain of course that you're recovering from an incomplete HTLC.
 
 Oliver Gugger: 00:35:16
 
@@ -879,7 +880,7 @@ So, but that would have been the case before.
 
 Mark Erhardt: 00:35:23
 
-So this is the commitment transaction output to one of the two remote commitment output and It cannot be spent on the key path, but it can only be spent on the script path.
+So this is the commitment transaction output to one of the two remote commitment output and It cannot be spent on the keypath, but it can only be spent on the script path.
 So it makes the force close a little uglier to recover from, but no, we already publicly visible anyway, right?
 
 Oliver Gugger: 00:35:43
@@ -899,7 +900,7 @@ Yeah thank you very much, thanks for coming on.
 
 Adam Jonas: 00:36:21
 
-All right murch what'd you learn?
+All right Murch what'd you learn?
 
 Mark Erhardt: 00:36:22
 
