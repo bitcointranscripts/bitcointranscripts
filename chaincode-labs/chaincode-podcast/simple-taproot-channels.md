@@ -14,7 +14,7 @@ speakers:
   - 'Oliver Gugger'
 categories:
   - 'podcast'
-summary: 'Elle Mouton and Oliver Gugger join us to talk with us about the Simple Taproot Channel proposal.'
+summary: 'Elle Mouton and Oliver Gugger explained the transition from 2-of-2 Pay-to-Witness-Script-Hash funding outputs to MuSig2 key funding outputs in Taproot channels. This upgrade aims to enhance privacy and chain space savings. The spec for Taproot channels, proposed by Roasbeef, is nearing completion with notable progress from LND and LDK implementations. The podcast also delved into potential updates to the gossip protocol, distinguishing between Gossip 1.5 and 2.0. Gossip 2.0 proposes tying proofs to node announcements rather than individual channels, significantly boosting privacy. The discussion extended to PTLCs (Point Time-Locked Contracts), which promise enhanced privacy and security but require further adoption and development. The iterative approach to these upgrades emphasizes gradual implementation to mitigate risks and ensure stability'
 episode: 33
 additional_resources:
   - title: 'CPFP carve-out'
