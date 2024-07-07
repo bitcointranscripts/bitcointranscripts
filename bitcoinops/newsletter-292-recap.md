@@ -70,21 +70,21 @@ So for a long time, we've already been doing backups.
 We have just mirrors where people write out all the comments and issues and pull requests that are created.
 Obviously the code itself is backed up to all the contributors that have copies of the repositories and their own local branches.
 But it looks like Fabian has spent quite some time to investigate on how syncing with GitLab would work for the Bitcoin GitHub account.
-And yeah, so my understanding is that you figured out how to make this work for good, but not live, just you can get everything synced over.
+Understanding is that you figured out how to make this work for good, but not live, just you can get everything synced over.
 
 Fabian Jahr: 00:06:56
 
 Yeah, exactly.
 So I mean, to just give a little additional recap from my side.
-So 18 months ago, many people probably remember this, we had the TornadoCache incident where, aside from the other legal action that happened, the repository just disappeared from GitHub completely.
+So 18 months ago, many people probably remember this, we had the Tornado Cash incident where, aside from the other legal action that happened, the repository just disappeared from GitHub completely.
 And that kind of triggered me to look into this topic again more deeply and basically put it as one of my high priority projects in the last year.
 And so the idea is clear, like as you said, we have a lot of mechanisms to back up the code.
 We have a lot of mechanisms to back up like the comments and reviews.
-For these there's a lot of scripts that people can run and just like save the raw data as Jason locally.
-Then a developer B1 OX has something that also displays the data then again, nicely and kind of like a similar format to GitHub so you can then read the backup again in kind of the fashion that you're used to.
+For these there's a lot of scripts that people can run and just like save the raw data as JSON locally.
+Then a developer B1OX, has something that also displays the data then again, nicely and kind of like a similar format to GitHub so you can then read the backup again in kind of the fashion that you're used to.
 But what we're really missing so far is kind of something where we can have the data transferred and then continue working on it in a similar workflow that we are used to with GitHub in case the GitHub repository goes away.
 And then it's a related question if we were to do this only and keep this kind of only for the worst case scenario, or if we want to do the switch at some point soon in the future.
-Yeah, and so the, What I did is I basically, yeah, set up a self-hosted GitLab.
+What I did is I basically, yeah, set up a self-hosted GitLab.
 So this is not about GitLab.com, the kind of the comparable to GitHub.com, but you can self-host GitLab.
 The nice thing is the code is almost all open source.
 So they say the core code is open source.
@@ -96,7 +96,7 @@ And then you have syncing mechanisms and they also have some additional tools th
 And so they have one functionality that they call mirroring, which is kind of allowing you to do this like live following of another repository.
 That was originally my goal to use this, which is what was called being like a live feature.
 Unfortunately, that doesn't work for our use case right now.
-I made a writer where I described a bit more, but they simply haven't built it out for this direction from github.com to a self-hosted GitLab.
+I made a writer where I described a bit more, but they simply haven't built it out for this direction from Github.com to a self-hosted GitLab.
 So that means we would need to build this all ourself and run it.
 So what I've done now is you can basically run a one-time syncing process continuously with a script.
 And so that means you have an up-to-date backup that is on average maybe like a day old or so, because the, the sync takes over a day to run completely.
