@@ -730,9 +730,9 @@ Dave, do you have something here?
 Dave Harding: 01:09:51
 
 Not really.
-I just want to just echo that these are really cool features and I think it's just it's great that Eclair and their team there, they've been really active in working on not just adding these features to their software, but the specifications.
+I just want to just echo that these are really cool features and I think it's great that Eclair and their team there, they've been really active in working on not just adding these features to their software, but the specifications.
 They've been working on, as they implement it, going back and taking their discoveries and talking it over and tweaking the specifications on those things.
-So this is the dual funding and the offers and displacing are all compatible with the Boltz protocols for those.
+So this is the dual funding and the offers and displacing are all compatible with the Bolt protocols for those.
 So I think it's just really great seeing a team not just using open source work and releasing open source software, but contributing to the specifications for those.
 
 Mark Erhardt: 01:10:43
@@ -741,26 +741,24 @@ Yeah, especially if you look at how small the Assign team is, it's really impres
 
 ## Bitcoin Core 26.1rc1
 
-Mark Erhardt: 01:10:53
 
 All right, we have one more release candidate in the section.
 We have seen the release candidate one for the Bitcoin Core version 26.1. So this is the maintenance release in the 26 branch.
-So if you're currently running Bitcoin Core version 26 and you want to not directly upgrade to the upcoming 27 version, but want to maybe wait a little for the new version to, to settle in and just want to be up to date with the latest bug fixes.
+So if you're currently running Bitcoin Core version 26 and you want to not directly upgrade to the upcoming 27 version, but want to maybe wait a little for the new version to settle in and just want to be up to date with the latest bug fixes.
 26.1 looks to come out in the next few weeks once the release candidate process is over.
-If you're, depending on that, maybe try running it in your testnet setup and give feedback if, for example, you've encountered some of the bugs that are being fixed, whether it works for you.
+If you're depending on that, maybe try running it in your testnet setup and give feedback if, for example, you've encountered some of the bugs that are being fixed, whether it works for you.
 I've looked over the release notes, and to me it looks like there's only a bunch of small issues and bug fixes that are in there.
 Nothing really big that we've talked much about.
 
 ## Bitcoin Core #29412
 
-Mark Erhardt: 01:12:06
 
 All right, we get to our notable code and documentation changes section.
 We have four different pull requests that we're going to discuss this time.
 If you have any questions or comments, please, now is a good time to search for the speaker request button and let us know that you want to contribute to this recap.
 So the first one that we'll get into is Bitcoin Core 29,412.
 And this one fixes an interesting problem, which is dealing with mutated blocks.
-So one of the problems that we've encountered in the past is when a node just gives you bad data, but it is bad in specific ways that the peers that receive it think, oh, generally anything announced to me with this identifier, I do not have to look at again, because it can cause the peers to, for example, not follow the best chain anymore or not to accept a transaction that is valid on the network because they first saw a garbled version of it.
+So one of the problems that we've encountered in the past is when a node just gives you bad data, but it is bad in specific ways that the peers that receive it think, generally anything announced to me with this identifier, I do not have to look at again, because it can cause the peers to, for example, not follow the best chain anymore or not to accept a transaction that is valid on the network because they first saw a garbled version of it.
 In the context of blocks, for example, someone could temper witness data or change the witness commitment such that it actually no longer matches the block header, but indicates, of course, that the block is invalid.
 And I think there was a bug, from what I understand, where the node would actually process such an invalid block and then store partial information and therefore poison itself against the real block.
 So what this pull request does is it really gets into all the ways that you can mutate a block and change like little pieces of it to turn them invalid, but make them still propagate and test that Bitcoin Core behaves correctly in that it does not process this mutated block but discards it and stays open to receive an alternative correct version of it.
@@ -771,8 +769,8 @@ Dave Harding: 01:14:34
 
 I think you did a great job.
 Yeah, this is a really interesting class of problems that we've hit a couple times in Bitcoin Core in the past.
-Anybody really interested in this should click on the link in the newsletter to newsletter number 37 which goes into a lot more detail about two of these cases and also we do cover briefly in MASH from Bitcoin the 2012 bug CVE 2012 2459 and It's just you know It's interesting.
-It's it's basically the way the attack works is or the the problem It's not necessarily an attack, But the problem works is because Bitcoin uses a Merkle tree and there's some problems in its Merkle tree designs, it's possible to construct multiple different Merkle trees that hash to the same Merkle root, which is in the block header, and the hash to the block header is how we identify blocks in Bitcoin.
+Anybody really interested in this should click on the link in the newsletter to newsletter number 37 which goes into a lot more detail about two of these cases and also we do cover briefly in MASH from Bitcoin the 2012 bug CVE 2012 2459 and It's just, It's interesting.
+It's it's basically the way the attack works is or the the problem It's not necessarily an attack, but the problem works is because Bitcoin uses a Merkle tree and there's some problems in its Merkle tree designs, it's possible to construct multiple different Merkle trees that hash to the same Merkle root, which is in the block header, and the hash to the block header is how we identify blocks in Bitcoin.
 So it's possible to create what look like two different blocks, that look like they have the same ID.
 So we just end up looking at one of them and saying that's invalid.
 And now we don't want to download that same block from our other potentially 124 peers.
@@ -784,7 +782,7 @@ Now we only reject blocks while the node is still running.
 So if you restart your node, they go back and double check and maybe download those valid blocks again.
 But it's a potential attack.
 It could potentially be used to steal money, especially if you're using something like Lightning where you need to be getting the most recent blocks.
-And so This PR just very early in the process, we look at a block and we see if it has one of these things that would make the block invalid but also could later cause us to cache the header and we just stop processes in that block at that point.
+And so this PR just very early in the process, we look at a block and we see if it has one of these things that would make the block invalid but also could later cause us to cache the header and we just stop processes in that block at that point.
 We don't catch anything, cache anything.
 We just throw away that block and move on.
 And I just think that's a really good solution to this problem that we've hit twice.
@@ -792,13 +790,13 @@ Like we've hit this problem twice.
 It was when you hit it once you fix that immediate bug.
 When you hit it twice you got to try to figure out the root cause and stop it.
 So I'm really thankful for this PR coming in and just making us safer.
-It doesn't, as far as I know, it doesn't fix any active vulnerability in Bitcoin Core right now.
+As far as I know, it doesn't fix any active vulnerability in Bitcoin Core right now.
 But it just means we're less likely to have vulnerabilities in the future.
 
 Mark Erhardt: 01:17:43
 
 Yeah, that's my understanding too.
-So, also maybe this question just popped up for me.
+Also maybe this question just popped up for me.
 Why doesn't that open us up to abuse from peers or anything like that?
 Well, if someone sends us an invalid block, and we then throw it away, we would accept that same invalid block again from another peer.
 But the original peer that sent us invalid data, we would disconnect already because they're misbehaving, right?
@@ -807,7 +805,7 @@ We drop them on the street.
 And therefore, even if we get an invalid block and we waste that bandwidth to download the block header and the transaction ID list, maybe if it's a compact block relay.
 We only do that once per peer.
 So this is naturally already limited in the amount of DOS or abuse that it can lever on us.
-And then you also have to remember, A block always has to have proof of work because that's the first thing we check.
+And then you also have to remember, a block always has to have proof of work because that's the first thing we check.
 We look at the header and if the header doesn't pass the proof of work requirement, we'll never request the rest of the body of the block.
 So actually this mutated block thing cannot really be used for dosing much, only for, well, for example, making you drop something or stop following the best chain.
 I see that there's a question from the audience.
@@ -815,9 +813,9 @@ Dave, did you want to say something?
 
 Dave Harding: 01:19:20
 
-Oh, just really quickly.
+Just really quickly.
 All the peer can do is waste your bandwidth.
-When you process a block for this code, which runs really early on, like you said, the proof of work happens, So it has to be a mutated valid block.
+When you process a block for this code, which runs really early on, like you said, the proof of work happens, so it has to be a mutated valid block.
 So that peer can get you to download a whole block and run some hashes.
 Hashes are really quick computationally.
 A block is something we already have the memory to process.
@@ -833,25 +831,25 @@ So, Mike, you have a question here?
 
 Speaker 5: 01:20:03
 
-Yeah, I think he was actually clarifying as I came up on stage, but I might have missed it What was the idea with two Merkle roots with different trees with the same hash, or did I misunderstand that?
+Yeah, I think he was actually clarifying as I came up on stage, but I might have missed it. What was the idea with two Merkle roots with different trees with the same hash, or did I misunderstand that?
 
 Dave Harding: 01:20:23
 
-Yeah, so Bitcoin's Merkle tree design, When you have an odd number of nodes in a Merkle tree, you have to do something.
+Yeah, so Bitcoin's Merkle tree design, when you have an odd number of nodes in a Merkle tree, you have to do something.
 And in any Merkle tree design, what Bitcoin does is it hashes the node with a copy of itself.
 And what this allows an attacker to do is to create a block that looks like it has two copies of the same transaction.
-Now ever since VIP30 and VIP34, we really haven't had duplicate transactions in Bitcoin.
+Now ever since BIP30 and BIP34, we really haven't had duplicate transactions in Bitcoin.
 And the idea was we'd never had them in the first place.
 But you can make a block that looks like it has a duplicate transaction that has the same TXID.
 And so you can create a version of the block that has only one transaction with a particular ID and a version of the block that has two transactions with the same TXID.
-The second block is invalid, But it hashes to the same Merkle root as the first block There's other ways to cause problems particularly with 64 byte transactions a Merkle Node is the result of two 32 byte hashes And so you can do weird things with 64 byte transactions.
+The second block is invalid, but it hashes to the same Merkle root as the first block. There's other ways to cause problems particularly with 64 byte transactions a Merkle Node is the result of two 32 byte hashes. And so you can do weird things with 64 byte transactions.
 That's also considered in this pull request.
 But basically you can create different block contents that hash to the same Merkle root.
 Again, the Merkle root is included in the block header.
 The block header, and the hash of the block header is how we identify blocks on the network.
 Does that answer your question?
 
-Speaker 5: 01:22:07
+Mike: 01:22:07
 
 Well, okay, so I'm still a little bit confused because I'm like thinking, well, if anything in the tree changes, the Merkle root should be different.
 So if I wanted to do some homework and look this up, what phrasing would I type in to like look up what this is, like what is this called?
@@ -867,9 +865,9 @@ That PDF goes into a lot of detail about this.
 There's an illustration in newsletter number 37.
 So I would basically just go to news number 37 and you'll get all the information about this that I think you could possibly ever need.
 
-Speaker 5: 01:23:20
+Mike: 01:23:20
 
-Hey, thank you so much.
+Thank you so much.
 
 ## Eclair #2829
 
