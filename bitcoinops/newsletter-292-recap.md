@@ -608,7 +608,7 @@ And So I look forward to try to implement it.
 Mark Erhardt: 00:57:49
 
 Yeah.
-Thank you for going down that rabbit hole and seeking the, well, feedback of all this community already in advance.
+Thank you for going down that rabbit hole and seeking, well, feedback of all this community already in advance.
 So this seems to be very specifically to hardware wallets.
 Would that mean that anyone else has to change how they use music too?
 Or is this just at the hardware wallet level, you act differently than other people in how you contribute your announcements?
@@ -631,10 +631,10 @@ Dave Harding: 00:59:31
 
 I guess my only question is, again, thank you for working on this.
 It's not something I had thought of, but you're right, it's really important.
-And I do like hardware well hearts.
+And I do like hardware wallets.
 Is there any risk that this data would be easier to leak if someone gained physical access to a hardware wildcard.
-It sounds like you may be able to store this data on the secure element, But it also sounds like you're moving it into, from the post, you are moving it into the volatile memory during actual signing operations.
-So if I start a session, and let's say I need to keep my hardware wallet in a safe deposit box and some bank employee, while I'm in the middle of a session, you know, but not actually physically with the device, obviously, they grab my device.
+It sounds like you may be able to store this data on the secure element, but it also sounds like you're moving it into, from the post, you are moving it into the volatile memory during actual signing operations.
+So if I start a session, and let's say I need to keep my hardware wallet in a safe deposit box and some bank employee, while I'm in the middle of a session, but not actually physically with the device, obviously, they grab my device.
 Does this increase the risk that somebody could extract compromising information from my hardware wallet if they had physical access to it even though the device had a secure enclave on it?
 
 Salvatore Ingala: 01:00:48
