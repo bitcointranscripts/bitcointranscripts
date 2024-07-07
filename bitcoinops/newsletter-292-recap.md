@@ -897,7 +897,7 @@ LND has made some improvements to its coin selection implementation.
 Most specifically, it allows you now to preset some inputs and then allows you to use coin selection to fund the rest of the transaction.
 And it also changes that coin selection can now be set as a parameter.
 So you can choose what selection strategy your node uses.
-I think from cursory look at the pull request, The two choices right now are random selection and largest first selection.
+I think from cursory look at the pull request, the two choices right now are random selection and largest first selection.
 But now when you make the call to build a transaction specifically for funding a channel, then you can A, decide some of the UTXOs manually and B, decide which strategy is used to pick the rest.
 Cool.
 I take it that Dave signals me to move on.
@@ -910,15 +910,15 @@ Mark Erhardt: 01:26:26
 
 So finally, we're talking about a pull request to the BIPS repository.
 We already touched on the BIPS repository earlier, of course.
-BIP 345 op-vault, the pull requests got merged now.
-And so obviously there is no activation parameters in the description of OpVault or anything like that, but the specification of what James O'Byrne proposes to do with the OpVault opcode is now part of the merged code in the BIP or documentation in the BIPs repository.
+BIP345, `OP_VAULT`, the pull requests got merged now.
+And so obviously there is no activation parameters in the description of `OP_VAULT` or anything like that, but the specification of what James O’Beirne proposes to do with the `OP_VAULT` opcode is now part of the merged code in the BIP or documentation in the BIPs repository.
 Dave, do you have more on that?
 
 Dave Harding: 01:27:14
 
 Nope.
 Apparently at least one BIP got merged this week.
-We have not had a lot of bits merged.
+We have not had a lot of BIPS merged.
 So go back to our previous news item about needing more editors, but I'm happy to see this merge.
 I think James worked on it really hard, and it is a very novel and interesting proposal.
 So if you were waiting to read it, now is your chance.
@@ -926,7 +926,7 @@ So if you were waiting to read it, now is your chance.
 Mark Erhardt: 01:27:39
 
 All right, so we're through our newsletter this week.
-Thank you for joining us for the OpTec recap.
-Thank you to our guests Salvatore, Fabian and Josy and also for Mike to jump in and ask us some additional questions.
+Thank you for joining us for the OpTech recap.
+Thank you to our guests Salvatore, Fabian and Josie and also for Mike to jump in and ask us some additional questions.
 And a lot of thanks to Dave, who's writing most of these newsletters all the time and has lots of things to add here in our recap.
-Thank you and hear you
+Thank you and hear you next time.
