@@ -333,38 +333,38 @@ People just kind of do it however they feel like it should be done, which has wo
 Mark Erhardt: 00:30:34
 
 All right.
-So you've established well how the actual use and the original writing have diverged and you say that actually The intent was good, but what should we do?
+So you've established well how the actual use and the original writing have diverged and you say that actually the intent was good, but what should we do?
 We should?
 
-Josibake: 00:30:50
+Josie Baker: 00:30:50
 
 Yeah.
 You already kind of hinted at it.
-Since BIP 21, we've learned a lot, I think, and we've come up with a lot of really good solutions to problems that existed back then.
-One of them being batch 32 encodings, which as you mentioned, the batch 32 encoding includes an HRP, which is a human readable key that allows the encoded data to self-identify itself.
+Since BIP21, we've learned a lot, I think, and we've come up with a lot of really good solutions to problems that existed back then.
+One of them being bech32 encodings, which as you mentioned, the bech32 encoding includes an HRP, which is a human readable key that allows the encoded data to self-identify itself.
 The HRP says I am blah.
 In the case of SegWit, it's the BC is the HRP, and then we also have HRPs defined for test networks, etc.
 And then batch 32 encoding has the separator, which is the one character.
 And the one character says, okay, everything after this is the data.
-And then in the case of segwit addresses or batch 32, you have a version which indicates the segwit version, so on and so forth.
+And then in the case of Segwit addresses or batch 32, you have a version which indicates the Segwit version, so on and so forth.
 So you have this really clean way of encoding a piece of data and the data immediately tells whoever's using it, hey, I'm this, and here's how you should interpret the data part based on what the HRP is.
 So it's functionally the same as a key value pair.
-So looking at how BIP-21 is used and how we might further extend it, it just seemed natural to me.
+So looking at how BIP21 is used and how we might further extend it, it just seemed natural to me.
 It's like, well, if something already is using this self-identifying scheme of having the HRP, why don't we just allow people to include those directly in the URI, which is what I proposed in the delving posts or what I kind of arrived at through some conversation.
 And this is just one idea of how to do it, but this is the one that feels the most natural to me.
-So then you don't really have this key, you don't really have a root and then key value pairs.
+So then you don't really have a root and then key value pairs.
 You just kind of have self-describing things with, with a separator.
-The nice thing about this is, and this is, I guess, the thing that's most attractive to me about this as a solution is, now anybody who uses the batch 32, batch 32M encoding scheme, which really, when I say batch 32, I really just mean batch 32 M since that's like the latest and greatest.
-So batch 32 M, let's say one of these new proposals like Arc was like, oh, okay, we need a new address type to signify like, if you pay to this, you're gonna join the arc network or whatever.
-If they encode it as batch 32 M and they choose an HRP and encode their data, they are automatically able to be included in BIP 21 URIs without developers needing to change anything, Right?
-No, well, more specifically, not needing to change anything about their BIP 21 parsing.
+The thing that's most attractive to me about this as a solution is, now anybody who uses the batch 32, batch 32M encoding scheme, which really, when I say batch 32, I really just mean batch 32 M since that's like the latest and greatest.
+So batch 32 M, let's say one of these new proposals like Arc was like, okay, we need a new address type to signify like, if you pay to this, you're going join the arc network or whatever.
+If they encode it as batch 32 M and they choose an HRP and encode their data, they are automatically able to be included in BIP21 URIs without developers needing to change anything, right?
+No, well, more specifically, not needing to change anything about their BIP21 parsing.
 If they can parse an arc address, it just works.
 So we get this future extensibility that's really nice.
 Same with silent payments, right?
-We're encoding silent payments as a batch 32M with the SP HRP.
-So if developers were to update their BIP 21 implementations to just look for HRP encoded thing, batch 32 encoded things with HRPs, then silent payments just works for free with a BIP 21 URI.
-So this future extensibility thing is a thing that really clicked for me of like, okay, stuff encoded with an HRP fits really nicely with this.
-And then we don't run into this problem of every new address format or every new payment protocol that comes out then needs to also go and define a BIP 21 key or else it's not going to work.
+We're encoding silent payments as a batch 32M with the SPHRP.
+So if developers were to update their BIP 21 implementations to just look for HRP encoded thing, batch 32 encoded things with HRPs, then silent payments just works for free with a BIP21 URI.
+So this future extensibility thing is a thing that really clicked for me of like, stuff encoded with an HRP fits really nicely with this.
+And then we don't run into this problem of every new address format or every new payment protocol that comes out then needs to also go and define a BIP21 key or else it's not going to work.
 And looking at history, this is kind of how we got into the problem in the first place.
 SegWit addresses came out and they did not define a BIP21 key, pay to script hash addresses, and so on and so forth.
 And I think that that just kind of indicates that process doesn't scale really well.
