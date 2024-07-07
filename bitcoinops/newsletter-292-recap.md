@@ -573,8 +573,8 @@ Thanks for coming on again.
 If you have time, please stick around.
 If you have to drop off to do something else, we understand.
 We're moving on to the next topic.
-The next topic is PSBT for multiple concurrent Music 2 signing sessions.
-So Salvatore is working with hardware wallets and looking to make PSBT and especially in the context of music to work well.
+The next topic is PSBT for multiple concurrent MuSig2 signing sessions.
+So Salvatore is working with hardware wallets and looking to make PSBT and especially in the context of MuSig2 to work well.
 And from what I understand, one of the issues he has been bumping into is that the state of the music to signing session scales with the number of inputs on transactions.
 And of course, when you're working with a hardware device that has a very limited amount of memory, that can become a blocker or a problem.
 So Salvatore is suggesting that we could instead of having the amount of data that you have to keep track of in the session scale with the inputs, have some sort of unified session data that you can derive the input related data deterministically but pseudo randomly from.
@@ -584,15 +584,15 @@ And do you want to take it from here?
 Salvatore Ingala: 00:52:58
 
 Yeah, that was a great explanation.
-And yeah, as you said, I'm thinking about and I started prototyping how to implement music to support in the in the ledger Bitcoin app and meanwhile there is also independent work that HR is doing for standardizing descriptors and everything else it is needed to make all these things work together.
-So it's looking great for Music 2 to actually start being used more widely in practice, hopefully, this year.
-And yeah, One of the issues that I discovered when I was thinking about how to implement it on a hardware device is that, well, when you're implementing a protocol in Music 2, because it's a two rounds protocol, it's not like simple signatures like we do today, whether Schnorr or STSA, if you do one signature, you just ask the device to produce a signature, the device responds, that's it.
-While in Music 2, you have a two-round protocol.
+And yeah, as you said, I'm thinking about and I started prototyping how to implement MuSig2 to support in the in the ledger Bitcoin app and meanwhile there is also independent work that HR is doing for standardizing descriptors and everything else it is needed to make all these things work together.
+So it's looking great for MuSig2 to actually start being used more widely in practice, hopefully, this year.
+One of the issues that I discovered when I was thinking about how to implement it on a hardware device is that, well, when you're implementing a protocol in MuSig2, because it's a two rounds protocol, it's not like simple signatures like we do today, whether Schnorr or STSA, if you do one signature, you just ask the device to produce a signature, the device responds, that's it.
+While in MuSig2, you have a two-round protocol.
 All the cosigners first are invoked the first time to produce what is called a nonce, which is a short for a number that should be used only once.
 And after everybody produced this number, the nonce, all these nonces are aggregated.
 And then you call the signer the second time with all the nonces and now the protocol does its magic and can continue and produce the final signature.
-And bit 327 is the specs of the of music too for Bitcoin and it goes in great length into explaining what are the pitfalls, what can go wrong, like all the ways that this can cause security issues because since you have two rounds it means you have to keep some state between the first round and the second round and this state is a small number it just like could be just 32 bytes let's say but when you sign a Bitcoin transaction you could have an unbounded number of inputs you could have 200 inputs and And so while in BIP-327 a sign-in session is defined in the sense of a single message, in the context of sign-in devices normally you're signing a transaction So your session intuitively is more on the level of the PSBT of the transaction.
-And on embedded devices, having all this, if you read the letter, BIP-327, and you implement it without any change whatsoever, the natural way of doing it would be to actually have all these sessions in parallel and for each of these sessions, for each of these inputs basically, have to store some stuff on the device.
+And BIP327 is the specs of the of music too for Bitcoin and it goes in great length into explaining what are the pitfalls, what can go wrong, like all the ways that this can cause security issues because since you have two rounds it means you have to keep some state between the first round and the second round and this state is a small number it just like could be just 32 bytes let's say but when you sign a Bitcoin transaction you could have an unbounded number of inputs you could have 200 inputs and so while in BIP327 a sign-in session is defined in the sense of a single message, in the context of sign-in devices normally you're signing a transaction. So your session intuitively is more on the level of the PSBT of the transaction.
+And on embedded devices, having all this, if you read the letter, BIP327, and you implement it without any change whatsoever, the natural way of doing it would be to actually have all these sessions in parallel and, for each of these inputs basically, have to store some stuff on the device.
 And so the idea that I was describing, which is pretty straightforward, since the state that you need for each of these inputs is basically derived from a random number.
 A standard idea in this case is to just use one random number and then derive all the other numbers in the same session, pseudo-randomly, using a cryptographically secure pseudo-random number generator.
 And the reason I thought it was good to have this audited properly is that, well, when you're implementing cryptographic protocols, there are many ways that things can go wrong.
