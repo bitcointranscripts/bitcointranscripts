@@ -522,12 +522,12 @@ Josie Baker: 00:48:57
 
 I think it's a perfect example.
 I had the same question reading BIP21 as written where we do have these optional parameters like amount, message, etc.
-And then I think the most common pattern that you see people using Bit21 today is called the unified QR code, where you have Bitcoin address, then you have a lightning equals parameter, and that lightning equals then specifies a Bolt11 invoice.
-But the Bolt11 invoice, if I understand correctly, also encodes an amount into the bolt 11 invoice.
-So then it's like, well, do I prefer the bolt 11 invoice?
+And then I think the most common pattern that you see people using BIP21 today is called the unified QR code, where you have Bitcoin address, then you have a lightning equals parameter, and that lightning equals then specifies a Bolt11 invoice.
+But the Bolt11 invoice, if I understand correctly, also encodes an amount into the bolt11 invoice.
+So then it's like, well, do I prefer the bolt11 invoice?
 Do I prefer the amount?
 And that's currently not specified.
-I think, you know, you could work around this where bit 21 specifies two separators, the question mark separator and the ampersand separator.
+I think, you could work around this where BIP21 specifies two separators, the question mark separator and the ampersand separator.
 And I think that the intent there is like the question mark separator is kind of like the big one.
 And so I can have A question mark, B question mark, C.
 And then if I want to attach additional optional parameters to C, it would be question mark, C, ampersand amount, ampersand message.
@@ -547,11 +547,11 @@ Mark Erhardt: 00:50:46
 
 All right, I feel like we're getting a little too much into the detail of the proposal.
 Let's try to wrap it up.
-Josi, do you want to make a call of action or a summary, like a sentence or two, And then we'll move on to the next topic.
+Josie, do you want to make a call of action or a summary, like a sentence or two, and then we'll move on to the next topic.
 
 Josibake: 00:51:03
 
-Yeah, I mean, the biggest one would be like, if this is something you're interested in, please chime in on the WBitcoin post, there's stuff, you know, I'm coming at this from the thing that interested me, but I'm sure there are other people who have also, you know, feel like there's unaddressed points that could be addressed.
+Yeah, I mean, the biggest one would be like, if this is something you're interested in, please chime in on the WBitcoin post, there's stuff, you know, I'm coming at this from the thing that interested me, but I'm sure there are other people who have also, feel like there's unaddressed points that could be addressed.
 So if we're going to do this, I'd rather get a lot more input.
 And I would say that that's the thing that would motivate me to actually keep working on this and maybe even write a new BIP is if there's a lot of feedback from people to be like, hey, by the way, we have a chance to fix a bunch of other stuff.
 So if you're interested, feel free to comment.
@@ -560,7 +560,7 @@ Mark Erhardt: 00:51:37
 
 All right.
 
-Josibake: 00:51:37
+Josie Baker: 00:51:37
 
 Thanks, everybody, for the great questions.
 
