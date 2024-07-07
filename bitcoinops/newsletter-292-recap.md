@@ -651,13 +651,13 @@ So this makes it a lot easier to make sure that, well, it can never happen that 
 
 Mark Erhardt: 01:02:31
 
-Oh, yeah, that's a really important idea.
+That's a really important idea.
 If your session randomness is tied to the PSPT and isn't specific to an output, you can of course track on the PSPT level whether the session has ended or has to be restarted.
 So that sounds cleaner, actually, at the implementation level.
 
 Salvatore Ingala: 01:02:55
 
-Yeah, it's something that, I mean, it's not really a change to BIP-327, because this is something that I do on top to make the implementation mostly more auditable.
+Yeah, it's something that, I mean, it's not really a change to BIP327, because this is something that I do on top to make the implementation mostly more auditable.
 But I thought it was a good thing to write down because I think it's a useful detail in implementations.
 
 Mark Erhardt: 01:03:15
@@ -679,7 +679,7 @@ Mark Erhardt: 01:03:40
 Okay, super.
 Well, thank you for joining us.
 If you have time and want to stick around, please feel free.
-Otherwise, if you have other things to get to, we understand.
+Otherwise, if you have other things to get to we understand.
 We'll move on to the next news item.
 So there's the fourth and final news item because we pulled forward the GitLab backup issue with Fabian.
 We're now talking about the discussion to add more BIP editors.
@@ -691,7 +691,7 @@ Currently we have 135 open pull requests in this repository.
 And the process has been frustrating for a few developers to the end that recently we had AJ Towns start the Banana repository as a parallel mechanism where you can post an idea publicly so that a distributed discussion of an idea can reference a single document and everybody knows exactly what we're talking about.
 So another approach here is now, Eva Chow posted to the Bitcoin developer mailing list the suggestion that we add more editors because the main editor that is currently shepherding the repository has stated that he's not getting around to doing all the work that is necessary and is to time constraints.
 So we're at a point where there's a few people proposed and the discussion hasn't really progressed much since then.
-So yeah, if you are interested in that topic, you can find it on the mailing list.
+If you are interested in that topic, you can find it on the mailing list.
 Dave, do you have more information or ideas on where this is going?
 
 Dave Harding: 01:05:57
@@ -700,7 +700,6 @@ No, but it would be nice if we could make more progress on BIPs or people can ju
 
 Mark Erhardt: 01:06:09
 
-Yeah.
 Maybe to jump in a little more.
 One of the points of frustration is the Understanding is that a BIP is owned by the authors of the BIP because they're proposing their idea and it becomes a public document for everyone to talk about, but it's still sort of their writeup.
 So one thing that is supposed to be allowed is that the authors, as they develop their idea, especially while it's still in draft status, but potentially even after it has been published, can add to the BIP or make minor changes like typo corrections.
@@ -708,21 +707,20 @@ Or if an example was not 100% clear, like add a clarifying sentence, things like
 And the other thing that has been holding up processes, the BIP process states that not only should BIPs be obviously from the sphere of Bitcoin interesting topics, but they have to be technically sound.
 And so it takes a lot of work for the technical editors of the BIP repository to assess, well, is this actually technically sound?
 Is this a well-enough described idea that it can be implemented or not?
-And one of the participants in the discussion has proposed, really the documents should have some formal requirements like is it complete, does it not have any references to outside things, is it well written, Does it specify an idea that is about Bitcoin?
+And one of the participants in the discussion has proposed, really the documents should have some formal requirements like is it complete, does it not have any references to outside things, is it well written, does it specify an idea that is about Bitcoin?
 And then whether or not it is technically sound should perhaps be more the job of the readers of the BIPs rather than the BIP editor.
-So yeah, the discussion seems to be a little bit in the air right now.
-The two proposed participants are Ruben Sommersen and Kanzer that have both been around for a long time and would probably be well capable of assessing at least whether the documents are fully fleshed out and whether they're about Bitcoin.
+The discussion seems to be a little bit in the air right now.
+The two proposed participants are Ruben Somsen and Kanzure that have both been around for a long time and would probably be well capable of assessing at least whether the documents are fully fleshed out and whether they're about Bitcoin.
 There's been also a couple of self-nominations.
-So anyway, That's where I understand the discussion to be.
+So anyway, that's where I understand the discussion to be.
 
 ## Eclair v0.10.0
 
-Mark Erhardt: 01:08:35
 
 All right, we're moving on to the releases and release candidates section.
 The first release that we have is Eclair version 10, sorry, version 0.10.0, which is a new major release for the Lightning Node implementation, the Eclair Lightning Node implementation.
 So Eclair Version 0.10.0 adds a dual funding feature.
-It adds Bolt 12 offers and it has a fully working splicing prototype.
+It adds Bolt12 offers and it has a fully working splicing prototype.
 So This sounds like a pretty cool big new release.
 We've seen a bunch of these topics out in the wild lately.
 We've had T-Best on to talk about dual funding before and about splicing.
