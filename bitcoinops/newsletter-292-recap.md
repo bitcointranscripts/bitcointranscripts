@@ -125,10 +125,10 @@ And so I really try to use it kind of as a user and see if it has features for u
 And so I was really trying to get something that is maintained by somebody else.
 But still, like, I mean, of course, worst case, we can look inside because it's open source.
 But yeah, that is kind of the idea.
-So with all of that, all the limitations that I'm giving, like, they are not, they're not, like, you can do this if you want to build it.
+So with all of that, all the limitations that I'm giving, they're not, like, you can do this if you want to build it.
 It's possible to still do this, but then you will also have to maintain it yourself.
 And that of course takes a lot of time.
-So yeah, for what we have from GitLab as a user, that is a limitation.
+For what we have from GitLab as a user, that is a limitation.
 
 Mark Erhardt: 00:13:04
 
@@ -145,9 +145,9 @@ I was impressed that It attributed everything to everybody.
 It just felt like a slightly different GitHub look.
 You just go there and it looks slightly different than what you're used to, but otherwise it's the same.
 If we actually moved to that site, I noticed all the issues and PRs were correctly attributed to an account with the same name as the GitHub account.
-So Fanquake stuff was attributed to Fanquake and so on.
+So fanquake stuff was attributed to fanquake and so on.
 How much work would it be for people to claim those accounts?
-Because I mean, obviously, you didn't copy over their GitHub credentials, would you have to be sitting there and, you know, emailing everybody and saying, here, here's your one time password, log in and change it and all that kind of stuff?
+Because I mean, obviously, you didn't copy over their GitHub credentials, would you have to be sitting there and, emailing everybody and saying, here, here's your one time password, log in and change it and all that kind of stuff?
 
 Fabian Jahr: 00:14:17
 
@@ -155,15 +155,15 @@ Yeah, so that's something where this actually is kind of cool from GitLab, but a
 And so you see some comments and PRs and issues or so being attributed like to an actual account.
 And then you see others that are actually attributed to the root administrator.
 And then you will see like a comment inside of the text of the comment, yeah?
-And that in the top says, for example, user F-Y-R, yeah?
+And that in the top says, for example, user fjahr.
 So, and the distinction between the two is because some people have their email as public set on their GitHub account.
 And then a lot of other people have it set as private.
 And so what GitLab does for the people that have set it as public is it creates an account on the instance and then attributes all of the comments and PRs and issues to that account.
 And then if somebody like, for example, if Fanquake has their email public, then you can go in and you basically log in, you basically do a password reset and then you have the account and you have everything basically just like it was on GitHub.
 But most people, myself included, have the email private.
-It's kind of, I mean, it's for the people that contribute actively, it's in the commits anyway, then you can probably think about setting it just public in your GitHub profile as well.
-And then, but then this feature goes away And then you have this like inline comment in there that where it's still clear historically that you made that comment, but for example, you will not be able to go back and just edit that comment later on.
-It's not a huge deal, but yeah, for maximum convenience, If you care about this, set your email to public and then you will be able to just switch over and it's really going to feel not much different to before.
+It's for the people that contribute actively, it's in the commits anyway, then you can probably think about setting it just public in your GitHub profile as well.
+But then this feature goes away and then you have this like inline comment in there that where it's still clear historically that you made that comment, but for example, you will not be able to go back and just edit that comment later on.
+It's not a huge deal, but yeah, for maximum convenience, if you care about this, set your email to public and then you will be able to just switch over and it's really going to feel not much different to before.
 
 Mark Erhardt: 00:16:32
 
@@ -189,36 +189,36 @@ Super, so play around and let Fabian know if you find anything curious.
 We got a question from the audience.
 Mike, go ahead.
 
-Speaker 5: 00:18:08
+Mike: 00:18:08
 
-Hey, apologies my voice is messed up right now, but Fabian, are there any concerns with hosting upgrade security of GitLab and then the second one is, are there, I mean the plain Jane, you know, free GitLab version is pretty feature incomplete with roles and different RBAC controls and stuff.
+Hey, apologies my voice is messed up right now, but Fabian, are there any concerns with hosting upgrade security of GitLab and then the second one is, are there, I mean the plain Jane, free GitLab version is pretty feature incomplete with roles and different RBAC controls and stuff.
 Is any of that concern?
 Because I feel like you're going to end up losing a lot of functionality that GitHub gives you potentially.
 I would be curious to hear your thoughts on that.
 
 Fabian Jahr: 00:18:52
 
-So, for the second question, we currently from bring have an enterprise, testing, license basically that I'm currently using.
+So, for the second question, we currently from Brink have an enterprise, testing, license basically that I'm currently using.
 The idea there was, so we asked GitLab to give us that and they give it out for free in some cases to open source projects.
 So that's probably why I'm not really running into these limitations if they are relevant to us.
 But of course, it's not for everyone.
 Not everyone can get this license.
-So, but from just like, but, but maybe I'm not seeing these limitations, but from what I was seeing in the documentation in terms of the syncing features, like I think we, like what I'm actually doing now, because the mirroring is not possible as I said that was originally the idea but it wasn't possible after all.
+So, but maybe I'm not seeing these limitations, but from what I was seeing in the documentation in terms of the syncing features, like what I'm actually doing now, because the mirroring is not possible as I said that was originally the idea but it wasn't possible after all.
 But the syncing should be possible with the community edition as well, same way that I'm doing.
 But with actually running it as administrators like the maintainers do on GitHub right now, I haven't played around that much with it.
 And I'm also not a maintainer myself, so I don't have full overview of all the tools that they are using on GitHub.
-So That would be probably also a good step to put on to-do list to explore this a bit more with one of the maintainers who can give feedback, like if they were going to switch over and they wanted to fulfill the role the same as before, that, if that would require additional, adjustments to, to their workflow, yeah.
+So that would be probably also a good step to put on to-do list to explore this a bit more with one of the maintainers who can give feedback, like if they were going to switch over and they wanted to fulfill the role the same as before, if that would require additional, adjustments to, to their workflow, yeah.
 Sorry, the first one I didn't fully understand.
 
-Speaker 5: 00:20:44
+Mike: 00:20:44
 
 The first one.
 So running a GitLab server.
-So first off, just to follow up, you know, having the enterprise license is a big deal for free, because GitLab can get quite expensive.
+So first off, just to follow up, having the enterprise license is a big deal for free, because GitLab can get quite expensive.
 We're talking $100 per developer using the server.
 If you get all that for free, that's pretty powerful.
 The first question was, and again, sorry for my voice.
-The first question was, is there any, GitLab is a constant battle in my opinion of like making sure it's secured and upgraded, you know, it's, especially when you have a lot of users using it, is there any concern with who's going to actually maintain that GitLab server if and when it would be used as like a source of truth for the think of GitHub's, or sorry, Bitcoin's source code?
+The first question was, is there any, GitLab is a constant battle in my opinion of like making sure it's secured and upgraded, it's, especially when you have a lot of users using it, is there any concern with who's going to actually maintain that GitLab server if and when it would be used as like a source of truth for the think of GitHub's, or sorry, Bitcoin's source code?
 
 Fabian Jahr: 00:21:35
 
