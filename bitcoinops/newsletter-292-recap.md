@@ -292,14 +292,14 @@ And kind of the first thing that jumped out to me is the spec says, the the root
 And it says, you know, Bitcoin address is base 58 encoded.
 And you read that and you're like, nah, that's kind of weird.
 Like nobody does that.
-And I've seen, you know, BIP21 URIs and QR codes that, you know, even like Bitcoin Core does like Bitcoin colon the address.
+And I've seen, you know, BIP21 URIs and QR codes that, even like Bitcoin Core does like Bitcoin: the address.
 So that was already kind of like, okay, well that's kind of annoying.
 And then reading through, I think the original intent of BIP21 is any new address format that we came up with was going to get its own extension key using the language of BIP21.
 So you'd have your legacy addresses, which was the only thing at the time.
 Then we came out with pay to script hash.
-And I think if everyone had been following the bit 21 philosophy, they would have defined a key, you know, pay to script hash equals blah.
-And then that way it's usable in bit 21.
-Same with segwit, We would have defined a new key and so on and so forth.
+And I think if everyone had been following the BIP21 philosophy, they would have defined a key, you know, pay to script hash equals blah.
+And then that way it's usable in BIP21.
+Same with Segwit, we would have defined a new key and so on and so forth.
 What that would give us in theory is a fully backwards compatible URI, meaning I as a receiver can post this URI in a QR code.
 One QR code, someone can scan it and their wallet will pick the key that it understands.
 And there's no failure on either side.
@@ -309,27 +309,26 @@ It's an amazing user experience.
 And then it avoids this problem of like sometimes you go to someone's page where they're posting Bitcoin stuff and there's like six different ways you can pay them.
 And for us that are in the ecosystem, we're like, okay, that's fine.
 But for newcomers or people who just kind of want like a payment experience, this is a really bad experience.
-So I think the philosophy of bit 21 was really good.
+So I think the philosophy of BIP21 was really good.
 But that didn't happen in practice, right?
-People just kind of started defining new address types and they didn't define extension keys in bit 21.
+People just kind of started defining new address types and they didn't define extension keys in BIP21.
 And that, you know, we have, we don't have an extension key for PID script hash.
-We don't have an extension key for batch 32 or batch 32m.
+We don't have an extension key for batch32 or batch 32m.
 And instead people just started using the addresses directly.
-And this is where maybe I want to comment on like what I mean by, you know, not spec compliant.
+And this is where maybe I want to comment on like what I mean by, not spec compliant.
 People used it in kind of how they took the spirit of it to be, which is totally fine.
 We look at something else written and we're like, okay, yeah, that was written in I think 2012 or 2011 when legacy was the only address.
-So it's reasonable that the spec says that it needs to be base 58 encoded, whatever.
+So it's reasonable that the spec says that it needs to be Base58 encoded, whatever.
 We all can kind of figure out what the intent was.
 The problem is the more time goes on and the more new people come into the space, we can't really rely on this tribal knowledge, right?
-Like if I were a developer that didn't really know anything about Bitcoin and I got hired by a company to build a Bitcoin wallet, and then they said, hey, go like implement BIP-21.
-I would go read that and I'd be like, oh, okay, every BIP-21 URI needs to have a base 58 legacy encoded address.
+Like if I were a developer that didn't really know anything about Bitcoin and I got hired by a company to build a Bitcoin wallet, and then they said, hey, go like implement BIP21.
+I would go read that and I'd be like, okay, every BIP-21 URI needs to have a Base58 legacy encoded address.
 I would code it up that way.
 And then it just wouldn't work with how 90% of people are using it.
-And that's a problem the more Bitcoin grows and the space becomes broader, which is kind of what initially got me thinking, I think we just need to go back to BIP21 and rethink this a little bit because there's a lot of what I'll call non-spec compliant or tribal usage of BIP21.
+And that's a problem the more Bitcoin grows and the space becomes broader, which is kind of what initially got me thinking, I think we just need to go back to BIP21 and rethink this a little BIP because there's a lot of what I'll call non-spec compliant or tribal usage of BIP21.
 And if you're not really in the club, you might not know about that.
 And so then it really doesn't function as a standard anymore.
 People just kind of do it however they feel like it should be done, which has worked, I think, relatively well up to this point.
-So.
 
 Mark Erhardt: 00:30:34
 
