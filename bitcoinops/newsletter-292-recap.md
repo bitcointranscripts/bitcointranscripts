@@ -101,22 +101,20 @@ So that means we would need to build this all ourself and run it.
 So what I've done now is you can basically run a one-time syncing process continuously with a script.
 And so that means you have an up-to-date backup that is on average maybe like a day old or so, because the, the sync takes over a day to run completely.
 But then you have all the data there and you could continue the work on the self-hosted GitLab instance.
-Yeah.
 Then there's quite a lot of configuration that was the reason why it took so much time for me to figure this actually out and to actually make the sync be successful for the first time.
 But yeah, that is all documented now what you have to configure.
 There's some things that you have to turn off, some things that you have to switch on, so that the syncing process just doesn't fail at some point after 28 hours or something like that.
-Yeah, and so with that in theory, at least it's possible for us to run this practice is possible for us to run this.
-And then if the GitLab, if GitHub.com repository would go away, we could continue working on a self-hosted GitLab instance.
+With that in theory, at least it's possible for us to run this practice is possible for us to run this.
+And then, if GitHub.com repository would go away, we could continue working on a self-hosted GitLab instance.
 
 Mark Erhardt: 00:11:14
 
 Right.
-Okay.
 So previously we only had archives and we would be able to search for previous conversations and ideas being exchanged, but there wasn't a way to go directly to a workable copy of the repository where we could jump in and continue our conversations immediately.
 And that's what you've been working on.
 My understanding is that it takes 36 hours to sync the whole repository.
 So for all the active conversations, you might actually, if they're earlier in the process, already be a day late, but that's definitely a lot better than nothing.
-Is there any way to sort of just get the diff and add to, to things you've sent before?
+Is there any way to sort of just get the diff and add to things you've synced before?
 
 Fabian Jahr: 00:11:59
 
