@@ -1,17 +1,24 @@
 ---
-title: "Newsletter #292 Recap"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://twitter.com/i/spaces/1mnxepjZboAJX
-tags: ["developer-tools","psbt","musig"]
-speakers: ["Mark Erhardt","Dave Harding","Josibake","Salvatore Ingala","Fabian Jahr"]
-categories: ["podcast"]
-date: 2024-03-07
+title: 'Newsletter #292 Recap'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://twitter.com/i/spaces/1mnxepjZboAJX'
+date: '2024-03-07'
+tags:
+  - 'developer-tools'
+  - 'psbt'
+  - 'musig'
+speakers:
+  - 'Mark Erhardt'
+  - 'Dave Harding'
+  - 'Josibake'
+  - 'Salvatore Ingala'
+  - 'Fabian Jahr'
+categories:
+  - 'podcast'
 ---
 Mark Erhardt: 00:03:57
 
-We are complete.
-Maybe we can start.
-So good morning.
+Good morning.
 This is Optech Newsletter #292 Recap.
 And as you can hear, Mike is not here today and I'm filling in as the main host.
 Today we have four news items, two releases and release candidates, and four PRs to talk about in our notable code and documentation changes.
