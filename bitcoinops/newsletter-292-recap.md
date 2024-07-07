@@ -22,19 +22,19 @@ Good morning.
 This is Optech Newsletter #292 Recap.
 And as you can hear, Mike is not here today and I'm filling in as the main host.
 Today we have four news items, two releases and release candidates, and four PRs to talk about in our notable code and documentation changes.
-I'm Merch and I work at Chaincode Labs and bring you weekly this OpTec newsletter recap.
+I'm Merch and I work at Chaincode Labs and bring you weekly this OpTech newsletter recap.
 Today I'm joined by Dave.
 
 Dave Harding: 00:04:41
 
 Hi, I'm Dave Harding.
-I'm co-author of the OpTec newsletter and co-author of the third edition of Mastering Bitcoin.
+I'm co-author of the OpTech newsletter and co-author of the third edition of Mastering Bitcoin.
 
 Mark Erhardt: 00:04:48
 
 Josie.
 
-Josibake: 00:04:51
+Josie Baker: 00:04:51
 
 Hi, I'm Josie.
 I work on Bitcoin stuff.
@@ -45,7 +45,7 @@ Salvatore.
 
 Salvatore Ingala: 00:05:00
 
-Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on Musique.
+Hi, I'm Salvatore and I work on the Ledger Bitcoin app and right now I'm working on `MuSig`.
 
 Mark Erhardt: 00:05:06
 
@@ -62,10 +62,10 @@ Mark Erhardt: 00:05:16
 
 Super.
 So Fabian asked that we could move forward the GitLab backup topic because he has a limited time window.
-So I propose that for the people that are following along with the newsletter, We actually start with the fourth newsletter item.
-And so, yeah, let me try to put it together in one sentence and then Fabian can maybe give a bigger, better overview.
+So I propose that for the people that are following along with the newsletter, we actually start with the fourth newsletter item.
+Let me try to put it together in one sentence and then Fabian can maybe give a bigger, better overview.
 So for a very long time, we have been thinking about that we do not like very much how we're tied to GitHub.
-And since occasionally stuff just disappears on the internet, we would be in a lot of trouble if our 30,000 or so issues and pull requests and all the comments written there were not available anymore.
+And since occasionally stuff just disappears on the Internet, we would be in a lot of trouble if our 30,000 or so issues and pull requests and all the comments written there were not available anymore.
 So for a long time, we've already been doing backups.
 We have just mirrors where people write out all the comments and issues and pull requests that are created.
 Obviously the code itself is backed up to all the contributors that have copies of the repositories and their own local branches.
