@@ -223,65 +223,57 @@ The first question was, is there any, GitLab is a constant battle in my opinion 
 Fabian Jahr: 00:21:35
 
 Unfortunately, I haven't put that much thought into this as well.
-It was really for now developed as like the worst case scenario backup, right?
+For now developed as like the worst case scenario backup, right?
 Like if GitHub just goes away, this is better than what we had before.
 And yeah, this would still need to be figured out.
 Like right now, there's two people that have access to the server.
 Both are working at Brink or supported by Brink.
 So, yeah, that would be a conversation to be had.
 That just hasn't been a big concern for me.
-Yeah.
 But definitely something also to put on to do list.
 
 ## Updating BIP21 `bitcoin:` URIs
 
 Mark Erhardt: 00:22:18
 
-Okay, awesome.
+Awesome.
 Thank you for your questions.
 And I think we're going to wrap up this topic then.
 Fabian, thank you for joining us.
 If you need to drop, we understand if you want to hang out a little more, please stick around.
 We're moving on to the next topic and the next news item is Josie Baker suggested on Delving Bitcoin a revamp of the BIP21 URIs, what is it?
-Universal resource identifiers.
+Universal Resource Identifiers.
 So you've probably already seen at some point Bitcoin colon and then Bitcoin address.
 It's used for example in QR codes.
-And as I understand it, the original BIP 21 suggests that the first item after Bitcoin colon always has to be a pay to public key hash address.
+And as I understand it, the original BIP21 suggests that the first item after Bitcoin colon always has to be a pay to public key hash address.
 Now, especially I have been vocal on this topic, but pay to public key hash is not the most block space efficient method of receiving funds anymore.
 And a lot of people have been using the scheme basically non-spec compliant and have been putting other Bitcoin addresses there or have been labeling the addresses that they give with various schemes.
 So my understanding is that Josie has taken some time to investigate how the spec is specified versus how it's actually used in the wild and is suggesting how we could improve it to cater to what we're seeing the actual use to be like and how that would be future-proof and compatible with going forward.
-Josi, do you want to take it from here?
+Josie, do you want to take it from here?
 
-Josibake: 00:24:06
+Josie Baker: 00:24:06
 
 Yeah, sure.
 Thanks for having me on to discuss it.
 I think I'll give a little bit of background as kind of how I got interested in this topic.
 And then I want to mention briefly something about like why I think it's important when we talk about spec compliant versus non-spec compliant.
 And then kind of maybe talk through the meat of the proposal.
-But this came up for Ruben Thompson and I, because as we've been writing the silent payments, but we thought a lot about how do we not contribute to new address format fatigue, which is in Bitcoin, I'm a wallet developer, I build a wallet, and then next week somebody comes out with a new thing, a new address, a new protocol, and then I gotta go and I gotta update that.
-But then it's not really gonna work until other wallets understand it.
+But this came up for Ruben Thompson and, because as we've been writing the silent payments, but we thought a lot about how do we not contribute to new address format fatigue, which is in Bitcoin, I'm a wallet developer, I build a wallet, and then next week somebody comes out with a new thing, a new address, a new protocol, and then I got to go and I got to update that.
+But then it's not really going work until other wallets understand it.
 So we kind of have this problem where as we innovate and come up with cool new stuff, there's then this rollout and adoption phase, which is very frustrating.
 I think Taproot is probably the best example of this.
 There are people who really want to use Taproot and there are wallets that want to support Taproot, but it's hard from a developer's standpoint to do the work of supporting something like Taproot if you know that every single user of Gemini, Coinbase, Binance is not going to be able to withdraw from those exchanges to their wallet because those exchanges don't recognize the address format.
 So this is this like, I think, known pain point that people feel a lot.
 So I think naturally when you see someone coming along being like, hey, I've got a new address format, there's like people kind of grit their teeth, like,
-
-Mark Erhardt: 00:25:47
-
-Oh no,
-
-Josibake: 00:25:47
-
-not again.
+ no, not again.
 So Ruben and I had been thinking about that.
-And when we were designing silent payments, we were like, cool, let's just try to make this as close to a silent, I'm sorry, a taproot address as we can.
-So we reuse the batch 32M encoding.
+And when we were designing silent payments, we were like, cool, let's just try to make this as close to a silent, I'm sorry, a Taproot address as we can.
+So we reuse the Bech32M encoding.
 You know, came up with a HRP and identifier.
-And then it was kind of brought up like, well, if you want to use this in bit 21, you got to define a key for it.
-And that seemed kind of weird to me that like every bit that wants to be compatible with bit 21 has to define a key in their own bit.
+And then it was kind of brought up like, well, if you want to use this in BIP21, you got to define a key for it.
+And that seemed kind of weird to me that like every bit that wants to be compatible with BIP21 has to define a key in their own bit.
 So I started to kind of look into it a little bit.
-And that led me to actually read the text of that 21.
+And that led me to actually read the text of BIP21.
 And I see there's a hand up there.
 I can pause if you have a question.
 
@@ -290,13 +282,12 @@ Mark Erhardt: 00:26:34
 It's kind of funny because the human readable parts, the HRPs on all of the addresses actually tell you what it is already.
 So needing to have that parameter label that tells you what the following data part is, is kind of funny because that's already done by the HRP itself.
 Sorry.
-Yeah.
 
-Josibake: 00:26:57
+Josie Baker: 00:26:57
 
 No, yeah, I think that's a great point.
 And I think this is where like context is helpful.
-So I went back and I reread BIP 21.
+So I went back and I reread BIP21.
 And kind of the first thing that jumped out to me is the spec says, the the root there needs to be a pay to pubkey hash a legacy address.
 And it says, you know, Bitcoin address is base 58 encoded.
 And you read that and you're like, nah, that's kind of weird.
