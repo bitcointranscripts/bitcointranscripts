@@ -1,4 +1,6 @@
-# Bitcointranscript Style Guide - An extension of Optech style guide
+# Bitcoin Transcripts Style Guide
+
+This is based on the [Optech Style Guide](https://github.com/bitcoinops/bitcoinops.github.io/blob/master/STYLE.md).
 
 ## Vocabulary
 
@@ -127,9 +129,7 @@ beginning of a sentence).
 
 ### Spelling
 
-The author of the document gets to choose its flavor of English (e.g.
-American or British).  However, the following terms should always be
-spelled the same.
+The following terms should always be spelled the same.
 
 | Use | Don't use | Notes |
 |-|-|-|
