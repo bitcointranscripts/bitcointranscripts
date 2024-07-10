@@ -1,0 +1,319 @@
+{
+    "capitalization": {
+        "properNouns": [
+            "Bitcoin (the network)",
+            "MuSig (the pubkey and signature aggregation scheme. Don't refer to Musig, muSig or musig)",
+            "Script (when referring to the Bitcoin scripting language)",
+            "True/False (when referring to boolean arguments in plain text)"
+        ],
+        "commonNouns": [
+            "bech32",
+            "bitcoin (the currency)",
+            "chaumian (blind signatures|coinjoin|ecash)",
+            "eltoo",
+            "erlay",
+            "merkle (tree|root|branch|node)",
+            "schnorr",
+            "segwit",
+            "sybil (as in 'sybil attack')",
+            "tapbranch",
+            "tapleaf",
+            "taproot",
+            "tapscript"
+        ],
+        "notes": {
+            "script": "use script (no capitalization) when referring to an individual script",
+            "trueFalseInCode": "use whatever capitalization is appropriate when used in code (e.g. 'set foo=true')"
+        }
+    },
+    "abbreviations": {
+        "introduced": {
+            "sighash": "signature hash (sighash)",
+            "types": ["SIGHASH_SINGLE", "SIGHASH_ALL", "etc"]
+        },
+        "unintroduced": [
+            "BIP (Bitcoin Improvement Proposal)",
+            "BIPXXX (referencing a specific BIP number, no zero padding e.g. BIP70 not BIP070)",
+            "BTC (Bitcoin)",
+            "CPFP (Child Pays For Parent)",
+            "DoS (Denial-of-service)",
+            "ECDSA (Elliptic Curve Digital Signature Algorithm)",
+            "kB, MB, GB, TB, etc... (SI-prefixed byte sizes)",
+            "KiB, MiB, GiB, TiB, etc... (Prefixes denoting byte sizes in powers of 1024)",
+            "LN (Lightning Network)",
+            "LND (Lightning Network Daemon - the Lightning Labs LN implementation)",
+            "mempool (memory pool)",
+            "P2P (Peer-to-Peer)",
+            "P2PKH (Pay to Public Key Hash)",
+            "P2SH (Pay to Script Hash)",
+            "P2SH-wrapped segwit (Pay to Script Hash wrapped segwit)",
+            "P2TR (Pay to TapRoot)",
+            "P2WPKH (Pay to Witness Public Key Hash)",
+            "P2WSH (Pay to Witness Script Hash)",
+            "PSBT (Partially Signed Bitcoin Transaction)",
+            "pubkey (public key)",
+            "RBF (Replace By Fee)",
+            "RPC (Remote Procedure Call)",
+            "RFC (Request For Comments, the IETF documents)",
+            "segwit (segregated witness)",
+            "txid (transaction identifier)",
+            "UTXO (Unspent Transaction Output)",
+            "vbyte (virtual byte)"
+        ]
+    },
+    "forbiddenTerms": [
+        {
+            "use": "Bitcoin Core",
+            "dontUse": ["Core"]
+        },
+        {
+            "use": "bech32 address or bech32m address, or write something like 'address for P2TR'",
+            "dontUse": ["(P2WPKH, P2WSH, P2TR) address"]
+        },
+        {
+            "use": "surveillant",
+            "dontUse": ["Surveillor"]
+        }
+    ],
+  "styleConventions": [
+    {
+      "use": "anti fee sniping",
+      "dontUse": ["anti-fee sniping", "anti-fee-sniping"],
+      "notes": ""
+    },
+    {
+      "use": "blockchain",
+      "dontUse": ["block chain"],
+      "notes": "\"block chain\" is acceptable in unmodified older documents"
+    },
+    {
+      "use": "chain split",
+      "dontUse": ["chainsplit"],
+      "notes": ""
+    },
+    {
+      "use": "CPFP or Child Pays For Parent",
+      "dontUse": ["Child-Pays-For-Parent"],
+      "notes": ""
+    },
+    {
+      "use": "coinjoin",
+      "dontUse": ["Coinjoin", "coinJoin", "coin-join"],
+      "notes": ""
+    },
+    {
+      "use": "coinswap",
+      "dontUse": ["Coinswap", "CoinSwap", "coinSwap", "coin-swap"],
+      "notes": ""
+    },
+    {
+      "use": "fee bumping",
+      "dontUse": ["fee-bumping"],
+      "notes": ""
+    },
+    {
+      "use": "feerate",
+      "dontUse": ["fee-rate", "fee rate"],
+      "notes": ""
+    },
+    {
+      "use": "hashlock",
+      "dontUse": ["hash-lock", "hash lock"],
+      "notes": ""
+    },
+    {
+      "use": "keypath",
+      "dontUse": ["key-path", "key path"],
+      "notes": ""
+    },
+    {
+      "use": "mainnet",
+      "dontUse": ["main net"],
+      "notes": ""
+    },
+    {
+      "use": "multisig",
+      "dontUse": ["multi-sig"],
+      "notes": ""
+    },
+    {
+      "use": "multiparty",
+      "dontUse": ["multi-party"],
+      "notes": ""
+    },
+    {
+      "use": "offchain",
+      "dontUse": ["off-chain"],
+      "notes": ""
+    },
+    {
+      "use": "onchain",
+      "dontUse": ["on-chain"],
+      "notes": ""
+    },
+    {
+      "use": "opcode",
+      "dontUse": ["OPCODE", "OpCode", "Opcode", "op code"],
+      "notes": ""
+    },
+    {
+      "use": "OP_RETURN (and all other opcodes)",
+      "dontUse": ["op_return"],
+      "notes": ""
+    },
+    {
+      "use": "pathfinding",
+      "dontUse": ["path finding"],
+      "notes": ""
+    },
+    {
+      "use": "RBF or Replace By Fee",
+      "dontUse": ["Replace-By-Fee"],
+      "notes": ""
+    },
+    {
+      "use": "preimage",
+      "dontUse": ["pre-image"],
+      "notes": ""
+    },
+    {
+      "use": "presigned",
+      "dontUse": ["pre-signed"],
+      "notes": ""
+    },
+    {
+      "use": "proof of work",
+      "dontUse": ["proof-of-work"],
+      "notes": "proof-of-work may be used as an adjective phrase (e.g. \"Bitcoin's proof-of-work security is economic in nature\")."
+    },
+    {
+      "use": "redeemScript",
+      "dontUse": ["redeem script"],
+      "notes": ""
+    },
+    {
+      "use": "secp256k1",
+      "dontUse": ["Secp256k1", "SECP256k1", "SECP256K1"],
+      "notes": ""
+    },
+    {
+      "use": "scriptpath",
+      "dontUse": ["script-path", "script path"],
+      "notes": ""
+    },
+    {
+      "use": "side-channel",
+      "dontUse": ["sidechannel"],
+      "notes": "when used to describe a side-channel attack"
+    },
+    {
+      "use": "sigop",
+      "dontUse": ["Sigop", "SigOp", "sig op"],
+      "notes": ""
+    },
+    {
+      "use": "single-sig",
+      "dontUse": ["singlesig"],
+      "notes": ""
+    },
+    {
+      "use": "soft fork/hard fork",
+      "dontUse": ["softfork/hardfork", "soft-fork/hard-fork"],
+      "notes": "soft-fork/hard-fork may be used as compound adjectives (e.g. \"Foo proposed a soft-fork change\")."
+    },
+    {
+      "use": "Stack Exchange",
+      "dontUse": ["StackExchange"],
+      "notes": "as the website spells itself"
+    },
+    {
+      "use": "zero-conf",
+      "dontUse": ["zeroconf", "zero conf", "0-conf"],
+      "notes": "unconfirmed transaction"
+    },
+    {
+      "use": "2-of-3",
+      "dontUse": ["2 of 3"],
+      "notes": ""
+    }
+  ],
+  "spelling": [
+    {
+      "use": "adaptor signatures",
+      "dontUse": ["adapter signatures"],
+      "notes": ""
+    },
+    {
+      "use": "discreet log contracts",
+      "dontUse": ["discrete log contracts"],
+      "notes": "Remembering to spell this correctly more often than one time in ten is known as the discrete log problem"
+    },
+    {
+      "use": "k-of-n multisig and n-of-n multisignature",
+      "dontUse": ["m-of-n multisig", "any_other_letter-of-any_other_letter multisig"],
+      "notes": "When spoken, 'm-of-n' can easily be confused with 'n-of-n'."
+    },
+    {
+      "use": "light client",
+      "dontUse": ["lite client"],
+      "notes": ""
+    },
+    {
+      "use": "merklized",
+      "dontUse": ["merkelized", "merkleized"],
+      "notes": ""
+    }
+  ],
+  "preferredTerms": [
+    {
+      "use": "coinbase transaction",
+      "dontUse": ["generation transaction"],
+      "notes": ""
+    },
+    {
+      "use": "hardware signers or hardware signing devices",
+      "dontUse": ["hardware wallets"],
+      "notes": "The wallet is the software/logical component that tracks UTXOs, constructs transactions, etc. Devices sold as \"hardware wallets\" are dedicated key storage and signing devices."
+    },
+    {
+      "use": "forwarding",
+      "dontUse": ["routing"],
+      "notes": "For relaying LN payments from one node to the next"
+    },
+    {
+      "use": "lowercase words for P2P message types e.g. inv, getdata, tx",
+      "dontUse": ["Uppercase words e.g. INV, GETDATA, TX"],
+      "notes": "The command type contained in the P2P message is lowercase ascii"
+    },
+    {
+      "use": "Merklized Alternative Script Trees",
+      "dontUse": ["Merklized Abstract Syntax Trees"],
+      "notes": "https://bitcoinops.org/en/newsletters/2018/12/28/#fn:fn-mast"
+    },
+    {
+      "use": "pathfinding",
+      "dontUse": ["routing"],
+      "notes": "For finding LN routes; routing is ok in specialized contexts (e.g. \"source-routed\" or trampoline routing)"
+    },
+    {
+      "use": "payjoin",
+      "dontUse": ["P2EP", "bustapay", "PayJoin"],
+      "notes": ""
+    },
+    {
+      "use": "receiver",
+      "dontUse": ["recipient"],
+      "notes": ""
+    },
+    {
+      "use": "spender",
+      "dontUse": ["sender"],
+      "notes": "\"sender\" may ambiguously refer to the sender of data"
+    },
+    {
+      "use": "uneconomical output",
+      "dontUse": ["dust"],
+      "notes": "The dust limit is the minimum value an output must contain in order for Bitcoin Core to relay a transaction containing that output. What's economical or not changes as minimum feerates change, but the dust limit doesn't change often."
+    }
+  ]
+}
