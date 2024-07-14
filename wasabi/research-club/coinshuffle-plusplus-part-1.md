@@ -11,7 +11,6 @@ tags:
 speakers:
   - 'Tim Ruffing'
   - 'Adam Ficsor'
-  - 'Olivier'
   - 'Lucas Ontivero'
   - 'Raphael'
 categories:
