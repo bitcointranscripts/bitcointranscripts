@@ -13,6 +13,7 @@ speakers:
   - 'Adam Ficsor'
   - 'Olivier'
   - 'Lucas Ontivero'
+  - 'Raphael'
 categories:
   - 'club'
 summary: 'In today''s episode Tim Ruffing introduces the CoinShuffle++ protocol and explains its key components. He describes how the protocol uses power sums and polynomial roots to ensure secure messaging between participants. The protocol consists of four stages: Dimi Hellman key exchange, commitment, DC net, and confirmation. The protocol handles malicious peers by revealing secret keys and excluding them in the next round. Ruffing also highlights the scalability of the CoinShuffle++ protocol, as it can accommodate a large number of participants and complete the process in a relatively short time. The use of dice mix enhances the efficiency of the protocol compared to its predecessor, CoinShuffle. Futher Tim dives into the challenges of implementing CoinShuffle++, a decentralized protocol for coinjoining cryptocurrencies. He highlights the issues caused by varying internet connection speeds and round communication, leading to slower performance. Ruffing also discusses concerns about the negotiation process and cryptography affecting communication speed. Additionally, he acknowledges the complexity of the topic and expresses a desire to simplify it for wider understanding and implementation. Overall, Ruffing emphasizes the importance of maintaining privacy in peer-to-peer transactions and the potential of cryptography in various applications.'
