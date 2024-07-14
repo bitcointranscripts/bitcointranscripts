@@ -20,7 +20,7 @@ summary: 'In today''s episode Tim Ruffing introduces the CoinShuffle++ protocol 
 ---
 ## Intro
 
-Olivier: 00:00:00
+Max Hillebrand: 00:00:00
 
 Now, excellent.
 Okay, so let's go through it.
@@ -37,7 +37,7 @@ And so as an example, we looked at Electron Cash, which had only five participan
 
 ## Weekly recap.
 
-Olivier: 00:01:16
+Max Hillebrand: 00:01:16
 
 So here's where we are in the Wasabi Research Club.
 Next week we'll likely do CoinShuffle++ again with the authors.
@@ -52,7 +52,7 @@ At the end of this protocol we want to essentially know whether someone in this 
 
 ## The cryptographers at dinner. (DC-nets, Chaum)
 
-Olivier: 00:02:26
+Max Hillebrand: 00:02:26
 
 So here's how Chaum proposed to do this protocol anonymously.
 Every single user is going to look to their right and create a hidden secret.
@@ -90,7 +90,7 @@ And this is the same no matter what kind of setup you have, whether you have man
 
 ## Message collision in DC-networks.
 
-Olivier: 00:06:08
+Max Hillebrand: 00:06:08
 
 So there are two problems we have to discuss because those are the key reasons why we don't use DC-nets in any practical applications.
 And it's the key thing that's solved in CoinShuffle++.
@@ -107,7 +107,7 @@ So that's a pretty big problem.
 
 ## Malicious actors in DC-networks.
 
-Olivier: 00:07:28
+Max Hillebrand: 00:07:28
 
 So further, we have to talk about kicking disruptors.
 Something that a malicious entity can do, in this case, Orange is a malicious entity, is simply not obey the protocol.
@@ -121,7 +121,7 @@ Okay, so yeah, in this case yellow is just unaware of what's going on because ye
 
 ## CoinShuffle++. / Dicemix protocol / 4 + 2f rounds.
 
-Olivier: 00:08:41
+Max Hillebrand: 00:08:41
 
 So now we're going to talk about CoinShuffle++.
 So in the paper, four things are discussed.
@@ -159,9 +159,9 @@ Adam Ficsor: 00:10:27
 Oh, and don't forget to unmute yourself when you're talking.
 Yep.
 Okay.
-Alright, Olivier you can continue.
+Alright, Hillebrand you can continue.
 
-Olivier: 00:10:36
+Max Hillebrand: 00:10:36
 
 Okay, so Tim Ruffing is here which is pretty exciting.
 So now we're talking about CoinShuffle++ because we covered DC-networks.
@@ -179,14 +179,14 @@ And then there's the confirmation phase, which is the end of a successful mix wh
 
 ## Malicious actors in Dicemix.
 
-Olivier: 00:12:53
+Max Hillebrand: 00:12:53
 
 The way that DiceMix handles malicious peers is by having ephemeral keys and by having participants reveal their secret key and reveal paths that allows everyone to see who in fact is the malicious peer to then exclude them in the next round.
 So That's how that's dealt with.
 
 ## Example of Dicemix round.
 
-Olivier: 00:13:17
+Max Hillebrand: 00:13:17
 
 So here's an example of these communication rounds.
 So if you look at the first run, number one, you have the key exchange, then you have the commitment phase, then you have the DC-net.
@@ -450,13 +450,13 @@ Adam Ficsor: 00:37:44
 
 Thank you.
 
-Olivier: 00:37:45
+Max Hillebrand: 00:37:45
 
 Yeah.
 
 ## Base case: 4-bit message and 3 participants.
 
-Olivier: 00:37:46
+Max Hillebrand: 00:37:46
 
 So this is exactly what I want to sort of replicate and I think Adam is probably thinking the same thing.
 You know, I would like to see that I understand the protocol with like, let's say a four bit message and three participants.
@@ -587,7 +587,7 @@ So It's much easier to implement than having this huge case distinction.
 
 Adam Ficsor: 00:48:27
 
-Lucas, Olivier, Raphael, do you have something to discuss, questions?
+Lucas, Hillebrand, Raphael, do you have something to discuss, questions?
 
 
 ## Complexity in the communication layer. / Why not use Tor?
@@ -760,7 +760,7 @@ Yes?
 
 ## When 1 round fails.
 
-Olivier: 01:04:45
+Max Hillebrand: 01:04:45
 
 Yeah, if one of the rounds fails, all of the participants have to reveal their messages, correct?
 
@@ -768,7 +768,7 @@ Tim Ruffing: 01:05:00
 
 Right.
 
-Olivier: 01:05:02
+Max Hillebrand: 01:05:02
 
 In the presence of a malicious party.
 So I'm just thinking practically speaking, it would mean that if we're working with a wallet and it reveals its addresses, those addresses can never be used again, right?
@@ -777,13 +777,13 @@ Tim Ruffing: 01:05:26
 
 Right, I think that's one of the fundamental ideas, that you really use a trust that you never basically used before and then if you know you throw it away you will also never use it in the future.
 
-Olivier: 01:05:42
+Max Hillebrand: 01:05:42
 
 Okay that's pretty clear.
 
 ## Would Wasabi be safer if it used a CoinShuffle model?
 
-Olivier: 01:05:45
+Max Hillebrand: 01:05:45
 
 So are you familiar I mean this might be very rude, but are you well familiar with Zero Link and how Wasabi is working?
 
@@ -793,7 +793,7 @@ I'm not sure.
 I know a little bit.
 Maybe just explain what you want to say and we can see if I can follow.
 
-Olivier: 01:06:11
+Max Hillebrand: 01:06:11
 
 I'm just curious if from where you're from your research, if you think that Wasabi would be more secure, safer or better if it was using a CoinShuffle++ model.
 Because right now, Wasabi uses a server that does a blind signing of secret outputs.
@@ -802,7 +802,7 @@ Tim Ruffing: 01:06:40
 
 Right.
 
-Olivier: 01:06:44
+Max Hillebrand: 01:06:44
 
 This is similar to what we've talked about, but yeah.
 
@@ -823,7 +823,7 @@ Whereas if you really rely on Tor, Either you can run it or you cannot.
 
 ## CashShuffle vs CoinShuffle.
 
-Olivier: 01:09:04
+Max Hillebrand: 01:09:04
 
 At one point your co-authors mentioned CashShuffle and he said that it was not a correct representation of CoinShuffle.
 I'm just curious if you know anything about that and why that was the case.
@@ -870,7 +870,7 @@ Adam Ficsor: 01:12:16
 It's because, for me, When I looked at the CoinShuffle paper, I was like, oh fuck I get it.
 I got the basic idea right away I can just work out everything from there by myself Even if I don't read the paper very carefully. With CoinShuffle++ I was reading it very carefully, but I still don't get the essence.
 
-Olivier: 01:12:44
+Max Hillebrand: 01:12:44
 
 Yeah, I have to concede as well that I'm gonna try again for another week and I might email you personally or your co-authors but I didn't understand the idea either.
 
@@ -914,7 +914,7 @@ Tim Ruffing: 01:15:32
 so when I think like earlier I mentioned that I was looking into some some other models with the petal recently and I think one of the things he also wants to do is drive this a little bit further to get a simpler, a little bit simpler protocol.
 Which also would be computationally a little bit faster at the expense of adding around.
 
-Olivier: 01:16:05
+Max Hillebrand: 01:16:05
 
 So can you clarify the link you sent us?
 I actually happened to have read this entire thing as well, as well as the pseudocode.
@@ -971,9 +971,9 @@ I think that's one of the other hard problems that's ignored in all the mixing p
 Adam Ficsor: 01:19:40
 
 I'm sorry, I was just taking a note for myself.
-So I don't know if you guys have anything but regarding the organization. Olivier you said you will record this conversation, did you?
+So I don't know if you guys have anything but regarding the organization. Hillebrand you said you will record this conversation, did you?
 
-Olivier: 01:19:56
+Max Hillebrand: 01:19:56
 
 Yes, It's recorded.
 
@@ -982,7 +982,7 @@ Adam Ficsor: 01:20:02
 I cannot hear you.
 Is it only me?
 
-Olivier: 01:20:06
+Max Hillebrand: 01:20:06
 
 It's recorded.
 Hello?
@@ -1005,7 +1005,7 @@ Sorry, I'm here for some reason.
 I couldn't hear anything.
 Would you repeat that?
 
-Olivier: 01:20:37
+Max Hillebrand: 01:20:37
 
 It's recorded.
 So yeah, if there are no further questions, I think we should probably let Tim get back to his work.
@@ -1047,7 +1047,7 @@ So it's a pity.
 I think the decentralized, the peer-to-peer communication is required.
 Otherwise, all the benefits, I think, go away.
 
-Olivier: 01:22:28
+Max Hillebrand: 01:22:28
 
 Yeah, I was thinking a similar thing.
 The advantage is that people wouldn't have to close their Tor circuit.
