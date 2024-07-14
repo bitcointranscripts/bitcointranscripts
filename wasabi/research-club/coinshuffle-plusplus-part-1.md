@@ -119,7 +119,7 @@ So yeah, so who disrupted the message?
 It's unclear.
 Okay, so yeah, in this case yellow is just unaware of what's going on because yellow doesn't know whether it was green or orange that disrupted the message.
 
-## CoinShuffle++. / Dicemix protocol / 4 + 2f rounds.
+## CoinShuffle++. / DiceMix protocol / 4 + 2f rounds.
 
 Max Hillebrand: 00:08:41
 
@@ -177,14 +177,14 @@ Then the commitment phase, where participants are committing what their message 
 And then there's the DC-nets phase, where the participants are using power sums over a finite field to construct their own secure message.
 And then there's the confirmation phase, which is the end of a successful mix where messages are made available and all participants have the same anonymous messages.
 
-## Malicious actors in Dicemix.
+## Malicious actors in DiceMix.
 
 Max Hillebrand: 00:12:53
 
 The way that DiceMix handles malicious peers is by having ephemeral keys and by having participants reveal their secret key and reveal paths that allows everyone to see who in fact is the malicious peer to then exclude them in the next round.
 So That's how that's dealt with.
 
-## Example of Dicemix round.
+## Example of DiceMix round.
 
 Max Hillebrand: 00:13:17
 
@@ -954,7 +954,7 @@ It's a different layer.
 
 Adam Ficsor: 01:18:13
 
-Do you think a simple peer-to-peer network that's using CacheCache could work or is just a flawed idea from the beginning, like bit message, right?
+Do you think a simple peer-to-peer network that's using Hashcash could work or is just a flawed idea from the beginning, like bit message, right?
 
 Tim Ruffing: 01:18:26
 
