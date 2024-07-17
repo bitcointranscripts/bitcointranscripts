@@ -53,7 +53,7 @@ I believe the listeners understand that.
 
 Aaron van Wirdum: 00:00:50
 
-What we're going to discuss is open timestamps.
+What we're going to discuss is opentimestamps.
 
 Sjors Provoost: 00:00:53
 
@@ -415,7 +415,6 @@ I'm confused about terms can you hear?
 
 Sjors Provoost: 00:08:26
 
-
 So the Merkle root is the top of the tree yes or the top of the roots or the bottom of the upside down tree, depending on how you want to look at it.
 And the Merkle proof is a way to say that this given document actually is part of that tree without having to reveal the entire tree, but just bits of the tree.
 So how do you use this in practice is the question because you might just have one document that you want to timestamp but you don't want to create a transaction for that, but what if people could come together and have a whole bunch of documents maybe once a day or once an hour, timestamped.
@@ -497,7 +496,7 @@ Aaron van Wirdum: 00:12:17
 
 Yeah, it's a bit of an implementation detail anyway.
 So you send in the hash of the document you want to have timestamped.
-Once a second, a hash is returned, which is either that hash, or if multiple people send in documents, or if there were multiple hashes of documents sent in in the same second, then a Merkle root is returned plus a Merkle path, which lets you find your hash in the tree.
+Once a second, a hash is returned, which is either that hash, or if multiple people send in documents, or if there were multiple hashes of documents sent in the same second, then a Merkle root is returned plus a Merkle path, which lets you find your hash in the tree.
 It's like a miniature tree for once a second.
 Every second, there's a miniature tree.
 
@@ -560,7 +559,7 @@ Right and then what does that person do with that?
 
 Sjors Provoost: 00:14:39
 
-They run a command called `OTS verify` which basically checks the proof and it checks whether all the hashes are what they say they should be.
+They run a command called `ots verify` which basically checks the proof and it checks whether all the hashes are what they say they should be.
 And then it checks against your own node whether the transaction is included in the blockchain.
 
 Aaron van Wirdum: 00:14:52
@@ -782,7 +781,7 @@ But someone else might be able to, for example, with this email example,
 Sjors Provoost: 00:19:44
 
 Well, they can if you did say but not what I didn't say.
-The other thing you can can't say is that there's only one thing that I said.
+The other thing you can't say is that there's only one thing that I said.
 So I might have said in 2015, Bitcoin is gonna go to 100, and then I would say Bitcoin is gonna go to 1,000, and I would say Bitcoin is gonna go to 10,000, and then today I released the proof that I set the right price but you have no idea how many other prices I time stamped.
 So that's important to keep in mind when people use time stamps in magic tricks.
 
