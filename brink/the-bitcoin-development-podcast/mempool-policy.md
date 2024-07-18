@@ -2,7 +2,7 @@
 title: 'Mempool Policy'
 transcript_by: 'sorukumar via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Policy-e182ul0'
-date: '2021-11-09'
+date: '2021-11-10'
 tags:
   - 'rbf'
   - 'transaction-pinning'
