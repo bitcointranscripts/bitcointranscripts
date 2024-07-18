@@ -1,105 +1,114 @@
 ---
-title: "Mempool Policy"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Policy-e182ul0
-tags: ['rbf', 'transaction-pinning']
-speakers: ['John Newbery', 'Gloria Zhao']
-categories: []
-summary: "Brink co-founder, John Newbery, and Brink fellow, Gloria Zhao, discuss Bitcoin Core's mempool policy."
-date: 2021-11-10
+title: 'Mempool Policy'
+transcript_by: 'sorukumar via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Policy-e182ul0'
+date: '2021-11-09'
+tags:
+  - 'rbf'
+  - 'transaction-pinning'
+speakers:
+  - 'John Newbery'
+  - 'Gloria Zhao'
+categories:
+  - 'podcast'
+summary: 'Brink co-founder, John Newbery, and Brink fellow, Gloria Zhao, discuss Bitcoin Core''s mempool policy.'
 additional_resources:
--   title: BIP125 Replace by Fee (RBF)
-    url: https://bitcoinops.org/en/topics/replace-by-fee/
--   title: Transaction pinning
-    url: https://bitcoinops.org/en/topics/transaction-pinning/
--   title: Discourage upgradable
-    url: https://github.com/bitcoin/bitcoin/pull/5000
--   title: https://brink.dev/
-    url: https://brink.dev/
+  - title: 'BIP125 Replace by Fee (RBF)'
+    url: 'https://bitcoinops.org/en/topics/replace-by-fee/'
+  - title: 'Transaction pinning'
+    url: 'https://bitcoinops.org/en/topics/transaction-pinning/'
+  - title: 'Discourage upgradable'
+    url: 'https://github.com/bitcoin/bitcoin/pull/5000'
+  - title: 'https://brink.dev/'
+    url: 'https://brink.dev/'
 ---
-Speaker 0: 00:00:00
+**John** 0: 00:00:00
 
 Hi Gloria.
 
-Speaker 1: 00:00:01
+**Gloria** 1: 00:00:01
 
 Hi John.
 
-Speaker 0: 00:00:02
+**John** 0: 00:00:02
 
 We're here to talk about Bitcoin.
 
-Speaker 1: 00:00:04
+**Gloria** 1: 00:00:04
 
 Yes, we are.
 What are we going to talk about?
 
-Speaker 0: 00:00:06
+**John** 0: 00:00:06
 
 Well, I think you wanted to talk about policy.
 
-Speaker 1: 00:00:09
+**Gloria** 1: 00:00:09
 
 Yes, that's what I wanted to talk about.
+
+**John**
 What kind of policy?
+
+**Gloria**
 Mempool policy, not legislative policy or miniscript policy.
 Mempool policy.
 
-Speaker 0: 00:00:20
+**John** 0: 00:00:20
 
 Okay, well, let's start with the basics.
 What is a mempool?
 
 ## What is a mempool and why have one?
 
-Speaker 1: 00:00:23
+**Gloria** 1: 00:00:23
 
 Well, the mempool is a data structure that's designed to store the best candidates for mining.
 That being the transactions or groups of transactions with the highest fee rate that a miner might want to include in the next block so that they get the best fees.
 
-Speaker 0: 00:00:40
+**John** 0: 00:00:40
 
 Okay, so these are transactions that aren't yet confirmed, they're not included in the blockchain and miners might at some point include them in a block?
 
-Speaker 1: 00:00:51
+**Gloria** 1: 00:00:51
 
 Yeah, I mean at some point everyone was mining, right?
 
-Speaker 0: 00:00:55
+**John** 0: 00:00:55
 
-Yeah, I guess so in 0.1, kind of the original release of Bitcoin, well first it was just Satoshi mining and then I guess Halfenny started mining.
+Yeah, I guess so in 0.1, kind of the original release of Bitcoin, well first it was just Satoshi mining and then I guess Hal Finney started mining.
 
-Speaker 1: 00:01:04
+**Gloria** 1: 00:01:04
 
 Yeah, so it was like default mining would be on as opposed to now where it's off.
 
-Speaker 0: 00:01:09
+**John** 0: 00:01:09
 
 Right.
 So the mempool was for those miners to, so they could select transactions to include in a block.
 But today we have lots of full nodes that aren't mining, but they still have the mempool.
 
-Speaker 1: 00:01:19
+**Gloria** 1: 00:01:19
 
 Yeah, I mean, a mempool, or like, even if you're not mining, you would care what miners are going to put in their next transaction or in their next block, sorry.
 
-Speaker 0: 00:01:29
+**John**r 0: 00:01:29
 
 Why?
 
-Speaker 1: 00:01:30
+**Gloria** 1: 00:01:30
 
 Well, first and foremost, like even if you're not broadcasting your own transactions, even if you don't have a wallet attached, looking at the unconfirmed transactions before they're included in a block, as long as you have like kind of an accurate mempool, you are going to be caching those script checks, you're caching the signature checks, and that really helps with your block validation speed later when the blocks do get mined.
 
-Speaker 0: 00:01:54
+**John** 0: 00:01:54
 
 That's actually a really interesting point that the scripts inside the transactions are context-free, So you can check the validity of scripts even if the transaction is not in a block.
 
-Speaker 1: 00:02:05
+**Gloria** 1: 00:02:05
 
 Yeah, and we do just the scripts because it's particularly expensive to be checking those scripts and signatures.
 
-Speaker 0: 00:02:12
+**John** 0: 00:02:12
 
 Okay, so you receive a transaction, you put it in your mempool, and as part of doing that, you're checking the scripts.
 And then if you receive a block in the future that contains that transaction you don't need to recheck that script.
@@ -111,7 +120,7 @@ Yep.
 All you do is check your signature cache with the WTX ID and the verification flags.
 You're like, okay.
 
-Speaker 0: 00:02:32
+**John** 0: 00:02:32
 
 Okay.
 So that's one good reason to have a mempool.
@@ -127,7 +136,7 @@ And just in general, Bitcoin core nodes, at least we broadcast what's in our mem
 So like if your peer queries you for it, you look into your mempool when you're announcing to your peers, look into what's in your mempool, etc.
 Etc.
 
-Speaker 0: 00:03:38
+**John** 0: 00:03:38
 
 Okay, so you mentioned script caching.
 Another interesting aspect of speeding up block validation relay is compact blocks, right?
@@ -139,7 +148,7 @@ So if you already have the transactions or like the mempool will contain the tra
 And if you're relaying blocks through compact blocks, hopefully 99% or like all the transactions apart from the Coinbase you already have and then you don't have to download that from your peers.
 You can just go, whoop.
 
-Speaker 0: 00:04:06
+**John** 0: 00:04:06
 
 So saving bandwidth as well as computation.
 
@@ -147,7 +156,7 @@ Speaker 1: 00:04:08
 
 Yeah, network bandwidth.
 
-Speaker 0: 00:04:10
+**John** 0: 00:04:10
 
 Great.
 And then finally, another reason you'd have a mempool is kind of central to decentralization.
@@ -168,7 +177,7 @@ And it kind of relies on the network kind of being a little bit of I scratch you
 A little bit of altruism is required.
 But like I said, there's so many pros to having your own mempool that hopefully everyone participating in transaction propagation is not too expensive.
 
-Speaker 0: 00:05:39
+**John** 0: 00:05:39
 
 Right, so it's altruistic in a sense that we're relying on nodes and peers of peers existing and relaying the transaction.
 So clearly for that to work, we can't allow the cost of having a mempool and relaying transactions to be too high.
@@ -184,13 +193,13 @@ And that means these computational resources and memory that you've allocated fo
 And so there's this very interesting trade-off of like, how do we make the mempool as useful as possible and as accurate as possible without exposing ourselves to DOS attacks?
 And when we're creating rules and setting heuristics for like protecting ourselves, let's not create pinning vectors or censorship vectors.
 
-Speaker 0: 00:06:55
+**John** 0: 00:06:55
 
 Okay, we'll get into those a bit later.
 
 ## Denial of service protection
 
-Speaker 0: 00:06:57
+**John** 0: 00:06:57
 
 So Bitcoin has this peer-to-peer network.
 And if we're talking about block propagation, we have this inbuilt kind of rate limiter or protection from DOS, which is proof of work, right?
@@ -201,7 +210,7 @@ Right.
 I think you know block download a bit better than I do.
 Like, what do you do when someone sends you block headers?
 
-Speaker 0: 00:07:16
+**John**  0: 00:07:16
 
 So one of the first things you do once you've deserialized it and made sure that it's not malformed or anything like that, is you check the work on it.
 So the block header contains various other fields and you check that once you've hashed everything together, the digest is below the target.
@@ -213,7 +222,7 @@ Speaker 1: 00:07:50
 
 Yeah, but very expensive if they want to send you garbage, but they have to provide a solution.
 
-Speaker 0: 00:07:56
+**John** 0: 00:07:56
 
 Right, so yeah, the key thing there is the asymmetry of expensive to create and cheap to validate.
 Whereas we don't have that with transactions.
@@ -224,7 +233,7 @@ Right, yeah.
 It's very cheap to create a transaction, especially if it's going to be invalid.
 Yeah, computationally, like, yeah.
 
-Speaker 0: 00:08:15
+**John** 0: 00:08:15
 
 Yeah, So when we receive that transaction, so an unconfirmed transaction that a peer has told us about, we need some way or some ways to make sure that peer isn't just feeding us data that's going to be expensive for us computationally or in terms of memory or in terms of bandwidth.
 So how do we do that?
@@ -232,11 +241,14 @@ So how do we do that?
 Speaker 1: 00:08:33
 
 We use policy.
+
+**John**
+
 Great, okay.
 
 ## What is mempool policy?
 
-Speaker 0: 00:08:37
+**John** 0: 00:08:37
 
 We have policy, and so what is policy?
 
@@ -251,7 +263,7 @@ Or if you had like an unlimited mempool and unlimited computational resources to
 Sure, there's no reason to do more than consensus, but we are resource constrained.
 So we have policy, which is even stricter than consensus.
 
-Speaker 0: 00:09:45
+**John** 0: 00:09:45
 
 Right.
 So there's that difference between the ideal mempool, which contains just the transactions that maximize the fee for the miner in the next block, and then there's reality, which is we live in this world where our resources are constrained, be that memory or computational bandwidth, and we need to have some kind of heuristics, I guess, to make sure that we don't have unbounded usage of those resources.
@@ -260,7 +272,7 @@ So there's that difference between the ideal mempool, which contains just the tr
 
 Speaker 1: 00:10:14
 
-I think that we can roughly categorize memorable policy into three buckets for reasons where we're applying them.
+I think that we can roughly categorize mempool policy into three buckets for reasons where we're applying them.
 And of course, like one policy can fall into multiple buckets.
 The first being, we are using some kind of heuristic to boost the usefulness of our mempool.
 So anything that's fee rate based where we're favoring higher fee rates over lower fee rates, that would fall under this category.
@@ -269,7 +281,7 @@ That's kind of the bulk of many policies, I think.
 And then the third one is some set of rules that the node operator or kind of a group within the network or whatever has agreed as a good rule to follow or in preparation for a consensus rule in the future.
 So we enforce it as policy so that we don't have it in our mempool and like mine it into a block.
 
-Speaker 0: 00:11:18
+**John** 0: 00:11:18
 
 Okay, so can you give me some examples of policy rules?
 
