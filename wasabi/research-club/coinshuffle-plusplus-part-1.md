@@ -68,7 +68,7 @@ So in this case what we'll do if no one paid for dinner, then they'll simply say
 The sum of those values will always be even and all participants know because the sum of the value is even that no one at the table paid so likely an NSA member paid.
 But if you are the payer in this case we'll look at Orange.
 Orange did pay for the bill.
-Orange is going to flip the bid.
+Orange is going to flip the bit.
 Originally, orange was supposed to declare a zero, but now orange is declaring a one.
 And so the sum is an odd number.
 If the sum is odd, then it means that it was one of the individuals at the table that was in fact the payer, and that's good.
@@ -112,7 +112,7 @@ Max Hillebrand: 00:07:28
 So further, we have to talk about kicking disruptors.
 Something that a malicious entity can do, in this case, Orange is a malicious entity, is simply not obey the protocol.
 So, for example, reveal random messages, or messages that are not XORs of what you have, or possibly even the opposite of the XOR that you have, purposefully garbling all the other messages.
-The problem in this case is that if Orange does something evil, like in this case here, green really did pay for the meal, orange did not pay, but orange is saying as though he paid.
+The problem in this case is that if orange does something evil, like in this case here, green really did pay for the meal, orange did not pay, but orange is saying as though he paid.
 The problem here is that there's no way to find out who the disruptor is in an efficient way.
 So in other words, orange can disrupt indefinitely this protocol from happening and that's pretty unfortunate.
 So yeah, so who disrupted the message?
@@ -236,7 +236,7 @@ I mean, I looked at the NAPSEC paper once, but this is really like years ago or 
 
 Tim Ruffing: 00:19:57
 
-It would be interesting to know what exactly is is required to come up with the amounts here.
+It would be interesting to know what exactly is required to come up with the amounts here.
 So you basically, you simply know, What you said is that you just need to know the mixing amounts of all the others.
 
 Lucas Ontivero: 00:20:27
@@ -285,7 +285,7 @@ Right, yeah.
 So this is the point.
 Like the amount is something that I call fix.
 I think this is the term we use in the paper also.
-And this is, Yeah, there's a simple attack once you use fixed messages.
+Yeah, there's a simple attack once you use fixed messages.
 So, let's for example, say we all use, let's say, CoinShuffle for mixing not a fresh Bitcoin address, but some real, I don't know, document, text file.
 Everybody has a text file.
 Now, what you can do is you can disrupt the first round by basically disrupting the last message of all participants in the sense that you as the attacker on the network, you learn the output of the protocol.
@@ -360,7 +360,7 @@ It was, the idea was for the next week, but the next week we will continue with 
 
 Adam Ficsor: 00:29:52
 
-Lukas, CacheFusion is in the agenda.
+Lukas, CashFusion is in the agenda.
 
 Tim Ruffing: 00:29:59
 
@@ -387,7 +387,7 @@ So I think the attack that I hear mentioned is so generic that it applies to pre
 Like even if I sent...
 At least every system where I don't trust my peers.
 And actually, this is how it's written in the paper.
-So I was thinking, and I'm just currently working on this with Petr again, Petr Morinus-Sanchez.
+So I was thinking, and I'm just currently working on this with Pedro again, Pedro Moreno-Sanchez.
 We're looking into relaxations of this model where you maybe have a few trusted servers, but in the sense that, I don't know, maybe there are 20 servers and you only need to trust one of them to be anonymous.
 And maybe it's possible to avoid this attack in such a setting because the attack relies on the fact that people can stop the protocol from completing.
 And it's maybe interesting to see if we can get around this using some trust that may be acceptable for some users.
@@ -434,11 +434,11 @@ And some people tried to implement it and screwed up.
 So that's why we prefer to give the full truth, even though it's hardly readable.
 In the hope that if somebody really translates it from the paper without having too much background in crypto doesn't screw up entirely.
 So I think, I mean, I can, as I said, I can bring slides and try to explain it in the way I would explain, but I think if you, If you understand how a DC-net works, which I think you looked at last week, then I would approach CoinShuffle++ simply as a way to set up a DC-net?
-And then if you look at the steps, As we also seen on your slides here, well, what do we need for...?
+And then if you look at the steps, As we also seen on your slides here, well, what do we need for DC-Net?
 We need shared symmetric keys.
 Okay, so in the beginning we do key exchange.
 Then we need to run the actual DC-net.
-And here it is, this trick with the power sums is actually not too essential for an high level understanding of the protocol.
+And here it is, this trick with the power sums is actually not too essential for a high level understanding of the protocol.
 It's simply a way to encode messages.
 And it's a clever way because it always works independently of collisions.
 But it doesn't give you anonymity or anything like the entire anonymity is provided by the DC-net basically.
@@ -605,7 +605,7 @@ But, why do you think that's the best mechanism instead of using something like 
 
 Adam Ficsor: 00:49:39
 
-You mean using, do you mean using Tor as the protocol or the Tor network as the built thing.
+Do you mean using Tor as the protocol or the Tor network as the built thing.
 
 Lucas Ontivero: 00:49:51
 
@@ -625,7 +625,7 @@ But the entire thing becomes way simpler.
 The reason why we wrote this paper is that we think it's interesting to have a protocol where you don't rely on Tor.
 Mainly because it gives you a stronger anonymity guarantees, right?
 Tor is optimized for different settings.
-So in anonymous communication, there's always a trade off between between multiple efficiency and security dimensions.
+So in anonymous communication, there's always a trade off between multiple efficiency and security dimensions.
 Something like a DC-net is pretty slow compared to Tor, but it's fully anonymous.
 Like by observing the network, you can't tell anything.
 Whereas in Tor, they optimize for low latency, which is very important if you look at websites, because you don't want to wait forever.
@@ -636,7 +636,7 @@ For example, like if your guard node and your exit node work together, they have
 And the same is true for a tech that just listens to the network but can do end-to-end timing correlation.
 And I think the reason why Tor made this straight up is what I said, like they want low latency because it should be usable for web browsing.
 But here actually I think we are in a different setting.
-And we can actually have stronger anonymity by something like a DC node.
+And we can actually have stronger anonymity by something like a DC-net.
 
 Lucas Ontivero: 00:53:38
 
@@ -746,7 +746,7 @@ Adam Ficsor: 01:03:49
 
 Actually, we are using new streams that's a little bit different.
 And those streams are already built up.
-And actually, because I wrote tests for it, when a stream is not built up yet then then Tor is going to just put it in an already used stream So it doesn't want to ruin our performance Anyway, we are we are going out of the topic.
+And actually, because I wrote tests for it, when a stream is not built up yet, then Tor is going to just put it in an already used stream So it doesn't want to ruin our performance Anyway, we are going out of the topic.
 Raphael, do you have something?
 
 Raphael: 01:04:34
@@ -816,7 +816,7 @@ But if you have peers dropping off for whatever reason, you add rounds and you h
 And now if Adam is telling me, okay, like even with Wasabi or with zero link, we already have like timeouts of two minutes.
 Yeah.
 It's larger than I expected to be honest.
-But I think it's something that that really we should look into.
+But I think it's something that really we should look into.
 Because I said, I think like from a privacy point of view, it's actually the stronger model.
 Also, not relying on Tor gives you the advantage that Some people may not be able to use Tor for various reasons and here they still get a meaningful anonymity guarantee.
 Whereas if you really rely on Tor, Either you can run it or you cannot.
@@ -911,7 +911,7 @@ Thank you.
 
 Tim Ruffing: 01:15:32
 
-so when I think like earlier I mentioned that I was looking into some some other models with the petal recently and I think one of the things he also wants to do is drive this a little bit further to get a simpler, a little bit simpler protocol.
+so when I think like earlier I mentioned that I was looking into some other models with the Pedro recently and I think one of the things he also wants to do is drive this a little bit further to get a simpler, a little bit simpler protocol.
 Which also would be computationally a little bit faster at the expense of adding around.
 
 Max Hillebrand: 01:16:05
