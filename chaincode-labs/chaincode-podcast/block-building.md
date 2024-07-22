@@ -369,7 +369,7 @@ Mark Erhardt: 00:17:32
 
 As you might imagine, if you have all the ancestor sets for every transaction, you have a very clean list of things that you need to look at.
 For every single transaction, you just look at all of its ancestors.
-That's O of N in the size of transactions.
+That's `O(N)` in the size of transactions.
 To find what we call candidate sets, these overlaps of multiple ancestor sets that could be even more profitable to include, we need to essentially search the power set of graphs of transactions that are connected.
 So what we do here is we look at one transaction that has a high fee rate and then we cluster all of the transactions that are connected to it either via child or parent relationships.
 I'll be referring to this construct, the maximal set of connected transactions as a cluster.
@@ -403,7 +403,7 @@ Mark Erhardt: 00:20:29
 Right, yeah, there's a few nifty little tricks that we found while we have been writing our research code for this.
 We start our search in the cluster by a number of initial candidate sets, and since we have them already, we just initialize with the ancestor sets that exist in the cluster, which is for every single transaction in the cluster, we have already a starting set.
 The next observation we had was when we have an ancestor set in a cluster that has fee rate x, any leaf in the cluster, as in any childless transaction in the cluster, that has a lower fee rate than that, can never lead to a better candidate set than this.
-So, if you have a transaction A that pays 5 satoshi per byte, that has a child which pays 4, you will never get a better candidate set by including this child with 4 when you already have something that pays 5 satoshi per vbyte.
+So, if you have a transaction A that pays 5 satoshi per vbyte, that has a child which pays 4, you will never get a better candidate set by including this child with 4 when you already have something that pays 5 satoshi per vbyte.
 
 Clara Shikhelman: 00:21:30
 
@@ -600,7 +600,7 @@ Yeah, definitely.
 Even if we're thinking right now, this week we just crossed 90% of all bitcoins being in circulation.
 In 2036 it'll be 99%.
 In, I think, 2046 it'll be, or 2050, it'll be 99.9. And as the block subsidy keeps halving, even just a regular full block at minimum fee rate will eventually have more fees than new coins.
-I think that's reached by 2060 with one Satoshi per vbyte and four million white units.
+I think that's reached by 2060 with 1 satoshi per vbyte and four million weight units.
 
 Clara Shikhelman: 00:38:38
 
@@ -715,7 +715,7 @@ Mark Erhardt: 00:47:39
 
 Well, careful asking around a little bit what might need to happen for such an algorithm to get integrated into Bitcoin Core seems to indicate that there might be either a need to make it run separate and the architectural challenge of that would be easy, or if you want to integrate it properly into the mempool.
 Mempool is such a central part of how everything fits together in Bitcoin Core, that would be a pretty invasive change.
-So I'm a little bearish on the timeline 
+So I'm a little bearish on the timeline.
 
 Adam Jonas: 00:48:16
 
