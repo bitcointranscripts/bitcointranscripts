@@ -161,34 +161,34 @@ Speaker 1: 00:12:11
 So we're in really early stages at this moment.
 We have the packet coin, which we're working on building all of this infrastructure on top of.
 What we need is we need a very, very low cost way to transact in tokens.
-Because When we're issuing bandwidth, the bandwidth is going to need to be tokenized so that people can buy and sell and trade the right to use bandwidth on a particular link.
-And so we need to make a token And it's not going to work to just use Ethereum because the gas fees are just unacceptable.
+Because when we're issuing bandwidth, the bandwidth is going to need to be tokenized so that people can buy and sell and trade the right to use bandwidth on a particular link.
+And so we need to make a token and it's not going to work to just use Ethereum because the gas fees are just unacceptable.
 So we're working on a project which we call TokenStrike.
 And TokenStrike is basically you just make your own little blockchain and you sign all the blocks.
 You're the issuer of the token.
 You sign all the blocks.
-And all that we need to do is have a means by which if the issuer does something nefarious, for example, claw back a token after they sold it to somebody, then we need to be able to identify that nefarious activity and have nodes in the network which can which can report to everybody that that issuer did something bad and then all of the software will be configured to not deal with that issuer until they fix their stuff.
+And all that we need to do is have a means by which if the issuer does something nefarious, for example, claw back a token after they sold it to somebody, then we need to be able to identify that nefarious activity and have nodes in the network which can report to everybody that that issuer did something bad and then all of the software will be configured to not deal with that issuer until they fix their stuff.
 So that's what we're working on in order to be able to tokenize and issue bandwidth.
 So basically, we're talking about free tokens.
-You can just issue, you can make a token, you just download it to Git repository, and you compile it, and you have a token.
+You can just make a token, you just download it to Git repository, and you compile it, and you have a token.
 We're going to need that in order for these devices to sell their bandwidth as a token.
-And then we're going to need to use lightning network, which we're working on now in order to transact those tokens using HTLC contracts.
+And then we're going to need to use Lightning network, which we're working on now in order to transact those tokens using HTLC contracts.
 Now, CJDNS and VPN and VPN app are all in alpha testing or beta testing.
 You can try out the app on Android now.
 And what we're using now is we have the PKT project is based on a proof of work algorithm, which is bandwidth hard, and that bandwidth hardness is creating an artificial demand for bandwidth.
-And so unlike a lot of these tokens, I mean, I don't need to explain to you guys necessarily what is the difference between a token faucet and a proof of work but I'm finding a lot of people that don't understand that a proof of work is proof of fair issuance whereas all of these other kind of tokens these different issuance processes you can't prove that it was done fairly.
-So, yeah, we have the only, and this is something else that I created, it's called PacketCrypt, and it is the only bandwidth hard proof of work.
-So it's really just a problem that is easier to solve if you solve it together with other miners and the packet blockchain is based on the packet crypt bandwidth hard proof of work.
-So This is going to incentivize people to build out large amounts of bandwidth, which we foresee helping kickstart the decentralized bandwidth marketplace, which will finally be used for getting people off of the legacy and centralized internet.
+Unlike a lot of these tokens, I mean, I don't need to explain to you guys necessarily what is the difference between a token faucet and a proof of work but I'm finding a lot of people that don't understand that a proof of work is proof of fair issuance whereas all of these other kind of tokens these different issuance processes you can't prove that it was done fairly.
+This is something else that I created, it's called PacketCrypt, and it is the only bandwidth hard proof of work.
+So it's really just a problem that is easier to solve if you solve it together with other miners and the packet blockchain is based on the PacketCrypt bandwidth hard proof of work.
+This is going to incentivize people to build out large amounts of bandwidth, which we foresee helping kickstart the decentralized bandwidth marketplace, which will finally be used for getting people off of the legacy and centralized internet.
 
 Speaker 0: 00:15:51
 
-Okay, I don't know if I am the only one who had to make questions, but anyway, let me go with that.
-So what you're saying is that basically my neighbor or I can become an internet service provider.
+I don't know if I am the only one who had to make questions, but anyway, let me go with that.
+So what you're saying is that basically my neighbor or I can become an internet service provider?
 
 Speaker 1: 00:16:12
 
-Exactly, exactly.
+Exactly.
 But you're not going to need to do billing, you're not going to need to do customer service, you're not even going to need to do routing, you're just going to set up that device and it's going to start earning you packet, which I mean you can convert that to whatever currency you would prefer to have.
 
 Speaker 0: 00:16:32
