@@ -480,19 +480,20 @@ It's just like doing Ethernet over like packet over sonnet or SDH.
 It's really the similar concept, you just have to write a little bit of code to connect it together.
 CJDNS is a transport it'll transport anything you want.
 
-Speaker 3: 00:39:14
+Speaker 4: 00:39:14
 
-Okay good to know thanks.
+Okay, good to know thanks.
 
 ## History of CJDNS. / Routing is easier to solve than DNS.
 
-Speaker 2: 00:39:18
+Speaker 0: 00:39:18
 
 Is CJDNS short for CoinJoin DNS?
 
 Speaker 1: 00:39:30
 
-Long story about that.
+No.
+Because my initials are CJD and there's a long story about that.
 Originally it was supposed to be a DNS system but we pivoted it into being a routing system because routing is actually easier to solve than DNS.
 DNS is a deep political problem that is not my favorite problem to try to solve.
 
@@ -500,15 +501,15 @@ DNS is a deep political problem that is not my favorite problem to try to solve.
 
 Speaker 0: 00:39:54
 
-Okay, I have, do you know about the Lockheed project, the project that comes from the Monero community?
-It is not, It is not similar, but it's a networking solution similar to Tor and they have a coin too, I mean a token.
+Do you know about the Loki project, the project that comes from the Monero community?
+It is not similar, but it's a networking solution similar to Tor and they have a coin too, I mean a token.
 I don't know if it is for bandwidth.
 I mean it has to be for bandwidth because what else right?
-Do you know something about that in order to make a comparison or to do you have seen to?
+Do you know something about that in order to make a comparison?
 
 Speaker 1: 00:40:27
 
-Yeah I know I spoke with the developers of Loki, it's a Manero fork as I recall, I mean here's the thing, they're working on anonymity and they want to do an anonymity network.
+Yeah I know I spoke with the developers of Loki, it's a Monero fork as I recall, I mean here's the thing, they're working on anonymity and they want to do an anonymity network.
 The fundamental thing is that we want to do is we want to do infrastructure.
 We want to get people access to other people without having to go through networks that can be turned off.
 That's like the key fundamental aspect of packet.
