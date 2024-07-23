@@ -655,10 +655,10 @@ Do you have any idea how many, let's say, clients are running this software?
 
 Speaker 1: 00:50:07
 
-Oh, it's a good question.
+It's a good question.
 I mean, I can tell you a couple numbers.
 I mean, there's about 200 people in our chat, which is paket.pkt.chat.
-So, you know, you can go there and hang out with cool people there's about 200 people in the chat there there's about 300 people on telegram I don't know exactly how many wallets there are, how many nodes and so on.
+So, you can go there and hang out with cool people there's about 200 people in the chat there there's about 300 people on telegram I don't know exactly how many wallets there are, how many nodes and so on.
 These are just kind of nebulous numbers.
 That's basically what I know.
 
@@ -666,33 +666,34 @@ That's basically what I know.
 
 Speaker 0: 00:50:43
 
-And then what is the Hyperborea project or website or community?
+And then what is the Hyperboria project or website or community?
 What is that?
 
 Speaker 1: 00:50:50
 
-Well, Hyperborea was a, I mean I say was, technically it still exists, but really it was about research on the CJDNS project and that in building the researching the technology of CJDNS that was going on between 2012 and 2014, 15 or so.
-For the most part, Hyperborea is not really active anymore.
+Well, Hyperboria was a, I mean I say was, technically it still exists, but really it was about research on the CJDNS project and that in building the researching the technology of CJDNS that was going on between 2012 and 2014, 15 or so.
+For the most part, Hyperboria is not really active anymore.
 A lot of the people who wanted to do websites that were kind of in their own little network have moved over to the Yggdrasil project and so research continues with Yggdrasil which by the way are great friends of the packet project.
-But the hyperborea as it were is not really a thing anymore and we're moving cjdns from the research phase to the industrialization phase through the packet project.
+But the Hyperboria as it were is not really a thing anymore and we're moving CJDNS from the research phase to the industrialization phase through the Packet project.
 
 ## Why use the Rust programming language? / Productivity in Rust.
 
 Speaker 0: 00:51:50
 
-Okay thank you.
+Thank you.
 I have one more question.
 I always have more questions.
 You know, here sometimes, even where we discuss what is the best programming language.
-It's probably useless, a useless discussion.
+It's probably a useless discussion.
 But now, if I understand this correctly, you are, let's say, writing more new versions in Rust.
 Is that correct?
 
 Speaker 1: 00:52:20
 
-Yeah, yeah.
+Yeah.
 I mean, why?
-Because I previously used C and I find it just unconscionable at this point to continue developing C or C++ because there are bugs and those bugs are going to harm people and it's just like you you you memory corruption it's never done and like the person the very people who say oh I'll never have memory corruption bugs I'm too good I'm a good programmer that's only for idiots those are the ones who create the real problems Those are the ones who create the real problems.
+Because I previously used C and I find it just unconscionable at this point to continue developing C or C++ because there are bugs and those bugs are going to harm people and it's just like memory corruption it's never done and like the person the very people who say oh I'll never have memory corruption bugs I'm too good I'm a good programmer that's only for idiots those are the ones who create the real problems.
+Those are the ones who create the real problems.
 Those are the ones who create problems that in the end, lots of people get harmed by that.
 So I mean, I get it.
 You know, you've got a legacy project.
@@ -702,7 +703,7 @@ That's how it is.
 You do your best.
 You use C comp, you use whatever you can.
 No exec stack, that kind of stuff.
-Which by the way, my one patch to Bitcoin was to turn on no exec stack in Bitcoin so that you know certain really simple 1990s era stack smashing attacks wouldn't work but you know at this point we want to be doing things securely.
+Which by the way, my one patch to Bitcoin was to turn on no exec stack in Bitcoin so that you know certain really simple 1990s era stack smashing attacks wouldn't work, but, at this point we want to be doing things securely.
 The way that you're going to, you got to do things.
 We can't just keep sticking with 20, 30, 40 years old languages.
 That's my opinion anyway.
@@ -713,36 +714,31 @@ Yes, we have some similar discussions, I remember here.
 One more question about that.
 How do you see the productivity of the people programming in Rust in comparison with previous experience programming in C or C++.
 Because personally, I'm not a Rust programmer.
-I tried to learn it many, many years ago and I was fighting against the compiler everything that I did was wrong basically so I said okay I will try this a couple of years right after okay
+I tried to learn it many, many years ago and I was fighting against the compiler everything that I did was wrong basically so I said okay I will try this a couple of years after okay.
 
 Speaker 1: 00:54:30
 
-well rust is just very recently become on to my radar as something that's there.
-I mean, you know, five years ago, it just wasn't there yet.
+Right.
+Well Rust is just very recently become on to my radar as something that's there.
+I mean, five years ago, it just wasn't there yet.
 You know, it was still in research phase.
 So now Rust, in my opinion, it's there.
 So you can just use it.
-And as far as productivity, yeah, I mean, you pay a little bit of productivity in terms of when you're writing the code, it's a little bit less productive than if you're a C++ person, you can just bang out the C++.
-But where I get major productivity improvements is when I'm reviewing the code because if I've got somebody who's making a contribution to CJDNS and they're like oh yeah I've got a big huge piece of code here I have to read that line by line to see well is that is that a memory corruption issue is that a memory corruption issue is that a memory corruption issue And I know I'm not going to be perfect.
+And as far as productivity, I mean, you pay a little bit of productivity in terms of when you're writing the code, it's a little bit less productive than if you're a C++ person, you can just bang out the C++.
+But where I get major productivity improvements is when I'm reviewing the code because if I've got somebody who's making a contribution to CJDNS and they're like I've got a big huge piece of code here I have to read that line by line to see well is that is that a memory corruption issue is that a memory corruption issue is that a memory corruption issue and I know I'm not going to be perfect.
 Is someone going to slip by?
 I can't say honestly that nothing's going to slip by.
 We're only human here.
-And when somebody makes a contribution and rust, I can just look at that I can go through it much more quickly, you know, does have any unsafe, I can, I'm just not having to be as paranoid when I'm doing code review.
-And I'm sure you understand the same thing, you know, you get if you especially if you accept Anonymous pull requests into the wasabi wallet.
+And when somebody makes a contribution and rust, I can just look at that I can go through it much more quickly, does have any unsafe, I can, I'm just not having to be as paranoid when I'm doing code review.
+And I'm sure you understand the same thing, you get if you especially if you accept Anonymous pull requests into the Wasabi wallet.
 You got to look at that code.
-You're like well Is that somebody trying to do underhanded crap to try to fool me, you know, And that's just like that's the worst thing ever
+You're like well Is that somebody trying to do underhanded crap to try to fool me, and that's just like that's the worst thing ever
 
 Speaker 0: 00:56:06
 
-Yep, yeah, we have no the problem with the memory because we're programming them in a managed language We have a garbage collector
-
-Speaker 1: 00:56:19
-
-What are
-
-Speaker 0: 00:56:19
-
-you guys but anyway reviewing reviewing gold carefully because we are, I mean people move a lot of money with Bitcoin wallet and a mistake could be very very very expensive in terms of reputation and well there's a company behind so probably it could be more than reputation.
+Yep, we have no the problem with the memory because we're programming them in a managed language. 
+We have a garbage collector.
+ Anyway reviewing code carefully because we are, I mean people move a lot of money with Bitcoin wallet and a mistake could be very very very expensive in terms of reputation and well there's a company behind so probably it could be more than reputation.
 So yes, reviewing is a problem.
 I cannot imagine if I have to keep track of a collection of pointers.
-Yeah, it could be really hard, yeah.
+It could be really hard, yeah.
