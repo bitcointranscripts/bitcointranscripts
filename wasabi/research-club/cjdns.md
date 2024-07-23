@@ -92,18 +92,18 @@ Speaker 1: 00:06:36
 
 Absolutely.
 So, CJDNS is, as I said, it is adversary tolerant.
-So, you know, you can have a bad router in that network and the network's not going to explode.
+So, you can have a bad router in that network and the network's not going to explode.
 There's a couple of ways that we do that.
 One of them is we derive the IP address from the public key.
 So we're using IP6 addresses and the address is basically the fingerprint of the public key.
-So when we do that, we get the ability of, you know, if somebody says this is my IP address, you know that it's their IP address because you can just communicate with them and you are able to compare it to their public encryption key.
+So when we do that, if somebody says this is my IP address, you know that it's their IP address because you can just communicate with them and you are able to compare it to their public encryption key.
 But that also poses another challenge which is that it prevents hierarchical routing which is typical of systems routing systems.
 So in place of hierarchical routing we use a system of source routing and source routing means that when you send the packet into the network, it already has the entire path that needs to take all the way source to destination.
-And the way that you get that route is going to be similar to the way that you do, well is similar to the way you do a DNS lookup.
+And the way that you get that route is going to be similar to the way you do a DNS lookup.
 You're sending a request to a route server and that route server is giving you the path that you should use to get from point A to point B.
 And where we're going with this is that there's going to be multiple cloud ISPs, what we're calling them, and these cloud ISPs operate route servers and you just choose which one you want to do business with and that one will handle the business of getting your traffic onto the network and then to where you want it to be.
 Why do we have this semi-centralized model of cloud ISPs as opposed to just doing a fully decentralized, let's route on a DHT, let's do everything like that.
-The reason why we're doing it the way we do it is because when you have when when your primary access to the internet is based on a network, You need to be able to call somebody when something doesn't work.
+e reason why we're doing it the way we do it is because when your primary access to the internet is based on a network, you need to be able to call somebody when something doesn't work.
 If you're paying real money to be able to get on the network, then you need to be able to make a phone call or whatever, and you need somebody to be able to handle that situation.
 And we need that entity to be there, to be that network operator to be able to fix that.
 But we need that not to be a monopoly that controls everybody's access to everything.
@@ -112,7 +112,6 @@ And what they do is they manage all of the buying and selling of bandwidth lease
 
 ## Limitations to Distributed Hash Table based routing model. / Solving the problem of: "my internet doesn't work? Who do I call?"
 
-Speaker 1: 00:09:30
 
 And then they find routes through the mesh in order to get you access to what you need.
 Does that make sense?
@@ -120,8 +119,6 @@ Does that make sense?
 Speaker 0: 00:09:40
 
 Yes, but I think that is something new, isn't it?
-I mean, it was not...
-Okay.
 And how was that handled before and how is that handled now?
 
 Speaker 1: 00:09:54
