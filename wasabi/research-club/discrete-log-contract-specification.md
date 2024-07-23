@@ -2,7 +2,7 @@
 title: 'Discrete Log Contract Specification'
 transcript_by: 'yousif1997 via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=_ZDungWdxzk'
-date: '2021-03-02'
+date: '2021-03-22'
 tags:
   - 'research'
   - 'dlc'
@@ -37,7 +37,7 @@ Nadav Cohen: 00:00:39
 
 Yeah.
 
-Max Hillebrand: 00:00:44
+Max Hillebrand: 00:00:44 
 
 Really cool, So maybe we can just get going with a quick introduction of what is the very general overview of 'Discrete Log Contract's that you're working on in Surebits.
 
