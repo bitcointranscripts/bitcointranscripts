@@ -542,18 +542,17 @@ You have to do software development.
 You have to waste resources because you're doing onion routing.
 That's more resources, more latency.
 That is a worse quality of service for people.
-Our primary objective is to find a way to get people their primary internet access that they don't have to, that it works a hundred percent, that they can go stream the videos they want to stream, whatever they want to do, and then we can layer the anonymity on top of that.
+Our primary objective is to find a way to get people their primary internet access that works a hundred percent, that they can go stream the videos they want to stream, whatever they want to do, and then we can layer the anonymity on top of that.
 That's a primary Internet access that's not going to get shut down because it's decentralized.
 
 Speaker 0: 00:42:31
 
-By the way, we have a meeting especially for MixedNet.
-So it is already available in YouTube if someone wants to know more about the mixtape?
+By the way, we have a meeting especially for Mixnet.
+So it is already available in YouTube if someone wants to know more about the Mixnet?
 Just a question, imagine I want to be internet service provider, right?
 
 ## How do I buy internet infrastructure? / Last-mile fibre.
 
-Speaker 0: 00:42:56
 
 How can I buy?
 I mean, because someone has to provide the service to me.
@@ -567,7 +566,7 @@ Speaker 1: 00:43:23
 Absolutely.
 So when you're buying internet in a data center, it is actually very easy to do.
 There are lots of providers, there are lots of companies, it's very competitive.
-In the data centers, the internet is not, we don't have a problem of people like potentially turning things off.
+In the data centers, we don't have a problem of people like potentially turning things off.
 That's not really where the problem lies.
 It's also cheap.
 It's competitive, it's cheap, there's lots of options.
@@ -575,42 +574,38 @@ The problem is between the data center and your house because that's where you'v
 They only move when there's somebody threatening them.
 And basically the way that they move is to try to crush that threat so that they don't have to move anymore.
 You remember back in the 90s, we had lots of dial up.
-There was a big explosion of different internet service providers And then all of a sudden the cable and telephone companies They created DSL and cable and then they they just squeezed all of those little companies out of existence And then we've been living most of us have been living with DSL and cable ever since.
+There was a big explosion of different internet service providers and then all of a sudden the cable and telephone companies they created DSL and cable and then they they just squeezed all of those little companies out of existence and then most of us have been living with DSL and cable ever since.
 So if there's no competition in the market, then these companies will do absolutely nothing.
 So how would you get a fast internet connection?
-So you can contract, let's say you're in an area where there's no fiber you can contract to get fiber run to your house and there are companies that will do this for you it's very expensive but if you're making gonna make money off of the people in your town, then this is potentially worthwhile for you.
-And the way you do it, you, you find one of these companies, you contract with them.
+So you can contract, let's say you're in an area where there's no fiber you can contract to get fiber run to your house and there are companies that will do this for you it's very expensive but if you're going make money off of the people in your town, then this is potentially worthwhile for you.
+And the way you do it, you find one of these companies, you contract with them.
 The company that owns the telephone poles is usually legally required to allow somebody to put their cables on them as long as they follow certain rules.
 That's why you have the phone, the cable, and the electricity running on the same telephone poles.
 If the electric company owns the poles, they are required to let the phone company use them.
 If the phone company owns the poles, they are required to let the electric company use them.
 So, based on this legal requirement, you're able to use a company that will run fiber right to your house.
-You're gonna pay for it, but it will get you internet to the nearest data center.
+You're going pay for it, but it will get you internet to the nearest data center.
 And then from there, you're able to lease those lines and then you're able to get fast internet, which you can then sell to your neighbors.
 
 Speaker 0: 00:46:07
 
 Excellent, thank you.
-Guys, does someone has a question for Kayla?
-Okay, then what next?
+Guys, does someone has a question for Caleb?
 Okay, then what next?
 
 ## CJDNS as censorship resistant internet infrastructure.
 
-Speaker 0: 00:46:21
 
-Okay.
+Speaker 3: 00:46:23
 
-Speaker 2: 00:46:23
-
-Maybe I just like to repeat what you, what maybe my takeaway from what CGDNS is, is that I imagine this is something that goes lower than the anonymity network like Tor and the new project today for I2P, but it is going to a lower layer a little bit and it is only trying to tackle censorship resistance.
+Maybe I just like to repeat what you, what maybe my takeaway from what CJDNS is, is that I imagine this is something that goes lower than the anonymity network like Tor and the new project today for I2P, but it is going to a lower layer a little bit and it is only trying to tackle censorship resistance.
 Is this what it provides?
 And then we would have censorship resistant internet and on top of that it would be actually well probably anonymity networks would work better on top of that too.
 Is that a fair summary or am I misunderstanding?
 
 Speaker 1: 00:47:20
 
-Yeah, yeah, yeah, totally.
+Yeah, totally.
 It's about censorship resistance and censorship takes many forms.
 You don't think about your being censored because they haven't upgraded the quality of your internet in 20 years, but that is actually a form of censorship.
 You don't have fast internet.
