@@ -1,12 +1,16 @@
 ---
-title: "CJDNS"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=3P5sQwiwscI
-tags: ['research', 'anonymity-networks']
-speakers: ['Caleb DeLisle']
-categories: ['club']
-date: 2021-03-16
-summary: "This WRC episode shows Caleb DeLisle, the creator of the CJDNS project, discussing the benefits of decentralized mesh networking and its potential impact on the centralized internet controlled by companies. DeLisle explains the adversary tolerance of CJDNS and its use of public keys for communication verification. He also addresses concerns about the environmental impact of crypto mining and argues that it facilitates the transition to renewable energy sources. DeLisle emphasizes the attacks on decentralized finance and crypto by centralized entities and the importance of unity in the crypto community. He highlights the creation of Packet Crypt, a bandwidth-hard proof of work that incentivizes building out large amounts of bandwidth. DeLisle asserts the need to prioritize privacy, robustness, and resilience in the face of attacks and the value of positive engagement with policymakers. He also discusses the differences between CJDNS and other networking solutions, highlighting CJDNS's focus on infrastructure and resilient internet access. In addition, DeLisle mentions the potential for individuals to provide internet access to their neighbors and the financing possibilities for the Packet Network Steward. Finally, he touches on the use of Rust programming language for code review and the productivity improvements it brings in terms of security."
+title: 'CJDNS'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=3P5sQwiwscI'
+date: '2021-03-16'
+tags:
+  - 'research'
+  - 'anonymity-networks'
+speakers:
+  - 'Caleb DeLisle'
+categories:
+  - 'club'
+summary: 'This WRC episode shows Caleb DeLisle, the creator of the CJDNS project, discussing the benefits of decentralized mesh networking and its potential impact on the centralized internet controlled by companies. DeLisle explains the adversary tolerance of CJDNS and its use of public keys for communication verification. He also addresses concerns about the environmental impact of crypto mining and argues that it facilitates the transition to renewable energy sources. DeLisle emphasizes the attacks on decentralized finance and crypto by centralized entities and the importance of unity in the crypto community. He highlights the creation of Packet Crypt, a bandwidth-hard proof of work that incentivizes building out large amounts of bandwidth. DeLisle asserts the need to prioritize privacy, robustness, and resilience in the face of attacks and the value of positive engagement with policymakers. He also discusses the differences between CJDNS and other networking solutions, highlighting CJDNS''s focus on infrastructure and resilient internet access. In addition, DeLisle mentions the potential for individuals to provide internet access to their neighbors and the financing possibilities for the Packet Network Steward. Finally, he touches on the use of Rust programming language for code review and the productivity improvements it brings in terms of security.'
 ---
 ## Introduction. / BIP155. / Diverse, robust, resilient p2p networking.
 
@@ -17,11 +21,11 @@ This time we have a special guest.
 His name is Caleb.
 He is the creator of CJDNS project.
 Basically it's a network that can replace the internet, basically, of course, that is very ambitious.
-Other, Okay, he will tell us better.
+He will tell us better.
 Part of this project is now already supported by the VIP 155 in Bitcoin and Bitcoin and other libraries too.
 So this is an effort that part of the Bitcoin community is doing in order to have a more diverse and robust network productivity, let's say, or more resilient peer-to-peer network.
 And well, CJDNS is part of that too.
-So, Caleb, welcome, and we are happy to have you here.
+Caleb, welcome, and we are happy to have you here.
 
 ## What is CJDNS. / Routing with adversarial nodes.
 
@@ -36,10 +40,8 @@ And so one of the other aspects of CJDNS is it's source routed.
 
 ## What is wrong with networking now? / Centralisation. / Attacks against centralisation. / War on crypto. / Decentralised finance needs decentralised networks. / Mesh network where everyone can own a piece of the internet.
 
-Speaker 1: 00:02:15
 
-And that means that when you send a packet into the network.
-Yeah?
+That means that when you send a packet into the network.
 
 Speaker 0: 00:02:19
 
@@ -50,7 +52,6 @@ What do we need?
 
 Speaker 1: 00:02:30
 
-Yeah, yeah, yeah.
 It's all centralized.
 And it's centralized in the hands of companies that don't necessarily like us.
 I mean, all you need to do is go read the newspaper, read the New York Times or read any one of these newspapers or TV stations.
