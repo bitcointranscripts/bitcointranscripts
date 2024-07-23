@@ -68,10 +68,11 @@ So it's actually not that big.
 It's much smaller than other things that have much better lobbies.
 But the other thing about crypto mining is that while it does use a lot of energy, it's also very effective at facilitating the transition to renewables because it uses the cheapest energy available and actually the cheapest available energy is what comes from renewables because there's nothing cheaper than a solar panel.
 Once you put it up, it doesn't cost you anything to just let that solar panel sit there and run.
-So I'm very strongly of the belief that the decentralized finance and the crypto and the mining is actually not cause of this massive environmental degradation the reason why we're seeing this coming up in the media is because these companies these people are lodging an attack against the decentralization community and this is nothing new we go back to the 90s you have the same people you know you have Bill Gates saying that Linux is cancer.
-And now, you know, Bill Gates is buying up GitHub.
-And there's all of these people who are moving, they're making moves, and there is really a war on crypto going on.
-So it's very important right now that we're able to get our decentralized systems onto their own network Because if we're going to rely on a network that's run by the people who are attacking us, eventually they're going to shut us down.
+So I'm very strongly of the belief that the decentralized finance and the crypto and the mining is actually not cause of this massive environmental degradation, the reason why we're seeing this coming up in the media is because these companies these people are lodging an attack against the decentralization community and this is nothing new we go back to the 90s you have the same people you know you have Bill Gates saying that Linux is cancer.
+And now, Bill Gates is buying up GitHub.
+And there's all of these people who are making moves, and there is really a war on crypto going on.
+It's very important right now that we're able to get our decentralized systems onto their own network.
+Because if we're going to rely on a network that's run by the people who are attacking us, eventually they're going to shut us down.
 So that's really why CJDNS and the PKT project is so important for me, because the point here is that we're going to be building a mesh-based network infrastructure where everybody can own a piece of the internet.
 I don't want to just monologue here, I mean you have a question?
 
@@ -83,13 +84,14 @@ No, no, no, no.
 
 Speaker 0: 00:05:49
 
+No.
 Yes, now, if you can tell us what's the vision, right?
 And how the technology is built in order to bypass all these restrictions and I would like personally know more about the, well I understand the technology but probably not everybody understands how it works but about it and how you work with your IPs as public keys and all the routings instead of what's the address, how to route to that address and how everything plays together.
 
 Speaker 1: 00:06:36
 
 Absolutely.
-So, cgDNS is, as I said, it is adversary tolerant.
+So, CJDNS is, as I said, it is adversary tolerant.
 So, you know, you can have a bad router in that network and the network's not going to explode.
 There's a couple of ways that we do that.
 One of them is we derive the IP address from the public key.
