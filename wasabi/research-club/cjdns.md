@@ -237,7 +237,7 @@ Cloud ISP.
 Speaker 0: 00:19:08
 
 Yeah.
-Now, Of course you need a new Token, I mean you need a way to tokenize the bandwidth in order to create a market of bandwidth.
+Now, Of course you need a new token, I mean you need a way to tokenize the bandwidth in order to create a market of bandwidth.
 Why is that not possible with, I mean, you need a market, right?
 
 Speaker 1: 00:19:28
@@ -256,66 +256,64 @@ But let me address, because you said another thing about Bitcoin maximalism, and
 I've been there, I mean I've been in the Bitcoin community since 2011.
 I know there's a lot of projects that are pretty shady and that's a reality here.
 So why should we accept another coin as being legitimate?
-So I'm gonna give you a general answer, which is that there is a war on crypto right now, and they are coming after the work coins first, and then once they knock down, once they're able to get control and stop they're gonna come after the privacy points of the gonna have to be hitting the narrow they're gonna be coming after the work points you know they're gonna be coming after the wasabi wallet all of the ways that people can achieve liberation from these centralized powers, they're going to be coming after us.
+So I'm going give you a general answer, which is that there is a war on crypto right now, and they are coming after the work coins first, and then once they knock down, once they're able to get control and stop they're going come after the privacy points of the going have to be hitting the narrow they're gonna be coming after the work points you know they're going be coming after the Wasabi wallet all of the ways that people can achieve liberation from these centralized powers, they're going to be coming after us.
 And if we don't work together, then they are going to pick us off one at a time.
 And you can see in their newspapers, they're already rattling the sword.
 So we need to stick together here because there is a war against us.
 And it's a war against decentralization and a war against open source and a war against individual liberty.
 So that's the general answer of why we can't just bury our head in the sand and say my coin is the best, everything else is a scam.
-And that that's just not going to work because we will be pried apart and we will be killed one at a time.
+And that's just not going to work because we will be pried apart and we will be killed one at a time.
 And the specific answer, why is Packet a thing?
 Why don't we just use Bitcoin, et cetera?
 Well, Packet is a thing for two reasons.
 And the two reasons are related to the two differences that it has from Bitcoin.
 The two fundamental changes that were made.
-One of them is that we have the bandwidth hard proof of work which makes it so that the mining of packet incentivizes the rollout of network infrastructure.
+One of them is that we have the bandwidth hard proof of work which makes it so that the mining of Packet incentivizes the rollout of network infrastructure.
 The second one is that Packet has a network steward, which is basically a founder's fee, but the founder, the so-called founder, can be changed via a proof of stake based vote.
 And that founder's fee is used in order to fund all of these projects in the ecosystem to develop all the technology.
-You know, Bitcoin is a great project, but it does not fund the wallets.
+Bitcoin is a great project, but it does not fund the wallets.
 I mean, I'm sure you guys understand developing Wasabi is not easy because there is no funding for that.
 The funding is for people who can build better SHA-256 chips.
 
 Speaker 0: 00:22:37
 
 Yeah, okay.
-Rafi?
+Rafa?
 
 ## PKT algorithm. / Use of Lightning network.
 
 Speaker 2: 00:22:40
 
-Yeah, I was just wondering, did I understand correctly that you're using the same algorithm that Bitcoin uses so you can Make use of these old like ASIC devices
+Yeah, I was just wondering, did I understand correctly that you're using the same algorithm that Bitcoin uses so you can make use of these old like ASIC devices?
 
 Speaker 1: 00:22:54
 
-No, the algorithm is very different But the point is that when you build out infrastructure to mine packet crypt that infrastructure includes fiber optic because you need that bandwidth in order to mine.
-So that fiber optic that you've just run in order to mine packet crypt, when that mining installation becomes no longer profitable, that fiber is still there and that's still bandwidth that can reach out to people and get them on the Internet.
+No, the algorithm is very different but the point is that when you build out infrastructure to mine packet crypt that infrastructure includes fiber optic because you need that bandwidth in order to mine.
+So that fiber optic that you've just run in order to mine PacketCrypt, when that mining installation becomes no longer profitable, that fiber is still there and that's still bandwidth that can reach out to people and get them on the Internet.
 
 Speaker 2: 00:23:24
 
-Okay, got it.
-You mentioned that you're using the Lightning Network, Can you elaborate a little bit more, like what part are you doing with that?
+Got it.
+You mentioned that you're using the Lightning network, can you elaborate a little bit more, like what part are you doing with that?
 
 Speaker 1: 00:23:35
 
 We're just going to do our own Lightning Network.
 You know, I mean, it's a Bitcoin fork with very few actual changes.
 So the point of this, and the fact is I did not start this project in 2014, 15, 16 because I was waiting for the transaction scalability that the Lightning Network would afford.
-And so then in 2019, 2018, 19, the lightning network started to reach maturity, and so that was why I woke up the CJDNS project.
+And so then in 2019, 2018, 19, the Lightning network started to reach maturity, and so that was why I woke up the CJDNS project.
 CJDNS was asleep for a good four or five years, just because the other half of the necessary technology just wasn't there yet.
-Just wasn't there yet.
 
 Speaker 0: 00:24:24
 
 Well, something that I have never, never shared before with anyone is that I am 100% sure that they are going to come for Wasabi Wallet at least.
 I'm very sure.
 So, yes, I agree with you.
-And I think if your project finally is as useful as I think it is, of course I will need to buy those tokens with bitcoins.
-Because it's basically the currency right?
+I think if your project finally is as useful as I think it is, of course I will need to buy those tokens with Bitcoins.
+Because it's basically the currency, right?
 
 ## How can CJDNS help Bitcoin privacy? / Priority is robustness.
 
-Speaker 0: 00:25:05
 
 Well one more question and this is my probably my last question.
 Well everybody most of us probably understand that well even the IP address is the fingerprint of the public key.
@@ -327,7 +325,7 @@ How do you think it can help Bitcoin to make the peer-to-peer Bitcoin network a 
 Speaker 1: 00:26:02
 
 Well I mean I think that it's not so much about privacy per se, it's about robustness.
-Right now, right now, we're just praying that they don't turn us off.
+Right now, we're just praying that they don't turn us off.
 I mean, as you said, that they're coming for they're going to come for Wasabi wallet.
 And I believe that they're not.
 You know I have a strong belief that we're going to win.
@@ -337,9 +335,9 @@ They just kept saying it.
 And now we're into the stage that they're fighting us.
 And we just need to take that fight and be serious about it because they are fighting us and they're telling us they're not fighting us.
 But we're not going to believe them about that.
-We can't just have them say, oh yeah, there's no war on crypto.
+We can't just have them say, there's no war on crypto.
 Just don't believe that.
-You know, it is a propaganda war.
+It is a propaganda war.
 They're going to try to fight us on the propaganda front.
 And I want to just hammer home how ridiculous this is.
 Yesterday on Twitter everybody who used the word Memphis in a tweet was banned just and they said oh it was a bug oops we made a mistake.
