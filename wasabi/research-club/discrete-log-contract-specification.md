@@ -2,7 +2,7 @@
 title: 'Discrete Log Contract Specification'
 transcript_by: 'yousif1997 via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=_ZDungWdxzk'
-date: '2021-03-23'
+date: '2021-03-02'
 tags:
   - 'research'
   - 'dlc'
