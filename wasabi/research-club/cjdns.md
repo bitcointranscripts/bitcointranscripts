@@ -520,14 +520,14 @@ Speaker 0: 00:41:18
 Yes, good answer.
 Okay, thank you.
 
-Speaker 4: 00:41:21
+Speaker 5: 00:41:21
 
 I want to ask the same question.
-So the main differences between CJDNS and NymTech, I don't know if You know it, but it's similar.
+So the main differences between CJDNS and NimTech, I don't know if you know it, but it's similar.
 
 Speaker 1: 00:41:35
 
-Is that Nim Mixnet?
+Is that NimMixnet?
 
 Speaker 4: 00:41:37
 
