@@ -55,11 +55,11 @@ Speaker 1: 00:02:30
 It's all centralized.
 And it's centralized in the hands of companies that don't necessarily like us.
 I mean, all you need to do is go read the newspaper, read the New York Times or read any one of these newspapers or TV stations.
-And frankly, these are TV stations that haven't turned an honest profit in 20 years and they are being controlled by the centralized centralized power structures and these they are are telling the story now that we are the enemy.
+And frankly, these are TV stations that haven't turned an honest profit in 20 years and they are being controlled by the centralized power structures and they are are telling the story now that we are the enemy.
 We are the enemy of the people.
-We are, because we're doing Bitcoin mining or any kind of encryption, crypto mining, that we are, we need to be shut down.
+We are, because we're doing Bitcoin mining or any kind of crypto mining, that we need to be shut down.
 We need to be stopped.
-And this, this saber rattling that we're seeing about how it's the biggest environmental disaster in history.
+And this saber rattling that we're seeing about how it's the biggest environmental disaster in history.
 And to be clear here, this is not the biggest environmental disaster in history for a couple of reasons.
 One is because it's actually not that big.
 To give you a reference, Russia flares off three times as much energy in gas, just from oil wells that have gas coming out.
@@ -68,7 +68,7 @@ So it's actually not that big.
 It's much smaller than other things that have much better lobbies.
 But the other thing about crypto mining is that while it does use a lot of energy, it's also very effective at facilitating the transition to renewables because it uses the cheapest energy available and actually the cheapest available energy is what comes from renewables because there's nothing cheaper than a solar panel.
 Once you put it up, it doesn't cost you anything to just let that solar panel sit there and run.
-So I'm very strongly of the belief that the the the decentralized finance and the crypto and the mining is actually not cause of this massive environmental degradation the reason why we're seeing this coming up in the media is because these companies these people are lodging an attack against the decentralization community and this is nothing new we go back to the 90s you have the same people you know you have Bill Gates saying that Linux is cancer.
+So I'm very strongly of the belief that the decentralized finance and the crypto and the mining is actually not cause of this massive environmental degradation the reason why we're seeing this coming up in the media is because these companies these people are lodging an attack against the decentralization community and this is nothing new we go back to the 90s you have the same people you know you have Bill Gates saying that Linux is cancer.
 And now, you know, Bill Gates is buying up GitHub.
 And there's all of these people who are moving, they're making moves, and there is really a war on crypto going on.
 So it's very important right now that we're able to get our decentralized systems onto their own network Because if we're going to rely on a network that's run by the people who are attacking us, eventually they're going to shut us down.
