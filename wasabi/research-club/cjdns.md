@@ -126,26 +126,26 @@ Speaker 1: 00:09:54
 Yes, so original CJDNS did use a DHT and basically we beat the software up as much as we could and we realized that there are fundamental limitations to a DHT based routing model that are unsolvable without switching to something that is different.
 So basically we can solve a lot of problems but the problem we can't solve is my internet doesn't work, who do I call, how do I fix this?
 And because we can't really solve that who do you call problem.
-That's why a fully decentralized routing infrastructure just doesn't, isn't going to work in the longterm.
+That's why a fully decentralized routing infrastructure just isn't going to work in the long-term.
 So in place of that, we create an ecosystem of different entities who can do routing for you and then you just get to choose which one you want to work with.
 
 ## What problem does CJDNS solve for a normal user? / A cloud VPN pays whoever is providing you with access to the internet. / TokenStrike / A token to issue bandwidth. / Lightning to trade tokens. / PacketCrypt bandwidth-hard proof-of-work
 
 Speaker 0: 00:10:54
 
-Okay, I see.
+I see.
 So going down a level in complexity, I mean from a normal user, right?
-Because now we are thinking all the time in normal users and translate this concept to, you know, to my mom.
+Because now we are thinking all the time in normal users and translate this concept to, to my mom.
 What does it mean for my mom?
 What problem does this technology solve?
 
 Speaker 1: 00:11:22
 
-Right, right.
-So for an ordinary person, that's going to be, you're going to install the app onto your phone on your computer, whatever.
-And then you're just gonna be able to access the internet via your neighbor's wifi.
+Right.
+So for an ordinary person, you're going to install the app onto your phone on your computer, whatever.
+And then you're just going be able to access the internet via your neighbor's WiFi.
 That's what we're talking about here.
-You're just getting on onto your regular internet via your neighbor's wifi and you buy a VPN and the VPN company is paying your neighbor to provide you with that access to the internet.
+You're just getting on onto your regular internet via your neighbor's WiFi and you buy a VPN and the VPN company is paying your neighbor to provide you with that access to the internet.
 That's what a cloud ISP is.
 It's a VPN which goes and pays the person who's providing you with the access to get to that VPN.
 Does that make sense?
