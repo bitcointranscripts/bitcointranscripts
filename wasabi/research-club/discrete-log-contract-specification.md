@@ -11,6 +11,7 @@ speakers:
   - 'Nadav Kohen'
   - 'Ben Carman'
   - 'Max Hillebrand'
+  - 'Shinobi'
 categories:
   - 'club'
 summary: 'Today''s WRC episode includes Nadav Kohen and Benthecarman discuss the use of Discrete Log Contracts (DLCs) and their potential benefits and challenges. They explain that DLCs can enable various applications such as betting, options contracts, insurance, and synthetic assets. They highlight the advantages of DLCs, including high liquidity and fast trading of futures, especially once implemented on the Lightning Network. However, they also acknowledge that there may still be a need for centralized solutions depending on the specific use case. The speakers delve into the technical aspects of DLCs, including the transition to Schnorr signatures and the privacy implications of using DLCs. They also discuss the role of oracles in DLCs and the potential for coin joints with DLCs. Overall, the speakers provide a detailed overview of DLCs and their potential applications in the cryptocurrency space.'
