@@ -611,28 +611,27 @@ You don't think about your being censored because they haven't upgraded the qual
 You don't have fast internet.
 That is a way that you are being prevented from communicating.
 
-Speaker 2: 00:47:47
+Speaker 3: 00:47:47
 
 All right.
+Thank you.
 
 Speaker 0: 00:47:47
 
-Oh, wait.
 So, wait.
 
 ## Can CJDNS work on any transport layer.
 
-Speaker 0: 00:47:50
 
-Yes, this can be, let's say, layer one and also layer two.
-I mean, it works also, it can work also as a, how to say, I forget the word, but basically it can work on top of the existing infrastructure too.
+Yes, this can be, let's say, Layer 1 and also Layer 2.
+I mean,  it can work also as, how to say, I forget the word, but basically it can work on top of the existing infrastructure too.
 Am I right?
 
 Speaker 1: 00:48:17
 
-Yeah, yeah, yeah.
+Yeah.
 It works.
-It works either on you can anything that connects two computers together, including the existing internet is working for transporting data for CGDNS.
+It works either on anything that connects two computers together, including the existing internet is working for transporting data for CJDNS.
 
 Speaker 0: 00:48:31
 
@@ -642,9 +641,9 @@ Excellent, thank you.
 
 Speaker 1: 00:48:33
 
-I wanted to make one final plug here is that because the Packet ecosystem has this institution of the network steward, we are always looking for projects and people who are developing technology in the space who need that funding, because the packet network steward funds whatever will help benefit the objective of the project.
-So it's something that Wasabi Wallet can potentially participate in, or any of the side projects of Wasabi Wallet can potentially participate by proposing a project to the packet network steward and that can be funded.
-It'll be funded in packet but you know you can liquidate that to whatever you want and that's a way that we're able to bootstrap a lot of the technology that we need for this network to work.
+I wanted to make one final plug here is that because the Packet ecosystem has this institution of the network steward, we are always looking for projects and people who are developing technology in the space who need that funding, because the Packet network steward funds whatever will help benefit the objective of the project.
+So it's something that Wasabi wallet can potentially participate in, or any of the side projects of Wasabi wallet can potentially participate by proposing a project to the Packet network steward and that can be funded.
+It'll be funded in Packet but you know you can liquidate that to whatever you want and that's a way that we're able to bootstrap a lot of the technology that we need for this network to work.
 And that again is one of the reasons why we couldn't have just done this on top of Bitcoin, because we need that aspect of the financing to build out all of this infrastructure that we need.
 
 ## How many clients are running the software? / pkt.chat
