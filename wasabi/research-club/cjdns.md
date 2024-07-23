@@ -193,43 +193,41 @@ But you're not going to need to do billing, you're not going to need to do custo
 
 Speaker 0: 00:16:32
 
-Okay, so I am now an internet service provider that provides the connection to all my neighbors and they pay for bandwidth, They buy bandwidth to a company.
-They will pay,
+So I am now an internet service provider that provides the connection to all my neighbors and they pay for bandwidth, They buy bandwidth to a company.
 
 Speaker 1: 00:16:50
 
-exactly, they're going to pay a company in a simple, obvious way, you know, regular old, maybe it's $29 a month, whatever that deal is, they're going to pay that to that company in that normal, obvious way.
+Exactly, they're going to pay a company in a simple, obvious way, regular old, maybe it's $29 a month, whatever that deal is, they're going to pay that to that company in that normal, obvious way.
 And then that company is going to have bandwidth traders who are going to buy those leases of bandwidth from you.
-So that an individual, you know, grandma doesn't need to understand about trading bandwidth and buying the dip and these kinds of really complex things.
+Grandma doesn't need to understand about trading bandwidth and buying the dip and these kinds of really complex things.
 That's the job of financial traders.
 
 ## Why do we need PacketCrypt (PKT Network)?
 
 Speaker 0: 00:17:27
 
-Okay.
-And what is the what is the proof of work that is hard in bandwidth.
+What is the proof of work that is hard in bandwidth.
 Why do we need that?
 Or who need that?
 
 Speaker 1: 00:17:40
 
-The point of Packet Crypt is to create an artificial demand for bandwidth because demand drives supply.
-So when we create a demand for bandwidth, that's going to cause people to do to roll out more fiber.
+The point of PacketCrypt is to create an artificial demand for bandwidth because demand drives supply.
+When we create a demand for bandwidth, that's going to cause people to do to roll out more fiber.
 So think about all of the Bitcoin mining equipment that's just sitting there collecting dust because it's no longer profitable, right?
 You've got all this stuff from five years ago, ten years ago, and it just doesn't make any money anymore.
-With Packet Crypt, if you install a fiber optic cable into your area in order to mine Packet Crypt, that fiber brings value forever, basically.
-So we're leveraging the externality of packet crypt mining in order to get more internet to more people.
+With PacketCrypt, if you install a fiber optic cable into your area in order to mine PacketCrypt, that fiber brings value forever, basically.
+So we're leveraging the externality of PacketCrypt mining in order to get more internet to more people.
 
 ## Is the PacketCrypt bandwidth market working? / Tokenising bandwidth. / Why another coin? / Founders' fee. / Incentivise bandwidth rollout.
 
 Speaker 0: 00:18:28
 
 Okay, perfect.
-So basically, you know, we are Bitcoiners, right?
+So basically, we are Bitcoiners, right?
 And we are those Bitcoiners that many of us probably don't like other cryptocurrencies.
 So that's why I'm asking these things.
-You are saying Basically that, well, the first design was not, it had some problems.
+You are saying basically that, well, the first design had some problems.
 And now with this new cloud, I'm sorry, I don't remember the name, but yes, this new-
 
 Speaker 1: 00:19:06
@@ -248,7 +246,7 @@ Right.
 
 Speaker 0: 00:19:28
 
-Is that market, Before making my question, is that market already running?
+Is that market, before making my question, is that market already running?
 Is it working?
 
 Speaker 1: 00:19:39
