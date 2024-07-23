@@ -339,47 +339,40 @@ We can't just have them say, there's no war on crypto.
 Just don't believe that.
 It is a propaganda war.
 They're going to try to fight us on the propaganda front.
-And I want to just hammer home how ridiculous this is.
-Yesterday on Twitter everybody who used the word Memphis in a tweet was banned just and they said oh it was a bug oops we made a mistake.
-Well Guess what was happening in Memphis yesterday?
+I want to just hammer home how ridiculous this is.
+Yesterday on Twitter everybody who used the word Memphis in a tweet was banned just and they said it was a bug, we made a mistake.
+Well guess what was happening in Memphis yesterday?
 Yesterday in Memphis, Tennessee, there was a protest against an oil pipeline.
 Oil pipelines, I cannot hammer home enough how irresponsible it is building an oil pipeline right now because we're just at the precipice when renewable energy is going to become so cheap that oil is just going to be uncompetitive because you don't need anybody greasing oil jacks to run a solar array.
 You don't need people shoveling coal to run a solar array.
 Solar is going to beat the crap out of all of this stuff once it reaches the appropriate scale.
-And they're still building these oil pipelines, which are just gonna pollute everywhere.
-And you know these companies are going to walk away from these oil pipelines and just say oh yeah it's not our problem anymore you know you clean it up and they're still building these things even now in 2021 so you know and you have these centralized platforms that are creating these bugs in order to cause people to not be able to talk about and coordinate a protest against an oil pipeline.
+And they're still building these oil pipelines, which are just going pollute everywhere.
+And you know these companies are going to walk away from these oil pipelines and just say yeah it's not our problem anymore, you clean it up and they're still building these things even now in 2021 so you know and you have these centralized platforms that are creating these bugs in order to cause people to not be able to talk about and coordinate a protest against an oil pipeline.
 
 Speaker 0: 00:28:30
 
-Yeah, no, but.
-Yeah, no, but
+Yeah.
+Noberta?
 
 ## Privacy is natural.
 
-Speaker 2: 00:28:33
+Speaker 3: 00:28:33
 
-yeah, I wanted to say something, but you guys were touching the topic and then moving away from that and then come back all the time.
-I wasn't sure, but yeah, it should be the right time that I think you know if there is one thing that I learned from Wasabi and I think this would be this because and this is a very general point on privacy projects because at the beginning you know when I was telling people that this is what I'm going to do I'm going to build Bitcoin privacy wallet and everyone is saying that no you can't do that because governments hate privacy and only criminals work on privacy and things like that.
-And, you know, it's not true at all.
+Yeah, I wanted to say something, but you guys were touching the topic and then moving away from that and then come back all the time.
+I wasn't sure, but yeah, it should be the right time that I think, if there is one thing that I learned from Wasabi and I think this would be this because and this is a very general point on privacy projects because at the beginning you know when I was telling people that this is what I'm going to do I'm going to build Bitcoin privacy wallet and everyone is saying that no you can't do that because governments hate privacy and only criminals work on privacy and things like that.
+And, it's not true at all.
 People in government get how important privacy is.
 It's just not their first thought and no one is there to remind them that there are consequences.
-But you know when when you reason with people, they get it.
-I mean sometimes you just ask them how much money they have and you know you instantly make the point because that question makes them uncomfortable and oh you get privacy.
-So but the point is that these privacy projects are always started from these anarchist libertarian
-
-Speaker 0: 00:30:08
-
-roots.
-
-Speaker 2: 00:30:10
-
-And I think there is a very counterproductive thing here, is that, you know, this hacker mindset is that you have to be super paranoid about everything, that's one, and added to that is that the libertarian and anarchist thought that, well, if you are working on privacy, then you're going to be thrown down.
-And, you know, that's not happening.
+But, when when you reason with people, they get it.
+I mean sometimes you just ask them how much money they have and, you instantly make the point because that question makes them uncomfortable and oh you get privacy.
+But the point is that these privacy projects are always started from these anarchist libertarian roots.
+I think there is a very counterproductive thing here, is that, this hacker mindset is that you have to be super paranoid about everything, that's one, and added to that is that the libertarian and anarchist thought that, well, if you are working on privacy, then you're going to be thrown down.
+And, that's not happening.
 People get what you're doing.
-What's happening is when someone creates something and advertises specifically for goods, those are, you know, on the line of, well, what should we do with them?
+What's happening is when someone creates something and advertises specifically for goods, those are, on the line of, well, what should we do with them?
 And those are the things that get shut down.
-But you know, like, it's not that often that privacy companies get shut down.
-And in fact, The problem is that no one dares to even start to work on privacy because everyone is saying that it's so dangerous.
+But it's not that often that privacy companies get shut down.
+And in fact, the problem is that no one dares to even start to work on privacy because everyone is saying that it's so dangerous.
 It's not dangerous.
 Everyone gets privacy.
 Privacy is a human right and working on it is not dangerous, it's natural.
@@ -387,19 +380,19 @@ Sorry for my rant, but I think we should be more positive.
 
 Speaker 0: 00:31:44
 
-But Adam, we were, I don't know, a year ago probably, we were mentioned in an internal intelligent agency that is fighting against who knows what, right?
+But Adam, a year ago probably, we were mentioned in an internal intelligent agency that is fighting against who knows what, right?
 And we are in those reports and in those investigations again and again.
-So, okay, I mean, sorry, I think I don't agree with you at all.
+I think I don't agree with you at all.
 
 ## The privacy war is not with policy makers.
 
 Speaker 1: 00:32:18
 
 I mean, I want to jump in here because I mean, I think this is a really important topic.
-We are clearly in a war, but the war is not with policymakers.
-Policymakers, we need to work with them and we need to explain to them the importance of decentralizing power because this power is being centralized in the hands of a couple of these people and companies, these aristocrats, and They are holding this power over society and they're also holding power over policy makers.
+We are clearly in a war, but the war is not with policy makers.
+Policy makers, we need to work with them and we need to explain to them the importance of decentralizing power because this power is being centralized in the hands of a couple of these people and companies, these aristocrats, and they are holding this power over society and they're also holding power over policy makers.
 You've got the European Union, they passed the GDPR, clearly they care about privacy.
-Privacy is considered a fundamental human right and it is not difficult to have this conversation with policymakers it's just that a lot of people are either not doing it because they think the policymakers are the enemy which is wrong or they're just thinking that well take the case of okay CIA does a does a report on wasabi well I mean CIA had a report on or they had some scraping from CJDNS in their internal wiki.
+Privacy is considered a fundamental human right and it is not difficult to have this conversation with policy makers it's just that a lot of people are either not doing it because they think the policy makers are the enemy which is wrong or they're just thinking that well take the case of okay CIA does a does a report on Wasabi well I mean CIA had a report on or they had some scraping from CJDNS in their internal Wiki.
 That doesn't mean that they are against us.
 That means that they want to know that we're here.
 And we need to have a public facing answer to these people.
@@ -411,34 +404,32 @@ So we need to cut it off where it's actually happening here.
 
 Speaker 0: 00:34:15
 
-Well, yes, yes, I agree with that, but listen, I don't remember if this was Previous week or a week before that but the the European Parliament Voted for for for making for I mean the messaging voted for making, I mean the messaging providers and the email providers have to be able to decrypt basically.
+Well, yes, I agree with that, but listen, I don't remember if this was previous week or a week before that but the the European Parliament voted for making for the messaging providers and the email providers have to be able to decrypt basically.
 
 Speaker 1: 00:34:50
 
-Yeah, It's absolutely tragic what happened last week and this is a loss.
-This is what happens when we're not lobbying, we're not talking to policymakers, The other guys go and start talking to policymakers and they are going to use their relationships with the policymakers to promote policy, which helps them to continue and establish their monopolies over control of the individual people.
-So, you know, we win some, we lose some.
+Yeah, it's absolutely tragic what happened last week and this is a loss.
+This is what happens when we're not lobbying, we're not talking to policy makers, the other guys go and start talking to policy makers and they are going to use their relationships with the policy makers to promote policy, which helps them to continue and establish their monopolies over control of the individual people.
+So, we win some, we lose some.
 The policy makers are not our enemy.
 They are being pulled by our real enemy
 
 Speaker 0: 00:35:38
 
-Okay, anyway, they are the one that vote for these things Yeah for just for those that don't understand what what this means is for example it's not possible to have end-to-end encryption anymore because if I provide this the chat service and I need to be able to decrypt your messages that means that end-to-end encryption is not possible anymore I mean the communication can be encrypted but no end-to-end let's say I don't know how to explain that.
-Okay, who wants...
+Anyway, they are the one that vote for these things, for just for those that don't understand what what this means is for example it's not possible to have end-to-end encryption anymore because if I provide this the chat service and I need to be able to decrypt your messages that means that end-to-end encryption is not possible anymore I mean the communication can be encrypted but no end-to-end let's say I don't know how to explain that.
 Sorry, Caleb, because someone wants to speak and I don't remember.
-Oh, Lokuf.
+Lokuf?
 
 ## CJDNS compared to Tor.
 
-Speaker 0: 00:36:22
 
 Please go ahead.
 
-Speaker 3: 00:36:23
+Speaker 4: 00:36:23
 
 Yeah.
-Hi. So I was just wondering because this sounds a little bit like the Tor project, but the, and you have a similar concept on providing bandwidth and even though Tor itself doesn't really do any accounting on the bandwidth, but you actually have a privacy layer on top of it.
-So I was wondering if there is a similar risk model related to your project as being a host of the service as running a Tor exit node.
+Hi. So I was just wondering because this sounds a little bit like the Tor project, and you have a similar concept on providing bandwidth and even though Tor itself doesn't really do any accounting on the bandwidth, but you actually have a privacy layer on top of it.
+I was wondering if there is a similar risk model related to your project as being a host of the service as running a Tor exit node.
 What do you think?
 
 Speaker 1: 00:36:58
@@ -447,12 +438,13 @@ It's a bit similar.
 It's a bit similar as far as your risk profile when you're running a VPN.
 But unlike Tor, we're not trying to have anonymity of the person versus the exit.
 So we're not trying to be strong in anonymity.
-Our point is to have a strong network that is robust and resilient to people shutting it down.
-Centralized power tour is going in a slightly different direction where they're they're really trying to make it so that nobody knows who anybody is and that's a very hard problem to solve and it's a very specific problem so Tor and CJDNS and Packit will always tend to coexist because they exist on different planes and for different purposes.
+Our point is to have a strong network that is robust and resilient to people shutting it down, centralized power.
+Tor is going in a slightly different direction where they're they're really trying to make it so that nobody knows who anybody is and that's a very hard problem to solve and it's a very specific problem.
+Tor and CJDNS and Packet will always tend to coexist because they exist on different planes and for different purposes.
 
-Speaker 3: 00:37:50
+Speaker 4: 00:37:50
 
-If it's OK, another question.
+If it's okay, another question.
 
 Speaker 0: 00:37:54
 
@@ -460,16 +452,16 @@ Yes, please.
 
 ## Layer 2 VPN services. / IP doesn't scale down, Ethernet doesn't scale up. / CJDNS is a transport.
 
-Speaker 3: 00:37:56
+Speaker 4: 00:37:56
 
-Yeah, I was just wondering, it's a little bit difficult to get a layer, layer two VPN set up.
+Yeah, I was just wondering, it's a little bit difficult to get a Layer 2 VPN set up.
 At least I don't know any service providers who would actually do that.
-Do you support layer 2?
+Do you support Layer 2?
 
 Speaker 1: 00:38:12
 
-No, we are layer 2.
-We are a layer 2 because we're not actually doing Ethernet.
+No, we are Layer 2.
+We are a Layer 2 because we're not actually doing Ethernet.
 Ethernet in my opinion is not really that useful.
 It's because IP doesn't scale down and Ethernet doesn't scale up, we ended up with these two layers.
 CJDNS scales both directions.
@@ -477,14 +469,14 @@ So on top of CJDNS, we just put an IP packet because it's compatible with ordina
 I mean, you could do Ethernet over CJDNS just like why?
 That's kind of the point.
 
-Speaker 3: 00:38:54
+Speaker 4: 00:38:54
 
-Raysons.
+Reasons?
 
 Speaker 1: 00:38:57
 
 Yeah, I mean, you could do it.
-It's just like it's just like doing Ethernet over like packet over sonnet or SDH.
+It's just like doing Ethernet over like packet over sonnet or SDH.
 It's really the similar concept, you just have to write a little bit of code to connect it together.
 CJDNS is a transport it'll transport anything you want.
 
