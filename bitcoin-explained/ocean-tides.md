@@ -7,9 +7,7 @@ speakers: ["Sjors Provoost","Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-12-06
 ---
-## Introductions
-
-[Opening music playing]
+## Introduction
 
 Aaron van Wirdum: 00:00:21
 
@@ -21,45 +19,7 @@ Sjors Provoost: 00:00:26
 
 Hello.
 
-Aaron van Wirdum: 00:00:27
-
-Sjors, we have a sponsor.
-
-Sjors Provoost: 00:00:28
-
-That is correct. We have a new sponsor.
-
-Aaron van Wirdum: 00:00:30
-
-Isn't that great?
-
-Sjors Provoost: 00:00:31
-
-That's right. Our new sponsor is Coinkite. The company behind the COLDCARD.
-
-And dear listener, if you have no idea what a COLDCARD is, please let us know. Because then we'll explain it. Because otherwise it's a bit ridiculous if we explain it. Because I think we think you all know.
-
-Aaron van Wirdum: 00:00:48
-
-Oh my God, this is the worst ad read in history, Sjors.
-
-Sjors Provoost: 00:00:52
-
-Excellent.
-
-Aaron van Wirdum: 00:00:53
-
-Can we at least mention it's a hardware wallet?
-
-Sjors Provoost: 00:00:56
-
-Yes, it's a hardware wallet.
-
-## The Ocean Pool Launch
-
 Aaron van Wirdum: 00:00:57
-
-A hardware wallet you can use to store bitcoin.
 
 Sjors, today we're going to discuss a new mining pool launched. Well, kind of. Ocean Pool.
 
@@ -895,7 +855,6 @@ Sjors Provoost: 00:36:08
 All right then, thank you for listening to Bitcoin Explained.
 
 ## Tools & Products Mentioned
-•	Coinkite’s COLDCARD
 •	Ocean Pool
 •	Bitcoin Knots
 •	Bitcoin Core
