@@ -985,16 +985,3 @@ I think so, Sjors.
 Sjors Provoost: 00:36:08
 
 All right then, thank you for listening to Bitcoin Explained.
-
-## Tools & Products Mentioned
-•	Ocean Pool
-•	Bitcoin Knots
-•	Bitcoin Core
-
-## People Mentioned
-•	Luke Dashjr
-•	Jack Dorsey
-•	Bitcoin Mechanic
-•	Stephan Livera
-•	Jason Hughes
-•	Satoshi Nakamoto
