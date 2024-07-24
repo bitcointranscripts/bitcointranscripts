@@ -12,7 +12,7 @@ speakers:
   - 'Lucas Ontivero'
 categories:
   - 'club'
-summary: 'This WRC episode shows Caleb DeLisle, the creator of the CJDNS project, discussing the benefits of decentralized mesh networking and its potential impact on the centralized internet controlled by companies. DeLisle explains the adversary tolerance of CJDNS and its use of public keys for communication verification. He also addresses concerns about the environmental impact of crypto mining and argues that it facilitates the transition to renewable energy sources. DeLisle emphasizes the attacks on decentralized finance and crypto by centralized entities and the importance of unity in the crypto community. He highlights the creation of Packet Crypt, a bandwidth-hard proof of work that incentivizes building out large amounts of bandwidth. DeLisle asserts the need to prioritize privacy, robustness, and resilience in the face of attacks and the value of positive engagement with policymakers. He also discusses the differences between CJDNS and other networking solutions, highlighting CJDNS''s focus on infrastructure and resilient internet access. In addition, DeLisle mentions the potential for individuals to provide internet access to their neighbors and the financing possibilities for the Packet Network Steward. Finally, he touches on the use of Rust programming language for code review and the productivity improvements it brings in terms of security.'
+summary: 'This WRC episode shows Caleb DeLisle, the creator of the CJDNS project, discussing the benefits of decentralized mesh networking and its potential impact on the centralized internet controlled by companies. DeLisle explains the adversary tolerance of CJDNS and its use of public keys for communication verification. He also addresses concerns about the environmental impact of crypto mining and argues that it facilitates the transition to renewable energy sources. DeLisle emphasizes the attacks on decentralized finance and crypto by centralized entities and the importance of unity in the crypto community. He highlights the creation of PacketCrypt, a bandwidth-hard proof of work that incentivizes building out large amounts of bandwidth. DeLisle asserts the need to prioritize privacy, robustness, and resilience in the face of attacks and the value of positive engagement with policymakers. He also discusses the differences between CJDNS and other networking solutions, highlighting CJDNS''s focus on infrastructure and resilient internet access. In addition, DeLisle mentions the potential for individuals to provide internet access to their neighbors and the financing possibilities for the Packet Network Steward. Finally, he touches on the use of Rust programming language for code review and the productivity improvements it brings in terms of security.'
 ---
 ## Introduction. / BIP155. / Diverse, robust, resilient p2p networking.
 
@@ -24,7 +24,7 @@ His name is Caleb.
 He is the creator of CJDNS project.
 Basically it's a network that can replace the internet, basically, of course, that is very ambitious.
 He will tell us better.
-Part of this project is now already supported by the VIP 155 in Bitcoin and Bitcoin and other libraries too.
+Part of this project is now already supported by the BIP155 in Bitcoin and other libraries too.
 So this is an effort that part of the Bitcoin community is doing in order to have a more diverse and robust network productivity, let's say, or more resilient peer-to-peer network.
 And well, CJDNS is part of that too.
 Caleb, welcome, and we are happy to have you here.
@@ -39,11 +39,9 @@ Really, it is a decentralized mesh networking protocol which is designed to func
 And that's actually very rare in routing protocols, networking protocols, because typically if one of the nodes just starts announcing garbage to the other nodes, then they will just turn the whole network into a big routing black hole.
 Notable exceptions are BGP, and that's obviously how the internet is routed, but BGP is very hard to set up.
 And so one of the other aspects of CJDNS is it's source routed.
+That means that when you send a packet into the network...
 
 ## What is wrong with networking now? / Centralisation. / Attacks against centralisation. / War on crypto. / Decentralised finance needs decentralised networks. / Mesh network where everyone can own a piece of the internet.
-
-
-That means that when you send a packet into the network.
 
 Lucas Ontivero: 00:02:19
 
@@ -70,6 +68,7 @@ So it's actually not that big.
 It's much smaller than other things that have much better lobbies.
 But the other thing about crypto mining is that while it does use a lot of energy, it's also very effective at facilitating the transition to renewables because it uses the cheapest energy available and actually the cheapest available energy is what comes from renewables because there's nothing cheaper than a solar panel.
 Once you put it up, it doesn't cost you anything to just let that solar panel sit there and run.
+
 So I'm very strongly of the belief that the decentralized finance and the crypto and the mining is actually not cause of this massive environmental degradation, the reason why we're seeing this coming up in the media is because these companies these people are lodging an attack against the decentralization community and this is nothing new we go back to the 90s you have the same people you know you have Bill Gates saying that Linux is cancer.
 And now, Bill Gates is buying up GitHub.
 And there's all of these people who are making moves, and there is really a war on crypto going on.
@@ -86,37 +85,38 @@ No, no, no, no.
 
 Lucas Ontivero: 00:05:49
 
-No.
-Yes, now, if you can tell us what's the vision, right?
+Now, if you can tell us what's the vision, right?
 And how the technology is built in order to bypass all these restrictions and I would like personally know more about the, well I understand the technology but probably not everybody understands how it works but about it and how you work with your IPs as public keys and all the routings instead of what's the address, how to route to that address and how everything plays together.
 
 Caleb DeLisle: 00:06:36
 
 Absolutely.
 So, CJDNS is, as I said, it is adversary tolerant.
-So, you can have a bad router in that network and the network's not going to explode.
-There's a couple of ways that we do that.
+So, you can have a bad router in that network and the network's not going to explode. There's a couple of ways that we do that.
+
 One of them is we derive the IP address from the public key.
 So we're using IP6 addresses and the address is basically the fingerprint of the public key.
 So when we do that, if somebody says this is my IP address, you know that it's their IP address because you can just communicate with them and you are able to compare it to their public encryption key.
+
 But that also poses another challenge which is that it prevents hierarchical routing which is typical of systems routing systems.
 So in place of hierarchical routing we use a system of source routing and source routing means that when you send the packet into the network, it already has the entire path that needs to take all the way source to destination.
 And the way that you get that route is going to be similar to the way you do a DNS lookup.
 You're sending a request to a route server and that route server is giving you the path that you should use to get from point A to point B.
+
 And where we're going with this is that there's going to be multiple cloud ISPs, what we're calling them, and these cloud ISPs operate route servers and you just choose which one you want to do business with and that one will handle the business of getting your traffic onto the network and then to where you want it to be.
+
 Why do we have this semi-centralized model of cloud ISPs as opposed to just doing a fully decentralized, let's route on a DHT, let's do everything like that.
-e reason why we're doing it the way we do it is because when your primary access to the internet is based on a network, you need to be able to call somebody when something doesn't work.
+The reason why we're doing it the way we do it is because when your primary access to the internet is based on a network, you need to be able to call somebody when something doesn't work.
 If you're paying real money to be able to get on the network, then you need to be able to make a phone call or whatever, and you need somebody to be able to handle that situation.
 And we need that entity to be there, to be that network operator to be able to fix that.
 But we need that not to be a monopoly that controls everybody's access to everything.
 So we have these cloud ISPs, which are a little bit like just a VPN company.
 And what they do is they manage all of the buying and selling of bandwidth leases from the people who are operating the actual infrastructure.
 
-## Limitations to Distributed Hash Table based routing model. / Solving the problem of: "my internet doesn't work? Who do I call?"
-
-
 And then they find routes through the mesh in order to get you access to what you need.
 Does that make sense?
+
+## Limitations to Distributed Hash Table based routing model. / Solving the problem of: "my internet doesn't work? Who do I call?"
 
 Lucas Ontivero: 00:09:40
 
@@ -290,7 +290,7 @@ Yeah, I was just wondering, did I understand correctly that you're using the sam
 
 Caleb DeLisle: 00:22:54
 
-No, the algorithm is very different but the point is that when you build out infrastructure to mine packet crypt that infrastructure includes fiber optic because you need that bandwidth in order to mine.
+No, the algorithm is very different but the point is that when you build out infrastructure to mine PacketCrypt that infrastructure includes fiber optic because you need that bandwidth in order to mine.
 So that fiber optic that you've just run in order to mine PacketCrypt, when that mining installation becomes no longer profitable, that fiber is still there and that's still bandwidth that can reach out to people and get them on the Internet.
 
 Rafa: 00:23:24
@@ -316,6 +316,7 @@ Because it's basically the currency, right?
 
 ## How can CJDNS help Bitcoin privacy? / Priority is robustness.
 
+Lucas Ontivero: 00:25:05
 
 Well one more question and this is my probably my last question.
 Well everybody most of us probably understand that well even the IP address is the fingerprint of the public key.
@@ -328,7 +329,7 @@ Caleb DeLisle: 00:26:02
 
 Well I mean I think that it's not so much about privacy per se, it's about robustness.
 Right now, we're just praying that they don't turn us off.
-I mean, as you said, that they're coming for they're going to come for Wasabi wallet.
+I mean, as you said, that they're going to come for Wasabi wallet.
 And I believe that they're not.
 You know I have a strong belief that we're going to win.
 We at first they ignored us and then from say 2014 to 2017 they laughed at us.
@@ -341,6 +342,7 @@ We can't just have them say, there's no war on crypto.
 Just don't believe that.
 It is a propaganda war.
 They're going to try to fight us on the propaganda front.
+
 I want to just hammer home how ridiculous this is.
 Yesterday on Twitter everybody who used the word Memphis in a tweet was banned just and they said it was a bug, we made a mistake.
 Well guess what was happening in Memphis yesterday?
@@ -354,7 +356,7 @@ And you know these companies are going to walk away from these oil pipelines and
 Lucas Ontivero: 00:28:30
 
 Yeah.
-Noberta?
+Nopara?
 
 ## Privacy is natural.
 
@@ -430,7 +432,7 @@ Please go ahead.
 Lokuf: 00:36:23
 
 Yeah.
-Hi. 
+Hi.
 So I was just wondering because this sounds a little bit like the Tor project, and you have a similar concept on providing bandwidth and even though Tor itself doesn't really do any accounting on the bandwidth, but you actually have a privacy layer on top of it.
 I was wondering if there is a similar risk model related to your project as being a host of the service as running a Tor exit node.
 What do you think?
@@ -479,7 +481,7 @@ Reasons?
 Caleb DeLisle: 00:38:57
 
 Yeah, I mean, you could do it.
-It's just like doing Ethernet over like packet over sonnet or SDH.
+It's just like doing Ethernet over like packet over SONET or SDH.
 It's really the similar concept, you just have to write a little bit of code to connect it together.
 CJDNS is a transport it'll transport anything you want.
 
@@ -526,11 +528,11 @@ Okay, thank you.
 Male 1: 00:41:21
 
 I want to ask the same question.
-So the main differences between CJDNS and NimTech, I don't know if you know it, but it's similar.
+So the main differences between CJDNS and Nymtech, I don't know if you know it, but it's similar.
 
 Caleb DeLisle: 00:41:35
 
-Is that NimMixnet?
+Is that Nym Mixnet?
 
 Male 1: 00:41:37
 
@@ -551,7 +553,7 @@ That's a primary Internet access that's not going to get shut down because it's 
 Lucas Ontivero: 00:42:31
 
 By the way, we have a meeting especially for Mixnet.
-So it is already available in YouTube if someone wants to know more about the Mixnet?
+So it is already available in YouTube if someone wants to know more about the Mixnet.
 Just a question, imagine I want to be internet service provider, right?
 
 ## How do I buy internet infrastructure? / Last-mile fibre.
@@ -619,15 +621,17 @@ Adam Ficsor: 00:47:47
 All right.
 Thank you.
 
-Lucas Ontivero: 00:47:47
 
-So, wait.
+
+
 
 ## Can CJDNS work on any transport layer.
 
+Lucas Ontivero: 00:47:47
 
-Yes, this can be, let's say, Layer 1 and also Layer 2.
-I mean,  it can work also as, how to say, I forget the word, but basically it can work on top of the existing infrastructure too.
+So, wait.
+This can be, let's say, Layer 1 and also Layer 2.
+I mean, it can work also as, how to say, I forget the word, but basically it can work on top of the existing infrastructure too.
 Am I right?
 
 Caleb DeLisle: 00:48:17
@@ -676,7 +680,7 @@ Caleb DeLisle: 00:50:50
 
 Well, Hyperboria was a, I mean I say was, technically it still exists, but really it was about research on the CJDNS project and that in building the researching the technology of CJDNS that was going on between 2012 and 2014, 15 or so.
 For the most part, Hyperboria is not really active anymore.
-A lot of the people who wanted to do websites that were kind of in their own little network have moved over to the Yggdrasil project and so research continues with Yggdrasil which by the way are great friends of the packet project.
+A lot of the people who wanted to do websites that were kind of in their own little network have moved over to the Yggdrasil project and so research continues with Yggdrasil which by the way are great friends of the Packet project.
 But the Hyperboria as it were is not really a thing anymore and we're moving CJDNS from the research phase to the industrialization phase through the Packet project.
 
 ## Why use the Rust programming language? / Productivity in Rust.
@@ -732,16 +736,16 @@ But where I get major productivity improvements is when I'm reviewing the code b
 Is someone going to slip by?
 I can't say honestly that nothing's going to slip by.
 We're only human here.
-And when somebody makes a contribution and rust, I can just look at that I can go through it much more quickly, does have any unsafe, I can, I'm just not having to be as paranoid when I'm doing code review.
-And I'm sure you understand the same thing, you get if you especially if you accept Anonymous pull requests into the Wasabi wallet.
+And when somebody makes a contribution in Rust, I can just look at that I can go through it much more quickly, does have any unsafe, I can, I'm just not having to be as paranoid when I'm doing code review.
+And I'm sure you understand the same thing, you get if you especially if you accept anonymous pull requests into the Wasabi wallet.
 You got to look at that code.
-You're like well Is that somebody trying to do underhanded crap to try to fool me, and that's just like that's the worst thing ever
+You're like well Is that somebody trying to do underhanded crap to try to fool me, and that's just like that's the worst thing ever.
 
 Lucas Ontivero: 00:56:06
 
 Yep, we have no the problem with the memory because we're programming them in a managed language. 
 We have a garbage collector.
- Anyway reviewing code carefully because we are, I mean people move a lot of money with Bitcoin wallet and a mistake could be very very very expensive in terms of reputation and well there's a company behind so probably it could be more than reputation.
+Anyway reviewing code carefully because we are, I mean people move a lot of money with Bitcoin wallet and a mistake could be very very very expensive in terms of reputation and well there's a company behind so probably it could be more than reputation.
 So yes, reviewing is a problem.
 I cannot imagine if I have to keep track of a collection of pointers.
 It could be really hard, yeah.
