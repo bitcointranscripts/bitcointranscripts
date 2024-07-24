@@ -35,7 +35,7 @@ As they are passed across peers, they would be decrypted and then further shuffl
 And we talked about why this is a poor design choice because it doesn't scale very well.
 And so as an example, we looked at Electron Cash, which had only five participants in total doing CoinJoin.
 
-## Weekly recap.
+## Weekly recap
 
 Max Hillebrand: 00:01:16
 
@@ -50,7 +50,7 @@ So one more time, three cryptographers sitting at a table, they need to communic
 So if they didn't pay for dinner, you can think of this as a zero, and if they did, you can think of this as a 1.
 At the end of this protocol we want to essentially know whether someone in this table paid for dinner or not.
 
-## The cryptographers at dinner. (DC-nets, Chaum)
+## The cryptographers at dinner (DC-nets, Chaum)
 
 Max Hillebrand: 00:02:26
 
@@ -88,7 +88,7 @@ So for this reason, if one participant goes from a 0 to a 1, then someone else w
 And that's why it's always even.
 And this is the same no matter what kind of setup you have, whether you have many participants or just a few.
 
-## Message collision in DC-networks.
+## Message collision in DC-networks
 
 Max Hillebrand: 00:06:08
 
@@ -105,7 +105,7 @@ So the big thing to understand here is that when you do a round of a DC-net, you
 If more than one person says a message, it actually garbles up both messages.
 So that's a pretty big problem.
 
-## Malicious actors in DC-networks.
+## Malicious actors in DC-networks
 
 Max Hillebrand: 00:07:28
 
@@ -119,7 +119,7 @@ So yeah, so who disrupted the message?
 It's unclear.
 Okay, so yeah, in this case yellow is just unaware of what's going on because yellow doesn't know whether it was green or orange that disrupted the message.
 
-## CoinShuffle++. / DiceMix protocol / 4 + 2f rounds.
+## CoinShuffle++ / DiceMix protocol / 4 + 2f rounds
 
 Max Hillebrand: 00:08:41
 
@@ -128,7 +128,7 @@ So in the paper, four things are discussed.
 First, the paper discusses how peer-to-peer mixing is really a natural generalization of DC-networks.
 This is because when you have a peer-to-peer mixing strategy in Bitcoin, we essentially have a bunch of peers that need to anonymously post an address for the mixing.
 And then they present, number two, the DiceMix protocol, which solves the two issues I brought up with DC-nets, namely collisions and with malicious peers.
-And what's really fascinating about this protocol is that it works in only 4 + 2f rounds, where f is the number of malicious peers.
+And what's really fascinating about this protocol is that it works in only `4 + 2f` rounds, where `f` is the number of malicious peers.
 So given no malicious peers, the entire protocol will end in just four rounds.
 And then we have CoinShuffler++ which applies DiceMix to Bitcoin transactions to create decentralized and anonymous Coinjoins.
 And lastly, the panel presents internal tiers and peer-to-peer mixing protocols.
@@ -165,7 +165,7 @@ Max Hillebrand: 00:10:36
 
 Okay, so Tim Ruffing is here which is pretty exciting.
 So now we're talking about CoinShuffle++ because we covered DC-networks.
-So DiceMix requires only 4 + 2f rounds in the presence of f malicious peers.
+So DiceMix requires only `4 + 2f` rounds in the presence of `f` malicious peers.
 Okay, So I have to come clean and say that I did not fully understand how and why this protocol works, but Essentially the idea is that users are, as opposed to using messages that are XORed together, these DC-nets messages will be power sums.
 And so then the messages are extracted by finding the roots of the polynomial.
 So I played around with this myself quite a bit, and I tried to replicate this and look at the code for hints, but I struggled quite a bit.
@@ -177,14 +177,14 @@ Then the commitment phase, where participants are committing what their message 
 And then there's the DC-nets phase, where the participants are using power sums over a finite field to construct their own secure message.
 And then there's the confirmation phase, which is the end of a successful mix where messages are made available and all participants have the same anonymous messages.
 
-## Malicious actors in DiceMix.
+## Malicious actors in DiceMix
 
 Max Hillebrand: 00:12:53
 
 The way that DiceMix handles malicious peers is by having ephemeral keys and by having participants reveal their secret key and reveal paths that allows everyone to see who in fact is the malicious peer to then exclude them in the next round.
 So That's how that's dealt with.
 
-## Example of DiceMix round.
+## Example of DiceMix round
 
 Max Hillebrand: 00:13:17
 
@@ -198,13 +198,13 @@ And so because it was sequential, it did not scale very well whereas this here c
 The only thing that causes it to scale worse as time goes on is that you have more complexity when it comes to factorization of the polynomial.
 And that's what's visible here in the green.
 So yeah, so 100 peers can essentially get through the protocol in just over 20 seconds, which is pretty impressive.
-So yeah, by using DiceMix instead of the original DC-net, we can achieve guaranteed finality of the message protocol in 4 + 2f rounds, where users anonymously post their equal output fresh addresses.
+So yeah, by using DiceMix instead of the original DC-net, we can achieve guaranteed finality of the message protocol in `4 + 2f` rounds, where users anonymously post their equal output fresh addresses.
 Collisions and disruptions are both effectively dealt with.
 Protocol scales efficiently, and the authors claim that it's a substantial improvement to CoinShuffle, which required users to pass encrypted messages sequentially.
 So, yeah, that's pretty much it.
 I wasn't 100% sure about some parts, but hopefully we can ask questions now.
 
-## Knapsack and unequal amounts.
+## Knapsack and unequal amounts
 
 Adam Ficsor: 00:15:41
 
@@ -214,7 +214,7 @@ Can you elaborate on that and Tim may be able to reflect on that idea?
 
 Lucas Ontivero: 00:16:15
 
-Okay, yes, well, my idea was that in the Knapsack paper, it details how an equal output coin-chain transaction can be built, right?
+Okay, yes, well, my idea was that in the Knapsack paper, it details how an equal output CoinJoin transaction can be built, right?
 So, talking with the author of that paper, he said, well, there is one of my proposals that is not in the paper, is that another protocol where you only need to know how much the rest of participants want to participate with, I mean the amount, so the outputs can be splited with this Knapsack algorithm and then the participants and not a central server who can create this unequal output without any interaction.
 So they only need to know how much the rest of participants are going to participate with.
 So my idea was in the CoinShuffle protocol, if we know how much the rest are going to mix.
@@ -230,7 +230,7 @@ Tim Ruffing: 00:19:34
 
 
 Yeah, I'm not sure if I got the entire idea, to be honest.
-I mean, I looked at the NAPSEC paper once, but this is really like years ago or so.
+I mean, I looked at the Knapsack paper once, but this is really like years ago or so.
 
 ## What is required to determine input amounts?
 
@@ -259,14 +259,15 @@ Yeah.
 I mean, if they're going to mix the full amount and the input, yes, it's public anyway.
 Okay.
 
-## Fixed messages.
+## Fixed messages
 
 Tim Ruffing: 00:21:00
 
-So, But actually, there's a second problem.
+But actually, there's a second problem.
 So the problem with using amounts in general within something like CoinShuffle, And I think here it really doesn't matter if this is now CoinShuffle or CoinShuffle++.
 It's actually in the, CoinShuffle++ paper, but it applies to normal CoinShuffle as well.
-So, CoinShuffle basically works by the idea that you use fresh addresses for your mixing, Like you take a new address, you input it to the mixing protocol.
+So, CoinShuffle basically works by the idea that you use fresh addresses for your mixing.
+Like you take a new address, you input it to the mixing protocol.
 And again, it doesn't matter now if this is CoinShuffle or CoinShuffle++.
 And In the end, you can basically, if something goes wrong, you can de-anonymize this round and throw away your new address because it has never been used, right?
 So it's never been used to receive money.
@@ -283,9 +284,9 @@ Tim Ruffing: 00:22:41
 
 Right, yeah.
 So this is the point.
-Like the amount is something that I call fix.
+Like the amount is something that I call "fix".
 I think this is the term we use in the paper also.
-Yeah, there's a simple attack once you use fixed messages.
+There's a simple attack once you use fixed messages.
 So, let's for example, say we all use, let's say, CoinShuffle for mixing not a fresh Bitcoin address, but some real, I don't know, document, text file.
 Everybody has a text file.
 Now, what you can do is you can disrupt the first round by basically disrupting the last message of all participants in the sense that you as the attacker on the network, you learn the output of the protocol.
@@ -379,7 +380,7 @@ Tim Ruffing: 00:30:19
 
 On the other hand, like, so this is very, very early stuff, but there are also, so what would be interesting is to have something, okay, let me start differently.
 
-## Generic attacks.
+## Generic attacks
 
 Tim Ruffing: 00:30:33
 
@@ -413,7 +414,7 @@ Adam Ficsor: 00:33:40
 I have another question.
 I have a lot but this is important and then let other people speak that.
 
-## How to understand CoinShuffle++.
+## How to understand CoinShuffle++
 
 Adam Ficsor: 00:33:47
 
@@ -433,7 +434,7 @@ The reason why we wrote so detailed pseudocode is that in CoinShuffle, it was ra
 And some people tried to implement it and screwed up.
 So that's why we prefer to give the full truth, even though it's hardly readable.
 In the hope that if somebody really translates it from the paper without having too much background in crypto doesn't screw up entirely.
-So I think, I mean, I can, as I said, I can bring slides and try to explain it in the way I would explain, but I think if you, If you understand how a DC-net works, which I think you looked at last week, then I would approach CoinShuffle++ simply as a way to set up a DC-net?
+As I said, I can bring slides and try to explain it in the way I would explain, but I think if you understand how a DC-net works, which I think you looked at last week, then I would approach CoinShuffle++ simply as a way to set up a DC-net?
 And then if you look at the steps, As we also seen on your slides here, well, what do we need for DC-Net?
 We need shared symmetric keys.
 Okay, so in the beginning we do key exchange.
@@ -454,7 +455,7 @@ Max Hillebrand: 00:37:45
 
 Yeah.
 
-## Base case: 4-bit message and 3 participants.
+## Base case: 4-bit message and 3 participants
 
 Max Hillebrand: 00:37:46
 
@@ -493,7 +494,7 @@ It's better in every aspect.
 Just throw away what you've written so far and start from scratch.
 Of course, they weren't happy with the suggestion and didn't take it.
 
-## Implementation differences in CoinShuffle and CoinShuffle++.
+## Implementation differences in CoinShuffle and CoinShuffle++
 
 Adam Ficsor: 00:40:28
 
@@ -524,7 +525,7 @@ It's an interesting question.
 Randomly guessing here.
 So it's an interesting question.
 Another reason why really people prefer CoinShuffle++ is, I think this is something that only really was very clear to us when we worked on the plus plus version is that actually kicking people.
-So in CoinShuffle, in the normal CoinShuffle, it's easy to deal with cases where people send wrong messages and A lot of the work in the protocol is figuring out who sent wrong messages and kicked them out.
+So in the normal CoinShuffle, it's easy to deal with cases where people send wrong messages and A lot of the work in the protocol is figuring out who sent wrong messages and kicked them out.
 It's however, in this structure where you like the first peer sends to the second one and the second one sends to the third and so on.
 In such a structure, it's much harder to deal with peers that appear offline.
 Like what if the third guy doesn't receive a message or claims that it doesn't receive a message from the second guy, who's to blame, right?
@@ -536,10 +537,11 @@ But then at least it's the same decision for everybody.
 So you have to kind of have this broadcast functionality built in.
 And of course, now you could go back to CoinShuffle and implement it via the same way.
 So instead of letting the first peer send to the second one, the second to the third and so on, it's just everybody sends to the ISC server in the middle.
+
 Yes, you could do this, of course, but then it kind of wastes communication, right?
 Because like the only advantage of the normal CoinShuffle protocol would be that you don't need this broadcast in a sense because you only need to talk to the next guy but yeah as I just explained I think this is not really an advantage.
 
-## Broadcast protocol for CoinShuffle. / Complexity in CoinShuffle.
+## Broadcast protocol for CoinShuffle / Complexity in CoinShuffle
 
 Adam Ficsor: 00:44:56
 
@@ -557,7 +559,7 @@ It worked.
 Tim Ruffing: 00:45:17
 
 Yeah.
-I think like, okay, I think like, assuming that you have the protocols, I think then crypto-wise, the first protocol is a little bit easier because this layered encryption doesn't have, yeah, it's just encryption, right?
+I think like, assuming that you have the protocols, I think then crypto-wise, the first protocol is a little bit easier because this layered encryption doesn't have, yeah, it's just encryption, right?
 There's no weird process.
 
 Adam Ficsor: 00:45:38
@@ -590,7 +592,7 @@ Adam Ficsor: 00:48:27
 Lucas, Hillebrand, Raphael, do you have something to discuss, questions?
 
 
-## Complexity in the communication layer. / Why not use Tor?
+## Complexity in the communication layer / Why not use Tor?
 
 
 Lucas Ontivero: 00:48:34
@@ -618,7 +620,7 @@ Tim Ruffing: 00:50:28
 
 Yeah, so I think What you're saying makes perfect sense.
 And I think if you like, there's a trade off.
-And I think there's a reason why like the existing point of implementations and Adam here's the, Adam's implementation, I think it's the one that should be mentioned here actually works by leveraging Tor because then suddenly the protocol becomes much easier.
+And I think there's a reason why like the existing point of implementations and Adam's implementation, I think it's the one that should be mentioned here actually works by leveraging Tor because then suddenly the protocol becomes much easier.
 I mean of course to organize CoinJoin it's not just using Tor.
 You need more, like for example like signatures.
 But the entire thing becomes way simpler.
@@ -661,7 +663,6 @@ Lucas Ontivero: 00:54:22
 
 Please, let me check if I understand correctly.
 In CoinShuffle, at least, you only communicate with the next guy, so in that case only one participant knows about your IP.
-Right.
 In this case, is it the same or not?
 
 Tim Ruffing: 00:54:47
@@ -708,7 +709,7 @@ And basically the portal net is the slowest peer.
 And then if you imagine like 50 peers connecting via Tor, then they probably have just already by the, not only because their internet connection has different bandwidths, Just by a random selection of four routers, they will have different bandwidths.
 And then we have to wait for the slowest one of the four rounds.
 
-## 2 minute timeouts in Wasabi.
+## 2 minute timeouts in Wasabi
 
 Adam Ficsor: 01:00:46
 
@@ -726,11 +727,11 @@ If they're not malicious, then doing it is potentially late.
 
 Adam Ficsor: 01:01:56
 
-But don't take this as face value that much because Another thing that we realized is when they have to query the whole transaction, which is, I don't know, a kilobyte or maybe a kilobyte, then they are replying slower than when they have to query just some small random data, which is interesting because it should not be the case because the issue with Tor is the communication rounds and not the amount of data.
+But don't take this as face value that much because another thing that we realized is when they have to query the whole transaction, which is, I don't know, a kilobyte or maybe a kilobyte, then they are replying slower than when they have to query just some small random data, which is interesting because it should not be the case because the issue with Tor is the communication rounds and not the amount of data.
 So, there is that.
 Maybe it's one minute, I don't think half a minute, but yeah.
 
-## Using new negotiations. / Tor streams.
+## Using new negotiations. / Tor streams
 
 Lucas Ontivero: 01:02:45
 
@@ -758,7 +759,7 @@ Adam Ficsor: 01:04:43
 
 Yes?
 
-## When 1 round fails.
+## When 1 round fails
 
 Max Hillebrand: 01:04:45
 
@@ -785,7 +786,7 @@ Okay that's pretty clear.
 
 Max Hillebrand: 01:05:45
 
-So are you familiar I mean this might be very rude, but are you well familiar with Zero Link and how Wasabi is working?
+So are you familiar I mean this might be very rude, but are you well familiar with ZeroLink and how Wasabi is working?
 
 Tim Ruffing: 01:06:00
 
@@ -821,7 +822,7 @@ Because I said, I think like from a privacy point of view, it's actually the str
 Also, not relying on Tor gives you the advantage that Some people may not be able to use Tor for various reasons and here they still get a meaningful anonymity guarantee.
 Whereas if you really rely on Tor, Either you can run it or you cannot.
 
-## CashShuffle vs CoinShuffle.
+## CashShuffle vs CoinShuffle
 
 Max Hillebrand: 01:09:04
 
@@ -831,6 +832,13 @@ I'm just curious if you know anything about that and why that was the case.
 Tim Ruffing: 01:09:23
 
 Which of my authors was talking about?
+
+Max Hillebrand: 01:09:27
+
+It was Pedro.
+
+Tim Ruffing: 01:09:31
+
 Okay.
 Yeah.
 I can't say for sure what he was referring to, but when CashShuffle came out, I had a look at the implementation and I found multiple pretty severe flaws.
@@ -867,8 +875,9 @@ Yeah tell me.
 
 Adam Ficsor: 01:12:16
 
-It's because, for me, When I looked at the CoinShuffle paper, I was like, oh fuck I get it.
-I got the basic idea right away I can just work out everything from there by myself Even if I don't read the paper very carefully. With CoinShuffle++ I was reading it very carefully, but I still don't get the essence.
+It's because, for me, when I looked at the CoinShuffle paper, I was like, oh fuck I get it.
+I got the basic idea right away I can just work out everything from there by myself Even if I don't read the paper very carefully.
+With CoinShuffle++ I was reading it very carefully, but I still don't get the essence.
 
 Max Hillebrand: 01:12:44
 
@@ -880,7 +889,7 @@ Okay, I guess that's also partially our responsibility, right?
 Because like if you write a paper, the goal is that people understand it.
 Yeah.
 
-## CoinShuffle vs DC-net.
+## CoinShuffle vs DC-net
 
 Adam Ficsor: 01:13:13
 
@@ -897,7 +906,7 @@ I hope not.
 There is actually, maybe I can put a link here.
 Okay, I'm putting the link here, but really don't want to say don't look at it, but this is really like not explained in a proper way.
 So please don't look at it if you want to understand it's a bunch of or anything.
-But actually, because like the protocol is pretty involved, I also worked on a simpler version of it, which basically raises it to 4 + 3f rounds, but it's conceptually simpler and closer to original DC-nets.
+But actually, because like the protocol is pretty involved, I also worked on a simpler version of it, which basically raises it to `4 + 3f` rounds, but it's conceptually simpler and closer to original DC-nets.
 But this is totally not ready and the pseudocode there is basically, there's just a little bit of text and a long pseudocode.
 I think the pseudocode is not even consistent when it's there.
 So it's really work in progress.
@@ -911,7 +920,7 @@ Thank you.
 
 Tim Ruffing: 01:15:32
 
-so when I think like earlier I mentioned that I was looking into some other models with the Pedro recently and I think one of the things he also wants to do is drive this a little bit further to get a simpler, a little bit simpler protocol.
+So when I think like earlier I mentioned that I was looking into some other models with Pedro recently and I think one of the things he also wants to do is drive this a little bit further to get a simpler, a little bit simpler protocol.
 Which also would be computationally a little bit faster at the expense of adding around.
 
 Max Hillebrand: 01:16:05
@@ -936,7 +945,7 @@ Tim Ruffing: 01:16:39
 Yeah, It's already interesting for me.
 Like if you look at the paper and no one really understands it, maybe we also have to make it more accessible to people.
 
-## Using the pseudocode and building blocks to understand CoinShuffle++.
+## Using the pseudocode and building blocks to understand CoinShuffle++
 
 Adam Ficsor: 01:16:56
 
@@ -950,7 +959,7 @@ And I always had this on my mind when I was trying to implement it, but I guess 
 And then, I mean, because it's really like a layered thing, right?
 It's a different layer.
 
-## Do you think a p2p network using Hashcash is a flawed idea? / Bitmessage.
+## Do you think a p2p network using Hashcash is a flawed idea? / Bitmessage
 
 Adam Ficsor: 01:18:13
 
@@ -966,12 +975,12 @@ And also, I think you have the same problem, right?
 You need to find peers to mix with in the first place, right?
 I think that's one of the other hard problems that's ignored in all the mixing papers I've written.
 
-## Conclusion.
+## Conclusion
 
 Adam Ficsor: 01:19:40
 
 I'm sorry, I was just taking a note for myself.
-So I don't know if you guys have anything but regarding the organization. Hillebrand you said you will record this conversation, did you?
+So I don't know if you guys have anything but regarding the organization, Hillebrand you said you will record this conversation, did you?
 
 Max Hillebrand: 01:19:56
 
@@ -990,7 +999,6 @@ Hello?
 Tim Ruffing: 01:20:11
 
 Yes, I can hear you a bit.
-
 
 Lucas Ontivero: 01:20:21
 
@@ -1036,7 +1044,7 @@ Lucas Ontivero: 01:21:42
 
 No, I just have a comment.
 
-## Decentralised p2p communication is required.
+## Decentralised p2p communication is required
 
 Lucas Ontivero: 01:21:43
 
@@ -1058,11 +1066,12 @@ Tim Ruffing: 01:22:47
 I think there are two things, right?
 Yes, I agree, I would love to have a protocol that's fully decentralized.
 I think no one figured it out so far.
-Yeah, at least here the advantage would be that as you say, like you don't need to rely on multiple Tor circuits, But if you think in the end you really want to connect Tor to the central point, and then you can really ask the question like, okay, is it worth all the hassle then?
+Yeah, at least here the advantage would be that as you say, like you don't need to rely on multiple Tor circuits.
+But if you think in the end you really want to connect Tor to the central point, and then you can really ask the question like, okay, is it worth all the hassle then?
 
 Adam Ficsor: 01:23:29
 
-Oh, there is One more thing, Tim, you remember the CoinJoin meetup?
+Oh, there is one more thing, Tim, you remember the CoinJoin meetup?
 
 Tim Ruffing: 01:23:39
 
@@ -1080,23 +1089,23 @@ Adam Ficsor: 01:23:51
 
 Because I didn't say.
 My point is that one of the problems with pay to endpoints or it's quite a general problem that how do you establish connection between one party and another without breaking the existing user workflow.
-And there might be a way at least, you know, with Taproot, with Taproot, the public key is going to be exposed in the address.
+And there might be a way at least with Taproot, the public key is going to be exposed in the address.
 
 Tim Ruffing: 01:24:25
 
-Oh yeah okay you mean you can do some form of snicker?
+Oh yeah okay you mean you can do some form of SNICKER?
 
 Adam Ficsor: 01:24:29
 
-Uh-huh So now what we can do is that when you give me your Bitcoin address to pay you money Then I can encrypt a message to your public key and then broadcast it to the network you are listening to that message and Then you decrypt that message only you can decrypt it And then that message actually contains my Monero endpoint, and we actually have a peer-to-peer communication between the two of us.
-So, and then the user doesn't even know that it's not a normal Bitcoin transaction.
+Yes, so now what we can do is that when you give me your Bitcoin address to pay you money then I can encrypt a message to your public key and then broadcast it to the network you are listening to that message and then you decrypt that message - only you can decrypt it - and then that message actually contains my Monero endpoint, and we actually have a peer-to-peer communication between the two of us.
+Then the user doesn't even know that it's not a normal Bitcoin transaction.
 And then you can do pay to endpoint, merge avoidance, even a lightning transaction in the background.
 So I think that's exciting anyway.
 
 Lucas Ontivero: 01:25:29
 
-Oh, That's great.
-And in fact, a kind of booster pay or something like that could be possible too.
+Oh, that's great.
+And in fact, a kind of Bustapay or something like that could be possible too.
 I mean, the two parties can join for payment.
 
 Adam Ficsor: 01:25:44
@@ -1118,7 +1127,7 @@ Is that correct?
 
 Tim Ruffing: 01:26:42
 
-So There are encryption schemes where you just from the encrypted message, you don't see for which public key it's encrypted.
+There are encryption schemes where you just from the encrypted message, you don't see for which public key it's encrypted.
 
 Adam Ficsor: 01:26:52
 
@@ -1160,7 +1169,7 @@ It's a good point.
 
 Adam Ficsor: 01:28:34
 
-Anyway, we'll get back to this idea after TapRoot is deployed.
+Anyway, we'll get back to this idea after Taproot is deployed.
 
 Tim Ruffing: 01:28:39
 
@@ -1173,4 +1182,3 @@ Adam Ficsor: 01:28:42
 You know what's interesting?
 In your CoinShuffle paper, or CoinShuffle++ paper, I don't know.
 In one of the paper, I think the CoinShuffle 2014, even that was talking about Segwit.
-Wait, no.
