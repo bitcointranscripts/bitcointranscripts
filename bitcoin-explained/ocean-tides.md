@@ -270,7 +270,7 @@ Right.
 Then the idea is to basically wait until you've accumulated enough credit, as it were, and then you get paid.
 So there, it really starts looking like just a wallet that's custodial, but only for small amounts.
 
-## Future Ocean Pool Ideas & Check Template Verify (CTV)
+## Future Ocean Pool Ideas & CHECKTEMPLATEVERIFY (CTV)
 
 Aaron van Wirdum: 00:10:18
 
@@ -293,7 +293,7 @@ Aaron van Wirdum: 00:11:15
 
 Right.
 Then there's another potentially cool idea, which is not possible yet on the bitcoin network.
-But with Check Template Verify, it could actually be implemented that if this 20 limit threshold in the coinbase is reached, then the other hashers are still guaranteed their payment through a CTV transaction because of that.
+But with CHECKTEMPLATEVERIFY, it could actually be implemented that if this 20 limit threshold in the coinbase is reached, then the other hashers are still guaranteed their payment through a CTV transaction because of that.
 
 Sjors Provoost: 00:11:39
 
