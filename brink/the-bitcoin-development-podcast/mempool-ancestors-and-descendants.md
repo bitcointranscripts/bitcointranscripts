@@ -1,17 +1,20 @@
 ---
-title: "Mempool Ancestors and Descendants"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Ancestors-and-Descendants-e1ald5e
-tags: ['cpfp']
-speakers: ['John Newbery', 'Gloria Zhao']
+title: 'Mempool Ancestors and Descendants'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Ancestors-and-Descendants-e1ald5e'
+date: '2021-11-24'
+tags:
+  - 'cpfp'
+speakers:
+  - 'John Newbery'
+  - 'Gloria Zhao'
 categories: []
-summary: "John and Gloria continue their discussion of Bitcoin's mempool by explaining parent, child, ancestor and descendant transactions."
-date: 2021-11-24
+summary: 'John and Gloria continue their discussion of Bitcoin''s mempool by explaining parent, child, ancestor and descendant transactions.'
 additional_resources:
--   title: Child pays for parent
-    url: https://bitcoinops.org/en/topics/cpfp/
--   title: https://brink.dev/
-    url: https://brink.dev/
+  - title: 'Child pays for parent'
+    url: 'https://bitcoinops.org/en/topics/cpfp/'
+  - title: 'https://brink.dev/'
+    url: 'https://brink.dev/'
 ---
 ## Parent and child transactions
 
@@ -44,8 +47,7 @@ So in Bitcoin, when you have a transaction, you have the person or the owner spe
 And we define that relationship by the sender puts a public key or a hash of a public key in the output and the person receiving it, when they come to spend it again, they put a signature into the input.
 That goes all the way back to the white paper where Satoshi says, we define an electronic coin as a chain of digital signatures.
 Each owner transfers the coin to the next by digitally signing a hash of the previous transaction on the public key of the next owner and adding these to the end of the coin.
-So Toshi's talking about a chain actually is a bit more complex than that because it's more like a graph because a transaction can have multiple inputs and multiple outputs.
-Right.
+Satoshi's talking about a chain actually is a bit more complex than that because it's more like a graph because a transaction can have multiple inputs and multiple outputs.
 So your transaction has outputs and then when you come to spend those outputs, they become inputs in the next transaction.
 And we define that relationship as one transaction spending the outputs created by the previous transaction as a child-parent relationship.
 So the transaction spending the output is the child and the transaction that's created in the first place is the parent.
@@ -67,7 +69,6 @@ Directed acyclic graph.
 
 Speaker 1: 00:01:56
 
-Exactly.
 Exactly.
 Because a transaction cannot be its own parent or its own ancestor.
 So we talked about parent-children there.
@@ -91,7 +92,7 @@ Well, so far we've been talking about this kind of abstract idea of ancestors an
 And in the blockchain, it's not really that interesting.
 It's just kind of historic artifact.
 All we care about is the set of unspent outputs.
-But in the mempool, we do care about it a lot because unlike the blockchain, which is basically finalized and static, You know, there can be reorgs, but as you go deeper into the blockchain, that's all fixed.
+But in the mempool, we do care about it a lot because unlike the blockchain, which is basically finalized and static, there can be reorgs, but as you go deeper into the blockchain, that's all fixed.
 The mempool is very different.
 It's always changing.
 It's very dynamic.
