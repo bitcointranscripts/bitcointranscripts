@@ -154,7 +154,8 @@ Invalid as in like it got conflicted because of transaction to block, for exampl
 
 Speaker 1: 00:04:16
 
-Right, So let's enumerate those ways that it can leave the mempool.
+Right.
+So let's enumerate those ways that it can leave the mempool.
 The most obvious is that it gets included in a block.
 So the mempool is this holding area for transactions that might get included in a block, and then you receive a block and hey presto, it actually does have that transaction.
 You don't need to keep it in your mempool anymore.
