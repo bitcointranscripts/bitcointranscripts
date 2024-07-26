@@ -166,7 +166,13 @@ That's called a conflict or it conflicts with something in a block and we have t
 Next up we have eviction.
 So we remove transactions from the mempool for a couple of reasons.
 One is the mempool's got too full and we remove the transactions that have the lowest fee rate or more specifically the lowest ancestor fee rate, descendant fee rate.
+
+Speaker 0: 00:05:16
+
 Descendant fee rate.
+
+Speaker 1: 00:05:17
+
 Descendant fee rate, that's right, because they're the least likely to be useful for a miner in future.
 So as we shed transactions from the mempool, we remove those ones first.
 Another reason we remove transactions from the mempool is if they've been hanging around for too long.
@@ -178,10 +184,10 @@ Do we do that even when we're not full?
 
 Speaker 1: 00:05:33
 
-Yep.
+Yes.
 And what else?
 We might replace it.
-So bit 125, replace by fee, defines some policy rules that we would use where if we receive a transaction on the peer-to-peer network that conflicts with a transaction in the mempool or some transactions in the mempool, we may replace those transactions with a new one if it meets certain criteria.
+So BIP125, replace by fee, defines some policy rules that we would use where if we receive a transaction on the peer-to-peer network that conflicts with a transaction in the mempool or some transactions in the mempool, we may replace those transactions with a new one if it meets certain criteria.
 
 Speaker 0: 00:05:55
 
@@ -198,11 +204,11 @@ It would get evicted the next time you did any kind of mempool trimming.
 
 Speaker 1: 00:06:15
 
-Okay, yep.
+Okay, yeah.
 
 Speaker 0: 00:06:16
 
-Oh, if it's full.
+If it's full.
 If it's not full, I think it might still stay.
 
 Speaker 1: 00:06:19
@@ -214,15 +220,13 @@ And so deprioritizing a transaction would send it to the bottom.
 Speaker 0: 00:06:26
 
 Yeah.
-And you could, in the Bitcoin core wallet, abandon transaction and then it'll stop rebroadcasting it.
+In the Bitcoin core wallet, abandon transaction and then it'll stop rebroadcasting it.
 And then it would naturally, hopefully, come out of the mempool.
 
 Speaker 1: 00:06:36
 
 Potentially but what you need to keep in mind is that your mempool is not necessarily reflective of the rest of the network's mempool.
 So once it's out, once a transaction has been broadcast to your peers and they've transitively broadcast it to their peers and it's gone out into the network, it's going to be there forever more unless it gets conflicted with something that's included in the blockchain.
-Yeah.
-Okay.
 
 ## Block construction considerations for miners
 
@@ -240,7 +244,8 @@ Why exactly it's ancestor fee rate and not descendant or base?
 
 Speaker 1: 00:07:25
 
-So transactions in the mempool can spend outputs of transactions in the blockchain, But you can also have, like we talked about, children and descendants.
+So transactions in the mempool can spend outputs of transactions in the blockchain.
+But you can also have, like we talked about, children and descendants.
 So you could have transactions in the mempool spending the outputs of other transactions in the mempool.
 So you have this directed graph, which is all the transactions that have ever existed included in the blockchain.
 And then right at the edge of that, the very top or the bottom, depending on how you're looking at it, you have some unspent transaction outputs, UTXOs, and then you have your graph of transactions in the mempool that kind of extends the graph of confirmed transactions.
@@ -272,13 +277,13 @@ Exactly.
 Yeah.
 So you mentioned that ancestor and descendant data.
 So the mempool is not simply just a pool of transactions.
-We also include some metadata And that metadata is things like the ancestor fee rates of a transaction.
+We also include some metadata and that metadata is things like the ancestor fee rates of a transaction.
 
 Speaker 0: 00:09:49
 
 Yeah.
 And iterators to said parents and children.
-I think if you have a mempool with 300 megabytes of storage available, Only about one fourth of that is the raw transaction data itself and the rest is metadata.
+I think if you have a mempool with 300 megabytes of storage available, only about one fourth of that is the raw transaction data itself and the rest is metadata.
 And a lot of people are really surprised to hear that, but it is important information that needs to be stored because we're preferring to use space instead of time.
 
 Speaker 1: 00:10:18
@@ -314,7 +319,7 @@ One possible reason.
 Speaker 1: 00:10:59
 
 It's one possible reason.
-So if a miner receives a block at the tip, they might start doing work immediately before validating that block, before updating their mempool to remove the transactions in their block, in that block.
+So if a miner receives a block at the tip, they might start doing work immediately before validating that block, before updating their mempool to remove the transactions in that block.
 So they can start work without doing the computation of constructing a block.
 
 Speaker 0: 00:11:17
@@ -332,7 +337,6 @@ Yeah.
 Speaker 1: 00:11:24
 
 So they might start mining with an empty block and then update the template.
-Yeah.
 As they've done that computational work.
 
 Speaker 0: 00:11:31
@@ -353,7 +357,7 @@ Speaker 1: 00:11:46
 
 Okay, so we have this graph and we care about performance as you search through it.
 Miners care about performance, but also other full nodes on the network care about performance because they are also doing updates to their mempool.
-So for example, a bit 125 replacement transaction might push out a bunch of transactions from the mempool.
+So for example, a BIP125 replacement transaction might push out a bunch of transactions from the mempool.
 You might have a chain of transactions, A, B, C, D, E, and then A2 conflicts with A, and so you then need to remove B, C, D, E as well as removing A, because say now they depend on something that's no longer in the mempool.
 
 Speaker 0: 00:12:21
@@ -451,7 +455,6 @@ It matters what the rest of the network's policy is in terms of transaction prop
 
 Speaker 1: 00:16:14
 
-Yeah.
 So you have these concepts of ancestors and descendants.
 We talked about ancestor fee rate.
 So if you have transaction A with a low fee rate and B with a high fee rate, B is incentivizing the miner to include A and B.
@@ -461,7 +464,7 @@ But sometimes that doesn't work because A itself has a fee rate that's too low t
 
 Speaker 0: 00:16:52
 
-Oh, we're getting into this.
+We're getting into this.
 
 Speaker 1: 00:16:53
 
@@ -474,10 +477,10 @@ This is like my favorite topic to talk about.
 Speaker 1: 00:16:58
 
 Okay, well, let's talk about it a bit then.
-So imagine I have a transaction A, I want to spend some of A, but it has a very low fee rate, let's say one satoshi per byte.
-And the mempool, network mempools are congested and they've been expiring or evicting transactions from the bottom of their mempool and they won't accept transactions below five satoshis per byte.
+So imagine I have a transaction A, I want to spend some of A, but it has a very low fee rate, let's say one Satoshi per byte.
+And the mempool, network mempools are congested and they've been expiring or evicting transactions from the bottom of their mempool and they won't accept transactions below five Satoshis per byte.
 So I want A to be included.
-I've created now a new transaction B with 100 satoshis per byte.
+I've created now a new transaction B with 100 Satoshis per byte.
 So I've done child pays for parent.
 And then what happens?
 
@@ -486,7 +489,7 @@ Speaker 0: 00:17:29
 You get the error for A saying, sorry, this doesn't meet the minimum mempool fee requirement.
 And you're like, wait, wait, wait, but what about B?
 And it'll say missing inputs because it's spending something that it doesn't know about.
-It's like, I did tell you about A and you rejected it, But here, basically you want the node to validate A and B together.
+It's like, I did tell you about A and you rejected it, but here, basically you want the node to validate A and B together.
 
 Speaker 1: 00:17:50
 
@@ -499,7 +502,7 @@ B comes up and is told, well, you're spending outputs that don't exist.
 Speaker 0: 00:18:05
 
 Yeah.
-And someone asked me a very good question of like, oh, why don't we look at the transaction candidates in order of their fee rate?
+And someone asked me a very good question of like, ''why don't we look at the transaction candidates in order of their fee rate?''
 And the answer to that is, well, you don't know the fee rate until you have all of the information.
 So in Bitcoin transactions, you don't include the amount in the inputs.
 You only include the amount in the outputs.
@@ -519,7 +522,7 @@ Well, maybe we can widen the door and let in multiple transactions at a time.
 
 Speaker 1: 00:18:59
 
-That Sounds like a great idea.
+That sounds like a great idea.
 
 Speaker 0: 00:19:01
 
@@ -529,12 +532,12 @@ What about just two at a time?
 Speaker 1: 00:19:03
 
 Two at a time.
-OK.
+Okay.
 Well, let's talk about that next time.
 
 Speaker 0: 00:19:06
 
-Oh, OK.
+Okay.
 
 Speaker 1: 00:19:06
 
@@ -545,4 +548,7 @@ Thanks, Gloria.
 Speaker 0: 00:19:10
 
 Thanks, John.
+
+Speaker 1: 00:19:11
+
 Bye.
