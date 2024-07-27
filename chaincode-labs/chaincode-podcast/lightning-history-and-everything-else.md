@@ -46,7 +46,7 @@ Jonas.
 
 Adam Jonas: 00:00:19
 
-We are back and we're going to have Taj joining us in the studio today.
+We are back and we're going to have Tadge joining us in the studio today.
 What should we chat about with him?
 
 Mark Erhadt: 00:00:26
@@ -110,7 +110,7 @@ It's not just that, it's other variables have been played with over time with de
 
 Mark Erhadt: 00:02:45
 
-It's interesting to watch what BSV and Bcache are doing, but the question is how indicative it is of whether we could do it.
+It's interesting to watch what BSV and Bcash are doing, but the question is how indicative it is of whether we could do it.
 Because if you actually then look at the content of the BSV blocks with multiple gigabytes, and it's just millions of times the same dog picture in the block, that's not going to be what sort of block we would see on a network that actually gets used like Bitcoin.
 
 Tadge Dryja: 00:03:08
@@ -262,7 +262,7 @@ Tadge Dryja: 00:08:14
 I've seen them for $50 on Amazon.
 It's great.
 I mean, you know, I, because it sort of died, right?
-Like mid from 2010 to like 2020 ish.
+From mid 2010 to like 2020 ish.
 It was sort of dead, like Intel chips didn't get much better, AMD, like nothing really progressed.
 And everyone was sort of thinking, okay, well, Moore's law is sort of over.
 
@@ -285,7 +285,7 @@ So the denominators change, now what?
 
 Tadge Dryja: 00:08:54
 
-Does that mean?
+What does that mean?
 So I think it doesn't touch the economics of Bitcoin if it's hey We want fees and stuff It has nothing to do with that.
 But it does mean that if you have the same computer, it's easier to verify the current blocks.
 Or you could verify blocks that were 50% larger or something with the same spend of equipment.
@@ -428,7 +428,7 @@ You know, like This is great.
 Now you throw away the UTXO set, you can have these efficient proofs.
 But no interest.
 I don't know.
-But it does seem like, yeah, I should fit in with the Big Block crowd, because all the things I'm working on help this.
+But it does seem like, yeah, I should fit in with the big block crowd, because all the things I'm working on help this.
 
 ## The state of the debate when writing the Lightning Network White Paper
 
@@ -445,8 +445,8 @@ I think right around that time was when, I think Gavin first was saying, okay, I
 It's not that people hadn't talked about that before.
 They certainly did.
 I talked about it at my first post on Bitcoin talk in I think 2012 I was like wait cuz the Bitcoin wiki I think was written by Mike Hearn and it said like oh We're just gonna increase the block size and all this stuff and I was looking at him like, okay cool And then looking at the code.
-I'm like, Where and then I you know, I asked on and then I said on Bitcoin Talk, I think the first post I ever posted, I was like, hey guys, we should really fix this soon.
-Because like, you know, like IPv4 and IPv6, these things get big and they get real hard to change.
+I'm like, Where and then, I asked on and then I said on Bitcoin Talk, I think the first post I ever posted, I was like, hey guys, we should really fix this soon.
+Because like IPv4 and IPv6, these things get big and they get real hard to change.
 So if we're going to do it like it says on the wiki, we should, I would say just, you know, next version, just do it.
 And then like, Greg Maxwell is the first to respond.
 He's like, no, no, no, the wiki is written by this guy, totally different.
@@ -456,14 +456,15 @@ But Greg said like, no, I don't think this is going to happen.
 And so, but it was still very much open.
 Like nobody really knows.
 And then I remember going to lunch with Gavin Anderson And he said, I'm going to increase the block size to 20 megabytes.
-And we're sort of like looking at each other like, no, I don't think he is like, you know, cause it got the feeling that 
+And we're sort of like looking at each other like, no, I don't think he is, like wait you know, cause it got the feeling that...
 
 Adam Jonas: 00:15:25
 
-can you date, give us a better idea of the day
+Can you give us a better idea of the date
 
 Mark Erhadt: 00:15:27
-classic before a bitcon classic.
+
+Before a bitcoin classic ?
 
 Tadge Dryja: 00:15:29
 
@@ -632,7 +633,7 @@ Tadge Dryja: 00:22:41
 Yeah, yeah.
 So there's several reasons why you can't do this.
 And so the solution in the current full specs that you know LND, LDK all these people use is and I'm working on two Now is you sort of pretend?
-It's there right you you send the hashes you get the pre images, but you don't actually touch the commitment transaction you don't add this HTLC output because you can't And you know it works, but it also worries me because it's like, oh, people are like, oh, I'm sending one Sat.
+It's there right, you send the hashes, you get the pre images, but you don't actually touch the commitment transaction you don't add this HTLC output because you can't And you know it works, but it also worries me because it's like, oh, people are like, oh, I'm sending one Sat.
 And you're like, yeah, but it works very differently whether you're sending a 100,000 Satoshis or one.
 And there's like a completely qualitative difference in what's happening under the hood that people are not aware of.
 And I worry about that because it's like, I don't have an actual thought out fear.
@@ -729,7 +730,7 @@ And I'd be interested in your take as to, without reworking the base layer, do t
 
 Tadge Dryja: 00:25:58
 
-So, okay, so there's those types of attacks.
+So there's those types of attacks.
 There's also the general limitations of like, channels are a pain, right?
 Like, you would much rather have a system where anyone can pay anyone without these sort of restrictions on routing and stuff like that.
 But yeah, so the attacks, on the one hand, you can sort of hand wave and say there's reputation.
@@ -737,11 +738,11 @@ And what that really means is it's probably going to be fairly centralized.
 And there's so many pressures in the system to centralize these things.
 And my hope, I don't think you can eliminate them.
 I don't think you can solve it.
-But I think you can make it such that, well, yes, there may be some centralization, but hey, it's a layer two.
+But I think you can make it such that, well, yes, there may be some centralization, but hey, it's a layer2.
 You can always drop out.
 You can always say, OK, if I've got routing through this one large node and it doesn't want to cooperate, I can close the channel on-chain and move somewhere else.
 So it's sort of the competition can help that.
-But yeah, but, but attacks on nodes like that, it may may make it so that certain nodes require identity or something.
+But attacks on nodes like that, it may make it so that certain nodes require identity or something.
 I don't, no one's doing that yet, I think, hopefully, But worst case that kind of thing happens or you get something like Tor where like it kind of works But you know, there's this sort of constant din of like attacks on it That hurts it.
 
 Adam Jonas: 00:27:10
@@ -760,7 +761,7 @@ Yeah, do high fees break lightning, right?
 
 Tadge Dryja: 00:28:00
 
-So I would say that high doesn't but highly variable many, right and so this is something After we wrote the lightning network paper.
+So I would say that high doesn't but highly variable may, right and so this is something After we wrote the lightning network paper.
 
 ## Do high fees break lightning?
 
@@ -775,7 +776,8 @@ That seems like an...
 
 Tadge Dryja: 00:28:26
 
-Well you can RBF the Justice transactions because those those are immediately spendable you have the immediate unencumbered key for and you in theory. You know depending on your reserves in this channel You may have quite a bit to spend on fees before it actually eats into the money that like should be yours right so if it's you know you're supposed to have five five and they close at six four and they shouldn't and You know you're supposed to get five coins, but they made it so that you get Four coins, and you're taking the whole six output You really only need one of those coins to be made like whole And so you can spend like a bunch on fee, and you do have the ability to RBF it.
+Well you can RBF the Justice transactions because those those are immediately spendable you have the immediate unencumbered key for and you in theory. 
+You know depending on your reserves in this channel You may have quite a bit to spend on fees before it actually eats into the money that like should be yours right so if it's you know you're supposed to have five five and they close at six four and they shouldn't and You know you're supposed to get five coins, but they made it so that you get Four coins, and you're taking the whole six output You really only need one of those coins to be made like whole And so you can spend like a bunch on fee, and you do have the ability to RBF it.
 So it's, you know, it's stacked in your favor in that sense, in that you can RBF and you can pay a lot of fee.
 But so it's still a concern, and you know, what if you flood the entire mempool?
 You know, as a single attack it's probably not as much, but if it's like a coordinated large-scale attack.
@@ -807,7 +809,7 @@ No one's ever doing this.
 You know, Why do we need all these different things?
 Because reorgs never happen.
 Why do we need all this code for reorgs, all these things?
-So it's...
+
 
 Mark Erhadt: 00:30:54
 
@@ -866,7 +868,7 @@ Tadge Dryja: 00:31:57
 
 OK, so yeah, So L2, I think, constructions like that, if L2 is still, you've got Alice and Bob in an L2 channel, and the only advantage is, hey, now we can not have this punishment transaction and sort of update.
 To me, that's like, that's not that interesting.
-Like, That's not the powerful part of something like this.
+That's not the powerful part of something like this.
 To me, the powerful part is, now you can maybe get multiple parties in a channel.
 And then maybe you can have more people using it, and they're all sharing a UTXO.
 So if we're limiting the UTXO set, and block size, and all that, well, at least people can have, there's 10 people sharing a UTXO and sort of making payments.
@@ -876,7 +878,7 @@ Mark Erhadt: 00:32:38
 
 And you're basically short-circuiting payments between these people.
 Let's say this is a group of friends that often need to settle for drinks and dinners and whatever, what they use Venmo for in the olden times.
-And now they are all in a shared channel with five participants and they have virtual channels between each of each other.
+And now they are all in a shared channel with five participants and they have virtual channels between each other.
 And suddenly you get, yeah, what do you need?
 Usually to have a completely interconnected set of five people with channels, that's five times four, times three, times two, times one.
 
@@ -891,14 +893,14 @@ Yeah, So having those kind of speed up.
 Tadge Dryja: 00:33:19
 
 So L2 basically needs SIGHASH any pre-vout, which came from SIGHASH no input, which I think I introduced like a million years ago on IRC.
-And actually, that was my idea for instead of SegWit as a malleability fix.
-Like, hey, if you're not signing the input DX80, you don't care if it's modified.
+And actually, that was my idea instead of SegWit as a malleability fix.
+Like, hey, if you're not signing the input txid, you don't care if it's modified.
 You know, the signature still works.
 And I gave a talk about that a couple months before the Lightning Network talk.
 Because that was sort of my idea.
-And I think we started programming like, hey, assume we have a SIG hash that doesn't cover the input.
+And I think we started programming like, hey, assume we have a sighash that doesn't cover the input.
 Let's start building Lightning that way.
-And SegWit's better because there's a lot of foot guns with any pre-vouter, no input.
+And SegWit's better because there's a lot of foot guns with `ANYPREVOUT`, `NOINPUT`.
 But I still think it's a useful thing to have.
 I think it'd be really cool.
 There are risks that people screw stuff up and blah, but like,
@@ -920,7 +922,7 @@ Use something for a different purpose.
 
 Tadge Dryja: 00:34:13
 
-But I think I have a pretty different take on like, you know, even OP_CTV, check template verify.
+But I think I have a pretty different take on like, you know, even `OP_CTV` (short for `OP_CHECKTEMPLATEVERIFY`).
 I thought that was really cool.
 I was like, yeah, I'll support that.
 Like, I'll run that.
@@ -941,7 +943,7 @@ Although, Daryl, exactly, he made, James mentioned randomly, yeah, maybe we coul
 
 Tadge Dryja: 00:35:40
 
-What fault is a covenant?
+`OP_VAULT` is a covenant?
 
 Mark Erhadt: 00:35:42
 
@@ -950,7 +952,6 @@ And that exploded immediately because speedy trial is terrible apparently.
 
 Tadge Dryja: 00:35:52
 
-It did work.
 It did work.
 
 Mark Erhadt: 00:35:55
@@ -980,7 +981,7 @@ But what's yours?
 
 Tadge Dryja: 00:36:25
 
-I know, okay, Gleb has the like OP, not OP code, it's like pools, the coin pools.
+I know, okay, Gleb has the like OP, not opcode, it's like pools, the coinpools.
 I think that was Gleb.
 
 Mark Erhadt: 00:36:33
@@ -994,7 +995,7 @@ I have a slight tweak to that that I think, it doesn't really make it much bette
 So something like that where, because I think if we're not going to have a increase in like, you know, block size, UTXO set size, whatever, what do they call them?
 The little blocks inside the big like extension blocks or something, I don't know.
 If there's not something like that and you are sort of fixed at like, okay, we got a megabyte of output size and 4 megs, then if you really want lots of people to use it, okay, you need to start sharing UTXOs in a secure, usable way.
-And so I think that SIGHASH_ANYPREVOUT can help with something like that, but also something like coin pools or something, you know, TAPLEAF_UPDATE_VERIFY, things like that where you're saying, okay, the outputs are sort of trees.
+And so I think that `SIGHASH_ANYPREVOUT` can help with something like that, but also something like coinpools or something, you know, `OP_TAPLEAF_UPDATE_VERIFY`, things like that where you're saying, okay, the outputs are sort of trees.
 We started to have that with Taproot, where now you have like this sort of tree, but something like that is definitely something, you know, I'm looking at and interested in, it's like, okay, We might only have a couple more years where we can feasibly get something in and so try to get something That will let people sort of share Yeah, I think I can improve out is also yeah, but I'm I think Channel that can serve anyone would be and the other the main other like not even fork wish list I just want it to be more usable because so many people, you know, quote, unquote have Bitcoin and it's just on an exchange.
 
 ## Bitcoin needs to become more usable
@@ -1005,7 +1006,7 @@ And, you know, or if they're using Electrum, great.
 Electrum's a huge improvement over being on an exchange.
 And so many people, like so FTX fell apart a couple months ago, and a bunch of people I knew were like, hey, I should get my coins off in exchange.
 I'm like, yes Yes, you should like I've said that a bunch you should just run Bitcoin core And then I worked, you know, like my parents, you know people I know who are not who are you know, no computers They're smart.
-They download Bitcoin core from Bitcoin core org because I'm like, yes, that's all the people I know.
+They download Bitcoin core from bitcoincore.org because I'm like, yes, that's all the people I know.
 I'm friends with them.
 I know where this is.
 And then they download it.
@@ -1054,7 +1055,7 @@ And it feels like low-hanging fruit to me in that like yeah We could make this e
 
 Mark Erhadt: 00:40:39
 
-Touch, where's your pull request?
+Tadge, where's your pull request?
 
 Tadge Dryja: 00:40:41
 
@@ -1257,7 +1258,6 @@ Yeah.
 Adam Jonas: 00:48:36
 
 Yeah, we do an online seminar.
-Yeah.
 
 Tadge Dryja: 00:48:39
 
@@ -1313,7 +1313,7 @@ You know, like a good example from a few years ago was like MimbleWimble, it's a
 People still post anonymously to mailing lists and stuff.
 Z-man, kind of anonymous, even though people have met him.
 You know, like there are anonymous developers and stuff.
-And that's, hopefully we don't need to go further in that direction But we might you know what if legal restrictions on development and stuff happen But then the question of like how to get people to not leave it's hard because it's not like you know just look on Twitter There's so many reasons where you're just like and and I know I've argued with people too about like, okay, do we want, you know, mercenaries or only people who have like this sort of, I really want to work on Bitcoin.
+And that's, hopefully we don't need to go further in that direction but we might you know what if legal restrictions on development and stuff happen but then the question of like how to get people to not leave it's hard because it's not like you know just look on Twitter There's so many reasons where you're just like and and I know I've argued with people too about like, okay, do we want, you know, mercenaries or only people who have like this sort of, I really want to work on Bitcoin.
 I have this like, you know, desire and motivation to work on Bitcoin specifically, versus people are like, Oh, it's just a job.
 I'm in it for, you know, I'm getting paid, I'm getting a good salary.
 I want to work on this.
@@ -1406,6 +1406,9 @@ Great, thanks.
 Adam Jonas: 00:56:02
 
 Great conversation.
+
+Adam Jonas: 00:56:12
+
 All right, Murch, another one in the books.
 Any reflections?
 
@@ -1417,7 +1420,7 @@ Lots of things to touch on, lots of little anecdotes and context.
 Adam Jonas: 00:56:26
 
 Tadge has done a lot of things.
-So he's a, he's a Renaissance man in, in the Bitcoin community.
+So he's a Renaissance man in the Bitcoin community.
 
 Mark Erhadt: 00:56:32
 
