@@ -229,7 +229,7 @@ But then look also at recent events where people came up with new uses on how to
 Now you go to 20 megabyte blocks and suddenly the minimum fee rate matters a lot because that's the point at which people enter the data that they want to publish into the blockchain.
 And sure, we already have a pull request in Bitcoin Core that might skip over witness data until assume valid point if you're pruning and assume valid.
 But anyone that runs a full archive node wants to have all that data.
-Anybody that wants to calculate the witness Tx IDs themselves, they need the data in order to, to calculate the witness Tx ID.
+Anybody that wants to calculate the witness txids themselves, they need the data in order to, to calculate the witness txid.
 So at that point, it, yeah, It's an economic design parameter, but also just like a question on how quick we can do IBD and how much bandwidth it'll take and how much disk space it'll take to the cost of node operation parameters, basically.
 
 Tadge Dryja: 00:07:46
@@ -408,8 +408,8 @@ You hog you.
 
 Tadge Dryja: 00:12:33
 
-Yeah, so it is, but it is, you know, just this is very like sort of theoretical, you know, how could it work?
-And so it is an interesting, like, you can have a lot, and you know, writing the Lightning Network paper, this was sort of what we, you know, And if you look at the end of the Lightning Network paper, we're like, oh yeah, 130 megabyte blocks and we're good.
+Yeah, so it is, just this is very like sort of theoretical, how could it work?
+And so it is an interesting, like, you can have a lot, writing the Lightning Network paper, this was sort of what we..., And if you look at the end of the Lightning Network paper, we're like, oh yeah, 130 megabyte blocks and we're good.
 And that's what we sort of said.
 Because at the time, it was like someone saying, no, we should go down to 300k.
 Someone saying, no, we need to go to gigabytes.
@@ -832,7 +832,7 @@ It's like, well, Bitcoin is secure because of all this and no one bothers to att
 Adam Jonas: 00:31:09
 
 I'd be interested in your take, given your explanation and the importance of the punishment.
-I'd be interested in your take on L2.
+I'd be interested in your take on eltoo.
 
 Tadge Dryja: 00:31:17
 
@@ -840,11 +840,11 @@ Okay, so.
 
 Mark Erhadt: 00:31:18
 
-L and symmetry.
+LN symmetry.
 
 Tadge Dryja: 00:31:20
 
-So, to me the interesting part of something like L2, the different ideas in L2, is for more than two parties in a channel.
+So, to me the interesting part of something like eltoo, the different ideas in eltoo, is for more than two parties in a channel.
 To me the downside, like I came up with the punishment mechanism.
 I think it's cool.
 I think it's an effective, you know, game theory-ish, what a thing.
@@ -927,7 +927,7 @@ I thought that was really cool.
 I was like, yeah, I'll support that.
 Like, I'll run that.
 Like, I think this is a cool improvement.
-And so, and I, after Taproot merged in, I was like, ooh, maybe we can have like a bunch of changes to Bitcoin in the next couple of years because, you know, before SegWit like OP_CTV and CSV, it was just like no big deal.
+And so, and I, after Taproot merged in, I was like, ooh, maybe we can have like a bunch of changes to Bitcoin in the next couple of years because, you know, before SegWit like `OP_CTV` and `CSV`, it was just like no big deal.
 You know, it was like people sort of write it like, okay, cool, merge it in like a couple of weeks later.
 Yeah, it's running, you can use it.
 And like, things like that weren't a big deal.
@@ -937,7 +937,7 @@ But now we have, you know, with Taproot getting in, it's like, hey, maybe, maybe
 Mark Erhadt: 00:35:08
 
 There does seem to still be a large group of people that think that developers are an attack on Bitcoin and we should ossify yesterday.
-I see a little difference with how OP_VAULT is received now versus how CTV was received last year.
+I see a little difference with how `OP_VAULT` is received now versus how `CTV` was received last year.
 Just sort of more focused on the exact use case and how do I make that work instead of look what I can build.
 Although, Daryl, exactly, he made, James mentioned randomly, yeah, maybe we could use...
 
@@ -1073,7 +1073,7 @@ I hope that they do stick to Taproot only because it would be so much better as 
 
 Tadge Dryja: 00:41:35
 
-Yeah, yeah.
+Yeah.
 So I think part of it is gonna be people learning about this stuff as well.
 So I don't think it's just, oh, we need to make it like a super easy slick UI.
 Like, yes, to some extent, but there are some complexities I don't think you can abstract away.
@@ -1095,7 +1095,7 @@ I talk to the mempool.space people often, I should really bring that up.
 
 Tadge Dryja: 00:42:49
 
-I mean I can understand the convenience where you say, oh it's from this address, but it's like, well...
+I can understand the convenience where you say, oh it's from this address, but it's like, well...
 
 Mark Erhadt: 00:42:54
 
