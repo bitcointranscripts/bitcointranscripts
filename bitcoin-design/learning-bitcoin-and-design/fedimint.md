@@ -3,7 +3,7 @@ title: "FediMint"
 transcript_by: Ringoz1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=lQ0dETyS28o
 tags: ["ecash","ux"]
-speakers: ["Stephen DeLorme","Justin Moon"]
+speakers: ["Stephen DeLorme","Justin Moon", "Christoph Ono"]
 date: 2022-07-29
 ---
 ## Introduction
@@ -14,22 +14,20 @@ All right.
 Welcome, everybody.
 This is the Learning Bitcoin and Design Call.
 It's July 26, 2022.
-And our topic this week is `FediMint`.
+And our topic this week is FediMint.
 And we have Justin Moon here with us and several designers and product folks in the room here that are interested in learning about this.
-So I've got a `FigJam` open here where we can toss images, ideas, text, links, whatever we want to consolidate during the call.
-And anyone on the call right now can find that in the `Jitsi` chat if you want to jump in there with me.
+So I've got a FigJam open here where we can toss images, ideas, text, links, whatever we want to consolidate during the call.
+And anyone on the call right now can find that in the Jitsi chat if you want to jump in there with me.
 But without further ado, I'll just turn it over to Justin and I'll let you kind of take this wherever you want to take it.
 If you want to center this around specific questions, we can do that.
 Or if you just want to take it away and give us an overview of FediMint, that's cool too.
+
+## Justin introduces FediMint
 
 Justin Moon: 00:01:00
 
 Yeah.
 So FediMint is kind of hard to explain.
-
-## Justin introduces FediMint
-
-
 It's a little bit like Bitcoin and there are sort of different facets to it.
 So, let me think how to best explain it.
 I'll start from just like the obvious thing.
@@ -42,6 +40,7 @@ Like one thing that it's very good for is scalability.
 
 ## Scalability
 
+Justin Moon: 00:01:50
 
 Think of it like a side chain, like Liquid or something like that, that allows people to transact without having to go on Bitcoin.
 For example, one FediMint Federation can run on a couple of Raspberry Pis and it can do about as many transactions as Bitcoin.
@@ -54,7 +53,7 @@ There's all kinds of difficulty in terms of being able to send a payment across 
 It's difficult for a mobile phone to be able to do this, for example.
 And also it's capital intensive.
 You have to lock money into a channel, right?
-And so, Fedint also helps scale Liquid because you could have a lot of users share one Lightning channel, for example.
+And so, FediMint also helps scale Liquid because you could have a lot of users share one Lightning channel, for example.
 And so, it allows for a little more specialization there too.
 So for example, you can have one really expert Lightning node operator serve like, let's say, a thousand people in the FediMint, 10,000 people.
 So it's a little more specialization there and that these Lightning node operators can compete based on how good they are at completing Lightning payments.
@@ -64,6 +63,7 @@ It's more convenient, but the privacy is terrible.
 
 ## Privacy
 
+Justin Moon: 00:03:51
 
 And so one of the things that's very interesting about FediMint is that while it helps with the scalability, while it helps with a simpler user experience, the privacy is actually better than with Lightning or with Bitcoin.
 You don't need to know too much about it, but I'll give just like a simple example.
@@ -71,26 +71,29 @@ So how FediMint works is users deposit money into it and can withdraw from it.
 So it's custodial.
 And when you deposit money into it, you get an IOU.
 And the IOUs have an interesting property where any two IOUs, once they're issued, let's say I'm issued an IOU, I deposit and I get an IOU.
-Steven deposits and gets an IOU.
-When Steven goes to redeem that IOU, the mint can't tell if it was him or me.
+Stephen deposits and gets an IOU.
+When Stephen goes to redeem that IOU, the mint can't tell if it was him or me.
 So every one of these IOUs looks exactly the same.
 And so that's where the privacy comes from, is that you get these little IOUs and everyone looks the same.
 And this is why it has to be kind of a custodial system because it's IOU based.
 And so yeah, you can think of it that way.
-It's very good for custody or it's very good for scalability and it's also very good for privacy and so now let's talk a little bit about the custody side so you have to deposit into a mint.
+It's very good for custody or it's very good for scalability and it's also very good for privacy. 
 
 ## Custody with a federated mint
 
+Justin Moon: 00:05:09
 
+Let's talk a little bit about the custody side.
+So you have to deposit into a mint.
 What is a mint?
 So usually when you deposit into something it's like one entity, right?
 There's one entity that runs it and if that entity decides to treat you poorly, you're just out of luck.
-And so how FediMint works is it's something called a `federation`.
+And so how FediMint works is it's something called a federation.
 And a federation just means that instead of one entity running it, there's multiple entities.
 And one example of this is Liquid.
 Liquid is a federation, right?
 So it's a second layer blockchain that has a bunch of features that don't exist on Bitcoin.
-For example, `confidential transactions`.
+For example, confidential transactions.
 These are transactions where the amount is hidden or confidential assets.
 I think you can't even see what the asset is and you can't see the amount either.
 And so, FediMint works similarly underneath and why is that useful?
@@ -98,12 +101,12 @@ Well, if you have a custodial thing that has great privacy features, maybe it's 
 And so if you spread out who runs it it might be a little harder to shut down for example and so and I guess so one last interesting thing about this.
 So, yeah, Federation is basically, it's like a multi-sig.
 It's a multi-sig.
-Each one of these servers, there's like, let's say me, Steven, and Christophe are running FediMint, right?
+Each one of these servers, there's like, let's say me, Stephen, and Christoph are running FediMint, right?
 We'll each have a server and the server just runs one program, relatively simple program.
-And so underneath me, my server, Steven's server, and Christophe's server all have one key and a two of three multi-sequence site.
+And so underneath me, my server, Stephen's server, and Christoph's server all have one key and a two of three multi-sequence site.
 And then the server itself has a bunch of logic for what to do with that custody of Bitcoin, right?
 Like whether to accept the deposit, whether to issue a withdrawal, whether to issue these e-cash tokens, and lastly, whether to use these e-cash tokens to basically incentivize a Lightning node to do payments for them.
-And so the federation is the multi-sig and then there's some logic inside that my server, Steven's server, and Christophe's server need to agree on that allows basically smart contracting.
+And so the federation is the multi-sig and then there's some logic inside that my server, Stephen's server, and Christoph's server need to agree on that allows basically smart contracting.
 So it's kind of like underneath, it's kind of like a smart contract as well.
 And the smart contracting so far is very blunt, but one of the, they can only do a couple of very specific things.
 But I think one of the promises over time is that all the smart contracts and that exists on we'll call them altcoins could exist here in a federation.
@@ -115,7 +118,7 @@ You there's probably less centralized trust there.
 And so if smart contracting is a good idea, like if there are a lot of use cases, potentially it could happen on a system like FediMint that's a federation and it would work just as well as on Ethereum and plus it's all trust-based.
 So you have to trust who runs the servers.
 That's an important thing.
-To use it, you need to trust me and Christophe and Steven, right?
+To use it, you need to trust me and Christoph and Stephen, right?
 And you basically trust that no two of us conspire to steal the money from everyone else.
 Right.
 So it's a trust based system.
@@ -126,15 +129,16 @@ A way to register land titles and like a local area not global just a local area
 
 ## Community banking use case
 
+Justing Moon: 00:09:23
 
-We think it could be really interesting thing for like community banking kind of like `Galoy` Has been used so far.
-So, you know last week there was a company announced FDI.
+We think it could be really interesting thing for like community banking kind of like Galoy has been used so far.
+So, you know last week there was a company announced, Fedi.
 We're not going to talk about that in the call but that's just an example of like the use case there will be community banking to try to actually deploy these in areas that are under, that really a lot of these places just don't really have much of a financial infrastructure like we have in the West.
 I have in the West for example.
 And yeah, they also have a lot stronger trust relationships in their local communities.
 It's less institutionalized in the West for example, but on the other side, the trust relationships at a local level are much stronger in the US.
 For example, a lot of people don't trust their neighbors at all, which is kind of sad.
-So yeah, with that, I'll pause and kick it back to Steven and Christoph.
+So yeah, with that, I'll pause and kick it back to Stephen and Christoph.
 
 Stephen DeLorme: 00:10:19
 
@@ -142,13 +146,11 @@ That's awesome and I'll go ahead and say if anybody has any questions feel free 
 These are usually pretty open.
 I can think of one but maybe before I ask one does anybody else in the room have any questions like for Justin having having heard that overview of what FediMint does?
 Cool, well I'll jump in with one.
+Sorry go ahead Christoph.
 
 ## Where is the FediMint project right now?
 
-
-Sorry go ahead Christoph.
-
-Christoph: 00:10:51
+Christoph Ono: 00:10:51
 
 I was just gonna ask where is the project right now?
 Is this a very new idea that's just kind of starting to take shape or how far is the development of their first alpha version.
@@ -222,9 +224,9 @@ Like that's a lot of it is like, can we create like good default privacy, right?
 Like, cause you can get really good privacy today, but it takes a lot of effort.
 And it would be nice if we had a little bit more like default privacy that doesn't require any effort.
 
-## Are mints interoperable? How chaumian mints work
+## Are mints interoperable? How Chaumian mints work
 
-Christoph: 00:17:30
+Christoph Ono: 00:17:30
 
 I have a question.
 
@@ -232,32 +234,33 @@ Justin Moon: 00:17:32
 
 Go for it.
 
-Christoph: 00:17:33
+Christoph Ono: 00:17:33
 
 So two questions, actually.
 One is, are mints interchangeable?
-Can I take an IOU from Steven's mint and redeem it at your mint?
+Can I take an IOU from Stephen's mint and redeem it at your mint?
 Or is it bound to a specific mint and is it possible to find out like here's an IOU it belongs to Stephen or someone else?
 
 Justin Moon: 00:17:54
 
 Yeah that's a great question.
-So basically what a token is, so like underneath, so this is like the idea here of so FediMint, right?
-It's a it's a I need to learn this word It's it's concatenated two words Fedi for Federation and mint for `Chaumi` and Chaumi and mint is I described Federation I haven't described Chami and mint yet.
-So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Steven would have an IOU and the mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chaum invented this idea. What the IOU actually is just like a little piece of data you know it's a couple hundred characters long and so let's say I am a chaumian mint and Steven is a chaumian mint and we don't know each other, if a user presents a token from my charm in mint to Steven, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
+So "Fedi" - "Mint", right?
+It's concatenated two words, Fedi for Federation and mint for Chaumian mint.
+I described Federation I haven't described Chaumian mint yet.
+So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Stephen would have an IOU and the mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chaum invented this idea. What the IOU actually is just like a little piece of data you know it's a couple hundred characters long and so let's say I am a Chaumian mint and Stephen is a Chaumian mint and we don't know each other, if a user presents a token from my Chaumian mint to Stephen, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
 He would look at it and be like, well, I don't know of this token.
 I have never issued this myself.
 I know that I did not issue it's actually the token with the signature, right?
 So the signature would be wrong.
 And so the answer to the question is are our mints wouldn't be able to interoperate at all.
-And this is a big problem with this idea historically is that it wouldn't really, it would struggle to plug you into like the broader commercial world.
+And this is a big problem with this idea historically is that it would struggle to plug you into like the broader commercial world.
 And so that's where lightning comes in.
 You can think of these mints as like kind of little enclaves.
 Right.
 But they're connected by like a road that is Lightning.
 Right.
 So lightning is like the instant settlement layer between these mints.
-So if I'm in like, let's say if I'm in mint A and Steven is in mint B, then I can generate an invoice that when paid, I will receive tokens in my mint and he can pay that invoice using tokens from his mint and, between the mints, it's just a normal Lightning payment.
+So if I'm in like, let's say if I'm in mint A and Stephen is in mint B, then I can generate an invoice that when paid, I will receive tokens in my mint and he can pay that invoice using tokens from his mint and, between the mints, it's just a normal Lightning payment.
 So in a sense, you can think of it as kind of like an extension to lightning where like the first or last hops on a route don't actually happen in Lightning at all.
 They actually happen between a mint and a lightning node operator.
 This is really cool because it's not trying to compete with Lightning or anything it's trying to add something you know it's kind of like tarot for example right like tarot is and to introduce this idea of like assets and stable coins into Bitcoin and so a good thing about it is building on top of lightning. So if it works it'll make lightning bigger and more liquid.
@@ -279,15 +282,14 @@ Justin Moon: 00:21:16
 Yeah, basically.
 Yeah, exactly.
 
+## Connecting mints over lightning
+
 Stephen DeLorme: 00:21:22
 
 So I'm curious to dig into this graphic that somebody dropped in here.
-
-## Connecting mints over lightning
-
-
-User one requests Lightning invoice A from LSP3 and then two.
-So this is what user one meant to. That's the LSP right there.
+User one requests Lightning invoice A from LSP3 in mint 2.
+So this is what user 1 meant to...
+That's the LSP right there.
 
 Justin Moon: 00:21:36
 
@@ -304,12 +306,12 @@ Yeah.
 It's kind of like how it works.
 It illustrates how like, see the three, like this mint A and mint B, those are Federation mints.
 LN merchant, it doesn't know anything about Federation, doesn't even know they exist.
-The cool thing is, Mint A and Mint B can interoperate, or Mint 1 and 2.
-And Mint 1 and Ellen Merchant can also interoperate, because like, Lightning is the lingua franca.
+The cool thing is, Mint 1 and Mint 2 can interoperate.
+And Mint 1 and LN Merchant can also interoperate, because like, Lightning is the lingua franca.
 
 Stephen DeLorme: 00:22:13
 
-We've got this LSP over here, and let's say like someone in that one decides that they want to pay somebody over here and Mint 2.
+We've got this LSP over here, and let's say like someone in that one decides that they want to pay somebody over here in Mint 2.
 Well, you would end up with is this Lightning transaction between these two LSPs here.
 And so this Mint would lose some of its Bitcoin.
 This Mint would gain some Bitcoin and then in response to gaining that Bitcoin they then have to Mint eCash tokens to represent those.
@@ -321,7 +323,7 @@ One interesting thing about FediMint is that in order to do anything useful the 
 So it all starts with a deposit.
 Someone deposits some Bitcoin in and then tokens are issued.
 And one of the important things is the amount of all issued tokens and the amount custody should always match each other.
-And this is actually one of the limitations of FediMint is that since it's so private, it's kind of the same problem that like Mero has, for example.
+And this is actually one of the limitations of FediMint is that since it's so private, it's kind of the same problem that like Monero has, for example.
 And this is probably one of the reasons why Bitcoin will never have really strong on-chain privacy, is that if you add a ton of privacy and you make it's not everything public, then it becomes difficult.
 FediMint can do a proof of reserves.
 It can prove the reserves they have, but it can't prove the liabilities because they would have to basically de-anonymize all their users, right?
@@ -373,24 +375,23 @@ So it's almost like the node operator, there has to be like some kind of softwar
 
 Justin Moon: 00:28:18
 
-Yeah, so the way this works is we only support core lightning so far.
-Formerly known as `C-lightning`.
+Yeah, so the way this works is we only support Core Lightning so far, formerly known as C-lightning.
 And so basically there's just one file.
-So core lightning has this thing called plugins.
-If you want to add extra functionality core lightning, you run a plugin.
+So Core Lightning has this thing called plugins.
+If you want to add extra functionality Core Lightning, you run a plugin.
 What is a plugin?
 It's just one little file, a little computer program.
-And you stick in a folder that you tell core lightning here this is the folder with all my plugins right and some plugins are for rebalancing channels other plugins are for you know doing stuff like that and so we just have a little plugin that teaches the gateway how to hold an e-cash balance and and you know a couple other details with you know when a when a payment comes in that might be a FediMint payment like what to do with that and how a user can tell the gateway like here I'd like to do an outgoing payment, right? But it's basically just you copy one file into a folder and rerun C lightning which is so it's really really simple and LND will work roughly the same way they have this thing called an `HTLC interceptor`.
+And you stick in a folder that you tell Core Lightning here this is the folder with all my plugins right and some plugins are for rebalancing channels other plugins are for you know doing stuff like that and so we just have a little plugin that teaches the gateway how to hold an e-cash balance and and you know a couple other details with you know when a when a payment comes in that might be a FediMint payment like what to do with that and how a user can tell the gateway like here I'd like to do an outgoing payment, right? But it's basically just you copy one file into a folder and rerun C-lightning which is so it's really really simple and LND will work roughly the same way they have this thing called an HTLC interceptor.
 It's just like one little file you got to run.
 And so hopefully this could be something very simple if you're doing on the command line as command line go command line can get very complicated.
-Just run one little file and and hopefully eventually there will be integrations and stuff like voltage, some of these node offerings, maybe VTC pay, some of these things that have like, or maybe umbral, some of these things that build UIs for your Lightning node.
+Just run one little file and and hopefully eventually there will be integrations and stuff like Voltage, some of these node offerings, maybe BTCpay, some of these things that have like, or maybe Umbrel, some of these things that build UIs for your Lightning node.
 They could just have a couple buttons like, hey, would you like to become a gateway okay what what is the config file for the federation you want to serve right and that just has the addresses like the you know the URLs for the federation servers, right? And so you just like paste that in or scan a QR code and now you're a gateway and you just have to decide how much e-cash tokens you want to hold and someday there will probably be options for, like automatic rebalancing between the two, but that's just a dream at this point.
 
 ## Backups for FediMint users
 
 Stephen DeLorme: 00:30:20
 
-So I thought it was interesting you said about your you mentioned with the core lightning thing the balance of e-cash tokens.
+So I thought it was interesting you said about your you mentioned with the Core Lightning thing the balance of e-cash tokens.
 And so it gets me thinking that the data structure of this is much different than what a lot of us are traditionally used to.
 We're used to thinking of a Bitcoin wallet as being a seed phrase.
 And as long as I have the seed phrase and two or three other pieces of information, I can regenerate the whole wallet.
@@ -540,7 +541,7 @@ Bitcoin walls do really suck it.
 
 You set a new one up it's like there's nothing in here you know. 
 
-Christoph: 00:43:09
+Christoph Ono: 00:43:09
 
 I have a question it seems like a lot of user interactions between the users and the mint managers to figure out.
 I would assume users also want to know, like, is this mint still running?
@@ -679,7 +680,7 @@ FediMints don't have to be interoperable on their own.
 They can use lightning to interoperate right so like the different FediMints can be very very diverse as long as they can speak lightning for whatever things are expressible in terms of send and receive or maybe other lightning features eventually.
 Those things can be interoperable between mints, but like you can have a lot of diversity between them, which is really exciting from a design point of view.
 Also from a developer point of view, right?
-Like Bitcoin core lightning developers sometimes aren't the happiest folks because you know, it's so slow to get your stuff accepted.
+Like Bitcoin Core Lightning developers sometimes aren't the happiest folks because you know, it's so slow to get your stuff accepted.
 
 Stephen DeLorme: 00:54:27
 
@@ -698,7 +699,7 @@ Like they can talk to each other, but they also both access Bitcoin directly.
 And yeah, I think it's just a compliment to Lightning, right?
 The things that, yeah, it's very complimentary, which is exciting.
 
-Christoph: 00:55:45
+Christoph Ono: 00:55:45
 
 It seems like from a design, from a UX perspective, it might make sense to just focus on one good the most what what likely is the most common use case and just try to think through that so I think otherwise it gets a bit bit hard to come up with a specific experience.
 
