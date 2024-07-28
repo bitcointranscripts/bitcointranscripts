@@ -77,7 +77,7 @@ So every one of these IOUs looks exactly the same.
 And so that's where the privacy comes from, is that you get these little IOUs and everyone looks the same.
 And this is why it has to be kind of a custodial system because it's IOU based.
 And so yeah, you can think of it that way.
-It's very good for custody or it's very good for scalability and it's also very good for privacy. 
+It's very good for custody or it's very good for scalability and it's also very good for privacy.
 
 ## Custody with a federated mint
 
@@ -125,7 +125,8 @@ So it's a trust based system.
 So the security comes from trust and not from proof of work or proof of stake or any of these other consensus mechanisms.
 And from my point of view, that would be completely inappropriate for like a global money like Bitcoin.
 But like, one example we talk about the land registry, right.
-A way to register land titles and like a local area not global just a local area this would probably a lot better than a proof of work mind blockchain or something it's just simpler and clearly trust based. So these are kind of some of the different angles of FediMint and just to sort of summarize this like, what the hell is this used for?
+A way to register land titles and like a local area not global just a local area this would probably a lot better than a proof of work mind blockchain or something it's just simpler and clearly trust based.
+So these are kind of some of the different angles of FediMint and just to sort of summarize this like, what the hell is this used for?
 
 ## Community banking use case
 
@@ -161,7 +162,8 @@ Yeah great question.
 It's been a research project for like kind of like a couple of years.
 Eric Syrian the creator had this idea a few years ago and then there's a lot of cryptography and stuff that he needed to develop before it would actually be usable.
 So he's working with Blockstream at the time so he got a lot of valuable basically mentorship from people like Tim Ruffing, let me know if this is too windy by the way, if it's making a bunch of noise.
-So, that was kind of going on for like the last two years or so and so now it's at a point where it's starting to become usable like so you can you can run it on your computer and you can run like 2 Lightning nodes and you can do lightning payments with it running on one computer. Over there I could bring it later on we have a stack of four Raspberry Pis that are our first like federation so we've deployed it on one it's still like testing but it like one actual thing where each one is running on a different server and that works and so we're currently basically trying to set up the first one that we have a prototype mobile app that can just send and receive Lightning.
+So, that was kind of going on for like the last two years or so and so now it's at a point where it's starting to become usable like so you can you can run it on your computer and you can run like 2 Lightning nodes and you can do lightning payments with it running on one computer.
+Over there I could bring it later on we have a stack of four Raspberry Pis that are our first like federation so we've deployed it on one it's still like testing but it like one actual thing where each one is running on a different server and that works and so we're currently basically trying to set up the first one that we have a prototype mobile app that can just send and receive Lightning.
 And so we're currently in the process of trying to get our first deployment that can send and receive with fake Bitcoin, like RegTest or Signet, something like that, Bitcoin.
 So it's getting to the point where it's usable, but definitely not on main net.
 And so hopefully, we're hoping like maybe three months from now, four months from now, kind of like October timeframe, really, we could start having our first testing on main net of the federation.
@@ -172,7 +174,8 @@ So while it's not quite ready, like the foundation is really strong.
 So hopefully, the testing will be successful.
 We won't have to go back to the drawing board very much.
 
-## Self-custody vs. Community-custody
+## Self-custody vs.
+Community-custody
 
 Stephen DeLorme: 00:13:21
 
@@ -184,7 +187,8 @@ Yeah.
 So I mean I love self custody.
 I have a very paranoid multi-sig personally.
 So you know we're pro self custody.
-And on the other hand almost everybody uses heavily centralized custodial services today. And many of them indirectly steal from you by selling you fake Bitcoin as if it's the real thing.
+And on the other hand almost everybody uses heavily centralized custodial services today.
+And many of them indirectly steal from you by selling you fake Bitcoin as if it's the real thing.
 And so I don't know.
 When we see in the kind of the community discussions, like there's a lot of discussion about importance of self custody, but there's a little bit of a blindness to the fact that all the normal people use heavily centralized custodial third parties that are not your friend.
 So a lot of the idea with FediMint is to try to find something between hardcore self-custody and not just hardcore but like self-custody and these super centralized third-party custodians.
@@ -218,13 +222,15 @@ And currently, the answer is Binance, right?
 If we're being honest, that's the answer currently is like, is Binance, Coinbase, FTX.
 That's what people are using.
 And so it'd be nice if we could have something where it's like you know Stephen's neighbor accesses it through Stephen because Stephen's an expert right.
-Christoph's landlord access it to Christoph and you know people in their community who are like the experts that would be an improvement, right? And we have to be realistic about you know how you know whether how much effort people need to be spending on their Bitcoin stuff, right?
+Christoph's landlord access it to Christoph and you know people in their community who are like the experts that would be an improvement, right?
+And we have to be realistic about you know how you know whether how much effort people need to be spending on their Bitcoin stuff, right?
 Like ideally, we shouldn't all be spending a part-time job just to use Bitcoin properly, right?
 Like that's a lot of it is like, can we create like good default privacy, right?
 Like, cause you can get really good privacy today, but it takes a lot of effort.
 And it would be nice if we had a little bit more like default privacy that doesn't require any effort.
 
-## Are mints interoperable? How Chaumian mints work
+## Are mints interoperable?
+How Chaumian mints work
 
 Christoph Ono: 00:17:30
 
@@ -247,7 +253,8 @@ Yeah that's a great question.
 So "Fedi" - "Mint", right?
 It's concatenated two words, Fedi for Federation and mint for Chaumian mint.
 I described Federation I haven't described Chaumian mint yet.
-So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Stephen would have an IOU and the mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chaum invented this idea. What the IOU actually is just like a little piece of data you know it's a couple hundred characters long and so let's say I am a Chaumian mint and Stephen is a Chaumian mint and we don't know each other, if a user presents a token from my Chaumian mint to Stephen, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
+So it's a very interesting idea from the 1980s from 1982 I think was when the original is a paper and this is the idea of this remember when I was saying like me and Stephen would have an IOU and the mint could not tell from whom the IOU like when we go to redeem it they can't tell whether it's mine or Stephen's right that was this guy David Chaum invented this idea.
+What the IOU actually is just like a little piece of data you know it's a couple hundred characters long and so let's say I am a Chaumian mint and Stephen is a Chaumian mint and we don't know each other, if a user presents a token from my Chaumian mint to Stephen, he would just be like, well, I don't, it's even if it's the same format, the token is exactly the same format.
 He would look at it and be like, well, I don't know of this token.
 I have never issued this myself.
 I know that I did not issue it's actually the token with the signature, right?
@@ -263,7 +270,8 @@ So lightning is like the instant settlement layer between these mints.
 So if I'm in like, let's say if I'm in mint A and Stephen is in mint B, then I can generate an invoice that when paid, I will receive tokens in my mint and he can pay that invoice using tokens from his mint and, between the mints, it's just a normal Lightning payment.
 So in a sense, you can think of it as kind of like an extension to lightning where like the first or last hops on a route don't actually happen in Lightning at all.
 They actually happen between a mint and a lightning node operator.
-This is really cool because it's not trying to compete with Lightning or anything it's trying to add something you know it's kind of like tarot for example right like tarot is and to introduce this idea of like assets and stable coins into Bitcoin and so a good thing about it is building on top of lightning. So if it works it'll make lightning bigger and more liquid.
+This is really cool because it's not trying to compete with Lightning or anything it's trying to add something you know it's kind of like tarot for example right like tarot is and to introduce this idea of like assets and stable coins into Bitcoin and so a good thing about it is building on top of lightning.
+So if it works it'll make lightning bigger and more liquid.
 I think the same thing is true of FediMints as well.
 Like if it works it'll just make will make Lightning better.
 
@@ -327,7 +335,8 @@ And this is actually one of the limitations of FediMint is that since it's so pr
 And this is probably one of the reasons why Bitcoin will never have really strong on-chain privacy, is that if you add a ton of privacy and you make it's not everything public, then it becomes difficult.
 FediMint can do a proof of reserves.
 It can prove the reserves they have, but it can't prove the liabilities because they would have to basically de-anonymize all their users, right?
-They would have to like, there's just not really a good way, like it can't prove its liabilities, but internally in the system, like if the system is running as expected right if no one is tinkering with it and trying to make it work incorrectly the assets and the liabilities would be equal at all times. And that's like we do a lot of work to ensure that.
+They would have to like, there's just not really a good way, like it can't prove its liabilities, but internally in the system, like if the system is running as expected right if no one is tinkering with it and trying to make it work incorrectly the assets and the liabilities would be equal at all times.
+And that's like we do a lot of work to ensure that.
 And so to the question of how does a payment between Mint 1 and Mint 2 work.
 So Stephen was saying like oh well one of the mints loses Bitcoin and one of them gains Bitcoin.
 And that could work if the mint itself actually ran a Lightning node.
@@ -381,11 +390,13 @@ So Core Lightning has this thing called plugins.
 If you want to add extra functionality Core Lightning, you run a plugin.
 What is a plugin?
 It's just one little file, a little computer program.
-And you stick in a folder that you tell Core Lightning here this is the folder with all my plugins right and some plugins are for rebalancing channels other plugins are for you know doing stuff like that and so we just have a little plugin that teaches the gateway how to hold an e-cash balance and and you know a couple other details with you know when a when a payment comes in that might be a FediMint payment like what to do with that and how a user can tell the gateway like here I'd like to do an outgoing payment, right? But it's basically just you copy one file into a folder and rerun C-lightning which is so it's really really simple and LND will work roughly the same way they have this thing called an HTLC interceptor.
+And you stick in a folder that you tell Core Lightning here this is the folder with all my plugins right and some plugins are for rebalancing channels other plugins are for you know doing stuff like that and so we just have a little plugin that teaches the gateway how to hold an e-cash balance and and you know a couple other details with you know when a when a payment comes in that might be a FediMint payment like what to do with that and how a user can tell the gateway like here I'd like to do an outgoing payment, right?
+But it's basically just you copy one file into a folder and rerun C-lightning which is so it's really really simple and LND will work roughly the same way they have this thing called an HTLC interceptor.
 It's just like one little file you got to run.
 And so hopefully this could be something very simple if you're doing on the command line as command line go command line can get very complicated.
 Just run one little file and and hopefully eventually there will be integrations and stuff like Voltage, some of these node offerings, maybe BTCpay, some of these things that have like, or maybe Umbrel, some of these things that build UIs for your Lightning node.
-They could just have a couple buttons like, hey, would you like to become a gateway okay what what is the config file for the federation you want to serve right and that just has the addresses like the you know the URLs for the federation servers, right? And so you just like paste that in or scan a QR code and now you're a gateway and you just have to decide how much e-cash tokens you want to hold and someday there will probably be options for, like automatic rebalancing between the two, but that's just a dream at this point.
+They could just have a couple buttons like, hey, would you like to become a gateway okay what what is the config file for the federation you want to serve right and that just has the addresses like the you know the URLs for the federation servers, right?
+And so you just like paste that in or scan a QR code and now you're a gateway and you just have to decide how much e-cash tokens you want to hold and someday there will probably be options for, like automatic rebalancing between the two, but that's just a dream at this point.
 
 ## Backups for FediMint users
 
@@ -418,7 +429,8 @@ So we don't we wouldn't need these denominations.
 So inside the wallet you have a bunch of these little tokens kind of like dollar like like quarters and dimes and nickels in the US you know.
 And so and importantly these are you know these are bearer instruments IOUs. And so if you lose them, you can't prove that you actually own them, right?
 And that's where the privacy comes from.
-And so if you lose them currently as it exists now your money's gone big big UX hurdle right and so one one thing that we will eventually do is implement recovery schemes and. So how that would work is that some of the data inside the token could be represented with like a seed, right?
+And so if you lose them currently as it exists now your money's gone big big UX hurdle right and so one one thing that we will eventually do is implement recovery schemes and.
+So how that would work is that some of the data inside the token could be represented with like a seed, right?
 And so it's a little weird to think about this because like the whole idea was, it's a custodial system, but now we have a seed again what's going on here right I think there's some really interesting things we can do because we have this federation of trusted servers right so like one one one option is you could seed and you just store it like you and any other wallet but it's a little weird because you lose some self-sovereignty in terms of self custody but you gain a lot of privacy.
 So personally, as someone who knows how to deal with seed, I might like that.
 I might use that.
@@ -497,7 +509,8 @@ Is something like that being considered or is it just going to be like left for 
 
 Justin Moon: 00:40:01
 
-Yeah so I mean on the server side like each server has a database. And that's what basically the what the federation member, the servers send messages back and forth is basically to just ensure they have exactly synchronized database.
+Yeah so I mean on the server side like each server has a database.
+And that's what basically the what the federation member, the servers send messages back and forth is basically to just ensure they have exactly synchronized database.
 And so with the, these recovery ideas, like sending a shard of your seed to one of these servers, it would just go on their database.
 Right.
 And so that's kind of the interesting thing is like it already has a database.
@@ -522,7 +535,8 @@ I mean, these are totally unexplored at this point, but in order to get this in 
 So yeah, these are things that we'll have, apps being built on FediMint we'll have to solve kind of similar to any other system.
 I mean, there could be interesting ways to have the Federation servers be able to relay messages, being able to store metadata.
 It's an interesting option.
-It's like you can kind of think of the servers as like your own private cloud in a sense as long as you can you know there might be some system in order to like request that you can do that but it's it's the federations are like a private cloud you just can't store too much in there, right? Because you have to have redundant copies and it's a bit of a tragedy of the commons, right?
+It's like you can kind of think of the servers as like your own private cloud in a sense as long as you can you know there might be some system in order to like request that you can do that but it's it's the federations are like a private cloud you just can't store too much in there, right?
+Because you have to have redundant copies and it's a bit of a tragedy of the commons, right?
 You don't want to be uploading videos, but that is a new constraint that you could design stuff around.
 But yeah, no plans for that so far.
 
@@ -538,8 +552,7 @@ Bitcoin walls do really suck it.
 
 ## Checking the status of the mint or proof-of-funds
 
-
-You set a new one up it's like there's nothing in here you know. 
+You set a new one up it's like there's nothing in here you know.
 
 Christoph Ono: 00:43:09
 
@@ -605,7 +618,6 @@ Right.
 
 ## Hypothetical: remove some privacy features and add more proof-of-liabilities
 
-
 But I mean, as I should mention also that like Fetiment is interesting.
 Like if you didn't have the private, like if you removed some of the privacy features, you could do much more.
 You could, you could make a better attempt at proving liabilities as well.
@@ -641,10 +653,11 @@ Or receive their first, something like that, deposit the first, like that sort o
 
 Triston: 00:50:32
 
-Is it going to just rely on AWS at that point? 
+Is it going to just rely on AWS at that point?
 I mean, I don't know if you remember this old tools like fantastical and cPanel where you would like one click install WordPress or some...
 
 Justin Moon: 00:50:35
+
 Yeah I think it'll be diversity right like I think there will be really easy setup hopefully we can get to it like having really easy setups in stuff like umbral, Raspi Blitz, some of these things where people are already running.
 It's helpful for people who are already running one but it's also like if you want to have like your own self-hosted server it's probably like your own hardware it's probably easier to set that up from scratch and try to attempt it yourself so that's one option another option is like I think it's been very a BC space had a lot of success with like Luna node, right?
 So they built a little series of configuration forms.
@@ -755,13 +768,16 @@ Maybe it's something else.
 Right.
 But it's probably not going to be buying it.
 I think the circular economies will emerge through actual usage probably.
-And so that's like an interesting thing about this too, is like, if you can get, since it's kind of like naturally like a community local thing like it might you know if you can get the buy-in to actually run one of these keep it up and you know have the interaction between all these people maybe that actually helps form a circular economy as well you know. No one's really succeeded there yet so it'll be interesting to see.
+And so that's like an interesting thing about this too, is like, if you can get, since it's kind of like naturally like a community local thing like it might you know if you can get the buy-in to actually run one of these keep it up and you know have the interaction between all these people maybe that actually helps form a circular economy as well you know.
+No one's really succeeded there yet so it'll be interesting to see.
 
 ## Closing
 
 Stephen DeLorme: 00:59:13
 
-Well this has been so awesome. Thank you so much Justin. I think we're a little past the hour here.
+Well this has been so awesome.
+Thank you so much Justin.
+I think we're a little past the hour here.
 So I want to be respectful of Justin's time and kind of formally end this.
 Just yes, that he feels free to go.
 But if people want to hang out and keep chatting in the channel, please feel free to do so.
@@ -770,7 +786,8 @@ And thank you so much, Justin, for taking time to share all this with us.
 
 Justin Moon: 00:59:36
 
-Yeah thanks it's fun to talk to you guys you know it's fun to have the designer point of view and everything. I get code brain right now so I just think of everything in terms of how it works and then you know It's really nice to see the diversity of opinion.
+Yeah thanks it's fun to talk to you guys you know it's fun to have the designer point of view and everything.
+I get code brain right now so I just think of everything in terms of how it works and then you know It's really nice to see the diversity of opinion.
 
 Stephen DeLorme: 00:59:51
 
@@ -790,7 +807,8 @@ So that's where you'll go if you want to.
 Justin Moon: 01:00:10
 
 Yeah.
-I'll also try to get a couple more people from over there to hang out in the design discord too because you know it's a lot or the design slack because there's I see a lot of interest here so we'll try it out be a little more responsive. I show up there like once a week so I'll try to show up a little more frequently.
+I'll also try to get a couple more people from over there to hang out in the design discord too because you know it's a lot or the design slack because there's I see a lot of interest here so we'll try it out be a little more responsive.
+I show up there like once a week so I'll try to show up a little more frequently.
 
 Stephen DeLorme: 01:00:27
 
