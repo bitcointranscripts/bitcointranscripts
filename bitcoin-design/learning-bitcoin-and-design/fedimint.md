@@ -174,8 +174,7 @@ So while it's not quite ready, like the foundation is really strong.
 So hopefully, the testing will be successful.
 We won't have to go back to the drawing board very much.
 
-## Self-custody vs.
-Community-custody
+## Self-custody vs Community-custody
 
 Stephen DeLorme: 00:13:21
 
@@ -229,8 +228,7 @@ Like that's a lot of it is like, can we create like good default privacy, right?
 Like, cause you can get really good privacy today, but it takes a lot of effort.
 And it would be nice if we had a little bit more like default privacy that doesn't require any effort.
 
-## Are mints interoperable?
-How Chaumian mints work
+## Are mints interoperable? How Chaumian mints work
 
 Christoph Ono: 00:17:30
 
@@ -450,10 +448,10 @@ Because again, the whole point revolves around the fact that you trust the peopl
 That's the whole foundation here.
 But that this would be like, in terms of like, where designers could contribute.
 I think this would be a really fascinating thing to just think of all the different ways that this, these, these recovery schemes might work.
-There was an interesting proposal in our Discord today, chat.fedMint.org if you want to go to where the developers are.
-I try to come pop by the Slack, design Slack every once in a while, but I'm just on the Discord a lot more.
-Tere was an interesting discussion of using biometrics as a, like have some biometric information, encrypt it and store it with the federations.
-Like that's kind of an interesting idea.
+There was an interesting proposal in our Discord today, chat.fedimint.org if you want to go to where the developers are.
+I try to come pop by the design Slack every once in a while, but I'm just on the Discord a lot more.
+There was an interesting discussion have some biometric information, encrypt it and store it with the federations.
+That's kind of an interesting idea.
 There's downsides to that.
 There's kind of a lot of interesting things and you know you could combine two of them or something.
 I was just talking with Tankred today about Photon maybe using something like Photon to store the secret in the cloud.
@@ -510,9 +508,8 @@ Is something like that being considered or is it just going to be like left for 
 Justin Moon: 00:40:01
 
 Yeah so I mean on the server side like each server has a database.
-And that's what basically the what the federation member, the servers send messages back and forth is basically to just ensure they have exactly synchronized database.
+And that's what basically the federation member, the servers send messages back and forth is basically to just ensure they have exactly synchronized database.
 And so with the, these recovery ideas, like sending a shard of your seed to one of these servers, it would just go on their database.
-Right.
 And so that's kind of the interesting thing is like it already has a database.
 And so for certain things like this, backing up of pieces of a seed, right?
 Like you have this new design constraint, like, oh, we could stick it in that database that we've been carefully curating, right?
@@ -548,7 +545,7 @@ Thank you.
 Justin Moon: 00:43:00
 
 It is a great observation though.
-Bitcoin walls do really suck it.
+Bitcoin wallets do really suck it.
 
 ## Checking the status of the mint or proof-of-funds
 
@@ -614,13 +611,14 @@ Justin Moon: 00:47:04
 
 It's a sign of an advanced civilization.
 You can get your gold out.
-Right.
 
 ## Hypothetical: remove some privacy features and add more proof-of-liabilities
 
-But I mean, as I should mention also that like Fetiment is interesting.
+Justin Moon: 00:47:08
+
+But I mean, as I should mention also that like FediMint is interesting.
 Like if you didn't have the private, like if you removed some of the privacy features, you could do much more.
-You could, you could make a better attempt at proving liabilities as well.
+You could make a better attempt at proving liabilities as well.
 And so like, that's something that will be fun to experiment right like could you do just a purely kind of custody optimized thing like optimized for holding as opposed to spending right and so like you could kind of have a savings you could have a fed amount with a savings account and checking account, right?
 The checking account has blinded IOUs where they're indistinguishable.
 Maybe the checking account or the savings account does not have blinded IOUs. It's just plain text IOUs. And so these could be published at any time.
@@ -658,18 +656,17 @@ I mean, I don't know if you remember this old tools like fantastical and cPanel 
 
 Justin Moon: 00:50:35
 
-Yeah I think it'll be diversity right like I think there will be really easy setup hopefully we can get to it like having really easy setups in stuff like umbral, Raspi Blitz, some of these things where people are already running.
+Yeah I think it'll be diversity right like I think there will be really easy setup hopefully we can get to it like having really easy setups in stuff like Umbrel, RaspiBlitz, some of these things where people are already running.
 It's helpful for people who are already running one but it's also like if you want to have like your own self-hosted server it's probably like your own hardware it's probably easier to set that up from scratch and try to attempt it yourself so that's one option another option is like I think it's been very a BC space had a lot of success with like Luna node, right?
 So they built a little series of configuration forms.
 You'd set up a VPN or VPC and then it would fire up a little configure or no, there was like a couple of forms you'd fill out and that would actually fire up the VPC, like the cloud server for you.
-And then, like 10 minutes later, you'd see a little web form at that URL that would be like, okay, initial block downloads happening.
-Right.
+And then, like 10 minutes later, you'd see a little web form at that URL that would be like, okay, initial block download is happening.
 I think something like that would be very successful.
 And it's also nice.
 It's not like there are benefits to not being on AWS for this because you know like a lot of these like Luna node you can just pay with Bitcoin right like you don't have to go through a whole you know maybe it's harder to be censored on something like that some of these niche ones and you know something like AWS and some of these are good too, because it's, people are really familiar with it.
 So I think some federations could have a mix, right?
 Hopefully, someday it can be like people's own hardware, but that's just we don't live in that world quite yet.
-But I think, some of these Bitcoin companies like Start9, Umbral, they're helping us get to that future.
+But I think, some of these Bitcoin companies like Start9, Umbrel, they're helping us get to that future.
 
 ## There can be many FediMints and each can try different design patterns
 
@@ -693,7 +690,7 @@ FediMints don't have to be interoperable on their own.
 They can use lightning to interoperate right so like the different FediMints can be very very diverse as long as they can speak lightning for whatever things are expressible in terms of send and receive or maybe other lightning features eventually.
 Those things can be interoperable between mints, but like you can have a lot of diversity between them, which is really exciting from a design point of view.
 Also from a developer point of view, right?
-Like Bitcoin Core Lightning developers sometimes aren't the happiest folks because you know, it's so slow to get your stuff accepted.
+Like Bitcoin, Core Lightning developers sometimes aren't the happiest folks because you know, it's so slow to get your stuff accepted.
 
 Stephen DeLorme: 00:54:27
 
@@ -720,7 +717,6 @@ Justin Moon: 00:56:04
 
 Totally.
 I think I mean one thing that every single federation will need is they'll need the ability to set up servers.
-Right.
 And so that's like even before like that from a design perspective that would be that flow of how to get the server up and running and how to get it so they're talking to each other.
 And then also how to do the first deposit because in almost every one of these systems, you're going to need to get some Bitcoin in and there's some steps there.
 That would be a really interesting thing to get some design feedback on, because it would be shared by every single thing.
@@ -737,35 +733,34 @@ And then you've got this other class of user which is the actual federation like
 Justin Moon: 00:57:15
 
 Yep.
-So from that point of view you know it's like a little I mean it's like Lightning right Like you need the actual node running first.
-And then, the people, you know, it's, it's complicated.
-It's a, it's a potential failure.
+So from that point of view you know it's like Lightning, you need the actual node running first.
+And then, the people, you know, it's complicated.
+It's a potential failure.
 If it's hard to set up servers, then no one ever gets to the privacy benefits, right?
 Not enough people.
 
 Stephen DeLorme: 00:57:32
 
-And it seems like there's almost a couple of different ways that this user could get get their first Feddy wallet.
+And it seems like there's almost a couple of different ways that this user could get get their first Fedi wallet.
 Like, you know, it could be someone who already holds Bitcoin.
-They're like, I want to deposit some of this with the Mint and get this kind of privacy shield, get my e-Cash tokens, where somebody else could be starting from absolute zero.
+They're like, I want to deposit some of this with the mint and get this kind of privacy shield, get my e-Cash tokens, where somebody else could be starting from absolute zero.
 Someone could say, hey, I want to pay you.
 I want to pay you in e-Cash.
 Is that cool?
 Download this wallet.
 And they're starting from completely zero.
 Maybe they've never even touched Bitcoin or Lightning before in their entire life.
-Maybe maybe they've used, Venmo or something like that.
+Maybe they've used, Venmo or something like that.
 Or maybe this is their first experience with any kind of digital interaction around money to begin with.
 
 Justin Moon: 00:58:16
 
-Yeah, I know there's an interesting point of view, like the, we think where does a circular economy come from?
+Yeah, I know there's an interesting point of view, like, we think where does a circular economy come from?
 Well, it's probably not going to be people buying the money.
-You know, they're probably going to get their hands on the money in a different way.
+They're probably going to get their hands on the money in a different way.
 They're probably going to earn it.
-They're probably going to, maybe it's remittances.
+Maybe it's remittances.
 Maybe it's something else.
-Right.
 But it's probably not going to be buying it.
 I think the circular economies will emerge through actual usage probably.
 And so that's like an interesting thing about this too, is like, if you can get, since it's kind of like naturally like a community local thing like it might you know if you can get the buy-in to actually run one of these keep it up and you know have the interaction between all these people maybe that actually helps form a circular economy as well you know.
@@ -778,8 +773,7 @@ Stephen DeLorme: 00:59:13
 Well this has been so awesome.
 Thank you so much Justin.
 I think we're a little past the hour here.
-So I want to be respectful of Justin's time and kind of formally end this.
-Just yes, that he feels free to go.
+So I want to be respectful of Justin's time and kind of formally end this, just that he feels free to go.
 But if people want to hang out and keep chatting in the channel, please feel free to do so.
 But we'll go ahead and consider this the formal end here.
 And thank you so much, Justin, for taking time to share all this with us.
