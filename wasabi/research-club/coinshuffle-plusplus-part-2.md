@@ -10,7 +10,6 @@ tags:
   - 'cryptography'
 speakers:
   - 'Tim Ruffing'
-  - 'Adam Fiscor'
   - 'Max Hillebrand'
   - 'Adam Ficsor'
 categories:
