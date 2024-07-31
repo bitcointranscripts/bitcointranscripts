@@ -281,19 +281,19 @@ Mike Schmidt: 00:22:47
 
 Maybe we can use this as an opportunity, this sort of, I've given you kind of a general hypothetical of how you approach review, but one thing that you're looking forward to doing now and looking forward to doing more in the coming years, reviewing the 324 and the associated code changes with that.
 And maybe just maybe just to set the stage before we jump into it.
-So currently, all data relayed on the Bitcoin peer-to-peer network is public and peers talk to each other over unencrypted connections and VIP324, its purpose is to solve that potential issue with the ability to have encrypted connections to your peers.
-And so maybe we can dive into, maybe, you know, I think everybody would prefer encrypted communication over unencrypted, but maybe you can get into why in the Bitcoin network, what sorts of vulnerabilities or attacks are available as a result of not speaking to each other in unencrypted connection.
+So currently, all data relayed on the Bitcoin peer-to-peer network is public and peers talk to each other over unencrypted connections and BIP324, its purpose is to solve that potential issue with the ability to have encrypted connections to your peers.
+I think everybody would prefer encrypted communication over unencrypted, but maybe you can get into why in the Bitcoin network, what sorts of vulnerabilities or attacks are available as a result of not speaking to each other in unencrypted connection.
 
 Sebastian Falbesoner: 00:23:56
 
 Yeah, intuitively when I talk about this with like friends or people, they say, okay, but it's a permissionless network anyway.
-Why do we even want to encrypt this if it ends up the transaction end up in a publicly available block anyways right and but it's here it's more about the metadata like even if you transact something then maybe just by watching the traffic, it could be inferred that you're the originator of a transaction, for example.
+Why do we even want to encrypt this if the transaction end up in a publicly available block anyways right and but it's here it's more about the metadata like even if you transact something then maybe just by watching the traffic, it could be inferred that you're the originator of a transaction, for example.
 So it's more about even hiding metadata rather than the public data itself.
 And right now, for example, it's trivial for ISPs to just detect also that you run a Bitcoin node, because all the packets, they start with the same network magic.
-And Therefore, it's just easy to passively detect that you run that.
+And therefore, it's just easy to passively detect that you run that.
 And the packages can also be pampered with.
 So what ISPs could also do, they could selectively just censor single transactions if they wanted to.
-And with the B324 we can even hide the fact that we run a Bitcoin node from the beginning, which is very nice, I think.
+And with the BIP324 we can even hide the fact that we run a Bitcoin node from the beginning, which is very nice, I think.
 
 Mike Schmidt: 00:25:15
 
@@ -303,14 +303,15 @@ Sebastian Falbesoner: 00:25:25
 
 Yes, exactly.
 Because if that wouldn't change, then we don't gain something in that respect, right?
-If everyone runs v2, v2b encryption but would still be on port 8333, then it would still be trivial to figure that out.
+If everyone runs v2-p2p encryption but would still be on port 8333, then it would still be trivial to figure that out.
 But I think that there's also been some changes recently on the network layer that there is no strong preference to connect to 8333 port peers anymore.
-And yeah, what I really found fascinating is this approach of we want to have everything random from the very beginning because there was an earlier proposal by Jonas Schnelli, BIP-151, and with that one you would start out as a V1 P2P encryption and then upgrade so you could negotiate for an encrypted connection.
-But BIP-324 really goes one step further and everything is looks random on the wire from the start.
+And yeah, what I really found fascinating is this approach of we want to have everything random from the very beginning because there was an earlier proposal by Jonas Schnelli, BIP-151, and with that one you would start out as a v1-p2p encryption and then upgrade so you could negotiate for an encrypted connection.
+But BIP324 really goes one step further and everything looks random on the wire from the start.
 
 Mike Schmidt: 00:26:26
 
-So even the initial reaching out to a new peer, There's nothing that says, hey, I want to talk Bitcoin with you that is visible to an eavesdropper.
+So even the initial reaching out to a new peer.
+There's nothing that says, hey, I want to talk Bitcoin with you that is visible to an eavesdropper.
 
 Sebastian Falbesoner: 00:26:42
 
@@ -318,14 +319,13 @@ No, it's not.
 So the very first things that are sent are really, in fact, the public keys to each other for the Diffie-Hellman key exchange.
 So they could both agree on a encryption key or rather set on encryption keys.
 And for that, a new scheme of encoding public keys used.
-This is this Alligator Swift, where Peter Wille, Tim Ruffing, I think did a great work on the, they basically took the idea from a paper from other researchers and put it in a way in the LibSecP library to make it available for us.
+This is this Alligator Swift, where Peter Wille, Tim Ruffing, I think did a great work, they basically took the idea from a paper from other researchers and put it in a way in the LibSecP library to make it available for us.
 And that PR just got merged a few days ago.
 So we see some nice progress there.
 
 Mike Schmidt: 00:27:32
 
-And the next-
-you can't even see that initial public key exchange, that initial key exchange is obfuscated in a way that...
+You can't even see that initial public key exchange, that initial key exchange is obfuscated in a way that...
 So what ways are there then, if you're an eavesdropper on this connection to...
 Is there the frequency of the transmission of information or is there anything that they can key off of?
 
@@ -334,7 +334,7 @@ Sebastian Falbesoner: 00:27:56
 Yeah, what they can always do is still connect to you And because it's still an open permissionless network, so we cannot stop anyone from connecting to us really.
 But it just raises the costs to do attacks.
 And they could still do man-in-the-middle attacks, of course.
-But even for that, something nice is included in the BIP-324, where you have like a session ID that each one of the participants can see locally and they could compare it off-band to find out if they have been man-in-the-middle attacked.
+But even for that, something nice is included in the BIP324, where you have like a session ID that each one of the participants can see locally and they could compare it off-band to find out if they have been man-in-the-middle attacked.
 
 Mike Schmidt: 00:28:33
 
@@ -344,7 +344,7 @@ Essentially repackaging everything.
 
 Sebastian Falbesoner: 00:28:46
 
-Yeah, there is some RPC call, or I think it's an existing RPC call get peer info and for all the V2P2P connections they would just use, they would just show another field called session ID and this ID you can compare to your other node if you wanted to and if those match then you're sure that there is no one.
+Yeah, there is some RPC call, or I think it's an existing RPC call get peer info and for all the v2-p2p connections they would just use, they would just show another field called session ID and this ID you can compare to your other node if you wanted to and if those match then you're sure that there is no one.
 Then you haven't been man-in-the-
 middle attacked.
 
