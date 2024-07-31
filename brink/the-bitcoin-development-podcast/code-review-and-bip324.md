@@ -419,7 +419,7 @@ Which is also something that Bitcoin Core always is happy if we can keep the dep
 
 Mike Schmidt: 00:34:31
 
-So how are you contributing to LibSec-V now?
+So how are you contributing to LibSecp now?
 You got a little bit more familiarity with it.
 You gave us an overview of what it is.
 
@@ -428,7 +428,7 @@ Sebastian Falbesoner: 00:34:38
 Yeah, so it is a project completely written in C, in the C language.
 I think even still sticking to the C89 standard, which is probably widely supported on a huge range of platforms, including small microcontrollers.
 And what it basically includes are functions to just create and verify digital signatures.
-A large part of the most recent SoftFork, the Taproot and the Schnorr signatures, that last part, the Schnorr signatures that has also been implemented in LibSec-B, of course.
+A large part of the most recent SoftFork, the Taproot and the Schnorr signatures, that last part, the Schnorr signatures that has also been implemented in LibSecp, of course.
 And yeah, it's a different world than Bitcoin Core.
 It's so much more low-level.
 Like every math operation is basically a single function called.
@@ -443,8 +443,8 @@ It got 1x so far, I think, so maybe it gets merged soon.
 And I think it's good to also have more review power in LibSecP.
 So my plan would be to also stay there.
 I'm still going in baby steps.
-And Another thing is I realized I looked at the silent payments, which is another nice idea, and that takes also quite intense use of cryptography.
-So I thought, okay, if I want to really give good review, it may make sense to get a little deeper in the LIBSAC-P to at least conceptually understand what's going on behind the scenes.
+And another thing is I realized I looked at the silent payments, which is another nice idea, and that takes also quite intense use of cryptography.
+So I thought, okay, if I want to really give good review, it may make sense to get a little deeper in the Libsecp to at least conceptually understand what's going on behind the scenes.
 
 Mike Schmidt: 00:36:52
 
@@ -455,9 +455,9 @@ I feel like we got a great overview of your journey.
 
 Mike Schmidt: 00:37:15
 
-Another thing I wanted to bring up is another project that you were looking at which is bit 322.
+Another thing I wanted to bring up is another project that you were looking at which is BIP322.
 Oh Generic sign message which allows wallet to sign or partially sign a message for any script which they can conceivably spend.
-And so that means a signed message can be, you can produce a signed message for any script or address that a wallet can potentially be able to spend.
+And so that means a signed message can produce a signed message for any script or address that a wallet can potentially be able to spend.
 And I think right now only pay to public key hash addresses are supported in Bitcoin Core for message signing.
 And so maybe you can talk a little bit about this BIP and this project and what's the latest progress or not progress with that?
 
