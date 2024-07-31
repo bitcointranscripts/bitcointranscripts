@@ -345,8 +345,7 @@ Essentially repackaging everything.
 Sebastian Falbesoner: 00:28:46
 
 Yeah, there is some RPC call, or I think it's an existing RPC call get peer info and for all the v2-p2p connections they would just use, they would just show another field called session ID and this ID you can compare to your other node if you wanted to and if those match then you're sure that there is no one.
-Then you haven't been man-in-the-
-middle attacked.
+Then you haven't been man-in-the-middle attacked.
 
 ## Sebastian's approach to contributing to BIP324 and libsecp256k1
 
@@ -354,7 +353,7 @@ Mike Schmidt: 00:29:12
 
 So I want to take a quick diversion and hearken back to what I was giving you in a generic example of earlier, which is how do you approach a project or a change to the code and figure out how you can add value both as a reviewer and a contributor.
 Maybe we can apply that to this particular project that you have an interest in and are contributing to.
-And so you see Bit324 and maybe you follow along at a high level as a Bitcoin developer for a bit, but then you decide you want to jump in and contribute.
+And so you see BIP324 and maybe you follow along at a high level as a Bitcoin developer for a BIP, but then you decide you want to jump in and contribute.
 So this is a somewhat complicated project, I'd assume.
 So how do you even think about getting started to understand what is going on and figure out how you can provide value there from a reviewer or a contributor side of things?
 
@@ -371,7 +370,7 @@ I remember I listened to the Stefan Livera podcast.
 He had an episode where he invited the Drouf, Peter Wille and Tim Ruffing, where they explained the thing.
 And then you get more and more, you hear more about that topic.
 And also of course Bitcoin Core meetings.
-There was, it was my first Bitcoin Core meeting last year in Atlanta, where this people's also presented.
+It was my first Bitcoin Core meeting last year in Atlanta, where these people's also presented.
 And yeah, and at some point you would just pick some PRs and try to understand them deeper.
 
 Mike Schmidt: 00:31:26
@@ -382,19 +381,18 @@ You familiarize yourself with the topic by reading the BIP and maybe looking at 
 
 Sebastian Falbesoner: 00:31:46
 
-What I first did back then still was maintaining the PRs. So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub PRS and No, I didn't look at the SEC be parts until recently It always was appeared very scary for me all the cryptography and math stuff but I also ended up doing a little review there.
-I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the LibSecP library and he specifically presented the PR 1129, which is the Alligator Swift part.
+What I first did back then still was maintaining the PRs.
+So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub-PRS and no, I didn't look at the SECB parts until recently It always was appeared very scary for me all the cryptography and math stuff but I also ended up doing a little review there.
+I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the LibSecP library and he specifically presented the PR1129, which is the Alligator Swift part.
 So I got a little deeper into that through that.
 
 Mike Schmidt: 00:32:48
 
 And you've been now dabbling in LibSecP?
 Maybe just a quick overview of what is LibSecP other than a little bit intimidating and then...
-Yeah.
 
 Sebastian Falbesoner: 00:32:59
 
-Yeah.
 Yeah.
 So, what every transactions basically consists of to show proof that the one spending a transaction owns the private key of the address where the funds have been sent to, it includes a digital signature.
 And for that digital signature, we have our own library called LIPSACP256K1.
