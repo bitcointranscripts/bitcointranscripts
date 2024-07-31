@@ -504,7 +504,6 @@ Yes,
 
 Sebastian Falbesoner: 00:41:48
 
-okay.
 Yeah, awesome.
 
 Mike Schmidt: 00:41:50
@@ -525,7 +524,7 @@ Sebastian Falbesoner: 00:42:34
 
 I would encourage everyone who is interested in that to just start digging into the codes, don't be shy, ask contributors.
 I think everyone is more than willing to help and yeah if the time comes and you contributed enough, don't also be shy to apply for a grant, for example, at Brink.
-Which, Yeah, that's also, yeah, meeting people is also important, going to events and I enjoyed also the COREdev meetings and yeah, thanks also to Brink for the support of course and more excited than ever for the journey what the future brings.
+Meeting people is also important, going to events and I enjoyed also the Coredev meetings and yeah, thanks also to Brink for the support of course and more excited than ever for the journey what the future brings.
 
 Mike Schmidt: 00:43:24
 
@@ -533,9 +532,8 @@ Well I know that we're excited to renew you for another year.
 Congratulations on all your progress.
 We're looking forward to the next year of even more progress and some of these important projects that you talked about, getting them across the finish line.
 I think it's great to be able to support somebody like you who's contributing in this way.
-So Thank you, Sebastian.
+Thank you, Sebastian.
 
 Sebastian Falbesoner: 00:43:47
 
 Thanks as well.
-Thank you.
