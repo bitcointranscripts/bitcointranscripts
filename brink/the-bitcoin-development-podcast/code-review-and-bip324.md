@@ -66,7 +66,7 @@ There was one by Justin Moon about a Biddle bootcamp, where he like motivated pe
 And with that I thought, okay, let's do that.
 And yeah, then was summer 2019.
 I started with my first pull requests.
-The very first thing I did was just graphing for Todo in capital letters, just to see what is there.
+The very first thing I did was just graphing for to-do in capital letters, just to see what is there.
 At first, of course, getting familiar with the build environment, running the tests and everything.
 Then the first PR got approved, you dig more and more into the code and it became more fun over the time.
 And at that time, you probably remember there was this pandemic shortly after.
@@ -173,7 +173,7 @@ So there are always pull requests welcome of increasing test coverage, which I a
 
 Mike Schmidt: 00:12:15
 
-If we were flipping from testing and some of the review side of things to actually offering new code, there was one PR that you authored, which recently made its way into version Bitcoin Core 25.0, which is PR 25957.
+If we were fping from testing and some of the review side of things to actually offering new code, there was one PR that you authored, which recently made its way into version Bitcoin Core 25.0, which is PR 25957.
 And it has the title of fast rescan with BIP157 block filters for descriptor wallets.
 Maybe you can talk a little bit about, maybe also how you even came into that realm of code from the test framework and why you decided that that PR was important and why it was needed.
 
@@ -395,7 +395,7 @@ Sebastian Falbesoner: 00:32:59
 
 Yeah.
 So, what every transactions basically consists of to show proof that the one spending a transaction owns the private key of the address where the funds have been sent to, it includes a digital signature.
-And for that digital signature, we have our own library called LIPSACP256K1.
+And for that digital signature, we have our own library called libsecp256K1.
 It is named after the curve that has been chosen back then by Satoshi to represent those digital signatures.
 Earlier it was initially OpenSSL has been used but that has been replaced because that had some problems with the malleability like the same signature could be represented by different encodings and also it wasn't very performant, so at some point I think it was Peter Wille, he came up with the idea to write their own library, LibSecB256k1.
 And yeah, that's what we use nowadays.
