@@ -1,23 +1,30 @@
 ---
-title: "Code Review and BIP324"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Sebastian-Falbesoner-on-Code-Review-and-BIP324-e2909ue
-tags: ['libsecp256k1', 'generic-signmessage', 'v2-p2p-transport', 'bitcoin-core']
-speakers: ['Sebastian Falbesoner', 'Mike Schmidt']
+title: 'Code Review and BIP324'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Sebastian-Falbesoner-on-Code-Review-and-BIP324-e2909ue'
+date: '2023-09-06'
+tags:
+  - 'libsecp256k1'
+  - 'generic-signmessage'
+  - 'v2-p2p-transport'
+  - 'bitcoin-core'
+speakers:
+  - 'Sebastian Falbesoner'
+  - 'Mike Schmidt'
 categories: []
-summary: "Sebastian Falbesoner (theStack) and Mike Schmidt talk about Bitcoin Core code review, BIP324, and Sebastian's plans for the next year."
-date: 2023-09-06
+summary: 'Sebastian Falbesoner (theStack) and Mike Schmidt talk about Bitcoin Core code review, BIP324, and Sebastian''s plans for the next year.'
 additional_resources:
--   title: Sebastian's plans for the next year
-    url: https://brink.dev/blog/2023/06/20/bip324/
--   title: https://brink.dev/
-    url: https://brink.dev/
+  - title: 'Sebastian''s plans for the next year'
+    url: 'https://brink.dev/blog/2023/06/20/bip324/'
+  - title: 'https://brink.dev/'
+    url: 'https://brink.dev/'
 ---
 ## Sebastian's journey to Bitcoin development
 
 Mike Schmidt: 00:00:00
 
-I'm sitting down with the stack Sebastian Falbasona Did I pronounce that right?
+I'm sitting down with the stack Sebastian Falbasoner.
+Did I pronounce that right?
 
 Sebastian Falbesoner: 00:00:06
 
@@ -25,22 +32,23 @@ Yes, perfect.
 
 Mike Schmidt: 00:00:08
 
-Yes Alright We're gonna talk a little bit about his grant renewal what he's been working on in the past and what he plans to work on in the future.
+All right.
+We're going talk a little bit about his grant renewal what he's been working on in the past and what he plans to work on in the future.
 So we've awarded Sebastian a year-long grant renewal through Brink.
-Brink is a not-for-profit whose purpose is to support Bitcoin developers and that includes also funding them through our grants program of which Sebastian has been a grantee of BRINC for the last two years and this will be his third year now.
-We fund remote grantees and We also have an office in London where we fund folks and we acquire visas for them to be able to work together in our London office.
+Brink is a not-for-profit whose purpose is to support Bitcoin developers and that includes also funding them through our grants program of which Sebastian has been a grantee of Brink for the last two years and this will be his third year now.
+We fund remote grantees and we also have an office in London where we fund folks and we acquire visas for them to be able to work together in our London office.
 Sebastian is one of our remote grantees and he's also a little bit different in that he is a part-time grantee.
 We can get into that potentially in one of our future questions.
 But well, first of all, congratulations, Sebastian.
 I think by everyone's account, your work is stellar.
 The grant committee agreed.
 Some of the developers that we talked to on the project, really value your feedback and your review.
-So we're honored that you want to continue to be a Brinke.
+So we're honored that you want to continue to be a Brinkie.
 
 Sebastian Falbesoner: 00:01:23
 
 Yeah, thanks.
-Very happy to be a Brinke for another year.
+Very happy to be a Brinkie for another year.
 It's been an exciting journey so far.
 
 Mike Schmidt: 00:01:30
@@ -51,16 +59,16 @@ What's your development journey been like so far?
 
 Sebastian Falbesoner: 00:01:41
 
-I will start before Brink because Everyone has to make some contributions first, right, to get into some grants.
-So I think my very first time that I actually wanted to do something on the Bitcoin source code and contributing was in 2019, summer 2019.
-I visited one year before the Baltic Henni Badger, that is a conference in, I think it's Latvia, and there was very inspiring talks.
+I will start before Brink because everyone has to make some contributions first, right, to get into some grants.
+So I think my very first time that I actually wanted to do something on the Bitcoin source code and contributing was in summer 2019.
+I visited one year before the Baltic Honeybadger, that is a conference in, I think it's Latvia, and there was very inspiring talks.
 There was one by Justin Moon about a Biddle bootcamp, where he like motivated people to contribute to Bitcoin Core.
 And with that I thought, okay, let's do that.
 And yeah, then was summer 2019.
 I started with my first pull requests.
-Like The very first thing I did was just graphing for Todo in capital letters, just to see what is there.
+The very first thing I did was just graphing for Todo in capital letters, just to see what is there.
 At first, of course, getting familiar with the build environment, running the tests and everything.
-And Yeah, then the first PR got approved, you dig more and more into the code and it became more fun over the time.
+Then the first PR got approved, you dig more and more into the code and it became more fun over the time.
 And at that time, you probably remember there was this pandemic shortly after.
 So I had a lot of time beginning of 2020 And I, yeah, we'll also talk about that, but I mostly got into the test framework where I contributed the most.
 And at that time, I also applied for the Chaincode residency.
