@@ -180,14 +180,14 @@ Maybe you can talk a little bit about, maybe also how you even came into that re
 Sebastian Falbesoner: 00:12:58
 
 Yeah, sure.
-So that was also an interesting task for me because I also, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falke like three years earlier but the time back then was different, the scriptor wallets were not as widespread yet, it was a little more difficult to figure out what a script-bub-keyzer wallet has.
-And yeah, I actually did some wallet work before, more like small refactorings, and in the course of test writing I also learned a bit how an actual wallet would work.
+So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the scriptor wallets were not as widespread yet, it was a little more difficult to figure out what a script-bub-keyzer wallet has.
+I actually did some wallet work before, more like small refactorings, and in the course of test writing I also learned a bit how an actual wallet would work.
 And the idea of the PR is quite simple, so basically now when you restore a backup, for example from your seed words, not in Bitcoin Core.
 Bitcoin Core doesn't support seed words, but let's say you just restore a backup, then the first thing the wallet has to do is look up all the funds from the past, like everything that you received in the past or you sent because you want to see your full balance, right?
 So even if something happened deeply in the past and you want to have the transaction history again.
 And in order to do that, what the wallet has to do, it really has to inspect every single transaction of every block and from each of those transactions, every input, every output, and it goes through that list and basically checks always, is this spent output or is this received output relevant for me?
 Yes, no.
-And this is of course quite time consuming and there is this nice thing called block filters which basically let you easily answer the question, is this block relevant for me in terms of a given set of output scripts?
+And this is of course quite time consuming and there is this nice thing called block filters which basically let you easily answer the question, is this block relevant for me in terms of a given set of output scripts.
 So you create your filter sets, like that is the collection of all the scripts that you're interested in.
 And then there is a matching function with that block filter and it can tell you easily if there is at least one of the relevant scripts in that block.
 And what we do in, what I did in the PR is we take use of those block filters if they're available because we don't create them by default.
@@ -200,8 +200,8 @@ Of course it depends heavily how many output scripts you have and so on, but it 
 Mike Schmidt: 00:15:50
 
 Yeah that's great.
-I think folks may be familiar with BIP 157 in terms of like light client usage for for querying for relevant transactions but it sounds like you've also used the similar block filter functionality just internally without, you're not querying another node, right?
-You're querying your own.
+I think folks may be familiar with BIP157 in terms of like light client usage for for querying for relevant transactions but it sounds like you've also used the similar block filter functionality just internally, you're not querying another node, right?
+You're querying your own node.
 
 Sebastian Falbesoner: 00:16:12
 
@@ -211,47 +211,48 @@ If that option is turned on, they're just really created on the go, whenever a n
 And another thing which uses that is the ScanBlocks RPC by James O'Byrne.
 I'm always not sure how to pronounce his last name.
 I think that one came in one release earlier, if I'm not mistaken, 24.
-And that one also, that is an RPC call though, and it also, you can pass a set of output scripts that you're interested in and it would just return you all the blocks that are matching.
+That is an RPC call though, and also, you can pass a set of output scripts that you're interested in and it would just return you all the blocks that are matching.
 So it's kind of nice that we can use that to make the the life of users easier, hopefully.
 
 ## The scarcity and importance of code review
 
 Mike Schmidt: 00:17:05
 
-One thing that I got feedback on about your work is from a prominent Bitcoin Core dev who said, quote, the stacks review matters.
+One thing that I got feedback on about your work is from a prominent Bitcoin Core dev who said, quote, ''the stacks review matters.''
 The stacks review is valuable, something along those lines.
-And so I think you've done quite a bit of review and maybe You can comment on that in the context of How do you think about how much time you spend authoring new code and PRs versus review?
+And so I think you've done quite a bit of review and maybe you can comment on that in the context of how do you think about how much time you spend authoring new code and PRs versus review?
 And why do you think that this person said that your review counts?
 
 Sebastian Falbesoner: 00:17:47
 
 To your first question, I think the review time I spend is more than authoring time.
-I would even love to spend more time reviewing, because I think it's the most, it's the resource that is most missing in Bitcoin Core actually.
+I would even love to spend more time reviewing, because I think it's the resource that is most missing in Bitcoin Core actually.
 Like it would be great if we have more review power.
-And yeah, according to what person's reviews counts, I think it's also kind of a proof of work system in Bitcoin Core, Not specifically regarding me, but in general, if you over the time give review comments that are helpful or are considered helpful by others, then of course you're getting taken more seriously.
-Seriously and what I, I think my review style has been also inspired by other people from the top of my head.
-I could name Ross Janowski who give.
-Very great detailed review comments and that's inspired someone, right?
+And yeah, according to what person's reviews counts, I think it's also kind of a proof of work system in Bitcoin Core.
+Not specifically regarding me, but in general, if you over the time give review comments that are helpful or are considered helpful by others, then of course you're getting taken more seriously.
+I think my review style has been also inspired by other people from the top of my head.
+I could name Ross Janowski who give very great detailed review comments and that's inspired someone, right?
 To be detailed and whenever testing some PR like really thinking what could go wrong.
 How could I trigger some code path that is not intended or something like that.
-And yeah, I would, the nice thing about reviewing is that you can do it offline.
-Like for example, recently for a BIP 324 PR, that one was about the test framework.
+The nice thing about reviewing is that you can do it offline.
+Like for example, recently for a BIP324 PR, that one was about the test framework.
 I basically printed out the code and read it being in the pool.
 
 Mike Schmidt: 00:19:22
 
-Oh, wow.
+Wow.
 
 Sebastian Falbesoner: 00:19:23
 
-Or not in the pool, but outside.
-And I think it's sometimes good to be focused, to not even have the computer on and just, that obviously works more better with conceptual review, like for bibs or just fresh code, if you have a PR that changes like 10 different files, then that is not a way to go, but very often I, I also do more and more offline review with pen and paper, which may sound odd or old school, but for me it works.
+Not in the pool, but outside.
+And I think it's sometimes good to be focused, to not even have the computer on and just, that obviously works more better with conceptual review, like for BIPs or just fresh code, if you have a PR that changes like 10 different files, then that is not a way to go, but very often, I also do more and more offline review with pen and paper, which may sound odd or old school, but for me it works.
 
 Mike Schmidt: 00:19:57
 
-You mentioned you personally are inspired by seeing valuable in-depth detailed feedback, But I suppose in order for you to give that sort of feedback, you do need to have done that proof of work, which is being able to understand what is being changed or added, and also the context in which it's being changed or added.
-And so when you see something or a project or even just a single QR that maybe you're somewhat familiar with but not in depth, like how do you approach that trying to figure out where you can add value in terms of review?
-Like How do you think about that?
+You mentioned you personally are inspired by seeing valuable in-depth detailed feedback.
+But I suppose in order for you to give that sort of feedback, you do need to have done that proof of work, which is being able to understand what is being changed or added, and also the context in which it's being changed or added.
+And so when you see something or a project or even just a single PR that maybe you're somewhat familiar with but not in depth, like how do you approach that trying to figure out where you can add value in terms of review?
+Like how do you think about that?
 And I'm just thinking in the context of somebody else who's doing review now and maybe they think they're doing good review and maybe there's room for improvement in some manner, trying to get an insight into what you're doing.
 
 Sebastian Falbesoner: 00:21:01
@@ -261,7 +262,8 @@ Do you mean like how to prioritize what to review, how to best use the resources
 Mike Schmidt: 00:21:13
 
 Yeah, I guess maybe a combination thereof.
-A topic that you're maybe familiar with you want to provide insightful feedback but in order to do that you need to acquire the knowledge to even know what is valuable feedback is it really just a matter of spending the time and doing the work and and jumping into the intricacies of the proposed changes and its potential effects.
+A topic that you're maybe familiar with you want to provide insightful feedback but in order to do that you need to acquire the knowledge to even know what is valuable feedback.
+Is it really just a matter of spending the time and doing the work and and jumping into the intricacies of the proposed changes and its potential effects?
 Do you spend a lot of time doing that before you even write a word of review or do you sort of take a different approach to it?
 
 Sebastian Falbesoner: 00:21:47
@@ -270,7 +272,7 @@ Yeah, it always depends on what kind of review it is.
 There are these small things called nits where you just propose to change code styles and stuff which are often thrown the palm because those are not like affecting like the deep logic of PR.
 But what I definitely do is first check out the PR locally, play around with it, maybe try to break it.
 I think when you work a little bit for PR, then you for some time, then it's easier to give valuable feedback compared to if you just look at it online on GitHub maybe.
-And So it's often, yeah, actually using it, try to do something useful with it, or even sometimes try to do something that is not intended with it, just to see what could go wrong in the worst case.
+Actually using it, try to do something useful with it, or even sometimes try to do something that is not intended with it, just to see what could go wrong in the worst case.
 And yeah, but I guess everyone has a very individual review style.
 
 ## Benefits of BIP324, Version 2 P2P Encrypted Transport Protocol
