@@ -471,14 +471,15 @@ And I would find it very useful.
 I reviewed it also last year, and I think the code is not that complicated in the end.
 But unfortunately, it didn't get much traction.
 I think there wasn't much activity for the last few months at least, so it would be nice to revive that.
-And I had the idea to maybe give a Review club session for that to attract more people to take a look at it.
+And I had the idea to maybe give a review club session for that to attract more people to take a look at it.
 
 Mike Schmidt: 00:39:20
 
-That would be Code is in I mean is it in it just needs to be reviewed and after doesn't need significant amount of The code is basically fine I didn't see any huge problems or blockers.
+That would be code is in I mean is it in it just needs to be reviewed and after doesn't need significant amount of...
 
 Sebastian Falbesoner: 00:39:38
 
+The code is basically fine I didn't see any huge problems or blockers.
 I was basically already giving an egg and there was only some nits left, which are also fine if they're not addressed.
 So, but of course it would be definitely good to have more eyes on it.
 
@@ -490,8 +491,8 @@ But what are some of the other use cases for SignMessage?
 
 Sebastian Falbesoner: 00:40:20
 
-I don't know what private people use it for, but what it is, it's sometimes used by exchanges, I think, that they want to have a proof before you send funds to somewhere to actually prove to them that you actually own the private key corresponding to an address which it depends on how you look at it it could be seen as the customers are protected.
-On the other thing, I think there was a bit of backlash because with this travel rule thing, I think there was some, even some discussion to completely remove it in order to avoid that.
+I don't know what private people use it for, but what it is, it's sometimes used by exchanges, I think, that they want to have a proof before you send funds to somewhere to actually prove to them that you actually own the private key corresponding to an address which depends on how you look at it it could be seen as the customers are protected.
+On the other thing, I think there was a bit of backlash because with this travel rule thing, I think there was even some discussion to completely remove it in order to avoid that.
 There was an issue opened recently on the Bitcoin Core repeat to completely remove it.
 And I think that was motivated out of, I'm not familiar with the concrete thing, but I think there was some opinions like this could be used to implement the travel rule or something like that.
 It felt a bit rushed to me to just remove a call that usually seems useful just out of fear that this could be used in the wrong way?
