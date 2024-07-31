@@ -70,7 +70,8 @@ The very first thing I did was just graphing for Todo in capital letters, just t
 At first, of course, getting familiar with the build environment, running the tests and everything.
 Then the first PR got approved, you dig more and more into the code and it became more fun over the time.
 And at that time, you probably remember there was this pandemic shortly after.
-So I had a lot of time beginning of 2020 And I, yeah, we'll also talk about that, but I mostly got into the test framework where I contributed the most.
+So I had a lot of time beginning of 2020.
+We'll also talk about that, but I mostly got into the test framework where I contributed the most.
 And at that time, I also applied for the Chaincode residency.
 I had a talk with Jonas and John Newbery, which I first saw there.
 I think he was the one being responsible for checking my submission.
@@ -92,19 +93,19 @@ Mike Schmidt: 00:04:05
 But it still is part time for you.
 And so I'm curious about how you think about that.
 There may be other folks who are poking around the code base, maybe contributing here and there, and maybe would entertain being a full-time developer, but maybe would also be curious about how one could be a part-time developer.
-So maybe for a time situation, How do you find that that works?
+So maybe for a time situation, how do you find that that works?
 
 Sebastian Falbesoner: 00:04:32
 
 For me personally, it works quite well.
 Of course, it depends on your personal circumstances, how much energy and effort the other job takes.
 In my case, I can easily fulfill both and they're different enough that they're both fun.
-So as a big background, as a small background, the other job, I'm working as an embedded systems engineer.
+So as a small background, the other job, I'm working as an embedded systems engineer.
 So I'm basically responsible for crafting together embedded Linux distribution.
 And that involves also tinkering with hardware and I also like that.
-And yeah, for me, I still have to go to shift long term full time into Bitcoin core development.
+I still have to go to shift long term full time into Bitcoin core development.
 I think what stops me is that I'm not the type of personality who would enjoy 100% remote work.
-So either I move to London to join the other brinkies to the office or what would be my wish that there would be other contributors in Vienna where I live that do have some spaces there.
+So either I move to London to join the other Brinkies to the office or what would be my wish that there would be other contributors in Vienna where I live that do have some spaces there.
 It would be nice to have one or two people to hang out at an office to discuss ideas.
 So that is for me the main reason basically that I still want to go into some office have real talk.
 I mean there is ideas that you're going to shared offices, but yeah, I would love to work with people together physically on the same project.
@@ -113,7 +114,7 @@ Yeah.
 Mike Schmidt: 00:05:55
 
 Yeah, that was something we heard from other grantees previously, which is why we have a London office and try to get people there if they want to participate in person.
-Obviously, there's more and more Bitcoin developers every day, but in terms of folks who are really experts, you know, there's not many of them and they're scattered amongst the globe.
+Obviously, there's more and more Bitcoin developers every day, but in terms of folks who are really experts, there's not many of them and they're scattered amongst the globe.
 And so to be able to have an in-person way to collaborate with people.
 I know when I've been in the London office and visited, there's a lot of just kind of kismet or things that somebody is working on that even if they're on a different part of the code base they can have a question for somebody and there's some good collaboration that goes on there and so we're happy to facilitate that if you can drum up the local community otherwise maybe you're remote for an hour we can convince you to come and stuff.
 You mentioned you sort of got into building the Bitcoin core code base and grepping for to-dos that could be something to work on.
@@ -126,16 +127,17 @@ So I guess maybe first we can, for the audience, maybe just provide an overview.
 Mike Schmidt: 00:07:27
 
 What is the test framework?
-And second, what was wrong with it that you had to spend time improving it.
+And second, what was wrong with it that you had to spend time improving it?
 
 Sebastian Falbesoner: 00:07:34
 
 Yeah, as a side note, also in addition to prepping for Jadus, there was a thing like labels could first issue back then and many of them were also test related.
-There are not that many now, Maybe that would also be a nice thing if contributors, maintainers could think more about what kind of issues would bear to attract new talent.
-And yeah, to the question of test frameworks, So what we have is basically a framework where we spin up several Bitcoin core nodes that can communicate to each other for the sake of running tests.
+There are not that many now, maybe that would also be a nice thing if contributors, maintainers could think more about what kind of issues would bear to attract new talent.
+To the question of test frameworks.
+So what we have is basically a framework where we spin up several Bitcoin core nodes that can communicate to each other for the sake of running tests.
 So this is written in Python like an interpreter language which is kind of a nice choice for that.
 And basically we have our own small client implementation, the test node, and those are running on rack tests, that means they're not on the real Bitcoin network, of course.
-And yeah, what we mostly do there is basically we do the things that a user would do, running RPC calls, checking that the results are what they expected, what is expected.
+What we mostly do there is basically we do the things that a user would do, running RPC calls, checking that the results are what is expected.
 As a developer, I think of the functional test as a documentation even.
 Whenever I look for something that I'm not familiar with, I first look at the functional tests because those tests are run basically daily, several times on the continuous integration.
 So it is kind of a truth what happens there.
@@ -144,20 +146,18 @@ I wouldn't say there was anything substantially wrong, but there is always thing
 For example, when I started many of the tests, they needed to create output scripts, like for target addresses where you send the coins to.
 And in order to do that, they would just manually push together the bare opcode of pay-to-public-key hash scripts and so on.
 So one of my PRs was to just create some helpers that you just say p2 bkh script and you pass the public key and the test reader then doesn't have to bother with these bare op scripts, which is maybe interesting but not in the context of a test that does something completely unrelated.
-And there are many, it's more like making the life of the test writer and also the reader, not having to care about all those unnecessary churn easier.
+It's more like making the life of the test writer and also the reader, not having to care about all those unnecessary churn easier.
 Another example is the mini wallet.
 So we have our own small wallet implementation in the test framework and there was a huge issue for letting the functional tests use that in order to not depend on Bitcoin Core's wallet anymore, because the long-term goal is to split those apart, so the wallet should be a separate process.
 Right now, everything is entangled in one huge binary.
 I think Russ Yanofsky has a PR open for the separation of that.
-So it's, yeah, most of the work I did was mostly to, to get the tests on point that they don't include stuff that are not supposed to test.
-And yeah.
+Most of the work I did was mostly to get the tests on point that they don't include stuff that are not supposed to test.
 
 Mike Schmidt: 00:10:59
 
-I can echo your sentiment about the test framework being a good, approachable way to start interacting with the Bitcoin Core code base in that we had a, for myself personally, we put together the Bitcoin Optech workshop that was doing taproot before taproot was activated.
-Workshop that you was doing before Taproot was activated.
+I can echo your sentiment about the test framework being a good, approachable way to start interacting with the Bitcoin Core code base in that, for myself personally, we put together the Bitcoin Optech workshop that was doing Taproot before Taproot was activated.
 So there's a modified Bitcoin core instance.
-And we had, we built the workshop that we did for Taproot using the test framework.
+We built the workshop that we did for Taproot using the test framework.
 And I think, yes, it's much more approachable to start interacting and doing things when you can spin up some nodes and start mining and sending bitcoins around.
 
 Sebastian Falbesoner: 00:11:44
@@ -165,7 +165,7 @@ Sebastian Falbesoner: 00:11:44
 And that gives you a good understanding what's what's actually happens, right?
 You start from zero and then you have to think about, okay, what do I have to do to get some coins?
 Obviously I have to mine some first and yeah, it is.
-I would, everyone that is really new to the code base, I would recommend to look at the functional tests.
+Everyone that is really new to the code base, I would recommend to look at the functional tests.
 There is also many low-hanging fruits, I think, still in the code base of code that is not tested yet.
 So there are always pull requests welcome of increasing test coverage, which I also did quite a lot.
 
@@ -174,8 +174,8 @@ So there are always pull requests welcome of increasing test coverage, which I a
 Mike Schmidt: 00:12:15
 
 If we were flipping from testing and some of the review side of things to actually offering new code, there was one PR that you authored, which recently made its way into version Bitcoin Core 25.0, which is PR 25957.
-And it has the title of fast rescan with BIP 157 block filters for descriptor wallets.
-Maybe you can talk a little bit about how you, maybe also how you even came into that realm of code from the test framework and why you decided that that PR was important and why it was needed.
+And it has the title of fast rescan with BIP157 block filters for descriptor wallets.
+Maybe you can talk a little bit about, maybe also how you even came into that realm of code from the test framework and why you decided that that PR was important and why it was needed.
 
 Sebastian Falbesoner: 00:12:58
 
