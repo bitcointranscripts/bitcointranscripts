@@ -505,7 +505,7 @@ Can you still do Lightning?
 Tadge Dryja: 00:17:18
 
 It's like, well, you need set time duration channels.
-What if we don't have OP_CSV, things like that.
+What if we don't have `OP_CSV`, things like that.
 
 Mark Erhadt: 00:17:25
 
@@ -522,7 +522,7 @@ So if your transaction gets malleated-
 
 Tadge Dryja: 00:17:45
 
-You could put like a OP_CLTV script, right?
+You could put like a `OP_CLTV` script, right?
 So it's two of two multi-sig, or after a week, it all goes back to the person who funded it.
 So now your channel can only last a week.
 And that was similar to, I think with, it's not the same.
@@ -892,7 +892,7 @@ Yeah, So having those kind of speed up.
 
 Tadge Dryja: 00:33:19
 
-So L2 basically needs SIGHASH any pre-vout, which came from SIGHASH no input, which I think I introduced like a million years ago on IRC.
+So eltoo basically needs `SIGHASH_ANYPREVOUT`, which came from `SIGHASH_NOINPUT`, which I think I introduced like a million years ago on IRC.
 And actually, that was my idea instead of SegWit as a malleability fix.
 Like, hey, if you're not signing the input txid, you don't care if it's modified.
 You know, the signature still works.
