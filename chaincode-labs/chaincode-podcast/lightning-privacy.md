@@ -47,21 +47,21 @@ It reminds me of the conversation about end-to-end encryption, like the companie
 I think we should aim for even more ambitious target to make it private even from the owners or from the operators of this whole garden.
 This is what peer-to-peer protocols are about.
 
-Cara Lee: 00:00:42
+Caralie: 00:00:42
 
 Hi everyone, welcome to the Chaincode Podcast.
-My name is Cara Lee and I am very happy to be back sitting here with Jonas and Merch.
+My name is Caralie and I am very happy to be back sitting here with Jonas and Murch.
 Hi guys.
 
 Jonas: 00:00:49
 
-Hey Cara Lee, welcome back.
+Hey Caralie, welcome back.
 
 Mark Erhardt: 00:00:50
 
 Hey there.
 
-Cara Lee: 00:00:51
+Caralie: 00:00:51
 
 Thank you.
 It's been a long time.
@@ -78,20 +78,20 @@ Jonas: 00:01:14
 So yeah, we'll talk about his research and also just sort of get into the weeds on Lightning and privacy.
 And we haven't done a Lightning episode for a while, so it's hard to have an expert back on.
 
-Cara Lee: 00:01:24
+Caralie: 00:01:24
 
 Nice.
 Well, I look forward to listening.
 
-Jonas: 00:01:25
+Mark Erhardt: 00:01:25
 
 Hi Jonas.
 
-Mark Erhardt: 00:01:29
-
-Hey, Merch.
-
 Jonas: 00:01:29
+
+Hey, Murch.
+
+Mark Erhardt: 00:01:29
 
 What are we doing today?
 
@@ -184,9 +184,9 @@ And in terms of Bitcoin, there has been lots of research about Bitcoin privacy s
 
 
 People have been writing about clustering transactions and labeling transaction clusters.
-And there are huge companies like Genelysis built on top of this premise that monetize on this expertise and sell basically the service of de-anonymizing users.
+And there are huge companies like Chainalysis built on top of this premise that monetize on this expertise and sell basically the service of de-anonymizing users.
 Bitcoin privacy on layer one is kind of more or less understood.
-We understand what's bad about this and it can be to some extent improved using techniques like mixing, coin joins and so on.
+We understand what's bad about this and it can be to some extent improved using techniques like mixing, coinjoins and so on.
 But with Lightning, we have a different set of tradeoffs, a different system.
 I see a huge potential here for privacy because Lightning is a layer two network.
 And as I explained before, payments go through a path of nodes from the center to potentially some intermediary nodes and to the receiver.
@@ -280,7 +280,7 @@ Jonas: 00:16:35
 
 This is where, again, we start getting into Taproot and some other pieces of revealing more information than you might otherwise.
 Like a noob user might imagine, based on reputation alone, that Lightning is much more private.
-But essentially this all ends up on-chain.
+But essentially this all ends up onchain.
 And so when you have a balance that ends up on-chain, the timing and the...
 What happens in the black box of sending lightning payments seems like that should be private.
 But at the end of the day, it all ends up in a transparent way on the chain.
@@ -347,7 +347,7 @@ We'll have to put it in the show nodes.
 Mark Erhardt: 00:20:57
 
 Okay, but what I was trying to get at was, it can actually be dangerous for users to assume that there's more privacy than there is.
-So I think that maybe got some people into trouble before with on-chain payments where they maybe were, I don't know, maybe a more benign example would be some women rights group in a country where that sort of thing is not allowed, receiving donations from abroad and thinking it's super private but it ends up not being as private as they think.
+So I think that maybe got some people into trouble before with onchain payments where they maybe were, I don't know, maybe a more benign example would be some women rights group in a country where that sort of thing is not allowed, receiving donations from abroad and thinking it's super private but it ends up not being as private as they think.
 But so not only do we have to try to make it as private as possible, but we also have to be open about where it actually fails these promises so that people don't get misled.
 
 Jonas: 00:21:46
@@ -389,10 +389,10 @@ We may have preferred kind of mesh-like topology, everyone connecting to their n
 But to be fair, I don't believe this is economically viable.
 And there are clear economic advantages to having kind of a hub-and-spoke-ish model where Lightning Service Providers or companies that are professional operators in the space, establish large nodes and provide good quality of service, good liquidity, and so on and so forth.
 So I think we should be designing the protocol, keeping in mind that this is the likely organic evolution of the network.
+It will be conceptualized.
 
 Jonas: 00:25:06
 
-It will be conceptualized.
 But can't you both have the idea of this hub-and-spoke topology for people that need it, and then also the interconnectivity in a mesh, more private, more beneficial for edge nodes, kind of topology for other channels that you're establishing?
 
 ## LNBIG booth in El Salvador
@@ -416,7 +416,7 @@ With no one behind the booth because they're anonymous.
 
 Jonas: 00:26:18
 
-I didn't I didn't see anybody there.
+I didn't see anybody there.
 But it was like there was a banner and it was just for context.
 Yeah, market maker on Lightning.
 
@@ -596,7 +596,7 @@ That seems like a legitimate use.
 I'm wondering whether if everybody did that, that would lock up a lot of capacity in the network already and reduce the routing capacity for others.
 But The mischievous use would be, of course, to try to reduce the financial privacy of everyone and to learn the exact balances of channels and to perhaps even pinpoint who pays whom.
 And that certainly would require an amount of probing that if, say, there's multiple different actors that try to probe the whole Lightning network, it would just result in a cacophony of failing payments.
-So if we actually discretize our response to this, sure, we limit how much can be routed through us, but we might actually reduce the amount of probing that goes on and therefore make all the noise that comes with people trying to observe us much less and make Llightning more useful.
+So if we actually discretize our response to this, sure, we limit how much can be routed through us, but we might actually reduce the amount of probing that goes on and therefore make all the noise that comes with people trying to observe us much less and make Lightning more useful.
 So here's my counter.
 
 Sergei Tikhomirov: 00:42:26
@@ -617,8 +617,8 @@ And I'm talking about things like upfront payments or things like some kind of r
 This long we are saying that a future that I want to avoid for Lightning would be that everything is KYC, everything is like...
 To open a channel to a large node, you have to prove who you are.
 And the nodes have a very valid justification for that.
-They would say, okay, if you don't, if you don't denonymize yourself up front, then you could attack us, or you can forward some probes or jams or whatever malicious traffic through your node.
-And because of the on routing, we don't know whether it's you, whether it's someone else.
+They would say, okay, if you don't, if you don't denonymize yourself upfront, then you could attack us, or you can forward some probes or jams or whatever malicious traffic through your node.
+And because of the onion routing, we don't know whether it's you, whether it's someone else.
 So please be responsible for the traffic that goes through you.
 And we only want to open connections to trusted peers.
 
@@ -674,7 +674,7 @@ I would hope so.
 
 Mark Erhardt: 00:48:49
 
-Yeah, for example, with multi-hub and PTLCs, you can have different relationships and like multi-hub payments that are not correlatable except for like the recipient.
+Yeah, for example, with multi-hub and PTLCs, you can have different relationships and like multi-hop payments that are not correlatable except for like the recipient.
 
 ## Hub-and-spoke terminology and aviation analogy
 
@@ -812,7 +812,7 @@ I'm not strictly a Bitcoin maximalist.
 I also have my interest outside of the Bitcoin space, in other like blockchain stuff.
 But Bitcoin is absolutely unique in that it has a very clear mission.
 It has a very clear vision.
-We want to implement basically digitally native money that is a political, that doesn't depend on any subjective decisions of any particular person or group of people.
+We want to implement basically digitally native money that is apolitical, that doesn't depend on any subjective decisions of any particular person or group of people.
 And I think this mission is important.
 I think Bitcoin has a very high chance of achieving it, at least to a large extent.
 And this is what makes me excited and what makes me want to work on.
@@ -850,7 +850,7 @@ Or better yet, you can just be Sipa and just do both.
 Talk to yourself.
 Be fine.
 
-Cara Lee: 00:59:15
+Caralie: 00:59:15
 
 Thank you for joining us, Sergei, and excited to have you on the podcast here and have you at Chaincode.
 
@@ -870,7 +870,7 @@ Sergei Tikhomirov: 00:59:29
 Thanks a lot for the questions.
 It was fun.
 
-Cara Lee: 00:59:36
+Caralie: 00:59:36
 
 Well, that was a fascinating conversation.
 
@@ -886,6 +886,6 @@ That's why Sergei's at Chaincode.
 So yeah, good episode.
 Excited to do more.
 
-Cara Lee: 01:00:16
+Caralie: 01:00:16
 
 Yeah, thanks everyone.
