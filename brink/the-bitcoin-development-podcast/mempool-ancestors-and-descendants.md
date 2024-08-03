@@ -382,7 +382,7 @@ Gloria Zhao: 00:12:38
 
 Well, intuitively it seems like, okay, we want to mine by ancestor score, so why don't we also evict by ancestor score?
 But you can have a low ancestor score yet a very high fee child, for example.
-So like the most concrete example would be ABC is a chain where C spends B and B spends A, and A has a very low fee.
+So like the most concrete example would be A,B,C is a chain where C spends B and B spends A, and A has a very low fee.
 I don't know, maybe B has a medium fee and C has an extremely high fee.
 So C has a very high ancestor score.
 
@@ -502,7 +502,7 @@ B comes up and is told, well, you're spending outputs that don't exist.
 Gloria Zhao: 00:18:05
 
 Yeah.
-And someone asked me a very good question of like, ''why don't we look at the transaction candidates in order of their fee rate?''
+And someone asked me a very good question of like, "why don't we look at the transaction candidates in order of their fee rate?"
 And the answer to that is, well, you don't know the fee rate until you have all of the information.
 So in Bitcoin transactions, you don't include the amount in the inputs.
 You only include the amount in the outputs.
