@@ -200,7 +200,7 @@ So for example, what they often do is that you guess a slot randomly.
 Say we have a thousand slots available and there are three users, and then every user guesses a random slot.
 And this kind of works in practice, but it's pretty annoying because now instead of running three DC-nets, we need to run a thousand DC-nets.
 So we need a lot more communication.
-And Moreover, even like with a thousand, it could be that Alice and Bob both select the same slot and then, let's say they both select slot `m`, then in slot `m` we would have not `m1` or `m2`, but we actually would have `m1+ m2`.
+And Moreover, even like with a thousand, it could be that Alice and Bob both select the same slot and then, let's say they both select slot `m`, then in slot `m` we would have not `m1` or `m2`, but we actually would have `m1 + m2`.
 And this is just not the result that we want.
 So this is not great.
 
@@ -229,7 +229,7 @@ Because the whole point is we don't want to know who is who is
 
 Tim Ruffing: 00:18:35
 
-right So I mean functionally yes but like The problem is we we also like the peers here want anonymity even against each other, right?
+right So I mean functionally yes but like The problem is we also like the peers here want anonymity even against each other, right?
 So like if everybody in the shuffling knows that like if Alice knows that Bob has the first slot, then Bob can't get the anonymity because whatever message appears in the first slot it will be Bob's.
 
 Adam Ficsor: 00:19:05
@@ -330,14 +330,7 @@ When we're doing sums, are we doing sums over a finite field or XOR sums?
 Tim Ruffing: 00:24:37
 
 Yes, we're doing sums over finite fields.
-I think this is...
-Thanks for reminding me.
-I think this is now the...
-Not yet, but like...
-Yeah, we maybe click next.
-Sorry.
-Now, not yet, but like, yeah, maybe click next.
-Sorry.
+
 
 Adam Ficsor: 00:25:03
 
@@ -379,7 +372,7 @@ Tim Ruffing: 00:29:07
 
 And, well, this may sound like a bad idea, but let me explain why this actually works.
 And to understand why this makes sense, we need to have a look at the flowchart of the CoinShuffle run.
-So the first thing we do, like everybody generates the fresh Bitcoin address, this is gonna be the output in the coin transaction on the right side and it will be our message in the peer-to-peer mixing protocol.
+So the first thing we do, like everybody generates the fresh Bitcoin address, this is gonna be the output in the coinjoin transaction on the right side and it will be our message in the peer-to-peer mixing protocol.
 Then, peers do key exchanges.
 They run the Diffie–Hellman key exchange.
 I don't need to explain you how it works.
@@ -525,7 +518,7 @@ Tim Ruffing: 00:42:41
 
 So if we look at features of peer-to-peer mixing protocols, I've already told you they should provide anonymity, they should provide termination.
 And now if we add support for fixed messages as a third property, and CoinShuffle++ provides anonymity and termination, great.
-So if we add support for fixed messages, support for fixed messages.
+So if we add support for fixed messages.
 Next.
 Then we can ask is there a protocol in the intersection of all these circuits in the middle and
 
@@ -594,7 +587,7 @@ And in the case of Wasabi, it's just when we've banned enough people and there a
 
 Tim Ruffing: 00:45:44
 
-So There's half a pound of the number of UTXOs in the chain.
+So There's an upper bound to the number of UTXOs in the chain.
 But it's pretty large.
 
 Adam Ficsor: 00:45:55
@@ -633,7 +626,8 @@ Tim Ruffing: 00:47:43
 So Maybe let's finish the slide and come back to this question.
 Maybe it's answered, then maybe not.
 So what could be interesting is to have a protocol in the middle that has all those three properties, But it turns out that this is not possible.
-Interestingly, there was a protocol called Dissent at CCS'10. It was supposed to be in the middle and has all the properties, but it turns out it doesn't provide an anonymity.
+Interestingly, there was a protocol called Dissent at CCS'10. 
+It was supposed to be in the middle and has all the properties, but it turns out it doesn't provide an anonymity.
 If you would code it exactly like it's written in the paper, it would provide termination and fixed messages and lose anonymity.
 Does this answer your question or not?
 
@@ -756,7 +750,7 @@ And Now it's getting interesting.
 So because we didn't want to trust this bulletin board in the middle of the server in the middle for anonymity.
 But if you think of the server in the middle being the malicious network attacker, Then suddenly it's very, very easy to block messages, right?
 You just don't forward them.
-Like think of, I think last week I mentioned the simple example of my ISC server, just as an example of a server that broadcasts your messages to everybody else.
+Like think of, I think last week I mentioned the simple example of my IRC server, just as an example of a server that broadcasts your messages to everybody else.
 So basically in this setting, if you have the server, you can always claim more.
 Look, I didn't.
 Bob didn't send the message.
@@ -870,7 +864,6 @@ Yeah, and now we can evaluate this and practice with basically the setup that I 
 So Yeah, for example, for usually a number of you point out on the paper is 50 notes there.
 We are still below 10 seconds in this setting.
 And then CoinShuffle, the original CoinShuffle was like almost three minutes in the setting.
-Next. Yep, next. Okay.
 
 ## Handling unequal inputs
 
@@ -905,7 +898,8 @@ And now these messages are not just the symbol, the addresses, because he also n
 Because the amounts are not implicit anymore.
 In the previous example where everybody has one Bitcoin, the amounts are not messages that need to be mixed.
 But here they would need to be mixed.
-So Bob basically sends two messages and one of the messages is the pair `(R, 0.1)`. And the reason why this doesn't work is now that the 0.1 is a fixed message.
+So Bob basically sends two messages and one of the messages is the pair `(R, 0.1)`.
+And the reason why this doesn't work is now that the 0.1 is a fixed message.
 It's nothing that you can discard and throw a new random one, right?
 It just doesn't work.
 
@@ -923,7 +917,8 @@ Yeah, but I think like we had this side topic, right?
 Is a fresh message actually necessary?
 Can we do fixed messages?
 And the reason why the answer was no, the reason was that anonymity is broken.
-So functionally you're right, you can just like if the first run is disrupted you could abort it and then restart with `R2` and `0.1`. But then it could be that there is an attacker and anonymity.
+So functionally you're right, you can just like if the first run is disrupted you could abort it and then restart with `R2` and `0.1`. 
+But then it could be that there is an attacker and anonymity.
 
 Adam Ficsor: 01:15:13
 
@@ -1096,7 +1091,7 @@ Right now I told you, okay, like in a nice network setting, this protocol takes 
 
 Adam Ficsor: 01:25:33
 
-I mean if others relay a transaction like that, a conflicting transaction, then would that, I mean you would have to trust the other peers that they are not lying about the conflicting terms. Oh no because they can only the transaction those are theirs so they would be the the the the guys who are disrupting around so yeah never mind
+I mean if others relay a transaction like that, a conflicting transaction, then would that, I mean you would have to trust the other peers that they are not lying about the conflicting terms. Oh no because they can only the transaction those are theirs so they would be the guys who are disrupting around so yeah never mind
 
 Tim Ruffing: 01:26:01
 
