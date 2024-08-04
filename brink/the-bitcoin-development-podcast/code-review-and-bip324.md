@@ -23,7 +23,7 @@ additional_resources:
 
 Mike Schmidt: 00:00:00
 
-I'm sitting down with the stack Sebastian Falbasoner.
+I'm sitting down with the stack Sebastian Falbesoner.
 Did I pronounce that right?
 
 Sebastian Falbesoner: 00:00:06
@@ -66,7 +66,7 @@ There was one by Justin Moon about a Biddle bootcamp, where he like motivated pe
 And with that I thought, okay, let's do that.
 And yeah, then was summer 2019.
 I started with my first pull requests.
-The very first thing I did was just graphing for to-do in capital letters, just to see what is there.
+The very first thing I did was just grepping for to-do in capital letters, just to see what is there.
 At first, of course, getting familiar with the build environment, running the tests and everything.
 Then the first PR got approved, you dig more and more into the code and it became more fun over the time.
 And at that time, you probably remember there was this pandemic shortly after.
@@ -131,12 +131,12 @@ And second, what was wrong with it that you had to spend time improving it?
 
 Sebastian Falbesoner: 00:07:34
 
-Yeah, as a side note, also in addition to prepping for Jadus, there was a thing like labels could first issue back then and many of them were also test related.
+Yeah, as a side note, also in addition to grepping for to-dos, there was a thing like labels "good first issue" back then and many of them were also test related.
 There are not that many now, maybe that would also be a nice thing if contributors, maintainers could think more about what kind of issues would bear to attract new talent.
 To the question of test frameworks.
 So what we have is basically a framework where we spin up several Bitcoin core nodes that can communicate to each other for the sake of running tests.
 So this is written in Python like an interpreter language which is kind of a nice choice for that.
-And basically we have our own small client implementation, the test node, and those are running on rack tests, that means they're not on the real Bitcoin network, of course.
+And basically we have our own small client implementation, the test node, and those are running on  regtest, that means they're not on the real Bitcoin network, of course.
 What we mostly do there is basically we do the things that a user would do, running RPC calls, checking that the results are what is expected.
 As a developer, I think of the functional test as a documentation even.
 Whenever I look for something that I'm not familiar with, I first look at the functional tests because those tests are run basically daily, several times on the continuous integration.
@@ -162,7 +162,7 @@ And I think, yes, it's much more approachable to start interacting and doing thi
 
 Sebastian Falbesoner: 00:11:44
 
-And that gives you a good understanding what's what's actually happens, right?
+And that gives you a good understanding what's actually happens, right?
 You start from zero and then you have to think about, okay, what do I have to do to get some coins?
 Obviously I have to mine some first and yeah, it is.
 Everyone that is really new to the code base, I would recommend to look at the functional tests.
@@ -173,14 +173,14 @@ So there are always pull requests welcome of increasing test coverage, which I a
 
 Mike Schmidt: 00:12:15
 
-If we were fping from testing and some of the review side of things to actually offering new code, there was one PR that you authored, which recently made its way into version Bitcoin Core 25.0, which is PR 25957.
+If we were flipping from testing and some of the review side of things to actually offering new code, there was one PR that you authored, which recently made its way into version Bitcoin Core 25.0, which is PR 25957.
 And it has the title of fast rescan with BIP157 block filters for descriptor wallets.
 Maybe you can talk a little bit about, maybe also how you even came into that realm of code from the test framework and why you decided that that PR was important and why it was needed.
 
 Sebastian Falbesoner: 00:12:58
 
 Yeah, sure.
-So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the scriptor wallets were not as widespread yet, it was a little more difficult to figure out what a script-bub-keyzer wallet has.
+So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the descriptor wallets were not as widespread yet, it was a little more difficult to figure out what a script-bub-keyzer wallet has.
 I actually did some wallet work before, more like small refactorings, and in the course of test writing I also learned a bit how an actual wallet would work.
 And the idea of the PR is quite simple, so basically now when you restore a backup, for example from your seed words, not in Bitcoin Core.
 Bitcoin Core doesn't support seed words, but let's say you just restore a backup, then the first thing the wallet has to do is look up all the funds from the past, like everything that you received in the past or you sent because you want to see your full balance, right?
@@ -193,7 +193,7 @@ And then there is a matching function with that block filter and it can tell you
 And what we do in, what I did in the PR is we take use of those block filters if they're available because we don't create them by default.
 You have to pass an extra option to that.
 Block filter index equals one.
-And if they're available and if we use the scriptor wallets, then those are used to significantly speed up the scanning process.
+And if they're available and if we use the descriptor wallets, then those are used to significantly speed up the scanning process.
 It's around an order of magnitude faster to my experiments that I did.
 Of course it depends heavily how many output scripts you have and so on, but it should usually give you easily a 10x speed increase which is quite nice I think.
 
@@ -218,7 +218,7 @@ So it's kind of nice that we can use that to make the the life of users easier, 
 
 Mike Schmidt: 00:17:05
 
-One thing that I got feedback on about your work is from a prominent Bitcoin Core dev who said, quote, ''the stacks review matters.''
+One thing that I got feedback on about your work is from a prominent Bitcoin Core dev who said, quote, "the stacks review matters."
 The stacks review is valuable, something along those lines.
 And so I think you've done quite a bit of review and maybe you can comment on that in the context of how do you think about how much time you spend authoring new code and PRs versus review?
 And why do you think that this person said that your review counts?
@@ -231,7 +231,7 @@ Like it would be great if we have more review power.
 And yeah, according to what person's reviews counts, I think it's also kind of a proof of work system in Bitcoin Core.
 Not specifically regarding me, but in general, if you over the time give review comments that are helpful or are considered helpful by others, then of course you're getting taken more seriously.
 I think my review style has been also inspired by other people from the top of my head.
-I could name Ross Janowski who give very great detailed review comments and that's inspired someone, right?
+I could name Russ yanofsky who give very great detailed review comments and that's inspired someone, right?
 To be detailed and whenever testing some PR like really thinking what could go wrong.
 How could I trigger some code path that is not intended or something like that.
 The nice thing about reviewing is that you can do it offline.
@@ -263,13 +263,13 @@ Mike Schmidt: 00:21:13
 
 Yeah, I guess maybe a combination thereof.
 A topic that you're maybe familiar with you want to provide insightful feedback but in order to do that you need to acquire the knowledge to even know what is valuable feedback.
-Is it really just a matter of spending the time and doing the work and and jumping into the intricacies of the proposed changes and its potential effects?
+Is it really just a matter of spending the time and doing the work and jumping into the intricacies of the proposed changes and its potential effects?
 Do you spend a lot of time doing that before you even write a word of review or do you sort of take a different approach to it?
 
 Sebastian Falbesoner: 00:21:47
 
 Yeah, it always depends on what kind of review it is.
-There are these small things called nits where you just propose to change code styles and stuff which are often thrown the palm because those are not like affecting like the deep logic of PR.
+There are these small things called nits where you just propose to change code styles and stuff which are often frowned upon because those are not like affecting like the deep logic of PR.
 But what I definitely do is first check out the PR locally, play around with it, maybe try to break it.
 I think when you work a little bit for PR, then you for some time, then it's easier to give valuable feedback compared to if you just look at it online on GitHub maybe.
 Actually using it, try to do something useful with it, or even sometimes try to do something that is not intended with it, just to see what could go wrong in the worst case.
@@ -279,7 +279,7 @@ And yeah, but I guess everyone has a very individual review style.
 
 Mike Schmidt: 00:22:47
 
-Maybe we can use this as an opportunity, this sort of, I've given you kind of a general hypothetical of how you approach review, but one thing that you're looking forward to doing now and looking forward to doing more in the coming years, reviewing the 324 and the associated code changes with that.
+Maybe we can use this as an opportunity, this sort of, I've given you kind of a general hypothetical of how you approach review, but one thing that you're looking forward to doing now and looking forward to doing more in the coming years, reviewing BIP324 and the associated code changes with that.
 And maybe just maybe just to set the stage before we jump into it.
 So currently, all data relayed on the Bitcoin peer-to-peer network is public and peers talk to each other over unencrypted connections and BIP324, its purpose is to solve that potential issue with the ability to have encrypted connections to your peers.
 I think everybody would prefer encrypted communication over unencrypted, but maybe you can get into why in the Bitcoin network, what sorts of vulnerabilities or attacks are available as a result of not speaking to each other in unencrypted connection.
@@ -291,7 +291,7 @@ Why do we even want to encrypt this if the transaction end up in a publicly avai
 So it's more about even hiding metadata rather than the public data itself.
 And right now, for example, it's trivial for ISPs to just detect also that you run a Bitcoin node, because all the packets, they start with the same network magic.
 And therefore, it's just easy to passively detect that you run that.
-And the packages can also be pampered with.
+And the packages can also be tampered with.
 So what ISPs could also do, they could selectively just censor single transactions if they wanted to.
 And with the BIP324 we can even hide the fact that we run a Bitcoin node from the beginning, which is very nice, I think.
 
@@ -339,7 +339,6 @@ But even for that, something nice is included in the BIP324, where you have like
 Mike Schmidt: 00:28:33
 
 Interesting, so you can share that session key outside of the Bitcoin peer-to-peer network communication to ensure that there's not somebody in between.
-Yeah, exactly.
 Essentially repackaging everything.
 
 Sebastian Falbesoner: 00:28:46
@@ -367,7 +366,7 @@ For example, there was a Python implementation of BIP324 basically from Stratosp
 So it's a little reading BIP, a little reading available PRs already and figuring out what they do.
 Then there is also podcast material.
 I remember I listened to the Stefan Livera podcast.
-He had an episode where he invited the Drouf, Peter Wille and Tim Ruffing, where they explained the thing.
+He had an episode where he invited the Dhruv, Peter Wille and Tim Ruffing, where they explained the thing.
 And then you get more and more, you hear more about that topic.
 And also of course Bitcoin Core meetings.
 It was my first Bitcoin Core meeting last year in Atlanta, where these people's also presented.
@@ -381,8 +380,8 @@ You familiarize yourself with the topic by reading the BIP and maybe looking at 
 
 Sebastian Falbesoner: 00:31:46
 
-What I first did back then still was maintaining the PRs.
-So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub-PRS and no, I didn't look at the SECB parts until recently It always was appeared very scary for me all the cryptography and math stuff but I also ended up doing a little review there.
+What I first did back then still Dhruv was maintaining the PRs.
+So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub-PRS and no, I didn't look at the SECP parts until recently It always was appeared very scary for me all those cryptography and math stuff but I also ended up doing a little review there.
 I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the LibSecP library and he specifically presented the PR1129, which is the Alligator Swift part.
 So I got a little deeper into that through that.
 
@@ -397,7 +396,7 @@ Yeah.
 So, what every transactions basically consists of to show proof that the one spending a transaction owns the private key of the address where the funds have been sent to, it includes a digital signature.
 And for that digital signature, we have our own library called libsecp256K1.
 It is named after the curve that has been chosen back then by Satoshi to represent those digital signatures.
-Earlier it was initially OpenSSL has been used but that has been replaced because that had some problems with the malleability like the same signature could be represented by different encodings and also it wasn't very performant, so at some point I think it was Peter Wille, he came up with the idea to write their own library, LibSecB256k1.
+Earlier it was initially OpenSSL has been used but that has been replaced because that had some problems with the malleability like the same signature could be represented by different encodings and also it wasn't very performant, so at some point I think it was Peter Wuille, he came up with the idea to write their own library, libsecp256K1.
 And yeah, that's what we use nowadays.
 
 Mike Schmidt: 00:34:12
@@ -428,7 +427,7 @@ Sebastian Falbesoner: 00:34:38
 Yeah, so it is a project completely written in C, in the C language.
 I think even still sticking to the C89 standard, which is probably widely supported on a huge range of platforms, including small microcontrollers.
 And what it basically includes are functions to just create and verify digital signatures.
-A large part of the most recent SoftFork, the Taproot and the Schnorr signatures, that last part, the Schnorr signatures that has also been implemented in LibSecp, of course.
+A large part of the most recent softfork, the Taproot and the Schnorr signatures, that last part, the Schnorr signatures that has also been implemented in LibSecp, of course.
 And yeah, it's a different world than Bitcoin Core.
 It's so much more low-level.
 Like every math operation is basically a single function called.
@@ -458,7 +457,7 @@ Mike Schmidt: 00:37:15
 Another thing I wanted to bring up is another project that you were looking at which is BIP322.
 Oh Generic sign message which allows wallet to sign or partially sign a message for any script which they can conceivably spend.
 And so that means a signed message can produce a signed message for any script or address that a wallet can potentially be able to spend.
-And I think right now only pay to public key hash addresses are supported in Bitcoin Core for message signing.
+And I think right now only P2PKH addresses are supported in Bitcoin Core for message signing.
 And so maybe you can talk a little bit about this BIP and this project and what's the latest progress or not progress with that?
 
 Sebastian Falbesoner: 00:37:58
@@ -480,7 +479,7 @@ That would be code is in I mean is it in it just needs to be reviewed and after 
 Sebastian Falbesoner: 00:39:38
 
 The code is basically fine I didn't see any huge problems or blockers.
-I was basically already giving an egg and there was only some nits left, which are also fine if they're not addressed.
+I was basically already giving an edge and there was only some nits left, which are also fine if they're not addressed.
 So, but of course it would be definitely good to have more eyes on it.
 
 Mike Schmidt: 00:39:51
@@ -493,7 +492,7 @@ Sebastian Falbesoner: 00:40:20
 
 I don't know what private people use it for, but what it is, it's sometimes used by exchanges, I think, that they want to have a proof before you send funds to somewhere to actually prove to them that you actually own the private key corresponding to an address which depends on how you look at it it could be seen as the customers are protected.
 On the other thing, I think there was a bit of backlash because with this travel rule thing, I think there was even some discussion to completely remove it in order to avoid that.
-There was an issue opened recently on the Bitcoin Core repeat to completely remove it.
+There was an issue opened recently on the Bitcoin Core repo to completely remove it.
 And I think that was motivated out of, I'm not familiar with the concrete thing, but I think there was some opinions like this could be used to implement the travel rule or something like that.
 It felt a bit rushed to me to just remove a call that usually seems useful just out of fear that this could be used in the wrong way?
 
