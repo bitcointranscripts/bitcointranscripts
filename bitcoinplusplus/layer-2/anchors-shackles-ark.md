@@ -1,21 +1,24 @@
 ---
-title: "Anchors & Shackles (Ark)"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=OBt1nS14Ac4
-tags: ['ark']
-speakers: ['Burak Keceli']
-categories: ['conference']
-date: 2023-06-24
+title: 'Anchors & Shackles (Ark)'
+transcript_by: 'misterfunky via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=OBt1nS14Ac4'
+date: '2023-06-24'
+tags:
+  - 'ark'
+speakers:
+  - 'Burak Keceli'
+categories:
+  - 'conference'
 ---
 So hey guys, my name is Borat.
 Today I'll be talking about something that I've been working on for the past, let's say, six months or so.
 To give a bit of a background, I started first in a big block sort of camp and then got introduced later to Liquid.
 And I did some covenant R&D on Liquid for about two years, and now I'm recently exploring the Lightning space for about a year.
-And as someone who initially comes sort of from that sort of big block camp, I've always had objections towards lightning, mainly around the UX, from backups to interactivity to liquidity problems.
+And as someone who initially comes from sort of big block camp, I've always had objections towards lightning, mainly around the UX, from backups to interactivity of liquidity problems.
 I've had severe objections.
-A few months ago, I tried to sort of working on a new light and more to address these problems.
+A few months ago, I tried some sort of working on a new light and more to address these problems.
 And I've come to realization that these objections, the objections that I had in the past, they're all addressable in the long run.
-I, you know, page DLCs can sold in, same receiving initiative plus proof of payment, but there is still one big problem, the inbound liquidity.
+I know, page DLCs can sold in, same receiving initiative plus proof of payment, but there is still one big problem, the inbound liquidity.
 To me, it's like a non-starter.
 If you're orange billing someone for the first time and you cannot receive, what happens is you get a swap, some ring swap in, and it doesn't scale.
 And to me, if something works 90% of the time, it doesn't work 10%, to me it doesn't work.
@@ -28,7 +31,7 @@ At some point I realized, okay, what I'm building is lightning, but it really is
 At its core, it's like internally, it's like a new off-chain protocol.
 So the protocol is, it requires APO or CTV, a new covenant primitive to work.
 That's not something we can do on Bitcoin today.
-We can do it in Bitcoin Inquisition's Signet, and I think that's how we're gonna start.
+We can do it in Bitcoin Inquisition's Segnet, and I think that's how we're gonna start.
 But to give a high-level overview, first of all, we haven't set a name yet for the protocol.
 So to give a high-level overview, the protocol has no liquidity constraints.
 It's a simple protocol.
@@ -37,7 +40,7 @@ Just like you do on-chain wallets, you have an address you can receive, send, ho
 You don't have any interactivity requirements.
 And you don't have to acquire inbound liquidity to onboard to the system in the first place.
 You don't have to run a server, you can use your smartphone, don't have much interactivity requirements.
-And every payment takes place in a coin join route, so you don't leave your, especially receivers, they do not leave their identity.
+And every payment takes place in a coin join route, so you don't leave your receivers, they do not leave their identity.
 You know, in Lightning, if hubs call it or they comply with OFAC, you know, two hubs can sort of extract the payment route.
 If I'm using IE and LSB XIZ and you're connected to ABC and they have direct channel each other so the receipt is 12A, then they can call you to extract the payment because it's linked through the same HDLC, the Bolt 11 hash identifier.
 So in this protocol, it's not a state channel design.
