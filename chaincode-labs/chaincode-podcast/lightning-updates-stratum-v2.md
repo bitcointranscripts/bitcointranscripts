@@ -1,13 +1,17 @@
 ---
-title: "Lightning updates / Stratum V2"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Steve-Lee-and-Lightning-updates--Stratum-V2---Episode-23-e1ofl4j
-tags: ['lightning', 'zero-conf-channels', 'stratum-v2']
-speakers: ['Steve Lee']
-categories: ['podcast']
-date: 2022-09-28
+title: 'Lightning updates / Stratum V2'
+transcript_by: 'stackeduary via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Steve-Lee-and-Lightning-updates--Stratum-V2---Episode-23-e1ofl4j'
+date: '2022-09-28'
+tags:
+  - 'lightning'
+  - 'zero-conf-channels'
+  - 'stratum-v2'
+speakers:
+  - 'Steve Lee'
+categories:
+  - 'podcast'
 episode: 23
-
 ---
 Speaker 0: 00:00:00
 
@@ -16,15 +20,26 @@ Hey Jonas.
 Speaker 1: 00:00:00
 
 Hey Merch.
+
+Speaker 0: 00:00:02
+
 What are we up to?
+
+Speaker 1: 00:00:03
+
 We are back.
 
-Speaker 0: 00:00:03
+Speaker 0: 00:00:04
 
 Who are we recording today?
+
+Speaker 1: 00:00:05
+
 We have Steve Lee in the office this week.
+
+Speaker 0: 00:00:04
+
 He is the head at Spiral.
-Yeah.
 He's done a lot of open source development.
 He talks to a bunch of people.
 He's also the PM for the LDK team.
