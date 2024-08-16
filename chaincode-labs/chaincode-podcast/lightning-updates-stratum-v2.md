@@ -419,13 +419,13 @@ But there's work being done right now to make it so that multisig can be enabled
 First step of course is getting Taproot implemented and activated in the network.
 That was done late last year.
 And now the Lightning implementations are starting to integrate.
-There's a number of different ways to improve Lightning because of Taproot and LND and CLN and LDK and Eclair are all making changes now to support Taproot, including MuSig2, which will enable N of N wallets.
+There's a number of different ways to improve Lightning because of Taproot and LND and CLN and LDK and Eclair are all making changes now to support Taproot, including MuSig2, which will enable N-of-N wallets.
 And then there's a protocol called FROST, which will enable threshold signatures on Taproot and, in this case, on Lightning.
-So for example, you could have a 2 of 3 wallet that's not only your 2 of 3 wallet for on-chain funds, but also Lightning channels.
+So for example, you could have a 2-of-3 wallet that's not only your 2-of-3 wallet for on-chain funds, but also Lightning channels.
 So that's super exciting.
 We can go deeper on that too.
 I think it's really exciting but let me just link it back to VLS.
-If you fast forward to this future where you have a 2 of 3 wallet on Lightning, there's three keys, three separate computers of those keys, and if you want to receive or send money, you need to have two signers.
+If you fast forward to this future where you have a 2-of-3 wallet on Lightning, there's three keys, three separate computers of those keys, and if you want to receive or send money, you need to have two signers.
 Only one of those can be your full Lightning node.
 So how does the other signer securely sign without trusting the other key?
 Well, it needs to be running VLS, or it needs to be running something like VLS, but there's really no other project that does that today.
@@ -466,7 +466,7 @@ So I mean, not only does it give you, you know, beautiful multisig, threshold mu
 
 Steve: 00:24:00
 
-So let's imagine you have a 2 of 3 wallet and Block is building out a non-custodial wallet and their product conception they're gonna have a key on a server a key on a hardware device and control the customer and a key on the customer's phone. Something that most everyone does is lose your phone.
+So let's imagine you have a 2-of-3 wallet and Block is building out a non-custodial wallet and their product conception they're gonna have a key on a server a key on a hardware device and control the customer and a key on the customer's phone. Something that most everyone does is lose your phone.
 So if you have a two, three wallet, you lose your phone and one of the keys is on the phone.
 What do you do?
 How do you recover?
