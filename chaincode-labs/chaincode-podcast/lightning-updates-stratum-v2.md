@@ -76,7 +76,7 @@ Great to see you guys this week.
 Steve: 00:01:03
 
 Let's start with LDK.
-So the Vyral team and other contributors have been working on it now for about two and a half years.
+So the Spiral team and other contributors have been working on it now for about two and a half years.
 Last year, in the spring of 2021, we got our first real adopter of it.
 The LDK had matured enough to get ready for someone to adopt and BlueWallet to date had been non-custodial for on-chain but custodial for Lightning, and they wanted to move to non-custodial for Lightning.
 They successfully integrated it on their iPhone app and their Android app by August of last year.
