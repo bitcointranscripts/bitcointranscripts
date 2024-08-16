@@ -83,7 +83,7 @@ They successfully integrated it on their iPhone app and their Android app by Aug
 And it's actually in the App Store, but it's still not the default experience.
 So I thought I'd share some lessons learned, like why isn't it the default experience yet.
 The good news is, LDK worked exactly as the LDK contributors had planned, and it was great to have a first adopter be able to get it working.
-But the biggest problem for Blue Wallet is that the channel management is still manual.
+But the biggest problem for BlueWallet is that the channel management is still manual.
 Like an end user has to set up their channels, manage the liquidity, etc.
 Wallets like Breeze and Moon and Phoenix have demonstrated that if you do that automatically, it's a much better user experience.
 So I think one lesson learned for everyone in the Lightning space is that we need more LSPs, we need LSPs that are available for any wallet to integrate with, and we need an LSP spec.
@@ -94,7 +94,7 @@ And so, the good news there is that there are a lot of people working towards th
 Steve: 00:02:21
 
 So that's one lesson.
-There's a few other features that Blue Wallet was hoping for out of LDK and we've delivered with them.
+There's a few other features that BlueWallet was hoping for out of LDK and we've delivered with them.
 One is zero confirmation for Lightning channels and not only did LDK implement that, but it's actually part of the Lightning spec now and LND and CLN support that as well.
 So that's an improvement in the past year.
 
@@ -202,7 +202,7 @@ Steve: 00:08:31
 
 We'll have to see how that plays out.
 I think it's really good to have this infrastructure in place, though, to be used.
-But that was another request by Blue Wallet, and I believe they're experimenting with it right now.
+But that was another request by BlueWallet, and I believe they're experimenting with it right now.
 I know some other wallet developers, too, that are experimenting with it.
 So I look forward to seeing actual performance data and actually trying out prototypes and real wallets using this to just confirm that it really is performant.
 I think it will be based on our data so far, but it'll be nice to see the end user experience.
@@ -231,7 +231,7 @@ Like Lightning has a long ways to go to improve security and privacy and scaling
 So we're working with other implementations as well.
 That's the two big areas that influence what we work on.
 Let me go a little deeper on what we've been hearing from mobile wallets that wanna use LDK.
-Blue Wallet, they did a great job of taking the LDK API, integrating it, so have other wallets as well.
+BlueWallet, they did a great job of taking the LDK API, integrating it, so have other wallets as well.
 But there's another category.
 
 ## LDK Lite
