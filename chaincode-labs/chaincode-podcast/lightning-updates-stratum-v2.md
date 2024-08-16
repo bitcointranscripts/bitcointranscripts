@@ -10,6 +10,7 @@ tags:
 speakers:
   - 'Steve Lee'
   - 'Adam Jonas'
+  - 'Mark Erhardt'
 categories:
   - 'podcast'
 episode: 23
