@@ -9,6 +9,7 @@ tags:
   - 'stratum-v2'
 speakers:
   - 'Steve Lee'
+  - 'Adam Jonas'
 categories:
   - 'podcast'
 episode: 23
