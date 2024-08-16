@@ -89,7 +89,7 @@ Wallets like Breeze and Moon and Phoenix have demonstrated that if you do that a
 So I think one lesson learned for everyone in the Lightning space is that we need more LSPs, we need LSPs that are available for any wallet to integrate with, and we need an LSP spec.
 And so, the good news there is that there are a lot of people working towards that, both the spec and commercial LSP services.
 
-## Zeroconf Channels
+## Zero-conf Channels
 
 Steve: 00:02:21
 
