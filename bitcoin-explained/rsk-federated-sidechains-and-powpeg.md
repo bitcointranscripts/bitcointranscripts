@@ -17,8 +17,8 @@ aliases:
 ---
 Speaker 0: 00:00:07
 
-Live from Utrecht, this is the fan with Shorsnedo.
-Hello! Shors, I have another announcement to make.
+Live from Utrecht, this is the Van Wirdum Sjorsnado.
+Hello! Sjors, I have another announcement to make.
 
 Speaker 1: 00:00:13
 
@@ -26,7 +26,7 @@ Exciting, tell me.
 
 Speaker 0: 00:00:14
 
-Did you know you can find the fan with Shorsnedo on its own RSS feed?
+Did you know you can find the Van Wirdum Sjorsnado on its own RSS feed?
 
 Speaker 1: 00:00:19
 
@@ -35,7 +35,7 @@ And this is actually a new recording of that announcement this is not spliced in
 
 Speaker 0: 00:00:25
 
-The thing is the existing Bitcoin magazine RSS feed also has the Fenrirum Scherzanado on it but that feed is going to be broken up and all podcasts are going to have their own feed and then there's going to be an other aggregated feed.
+The thing is the existing Bitcoin magazine RSS feed also has the Van Wirdum Sjorsnado on it but that feed is going to be broken up and all podcasts are going to have their own feed and then there's going to be an other aggregated feed.
 But the point is our listeners that are listening to the Bitcoin Magazine main feed and they want to keep listening to us, now they really need to switch to the Van Wirdum Sjorsnado RSS feed or the Van Wirdum Sjorsnado podcast thingy in their app.
 Or maybe they can switch to the new aggregated feed when it's there, but it's going to take a month.
 
