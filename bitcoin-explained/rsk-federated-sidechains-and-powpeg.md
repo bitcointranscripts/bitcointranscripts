@@ -1,14 +1,19 @@
 ---
-title: "RSK, Federated Sidechains And Powpeg"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=dricwvjkhV0
-tags: ['sidechains']
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
-categories: ['podcast']
-date: 2020-12-11
+title: 'RSK, Federated Sidechains And Powpeg'
+transcript_by: 'jinformatique via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=dricwvjkhV0'
+date: '2020-12-11'
+tags:
+  - 'sidechains'
+speakers:
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
+categories:
+  - 'podcast'
 episode: 20
-summary: "In this episode of The Van Wirdum Sjorsnado, hosts Aaron van Wirdum and Sjors Provoost discuss RSK’s shift from a federated sidechain model to the project’s new Powpeg solution. They explain how this works exactly, and discuss some of Powpeg’s security tradeoffs."
-aliases: ['/bitcoin-magazine/bitcoin-explained/rsk-federated-sidechains-and-powpeg']
+summary: 'In this episode of The Van Wirdum Sjorsnado, hosts Aaron van Wirdum and Sjors Provoost discuss RSK’s shift from a federated sidechain model to the project’s new Powpeg solution. They explain how this works exactly, and discuss some of Powpeg’s security tradeoffs.'
+aliases:
+  - '/bitcoin-magazine/bitcoin-explained/rsk-federated-sidechains-and-powpeg'
 ---
 Speaker 0: 00:00:07
 
@@ -31,7 +36,7 @@ And this is actually a new recording of that announcement this is not spliced in
 Speaker 0: 00:00:25
 
 The thing is the existing Bitcoin magazine RSS feed also has the Fenrirum Scherzanado on it but that feed is going to be broken up and all podcasts are going to have their own feed and then there's going to be an other aggregated feed.
-But the point is our listeners that are listening to the Bitcoin Magazine main feed and they want to keep listening to us, now they really need to switch to the VanWoordemSjoersNL.com RSS feed or the VanWoordemSjoersNL.com podcast thingy in their app.
+But the point is our listeners that are listening to the Bitcoin Magazine main feed and they want to keep listening to us, now they really need to switch to the Van Wirdum Sjorsnado RSS feed or the Van Wirdum Sjorsnado podcast thingy in their app.
 Or maybe they can switch to the new aggregated feed when it's there, but it's going to take a month.
 
 Speaker 1: 00:01:03
@@ -50,7 +55,7 @@ I always listen to dedicated podcast feeds but it's just my own listening habit.
 
 Speaker 0: 00:01:11
 
-Especially the fanware I'm sure is now though.
+Especially the Van Wirdum Sjorsnado.
 
 Speaker 1: 00:01:13
 
@@ -97,7 +102,7 @@ You don't have to do that.
 Speaker 0: 00:01:46
 
 You don't have to actually burn coins.
-Well, the other thing I want to ask, have you ever been to the Lab Bitconf?
+Well, the other thing I want to ask, have you ever been to the Lab Bitcoin?
 I think that's what it's called.
 The Latin American one?
 
@@ -109,11 +114,10 @@ Yeah,
 Speaker 0: 00:01:59
 
 so this year...
-I've never been
 
 Speaker 1: 00:02:00
 
-in Latin America, period.
+I've never been in Latin America, period.
 
 Speaker 0: 00:02:03
 
@@ -150,11 +154,11 @@ Central banks are very good at that.
 Speaker 0: 00:02:37
 
 Apparently it's slang for fornicating, but that's not what we're talking about.
-We're talking about a different kind of pegging where you, like Sjoerd said, you peg coins to other coins.
+We're talking about a different kind of pegging where you, like Sjors said, you peg coins to other coins.
 Okay, so RSK does this.
 We're gonna explain how the new pegging, peg in and peg out mechanism works.
 Okay, first of all, let's start at the start.
-Sjoerd, RSK is a sidechain.
+Sjors, RSK is a sidechain.
 
 Speaker 1: 00:03:00
 
@@ -164,7 +168,7 @@ Speaker 0: 00:03:02
 
 Great question.
 So a sidechain is a blockchain.
-It's a separate blockchain from the Bitcoin blockchain but in some way or another you can essentially move bitcoins to the sidechain and then move them back to Bitcoin Slightly more technical there are different tokens on the sidechain so there is a different blockchain with different tokens but somehow you can always exchange one of the tokens on the other blockchain for a Bitcoin therefore they should be worth the same.
+It's a separate blockchain from the Bitcoin blockchain but in some way or another you can essentially move bitcoins to the sidechain and then move them back to Bitcoin. Slightly more technical there are different tokens on the sidechain so there is a different blockchain with different tokens but somehow you can always exchange one of the tokens on the other blockchain for a Bitcoin therefore they should be worth the same.
 Because if you get one of these other tokens, you can always just get a Bitcoin.
 So, you know, they should be valued the same.
 And as long as you have a system where you can do that both ways, so you have a Bitcoin and you can exchange it for a token, or you have a token you can exchange for a Bitcoin then that's what we would call a sidechain I think.
@@ -186,11 +190,11 @@ I mean, PayPal could be a sidechain too, if they wanted to, right?
 
 Speaker 0: 00:04:35
 
-Yeah, well, according to my definition, they would definitely need some sort of token that's packed to Bitcoin in one way or another and I think there needs to be something there needs to be a blockchain as
+Yeah, well, according to my definition, they would definitely need some sort of token that's packed to Bitcoin in one way or another and I think there needs to be something there needs to be a blockchain as well.
 
 Speaker 1: 00:04:44
 
-well so what I would imagine is PayPal could say well you send us some Bitcoin to this address and now it's on the PayPal sidechain and you can send it between PayPal users and then if you want to redeem it we'll send it back to you and we'll do that according to our database.
+So what I would imagine is PayPal could say well you send us some Bitcoin to this address and now it's on the PayPal sidechain and you can send it between PayPal users and then if you want to redeem it we'll send it back to you and we'll do that according to our database.
 
 Speaker 0: 00:05:00
 
@@ -239,7 +243,7 @@ So in RSK's case, that means that, well, I guess, well, there are different ways
 It's that it works sort of similar as mining, or I should say pools mining, where all miners in the pool, they are sort of trying to find the next block.
 And now every block they try is going to be a valid block, but there's sort of a subset of blocks that are kind of almost valid, and then they're still sort of valid within the pool to determine who gets the rewards.
 And RSK has sort of a similar thing where not all blocks that are valid for Bitcoin are valid for RSK, but there are like a bunch of sort of blocks that are almost valid for Bitcoin that are still valid for RK.
-So it's
+So it's more…
 
 Speaker 1: 00:06:51
 
@@ -251,7 +255,7 @@ It's based on, it's just Bitcoin miners who are mining this.
 
 Speaker 1: 00:06:55
 
-Yeah, because with Bitcoin, indeed, if you're a pool, you produce a proof of work And in order to get accepted by Bitcoin nodes, the proof of work has to be, for example, 100.
+Yeah, because with Bitcoin, indeed, if you're a pool, you produce a proof of work, and in order to get accepted by Bitcoin nodes, the proof of work has to be, for example, 100.
 But miners can say, well, as long as you produce 10, then we know that you're actually mining and not cheating.
 And so we're going to allocate you 10% of whatever the next block is.
 
@@ -322,11 +326,11 @@ So this is part one.
 Okay, then we get to how do you actually get Bitcoin onto RSK?
 And after that, how do you get RSK coin back to Bitcoin?
 By the way, RSK coin is called Bitcoin on RSK or RBTC.
-RBTC is not a subreddit with
+RBTC is not a subreddit
 
 Speaker 1: 00:08:50
 
-so much censorship.
+it’s so much censorship.
 
 Speaker 0: 00:08:51
 
@@ -361,8 +365,8 @@ Okay.
 So how to get it out.
 Right now, the way to get it out is you send, while these coins, while the RBTC are on RSK, the coins in the multisig cannot move or shouldn't move.
 You know, the companies that are controlling this multisig should not move the coins until the RBTC are sent back to the smart contracts.
-And at this point, these companies know, okay, Now these coins are locked in the smart contracts.
-Now we're going to release them from Nomalty6.
+And at this point, these companies know, okay. Now these coins are locked in the smart contracts.
+Now we're going to release them from the multisig.
 So then they're sent back to whoever wants the coins on Bitcoin's main chain.
 
 Speaker 1: 00:10:41
@@ -375,11 +379,10 @@ Speaker 0: 00:10:46
 
 Yeah.
 It's a slightly different way of doing it, slightly different terms, but it's sort of the same.
-And so the key is that it
 
 Speaker 1: 00:10:51
 
-has to stay in balance, because you do not want a situation where, you know, less RSK, where there is more RSK than the amount of Bitcoin in a multi-sig contract, because then you get a game of musical chairs.
+And so the key is that it has to stay in balance, because you do not want a situation where, you know, less RSK, where there is more RSK than the amount of Bitcoin in a multi-sig contract, because then you get a game of musical chairs.
 So how do we prevent, or how do they prevent the game of musical chairs?
 Because the Bitcoin side doesn't care, right?
 When the multi-sig address is empty, Bitcoin just keeps going.
@@ -436,7 +439,7 @@ Yeah, okay, but RSK is upgrading.
 So now they're going for a new solution.
 The new solution is this.
 The pegging in part is still the same.
-You still send coins to a multi-sig address and the smart contract issued okay now you're sending back coins to the smart contract well the pegging in part is not exactly the same either but here's the here's the change all of the All of these companies that are controlling the multisig, from now on they are using special hardware modules that have private keys embedded in them.
+You still send coins to a multi-sig address and the smart contract issued. Now you're sending back coins to the smart contract, well the pegging in part is not exactly the same either but here's the here's the change. All of these companies that are controlling the multisig, from now on they are using special hardware modules that have private keys embedded in them.
 And these companies shouldn't even themselves be able to extract these private keys.
 Okay, these modules, they are programmed in a certain way.
 Namely they are programmed to only ever release coins from the Multisig, still by majority, but only do it if the coins are sent to that smart contract.
@@ -465,11 +468,11 @@ But in 2015, Intel was saying, oh my God, we have this amazing secure enclave th
 
 Speaker 0: 00:14:45
 
-That's T-Chan, you're referencing T-Chan.
+That's T-Chain, you're referencing T-Chain.
 
 Speaker 1: 00:14:47
 
-Yes, I'm referencing T-Chan.
+Yes, I'm referencing T-Chain.
 And it was already at that point clear, there were books written about that Intel module.
 People spent, I don't know, some PhDs spent lots of time reverse engineering how the Intel stuff works in the inside, because it wasn't very well documented.
 And basically the introduction said something along the lines of like no self-respecting, security conscious engineer should ever use this.
@@ -488,7 +491,7 @@ Oh, but the firmware upgrade, okay, who can sign the firmware upgrade?
 Okay, now that's the guy the government goes after.
 So there is the Gadget Gacha.
 There could be a backdoor in it.
-There was the, I think, the Crypso company in Switzerland that was backdoored by the NSA and they were happily eavesdropping on their own allies.
+There was the, I think, the Crypto company in Switzerland that was backdoored by the NSA and they were happily eavesdropping on their own allies.
 Right.
 For a very, very long time because there were just a couple of engineers that they were corrupt enough or patriotic enough, I don't know, depends on your perspective, to cooperate with that.
 So there's that risk.
@@ -533,7 +536,7 @@ But
 Speaker 0: 00:18:20
 
 anyway.
-In either case, I mean, RSA is a work in progress.
+In either case, I mean, RSK is a work in progress.
 They would still like it to become a drive chain.
 
 Speaker 1: 00:18:27
@@ -588,8 +591,8 @@ I know I'm saying right now
 
 Speaker 1: 00:19:35
 
-the all sorts of different security trade-offs that you can make I think the most important thing is to be honest about them Yeah, but what I was asking is how are they going to make money because it sounds like if you peg a currency You can't pump it.
-So is there a pre-line or are they like honest people?
+the all sorts of different security trade-offs that you can make I think the most important thing is to be honest about them Yeah, but what I was asking is how are they going to make money because it sounds like if you peg a currency, you can't pump it.
+So is there a premined or are they like honest people?
 
 Speaker 0: 00:19:49
 
@@ -609,7 +612,7 @@ Speaker 0: 00:20:15
 
 Yeah.
 Well, one of the nice things about a sidechain like this, arguably, is that it allows Bitcoin miners to earn more fees, which improves Bitcoin security, even for those of us that aren't using the sidechain.
-I guess the counter argument would be that running a mining pool or being a miner profitably would come with a little bit more overheads because you could be out competed.
+I guess the counter argument would be that running a mining pool or being a miner profitably would come with a little bit more overheads because you could be outcompeted.
 
 Speaker 1: 00:20:40
 
@@ -641,11 +644,11 @@ If all the custodial gold in the world is backed by a sidechain on Bitcoin, then
 You don't care about the Bitcoin chain, you care about the gold sidechain.
 So yeah, that would be very bad.
 That would be like being the minority hash power.
-Maybe not that bad because I'm guessing if you do this custodial gold sidechain, there's going to be some boss because you're still protecting a physical asset so you could just ignore shenanigans on the chain and that might not be worth it because of something I would like to call proof of prison but
+Maybe not that bad because I'm guessing if you do this custodial gold sidechain, there's going to be some boss, because you're still protecting a physical asset so you could just ignore shenanigans on the chain and that might not be worth it because of something I would like to call proof of prison but
 
 Speaker 0: 00:22:16
 
-do you think something like our sk could obliterate Ethereum That wasn't the word I was looking for.
+Do you think something like our sk could obliterate Ethereum. That wasn't the word I was looking for.
 Replace Ethereum?
 
 Speaker 1: 00:22:23
@@ -721,5 +724,5 @@ No I think that was the podcast.
 
 Speaker 1: 00:23:06
 
-Okay thank you for listening to the Van Weerdam Shores NATO.
+Okay thank you for listening to the Van Wirdam Sjorsnado.
 There you go.
