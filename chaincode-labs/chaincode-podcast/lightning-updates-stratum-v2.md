@@ -9,8 +9,6 @@ tags:
   - 'stratum-v2'
 speakers:
   - 'Steve Lee'
-  - 'Adam Jonas'
-  - 'Mark Erhardt'
 categories:
   - 'podcast'
 episode: 23
@@ -116,7 +114,7 @@ I think most people consider that a reasonable risk to take for the UX benefit.
 Murch: 00:03:18
 
 So the idea is that usually users first want to receive, not send?
-And by having the Toribird channel, the LSP basically just trusts them for whatever amount they're going to receive.
+And by having the Toribird[inaudible] channel, the LSP basically just trusts them for whatever amount they're going to receive.
 But since the channel isn't confirmed yet, it's not really lost.
 And if so, it's just pushed to the other side at the point when it gets confirmed.
 
@@ -146,7 +144,7 @@ Steve: 00:04:44
 
 Yeah, that's a good point.
 You're trusting for that as well.
-So now let me describe rapid gossip sync, which also actually has that drawback too, what Mark just mentioned.
+So now let me describe rapid gossip sync, which also actually has that drawback too, what Murch just mentioned.
 With rapid gossip sync, it's intended to enable client-side, like in a phone, pathfinding in a performant way.
 Right now the entire Lightning network graph is on the order of 60 megabytes.
 So the problem with mobile development is you can't guarantee that your app can run in the background.
@@ -220,7 +218,7 @@ And how's it being informed on BlueWallet and whatever else?
 Steve: 00:09:10
 
 Yeah.
-So I mean I'd say more generally, how does the LDK project pick its priorities, what it works on?
+I'd say more generally, how does the LDK project pick its priorities, what it works on?
 Two huge inputs.
 One, you already mentioned, users.
 And the users of LDK are other developers building apps and wallets.
@@ -228,7 +226,7 @@ So we certainly listen to all of our existing users.
 We're also listening though to prospective users that have maybe looked at LDK and given feedback as to why they're not proceeding with it or what they want to see before they do.
 I'll speak to that in more detail in a second.
 We also, of course, it's compatible with the Lightning specification and protocol specification.
-So, LDA contributors work with LND and CLN and Eclair and other Lightning protocol developers on both making sure that we're standard but also working on protocol improvements.
+So, LDK contributors work with LND and CLN and Eclair and other Lightning protocol developers on both making sure that we're standard but also working on protocol improvements.
 Like Lightning has a long ways to go to improve security and privacy and scaling in UX.
 So we're working with other implementations as well.
 That's the two big areas that influence what we work on.
@@ -323,7 +321,7 @@ Because we don't want to end up in a state when one company is the LSP.
 
 Jonas: 00:15:19
 
-Maybe moving on, the next topic would be, and I'll reference Paul Itoi's Three Hats Problem blog post, which he talks about the sysadmin just having too many responsibilities and too much power.
+Maybe moving on, the next topic would be, and I'll reference Paul Erdős' Three Hats Problem blog post, which he talks about the sysadmin just having too many responsibilities and too much power.
 And so he does point to the validated Lightning signer as a possible solution there.
 And that's something you've been pretty involved with.
 So can you tell us more about, yeah, what's going on there?
@@ -398,7 +396,7 @@ One is in the enterprise separating the keys like we talked about, but they'd al
 Murch: 00:20:44
 
 Essentially what this does is, so for on-chain transactions we have hardware signers or hardware wallets.
-And what VLS allows you to do is to essentially have a hardware signer for Lightning, which was notoriously difficult before because Lightning has so much more state and different things it needs to do.
+What VLS allows you to do is to essentially have a hardware signer for Lightning, which was notoriously difficult before because Lightning has so much more state and different things it needs to do.
 It's not just a small transaction that you sign.
 
 Steve: 00:21:05
