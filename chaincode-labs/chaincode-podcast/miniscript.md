@@ -1,24 +1,31 @@
 ---
-title: "Miniscript"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sanket-Kanjalkar-and-Miniscript---Episode-17-e1a4pmc
-tags: ['descriptors', 'htlc', 'miniscript', 'psbt', 'taproot']
-speakers: ['Sanket Kanjalkar']
-categories: ['podcast']
-summary: "Sanket describes to Murch his work on Miniscript. We explore uses for Miniscript, learn about intersections with PSBTs, Output Descriptors, and Taproot, and suss out the difference between Miniscript and Miniscript Policy."
+title: 'Miniscript'
+transcript_by: 'hkmiadli via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Sanket-Kanjalkar-and-Miniscript---Episode-17-e1a4pmc'
+date: '2021-11-11'
+tags:
+  - 'descriptors'
+  - 'htlc'
+  - 'miniscript'
+  - 'psbt'
+  - 'taproot'
+speakers:
+  - 'Sanket Kanjalkar'
+categories:
+  - 'podcast'
+summary: 'Sanket describes to Murch his work on Miniscript. We explore uses for Miniscript, learn about intersections with PSBTs, Output Descriptors, and Taproot, and suss out the difference between Miniscript and Miniscript Policy.'
 episode: 17
-date: 2021-11-11
 additional_resources:
--   title: Partially Signed Bitcoin Transactions (PSBTs)
-    url: https://bitcoinops.org/en/topics/psbt/
--   title: Miniscript website
-    url: http://bitcoin.sipa.be/miniscript/
--   title: Rust Miniscript
-    url: https://github.com/rust-bitcoin/rust-miniscript
--   title: Miniscript C++ implementation
-    url: https://github.com/sipa/miniscript
--   title: Gramtropy
-    url: https://github.com/sipa/gramtropy
+  - title: 'Partially Signed Bitcoin Transactions (PSBTs)'
+    url: 'https://bitcoinops.org/en/topics/psbt/'
+  - title: 'Miniscript website'
+    url: 'http://bitcoin.sipa.be/miniscript/'
+  - title: 'Rust Miniscript'
+    url: 'https://github.com/rust-bitcoin/rust-miniscript'
+  - title: 'Miniscript C++ implementation'
+    url: 'https://github.com/sipa/miniscript'
+  - title: 'Gramtropy'
+    url: 'https://github.com/sipa/gramtropy'
 ---
 Speaker 0: 00:00:15
 
@@ -67,7 +74,7 @@ All right, hope you enjoy the episode.
 
 Speaker 1: 00:01:24
 
-Hi I'm sitting here with Sanket Kansalkar and I'm gonna talk to him about Minuscript and Minuscript policy and his work that he's doing on making it easier for us to implement more complex contracts on Bitcoin.
+Hi I'm sitting here with Sanket Kansalkar and I'm gonna talk to him about Miniscript and Miniscript policy and his work that he's doing on making it easier for us to implement more complex contracts on Bitcoin.
 
 Speaker 2: 00:01:49
 
