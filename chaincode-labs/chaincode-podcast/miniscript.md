@@ -2,7 +2,7 @@
 title: 'Miniscript'
 transcript_by: 'hkmiadli via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Sanket-Kanjalkar-and-Miniscript---Episode-17-e1a4pmc'
-date: '2021-11-11'
+date: '2021-11-12'
 tags:
   - 'descriptors'
   - 'htlc'
