@@ -520,11 +520,11 @@ And that is something which is not friendly to the miniscript, like the type sys
 
 Sanket: 00:25:15
 
-So with miniscript, we have this additional tool, which we call the policy. Miniscript policy, that is designed as a way for developers to approach miniscript. Because if we look at miniscript, it has ANDs and ORs of like these things, but we also have this wrappers around those things, which manipulate each fragment.
-Wrappers mean when you transform minicript from one type to some other type, or you change some of the type properties.
+So with miniscript, we have this additional tool, which we call the policy. Miniscript policy, that is designed as a way for developers to approach miniscript. Because if we look at miniscript, it has ANDs and ORs of like these things. But we also have this wrappers around those things, which manipulate each fragment.
+Wrappers mean when you transform miniscript from one type to some other type, or you change some of the type properties.
 Each fragment is either like does something. It either puts something on top of stack or puts nothing on top of stack or evaluates the second expression.
 So, miniscript has these two, broadly speaking, two type, two attributes.
-Like one of them are correctness attributes and one of them are non-malleability attributes. These correctness attributes  show how we want to combine or compose this miniscript. So miniscript is like... also I did not highlight this. It's also composable which is you have a miniscript with which outputs which is for certain set. And we have another miniscript and you can compose using this it and and ours and so on so but you cannot like just naively compose them there are we have different ways of like composing things and just directly composing them does not work at the miniscript level.
+Like one of them are correctness attributes and one of them are non-malleability attributes. These correctness attributes show how we want to combine or compose this miniscript. So miniscript is like... also I did not highlight this. It's also composable. Which is you have a miniscript with which outputs, which is for certain set. And we have another miniscript and you can compose using this it 'ANDs' and 'ORs' and so on. But you cannot just naively compose them. We have different ways of composing things and just directly composing them does not work at the miniscript level.
 So when we modify each fragment, we change the type of each fragment, we call those as wrappers.
 Wrappers are transformation from one type to other type.
 So we go from, as a simplest example, if we have something which pushes a non-zero element onto the stack, which is we call 'type B' on miniscript, and we add a verify wrapper.
