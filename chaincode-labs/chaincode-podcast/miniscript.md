@@ -529,12 +529,12 @@ So when we modify each fragment, we change the type of each fragment, we call th
 Wrappers are transformation from one type to other type.
 So we go from, as a simplest example, if we have something which pushes a non-zero element onto the stack, which is we call 'type B' on miniscript, and we add a verify wrapper.
 So if we just put up verify after it, then we'll just put nothing on stack.
-So it's a transformation from miniscript 'type B', which puts something on stack, to a verify wrapper, which just checks, like it just, if there is in, it aborts if the top is not zero and it will not push anything on stack.
+So it's a transformation from miniscript 'type B', which puts something on stack, to a verify wrapper, which just checks, like it just, if there is in, it aborts. If the top is not zero and it will not push anything on stack.
 So we have all these different miniscript types which hold these different invariants across.
 So this is bit into a technical design, but these are like the miniscript wrappers.
 So why I was getting into those is these wrappers are required to make the miniscript composition work.
 Like you cannot just write 'and PK' 'and PKB'.
-You would have to write something like 'and PK 'and W' of some, it's like a, you would, if you read the manuscript documentation, you would understand like what all these wrappers do, but it essentially help in composing these manuscript fragments.
+You would have to write something like 'and PK 'and W' of some, it's like, if you read the manuscript documentation, you would understand like what all these wrappers do, but it essentially help in composing these manuscript fragments.
 
 Murch: 00:27:58
 
@@ -549,7 +549,7 @@ So we have this thing called manuscript policy. Which is another abstraction lay
 
 Murch: 00:28:37
 
-So that's basically a human readable, writable thing that then later gets transformed into a miniscript.
+So, that's basically a human readable, writable thing that then later gets transformed into a miniscript.
 
 Sanket: 00:28:46
 
@@ -557,17 +557,17 @@ Yeah.
 
 Murch: 00:28:46
 
-And from the miniscript is, of course, exchangeable to bitcoin script.
+And from the miniscript is, of course, exchangeable to Bitcoin script.
 
 Sanket: 00:28:51
 
 Yes.
-So I would like to highlight that this is one, like this policy, yeah this representation is what we call the policy and we have a one way for going from miniscript policy which we call 'compiling'.
+So I would like to highlight that this is one, like this policy. This representation is what we call the policy and we have a one way for going from miniscript policy which we call 'compiling'.
 So it's not a one-to-one mapping anymore because you're losing information when you try to lift up.
 So this invariant is, it's not necessary that it will hold.
 You can go to policy to use miniscript and miniscript to policy, it might not.
 The compiler might do different things and it might change things.
-But policy is like the most natural way for any developer person who is interacting with script to write something.
+But policy is the most natural way for any developer person who is interacting with script to write something.
 You think about things that are like 'and' of this, 'or' of this.
 You don't necessarily think about, you never think about many script fragments.
 Those are like our constructions.
