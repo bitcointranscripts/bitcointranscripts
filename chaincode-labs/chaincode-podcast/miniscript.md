@@ -648,7 +648,7 @@ Did everybody adopt that already?
 Sanket: 00:32:36
 
 No, no.
-I mean, my understanding is that in Lightning implementations you already have that deployed everywhere and to change the way in which you negotiate HTLCs and is not only like just a script problem but a network layer problem probably requires much more of an engineering effort to get it through and I think they're like with the new implementations they were discussing it on the mailing list thread about whether they can adopt miniscript, like miniscript supported, or many script descriptors, or miniscript scripts, and that would be really great if they adopted.
+I mean, my understanding is that in Lightning implementations you already have that deployed everywhere and to change the way in which you negotiate HTLCs and is not only like just a script problem but a network layer problem. Probably requires much more of an engineering effort to get it through and I think they're like with the new implementations they were discussing it on the mailing list thread about whether they can adopt miniscript, like miniscript supported, or miniscript descriptors, or miniscript scripts, and that would be really great if they adopted.
 
 ## Miniscript uses
 
@@ -667,7 +667,7 @@ And so would it be fair to say that miniscript makes the job of a wallet develop
 
 Sanket: 00:33:40
 
-Yeah, it allows you more functionality, which you could just be a simple thing like I only support free to book key and just have this one thing but if you want to step anywhere more than that you yeah this would make your life much easier like you don't have to deal with fee estimate as in like you don't currently yeah you cannot estimate your with if you have any complex contract it is hard for you to know what is the maximum possible satisfaction witness size which you can have maybe you look at this and it's a complex contract.
+Yeah, it allows you more functionality, which you could just be a simple thing. Like I only support free to book key and just have this one thing but if you want to step anywhere more than that. Yeah, this would make your life much easier. Like you don't have to deal with fee estimate as in you don't currently. You cannot estimate your with... If you have any complex contract it is hard for you to know what is the maximum possible satisfaction witness size which you can have maybe you look at this and it's a complex contract.
 You don't know how much fees it would take. You cannot guess its fees. So you still have to have the fee output.
 
 Murch: 00:34:18
@@ -692,8 +692,8 @@ Right.
 Sanket: 00:34:39
 
 Yeah, that's one of the, one small thing which we did not highlight is all these script limitations which we discussed, they made their way into TAPscript.
-So although we did a bunch of work for many scripts trying to deal with all these resource things, but in BIP 342, we realized that it's like not a, these things are Satoshi-age things, which we, like many other things, don't know.
-The reason why, as in, they were there for denial of service reasons but now we better understand Bitcoin so you have removed those limits and those are only like block level limits now also the complex check multi-sig of code which did like weird counting for 201 opcodes that has also been replaced by a much more thing, which actually CHECKGISADD friends, which would more represent the cost that actually the CPU incurs when trying to validate the transaction.
+So although we did a bunch of work for many scripts trying to deal with all these resource things, but in BIP 342, we realized that it's like not these things are Satoshi-age things, which we, like many other things, don't know.
+The reason why, as in, they were there for denial of service reasons but now we better understand Bitcoin so you have removed those limits and those are only like block level limits now also the complex check multi-sig of code which did like weird counting for 201 opcodes that has also been replaced by a much more thing, which actually CHECKSIGADD friends, which would more represent the cost that actually the CPU incurs when trying to validate the transaction.
 
 Murch: 00:35:32
 
@@ -715,8 +715,8 @@ What's the coolest thing in miniscript altogether, would you say?
 
 Sanket: 00:35:58
 
-So I would say like the coolest thing is like this generic signing or generic finalizing where you have your wallet, everyone has their own wallet in a fancy future, we have these different policies that everyone has.
-You have your own policy, you are engaging in a multi-party contract with me, I have my own policy, you have your hardware wallet somewhere else, I have my signer somewhere else and in a PSBT workflow we would just transfer this PSBT around. All the wallets would just put in their signatures at their respective places And we have this complex contract, the wallets don't even need to know what the contract is, like where is the 3 of 5 or something. We just need to know I give you this public key, this is the message you need to sign for, they would put the signature there, and you just have one final miniscript software which would create this thing.
+So I would say like the coolest thing is this generic signing or generic finalizing where you have your wallet, everyone has their own wallet in a fancy future, we have these different policies that everyone has.
+You have your own policy, you are engaging in a multi-party contract with me. I have my own policy, you have your hardware wallet somewhere else. I have my signer somewhere else and in a PSBT workflow we would just transfer this PSBT around. All the wallets would just put in their signatures at their respective places and we have this complex contract. The wallets don't even need to know what the contract is, like where is the 3 of 5 or something. We just need to know "I give you this public key. This is the message you need to sign for." They would put the signature there, and you just have one final miniscript software which would create this thing.
 And this is really cool because previously you have all this, like, there's no interoperation between wallets.
 Now you have different wallets, which do not even need to understand miniscript and this like just a final piece together, you can.
 
@@ -738,12 +738,12 @@ We talked a little bit earlier about how you're still working on getting it impl
 
 Sanket: 00:37:48
 
-We have, my primary role has been on the Rust implementation, like the Rust miniscript side of things.
+We have, my primary role has been on the Rust implementation. The Rust miniscript side of things.
 And one of my projects there is to extend miniscript to TapScript, like Taproot miniscript.
-Now that we don't have all these complex these weird constraints some things become easy but now we have this new upcodes so we need new terminals for expressing the checksigadd friends multi and we also have a different this is still an R&D so one side is R&D for tap script where we show different tap leaf versions and Merkle we are not sure that we're still thinking about how to extend that to taproot. Which will make things easy. And on the other side where we have seg-wit and support for that. So Rust miniscript version is like almost finalized. You'll see we are going to add new features, which would be more like how do you analyze things?
-But the base level miniscript design and specification is fixed like there's nothing to be changed over there and you might add more smarter compilations. But for the C++ side of things I will be working, as you say. I am working so it's more correct as like I am working for the past few days. I will be working towards getting Peter's his repository miniscript updated with Rust manuscript and getting some reviewer there and then transferring and that would be like a multi-step thing because we'll discuss more with the community how that goes because it has a bunch of features, as we discussed.
+Now that we don't have all these complex these weird constraints some things become easy but now we have this new upcodes so we need new terminals for expressing the checksigadd friends multi and we also have a different this is still an R&D. So one side is R&D for TapScript where we show different tap leaf versions and Merkle we are not sure that we're still thinking about how to extend that to taproot. Which will make things easy. And on the other side where we have seg-wit and support for that. So Rust miniscript version is like almost finalized. You'll see we are going to add new features, which would be more like how do you analyze things?
+But the base level miniscript design and specification is fixed like there's nothing to be changed over there and you might add more smarter compilations. But for the C++ side of things I will be working, as you say. I am working so it's more correct as I am working for the past few days. I will be working towards getting Peter's his repository miniscript updated with Rust manuscript and getting some reviewer there and then transferring and that would be like a multi-step thing because we'll discuss more with the community how that goes because it has a bunch of features, as we discussed.
 One of them is just like script to miniscript.
-Then we will have like, I don't know if analyzing capabilities belong in Bitcoin Core or you want different software for it.
+Then we will have like, I don't know, if analyzing capabilities belong in Bitcoin Core or you want different software for it.
 We definitely want support for generic finalizing, that would be another task and all the tests and test framework and all those things.
 So that's...
 
@@ -798,7 +798,7 @@ And my understanding is that the tap script functionality is in rest miniscript 
 Sanket: 00:41:36
 
 No, it is.
-So Tapscript functionality is in, like, it's in works, like we're still in R&D, like there's no code yet.
+So Tapscript functionality is in, like, it's in works. We're still in R&D. There's no code yet.
 We are discussing, because there are a bunch of things which we can do now with taproot.
 Like you could have a private test.
 Let's say you have to... one of the benefits of taproot is you only show what you're executing.
@@ -813,9 +813,9 @@ So you would want to, for example, make your miniscript compiler take into accou
 
 Sanket: 00:42:51
 
-So yeah, tapscript compiler is still in work but the tapscript to miniscript that thing should still just that is almost done.
+So yeah, TapScript compiler is still in work but the TapScript to miniscript that thing should still just that is almost done.
 You just have new fragments for checks multi-sig and we remove the resource limit checks and so on.
-So that is, that is RUST miniscript.
+So that is, that is Rust miniscript.
 That's not, as far as I understand, like Bitcoin Core wallet support for Taproot is still like right now under review.
 So I think we'll just go slowly over there with SegWit and test framework and just make developers familiar in general with miniscript, make them comfortable so we have more informed review and go forward with that.
 Right.
