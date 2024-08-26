@@ -232,7 +232,7 @@ So for me, being able to work on TXPROBE was kind of like a result of learning h
 
 Speaker 0: 00:09:18
 
-At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill-John, and they were doing, they were quite focused on privacy, right?
+At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill-John, and they were quite focused on privacy, right?
 They are pretty well known for some of the chain analysis stuff.
 So like some chain analysis actually was built based on one of the papers from Sarah back in 2014, 2015, or I don't even remember anymore.
 But they are like quite privacy focused, right?
@@ -244,7 +244,7 @@ Speaker 0: 00:09:45
 So for me it was kind of a way of focusing more on privacy, but also about learning how the Lightning Network worked.
 I knew generally how it worked.
 You know, I've read the paper, I've tried to read the Lightning Network paper, which was kind of a challenge.
-I mean, I think that's like well-known, you know, that like the paper was...
+I mean, I think that's like well-known, that like the paper was...
 Yeah.
 So I dig into the balls, I try to like get an understanding of like how everything worked, try to see, okay, is there anything that can be exploited, is there not, like what are the privacy aspects and so on and so forth.
 And I think I reach, like give or take the same conclusion that many researchers reach at the time because there were like two or three papers talking give or take about the same stuff in that year.
@@ -260,7 +260,7 @@ So, yeah, I think that that was the way, like trying to understand how it works,
 Speaker 1: 00:11:16
 
 And was it the same sort of process?
-Like, how did you, did you feel like you needed to disclose this before it was published?
+Like, did you feel like you needed to disclose this before it was published?
 Did you get in touch with the early implementations to have a discussion about it?
 Well, how is it the same or different than working with Bitcoin?
 
@@ -276,18 +276,18 @@ They got in touch with some of the implementations.
 They disclosed some of this information.
 They actually gather a lot of data from merchants or big nodes because there's plenty of stuff being done in that paper.
 It's not just like routing.
-It's not just using routing information to try to disclose stuff or probing, which My main part was probing, right?
+It's not just using routing information to try to disclose stuff or probing, which my main part was probing, right?
 But there was also analysis on invoice data or on chain data to see if, like, you could use the chain addresses, or you could build, like, a Peel chain of public channels and private channels to link a private channel to a public channel, or to know something that looks like a channel, maybe an actual channel.
 So again, it was called empirical analysis on privacy in the Lightning Network.
 It was not just about probing.
-But They did most of the disclosure instead of me.
+But bhey did most of the disclosure instead of me.
 
 Speaker 1: 00:12:47
 
 And just for our listeners, so that they have a better understanding, there's sort of the balanced discovery piece, which is, if you're interested in that, you should listen to Sergei's episode because we talk about it in a fair bit of detail.
 There's payment discovery and there's path discovery.
 So of those three, have you kept up with what's fixed, what's not fixed, like what's the state of things?
-What's your general attitude towards where lightning is compared to when you looked at it more deeply?
+What's your general attitude towards where Lightning is compared to when you looked at it more deeply?
 
 Speaker 0: 00:13:15
 
@@ -315,19 +315,18 @@ You can use this for multiple things.
 Speaker 0: 00:14:18
 
 It gets back to the point where all the debate about should we be paying for data relay inside the Lightning Network even if a payment hasn't succeeded or not.
+
+Speaker 1: 00:14:30
+
 What do you think?
+
+Speaker 0: 00:14:31
+
 I think we should.
 I really think we should, because otherwise, if we don't, then anyone can exploit it.
 It's all about waiting until someone coming around and saying, oh, I've built this data transmitting protocol built on top of Lightning that it's using failed HCLCs to send data from H2B in a peer-to-peer way, peer-to-peer encrypted way.
 No one is using it?
-Well, some of them are using it,
-
-Speaker 2: 00:14:57
-
-because Sphinx works in that way, right?
-
-Speaker 0: 00:15:00
-
+Well, some of them are using it, because Sphinx works in that way, right?
 So there are already applications that work in that way.
 It just feels like no one has bloated the network with it.
 But you can, you definitely can.
@@ -343,7 +342,8 @@ Well, you just need something that incentivizes people to make money out of it a
 
 Speaker 2: 00:15:17
 
-Paul Friedman Or, I don't know, if someone put Nostr on the Lightning Network or something, another relay, like some application that gets a ton of adoption very quickly, Then very quickly I think we would see...
+Paul Friedman Or, I don't know, if someone put Nostr on the Lightning Network or something, another relay, like some application that gets a ton of adoption very quickly.
+Then very quickly I think we would see...
 
 Speaker 0: 00:15:31
 
@@ -374,12 +374,10 @@ That's taking some of your opportunity cost for that to be used for routing or f
 Speaker 1: 00:16:31
 
 And so is just, is Lightning just fundamentally flawed and we should give up?
-Like what's the?
 
 Speaker 0: 00:16:35
 
 No, I don't think so.
-I don't think so.
 I just think that it's built on these assumptions and it's been, I don't know if we should say it's built on these limitations, but that's how it's built because it's not focusing for this, It's focusing for kind of, I mean, it's giving some privacy.
 And the fact that you're giving privacy means that there's a lot of these things that you cannot, let's actually put it into proper words.
 So if I know that you're trying to attack me and I know exactly who you are, I just ban you and we don't interact anymore, right?
@@ -410,9 +408,11 @@ Speaker 1: 00:18:00
 Let's transition a little bit.
 We've been talking about your research and your prior work and haven't delved too much into what you're doing these days.
 But I find Watchtowers, which is your current project and has been really your focus for the last three or so years.
-It's one of those projects where Bitcoin talk forums you can dig up early comments about this It's been around forever kind of thing and yet no one's done it So you have essentially locked yourself in a room for three years to actually do it.
+It's one of those projects where Bitcoin talk forums you can dig up early comments about this.
+It's been around forever kind of thing and yet no one's done it.
+So you have essentially locked yourself in a room for three years to actually do it.
 You're saying and and so Yeah, what is it?
-I guess, you know, you have prior experience doing this collab, sort of collaborative research kind of thing.
+You have prior experience doing this collab, sort of collaborative research kind of thing.
 And then you went off and embarked in this particular project.
 Like why stick with this so long?
 Like why?
@@ -432,20 +432,20 @@ Who else has done it before you?
 
 Speaker 0: 00:19:29
 
-Lightning was doing it, Lightning Labs was doing it at the time I started doing research on this.
+Lightning Labs was doing it at the time I started doing research on this.
 So I think their release came like a couple of months or maybe three months after we started working on this.
 And I picked a lot up from their work.
 The first one I know of was Bitcoin Lightning Wallet, which was an Android-only Bitcoin Lightning Wallet, which was using a custom implementation of Watchtowers for their users, only for them, and using like, Xiaomi tokens or Bury tokens to do the whole registration, like how do you pay for the tower and so on and so forth.
 So that's the same debt for simple Bitcoin wallet and the same for the Obi-Wan thingy and the same.
 It's That guy, I don't know his name, but he was working also with the ZBD guys.
 I think he's either Russian or Ukrainian.
-He was also like kind of like hit by the war thing, so kind of like that and stuff.
+He was also like hit by the war thing, so kind of like that and stuff.
 I haven't heard from him in quite a long time.
 But he was the first, at least the first I know.
 And Lightning was the second.
 Electrum was also working on that.
 When I started working on this, I didn't try to be, okay, I'm going to just make another implementation.
-My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on something that, agree on how watch hours should be, you know?
+My goal with this was, let's not make 15 implementations of this, let's try to get together, agree on how watch hours should be, you know?
 We have like the explanation from Tadge about how they could work.
 We are building the exact same thing, like replicated three or four times.
 Why don't we get together, write a bolt or what could have been a bleep later or whatever kind of like standardization of this and make it work for any implementation, you know?
@@ -490,7 +490,6 @@ It's far from ideal.
 
 Speaker 1: 00:23:12
 
-And why?
 It's not that you don't have a good community.
 I mean, everybody writes Python.
 
