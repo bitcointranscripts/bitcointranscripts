@@ -669,13 +669,13 @@ I mean, if you don't, you know now.
 
 Speaker 1: 00:33:31
 
-Jeff Deist Yeah, it's just a file.
+Yeah, it's just a file.
 You can also just make it like a file sharing service.
 You just have you store all my stuff.
 
 Speaker 0: 00:33:38
 
-Carlos Gonzalez-Ramon You could actually, it's built in a way where you can do that because not all the watch hour implementations allow for this, but you can retrieve the data that you have sent to the AOS Satoshi.
+It's built in a way where you can do that because not all the watchtowers implementations allow for this, but you can retrieve the data that you have sent to the IOS Satoshi.
 So I can send you encrypted backups of something and then I can retrieve them later on.
 As long as I have the encryption key, I have a free backup system.
 So the AOS Satoshi allows this by design because it's not meant only to be used for lining.
@@ -689,7 +689,7 @@ And what kind of privacy considerations did you think about as you were building
 
 Speaker 0: 00:34:17
 
-Ruiz So the design has user privacy in mind, to the highest extent I think it could.
+So the design has user privacy in mind, to the highest extent I think it could.
 As I was mentioning, there's some registration and some subscription model built in, but that's being built using a few more keys for the user.
 So the user mainly creates a key pair for Sec6AP256K1, so like the Bitcoin curb, and uses the private key of that, sorry, the public key of that as an identifier with the tower, and the private key to sign messages with the tower.
 So it's like I identify, so I send you like signed messages so you can like identify me and I use the public part to say it's me to register for you to be able to like verify my signatures, right?
@@ -697,10 +697,12 @@ But that doesn't have to do anything with the node ID, the channel ID, whoever i
 It's just something you create in the same way you may create a Bitcoin address and use that as an identifier.
 Right now the tower is being offered using two different endpoints.
 One is a HTTP slash HTTPS interface, so that's kind of like if you want to use GlueNet, but we also offer a Tor interface.
-So By using Tor and not linking your ID to anything related to you, you could decouple your node and your channels from your Tower client identifier.
+So by using Tor and not linking your ID to anything related to you, you could decouple your node and your channels from your tower client identifier.
 That's on one place.
-On the other place, the Tower doesn't know anything about node IDs. Again, first because the user is identified using a different identifier.
-It doesn't know anything about channel IDs. So all the information being shared between clients and towers is done under this subscription umbrella with ephemeral IDs and there's no distinction between different channels so like all the data goes in the same direction.
+On the other place, the tower doesn't know anything about node IDs.
+Again, first because the user is identified using a different identifier.
+It doesn't know anything about channel IDs.
+So all the information being shared between clients and towers is done under this subscription umbrella with ephemeral IDs and there's no distinction between different channels so like all the data goes in the same direction.
 If you're reusing the exact same key for different nodes you can just like you dump that and you import it in another node.
 The tower doesn't have any way of telling.
 Well, it may if you're using ClearNet, because it may be able to see that you're sending that using two different IPs, but if you're using Tor, then there's no way.
