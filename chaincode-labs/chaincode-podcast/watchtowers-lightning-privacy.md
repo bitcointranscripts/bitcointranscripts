@@ -916,22 +916,23 @@ So you're saying just watch and send an email?
 Speaker 0: 00:46:58
 
 For example, I mean that could be a solution but yeah that's mainly what I'm saying.
-You could watch and notify either the tower, the node admin or the application or whatever about, hey, you know, your channel is in danger.
+You could watch and notify either the tower, the node admin or the application or whatever about, hey, your channel is in danger.
 And If you just come back online, you're going to be able to do whatever you're supposed to do.
 
 Speaker 1: 00:47:19
 
 Maybe send a letter because there are probably already offline, right?
-Like,
 
 Speaker 0: 00:47:23
 
-well, it's not like that, honestly, because the placing where WhatsApp makes more sense is for mobile wallets, Because those are the ones that are normally not online all the time.
+Well, it's not like that, honestly, because the placing where WhatsApp makes more sense is for mobile wallets.
+Because those are the ones that are normally not online all the time.
 But they are not online all the time, not because the phone is not online all the time, which it is, but because the app is offline.
-Like, if your node is always online, if you have like a beefy setup, if you have like the most robust fail-safe setup, A tower is not useful for you, not much useful for you.
-It's useful when you're actually on the other side of the spectrum, you know, you're using something that is not connected all the time, or because of like OS limitations, your app is not on all the time, or cannot like be checking this kind of stuff all the time.
+Like, if your node is always online, if you have like a beefy setup, if you have like the most robust fail-safe setup.
+A tower is not useful for you, not much useful for you.
+It's useful when you're actually on the other side of the spectrum, you're using something that is not connected all the time, or because of like OS limitations, your app is not on all the time, or cannot like be checking this kind of stuff all the time.
 So for mobile wallets, it makes the most sense.
-And they are all, not always, but potentially always online.
+And they not always, but potentially always online.
 You know, they are on your pocket.
 You can open it up and react about that easily.
 But they don't allow chain monitoring or blockchain monitoring because you cannot have a background.
@@ -947,7 +948,8 @@ So if you split that, you can use this.
 I mean, you can use this for multiple projects already, but even in a simpler way.
 Again, the whole heavy lifting comes from the reacting part.
 And that logic is better built in nodes because they can resign, they can re-agree on stuff, they have all the keys, they can do all the stuff.
-Even with this kind of approach you can build something like I share some of the keys with the tower because I'm only running that tower for myself And then now the tower doesn't have to notify me.
+Even with this kind of approach you can build something like I share some of the keys with the tower because I'm only running that tower for myself.
+And then now the tower doesn't have to notify me.
 Now the tower actually has sign potential.
 So I'm splitting like the watching with this part.
 And for me, the tower has like propagation key material so it can like sign some of the stuff.
@@ -966,7 +968,7 @@ And one of the things on the horizon, of course, is L2.
 
 Speaker 1: 00:50:06
 
-So how does that, is that something you're really hoping for in terms of helping with adoption?
+Is that something you're really hoping for in terms of helping with adoption?
 I mean, I've seen that cited as one of the more useful gains from doing L2 is the storage component.
 So what do you take?
 
@@ -982,7 +984,7 @@ This helps.
 
 Speaker 0: 00:50:33
 
-Jorge Carrasco For towers, it's tricky, actually.
+For towers, it's tricky, actually.
 Because people tend to think that the storage will be 01, because the only thing you have to store is the last update.
 And that's not true.
 So it could be true, but then you have privacy leaks.
@@ -991,10 +993,11 @@ But ZMN actually taught me better.
 He's like the privacy guy for this kind of stuff.
 He has also been thinking about watchtowers, apart from privacy.
 I think he actually has a few mails in the mailing list dating back from 2016, maybe 2017, talking about watchtowers, talking about how to...
-I'm going to refer to the presentation I was doing before, but how the whole like identifier overriding attack works, all those things that like I ended up like learning by doing this stuff, Then I learned that he had done that way before me.
-So at some point, we started a really nice conversation about Towers on how he thinks things should be done with privacy really in mind, because he's always a privacy-aware guy.
+I'm going to refer to the presentation I was doing before, but how the whole like identifier overriding attack works, all those things that like I ended up like learning by doing this stuff.
+Then I learned that he had done that way before me.
+So at some point, we started a really nice conversation about towers on how he thinks things should be done with privacy really in mind, because he's always a privacy-aware guy.
 Well, anyway, L2 specifics.
-So it turns out that if you send the WhatsApp hour only the last update and you keep updating the last update, that's all one of course, but you're telling the WhatsApp hour what your node ID is and not your channel ID is.
+So it turns out that if you send the watchtower only the last update and you keep updating the last update, that's all one of course, but you're telling the WhatsApp hour what your node ID is and not your channel ID is.
 Because if you don't, then it cannot update the last update.
 So it's like, if you need an endpoint, if your trigger is consuming this transaction ID, and what I have to use for consuming that transaction ID is this last update.
 I have to identify the transaction ID, the funding transaction ID.
@@ -1022,7 +1025,8 @@ And a delete request doesn't mean it's actually deleted, it just means you could
 
 Speaker 2: 00:53:00
 
-Yeah, talking about the subscription model, where I think we haven't actually mentioned this in the podcast yet, but you would purchase a number of slots and for some amount of time, By deleting some of your appointments, the backups of channel state, you would open up slots again.
+Yeah, talking about the subscription model, where I think we haven't actually mentioned this in the podcast yet, but you would purchase a number of slots and for some amount of time.
+By deleting some of your appointments, the backups of channel state, you would open up slots again.
 Sure, whether or not Watchtower actually deletes the stuff is their business, but you would notice if they don't give you back your slots.
 So you could still have five new updates and then delete three an hour later or something and basically have them on random delays, all of the things.
 
@@ -1032,7 +1036,7 @@ It will reduce significantly the amount of storage that the watchtower needs.
 Again, like two dozens of bytes per update instead of like hundreds of bytes per update.
 Because it's like last update number, let's say, with the ID.
 Either that ID is reused or not.
-So it could be O1, if with a little privacy leak, it could be ONN for small updates.
+So it could be O1, if with a little privacy leak, it could be ON for small updates.
 
 Speaker 2: 00:54:07
 
@@ -1069,18 +1073,17 @@ That's trade-off though, because if you queue kind of like your updates to the t
 Speaker 2: 00:55:27
 
 Sure, but with L2 especially,
-grouping it would be much cleaner, because for the LM penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
-But with L2 you only, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
-That's also true.
+grouping it would be much cleaner, because for the LN penalty, you would actually need every single state for the watchtower because your counterparty could use any old state.
+But with L2, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
 So L2 would make privacy and storage much better.
 
 Speaker 1: 00:55:57
 
-Ooh, but that becomes very interesting when there's a breach and They all try to grab it.
+Ooh, but that becomes very interesting when there's a breach. They all try to grab it.
 
 Speaker 2: 00:56:02
 
-Oh, that's fine.
+That's fine.
 They can overwrite each other.
 
 Speaker 0: 00:56:04
