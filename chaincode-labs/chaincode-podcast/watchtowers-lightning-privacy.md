@@ -1,11 +1,15 @@
 ---
-title: "Watchtowers, Lightning Privacy"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-and-Watchtowers--Lightning-Privacy---Episode-28-e1uce42
-tags: ['lightning', 'privacy']
-speakers: ['Sergi Delgado']
-categories: ['podcast']
-date: 2023-02-02
+title: 'Watchtowers, Lightning Privacy'
+transcript_by: 'Ringoz1 via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-and-Watchtowers--Lightning-Privacy---Episode-28-e1uce42'
+date: '2023-02-02'
+tags:
+  - 'lightning'
+  - 'privacy'
+speakers:
+  - 'Sergi Delgado'
+categories:
+  - 'podcast'
 ---
 Speaker 0: 00:00:00
 
@@ -16,11 +20,14 @@ Sorry, failing time.
 
 Speaker 1: 00:00:12
 
-We're going to make sure our editor takes out The love word.
+We're going to make sure our editor takes out the love word.
 We are back in the studio.
+
+Speaker 2: 00:00:15
+
 We are.
 
-Speaker 2: 00:00:24
+Speaker 1: 00:00:24
 
 And today we're going to be joined by Sergi Delgado.
 
@@ -36,7 +43,7 @@ He did his PhD and worked as a postdoc for a while, and now he's a Spiral grante
 
 Speaker 1: 00:00:42
 
-Yeah, he's pretty privacy-focused, And it's really interesting to watch a researcher sort of move over and do implementation for now.
+Yeah, he's pretty privacy-focused, and it's really interesting to watch a researcher sort of move over and do implementation for now.
 I don't know, it's been like three years he's been working on this.
 So looking forward to hearing from him.
 Hope you enjoy the episode.
