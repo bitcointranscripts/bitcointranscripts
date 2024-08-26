@@ -716,13 +716,12 @@ That's one of the reasons why we switched to trust.
 
 Speaker 2: 00:37:02
 
-Paul Audio So you're saying that the watchtowers are going to be bona fide members of the Lightning Network communication?
-And they could.
+So you're saying that the watchtowers are going to be bona fide members of the Lightning Network communication?
 Going to speak to Lightning Protocol?
 
 Speaker 0: 00:37:12
 
-Carlos Ancelo They are.
+They are.
 They have been for years because LND has been doing it in that way.
 I'm just saying that you choose your communication channel.
 You can use whatever you want at the end of the day.
@@ -736,17 +735,16 @@ Like It's in your logo, so.
 Speaker 0: 00:37:51
 
 Non-negligible, let's say.
-Yeah.
 I think they are a part of the network.
 They could be different actors in the network.
 So you could be offering this and also be a node.
 And that may give you a stronger position than other nodes.
 I'm just going to highlight something that I think is quite viable, but people may not know.
-So I could have a channel open with my node and I could be offering a watch hour service, like those are the couples, you don't know about them.
+So I could have a channel open with my node and I could be offering a watchtower service, like those are the couples, you don't know about them.
 And I may know that you're actually the one sending me the information because you're using the identifiers that relate to the commitment transactions that are being revoked in the same channel that I am.
 So I may know that you are actually backing up the information with me.
 I don't know if you're using any other watchtower.
-So, like, if I assume that, you know, you're using my tower as your protection service, and you are connected to me, and I know that you may be offline because, you know, I'm not being able to...
+So, like, if I assume that, you're using my tower as your protection service, and you are connected to me, and I know that you may be offline because, I'm not being able to...
 
 Speaker 1: 00:38:45
 
@@ -755,13 +753,13 @@ But beyond that, I'm also identifying myself with how related transactions, aren
 
 Speaker 0: 00:38:52
 
-Well, but if I'm already connected to you, I already, oh, you mean from other channels, not for the ones, yeah.
+Well, but if I'm already connected to you, I already, you mean from other channels, not for the ones, yeah.
 Yeah, well, you may be telling the tower how often you're receiving payments.
 I can roll out the frequency of my own channel.
 I may know other channels you have open because I know your node ID.
 I may know about your private channels.
 
-Speaker 2: 00:39:12
+Speaker 1: 00:39:12
 
 So I would still not be able to tie the commitment transaction IDs to the other channels.
 
@@ -770,7 +768,7 @@ Speaker 0: 00:39:17
 You may not be able to know where they come from.
 You may be able to know the frequency that nodes are receiving payments, not from where.
 
-Speaker 2: 00:39:23
+Speaker 1: 00:39:23
 
 You wouldn't even be able to know whether it's the same node or another node, right?
 It could be a second node that your channel partner's running.
@@ -779,11 +777,11 @@ Speaker 0: 00:39:30
 
 We could be sharing the same subscription.
 I mean, theoretically, a lot of those things can happen.
-So like Merge and Me can just like pay for one subscription and use the same key to sign and send that information to the tower.
+So like Murch and Me can just like pay for one subscription and use the same key to sign and send that information to the tower.
 
 Speaker 1: 00:39:40
 
-Yeah, I understand there's probably some, you know, there's maybe not certainty in a lot of these things, but there's probably some useful heuristics you'd be picking up.
+Yeah, I understand there's probably some, there's maybe not certainty in a lot of these things, but there's probably some useful heuristics you'd be picking up.
 And for the Umbrella user running on a Raspberry Pi in their home, you can make some pretty solid assumptions.
 
 Speaker 0: 00:39:57
@@ -800,21 +798,21 @@ I think the minute you start sharing something with someone else, you open yours
 
 Speaker 2: 00:40:56
 
-Paul Audio So you're saying you're not going to be surprised if the IOP Satoshi is going to get run by blockchain analytics companies and offered as a service.
+So you're saying you're not going to be surprised if the IOP Satoshi is going to get run by blockchain analytics companies and offered as a service.
 Probably that's where the free watchtowers will come from.
 
 Speaker 0: 00:41:09
 
-Carlos Bustamante No, no, I thought about that, of course.
+No, I thought about that, of course.
 In the same way that routing nodes could be run by chain analytic companies and like offer low fee channels so you end up running through them and they may end up like learning or potentially learning something about you.
 
 Speaker 1: 00:41:25
 
-Well if Async and LN Big you know spin up theirs then It gives them a pretty nice competitive advantage.
+Well if Async and LNBig you know spin up theirs then It gives them a pretty nice competitive advantage.
 
 Speaker 2: 00:41:32
 
-That's assuming that LN Big is not chain analysis.
+That's assuming that LNBig is not chain analysis.
 
 Speaker 0: 00:41:37
 
