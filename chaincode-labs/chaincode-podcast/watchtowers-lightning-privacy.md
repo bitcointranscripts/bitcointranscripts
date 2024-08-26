@@ -499,7 +499,7 @@ Yeah, but not good Python.
 I mean, don't get me wrong, it's like, you build something for one specific reason, you just don't maintain it, you don't update it.
 It may not even be generally enough for someone else to use it.
 It's a toy project.
-And for me, when I started thinking about adding lightning functionality to the watchtower, then I realized that it was an existence.
+And for me, when I started thinking about adding Lightning functionality to the watchtower, then I realized that it was an existence.
 Like the best thing you could get was the testing and kind of developing libraries from C-Lightning, which had some functionality, but not all the functionality, right?
 So it came to the thing of either doing it myself, so like implementing part of the bolts myself, which I started doing.
 I saw that that was going to take years, so it was definitely worth it, not just because of the time, but also because of the maintaining, right?
