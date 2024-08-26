@@ -1,26 +1,33 @@
 ---
-title: "Channel Jamming on the Lightning Network"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4
-tags: ['lightning', 'research', 'ux', 'watchtowers']
-speakers: ['Clara Shikhelman', 'Sergei Tikhomirov']
-categories: ['podcast']
-summary: "Clara and Sergei stop by to chat about their recent proposal on mitigating jamming attacks in the Lightning Network. We talk unconditional fees, local reputation, the impact on decentralization and UX, and the state of Lightning in general."
+title: 'Channel Jamming on the Lightning Network'
+transcript_by: 'mvuk via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4'
+date: '2022-11-22'
+tags:
+  - 'lightning'
+  - 'research'
+  - 'ux'
+  - 'watchtowers'
+speakers:
+  - 'Clara Shikhelman'
+  - 'Sergei Tikhomirov'
+categories:
+  - 'podcast'
+summary: 'Clara and Sergei stop by to chat about their recent proposal on mitigating jamming attacks in the Lightning Network. We talk unconditional fees, local reputation, the impact on decentralization and UX, and the state of Lightning in general.'
 episode: 25
-date: 2022-11-23
 additional_resources:
--   title: recent proposal
-    url: https://research.chaincode.com/2022/11/15/unjamming-lightning/
--   title: Spamming the Lightning Network
-    url: https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md
--   title: Preventing Channel Jamming
-    url: https://blog.bitmex.com/preventing-channel-jamming/
--   title: 'Bitcoin Optech: Channel jamming attacks'
-    url: https://bitcoinops.org/en/topics/channel-jamming-attacks/
--   title: The impacts of channel jamming
-    url: https://jamming-dev.github.io/book/1-impacts.html
--   title: 'Bitcoin problems: Channel balance probing'
-    url: https://bitcoinproblems.org/problems/channel-balance-probing.html
+  - title: 'recent proposal'
+    url: 'https://research.chaincode.com/2022/11/15/unjamming-lightning/'
+  - title: 'Spamming the Lightning Network'
+    url: 'https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md'
+  - title: 'Preventing Channel Jamming'
+    url: 'https://blog.bitmex.com/preventing-channel-jamming/'
+  - title: 'Bitcoin Optech: Channel jamming attacks'
+    url: 'https://bitcoinops.org/en/topics/channel-jamming-attacks/'
+  - title: 'The impacts of channel jamming'
+    url: 'https://jamming-dev.github.io/book/1-impacts.html'
+  - title: 'Bitcoin problems: Channel balance probing'
+    url: 'https://bitcoinproblems.org/problems/channel-balance-probing.html'
 ---
 Speaker 0: 00:00:00
 
@@ -84,7 +91,7 @@ You have to learn anyway.
 When you're sending yourself, you learn which channels worked in a payment attempt.
 And then if a channel was sent back a message that the capacity is exhausted in that direction, you remember that for a bit and you don't try that channel again, because you're just wasting everybody's resources.
 But there's really the question of how do you make people pay for that?
-Because right now everybody's just forwarding all the messages for free and if the payment fails it just falls back for Everyone and their money was still tied up for the time They still invested the bandwidth to forward the payments, but they only have opportunity costs and no earnings.
+Because right now everybody's just forwarding all the messages for free and if the payment fails it just falls back for everyone and their money was still tied up for the time. They still invested the bandwidth to forward the payments, but they only have opportunity costs and no earnings.
 So there have to be ways to offset the service that is being provided by payment attempts.
 
 Speaker 2: 00:03:09
@@ -148,7 +155,7 @@ There are other challenges in the Lightning Network that require more and more a
 
 Speaker 2: 00:06:36
 
-Paul Matzko So you've been working on channel jamming for the last few months, and we'd love to hear how you came upon this kind of project, and sort of how you got started, and where are you today?
+So you've been working on channel jamming for the last few months, and we'd love to hear how you came upon this kind of project, and sort of how you got started, and where are you today?
 
 ## How our jamming project started
 
@@ -193,10 +200,11 @@ And I guess the issue that we've been trying to address, compared or in contrast
 Because lots of the ideas that have been floating around, it was just some developer came up with an idea, wrote up a blog post and it goes along the lines of, okay, we could do something like this.
 And there are like a few replies, okay, we could do something like that.
 And then it kind of sits there for three years.
-We hope that something more practical will come up of our results of our paper a bit faster And we hope that it's more kind of practical and we focus on the practicality as a very important design goal Spoiler alert towards when we'll talk about the solution It ended up that we probably should be thinking about jamming into different styles.
+We hope that something more practical will come up of our results of our paper a bit faster and we hope that it's more kind of practical and we focus on the practicality as a very important design goal.
 
 Speaker 0: 00:09:35
 
+Spoiler alert towards when we'll talk about the solution It ended up that we probably should be thinking about jamming into different styles.
 And then to resolve each style, you need a different solution that was discussed in the community.
 
 Speaker 2: 00:09:41
@@ -263,13 +271,13 @@ Now, every time somebody sends me an HTLC, I first of all ask, is it from a trus
 And second of all, does this trusted node tell me that this HTLC is okay?
 If this is from a good node that says this HTLC is a good HTLC, I will forward this using all of the liquidity I have and all of the slots.
 But if I get an HTLC from somebody I don't know, or like a new peer, or from somebody I trust but is not willing to vouch for the HTLC, I will only allow a limited quota of slots and liquidity.
-So anybody just opening a channel to me or forwarding HTLCs Cannot jam all of my slots and all of the liquidity in my channels Doesn't that have a centralizing effect?
+So anybody just opening a channel to me or forwarding HTLCs Cannot jam all of my slots and all of the liquidity in my channels 
 
 ## Centralization concerns
 
 Speaker 2: 00:14:11
 
-This sounds a little bit similar to the way that autopilot routing what is designed as in I choose people who the network is already familiar with and therefore if you're a business and you run a well-maintained node and you have been up for a long time, then you're going to have an obvious advantage against new nodes who are just coming online.
+Doesn't that have a centralizing effect? This sounds a little bit similar to the way that autopilot routing what is designed as in I choose people who the network is already familiar with and therefore if you're a business and you run a well-maintained node and you have been up for a long time, then you're going to have an obvious advantage against new nodes who are just coming online.
 
 Speaker 1: 00:14:35
 
@@ -367,13 +375,11 @@ Speaker 2: 00:19:17
 Cool.
 So besides reputation, what other ideas do you have to help solve this problem?
 
-Speaker 3: 00:19:22
-
-The fees.
-
 ## Unconditional fees
 
 Speaker 3: 00:19:23
+
+The fees.
 
 It has been discussed a lot in the Lightning community, and the key word here is upfront fees.
 We use a somewhat more generic term, unconditional fees, because strictly speaking, they can be paid upfront or they can be paid like in the end of the payment cycle but doesn't matter very much.
@@ -467,7 +473,7 @@ So the thing is, the upfront fees are very small, but still it's unpleasant to p
 So we're thinking about two kinds of users.
 There's the one user that understands the Lightning Network, knows what's a jamming attack, and then they go, okay, so this is really such a small amount that sometimes I'm being charged, or whatever.
 But then we have the user that hardly knows what's the Lightning Network, never heard about jamming, never wants to know anything about jamming.
-So to them, wallets would oftentimes rescind the payments if they fail.
+So to them, wallets would oftentimes resend the payments if they fail.
 And then we can tell them, OK, so the maximum amount of fees you're going to pay is going to be X.
 And you calculate this X based on, I don't know, you need five attempts to guarantee a success of 99.9999% and then you're like, okay, this is going to be maximum this.
 And more often than not, the fees are going to be less than that.
@@ -574,7 +580,7 @@ I agree here that messaging is not the primary use case.
 Lots of engineering work is being done to address this use case that we all think about as payments, so carrying messages that carry some economic value and economic meaning.
 And kind of downgrading this into simple message exchange is kind of, I mean, the whole protocol becomes kind of an overkill at least in my opinion.
 But of course if people are ready to pay for it, then who are we to prevent them if they pay the market price.
-Somewhat reminds me of Bitcoin op-return stuff and putting things into outputs, but on layer one you kind of burden everyone else for eternity to store this data, which is kind of not very friendly if we're thinking about peer-to-peer ethics, so to say.
+Somewhat reminds me of Bitcoin OP_RETURN stuff and putting things into outputs, but on layer one you kind of burden everyone else for eternity to store this data, which is kind of not very friendly if we're thinking about peer-to-peer ethics, so to say.
 In Lightning, it's a bit better because you only burden the nodes in the route whose resources you occupy while your message is being passed through.
 But still, I think this is not the intended use and we shouldn't optimize for it.
 Maybe we shouldn't actively discourage this, but we shouldn't make decisions to make it easier.
@@ -588,7 +594,7 @@ Does this play at all with the rise of watchtowers and the uses of watchtowers?
 Speaker 3: 00:32:54
 
 There is some similarity in the question of watchtower incentivization and our proposal, especially the fee aspect.
-In the watchtower, as far as I understand the watchtower debate, there is a question of how to incentivize watchtowers So on the one hand we want watchtowers to be incentivized to get the money if they're doing the job On the other hand we want to prevent the watchtowers from taking the money or taking the prepayment and just not doing their jobs or question of how to link the payment or how to link the fee being paid to the fact of a tower doing its job is kind of an...
+In the watchtower, as far as I understand the watchtower debate, there is a question of how to incentivize watchtowers So on the one hand we want watchtowers to be incentivized to get the money if they're doing the job. On the other hand we want to prevent the watchtowers from taking the money or taking the prepayment and just not doing their jobs or question of how to link the payment or how to link the fee being paid to the fact of a tower doing its job is kind of an...
 Probably I shouldn't say it's an open question because it's kind of clear how to implement this, it's been implemented as far as I understand.
 So there are certain similarities in this two-part structure where we have some fee paid up front that provides some initial incentivization for the actor that we want to perform some action, be it routing a payment or watching the chain and disputing the chain.
 And then the rest of the payment, the rest of the fee is conditional.
@@ -641,7 +647,7 @@ Maybe we can introduce additional trust assumptions and peers, I don't know, tru
 So if Alice says this completed in seven seconds, Bob said it completed in 10 seconds, they could come to some kind of agreement.
 But again, it's an open question.
 Would be nice to achieve this.
-It would allow us not only to fairly price the jamming HTLCs, but also account for the fact that there are protocols based on Lightning or similar ideas that use the HTLCs that are held for a long time as a natural part of their protocol, such as discrete lock contracts that resolve one way or the other depending on what the oracle says, so they are kept in flight until the oracle says what actually happened in the real world, or some kind of swaps where on-chain funds being swapped for off-chain funds, and again the HTLC in the Lightning is being held until the on-chain funds are sent the way they should be sent.
+It would allow us not only to fairly price the jamming HTLCs, but also account for the fact that there are protocols based on Lightning or similar ideas that use the HTLCs that are held for a long time as a natural part of their protocol, such as discrete log contracts that resolve one way or the other depending on what the oracle says, so they are kept in flight until the oracle says what actually happened in the real world, or some kind of swaps where on-chain funds being swapped for off-chain funds, and again the HTLC in the Lightning is being held until the on-chain funds are sent the way they should be sent.
 So it would be nice to price these fairly proportional to the time it is actually being held for but again it's a research topic.
 
 Speaker 1: 00:36:45
@@ -687,7 +693,7 @@ Like what is the academic process look like and how does that differ from the ma
 Speaker 0: 00:38:51
 
 So I think a lot of things that were added to the paper, the motivation was from time to time, like, okay, we're going to send it to a conference, there's going to be a reviewer, A reviewer is going to read this and they are going to catch us.
-So with the knowledge that there are going to be people that are focused on reading this paper, just to look for a way to not accept it to a conference, this gives you a lot of motivation because Sometimes in mailing lists people go through an idea and look at it, but they're not against you Which is not a bad thing But I feel that there's something rough in the academic world that makes you be very, very careful, write things properly, check things properly.
+So with the knowledge that there are going to be people that are focused on reading this paper, just to look for a way to not accept it to a conference, this gives you a lot of motivation because sometimes in mailing lists people go through an idea and look at it, but they're not against you. Which is not a bad thing, but I feel that there's something rough in the academic world that makes you be very, very careful, write things properly, check things properly.
 So I think it's good.
 
 Speaker 2: 00:39:39
@@ -735,7 +741,7 @@ There's a movie from the 80s called Spaceballs and in it there is a reference to
 
 Speaker 1: 00:42:04
 
-Sir, the radar, sir, it appears to be jammed.
+[Movie Clip Audio:] Sir, the radar, sir, it appears to be jammed.
 
 Speaker 2: 00:42:10
 
@@ -775,7 +781,7 @@ So people would still do arbitrage if there's really a gap, but they wouldn't be
 
 Speaker 2: 00:43:41
 
-So Tobentax for lightning sounds amazing.
+So Tobin tax for lightning sounds amazing.
 So to speak.
 Any other thoughts?
 
