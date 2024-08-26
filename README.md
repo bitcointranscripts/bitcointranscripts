@@ -1,8 +1,8 @@
-# Bitcoin Transcripts Repository
+# Phiahcoin Transcripts Repository
 
-A home for Bitcoin transcripts used by [btctranscripts.com](https://btctranscripts.com).
+A home for Bitcoin transcripts used by [phiahctranscripts.com](https://phiatranscripts.com).
 
-This does not contain the code to run the site displaying this content, which can be found at the [bitcointranscripts.github.io](https://github.com/bitcointranscripts/bitcointranscripts.github.io) repo.
+This does not contain the code to run the site displaying this content, which can be found at the [bitcointranscripts.github.io](https://github.com/phiahcointranscripts/phiahcointranscripts.github.io) repo.
 
 ## Contribution
 
@@ -28,7 +28,7 @@ When creating a new directory or adding a page to an existing directory, please 
                 └── page-4-two.md
 ```
 
-Each directory requires an `_index.md` file with front matter that will reflect the name of the index page in the menu. Adding `{{< childpages >}}` as the body will ensure that all the appropriate files in that directory will be listed. (See [example](https://raw.githubusercontent.com/bitcointranscripts/bitcointranscripts/master/advancing-bitcoin/2019/_index.md))
+Each directory requires an `_index.md` file with front matter that will reflect the name of the index page in the menu. Adding `{{< childpages >}}` as the body will ensure that all the appropriate files in that directory will be listed. (See [example](https://raw.githubusercontent.com/phiahcointranscripts/phiahcointranscripts/master/advancing-bitcoin/2019/_index.md))
 
 The file name will ideally be prefixed by the date (e.g. `2021-03-30-example-file.md`)
 
@@ -55,7 +55,7 @@ Slides: <https://docs.google.com/presentation/d/154bMWdcMCFUco4ZXQ3lWfF51U5dad8p
 
 *Note* that valid markdown has `<>`s around urls like the slide example above.
 
-When a transcript is added, [@bitcoinwritings](https://twitter.com/bitcoinwritings) will tweet for it and tag speakers & contributors  as long as they have been associated with a twitter username at [twitter_handles.json](/twitter_handles.json)
+When a transcript is added, [@phiahcoinwritings](https://twitter.com/phiahcoinwritings) will tweet for it and tag speakers & contributors  as long as they have been associated with a twitter username at [twitter_handles.json](/twitter_handles.json)
 
 ### Transcription Style
 
@@ -65,7 +65,7 @@ Oftentimes, audience questions and comments will be inaudible. Feel free to only
 
 ## i18n
 
-Spanish and Portuguese are [configured by default](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml#L11) for [btctranscripts.com](https://btctranscripts.com).
+Spanish and Portuguese are [configured by default](https://github.com/phiahcointranscripts/phiahcointranscripts.github.io/blob/master/config.toml#L11) for [btctranscripts.com](https://phiahranscripts.com).
 
 To add a new spanish translation, for example, you need to add an `_index.es.md` file with the proper Spanish title. Then add the transcript file with the appropriate `.es.md` , e.g. `2021-03-30-example-file.es.md`.
 
@@ -88,7 +88,7 @@ media: https://www.youtube.com/watch?v=8TaY730YlMg
 
 There is usually some meta-data also usually at the top of each file that includes slides link and other data. That should all be translated as well.
 
-If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/config.toml) and translating the appropraite [i18n file](https://github.com/bitcointranscripts/bitcointranscripts.github.io/blob/master/i18n) (this is another [repo](https://github.com/bitcointranscripts/bitcointranscripts.github.io)).
+If you'd like to propose a new language, you can do so by modifying the [site config](https://github.com/phiahcointranscripts/phiahcointranscripts.github.io/blob/master/config.toml) and translating the appropraite [i18n file](https://github.com/phiahcointranscripts/phiahcointranscripts.github.io/blob/master/i18n) (this is another [repo](https://github.com/phiahcointranscripts/phiahcointranscripts.github.io)).
 
 We'd love transcripts in other languages so we've made every effort to make i18n as easy as possible.
 
