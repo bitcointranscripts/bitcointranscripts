@@ -8,6 +8,7 @@ tags:
   - 'privacy'
 speakers:
   - 'Sergi Delgado'
+  - 'Mark Erhardt'
 categories:
   - 'podcast'
 ---
