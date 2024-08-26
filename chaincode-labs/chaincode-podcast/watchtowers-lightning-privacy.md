@@ -163,27 +163,29 @@ Maybe talk a little bit about how you let the Bitcoin Core team know a little bi
 
 Speaker 0: 00:05:35
 
-So, all right, four months passed, right?
+All right, four months passed, right?
 We were writing this paper.
 We knew we wanted to write a paper about this.
-So I went back to Barcelona, which is where I live, And the person I knew about peer-to-peer at the time was Peter, right?
+So I went back to Barcelona, which is where I live.
+The person I knew about peer-to-peer at the time was Peter, right?
 So I didn't know that much about disclosure and stuff like that.
 You know, I was young.
 So I actually probably disclosed this.
 So I actually messaged Peter about it.
 It was like, hey Peter, we've been working on this.
 We are planning on publishing this at FC, which you know.
-I sent a copy of the paper to Peter about like, hey, if there's anything you know that you don't want us to mention, here it is.
+I sent a copy of the paper to Peter about like, hey, if there's anything, that you don't want us to mention, here it is.
 We have run this in testnet.
 We haven't done anything in mainnet because we didn't want to mess around with the network more than we need.
 Some people agree with that, some people didn't.
 So yeah, we let them know.
 Peter said that some of that was partially known, that they were aware of it, and that they will implement some countermeasures because of it.
-Some of the ones that were literally specified in the paper, so For example, how orphan pool eviction was completely broken.
+Some of the ones that were literally specified in the paper.
+For example, how orphan pool eviction was completely broken.
 That was like patched straight away.
 That and also in-blogging, which was one of the techniques we used.
 Those two things were almost immediately patched by Peter before we got a chance of presenting that publicly, which happened like maybe four or five months later.
-Years after, or months after, I don't, I'm like completely lost on the timing here.
+Years after, or months after, I'm like completely lost on the timing here.
 I've learned some of that actually today, because I remember like seeing a PR later on about adding additional connections to Bitcoin Core, the ones that some of the audience may now know, the two additional ones, the ninth and the tenth outgoing connections.
 
 Speaker 2: 00:07:31
@@ -197,15 +199,15 @@ Speaker 0: 00:07:32
 Blocks only connections, yeah.
 And that was proposed by Suhas, which I knew that someone proposed that, I didn't know it was Suhas.
 And that was part of a countermeasure against topology inferring using transaction propagation data.
-Because now, you know, some of the information that you may be propagating through the connections on block, sorry, transactions on block connections, like the normal connections, may beat you back in the ass using the block-only relay connections.
+Because now, some of the information that you may be propagating through the connections on block, sorry, transactions on block connections, like the normal connections, may beat you back in the ass using the block-only relay connections.
 So you may not be able to use similar techniques to infer the topology.
 
 Speaker 1: 00:08:05
 
 Yeah, I mean, the genius of that too, of course, is given the combination, you're also saving bandwidth.
-Like it's not that much of a, not that much overhead to add blocks only.
+Like it's not that much overhead to add blocks only.
 So pretty cool.
-From there you went on to work on payment probing on Lightning, which is, first of all, it's a layer up, but also, you know, it's sort of the adversarial kind of research that you've been doing.
+From there you went on to work on payment probing on Lightning, which is, first of all, it's a layer up, but also, it's sort of the adversarial kind of research that you've been doing.
 Like it's a whole new domain.
 Like how did you get into that kind of world?
 
