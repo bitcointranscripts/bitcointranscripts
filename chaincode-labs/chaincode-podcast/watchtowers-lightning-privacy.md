@@ -1164,7 +1164,7 @@ No, so any PrevOut links to any UTXO that has the same script pubkey and the sam
 
 Speaker 0: 00:57:17
 
-Oh, you mean that they will be linking one to the previous?
+You mean that they will be linking one to the previous?
 
 Speaker 2: 00:57:20
 
@@ -1172,11 +1172,11 @@ So the miner could actually collect all three transactions, as long as they orde
 
 Speaker 1: 00:57:24
 
-It's any of the PrevAs.
+It's any of the Prevout.
 
 Speaker 0: 00:57:27
 
-Yeah, yeah, yeah, of course, of course.
+Yeah, of course, of course.
 I've never thought about that.
 
 Speaker 2: 00:57:30
@@ -1185,16 +1185,15 @@ So actually, using multiple towers in parallel would help your privacy, but suck
 
 Speaker 0: 00:57:39
 
-Yeah, being honest, I haven't put that much thought into L2 mainly because, you know, if towers were early, imagine building on L2 towers, which have no release date.
+Yeah, being honest, I haven't put that much thought into L2 mainly because, if towers were early, imagine building on L2 towers, which have no release date.
 
 Speaker 1: 00:57:53
 
 Well, enjoyed the conversation about watchtowers and...
-Enjoyed?
-Enjoyed.
 
 Speaker 0: 00:57:59
 
+Enjoyed?
 That sounds like like a feeling, you know?
 
 Speaker 2: 00:58:01
@@ -1213,7 +1212,7 @@ Thank you for inviting me.
 
 Speaker 1: 00:58:20
 
-OK, Merch, what did you think of that?
+Merch, what did you think of that?
 
 Speaker 2: 00:58:22
 
@@ -1228,7 +1227,7 @@ It's interesting to think about how watchtowers factor into how Lightning functi
 Speaker 2: 00:58:42
 
 I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on HODL invoices.
-And I think it sounds pretty much sure Watchtower implementation will make a mobile lightning wallet environment a lot more doable.
+I think it sounds pretty much sure Watchtower implementation will make a mobile lightning wallet environment a lot more doable.
 
 Speaker 1: 00:59:02
 
