@@ -132,20 +132,20 @@ Research-wise.
 Speaker 0: 00:04:28
 
 Don't get me wrong.
-Now we have aligning and that stuff, you know, and that have like overtaken all the interest of.
+Now we have aligning and that stuff, and that have like overtaken all the interest of.
 
 Speaker 2: 00:04:35
 
 There was an attempt to map topology last year.
+Did you see that?
 
 Speaker 0: 00:04:38
 
-Did you see that?
 No. I've also been like quite driven out of the whole peer-to-peer.
 
 Speaker 2: 00:04:44
 
-Yeah, We recorded a podcast with Martin a while back and looked into, there was an attack that used fake addresses of nodes to see how that information propagated and it probably could allow you to learn about the node degree.
+Yeah, we recorded a podcast with Martin a while back and, there was an attack that used fake addresses of nodes to see how that information propagated and it probably could allow you to learn about the node degree.
 
 Speaker 0: 00:05:02
 
