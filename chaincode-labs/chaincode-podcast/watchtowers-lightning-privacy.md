@@ -590,7 +590,7 @@ So you can run that at home and offer that to your peers or whatever.
 And that was always the idea, but it felt like people were not doing it.
 Well, first, mainly because installing like Python stuff, like running all these things in Python was like way more complicated.
 So like switching to Rust definitely helped.
-And then minimizing the or reducing the entry barrier for what you need really helped.
+Reducing the entry barrier for what you need really helped.
 So right now that I know of, there's at least eight or nine people running this because we have like a list of altruistic towers in the repo that people can connect to.
 There were some users before, so I knew at least about two tower operators.
 I don't know what they were doing.
@@ -600,7 +600,7 @@ They were at the presentation for the iOS Satoshi.
 They were like, we love this, we're going to integrate it.
 And actually they pinged me a couple of days ago because of this.
 There's also the guys at Voltage, which pinged me about it, I think it was like mid last year or something like that, about offering this as a service for their users.
-They haven't yet, I know that they've been swamped with work, but they really want to do it, so I'm guessing they will at some point this year.
+I know that they've been swamped with work, but they really want to do it, so I'm guessing they will at some point this year.
 
 ## Altruistic towers vs professional services
 
@@ -608,30 +608,28 @@ Speaker 2: 00:30:20
 
 So, so far, this is all altruistic towers.
 So people running it without any expectation of profit.
-You said that your tower implementation currently needs like 5.5 gigabytes, And then of course, for each new commitment transaction in the channel, you need to have a new appointment, a new backup package that you keep and that just keeps growing,
+You said that your tower implementation currently needs like 5.5 gigabytes.
+And then of course, for each new commitment transaction in the channel, you need to have a new appointment, a new backup package that you keep and that just keeps growing, right?
 
 Speaker 0: 00:30:46
 
-right?
-So. That's around 720 bytes per payment, if I remember correctly.
+That's around 720 bytes per payment, if I remember correctly.
 And I'm saying I'm saying this from the top of my mind, it may be a little bit less.
 Let's say around.
 
 Speaker 2: 00:30:58
 
-Yeah.
-Okay.
 So a little less than a kilobyte per channel update, I should say, so either an HTLC or a fee update in the channel.
 
 Speaker 0: 00:31:08
 
-Carlos Bustamante So if you think about payments, by the way, and that's something that is quite misunderstood generally, there's two appointments per payment.
+If you think about payments, by the way, and that's something that is quite misunderstood generally, there's two appointments per payment.
 Because normally you add an HCLC and you fulfill that HCLC, meaning that for every single payment you do, you're going to have to update the tower twice.
 So yeah, it's for every single channel update.
 
 Speaker 2: 00:31:26
 
-Rimas So even all these people that you just talked about, embassy, voltage, and so forth, they're looking into the altruistic tower or are they trying to make a product from this?
+So even all these people that you just talked about, embassy, voltage, and so forth, they're looking into the altruistic tower or are they trying to make a product from this?
 
 Speaker 0: 00:31:37
 
@@ -642,7 +640,7 @@ The design allows for paying for the service.
 So every single user registers with the tower and is given a time period, a subscription period, and some slots within that period.
 And that's given for free in the current implementation.
 But the only thing you have to do in order to make people pay for that is building a paywall between that endpoint.
-You know, it's like, in order to like register to a tower, you have to like pay this HLC or this invoice or this whatever, right?
+It's like, in order to like register to a tower, you have to like pay this HLC or this invoice or this whatever, right?
 So the design is completely compatible with making you pay for what you're using.
 Whether people are gonna pay for it, if there's people offering also for free.
 At this stage, I don't know.
@@ -652,7 +650,7 @@ But it's compatible.
 
 Speaker 2: 00:32:44
 
-Also, probably just a question of the volume as more and more people look to have their channels back up to watchtowers or employ a watchtower to watch their channels for them eventually the freemium model will go away because there will be just too much data to keep in store that people will not want to provide that for free, right?
+Also, probably just a question of the volume as more and more people look to have their channels back up to watchtowers or employ a watchtower to watch their channels for them eventually the preemium model will go away because there will be just too much data to keep in store that people will not want to provide that for free, right?
 
 Speaker 0: 00:33:05
 
