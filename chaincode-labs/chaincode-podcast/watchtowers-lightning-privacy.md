@@ -504,7 +504,7 @@ Like the best thing you could get was the testing and kind of developing librari
 So it came to the thing of either doing it myself, so like implementing part of the bolts myself, which I started doing.
 I saw that that was going to take years, so it was definitely worth it, not just because of the time, but also because of the maintaining, right?
 Just like if I'm building something that is getting updated frequently, then at some point I'm going to have to like update all the dependencies I'm supporting, and it's not going to work.
-Like This is going to grow way too much, and I'm not going to have time for everything, right?
+Like this is going to grow way too much, and I'm not going to have time for everything, right?
 
 ## Building on LDK
 
@@ -525,7 +525,7 @@ I knew nothing about Rust at the time.
 Speaker 0: 00:24:44
 
 So I thought, you know what, let's stick to Python but let's use something that it has a good chunk of devs behind it and they can like update it and so on and so forth.
-Issue, there's no automatic proper automatic way of building bindings for Python to rust.
+Issue, there's no automatic proper automatic way of building bindings for Python to Rust.
 So it means that if you're developing faster than me, I have the exact same problem.
 Plus, I'm building in a language I don't know anything about.
 So after that, it came to whether I wanted to again do everything myself or switch to something more robust with more community support and so on.
@@ -541,8 +541,8 @@ There's components I don't even remember.
 Now there's three or four components in the code.
 There's components I don't even remember.
 There was a time where I was building something called the Librarian for Python, which was supposed to be an actor on the tower.
-I mean, I started like calling everything in the tower funny names, you know, like the gatekeeper, the librarian, the watcher, the blah blah, you know, because it was kind of like a court and they had to do stuff.
-I had to have fun too, you know, like building this stuff.
+I started like calling everything in the tower funny names, you know, like the gatekeeper, the librarian, the watcher, because it was kind of like a court and they had to do stuff.
+I had to have fun too, like building this stuff.
 So...
 
 Speaker 2: 00:26:30
@@ -552,7 +552,7 @@ Too much feelings, sorry.
 Speaker 0: 00:26:32
 
 No, they didn't actually get along, but anyway.
-So the librarian was supposed to deal with history, you know, blocks and reorgs and stuff like that.
+So the librarian was supposed to deal with history, blocks and reorgs and stuff like that.
 And I built that myself and then he was like, there's no need for this anymore.
 Like, let's get rid of this thing.
 Like, it's way too complex.
@@ -562,18 +562,18 @@ I realized that there was a lot of, what's the word for this?
 Like, bad inheritance, I'd say.
 Or things that came from like the Python mindset that then were way simplified.
 For example, one of the things we recently introduced to the IOS Satoshi after talking to many people about it, like including Antoine, Dribbble Antoine, and Simon Ruth, was transaction indexing within the tower.
-We used to build the IOS Satoshi on top of Bitcoin D with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
+We used to build the IOS Satoshi on top of Bitcoin with transaction indexing, meaning that we needed around 450 gigabytes of data to deploy a fresh tower.
 Now we need 5.5, because we only care about the last 100 blocks.
-That was something that initially, that's how things change.
+That's how things change.
 We assume that there's order and storage in the tower because we don't have L2.
 So it was like, if you have order and storage, have an archival node, that's not going to be an issue.
 And it's not, in the end you're going to probably have more than that, but you don't have to start with that.
 I've been running a tower for months now, and I didn't even have a gig of like tower data with multiple users connected.
-So, I guess you learn things.
+I guess you learn things.
 
 Speaker 1: 00:28:08
 
-Yeah, tell me more about your current status in terms of having users actually use the software and Have you actually caught any breaches?
+Yeah, tell me more about your current status in terms of having users actually use the software and have you actually caught any breaches?
 Is it doing its job?
 
 Speaker 0: 00:28:18
