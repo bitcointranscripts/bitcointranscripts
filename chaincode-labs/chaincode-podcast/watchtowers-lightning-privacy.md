@@ -833,34 +833,32 @@ That's what we've tried to do with towers.
 If I cannot do it, it's not like I'm not going to do it.
 It's like I should not be able to do it.
 And as long as I'm not able to do it, then I minimize the attack surface of what I can do.
-That's why all the information is encrypted, that's why we don't keep like much information about users, or we use like ephemeral IDs. That's where all that came from.
+That's why all the information is encrypted, that's why we don't keep like much information about users, or we use like ephemeral IDs.
+That's where all that came from.
 
 Speaker 1: 00:42:23
 
 You mentioned earlier that you don't know if you'd be using other towers.
 So there's a couple ways that professional towers might be compensated.
-One is through the subscription models and you pay a SAT through every state update or the other one is through a bounty or maybe there's the combination of the two of them.
+One is through the subscription models and you pay a Sat through every state update or the other one is through a bounty or maybe there's the combination of the two of them.
 But it becomes very interesting as someone who doesn't run a tower.
 Like as a user, it becomes very interesting if you are sending data to multiple bounty hunters and then something happens and they have to fight over who claims the bounty, you would imagine there would be some pretty weird network behavior of those towers trying to one-up each other to claim that.
 
 Speaker 0: 00:43:06
 
-Raul-
 Yeah, you start getting to CPFBs fights.
 
 Speaker 2: 00:43:10
 
-Paul-
 So does this get better with RBF?
 
 Speaker 0: 00:43:12
 
-Raul- You cannot do RBF.
+You cannot do RBF.
 I mean, the tower cannot do RBF.
 
 Speaker 2: 00:43:16
 
-Paul-
 With full RBF.
 So in order to have multiple watchtowers that watch for you that each could collect a bounty they must have different penalty transactions which I think penalty transactions should always be marked with RBF enabled but...
 
@@ -871,7 +869,7 @@ Yes, but the tower can spend from it, it cannot...
 Speaker 2: 00:43:38
 
 It cannot update the penalty transaction itself but a child inherits the RBF quality from its parent and I think that a second package would be able to replace the first.
-Okay, maybe not.
+Maybe not.
 
 Speaker 0: 00:43:54
 
@@ -879,18 +877,19 @@ I don't know that much about that.
 
 Speaker 2: 00:43:58
 
-Anyway, so unaffected basically, nevermind.
+Anyway, so unaffected basically, never mind.
 
 ## Monitoring and reacting paradigm
 
 Speaker 0: 00:44:01
 
 But what I've learned to, what I've grown to learn with this is that even though we've all ended up designing the same approach for towers, which is non-custodial, third party, not trusted, watch hour, right?
-So like try to minimize all of that stuff and try to react in our switch or in no no no no instead of the user in either to work for that I don't remember well when I when I act on your own behalf of the user on behalf of the user sorry it didn't come up I've learned to realize that that may not be the best solution in terms of storage, in terms of mempool, in terms of...
+So like try to minimize all of that stuff and try to react in our switch or in no instead of the user in either to work for that I don't remember well when I when I act on your own behalf of the user on behalf of the user sorry it didn't come up.
+I've learned to realize that that may not be the best solution in terms of storage, in terms of mempool, in terms of...
 Reliability is fine, but you don't want people to fight over this kind of stuff.
 So some time ago, I thought about designing this in a different way.
 So I had weighing up my plate with the current approach to just start something different.
-But I like to describe this in a way that A watchtower is doing two things, and that's why the bounty plus the subscription approach makes sense.
+But I like to describe this in a way that a watchtower is doing two things, and that's why the bounty plus the subscription approach makes sense.
 A tower can fail in doing two things.
 One is the tower cannot be watching for whatever it's supposed to be watching, and then if it's not watching for what it's supposed to be watching, then there's nothing further, right?
 Or a tower could be watching for channel breaches and something like that, but do nothing with them, right?
@@ -898,7 +897,7 @@ So there's normally two actions or two jobs that a tower does.
 One is the watching part and the other one is the reaction part.
 And the whole heavy lifting, the whole issue, everything that makes towers complicated is on the reacting part and not on the watching part.
 The watching part is pretty easy.
-The watching part doesn't require, it does require order and storage potentially, but it's at a way lower, so it's still linear, but smaller in the linear size.
+It does require order and storage potentially, but it's at a way lower, so it's still linear, but smaller in the linear size.
 You can just be storing identified instead of identifies plus penalty transactions if you're not going to react.
 So if you split this into two, like the watching and the reaction part.
 You can actually design simpler towers that are not as powerful in this sense, so like may require the user to do stuff, but you're not like super replicating the data that the user already has.
