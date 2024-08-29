@@ -1,11 +1,15 @@
 ---
-title: "Nesting, ROAST, Half-Aggregation, Adaptor Signatures"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing---Nesting--ROAST--Half-Aggregation--Adaptor-Signatures-part-2-e1sdgjf
-tags: ['adaptor-signatures']
-speakers: ['Pieter Wuille', 'Tim Ruffing']
-categories: ['podcast']
-date: 2022-12-27
+title: 'Nesting, ROAST, Half-Aggregation, Adaptor Signatures'
+transcript_by: 'mkuuian via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing---Nesting--ROAST--Half-Aggregation--Adaptor-Signatures-part-2-e1sdgjf'
+date: '2022-12-27'
+tags:
+  - 'adaptor-signatures'
+speakers:
+  - 'Pieter Wuille'
+  - 'Tim Ruffing'
+categories:
+  - 'podcast'
 ---
 Speaker 1: 00:00:00
 
@@ -29,13 +33,13 @@ This is a great conversation, and I hope you enjoyed as much as I enjoyed record
 
 Speaker 2: 00:00:50
 
-So Frost sounds exciting, especially when used in combination with Music, there's this sort of idea for the future called nesting.
+So Frost sounds exciting, especially when used in combination with Music, there's this sort of idea for the future called Nesting.
 How could these ideas be combined?
 
 Speaker 1: 00:01:11
 
-Yeah, so again, like Music is an event setup and Frost is a T event setup, where you just require some subset, but now you can think of combining or nesting those in a three-style fashion.
-For concreteness, again, maybe assume a Lightning Channel is my standard example.
+Music is an event setup and Frost is a T-event setup, where you just require some subset, but now you can think of combining or nesting those in a three-style fashion.
+For concreteness, again, maybe assume a Lightning channel is my standard example.
 Let's say I have a Lightning channel with Peter, I'm one participant, like Peter is on the other side.
 And in this Lightning channel, we can have a two of two music.
 
@@ -48,7 +52,7 @@ Speaker 1: 00:01:43
 But on the top, it's a two of two music for the Lightning channel.
 I mean, it's not supported by Lightning yet, but hopefully will be soon.
 And then, but on my side, maybe for improved security, I could have a hardware wallet or three hardware wallets.
-And then just on my side for this part of the music, for my key in the music, I want to have another threshold set up.
+For my key in the music, I want to have another threshold set up.
 Like if two of my hardware wallets agree, then they can sign for just my part of the music.
 So it's basically a two of two music at the top and on my side it's a two of three on that side of the tree.
 
