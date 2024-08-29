@@ -193,20 +193,30 @@ Speaker 1: 00:10:06
 There's a lot of open problems here.
 Also, with what you're mentioning now, basically, we have very well-defined security proofs for a lot of our schemes.
 For example, for Music 2, in a specific setting, we know we're pretty confident that this is secure.
-But now if we move to practice, we combine this with taproot tweaking.
+But now if we move to practice, we combine this with Taproot tweaking.
 Tweaking is really like offsetting the key a little bit.
-And we use this, for example, in PIP 32, deterministic key derivation, we use it in taproot, we may use it in other schemes.
+And we use this, for example, in BIP32, deterministic key derivation, we use it in taproot, we may use it in other schemes.
 So it's really like, in practice, we put all those components together and there's really still a gap and there probably will always be a gap between what we have proven secure in theory and what we do in practice.
 And I really hope we'll never get it wrong in practice, but I'm not entirely sure.
 It can be really subtle.
 
-Speaker 0: 00:10:58
+Speaker 0: 00:08:55
 
-It's interesting that I think if we would have come up with a new digital signature scheme, didn't write a paper about it, just like wrote a BIP up like BIP 340, I would have expected you know, whoa whoa whoa guys you are deploying a new signature scheme let's analyze this first.
+It's interesting that I think if we would have come up with a new digital signature scheme, didn't write a paper about it, just like wrote a BIP up like BIP340, I would have expected. whoa guys you are deploying a new signature scheme let's analyze this first.
 Well at this somewhat higher level of combining things, it seems unnecessary to ask these questions.
 And I think that that's a bit the same of like the lower level and the higher level there's more of an expectation to have an academically rigorous look at the lower cryptography part and less at like you know this security of composition.
 I'm overgeneralizing obviously.
-Yeah I mean if you say it's it seems unnecessary it sounds like the famous last words of the applied copter it works until it doesn't work but yeah I mean I agree with you I don't mean to say we shouldn't ask this, I'm saying it seems that people are okay with the question not being asked.
+
+Speaker 1: 00:11:50
+
+Yeah I mean if you say it's it seems unnecessary it sounds like the famous last words of the applied copter it works until it doesn't work but yeah I mean I agree with you.
+
+Speaker 0: 00:11:50
+
+I don't mean to say we shouldn't ask this, I'm saying it seems that people are okay with the question not being asked.
+
+Speaker 1: 00:12:53
+
 Yes.
 
 ## ROAST
@@ -218,7 +228,7 @@ Like how did you approach that and what was the outcome?
 
 Speaker 1: 00:12:20
 
-Yeah, so you're obviously referring to ROSE, which is one of my recent academic works together with a lot of other people from, with Elliot who also works at Blockstream and with a few co-authors in Germany that I still know from university.
+Yeah, so you're obviously referring to Roast, which is one of my recent academic works together with a lot of other people with Elliot who also works at Blockstream and with a few co-authors in Germany that I still know from university.
 So the problem in Frost is, so first of all, it's nice because it has this two rounds property but one of the problems really is that it's not what we call robust.
 And robustness is a very specific thing.
 And it means that, let's say we have a two of three setup and we start a protocol with like all three people, but only two of them are actually willing to sign, which is okay, right?
