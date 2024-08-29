@@ -320,7 +320,6 @@ That makes an interactive aggregate signature scheme, like just take a multi-sig
 
 Speaker 1: 00:20:49
 
-That is...
 Modulo some subtle details.
 Yeah, let's not go into that.
 But just as a warning, so don't do this at home.
@@ -339,12 +338,19 @@ Still have your friendly neighborhood cryptographer have a look at it.
 
 Speaker 2: 00:21:04
 
-Before you move on, that's just because of being able to actually tease out like private keys based on reused nonces or like what's the, what is the actual issue that you'd be most concerned.
+Before you move on, that's just because of being able to actually tease out like private keys based on reused nonces or like what is the actual issue that you'd be most concerned.
 If I did that, what would be the first mistake I would make?
 
 Speaker 0: 00:21:21
 
-In the music paper, I remember Russell O'Connor came up with this fairly far-fetched attack of, if you just do that, what I just said, and try to use that specifically in the context of Bitcoin transactions with one signature there was a problem but I don't remember there could be a problem if you're a single party and you have like you have multiple messages that you want to sign.
+In the music paper, I remember Russell O'Connor came up with this fairly far-fetched attack of, if you just do that, what I just said, and try to use that specifically in the context of Bitcoin transactions with one signature there was a problem but I don't remember.
+
+Speaker 1: 00:21:41
+
+I think there could be a problem if you're a single party and you have like you have multiple messages that you want to sign.
+
+Speaker 0: 00:21:51
+
 You can be tricked into, and you participate multiple times, you can be tricked into signing the same one instead of different ones.
 
 Speaker 1: 00:21:58
@@ -355,7 +361,6 @@ And if you're interested, look at the Music One paper, there's an appendix that 
 
 Speaker 0: 00:22:15
 
-But yeah, it's...
 Because this was sort of folklore knowledge of like, you can build an IAS out of a multi-signature scheme.
 Here's a way of doing that.
 And that paper was like, maybe don't do just that, because...
