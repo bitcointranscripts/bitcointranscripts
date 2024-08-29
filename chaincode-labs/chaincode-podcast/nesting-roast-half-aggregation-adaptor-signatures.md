@@ -374,13 +374,13 @@ Speaker 0: 00:22:43
 Interactive aggregate signature scheme, we now know how to do that.
 So we can take music one, music two, those can be turned into an aggregate signature scheme if needed.
 And so that is something that could be used for say cross-input aggregation, but only under the condition that all the input signers are collaborating.
-And usually that is the case, usually there's just one party involved, but say in a coin join transaction there are multiple participants, so if such a scheme were to be deployed and you have a CoinJoin then of course CoinJoins are at the same time the strongest motivation for wanting something like cross-input signature aggregation, I think.
+And usually that is the case, usually there's just one party involved, but say in a coinjoin transaction there are multiple participants, so if such a scheme were to be deployed and you have a CoinJoin then of course CoinJoins are at the same time the strongest motivation for wanting something like cross-input signature aggregation, I think.
 Because think about it this way, every input in a Bitcoin transaction today has one signature.
-In sort of a music, taproot world, they will in fact all have exactly one signature.
+In sort of a music, Taproot world, they will in fact all have exactly one signature.
 That signature takes up some block space.
 But if we were to be using a cross-input signature aggregation scheme, there would just be one signature for the whole transaction.
 So that's a cost savings.
-And it is a cost savings that, I shouldn't call it a coin join, but like a pay join, where like, A wants to pay B and C wants to pay D, they can join these two transactions into A and B, sorry, A and C, pay B and D.
+And it is a cost savings that, I shouldn't call it a coin join, but like a payjoin, where like, A wants to pay B and C wants to pay D, they can join these two transactions into A and B, sorry, A and C, pay B and D.
 And interestingly, in a cross-input signature aggregation world, this aggregate transaction would be smaller than the sum of the individual ones because there's only one signature rather than two.
 
 Speaker 2: 00:24:31
@@ -391,10 +391,10 @@ Speaker 0: 00:24:33
 
 No, that economic motivation is small.
 It's partially due to the fact that SegWit introduced a discount for witnesses, so those signature are already relatively inexpensive.
-They also have a relatively low cost on the ecosystem, but this makes the, you know, differential between the two fairly small.
+They also have a relatively low cost on the ecosystem, but this makes the, differential between the two fairly small.
 So it isn't a like, wow, this is going to incentivize everyone to start merging their transactions.
 But it is a nice thing in the sense of like it gives a potential justification, like, hi, I regulator, why are you merging your transactions?
-Being able to say, well, it's cheaper is a much better justification than like, whoo.
+Being able to say, well, it's cheaper is a much better justification.
 
 Speaker 2: 00:25:23
 
@@ -405,15 +405,15 @@ Speaker 0: 00:25:23
 So that's interactive aggregation.
 It has complications.
 All aggregate signature schemes that we want to do across more than individual inputs, like need consensus rules to work with them.
-In the same sense that like, you know, as explained, like in a way there's a relation with batch validation, where in batch validation we're thinking of, well, you first run all the scripts, pretend all the signatures succeed, but keep a list of all signature checks that have to be done, and now we do all those signature checks at the end.
+In the same sense that like, as explained, like in a way there's a relation with batch validation, where in batch validation we're thinking of, well, you first run all the scripts, pretend all the signatures succeed, but keep a list of all signature checks that have to be done, and now we do all those signature checks at the end.
 In a cross-input signature aggregation world, it would be exactly the same, except there is now just a single signature provided rather than multiple signatures.
 And even technically, these schemes are very similar, so that the math that's used for both is comparable except of course in one case you have multiple signatures that need to be merged together versus just one.
 
 Speaker 1: 00:26:29
 
-So Another reason to see why this requires a consensus change is really like what consensus supports now is strong signature verification.
+Another reason to see why this requires a consensus change is really like what consensus supports now is strong signature verification.
 This is really like an algorithm that takes a single public key, a single message transaction and a single signature.
-And really like The primitive we are talking about here, the verification side of it would take multiple public keys, multiple messages, where they all could be the same transaction but like a little bit different, okay?
+And really like the primitive we are talking about here, the verification side of it would take multiple public keys, multiple messages, where they all could be the same transaction but like a little bit different, okay?
 But only one signature.
 So really this is a different interface already.
 Like you couldn't just do this with the current Schnorr verification algorithm that we have in consensus code right now.
