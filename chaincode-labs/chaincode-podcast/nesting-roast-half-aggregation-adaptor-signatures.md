@@ -228,7 +228,7 @@ Like how did you approach that and what was the outcome?
 
 Speaker 1: 00:12:20
 
-Yeah, so you're obviously referring to Roast, which is one of my recent academic works together with a lot of other people with Elliot who also works at Blockstream and with a few co-authors in Germany that I still know from university.
+Yeah, so you're obviously referring to Frost, which is one of my recent academic works together with a lot of other people with Elliot who also works at Blockstream and with a few co-authors in Germany that I still know from university.
 So the problem in Frost is, so first of all, it's nice because it has this two rounds property but one of the problems really is that it's not what we call robust.
 And robustness is a very specific thing.
 And it means that, let's say we have a two of three setup and we start a protocol with like all three people, but only two of them are actually willing to sign, which is okay, right?
@@ -236,28 +236,28 @@ Because we only need two to produce a signature.
 But maybe that other guy, the third guy, is actively trying to disrupt the protocol, maybe because it could be malicious, it could be just offline, just not actively, of course, but of course covered by also active.
 So if you can prevent against active attacks, you can also prevent it against just being offline.
 So we start the protocol with maybe three people and at some point we need to commit to a specific subset.
-We need to say after the first round, OK, now let's finish the protocol with exactly those two signers.
+We need to say after the first round, okay, now let's finish the protocol with exactly those two signers.
 And now either we pick the right signers, and they are online, and they're actually willing to sign the message, then everything is right.
 But if you pick the wrong two signers, then basically the protocol gets stuck and there's nothing we can do except restarting and picking another group of signers.
 And this is a fundamental trade-off that Frost made in a sense, because if you look at cryptographic literature, the academic literature, there have been papers like pretty like decades old that essentially solved this problem of robustness but like they're the signature schemes or the signing schemes are pretty complicated.
-So as I said, Frost has two rounds, and this makes it very, very nice.
+So as I said, Frost has two rounds, and this makes it very nice.
 And I think the best known scheme in the literature that we have known so far requires seven rounds, even in the best case.
 So even if there's no attack at all, you would require seven rounds of communication.
-And now, okay, this is, like, if you look at the paper, like with my academic head on, that's, Yeah, you could do it.
+If you look at the paper, like with my academic head on, that's, yeah, you could do it.
 Like if you ask Peter as an engineer, it's like, I know you.
 What, seven rounds?
 Seven rounds, it's crazy, right?
 They wouldn't do this.
 Yeah.
-ROSE kind of is, so yeah, what the first people did is like they realized that the reason why those old protocols, they're so complicated is that they have robustness built in.
-So basically the main idea of, I shouldn't say this because like I also had this nice idea of having a two-round scheme, but one of the main design decisions in Frost was basically, okay, just get rid of this robustness property, and then suddenly everything becomes much simpler.
+What the first people did is like they realized that the reason why those old protocols, they're so complicated is that they have robustness built in.
+I shouldn't say this because like I also had this nice idea of having a two-round scheme, but one of the main design decisions in Frost was basically, okay, just get rid of this robustness property, and then suddenly everything becomes much simpler.
 And Roast is now an idea to add robustness again to Frost, but in a really different manner.
-The idea of Roast is really like it starts FROST sessions in a clever way.
-So I mentioned that when you run a FROST session, it might happen that you pick the wrong subset of signers and then the protocol will get stuck.
-And ROST doesn't actually fix this directly, but Roast now is a clever way of starting a new session of the protocol, such that in the end, you know that you only start at most like a linear number of sessions.
+The idea of Roast is really like it starts Frost sessions in a clever way.
+So I mentioned that when you run a Frost session, it might happen that you pick the wrong subset of signers and then the protocol will get stuck.
+And Roast doesn't actually fix this directly, but Roast now is a clever way of starting a new session of the protocol, such that in the end, you know that you only start at most like a linear number of sessions.
 I think you need, like if n and t are the parameters, you need like N minus T plus one sessions at most.
 And this is a way where you can, in some sense, get the best of both worlds in the sense that if everyone is online and willing to sign, then like your first first session that you would start would complete and you get this nice two round property.
-But if you are under attack or maybe some of the signers is offline or some of the signers are offline, then you spend a few more rounds, but you can still run the, like get the signature within a reasonable amount of time.
+But if you are under attack or maybe some of the signers is offline or some of the signers are offline, then you spend a few more rounds, but you can still get the signature within a reasonable amount of time.
 This is the main idea of Roast, or the main thing it achieves.
 
 Speaker 2: 00:16:38
@@ -269,14 +269,14 @@ What are the applications you imagine?
 Speaker 1: 00:16:48
 
 Peter has already mentioned that Frost already is maybe more like a niche thing than music because it's really only helpful when you really specifically need the threshold property.
-And then if you add ROST on top of it, I think like ROST is really helpful in settings where you not only need specifically the threshold property, but where you also need a large threshold setup.
-Like At Blockstream, we have this liquid sidechain, which is run by a federation and currently has an 11 out of 15 setup.
+And then if you add Roast on top of it, I think like Roast is really helpful in settings where you not only need specifically the threshold property, but where you also need a large threshold setup.
+Like at Blockstream, we have this liquid sidechain, which is run by a federation and currently has an 11 out of 15 setup.
 This is already a little bit larger than what you probably do at home, I guess.
-And ROST really makes sense, and also frost really makes sense if you scale up to larger parameters.
+And Roast really makes sense, and also Frost really makes sense if you scale up to larger parameters.
 If you have large N and large T and 11 or 15 is maybe, yeah, it's larger than 2 or 3, but it could be maybe like 50 of 100 or 60 of 100.
 And this is doable with frost and roast with this specific combination.
 So, and I think this is where it's going to be used.
-It's probably roast is nothing that you would use in your two or three at home, or even like a three or five at home or something like that.
+It's probably Roast is nothing that you would use in your two or three at home, or even like a three or five at home or something like that.
 
 Speaker 0: 00:17:56
 
@@ -289,7 +289,7 @@ Like even let's say you have a 305 at home, I guess you wouldn't need Roast beca
 You could do this restarting of Frost sessions basically manually.
 So Roast really I think is helpful when you have some federation of nodes around the world that are running automatically.
 They're supposed to produce a signature every one minute or every 10 minutes, and then you need the automatic way of making sure that they really can produce a signature.
-I think this is where ROS is strong.
+I think this is where Roast is strong.
 But it's good for these federation use cases, but I think this is really like a niche case in a sense.
 
 ## Cross-input Signature Aggregation
