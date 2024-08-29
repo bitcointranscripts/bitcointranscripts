@@ -54,7 +54,7 @@ I mean, it's not supported by Lightning yet, but hopefully will be soon.
 And then, but on my side, maybe for improved security, I could have a hardware wallet or three hardware wallets.
 For my key in the music, I want to have another threshold set up.
 Like if two of my hardware wallets agree, then they can sign for just my part of the music.
-So it's basically a two of two music at the top and on my side it's a two of three on that side of the tree.
+So it's basically a two of two music at the top and on my side it's a two of three on that side of the three.
 
 Speaker 0: 00:02:20
 
@@ -74,7 +74,6 @@ Speaker 0: 00:03:22
 
 And in addition, we have other things too, like we have BIP32 derivation, like can you do a frost setup between participants and then get the next pub out that you can derive multiple keys from that all of them now may be signable.
 We believe that's the case, but.
-Yeah, and yeah.
 Or do use that inside Taproot.
 And this is kind of interesting because that's actually what we today expect people to do.
 We don't actually have a security proof that a combination of those two is a secure thing.
@@ -88,13 +87,12 @@ So the first, like the thing you mentioned is just nesting that I talked about n
 So in fact, when we came up with music too, what we actually wanted to solve was this nesting thing, because we were thinking about nested music.
 How can we have a music inside a music?
 And it turned out the first round of the protocol was really annoying.
-So I had this idea of, OK, how can we do nesting?
+So I had this idea of, okay, how can we do nesting?
 It involved getting rid of the first round of the protocol and this made it a two-round protocol.
 
 Speaker 0: 00:04:40
 
-It's kind of impressive that you kept thinking about it because you must have had the realization oh no, this first round is the problem and we know the proofs break without it.
-Yeah,
+It's kind of impressive that you kept thinking about it because you must have had the realization no, this first round is the problem and we know the proofs break without it.
 
 Speaker 1: 00:04:53
 
@@ -109,7 +107,7 @@ Speaker 2: 00:05:21
 I just want to double-click on that epiphany moment, because I've obviously never had one of those myself.
 But as an engineer, sometimes you have the, I'm trying this thing, I'm trying this thing, I can't figure out an elegant way, and then it clicks.
 Does it feel like that?
-Or is it like, I'm throwing, like, sort of from a research perspective, like, I'm throwing a lot of different ideas at this thing, and trying to prove them out, and one of them clicks?
+Or is it like, like, sort of from a research perspective, like, I'm throwing a lot of different ideas at this thing, and trying to prove them out, and one of them clicks?
 
 Speaker 1: 00:05:48
 
@@ -121,8 +119,9 @@ But it's really because you put the problems in your mind and you thought about 
 Speaker 0: 00:06:09
 
 It's interesting that here, like the goal was solving the nested music problem, maybe not even thinking about provable security, just wanting to make a scheme that could plausibly work with nesting.
-And it turns out, oh, as a side effect, they came up with a two-round multi-signature scheme, which was novel, And it was like, whoa, wait, we should work on that first.
-And I think that's interesting because you, as you say, like you're researching a problem, you have a particular problem in mind you're trying to solve, but maybe the solution is applicable to other things.
+And it turns out, as a side effect, they came up with a two-round multi-signature scheme, which was novel.
+And it was like, wait, we should work on that first.
+And I think that's interesting because as you say, like you're researching a problem, you have a particular problem in mind you're trying to solve, but maybe the solution is applicable to other things.
 
 Speaker 1: 00:06:44
 
@@ -138,7 +137,7 @@ Speaker 2: 00:07:10
 And so how do you sort of think about that applicability of those eureka moments to, for example, like to Frost.
 So you sort of have something that's, you want to cut down on the interactivity of Frost.
 You were sort of able to attack this kind of problem in music world.
-Is it, is there a world where you can take those lessons and apply it to something that's totally novel?
+Is there a world where you can take those lessons and apply it to something that's totally novel?
 
 Speaker 1: 00:07:34
 
@@ -163,19 +162,23 @@ We have to think about it carefully, like maybe add some restrictions and then w
 Speaker 0: 00:08:55
 
 When you say a way to do it that both encompasses like what the actual algorithm is but also how do we go about proving it?
-Because today...
+
+Speaker 1: 00:09:06
+
 Security and functionality, yeah.
+
+Speaker 0: 00:09:09
+
 Right, because you like, Music 2 is specifically designed to support nesting, originally designed to support nesting.
 
 Speaker 1: 00:09:13
 
-So it, If you just look at the spec and do the naive thing, like it is a natural thing you could do to make nesting work in a sense that like you get valid signatures, right?
+If you just look at the spec and do the naive thing, like it is a natural thing you could do to make nesting work in a sense that like you get valid signatures, right?
 You can create a signature and the signature would verify but it doesn't mean that this specific way is secure and this is the problem we still need to solve.
 
 Speaker 0: 00:09:35
 
-While at the same time if you try to do the same thing with the three round music one either you'll conclude that you just can't make it work or you're gonna change the scheme in a way that will obviously and completely break it.
-Yeah, yeah.
+While at the same time if you try to do the same thing with the three round music one either you'll conclude that you just can't make it work or you're going change the scheme in a way that will obviously and completely break it.
 
 Speaker 1: 00:09:52
 
