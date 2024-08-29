@@ -433,9 +433,10 @@ The community didn't feel like it was worth waiting to more fully bake cross inp
 
 Speaker 0: 00:27:54
 
-Yeah, I think, so when the discussions around tap roots, which North Signature started, there were a whole lot of ideas and many of them were actively being discussed because there were like improvements to taproot, there was graftroot, there was groot, and so forth.
+Yeah, I think, so when the discussions around tap roots, which Schnorr Signature started, there were a whole lot of ideas and many of them were actively being discussed because there were like improvements to taproot, there was graftroot, there was groot, and so forth.
 And how those would interact with signature aggregation is kind of unclear because there is a complication here is soft fork compatibility.
-So we want the property obviously that a change that introduces cross input aggregation is a soft fork And also that things that could be built on top, extensions to the script language later, are a soft fork with respect to signature aggregation already existing.
+So we want the property obviously that a change that introduces cross input aggregation is a soft fork.
+And also that things that could be built on top, extensions to the script language later, are a soft fork with respect to signature aggregation already existing.
 And so this isn't a fundamental problem, but it's kind of annoying.
 Say, imagine there's an opcode change that introduces something like an opif, just something that changes the execution path through a single script.
 You need to make sure that old nodes and new nodes agree on what signatures are being aggregated, even though some of them may execute the checksig that's being skipped and others that don't.
@@ -452,7 +453,7 @@ Speaker 0: 00:30:20
 
 Common path.
 And that one involves no scripts at all.
-Like the taproot consensus rules say you can spend a taproot output by just giving a signature on the, not the internal key, but on the tweaked key, and there are no scripts involved.
+Like the Taproot consensus rules say you can spend a Taproot output by just giving a signature on the, not the internal key, but on the tweaked key, and there are no scripts involved.
 So all the complexities about compatibility in script just don't exist.
 We could work on a system with cross-input aggregation that just does aggregation of signatures on the key path spans.
 And this disappears, it means it isn't as efficient as it could be because you don't get the aggregation for signatures occurring in scripts.
@@ -465,16 +466,15 @@ Speaker 1: 00:31:17
 
 But also on the cryptography side still.
 So you said like you gave this trivial way or a naive way of creating a signature aggregation scheme from a multi-signature scheme.
-And now we have multi-signature schemes and you said like the math will be pretty similar but it's actually, if you look at the specifics of this, you probably wouldn't want to use something based on, let's say, music, or music two, or music one,
+And now we have multi-signature schemes and you said like the math will be pretty similar but it's actually, if you look at the specifics of this, you probably wouldn't want to use something based on, let's say, music, or music two, or music one, and any of these.
 
-Speaker 0: 00:31:45
+Speaker 0: 00:31:32
 
-and any of these.
 Because they're kind of overkill for...
 
 Speaker 1: 00:31:49
 
-Kind of overkill, yeah.
+They are kind of overkill, yeah.
 What you actually need is a little bit weaker.
 And also there are other issues when it comes to compatibility with batch verification or with batch validation.
 One way to think about this is really like in a signature aggregation scheme, it's a little bit like a multi-signature scheme, but as you said, like the verifier will do the key aggregation because the verifier gets all the individual public keys and somehow would need to aggregate those keys.
@@ -490,7 +490,7 @@ The Belaraneva scheme is simpler and would work.
 
 Speaker 1: 00:33:05
 
-Yeah, the scheme we have in mind is really closer to Bellara Neve.
+Yeah, the scheme we have in mind is really closer to Bellaraneve.
 
 Speaker 0: 00:33:08
 
@@ -512,13 +512,13 @@ And this is another question that becomes much more relevant now that you try to
 
 Speaker 2: 00:34:32
 
-And then there's half aggregation, which is different.
+And then there's half-aggregation, which is different.
 How so?
 
 Speaker 1: 00:34:37
 
-Like what we talked about so far is what we also call full aggregation.
-And it's, we call it full aggregation because if you have ends, in a sense, like you have N parties, they all have their public keys, they all have their messages or their transactions, and the resulting signature you aggregate is really just, it looks like one, or it has the size of one signature.
+Like what we talked about so far is what we also call full-aggregation.
+And it's, we call it full-aggregation because if you have ends, in a sense, like you have N parties, they all have their public keys, they all have their messages or their transactions, and the resulting signature you aggregate is really just, it looks like one, or it has the size of one signature.
 So it's really like you compress it to, like you have n parties involved, n messages involved.
 
 Speaker 0: 00:35:05
@@ -526,7 +526,7 @@ Speaker 0: 00:35:05
 Let's give numbers, like a Schnorr signature today, 64 bytes.
 Without aggregation, if you have n signatures, it's 64 times n bytes.
 With full aggregation, it's 64 bytes, regardless of how many signatures you have.
-With half aggregation, it becomes 32 plus 32 times N.
+With half-aggregation, it becomes 32 plus 32 times N.
 So literally half of the signature becomes independent of N and half of it remains.
 
 Speaker 1: 00:35:30
@@ -535,7 +535,7 @@ Or in other words, like if N grows, like the savings will tend to a half of the 
 
 Speaker 0: 00:35:38
 
-Yeah, asymptotically, full aggregation is constant, no aggregation is 64 times n, half aggregation is 32 times n.
+Yeah, asymptotically, full aggregation is constant, no aggregation is 64 times n, half-aggregation is 32 times n.
 
 Speaker 1: 00:35:48
 
