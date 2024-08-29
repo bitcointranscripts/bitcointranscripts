@@ -571,7 +571,7 @@ And so this means that at a transaction level, this is easier to do because the 
 It would still require a consensus change, to be clear.
 This doesn't affect any of that.
 It requires a soft fork to add cross-input half-aggregation as well.
-But at the signing side, it is simpler because say for a coin join, the individual signers now don't need to interact with each other.
+But at the signing side, it is simpler because say for a coinjoin, the individual signers now don't need to interact with each other.
 They can just produce their individual signatures and whoever is coordinating the creation of the coin join or really any participant at all can just take all the signatures, put them together, and have a signature that can go on chain.
 But that's not everything.
 In fact, because it is non-interactive, there's no reason to stop at the transaction level.
@@ -585,7 +585,8 @@ It is of course would be yeah the savings would be huge and that's why it is a v
 
 Speaker 0: 00:38:23
 
-So for example, what this would mean like pre-SegWit, this would have been a huge problem because it would mean the miner is changing the transaction IDs. That's thankfully no longer the case with SegWit, but it's still the case, like we have this WTX ID, which is the witness transaction ID, which is a hash of all the data in the transaction together with it witnesses, the version that ends up in a block would have a different WTXID than the version that's relayed on the network.
+So for example, what this would mean like pre-SegWit, this would have been a huge problem because it would mean the miner is changing the transaction IDs.
+That's thankfully no longer the case with SegWit, but it's still the case, like we have this WTXID, which is the witness transaction ID, which is a hash of all the data in the transaction together with it witnesses, the version that ends up in a block would have a different WTXID than the version that's relayed on the network.
 So these aren't fundamental problems, but there are some engineering challenges for like caching and nodes will validate signatures as they come in individual transactions and cache the results.
 Now they see a different version of that transaction in the block because that half thing is stripped out.
 Is there a way to leverage the cash they have or do they need to recompute from scratch?
@@ -599,11 +600,14 @@ One maybe more fundamental problem which is still open or we should really look 
 Speaker 0: 00:39:32
 
 So adapter signature is another advanced signature technology which for example allows you to do atomic swaps on the chain that just look like two normal transactions.
-So if you look at the blockchain again you see only two schno signatures and it looks like just two more normal transactions.
+So if you look at the blockchain again you see only two Schnorr signatures and it looks like just two more normal transactions.
 What actually happened is an atomic swap and basically the way how they work is that we set up our keys in a special way and then I send you a coin and because I have to sign this transaction I have to publish my signature on the blockchain.
 You look at the signature and take information out of it and this now allows you to...
+
+Speaker 1: 00:40:13
+
 Yeah, so the idea is both parties lock up their coins in a two-of-two music or any kind of aggregates.
-So both with a taproot path that like after some time they can take their coins back because you don't wanna log them forever if one of them steps away.
+So both with a taproot path that like after some time they can take their coins back because you don't want to log them forever if one of them steps away.
 And now one of them gives a signature to spend one of those to the other, but sort of in a damaged way.
 You don't give the real signature yet, you give a signature and you sort of add an error term to it, and you do that for both.
 So you say I produce two, the two transactions, one that takes my money and gives it to you, the other that takes your money and gives it to me.
