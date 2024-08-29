@@ -641,8 +641,7 @@ We would exactly remove that part that you need to look at to make the second tr
 So this is how this would interfere.
 And now, as you say, it could actually be done with ECSA.
 So one very simple, of course not very satisfactory solution would be, okay, like, if you want to run an adapter signature protocol, then resort to ESA signatures.
-So one, maybe a little bit more clever approach would be, okay, like you, you could do it with Schnorr signatures but maybe have a marker in your transaction that says okay like this could be aggregated or this could not be aggregated.
-Of course this...
+So one, maybe a little bit more clever approach would be, okay, like you could do it with Schnorr signatures but maybe have a marker in your transaction that says okay like this could be aggregated or this could not be aggregated.
 
 Speaker 0: 00:42:39
 
@@ -655,15 +654,15 @@ This is not good for privacy obviously.
 Speaker 0: 00:42:49
 
 And of course adapter signatures are an alternative to say, HTLCs, which are used for exactly the same purpose today, except they reveal hash per image, rather than using the signature itself as the data channel.
-So if we're going to, you know, oh, adapter signatures, yay, they're all indistinguishable now.
-And now with half aggregation, Oh, wait, we need to add a marker to it to say it can be aggregated.
+So if we're going to, adapter signatures, yay, they're all indistinguishable now.
+And now with half aggregation, wait, we need to add a marker to it to say it can be aggregated.
 We're again saying there's a data carrying here.
 Like how much is that better than just using the HTLCs?
 
 Speaker 1: 00:43:25
 
 For example, one idea in that direction is basically very similar to what you said for full aggregation.
-So maybe try to restrict this to taproot key spends, in a sense, that only signatures for those can be half aggregated.
+So maybe try to restrict this to Taproot key spends, in a sense, that only signatures for those can be half-aggregated.
 And maybe this is enough to make sure that you can still run your...
 
 Speaker 0: 00:43:47
@@ -673,7 +672,13 @@ Unfortunately, it isn't, because the whole point of an adapter signature is that
 Speaker 1: 00:43:55
 
 Yes but I mean you could say like okay aggregate only the other ones and then I think...
+
+Speaker 0: 00:43:47
+
 Only aggregate the script ones?
+
+Speaker 1: 00:44:06
+
 No no only aggregate the keypath ones And I looked at this with Jonas and I think we, like we could normal just the atomic swap protocol, we could make it work with that restriction.
 And it's kind of an open question at the moment, like if this would cover all applications of adapter signatures, because like if this restriction is enough to not interfere with adapter signatures, then this would be one way to maybe to move forward in the future but it's kind of an open problem.
 
@@ -683,7 +688,7 @@ Would this be considered a block size increase in the same way that SegWit was c
 
 Speaker 0: 00:44:39
 
-I don't think so because it is, unless you think of Taproot, does a block size increase too?
+I don't think so because, unless you think of Taproot, does a block size increase too?
 I mean it's more efficient use of the existing space and thereby it's a capacity increase.
 But I think SegWit is pretty different because it's actually adding more bandwidth.
 
@@ -691,7 +696,8 @@ Speaker 1: 00:45:00
 
 I agree with that view, but there's one point you can make about verification time.
 So the time you need to validate a half-aggregated signature, which basically is, let's say, the combination of 100 signatures, the space it needs is smaller, but the time you need to validate it is still almost the same as for 100 individual signatures.
-So in that sense, now if you use block space more efficiently, you can squeeze more signatures in the block, And this then requires in the worst case more, or you could say in the best case, rather than the most complex case, you could have more signatures in there and then this would require more verification time.
+So in that sense, now if you use block space more efficiently, you can squeeze more signatures in the block.
+And this then requires in the worst case more, or you could say in the best case, rather than the most complex case, you could have more signatures in there and then this would require more verification time.
 So in that sense, it's not a block size increase, but it's a block verification time increase.
 
 Speaker 0: 00:45:48
@@ -700,7 +706,6 @@ Yeah, it's just like today there will be at least 64 bytes for every signature c
 And with half aggregation, maybe that's the same cost can be per 32 bytes.
 The way that taproot rules already work, they actually require 50 bytes of witness data for every signature check being done.
 So if that rule is maintained, but maybe that rule shouldn't, that rule doesn't really make much sense.
-And yeah, I mean,
 
 Speaker 1: 00:46:18
 
@@ -719,13 +724,13 @@ Speaker 0: 00:46:43
 We've been talking a lot about the provable security of these schemes.
 And that is obviously one impediment for some combinations we have more confidence about than others.
 I'd say like the nesting question is much harder than some other questions and so forth.
-But there is another question too, and that is standardizing all these things and integration in parts of the ecosystem because just having the consensus rules that are compatible with it and a spec or a scheme or a paper that says you can do half aggregated adapter signatures, blah, blah, blah, isn't enough.
+But there is another question too, and that is standardizing all these things and integration in parts of the ecosystem because just having the consensus rules that are compatible with it and a spec or a scheme or a paper that says you can do half aggregated adapter signatures, isn't enough.
 There's a need for how do we make things use them and interact with using them.
 And so, music 2 for that now, which is making great progress, that's not the end of the story, right?
 We will need probably how to integrate it in descriptors, how to integrate it in PSBT.
 That will raise questions of how does it combine with BIP32 derivation because everyone derives their keys that way and there are obvious and less obvious ways that they can interact, we'll probably want to specify that.
 And I think for music, too, that is fairly close.
-For frost, that is further away.
+For Frost, that is further away.
 Nesting is even further away.
 
 Speaker 1: 00:48:15
@@ -761,7 +766,7 @@ Speaker 2: 00:49:46
 
 So that's a world we all want to be living in.
 Anything else on your mind?
-So we've had a somewhat scoped discussion about, I wouldn't say it's particularly well scoped, but it's been scoped somewhat, talking about Schnorr, and then Muldy signatures, and threshold signatures, and Frost.
+So we've had a somewhat scoped discussion about, I wouldn't say it's particularly well scoped, but it's been scoped somewhat, talking about Schnorr, and then multy signatures, and threshold signatures, and Frost.
 But like, let's imagine we had another two hours to sit down.
 What would be other things that are on your mind that you're thinking about, that you're excited about?
 
@@ -769,7 +774,6 @@ Speaker 1: 00:50:12
 
 I mean, in terms of, I'm not really thinking about it, but like, one thing that always comes up, and I really would need another two hours, and I have to be careful not to go deep here, but it's really the question, okay, can we do anything at all about post-quantum security, like if there's a quantum attacker maybe.
 To be honest, I don't even think there's a lot we can do, but we should at least...
-Today.
 Today, but we should at least keep thinking about this.
 This is a question that I often get.
 
@@ -798,7 +802,6 @@ Speaker 0: 00:51:43
 
 Right.
 What you mentioned now was that you also thought it was interesting to see how the sausages made it a little more.
-Yeah.
 About when to roll crypto.
 
 Speaker 2: 00:51:53
@@ -818,4 +821,7 @@ I don't know, I don't know if we're gonna make it before our New Year's, but if 
 Speaker 0: 00:52:27
 
 Bye.
+
+Speaker 2: 00:52:30
+
 Bye.
