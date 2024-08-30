@@ -799,7 +799,7 @@ It’s bigger and less powerful or something.
 
 Greg: 00:44:09
 
-Yeah, it’s the, you know, they’re intersecting circles in an event diagram, so to speak. So it can do some things that are interesting that are like by byproducts you can get you can with any private any script because you’re emitting your own script you can stick that you’re signing for you can stick the signature in the script it’s like self-referential and say this transaction must be look like this and it only come in you can commit to the shape of the outputs and the n-lock time and n-sequence, things like that. So it does some quirky things like that. But if we really like that, maybe we should have CTV, or maybe we should have op-vault. So that’s like an open discussion. And then this is where all the contention is. It’s not all the contention, but of the who’s next questions, this is a big one. Should we be aiming really small, missing small, you know, doing the kind of key killer product releases, so to speak, and then focus on the future, maybe more systematically, or I don’t know what the solution is here. But I mean, I’m really focused on, there’s like a pile of things to improve today’s consensus regime, So I’m kind of focused on that for now.
+Yeah, they’re intersecting circles in a Venn diagram, so to speak. So it can do some things that are interesting that are byproducts, like with ANYPREVOUTANYSCRIPT because you’re emitting your own script you can stick that you’re signing for you can stick the signature in the script it’s like self-referential and say this transaction must look like this and can only commit to the shape of the outputs and the n-lock time and n-sequence, things like that. So it does some quirky things like that. But if we really like that, maybe we should have CTV, or maybe we should have OP_VAULT. So that’s an open discussion. And then this is where all the contention is. It’s not all the contention, but of the who’s next questions, this is a big one. Should we be aiming really small, missing small, you know, doing the key killer product releases, so to speak, and then focus on the future, maybe more systematically, or I don’t know what the solution is here. But I’m really focused on, there’s a pile of things to improve today’s consensus regime, so I’m kind of focused on that for now.
 
 Jonas: 00:45:19
 
@@ -807,31 +807,23 @@ But you’re going to stay away from activation?
 
 Greg: 00:45:21
 
-For now, yeah. Yeah, I mean,
+For now, yeah.
 
 Jonas: 00:45:23
 
-that is a seemingly a pretty big open question.
+That is a seemingly a pretty big open question.
 
 Greg: 00:45:25
 
-I mean, I don’t know how much of this is Twitter psyop or whatever, but people seem pretty contentious about it. They’re like mad that people are making new releases of Bitcoin Core almost. Like, just why do you need to work on it? I think these people don’t have no idea what they’re talking about because they don’t understand how security works or build systems work or anything like that.
+I don’t know how much of this is Twitter psyop or whatever, but people seem pretty contentious about it. They’re like mad that people are making new releases of Bitcoin Core almost. "Why do you need to work on it?" I think these people have no idea what they’re talking about because they don’t understand how security works or build systems work or anything like that.
 
 Murch: 00:45:44
 
-Or that software just also ages in the context of what operating systems.
-
-Greg: 00:45:49
-
-Yeah, that’s I mean like build chips and so forth.
-
-Murch: 00:45:52
-
-Yeah. Software’s just not.
+Or that software just also ages in the context of what operating systems...chips and so forth.
 
 Greg: 00:45:53
 
-Try building something that hasn’t been touched in 10 years.
+Like build systems. Try building something that hasn’t been touched in 10 years.
 
 Murch: 00:45:57
 
@@ -839,23 +831,23 @@ Yeah, exactly.
 
 Greg: 00:45:57
 
-Kind of a headache. So I have to wonder how much of this is just like Twitter nonsense or is real. I mean, in the dev community, I think it’s a little less contentious in some ways. People have their preferences, but they understand the pluses and minuses of those a little better. So it’s a little more respectful, I’d say.
+Kind of a headache. So I have to wonder how much of this is just Twitter nonsense or is real. In the dev community, I think it’s a little less contentious in some ways. People have their preferences, but they understand the pluses and minuses of those a little better. So it’s a little more respectful, I’d say.
 
 Jonas: 00:46:15
 
-But L2 seems to be, sorry, L and symmetry seems to be supported across the board.
+But L2 seems to be, sorry, LN-Symmetry seems to be supported across the board.
 
 Greg: 00:46:22
 
-Some people still like penalties. Now I still think, well, maybe we should just look at getting ANYPREVOUT and do dark. Because I think it’s like a wonderful cleanup to the current protocol. If you had dark plus femoral anchors and stuff, I could make you a very nice set of bolts. I have bolt specs that seems very nice and shorter. And watchtowers are much easier, that sort of thing. So I think there’s still some choices to be made. But maybe there’s enough to start. I need feedback from people. When I talk to people, I say, I’m really excited about L2 or L1 symmetry or these kind of setups. But they’re all busy doing their own thing, and they’re busy trying to stay away from politics. I totally get that.
+Some people still like penalties. Now I still think, well, maybe we should just look at getting ANYPREVOUT and do DARIC. Because I think it’s like a wonderful cleanup to the current protocol. If you had DARIC plus ephemeral anchors and stuff, I could make you a very nice set of bolts. I have bolt specs that seems very nice and shorter. And watchtowers are much easier, that sort of thing. So I think there’s still some choices to be made. But maybe there’s enough to start. I need feedback from people. When I talk to people, I say, I’m really excited about L2 or LN-Symmetry or these kind of setups. But they’re all busy doing their own thing, and they’re busy trying to stay away from politics. I totally get that.
 
 Jonas: 00:47:01
 
-Darg is not something I’ve actually heard of, and so why is that not more, not allowed in the discussion?
+DARIC is not something I’ve actually heard of, and so why is that not more, not allowed in the discussion?
 
 Greg: 00:47:06
 
-It’s an academic paper, and they didn’t do much to spread it in the dev community, but it’s pretty straightforward. It’s a well-written paper. I think Shinobi pointed it out to me. There was a predecessor called generalized payment channels, which was kind of, I’m not gonna say garbage, but impractical. And then it was like, Dark was like a successor that was a much more practical instantiation. And actually it seems like they understand the problem space, the engineering problem space, much better somehow, even though they’re academics. So kudos to them.
+It’s an academic paper, and they didn’t do much to spread it in the dev community, but it’s pretty straightforward. It’s a well-written paper. I think Shinobi pointed it out to me. There was a predecessor called generalized payment channels, which was kind of, I’m not gonna say garbage, but impractical. And then it was like, DARIC was like a successor that was a much more practical instantiation. And actually it seems like they understand the problem space, the engineering problem space, much better somehow, even though they’re academics. So kudos to them.
 
 Jonas: 00:47:36
 
@@ -871,7 +863,7 @@ Yeah, thanks for coming in.
 
 Jonas: 00:47:51
 
-He is very articulate about those subjects. I like that was a good episode.
+He is very articulate about those subjects. That was a good episode.
 
 Murch: 00:47:56
 
@@ -883,8 +875,8 @@ That’s what this is all about.
 
 Murch: 00:48:04
 
-But now you can totally talk to all your friends about APOL and then so much fear.
+But now you can totally talk to all your friends about APO and LN-Symmetry.
 
 Jonas: 00:48:10
 
-That’s right you know all the acronyms and you’re gonna be a hit at the parties. Okay hope you enjoyed the episode we’ll try to get another one out soon. Bye. Crap, crap in here. You
+That’s right you know all the acronyms and you’re gonna be a hit at the parties. Okay hope you enjoyed the episode we’ll try to get another one out soon. Bye.
