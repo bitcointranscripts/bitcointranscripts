@@ -131,7 +131,7 @@ Let’s start with package relay and work up from there.
 
 Greg: 00:02:10
 
-There’s been this idea for many years that the peer-to-peer transaction layer, you want to be able to propose a set of transactions at the same time to a node. For example, one transaction could be too low fee But you can spend an output at a higher fee and do child pays for parent. So this works today if the parent transaction is the fee is beefy enough to get in the mempool on its own, but maybe not enough to get mined in a in a reasonable amount of time. But it doesn’t work if the fee is too low. So for example, if you wanted a transaction that’s zero fee, maybe you don’t know what the fee is going to be, or you’re basically doing a smart contract, for example, like L2, you can’t actually siphon off any fees. So you need to somehow pay for the fees. There’s a few concepts of how to do it with consensus changes or smart SIGHASH changes. But to do it in a policy way, it seems to make sense to have this package of proposals that you pass around the network.
+There’s been this idea for many years that the peer-to-peer transaction layer, you want to be able to propose a set of transactions at the same time to a node. For example, one transaction could be too low fee, but you can spend an output at a higher fee and do child pays for parent. So this works today if the parent transaction, is the fee is beefy enough to get in the mempool on its own, but maybe not enough to get mined in a reasonable amount of time. But it doesn’t work if the fee is too low. So for example, if you wanted a transaction that’s zero fee, maybe you don’t know what the fee is going to be, or you’re basically doing a smart contract, for example, like L2, you can’t actually siphon off any fees. So you need to somehow pay for the fees. There’s a few concepts of how to do it with consensus changes or smart SIGHASH changes. But to do it in a policy way, it seems to make sense to have this package of proposals that you pass around the network.
 
 Jonas: 00:03:10
 
@@ -145,7 +145,7 @@ CPFP, child pays for parent, it actually can cause and mitigate pinning. Because
 
 Jonas: 00:04:31
 
-The mempool has become a crossroads for layer one and layer two in terms of discussions. It’s also, it’s a problem.
+The mempool has become a crossroads for layer one and layer two in terms of discussions. It’s also a problem.
 
 Greg: 00:04:41
 
@@ -229,11 +229,11 @@ Greg: 00:07:57
 
 So the question is, how do we fix this? So there’s the big architectural override of how the mempool works. Should we rewrite everything? Okay, do something really, really smart, maybe DOS resistant. I think there’s just the design space is so huge. I think it’s like a decade of work in some ways. Or we make the problem simpler. And so this is kind of the direction that a few people were thinking, I think Suhas, TheBlueMatt and others, but hadn’t really written down a proposal. And so Gloria and myself and a few others started thinking about how to make something that would work today with, in the short term I would call it, with minor changes to, for example, the Lightning Network could use it with minor changes, versus something that would be bigger or more disruptive.
 
-## Package relay RBF A.K.A. V3
+## Package relay RBF A.K.A. v3
 
 Greg: 00:08:42
 
-Gloria has the package relay work and then on top she calls it package RBF proposal, also known as V3 proposal. Or you pick a new version, Bitcoin transaction version three, and you say, okay, I’m opting into a simpler topology of unconfirmed transactions. The mempool's policy is like a handshake agreement: okay, you wanna make a parent transaction and you might wanna fee bump it and we’re gonna let you do that. So you have one parent transaction and up to one child transaction. So it’s a parent-child relationship and the child is limited in size. The package size of two, which fixes some pinnings. Go read those rules. And then limiting the child to a certain size, which fixes rule number three, which is the common one people point out, which is you have to replace all the total fee of all the children you knock out of the mempool, which can be prohibitively expensive. And even if the child is not going to be mined in the next two weeks. It’s just absolute fee considerations.
+Gloria has the package relay work and then on top she calls it package RBF proposal, also known as v3 proposal. Or you pick a new version, Bitcoin transaction version three, and you say, okay, I’m opting into a simpler topology of unconfirmed transactions. The mempool's policy is like a handshake agreement: okay, you wanna make a parent transaction and you might wanna fee bump it and we’re gonna let you do that. So you have one parent transaction and up to one child transaction. So it’s a parent-child relationship and the child is limited in size. The package size of two, which fixes some pinnings. Go read those rules. And then limiting the child to a certain size, which fixes rule number three, which is the common one people point out, which is you have to replace all the total fee of all the children you knock out of the mempool, which can be prohibitively expensive. And even if the child is not going to be mined in the next two weeks. It’s just absolute fee considerations.
 
 Murch: 00:09:49
 
@@ -249,7 +249,7 @@ And if the confusion is not enough, BIP 125 does not actually fully align with w
 
 Greg: 00:10:13
 
-That's right. So Gloria did some Great work communicating not only what the...she’s done some great talks you should go look up, but also documentation about what are the design decisions of the mempool as today, descriptively. And then also some prescriptive notions. So in the Bitcoin Core repo, you can see that there’s these Markdown files that have a great explanation of why things are the way they are. Because when I was interested in mempool policy in 2017 or so, it’s just kind of a spooky science. It’s witchcraft a little bit. Why is this here? Why is this code here? Who really knows? If I cornered Suhas in a room, I could probably get an answer out of him. But systematizing that knowledge and getting it down and communicated to the wider dev community, at least, was very important. And that’s what she did. So they’re right. So that’s the v3 package RBF, which says, I can RBF this parent efficiently.
+That's right. So Gloria did some great work communicating not only what the...she’s done some great talks you should go look up, but also documentation about what are the design decisions of the mempool as today, descriptively. And then also some prescriptive notions. So in the Bitcoin Core repo, you can see that there’s these Markdown files that have a great explanation of why things are the way they are. Because when I was interested in mempool policy in 2017 or so, it’s just kind of a spooky science. It’s witchcraft a little bit. Why is this here? Why is this code here? Who really knows? If I cornered Suhas in a room, I could probably get an answer out of him. But systematizing that knowledge and getting it down and communicated to the wider dev community, at least, was very important. And that’s what she did. So they’re right. So that’s the v3 package RBF, which says, I can RBF this parent efficiently.
 
 Murch: 00:11:05
 
@@ -269,7 +269,7 @@ That's right, relative timelocks. That’s why and anything above two is also in
 
 Murch: 00:11:46
 
-Right, so you would label your transaction as V3 and then your node would only permit a single child up to a thousand Vbytes I think.
+Right, so you would label your transaction as v3 and then your node would only permit a single child up to a thousand vbytes I think.
 
 Greg: 00:11:56
 
@@ -347,7 +347,7 @@ Eight for the amount, one for the length of the script and then 20.
 
 Greg: 00:17:24
 
-And to make an OP_RETURN, the most compact OP_RETURN, you only need one byte, the OP_RETURN itself. You don’t even need a data push. It’s provably unspendable. So that saves you 21 bytes in burning and maybe that’s the difference in cleaning it up or something like that. You could also do batched cleanup of UTXOs to make it bigger. But I’ve seen a few different developers talking about this, the async people, Peter Todd. And then also I had some other work I was thinking about building on top of V3 package, RBF proposal, where it’d also make more sense too. So the debate came down to, well should we disallow 64 bytes exactly or anything less than 64? Or what should the range be?
+And to make an OP_RETURN, the most compact OP_RETURN, you only need one byte, the OP_RETURN itself. You don’t even need a data push. It’s provably unspendable. So that saves you 21 bytes in burning and maybe that’s the difference in cleaning it up or something like that. You could also do batched cleanup of UTXOs to make it bigger. But I’ve seen a few different developers talking about this, the async people, Peter Todd. And then also I had some other work I was thinking about building on top of v3 package, RBF proposal, where it’d also make more sense too. So the debate came down to, well should we disallow 64 bytes exactly or anything less than 64? Or what should the range be?
 
 Murch: 00:18:08
 
@@ -695,7 +695,7 @@ So every single time there’s a unilateral close, at least one of those anchor 
 
 Greg: 00:34:25
 
-Yeah, it hangs around. There’s a time lock, like 16 blocks or something. So once it sits there for 16 blocks, then it becomes an anyone-can-spend type thing. But if fees are high, it’s not gonna get swept. Or if the pre-image is not known, that sort of thing, it could happen. But also it’s the siphoning off. So you’re siphoning off this value with this anchor output. That’s a no-go. So I need a zero value anchor, but a zero value anchor means you have a zero value output sitting in the UTXO set, which is also no-win. But we have package relay in this mystical new world that I’m trying to build with other people of course, but this L2 world. So perhaps we can use package relay and say, OK, if you propose a package and a transaction has a dusty-looking output, allow it, if and only if it gets spent in the same package. So in this V3 context, this is simpler to think about, does the parent have an output that’s dust? That’s OK, as long as it’s spent by the child. There’s additional rules on here. I actually mark the output by using the opcode OP_2, which is one more than OP_TRUE, because everyone uses OP_TRUE for testing. So it just breaks like a million tests. So I’ll just pick the next one. That was actually a Luke Jr. idea in 2017. I found old emails talking about this kind of similar idea. So it’s an OP, it’s a script of OP_TRUE, which means no key material needed and no witness data needed to spend it.
+Yeah, it hangs around. There’s a time lock, like 16 blocks or something. So once it sits there for 16 blocks, then it becomes an anyone-can-spend type thing. But if fees are high, it’s not gonna get swept. Or if the pre-image is not known, that sort of thing, it could happen. But also it’s the siphoning off. So you’re siphoning off this value with this anchor output. That’s a no-go. So I need a zero value anchor, but a zero value anchor means you have a zero value output sitting in the UTXO set, which is also no-win. But we have package relay in this mystical new world that I’m trying to build with other people of course, but this L2 world. So perhaps we can use package relay and say, OK, if you propose a package and a transaction has a dusty-looking output, allow it, if and only if it gets spent in the same package. So in this v3 context, this is simpler to think about, does the parent have an output that’s dust? That’s OK, as long as it’s spent by the child. There’s additional rules on here. I actually mark the output by using the opcode OP_2, which is one more than OP_TRUE, because everyone uses OP_TRUE for testing. So it just breaks like a million tests. So I’ll just pick the next one. That was actually a Luke Jr. idea in 2017. I found old emails talking about this kind of similar idea. So it’s an OP, it’s a script of OP_TRUE, which means no key material needed and no witness data needed to spend it.
 
 Murch: 00:35:49
 
