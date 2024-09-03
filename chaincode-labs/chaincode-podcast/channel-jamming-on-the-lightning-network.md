@@ -35,7 +35,7 @@ We identify the problem, we identify what would be a good solution, and then we 
 
 Speaker 1: 00:00:15
 
-Hello, Merch.
+Hello, Murch.
 Hi, Jonas.
 
 Speaker 2: 00:00:16
@@ -615,11 +615,9 @@ Have you gotten any in-house review so far?
 Speaker 0: 00:34:14
 
 Yeah, Carla that just joined Chaincode and I hope will appear on the podcast sometime soon, was of great help.
-In general, I expect that, at least personally, the Lightning Network research flow is going to be oh so much easier now that I can just like pop my head and ask like, Bolt 7, what exactly?
-And things like that.
+In general, I expect that, at least personally, the Lightning Network research flow is going to be oh so much easier now that I can just like pop my head and ask like, "BOLT7, what exactly?", and things like that.
 So yeah, that was really great.
 I think we named some people in the thanks section in the paper and there were a lot of people that gave very, very valuable comments.
-So yeah.
 
 Speaker 2: 00:34:47
 
@@ -739,11 +737,7 @@ Speaker 2: 00:41:46
 Well, thank you for joining us and telling us all things jamming.
 There's a movie from the 80s called Spaceballs and in it there is a reference to someone throwing jam at their communications and it comes through the antenna onto the screen and he takes it off the screen and looks at it and says, we've been jammed.
 
-Speaker 1: 00:42:04
-
-[Movie Clip Audio:] Sir, the radar, sir, it appears to be jammed.
-
-Speaker 2: 00:42:10
+[Movie Clip Audio:] "Sir, the radar, sir, it appears to be jammed".
 
 So it's a little hard to get that out of your head once it's in your head.
 I'll put a link in the show notes so that you know what I'm talking about.
@@ -760,7 +754,7 @@ Cool.
 
 Speaker 2: 00:42:25
 
-All right, Merch, do you think we're going to solve channel jamming?
+All right, Murch, do you think we're going to solve channel jamming?
 
 Speaker 1: 00:42:29
 
