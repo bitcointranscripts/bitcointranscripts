@@ -8,7 +8,7 @@ categories: ["podcast"]
 summary: "Gloria Zhao sits down with us to discuss her package relay proposal and what it is like as a relative newcomer to propose a big change."
 date: 2022-05-24
 episode: 21
-aditional_resources:
+additional_resources:
 -   title: 'Mailing List: Package Relay Proposal'
     url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
 -   title: 'Mailing List: Package Mempool Accept and Package RBF'
