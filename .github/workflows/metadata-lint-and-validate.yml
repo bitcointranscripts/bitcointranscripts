@@ -1,0 +1,118 @@
+name: metadata-linter
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  yaml-lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yamllint pyyaml
+
+      - name: Extract YAML front matter (excluding root directory and _index files)
+        run: |
+          find . -mindepth 2 -name "*.md" | while read file; do
+            base=$(basename "$file")
+            if [[ "$base" != _index* ]] && [[ "$dir" != ./.github/workflows* ]]; then
+              dir=$(dirname "$file")
+              base_no_ext=$(basename "$file" .md)
+              sed -n '/^---$/,/^---$/p' "$file" > "${dir}/${base_no_ext}.yml"
+            fi
+          done
+
+      - name: YAML Lint (excluding root directory)
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: .
+          config_file: .yamllint.yml
+
+      - name: Validate YAML structure
+        run: |
+          import os
+          import yaml
+
+          def validate_yaml(file_path):
+              with open(file_path, 'r') as file:
+                  content = file.read().strip()
+                  if not content:
+                      return False, f"Error: {file_path} is empty"
+                  content = content.strip('-').strip()
+                  
+                  if not content:
+                      return False, f"Error: {file_path} does not contain any YAML content after removing '---' lines"
+        
+                  try:
+                      data = yaml.safe_load(content)
+                      if data is None:
+                          return False, f"Error: {file_path} does not contain any YAML content"
+                      if not isinstance(data, dict):
+                          return False, f"Error: {file_path} YAML content is not a dictionary"
+                      
+                      # Check for required 'title' field
+                      if 'title' not in data:
+                          return False, f"Error in {file_path}: Missing required key: title"
+                      
+                      # Check for unexpected fields
+                      allowed_fields = ['title', 'date', 'summary', 'episode', 'additional_resources', 'speakers', 'tags', 'media', 'transcript_by', 'categories', 'aliases', 'translation_by', 'needs']
+                      unexpected_fields = [key for key in data.keys() if key not in allowed_fields]
+                      if unexpected_fields:
+                          return False, f"Error in {file_path}: Unexpected fields: {', '.join(unexpected_fields)}"
+                      
+                      return True, None
+                  except yaml.YAMLError as e:
+                      return False, f"Error parsing {file_path}: {e}"
+
+          def main():
+              all_valid = True
+              yaml_files_count = 0
+              invalid_files_count = 0
+              errors = []
+
+              for root, dirs, files in os.walk('.'):
+                  if root == '.' or root.startswith('./.github/workflows'):
+                      continue  # Skip the root directory and .github/workflows
+                  for file in files:
+                      if file.endswith('.yml') and not file.startswith('_index'):
+                          yaml_files_count += 1
+                          full_path = os.path.join(root, file)
+                          is_valid, error_message = validate_yaml(full_path)
+                          if not is_valid:
+                              all_valid = False
+                              invalid_files_count += 1
+                              errors.append(error_message)
+
+              print("\nValidation Summary:")
+              print(f"Total YAML files processed: {yaml_files_count}")
+              print(f"Invalid files: {invalid_files_count}")
+              
+              if errors:
+                  print("\nErrors:")
+                  for error in errors:
+                      print(error)
+
+              if not all_valid:
+                  print("\nValidation failed for one or more files")
+                  exit(1)
+              else:
+                  print("\nAll files passed validation")
+
+          if __name__ == "__main__":
+              main()
+        shell: python
+
+      - name: Clean up temporary YAML files
+        if: always()
+        run: |
+          find . -mindepth 2 -name "*.yml" -type f -not -name "_index.yml" -not -path "./.github/workflows/*" -delete
