@@ -22,7 +22,6 @@ additional_resources:
 -   title: (Some of) the math behind Bech32 addresses
     url: https://medium.com/@MeshCollider/some-of-the-math-behind-bech32-addresses-cf03c7496285
 ---
----
 Adam Jonas: 00:00:00
 
 Chaincode podcast is back, welcome to the Chaincode podcast.
