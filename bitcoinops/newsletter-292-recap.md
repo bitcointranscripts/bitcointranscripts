@@ -2,8 +2,8 @@
 title: "Newsletter #292 Recap"
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://twitter.com/i/spaces/1mnxepjZboAJX
-tags: ["developer-tools","psbt","musig"]
-speakers: ["Mark Erhardt","Dave Harding","Josibake","Salvatore Ingala","Fabian Jahr"]
+tags: ["developer-tools", "psbt", "musig"]
+speakers: ["Mark Erhardt", "Dave Harding", "Josibake", "Salvatore Ingala", "Fabian Jahr"]
 categories: ["podcast"]
 date: 2024-03-07
 ---

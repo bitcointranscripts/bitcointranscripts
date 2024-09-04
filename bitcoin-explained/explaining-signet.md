@@ -3,7 +3,7 @@ title: "Explaining Signet"
 transcript_by: sir-oro via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=lGJaIbpf6bk
 tags: ["signet"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-09-25
 episode: 10

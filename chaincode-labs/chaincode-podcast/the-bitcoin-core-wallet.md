@@ -2,24 +2,24 @@
 title: "The Bitcoin Core Wallet"
 transcript_by: chippsmith via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Andrew-Chow-and-the-Bitcoin-Core-Wallet---Episode-30-e204vdj
-tags: ["bitcoin-core","coin-selection","descriptors","hwi","psbt","wallet"]
+tags: ["bitcoin-core", "coin-selection", "descriptors", "hwi", "psbt", "wallet"]
 speakers: ["Andrew Chow"]
 categories: ["podcast"]
 summary: "The discussion with Andrew Chow explores the evolution of the Bitcoin Core wallet, emphasizing significant developments like descriptor wallets and PSBT for enhancing functionality and interoperability. The conversation highlights the continuous efforts to refactor and improve the wallet's codebase, addressing challenges and introducing innovations in coin selection and transaction management. The importance of maintaining high security and review standards is underscored, reflecting the wallet's role in supporting Bitcoin's core principles. Future directions include improving the wallet's performance, user experience, and GUI."
 episode: 30
 date: 2023-03-09
 additional_resources:
--   title: Hardware Wallet Integration (HWI)
+  - title: Hardware Wallet Integration (HWI)
     url: https://bitcoinops.org/en/topics/hwi/
--   title: Partially Signed Bitcoin Transactions (PSBT
+  - title: Partially Signed Bitcoin Transactions (PSBT
     url: https://bitcoinops.org/en/topics/psbt/
--   title: Survey Results
+  - title: Survey Results
     url: https://github.com/achow101/2021-core-survey
--   title: Bitcoin Core GUI
+  - title: Bitcoin Core GUI
     url: https://github.com/bitcoin-Core/gui
--   title: Bitcoin Core GUI-QML
+  - title: Bitcoin Core GUI-QML
     url: https://github.com/bitcoin-Core/gui-qml
--   title: Descriptor
+  - title: Descriptor
     url: https://bitcoinops.org/en/topics/output-script-descriptors/
 ---
 ## Intro

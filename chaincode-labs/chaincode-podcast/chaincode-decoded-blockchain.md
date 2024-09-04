@@ -3,21 +3,21 @@ title: "Chaincode Decoded: Blockchain"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Blockchain---Episode-14-e11n7tl
 tags: ["mining"]
-speakers: ["Mark Erhardt","Adam Jonas"]
+speakers: ["Mark Erhardt", "Adam Jonas"]
 categories: ["podcast"]
 summary: "In this Chaincode Decoded segment we talk about the fundamental role of Bitcoin's blockchain and some of its peculiarities."
 episode: 14
 date: 2021-05-27
 additional_resources:
--   title: Episode 1 with Pieter Wuille
+  - title: Episode 1 with Pieter Wuille
     url: https://podcast.chaincode.com/2020/01/27/pieter-wuille-1.html
--   title: 'Episode 5: The UTXO set'
+  - title: 'Episode 5: The UTXO set'
     url: https://podcast.chaincode.com/2020/02/26/utxos-5.html
--   title: 'Majority is not Enough: Bitcoin Mining is Vulnerable'
+  - title: 'Majority is not Enough: Bitcoin Mining is Vulnerable'
     url: https://www.cs.cornell.edu/~ie53/publications/btcProcFC.pdf
--   title: Entropy sources in the block header
+  - title: Entropy sources in the block header
     url: https://bitcoin.stackexchange.com/a/96442/5406
--   title: Eschaton block
+  - title: Eschaton block
     url: https://twitter.com/orionwl/status/969903330523865088
 ---
 ## Introduction

@@ -2,7 +2,7 @@
 title: Enterprise Wallets/UTXO Management
 transcript_by: pgsdesign via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yy6Mt5-fl0g
-tags: ["payment-batching","coin-selection","rbf","segwit","taproot"]
+tags: ["payment-batching", "coin-selection", "rbf", "segwit", "taproot"]
 speakers: ["Mark Erhardt"]
 categories: ["Podcast"]
 date: 2020-11-09

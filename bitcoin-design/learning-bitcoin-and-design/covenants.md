@@ -2,8 +2,8 @@
 title: "Covenants"
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=rCQKqe2XCqI
-tags: ["covenants","ux","op-checktemplateverify"]
-speakers: ["Christoph Ono","Michael Haase","Owen Kemeys","Yashraj","Mogashni"]
+tags: ["covenants", "ux", "op-checktemplateverify"]
+speakers: ["Christoph Ono", "Michael Haase", "Owen Kemeys", "Yashraj", "Mogashni"]
 date: 2024-01-19
 ---
 ## Introductions

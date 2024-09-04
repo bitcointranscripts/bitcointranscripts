@@ -2,24 +2,24 @@
 title: "Chaincode Decoded: Bech32m"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Bech32m---Episode-11-ev1jnc
-tags: ["bech32","segwit","taproot"]
-speakers: ["Mark Erhardt","Adam Jonas"]
+tags: ["bech32", "segwit", "taproot"]
+speakers: ["Mark Erhardt", "Adam Jonas"]
 categories: ["podcast"]
 summary: "This revisits a segment we call Chaincode Decoded. In this episode, we'll learn how to say Bech32 and also what it and Bech32m are."
 episode: 11
 date: 2021-04-16
 additional_resources:
--   title: mailing list post
+  - title: mailing list post
     url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html
--   title: BIP350
+  - title: BIP350
     url: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki
--   title: 'Pieter Wuille: New Address Type for SegWit Addresses (presentation)'
+  - title: 'Pieter Wuille: New Address Type for SegWit Addresses (presentation)'
     url: https://www.youtube.com/watch?v=NqiN9VFE4CU
--   title: Sipa demo
+  - title: Sipa demo
     url: http://bitcoin.sipa.be/bech32/demo/demo.html
--   title: Bech32 adoption
+  - title: Bech32 adoption
     url: https://en.bitcoin.it/wiki/Bech32_adoption
--   title: (Some of) the math behind Bech32 addresses
+  - title: (Some of) the math behind Bech32 addresses
     url: https://medium.com/@MeshCollider/some-of-the-math-behind-bech32-addresses-cf03c7496285
 ---
 Adam Jonas: 00:00:00

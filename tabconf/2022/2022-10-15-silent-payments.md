@@ -3,7 +3,7 @@ title: Silent Payments and Alternatives
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
 speakers: ['Ruben Somsen']
-tags: ['privacy-enhancements','silent-payments']
+tags: ['privacy-enhancements', 'silent-payments']
 date: 2022-10-15
 ---
 

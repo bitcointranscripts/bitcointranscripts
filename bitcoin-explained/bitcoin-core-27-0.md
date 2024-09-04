@@ -9,11 +9,11 @@ summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what ne
 episode: 92
 date: 2024-04-10
 additional_resources:
--   title: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
+  - title: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
     url: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
--   title: CoinKite
+  - title: CoinKite
     url: https://store.coinkite.com/promo/BITCOINEXPLAINED
--   title: https://bitcoinexplainedpodcast.com/
+  - title: https://bitcoinexplainedpodcast.com/
     url: https://bitcoinexplainedpodcast.com/
 ---
 Speaker 0: 00:00:16

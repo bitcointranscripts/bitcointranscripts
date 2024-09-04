@@ -2,8 +2,8 @@
 title: "FediMint"
 transcript_by: Ringoz1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=lQ0dETyS28o
-tags: ["ecash","ux"]
-speakers: ["Stephen DeLorme","Justin Moon", "Christoph Ono"]
+tags: ["ecash", "ux"]
+speakers: ["Stephen DeLorme", "Justin Moon", "Christoph Ono"]
 date: 2022-07-29
 ---
 ## Introduction

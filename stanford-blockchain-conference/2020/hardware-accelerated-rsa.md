@@ -2,7 +2,7 @@
 title: "Hardware Accelerated RSA - VDFs, SNARKs, and Accumulators"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['cryptography','proof-systems']
+tags: ['cryptography', 'proof-systems']
 speakers: ['Simon Peffers']
 ---
 <https://twitter.com/kanzure/status/1230551345700069377>

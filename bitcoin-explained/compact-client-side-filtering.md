@@ -3,7 +3,7 @@ title: "Compact Client Side Filtering (Neutrino)"
 transcript_by: NeroCherubino via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=HGrdiwqlKhU
 tags: ["compact-block-filters"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-01-29
 episode: 25

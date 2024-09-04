@@ -3,7 +3,7 @@ title: "Breaking Down Taproot Activation Options"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=mT0t8Jm0m5E
 tags: ["bitcoin-core", "taproot", "soft-fork-activation"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-07-25
 episode: 3

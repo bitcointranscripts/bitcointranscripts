@@ -2,7 +2,7 @@
 title: "Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','lightning']
+tags: ['research', 'lightning']
 speakers: ['Pedro Moreno-Sanchez']
 date: 2019-09-12
 media: https://www.youtube.com/watch?v=Uh6Ywxrobzw&t=1022s

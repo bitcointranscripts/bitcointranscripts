@@ -2,8 +2,8 @@
 title: "OP_Vault - A New Way to HODL?"
 transcript_by: adamjonas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Nq6WxJ0PgJ4
-tags: ["vaults","covenants"]
-speakers: ["Stephan Livera","James O’Beirne"]
+tags: ["vaults", "covenants"]
+speakers: ["Stephan Livera", "James O’Beirne"]
 categories: ["podcast"]
 date: 2023-01-29
 ---

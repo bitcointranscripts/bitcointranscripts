@@ -2,7 +2,7 @@
 title: "Proof-of-Verification for Proof-of-Work: Miners Must Verify the Signatures on Bitcoin Transactions"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','proof-systems']
+tags: ['research', 'proof-systems']
 speakers: ['Kanta Matsuura']
 date: 2019-09-12
 media: https://www.youtube.com/watch?v=Uh6Ywxrobzw&t=11607s

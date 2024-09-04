@@ -3,7 +3,7 @@ title: "Mimblewimble: Private, Massively-Prunable Blockchains"
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Andrew Poelstra']
-tags: ['adaptor-signatures','sidechains']
+tags: ['adaptor-signatures', 'sidechains']
 date: 2016-10-08
 media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=5368s
 ---
