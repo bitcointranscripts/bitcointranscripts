@@ -2,7 +2,7 @@
 title: Reproducible Builds
 transcript_by: Bryan Bishop
 categories: ['conference']
-tag: ['build systems']
+tags: ['build systems']
 speakers: ['Carl Dong']
 ---
 

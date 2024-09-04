@@ -2,7 +2,7 @@
 title: Reunión introductoria de la GUI de Bitcoin Core
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-tag: ['bitcoin-diseño']
+tags: ['bitcoin-diseño']
 date: 2020-08-20
 aliases: ['/es/bitcoin-design/2020-08-20-bitcoin-core-gui']
 ---

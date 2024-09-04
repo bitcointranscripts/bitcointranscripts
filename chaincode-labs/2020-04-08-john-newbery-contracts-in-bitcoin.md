@@ -1,7 +1,7 @@
 ---
 title: "Bitcoin Script: Past and Future"
 transcript_by: Caralie Chrisco
-tag: ['scripts-addresses']
+tags: ['scripts-addresses']
 date: 2020-04-08
 speakers: ['John Newbery']
 media: https://youtu.be/H-wH6mY9pZo?t=2549
