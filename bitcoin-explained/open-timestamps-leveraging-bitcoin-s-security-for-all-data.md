@@ -45,7 +45,7 @@ Yep, exactly.
 
 Aaron van Wirdum: 00:00:44
 
-We're not actually going to discuss the politics of the situation
+We're not actually going to discuss the politics of the situation.
 
 Sjors Provoost: 00:00:48
 
@@ -53,7 +53,7 @@ I believe the listeners understand that.
 
 Aaron van Wirdum: 00:00:50
 
-What we're going to discuss is opentimestamps.
+What we're going to discuss is OpenTimestamps.
 
 Sjors Provoost: 00:00:53
 
@@ -321,7 +321,7 @@ Aaron van Wirdum: 00:06:04
 
 Okay, so we're hashing documents.
 We just explained how we're hashing documents.
-Now we have two documents.
+Let's say we have two documents.
 Each of them we turn into a hash.
 So now we have two hashes.
 Now we take the two hashes and we combine these and turn them into a new hash.
@@ -399,10 +399,10 @@ So that's better.
 Sjors Provoost: 00:07:48
 
 And there's a nice way to do that.
-This is called [OP return](https://en.bitcoin.it/wiki/OP_RETURN), which we discussed in a previous episode.
+This is called [`OP_RETURN`](https://en.bitcoin.it/wiki/OP_RETURN), which we discussed in a previous episode.
 It basically tells the node everything after this, you can ignore.
 You don't have to put this in your [UTXO set](https://learnmeabitcoin.com/technical/transaction/utxo/), which we talked about last episode, takes up RAM.
-So you write OP return in the destination of your payment, and then it's followed by the hash.
+So you write `OP_RETURN` in the destination of your payment, and then it's followed by the hash.
 And then some other software will have to interpret that.
 But it's still a bit inefficient, right?
 And that's why we're talking about this Merkle tree.
@@ -648,7 +648,7 @@ Aaron van Wirdum: 00:16:30
 
 I'll settle for that.
 
-## Spam and Fishing
+## Spam and Phishing
 
 Sjors Provoost: 00:16:40
 
@@ -717,7 +717,7 @@ Oh, we're not ending the podcast.
 
 Aaron van Wirdum: 00:18:36
 
-Let's give some better examples than why open timestamps is great.
+Let's give some better examples than why OpenTimestamps is great.
 
 Sjors Provoost: 00:18:40
 
@@ -971,7 +971,7 @@ And as we described with the example of the hypothetical evil Bitcoin Core maint
 
 Aaron van Wirdum: 00:26:16
 
-I think timestamps and these kinds of timestamps and open timestamps are the most interesting and the most important non-monetary use of Bitcoin.
+I think timestamps and these kinds of timestamps and OpenTimestamps are the most interesting and the most important non-monetary use of Bitcoin.
 I think it's a big deal being able to timestamp documents in such a very viable way.
 
 Sjors Provoost: 00:26:37
@@ -990,7 +990,7 @@ Nowadays, everybody does that.
 Aaron van Wirdum: 00:27:02
 
 Back in those days, that was a bit more original.
-But these are the kinds of things, like you can imagine how these kinds of trickeries could be prevented with something like Open Timestamps somehow, or at least be made more obvious, or it could be a very useful tool for historians.
+But these are the kinds of things, like you can imagine how these kinds of trickeries could be prevented with something like OpenTimestamps somehow, or at least be made more obvious, or it could be a very useful tool for historians.
 Sjors, I'm going to tell you one more cool thing before we end this podcast.
 
 Sjors Provoost: 00:27:24
@@ -1000,7 +1000,7 @@ All right, tell me.
 Aaron van Wirdum: 00:27:24
 
 
-I think one of the nice things about Open Timestamps is that it actually resembles the idea that is mentioned in the Bitcoin white paper, [Scott Stornetta and Stuart Haber](https://www.forbes.com/sites/vipinbharathan/2020/06/01/the-blockchain-was-born-20-years-before-bitcoin/?sh=1a547035d71e), if I'm recalling these names correctly.
+I think one of the nice things about OpenTimestamps is that it actually resembles the idea that is mentioned in the Bitcoin white paper, [Scott Stornetta and Stuart Haber](https://www.forbes.com/sites/vipinbharathan/2020/06/01/the-blockchain-was-born-20-years-before-bitcoin/), if I'm recalling these names correctly.
 They had their own idea for timestamping back in the the late 80s or the early 90s.
 And back then, Stornetta's idea, his concern was that, as long as we have paper documents, then forging paper documents, is at least kind of difficult.
 It's at least sort of like it leaves traces or you can sort of tell that something has been doctored with or messed with, or it's at least sort of possible while if we're moving.
@@ -1029,8 +1029,8 @@ But then while trying to prove that it was unsolvable, they came to the realizat
 So everyone in the world submits their hashes and everyone in this world receives the combined hashes in return.
 That way, if you want to forge history, you would have to corrupt everyone or it would be obvious to everyone, like no one's going to go along with that.
 That was their solution, and this solution, I think, evolved.
-Ultimately, they came up with this idea of including the Merkle route into newspapers.
-Then there was a Merkle route in the New York Times of May 22nd, 1996.
+Ultimately, they came up with this idea of including the Merkle root into newspapers.
+Then there was a Merkle root in the New York Times of May 22nd, 1996.
 So you knew that documents existed back then.
 And ultimately, their ideas were inspiration for Satoshi Nakamoto.
 It was included in the Bitcoin white paper.
