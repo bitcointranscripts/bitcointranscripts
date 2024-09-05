@@ -3,7 +3,7 @@ title: "Open Timestamps: Leveraging Bitcoin's Security For All Data"
 transcript_by: chippsmith via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=hUFNqD3DWWQ
 tags: ["proof-systems"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-11-05
 episode: 16
