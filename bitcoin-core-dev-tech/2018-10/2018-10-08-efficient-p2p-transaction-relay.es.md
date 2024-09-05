@@ -5,10 +5,8 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['P2P']
 date: 2018-10-08
-aliases: ['/bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/']
 ---
-
-# Mejoras del protocolo de retransmisión de transacciones p2p con reconciliación de conjuntos
+## Mejoras del protocolo de retransmisión de transacciones p2p con reconciliación de conjuntos
 
 gleb
 
@@ -32,7 +30,7 @@ P: Si te enteras de algo nuevo a través de la reconciliación de conjuntos, ¿n
 
 Tras la reconciliación, los nodos borran sus conjuntos y vuelven a empezar. Durante la reconciliación de conjuntos, hay dos viajes de ida y vuelta.
 
-# Diferencias de conjuntos con códigos BCH
+## Diferencias de conjuntos con códigos BCH
 
 Usamos códigos BCH para hacer esto eficiente. Digamos que Alice tiene 7 transacciones en su conjunto, y Bob tiene 7 transacciones en su conjunto, y no tienen ni idea de cuáles son compartidas y cuáles no. Asumen que la mayoría son compartidas. Cada cinco segundos, un nodo elige un par de una cola. Así que, básicamente, lo que significa, si usted tiene 8 compañeros, entonces cada reconciliación ocurre en promedio cada 40 segundos, porque es 5 * 8. Durante ese tiempo, aprendemos mucho de otros pares y así sucesivamente.
 
@@ -42,7 +40,7 @@ R: No. Estás reconciliando el conjunto de transacciones que habrías retransmit
 
 Cada 40 segundos, este conjunto se vacía, y entonces se vuelve a llenar con nuevas transacciones. Por eso es justo suponer que la mayoría de los elementos del conjunto ya están compartidos entre los dos nodos. Una vez que se enteran de transacciones que desconocen mutuamente, entonces hacen las conciliaciones. Es posible hacer que esto ocurra de la siguiente manera: si el ID de una transacción es de 32 bytes, basta con enviar simplemente ........ Alice estima el tamaño del conjunto, Alice calcula un resumen de su conjunto, Alice envía el resumen a Bob, Bob calcula su resumen, Bob XORs los resúmenes, Bob puede entonces encontrar las transacciones que le faltan. Si Alice subestimó y envió un resumen de tamaño 1, Bob fallará en el último paso porque la subestimación... sí, simplemente no puede recuperarse, y observará el fallo y solicitará otra iteración del protocolo o algo así. Si Alice sobreestimó y envió 3 elementos, está bien, sólo hay un poco de ancho de banda extra porque no es óptimo en ninguna parte.
 
-# Resultados de la simulación 
+## Resultados de la simulación 
 
 En este momento esto es lo que estoy observando. Esto es con 10.000 nodos. Necesitamos reducir la redundancia en el fan-out inicial. También parte de esto se debe a fallos de reconciliación (subestimaciones). La mitad de los nodos nunca se enteran de las transacciones, y la otra mitad se enteran de las mismas transacciones dos veces o más. La subestimación se produce cuando falla la reconciliación de conjuntos y tenemos que enviar más datos a través de la red. En caso de que falle la reconciliación de conjuntos, Alice puede volver al protocolo original y enviarlo completo.
 
@@ -70,7 +68,7 @@ Utilizamos ids cortos de transacciones por dos razones. Podemos reducir drástic
 
 Las colisiones pueden ser malas en el sentido de que una transacción puede atascarse... la misma transacción con el mismo short id en ambos lados, y la reconciliación podría pensar que son la misma. Esto es un problema. Si salas cada conexión con una sal diferente, entonces está bien. Si tienen el mismo short id, entonces la transacción no se propagará al otro nodo. No es un problema si hay colisiones sólo dentro de las transacciones que estás tratando de retransmitir; es sólo cuando hay una transacción diferente en ambos lados que colisiona. Si tienes dos transacciones con el mismo short id, simplemente envías la transacción. Usted no necesita resalt, sólo tiene que enviar, porque usted está perdiendo eso.
 
-# Algunos puntos de referencia de las bibliotecas BCH
+## Algunos puntos de referencia de las bibliotecas BCH
 
 Los códigos BCH son bastante caros sin optimización. IBLT es otro método de reconciliación de conjuntos. IBLT es mucho más simple de implementar, y computacionalmente es mejor que los códigos BCH, pero para conjuntos pequeños tiene una sobrecarga bastante alta de enteros pequeños. No un 10% de sobrecarga, sino 3 veces. Teóricamente, la información está muy cerca: si puedes predecir con exactitud la diferencia, entonces el ancho de banda es sólo la diferencia, lo cual es bastante sorprendente.
 
@@ -92,7 +90,7 @@ Yo no sugeriría ejecutar tantos nodos en una sola máquina. No, quiero ejecutar
 
 Una vez que sipa publique algo acerca de los códigos BCH, entonces publicaremos cosas de retransmisión de transacciones. Primero deberíamos hacer que todos escriban cómo creen que funciona, luego hacemos una reconciliación entre ellos. O podríamos hacer algo sobre códigos BCH ahora mismo y luego publicar lo que kanzure escriba.
 
-# Conciliación de bocetos
+## Conciliación de bocetos
 
 sipa
 
@@ -106,7 +104,7 @@ R: Tiene que ser un campo de característica 2, de lo contrario se produce inmed
 
 Esta es una descripción del origen de los códigos BCH. Voy a empezar de nuevo, y vamos a llegar a otro punto de vista para volver a eso.
 
-# Bocetos 
+## Bocetos 
 
 Si mis elementos son x, y y z, entonces el boceto consiste en x+y+z, que es realmente el XOR de los bits. Ese es el primer elemento del sketch. El segundo es x^3 + y^3 + z^3... y el siguiente es x^5 + y^5 + z^5. Todos ellos deben ser elevados a estas potencias.. El primer paso al hacer la corrección.... ves que, tengo... Si necesitas 10, entonces subes a x^19 y claramente esto tiene propiedades de linealidad. Si tengo un sketch para x, y y z, y los xor juntos, entonces tengo uno que los ha sumado así que obtendré un sketch de salida. ... La raíz cuadrada es una transformación lineal, puedes derivar todo tipo de propiedades divertidas de esto. Si tienes x + y + z, puedes calcular x^2 + y^2 + z^2 porque es simplemente elevar este número al cuadrado. Para la suma de las potencias 4ª, calculas elevando al cuadrado los números de las potencias 2ª. Y 6ª, haces ti para las terceras potencias. Lo que quiero decir es que, aunque sólo envíes los números impares, el receptor puede calcularlos todos. Esto es específico del uso de un campo de característica 2. Si no estuvieras haciendo eso, necesitarías dar todos los intermedios.
 
