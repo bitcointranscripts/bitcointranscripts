@@ -1,6 +1,6 @@
 ---
 title: Splicing
-Transcript_by: Caralie Chrisco
+transcript_by: Caralie Chrisco
 categories: ['residency']
 tags: ['lightning', 'splicing']
 speakers: ['Rene Pickhardt']

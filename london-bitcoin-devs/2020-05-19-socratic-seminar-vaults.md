@@ -2,7 +2,7 @@
 title: Socratic Seminar - Vaults and OP_CHECKTEMPLATEVERIFY
 transcript_by: Michael Folkson
 categories: ['meetup']
-date:  2020-05-19
+date: 2020-05-19
 media: https://www.youtube.com/watch?v=34jMGiCAmQM
 ---
 

@@ -4,7 +4,7 @@ transcript_by: Michael Folkson
 translation_by: Lucas Ferreira
 speakers: ['Sergei Tikhomirov']
 categories: ['hackathon']
-tags: ['research','lightning','security-problems','privacy-problems']
+tags: ['research', 'lightning', 'security-problems', 'privacy-problems']
 date: 2020-05-09
 media: https://www.youtube.com/watch?v=8lUTbfO94mM
 ---

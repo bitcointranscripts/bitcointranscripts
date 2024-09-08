@@ -2,7 +2,7 @@
 title: "Handel: Practical Multi-Signature Aggregation for Large Byzantine Committees"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research', 'cryptography','bls-signatures']
+tags: ['research', 'cryptography', 'bls-signatures']
 speakers: ['Nicolas Gailly']
 date: 2019-02-01
 media: https://www.youtube.com/watch?v=HCd4fF9u664

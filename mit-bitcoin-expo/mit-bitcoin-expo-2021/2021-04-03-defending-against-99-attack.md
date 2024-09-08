@@ -2,7 +2,7 @@
 title: "How much Security is too much Security? Defending against a 99.999% Attack"
 transcript_by: Carla Kirk-Cohen
 categories: ['conference']
-tags: ['security','utreexo']
+tags: ['security', 'utreexo']
 date: 2021-04-03
 speakers: ['Tadge Dryja']
 media: https://www.youtube.com/watch?v=rSsPViajzQQ

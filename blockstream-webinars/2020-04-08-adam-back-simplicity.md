@@ -2,7 +2,7 @@
 title: "Simplicity: Next-Gen Smart Contracting"
 transcript_by: Michael Folkson
 speakers: ['Adam Back']
-tag: ['simplicity']
+tags: ['simplicity']
 date: 2020-04-08
 media: https://www.youtube.com/watch?v=RZNCk-nyx_A
 ---

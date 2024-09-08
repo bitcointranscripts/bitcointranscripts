@@ -2,7 +2,7 @@
 title: Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['p2p','research','threshold-signature','sighash-anyprevout','altcoins']
+tags: ['p2p', 'research', 'threshold-signature', 'sighash-anyprevout', 'altcoins']
 date: 2020-08-12
 ---
 Topic: Agenda below

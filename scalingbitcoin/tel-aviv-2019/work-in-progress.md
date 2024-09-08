@@ -2,7 +2,7 @@
 title: "Work In Progress Sessions"
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Mikael Dubrovsky','Yoshinori Hashimoto','Daniel Marquez','Thomas Eizinger']
+speakers: ['Mikael Dubrovsky', 'Yoshinori Hashimoto', 'Daniel Marquez', 'Thomas Eizinger']
 ---
 ((this needs to break into individual transcripts))
 

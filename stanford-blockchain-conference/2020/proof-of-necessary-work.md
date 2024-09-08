@@ -3,7 +3,7 @@ title: "Proof of Necessary Work: Succinct State Verification with Fairness Guara
 transcript_by: Bryan Bishop
 categories: ['conference']
 speakers: ['Assimakis Kattis']
-tags: ['research','proof-systems']
+tags: ['research', 'proof-systems']
 ---
 <https://twitter.com/kanzure/status/1230199429849743360>
 

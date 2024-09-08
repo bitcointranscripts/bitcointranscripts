@@ -3,7 +3,7 @@ title: "Socratic Seminar - AssumeUTXO"
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['assumeUTXO', 'utreexo']
-speakers: ["James O'Beirne","Calvin Kim","Tadge Dryja"]
+speakers: ["James O'Beirne", "Calvin Kim", "Tadge Dryja"]
 date: 2021-11-02
 media: https://www.youtube.com/watch?v=JottwT-kEdg
 ---

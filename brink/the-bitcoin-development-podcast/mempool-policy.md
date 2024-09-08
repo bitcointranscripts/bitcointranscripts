@@ -8,13 +8,13 @@ categories: []
 summary: "Brink co-founder, John Newbery, and Brink fellow, Gloria Zhao, discuss Bitcoin Core's mempool policy."
 date: 2021-11-10
 additional_resources:
--   title: BIP125 Replace by Fee (RBF)
+  - title: BIP125 Replace by Fee (RBF)
     url: https://bitcoinops.org/en/topics/replace-by-fee/
--   title: Transaction pinning
+  - title: Transaction pinning
     url: https://bitcoinops.org/en/topics/transaction-pinning/
--   title: Discourage upgradable
+  - title: Discourage upgradable
     url: https://github.com/bitcoin/bitcoin/pull/5000
--   title: https://brink.dev/
+  - title: https://brink.dev/
     url: https://brink.dev/
 ---
 Speaker 0: 00:00:00

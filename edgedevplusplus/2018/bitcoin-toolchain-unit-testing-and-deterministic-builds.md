@@ -2,7 +2,7 @@
 title: "Bitcoin Toolchain, Unit Testing And Deterministic Builds"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['bitcoin-core','build-system','reproducible-builds']
+tags: ['bitcoin-core', 'build-system', 'reproducible-builds']
 speakers: ['Marco Falke']
 media: https://www.youtube.com/watch?v=ZJ2t84trKVo
 date: 2018-10-05

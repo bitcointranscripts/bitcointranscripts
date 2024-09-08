@@ -2,7 +2,7 @@
 title: Miniscript
 transcript_by: Michael Folkson
 categories: ['meetup']
-tag: ['miniscript']
+tags: ['miniscript']
 speakers: ['Andrew Poelstra']
 date: 2020-02-04
 media: https://www.youtube.com/watch?v=_v1lECxNDiM

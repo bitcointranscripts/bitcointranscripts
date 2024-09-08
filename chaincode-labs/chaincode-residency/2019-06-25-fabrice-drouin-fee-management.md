@@ -1,6 +1,6 @@
 ---
 title: Fee Management (Lightning Network)
-Transcript_by: Keyan Kousha, Shiv Patel, Nelson Galdeman
+transcript_by: Keyan Kousha, Shiv Patel, Nelson Galdeman
 categories: ['residency']
 tags: ['lightning', 'fee-management']
 speakers: ['Fabrice Drouin']

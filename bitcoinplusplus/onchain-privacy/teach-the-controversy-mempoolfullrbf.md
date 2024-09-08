@@ -2,7 +2,7 @@
 title: "Teach the Controversy: mempoolfullrbf"
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=F6qPuhsM5Ng
-tags: ["RBF","transaction-pinning"]
+tags: ["RBF", "transaction-pinning"]
 speakers: ["Peter Todd"]
 categories: ["conference"]
 date: 2023-12-09
