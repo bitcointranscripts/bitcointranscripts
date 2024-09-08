@@ -2,8 +2,8 @@
 title: "Bitcoin Core 25.0"
 transcript_by: edilmedeiros via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=TN2P9xwd6ZU
-tags: ["bitcoin-core","miniscript","wallet","compact-block-filters","transaction-relay-policy"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["bitcoin-core", "miniscript", "wallet", "compact-block-filters", "transaction-relay-policy"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-06-26
 episode: 80

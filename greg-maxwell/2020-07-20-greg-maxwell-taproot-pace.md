@@ -2,7 +2,7 @@
 title: "Is Taproot development moving too fast or too slow?"
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ['taproot','soft-fork-activation']
+tags: ['taproot', 'soft-fork-activation']
 date: 2020-07-20
 media: https://www.reddit.com/r/Bitcoin/comments/hrlpnc/technical_taproot_why_activate/fyqbn8s?utm_source=share&utm_medium=web2x&context=3
 ---

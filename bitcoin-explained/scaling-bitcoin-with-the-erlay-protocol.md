@@ -2,8 +2,8 @@
 title: "Scaling Bitcoin With The Erlay Protocol"
 transcript_by: davidgumberg via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Gq6vRnJnbBM
-tags: ["erlay","minisketch"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["erlay", "minisketch"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-04-08
 episode: 34

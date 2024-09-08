@@ -2,7 +2,7 @@
 title: "On the Security and Performance of Proof of Work Blockchains"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','security-problems','security-enhancements','ethereum']
+tags: ['research', 'security-problems', 'security-enhancements', 'ethereum']
 speakers: ['Arthur Gervais']
 date: 2016-10-09
 media: https://www.youtube.com/watch?v=_Z0ID-0DOnc&t=8857s

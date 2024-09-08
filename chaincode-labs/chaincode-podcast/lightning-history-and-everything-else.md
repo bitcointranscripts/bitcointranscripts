@@ -9,21 +9,21 @@ summary: "Tadge Dryja chats with us about writing the Lightning Network paper an
 episode: 31
 date: 2023-03-22
 additional_resources:
--   title: On the instability of Bitcoin without the block reward
+  - title: On the instability of Bitcoin without the block reward
     url: https://www.cs.princeton.edu/~smattw/CKWN-CCS16.pdf
--   title: Lightning Network White Paper
+  - title: Lightning Network White Paper
     url: https://lightning.network/lightning-network-paper.pdf
--   title: LN-Symmetry (Eltoo)
+  - title: LN-Symmetry (Eltoo)
     url: https://bitcoinops.org/en/topics/eltoo/
--   title: SIGHASH_ANYPREVOUT
+  - title: SIGHASH_ANYPREVOUT
     url: https://bitcoinops.org/en/topics/sighash_anyprevout/
--   title: hardfork wishlist wiki
+  - title: hardfork wishlist wiki
     url: https://en.bitcoin.it/wiki/Hardfork_Wishlist#:~:text=The%20Hardfork%20Wishlist%20is%20to,them%20to%20be%20invalid%20blocks
--   title: softfork wishilist wiki
+  - title: softfork wishilist wiki
     url: https://en.bitcoin.it/wiki/Softfork_wishlist
--   title: coinpools
+  - title: coinpools
     url: https://coinpool.dev/v0.1.pdf
--   title: 'MAS.S62: Cryptocurrency Engineering and Design'
+  - title: 'MAS.S62: Cryptocurrency Engineering and Design'
     url: https://dci.mit.edu/research/2019/8/6/take-the-free-mit-open-course-taught-by-dcis-neha-narula-and-tadge-dryja-mass62-cryptocurrency-engineering-and-design
 ---
 Speaker 0: 00:00:00

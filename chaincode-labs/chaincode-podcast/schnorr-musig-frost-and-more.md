@@ -9,13 +9,13 @@ summary: "Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr
 episode: 26
 date: 2022-12-16
 additional_resources:
--   title: MuSig
+  - title: MuSig
     url: https://bitcoinops.org/en/topics/musig/
--   title: Yannick Seurin
+  - title: Yannick Seurin
     url: http://yannickseurin.free.fr/
--   title: Bellare-Neven
+  - title: Bellare-Neven
     url: https://btctranscripts.com/bitcoin-core-dev-tech/2018-03-05-bellare-neven/
--   title: FROST
+  - title: FROST
     url: https://eprint.iacr.org/2020/852.pdf
 ---
 Speaker 0: 00:00:00

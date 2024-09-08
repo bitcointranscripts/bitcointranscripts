@@ -2,7 +2,7 @@
 title: Blockchain Testbed
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','developer-tools']
+tags: ['research', 'developer-tools']
 speakers: ['Ittay Eyal', 'Emin Gun Sirer']
 ---
 A testbed for bitcoin scaling

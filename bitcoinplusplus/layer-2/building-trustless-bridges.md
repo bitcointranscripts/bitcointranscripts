@@ -2,7 +2,7 @@
 title: "Building Trustless Bridges"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=M40yzuv6DNY
-tags: ["scalability","sidechains","statechains"]
+tags: ["scalability", "sidechains", "statechains"]
 speakers: ["John Light"]
 categories: ["conference"]
 date: 2023-04-29

@@ -44,5 +44,5 @@ The goal is after the branch off to merge CMake and delete autotools.
 
 ## The plan
 
-Ping individual people to test - there is a [PR to test]((https://github.com/hebasto/bitcoin/pull/31)). Goal is to have conviction on whether to merge after branch off.
+Ping individual people to test - there is a [PR to test](https://github.com/hebasto/bitcoin/pull/31). Goal is to have conviction on whether to merge after branch off.
 Once things gets merged and that you can’t build, it’s on you.

@@ -6,7 +6,6 @@ tags: ["lightning"]
 speakers: ["Matt Corallo"]
 categories: ["conference"]
 date: 2021-11-05
-media: https://www.youtube.com/watch?v=W-ajI5YleIo
 ---
 
 ## Introduction

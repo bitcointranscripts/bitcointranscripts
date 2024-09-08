@@ -2,7 +2,7 @@
 title: "AssumeUTXO"
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=knBHvzKsIOY
-tags: ["assumeutxo","bitcoin-core"]
+tags: ["assumeutxo", "bitcoin-core"]
 speakers: ["James O'Beirne"]
 categories: ["podcast"]
 date: 2020-02-13

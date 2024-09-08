@@ -2,7 +2,7 @@
 title: Lightning Network Security Panel
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['security','lightning']
+tags: ['security', 'lightning']
 speakers: ['Olaoluwa Osuntokun', 'Justin Camarena', 'Matt Corallo', 'Michael Folkson']
 media: https://www.youtube.com/watch?v=orWfkdDWQzo
 ---

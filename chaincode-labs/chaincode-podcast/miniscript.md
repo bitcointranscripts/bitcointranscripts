@@ -9,15 +9,15 @@ summary: "Sanket describes to Murch his work on Miniscript. We explore uses for 
 episode: 17
 date: 2021-11-11
 additional_resources:
--   title: Partially Signed Bitcoin Transactions (PSBTs)
+  - title: Partially Signed Bitcoin Transactions (PSBTs)
     url: https://bitcoinops.org/en/topics/psbt/
--   title: Miniscript website
+  - title: Miniscript website
     url: http://bitcoin.sipa.be/miniscript/
--   title: Rust Miniscript
+  - title: Rust Miniscript
     url: https://github.com/rust-bitcoin/rust-miniscript
--   title: Miniscript C++ implementation
+  - title: Miniscript C++ implementation
     url: https://github.com/sipa/miniscript
--   title: Gramtropy
+  - title: Gramtropy
     url: https://github.com/sipa/gramtropy
 ---
 Speaker 0: 00:00:15

@@ -2,7 +2,7 @@
 title: "A Tale of Two Trees: One Writes, and Other Reads, Scaling Oblivious Accesses to Large-Scale Blockchains"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','lightweight-client','privacy-enhancements']
+tags: ['research', 'lightweight-client', 'privacy-enhancements']
 speakers: ['Duc V. Le']
 ---
 ## Introduction

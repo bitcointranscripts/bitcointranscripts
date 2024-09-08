@@ -3,7 +3,7 @@ title: "How to get started contributing sustainably to Bitcoin Core"
 transcript_by: chippsmith via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Bduon80-4CE
 tags: ["bitcoin-core"]
-speakers: ["Jon Atack","Stephan Livera"]
+speakers: ["Jon Atack", "Stephan Livera"]
 categories: ["conference"]
 date: 2022-11-11
 ---

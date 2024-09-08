@@ -9,17 +9,17 @@ summary: "Clara and Sergei stop by to chat about their recent proposal on mitiga
 episode: 25
 date: 2022-11-23
 additional_resources:
--   title: recent proposal
+  - title: recent proposal
     url: https://research.chaincode.com/2022/11/15/unjamming-lightning/
--   title: Spamming the Lightning Network
+  - title: Spamming the Lightning Network
     url: https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md
--   title: Preventing Channel Jamming
+  - title: Preventing Channel Jamming
     url: https://blog.bitmex.com/preventing-channel-jamming/
--   title: 'Bitcoin Optech: Channel jamming attacks'
+  - title: 'Bitcoin Optech: Channel jamming attacks'
     url: https://bitcoinops.org/en/topics/channel-jamming-attacks/
--   title: The impacts of channel jamming
+  - title: The impacts of channel jamming
     url: https://jamming-dev.github.io/book/1-impacts.html
--   title: 'Bitcoin problems: Channel balance probing'
+  - title: 'Bitcoin problems: Channel balance probing'
     url: https://bitcoinproblems.org/problems/channel-balance-probing.html
 ---
 Speaker 0: 00:00:00

@@ -3,7 +3,7 @@ title: "What is Miniscript"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=z84_5yhy8fs
 tags: ["bitcoin-core", "miniscript"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-07-31
 episode: 4

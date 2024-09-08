@@ -2,8 +2,8 @@
 title: "Scaling to Billions of Users"
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=5yPVp6vNHiY
-tags: ["scalability","sidechains"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["scalability", "sidechains"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-07-10
 episode: 82

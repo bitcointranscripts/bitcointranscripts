@@ -3,7 +3,7 @@ title: "Schnorr Signatures and Libsecp256k1"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=RUhI0R4FMEo
 tags: ["libsecp256k1", "schnorr-signatures"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-09-18
 episode: 9

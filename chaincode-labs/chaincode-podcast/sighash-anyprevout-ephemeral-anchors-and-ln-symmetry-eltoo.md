@@ -9,29 +9,29 @@ summary: "Greg Sanders joins us to discuss ANYPREVOUT, ephemeral anchors and LN 
 episode: 29
 date: 2023-02-15
 additional_resources:
--   title: Package relay
+  - title: Package relay
     url: https://bitcoinops.org/en/topics/package-relay/
--   title: Pinning attacks
+  - title: Pinning attacks
     url: https://bitcoinops.org/en/topics/transaction-pinning/
--   title: BIP125
+  - title: BIP125
     url: https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki
--   title: T-Bast's pinning attack summary
+  - title: T-Bast's pinning attack summary
     url: https://github.com/t-bast/lightning-docs/blob/master/pinning-attacks.md
--   title: Package relay RBF
+  - title: Package relay RBF
     url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
--   title: PR
+  - title: PR
     url: https://github.com/bitcoin/bitcoin/pull/26265
--   title: 'Daric: A Storage Efficient Payment Channel With Penalization Mechanism'
+  - title: 'Daric: A Storage Efficient Payment Channel With Penalization Mechanism'
     url: https://eprint.iacr.org/2022/1295
--   title: Two-party eltoo w/ punishment by AJ Towns
+  - title: Two-party eltoo w/ punishment by AJ Towns
     url: https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003788.html
--   title: BIP118
+  - title: BIP118
     url: https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki
--   title: SIGHASH_NOINPUT
+  - title: SIGHASH_NOINPUT
     url: https://github.com/bitcoin/bips/commit/98b7238f68d17f0e01275dd32075078702225356?short_path=2f8c560#diff-2f8c560480095b9f314d3a7e17cf7048a10f9a15b391acaf2c96412d5b4d4b9c
--   title: Ephemeral anchors
+  - title: Ephemeral anchors
     url: https://bitcoinops.org/en/topics/ephemeral-anchors/
--   title: op_2 email by Luke
+  - title: op_2 email by Luke
     url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015945.html
 ---
 Speaker 0: 00:00:00

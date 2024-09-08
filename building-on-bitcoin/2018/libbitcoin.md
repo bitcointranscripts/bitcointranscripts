@@ -2,7 +2,7 @@
 title: Libbitcoin
 transcript_by: Bryan Bishop
 categories: ['conference']
-speakers: ['Eric Voskuil' ]
+speakers: ['Eric Voskuil']
 date: 2018-07-04
 media: https://www.youtube.com/watch?v=QtB4YUneiEE
 ---

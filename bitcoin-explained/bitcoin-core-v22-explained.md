@@ -2,8 +2,8 @@
 title: "Bitcoin Core 22.0 Explained"
 transcript_by: satstacker21 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=xm3BjAKjCXM
-tags: ["bitcoin-core",'hwi','anonymity-networks','bech32']
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["bitcoin-core", 'hwi', 'anonymity-networks', 'bech32']
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-09-13
 episode: 45
