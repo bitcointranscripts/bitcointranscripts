@@ -1,16 +1,20 @@
 ---
-title: "Silent Payments part 2"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-94-silent-payments-part-2
-tags: ['silent-payments']
-speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
+title: 'Silent Payments part 2'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-94-silent-payments-part-2'
+date: '2024-07-07'
+tags:
+  - 'silent-payments'
+speakers:
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
+  - 'Ruben Somsen'
 categories: []
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments."
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments.'
 episode: 94
-date: 2024-07-07
 additional_resources:
-  - title: https://bitcoinexplainedpodcast.com/
-    url: https://bitcoinexplainedpodcast.com/
+  - title: 'https://bitcoinexplainedpodcast.com/'
+    url: 'https://bitcoinexplainedpodcast.com/'
 ---
 Speaker 0: 00:00:16
 
@@ -118,7 +122,7 @@ Now you're stretching the definition.
 I'm just giving a picture of who you are usually.
 But this is a different proposal for you.
 Josie, our listeners don't know you yet.
-Where are you?
+Who are you?
 
 Speaker 3: 00:02:36
 
@@ -168,7 +172,7 @@ So there was a lot of work left, even though it seemed like it was pretty cut an
 
 Speaker 0: 00:04:56
 
-Yeah, well, I just wanted to point out that it's a second grade Utrecht homegrown project,
+Yeah, well, I just wanted to point out that it's a second-grade Utrecht homegrown project,
 which I'm very proud of.
 The first one, of course, being Bitcoin Explained.
 Needless to say.
