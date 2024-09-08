@@ -2,7 +2,7 @@
 title: Schnorr and Taproot workshop
 transcript_by: Bryan Bishop
 categories: ['workshop']
-tags: ['taproot', 'schnorr-signatures','tapscript','musig']
+tags: ['taproot', 'schnorr-signatures', 'tapscript', 'musig']
 date: 2019-09-27
 media: https://bitcoinops.org/en/schnorr-taproot-workshop/
 aliases: ['/misc/2019-09-27-schnorr-taproot-workshop/']

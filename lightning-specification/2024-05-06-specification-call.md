@@ -1,6 +1,6 @@
 ---
 title: "Lightning Specification Meeting - Agenda 1161"
-transcript_by: Gurwinder Sahota via tstbtc v1.0.0 
+transcript_by: Gurwinder Sahota via tstbtc v1.0.0
 tags: ['lightning']
 speakers: []
 categories: []

@@ -2,7 +2,7 @@
 title: State Of Blockchain
 transcript_by: Bryan Bishop
 categories: ['conference']
-tag: ['ethereum']
+tags: ['ethereum']
 ---
 
 Preliminary notes:

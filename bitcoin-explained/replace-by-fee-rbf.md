@@ -3,7 +3,7 @@ title: "Replace By Fee (RBF)"
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=E9L1CRP3W8k
 tags: ["rbf"]
-speakers: ["Aaron van Wirdum","Sjors Provoost"]
+speakers: ["Aaron van Wirdum", "Sjors Provoost"]
 categories: ["podcast"]
 date: 2021-02-05
 episode: 26

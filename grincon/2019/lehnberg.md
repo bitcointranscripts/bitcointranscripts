@@ -2,7 +2,7 @@
 title: Grin update
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['adaptor-signatures','altcoins']
+tags: ['adaptor-signatures', 'altcoins']
 speakers: ['Daniel Lehnberg']
 date: 2019-03-26
 media: https://www.youtube.com/watch?v=sPgJqAdKkhY

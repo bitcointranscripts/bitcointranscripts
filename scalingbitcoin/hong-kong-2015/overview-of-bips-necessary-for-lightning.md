@@ -77,10 +77,6 @@ A: The first line of defense is try to make sure there isn't a mega-hop or mega-
 
 Thank you.
 
-categories: ['conference']
-tags: ['security', 'lightning', 'scalability']
----
-
 small correction about the scalability matrix: <https://twitter.com/tdryja/status/673705980668993537>
 
 Other lightning presentation from same day: <http://diyhpl.us/wiki/transcripts/scalingbitcoin/hong-kong/network-topologies-and-their-scalability-implications-on-decentralized-off-chain-networks/>

@@ -2,7 +2,7 @@
 title: "Cross-Chain Swaps: Atomically Swapping Coins for Privacy or Cross-Blockchain Trades"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy-enhancements','coinjoin','coinswap']
+tags: ['privacy-enhancements', 'coinjoin', 'coinswap']
 speakers: ['Ethan Heilman', 'Nicolas Dorier']
 media: https://www.youtube.com/watch?v=NedW6AhImKg
 date: 2018-10-05

@@ -1,7 +1,7 @@
 ---
 title: Onion Routing Deep Dive
 transcript_by: Arik Sosman
-tags: ['lightning','routing']
+tags: ['lightning', 'routing']
 categories: ['residency']
 speakers: ['Christian Decker']
 date: 2019-06-25

@@ -4,7 +4,6 @@ transcript_by: Bryan Bishop
 categories: ['conference']
 tags: ['research']
 speakers: ['Elaine Shi']
-date: 
 media: https://www.youtube.com/watch?v=iwe1NxbX40A
 ---
 <https://twitter.com/kanzure/status/1090773938479624192>

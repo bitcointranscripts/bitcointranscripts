@@ -1,7 +1,7 @@
 ---
 title: Privacy Metrics for Coin Selection
 categories: ['core-dev-tech']
-tags: ['bitcoin-core','privacy-enhancements', 'coin-selection']
+tags: ['bitcoin-core', 'privacy-enhancements', 'coin-selection']
 date: 2023-09-20
 speakers: ['Mark Erhardt']
 ---

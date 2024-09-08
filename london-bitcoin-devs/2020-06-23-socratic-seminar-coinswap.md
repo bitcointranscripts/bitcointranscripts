@@ -3,7 +3,7 @@ title: Socratic Seminar - Coinswap
 transcript_by: Michael Folkson
 categories: ['meetup']
 tags: ['coinswap']
-speakers: ['Adam Gibson','Max Hillebrand','Bob McElrath','Ruben Somsen']
+speakers: ['Adam Gibson', 'Max Hillebrand', 'Bob McElrath', 'Ruben Somsen']
 date: 2020-06-23
 media: https://www.youtube.com/watch?v=u7l6rP49hIA
 ---

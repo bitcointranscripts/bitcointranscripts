@@ -3,7 +3,7 @@ title: "Ocean Tides"
 transcript_by: aassoiants via review.btctranscripts.com
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-86-ocean-tides-hktbg
 tags: ["pooled-mining"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-12-06
 episode: 86

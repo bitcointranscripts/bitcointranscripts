@@ -2,7 +2,7 @@
 title: "Cryptographic Hocus-Pocus Meaning Nothing: The Zcash Trusted Setup MPC"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy-enhancements','cryptography','altcoins']
+tags: ['privacy-enhancements', 'cryptography', 'altcoins']
 speakers: ['Peter Todd']
 media: https://youtu.be/YHieWJWwVbE
 ---

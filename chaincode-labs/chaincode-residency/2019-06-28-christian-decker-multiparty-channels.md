@@ -2,7 +2,7 @@
 title: Multiparty Channels (Lightning Network)
 transcript_by: Lucas de C. Ferreira, Ben Knáb
 categories: ['residency']
-tag: ['lightning', 'multiparty channel', 'channel factory']
+tags: ['lightning', 'multiparty channel', 'channel factory']
 speakers: ['Christian Decker']
 date: 2019-06-28
 media: https://youtu.be/PUDWGH_MvmQ

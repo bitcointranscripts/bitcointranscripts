@@ -2,7 +2,7 @@
 title: Taproot and Graftroot
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mast','p2c','taproot']
+tags: ['mast', 'p2c', 'taproot']
 speakers: ['Greg Sanders']
 media: https://www.youtube.com/watch?v=h2bvOal1u5k
 date: 2018-10-04
