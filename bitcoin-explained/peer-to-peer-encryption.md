@@ -3,7 +3,7 @@ title: "Peer-to-peer Encryption"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=jvFdPwssv_E
 tags: ["bitcoin-core", "v2-p2p-transport"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-04-24
 episode: 77

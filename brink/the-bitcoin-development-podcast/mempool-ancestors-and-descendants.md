@@ -11,10 +11,7 @@ speakers:
 categories: []
 summary: 'John and Gloria continue their discussion of Bitcoin''s mempool by explaining parent, child, ancestor and descendant transactions.'
 additional_resources:
-  - title: 'Child pays for parent'
-    url: 'https://bitcoinops.org/en/topics/cpfp/'
-  - title: 'https://brink.dev/'
-    url: 'https://brink.dev/'
+
 ---
 ## Parent and child transactions
 

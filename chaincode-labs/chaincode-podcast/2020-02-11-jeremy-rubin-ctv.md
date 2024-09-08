@@ -2,7 +2,7 @@
 title: CHECKTEMPLATEVERIFY (CTV)
 transcript_by: Michael Folkson
 categories: ['podcast']
-tag: ['op_checktemplateverify']
+tags: ['op_checktemplateverify']
 speakers: ['Jeremy Rubin']
 date: 2020-01-30
 media: https://www.youtube.com/watch?v=Lqcpk5o1Y2E

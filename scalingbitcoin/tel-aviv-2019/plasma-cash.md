@@ -2,7 +2,7 @@
 title: "Plasma Cash: Towards more efficient Plasma Constructions"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','sidechains','proof-systems']
+tags: ['research', 'sidechains', 'proof-systems']
 speakers: ['Georgios Konstantopoulos']
 date: 2019-09-12
 media: https://www.youtube.com/watch?v=Uh6Ywxrobzw&t=2799s

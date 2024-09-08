@@ -2,7 +2,7 @@
 title: "How to become Signet Rich: Learn about Bitcoin Signet and Zebnet"
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=CFsUpyrS51k
-tags: ["signet","lightning","lnd"]
+tags: ["signet", "lightning", "lnd"]
 speakers: ["Richard Safier"]
 categories: ["conference"]
 date: 2022-10-13

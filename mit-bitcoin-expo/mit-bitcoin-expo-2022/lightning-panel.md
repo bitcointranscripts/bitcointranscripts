@@ -2,8 +2,8 @@
 title: "Lightning Panel"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=hlTfA42b_uI
-tags: ["lightning","taproot","ptlc","htlc"]
-speakers: ["Jeremy Rubin","Rene Pickhardt","Lisa Neigut","Jonathan Harvey Buschel"]
+tags: ["lightning", "taproot", "ptlc", "htlc"]
+speakers: ["Jeremy Rubin", "Rene Pickhardt", "Lisa Neigut", "Jonathan Harvey Buschel"]
 categories: ["conference"]
 date: 2022-07-05
 summary: "The discussion primarily revolved around the Lightning Network, a scaling solution for Bitcoin designed to enable faster, decentralized transactions. Rene Pickhardt and Lisa Neigut shared their insights, highlighting Lightning's potential as a peer-to-peer electronic cash system and a future payment infrastructure. They emphasized its efficiency for frequent transactions between trusted parties but noted challenges in its current infrastructure, such as the need for continuous online operation and the risk of losing funds if a node is compromised. The panelists discussed the scalability of the network, indicating that while millions could use it self-sovereignly, larger-scale adoption would likely involve centralized service providers. The conversation also touched on the impact of Taproot on privacy and channel efficiency, and the technical intricacies of maintaining state and preventing fraud within the network."

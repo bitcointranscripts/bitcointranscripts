@@ -2,7 +2,7 @@
 title: "ZkVM: zero-knowledge virtual machine for fast confidential smart contracts"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['proof-systems','utreexo','musig']
+tags: ['proof-systems', 'utreexo', 'musig']
 speakers: ['Oleg Andreev']
 date: 2019-09-11
 media: https://www.youtube.com/watch?v=-gdfxNalDIc&t=8538s

@@ -1,5 +1,5 @@
 ---
-title: Bitcoin Optech 
+title: Bitcoin Optech
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']

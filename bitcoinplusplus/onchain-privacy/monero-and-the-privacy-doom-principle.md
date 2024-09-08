@@ -2,7 +2,7 @@
 title: "Monero and the Privacy Doom Principle"
 transcript_by: Dnsmpr via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yq_cOVHr8Pg
-tags: ['privacy-problems','privacy-enhancements','altcoins']
+tags: ['privacy-problems', 'privacy-enhancements', 'altcoins']
 speakers: ["David Vorick"]
 categories: ["conference"]
 date: 2023-12-09

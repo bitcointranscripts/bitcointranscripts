@@ -1,0 +1,10 @@
+extends: default
+
+ignore: |
+  /.github/workflows/
+  .yamllint.yml
+
+rules:
+  line-length: disable
+  document-start: disable
+

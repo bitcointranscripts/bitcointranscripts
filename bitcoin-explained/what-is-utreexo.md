@@ -3,7 +3,7 @@ title: "What Is Utreexo?"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=sWK7aqPjQLI
 tags: ["utreexo"]
-speakers: ["Sjors Provoost","Aaron van Wirdum", "Ruben Somsen"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
 categories: ["podcast"]
 date: 2020-10-30
 episode: 15

@@ -2,7 +2,7 @@
 title: Socratic Seminar - Discreet Log Contracts
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['dlc', 'lightning','adaptor-signatures']
+tags: ['dlc', 'lightning', 'adaptor-signatures']
 date: 2021-08-10
 media: https://www.youtube.com/watch?v=h6SkBwOCFsA
 ---

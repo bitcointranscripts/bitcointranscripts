@@ -2,7 +2,7 @@
 title: "Flyclient: Super Light Client For Cryptocurrencies"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','lightweight-client']
+tags: ['research', 'lightweight-client']
 speakers: ['Benedikt Bünz']
 media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=8400s
 ---

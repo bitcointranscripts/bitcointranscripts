@@ -3,7 +3,7 @@ title: Basis of Lightning Technology 12
 transcript_by: mubarak23 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=LSP0p_IPUIM
 tags: ["offers"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-08-13
 episode: 44

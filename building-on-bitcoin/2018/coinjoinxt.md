@@ -2,7 +2,7 @@
 title: CoinjoinXT and other techniques for deniable transfers
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['privacy-enhancements','coinjoin']
+tags: ['privacy-enhancements', 'coinjoin']
 speakers: ['Adam Gibson']
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=YS0MksuMl9k

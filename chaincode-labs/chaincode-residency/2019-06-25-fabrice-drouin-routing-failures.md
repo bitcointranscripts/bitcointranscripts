@@ -1,6 +1,6 @@
 ---
 title: Routing Failures
-Transcript_by: Andrew Toth and Caralie Chrisco
+transcript_by: Andrew Toth and Caralie Chrisco
 categories: ['residency']
 tags: ['lightning', 'routing']
 speakers: ['Fabrice Drouin']
