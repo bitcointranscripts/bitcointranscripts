@@ -53,8 +53,8 @@ Speaker 1: 00:03:03
 And then as a compounding factor, we found that many of the proposals that we tried explicitly not to make into Covenants ended up enabling Covenants anyway.
 And so not only was it sort of futile, but it also ended up creating this huge tension and frustration among developers and among users, because you actually had to involve users in your propaganda to get your proposal, give your proposal traction.
 This felt very much like a liberation strike.
-It felt very much like something where we could say, okay, let's approach this as engineers, which is what most of us are, and not as propagandists or salespeople trying to sort of, ah, just get your stuff done.
-And the idea was essentially to, okay, let's put this on a more fundamental level.
+It felt very much like something where we could say, okay, let's approach this as engineers, which is what most of us are, and not as propagandists or salespeople trying to sort of, just get your stuff done.
+Let's put this on a more fundamental level.
 Let's restore the script we had in the very, very early versions of Bitcoin without the issues, of course.
 But let's re-enable that functionality.
 Let's give everybody the tools to build whatever they want.
@@ -70,9 +70,9 @@ And then once that is done, then it's the time to actually optimize.
 Because then everybody is interested in actually optimizing those use cases.
 It's not a use case you're interested in, but it is taking up a bit of blockchain space.
 So by enabling more efficient opcodes based on our prior experience, we can then all have the upside of the performance improvement.
-And so I think that is a much more honest dialogue to have.
+I think that is a much more honest dialogue to have.
 And it's also a much more, much less noisy sort of way of working towards a common goal, which is enable programmable money on Bitcoin.
-And so I was incredibly happy when Rusty came up with his presentation and I sort of tweaked my presentation because it was sort of this light at the end of the tunnel for me.
+I was incredibly happy when Rusty came up with his presentation and I sort of tweaked my presentation because it was sort of this light at the end of the tunnel for me.
 And it felt good seeing that there is this possibility of getting back the script and its flexibility in the way it originally was, and as well solve some of this friction we have inside of the Bitcoin developer community.
 
 Speaker 0: 00:06:32
