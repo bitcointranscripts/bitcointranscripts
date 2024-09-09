@@ -1,17 +1,18 @@
 ---
-title: "The Politics of Bitcoin Development"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=NrrD6ufaSrM
+title: 'The Politics of Bitcoin Development'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=NrrD6ufaSrM'
+date: '2024-06-11'
 tags: []
-speakers: ['Christian Decker']
+speakers:
+  - 'Christian Decker'
 categories: []
-date: 2024-06-11
 ---
 ## Introduction and Rusty's Proposal
 
 Speaker 0: 00:00:01
 
-Hi everybody, I'm Shinobi from Bitcoin Magazine and I'm sitting down here with Christian Jecker from Blockstream.
+Hi everybody, I'm Shinobi from Bitcoin Magazine and I'm sitting down here with Christian Decker from Blockstream.
 
 Speaker 1: 00:00:07
 
