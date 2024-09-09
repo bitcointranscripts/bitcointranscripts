@@ -10,20 +10,20 @@ categories: []
 ---
 ## Introduction and Rusty's Proposal
 
-Speaker 0: 00:00:01
+Shinobi: 00:00:01
 
 Hi everybody, I'm Shinobi from Bitcoin Magazine and I'm sitting down here with Christian Decker from Blockstream.
 
-Speaker 1: 00:00:07
+Christian Decker: 00:00:07
 
 I am.
 
-Speaker 0: 00:00:08
+Shinobi: 00:00:08
 
 So Rusty dropped an atom bomb yesterday with his proposal to turn all the things back on just with the kind of VerOps budget analogous to the SigOps budget to kind of rein in the denial of service risks as just a path forward given that everybody's spent the last few years fighting over their narrow little change they want to get in.
 How do you feel about this potentially as a path moving forward?
 
-Speaker 1: 00:00:43
+Christian Decker: 00:00:43
 
 I got extremely lucky that Rusty proposed it because otherwise, my talk on the frustrations of as a bib editor would have been kind of even more depressing than it already was.
 And so I saw his presentation and was like, I need to change my slides now.
@@ -31,7 +31,7 @@ Because you're right, we have been trying way too long to be clever in as much t
 
 ## Challenges in Bitcoin Development
 
-Speaker 1: 00:01:26
+Christian Decker: 00:01:26
 
 And it turns out that all of our cleverness wasn't enough for us to actually sort of sneak our little change through, right?
 That was always the goal.
@@ -48,7 +48,7 @@ It also feels really bad to have to essentially badmouth somebody else's proposa
 
 ## The Need for Honest Dialogue and Cooperation
 
-Speaker 1: 00:03:03
+Christian Decker: 00:03:03
 
 And then as a compounding factor, we found that many of the proposals that we tried explicitly not to make into Covenants ended up enabling Covenants anyway.
 And so not only was it sort of futile, but it also ended up creating this huge tension and frustration among developers and among users, because you actually had to involve users in your propaganda to get your proposal, give your proposal traction.
@@ -64,7 +64,7 @@ And so it might be inefficient, the way that you can do arbitrary things, but yo
 
 ## Restoring Early Bitcoin Script Functionalities
 
-Speaker 1: 00:05:04
+Christian Decker: 00:05:04
 
 And then once that is done, then it's the time to actually optimize.
 Because then everybody is interested in actually optimizing those use cases.
@@ -75,19 +75,19 @@ And it's also a much more, much less noisy sort of way of working towards a comm
 I was incredibly happy when Rusty came up with his presentation and I sort of tweaked my presentation because it was sort of this light at the end of the tunnel for me.
 And it felt good seeing that there is this possibility of getting back the script and its flexibility in the way it originally was, and as well solve some of this friction we have inside of the Bitcoin developer community.
 
-Speaker 0: 00:06:32
+Shinobi: 00:06:32
 
 And I think you make a really important point as far as the involvement of users.
 I think regardless of whether this actually moves forward and it's the direction we choose to go in, if it's just seriously discussed, I think that can be an incredibly healthy thing for the larger and wider ecosystem's involvement because the way a lot of people approach these discussions when the actual subject matter is above their head is just looking at like associations that people who are pushing for a specific thing have and is that a good thing to be associated or a bad thing and then just transitively apply that to whatever proposal they're pushing for.
 
 ## The Impact of Enabling Diverse Tools
 
-Speaker 0: 00:07:17
+Shinobi: 00:07:17
 
 Whereas if we move in a more cooperative direction where everybody just openly discusses the complete set of things that we want enabled, and you know, is this good, is this bad, is the good worth like taking some of the bad for the gains we can get from it?
 That makes it a lot more difficult for, outside of observers to just associate a single aspect of something and go, well, this person does this thing that I don't like, so therefore I don't like that proposal, because everybody would be just working towards that singular consensus view on things rather than the politicking we've been dealing with.
 
-Speaker 1: 00:08:00
+Christian Decker: 00:08:00
 
 Yeah, absolutely.
 It's obvious that we need to defer to experts.
@@ -98,7 +98,7 @@ In Bitcoin, until now, you always had to be very loud, you had to be very salesy
 
 ## Moving Away from Propaganda and Infighting
 
-Speaker 1: 00:08:51
+Christian Decker: 00:08:51
 
 And so you never had an incentive of being honest when talking about the upsides but also downsides of your proposals because whenever you mention a downside it could be twisted in this marketing machine against you.
 And I find that just very dishonest.
@@ -113,33 +113,33 @@ Because as much as we try to bolt those down, the combination of multiple of the
 And so it's a very nuanced discussion to have.
 And if we throw propaganda in the mix, then all we get is noise at the end.
 
-Speaker 0: 00:10:28
+Shinobi: 00:10:28
 
 So overall, you feeling positive about the directions things are going?
 Like this might actually kind of set us back on course to being more productive rather than the infighting?
 
-Speaker 1: 00:10:41
+Christian Decker: 00:10:41
 
 It feels very much like a breath of fresh air.
 We were entrenched a lot over the last years.
 
 ## Final Thoughts and Future Prospects
 
-Speaker 1: 00:10:52
+Christian Decker: 00:10:52
 
 We had a lot of infighting and like I said in my talk, I'm not that good with conflict.
 And it also affects the individuals that are having these conversations, that are having these discussions.
 And it just feels good to have a perspective that we could make progress soon again and get everybody on at the table and give them a voice and be able to have the technical engineering discussions rather than the propaganda discussions that we've had for the last couple of years.
 So it's very refreshing.
 
-Speaker 0: 00:11:39
+Shinobi: 00:11:39
 
 All right, well, I'd like to thank you for sitting down with me, Christian.
 
-Speaker 1: 00:11:43
+Christian Decker: 00:11:43
 
 Hey, thank you so much, Shinobi.
 
-Speaker 0: 00:11:44
+Shinobi: 00:11:44
 
 All right, and I hope everybody enjoyed.
