@@ -25,8 +25,8 @@ How do you feel about this potentially as a path moving forward?
 
 Speaker 1: 00:00:43
 
-I got extremely lucky that Rusty proposed it because otherwise my talk on the frustrations of as a bib editor would have been kind of even more depressing than it already was.
-And so I saw his presentation and was like, oh, I need to change my slides now.
+I got extremely lucky that Rusty proposed it because otherwise, my talk on the frustrations of as a bib editor would have been kind of even more depressing than it already was.
+And so I saw his presentation and was like, I need to change my slides now.
 Because you're right, we have been trying way too long to be clever in as much that we try to sidestep the discussion of whether we want covenants, what kind of covenants we want, or introspection as we like to call it.
 
 ## Challenges in Bitcoin Development
@@ -35,12 +35,13 @@ Speaker 1: 00:01:26
 
 And it turns out that all of our cleverness wasn't enough for us to actually sort of sneak our little change through, right?
 That was always the goal.
-We wanted to get here, but to get here, we needed to have this intermediate step, essentially activating a small soft fork that would enable us to build whatever cool stuff we wanted to build on top for our users and for ourselves of course.
-And so everybody was sort of hung up on this activation of the enabling step there And since nobody wanted to have the discussion about, hey, do we want covenants?
+We wanted to get here, but to get here, we needed to have this intermediate step, essentially activating a small soft-fork that would enable us to build whatever cool stuff we wanted to build on top for our users and for ourselves of course.
+And so everybody was sort of hung up on this activation of the enabling step there.
+And since nobody wanted to have the discussion about, hey, do we want covenants?
 What covenants do we want?
 Are they safe?
 We tried to make our proposals so specific that everybody needed a different one.
-And so since the review cycles in the Bitcoin community are rather limited, the people that can actually look at a proposal and say, OK, yeah, that's safe or it is not safe, are very few indeed.
+And so since the review cycles in the Bitcoin community are rather limited, the people that can actually look at a proposal and say, yeah, that's safe or it is not safe, are very few indeed.
 And so we ended up in a situation where you'd actually have to badmouth other proposals in order for your proposal to grab the attention that is needed to get your proposal through.
 And that never really worked.
 It also feels really bad to have to essentially badmouth somebody else's proposal just because you needed it to work, right?
@@ -51,7 +52,7 @@ Speaker 1: 00:03:03
 
 And then as a compounding factor, we found that many of the proposals that we tried explicitly not to make into Covenants ended up enabling Covenants anyway.
 And so not only was it sort of futile, but it also ended up creating this huge tension and frustration among developers and among users, because you actually had to involve users in your propaganda to get your proposal, give your proposal traction.
-And so this is, this felt very much like a liberation strike.
+This felt very much like a liberation strike.
 It felt very much like something where we could say, okay, let's approach this as engineers, which is what most of us are, and not as propagandists or salespeople trying to sort of, ah, just get your stuff done.
 And the idea was essentially to, okay, let's put this on a more fundamental level.
 Let's restore the script we had in the very, very early versions of Bitcoin without the issues, of course.
