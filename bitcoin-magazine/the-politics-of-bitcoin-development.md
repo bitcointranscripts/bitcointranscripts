@@ -78,14 +78,14 @@ And it felt good seeing that there is this possibility of getting back the scrip
 Speaker 0: 00:06:32
 
 And I think you make a really important point as far as the involvement of users.
-I think regardless of whether this actually moves forward and it's the direction we choose to go in, if it's just seriously discussed, I think that can be an incredibly healthy thing for the larger and wider ecosystems involvement because the way a lot of people approach these discussions when the actual subject matter is above their head is just look at like associations that people who are pushing for a specific thing have and is that a good thing to be Associated or a bad thing and then just transitively apply that to whatever proposal they're pushing for.
+I think regardless of whether this actually moves forward and it's the direction we choose to go in, if it's just seriously discussed, I think that can be an incredibly healthy thing for the larger and wider ecosystem's involvement because the way a lot of people approach these discussions when the actual subject matter is above their head is just looking at like associations that people who are pushing for a specific thing have and is that a good thing to be associated or a bad thing and then just transitively apply that to whatever proposal they're pushing for.
 
 ## The Impact of Enabling Diverse Tools
 
 Speaker 0: 00:07:17
 
-Whereas if we move in a more cooperative direction where everybody just openly discusses like the complete set of things that we want enabled, and you know, is this good, is this bad, is the good worth like taking some of the bad for the gains we can get from it?
-That makes it a lot more difficult for, you know, outside of observers to just associate a single aspect of something and go, well, this person does this thing that I don't like, so therefore I don't like that proposal, because everybody would be just working towards that singular consensus view on things rather than the politicking we've been dealing with.
+Whereas if we move in a more cooperative direction where everybody just openly discusses the complete set of things that we want enabled, and you know, is this good, is this bad, is the good worth like taking some of the bad for the gains we can get from it?
+That makes it a lot more difficult for, outside of observers to just associate a single aspect of something and go, well, this person does this thing that I don't like, so therefore I don't like that proposal, because everybody would be just working towards that singular consensus view on things rather than the politicking we've been dealing with.
 
 Speaker 1: 00:08:00
 
@@ -94,7 +94,7 @@ It's obvious that we need to defer to experts.
 I'm not an expert in some subject matters and I will defer to those experts.
 But if those experts are themselves incentivized to present a one-sided picture, because it's holding up their progress, it's holding up the possibility of actually getting their application working.
 Then the community as a whole also gets a very, very skewed image of what is actually going on.
-In Bitcoin, until now, you always had to be very loud, you had to be very salesy, and you always had to present this, oh, this is the upside of mine, but there's the downsides of everybody else right.
+In Bitcoin, until now, you always had to be very loud, you had to be very salesy, and you always had to present this, this is the upside of mine, but there's the downsides of everybody else, right?
 
 ## Moving Away from Propaganda and Infighting
 
@@ -108,7 +108,7 @@ It's everybody put together that gets to decide.
 And you had to do marketing at that point.
 I'm not a marketing person.
 I like to discuss downsides as much as I like to discuss upsides.
-And I think with a more objective approach to the tradeoffs that are involved, we can make better progress, we can come to proposals that are ultimately better engineered, that had more review, that are safer than if we all try to do some piecemeal little changes.
+I think with a more objective approach to the tradeoffs that are involved, we can make better progress, we can come to proposals that are ultimately better engineered, that had more review, that are safer than if we all try to do some piecemeal little changes.
 Because as much as we try to bolt those down, the combination of multiple of these very targeted changes could still open up functionality in their combination.
 And so it's a very nuanced discussion to have.
 And if we throw propaganda in the mix, then all we get is noise at the end.
@@ -127,7 +127,8 @@ We were entrenched a lot over the last years.
 
 Speaker 1: 00:10:52
 
-We had a lot of infighting and like I said in my talk, I'm not that good with conflict And it also affects the individuals that are having these conversations, that are having these discussions.
+We had a lot of infighting and like I said in my talk, I'm not that good with conflict.
+And it also affects the individuals that are having these conversations, that are having these discussions.
 And it just feels good to have a perspective that we could make progress soon again and get everybody on at the table and give them a voice and be able to have the technical engineering discussions rather than the propaganda discussions that we've had for the last couple of years.
 So it's very refreshing.
 
