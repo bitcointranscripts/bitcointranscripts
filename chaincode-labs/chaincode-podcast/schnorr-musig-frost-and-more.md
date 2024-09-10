@@ -481,6 +481,7 @@ Yes.
 So it is, I think, started with what we now call `MuSig1`.
 
 Speaker 0: 00:25:51
+
 Or Broken `MuSig1`.
 
 Speaker 2: 00:25:53
