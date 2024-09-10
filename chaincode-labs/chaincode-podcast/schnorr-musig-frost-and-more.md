@@ -601,7 +601,7 @@ And he also said, oh, I think we can do it with two rounds instead of three, whi
 
 Speaker 2: 00:33:32
 
-Right, this is what we now call in some papers insecure music.
+Right, this is what we now call in some papers insecure `MuSig`.
 I think the first paper you uploaded together with Yannick had this two round version, which was insecure.
 Yeah, I just found an attack on this very end of `MuSig` and also...
 
