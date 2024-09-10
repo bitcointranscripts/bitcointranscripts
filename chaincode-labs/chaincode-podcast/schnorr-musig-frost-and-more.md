@@ -38,7 +38,7 @@ This goes to like this idea of like really only using the blockchain to settle d
 Like as long as everyone agrees with all we have to say to the blockchain, it's like, yeah, you don't really need to know what the rules were.
 Hey Jonas, good to be back.
 
-Adam Jonas: 00:00:19
+**Adam Jonas**: 00:00:19
 
 So while you were out being the Bitcoin ambassador that we depended on you to be, I was here stuck in the cold talking to Tim and Pieter and I thought it was a good conversation.
 Yeah.
@@ -49,7 +49,7 @@ I don't think I let you down too much.
 I'm looking forward to hearing it.
 I hear that you went over a lot of stuff.
 
-Adam Jonas: 00:00:37
+**Adam Jonas**: 00:00:37
 
 We did.
 We covered updates about [Frost](https://eprint.iacr.org/2020/852.pdf) and [Roast](https://eprint.iacr.org/2022/550.pdf), [MuSig2](https://eprint.iacr.org/2020/1261).
@@ -60,7 +60,7 @@ We talked about ideas that are a little further out in terms of `batch verificat
 
 So everything, like everything that pertains to `taproot` and since then?
 
-Adam Jonas: 00:00:58
+**Adam Jonas**: 00:00:58
 
 Yeah, but It only took two hours.
 
@@ -68,11 +68,11 @@ Yeah, but It only took two hours.
 
 That sounds like a hefty episode.
 
-Adam Jonas: 0: 00:01:02
+**Adam Jonas**: 0: 00:01:02
 
 That's all it takes.
 
-Adam Jonas : 00:01:05
+**Adam Jonas** : 00:01:05
 
 Yeah, no, I really enjoyed the conversation and was even able to follow it.
 Anyway, hope you enjoyed listening.
@@ -85,11 +85,11 @@ And the first question is for both([Pieter Wuille](https://x.com/pwuille), [Tim 
 
 ## When to roll your own cryptography
 
-Adam Jonas: 00:01:33
+**Adam Jonas**: 00:01:33
 
 This is something that we're not supposed to be doing, but you two have a long history of doing it, so why, when?
 
-Pieter Wuille: 00:01:41
+**Pieter Wuille**: 00:01:41
 
 This is good advice, but it's a guideline, not a rule.
 Very clearly, there are some people in the world who need to be rolling their own cryptography or we wouldn't have any.
@@ -101,7 +101,7 @@ Are you learning?
 Are you talking about actually deploying something in production at what scale, at what level?
 And there are different, you know, look at feedback, know who to ask, know that there are lots of smart people out there.
 
-Tim Ruffing: 00:02:34
+**Tim Ruffing**: 00:02:34
 
 That's a pretty good answer actually.
 The exact same saying came to my mind when you asked the question.
@@ -110,27 +110,27 @@ And it's like very unsatisfactory, right?
 Because it feels like, okay, but where else should I learn this?
 I mean, if I learned this at university...
 
-Pieter Wuille: 00:03:03
+**Pieter Wuille**: 00:03:03
 
 You're supposed to be the expert.
 
-Tim Ruffing: 00:03:05
+**Tim Ruffing**: 00:03:05
 
 I mean, yeah, but I mean, this was just some undergrad course, right?
 Of course, it's different after you completed the PhD, maybe, but at some point, I guess you get the feeling of when you are at the point when you can do it.
 And of course, yeah, get feedback, talk to other people and talk to.
 
-Pieter Wuille: 00:03:20
+**Pieter Wuille**: 00:03:20
 
 And it's more a learning what level of assurance you need to get from others and not just a, okay, now I am confident enough to judge my own constructions.
 
-Adam Jonas: 00:03:34
+**Adam Jonas**: 00:03:34
 
 There just seems to be a different skill set though, in terms of understanding and or being able to break `schemes` and having the creativity or sort of the foresight to put `schemes` together.
 
 ## Different levels of cryptography 
 
-Tim Ruffing: 00:03:45
+**Tim Ruffing**: 00:03:45
 
 It's very related, but yeah, it's a kind of different skill set.
 I mean, it depends.
