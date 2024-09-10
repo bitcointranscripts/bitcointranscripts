@@ -314,7 +314,7 @@ Speaker 0: 00:17:22
 
 Exactly.
 There have been ideas in the past for batching `ECDSA` that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for ECDSA.
-It's also annoying so the Bitcoin script rules permit signature validations to fail like you could write a script today that's like take us input a signature and verify that it is not a good signature for this public key.
+It's also annoying so the `Bitcoin script rules` permit signature validations to fail like you could write a script today that's like take us input a signature and verify that it is not a good signature for this public key.
 Like, succeed unless it is a good signature.
 You could write that today, it's dumb, but you, because someone would just not satisfy it by giving an invalid one, but you could.
 
@@ -325,7 +325,7 @@ Why not include that in the soft fork, for example?
 
 Speaker 0: 00:18:23
 
-So you can't do this anymore in Tabscript, specifically because in order to make batch validation possible, the software needs to know ahead of time which signatures are expected to be valid or not.
+So you can't do this anymore in `Tapscript`, specifically because in order to make batch validation possible, the software needs to know ahead of time which signatures are expected to be valid or not.
 So the change that is made is you can still have invalid signatures, but they have to be basically the empty signature.
 If you just give an empty signature, it's like that's obviously gonna be invalid.
 I'm not even gonna bother trying and I'm gonna treat that as an invalid one.
