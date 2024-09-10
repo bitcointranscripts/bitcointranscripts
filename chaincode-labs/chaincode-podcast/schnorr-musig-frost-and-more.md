@@ -407,8 +407,8 @@ So what's the status of those protocols now and what could we imagine to happen 
 
 Speaker 2: 00:23:21
 
-So first of all, we need to look at the different types of protocols, what you call advanced signing protocols.
-I think like the most popular, in a sense, type of construction so far is multi-signatures which are probably also known as N of N signatures.
+So first of all, we need to look at the different types of `protocols`, what you call `advanced signing protocols`.
+I think like the most popular, in a sense, type of construction so far is `multi-signatures` which are probably also known as `N of N signatures`.
 So I mean there's some kind of, we need to talk about the terminology here, because when people in the Bitcoin space say multi-sig, they typically don't make a distinction between n of n multi-sig where you have like n users, they all have public keys, but you require all of them to agree to give a signature, so it's really like n of n versus this, what I call T of N multi-sig, where T is some other arbitrary number that can be smaller than N.
 So like say we have a, we could have a two of three at this table here where we like have a set, We have a key that represents the three of us, but you would only need the agreement of two of us to actually sign it.
 
