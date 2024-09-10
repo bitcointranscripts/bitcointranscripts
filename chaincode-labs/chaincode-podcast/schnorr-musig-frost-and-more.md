@@ -121,6 +121,8 @@ Speaker 1: 00:03:34
 
 There just seems to be a different skill set though, in terms of understanding and or being able to break `schemes` and having the creativity or sort of the foresight to put `schemes` together.
 
+## Different levels of cryptography 
+
 Speaker 2: 00:03:45
 
 It's very related, but yeah, it's a kind of different skill set.
