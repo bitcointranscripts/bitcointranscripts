@@ -7,6 +7,7 @@ tags:
   - 'cryptography'
   - 'musig'
   - 'schnorr-signatures'
+  - 'multisignature'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
@@ -118,7 +119,7 @@ And it's more a learning what level of assurance you need to get from others and
 
 Speaker 1: 00:03:34
 
-There just seems to be a different skill set though, in terms of understanding and or being able to break schemes and having the creativity or sort of the foresight to put schemes together.
+There just seems to be a different skill set though, in terms of understanding and or being able to break `schemes` and having the creativity or sort of the foresight to put `schemes` together.
 
 Speaker 2: 00:03:45
 
