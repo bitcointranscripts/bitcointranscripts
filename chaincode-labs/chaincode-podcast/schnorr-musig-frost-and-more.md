@@ -546,7 +546,7 @@ But there is actually a big difference in that in the `cross input aggregation` 
 There is one for every output at least because the output has to say who is authorized to spend it and it would be the verifier that aggregates them together and then verifies it against a single signature that is provided.
 The difference is the `aggregation of the keys` done off-chain or on-chain And in the case of `cross input aggregation`, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
 
-Tim Ruffing: 00:29:08
+**Tim Ruffing**: 00:29:08
 
 In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
 So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an `ordinary single sign-on key` or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
