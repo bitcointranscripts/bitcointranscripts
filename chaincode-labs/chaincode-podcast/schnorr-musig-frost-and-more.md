@@ -832,12 +832,12 @@ But this I think makes that sort of schemes much more niche in that it is someth
 
 Tim Ruffing: 00:44:22
 
-Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N setup` or a `T of N` setup.
+Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N` setup or a `T of N` setup.
 It's just some parameter that you literally, like you specify the T in the script, right?
 And it could just say it's N.
 And this is really no, like the scheme, it's really just the same thing for `T of N` or `N of N`.
 But in like those `Schnorr advanced multi-signature` or `threshold signature` things, there's really a big difference in terms of practicality when it comes to `T-setup`.
-Like `MuSig`, the N of N case is still pretty simple, whereas in threshold signatures you can do it, but it's a little bit less practical.
+Like `MuSig`, the `N of N` case is still pretty simple, whereas in threshold signatures you can do it, but it's a little bit less practical.
 So as you say, it probably makes only sense for use cases that really need it.
 And if I say it really needed, there's a lot of things you can do with multi signatures already.
 Like even for cases where you think you may want a `threshold signature`.
@@ -920,11 +920,11 @@ It's just really the key setup what makes a difference here.
 Adam Jonas: 00:49:41
 
 I see.
-So T of N, really, it could be N of N in terms of like...
+So `T of N`, really, it could be `N of N` in terms of like...
 
 Pieter Wuille: 00:49:48
 
-Yeah, it would be overkill to use Frost for N of N, but I guess it would work.
+Yeah, it would be overkill to use `Frost` for `N of N`, but I guess it would work.
 
 Tim Ruffing: 00:49:52
 
@@ -935,7 +935,7 @@ Adam Jonas: 00:49:53
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
-## Powerful Combination of Taproot and MuSig: Smart Contract or Spending Policy
+## Powerful Combination of `Taproot` and `MuSig`: `Smart Contract` or `Spending Policy`
 
 Tim Ruffing: 00:49:57
 
