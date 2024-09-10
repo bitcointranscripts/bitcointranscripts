@@ -874,7 +874,7 @@ Frost is really like the...
 
 Speaker 0: 00:48:25
 
-Flexible, round, optimized, Schnorr threshold signatures.
+Flexible, round, optimized, `Schnorr threshold signatures`.
 Oh, Frosts.
 
 Speaker 2: 00:48:32
