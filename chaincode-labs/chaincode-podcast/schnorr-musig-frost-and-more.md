@@ -47,7 +47,7 @@ Speaker 1: 00:00:37
 
 We did.
 We covered updates about `Frost` and `Roast`, `MuSig2'.
-We talked about ideas that are a little further out in terms of `batch verification`, `signature aggregation`, `interactive full aggregation`, `cross-input signature aggregation`.
+We talked about ideas that are a little further out in terms of `batch verification`, `signature aggregation`, `interactive full aggregation`, `cross input signature aggregation`.
 
 Speaker 0: 00:00:54
 
@@ -247,7 +247,7 @@ And so why do we want this over `ECDSA`?
 Speaker 0: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
-The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as cross-input signature aggregation.
+The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as `cross input signature aggregation`.
 And that goal drove a lot of interest in the scheme, because if you're talking about individual `Schnorr signatures` on chain or individual `ECDSA` signatures, maybe a bit faster here or there, they have a better provable security scheme.
 But on the other hand, like `ECDSA` is already used, like people, whatever its security assumptions and requirements for proofs are, people have, perhaps unwillingly, already accepted them.
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
@@ -263,16 +263,16 @@ Because people have studied this `discrete logarithm problem` on `elliptic curve
 So we are pretty confident that `Schnorr signatures` are hard to forge and they are actually secure.
 And for `ECDSA`, the story is very different.
 There are some ways to establish proofs for the security of `ECDSA`, but they're really like strange models, you need a lot of machinery and a lot of strange site conditions to be able to prove something.
-So the confidence we really have in ECDSA signatures is really because they have been out there and nobody has really broken them so far.
+So the confidence we really have in `ECDSA` signatures is really because they have been out there and nobody has really broken them so far.
 But that's totally fine, I totally agree with Peter.
 This is not a main motivation to change this thing.
 
 Speaker 0: 00:13:56
 
 Maybe to give a bit of historical background here, because We're mixing the `Schnorr` versus `DSA` question with `integer multiplication group` versus `elliptic curve` question because when we're talking about `Schnorr` or `ECDSA` in the context of Bitcoin, there are always schemes built on top of `elliptic curves`.
-But historically, the Schnorr signature scheme, the first one, was originally defined just over big integer numbers.
+But historically, the `Schnorr signature scheme`, the first one, was originally defined just over big integer numbers.
 So that scheme has much bigger public keys, much bigger signatures, and so forth.
-And then the `DSA` scheme was really a variant of Schnorr that was created probably with the explicit intent of avoiding his patents on this scheme.
+And then the `DSA` scheme was really a variant of `Schnorr` that was created probably with the explicit intent of avoiding his patents on this scheme.
 And `DSA`, as far as I understand, was used in practice long before there was any security proof on them.
 There are some now, but as Tim says, they're much more awkward and weird.
 But `DSA`, just people started using it as far as I know, because it's similar enough.
@@ -315,7 +315,7 @@ So you're really just sort of like combining the `taproot outputs` and then vali
 Speaker 0: 00:17:22
 
 Exactly.
-There have been ideas in the past for batching `ECDSA` that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for ECDSA.
+There have been ideas in the past for batching `ECDSA` that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for `ECDSA`.
 It's also annoying so the `Bitcoin script rules` permit signature validations to fail like you could write a script today that's like take us input a signature and verify that it is not a good signature for this public key.
 Like, succeed unless it is a good signature.
 You could write that today, it's dumb, but you, because someone would just not satisfy it by giving an invalid one, but you could.
@@ -521,7 +521,7 @@ Computation versus verification.
 Speaker 0: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multi-signature construction.
-Namely, the original motivation was actually going further and have `cross-input signature aggregation`.
+Namely, the original motivation was actually going further and have `cross input signature aggregation`.
 And that is the idea of really all inputs in a transaction, even if there are multiple parties, even if the transaction is like spending coins from multiple separate coins together, we want a single signature for all of them.
 And this is possible if all those people cooperate, which is often the case in terms of like even today, like if you have a wallet and you have multiple coins in it and you're spending them simultaneously, you're just one party even though you have multiple public keys.
 Why wouldn't you be able to spend that with a single signature?
@@ -529,7 +529,7 @@ And I think today we think of these things as very different concepts, but origi
 And the reason is of course, well, in both cases, we want one signature that's really multiple parties collaborating and have a single key that...
 But there is actually a big difference in that in the `cross input aggregation` case, there are still multiple keys on chain.
 There is one for every output at least because the output has to say who is authorized to spend it and it would be the verifier that aggregates them together and then verifies it against a single signature that is provided.
-The difference is the `aggregation of the keys` done off-chain or on-chain And in the case of `cross-input aggregation`, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
+The difference is the `aggregation of the keys` done off-chain or on-chain And in the case of `cross input aggregation`, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
 
 Speaker 2: 00:29:08
 
@@ -550,8 +550,8 @@ Because in the case of `cross input signature aggregation`, the verifier actuall
 You cannot have consensus rules that aren't aware of multi-signatures.
 Like `BIP 342` today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
 The same is not true for `cross input aggregation`.
-And so the history of `MuSig` actually starts with the idea of `cross-input signature aggregation`.
-Because cross-input signature aggregation has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
+And so the history of `MuSig` actually starts with the idea of `cross input signature aggregation`.
+Because `cross input signature aggregation' has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
 I mean, you have an output you created, you have an output I created.
 I can try creating a transaction that spends both at the same time, maybe together with one of mine.
 And so it is very important that there is no way for me to come up with a `fake key` that somehow, when combined with your keys, result in something that I could sign for.
@@ -567,8 +567,8 @@ Or the `key cancellation attack`.
 Speaker 0: 00:31:04
 
 Exactly, exactly.
-So the obstacle in making `cross-input signature aggregation happen `was, whoa, we have this `problem of cancellation of keys`, and we need a solution for that.
-And years ago I came up with what I thought was a solution for it, which is this delinearization trick of multiplying each key with a randomizer to stop that from happening.
+So the obstacle in making `cross input signature aggregation` happen `was, whoa, we have this problem of `cancellation of keys`, and we need a solution for that.
+And years ago I came up with what I thought was a solution for it, which is this `delinearization` trick of multiplying each key with a randomizer to stop that from happening.
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
 That fix was what is now called the 'MuSig 'scheme, with three rounds.
 
@@ -586,7 +586,7 @@ And that's where we tried to get published, but really none of us had experience
 Speaker 0: 00:32:11
 
 And governance were like, well, there exists a scheme for this already.
-It's the Belayeneva scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the La Reneve scheme was that scheme could be used for cross-input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
+It's the Belayeneva scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the La Reneve scheme was that scheme could be used for cross input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
 So it wouldn't be usable for what we now call multisig.
 I think then we got contacted by Yannick Serrin who was a French provable security cryptographer researcher and he was like, hey, I heard you're looking into Schnorr signatures, I have a background in provable security, I'm interested.
 And so it just gave him a brain dump of like, this is a scheme worth thinking of, what we're trying to prove, these are the reasons why it's different.
