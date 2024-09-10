@@ -267,13 +267,13 @@ This is not a main motivation to change this thing.
 
 Speaker 0: 00:13:56
 
-Maybe to give a bit of historical background here, because We're mixing the Schnorr versus DSA question with integer multiplication group versus elliptic curve question because when we're talking about Schnorr or ECDSA in the context of Bitcoin, there are always schemes built on top of elliptic curves.
+Maybe to give a bit of historical background here, because We're mixing the `Schnorr` versus `DSA` question with `integer multiplication group` versus `elliptic curve` question because when we're talking about `Schnorr` or `ECDSA` in the context of Bitcoin, there are always schemes built on top of `elliptic curves`.
 But historically, the Schnorr signature scheme, the first one, was originally defined just over big integer numbers.
 So that scheme has much bigger public keys, much bigger signatures, and so forth.
-And then the DSA scheme was really a variant of Schnorr that was created probably with the explicit intent of avoiding his patents on this scheme.
-And DSA, as far as I understand, was used in practice long before there was any security proof on them.
+And then the `DSA` scheme was really a variant of Schnorr that was created probably with the explicit intent of avoiding his patents on this scheme.
+And `DSA`, as far as I understand, was used in practice long before there was any security proof on them.
 There are some now, but as Tim says, they're much more awkward and weird.
-But DSA, just people started using it as far as I know, because it's similar enough.
+But `DSA`, just people started using it as far as I know, because it's similar enough.
 
 Speaker 2: 00:15:07
 
