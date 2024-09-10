@@ -84,7 +84,7 @@ Adam Jonas: 00:01:33
 
 This is something that we're not supposed to be doing, but you two have a long history of doing it, so why, when?
 
-Speaker 0: 00:01:41
+Pieter Wuille: 00:01:41
 
 This is good advice, but it's a guideline, not a rule.
 Very clearly, there are some people in the world who need to be rolling their own cryptography or we wouldn't have any.
@@ -105,7 +105,7 @@ And it's like very unsatisfactory, right?
 Because it feels like, okay, but where else should I learn this?
 I mean, if I learned this at university...
 
-Speaker 0: 00:03:03
+Pieter Wuille: 00:03:03
 
 You're supposed to be the expert.
 
@@ -115,7 +115,7 @@ I mean, yeah, but I mean, this was just some undergrad course, right?
 Of course, it's different after you completed the PhD, maybe, but at some point, I guess you get the feeling of when you are at the point when you can do it.
 And of course, yeah, get feedback, talk to other people and talk to.
 
-Speaker 0: 00:03:20
+Pieter Wuille: 00:03:20
 
 And it's more a learning what level of assurance you need to get from others and not just a, okay, now I am confident enough to judge my own constructions.
 
@@ -138,7 +138,7 @@ And I guess the opposite is also true.
 
 ## Security Engineering vs Cryptography
 
-Speaker 0: 00:04:32
+Pieter Wuille: 00:04:32
 
 Yeah, and I think even expectations around this differ, because if you go up this ladder from very theoretical, low-level ideas to closer to real worlds, There is some threshold where people stop calling it cryptography, where it becomes security engineering or something like that.
 And that boundary is essentially arbitrary.
@@ -169,7 +169,7 @@ I have a PhD in computer science with a focus on cryptography.
 So it's pretty standard and it should be the case like if that if you come up with a new cryptographic construction, you write it up in a proper paper, you try to get it published, which means you collect feedback from other researchers.
 They hopefully look at it, they hopefully look at your arguments, at your security proofs.
 
-Speaker 0: 00:06:41
+Pieter Wuille: 00:06:41
 
 They may point you at related work you were completely unaware of.
 
@@ -212,7 +212,7 @@ Where are we at?
 Are we happy with what's happened in the last year?
 How do we feel about it?
 
-Speaker 0: 00:09:17
+Pieter Wuille: 00:09:17
 
 Well, in...
 
@@ -221,7 +221,7 @@ Speaker 2: 00:09:20
 Are you happy in terms of adoption?
 Maybe that's an interesting question.
 
-Speaker 0: 00:09:25
+Pieter Wuille: 00:09:25
 
 I don't care.
 I was looking for words to say that, but really I don't care.
@@ -254,7 +254,7 @@ Adam Jonas: 00:10:54
 
 And so why do we want this over `ECDSA`?
 
-Speaker 0: 00:10:58
+Pieter Wuille: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
 The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as `cross input signature aggregation`.
@@ -277,7 +277,7 @@ So the confidence we really have in `ECDSA` signatures is really because they ha
 But that's totally fine, I totally agree with Pieter.
 This is not a main motivation to change this thing.
 
-Speaker 0: 00:13:56
+Pieter Wuille: 00:13:56
 
 Maybe to give a bit of historical background here, because We're mixing the `Schnorr` versus `DSA` question with `integer multiplication group` versus `elliptic curve` question because when we're talking about `Schnorr` or `ECDSA` in the context of Bitcoin, there are always schemes built on top of `elliptic curves`.
 But historically, the `Schnorr signature scheme`, the first one, was originally defined just over big integer numbers.
@@ -291,7 +291,7 @@ Speaker 2: 00:15:07
 
 Yeah, but if you look at it from a mathematical point of view, it's really like they started with `Schnorr signatures`, but because they were patented, they had to make a few very strange tweaks to it and what comes out of it it's a really really inelegant thing and this ended up being `DSA` and now if you okay if you port it to `Elliptic Curves` then you get `ECDSA`, `Elliptic Curve DSA`.
 
-Speaker 0: 00:15:28
+Pieter Wuille: 00:15:28
 
 We talk about `Schnorr signatures` but we really should distinguish like `Schnorr signatures` versus `elliptic curve Schnorr signatures`.
 And the latter do exist, like for example, `ED25519` is a very well-known digital signature scheme that's, yeah, `EDDSA`, they call it `EDDSA`, but it's really `Schnorr`.
