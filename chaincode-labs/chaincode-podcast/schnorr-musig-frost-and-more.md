@@ -955,8 +955,12 @@ Pieter Wuille: 00:52:07
 It's like, hello judge, we settled out of court.
 Okay, stamp.
 
+## Conclusion
+
 Adam Jonas: 00:52:12
 
 That concludes the first half of this conversation.
+
+## Next: Upcoming Second Half Part 2 
 The second half we are going to talk about nesting, roast, block-wide aggregation, adaptive signatures, atomic swaps, and much, much more.
 Hope you're enjoying the conversation and we'll see you
