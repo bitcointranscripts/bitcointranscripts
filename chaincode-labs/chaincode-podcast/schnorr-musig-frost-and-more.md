@@ -307,7 +307,7 @@ Adam Jonas: 00:15:52
 There's also some efficiency improvements.
 Is that get us closer to reasons to move over?
 
-Speaker 0: 00:16:00
+Pieter Wuille: 00:16:00
 
 I think it is, but they're only tangible in the batching situation.
 To give some context, `batch validation` is you have multiple messages, multiple keys, every message has a key and a corresponding signature.
