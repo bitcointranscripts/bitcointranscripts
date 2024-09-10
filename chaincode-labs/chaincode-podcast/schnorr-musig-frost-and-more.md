@@ -833,24 +833,24 @@ Or you have some service that is `co-signing` and you have a key in a `vault` an
 Speaker 2: 00:45:45
 
 Two of three is a pretty common combination.
-And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a `2 of 2` `MuSig` setup or MuSig2`  setup with those two devices and put this at the root of a taproot.
-So like computer combined 2 of 2 key and use this as the key in your tab root.
+And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a `2 of 2` `MuSig` setup or MuSig2`  setup with those two devices and put this at the `root` of a `taproot`.
+So like computer combined `2 of 2` key and use this as the key in your tab root.
 And as long as those two devices are there, you can use them.
-And only if you have to resort to the backup device, you would have in your tab root, have some script inside there.
+And only if you have to resort to the backup device, you would have in your `taproot`, have some script inside there.
 So like what you described earlier, you would pull out the script, would prove, okay, actually this key is not only a two of two, or it's not only a normal Schnorr public key, it also has some scripts, and here's one of the scripts, and now I use this backup path in a sense.
-And of course, in that case, you would reveal to the public, okay, you were actually doing a two of three, so you lose a tiny bit of privacy.
+And of course, in that case, you would reveal to the public, okay, you were actually doing a `2 of 3`, so you lose a tiny bit of privacy.
 Maybe you lose a tiny...
 
 Speaker 1: 00:46:54
 
-Would you have other tap scripts that would be two of two?
+Would you have other tap scripts that would be `2 of 2`?
 You just have...
 
 Speaker 0: 00:46:58
 
 So there are two variants here.
-Either you have, you know, the two of two of, let's say A and B are the main keys and C is the backup key.
-So you put a music of A and B as the internal Taproot key, and then you either have a single script, which is C and A or B, but alternatively, because Taproot has the script tree notion, you can have two scripts in there, both of which are in fact each a two of two music, one of A and C and one of B and C and this is actually more private and a bit cheaper too.
+Either you have, you know, the `2 of 2` of, let's say A and B are the main keys and C is the backup key.
+So you put a `MuSig` of A and B as the internal `Taproot key`, and then you either have a single script, which is C and A or B, but alternatively, because `Taproot `has the script tree notion, you can have two scripts in there, both of which are in fact each a `2 of 2` `MuSig`, one of A and C and one of B and C and this is actually more private and a bit cheaper too.
 
 Speaker 2: 00:47:38
 
@@ -860,13 +860,13 @@ I think it's only in the case where you need to resort to your backup device or 
 
 Speaker 0: 00:47:56
 
-But this whole thing, like the musics, the scripts, the tree, all of that still has a non-interactive key setup.
+But this whole thing, like the `MuSigs`, the `scripts`, the `tree`, all of that still has a `non-interactive key` setup.
 The reason why you would want to do this over something Frost-like is sort of the traditional way of thinking of I can just generate addresses if I have the keys still works with this.
 
 Speaker 1: 00:48:18
 
-So you've mentioned Frost a couple of times now.
-What is Frost?
+So you've mentioned `Frost` a couple of times now.
+What is `Frost`?
 
 Speaker 2: 00:48:22
 
