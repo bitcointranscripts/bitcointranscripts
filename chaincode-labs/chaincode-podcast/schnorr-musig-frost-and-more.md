@@ -722,13 +722,13 @@ And with good reasons, like the argument that was found, like why the `MuSig1` p
 Speaker 2: 00:39:17
 
 It's not only two rounds in a sense it's even better than this because what you also can do is you can pre-process the first round which basically means you can run the first round without knowing the message or in our case usually the transaction you want to sign.
-So that means like we can run this first round and like okay then we need to keep state so we exchange messages for the first round and then only later if we now know okay this is a transaction we want to sign, this is a spend we want to make.
+So that means like we can run this first round and like okay then we need to keep `state` so we exchange messages for the `first round` and then only later if we now know okay this is a transaction we want to sign, this is a spend we want to make.
 Now we, at that point, we only need to do one more round.
-So it's basically, you could call it half-interactive or something like that.
+So it's basically, you could call it `half-interactive` or something like that.
 
 Speaker 0: 00:39:57
 
-I think the best way of looking at this, Like you can think of this pre-processing round, the first round of the two signing steps, you can do that at key setup time.
+I think the best way of looking at this, Like you can think of this `pre-processing round`, the `first round` of the two signing steps, you can do that at key setup time.
 But you could also do it later, but like you can see this as an extension of the setup because-
 
 Speaker 2: 00:40:15
@@ -751,7 +751,7 @@ So you do it 500 times.
 
 Speaker 2: 00:40:26
 
-And of course, if I run out of these pre-processing things,
+And of course, if I ran out of these pre-processing things,
 
 Speaker 0: 00:40:29
 
@@ -785,13 +785,13 @@ There needs to be no communication from me to them.
 
 Speaker 0: 00:42:40
 
-As soon as we go towards threshold signatures, you know, the T of N where there's only a subset and Frost in particular, which is...
+As soon as we go towards `threshold signatures`, you know, the `T of N` where there's only a subset and `Frost` in particular, which is...
 
 Speaker 2: 00:42:50
 
-Frost is one of the...
-You could say `Frost` is the threshold signature equivalent to `MuSig`, really.
-It's like a threshold signature of `MuSig`.
+`Frost` is one of the...
+You could say `Frost` is the `threshold signature` equivalent to `MuSig`, really.
+It's like a `threshold signature` of `MuSig`.
 And in the signing part, it's very, very similar.
 Actually, it's fun that they came up with the same idea to basically build a two round signing thing.
 At the same time, we came up with the idea, so there were really two.
@@ -799,7 +799,7 @@ There was even one other research team that had the same idea in parallels, whic
 
 Speaker 0: 00:43:20
 
-Yeah, so this idea, the one trick that the music...
+Yeah, so this idea, the one trick that the `MuSig`...
 
 Speaker 2: 00:43:24
 
