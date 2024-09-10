@@ -10,6 +10,7 @@ tags:
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
+  - 'Adam Jonas'
 categories:
   - 'podcast'
 summary: 'Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multi-signatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.'
