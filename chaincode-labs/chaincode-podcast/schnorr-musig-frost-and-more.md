@@ -376,7 +376,7 @@ So there actually is a `PR` open against `libsecp256k1` that implements the batc
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
 Because as you say, the batching would only apply to the `taproot signatures`.
 
-Speaker 2: 00:21:02
+Tim Ruffing: 00:21:02
 
 The interesting part is that you have this batch validation not only of `Schnorr signatures` but also of taproot openings.
 
@@ -384,7 +384,7 @@ Speaker 0: 00:21:13
 
 Right.
 
-Speaker 2: 00:21:13
+Tim Ruffing: 00:21:13
 
 So If you have a `taproot key spend`, it's just a `Schnorr signature`, but if it's a `script spend`, you would open this `taproot commitment` to this taproot auto public key.
 And checking this opening of the commitment is also an `elliptic curve operation`, in a sense, and we could also add it to this batching.
@@ -417,7 +417,7 @@ Speaker 1: 00:23:15
 
 So what's the status of those protocols now and what could we imagine to happen in the future?
 
-Speaker 2: 00:23:21
+Tim Ruffing: 00:23:21
 
 So first of all, we need to look at the different types of `protocols`, what you call `advanced signing protocols`.
 I think like the most popular, in a sense, type of construction so far is `multi-signatures` which are probably also known as `N of N signatures`.
@@ -428,7 +428,7 @@ Pieter Wuille: 00:24:26
 
 In the cryptography world, those are known as `threshold signatures`, while `multi-signatures` are the `N of N` case.
 
-Speaker 2: 00:24:32
+Tim Ruffing: 00:24:32
 
 So there's this difference in terminology between like, if you look at an academic paper when it says `multi-signature`, it always only means this `N of N` case.
 And when it says `threshold signature`, it means `T of N` for some arbitrarily.
@@ -438,13 +438,13 @@ Speaker 1: 00:24:50
 
 Okay, so `multi-sigs`, let's say, are `N of N`, we'll use the proper terminology, and there's `T of N` `threshold signatures`, and `MuSig` is supporting `N of N`.
 
-Speaker 2: 00:25:05
+Tim Ruffing: 00:25:05
 
 Right.
 
 ## MuSig
 
-Speaker 2: 00:25:07
+Tim Ruffing: 00:25:07
 
 Okay.
 Yeah, so there's this `MuSig` family of `signing protocols` for `multi-sig`, that's why it's called MuSig.
@@ -454,7 +454,7 @@ Pieter Wuille: 00:25:16
 
 Yannick came up with the name.
 
-Speaker 2: 00:25:17
+Tim Ruffing: 00:25:17
 
 Yannick, okay, yeah.
 
@@ -462,7 +462,7 @@ Pieter Wuille: 00:25:18
 
 Yeah, and I think the `mu` is also because it's a letter, Greek letter that's used for `micro`, so they're small.
 
-Speaker 2: 00:25:25
+Tim Ruffing: 00:25:25
 
 Oh, I didn't, I wasn't even aware of that, yeah.
 
@@ -471,7 +471,7 @@ Pieter Wuille: 00:25:28
 Oh, and multiplicative, because there's a multiplicative tweaking in there.
 I think that was also part of the motivation.
 
-Speaker 2: 00:25:33
+Tim Ruffing: 00:25:33
 
 It's very deep, I see.
 
@@ -479,7 +479,7 @@ Pieter Wuille: 00:25:34
 
 Yeah.
 
-Speaker 2: 00:25:36
+Tim Ruffing: 00:25:36
 
 Yannick, by the way, is Yannick Sarah.
 
@@ -487,7 +487,7 @@ Pieter Wuille: 00:25:39
 
 The co-author on, I think, all the `MuSig` papers so far.
 
-Speaker 2: 00:25:43
+Tim Ruffing: 00:25:43
 
 Yes.
 So it is, I think, started with what we now call `MuSig1`.
@@ -496,7 +496,7 @@ Pieter Wuille: 00:25:51
 
 Or Broken `MuSig1`.
 
-Speaker 2: 00:25:53
+Tim Ruffing: 00:25:53
 
 Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Pieter can...
 
@@ -504,7 +504,7 @@ Pieter Wuille: 00:25:57
 
 Yeah, I mean, and even that had an old history that came before it because right now we're talking about `multi-signatures` and so that is talking about the use case where there is someone `on-chain` who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
 
-Speaker 2: 00:26:20
+Tim Ruffing: 00:26:20
 
 What's going to achieve?
 
@@ -513,7 +513,7 @@ Pieter Wuille: 00:26:21
 Yeah, and so the goal is there, we have a number of public keys, a number of parties in the real world that jointly want to control an output and they can spend with a single signature on chain and a single public key on chain and that public key really represents the combination of the consent of all the parties.
 But interestingly, the blockchain does not know or care that there are actually multiple parties involved because all that happens on chain is a single public key and a single signature the public key was created by multiple parties in collaboration the signature was created by multiple parties in collaboration but the rest of the world really just sees...
 
-Speaker 2: 00:27:03
+Tim Ruffing: 00:27:03
 
 Whoever was allowed to spend these coins, and in this case it could be a group, but just by looking at this `public key` you don't know, is allowed to...
 Yeah.
@@ -541,7 +541,7 @@ But there is actually a big difference in that in the `cross input aggregation` 
 There is one for every output at least because the output has to say who is authorized to spend it and it would be the verifier that aggregates them together and then verifies it against a single signature that is provided.
 The difference is the `aggregation of the keys` done off-chain or on-chain And in the case of `cross input aggregation`, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
 
-Speaker 2: 00:29:08
+Tim Ruffing: 00:29:08
 
 In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
 So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an `ordinary single sign-on key` or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
@@ -550,7 +550,7 @@ Pieter Wuille: 00:29:33
 
 That's really the difference.
 
-Speaker 2: 00:29:34
+Tim Ruffing: 00:29:34
 
 This is the thing we're talking about at the moment, right?
 
@@ -611,7 +611,7 @@ Pieter Wuille: 00:33:22
 Amazing.
 And he also said, oh, I think we can do it with two rounds instead of three, which turned out to be a mistake.
 
-Speaker 2: 00:33:32
+Tim Ruffing: 00:33:32
 
 Right, this is what we now call in some papers insecure `MuSig`.
 I think the first paper you uploaded together with Yannick had this two round version, which was insecure.
@@ -630,7 +630,7 @@ Pieter Wuille: 00:34:19
 
 And two rounds.
 
-Speaker 2: 00:34:19
+Tim Ruffing: 00:34:19
 
 No, for the two rounds, but the proof was wrong.
 I mean, this is the detail.
@@ -654,7 +654,7 @@ Pieter Wuille: 00:34:49
 Well, every multi-signature...
 In a sense, yes.
 
-Speaker 2: 00:34:52
+Tim Ruffing: 00:34:52
 
 I mean, it's a totally fine scheme.
 It's just three rounds.
@@ -674,7 +674,7 @@ Because in the lifetime of a signature, there are sort of two big phases.
 One is the setup, where the participants maybe exchange public keys.
 In Bitcoin world, this corresponds to the computation of the address, like determine what is the address for us together.
 
-Speaker 2: 00:35:55
+Tim Ruffing: 00:35:55
 
 When you say setup, you mean like really `key setup`, right?
 It's not like `signature setup`, it's a `key setup`.
@@ -691,7 +691,7 @@ They're just involved ones.
 And then at signing time, basically the same thing happens.
 They all give a signature and anyone, not even a participant, can put those signatures together in a script or a witness.
 
-Speaker 2: 00:36:59
+Tim Ruffing: 00:36:59
 
 And put together really just means concatenate, right?
 Like not really combined in a clever way and compress it.
@@ -703,7 +703,7 @@ yeah.
 Put them together, `concatenate`, put them in a transaction, and the transaction is valid.
 When we're talking about `MuSig1`, the three round scheme, the setup, `key setup` is still a `single round`.
 
-Speaker 2: 00:37:21
+Tim Ruffing: 00:37:21
 
 Yes, it's still like everyone kind of creates their own `public key` and just publishes to the other participant or even to some outside party.
 And you can still take all of these `individual public keys` and there is a `public algorithm` that even an outside party can run and combine the individual public keys to an `aggregate public key` that then represents the `entire group`.
@@ -717,7 +717,7 @@ But they can only do so after everybody has revealed the hashes of their nonces.
 And then after everyone has revealed all their nonces, everyone comes up with a partial signature.
 And then any party, not even a participant, can take the partial signatures and turn them into...
 
-Speaker 2: 00:38:22
+Tim Ruffing: 00:38:22
 
 Combine them, compress them into a `single file signature`.
 
@@ -731,7 +731,7 @@ Now, `MuSig2`, because we're already starting of it, is sort of a strict improve
 The primary thing it does is, well, it actually has two rounds with a proof that appears unbroken so far.
 And with good reasons, like the argument that was found, like why the `MuSig1` proof couldn't be secured, that argument does not apply to the `MuSig2`proof so there are very good reasons to believe that that is actually correct.
 
-Speaker 2: 00:39:17
+Tim Ruffing: 00:39:17
 
 It's not only two rounds in a sense it's even better than this because what you also can do is you can pre-process the first round which basically means you can run the first round without knowing the message or in our case usually the transaction you want to sign.
 So that means like we can run this first round and like okay then we need to keep `state` so we exchange messages for the `first round` and then only later if we now know okay this is a transaction we want to sign, this is a spend we want to make.
@@ -743,7 +743,7 @@ Pieter Wuille: 00:39:57
 I think the best way of looking at this, Like you can think of this `pre-processing round`, the `first round` of the two signing steps, you can do that at key setup time.
 But you could also do it later, but like you can see this as an extension of the setup because-
 
-Speaker 2: 00:40:15
+Tim Ruffing: 00:40:15
 
 But you need to do it once for every signature, right?
 Yeah.
@@ -753,7 +753,7 @@ Pieter Wuille: 00:40:20
 
 Yeah, okay, you need to do...
 
-Speaker 2: 00:40:21
+Tim Ruffing: 00:40:21
 
 Okay, like I will do at most like 500 signatures, for example.
 
@@ -761,7 +761,7 @@ Pieter Wuille: 00:40:24
 
 So you do it 500 times.
 
-Speaker 2: 00:40:26
+Tim Ruffing: 00:40:26
 
 And of course, if I ran out of these pre-processing things,
 
@@ -773,7 +773,7 @@ But now the signing itself can happen non-interactively.
 And this is a trade-off that in some settings is very useful.
 If you want `low latency signing`, I believe like `Lightning`, for example, is particularly interested in that.
 
-Speaker 2: 00:40:52
+Tim Ruffing: 00:40:52
 
 `Lightning` is very interested in that because you if you open a connection to someone on the lightning peer-to-peer network in a sense, when you open a channel you at that point you can already run the first round.
 So you exchange nonces.
@@ -799,7 +799,7 @@ Pieter Wuille: 00:42:40
 
 As soon as we go towards `threshold signatures`, you know, the `T of N` where there's only a subset and `Frost` in particular, which is...
 
-Speaker 2: 00:42:50
+Tim Ruffing: 00:42:50
 
 `Frost` is one of the...
 You could say `Frost` is the `threshold signature` equivalent to `MuSig`, really.
@@ -813,7 +813,7 @@ Pieter Wuille: 00:43:20
 
 Yeah, so this idea, the one trick that the `MuSig2`...
 
-Speaker 2: 00:43:24
+Tim Ruffing: 00:43:24
 
 Right, that made it like possible to go from three rounds to two rounds.
 This one trick really has been discovered independently by three different research groups.
@@ -825,7 +825,7 @@ Like you can't compute an address without, you know, interacting with your `co-s
 And sure there are ways where you might be able to do that once and then still derive multiple addresses from that, without proof.
 But this I think makes that sort of schemes much more niche in that it is something to deploy within like well-defined protocols that have a real need for the advantages that has over the alternatives and it can be.
 
-Speaker 2: 00:44:22
+Tim Ruffing: 00:44:22
 
 Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N setup` or a `T of N` setup.
 It's just some parameter that you literally, like you specify the T in the script, right?
@@ -842,7 +842,7 @@ Pieter Wuille: 00:45:37
 
 Or you have some service that is `co-signing` and you have a key in a `vault` and a key on your `hardware wallet` or something.
 
-Speaker 2: 00:45:45
+Tim Ruffing: 00:45:45
 
 Two of three is a pretty common combination.
 And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a `2 of 2` `MuSig` setup or MuSig2`  setup with those two devices and put this at the `root` of a `taproot`.
@@ -864,7 +864,7 @@ So there are two variants here.
 Either you have, you know, the `2 of 2` of, let's say A and B are the main keys and C is the backup key.
 So you put a `MuSig` of A and B as the internal `Taproot key`, and then you either have a single script, which is C and A or B, but alternatively, because `Taproot `has the script tree notion, you can have two scripts in there, both of which are in fact each a `2 of 2` `MuSig`, one of A and C and one of B and C and this is actually more private and a bit cheaper too.
 
-Speaker 2: 00:47:38
+Tim Ruffing: 00:47:38
 
 So there's different straight-ups you can make.
 I mean I think my main point was that okay you lose a little bit of privacy because you show that something was going on under the hood but it's really just a tiny bit.
@@ -880,7 +880,7 @@ Speaker 1: 00:48:18
 So you've mentioned `Frost` a couple of times now.
 What is `Frost`?
 
-Speaker 2: 00:48:22
+Tim Ruffing: 00:48:22
 
 Frost is really like the...
 
@@ -889,7 +889,7 @@ Pieter Wuille: 00:48:25
 Flexible, round, optimized, `Schnorr threshold signatures`.
 Oh, Frosts.
 
-Speaker 2: 00:48:32
+Tim Ruffing: 00:48:32
 
 Yeah, the last S probably wasn't in the abbreviation.
 Think of it like the `MuSig2'  equivalent, but in the threshold world.
@@ -904,7 +904,7 @@ Speaker 1: 00:49:03
 I see.
 So there's no pre-processing that you can do there?
 
-Speaker 2: 00:49:07
+Tim Ruffing: 00:49:07
 
 There's still pre-processing in the sense that, I mean, you have to run this interactive setup, but there's now again, like it has two rounds, but you could pre-process the first round of those.
 This is still possible in Frost.
@@ -921,7 +921,7 @@ Pieter Wuille: 00:49:48
 
 Yeah, it would be overkill to use Frost for N of N, but I guess it would work.
 
-Speaker 2: 00:49:52
+Tim Ruffing: 00:49:52
 
 In theory, yeah.
 
@@ -930,7 +930,7 @@ Speaker 1: 00:49:53
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
-Speaker 2: 00:49:57
+Tim Ruffing: 00:49:57
 
 But maybe one thing that I, maybe we should talk about is again like Taproot and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
 For concreteness, maybe think of a lightning channel where we have one party and another party and they put their coins together in an output that they can only spend together.
