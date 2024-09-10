@@ -596,9 +596,9 @@ And that's where we tried to get published, but really none of us had experience
 Pieter Wuille: 00:32:11
 
 And governance were like, well, there exists a scheme for this already.
-It's the Belayeneva scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the La Reneve scheme was that scheme could be used for cross input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
+It's the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme was that scheme could be used for cross input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
 So it wouldn't be usable for what we now call multisig.
-I think then we got contacted by Yannick Serrin who was a French provable security cryptographer researcher and he was like, hey, I heard you're looking into Schnorr signatures, I have a background in provable security, I'm interested.
+I think then we got contacted by [Yannick Seurin](https://yannickseurin.github.io/) who was a French provable security cryptographer researcher and he was like, hey, I heard you're looking into Schnorr signatures, I have a background in provable security, I'm interested.
 And so it just gave him a brain dump of like, this is a scheme worth thinking of, what we're trying to prove, these are the reasons why it's different.
 And a couple of weeks later, he came back like, yep, I have a proof.
 
