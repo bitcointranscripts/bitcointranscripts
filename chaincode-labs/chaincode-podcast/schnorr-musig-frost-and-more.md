@@ -360,13 +360,13 @@ It's not just implemented because just adoption doesn't make it worth the work a
 
 Speaker 0: 00:20:39
 
-So there actually is a `PR` open against Libsecp that implements the batch validation at the low level.
+So there actually is a `PR` open against `libsecp that implements the batch validation at the low level.
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
 Because as you say, the batching would only apply to the `taproot signatures`.
 
 Speaker 2: 00:21:02
 
-The interesting part is that you have this batch validation not only of schnull signatures but also of taproot openings.
+The interesting part is that you have this batch validation not only of `schnorr signatures` but also of taproot openings.
 
 Speaker 0: 00:21:13
 
@@ -375,8 +375,8 @@ Right.
 Speaker 2: 00:21:13
 
 So If you have a taproot keyspan, it's just a Schnorr signature, but if it's a script span, you would open this taproot commitment to this taproot auto public key.
-And checking this opening of the commitment is also an elliptic curve operation, in a sense, and we could also add it to this batching.
-So you have a batch of signatures in your block, in a sense, and you have a batch of taproot openings in your, or script spans in your block, and you could also like, batch the, batch both of the operations together in one single bit.
+And checking this opening of the commitment is also an `elliptic curve operation`, in a sense, and we could also add it to this batching.
+So you have a batch of signatures in your block, in a sense, and you have a batch of `taproot openings` in your, or `script spends` in your block, and you could also like, batch the, batch both of the operations together in one single bit.
 
 Speaker 0: 00:21:47
 
