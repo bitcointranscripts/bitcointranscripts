@@ -920,7 +920,7 @@ Yeah.
 
 Speaker 2: 00:49:57
 
-But maybe one thing that I, maybe we should talk about is again like Taproot and music, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
+But maybe one thing that I, maybe we should talk about is again like Taproot and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
 For concreteness, maybe think of a lightning channel where we have one party and another party and they put their coins together in an output that they can only spend together.
 Unless maybe one party disappears, there's some time out and so on.
 And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random music and give a multi-signature.
