@@ -213,7 +213,7 @@ Speaker 0: 00:09:25
 
 I don't care.
 I was looking for words to say that, but really I don't care.
-I feel like as far as taproot, the consensus rules and the specification and the bib and the work and the address format and all those things, my job ended two years ago.
+I feel like as far as taproot, the consensus rules and the specification and the bip and the work and the address format and all those things, my job ended two years ago.
 That doesn't mean there's nothing left.
 Whether or not this gets adopted and at what level, that's, I think, very long term.
 These things weren't designed to, you know, I wasn't expecting everyone to immediately start using this.
