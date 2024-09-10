@@ -930,7 +930,7 @@ Adam Jonas: 00:49:53
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
-## Powerful Combination of Taproot and MuSig
+## Powerful Combination of Taproot and MuSig: Smart Contract or Spending Policy
 
 Tim Ruffing: 00:49:57
 
