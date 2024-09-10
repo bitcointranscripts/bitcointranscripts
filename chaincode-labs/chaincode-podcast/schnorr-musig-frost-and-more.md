@@ -48,8 +48,9 @@ I hear that you went over a lot of stuff.
 Adam Jonas: 00:00:37
 
 We did.
-We covered updates about `Frost` and `Roast`, `MuSig2'.
-We talked about ideas that are a little further out in terms of `batch verification`, `signature aggregation`, `interactive full aggregation`, `cross input signature aggregation`.
+We covered updates about [Frost](https://eprint.iacr.org/2020/852.pdf) and [Roast](https://eprint.iacr.org/2022/550.pdf), [MuSig2](https://eprint.iacr.org/2020/1261).
+
+We talked about ideas that are a little further out in terms of `batch verification`, `signature aggregation`, `interactive full aggregation`, [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
 
 [Mark “Murch” Erhardt]: 00:00:54
 
