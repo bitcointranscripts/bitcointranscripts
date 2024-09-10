@@ -1,22 +1,28 @@
 ---
-title: "Schnorr, MuSig, FROST and more"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing--Schnorr--MuSig--FROST-and-more---Episode-26-e1sav0l
-tags: ['cryptography', 'musig', 'schnorr-signatures']
-speakers: ['Pieter Wuille', 'Tim Ruffing']
-categories: ['podcast']
-summary: "Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multi-signatures, MuSig, and more. We covered a lot so this is part one of a two part conversation."
+title: 'Schnorr, MuSig, FROST and more'
+transcript_by: 'sagungargs15 via review.btctranscripts.com'
+media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing--Schnorr--MuSig--FROST-and-more---Episode-26-e1sav0l'
+date: '2022-12-16'
+tags:
+  - 'cryptography'
+  - 'musig'
+  - 'schnorr-signatures'
+speakers:
+  - 'Pieter Wuille'
+  - 'Tim Ruffing'
+categories:
+  - 'podcast'
+summary: 'Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multi-signatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.'
 episode: 26
-date: 2022-12-16
 additional_resources:
-  - title: MuSig
-    url: https://bitcoinops.org/en/topics/musig/
-  - title: Yannick Seurin
-    url: http://yannickseurin.free.fr/
-  - title: Bellare-Neven
-    url: https://btctranscripts.com/bitcoin-core-dev-tech/2018-03-05-bellare-neven/
-  - title: FROST
-    url: https://eprint.iacr.org/2020/852.pdf
+  - title: 'MuSig'
+    url: 'https://bitcoinops.org/en/topics/musig/'
+  - title: 'Yannick Seurin'
+    url: 'http://yannickseurin.free.fr/'
+  - title: 'Bellare-Neven'
+    url: 'https://btctranscripts.com/bitcoin-core-dev-tech/2018-03-05-bellare-neven/'
+  - title: 'FROST'
+    url: 'https://eprint.iacr.org/2020/852.pdf'
 ---
 Speaker 0: 00:00:00
 
@@ -26,7 +32,7 @@ Hey Jonas, good to be back.
 
 Speaker 1: 00:00:19
 
-So while you were out being the Bitcoin ambassador that we depend on you to be, I was here stuck in the cold talking to Tim and Peter and I thought it was a good conversation.
+So while you were out being the Bitcoin ambassador that we depended on you to be, I was here stuck in the cold talking to Tim and Peter and I thought it was a good conversation.
 Yeah.
 I don't think I let you down too much.
 
