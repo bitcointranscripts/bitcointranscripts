@@ -210,23 +210,23 @@ Cool, I don't want to belabor this too long because we got some lower-level stuf
 
 ## Schnorr Signatures
 
-Adam Jonas: 00:09:01
+**Adam Jonas**: 00:09:01
 
 So we have come up on just about a year, almost to the day, of `Schnorr` and `Taproot` being soft forked into Bitcoin.
 Where are we at?
 Are we happy with what's happened in the last year?
 How do we feel about it?
 
-Pieter Wuille: 00:09:17
+**Pieter Wuille**: 00:09:17
 
 Well, in...
 
-Tim Ruffing: 00:09:20
+**Tim Ruffing**: 00:09:20
 
 Are you happy in terms of adoption?
 Maybe that's an interesting question.
 
-Pieter Wuille: 00:09:25
+**Pieter Wuille**: 00:09:25
 
 I don't care.
 I was looking for words to say that, but really I don't care.
@@ -237,7 +237,7 @@ These things weren't designed to, you know, I wasn't expecting everyone to immed
 It will start here and there in niche use cases that really use it.
 And I certainly expect that over the course of a couple of years, it will essentially become a default, but no rush.
 
-Tim Ruffing: 00:10:19
+**Tim Ruffing**: 00:10:19
 
 Right.
 Also, I mean, I think what we can say after one year is that it's running, it always worked, right, it didn't create any...
@@ -247,7 +247,7 @@ But all together, it works.
 There were no issues discovered.
 And this is, I think, good to know.
 
-Adam Jonas: 00:10:44
+**Adam Jonas**: 00:10:44
 
 And so maybe, just sort of recap, Introducing `Schnorr` has been something that's been talked about for a very long time.
 2014?
@@ -255,11 +255,11 @@ And so maybe, just sort of recap, Introducing `Schnorr` has been something that'
 
 ## Why is `Schnorr` preferable to `ECDSA`?
 
-Adam Jonas: 00:10:54
+**Adam Jonas**: 00:10:54
 
 And so why do we want this over `ECDSA`?
 
-Pieter Wuille: 00:10:58
+**Pieter Wuille**: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
 The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
@@ -268,7 +268,7 @@ But on the other hand, like `ECDSA` is already used, like people, whatever its s
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
 All the advantages in practice come from either simplicity of schemes that can be built on top of it, extensions that can be made like `crossing input aggregation` and `batch validation`.
 
-Tim Ruffing: 00:12:29
+**Tim Ruffing**: 00:12:29
 
 Maybe to add some of the history, more on the history of the signature schemes themselves.
 Schnorr came up with this really nice signature scheme.
@@ -282,7 +282,7 @@ So the confidence we really have in `ECDSA` signatures is really because they ha
 But that's totally fine, I totally agree with Pieter.
 This is not a main motivation to change this thing.
 
-Pieter Wuille: 00:13:56
+**Pieter Wuille**: 00:13:56
 
 Maybe to give a bit of historical background here, because We're mixing the `Schnorr` versus `DSA` question with `integer multiplication group` versus `elliptic curve` question because when we're talking about `Schnorr` or `ECDSA` in the context of Bitcoin, there are always schemes built on top of `elliptic curves`.
 But historically, the `Schnorr signature scheme`, the first one, was originally defined just over big integer numbers.
@@ -292,27 +292,27 @@ And `DSA`, as far as I understand, was used in practice long before there was an
 There are some now, but as Tim says, they're much more awkward and weird.
 But `DSA`, just people started using it as far as I know, because it's similar enough.
 
-Tim Ruffing: 00:15:07
+**Tim Ruffing**: 00:15:07
 
 Yeah, but if you look at it from a mathematical point of view, it's really like they started with `Schnorr signatures`, but because they were patented, they had to make a few very strange tweaks to it and what comes out of it it's a really really inelegant thing and this ended up being `DSA` and now if you okay if you port it to `Elliptic Curves` then you get `ECDSA`, `Elliptic Curve DSA`.
 
-Pieter Wuille: 00:15:28
+**Pieter Wuille**: 00:15:28
 
 We talk about `Schnorr signatures` but we really should distinguish like `Schnorr signatures` versus `elliptic curve Schnorr signatures`.
 And the latter do exist, like for example, `ED25519` is a very well-known digital signature scheme that's, yeah, `EDDSA`, they call it `EDDSA`, but it's really `Schnorr`.
 
-Adam Jonas: 00:15:50
+**Adam Jonas**: 00:15:50
 
 Got it, but maybe that's not the main motivation.
 
 ## Schnorr efficiency improvements
 
-Adam Jonas: 00:15:52
+**Adam Jonas**: 00:15:52
 
 There's also some efficiency improvements.
 Is that get us closer to reasons to move over?
 
-Pieter Wuille: 00:16:00
+**Pieter Wuille**: 00:16:00
 
 I think it is, but they're only tangible in the batching situation.
 To give some context, `batch validation` is you have multiple messages, multiple keys, every message has a key and a corresponding signature.
@@ -321,13 +321,13 @@ And this is a property that digital signature schemes have been studied before.
 And it is such an amazingly good match for block validation in Bitcoin because we really have this hundreds or thousands of signatures that we really only care whether they're all valid or not.
 And so there is a decent performance improvement, like a factor of two, three, that order of magnitude that you can get from, as you do more and more at once, you get.
 
-Adam Jonas: 00:17:02
+**Adam Jonas**: 00:17:02
 
 And so how would that work in practice?
 So you have, let's imagine we have a, we already have mixed blocks, as in we have some blocks with `DSA` and some blocks with aided `taproot outputs`.
 So you're really just sort of like combining the `taproot outputs` and then validating them, and then you do everything else as before.
 
-Pieter Wuille: 00:17:22
+**Pieter Wuille**: 00:17:22
 
 Exactly.
 There have been ideas in the past for batching `ECDSA` that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for `ECDSA`.
@@ -335,12 +335,12 @@ It's also annoying so the `Bitcoin script rules` permit signature validations to
 Like, succeed unless it is a good signature.
 You could write that today, it's dumb, but you, because someone would just not satisfy it by giving an invalid one, but you could.
 
-Adam Jonas: 00:18:17
+**Adam Jonas**: 00:18:17
 
 Why was that left open?
 Why not include that in the soft fork, for example?
 
-Pieter Wuille: 00:18:23
+**Pieter Wuille**: 00:18:23
 
 So you can't do this anymore in `Tapscript`, specifically because in order to make batch validation possible, the software needs to know ahead of time which signatures are expected to be valid or not.
 So the change that is made is you can still have `invalid signatures`, but they have to be basically the `empty signature`.
@@ -353,49 +353,49 @@ You just continue as if it is valid.
 But you remember the combination of the public key, the message and the signature that you saw and you put them all on a list.
 And after you've done verifying the whole transaction or the whole block even, you have now this huge list of all signatures to validate and then you hand off to the batch validator and check are they all valid or not.
 
-Tim Ruffing: 00:19:49
+**Tim Ruffing**: 00:19:49
 
 I mean, you mentioned that this is currently not implemented, but one very nice feature about batch validation is it's really just an optimization on the verifier side.
 It doesn't require any soft fork or protocol change.
 It's really just like a verifier.
 So it could actually be that somebody's running it today.
 
-Pieter Wuille: 00:20:05
+**Pieter Wuille**: 00:20:05
 
 Right, right.
 And this is by design, right?
 Like `BIP-340`, the `Schnorr` signature specification for Bitcoin and `BIP-341`, `BIP-342`, `Taproot` and `Tapscript` are all explicitly designed with the goal of being `batch validatable`.
 
-Tim Ruffing: 00:20:23
+**Tim Ruffing**: 00:20:23
 
 Yeah, the PIP 340, the Schnorr signature PIP already basically contains a specification for batch verification, batch validation.
 Yeah, as you say, it's just not implemented yet.
 
-Adam Jonas: 00:20:35
+**Adam Jonas**: 00:20:35
 
 It's not just implemented because just adoption doesn't make it worth the work at the moment?
 
-Pieter Wuille: 00:20:39
+**Pieter Wuille**: 00:20:39
 
 So there actually is a `PR` open against `libsecp256k1` that implements the batch validation at the `low level`.
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
 Because as you say, the batching would only apply to the `taproot signatures`.
 
-Tim Ruffing: 00:21:02
+**Tim Ruffing**: 00:21:02
 
 The interesting part is that you have this batch validation not only of `Schnorr signatures` but also of taproot openings.
 
-Pieter Wuille: 00:21:13
+**Pieter Wuille**: 00:21:13
 
 Right.
 
-Tim Ruffing: 00:21:13
+**Tim Ruffing**: 00:21:13
 
 So If you have a `taproot key spend`, it's just a `Schnorr signature`, but if it's a `script spend`, you would open this `taproot commitment` to this taproot auto public key.
 And checking this opening of the commitment is also an `elliptic curve operation`, in a sense, and we could also add it to this batching.
 So you have a batch of signatures in your block, in a sense, and you have a batch of `taproot openings` in your, or `script spends` in your block, and you could also like, batch the, batch both of the operations together in one single bit.
 
-Pieter Wuille: 00:21:47
+**Pieter Wuille**: 00:21:47
 
 So for context, how a `taproot script spend` works is, you know, every `taproot output` is essentially an `encoding` of you can spend with some public key or by satisfying one of possibly multiple scripts.
 And that set of `scripts` can be empty, that `public key` can be a `dummy key`, but both sort of always exist.
@@ -408,17 +408,17 @@ And so that's the opening of the `commitment`.
 And that `check` can be batched together with `Schnorr signature validations`.
 They each count as half a signature.
 
-Adam Jonas: 00:23:00
+**Adam Jonas**: 00:23:00
 
 So another reason to adopt `Schnorr` is it just makes building `advanced signing protocols` easier?
 
-Pieter Wuille: 00:23:10
+**Pieter Wuille**: 00:23:10
 
 I think that that is really the number one reason why we want this.
 
 ## Multisigs
 
-Adam Jonas: 00:23:15
+**Adam Jonas**: 00:23:15
 
 So what's the status of those protocols now and what could we imagine to happen in the future?
 
