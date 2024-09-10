@@ -774,8 +774,8 @@ So it's really just like one message then when the transaction arrives that we w
 Speaker 0: 00:41:43
 
 So we call this `interactive` or `non-interactive` because the difference between one round or more than one round is huge, way bigger than two or three rounds, there's always interactivity.
-I think a good way of seeing that is like, today we think of addresses as being generated using `XPUBs` and you can write a `descriptor` where you put these things in.
-That is all only possible because the key setup is `non-interactive`.
+I think a good way of seeing that is like, today we think of `addresses` as being generated using `XPUBs` and you can write a `descriptor` where you put these things in.
+That is all only possible because the `key setup` is `non-interactive`.
 Today, all I need to do is get some `public keys`, or `XPubs` from some parties, and put them together, and I can compute addresses for all of them without them even being aware that I am generating addresses for them.
 Of course, I'll need to talk to them before they can spend it, but it's possible for someone to construct an address involving some parties just by getting some information from them once.
 And importantly, unidirectional.
@@ -799,7 +799,7 @@ There was even one other research team that had the same idea in parallels, whic
 
 Speaker 0: 00:43:20
 
-Yeah, so this idea, the one trick that the `MuSig`...
+Yeah, so this idea, the one trick that the `MuSig2`...
 
 Speaker 2: 00:43:24
 
@@ -808,32 +808,32 @@ This one trick really has been discovered independently by three different resea
 
 Speaker 0: 00:43:33
 
-But the big downside for it seems to be like every efficient threshold scheme within this class of algorithms we're looking at requires an interactive key setup and that is a huge impediment for just practicality.
-Like you can't compute an address without, you know, interacting with your co-signers.
+But the big downside for it seems to be like every efficient `threshold scheme` within this class of algorithms we're looking at requires an `interactive key setup` and that is a huge impediment for just practicality.
+Like you can't compute an address without, you know, interacting with your `co-signers`.
 And sure there are ways where you might be able to do that once and then still derive multiple addresses from that, without proof.
 But this I think makes that sort of schemes much more niche in that it is something to deploy within like well-defined protocols that have a real need for the advantages that has over the alternatives and it can be.
 
 Speaker 2: 00:44:22
 
-Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin multi-sig view, it's really not a difference if you have an N of N setup or a T of N setup.
+Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N setup` or a `T of N` setup.
 It's just some parameter that you literally, like you specify the T in the script, right?
 And it could just say it's N.
-And this is really no, like the scheme, it's really just the same thing for T of N or N of N.
-But in like those Schnorr advanced multi-signature or threshold signature things, there's really a big difference in terms of practicality when it comes to T-setup.
-Like music, the N of N case is still pretty simple, whereas in threshold signatures you can do it, but it's a little bit less practical.
+And this is really no, like the scheme, it's really just the same thing for `T of N` or `N of N`.
+But in like those `Schnorr advanced multi-signature` or `threshold signature` things, there's really a big difference in terms of practicality when it comes to `T-setup`.
+Like `MuSig`, the N of N case is still pretty simple, whereas in threshold signatures you can do it, but it's a little bit less practical.
 So as you say, it probably makes only sense for use cases that really need it.
 And if I say it really needed, there's a lot of things you can do with multi signatures already.
-Like even for cases where you think you may want a threshold signature.
-For example, in combination with Taproot, a typical threshold signature case, I think that most people are aware of is a standard maybe two or three that you might have at home, where you have three hardware wallets or two hardware wallets and a software wallet maybe.
+Like even for cases where you think you may want a `threshold signature`.
+For example, in combination with `Taproot`, a typical threshold signature case, I think that most people are aware of is a standard maybe two or three that you might have at home, where you have three hardware wallets or two `hardware wallets` and a `software wallet` maybe.
 
 Speaker 0: 00:45:37
 
-Or you have some service that is co-signing and you have a key in a vault and a key on your hardware wallet or something.
+Or you have some service that is `co-signing` and you have a key in a `vault` and a key on your `hardware wallet` or something.
 
 Speaker 2: 00:45:45
 
 Two of three is a pretty common combination.
-And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a 2 of 2 music setup or music 2 setup with those two devices and put this at the root of a tap root.
+And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a `2 of 2` `MuSig` setup or MuSig2`  setup with those two devices and put this at the root of a taproot.
 So like computer combined 2 of 2 key and use this as the key in your tab root.
 And as long as those two devices are there, you can use them.
 And only if you have to resort to the backup device, you would have in your tab root, have some script inside there.
