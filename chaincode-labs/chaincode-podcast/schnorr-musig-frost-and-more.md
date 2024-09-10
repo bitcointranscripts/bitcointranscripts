@@ -313,7 +313,7 @@ So you're really just sort of like combining the `taproot outputs` and then vali
 Speaker 0: 00:17:22
 
 Exactly.
-There have been ideas in the past for batching ECDSA that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for ECDSA.
+There have been ideas in the past for batching `ECDSA` that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for ECDSA.
 It's also annoying so the Bitcoin script rules permit signature validations to fail like you could write a script today that's like take us input a signature and verify that it is not a good signature for this public key.
 Like, succeed unless it is a good signature.
 You could write that today, it's dumb, but you, because someone would just not satisfy it by giving an invalid one, but you could.
