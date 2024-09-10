@@ -773,10 +773,10 @@ So it's really just like one message then when the transaction arrives that we w
 
 Speaker 0: 00:41:43
 
-So we call this interactive or non-interactive because the difference between one round or more than one round is huge, way bigger than two or three rounds, there's always interactivity.
-I think a good way of seeing that is like, today we think of addresses as being generated using XPUBs and you can write a descriptor where you put these things in.
-That is all only possible because the key setup is non-interactive.
-Today, all I need to do is get some public keys, or XPubs from some parties, and put them together, and I can compute addresses for all of them without them even being aware that I am generating addresses for them.
+So we call this `interactive` or `non-interactive` because the difference between one round or more than one round is huge, way bigger than two or three rounds, there's always interactivity.
+I think a good way of seeing that is like, today we think of addresses as being generated using `XPUBs` and you can write a `descriptor` where you put these things in.
+That is all only possible because the key setup is `non-interactive`.
+Today, all I need to do is get some `public keys`, or `XPubs` from some parties, and put them together, and I can compute addresses for all of them without them even being aware that I am generating addresses for them.
 Of course, I'll need to talk to them before they can spend it, but it's possible for someone to construct an address involving some parties just by getting some information from them once.
 And importantly, unidirectional.
 There needs to be no communication from me to them.
@@ -790,8 +790,8 @@ As soon as we go towards threshold signatures, you know, the T of N where there'
 Speaker 2: 00:42:50
 
 Frost is one of the...
-You could say Frost is the threshold signature equivalent to music, really.
-It's like a threshold signature of music.
+You could say `Frost` is the threshold signature equivalent to `MuSig`, really.
+It's like a threshold signature of `MuSig`.
 And in the signing part, it's very, very similar.
 Actually, it's fun that they came up with the same idea to basically build a two round signing thing.
 At the same time, we came up with the idea, so there were really two.
