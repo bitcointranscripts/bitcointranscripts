@@ -424,7 +424,7 @@ Whereas in Bitcoin, when you say `multi-sig`, you usually mean any of these.
 
 Speaker 1: 00:24:50
 
-Okay, so `multi-sigs`, let's say, are n of n, we'll use the proper terminology, and there's `t of n` `threshold signatures`, and `MuSig` is supporting n of n.
+Okay, so `multi-sigs`, let's say, are `N of N`, we'll use the proper terminology, and there's `T of N` `threshold signatures`, and `MuSig` is supporting `N of N`.
 
 Speaker 2: 00:25:05
 
