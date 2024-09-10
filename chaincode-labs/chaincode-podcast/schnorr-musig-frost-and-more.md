@@ -603,7 +603,7 @@ Speaker 2: 00:33:32
 
 Right, this is what we now call in some papers insecure music.
 I think the first paper you uploaded together with Yannick had this two round version, which was insecure.
-Yeah, I just found an attack on this very end of music and also...
+Yeah, I just found an attack on this very end of `MuSig` and also...
 
 Speaker 0: 00:33:52
 
@@ -612,7 +612,7 @@ And we initially thought, okay, this is like a limitation of proof techniques, l
 
 Speaker 1: 00:34:14
 
-When Janek came with a proof, He came up with a proof for the three rounds.
+When Yannick came with a proof, He came up with a proof for the three rounds.
 
 Speaker 0: 00:34:19
 
@@ -631,11 +631,11 @@ So you had to revert to the three-round version, and this is really what we fina
 
 Speaker 0: 00:34:42
 
-What we now call MuSig is the three-round scheme that...
+What we now call `MuSig` is the three-round scheme that...
 
 Speaker 1: 00:34:47
 
-And are there applications for Music One?
+And are there applications for `MuSig` One?
 
 Speaker 0: 00:34:49
 
@@ -646,8 +646,8 @@ Speaker 2: 00:34:52
 
 I mean, it's a totally fine scheme.
 It's just three rounds.
-And like, nowadays we believe like Music Two is basically in practice better in every aspect.
-So there's not really reason to use Music 1 in practice, but it's totally fine.
+And like, nowadays we believe like `MuSig` Two is basically in practice better in every aspect.
+So there's not really reason to use `MuSig1` in practice, but it's totally fine.
 It's just a little bit annoying because it has this really three-round property.
 And when I say three rounds, it's really like communication rounds, right?
 So the end signers come together and they have to send three messages each in parallel.
