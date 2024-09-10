@@ -795,7 +795,7 @@ There needs to be no communication from me to them.
 
 ## FROST
 
-Speaker 0: 00:42:40
+Pieter Wuille: 00:42:40
 
 As soon as we go towards `threshold signatures`, you know, the `T of N` where there's only a subset and `Frost` in particular, which is...
 
@@ -809,7 +809,7 @@ Actually, it's fun that they came up with the same idea to basically build a two
 At the same time, we came up with the idea, so there were really two.
 There was even one other research team that had the same idea in parallels, which also is good to know because this again like confirms the idea that what we're doing here is correct.
 
-Speaker 0: 00:43:20
+Pieter Wuille: 00:43:20
 
 Yeah, so this idea, the one trick that the `MuSig2`...
 
@@ -818,7 +818,7 @@ Speaker 2: 00:43:24
 Right, that made it like possible to go from three rounds to two rounds.
 This one trick really has been discovered independently by three different research groups.
 
-Speaker 0: 00:43:33
+Pieter Wuille: 00:43:33
 
 But the big downside for it seems to be like every efficient `threshold scheme` within this class of algorithms we're looking at requires an `interactive key setup` and that is a huge impediment for just practicality.
 Like you can't compute an address without, you know, interacting with your `co-signers`.
@@ -838,7 +838,7 @@ And if I say it really needed, there's a lot of things you can do with multi sig
 Like even for cases where you think you may want a `threshold signature`.
 For example, in combination with `Taproot`, a typical threshold signature case, I think that most people are aware of is a standard maybe two or three that you might have at home, where you have three hardware wallets or two `hardware wallets` and a `software wallet` maybe.
 
-Speaker 0: 00:45:37
+Pieter Wuille: 00:45:37
 
 Or you have some service that is `co-signing` and you have a key in a `vault` and a key on your `hardware wallet` or something.
 
@@ -858,7 +858,7 @@ Speaker 1: 00:46:54
 Would you have other tap scripts that would be `2 of 2`?
 You just have...
 
-Speaker 0: 00:46:58
+Pieter Wuille: 00:46:58
 
 So there are two variants here.
 Either you have, you know, the `2 of 2` of, let's say A and B are the main keys and C is the backup key.
@@ -870,7 +870,7 @@ So there's different straight-ups you can make.
 I mean I think my main point was that okay you lose a little bit of privacy because you show that something was going on under the hood but it's really just a tiny bit.
 I think it's only in the case where you need to resort to your backup device or signer, and it's maybe a tiny bit less efficient, but in that case, you probably don't care.
 
-Speaker 0: 00:47:56
+Pieter Wuille: 00:47:56
 
 But this whole thing, like the `MuSigs`, the `scripts`, the `tree`, all of that still has a `non-interactive key` setup.
 The reason why you would want to do this over something Frost-like is sort of the traditional way of thinking of I can just generate addresses if I have the keys still works with this.
@@ -884,7 +884,7 @@ Speaker 2: 00:48:22
 
 Frost is really like the...
 
-Speaker 0: 00:48:25
+Pieter Wuille: 00:48:25
 
 Flexible, round, optimized, `Schnorr threshold signatures`.
 Oh, Frosts.
@@ -917,7 +917,7 @@ Speaker 1: 00:49:41
 I see.
 So T of N, really, it could be N of N in terms of like...
 
-Speaker 0: 00:49:48
+Pieter Wuille: 00:49:48
 
 Yeah, it would be overkill to use Frost for N of N, but I guess it would work.
 
@@ -938,7 +938,7 @@ Unless maybe one party disappears, there's some time out and so on.
 And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multi-signature.
 As long as they do this on chain it really is like just a public key, just a signature.
 
-Speaker 0: 00:51:10
+Pieter Wuille: 00:51:10
 
 Yeah and this is really the philosophy behind `Taproot` like why do we even bother like elevating one individual `public key` to be blessed, to be like, you can be spent super efficiently.
 It is because of this understanding that almost all involved `spending policies` can, without loss of security, be turned into a, okay, that involved spending policy or everybody agrees like if everybody agrees and this goes to like this idea of like we're really only using the blockchain to settle disagreements like as long as everyone agrees with all we have to say to the blockchain is like yeah you don't really need to know what the rules were everybody who and then everybody who could have been involved in this thing agrees that this is the spend we want to do.
@@ -948,7 +948,7 @@ Speaker 1: 00:52:04
 Sure, the `robo judge`.
 Yeah, exactly.
 
-Speaker 0: 00:52:07
+Pieter Wuille: 00:52:07
 
 It's like, hello judge, we settled out of court.
 Okay, stamp.
