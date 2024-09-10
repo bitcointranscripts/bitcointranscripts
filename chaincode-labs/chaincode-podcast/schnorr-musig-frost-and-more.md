@@ -262,7 +262,7 @@ And so why do we want this over `ECDSA`?
 Pieter Wuille: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
-The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as `cross input signature aggregation`.
+The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
 And that goal drove a lot of interest in the scheme, because if you're talking about individual `Schnorr signatures` on chain or individual `ECDSA` signatures, maybe a bit faster here or there, they have a better provable security scheme.
 But on the other hand, like `ECDSA` is already used, like people, whatever its security assumptions and requirements for proofs are, people have, perhaps unwillingly, already accepted them.
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
@@ -457,11 +457,11 @@ Don't know who came up with it.
 
 Pieter Wuille: 00:25:16
 
-Yannick came up with the name.
+[Yannick Seurin](https://yannickseurin.github.io/) came up with the name.
 
 Tim Ruffing: 00:25:17
 
-Yannick, okay, yeah.
+[Yannick Seurin](https://yannickseurin.github.io/), okay, yeah.
 
 Pieter Wuille: 00:25:18
 
@@ -486,7 +486,7 @@ Yeah.
 
 Tim Ruffing: 00:25:36
 
-Yannick, by the way, is Yannick Sarah.
+Yannick, by the way, is [Yannick Seurin](https://yannickseurin.github.io/).
 
 Pieter Wuille: 00:25:39
 
@@ -536,7 +536,7 @@ Computation versus verification.
 Pieter Wuille: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multi-signature construction.
-Namely, the original motivation was actually going further and have `cross input signature aggregation`.
+Namely, the original motivation was actually going further and have [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
 And that is the idea of really all inputs in a transaction, even if there are multiple parties, even if the transaction is like spending coins from multiple separate coins together, we want a single signature for all of them.
 And this is possible if all those people cooperate, which is often the case in terms of like even today, like if you have a wallet and you have multiple coins in it and you're spending them simultaneously, you're just one party even though you have multiple public keys.
 Why wouldn't you be able to spend that with a single signature?
@@ -561,12 +561,12 @@ This is the thing we're talking about at the moment, right?
 
 Pieter Wuille: 00:29:38
 
-Because in the case of `cross input signature aggregation`, the verifier actually has to implement a multi signature scheme.
+Because in the case of [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/), the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multi-signatures.
 Like `BIP 342` today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
 The same is not true for `cross input aggregation`.
-And so the history of `MuSig` actually starts with the idea of `cross input signature aggregation`.
-Because `cross input signature aggregation' has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
+And so the history of `MuSig` actually starts with the idea of [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
+Because [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/) has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
 I mean, you have an output you created, you have an output I created.
 I can try creating a transaction that spends both at the same time, maybe together with one of mine.
 And so it is very important that there is no way for me to come up with a `fake key` that somehow, when combined with your keys, result in something that I could sign for.
@@ -582,10 +582,10 @@ Or the `key cancellation attack`.
 Pieter Wuille: 00:31:04
 
 Exactly, exactly.
-So the obstacle in making `cross input signature aggregation` happen `was, whoa, we have this problem of `cancellation of keys`, and we need a solution for that.
+So the obstacle in making [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/) happen was, whoa, we have this problem of `cancellation of keys`, and we need a solution for that.
 And years ago I came up with what I thought was a solution for it, which is this `delinearization` trick of multiplying each key with a randomizer to stop that from happening.
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
-That fix was what is now called the 'MuSig 'scheme, with three rounds.
+That fix was what is now called the 'MuSig ' scheme, with three rounds.
 
 Adam Jonas: 00:31:54
 
@@ -601,8 +601,8 @@ And that's where we tried to get published, but really none of us had experience
 Pieter Wuille: 00:32:11
 
 And governance were like, well, there exists a scheme for this already.
-It's the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme was that scheme could be used for cross input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
-So it wouldn't be usable for what we now call multisig.
+It's the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme was that scheme could be used for `cross input aggregation` but it didn't result in signatures that looked like normal `Schnorr signatures`.
+So it wouldn't be usable for what we now call `multisig`.
 I think then we got contacted by [Yannick Seurin](https://yannickseurin.github.io/) who was a French provable security cryptographer researcher and he was like, hey, I heard you're looking into Schnorr signatures, I have a background in provable security, I'm interested.
 And so it just gave him a brain dump of like, this is a scheme worth thinking of, what we're trying to prove, these are the reasons why it's different.
 And a couple of weeks later, he came back like, yep, I have a proof.
@@ -619,7 +619,7 @@ And he also said, oh, I think we can do it with two rounds instead of three, whi
 Tim Ruffing: 00:33:32
 
 Right, this is what we now call in some papers insecure `MuSig`.
-I think the first paper you uploaded together with Yannick had this two round version, which was insecure.
+I think the first paper you uploaded together with [Yannick Seurin](https://yannickseurin.github.io/) had this two round version, which was insecure.
 Yeah, I just found an attack on this very end of `MuSig` and also...
 
 Pieter Wuille: 00:33:52
@@ -629,7 +629,7 @@ And we initially thought, okay, this is like a limitation of proof techniques, l
 
 Adam Jonas: 00:34:14
 
-When Yannick came with a proof, He came up with a proof for the three rounds.
+When [Yannick Seurin](https://yannickseurin.github.io/) came with a proof, He came up with a proof for the three rounds.
 
 Pieter Wuille: 00:34:19
 
