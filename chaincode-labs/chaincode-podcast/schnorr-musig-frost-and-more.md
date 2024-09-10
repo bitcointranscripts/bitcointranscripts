@@ -360,7 +360,7 @@ It's not just implemented because just adoption doesn't make it worth the work a
 
 Speaker 0: 00:20:39
 
-So there actually is a `PR` open against `libsecp that implements the batch validation at the low level.
+So there actually is a `PR` open against `libsecp` that implements the batch validation at the `low level`.
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
 Because as you say, the batching would only apply to the `taproot signatures`.
 
