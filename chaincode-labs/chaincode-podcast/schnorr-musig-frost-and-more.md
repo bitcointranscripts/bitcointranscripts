@@ -307,8 +307,8 @@ And so there is a decent performance improvement, like a factor of two, three, t
 Speaker 1: 00:17:02
 
 And so how would that work in practice?
-So you have, let's imagine we have a, we already have mixed blocks, as in we have some blocks with DSA and some blocks with aided taproot outputs.
-So you're really just sort of like combining the top root outputs and then validating them, and then you do everything else as before.
+So you have, let's imagine we have a, we already have mixed blocks, as in we have some blocks with `DSA` and some blocks with aided `taproot outputs`.
+So you're really just sort of like combining the `taproot outputs` and then validating them, and then you do everything else as before.
 
 Speaker 0: 00:17:22
 
