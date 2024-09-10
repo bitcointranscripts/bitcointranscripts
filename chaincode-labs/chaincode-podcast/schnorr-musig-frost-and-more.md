@@ -8,6 +8,7 @@ tags:
   - 'musig'
   - 'schnorr-signatures'
   - 'multisignature'
+  - 'signature-aggregation'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
