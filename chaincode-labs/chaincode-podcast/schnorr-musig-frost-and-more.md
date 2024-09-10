@@ -551,15 +551,15 @@ The difference is the `aggregation of the keys` done off-chain or on-chain And i
 In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
 So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an `ordinary single sign-on key` or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
 
-Pieter Wuille: 00:29:33
+**Pieter Wuille**: 00:29:33
 
 That's really the difference.
 
-Tim Ruffing: 00:29:34
+**Tim Ruffing**: 00:29:34
 
 This is the thing we're talking about at the moment, right?
 
-Pieter Wuille: 00:29:38
+**Pieter Wuille**: 00:29:38
 
 Because in the case of [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/), the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multi-signatures.
@@ -573,13 +573,13 @@ And so it is very important that there is no way for me to come up with a `fake 
 
 ## Rogue key attack or key cancellation attack
 
-Adam Jonas: 00:31:01
+**Adam Jonas**: 00:31:01
 
 This is called the `rogue key attack`?
 Exactly.
 Or the `key cancellation attack`.
 
-Pieter Wuille: 00:31:04
+**Pieter Wuille**: 00:31:04
 
 Exactly, exactly.
 So the obstacle in making [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/) happen was, whoa, we have this problem of `cancellation of keys`, and we need a solution for that.
@@ -587,18 +587,18 @@ And years ago I came up with what I thought was a solution for it, which is this
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
 That fix was what is now called the 'MuSig ' scheme, with three rounds.
 
-Adam Jonas: 00:31:54
+**Adam Jonas**: 00:31:54
 
 So it was originally two rounds and then you added a third round?
 
-Pieter Wuille: 00:31:58
+**Pieter Wuille**: 00:31:58
 
 It was originally three rounds.
 And that's where we tried to get published, but really none of us had experience with proving a digital signature scheme or what security properties were required.
 
-## Bellare-Neven
+## [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/)
 
-Pieter Wuille: 00:32:11
+**Pieter Wuille**: 00:32:11
 
 And governance were like, well, there exists a scheme for this already.
 It's the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme was that scheme could be used for `cross input aggregation` but it didn't result in signatures that looked like normal `Schnorr signatures`.
@@ -607,35 +607,35 @@ I think then we got contacted by [Yannick Seurin](https://yannickseurin.github.i
 And so it just gave him a brain dump of like, this is a scheme worth thinking of, what we're trying to prove, these are the reasons why it's different.
 And a couple of weeks later, he came back like, yep, I have a proof.
 
-Adam Jonas: 00:33:20
+**Adam Jonas**: 00:33:20
 
 How fortuitous.
 
-Pieter Wuille: 00:33:22
+**Pieter Wuille**: 00:33:22
 
 Amazing.
 And he also said, oh, I think we can do it with two rounds instead of three, which turned out to be a mistake.
 
-Tim Ruffing: 00:33:32
+**Tim Ruffing**: 00:33:32
 
 Right, this is what we now call in some papers insecure `MuSig`.
 I think the first paper you uploaded together with [Yannick Seurin](https://yannickseurin.github.io/) had this two round version, which was insecure.
 Yeah, I just found an attack on this very end of `MuSig` and also...
 
-Pieter Wuille: 00:33:52
+**Pieter Wuille**: 00:33:52
 
 It started with this meta-proof that showed that it would be impossible to prove such a scheme secure.
 And we initially thought, okay, this is like a limitation of proof techniques, like there's clearly no way of attacking this, no, those same people like a couple months later came up with an actual practical attack.
 
-Adam Jonas: 00:34:14
+**Adam Jonas**: 00:34:14
 
 When [Yannick Seurin](https://yannickseurin.github.io/) came with a proof, He came up with a proof for the three rounds.
 
-Pieter Wuille: 00:34:19
+**Pieter Wuille**: 00:34:19
 
 And two rounds.
 
-Tim Ruffing: 00:34:19
+**Tim Ruffing**: 00:34:19
 
 No, for the two rounds, but the proof was wrong.
 I mean, this is the detail.
@@ -646,20 +646,20 @@ Left out now.
 Yeah, so, yeah, I mean, there was a purported proof, and it turned out to be wrong, not only because people have shown that you can't prove the scheme secure, but also because, as you say, they came up with a concrete attack.
 So you had to revert to the three-round version, and this is really what we finally know.
 
-Pieter Wuille: 00:34:42
+**Pieter Wuille**: 00:34:42
 
 What we now call `MuSig` is the three-round scheme that...
 
-Adam Jonas: 00:34:47
+**Adam Jonas**: 00:34:47
 
 And are there applications for `MuSig` One?
 
-Pieter Wuille: 00:34:49
+**Pieter Wuille**: 00:34:49
 
 Well, every multi-signature...
 In a sense, yes.
 
-Tim Ruffing: 00:34:52
+**Tim Ruffing**: 00:34:52
 
 I mean, it's a totally fine scheme.
 It's just three rounds.
@@ -672,19 +672,19 @@ So there's one round where everybody talks, then there's a second round where ev
 
 ## Interactive versus non-interactive protocols
 
-Pieter Wuille: 00:35:33
+**Pieter Wuille**: 00:35:33
 
 Maybe this is a good time to go into interactive and non-interactive.
 Because in the lifetime of a signature, there are sort of two big phases.
 One is the setup, where the participants maybe exchange public keys.
 In Bitcoin world, this corresponds to the computation of the address, like determine what is the address for us together.
 
-Tim Ruffing: 00:35:55
+**Tim Ruffing**: 00:35:55
 
 When you say setup, you mean like really `key setup`, right?
 It's not like `signature setup`, it's a `key setup`.
 
-Pieter Wuille: 00:36:01
+**Pieter Wuille**: 00:36:01
 
 Yeah.
 And then the second phase is when a signature is intended to be made and there are a number of parties who agree on signing a particular message, what steps do they have to take?
@@ -696,25 +696,25 @@ They're just involved ones.
 And then at signing time, basically the same thing happens.
 They all give a signature and anyone, not even a participant, can put those signatures together in a script or a witness.
 
-Tim Ruffing: 00:36:59
+**Tim Ruffing**: 00:36:59
 
 And put together really just means concatenate, right?
 Like not really combined in a clever way and compress it.
 It's really just,
 
-Pieter Wuille: 00:37:06
+**Pieter Wuille**: 00:37:06
 
 yeah.
 Put them together, `concatenate`, put them in a transaction, and the transaction is valid.
 When we're talking about `MuSig1`, the three round scheme, the setup, `key setup` is still a `single round`.
 
-Tim Ruffing: 00:37:21
+**Tim Ruffing**: 00:37:21
 
 Yes, it's still like everyone kind of creates their own `public key` and just publishes to the other participant or even to some outside party.
 And you can still take all of these `individual public keys` and there is a `public algorithm` that even an outside party can run and combine the individual public keys to an `aggregate public key` that then represents the `entire group`.
 This is still true for all of the `MuSig` variants, which is a pretty useful property.
 
-Pieter Wuille: 00:37:50
+**Pieter Wuille**: 00:37:50
 
 And so at signing time, however, `MuSig1` has `three rounds`, which means it's sort of everyone comes up with a nonce, needs to reveal the hash of the `nonce`.
 After everyone has revealed the hashes of their nonce, then everybody reveals their nonce.
@@ -722,11 +722,11 @@ But they can only do so after everybody has revealed the hashes of their nonces.
 And then after everyone has revealed all their nonces, everyone comes up with a partial signature.
 And then any party, not even a participant, can take the partial signatures and turn them into...
 
-Tim Ruffing: 00:38:22
+**Tim Ruffing**: 00:38:22
 
 Combine them, compress them into a `single file signature`.
 
-Pieter Wuille: 00:38:25
+**Pieter Wuille**: 00:38:25
 
 But there are two points where basically everyone has to wait for everyone to do something And so that's why we say it has three rounds.
 And whenever it has more than one round, we say it's an interactive scheme.
