@@ -10,6 +10,7 @@ tags:
   - 'multisignature'
   - 'signature-aggregation'
   - 'threshold-signature'
+  - 'libsecp256k1'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
