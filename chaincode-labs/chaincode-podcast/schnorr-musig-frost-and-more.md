@@ -329,7 +329,7 @@ So you can't do this anymore in `Tapscript`, specifically because in order to ma
 So the change that is made is you can still have `invalid signatures`, but they have to be basically the `empty signature`.
 If you just give an `empty signature`, it's like that's obviously gonna be invalid.
 I'm not even gonna bother trying and I'm gonna treat that as an invalid one.
-But everything else, and this is how we envision batch validation to work once it gets implemented at that level because we need support for it like in libsecp256k1 cryptographic library and then in validation logic.
+But everything else, and this is how we envision batch validation to work once it gets implemented at that level because we need support for it like in `libsecp256k1` cryptographic library and then in validation logic.
 But how that would work is basically you work in two passes.
 In the first pass, you just run the scripts and every signature that's not an empty signature, you pretend will be valid.
 You just continue as if it is valid.
@@ -340,14 +340,14 @@ Speaker 2: 00:19:49
 
 I mean, you mentioned that this is currently not implemented, but one very nice feature about batch validation is it's really just an optimization on the verifier side.
 It doesn't require any soft fork or protocol change.
-It's really just like the verifier.
+It's really just like a verifier.
 So it could actually be that somebody's running it today.
 
 Speaker 0: 00:20:05
 
 Right, right.
 And this is by design, right?
-Like BIP-340, the Schnorr signature specification for Bitcoin and BIP-341, BIP-342, Taproot and Tapscript are all explicitly designed with the goal of being batch validatable.
+Like `BIP-340`, the `Schnorr` signature specification for Bitcoin and `BIP-341`, `BIP-342`, `Taproot` and `Tapscript` are all explicitly designed with the goal of being `batch validatable`.
 
 Speaker 2: 00:20:23
 
@@ -360,9 +360,9 @@ It's not just implemented because just adoption doesn't make it worth the work a
 
 Speaker 0: 00:20:39
 
-So there actually is a PR open against LibSecP that implements the batch validation at the low level.
+So there actually is a `PR` open against Libsecp that implements the batch validation at the low level.
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
-Because as you say, the batching would only apply to the taproot signatures.
+Because as you say, the batching would only apply to the `taproot signatures`.
 
 Speaker 2: 00:21:02
 
