@@ -763,7 +763,7 @@ If you want `low latency signing`, I believe like `Lightning`, for example, is p
 
 Speaker 2: 00:40:52
 
-`Lightning` is very interesting, very very interested in that because you if you open a connection to someone on the lightning peer-to-peer network in a sense, when you open a channel you at that point you can already run the first round.
+`Lightning` is very interested in that because you if you open a connection to someone on the lightning peer-to-peer network in a sense, when you open a channel you at that point you can already run the first round.
 So you exchange nonces.
 And then if there is an incoming payment, at that point, you know, okay, now I want to forward this payment and now I want to create a signature.
 So then it's really just because it's two parties, then it's really just one more message.
