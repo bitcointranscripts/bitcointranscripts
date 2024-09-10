@@ -101,7 +101,7 @@ Are you learning?
 Are you talking about actually deploying something in production at what scale, at what level?
 And there are different, you know, look at feedback, know who to ask, know that there are lots of smart people out there.
 
-Speaker 2: 00:02:34
+Tim Ruffing: 00:02:34
 
 That's a pretty good answer actually.
 The exact same saying came to my mind when you asked the question.
@@ -114,7 +114,7 @@ Pieter Wuille: 00:03:03
 
 You're supposed to be the expert.
 
-Speaker 2: 00:03:05
+Tim Ruffing: 00:03:05
 
 I mean, yeah, but I mean, this was just some undergrad course, right?
 Of course, it's different after you completed the PhD, maybe, but at some point, I guess you get the feeling of when you are at the point when you can do it.
@@ -130,7 +130,7 @@ There just seems to be a different skill set though, in terms of understanding a
 
 ## Different levels of cryptography 
 
-Speaker 2: 00:03:45
+Tim Ruffing: 00:03:45
 
 It's very related, but yeah, it's a kind of different skill set.
 I mean, it depends.
@@ -152,7 +152,7 @@ Maybe precisely because there is less of an academic expectation to like it is m
 I can arbitrarily put them together and build a system.
 And these things sometimes break because the manner in which you compose them matters.
 
-Speaker 2: 00:05:44
+Tim Ruffing: 00:05:44
 
 Yeah, and also it's really what you said.
 I mean, security is hard because you have to get it right on every level.
@@ -166,7 +166,7 @@ Adam Jonas: 00:05:55
 So you said early that paying attention to feedback from others is really important.
 And so What is the interaction between the work that you do on Bitcoin and the wider applied cryptography community?
 
-Speaker 2: 00:06:08
+Tim Ruffing: 00:06:08
 
 It kind of depends again on what the concrete thing is.
 But I guess a lot of work that I recently did was, I mean, I come basically from an academic background, right?
@@ -178,7 +178,7 @@ Pieter Wuille: 00:06:41
 
 They may point you at related work you were completely unaware of.
 
-Speaker 2: 00:06:45
+Tim Ruffing: 00:06:45
 
 Totally, yeah.
 This kind of feedback is very helpful.
@@ -194,7 +194,7 @@ But cryptography is one of those sweet spots where One, you get people that are 
 
 ## Full Stack Cryptographer
 
-Speaker 2: 00:08:03
+Tim Ruffing: 00:08:03
 
 Yeah.
 As I said, I think also earlier, there are different levels of, or different skill sets on different levels, like really from theory to practice.
@@ -221,7 +221,7 @@ Pieter Wuille: 00:09:17
 
 Well, in...
 
-Speaker 2: 00:09:20
+Tim Ruffing: 00:09:20
 
 Are you happy in terms of adoption?
 Maybe that's an interesting question.
@@ -237,7 +237,7 @@ These things weren't designed to, you know, I wasn't expecting everyone to immed
 It will start here and there in niche use cases that really use it.
 And I certainly expect that over the course of a couple of years, it will essentially become a default, but no rush.
 
-Speaker 2: 00:10:19
+Tim Ruffing: 00:10:19
 
 Right.
 Also, I mean, I think what we can say after one year is that it's running, it always worked, right, it didn't create any...
@@ -268,7 +268,7 @@ But on the other hand, like `ECDSA` is already used, like people, whatever its s
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
 All the advantages in practice come from either simplicity of schemes that can be built on top of it, extensions that can be made like `crossing input aggregation` and `batch validation`.
 
-Speaker 2: 00:12:29
+Tim Ruffing: 00:12:29
 
 Maybe to add some of the history, more on the history of the signature schemes themselves.
 Schnorr came up with this really nice signature scheme.
@@ -292,7 +292,7 @@ And `DSA`, as far as I understand, was used in practice long before there was an
 There are some now, but as Tim says, they're much more awkward and weird.
 But `DSA`, just people started using it as far as I know, because it's similar enough.
 
-Speaker 2: 00:15:07
+Tim Ruffing: 00:15:07
 
 Yeah, but if you look at it from a mathematical point of view, it's really like they started with `Schnorr signatures`, but because they were patented, they had to make a few very strange tweaks to it and what comes out of it it's a really really inelegant thing and this ended up being `DSA` and now if you okay if you port it to `Elliptic Curves` then you get `ECDSA`, `Elliptic Curve DSA`.
 
@@ -353,7 +353,7 @@ You just continue as if it is valid.
 But you remember the combination of the public key, the message and the signature that you saw and you put them all on a list.
 And after you've done verifying the whole transaction or the whole block even, you have now this huge list of all signatures to validate and then you hand off to the batch validator and check are they all valid or not.
 
-Speaker 2: 00:19:49
+Tim Ruffing: 00:19:49
 
 I mean, you mentioned that this is currently not implemented, but one very nice feature about batch validation is it's really just an optimization on the verifier side.
 It doesn't require any soft fork or protocol change.
@@ -366,7 +366,7 @@ Right, right.
 And this is by design, right?
 Like `BIP-340`, the `Schnorr` signature specification for Bitcoin and `BIP-341`, `BIP-342`, `Taproot` and `Tapscript` are all explicitly designed with the goal of being `batch validatable`.
 
-Speaker 2: 00:20:23
+Tim Ruffing: 00:20:23
 
 Yeah, the PIP 340, the Schnorr signature PIP already basically contains a specification for batch verification, batch validation.
 Yeah, as you say, it's just not implemented yet.
