@@ -759,15 +759,15 @@ I can still do more.
 Not exactly the same, but what this does is it turns something before the signing step into something interactive.
 But now the signing itself can happen non-interactively.
 And this is a trade-off that in some settings is very useful.
-If you want low latency signing, I believe like Lightning, for example, is particularly interested in that.
+If you want `low latency signing`, I believe like `Lightning`, for example, is particularly interested in that.
 
 Speaker 2: 00:40:52
 
-Lightning is very interesting, very very interested in that because you if you open a connection to someone on the lightning peer-to-peer network in a sense, when you open a channel you at that point you can already run the first round.
+`Lightning` is very interesting, very very interested in that because you if you open a connection to someone on the lightning peer-to-peer network in a sense, when you open a channel you at that point you can already run the first round.
 So you exchange nonces.
 And then if there is an incoming payment, at that point, you know, okay, now I want to forward this payment and now I want to create a signature.
 So then it's really just because it's two parties, then it's really just one more message.
-Because we have run the first round, and then let's say I'm the one in the Lightning channel, then I can create my partial signature locally, and I just send it to the other participant, and then the other participant can create their partial signature, and then they already have the final signature.
+Because we have run the first round, and then let's say I'm the one in the `Lightning channel`, then I can create my `partial signature` locally, and I just send it to the other participant, and then the other participant can create their `partial signature`, and then they already have the `final signature`.
 I mean, I don't have it at that point, but it's maybe enough that one of the participants has it.
 So it's really just like one message then when the transaction arrives that we want to sign.
 
