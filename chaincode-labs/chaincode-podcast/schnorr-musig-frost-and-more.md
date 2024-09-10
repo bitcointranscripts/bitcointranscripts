@@ -360,13 +360,13 @@ It's not just implemented because just adoption doesn't make it worth the work a
 
 Speaker 0: 00:20:39
 
-So there actually is a `PR` open against `libsecp` that implements the batch validation at the `low level`.
+So there actually is a `PR` open against `libsecp256k1` that implements the batch validation at the `low level`.
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
 Because as you say, the batching would only apply to the `taproot signatures`.
 
 Speaker 2: 00:21:02
 
-The interesting part is that you have this batch validation not only of `schnorr signatures` but also of taproot openings.
+The interesting part is that you have this batch validation not only of `Schnorr signatures` but also of taproot openings.
 
 Speaker 0: 00:21:13
 
@@ -393,7 +393,7 @@ They each count as half a signature.
 
 Speaker 1: 00:23:00
 
-So another reason to adopt Schnorr is it just makes building `advanced signing protocols` easier?
+So another reason to adopt `Schnorr` is it just makes building `advanced signing protocols` easier?
 
 Speaker 0: 00:23:10
 
