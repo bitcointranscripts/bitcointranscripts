@@ -322,7 +322,7 @@ And so how would that work in practice?
 So you have, let's imagine we have a, we already have mixed blocks, as in we have some blocks with `DSA` and some blocks with aided `taproot outputs`.
 So you're really just sort of like combining the `taproot outputs` and then validating them, and then you do everything else as before.
 
-Speaker 0: 00:17:22
+Pieter Wuille: 00:17:22
 
 Exactly.
 There have been ideas in the past for batching `ECDSA` that it's possible with additional witness data, but that's really an ugly layer violating thing you need so I don't think anyone's practically thinking about adding batch validation for `ECDSA`.
@@ -335,7 +335,7 @@ Adam Jonas: 00:18:17
 Why was that left open?
 Why not include that in the soft fork, for example?
 
-Speaker 0: 00:18:23
+Pieter Wuille: 00:18:23
 
 So you can't do this anymore in `Tapscript`, specifically because in order to make batch validation possible, the software needs to know ahead of time which signatures are expected to be valid or not.
 So the change that is made is you can still have `invalid signatures`, but they have to be basically the `empty signature`.
@@ -355,7 +355,7 @@ It doesn't require any soft fork or protocol change.
 It's really just like a verifier.
 So it could actually be that somebody's running it today.
 
-Speaker 0: 00:20:05
+Pieter Wuille: 00:20:05
 
 Right, right.
 And this is by design, right?
@@ -370,7 +370,7 @@ Adam Jonas: 00:20:35
 
 It's not just implemented because just adoption doesn't make it worth the work at the moment?
 
-Speaker 0: 00:20:39
+Pieter Wuille: 00:20:39
 
 So there actually is a `PR` open against `libsecp256k1` that implements the batch validation at the `low level`.
 But yes, the reason why it hasn't been a priority to work on is simply it doesn't make sense until there is significant adoption.
@@ -390,7 +390,7 @@ So If you have a `taproot key spend`, it's just a `Schnorr signature`, but if it
 And checking this opening of the commitment is also an `elliptic curve operation`, in a sense, and we could also add it to this batching.
 So you have a batch of signatures in your block, in a sense, and you have a batch of `taproot openings` in your, or `script spends` in your block, and you could also like, batch the, batch both of the operations together in one single bit.
 
-Speaker 0: 00:21:47
+Pieter Wuille: 00:21:47
 
 So for context, how a `taproot script spend` works is, you know, every `taproot output` is essentially an `encoding` of you can spend with some public key or by satisfying one of possibly multiple scripts.
 And that set of `scripts` can be empty, that `public key` can be a `dummy key`, but both sort of always exist.
@@ -407,7 +407,7 @@ Speaker 1: 00:23:00
 
 So another reason to adopt `Schnorr` is it just makes building `advanced signing protocols` easier?
 
-Speaker 0: 00:23:10
+Pieter Wuille: 00:23:10
 
 I think that that is really the number one reason why we want this.
 
@@ -424,7 +424,7 @@ I think like the most popular, in a sense, type of construction so far is `multi
 So I mean there's some kind of, we need to talk about the terminology here, because when people in the Bitcoin space say `multi-sig`, they typically don't make a distinction between `N of N` `multi-sig` where you have like n users, they all have public keys, but you require all of them to agree to give a signature, so it's really like `N of N` versus this, what I call `T of N` `multi-sig`, where T is some other arbitrary number that can be smaller than N.
 So like say we have a, we could have a `2 of 3` at this table here where we like have a set, We have a key that represents the three of us, but you would only need the agreement of two of us to actually sign it.
 
-Speaker 0: 00:24:26
+Pieter Wuille: 00:24:26
 
 In the cryptography world, those are known as `threshold signatures`, while `multi-signatures` are the `N of N` case.
 
@@ -450,7 +450,7 @@ Okay.
 Yeah, so there's this `MuSig` family of `signing protocols` for `multi-sig`, that's why it's called MuSig.
 Don't know who came up with it.
 
-Speaker 0: 00:25:16
+Pieter Wuille: 00:25:16
 
 Yannick came up with the name.
 
@@ -458,7 +458,7 @@ Speaker 2: 00:25:17
 
 Yannick, okay, yeah.
 
-Speaker 0: 00:25:18
+Pieter Wuille: 00:25:18
 
 Yeah, and I think the `mu` is also because it's a letter, Greek letter that's used for `micro`, so they're small.
 
@@ -466,7 +466,7 @@ Speaker 2: 00:25:25
 
 Oh, I didn't, I wasn't even aware of that, yeah.
 
-Speaker 0: 00:25:28
+Pieter Wuille: 00:25:28
 
 Oh, and multiplicative, because there's a multiplicative tweaking in there.
 I think that was also part of the motivation.
@@ -475,7 +475,7 @@ Speaker 2: 00:25:33
 
 It's very deep, I see.
 
-Speaker 0: 00:25:34
+Pieter Wuille: 00:25:34
 
 Yeah.
 
@@ -483,7 +483,7 @@ Speaker 2: 00:25:36
 
 Yannick, by the way, is Yannick Sarah.
 
-Speaker 0: 00:25:39
+Pieter Wuille: 00:25:39
 
 The co-author on, I think, all the `MuSig` papers so far.
 
