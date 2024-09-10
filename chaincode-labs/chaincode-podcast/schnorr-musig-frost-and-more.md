@@ -298,10 +298,10 @@ Is that get us closer to reasons to move over?
 Speaker 0: 00:16:00
 
 I think it is, but they're only tangible in the batching situation.
-To give some context, batch validation is you have multiple messages, multiple keys, every message has a key and a corresponding signature.
+To give some context, `batch validation` is you have multiple messages, multiple keys, every message has a key and a corresponding signature.
 So you have triplets of message public key signature and you want to verify all of them at once, and you only care whether all of them are valid or whether at least one is invalid, and if it is, you don't care which one.
 And this is a property that digital signature schemes have been studied before.
-And it is such an amazingly good match for block validation in Bitcoin because we really have this hundreds or thousands of signatures that We really only care whether they're all valid or not.
+And it is such an amazingly good match for block validation in Bitcoin because we really have this hundreds or thousands of signatures that we really only care whether they're all valid or not.
 And so there is a decent performance improvement, like a factor of two, three, that order of magnitude that you can get from, as you do more and more at once, you get.
 
 Speaker 1: 00:17:02
