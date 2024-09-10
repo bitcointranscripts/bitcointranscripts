@@ -11,6 +11,7 @@ tags:
   - 'signature-aggregation'
   - 'threshold-signature'
   - 'libsecp256k1'
+  - 'taproot'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
