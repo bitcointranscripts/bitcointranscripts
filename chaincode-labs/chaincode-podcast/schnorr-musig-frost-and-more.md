@@ -326,10 +326,10 @@ Why not include that in the soft fork, for example?
 Speaker 0: 00:18:23
 
 So you can't do this anymore in `Tapscript`, specifically because in order to make batch validation possible, the software needs to know ahead of time which signatures are expected to be valid or not.
-So the change that is made is you can still have invalid signatures, but they have to be basically the empty signature.
-If you just give an empty signature, it's like that's obviously gonna be invalid.
+So the change that is made is you can still have `invalid signatures`, but they have to be basically the `empty signature`.
+If you just give an `empty signature`, it's like that's obviously gonna be invalid.
 I'm not even gonna bother trying and I'm gonna treat that as an invalid one.
-But everything else, and this is how we envision batch validation to work once it gets implemented at that level because we need support for it like in LibSecP cryptographic library and then in validation logic.
+But everything else, and this is how we envision batch validation to work once it gets implemented at that level because we need support for it like in libsecp256k1 cryptographic library and then in validation logic.
 But how that would work is basically you work in two passes.
 In the first pass, you just run the scripts and every signature that's not an empty signature, you pretend will be valid.
 You just continue as if it is valid.
