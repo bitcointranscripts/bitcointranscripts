@@ -374,7 +374,7 @@ Right.
 
 Speaker 2: 00:21:13
 
-So If you have a taproot keyspan, it's just a Schnorr signature, but if it's a script span, you would open this taproot commitment to this taproot auto public key.
+So If you have a `taproot key spend`, it's just a `Schnorr signature`, but if it's a `script spend`, you would open this `taproot commitment` to this taproot auto public key.
 And checking this opening of the commitment is also an `elliptic curve operation`, in a sense, and we could also add it to this batching.
 So you have a batch of signatures in your block, in a sense, and you have a batch of `taproot openings` in your, or `script spends` in your block, and you could also like, batch the, batch both of the operations together in one single bit.
 
