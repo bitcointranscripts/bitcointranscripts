@@ -424,7 +424,7 @@ Whereas in Bitcoin, when you say multi-sig, you usually mean any of these.
 
 Speaker 1: 00:24:50
 
-Okay, so multisigs, let's say, are n of n, we'll use the proper terminology, and there's t of n threshold signatures, and musig is supporting n of n.
+Okay, so `multi-sigs`, let's say, are n of n, we'll use the proper terminology, and there's `t of n` `threshold signatures`, and `MuSig` is supporting n of n.
 
 Speaker 2: 00:25:05
 
@@ -435,7 +435,7 @@ Right.
 Speaker 2: 00:25:07
 
 Okay.
-Yeah, so there's this Music family of signing protocols for multi-sig, that's why it's called Music.
+Yeah, so there's this `MuSig` family of `signing protocols` for `multi-sig`, that's why it's called MuSig.
 Don't know who came up with it.
 
 Speaker 0: 00:25:16
