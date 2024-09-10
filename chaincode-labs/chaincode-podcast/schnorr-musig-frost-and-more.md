@@ -232,24 +232,24 @@ And this is, I think, good to know.
 
 Speaker 1: 00:10:44
 
-And so maybe, just sort of recap, Introducing Schnorr has been something that's been talked about for a very long time.
+And so maybe, just sort of recap, Introducing `Schnorr` has been something that's been talked about for a very long time.
 2014?
 2014, yeah.
 
-## Why is Schnorr preferable to ECDSA?
+## Why is `Schnorr` preferable to `ECDSA`?
 
 Speaker 1: 00:10:54
 
-And so why do we want this over ECDSA?
+And so why do we want this over `ECDSA`?
 
 Speaker 0: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
-The very first, this observation years ago, 2014 was like, wow, Schnorr has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as cross-input signature aggregation.
-And that goal drove a lot of interest in the scheme, because if you're talking about individual Schnorr signatures on chain or individual ECDSA signatures, maybe a bit faster here or there, they have a better provable security scheme.
-But on the other hand, like ECDSA is already used, like people, whatever its security assumptions and requirements for proofs are, people have, perhaps unwillingly, already accepted them.
+The very first, this observation years ago, 2014 was like, wow, `Schnorr` has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as cross-input signature aggregation.
+And that goal drove a lot of interest in the scheme, because if you're talking about individual `Schnorr signatures` on chain or individual `ECDSA` signatures, maybe a bit faster here or there, they have a better provable security scheme.
+But on the other hand, like `ECDSA` is already used, like people, whatever its security assumptions and requirements for proofs are, people have, perhaps unwillingly, already accepted them.
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
-All the advantages in practice come from either simplicity of schemes that can be built on top of it, extensions that can be made like crossing input aggregation and batch validation.
+All the advantages in practice come from either simplicity of schemes that can be built on top of it, extensions that can be made like `crossing input aggregation` and `batch validation`.
 
 Speaker 2: 00:12:29
 
@@ -257,10 +257,10 @@ Maybe to add some of the history, more on the history of the signature schemes t
 Schnorr came up with this really nice signature scheme.
 It has nice algebraic properties, like it looks elegant from a mathematical point of view in a sense, and this also makes it easier to prove it's secure, to give a formal proof of security, which means like if an attacker could forge signature under this scheme, then the attacker could also prove, sorry, could also solve the discrete logarithm problem with some side constraints and so on.
 I can't go into technical details, but this is basically roughly what the proof would show.
-Because people have studied this discrete logarithm problem on elliptic curves for a very long time, We are pretty confident that it's secure or that it's hard to solve.
-So we are pretty confident that Schnorr signatures are hard to forge and they are actually secure.
-And for ECDSA, the story is very different.
-There are some ways to establish proofs for the security of ECDSA, but they're really like strange models, you need a lot of machinery and a lot of strange site conditions to be able to prove something.
+Because people have studied this `discrete logarithm problem` on `elliptic curves` for a very long time, We are pretty confident that it's secure or that it's hard to solve.
+So we are pretty confident that `Schnorr signatures` are hard to forge and they are actually secure.
+And for `ECDSA`, the story is very different.
+There are some ways to establish proofs for the security of `ECDSA`, but they're really like strange models, you need a lot of machinery and a lot of strange site conditions to be able to prove something.
 So the confidence we really have in ECDSA signatures is really because they have been out there and nobody has really broken them so far.
 But that's totally fine, I totally agree with Peter.
 This is not a main motivation to change this thing.
