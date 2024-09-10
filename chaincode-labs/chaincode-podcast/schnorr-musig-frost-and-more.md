@@ -490,7 +490,7 @@ Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Pieter can
 
 Speaker 0: 00:25:57
 
-Yeah, I mean, and even that had an old history that came before it because right now we're talking about multi-signatures and so that is talking about the use case where there is someone on chain who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
+Yeah, I mean, and even that had an old history that came before it because right now we're talking about `multi-signatures` and so that is talking about the use case where there is someone `on-chain` who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
 
 Speaker 2: 00:26:20
 
@@ -503,7 +503,7 @@ But interestingly, the blockchain does not know or care that there are actually 
 
 Speaker 2: 00:27:03
 
-Whoever was allowed to spend these coins, and in this case it could be a group, but just by looking at this publicly you don't know, is allowed to...
+Whoever was allowed to spend these coins, and in this case it could be a group, but just by looking at this `public key` you don't know, is allowed to...
 Yeah.
 Like, is authorizing this transaction.
 
