@@ -380,20 +380,20 @@ So you have a batch of signatures in your block, in a sense, and you have a batc
 
 Speaker 0: 00:21:47
 
-So for context, how a taproot script spend works is, you know, every taproot output is essentially an encoding of you can spend with some public key or by satisfying one of possibly multiple scripts.
-And that set of scripts can be empty, that public key can be a dummy key, but both sort of always exist.
+So for context, how a `taproot script spend` works is, you know, every `taproot output` is essentially an `encoding` of you can spend with some public key or by satisfying one of possibly multiple scripts.
+And that set of `scripts` can be empty, that `public key` can be a `dummy key`, but both sort of always exist.
 And what you do is you compute the hash of all the scripts and you use that to tweak your public key in a way.
 And when spending, either you give a signature with that tweaked key directly, and all you see is a signature, or you reveal on-chain, wait, actually, let me prove to you that this public key you saw before is actually derived from this other public key with this script as a tweak.
-And taproot rules in that case allow you to spend as well.
+And `taproot rules` in that case allow you to `spend` as well.
 But that involves a check.
-Of course, the verifier has to check that if you claim, well, this public key was actually derived from this other public key in a script, that has to be checked.
-And so that's the opening of the commitment.
-And that check can be batched together with Schnorr signature validations.
+Of course, the verifier has to check that if you claim, well, this public key was actually derived from this other `public key` in a script, that has to be checked.
+And so that's the opening of the `commitment`.
+And that `check` can be batched together with `Schnorr signature validations`.
 They each count as half a signature.
 
 Speaker 1: 00:23:00
 
-So another reason to adopt Schnorr is it just makes building advanced signing protocols easier?
+So another reason to adopt Schnorr is it just makes building `advanced signing protocols` easier?
 
 Speaker 0: 00:23:10
 
