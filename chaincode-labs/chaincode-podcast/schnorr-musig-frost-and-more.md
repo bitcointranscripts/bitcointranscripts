@@ -26,55 +26,55 @@ additional_resources:
   - title: 'FROST'
     url: 'https://eprint.iacr.org/2020/852.pdf'
 ---
-Speaker 0: 00:00:00
+[Mark “Murch” Erhardt]: 00:00:00
 
 This goes to like this idea of like really only using the blockchain to settle disagreements.
 Like as long as everyone agrees with all we have to say to the blockchain, it's like, yeah, you don't really need to know what the rules were.
 Hey Jonas, good to be back.
 
-Speaker 1: 00:00:19
+Adam Jonas: 00:00:19
 
 So while you were out being the Bitcoin ambassador that we depended on you to be, I was here stuck in the cold talking to Tim and Peter and I thought it was a good conversation.
 Yeah.
 I don't think I let you down too much.
 
-Speaker 0: 00:00:32
+[Mark “Murch” Erhardt]: 00:00:32
 
 I'm looking forward to hearing it.
 I hear that you went over a lot of stuff.
 
-Speaker 1: 00:00:37
+Adam Jonas: 00:00:37
 
 We did.
 We covered updates about `Frost` and `Roast`, `MuSig2'.
 We talked about ideas that are a little further out in terms of `batch verification`, `signature aggregation`, `interactive full aggregation`, `cross input signature aggregation`.
 
-Speaker 0: 00:00:54
+[Mark “Murch” Erhardt]: 00:00:54
 
 So everything, like everything that pertains to `taproot` and since then?
 
-Speaker 1: 00:00:58
+Adam Jonas: 00:00:58
 
 Yeah, but It only took two hours.
 
-Speaker 2: 00:01:01
+[Mark “Murch” Erhardt]: 00:01:01
 
 That sounds like a hefty episode.
 
-Speaker 0: 00:01:02
+Adam Jonas: 0: 00:01:02
 
 That's all it takes.
 
-Speaker 1: 00:01:05
+Adam Jonas : 00:01:05
 
 Yeah, no, I really enjoyed the conversation and was even able to follow it.
 Anyway, hope you enjoyed listening.
-♪♪ Welcome, Tim and Peter.
+♪♪ Welcome, [Tim](https://x.com/real_or_random) and [Peter](https://x.com/pwuille).
 Very excited to have you.
-Unfortunately, Merch is not here to help me.
+Unfortunately, [Murch](https://x.com/murchandamus) is not here to help me.
 I could really use this help today, but this is what we've got.
 So we're going to dive right in.
-And the first question is for both of you, When do you need to roll your own crypto?
+And the first question is for both([Pieter Wuille](https://x.com/pwuille), [Tim Ruffing](https://x.com/real_or_random)) of you, When do you need to roll your own crypto?
 
 ## When to roll your own cryptography
 
