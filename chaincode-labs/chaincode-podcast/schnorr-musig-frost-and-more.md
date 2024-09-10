@@ -795,7 +795,7 @@ It's like a threshold signature of `MuSig`.
 And in the signing part, it's very, very similar.
 Actually, it's fun that they came up with the same idea to basically build a two round signing thing.
 At the same time, we came up with the idea, so there were really two.
-There was even one other research team that had the same idea in Prevalos, which also is good to know because this again like confirms the idea that what we're doing here is correct.
+There was even one other research team that had the same idea in parallels, which also is good to know because this again like confirms the idea that what we're doing here is correct.
 
 Speaker 0: 00:43:20
 
