@@ -928,12 +928,12 @@ As long as they do this on chain it really is like just a public key, just a sig
 
 Speaker 0: 00:51:10
 
-Yeah and this is really the philosophy behind Taproot like why do we even bother like elevating one individual public key to be blessed, to be like, you can be spent super efficiently.
-It is because of this understanding that almost all involved spending policies can, without loss of security, be turned into a, okay, that involved spending policy or everybody agrees like if everybody agrees and this goes to like this idea of like we're really only using the blockchain to settle disagreements like as long as everyone agrees with all we have to say to the blockchain is like yeah you don't really need to know what the rules were everybody who and then everybody who could have been involved in this thing agrees that this is the spend we want to do.
+Yeah and this is really the philosophy behind `Taproot` like why do we even bother like elevating one individual `public key` to be blessed, to be like, you can be spent super efficiently.
+It is because of this understanding that almost all involved `spending policies` can, without loss of security, be turned into a, okay, that involved spending policy or everybody agrees like if everybody agrees and this goes to like this idea of like we're really only using the blockchain to settle disagreements like as long as everyone agrees with all we have to say to the blockchain is like yeah you don't really need to know what the rules were everybody who and then everybody who could have been involved in this thing agrees that this is the spend we want to do.
 
 Speaker 1: 00:52:04
 
-Sure, the robo judge.
+Sure, the `robo judge`.
 Yeah, exactly.
 
 Speaker 0: 00:52:07
