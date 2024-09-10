@@ -9,6 +9,7 @@ tags:
   - 'schnorr-signatures'
   - 'multisignature'
   - 'signature-aggregation'
+  - 'threshold-signature'
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
