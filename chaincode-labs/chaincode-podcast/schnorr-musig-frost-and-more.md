@@ -281,8 +281,8 @@ Yeah, but if you look at it from a mathematical point of view, it's really like 
 
 Speaker 0: 00:15:28
 
-We talk about Schnorr signatures but we really should distinguish like Schnorr signatures versus elliptic curve Schnorr signatures.
-And the latter do exist, like for example, ADD25519 is a very well-known digital signature scheme that's, yeah, ADDESA, they call it ADDESA, but it's really Schnorr.
+We talk about `Schnorr signatures` but we really should distinguish like `Schnorr signatures` versus `elliptic curve Schnorr signatures`.
+And the latter do exist, like for example, ADD25519 is a very well-known digital signature scheme that's, yeah, ADDESA, they call it ADDESA, but it's really `Schnorr`.
 
 Speaker 1: 00:15:50
 
