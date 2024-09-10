@@ -480,7 +480,7 @@ Speaker 2: 00:25:43
 Yes.
 So it is, I think, started with what we now call `MuSig1`.
 Or Broken `MuSig1`.
-Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Peiter can...
+Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Pieter can...
 
 Speaker 0: 00:25:57
 
