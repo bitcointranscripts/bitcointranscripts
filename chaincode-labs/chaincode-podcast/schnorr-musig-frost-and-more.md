@@ -532,7 +532,7 @@ The difference is the `aggregation of the keys` done off-chain or on-chain And i
 Speaker 2: 00:29:08
 
 In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
-So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an ordinary single sign-on key or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
+So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an `ordinary single sign-on key` or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
 
 Speaker 0: 00:29:33
 
@@ -544,31 +544,31 @@ This is the thing we're talking about at the moment, right?
 
 Speaker 0: 00:29:38
 
-Because in the case of cross input signature aggregation, the verifier actually has to implement a multi signature scheme.
+Because in the case of `cross input signature aggregation`, the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multi-signatures.
-Like `BIP 340 today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
-The same is not true for cross input aggregation.
-And so the history of music actually starts with the idea of cross-input signature aggregation.
+Like `BIP 342` today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
+The same is not true for `cross input aggregation`.
+And so the history of `MuSig` actually starts with the idea of `cross-input signature aggregation`.
 Because cross-input signature aggregation has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
 I mean, you have an output you created, you have an output I created.
 I can try creating a transaction that spends both at the same time, maybe together with one of mine.
-And so it is very important that there is no way for me to come up with a fake key that somehow, when combined with your keys, result in something that I could sign for.
+And so it is very important that there is no way for me to come up with a `fake key` that somehow, when combined with your keys, result in something that I could sign for.
 
 ## Rogue key attack or key cancellation attack
 
 Speaker 1: 00:31:01
 
-This is called the rogue key attack?
+This is called the `rogue key attack`?
 Exactly.
-Or the key cancellation attack.
+Or the `key cancellation attack`.
 
 Speaker 0: 00:31:04
 
 Exactly, exactly.
-So the obstacle in making cross-input signature aggregation happen was, whoa, we have this problem of cancellation of keys, and we need a solution for that.
+So the obstacle in making `cross-input signature aggregation happen `was, whoa, we have this `problem of cancellation of keys`, and we need a solution for that.
 And years ago I came up with what I thought was a solution for it, which is this delinearization trick of multiplying each key with a randomizer to stop that from happening.
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
-That fix was what is now called the MUSIC I scheme, with three rounds.
+That fix was what is now called the 'MuSig 'scheme, with three rounds.
 
 Speaker 1: 00:31:54
 
