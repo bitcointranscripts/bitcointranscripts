@@ -143,7 +143,7 @@ And I guess the opposite is also true.
 
 ## Security Engineering vs Cryptography
 
-Pieter Wuille: 00:04:32
+**Pieter Wuille**: 00:04:32
 
 Yeah, and I think even expectations around this differ, because if you go up this ladder from very theoretical, low-level ideas to closer to real worlds, There is some threshold where people stop calling it cryptography, where it becomes security engineering or something like that.
 And that boundary is essentially arbitrary.
@@ -152,7 +152,7 @@ Maybe precisely because there is less of an academic expectation to like it is m
 I can arbitrarily put them together and build a system.
 And these things sometimes break because the manner in which you compose them matters.
 
-Tim Ruffing: 00:05:44
+**Tim Ruffing**: 00:05:44
 
 Yeah, and also it's really what you said.
 I mean, security is hard because you have to get it right on every level.
@@ -161,12 +161,12 @@ In the end, you get an attack.
 
 ##  Quality of Feedback and Review from Peers
 
-Adam Jonas: 00:05:55
+**Adam Jonas**: 00:05:55
 
 So you said early that paying attention to feedback from others is really important.
 And so What is the interaction between the work that you do on Bitcoin and the wider applied cryptography community?
 
-Tim Ruffing: 00:06:08
+**Tim Ruffing**: 00:06:08
 
 It kind of depends again on what the concrete thing is.
 But I guess a lot of work that I recently did was, I mean, I come basically from an academic background, right?
@@ -174,11 +174,11 @@ I have a PhD in computer science with a focus on cryptography.
 So it's pretty standard and it should be the case like if that if you come up with a new cryptographic construction, you write it up in a proper paper, you try to get it published, which means you collect feedback from other researchers.
 They hopefully look at it, they hopefully look at your arguments, at your security proofs.
 
-Pieter Wuille: 00:06:41
+**Pieter Wuille**: 00:06:41
 
 They may point you at related work you were completely unaware of.
 
-Tim Ruffing: 00:06:45
+**Tim Ruffing**: 00:06:45
 
 Totally, yeah.
 This kind of feedback is very helpful.
@@ -186,7 +186,7 @@ But then again, if it comes to specific details of implementations, then this ma
 I mean, of course you could send it, but there's nothing you would write up in a paper or get feedback from the academic community.
 So this is more like a different set of people, I'd say, that you now would ask and get feedback on.
 
-Adam Jonas: 00:07:12
+**Adam Jonas**: 00:07:12
 
 Yeah, I guess not being in the academic community and not being an implementer of cryptography myself, it just sort of seems like cryptography is one of those areas where academia and implementation is actually closer together than other areas of Bitcoin.
 There seems to be this sort of like at least arm lengths relationship in other parts, and possibly even bordering on disdain for like outsiders not properly understanding the system and like not like understanding the real research problems and the applicability.
@@ -194,7 +194,7 @@ But cryptography is one of those sweet spots where One, you get people that are 
 
 ## Full Stack Cryptographer
 
-Tim Ruffing: 00:08:03
+**Tim Ruffing**: 00:08:03
 
 Yeah.
 As I said, I think also earlier, there are different levels of, or different skill sets on different levels, like really from theory to practice.
@@ -204,7 +204,7 @@ I mean, if you hear about academic implementations, it may sound like a good thi
 So I really want to cover the entire range.
 I mean, I leave it up to others to judge if I'm doing well at this, but as I understand my role is trying to get a little bit in all of these worlds to have the big picture in a sense.
 
-Adam Jonas: 00:08:54
+**Adam Jonas**: 00:08:54
 
 Cool, I don't want to belabor this too long because we got some lower-level stuff to talk about, but maybe let's start with `Schnorr signatures`.
 
