@@ -455,81 +455,81 @@ Okay.
 Yeah, so there's this `MuSig` family of `signing protocols` for `multi-sig`, that's why it's called MuSig.
 Don't know who came up with it.
 
-Pieter Wuille: 00:25:16
+**Pieter Wuille**: 00:25:16
 
 [Yannick Seurin](https://yannickseurin.github.io/) came up with the name.
 
-Tim Ruffing: 00:25:17
+**Tim Ruffing**: 00:25:17
 
 [Yannick Seurin](https://yannickseurin.github.io/), okay, yeah.
 
-Pieter Wuille: 00:25:18
+**Pieter Wuille**: 00:25:18
 
 Yeah, and I think the `mu` is also because it's a letter, Greek letter that's used for `micro`, so they're small.
 
-Tim Ruffing: 00:25:25
+**Tim Ruffing**: 00:25:25
 
 Oh, I didn't, I wasn't even aware of that, yeah.
 
-Pieter Wuille: 00:25:28
+**Pieter Wuille**: 00:25:28
 
 Oh, and multiplicative, because there's a multiplicative tweaking in there.
 I think that was also part of the motivation.
 
-Tim Ruffing: 00:25:33
+**Tim Ruffing**: 00:25:33
 
 It's very deep, I see.
 
-Pieter Wuille: 00:25:34
+**Pieter Wuille**: 00:25:34
 
 Yeah.
 
-Tim Ruffing: 00:25:36
+**Tim Ruffing**: 00:25:36
 
 Yannick, by the way, is [Yannick Seurin](https://yannickseurin.github.io/).
 
-Pieter Wuille: 00:25:39
+**Pieter Wuille**: 00:25:39
 
 The co-author on, I think, all the `MuSig` papers so far.
 
-Tim Ruffing: 00:25:43
+**Tim Ruffing**: 00:25:43
 
 Yes.
 So it is, I think, started with what we now call `MuSig1`.
 
-Pieter Wuille: 00:25:51
+**Pieter Wuille**: 00:25:51
 
 Or Broken `MuSig1`.
 
-Tim Ruffing: 00:25:53
+**Tim Ruffing**: 00:25:53
 
 Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Pieter can...
 
-Pieter Wuille: 00:25:57
+**Pieter Wuille**: 00:25:57
 
 Yeah, I mean, and even that had an old history that came before it because right now we're talking about `multi-signatures` and so that is talking about the use case where there is someone `on-chain` who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
 
-Tim Ruffing: 00:26:20
+**Tim Ruffing**: 00:26:20
 
 What's going to achieve?
 
-Pieter Wuille: 00:26:21
+**Pieter Wuille**: 00:26:21
 
 Yeah, and so the goal is there, we have a number of public keys, a number of parties in the real world that jointly want to control an output and they can spend with a single signature on chain and a single public key on chain and that public key really represents the combination of the consent of all the parties.
 But interestingly, the blockchain does not know or care that there are actually multiple parties involved because all that happens on chain is a single public key and a single signature the public key was created by multiple parties in collaboration the signature was created by multiple parties in collaboration but the rest of the world really just sees...
 
-Tim Ruffing: 00:27:03
+**Tim Ruffing**: 00:27:03
 
 Whoever was allowed to spend these coins, and in this case it could be a group, but just by looking at this `public key` you don't know, is allowed to...
 Yeah.
 Like, is authorizing this transaction.
 
-Pieter Wuille: 00:27:15
+**Pieter Wuille**: 00:27:15
 
 Whoever was required to authorize this transaction has authorized it.
 Go.
 
-Adam Jonas: 00:27:20
+**Adam Jonas**: 00:27:20
 
 Computation versus verification.
 
