@@ -26,6 +26,8 @@ additional_resources:
   - title: 'FROST'
     url: 'https://eprint.iacr.org/2020/852.pdf'
 ---
+## Introduction
+
 [Mark “Murch” Erhardt]: 00:00:00
 
 This goes to like this idea of like really only using the blockchain to settle disagreements.
@@ -134,6 +136,8 @@ I think there's also different levels of cryptography in the sense of closer to 
 And even on this level, you could say, I mean, I know people who I would totally trust to do a security proof, but I wouldn't trust them to write code.
 And I guess the opposite is also true.
 
+## Security Engineering vs Cryptography
+
 Speaker 0: 00:04:32
 
 Yeah, and I think even expectations around this differ, because if you go up this ladder from very theoretical, low-level ideas to closer to real worlds, There is some threshold where people stop calling it cryptography, where it becomes security engineering or something like that.
@@ -149,6 +153,8 @@ Yeah, and also it's really what you said.
 I mean, security is hard because you have to get it right on every level.
 And it really doesn't matter on which level you screw up.
 In the end, you get an attack.
+
+##  Quality of Feedback and Review from Peers
 
 Speaker 1: 00:05:55
 
@@ -180,6 +186,8 @@ Speaker 1: 00:07:12
 Yeah, I guess not being in the academic community and not being an implementer of cryptography myself, it just sort of seems like cryptography is one of those areas where academia and implementation is actually closer together than other areas of Bitcoin.
 There seems to be this sort of like at least arm lengths relationship in other parts, and possibly even bordering on disdain for like outsiders not properly understanding the system and like not like understanding the real research problems and the applicability.
 But cryptography is one of those sweet spots where One, you get people that are actually academically trained in the field contributing, but also an appreciation from the, and it may be just the personalities, it may be the, you know, the Peters and the G-Maxes and the, you know, the Jonas Nicks of the world who just appreciate that there's another side and getting that kind of review is of value.
+
+## Full Stack Cryptographer
 
 Speaker 2: 00:08:03
 
