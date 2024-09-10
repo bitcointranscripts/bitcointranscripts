@@ -533,7 +533,7 @@ Go.
 
 Computation versus verification.
 
-Pieter Wuille: 00:27:22
+**Pieter Wuille**: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multi-signature construction.
 Namely, the original motivation was actually going further and have [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
