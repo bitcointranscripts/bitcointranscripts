@@ -478,9 +478,9 @@ The co-author on, I think, all the `MuSig` papers so far.
 Speaker 2: 00:25:43
 
 Yes.
-So it is, I think, started with what we now call `MuSig`.
-Or Broken Music One.
-Broken Music One, and I wasn't really involved in that paper, so maybe Peter can...
+So it is, I think, started with what we now call `MuSig1`.
+Or Broken `MuSig1`.
+Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Peiter can...
 
 Speaker 0: 00:25:57
 
