@@ -159,7 +159,7 @@ I mean, security is hard because you have to get it right on every level.
 And it really doesn't matter on which level you screw up.
 In the end, you get an attack.
 
-##  Quality of Feedback and Review from Peers
+##  Quality of Feedback and Review from Peers in Cryptography
 
 **Adam Jonas**: 00:05:55
 
@@ -830,6 +830,8 @@ Like you can't compute an address without, you know, interacting with your `co-s
 And sure there are ways where you might be able to do that once and then still derive multiple addresses from that, without proof.
 But this I think makes that sort of schemes much more niche in that it is something to deploy within like well-defined protocols that have a real need for the advantages that has over the alternatives and it can be.
 
+## Distinction between Multsig (Musig N of N) vs Frost(Threshold T of N)
+
 **Tim Ruffing**: 00:44:22
 
 Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N` setup or a `T of N` setup.
@@ -935,7 +937,7 @@ In theory, yeah.
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
-## Powerful Combination of `Taproot` and `MuSig`: `Smart Contract` or `Spending Policy`
+## Powerful Combination of `Taproot` and `MuSig` : `Smart Contract` or `Spending Policy`
 
 **Tim Ruffing**: 00:49:57
 
@@ -944,6 +946,8 @@ For concreteness, maybe think of a lightning channel where we have one party and
 Unless maybe one party disappears, there's some time out and so on.
 And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multi-signature.
 As long as they do this on chain it really is like just a public key, just a signature.
+
+## Robo judge
 
 **Pieter Wuille**: 00:51:10
 
