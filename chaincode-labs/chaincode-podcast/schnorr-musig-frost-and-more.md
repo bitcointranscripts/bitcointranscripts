@@ -36,7 +36,7 @@ Hey Jonas, good to be back.
 
 Adam Jonas: 00:00:19
 
-So while you were out being the Bitcoin ambassador that we depended on you to be, I was here stuck in the cold talking to Tim and Peter and I thought it was a good conversation.
+So while you were out being the Bitcoin ambassador that we depended on you to be, I was here stuck in the cold talking to Tim and Pieter and I thought it was a good conversation.
 Yeah.
 I don't think I let you down too much.
 
@@ -71,7 +71,7 @@ Adam Jonas : 00:01:05
 
 Yeah, no, I really enjoyed the conversation and was even able to follow it.
 Anyway, hope you enjoyed listening.
-♪♪ Welcome, [Tim](https://x.com/real_or_random) and [Peter](https://x.com/pwuille).
+♪♪ Welcome, [Tim](https://x.com/real_or_random) and [Pieter](https://x.com/pwuille).
 Very excited to have you.
 Unfortunately, [Murch](https://x.com/murchandamus) is not here to help me.
 I could really use this help today, but this is what we've got.
@@ -80,7 +80,7 @@ And the first question is for both([Pieter Wuille](https://x.com/pwuille), [Tim 
 
 ## When to roll your own cryptography
 
-Speaker 1: 00:01:33
+Adam Jonas: 00:01:33
 
 This is something that we're not supposed to be doing, but you two have a long history of doing it, so why, when?
 
@@ -119,7 +119,7 @@ Speaker 0: 00:03:20
 
 And it's more a learning what level of assurance you need to get from others and not just a, okay, now I am confident enough to judge my own constructions.
 
-Speaker 1: 00:03:34
+Adam Jonas: 00:03:34
 
 There just seems to be a different skill set though, in terms of understanding and or being able to break `schemes` and having the creativity or sort of the foresight to put `schemes` together.
 
@@ -156,7 +156,7 @@ In the end, you get an attack.
 
 ##  Quality of Feedback and Review from Peers
 
-Speaker 1: 00:05:55
+Adam Jonas: 00:05:55
 
 So you said early that paying attention to feedback from others is really important.
 And so What is the interaction between the work that you do on Bitcoin and the wider applied cryptography community?
@@ -181,11 +181,11 @@ But then again, if it comes to specific details of implementations, then this ma
 I mean, of course you could send it, but there's nothing you would write up in a paper or get feedback from the academic community.
 So this is more like a different set of people, I'd say, that you now would ask and get feedback on.
 
-Speaker 1: 00:07:12
+Adam Jonas: 00:07:12
 
 Yeah, I guess not being in the academic community and not being an implementer of cryptography myself, it just sort of seems like cryptography is one of those areas where academia and implementation is actually closer together than other areas of Bitcoin.
 There seems to be this sort of like at least arm lengths relationship in other parts, and possibly even bordering on disdain for like outsiders not properly understanding the system and like not like understanding the real research problems and the applicability.
-But cryptography is one of those sweet spots where One, you get people that are actually academically trained in the field contributing, but also an appreciation from the, and it may be just the personalities, it may be the, you know, the Peters and the G-Maxes and the, you know, the Jonas Nicks of the world who just appreciate that there's another side and getting that kind of review is of value.
+But cryptography is one of those sweet spots where One, you get people that are actually academically trained in the field contributing, but also an appreciation from the, and it may be just the personalities, it may be the, you know, the Pieters and the G-Maxes and the, you know, the Jonas Nicks of the world who just appreciate that there's another side and getting that kind of review is of value.
 
 ## Full Stack Cryptographer
 
@@ -199,13 +199,13 @@ I mean, if you hear about academic implementations, it may sound like a good thi
 So I really want to cover the entire range.
 I mean, I leave it up to others to judge if I'm doing well at this, but as I understand my role is trying to get a little bit in all of these worlds to have the big picture in a sense.
 
-Speaker 1: 00:08:54
+Adam Jonas: 00:08:54
 
 Cool, I don't want to belabor this too long because we got some lower-level stuff to talk about, but maybe let's start with `Schnorr signatures`.
 
 ## Schnorr Signatures
 
-Speaker 1: 00:09:01
+Adam Jonas: 00:09:01
 
 So we have come up on just about a year, almost to the day, of `Schnorr` and `Taproot` being soft forked into Bitcoin.
 Where are we at?
@@ -242,7 +242,7 @@ But all together, it works.
 There were no issues discovered.
 And this is, I think, good to know.
 
-Speaker 1: 00:10:44
+Adam Jonas: 00:10:44
 
 And so maybe, just sort of recap, Introducing `Schnorr` has been something that's been talked about for a very long time.
 2014?
@@ -250,7 +250,7 @@ And so maybe, just sort of recap, Introducing `Schnorr` has been something that'
 
 ## Why is `Schnorr` preferable to `ECDSA`?
 
-Speaker 1: 00:10:54
+Adam Jonas: 00:10:54
 
 And so why do we want this over `ECDSA`?
 
@@ -274,7 +274,7 @@ So we are pretty confident that `Schnorr signatures` are hard to forge and they 
 And for `ECDSA`, the story is very different.
 There are some ways to establish proofs for the security of `ECDSA`, but they're really like strange models, you need a lot of machinery and a lot of strange site conditions to be able to prove something.
 So the confidence we really have in `ECDSA` signatures is really because they have been out there and nobody has really broken them so far.
-But that's totally fine, I totally agree with Peter.
+But that's totally fine, I totally agree with Pieter.
 This is not a main motivation to change this thing.
 
 Speaker 0: 00:13:56
@@ -296,13 +296,13 @@ Speaker 0: 00:15:28
 We talk about `Schnorr signatures` but we really should distinguish like `Schnorr signatures` versus `elliptic curve Schnorr signatures`.
 And the latter do exist, like for example, `ED25519` is a very well-known digital signature scheme that's, yeah, `EDDSA`, they call it `EDDSA`, but it's really `Schnorr`.
 
-Speaker 1: 00:15:50
+Adam Jonas: 00:15:50
 
 Got it, but maybe that's not the main motivation.
 
 ## Schnorr efficiency improvements
 
-Speaker 1: 00:15:52
+Adam Jonas: 00:15:52
 
 There's also some efficiency improvements.
 Is that get us closer to reasons to move over?
@@ -316,7 +316,7 @@ And this is a property that digital signature schemes have been studied before.
 And it is such an amazingly good match for block validation in Bitcoin because we really have this hundreds or thousands of signatures that we really only care whether they're all valid or not.
 And so there is a decent performance improvement, like a factor of two, three, that order of magnitude that you can get from, as you do more and more at once, you get.
 
-Speaker 1: 00:17:02
+Adam Jonas: 00:17:02
 
 And so how would that work in practice?
 So you have, let's imagine we have a, we already have mixed blocks, as in we have some blocks with `DSA` and some blocks with aided `taproot outputs`.
@@ -330,7 +330,7 @@ It's also annoying so the `Bitcoin script rules` permit signature validations to
 Like, succeed unless it is a good signature.
 You could write that today, it's dumb, but you, because someone would just not satisfy it by giving an invalid one, but you could.
 
-Speaker 1: 00:18:17
+Adam Jonas: 00:18:17
 
 Why was that left open?
 Why not include that in the soft fork, for example?
@@ -366,7 +366,7 @@ Speaker 2: 00:20:23
 Yeah, the PIP 340, the Schnorr signature PIP already basically contains a specification for batch verification, batch validation.
 Yeah, as you say, it's just not implemented yet.
 
-Speaker 1: 00:20:35
+Adam Jonas: 00:20:35
 
 It's not just implemented because just adoption doesn't make it worth the work at the moment?
 
@@ -896,7 +896,7 @@ Think of it like the `MuSig2'  equivalent, but in the threshold world.
 And as I said, like the signing part of it, it's pretty similar.
 It's a two round signature scheme, like a two round interactive protocol.
 If you look at the signing protocols of `MuSig2' and `Frost`, you really like, you could almost, really almost the same.
-The difference is really like in, as Peter said, in the, in the key setup.
+The difference is really like in, as Pieter said, in the, in the key setup.
 Now where you like for, for the threshold thing, you would need to run this interactive setup.
 
 Speaker 1: 00:49:03
