@@ -734,7 +734,7 @@ Because it isn't just a, you know, `fire and forget`.
 They have to do something and then wait for the others to do something else.
 Now, `MuSig2`, because we're already starting of it, is sort of a strict improvement over `MuSig1`.
 The primary thing it does is, well, it actually has two rounds with a proof that appears unbroken so far.
-And with good reasons, like the argument that was found, like why the `MuSig1` proof couldn't be secured, that argument does not apply to the `MuSig2`proof so there are very good reasons to believe that that is actually correct.
+And with good reasons, like the argument that was found, like why the `MuSig1` proof couldn't be secured, that argument does not apply to the `MuSig2` proof so there are very good reasons to believe that that is actually correct.
 
 Tim Ruffing: 00:39:17
 
@@ -816,7 +816,7 @@ There was even one other research team that had the same idea in parallels, whic
 
 Pieter Wuille: 00:43:20
 
-Yeah, so this idea, the one trick that the `MuSig2`...
+Yeah, so this idea, the one trick that the `MuSig2` ...
 
 Tim Ruffing: 00:43:24
 
@@ -897,10 +897,10 @@ Oh, Frosts.
 Tim Ruffing: 00:48:32
 
 Yeah, the last S probably wasn't in the abbreviation.
-Think of it like the `MuSig2'  equivalent, but in the threshold world.
+Think of it like the `MuSig2`  equivalent, but in the threshold world.
 And as I said, like the signing part of it, it's pretty similar.
 It's a two round signature scheme, like a two round interactive protocol.
-If you look at the signing protocols of `MuSig2' and `Frost`, you really like, you could almost, really almost the same.
+If you look at the signing protocols of `MuSig2` and `Frost`, you really like, you could almost, really almost the same.
 The difference is really like in, as Pieter said, in the, in the key setup.
 Now where you like for, for the threshold thing, you would need to run this interactive setup.
 
