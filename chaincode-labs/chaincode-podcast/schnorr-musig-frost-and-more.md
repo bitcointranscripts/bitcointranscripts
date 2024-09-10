@@ -519,20 +519,20 @@ Computation versus verification.
 Speaker 0: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multi-signature construction.
-Namely, the original motivation was actually going further and have cross-input signature aggregation.
+Namely, the original motivation was actually going further and have `cross-input signature aggregation`.
 And that is the idea of really all inputs in a transaction, even if there are multiple parties, even if the transaction is like spending coins from multiple separate coins together, we want a single signature for all of them.
 And this is possible if all those people cooperate, which is often the case in terms of like even today, like if you have a wallet and you have multiple coins in it and you're spending them simultaneously, you're just one party even though you have multiple public keys.
 Why wouldn't you be able to spend that with a single signature?
 And I think today we think of these things as very different concepts, but originally they weren't.
 And the reason is of course, well, in both cases, we want one signature that's really multiple parties collaborating and have a single key that...
-But there is actually a big difference in that in the cross input aggregation case, there are still multiple keys on chain.
+But there is actually a big difference in that in the `cross input aggregation` case, there are still multiple keys on chain.
 There is one for every output at least because the output has to say who is authorized to spend it and it would be the verifier that aggregates them together and then verifies it against a single signature that is provided.
-The difference is the aggregation of the keys done off-chain or on-chain And in the case of cross-input aggregation, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
+The difference is the `aggregation of the keys` done off-chain or on-chain And in the case of `cross-input aggregation`, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
 
 Speaker 2: 00:29:08
 
-In the case of multi-signatures, it's really like the verification is the normal Schnorr signature verification.
-So really as a verifier, you don't know, you see just one single Schnorr-Popley key, but you don't know if this is just an ordinary single sign-on key or if this really represents a group because they were combining this key in the background and then using like a multi signature protocol to create a signature.
+In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
+So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an ordinary single sign-on key or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
 
 Speaker 0: 00:29:33
 
@@ -546,7 +546,7 @@ Speaker 0: 00:29:38
 
 Because in the case of cross input signature aggregation, the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multi-signatures.
-Like BIP 340 today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
+Like `BIP 340 today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
 The same is not true for cross input aggregation.
 And so the history of music actually starts with the idea of cross-input signature aggregation.
 Because cross-input signature aggregation has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
