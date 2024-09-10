@@ -45,12 +45,12 @@ I hear that you went over a lot of stuff.
 Speaker 1: 00:00:37
 
 We did.
-We covered updates about Frost and Roast, Music 2.
-We talked about ideas that are a little further out in terms of batch verification, signature aggregation, interactive full aggregation, cross-input signature aggregation.
+We covered updates about `Frost` and `Roast`, `MuSig2'.
+We talked about ideas that are a little further out in terms of `batch verification`, `signature aggregation`, `interactive full aggregation`, `cross-input signature aggregation`.
 
 Speaker 0: 00:00:54
 
-So everything, like everything that pertains to taproot and since then?
+So everything, like everything that pertains to `taproot` and since then?
 
 Speaker 1: 00:00:58
 
@@ -70,7 +70,7 @@ Yeah, no, I really enjoyed the conversation and was even able to follow it.
 Anyway, hope you enjoyed listening.
 ♪♪ Welcome, Tim and Peter.
 Very excited to have you.
-Unfortunately, merch is not here to help me.
+Unfortunately, Merch is not here to help me.
 I could really use this help today, but this is what we've got.
 So we're going to dive right in.
 And the first question is for both of you, When do you need to roll your own crypto?
@@ -696,7 +696,7 @@ Speaker 2: 00:37:21
 
 Yes, it's still like everyone kind of creates their own `public key` and just publishes to the other participant or even to some outside party.
 And you can still take all of these `individual public keys` and there is a `public algorithm` that even an outside party can run and combine the individual public keys to an `aggregate public key` that then represents the `entire group`.
-This is still true for all of the music variants, which is a pretty useful property.
+This is still true for all of the `MuSig` variants, which is a pretty useful property.
 
 Speaker 0: 00:37:50
 
@@ -881,10 +881,10 @@ Oh, Frosts.
 Speaker 2: 00:48:32
 
 Yeah, the last S probably wasn't in the abbreviation.
-Think of it like the music two equivalent, but in the threshold world.
+Think of it like the `MuSig2'  equivalent, but in the threshold world.
 And as I said, like the signing part of it, it's pretty similar.
 It's a two round signature scheme, like a two round interactive protocol.
-If you look at the signing protocols of Music 2 and Frost, you really like, you could almost, really almost the same.
+If you look at the signing protocols of `MuSig2' and `Frost`, you really like, you could almost, really almost the same.
 The difference is really like in, as Peter said, in the, in the key setup.
 Now where you like for, for the threshold thing, you would need to run this interactive setup.
 
@@ -924,7 +924,7 @@ Speaker 2: 00:49:57
 But maybe one thing that I, maybe we should talk about is again like Taproot and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
 For concreteness, maybe think of a lightning channel where we have one party and another party and they put their coins together in an output that they can only spend together.
 Unless maybe one party disappears, there's some time out and so on.
-And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random music and give a multi-signature.
+And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multi-signature.
 As long as they do this on chain it really is like just a public key, just a signature.
 
 Speaker 0: 00:51:10
