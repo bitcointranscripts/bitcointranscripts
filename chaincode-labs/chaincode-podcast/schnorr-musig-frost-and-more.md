@@ -651,7 +651,7 @@ So there's not really reason to use `MuSig1` in practice, but it's totally fine.
 It's just a little bit annoying because it has this really three-round property.
 And when I say three rounds, it's really like communication rounds, right?
 So the end signers come together and they have to send three messages each in parallel.
-So there's one round where everybody talks, then there's a second round where everybody talks, and then only after the third round, we can come up with this, like We have the final signature that we now created together.
+So there's one round where everybody talks, then there's a second round where everybody talks, and then only after the third round, we can come up with this, like We have the `final signature` that we now created together.
 
 ## Interactive versus non-interactive protocols
 
@@ -664,14 +664,14 @@ In Bitcoin world, this corresponds to the computation of the address, like deter
 
 Speaker 2: 00:35:55
 
-When you say setup, you mean like really key setup, right?
-It's not like signature setup, it's a key setup.
+When you say setup, you mean like really `key setup`, right?
+It's not like `signature setup`, it's a `key setup`.
 
 Speaker 0: 00:36:01
 
 Yeah.
 And then the second phase is when a signature is intended to be made and there are a number of parties who agree on signing a particular message, what steps do they have to take?
-And so the naive Bitcoin multi-threshold, multi-signature scheme has one round for both.
+And so the naive Bitcoin Multi-Sig threshold, multi-signature scheme has one round for both.
 Why is that?
 So the key setup is everybody reveals their public key and any party, not even a participant, can just take all those keys, put them together in a script, turn it into an address, and it's done.
 It doesn't need to go back to the participants.
