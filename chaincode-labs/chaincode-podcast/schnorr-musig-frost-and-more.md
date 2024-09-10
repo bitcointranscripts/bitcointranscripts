@@ -736,41 +736,41 @@ Now, `MuSig2`, because we're already starting of it, is sort of a strict improve
 The primary thing it does is, well, it actually has two rounds with a proof that appears unbroken so far.
 And with good reasons, like the argument that was found, like why the `MuSig1` proof couldn't be secured, that argument does not apply to the `MuSig2` proof so there are very good reasons to believe that that is actually correct.
 
-Tim Ruffing: 00:39:17
+**Tim Ruffing**: 00:39:17
 
 It's not only two rounds in a sense it's even better than this because what you also can do is you can pre-process the first round which basically means you can run the first round without knowing the message or in our case usually the transaction you want to sign.
 So that means like we can run this first round and like okay then we need to keep `state` so we exchange messages for the `first round` and then only later if we now know okay this is a transaction we want to sign, this is a spend we want to make.
 Now we, at that point, we only need to do one more round.
 So it's basically, you could call it `half-interactive` or something like that.
 
-Pieter Wuille: 00:39:57
+**Pieter Wuille**: 00:39:57
 
 I think the best way of looking at this, Like you can think of this `pre-processing round`, the `first round` of the two signing steps, you can do that at key setup time.
 But you could also do it later, but like you can see this as an extension of the setup because-
 
-Tim Ruffing: 00:40:15
+**Tim Ruffing**: 00:40:15
 
 But you need to do it once for every signature, right?
 Yeah.
 So we could do it at key setup, but then you...
 
-Pieter Wuille: 00:40:20
+**Pieter Wuille**: 00:40:20
 
 Yeah, okay, you need to do...
 
-Tim Ruffing: 00:40:21
+**Tim Ruffing**: 00:40:21
 
 Okay, like I will do at most like 500 signatures, for example.
 
-Pieter Wuille: 00:40:24
+**Pieter Wuille**: 00:40:24
 
 So you do it 500 times.
 
-Tim Ruffing: 00:40:26
+**Tim Ruffing**: 00:40:26
 
 And of course, if I ran out of these pre-processing things,
 
-Pieter Wuille: 00:40:29
+**Pieter Wuille**: 00:40:29
 
 I can still do more.
 Not exactly the same, but what this does is it turns something before the signing step into something interactive.
@@ -778,7 +778,7 @@ But now the signing itself can happen non-interactively.
 And this is a trade-off that in some settings is very useful.
 If you want `low latency signing`, I believe like `Lightning`, for example, is particularly interested in that.
 
-Tim Ruffing: 00:40:52
+**Tim Ruffing**: 00:40:52
 
 `Lightning` is very interested in that because you if you open a connection to someone on the lightning peer-to-peer network in a sense, when you open a channel you at that point you can already run the first round.
 So you exchange nonces.
@@ -788,7 +788,7 @@ Because we have run the first round, and then let's say I'm the one in the `Ligh
 I mean, I don't have it at that point, but it's maybe enough that one of the participants has it.
 So it's really just like one message then when the transaction arrives that we want to sign.
 
-Pieter Wuille: 00:41:43
+**Pieter Wuille**: 00:41:43
 
 So we call this `interactive` or `non-interactive` because the difference between one round or more than one round is huge, way bigger than two or three rounds, there's always interactivity.
 I think a good way of seeing that is like, today we think of `addresses` as being generated using `XPUBs` and you can write a `descriptor` where you put these things in.
@@ -800,11 +800,11 @@ There needs to be no communication from me to them.
 
 ## FROST
 
-Pieter Wuille: 00:42:40
+**Pieter Wuille**: 00:42:40
 
 As soon as we go towards `threshold signatures`, you know, the `T of N` where there's only a subset and `Frost` in particular, which is...
 
-Tim Ruffing: 00:42:50
+**Tim Ruffing**: 00:42:50
 
 `Frost` is one of the...
 You could say `Frost` is the `threshold signature` equivalent to `MuSig`, really.
@@ -814,23 +814,23 @@ Actually, it's fun that they came up with the same idea to basically build a two
 At the same time, we came up with the idea, so there were really two.
 There was even one other research team that had the same idea in parallels, which also is good to know because this again like confirms the idea that what we're doing here is correct.
 
-Pieter Wuille: 00:43:20
+**Pieter Wuille**: 00:43:20
 
 Yeah, so this idea, the one trick that the `MuSig2` ...
 
-Tim Ruffing: 00:43:24
+**Tim Ruffing**: 00:43:24
 
 Right, that made it like possible to go from three rounds to two rounds.
 This one trick really has been discovered independently by three different research groups.
 
-Pieter Wuille: 00:43:33
+**Pieter Wuille**: 00:43:33
 
 But the big downside for it seems to be like every efficient `threshold scheme` within this class of algorithms we're looking at requires an `interactive key setup` and that is a huge impediment for just practicality.
 Like you can't compute an address without, you know, interacting with your `co-signers`.
 And sure there are ways where you might be able to do that once and then still derive multiple addresses from that, without proof.
 But this I think makes that sort of schemes much more niche in that it is something to deploy within like well-defined protocols that have a real need for the advantages that has over the alternatives and it can be.
 
-Tim Ruffing: 00:44:22
+**Tim Ruffing**: 00:44:22
 
 Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N` setup or a `T of N` setup.
 It's just some parameter that you literally, like you specify the T in the script, right?
@@ -843,11 +843,11 @@ And if I say it really needed, there's a lot of things you can do with multi sig
 Like even for cases where you think you may want a `threshold signature`.
 For example, in combination with `Taproot`, a typical threshold signature case, I think that most people are aware of is a standard maybe two or three that you might have at home, where you have three hardware wallets or two `hardware wallets` and a `software wallet` maybe.
 
-Pieter Wuille: 00:45:37
+**Pieter Wuille**: 00:45:37
 
 Or you have some service that is `co-signing` and you have a key in a `vault` and a key on your `hardware wallet` or something.
 
-Tim Ruffing: 00:45:45
+**Tim Ruffing**: 00:45:45
 
 Two of three is a pretty common combination.
 And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a `2 of 2` `MuSig` setup or MuSig2`  setup with those two devices and put this at the `root` of a `taproot`.
@@ -858,41 +858,41 @@ So like what you described earlier, you would pull out the script, would prove, 
 And of course, in that case, you would reveal to the public, okay, you were actually doing a `2 of 3`, so you lose a tiny bit of privacy.
 Maybe you lose a tiny...
 
-Adam Jonas: 00:46:54
+**Adam Jonas**: 00:46:54
 
 Would you have other tap scripts that would be `2 of 2`?
 You just have...
 
-Pieter Wuille: 00:46:58
+**Pieter Wuille**: 00:46:58
 
 So there are two variants here.
 Either you have, you know, the `2 of 2` of, let's say A and B are the main keys and C is the backup key.
 So you put a `MuSig` of A and B as the internal `Taproot key`, and then you either have a single script, which is C and A or B, but alternatively, because `Taproot `has the script tree notion, you can have two scripts in there, both of which are in fact each a `2 of 2` `MuSig`, one of A and C and one of B and C and this is actually more private and a bit cheaper too.
 
-Tim Ruffing: 00:47:38
+**Tim Ruffing**: 00:47:38
 
 So there's different straight-ups you can make.
 I mean I think my main point was that okay you lose a little bit of privacy because you show that something was going on under the hood but it's really just a tiny bit.
 I think it's only in the case where you need to resort to your backup device or signer, and it's maybe a tiny bit less efficient, but in that case, you probably don't care.
 
-Pieter Wuille: 00:47:56
+**Pieter Wuille**: 00:47:56
 
 But this whole thing, like the `MuSigs`, the `scripts`, the `tree`, all of that still has a `non-interactive key` setup.
 The reason why you would want to do this over something Frost-like is sort of the traditional way of thinking of I can just generate addresses if I have the keys still works with this.
 
-Adam Jonas: 00:48:18
+**Adam Jonas**: 00:48:18
 
 So you've mentioned `Frost` a couple of times now.
 What is `Frost`?
 
-Tim Ruffing: 00:48:22
+**Tim Ruffing**: 00:48:22
 
-Frost is really like the...
+`Frost` is really like the...
 
-Pieter Wuille: 00:48:25
+**Pieter Wuille**: 00:48:25
 
 Flexible, round, optimized, `Schnorr threshold signatures`.
-Oh, Frosts.
+Oh, `Frosts`.
 
 Tim Ruffing: 00:48:32
 
@@ -904,12 +904,12 @@ If you look at the signing protocols of `MuSig2` and `Frost`, you really like, y
 The difference is really like in, as Pieter said, in the, in the key setup.
 Now where you like for, for the threshold thing, you would need to run this interactive setup.
 
-Adam Jonas: 00:49:03
+**Adam Jonas**: 00:49:03
 
 I see.
 So there's no pre-processing that you can do there?
 
-Tim Ruffing: 00:49:07
+**Tim Ruffing**: 00:49:07
 
 There's still pre-processing in the sense that, I mean, you have to run this interactive setup, but there's now again, like it has two rounds, but you could pre-process the first round of those.
 This is still possible in Frost.
@@ -917,27 +917,27 @@ So you can still have this property where you, in a sense, you send your first r
 That's really because the signing protocols are very similar.
 It's just really the key setup what makes a difference here.
 
-Adam Jonas: 00:49:41
+**Adam Jonas**: 00:49:41
 
 I see.
 So `T of N`, really, it could be `N of N` in terms of like...
 
-Pieter Wuille: 00:49:48
+**Pieter Wuille**: 00:49:48
 
 Yeah, it would be overkill to use `Frost` for `N of N`, but I guess it would work.
 
-Tim Ruffing: 00:49:52
+**Tim Ruffing**: 00:49:52
 
 In theory, yeah.
 
-Adam Jonas: 00:49:53
+**Adam Jonas**: 00:49:53
 
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
 ## Powerful Combination of `Taproot` and `MuSig`: `Smart Contract` or `Spending Policy`
 
-Tim Ruffing: 00:49:57
+**Tim Ruffing**: 00:49:57
 
 But maybe one thing that I, maybe we should talk about is again like `Taproot` and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
 For concreteness, maybe think of a lightning channel where we have one party and another party and they put their coins together in an output that they can only spend together.
@@ -945,27 +945,27 @@ Unless maybe one party disappears, there's some time out and so on.
 And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multi-signature.
 As long as they do this on chain it really is like just a public key, just a signature.
 
-Pieter Wuille: 00:51:10
+**Pieter Wuille**: 00:51:10
 
 Yeah and this is really the philosophy behind `Taproot` like why do we even bother like elevating one individual `public key` to be blessed, to be like, you can be spent super efficiently.
 It is because of this understanding that almost all involved `spending policies` can, without loss of security, be turned into a, okay, that involved spending policy or everybody agrees like if everybody agrees and this goes to like this idea of like we're really only using the blockchain to settle disagreements like as long as everyone agrees with all we have to say to the blockchain is like yeah you don't really need to know what the rules were everybody who and then everybody who could have been involved in this thing agrees that this is the spend we want to do.
 
-Adam Jonas: 00:52:04
+**Adam Jonas**: 00:52:04
 
 Sure, the `robo judge`.
 Yeah, exactly.
 
-Pieter Wuille: 00:52:07
+**Pieter Wuille**: 00:52:07
 
 It's like, hello judge, we settled out of court.
 Okay, stamp.
 
 ## Conclusion
 
-Adam Jonas: 00:52:12
+**Adam Jonas**: 00:52:12
 
 That concludes the first half of this conversation.
 
-## Next: Upcoming Second Half Part 2 
-The second half we are going to talk about nesting, roast, block-wide aggregation, adaptive signatures, atomic swaps, and much, much more.
+## Part 2 - Next: Upcoming Second Half 
+The second half we are going to talk about nesting, `roast`, `block-wide aggregation`, `adaptive signatures`, `atomic swaps`, and much, much more.
 Hope you're enjoying the conversation and we'll see you
