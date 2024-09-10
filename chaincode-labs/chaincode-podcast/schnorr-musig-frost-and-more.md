@@ -448,7 +448,7 @@ Yannick, okay, yeah.
 
 Speaker 0: 00:25:18
 
-Yeah, and I think the mu is also because it's a letter, Greek letter that's used for micro, so they're small.
+Yeah, and I think the `mu` is also because it's a letter, Greek letter that's used for `micro`, so they're small.
 
 Speaker 2: 00:25:25
 
@@ -473,12 +473,12 @@ Yannick, by the way, is Yannick Sarah.
 
 Speaker 0: 00:25:39
 
-The co-author on, I think, all the music papers so far.
+The co-author on, I think, all the `MuSig` papers so far.
 
 Speaker 2: 00:25:43
 
 Yes.
-So it is, I think, started with what we now call Music One.
+So it is, I think, started with what we now call `MuSig`.
 Or Broken Music One.
 Broken Music One, and I wasn't really involved in that paper, so maybe Peter can...
 
