@@ -492,7 +492,7 @@ Speaker 2: 00:25:43
 Yes.
 So it is, I think, started with what we now call `MuSig1`.
 
-Speaker 0: 00:25:51
+Pieter Wuille: 00:25:51
 
 Or Broken `MuSig1`.
 
@@ -500,7 +500,7 @@ Speaker 2: 00:25:53
 
 Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Pieter can...
 
-Speaker 0: 00:25:57
+Pieter Wuille: 00:25:57
 
 Yeah, I mean, and even that had an old history that came before it because right now we're talking about `multi-signatures` and so that is talking about the use case where there is someone `on-chain` who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
 
@@ -508,7 +508,7 @@ Speaker 2: 00:26:20
 
 What's going to achieve?
 
-Speaker 0: 00:26:21
+Pieter Wuille: 00:26:21
 
 Yeah, and so the goal is there, we have a number of public keys, a number of parties in the real world that jointly want to control an output and they can spend with a single signature on chain and a single public key on chain and that public key really represents the combination of the consent of all the parties.
 But interestingly, the blockchain does not know or care that there are actually multiple parties involved because all that happens on chain is a single public key and a single signature the public key was created by multiple parties in collaboration the signature was created by multiple parties in collaboration but the rest of the world really just sees...
@@ -519,7 +519,7 @@ Whoever was allowed to spend these coins, and in this case it could be a group, 
 Yeah.
 Like, is authorizing this transaction.
 
-Speaker 0: 00:27:15
+Pieter Wuille: 00:27:15
 
 Whoever was required to authorize this transaction has authorized it.
 Go.
@@ -528,7 +528,7 @@ Speaker 1: 00:27:20
 
 Computation versus verification.
 
-Speaker 0: 00:27:22
+Pieter Wuille: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multi-signature construction.
 Namely, the original motivation was actually going further and have `cross input signature aggregation`.
@@ -546,7 +546,7 @@ Speaker 2: 00:29:08
 In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
 So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an `ordinary single sign-on key` or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
 
-Speaker 0: 00:29:33
+Pieter Wuille: 00:29:33
 
 That's really the difference.
 
@@ -554,7 +554,7 @@ Speaker 2: 00:29:34
 
 This is the thing we're talking about at the moment, right?
 
-Speaker 0: 00:29:38
+Pieter Wuille: 00:29:38
 
 Because in the case of `cross input signature aggregation`, the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multi-signatures.
@@ -574,7 +574,7 @@ This is called the `rogue key attack`?
 Exactly.
 Or the `key cancellation attack`.
 
-Speaker 0: 00:31:04
+Pieter Wuille: 00:31:04
 
 Exactly, exactly.
 So the obstacle in making `cross input signature aggregation` happen `was, whoa, we have this problem of `cancellation of keys`, and we need a solution for that.
@@ -586,14 +586,14 @@ Speaker 1: 00:31:54
 
 So it was originally two rounds and then you added a third round?
 
-Speaker 0: 00:31:58
+Pieter Wuille: 00:31:58
 
 It was originally three rounds.
 And that's where we tried to get published, but really none of us had experience with proving a digital signature scheme or what security properties were required.
 
 ## Bellare-Neven
 
-Speaker 0: 00:32:11
+Pieter Wuille: 00:32:11
 
 And governance were like, well, there exists a scheme for this already.
 It's the Belayeneva scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the La Reneve scheme was that scheme could be used for cross input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
@@ -606,7 +606,7 @@ Speaker 1: 00:33:20
 
 How fortuitous.
 
-Speaker 0: 00:33:22
+Pieter Wuille: 00:33:22
 
 Amazing.
 And he also said, oh, I think we can do it with two rounds instead of three, which turned out to be a mistake.
@@ -617,7 +617,7 @@ Right, this is what we now call in some papers insecure `MuSig`.
 I think the first paper you uploaded together with Yannick had this two round version, which was insecure.
 Yeah, I just found an attack on this very end of `MuSig` and also...
 
-Speaker 0: 00:33:52
+Pieter Wuille: 00:33:52
 
 It started with this meta-proof that showed that it would be impossible to prove such a scheme secure.
 And we initially thought, okay, this is like a limitation of proof techniques, like there's clearly no way of attacking this, no, those same people like a couple months later came up with an actual practical attack.
@@ -626,7 +626,7 @@ Speaker 1: 00:34:14
 
 When Yannick came with a proof, He came up with a proof for the three rounds.
 
-Speaker 0: 00:34:19
+Pieter Wuille: 00:34:19
 
 And two rounds.
 
@@ -641,7 +641,7 @@ Left out now.
 Yeah, so, yeah, I mean, there was a purported proof, and it turned out to be wrong, not only because people have shown that you can't prove the scheme secure, but also because, as you say, they came up with a concrete attack.
 So you had to revert to the three-round version, and this is really what we finally know.
 
-Speaker 0: 00:34:42
+Pieter Wuille: 00:34:42
 
 What we now call `MuSig` is the three-round scheme that...
 
@@ -649,7 +649,7 @@ Speaker 1: 00:34:47
 
 And are there applications for `MuSig` One?
 
-Speaker 0: 00:34:49
+Pieter Wuille: 00:34:49
 
 Well, every multi-signature...
 In a sense, yes.
@@ -667,7 +667,7 @@ So there's one round where everybody talks, then there's a second round where ev
 
 ## Interactive versus non-interactive protocols
 
-Speaker 0: 00:35:33
+Pieter Wuille: 00:35:33
 
 Maybe this is a good time to go into interactive and non-interactive.
 Because in the lifetime of a signature, there are sort of two big phases.
@@ -679,7 +679,7 @@ Speaker 2: 00:35:55
 When you say setup, you mean like really `key setup`, right?
 It's not like `signature setup`, it's a `key setup`.
 
-Speaker 0: 00:36:01
+Pieter Wuille: 00:36:01
 
 Yeah.
 And then the second phase is when a signature is intended to be made and there are a number of parties who agree on signing a particular message, what steps do they have to take?
@@ -697,7 +697,7 @@ And put together really just means concatenate, right?
 Like not really combined in a clever way and compress it.
 It's really just,
 
-Speaker 0: 00:37:06
+Pieter Wuille: 00:37:06
 
 yeah.
 Put them together, `concatenate`, put them in a transaction, and the transaction is valid.
@@ -709,7 +709,7 @@ Yes, it's still like everyone kind of creates their own `public key` and just pu
 And you can still take all of these `individual public keys` and there is a `public algorithm` that even an outside party can run and combine the individual public keys to an `aggregate public key` that then represents the `entire group`.
 This is still true for all of the `MuSig` variants, which is a pretty useful property.
 
-Speaker 0: 00:37:50
+Pieter Wuille: 00:37:50
 
 And so at signing time, however, `MuSig1` has `three rounds`, which means it's sort of everyone comes up with a nonce, needs to reveal the hash of the `nonce`.
 After everyone has revealed the hashes of their nonce, then everybody reveals their nonce.
@@ -721,7 +721,7 @@ Speaker 2: 00:38:22
 
 Combine them, compress them into a `single file signature`.
 
-Speaker 0: 00:38:25
+Pieter Wuille: 00:38:25
 
 But there are two points where basically everyone has to wait for everyone to do something And so that's why we say it has three rounds.
 And whenever it has more than one round, we say it's an interactive scheme.
@@ -738,7 +738,7 @@ So that means like we can run this first round and like okay then we need to kee
 Now we, at that point, we only need to do one more round.
 So it's basically, you could call it `half-interactive` or something like that.
 
-Speaker 0: 00:39:57
+Pieter Wuille: 00:39:57
 
 I think the best way of looking at this, Like you can think of this `pre-processing round`, the `first round` of the two signing steps, you can do that at key setup time.
 But you could also do it later, but like you can see this as an extension of the setup because-
@@ -749,7 +749,7 @@ But you need to do it once for every signature, right?
 Yeah.
 So we could do it at key setup, but then you...
 
-Speaker 0: 00:40:20
+Pieter Wuille: 00:40:20
 
 Yeah, okay, you need to do...
 
@@ -757,7 +757,7 @@ Speaker 2: 00:40:21
 
 Okay, like I will do at most like 500 signatures, for example.
 
-Speaker 0: 00:40:24
+Pieter Wuille: 00:40:24
 
 So you do it 500 times.
 
@@ -765,7 +765,7 @@ Speaker 2: 00:40:26
 
 And of course, if I ran out of these pre-processing things,
 
-Speaker 0: 00:40:29
+Pieter Wuille: 00:40:29
 
 I can still do more.
 Not exactly the same, but what this does is it turns something before the signing step into something interactive.
@@ -783,7 +783,7 @@ Because we have run the first round, and then let's say I'm the one in the `Ligh
 I mean, I don't have it at that point, but it's maybe enough that one of the participants has it.
 So it's really just like one message then when the transaction arrives that we want to sign.
 
-Speaker 0: 00:41:43
+Pieter Wuille: 00:41:43
 
 So we call this `interactive` or `non-interactive` because the difference between one round or more than one round is huge, way bigger than two or three rounds, there's always interactivity.
 I think a good way of seeing that is like, today we think of `addresses` as being generated using `XPUBs` and you can write a `descriptor` where you put these things in.
