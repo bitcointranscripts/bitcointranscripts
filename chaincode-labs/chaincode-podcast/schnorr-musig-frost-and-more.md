@@ -380,7 +380,7 @@ Tim Ruffing: 00:21:02
 
 The interesting part is that you have this batch validation not only of `Schnorr signatures` but also of taproot openings.
 
-Speaker 0: 00:21:13
+Pieter Wuille: 00:21:13
 
 Right.
 
@@ -403,7 +403,7 @@ And so that's the opening of the `commitment`.
 And that `check` can be batched together with `Schnorr signature validations`.
 They each count as half a signature.
 
-Speaker 1: 00:23:00
+Adam Jonas: 00:23:00
 
 So another reason to adopt `Schnorr` is it just makes building `advanced signing protocols` easier?
 
@@ -413,7 +413,7 @@ I think that that is really the number one reason why we want this.
 
 ## Multisigs
 
-Speaker 1: 00:23:15
+Adam Jonas: 00:23:15
 
 So what's the status of those protocols now and what could we imagine to happen in the future?
 
@@ -434,7 +434,7 @@ So there's this difference in terminology between like, if you look at an academ
 And when it says `threshold signature`, it means `T of N` for some arbitrarily.
 Whereas in Bitcoin, when you say `multi-sig`, you usually mean any of these.
 
-Speaker 1: 00:24:50
+Adam Jonas: 00:24:50
 
 Okay, so `multi-sigs`, let's say, are `N of N`, we'll use the proper terminology, and there's `T of N` `threshold signatures`, and `MuSig` is supporting `N of N`.
 
@@ -524,7 +524,7 @@ Pieter Wuille: 00:27:15
 Whoever was required to authorize this transaction has authorized it.
 Go.
 
-Speaker 1: 00:27:20
+Adam Jonas: 00:27:20
 
 Computation versus verification.
 
@@ -568,7 +568,7 @@ And so it is very important that there is no way for me to come up with a `fake 
 
 ## Rogue key attack or key cancellation attack
 
-Speaker 1: 00:31:01
+Adam Jonas: 00:31:01
 
 This is called the `rogue key attack`?
 Exactly.
@@ -582,7 +582,7 @@ And years ago I came up with what I thought was a solution for it, which is this
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
 That fix was what is now called the 'MuSig 'scheme, with three rounds.
 
-Speaker 1: 00:31:54
+Adam Jonas: 00:31:54
 
 So it was originally two rounds and then you added a third round?
 
@@ -602,7 +602,7 @@ I think then we got contacted by Yannick Serrin who was a French provable securi
 And so it just gave him a brain dump of like, this is a scheme worth thinking of, what we're trying to prove, these are the reasons why it's different.
 And a couple of weeks later, he came back like, yep, I have a proof.
 
-Speaker 1: 00:33:20
+Adam Jonas: 00:33:20
 
 How fortuitous.
 
@@ -622,7 +622,7 @@ Pieter Wuille: 00:33:52
 It started with this meta-proof that showed that it would be impossible to prove such a scheme secure.
 And we initially thought, okay, this is like a limitation of proof techniques, like there's clearly no way of attacking this, no, those same people like a couple months later came up with an actual practical attack.
 
-Speaker 1: 00:34:14
+Adam Jonas: 00:34:14
 
 When Yannick came with a proof, He came up with a proof for the three rounds.
 
@@ -645,7 +645,7 @@ Pieter Wuille: 00:34:42
 
 What we now call `MuSig` is the three-round scheme that...
 
-Speaker 1: 00:34:47
+Adam Jonas: 00:34:47
 
 And are there applications for `MuSig` One?
 
@@ -853,7 +853,7 @@ So like what you described earlier, you would pull out the script, would prove, 
 And of course, in that case, you would reveal to the public, okay, you were actually doing a `2 of 3`, so you lose a tiny bit of privacy.
 Maybe you lose a tiny...
 
-Speaker 1: 00:46:54
+Adam Jonas: 00:46:54
 
 Would you have other tap scripts that would be `2 of 2`?
 You just have...
@@ -875,7 +875,7 @@ Pieter Wuille: 00:47:56
 But this whole thing, like the `MuSigs`, the `scripts`, the `tree`, all of that still has a `non-interactive key` setup.
 The reason why you would want to do this over something Frost-like is sort of the traditional way of thinking of I can just generate addresses if I have the keys still works with this.
 
-Speaker 1: 00:48:18
+Adam Jonas: 00:48:18
 
 So you've mentioned `Frost` a couple of times now.
 What is `Frost`?
@@ -899,7 +899,7 @@ If you look at the signing protocols of `MuSig2' and `Frost`, you really like, y
 The difference is really like in, as Pieter said, in the, in the key setup.
 Now where you like for, for the threshold thing, you would need to run this interactive setup.
 
-Speaker 1: 00:49:03
+Adam Jonas: 00:49:03
 
 I see.
 So there's no pre-processing that you can do there?
@@ -912,7 +912,7 @@ So you can still have this property where you, in a sense, you send your first r
 That's really because the signing protocols are very similar.
 It's just really the key setup what makes a difference here.
 
-Speaker 1: 00:49:41
+Adam Jonas: 00:49:41
 
 I see.
 So T of N, really, it could be N of N in terms of like...
@@ -925,14 +925,16 @@ Tim Ruffing: 00:49:52
 
 In theory, yeah.
 
-Speaker 1: 00:49:53
+Adam Jonas: 00:49:53
 
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
+## Powerful Combination of Taproot and MuSig
+
 Tim Ruffing: 00:49:57
 
-But maybe one thing that I, maybe we should talk about is again like Taproot and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
+But maybe one thing that I, maybe we should talk about is again like `Taproot` and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
 For concreteness, maybe think of a lightning channel where we have one party and another party and they put their coins together in an output that they can only spend together.
 Unless maybe one party disappears, there's some time out and so on.
 And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multi-signature.
@@ -943,7 +945,7 @@ Pieter Wuille: 00:51:10
 Yeah and this is really the philosophy behind `Taproot` like why do we even bother like elevating one individual `public key` to be blessed, to be like, you can be spent super efficiently.
 It is because of this understanding that almost all involved `spending policies` can, without loss of security, be turned into a, okay, that involved spending policy or everybody agrees like if everybody agrees and this goes to like this idea of like we're really only using the blockchain to settle disagreements like as long as everyone agrees with all we have to say to the blockchain is like yeah you don't really need to know what the rules were everybody who and then everybody who could have been involved in this thing agrees that this is the spend we want to do.
 
-Speaker 1: 00:52:04
+Adam Jonas: 00:52:04
 
 Sure, the `robo judge`.
 Yeah, exactly.
@@ -953,7 +955,7 @@ Pieter Wuille: 00:52:07
 It's like, hello judge, we settled out of court.
 Okay, stamp.
 
-Speaker 1: 00:52:12
+Adam Jonas: 00:52:12
 
 That concludes the first half of this conversation.
 The second half we are going to talk about nesting, roast, block-wide aggregation, adaptive signatures, atomic swaps, and much, much more.
