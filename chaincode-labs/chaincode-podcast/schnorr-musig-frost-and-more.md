@@ -414,13 +414,13 @@ So like say we have a, we could have a two of three at this table here where we 
 
 Speaker 0: 00:24:26
 
-In the cryptography world, those are known as threshold signatures, while multi-signatures are the N of N case.
+In the cryptography world, those are known as `threshold signatures`, while `multi-signatures` are the `N of N` case.
 
 Speaker 2: 00:24:32
 
-So there's this difference in terminology between like, if you look at an academic paper when it says multi-signature, it always only means this N of N case.
-And when it says threshold signature, it means T of N for some arbitrarity.
-Whereas in Bitcoin, when you say multi-sig, you usually mean any of these.
+So there's this difference in terminology between like, if you look at an academic paper when it says `multi-signature`, it always only means this `N of N` case.
+And when it says `threshold signature`, it means `T of N` for some arbitrarily.
+Whereas in Bitcoin, when you say `multi-sig`, you usually mean any of these.
 
 Speaker 1: 00:24:50
 
