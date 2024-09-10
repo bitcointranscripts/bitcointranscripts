@@ -422,34 +422,34 @@ I think that that is really the number one reason why we want this.
 
 So what's the status of those protocols now and what could we imagine to happen in the future?
 
-Tim Ruffing: 00:23:21
+**Tim Ruffing**: 00:23:21
 
 So first of all, we need to look at the different types of `protocols`, what you call `advanced signing protocols`.
 I think like the most popular, in a sense, type of construction so far is `multi-signatures` which are probably also known as `N of N` signatures.
 So I mean there's some kind of, we need to talk about the terminology here, because when people in the Bitcoin space say `multi-sig`, they typically don't make a distinction between `N of N` `multi-sig` where you have like n users, they all have public keys, but you require all of them to agree to give a signature, so it's really like `N of N` versus this, what I call `T of N` `multi-sig`, where T is some other arbitrary number that can be smaller than N.
 So like say we have a, we could have a `2 of 3` at this table here where we like have a set, We have a key that represents the three of us, but you would only need the agreement of two of us to actually sign it.
 
-Pieter Wuille: 00:24:26
+**Pieter Wuille**: 00:24:26
 
 In the cryptography world, those are known as `threshold signatures`, while `multi-signatures` are the `N of N` case.
 
-Tim Ruffing: 00:24:32
+**Tim Ruffing**: 00:24:32
 
 So there's this difference in terminology between like, if you look at an academic paper when it says `multi-signature`, it always only means this `N of N` case.
 And when it says `threshold signature`, it means `T of N` for some arbitrarily.
 Whereas in Bitcoin, when you say `multi-sig`, you usually mean any of these.
 
-Adam Jonas: 00:24:50
+**Adam Jonas**: 00:24:50
 
 Okay, so `multi-sigs`, let's say, are `N of N`, we'll use the proper terminology, and there's `T of N` `threshold signatures`, and `MuSig` is supporting `N of N`.
 
-Tim Ruffing: 00:25:05
+**Tim Ruffing**: 00:25:05
 
 Right.
 
 ## MuSig
 
-Tim Ruffing: 00:25:07
+**Tim Ruffing**: 00:25:07
 
 Okay.
 Yeah, so there's this `MuSig` family of `signing protocols` for `multi-sig`, that's why it's called MuSig.
