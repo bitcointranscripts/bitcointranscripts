@@ -646,7 +646,7 @@ Speaker 2: 00:34:52
 
 I mean, it's a totally fine scheme.
 It's just three rounds.
-And like, nowadays we believe like `MuSig` Two is basically in practice better in every aspect.
+And like, nowadays we believe like `MuSig2` is basically in practice better in every aspect.
 So there's not really reason to use `MuSig1` in practice, but it's totally fine.
 It's just a little bit annoying because it has this really three-round property.
 And when I say three rounds, it's really like communication rounds, right?
@@ -688,18 +688,18 @@ It's really just,
 Speaker 0: 00:37:06
 
 yeah.
-Put them together, concatenate, put them in a transaction, and the transaction is valid.
-When we're talking about Music 1, the three round scheme, the setup, key setup is still a single round.
+Put them together, `concatenate`, put them in a transaction, and the transaction is valid.
+When we're talking about `MuSig1`, the three round scheme, the setup, `key setup` is still a `single round`.
 
 Speaker 2: 00:37:21
 
-Yes, it's still like everyone kind of creates their own public key and just publishes to the other participant or even to some outside party.
-And you can still take all of these individual public keys and there is a public algorithm that even an outside party can run and combine the individual public keys to an aggregate public key that then represents the entire group.
+Yes, it's still like everyone kind of creates their own `public key` and just publishes to the other participant or even to some outside party.
+And you can still take all of these `individual public keys` and there is a `public algorithm` that even an outside party can run and combine the individual public keys to an `aggregate public key` that then represents the `entire group`.
 This is still true for all of the music variants, which is a pretty useful property.
 
 Speaker 0: 00:37:50
 
-And so at signing time, however, music one has three rounds, which means it's sort of everyone comes up with a nonce, needs to reveal the hash of the nonce.
+And so at signing time, however, `MuSig1` has `three rounds`, which means it's sort of everyone comes up with a nonce, needs to reveal the hash of the `nonce`.
 After everyone has revealed the hashes of their nonce, then everybody reveals their nonce.
 But they can only do so after everybody has revealed the hashes of their nonces.
 And then after everyone has revealed all their nonces, everyone comes up with a partial signature.
@@ -707,17 +707,17 @@ And then any party, not even a participant, can take the partial signatures and 
 
 Speaker 2: 00:38:22
 
-Combine them, compress them into a single file signature.
+Combine them, compress them into a `single file signature`.
 
 Speaker 0: 00:38:25
 
 But there are two points where basically everyone has to wait for everyone to do something And so that's why we say it has three rounds.
 And whenever it has more than one round, we say it's an interactive scheme.
-Because it isn't just a, you know, fire and forget.
+Because it isn't just a, you know, `fire and forget`.
 They have to do something and then wait for the others to do something else.
-Now, Music 2, because we're already starting of it, is sort of a strict improvement over Music 1.
+Now, `MuSig2`, because we're already starting of it, is sort of a strict improvement over `MuSig1`.
 The primary thing it does is, well, it actually has two rounds with a proof that appears unbroken so far.
-And with good reasons, like the argument that was found, like why the Music 1 proof couldn't be secured, that argument does not apply to the music two proof so there are very good reasons to believe that that is actually correct.
+And with good reasons, like the argument that was found, like why the `MuSig1` proof couldn't be secured, that argument does not apply to the `MuSig2`proof so there are very good reasons to believe that that is actually correct.
 
 Speaker 2: 00:39:17
 
