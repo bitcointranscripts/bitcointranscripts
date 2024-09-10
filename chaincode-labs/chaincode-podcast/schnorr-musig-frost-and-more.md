@@ -277,7 +277,7 @@ But `DSA`, just people started using it as far as I know, because it's similar e
 
 Speaker 2: 00:15:07
 
-Yeah, but if you look at it from a mathematical point of view, it's really like they started with `Schnorr signatures`, but because they were patented, they had to make a few very strange tweaks to it and what comes out of it it's a really really inelegant thing and this ended up being DSA and now if you okay if you port it to Elliptic Curves then you get ECDSA, Elliptic Curve DSA.
+Yeah, but if you look at it from a mathematical point of view, it's really like they started with `Schnorr signatures`, but because they were patented, they had to make a few very strange tweaks to it and what comes out of it it's a really really inelegant thing and this ended up being `DSA` and now if you okay if you port it to Elliptic Curves then you get `ECDSA`, `Elliptic Curve DSA`.
 
 Speaker 0: 00:15:28
 
