@@ -262,7 +262,7 @@ And so why do we want this over ECDSA?
 Pieter Wuille: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
-The very first, this observation years ago, 2014 was like, wow, Schnorr has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as [cross input signature aggregation](https://btctranscripts.com/tags/cisa/).
+The very first, this observation years ago, 2014 was like, wow, Schnorr has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as cross input signature aggregation.
 And that goal drove a lot of interest in the scheme, because if you're talking about individual Schnorr signatures on chain or individual ECDSA signatures, maybe a bit faster here or there, they have a better provable security scheme.
 But on the other hand, like ECDSA is already used, like people, whatever its security assumptions and requirements for proofs are, people have, perhaps unwillingly, already accepted them.
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
@@ -536,7 +536,7 @@ Computation versus verification.
 Pieter Wuille: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multisignature construction.
-Namely, the original motivation was actually going further and have [cross input signature aggregation](https://btctranscripts.com/tags/cisa/).
+Namely, the original motivation was actually going further and have cross input signature aggregation.
 And that is the idea of really all inputs in a transaction, even if there are multiple parties, even if the transaction is like spending coins from multiple separate coins together, we want a single signature for all of them.
 And this is possible if all those people cooperate, which is often the case in terms of like even today, like if you have a wallet and you have multiple coins in it and you're spending them simultaneously, you're just one party even though you have multiple public keys.
 Why wouldn't you be able to spend that with a single signature?
@@ -561,12 +561,12 @@ This is the thing we're talking about at the moment, right?
 
 Pieter Wuille: 00:29:38
 
-Because in the case of [cross input signature aggregation](https://btctranscripts.com/tags/cisa/), the verifier actually has to implement a multi signature scheme.
+Because in the case of cross input signature aggregation, the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multisignatures.
-Like BIP 342 today and its signatures could have been written and designed without even knowing of the concept of multisignatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
+Like BIP342 today and its signatures could have been written and designed without even knowing of the concept of multisignatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
 The same is not true for cross input aggregation.
-And so the history of MuSig actually starts with the idea of [cross input signature aggregation](https://btctranscripts.com/tags/cisa/).
-Because [cross input signature aggregation](https://btctranscripts.com/tags/cisa/) has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
+And so the history of MuSig actually starts with the idea of cross input signature aggregation.
+Because cross input signature aggregation has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
 I mean, you have an output you created, you have an output I created.
 I can try creating a transaction that spends both at the same time, maybe together with one of mine.
 And so it is very important that there is no way for me to come up with a fake key that somehow, when combined with your keys, result in something that I could sign for.
@@ -582,7 +582,7 @@ Or the key cancellation attack.
 Pieter Wuille: 00:31:04
 
 Exactly, exactly.
-So the obstacle in making [cross input signature aggregation](https://btctranscripts.com/tags/cisa/) happen was, whoa, we have this problem of cancellation of keys, and we need a solution for that.
+So the obstacle in making cross input signature aggregation happen was, whoa, we have this problem of cancellation of keys, and we need a solution for that.
 And years ago I came up with what I thought was a solution for it, which is this delinearization trick of multiplying each key with a randomizer to stop that from happening.
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
 That fix was what is now called the MuSig scheme, with three rounds.
