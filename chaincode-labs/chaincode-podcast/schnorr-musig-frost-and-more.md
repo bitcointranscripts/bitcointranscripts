@@ -18,7 +18,7 @@ speakers:
   - 'Adam Jonas'
 categories:
   - 'podcast'
-summary: 'Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multi-signatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.'
+summary: 'Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multisignatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.'
 episode: 26
 additional_resources:
   - title: 'MuSig'
@@ -425,23 +425,23 @@ So what's the status of those protocols now and what could we imagine to happen 
 **Tim Ruffing**: 00:23:21
 
 So first of all, we need to look at the different types of `protocols`, what you call `advanced signing protocols`.
-I think like the most popular, in a sense, type of construction so far is `multi-signatures` which are probably also known as `N of N` signatures.
-So I mean there's some kind of, we need to talk about the terminology here, because when people in the Bitcoin space say `multi-sig`, they typically don't make a distinction between `N of N` `multi-sig` where you have like n users, they all have public keys, but you require all of them to agree to give a signature, so it's really like `N of N` versus this, what I call `T of N` `multi-sig`, where T is some other arbitrary number that can be smaller than N.
-So like say we have a, we could have a `2 of 3` at this table here where we like have a set, We have a key that represents the three of us, but you would only need the agreement of two of us to actually sign it.
+I think like the most popular, in a sense, type of construction so far is multisignatures which are probably also known as N-of-N signatures.
+So I mean there's some kind of, we need to talk about the terminology here, because when people in the Bitcoin space say multisig, they typically don't make a distinction between N-of-N multisig where you have like n users, they all have public keys, but you require all of them to agree to give a signature, so it's really like N-of-N versus this, what I call T-of-N multisig, where T is some other arbitrary number that can be smaller than N.
+So like say we have a, we could have a 2-of-3 at this table here where we like have a set, We have a key that represents the three of us, but you would only need the agreement of two of us to actually sign it.
 
 **Pieter Wuille**: 00:24:26
 
-In the cryptography world, those are known as `threshold signatures`, while `multi-signatures` are the `N of N` case.
+In the cryptography world, those are known as `threshold signatures`, while multisignatures are the N-of-N case.
 
 **Tim Ruffing**: 00:24:32
 
-So there's this difference in terminology between like, if you look at an academic paper when it says `multi-signature`, it always only means this `N of N` case.
-And when it says `threshold signature`, it means `T of N` for some arbitrarily.
-Whereas in Bitcoin, when you say `multi-sig`, you usually mean any of these.
+So there's this difference in terminology between like, if you look at an academic paper when it says `multisignature`, it always only means this N-of-N case.
+And when it says `threshold signature`, it means T-of-N for some arbitrarily.
+Whereas in Bitcoin, when you say multisig, you usually mean any of these.
 
 **Adam Jonas**: 00:24:50
 
-Okay, so `multi-sigs`, let's say, are `N of N`, we'll use the proper terminology, and there's `T of N` `threshold signatures`, and `MuSig` is supporting `N of N`.
+Okay, so multisigs, let's say, are N-of-N, we'll use the proper terminology, and there's T-of-N `threshold signatures`, and `MuSig` is supporting N-of-N.
 
 **Tim Ruffing**: 00:25:05
 
@@ -452,7 +452,7 @@ Right.
 **Tim Ruffing**: 00:25:07
 
 Okay.
-Yeah, so there's this `MuSig` family of `signing protocols` for `multi-sig`, that's why it's called MuSig.
+Yeah, so there's this `MuSig` family of `signing protocols` for multisig, that's why it's called MuSig.
 Don't know who came up with it.
 
 **Pieter Wuille**: 00:25:16
@@ -507,7 +507,7 @@ Broken `MuSig1`, and I wasn't really involved in that paper, so maybe Pieter can
 
 **Pieter Wuille**: 00:25:57
 
-Yeah, I mean, and even that had an old history that came before it because right now we're talking about `multi-signatures` and so that is talking about the use case where there is someone `on-chain` who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
+Yeah, I mean, and even that had an old history that came before it because right now we're talking about multisignatures and so that is talking about the use case where there is someone `on-chain` who wants a policy of multiple public keys Yes, we should actually first talk about what this is going to do, right?
 
 **Tim Ruffing**: 00:26:20
 
@@ -535,7 +535,7 @@ Computation versus verification.
 
 **Pieter Wuille**: 00:27:22
 
-Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multi-signature construction.
+Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multisignature construction.
 Namely, the original motivation was actually going further and have [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
 And that is the idea of really all inputs in a transaction, even if there are multiple parties, even if the transaction is like spending coins from multiple separate coins together, we want a single signature for all of them.
 And this is possible if all those people cooperate, which is often the case in terms of like even today, like if you have a wallet and you have multiple coins in it and you're spending them simultaneously, you're just one party even though you have multiple public keys.
@@ -548,7 +548,7 @@ The difference is the `aggregation of the keys` done off-chain or on-chain And i
 
 **Tim Ruffing**: 00:29:08
 
-In the case of `multi-signatures`, it's really like the verification is the normal `Schnorr signature verification`.
+In the case of multisignatures, it's really like the verification is the normal `Schnorr signature verification`.
 So really as a verifier, you don't know, you see just one single `Schnorr-Public key`, but you don't know if this is just an `ordinary single sign-on key` or if this really represents a group because they were combining this key in the background and then using like a `multi signature protocol` to create a signature.
 
 **Pieter Wuille**: 00:29:33
@@ -562,8 +562,8 @@ This is the thing we're talking about at the moment, right?
 **Pieter Wuille**: 00:29:38
 
 Because in the case of [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/), the verifier actually has to implement a multi signature scheme.
-You cannot have consensus rules that aren't aware of multi-signatures.
-Like `BIP 342` today and its signatures could have been written and designed without even knowing of the concept of multi-signatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
+You cannot have consensus rules that aren't aware of multisignatures.
+Like `BIP 342` today and its signatures could have been written and designed without even knowing of the concept of multisignatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
 The same is not true for `cross input aggregation`.
 And so the history of `MuSig` actually starts with the idea of [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/).
 Because [cross input signature aggregation](https://btctranscripts.com/bitcoin-core-dev-tech/2024-04/cross-input-signature-aggregation/) has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
@@ -656,7 +656,7 @@ And are there applications for `MuSig` One?
 
 **Pieter Wuille**: 00:34:49
 
-Well, every multi-signature...
+Well, every multisignature...
 In a sense, yes.
 
 **Tim Ruffing**: 00:34:52
@@ -688,7 +688,7 @@ It's not like `signature setup`, it's a `key setup`.
 
 Yeah.
 And then the second phase is when a signature is intended to be made and there are a number of parties who agree on signing a particular message, what steps do they have to take?
-And so the naive Bitcoin Multi-Sig threshold, multi-signature scheme has one round for both.
+And so the naive Bitcoin multisig threshold, multisignature scheme has one round for both.
 Why is that?
 So the key setup is everybody reveals their public key and any party, not even a participant, can just take all those keys, put them together in a script, turn it into an address, and it's done.
 It doesn't need to go back to the participants.
@@ -802,7 +802,7 @@ There needs to be no communication from me to them.
 
 **Pieter Wuille**: 00:42:40
 
-As soon as we go towards `threshold signatures`, you know, the `T of N` where there's only a subset and `Frost` in particular, which is...
+As soon as we go towards `threshold signatures`, you know, the T-of-N where there's only a subset and `Frost` in particular, which is...
 
 **Tim Ruffing**: 00:42:50
 
@@ -834,12 +834,12 @@ But this I think makes that sort of schemes much more niche in that it is someth
 
 **Tim Ruffing**: 00:44:22
 
-Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin `multi-sig` view, it's really not a difference if you have an `N of N` setup or a `T of N` setup.
+Yeah, I think this is really an interesting distinction that we should emphasize because like coming from this traditional Bitcoin multisig view, it's really not a difference if you have an N-of-N setup or a T-of-N setup.
 It's just some parameter that you literally, like you specify the T in the script, right?
 And it could just say it's N.
-And this is really no, like the scheme, it's really just the same thing for `T of N` or `N of N`.
-But in like those `Schnorr advanced multi-signature` or `threshold signature` things, there's really a big difference in terms of practicality when it comes to `T-setup`.
-Like `MuSig`, the `N of N` case is still pretty simple, whereas in threshold signatures you can do it, but it's a little bit less practical.
+And this is really no, like the scheme, it's really just the same thing for T-of-N or N-of-N.
+But in like those `Schnorr advanced multisignature` or `threshold signature` things, there's really a big difference in terms of practicality when it comes to `T-setup`.
+Like `MuSig`, the N-of-N case is still pretty simple, whereas in threshold signatures you can do it, but it's a little bit less practical.
 So as you say, it probably makes only sense for use cases that really need it.
 And if I say it really needed, there's a lot of things you can do with multi signatures already.
 Like even for cases where you think you may want a `threshold signature`.
@@ -852,24 +852,24 @@ Or you have some service that is `co-signing` and you have a key in a `vault` an
 **Tim Ruffing**: 00:45:45
 
 Two of three is a pretty common combination.
-And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a `2 of 2` `MuSig` setup or MuSig2`  setup with those two devices and put this at the `root` of a `taproot`.
-So like computer combined `2 of 2` key and use this as the key in your tab root.
+And for example, what you could do now is if you can say, okay, like you have two main signing devices and a backup signing device in the sense that you, as long as the two main devices are working, not stole, not lost, whatever, those two devices, what you can now do is you can create a 2-of-2 MuSig setup or MuSig2  setup with those two devices and put this at the `root` of a `taproot`.
+So like computer combined 2-of-2 key and use this as the key in your tab root.
 And as long as those two devices are there, you can use them.
 And only if you have to resort to the backup device, you would have in your `taproot`, have some script inside there.
 So like what you described earlier, you would pull out the script, would prove, okay, actually this key is not only a two of two, or it's not only a normal Schnorr public key, it also has some scripts, and here's one of the scripts, and now I use this backup path in a sense.
-And of course, in that case, you would reveal to the public, okay, you were actually doing a `2 of 3`, so you lose a tiny bit of privacy.
+And of course, in that case, you would reveal to the public, okay, you were actually doing a 2-of-3, so you lose a tiny bit of privacy.
 Maybe you lose a tiny...
 
 **Adam Jonas**: 00:46:54
 
-Would you have other tap scripts that would be `2 of 2`?
+Would you have other tap scripts that would be 2-of-2?
 You just have...
 
 **Pieter Wuille**: 00:46:58
 
 So there are two variants here.
-Either you have, you know, the `2 of 2` of, let's say A and B are the main keys and C is the backup key.
-So you put a `MuSig` of A and B as the internal `Taproot key`, and then you either have a single script, which is C and A or B, but alternatively, because `Taproot `has the script tree notion, you can have two scripts in there, both of which are in fact each a `2 of 2` `MuSig`, one of A and C and one of B and C and this is actually more private and a bit cheaper too.
+Either you have, you know, the 2-of-2 of, let's say A and B are the main keys and C is the backup key.
+So you put a `MuSig` of A and B as the internal `Taproot key`, and then you either have a single script, which is C and A or B, but alternatively, because `Taproot `has the script tree notion, you can have two scripts in there, both of which are in fact each a 2-of-2 `MuSig`, one of A and C and one of B and C and this is actually more private and a bit cheaper too.
 
 **Tim Ruffing**: 00:47:38
 
@@ -922,11 +922,11 @@ It's just really the key setup what makes a difference here.
 **Adam Jonas**: 00:49:41
 
 I see.
-So `T of N`, really, it could be `N of N` in terms of like...
+So T-of-N, really, it could be N-of-N in terms of like...
 
 **Pieter Wuille**: 00:49:48
 
-Yeah, it would be overkill to use `Frost` for `N of N`, but I guess it would work.
+Yeah, it would be overkill to use `Frost` for N-of-N, but I guess it would work.
 
 **Tim Ruffing**: 00:49:52
 
@@ -944,7 +944,7 @@ Yeah.
 But maybe one thing that I, maybe we should talk about is again like `Taproot` and `MuSig`, why this combination is so powerful and in the sense, because I think one thing idea, like the design idea of Taproot is really like, okay, there is this key and imagine any complex thing going on in the background, maybe like you could call it smart contract or spending policy or whatever.
 For concreteness, maybe think of a lightning channel where we have one party and another party and they put their coins together in an output that they can only spend together.
 Unless maybe one party disappears, there's some time out and so on.
-And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multi-signature.
+And the basic idea here is really that as long as the involved parties in this contract or maybe in this Lightning Channel for concreteness, as long as they all agree and they're present and online and are willing to move the protocol forward, they can always just give a corporate random `MuSig' and give a multisignature.
 As long as they do this on chain it really is like just a public key, just a signature.
 
 ## Robo judge
