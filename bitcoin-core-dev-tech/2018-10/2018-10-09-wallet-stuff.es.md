@@ -5,7 +5,6 @@ translation_by: Blue Moon
 categories: ['core-dev-tech']
 tags: ['wallet']
 date: 2018-10-09
-aliases: ['/bitcoin-core-dev-tech/2018-10-09-wallet-stuff/']
 ---
 <https://twitter.com/kanzure/status/1049526667079643136>
 
