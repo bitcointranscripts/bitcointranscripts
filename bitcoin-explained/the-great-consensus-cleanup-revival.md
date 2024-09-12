@@ -1,18 +1,23 @@
 ---
-title: "The Great Consensus Cleanup Revival (And an Update on the Tornado Cash and Samourai Wallet Arrests)"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi
-tags: ['wallet', 'consensus-cleanup']
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
+title: 'The Great Consensus Cleanup Revival (And an Update on the Tornado Cash and Samourai Wallet Arrests)'
+transcript_by: 'RicaProEXP via review.btctranscripts.com'
+media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi'
+date: '2024-05-29'
+tags:
+  - 'wallet'
+  - 'consensus-cleanup'
+speakers:
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
+  - 'Anthony Potdevin'
 categories: []
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss the Great Consensus Cleanup Revival soft fork(s). This proposal would fix some known bugs in the Bitcoin protocol, specifically the timewarp vulnerability, large block validation times, 64 byte transactions and BIP 30 verification."
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors discuss the Great Consensus Cleanup Revival soft fork(s). This proposal would fix some known bugs in the Bitcoin protocol, specifically the timewarp vulnerability, large block validation times, 64 byte transactions and BIP 30 verification.'
 episode: 93
-date: 2024-05-29
 additional_resources:
-  - title: CoinKite
-    url: https://store.coinkite.com/promo/BITCOINEXPLAINED
-  - title: https://bitcoinexplainedpodcast.com/
-    url: https://bitcoinexplainedpodcast.com/
+  - title: 'CoinKite'
+    url: 'https://store.coinkite.com/promo/BITCOINEXPLAINED'
+  - title: 'https://bitcoinexplainedpodcast.com/'
+    url: 'https://bitcoinexplainedpodcast.com/'
 ---
 Speaker 0: 00:00:19
 
