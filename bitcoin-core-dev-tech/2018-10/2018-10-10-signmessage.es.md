@@ -1,5 +1,5 @@
 ---
-title: Mensaje de señalización 
+title: Mensaje de señalización
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 categories: ['core-dev-tech']
