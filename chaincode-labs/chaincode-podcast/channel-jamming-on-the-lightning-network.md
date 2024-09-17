@@ -2,7 +2,7 @@
 title: 'Channel Jamming on the Lightning Network'
 transcript_by: 'mvuk via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4'
-date: '2022-11-21'
+date: '2022-11-20'
 tags:
   - 'lightning'
   - 'research'
@@ -12,6 +12,7 @@ speakers:
   - 'Clara Shikhelman'
   - 'Sergei Tikhomirov'
   - 'Adam Jonas'
+  - 'Mark Erhardt'
 categories:
   - 'podcast'
 summary: 'Clara and Sergei stop by to chat about their recent proposal on mitigating jamming attacks in the Lightning Network. We talk unconditional fees, local reputation, the impact on decentralization and UX, and the state of Lightning in general.'
@@ -30,13 +31,16 @@ additional_resources:
   - title: 'Bitcoin problems: Channel balance probing'
     url: 'https://bitcoinproblems.org/problems/channel-balance-probing.html'
 ---
-Speaker 0: 00:00:00
+Clara Shikhelman (introduction clip): 00:00:00
 
 We identify the problem, we identify what would be a good solution, and then we go over the tools that are available for us over the Lightning Network.
 
-Speaker 1: 00:00:15
+Adam Jonas: 00:00:15
 
 Hello, Murch.
+
+Speaker 2 (Murch)? 00:00:16
+
 Hi, Jonas.
 
 Speaker 2: 00:00:16
