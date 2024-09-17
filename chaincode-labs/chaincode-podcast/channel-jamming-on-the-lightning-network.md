@@ -2,7 +2,7 @@
 title: 'Channel Jamming on the Lightning Network'
 transcript_by: 'mvuk via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4'
-date: '2022-11-22'
+date: '2022-11-21'
 tags:
   - 'lightning'
   - 'research'
@@ -11,6 +11,7 @@ tags:
 speakers:
   - 'Clara Shikhelman'
   - 'Sergei Tikhomirov'
+  - 'Adam Jonas'
 categories:
   - 'podcast'
 summary: 'Clara and Sergei stop by to chat about their recent proposal on mitigating jamming attacks in the Lightning Network. We talk unconditional fees, local reputation, the impact on decentralization and UX, and the state of Lightning in general.'
