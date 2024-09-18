@@ -2,7 +2,7 @@
 title: 'Anchors & Shackles (Ark)'
 transcript_by: 'dubyuh via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=OBt1nS14Ac4'
-date: '2023-06-30'
+date: '2023-06-29'
 tags:
   - 'ark'
 speakers:
@@ -14,98 +14,116 @@ So hey guys, my name is Borat.
 Today I'll be talking about something that I've been working on for the past, let's say, six months or so.
 To give a bit of a background, I started first in a big block sort of camp and then got introduced later to Liquid.
 And I did some covenant R&D on Liquid for about two years, and now I'm recently exploring the Lightning space for about a year.
-And as someone who initially comes sort of from that sort of big block camp, I've always had objections towards lightning, mainly around the UX, from backups to interactivity to liquidity problems.
+And as someone who initially comes sort of from that big block camp, I've always had objections towards lightning, mainly around the UX, from backups to interactivity to liquidity problems.
 I've had severe objections.
+
 A few months ago, I tried to sort of working on a new light and more to address these problems.
-And I've come to realization that these objections, the objections that I had in the past, they're all addressable in the long run.
-I, you know, page DLCs can sold in, same receiving initiative plus proof of payment, but there is still one big problem, the inbound liquidity.
+And I've come to the realization that these objections, the objections that I had in the past, they're all addressable in the long run.
+I, you know, DLCs can solve them, same receiving initiative plus proof of payment, but there is still one big problem, the inbound liquidity.
 To me, it's like a non-starter.
-If you're orange billing someone for the first time and you cannot receive, what happens is you get a swap, some ring swap in, and it doesn't scale.
+If you're orange-pilling someone for the first time and you cannot receive, what happens is you get a swap, some ring swap in, and it doesn't scale.
 And to me, if something works 90% of the time, it doesn't work 10%, to me it doesn't work.
 It has to be zero friction.
-So I sort of try to come up with solutions to address these problems.
+
+So I sort of tried to come up with solutions to address these problems.
 And then today I'll be presenting a new sort of alternative Layer 2 protocol.
 It all started as a wallet idea, a Lightning idea based on channel factories and all that.
 And it later evolved into a layer two on its own.
-At some point I realized, okay, what I'm building is lightning, but it really is like a new layer two in its core.
+
+At some point, I realized, okay, what I'm building is Lightning, but it really is like a new layer two in its core.
 At its core, it's like internally, it's like a new off-chain protocol.
 So the protocol is, it requires APO or CTV, a new covenant primitive to work.
 That's not something we can do on Bitcoin today.
 We can do it in Bitcoin Inquisition's Signet, and I think that's how we're gonna start.
+
 But to give a high-level overview, first of all, we haven't set a name yet for the protocol.
 So to give a high-level overview, the protocol has no liquidity constraints.
-It's a simple protocol.
-It mimics the on-chain UX.
+It's a simple protocol. It mimics the on-chain UX.
 Just like you do on-chain wallets, you have an address you can receive, send, hold, simple.
 You don't have any interactivity requirements.
+
 And you don't have to acquire inbound liquidity to onboard to the system in the first place.
 You don't have to run a server, you can use your smartphone, don't have much interactivity requirements.
-And every payment takes place in a coin join route, so you don't leave your, especially receivers, they do not leave their identity.
+And every payment takes place in a coinjoin route, so you don't leave your, especially receivers, they do not leave their identity.
 You know, in Lightning, if hubs call it or they comply with OFAC, you know, two hubs can sort of extract the payment route.
-If I'm using IE and LSB XIZ and you're connected to ABC and they have direct channel each other so the receipt is 12A, then they can call you to extract the payment because it's linked through the same HDLC, the Bolt 11 hash identifier.
+
+If I'm using IE and LSB XIZ and you're connected to ABC and they have a direct channel with each other so the receipt is 12A, then they can call you to extract the payment because it's linked through the same HDLC, the Bolt 11 hash identifier.
 So in this protocol, it's not a state channel design.
 It's not a roll-up design of any sort, it's really its own category.
-So, here is a comparison table, comparing this protocol with Lightning on-chain, also Ecache, obviously Ecache, Charm and Ecache, FedEvent stuff, it's called Studio, so, you know, it's controversial what, you know, what Layer 2 is and not.
-To me, E-cash doesn't fall into Layer 2 category, but it's good to compare.
+
+So, here is a comparison table, comparing this protocol with Lightning on-chain, also Ecache, obviously Ecache, Charm and Ecache, FedEvent stuff, it's called Studio.
+So, you know, it's controversial what, you know, what Layer 2 is and isn't.
+To me, E-cash doesn't fall into the Layer 2 category, but it's good to compare.
+
 So, you know, on-chain Bitcoin, you know, to me Lightning is the only layer 1, as related to Bitcoin.
-To me, the layer 2 definition is really like a sort of separate piece of software where you transact Bitcoin without polluting on-chain, But yet you can revert your coins back to one chain without asking for a corporation.
+To me, the layer 2 definition is really like a sort of separate piece of software where you transact Bitcoin without polluting on-chain.
+But yet, you can revert your coins back to on-chain without asking for a corporation.
+
 So by that definition, the protocol falls into a layer two category.
-So it's self-constitutional.
-You can unilaterally revert your coins back on chain, but you transact off the chain.
+So it's self-constitutional. You can unilaterally revert your coins back on chain, but you transact off the chain.
 So interactivity, well, PHTLCs solve the receiving issue.
 And you can generate print.
+
 And they don't have a generic pre-image ready offline but you still have to sign or monitor the network for channel breaches if you're not trusting a watchtower.
 And just like on-chain, you don't have to be online like that.
+
 Scalability-wise, I think this is the number one, the biggest property we have.
-Lightning, you cannot onboard the whole planet to lightning, it doesn't scale.
-Channel openings and some might swap ins, so out, they do not scale.
-It's not only the on-chain footprint, right?
-The non-liquidity doesn't scale.
+Lightning, you cannot onboard the whole planet to Lightning, it doesn't scale.
+Channel openings and some might swap ins or outs, they do not scale.
+
+It's not only the on-chain footprint, right? The non-liquidity doesn't scale.
 I have this utopic idea to onboard the whole planet to Bitcoin in a non-custodial way.
 I know in reality it's probably never going to happen, but I'm super obsessed with it.
-So I think my goal is to be able to at least give people an option the whole planet to onboard Bitcoin and not custodially so in theory with this primitive you can onboard the whole planet in theory on chain footprint wise there are probably other challenges but the point is you don't consume any pretty much, you don't consume any pretty much footprint, On-chain footprint.
+So I think my goal is to be able to at least give people an option to onboard to Bitcoin non-custodially.
+
+So in theory with this primitive, you can onboard the whole planet in theory on-chain footprint-wise.
+There are probably other challenges, but the point is you don't consume any, pretty much, you don't consume any on-chain footprint.
 Everything is off-chain, pretty much.
 Unlike in Lightning, you have to touch on-chain sometimes.
-Of course, on-chain is the worst.
-Nothing touches on-chain, doesn't scale, anything that touches.
-And Privacy, again, guys, it's also controversial, right?
-Lightning versus on-chain privacy.
-To me, lightning is worse than on-chain, but to many people, they argue on-chain is worse than lightning.
-But with this primitive, whenever you make a payment, the payment takes place in a coin-join route, sort of like an off-chain coin-join protocol.
-So, and you know, coin-joins today, they're mostly used for, you know, data market use cases maybe, but here, anonymity set is everyone.
+
+Of course, on-chain is the worst. Nothing touches on-chain, doesn't scale, anything that touches.
+And Privacy, again, guys, it's also controversial, right? Lightning versus on-chain privacy.
+
+To me, Lightning is worse than on-chain, but to many people, they argue on-chain is worse than Lightning.
+But with this primitive, whenever you make a payment, the payment takes place in a coinjoin route, sort of like an off-chain coinjoin protocol.
+
+So, and you know, coin joins today, they're mostly used for, you know, data market use cases maybe, but here, anonymity set is everyone.
 Anyone who involves in a payment, that payment is in a coin join, in a blended mixing route maybe, that's pretty correct.
+
 So onboarding, again, you don't have any onboarding setup.
 You onboard someone, you want to tip someone, you just onboard Orangefield someone, and you can receive payment like on-chain, but it scales.
-So it's a simple protocol.
-I mean, it's not a state channel design.
+
+So it's a simple protocol. I mean, it's not a state channel design.
 I think it's conceptually simple, it's simple to reason about.
+
 So there are two parties, users and the operators.
 And operators are akin to service providers in Lightning, LSPs. And in fact, factory operators are also LSPs in this protocol.
 They can run Lightning Rogers, too.
 You can pay with this protocol Lightning invoice as it's interoperable with Lightning.
-It's not a competitor by any means.
-It's in fact much, you know, it's a compliment Lightning bar.
-So users, they're not interactive entities, they hold and receive coins just like they do on chain, but they do it entirely off chain.
-And factory operators, just like LSPs, they provide liquidity to the protocol, But it's slightly different.
+
+It's not a competitor by any means. It's, in fact, more of a complement to Lightning.
+So users, they're not interactive entities, they hold and receive coins just like they do on-chain, but they do it entirely off-chain.
+And factory operators, just like LSPs, they provide liquidity to the protocol, but it's slightly different.
+
 In fact, Lightning uses liquidity more efficiently because channels are bidirectional.
-Here, it's more like a one-directional design.
-The factory operator has to constantly provide liquidity to the protocol.
-So the protocol, again, the idea requires a common primitive.
-We need a common primitive to constrain transaction outputs of a spending transaction.
+Here, it's more like a one-directional design. The factory operator has to constantly provide liquidity to the protocol.
+
+So the protocol, again, the idea requires a covenant primitive. We need a covenant primitive to constrain transaction outputs of a spending transaction.
 And you can use CTV for that, which is a bit controversial.
-And We can use an APO to emulate CTV.
-We can emulate it by hard coding of the signature 65, signature and 33, but unknown pop key type.
-And script to emulate the CTV use case.
+And we can use an APO to emulate CTV.
+
+We can emulate it by hard-coding the signature 65, signature and 33, but an unknown pop key type and script to emulate the CTV use case.
 There are other alternatives, TI-cache and some other combinations in even syntheticity.
-But it requires a common and primitive constraint outputs in advance of creating a Bitcoin output.
-So it's just like a coin join.
-You have a set of coins.
-Coins are Bitcoin transaction outputs, but they live off the chain.
-They ideally never touch on chain, but you can of course, you know, literally revert, but the coins live off the chain.
-Think of like a UTXO set that lives entirely off the chain.
-So you have a set of coins in your wallet, software, from one set to a million, just forget about the dust limit, just keep things simple, from one to a million sets.
-So the design is, the design starts with a factory.
-So factory, it's like a channel factory, I name it factory, could be something else, the naming, but because it's similar to channel factories, I name it factory.
+
+But it requires a covenant primitive to constrain outputs in advance of creating a Bitcoin output.
+So it's just like a coin join. You have a set of coins. Coins are Bitcoin transaction outputs, but they live off the chain.
+They ideally never touch on-chain, but you can of course, you know, literally revert, but the coins live off the chain.
+
+Think of like a UTXO set that lives entirely off-chain. So you have a set of coins in your wallet, software, from one set to a million, just forget about the dust limit, just keep things simple, from one to a million sets.
+
+So the design starts with a factory. So factory, it's like a channel factory, I name it factory, could be something else, the naming, but because it's similar to channel factories, I name it factory.
+
+
 The factories are, is a shared UTXO model.
 So factory is a Bitcoin transaction output.
 It's a shared UTXO.
