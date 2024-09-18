@@ -394,11 +394,11 @@ Speaker 1: 00:11:51
 Well, we did an episode about why the mempool is useful in general.
 You know, it helps with things like block relay.
 It makes it quicker for you to verify a new block because you already verified those transactions before.
-So then when you restart BitConcord it helps you to verify all those new blocks that you're going to catch up with with that mempool that you still had.
+So then when you restart Bitcoin Core it helps you to verify all those new blocks that you're going to catch up with with that mempool that you still had.
 
 Speaker 0: 00:12:12
 
-Right okay so yeah I have a BitConcord node and the mempool if when I shut down my computer, my entire mempool is just saved on disk and then I start the computer again and Bitcoin Core starts up and it remembers what was in the mempool.
+Right okay so yeah I have a Bitcoin Core node and the mempool if when I shut down my computer, my entire mempool is just saved on disk and then I start the computer again and Bitcoin Core starts up and it remembers what was in the mempool.
 Exactly.
 Okay, so what's the problem?
 
