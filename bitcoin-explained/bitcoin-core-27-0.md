@@ -1,20 +1,21 @@
 ---
-title: "Bitcoin Core 27.0"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-92-bitcoin-core-27-0-c4wla
-tags: ['bitcoin-core']
+title: 'Bitcoin Core 27.0'
+transcript_by: 'sagungargs15 via review.btctranscripts.com'
+media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-92-bitcoin-core-27-0-c4wla'
+date: '2024-04-10'
+tags:
+  - 'bitcoin-core'
 speakers: []
 categories: []
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 27.0 release."
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 27.0 release.'
 episode: 92
-date: 2024-04-10
 additional_resources:
-  - title: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
-    url: https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide
-  - title: CoinKite
-    url: https://store.coinkite.com/promo/BITCOINEXPLAINED
-  - title: https://bitcoinexplainedpodcast.com/
-    url: https://bitcoinexplainedpodcast.com/
+  - title: 'https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide'
+    url: 'https://github.com/bitcoin-core/bitcoin-devwiki/wiki/27.0-Release-Candidate-Testing-Guide'
+  - title: 'CoinKite'
+    url: 'https://store.coinkite.com/promo/BITCOINEXPLAINED'
+  - title: 'https://bitcoinexplainedpodcast.com/'
+    url: 'https://bitcoinexplainedpodcast.com/'
 ---
 Speaker 0: 00:00:16
 
