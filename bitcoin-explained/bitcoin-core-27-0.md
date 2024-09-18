@@ -300,7 +300,7 @@ So it was very hard to sort of derive from that mess what actually was consensus
 And that sort of was the big challenge to getting this done.
 So it sounds like this project was started, I think especially Jorge Timon was working on this.
 And it sounds like he kind of went away and probably people sort of stopped caring about this project.
-And now Bitcoin Core, DevSet, Let's just get rid of this thing.
+And now Bitcoin Core, Devs said, Let's just get rid of this thing.
 Let's start over.
 Let's start fresh.
 
