@@ -22,7 +22,7 @@ additional_resources:
 Speaker 0: 00:00:16
 
 Live from Utrecht, this is Bitcoin Explained.
-Hey Sjoerd.
+Hey Sjors.
 
 Speaker 1: 00:00:20
 
@@ -32,7 +32,7 @@ Speaker 0: 00:00:21
 
 First of all, I'd like to thank our sponsor CoinKite, the creator of the OpenDime as well.
 That's right.
-Are we going to get sued if we only mention the Opendime, Sjoerds?
+Are we going to get sued if we only mention the Opendime, Sjors?
 No. Are we contractually obligated to mention the Gold Card or can we just riff off the Opendime this episode?
 
 Speaker 1: 00:00:41
@@ -93,7 +93,7 @@ So people who would like to test it, they can.
 
 Speaker 0: 00:01:59
 
-For any new listeners, Sjoerd, what does it mean that there's a new Bitcoin Core release?
+For any new listeners, Sjors, what does it mean that there's a new Bitcoin Core release?
 
 Speaker 1: 00:02:04
 
@@ -754,7 +754,7 @@ It's just gonna work, it's gonna use its own clock.
 Speaker 0: 00:23:36
 
 Do you think that in the future when religion is just displaced, we'll actually use 1970 as the year zero?
-You think future humans will think that way, Sjoerd?
+You think future humans will think that way, Sjors?
 
 Speaker 1: 00:23:47
 
