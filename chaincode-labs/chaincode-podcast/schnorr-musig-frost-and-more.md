@@ -15,7 +15,6 @@ tags:
 speakers:
   - 'Pieter Wuille'
   - 'Tim Ruffing'
-  - 'Adam Jonas'
 categories:
   - 'podcast'
 summary: 'Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multisignatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.'
@@ -32,7 +31,7 @@ additional_resources:
 ---
 ## Introduction
 
-[Mark “Murch” Erhardt]: 00:00:00
+Mark Erhart: 00:00:00
 
 This goes to like this idea of like really only using the blockchain to settle disagreements.
 Like as long as everyone agrees with all we have to say to the blockchain, it's like, yeah, you don't really need to know what the rules were.
@@ -44,7 +43,7 @@ So while you were out being the Bitcoin ambassador that we depended on you to be
 Yeah.
 I don't think I let you down too much.
 
-[Mark “Murch” Erhardt]: 00:00:32
+Mark Erhart: 00:00:32
 
 I'm looking forward to hearing it.
 I hear that you went over a lot of stuff.
@@ -56,7 +55,7 @@ We covered updates about [FROST](https://eprint.iacr.org/2020/852.pdf) and [Roas
 
 We talked about ideas that are a little further out in terms of batch verification, signature aggregation, interactive full aggregation, [cross input signature aggregation](https://btctranscripts.com/tags/cisa/).
 
-[Mark “Murch” Erhardt]: 00:00:54
+Mark Erhart: 00:00:54
 
 So everything, like everything that pertains to Taproot and since then?
 
@@ -64,7 +63,7 @@ Adam Jonas: 00:00:58
 
 Yeah, but It only took two hours.
 
-[Mark “Murch” Erhardt]: 00:01:01
+Mark Erhart: 00:01:01
 
 That sounds like a hefty episode.
 
