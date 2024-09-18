@@ -91,11 +91,11 @@ So people who would like to test it, they can.
 
 Speaker 0: 00:01:59
 
-For any new listeners, Sjoerd, what does it mean that there's a new BitConcord release?
+For any new listeners, Sjoerd, what does it mean that there's a new Bitcoin Core release?
 
 Speaker 1: 00:02:04
 
-It kind of means nothing, because in BitConcord there is a new release roughly every six months, regardless of what is finished.
+It kind of means nothing, because in Bitcoin Core there is a new release roughly every six months, regardless of what is finished.
 So whatever is finished goes into the release, what is not finished does not go into the release.
 It is not, yeah, that special, I guess.
 
