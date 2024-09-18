@@ -7,6 +7,7 @@ tags:
   - 'bitcoin-core'
 speakers:
   - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
 categories: []
 summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 27.0 release.'
 episode: 92
