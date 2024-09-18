@@ -295,7 +295,7 @@ And now we have the kernel project, which tries it again and uses a different ap
 Speaker 0: 00:08:47
 
 Right.
-I mean, from what I understand or what I remember, at least years ago when I heard about this, the bigger core, at least as it was then and probably still, or at least as Satoshi released, it was kind of spaghetti goat, spaghetti coat where everything sort of refers to everything else and some of it was consensus and some of it was not.
+I mean, from what I understand or what I remember, at least years ago when I heard about this, the bigger core, at least as it was then and probably still, or at least as Satoshi released, it was kind of spaghetti code, spaghetti code where everything sort of refers to everything else and some of it was consensus and some of it was not.
 So it was very hard to sort of derive from that mess what actually was consensus.
 And that sort of was the big challenge to getting this done.
 So it sounds like this project was started, I think especially Jorge Timon was working on this.
