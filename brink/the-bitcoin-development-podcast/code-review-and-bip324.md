@@ -177,7 +177,7 @@ Maybe you can talk a little bit about, maybe also how you even came into that re
 Sebastian Falbesoner: 00:12:58
 
 Yeah, sure.
-So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the descriptor wallets were not as widespread yet, it was a little more difficult to figure out what a script-bub-keyzer wallet has.
+So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the descriptor wallets were not as widespread yet, it was a little more difficult to figure out what scriptPubKey's a wallet has.
 I actually did some wallet work before, more like small refactorings, and in the course of test writing I also learned a bit how an actual wallet would work.
 And the idea of the PR is quite simple, so basically now when you restore a backup, for example from your seed words, not in Bitcoin Core.
 Bitcoin Core doesn't support seed words, but let's say you just restore a backup, then the first thing the wallet has to do is look up all the funds from the past, like everything that you received in the past or you sent because you want to see your full balance, right?
@@ -316,7 +316,7 @@ No, it's not.
 So the very first things that are sent are really, in fact, the public keys to each other for the Diffie-Hellman key exchange.
 So they could both agree on a encryption key or rather set on encryption keys.
 And for that, a new scheme of encoding public keys used.
-This is this Alligator Swift, where Peter Wille, Tim Ruffing, I think did a great work, they basically took the idea from a paper from other researchers and put it in a way in the LibSecP library to make it available for us.
+This is this Alligator Swift, where Peter Wille, Tim Ruffing, I think did a great work, they basically took the idea from a paper from other researchers and put it in a way in the `libsecp` library to make it available for us.
 And that PR just got merged a few days ago.
 So we see some nice progress there.
 
@@ -379,21 +379,21 @@ Sebastian Falbesoner: 00:31:46
 
 What I first did back then still Dhruv was maintaining the PRs.
 So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub-PRS and no, I didn't look at the SECP parts until recently It always was appeared very scary for me all those cryptography and math stuff but I also ended up doing a little review there.
-I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the LibSecP library and he specifically presented the PR1129, which is the Alligator Swift part.
+I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the `libsecp` library and he specifically presented the PR1129, which is the Alligator Swift part.
 So I got a little deeper into that through that.
 
 Mike Schmidt: 00:32:48
 
-And you've been now dabbling in LibSecP?
-Maybe just a quick overview of what is LibSecP other than a little bit intimidating and then...
+And you've been now dabbling in `libsecp`?
+Maybe just a quick overview of what is `libsecp` other than a little bit intimidating and then...
 
 Sebastian Falbesoner: 00:32:59
 
 Yeah.
 So, what every transactions basically consists of to show proof that the one spending a transaction owns the private key of the address where the funds have been sent to, it includes a digital signature.
-And for that digital signature, we have our own library called libsecp256K1.
+And for that digital signature, we have our own library called `libsecp256K1`.
 It is named after the curve that has been chosen back then by Satoshi to represent those digital signatures.
-Earlier it was initially OpenSSL has been used but that has been replaced because that had some problems with the malleability like the same signature could be represented by different encodings and also it wasn't very performant, so at some point I think it was Peter Wuille, he came up with the idea to write their own library, libsecp256K1.
+Earlier it was initially OpenSSL has been used but that has been replaced because that had some problems with the malleability like the same signature could be represented by different encodings and also it wasn't very performant, so at some point I think it was Peter Wuille, he came up with the idea to write their own library, `libsecp256K1`.
 And yeah, that's what we use nowadays.
 
 Mike Schmidt: 00:34:12
@@ -415,7 +415,7 @@ Which is also something that Bitcoin Core always is happy if we can keep the dep
 
 Mike Schmidt: 00:34:31
 
-So how are you contributing to LibSecp now?
+So how are you contributing to `libsecp` now?
 You got a little bit more familiarity with it.
 You gave us an overview of what it is.
 
@@ -424,7 +424,7 @@ Sebastian Falbesoner: 00:34:38
 Yeah, so it is a project completely written in C, in the C language.
 I think even still sticking to the C89 standard, which is probably widely supported on a huge range of platforms, including small microcontrollers.
 And what it basically includes are functions to just create and verify digital signatures.
-A large part of the most recent softfork, the Taproot and the Schnorr signatures, that last part, the Schnorr signatures that has also been implemented in LibSecp, of course.
+A large part of the most recent softfork, the Taproot and the Schnorr signatures, that last part, the Schnorr signatures that has also been implemented in `libsecp`, of course.
 And yeah, it's a different world than Bitcoin Core.
 It's so much more low-level.
 Like every math operation is basically a single function called.
@@ -436,11 +436,11 @@ But it turned out it was just unstable on my PC.
 So the increase is not that noticeable, but that's still fine.
 It saves a few instructions.
 It got 1x so far, I think, so maybe it gets merged soon.
-And I think it's good to also have more review power in LibSecP.
+And I think it's good to also have more review power in `libsecp`.
 So my plan would be to also stay there.
 I'm still going in baby steps.
 And another thing is I realized I looked at the silent payments, which is another nice idea, and that takes also quite intense use of cryptography.
-So I thought, okay, if I want to really give good review, it may make sense to get a little deeper in the Libsecp to at least conceptually understand what's going on behind the scenes.
+So I thought, okay, if I want to really give good review, it may make sense to get a little deeper in the `libsecp` to at least conceptually understand what's going on behind the scenes.
 
 Mike Schmidt: 00:36:52
 
