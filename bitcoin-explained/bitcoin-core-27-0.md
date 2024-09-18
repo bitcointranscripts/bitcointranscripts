@@ -5,7 +5,8 @@ media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-92-bitcoin-co
 date: '2024-04-10'
 tags:
   - 'bitcoin-core'
-speakers: []
+speakers:
+  - 'Sjors Provoost'
 categories: []
 summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 27.0 release.'
 episode: 92
