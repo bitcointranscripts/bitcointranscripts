@@ -7,8 +7,7 @@ tags:
   - 'cryptography'
   - 'musig'
   - 'schnorr-signatures'
-  - 'multisignature'
-  - 'signature-aggregation'
+  - 'cisa'
   - 'threshold-signature'
   - 'libsecp256k1'
   - 'taproot'
@@ -53,7 +52,7 @@ Adam Jonas: 00:00:37
 We did.
 We covered updates about [FROST](https://eprint.iacr.org/2020/852.pdf) and [Roast](https://eprint.iacr.org/2022/550.pdf), [MuSig2](https://eprint.iacr.org/2020/1261).
 
-We talked about ideas that are a little further out in terms of batch verification, signature aggregation, interactive full aggregation, [cross input signature aggregation](https://btctranscripts.com/tags/cisa/).
+We talked about ideas that are a little further out in terms of batch verification, signature aggregation, interactive full aggregation, [cross-input signature aggregation](https://btctranscripts.com/tags/cisa/).
 
 Mark Erhart: 00:00:54
 
@@ -261,7 +260,7 @@ And so why do we want this over ECDSA?
 Pieter Wuille: 00:10:58
 
 Maybe it's good to go over the history here because I think our reasons for wanting it, at least me personally, have changed.
-The very first, this observation years ago, 2014 was like, wow, Schnorr has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as cross input signature aggregation.
+The very first, this observation years ago, 2014 was like, wow, Schnorr has this linearity property which means we can like aggregate signatures together in a transaction, what's currently being referred to as cross-input signature aggregation.
 And that goal drove a lot of interest in the scheme, because if you're talking about individual Schnorr signatures on chain or individual ECDSA signatures, maybe a bit faster here or there, they have a better provable security scheme.
 But on the other hand, like ECDSA is already used, like people, whatever its security assumptions and requirements for proofs are, people have, perhaps unwillingly, already accepted them.
 And so the change, unless you expect to completely migrate, but who knows when that happens, There isn't really all that much benefit of like an individual signature whether it's one scheme or another.
@@ -535,15 +534,15 @@ Computation versus verification.
 Pieter Wuille: 00:27:22
 
 Yeah, but as I said earlier, that wasn't really the original motivation to talk about the efficient or native multisignature construction.
-Namely, the original motivation was actually going further and have cross input signature aggregation.
+Namely, the original motivation was actually going further and have cross-input signature aggregation.
 And that is the idea of really all inputs in a transaction, even if there are multiple parties, even if the transaction is like spending coins from multiple separate coins together, we want a single signature for all of them.
 And this is possible if all those people cooperate, which is often the case in terms of like even today, like if you have a wallet and you have multiple coins in it and you're spending them simultaneously, you're just one party even though you have multiple public keys.
 Why wouldn't you be able to spend that with a single signature?
 And I think today we think of these things as very different concepts, but originally they weren't.
 And the reason is of course, well, in both cases, we want one signature that's really multiple parties collaborating and have a single key that...
-But there is actually a big difference in that in the cross input aggregation case, there are still multiple keys on chain.
+But there is actually a big difference in that in the cross-input aggregation case, there are still multiple keys on chain.
 There is one for every output at least because the output has to say who is authorized to spend it and it would be the verifier that aggregates them together and then verifies it against a single signature that is provided.
-The difference is the aggregation of the keys done off-chain or on-chain And in the case of cross input aggregation, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
+The difference is the aggregation of the keys done off-chain or on-chain And in the case of cross-input aggregation, you can't do it off-chain because you don't know ahead of time which outputs are going to be spent together.
 
 Tim Ruffing: 00:29:08
 
@@ -560,12 +559,12 @@ This is the thing we're talking about at the moment, right?
 
 Pieter Wuille: 00:29:38
 
-Because in the case of cross input signature aggregation, the verifier actually has to implement a multi signature scheme.
+Because in the case of cross-input signature aggregation, the verifier actually has to implement a multi signature scheme.
 You cannot have consensus rules that aren't aware of multisignatures.
 Like BIP342 today and its signatures could have been written and designed without even knowing of the concept of multisignatures and it would have been useful and people would have been able to come up afterwards with like, hey, we can actually use this to do multi signatures.
-The same is not true for cross input aggregation.
-And so the history of MuSig actually starts with the idea of cross input signature aggregation.
-Because cross input signature aggregation has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
+The same is not true for cross-input aggregation.
+And so the history of MuSig actually starts with the idea of cross-input signature aggregation.
+Because cross-input signature aggregation has this very important property that if you're going to aggregate all these keys together, The problem is that the keys those parties correspond to in the real world may not trust each other.
 I mean, you have an output you created, you have an output I created.
 I can try creating a transaction that spends both at the same time, maybe together with one of mine.
 And so it is very important that there is no way for me to come up with a fake key that somehow, when combined with your keys, result in something that I could sign for.
@@ -581,7 +580,7 @@ Or the key cancellation attack.
 Pieter Wuille: 00:31:04
 
 Exactly, exactly.
-So the obstacle in making cross input signature aggregation happen was, whoa, we have this problem of cancellation of keys, and we need a solution for that.
+So the obstacle in making cross-input signature aggregation happen was, whoa, we have this problem of cancellation of keys, and we need a solution for that.
 And years ago I came up with what I thought was a solution for it, which is this delinearization trick of multiplying each key with a randomizer to stop that from happening.
 And so we wrote that up and submitted it to places and like this is insecure or I think we noticed ourselves I think we found an attack ourselves before we tried to publish it like that this was insecure and we tried to fix it.
 That fix was what is now called the MuSig scheme, with three rounds.
@@ -600,7 +599,7 @@ And that's where we tried to get published, but really none of us had experience
 Pieter Wuille: 00:32:11
 
 And governance were like, well, there exists a scheme for this already.
-It's the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the Bellare-Neven scheme was that scheme could be used for cross input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
+It's the [Bellare-Neven](https://btctranscripts.com/bitcoin-core-dev-tech/2018-03/2018-03-05-bellare-neven/) scheme from 2006, which had a proof, which had three rounds, and I think not too long after that, so we tried to, you know, maybe write it up better and take their feedback into account, because a crucial difference between our scheme and the Bellare-Neven scheme was that scheme could be used for cross-input aggregation but it didn't result in signatures that looked like normal Schnorr signatures.
 So it wouldn't be usable for what we now call multisig.
 I think then we got contacted by Yannick Seurin who was a French provable security cryptographer researcher and he was like, hey, I heard you're looking into Schnorr signatures, I have a background in provable security, I'm interested.
 And so it just gave him a brain dump of like, this is a scheme worth thinking of, what we're trying to prove, these are the reasons why it's different.
@@ -797,7 +796,7 @@ Of course, I'll need to talk to them before they can spend it, but it's possible
 And importantly, unidirectional.
 There needs to be no communication from me to them.
 
-## FROST INTRO
+## FROST
 
 Pieter Wuille: 00:42:40
 
@@ -805,7 +804,6 @@ As soon as we go towards threshold signatures, you know, the T-of-N where there'
 
 Tim Ruffing: 00:42:50
 
-FROST is one of the...
 You could say FROST is the threshold signature equivalent to MuSig, really.
 It's like a threshold signature of MuSig.
 And in the signing part, it's very, very similar.
@@ -829,7 +827,7 @@ Like you can't compute an address without, you know, interacting with your co-si
 And sure there are ways where you might be able to do that once and then still derive multiple addresses from that, without proof.
 But this I think makes that sort of schemes much more niche in that it is something to deploy within like well-defined protocols that have a real need for the advantages that has over the alternatives and it can be.
 
-## MuSig vs FROST
+### MuSig vs FROST
 
 Tim Ruffing: 00:44:22
 
@@ -880,8 +878,6 @@ Pieter Wuille: 00:47:56
 
 But this whole thing, like the MuSigs, the scripts, the tree, all of that still has a non-interactive key setup.
 The reason why you would want to do this over something FROST-like is sort of the traditional way of thinking of I can just generate addresses if I have the keys still works with this.
-
-## FROST DEFINITION
 
 Adam Jonas: 00:48:18
 
@@ -938,7 +934,7 @@ Adam Jonas: 00:49:53
 But there is a little more, there is more flexibility by definition.
 Yeah.
 
-## Powerful Combination of Taproot and MuSig : Smart Contract or Spending Policy
+## Spending Policies with MuSig
 
 Tim Ruffing: 00:49:57
 
