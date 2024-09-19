@@ -114,6 +114,7 @@ And perhaps it's worth taking a step back and explaining just basics of Lightnin
 
 ## Lightning basics
 
+Sergei Tikhomirov: 00:02:50
 
 So I'm sure many of the listeners are familiar with that, but to put everyone on the same page, I would just say that Lightning is an additional network, an additional protocol on top of Bitcoin that allows for very fast payments and that utilizes Bitcoin scripts in a very clever way to make it very secure with some kind of additional security assumptions.
 But I would say they do not diminish security very much.
@@ -122,6 +123,7 @@ But also Alice can send money to Charlie through Bob using what is called multi-
 
 ## Why LN payments fail
 
+Sergei Tikhomirov: 00:03:38
 
 And this is the essential functionality of Lightning.
 But the problem with this approach is that these channels that pairs of nodes may have between each other, they have the capacity, that is, the total number of coins that is locked into the channel.
@@ -136,14 +138,12 @@ And the attack basically allows revealing balances in remote channels, which is 
 And the balances are not announced, they are not broadcast.
 So it seems that it could be a good idea to keep them private and maintain a high level of privacy in the Lightning network.
 
+## Why privacy is important
+
 Jonas: 00:05:19
 
 So you've said the word privacy a bunch in that description.
 Why do you think that privacy is important?
-
-## Why privacy is important
-
-
 And maybe as we zoom back a little bit and think about maybe, you also mentioned trade-offs in your intro.
 What are the trade-offs between the different layers and what are the trade-offs in terms of how Lightning is constructed?
 And where does privacy fit into that compared to the other goals of Lightning?
@@ -159,6 +159,7 @@ And in terms of Bitcoin, there has been lots of research about Bitcoin privacy s
 
 ## Privacy potential of Lightning vs L1 Bitcoin
 
+Sergei Tikhomirov: 00:06:40
 
 People have been writing about clustering transactions and labeling transaction clusters.
 And there are huge companies like Chainalysis built on top of this premise that monetize on this expertise and sell basically the service of de-anonymizing users.
@@ -179,6 +180,7 @@ But As it turns out, and as we have, okay, we haven't discovered it, it has been
 
 ## How probing works
 
+Sergei Tikhomirov: 00:08:39
 
 But the probing attack that we've been focusing on allows an adversary to reveal the balance of some remote channel by sending a series of fake payments that we call probes.
 And these payments are fake in the sense that in the normal course of operation in Lightning, the receiver first creates some secret, the payment secret, then sends the hash of the secret to the sender.
@@ -201,11 +203,9 @@ Either the attacker connects directly to the target channel, and then the attack
 And repeating this process in a binary search, the attacker can narrow down the range of the estimates to basically arbitrarily low value.
 If we don't account for dust limits, don't account for fees, but basically, very precisely, the attacker can learn the balance.
 In a more generalized setting, the attacker can do the same thing through a multi-hop path, so the target node would be the last one, but also the attacker will get some information along the way about the intermediary nodes, whether they have sufficient balance or not.
+So this is the basics of probing.
 
 ## Why is balance discovery bad?
-
-
-So this is the basics of probing.
 
 Mark Erhardt: 00:11:34
 
@@ -228,6 +228,7 @@ I don't want them in general to know the balance of my Bitcoin wallet and to con
 
 ## Persistent identities in Lightning
 
+Sergei Tikhomirov: 00:12:56
 
 Another way in which Lightning is, I would say, less private, or at least this is a consideration that we have to make, is that the identities of nodes in Lightning are relatively persistent.
 So contrary to Bitcoin nodes, if I establish a Bitcoin node, I exchange some data with other peers, it doesn't matter very much which peers I connect to, as long as I'm not fully eclipsed, as long as I have at least one honest connection to the real Bitcoin network, then by comparing the proof of work, I will know which chain is the heaviest, which chain is valid.
@@ -334,6 +335,7 @@ So we have Lightning integration in Cash App now.
 
 ## Lightning integrations and walled gardens
 
+Jonas: 00:22:01
 
 And if you can imagine a beginner thinking that, well, I've heard Lightning is private, but I'm using it within this walled garden of Cash App.
 It may not have all of the bells and whistles that you think it might.
@@ -394,8 +396,8 @@ With no one behind the booth because they're anonymous.
 Jonas: 00:26:18
 
 I didn't see anybody there.
-But it was like there was a banner and it was just for context.
-Yeah, market maker on Lightning.
+But it was like there was a banner and it was...
+For context, LNBIG is a huge market maker on Lightning.
 
 Sergei Tikhomirov: 00:26:30
 
@@ -467,6 +469,8 @@ So long story short, for three channel hops, four channel hops, five channel hop
 
 ## Combining probing with jamming
 
+Sergei Tikhomirov: 00:33:00
+
 But we suggest a way to fix it for the attacker, namely to combine the probing attack with another attack that also has been known, it just hasn't ever been combined with probing.
 And the second attack is called jamming.
 I should probably explain what jamming is shortly.
@@ -489,17 +493,15 @@ And to make it happen, the transaction that encodes the current state of the cha
 It must be standard in other way.
 And this limits the number of outputs that such transaction might have.
 Therefore, it limits the number of so-called hanging HTLCs or in-flight HTLCs that the Lightning channel can have at any one time.
-And there is only, I'm not sure I remember the exact number, but on the order of 500 something or 400 something...
+And there is only 483 in-flight payments.
 
 ## The limit on in-flight payments
-
-
- 483 in-flight payments.
 
 Mark Erhardt: 00:36:10
 
 Is that really limited because of the standardness of transactions?
-Because transactions are standard up to 100,000 Vbytes. So 483 outputs shouldn't be that large.
+Because transactions are standard up to 100,000 Vbytes.
+So 483 outputs shouldn't be that large.
 
 Sergei Tikhomirov: 00:36:22
 
@@ -508,7 +510,7 @@ Because I think I read this Bitcoin Stack Exchange answer that explained it this
 
 Jonas: 00:36:31
 
-Did Mark write the answer?
+Did Murch write the answer?
 
 Sergei Tikhomirov: 00:36:32
 
@@ -569,6 +571,7 @@ That seems like a legitimate use.
 
 ## Bad and good probing
 
+Mark Erhardt: 00:41:19
 
 I'm wondering whether if everybody did that, that would lock up a lot of capacity in the network already and reduce the routing capacity for others.
 But The mischievous use would be, of course, to try to reduce the financial privacy of everyone and to learn the exact balances of channels and to perhaps even pinpoint who pays whom.
@@ -655,6 +658,7 @@ Yeah, for example, with multi-hub and PTLCs, you can have different relationship
 
 ## Hub-and-spoke terminology and aviation analogy
 
+Mark Erhardt: 00:49:01
 
 So I think even if we have, say, a superhighway in the center that is composed of a few supernodes, I don't like hub too much.
 Supernode in the sense that a node has a huge balance and a lot of connections.
@@ -665,9 +669,9 @@ I'm sorry, why don't you like hub?
 
 Mark Erhardt: 00:49:22
 
-Hub and Spoke sort of gives the impression that they're inherently different things.
+Hub-and-spoke sort of gives the impression that they're inherently different things.
 
-Sergei Tikhomirov: 00:49:28
+Jonas: 00:49:28
 
 Because they are.
 
@@ -776,6 +780,7 @@ If we focus more on the computer science side of things, and in particular secur
 
 ## Why Bitcoin is unique
 
+Sergei Tikhomirov: 00:55:18
 
 No one knows who that is and where they are now.
 And now it's evolving as a living organism and it just blows my mind.
