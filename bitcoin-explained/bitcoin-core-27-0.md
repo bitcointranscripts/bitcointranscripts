@@ -651,7 +651,7 @@ If somebody does this, then it's gonna affect everybody who runs a virus scanner
 
 Aaron van Wirdum: 00:20:28
 
-I'm not impressed, Shorts.
+I'm not impressed, Sjors.
 Where are my soft forks?
 Where's, where are my, Does this make number go up?
 I don't think so.
