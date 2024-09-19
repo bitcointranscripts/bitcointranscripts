@@ -95,6 +95,8 @@ Sjors Provoost: 00:01:55
 Yes, exactly.
 So people who would like to test it, they can.
 
+## What is a Software Release
+
 Aaron van Wirdum: 00:01:59
 
 For any new listeners, Sjors, what does it mean that there's a new Bitcoin Core release?
