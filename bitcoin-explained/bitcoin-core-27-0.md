@@ -1121,6 +1121,8 @@ It'll tell you how to do that.
 And that's nice because we prefer it when people find bugs before the release is final.
 So help is welcome.
 
+## Additional Backport Bitcoin Core Releases v26.1
+
 Aaron van Wirdum: 00:33:47
 
 Okay, one other quick question.
@@ -1153,6 +1155,8 @@ So this is indeed to not force you into using the latest and greatest version bu
 It's a bit subjective what goes into these backport releases.
 Of course, it could, yeah, usually the more relevant bugs.
 Anyways,
+
+## Conclusion - Download Now
 
 Aaron van Wirdum: 00:35:16
 
