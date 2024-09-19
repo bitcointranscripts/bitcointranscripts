@@ -559,6 +559,8 @@ But they'll just start a new one, so it's not a big deal.
 
 Aaron van Wirdum: 00:17:15
 
+## BIP-324 - Peer-to-Peer-encryption
+
 Okay, next one.
 [BIP-324](https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki), we made an episode on that.
 That's network encryption.
