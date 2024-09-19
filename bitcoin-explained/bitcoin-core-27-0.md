@@ -532,7 +532,7 @@ And when I'm writing the letter, I'm writing you the message, I'm adding a diffe
 And then you burn the piece of paper that we used as a cipher.
 So that means Anybody who intercepts the communication midway can no longer decipher it.
 
-Speaker 0: 00:16:35
+Aaron van Wirdum: 00:16:35
 
 Anyway, so the mempool is encrypted.
 
@@ -542,7 +542,7 @@ Using roughly that technique, except a very insecure version of it, because the 
 And also at the start of the file, the cipher is actually revealed.
 So it is totally insecure, because it's not the goal to be secure, it's the goal to fool the virus scanner.
 
-Speaker 0: 00:16:57
+Aaron van Wirdum: 00:16:57
 
 Yep.
 Okay, that's it?
@@ -553,7 +553,7 @@ Sjors Provoost: 00:17:01
 Yeah, and so the little thing there is that means you can't downgrade, because older versions of the node, if you wanted to go back to an old version, won't understand the mempool file.
 But they'll just start a new one, so it's not a big deal.
 
-Speaker 0: 00:17:15
+Aaron van Wirdum: 00:17:15
 
 Okay, next one.
 BIP324, we made an episode on that.
@@ -572,7 +572,7 @@ It was available, you could turn it on.
 Yeah.
 And now it's on by default.
 
-Speaker 0: 00:17:45
+Aaron van Wirdum: 00:17:45
 
 Right, okay.
 Quick reminder of what it was again?
@@ -586,7 +586,7 @@ Sten can just paste it.
 No, that's fine.
 The idea is that you and I have a connection and instead of sending everything in plain text, we encrypt everything.
 
-Speaker 0: 00:18:06
+Aaron van Wirdum: 00:18:06
 
 Yep.
 Okay, I mean, I guess actually, yeah, that's good enough.
@@ -596,7 +596,7 @@ Sjors Provoost: 00:18:11
 
 Which starts with the Diffie-Hellman key exchange, which you have described in your book.
 
-Speaker 0: 00:18:16
+Aaron van Wirdum: 00:18:16
 
 Oh, thanks, you're plugging it as well.
 
@@ -621,7 +621,7 @@ And so this would be probably a future change.
 If we know that this works, then we might just try an encrypted connection all the time and fall back to unencrypted if it doesn't work.
 So now this is, even though it's on by default, it's still a bit conservative.
 
-Speaker 0: 00:19:53
+Aaron van Wirdum: 00:19:53
 
 Right.
 Okay, so so far we talked about something that was removed, something that's a very niche problem.
@@ -631,7 +631,7 @@ Sjors Provoost: 00:20:02
 Not niche if you use Windows.
 But.
 
-Speaker 0: 00:20:07
+Aaron van Wirdum: 00:20:07
 
 No, I think you're, we're not there yet.
 
@@ -639,7 +639,7 @@ Sjors Provoost: 00:20:10
 
 Okay.
 
-Speaker 0: 00:20:12
+Aaron van Wirdum: 00:20:12
 
 I said so far we've talked about something that was removed.
 Something that solves a weird virus thing.
@@ -649,7 +649,7 @@ Sjors Provoost: 00:20:21
 Yeah, but that may not be a weird problem.
 If somebody does this, then it's gonna affect everybody who runs a virus scanner, like not just a few people.
 
-Speaker 0: 00:20:28
+Aaron van Wirdum: 00:20:28
 
 I'm not impressed, Shorts.
 Where are my soft forks?
@@ -660,7 +660,7 @@ Sjors Provoost: 00:20:37
 
 This is finally fixed lightning.
 
-Speaker 0: 00:20:39
+Aaron van Wirdum: 00:20:39
 
 Yes, please.
 Okay, moving on to the next one.
@@ -676,7 +676,7 @@ Question is, what is two hours in the future?
 What if your clock is wrong?
 You might be wrong about that.
 
-Speaker 0: 00:21:05
+Aaron van Wirdum: 00:21:05
 
 Wait, let me repeat that for those that don't know and didn't quite follow.
 Yeah, you find a new block or someone sends you a new block.
@@ -687,7 +687,7 @@ Sjors Provoost: 00:21:24
 
 No the past is fine because you might be catching up on old blocks.
 
-Speaker 0: 00:21:27
+Aaron van Wirdum: 00:21:27
 
 Okay yeah it's not mined in the future and the future means two hours or more into the future.
 
@@ -696,7 +696,7 @@ Sjors Provoost: 00:21:32
 Yeah, now there are limitations to the past by the way, but that is relative to earlier blocks, right?
 You cannot go, blocks can't go back in time.
 
-Speaker 0: 00:21:38
+Aaron van Wirdum: 00:21:38
 
 Right.
 
@@ -704,7 +704,7 @@ Sjors Provoost: 00:21:38
 
 But yeah, you cannot accept the block that's from the future.
 
-Speaker 0: 00:21:43
+Aaron van Wirdum: 00:21:43
 
 Right, now we're talking about blocks in the future.
 Yeah.
@@ -723,7 +723,7 @@ You know, Not that long ago, that's a question you would ask people on the stree
 Yeah.
 The amazing.
 
-Speaker 0: 00:22:20
+Aaron van Wirdum: 00:22:20
 
 Do you have the time?
 
@@ -740,7 +740,7 @@ And so my thinking is that they're generally either very accurate to within the 
 Yeah, it's 1900.
 Yeah, I've had one of these cheap computers where you, where like the little battery is dead, so when you turn it on, the clock is back at the second zero, which is January 1st 1970.
 
-Speaker 0: 00:23:14
+Aaron van Wirdum: 00:23:14
 
 Is that it?
 
@@ -751,7 +751,7 @@ Okay, so yeah, so now I think it will still warn you, like, hey, this block seem
 No, I think it'll warn you saying, hey, your peers think the time is different than I think it is, but that's it.
 It's just gonna work, it's gonna use its own clock.
 
-Speaker 0: 00:23:36
+Aaron van Wirdum: 00:23:36
 
 Do you think that in the future when religion is just displaced, we'll actually use 1970 as the year zero?
 You think future humans will think that way, Sjors?
@@ -761,7 +761,7 @@ Sjors Provoost: 00:23:47
 Do you think that when we invent something better than a QWERTY keyboard, we'll actually use it?
 I'm still holding my breath.
 
-Speaker 0: 00:23:54
+Aaron van Wirdum: 00:23:54
 
 I'm not going to hold my breath for that one.
 
@@ -769,7 +769,7 @@ Sjors Provoost: 00:23:56
 
 I don't think we're going to change this.
 
-Speaker 0: 00:23:58
+Aaron van Wirdum: 00:23:58
 
 Okay.
 Because the QWERTY keyboard is not going to change?
@@ -782,7 +782,7 @@ I'm sure at some point people will be like, oh, it's the year 370, 225, 695.
 Yeah, that gets a little tedious.
 But maybe they'll just not count the thousands or something like that.
 
-Speaker 0: 00:24:30
+Aaron van Wirdum: 00:24:30
 
 Or we change it to 1971.
 That's what Bitcoiners will agree with.
@@ -791,7 +791,7 @@ Sjors Provoost: 00:24:36
 
 That will be the rounding error in 300 million years.
 
-Speaker 0: 00:24:41
+Aaron van Wirdum: 00:24:41
 
 Next point.
 
@@ -799,7 +799,7 @@ Sjors Provoost: 00:24:46
 
 Another amazing problem.
 
-Speaker 0: 00:24:49
+Aaron van Wirdum: 00:24:49
 
 External signing for Windows disabled.
 Oh yeah.
@@ -809,7 +809,7 @@ Sjors Provoost: 00:24:55
 
 Yes, so there is a feature in Bitcoin Core where you can connect a hardware wallet to your USB port and then you have to install HWI.
 
-Speaker 0: 00:25:02
+Aaron van Wirdum: 00:25:02
 
 Some people think that Bitcoin itself will be used as a clock source.
 What do you think of that?
@@ -821,7 +821,7 @@ Sjors Provoost: 00:25:12
 
 Bitcoin nodes use a clock, A trusted clock even.
 
-Speaker 0: 00:25:17
+Aaron van Wirdum: 00:25:17
 
 You measure the time in blocks nowadays.
 
@@ -831,7 +831,7 @@ No, you do not.
 Why not?
 Because your node checks the blocks to see that their times are valid.
 
-Speaker 0: 00:25:28
+Aaron van Wirdum: 00:25:28
 
 I guess that's what we were just talking about.
 Yeah, exactly.
@@ -845,7 +845,7 @@ We have talked about that in the past.
 It's a separate thing you download.
 You tell Bitcoin Core where it is, and then you can use hardware wallets right from the GUI as simple as like create new wallet, SSO, which you like to use your cold card if you connected it?
 
-Speaker 0: 00:25:51
+Aaron van Wirdum: 00:25:51
 
 Good choice.
 
@@ -855,7 +855,7 @@ And it'll import the keys, you can send with it, it'll just work, it's pretty co
 However, Windows support has always been a bit iffy.
 It's been disabled a few times, it's been enabled a few times.
 
-Speaker 0: 00:26:03
+Aaron van Wirdum: 00:26:03
 
 What's iffy about it, why is it iffy?
 Ah, Windows is just painful.
@@ -865,7 +865,7 @@ Sjors Provoost: 00:26:12
 
 Yeah, I think it would just, either it was broken in Windows or the support for Windows broke something else that we needed.
 
-Speaker 0: 00:26:20
+Aaron van Wirdum: 00:26:20
 
 So this is a Windows only problem.
 
@@ -876,7 +876,7 @@ Then it was added back, which I think was also not mentioned in the release note
 Nobody was excited about it.
 Now it's removed again, which is mentioned in the release notes, and it should be back again in the next version.
 
-Speaker 0: 00:26:42
+Aaron van Wirdum: 00:26:42
 
 Okay, so if...
 
@@ -884,7 +884,7 @@ Sjors Provoost: 00:26:42
 
 I think nobody's going to care about it.
 
-Speaker 0: 00:26:45
+Aaron van Wirdum: 00:26:45
 
 If you have a hardware wallet and you're using Windows and you have a Bitcoin Core node where you use the wallet with the hardware wallet, then you shouldn't upgrade.
 And you're using HWI as a tool?
@@ -896,7 +896,7 @@ There's Sparrow Wallet and there's Spectre.
 Those will work around the problem.
 So it's only under those very specific circumstances that it would cause a problem for you.
 
-Speaker 0: 00:27:07
+Aaron van Wirdum: 00:27:07
 
 Okay, and you think that's basically no one is using it that way?
 
@@ -904,7 +904,7 @@ Sjors Provoost: 00:27:11
 
 Well based on the fact that nobody complained the last time it was removed.
 
-Speaker 0: 00:27:16
+Aaron van Wirdum: 00:27:16
 
 Yeah but most people aren't gonna, they don't even know where to find you.
 
@@ -912,7 +912,7 @@ Sjors Provoost: 00:27:20
 
 But they know where to complain.
 
-Speaker 0: 00:27:22
+Aaron van Wirdum: 00:27:22
 
 Do they?
 What's the service number for Bitcoin Core?
@@ -923,7 +923,7 @@ Sjors Provoost: 00:27:30
 
 This would have gone viral if somebody was bothered by this.
 
-Speaker 0: 00:27:32
+Aaron van Wirdum: 00:27:32
 
 Clearly.
 
@@ -933,7 +933,7 @@ Anyway, yeah.
 So, yeah, if you do need this, yeah, then I guess don't upgrade to 28.
 To 27.0, wait for 28.0. It'll be fixed again, probably.
 
-Speaker 0: 00:27:43
+Aaron van Wirdum: 00:27:43
 
 Okay.
 The last part, we have one more, and that one is actually kind of interesting, I think.
@@ -954,7 +954,7 @@ You have a bag and you want to put a bunch of stones in it from different sizes 
 If you only put the big stones in, then you have a lots of room left.
 If you only put the small stones in, then it's not efficient either, so.
 
-Speaker 0: 00:28:43
+Aaron van Wirdum: 00:28:43
 
 The analogy here would be a lot of room left is a lot of change, right?
 But that's not really a problem.
@@ -965,7 +965,7 @@ Yeah, I don't know.
 Well, the problem is if you, in this case, if you use lots of very small coins, then you're paying lots of fees because every coin you put into a transaction increases the fees.
 And that general problem is the knapsack problem, if my computer science understanding is correct, and that's unsolvable, there's no perfect solution, you can just approximately solve it.
 
-Speaker 0: 00:29:10
+Aaron van Wirdum: 00:29:10
 
 It's one of these hard problems, right?
 Yes.
@@ -976,7 +976,7 @@ So There were other algorithms, branch and bound was one.
 I don't actually know exactly how it works.
 But it boils down to it tries to find a reasonable set of coins to put into the bag to spend with, but not necessarily the cheapest one.
 
-Speaker 0: 00:29:28
+Aaron van Wirdum: 00:29:28
 
 Branch and bound try to optimize for not having any change, I think, right?
 
@@ -999,7 +999,7 @@ Sjors Provoost: 00:30:00
 Yeah, but for privacy reasons, you don't want to reveal which side is change.
 And so it deliberately spends a bit more and creates higher change.
 
-Speaker 0: 00:30:09
+Aaron van Wirdum: 00:30:09
 
 Oh, I remember that.
 Yeah, we mentioned that in an earlier episode.
@@ -1013,7 +1013,7 @@ I don't actually know that much about coin selection.
 Should ask Merge, he wrote a whole thesis on it.
 And he also designed this algorithm.
 
-Speaker 0: 00:30:29
+Aaron van Wirdum: 00:30:29
 
 It's kind of a science of its own.
 
@@ -1028,7 +1028,7 @@ However, and this is where the new algorithm, CoinGrinder, comes in, if fees are
 So it's going to ignore the future, it's going to say, okay, right now fees are high, hopefully they'll go down again in the future.
 I'm just going to do whatever is cheap because otherwise...
 
-Speaker 0: 00:31:27
+Aaron van Wirdum: 00:31:27
 
 I can make this payment with using only one UTXO, So that's what I'm going to do because that's the cheapest way.
 
@@ -1037,7 +1037,7 @@ Sjors Provoost: 00:31:32
 Yeah, because there were situations where fees were 600 sats per byte and the Bitcoin Core wallet was like, oh, let me spend 25 coins now.
 And then you were paying, I don't know, hundreds of dollars in fees.
 
-Speaker 0: 00:31:43
+Aaron van Wirdum: 00:31:43
 
 Right.
 Okay, so it does that if fees are 30 VBytes per...
@@ -1049,7 +1049,7 @@ Sjors Provoost: 00:31:55
 Yeah, I believe there's a setting.
 It's specified in the readme.
 
-Speaker 0: 00:31:58
+Aaron van Wirdum: 00:31:58
 
 It's not just an algorithmically changing thing, but for now...
 
@@ -1059,7 +1059,7 @@ No, I guess the problem is what is high depends on the exchange rate and also de
 Because if fees will never go below 30, then you should really not use this algorithm even at 30.
 It's really designed for spikes.
 
-Speaker 0: 00:32:21
+Aaron van Wirdum: 00:32:21
 
 But what is a spike?
 Well, I mean, there's probably some way, Mert, if you're listening, we need an algorithm to algorithmically adjust your algorithm.
@@ -1069,7 +1069,7 @@ Sjors Provoost: 00:32:32
 Yeah, well, one of the problems is that if you're not running your node all the time, you don't necessarily know what the fee rates are historically, because if you only look at what's in blocks, you could be fooled by the miners into thinking fees are higher than they are.
 So it's a very tricky problem.
 
-Speaker 0: 00:32:48
+Aaron van Wirdum: 00:32:48
 
 Yeah.
 Anyway, so that's in Bitcoin Core 27 now.
@@ -1078,7 +1078,7 @@ Sjors Provoost: 00:32:52
 
 That's right.
 
-Speaker 0: 00:32:53
+Aaron van Wirdum: 00:32:53
 
 So if fees go up, then this will sort of click on in the same way that everything in your home, Shor's clicks on automatically.
 Exactly.
@@ -1088,7 +1088,7 @@ Sjors Provoost: 00:33:09
 
 And then you spend more time maintaining it.
 
-Speaker 0: 00:33:12
+Aaron van Wirdum: 00:33:12
 
 It's like dog from Back to the Future, where feeding the dog is automated.
 Exactly.
@@ -1103,7 +1103,7 @@ It'll tell you how to do that.
 And that's nice because we prefer it when people find bugs before the release is final.
 So help is welcome.
 
-Speaker 0: 00:33:47
+Aaron van Wirdum: 00:33:47
 
 Okay, one other quick question.
 I also saw, so there's also new releases like 26.1. I saw, what is it, what's the point of that?
@@ -1113,7 +1113,7 @@ Sjors Provoost: 00:33:57
 Yeah, so let's say you're really passionate about the Bitcoin consensus.
 And well, in this case, that doesn't matter because it's still in there, but let's say it's removed.
 
-Speaker 0: 00:34:07
+Aaron van Wirdum: 00:34:07
 
 Or you're very passionate about using hardware wallets on Bitcoin Core with the thing on Windows.
 
@@ -1122,7 +1122,7 @@ Sjors Provoost: 00:34:13
 Yes, exactly.
 If that's your passion, you can use an older, instead of only using the old release, which probably has bugs in it, there is a 0.1, 0.2, et cetera, that only fixes bugs in that earlier release, but doesn't add any of the new features.
 
-Speaker 0: 00:34:31
+Aaron van Wirdum: 00:34:31
 
 Okay, there's a new alt release.
 
@@ -1136,7 +1136,7 @@ It's a bit subjective what goes into these backport releases.
 Of course, it could, yeah, usually the more relevant bugs.
 Anyways,
 
-Speaker 0: 00:35:16
+Aaron van Wirdum: 00:35:16
 
 you should just get Bitcoin Core 27.
 Get up to date, get the newest, the shiny release soon to be found on BitcoinCore.org or wherever you find Bitcoin nodes.
