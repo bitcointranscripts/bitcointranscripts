@@ -519,7 +519,7 @@ Yeah, but if you do it just plus five for every letter, that's a bit easy to cra
 
 Aaron van Wirdum: 00:15:52
 
-I mean, it is, but that's the Caesar Cipher.
+I mean, it is, but that's the [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
 
 Sjors Provoost: 00:15:54
 
@@ -594,7 +594,7 @@ If you do want to know more, we may have a short on it.
 
 Sjors Provoost: 00:18:11
 
-Which starts with the Diffie-Hellman key exchange, which you have described in your book.
+Which starts with the [Diffie-Hellman key exchange](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange), which you have described in your book.
 
 Aaron van Wirdum: 00:18:16
 
