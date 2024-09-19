@@ -666,7 +666,7 @@ Sjors Provoost: 00:20:37
 
 This is finally fixed lightning. [Humour] 
 
-## Network adjusted timer moves - Clock
+## Network adjusted timer moves - Clock is removed
 
 Aaron van Wirdum: 00:20:39
 
