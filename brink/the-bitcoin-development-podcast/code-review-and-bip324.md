@@ -14,7 +14,10 @@ speakers:
 categories: []
 summary: 'Sebastian Falbesoner (theStack) and Mike Schmidt talk about Bitcoin Core code review, BIP324, and Sebastian''s plans for the next year.'
 additional_resources:
-
+  - title: Sebastian's plans for the next year
+    url: https://brink.dev/blog/2023/06/20/bip324/
+  - title: https://brink.dev/
+    url: https://brink.dev/
 ---
 ## Sebastian's journey to Bitcoin development
 
