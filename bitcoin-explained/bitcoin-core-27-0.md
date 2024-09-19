@@ -807,7 +807,7 @@ This is about hardware wallets.
 
 Sjors Provoost: 00:24:55
 
-Yes, so there is a feature in Bitcoin Core where you can connect a hardware wallet to your USB port and then you have to install HWI.
+Yes, so there is a feature in Bitcoin Core where you can connect a hardware wallet to your USB port and then you have to install [HWI](https://btctranscripts.com/bitcoin-explained/hardware-wallet-integration-in-bitcoin-core-and-hwi).
 
 Aaron van Wirdum: 00:25:02
 
