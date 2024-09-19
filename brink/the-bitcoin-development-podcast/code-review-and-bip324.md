@@ -177,7 +177,7 @@ Maybe you can talk a little bit about, maybe also how you even came into that re
 Sebastian Falbesoner: 00:12:58
 
 Yeah, sure.
-So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the descriptor wallets were not as widespread yet, it was a little more difficult to figure out what scriptPubKey's a wallet has.
+So that was also an interesting task for me because, I was actually surprised that this wasn't done before because it's an obvious idea and I think there was a PR before from Marco Falker like three years earlier but the time back then was different, the descriptor wallets were not as widespread yet, it was a little more difficult to figure out what `scriptPubKey`s a wallet has.
 I actually did some wallet work before, more like small refactorings, and in the course of test writing I also learned a bit how an actual wallet would work.
 And the idea of the PR is quite simple, so basically now when you restore a backup, for example from your seed words, not in Bitcoin Core.
 Bitcoin Core doesn't support seed words, but let's say you just restore a backup, then the first thing the wallet has to do is look up all the funds from the past, like everything that you received in the past or you sent because you want to see your full balance, right?
@@ -205,7 +205,7 @@ Sebastian Falbesoner: 00:16:12
 Yeah, exactly.
 So we just use them if they're created locally.
 If that option is turned on, they're just really created on the go, whenever a new block comes in or on the initial block download, so that the index is created.
-And another thing which uses that is the ScanBlocks RPC by James O'Byrne.
+And another thing which uses that is the `scanblocks` RPC by James O'Beirne.
 I'm always not sure how to pronounce his last name.
 I think that one came in one release earlier, if I'm not mistaken, 24.
 That is an RPC call though, and also, you can pass a set of output scripts that you're interested in and it would just return you all the blocks that are matching.
@@ -215,8 +215,8 @@ So it's kind of nice that we can use that to make the the life of users easier, 
 
 Mike Schmidt: 00:17:05
 
-One thing that I got feedback on about your work is from a prominent Bitcoin Core dev who said, quote, "the stacks review matters."
-The stacks review is valuable, something along those lines.
+One thing that I got feedback on about your work is from a prominent Bitcoin Core dev who said, quote, "theStack's review matters."
+theStack's review is valuable, something along those lines.
 And so I think you've done quite a bit of review and maybe you can comment on that in the context of how do you think about how much time you spend authoring new code and PRs versus review?
 And why do you think that this person said that your review counts?
 
@@ -228,7 +228,7 @@ Like it would be great if we have more review power.
 And yeah, according to what person's reviews counts, I think it's also kind of a proof of work system in Bitcoin Core.
 Not specifically regarding me, but in general, if you over the time give review comments that are helpful or are considered helpful by others, then of course you're getting taken more seriously.
 I think my review style has been also inspired by other people from the top of my head.
-I could name Russ yanofsky who give very great detailed review comments and that's inspired someone, right?
+I could name Russ Yanofsky who give very great detailed review comments and that's inspired someone, right?
 To be detailed and whenever testing some PR like really thinking what could go wrong.
 How could I trigger some code path that is not intended or something like that.
 The nice thing about reviewing is that you can do it offline.
@@ -359,7 +359,7 @@ Yeah, it's an iterative process.
 The very first thing I would always read is the BIP of course.
 In this case it's very nicely written in a generic way first but then later it gets very detailed with all the cryptography stuff which is kind of scary.
 But the good thing is when I started there were already some PRs available.
-For example, there was a Python implementation of BIP324 basically from Stratosphere, which is another Bitcoin Core contributor interested in reviewing BIP324.
+For example, there was a Python implementation of BIP324 basically from Stratospher, which is another Bitcoin Core contributor interested in reviewing BIP324.
 So it's a little reading BIP, a little reading available PRs already and figuring out what they do.
 Then there is also podcast material.
 I remember I listened to the Stefan Livera podcast.
@@ -378,8 +378,9 @@ You familiarize yourself with the topic by reading the BIP and maybe looking at 
 Sebastian Falbesoner: 00:31:46
 
 What I first did back then still Dhruv was maintaining the PRs.
-So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub-PRS and no, I didn't look at the SECP parts until recently It always was appeared very scary for me all those cryptography and math stuff but I also ended up doing a little review there.
-I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the `libsecp` library and he specifically presented the PR1129, which is the Alligator Swift part.
+So I just first built the main PR that includes all the sub-PRs and ran a node just to also have something available already and playing a bit around what the end product would look like and then iteratively I would look at those sub-PRs and no, I didn't look at the `libsecp` parts until recently.
+It always was appeared very scary for me all those cryptography and math stuff but I also ended up doing a little review there.
+I was lucky enough to join a hangout at the last CoreDev meeting in Ireland where Peter gave an introduction to the `libsecp` library and he specifically presented the PR1129, which is the ElligatorSwift part.
 So I got a little deeper into that through that.
 
 Mike Schmidt: 00:32:48
@@ -481,9 +482,9 @@ So, but of course it would be definitely good to have more eyes on it.
 
 Mike Schmidt: 00:39:51
 
-People may be familiar with sign message.
+People may be familiar with `signmessage`.
 I think there's been some Twitter chatter about old addresses signing messages saying that certain people are not Satoshi or they don't own these coins because this other person is signing a message proving that they have access to that private key and they control those coins.
-But what are some of the other use cases for SignMessage?
+But what are some of the other use cases for `signmessage`?
 
 Sebastian Falbesoner: 00:40:20
 
