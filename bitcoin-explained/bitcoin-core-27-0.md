@@ -937,7 +937,7 @@ Aaron van Wirdum: 00:27:43
 
 Okay.
 The last part, we have one more, and that one is actually kind of interesting, I think.
-So this is about UTXO selection in the wallet and there's a new algorithm, as I understand it, called CoinGrinder.
+So this is about UTXO selection in the wallet and there's a new algorithm, as I understand it, called [CoinGrinder](https://github.com/bitcoin/bitcoin/pull/27877) .
 Is it a new algorithm?
 Yes.
 Right.
