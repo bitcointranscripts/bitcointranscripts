@@ -1080,9 +1080,9 @@ That's right.
 
 Aaron van Wirdum: 00:32:53
 
-So if fees go up, then this will sort of click on in the same way that everything in your home, Shor's clicks on automatically.
+So if fees go up, then this will sort of click on in the same way that everything in your home, Sjors clicks on automatically.
 Exactly.
-For those that don't know that, Shorz doesn't like touching things, so he has everything automated.
+For those that don't know that, Sjors doesn't like touching things, so he has everything automated.
 
 Sjors Provoost: 00:33:09
 
@@ -1143,5 +1143,4 @@ Get up to date, get the newest, the shiny release soon to be found on BitcoinCor
 
 Sjors Provoost: 00:35:29
 
-Thank you for listening to Bitcoin?
-Explain.
+Thank you for listening to Bitcoin Explained.
