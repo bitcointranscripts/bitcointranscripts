@@ -799,6 +799,8 @@ Sjors Provoost: 00:24:46
 
 Another amazing problem.
 
+## Windows Only Problem HWI & Hardware Wallets
+
 Aaron van Wirdum: 00:24:49
 
 External signing for Windows disabled.
