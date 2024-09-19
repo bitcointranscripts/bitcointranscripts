@@ -26,6 +26,10 @@ additional_resources:
   - title: 'https://bitcoinexplainedpodcast.com/'
     url: 'https://bitcoinexplainedpodcast.com/'
 ---
+[Music]: 00:00:00
+
+Podcast music playing
+
 Aaron van Wirdum: 00:00:16
 
 Live from Utrecht, this is Bitcoin Explained.
