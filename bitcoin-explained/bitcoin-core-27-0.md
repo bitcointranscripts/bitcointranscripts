@@ -1010,7 +1010,7 @@ I don't know if that is actually dependent on the algorithm used, whether you us
 It might just be something that we do anyway.
 And then there's a different algorithm to find coins based on that choice.
 I don't actually know that much about coin selection.
-Should ask Merge, he wrote a whole thesis on it.
+Should ask Merch, he wrote a whole thesis on it.
 And he also designed this algorithm.
 
 Aaron van Wirdum: 00:30:29
@@ -1062,7 +1062,7 @@ It's really designed for spikes.
 Aaron van Wirdum: 00:32:21
 
 But what is a spike?
-Well, I mean, there's probably some way, Mert, if you're listening, we need an algorithm to algorithmically adjust your algorithm.
+Well, I mean, there's probably some way, Merch, if you're listening, we need an algorithm to algorithmically adjust your algorithm.
 
 Sjors Provoost: 00:32:32
 
