@@ -65,7 +65,7 @@ Right.
 
 Aaron van Wirdum: 00:01:16
 
-## Introduction - Bitcoin Core 27.0 Release
+## Introduction - Bitcoin Core v27.0 Release
 
 Very cool.
 So we're making another episode about another Bitcoin Core release.
