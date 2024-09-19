@@ -2,7 +2,7 @@
 title: "BOLT Anonymous Payment Channels for Decentralized Currencies"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','privacy-enhancements','lightning']
+tags: ['research', 'privacy-enhancements', 'lightning']
 speakers: ['Ian Miers']
 date: 2017-11-04
 media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=3630s

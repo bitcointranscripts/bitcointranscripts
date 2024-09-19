@@ -2,7 +2,7 @@
 title: "Address Relay"
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Martin-Zumsande-and-Address-Relay---Episode-20-e1if91d
-tags: ["bitcoin-core","p2p"]
+tags: ["bitcoin-core", "p2p"]
 speakers: ["Martin Zumsande"]
 categories: ["podcast"]
 date: 2022-05-13

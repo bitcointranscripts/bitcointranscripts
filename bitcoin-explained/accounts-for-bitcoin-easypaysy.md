@@ -2,7 +2,7 @@
 title: "Accounts for Bitcoin, Easypaysy!"
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=AyjU0EJZjR8
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 tags: ["silent-payments"]
 categories: ["podcast"]
 date: 2020-10-02

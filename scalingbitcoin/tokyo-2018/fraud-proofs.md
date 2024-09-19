@@ -2,7 +2,7 @@
 title: "Improving SPV Client Validation and Security with Fraud Proofs"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','lightweight-client']
+tags: ['research', 'lightweight-client']
 speakers: ['Mustafa Al-Bassam']
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=IMzLa9B1_3E&t=1610

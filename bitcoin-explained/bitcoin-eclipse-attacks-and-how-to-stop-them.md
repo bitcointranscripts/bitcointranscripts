@@ -3,7 +3,7 @@ title: "Bitcoin Eclipse Attacks And How To Stop Them"
 transcript_by: Sjors, edilmedeiros, NeroCherubino
 media: https://www.youtube.com/watch?v=UK9Yykf2aA4
 tags: ["bitcoin-core", "eclipse-attacks"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2020-11-13
 episode: 17

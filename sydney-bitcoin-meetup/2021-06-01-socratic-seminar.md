@@ -2,7 +2,7 @@
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['research','covenants','op-checktemplateverify','taproot']
+tags: ['research', 'covenants', 'op-checktemplateverify', 'taproot']
 date: 2021-06-01
 ---
 Topic: Agenda in Google Doc below

@@ -2,7 +2,7 @@
 title: "Handling Reorgs & Forks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mining','soft-fork-activation']
+tags: ['mining', 'soft-fork-activation']
 speakers: ['Bryan Bishop']
 media: https://www.youtube.com/watch?v=wtTQ_1WyUoY
 date: 2018-10-05

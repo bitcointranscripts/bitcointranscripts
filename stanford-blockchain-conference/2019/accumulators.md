@@ -2,7 +2,7 @@
 title: "Accumulators for blockchains"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','proof-systems']
+tags: ['research', 'proof-systems']
 speakers: ['Benedikt Bünz']
 media: https://www.youtube.com/watch?v=JlvZPSEFmNE
 ---

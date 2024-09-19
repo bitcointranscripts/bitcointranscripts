@@ -2,8 +2,8 @@
 title: "Bitcoin Core 0.21.0"
 transcript_by: Bitc0indad via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=kM4912dv39o
-tags: ["bitcoin-core","anonymity-networks","eclipse-attacks","compact-block-filters",signet","descriptors"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["bitcoin-core", "anonymity-networks", "eclipse-attacks", "compact-block-filters", signet", "descriptors"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-01-21
 episode: 24

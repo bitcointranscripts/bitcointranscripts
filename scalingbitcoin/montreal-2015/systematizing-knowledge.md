@@ -1,7 +1,7 @@
 ---
 title: Systematizing Knowledge
 transcript_by: Bryan Bishop
-categories: ['conference','developer-tools']
+categories: ['conference', 'developer-tools']
 tags: ['research']
 speakers: ['Andrew Miller']
 date: 2015-09-13

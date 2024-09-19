@@ -2,8 +2,8 @@
 title: "Bitcoin R&D Panel"
 transcript_by: WeAreAllHodlonaut via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=UIkvHzPIgRM
-tags: ["research","covenants","scripts-addresses"]
-speakers: ["Jeremy Rubin","Gloria Zhao","Andrew Poelstra"]
+tags: ["research", "covenants", "scripts-addresses"]
+speakers: ["Jeremy Rubin", "Gloria Zhao", "Andrew Poelstra"]
 categories: ["conference"]
 date: 2022-05-07
 ---

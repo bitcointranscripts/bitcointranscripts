@@ -2,7 +2,7 @@
 title: "Inscriptions"
 transcript_by: masud-abdulkadir via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Js-5PZi6Uow
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2023-02-08
 episode: 72

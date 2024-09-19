@@ -2,7 +2,7 @@
 title: UASFs, BIP 148, BIP 91 and Taproot Activation
 transcript_by: Michael Folkson
 categories: ['podcast']
-tag: ['taproot']
+tags: ['taproot']
 speakers: ['Matt Corallo']
 date: 2021-02-11
 media: https://anchor.fm/tales-from-the-crypt/episodes/228-UASFs--BIP-148--BIP-91--and-Taproot-Activation-with-Matt-Corallo-eq7cif

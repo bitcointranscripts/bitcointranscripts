@@ -3,7 +3,7 @@ title: "Activación de Taproot y LOT=true vs LOT=false"
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
-tags: ['taproot','soft-fork-activation']
+tags: ['taproot', 'soft-fork-activation']
 date: 2021-02-26
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=7ouVGgE75zg

@@ -1,7 +1,7 @@
 ---
 title: The Incomplete History of Bitcoin Development
 translation_by: Julien Urraca
-tags: [ "history" ]
+tags: ["history"]
 date: 2019-08-04
 speakers: ['0xB10C']
 ---

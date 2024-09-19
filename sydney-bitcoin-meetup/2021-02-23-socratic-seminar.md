@@ -2,8 +2,8 @@
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['research','dual-funding','privacy-problems','lightning','ptlc','taproot','soft-fork-activation']
-speakers: ['Lloyd Fournier','Anthony Towns']
+tags: ['research', 'dual-funding', 'privacy-problems', 'lightning', 'ptlc', 'taproot', 'soft-fork-activation']
+speakers: ['Lloyd Fournier', 'Anthony Towns']
 date: 2021-02-23
 ---
 Topic: Agenda in Google Doc below

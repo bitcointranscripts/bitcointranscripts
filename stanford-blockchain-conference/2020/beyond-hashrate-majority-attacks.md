@@ -2,7 +2,7 @@
 title: "Beyond 51% attacks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','security-problems','ethereum']
+tags: ['research', 'security-problems', 'ethereum']
 speakers: ['Vitalik Buterin']
 date: 2020-02-20
 ---

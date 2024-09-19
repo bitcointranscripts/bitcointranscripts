@@ -3,7 +3,7 @@ title: "Silent Payments"
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=42PMLaz7Avk
 tags: ["silent-payments"]
-speakers: ["Sjors Provoost","Aaron van Wirdum","Ruben Somsen"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
 categories: ["podcast"]
 date: 2022-06-09
 episode: 58

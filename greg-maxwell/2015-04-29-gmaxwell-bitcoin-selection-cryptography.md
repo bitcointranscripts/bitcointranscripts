@@ -2,7 +2,7 @@
 title: Bitcoin Selection Cryptography
 speakers: ['Greg Maxwell']
 transcript_by: Bryan Bishop
-tag: ['cryptography']
+tags: ['cryptography']
 date: 2015-04-29
 media: https://www.youtube.com/watch?v=Gs9lJTRZCDc
 ---

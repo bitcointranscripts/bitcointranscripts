@@ -2,7 +2,7 @@
 title: Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tag: ['taproot']
+tags: ['taproot']
 date: 2020-07-21
 ---
 

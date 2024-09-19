@@ -2,7 +2,7 @@
 title: libsecp256k1 testing
 speakers: ['Greg Maxwell']
 transcript_by: Michael Folkson
-tags: ['bitcoin-core','cves','libsecp256k1']
+tags: ['bitcoin-core', 'cves', 'libsecp256k1']
 date: 2015-01-08
 media: https://www.reddit.com/r/Bitcoin/comments/2rrxq7/on_why_010s_release_notes_say_we_have_reason_to
 ---

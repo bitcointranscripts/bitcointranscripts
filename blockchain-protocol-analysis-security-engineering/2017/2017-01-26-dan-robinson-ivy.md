@@ -2,7 +2,7 @@
 title: "Ivy: A Declarative Predicate Language for Smart Contracts"
 transcript_by: Michael Folkson
 categories: ['conference']
-tags: ['research','contract-protocols']
+tags: ['research', 'contract-protocols']
 speakers: ['Dan Robinson']
 date: 2017-01-26
 media: https://www.youtube.com/watch?v=xdxs7VJTqns
