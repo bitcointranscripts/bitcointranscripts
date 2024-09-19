@@ -785,7 +785,7 @@ But maybe they'll just not count the thousands or something like that.
 Aaron van Wirdum: 00:24:30
 
 Or we change it to 1971.
-That's what Bitcoiners will agree with.
+That's what Bitcoiners will agree with. [Humour]
 
 Sjors Provoost: 00:24:36
 
@@ -807,7 +807,7 @@ This is about hardware wallets.
 
 Sjors Provoost: 00:24:55
 
-Yes, so there is a feature in Bitcoin Core where you can connect a hardware wallet to your USB port and then you have to install [HWI](https://btctranscripts.com/bitcoin-explained/hardware-wallet-integration-in-bitcoin-core-and-hwi) .
+Yes, so there is a feature in Bitcoin Core where you can connect a hardware wallet to your USB port and then you have to install [HWI](https://btctranscripts.com/bitcoin-explained/hardware-wallet-integration-in-bitcoin-core-and-hwi) , a python program.
 
 Aaron van Wirdum: 00:25:02
 
