@@ -556,7 +556,7 @@ But they'll just start a new one, so it's not a big deal.
 Aaron van Wirdum: 00:17:15
 
 Okay, next one.
-BIP324, we made an episode on that.
+[BIP324](https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki), we made an episode on that.
 That's network encryption.
 And that's now on by default.
 So it was already an option in the previous Bitcoin Core release?
