@@ -219,6 +219,8 @@ Sjors Provoost: 00:06:25
 Exactly.
 Well, first of all, there's something that's not in Bitcoin Core version 27.
 
+## Libitcoin consensus was Deprecated
+
 Aaron van Wirdum: 00:06:31
 
 Yeah, something was jacked out, Libitcoin consensus, which has nothing to do with Libitcoin.
