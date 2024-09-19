@@ -10,6 +10,7 @@ tags:
   - 'v2-p2p-transport'
   - 'fee-estimation'
   - 'fee-management'
+  - 'cluster-mempool'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
