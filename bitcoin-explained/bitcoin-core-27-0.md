@@ -937,7 +937,7 @@ Anyway, yeah.
 So, yeah, if you do need this, yeah, then I guess don't upgrade to 28.
 To 27.0, wait for 28.0. It'll be fixed again, probably.
 
-# UTXO selection & CoinGrinder
+## UTXO selection & CoinGrinder
 
 Aaron van Wirdum: 00:27:43
 
