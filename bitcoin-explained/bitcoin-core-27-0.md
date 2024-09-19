@@ -5,6 +5,7 @@ media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-92-bitcoin-co
 date: '2024-04-10'
 tags:
   - 'bitcoin-core'
+  - 'p2p'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
