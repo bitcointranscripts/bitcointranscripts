@@ -6,6 +6,7 @@ date: '2024-04-10'
 tags:
   - 'bitcoin-core'
   - 'p2p'
+  - 'hwi'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
