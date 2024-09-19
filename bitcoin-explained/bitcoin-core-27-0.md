@@ -167,7 +167,7 @@ So, yeah, so the master branch people can continue to have fun there, that's goi
 Meanwhile, there is this separate branch for the release, which has only maybe very minor bug fixes.
 And then once, and then to that branch are added a few things to change the version number and then that is turned into a release candidate and that release candidate is first let's say people tested a little bit who are developers and then once that's done, there's a binary release that people can download and test that.
 
-Speaker 0: 00:04:57
+Aaron van Wirdum: 00:04:57
 
 So what do we have now?
 Where are we?
@@ -177,7 +177,7 @@ Sjors Provoost: 00:05:02
 
 Yes, there's a binary release for release candidate one.
 
-Speaker 0: 00:05:04
+Aaron van Wirdum: 00:05:04
 
 Okay, so how many release candidates are there going to be?
 
@@ -186,7 +186,7 @@ Sjors Provoost: 00:05:07
 Well, so what happens then is for about two weeks people can test it, and then if they don't find any bugs, then we essentially make the same binary and call it the final version.
 It's not technically the same binary, we talked about hashes before, the version number is in the binary, so different version number means a different hash, but other than the version number it should be identical.
 
-Speaker 0: 00:05:28
+Aaron van Wirdum: 00:05:28
 
 Okay, so the current release candidate could potentially be the next Bitcoin Core 27, but maybe bugs are found, then the bugs are fixed, and then there will be another release candidate, and then that could be the next Bitcoin Core 27.
 
@@ -197,7 +197,7 @@ And that means that the same fix that was applied to the master branch, then als
 So ideally, that should not happen too often.
 Hence the need to not have bugs in the Massive Ranch.
 
-Speaker 0: 00:06:03
+Aaron van Wirdum: 00:06:03
 
 Right.
 Anyways, as soon as there's no bugs in the release candidate, we have a new Bitcoin Core release, which in this case will be Bitcoin Core 27.
@@ -206,7 +206,7 @@ Sjors Provoost: 00:06:10
 
 Exactly.
 
-Speaker 0: 00:06:11
+Aaron van Wirdum: 00:06:11
 
 And we are going to discuss some of the highlights of this new Bitcoin Core release.
 Why should people download it?
@@ -219,7 +219,7 @@ Sjors Provoost: 00:06:25
 Exactly.
 Well, first of all, there's something that's not in Bitcoin Core version 27.
 
-Speaker 0: 00:06:31
+Aaron van Wirdum: 00:06:31
 
 Yeah, something was jacked out, Libitcoin consensus, which has nothing to do with Libitcoin.
 
@@ -227,7 +227,7 @@ Sjors Provoost: 00:06:38
 
 Yeah although I think I should say it's not removed it's deprecated which means that this is your last warning it's going to go away 28.
 
-Speaker 0: 00:06:48
+Aaron van Wirdum: 00:06:48
 
 Okay and I wait so it's still so that okay just explain what it is.
 
@@ -240,7 +240,7 @@ So the first time you try to use it, it says no.
 And then you make a change to the configuration, it says, okay, I'll do it, but it's gonna go away next time.
 So, you know, be careful there.
 
-Speaker 0: 00:07:18
+Aaron van Wirdum: 00:07:18
 
 You've been warned.
 
@@ -248,7 +248,7 @@ Sjors Provoost: 00:07:18
 
 Yeah so this this thing goes away.
 
-Speaker 0: 00:07:20
+Aaron van Wirdum: 00:07:20
 
 So what is this thing?
 And why is it going away?
@@ -258,7 +258,7 @@ Sjors Provoost: 00:07:24
 So in the early days there was a demand to have or a desire to have the core functionality of Bitcoin Core, so the part that checks the consensus rules, to somehow split that off from the rest so that other people can make their own node software or do other things and don't care about all the whistles and bells that are in Bitcoin Core.
 So they don't want a GUI, they don't want...
 
-Speaker 0: 00:07:49
+Aaron van Wirdum: 00:07:49
 
 So in other words, that would basically be the rules that define which blocks are valid, right?
 That's really the core consensus rules?
@@ -272,7 +272,7 @@ It wasn't even fully checking a block, it could just verify individual transacti
 Okay.
 So it was a very limited subset of what we consider the validity.
 
-Speaker 0: 00:08:22
+Aaron van Wirdum: 00:08:22
 
 Okay, but that's because it wasn't finished yet?
 
@@ -281,7 +281,7 @@ Sjors Provoost: 00:08:26
 Yeah, it was a work in progress.
 It was the first attempt, but it wasn't finished and it's quite difficult to maintain.
 
-Speaker 0: 00:08:33
+Aaron van Wirdum: 00:08:33
 
 So why it wasn't finished?
 What's hard to maintain about it?
@@ -292,7 +292,7 @@ Not really.
 It was just a pain in the ass.
 And now we have the kernel project, which tries it again and uses a different approach.
 
-Speaker 0: 00:08:47
+Aaron van Wirdum: 00:08:47
 
 Right.
 I mean, from what I understand or what I remember, at least years ago when I heard about this, the bigger core, at least as it was then and probably still, or at least as Satoshi released, it was kind of spaghetti code, spaghetti code where everything sort of refers to everything else and some of it was consensus and some of it was not.
@@ -309,7 +309,7 @@ Sjors Provoost: 00:09:34
 Yeah, I think so.
 And I think it was also getting in the way of some other refactoring cleanup projects.
 
-Speaker 0: 00:09:38
+Aaron van Wirdum: 00:09:38
 
 Right.
 And this Bitcoin kernel you just mentioned, have we talked about this on the podcast?
@@ -324,7 +324,7 @@ And we've seen that even network rules impact consensus.
 We've seen that very clearly with an episode we did about a BTCD bug, no lib.
 Yeah, I think it was a BTCD bug, Yeah, for using with LND, where a block was sent and it was rejected, but it wasn't rejected based on the consensus rules, it was rejected based on a network rule saying that the block had too many, I don't know what it was.
 
-Speaker 0: 00:10:27
+Aaron van Wirdum: 00:10:27
 
 Yeah.
 We have an episode about it.
@@ -337,7 +337,7 @@ Sjors Provoost: 00:10:35
 So, as a user, you will not notice this at all.
 Right.
 
-Speaker 0: 00:10:40
+Aaron van Wirdum: 00:10:40
 
 Okay, let's move to something that you might use as a user, might notice as a user.
 Actually, I don't think the next one is going to be noticeable by a user either.
@@ -347,7 +347,7 @@ Sjors Provoost: 00:10:50
 No, it might be.
 It might be.
 
-Speaker 0: 00:10:52
+Aaron van Wirdum: 00:10:52
 
 Okay.
 This is about the mempool.
@@ -356,7 +356,7 @@ Sjors Provoost: 00:10:56
 
 Yeah, to be precise, it's about saving the mempool.
 
-Speaker 0: 00:10:59
+Aaron van Wirdum: 00:10:59
 
 About saving the mempools.
 Well, your mempool.
@@ -371,7 +371,7 @@ Yeah, so Bitcoin Core, when it's running, it receives new transactions.
 It holds onto those, usually in memory.
 And then at some point you shut Bitcoin Core down.
 
-Speaker 0: 00:11:18
+Aaron van Wirdum: 00:11:18
 
 This is before they're included in a block.
 
@@ -382,7 +382,7 @@ And then either if a block arrives, they go out of the mempool because now they'
 And then next time you start Bitcoin Core, it loads it from disk.
 Otherwise you'd have to wait for somebody else to announce it again to you, which is not ideal.
 
-Speaker 0: 00:11:39
+Aaron van Wirdum: 00:11:39
 
 Well, or it's in a block, right, by then?
 Yeah.
@@ -396,7 +396,7 @@ You know, it helps with things like block relay.
 It makes it quicker for you to verify a new block because you already verified those transactions before.
 So then when you restart Bitcoin Core it helps you to verify all those new blocks that you're going to catch up with with that mempool that you still had.
 
-Speaker 0: 00:12:12
+Aaron van Wirdum: 00:12:12
 
 Right okay so yeah I have a Bitcoin Core node and the mempool if when I shut down my computer, my entire mempool is just saved on disk and then I start the computer again and Bitcoin Core starts up and it remembers what was in the mempool.
 Exactly.
@@ -407,7 +407,7 @@ Sjors Provoost: 00:12:30
 The problem is that there, you might have a virus scanner and that virus scanner is looking for suspicious files.
 And if some joker puts a transaction, creates a transaction and then puts one of this operator and spam, you know, inscriptions, whatever it is in there, they could put something in that looks like a virus.
 
-Speaker 0: 00:12:51
+Aaron van Wirdum: 00:12:51
 
 And-
 What is a virus or not?
@@ -418,7 +418,7 @@ Well, that's a philosophical question.
 Is a photo of a virus a virus?
 I don't think so, because it's not gonna replicate or do any harm.
 
-Speaker 0: 00:13:00
+Aaron van Wirdum: 00:13:00
 
 Okay.
 
@@ -427,7 +427,7 @@ Sjors Provoost: 00:13:00
 Right?
 So it's more like a picture of a virus, I guess.
 
-Speaker 0: 00:13:03
+Aaron van Wirdum: 00:13:03
 
 Okay.
 
@@ -440,7 +440,7 @@ And then puts your whole mempool in quarantine and now when you start to node ag
 Uh-huh.
 That's not ideal because we just explained why we saved this thing in the first place.
 
-Speaker 0: 00:13:34
+Aaron van Wirdum: 00:13:34
 
 Can't say I feel very stressed about this problem, but sure, go on.
 
@@ -450,7 +450,7 @@ No, this is why this problem has not been fixed for the past 10 years.
 We do the same thing for blocks that are stored on disk.
 Well, what we'll do, we'll explain in a bit, but we have the same problem for blocks, I think that actually did happen in like 10 years ago, some joker put something in a block that looked like a virus.
 
-Speaker 0: 00:13:56
+Aaron van Wirdum: 00:13:56
 
 It's better to solve the problem.
 
@@ -460,7 +460,7 @@ Yeah, because if your node, if your blocks are thrown into the, you know, are ki
 Right.
 So that's more important.
 
-Speaker 0: 00:14:06
+Aaron van Wirdum: 00:14:06
 
 Yes.
 And so transactions, yeah, okay, so what's the solution here?
@@ -471,7 +471,7 @@ Sjors Provoost: 00:14:14
 The solution here is to basically fool the virus scanner by encrypting the file.
 Now encrypting sounds very fancy, it's not the strongest encryption ever, but it is using XOR basically.
 
-Speaker 0: 00:14:31
+Aaron van Wirdum: 00:14:31
 
 What's XOR?
 
@@ -484,7 +484,7 @@ So you and I wanna communicate, we exchange a long piece of paper with lots of l
 Or I add the letter and you subtract it.
 And that way...
 
-Speaker 0: 00:15:15
+Aaron van Wirdum: 00:15:15
 
 Wait, So this sounds like the Caesar cipher.
 Do you know what this is?
@@ -493,7 +493,7 @@ Sjors Provoost: 00:15:19
 
 No, it's much, much more secure.
 
-Speaker 0: 00:15:21
+Aaron van Wirdum: 00:15:21
 
 Oh, it is more secure than that?
 
@@ -501,7 +501,7 @@ Sjors Provoost: 00:15:23
 
 Yeah, I think the Caesar cipher was, well, it was this, I don't, actually, I don't know, it might be similar.
 
-Speaker 0: 00:15:28
+Aaron van Wirdum: 00:15:28
 
 The Caesar cipher, which I describe in the Genesis book.
 
@@ -509,7 +509,7 @@ Sjors Provoost: 00:15:33
 
 Oh, yes, you wrote a book.
 
-Speaker 0: 00:15:35
+Aaron van Wirdum: 00:15:35
 
 It's basically, you take the word hello and then you do like plus five and then for each letter, you replace the letter in hello for like the fifth next letter in the alphabet.
 
@@ -517,7 +517,7 @@ Sjors Provoost: 00:15:48
 
 Yeah, but if you do it just plus five for every letter, that's a bit easy to crack.
 
-Speaker 0: 00:15:52
+Aaron van Wirdum: 00:15:52
 
 I mean, it is, but that's the Caesar Cipher.
 
