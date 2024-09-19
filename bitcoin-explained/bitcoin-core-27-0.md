@@ -342,6 +342,8 @@ Aaron van Wirdum: 00:10:40
 Okay, let's move to something that you might use as a user, might notice as a user.
 Actually, I don't think the next one is going to be noticeable by a user either.
 
+## Saving the mempools & Handling Virus Scanner
+
 Sjors Provoost: 00:10:50
 
 No, it might be.
