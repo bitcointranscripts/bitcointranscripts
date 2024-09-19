@@ -30,6 +30,8 @@ Hello.
 
 Aaron van Wirdum: 00:00:21
 
+## Sponsor Acknowledgment - Coinkite's Opendime
+
 First of all, I'd like to thank our sponsor CoinKite, the creator of the OpenDime as well.
 That's right.
 Are we going to get sued if we only mention the Opendime, Sjors?
@@ -37,7 +39,7 @@ No. Are we contractually obligated to mention the Gold Card or can we just riff 
 
 Sjors Provoost: 00:00:41
 
-If you want to riff on the Opendime for the great memories it brought us.
+If you want to riff on the [Opendime](https://opendime.com/) for the great memories it brought us.
 
 Aaron van Wirdum: 00:00:46
 
@@ -46,7 +48,7 @@ I still have a few.
 
 Sjors Provoost: 00:00:49
 
-What is an open time?
+What is an Opendime?
 
 Aaron van Wirdum: 00:00:50
 
@@ -62,6 +64,8 @@ You actually have to break it.
 Right.
 
 Aaron van Wirdum: 00:01:16
+
+## Introduction - Bitcoin Core 27.0 Release
 
 Very cool.
 So we're making another episode about another Bitcoin Core release.
