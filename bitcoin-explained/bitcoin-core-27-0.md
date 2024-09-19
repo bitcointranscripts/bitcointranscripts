@@ -628,7 +628,7 @@ Okay, so so far we talked about something that was removed, something that's a v
 
 Sjors Provoost: 00:20:02
 
-Not niche if you use Windows.
+Not niche if you use Windows. [Humour]
 But.
 
 Aaron van Wirdum: 00:20:07
@@ -652,17 +652,17 @@ If somebody does this, then it's gonna affect everybody who runs a virus scanner
 Aaron van Wirdum: 00:20:28
 
 I'm not impressed, Sjors.
-Where are my soft forks?
+Where are my soft forks? [Humour] 
 Where's, where are my, Does this make number go up?
 I don't think so.
 
 Sjors Provoost: 00:20:37
 
-This is finally fixed lightning.
+This is finally fixed lightning. [Humour] 
 
 Aaron van Wirdum: 00:20:39
 
-Yes, please.
+Yes, please. [Humour]
 Okay, moving on to the next one.
 Network adjusted timer moves.
 
