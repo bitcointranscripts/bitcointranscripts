@@ -519,7 +519,7 @@ Yeah, but if you do it just plus five for every letter, that's a bit easy to cra
 
 Aaron van Wirdum: 00:15:52
 
-I mean, it is, but that's the [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher).
+I mean, it is, but that's the [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher) .
 
 Sjors Provoost: 00:15:54
 
@@ -556,7 +556,7 @@ But they'll just start a new one, so it's not a big deal.
 Aaron van Wirdum: 00:17:15
 
 Okay, next one.
-[BIP324](https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki), we made an episode on that.
+[BIP-324](https://github.com/bitcoin/bips/blob/master/bip-0324.mediawiki), we made an episode on that.
 That's network encryption.
 And that's now on by default.
 So it was already an option in the previous Bitcoin Core release?
