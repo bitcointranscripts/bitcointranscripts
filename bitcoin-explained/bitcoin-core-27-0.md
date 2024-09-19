@@ -8,6 +8,7 @@ tags:
   - 'p2p'
   - 'hwi'
   - 'v2-p2p-transport'
+  - 'fee-estimation'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
