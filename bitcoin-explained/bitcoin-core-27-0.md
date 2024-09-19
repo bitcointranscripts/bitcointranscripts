@@ -576,7 +576,7 @@ Aaron van Wirdum: 00:17:45
 
 Right, okay.
 Quick reminder of what it was again?
-Episode 77.
+[Episode 77](https://bitcoinexplainedpodcast.com/@nado/episodes/episode-77-peer-to-peer-encryption).
 No, sure.
 What is it?
 
