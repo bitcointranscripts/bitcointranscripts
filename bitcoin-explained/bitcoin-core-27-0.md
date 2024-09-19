@@ -7,6 +7,7 @@ tags:
   - 'bitcoin-core'
   - 'p2p'
   - 'hwi'
+  - 'v2-p2p-transport'
 speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
