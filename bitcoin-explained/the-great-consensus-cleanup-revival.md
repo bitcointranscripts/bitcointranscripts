@@ -21,7 +21,7 @@ additional_resources:
 Speaker 0: 00:00:19
 
 Life from Utrecht, this is Bitcoin Explained.
-Sjoerds, it's been a month.
+Sjors, it's been a month.
 That means you had a whole month to think about this pun that you told me you're going to tell our dear listeners for this episode.
 Let's hear it.
 Let's hear it.
