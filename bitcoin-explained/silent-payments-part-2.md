@@ -634,7 +634,6 @@ Speaker 3: 00:22:29
 Okay, let's get there.
 So just to recap, usually any full node always checks any transaction in a block to see if it is being paid, plus checks if the signatures are valid.
 Now with this, it would be one extra check to see if you're paid through a silent payment.
-Correct.
 Okay.
 So LiteClient, it's more complicated for LiteClient then, because LiteClient don't usually check every transaction to see if it's, yeah, well they don't check every transaction.
 
@@ -647,7 +646,7 @@ That is not optimal for privacy.
 Also wouldn't work directly with silent payments, right?
 You would have to give them your scanning key and then they could decide.
 But there are better ways and we did an episode about it.
-BIP 157 used to be called neutrino filters.
+BIP157 used to be called neutrino filters.
 I don't know if anybody still uses that term.
 
 Speaker 1: 00:23:35
@@ -661,7 +660,8 @@ But yeah, it's yeah, BIP 157 and BIP 158.
 Speaker 2: 00:23:42
 
 Yeah, which are we did an episode about it.
-But the bottom line is you instead of telling somebody else what your addresses are, you ask them for sort of a summary of the block, a filter of the block, and you download these summaries, which are much shorter than blocks, And then based on that, you're able to calculate whether or not that block has any transaction that pays you.
+But the bottom line is you instead of telling somebody else what your addresses are, you ask them for sort of a summary of the block, a filter of the block, and you download these summaries, which are much shorter than blocks.
+And then based on that, you're able to calculate whether or not that block has any transaction that pays you.
 Or at least guess.
 You might be wrong in the sense that there can be false positives.
 So once you think there's a transaction for you, you download the actual block.
@@ -674,7 +674,6 @@ Speaker 1: 00:24:31
 
 So maybe one thing to sort of start with for this conversation that's important to mention is what is even the definition of a light client?
 And I think one useful definition that isn't really used today, but I think is important to highlight is that you somehow figure out whether or not you got paid without a full node doing all the work for you, right?
-Because normally like-
 Without your full node doing all the work for you.
 
 Speaker 2: 00:24:58
