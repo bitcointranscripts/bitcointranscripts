@@ -226,7 +226,6 @@ Speaker 3: 00:05:21
 
 Maybe it's worth mentioning because I think there's a lot of confusion about this.
 We were kind of considering the BIP somewhat final, maybe a few months before that.
-Yeah.
 Where the protocol was done and we had test vectors, but then it took about another two months for the BIP to actually get merged.
 And then all of the changes were just like copy edits.
 And we actually had people starting to build implementations before the BIP was finalized, but the BIP actually merged into the repo maybe two months ago.
@@ -236,7 +235,7 @@ Speaker 1: 00:05:49
 I did a little testing myself because I was maintaining a small indexer pull request on top of your pull request to see if it's compatible and then other people would have other implementations and I would run a little script that would just compare them to make sure that for our mainnet, every silent payment tweak, and I guess we'll get back to what that is, is the same.
 And the answer was usually, but there were still a few inconsistencies.
 Some bugs on our end and some bugs on other people's end, so it's always useful to compare.
-And, you know, so even when the BIP is final, you still want to maybe not tattoo your silent payment address.
+Even when the BIP is final, you still want to maybe not tattoo your silent payment address.
 
 Speaker 0: 00:06:22
 
