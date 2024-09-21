@@ -102,7 +102,7 @@ You don't have to do that.
 Aaron van Wirdum: 00:01:46
 
 You don't have to actually burn coins.
-Well, the other thing I want to ask, have you ever been to the Lab Bitcoin?
+Well, the other thing I want to ask, have you ever been to the Lab Bitconf?
 I think that's what it's called.
 The Latin American one?
 
@@ -267,20 +267,19 @@ So RSK has sort of a similar thing where they have more blocks than Bitcoin and 
 Sjors Provoost : 00:07:22
 
 But they're actually mining blocks in between then as well.
-Yes.
 Okay, so that's different.
 Yeah, there are some proposals for Bitcoin too to do that where you would have intermediate blocks.
 
 Aaron van Wirdum: 00:07:32
 
-Yeah, so RRSK has that.
+Yeah, so RSK has that.
 So they have a block like Ethereum every 15 seconds or something like that and this is how they do it.
 So these miners are just Bitcoin miners and they are producing valid RRSK blocks and these include transactions and they're doing whatever miners are doing and they're doing whatever miners are doing, and they're doing whatever miners are doing on Ethereum, apparently.
 But they're producing blocks anyways.
 
 Sjors Provoost : 00:07:53
 
-And they're also putting these blocks, they're referencing these blocks in the Bitcoin blockchain, right?
+And they're referencing these blocks in the Bitcoin blockchain, right?
 
 Aaron van Wirdum: 00:07:58
 
@@ -305,12 +304,18 @@ Correct.
 Sjors Provoost : 00:08:11
 
 Because there would be gaps.
+
+Aaron van Wirdum: 00:08:12
+
 Yes.
+
+Sjors Provoost : 00:08:13
+
 But that's fine.
+
+Aaron van Wirdum: 00:08:14
+
 Yeah.
-
-Aaron van Wirdum: 00:08:15
-
 Okay, is that part sort of clear?
 
 Sjors Provoost : 00:08:17
@@ -531,13 +536,11 @@ So there are all sorts of risks, but I think it's reasonable to argue that it's 
 Maybe.
 Maybe not, because that backdoor could actually be worse than not having the modules.
 And just using the old laptop, as someone likes to say.
-But
 
 Aaron van Wirdum: 00:18:20
 
-anyway.
 In either case, I mean, RSK is a work in progress.
-They would still like it to become a drive chain.
+They would still like it to become a drivechain.
 
 Sjors Provoost : 00:18:27
 
@@ -545,11 +548,11 @@ Yeah, so that's an interesting topic that we should dedicate a podcast to.
 
 Aaron van Wirdum: 00:18:31
 
-Yeah, we'll discuss drive chain in an episode one time but the essence in one sentence is that in that case it would, well can I summarize it in one sentence, it would just be hash power that controls the pegs, pegging in and pegging out?
+Yeah, we'll discuss drivechain in an episode one time but the essence in one sentence is that in that case it would, well can I summarize it in one sentence, it would just be hash power that controls the pegs, pegging in and pegging out?
 
 Sjors Provoost : 00:18:46
 
-Drive chain is not the end-all be-all either.
+Drivechain is not the end-all be-all either.
 There are still sort of caveats.
 I think we should discuss that in another podcast.
 
@@ -570,18 +573,13 @@ Yeah.
 Then again, I mean, at this point, you kind of...
 Well, is that right?
 
-Sjors Provoost : 00:19:17
-
-But how are
-
 Aaron van Wirdum: 00:19:18
 
-they going to make money?
 There's sort of different levels of trust, like you're sort of trusting the hardware, but then, like the miners can't cheat on their own and the hardware, well, the hardware can cheat on its own, I guess.
 
 Sjors Provoost : 00:19:30
 
-Well, I guess if they want to move to drive chase they'd move away from the hardware.
+Well, I guess if they want to move to drivechains they'd move away from the hardware.
 
 Aaron van Wirdum: 00:19:33
 
@@ -591,7 +589,7 @@ I know I'm saying right now
 
 Sjors Provoost : 00:19:35
 
-the all sorts of different security trade-offs that you can make I think the most important thing is to be honest about them Yeah, but what I was asking is how are they going to make money because it sounds like if you peg a currency, you can't pump it.
+there are all sorts of different security trade-offs that you can make. I think the most important thing is to be honest about them. But what I was asking is how are they going to make money because it sounds like if you peg a currency, you can't pump it.
 So is there a premined or are they like honest people?
 
 Aaron van Wirdum: 00:19:49
