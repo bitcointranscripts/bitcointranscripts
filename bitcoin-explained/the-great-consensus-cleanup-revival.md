@@ -19,12 +19,16 @@ additional_resources:
   - title: 'https://bitcoinexplainedpodcast.com/'
     url: 'https://bitcoinexplainedpodcast.com/'
 ---
+## Introduction
+
 Aaron: 00:00:19
 
 Life from Utrecht, this is Bitcoin Explained.
 Sjoerds, it's been a month.
 That means you had a whole month to think about this pun that you told me you're going to tell our dear listeners for this episode.
 Let's hear it.
+
+## Coldcard Sponsor Message
 
 Sjors: 00:00:35
 
@@ -55,6 +59,8 @@ Yes, why did you say the government is cold?
 Sjors: 00:01:15
 
 Well, that's a segue to our next section.
+
+## Tornado Cash and Samourai Walet Arrests
 
 Aaron: 00:01:19
 
@@ -150,7 +156,9 @@ So that's a problem.
 Aaron: 00:06:51
 
 Right.
-OK, let's move on to the actual Bitcoin case, which is the Samurai devs.
+OK, let's move on to the actual Bitcoin case, which is the Samourai devs.
+
+## The Samourai Wallet Case
 
 Sjors: 00:07:00
 
@@ -176,7 +184,7 @@ The more direct Bitcoin case.
 Aaron: 00:07:23
 
 Yeah, exactly.
-So the Samurai wallet developers Keonne Rodriguez and Bill Hill, William Hill, both of them you know right yep 
+So the Samourai wallet developers Keonne Rodriguez and Bill Hill, William Hill, both of them you know right yep 
 
 Sjors: 00:07:28
 
@@ -191,20 +199,22 @@ Sjors: 00:07:53
 
 Well, I'm not surprised that this happened, because the fact that they were going after Tornado Cash made it clear that they would go after non-custodial systems, after non-custodial mixes.
 So it seemed like a matter of time before they would go after it and then obviously they always go after the biggest or at least a big one.
-So the only question was, were they going to go after Wasabi or were they going to go after Samurai?
-Samurai has some interesting marketing that maybe made them more interesting to prosecute, but I don't know if the difference, you know, and of course we know that Wasabi was doing some proactive compliance-ish things, But I don't know why they picked one and the other.
+So the only question was, were they going to go after Wasabi or were they going to go after Samourai?
+Samourai has some interesting marketing that maybe made them more interesting to prosecute, but I don't know if the difference, you know, and of course we know that Wasabi was doing some proactive compliance-ish things, But I don't know why they picked one and the other.
 Ultimately, we'll find out.
 What else was I going to say about it?
 
 Aaron: 00:08:40
 
-Well, it was my suggestion to just sort of explain how the Samurai Mixing actually works.
+Well, it was my suggestion to just sort of explain how the Samourai Mixing actually works.
 But at this point, should we just move on to the main topic of the episode?
+
+## Overview of Samourai Wallet Mixing Technology
 
 Sjors: 00:08:52
 
 No, I think it may make sense to briefly explain a little bit.
-So there's three aspects to Samurai Wallet, I think, that are relevant.
+So there's three aspects to Samourai Wallet, I think, that are relevant.
 One is It's not just a mixer, definitely not.
 It's a wallet, right?
 It's a non-custodial wallet.
@@ -270,11 +280,13 @@ Aaron: 00:11:23
 Right.
 Anyways, yeah, seems like a new era in Bitcoin and Bitcoin development to me.
 
+## Comparison between Tornado Cash and Samourai Wallet Cases
+
 Sjors: 00:11:32
 
 Yeah, and I think we could briefly do a recap of the differences, how these cases relate to each other.
 So we brought up most of the things.
-So the interesting thing about Samurai is that it's only happening in the US, whereas The Tornado Cash trial is happening in the US and the Netherlands in parallel, which is interesting.
+So the interesting thing about Samourai is that it's only happening in the US, whereas The Tornado Cash trial is happening in the US and the Netherlands in parallel, which is interesting.
 
 Aaron: 00:11:50
 
@@ -286,7 +298,7 @@ Yeah, and this is interesting because the Dutch court system is not very transpa
 You can go to the court hearings but you don't get to see any of the dossier.
 Whereas in the US it's much more transparent so we'll probably learn much more about the Dutch case through the US case.
 Both of them are non-custodial.
-Both of them use a, well no, so the samurai uses a central coordinator, so that might be a service, whereas in Tornado Cash it's a smart contract, so that's not really a service, although the prosecutor argued that it's a service anyway.
+Both of them use a, well no, so the Samourai uses a central coordinator, so that might be a service, whereas in Tornado Cash it's a smart contract, so that's not really a service, although the prosecutor argued that it's a service anyway.
 
 Aaron: 00:12:36
 
@@ -296,12 +308,12 @@ Sjors: 00:12:39
 
 Yeah, the main smart contract and everything around it.
 You could argue like it's an autonomous system, so it's not really a service, but that's what they're arguing, I think, in both the Netherlands and the US, against or for, depending on which side you're at.
-I'd say Samurai used fees, fairly pretty direct fee system, whereas The Tornado Cash system did not charge fees directly, at least the fees don't go directly to the developers or operators.
+I'd say Samourai used fees, fairly pretty direct fee system, whereas The Tornado Cash system did not charge fees directly, at least the fees don't go directly to the developers or operators.
 They have a more convoluted tokenomics system where at least the prosecutor argued that these tokenomics are, you know, how it is, how the business works.
 
 Aaron: 00:13:21
 
-I think the short summary I would give is if the Tornado Cash developer is guilty in the Netherlands, which he is, then the Samurai developers have to be as well.
+I think the short summary I would give is if the Tornado Cash developer is guilty in the Netherlands, which he is, then the Samourai developers have to be as well.
 So it's sort of even more straightforward.
 
 Sjors: 00:13:34
@@ -328,6 +340,8 @@ Sjors: 00:13:50
 
 Yeah, exactly.
 That we hopefully fix in time.
+
+## The Great Consensus Cleanup Revival
 
 Aaron: 00:13:54
 
@@ -429,6 +443,8 @@ So the first one, you already mentioned it, the time warp attack, the time warp 
 Sjors: 00:16:58
 
 Yeah, the time warp attack.
+
+## Time Warp Attack Fix
 
 Aaron: 00:17:00
 
@@ -704,11 +720,12 @@ So we talked about this signature checking speed problem back in episode...
 Let me see...
 I think episode 32 and episode 76.
 
+## Slow Scripts and Validation Time Issues
+
 Aaron: 00:27:44
 
 Yeah, so from what I understand, the problem here essentially is like every transaction includes scripts and for many transactions that's just a straightforward, you know, check that the signature is valid type of thing.
 But you can make more complex transactions that include, like you say, hashing or more signature validation.
-
 
 Sjors: 00:28:08
 
@@ -829,6 +846,8 @@ Are we done with slow scripts?
 Sjors: 00:32:49
 
 Yep, we are.
+
+## Banning 64 Byte Transactions
 
 Aaron: 00:32:50
 
@@ -1164,6 +1183,8 @@ Sjors: 00:44:52
 
 But this is another case of like yes it would be you know you could just ban everything anything under 64 but or anything under 65 but you want to make the minimum change possible to reduce controversy that's not too complicated.
 
+## BIP30/BIP34 Issues and Fixes
+
 Aaron: 00:45:04
 
 Okay last one BIP 30, 34.
@@ -1255,6 +1276,8 @@ Aaron: 00:48:49
 
 Well, that is kind of one of the side goals of this proposal, I would say, is figuring out how we actually do soft forks and how we actually do Bitcoin upgrades.
 
+## Soft Fork Activation and Future of Bitcoin Upgrades
+
 Sjors: 00:49:02
 
 Exactly.
@@ -1317,4 +1340,4 @@ Thank you for listening to Bitcoin...
 
 Aaron: 00:50:55
 
-...Explained
+Explained
