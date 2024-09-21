@@ -501,7 +501,7 @@ It just means you can't separate out the spending from the scanning.
 
 Speaker 0: 00:16:34
 
-Yeah, as I recall in the earlier podcast, the previous podcast we did on this, you just tweaked the set.
+Yeah, as I recall in the previous podcast we did on this, you just tweaked the set.
 Yeah, you used the same key to tweak it again.
 And that was to make sure that only the recipient can spend the money afterwards.
 And you're saying that it was implemented differently because this makes it easier to scan to see if you receive the payment.
@@ -511,14 +511,15 @@ Speaker 2: 00:17:00
 
 It means you can have two separate devices that do two separate things.
 You can have a device that does the scanning, you can have a device that does the spending, and that would generally be a hardware wallet.
-And so the last time we talked about this, basically I tried to keep it simple, So I didn't talk about this distinction.
+And so the last time we talked about this, basically I tried to keep it simple.
+So I didn't talk about this distinction.
 But since this is the second time, I thought it would be good to sort of bring it up and Josie brought it up.
 
 Speaker 3: 00:17:24
 
 Yeah.
 And I think maybe to give a concrete example, when you're the recipient, the way that you scan is by having your scan private key in a hot online device.
-And so in the old method where we were reusing the same key, that means in order to scan, the private key that you need to find the payments and also spend the payments is now on an internet connected device.
+And so in the old method where we were reusing the same key, that means in order to scan, the private key that you need to find the payments and also spend the payments is now on an internet-connected device.
 And that's really not a great idea.
 So by having two separate keys and the separation of responsibility, you can hand out that scan key to an online device and that online device will do the scanning for you, which if that device gets hacked or whatever and someone gets that key, it's the same as leaking your XPub.
 Someone would be able to see your payments but they wouldn't be able to spend them.
@@ -527,29 +528,28 @@ So I think that's really kind of the critical thing why the two keys is so impor
 Speaker 0: 00:18:11
 
 I want to pause here for a second on the scanning issue.
-So how does the scanning actually, like how do you know you've been paid?
+So how do you know you've been paid?
 How does this actually work?
 
 Speaker 3: 00:18:21
 
 So you look at a transaction and there's a couple criteria that we can use to see whether or not the transaction is even eligible to be a silent payment transaction.
-So the first one is it needs to have at least one taproot output.
-You can even go further and say, well, I'm not really interested in other people's silent payments, so I'm only gonna scan transactions that have at least one unspent taproot output.
+So the first one is it needs to have at least one Taproot output.
+You can even go further and say, well, I'm not really interested in other people's silent payments, so I'm only going to scan transactions that have at least one unspent taproot output.
 
 Speaker 0: 00:18:46
 
 And to be clear, it scans for taproot because it uses the taproot, it uses snore basically, I would say, right?
-So if it doesn't have the taproot output, then there's no way it can be a silent payment.
+So if it doesn't have the Taproot output, then there's no way it can be a silent payment.
 
 Speaker 3: 00:18:59
 
 Yeah, we specified in the BIP that the sender always generates a taproot output.
 So you can skip all transactions that don't have taproot outputs.
-You can also skip all transactions where all the taproot outputs are spent.
+You can also skip all transactions where all the Taproot outputs are spent.
 Then the second thing you look at is what are the inputs of the transaction?
 And there needs to be at least one input that is specified in the BIP.
 So like a native SegWit input or a wrapped SegWit input or paid a public key and or a legacy.
-So pretty much like...
 
 Speaker 0: 00:19:26
 
@@ -557,7 +557,7 @@ Why is that?
 
 Speaker 3: 00:19:28
 
-There's complications with other inputs like the old bare multisig style, where like Ruben had mentioned earlier, one of the things we were working through in the BIP was dealing with these cases of malleability.
+There's complications with other inputs like the old bare MultiSig style, where like Ruben had mentioned earlier, one of the things we were working through in the BIP was dealing with these cases of malleability.
 And so that's one example of it.
 
 Speaker 0: 00:19:42
@@ -566,14 +566,13 @@ Okay.
 
 Speaker 3: 00:19:42
 
-So if you look at the inputs and there's nothing in there that's specified in the BIP, you're like, okay, I'm gonna skip this transaction.
+So if you look at the inputs and there's nothing in there that's specified in the BIP, you're like, okay, I'm going to skip this transaction.
 Okay.
 Now, when you see a transaction that has an unspent taproot output and at least one eligible input...
 
 Speaker 0: 00:19:53
 
 So, just to stop you for one second, what you've described right now is like, could it technically be a silent payment?
-Exactly.
 
 Speaker 3: 00:20:00
 
@@ -585,12 +584,12 @@ Speaker 0: 00:20:04
 Now the question is, okay, this could be a silent payment, is it a silent payment to me?
 So then you would take the inputs, you get the public keys from the inputs, and each input kind of has its own way of doing that, but you get the public key, If there are multiple inputs, you sum up those to get one single public key.
 And then you take that public key, you multiply it by your scan private key, generate the shared secret, and then you add your spend public key to it, which then creates a new public key.
-And you see if that public key is present as any of the taproot outputs.
-If that public key that you just created matches one of the taproot outputs, then that taproot output is yours and it's only spendable by you and you add it to the wallet and then move on to the next transaction.
+And you see if that public key is present as any of the Taproot outputs.
+If that public key that you just created matches one of the Taproot outputs, then that taproot output is yours and it's only spendable by you and you add it to the wallet and then move on to the next transaction.
 
 Speaker 2: 00:20:47
 
-So any wallet will, you know, look at every transaction in a block to see if the transaction is going to them.
+So any wallet will, look at every transaction in a block to see if the transaction is going to them.
 So that's conceptually not new, but what is new is that you need to do a bunch of extra math, multiplying two points or a private key and a public key in order to even see if this is going to you.
 So it makes it competitionally a little heavier to scan.
 
