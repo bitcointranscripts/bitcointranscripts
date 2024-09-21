@@ -327,50 +327,54 @@ So the recipient, and this is a distinction against like XPubs and BIP32 style a
 
 Speaker 0: 00:09:01
 
-Okay, so even though we did already discuss this in episode 58, let's do a recap of how this works.
+Even though we did already discuss this in episode 58, let's do a recap of how this works.
 Last time Ruben did it, so maybe Josie, do you want to give this a try?
 
 Speaker 3: 00:09:11
 
-Yeah, yeah.
-Let's go.
+Yeah.
 So in a nutshell, We are reusing information that is already in the transaction to establish a shared secret.
 And that shared secret is only valid for that single transaction, and it's a shared secret between the sender and the recipient.
 The shared secret is what allows the recipient to find the outputs.
-And then the thing that we do to make it only spendable by the recipient is there's of the output that is created, which is a taproot public key.
+And then the thing that we do to make it only spendable by the recipient is there's of the output that is created, which is a Taproot public key.
 The output is created by combining the shared secret with the recipient spend public key.
 So basically the the transaction itself becomes kind of the notification of a payment and the clip I guess the clever trick is to do a shared secret elliptic curve Diffie-Hellman is kind of the standard for that.
 And that involves a private key, public key pair.
-And so the sender is just reusing the private keys of the UTXOs that they wanna spend.
+And so the sender is just reusing the private keys of the UTXOs that they want to spend.
 And then the recipient is finding that shared secret by looking at the public keys of those UTXOs.
 
 Speaker 0: 00:10:18
 
-Yeah, we're gonna break this down.
+Yeah, we're going to break this down.
 So first, to start, what actually is a silent address?
 Like, is it basically a regular Bitcoin address?
 Could you also just send money to it and then spend from the private key?
-No, it's a special type of...
 But it is a public key, right?
+
+Speaker 3: 00:10:36
+
 It's two public keys.
+
+Speaker 0: 00:10:37
+
 The silent address is two public keys?
 
 Speaker 3: 00:10:38
 
-Yeah, so it's more specifically, it's a batch 32M encoding of two public keys.
+Yeah, so it's more specifically, it's a batch32M encoding of two public keys.
 So it has an HRP instead of BC, it has SP.
 
 Speaker 0: 00:10:47
 
 I have no idea what any of this means.
-Do you, George?
+Do you, Sjors?
 
 Speaker 1: 00:10:50
 
 It's the HRP.
 Human readable part is what HRP means.
 So when you look at a Bitcoin address that starts with a BC1P, the BC stands for Bitcoin.
-It's like it doesn't have any meaning for the computer other than, well, a little bit, but it's human readable, so you can say, oh, this is a Bitcoin address and not a, say, testnet address.
+It's like it doesn't have any meaning for the computer other than, well, a little bit, but it's human readable, so you can say, this is a Bitcoin address and not a, say, testnet address.
 And a sign-in payment address starts with SP, so you know it's a sign-in payment address.
 
 Speaker 0: 00:11:14
