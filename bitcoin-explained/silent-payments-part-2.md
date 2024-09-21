@@ -259,7 +259,7 @@ Unless you want to get two tattoos.
 
 Speaker 0: 00:06:46
 
-Okay, I'm going to give a one-sentence explanation of what this sort of is, and then we'll go to a short recap.
+I'm going to give a one-sentence explanation of what this sort of is, and then we'll go to a short recap.
 But you can correct me if I'm wrong.
 So basically, right now, we use Bitcoin addresses, which are great.
 The problem is that you can't, Well, you can reuse them, but it's really bad for privacy.
