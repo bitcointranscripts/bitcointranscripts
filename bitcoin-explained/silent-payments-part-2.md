@@ -1,27 +1,57 @@
 ---
-title: "Silent Payments part 2"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-94-silent-payments-part-2
-tags: ['silent-payments']
-speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
+title: 'Silent Payments part 2'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-94-silent-payments-part-2'
+date: '2024-07-07'
+tags:
+  - 'silent-payments'
+speakers:
+  - 'Sjors Provoost'
+  - 'Aaron van Wirdum'
+  - 'Ruben Somsen'
 categories: []
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments."
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments.'
 episode: 94
-date: 2024-07-07
 additional_resources:
-  - title: https://bitcoinexplainedpodcast.com/
-    url: https://bitcoinexplainedpodcast.com/
+  - title: 'https://bitcoinexplainedpodcast.com/'
+    url: 'https://bitcoinexplainedpodcast.com/'
 ---
 Speaker 0: 00:00:16
 
-Live from Utrecht, this is Bitcoin Explained.
-Hey Sjoers.
+Live from Utrecht.
+This is Bitcoin.
+
+Speaker 1: 00:00:19
+
+Explained.
+
+Speaker 0: 00:00:20
+
+Hey Sjors.
+
+Speaker 1: 00:00:21
+
 Hello.
+
+Speaker 0: 00:00:22
+
 Hey Josie.
+
+Speaker 2: 00:00:23
+
 Hey.
+
+Speaker 0: 00:00:23
+
 Hey Ruben.
+
+Speaker 3: 00:00:24
+
 Hey.
-We've got two guests today Sjoers.
+
+Speaker 0: 00:00:16
+
+We've got two guests today Sjors.
 Is that the first time we've had two guests?
 
 Speaker 1: 00:00:27
@@ -32,10 +62,15 @@ We have doubled the number of guests.
 Speaker 0: 00:00:31
 
 That is amazing.
-You know what else is amazing, Sjoerd?
+You know what else is amazing, Sjors?
+
+Speaker 1: 00:00:34
+
 The 9V battery thing that you have in your hands.
-You just pushed a...
-This is a CoinKite product as well?
+
+Speaker 0: 00:00:38
+
+This is a CoinKite product as well.
 
 Speaker 1: 00:00:41
 
@@ -47,8 +82,7 @@ Explain what you just gave me.
 
 Speaker 1: 00:00:46
 
-You put it on top of a 9 volt battery and then it has a USB port so you can charge your devices offline in a nuclear shelter etc.
-But they also have...
+You put it on top of a 9-volt battery and then it has a USB port so you can charge your devices offline in a nuclear shelter etc.
 
 Speaker 0: 00:00:57
 
@@ -63,10 +97,15 @@ Speaker 0: 00:01:05
 
 Anyways, another amazing CoinKite product.
 And here's another one, the Cold Cart Q.
-Josh has got many Cold Cart, CoinKite devices.
+Sjors has got many Cold Cart, CoinKite devices.
 Buy them all.
+
+Speaker 1: 00:01:20
+
 Exactly.
-Okay, let's get to our episode.
+
+Speaker 0: 00:01:24
+Let's get to our episode.
 We're going to discuss silent payments.
 
 Speaker 1: 00:01:26
@@ -85,17 +124,16 @@ I don't remember exactly, but it was somewhere 50-something.
 
 Speaker 0: 00:01:36
 
-Yeah, so we did one episode on silent payments right after you, Ruben, proposed it on the Bitcoin Dev mailing list.
-Yes.
+We did one episode on silent payments right after you, Ruben, proposed it on the Bitcoin Dev mailing list.
 Now, fast forward two years later.
 
 Speaker 1: 00:01:45
 
 This episode is still up to date and perfectly fine, so you can stop listening.
-Almost.
 
 Speaker 2: 00:01:50
 
+Almost.
 There are a few things we could talk about, but it was surprisingly accurate.
 So definitely something to go back and listen to.
 
@@ -122,11 +160,11 @@ Where are you?
 
 Speaker 3: 00:02:36
 
-I am a Bitcoin Core developer.
-So I started contributing about three or three-ish years ago, I think.
+I am a BitcoinCore developer.
+I started contributing about three or three-ish years ago, I think.
 I started off in the wallet mostly out of an interest in privacy stuff, and also just usability, because I used the Bitcoin Core wallet, which was part of what got me so excited about silent payments.
 It was kind of the feature that I felt like was missing.
-But yeah, I spent a lot of time in the wallet and also a lot of time thinking about privacy improvements without SoftForks.
+I spent a lot of time in the wallet and also a lot of time thinking about privacy improvements without SoftForks.
 
 Speaker 0: 00:03:02
 
@@ -136,7 +174,8 @@ At some point you read Ruben's proposal and you decided to implement it or what?
 Speaker 3: 00:03:07
 
 No, I heard him present on it at TabConf in October of 2022, I think.
-I think you had just kind of written the gist and had been talking to people maybe following the Prague discussions Yep, so Reuben gave a presentation on it, and I don't think he and I had officially met at that point And I was so excited after the talk was finished I went up to him afterwards and was like, what do we got to do to make this a reality?
+I think you had just kind of written the gist and had been talking to people maybe following the Prague discussions. Reuben gave a presentation on it, and I don't think he and I had officially met at that point.
+I was so excited after the talk was finished I went up to him afterwards and was like, what do we got to do to make this a reality?
 This sounds awesome.
 And then I think at that point, we decided the next step would be to write the BIP.
 And so we decided that's where we would spend the next amount of time just kind of refining the idea.
@@ -148,19 +187,19 @@ And a lot of this work was done in Utrecht, is that right?
 
 Speaker 3: 00:03:56
 
-Yeah, yeah.
+Yeah.
 Like I said, we hadn't really met each other before.
 So at one point Ruben was like, well, it's going to be hard to coordinate.
 I'm in Utrecht and I was like, dude, I'm in Amsterdam.
 This is perfect.
-So then I would catch the train down to Utrecht about once a week and we'd sit in a Starbucks and.
+So then I would catch the train down to Utrecht about once a week and we'd sit in a Starbucks.
 
 Speaker 2: 00:04:11
 
 Yep.
 Talk for hours.
 A lot of fun and very useful.
-I think, especially, so the funny thing is even though like the, the previous episode, which by the way is episode 58, so just a correction there.
+The funny thing is even though like the, the previous episode, which by the way is episode 58, so just a correction there.
 Although it's very accurate, there were still a bunch of details that were very tricky to work out.
 We're not really going to go into them, I think, for this discussion, because they're not really relevant for understanding the protocol necessarily.
 But there was still a lot of work to be done, and we had a lot of pitfalls, like malleability issues, things like that.
@@ -172,7 +211,7 @@ Yeah, well, I just wanted to point out that it's a second grade Utrecht homegrow
 which I'm very proud of.
 The first one, of course, being Bitcoin Explained.
 Needless to say.
-So the BIP is BIP352, 352, and this was finalized a couple of weeks ago?
+The BIP is BIP352, and this was finalized a couple of weeks ago?
 
 Speaker 3: 00:05:16
 
@@ -180,7 +219,7 @@ Maybe a month at this point.
 
 Speaker 2: 00:05:18
 
-Any longer.
+Maybe longer.
 It must have been two months ago now.
 
 Speaker 3: 00:05:21
