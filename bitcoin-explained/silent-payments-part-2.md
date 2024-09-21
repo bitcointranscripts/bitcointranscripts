@@ -262,8 +262,8 @@ Speaker 0: 00:06:46
 I'm going to give a one-sentence explanation of what this sort of is, and then we'll go to a short recap.
 But you can correct me if I'm wrong.
 So basically, right now, we use Bitcoin addresses, which are great.
-The problem is that you can't, Well, you can reuse them, but it's really bad for privacy.
-So if you, for example, want to put up a donation address on your website, then people can donate to you, but then they also see exactly, anyone can see exactly, you know, when you're spending your money, and how much money you received, and all of that.
+The problem is that you can reuse them, but it's really bad for privacy.
+So if you, for example, want to put up a donation address on your website, then people can donate to you, anyone can see exactly, when you're spending your money, and how much money you received, and all of that.
 So, silent payment addresses are also something you can post publicly, but then whoever is paying you basically generates a new address for you every time, with you being the only one to be able to spend from that.
 Right?
 Well, this was more than one sentence.
@@ -310,7 +310,8 @@ Naming is art guys.
 
 Speaker 2: 00:08:28
 
-As long as people understand it, That's the important part.
+As long as people understand it.
+That's the important part.
 
 Speaker 3: 00:08:30
 
