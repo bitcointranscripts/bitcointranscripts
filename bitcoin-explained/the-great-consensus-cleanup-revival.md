@@ -2,7 +2,7 @@
 title: 'The Great Consensus Cleanup Revival (And an Update on the Tornado Cash and Samourai Wallet Arrests)'
 transcript_by: 'mvuk via review.btctranscripts.com'
 media: 'https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi'
-date: '2024-05-28'
+date: '2024-05-29'
 tags:
   - 'wallet'
   - 'consensus-cleanup'
@@ -1316,4 +1316,4 @@ Thank you for listening to Bitcoin...
 
 Aaron: 00:50:55
 
-Explained
+...Explained
