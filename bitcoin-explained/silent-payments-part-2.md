@@ -431,23 +431,22 @@ You would take the private keys of all of those coins and you would add them up 
 
 Speaker 0: 00:12:48
 
-Then you multiply- Can we for simplicity just say I'm using one UTXO?
+Can we for simplicity just say I'm using one UTXO?
 
 Speaker 3: 00:12:53
 
-Yep, so you take that one UTXO, you take the one private key from that UTXO, you multiply that one private key with the first public key from my address, which is the scan public key.
-So you're, you know, your private key times my public key.
+Yes, so you take that one UTXO, you take the one private key from that UTXO, you multiply that one private key with the first public key from my address, which is the scan public key.
+So you're, your private key times my public key.
 
 Speaker 0: 00:13:09
 
 Yeah.
 That's what you're describing right now is the general Diffie-Hellman exchange.
-Exactly.
 
 Speaker 1: 00:13:15
 
 Right.
-Those, those, you know, you know, Josie's public key because he put it on the internet and Josie will know your public key because that's where the money is coming from.
+Those, those, you know, Josie's public key because he put it on the internet and Josie will know your public key because that's where the money is coming from.
 
 Speaker 3: 00:13:23
 
@@ -458,9 +457,7 @@ And then that makes something that is findable by me, but only spendable by me.
 
 Speaker 0: 00:13:41
 
-Right, okay, yeah.
 So for those, there might be listeners that don't know this, but the general idea of the Diffie-Hellman exchange is that we both have a public key and we both have a private key by combining or what's a better word, factoring.
-Multiplying.
 Multiplying one of our private keys.
 So I will use my private key in combination with your public key.
 And you can do the opposite, your private key with my public key.
@@ -484,7 +481,7 @@ And this is kind of the important part of silent payments.
 There is nothing extra.
 Cause I think in stealth addresses, they had a similar way where you would have this ephemeral secret and then they would encrypt it in an op return.
 But then it was kind of obvious and the user had to pay more.
-So once I've created that shared secret, as the sender, like Shor's mentioned, if I use just the shared secret, both of us know the shared secret.
+So once I've created that shared secret, as the sender, like Sjor's mentioned, if I use just the shared secret, both of us know the shared secret.
 So then either one of us could spend it.
 When I take the spend public key and I add it to the shared secret, I now have something where both of us can find it with the shared secret, but then only I can spend it because only I know the private key to the spend public key.
 
