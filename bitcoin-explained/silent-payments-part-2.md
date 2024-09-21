@@ -815,7 +815,7 @@ Speaker 2: 00:30:12
 Right.
 Yes, but they're checking only 32 bytes for every transaction versus the whole transaction.
 So a whole transaction might be 150 bytes, but this summary is only 32 bytes and you're only getting the summary for transactions that can be assigned in payment.
-So you're getting not all the transactions in a block and you're getting not all of the transactions, not all of the transaction data.
+So you're getting not all the transactions in a block and you're getting not all of the transactions, not all of the transaction.
 
 Speaker 1: 00:30:33
 
