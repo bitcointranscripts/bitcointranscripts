@@ -718,8 +718,8 @@ Yes and no.
 
 Speaker 2: 00:25:58
 
-So the challenge- Not really, because you have this one extra calculation per block, per transaction that we talked about.
-But if you're doing this on behalf of a million people, now for every block, you have 10, 000 transactions in the block, plus a million checks.
+Not really, because you have this one extra calculation per block, per transaction that we talked about.
+But if you're doing this on behalf of a million people, now for every block, you have 10,000 transactions in the block, plus a million checks.
 So that does not scale very well at all for this way of doing whatever you want to call it.
 
 Speaker 3: 00:26:19
@@ -732,10 +732,10 @@ I would mention it is feasible, but the problem, and this is usually what spooks
 So the more users are connecting to your node, the more work you have to do.
 Now, because that work is roughly a signature check, if I'm a wallet provider and I'm running like some pretty nice hardware, this is feasible.
 And I did some like back of the number math on it at some point.
-And, you know, you could scale up to like 10 million users with, you know, Amazon hardware and whatnot.
-But the, but the reason I don't think this is super interesting is those users are giving all of their privacy to that server.
+And, you could scale up to like 10 million users with, Amazon hardware and whatnot.
+But the but the reason I don't think this is super interesting is those users are giving all of their privacy to that server.
 It's the same as if you just handed your XPUB to a server and said, hey, just tell me when I get paid.
-Now there are some models where I think users might wanna do this.
+Now there are some models where I think users might waing to do this.
 
 Speaker 2: 00:27:11
 
@@ -743,7 +743,8 @@ I mean, you're describing the norm, basically.
 
 Speaker 0: 00:27:14
 
-Yeah, I mean, that's basically how- We'd like to avoid that beside- Right, and so, but I wanna mention, I don't think that's really, it's not computationally infeasible.
+Yeah.
+Right, and so, but I want to mention, I don't think that's really, it's not computationally infeasible.
 I just don't think it's an interesting route to pursue or to even advocate for.
 
 Speaker 1: 00:27:27
@@ -762,14 +763,13 @@ Yeah.
 
 Speaker 3: 00:28:02
 
-So what problem are we gonna solve here, both?
+So what problem are we going to solve here, both?
 
 Speaker 1: 00:28:04
 
 Yeah, so we want to be able to figure out whether or not we got paid without having a full node do all the work for us and without losing our privacy.
-Okay.
 That is essentially what we want.
-And one of the big components there that Shorst mentioned is BIP 157, BIP 158.
+And one of the big components there that Shorst mentioned is BIP157, BIP158.
 That is one component.
 But the first thing we need to answer, the scanning question is how do we get a like client?
 How do we get a phone to figure out, to do basically the equivalent of scanning without outsourcing it to somebody else and losing all their privacy?
@@ -779,7 +779,7 @@ And the like client can use that to generate what essentially would be the addre
 Speaker 2: 00:29:08
 
 So this 32 bytes per transaction is the same for everyone?
-Just like the filters in BIP 158 are the same for everyone?
+Just like the filters in BIP158 are the same for everyone?
 
 Speaker 0: 00:29:15
 
@@ -795,7 +795,7 @@ Speaker 0: 00:29:23
 
 Not only is it the same for everyone, it's also public information.
 It's basically, so like clients don't have access to blocks or transactions.
-So this 33 byte value is a summary of the input public keys of the transaction.
+So this 33-byte value is a summary of the input public keys of the transaction.
 So it's the same information anybody would have just by looking at the blockchain.
 And so we'll call it an indexing server.
 An indexing server just sees transactions coming in.
