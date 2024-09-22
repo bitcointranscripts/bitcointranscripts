@@ -9,6 +9,7 @@ speakers:
   - 'Sjors Provoost'
   - 'Aaron van Wirdum'
   - 'Ruben Somsen'
+  - 'Josibake'
 categories: []
 summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments.'
 episode: 94
@@ -1327,7 +1328,7 @@ Speaker 1: 00:55:40
 
 So about a month ago, the BIP was finalized, roughly.
 What does that mean right now?
-Are there wallets that have implemented, has BitHook or implemented it yet, Shorz?
+Has BitHook or implemented it yet, Sjors?
 
 Speaker 2: 00:55:52
 
@@ -1336,7 +1337,8 @@ There are open pull requests in various states of completion that need work.
 Speaker 1: 00:55:58
 
 Is it coming?
-The answer is no, But it might come.
+The answer is no.
+But it might come.
 
 Speaker 0: 00:56:01
 
@@ -1361,7 +1363,7 @@ Yeah, it's an amazing project.
 
 Speaker 1: 00:56:55
 
-Episode 2, I think, Josh.
+Episode 2, I think, Sjors.
 
 Speaker 2: 00:56:57
 
@@ -1369,7 +1371,7 @@ It could be, yeah, LibSecP256k1.
 
 Speaker 0: 00:57:01
 
-Yep.
+Yes.
 So once that PR merges, now we have all the cryptography for the protocol.
 We'll use that in Bitcoin Core and then the Bitcoin Core PRs can make progress.
 And also any hardware wallet, mobile wallet, whatever, can also reuse this LibSecP module.
@@ -1380,11 +1382,11 @@ Treat it like a black box.
 So that's kind of the state of things right now.
 There are wallets who have started implementing it without that.
 Cake Wallet, I think, was the first one to have a full-like client.
-So they have a fully private-like client that doesn't use Bit.158.
+So they have a fully private-like client that doesn't use BiP158.
 They do a little bit of a different technique.
 But they don't have silent payments send and receive.
 Last week Blue Wallet merged send support so now in Blue Wallet you can send to a silent payment address.
-There's donation wallet which I've been working with a group on which is a BIP 158 style client.
+There's donation wallet which I've been working with a group on which is a BIP158 style client.
 That one is still in testing, like in Cignet.
 
 Speaker 1: 00:58:06
@@ -1394,13 +1396,12 @@ The name of the wallet is donation wallet.
 Speaker 2: 00:58:08
 
 Yeah.
-Yeah.
 
 Speaker 0: 00:58:09
 
 It was kind of like, it's supposed to be like the flagship use case of silent payments as donations.
 And then there's been interest from other wallets as well, but I think people are waiting on the LibSecP module, because once the LibSecP module is there, then it can get into BDK.
-Once it's in BDK, it becomes easier for, you know, etc.
+Once it's in BDK, it becomes easier for, etc.
 
 Speaker 2: 00:58:26
 
@@ -1409,19 +1410,19 @@ It's a Rust library.
 
 Speaker 0: 00:58:29
 
-Yep, it's a Rust library that would then be able to wrap the libsecp.
+Yes, it's a Rust library that would then be able to wrap the Libsecp.
 So there's a lot of discussions happening in these different repos and where people are kind of waiting for the right ordering of things.
 Another big one for wallet support, at least on the sending side, is people want to have a PSPT spec.
-So we mentioned that earlier, but we've got a post on DelvingBitcoin where we've been talking through a draft proposal for PSPTs. So for me, it's been really exciting to see the enthusiasm where people are just, you know, just excited.
+So we mentioned that earlier, but we've got a post on DelvingBitcoin where we've been talking through a draft proposal for PSPTs.
+So for me, it's been really exciting to see the enthusiasm where people are just, just excited.
 ready to jump in and start building.
-But then it's also nice to see the tooling mature as well, because.
+But then it's also nice to see the tooling mature as well.
 For this to be widely adopted.
 We want PSBT support.
 We want like clear specs of how to do everything safely.
 
 Speaker 1: 00:59:11
 
-Oh yeah.
 Two weeks.
 How many people are using this?
 What, What does the blockchain say?
@@ -1443,14 +1444,19 @@ Speaker 2: 00:59:29
 
 Silently getting paid.
 But I mean, just one thing to add here, I think, so since the BIP is final, this is really the time for any developers out there to jump in, start working on it.
-Yes, we're still sort of like on the, you know, on the side of libraries, There's still a lot of work to be done, but definitely I think this is a time to start implementing it into wallets.
+Yes, we're still sort of like on the, on the side of libraries.
+There's still a lot of work to be done, but definitely I think this is a time to start implementing it into wallets.
 There's the Keystone hardware wallet that's looking into it now as well.
-And sending support is the thing we really want all the wallets out there to support because once all the wallets support sending then it's easy for people to start using their silent payment address and know that they can actually get paid and sending support is relatively simple compared to receiving because receiving requires scanning sending does not So that's a little something I wanted to put out there.
+And sending support is the thing we really want all the wallets out there to support because once all the wallets support sending then it's easy for people to start using their silent payment address and know that they can actually get paid and sending support is relatively simple compared to receiving because receiving requires scanning sending does not.
+So that's a little something I wanted to put out there.
+
+Speaker 0: 01:00:23
+
 Right.
+Sjors, we good?
 
-Speaker 1: 01:00:23
+Speaker 1: 01:00:26
 
-Sure, we good?
 I think so.
 So thanks Ruben and Josie for coming by and explaining all these things.
 And dear listeners thank you for listening to Bitcoin Explained.
