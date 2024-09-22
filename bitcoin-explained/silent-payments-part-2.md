@@ -1050,11 +1050,11 @@ It's just you, but it's really you and your hardware wallet.
 And normally, you look at your screen, your wallet says, I'm going to send the money to this and this address, and then the hardware wallet confirms, do you want to send to this in this address and you're good but the problem with sign-on payment is you don't know what the address is going to be because it involves the shared secret and therefore you need your own private key to figure out what the address is.
 But that address is, that private key is on the hardware wallet.
 So in order to know what address you're going to send to, you need to ask the hardware wallet, hey, this is the sign-on payment address of the person I'm about to send money to, tell me what the address is, and then you just have to kind of trust the hardware wallet.
+Well, hopefully not.
+So this is what you solved.
 
 Speaker 3: 00:44:02
 
-Well, hopefully not.
-So this is what you solved.
 Yeah, so there is a way to actually basically do an extra calculation when you're generating the silent payment address.
 And this is called a discrete log equivalence proof.
 And basically it shows that the calculation that you did, the shared secret that you generated was correctly generated.
@@ -1068,7 +1068,7 @@ And this is five pages of moon math?
 
 Speaker 3: 00:44:46
 
-No, This is relatively simple.
+No, this is relatively simple.
 It's basically a Schnorr signature plus some small changes to that kind of algorithm.
 
 Speaker 2: 00:44:56
@@ -1097,20 +1097,21 @@ And so this essentially sort of completes the loop of how can we get to the poin
 
 Speaker 2: 00:46:19
 
-Yeah, and I guess, yeah, in the CoinJoin protocol, Hugh, you'd say this is a CoinJoin protocol that is compatible with silent payments, and then just everybody signs this stuff so nobody knows if there's actually a silent payment.
-So even if I were to look at, you know, I'm the NSA, I know every silent payment address out there because I watch the internet, I still could not like go back and see if it matches any of them.
+Yeah, and I guess, yeah, in the CoinJoin protocol, you'd say this is a CoinJoin protocol that is compatible with silent payments, and then just everybody signs this stuff so nobody knows if there's actually a silent payment.
+So even if I were to look at, I'm the NSA, I know every silent payment address out there because I watch the internet, I still could not like go back and see if it matches any of them.
 
 Speaker 0: 00:46:40
 
 Correct.
-I think that's a really cool part where it's kind of, it feels kind of magical where, So in order to coordinate with these other participants in a coin join, you would need to give them the public key that you want them to do this ECDH with.
+I think that's a really cool part where it's kind of, it feels kind of magical.
+So in order to coordinate with these other participants in a coin join, you would need to give them the public key that you want them to do this ECDH with.
 And as soon as they have that public key, well, they kind of know who you're trying to pay.
 They know what silent payment address it is.
 So the fact that you can, one, blind that public key, have them do an ECDH with it where they don't know what they're actually doing ECDH on, and then also have them give you a proof that they did it correctly for the thing that they didn't even know.
 It's pretty cool.
 And when you look at the math, it's not even really moon math.
 It's quite simple.
-And, you know, if people are interested in digging into it more, this came up, this idea of formalizing the discrete log equivalency proof came up in the PSBT BIP draft that we're working on.
+And, if people are interested in digging into it more, this idea of formalizing the discrete log equivalency proof came up in the PSBT BIP draft that we're working on.
 And then I think now it's gonna be its own BIP where someone suggested, hey, this discrete log equivalency stuff seems generally useful.
 We should probably have a separate BIP for it.
 
@@ -1134,7 +1135,7 @@ It's yeah, It's just manipulating bits.
 
 Speaker 3: 00:47:49
 
-There are no additional assumptions over what we already have for snore signatures.
+There are no additional assumptions over what we already have for schoor signatures.
 So it really is, in that sense, there's nothing like, oh, this is like unproven math or something like that.
 
 Speaker 2: 00:48:01
@@ -1151,12 +1152,13 @@ What do labels do?
 
 Speaker 3: 00:48:15
 
-Yeah, so that's another interesting one to discuss And one that I didn't think of until after we did the podcast, I think probably pretty brief, pretty shortly after that, but essentially minutes after,
+Yeah, so that's another interesting one to discuss.
+And one that I didn't think of until after we did the podcast, I think probably pretty brief, pretty shortly after that, but essentially minutes after,
 not quite that fast, I think, but, essentially, you know, in the discussions, silent payments are very privacy focused, but there are scenarios where you actually want less privacy.
 And so with silent payments, you actually have a case where whenever when somebody sends you money repeatedly, you don't know the same person was sending you money multiple times.
 And that is a feature, right?
 You as the sender, you might not want the recipient even to know that you're sending repeated payments to them.
-And that also helps in the case where the recipients maybe, you know, they go to jail or they have to reveal to the government certain amounts of data.
+And that also helps in the case where the recipients maybe, they go to jail or they have to reveal to the government certain amounts of data.
 And now the government knows that you sent them multiple payments or something like that.
 
 Speaker 2: 00:49:16
