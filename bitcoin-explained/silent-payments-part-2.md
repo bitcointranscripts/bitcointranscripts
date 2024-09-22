@@ -1166,7 +1166,6 @@ Speaker 2: 00:49:16
 You have a donation address on your website.
 You get random donations all the time.
 You have no idea whether that's coming from one person or from 25 people.
-Yes.
 When you go to jail, you give the private keys to the police because they've been torturing you for seven days of not giving you coffee.
 And then I'm sure they'll give you coffee.
 But somehow you still surrender your private keys and they still don't know where those donations are coming from.
@@ -1180,13 +1179,14 @@ From Wikileaks' perspective, they would just see 12 payments and they would have
 
 Speaker 2: 00:50:01
 
-With the caveat that these payments might, you know, you do some cluster analysis on them.
+With the caveat that these payments might, you do some cluster analysis on them.
 So there's still some of that, but at least it's not like, I gave this address to this person.
 
 Speaker 0: 00:50:11
 
 Well, let me give a more specific example.
-If I had an XPub or something like that, or BIT47, for example, BIT47 establishes this payment channel, And so any payment made through that payment channel is clustered already.
+If I had an XPub or something like that, or BIP47, for example, BIP47 establishes this payment channel.
+And so any payment made through that payment channel is clustered already.
 You don't need to do any chain analysis stuff.
 
 Speaker 1: 00:50:29
@@ -1196,28 +1196,25 @@ From the same.
 Speaker 0: 00:50:30
 
 Exactly.
-Yeah.
-And, and like Ruben said, there are use cases where you, you do want that, but I don't think that a protocol like silent payment should have that by default.
+And, and like Ruben said, there are use cases where you do want that, but I don't think that a protocol like silent payment should have that by default.
 So by default, you're starting with the best center privacy possible.
 Every transaction is unique and not correlatable to any other transaction.
 
 Speaker 2: 00:50:47
 
-But now let's say I am an exchange and I have, I don't wanna scan a million keys.
-I don't wanna scan, I don't wanna have one silent payment address per customer because now I have to, you know, I have millions of customers and we just did the math on how many computer resources you need.
-And exchanges, you know, can't afford computers.
-Well, they can, they can run Ethereum notes, they can definitely run this.
-True.
+But now let's say I am an exchange and I have, I don't want to scan a million keys.
+I don't want to have one silent payment address per customer because now I have, I have millions of customers and we just did the math on how many computer resources you need.
+And exchanges, can't afford computers.
+Well, they can run Ethereum nodes, they can definitely run this.
 However...
 
 Speaker 3: 00:51:08
 
 They're outsourced Ethereum notes so who knows but yeah.
-Jobs fired.
 
 Speaker 2: 00:51:12
 
-Yeah so it would be nice if they could have one, still one single payment identifier, no just one silent payment address and then they give each customer a variation on it so that they know which deposit is coming from each customer because as an exchange, it's quite useful to know which account you want to credit when that payment comes in, Pretty useful.
+Yeah so it would be nice if they could have one, still one single payment identifier, no just one silent payment address and then they give each customer a variation on it so that they know which deposit is coming from each customer because as an exchange, it's quite useful to know which account you want to credit when that payment comes in.
 And this is what labels do.
 
 Speaker 1: 00:51:32
@@ -1236,7 +1233,7 @@ The scan key is the same.
 
 Speaker 2: 00:51:44
 
-Oh, You should explain it.
+You should explain it.
 
 Speaker 3: 00:51:47
 
