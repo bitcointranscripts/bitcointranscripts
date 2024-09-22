@@ -1245,7 +1245,7 @@ One of the keys is the same, the other one is different for each customer.
 That means that in terms of scanning, it's not that much extra work.
 It's a little bit of extra work, but it's not like one of those elliptic curve math operations.
 It's a cheaper operation.
-Like an elliptic curve math is like, you know, you have to write a whole, you have to copy the whole Bible, whereas the, just the simpler operations, like you write one sentence.
+Like an elliptic curve math is like, you have to write a whole, you have to copy the whole Bible, whereas the, just the simpler operations, like you write one sentence.
 And therefore you can tell which customer is making which deposit.
 So you give every customer a different silent payment address, they can very obviously see that it's the same entity.
 
@@ -1261,31 +1261,29 @@ It's just different address.
 
 Speaker 0: 00:52:34
 
-Yeah, So it's a way of tweaking with elliptic curve math.
+Yeah, so it's a way of tweaking with elliptic curve math.
 It's a way of tweaking one half of the silent payment address such that when you receive a silent payment and you're scanning, you know which address that payment was made to without needing to do an ECDH per address.
 So you do one ECDH with the scan key, which is the expensive part, and then you kind of have this database of all the labels you've used and you do a quick lookup.
-And then you say, ah, okay, this particular payment was made to this label that I handed to Shores.
+And then you say, okay, this particular payment was made to this label that I handed to Shores.
 So now I know Shores made a payment to me.
-And I think the Exchange is the most obvious use case here where, You know, going back to what I said earlier, we don't want the amount of work that the exchange needs to do to scale linearly with the customers.
+And I think the exchange is the most obvious use case here where, going back to what I said earlier, we don't want the amount of work that the exchange needs to do to scale linearly with the customers.
 An exchange has 100 million customers, I don't want to do X work times 100 million.
-So, the labels is this really cool way where I still, I do a constant amount of work, no matter how many customers there are, but I do have a way of figuring out, okay, Shor's just made a deposit to his account.
+So, the labels is this really cool way where I still, I do a constant amount of work, no matter how many customers there are, but I do have a way of figuring out, okay, Sjor's just made a deposit to his account.
 And I think the exchange one is obvious, but also like payments, right?
 I want to get paid in Bitcoin.
 And so I post my silent payment address on my Twitter for people who want to send donations, but then I also give a labeled version of that same silent payment address to whoever's paying me.
-And now I have a way of knowing, ah, this particular payment was actually my paycheck.
+And now I have a way of knowing, this particular payment was actually my paycheck.
 And this other one was a donation from my Twitter account.
 
 Speaker 2: 00:54:03
 
-Right.
 Be nice if those amounts were the same.
-It would be nice.
-And just to...
 
 Speaker 1: 00:54:08
 
 So at the start of the episode, we mentioned a silent address basically has two public keys embedded.
-Just to be clear, So one of the public keys is just switched for a different public key or not?
+Just to be clear.
+So one of the public keys is just switched for a different public key or not?
 
 Speaker 0: 00:54:19
 
@@ -1314,11 +1312,12 @@ Speaker 0: 00:54:57
 It's really cool.
 And what's even cooler is because we're dealing with public keys here, the exchange can provide a signature.
 And like hardware wallets can trustlessly verify, this is actually the destination that I'm intending to pay.
-And so this is where, you know, the silent payment address can kind of be this persistent trustless identity, which plays really nicely into this use case for exchanges, but also BIP, what is it, 353 now, which is like human readable payment instructions where you could have like a username that has an underlying sign up payment address And because we're dealing with public keys here, there's just a lot more trustlessness, but with better UX that we get.
+And so this is where, the silent payment address can kind of be this persistent trustless identity, which plays really nicely into this use case for exchanges, but also BIP, what is it, 353 now, which is like human readable payment instructions where you could have like a username that has an underlying sign up payment address.
+And because we're dealing with public keys here, there's just a lot more trustlessness, but with better UX that we get.
 
 Speaker 1: 00:55:37
 
-Okay, I think it's time to start wrapping up this episode.
+I think it's time to start wrapping up this episode.
 
 Speaker 2: 00:55:40
 
