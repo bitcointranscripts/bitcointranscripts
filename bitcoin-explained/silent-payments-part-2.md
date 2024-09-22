@@ -839,7 +839,7 @@ With the cut through, the data that the light client needs to download kind of a
 UTXOs get created and never spent, or UTXOs get created and get spent within three days.
 And that's kind of, there's not really much in between there.
 So if a Lite client were to scan once every three days, they're skipping a whole lot of transactions that are just not relevant to them.
-And this is, I think, the trick that we we realize actually makes light client scanning feasible.
+The trick that we realize actually makes light client scanning feasible.
 
 Speaker 2: 00:32:23
 
@@ -851,9 +851,8 @@ Yeah, it's one trick.
 
 Speaker 2: 00:32:27
 
-And so once you have this list of these tweaks, you can now.
 What you do is you use that 32 byte number, you multiply it or whatever it is with your own private key, your own silent payment private key, and then you know what address you should have been paid to.
-So basically the result of this calculation is an address, and now you use the traditional PIP 158 filters to say, hey, is there a payment to this address?
+So basically the result of this calculation is an address, and now you use the traditional BIP 158 filters to say, hey, is there a payment to this address?
 And you would ask that for this subset of blocks, right?
 So you might get slightly too many blocks.
 
@@ -861,17 +860,17 @@ Speaker 0: 00:33:03
 
 Maybe take one step back.
 You create what I would call potential public keys.
-So you, you, you do an ECDH with each of these inputs, which means you create all these taproot outputs.
+So you, you, you do an ECDH with each of these inputs, which means you create all these Taproot outputs.
 Now you need a way as the light client to know if any of these public keys exist in the UTXO set.
 There are many ways you could do this.
 One way would be just connect to an Electrum server or an address lookup server and just hammer them with like 2000 addresses and be like, hey, tell me if any of these exist in the UTXO set.
 That's not private and it's also kind of a denial of service on the Electrum server.
-So the much better way from a performance and privacy standpoint is to get some efficient summary of UTXOs in a block, which I think, you know, BIP-158 is the best example of that.
+So the much better way from a performance and privacy standpoint is to get some efficient summary of UTXOs in a block, which I think, BIP-158 is the best example of that.
 So you download these filters and you take these public keys and you test to exist whether or not they exist in the filter.
 If they exist in the filter, that means that there's a UTXO corresponding to this and you know I'm the only person who would be able to create this UTXO.
 So then you download the block and get it.
-But I make that distinction there because if we think about, okay, now I have all these public keys and I need to know whether or not they exist, you could use any method for querying a UTXO set, whether that's address lookup, private information retrieval, BIP 158.
-And I think BIP 158 is just the best example that we have right now.
+But I make that distinction there because if we think about, okay, now I have all these public keys and I need to know whether or not they exist, you could use any method for querying a UTXO set, whether that's address lookup, private information retrieval, BIP158.
+I think BIP158 is just the best example that we have right now.
 
 Speaker 3: 00:34:23
 
@@ -898,15 +897,15 @@ A point is a public key.
 Speaker 3: 00:35:22
 
 Okay, somewhat clear enough to me.
-Last time, Sjoerds brought up something that he called the Hotel California problem.
-Sjoerds, do you want to repeat what this problem is?
+Last time, Sjors brought up something that he called the Hotel California problem.
+Sjors, do you want to repeat what this problem is?
 
 Speaker 2: 00:35:34
 
 Yes.
 I mean, yeah, so the idea is that because this is a little bit of extra work for every block that you want to scan, if you decide to have a signed-in payment address and you make it known to the world, you now need to do this extra work forever.
 And so the question is, should there be a way to expire this thing?
-And then, you know, we'll let Josie take over from here.
+We'll let Josie take over from here.
 
 Speaker 3: 00:35:58
 
@@ -932,10 +931,10 @@ I mean, it kind of does in a way, because with assuming that you got that from a
 So I think it's a bit of a misconception that silent payments is like an order of magnitude more work for a full node.
 I think any type of address scanning requires some amount of work and some amount of querying the UTXO set, which is an expensive operation.
 So really what we have is kind of this like stale data problem, where if I post payment instructions in a public place, I should probably keep checking for them.
-It was brought up with silent payments because then people kind of realized, oh, these are designed to be reused.
+It was brought up with silent payments because then people kind of realized, these are designed to be reused.
 Because today, if I post an address somewhere, most people aren't going to use it.
 Cause they're like, I don't really want to dox my payment to the whole world.
-But I would argue that this is a problem that It really shouldn't be solved in the silent payments bit because now we have this scope creep where a silent payments the bit 352 is supposed to be a very you know Concrete proposal for doing this shared secret exchange for address generation and the bit should just be focused on that If we start throwing in like expiry times and other things, it's like, well, it's scope creep.
+But I would argue that this is a problem that it really shouldn't be solved in the silent payments bit because now we have this scope creep where a silent payments the BIP 352 is supposed to be a very you know Concrete proposal for doing this shared secret exchange for address generation and the bit should just be focused on that If we start throwing in like expiry times and other things, it's like, well, it's scope creep.
 And then, you know, if we solve it in silent payments, but then the problem still exists for regular addresses and XPubs and all this other stuff, we didn't really fix the problem for Bitcoin.
 So I would say, if people believe that expiry is what they want, we should write a new standard, a new BIP that applies to all forms of Bitcoin payment instructions.
 You know, Bolt 12 invoices, sign the payment addresses, regular addresses, XPUBs. The second thing I would say, I don't think expiry is actually what you want here.
@@ -948,9 +947,9 @@ The problem is, and I think why people prefer expiry, revocation is really hard.
 Like it's just a difficult problem.
 But I think our energy would be better spent tackling the hard problem of revocation because that actually gets us what we want.
 And I think that would be extremely useful.
-If I could post an address and kind of, you know, just using the PGP analogy, because they have this concept of revocation.
+If I could post an address and kind of, just using the PGP analogy, because they have this concept of revocation.
 I post this key somewhere, I sign it, and now any client that wants to read my silent payment address, they check the signature, and they see everything's good, and they generate the address.
-If I lose my wallet, it gets hacked or I just don't wanna use that silent payment address anymore, I issue some sort of like revocation signature.
+If I lose my wallet, it gets hacked or I just don't wat to use that silent payment address anymore, I issue some sort of like revocation signature.
 And then now when the client reads it, they check it, they say, oh, this signature has actually been revoked by this other one, I'm not gonna use it anymore.
 And I think that's really the user experience that we're looking for.
 
@@ -968,23 +967,19 @@ It might, it might be a different BIP at some point.
 
 Speaker 0: 00:39:26
 
-I think it should be its own BIP because then we could use that same method for, you know, everything.
+I think it should be its own BIP because then we could use that same method for, everything.
 everything.
 
 Speaker 1: 00:39:30
 
 The other thing is when we spoke last time, Ruben, there was some issue with CoinJoin.
 Like this silent payment was not compatible with CoinJoin or something along these lines.
-Is that...
 First of all, can you maybe repeat or summarize the problem and Is that still a problem?
 
 Speaker 2: 00:39:46
 
-Yeah, so,
-
-Speaker 3: 00:39:48
-
-and the problem was more, so there was a solution and it's still the same solution, but essentially the problem is that you, whenever you making a payment with more than one person on the input side, So a coin join is essentially not just your inputs, but somebody else's inputs also go into the transaction.
+There was a solution and it's still the same solution, but essentially the problem is that you, whenever you making a payment with more than one person on the input side.
+So a coinjoin is essentially not just your inputs, but somebody else's inputs also go into the transaction.
 And the way silent payments work is that you need all the keys from all the inputs.
 And so now you have to collaborate with other...
 
@@ -1004,7 +999,7 @@ But if you do that, then now you're revealing to them who you're paying and you 
 
 Speaker 2: 00:40:59
 
-Right, Might be useful here also to distinguish a simple multi, a collaborative transaction with say your friends where you, two of your friends are combining their, well, I guess it's three things.
+Might be useful here also to distinguish a simple multi, a collaborative transaction with say your friends where you, two of your friends are combining their, well, I guess it's three things.
 One, you could have a multi-sig.
 With a multi-sig, you are spending one coin, but the key is spread between three people.
 So none of these people would have the private key for it.
@@ -1014,10 +1009,10 @@ Like it just says, I'm spending this coin, it's a multi-sig, you have three publ
 Everyone says their own signature, and then the recipient adds up those individual public keys.
 If you do something like Schnorr, where the signature is combined, you don't.
 So there you already have a problem, maybe, or not.
-So there are a couple of things here.
 
 Speaker 3: 00:41:48
 
+So there are a couple of things here.
 I would say mostly it's about collaborative transactions where there are multiple participants that have some of the keys that are relevant to creating the shared secrets.
 
 Speaker 2: 00:41:59
@@ -1031,11 +1026,11 @@ But even if you just know, because there's another problem, there is, are you fi
 And the second question is, are you certain that the data that they gave you is correct?
 Because the very naive way would be for them to give you your private key, but that sort of defeats the purpose of multisig.
 Yeah, so we're not doing that.
+In a coin join, yeah, you can just rug them.
+So yeah, that would be bad.
 
 Speaker 2: 00:42:28
 
-In a coin join, yeah, you can just rug them.
-So yeah, that would be bad.
 Yeah, because the problem is, of course, especially in an untrusted situation, but even in a situation where there might be bugs on the other side, you are paying somebody to sign a payment address, but that's not a Bitcoin address.
 So whatever Bitcoin address you're seeing on your screen, the wallet's saying, I'm about to send to this Bitcoin address, trust me, it follows from the sign-on payment protocol.
 It might not if the other participants do something wrong.
@@ -1045,22 +1040,14 @@ Speaker 3: 00:42:55
 
 And this is even a problem on the side of hardware wallets, where the hardware wallet might malfunction or there might be some kind of issue, maybe a bit has flipped somewhere and the calculation that your hardware wallet did was actually incorrect.
 You would want the software side to be able to verify what the hardware wallet did and make sure that it's done correctly.
-
-Speaker 2: 00:43:15
-
 So there are a bunch of cases.
-
-Speaker 0: 00:43:17
-
-Oh, yeah.
 
 Speaker 2: 00:43:18
 
 I'll just do one summary here.
 When you're making a payment using a hardware wallet, you are the only participant.
 It's just you, but it's really you and your hardware wallet.
-Yes.
-And normally, you know, you look at your screen, your wallet says, I'm going to send the money to this and this address, and then the hardware wallet confirms, do you want to send to this in this address and you're good but the problem with sign-on payment is you don't know what the address is going to be because it involves the shared secret and therefore you need your own private key to figure out what the address is.
+And normally, you look at your screen, your wallet says, I'm going to send the money to this and this address, and then the hardware wallet confirms, do you want to send to this in this address and you're good but the problem with sign-on payment is you don't know what the address is going to be because it involves the shared secret and therefore you need your own private key to figure out what the address is.
 But that address is, that private key is on the hardware wallet.
 So in order to know what address you're going to send to, you need to ask the hardware wallet, hey, this is the sign-on payment address of the person I'm about to send money to, tell me what the address is, and then you just have to kind of trust the hardware wallet.
 
