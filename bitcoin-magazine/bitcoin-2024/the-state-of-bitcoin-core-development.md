@@ -10,7 +10,6 @@ speakers:
   - 'Aaron van Wirdum'
   - 'Ava Chow'
   - 'Ishaana Misra'
-  - 'Mark Erhardt'
   - 'Murch'
 summary: 'Discover the latest developments in Bitcoin Core with our expert panel featuring key contributors to the project. This video delves into recent changes in security vulnerability disclosures, the challenges of funding open-source development, and the careful process of introducing new features to Bitcoin Core. Our panelists offer unique perspectives on the project''s priorities and the distinction between Bitcoin Core and protocol development.'
 ---
