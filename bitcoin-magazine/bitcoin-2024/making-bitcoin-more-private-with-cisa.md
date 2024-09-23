@@ -1,11 +1,15 @@
 ---
-title: "Making Bitcoin More Private with CISA"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=HvI7NPI_Pk0
-tags: ['cisa']
-speakers: ['Fabian Jahr', 'Jameson Lopp', 'Craig Raw']
-date: 2024-08-29
-summary: "Delve into the world of Cross-Input Signature Aggregation (CISA) with our expert panel from Sparrow Wallet, Bitcoin Core, and Casa. This discussion illuminates how CISA could revolutionize Bitcoin transactions by enhancing privacy and reducing fees. Uncover the technical aspects of half and full signature aggregation and understand their potential impact on the Bitcoin network."
+title: 'Making Bitcoin More Private with CISA'
+transcript_by: 'markon1-a via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=HvI7NPI_Pk0'
+date: '2024-08-29'
+tags:
+  - 'cisa'
+speakers:
+  - 'Fabian Jahr'
+  - 'Jameson Lopp'
+  - 'Craig Raw'
+summary: 'Delve into the world of Cross-Input Signature Aggregation (CISA) with our expert panel from Sparrow Wallet, Bitcoin Core, and Casa. This discussion illuminates how CISA could revolutionize Bitcoin transactions by enhancing privacy and reducing fees. Uncover the technical aspects of half and full signature aggregation and understand their potential impact on the Bitcoin network.'
 ---
 Speaker 0: 00:00:01
 
@@ -18,21 +22,21 @@ Hi, everyone.
 My name is Nifi.
 I'm going to be moderating this panel today.
 We're here to talk about CISA, I think, cross input signature aggregation.
-And joining me today on the stage, I have Jameson Lopp from Casa, Craig Rau of Sparrow Wallet and Fabien Yarr of Brink.
+And joining me today on the stage, I have Jameson Lopp from CASA, Craig Raw of Sparrow Wallet and Fabien Jahr of Brink.
 So welcome them to the stage.
 Really appreciate it.
-Yeah.
 Great.
 So we're excited to be talking to you guys about this.
 I think it'd be great maybe to start off hearing a little bit more about who's on our panel today.
-So if panelists, you could tell the audience about the project that you're working on and what your first, like where you first heard about SISA from, if that makes sense.
+So if panelists, you could tell the audience about the project that you're working on and what your first, like where you first heard about CISA from, if that makes sense.
 So Craig, do you want to start?
 
 Speaker 2: 00:00:55
 
 So I built Sparrow Wallet.
 It's a security and privacy focused wallet.
-The first time I heard about Caesar was really from you know other privacy activists in the Bitcoin space who were talking about you know how they were really hoping that this cross-input signature aggregation was going to be shipped as part of the taproot upgrade and Obviously, we know that that didn't happen so when you know you're looking at things from a privacy point of view you want to do things like create multi-party transactions and as we will hear, cross-input signature aggregation really provides an interesting basis for being able to do that on a more economic, with more economic benefits.
+The first time I heard about CISA was really from you know other privacy activists in the Bitcoin space who were talking about how they were really hoping that this cross-input signature aggregation was going to be shipped as part of the Taproot upgrade.
+Obviously, we know that that didn't happen so when you know you're looking at things from a privacy point of view you want to do things like create multi-party transactions and as we will hear, cross-input signature aggregation really provides an interesting basis for being able to do that on a more economic, with more economic benefits.
 So that was the first time that I kind of really started to look at it was from the privacy angle.
 
 Speaker 0: 00:01:54
