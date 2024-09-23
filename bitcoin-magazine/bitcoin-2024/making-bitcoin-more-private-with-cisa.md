@@ -266,7 +266,8 @@ There's still quite a few things to hammer out in terms of all of the details, l
 
 So for the half-arc, there's a BIP draft, but it's not a pull request on BIP repository, but there's just minor to-dos like test vectors there that are open however for the full aggregation we still need to develop the signature scheme, so that requires quite a bit of effort from people reversed in cryptography and specifically on the side of the interactivity.
 We will also want to have a security proof for that scheme that comes out on the other hand and that means people with very specific talents and an experience in that area will also be needed in process.
-These I think are the big to-dos that we have and Yeah The people that can do this stuff need to come together and work on it.
+These I think are the big to-dos that we have.
+The people that can do this stuff need to come together and work on it.
 Personally, I spend quite a bit of time on it right now.
 But maybe something to everyone watching this or in the audience, if you want to get involved, let us know.
 
@@ -277,20 +278,28 @@ Call your local developer and demand signature aggregation today.
 Speaker 2: 00:21:05
 
 Yeah, and just to that point, Fabian has developed a great site where you can learn more.
-So, you know, if the concepts that we've talked about here today make sense, if you want to understand them better.
-If you go to sizeresearch.org, that's C-I-S-A research dot org, you know you can really learn much more about it.
+So, if the concepts that we've talked about here today make sense, if you want to understand them better.
+If you go to sizeresearch.org, that's C-I-S-A research dot org, you can really learn much more about it.
 It's very easy to read, It's not going to be overly technical.
 And I think it gives a good grounding in these things.
 And then, largely the way that soft forks happen is that people need to express views about them, and ultimately we need to develop some form of rough consensus around whether we want to do it or not.
 So as far as I'm aware, this is the first panel we've had which talks about it.
-It is still, even though it's an old concept and it's a simple concept, We don't really have a lot of discussion about it right now.
+It is still, even though it's an old concept and it's a simple concept.
+We don't really have a lot of discussion about it right now.
 So talk about it.
 Try and develop an understanding of what it is that it's trying to do, and see whether you want to have it in Bitcoin or not.
 
 Speaker 3: 00:22:17
 
 I don't know.
+Do you want to save money?
+It should be an easy question.
 
-Speaker 1: 00:22:17
+Speaker 0: 00:22:17
 
-Do You You
+And have a privacy.
+
+Speaker 0: 00:22:23
+
+Great.
+Thanks y'all.
