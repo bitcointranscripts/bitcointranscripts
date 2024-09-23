@@ -36,21 +36,21 @@ Speaker 2: 00:00:55
 So I built Sparrow Wallet.
 It's a security and privacy focused wallet.
 The first time I heard about CISA was really from you know other privacy activists in the Bitcoin space who were talking about how they were really hoping that this cross-input signature aggregation was going to be shipped as part of the Taproot upgrade.
-Obviously, we know that that didn't happen so when you know you're looking at things from a privacy point of view you want to do things like create multi-party transactions and as we will hear, cross-input signature aggregation really provides an interesting basis for being able to do that on a more economic, with more economic benefits.
+Obviously, we know that that didn't happen so when you know you're looking at things from a privacy point of view you want to do things like create multi-party transactions and as we will hear, cross-input signature aggregation really provides an interesting basis for being able to do that with more economic benefits.
 So that was the first time that I kind of really started to look at it was from the privacy angle.
 
 Speaker 0: 00:01:54
 
 Yeah, I primarily work on Bitcoin Core and I can't really remember a specific time when I heard about it for the first time.
-Like the time between the SecWit Soft fork and the Taproot Soft fork was really when I got very, got deeper into Bitcoin and like started contributing to Bitcoin Core and somehow it was always there.
-And I only, when I started researching on Caesar and going deeper into it over the last couple of months I saw also that yeah historically it was a topic that was brought up and that was discussed to be part of the Taproot soft fork, but then at some point it was cut basically to keep the scope smaller.
+Like the time between the SegWit Softfork and the Taproot Softfork was really when I got deeper into Bitcoin and like started contributing to Bitcoin Core and somehow it was always there.
+When I started researching on CISA and going deeper into it over the last couple of months I saw also that yeah historically it was a topic that was brought up and that was discussed to be part of the Taproot softfork, but then at some point it was cut basically to keep the scope smaller.
 
 ## Remembering the Past and Discovering Cisa
 
 Speaker 0: 00:02:40
 
 And so I guess at some point around that time I saw it and then it was removed and I never really paid much mind to it around the time.
-And when I reviewed the Taproot soft fork, it was not in there.
+And when I reviewed the Taproot soft-fork, it was not in there.
 So I kind of forgot about it for probably one or two years.
 And then, yeah, but it kept popping up on Taproot.
 Also, like Craig said, more privacy minded people.
@@ -59,14 +59,15 @@ And that triggered me to look deeper into it.
 Speaker 3: 00:03:09
 
 I'm Jameson Lopp.
-I work on Kasa, where we help people get into highly distributed, secure, multi-signature self-custody setups.
-And I could be misremembering, because it's been several years, but I think the first time that I heard about Sisa was an Andrew Polstra talk.
-And I mostly remember being blown away by the vision that he painted of basically a future in which we were all financially incentivized to participate in coin join transactions for everything that we transacted and basically you know breaking a lot of the potential for chain surveillance to be watching everything that we're doing because, you know, I think if we're all honest with each other, Bitcoin has some pretty poor privacy characteristics.
+I work on CASA, where we help people get into highly distributed, secure, multi-signature self-custody setups.
+And I could be misremembering, because it's been several years, but I think the first time that I heard about CISA was an Andrew Poelstra talk.
+And I mostly remember being blown away by the vision that he painted of basically a future in which we were all financially incentivized to participate in coin join transactions for everything that we transacted and basically, breaking a lot of the potential for chain surveillance to be watching everything that we're doing because,I think if we're all honest with each other, Bitcoin has some pretty poor privacy characteristics.
 
 Speaker 1: 00:04:03
 
 That's a great point.
-Wow, yeah, okay, so I think now that we've kind of have like an intro into how each of you came to hear about it and maybe some of the things that you thought were important or cool when you first heard about it, Maybe we could take a little bit of time to explain a little bit more what CISA is and what those letters stand for.
+I think now that we've kind of have like an intro into how each of you came to hear about it and maybe some of the things that you thought were important or cool when you first heard about it.
+Maybe we could take a little bit of time to explain a little bit more what CISA is and what those letters stand for.
 Does anyone have a good explanation of how it works?
 
 Speaker 0: 00:04:29
@@ -81,7 +82,6 @@ And so that means that in the future we could have transactions that have multip
 
 ## Cross Input Signature Aggregation
 
-Speaker 0: 00:05:09
 
 If you think specifically about transactions that have a lot of inputs like coinjoins for example as we just mentioned, these could have just one signature then.
 And depending on what technique you use, these can be just as big as one single signature before.
