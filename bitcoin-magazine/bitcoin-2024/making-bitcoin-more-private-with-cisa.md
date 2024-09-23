@@ -230,7 +230,6 @@ It really takes very well understood properties of Schnorr, which is really just
 
 ## The Limited Potential of Signature Compression
 
-Speaker 2: 00:17:18
 
 So in terms of risk of doing the soft fork it's not really enabling other things that Bitcoin can do.
 It's not going to be some kind of ungranted, it's really just compressing.
@@ -241,22 +240,23 @@ So maybe it opens up the space for other soft forks if we do a soft fork which h
 Speaker 3: 00:17:57
 
 I think it's also worth noting that this is by no means the only signature aggregation scheme that's even happening in Bitcoin, right?
-Is that like with the taproot soft fork a few years ago, we did get the theoretical ability to do Schnorr signatures.
+Is that like with the Taproot soft fork a few years ago, we did get the theoretical ability to do Schnorr signatures.
 But that has been an ongoing process, right?
-So as far as I'm aware off the top of my head, there's a pretty limited amount of adoption of Schnorr so far because I think Music, Music 2, is the main production-ready standard that people are using.
+So as far as I'm aware off the top of my head, there's a pretty limited amount of adoption of Schnorr so far because I think Musig 2, is the main production-ready standard that people are using.
 And that can only do an N of N, like a two of two or a three of three type of scheme, so it's kind of limited in its flexibility.
-And I care about this a lot, operating a multi-signature self-custody wallet, We're waiting for the further evolution of threshold signature schemes like Frost that can do more arbitrary, K of N type of multi-sig.
-And That evolution, that research is still ongoing.
+I care about this a lot, operating a multi-signature self-custody wallet.
+We're waiting for the further evolution of threshold signature schemes like Frost that can do more arbitrary, K of N type of multi-sig.
+That evolution, that research is still ongoing.
 We're continuing to see new iterations of Frost come out.
 And so we do expect that we will start to see more adoption of aggregated signatures across the ecosystem.
 But the ultimate end goal would be something where there's only one signature per block.
 
 Speaker 1: 00:19:22
 
-The final form of SIGAG as we go all the way to the block level.
+The final form of sigag as we go all the way to the block level.
 Cool, so we only have a few minutes left.
 Maybe we can spend a little bit of time talking about, okay, so we almost had it, we didn't get it.
-What would it take, what's left from here to get it to the point where we could soft fork it in?
+What's left from here to get it to the point where we could soft-fork it in?
 
 Speaker 0: 00:19:45
 
@@ -264,9 +264,9 @@ There's still quite a few things to hammer out in terms of all of the details, l
 
 ## Signature Aggregation and Getting Involved
 
-Speaker 0: 00:19:53
-
-So for the half-arc, there's a BIP draft, but it's not a pull request on BIP repository, but there's just minor to-dos like test vectors there that are open however for the full aggregation we still need to develop the signature scheme, so that requires quite a bit of effort from people reversed in cryptography and specifically on the side of the interactivity and We will also want to have a security proof for that scheme that comes out on the other hand and that means people with Very specific talents and an experience in that area will also be needed in process so so these I think are the big to-dos that we have and Yeah The people that can do this stuff need to come together and work on it.
+So for the half-arc, there's a BIP draft, but it's not a pull request on BIP repository, but there's just minor to-dos like test vectors there that are open however for the full aggregation we still need to develop the signature scheme, so that requires quite a bit of effort from people reversed in cryptography and specifically on the side of the interactivity.
+We will also want to have a security proof for that scheme that comes out on the other hand and that means people with very specific talents and an experience in that area will also be needed in process.
+These I think are the big to-dos that we have and Yeah The people that can do this stuff need to come together and work on it.
 Personally, I spend quite a bit of time on it right now.
 But maybe something to everyone watching this or in the audience, if you want to get involved, let us know.
 
