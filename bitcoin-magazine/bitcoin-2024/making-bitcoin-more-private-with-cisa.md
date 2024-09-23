@@ -223,8 +223,8 @@ And of course, we have not yet taken advantage of that.
 Speaker 2: 00:16:33
 
 Yeah, so we're in a very different space from that now.
-I think something to bear in mind, if you're thinking about it from that point of view, is that, and I heard Brandon Black actually, who was here earlier today talking about Opcad, is that I think Caesar is probably the most low-risk soft fork that we could imagine.
-And I'm talking here about the well-understood half signature aggregate form of it.
+I think something to bear in mind, if you're thinking about it from that point of view, is that, and I heard Brandon Black actually, who was here earlier today talking about Opcad, is that I think CISA is probably the most low-risk soft fork that we could imagine.
+And I'm talking here about the well-understood half-signature aggregate form of it.
 You know, it's really from a security model point of view, the cryptographers tell us that there is no risk effectively or very low risk to doing this.
 It really takes very well understood properties of Schnorr, which is really just adding these signatures up and uses that.
 
