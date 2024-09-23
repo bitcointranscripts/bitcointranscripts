@@ -7,474 +7,287 @@ speakers: ['Fabian Jahr', 'Jameson Lopp', 'Craig Raw']
 date: 2024-08-29
 summary: "Delve into the world of Cross-Input Signature Aggregation (CISA) with our expert panel from Sparrow Wallet, Bitcoin Core, and Casa. This discussion illuminates how CISA could revolutionize Bitcoin transactions by enhancing privacy and reducing fees. Uncover the technical aspects of half and full signature aggregation and understand their potential impact on the Bitcoin network."
 ---
-Speaker 0: 00:00:02
+Speaker 0: 00:00:01
 
-Good morning.
-My name is Aron Favirim.
-I work for Bitcoin Magazine and this is the panel on Bitcoin Core development.
-I'll let the panelists introduce themselves.
-Let's start here with Eva.
+So there's one person on the stage here that is not up there.
+Why?
 
-Speaker 1: 00:00:16
+Speaker 1: 00:00:07
 
-Hi, I'm Eva.
-I am one of the Bitcoin Core maintainers.
-
-Speaker 2: 00:00:20
-
-Hi I'm Merch, I work at Chaincode Labs on Bitcoin projects.
-
-Speaker 3: 00:00:25
-
-Hi I'm Ishana, I'm a Bitcoin Core dev and I'm currently interning at MIT's DCI.
-
-Speaker 0: 00:00:31
-
-Alright so let's start off with a recent topic.
-So there was recently, there's a new policy within Bitcoin Core, there were security disclosures, right, Eva?
-What's the story here?
-What has changed about Bitcoin Core development?
-
-Speaker 1: 00:00:45
-
-Yeah, We've historically done a poor job of disclosing security vulnerabilities.
-So recently, a couple of contributors have taken it upon themselves to rectify that.
-So we've established a new disclosure policy where we're tracking bugs better, assigning them severities and now we're going to be disclosing things generally two weeks after the last vulnerable version becomes end of life.
-In the lead up to deploying that, we've started disclosing a lot of historical bugs.
-What is end-of-life?
+Hi, everyone.
+My name is Nifi.
+I'm going to be moderating this panel today.
+We're here to talk about CISA, I think, cross input signature aggregation.
+And joining me today on the stage, I have Jameson Lopp from Casa, Craig Rau of Sparrow Wallet and Fabien Yarr of Brink.
+So welcome them to the stage.
+Really appreciate it.
 Yeah.
-In Bitcoin Core, we support three major versions.
-So right now that's 27, 26, and 25.
-So after the next major version comes out, then the oldest one becomes end of life.
-So in a few months, we'll have 28, which means that 25 point whatever will become end of life and no longer supported.
-And at that time, we would disclose any issues that were present in 25.
+Great.
+So we're excited to be talking to you guys about this.
+I think it'd be great maybe to start off hearing a little bit more about who's on our panel today.
+So if panelists, you could tell the audience about the project that you're working on and what your first, like where you first heard about SISA from, if that makes sense.
+So Craig, do you want to start?
 
-Speaker 0: 00:01:58
+Speaker 2: 00:00:55
 
-OK, so this is a new thing.
-Merge, why is this new?
-Why wasn't this happening before?
+So I built Sparrow Wallet.
+It's a security and privacy focused wallet.
+The first time I heard about Caesar was really from you know other privacy activists in the Bitcoin space who were talking about you know how they were really hoping that this cross-input signature aggregation was going to be shipped as part of the taproot upgrade and Obviously, we know that that didn't happen so when you know you're looking at things from a privacy point of view you want to do things like create multi-party transactions and as we will hear, cross-input signature aggregation really provides an interesting basis for being able to do that on a more economic, with more economic benefits.
+So that was the first time that I kind of really started to look at it was from the privacy angle.
 
-Speaker 2: 00:02:05
+Speaker 0: 00:01:54
 
-Before, probably most of the security closures just happened whenever the discoverer got around to writing up a blog post or whatever.
-And so some things got disclosed, especially the bigger, for example the inflation bug a lot of people have heard about shortly, but now there was a backlog of some things that we knew about that hadn't been perhaps presented in any formal way yet.
+Yeah, I primarily work on Bitcoin Core and I can't really remember a specific time when I heard about it for the first time.
+Like the time between the SecWit Soft fork and the Taproot Soft fork was really when I got very, got deeper into Bitcoin and like started contributing to Bitcoin Core and somehow it was always there.
+And I only, when I started researching on Caesar and going deeper into it over the last couple of months I saw also that yeah historically it was a topic that was brought up and that was discussed to be part of the Taproot soft fork, but then at some point it was cut basically to keep the scope smaller.
 
 ## Remembering the Past and Discovering Cisa
 
-Speaker 2: 00:02:34
+Speaker 0: 00:02:40
 
-So there's blog posts on BitcoinCore.org now that, well pretty short just disclosures on what vulnerabilities existed in older versions.
-And I think one of the main things here is we're trying to tell, to make it clear that just because you hadn't heard about some vulnerabilities in Bitcoin Core before, it's not that it's bug-free software.
-Stuff happens, it gets fixed, so we want to make a bigger, better job of, do a better job of disclosing and keeping track of that.
-So everything up to 0.21 has been disclosed now.
-I think end of this month, there will be some disclosures for 22.
-So At the end of this month,
-there will be some disclosures for 22?
+And so I guess at some point around that time I saw it and then it was removed and I never really paid much mind to it around the time.
+And when I reviewed the Taproot soft fork, it was not in there.
+So I kind of forgot about it for probably one or two years.
+And then, yeah, but it kept popping up on Taproot.
+Also, like Craig said, more privacy minded people.
+And that triggered me to look deeper into it.
 
-Speaker 1: 00:03:19
+Speaker 3: 00:03:09
 
-So this month, at the end of this month, we'll have a couple more disclosures for things that were in 22.
-Next month, it'll be 23, month after 24, and then 25 should be around when we release the 28 release.
-So we will now be in sync with the policy that we established.
+I'm Jameson Lopp.
+I work on Kasa, where we help people get into highly distributed, secure, multi-signature self-custody setups.
+And I could be misremembering, because it's been several years, but I think the first time that I heard about Sisa was an Andrew Polstra talk.
+And I mostly remember being blown away by the vision that he painted of basically a future in which we were all financially incentivized to participate in coin join transactions for everything that we transacted and basically you know breaking a lot of the potential for chain surveillance to be watching everything that we're doing because, you know, I think if we're all honest with each other, Bitcoin has some pretty poor privacy characteristics.
 
-Speaker 0: 00:03:39
+Speaker 1: 00:04:03
 
-Maybe this is a stupid question, but real quick, what is the practical benefit of this?
-Why do this at all?
+That's a great point.
+Wow, yeah, okay, so I think now that we've kind of have like an intro into how each of you came to hear about it and maybe some of the things that you thought were important or cool when you first heard about it, Maybe we could take a little bit of time to explain a little bit more what CISA is and what those letters stand for.
+Does anyone have a good explanation of how it works?
 
-Speaker 2: 00:03:47
+Speaker 0: 00:04:29
 
-In a way, so one problem is if there's undisclosed security vulnerabilities that people are aware of, attackers might have an edge.
-So it's preferable that everybody knows.
-Another one is that by documenting what has happened and how it was fixed, we retain the knowledge, we also teach maybe related projects what they should be looking at.
-There is a ton of forked coins from Bitcoin, some of which have not very active development and well, they might want to know about these issues and fix them.
-
-Speaker 0: 00:04:26
-
-Ishana, you are a relatively new Bitcoin Core developer, right?
-What's your experience starting out as a Bitcoin Core developer and what kind of advice would you have for other people who might be interested in doing that?
-
-Speaker 3: 00:04:39
-
-Yeah, so I started Bitcoin Core development almost like a few years ago And I think that the main advice I'd have is, well of course you need a strong understanding of fundamentals.
-And I think that Chaincode Labs has a really good Bitcoin protocol development seminar that gave me good fundamentals.
-But I think that people should...
-
-Speaker 0: 00:05:01
-
-Did you do that seminar?
-Did you do that seminar?
-Yeah.
-
-Speaker 3: 00:05:04
-
-And so it's great to talk to people about these concepts, but also I wouldn't be too hesitant with trying to contribute.
+I can start off.
+So it's really already all in the name.
+Cross-input signature aggregation.
+So if you think of a Bitcoin transaction as it looks today, you have sometimes one but often multiple inputs and with each of the input usually a signature is associated.
+And what the linearity property of Schnorr signatures allows you to do is to aggregate these signatures.
+And you can aggregate them across the different inputs that you have in a transaction.
+And so that means that in the future we could have transactions that have multiple inputs.
 
 ## Cross Input Signature Aggregation
 
-Speaker 3: 00:05:13
+Speaker 0: 00:05:09
 
-There's a ton of good first issues and small PRs that you can open.
-And people are generally very helpful and will review and super supportive of new contributors.
+If you think specifically about transactions that have a lot of inputs like coinjoins for example as we just mentioned, these could have just one signature then.
+And depending on what technique you use, these can be just as big as one single signature before.
+And of course, that saves a lot of space, both on chain and also in terms of the fees, because you take up less space in a block.
+That is the general idea.
 
-Speaker 0: 00:05:24
+Speaker 1: 00:05:35
 
-Right.
-If you get started, so you would recommend this Chaincode course, But at that point, is that open for anyone or how do you even get in there?
+I have a quick question about that.
+So whenever you say you can do cross-input signature aggregation, so like on a transaction, usually you'll have a couple of things called inputs, and each of those inputs will have a signature on it, right?
+So kind of the general idea is that on that same one signature, instead of having a couple of them, you kind of be able to roll them all up and just have a single signature.
+Is that a good summary of What you're explaining?
 
-Speaker 3: 00:05:35
+Speaker 2: 00:06:02
 
-Yes, so the resources are on the website and anybody can use them.
-And then they also do seminars, which are like where you read the resources and then you meet with people and discuss them.
+Yeah, I would say so.
+Yeah, so there's two major ways to do this.
+The one is what we call a half signature aggregation, or half ag as we abbreviate it.
+And that's basically where you don't have any kind of need for an interactive process.
+So anybody can take all of the signatures that appear currently for every input in a transaction and they can aggregate them into one.
+Now the size of that one is unfortunately not the size of a normal signature, it's a slightly bigger one.
+In fact that size is determined by the number of inputs that you have.
+So that's one way to do it.
+And then there's a more comprehensive way to do it, which is called full signature aggregation.
+And that gets you a really much more compact signature, which is the aggregate of all of the other ones.
+Unfortunately, the downside of that is that you have to do this interaction while you sign.
+And the problem with that is that interaction is always contains a lot of complexity.
+So unless you own all of the inputs you are going to have to interact with all of your everyone else who's adding an input to that transaction.
+And that creates, obviously, a much more difficult process in terms of signing.
+And as a result, we generally, at least I personally, am more excited about the kind of half signature aggregation because it's just so much easier to do and gets you a lot of the benefits, even though it's not quite as efficient.
 
-Speaker 2: 00:05:46
+Speaker 1: 00:07:39
 
-Right.
-Yeah, so we have a course that you can do self-paced.
-It's a bunch of resources.
-It's a lot of talks and reading material and articles.
-So if you want to go for it in your own pace, all of that is linked on learning.chaincode.com We did these Bitcoin developer seminars and lightning developer seminars that were five-week programs and we had earlier this year the big fast program with I think over 600 participants.
-
-Speaker 0: 00:06:20
-
-Okay, this maybe ties in a little bit but like, well I want to ask kind of why would someone want to become a Bitcoin Core Developer?
-That's a good question in itself.
-And tying in, what's the status of funding Bitcoin Core Developers?
-Because many Bitcoin Core Developers do get paid in some way or another, so what's the status of that?
-Maybe, Do you want to start?
-
-Speaker 2: 00:06:46
-
-I'll start quickly.
-I was just thinking of that Shackleton ad, fearless men, there's danger of death and whatever.
-And no, so it can be pretty rough.
-Like there's been a bunch of legal harassment over the years.
-Funding was uncertain at times.
-Sometimes if you're working on stuff that's not super interesting to a lot of people, it can take a while to get review.
-It is, I mean, inherently any group of at least two people has social dynamics.
-So if you find a few people that you get along with and collaborate with them, you might have a great experience if you're working on something that only interests you or you don't find your folk, then it might be a little more isolated.
-So a good thing is maybe to pick something that you're really excited about, that you have drive for, because if you scratch your own itch, you tend to not lose your motivation as easily, and if you're more excited about something you tend to infect others with that.
+Cool, so it sounds like we're taking signature data and it's all the same signature data in like a single transaction, right?
 
 ## Various Approaches to Signature Aggregation
 
-Speaker 0: 00:07:50
+Speaker 1: 00:07:46
 
-And when it comes to funding specifically, who's funding Bitcoin Core Development and what's the status of that?
-How do you get funded as a Bitcoin Core Developer?
+You wouldn't have multiple transactions that you're doing, it's like on a single transaction level.
 
-Speaker 1: 00:08:00
+Speaker 3: 00:07:50
 
-So mainly the funding situation right now is grants.
-So there's nonprofits like Brink, OpenSats, and there are companies like Spiral, who provide grants to developers to continue to work on features and projects and open source stuff.
-That's mainly how newer contributors get funding.
-Sometimes, if you're really lucky, a company will hire you to continue working on open source.
-So that's what I do at Blockstream.
-But yeah, generally, the funding situation is a little difficult.
-But the grants are the main way that people get money.
+Well there's also full block aggregation, right?
+Okay.
+This is going really far down the rabbit hole and I think that it's not even something that is on the table.
+Because there's too many additional edge cases, I guess, that come up, especially when you start thinking about like reorganizations of the blockchain.
+And my understanding is you would basically have to have like this other mem pool to keep track of things that, you know, were not sufficiently buried enough in the blockchain that they could be reorganized, because if there was a reorg, it would not be as simple as how we do reorgs right now, where we just take every transaction out and put it back into the mempool and start over again.
 
-Speaker 2: 00:08:47
+Speaker 1: 00:08:33
 
-There's also a little bit of an entry hurdle.
-Because even if you're an established developer in other fields, if you're not known in the community, it can be difficult to get a grant immediately.
-So often, people start out by working on stuff in their free time or by taking off a month and interning somewhere and working on a specific project to get a notch in their belt.
-I think that's sort of what we tried to do with the FOSS program at Chaincode earlier this year was to create a space where people could focus on doing a bunch of different little Bitcoin things for a few months and we actually got a few full-time contributors out of that now, But yeah, you really have to sort of invest a little upfront before you become eligible for grants.
+Right, cool.
+So it sounds like you're saying there's a couple of different ways we could do signature aggregation.
+We could do it at the transaction level, there's a proposal to be able to do it at the block level, but again, there's some tradeoffs there.
+So one of the nice things if you were able to take basically signature aggregation at the block level would mean that you take all the signatures anywhere in any transaction inside a block.
+And for that, you'd create maybe a single signature object.
+Maybe it's not exactly a signature, but something similar to that.
+Why is one reason that you would want to even do this?
+It sounds complicated, but.
 
-Speaker 0: 00:09:41
+Speaker 3: 00:09:07
 
-Ishana, is this all your experience?
-Do you have anything to add?
-
-Speaker 3: 00:09:45
-
-Yeah, so I've not like received any grants yet, but what I think makes Bitcoin very unique is that in other places you can just get hired or get grants before you do this work, but sort of like what Mertj was saying, I think proof of work is a really big thing in Bitcoin and so you do need to show that you're capable of doing the work in advance.
+Yeah, well, so there's the privacy characteristics improvements.
+But also, I think it's interesting whenever we're talking about incentivizing people economically.
+So if anyone was around and paying attention in 2016, 2017, when we were talking about segregated witness, there was this concept of a witness discount.
+It was basically put in place to help incentivize people to help rebalance the cost between creating a UTXO and spending a UTXO.
 
 ## Incentivizing Participation in Coin Joins
 
-Speaker 0: 00:10:07
+Speaker 3: 00:09:45
 
-Yeah, and Mert you briefly mentioned the legal issues there, specifically Greg Wright's lawsuits I guess.
-In general how big of a, well that lawsuit is over fortunately, but in general how big of a problem is this for Bitcoin Core development?
-Like, it must be at least some deterrence.
-Do you think it has affected Bitcoin Core development?
+Basically, you run into some problems where if you're receiving a lot of transactions, you're basically creating a lot of unspent transaction outputs in your wallet, it becomes problematic if at some point in the far future you want to go spend them and perhaps the fee rates in the market for block space have gone up a lot, it can become insanely expensive to spend your own money and this inevitably catches a lot of people by surprise if they haven't been through a full market cycle before.
+So I think that this is another potential interesting aspect of aggregation is that once again we would be pushing the balance forward a bit to help incentivize people to you know clean up their UTXOs because we're not we're not penalizing them as much by making it really expensive to do so.
 
-Speaker 2: 00:10:28
+Speaker 0: 00:10:37
 
-I think it had a huge chilling effect for a while.
-I know that of some people that specifically stepped out of Bitcoin contributions due to this legal precedent or not precedent but like situation.
-I think what really helped was that a few people stepped up and just started taking care of it.
-Started donating a ton of money and their time and organizing the Bitcoin Defense Legal Fund.
-But yeah, it's not necessarily for the faint of heart.
+And maybe to expand on that, so there is a financial incentive then for people to participate in coin joins and that gives them additional privacy And the nice effect of that also is that hopefully this would lead to also like wider adoption of CoinJoin, which means that when more people are CoinJoin, that's a higher anonymity set that benefits everyone that is after this anonymity property, but also everyone that participates in this coin join can also use this as a plausible deniability, even if they are doing it primarily for the privacy aspect, but they can also always say like, hey, I'm saving fees here.
+So that's my primary motivation.
+And hopefully a further trickle-down effect would be that when people are more asking for this, when this becomes more widestream adopted, then also more and more wallets adopt this.
+Easier to use wallets, complexity gets hidden and it becomes more of a mainstream feature.
 
-Speaker 0: 00:11:12
+Speaker 3: 00:11:36
 
-Yeah, so what is, I mean, how do you move forward from here?
-You mentioned rich people just sort of take care of it.
-Is that the solution here, Eva?
-
-Speaker 1: 00:11:22
-
-I mean like traditionally as much as we hate it is that...
-
-Speaker 0: 00:11:26
-
-And by the way you were one of the people that was being sued, right?
-
-Speaker 1: 00:11:31
-
-No, I was not.
-Oh. I don't want to get into it.
-
-Speaker 0: 00:11:34
-
-Okay, okay.
-
-Speaker 1: 00:11:36
-
-But I know a bit more about the lawsuit.
-But I mean, traditionally in Bitcoin, it is just the rich people are taking care of us.
-You see how much money that Jack donates.
-And I believe Jack was one of the main people who helped out in the defense fund.
-So that is unfortunately how it is currently.
-But ideally, people and companies that use Bitcoin, rely on Bitcoin, would contribute monetarily if not, like, I guess for legal stuff definitely contribute monetarily and helping us with lawyers.
-It's just unfortunate that that's how it has to be or that's how it is.
+Yeah, I mean we have to think about the incentives, right?
+I consider myself a cypherpunk, I'm a big privacy advocate, I would assume we all are, but the reality of the situation is, and this is pessimistic, most people don't care about privacy or they don't care until it's too late, and so we can stand up here and we can talk about how awesome it is to have really strong privacy and why you should be using all of these insane tools that are very niche right now.
+But if we actually want people to adopt privacy tools, we need to give them the financial incentive to do so.
 
 ## Privacy Tools and Cost Savings in Bitcoin Transactions
 
-Speaker 0: 00:12:23
+Speaker 3: 00:12:16
 
-Okay, last question on the funding.
-One of the concerns that some people have is that funding could also influence Bitcoin Core development.
-For example, funding from ETFs could push Bitcoin Core developments in a certain direction.
-Is this, in your view, a valid concern?
-Shana, do you want to take it?
+It should not be a situation where the average person should be going out and basically asking their wallet providers or other software developers to, you know, please bake in additional privacy tools and protections into the software.
+Really it should be, why are you making me spend more of my money to use Bitcoin when you could be using this technology that, you know, it happens to enhance privacy, but it's actually saving me money.
 
-Speaker 3: 00:12:43
+Speaker 2: 00:12:45
 
-Yeah, so I think that people are generally conscious of not having, like, not employing too many Bitcoin Core developers or one organization giving grants to too many developers or maintainers.
-But the thing is that, like, if for example an ETF does fund one Bitcoin Core developer, that doesn't, like, that's, They can't convince them to directly impact anything very big protocol-wise, because then that developer would have to go convince other people as well.
-So yeah, I think that it does make sense to be thinking about what could influence a developer.
-I think that sometimes the concern is kind of blown up a bit.
+Yeah, so you might be wondering at this stage what are the savings actually look like and it turns out that if you apply what I was describing earlier, this half signature aggregation technique, you can fit about 20% more average size transactions into a block.
+So you can immediately think that that's going to reduce the average fee level for any point in time people submitting transactions to the mempool to be included in a block, you can now fit 20% more average-sized transactions into that block.
+That obviously is a big advantage.
+Now the actual effect on a particular transaction because of the witness discount that Jameson mentioned earlier is actually less.
+So there you've got like a seven to eight percent.
+But remember that the average fee rate is going to be lower because again, we're fitting more transactions into a block, which just means there's less pressure on block space.
+So that's how I would encourage you to think about it from the start.
+Like, for me, the efficiency in terms of block space is a good reason to do this anyway, regardless of whether we get privacy benefits, it's almost like the privacy benefits come along for the ride.
+We actually have this really restricted data space in the blockchain, and if we can apply a fairly simple and low-risk form of compression I think it's a serious thing to think about.
 
-Speaker 2: 00:13:27
+Speaker 1: 00:14:12
 
-I would hope that if they make a contract like that, that they very clearly specify in the contract what sort of influence they intend to have on the developer's choice of work items.
-Generally, I think if that situation is not very clear and people feel that the developer would be influenced heavily, they might have a harder stance convincing others that their ideas or projects are good or unbiased.
-But for the most part, I would say that anyone in the ecosystem that has big impact, pushes around a lot of money, I would be happy if they have some sort of representation to take part in the conversation.
-Because it's a two-way street.
-If they have some developers that are involved in the development community, they'll learn about the developer concerns and it will flow back to the ETF or exchange or whatever as well.
-And if the exchange or ETF has some concerns, those will be heard.
-And right now, sometimes it feels that certain areas of the ecosystem are heavily dependent on how everything works, but sort of isolated from the communication.
-So I'd actually be for it.
+I think you know now that we've sort of talked about how great this is we're gonna get more transactions in a block we're gonna save money we're gonna get better privacy I'd be really interested to hear why it didn't make it into Taproot originally.
+Like, is there any opposition to this proposal?
+What was it about Taproot or the Taproot process where this proposal didn't quite make it over the line?
 
-Speaker 0: 00:14:48
+Speaker 0: 00:14:40
 
-Yvan, anything to add?
+So I mean, I was not in the room when this...
+
+Speaker 3: 00:14:45
+
+I don't think any of us were in the room.
 
 ## Pushback and Perceptions of Soft Forks
 
-Speaker 1: 00:14:49
+Speaker 0: 00:14:49
 
-Yeah, I think having a diversity in funding sources is actually really important.
-As I mentioned earlier, a lot of funding was kind of coming from Jack in general.
-So having more diverse funding so that if Jack gets bored or he gets hit by a bus or whatever, that we aren't suddenly all out of work or, I guess, out of money.
-So I think it's fine that for ETFs, mining companies, exchanges, whatever, to have a couple Bitcoin Core developers on their payroll, As long as it's not one, and this applies also to the nonprofits, as long as it's not one organization that has everyone, I think that's fine.
+But I've read all of the transcripts that were available from when these things were discussed.
+And from what I can say, I think there was no direct opposition or so.
+I think the primary motivator was to keep Taproot manageable in terms of review effort and just keep the scope smaller.
+The only thing that I could see really in between the lines, what Craig already kind of mentioned is that if you just look at the pure fee savings numbers and the numbers of weight units that you save, if you just throw that over to somebody that it's for half aggregation in the single digits, then people are often a bit disappointed as a first reaction and you have to really discuss it and fill it a bit more with this understanding and I think that made it also have turned off some people and like why maybe also developers felt like this would be the easiest thing to chop off but that people wouldn't miss as much.
 
-Speaker 0: 00:15:41
+Speaker 2: 00:15:53
 
-So this ties in a little bit.
-How hard or easy is it to get new futures in Bitcoin Core currently?
-Some people would argue the bar is too high, Bitcoin doesn't sort of progress, or Bitcoin Core doesn't really progress, it's too hard to get anything new in Bitcoin Core.
-Shall we start?
-Yeah, Ava, we'll start with you.
+Yeah so I mean I think you know in terms of the whatever pushback I have heard so far is what Fabian was saying that it doesn't do enough.
+You know, I think that there's a general perception that, you know, we can only ever push for one soft fork at a time, so all the soft forks have to compete to be the one, which is an interesting point of view.
 
-Speaker 1: 00:16:03
+Speaker 3: 00:16:17
 
-AVA GILBERT-LUKASIAKOVSKYI Well, it depends on the feature, right?
-Like, there are things that don't affect users, that don't affect the rest of the network.
-Like, There's a bunch of major-ish back-end changes, for example, the Bitcoin Core Wallet that we've been making.
-And these can have a lower and other less impactful changes.
-Can still be very important, but have a lower threshold for review.
-On the other hand, we have things like consensus.
-Consensus changes have a very high threshold, And it's not just the developers who decide consensus changes.
-It's the entire community.
-And a big part about evaluating consensus changes is seeing whether everyone else in the community, whether there's consensus for it.
-What's the name?
+It's interesting because I was in the room in Hong Kong when Peter Wille announced that we were changing the flagging system so that we could do like 32 soft forks in parallel.
+And of course, we have not yet taken advantage of that.
 
-Speaker 2: 00:17:01
+Speaker 2: 00:16:33
 
-I think that a lot of people in this context conflate Bitcoin Core development and protocol development.
-I think they overlap heavily and traditionally a lot of the changes in protocol development have been proposed by people that were also Bitcoin Core contributors.
+Yeah, so we're in a very different space from that now.
+I think something to bear in mind, if you're thinking about it from that point of view, is that, and I heard Brandon Black actually, who was here earlier today talking about Opcad, is that I think Caesar is probably the most low-risk soft fork that we could imagine.
+And I'm talking here about the well-understood half signature aggregate form of it.
+You know, it's really from a security model point of view, the cryptographers tell us that there is no risk effectively or very low risk to doing this.
+It really takes very well understood properties of Schnorr, which is really just adding these signatures up and uses that.
 
 ## The Limited Potential of Signature Compression
 
-Speaker 2: 00:17:20
+Speaker 2: 00:17:18
 
-But even while there's big overlap, simply because some of the people that have been working on Bitcoin the longest are still contributing to Bitcoin Core, there are separate topics.
-And one, like, concerns of what exactly should be in Bitcoin Core are much more driven by the individual contributors whereas of course protocol development is a community conversation.
-I am very happy that the BIPS repository is moving a little faster again.
-I think that is sort of one of these focal points where we can move stuff and exchange ideas in a comprehensive and comprehensible manner.
-The mailing list is live.
-Some people lost track of it when it moved.
-The mailing list is getting more traffic again.
-And so, like these traditional points where that conversation happened are alive and well and maybe should be considered again as points where people keep at least part of that conversation.
-Obviously, everybody can talk wherever they want on Twitter, on meetups, at conferences, or whatever.
-But please be sure to keep the bigger summaries and the write-ups in a place where we can find them again, where we can index them, where the community will notice that the conversation is happening.
+So in terms of risk of doing the soft fork it's not really enabling other things that Bitcoin can do.
+It's not going to be some kind of ungranted, it's really just compressing.
+And if you think about it, compression is a fairly bounded area.
+You're not going to suddenly have people developing all kinds of perhaps unwanted things on top of Bitcoin just because you have compressed the signature size down.
+So maybe it opens up the space for other soft forks if we do a soft fork which has such a low risk to it that it actually gets across the line.
 
-Speaker 0: 00:18:46
+Speaker 3: 00:17:57
 
-Real quick then, you say Bitcoin Core development and protocol development aren't exactly the same thing.
-Do you think it's plausible at all that we could see a protocol upgrade happen outside of Bitcoin Core?
+I think it's also worth noting that this is by no means the only signature aggregation scheme that's even happening in Bitcoin, right?
+Is that like with the taproot soft fork a few years ago, we did get the theoretical ability to do Schnorr signatures.
+But that has been an ongoing process, right?
+So as far as I'm aware off the top of my head, there's a pretty limited amount of adoption of Schnorr so far because I think Music, Music 2, is the main production-ready standard that people are using.
+And that can only do an N of N, like a two of two or a three of three type of scheme, so it's kind of limited in its flexibility.
+And I care about this a lot, operating a multi-signature self-custody wallet, We're waiting for the further evolution of threshold signature schemes like Frost that can do more arbitrary, K of N type of multi-sig.
+And That evolution, that research is still ongoing.
+We're continuing to see new iterations of Frost come out.
+And so we do expect that we will start to see more adoption of aggregated signatures across the ecosystem.
+But the ultimate end goal would be something where there's only one signature per block.
 
-Speaker 1: 00:19:00
+Speaker 1: 00:19:22
 
-So,
+The final form of SIGAG as we go all the way to the block level.
+Cool, so we only have a few minutes left.
+Maybe we can spend a little bit of time talking about, okay, so we almost had it, we didn't get it.
+What would it take, what's left from here to get it to the point where we could soft fork it in?
 
-Speaker 2: 00:19:05
+Speaker 0: 00:19:45
 
-I think it's not impossible.
-The ecosystem has grown a ton since we've had a lot of protocol upgrades.
-As I said originally, a lot of that overlapped even more because there was just no other game in town at all.
-But now there is more different Bitcoin implementations.
-There's people that have some concerns that are maybe not championed by Bitcoin Core contributors very well.
-So if they were to, say, create an activation client, and it turns out that a huge amount of the community is excited about this and running it, then I don't see why it couldn't happen that someone else is the driver of it.
+There's still quite a few things to hammer out in terms of all of the details, like defining a spec.
 
 ## Signature Aggregation and Getting Involved
 
-Speaker 2: 00:19:48
+Speaker 0: 00:19:53
 
-I would still ask, though, that just so we actually can get a sense of whether there is rough consensus, people actually approach the whole community and some of the places that everybody tends to look at and see is like the mailing list and the BIPs repository.
+So for the half-arc, there's a BIP draft, but it's not a pull request on BIP repository, but there's just minor to-dos like test vectors there that are open however for the full aggregation we still need to develop the signature scheme, so that requires quite a bit of effort from people reversed in cryptography and specifically on the side of the interactivity and We will also want to have a security proof for that scheme that comes out on the other hand and that means people with Very specific talents and an experience in that area will also be needed in process so so these I think are the big to-dos that we have and Yeah The people that can do this stuff need to come together and work on it.
+Personally, I spend quite a bit of time on it right now.
+But maybe something to everyone watching this or in the audience, if you want to get involved, let us know.
 
-Speaker 1: 00:20:08
+Speaker 3: 00:21:01
 
-I also want to add like if something if there appears to be community consensus for something there's also a good chance that people who work on Bitcoin Core will also think it's a good idea and want to then implement it in Bitcoin Core.
-They may not be the champions of it but that doesn't mean that Bitcoin Core won't have that feature in the future.
+Call your local developer and demand signature aggregation today.
 
-Speaker 0: 00:20:31
+Speaker 2: 00:21:05
 
-Ishana, anything to add on getting futures into Bitcoin Core?
+Yeah, and just to that point, Fabian has developed a great site where you can learn more.
+So, you know, if the concepts that we've talked about here today make sense, if you want to understand them better.
+If you go to sizeresearch.org, that's C-I-S-A research dot org, you know you can really learn much more about it.
+It's very easy to read, It's not going to be overly technical.
+And I think it gives a good grounding in these things.
+And then, largely the way that soft forks happen is that people need to express views about them, and ultimately we need to develop some form of rough consensus around whether we want to do it or not.
+So as far as I'm aware, this is the first panel we've had which talks about it.
+It is still, even though it's an old concept and it's a simple concept, We don't really have a lot of discussion about it right now.
+So talk about it.
+Try and develop an understanding of what it is that it's trying to do, and see whether you want to have it in Bitcoin or not.
 
-Speaker 3: 00:20:36
+Speaker 3: 00:22:17
 
-Yeah, so, well, we just talked a bit about Bitcoin Protocol, but I think in terms of Bitcoin Core especially, it is important and sometimes like newer contributors have to learn to advocate for their own work, to get review.
-And in terms of just like reviewing PRs, because that is how features get merged, it's important to be reviewing other people's PRs if you want people to review your own.
+I don't know.
 
-Speaker 0: 00:20:58
+Speaker 1: 00:22:17
 
-So it's, yeah, it definitely, I think advocating for your own contributions So there are also people that say Bitcoin should actually ossify as soon as possible Bitcoin core development is maybe even sort of considered a risk in a sense Now this might be a bit of a biased panel in that regard, but I still want to hear your opinion.
-So what are your thoughts on ossification?
-Is that good, bad, possible, impossible?
-Let's go the other way.
-Do you want to take it first?
-Yeah, Ishana, let's start with you this time.
-
-Speaker 3: 00:21:32
-
-I think it definitely depends on the kind of ossification that you're talking about, because some people are talking about the Bitcoin protocol and some people are talking about Bitcoin Core, and I think that it's important to distinguish the two, because with the Bitcoin protocol, I think, you know, that could be possible.
-I haven't looked into exactly what that would mean.
-I think that there are unsolved problems, so we might not want to do that just yet.
-In terms of Bitcoin Core, it's important to keep maintaining it and I don't know for sure if we'll ever be able to ossify it because we do have to keep making sure we're up to date with dependencies and fixing vulnerabilities and things like that.
-
-Speaker 1: 00:22:12
-
-Ava, anything to add?
-Again what Ashana said, with Bitcoin Core itself, it is impossible to not keep making changes to Bitcoin Core because people keep finding bugs.
-People keep finding vulnerabilities.
-Software, operating systems change, and that necessitates updating Bitcoin core so that it can even like compile and run in the first place.
-In terms of protocol, yeah, that could ossify.
-There are like time bombs in the protocol though.
-Like there are there are things that will stop working in a couple hundred years and those will need to be changed if we want Bitcoin to still work.
-So even then the protocol can't really ossify currently.
-
-Speaker 2: 00:23:01
-
-Yeah I feel that often the cry for ossification is a little motivated by concerns about features people don't like or don't understand.
-And I don't think that it really, usually it's not the most productive conversation.
-I think that in general we are doing pretty well for, let me take that from a different angle.
-If you look at how other internet applications have evolved over the last 20 years, we will find other ways in which we want to scale.
-If we want to scale to have Bitcoin be usable by the entire population of the planet, we certainly have to make some amendments and changes.
-I think we are reasonably conservative and that it is necessary for people to really convince the rest of the community that something is a good idea, but we definitely will need to make more improvements if we want this to actually fulfill the vision that there's digital cash for everyone on the planet.
-
-Speaker 0: 00:24:12
-
-Okay, well this will be the last question.
-What are the priorities of Bitcoin, or the priority, or how are these determined?
-How does Bitcoin Core maybe differentiate itself from other implementations?
-Like what is the focus and the priority of Bitcoin Core?
-Let's, Shana, do you want to start?
-
-Speaker 3: 00:24:32
-
-Yeah, so do you mean like of the developers or the project in general?
-
-Speaker 0: 00:24:36
-
-What's the difference?
-
-Speaker 3: 00:24:39
-
-Yeah, well, in terms of just developers, I think that because there's so many, and there's no sort of like, I mean, the whole point is that it's decentralized and anyone can contribute.
-So I think that everybody has different priorities.
-I think that a lot of people are just trying to, you know, improve things, fix bugs.
-There are also people who just like show up to the repository and try to get their own stuff merged really quickly and then leave.
-But yeah, I think that everybody has different priorities.
-So it depends on what your interest is and what sort of changes you want to make.
-
-Speaker 2: 00:25:15
-
-Marc?
-Yeah, I think that Bitcoin Core really is different from many other projects in the regard that there is not a founder that has a lot of sway, or sure, there's some members that have been around for, or contributors that have been around for a very long time.
-But for the most part, things just organically happen.
-Someone has an interesting project, others are also excited about it.
-There's maybe a working group, four or five people, and then things start moving.
-So if there's important issues, that tends to motivate.
-If there's cool new stuff that provides us benefits, that tends to motivate.
-We recently introduced priority projects into the Bitcoin Core.
-Actually, you should talk about that.
-
-Speaker 1: 00:26:05
-
-Yeah, okay.
-I do want to first start out with, it's important to remember that Bitcoin core is not a monolith.
-The maintainers are not a monolith.
-It's not like everyone thinks the same thing.
-There are many differing opinions.
-So the priorities are whatever the contributors, every individual contributor, like, wants to happen.
-And then they can spend the time, spend time convincing other contributors that their priorities should also match because it's a good idea.
-So that is, as Merch just mentioned, this priority project things.
-But even then, it's not like things that the entire project prioritizes.
-It's things that most people in the project think are good ideas and want to spend time focusing on.
-And so this, for the past couple of months, that's been package relay, cluster mempool, and removing the legacy wallet.
-But even then, even though these are priorities, not everyone is working on those.
-People still do their own things.
-They do whatever the hell they want.
-And there's just maybe a little bit more focus on that from people, especially people when they find that they have downtime and don't know what else to look at next.
-
-Speaker 0: 00:27:23
-
-Did you have a last word, Murch?
-
-Speaker 2: 00:27:26
-
-I just wanted to clarify.
-So the way the project comes up with priority projects is someone proposes that something should be a priority, and then there's a number of other people that are saying, I'll contribute review to that.
-And that's why we talk about it in our weekly meeting.
-It's not like we've voted and said, oh, we should work on this, or someone decided.
-It's just enough people are working on it that it becomes a permanent item on our weekly meeting.
-
-Speaker 0: 00:27:55
-
-Got it.
-All right, that's our time.
-So everyone, thanks for being here.
-Give a hand to our panelists.
-And enjoy the rest of the conference.
-Thanks for having us.
-
-Speaker 2: 00:28:04
-
-Thank you.
-
-Speaker 3: 00:28:30
-
-You you
+Do You You
