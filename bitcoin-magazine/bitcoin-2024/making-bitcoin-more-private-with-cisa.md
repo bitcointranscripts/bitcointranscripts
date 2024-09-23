@@ -217,7 +217,7 @@ I think that there's a general perception that, you know, we can only ever push 
 
 Speaker 3: 00:16:17
 
-It's interesting because I was in the room in Hong Kong when Peter Wille announced that we were changing the flagging system so that we could do like 32 soft forks in parallel.
+It's interesting because I was in the room in Hong Kong when Pieter Wuille announced that we were changing the flagging system so that we could do like 32 soft forks in parallel.
 And of course, we have not yet taken advantage of that.
 
 Speaker 2: 00:16:33
