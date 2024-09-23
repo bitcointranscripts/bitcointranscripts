@@ -128,7 +128,8 @@ And people are generally very helpful and will review and super supportive of ne
 Speaker 0: 00:05:24
 
 Right.
-If you get started, so you would recommend this Chaincode course. But at that point, is that open for anyone or how do you even get in there?
+If you get started, so you would recommend this Chaincode course.
+But at that point, is that open for anyone or how do you even get in there?
 
 Speaker 3: 00:05:35
 
@@ -141,7 +142,8 @@ Right.
 Yeah, so we have a course that you can do self-paced.
 It's a bunch of resources.
 It's a lot of talks and reading material and articles.
-So if you want to go for it in your own pace, all of that is linked on learning.chaincode.com. We did these Bitcoin developer seminars and lightning developer seminars that were five-week programs and we had earlier this year the big fast program with I think over 600 participants.
+So if you want to go for it in your own pace, all of that is linked on learning.chaincode.com.
+We did these Bitcoin developer seminars and lightning developer seminars that were five-week programs and we had earlier this year the big fast program with I think over 600 participants.
 
 ## Becoming a Bitcoin Core Developer and Funding
 
@@ -163,7 +165,8 @@ Funding was uncertain at times.
 Sometimes if you're working on stuff that's not super interesting to a lot of people, it can take a while to get reviewed.
 It is, I mean, inherently any group of at least two people has social dynamics.
 So if you find a few people that you get along with and collaborate with them, you might have a great experience if you're working on something that only interests you or you don't find your folk, then it might be a little more isolated.
-So a good thing is maybe to pick something that you're really excited about, that you have drive for, because if you scratch your own itch, you tend to not lose your motivation as easily, and if you're more excited about something you tend to infect others with that.
+So a good thing is maybe to pick something that you're really excited about, that you have drive for, because if you scratch your own itch, you tend to not lose your motivation as easily.
+And if you're more excited about something you tend to infect others with that.
 
 Speaker 0: 00:07:50
 
@@ -190,7 +193,8 @@ So often, people start out by working on stuff in their free time or by taking o
 
 Speaker 2: 00:09:13
 
-I think that's sort of what we tried to do with the FOSS program at Chaincode earlier this year was to create a space where people could focus on doing a bunch of different little Bitcoin things for a few months and we actually got a few full-time contributors out of that now, But yeah, you really have to sort of invest a little upfront before you become eligible for grants.
+I think that's sort of what we tried to do with the FOSS program at Chaincode earlier this year was to create a space where people could focus on doing a bunch of different little Bitcoin things for a few months and we actually got a few full-time contributors out of that now.
+But yeah, you really have to sort of invest a little upfront before you become eligible for grants.
 
 Speaker 0: 00:09:41
 
