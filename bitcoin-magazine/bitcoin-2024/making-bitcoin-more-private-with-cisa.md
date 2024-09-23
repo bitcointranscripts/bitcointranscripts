@@ -189,7 +189,7 @@ We actually have this really restricted data space in the blockchain, and if we 
 
 Speaker 1: 00:14:12
 
-I think you know now that we've sort of talked about how great this is we're gonna get more transactions in a block we're gonna save money we're gonna get better privacy I'd be really interested to hear why it didn't make it into Taproot originally.
+I think you know now that we've sort of talked about how great this is we're going to get more transactions in a block we're going to save money we're going to get better privacy I'd be really interested to hear why it didn't make it into Taproot originally.
 Like, is there any opposition to this proposal?
 What was it about Taproot or the Taproot process where this proposal didn't quite make it over the line?
 
@@ -213,7 +213,7 @@ The only thing that I could see really in between the lines, what Craig already 
 Speaker 2: 00:15:53
 
 Yeah so I mean I think you know in terms of the whatever pushback I have heard so far is what Fabian was saying that it doesn't do enough.
-You know, I think that there's a general perception that, you know, we can only ever push for one soft fork at a time, so all the soft forks have to compete to be the one, which is an interesting point of view.
+I think that there's a general perception that, you know, we can only ever push for one soft fork at a time, so all the soft forks have to compete to be the one, which is an interesting point of view.
 
 Speaker 3: 00:16:17
 
