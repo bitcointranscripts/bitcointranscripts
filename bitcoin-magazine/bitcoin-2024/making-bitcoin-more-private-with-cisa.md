@@ -93,11 +93,14 @@ Speaker 1: 00:05:35
 I have a quick question about that.
 So whenever you say you can do cross-input signature aggregation, so like on a transaction, usually you'll have a couple of things called inputs, and each of those inputs will have a signature on it, right?
 So kind of the general idea is that on that same one signature, instead of having a couple of them, you kind of be able to roll them all up and just have a single signature.
-Is that a good summary of What you're explaining?
+Is that a good summary of what you're explaining?
 
-Speaker 2: 00:06:02
+Speaker 0: 00:06:02
 
 Yeah, I would say so.
+
+Speaker 2: 00:06:03
+
 Yeah, so there's two major ways to do this.
 The one is what we call a half signature aggregation, or half ag as we abbreviate it.
 And that's basically where you don't have any kind of need for an interactive process.
@@ -119,17 +122,15 @@ Cool, so it sounds like we're taking signature data and it's all the same signat
 
 ## Various Approaches to Signature Aggregation
 
-Speaker 1: 00:07:46
 
 You wouldn't have multiple transactions that you're doing, it's like on a single transaction level.
 
 Speaker 3: 00:07:50
 
-Well there's also full block aggregation, right?
-Okay.
+Well, there's also full-block aggregation, right?
 This is going really far down the rabbit hole and I think that it's not even something that is on the table.
 Because there's too many additional edge cases, I guess, that come up, especially when you start thinking about like reorganizations of the blockchain.
-And my understanding is you would basically have to have like this other mem pool to keep track of things that, you know, were not sufficiently buried enough in the blockchain that they could be reorganized, because if there was a reorg, it would not be as simple as how we do reorgs right now, where we just take every transaction out and put it back into the mempool and start over again.
+And my understanding is you would basically have to have like this other mem pool to keep track of things that, were not sufficiently buried enough in the blockchain that they could be reorganized, because if there was a reorg, it would not be as simple as how we do reorgs right now, where we just take every transaction out and put it back into the mempool and start over again.
 
 Speaker 1: 00:08:33
 
