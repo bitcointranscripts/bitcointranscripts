@@ -487,8 +487,4 @@ Thanks for having us.
 
 Speaker 2: 00:28:04
 
-Thank you.
-
-Speaker 3: 00:28:30
-
-You you
+Thank you
