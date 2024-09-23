@@ -25,7 +25,7 @@ How do you feel about this potentially as a path moving forward?
 
 Christian Decker: 00:00:43
 
-I got extremely lucky that Rusty proposed it because otherwise, my talk on the frustrations of as a bib editor would have been kind of even more depressing than it already was.
+I got extremely lucky that Rusty proposed it because otherwise, my talk on the frustrations of as a BIP editor would have been kind of even more depressing than it already was.
 And so I saw his presentation and was like, I need to change my slides now.
 Because you're right, we have been trying way too long to be clever in as much that we try to sidestep the discussion of whether we want covenants, what kind of covenants we want, or introspection as we like to call it.
 
