@@ -152,14 +152,14 @@ It was basically put in place to help incentivize people to help rebalance the c
 
 ## Incentivizing Participation in Coin Joins
 
-Speaker 3: 00:09:45
 
 Basically, you run into some problems where if you're receiving a lot of transactions, you're basically creating a lot of unspent transaction outputs in your wallet, it becomes problematic if at some point in the far future you want to go spend them and perhaps the fee rates in the market for block space have gone up a lot, it can become insanely expensive to spend your own money and this inevitably catches a lot of people by surprise if they haven't been through a full market cycle before.
-So I think that this is another potential interesting aspect of aggregation is that once again we would be pushing the balance forward a bit to help incentivize people to you know clean up their UTXOs because we're not we're not penalizing them as much by making it really expensive to do so.
+So I think that this is another potential interesting aspect of aggregation is that once again we would be pushing the balance forward a bit to help incentivize people to you know clean up their UTXOs because we're not penalizing them as much by making it really expensive to do so.
 
 Speaker 0: 00:10:37
 
-And maybe to expand on that, so there is a financial incentive then for people to participate in coin joins and that gives them additional privacy And the nice effect of that also is that hopefully this would lead to also like wider adoption of CoinJoin, which means that when more people are CoinJoin, that's a higher anonymity set that benefits everyone that is after this anonymity property, but also everyone that participates in this coin join can also use this as a plausible deniability, even if they are doing it primarily for the privacy aspect, but they can also always say like, hey, I'm saving fees here.
+And maybe to expand on that, so there is a financial incentive then for people to participate in Coin joins and that gives them additional privacy.
+And the nice effect of that also is that hopefully, this would lead to also like wider adoption of CoinJoin, which means that when more people are CoinJoin, that's a higher anonymity set that benefits everyone that is after this anonymity property, but also everyone that participates in this coin join can also use this as a plausible deniability, even if they are doing it primarily for the privacy aspect, but they can also always say like, hey, I'm saving fees here.
 So that's my primary motivation.
 And hopefully a further trickle-down effect would be that when people are more asking for this, when this becomes more widestream adopted, then also more and more wallets adopt this.
 Easier to use wallets, complexity gets hidden and it becomes more of a mainstream feature.
@@ -172,10 +172,8 @@ But if we actually want people to adopt privacy tools, we need to give them the 
 
 ## Privacy Tools and Cost Savings in Bitcoin Transactions
 
-Speaker 3: 00:12:16
-
-It should not be a situation where the average person should be going out and basically asking their wallet providers or other software developers to, you know, please bake in additional privacy tools and protections into the software.
-Really it should be, why are you making me spend more of my money to use Bitcoin when you could be using this technology that, you know, it happens to enhance privacy, but it's actually saving me money.
+It should not be a situation where the average person should be going out and basically asking their wallet providers or other software developers to, please bake in additional privacy tools and protections into the software.
+Really it should be, why are you making me spend more of my money to use Bitcoin when you could be using this technology that, it happens to enhance privacy, but it's actually saving me money.
 
 Speaker 2: 00:12:45
 
