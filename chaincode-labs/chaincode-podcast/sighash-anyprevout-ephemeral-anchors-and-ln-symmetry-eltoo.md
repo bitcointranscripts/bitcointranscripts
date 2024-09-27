@@ -11,8 +11,6 @@ tags:
   - 'sighash-anyprevout'
 speakers:
   - 'Greg Sanders'
-  - 'Adam Jonas'
-  - 'Mark Erhardt'
 categories:
   - 'podcast'
 summary: 'Greg Sanders joins us to discuss ANYPREVOUT, ephemeral anchors and LN symmetry (a.k.a. ELTOO).'
