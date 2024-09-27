@@ -45,7 +45,7 @@ additional_resources:
 ---
 Greg: 00:00:00
 
-With any ANYPREVOUT, I don’t want to champion it right now from an activation perspective.
+With `ANYPREVOUT`, I don’t want to champion it right now from an activation perspective.
 I think the community is pretty split right now on what to do, but we can build the knowledge and build up the tooling.
 
 Murch: 00:00:18
@@ -66,8 +66,8 @@ I think we’re going to talk about v3 transactions, package relay, his recent w
 
 Jonas: 00:00:46
 
-Yeah, LN-Symmetry, otherwise known as L2.
-He’s championing to get rid of L2 and call it something better, more descriptive.
+Yeah, LN-Symmetry, otherwise known as Eltoo.
+He’s championing to get rid of Eltoo and call it something better, more descriptive.
 
 Murch: 00:00:54
 
@@ -124,7 +124,7 @@ What are you thinking about?
 
 Greg: 00:01:40
 
-These days, I’ve been focusing on a couple of things, but it focuses mostly around mempool policy and also L2, the application of ANYPREVOUT.
+These days, I’ve been focusing on a couple of things, but it focuses mostly around mempool policy and also Eltoo, the application of `ANYPREVOUT`.
 
 Murch: 00:01:50
 
@@ -134,7 +134,7 @@ Greg: 00:01:52
 
 That’s right.
 I’m rebranding it right now.
-It’s called LN-Symmetry instead of LN-Penalty, which means you can use ANYPREVOUT to have a symmetrical channel state for Lightning Network channels.
+It’s called LN-Symmetry instead of LN-Penalty, which means you can use `ANYPREVOUT` to have a symmetrical channel state for Lightning Network channels.
 
 Jonas: 00:02:05
 
@@ -152,9 +152,9 @@ There’s been this idea for many years that the peer-to-peer transaction layer,
 For example, one transaction could be too low fee, but you can spend an output at a higher fee and do child pays for parent.
 So this works today if the parent transaction, is the fee is beefy enough to get in the mempool on its own, but maybe not enough to get mined in a reasonable amount of time.
 But it doesn’t work if the fee is too low.
-So for example, if you wanted a transaction that’s zero fee, maybe you don’t know what the fee is going to be, or you’re basically doing a smart contract, for example, like L2, you can’t actually siphon off any fees.
+So for example, if you wanted a transaction that’s zero fee, maybe you don’t know what the fee is going to be, or you’re basically doing a smart contract, for example, like Eltoo, you can’t actually siphon off any fees.
 So you need to somehow pay for the fees.
-There’s a few concepts of how to do it with consensus changes or smart SIGHASH changes.
+There’s a few concepts of how to do it with consensus changes or smart `SIGHASH` changes.
 But to do it in a policy way, it seems to make sense to have this package of proposals that you pass around the network.
 
 Jonas: 00:03:10
@@ -489,7 +489,7 @@ So it had some idea of legitimacy, but it was just hiding another issue.
 And then after it was revealed, I made sure to add a comment to the code base.
 So I found it very confusing.
 So there’s this comment there.
-And then I started running into this use case where they have small UTXOs. People just want to burn them to fees to clean up the UTXO set, but you’d actually an OP_RETURN output.
+And then I started running into this use case where they have small UTXOs. People just want to burn them to fees to clean up the UTXO set, but you’d actually an `OP_RETURN` output.
 So you did this 82 math, and that’s assuming is it 22 bytes in the script pubkey?
 It’s a push zero byte push 20.
 
@@ -499,7 +499,7 @@ Eight for the amount, one for the length of the script and then 20.
 
 Greg: 00:17:24
 
-And to make an OP_RETURN, the most compact OP_RETURN, you only need one byte, the OP_RETURN itself.
+And to make an `OP_RETURN`, the most compact `OP_RETURN`, you only need one byte, the `OP_RETURN` itself.
 You don’t even need a data push.
 It’s provably unspendable.
 So that saves you 21 bytes in burning and maybe that’s the difference in cleaning it up or something like that.
@@ -522,29 +522,29 @@ And for now, this release, the 24, 25, I’m not sure, Bitcoin Core release, it�
 
 Murch: 00:18:24
 
-So for example, if you have an OP_RETURN output or an OP_TRUE output, you could now have a transaction that is 65 bytes, but you’d actually have to stuff it with a few more bytes of…
+So for example, if you have an `OP_RETURN` output or an `OP_TRUE` output, you could now have a transaction that is 65 bytes, but you’d actually have to stuff it with a few more bytes of…
 
 Greg: 00:18:35
 
-You’ll stuff OP_RETURN with four bytes or something like that.
+You’ll stuff `OP_RETURN` with four bytes or something like that.
 Which is still a pretty good improvement.
 And it’s also just easier to read the code.
 It’s not as easy as disallowing 64 only, but that’s a quibbling for me, I guess.
 
 Jonas: 00:18:52
 
-Let’s get back to the main thread, which is our march towards L2.
+Let’s get back to the main thread, which is our march towards Eltoo.
 So the next…
 
 Murch: 00:18:58
 
-L1 symmetry.
+LN-Symmetry.
 
 Jonas: 00:19:00
 
 Oh, sorry.
-L1 symmetry.
-Is L2 truly dead as a term?
+LN-Symmetry.
+Is Eltoo truly dead as a term?
 
 Greg: 00:19:04
 
@@ -565,7 +565,7 @@ Greg: 00:19:13
 It sure is.
 And for context, I say LN-Penalty to refer to the current scheme.
 Lightning Network with penalty.
-And I specifically mean the bolts that are in today and that flavor of...
+And I specifically mean the BOLTs that are in today and that flavor of...
 
 Murch: 00:19:23
 
@@ -575,7 +575,7 @@ I think that’s somewhat established now.
 Greg: 00:19:26
 
 I’m just putting it out there.
-When I say LN-Penalty, I mean look at the bolts today, what’s deployed today, essentially.
+When I say LN-Penalty, I mean look at the BOLTs today, what’s deployed today, essentially.
 
 Murch: 00:19:32
 
@@ -600,24 +600,24 @@ Yes.
 
 Jonas: 00:19:47
 
-Are we going to have something similar in L2?
+Are we going to have something similar in Eltoo?
 
 Greg: 00:19:49
 
 So this is where I was saying, I’m calling that LN-Symmetry, and then there’s LN-Penalty.
 So I call our own penalty this way, it’s transaction structured.
-You can also do any, so for L2 you need ANYPREVOUT which is essentially omitting the previous output so you can they say rebind, but when I implement it ends up being you just bind.
+You can also do any, so for Eltoo you need `ANYPREVOUT` which is essentially omitting the previous output so you can they say rebind, but when I implement it ends up being you just bind.
 You only bind at the last second.
 You pick your UTXO at the last second that you’re trying to spend based on the state update of the channel, that’s hit the chain.
-With ANYPREVOUT, there’s actually a number of flavors of architectures you can pick.
+With `ANYPREVOUT`, there’s actually a number of flavors of architectures you can pick.
 So there’s one called DARIC, D-A-R-I-C.
 It’s got a paper, it’s well written, it’s got a nice table.
 It’s actually very consumable to an engineer.
-That uses ANYPREVOUT, maintains penalties, but they restructure the transactions to be, in my opinion, simpler and superior to the current architecture, even beyond APO.
+That uses `ANYPREVOUT`, maintains penalties, but they restructure the transactions to be, in my opinion, simpler and superior to the current architecture, even beyond APO.
 Just the way the transaction structure’s cleaner.
-It removes things like second stage transactions for HTLCs, all this pre-signing of other stuff, and it brings down watchtower state and node state down to O(1), using ANYPREVOUT specifically to reduce the state.
+It removes things like second stage transactions for HTLCs, all this pre-signing of other stuff, and it brings down watchtower state and node state down to O(1), using `ANYPREVOUT` specifically to reduce the state.
 That has 100% penalties like LN today, LN-penalty.
-Then LN-Symmetry has no penalty mechanism because it’s what I also call vanilla L2, which is just, you just have a series of state updates and then once the dust settles, the settlement comes out, and money just flows out.
+Then LN-Symmetry has no penalty mechanism because it’s what I also call vanilla Eltoo, which is just, you just have a series of state updates and then once the dust settles, the settlement comes out, and money just flows out.
 
 Murch: 00:21:27
 
@@ -713,9 +713,9 @@ Greg: 00:24:03
 
 I believe it all works.
 And so you have this kind of different flavors.
-I think I’ve been implementing the L2, the LN-Symmetry version of it.
+I think I’ve been implementing the Eltoo, the LN-Symmetry version of it.
 And I’ve proven out and written a spec for it.
-So I think ANYPREVOUT fits pretty much any of these buckets and a lot of these same tricks that we’ve developed for LN-Symmetry can be reapplied.
+So I think `ANYPREVOUT` fits pretty much any of these buckets and a lot of these same tricks that we’ve developed for LN-Symmetry can be reapplied.
 So for example, reducing the state machine for committing to updates.
 In Lightning network today it’s one and a half round trips.
 And it’s actually asymmetrical in updates too.
@@ -752,14 +752,14 @@ It’s really scary.
 
 Jonas: 00:26:03
 
-ANYPREVOUT isn’t the first proposal to make L2 happen.
-So it started with SIGHASH no input.
+`ANYPREVOUT` isn’t the first proposal to make Eltoo happen.
+So it started with `SIGHASH_NOINPUT`.
 Yes.
 And that seemed to be.
 
 Greg: 00:26:13
 
-Yes, there’s SIGHASH no input.
+Yes, there’s `SIGHASH_NOINPUT`.
 That was Christian Decker.
 
 ## BIP118 - SIGHASH_ANYPREVOUT
@@ -774,7 +774,7 @@ I think AJ was running with that.
 
 Greg: 00:26:20
 
-So AJ also did his own ANYPREVOUT, and then it was separate, and then they combined.
+So AJ also did his own `ANYPREVOUT`, and then it was separate, and then they combined.
 So at some point, they combined the concepts.
 And this is BIP 118, which hasn’t changed in a while.
 Seems pretty static.
@@ -784,7 +784,7 @@ And it’s built on Taproot.
 
 Murch: 00:26:39
 
-And it’s very comprehensively described on anyprevout.xyz.
+And it’s very comprehensively described on <anyprevout.xyz>.
 
 Greg: 00:26:45
 
@@ -806,19 +806,19 @@ Sorry, there’s two versions of the flag.
 
 Murch: 00:27:25
 
-There’s ANYPREVOUTANYAMOUNT and there’s ANYPREVOUT.
+There’s `ANYPREVOUT_ANYAMOUNT` and there’s `ANYPREVOUT`.
 
 Greg: 00:27:28
 
-ANYPREVOUTANYSCRIPT, which also allows any amount.
+`ANYPREVOUTANYSCRIPT`, which also allows any amount.
 And this doesn’t commit to the script that it’s signing for.
-And then there’s just ANYPREVOUT.
+And then there’s just `ANYPREVOUT`.
 These are two versions of it.
-I ended up using, I think, ANYPREVOUTANYSCRIPT only, because the reattaching over scripts is pretty important for my use case.
+I ended up using, I think, `ANYPREVOUTANYSCRIPT` only, because the reattaching over scripts is pretty important for my use case.
 
 Jonas: 00:27:50
 
-And it seems like ANYPREVOUT was marching towards next in line, but it sort of got caught up in the Covenant kerfuffle as well.
+And it seems like `ANYPREVOUT` was marching towards next in line, but it sort of got caught up in the Covenant kerfuffle as well.
 As a champion of the soft fork, how are you thinking about the sequencing or not?
 Or anything to do with it?
 
@@ -863,9 +863,9 @@ And then with Taproot, he literally did nothing to drag it across the finish lin
 And we relied on other contributors to take up that.
 So I’ve made this axiom that I think the author should be different from the champion because it’s too much self-investment, I would say.
 And also it’s a signal, if you’re championing your own proposal, correct signal, but it’s a signal that the uptake’s not there, the mind share.
-So Jeremy Rubin with CHECKTEMPLATEVERIFY, it’s got good stuff, and I’ll circle back to what I like about it, the effort, but it seemed to be too much on Jeremy’s shoulders to champion it.
+So Jeremy Rubin with `OP_CHECKTEMPLATEVERIFY`, it’s got good stuff, and I’ll circle back to what I like about it, the effort, but it seemed to be too much on Jeremy’s shoulders to champion it.
 Other people would look at it, some people would say, yeah, it’s good, and then go back to their day job and not lift a finger to help, and that ultimately hurt it.
-There’s a bit of a renewal in that space with OP_VAULT, because it’s kind of a superset of behavior, so maybe we’ll get to revisit that behavior.
+There’s a bit of a renewal in that space with `OP_VAULT`, because it’s kind of a superset of behavior, so maybe we’ll get to revisit that behavior.
 
 Murch: 00:30:18
 
@@ -876,14 +876,14 @@ Greg: 00:30:25
 Yeah, of course.
 I guess if you have 50 authors, but that’s kind of crowding the boat.
 But essentially having more than one person really active in evangelizing the tech and getting the use cases out there.
-Now what I really liked about CHECKTEMPLATEVERIFY was all the tooling being built to prove it out.
-And so that’s part of the effort here is with ANYPREVOUT, I don’t want to champion it right now from an activation perspective.
+Now what I really liked about `OP_CHECKTEMPLATEVERIFY` was all the tooling being built to prove it out.
+And so that’s part of the effort here is with `ANYPREVOUT`, I don’t want to champion it right now from an activation perspective.
 I think the community is pretty split right now on what to do.
 But we can build the knowledge and build up the tooling.
 And also, side note, I’m going to eventually when I get this stuff all merged.
 And there’s a lot of preparatory work to get there, a lot of quality of life improvements for Core Lightning right now.
-But once I get there, then I can port this over to the Liquid Network, which already has the crazy covenant, powerful covenants, and I’ll essentially do an ANYPREVOUT widget.
-So use introspection to emulate ANYPREVOUT and launch it there.
+But once I get there, then I can port this over to the Liquid Network, which already has the crazy covenant, powerful covenants, and I’ll essentially do an `ANYPREVOUT` widget.
+So use introspection to emulate `ANYPREVOUT` and launch it there.
 So it’s simple.
 
 Murch: 00:31:21
@@ -963,13 +963,13 @@ So since there’s no fees, there’s no money left for fees because nothing is 
 
 Greg: 00:33:01
 
-So, Murch could say, well, why can’t you just use SIGHASH_SINGLE?
-So it’s one input, one output, and then using SIGHASH_SINGLE, you can attach on your own inputs and outputs as fees, bring your own fees.
+So, Murch could say, well, why can’t you just use `SIGHASH_SINGLE`?
+So it’s one input, one output, and then using `SIGHASH_SINGLE`, you can attach on your own inputs and outputs as fees, bring your own fees.
 Well, then you get back to this pinning issue, because every update could be pinned 100x or something like that.
 
 Murch: 00:33:18
 
-With SIGHASH_SINGLE any...
+With `SIGHASH_SINGLE` any...
 
 Greg: 00:33:21
 
@@ -1005,17 +1005,17 @@ But also it’s the siphoning off.
 So you’re siphoning off this value with this anchor output.
 That’s a no-go.
 So I need a zero value anchor, but a zero value anchor means you have a zero value output sitting in the UTXO set, which is also no-win.
-But we have package relay in this mystical new world that I’m trying to build with other people of course, but this L2 world.
+But we have package relay in this mystical new world that I’m trying to build with other people of course, but this Eltoo world.
 So perhaps we can use package relay and say, OK, if you propose a package and a transaction has a dusty-looking output, allow it, if and only if it gets spent in the same package.
 So in this v3 context, this is simpler to think about, does the parent have an output that’s dust?
 That’s OK, as long as it’s spent by the child.
 There’s additional rules on here.
-I actually mark the output by using the opcode OP_2, which is one more than OP_TRUE, because everyone uses OP_TRUE for testing.
+I actually mark the output by using the opcode `OP_2`, which is one more than `OP_TRUE`, because everyone uses `OP_TRUE` for testing.
 So it just breaks like a million tests.
 So I’ll just pick the next one.
 That was actually a Luke Jr. idea in 2017.
 I found old emails talking about this kind of similar idea.
-So it’s an OP, it’s a script of OP_TRUE, which means no key material needed and no witness data needed to spend it.
+So it’s an OP, it’s a script of `OP_TRUE`, which means no key material needed and no witness data needed to spend it.
 
 Murch: 00:35:49
 
@@ -1165,7 +1165,7 @@ Jonas: 00:42:30
 
 It’s on its way.
 Ephemeral Anchors seems quite valuable just on its own.
-Is that the case for ANYPREVOUT as well?
+Is that the case for `ANYPREVOUT` as well?
 
 Greg: 00:42:40
 
@@ -1178,7 +1178,7 @@ So the stakes are just much higher, I would just say.
 
 Jonas: 00:43:15
 
-But I guess I haven’t heard of ANYPREVOUT being championed outside of L2.
+But I guess I haven’t heard of `ANYPREVOUT` being championed outside of Eltoo.
 
 Greg: 00:43:23
 
@@ -1189,7 +1189,7 @@ I was just talking about this yesterday.
 
 Greg: 00:43:27
 
-I was like, ANYPREVOUT is pretty powerful, but only has a few use cases where it really hits a home run, I would say.
+I was like, `ANYPREVOUT` is pretty powerful, but only has a few use cases where it really hits a home run, I would say.
 Maybe that’s big enough.
 Maybe it’s just the biggest home run.
 One grand slam or something.
@@ -1205,9 +1205,9 @@ It’s bigger and less powerful or something.
 Greg: 00:44:09
 
 Yeah, they’re intersecting circles in a Venn diagram, so to speak.
-So it can do some things that are interesting that are byproducts, like with ANYPREVOUTANYSCRIPT because you’re emitting your own script you can stick that you’re signing for you can stick the signature in the script it’s like self-referential and say this transaction must look like this and can only commit to the shape of the outputs and the n-lock time and n-sequence, things like that.
+So it can do some things that are interesting that are byproducts, like with `ANYPREVOUTANYSCRIPT` because you’re emitting your own script you can stick that you’re signing for you can stick the signature in the script it’s like self-referential and say this transaction must look like this and can only commit to the shape of the outputs and the n-lock time and n-sequence, things like that.
 So it does some quirky things like that.
-But if we really like that, maybe we should have CTV, or maybe we should have OP_VAULT.
+But if we really like that, maybe we should have CTV, or maybe we should have `OP_VAULT`.
 So that’s an open discussion.
 And then this is where all the contention is.
 It’s not all the contention, but of the who’s next questions, this is a big one.
@@ -1255,20 +1255,20 @@ So it’s a little more respectful, I’d say.
 
 Jonas: 00:46:15
 
-But L2 seems to be, sorry, LN-Symmetry seems to be supported across the board.
+But Eltoo seems to be, sorry, LN-Symmetry seems to be supported across the board.
 
 Greg: 00:46:22
 
 Some people still like penalties.
-Now I still think, well, maybe we should just look at getting ANYPREVOUT and do DARIC.
+Now I still think, well, maybe we should just look at getting `ANYPREVOUT` and do DARIC.
 Because I think it’s like a wonderful cleanup to the current protocol.
-If you had DARIC plus ephemeral anchors and stuff, I could make you a very nice set of bolts.
-I have bolt specs that seems very nice and shorter.
+If you had DARIC plus ephemeral anchors and stuff, I could make you a very nice set of BOLTs.
+I have BOLT specs that seems very nice and shorter.
 And watchtowers are much easier, that sort of thing.
 So I think there’s still some choices to be made.
 But maybe there’s enough to start.
 I need feedback from people.
-When I talk to people, I say, I’m really excited about L2 or LN-Symmetry or these kind of setups.
+When I talk to people, I say, I’m really excited about Eltoo or LN-Symmetry or these kind of setups.
 But they’re all busy doing their own thing, and they’re busy trying to stay away from politics.
 I totally get that.
 
