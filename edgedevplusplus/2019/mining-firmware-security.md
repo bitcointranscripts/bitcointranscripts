@@ -2,7 +2,7 @@
 title: Mining Firmware Security
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['mining','security']
+tags: ['mining', 'security']
 speakers: ['James Hilliard']
 date: 2019-09-10
 aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/mining-firmware-security]

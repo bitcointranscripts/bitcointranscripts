@@ -2,7 +2,7 @@
 title: "UTXO accumulators, UTXO commitments, and Utreexo"
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['proof-systems','utreexo']
+tags: ['proof-systems', 'utreexo']
 speakers: ['Tadge Dryja']
 date: 2018-10-08
 aliases: ['/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/']

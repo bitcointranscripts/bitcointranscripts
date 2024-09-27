@@ -2,7 +2,7 @@
 title: "Scaling with LND"
 transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=W-Ev_MZAdgA
-tags: ["Lightning","Lnd"]
+tags: ["Lightning", "Lnd"]
 speakers: ["Alex Bosworth"]
 categories: ["conference"]
 date: 2021-11-05

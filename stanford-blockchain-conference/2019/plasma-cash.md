@@ -2,7 +2,7 @@
 title: Plasma Cash
 transcript_by: Bryan Bishop
 categories: ['conference']
-tag: ['ethereum']
+tags: ['ethereum']
 speakers: ['Georgios Konstantopoulos']
 date: 2019-01-20
 ---

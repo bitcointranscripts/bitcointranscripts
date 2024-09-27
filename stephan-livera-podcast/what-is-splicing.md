@@ -3,7 +3,7 @@ title: What is splicing?
 transcript_by: adamjonas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=C-jpZePiAcQ
 tags: ["splicing"]
-speakers: ["Stephan Livera","Dusty Daemon"]
+speakers: ["Stephan Livera", "Dusty Daemon"]
 categories: ["podcast"]
 date: 2023-07-10
 ---

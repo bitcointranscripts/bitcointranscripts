@@ -2,7 +2,7 @@
 title: Socratic Seminar
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['fee-management','dual-funding']
+tags: ['fee-management', 'dual-funding']
 date: 2020-05-19
 ---
 Topic: Agenda in Google Doc below

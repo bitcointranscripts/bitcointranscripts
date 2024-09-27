@@ -2,7 +2,7 @@
 title: Mimblewimble And Scriptless Scripts
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['adaptor-signatures','sidechains']
+tags: ['adaptor-signatures', 'sidechains']
 speakers: ['Andrew Poelstra']
 date: 2018-01-11
 media: https://www.youtube.com/watch?v=ovCBT1gyk9c

@@ -2,7 +2,7 @@
 title: Key Tree Signatures
 transcript_by: Michael Folkson
 categories: ['meetup']
-tags: ['research','cryptography']
+tags: ['research', 'cryptography']
 date: 2015-08-24
 speakers: ['Pieter Wuille']
 media: https://www.youtube.com/watch?v=gcQLWeFmpYg

@@ -1,6 +1,6 @@
 ---
 title: Limitations of Lightweight Clients
-Transcript_by: Abubakar Nur Khalil
+transcript_by: Abubakar Nur Khalil
 categories: ['residency']
 tags: ['lightning', 'lightweight-client']
 speakers: ['Fabrice Drouin']

@@ -3,7 +3,7 @@ title: "Wallet Security, Key Management & Hardware Security Modules (HSMs)"
 transcript_by: Bryan Bishop
 speakers: ['Bryan Bishop']
 categories: ['conference']
-tags: ['security-problems','hardware-wallet']
+tags: ['security-problems', 'hardware-wallet']
 date: 2018-10-04
 media: https://www.youtube.com/watch?v=KLvWfUKoz9s
 aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/wallet-security]

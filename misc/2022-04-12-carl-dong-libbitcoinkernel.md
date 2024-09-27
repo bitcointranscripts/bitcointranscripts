@@ -1,11 +1,11 @@
 ---
 title: libbitcoinkernel
 transcript_by: Michael Folkson
-categories: ['video']
 tags: ['build-system']
 speakers: ['Carl Dong']
 date: 2022-04-12
 media: https://www.youtube.com/watch?v=MdxIkH6GCBs
+aliases: ['/chaincode-labs/2022-04-12-carl-dong-libbitcoinkernel/']
 ---
 Tracking issue in Bitcoin Core: <https://github.com/bitcoin/bitcoin/issues/24303>
 

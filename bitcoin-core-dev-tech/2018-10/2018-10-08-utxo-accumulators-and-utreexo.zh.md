@@ -3,7 +3,7 @@ title: "UTXO accumulators, UTXO commitments, and Utreexo"
 transcript_by: Bryan Bishop
 translation_by: Ajian
 categories: ['core-dev-tech']
-tags: ['proof-systems','utreexo']
+tags: ['proof-systems', 'utreexo']
 speakers: ['Tadge Dryja']
 date: 2018-10-08
 ---

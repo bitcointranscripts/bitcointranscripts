@@ -6,8 +6,7 @@ tags: ['P2P']
 date: 2018-10-08
 aliases: ['/bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/']
 ---
-
-# p2p transaction relay protocol improvements with set reconciliation
+## p2p transaction relay protocol improvements with set reconciliation
 
 gleb
 
@@ -31,7 +30,7 @@ Q: If you learn something new through set reconciliation, then doens't that chan
 
 After reconciliation, the nodes clear their sets and start over. During set reconciliation, there's two round trips.
 
-# Finding set differences with BCH codes
+## Finding set differences with BCH codes
 
 We use BCH codes to make this efficient. Say Alice has 7 transactions in their set, and Bob has 7 transactions in their set, and they have no idea which ones are shared and which are not. They assume most of them are shared. Every five seconds, a node picks a peer from a queue. So basically, which means, if you have 8 peers, then every reconciliation happens on average every 40 seconds because it's 5 * 8. During that time, we learned a lot from other peers and so on.
 
@@ -41,7 +40,7 @@ A: No. You're reconciling the set of transactions you would have relayed since t
 
 Every 40 seconds, this set gets empty, and then you fill it up again with new transactions. This is why it's fair to assume that most of the set elements are shared between the two nodes already. Once they learn about transactions that they mutually don't know about, then they do reconciliations. It's possible to make this happen by-- if a transaction ID is 32 bytes, it's enough to send just....... Alice estimates diff set size, Alice computes a summary of her set, Alice sends the summary to Bob, Bob computes his summary, Bob XORs the summaries, Bob can then find transactions that he is missing. If Alice underestimated and sent a summary of size 1, Bob will fail to do the last step because underestimation... yeah he just can't recover, and he will observe the failure and request another iteration of the protocol or something. If Alice overestimated and sent 3 elements, that's fine, there's just a bit of extra bandwidth because it's not optimal anywhere.
 
-# Simulation results
+## Simulation results
 
 Right now this is what I'm observing. This is with 10,000 nodes. We need to reduce redundancy in initial fan-out. Also some of this is due to reconciliation failures (underestimations). Half of the nodes never hear about transactions, and half hear about the same transactions twice or more. Underestimation is when set reconciliation failed and we need to send more data across the network. In the event of a set reconciliation failure, Alice can fall back to the original protocol and send the full thing.
 
@@ -69,7 +68,7 @@ We use short ids of transactions for two reasons. We can reduce bandwidth dramat
 
 Collisions may be bad in that a transaction may stuck... the same transaction with the same short id on both sides, and reconciliation might think they are the same. This is a porblem. If you salt every connection with a different salt, then that's fine. If they are the same short id, then the transaction wont propagate to the other node. It is not a problem if there's collisions just within the transactions you're trying to relay; it's only when there's a different transaction on both sides that collides. You having two transactions with the same short id, you just send the transaction. You don't need to resalt, you can just send, because you're missing that.
 
-# Some benchmarks of BCH libraries
+## Some benchmarks of BCH libraries
 
 BCH codes are fairly expensive without optimization. IBLT is another set reconciliation method. IBLT is much simpler to implement, and computationally it's better than BCH codes, but for small sets it has a pretty high overhead from small integers. Not 10% overhead, but 3x overhead. This is information theoretically extremely close: if you can accurately predict the difference, then the bandwidth is only the difference, which is pretty amazing.
 
@@ -91,7 +90,7 @@ I would not suggest running that many nodes on one machine. No, I want to run 10
 
 Once sipa posts something about BCH codes, then we will publish transaction relay stuff. First we should get everyone to write up how they think it works, then we do a reconciliation between them. Or we could do a BCH code thing right now and then publish whatever kanzure types.
 
-# Sketch reconciliation
+## Sketch reconciliation
 
 sipa
 
@@ -105,7 +104,7 @@ A: It has to be a characteristic 2 field, otherwise you immediately get a factor
 
 So that's a description of where BCH codes come from. I am going to start over, and we'll get to another point of view to get back to that.
 
-# Sketches
+## Sketches
 
 If my elements are x, y and z, then the sketch consists of x+y+z, which is really the XOR of the bits. That's the first element of the sketch. The second one is x^3 + y^3 + z^3... and the next one is x^5 + y^5 + z^5. They must all be raised to these powers.. The first step when doing correction.... you see that, I have... If you need 10, then you go up to x^19 and clearly this has linearity properties. If I have a sketch for x, y and z, and I xor them together, then I have one that has added them up so I'll get an output sketch. ... Square root is a linear transformation, you can derive all sorts of funny properties from this. If you have x + y + z, you can compute x^2 + y^2 + z^2 because it's just squaring this number. For the sum of the 4th powers, you compute the squaring the numbers for the second powers. And 6th, you do ti for the third powers. So what I'm getting at is that even though you are only sending the odd numbers, the receiver can really compute it for all. This is specific to using a characteristic 2 field. If you weren't doing that, you would need to give all the intermediates.
 

@@ -2,8 +2,8 @@
 title: "Explaining Segregated Witness"
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=DsyMUzhfG34
-tags: ["segwit","soft-fork-activation"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+tags: ["segwit", "soft-fork-activation"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-03-18
 episode: 32

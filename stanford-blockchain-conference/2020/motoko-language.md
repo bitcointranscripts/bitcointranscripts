@@ -2,7 +2,7 @@
 title: "Motoko, the language for the Internet Computer"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','altcoins']
+tags: ['research', 'altcoins']
 speakers: ['Joachim Breitner']
 ---
 ## Introduction

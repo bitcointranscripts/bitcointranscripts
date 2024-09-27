@@ -2,7 +2,7 @@
 title: "R&D Goals & Challenges"
 transcript_by: Bryan Bishop
 categories: ['core-dev-tech']
-tags: ['research','bitcoin-core']
+tags: ['research', 'bitcoin-core']
 speakers: ['Patrick Murck', 'Gavin Andresen', 'Cory Fields']
 aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/research-and-development-goals/']
 ---

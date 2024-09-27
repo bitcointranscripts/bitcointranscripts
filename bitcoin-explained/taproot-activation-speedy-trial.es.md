@@ -3,7 +3,7 @@ title: Taproot Activación con Speedy Trial
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 categories: ['podcast']
-tags: ['taproot','soft-fork-activation']
+tags: ['taproot', 'soft-fork-activation']
 date: 2021-03-12
 episode: 31
 speakers: ['Sjors Provoost', 'Aaron van Wirdum']

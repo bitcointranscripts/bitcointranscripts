@@ -2,24 +2,24 @@
 title: "Package Relay"
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Gloria-Zhao-and-Package-Relay---Episode-21-e1j0ii3
-tags: ["package-relay","security"]
+tags: ["package-relay", "security"]
 speakers: ["Gloria Zhao"]
 categories: ["podcast"]
 summary: "Gloria Zhao sits down with us to discuss her package relay proposal and what it is like as a relative newcomer to propose a big change."
 date: 2022-05-24
 episode: 21
-aditional_resources:
--   title: 'Mailing List: Package Relay Proposal'
+additional_resources:
+  - title: 'Mailing List: Package Relay Proposal'
     url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
--   title: 'Mailing List: Package Mempool Accept and Package RBF'
+  - title: 'Mailing List: Package Mempool Accept and Package RBF'
     url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
--   title: 'Brink Podcast: Ep1 Mempool Policy'
+  - title: 'Brink Podcast: Ep1 Mempool Policy'
     url: https://brink.dev/podcast/1-mempool-policy/
--   title: 'Censorship and DoS Attacks: An intro to Mempool Policy'
+  - title: 'Censorship and DoS Attacks: An intro to Mempool Policy'
     url: https://vimeo.com/704956163
--   title: Transaction Relay Policy for L2 Developers
+  - title: Transaction Relay Policy for L2 Developers
     url: https://www.youtube.com/watch?v=fbWSQvJjKFs
--   title: Mempool Garden
+  - title: Mempool Garden
     url: https://github.com/glozow/bitcoin-notes/tree/master/mempool_garden
 ---
 ## Introduction

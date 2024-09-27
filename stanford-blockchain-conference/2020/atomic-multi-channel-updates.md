@@ -2,7 +2,7 @@
 title: "Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks"
 transcript_by: Bryan Bishop
 categories: ['conference']
-tags: ['research','lightning']
+tags: ['research', 'lightning']
 speakers: ['Matteo Maffei']
 date: 2020-02-21
 ---

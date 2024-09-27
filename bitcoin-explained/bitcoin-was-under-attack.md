@@ -3,7 +3,7 @@ title: "Bitcoin Was Under ATTACK!"
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=XmKfOCUdH8k
 tags: ["bitcoin-core", "security-problems", "p2p"]
-speakers: ["Sjors Provoost","Aaron van Wirdum"]
+speakers: ["Sjors Provoost", "Aaron van Wirdum"]
 categories: ["podcast"]
 date: 2021-11-11
 episode: 49

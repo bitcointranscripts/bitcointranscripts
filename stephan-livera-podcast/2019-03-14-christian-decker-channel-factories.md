@@ -2,7 +2,7 @@
 title: "Lightning Channel Factories"
 transcript_by: Michael Folkson
 categories: ['podcast']
-tags: ['channel-factories','eltoo']
+tags: ['channel-factories', 'eltoo']
 speakers: ['Christian Decker']
 date: 2019-03-14
 media: https://stephanlivera.com/episode/59/
