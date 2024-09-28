@@ -1441,7 +1441,7 @@ Speaker 1: 01:36:27
 Oh, so this is actually a homomorphism too.
 It's actually, yeah, so if you want to think of it, if you want to think of it this way, you're exploiting, these signatures also exploit a homomorphism in RSA.
 They're just, it's just a different homomorphism.
-Yeah, so homomorphic encryption is a little bit of, if you want to think of it this way, you could think of it as a generalization of, it's also a generalization of pairings-based cryptography, if you've seen that before.
+Yeah, so homomorphic encryption is a little bit of, if you want to think of it this way, you could think of also a generalization of pairings-based cryptography, if you've seen that before.
 That's a very specific homomorphism for ECC, but yeah.
 Yeah, they're connected.
 
