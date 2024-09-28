@@ -13,7 +13,7 @@ categories:
   - 'club'
 summary: 'In this video, the Wasabi Research Club delves into the topic of checking Bitcoin balances privately. They discuss the use of homomorphic encryption and private information retrieval to protect users'' privacy when querying data from a server. They explore different solutions and strategies to address challenges such as address linkability, block retrieval, and the scalability and cost of checking balances. The team also emphasizes the need for an open standard for private information retrieval to ensure decentralization. They discuss the use of Tor and homomorphic encryption together, as well as the possibility of batching requests to improve efficiency. The video concludes by highlighting the ongoing research and exploration of potential solutions to ensure private querying of Bitcoin balances and more...'
 ---
-Max: 00:00:00
+Speaker 0: 00:00:00
 
 So hello and welcome to the Wasabi Wallet Research Club.
 Today we are speaking with Samir from Spiral, which is the title of a fancy cryptography paper of homomorphic value encryption or homomorphic encryption and private information retrieval.
@@ -26,7 +26,7 @@ And the server doesn't know which address you're actually requesting.
 So that sounds like impossible magic.
 And Samir, please tell us how all the magic works.
 
-Samir Menon: 00:01:26
+Speaker 1: 00:01:26
 
 Yeah, that was a great introduction.
 Honestly, a little better than the one I had.
@@ -63,7 +63,7 @@ I think it was implemented by the Neutrino wallet also, which is this block filt
 
 ## Block Filter Solution
 
-Samir Menon: 00:05:42
+Speaker 1: 00:05:42
 
 So basically what happens here, I'm sure you guys know, but it's basically compact data about the transactions in each block is kind of streamed to the client continuously.
 And then when the client sees that a block contains a relevant transaction, it just fetches the full block.
@@ -121,7 +121,7 @@ So if you want, I can just go through that slide if you want to hear more about 
 
 ## Open Questions
 
-Samir Menon: 00:12:00
+Speaker 1: 00:12:00
 
 But before I do that, I think the open questions for us are: what minimum set of data is enough?
 I think balance is on its own, it's not quite enough.
@@ -144,7 +144,7 @@ Speaker 2: 00:13:32
 
 Max, actually, maybe we can take an intermission just to ask a few questions and then we'll continue with
 
-Samir Menon: 00:13:39
+Speaker 1: 00:13:39
 
 That sounds great.
 
@@ -153,7 +153,7 @@ Speaker 2: 00:13:42
 Because I think a lot of people are going to have questions here, and I'll just start myself:
 Can you kind of give us a ballpark of the cost of the server per UTXO?
 
-Samir Menon: 00:13:57
+Speaker 1: 00:13:57
 
 Sure.
 I guess today what we do is we take the UTXO set and we kind of summarize it.
@@ -179,14 +179,14 @@ For example, just lowering the balances of all the users or just omitting certai
 The only way that you're going to have an incorrect balance is if the server somehow malleates a filter but it's kind of a weird, unclear attack vector.
 How practical would it be to actually get some kind of proofs on top of the balance that you're already producing?
 
-Samir Menon: 00:16:35
+Speaker 1: 00:16:35
 
 Yeah, that's a great question.
 So, what we want is a Merkle inclusion proof, right?
 
 ## Miracle Inclusion Proof
 
-Samir Menon: 00:16:45
+Speaker 1: 00:16:45
 
 We just want to say that this transaction is part of this block and to do that we need the log, if n is the number of transactions, we need log n kind of hashes to show inclusion.
 I think we use this kind of vertical proof of inclusion somewhere else, but I'm forgetting.
@@ -205,21 +205,21 @@ I think the problem there is it doesn't save on your bandwidth.
 I could be wrong, but I think most of the bandwidth is coming from the filters and coming from the streaming to the client of the filter data.
 So you wouldn't say that.
 
-Max: 00:18:28
+Speaker 0: 00:18:28
 
 Just as a heads up for you, we're downloading the filters from our server, like the Wasabi backend server, but then the blocks are downloaded from the Bitcoin peer-to-peer network.
 So the server doesn't incur the block download cost.
 
-Samir Menon: 00:18:41
+Speaker 1: 00:18:41
 
 Oh, okay.
 So, is the main cost for you guys, right now, actually the filters?
 
-Max: 00:18:47
+Speaker 0: 00:18:47
 
 Yes.
 
-Samir Menon: 00:18:48
+Speaker 1: 00:18:48
 
 Yeah, it's a large outgoing cost.
 I'm sure your hosting provider is charging you.
@@ -227,7 +227,7 @@ So, actually doing proofs of inclusion is possible, but it's good to know you ne
 If I can ask a follow-up question: Are you mostly querying the UTXO set, the full set of transactions, just balances?
 Like what kind of data is crucial?
 
-Max: 00:19:30
+Speaker 0: 00:19:30
 
 We do want the full transaction history list.
 
@@ -238,7 +238,7 @@ Speaker 2: 00:19:48
 
 And the filters are as large as the number of Bech32 addresses in the blocks?
 
-Samir Menon: 00:19:55
+Speaker 1: 00:19:55
 
 Sorry, say that one more time.
 
@@ -246,14 +246,14 @@ Speaker 2: 00:19:57
 
 The filters are all essentially a compact representation of all Bech32 addresses in a block.
 
-Max: 00:20:07
+Speaker 0: 00:20:07
 Single public key.
 
 Speaker 2: 00:20:09
 Single public key Bech32 addresses.
 They're very compact. Three years ago, because it was a minority of people use those addresses, more and more they become larger and larger, but they're they're they're very space efficient. I would I don't know the exact details maybe Max can answer
 
-Max: 00:20:31
+Speaker 0: 00:20:31
 
 700 megabytes or something, I think it's below a gigabyte I might be off here but it's not that much.
 
@@ -261,11 +261,11 @@ Speaker 2: 00:20:39
 
 Oh below a gigabyte for the entire four years.
 
-Max: 00:20:43
+Speaker 0: 00:20:43
 
 That might be complete bullshit, but I think yes.
 
-Samir Menon: 00:20:47
+Speaker 1: 00:20:47
 
 That sounds right.
 It's not that much data, right?
@@ -280,7 +280,7 @@ That's the goal.
 You'll never miss.
 But you will get more.
 
-Max: 00:21:08
+Speaker 0: 00:21:08
 
 Yeah, that false positive rate can be configured.
 And the lower you want that first positive rate, the larger the filter size is.
@@ -288,11 +288,11 @@ I'm not exactly sure where we fall in the line of trade-off here.
 Yeah, I don't know details like that.
 Lucas is in the call, so maybe he knows.
 
-Samir Menon: 00:21:34
+Speaker 1: 00:21:34
 
 Happy to take any other questions, Elsa.
 
-Elsa: 00:21:38
+Speaker 3: 00:21:38
 
 Hello, guys.
 It's quite nice to be here.
@@ -300,23 +300,23 @@ I don't have any strong background in crypto and higher order math, but as a lay
 I have tried to see the the information on the internet, but it's just not possible for a basic layman like me.
 Would that be possible on this call, or is it not?
 
-Samir Menon: 00:22:17
+Speaker 1: 00:22:17
 
 Yeah, I have a slide.
 Let's talk a little bit more about Wasabi Wallet and privacy, but then I can give that explanation.
 Does that sound good?
 
-Elsa: 00:22:28
+Speaker 3: 00:22:28
 
 Yes, thank you very much.
 Thank you.
 
-Max: 00:22:34
+Speaker 0: 00:22:34
 
 What I do wonder is, you do need to know the input, like the value of the UTXO that you're trying to spend.
 Does your database include amounts?
 
-Samir Menon: 00:22:49
+Speaker 1: 00:22:49
 
 Yes, yes.
 So the total size of our database is roughly one gig right now.
@@ -331,22 +331,22 @@ So, the problem that you guys face with block filters is mostly that you have to
 Is that the issue?
 Mostly?
 
-Max: 00:24:08
+Speaker 0: 00:24:08
 
 First of all, the server has to generate filters, which can take weeks.
 Then the clients have to download all the filters, which we do over Tor, which also can take an hour maybe.
 
-Samir Menon: 00:24:23
+Speaker 1: 00:24:23
 
 I see, right.
 I forgot it's all over Tor.
 
-Max: 00:24:29
+Speaker 0: 00:24:29
 
 And then, for block downloads, we spin up a new Tor identity for every Bitcoin peer that we download a block from.
 So all of this together is, if you have a really big wallet and you're making a full rescan it can take a couple of weeks, if not a month.
 
-Samir Menon: 00:24:47
+Speaker 1: 00:24:47
 
 I see the issue.
 Yeah, weeks if not a month.
@@ -361,7 +361,7 @@ And each block is actually more than a megabyte typically.
 And so you might end up with a gigabyte of blocks that you have to query, and each one is queried from a different node over a different Tor circuit.
 Not necessarily a different node, just a different Tor circuit.
 
-Samir Menon: 00:26:00
+Speaker 1: 00:26:00
 
 I guess there are two things to ask here.
 One is, so one thing to notice, it's perfectly fine to use this homomorphic stuff with Tor.
@@ -373,11 +373,11 @@ If the query is encrypted, in some sense you don't need to use Tor, but if you'd
 This would be presumably faster because Tor circuits can reach decent bandwidth, right, but not if they're freshly constructed every time, right?
 Then you're going to pay the latency.
 
-Max: 00:27:02
+Speaker 0: 00:27:02
 
 Can we actually make batch requests with Spiral, like requesting multiple addresses simultaneously?
 
-Samir Menon: 00:27:10
+Speaker 1: 00:27:10
 
 Yeah, yeah.
 So if you notice today, no, right?
@@ -387,62 +387,62 @@ There's actually a lot of theory and research about doing batch requests kind of
 I think it's really useful to hear that a very typical use case is like hundreds of addresses, because that says a lot about how we need to build this to make it usable.
 Yes, so batching is possible, but it's in the works.
 
-Max: 00:27:56
+Speaker 0: 00:27:56
 
 By the way, it's way more than just a thousand.
 I'm checking a not even that old wallet and it has well 8,000 addresses here 13,000 addresses. Since we attempt many coin joins, and a lot of them fail, and we generate new addresses for each attempted coin join and you can register up to 8 outputs in a round so let's say a round fails 5 times before it succeeds, that's 5 times 8 addresses that we have to add to your gap limit.
 
-Samir Menon: 00:28:35
+Speaker 1: 00:28:35
 
 I see.
 Are the addresses that you create there, are they unspent?
 
-Max: 00:28:44
+Speaker 0: 00:28:44
 No
 
-Samir Menon: 00:28:45
+Speaker 1: 00:28:45
 If you create an address and no one hears about it, did it really get created?
 
-Max: 00:28:50
+Speaker 0: 00:28:50
 
 Well, in this case, yes, because the CoinJoin coordinator hears about it.
 And probably also the other CoinJoin signers.
 So it's semi-public.
 
-Samir Menon: 00:29:00
+Speaker 1: 00:29:00
 
 Will it store value?
 It will, right?
 I guess to start the Coinjoin it has some value in it.
 
-Max: 00:29:09
+Speaker 0: 00:29:09
 
 No, sorry.
 We spend inputs that are addresses with money on them, but then on the output side we create new addresses that are not yet used without money on it.
 
-Samir Menon: 00:29:18
+Speaker 1: 00:29:18
 
 Oh, I see.
 So they can be empty output addresses.
 
-Max: 00:29:22
+Speaker 0: 00:29:22
 
 Exactly.
 Those are addresses that never were on the blockchain in an output with any amount of stats.
 It's just unused addresses, so to speak.
 
-Samir Menon: 00:29:32
+Speaker 1: 00:29:32
 
 So then those would not need to actually hit any kind of...
 We don't need to query the blockchain for them at all, right?
 
-Max: 00:29:41
+Speaker 0: 00:29:41
 
 Well, but the client doesn't know if an address is empty or not.
 So we need to query all of them.
 Just a lot of them, the server will say there's nothing on here.
 
- Samir Menon: 00:29:50
+Speaker 1: 00:29:50
 
 I see, I see.
 An easy way to actually resolve that will be to actually just make a set of addresses that have any money.
@@ -455,22 +455,22 @@ Just take the X top X bits of every address that has money in it and send these 
 And WasabiWallet already handles the mempool, right?
 You guys already kind of privately listen to everything on a mempool and then cross-reference it with the addresses you have and all that.
 
-Max: 00:30:52
+Speaker 0: 00:30:52
 
 Yeah, we build a local mempool.
 The issue is when we're offline, we of course don't know it.
 So maybe actually some private information retrieval over someone else's mempool might be another interesting use case.
 
-Samir Monen: 00:31:07
+Speaker 1: 00:31:07
 
 Yeah.
 
-Max: 00:31:12
+Speaker 0: 00:31:12
 
 Sorry, a bit more about the batch requests:
 Would it be possible to just send 10,000 addresses to the server and he responds in a single package?
 
-Samir Monen: 00:31:26
+Speaker 1: 00:31:26
 
 So it's definitely possible.
 The simple way is you can send 10,000 queries, you can upload them all, and then just kind of the server can just do all the computation and send you all the responses.
@@ -489,11 +489,11 @@ So 10,000 times 14 kilobytes is a lot.
 And then that's a lot of 140 megabytes to upload.
 So it's not going to be that feasible.
 
-Max: 00:33:00
+Speaker 0: 00:33:00
 
 Actually, to this I have a question, because I saw on the website that the first request, the client needs to send more data, and for every following it's less.
 
-Samir Menon: 00:33:09
+Speaker 1: 00:33:09
 
 Yeah, it's because the first request contains what's called the setup data or the public parameters.
 Basically, the server sends essentially like an extended, like a large public key to the server.
@@ -504,22 +504,22 @@ So that's why it's big.
 And you might have noticed it's pretty big.
 It's like eight megabytes or something.
 
-Max: 00:33:59
+Speaker 0: 00:33:59
 
 And does that size depend on the database size?
 
-Samir Menon: 00:34:02
+Speaker 1: 00:34:02
 
 It does not.
 Or it only logarithmically does.
 So it's like very like if the database was 100 times bigger, it would be like 12 megabytes or something.
 
-Max: 00:34:17
+Speaker 0: 00:34:17
 
 Yeah. Just general, it's a very broad question, but if we want to have the full TX outset of all — but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all sacred and taproot outputs. And, let's say we have 10,000 users or so and each of them has let's say, a thousand addresses or so.
 And this is still rather small scale, but is this completely crazy?
 
-Samir Menon: 00:35:03
+Speaker 1: 00:35:03
 
 No, no, you're asking a very, very good question.
 I think that's very true.
@@ -542,12 +542,12 @@ One other thing, I think that there's kind of like a, there's also like a kind o
 I think if you're a client setting up and it's taking weeks to sync your wallet, I think it's really powerful that in the meantime you can, you can make queries, for addresses.
 You can see if you've been paid, privately.
 
-Max: 00:37:21
+Speaker 0: 00:37:21
 
 Yeah, exactly.
 Right, to just get the active wallet balance really quickly.
 
-Samir Menon: 00:37:26
+Speaker 1: 00:37:26
 
 And yeah, so no syncing.
 Actually, it might even make sense just as a kind of fallback, or even kind of as a setup thing.
