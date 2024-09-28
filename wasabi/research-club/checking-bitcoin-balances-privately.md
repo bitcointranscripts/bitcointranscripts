@@ -559,29 +559,26 @@ I think you can add a public watch address but you can't you can't actually use 
 
 Speaker 0: 00:38:08
 
-Yeah, you cannot and the problem is you would have to run this address through all the filters, download all the past false positive blocks And so it would take a
+Yeah, you cannot and the problem is you would have to run this address through all the filters, download all the past false positive blocks and so it would take a long time.
 
 Speaker 1: 00:38:18
 
-long time.
 I don't know if that's a feature.
-Yeah, I don't know if it's a feature you guys are interested in, but I think it would be useful to be able to just say, hey, what like, yeah, how much is at this address?
+Yeah, I don't know if it's a feature you guys are interested in, but I think it would be useful to be able to just say: "hey, how much is at this address?"
 Because today the option is to go to a Chrome tab and type it in and send it to who knows, send it to blockchain.com or whoever.
 
 Speaker 0: 00:38:40
 
-Yeah, and by the way, if you receive a transaction and you want to, Then you don't know the inputs of that transaction.
-So you, sorry, the input amount of that transaction, because that's on the blockchain, not in the transaction itself, right?
+Yeah, and by the way, if you receive a transaction and then you don't know the inputs of that transaction.
+Sorry, the input amount of that transaction, because that's on the blockchain, not in the transaction itself, right?
 It's on the previous transaction output.
 And then you cannot do effective fee bumping in a child pays for parent transaction.
-Because you'd...
 So this is an issue that we have of kind of quote-unquote stuck payments that you received.
 And maybe something like that might be helpful.
 And so you can query the amount of that input and then do better fee bumping.
 
 Speaker 1: 00:39:24
 
-I see.
 I see.
 So to summarize, You know you received a payment, but you just don't know how much it is, essentially, because that information is just kind of not local.
 
@@ -602,20 +599,15 @@ Speaker 0: 00:40:08
 Exactly.
 And then you can't do child pays for parent fee calculations.
 
-Speaker 1: 00:40:14
-
-So that is a, yeah, that is...
-
 Speaker 0: 00:40:17
 
 It's just one of those edge cases where we thought it would be nice to be able to just well search for an address.
-Yeah.
-But then we realized, yeah, it'll take minutes hours.
+But then we realized, it'll take minutes hours.
 
 Speaker 1: 00:40:30
 
 Right.
-I think, yeah, so long term, I guess I have a slide on this, but, oh, no.
+I guess I have a slide on this, but, oh, no.
 I think long term, we would like to build a, like an SDK, so that we're not kind of like individually hand engineering the homomorphic encryption, but so that it's kind of a totally generic thing.
 So the dream is that there's like a piece of code that you point a bunch of, like basically an array app, and then there's an endpoint that you can privately query that data using.
 So certainly for all these kinds of smaller things that you want to do, that really kind of makes sense.
@@ -629,7 +621,7 @@ So then all the queries are connected to the same public key?
 
 Speaker 1: 00:41:26
 
-So all of the queries are made using the same, yes, each query is connected to the same, let's say, key pair.
+So each query is connected to the same, let's say, key pair.
 The crucial part is that every query is encrypted.
 So it's encrypted under this key.
 So it's not, the queries, I guess, are identifiably from the same party.
@@ -651,10 +643,9 @@ Speaker 1: 00:42:32
 Yeah, some mitigations for timing are just pacing.
 So a simple thing you can do is just kind of like just paste requests and send dummy requests.
 But yes, obviously these incur costs.
-So yeah.
-Yeah, today, if you want to do the same thing for block filters, you are kind of stuck in that.
+Today, if you want to do the same thing for block filters, you are kind of stuck in that.
 The timing alone of your request is going to kind of correlate them.
-So yeah, it is kind of a tough problem.
+It is kind of a tough problem.
 
 Speaker 0: 00:43:08
 
@@ -663,8 +654,8 @@ That's why batch requests are also very important, I would say.
 Speaker 1: 00:43:13
 
 Yeah, yeah, certainly a batch request where we round up the size.
-So like, it would be important to not reveal the exact number of addresses you have in your wallet, just because that is probably kind of identifiable.
-So yeah, if we just round up the number of addresses and let you query up to X thousand addresses at a time.
+It would be important to not reveal the exact number of addresses you have in your wallet, just because that is probably kind of identifiable.
+If we just round up the number of addresses and let you query up to X thousand addresses at a time.
 I will do some more research and thinking on batching.
 It's very useful.
 Thank you so much for like talking to us and letting us hear your problems and stuff.
