@@ -962,28 +962,11 @@ It just kind of does the computation and sends the encrypted result back to the 
 Speaker 4: 01:02:12
 
 Oh, okay.
-Okay, it's like a cryptographic challenge
-
-Speaker 0: 01:02:16
-
-protocol
-
-Speaker 4: 01:02:20
-
-that's like the server is sending bytes, but those bytes are not the address, but somehow be the client server challenge, you can establish the address or the information that the
-
-Speaker 1: 01:02:40
-
-server is sending
-
-Speaker 4: 01:02:41
-
-on the client.
-Holy shit,
+Okay, it's like a cryptographic challenge protocol. The server is sending bytes, but those bytes are not the address, but somehow with the client server challenge, you can establish the address or the information that the server is sending on the client. 
+Holy sh*t, that's something.
 
 Speaker 1: 01:02:44
 
-that's something.
 Yeah, so the client is sending an encrypted version of its query and it gets an encrypted response.
 And the point is the server never decrypts anything.
 Yeah, that's the point.
@@ -991,13 +974,12 @@ Everything stays encrypted.
 It's almost like end to end encryption.
 Like end-to-end encryption.
 The catch is that it's expensive for the server to do the computation.
-So you know the server has to invest a lot of effort to kind of answer your query.
+The server has to invest a lot of effort to kind of answer your query.
 So you might need to eventually pay them or like in some way incentivize their their behavior
 
 Speaker 4: 01:03:23
 
-How expensive is it so expensive as?
-For the entire Bitcoin transaction history Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
+How expensive? Is it so expensive as for the entire Bitcoin transaction history Blockchain wouldn't be able to run on a single server no matter how big you are trying to buy?
 
 Speaker 1: 01:03:40
 
@@ -1016,22 +998,21 @@ Then we'll have to think of a better way to kind of batch your queries.
 Speaker 0: 01:04:38
 
 Yeah, so Adam, there's multiple layers of why this might be very difficult for us to use.
-One is we might want the transaction history, so this is the whole TX outset instead of the
+One is we might want the transaction history, so this is the whole TX outset instead of the UTXO set.
 
 Speaker 4: 01:04:49
 
-UTXO set.
 We definitely want that, so we cannot get that?
 
 Speaker 0: 01:04:55
 
 We could, but then the size of the database gets larger because you need to store all outputs, not just the unspent ones.
 And so that's the first issue.
-The second
+The second issue is —
 
 Speaker 4: 01:05:05
 
-issue is because- But how large?
+But how large?
 Like so large that we cannot run on a server or we can buy that big server for it?
 Come on, like seriously, if this is the issue and we could buy a server for it, like I think it would be worth it because this is the single most problematic thing that we have performance-wise in Wasabi Wallet.
 But this is why we are not like Blue Wallet.
