@@ -1550,21 +1550,16 @@ The code, someone has to write the code, right?
 And that is where developers always make mistakes, huge mistakes.
 But so, yes, we implemented that because there are no libraries for that.
 Let's say we implemented our own crypto library, right?
-However, the good part is that in my case at least I made so many mistakes before that I think I learned by doing and by making mistakes and and also the code is extremely reviewed.
+However, the good part is that in my case at least I made so many mistakes before that. I think I learned by doing and by making mistakes and and also the code is extremely reviewed.
 So I think we did it really, really well this time.
 
 Speaker 0: 01:42:30
 
 Samir, do you still have time?
-Are we just boring you
-
-Speaker 3: 01:42:33
-
-at this
+Are we just boring you at this point?
 
 Speaker 1: 01:42:33
 
-point?
 I have about 10 or 15 more minutes if you guys want to keep chatting.
 
 Speaker 0: 01:42:39
@@ -1589,7 +1584,7 @@ This is one question that I've been meaning to ask, is that given that the homom
 
 Speaker 1: 01:43:22
 
-Yep, yep, yeah.
+Yep, yep.
 That's what the, sometimes you see this abbreviated as fully homomorphic encryption, that's what the fully means.
 So yeah, you can do arbitrary computation, encrypted.
 Anything you can compute on regular data, it's possible to compute on encrypted data,
