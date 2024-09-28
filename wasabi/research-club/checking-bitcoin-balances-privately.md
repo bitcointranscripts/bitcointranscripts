@@ -671,12 +671,11 @@ Speaker 1: 00:44:12
 
 The client has to wait for as long as it wants to, almost directly in proportion to how much it's willing to pay.
 If you want to make a thousand queries, right, let's say it's 5000 seconds of computation, right?
-If you pay the server, as you know, computation is like, kind of cheap and parallelizable.
-So you can imagine a server, especially like in a search look, basically like a cloud provider or something that just goes, okay, if you pay me 5000 times one cent, or point one cents or whatever.
-I'll, I'll process your query in one second, cause I'll just throw 5,000 cores at it.
-So, so it is kind of, it is infinitely divisible.
+If you pay the server, as you know, computation is kind of cheap and parallelizable.
+So you can imagine a server, especially like in a search look, basically like a cloud provider or something that just goes: "Okay, if you pay me 5000 times one cent, or point one cents or whatever.
+I'll process your query in one second, cause I'll just throw 5,000 cores at it."
+So, it is infinitely divisible.
 It's, it's naively parallel as an algorithm.
-So.
 
 Speaker 0: 00:45:01
 
@@ -684,10 +683,8 @@ That's really interesting to hear.
 
 Speaker 1: 00:45:06
 
-So yeah, there's a nice, Yeah.
 There's an interesting intersection with the fact that this is all for a payment system, right?
 So It would be interesting to think about.
-Yeah.
 
 Speaker 0: 00:45:19
 
@@ -695,12 +692,10 @@ Okay, I think I'm pretty much out of questions for now.
 Does anyone else have any?
 No, then would be nice to get a bit more into the crypto magic.
 If you could.
-Sure.
-Sure.
 
 Speaker 1: 00:45:30
 
-I I'm If this altitude is kind of too much or too little, let me know.
+If this altitude is kind of too much or too little, let me know.
 The slide is kind of gross looking.
 But I'll just walk through the basics of how this works.
 So, here's how this kind of works on the inside.
@@ -712,12 +707,12 @@ If you remember linear algebra, I'm using the word vector kind of on purpose.
 So it's a column vector of bits where it's a one-hot encoding.
 If you've been around machine learning, you might have heard the term one-hot before.
 But basically that means there's a one in the location that I want to retrieve and zeros everywhere else.
-So there's a zero in these entries and there's a one at the desired index.
+There's a zero in these entries and there's a one at the desired index.
 So I'm going to form this vector.
 It's just a plain text bits on my client.
 And then I'm going to encrypt each of them.
-So I'll explain, you know, the encryption we use has a special property, which we'll get to, but basically it is also, it behaves mostly like a normal encryption scheme.
-So you encrypt each bit, and now these, you know, these encrypted bits get sent to the server.
+The encryption we use has a special property, which we'll get to, but basically it is also, it behaves mostly like a normal encryption scheme.
+So you encrypt each bit, and now these these encrypted bits get sent to the server.
 And just like if you AES encrypted them, the server can't tell what any of these bits encrypt.
 It's kind of crucial to remember that the encryption of zero and the encryption of zero, they don't look the same.
 Every time you encrypt zero, you get a different looking random thing.
@@ -967,9 +962,9 @@ Speaker 1: 01:01:18
 Okay, okay, I can do a little, I can explain a little more.
 So, so yeah, the way it works intuitively is basically the client sends this kind of encrypted vector of bits.
 Encrypted vector of bits and the server does like an encrypted dot product between the bits that the client sends and the items in the database.
-And the point is, you know, The one bit will kind of be the item that we want, and the zero bits will kind of cancel out all the items we don't want.
+And the point is The one bit will kind of be the item that we want, and the zero bits will kind of cancel out all the items we don't want.
 And the server will add these all up and send it back to the client.
-And the point is the server never learned, you know, what the encrypted bits were.
+And the point is the server never learned what the encrypted bits were.
 It never learns what the sum of everything was.
 It just kind of does the computation and sends the encrypted result back to the client.
 
@@ -1017,7 +1012,7 @@ Speaker 1: 01:03:40
 
 That's a good question.
 It used to be impossibly big.
-It used to be like, you know, I would say years, you know, to do a single Bitcoin address lookup.
+It used to be like years to do a single Bitcoin address lookup.
 But today it's not so bad.
 So today there's been a lot of innovation.
 Today you can look up a balance of an address today at our site, like, very easily, and our server costs, I think, like, 50 bucks a month to run or something.
@@ -1047,7 +1042,7 @@ Speaker 4: 01:05:05
 
 issue is because- But how large?
 Like so large that we cannot run on a server or we can buy that big server for it?
-Come on, like seriously, if this is the issue and we could buy a server for it, like I think it would be worth it because, you know, this is the single most problematic thing that we have performance-wise in Wasabi Wallet.
+Come on, like seriously, if this is the issue and we could buy a server for it, like I think it would be worth it because this is the single most problematic thing that we have performance-wise in Wasabi Wallet.
 But this is why we are not like Blue Wallet.
 This is the reason and if it would be feasible, then I think it would be worth it.
 
@@ -1079,7 +1074,7 @@ So one layer is you can also just look at which addresses were because of kind o
 You could have a database that says, when were these wallets last interacted with?
 You could just query that database and you could find out, okay, 9,000 of these addresses, nothing happened on them since I last opened this app.
 Right.
-And then for the thousand that are remaining, you could look and see, you know, which, which ones of them have a balance still or are still active.
+And then for the thousand that are remaining, you could look and see which, which ones of them have a balance still or are still active.
 And then you could retrieve each of their transaction histories kind of individually.
 It's not perfect, but something I'll do is I think I will, I will try to build up a number of addresses in my wallet that's large enough to kind of test with.
 And I would love to play around and see how this could work or at least, yeah.
