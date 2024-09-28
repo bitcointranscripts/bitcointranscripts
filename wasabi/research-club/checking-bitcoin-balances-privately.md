@@ -1197,10 +1197,9 @@ Mike, you are the one who wrote the Columbus Rites Theater stuff, so you put a l
 Speaker 6: 01:18:37
 
 Honestly, I don't know.
-I would like to know more about the technology, but when I entered into the meeting, they were already discussing how to use the technology, but know what the technology really is.
+I would like to know more about the technology, but when I entered into the meeting, they were already discussing how to use the technology, but not what the technology really is.
 So, I tried to do my best to understand.
-Basically, what I think is the technology is clearly good.
-Right?
+Basically, what I think is the technology is clearly good, right?
 So, I'm sure there are many scenarios that we can, many problems that we used to have can be solved by this.
 But I don't know exactly how can we use it for our, let's say, for reconstructing our local UTXO set.
 The UTXO set that is relevant for the wallet, right?
@@ -1212,11 +1211,11 @@ But I use the wallet more or less frequently, right?
 And it takes nothing for me to open, to synchronize.
 It's just, to me, it's exactly the same as blue wallet, right?
 It's very good.
-So I think it, no, I think it doesn't worth the effort to even if the technology, no, no, the technology, even if the requirement of the technology in terms of bandwidth, storage, CPU, even if we can afford that, I don't know if we can afford to change the architecture of the wallet to use this technology, right?
+So I think it, no, I think it doesn't worth the effort even if the requirement of the technology in terms of bandwidth, storage, CPU, even if we can afford that, I don't know if we can afford to change the architecture of the wallet to use this technology, right?
 And even if we can afford all of that, I don't know if the result will be so good because we have to do a lot of requests, lots.
 And the process of discovering the wallet is the same, right?
 I don't know what's the keys.
-So I have to query one key, one key, one key, one key, one key, and we will discover that, oh, well, now I have to try with the next 21 keys or the next, I don't know, some of our users have minimum gap limits of, I don't know, 600.
+So I have to query one key, one key, one key, and we will discover that, oh, well, now I have to try with the next 21 keys. Some of our users have minimum gap limits of, I don't know, 600.
 I don't know.
 So I have to query the next 600 keys.
 No, I don't think it is possible.
@@ -1225,19 +1224,6 @@ Before, first time I read something about this, three servers were required for 
 It was a feeling mess, but now it's getting, it seems it's getting better and better.
 And so we have to have an eye on this technology, but no for synchronizing the wallet.
 I'm pretty sure about it.
-
-Speaker 1: 01:22:36
-
-I think that
-
-Speaker 2: 01:22:37
-
-makes a
-
-Speaker 0: 01:22:37
-
-lot of sense.
-Yeah, absolutely.
 
 Speaker 1: 01:22:38
 
