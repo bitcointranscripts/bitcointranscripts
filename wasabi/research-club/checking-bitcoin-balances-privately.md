@@ -732,7 +732,6 @@ So the point is this ability to do this multiplication, that's not normal.
 Normal encryption doesn't let you do that.
 So if you AES encrypt zero and then like multiply by eight, you will just get garbage.
 There's no, it does not become like encrypted zero.
-This is...
 
 Speaker 0: 00:48:38
 
@@ -758,16 +757,15 @@ Speaker 0: 00:49:27
 
 Nice.
 Thanks.
-Continue,
+Continue, please.
 
 Speaker 1: 00:49:29
 
-please.
 So then you can do the same thing just like we multiplied, you can also, you're allowed to add.
 So if you add encrypted zero and encrypted seven, you get encrypted seven and so on.
 So you kind of add all of the results and now you have a single encrypted result that you can send back to the client.
 The client can decrypt and get the item that it wanted.
-So this is how it's kind of, let's say, possible to do this.
+So this is how it's kind of possible to do this.
 You should, there's probably one glaring problem with this toy example, which is that we uploaded in our query the same number of elements as are in the database.
 So, our query is very, very big.
 You know?
