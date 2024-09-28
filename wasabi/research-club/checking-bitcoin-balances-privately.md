@@ -1233,7 +1233,8 @@ It used to be that you had to trust that the servers don't collude, which is kin
 Yeah, we've come a long way.
 I think I'm really interested in this in this private block explorer thing.
 And I think it might not be part of Wasabi wallet, but I think it's obviously part of like an ecosystem of private Bitcoin.
-If you use Wasabi wallet, but then use a public block explorer, you're kind of fucking it up you're kind of not, you're kind of defeating some of the purpose of the wallet.
+If you use Wasabi wallet, but then use a public block explorer, you're kind of f*cking it up. 
+You're kind of defeating some of the purpose of the wallet.
 So I hope at least those two things sound kind of complimentary.
 
 Speaker 6: 01:23:28
@@ -1241,7 +1242,7 @@ Speaker 6: 01:23:28
 Sorry, yes, I completely agree.
 In fact, many times we say, okay, how can we, for example, provide more information to the users, right?
 Because basically a server has a global view of the blockchain while a client has only a local view of the blockchain, right?
-So basically, the client many times can take advantage of information that only the server knows, but you cannot ask the server, hey, can you, could you please tell me this?
+So basically, the client many times can take advantage of information that only the server knows, but you cannot ask the server: "hey, can you, could you please tell me this?"
 Because, well, in that case, you are revealing information to the server.
 So, sometimes you want to say, okay, how can I ask for this to a central server without revealing my identity or my intentions, right?
 So that kind of things is something that, that's why I say that we have to keep an eye on this technology.
@@ -1249,7 +1250,7 @@ So that kind of things is something that, that's why I say that we have to keep 
 Speaker 1: 01:24:33
 
 Yeah, so that's a great point.
-So I know I'm kind of more familiar, I have been in cryptography, but not crypto.
+So I have been in cryptography, but not crypto.
 I was really into Bitcoin in like 2015, I TA'd our class and then I totally checked out.
 Yeah, so I'm a little unfamiliar, but what kind of metadata, what kind of like data do block explorers provide about an address that is kind of that global state.
 So I can think of, in the kind of Ethereum version, I can think of some NFT thing pull up some image or there's like that kind of data.
@@ -1268,7 +1269,7 @@ Speaker 1: 01:25:35
 Ah, I see.
 So what IP submitted this address?
 Yep.
-Are there, there's also, is there like a kind of naming, is there like a DNS equivalent, like people who use like op return to kind of store data in some kind of structured way to register a name or whatever.
+Is there like a DNS equivalent, like people who use like `OP_RETURN` to kind of store data in some kind of structured way to register a name or whatever.
 That kind of data is also, while it's in the transaction, the metadata about it is not, right?
 
 Speaker 0: 01:26:12
