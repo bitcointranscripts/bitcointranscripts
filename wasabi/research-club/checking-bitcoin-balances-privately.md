@@ -550,8 +550,8 @@ Right, to just get the active wallet balance really quickly.
 Samir Menon: 00:37:26
 
 And yeah, so no syncing.
-Actually, it might even make sense just as a kind of, yeah, as a fallback or even kind of as a like setup thing.
-I mean, the fact that you don't incrementally have to do anything, like each query costs the same and, or I guess the first one costs a little more, but basically there's no sinking, right?
+Actually, it might even make sense just as a kind of fallback, or even kind of as a setup thing.
+The fact that you don't incrementally have to do anything, like each query costs the same and, or I guess the first one costs a little more, but basically there's no syncing, right?
 There's no like client state that I'm trying to get into sync with the chain.
 I'm just kind of, I can make a query kind of one-off.
 Something I noticed is, can you query the balance of an address that's not in your wallet today?
