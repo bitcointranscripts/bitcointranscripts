@@ -1414,19 +1414,17 @@ Okay.
 
 Speaker 0: 01:35:30
 
-The token gets created during input registration and you can only register an output if you present such a token and it's anonymous e-cash so to say.
+The token gets created during input registration and you can only register an output if you present such a token and it's anonymous eCash so to say.
 Very rough explanation.
 
 Speaker 4: 01:35:43
 
-Cool.
-Are you familiar with the Chowmian blind signatures?
+Are you familiar with the Chamian blind signatures?
 
 Speaker 1: 01:35:49
 
-Chowmian blind signatures?
-Yes.
-I'm familiar with the name Chowmian, but no, I haven't heard of Chowmian blind signatures.
+Chaumian blind signatures?
+I'm familiar with the name Chaumian, but no, I haven't heard of Chaumian blind signatures.
 Blind signatures probably did a piece set about that, but I could not off the top of my head say what exactly it is.
 It's for voting, right?
 I think.
