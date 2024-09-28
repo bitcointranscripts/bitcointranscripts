@@ -1549,7 +1549,7 @@ Now the problem is in the implementation.
 The code, someone has to write the code, right?
 And that is where developers always make mistakes, huge mistakes.
 But so, yes, we implemented that because there are no libraries for that.
-There is no, it's not, it's so basically, let's say we implemented our own crypto library, right?
+Let's say we implemented our own crypto library, right?
 However, the good part is that in my case at least I made so many mistakes before that I think I learned by doing and by making mistakes and and also the code is extremely reviewed.
 So I think we did it really, really well this time.
 
