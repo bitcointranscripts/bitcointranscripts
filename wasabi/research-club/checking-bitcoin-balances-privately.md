@@ -1519,11 +1519,10 @@ But he's not here.
 Speaker 0: 01:40:18
 
 Plus, we didn't roll over on crypto, but we're script kiddies and just copied it from an existing paper.
-So should be
+So should be all right.
 
 Speaker 1: 01:40:25
 
-all right.
 That's what a cryptographer would do, right?
 That's that's exactly they would say, we're not going to roll around, we're going to get a library, right?
 So you did the right thing.
@@ -1532,13 +1531,17 @@ Speaker 4: 01:40:34
 
 We kind of did it all, right?
 Like we wrote a lot of cryptography code.
+
+Speaker 0: 01:40:42
 Yep, did not use a library.
+
+Speaker 4: 01:40:46
 But Lucas, we didn't roll.
 Lucas, would you say we rolled our own crypto or not?
-Good question.
 
 Speaker 6: 01:40:58
 
+Good question.
 No, the crypto that we are using is just a very specific case of one more general case that is the one that describes the signal white paper for anonymous groups.
 So they have a general case and we use only one specific case of that.
 So we are not doing that.
