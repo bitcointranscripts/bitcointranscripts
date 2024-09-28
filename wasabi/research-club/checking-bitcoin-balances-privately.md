@@ -1128,12 +1128,12 @@ But you also don't have to take it with you when you move and figure out your IS
 
 Speaker 4: 01:13:35
 
-So if I understand it correctly, the reason why we cannot use it is because There are two problems here.
+So, if I understand it correctly, the reason why we cannot use it is because there are two problems here.
 First, if we want to have the entire transaction history of an address, then we would have to run a server that might be too big for us.
 There is no such a server existing in this world to run that.
 And this question could be investigated, right?
 And the other issue is that when you have tens of thousands of addresses, like it is taking long to make those tens of thousands of cryptography key challenge exchanges to figure out the entire transaction history.
-So this might be taking like half an hour or how long?
+So, this might be taking like half an hour or how long?
 
 Speaker 5: 01:14:43
 
@@ -1159,17 +1159,17 @@ Speaker 1: 01:15:30
 
 No, not really.
 I think you'll run into memory at some point.
-You'll want to, you'll start thinking, okay, well, if you put 5000 cores on a system with 8 gigs, you might get bottlenecked by other things.
+You'll want to, you'll start thinking, okay, if you put 5000 cores on a system with 8 gigs, you might get bottlenecked by other things.
 So there is kind of a thing.
 I will say, I don't think it's super feasible.
 CPUs are cheap, but they're not that cheap.
 So I don't want to...
-I think I agree with Max's assessment that for this to be feasible, we need to find a way to do this for large numbers of addresses and not have it be like, dollars per lookup, like significant amount of money per lookup, because I think that's, that's if the goal is to lower the barrier to entry and to like, make it better, right, that's, that's going to be a roadblock.
+I think I agree with Max's assessment that for this to be feasible, we need to find a way to do this for large numbers of addresses and not have it be like, dollars per lookup, like significant amount of money per lookup, because I think if the goal is to lower the barrier to entry and to like, make it better, that's going to be a roadblock.
 It's going to be tough to, to want to pay a dollar every time you want to know how much money you have.
 So, I believe we can work on this.
 I'm not, I haven't lost all hope.
 I think it's really useful to hear that people have so many addresses and I want to know more about like what those addresses look like.
-You kind of explained that they're kind of the outputs of a, of a, their output addresses as a result of a coin join, sometimes a failed coin join.
+You kind of explained that they're output addresses as a result of a coin join, sometimes a failed coin join.
 But yeah, the more I can kind of understand that, the more I think it could be feasible kind of to make progress.
 
 Speaker 0: 01:17:12
@@ -1184,7 +1184,7 @@ Speaker 1: 01:17:38
 
 Okay.
 Certainly, I mean, spent.
-So something cool about spent coins is that like once they're spent, they can't come back.
+Something cool about spent coins is that like once they're spent, they can't come back.
 So yeah, we can exploit that.
 
 Speaker 4: 01:17:56
