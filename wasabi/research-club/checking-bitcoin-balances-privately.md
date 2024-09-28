@@ -1615,7 +1615,7 @@ So that is fully homomorphic.
 And it exists.
 We don't use that part of it because it's quite slow.
 But it does exist.
-It is possible.
+It is possible. 
 
 Speaker 3: 01:45:15
 
@@ -1630,11 +1630,10 @@ Yeah, it's possible.
 Speaker 3: 01:45:30
 
 If I may ask Fabricio, is that implementable in lookup tables and FPGAs and stuff?
-Yeah, it's
 
 Speaker 1: 01:45:40
 
-not that amenable to hardware acceleration.
+Yeah, it's not that amenable to hardware acceleration.
 
 Speaker 7: 01:45:44
 
