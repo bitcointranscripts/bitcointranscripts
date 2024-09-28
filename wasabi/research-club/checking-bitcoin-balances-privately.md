@@ -63,7 +63,7 @@ I think it was implemented by the Neutrino wallet also, which is this block filt
 
 ## Block Filter Solution
 
-Speaker 1: 00:05:42
+Samir Menon: 00:05:42
 
 So basically what happens here, I'm sure you guys know, but it's basically compact data about the transactions in each block is kind of streamed to the client continuously.
 And then when the client sees that a block contains a relevant transaction, it just fetches the full block.
@@ -71,18 +71,18 @@ So there's like a couple complications with this way of doing things.
 One, I guess, practical thing is that the blocks are kind of big.
 The blocks are one megabyte up to one megabyte each.
 And for kind of privacy reasons, you can't just get a subset of the block.
-If you have a wallet that's kind of busy, like if you use your wallet, say, every hour, you have to download a megabyte an hour.
+If you have a wallet that's kind of busy, if you use your wallet, say, every hour, you have to download a megabyte an hour.
 So as frequently as your addresses are making transactions, that's how much data you need to kind of stream.
-The filters themselves are also, you know, a kind of continuous ongoing cost, because you've got to monitor.
+The filters themselves are also a kind of continuous ongoing cost, because you've got to monitor.
 So if you're offline for some time, you need to kind of scan through all the filters and see if you're offline.
 And maybe in a different way, there's kind of this leakage problem.
-So one problem is the act of fetching the block is not protected.
+One problem is the act of fetching the block is not protected.
 I mean, we announce which block we're trying to fetch.
-But what we do is, I mean, as a mitigation, you know, if we did this all with the same node, that would be bad because the node could kind of pretty easily tell from the blocks that you fetch which address you're interested in.
+But what we do is, as a mitigation, if we did this all with the same node, that would be bad because the node could kind of pretty easily tell from the blocks that you fetch which address you're interested in.
 You could just kind of do an intersection attack, can work quite well.
 The mitigation is generally that you connect to different peers for each block.
-So you connect to a different peer to download each block.
-But you know again here the timing really trips us up right again just knowing that just watching it even if I'm not like even if I'm not a Tor adversary, I'm not able to like, you know, de-anonymize you on Tor.
+You connect to a different peer to download each block.
+But again, here the timing really trips us up, right? Again, just watching it, even if I'm not like even if I'm not a Tor adversary, I'm not able to de-anonymize you on Tor.
 If I'm just like your university network administrator, and I just watch your bandwidth consumption, I will just notice a one megabyte download on some cadence, right?
 And if I just like kind of correlate that with blocks on the chain, then I just kind of see, it seems like you might have downloaded block 379 and 24.
 It doesn't become terribly difficult to figure out an address.
@@ -90,17 +90,17 @@ So there's some leakage.
 I think in all of these examples, the attack I outlined is kind of theoretical, but it's mostly just to illustrate that there is leakage that's still kind of there.
 There are some other options which people kind of suggest.
 I don't know if you guys are the audience who would exactly suggest this.
-I guess industry kind of more, I don't know, the A16Z folks or whatever would say, oh, why don't you just run it on AWS?
+I guess industry kind of more. The A16Z folks or whatever would say: "Oh, why don't you just run it on AWS?"
 But of course, kind of just replacing a box with a different box, right?
 Here, now you're just trusting the cloud provider kind of to do everything.
 And I guess another suggestion folks have is running a full node.
-And I think that, you know, to be honest, that is a great suggestion.
+And I think that, to be honest, that is a great suggestion.
 If you want really sovereign kind of control over the data, I think running a full node yourself is a good idea.
 It is just kind of hard.
 I mean, you have to make it remotely accessible.
 It's kind of annoying to set up and maintain.
 If we could find a way without having to run a full node, allow clients to kind of privately query the blockchain, that would still be a good thing because we want to reduce the barrier to entry, we want more people to use this.
-Yeah, I mean, there aren't that many full nodes, so not that many people do something like this.
+There aren't that many full nodes, so not that many people do something like this.
 So the way Spiral works is it uses homomorphic encryption to remove the wallet addresses piece of the query.
 So the server is still learning your IP address, but now there's no useful data to correlate with that IP address.
 The basic idea is a spiral uses homomorphic encryption to encrypt your query when it leaves your device, and then it's able to process your query and return an encrypted answer without learning anything about your query.
@@ -108,20 +108,20 @@ The guarantee is it's not statistical, this is not like a mixing or any kind of 
 This is, it's not like hashing, it's not buckets, it's a full cryptographic guarantee that the server cannot learn anything about the query, even if they're actively malicious.
 It does incur higher computational costs for the server.
 In particular, the server has to do work that's linear in the size of the database.
-So if the database gets bigger, so today the database is a bunch of Bitcoin balances, if we wanted to include, you know, when we added transaction data or if we want to include more data say about individual transactions, that will make the server's runtime longer.
-But On the other hand, the communication is better, and there's kind of no ongoing syncing really needed.
+Today the database is a bunch of Bitcoin balances, if we wanted to include when we added transaction data or if we want to include more data say about individual transactions, that will make the server's runtime longer.
+But, on the other hand, the communication is better, and there's kind of no ongoing syncing really needed.
 The server can kind of keep its database up to date, and whenever the client wants to get the most up-to-date information, they can make another query.
 Today, we only support balances and the five most recent UTXOs. That's because of this thing I talked about earlier where the computational cost for the server is linear in the size of the database.
-So if we wanted to make it 10 most recent, it would cost more.
-So we need to think carefully about how we can make that kind of scale to at least a use case that's useful.
-And yeah, of course, the code is open source, and there's a paper and everything.
+If we wanted to make it 10 most recent, it would cost more.
+We need to think carefully about how we can make that kind of scale to, at least, a use case that's useful.
+Of course, the code is open source, and there's a paper and everything.
 And I'm happy to answer any questions about how it works.
 I have a slide that kind of explains more of the technical underpinnings of Spiral.
 So if you want, I can just go through that slide if you want to hear more about homomorphic encryption stuff.
 
 ## Open Questions
 
-Speaker 1: 00:12:00
+Samir Menon: 00:12:00
 
 But before I do that, I'll just kind of say, yeah, I think the open questions for us are, you know, what minimum set of data is enough?
 I think balance is on its own, it's not quite enough.
