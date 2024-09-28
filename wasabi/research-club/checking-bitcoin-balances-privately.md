@@ -123,51 +123,49 @@ So if you want, I can just go through that slide if you want to hear more about 
 
 Samir Menon: 00:12:00
 
-But before I do that, I'll just kind of say, yeah, I think the open questions for us are, you know, what minimum set of data is enough?
+But before I do that, I think the open questions for us are: what minimum set of data is enough?
 I think balance is on its own, it's not quite enough.
-I think if I was, When I run a wallet software, I kind of expect more than just the balance in all my addresses.
+When I run a wallet software, I kind of expect more than just the balance in all my addresses.
 We obviously need to think about fetching more than one address.
-Because today there's like a website and you can fetch one address, but you know, wallets have more than one address.
-And yeah, I think there's a couple options on how we do that.
+Because today there's like a website and you can fetch one address but wallets have more than one address.
+I think there's a couple options on how we do that.
 We need to think a little bit about the pay or incentivization structure for servers.
-This is a kind of class in computation.
-So how can we make it feasible or practical for them?
+This is a kind of classic computation.
+So, how can we make it feasible or practical for them?
 And long term, I think I would like to see an open standard for PIR for this data.
-So what we want is something that's not tied to a company or a person or an organization, but just kind of ideally, like maybe a BIP or something that allows us to not tie ourselves to any particular scheme and do this PAR thing as an extension of our current way of, you know, say doing a get block RPC or whatever.
-So yeah.
+What we want is something that's not tied to a company or a person or an organization, but just kind of ideally, like maybe a BIP or something that allows us to not tie ourselves to any particular scheme and do this PAR thing as an extension of our current way of doing a `getblock` RPC or whatever.
+
 Would you like me to just go through the homomorphic encryption step?
 Because I got the idea.
 Would that be interesting?
-Yeah.
+Ok!
 
 Speaker 2: 00:13:32
 
-Go. Max, actually, maybe we can take an intermission just to ask a few questions and then we'll continue with
+Max, actually, maybe we can take an intermission just to ask a few questions and then we'll continue with
 
-Speaker 1: 00:13:39
+Samir Menon: 00:13:39
 
-the- That sounds great.
-Yeah.
+That sounds great.
 
 Speaker 2: 00:13:42
 
-Sure.
-Because I think a lot of people are going to have questions here and I'll just start myself.
+Because I think a lot of people are going to have questions here, and I'll just start myself:
 Can you kind of give us a ballpark of the cost of the server per UTXO?
 
-Speaker 1: 00:13:57
+Samir Menon: 00:13:57
 
 Sure.
-So I guess today what we do is we take the UTXO set and we kind of summarize it.
-So today we take the UTXO set and for every address we take the top five UTXOs if there are up to five.
+I guess today what we do is we take the UTXO set and we kind of summarize it.
+Today we take the UTXO set and for every address we take the top five UTXOs, if there are up to five.
 And we also compute its balance.
 And that's the data we do today.
-If you wanted to, say, query the entire UTXO set, that would be slightly bigger than what I outlined, but not that much bigger.
-If you want a sense of the size of the computational cost, maybe the simplest summary would be, you know, for every, yeah, I guess, if you think of the database size, the computational cost is about 300 megabytes per second.
-So what that means is like, if the database is one gig, it takes three CPUs to do this task.
+If you wanted to query the entire UTXO set, that would be slightly bigger than what I outlined, but not that much bigger.
+If you want a sense of the size of the computational cost, maybe the simplest summary would be: If you think of the database size, the computational cost is about 300 megabytes per second.
+What that means is like, if the database is one gig, it takes three CPUs to do this task.
 So the task is fully parallelizable.
 So you can think of computation as just a cost.
-You know, like if you did it with three cores, you know, you would take one second.
+If you did it with three cores you would take one second.
 But yeah, it's around 300 megabytes per second.
 
 Speaker 2: 00:15:15
@@ -177,24 +175,24 @@ So the big situation here is that for WasabiWallet, we would want, as like an MV
 Our users, they want proof.
 They want to know that it's connected to block headers that are in the chain with the most proof of work.
 But on top of that, we also need to know that the server isn't in some ways deceiving us.
-For example, just lowering the balances of all the users or just omitting certain UTXOs. Block filters do a nice job of this because you're, you know, you're just hoping the server does an accurate job of creating the filters and you're clearing the blocks and you get these entire blocks.
-So the only way that you're going to have an incorrect balance is if the server somehow malleates a filter but there's not really a good, you know, it's kind of a weird, unclear attack vector.
-So how practical would it be to actually get some kind of proofs on top of the balance that you're already producing?
+For example, just lowering the balances of all the users or just omitting certain UTXOs. Block filters do a nice job of this, because you're just hoping the server does an accurate job of creating the filters and you're clearing the blocks and you get these entire blocks.
+The only way that you're going to have an incorrect balance is if the server somehow malleates a filter but it's kind of a weird, unclear attack vector.
+How practical would it be to actually get some kind of proofs on top of the balance that you're already producing?
 
-Speaker 1: 00:16:35
+Samir Menon: 00:16:35
 
-Yeah, yeah, that's a great question.
-So, so, so, I'm sure the exact name of this is so, so what we want is a Merkle inclusion proof, right?
+Yeah, that's a great question.
+So, what we want is a Merkle inclusion proof, right?
 
 ## Miracle Inclusion Proof
 
-Speaker 1: 00:16:45
+Samir Menon: 00:16:45
 
-We, we, We just want to say that this transaction is part of this block and to do that we need the log, if n is the number of transactions, we need log n kind of hashes to show inclusion.
+We just want to say that this transaction is part of this block and to do that we need the log, if n is the number of transactions, we need log n kind of hashes to show inclusion.
 I think we use this kind of vertical proof of inclusion somewhere else, but I'm forgetting.
 I think there's a wallet that that uses these.
-But yeah, so to include those that would be more costly.
-And yeah, to be clear, today we definitely do not have any kind of, you know, there's no proof that the server is really serving you the right data.
+So to include those that would be more costly.
+To be clear, today we definitely do not have any kind of, you know, there's no proof that the server is really serving you the right data.
 So that is a big problem.
 Obviously, we need to kind of have some proof.
 The good news is, yeah, we could always add Merkle proofs of inclusion.
