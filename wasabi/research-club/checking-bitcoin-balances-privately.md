@@ -935,26 +935,25 @@ Cool, thank you.
 Speaker 4: 01:00:36
 
 So I just arrived.
-Is there a way to summarize whole Spiral work in a, like, like on five?
+Is there a way to summarize whole Spiral work like I'm five?
 
 Speaker 1: 01:00:54
 
 That's magic.
 Sure, sure, sure.
 Yeah, I think the summary, the best summary is honestly Max's at the beginning, which was just like, basically Spiral is a way to retrieve an item from a database without letting it ever learn what item you retrieved.
-And the way it works is kind of complicated but
+And the way it works is kind of complicated but...
 
 Speaker 4: 01:01:14
 
-yeah.
 What does that mean?
 
 Speaker 1: 01:01:18
 
 Okay, okay, I can do a little, I can explain a little more.
-So, so yeah, the way it works intuitively is basically the client sends this kind of encrypted vector of bits.
+So, the way it works intuitively is basically the client sends this kind of encrypted vector of bits.
 Encrypted vector of bits and the server does like an encrypted dot product between the bits that the client sends and the items in the database.
-And the point is The one bit will kind of be the item that we want, and the zero bits will kind of cancel out all the items we don't want.
+And the point is, the one bit will kind of be the item that we want, and the zero bits will kind of cancel out all the items we don't want.
 And the server will add these all up and send it back to the client.
 And the point is the server never learned what the encrypted bits were.
 It never learns what the sum of everything was.
