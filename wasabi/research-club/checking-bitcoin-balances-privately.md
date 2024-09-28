@@ -368,12 +368,12 @@ One is, so one thing to notice, it's perfectly fine to use this homomorphic stuf
 They're orthogonal.
 One hides your IP and one hides the content of your queries.
 Doing both is probably a good thing.
-But I wonder if what homomorphic encryption could allow you to do is not construct a new circuit like every time.
-So if the query is encrypted, in some sense you don't need to use Tor, but if you'd like to also kind of hide your network level identifier, you could do both and use Tor, but not build a new circuit every time and instead just make many private queries to the same node.
-This would be presumably faster because Tor circuits can reach decent bandwidth, right, but not if they're, I think, freshly constructed every time, right?
+But, I wonder if what homomorphic encryption could allow you to do is not construct a new circuit every time.
+If the query is encrypted, in some sense you don't need to use Tor, but if you'd like to also kind of hide your network level identifier, you could do both and use Tor, but not build a new circuit every time and instead just make many private queries to the same node.
+This would be presumably faster because Tor circuits can reach decent bandwidth, right, but not if they're freshly constructed every time, right?
 Then you're going to pay the latency.
 
-Speaker 0: 00:27:02
+Max: 00:27:02
 
 Can we actually make batch requests with Spiral, like requesting multiple addresses simultaneously?
 
