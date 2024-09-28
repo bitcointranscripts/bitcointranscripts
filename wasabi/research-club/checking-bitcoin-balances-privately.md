@@ -8,6 +8,7 @@ tags:
   - 'privacy-enhancements'
   - 'cryptography'
   - 'block-explorers'
+  - 'wallet'
 speakers:
   - 'Samir Menon'
 categories:
