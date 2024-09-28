@@ -811,7 +811,6 @@ Every computation is like a composition of adding and multiplying.
 All our computers do are add and multiply.
 So there are ways to compute an arbitrary function on encrypted data.
 So what that means is the query is now much smaller and you perform this arbitrary computation to make all of these encrypted zeros and ones in a big way while keeping the query small.
-So yeah.
 
 Speaker 0: 00:53:39
 
@@ -822,10 +821,6 @@ Speaker 3: 00:53:42
 OK, this is where I saw this illustration, because I sent maybe the link to it before.
 My question is what is the mathematical principle that enables this?
 I'm a bit familiar with linear algebra.
-So that's, yeah.
-Yeah.
-So, yeah.
-Yeah.
 
 Speaker 1: 00:54:09
 
@@ -874,7 +869,6 @@ You know?
 
 Speaker 1: 00:57:28
 
-Yeah, sure.
 Yeah, feel free to reach out if you have other questions.
 
 Speaker 3: 00:57:33
