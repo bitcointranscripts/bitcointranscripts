@@ -663,7 +663,7 @@ That's why batch requests are also very important, I would say.
 Speaker 1: 00:43:13
 
 Yeah, yeah, certainly a batch request where we round up the size.
-So like, it would be important to kind of like, not reveal the exact number of addresses you have in your wallet, just because that is probably kind of identifiable.
+So like, it would be important to not reveal the exact number of addresses you have in your wallet, just because that is probably kind of identifiable.
 So yeah, if we just round up the number of addresses and let you query up to X thousand addresses at a time.
 I will do some more research and thinking on batching.
 It's very useful.
@@ -1011,8 +1011,8 @@ Yeah, so the client is sending an encrypted version of its query and it gets an 
 And the point is the server never decrypts anything.
 Yeah, that's the point.
 Everything stays encrypted.
-So it's kind of like, it's almost like end to end encryption.
-Like, like end-to-end encryption.
+It's almost like end to end encryption.
+Like end-to-end encryption.
 The catch is that it's expensive for the server to do the computation.
 So you know the server has to invest a lot of effort to kind of answer your query.
 So you might need to eventually pay them or like in some way incentivize their their behavior
@@ -1307,15 +1307,14 @@ Speaker 1: 01:24:33
 
 Yeah, so that's a great point.
 So I know I'm kind of more familiar, I have been in cryptography, but not crypto.
-So I'm kind of like, I was really into Bitcoin in like 2015, I TA'd our class and then I like totally checked out.
+I was really into Bitcoin in like 2015, I TA'd our class and then I totally checked out.
 Yeah, so I'm a little unfamiliar, but what kind of metadata, what kind of like data do block explorers provide about an address that is kind of that global state.
-So I can think of like in the kind of Ethereum version, I can think of like I don't know, they like, I don't know, some NFT thing, they like, pull up some image or there's like that kind of data.
+So I can think of, in the kind of Ethereum version, I can think of some NFT thing pull up some image or there's like that kind of data.
 But what are you thinking of that is global that these explorers would show?
-Well,
 
 Speaker 6: 01:25:28
 
-of course we don't know, right?
+Well, of course we don't know, right?
 
 Speaker 4: 01:25:31
 
@@ -1351,7 +1350,7 @@ There's so private information retrieval as a problem was posed.
 Yeah, like in the 80s.
 And there's been a bunch of kind of talk about it.
 But it never was practical.
-My best my my biggest thing I always make fun of is like, I think IBM had like a big demo where you could look up like the 50 US states privately.
+My best my my biggest thing I always make fun of is I think IBM had like a big demo where you could look up like the 50 US states privately.
 And it was like a big demo in 20 I think 2019 or something, that you could look up 50 states.
 It wasn't like a very large database.
 It was like the capitals of the 50 US states.
@@ -1373,14 +1372,14 @@ Yeah, okay,
 
 Speaker 0: 01:29:03
 
-And then somewhat related, but like, how does peer review work for such a paper?
+And then somewhat related, but how does peer review work for such a paper?
 Because it seems to me it's not a new cryptography, just as you say, applying old concepts, but how was the peer review
 
 Speaker 1: 01:29:14
 
 process?
 So it's a good question.
-I remember my advisor was like, yeah, are we are we is this going to be kind of like publishable?
+I remember my advisor was like: "yeah, is this going to be kind of like publishable?"
 And we we actually after we had that conversation, we did come up with some new cryptography.
 So we did end up kind of creating some some new techniques, kind of constructing a kind of variation or change to old schemes.
 So we did end up publishing it and I presented it at Oakland, which is like the kind of top security conference for academics.
@@ -1431,7 +1430,7 @@ I think there's a lot of companies, there's a surprising number of companies try
 I take a fairly pessimistic stance on this.
 I think something companies are really excited about is encrypted machine learning.
 What they really want to do is do machine learning on encrypted data, Which of course is kind of just like a way of using cryptography to violate your privacy instead of using it to, what they want to do is do like machine learning on your encrypted, on your end to end encrypted photos or your end to end encrypted messages.
-So it's kind of like, almost like the evil version.
+So it's almost like the evil version.
 I think the good news is those are really impractical.
 I think it's just like, people in the field know this, but encrypted machine learning is just like, you could do it if you want, but it's really expensive.
 And it'll never be, it'll always be like 100 times more expensive than doing it the regular way.
@@ -1516,7 +1515,7 @@ Oh, so this is actually a homomorphism too.
 It's actually, yeah, so if you want to think of it, if you want to think of it this way, you're exploiting, these signatures also exploit a homomorphism in RSA.
 They're just, it's just a different homomorphism.
 Yeah, so homomorphic encryption is a little bit of, if you want to think of it this way, you could think of it as a generalization of, it's also a generalization of pairings-based cryptography, if you've seen that before.
-There's kind of like, that's a very specific homomorphism for ECC, but yeah.
+That's a very specific homomorphism for ECC, but yeah.
 Yeah, they're connected.
 
 Speaker 0: 01:37:06
@@ -1735,7 +1734,7 @@ Speaker 1: 01:45:58
 
 great question.
 So we've actually tried GPUs and GPUs are really well suited for this.
-NVIDIA actually has like an instruction set extension and a library that they put out that helps you do this.
+NVIDIA actually hasan instruction set extension and a library that they put out that helps you do this.
 So It's not, I think they might have, yeah, I don't know what the status of it is, but they are thinking about this.
 ASICs and FPGAs are kind of not very useful because you need, what you need is, you need a fairly significant amount of memory because the database needs to fit in memory.
 And GPUs have a lot of effort invested in really, really good memory access, right?
@@ -1746,7 +1745,7 @@ So, we actually, it didn't become cost effective.
 It was it was cool.
 And it was it was fast, but it wasn't very cost effective.
 Now, now that GPUs are way cheaper, it might be.
-I have to have to like revisit it.
+I have to have torevisit it.
 But yeah.
 Yeah.
 
@@ -1839,7 +1838,7 @@ Speaker 1: 01:51:46
 
 No, we'd love to.
 We'd love to mostly, we'd love to see people use the server.
-We'd love to see like what your pain points are.
+We'd love to see what your pain points are.
 We're absolutely happy to host and run those kinds of things.
 So yeah, absolutely.
 
