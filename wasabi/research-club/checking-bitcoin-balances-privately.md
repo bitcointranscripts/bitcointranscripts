@@ -1593,7 +1593,12 @@ Speaker 3: 01:43:39
 
 Yeah, I see.
 So you can, In a hypothetical scenario, how does one implement, for example, say, in Boolean logic, they say the NAND gate is...
+
+Speaker 1: 01:44:55
+
 Yeah, absolutely.
+
+Speaker 3: 01:43:39
 How does that translate into homomorphic operations?
 
 Speaker 1: 01:44:03
