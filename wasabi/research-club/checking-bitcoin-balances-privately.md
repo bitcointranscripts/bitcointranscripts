@@ -1021,8 +1021,6 @@ This is the reason and if it would be feasible, then I think it would be worth i
 Speaker 0: 01:05:53
 
 But let me try to summarize the complexity of why it might still not be feasible.
-Yeah, there are other...
-Exactly, there are others.
 So one is the size of the database.
 The other is the number of addresses that a single client is looking for.
 And my client often has over 10,000 used addresses.
