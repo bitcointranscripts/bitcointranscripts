@@ -1370,7 +1370,7 @@ So it's almost like the evil version.
 I think the good news is those are really impractical.
 I think it's just like, people in the field know this, but encrypted machine learning is just like, you could do it if you want, but it's really expensive.
 And it'll never be, it'll always be like 100 times more expensive than doing it the regular way.
-So as the regular way gets more expensive, and people now want to do like DALI, and they want to do GPT-3, now paying a hundred times that cost is too hard.
+So as the regular way gets more expensive, and people now want to do like DALL-E, and they want to do GPT-3, now paying a hundred times that cost is too hard.
 We're just barely able to do private machine learning from like 2010.
 So I'm not super optimistic on that front.
 I think something that is really quite realistic that I'm really personally excited about, part of why I'm founding this company, is I would like to find a way to kind of raise money and fund the building of metadata private messaging services.
