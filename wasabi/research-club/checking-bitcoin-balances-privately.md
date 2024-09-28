@@ -353,17 +353,17 @@ Yeah, weeks if not a month.
 
 Speaker 2: 00:24:57
 
-Let me just add one more thing.
-So when you use Wasabi Wallet, you're making many addresses because you're you're quenching so you have to make a new address every time and if you use the wallet regularly you might go through something like 300 addresses or 400 or thousand over time that means that what you're looking for in the filters is actually quite broad.
+Let me just add one more thing:
+When you use Wasabi Wallet, you're making many addresses because you're CoinJoining, so you have to make a new address every time. If you use the wallet regularly, you might go through something like 300 addresses or 400 or thousand over time, that means that what you're looking for in the filters is actually quite broad.
 And so you get more and more false positives.
 And so if you just think it through, you're going to have a thousand blocks or more.
 And each block is actually more than a megabyte typically.
 And so you might end up with a gigabyte of blocks that you have to query, and each one is queried from a different node over a different Tor circuit.
 Not necessarily a different node, just a different Tor circuit.
 
-Speaker 1: 00:26:00
+Samir Menon: 00:26:00
 
-So I guess there are two things to ask here.
+I guess there are two things to ask here.
 One is, so one thing to notice, it's perfectly fine to use this homomorphic stuff with Tor.
 They're orthogonal.
 One hides your IP and one hides the content of your queries.
