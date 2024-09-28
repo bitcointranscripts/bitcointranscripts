@@ -1432,9 +1432,9 @@ I think.
 Speaker 4: 01:36:09
 
 Yeah.
-So key verified anonymous credentials are a generalization of the blind signatures.
+So Key-Verified Anonymous Credentials are a generalization of the blind signatures.
 In Wasabi, at 1.0, we used blind signatures.
-In 2.0, we used key verified anonymous credentials.
+In 2.0, we used Key-Verified Anonymous Credentials.
 
 Speaker 1: 01:36:27
 
