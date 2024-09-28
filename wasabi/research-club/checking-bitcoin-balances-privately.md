@@ -1640,13 +1640,9 @@ Speaker 7: 01:45:44
 You preceded me with the question I was going to ask.
 If the implementation on FBAs or ASICs could constitute a significant improvement.
 
-Speaker 0: 01:45:58
-
-It's a
-
 Speaker 1: 01:45:58
 
-great question.
+It's a great question.
 So we've actually tried GPUs and GPUs are really well suited for this.
 NVIDIA actually hasan instruction set extension and a library that they put out that helps you do this.
 So It's not, I think they might have, yeah, I don't know what the status of it is, but they are thinking about this.
