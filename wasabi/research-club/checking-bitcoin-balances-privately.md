@@ -1373,20 +1373,20 @@ And it'll never be, it'll always be like 100 times more expensive than doing it 
 So as the regular way gets more expensive, and people now want to do like DALL-E, and they want to do GPT-3, now paying a hundred times that cost is too hard.
 We're just barely able to do private machine learning from like 2010.
 So I'm not super optimistic on that front.
-I think something that is really quite realistic that I'm really personally excited about, part of why I'm founding this company, is I would like to find a way to kind of raise money and fund the building of metadata private messaging services.
+I think something that is really quite realistic, that I'm really personally excited about, part of why I'm founding this company, is I would like to find a way to kind of raise money and fund the building of metadata private messaging services.
 So, the thing I want to build is basically like WhatsApp or Signal, but they don't learn who you talk to.
 So, that is something you can use homomorphic encryption for.
 And then that is amazing, because obviously, who you talk to is really sensitive.
 And if we could hide that data, even more than what you say, but also who you who you talk to, that would be really cool.
-So so that's, that's, that's something I see as as really realistic.
+So, that's something I see as as really realistic.
 And we have to do this foundational work of making PIR practical first.
-But once we do that, I think building a messenger, I hope I can in five years tell you, yeah, you can go and message people and the service will never learn who you talk to.
+But once we do that, I think building a messenger, I hope I can in five years tell you, you can go and message people and the service will never learn who you talk to.
 
 Speaker 0: 01:34:52
 
 It's pretty sweet.
 Just a fun fact.
-But the Signal groups use the key to verified anonymous credential cryptography scheme that we use for our Wabi Sabi coin joins.
+But the Signal groups use the Key-Verified Anonymous Credentials cryptography scheme that we use for our Wasabi CoinJoins.
 So it would be nice if we throw your homomorphic encryption on top and...
 
 Speaker 1: 01:35:10
@@ -1396,23 +1396,16 @@ It's a key, what is key?
 
 Speaker 0: 01:35:14
 
-Key verified anonymous credentials.
+Key-Verified Anonymous Credentials.
 
 Speaker 1: 01:35:19
 
 Okay.
 
-Speaker 0: 01:35:20
-
-This is for
-
-Speaker 1: 01:35:21
-
-context or for a setup
+This is for context or for a setup of the conversation?
 
 Speaker 0: 01:35:23
 
-of the conversation?
 We use it as basically eCash token for access rights.
 
 Speaker 1: 01:35:29
