@@ -236,7 +236,7 @@ Wasabi is SegWit only, so we don't have to create filters pre-SegWit, August 201
 
 Speaker 2: 00:19:48
 
-And the filters are as large as the number of BEC 32 addresses in the blocks?
+And the filters are as large as the number of Bech32 addresses in the blocks?
 
 Samir Menon: 00:19:55
 
@@ -244,13 +244,13 @@ Sorry, say that one more time.
 
 Speaker 2: 00:19:57
 
-The filters are all essentially a compact representation of all BEC 32 addresses in a block.
+The filters are all essentially a compact representation of all Bech32 addresses in a block.
 
 Max: 00:20:07
 Single public key.
 
 Speaker 2: 00:20:09
-Single public key BEC 32 addresses.
+Single public key Bech32 addresses.
 They're very compact. Three years ago, because it was a minority of people use those addresses, more and more they become larger and larger, but they're they're they're very space efficient. I would I don't know the exact details maybe Max can answer
 
 Max: 00:20:31
@@ -278,87 +278,78 @@ That's right.
 When it's not exact, then there are some false positives, but there are no false negatives.
 That's the goal.
 You'll never miss.
-
-Speaker 0: 00:21:08
-
 But you will get more.
-Yeah, that false negative, that false positive rate can be configured.
+
+Max: 00:21:08
+
+Yeah, that false positive rate can be configured.
 And the lower you want that first positive rate, the larger the filter size is.
-I'm not exactly sure where we fall in the line of tradeoff here.
+I'm not exactly sure where we fall in the line of trade-off here.
 Yeah, I don't know details like that.
 Lucas is in the call, so maybe he knows.
 
-Speaker 1: 00:21:34
+Samir Menon: 00:21:34
 
 Happy to take any other questions, Elsa.
 
-Speaker 3: 00:21:38
+Elsa: 00:21:38
 
 Hello, guys.
 It's quite nice to be here.
-I don't have any strong background in crypto and higher order math, but as a layman, you know, is there a way to simplify the explanation of how homomorphic encryption works?
-I have tried to see the, you know, the information on the internet, but it's just not possible for a basic layman like me.
+I don't have any strong background in crypto and higher order math, but as a layman, is there a way to simplify the explanation of how homomorphic encryption works?
+I have tried to see the the information on the internet, but it's just not possible for a basic layman like me.
 Would that be possible on this call, or is it not?
 
-Speaker 1: 00:22:17
+Samir Menon: 00:22:17
 
 Yeah, I have a slide.
 Let's talk a little bit more about Wasabi Wallet and privacy, but then I can give that explanation.
 Does that sound good?
 
-Speaker 3: 00:22:28
+Elsa: 00:22:28
 
 Yes, thank you very much.
 Thank you.
 
-Speaker 0: 00:22:34
+Max: 00:22:34
 
 What I do wonder is, you do need to know the input, like the value of the UTXO that you're trying to spend.
 Does your database include amounts?
 
-Speaker 1: 00:22:49
+Samir Menon: 00:22:49
 
-Yes.
-Yeah.
-Yes.
+Yes, yes.
 So the total size of our database is roughly one gig right now.
-We translate every, all UTXOs kind of reduced down to about a gig of data.
+We translate every, all UTXOs reduced down to about a gig of data.
 If we instead made the set all UTXOs and we didn't just take the five most recent ones for every address, the database would not be much larger.
 It would be like a small multiple, like maybe three or four times larger, that would be kind of feasible.
-I guess when I'm thinking about it, I suppose it helps that you guys only support the BEC 32 addresses, because That means there's kind of a limited set of addresses that are on chain that have transactions for that.
-But yeah, we need to think about how big would it be to include all transaction history?
+What I'm thinking about is, I suppose it helps that you guys only support the Bech32 addresses, because that means there's a limited set of addresses that are on chain that have transactions for that.
+We need to think about how big would it be to include all transaction history?
 Because UTXOs are very different than every transaction.
-So, yeah.
-OK, It's good to know what the...
-Yeah.
 And just to ask one more time.
-So, the problem that you guys face with block filters is Mostly that you have to download this gigabyte of things to get started.
+So, the problem that you guys face with block filters is mostly that you have to download this gigabyte of things to get started.
 Is that the issue?
 Mostly?
 
-Speaker 0: 00:24:08
+Max: 00:24:08
 
-So you have to download, first of all, the server has to generate filters, which can take weeks.
+First of all, the server has to generate filters, which can take weeks.
 Then the clients have to download all the filters, which we do over Tor, which also can take an hour maybe.
+
+Samir Menon: 00:24:23
+
 I see, right.
 I forgot it's all over Tor.
 
-Speaker 1: 00:24:23
+Max: 00:24:29
 
-So that also… Exactly.
-Yes.
-
-Speaker 0: 00:24:29
-
-And Then for block downloads, we spin up a new Tor identity for every Bitcoin peer that we download a block from.
+And then, for block downloads, we spin up a new Tor identity for every Bitcoin peer that we download a block from.
 So all of this together is, if you have a really big wallet and you're making a full rescan, I mean, it can take a couple of weeks, if not a month.
 
-Speaker 1: 00:24:47
+Samir Menon: 00:24:47
 
 I see the issue.
-Yeah, so there, yeah, weeks if not a month.
-Yeah, okay.
-So,
+Yeah, weeks if not a month.
 
 Speaker 2: 00:24:57
 
