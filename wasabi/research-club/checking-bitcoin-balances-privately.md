@@ -377,111 +377,111 @@ Max: 00:27:02
 
 Can we actually make batch requests with Spiral, like requesting multiple addresses simultaneously?
 
-Speaker 1: 00:27:10
+Samir Menon: 00:27:10
 
 Yeah, yeah.
 So if you notice today, no, right?
-I mean, we just have like a text field with an address.
+We just have like a text field with an address.
 We want to support that.
 There's actually a lot of theory and research about doing batch requests kind of more efficiently.
-So Yeah, I think it's really useful to hear that a very typical use case is like hundreds of addresses, because that says a lot about how we need to build this to make it usable.
-So yeah, OK.
+I think it's really useful to hear that a very typical use case is like hundreds of addresses, because that says a lot about how we need to build this to make it usable.
 Yes, so batching is possible, but it's in the works.
 
-Speaker 0: 00:27:56
+Max: 00:27:56
 
-Yeah, by the way, it's way more than just a thousand.
-I'm checking a not even that old wallet and it has well 8,000 addresses here 13,000 addresses so since we do you know we do we attempt many coin joins and a lot of them fail and we generate new addresses for each attempted coin join and you can register up to 8 outputs in a round so let's say a round fails, I don't know, 5 times before it succeeds so that's 5 times 8 addresses that we have to add to your gap limit.
+By the way, it's way more than just a thousand.
+I'm checking a not even that old wallet and it has well 8,000 addresses here 13,000 addresses. Since we attempt many coin joins, and a lot of them fail, and we generate new addresses for each attempted coin join and you can register up to 8 outputs in a round so let's say a round fails 5 times before it succeeds, that's 5 times 8 addresses that we have to add to your gap limit.
 
-Speaker 1: 00:28:35
+Samir Menon: 00:28:35
 
 I see.
-So are the addresses that you create there, are they unspent?
-Do they contain any...
-I mean, If you create an address and no one hears about it, did it really get created?
+Are the addresses that you create there, are they unspent?
 
-Speaker 0: 00:28:50
+Max: 00:28:44
+No
+
+Samir Menon: 00:28:45
+If you create an address and no one hears about it, did it really get created?
+
+Max: 00:28:50
 
 Well, in this case, yes, because the CoinJoin coordinator hears about it.
 And probably also the other CoinJoin signers.
 So it's semi-public.
 
-Speaker 1: 00:29:00
+Samir Menon: 00:29:00
 
-Yes, but it never...
 Will it store value?
 It will, right?
 I guess to start the Coinjoin it has some value in it.
 
-Speaker 0: 00:29:09
+Max: 00:29:09
 
 No, sorry.
-So we spend inputs that are addresses with money on them, but then on the output side we create new addresses that are not yet used without money on it.
+We spend inputs that are addresses with money on them, but then on the output side we create new addresses that are not yet used without money on it.
 
-Speaker 1: 00:29:18
+Samir Menon: 00:29:18
 
 Oh, I see.
 So they can be empty output addresses.
 
-Speaker 0: 00:29:22
+Max: 00:29:22
 
 Exactly.
 Those are addresses that never were on the blockchain in an output with any amount of stats.
 It's just unused addresses, so to speak.
 
-Speaker 1: 00:29:32
+Samir Menon: 00:29:32
 
 So then those would not need to actually hit any kind of...
 We don't need to query the blockchain for them at all, right?
 
-Speaker 0: 00:29:41
+Max: 00:29:41
 
 Well, but the client doesn't know if an address is empty or not.
 So we need to query all of them.
 Just a lot of them, the server will say there's nothing on here.
 
-Speaker 1: 00:29:50
+ Samir Menon: 00:29:50
 
-I see.
-I see.
-Yeah.
-So an easy way to actually resolve that will be to actually just make a set of addresses that have any money.
+I see, I see.
+An easy way to actually resolve that will be to actually just make a set of addresses that have any money.
 So this is a technique we actually use for the current service.
 What you can do is instead create another database that just says, like, does this address have any money at all?
 And that database can be very small, right?
-Because again, we can use like the classic Bloom filter thing where we, it's not quite a Bloom filter because the addresses are already random.
-So just take the X top X bits of every address that has money in it and send these to the client or allow them to fetch them using PIR, right?
-So, yeah.
+Because again, we can use like the classic Bloom filter thing. It's not quite a Bloom filter because the addresses are already random.
+Just take the X top X bits of every address that has money in it and send these to the client or allow them to fetch them using PIR, right?
+
 And WasabiWallet already handles the mempool, right?
 You guys already kind of privately listen to everything on a mempool and then cross-reference it with the addresses you have and all that.
 
-Speaker 0: 00:30:52
+Max: 00:30:52
 
 Yeah, we build a local mempool.
 The issue is when we're offline, we of course don't know it.
 So maybe actually some private information retrieval over someone else's mempool might be another interesting use case.
 
-Speaker 1: 00:31:07
+Samir Monen: 00:31:07
 
-Yeah, so.
+Yeah.
 
-Speaker 0: 00:31:12
+Max: 00:31:12
 
-So, sorry, a bit more about the batch requests.
-So, like, would it be possible to just send 10,000 addresses to the server and he responds in a single package?
+Sorry, a bit more about the batch requests:
+Would it be possible to just send 10,000 addresses to the server and he responds in a single package?
 
-Speaker 1: 00:31:26
+Samir Monen: 00:31:26
 
 So it's definitely possible.
-I mean, the simple way is, yeah, You can send 10,000 queries, you can upload them all, and then just kind of the server can just do all the computation and send you all the responses.
-The problem is going to be, well, the problem is going to be twofold.
+The simple way is you can send 10,000 queries, you can upload them all, and then just kind of the server can just do all the computation and send you all the responses.
+The problem is going to be twofold.
 One, there's a significant cost to running a query.
 So a query costs today like six CPU seconds, right?
 So six CPU seconds is not nothing, but it's also, it's something, you know?
 Like It's a significant cost.
 So 10,000 addresses times six CPU seconds is 60,000, it's a thousand hours of computation.
 So it'll be tough.
-So in order to make that work, to make 10,000 addresses work, What we need is to do batching or reduce the number of addresses that we're effectively querying by, like I said, figuring out whether the addresses are empty or kind of reducing the set that way.
+In order to make that work, to make 10,000 addresses work, what we need is to do batching or reduce the number of addresses that we're effectively querying by, like I said, figuring out whether the addresses are empty or kind of reducing the set that way.
 But yeah, 10,000 is hard.
 The other thing is, the other problem is going to be communication.
 So like every query is 14 kilobytes.
@@ -489,14 +489,12 @@ So 10,000 times 14 kilobytes is, you know, a lot.
 And then that's a lot of 140 megabytes to upload.
 So it's not going to be that feasible.
 
-Speaker 0: 00:33:00
+Max: 00:33:00
 
 Actually, to this I have a question, because I saw on the website that the first request, the client needs to send more data, and for every following it's less.
 
-Speaker 1: 00:33:09
+Samir Menon: 00:33:09
 
-Yes, yeah.
-Why is that?
 Yeah, it's because the first request contains what's called the setup data or the public parameters.
 Basically, the server sends essentially like an extended, like a large public key to the server.
 So the server uses this public key to kind of let it do the query processing.
@@ -506,55 +504,53 @@ So that's why it's big.
 And you might have noticed it's pretty big.
 It's like eight megabytes or something.
 
-Speaker 0: 00:33:59
+Max: 00:33:59
 
-And Does that size depend on the database size?
+And does that size depend on the database size?
 
-Speaker 1: 00:34:02
+Samir Menon: 00:34:02
 
 It does not.
 Or it only logarithmically does.
 So it's like very, I mean, like if the database was 100 times bigger, it would be like 12 megabytes or something.
 
-Speaker 0: 00:34:17
+Max: 00:34:17
 
-Yeah, like, I mean, just general, like, it's a very broad question, but is it, so if we want to have the full TX outset of all, like, of, but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all sacred and taproot outputs yep and let's say we have I don't know 10,000 users or so and each of them has let's say, a thousand addresses or so.
+Yeah. Just general, it's a very broad question, but if we want to have the full TX outset of all — but actually, we probably also want transaction IDs and stuff like this so basically we want the full transaction metadata blockchain thing for all sacred and taproot outputs. And, let's say we have 10,000 users or so and each of them has let's say, a thousand addresses or so.
 And this is still rather small scale, but is this completely crazy?
 
-Speaker 1: 00:35:03
+Samir Menon: 00:35:03
 
-Yeah, no, no, no, you're asking a very, very good question.
-So, so I think that the way that it's not so so that's, that's very true.
-So, so I think like, It is difficult, especially from a cost perspective, I think, for the server.
-It's difficult to see this scaling to, I check 10,000 addresses kind of regularly.
-Like Every day I check 10,000 addresses and there's like 10,000 users.
+No, no, you're asking a very, very good question.
+I think that's very true.
+I think it is difficult, especially from a cost perspective, I think, for the server.
+It's difficult to see this scaling. I check 10,000 addresses kind of regularly.
+Every day I check 10,000 addresses and there's like 10,000 users.
 That will quickly become difficult for the server.
-But I think there's two things.
+But, I think there's two things.
 One is the set of active addresses is not 10,000.
-So what can we do to kind of like reduce the number?
+So, what can we do to kind of like reduce the number?
 Two, it is just a cost for the server.
-You know, computation is just money, as we know from proof of work, right?
-So A question is, you know, if clients were willing to pay for it, if I was willing to pay for six CPU seconds for my query, maybe that would be okay.
+Computation is just money, as we know from proof of work, right?
+A question is, if clients were willing to pay for it, if I was willing to pay for six CPU seconds for my query, maybe that would be okay.
 I might not be willing to pay 10,000 times six CPU seconds.
-So we'd have to see what clients are kind of, you know, quote unquote willing to pay.
-And then also, I guess the last thing I would say is it would be very feasible to use PAR just for blocks.
-So if you think that the privacy leakage is an issue or you're interested in that kind of angle on it, I think just doing PIR, just in that block retrieval phase of the standard client block header thing, if you want to do PIR, I think that is very feasible.
+So we'd have to see what clients are kind of quote unquote willing to pay.
+And then also, I guess the last thing I would say is it would be very feasible to use PIR just for blocks.
+If you think that the privacy leakage is an issue or you're interested in that kind of angle on it, I think just doing PIR, just in that block retrieval phase of the standard client block header thing, if you want to do PIR, I think that is very feasible.
 Is very, very feasible.
 One other thing, I think that there's kind of like a, there's also like a kind of narrow use case for just like onboarding or just like set up.
-I think if you're like a client is setting up and it's taking weeks to sink your wallet, I think it's really powerful that in the meantime you can, you can make queries, for, for addresses.
-You can see if you've been paid
+I think if you're a client setting up and it's taking weeks to sync your wallet, I think it's really powerful that in the meantime you can, you can make queries, for addresses.
+You can see if you've been paid, privately.
 
-Speaker 0: 00:37:21
+Max: 00:37:21
 
-privately.
 Yeah, exactly.
 Right, to just get the active wallet balance really quickly.
 
-Speaker 1: 00:37:26
+Samir Menon: 00:37:26
 
-And yeah, so no syncing, no.
-Right.
-So actually it might even make sense just as a kind of, yeah, as a fallback or even kind of as a like setup thing.
+And yeah, so no syncing.
+Actually, it might even make sense just as a kind of, yeah, as a fallback or even kind of as a like setup thing.
 I mean, the fact that you don't incrementally have to do anything, like each query costs the same and, or I guess the first one costs a little more, but basically there's no sinking, right?
 There's no like client state that I'm trying to get into sync with the chain.
 I'm just kind of, I can make a query kind of one-off.
