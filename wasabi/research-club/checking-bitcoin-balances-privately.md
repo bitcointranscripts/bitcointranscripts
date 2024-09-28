@@ -1,46 +1,50 @@
 ---
-title: "Checking Bitcoin balances privately"
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=8L725ufc-58
-tags: ['research', 'privacy-enhancements', 'cryptography']
-speakers: ['Samir Menon']
-categories: ['club']
-date: 2022-09-27
-summary: "In this video, the Wasabi Research Club delves into the topic of checking Bitcoin balances privately. They discuss the use of homomorphic encryption and private information retrieval to protect users' privacy when querying data from a server. They explore different solutions and strategies to address challenges such as address linkability, block retrieval, and the scalability and cost of checking balances. The team also emphasizes the need for an open standard for private information retrieval to ensure decentralization. They discuss the use of Tor and homomorphic encryption together, as well as the possibility of batching requests to improve efficiency. The video concludes by highlighting the ongoing research and exploration of potential solutions to ensure private querying of Bitcoin balances and more..."
+title: 'Checking Bitcoin balances privately'
+transcript_by: 'kiocosta via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=8L725ufc-58'
+date: '2022-09-27'
+tags:
+  - 'research'
+  - 'privacy-enhancements'
+  - 'cryptography'
+speakers:
+  - 'Samir Menon'
+categories:
+  - 'club'
+summary: 'In this video, the Wasabi Research Club delves into the topic of checking Bitcoin balances privately. They discuss the use of homomorphic encryption and private information retrieval to protect users'' privacy when querying data from a server. They explore different solutions and strategies to address challenges such as address linkability, block retrieval, and the scalability and cost of checking balances. The team also emphasizes the need for an open standard for private information retrieval to ensure decentralization. They discuss the use of Tor and homomorphic encryption together, as well as the possibility of batching requests to improve efficiency. The video concludes by highlighting the ongoing research and exploration of potential solutions to ensure private querying of Bitcoin balances and more...'
 ---
-Speaker 0: 00:00:00
+Max: 00:00:00
 
 So hello and welcome to the Wasabi Wallet Research Club.
-Today we are speaking from with Samir from Spiral, which is the title of a fancy cryptography paper of homomorphic value encryption or homomorphic encryption and private information retrieval.
+Today we are speaking with Samir from Spiral, which is the title of a fancy cryptography paper of homomorphic value encryption or homomorphic encryption and private information retrieval.
 The gist of this cryptomagic is that a client can request data from a server, but the server does not know which data was requested.
 And there are different variants of the CryptoMagick for different use cases.
 And there are currently two proof of concept apps.
-One is a Wikipedia, so where I think six gigabytes of text entries, no pictures, can be queried so that the server doesn't know which article you're interested in.
+One is a Wikipedia, where I think six gigabytes of text entries, no pictures, can be queried so that the server doesn't know which article you're interested in.
 And the second, more pressing and important for us, is an anonymous block explorer so that you can query the UTXO set and request an address and the server will give you the balance of that address.
-And well, the server doesn't know which address you're actually requesting.
+And the server doesn't know which address you're actually requesting.
 So that sounds like impossible magic.
 And Samir, please tell us how all the magic works.
 
-Speaker 1: 00:01:26
+Samir Menon: 00:01:26
 
 Yeah, that was a great introduction.
 Honestly, a little better than the one I had.
 Thank you.
 Yeah, that's exactly what it is.
 That's kind of what got me into this field is that it does sound like magic and it does sound like you probably shouldn't be able to do something like that, but you can.
-So yeah.
-I'm actually going to just mostly, I'll talk a little bit about the internals of how Spiral works at the end, but I'll kind of first just like, let's just try to situate, you know, the security model of a server that doesn't learn what you query is kind of complicated.
+
+I'm actually going to just mostly talk a little bit about the internals of how Spiral works at the end, but let's just try to situate the security model of a server that doesn't learn what you query is kind of complicated.
 And so let's just first try to compare it to all the other ways you can check a Bitcoin balance.
-And let's just like situate it amongst the many, many alternative ways, you know, one could look up the balance of a Bitcoin address.
-A little background on me, I was a graduate student at Stanford and this PAR project was kind of my senior project for my master's and it was advised by Dan Bonet but it kind of I went and got a real job, and so I stopped working on it for a little bit.
-Then the itch came back and I worked on this again and published this paper, I believe, I guess I presented it in May of this year.
+And let's just situate it amongst the many, many alternative ways one could look up the balance of a Bitcoin address.
+A little background on me, I was a graduate student at Stanford and this PAR project was kind of my senior project for my master's and it was advised by Dan Bonet but I went and got a real job, and so I stopped working on it for a little bit.
+Then the itch came back and I worked on this again and published this paper, I guess I presented it in May of this year.
 So we're starting a company, I'm quitting my job soon.
-So yeah, yeah.
 And we're trying to start a company around this technology.
 All right, so today, I think you guys and me probably have a very similar goal, which is what we want our private-like clients.
 We want clients that don't have to run a full node, but also do not leak information to third parties or as little information as possible.
 Today, third parties learn a lot of information when you use them directly.
-So if you're a like client and you just over the regular internet connect to a full node, you are going to tell them a lot of information.
+If you're a client and you just over the regular internet, connect to a full node, you are going to tell them a lot of information.
 In particular, they're going to get both your IP address and your actual Bitcoin wallet addresses as you query them.
 So that's pretty bad.
 You're kind of linking this very identity correlated feature, an IP address with your money.
