@@ -1027,7 +1027,13 @@ And my client often has over 10,000 used addresses.
 And so we would need to query all of them.
 And not just once, but every time you load the wallet.
 And so we have I don't know 10 000 users with each 10 000 addresses making queries over the entire blockchain database so to say that's that turns very expensive very quick And however a solution around this is...
+
+Speaker 4: 01:06:37
+
 You would have to only do it once.
+
+Speaker 0: 01:06:42
+
 Well, next time you open the wallet, you might have received a coin to one of those many addresses.
 
 Speaker 4: 01:06:49
@@ -1037,16 +1043,14 @@ Yes.
 
 Speaker 1: 01:06:53
 
-So I think there's a couple of layers.
 So yeah, Max and I went through this.
 There's a couple of layers of mitigation you can do.
-So one layer is you can also just look at which addresses were because of kind of this homomorphic encryption thing, because you can query kind of arbitrary data as long as the server kind of forms it for you.
+So one layer is you can also just look at which addresses were. Because of this homomorphic encryption thing, because you can query kind of arbitrary data as long as the server kind of forms it for you.
 You could have a database that says, when were these wallets last interacted with?
-You could just query that database and you could find out, okay, 9,000 of these addresses, nothing happened on them since I last opened this app.
-Right.
-And then for the thousand that are remaining, you could look and see which, which ones of them have a balance still or are still active.
+You could just query that database and you could find out, okay, 9,000 of these addresses, nothing happened on them since I last opened this app, right?
+And then for the thousand that are remaining, you could look and see which ones of them have a balance still or are still active.
 And then you could retrieve each of their transaction histories kind of individually.
-It's not perfect, but something I'll do is I think I will, I will try to build up a number of addresses in my wallet that's large enough to kind of test with.
+It's not perfect, but something I'll do is I think I will, I will try to build up a number of addresses in my wallet that's large enough of to test with.
 And I would love to play around and see how this could work or at least, yeah.
 Yeah, I think it's a kind of urgent challenge.
 So, yeah, and it's cool tech.
@@ -1070,7 +1074,7 @@ Speaker 1: 01:09:02
 If you're interested in the checking addresses you don't own, I think that's also very feasible.
 I don't know if that's interesting.
 But I think that today your options are pretty bad.
-So I think at least on that front, yeah, we're kind of clearly better than the best way you have today to kind of look up the address of a balance that you don't already have in your wallet, of an address.
+So I think at least on that front, we're kind of clearly better than the best way you have today to kind of look up the address of a balance that you don't already have in your wallet, of an address.
 
 Speaker 4: 01:09:35
 
@@ -1080,7 +1084,7 @@ They are looking at quite a few things there.
 But building a private block explorer based on this protocol might actually be possible.
 Yes, that's a huge thing, really huge.
 Right now, people are putting in and I do that as well.
-We are putting in our addresses in block exporters to check if everything is going well or how well was constructing wasabi this transaction, stuff like that.
+We are putting in our addresses in block exporters to check if everything is going well or how well was constructing Wasabi this transaction, stuff like that.
 And well, that's a huge database that block explorers have.
 So that's pretty problematic, I hope.
 It's not gonna be like that well-known fact that they are going for block explorers to disclose data.
@@ -1090,23 +1094,20 @@ Speaker 1: 01:11:00
 
 Yeah, if I was, I would definitely subpoena Block Explorer.
 I think Ledger keeps their logs on Ledger Live for like five years or something.
-So yeah, I think, I think, Yeah, I don't know if you guys are interested.
+Yeah, I don't know if you guys are interested.
 I think that's another angle we're interested in is this hardware wallet kind of integration.
-I think it's kind of funny how you go to kind of you're currently able to go to Greatlands and kind of keep all your private keys on hardware.
+I think it's kind of funny how you go to kind of you're currently able to go to great lengths and keep all your private keys on hardware.
 But then when you want to just like know how much money you have, you kind of have to, you have to just, you end up kind of just going to a block explorer or ledger or whoever, and kind of just telling them your address and your IP address and stuff.
 So yeah.
 
 Speaker 5: 01:11:46
 
 You could connect it to your own node, right?
-Yes, yes.
-I guess, to it and stuff, so yeah.
 
 Speaker 1: 01:11:53
 
 Yeah, yeah.
 Especially from mobile clients and stuff.
-Yeah, no, go ahead.
 
 Speaker 0: 01:11:58
 
