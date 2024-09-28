@@ -1317,11 +1317,10 @@ Yeah, okay,
 Speaker 0: 01:29:03
 
 And then somewhat related, but how does peer review work for such a paper?
-Because it seems to me it's not a new cryptography, just as you say, applying old concepts, but how was the peer review
+Because it seems to me it's not a new cryptography, just as you say, applying old concepts, but how was the peer review process?
 
 Speaker 1: 01:29:14
 
-process?
 So it's a good question.
 I remember my advisor was like: "yeah, is this going to be kind of like publishable?"
 And we we actually after we had that conversation, we did come up with some new cryptography.
@@ -1332,22 +1331,22 @@ We were in like a privacy enhancing technologies kind of venue, but it was still
 It was a big deal for the reason you pointed out, which is it hasn't been practical.
 And I think our work was kind of one of several works that took it from being impractical to practical.
 There are now a couple, but at the time we were kind of one of the early ones that, when we told people you go to this site, and we could read Wikipedia, that was like a big deal, because I think everything else had been kind of speculative.
-It was like, if you were looking up a sensitive medical condition in theory and if you wanted to you know there's a lot of like hypotheticals
+It was like, if you were looking up a sensitive medical condition in theory and if you wanted to, you know? There's a lot of like hypotheticals
 
 Speaker 0: 01:30:39
 
-Yeah, the MVP demos are pretty great
+Yeah, the MVP demos are pretty great.
 
 Speaker 1: 01:30:44
 
-Yeah if you have ideas for other ones let me know I I want to do Ethereum and I want to do, sorry, a password checker.
+Yeah, if you have ideas for other ones let me know. I want to do Ethereum and I want to do a password checker.
 
 ## Password Checker
 
 Speaker 1: 01:30:54
 
-So I know, I don't know if you guys have seen, have I been pwned, but they have like a site where you put in a password to see if it's been leaked but you know of course you're just giving them your password.
-They do some hashing and stuff they say it's okay but you know you could do much better with PAR.
+I don't know if you guys have seen, "haveIBeenPwned", but they have a site where you put in a password to see if it's been leaked, but of course you're just giving them your password.
+They do some hashing and stuff they say it's okay but you know you could do much better with PIR.
 So I think DNS is also something we're interested in, although there are complications there, but yeah, DNS is also exciting.
 
 Speaker 6: 01:31:24
