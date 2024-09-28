@@ -195,73 +195,80 @@ So to include those that would be more costly.
 To be clear, today we definitely do not have any kind of, you know, there's no proof that the server is really serving you the right data.
 So that is a big problem.
 Obviously, we need to kind of have some proof.
-The good news is, yeah, we could always add Merkle proofs of inclusion.
-If you do the math on the size of those, it's like roughly, I think I looked at this before, it was something like on the order of hundreds of bytes, maybe 200 bytes or something.
+The good news is we could always add Merkle proofs of inclusion.
+If you do the math on the size of those, I think I looked at this before, it was something like on the order of hundreds of bytes, maybe 200 bytes or something.
 So, it would be a significant increase, but possible.
-I'll highlight one alternative way of doing this, which is actually suggested in the bit, in bit 157.
-There, what we could instead do is actually continue to use block filters, but use PIR for the block retrieval part.
-So you would retrieve blocks using PIR, but you would use client block filters as normal.
+I'll highlight one alternative way of doing this, which is actually suggested in the bit, in BIP 157.
+What we could instead do is actually continue to use block filters, but use PIR for the block retrieval part.
+You would retrieve blocks using PIR, but you would use client block filters as normal.
 I think the problem there is it doesn't save on your bandwidth.
 I could be wrong, but I think most of the bandwidth is coming from the filters and coming from the streaming to the client of the filter data.
 So you wouldn't say that.
 
-Speaker 0: 00:18:28
+Max: 00:18:28
 
 Just as a heads up for you, we're downloading the filters from our server, like the Wasabi backend server, but then the blocks are downloaded from the Bitcoin peer-to-peer network.
 So the server doesn't incur the block download cost.
 
-Speaker 1: 00:18:41
+Samir Menon: 00:18:41
 
 Oh, okay.
-So is the main cost for you guys right now actually the filters because you incur that cost as I see.
+So, is the main cost for you guys, right now, actually the filters?
+
+Max: 00:18:47
+
+Yes.
+
+Samir Menon: 00:18:48
+
 Yeah, it's a large outgoing cost.
 I'm sure your hosting provider is charging you.
-Yeah, okay.
-Yeah, So, yeah, actually doing proofs of inclusion is possible, but yeah, it's good to know, yeah, you need that kind of to deploy this for real.
-If I can ask a follow-up question, do you guys, do you guys, to do this, do you, Are you mostly querying the UTXO set, the full set of transactions, just balances?
+So, actually doing proofs of inclusion is possible, but it's good to know you need that kind of to deploy this for real.
+If I can ask a follow-up question: Are you mostly querying the UTXO set, the full set of transactions, just balances?
 Like what kind of data is crucial?
 
-Speaker 0: 00:19:30
+Max: 00:19:30
 
 We do want the full transaction history list.
-Yeah.
+
 And so that's what we get in the filters right now.
-Wasabi is SecWit only, so we don't have to create filters pre-SecWit, August 2018 or something, or 17.
-Okay.
-Yeah.
+Wasabi is SegWit only, so we don't have to create filters pre-SegWit, August 2018 or 17.
 
 Speaker 2: 00:19:48
 
 And the filters are as large as the number of BEC 32 addresses in the blocks?
 
-Speaker 1: 00:19:55
+Samir Menon: 00:19:55
 
 Sorry, say that one more time.
 
 Speaker 2: 00:19:57
 
 The filters are all essentially a compact representation of all BEC 32 addresses in a block.
+
+Max: 00:20:07
 Single public key.
-Okay, yeah.
+
+Speaker 2: 00:20:09
 Single public key BEC 32 addresses.
-So they're very compact, you know, three years ago, because it was a minority of people use those addresses more and more they become larger and larger but they're they're they're very space efficient I would I don't know the exact details maybe Max can answer but the exact
+They're very compact. Three years ago, because it was a minority of people use those addresses, more and more they become larger and larger, but they're they're they're very space efficient. I would I don't know the exact details maybe Max can answer
 
-Speaker 0: 00:20:31
+Max: 00:20:31
 
-number of megabytes or something I think it's below a gigabyte I might be off here but it's not that much.
+700 megabytes or something, I think it's below a gigabyte I might be off here but it's not that much.
 
 Speaker 2: 00:20:39
 
 Oh below a gigabyte for the entire four years.
 
-Speaker 0: 00:20:43
+Max: 00:20:43
 
-That might be complete bullshit But I think yes.
+That might be complete bullshit, but I think yes.
 
-Speaker 1: 00:20:47
+Samir Menon: 00:20:47
 
 That sounds right.
-I mean, it's not that much data, right?
+It's not that much data, right?
 Because it's also statistical, right?
 It's a Bloom filter-esque thing, right?
 
