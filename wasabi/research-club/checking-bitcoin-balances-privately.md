@@ -1645,7 +1645,7 @@ Speaker 1: 01:45:58
 It's a great question.
 So we've actually tried GPUs and GPUs are really well suited for this.
 NVIDIA actually hasan instruction set extension and a library that they put out that helps you do this.
-So It's not, I think they might have, yeah, I don't know what the status of it is, but they are thinking about this.
+So It's not, I think they might have, I don't know what the status of it is, but they are thinking about this.
 ASICs and FPGAs are kind of not very useful because you need, what you need is, you need a fairly significant amount of memory because the database needs to fit in memory.
 And GPUs have a lot of effort invested in really, really good memory access, right?
 So, actually, GPUs are kind of optimal.
@@ -1655,9 +1655,7 @@ So, we actually, it didn't become cost effective.
 It was it was cool.
 And it was it was fast, but it wasn't very cost effective.
 Now, now that GPUs are way cheaper, it might be.
-I have to have torevisit it.
-But yeah.
-Yeah.
+I have to revisit it.
 
 Speaker 0: 01:47:05
 
