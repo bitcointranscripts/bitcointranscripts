@@ -1294,8 +1294,8 @@ There's so private information retrieval as a problem was posed.
 Yeah, like in the 80s.
 And there's been a bunch of kind of talk about it.
 But it never was practical.
-My best my my biggest thing I always make fun of is I think IBM had like a big demo where you could look up like the 50 US states privately.
-And it was like a big demo in 20 I think 2019 or something, that you could look up 50 states.
+My biggest thing I always make fun of is I think IBM had like a big demo, where you could look up like the 50 US states privately.
+And it was like a big demo in I think 2019, or something, that you could look up 50 states.
 It wasn't like a very large database.
 It was like the capitals of the 50 US states.
 The reason we've come a long way and what Spiral does, what advancement kind of Spiral made was basically just, it wasn't something super special.
