@@ -1707,15 +1707,15 @@ Have you used those tools before or is it still vendor locked?
 
 Speaker 7: 01:50:03
 
-Well at the moment we we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at the say open source opportune source development regarding that I will have a look
+Well, at the moment we we are using proper proprietary tools, for example Vivado, which is very famous, but actually, no, actually didn't yet look at open source development regarding that. I will have a look.
 
 Speaker 3: 01:50:33
 
-so much thank you so much
+Thank you so much!
 
 Speaker 0: 01:50:37
 
-well Samir, thank you very much for coming here.
+Well Samir, thank you very much for coming here.
 That was really kind of you.
 
 Speaker 1: 01:50:43
@@ -1726,7 +1726,7 @@ I'm learning so much about what Bitcoin people want, the need and stuff.
 You guys are super helpful.
 So thank you so much.
 I want to, the only thing I want to say is let's keep in touch, especially as we get closer to building something that looks less like just a balance checker and more like a private block explorer, I would love to see if there's kind of a synergy between what we offer.
-I would love to see if people who use Wasabi Wallet also wanna use a private block Explorer.
+I would love to see if people who use Wasabi Wallet also wanna use a private block explorer.
 So yeah, if that sounds good, I would love to keep in touch.
 
 Speaker 0: 01:51:21
