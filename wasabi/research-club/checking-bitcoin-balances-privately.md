@@ -1447,7 +1447,7 @@ Yeah, they're connected.
 
 Speaker 0: 01:37:06
 
-As far as I remember we do use peterson commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
+As far as I remember we do use Pedersen Commitments or generally speaking homomorphic encryption for the amount of the value of these credentials.
 
 Speaker 1: 01:37:15
 
@@ -1483,28 +1483,17 @@ Whereas lattices are just it's matrices and it's noise.
 And I understand that a lot better.
 It's like a lot easier for me.
 So it's funny, you should you guys are, guys are real crypto people.
-If you guys are just sitting around thinking about Henderson commitments and
-
-Speaker 0: 01:39:21
-
-homo.
-
-Speaker 1: 01:39:24
-
+If you guys are just sitting around thinking about Pedersen Commitments...
 I promise homomorphic encryption is is it's also is in some ways much easier to understand.
-So yeah.
 
 Speaker 6: 01:39:32
 
 We are not cryptographers here.
-I mean, we are.
+I mean, we are, yes...
 
 Speaker 1: 01:39:36
 
-We are.
-Yes.
-It looks like a duck and talks like a duck.
-I don't know.
+It looks like a duck and talks like a duck, I don't know...
 You guys are as much cryptographers as anyone, I think.
 
 Speaker 0: 01:39:48
