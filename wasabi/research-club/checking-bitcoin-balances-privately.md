@@ -1694,15 +1694,8 @@ Speaker 7: 01:48:23
 
 But actually, these are crypto project guarding FPGA, because actually I'm dealing with FPGA for actually for genomic recognition.
 But actually regarding crypto, I actually I didn't look yet, let's say.
-But actually if you, let's say regarding, for example, the primitive function
-
-Speaker 3: 01:48:58
-
-to, for example,
-
-Speaker 7: 01:49:01
-
-do hashing stuff or cryptographic primitives, I think you can improve probably one order of magnitude if you implement some cryptographic computation and hashing on FPGAs. This is something that I think is worth looking at, definitely.
+But actually if you, let's say regarding, for example, the primitive function 
+to, for example, do hashing stuff or cryptographic primitives, I think you can improve probably one order of magnitude if you implement some cryptographic computation and hashing on FPGAs. This is something that I think is worth looking at, definitely.
 
 Speaker 3: 01:49:28
 
