@@ -1451,27 +1451,23 @@ As far as I remember we do use peterson commitments or generally speaking homomo
 
 Speaker 1: 01:37:15
 
-Ah okay
+Ah, okay
 
-Speaker 5: 01:37:17
+Yeah, so those are again yeah homomorphic, right? 
 
-yes
-
-Speaker 1: 01:37:18
-
-yeah so those are again yeah homomorphic right sorry go ahead.
+Sorry, go ahead.
 
 Speaker 6: 01:37:22
 
-Yes because we have to the server needs to verify that the operation that we realized with the amount are correct without knowing the amount itself.
+Yes, because the server needs to verify that the operation that we realized with the amount are correct, without knowing the amount itself.
 So, yes.
-But it's something I don't know what I don't know exactly how to define homomorphic encryption, right?
+But I don't know exactly how to define homomorphic encryption, right?
 
 ## Homomorphic Encryption
 
 Speaker 6: 01:37:51
 
-Because homomorphic encryption, like, in the concept, It's okay, but it sounds like something that is not still possible, right?
+Because homomorphic encryptio, in the concept, it's okay, but it sounds like something that is not still possible, right?
 So homomorphic encryption, and the scope is this for most of the time.
 It's something like what we do is basically we operate in a committed value and that value is basically a point in an elliptic curve and that's it.
 
