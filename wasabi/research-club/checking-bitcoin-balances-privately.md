@@ -1352,17 +1352,9 @@ So I think DNS is also something we're interested in, although there are complic
 Speaker 6: 01:31:24
 
 Sorry, this is not about this topic, right?
-But just curiosity, how do you see the, how, I don't know how to ask, homomorphic encryption?
-How far do you think we are from fully, something that I, for example, can operate in a remote on data, on encrypted data in a remote, I don't know, for example, I save something in Google, in Google Drive,
-
-Speaker 1: 01:32:06
-
-for
-
-Speaker 6: 01:32:06
-
-example, right?
-And I can, for example, I don't know, add information to that file, to that encrypted file.
+But just curiosity, how do you see homomorphic encryption?
+How far do you think we are from fully, something that I, for example, can operate in a remote on data, on encrypted data in a remote, I don't know, for example, I save something in Google, in Google Drive, for example, right?
+And I can, for example, add information to that file, to that encrypted file.
 Do you think we will see something like that?
 
 Speaker 1: 01:32:21
@@ -1372,7 +1364,8 @@ Yeah, it's a great question.
 I think there's a lot of companies, there's a surprising number of companies trying to do this who will tell you like, yes.
 I take a fairly pessimistic stance on this.
 I think something companies are really excited about is encrypted machine learning.
-What they really want to do is do machine learning on encrypted data, Which of course is kind of just like a way of using cryptography to violate your privacy instead of using it to, what they want to do is do like machine learning on your encrypted, on your end to end encrypted photos or your end to end encrypted messages.
+What they really want to do is do machine learning on encrypted data. Which, of course, is kind of just like a way of using cryptography to violate your privacy.
+What they want to do is do machine learning on your end to end encrypted photos or your end to end encrypted messages.
 So it's almost like the evil version.
 I think the good news is those are really impractical.
 I think it's just like, people in the field know this, but encrypted machine learning is just like, you could do it if you want, but it's really expensive.
