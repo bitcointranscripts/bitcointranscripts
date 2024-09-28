@@ -7,6 +7,7 @@ tags:
   - 'research'
   - 'privacy-enhancements'
   - 'cryptography'
+  - 'block-explorers'
 speakers:
   - 'Samir Menon'
 categories:
