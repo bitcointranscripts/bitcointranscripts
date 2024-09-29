@@ -146,7 +146,6 @@ There are products using that behind the scenes.
 Speaker 0: 00:02:09
 
 Got it.
-Okay.
 And so since then you've been in the monitoring world.
 Great.
 
