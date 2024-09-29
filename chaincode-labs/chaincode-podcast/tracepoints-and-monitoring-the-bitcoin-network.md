@@ -590,12 +590,12 @@ Speaker 2: 00:20:04
 Yeah, and there are different attacks on the PTP networks.
 We do early on, one idea was maybe we can even detect somebody trying to eclipse us and they keep opening connections and so on.
 Obviously, I think that's a really hard challenge and you probably have better defense by just having another out of bounds source of your block headers.
-But this might be, might be an interesting way of detecting attacks that we don't know about or learning about attacks that are actually performed on Inverk.
+But this might be an interesting way of detecting attacks that we don't know about or learning about attacks that are actually performed on Inverk.
 We don't know even about yet.
 
 Speaker 0: 00:20:35
 
-Yeah, I think sharing information from nodes that aren't necessarily connected is probably pretty important for the health of the network generally and this is something that Ethan Heilman brought up when he spoke at the residency of just doing better health monitoring.
+I think sharing information from nodes that aren't necessarily connected is probably pretty important for the health of the network generally and this is something that Ethan Heilman brought up when he spoke at the residency of just doing better health monitoring.
 And it seems like that is still pretty infantile in terms of the kinds of things that we still need.
 
 Speaker 1: 00:20:55
@@ -611,28 +611,22 @@ Speaker 1: 00:21:11
 
 Yeah, so I know that there's eight outbound peers, there's two blocks only peers that we use as anchors, and there's the feeler connection.
 And the added nodes are in addition, right?
-Yeah.
-So yeah, if we popularized telling people, hey, you should find a buddy and connect to their node as an added node, it would just be an additional peer and semi-trusted in the sense that, that you would expect them not to be in on an Eclipse attack against you.
+If we popularized telling people, hey, you should find a buddy and connect to their node as an added node, it would just be an additional peer and semi-trusted in the sense that, that you would expect them not to be in on an Eclipse attack against you.
 
 Speaker 2: 00:21:42
 
-Yeah.
 On the other hand, we have done, I think a lot of work on mitigating Eclipse attacks.
 Maybe there are other attacks we haven't invested so much in, or that could be more relevant to focus on.
 
 Speaker 1: 00:21:53
 
-Right.
-Right.
 But either way, it's such an added note, might be an interesting way of making the network more resilient.
 
 Speaker 0: 00:21:59
 
-Yeah.
 
 ## Using tracepoints to review PRs
 
-Speaker 0: 00:21:59
 
 What are the things you excited about?
 What else is on your mind and things that you're excited to work on?
