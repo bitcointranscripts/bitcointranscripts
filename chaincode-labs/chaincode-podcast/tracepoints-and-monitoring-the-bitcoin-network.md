@@ -95,12 +95,17 @@ Hope you enjoy it, too.
 
 Timo, welcome back to the Chaincode office.
 You've been here before.
-Correct, yes.
-Yes.
 
-Speaker 2: 00:01:13
+Speaker 2: 00:01:12
+
+Correct, yes.
+
+Speaker 0: 00:01:13
 
 Tell us last time.
+
+Speaker 2: 00:01:15
+
 Yeah, it has been three years now.
 
 Speaker 0: 00:01:15
