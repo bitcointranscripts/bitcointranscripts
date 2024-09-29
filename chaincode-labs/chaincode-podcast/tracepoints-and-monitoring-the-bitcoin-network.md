@@ -20,10 +20,10 @@ What up?
 Speaker 0: 00:00:02
 
 We are back in the studio.
-
-Speaker 1: 00:00:02
-
 Who are we talking to today?
+
+Speaker 1: 00:00:05
+
 We're talking to OXB10C.
 
 Speaker 0: 00:00:06
@@ -33,7 +33,7 @@ So we're going to call him Timo.
 
 Speaker 1: 00:00:09
 
-OK, fine.
+Fine.
 
 Speaker 0: 00:00:12
 
@@ -61,39 +61,37 @@ You got to explain that?
 Speaker 1: 00:00:29
 
 All right, fine.
-USDT is user space statically defined tracing.
+USDT is User Space Statically Defined Tracing.
+
+Speaker 0: 00:00:36
+
 Also rolls off the tongue.
+
+Speaker 1: 00:00:00
+
 Totally.
-Also a short moniker for tether.
+Also a short moniker for Tether.
 That's why.
-
-Speaker 2: 00:00:42
-
-Got it.
 
 Speaker 0: 00:00:42
 
-That's the term.
+Got it.
 Well, we will talk to Timo about trace points.
+Anything else?
 
 Speaker 1: 00:00:45
 
-Anything else?
 Temperate activation and mining pool observation.
 
 Speaker 0: 00:00:49
 
-Yeah.
-That's what I think.
 He knows all that stuff.
-Yeah.
 All right.
 Well looking forward to our conversation.
 Hope you enjoy it, too.
 
 ## What he's been up to since the residency
 
-Speaker 0: 00:01:05
 
 Timo, welcome back to the Chaincode office.
 You've been here before.
