@@ -427,7 +427,7 @@ But if you hook into the trace point then you have a small overhead because you'
 
 Speaker 1: 00:12:37
 
-So if you compile it with the trace points disabled oh yeah it's actually not a noticeable difference.
+So if you compile it with the trace points disabled oh it's actually not a noticeable difference.
 
 Speaker 2: 00:12:43
 
@@ -436,7 +436,8 @@ So if you don't enable, during compile time, enable the trace points, you don't 
 
 Speaker 1: 00:12:53
 
-But for us developers that want to know what's going on internally and get detailed information at various points, We can turn on the trace points, it's a compiler flag, and then this suddenly results to these kernel events being...
+But for us developers that want to know what's going on internally and get detailed information at various points.
+We can turn on the trace points, it's a compiler flag, and then this suddenly results to these kernel events being...
 
 Speaker 2: 00:13:09
 
@@ -450,12 +451,12 @@ Somebody running Bitcoin Core in production, for example, an exchange or another
 Speaker 0: 00:13:37
 
 And have people been doing that?
-Have you seen projects that have been used really taking advantage of these trace points?
+Have you seen projects that have been used really taking advantage of these traces?
 
 Speaker 2: 00:13:42
 
 So one project I've heard about from someone is that they are using it for debugging or actually simulating the coin selection in Bitcoin Cross Wallet.
-Maybe Merchant can talk about that.
+Maybe Merch can talk about that.
 
 Speaker 1: 00:13:54
 
