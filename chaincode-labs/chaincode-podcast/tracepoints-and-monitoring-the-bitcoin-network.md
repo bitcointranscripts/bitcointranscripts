@@ -6,6 +6,7 @@ date: '2022-06-06'
 tags: []
 speakers:
   - '0xB10C'
+  - 'Mark Erhardt'
 categories:
   - 'podcast'
 ---
@@ -658,7 +659,7 @@ Speaker 2: 00:22:49
 Right, so the goal of Erlay is to reduce the bandwidth usage for transaction propagation.
 And one thing I did with the TracePoints is I ran an Erlay patch node from the PR and I ran master node and compared those two and the bandwidths that we're using, they're connecting to the same peers and we could actually measure the bandwidth usage of both.
 We saw the early node using far less, I think only 85% or so, or even less bandwidth for transaction relay than the master node.
-So that's really, and I think that was really helpful for Gleb or at least he communicated that he needs people to actually evaluate his changes and backtest his simulations, for example, in the real world.
+I think that was really helpful for Gleb or at least he communicated that he needs people to actually evaluate his changes and backtest his simulations, for example, in the real world.
 
 Speaker 1: 00:23:34
 
@@ -667,18 +668,12 @@ Were the other peers that you were testing against also running the early patch?
 
 Speaker 2: 00:23:40
 
-Yeah.
-Yeah.
-Okay.
-Yeah.
 So Gleb ran, I think, 12 early peers.
 I ran one master and then one early peer.
 
 Speaker 1: 00:23:49
 
-And yeah.
 So your non-early peer or your node that wasn't running early and the one that was running early were all connecting to early peers.
-Correct, yeah.
 And it reduced the bandwidth use by 15% or so.
 
 Speaker 2: 00:24:01
@@ -693,7 +688,6 @@ Is there anything else we should cover?
 Speaker 2: 00:24:06
 
 Not at the moment.
-OK.
 Maybe next time.
 
 Speaker 0: 00:24:08
@@ -729,11 +723,13 @@ One of my favorite websites, transactionfee.info, where I quote a lot of charts 
 Speaker 0: 00:24:42
 
 Well, you can pay him off with a lot of likes.
+
+Speaker 1: 00:24:46
+
 I already bought him breakfast.
+
+Speaker 0: 00:24:42
+
 Seems like a fair trade.
 All right, well thank you for joining us and we will have hopefully another episode out shortly.
 Thanks.
-
-Speaker 2: 00:25:04
-
-Have fun here.
