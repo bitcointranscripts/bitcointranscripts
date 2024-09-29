@@ -469,7 +469,7 @@ And it's a means for us to convince ourselves and hopefully also our peers that 
 
 Speaker 0: 00:14:39
 
-Yeah, I mean, I definitely see the value when you're developing something or you're checking something.
+I definitely see the value when you're developing something or you're checking something.
 I guess I'm questioning why it would end up in production at all.
 As in, PDB is not supposed to make its way into a production app.
 And so when you're making a call to provide a trace point and ship it for a release, what's the delineation between that being a good idea versus us just adding a trace point when we're doing a PR and then providing that data on the PR.
