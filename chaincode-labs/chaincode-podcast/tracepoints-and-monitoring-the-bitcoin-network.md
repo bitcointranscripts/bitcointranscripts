@@ -501,7 +501,6 @@ Yeah, for whatever reason.
 
 Speaker 2: 00:16:23
 
-Yeah.
 Then they can't debug it.
 But we might also want to make sure our Windows builds are okay, even if that's not the enterprise user.
 
@@ -513,13 +512,11 @@ I guess maybe that would be another concern though, if you had other software ru
 
 Speaker 0: 00:16:56
 
-Oh, but I even think that'd be, I mean, I think it'd be better is to have a partner piece of software that gathers these trace points, organizes them, keeps a historical record over time, etc.
+I even think that'd be, I mean, I think it'd be better is to have a partner piece of software that gathers these trace points, organizes them, keeps a historical record over time, etc.
 
 ## Using tracepoints for P2P monitoring
 
-Speaker 0: 00:17:04
 
-Etc.
 That could be quite valuable.
 
 Speaker 2: 00:17:06
