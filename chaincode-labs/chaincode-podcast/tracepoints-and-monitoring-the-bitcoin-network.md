@@ -539,11 +539,10 @@ That's the goal, yeah.
 
 Speaker 1: 00:18:02
 
-Oh, I could see enterprises being super interested in having a closer look at what their nodes are doing, how they're connected and that sort of thing.
+I could see enterprises being super interested in having a closer look at what their nodes are doing, how they're connected and that sort of thing.
 And it enables people to donate their logs more easily, maybe.
 Probably, yeah.
 If we see fun stuff, like what we talked to Martin about.
-Yeah.
 
 Speaker 0: 00:18:19
 
@@ -559,7 +558,7 @@ And there were some interesting events in the peer to peer sphere a year ago or 
 
 Speaker 2: 00:18:45
 
-Oh, yeah.
+Yeah.
 
 Speaker 1: 00:18:45
 
@@ -569,7 +568,7 @@ Speaker 2: 00:19:00
 
 Yeah, right.
 Actually, the address flooding that happened last summer actually was one of the motivations for that project.
-So one goal is actually to take some of the address flooding or similar flooding or anything in that direction and have an alert because I think, at least from my perspective, I was not directly involved in that.
+So one goal is actually to take some of the address flooding or similar flooding or anything in that direction and have an alert because, at least from my perspective, I was not directly involved in that.
 But from my perspective, this was just a coincidence that we actually saw that happening on the network and might be valuable for us to know something like that.
 
 Speaker 0: 00:19:28
