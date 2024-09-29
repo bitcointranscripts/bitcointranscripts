@@ -358,7 +358,7 @@ Are there other things that have come to light?
 Speaker 2: 00:09:25
 
 Yeah, of course, like the mining pool observer, it works by comparing a block that was recently mined to a block template that was recently created from my node.
-So obviously there are some differences between the my nodes mempool and the mining pools mempool and we can't exactly time when the mining pool actually created his block template but we can still compare the template, my template and the pools block and figure out, for example, which transactions are shared.
+So obviously there are some differences between my nodes mempool and the mining pools mempool and we can't exactly time when the mining pool actually created his block template but we can still compare the template, my template and the pools block and figure out, for example, which transactions are shared.
 We hope that's a big part, but we can actually see transactions that are missing from the block that we think should be in the block.
 We can also see transactions that are extra to the block.
 So one transaction that's always extra is the coinbase.
@@ -370,7 +370,6 @@ And of course transaction accelerators for example ERPTC runs a transaction acce
 Speaker 1: 00:10:32
 
 So you would say that generally you see all the mining pools you're observing as using the same block building as Bitcoin Core?
-Yes.
 But they sometimes prioritize transactions because of out of band or their own usage.
 
 Speaker 2: 00:10:45
@@ -385,11 +384,13 @@ Speaker 2: 00:10:53
 
 Yeah, I think so.
 And we don't see too much deviation from the block template actually.
-Right.
 
 Speaker 0: 00:10:59
 
-Well, that's Maybe more fodder for why, Mark, you should be continuing to work on that project.
+Mark, you should be continuing to work on that project.
+
+Speaker 1: 00:11:08
+
 Yeah, I know.
 
 ## User-space Statically Defined Tracing (USDT)
