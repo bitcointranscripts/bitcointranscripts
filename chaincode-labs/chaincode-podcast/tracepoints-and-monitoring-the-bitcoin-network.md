@@ -573,7 +573,7 @@ But from my perspective, this was just a coincidence that we actually saw that h
 
 Speaker 0: 00:19:28
 
-Yeah, it was, I think It was raised to GMAX's attention on a BitcoinTalk forum, which then got relayed to more active folks.
+Yeah, I think It was raised to GMAX's attention on a BitcoinTalk forum, which then got relayed to more active folks.
 But without someone combing BitcoinTalk forum, it wouldn't necessarily...
 
 Speaker 2: 00:19:43
@@ -583,7 +583,6 @@ But I think it could have happened that nobody reported it or the core developme
 
 Speaker 1: 00:19:55
 
-Yeah.
 Making peer-to-peer traffic more readable and more accessible to regular users would maybe enable more of that to come to attention.
 
 Speaker 2: 00:20:04
