@@ -176,7 +176,6 @@ So the first project that I recall you were doing, the Mempool Observer.
 Speaker 2: 00:02:57
 
 Correct.
-Yeah.
 
 Speaker 0: 00:02:58
 
@@ -198,11 +197,9 @@ Speaker 1: 00:03:51
 One pattern that I really enjoyed looking at was multi-sig.
 You could split out the specific types of multi-sig and fee rate estimations as an overlay.
 And it was fairly easy to discover some of the market participants that way.
-Correct.
 
 Speaker 2: 00:04:05
 
-Yeah.
 Actually, I did a whole series of blog posts on that.
 Based on the data I observed there, for example, observing the blockchain.com wallet, you can closely follow their fee rate estimates and actually see the people using these wallets.
 So back at the time, they claimed to have one third of the market share in transactions.
@@ -219,11 +216,11 @@ Why is that an interesting difference?
 Speaker 2: 00:04:37
 
 One key property of Bitcoin is this interstitial resistance.
-And we were fine as long as one mining pool says, okay, I don't mine one transaction.
+And we were fine as long as one mining pool says, I don't mine one transaction.
 I don't allow this transaction to be included in my block.
 We're fine.
 But once we see multiple pools doing that, or all pools doing that, blocking or filtering certain transactions, then this property of Bitcoin doesn't hold anymore.
-And I think that's really important for us to know if that happens and maybe to react to that if we can, if we even can.
+I think that's really important for us to know if that happens and maybe to react to that if we can, if we even can.
 
 Speaker 0: 00:05:06
 
@@ -233,7 +230,7 @@ Or is that our job?
 
 Speaker 2: 00:05:15
 
-Well, yeah, I like I built the tool and if I observe something I would raise a flag.
+Like I built the tool and if I observe something I would raise a flag.
 I don't know, I would tweet about it, I would blog about it.
 
 ## Mining pools not mining P2TR at Taproot activation
@@ -241,8 +238,7 @@ I don't know, I would tweet about it, I would blog about it.
 Speaker 1: 00:05:23
 
 I mean that works, right?
-Looking at the taproot activation, your mining pool observer picked up that some mining pools were not mining paid to Taproot transactions, even though it was active at that point.
-Yeah.
+Looking at the Taproot activation, your mining pool observer picked up that some mining pools were not mining paid to Taproot transactions, even though it was active at that point.
 And yeah, that definitely got seen.
 
 Speaker 0: 00:05:38
@@ -260,7 +256,6 @@ Tell us that story.
 
 Speaker 2: 00:05:43
 
-Yeah.
 So actually I was running like a live stream up on Taproot activation.
 Activation is always interesting.
 There might be stuff happening that we didn't foresee, but we should have.
@@ -274,12 +269,12 @@ Then the second block arrived.
 
 Speaker 0: 00:06:24
 
-Because you had done a, was it with the F2 pool?
+Was it with the F2 pool?
 Who had you actually done like a trial with before it was activated?
 
 Speaker 2: 00:06:30
 
-Oh yeah, right, Okay, so yeah, even before activation actually, we did with F2Pool, we spent a few taproot outputs that were like low value, related them to bring just to show and learn how that's done and show that the software activates actually anyone can spend or are not yet unspendable.
+Even before activation actually, we did with F2Pool, we spent a few taproot outputs that were like low value, related them to bring just to show and learn how that's done and show that the software activates actually anyone can spend or are not yet unspendable.
 
 Speaker 0: 00:06:48
 
@@ -294,24 +289,24 @@ Yeah.
 
 Speaker 0: 00:06:58
 
-Okay, cool.
+Cool.
 
 Speaker 2: 00:06:58
 
-Yeah.
-And going back to the earlier story In this very night of taproot activation actually, the second block arrived from f2 pool this time and didn't include any taproot spans.
-Third block arrived, didn't include any taproot spans.
-So by the time the fourth block arrived, all these taproot spans were confirmed.
+And going back to the earlier story.
+In this very night of taproot activation actually, the second block arrived from f2 pool this time and didn't include any Taproot spans.
+Third block arrived, didn't include any Taproot spans.
+So by the time the fourth block arrived, all these Taproot spans were confirmed.
 And it later turned out that these pools had upgraded in time, burned for signaling, but the issue was that their peers were old and they had some weird manual peer configuration, which then caused problems for them.
 Their peers couldn't relay these pay-to-type-root spans because they are non-standard for them.
 
 Speaker 1: 00:07:34
 
 So basically they were up to date and ready to go and actually correctly signaling, but just didn't see the Taproot transactions because their peers filtered them out and dropped them as nonstandard.
-Correct.
 
 Speaker 2: 00:07:45
 
+Correct.
 Yeah.
 
 Speaker 0: 00:07:46
@@ -331,15 +326,17 @@ Speaker 0: 00:08:13
 
 Cool.
 And so, I mean, this is the service that you provide to the community.
-Correct.
 It's open source and you're being supported by Brink currently.
 
 ## Why monitor the network?
 
-Speaker 0: 00:08:20
+Speaker 2: 00:08:20
 
 Yes.
-And so how do you think about these kinds of projects?
+
+Speaker 0: 00:08:21
+
+How do you think about these kinds of projects?
 The monitoring piece or we're going to talk about trace points next, but how do you think about the observability of the network and different things that are still missing.
 
 Speaker 2: 00:08:33
@@ -353,7 +350,7 @@ And you might want to know if there's censorship and say, okay, this isn't worki
 
 Speaker 0: 00:09:09
 
-Other, other things that you've observed running the mining pool observer as to how pools operate, whether that's how they figure out what tracks transactions go into blocks or things like learning about the custom code in terms of their peer set, things like that.
+Other things that you've observed running the mining pool observer as to how pools operate, whether that's how they figure out what tracks transactions go into blocks or things like learning about the custom code in terms of their peer set, things like that.
 Are there other things that have come to light?
 
 ## Template discrepancies between pools and monitor
