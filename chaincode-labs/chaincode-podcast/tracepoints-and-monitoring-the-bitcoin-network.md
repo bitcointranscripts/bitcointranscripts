@@ -12,9 +12,9 @@ categories:
 ---
 Speaker 0: 00:00:00
 
-Hey, Merch.
+Hey, Mark.
 
-Speaker 1: 00:00:01
+Mark Erhardt: 00:00:01
 
 What up?
 
@@ -23,7 +23,7 @@ Speaker 0: 00:00:02
 We are back in the studio.
 Who are we talking to today?
 
-Speaker 1: 00:00:05
+Mark Erhardt: 00:00:05
 
 We're talking to OXB10C.
 
@@ -32,7 +32,7 @@ Speaker 0: 00:00:06
 I know him as Timo.
 So we're going to call him Timo.
 
-Speaker 1: 00:00:09
+Mark Erhardt: 00:00:09
 
 Fine.
 
@@ -41,7 +41,7 @@ Speaker 0: 00:00:12
 It doesn't quite roll off the tongue.
 Is there anything in particular that you're interested in learning from Timo today?
 
-Speaker 1: 00:00:17
+Mark Erhardt: 00:00:17
 
 Yeah, I think we need to talk about Tether.
 What he's doing with Tether and Bitcoin.
@@ -50,7 +50,7 @@ Speaker 0: 00:00:22
 
 I'm not sure everybody's going to get that joke.
 
-Speaker 1: 00:00:24
+Mark Erhardt: 00:00:24
 
 That's fine.
 
@@ -59,7 +59,7 @@ Speaker 0: 00:00:25
 That's it?
 You got to explain that?
 
-Speaker 1: 00:00:29
+Mark Erhardt: 00:00:29
 
 All right, fine.
 USDT is User Space Statically Defined Tracing.
@@ -68,7 +68,7 @@ Speaker 0: 00:00:36
 
 Also rolls off the tongue.
 
-Speaker 1: 00:00:00
+Mark Erhardt: 00:00:00
 
 Totally.
 Also a short moniker for Tether.
@@ -80,7 +80,7 @@ Got it.
 Well, we will talk to Timo about trace points.
 Anything else?
 
-Speaker 1: 00:00:45
+Mark Erhardt: 00:00:45
 
 Temperate activation and mining pool observation.
 
@@ -97,7 +97,7 @@ Hope you enjoy it, too.
 Timo, welcome back to the Chaincode office.
 You've been here before.
 
-Speaker 2: 00:01:12
+Timo: 00:01:12
 
 Correct, yes.
 
@@ -105,7 +105,7 @@ Speaker 0: 00:01:13
 
 Tell us last time.
 
-Speaker 2: 00:01:15
+Timo: 00:01:15
 
 Yeah, it has been three years now.
 
@@ -113,7 +113,7 @@ Speaker 0: 00:01:15
 
 Nothing's happened since then.
 
-Speaker 2: 00:01:16
+Timo: 00:01:16
 
 No, nothing at all.
 
@@ -126,7 +126,7 @@ And we did those two weeks of seminars.
 So since then, what have you been up to?
 What happened after that?
 
-Speaker 2: 00:01:37
+Timo: 00:01:37
 
 After that, actually, I joined a startup in Zurich, the Shift Crypto guys.
 We worked on Plug and Play Bitcoin node.
@@ -138,7 +138,7 @@ And so was that closed source?
 Was that open source?
 Cause you clearly sort of gone into the...
 
-Speaker 2: 00:02:05
+Timo: 00:02:05
 
 That's industry work.
 That's closed source.
@@ -150,7 +150,7 @@ Got it.
 And so since then you've been in the monitoring world.
 Great.
 
-Speaker 2: 00:02:14
+Timo: 00:02:14
 
 Yeah.
 I'm really interested in what is happening on the Bitcoin network and what people are doing there and what they are not doing.
@@ -160,7 +160,7 @@ Speaker 0: 00:02:22
 So tell us, what's the motivation to do that?
 Why did you gravitate towards those kinds of projects?
 
-Speaker 2: 00:02:28
+Timo: 00:02:28
 
 So Bitcoin is an open system.
 You can do and you cannot do anything you like in the realms of, for example, policy or consensus.
@@ -174,7 +174,7 @@ Speaker 0: 00:02:53
 Cool.
 So the first project that I recall you were doing, the Mempool Observer.
 
-Speaker 2: 00:02:57
+Timo: 00:02:57
 
 Correct.
 
@@ -182,7 +182,7 @@ Speaker 0: 00:02:58
 
 So tell me about that project and then what did that morph into?
 
-Speaker 2: 00:03:01
+Timo: 00:03:01
 
 So really early on, when I got started working on open source projects for Bitcoin, this was one of my first projects just mimicking Jochen Hoeneke's Mempool queue site, just because I wanted to try it out myself.
 And I'm seeing where I got there.
@@ -193,13 +193,13 @@ We can see people following fee rates or the estimates of the fee rates.
 We can actually see people doing consolidations, doing best payments, doing RBF and so on.
 That's really interesting to observe and learn from and see the patterns emerging there.
 
-Speaker 1: 00:03:51
+Mark Erhardt: 00:03:51
 
 One pattern that I really enjoyed looking at was multi-sig.
 You could split out the specific types of multi-sig and fee rate estimations as an overlay.
 And it was fairly easy to discover some of the market participants that way.
 
-Speaker 2: 00:04:05
+Timo: 00:04:05
 
 Actually, I did a whole series of blog posts on that.
 Based on the data I observed there, for example, observing the blockchain.com wallet, you can closely follow their fee rate estimates and actually see the people using these wallets.
@@ -214,7 +214,7 @@ So as you do these monitoring projects, and you did, you started with mempool, b
 So why mining pool?
 Why is that an interesting difference?
 
-Speaker 2: 00:04:37
+Timo: 00:04:37
 
 One key property of Bitcoin is this interstitial resistance.
 And we were fine as long as one mining pool says, I don't mine one transaction.
@@ -229,14 +229,14 @@ I'm sure there are shenanigans happening.
 So like, how do you raise the flag or how do you call that to the community's attention?
 Or is that our job?
 
-Speaker 2: 00:05:15
+Timo: 00:05:15
 
 Like I built the tool and if I observe something I would raise a flag.
 I don't know, I would tweet about it, I would blog about it.
 
 ## Mining pools not mining P2TR at Taproot activation
 
-Speaker 1: 00:05:23
+Mark Erhardt: 00:05:23
 
 I mean that works, right?
 Looking at the Taproot activation, your mining pool observer picked up that some mining pools were not mining paid to Taproot transactions, even though it was active at that point.
@@ -246,7 +246,7 @@ Speaker 0: 00:05:38
 
 And that was some of it by accident, right?
 
-Speaker 2: 00:05:40
+Timo: 00:05:40
 
 Correct.
 Yeah.
@@ -255,7 +255,7 @@ Speaker 0: 00:05:42
 
 Tell us that story.
 
-Speaker 2: 00:05:43
+Timo: 00:05:43
 
 So actually I was running like a live stream up on Taproot activation.
 Activation is always interesting.
@@ -273,7 +273,7 @@ Speaker 0: 00:06:24
 Was it with the F2 pool?
 Who had you actually done like a trial with before it was activated?
 
-Speaker 2: 00:06:30
+Timo: 00:06:30
 
 Even before activation actually, we did with F2Pool, we spent a few taproot outputs that were like low value, related them to bring just to show and learn how that's done and show that the software activates actually anyone can spend or are not yet unspendable.
 
@@ -282,7 +282,7 @@ Speaker 0: 00:06:48
 And so how do you like arrange something like that?
 You reach out to the various pools or just them and just say, I want to try this.
 
-Speaker 2: 00:06:54
+Timo: 00:06:54
 
 I reached out to two pools.
 One of them was F2 pool and they said, hey, let's go.
@@ -292,7 +292,7 @@ Speaker 0: 00:06:58
 
 Cool.
 
-Speaker 2: 00:06:58
+Timo: 00:06:58
 
 And going back to the earlier story.
 In this very night of taproot activation actually, the second block arrived from f2 pool this time and didn't include any Taproot spans.
@@ -301,11 +301,11 @@ So by the time the fourth block arrived, all these Taproot spans were confirmed.
 And it later turned out that these pools had upgraded in time, burned for signaling, but the issue was that their peers were old and they had some weird manual peer configuration, which then caused problems for them.
 Their peers couldn't relay these pay-to-type-root spans because they are non-standard for them.
 
-Speaker 1: 00:07:34
+Mark Erhardt: 00:07:34
 
 So basically they were up to date and ready to go and actually correctly signaling, but just didn't see the Taproot transactions because their peers filtered them out and dropped them as nonstandard.
 
-Speaker 2: 00:07:45
+Timo: 00:07:45
 
 Correct.
 Yeah.
@@ -316,7 +316,7 @@ So what was remediation for that?
 You chat with them, you figure it out.
 They change their peers and then off and running?
 
-Speaker 2: 00:07:53
+Timo: 00:07:53
 
 Yeah, they had some custom code and I think they dropped that.
 I think they now keep more closely to the Bitcoin core releases than before.
@@ -331,7 +331,7 @@ It's open source and you're being supported by Brink currently.
 
 ## Why monitor the network?
 
-Speaker 2: 00:08:20
+Timo: 00:08:20
 
 Yes.
 
@@ -340,7 +340,7 @@ Speaker 0: 00:08:21
 How do you think about these kinds of projects?
 The monitoring piece or we're going to talk about trace points next, but how do you think about the observability of the network and different things that are still missing.
 
-Speaker 2: 00:08:33
+Timo: 00:08:33
 
 I think talking to people helps a lot.
 Hearing about what they're interested in, what their motivations are, what their goals are, what they're looking for, and what they're building, and then supporting them in a way that you provide them with data for either their proposals or for PRs to get merged and so on.
@@ -356,7 +356,7 @@ Are there other things that have come to light?
 
 ## Template discrepancies between pools and monitor
 
-Speaker 2: 00:09:25
+Timo: 00:09:25
 
 Yeah, of course, like the mining pool observer, it works by comparing a block that was recently mined to a block template that was recently created from my node.
 So obviously there are some differences between my nodes mempool and the mining pools mempool and we can't exactly time when the mining pool actually created his block template but we can still compare the template, my template and the pools block and figure out, for example, which transactions are shared.
@@ -368,20 +368,20 @@ Some other times we for example see the payouts and consideration transactions f
 So they don't specify any fees, they are not related on the network and we can detect them being included there.
 And of course transaction accelerators for example ERPTC runs a transaction accelerator, you pay an out-of-band fee and they include your low fee transaction really early on in their block and we can see that for example.
 
-Speaker 1: 00:10:32
+Mark Erhardt: 00:10:32
 
 So you would say that generally you see all the mining pools you're observing as using the same block building as Bitcoin Core?
 But they sometimes prioritize transactions because of out of band or their own usage.
 
-Speaker 2: 00:10:45
+Timo: 00:10:45
 
 Yeah, I think they use the ERPC prioritized transaction.
 
-Speaker 1: 00:10:49
+Mark Erhardt: 00:10:49
 
 So it's consistent with Bitcoin Core being run by all of them?
 
-Speaker 2: 00:10:53
+Timo: 00:10:53
 
 Yeah, I think so.
 And we don't see too much deviation from the block template actually.
@@ -390,7 +390,7 @@ Speaker 0: 00:10:59
 
 Mark, you should be continuing to work on that project.
 
-Speaker 1: 00:11:08
+Mark Erhardt: 00:11:08
 
 Yeah, I know.
 
@@ -402,12 +402,12 @@ Cool.
 One of the other projects you've been working on is adding trace points to Bitcoin Core.
 Tell me about that.
 
-Speaker 2: 00:11:13
+Timo: 00:11:13
 
 In the Linux world, there are trace points, for example, in the kernel, and you can detect when a certain part of the code's reached and you can extract some internal information from that and do debugging, for example, and so on.
-And I thought this would be really nice to have in BitConcord as well.
-In December 2020, I sell PR to BitConcord, adding very primitive support for that.
-And I picked that up, that work, and added the first trace points that 2BitConcord that are reached in the networking layer.
+And I thought this would be really nice to have in Bitcoincore as well.
+In December 2020, I sell PR to Bitcoincore, adding very primitive support for that.
+And I picked that up, that work, and added the first trace points that 2Bitcoincore that are reached in the networking layer.
 So for example, each time we receive a message from a peer or we send a message to a peer.
 This trace point is reached.
 And we can hook into this trace point and extract, for example, which peer we sent this message to, what this message contains, and similar data, and process this in some other way, some other process, like a tracing script, do analysis there, can do debugging, can do education, for example.
@@ -420,27 +420,27 @@ Why are we adding trace points to certain parts?
 Why don't we just add it everywhere?
 And what are the trade-offs of having it in certain places versus having them just every line of code?
 
-Speaker 2: 00:12:21
+Timo: 00:12:21
 
 So the more trace points you have, the less readable your code gets, I say.
 And obviously, when you actually don't use the trace points, you have like very minimal overhead.
 But if you hook into the trace point then you have a small overhead because you're running more code you have more overhead there.
 
-Speaker 1: 00:12:37
+Mark Erhardt: 00:12:37
 
 So if you compile it with the trace points disabled oh it's actually not a noticeable difference.
 
-Speaker 2: 00:12:43
+Timo: 00:12:43
 
 Correct yeah there's a macro in there and it actually evaluates to nothing.
 So if you don't enable, during compile time, enable the trace points, you don't see anything there.
 
-Speaker 1: 00:12:53
+Mark Erhardt: 00:12:53
 
 But for us developers that want to know what's going on internally and get detailed information at various points.
 We can turn on the trace points, it's a compiler flag, and then this suddenly results to these kernel events being...
 
-Speaker 2: 00:13:09
+Timo: 00:13:09
 
 Yeah, actually, in this time it's not really the kernel events.
 We hook in over the kernel and put the Linux kernel into that.
@@ -454,12 +454,12 @@ Speaker 0: 00:13:37
 And have people been doing that?
 Have you seen projects that have been used really taking advantage of these traces?
 
-Speaker 2: 00:13:42
+Timo: 00:13:42
 
 So one project I've heard about from someone is that they are using it for debugging or actually simulating the coin selection in Bitcoin Cross Wallet.
-Maybe Merch can talk about that.
+Maybe Mark can talk about that.
 
-Speaker 1: 00:13:54
+Mark Erhardt: 00:13:54
 
 Andrew Chow and I have been using it very extensively in the past week.
 So Andy added face points in the coin selection to learn which algorithm was used to produce an input set out of the ones that were proposed, which one was preferred, whether we managed to avoid partial spending of a key and things like that.
@@ -476,7 +476,7 @@ As in, PDB is not supposed to make its way into a production app.
 And so when you're making a call to provide a trace point and ship it for a release, what's the delineation between that being a good idea versus us just adding a trace point when we're doing a PR and then providing that data on the PR.
 Why production versus when you're sort of using it in the debugging world?
 
-Speaker 1: 00:15:11
+Mark Erhardt: 00:15:11
 
 Yeah I think we don't want to plaster the whole code base with them because they add a maintenance burden.
 And if you add them in points that aren't known to be useful, it would be a wasted effort.
@@ -488,7 +488,7 @@ For example, in coin selection I can see also enterprise users wanting to have d
 And I personally know three developers that are running with the coin selection hooks already and doing simulations and actively learning about how good of an idea their ideas for the Bitcoin Core wallet are.
 There it's clear cut that it's an improvement, it's worth the effort.
 
-Speaker 2: 00:16:01
+Timo: 00:16:01
 
 Also one downside of the trace points is there's only trace points on Linux.
 We don't have them on Windows.
@@ -500,12 +500,12 @@ Speaker 0: 00:16:22
 
 Yeah, for whatever reason.
 
-Speaker 2: 00:16:23
+Timo: 00:16:23
 
 Then they can't debug it.
 But we might also want to make sure our Windows builds are okay, even if that's not the enterprise user.
 
-Speaker 1: 00:16:33
+Mark Erhardt: 00:16:33
 
 Maybe one comment for our power users listening, these trace points only evaluate locally, there's no telemetry in Bitcoin Core.
 It's just you, yourself on your own machine can hook into it.
@@ -520,7 +520,7 @@ I even think that'd be, I mean, I think it'd be better is to have a partner piec
 
 That could be quite valuable.
 
-Speaker 2: 00:17:06
+Timo: 00:17:06
 
 Yeah, I'm actually working on my P2P network monitoring using trace points where we collect the data and we analyze the data for potential anomalies.
 And maybe someone to do a bug somewhere in master and we want to test it before we have a release candidate, for example.
@@ -531,14 +531,14 @@ Speaker 0: 00:17:31
 
 And so you'd imagine that multiple nodes in geographically distributed places would be running this software and then it'd be collected in a centralized place or.
 
-Speaker 2: 00:17:40
+Timo: 00:17:40
 
 Yeah.
-Like my idea of the project, what I'm working on is just providing an interface that hooks into the trace point and provides that without users to listen to the data feed coming from BitConcord without the hassle of working actually with the trace points.
+Like my idea of the project, what I'm working on is just providing an interface that hooks into the trace point and provides that without users to listen to the data feed coming from Bitcoincore without the hassle of working actually with the trace points.
 So making that really easy and providing interface for people where, for example, why did a quick Python script and just run that Python script that filters out the relevant stuff for them.
 That's the goal, yeah.
 
-Speaker 1: 00:18:02
+Mark Erhardt: 00:18:02
 
 I could see enterprises being super interested in having a closer look at what their nodes are doing, how they're connected and that sort of thing.
 And it enables people to donate their logs more easily, maybe.
@@ -549,7 +549,7 @@ Speaker 0: 00:18:19
 
 Do you want to explain what that means?
 
-Speaker 1: 00:18:21
+Mark Erhardt: 00:18:21
 
 Yeah.
 I think that episode's not out yet.
@@ -557,15 +557,15 @@ Right.
 So we had Martin Zum Sande visit us and we talked to him a little bit about how changing the peer to peer behavior could change the emergent behavior of the network in the whole.
 And there were some interesting events in the peer to peer sphere a year ago or so, where somebody started broadcasting vast amounts of made up addresses.
 
-Speaker 2: 00:18:45
+Timo: 00:18:45
 
 Yeah.
 
-Speaker 1: 00:18:45
+Mark Erhardt: 00:18:45
 
 And we dissected that story a little bit with Martin and looked a little bit at the peculiarities of the address relay, how sending small chunks would carry further than sending big buckets of them and things like that.
 
-Speaker 2: 00:19:00
+Timo: 00:19:00
 
 Yeah, right.
 Actually, the address flooding that happened last summer actually was one of the motivations for that project.
@@ -577,16 +577,16 @@ Speaker 0: 00:19:28
 Yeah, I think It was raised to GMAX's attention on a BitcoinTalk forum, which then got relayed to more active folks.
 But without someone combing BitcoinTalk forum, it wouldn't necessarily...
 
-Speaker 2: 00:19:43
+Timo: 00:19:43
 
 In the end, there was a paper about it, and so it definitely got attention.
 But I think it could have happened that nobody reported it or the core development process, people involved in that never heard about it.
 
-Speaker 1: 00:19:55
+Mark Erhardt: 00:19:55
 
 Making peer-to-peer traffic more readable and more accessible to regular users would maybe enable more of that to come to attention.
 
-Speaker 2: 00:20:04
+Timo: 00:20:04
 
 Yeah, and there are different attacks on the PTP networks.
 We do early on, one idea was maybe we can even detect somebody trying to eclipse us and they keep opening connections and so on.
@@ -599,27 +599,27 @@ Speaker 0: 00:20:35
 I think sharing information from nodes that aren't necessarily connected is probably pretty important for the health of the network generally and this is something that Ethan Heilman brought up when he spoke at the residency of just doing better health monitoring.
 And it seems like that is still pretty infantile in terms of the kinds of things that we still need.
 
-Speaker 1: 00:20:55
+Mark Erhardt: 00:20:55
 
 Should we popularize something like finding a buddy whose node you connect to?
 In general, you have a friend and just always connect or add that node.
 
-Speaker 2: 00:21:07
+Timo: 00:21:07
 
 Maybe, or even if you run multiple nodes, maybe connect them, maybe, I don't know.
 
-Speaker 1: 00:21:11
+Mark Erhardt: 00:21:11
 
 Yeah, so I know that there's eight outbound peers, there's two blocks only peers that we use as anchors, and there's the feeler connection.
 And the added nodes are in addition, right?
 If we popularized telling people, hey, you should find a buddy and connect to their node as an added node, it would just be an additional peer and semi-trusted in the sense that, that you would expect them not to be in on an Eclipse attack against you.
 
-Speaker 2: 00:21:42
+Timo: 00:21:42
 
 On the other hand, we have done, I think a lot of work on mitigating Eclipse attacks.
 Maybe there are other attacks we haven't invested so much in, or that could be more relevant to focus on.
 
-Speaker 1: 00:21:53
+Mark Erhardt: 00:21:53
 
 But either way, it's such an added note, might be an interesting way of making the network more resilient.
 
@@ -633,7 +633,7 @@ What are the things you excited about?
 What else is on your mind and things that you're excited to work on?
 Things that, you know, obviously software activation is on the tip of everyone's tongue.
 
-Speaker 2: 00:22:09
+Timo: 00:22:09
 
 I think that's not really other, but using the trace points to review PRs has helped me a lot.
 Actually, for example, looking at some P2P changes and actually seeing the protocol change here a bit, or it works the same as before and so on.
@@ -646,7 +646,7 @@ Speaker 0: 00:22:42
 
 Let's take something like Erlay.
 
-Speaker 2: 00:22:45
+Timo: 00:22:45
 
 Yeah, right.
 
@@ -654,29 +654,29 @@ Speaker 0: 00:22:45
 
 So talk to me about how TracePoints might help with Erlay.
 
-Speaker 2: 00:22:49
+Timo: 00:22:49
 
 Right, so the goal of Erlay is to reduce the bandwidth usage for transaction propagation.
 And one thing I did with the TracePoints is I ran an Erlay patch node from the PR and I ran master node and compared those two and the bandwidths that we're using, they're connecting to the same peers and we could actually measure the bandwidth usage of both.
 We saw the early node using far less, I think only 85% or so, or even less bandwidth for transaction relay than the master node.
 I think that was really helpful for Gleb or at least he communicated that he needs people to actually evaluate his changes and backtest his simulations, for example, in the real world.
 
-Speaker 1: 00:23:34
+Mark Erhardt: 00:23:34
 
 So that's really interesting.
 Were the other peers that you were testing against also running the early patch?
 
-Speaker 2: 00:23:40
+Timo: 00:23:40
 
 So Gleb ran, I think, 12 early peers.
 I ran one master and then one early peer.
 
-Speaker 1: 00:23:49
+Mark Erhardt: 00:23:49
 
 So your non-early peer or your node that wasn't running early and the one that was running early were all connecting to early peers.
 And it reduced the bandwidth use by 15% or so.
 
-Speaker 2: 00:24:01
+Timo: 00:24:01
 
 Yeah, and some occasions even more, yeah.
 
@@ -685,7 +685,7 @@ Speaker 0: 00:24:04
 Cool.
 Is there anything else we should cover?
 
-Speaker 2: 00:24:06
+Timo: 00:24:06
 
 Not at the moment.
 Maybe next time.
@@ -697,7 +697,7 @@ Thanks, Timo.
 It's good to have you back.
 Thanks for telling us about what you've been up to since you were last here.
 
-Speaker 2: 00:24:13
+Timo: 00:24:13
 
 Thanks for having me.
 
@@ -707,7 +707,7 @@ All right.
 So another conversation in the books.
 Any takeaways from our conversation with Timo?
 
-Speaker 1: 00:24:27
+Mark Erhardt: 00:24:27
 
 That was fun, short and sweet.
 
@@ -715,7 +715,7 @@ Speaker 0: 00:24:30
 
 He's up to a lot of good things for the health of the ecosystem.
 
-Speaker 1: 00:24:33
+Mark Erhardt: 00:24:33
 
 Yeah, I need to make another shout out.
 One of my favorite websites, transactionfee.info, where I quote a lot of charts from, is also run by Timo.
@@ -724,7 +724,7 @@ Speaker 0: 00:24:42
 
 Well, you can pay him off with a lot of likes.
 
-Speaker 1: 00:24:46
+Mark Erhardt: 00:24:46
 
 I already bought him breakfast.
 
