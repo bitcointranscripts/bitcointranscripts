@@ -2,7 +2,7 @@
 title: 'Mempool Policy'
 transcript_by: 'sorukumar via review.btctranscripts.com'
 media: 'https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Policy-e182ul0'
-date: '2021-11-10'
+date: '2021-11-09'
 tags:
   - 'rbf'
   - 'transaction-pinning'
@@ -48,10 +48,10 @@ Well, I think you wanted to talk about policy.
 
 Yes, that's what I wanted to talk about.
 
-**John**
+**John**0: 00:00:12
 What kind of policy?
 
-**Gloria**
+**Gloria**1: 00:00:14
 Mempool policy, not legislative policy or miniscript policy.
 Mempool policy.
 
@@ -115,7 +115,7 @@ Okay, so you receive a transaction, you put it in your mempool, and as part of d
 And then if you receive a block in the future that contains that transaction you don't need to recheck that script.
 Okay.
 
-**Gloria**: 00:02:25
+**Gloria** 1: 00:02:25
 
 Yep.
 All you do is check your signature cache with the WTX ID and the verification flags.
@@ -127,7 +127,7 @@ Okay.
 So that's one good reason to have a mempool.
 What else?
 
-**Gloria**: 00:02:35
+**Gloria** 1:00:02:35
 
 If you are going to be broadcasting your transactions, having a mempool really helps with fee estimation.
 Like you could go check a centralized API, but really what you should be doing is querying your own mempool, which hopefully is an accurate pool of transactions that a miner would be looking at as well when they're selecting what's going to be in their next block.
@@ -142,7 +142,7 @@ Etc.
 Okay, so you mentioned script caching.
 Another interesting aspect of speeding up block validation relay is compact blocks, right?
 
-**Gloria**: 00:03:46
+**Gloria** 1:00:03:46
 
 Right, Yeah.
 So if you already have the transactions or like the mempool will contain the transactions themselves obviously.
@@ -153,7 +153,7 @@ You can just go, whoop.
 
 So saving bandwidth as well as computation.
 
-**Gloria**: 00:04:08
+**Gloria** 1:00:04:08
 
 Yeah, network bandwidth.
 
@@ -165,7 +165,7 @@ Oh dear.
 So can you explain that?
 How does a mempool or how does transaction relay help with decentralization?
 
-**Gloria**: 00:04:24
+**Gloria** 1: 00:04:24
 
 Right.
 So I think what we're trying to avoid here is you needing to do anything beyond like run a regular node in order to broadcast transactions.
@@ -183,7 +183,7 @@ But like I said, there's so many pros to having your own mempool that hopefully 
 Right, so it's altruistic in a sense that we're relying on nodes and peers of peers existing and relaying the transaction.
 So clearly for that to work, we can't allow the cost of having a mempool and relaying transactions to be too high.
 
-**Gloria**: 00:05:56
+**Gloria** 1:00:05:56
 
 Yeah.
 Yeah.
@@ -205,7 +205,7 @@ Okay, we'll get into those a bit later.
 So Bitcoin has this peer-to-peer network.
 And if we're talking about block propagation, we have this inbuilt kind of rate limiter or protection from DOS, which is proof of work, right?
 
-**Gloria**: 00:07:10
+**Gloria** 1: 00:07:10
 
 Right.
 I think you know block download a bit better than I do.
@@ -219,7 +219,7 @@ And for that to happen, the person who created that header needed to have done w
 That's kind of the critical insight that makes Bitcoin possible.
 So when someone's feeding you headers or blocks, it's very cheap for you to verify that they've done that work.
 
-**Gloria**: 00:07:50
+**Gloria** 1: 00:07:50
 
 Yeah, but very expensive if they want to send you garbage, but they have to provide a solution.
 
@@ -228,7 +228,7 @@ Yeah, but very expensive if they want to send you garbage, but they have to prov
 Right, so yeah, the key thing there is the asymmetry of expensive to create and cheap to validate.
 Whereas we don't have that with transactions.
 
-**Gloria**: 00:08:07
+**Gloria** 1: 00:08:07
 
 Right, yeah.
 It's very cheap to create a transaction, especially if it's going to be invalid.
@@ -239,11 +239,11 @@ Yeah, computationally, like, yeah.
 Yeah, So when we receive that transaction, so an unconfirmed transaction that a peer has told us about, we need some way or some ways to make sure that peer isn't just feeding us data that's going to be expensive for us computationally or in terms of memory or in terms of bandwidth.
 So how do we do that?
 
-**Gloria**: 00:08:33
+**Gloria** 1: 00:08:33
 
 We use policy.
 
-**John**
+**John** 0: 00:08:35
 
 Great, okay.
 
@@ -253,7 +253,7 @@ Great, okay.
 
 We have policy, and so what is policy?
 
-**Gloria**: 00:08:40
+**Gloria** 1: 00:08:40
 
 Policy, I would define as a set of validation rules that you apply in addition to consensus on unconfirmed transactions.
 So key there is unconfirmed.
@@ -271,7 +271,7 @@ So there's that difference between the ideal mempool, which contains just the tr
 
 ## 3 types of mempool policy and examples of each
 
-**Gloria**: 00:10:14
+**Gloria** 1: 00:10:14
 
 I think that we can roughly categorize mempool policy into three buckets for reasons where we're applying them.
 And of course, like one policy can fall into multiple buckets.
@@ -286,7 +286,7 @@ So we enforce it as policy so that we don't have it in our mempool and like mine
 
 Okay, so can you give me some examples of policy rules?
 
-**Gloria**: 00:11:22
+**Gloria** 1: 00:11:22
 
 I have three favorites that I think we should talk about today.
 Actually, three and a half.
@@ -308,14 +308,14 @@ Let's dig into some of those.
 So the first one you mentioned was too small.
 So we will, from our mempool, or before we get into our mempool, in our accept to memory pool checks, reject any transaction that is 82 virtual bytes or smaller.
 
-**Gloria**:
+**Gloria** 1: 00:12:44
 Yeah.
 
-**John**
+**John** 0: 00:12:45
 Okay.
 Can you explain why that is?
 
-**Gloria**: 00:12:50
+**Gloria** 1:00:12:50
 
 I think the reason is twofold.
 One of them is that I can't tell you how many bytes off the top of my head the smallest possible consensus valid transaction would be.
@@ -329,7 +329,7 @@ Right.
 It's not economically useful.
 You can't pay anyone with transactions.
 
-**Gloria**: 00:13:27
+**Gloria** 1:00:13:27
 
 Right.
 Yeah.
@@ -340,7 +340,7 @@ A consensus valid payment has to be at least 82 bytes.
 Because you need a signature from spending the input and you need a pubkey essentially or something that commits to the pubkey in the output and that's already getting you over that limit.
 But it's also interesting because that might eventually be a consensus rule.
 
-**Gloria**: 00:13:47
+**Gloria** 1: 00:13:47
 
 Really?
 
@@ -350,7 +350,7 @@ Yeah, so to quote, great consensus cleanup is various consensus rule changes tha
 And one of them would be disallowing, I believe, transactions that are smaller than 82 bytes.
 And the reason for that is because it protects against some forms of Merkle tree malleability.
 
-**Gloria**: 00:14:08
+**Gloria** 1:00:14:08
 
 Right.
 If it's 64 bytes.
@@ -363,7 +363,7 @@ So we don't know whether that would be a leaf or an intermediate node.
 So this policy rule is partially in anticipation of that, potentially.
 Okay, so the next one you talked about was too large, so 100 kilobytes.
 
-**Gloria**: 00:14:39
+**Gloria** 1: 00:14:39
 
 100 kilo virtual bytes.
 I think this would fall into the category of like, we want to keep our mempool useful.
@@ -379,7 +379,7 @@ So you take a very small.
 
 You're limited to 25 transactions, why is that?
 
-**Gloria**: 00:16:11
+**Gloria** 1: 00:16:11
 
 Oh, I'm kind of talking about two policies here.
 So one is the transactions cannot individually be more than 100 kilovirtualbytes, and then it, including all of its descendants, can't be more than 101 kilovirtualbytes.
@@ -391,7 +391,7 @@ You could only do like a tiny portion.
 And also a transaction can't have more than 24 descendants in the mempool or 24 ancestors.
 We can't have chains or families of transactions that are larger than...
 
-**Gloria**: 00:16:47
+**Gloria** 1: 00:16:47
 
 Well you can have families larger but yeah it wouldn't be like as cut and dry as this.
 
@@ -404,11 +404,9 @@ So when we receive a block and transactions get conflicted out of our mempool, o
 ## Mempool policy: BIP125 Replace by Fee (RBF)
 
 **John** 0: 00:17:26
-
 And your second example was bit one two five replaced by fee.
 
-**Gloria**: 00:17:30
-
+**Gloria** 1:00:17:30
 So replaced by fee is essentially you can replace a transaction in an unconfirmed transaction in a mempool by spending the same inputs and then adding doing it such that it has a higher fee rate.
 And this is useful because it allows users to bump their transactions.
 And it's very much minor incentive aligned because they would want the one with more fees.
@@ -417,9 +415,10 @@ For example, one of the sub-rules is that you have to increase the fee rate of t
 And this is to prevent something like, let's say I send out a transaction, I mark it as replaceable, and then I send out another one, and it has one extra Satoshi.
 And then I do it again and again and again.
 
-**John**
+**John**: 00:18:30
 The fee is one extra Satoshi.
 
+**Gloria** 1: 00:18:32
 The fee has one extra Satoshi.
 
 **John** 0: 00:18:33
@@ -434,7 +433,7 @@ It's a transitive bandwidth usage.
 So very cheaply, I can use up loads of bandwidth across the network.
 So how do we stop that?
 
-**Gloria**: 00:19:27
+**Gloria** 1: 00:19:27
 
 Well, we have that rule where you have to be at least incremental relay fee extra.
 And there's also other rules about like you can't evict more than a hundred transactions.
@@ -450,7 +449,7 @@ So this is a great example of that difference between the ideal mempool, which i
 
 Okay, well, that's not quite the end of the story, is it?
 
-**Gloria**: 00:20:00
+**Gloria** 1: 00:20:00
 
 Yeah, well, so like it's, you have a trade off between you want it really accurate, but also you don't want to spend too many resources.
 But those heuristics that you're using to bound the computational resources, if you're too restrictive, or you make them too naive, they can, like an attacker can take advantage of that to pin a transaction or even censor a transaction in some cases.
@@ -461,7 +460,7 @@ So you can imagine, let's say, Alice and Bob are creating a transaction where th
 
 OK, So for example, a lightning, some kind of transaction.
 
-**Gloria**: 00:20:47
+**Gloria** 1: 00:20:47
 
 Yeah, like a lightning close or something.
 Yeah.
@@ -493,7 +492,7 @@ Yeah.
 Okay.
 So can you give examples of that?
 
-**Gloria**: 00:23:04
+**Gloria** 1: 00:23:04
 
 Yeah.
 So, you go to source/script/interpreter.h, you get a bunch of script verification flags.
@@ -515,12 +514,11 @@ So that's a push of zero followed by a push of 20 bytes or 32 bytes invalid unle
 But a push of one byte and then a push of any number of bytes, so one and then in something, is still consensus valid today.
 And then we'll have a soft fork in November that will tighten up those rules and add semantic meaning to how we can spend that output.
 
-**Gloria**: 00:24:59
-
+**Gloria** 1: 00:24:59
 Right.
-**John**
-But.
 
+**John**0: 00:25:00
+But.
 
 But we discourage, not disallow, but discourage version one even today, even though Taproot is not active in policy, not in consensus.
 And this prevents a scenario where, let's say your node has not yet upgraded to include the activation rules or not even upgraded to 0.21 for the taproot rules and someone is spending a witness version one and you validate against your mempool and you like accept it because we have like, according to your node, it's not aware of any rules around witness version one and then accept it to the mempool and then like activation rolls around and then you still have that floating in your mempool, that's not possible because you are discouraging that and not accepting it to your mempool.
@@ -533,15 +531,12 @@ The taproot rules were not being applied.
 
 Well thank you Gloria, it's been fascinating.
 
-**Gloria**: 00:26:16
-
+**Gloria** 1: 00:26:16
 Thank you John.
 
-**Gloria** 0: 00:26:17
-
+**Gloria** 1: 00:26:17
 Let's do this again sometime.
 
-**Gloria**: 00:26:18
-
+**Gloria** 1: 00:26:18
 Let's do it again sometime.
 Bye-bye.
