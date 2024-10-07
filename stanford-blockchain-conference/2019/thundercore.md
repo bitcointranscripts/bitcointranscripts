@@ -1,9 +1,10 @@
 ---
-title: "New and Simple Consensus Algorithms for ThunderCore’s Main-Net"
+title: New and Simple Consensus Algorithms for ThunderCore’s Main-Net
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Elaine Shi']
+tags:
+  - research
+speakers:
+  - Elaine Shi
 media: https://www.youtube.com/watch?v=iwe1NxbX40A
 ---
 <https://twitter.com/kanzure/status/1090773938479624192>

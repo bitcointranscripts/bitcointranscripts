@@ -1,9 +1,11 @@
 ---
-title: "Tight Proofs of Space and Replication"
+title: Tight Proofs of Space and Replication
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-systems']
-speakers: ['Ben Fisch']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Ben Fisch
 media: https://www.youtube.com/watch?v=QUB7U-R527g
 ---
 <https://twitter.com/kanzure/status/1091064672831234048>

@@ -1,11 +1,12 @@
 ---
 title: Privacy Preserving Multi Hop Locks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'adaptor-signatures']
-speakers: ['Pedro Moreno-Sanchez']
+tags:
+  - research
+  - adaptor-signatures
+speakers:
+  - Pedro Moreno-Sanchez
 ---
-
 Privacy preserving multi-hop locks for blockchain scalability and interoperability
 
 <https://twitter.com/kanzure/status/1091026195032924160>
