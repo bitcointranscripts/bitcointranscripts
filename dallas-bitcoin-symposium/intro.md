@@ -1,11 +1,10 @@
 ---
 title: Intro
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Parker Lewis']
+speakers:
+  - Parker Lewis
 date: 2019-08-16
 ---
-
 <https://twitter.com/kanzure/status/1162436437687623684>
 
 Thank you all for coming. We have some bitcoin contributors here, and some people from the investment community. The impetus for this event was a bitcoin conference this weekend, but also Gideon is speaking today. We went to a blockchain event a few months ago and it was our impression that they didn't do a good job of explaining bitcoin to investors. Since we're all up here in Dallas, we thought we would share some perspectives about what bitcoin is and how it works for people that are actively contributing in the space. There will be five speakers touching on five different subjects. At the end of the last speaker, we will do a panel with the five speakers and my friend Marty Bent runs the best bitcoin podcast after Noded, and he will lead a Q&A panel and you will have the opportunity to ask questions and Marty will facilitate discussion.
