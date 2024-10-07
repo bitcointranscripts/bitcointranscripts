@@ -1,9 +1,11 @@
 ---
-title: "Scalable RSA Modulus Generation with Dishonest Majority"
+title: Scalable RSA Modulus Generation with Dishonest Majority
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-systems']
-speakers: ['Megan Chen']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Megan Chen
 ---
 <https://twitter.com/kanzure/status/1230545603605585920>
 

@@ -1,9 +1,12 @@
 ---
-title: "Linking Anonymous Transactions via Remote Side-Channel Attacks"
+title: Linking Anonymous Transactions via Remote Side-Channel Attacks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'privacy-problems', 'altcoins']
-speakers: ['Florian Tramer']
+tags:
+  - research
+  - privacy-problems
+  - altcoins
+speakers:
+  - Florian Tramer
 date: 2020-02-19
 ---
 <https://twitter.com/kanzure/status/1230214874908655617>

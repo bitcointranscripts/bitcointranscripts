@@ -1,9 +1,11 @@
 ---
-title: "Mixicles: Simple Private Decentralized Finance"
+title: 'Mixicles: Simple Private Decentralized Finance'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'altcoins']
-speakers: ['Ari Juels']
+tags:
+  - research
+  - altcoins
+speakers:
+  - Ari Juels
 ---
 <https://twitter.com/kanzure/status/1230666545803563008>
 

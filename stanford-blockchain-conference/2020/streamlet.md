@@ -1,9 +1,10 @@
 ---
-title: "Streamlet: Textbook Streamlined Blockchain Protocols"
+title: 'Streamlet: Textbook Streamlined Blockchain Protocols'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Benjamin Chan']
+tags:
+  - research
+speakers:
+  - Benjamin Chan
 ---
 ((.... stream went offline in the other room, had to catch up.))
 

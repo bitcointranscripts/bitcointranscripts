@@ -1,9 +1,12 @@
 ---
-title: "DECO: Liberating Web Data Using Decentralized Oracles for TLS"
+title: 'DECO: Liberating Web Data Using Decentralized Oracles for TLS'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'privacy-enhancements', 'proof-systems']
-speakers: ['Fan Zhang']
+tags:
+  - research
+  - privacy-enhancements
+  - proof-systems
+speakers:
+  - Fan Zhang
 ---
 <https://twitter.com/kanzure/status/1230657639740108806>
 

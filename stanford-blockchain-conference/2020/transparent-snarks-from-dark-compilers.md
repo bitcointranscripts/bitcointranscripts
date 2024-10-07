@@ -1,9 +1,11 @@
 ---
-title: "Transparent SNARKs from DARK compilers"
+title: Transparent SNARKs from DARK compilers
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-systems']
-speakers: ['Ben Fisch']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Ben Fisch
 ---
 <https://twitter.com/kanzure/status/1230561492254089224>
 

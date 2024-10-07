@@ -1,9 +1,11 @@
 ---
-title: "Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks"
+title: Atomic Multi-Channel Updates with Constant Collateral in Bitcoin-Compatible Payment-Channel Networks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'lightning']
-speakers: ['Matteo Maffei']
+tags:
+  - research
+  - lightning
+speakers:
+  - Matteo Maffei
 date: 2020-02-21
 ---
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/atomic-multi-channel-updates/>

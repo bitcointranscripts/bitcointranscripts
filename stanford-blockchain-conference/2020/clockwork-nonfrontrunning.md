@@ -1,10 +1,9 @@
 ---
 title: Clockwork Nonfrontrunning
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Daniel Cline']
+speakers:
+  - Daniel Cline
 ---
-
 ClockWork: An exchange protocol for proofs of non-front-running
 
 <https://twitter.com/kanzure/status/1231012112517844993>
