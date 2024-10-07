@@ -1,11 +1,12 @@
 ---
 title: Cryptography Audit
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'libsecp256k1']
-speakers: ['John Woeltz']
+tags:
+  - research
+  - libsecp256k1
+speakers:
+  - John Woeltz
 ---
-
 libsecp256k1-zkp audit
 
 It's a real treat to be able to be a part of this.

@@ -1,9 +1,12 @@
 ---
-title: "Fireside chat with Dan Boneh"
+title: Fireside chat with Dan Boneh
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography', 'quantum-resistance']
-speakers: ['Taariq Lewis', 'Dan Boneh']
+tags:
+  - cryptography
+  - quantum-resistance
+speakers:
+  - Taariq Lewis
+  - Dan Boneh
 media: https://www.youtube.com/watch?v=ggvqmb7np9w
 date: 2019-01-28
 ---
