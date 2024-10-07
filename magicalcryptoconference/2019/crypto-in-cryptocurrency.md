@@ -1,9 +1,10 @@
 ---
-title: "The 'Crypto' In Cryptocurrency: Why Everything is Weird and Hard"
+title: 'The ''Crypto'' In Cryptocurrency: Why Everything is Weird and Hard'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography']
-speakers: ['Andrew Poelstra']
+tags:
+  - cryptography
+speakers:
+  - Andrew Poelstra
 date: 2019-05-12
 media: https://youtu.be/mRl3c9ppO78
 ---
