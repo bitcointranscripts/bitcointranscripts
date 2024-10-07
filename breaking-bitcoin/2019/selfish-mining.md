@@ -1,12 +1,12 @@
 ---
-title: "Bitcoin Selfish Mining and Dyck Words"
+title: Bitcoin Selfish Mining and Dyck Words
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Ricardo Perez-Marco']
+tags:
+  - mining
+speakers:
+  - Ricardo Perez-Marco
 media: https://www.youtube.com/watch?v=SikWfFObBIg
 ---
-
 ## Introduction
 
 I am going to talk about our recent work on selfish mining. I am going to explain the profitability model, the different mathematical models that are used to analyze selfish mining with their properties.
