@@ -24,7 +24,7 @@ additional_resources:
 Aaron: 00:00:19
 
 Life from Utrecht, this is Bitcoin Explained.
-Sjoerds, it's been a month.
+Sjors, it's been a month.
 That means you had a whole month to think about this pun that you told me you're going to tell our dear listeners for this episode.
 Let's hear it.
 
@@ -36,21 +36,6 @@ That's right.
 So it's cold outside.
 The government is cold.
 You know what else is cold?
-
-Aaron: 00:00:39
-
-Sjors, Our sponsor.
-The coldcard.
-If you have coins, you want to store them.
-Coldcard is the place for that It's the audio.
-Okay, are we too loud?
-It's too much echo too much echo Okay, cold card cold card cold card cold card cold card cold card.
-I think that was like our 20 seconds that we're obligated to talk about the coldcard.
-What do you think?
-
-Sjors: 00:01:09
-
-I think it's great, but it's a hardware wallet for people who don't know.
 
 Aaron: 00:01:12
 
@@ -75,7 +60,7 @@ Let's start with what happened with tornado cash in the Netherlands
 
 Sjors: 00:02:08
 
-yeah in case anybody was living under a rock the tornado cash we talked about that in episode 69 but he got convicted.
+Yeah in case anybody was living under a rock the tornado cash we talked about that in episode 69 but he got convicted.
 So that's bad.
 
 Aaron: 00:02:12
@@ -128,7 +113,7 @@ Sjors: 00:05:00
 What was especially interesting though not clear entirely how that's going to apply to Bitcoin, was the argument that he made the whole thing unstoppable.
 So in Ethereum, part of the system at least is unstoppable.
 It's a smart contract, unless you stop Ethereum itself, of course.
-And the fact that he did that where the prosecutor just tried to argue well it's not all decentralized some of it is is fake decentralization others is real the judge completely ignored that and basically said well the fact that you even tried to make it decentralized that is actually making it worse so that that argument of course can apply extremely broadly because you could say well if you just publish source and you know that other people are using that source and you just keep updating that source code, well, that's also kind of unstoppable in a way.
+And the fact that he did that where the prosecutor just tried to argue well it's not all decentralized some of it is is fake decentralization others is real the judge completely ignored that and basically said well the fact that you even tried to make it decentralized that is actually making it worse so that argument of course can apply extremely broadly because you could say well if you just publish source and you know that other people are using that source and you just keep updating that source code, well, that's also kind of unstoppable in a way.
 So that might also be a problem.
 And of course, we all know somebody, or we don't know them, somebody who created an unstoppable system a long time ago and kept working on it.
 
@@ -148,8 +133,8 @@ And now it's kind of a all bets are off type of situation.
 
 Sjors: 00:06:24
 
-Yeah, and this creates a bit of a problem because we assumed that this line existed, we did not do much to defend people who built custodial mixtures.
-And in retrospect, that was probably a mistake, because as soon as you lose that line of defense, now, you know, I guess the only way to win now is to go all the way back and say, no, all mixtures should be legal, including custodial ones.
+Yeah, and this creates a bit of a problem because we assumed that this line existed, we did not do much to defend people who built custodial mixers.
+And in retrospect, that was probably a mistake, because as soon as you lose that line of defense, now, you know, I guess the only way to win now is to go all the way back and say, no, all mixers should be legal, including custodial ones.
 But now you have all this precedent that wasn't stopped.
 So that's a problem.
 
@@ -184,11 +169,11 @@ The more direct Bitcoin case.
 Aaron: 00:07:23
 
 Yeah, exactly.
-So the Samourai wallet developers Keonne Rodriguez and Bill Hill, William Hill, both of them you know right yep 
+So the Samourai wallet developers Keonne Rodriguez and Bill Hill, William Hill, both of them you know right yep.
 
 Sjors: 00:07:28
 
-yeah I used to work with them when I was at blockchain.com, so back in time, blockchain.info.
+Yeah I used to work with them when I was at blockchain.com, so back in time, blockchain.info.
 
 Aaron: 00:07:35
 
@@ -197,7 +182,7 @@ So what do you want to say about that, if anything?
 
 Sjors: 00:07:53
 
-Well, I'm not surprised that this happened, because the fact that they were going after Tornado Cash made it clear that they would go after non-custodial systems, after non-custodial mixes.
+Well, I'm not surprised that this happened, because the fact that they were going after Tornado Cash made it clear that they would go after non-custodial systems, after non-custodial mixers.
 So it seemed like a matter of time before they would go after it and then obviously they always go after the biggest or at least a big one.
 So the only question was, were they going to go after Wasabi or were they going to go after Samourai?
 Samourai has some interesting marketing that maybe made them more interesting to prosecute, but I don't know if the difference, you know, and of course we know that Wasabi was doing some proactive compliance-ish things, But I don't know why they picked one and the other.
@@ -227,7 +212,7 @@ And I think the two most important parts of that are something called the Whirlp
 
 Aaron: 00:09:37
 
-Yeah it's just a coin join which uses equal amounts.
+Yeah it's just a coinjoin which uses equal amounts.
 
 Sjors: 00:09:41
 
@@ -350,7 +335,7 @@ Finally, we're here.
 We're here, ladies and gentlemen.
 We're going to talk about the Great Consensus Cleanup, or maybe more specifically the Great Consensus Cleanup Revival.
 That's right.
-Because the Great Consensus Cleanup was proposed by Matt Corello a couple of years ago, and it was recently revived by Antoine Poinsot.
+Because the Great Consensus Cleanup was proposed by Matt Corallo a couple of years ago, and it was recently revived by Antoine Poinsot.
 Am I saying that right?
 Probably.
 It was him, right?
@@ -377,7 +362,7 @@ Aaron: 00:15:14
 Okay and if I understand correctly basically everyone and when I say everyone I mean everyone that's you know has enough expertise to have an opinion in the first place, agrees that at least the bugs are problems.
 There's maybe at most like some conversation about the best way to solve these problems, whether these are the best ways.
 But the problems are real.
-There's no one that says, no, these are actually futures, right?
+There's no one that says, no, these are actually features, right?
 These are just real problems, bugs that exist in the Bitcoin protocol.
 
 Sjors: 00:15:45
@@ -388,9 +373,8 @@ Aaron: 00:15:53
 
 That's right.
 You're thinking of Mark Friedenbach, who had some sort of proposal years ago to sort of increase the block size.
-Yes.
 Yeah, You're right.
-But let's...
+
 
 Sjors: 00:16:03
 
@@ -400,7 +384,6 @@ Aaron: 00:16:04
 
 Yeah, let's table that for a second.
 Although, I mean, it is interesting that you bring that up.
-But...
 
 Sjors: 00:16:09
 
@@ -645,7 +628,6 @@ Okay.
 Sjors: 00:25:04
 
 So instead, at least I think it's a hard fork.
-So instead...
 
 Aaron: 00:25:07
 
@@ -775,7 +757,6 @@ Sjors: 00:29:17
 
 Yeah,
 And so the question is, how do we prevent those blocks from being created?
-Now, for now...
 
 Aaron: 00:29:24
 
@@ -915,11 +896,9 @@ We just set the hash to 32 bytes.
 So then it has to have a number and a few other things.
 So yeah, a transaction cannot be 32 bytes, But it can be 64 bytes.
 It would be a pretty nonsensical transaction, but it can be 32 bytes.
-And so...
 
 Aaron: 00:35:36
 
-64.
 64, yeah.
 But that would look like two hashes that are both 32 bytes.
 And why is that a problem?
@@ -934,7 +913,7 @@ And then you go one level up and it's 32 bytes again, it's 32 bytes again.
 And now what you can do is you can give somebody a block and say, here's a block and here's all the transactions in this block.
 And then you verify it and you see these 32 transactions.
 Sorry, you see these two times 32s and you combine them and it looks all good, but somebody could leave out the actual transactions and just pretend that it's only a 64 byte transaction instead of two separate ones.
-But then you validate the 64 byte transaction and you say hey this is an invalid transaction so the whole block is invalid and now you think this block is invalid and the next time you see this block because somebody gives you the same block hash you're like I don't you know I'm not gonna check this block it's invalid but actually it's not invalid because somebody sent you because now you got the real one where you actually have the two separate transactions in it.
+But then you validate the 64 byte transaction and you say hey this is an invalid transaction so the whole block is invalid and now you think this block is invalid and the next time you see this block because somebody gives you the same block hash you're like I don't you know, I'm not gonna check this block it's invalid but actually it's not invalid because somebody sent you because now you got the real one where you actually have the two separate transactions in it.
 
 Aaron: 00:36:55
 
@@ -1014,7 +993,6 @@ Sjors: 00:39:37
 That has nothing to do with what you've seen before.
 You're basically just giving two versions of the same block that you know think is the same block because it only remembers the hash and it's not.
 So that bug has been fixed by simply not storing the block if it's invalid.
-So...
 
 Aaron: 00:39:53
 
@@ -1037,7 +1015,7 @@ Aaron: 00:40:40
 Isn't that just in the block?
 Isn't that just the block that he's sending?
 That's the block, right?
-The In the block is the transaction.
+In the block is the transaction.
 
 Sjors: 00:40:48
 
@@ -1092,7 +1070,7 @@ And so the next time somebody sends you the correct one, you're fine.
 So that attack is fixed.
 But then there was other ways that you can fool light clients like SPV wallets using the same trick because they are asking just for an SPV proof.
 So they just want proof that a transaction was included and you could now give them a transaction that they think is included because you gave the SPV proof, but it wasn't included because the real block had two separate transactions that happened to combine to this one fake transaction.
-And this could be used to steal light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg ins and peg outs.
+And this could be used to steal light wallets, but possibly also to rob sidechains if those sidechains only use SPV proofs for peg-ins and peg-outs.
 And that problem, I think was solved by telling light clients to be careful.
 I don't think it was actually solved.
 
@@ -1121,7 +1099,7 @@ So, if I create a transaction that consists of 64 bytes, because I want to pay e
 Sjors: 00:42:49
 
 Yeah, I think the actual examples would be burning coins.
-So you can make an OP_RETURN transaction that burns your coins, doesn't send it anywhere.
+So you can make an `OP_RETURN` transaction that burns your coins, doesn't send it anywhere.
 And that can be shorter than 64 bytes, but it could also be 64 bytes.
 So if you want to burn your money using a operator that is exactly 64 bytes in total, then yeah, you can do that.
 
@@ -1164,7 +1142,7 @@ Aaron: 00:44:00
 Okay, right.
 And now the great consensus cleanup says let's just get rid of that altogether.
 However, 63 or 62 that's still okay.
-If you really do like if you're not attacking but you're burning coins that that should work.
+If you really do like if you're not attacking but you're burning coins, that should work.
 But yeah, so basically if people make 64-byte transactions in the future and the soft work happens, then their transaction wouldn't be confirmed.
 Then they have to make a new transaction that's either 63 or 65 or something else.
 As long as it's not 64.
@@ -1239,7 +1217,7 @@ And so these ones are gonna start, we're gonna start encountering these and we'v
 So we got lucky.
 And so as of the first one we're going to encounter again is block 1,983,702.
 So there is an old transaction out there that looks like it's at that height.
-So in theory somebody could then make a, could make a, coinbase transaction that's a duplicate of that old one and we don't want that so the BIP30 check the slow check is re-enabled from that hide on.
+So in theory somebody could then make a, coinbase transaction that's a duplicate of that old one and we don't want that so the BIP30 check the slow check is re-enabled from that hide on.
 That's annoying because that check as we said is slow, so the proposal here is to do something else that makes sure that this duplication cannot happen.
 So not just putting the height in the Coinbase but also putting something else in it.
 What that something else is we don't know.
