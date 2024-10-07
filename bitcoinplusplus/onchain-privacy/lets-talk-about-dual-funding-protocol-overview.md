@@ -1,10 +1,12 @@
 ---
-title: "Let's Talk About Dual Funding: Protocol Overview"
+title: 'Let''s Talk About Dual Funding: Protocol Overview'
 transcript_by: saltykate via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=OFMU1xV5uQk
-tags: ["lightning", "dual-funding"]
-speakers: ["Lisa Neigut"]
-categories: ["conference"]
+tags:
+  - lightning
+  - dual-funding
+speakers:
+  - Lisa Neigut
 date: 2023-03-16
 ---
 ## Openning a Lightning Channel

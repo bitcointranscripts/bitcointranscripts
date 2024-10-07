@@ -1,10 +1,12 @@
 ---
-title: "Vortex: ZeroLink for Lightning Opens"
+title: 'Vortex: ZeroLink for Lightning Opens'
 transcript_by: jasonofbitcoin via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=d1HIBE4fCmE
-tags: ["lightning", "coinjoin"]
-speakers: ["Ben Carman"]
-categories: ["conference"]
+tags:
+  - lightning
+  - coinjoin
+speakers:
+  - Ben Carman
 date: 2023-12-09
 ---
 (The start of the talk is missing from the source media)
