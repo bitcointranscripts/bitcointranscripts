@@ -1,9 +1,10 @@
 ---
 title: ZkSHARKS
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Madars Virza']
+tags:
+  - proof-systems
+speakers:
+  - Madars Virza
 media: https://www.youtube.com/watch?v=u3Mn27on03A
 ---
 ## Introduction

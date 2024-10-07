@@ -1,12 +1,11 @@
 ---
 title: Funding bitcoin development
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Tadge Dryja']
+tags:
+  - career
+speakers:
+  - Tadge Dryja
 ---
-
-Funding bitcoin development
-
 It's basically open-source funding. It's a subset of open-source funding. But these are similar problems with many open-source projects. As far as I can tell, all these digital currency cryptocurrency projects are licensed with open-source licenses. There may be some that are not, and some things are patented. I generally steer clear of the patented work. If it's decentralized and open-source, then why are you just delivering a binary to me? I don't know what's going on there.
 
 Open-source funding is tricky. It's interesting, though, because we're literally programming money. Sometimes I joke that what I'm doing is making money. Funding is not simple at all, and it's sometimes elusive. I am going to talk about a few funding models. These are not well defined. There's a lot of blurry perspective between these things and some of them have arrows going between one and another. I don't want to say too specific things.

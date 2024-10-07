@@ -1,10 +1,9 @@
 ---
 title: Libra
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Dahlia Malkhi']
+speakers:
+  - Dahlia Malkhi
 ---
-
 -- Disclaimer --
 1.  These are unpaid transcriptions, performed in real-time and in-person during the actual source presentation. Due to personal time constraints they are usually not reviewed against the source material once published. Errors are possible. If the original author/speaker or anyone else finds errors of substance, please email me at kanzure@gmail.com for corrections.
 
