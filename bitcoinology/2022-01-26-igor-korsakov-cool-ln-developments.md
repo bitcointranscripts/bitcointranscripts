@@ -1,9 +1,11 @@
 ---
-title: "Cool Lightning Network Developments"
+title: Cool Lightning Network Developments
 transcript_by: kouloumos
-categories: ['meetup']
-tags: ['lightning', 'client-side-validation']
-speakers: ['Igor Korsakov']
+tags:
+  - lightning
+  - client-side-validation
+speakers:
+  - Igor Korsakov
 date: 2022-01-26
 media: https://www.youtube.com/watch?v=5pmfNOUQg_s?t=285
 ---

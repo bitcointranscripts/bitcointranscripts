@@ -1,10 +1,11 @@
 ---
-title: "What is Lightning Network?"
+title: What is Lightning Network?
 transcript_by: masud-abdulkadir via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=ZxrXkprwxUM
-tags: ["lightning"]
-speakers: ["Adam Gibson"]
-categories: ["meetup"]
+tags:
+  - lightning
+speakers:
+  - Adam Gibson
 date: 2021-12-15
 ---
 ## Introduction
