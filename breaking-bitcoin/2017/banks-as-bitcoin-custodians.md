@@ -1,9 +1,10 @@
 ---
-title: "Traditional Banks as Bitcoin Custodians: Security Challenges and Implications"
+title: 'Traditional Banks as Bitcoin Custodians: Security Challenges and Implications'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
-speakers: ['Giacomo Zucco']
+tags:
+  - security
+speakers:
+  - Giacomo Zucco
 date: 2017-09-09
 media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=4h8m
 ---

@@ -1,9 +1,10 @@
 ---
 title: Changing Consensus Rules Without Breaking Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['soft-fork-activation']
-speakers: ['Eric Lombrozo']
+tags:
+  - soft-fork-activation
+speakers:
+  - Eric Lombrozo
 date: 2017-09-10
 media: https://www.youtube.com/watch?v=0WCaoGiAOHE&t=32min9s
 ---

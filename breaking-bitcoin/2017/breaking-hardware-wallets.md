@@ -1,13 +1,14 @@
 ---
 title: Breaking Hardware Wallets
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security-problems', 'hardware-wallet']
-speakers: ['Nicolas Bacca']
+tags:
+  - security-problems
+  - hardware-wallet
+speakers:
+  - Nicolas Bacca
 date: 2017-09-09
 media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=6h42m30s
 ---
-
 Breaking hardware wallets: Tales from the trenches and glimpses into the future
 
 <https://twitter.com/kanzure/status/1005627960160849920>
