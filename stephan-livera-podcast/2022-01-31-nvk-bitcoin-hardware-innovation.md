@@ -1,8 +1,8 @@
 ---
 title: Coldcard Mk4, Tapsigner, Satscard – Bitcoin Hardware Innovation
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['NVK']
+speakers:
+  - NVK
 date: 2022-01-31
 media: https://www.youtube.com/watch?v=2cp2FoUgAYM
 ---

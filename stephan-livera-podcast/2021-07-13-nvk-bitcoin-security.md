@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Security & Backups Primer
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['NVK']
+speakers:
+  - NVK
 date: 2021-07-13
 media: https://www.youtube.com/watch?v=K03UDeE1PeE
 ---

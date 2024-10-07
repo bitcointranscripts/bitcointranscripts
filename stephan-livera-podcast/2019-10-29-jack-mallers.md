@@ -1,8 +1,8 @@
 ---
 title: Lightning & Identity, Olympus and Zap
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Jack Mallers']
+speakers:
+  - Jack Mallers
 date: 2019-10-29
 media: https://stephanlivera.com/download-episode/1599/120.mp3
 ---

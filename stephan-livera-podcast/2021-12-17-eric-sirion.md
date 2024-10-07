@@ -1,8 +1,8 @@
 ---
 title: MiniMint, Federated Mints for Bitcoin scaling and privacy
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Eric Sirion']
+speakers:
+  - Eric Sirion
 date: 2021-12-17
 media: https://www.youtube.com/watch?v=5KbY4IX0-NQ
 ---

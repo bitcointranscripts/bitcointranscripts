@@ -1,11 +1,15 @@
 ---
-title: "OP_Vault - A New Way to HODL?"
+title: OP_Vault - A New Way to HODL?
 transcript_by: adamjonas via review.btctranscripts.com
-media: https://www.youtube.com/watch?v=Nq6WxJ0PgJ4
-tags: ["vaults", "covenants"]
-speakers: ["Stephan Livera", "James O’Beirne"]
-categories: ["podcast"]
+tags:
+  - vaults
+  - covenants
+speakers:
+  - Stephan Livera
+  - James O’Beirne
 date: 2023-01-29
+media: https://stephanlivera.com/episode/449/
+source_file: https://stephanlivera.com/download-episode/5872/449.mp3
 ---
 Stephan:
 

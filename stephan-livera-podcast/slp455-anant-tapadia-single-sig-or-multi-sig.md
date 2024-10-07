@@ -2,12 +2,13 @@
 title: SLP455 Anant Tapadia - Single Sig or Multi Sig?
 transcript_by: adamjonas via review.btctranscripts.com
 media: https://anchor.fm/s/7d083a4/podcast/play/64348045/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-1-1%2Ff7fafb12-9441-7d85-d557-e9e5d18ab788.mp3
-tags: ["scripts-addresses"]
-speakers: ["Stephan Livera", "Anant Tapadia"]
-categories: ["podcast"]
+tags:
+  - scripts-addresses
+speakers:
+  - Stephan Livera
+  - Anant Tapadia
 date: 2023-01-31
 ---
-
 Stephan 00:00:00:
 
 Anant, welcome back to the show.

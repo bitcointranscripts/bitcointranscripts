@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Transaction Pinning, ANYPREVOUT & eltoo
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Greg Sanders']
+speakers:
+  - Greg Sanders
 date: 2023-03-06
 media: https://stephanlivera.com/download-episode/6040/463.mp3
 ---

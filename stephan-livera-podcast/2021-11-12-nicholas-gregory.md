@@ -1,8 +1,8 @@
 ---
 title: Statechains and Mercury Wallet-A New Privacy Technique?
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Nicholas Gregory']
+speakers:
+  - Nicholas Gregory
 date: 2021-11-12
 media: https://www.youtube.com/watch?v=ZLhCnehAeeQ
 ---

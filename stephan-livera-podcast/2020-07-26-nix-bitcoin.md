@@ -1,9 +1,10 @@
 ---
-title: "nix-bitcoin: A Security Focused Bitcoin Node"
+title: 'nix-bitcoin: A Security Focused Bitcoin Node'
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['security']
-speakers: ['nixbitcoindev']
+tags:
+  - security
+speakers:
+  - nixbitcoindev
 date: 2020-07-26
 media: https://stephanlivera.com/episode/195/
 ---
