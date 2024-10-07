@@ -1,12 +1,11 @@
 ---
 title: Contours for Binary Transparency
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Mustafa Al-Bassam']
+speakers:
+  - Mustafa Al-Bassam
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=59Igv-zQE7Y
 ---
-
 <https://twitter.com/kanzure/status/1014167797205815297>
 
 I am going to talk about binary transparency. What is it? Let's suppose that you have an android phone or iphone and you download some software from the app store or Google Play. How do you know that the apk or that software that you're being given is the same piece of software that is being given to everyone else and google or apple hasn't specifically given you a bad version of that software because they were threatened or compelled to do so in a court order or because their keys were compromised?

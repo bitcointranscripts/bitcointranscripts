@@ -1,12 +1,11 @@
 ---
 title: Anonymous Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Adam Ficsor']
+speakers:
+  - Adam Ficsor
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=QiySI4-MWww
 ---
-
 <https://twitter.com/kanzure/status/1014128850765303808>
 
 <https://github.com/zkSNACKs/WalletWasabi>

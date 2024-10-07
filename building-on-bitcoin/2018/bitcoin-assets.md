@@ -1,12 +1,11 @@
 ---
 title: Assets on Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Giacomo Zucco']
+speakers:
+  - Giacomo Zucco
 date: 2018-07-04
 media: https://www.youtube.com/watch?v=xHWxtmgQP94
 ---
-
 <https://twitter.com/kanzure/status/1014483345026289664>
 
 Good morning everybody. In the mean time, while my presentation loads, I am Giacomo Zucco. I am the founder of BHB network and a consulting company. We do bitcoin consulting for institutional customers especially in Switzerland. We also like development on top of bitcoin and things like that.
