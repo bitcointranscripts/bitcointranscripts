@@ -5,11 +5,10 @@ categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
 speakers: ['Sergi Delgado Segura']
 date: 2020-05-24
+episode: 6
 media: https://www.youtube.com/watch?v=Vkq9CVxMclE
+aliases: ['/lightning-hack-day/2020-05-24-sergi-delgado-watchtowers']
 ---
-
-Location: Potzblitz (online)
-
 Slides: https://srgi.me/resources/slides/Potzblitz!2020-Watchtowers.pdf
 
 The Eye of Satoshi code: https://github.com/talaia-labs/python-teos
@@ -30,29 +29,29 @@ https://github.com/ElementsProject/lightning/issues/3724
 
 Conner Fromknecht presentation on watchtowers: https://diyhpl.us/wiki/transcripts/boltathon/2019-04-06-conner-fromknecht-watchtowers/
 
-# Intro
+## Intro
 
 I am going to be talking about towers and a bit about BOLT 13 too. Before jumping into watchtowers and this general idea of watchtowers for the Lightning Network that most of the community knows about I would like to go back one step back to try to narrow down the paradigm that we are going to be talking about.
 
-# One Step Back
+## One Step Back
 
 When we think about watchtowers we think about Lightning channels and covering your commitment transactions with penalty transactions in case a counterparty tries to cheat while you are offline or you suffer a crash. But towers can be used for more. I’m going to try to cover this today. The general paradigm when we talk about third party watching systems aka watchtowers is basically we are going to have users and towers, users and servers. The user is going to be sending some data to the server alongside a trigger. It doesn’t what kind of data it is, it doesn’t matter what kind of trigger. The server is going to be looking for those triggers in one specific communication channel. In the case of Lightning it is going to be the blockchain, in another case it is going to be something completely different. If one of those triggers is seen then the server, the watcher is going to perform an action on the provided data. That is basically what we are going to be talking about today in general terms. Let’s jump into the Lightning stuff.
 
-# Lightning Transactions in 1 minute
+## Lightning Transactions in 1 minute
 
 I am not going to assume any kind of knowledge for the audience. I will talk about Lightning transactions, the transactions we are going to be using and how can we use it. First of all the funding transaction of Lightning channels. That is how everything starts. That comes from one of the parties and goes to a 2-of-2 multisig inside a witness script. In general terms it is a 2-of-2 multisig that comes from one of the parties. Then from that transaction we are going to be creating several commitment transactions which are the updates on the state of the channel. Every single time we want to pay the counterparty or the counterparty wants to pay us there is going to be one commitment update. We are going to have several versions of the commitment transaction, one transaction that spends from the fund. If everything goes right then at some point we close a channel with a closing transaction. We are going to get the last version of the commitment transaction, we are going to take out the locks and we are going to call it the closing transaction and send it to the network. If there is some misbehavior in the channel, if someone tries to cheat then it could be the case that the channel is breached. By taking one old commitment transaction and trying to send that to the network. If that happens that is what we call a breach. That normally should trigger a penalty from the other side of the channel. If Alice tries to cheat then Bob is going to create the penalty transaction and claim all the funds in the channel for himself. As you can see there are two transactions highlighted here. Commitment transaction and penalty transactions. Those are the ones we care about.
 
-# Basic Watchtower Protocol
+## Basic Watchtower Protocol
 
 With this we can set up what is going to be a basic watchtower protocol. We are going to have two parties, our user Frodo, you may know him from Middle Earth and there is also The Eye of Satoshi. I don’t know how much you know about Lord of the Rings but he was the good guy. From the user part we are going to have some data. We are not going to get into much detail right now but have in mind the commitment transaction ID and the penalty transaction is part of this data that we need. We are going to persist this data somehow for now. To create an appointment that we are going to send to the tower. This data is going to trigger the tower to start watching the blockchain for breaches in the channel. We are not going to go into much detail for now. The idea is that once the tower has the information it can start looking for breaches using the commitment transaction ID. Frodo is a big party goer and he loves going out and go out of signal and not respond for many hours. Fortunately The Eye has him covered him here. While he is offline The Eye continues watching the blockchain. At some point it may see the commitment transaction popping into a newly mined block. If that happens then that is going to trigger a breach. The breach is seen by the tower and then The Eye is going to notice this and send the penalty transaction to the network and hopefully getting it into the next few blocks. We move the reward back mostly to the user and some part of it is sent to the tower too. That basically concludes the idea of how this works. We have data, triggers and a watching party that is checking the blockchain.
 
 There are four main things we are going to focus on. First, the kind of information that the user has. This is the red left side of the screen. The commitment and the penalty and how this is used to create the appointment. There is also how do they send to the tower? Who can send this kind of information and how? We are also going to have how the tower stores this information? What kind and in what means? Finally what is the reward mechanism? These four steps actually translate to four main properties that I think are the four main trade-offs of designing a non-custodial watchtower. We are going to be talking about non-custodial watchtowers. We can jump into different designs later on. This is the less invasive version of building this.
 
-# (Non-Custodial) Watchtower Design Trade-offs
+## (Non-Custodial) Watchtower Design Trade-offs
 
 First we have privacy which translates to what does the watchtower know about the nodes? What information is provided and can be inferred? There is also the access. Who can access the watchtower? Who can use it and under what means? The third is storage. What kind of information has to be stored and how is this information going to grow? Then definitely we have cost. What is the cost of running this service? Who is paying this cost and what percentage of the cost and how? We will see that these four properties are intertwined. Talking about one is going to affect the rest.
 
-# No privacy vs full privacy
+## No privacy vs full privacy
 
 We are going to start by talking about the privacy first. Here we have two main sides. The non-privacy side and the full privacy side. Arguably there can be designs in the middle. I am going to focus on these two. We can jump into discussions for designs in the middle if you want. The main idea here is that you can have a completely non-private communication between the user and the tower where the user is sending all the information in the clear. This means that the set up is pretty similar to the example we were seeing a few slides ago. The user was sending the commitment transaction ID and the penalty transaction in the clear to the tower. That means that the tower can verify that the information that is being received looks like a proper transaction and a proper transaction ID. Even though the tower cannot know if the transaction it is receiving is correct or not. It can look like a valid transaction but the tower doesn’t know anything about the commitment transaction apart from the ID. The tower doesn’t know if at any point that penalty transaction is going to be valid. If she is going to be able to forward it to the network or it is spending from a completely invalid transaction that is never going to work. Finally the downsides, the tower is going to learn payment information about the user. For every single update it is going to know how the penalty transaction is supposed to look. It can infer what payments have been performed between one update and the other. This is definitely not ideal.
 
@@ -60,7 +59,7 @@ Then we have the high or full privacy approach where the user is sending the inf
 
 Summarizing this, in both of the approaches the user can send the usual information to the tower and the tower is not going to be able to distinguish what is useful and what is useless. The storage is going to be high in any of the cases. Therefore the privacy design seems better than the non-privacy design. We can keep the privacy of the user especially in the Lightning Network where we are trying to get a high privacy design. That is something that we would like to have.
 
-# Private vs Public Access
+## Private vs Public Access
 
 Moving on we have the access part. This is can be separated into two different approaches. We can have the private access or the public access. Again this can be in the middle but I am going to discuss the far ends here. Private for me is going to be used by a very limited number of users who most likely are going to be trusted. This means that you are going to be running the tower for yourself. Or maybe yourself and some friends. Some people you may trust. I may run it for me and a couple of friends. My friends run it for them and the others so we are all covered. Instead of running one watchtower we have N replications in the ring of people running this. This is great because there is no DoS risk whatsoever as long as everyone behaves properly. This is potentially a free service from the user perspective since the tower is running with all the cost. The user may not be paying anything. The main drawback is that it cannot accommodate the whole network. If you are not charging anything for the service someone is going to have to pay for maintaining it. It is hard to offer this for free.
 
@@ -70,7 +69,7 @@ Summarizing, private access is good for a limited amount of users. Low storage a
 
 Max Hillebrand: Low cost or high cost. Low storage or high storage. Can you give some roundabout numbers of what we are talking here?
 
-# O(N) Storage
+## O(N) Storage
 
 For storage the requirements are going to be high modulo the number of channel updates. You have to store information for every single channel update from the users that are sending you data. Let’s say in the current approach the user is sending the whole encrypted penalty transaction. That is roughly speaking in the order of 200 to 300 bytes depending on what the set up is. It should be a two inputs, two outputs SegWit transaction. It depends. There could be different set ups but it should be between these numbers. For every single update that the user is doing, for every payment the channel is receiving, the user has to send this 200ish bytes plus the trigger which is going to be like 60 additional bytes plus some overhead. Around 300 to 400 bytes per update in the current state.
 
@@ -80,65 +79,65 @@ I think it can. I have a Raspberry Pi here for testing. I have been testing my i
 
 That covers storage. The idea is that it doesn’t matter what we do in this approach, the storage is going to be high modulo the number of channel updates. We can try to have a strategy to align incentives of the user and the tower. We will see some examples of this in a bit.
 
-# Altruistic vs Non-Altruistic Towers
+## Altruistic vs Non-Altruistic Towers
 
 Finally we have the cost. Can you run a tower with no cost for the user? Sure but then you are most likely going to be risking having DoS on your tower. Especially if somebody wants to take it out. Then you can also offer it for a low cost, whatever low cost means. As long as you price it properly then high traffic may mean some profit. Some of the incentives I was talking about before. You can allow the user for example to delete all data. Let’s say you have a user that has closed a channel and then the tower has some data relating to that channel. The tower doesn’t know anything about that channel per se. The user does. So the user could free that space in the tower to use that space to backup other channels he has open or to backup channels he may open later on. As long as the incentives are aligned then you can actually be offering a discount to the user to delete some of the information that is never going to be used. That depends on how you want to run it.
 
 To summarize private access and low storage is good. Public access with no cost is most likely going to overflow your tower. Finally if you charge low cost, as long as you price it properly that is going to mean high storage. How do we summarize all this?
 
-# Ideal Watchtower (No Eltoo)
+## Ideal Watchtower (No Eltoo)
 
 The ideal watchtower without eltoo would be one with high privacy, everything you are sending to a tower is encrypted, has public access so it can be offered as a service, has non-exploitable O(N) storage, you are going to have O(N) storage anyway so what can you do in order to not suffer nasty attacks just by people sending you useless data? How can you price it so instead of an attack it is profit for you? And then a very low cost. Finally the cherry on the cake will be interoperable watchtowers. It doesn’t matter what tower you are running, it doesn’t matter what node you are running as long as the service you are looking for is provided by that tower you can use it.
 
-# BOLT 13
+## BOLT 13
 
 That brings us to BOLT 13. What is BOLT 13 in a nutshell? It is the effort to put all this together. All the efforts from the community for some years already to build towers in a way that it doesn’t matter what you are running. You can find a tower and use it. If you are running lnd and someone is offering a tower based on c-lightning you can run it. If you have a mobile wallet with eclair and someone is running a lnd tower you can run it. It doesn’t matter. That is the main idea. How can we build this protocol to be extensible and to offer different kinds of services. A basic service plus other services that people may want to have. Then as long as you agree with a tower on the services you are looking for that is enough.
 
-# Privacy via Monitor Approach
+## Privacy via Monitor Approach
 
 How does this work? Let’s jump more into the meat, the actual design of how this data is encrypted and sent. This comes from a proposal from Tadge (Dryja) from [Scaling Bitcoin](https://diyhpl.us/wiki/transcripts/scalingbitcoin/milan/unlinkable-outsourced-channel-monitoring/) 2016 in Milan. The basic idea is pretty straightforward. You are going to have the penalty transaction encrypted using some information from the commitment transaction ID. Then you are also going to have a hint or a locator derived from the same commitment transaction ID. You are going to have these two pieces sent to the tower and the tower should be able to react the commitment transaction ID in the blockchain. That is the approach to the best of my knowledge lnd is following these days. It is the same as what we are following.
 
-# User side
+## User side
 
 How does this work in more detail? We have the penalty transaction, a bunch of bytes here. We also have the commitment transaction ID. What we are going to do is get the first half of the commitment transaction ID, the 16 most significant bytes and that is going to be a locator. We are also going to use the CHACHA20POLY1305 cipher and a secret key derived from the commitment transaction ID by hashing it to encrypt the penalty transaction. We set the cipher, we get the private key and we use zero as an IV. We encrypt the penalty transaction to get the encrypted blob. With the locator and the encrypted blob we send an appointment to the tower.
 
-# Tower side
+## Tower side
 
 From the tower side what we need to do is for every transaction ID in every block we generate a locator. We get the 16 most significant bytes (MSB) and generate a locator. If that locator is in the list of appointments we have then we have to generate the secret key from the same transaction ID. The IV is going to be zero again. Then decrypt the blob belonging to that appointment to get potentially a penalty transaction. Then we need to send the penalty transaction to the network and monitor it so there are no re-orgs and to make sure it gets in. Potentially in future versions of this with anchor outputs and such we will also be able to bump the fee. At the moment it is more complicated I’d say. That’s it for how it works internally.
 
-# Revenue Models
+## Revenue Models
 
 What about the revenue models? How can the tower be paid for the service? There are three main approaches here, two of them are being used at the moment. One is the bounty approach which to the best of my knowledge lnd and Electrum is using this. Then we have the per-appointment approach and subscription approach which is used by BLW. The bounty approach is pretty straightforward. The idea is that you have an output for the tower in the penalty transaction. Then if the tower is able to include the penalty transaction in a block the tower is going to get some part of the whole capacity of the channel. The per-appointment approach is completely different. It is like the opposite approach from that. You pay the tower beforehand appointment per appointment. It doesn’t matter if the transaction gets in or not. Then we have the subscription approach which is similar to the per-appointment approach but instead of paying one-by-one you pay for a whole bunch of data in the tower. You are paying for storage over time. Let’s see how these three approaches translate into properties.
 
-# Bounty - Revenue Models
+## Bounty - Revenue Models
 
 The bounty approach from the user side, it is nice. It allows the user to pay the tower only if the penalty transaction makes it to the chain. This means that you know the tower is going to try as hard as it can to make it because otherwise it isn’t going to be paid. That is awful for the tower because the user can front run the tower especially if the information that the user is sending is not actual information about the channel and is never going to be triggered. Then the user can hire multiple towers with no problem. You can free ride, you hire the whole network for whatever appointment you want and then only one tower is going to be paid. You can see here how this is never going to scale. Most of the servers are going to get wrecked while one of them is potentially going to win. The main problem of this approach is that the tower can use child-pays-for-parent (CPFP) to bump the fee of the penalty transaction. That is awesome. That is one of things we need to make this work properly. The user is going to set the fee when the appointment is sent but the tower may react to that way later. If the fees have changed drastically, especially up, the penalty transaction may bounce and there is nothing the tower can do if we are not following something similar to this. Finally the user can easily send spam to the tower, sending encrypted junk that is never going to get triggered and will build up in the tower.
 
-# Per Appointment - Revenue Models
+## Per Appointment - Revenue Models
 
 On the other hand we have the per appointment approach. This is good for the tower and not so good for the user, the contrary. The tower is paid beforehand which is good for the tower but the tower can get paid and not do anything about it. Definitely not good for the user. A rational user may only hire so many towers because you have to pay beforehand. Trying to exploit this may have a cost. No CPFP because there is no output for a tower here. Spamming the tower has a cost. There is a payment for every single update which may be troublesome especially if you don’t have a direct channel with the tower. Paying the tower using other channels, multihop payments, may imply that you have to hire a tower for the payment you have sent to the tower. This definitely not ideal. It is easily exploitable due to the lack of entry cost for the user. That is something I was not planning to talk about but if you are interested we can discuss it later on. The main idea is that since a user can just send information to a tower straight away with no entry cost there are some nasty attacks that the user can perform to build up the storage in the tower and make the tower perform a lot of computation with no actual reward.
 
-# Subscription - Revenue Models
+## Subscription - Revenue Models
 
 The subscription model is pretty similar but minimizes the two last properties. There are less payments which may be easier for both. Exploiting is going to be harder because you have to pay for the whole subscription. If you want to sybil yourself to perform some attacks on the tower you are going to have to pay one subscription for every sybil you are creating.
 
-# Subscriptions vs Bounty
+## Subscriptions vs Bounty
 
 We have seen that both the subscription and bounty approach have pros and cons. Which one should we use? Why not use both? The idea is that if we get the good things of both sides we can actually have a pretty solid approach where the user is only going to pay a fraction of the cost beforehand and the rest is going to be paid as a bounty. This can be seen as the user paying the tower for the storage first and then paying additional if the tower is able to perform whatever trigger it is supposed to. This also allows us to run different approaches here as we will see in a couple of slides. Then the rational user would only hire so many towers. That’s the same thing that comes from the subscription model. You can use CPFP here which comes from the bounty approach. Spamming the tower has a cost. We minimize the number of payments and exploiting it is more expensive. It is far from ideal but it is the closest we can get to something that works for both.
 
-# User Authentication
+## User Authentication
 
 If you have a subscription you need some way of authenticating who has paid you for the service. That helps prevent resource abuse. It can be done in several ways. You can use the secret key of the user node to sign messages and authenticate the node. That is tied to the node ID so we may want to prevent that. You can do the same thing with an ephemeral key. You generate that key to communicate with the tower and you achieve the exact same goal without having to reveal anything from the identity of the user, better privacy. You can also use authentication by LSAT or similar approaches. In The Eye of Satoshi we are using something quite similar, sending signed messages but the API we are using is pretty similar to what LSAT is doing. At the end of the day as long as you can know who has paid, you have this paywall in order to receive the data and to keep watching on based on that it should be fine.
 
-# Extensions
+## Extensions
 
 The BOLT has room for extensions. We have proposed at least one. There are multiple things here that you can add. In the current version there is an accountability extension that is supposed to be for making sure that the tower is doing whatever she has agreed to do. If it is replying to channel breaches it is going to be that. Then you can build things on top of this like reputation systems where you can prove one tower has cheated so you can tell the community “Don’t use this service anymore because they were offering this watching service and they failed to watch my channels.” It can always be used for completely different things like backups. I think you covered this with Christian (Decker) the other day. The idea is basically the same. You are sending data to the tower encrypted. The tower doesn’t know anything about that. You are sending that alongside a trigger but that trigger doesn’t have to be triggered. That is also part of the rationale between splitting the storage plus the triggering of whatever you are doing. In this case you can also use that for backups. You are paying for the backups. Finally you can extend the trigger logic to work with something else. Recently there has been some discussion about vaults. In the Revault proposal they actually need some kind of watching service in order to react. The trigger is a little bit different from the triggers in Lightning but you can have the additional information inside the encrypted blob as long as whatever information you have in there is not raw data. You have some rich format. It is not defined for now but you can have enriched formatted data that the tower can parse and see “What I received is for this kind of response. If I have agreed to perform this kind of thing I can do that.”
 
-# Current State of the Code
+## Current State of the Code
 
 The current state of code for The Eye of Satoshi, we have a standalone free open source tower with a plugin for c-lightning that we released two or three weeks ago. For now it is based on subscriptions that are for free. Paid subscriptions soon, whatever soon means in this space. We are actively working towards to getting paid subscriptions. The idea of the design is that we are working on a modular design. We would like to have different payment models that you can plug in or plug out. If you want to use BTCPay Server for example to perform all the payment logic you should be able to plug it in and use that. If you want to use Lightning and take care all of the HTLCs yourself you should also be able to do that. But that is a work in progress. Right now the communication is done via REST API using HTTPS. It can be used for backups out of the box even though it is not meant to be used for backups at the moment. I would like to have more things added in order to give more assurance for the user that the backups are going to be there. But you could use it for backups right now if you want. Then there are a couple of instances for testing, mainnet and testnet.
 
-# Resources
+## Resources
 
 That’s it. I have a couple of resources here about the [code](https://github.com/talaia-labs/python-teos) itself, [BOLT 13](https://github.com/sr-gi/bolt13/blob/master/13-watchtowers.md) if people are interested in checking it out. We are actively looking for feedback in both so feel free. There is also the [c-lightning plugin](https://github.com/talaia-labs/python-teos/tree/master/watchtower-plugin) that you can download, add it to your c-lightning plugin folder and run it out of the box. It is written in Python like the rest of code. There are READMEs and such but feel free to reach out if you have any problem.
 
@@ -152,7 +151,7 @@ testnet
 
 02f695cd372bcd949ff29465e72296eb959468e013a9b080742fb60fff27edc5f2@https://teos-testnet.pisa.watch:443
 
-# Q&A
+## Q&A
 
 Max Hillebrand: A question regarding privacy. On the network level, on the communication level what if for example a user uses IP, clearnet and uses the same connection all the time? Does that already lead to some deanonymization?
 

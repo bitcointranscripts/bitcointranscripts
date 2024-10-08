@@ -5,11 +5,10 @@ categories: ['hackathon']
 tags: ['lightning', 'c-lightning']
 speakers: ['Sergi Delgado Segura']
 date: 2020-05-24
+episode: 6
 media: https://www.youtube.com/watch?v=Vkq9CVxMclE
+aliases: ['/zh/lightning-hack-day/2020-05-24-sergi-delgado-watchtowers']
 ---
-
-位置：Potzblitz（线上参与）
-
 演示文档：https://srgi.me/resources/slides/Potzblitz!2020-Watchtowers.pdf
 
 “中本聪之眼” 代码：https://github.com/talaia-labs/python-teos
