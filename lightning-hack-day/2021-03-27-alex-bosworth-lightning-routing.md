@@ -1,10 +1,12 @@
 ---
 title: Lightning Routing - Building a new economy
 transcript_by: Michael Folkson
-categories: ['hackathon']
-tags: ['lightning', 'routing']
+tags:
+  - lightning
+  - routing
 date: 2021-03-27
-speakers: ['Alex Bosworth']
+speakers:
+  - Alex Bosworth
 ---
 Slides: <https://www.dropbox.com/s/oo9o8ij62utvlfo/alex-bosworth-lightning-routing.pdf>
 
