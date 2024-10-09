@@ -1,12 +1,14 @@
 ---
 title: The Raspiblitz - A Bitcoin and Lightning Network Full Node for everyone!
 transcript_by: Michael Folkson
-categories: ['hackathon']
 date: 2020-06-21
 episode: 9
-speakers: ['Rootzoll', 'Openoms']
+speakers:
+  - Rootzoll
+  - Openoms
 media: https://www.youtube.com/watch?v=1EqUi4xRbr0
-aliases: ['/lightning-hack-day/2020-06-21-rootzoll-openoms-raspiblitz']
+aliases:
+  - /lightning-hack-day/2020-06-21-rootzoll-openoms-raspiblitz
 ---
 Slides: https://keybase.pub/oms/Potzblitz9-RaspiBlitz-slides.pdf
 

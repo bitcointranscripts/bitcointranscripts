@@ -1,13 +1,16 @@
 ---
 title: Watchtowers and BOLT 13
 transcript_by: Michael Folkson
-categories: ['hackathon']
-tags: ['lightning', 'c-lightning']
-speakers: ['Sergi Delgado Segura']
+tags:
+  - lightning
+  - c-lightning
+speakers:
+  - Sergi Delgado Segura
 date: 2020-05-24
 episode: 6
 media: https://www.youtube.com/watch?v=Vkq9CVxMclE
-aliases: ['/lightning-hack-day/2020-05-24-sergi-delgado-watchtowers']
+aliases:
+  - /lightning-hack-day/2020-05-24-sergi-delgado-watchtowers
 ---
 Slides: https://srgi.me/resources/slides/Potzblitz!2020-Watchtowers.pdf
 

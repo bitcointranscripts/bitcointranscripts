@@ -1,13 +1,15 @@
 ---
 title: Back the f**k up! - How to secure your Lightning Network node
 transcript_by: Michael Folkson
-categories: ['hackathon']
-tags: ['lightning']
-speakers: ['Christian Decker']
+tags:
+  - lightning
+speakers:
+  - Christian Decker
 date: 2020-05-03
 episode: 4
 media: https://www.youtube.com/watch?v=kGQF3wtzr04
-aliases: ['/lightning-hack-day/2020-05-03-christian-decker-lightning-backups']
+aliases:
+  - /lightning-hack-day/2020-05-03-christian-decker-lightning-backups
 ---
 ## Intro (Jeff Gallas)
 
