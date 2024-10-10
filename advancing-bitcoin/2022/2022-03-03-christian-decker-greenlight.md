@@ -1,13 +1,13 @@
 ---
 title: Deploying Lightning at Scale (Greenlight)
-speakers: ['Christian Decker']
+speakers:
+  - Christian Decker
 date: 2022-03-03
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['lightning']
+tags:
+  - lightning
 media: https://vimeo.com/703273144
 ---
-
 Blog post on Greenlight: <https://blog.blockstream.com/en-greenlight-by-blockstream-lightning-made-easy/>
 
 Greenlight demo at London Bitcoin Devs: <https://btctranscripts.com/london-bitcoin-devs/2022-03-01-lightning-panel/>

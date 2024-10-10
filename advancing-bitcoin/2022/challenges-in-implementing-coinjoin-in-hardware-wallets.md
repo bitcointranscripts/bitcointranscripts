@@ -1,10 +1,13 @@
 ---
-title: "Challenges in implementing coinjoin in hardware wallets"
+title: Challenges in implementing coinjoin in hardware wallets
 transcript_by: delcin-raj via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=gqINXwsR33g
-tags: ["coinjoin", "hardware-wallet", "taproot"]
-speakers: ["Pavol Rusnak"]
-categories: ["conference"]
+tags:
+  - coinjoin
+  - hardware-wallet
+  - taproot
+speakers:
+  - Pavol Rusnak
 date: 2023-03-02
 ---
 ## Introduction

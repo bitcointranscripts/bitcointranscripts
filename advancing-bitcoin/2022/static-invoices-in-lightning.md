@@ -1,10 +1,13 @@
 ---
-title: "Static Invoices in Lightning: A Deep Dive and Comparison of Bolt11 Invoices, LNURL, Offers and AMP"
+title: 'Static Invoices in Lightning: A Deep Dive and Comparison of Bolt11 Invoices, LNURL, Offers and AMP'
 transcript_by: b3h3rkz via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=WsSa00gUvZw
-tags: ["lnurl", "offers", "amp"]
-speakers: ["Elle Mouton"]
-categories: ["conference"]
+tags:
+  - lnurl
+  - offers
+  - amp
+speakers:
+  - Elle Mouton
 date: 2022-03-03
 ---
 ## Intro
