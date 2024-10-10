@@ -1,9 +1,11 @@
 ---
 title: Threshold Signatures and Accountability
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['schnorr-signatures', 'threshold-signature']
-speakers: ['Andrew Poelstra']
+tags:
+  - schnorr-signatures
+  - threshold-signature
+speakers:
+  - Andrew Poelstra
 date: 2019-02-04
 media: https://www.youtube.com/watch?v=j9Wvz7zI_Ac
 ---

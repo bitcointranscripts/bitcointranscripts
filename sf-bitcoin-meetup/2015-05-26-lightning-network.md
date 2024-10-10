@@ -1,9 +1,11 @@
 ---
-title: "How Lightning.network can offer a solution for Bitcoin's scalability problems"
+title: How Lightning.network can offer a solution for Bitcoin's scalability problems
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['lightning']
-speakers: ['Tadge Dryja', 'Joseph Poon']
+tags:
+  - lightning
+speakers:
+  - Tadge Dryja
+  - Joseph Poon
 date: 2015-05-26
 media: https://www.youtube.com/watch?v=2QH5EV_Io0E
 ---
