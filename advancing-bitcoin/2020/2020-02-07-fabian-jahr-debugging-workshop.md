@@ -1,13 +1,13 @@
 ---
 title: Debugging Bitcoin Core Workshop
-speakers: ['Fabian Jahr']
+speakers:
+  - Fabian Jahr
 date: 2020-02-07
 transcript_by: Michael Folkson
-categories: ['workshop']
-tags: ['bitcoin-core', 'developer-tools']
+tags:
+  - bitcoin-core
+  - developer-tools
 ---
-Video: No video was posted online
-
 Fabian presentation at Bitcoin Edge Dev++ 2019: https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/
 
 Debugging Bitcoin Core doc: https://github.com/fjahr/debugging_bitcoin
