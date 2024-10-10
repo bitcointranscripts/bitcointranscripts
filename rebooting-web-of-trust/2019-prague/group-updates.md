@@ -1,10 +1,9 @@
 ---
 title: Group Updates.Md
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
+tags:
+  - research
 ---
-
 Group updates
 
 # Alice abuses verifiable credentials

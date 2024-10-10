@@ -1,10 +1,9 @@
 ---
 title: Groups
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
+tags:
+  - security
 ---
-
 # Group 1: Agents
 
 We talked about minimal requirements for ... a different set of protocols and other implementations, and we asked the question, what's out there for being able to create a minimal requirement for... Are we able to map this and pull it all down into a minimal requirement architecture for an agent without having to buy into the whole stack? What about building an agent for a smartphone or a feature phone, and then move on from there? Do you need a blockchain for that? Someone also talked about crypto identifiers. We also would like interoperable agents using math. What would an agent be, and how does it interoperate?

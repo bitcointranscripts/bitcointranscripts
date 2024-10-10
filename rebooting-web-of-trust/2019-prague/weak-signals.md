@@ -1,9 +1,7 @@
 ---
 title: Weak Signals
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
-
 Weak signals exercise
 
 # Group 1: Decentralized

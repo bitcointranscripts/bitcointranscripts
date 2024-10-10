@@ -1,10 +1,9 @@
 ---
 title: Swashbuckling Safety Training
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Kim Hamilton Duffy']
+speakers:
+  - Kim Hamilton Duffy
 ---
-
 Swashbuckling safety training with decentralized identifiers and verifiable credentials
 
 Kim Hamilton Duffy, kimdhamilton

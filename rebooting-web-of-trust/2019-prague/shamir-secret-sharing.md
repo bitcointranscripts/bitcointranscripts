@@ -1,10 +1,7 @@
 ---
 title: Shamir Secret Sharing
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
-
-
 # Discussion
 
 <https://twitter.com/kanzure/status/1168891841745494016>
