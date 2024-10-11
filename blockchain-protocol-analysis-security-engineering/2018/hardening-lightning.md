@@ -1,9 +1,11 @@
 ---
 title: Hardening Lightning
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'lightning']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - security
+  - lightning
+speakers:
+  - Olaoluwa Osuntokun
 date: 2018-01-30
 media: https://www.youtube.com/watch?v=V3f4yYVCxpk
 ---

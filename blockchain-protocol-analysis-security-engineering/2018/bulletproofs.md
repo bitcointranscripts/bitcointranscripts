@@ -1,9 +1,10 @@
 ---
 title: Bulletproofs
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Benedikt Bünz']
+tags:
+  - proof-systems
+speakers:
+  - Benedikt Bünz
 media: https://www.youtube.com/watch?v=gZjDKgR4dw8
 ---
 <https://twitter.com/kanzure/status/958881877896593410>

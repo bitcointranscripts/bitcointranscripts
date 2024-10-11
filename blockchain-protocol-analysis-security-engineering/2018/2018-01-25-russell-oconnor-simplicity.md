@@ -1,10 +1,11 @@
 ---
-title: "Simplicity: A New Language for Blockchains"
+title: 'Simplicity: A New Language for Blockchains'
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['simplicity']
+tags:
+  - simplicity
 date: 2018-01-25
-speakers: ["Russell O’Connor"]
+speakers:
+  - Russell O’Connor
 media: https://www.youtube.com/watch?v=VOeUq3oR2fk
 ---
 Slides: https://cyber.stanford.edu/sites/g/files/sbiybj9936/f/slides-bpase-2018.pdf
