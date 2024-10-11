@@ -1,5 +1,7 @@
 ---
 title: MIT Bitcoin Expo 2017
+types:
+  - conference
 ---
 http://web.archive.org/web/20170610144420/http://mitbitcoinexpo.org/
 
