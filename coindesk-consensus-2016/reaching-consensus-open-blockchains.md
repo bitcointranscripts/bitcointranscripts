@@ -1,11 +1,15 @@
 ---
-title: "Reaching Consensus on Open Blockchains"
+title: Reaching Consensus on Open Blockchains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['consensus-enforcement']
-speakers: ['Pindar Wong', 'Gavin Andresen', 'Vitalik Buterin', 'Neha Narula', 'Eric Lombrozo']
+tags:
+  - consensus-enforcement
+speakers:
+  - Pindar Wong
+  - Gavin Andresen
+  - Vitalik Buterin
+  - Neha Narula
+  - Eric Lombrozo
 ---
-
 Preliminary notes:
 
 

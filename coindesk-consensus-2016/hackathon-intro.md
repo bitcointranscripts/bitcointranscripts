@@ -1,10 +1,9 @@
 ---
 title: Hackathon Intro
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Robert Schwinker']
+speakers:
+  - Robert Schwinker
 ---
-
 Preliminary notes:
 
 
