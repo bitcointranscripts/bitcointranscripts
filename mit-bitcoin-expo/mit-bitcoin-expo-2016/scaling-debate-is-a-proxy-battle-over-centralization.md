@@ -1,8 +1,8 @@
 ---
 title: Scaling Debate Is A Proxy Battle Over Centralization
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ["James D'Angelo"]
+speakers:
+  - James D'Angelo
 ---
 I really appreciated the fact that.... I really appreciated Cory's talk. I quoted someone in my talk. It was a fairly recent quote. His whole talk was speaking about governance. There's a lot of governing issues coming into Bitcoin. We like the solving the whole world with technical.
 
