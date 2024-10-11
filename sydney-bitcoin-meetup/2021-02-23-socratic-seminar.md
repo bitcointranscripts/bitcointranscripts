@@ -1,15 +1,19 @@
 ---
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['research', 'dual-funding', 'privacy-problems', 'lightning', 'ptlc', 'taproot', 'soft-fork-activation']
-speakers: ['Lloyd Fournier', 'Anthony Towns']
+tags:
+  - research
+  - dual-funding
+  - privacy-problems
+  - lightning
+  - ptlc
+  - taproot
+  - soft-fork-activation
+speakers:
+  - Lloyd Fournier
+  - Anthony Towns
 date: 2021-02-23
 ---
-Topic: Agenda in Google Doc below
-
-Video: No video posted online
-
 Google Doc of the resources discussed: https://docs.google.com/document/d/1VAP4LNjHHVLy9RJwpQ8LqXEUw79z5TTZxr9du_Z0-9A/
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
