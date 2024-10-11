@@ -1,24 +1,13 @@
 ---
-title: Snarks And Their Practical Applications
+title: SNARKs And Their Practical Applications
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Eran Tromer']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Eran Tromer
 media: https://www.youtube.com/watch?v=Rm-p8rrR9c8
 ---
-
-
-Joint works with:
-
-* Eli Ben-Sasson
-* Matthew Green
-* Alessandro Chiesa
-* Ian Miers
-* Christina Garman
-* Madars Virza
-* Daniel Genkin
-
-
 Thank you very much. I would like to thank the organizers for giving this opportunity to learn so much from my peers and colleagues some of which are here. This is a wonderful survey of many of the works in this area. As I was sitting here, I was in real-time adjusting my slides to minimize the overlap. I will cut down on the amount of introduction because what we just saw (Mike Walfish) was wonderful. I would like to focus on the specific things that we have been looking at in one area of research.
 
 For the sake of concreteness, let me start with the application of SNARKs. One of the motivating applications is zerocash <http://zerocash-project.org>. Decentralized anonymous payments system based on bitcoin, this was joint work with Eli Ben-Sasson, Chiesa, Garman, Green, Miers, Tromer, Virza. And it's all down to bitcoin. It's a decentralized digital currency. Ownership of coins is represented just by some numbers and to pay someone you pass some number to them, and that raises the issue of double spending. If you pass the number to them, then they would be convinced just like anyone else, therefore causing inflation. The way that bitcoin deals with this is the blockchain or distributed ledger, which posts every transaction, we see who paid whom and when and how much. Every time a transaction is recorded, everyone knows to respect the coin that was just spent. The problem here is privacy because the blockchain has all of the information. As a consumer, anyone could see your purchases. Merchants have cash flows exposed. Anyone can see your balance as paying merchants going down the street. This is clearly a problem. It has been recognized by many. There are some ways maybe to dismiss this like saying bitcoin is pseudonymous, but most users use very few addresses and there are works that show that you can deanonymize people by tracking the transaction graph.
