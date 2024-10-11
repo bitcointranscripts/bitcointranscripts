@@ -1,10 +1,9 @@
 ---
 title: Keynote Gavin Andresen
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Gavin Andresen']
+speakers:
+  - Gavin Andresen
 ---
-
 His fame precedes him. He's going to talk about chain sizes and all that.
 
 Cool, I'll have to follow you guys. Thank you, it's great to be here. I was here last time and had a great time. I'm really happy that it's not snowing because we've had too much snow. I'm also happy that you all decided to listen to me on a Sunday morning. I don't usually give talks on Sunday.

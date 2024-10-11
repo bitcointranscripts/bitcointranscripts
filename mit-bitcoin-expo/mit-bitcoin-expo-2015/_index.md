@@ -1,5 +1,7 @@
 ---
 title: Mit Bitcoin Expo 2015
+types:
+  - conference
 ---
 http://web.archive.org/web/20150604032122/http://mitbitcoinexpo.org/
 
