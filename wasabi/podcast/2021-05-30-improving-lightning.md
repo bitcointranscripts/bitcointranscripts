@@ -1,12 +1,16 @@
 ---
 title: Improving the Lightning Network
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['lightning', 'c-lightning']
-speakers: ['Rusty Russell']
+tags:
+  - lightning
+  - c-lightning
+speakers:
+  - Rusty Russell
 date: 2021-05-30
+episode: 16
 media: https://www.youtube.com/watch?v=BRkSE00aj5k&list=PLPwc75tPMdsixsuhwau82Q0IfxECo0z_E&index=18
-aliases: ['/wasabi-research-club/2021-05-30-rusty-russell-improving-lightning/']
+aliases:
+  - /wasabi-research-club/2021-05-30-rusty-russell-improving-lightning/
 ---
 ## How Rusty got into Lightning
 
