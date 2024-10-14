@@ -1,9 +1,11 @@
 ---
-title: "Rebalancing in the Lightning Network: Analysis and Implications"
+title: 'Rebalancing in the Lightning Network: Analysis and Implications'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'fee-management']
-speakers: ['Sebastián Reca']
+tags:
+  - lightning
+  - fee-management
+speakers:
+  - Sebastián Reca
 date: 2018-10-07
 media: https://www.youtube.com/watch?v=nwSuctrzV7Y&t=637s
 ---

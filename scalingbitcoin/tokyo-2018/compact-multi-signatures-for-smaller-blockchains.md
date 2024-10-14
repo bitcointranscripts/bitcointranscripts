@@ -1,9 +1,12 @@
 ---
-title: "Compact Multi-Signatures For Smaller Blockchains"
+title: Compact Multi-Signatures For Smaller Blockchains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'threshold-signature', 'bls-signatures']
-speakers: ['Dan Boneh']
+tags:
+  - research
+  - threshold-signature
+  - bls-signatures
+speakers:
+  - Dan Boneh
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=IMzLa9B1_3E&t=1610
 ---

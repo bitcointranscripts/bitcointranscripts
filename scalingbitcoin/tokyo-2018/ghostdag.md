@@ -1,9 +1,10 @@
 ---
-title: "The GHOSTDAG protocol"
+title: The GHOSTDAG protocol
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Aviv Zohar']
+tags:
+  - research
+speakers:
+  - Aviv Zohar
 media: https://www.youtube.com/watch?v=3Hksieg5GdM&t=1807s
 ---
 paper: <https://eprint.iacr.org/2018/104.pdf>

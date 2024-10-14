@@ -1,8 +1,8 @@
 ---
-title: "An analysis of dust in UTXO-based cryptocurrencies"
+title: An analysis of dust in UTXO-based cryptocurrencies
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Sergi Delgado Segura']
+speakers:
+  - Sergi Delgado Segura
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=YgtF7psIKWg&t=2256
 ---
