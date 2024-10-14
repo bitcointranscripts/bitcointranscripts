@@ -750,7 +750,7 @@ I just don't think it's an interesting route to pursue or to even advocate for.
 
 Sjors Provoost: 00:27:27
 
-Yeah, and I think that goes into the second distinction I wanted to make, which is whether or not it's a LightClient is one of them.
+Yeah, and I think that goes into the second distinction I wanted to make, which is whether or not it's a Light Client is one of them.
 And the second one is whether or not you figuring out whether or not you got paid, whether you did that in a private way or not, right?
 Because the non-private way is sort of simple.
 Like you give someone an address and you just ask like, hey, did I get paid?
