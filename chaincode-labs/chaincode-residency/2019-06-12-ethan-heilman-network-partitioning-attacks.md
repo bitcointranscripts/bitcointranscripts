@@ -1,9 +1,12 @@
 ---
-title: "Bitcoin network partitioning & network-level privacy attacks"
+title: Bitcoin network partitioning & network-level privacy attacks
 transcript_by: Adam Jonas
-tags: ['privacy-problems', 'p2p', 'eclipse-attacks']
-categories: ['residency']
-speakers: ['Ethan Heilman']
+tags:
+  - privacy-problems
+  - p2p
+  - eclipse-attacks
+speakers:
+  - Ethan Heilman
 date: 2019-06-12
 media: https://www.youtube.com/watch?v=StnOVBbIpD8
 ---

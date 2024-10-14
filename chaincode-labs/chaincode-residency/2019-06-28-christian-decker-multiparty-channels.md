@@ -1,13 +1,15 @@
 ---
 title: Multiparty Channels (Lightning Network)
 transcript_by: Lucas de C. Ferreira, Ben Knáb
-categories: ['residency']
-tags: ['lightning', 'multiparty channel', 'channel factory']
-speakers: ['Christian Decker']
+tags:
+  - lightning
+  - multiparty channel
+  - channel factory
+speakers:
+  - Christian Decker
 date: 2019-06-28
 media: https://youtu.be/PUDWGH_MvmQ
 ---
-
 Location: Chaincode Labs Lightning Residency 2019
 
 Slides: <https://residency.chaincode.com/presentations/lightning/Multiparty_Channels.pdf>

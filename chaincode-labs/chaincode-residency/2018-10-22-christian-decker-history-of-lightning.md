@@ -1,13 +1,13 @@
 ---
 title: History of the Lightning Network
 transcript_by: Caralie Chrisco
-tags: ['lightning']
-categories: ['residency']
-speakers: ['Christian Decker']
+tags:
+  - lightning
+speakers:
+  - Christian Decker
 date: 2018-10-22
 media: https://youtu.be/HauP9F16mUM
 ---
-
 Location: Chaincode Labs Lightning Residency 2018
 
 ## Introduction

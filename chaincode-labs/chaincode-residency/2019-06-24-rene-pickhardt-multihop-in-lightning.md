@@ -1,9 +1,11 @@
 ---
 title: Multihop of the Lightning Network
 transcript_by: Elle Mouton, Corey Phillips, Brian Mancini, Abubakar Nur Khalil
-categories: ['residency']
-tags: ['lightning', 'routing']
-speakers: ['Rene Pickhardt']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Rene Pickhardt
 date: 2019-06-24
 media: https://www.youtube.com/watch?v=P7I-C0_sijg
 ---

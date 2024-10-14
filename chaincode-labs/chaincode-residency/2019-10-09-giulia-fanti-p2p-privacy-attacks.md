@@ -1,13 +1,15 @@
 ---
 title: P2P Privacy Attacks
 transcript_by: Caralie Chrisco
-tags: ['privacy-problems', 'p2p', 'dandelion']
-categories: ['residency']
-speakers: ['Giulia Fanti']
+tags:
+  - privacy-problems
+  - p2p
+  - dandelion
+speakers:
+  - Giulia Fanti
 date: 2019-10-09
 media: https://youtu.be/qKNEUfnYue0
 ---
-
 Location: Chaincode Labs 2019 Residency
 
 Slides: <https://residency.chaincode.com/presentations/bitcoin/giulia_fanti_bitcoin_p2p.pdf>

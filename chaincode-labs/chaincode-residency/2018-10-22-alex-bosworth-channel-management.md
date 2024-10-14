@@ -1,13 +1,14 @@
 ---
 title: Channel Management
 transcript_by: Michael Folkson
-tags: ['lightning', 'routing']
-categories: ['residency']
-speakers: ['Alex Bosworth']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Alex Bosworth
 date: 2018-10-22
 media: https://www.youtube.com/watch?v=HlPIB6jt6ww
 ---
-
 Slides: https://lightningresidency.com/assets/presentations/Bosworth_Channel_Management.pdf
 
 # Intro

@@ -1,13 +1,15 @@
 ---
 title: Building Lightning Applications
 transcript_by: Michael Folkson
-tags: ['lightning', 'lnd', 'developer-tools']
-categories: ['residency']
-speakers: ['Alex Bosworth']
+tags:
+  - lightning
+  - lnd
+  - developer-tools
+speakers:
+  - Alex Bosworth
 date: 2018-10-22
 media: https://www.youtube.com/watch?v=JhRIWc9zPjA
 ---
-
 Slides: <https://lightningresidency.com/assets/presentations/Bosworth_Building_Applications.pdf>
 
 <https://twitter.com/kanzure/status/1116327230135836673>

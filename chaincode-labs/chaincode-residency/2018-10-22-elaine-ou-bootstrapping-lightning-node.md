@@ -1,15 +1,14 @@
 ---
-title: Bootstrapping Lightning Node
+title: Bootstrapping and Maintaining a Lightning Node
 transcript_by: Michael Folkson
-tags: ['lightning', 'routing']
-categories: ['residency']
-speakers: ['Elaine Ou']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Elaine Ou
 date: 2018-10-22
 media: https://www.youtube.com/watch?v=qX4Z3JY1094
 ---
-
-Bootstrapping and maintaining a Lightning Node
-
 Slides: https://lightningresidency.com/assets/presentations/Ou_Bootstrapping_and_Maintaining_a_Lightning_Node.pdf
 
 # Intro

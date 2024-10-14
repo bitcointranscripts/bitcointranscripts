@@ -1,13 +1,14 @@
 ---
 title: Security Models
 transcript_by: Caralie Chrisco
-tags: ['security', 'lightweight-client']
-categories: ['residency']
-speakers: ['John Newbery']
+tags:
+  - security
+  - lightweight-client
+speakers:
+  - John Newbery
 date: 2019-06-17
 media: https://youtu.be/6gGcS4N5Rg4
 ---
-
 Topic: Security Models
 
 Location: Chaincode Labs 2019 Residency

@@ -2,13 +2,14 @@
 title: Eltoo - El (lejano) futuro de lightning
 transcript_by: Michael Folkson
 translation_by: Francisco Calderon
-categories: ['residency']
-tags: ['eltoo', 'lightning']
+tags:
+  - eltoo
+  - lightning
 date: 2019-06-25
-speakers: ['Christian Decker']
+speakers:
+  - Christian Decker
 media: https://www.youtube.com/watch?v=3ZjymCOmn_A
 ---
-
 Tema: Eltoo: El (lejano) futuro de lightning
 
 Lugar: Chaincode Labs

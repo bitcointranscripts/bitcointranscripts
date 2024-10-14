@@ -1,13 +1,13 @@
 ---
 title: Lightning ≈ Bitcoin
 transcript_by: Anthony Ronning
-tags: ['lightning']
-categories: ['residency']
-speakers: ['Christian Decker']
+tags:
+  - lightning
+speakers:
+  - Christian Decker
 date: 2018-10-22
 media: https://youtu.be/8lMLo-7yF5k
 ---
-
 Location: Chaincode Labs Lightning Residency 2018
 
 ## Introduction

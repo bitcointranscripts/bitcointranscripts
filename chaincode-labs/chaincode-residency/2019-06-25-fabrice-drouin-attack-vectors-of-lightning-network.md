@@ -1,13 +1,14 @@
 ---
 title: Attack Vectors of Lightning Network
 transcript_by: Gijs van Dam
-categories: ['residency']
-tags: ['security-problems', 'lightning']
-speakers: ['Fabrice Drouin']
+tags:
+  - security-problems
+  - lightning
+speakers:
+  - Fabrice Drouin
 date: 2019-06-25
 media: https://youtu.be/R5cSrftd8nc
 ---
-
 Location: Chaincode Residency – Summer 2019
 
 ## Introduction

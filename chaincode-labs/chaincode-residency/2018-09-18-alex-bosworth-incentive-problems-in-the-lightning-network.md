@@ -1,13 +1,14 @@
 ---
 title: Incentive Problems in the Lightning Network
 transcript_by: Gloria Zhao, Aaron Morris, Lucas de C. Ferreira, Caralie Chrisco
-tags: ['lightning', 'lnd']
-categories: ['residency']
-speakers: ['Alex Bosworth']
+tags:
+  - lightning
+  - lnd
+speakers:
+  - Alex Bosworth
 date: 2018-09-18
 media: https://youtu.be/lByQUr7zPr0
 ---
-
 # Incentive Problems in the Lightning Network
 
 I'm going to talk about high-level incentive problems in the Lighting Network.

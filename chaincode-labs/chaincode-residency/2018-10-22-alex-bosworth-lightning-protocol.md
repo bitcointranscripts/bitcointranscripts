@@ -1,13 +1,13 @@
 ---
 title: Lightning Protocol
 transcript_by: Michael Folkson
-tags: ['lightning']
-categories: ['residency']
-speakers: ['Alex Bosworth']
+tags:
+  - lightning
+speakers:
+  - Alex Bosworth
 date: 2018-10-22
 media: https://www.youtube.com/watch?v=1R5DNUcCYRg
 ---
-
 The Lightning Protocol, an Application Design Perspective
 
 Slides: https://lightningresidency.com/assets/presentations/Bosworth_The_Lightning_Protocol.pdf

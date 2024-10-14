@@ -1,13 +1,14 @@
 ---
 title: Debugging Bitcoin Core
 transcript_by: Michael Folkson
-categories: ['residency']
-tags: ['bitcoin core']
-speakers: ['Fabian Jahr']
+tags:
+  - bitcoin-core
+  - developer-tools
+speakers:
+  - Fabian Jahr
 date: 2019-08-22
 media: https://www.youtube.com/watch?v=6aPSCDAiqVI
 ---
-
 Slides: <https://residency.chaincode.com/presentations/Debugging_Bitcoin.pdf>
 
 Repo: <https://gist.github.com/fjahr/2cd23ad743a2ddfd4eed957274beca0f>

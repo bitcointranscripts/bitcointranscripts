@@ -1,9 +1,10 @@
 ---
-title: "Multiple-path Payments (MPP)"
+title: Multiple-path Payments (MPP)
 transcript_by: Jeff Czyz, Stéphan Vuylsteke
-categories: ['residency']
-tags: ['multipath-payments']
-speakers: ['Alex Bosworth']
+tags:
+  - multipath-payments
+speakers:
+  - Alex Bosworth
 date: 2019-06-25
 media: https://youtu.be/Og4TGERPZMY
 ---

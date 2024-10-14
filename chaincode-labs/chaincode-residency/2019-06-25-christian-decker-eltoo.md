@@ -1,13 +1,14 @@
 ---
 title: Eltoo
 transcript_by: Michael Folkson
-categories: ['residency']
-tags: ['eltoo', 'lightning']
-speakers: ['Christian Decker']
+tags:
+  - eltoo
+  - lightning
+speakers:
+  - Christian Decker
 date: 2019-06-25
 media: https://www.youtube.com/watch?v=3ZjymCOmn_A
 ---
-
 Eltoo: The (Far) Future of Lightning
 
 Location: Chaincode Labs

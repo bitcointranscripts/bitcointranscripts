@@ -1,13 +1,14 @@
 ---
 title: Routing Failures
 transcript_by: Andrew Toth and Caralie Chrisco
-categories: ['residency']
-tags: ['lightning', 'routing']
-speakers: ['Fabrice Drouin']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Fabrice Drouin
 date: 2019-06-25
 media: https://youtu.be/z5vEyvc2vrE
 ---
-
 ## Introduction
 
 So I'm going to talk about routing failures in lightning. Basically lightning is a network of payment channels and you can pay anyone, you can find a route. In routing in lightning you have two completely different concepts: how to find a route (path finding) and once you have a route how to actually send a payment through the routes to the final destination. This is what Christian showed that's the source routing.

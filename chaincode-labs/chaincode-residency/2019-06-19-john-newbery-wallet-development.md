@@ -1,9 +1,11 @@
 ---
-title: "Wallet Development in Bitcoin Core"
+title: Wallet Development in Bitcoin Core
 transcript_by: Michael Folkson
-speakers: ['John Newbery']
-tags: ['wallet', 'bitcoin-core']
-categories: ['residency']
+speakers:
+  - John Newbery
+tags:
+  - wallet
+  - bitcoin-core
 date: 2019-06-19
 media: https://www.youtube.com/watch?v=j0V8elTzYAA
 ---

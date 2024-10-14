@@ -1,13 +1,13 @@
 ---
 title: Transaction Rebroadcast
 transcript_by: Michael Folkson
-categories: ['residency']
-tags: ['bitcoin core']
-speakers: ['Amiti Uttarwar']
+tags:
+  - bitcoin-core
+speakers:
+  - Amiti Uttarwar
 date: 2019-09-09
 media: https://www.youtube.com/watch?v=v4TXfwwz_VI
 ---
-
 <https://twitter.com/kanzure/status/1199710296199385088>
 
 <http://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/edgedevplusplus/rebroadcasting/>
