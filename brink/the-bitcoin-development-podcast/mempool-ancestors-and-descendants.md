@@ -4,7 +4,6 @@ transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Ancestors-and-Descendants-e1ald5e
 tags: ['cpfp']
 speakers: ['John Newbery', 'Gloria Zhao']
-categories: []
 summary: "John and Gloria continue their discussion of Bitcoin's mempool by explaining parent, child, ancestor and descendant transactions."
 date: 2021-11-24
 additional_resources:

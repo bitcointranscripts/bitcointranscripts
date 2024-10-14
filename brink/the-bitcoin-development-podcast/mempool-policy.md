@@ -4,7 +4,6 @@ transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/bitcoinbrink/episodes/Mempool-Policy-e182ul0
 tags: ['rbf', 'transaction-pinning']
 speakers: ['John Newbery', 'Gloria Zhao']
-categories: []
 summary: "Brink co-founder, John Newbery, and Brink fellow, Gloria Zhao, discuss Bitcoin Core's mempool policy."
 date: 2021-11-10
 additional_resources:

@@ -4,7 +4,6 @@ transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-94-silent-payments-part-2
 tags: ['silent-payments']
 speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
-categories: []
 summary: "In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments."
 episode: 94
 date: 2024-07-07

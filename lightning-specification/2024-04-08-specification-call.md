@@ -3,7 +3,6 @@ title: "Lightning Specification Meeting - 1152"
 transcript_by: Gurwinder Sahota via tstbtc v1.0.0
 tags: ['lightning']
 speakers: []
-categories: []
 date: 2024-04-08
 ---
 
