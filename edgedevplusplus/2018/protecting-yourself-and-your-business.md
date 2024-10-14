@@ -1,12 +1,14 @@
 ---
 title: Protecting Yourself And Your Business
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
-speakers: ['Warren Togami']
+tags:
+  - security
+speakers:
+  - Warren Togami
 media: https://www.youtube.com/watch?v=ZrZlCpmcvBU
 date: 2018-10-05
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/protecting-yourself-and-your-business]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/protecting-yourself-and-your-business
 ---
 <https://twitter.com/kanzure/status/1048087226742071296>
 
