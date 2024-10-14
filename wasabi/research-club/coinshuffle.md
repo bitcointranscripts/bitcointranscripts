@@ -1,12 +1,17 @@
 ---
-title: "CoinShuffle"
+title: CoinShuffle
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=dVZDeEfSdcI
-tags: ["research", "coinjoin"]
-speakers: ["Aviv Milner", "Adam Fiscor", "Lucas Ontivero", "Max Hillebrand"]
-categories: ["club"]
+tags:
+  - research
+  - coinjoin
+speakers:
+  - Aviv Milner
+  - Adam Fiscor
+  - Lucas Ontivero
+  - Max Hillebrand
 date: 2020-01-20
-summary: "CoinShuffle is a decentralized coinjoin protocol that aims to address the privacy and centralization issues of traditional coinjoins. Participants can anonymously submit their addresses in a process that uses encryption to prevent linking the addresses to specific individuals. The addresses are then shuffled using secure multi-party computation, creating coinjoin outputs that include inputs from all participants. CoinShuffle eliminates the need for a central coordinator and is resilient to denial of service attacks. However, the decryption process is sequential and the time cost increases with the number of participants. The protocol also has measures to handle misbehaving participants and failed rounds. Additionally, alternative approaches such as using mixnets and integrating with other infrastructures like the Lightning Network are discussed. Overall, CoinShuffle provides a viable solution for decentralized and coordinated coinjoins, but the performance is dependent on the number of participants. Further we discuss the importance of integrating second layer technologies like the Lightning Network in a private way and the challenges of achieving efficiency in coin mixing. They propose steps to improve the space efficiency of coin mixing and finding algorithms that perform well in simulations. They also explore the trade-off between space efficiency and privacy, suggesting that higher coin denominations could be more efficient and private. They discuss the idea of using existing data to simulate mixing transactions and score mixes based on real-world data. They also mention the possibility of using the knapsack algorithm for scoring and discuss the challenge of arranging inputs and outputs in a trustless manner. The speakers plan to explore different mixing networks and techniques, such as cache fusion, to improve coordination and trustlessness."
+summary: CoinShuffle is a decentralized coinjoin protocol that aims to address the privacy and centralization issues of traditional coinjoins. Participants can anonymously submit their addresses in a process that uses encryption to prevent linking the addresses to specific individuals. The addresses are then shuffled using secure multi-party computation, creating coinjoin outputs that include inputs from all participants. CoinShuffle eliminates the need for a central coordinator and is resilient to denial of service attacks. However, the decryption process is sequential and the time cost increases with the number of participants. The protocol also has measures to handle misbehaving participants and failed rounds. Additionally, alternative approaches such as using mixnets and integrating with other infrastructures like the Lightning Network are discussed. Overall, CoinShuffle provides a viable solution for decentralized and coordinated coinjoins, but the performance is dependent on the number of participants. Further we discuss the importance of integrating second layer technologies like the Lightning Network in a private way and the challenges of achieving efficiency in coin mixing. They propose steps to improve the space efficiency of coin mixing and finding algorithms that perform well in simulations. They also explore the trade-off between space efficiency and privacy, suggesting that higher coin denominations could be more efficient and private. They discuss the idea of using existing data to simulate mixing transactions and score mixes based on real-world data. They also mention the possibility of using the knapsack algorithm for scoring and discuss the challenge of arranging inputs and outputs in a trustless manner. The speakers plan to explore different mixing networks and techniques, such as cache fusion, to improve coordination and trustlessness.
 ---
 ## Introduction to CoinShuffle
 
