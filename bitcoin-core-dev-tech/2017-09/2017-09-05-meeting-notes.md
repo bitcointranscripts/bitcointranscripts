@@ -1,13 +1,10 @@
 ---
 title: Meeting Notes
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
 date: 2017-09-05
-aliases: ['/bitcoin-core-dev-tech/2017-09-05-meeting-notes/']
+aliases:
+  - /bitcoin-core-dev-tech/2017-09-05-meeting-notes/
 ---
-
-coredev.tech september 2017
-
 <https://twitter.com/kanzure/status/907233490919464960>
 
 ((As always, any errors are most likely my own. etc.))

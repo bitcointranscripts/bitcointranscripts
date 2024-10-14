@@ -2,12 +2,12 @@
 title: Árboles de sintaxis abstracta merkleizados
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['mast']
+tags:
+  - mast
 date: 2017-09-07
-aliases: ['/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees.es/']
+aliases:
+  - /bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees.es/
 ---
-
 ﻿<https://twitter.com/kanzure/status/907075529534328832>
 
 # Árboles de sintaxis abstracta merkleizados (MAST)
