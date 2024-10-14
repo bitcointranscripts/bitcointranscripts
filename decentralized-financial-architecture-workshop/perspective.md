@@ -1,10 +1,9 @@
 ---
 title: Perspective
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['regulation']
+tags:
+  - regulation
 ---
-
 * Regulators should focus on consumer protection
 
 * Regulators should focus on operating (or overseeing) rating agencies, and formal review of proposed standards

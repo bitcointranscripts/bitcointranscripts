@@ -1,15 +1,11 @@
 ---
-title: Compliance And Confidentiality
+title: 'Compliance And Confidentiality: Can they co-exist?'
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['regulation']
-speakers: ['Alexander Zaidelson']
+tags:
+  - regulation
+speakers:
+  - Alexander Zaidelson
 ---
-
-Compliance and confidentiality: can they co-exist?
-
-Alexander Zaidelson, Beam
-
 # Introduction
 
 Hi everyone. It's a great pleasure to be here. I'm Alexander Zaidelson, CEO of Beam. I'll be presenting our view on the regulation and how we live with it as a project. I'm not an expert in regulation. Whatever I'm showing here is how we see the landscape from what we understand.
