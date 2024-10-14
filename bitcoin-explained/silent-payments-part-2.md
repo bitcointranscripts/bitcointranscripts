@@ -11,7 +11,7 @@ speakers:
   - 'Ruben Somsen'
   - 'Josibake'
 categories: []
-summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP 352, their now-finalized Bitcoin Improvement Proposal for Silent Payments.'
+summary: 'In this episode of Bitcoin, Explained, Aaron and Sjors welcome Ruben Somsen and Josie to the show to discuss BIP352, their now-finalized Bitcoin Improvement Proposal for Silent Payments.'
 episode: 94
 additional_resources:
   - title: 'https://bitcoinexplainedpodcast.com/'
@@ -165,7 +165,7 @@ I am a BitcoinCore developer.
 I started contributing about three or three-ish years ago, I think.
 I started off in the wallet mostly out of an interest in privacy stuff, and also just usability, because I used the Bitcoin Core wallet, which was part of what got me so excited about silent payments.
 It was kind of the feature that I felt like was missing.
-I spent a lot of time in the wallet and also a lot of time thinking about privacy improvements without SoftForks.
+I spent a lot of time in the wallet and also a lot of time thinking about privacy improvements without Softforks.
 
 Aaron van Wirdum: 00:03:02
 
@@ -362,7 +362,7 @@ The silent address is two public keys?
 
 Josibake: 00:10:38
 
-Yeah, so it's more specifically, it's a batch32M encoding of two public keys.
+Yeah, so it's more specifically, it's a bech32m encoding of two public keys.
 So it has an HRP instead of BC, it has SP.
 
 Aaron van Wirdum: 00:10:47
@@ -447,7 +447,7 @@ That's what you're describing right now is the general Diffie-Hellman exchange.
 Sjors Provoost: 00:13:15
 
 Right.
-Those, those, you know, Josie's public key because he put it on the internet and Josie will know your public key because that's where the money is coming from.
+Those, you know, Josie's public key because he put it on the internet and Josie will know your public key because that's where the money is coming from.
 
 Josibake: 00:13:23
 
@@ -480,7 +480,7 @@ Josibake: 00:14:26
 So before we talk about that one, just maybe to make it clear, the public key that I use to find the payment is already existing in the transaction.
 And this is kind of the important part of silent payments.
 There is nothing extra.
-Cause I think in stealth addresses, they had a similar way where you would have this ephemeral secret and then they would encrypt it in an op return.
+Cause I think in stealth addresses, they had a similar way where you would have this ephemeral secret and then they would encrypt it in an `OP_RETURN`.
 But then it was kind of obvious and the user had to pay more.
 So once I've created that shared secret, as the sender, like Sjor's mentioned, if I use just the shared secret, both of us know the shared secret.
 So then either one of us could spend it.
@@ -493,7 +493,7 @@ And even back then there was already the separation of there being two keys, but
 So you have a key with which you generate the shared secrets and then there's a separate key that you add to it.
 And the reason we have the separation of two keys is purely to have the functionality of finding out whether or not you get paid, which requires what we call the scan key and actually spending from it, which we call the spend key.
 We can separate that out so you can have a device that does all the scanning, that checks, hey, did I get paid or not?
-And does the generates the shared secret and then checks, is this actually a payment?
+Generates the shared secret and then checks, is this actually a payment?
 And actually spending it, that key can just be on a hardware wallet that isn't necessarily connected to the internet, cannot really do the scanning in an efficient way.
 In theory, probably they could, but in practice, that's difficult.
 So that's why we have this separation of having these two keys.
@@ -540,7 +540,7 @@ You can even go further and say, well, I'm not really interested in other people
 
 Aaron van Wirdum: 00:18:46
 
-And to be clear, it scans for taproot because it uses the taproot, it uses snore basically, I would say, right?
+And to be clear, it scans for taproot because it uses the taproot, it uses Schnorr basically, I would say, right?
 So if it doesn't have the Taproot output, then there's no way it can be a silent payment.
 
 Josibake: 00:18:59
@@ -623,7 +623,7 @@ If you are a full node and you are in the business of doing this once every 10 m
 So now it'll take you far less than a second plus a little bit.
 Yeah.
 So for a full node, this is no extra work.
-The more complexity starts when you're dealing with Lite Clients, light wallets, mobile wallets, those kind of things.
+The more complexity starts when you're dealing with Light Clients, light wallets, mobile wallets, those kind of things.
 
 Aaron van Wirdum: 00:22:28
 
@@ -656,7 +656,7 @@ Yeah, I mean, I think that was more of a marketing name on the lightning side.
 
 Aaron van Wirdum: 00:23:38
 
-But yeah, it's yeah, BIP 157 and BIP 158.
+But yeah, it's yeah, BIP157 and BIP158.
 
 Ruben Somsen: 00:23:42
 
@@ -734,9 +734,9 @@ So the more users are connecting to your node, the more work you have to do.
 Now, because that work is roughly a signature check, if I'm a wallet provider and I'm running like some pretty nice hardware, this is feasible.
 And I did some like back of the number math on it at some point.
 And, you could scale up to like 10 million users with, Amazon hardware and whatnot.
-But the but the reason I don't think this is super interesting is those users are giving all of their privacy to that server.
+But the reason I don't think this is super interesting is those users are giving all of their privacy to that server.
 It's the same as if you just handed your XPUB to a server and said, hey, just tell me when I get paid.
-Now there are some models where I think users might waing to do this.
+Now there are some models where I think users might want to do this.
 
 Ruben Somsen: 00:27:11
 
@@ -750,7 +750,7 @@ I just don't think it's an interesting route to pursue or to even advocate for.
 
 Sjors Provoost: 00:27:27
 
-Yeah, and I think that goes into the second distinction I wanted to make, which is whether or not it's a likeline is one of them.
+Yeah, and I think that goes into the second distinction I wanted to make, which is whether or not it's a LightClient is one of them.
 And the second one is whether or not you figuring out whether or not you got paid, whether you did that in a private way or not, right?
 Because the non-private way is sort of simple.
 Like you give someone an address and you just ask like, hey, did I get paid?
@@ -770,7 +770,7 @@ Sjors Provoost: 00:28:04
 
 Yeah, so we want to be able to figure out whether or not we got paid without having a full node do all the work for us and without losing our privacy.
 That is essentially what we want.
-And one of the big components there that Shorst mentioned is BIP157, BIP158.
+And one of the big components there that Sjors mentioned is BIP157, BIP158.
 That is one component.
 But the first thing we need to answer, the scanning question is how do we get a Lite Client?
 How do we get a phone to figure out, to do basically the equivalent of scanning without outsourcing it to somebody else and losing all their privacy?
@@ -861,7 +861,7 @@ Aaron van Wirdum: 00:33:03
 
 Maybe take one step back.
 You create what I would call potential public keys.
-So you, you, you do an ECDH with each of these inputs, which means you create all these Taproot outputs.
+So you do an ECDH with each of these inputs, which means you create all these Taproot outputs.
 Now you need a way as the Lite Client to know if any of these public keys exist in the UTXO set.
 There are many ways you could do this.
 One way would be just connect to an Electrum server or an address lookup server and just hammer them with like 2000 addresses and be like, hey, tell me if any of these exist in the UTXO set.
@@ -935,7 +935,7 @@ So really what we have is kind of this like stale data problem, where if I post 
 It was brought up with silent payments because then people kind of realized, these are designed to be reused.
 Because today, if I post an address somewhere, most people aren't going to use it.
 Cause they're like, I don't really want to dox my payment to the whole world.
-But I would argue that this is a problem that it really shouldn't be solved in the silent payments bit because now we have this scope creep where a silent payments the BIP 352 is supposed to be a very you know Concrete proposal for doing this shared secret exchange for address generation and the bit should just be focused on that If we start throwing in like expiry times and other things, it's like, well, it's scope creep.
+But I would argue that this is a problem that it really shouldn't be solved in the silent payments BIP because now we have this scope creep where a silent payments the BIP 352 is supposed to be a very you know Concrete proposal for doing this shared secret exchange for address generation and the BIP should just be focused on that If we start throwing in like expiry times and other things, it's like, well, it's scope creep.
 And then, you know, if we solve it in silent payments, but then the problem still exists for regular addresses and XPubs and all this other stuff, we didn't really fix the problem for Bitcoin.
 So I would say, if people believe that expiry is what they want, we should write a new standard, a new BIP that applies to all forms of Bitcoin payment instructions.
 You know, Bolt 12 invoices, sign the payment addresses, regular addresses, XPUBs. The second thing I would say, I don't think expiry is actually what you want here.
@@ -950,7 +950,7 @@ But I think our energy would be better spent tackling the hard problem of revoca
 And I think that would be extremely useful.
 If I could post an address and kind of, just using the PGP analogy, because they have this concept of revocation.
 I post this key somewhere, I sign it, and now any client that wants to read my silent payment address, they check the signature, and they see everything's good, and they generate the address.
-If I lose my wallet, it gets hacked or I just don't wat to use that silent payment address anymore, I issue some sort of like revocation signature.
+If I lose my wallet, it gets hacked or I just don't want to use that silent payment address anymore, I issue some sort of like revocation signature.
 And then now when the client reads it, they check it, they say, oh, this signature has actually been revoked by this other one, I'm not gonna use it anymore.
 And I think that's really the user experience that we're looking for.
 
@@ -968,8 +968,7 @@ It might, it might be a different BIP at some point.
 
 Aaron van Wirdum: 00:39:26
 
-I think it should be its own BIP because then we could use that same method for, everything.
-everything.
+I think it should be its own BIP because then we could use that same method for everything.
 
 Sjors Provoost: 00:39:30
 
@@ -993,7 +992,7 @@ Josibake: 00:40:18
 Yeah, you need to do some calculation with those private keys.
 You don't necessarily need the private keys themselves.
 But now you have other participants that have inputs.
-And so you need them to collaborate with you in order to create a coin join to a silent payment output.
+And so you need them to collaborate with you in order to create a coinjoin to a silent payment output.
 And in order to do that, there's a naive way of doing that, which basically means that you're giving up the person that you're paying.
 You can say to the other CoinJoin participants, hey, I want to pay this person, please help me out.
 But if you do that, then now you're revealing to them who you're paying and you don't want that in a CoinJoin because CoinJoin's primarily-
@@ -1027,7 +1026,7 @@ But even if you just know, because there's another problem, there is, are you fi
 And the second question is, are you certain that the data that they gave you is correct?
 Because the very naive way would be for them to give you your private key, but that sort of defeats the purpose of multisig.
 Yeah, so we're not doing that.
-In a coin join, yeah, you can just rug them.
+In a coinjoin, yeah, you can just rug them.
 So yeah, that would be bad.
 
 Ruben Somsen: 00:42:28
@@ -1074,7 +1073,7 @@ It's basically a Schnorr signature plus some small changes to that kind of algor
 
 Ruben Somsen: 00:44:56
 
-And this fixes hardware wallets, coin joints, everything.
+And this fixes hardware wallets, coinjoins, everything.
 
 Josibake: 00:45:00
 
@@ -1105,7 +1104,7 @@ Aaron van Wirdum: 00:46:40
 
 Correct.
 I think that's a really cool part where it's kind of, it feels kind of magical.
-So in order to coordinate with these other participants in a coin join, you would need to give them the public key that you want them to do this ECDH with.
+So in order to coordinate with these other participants in a coinjoin, you would need to give them the public key that you want them to do this ECDH with.
 And as soon as they have that public key, well, they kind of know who you're trying to pay.
 They know what silent payment address it is.
 So the fact that you can, one, blind that public key, have them do an ECDH with it where they don't know what they're actually doing ECDH on, and then also have them give you a proof that they did it correctly for the thing that they didn't even know.
@@ -1136,7 +1135,7 @@ It's yeah, It's just manipulating bits.
 
 Josibake: 00:47:49
 
-There are no additional assumptions over what we already have for schoor signatures.
+There are no additional assumptions over what we already have for schnoor signatures.
 So it really is, in that sense, there's nothing like, oh, this is like unproven math or something like that.
 
 Ruben Somsen: 00:48:01
@@ -1211,7 +1210,7 @@ However...
 
 Josibake: 00:51:08
 
-They're outsourced Ethereum notes so who knows but yeah.
+They're outsourced Ethereum nodes so who knows but yeah.
 
 Ruben Somsen: 00:51:12
 
@@ -1265,8 +1264,8 @@ Aaron van Wirdum: 00:52:34
 Yeah, so it's a way of tweaking with elliptic curve math.
 It's a way of tweaking one half of the silent payment address such that when you receive a silent payment and you're scanning, you know which address that payment was made to without needing to do an ECDH per address.
 So you do one ECDH with the scan key, which is the expensive part, and then you kind of have this database of all the labels you've used and you do a quick lookup.
-And then you say, okay, this particular payment was made to this label that I handed to Shores.
-So now I know Shores made a payment to me.
+And then you say, okay, this particular payment was made to this label that I handed to Sjors.
+So now I know Sjors made a payment to me.
 And I think the exchange is the most obvious use case here where, going back to what I said earlier, we don't want the amount of work that the exchange needs to do to scale linearly with the customers.
 An exchange has 100 million customers, I don't want to do X work times 100 million.
 So, the labels is this really cool way where I still, I do a constant amount of work, no matter how many customers there are, but I do have a way of figuring out, okay, Sjor's just made a deposit to his account.
@@ -1401,7 +1400,7 @@ Aaron van Wirdum: 00:58:09
 
 It was kind of like, it's supposed to be like the flagship use case of silent payments as donations.
 And then there's been interest from other wallets as well, but I think people are waiting on the LibSecP module, because once the LibSecP module is there, then it can get into BDK.
-Once it's in BDK, it becomes easier for, etc.
+Once it's in BDK, it becomes easier.
 
 Ruben Somsen: 00:58:26
 
