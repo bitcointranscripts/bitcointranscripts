@@ -1,9 +1,10 @@
 ---
 title: Changes Without Unanimous Consent
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['soft-fork-activation']
-speakers: ['Anthony Towns']
+tags:
+  - soft-fork-activation
+speakers:
+  - Anthony Towns
 ---
 I want to talk about dealing with consensus changes without so-called consensus. I am using consensus in terms of the social aspect, not in terms of the software algorithm consensus for databases. "Consensus changes without consensus". If you don't consensus on consensus, then some people are going to follow one chain and another another chain.
 

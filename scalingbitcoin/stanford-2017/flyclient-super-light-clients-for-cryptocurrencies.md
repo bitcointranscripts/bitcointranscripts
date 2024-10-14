@@ -1,9 +1,11 @@
 ---
-title: "Flyclient: Super Light Client For Cryptocurrencies"
+title: 'Flyclient: Super Light Client For Cryptocurrencies'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'lightweight-client']
-speakers: ['Benedikt Bünz']
+tags:
+  - research
+  - lightweight-client
+speakers:
+  - Benedikt Bünz
 media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=8400s
 ---
 As you know, the blockchain is a chain because each block connects to the previous block through these hashes. In the header of each block is a commitment to all the transactions. It's using this merkle hash tree where at each level the parent node hashes to the children and this gives you some nice properties which I will talk about later. I need to check consistency though. The first thing I need to check is that the transactions don't spend more than they have... then I need to check that the tree was onstructed correctly. Finally, the blockheaders need to be correct and they need to link to each other and the proof-of-work requirement is that blockhashes to a number that starts with a bunch of zeroes. The way this works is that miners an choose this freely and try nonsense and to find one such that the nonce hits the match.

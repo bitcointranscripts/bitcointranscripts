@@ -1,9 +1,11 @@
 ---
 title: Concurrency And Privacy With Payment Channel Networks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'lightning']
-speakers: ['Pedro Moreno-Sanchez']
+tags:
+  - research
+  - lightning
+speakers:
+  - Pedro Moreno-Sanchez
 ---
 paper: <https://eprint.iacr.org/2017/820.pdf>
 

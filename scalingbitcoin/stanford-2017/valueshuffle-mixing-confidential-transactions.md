@@ -1,13 +1,15 @@
 ---
-title: "ValueShuffle: Mixing Confidential Transactions"
+title: 'ValueShuffle: Mixing Confidential Transactions'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'privacy-enhancements', 'coinjoin']
-speakers: ['Tim Ruffing']
+tags:
+  - research
+  - privacy-enhancements
+  - coinjoin
+speakers:
+  - Tim Ruffing
 date: 2017-11-04
 media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=5065s
 ---
-
 paper: <https://eprint.iacr.org/2017/238.pdf>
 
 
