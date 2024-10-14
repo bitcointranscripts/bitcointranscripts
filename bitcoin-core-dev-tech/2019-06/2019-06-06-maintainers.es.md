@@ -2,10 +2,9 @@
 title: Mantenedores (2019-06-06)
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-aliases: ['/es/bitcoin-core-dev-tech/2019-06-06-maintainers/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2019-06-06-maintainers/
 ---
-
 Visión de los mantenedores del proyecto Bitcoin Core
 
 <https://twitter.com/kanzure/status/1136568307992158208>

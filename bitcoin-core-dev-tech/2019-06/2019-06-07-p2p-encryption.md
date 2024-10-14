@@ -1,12 +1,13 @@
 ---
 title: P2P Encryption
 date: 2019-06-07
-aliases: ['/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/']
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-07-p2p-encryption/
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['P2P', 'bitcoin core']
+tags:
+  - v2-p2p-transport
+  - bitcoin-core
 ---
-
 <https://twitter.com/kanzure/status/1136939003666685952>
 
 <https://github.com/bitcoin-core/bitcoin-devwiki/wiki/P2P-Design-Philosophy>

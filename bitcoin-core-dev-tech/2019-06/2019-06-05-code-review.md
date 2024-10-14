@@ -1,11 +1,10 @@
 ---
 title: Code Review
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
 date: 2019-06-05
-aliases: ['/bitcoin-core-dev-tech/2019-06-05-code-review/']
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-05-code-review/
 ---
-
 # Code review survey and complaints
 
 <https://twitter.com/kanzure/status/1136261311359324162>

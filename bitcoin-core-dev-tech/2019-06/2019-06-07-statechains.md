@@ -1,11 +1,15 @@
 ---
-title: "Blind statechains: UTXO transfer with a blind signing server"
+title: 'Blind statechains: UTXO transfer with a blind signing server'
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['statechains', 'eltoo', 'channel-factories']
+tags:
+  - statechains
+  - eltoo
+  - channel-factories
 date: 2019-06-07
-aliases: ['/bitcoin-core-dev-tech/2019-06-07-statechains/']
-speakers: ['Ruben Somsen']
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-07-statechains/
+speakers:
+  - Ruben Somsen
 ---
 <https://twitter.com/kanzure/status/1136992734953299970>
 

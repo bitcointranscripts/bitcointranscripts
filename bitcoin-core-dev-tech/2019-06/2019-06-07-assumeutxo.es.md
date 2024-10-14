@@ -1,11 +1,13 @@
 ---
-title: "AssumeUTXO"
+title: AssumeUTXO
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['assumeUTXO', 'bitcoin-core']
+tags:
+  - assumeUTXO
+  - bitcoin-core
 date: 2019-06-07
-speakers: ["James O'Beirne"]
+speakers:
+  - James O'Beirne
 ---
 <https://twitter.com/kanzure/status/1137008648620838912>
 
