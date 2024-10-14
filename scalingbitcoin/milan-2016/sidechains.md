@@ -1,11 +1,11 @@
 ---
 title: Sidechains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['sidechains']
-speakers: ['Paul Sztorc']
+tags:
+  - sidechains
+speakers:
+  - Paul Sztorc
 ---
-
 <https://twitter.com/kanzure/status/784767020290150400>
 
 slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%209%20-%20Paul.pdf>

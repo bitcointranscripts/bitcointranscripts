@@ -1,10 +1,11 @@
 ---
-title: "BIP151: Peer-to-Peer Encryption and Authentication from the Perspective of End-User"
-speakers: ['Jonas Schnelli']
+title: 'BIP151: Peer-to-Peer Encryption and Authentication from the Perspective of End-User'
+speakers:
+  - Jonas Schnelli
 date: 2016-10-09
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['v2-p2p-transport']
+tags:
+  - v2-p2p-transport
 ---
 <https://twitter.com/kanzure/status/785046960705339392>
 

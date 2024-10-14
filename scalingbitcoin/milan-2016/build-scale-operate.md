@@ -1,11 +1,11 @@
 ---
 title: Build Scale Operate
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Meltem Demirors', 'Eric Lombrozo']
+speakers:
+  - Meltem Demirors
+  - Eric Lombrozo
 media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=2h29m19
 ---
-
  Build - Scale - Operate: The Three Pillars of the Bitcoin Community
 
 <https://twitter.com/kanzure/status/784713580713246720>
