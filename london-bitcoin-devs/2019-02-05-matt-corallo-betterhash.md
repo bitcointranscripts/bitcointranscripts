@@ -1,9 +1,10 @@
 ---
-title: "Better Hashing through BetterHash"
+title: Better Hashing through BetterHash
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['mining']
-speakers: ['Matt Corallo']
+tags:
+  - mining
+speakers:
+  - Matt Corallo
 date: 2019-02-05
 media: https://www.youtube.com/watch?v=0lGO5I74qJM
 ---

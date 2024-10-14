@@ -1,9 +1,10 @@
 ---
 title: MuSig2
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['musig']
-speakers: ['Tim Ruffing']
+tags:
+  - musig
+speakers:
+  - Tim Ruffing
 date: 2022-08-11
 media: https://www.youtube.com/watch?v=TpyK_ayKlj0
 ---
