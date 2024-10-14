@@ -1,9 +1,10 @@
 ---
-title: "Bitcoin: There Can Only Be One"
+title: 'Bitcoin: There Can Only Be One'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['altcoins']
-speakers: ['Tone Vays']
+tags:
+  - altcoins
+speakers:
+  - Tone Vays
 media: https://www.youtube.com/watch?v=QWaCr_tKjRk
 ---
 <https://twitter.com/kanzure/status/1162742007460192256>

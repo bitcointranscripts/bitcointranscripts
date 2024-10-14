@@ -1,8 +1,8 @@
 ---
 title: How To Meme Bitcoin To The Moon
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Michael Goldstein']
+speakers:
+  - Michael Goldstein
 media: https://www.youtube.com/watch?v=PBAuHv5cPl8
 ---
 ## Introduction
