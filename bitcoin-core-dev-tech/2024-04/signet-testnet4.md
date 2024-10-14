@@ -1,10 +1,10 @@
 ---
 title: Signet/Testnet4
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'signet']
+tags:
+  - bitcoin-core
+  - signet
 date: 2024-04-10
 ---
-
 * Signet
     * Reset is less of a priority right now because the faucet is running again, still seeing huge number of requests
     * Should still reset because of money making from signet coins

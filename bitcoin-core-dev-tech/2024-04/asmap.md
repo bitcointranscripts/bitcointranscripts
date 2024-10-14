@@ -1,7 +1,9 @@
 ---
 title: ASMap
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'security-enhancements', 'p2p']
+tags:
+  - bitcoin-core
+  - security-enhancements
+  - p2p
 date: 2024-04-11
 ---
 ## From virtu's presentation

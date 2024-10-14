@@ -1,10 +1,11 @@
 ---
 title: Silent Payment Descriptors
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'descriptors', 'silent payments']
+tags:
+  - bitcoin-core
+  - descriptors
+  - silent-payments
 date: 2024-04-09
 ---
-
 Silent payments properties:
 
 - two ECDH with each scan key

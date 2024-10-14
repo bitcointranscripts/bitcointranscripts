@@ -1,10 +1,10 @@
 ---
 title: Weak Blocks
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'mining']
+tags:
+  - bitcoin-core
+  - mining
 date: 2024-04-08
 ---
-
 Weak blocks: propagate stuff with low PoW as you are building it
 
 - use cases / why you wouldn’t hear of stuff
