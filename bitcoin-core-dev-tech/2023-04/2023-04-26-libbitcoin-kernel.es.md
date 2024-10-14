@@ -1,10 +1,12 @@
 ---
 title: Libbitcoin kernel
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'build-system']
+tags:
+  - bitcoin-core
+  - build-system
 date: 2023-04-26
-speakers: ['thecharlatan']
+speakers:
+  - thecharlatan
 ---
 ## Preguntas y respuestas
 

@@ -1,12 +1,13 @@
 ---
 title: Refactors
-categories: ['core-dev-tech']
-tags: ['bitcoin core']
+tags:
+  - bitcoin-core
 date: 2023-04-25
-aliases: ['/bitcoin-core-dev-tech/2023-04-25-refactors/']
-speakers: ['Fabian Jahr']
+aliases:
+  - /bitcoin-core-dev-tech/2023-04-25-refactors/
+speakers:
+  - Fabian Jahr
 ---
-
 One take-away from the Chaincode residency in 2019 was: Don’t do refactors (unless you really need it)
 
 A marked increase from 2019 to today
