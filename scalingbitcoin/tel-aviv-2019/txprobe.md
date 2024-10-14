@@ -1,9 +1,11 @@
 ---
-title: "TxProbe: Discovering bitcoin's network topology using orphan transactions"
+title: 'TxProbe: Discovering bitcoin''s network topology using orphan transactions'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['topology', 'research']
-speakers: ['Sergi Delgado-Segura']
+tags:
+  - topology
+  - research
+speakers:
+  - Sergi Delgado-Segura
 ---
 <https://twitter.com/kanzure/status/1171723329453142016>
 
