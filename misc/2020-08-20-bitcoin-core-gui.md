@@ -1,7 +1,7 @@
 ---
 title: Bitcoin Core GUI introductory meeting
 transcript_by: Michael Folkson
-tags: ['bitcoin-core']
+tags: ['bitcoin-core', 'ux']
 date: 2020-08-20
 aliases: ['/bitcoin-design/2020-08-20-bitcoin-core-gui']
 ---
