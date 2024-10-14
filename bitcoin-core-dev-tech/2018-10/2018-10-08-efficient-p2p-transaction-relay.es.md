@@ -2,8 +2,8 @@
 title: Retransmisión eficiente de transacciones P2P
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['P2P']
+tags:
+  - P2P
 date: 2018-10-08
 ---
 ## Mejoras del protocolo de retransmisión de transacciones p2p con reconciliación de conjuntos
