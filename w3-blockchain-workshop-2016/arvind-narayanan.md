@@ -1,10 +1,9 @@
 ---
 title: Arvind Narayanan
 transcript_by: Bryan Bishop
-categories: ['workshop']
-speakers: ['Arvind Narayanan']
+speakers:
+  - Arvind Narayanan
 ---
-
 I would like to introduce Arvind. He is a professor at Princeton. He has talked about this in a number of different forums.
 
 Hi everyone. My name is Arvind. This is turning out to be one of the more unusual and interesting events that I have been to. Someone at my table called the first session a quasi-religious experience. Not sure whether that was a good thing or not. Joking aside, my favorite thing about this is that the position statements were available on the website. I found them fascinating. I recommended them to my grad students. I read all the position statements. My comments today are going to be influenced by them. There were lots of good ideas there. Lots of convergent themes.
