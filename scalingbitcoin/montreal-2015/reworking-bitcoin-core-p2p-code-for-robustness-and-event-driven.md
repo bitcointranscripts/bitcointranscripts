@@ -1,11 +1,11 @@
 ---
 title: Reworking Bitcoin Core P2P Code For Robustness And Event Driven
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['P2P']
-speakers: ['Cory Fields']
+tags:
+  - P2P
+speakers:
+  - Cory Fields
 ---
-
 That is me. I want to apologize right off. I am here to talk about reworking Bitcoin Core p2p code. This is a Bitcoin Core specific topic. I have been working on some software for the past few weeks to talk about working things rather than theory. The presentation is going to suffer because of this.
 
 Bitcoin Core has a networking stack that dates back all the way to the initial implementation from Satoshi or at least it's been patched and hacked on ever since. It has some pretty serious limitations at the moment. Two of the biggest that actually got me whipped into shape for this specific topic is that there's no throttling. That's one of the most requested features on the network side of things that I see. It's easy for a bunch of nodes connected to you to suck away your bandwidth. The configuration is very static, and actually hacking on the networking code it's actually pretty hard; if you want to ban a node, disconnect a node, it's actually more complicated than you would expect to do things like that. Same with diagnoses and simulations and testing, because of that sort of static configuration, it becomes hard to do those things.

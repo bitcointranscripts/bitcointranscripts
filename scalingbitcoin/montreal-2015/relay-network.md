@@ -1,9 +1,10 @@
 ---
-title: "Bitcoin Relay Network"
+title: Bitcoin Relay Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Matt Corallo']
+tags:
+  - mining
+speakers:
+  - Matt Corallo
 media: https://www.youtube.com/watch?v=mhAsnzidtZ8&t=1346s
 ---
 It was indicative of two issues. A lot of people were reducing their security model by not validating their bitcoin. It was potentially less secure. That's not something that relay networks try to address. The big issue with the decreasing number of nodes, which the relay network doesn't address, is that it reduces the resilience against attack. If there's only 100 nodes, there's really only some 100 VPses that you have to knock offline before the bitcoin network stops working. This is potentially very easy because knocking offline 100k nodes is not that hard. The relay network is a pseudo alternative. It's not designed to be efficient. It's a pseudo-centralized second network to connect to.

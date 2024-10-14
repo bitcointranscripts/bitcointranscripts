@@ -1,11 +1,12 @@
 ---
 title: Bitcoin Block Propagation and IBLT
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Rusty Russell']
-tags: ['p2p', 'research']
+speakers:
+  - Rusty Russell
+tags:
+  - p2p
+  - research
 ---
-
 This is not what I do. But I was doing it anyway.
 
 The problem is that blocks are transmitted in their entirety. If you have a 1 MB uplink and you're connecting to 8 peers, your first peer will see a 1MB block in about 66.8 seconds. And the last one will get it in 76.4 seconds, because we basically blast out blocks in parallel to our peers. Miners can solve this problem of slow block transmission by centralizing and all using the same pool.

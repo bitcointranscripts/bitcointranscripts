@@ -1,10 +1,9 @@
 ---
 title: Roundgroup Roundup 1
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Bram Cohen']
+speakers:
+  - Bram Cohen
 ---
-
 Roundtable roundup review 1
 
 # Future of SPV Technology
