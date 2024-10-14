@@ -1,13 +1,14 @@
 ---
 title: Mimblewimble And Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['adaptor-signatures', 'sidechains']
-speakers: ['Andrew Poelstra']
+tags:
+  - adaptor-signatures
+  - sidechains
+speakers:
+  - Andrew Poelstra
 date: 2018-01-11
 media: https://www.youtube.com/watch?v=ovCBT1gyk9c
 ---
-
 <https://twitter.com/kanzure/status/954531580848082944>
 
 We're about ready for the second session of RWC. We are going to move on to cryptocurrencies. So we have 3 talks lined up in this session. The first one is on mimblewimble and scriptless scripts, delivered by Andrew Poelstra from Blockstream.
