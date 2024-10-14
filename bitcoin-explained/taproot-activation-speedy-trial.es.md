@@ -2,13 +2,17 @@
 title: Taproot Activación con Speedy Trial
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['podcast']
-tags: ['taproot', 'soft-fork-activation']
+tags:
+  - taproot
+  - soft-fork-activation
 date: 2021-03-12
 episode: 31
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 media: https://www.youtube.com/watch?v=oCPrjaw3YVI
-aliases: ['/es/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial']
+aliases:
+  - /es/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial
 ---
 Propuesta Speedy Trial: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 ## Introducción

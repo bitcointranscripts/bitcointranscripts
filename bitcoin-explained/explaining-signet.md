@@ -1,13 +1,16 @@
 ---
-title: "Explaining Signet"
+title: Explaining Signet
 transcript_by: sir-oro via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=lGJaIbpf6bk
-tags: ["signet"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - signet
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2020-09-25
 episode: 10
-aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-signet']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/explaining-signet
 ---
 ## Intro
 

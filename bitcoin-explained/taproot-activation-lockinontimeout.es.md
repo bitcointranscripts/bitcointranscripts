@@ -1,14 +1,18 @@
 ---
-title: "Activación de Taproot y LOT=true vs LOT=false"
+title: Activación de Taproot y LOT=true vs LOT=false
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['podcast']
-tags: ['taproot', 'soft-fork-activation']
+tags:
+  - taproot
+  - soft-fork-activation
 date: 2021-02-26
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 media: https://www.youtube.com/watch?v=7ouVGgE75zg
 episode: 29
-aliases: ['/es/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout']
+aliases:
+  - /es/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout
 ---
 BIP 8: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 

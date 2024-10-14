@@ -1,13 +1,17 @@
 ---
-title: "Breaking Down Taproot Activation Options"
+title: Breaking Down Taproot Activation Options
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=mT0t8Jm0m5E
-tags: ["bitcoin-core", "taproot", "soft-fork-activation"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - taproot
+  - soft-fork-activation
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2020-07-25
 episode: 3
-summary: "This podcast episode delves into the nuances of Bitcoin soft fork activation, with a particular focus on the upcoming Taproot activation. Hosts Aaron van Wirdum and Sjors Provoost discuss the history and mechanisms of soft fork activation, including the challenges faced during previous activations such as SegWit. They explore different proposals for activating Taproot, weighing the merits and drawbacks of methods like BIP 9, BIP 91, BIP 148 (UASF), and the newer BIP 8. The discussion highlights the importance of achieving consensus within the community and the complexities involved in coordinating upgrades across the decentralized Bitcoin network. The episode concludes with considerations for future soft fork activations, emphasizing patience, thorough review, and the potential for innovative solutions like \"sporks\" to address these challenges"
+summary: This podcast episode delves into the nuances of Bitcoin soft fork activation, with a particular focus on the upcoming Taproot activation. Hosts Aaron van Wirdum and Sjors Provoost discuss the history and mechanisms of soft fork activation, including the challenges faced during previous activations such as SegWit. They explore different proposals for activating Taproot, weighing the merits and drawbacks of methods like BIP 9, BIP 91, BIP 148 (UASF), and the newer BIP 8. The discussion highlights the importance of achieving consensus within the community and the complexities involved in coordinating upgrades across the decentralized Bitcoin network. The episode concludes with considerations for future soft fork activations, emphasizing patience, thorough review, and the potential for innovative solutions like "sporks" to address these challenges
 ---
 Aaron van Wirdum:
 

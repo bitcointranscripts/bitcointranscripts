@@ -1,15 +1,18 @@
 ---
-title: "Explaining Segregated Witness"
+title: Explaining Segregated Witness
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=DsyMUzhfG34
-tags: ["segwit", "soft-fork-activation"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - segwit
+  - soft-fork-activation
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-03-18
 episode: 32
-aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-segregated-witness']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/explaining-segregated-witness
 ---
-
 Aaron: 00:01:46
 
 Live from Utrecht. This is The Van Wirdum Sjorsnado. Hello. Sjors, we're going to talk about a classic today.

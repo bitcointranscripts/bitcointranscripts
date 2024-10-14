@@ -1,13 +1,23 @@
 ---
-title: "Silent Payments"
+title: Silent Payments
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=42PMLaz7Avk
-tags: ["silent-payments"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
-categories: ["podcast"]
+tags:
+  - silent-payments
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
+  - Ruben Somsen
 date: 2022-06-09
 episode: 58
-summary: "In this episode of Bitcoin, Explained, hosts Aaron van Wirdum and Sjors Provoost welcome Ruben Somsen back on the show to talk about a recent proposal of his called \u201CSilent Payments\u201D.\n\nSilent Payments resemble earlier ideas like Stealth Addresses and Reusable Payment Codes, in that they allow users to publish a static \u201Caddress\u201D, while this is not the actual Bitcoin address they will be paid on. Instead, senders of a transaction can use this static address to generate new Bitcoin addresses for the recipient, for which the recipient \u2014 and only the recipient \u2014 can in turn generate the corresponding private keys.\n\nLike Stealth Addresses and Reusable Payment Codes, the benefit of Silent Payments is that addresses can be posted publicly without harming users\u2019 privacy; snoops cannot link the publicly posted address to the actual Bitcoin addresses that the recipient is paid on. Meanwhile, unlike Stealth Addresses and Reusable Payment Codes, Silent Payments do not require any additional blockchain data\u2014 though this does come at a computational cost for the recipient.\n\nThe podcast episode details all this in roughly two parts. In the first half of the episode, Ruben, Aaron and Sjors break down how Silent Payments work, and in the second half of the episode they discuss how Silent Payments compare to Stealth Addresses and Reusable Payment Codes, as well as some potential implementation issues."
+summary: |-
+  In this episode of Bitcoin, Explained, hosts Aaron van Wirdum and Sjors Provoost welcome Ruben Somsen back on the show to talk about a recent proposal of his called “Silent Payments”.
+
+  Silent Payments resemble earlier ideas like Stealth Addresses and Reusable Payment Codes, in that they allow users to publish a static “address”, while this is not the actual Bitcoin address they will be paid on. Instead, senders of a transaction can use this static address to generate new Bitcoin addresses for the recipient, for which the recipient — and only the recipient — can in turn generate the corresponding private keys.
+
+  Like Stealth Addresses and Reusable Payment Codes, the benefit of Silent Payments is that addresses can be posted publicly without harming users’ privacy; snoops cannot link the publicly posted address to the actual Bitcoin addresses that the recipient is paid on. Meanwhile, unlike Stealth Addresses and Reusable Payment Codes, Silent Payments do not require any additional blockchain data— though this does come at a computational cost for the recipient.
+
+  The podcast episode details all this in roughly two parts. In the first half of the episode, Ruben, Aaron and Sjors break down how Silent Payments work, and in the second half of the episode they discuss how Silent Payments compare to Stealth Addresses and Reusable Payment Codes, as well as some potential implementation issues.
 ---
 Aaron: 00:00:20
 

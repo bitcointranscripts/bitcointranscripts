@@ -1,13 +1,15 @@
 ---
-title: "Ocean Tides"
+title: Ocean Tides
 transcript_by: aassoiants via review.btctranscripts.com
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-86-ocean-tides-hktbg
-tags: ["pooled-mining"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - pooled-mining
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2023-12-06
 episode: 86
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what features are offered by Ocean, the relaunched and rebranded Eligius mining pool. They discuss how payouts from this pool are (partially) non-custodial, how the block template creation is fully transparent, and how payout distribution is determined. Aaron and Sjors also briefly touch on the “spam” filtering employed by Ocean, and how that potentially affects profitability of the pool."
+summary: In this episode of Bitcoin, Explained, Aaron and Sjors explain what features are offered by Ocean, the relaunched and rebranded Eligius mining pool. They discuss how payouts from this pool are (partially) non-custodial, how the block template creation is fully transparent, and how payout distribution is determined. Aaron and Sjors also briefly touch on the “spam” filtering employed by Ocean, and how that potentially affects profitability of the pool.
 ---
 ## Introduction
 

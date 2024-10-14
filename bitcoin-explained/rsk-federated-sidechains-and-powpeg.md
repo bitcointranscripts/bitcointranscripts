@@ -1,19 +1,17 @@
 ---
-title: 'RSK, Federated Sidechains And Powpeg'
-transcript_by: 'jinformatique via review.btctranscripts.com'
-media: 'https://www.youtube.com/watch?v=dricwvjkhV0'
+title: RSK, Federated Sidechains And Powpeg
+transcript_by: jinformatique via review.btctranscripts.com
+media: https://www.youtube.com/watch?v=dricwvjkhV0
 date: '2020-12-11'
 tags:
-  - 'sidechains'
+  - sidechains
 speakers:
-  - 'Sjors Provoost'
-  - 'Aaron van Wirdum'
-categories:
-  - 'podcast'
+  - Sjors Provoost
+  - Aaron van Wirdum
 episode: 20
-summary: 'In this episode of The Van Wirdum Sjorsnado, hosts Aaron van Wirdum and Sjors Provoost discuss RSK’s shift from a federated sidechain model to the project’s new Powpeg solution. They explain how this works exactly, and discuss some of Powpeg’s security tradeoffs.'
+summary: In this episode of The Van Wirdum Sjorsnado, hosts Aaron van Wirdum and Sjors Provoost discuss RSK’s shift from a federated sidechain model to the project’s new Powpeg solution. They explain how this works exactly, and discuss some of Powpeg’s security tradeoffs.
 aliases:
-  - '/bitcoin-magazine/bitcoin-explained/rsk-federated-sidechains-and-powpeg'
+  - /bitcoin-magazine/bitcoin-explained/rsk-federated-sidechains-and-powpeg
 ---
 Aaron van Wirdum: 00:00:07
 
