@@ -1,9 +1,10 @@
 ---
 title: ROAST
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['threshold-signature']
-speakers: ['Tim Ruffing']
+tags:
+  - threshold-signature
+speakers:
+  - Tim Ruffing
 date: 2022-07-14
 media: https://www.youtube.com/watch?v=FVW6Hgt_meg
 ---
