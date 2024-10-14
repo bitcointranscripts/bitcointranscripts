@@ -1,13 +1,15 @@
 ---
-title: "AssumeUTXO"
+title: AssumeUTXO
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=knBHvzKsIOY
-tags: ["assumeutxo", "bitcoin-core"]
-speakers: ["James O'Beirne"]
-categories: ["podcast"]
+tags:
+  - assumeutxo
+  - bitcoin-core
+speakers:
+  - James O'Beirne
 date: 2020-02-13
 episode: 4
-summary: "Next in the studio, we caught James O'Beirne, who until recently was a co-worker of ours at Chaincode. We talked to James about his experience at the Chaincode residency, his most recent project AssumeUTXO and how he champions and effects change in Bitcoin Core."
+summary: Next in the studio, we caught James O'Beirne, who until recently was a co-worker of ours at Chaincode. We talked to James about his experience at the Chaincode residency, his most recent project AssumeUTXO and how he champions and effects change in Bitcoin Core.
 ---
 James O'Beirne: 00:00:00
 

@@ -1,10 +1,11 @@
 ---
-title: "Payment Points"
+title: Payment Points
 transcript_by: tvpeter via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Y2mTjCldRAU
-speakers: ["Nadav Kohen"]
-categories: ["podcast"]
-tags: ["ptlc"]
+speakers:
+  - Nadav Kohen
+tags:
+  - ptlc
 date: 2020-03-30
 episode: 7
 ---

@@ -1,28 +1,26 @@
 ---
-title: 'Simple Taproot Channels'
-transcript_by: 'TheFrayy via review.btctranscripts.com'
-media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Elle-Mouton--Oliver-Gugger-and-Simple-Taproot-Channels---Episode-33-e2724sl'
+title: Simple Taproot Channels
+transcript_by: TheFrayy via review.btctranscripts.com
+media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Elle-Mouton--Oliver-Gugger-and-Simple-Taproot-Channels---Episode-33-e2724sl
 date: '2023-07-15'
 tags:
-  - 'anchor-outputs'
-  - 'cpfp-carve-out'
-  - 'ptlc'
-  - 'simple-taproot-channels'
-  - 'taproot'
+  - anchor-outputs
+  - cpfp-carve-out
+  - ptlc
+  - simple-taproot-channels
+  - taproot
 speakers:
-  - 'Elle Mouton'
-  - 'Oliver Gugger'
-categories:
-  - 'podcast'
-summary: 'Elle Mouton and Oliver Gugger explained the transition from 2-of-2 Pay-to-Witness-Script-Hash funding outputs to MuSig2 key funding outputs in Taproot channels. This upgrade aims to enhance privacy and chain space savings. The spec for Taproot channels, proposed by Roasbeef, is nearing completion with notable progress from LND and LDK implementations. The podcast also delved into potential updates to the gossip protocol, distinguishing between Gossip 1.5 and 2.0. Gossip 2.0 proposes tying proofs to node announcements rather than individual channels, significantly boosting privacy. The discussion extended to PTLCs (Point Time-Locked Contracts), which promise enhanced privacy and security but require further adoption and development. The iterative approach to these upgrades emphasizes gradual implementation to mitigate risks and ensure stability'
+  - Elle Mouton
+  - Oliver Gugger
+summary: Elle Mouton and Oliver Gugger explained the transition from 2-of-2 Pay-to-Witness-Script-Hash funding outputs to MuSig2 key funding outputs in Taproot channels. This upgrade aims to enhance privacy and chain space savings. The spec for Taproot channels, proposed by Roasbeef, is nearing completion with notable progress from LND and LDK implementations. The podcast also delved into potential updates to the gossip protocol, distinguishing between Gossip 1.5 and 2.0. Gossip 2.0 proposes tying proofs to node announcements rather than individual channels, significantly boosting privacy. The discussion extended to PTLCs (Point Time-Locked Contracts), which promise enhanced privacy and security but require further adoption and development. The iterative approach to these upgrades emphasizes gradual implementation to mitigate risks and ensure stability
 episode: 33
 additional_resources:
-  - title: 'CPFP carve-out'
-    url: 'https://bitcoinops.org/en/topics/cpfp-carve-out/'
-  - title: 'Anchor Outputs'
-    url: 'https://bitcoinops.org/en/topics/anchor-outputs/'
-  - title: 'PTLCs'
-    url: 'https://bitcoinops.org/en/topics/ptlc/'
+  - title: CPFP carve-out
+    url: https://bitcoinops.org/en/topics/cpfp-carve-out/
+  - title: Anchor Outputs
+    url: https://bitcoinops.org/en/topics/anchor-outputs/
+  - title: PTLCs
+    url: https://bitcoinops.org/en/topics/ptlc/
 ---
 ## Introduction
 

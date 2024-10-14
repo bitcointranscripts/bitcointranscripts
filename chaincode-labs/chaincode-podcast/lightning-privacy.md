@@ -1,18 +1,16 @@
 ---
-title: 'Lightning privacy'
-transcript_by: 'markon1-a via review.btctranscripts.com'
-media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergei-Tikhomirov-and-Lightning-privacy---Episode-19-e1egh3e'
+title: Lightning privacy
+transcript_by: markon1-a via review.btctranscripts.com
+media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergei-Tikhomirov-and-Lightning-privacy---Episode-19-e1egh3e
 date: '2022-02-17'
 tags:
-  - 'lightning'
-  - 'research'
-  - 'security'
-  - 'topology'
+  - lightning
+  - research
+  - security
+  - topology
 speakers:
-  - 'Sergei Tikhomirov'
-categories:
-  - 'podcast'
-summary: 'Postdoc Researcher Sergei joins Murch and Jonas to talk about channel balance probing in Lightning, privacy concerns in general, and the importance of researcher-developer collaboration.'
+  - Sergei Tikhomirov
+summary: Postdoc Researcher Sergei joins Murch and Jonas to talk about channel balance probing in Lightning, privacy concerns in general, and the importance of researcher-developer collaboration.
 episode: 19
 additional_resources:
   - title: Sergei's homepage with links to all prior research

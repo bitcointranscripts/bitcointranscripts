@@ -1,10 +1,12 @@
 ---
-title: "Watchtowers, Lightning Privacy"
+title: Watchtowers, Lightning Privacy
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-and-Watchtowers--Lightning-Privacy---Episode-28-e1uce42
-tags: ['lightning', 'privacy']
-speakers: ['Sergi Delgado']
-categories: ['podcast']
+tags:
+  - lightning
+  - privacy
+speakers:
+  - Sergi Delgado
 date: 2023-02-02
 ---
 Speaker 0: 00:00:00

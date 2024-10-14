@@ -1,9 +1,10 @@
 ---
 title: Pieter Wuille (part 2 of 2)
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['bitcoin-core']
-speakers: ['Pieter Wuille']
+tags:
+  - bitcoin-core
+speakers:
+  - Pieter Wuille
 date: 2020-01-28
 media: https://www.youtube.com/watch?v=Q2lXSRcacAo
 episode: 2

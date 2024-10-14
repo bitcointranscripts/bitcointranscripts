@@ -2,13 +2,17 @@
 title: Enterprise Wallets/UTXO Management
 transcript_by: pgsdesign via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yy6Mt5-fl0g
-tags: ["payment-batching", "coin-selection", "rbf", "segwit", "taproot"]
-speakers: ["Mark Erhardt"]
-categories: ["Podcast"]
+tags:
+  - payment-batching
+  - coin-selection
+  - rbf
+  - segwit
+  - taproot
+speakers:
+  - Mark Erhardt
 date: 2020-11-09
 episode: 8
 ---
-
 Mark Erhardt: 00:00:00
 
 Just to throw out a few numbers there, non-SegWit inputs cost almost 300 bytes, and native SegWit inputs cost slightly more than 100 bytes. There's almost a reduction by two-thirds in fees if you switch from non-SegWit to native SegWit.

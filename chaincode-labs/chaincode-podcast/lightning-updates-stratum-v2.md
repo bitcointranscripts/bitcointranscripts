@@ -1,16 +1,14 @@
 ---
-title: 'Lightning updates / Stratum V2'
-transcript_by: 'stackeduary via review.btctranscripts.com'
-media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Steve-Lee-and-Lightning-updates--Stratum-V2---Episode-23-e1ofl4j'
+title: Lightning updates / Stratum V2
+transcript_by: stackeduary via review.btctranscripts.com
+media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Steve-Lee-and-Lightning-updates--Stratum-V2---Episode-23-e1ofl4j
 date: '2022-09-28'
 tags:
-  - 'lightning'
-  - 'zero-conf-channels'
-  - 'stratum-v2'
+  - lightning
+  - zero-conf-channels
+  - stratum-v2
 speakers:
-  - 'Steve Lee'
-categories:
-  - 'podcast'
+  - Steve Lee
 episode: 23
 ---
 Murch: 00:00:00

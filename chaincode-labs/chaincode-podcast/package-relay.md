@@ -1,11 +1,13 @@
 ---
-title: "Package Relay"
+title: Package Relay
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Gloria-Zhao-and-Package-Relay---Episode-21-e1j0ii3
-tags: ["package-relay", "security"]
-speakers: ["Gloria Zhao"]
-categories: ["podcast"]
-summary: "Gloria Zhao sits down with us to discuss her package relay proposal and what it is like as a relative newcomer to propose a big change."
+tags:
+  - package-relay
+  - security
+speakers:
+  - Gloria Zhao
+summary: Gloria Zhao sits down with us to discuss her package relay proposal and what it is like as a relative newcomer to propose a big change.
 date: 2022-05-24
 episode: 21
 additional_resources:

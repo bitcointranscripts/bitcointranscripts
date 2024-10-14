@@ -1,19 +1,17 @@
 ---
-title: 'SIGHASH_ANYPREVOUT, ephemeral anchors and LN symmetry (ELTOO)'
-transcript_by: 'stackeduary via review.btctranscripts.com'
-media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Greg-Sanders--SIGHASH_ANYPREVOUT--ephemeral-anchors-and-LN-symmetry-ELTOO---Episode-29-e1v1dc3'
+title: SIGHASH_ANYPREVOUT, ephemeral anchors and LN symmetry (ELTOO)
+transcript_by: stackeduary via review.btctranscripts.com
+media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Greg-Sanders--SIGHASH_ANYPREVOUT--ephemeral-anchors-and-LN-symmetry-ELTOO---Episode-29-e1v1dc3
 date: '2023-02-15'
 tags:
-  - 'eltoo'
-  - 'ephemeral-anchors'
-  - 'package-relay'
-  - 'rbf'
-  - 'sighash-anyprevout'
+  - eltoo
+  - ephemeral-anchors
+  - package-relay
+  - rbf
+  - sighash-anyprevout
 speakers:
-  - 'Greg Sanders'
-categories:
-  - 'podcast'
-summary: 'Greg Sanders joins us to discuss ANYPREVOUT, ephemeral anchors and LN symmetry (a.k.a. ELTOO).'
+  - Greg Sanders
+summary: Greg Sanders joins us to discuss ANYPREVOUT, ephemeral anchors and LN symmetry (a.k.a. ELTOO).
 episode: 29
 additional_resources:
   - title: 'Package relay'

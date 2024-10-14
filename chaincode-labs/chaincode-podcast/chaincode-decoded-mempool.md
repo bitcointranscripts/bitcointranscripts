@@ -1,11 +1,16 @@
 ---
-title: "Chaincode Decoded: Mempool"
+title: 'Chaincode Decoded: Mempool'
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Mempool---Episode-12-evn0q1
-tags: ["anchor-outputs", "cpfp", "package-relay", "rbf"]
-speakers: ["Mark Erhardt", "Adam Jonas"]
-categories: ["podcast"]
-summary: "The Chaincode Decoded segment returns and we jump into the deep end of the mempool."
+tags:
+  - anchor-outputs
+  - cpfp
+  - package-relay
+  - rbf
+speakers:
+  - Mark Erhardt
+  - Adam Jonas
+summary: The Chaincode Decoded segment returns and we jump into the deep end of the mempool.
 episode: 12
 date: 2021-04-26
 additional_resources:

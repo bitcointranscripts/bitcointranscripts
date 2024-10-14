@@ -1,11 +1,14 @@
 ---
-title: "The Bitcoin Core wallet and wrangling bitcoin data"
+title: The Bitcoin Core wallet and wrangling bitcoin data
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Josibake--the-Bitcoin-Core-wallet-and-wrangling-bitcoin-data---episode-24-e1piaje
-tags: ["bitcoin-core", "signature-aggregation", "wallet"]
-speakers: ["Josibake"]
-categories: ["podcast"]
-summary: "In this conversation, Adam Jonas and Mark Erhardt discuss their work with Josie Baker on Bitcoin data analysis, focusing on mempool data collection and Bitcoin Core wallet improvements. Josie explains his work in standardizing and cleaning mempool data to create a comprehensive, open-source dataset. This dataset will facilitate research and development in areas such as fee estimation and transaction propagation. They also delve into Bitcoin Core wallet enhancements, including privacy improvements and efficient coin selection methods. The conversation highlights the importance of reproducibility, empirical analysis, and open-source collaboration in advancing Bitcoin technology. Josie’s efforts emphasize the value of making Bitcoin data accessible and fostering a community of contributors in the Bitcoin development ecosystem."
+tags:
+  - bitcoin-core
+  - signature-aggregation
+  - wallet
+speakers:
+  - Josibake
+summary: In this conversation, Adam Jonas and Mark Erhardt discuss their work with Josie Baker on Bitcoin data analysis, focusing on mempool data collection and Bitcoin Core wallet improvements. Josie explains his work in standardizing and cleaning mempool data to create a comprehensive, open-source dataset. This dataset will facilitate research and development in areas such as fee estimation and transaction propagation. They also delve into Bitcoin Core wallet enhancements, including privacy improvements and efficient coin selection methods. The conversation highlights the importance of reproducibility, empirical analysis, and open-source collaboration in advancing Bitcoin technology. Josie’s efforts emphasize the value of making Bitcoin data accessible and fostering a community of contributors in the Bitcoin development ecosystem.
 episode: 24
 date: 2022-10-21
 ---

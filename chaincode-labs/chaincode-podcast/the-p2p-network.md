@@ -1,13 +1,16 @@
 ---
-title: "The P2P network"
+title: The P2P network
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Amiti-Uttarwar-and-the-P2P-network---Episode-15-e18v7oq
-tags: ["bitcoin-core", "eclipse-attacks", "p2p"]
-speakers: ["Amiti Uttarwar"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - eclipse-attacks
+  - p2p
+speakers:
+  - Amiti Uttarwar
 date: 2021-10-18
 episode: 15
-summary: "In this episode of the Chaincode Podcast, Amiti Uttarwar discusses the intricacies of peer-to-peer (P2P) networks in Bitcoin with hosts Adam Jonas and Mark Erhardt. Amiti explains her fascination with P2P due to its logical yet complex interactions across the global network of nodes. She outlines five key principles for designing effective P2P networks: reliability, timeliness, accessibility, privacy, and upgradeability. The conversation delves into specific challenges, such as Eclipse attacks, address relay, and the role of the address manager (AddrMan) in maintaining network integrity. Amiti also highlights the delicate balance between ensuring privacy and achieving network reliability. Overall, the discussion emphasizes the importance of continuous collaboration and innovation in Bitcoin's P2P network development."
+summary: 'In this episode of the Chaincode Podcast, Amiti Uttarwar discusses the intricacies of peer-to-peer (P2P) networks in Bitcoin with hosts Adam Jonas and Mark Erhardt. Amiti explains her fascination with P2P due to its logical yet complex interactions across the global network of nodes. She outlines five key principles for designing effective P2P networks: reliability, timeliness, accessibility, privacy, and upgradeability. The conversation delves into specific challenges, such as Eclipse attacks, address relay, and the role of the address manager (AddrMan) in maintaining network integrity. Amiti also highlights the delicate balance between ensuring privacy and achieving network reliability. Overall, the discussion emphasizes the importance of continuous collaboration and innovation in Bitcoin''s P2P network development.'
 additional_resources:
   - title: 'Searchable #bitcoin-core IRC logs'
     url: http://bitcoin-irc.chaincode.com/bitcoin-core-dev/

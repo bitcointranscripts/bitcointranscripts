@@ -1,33 +1,31 @@
 ---
-title: 'Channel Jamming on the Lightning Network'
-transcript_by: 'mvuk via review.btctranscripts.com'
-media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4'
+title: Channel Jamming on the Lightning Network
+transcript_by: mvuk via review.btctranscripts.com
+media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Clara-Shikhelman-and-Sergei-Tikhomirov-and-Channel-Jamming-on-the-Lightning-Network---Episode-25-e1r78n4
 date: '2022-11-23'
 tags:
-  - 'lightning'
-  - 'research'
-  - 'ux'
-  - 'watchtowers'
+  - lightning
+  - research
+  - ux
+  - watchtowers
 speakers:
-  - 'Clara Shikhelman'
-  - 'Sergei Tikhomirov'
-categories:
-  - 'podcast'
-summary: 'Clara and Sergei stop by to chat about their recent proposal on mitigating jamming attacks in the Lightning Network. We talk unconditional fees, local reputation, the impact on decentralization and UX, and the state of Lightning in general.'
+  - Clara Shikhelman
+  - Sergei Tikhomirov
+summary: Clara and Sergei stop by to chat about their recent proposal on mitigating jamming attacks in the Lightning Network. We talk unconditional fees, local reputation, the impact on decentralization and UX, and the state of Lightning in general.
 episode: 25
 additional_resources:
-  - title: 'recent proposal'
-    url: 'https://research.chaincode.com/2022/11/15/unjamming-lightning/'
-  - title: 'Spamming the Lightning Network'
-    url: 'https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md'
-  - title: 'Preventing Channel Jamming'
-    url: 'https://blog.bitmex.com/preventing-channel-jamming/'
+  - title: recent proposal
+    url: https://research.chaincode.com/2022/11/15/unjamming-lightning/
+  - title: Spamming the Lightning Network
+    url: https://github.com/t-bast/lightning-docs/blob/master/spam-prevention.md
+  - title: Preventing Channel Jamming
+    url: https://blog.bitmex.com/preventing-channel-jamming/
   - title: 'Bitcoin Optech: Channel jamming attacks'
-    url: 'https://bitcoinops.org/en/topics/channel-jamming-attacks/'
-  - title: 'The impacts of channel jamming'
-    url: 'https://jamming-dev.github.io/book/1-impacts.html'
+    url: https://bitcoinops.org/en/topics/channel-jamming-attacks/
+  - title: The impacts of channel jamming
+    url: https://jamming-dev.github.io/book/1-impacts.html
   - title: 'Bitcoin problems: Channel balance probing'
-    url: 'https://bitcoinproblems.org/problems/channel-balance-probing.html'
+    url: https://bitcoinproblems.org/problems/channel-balance-probing.html
 ---
 Clara Shikhelman: 00:00:00
 

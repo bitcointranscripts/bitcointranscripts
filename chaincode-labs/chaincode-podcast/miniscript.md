@@ -1,11 +1,16 @@
 ---
-title: "Miniscript"
+title: Miniscript
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sanket-Kanjalkar-and-Miniscript---Episode-17-e1a4pmc
-tags: ['descriptors', 'htlc', 'miniscript', 'psbt', 'taproot']
-speakers: ['Sanket Kanjalkar']
-categories: ['podcast']
-summary: "Sanket describes to Murch his work on Miniscript. We explore uses for Miniscript, learn about intersections with PSBTs, Output Descriptors, and Taproot, and suss out the difference between Miniscript and Miniscript Policy."
+tags:
+  - descriptors
+  - htlc
+  - miniscript
+  - psbt
+  - taproot
+speakers:
+  - Sanket Kanjalkar
+summary: Sanket describes to Murch his work on Miniscript. We explore uses for Miniscript, learn about intersections with PSBTs, Output Descriptors, and Taproot, and suss out the difference between Miniscript and Miniscript Policy.
 episode: 17
 date: 2021-11-11
 additional_resources:

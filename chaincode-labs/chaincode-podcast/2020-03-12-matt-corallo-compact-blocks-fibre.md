@@ -1,10 +1,11 @@
 ---
 title: Compact Blocks and Fibre
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['compact-block-relay']
+tags:
+  - compact-block-relay
 date: 2020-03-12
-speakers: ['Matt Corallo']
+speakers:
+  - Matt Corallo
 media: https://www.youtube.com/watch?v=0uPDDELGjdo
 episode: 6
 ---

@@ -1,11 +1,13 @@
 ---
-title: "Chaincode Decoded: Blockchain"
+title: 'Chaincode Decoded: Blockchain'
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Chaincode-Decoded-Blockchain---Episode-14-e11n7tl
-tags: ["mining"]
-speakers: ["Mark Erhardt", "Adam Jonas"]
-categories: ["podcast"]
-summary: "In this Chaincode Decoded segment we talk about the fundamental role of Bitcoin's blockchain and some of its peculiarities."
+tags:
+  - mining
+speakers:
+  - Mark Erhardt
+  - Adam Jonas
+summary: In this Chaincode Decoded segment we talk about the fundamental role of Bitcoin's blockchain and some of its peculiarities.
 episode: 14
 date: 2021-05-27
 additional_resources:

@@ -1,11 +1,14 @@
 ---
-title: "The P2P network"
+title: The P2P network
 transcript_by: varmur via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille--Amiti-Uttarwar-and-the-P2P-network---Episode-16-e19bgv7
-tags: ["erlay", "p2p"]
-speakers: ["Pieter Wuille", "Amiti Uttarwar"]
-categories: ["podcast"]
-summary: "P2P experts Amiti Uttarwar and Pieter Wuille discuss various aspects of peer-to-peer communication in Bitcoin, with Adam Jonas facilitating the conversation. They delve into the challenges and objectives of address relay, highlighting its complexities and the importance of propagating IP addresses to maintain network connectivity and prevent partitioning and eclipse attacks. The discussion covers the design and evolution of AddrMan, introduced in 2012 to manage IP addresses, and the impact of changes like rate-limiting address gossip to mitigate spam. Pieter and Amiti also touch on the significance of maintaining separate network stacks for different network protocols and the potential of employing ASMAP to improve network resilience. The conversation underscores ongoing efforts and future directions for enhancing Bitcoin's P2P network."
+tags:
+  - erlay
+  - p2p
+speakers:
+  - Pieter Wuille
+  - Amiti Uttarwar
+summary: P2P experts Amiti Uttarwar and Pieter Wuille discuss various aspects of peer-to-peer communication in Bitcoin, with Adam Jonas facilitating the conversation. They delve into the challenges and objectives of address relay, highlighting its complexities and the importance of propagating IP addresses to maintain network connectivity and prevent partitioning and eclipse attacks. The discussion covers the design and evolution of AddrMan, introduced in 2012 to manage IP addresses, and the impact of changes like rate-limiting address gossip to mitigate spam. Pieter and Amiti also touch on the significance of maintaining separate network stacks for different network protocols and the potential of employing ASMAP to improve network resilience. The conversation underscores ongoing efforts and future directions for enhancing Bitcoin's P2P network.
 episode: 16
 date: 2021-10-26
 additional_resources:
@@ -33,8 +36,7 @@ additional_resources:
     url: https://github.com/bitcoin/bitcoin/pull/22387
   - title: Leaky bucket rate limiter
     url: https://en.wikipedia.org/wiki/Leaky_bucket
-  - title: Estimating the Node Degree of Public Peers and Detecting Sybil Peers Based
-        on Address Messages in the Bitcoin P2P Network
+  - title: Estimating the Node Degree of Public Peers and Detecting Sybil Peers Based on Address Messages in the Bitcoin P2P Network
     url: https://arxiv.org/abs/2108.00815
   - title: Coinscope paper
     url: https://www.cs.umd.edu/projects/coinscope/coinscope.pdf

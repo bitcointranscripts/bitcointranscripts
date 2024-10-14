@@ -1,11 +1,16 @@
 ---
-title: "Lightning History and everything else"
+title: Lightning History and everything else
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Tadge-Dryja-and-Lightning-History-and-everything-else---Episode-31-e20udtf
-tags: ['eltoo', 'lightning', 'segwit', 'sighash-anyprevout', 'trimmed-htlc']
-speakers: ['Tadge Dryja']
-categories: ['podcast']
-summary: "Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space."
+tags:
+  - eltoo
+  - lightning
+  - segwit
+  - sighash-anyprevout
+  - trimmed-htlc
+speakers:
+  - Tadge Dryja
+summary: Tadge Dryja chats with us about writing the Lightning Network paper and working in the Bitcoin space.
 episode: 31
 date: 2023-03-22
 additional_resources:

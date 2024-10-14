@@ -1,9 +1,10 @@
 ---
 title: Modularizing the Bitcoin Consensus Engine
 transcript_by: Michael Folkson
-speakers: ['Carl Dong']
-categories: ['podcast']
-tags: ['build-system']
+speakers:
+  - Carl Dong
+tags:
+  - build-system
 date: 2020-12-15
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Carl-Dong-and-Modularizing-the-Bitcoin-Consensus-Engine---Episode-10-enra84
 episode: 10

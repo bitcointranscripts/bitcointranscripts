@@ -1,32 +1,30 @@
 ---
-title: 'Schnorr, MuSig, FROST and more'
-transcript_by: 'sagungargs15 via review.btctranscripts.com'
-media: 'https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing--Schnorr--MuSig--FROST-and-more---Episode-26-e1sav0l'
+title: Schnorr, MuSig, FROST and more
+transcript_by: sagungargs15 via review.btctranscripts.com
+media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Pieter-Wuille-and-Tim-Ruffing--Schnorr--MuSig--FROST-and-more---Episode-26-e1sav0l
 date: '2022-12-16'
 tags:
-  - 'cryptography'
-  - 'musig'
-  - 'schnorr-signatures'
-  - 'cisa'
-  - 'threshold-signature'
-  - 'libsecp256k1'
-  - 'taproot'
+  - cryptography
+  - musig
+  - schnorr-signatures
+  - cisa
+  - threshold-signature
+  - libsecp256k1
+  - taproot
 speakers:
-  - 'Pieter Wuille'
-  - 'Tim Ruffing'
-categories:
-  - 'podcast'
-summary: 'Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multisignatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.'
+  - Pieter Wuille
+  - Tim Ruffing
+summary: Pieter Wuille and Tim Ruffing treat us to a conversation about Schnorr, multisignatures, MuSig, and more. We covered a lot so this is part one of a two part conversation.
 episode: 26
 additional_resources:
-  - title: 'MuSig'
-    url: 'https://bitcoinops.org/en/topics/musig/'
-  - title: 'Yannick Seurin'
-    url: 'http://yannickseurin.free.fr/'
-  - title: 'Bellare-Neven'
-    url: 'https://btctranscripts.com/bitcoin-core-dev-tech/2018-03-05-bellare-neven/'
-  - title: 'FROST'
-    url: 'https://eprint.iacr.org/2020/852.pdf'
+  - title: MuSig
+    url: https://bitcoinops.org/en/topics/musig/
+  - title: Yannick Seurin
+    url: http://yannickseurin.free.fr/
+  - title: Bellare-Neven
+    url: https://btctranscripts.com/bitcoin-core-dev-tech/2018-03-05-bellare-neven/
+  - title: FROST
+    url: https://eprint.iacr.org/2020/852.pdf
 ---
 ## Introduction
 

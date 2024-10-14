@@ -1,13 +1,15 @@
 ---
-title: "Address Relay"
+title: Address Relay
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Martin-Zumsande-and-Address-Relay---Episode-20-e1if91d
-tags: ["bitcoin-core", "p2p"]
-speakers: ["Martin Zumsande"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - p2p
+speakers:
+  - Martin Zumsande
 date: 2022-05-13
 episode: 20
-summary: "Martin Zumsande joins us to tell us about the address spam in the summer of 2021 and his interests in AddrRelay and Bitcoin Core development."
+summary: Martin Zumsande joins us to tell us about the address spam in the summer of 2021 and his interests in AddrRelay and Bitcoin Core development.
 ---
 Martin: 00:00:00
 

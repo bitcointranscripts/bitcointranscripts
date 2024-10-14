@@ -1,11 +1,15 @@
 ---
-title: "The Bitcoin Development Kit (BDK)"
+title: The Bitcoin Development Kit (BDK)
 transcript_by: nymius via review.btctranscripts.com
 media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Alekos-Filini--Daniela-Brozzoni-and-the-Bitcoin-Development-Kit-BDK---Episode-32-e24m4o1
-tags: ["descriptors", "hwi", "wallet"]
-speakers: ["Alekos Filini", "Daniela Brozzoni"]
-categories: ["podcast"]
-summary: "The podcast covers the evolution of the Bitcoin Development Kit (BDK), originally known as the Magical Bitcoin Library, from its inception at Blockstream to its current status as a fully-fledged open-source project. Key topics include the renaming of BDK, its foundational use of Rust and descriptors for wallet architecture, and the broad applicability for both individual and enterprise users. Early adopters and contributors to BDK's development are highlighted, alongside discussions on the challenges and technical hurdles such as asynchronous operations and wallet management across multiple descriptors. The conversation also touches on the motivations behind developers preferring to build wallets from scratch and the potential advantages of adopting BDK for future-proofing wallet applications. Upcoming features in BDK 1.0 promise further enhancements, particularly in syncing mechanisms and transaction planning."
+tags:
+  - descriptors
+  - hwi
+  - wallet
+speakers:
+  - Alekos Filini
+  - Daniela Brozzoni
+summary: The podcast covers the evolution of the Bitcoin Development Kit (BDK), originally known as the Magical Bitcoin Library, from its inception at Blockstream to its current status as a fully-fledged open-source project. Key topics include the renaming of BDK, its foundational use of Rust and descriptors for wallet architecture, and the broad applicability for both individual and enterprise users. Early adopters and contributors to BDK's development are highlighted, alongside discussions on the challenges and technical hurdles such as asynchronous operations and wallet management across multiple descriptors. The conversation also touches on the motivations behind developers preferring to build wallets from scratch and the potential advantages of adopting BDK for future-proofing wallet applications. Upcoming features in BDK 1.0 promise further enhancements, particularly in syncing mechanisms and transaction planning.
 date: 2023-05-23
 episode: 32
 additional_resources:
