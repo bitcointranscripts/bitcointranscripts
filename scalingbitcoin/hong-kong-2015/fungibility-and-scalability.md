@@ -1,13 +1,13 @@
 ---
 title: Fungibility And Scalability
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy-enhancements']
-speakers: ['Adam Back']
+tags:
+  - privacy-enhancements
+speakers:
+  - Adam Back
 date: 2015-12-06
 media: https://youtube.com/watch?v=aQ1--w4uEMM&t=2443
 ---
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overviews_2_back.pdf>
 
 I think everyone knows what fungibility is, it's when coins are equal and interchangeable. It's an important property for an electronic cash system. All bitcoin users would have a problem if fungability goes away.

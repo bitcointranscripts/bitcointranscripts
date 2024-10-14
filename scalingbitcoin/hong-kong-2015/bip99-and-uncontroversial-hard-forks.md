@@ -1,12 +1,12 @@
 ---
 title: Bip99 And Uncontroversial Hard Forks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['soft-fork-activation']
-speakers: ['Jorge Timón']
+tags:
+  - soft-fork-activation
+speakers:
+  - Jorge Timón
 media: https://youtube.com/watch?v=aQ1--w4uEMM&t=1121
 ---
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/1_overview_1_timon.pdf>
 
 bip99 <https://github.com/bitcoin/bips/blob/master/bip-0099.mediawiki>
