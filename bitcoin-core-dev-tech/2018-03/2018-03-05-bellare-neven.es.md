@@ -2,10 +2,11 @@
 title: Bellare-Neven
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['signature-aggregation']
+tags:
+  - signature-aggregation
 date: 2018-03-05
-aliases: ['/es/bitcoin-core-dev-tech/2018-03-05-bellare-neven/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2018-03-05-bellare-neven/
 ---
 Ver también <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/>
 

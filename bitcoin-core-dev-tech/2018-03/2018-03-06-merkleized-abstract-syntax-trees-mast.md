@@ -1,12 +1,14 @@
 ---
 title: Merkleized Abstract Syntax Trees - MAST
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['taproot', 'covenants', 'mast']
+tags:
+  - taproot
+  - covenants
+  - mast
 date: 2018-03-06
-aliases: ['/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/
 ---
-
 <https://twitter.com/kanzure/status/972120890279432192>
 
 See also <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/>
