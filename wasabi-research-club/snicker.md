@@ -11,6 +11,8 @@ date: 2020-01-13
 summary: |-
   In today's episode Adam Gibson discusses various aspects of the SNICKER protocol. He introduces the concept of non-interactive coinjoin and how SNICKER aims to address the privacy and coordination issues of current coinjoin systems. He explains the process of constructing a transaction in the SNICKER protocol, including the use of shared secrets, diffie-hellman key exchange, and the role of participants in signing and validating the transaction. He also explores the potential improvements and future developments of SNICKER, such as competitive proposals and encryption methods. Overall, this section provides a comprehensive overview of the SNICKER protocol and its potential applications in improving the privacy and efficiency of Bitcoin transactions.
   Later on the discussions revolve around the efficiency and privacy of retrieving proposals from a receiver, the potential usefulness of SNICKER outside of mobile devices, the implementation of SNICKER as a proof-of-concept, analyzing different blockchain transactions, and expressing gratitude for the insightful presentation and interest in future sessions. There is also a focus on investigating different protocols like CashShuffle and CoinShuffle, as well as the possibility of implementing CoinJoin. The participants express their interest in exploring these topics further in future discussions.
+aliases:
+  - /wasabi/research-club/snicker/
 ---
 Speaker 0: 00:00:01
 
