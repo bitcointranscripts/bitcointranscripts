@@ -1386,7 +1386,7 @@ They do a little bit of a different technique.
 But they don't have silent payments send and receive.
 Last week Blue Wallet merged send support so now in Blue Wallet you can send to a silent payment address.
 There's donation wallet which I've been working with a group on which is a BIP158 style client.
-That one is still in testing, like in Cignet.
+That one is still in testing, like in Signet.
 
 Sjors Provoost: 00:58:06
 
