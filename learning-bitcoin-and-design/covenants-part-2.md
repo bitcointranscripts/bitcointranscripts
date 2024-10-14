@@ -1,10 +1,17 @@
 ---
-title: "Covenants Part 2"
+title: Covenants Part 2
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=zk_EEKeAFuY
-tags: ["covenants", "ux"]
-speakers: ["Christoph Ono", "Michael Haase", "Mogashni"]
+tags:
+  - covenants
+  - ux
+speakers:
+  - Christoph Ono
+  - Michael Haase
+  - Mogashni
 date: 2024-02-02
+aliases:
+  - /bitcoin-design/learning-bitcoin-and-design/covenants-part-2/
 ---
 ## Introduction
 
