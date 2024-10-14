@@ -1,25 +1,22 @@
 ---
 title: UASFs, BIP 148, BIP 91 and Taproot Activation
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['taproot']
-speakers: ['Matt Corallo']
+tags:
+  - taproot
+  - soft-fork-activation
+speakers:
+  - Matt Corallo
 date: 2021-02-11
+episode: 228
 media: https://anchor.fm/tales-from-the-crypt/episodes/228-UASFs--BIP-148--BIP-91--and-Taproot-Activation-with-Matt-Corallo-eq7cif
 ---
-
-Topic: UASFs, BIP 148, BIP 91 and Taproot Activation
-
-Location: Tales from the Crypt podcast
-
-
-# Intro
+## Intro
 
 Marty Bent (MB): Sitting down with a man who needs no introduction on this podcast. I think you have been on four times already. I think this is number five Matt. You are worried about the future of Bitcoin. What the hell is going on? You reached out to me last week, you scaring the s\*\*\* out of me. Why are you worried?
 
 Matt Corallo (MC): First of all thanks for having me. I think the Bitcoin community broadly right now is selectively misremembering events that happened only a few years ago now and taking conclusions from it that are not entirely justified. We can get into it in depth but I think the block size wars had an effect on a lot of people. There were two sides that both had a story to tell. One side got largely pushed out of Bitcoin, a lot of people on the “losing side” have moved on from Bitcoin and are doing cryptocurrency exchanges or just not working in cryptocurrency anymore. That left a side that gets to write their own history. I think there is some facts that have been left out and more importantly it impacts the way people see Bitcoin’s future and how Bitcoin should exist going forward. And that worries me, I don’t really care if the history got rewritten, I care if it results in a Bitcoin that is fundamentally less safe.
 
-# The history of SegWit and SegWit2x
+## The history of SegWit and SegWit2x
 
 MB: This all revolves around the user activated soft fork and that mechanism to activate certain upgrades, whether it be SegWit or potentially Schnorr and Taproot on the horizon. Let’s jump into the fine details of what went on, how a user activated soft fork works and why you believe it should be the nuclear option, is that the correct term?
 
@@ -71,7 +68,7 @@ MC: It was definitely a very successful pressure campaign. If you want to argue 
 
 MB: Now I’m refreshing my memory around this, the consensus right after was both sides can say they won. Everybody can be happy. Why are you worried about this now?
 
-# Taproot activation
+## Taproot activation
 
 MC: Rehashing old history is fun, well actually for most of us it is miserable because that was a pretty stressful time. But it is important I think to take away the right conclusion because in discussion of Taproot, there aren’t as many voices in it as SegWit, it is pretty straightforward.
 
@@ -119,13 +116,13 @@ MB: It is good to see people meeting on IRC. There is another meeting next Wedne
 
 MC: I just have Michael’s notes as well. It seems like people are coming round to just doing the miner readiness signaling thing.
 
-# Comparing the SegWit and Taproot soft fork changes
+## Comparing the SegWit and Taproot soft fork changes
 
 MB: It is important to think about this precedent and it is why I love having you on because you are one of the most adversarial thinkers I’ve met in this space. I do think people have very high time preference about this stuff. I want Schnorr and Taproot as well but again precedents matter. We throw the fact that precedents matter at other projects that we like to critique. It would be a bit hypocritical if we didn’t exercise this type of caution and patience for a massive upgrade. Do you think this is bigger than SegWit?
 
 MC: In terms of code, no. In terms of cryptographic changes, yeah. It is also a big upgrade in terms of new things you can do with it, debatable, you could argue either way. It is big but it is also not going to make or break Bitcoin. It is big, it is going to improve privacy on Lightning, it is going to improve the ability for people to use multisig significantly, especially larger multisig policies, it is going to over time improve privacy onchain. All of these things are important and cool and awesome but also not going to make or break Bitcoin. But in my view how the community views changes and how the change process happens is going to make or break Bitcoin.
 
-# Precedence of soft fork activation mechanisms
+## Precedence of soft fork activation mechanisms
 
 MB: I can agree there. There is a slippery slope maybe. You effectively do a flag day soft fork this time around but then it is jammed down people’s throats at some point in the future.
 
@@ -137,7 +134,7 @@ MC: The good news is that the market isn’t always right but it is true that pe
 
 MB: 1.5 billion for Tesla. The severity and the importance of making sure this network survives in perpetuity is so grave that caution should not be thrown to the wind. Precedence should be very seriously considered and you should lower your time preference. But that being said I am very optimistic about what has been going on recently in these IRC meetings.
 
-# Consensus forming
+## Consensus forming
 
 MC: Yeah it seems like there is a bit more consensus forming which is really good.
 
@@ -153,7 +150,7 @@ MB: Bitcoin is beautiful. It feels weird, maybe people will be affected by this 
 
 MC: Hopefully.
 
-# Taproot code in Bitcoin Core
+## Taproot code in Bitcoin Core
 
 MB: The Taproot code has officially been merged into Core, version 0.21.0. What is the technical thing that happens that takes it from being merged to being activated and used? The code is in the codebase technically.
 
@@ -163,7 +160,7 @@ MB: That was one of the questions I had in my mind for the last year. It is merg
 
 MC: People can use it yeah. That is a reason to merge it first. Historically in Bitcoin Core it has always been you merge the bulk of the code changes in a major release, on testnet, signet or whatever, on your own regtest networks, you can test it out, play with it, use it in a live system and then the actual activation parameters, in essence the formal proposal of this fork from the Bitcoin Core developer community takes the form of its own minor release version that does nothing, maybe it fixes a few minor bugs, but in large part it is just a proposal and it just contains those activation parameters to make a cohesive soft fork change. “Here is a series of consensus changes in code that can be reached on mainnet in a version of Bitcoin Core. You can run this version or you can stay on a previous version, there are little code changes, there isn’t a lot of features you’re missing out on by running this new version. Run this version and now you are on the hopefully new soft fork, the activation rules will kick in.”
 
-# LDK and rust-lightning
+## LDK and rust-lightning
 
 MB: I learned a lot today, I always learn a lot when I speak to you Matt. How are things going with the LDK?
 
