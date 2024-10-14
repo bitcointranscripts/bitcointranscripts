@@ -1,10 +1,9 @@
 ---
 title: The B Foundation
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Alena Vranova']
+speakers:
+  - Alena Vranova
 ---
-
 The B Foundation
 
 <https://twitter.com/kanzure/status/1043802179004493825>

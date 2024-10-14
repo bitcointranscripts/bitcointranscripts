@@ -1,9 +1,10 @@
 ---
 title: Extreme Opsec For The Modern Cypherpunk
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy-enhancements']
-speakers: ['Jameson Lopp']
+tags:
+  - privacy-enhancements
+speakers:
+  - Jameson Lopp
 ---
 Jameson is the infrastructure engineer at Casa. Please welcome Jameson Lopp.
 

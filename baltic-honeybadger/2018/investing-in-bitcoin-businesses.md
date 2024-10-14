@@ -1,10 +1,10 @@
 ---
 title: Investing In Bitcoin Businesses
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Nic Carter', 'Florian Maier']
+speakers:
+  - Nic Carter
+  - Florian Maier
 ---
-
 1 on 1: Investing in bitcoin businesses
 
 Matthew Mezinskis (crypto\_voices) (moderator)
