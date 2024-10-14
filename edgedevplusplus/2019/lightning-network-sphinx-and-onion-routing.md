@@ -1,11 +1,15 @@
 ---
 title: Lightning Network Sphinx And Onion Routing
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['anonymity-networks', 'lightning', 'routing']
-speakers: ['Antoine Riard']
+tags:
+  - anonymity-networks
+  - lightning
+  - routing
+speakers:
+  - Antoine Riard
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-sphinx-and-onion-routing]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-sphinx-and-onion-routing
 ---
 ## Introduction
 

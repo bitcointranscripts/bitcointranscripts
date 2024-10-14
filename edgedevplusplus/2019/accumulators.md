@@ -1,15 +1,17 @@
 ---
 title: Acumulator Based Cryptography & UTreexo
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems', 'utreexo']
-speakers: ['Tadge Dryja']
+tags:
+  - proof-systems
+  - utreexo
+speakers:
+  - Tadge Dryja
 media: https://www.youtube.com/watch?v=xlKQP9J88uA
 date: 2019-09-09
 needs: transcript
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/accumulators]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/accumulators
 ---
-
 <https://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2018-10-08-utxo-accumulators-and-utreexo/>
 
 <https://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2019/utreexo/>

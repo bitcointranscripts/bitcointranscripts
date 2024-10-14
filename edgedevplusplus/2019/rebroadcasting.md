@@ -1,13 +1,14 @@
 ---
 title: Rebroadcast logic in Core
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['bitcoin-core']
-speakers: ['Amiti Uttarwar']
+tags:
+  - bitcoin-core
+speakers:
+  - Amiti Uttarwar
 date: 2019-09-09
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/rebroadcasting]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/rebroadcasting
 ---
-
 <https://twitter.com/kanzure/status/1171042478088232960>
 
 ## Introduction
