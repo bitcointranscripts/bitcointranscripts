@@ -2,9 +2,10 @@
 title: Braidpool
 transcript_by: Bryan Bishop
 translation_by: Ajian
-categories: ['conference']
-tags: ['mining']
-speakers: ['Bob McElrath']
+tags:
+  - mining
+speakers:
+  - Bob McElrath
 date: 2022-10-15
 ---
 ## 引言

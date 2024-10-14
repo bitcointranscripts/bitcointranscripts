@@ -1,12 +1,13 @@
 ---
 title: Silent Payments and Alternatives
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-speakers: ['Ruben Somsen']
-tags: ['privacy-enhancements', 'silent-payments']
+speakers:
+  - Ruben Somsen
+tags:
+  - privacy-enhancements
+  - silent-payments
 date: 2022-10-15
 ---
-
 ## Introduction
 
 I will talk about silent payments but also in general the design space around what kind of constructs you can have to pay people in a non-interactive way. In the bitcoin world, there are a couple common ways of paying someone. Making a payment is such a basic thing. ... The alternative we have is that you can generate a single address and put it in your twitter profile and everyone can pay you, but that's not private. So either you have this interactivity or some loss of privacy where you continuously reuse the same address.
