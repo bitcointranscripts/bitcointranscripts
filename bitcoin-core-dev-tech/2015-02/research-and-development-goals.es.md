@@ -2,9 +2,12 @@
 title: Research And Development Goals
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['consensus']
-speakers: ['Patrick Murck', 'Gavin Andresen', 'Cory Fields']
+tags:
+  - consensus
+speakers:
+  - Patrick Murck
+  - Gavin Andresen
+  - Cory Fields
 ---
 Objetivos y retos de R&D 
 
