@@ -1,9 +1,15 @@
 ---
-title: "Multi-Hop Locks for Secure, Privacy-Preserving and Interoperable Payment-Channel Networks"
+title: Multi-Hop Locks for Secure, Privacy-Preserving and Interoperable Payment-Channel Networks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'multisignature', 'privacy-enhancements', 'lightning']
-speakers: ['Giulio Malavolta', 'Pedro Moreno-Sanchez', 'Matteo Maffei']
+tags:
+  - research
+  - multisignature
+  - privacy-enhancements
+  - lightning
+speakers:
+  - Giulio Malavolta
+  - Pedro Moreno-Sanchez
+  - Matteo Maffei
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=3mJURLD2XS8&t=1717s
 ---

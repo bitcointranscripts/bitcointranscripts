@@ -1,11 +1,11 @@
 ---
 title: Project Meta Discussion
-categories: ['core-dev-tech']
-tags: ['bitcoin core']
+tags:
+  - bitcoin core
 date: 2023-04-26
-aliases: ['/bitcoin-core-dev-tech/2023-04-26-meta-discussion/']
+aliases:
+  - /bitcoin-core-dev-tech/2023-04-26-meta-discussion/
 ---
-
 # Part 1
 
 ## What makes bitcoin core fun

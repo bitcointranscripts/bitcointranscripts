@@ -1,14 +1,9 @@
 ---
-title: Forward Blocks
+title: 'Forward Blocks: On-chain/Settlement Capacity Increases Without the Hard-fork'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Mark Friedenbach']
+speakers:
+  - Mark Friedenbach
 ---
-
-Forward blocks: On-chain settlement capacity increases without the hard-fork
-
-Mark Friedenbach (maaku)
-
 paper: <http://freico.in/forward-blocks-scalingbitcoin-paper.pdf>
 
 slides: <http://freico.in/forward-blocks-scalingbitcoin-slides.pdf>

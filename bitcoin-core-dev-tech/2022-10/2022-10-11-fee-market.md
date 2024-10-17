@@ -1,14 +1,13 @@
 ---
 title: Fee Market
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['fee-management', 'bitcoin core']
+tags:
+  - fee-management
+  - bitcoin core
 date: 2022-10-11
-aliases: ['/bitcoin-core-dev-tech/2022-10-11-fee-market/']
+aliases:
+  - /bitcoin-core-dev-tech/2022-10-11-fee-market/
 ---
-
-Fee market
-
 There are two times we have had sustained fees: late 2017 and early 2021. In late 2017 we saw lots of things break because people hadn't written software to deal with variable fees or anything. I don't know if that was as big of a problem in 2021. I do worry that this will start to become a thing. If you have no variable fee market, and you can just throw in 1 sat/vbyte for several years then it will just work until it doesn't. So right now developers don't have to worry about it. It can be really complex with lightning and RBF (replace-by-fee). A lot of businesses don't track RBFs.
 
 It seems like, it's weird, it's not that blocks are empty. It's not that you average 200-300k. It's that they hit the limit, then you get a persistent mempool, then it goes under, so it's always right at that line. It feels like there's an economics thing where people are targeting it. If fees are persistent and it's unreliable, then I start consolidating or use something else. If fees are like, if blocks are empty, then you have more space and can fill that in. It seems like, I don't know, it seems unlikely that it's just randomly happening to be full but not over that size. That seems scary long-term because how do you fund this? Someone had this thing where- he talked about it in Scaling Tokyo where he said yeah we're paying miners too much. Let's soft-fork and push the mining reward out 20 years. That probably won't happen, but it's a good idea.

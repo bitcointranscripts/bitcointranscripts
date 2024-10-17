@@ -1,10 +1,12 @@
 ---
 title: Lightning Network Routing
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Carla Kirk-Cohen']
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-routing]
+tags:
+  - lightning
+speakers:
+  - Carla Kirk-Cohen
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-routing
 ---
 ## Introduction
 

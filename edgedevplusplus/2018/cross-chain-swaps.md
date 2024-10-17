@@ -1,13 +1,18 @@
 ---
-title: "Cross-Chain Swaps: Atomically Swapping Coins for Privacy or Cross-Blockchain Trades"
+title: 'Cross-Chain Swaps: Atomically Swapping Coins for Privacy or Cross-Blockchain Trades'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy-enhancements', 'coinjoin', 'coinswap']
-speakers: ['Ethan Heilman', 'Nicolas Dorier']
+tags:
+  - privacy-enhancements
+  - coinjoin
+  - coinswap
+speakers:
+  - Ethan Heilman
+  - Nicolas Dorier
 media: https://www.youtube.com/watch?v=NedW6AhImKg
 date: 2018-10-05
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/cross-chain-swaps]
-summary: "Ethan and Nicolas describe atomic cross-chain swaps - a protocol where two parties can exchange coins as a single operation. The exchange does not require any trusted third party and neither of the parties involved can cheat each other. They describe how this can be used on a single blockchain as a privacy protocol or “cross-chain” as a trading protocol."
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/cross-chain-swaps
+summary: Ethan and Nicolas describe atomic cross-chain swaps - a protocol where two parties can exchange coins as a single operation. The exchange does not require any trusted third party and neither of the parties involved can cheat each other. They describe how this can be used on a single blockchain as a privacy protocol or “cross-chain” as a trading protocol.
 ---
 <https://twitter.com/kanzure/status/1048017311431413760>
 

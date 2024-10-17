@@ -1,9 +1,11 @@
 ---
 title: Building Bulletproofs
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Henry de Valence', 'Cathie Yun']
+tags:
+  - proof-systems
+speakers:
+  - Henry de Valence
+  - Cathie Yun
 ---
 <https://twitter.com/kanzure/status/1090668746073563136>
 

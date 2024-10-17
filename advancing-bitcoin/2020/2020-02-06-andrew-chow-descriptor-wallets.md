@@ -1,17 +1,13 @@
 ---
-title: Descriptor Wallets
-speakers: ['Andrew Chow']
+title: 'Rethinking Wallet Architecture: Native Descriptor Wallets'
+speakers:
+  - Andrew Chow
 date: 2020-02-06
 transcript_by: Michael Folkson
-categories: ['workshop']
-tags: ['wallet']
+tags:
+  - wallet
 media: https://www.youtube.com/watch?v=xC25NzIjzog
 ---
-
-Topic: Rethinking Wallet Architecture: Native Descriptor Wallets
-
-Location: Advancing Bitcoin
-
 Slides: https://www.dropbox.com/s/142b4o4lrbkvqnh/Rethinking%20Wallet%20Architecture_%20Native%20Descriptor%20Wallets.pptx
 
 Support for Output Descriptors in Bitcoin Core: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

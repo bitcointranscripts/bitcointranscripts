@@ -2,10 +2,9 @@
 title: La Fundación B
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['conferencia']
-speakers: ['Alena Vranova']
+speakers:
+  - Alena Vranova
 ---
-
 La Fundación B
 
 <https://twitter.com/kanzure/status/1043802179004493825>

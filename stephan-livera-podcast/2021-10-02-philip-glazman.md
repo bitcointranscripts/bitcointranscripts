@@ -1,8 +1,8 @@
 ---
 title: Scaling Bitcoin Exchanges With Lightning And Lightning User Profiles
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Philip Glazman']
+speakers:
+  - Philip Glazman
 date: 2021-10-02
 media: https://www.youtube.com/watch?v=utH_obtgeLY
 ---

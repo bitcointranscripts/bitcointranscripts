@@ -3,9 +3,7 @@ title: Seminario Socrático 4
 date: 2019-11-19
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['reunión']
 ---
-
 <https://twitter.com/kanzure/status/1196947713658626048>
 
 # Organización de normas para carteras (WSO)

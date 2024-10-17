@@ -1,13 +1,13 @@
 ---
 title: How to make everyone run their own full node
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
-speakers: ['Nicolas Dorier']
+tags:
+  - security
+speakers:
+  - Nicolas Dorier
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=0UiMhpz9eLA
 ---
-
 <https://twitter.com/kanzure/status/1014166857958461440>
 
 I am the maintainer of Nbitcoin and btcpay. I am a dot net fanboy. I am happy that the number of people working on bitcoin in C# has spread from one about four years ago to about ten in this room toay. That's great. I work at DG Lab in Japan.

@@ -1,14 +1,15 @@
 ---
 title: Bitcoin CLI y Regtest
-speakers: ['Richard Bondi']
+speakers:
+  - Richard Bondi
 date: 2018-08-17
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['reunión']
-tags: ['bitcoin-core', 'developer-tools']
+tags:
+  - bitcoin-core
+  - developer-tools
 media: https://www.youtube.com/watch?v=sbupEpL6-J4
 ---
-
 Clone este repositorio para seguir el proceso: <https://github.com/austin-bitcoin-developers/regtest-dev-environment>
 
 <https://twitter.com/kanzure/status/1161266116293009408>

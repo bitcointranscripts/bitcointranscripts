@@ -1,9 +1,14 @@
 ---
-title: "Socratic Seminar - BIP Taproot (BIP 341)"
+title: Socratic Seminar - BIP Taproot (BIP 341)
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['taproot', 'mast', 'simplicity']
-speakers: ['Pieter Wuille', 'Elichai Turkel', 'Russell O’Connor']
+tags:
+  - taproot
+  - mast
+  - simplicity
+speakers:
+  - Pieter Wuille
+  - Elichai Turkel
+  - Russell O’Connor
 date: 2020-07-21
 media: https://www.youtube.com/watch?v=bPcguc108QM
 ---

@@ -2,12 +2,12 @@
 title: Intercambios atómicos de curvas transversales
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['adaptor-signatures']
+tags:
+  - adaptor-signatures
 date: 2018-03-05
-aliases: ['/es/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/
 ---
-
 <https://twitter.com/kanzure/status/971827042223345664>
 
 Borrador de un próximo documento de guiones sin guión. Esto fue a principios de 2017. Pero ya ha pasado todo un año.

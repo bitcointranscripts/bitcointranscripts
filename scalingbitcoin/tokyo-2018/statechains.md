@@ -1,9 +1,10 @@
 ---
-title: "Statechains: Off-chain transfer of UTXOs"
+title: 'Statechains: Off-chain transfer of UTXOs'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['statechains']
-speakers: ['Ruben Somsen']
+tags:
+  - statechains
+speakers:
+  - Ruben Somsen
 ---
 I am the education director of readingbitcoin.org, and I am going to be talking about statechains for off-chain transfer of UTXOs.
 

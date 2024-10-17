@@ -1,9 +1,10 @@
 ---
-title: "Prism: Scaling Bitcoin to Physical Limits"
+title: 'Prism: Scaling Bitcoin to Physical Limits'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Vivek Bagaria']
+tags:
+  - research
+speakers:
+  - Vivek Bagaria
 ---
 ## Introduction
 

@@ -2,10 +2,9 @@
 title: Socratic Seminar 5
 date: 2020-01-21
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['lightning']
+tags:
+  - lightning
 ---
-
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/267941700/>
 
 <https://bitdevs.org/2019-12-03-socratic-seminar-99>

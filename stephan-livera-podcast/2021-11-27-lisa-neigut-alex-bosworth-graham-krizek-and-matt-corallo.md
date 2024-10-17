@@ -1,8 +1,11 @@
 ---
 title: SLP324 Scaling Bitcoin off-chain with Matt Corallo, Alex Bosworth, Lisa Neigut, and Graham Krizek
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Lisa Neigut', 'Alex Bosworth', 'Graham Krizek', 'Matt Corallo']
+speakers:
+  - Lisa Neigut
+  - Alex Bosworth
+  - Graham Krizek
+  - Matt Corallo
 date: 2021-11-27
 media: https://stephanlivera.com/download-episode/4129/324.mp3
 ---

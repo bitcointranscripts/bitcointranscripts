@@ -1,13 +1,16 @@
 ---
-title: "Bitcoin Eclipse Attacks And How To Stop Them"
+title: Bitcoin Eclipse Attacks And How To Stop Them
 transcript_by: Sjors, edilmedeiros, NeroCherubino
 media: https://www.youtube.com/watch?v=UK9Yykf2aA4
-tags: ["bitcoin-core", "eclipse-attacks"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - eclipse-attacks
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2020-11-13
 episode: 17
-summary: "The discussion revolves around eclipse attacks against Bitcoin's peer-to-peer network, as described in a 2015 paper. Eclipse attacks isolate a node, controlling its network connections to manipulate transaction visibility and block information. The transcript outlines the mechanism of these attacks, including the strategic overflow of a node's address list and inducing node restarts. It also covers the potential for facilitating double-spend attacks and splitting the miner network. Mitigation strategies implemented in Bitcoin Core are discussed, including improvements in peer selection and connection management. These measures increase the resilience of the network against eclipse attacks by reducing attackers' ability to monopolize a node's view of the blockchain, showcasing the ongoing efforts to secure Bitcoin against such vulnerabilities."
+summary: The discussion revolves around eclipse attacks against Bitcoin's peer-to-peer network, as described in a 2015 paper. Eclipse attacks isolate a node, controlling its network connections to manipulate transaction visibility and block information. The transcript outlines the mechanism of these attacks, including the strategic overflow of a node's address list and inducing node restarts. It also covers the potential for facilitating double-spend attacks and splitting the miner network. Mitigation strategies implemented in Bitcoin Core are discussed, including improvements in peer selection and connection management. These measures increase the resilience of the network against eclipse attacks by reducing attackers' ability to monopolize a node's view of the blockchain, showcasing the ongoing efforts to secure Bitcoin against such vulnerabilities.
 ---
 ## Introduction
 Sjors Provoost: 00:01:01

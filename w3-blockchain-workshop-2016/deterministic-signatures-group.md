@@ -1,10 +1,9 @@
 ---
 title: Deterministic Signatures Group
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['threshold-signature']
+tags:
+  - threshold-signature
 ---
-
 Deterministic expressions (group)
 
 So please give your name and organization and what would you like to hear in the next twenty or thirty minutes.

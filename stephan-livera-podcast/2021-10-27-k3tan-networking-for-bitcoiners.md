@@ -1,8 +1,8 @@
 ---
 title: Networking For Bitcoiners
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['K3tan']
+speakers:
+  - K3tan
 date: 2021-10-27
 media: https://www.youtube.com/watch?v=3NA3ojAgw9Y
 ---

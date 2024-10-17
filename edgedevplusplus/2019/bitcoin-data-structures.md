@@ -1,12 +1,12 @@
 ---
 title: Bitcoin Data Structures
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jimmy Song']
+speakers:
+  - Jimmy Song
 date: 2019-09-09
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/bitcoin-data-structures]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/bitcoin-data-structures
 ---
-
 <https://twitter.com/kanzure/status/1170974373089632257>
 
 # Introduction

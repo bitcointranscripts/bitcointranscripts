@@ -1,12 +1,12 @@
 ---
-title: "Overview Of BIPs Necessary For Lightning"
+title: Overview Of BIPs Necessary For Lightning
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Tadge Dryja']
+tags:
+  - lightning
+speakers:
+  - Tadge Dryja
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=1h5m50s
 ---
-
 Scalability of Lightning with different BIPs and some back-of-the-envelope calculations.
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/1_layer2_2_dryja.pdf>

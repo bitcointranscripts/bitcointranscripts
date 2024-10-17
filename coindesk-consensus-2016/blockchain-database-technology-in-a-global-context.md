@@ -1,10 +1,9 @@
 ---
 title: Blockchain Database Technology In A Global Context
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Lawrence H. Summers']
+speakers:
+  - Lawrence H. Summers
 ---
-
 Preliminary notes:
 
 

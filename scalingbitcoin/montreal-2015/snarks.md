@@ -1,10 +1,13 @@
 ---
 title: Snarks
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Andrew Miller', 'Madars Virza', 'Andrew Poelstra', 'Bryan Bishop', 'Nathan Wilcox']
+speakers:
+  - Andrew Miller
+  - Madars Virza
+  - Andrew Poelstra
+  - Bryan Bishop
+  - Nathan Wilcox
 ---
-
 some setup motivating topics:
 
 * practicality

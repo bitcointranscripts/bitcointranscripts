@@ -1,8 +1,8 @@
 ---
 title: Lightning Network Services for the Masses
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Roy Sheinfeld']
+speakers:
+  - Roy Sheinfeld
 date: 2019-07-31
 media: https://stephanlivera.com/download-episode/1348/94.mp3
 ---

@@ -1,9 +1,11 @@
 ---
-title: "Building Mimblewimble/Grin, an implementation for privacy and scalability"
+title: Building Mimblewimble/Grin, an implementation for privacy and scalability
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'adaptor-signatures']
-speakers: ['Quentin Le Sceller']
+tags:
+  - research
+  - adaptor-signatures
+speakers:
+  - Quentin Le Sceller
 date: 2019-01-30
 media: https://www.youtube.com/watch?v=9mJV3dSs6kc
 ---

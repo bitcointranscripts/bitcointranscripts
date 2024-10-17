@@ -1,15 +1,16 @@
 ---
-title: "Discusión general sobre SIGHASH_NOINPUT, OP_CHECKSIGFROMSTACK, and OP_SECURETHEBAG"
+title: Discusión general sobre SIGHASH_NOINPUT, OP_CHECKSIGFROMSTACK, and OP_SECURETHEBAG
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['sighash_anyprevout', 'op_checksigfromstack', 'op_checktemplateverify']
+tags:
+  - sighash_anyprevout
+  - op_checksigfromstack
+  - op_checktemplateverify
 date: 2019-06-06
-speakers: ['Olaoluwa Osuntokun', 'Jeremy Rubin']
+speakers:
+  - Olaoluwa Osuntokun
+  - Jeremy Rubin
 ---
-
-SIGHASH\_NOINPUT, ANYPREVOUT, OP\_CHECKSIGFROMSTACK, OP\_CHECKOUTPUTSHASHVERIFY, and OP\_SECURETHEBAG
-
 <https://twitter.com/kanzure/status/1136636856093876225>
 
 Al parecer, hay algunos mensajes políticos en torno a OP\_SECURETHEBA y "asegurar la bolsa" podría ser una cosa de Andrew Yang

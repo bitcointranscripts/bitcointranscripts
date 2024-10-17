@@ -1,8 +1,8 @@
 ---
 title: SlushPool Signalling For Taproot
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Pavel Moravec']
+speakers:
+  - Pavel Moravec
 date: 2021-05-13
 media: https://www.youtube.com/watch?v=fxRKMUXoCeE
 ---

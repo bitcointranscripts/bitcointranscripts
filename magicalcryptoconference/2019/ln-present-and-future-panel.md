@@ -1,15 +1,18 @@
 ---
-title: Ln Present And Future Panel
+title: The Present and Future of the Lightning Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'lnd', 'c-lightning']
-speakers: ["Will O'Beirne", 'Lisa Neigut', 'Alex Bosworth', 'Leigh Cuen']
+tags:
+  - lightning
+  - lnd
+  - c-lightning
+speakers:
+  - Will O'Beirne
+  - Lisa Neigut
+  - Alex Bosworth
+  - Leigh Cuen
 date: 2019-05-11
 media: https://youtu.be/OzpfiieV5C4
 ---
-
-Lightning network present & future panel
-
 LC: Can everyone hear me now? Alright, alright.
 
 WO: It's getting some good usage. A lot of those are businesses. Definitely it's in the early stage. Elizabeth talked about this. There's a lot of things that are mostly for fun, it's not really at ecommerce yet.

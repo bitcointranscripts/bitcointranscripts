@@ -1,13 +1,14 @@
 ---
 title: Mimblewimble And Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Andrew Poelstra']
-tags: ['adaptor-signatures', 'sidechains']
+speakers:
+  - Andrew Poelstra
+tags:
+  - adaptor-signatures
+  - sidechains
 date: 2017-03-04
 media: https://www.youtube.com/watch?v=0mVOq1jaR1U&t=39m8s
 ---
-
 <https://twitter.com/kanzure/status/838480912396533760>
 
 Up next we have Andrew Poelstra and he is going to be talking about a really interesting new concept for a cryptocurrency. It's called mimblewimble, after a spell from Harry Potter, because it prevents characters from speaking. Try speaking? Hello, test. We also have a... hello? hello? Can you guys hear me?

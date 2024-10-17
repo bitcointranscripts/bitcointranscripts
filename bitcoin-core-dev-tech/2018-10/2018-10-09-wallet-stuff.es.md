@@ -2,8 +2,8 @@
 title: Cosas de Wallets
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['wallet']
+tags:
+  - wallet
 date: 2018-10-09
 ---
 <https://twitter.com/kanzure/status/1049526667079643136>

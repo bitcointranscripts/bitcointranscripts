@@ -1,9 +1,10 @@
 ---
 title: Blind Signatures in Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['adaptor-signatures']
-speakers: ['Jonas Nick']
+tags:
+  - adaptor-signatures
+speakers:
+  - Jonas Nick
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=_1dcU70zhqs
 ---

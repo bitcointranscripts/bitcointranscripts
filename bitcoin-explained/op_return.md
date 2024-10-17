@@ -1,13 +1,17 @@
 ---
-title: "OP_RETURN"
+title: OP_RETURN
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=NYj80OGlWGg
-tags: ["scripts-addresses", "transaction-relay-policy"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - scripts-addresses
+  - transaction-relay-policy
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2022-07-15
 episode: 61
-aliases: ['/bitcoin-magazine/bitcoin-explained/op_return']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/op_return
 ---
 ## Intro
 

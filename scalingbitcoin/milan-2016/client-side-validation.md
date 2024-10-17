@@ -1,9 +1,10 @@
 ---
-title: "Progress on Scaling via Client-Side Validation"
+title: Progress on Scaling via Client-Side Validation
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['client-side-validation']
-speakers: ['Peter Todd']
+tags:
+  - client-side-validation
+speakers:
+  - Peter Todd
 date: 2016-10-09
 media: https://www.youtube.com/watch?v=uO-1rQbdZuk&t=6198s
 ---

@@ -2,10 +2,9 @@
 title: Socratic Seminar 6
 date: 2020-02-24
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['taproot']
+tags:
+  - taproot
 ---
-
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/268812642/>
 
 <https://bitdevs.org/2020-02-12-socratic-seminar-101>

@@ -1,11 +1,14 @@
 ---
 title: Hardware Wallet Design Best Practices
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['hardware-wallet', 'security-problems']
-speakers: ['Stepan Snigirev']
+tags:
+  - hardware-wallet
+  - security-problems
+speakers:
+  - Stepan Snigirev
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/hardware-wallet-design-best-practices]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/hardware-wallet-design-best-practices
 ---
 <https://twitter.com/kanzure/status/1171322716303036417>
 

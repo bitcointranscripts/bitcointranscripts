@@ -1,9 +1,10 @@
 ---
 title: Learning Bitcoin Core Contribution & Hosting PR Review Club
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Gloria Zhao']
-tags: ['bitcoin core']
+speakers:
+  - Gloria Zhao
+tags:
+  - bitcoin core
 date: 2020-10-02
 media: https://stephanlivera.com/download-episode/2526/216.mp3
 ---

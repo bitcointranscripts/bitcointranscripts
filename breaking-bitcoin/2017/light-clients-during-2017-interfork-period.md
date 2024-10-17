@@ -1,9 +1,12 @@
 ---
 title: Light Clients During 2017 Interfork Period
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightweight-client', 'segwit', 'soft-fork-activation']
-speakers: ['Thomas Voegtlin']
+tags:
+  - lightweight-client
+  - segwit
+  - soft-fork-activation
+speakers:
+  - Thomas Voegtlin
 date: 2017-09-09
 media: https://www.youtube.com/watch?v=eCE2OzKIab8&t=5h9m
 ---

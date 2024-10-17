@@ -1,9 +1,11 @@
 ---
-title: "Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing"
+title: Enhancing Bitcoin Security and Performance with Strong Consistency via Collective Signing
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'cryptography']
-speakers: ['Eleftherios Kokoris-Kogias']
+tags:
+  - research
+  - cryptography
+speakers:
+  - Eleftherios Kokoris-Kogias
 ---
 <https://twitter.com/kanzure/status/785102844839985153>
 

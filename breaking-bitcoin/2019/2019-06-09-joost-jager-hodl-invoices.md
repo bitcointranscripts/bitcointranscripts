@@ -1,9 +1,11 @@
 ---
 title: HODL Invoices
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['lnd', 'hold-invoices']
-speakers: ['Joost Jager']
+tags:
+  - lnd
+  - hold-invoices
+speakers:
+  - Joost Jager
 date: 2019-06-13
 media: https://www.youtube.com/watch?v=jOEq9PvN-7A
 ---

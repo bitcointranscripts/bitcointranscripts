@@ -1,10 +1,9 @@
 ---
 title: Coin Selection
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Mark Erhardt']
+speakers:
+  - Mark Erhardt
 ---
-
 Simulation-based evaluation of coin selection strategies
 
 <https://twitter.com/kanzure/status/785061222316113920>

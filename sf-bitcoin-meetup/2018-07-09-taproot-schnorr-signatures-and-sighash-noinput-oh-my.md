@@ -1,9 +1,15 @@
 ---
 title: Taproot, Schnorr signatures, and SIGHASH_NOINPUT
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['taproot', 'schnorr-signatures', 'musig', 'adaptor-signatures', 'mast', 'contract-protocols']
-speakers: ['Pieter Wuille']
+tags:
+  - taproot
+  - schnorr-signatures
+  - musig
+  - adaptor-signatures
+  - mast
+  - contract-protocols
+speakers:
+  - Pieter Wuille
 date: 2018-07-09
 media: https://www.youtube.com/watch?v=YSUVRj8iznU
 ---

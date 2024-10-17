@@ -1,13 +1,17 @@
 ---
-title: "Explaining Bitcoin Addresses"
+title: Explaining Bitcoin Addresses
 transcript_by: mubarak23 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=R1kF1rnLvM8
-tags: ["scripts-addresses", "bech32"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - scripts-addresses
+  - bech32
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-02-19
 episode: 28
-aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-bitcoin-addresses']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/explaining-bitcoin-addresses
 ---
 Aaron van Wirdum: 00:01:45
 

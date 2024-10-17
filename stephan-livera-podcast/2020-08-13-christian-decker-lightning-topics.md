@@ -1,10 +1,16 @@
 ---
-title: "ANYPREVOUT, MPP, Mitigating Lightning Attacks"
+title: ANYPREVOUT, MPP, Mitigating Lightning Attacks
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['sighash-anyprevout', 'eltoo', 'transaction-pinning', 'multipath-payments', 'trampoline-payments', 'privacy-problems']
+tags:
+  - sighash-anyprevout
+  - eltoo
+  - transaction-pinning
+  - multipath-payments
+  - trampoline-payments
+  - privacy-problems
 date: 2020-08-13
-speakers: ['Christian Decker']
+speakers:
+  - Christian Decker
 media: https://stephanlivera.com/episode/200/
 ---
 Transcript completed by: Stephan Livera Edited by: Michael Folkson

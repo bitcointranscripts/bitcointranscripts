@@ -1,8 +1,9 @@
 ---
-title: "Socratic Seminar - Taproot is locked in. What now?"
+title: Socratic Seminar - Taproot is locked in. What now?
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['taproot', 'soft-fork-activation']
+tags:
+  - taproot
+  - soft-fork-activation
 date: 2021-07-20
 media: https://www.youtube.com/watch?v=GAkLuZNsZzw
 ---

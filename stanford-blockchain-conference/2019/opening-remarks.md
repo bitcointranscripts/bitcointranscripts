@@ -1,10 +1,9 @@
 ---
 title: Opening Remarks
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Dan Boneh']
+speakers:
+  - Dan Boneh
 ---
-
 Opening remarks
 
 We will be starting in 10 minutes. I would like to ask the first speaker in the first session for grin to walk to the back of the room to get your microphone ready for the talk.

@@ -1,13 +1,14 @@
 ---
 title: Minisketch and Lightning gossip
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['lightning', 'P2P']
-speakers: ['Alex Myers']
+tags:
+  - lightning
+  - P2P
+speakers:
+  - Alex Myers
 date: 2022-06-07
 media: https://www.youtube.com/watch?v=e0u59hSsmio
 ---
-
 Location: Bitcoin++
 
 Slides: <https://endothermic.dev/presentations/magical-minisketch>

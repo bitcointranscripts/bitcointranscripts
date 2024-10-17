@@ -1,9 +1,11 @@
 ---
 title: Mimblewimble
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['adaptor-signatures', 'sidechains']
-speakers: ['Andrew Poelstra']
+tags:
+  - adaptor-signatures
+  - sidechains
+speakers:
+  - Andrew Poelstra
 date: 2016-11-21
 ---
 <https://www.youtube.com/watch?v=aHTRlbCaUyM>

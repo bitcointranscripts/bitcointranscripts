@@ -1,16 +1,14 @@
 ---
 title: Conner Fromknecht - Stephan Livera
 transcript_by: Michael Folkson
-categories: ['podcast']
-speakers: ['Conner Fromknecht']
+speakers:
+  - Conner Fromknecht
 date: 2019-06-24
+media: https://stephanlivera.com/episode/83/
 ---
-
 Stephan Livera podcast with Conner Fromknecht - June 24th 2019
 
 <https://twitter.com/kanzure/status/1143553150152060928>
-
-Podcast: <https://stephanlivera.com/episode/83>
 
 Stephan: Conner I am a big fan of what you guys are doing at Lightning Labs and I’ve been trying to get you on for a while. I’m glad that we were finally able to make it happen. Welcome to the show.
 

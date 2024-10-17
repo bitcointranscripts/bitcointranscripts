@@ -1,9 +1,10 @@
 ---
 title: Discreet Log Contracts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['dlc']
-speakers: ['Tadge Dryja']
+tags:
+  - dlc
+speakers:
+  - Tadge Dryja
 media: https://www.youtube.com/watch?v=FU-rA5dkTHI
 ---
 <http://diyhpl.us/wiki/transcripts/discreet-log-contracts/>

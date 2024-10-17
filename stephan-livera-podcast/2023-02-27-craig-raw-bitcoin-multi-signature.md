@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Multi-signature
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Craig Raw']
+speakers:
+  - Craig Raw
 date: 2023-02-27
 media: https://stephanlivera.com/download-episode/6034/462.mp3
 ---

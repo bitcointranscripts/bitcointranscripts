@@ -1,11 +1,15 @@
 ---
 title: Security And Usability
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'mining', 'regulation']
-speakers: ['Melanie Shapiro', 'Alan Reiner', 'Kristov Atlas']
+tags:
+  - security
+  - mining
+  - regulation
+speakers:
+  - Melanie Shapiro
+  - Alan Reiner
+  - Kristov Atlas
 ---
-
 * Melanie Shapiro
 * Alan Reiner
 * Kristov Atlas

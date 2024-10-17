@@ -1,12 +1,13 @@
 ---
 title: Stress Testing Decentralized Finance
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['security-problems', 'altcoins']
-speakers: ['Tarun Chitra']
+tags:
+  - security-problems
+  - altcoins
+speakers:
+  - Tarun Chitra
 date: 2020-02-18
 ---
-
 <https://twitter.com/kanzure/status/1229844754990370816>
 
 ## Introduction

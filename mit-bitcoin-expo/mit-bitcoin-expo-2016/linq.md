@@ -1,10 +1,9 @@
 ---
 title: Linq
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Alex Zinder']
+speakers:
+  - Alex Zinder
 ---
-
 NASDAQ Linq
 
 I have heard that Alex Zinder has a grasp of what makes NASDAQ Linq good and bad, and the advantages of a public versus permissioned blockchain. Alex is director of global software development at NASDAQ, but he is here to talk about Linq, which is a platform for managing securities. Alex?

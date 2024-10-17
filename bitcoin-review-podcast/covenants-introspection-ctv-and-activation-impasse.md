@@ -1,10 +1,15 @@
 ---
-title: "Covenants, Introspection, CTV and Activation Impasse"
+title: Covenants, Introspection, CTV and Activation Impasse
 transcript_by: jeffreyweier via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=o8tjsVdiPUI
-tags: ["covenants", "vaults", "soft-fork-activation"]
-speakers: ["James O'Beirne", "Rijndael", "NVK"]
-categories: ["podcast"]
+tags:
+  - covenants
+  - vaults
+  - soft-fork-activation
+speakers:
+  - James O'Beirne
+  - Rijndael
+  - NVK
 date: 2023-09-29
 ---
 ## Introduction

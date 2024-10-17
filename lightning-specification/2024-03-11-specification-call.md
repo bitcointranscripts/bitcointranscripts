@@ -3,7 +3,6 @@ title: "Lightning Specification Meeting - Agenda 1146"
 transcript_by: Gurwinder Sahota via tstbtc
 tags: ['lightning']
 speakers: []
-categories: []
 date: 2024-03-11
 ---
 

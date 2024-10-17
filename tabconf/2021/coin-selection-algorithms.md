@@ -2,9 +2,11 @@
 title: Coin Selection Algorithms
 transcript_by: alexanderwiederin via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=m-HiVEFqFZk
-tags: ["coin-selection", "wallet"]
-speakers: ["Andrew Chow"]
-categories: ["conference"]
+tags:
+  - coin-selection
+  - wallet
+speakers:
+  - Andrew Chow
 date: 2021-11-05
 ---
 ## Introduction

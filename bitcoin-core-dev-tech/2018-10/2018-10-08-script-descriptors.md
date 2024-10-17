@@ -1,13 +1,14 @@
 ---
 title: Script Descriptors
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['wallet']
-speakers: ['Pieter Wuille']
+tags:
+  - descriptors
+speakers:
+  - Pieter Wuille
 date: 2018-10-08
-aliases: ['/bitcoin-core-dev-tech/2018-10-08-script-descriptors/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-10-08-script-descriptors/
 ---
-
 <https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md>
 
 I would like to talk about script descriptors. There's a number of projects we're working on and they are all kind of related. I'd like to clarify how things fit together.

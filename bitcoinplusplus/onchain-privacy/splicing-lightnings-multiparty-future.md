@@ -1,10 +1,11 @@
 ---
-title: "Splicing, Lightning's Multiparty Future"
+title: Splicing, Lightning's Multiparty Future
 transcript_by: ladyanarki via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=SOKNRHyGRvQ
-tags: ["splicing"]
-speakers: ["Dusty Dettmer"]
-categories: ["conference"]
+tags:
+  - splicing
+speakers:
+  - Dusty Dettmer
 date: 2023-03-14
 ---
 ## Introduction

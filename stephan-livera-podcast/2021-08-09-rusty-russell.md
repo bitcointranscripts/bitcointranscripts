@@ -1,8 +1,8 @@
 ---
 title: Lightning Offers / BOLT12 -The next big thing in Lightning?
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Rusty Russell']
+speakers:
+  - Rusty Russell
 date: 2021-08-09
 media: https://www.youtube.com/watch?v=KqKzOVH8W9g
 ---

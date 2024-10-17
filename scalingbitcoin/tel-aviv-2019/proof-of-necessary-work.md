@@ -1,9 +1,11 @@
 ---
-title: "Proof of necessary work: Succinct state verification with fairness guarantees"
+title: 'Proof of necessary work: Succinct state verification with fairness guarantees'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-systems']
-speakers: ['Assimakis Kattis']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Assimakis Kattis
 ---
 ## Introduction
 

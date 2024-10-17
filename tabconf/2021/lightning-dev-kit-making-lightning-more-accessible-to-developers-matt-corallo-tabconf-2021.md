@@ -1,13 +1,14 @@
 ---
-title: "Lightning Dev Kit: Making Lightning More Accessible to Developers"
+title: 'Lightning Dev Kit: Making Lightning More Accessible to Developers'
 transcript_by: ttiiggss via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=W-ajI5YleIo
-tags: ["lightning"]
-speakers: ["Matt Corallo"]
-categories: ["conference"]
+tags:
+  - lightning
+  - career
+speakers:
+  - Matt Corallo
 date: 2021-11-05
 ---
-
 ## Introduction
 
 So, I worked on Bitcoin Core for many many years, but I am not here to talk about that!  I now spend my time, full time at Square Crypto working on a project we call the Lightning  Dev Kit (LDK).  So, working to enable Lightning to be more accessible to developers and I'm here to talk about that and give the lay of the land for why it exists, what the state of the Lightning ecosystem is broadly, and why we think it's an important project and why Square is funding us, to work on it.

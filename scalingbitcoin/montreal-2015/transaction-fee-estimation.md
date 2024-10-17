@@ -1,9 +1,10 @@
 ---
-title: "How Wallets Can Handle Real Transaction Fees"
+title: How Wallets Can Handle Real Transaction Fees
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['fee-management']
-speakers: ['Bram Cohen']
+tags:
+  - fee-management
+speakers:
+  - Bram Cohen
 date: 2015-09-12
 media: https://www.youtube.com/watch?v=iKDC2DpzNbw&t=770s
 ---

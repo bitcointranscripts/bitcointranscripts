@@ -1,9 +1,11 @@
 ---
 title: Current And Future State Of Wallets
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightweight-client', 'psbt']
-speakers: ['Jonas Schnelli']
+tags:
+  - lightweight-client
+  - psbt
+speakers:
+  - Jonas Schnelli
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=CO2NXDWJa08
 ---

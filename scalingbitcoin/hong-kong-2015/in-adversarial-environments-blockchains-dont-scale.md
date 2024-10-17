@@ -1,12 +1,13 @@
 ---
 title: In Adversarial Environments Blockchains Dont Scale
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'incentives']
-speakers: ['Peter Todd']
+tags:
+  - security
+  - incentives
+speakers:
+  - Peter Todd
 media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=30m35s
 ---
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY1/2_security_and_incentives_2_todd.pdf>
 
 That was a very useful talk (on [security assumptions](http://diyhpl.us/wiki/transcripts/scalingbitcoin/hong-kong/security-assumptions/)), thank you Andrew.

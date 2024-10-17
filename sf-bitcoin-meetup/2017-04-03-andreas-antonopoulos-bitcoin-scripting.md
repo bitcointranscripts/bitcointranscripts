@@ -1,10 +1,11 @@
 ---
-title: "Advanced Bitcoin Scripting"
+title: Advanced Bitcoin Scripting
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['scripts-addresses']
+tags:
+  - scripts-addresses
 date: 2017-04-03
-speakers: ['Andreas Antonopoulos']
+speakers:
+  - Andreas Antonopoulos
 media: https://www.youtube.com/watch?v=yU3Sr07Qnxg
 ---
 Mastering Bitcoin on GitHub: https://github.com/bitcoinbook/bitcoinbook

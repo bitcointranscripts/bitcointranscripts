@@ -1,11 +1,13 @@
 ---
 title: Matsuo
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['security', 'research', 'cryptography']
-speakers: ["Shin'ichiro Matsuo"]
+tags:
+  - security
+  - research
+  - cryptography
+speakers:
+  - Shin'ichiro Matsuo
 ---
-
 bsafe.network
 
 Giving trust by security evaluation and bsafe.network

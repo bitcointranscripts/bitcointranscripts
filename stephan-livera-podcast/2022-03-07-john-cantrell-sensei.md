@@ -1,8 +1,8 @@
 ---
 title: Sensei- A new lightning node client based on BDK + LDK
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['John Cantrell']
+speakers:
+  - John Cantrell
 date: 2022-03-07
 media: https://www.youtube.com/watch?v=GYO5nzq4QoI
 ---

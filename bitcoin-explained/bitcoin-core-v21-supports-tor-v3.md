@@ -1,10 +1,13 @@
 ---
-title: "Bitcoin Core 0.21 Supports Tor V3"
+title: Bitcoin Core 0.21 Supports Tor V3
 transcript_by: jeffreyweier via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=KRPtbq8_1is
-tags: ["bitcoin-core", "anonymity-networks"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - anonymity-networks
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2020-10-15
 episode: 24
 ---

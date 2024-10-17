@@ -1,8 +1,8 @@
 ---
 title: ZKSnacks Blacklisting Coins
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Max Hillebrand']
+speakers:
+  - Max Hillebrand
 date: 2022-04-01
 media: https://www.youtube.com/watch?v=NtLCL9ztEuQ
 ---

@@ -1,11 +1,10 @@
 ---
 title: Lightning Specification Meeting - Agenda 1053
 transcript_by: Generated
-categories: ['meeting']
-tags: ['lightning']
+tags:
+  - lightning
 date: 2023-01-30
 ---
-
 Name: Lightning specification call
 
 Topic: Agenda below

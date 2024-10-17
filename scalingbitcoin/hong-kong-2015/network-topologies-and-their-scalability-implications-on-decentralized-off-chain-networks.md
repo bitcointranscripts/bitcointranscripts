@@ -1,13 +1,13 @@
 ---
-title: "Network Topologies and their scalability implications on decentralized off-chain networks"
+title: Network Topologies and their scalability implications on decentralized off-chain networks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Joseph Poon']
+tags:
+  - lightning
+speakers:
+  - Joseph Poon
 date: 2015-12-07
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=1h29m38s
 ---
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/1_layer2_3_poon.pdf>
 
 LN transactions are real Bitcoin transactions. These are real zero-confirmation transactions. What's interesting is that the original idea behind Bitcoin was solving the double-spending problem. When you move off-chain and off-block, you sort of have this opposite situation where you use double-spends to your advantage, spending from the same output, except you have this global consensus of block but you have this local ordering that you use through this lightning system of penalties through which you can update the balances between two people. Through this system, there is no delegation of custody to a third-party, you don't put your money into some exchange or whatever.

@@ -1,8 +1,8 @@
 ---
 title: Pickhardt Payments & Zero Base Fee for Lightning Network
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Rene Pickhardt']
+speakers:
+  - Rene Pickhardt
 date: 2022-03-27
 media: https://www.youtube.com/watch?v=WoVPkmT3gjY
 ---

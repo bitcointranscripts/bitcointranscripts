@@ -1,11 +1,14 @@
 ---
-title: "AssumeUTXO"
+title: AssumeUTXO
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['assumeUTXO', 'bitcoin-core']
+tags:
+  - assumeUTXO
+  - bitcoin-core
 date: 2019-06-07
-aliases: ['/bitcoin-core-dev-tech/2019-06-07-assumeutxo/']
-speakers: ["James O'Beirne"]
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-07-assumeutxo/
+speakers:
+  - James O'Beirne
 ---
 <https://twitter.com/kanzure/status/1137008648620838912>
 

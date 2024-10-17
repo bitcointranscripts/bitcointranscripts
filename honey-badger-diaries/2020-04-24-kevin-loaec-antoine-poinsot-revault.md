@@ -1,10 +1,12 @@
 ---
-title: "Revault Bitcoin vaults"
+title: Revault Bitcoin vaults
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['vaults']
+tags:
+  - vaults
 date: 2020-04-24
-speakers: ['Kevin Loaec', 'Antoine Poinsot']
+speakers:
+  - Kevin Loaec
+  - Antoine Poinsot
 media: https://www.youtube.com/watch?v=xDTCT75VwvU
 ---
 Aaron: So you guys built something. First tell me are you a company? Is this a startup? What is the story here?

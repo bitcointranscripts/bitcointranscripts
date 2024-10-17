@@ -1,9 +1,11 @@
 ---
-title: "Finding Bugs Automatically in Smart Contracts with Parameterized Specifications"
+title: Finding Bugs Automatically in Smart Contracts with Parameterized Specifications
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'security']
-speakers: ['Mooly Sagiv']
+tags:
+  - research
+  - security
+speakers:
+  - Mooly Sagiv
 ---
 <https://www.certora.com/pubs/sbc2020.pdf>
 

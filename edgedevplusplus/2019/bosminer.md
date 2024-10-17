@@ -1,14 +1,15 @@
 ---
 title: Challenges of developing bOSminer from scratch in Rust
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Jan Čapek']
+tags:
+  - mining
+speakers:
+  - Jan Čapek
 media: https://www.youtube.com/watch?v=hqxuWFpQlqY
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/bosminer]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/bosminer
 ---
-
 <https://braiins-os.org/>
 
 <https://twitter.com/kanzure/status/1171331418716278785>

@@ -1,14 +1,18 @@
 ---
 title: Tales from the Crypt with Andrew Poelstra
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['taproot', 'schnorr-signatures', 'musig', 'miniscript']
+tags:
+  - taproot
+  - schnorr-signatures
+  - musig
+  - miniscript
 date: 2019-06-18
-speakers: ['Andrew Poelstra']
+speakers:
+  - Andrew Poelstra
+episode: 80
+media: https://talesfromthecrypt.libsyn.com/tales-from-the-crypt-80-andrew-poelstra
 ---
 <https://twitter.com/kanzure/status/1160178010986876928>
-
-Podcast: <https://talesfromthecrypt.libsyn.com/tales-from-the-crypt-80-andrew-poelstra>
 
 ## How the idea of Taproot was formed
 

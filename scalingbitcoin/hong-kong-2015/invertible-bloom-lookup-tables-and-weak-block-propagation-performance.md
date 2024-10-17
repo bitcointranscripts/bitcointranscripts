@@ -1,9 +1,12 @@
 ---
-title: "Invertible Bloom Lookup Tables (IBLT) and weak block propagation performance"
+title: Invertible Bloom Lookup Tables (IBLT) and weak block propagation performance
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'bandwidth-reduction']
-speakers: ['Kalle Rosenbaum', 'Rusty Russell']
+tags:
+  - research
+  - bandwidth-reduction
+speakers:
+  - Kalle Rosenbaum
+  - Rusty Russell
 date: 2015-12-06
 media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s
 ---

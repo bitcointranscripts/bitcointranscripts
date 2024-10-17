@@ -1,9 +1,10 @@
 ---
 title: Working on Scripts with logical opcodes
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['scripts-addresses']
-speakers: ['Thomas Kerin']
+tags:
+  - scripts-addresses
+speakers:
+  - Thomas Kerin
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=A4l4waikDso
 ---

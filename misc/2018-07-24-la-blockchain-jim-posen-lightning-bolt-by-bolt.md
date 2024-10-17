@@ -1,19 +1,14 @@
 ---
 title: Lightning Network BOLT by BOLT
 transcript_by: Gloria Zhao
-categories: ['meetup']
-tags: ['lightning']
-speakers: ['Jim Posen']
+tags:
+  - lightning
+speakers:
+  - Jim Posen
 date: 2018-07-24
 media: https://www.youtube.com/watch?v=Ysj2yobFMF4
 ---
-
-
-Topic: Lightning Network BOLT by BOLT
-
 Location: LA Blockchain Meetup
-
-Transcript by: glozow
 
 ## Introduction
 

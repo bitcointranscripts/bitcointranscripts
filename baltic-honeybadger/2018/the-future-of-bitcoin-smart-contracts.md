@@ -1,9 +1,10 @@
 ---
 title: The Future Of Bitcoin Smart Contracts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['contract-protocols']
-speakers: ['Max Keidun']
+tags:
+  - contract-protocols
+speakers:
+  - Max Keidun
 ---
 <https://twitter.com/kanzure/status/1043419056492228608>
 

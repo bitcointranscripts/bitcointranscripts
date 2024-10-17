@@ -1,8 +1,8 @@
 ---
-title: "Keynote"
+title: Keynote
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Joi Ito']
+speakers:
+  - Joi Ito
 date: 2017-11-05
 media: https://www.youtube.com/watch?v=3pd6xHjLbhs&t=866s
 ---

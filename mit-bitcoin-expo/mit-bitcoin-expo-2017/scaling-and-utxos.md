@@ -1,12 +1,11 @@
 ---
 title: Scaling and UTXO commitments
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Peter Todd']
+speakers:
+  - Peter Todd
 date: 2017-03-04
 media: https://www.youtube.com/watch?v=0mVOq1jaR1U&feature=youtu.be&t=1h20m
 ---
-
 <https://twitter.com/kanzure/status/838481311992012800>
 
 Thank you. I'll admit the last one was probably the most fun other than. On the schedule, it said scaling and UTXO and I threw something together. <a href="https://petertodd.org/2016/delayed-txo-commitments">TXO commitments</a> were a bold idea but recently there were some observations that make it more interesting. I thought I would start by going through what problem they are actually solving.

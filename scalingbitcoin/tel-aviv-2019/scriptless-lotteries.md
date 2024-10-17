@@ -1,15 +1,12 @@
 ---
-title: Scriptless Lotteries
+title: Scriptless Bitcoin Lotteries from Oblivious Transfer
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography']
-speakers: ['Lloyd Fournier']
+tags:
+  - cryptography
+  - adaptor-signatures
+speakers:
+  - Lloyd Fournier
 ---
-
-Scriptless lotteries on bitcoin from oblivious transfer
-
-Lloyd Fournier (lloyd.fourn@gmail.com)
-
 <https://twitter.com/kanzure/status/1171717583629934593>
 
 # Introduction

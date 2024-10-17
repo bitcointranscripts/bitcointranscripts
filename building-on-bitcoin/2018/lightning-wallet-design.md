@@ -1,9 +1,11 @@
 ---
 title: Designing Lightning Wallets for the Bitcoin Users
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'ux']
-speakers: ['Patricia Estevao']
+tags:
+  - lightning
+  - ux
+speakers:
+  - Patricia Estevao
 media: https://www.youtube.com/watch?v=S2TgCUU_WDo
 ---
 Good morning everyone. Thank you for being here. Thank you to the organizers for this event. My talk is about designing lightning wallets for bitcoin users. I am talking about UX. But really, UX is a lot more than what wallets look like. It's from bip39 and making backups much easier, to anything you cna imagine, to make it easier for bitcoin to use bitcoin.

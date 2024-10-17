@@ -1,9 +1,10 @@
 ---
-title: "How Much Privacy is Enough? Threats, Scaling, and Trade-offs in Blockchain Privacy Protocols"
+title: How Much Privacy is Enough? Threats, Scaling, and Trade-offs in Blockchain Privacy Protocols
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy-problems']
-speakers: ['Ian Miers']
+tags:
+  - privacy-problems
+speakers:
+  - Ian Miers
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=YgtF7psIKWg&t=3700
 ---

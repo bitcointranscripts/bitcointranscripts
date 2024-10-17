@@ -1,10 +1,9 @@
 ---
 title: Bitcoin Maximalism Dissected
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Giacomo Zucco']
+speakers:
+  - Giacomo Zucco
 ---
-
 Bitcoin maximalism dissected
 
 Good morning everyone. I am very happy to be here at Baltic Honeybadger. Last year I gave a scaling presentation. I opened the conference with a scaling presentation. This year in order to compensate, I will be super serious. This will be the most boring presentation at the conference. I am going to try to dissect and formalize bitcoin maximalism.

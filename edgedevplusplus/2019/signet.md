@@ -1,14 +1,15 @@
 ---
 title: Signet annd its uses for development
 transcript_by: Bryan Bishop
-categories: ['conference', 'workshop']
-tags: ['signet']
-speakers: ['Kalle Alm']
+tags:
+  - signet
+speakers:
+  - Kalle Alm
 media: https://www.youtube.com/watch?v=btzLev5bO_M
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/signet]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/signet
 ---
-
 <https://twitter.com/kanzure/status/1171310731100381184>
 
 <https://explorer.bc-2.jp/>

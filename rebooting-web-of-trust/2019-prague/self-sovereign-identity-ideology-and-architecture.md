@@ -1,10 +1,9 @@
 ---
 title: Self Sovereign Identity Ideology And Architecture
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Christopher Allen']
+speakers:
+  - Christopher Allen
 ---
-
 <https://twitter.com/kanzure/status/1168566218040762369>
 
 # Paralelni Polis

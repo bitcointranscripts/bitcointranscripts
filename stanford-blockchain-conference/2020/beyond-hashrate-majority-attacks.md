@@ -1,9 +1,12 @@
 ---
-title: "Beyond 51% attacks"
+title: Beyond 51% attacks
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'security-problems', 'ethereum']
-speakers: ['Vitalik Buterin']
+tags:
+  - research
+  - security-problems
+  - ethereum
+speakers:
+  - Vitalik Buterin
 date: 2020-02-20
 ---
 <https://twitter.com/kanzure/status/1230624835996250112>

@@ -1,10 +1,11 @@
 ---
-title: "Long-Term Trust and Analog Computers"
+title: Long-Term Trust and Analog Computers
 transcript_by: kouloumos via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=kf48oPoiHX0
-tags: ["codex32"]
-speakers: ["Andrew Poelstra"]
-categories: ["conference"]
+tags:
+  - codex32
+speakers:
+  - Andrew Poelstra
 date: 2022-05-07
 ---
 What I am here to talk to you about are analog computers and long-term trust.

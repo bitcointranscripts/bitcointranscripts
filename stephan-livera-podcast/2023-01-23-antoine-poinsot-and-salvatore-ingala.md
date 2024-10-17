@@ -1,8 +1,9 @@
 ---
 title: Bitcoin Miniscript and what it enables
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Antoine Poinsot', 'Salvatore Ingala']
+speakers:
+  - Antoine Poinsot
+  - Salvatore Ingala
 date: 2023-01-23
 media: https://www.youtube.com/watch?v=D5Q7yB_txkU
 ---

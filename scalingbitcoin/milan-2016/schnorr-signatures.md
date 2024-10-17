@@ -1,9 +1,10 @@
 ---
-title: "Schnorr Signatures for Bitcoin"
+title: Schnorr Signatures for Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['schnorr-signatures']
-speakers: ['Pieter Wuille']
+tags:
+  - schnorr-signatures
+speakers:
+  - Pieter Wuille
 date: 2016-10-10
 media: https://www.youtube.com/watch?v=_Z0ID-0DOnc&feature=youtu.be&t=2297
 ---

@@ -1,14 +1,17 @@
 ---
 title: Lightning network topology, its creation and maintenance
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['topology', 'lightning', 'routing']
-speakers: ['Carla Kirk-Cohen']
+tags:
+  - topology
+  - lightning
+  - routing
+speakers:
+  - Carla Kirk-Cohen
 media: https://www.youtube.com/watch?v=j2l_Ut4k1qI
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-topology]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-topology
 ---
-
 # Introduction
 
 Alright. Give me a second to test this. Alright. Antoine has taken you through the routing layer. I'm going to take you through what the lightning network looks like today. This is the current topology of the network and how this came about, and some approaches for maintaining the network and making the graph look like we want it to look.

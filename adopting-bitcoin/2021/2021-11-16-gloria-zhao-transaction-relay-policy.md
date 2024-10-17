@@ -1,10 +1,11 @@
 ---
-title: "Transaction Relay Policy for L2 Developers"
-speakers: ['Gloria Zhao']
+title: Transaction Relay Policy for L2 Developers
+speakers:
+  - Gloria Zhao
 date: 2021-11-16
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['transaction-relay-policy']
+tags:
+  - transaction-relay-policy
 media: https://www.youtube.com/watch?v=fbWSQvJjKFs
 ---
 Slides: <https://github.com/glozow/bitcoin-notes/blob/master/Tx%20Relay%20Policy%20for%20L2%20Devs%20-%20Adopting%20Bitcoin%202021.pdf>

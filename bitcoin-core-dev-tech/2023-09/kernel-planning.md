@@ -1,11 +1,12 @@
 ---
 title: Kernel Planning
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'build-system']
+tags:
+  - bitcoin-core
+  - build-system
 date: 2023-09-20
-speakers: [thecharlatan]
+speakers:
+  - thecharlatan
 ---
-
 Undecided on where to take this next
 
 Carl purposely didn't plan beyond what we have

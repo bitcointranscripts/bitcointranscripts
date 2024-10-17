@@ -1,12 +1,14 @@
 ---
 title: Security Assumptions
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'research', 'cryptography']
-speakers: ['Andrew Poelstra']
+tags:
+  - security
+  - research
+  - cryptography
+speakers:
+  - Andrew Poelstra
 media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=9m20s
 ---
-
 Hi, welcome back.
 
 I am a developer for [libsecp256k1](https://github.com/bitcoin/secp256k1). It's a library that does the underlying traditional cryptography used in Bitcoin. I am going to talk about security assumptions, security models and trust models. I am going to give a high-level overview of how we should be thinking about these issues for scaling and efficiency and decentralization. Bitcoin is a crypto system. Everything about it is a crypto system. It needs to be designed with an adversarial mindset, even in an adversarial setting.

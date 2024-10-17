@@ -1,9 +1,7 @@
 ---
 title: Topics
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
-
 Rebooting Web of Trust topic selection
 
 Dictionary terms: we have a glossary that I wrote 6 months ago which by definition glosses everything. A dictionary would give an opportunity to go into more depth, to look at disagreements without getting lost in the weeds, and also talk about some foundational assumptions.

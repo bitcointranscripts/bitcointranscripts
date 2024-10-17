@@ -1,15 +1,11 @@
 ---
-title: Multi Party Channels In The Utxo Model Challenges And Opportunities
+title: 'Multi Party Channels In The UTXO Model: Challenges And Opportunities'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - research
+speakers:
+  - Olaoluwa Osuntokun
 ---
-
-Multi-party channels in the UTXO model: Challenges and opportunities
-
-Olaoluwa Osuntokun (Lightning Labs) (roasbeef)
-
 <https://twitter.com/kanzure/status/1048468663089618944>
 
 # Introductions

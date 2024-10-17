@@ -1,12 +1,12 @@
 ---
 title: Cross Curve Atomic Swaps
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['adaptor-signatures']
+tags:
+  - adaptor-signatures
 date: 2018-03-05
-aliases: ['/bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-03-05-cross-curve-atomic-swaps/
 ---
-
 <https://twitter.com/kanzure/status/971827042223345664>
 
 Draft of an upcoming scriptless scripts paper. This was at the beginning of 2017. But now an entire year has gone by.

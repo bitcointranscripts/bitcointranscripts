@@ -1,7 +1,8 @@
 ---
 title: Kernel
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'build-system']
+tags:
+  - bitcoin-core
+  - build-system
 date: 2024-04-10
 ---
 The kernel project is just about done with its first stage (separating the validation logic into a separate library), so a discussion about the second stage of the project, giving the library a usable external API was held. Arguments around two questions were collected and briefly debated.

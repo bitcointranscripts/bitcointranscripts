@@ -1,13 +1,13 @@
 ---
-title: "Bitcoin P2P Encryption"
-speakers: ['Jonas Schnelli']
+title: Bitcoin P2P Encryption
+speakers:
+  - Jonas Schnelli
 date: 2019-06-08
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['v2-p2p-transport']
+tags:
+  - v2-p2p-transport
 media: https://www.youtube.com/watch?v=mcJa1YvzrFs
 ---
-
 bip324: v2 message transport protocol
 
 <https://twitter.com/kanzure/status/1137312478373851136>

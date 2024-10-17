@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Lightning Privacy - FUD and Facts
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Anthony Ronning']
+speakers:
+  - Anthony Ronning
 date: 2021-05-21
 media: https://stephanlivera.com/download-episode/3343/276.mp3
 ---

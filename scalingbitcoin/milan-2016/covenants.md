@@ -1,9 +1,11 @@
 ---
-title: "Bitcoin Covenants: Opportunities and Challenges"
+title: 'Bitcoin Covenants: Opportunities and Challenges'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['vaults', 'covenants']
-speakers: ['Emin Gun Sirer']
+tags:
+  - vaults
+  - covenants
+speakers:
+  - Emin Gun Sirer
 date: 2016-10-09
 media: https://www.youtube.com/watch?v=_Z0ID-0DOnc&t=10241s
 ---

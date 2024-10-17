@@ -1,13 +1,14 @@
 ---
 title: Trampoline Routing
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['trampoline-payments', 'amp']
-speakers: ['Bastien Teinturier']
+tags:
+  - trampoline-payments
+  - amp
+speakers:
+  - Bastien Teinturier
 date: 2019-10-20
 media: https://www.youtube.com/watch?v=1E-KhLA6Gck
 ---
-
 The Lightning Conference Day 2 (Stage 2)
 
 Slides: <https://docs.google.com/presentation/d/1bFu33_YFsRVUSEN-Vff5-wrxMabOFl2ck7ZTiVsp5ds/>

@@ -1,15 +1,12 @@
 ---
 title: The Truth About 'Power' in Bitcoin
 transcript_by: Michael Folkson
-categories: ['podcast']
-speakers: ["James O’Beirne"]
+speakers:
+  - James O’Beirne
 date: 2019-04-11
+media: https://stephanlivera.com/episode/66/
+source_file: https://stephanlivera.com/download-episode/1049/66.mp3
 ---
-
-Stephan Livera Podcast with James O’Beirne - April 11th 2019
-
-Podcast: <https://stephanlivera.com/episode/66/>
-
 <https://twitter.com/kanzure/status/1198289594069983237>
 
 Stephan Livera: Hello and welcome to the Stephan Livera podcast focused on Bitcoin and Austrian economics. Today my guest is James O’Beirne, Bitcoin Core engineer working at Chaincode Labs. Here’s the interview. James, I’m a fan of what you are working on over at Chaincode Labs and welcome to the show.

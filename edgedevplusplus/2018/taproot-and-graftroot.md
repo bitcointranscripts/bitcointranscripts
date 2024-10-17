@@ -1,12 +1,16 @@
 ---
 title: Taproot and Graftroot
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mast', 'p2c', 'taproot']
-speakers: ['Greg Sanders']
+tags:
+  - mast
+  - p2c
+  - taproot
+speakers:
+  - Greg Sanders
 media: https://www.youtube.com/watch?v=h2bvOal1u5k
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/taproot-and-graftroot]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/taproot-and-graftroot
 ---
 <https://twitter.com/kanzure/status/1047764770265284608>
 

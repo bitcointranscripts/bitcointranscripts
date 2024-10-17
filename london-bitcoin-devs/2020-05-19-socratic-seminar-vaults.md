@@ -1,15 +1,12 @@
 ---
 title: Socratic Seminar - Vaults and OP_CHECKTEMPLATEVERIFY
 transcript_by: Michael Folkson
-categories: ['meetup']
+tags:
+    - vaults
+    - op-checktemplateverify
 date: 2020-05-19
 media: https://www.youtube.com/watch?v=34jMGiCAmQM
 ---
-
-Name: Socratic Seminar
-
-Location: London BitDevs (online)
-
 Pastebin of the resources discussed: <https://pastebin.com/3Q8MSwky>
 
 Twitter announcement: https://twitter.com/kanzure/status/1262821838654255104?s=20

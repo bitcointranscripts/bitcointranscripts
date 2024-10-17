@@ -1,8 +1,9 @@
 ---
 title: Socratic Seminar - Signet
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['signet', 'soft-fork-activation']
+tags:
+  - signet
+  - soft-fork-activation
 date: 2020-08-19
 media: https://www.youtube.com/watch?v=b0AiucAuX3E
 ---

@@ -1,11 +1,11 @@
 ---
-title: "Prism - Scaling bitcoin by 10,000x"
+title: Prism - Scaling bitcoin by 10,000x
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Lei Yang']
+tags:
+  - research
+speakers:
+  - Lei Yang
 ---
-
 <https://twitter.com/kanzure/status/1230634530110730241>
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tel-aviv-2019/prism/>

@@ -1,5 +1,0 @@
----
-title: Chaincode Residency
----
-
-{{< childpages >}}

@@ -1,18 +1,16 @@
 ---
 title: Routing Problems and Solutions
 transcript_by: Caralie Chrisco
-categories: ['conference']
-tags: ['lightning', 'routing']
-speakers: ['Carla Kirk-Cohen']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Carla Kirk-Cohen
 date: 2019-09-09
 media: https://youtu.be/1O-bhcbh9vE
-aliases: [/'scalingbitcoin/tel-aviv-2019/edgedevplusplus/2019-09-09-carla-kirk-cohen-routing-problems-and-solutions']
+aliases:
+  - /'scalingbitcoin/tel-aviv-2019/edgedevplusplus/2019-09-09-carla-kirk-cohen-routing-problems-and-solutions'
 ---
-
-
-Topic: Routing Problems and Solutions
-
-Location: Tel-Aviv 2019
 
 ## Introduction
 

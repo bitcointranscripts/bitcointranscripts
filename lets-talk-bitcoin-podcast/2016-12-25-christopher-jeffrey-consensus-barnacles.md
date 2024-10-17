@@ -1,16 +1,14 @@
 ---
 title: Consensus Barnacles
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['consensus-enforcement']
+tags:
+  - consensus-enforcement
 date: 2016-12-25
-speakers: ['Christopher Jeffrey']
+speakers:
+  - Christopher Jeffrey
+episode: 319
 media: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-319-barnacles-of-consensus
 ---
-
-Location: Let’s Talk Bitcoin podcast (Episode 319)
-
-
 SF Bitcoin Devs presentation on Bcoin: https://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2016-09-28-christopher-jeffrey-bcoin/
 
 Breaking Bitcoin presentation on consensus pitfalls: https://diyhpl.us/wiki/transcripts/breaking-bitcoin/2017/2017-09-10-christopher-jeffrey-consensus-pitfalls/

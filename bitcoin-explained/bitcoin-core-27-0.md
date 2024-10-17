@@ -4,7 +4,6 @@ transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-92-bitcoin-core-27-0-c4wla
 tags: ['bitcoin-core']
 speakers: []
-categories: []
 summary: "In this episode of Bitcoin, Explained, Aaron and Sjors explain what new features are included in the upcoming Bitcoin Core 27.0 release."
 episode: 92
 date: 2024-04-10

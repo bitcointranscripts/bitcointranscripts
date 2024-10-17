@@ -2,9 +2,10 @@
 title: Mensaje de señalización
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['wallet']
-speakers: ['Kalle Alm']
+tags:
+  - wallet
+speakers:
+  - Kalle Alm
 date: 2018-10-10
 ---
 kallewoof and others

@@ -1,16 +1,11 @@
 ---
 title: Welcome
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jonathan Harvey Buschel', 'Jinglan Wang']
+speakers:
+  - Jonathan Harvey Buschel
+  - Jinglan Wang
 media: https://www.youtube.com/watch?v=lIgjogLipvk
 ---
-
-Welcome session
-
-* Jonathan Harvey Buschel
-* Jinglan Wang
-
 We are going to get started in about two minutes, so please take your seats. We are also testing the mic for the live stream. If you have friends who are not here, feel free to tweet them, email them or post their facebook page or instagram whatever.
 
 (buzzing/feedback continues)

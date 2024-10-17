@@ -1,8 +1,8 @@
 ---
 title: What are Ordinals?
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Casey Rodarmor']
+speakers:
+  - Casey Rodarmor
 date: 2023-02-02
 media: https://www.youtube.com/watch?v=mwKN3jD8dmU
 ---

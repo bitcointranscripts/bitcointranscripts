@@ -1,12 +1,14 @@
 ---
 title: Abstract Thinking About Consensus Systems
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['consensus-enforcement']
-speakers: ['Luke Dashjr']
+tags:
+  - consensus-enforcement
+speakers:
+  - Luke Dashjr
 media: https://www.youtube.com/watch?v=INku7GsxhXY
 date: 2018-10-05
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/abstract-thinking-about-consensus-systems]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/abstract-thinking-about-consensus-systems
 ---
 <https://twitter.com/kanzure/status/1048039485550690304>
 

@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Grants, Design & Crypto Patents (COPA)
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Steve Lee']
+speakers:
+  - Steve Lee
 date: 2020-09-15
 media: https://stephanlivera.com/download-episode/2480/211.mp3
 ---

@@ -1,9 +1,11 @@
 ---
-title: "Developing secure Bitcoin contracts using BitML"
+title: Developing secure Bitcoin contracts using BitML
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'contract-protocols']
-speakers: ['Stefano Lande']
+tags:
+  - research
+  - contract-protocols
+speakers:
+  - Stefano Lande
 date: 2019-09-11
 media: https://www.youtube.com/watch?v=-gdfxNalDIc&t=5542s
 ---

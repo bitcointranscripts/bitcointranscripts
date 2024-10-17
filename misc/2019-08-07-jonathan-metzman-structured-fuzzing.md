@@ -1,9 +1,10 @@
 ---
-title: "Going Beyond Coverage-Guided Fuzzing with Structured Fuzzing"
+title: Going Beyond Coverage-Guided Fuzzing with Structured Fuzzing
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['developer-tools']
-speakers: ['Jonathan Metzman']
+tags:
+  - developer-tools
+speakers:
+  - Jonathan Metzman
 date: 2019-08-07
 media: https://www.youtube.com/watch?v=TtPXYPJ5_eE
 ---
@@ -12,8 +13,6 @@ Location: Black Hat USA 2019
 Blackhat: https://www.blackhat.com/us-19/briefings/schedule/#going-beyond-coverage-guided-fuzzing-with-structured-fuzzing-16110
 
 Slides: https://i.blackhat.com/USA-19/Wednesday/us-19-Metzman-Going-Beyond-Coverage-Guided-Fuzzing-With-Structured-Fuzzing.pdf
-
-Transcript completed by: Michael Folkson
 
 ## Intro
 

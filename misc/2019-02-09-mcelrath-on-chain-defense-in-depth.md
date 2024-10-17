@@ -1,7 +1,7 @@
 ---
 title: "On-Chain Defense in Depth"
 transcript_by: Bryan Bishop
-tags: ['vaults', 'op-checksigfromstack', 'taproot']
+tags: ['vaults', 'op_checksigfromstack', 'taproot']
 speakers: ['Bob McElrath']
 date: 2019-02-09
 media: https://vimeo.com/316301424

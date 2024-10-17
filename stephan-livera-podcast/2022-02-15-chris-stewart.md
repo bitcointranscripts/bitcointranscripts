@@ -1,8 +1,8 @@
 ---
 title: Bitcoin DLCs & Stablechannels
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Chris Stewart']
+speakers:
+  - Chris Stewart
 date: 2022-02-15
 media: https://www.youtube.com/watch?v=5nhN8QMtDmU
 ---

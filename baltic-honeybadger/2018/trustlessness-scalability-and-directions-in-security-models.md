@@ -1,11 +1,12 @@
 ---
 title: Trustlessness Scalability And Directions In Security Models
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'scalability']
-speakers: ['Matt Corallo']
+tags:
+  - security
+  - scalability
+speakers:
+  - Matt Corallo
 ---
-
 Trustlessness, scalability and directions in security models
 
 <https://twitter.com/kanzure/status/1043397023846883329>

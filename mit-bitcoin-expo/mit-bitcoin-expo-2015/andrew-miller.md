@@ -1,9 +1,12 @@
 ---
-title: "Step by Step Towards Writing a Safe Contract: Insights from an Undergraduate Ethereum Lab"
+title: 'Step by Step Towards Writing a Safe Contract: Insights from an Undergraduate Ethereum Lab'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['contract-protocols', 'ethereum']
-speakers: ['Andrew Miller', 'Elaine Shi']
+tags:
+  - contract-protocols
+  - ethereum
+speakers:
+  - Andrew Miller
+  - Elaine Shi
 ---
 Next up I want to introduce Elaine Shi and Andrew Miller from University of Maryland. Andrew is also on the zerocash team.
 

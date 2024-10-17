@@ -1,8 +1,8 @@
 ---
 title: What’s The Problem With Bitcoin Surveillance?
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Chris Belcher']
+speakers:
+  - Chris Belcher
 date: 2020-04-21
 media: https://stephanlivera.com/download-episode/1955/167.mp3
 ---

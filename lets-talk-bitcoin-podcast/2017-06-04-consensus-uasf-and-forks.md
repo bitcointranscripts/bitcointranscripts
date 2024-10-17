@@ -1,10 +1,12 @@
 ---
-title: "On Consensus and All Kinds of Forks"
+title: On Consensus and All Kinds of Forks
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['soft-fork-activation']
-speakers: ['Andreas Antonopoulos']
+tags:
+  - soft-fork-activation
+speakers:
+  - Andreas Antonopoulos
 date: 2017-06-04
+episode: 333
 media: https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-333-on-consensus-and-all-kinds-of-forks
 ---
 ## User activated soft forks vs hard forks

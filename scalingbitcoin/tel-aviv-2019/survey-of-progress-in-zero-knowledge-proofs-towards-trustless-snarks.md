@@ -1,9 +1,10 @@
 ---
-title: "A Survey of Progress in Succinct Zero Knowledge Proofs: Towards Trustless SNARKs"
+title: 'A Survey of Progress in Succinct Zero Knowledge Proofs: Towards Trustless SNARKs'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Ben Fisch']
+tags:
+  - proof-systems
+speakers:
+  - Ben Fisch
 date: 2019-09-11
 media: https://www.youtube.com/watch?v=-gdfxNalDIc&t=1752s
 ---

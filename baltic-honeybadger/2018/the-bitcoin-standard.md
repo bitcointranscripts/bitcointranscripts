@@ -1,10 +1,9 @@
 ---
 title: The Bitcoin Standard
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Saifedean Ammous']
+speakers:
+  - Saifedean Ammous
 ---
-
 The bitcoin standard as a layered scaling solution
 
 <https://twitter.com/kanzure/status/1043425514801844224>

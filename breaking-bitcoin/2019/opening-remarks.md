@@ -1,9 +1,7 @@
 ---
 title: Opening Remarks
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
-
 Opening remarks
 
 <https://twitter.com/kanzure/status/1137273436332576768>

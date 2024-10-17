@@ -1,12 +1,12 @@
 ---
 title: Research wishlist
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['research']
+tags:
+  - research
 date: 2022-10-12
-aliases: ['/bitcoin-core-dev-tech/2022-10-12-research-wishlist/']
+aliases:
+  - /bitcoin-core-dev-tech/2022-10-12-research-wishlist/
 ---
-
 <https://docs.google.com/document/d/1oRCeDzY3zH2ZY-BUYIVfJ1GMkvLlqKHWCFdtS62QWAo/edit>
 
 # Introduction

@@ -1,12 +1,13 @@
 ---
 title: BIP Taproot and BIP Tapscript
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['taproot', 'tapscript']
-speakers: ['Pieter Wuille']
+tags:
+  - taproot
+  - tapscript
+speakers:
+  - Pieter Wuille
 date: 2019-12-16
 ---
-
 slides: <https://prezi.com/view/AlXd19INd3isgt3SvW8g/>
 
 <https://twitter.com/kanzure/status/1208438837845929987>

@@ -1,17 +1,18 @@
 ---
-title: Lnd
+title: Lightning Labs and LND
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['lightning']
-speakers: ['Olaoluwa Osuntokun', 'Conner Fromknecht']
+tags:
+  - lightning
+  - lnd
+speakers:
+  - Olaoluwa Osuntokun
+  - Conner Fromknecht
 date: 2018-12-14
+episode: 36
+media: https://noded.org/podcast/noded-0360-with-olaoluwa-osuntokun-and-conner-fromknecht/
 ---
-
-Noded podcast with Laolu Osuntokun and Conner Fromknecht - December 14th 2018
-
 <https://twitter.com/kanzure/status/1089187758931890178>
 
-Podcast: <https://noded.org/podcast/noded-0360-with-olaoluwa-osuntokun-and-conner-fromknecht/>
 
 Pierre: Welcome to the Noded Bitcoin podcast. This is episode 36. We’re joined with Laolu and Conner from Lightning Labs as well as my co-host Michael Goldstein. How’s it going guys?
 

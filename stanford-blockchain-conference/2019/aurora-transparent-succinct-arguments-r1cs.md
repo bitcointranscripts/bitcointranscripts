@@ -1,9 +1,11 @@
 ---
-title: "Aurora: Transparent Succinct Arguments for R1CS"
+title: 'Aurora: Transparent Succinct Arguments for R1CS'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-systems']
-speakers: ['Alessandro Chiesa']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Alessandro Chiesa
 ---
 <https://twitter.com/kanzure/status/1090741190100545536>
 

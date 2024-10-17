@@ -1,14 +1,12 @@
 ---
 title: Bitcoin Core V0.17
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['research']
-speakers: ['John Newbery']
+tags:
+  - bitcoin-core
+speakers:
+  - John Newbery
 media: https://www.youtube.com/watch?v=f33HlAvJUFw
 ---
-
-Bitcoin Core v0.17
-
 slides: <https://www.dropbox.com/s/9kt32069hoxmgnt/john-newbery-bitcoincore0.17.pptx>
 
 <https://twitter.com/kanzure/status/1031960170027536384>

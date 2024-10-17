@@ -1,13 +1,14 @@
 ---
-title: "Scaling with LND"
+title: Scaling with LND
 transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=W-Ev_MZAdgA
-tags: ["Lightning", "Lnd"]
-speakers: ["Alex Bosworth"]
-categories: ["conference"]
+tags:
+  - lightning
+  - lnd
+speakers:
+  - Alex Bosworth
 date: 2021-11-05
 ---
-
 ## Intro
 
 I wanted to talk about scaling lightning using LND. I started working at Lightning Labs three years ago and come really a long way. I started working with LND before that when I worked at BitGo. That was the barest, almost didn't work, it was crashing everyday type of scenario. Now, three years later, we're trying to scale this to millions of people. We're trying to scale this to millions of payments. I wanted to cover how do we do that? How do we do that with LND software? A lot of people throw out scaling as how do we scale LND? A lot of the answer to that depends on how do you even define what scaling is? I want to scale maybe the amount that I put on my node. Sometimes people come up to ask me, I have my Raspberry Pi and I put on $1,000 on there, but now I'm comfortable with it. I want to go up to $10,000 or $100,000, but how do I scale that volume? I'm afraid something's going to happen to that Raspberry Pi. Then there's availability. The same thing with the Raspberry Pi nodes. Maybe my internet cuts out, I have a storm or something. How do I scale to make sure that I have super high uptime? Then there's latency. How quickly can I make a payment across the network? Then there's decentralization. There're all sorts of different aspects to scale is what I'm saying.

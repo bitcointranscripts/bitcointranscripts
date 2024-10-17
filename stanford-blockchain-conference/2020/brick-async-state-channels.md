@@ -1,10 +1,9 @@
 ---
 title: Brick Async State Channels
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Georgia Avarikioti']
+speakers:
+  - Georgia Avarikioti
 ---
-
 Brick: Asynchronous State Channels
 
 <https://twitter.com/kanzure/status/1230943445398614016>

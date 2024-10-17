@@ -1,19 +1,11 @@
 ---
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['research', 'lightning']
+tags:
+  - research
+  - lightning
 date: 2021-07-06
 ---
-
-Name: Socratic Seminar
-
-Topic: Fee bumping and layer 2 protocols
-
-Location: Bitcoin Sydney (online)
-
-Video: No video posted online
-
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
 Agenda: <https://github.com/bitcoin-sydney/socratic/blob/master/README.md#2021-07>

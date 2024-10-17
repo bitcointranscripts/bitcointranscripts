@@ -1,8 +1,8 @@
 ---
 title: Is Consumerism at Odds With Privacy in Bitcoin? JoinMarket, PayJoin, SNICKER
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Adam Gibson']
+speakers:
+  - Adam Gibson
 date: 2020-02-16
 media: https://stephanlivera.com/download-episode/1769/149.mp3
 ---

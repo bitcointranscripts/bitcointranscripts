@@ -1,13 +1,16 @@
 ---
-title: "Blockchain Design Patterns: Layers and scaling approaches"
+title: 'Blockchain Design Patterns: Layers and scaling approaches'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['taproot', 'scalability']
-speakers: ['Andrew Poelstra', 'David Vorick']
+tags:
+  - taproot
+  - scalability
+speakers:
+  - Andrew Poelstra
+  - David Vorick
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/blockchain-design-patterns]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/blockchain-design-patterns
 ---
-
 <https://twitter.com/kanzure/status/1171400374336536576>
 
 ## Introduction

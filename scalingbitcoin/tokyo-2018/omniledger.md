@@ -1,16 +1,9 @@
 ---
-title: Omniledger
+title: 'OmniLedger: A Secure, Scale-Out, Decentralized Ledger via Sharding'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Eleftherios Kokoris-Kogias']
+speakers:
+  - Eleftherios Kokoris-Kogias
 ---
-
-Omniledger: A secure, scale-out, decentralized ledger via sharding
-
-Eleftherios Kokoris-Kogias, Philipp Jovanovic, Linus Gasser, Nicolas Gailly, Ewa Syta and Bryan Ford (Ecole Polytechnique Fédérale de Lausanne)
-
-(LefKok)
-
 paper: <https://eprint.iacr.org/2017/406.pdf>
 
 <https://twitter.com/kanzure/status/1048733316839432192>

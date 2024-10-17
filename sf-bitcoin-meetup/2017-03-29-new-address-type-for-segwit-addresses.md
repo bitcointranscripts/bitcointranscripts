@@ -1,15 +1,13 @@
 ---
 title: New Address Type For Segwit Addresses
-transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['bech32']
+transcript_by: Bryan Bishop, Michael Folkson
+tags:
+  - bech32
 date: 2017-03-29
-speakers: ['Pieter Wuille']
+speakers:
+  - Pieter Wuille
 media: https://www.youtube.com/watch?v=NqiN9VFE4CU
 ---
-
-Topic: Bech32 addresses for Bitcoin
-
 Slides: <https://prezi.com/gwnjkqjqjjbz/bech32-a-base32-address-format/>
 
 Proposal: <https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki>
@@ -17,8 +15,6 @@ Proposal: <https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki>
 Demo website: <http://bitcoin.sipa.be/bech32/demo/demo.html>
 
 Twitter announcement: <https://twitter.com/kanzure/status/847569047902273536>
-
-Transcript completed by: Bryan Bishop Edited by: Michael Folkson
 
 ## Intro
 

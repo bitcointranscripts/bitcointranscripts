@@ -1,16 +1,13 @@
 ---
-title: Oliver Gugger, LSAT
+title: 'LSAT: Your Ticket Aboard The Lightning-Native Web'
 transcript_by: Michael Folkson
-categories: ['meetup']
 date: 2020-05-16
-speakers: ['Oliver Gugger']
+tags:
+  - lightning
+speakers:
+  - Oliver Gugger
 media: https://www.youtube.com/watch?v=IW08RJUpzw0
 ---
-
-Topic: LSAT - Your Ticket Aboard The Lightning Native Web
-
-Location: Reckless VR
-
 # Intro
 
 Happy to be here to talk about LSAT, let’s jump right in. We are going to have a look at LSAT. What the motivation was to come up with this? What the use cases for and we are going to jump into the technical detail. This is going to be a technical talk. There will be some low level details.

@@ -1,14 +1,15 @@
 ---
-title: "A walk through the layers of Lightning"
+title: A walk through the layers of Lightning
 transcript_by: Caralie Chrisco
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Carla Kirk-Cohen']
+tags:
+  - lightning
+speakers:
+  - Carla Kirk-Cohen
 media: https://www.youtube.com/watch?v=tie0Gpq2eJI
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-layer-by-layer]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/lightning-network-layer-by-layer
 ---
-
 # Introduction
 
 Good afternoon everyone. My name is Carla. I'm one of the Chaincode residents from the summer residency that they ran in New York this year and this afternoon I'm going to be talking about Lightning. In this talk, I'm gonna be walking you through the protocol layer by layer and having a look at the different components that make up the Lightning Network.

@@ -1,10 +1,9 @@
 ---
 title: Gavinandresen
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/gavinandresen/']
+aliases:
+  - /bitcoin-core-dev-tech/bitcoin-devcore-2015/gavinandresen/
 ---
-
 <http://blog.circle.com/2015/02/10/devcore-livestream/>
 
 The instant transaction time.. you know I walk up to a cash register, I put my phone there, and in a second or two the transaction is confirmed and I walk away with my coffee. Anything beyond that, 10 minutes versus 1 minute doesn't matter. So the problem you want to solve is how do we get instant confirmation.. there's a bunch of ideas about this, like a trusted third party that promises to not double spend, have some coins locked up in a multisig wallet like Green Address. There's ideas about risk assessment of unconfirmed transactions, like broadcast and then get an idea of how much of the network has seen it and has anyone seen a double spend, make some assumptions about how likely it is to be double spent, if it is low enough and the amount is low enough then you take the risk and proceed. I don't know how that will, I don't know how that will work its way out, which of any of these approaches will work.

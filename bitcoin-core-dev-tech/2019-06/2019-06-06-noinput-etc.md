@@ -1,15 +1,17 @@
 ---
-title: "General discussion on SIGHASH_NOINPUT, OP_CHECKSIGFROMSTACK, and OP_SECURETHEBAG"
+title: General discussion on SIGHASH_NOINPUT, OP_CHECKSIGFROMSTACK, and OP_SECURETHEBAG
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['sighash_anyprevout', 'op_checksigfromstack', 'op_checktemplateverify']
+tags:
+  - sighash_anyprevout
+  - op_checksigfromstack
+  - op_checktemplateverify
 date: 2019-06-06
-aliases: ['/bitcoin-core-dev-tech/2019-06-06-noinput-etc/']
-speakers: ['Olaoluwa Osuntokun', 'Jeremy Rubin']
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-06-noinput-etc/
+speakers:
+  - Olaoluwa Osuntokun
+  - Jeremy Rubin
 ---
-
-SIGHASH\_NOINPUT, ANYPREVOUT, OP\_CHECKSIGFROMSTACK, OP\_CHECKOUTPUTSHASHVERIFY, and OP\_SECURETHEBAG
-
 <https://twitter.com/kanzure/status/1136636856093876225>
 
 There's apparently some political messaging around OP\_SECURETHEBAG and "secure the bag" might be an Andrew Yang thing.

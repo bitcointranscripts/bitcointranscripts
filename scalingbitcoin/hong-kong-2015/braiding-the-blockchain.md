@@ -1,12 +1,12 @@
 ---
 title: Braiding The Blockchain
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Bob McElrath']
+tags:
+  - mining
+speakers:
+  - Bob McElrath
 media: https://www.youtube.com/watch?v=fst1IK_mrng&feature=youtu.be&t=2h17m20s
 ---
-
 Bob McElrath (bsm117532)
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/2_breaking_the_chain_1_mcelrath.pdf>

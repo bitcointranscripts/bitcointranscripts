@@ -1,11 +1,13 @@
 ---
 title: Signmessage
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['wallet']
-speakers: ['Kalle Alm']
+tags:
+  - generic-signmessage
+speakers:
+  - Kalle Alm
 date: 2018-10-10
-aliases: ['/bitcoin-core-dev-tech/2018-10-10-signmessage/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-10-10-signmessage/
 ---
 kallewoof and others
 

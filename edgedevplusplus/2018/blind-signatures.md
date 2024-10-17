@@ -1,14 +1,15 @@
 ---
 title: Blind Signatures
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Ethan Heilman']
-tags: ['cryptography']
+speakers:
+  - Ethan Heilman
+tags:
+  - cryptography
 media: https://www.youtube.com/watch?v=3Y25x3yAfpA
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/blind-signatures]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/blind-signatures
 ---
-
 <https://twitter.com/kanzure/status/1047648050234060800>
 
 See also <http://diyhpl.us/wiki/transcripts/building-on-bitcoin/2018/blind-signatures-and-scriptless-scripts/>

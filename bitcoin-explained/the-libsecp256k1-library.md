@@ -1,13 +1,16 @@
 ---
-title: "Schnorr Signatures and Libsecp256k1"
+title: Schnorr Signatures and Libsecp256k1
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=RUhI0R4FMEo
-tags: ["libsecp256k1", "schnorr-signatures"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - libsecp256k1
+  - schnorr-signatures
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-09-18
 episode: 9
-summary: "In the episode of The Van Wirdum Sjorsnado, Aaron and Sjors discuss what the libsecp256k1 library is, why it matters for Bitcoin, and what it means that Schnorr signature support was merged."
+summary: In the episode of The Van Wirdum Sjorsnado, Aaron and Sjors discuss what the libsecp256k1 library is, why it matters for Bitcoin, and what it means that Schnorr signature support was merged.
 ---
 Aaron Van Wirdum: 00:03:59
 

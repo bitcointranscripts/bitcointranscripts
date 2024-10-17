@@ -1,13 +1,16 @@
 ---
-title: "Compact Client Side Filtering (Neutrino)"
+title: Compact Client Side Filtering (Neutrino)
 transcript_by: NeroCherubino via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=HGrdiwqlKhU
-tags: ["compact-block-filters"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - compact-block-filters
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-01-29
 episode: 25
-aliases: ['/bitcoin-magazine/bitcoin-explained/compact-client-side-filtering']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/compact-client-side-filtering
 ---
 ## Introduction
 

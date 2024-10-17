@@ -1,8 +1,8 @@
 ---
-title: "Introduction to DFA Workshop"
+title: Introduction to DFA Workshop
 transcript_by: Bryan Bishop
-categories: ['workshop']
-speakers: ['Aviv Zohar']
+speakers:
+  - Aviv Zohar
 date: 2019-09-08
 ---
 We are an international conference that focuses on the latest development in software and its scalability in the bitcoin ecosystem. We have come here to Israel. We are running 5 days of events, including this current workshop. Over the next 4 days following today, we're running Bitcoin Edge Dev++ workshop at Tel Aviv University for 2 days, and then Scaling Bitcoin for 2 days which is compromised of over 44 high tech sessions on complex scalability and security related topics in the bitcoin ecosystem, mainly for developers. There's also a work in progress sessions. It's 54 sessions over 4 days, a very high intensity program.

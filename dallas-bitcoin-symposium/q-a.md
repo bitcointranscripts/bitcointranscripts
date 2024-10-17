@@ -1,11 +1,15 @@
 ---
 title: Q A
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Marty Bent', 'Michael Goldstein', 'Justin Moon', 'Dhruv Bansal', 'Gideon Powell', 'Tuur Demeester']
+speakers:
+  - Marty Bent
+  - Michael Goldstein
+  - Justin Moon
+  - Dhruv Bansal
+  - Gideon Powell
+  - Tuur Demeester
 date: 2019-08-16
 ---
-
 Q&A session
 
 <https://twitter.com/kanzure/status/1162436437687623684>

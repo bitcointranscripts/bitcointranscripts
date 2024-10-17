@@ -1,9 +1,11 @@
 ---
-title: "Efficient Distributed Key Generation for Threshold Signatures"
+title: Efficient Distributed Key Generation for Threshold Signatures
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'threshold-signature']
-speakers: ['Mahnush Movahedi']
+tags:
+  - research
+  - threshold-signature
+speakers:
+  - Mahnush Movahedi
 media: https://www.youtube.com/watch?v=qEkEoRL3I00
 ---
 ## Threshold signatures

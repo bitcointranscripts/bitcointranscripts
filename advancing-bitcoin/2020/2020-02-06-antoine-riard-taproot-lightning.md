@@ -1,10 +1,13 @@
 ---
-title: "A Schnorr-Taproot’ed Lightning"
-speakers: ['Antoine Riard']
+title: A Schnorr-Taproot’ed Lightning
+speakers:
+  - Antoine Riard
 date: 2020-02-06
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['taproot', 'lightning', 'ptlc']
+tags:
+  - taproot
+  - lightning
+  - ptlc
 media: https://www.advancingbitcoin.com/video/a-schnorr-taprooted-lightning,11/
 ---
 Slides: https://www.dropbox.com/s/9vs54e9bqf317u0/Schnorr-Taproot%27ed-LN.pdf

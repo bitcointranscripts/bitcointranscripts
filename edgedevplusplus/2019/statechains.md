@@ -1,13 +1,14 @@
 ---
 title: Statechains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['sidechains']
-speakers: ['Ruben Somsen']
+tags:
+  - sidechains
+speakers:
+  - Ruben Somsen
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/statechains]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/statechains
 ---
-
 Schnorr signatures, adaptor signatures and statechains
 
 <https://twitter.com/kanzure/status/1171345418237685760>

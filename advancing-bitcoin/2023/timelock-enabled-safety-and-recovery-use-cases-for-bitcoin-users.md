@@ -2,9 +2,11 @@
 title: Timelock-enabled safety and recovery use cases for Bitcoin users
 transcript_by: pgsdesign via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=4jO-FDiFw4U
-tags: ["timelocks", "miniscript"]
-speakers: ["Kevin Loaec"]
-categories: ["conference"]
+tags:
+  - timelocks
+  - miniscript
+speakers:
+  - Kevin Loaec
 date: 2023-03-01
 ---
 ## Introduction

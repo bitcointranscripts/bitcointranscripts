@@ -2,12 +2,12 @@
 title: Agregación de firmas
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['signature-aggregation']
+tags:
+  - signature-aggregation
 date: 2017-09-06
-aliases: ['/es/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2017-09-06-signature-aggregation/
 ---
-
 ﻿<https://twitter.com/kanzure/status/907065194463072258>
 
 # Agregación de firmas

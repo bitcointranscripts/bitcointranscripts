@@ -1,9 +1,11 @@
 ---
 title: Elastic Block Caps
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'fee-management']
-speakers: ['Meni Rosenfeld']
+tags:
+  - research
+  - fee-management
+speakers:
+  - Meni Rosenfeld
 ---
 ## Introduction
 

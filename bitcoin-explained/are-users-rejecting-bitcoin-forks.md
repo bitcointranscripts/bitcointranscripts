@@ -1,13 +1,16 @@
 ---
-title: "User Rejected Soft Forks (URSFs)"
+title: User Rejected Soft Forks (URSFs)
 transcript_by: Radiokot via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Ua3W9p1Z_RA
-tags: ["soft-fork-activation"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - soft-fork-activation
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2022-05-07
 episode: 57
-aliases: ['/bitcoin-magazine/bitcoin-explained/are-users-rejecting-bitcoin-forks']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/are-users-rejecting-bitcoin-forks
 ---
 ## Intro
 

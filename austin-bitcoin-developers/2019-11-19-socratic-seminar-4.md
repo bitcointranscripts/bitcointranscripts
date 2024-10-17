@@ -2,9 +2,7 @@
 title: Socratic Seminar 4
 date: 2019-11-19
 transcript_by: Bryan Bishop
-categories: ['meetup']
 ---
-
 <https://twitter.com/kanzure/status/1196947713658626048>
 
 # Wallet standards organization (WSO)

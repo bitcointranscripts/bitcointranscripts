@@ -1,9 +1,12 @@
 ---
-title: "A2L: Anonymous Atomic Locks for Scalability and Interoperability in Payment Channel Hubs"
+title: 'A2L: Anonymous Atomic Locks for Scalability and Interoperability in Payment Channel Hubs'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'lightning', 'adaptor-signatures']
-speakers: ['Pedro Moreno-Sanchez']
+tags:
+  - research
+  - lightning
+  - adaptor-signatures
+speakers:
+  - Pedro Moreno-Sanchez
 date: 2019-09-12
 media: https://www.youtube.com/watch?v=Uh6Ywxrobzw&t=4480s
 ---

@@ -1,9 +1,12 @@
 ---
-title: "Flare: An Approach to Routing in Lightning Network"
+title: 'Flare: An Approach to Routing in Lightning Network'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'lightning', 'routing']
-speakers: ['Pavel Prihodko']
+tags:
+  - research
+  - lightning
+  - routing
+speakers:
+  - Pavel Prihodko
 date: 2016-10-08
 media: https://www.youtube.com/watch?v=Gzg_u9gHc5Q&t=1680s
 ---

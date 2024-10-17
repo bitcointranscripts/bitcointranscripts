@@ -1,9 +1,10 @@
 ---
-title: "Replacing Payment Hashes with Payment Points"
+title: Replacing Payment Hashes with Payment Points
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['ptlc']
-speakers: ['Nadav Kohen']
+tags:
+  - ptlc
+speakers:
+  - Nadav Kohen
 date: 2019-10-20
 media: https://www.youtube.com/watch?v=TE65I9E8Q5k
 ---

@@ -1,10 +1,11 @@
 ---
-title: "Anchors & Shackles (Ark)"
+title: Anchors & Shackles (Ark)
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://www.youtube.com/watch?v=OBt1nS14Ac4
-tags: ['ark']
-speakers: ['Burak Keceli']
-categories: ['conference']
+tags:
+  - ark
+speakers:
+  - Burak Keceli
 date: 2023-06-24
 ---
 So hey guys, my name is Borat.

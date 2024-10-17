@@ -2,12 +2,12 @@
 title: Lightning is Broken AF (But We Can Fix It)
 transcript_by: natan-del-prado via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=s9KMRWkcwtE
-tags: ["lightning"]
-speakers: ["Matt Corallo"]
-categories: ["conference"]
+tags:
+  - lightning
+speakers:
+  - Matt Corallo
 date: 2022-10-14
 ---
-
 ## Introduction
 
 Thank you. Yeah, so, as the title says, for those of you who work in lightning or have been around lightning for a long time, hopefully you will recognize basically all the issues I'll go through today. I'm going to go through a very long list of things. But I'm going to try to go through most of the kind of, at least my understanding of the current thinking of solutions for a lot of these issues. So hopefully that most people will at least have a chance to learn something or at least get some better idea of where things are going, even if you already know all the issues. Some of these issues get a little complex. I'm going to try to explain them the best I can. I'm not always the best at explaining things. If you're confused, please do interrupt me. Throw something at me. Clearly throw really loud. Just yell a question. I'm okay with all of that. I want to make sure everyone is on the same page at the end of this. So feel free to interrupt me as we go rather than holding your questions to the end if I'm not making something entirely clear.

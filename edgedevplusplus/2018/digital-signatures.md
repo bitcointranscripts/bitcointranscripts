@@ -1,14 +1,15 @@
 ---
-title: "Finite fields, Elliptic curves, ECDSA, Schnorr"
+title: Finite fields, Elliptic curves, ECDSA, Schnorr
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography']
-speakers: ['John Newbery']
+tags:
+  - cryptography
+speakers:
+  - John Newbery
 media: https://www.youtube.com/watch?v=DcGm_4-ig1o
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/digital-signatures]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/digital-signatures
 ---
-
 <https://twitter.com/kanzure/status/1047634593619181568>
 
 # Introduction

@@ -1,10 +1,15 @@
 ---
-title: "Onboarding Bitcoin and Lightning Developers"
+title: Onboarding Bitcoin and Lightning Developers
 transcript_by: varmur via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=-uJSdfo4z7c
-tags: ["bitcoin-core", "lightning"]
-speakers: ["Gloria Zhao", "Will Clark", "Adam Jonas", "Jonas Nick"]
-categories: ["conference"]
+tags:
+  - bitcoin-core
+  - lightning
+speakers:
+  - Gloria Zhao
+  - Will Clark
+  - Adam Jonas
+  - Jonas Nick
 date: 2021-11-16
 ---
 ## Introductions

@@ -1,10 +1,15 @@
 ---
-title: "R&D Goals & Challenges"
+title: R&D Goals & Challenges
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['research', 'bitcoin-core']
-speakers: ['Patrick Murck', 'Gavin Andresen', 'Cory Fields']
-aliases: ['/bitcoin-core-dev-tech/bitcoin-devcore-2015/research-and-development-goals/']
+tags:
+  - research
+  - bitcoin-core
+speakers:
+  - Patrick Murck
+  - Gavin Andresen
+  - Cory Fields
+aliases:
+  - /bitcoin-core-dev-tech/bitcoin-devcore-2015/research-and-development-goals/
 ---
 We often see people saying they are testing the waters, they fixed a typo, they made a tiny little fix that doesn't impact much, they are getting used to the process. They are finding that it's really easy to contribut to Bitcoin Core. You code your changes, you submit your changes, there's not much to it.
 

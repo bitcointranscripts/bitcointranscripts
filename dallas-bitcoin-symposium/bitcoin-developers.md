@@ -1,10 +1,9 @@
 ---
 title: Bitcoin Developers
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Justin Moon']
+speakers:
+  - Justin Moon
 ---
-
 # Introduction
 
 I am going to talk about a programmer's perspective. As investors, you might find this interesting, but at the same time it's not entirely actionable. As a programmer, the bitcoin ecosystem is very attractive. This is true of cryptocurrencies in general. I'll make a distinction for bitcoin at the end. One of the interesting things is that you see some of the most talented hackers in the world are extremely attracted to bitcoin. I think that's an interesting thing you should pay attention to. I think there's something there. I am going to try to keep my talk simple, and talk about what is bitcoin.

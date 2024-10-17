@@ -2,11 +2,10 @@
 title: Prioridades
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
 date: 2018-03-07
-aliases: ['/bitcoin-core-dev-tech/2018-03-07-priorities.es/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-03-07-priorities.es/
 ---
-
 <https://twitter.com/kanzure/status/972863994489901056>
 
 # Prioridades

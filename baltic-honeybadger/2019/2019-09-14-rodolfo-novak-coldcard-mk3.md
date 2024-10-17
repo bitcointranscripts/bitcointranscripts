@@ -1,10 +1,12 @@
 ---
-title: "Coldcard Mk3 - Security in Depth"
+title: Coldcard Mk3 - Security in Depth
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['security', 'hardware wallet']
+tags:
+  - security
+  - hardware-wallet
 date: 2019-09-14
-speakers: ['Rodolfo Novak']
+speakers:
+  - Rodolfo Novak
 media: https://youtu.be/2IpZWSWUIVE?t=23739
 ---
 ## Intro

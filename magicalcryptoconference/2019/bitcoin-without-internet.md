@@ -1,11 +1,14 @@
 ---
 title: Bitcoin Without Internet
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Adam Back', 'Rodolfo Novak', 'Elaine Ou', 'Adam Back', 'Richard Myers']
+speakers:
+  - Adam Back
+  - Rodolfo Novak
+  - Elaine Ou
+  - Adam Back
+  - Richard Myers
 media: https://youtu.be/5Fim6g2BMZI
 ---
-
 SM: We have a special announcement to make. Let me kick it over to Richard right now.
 
 RM: We completed a project that will integrate the GoTenna mesh radio system with Blockstream's blocksat satellite system. It's pretty exciting. It's called txtenna. It will allow anybody to send a signed bitcoin transaction from an off-grid full node that is receiving blockchain data from the blocksat network, and then relay it over the GoTenna mesh network. It's not just signed transactions but also API data. I want to thank everyone at Blockstream who has made this possible. Check it out at <http://txtenna.com/>.

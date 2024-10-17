@@ -1,11 +1,11 @@
 ---
 title: Fee markets
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['fee-management']
-speakers: ['Peter Rizun']
+tags:
+  - fee-management
+speakers:
+  - Peter Rizun
 ---
-
 ((Note that there is a more accurate transcript from Peter-R himself below.))
 
 Miners have another job as well. Miners are commodity producers, they produce something that the world has never seen. They produce block space, which is room for transactional debt. Let's explore what the field of economics tells us. We'll plot the total number of bytes per block. On the vertical we will plot the unit cost of the commodity, or the price of 1 transaction worth of blockspace. The coordinates of the point represents the price and quantity of that commodity. The law of demand states that as the unit price increases, the total quantity demanded by the market tends to decrease. As the price falls, the total commodity decreases. These points form a demand curve. If the price per unit is low enough, the quantity demanded can be arbitrarily high. Demand can be considered infinite. This is something that I hear regarding the block size debate, and people say we need a limit because the demand for block inclusion is infinite. Economists have been thinking about this for 100s of years; they have the law of supply. The law of supply is the opposite to the law of demand. It says that producers will only produce more if they are paid more to do so. Apple farmers will only plant more trees if they get more money by doing so. The law of supply has a positive slope. The demand curve has a negative slope. The intersection of these two curves is the free-market equilibrium. Even if the demand is considered infinite, we still get a finite quantity produced.

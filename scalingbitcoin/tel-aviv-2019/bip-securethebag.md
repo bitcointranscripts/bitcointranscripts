@@ -1,9 +1,11 @@
 ---
-title: "BIP: OP_SECURETHEBAG"
+title: 'BIP: OP_SECURETHEBAG'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'op-checktemplateverify']
-speakers: ['Jeremy Rubin']
+tags:
+  - research
+  - op_checktemplateverify
+speakers:
+  - Jeremy Rubin
 date: 2019-09-11
 media: https://www.youtube.com/watch?v=YxsjdIl0034&t=2453s
 ---

@@ -1,9 +1,11 @@
 ---
-title: "Recovering Payment Channel Midstates Using only The User's Seed"
+title: Recovering Payment Channel Midstates Using only The User's Seed
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'watchtowers']
-speakers: ['David Vorick']
+tags:
+  - lightning
+  - watchtowers
+speakers:
+  - David Vorick
 date: 2019-09-12
 media: https://www.youtube.com/watch?v=Uh6Ywxrobzw&t=7850s
 ---

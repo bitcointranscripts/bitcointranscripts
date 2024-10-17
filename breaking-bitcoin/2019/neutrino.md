@@ -1,9 +1,10 @@
 ---
-title: "Neutrino, Good and Bad"
+title: Neutrino, Good and Bad
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['compact-block-filters']
-speakers: ['Jimmy Song']
+tags:
+  - compact-block-filters
+speakers:
+  - Jimmy Song
 media: https://www.youtube.com/watch?v=ABPOYFw9zAQ
 ---
 ... 228C D70C FAA6 17E3 2679 E455

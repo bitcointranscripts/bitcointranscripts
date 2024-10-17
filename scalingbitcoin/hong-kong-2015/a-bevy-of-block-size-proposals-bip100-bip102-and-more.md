@@ -1,11 +1,10 @@
 ---
 title: A Bevy Of Block Size Proposals Bip100 Bip102 And More
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jeff Garzik']
+speakers:
+  - Jeff Garzik
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=3h52m35s
 ---
-
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/3_tweaking_the_chain_1_garzik.pdf>
 
 slides: <http://www.slideshare.net/jgarzik/a-bevy-of-block-size-proposals-scaling-bitcoin-hk-2015>

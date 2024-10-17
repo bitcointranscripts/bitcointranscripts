@@ -1,10 +1,11 @@
 ---
-title: "Translational Bitcoin Development"
+title: Translational Bitcoin Development
 transcript_by: NeroCherubino via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=BsWR94cbZ3Y
-tags: ["ux"]
-speakers: ["Tadge Dryja"]
-categories: ["video"]
+tags:
+  - ux
+speakers:
+  - Tadge Dryja
 date: 2023-04-29
 ---
 ## Introduction

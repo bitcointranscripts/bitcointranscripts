@@ -1,9 +1,7 @@
 ---
 title: Intro
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
-
 # Introduction
 
 Why are we here? We are here to write papers, code, make UI/UX mock-ups. If you want to work on something and it doesn't fit into that category, then let us know. There might be other people that want to work on it too. We want you to find something you enjoy working on. If you feel you're not as productive as you would like to be, then let us know and we'll find something better for you to work on.

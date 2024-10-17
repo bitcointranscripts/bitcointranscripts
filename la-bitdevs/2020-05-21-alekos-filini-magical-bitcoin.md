@@ -1,9 +1,12 @@
 ---
 title: Magical Bitcoin
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['developer-tools', 'miniscript', 'psbt']
-speakers: ['Alekos Filini']
+tags:
+  - developer-tools
+  - miniscript
+  - psbt
+speakers:
+  - Alekos Filini
 date: 2020-05-21
 ---
 Magical Bitcoin site: https://magicalbitcoin.org/

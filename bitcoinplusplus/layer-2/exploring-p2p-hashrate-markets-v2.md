@@ -1,10 +1,11 @@
 ---
-title: "Exploring P2P Hashrate Markets V2"
+title: Exploring P2P Hashrate Markets V2
 transcript_by: sahil-tgs via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=IvfmfcAX9wU
-tags: ["mining"]
-speakers: ["Nico Preti"]
-categories: ["conference"]
+tags:
+  - mining
+speakers:
+  - Nico Preti
 date: 2023-04-29
 ---
 ## Introduction

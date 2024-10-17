@@ -1,9 +1,12 @@
 ---
-title: "TumbleBit: An Untrusted Bitcoin-Compatible Anonymous Payment Hub"
+title: 'TumbleBit: An Untrusted Bitcoin-Compatible Anonymous Payment Hub'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'privacy-enhancements']
-speakers: ['Ethan Heilman', 'Leen AlShenibr']
+tags:
+  - research
+  - privacy-enhancements
+speakers:
+  - Ethan Heilman
+  - Leen AlShenibr
 date: 2016-10-08
 media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=3787s
 ---

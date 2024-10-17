@@ -1,11 +1,10 @@
 ---
 title: Lightning Specification Meeting - Agenda 0955
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['lightning']
+tags:
+  - lightning
 date: 2022-01-31
 ---
-
 Name: Lightning specification call
 
 Topic: Agenda below

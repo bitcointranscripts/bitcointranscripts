@@ -1,9 +1,7 @@
 ---
 title: Day 2 Groups
 transcript_by: Bryan Bishop
-categories: ['workshop']
 ---
-
 # Browsers
 
 One was creating a new API or updating an existing API for Web Auth or an expansion to the web auth spec, where the browser would understand blockchain-based identity. We want to resolve and display blockchain identity in the browser, anything identified as an identity in a blockchain in a browser. Request payload signature. Apps receiving payloads could check from the user. Those are the four areas we are interested in pursuing for standards.

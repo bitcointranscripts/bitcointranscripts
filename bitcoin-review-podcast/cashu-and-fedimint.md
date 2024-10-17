@@ -1,10 +1,14 @@
 ---
-title: "Cashu & Fedimint: ecash, Bitcoin's layer 3 & scalability"
+title: 'Cashu & Fedimint: ecash, Bitcoin''s layer 3 & scalability'
 transcript_by: satstacker21 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=-nzVYVcdk9M
-tags: ["ecash"]
-speakers: ["Calle", "Eric Sirion", "Rijndael", "Matt Odell"]
-categories: ["podcast"]
+tags:
+  - ecash
+speakers:
+  - Calle
+  - Eric Sirion
+  - Rijndael
+  - Matt Odell
 date: 2023-04-13
 ---
 ## Introduction

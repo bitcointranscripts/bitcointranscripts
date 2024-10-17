@@ -1,12 +1,13 @@
 ---
 title: BIP324 - Version 2 of p2p encrypted transport protocol
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['p2p', 'bitcoin core']
+tags:
+  - v2-p2p-transport
+  - bitcoin-core
 date: 2022-10-10
-aliases: ['/bitcoin-core-dev-tech/2022-10-10-p2p-encryption/']
+aliases:
+  - /bitcoin-core-dev-tech/2022-10-10-p2p-encryption/
 ---
-
 # Previous talks
 
 <https://btctranscripts.com/scalingbitcoin/milan-2016/bip151-peer-encryption/>

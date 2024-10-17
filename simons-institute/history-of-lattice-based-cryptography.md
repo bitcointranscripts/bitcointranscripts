@@ -1,31 +1,26 @@
 ---
-title: History Of Lattice Based Cryptography
+title: Historical Talk on Lattice-Based Cryptography
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography']
-speakers: ['Daniele Micciancio']
+tags:
+  - cryptography
+speakers:
+  - Daniele Micciancio
 date: 2015-07-15
+media: https://www.youtube.com/watch?v=4KVJbEOqB_Q
 ---
-
-Historical talk on lattice-based cryptography
-
-Daniele Micciancio, UC San Diego
-
-<https://www.youtube.com/watch?v=4KVJbEOqB_Q&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=22>
-
 <https://twitter.com/kanzure/status/772649346454040577>
 
 Lattice cryptography - from computational complexity to fully homomorphic encryption
 
-# Introduction 1
+## Introduction 1
 
 So this first of all thanks for coming back from lunch, it's always an achievement. I want to say that this is a special talk within the workshop here at Simons we have a historical cryptopapers seminars series. We try to revisit historical papers and see what led to them and how they impacted things later. One of the talks we asked for was a look into lattice crypto, and it was a perfect opportunity to choose Daniele to give this talk, so I am happy to introduce him. Just to introduce Daniele a little bit, um, he did his PhD at MIT and is currently a professor at UCSD. He is an expert in many things, crypto protocols and lattices specifically he touches everything many of the basic primitives that we saw in the talks over the morning sessions were introduced by him. He has the results on NP-hardness lattices, worst case to average connections and various algorithms in lattices. He also introduced the rigorous analysis of lattice-based crypto, expanding on the work which it appeared by NTRU. He also contributed to our knowledge by writing books and lecture notes, which took a lot of effort and was a great contribution to the community. He also recently created a logic, introduced an algebra for reasoning about multi-party computation, something really forward looking and perhaps before its time. Hopefully the time will come. He has served on many leadership roles, journals, chairs and so on. He has won the Macaty award, NSF career reward, fellowships, and um, I have two things to say which are a bit less formal. First of all, he's really cool. In his young days, he also rode a motorbike. Oh, that is still is true. Still young. That is true, sorry for that. The second thing that I wanted to say is sort of a story that I found amusing, which Daniele himself told me, about how you get into certain areas of research sometimes. At MIT, they have this practice with this exam which is early in your career where you have to read a paper and do some original research related to that paper. Shakti in her wisdom gave him a paper on lattices, and that's how this whole thing started. A great advisor with a great student who really did fantastic things. So please help me welcome Daniele. Thank you.
 
-# Introduction 2
+## Introduction 2
 
 Thank you for the introduction, and thank you and Daniel for inviting me to give this historical talk on lattices. Wow, it's quite something. It says quite a bit about how much this area has accomplished. I started working on lattices in the early days when lattices started to be used for cryptographic functions. And, I pretty much worked in that area since that time. So that's great, we get to the point where we can give a historical talk about the subject. And this also says a little bit about my age, that's the price I guess. I do ride a motorcycle, a different one though.
 
-# Solving lattices
+## Solving lattices
 
 As you know, we've been talking about lattices and more specifically lattice cryptography. Lattices you saw them a number of times during the bootcamp and earlier this morning. There will not be much very technical in this talk. So this is a lattice. You have a set of points in space that are arranged regularly. One relevant feature of lattices is that these points in real space, euclidean space. So these lattices are mathematical objects that mix together some continuous and discrete properties. They are described by real numbers, but it is a discrete set of points in the topology sense that these points are far apart from each other. And we'll see how these can map in the study of lattice cryptography.
 
@@ -45,7 +40,7 @@ In the paper, besides the technical results, he argued about the importance of t
 
 These are important results beyond lattices. He used lattices as a tool. He could have used any other problem. Lattices simply worked, they did the job. And so, there was a question that comes up pretty often, asked many times in my talks about lattice cryptography. The question is typically dismissed by the speaker is that there's an answer and I won't answer it now because I want to talk about my work and the question isn't about my work... the question is usually, don't we already have something like that in cryptography? For example, the [discrete logarithm problem](https://en.wikipedia.org/wiki/Discrete_logarithm) is a random self-reducible. In the discrete log problem (DLOG problem) more specifically, let's consider this version. So you are given a prime number p, which defines a [multiplicative group](https://en.wikipedia.org/wiki/Multiplicative_group) ZpStar, and also a generator of the entire group or some prime order subgroup called ZpStar, and the input is an element of the group g generator by these element. And the question is, recover i, recover the exponent of this element. This problem is random self-reducible in the sense that if you can solve this problem at random with some positive, even with very small non-negligble probability, when g and h are chosen at random, then you can solve the problem also in the worst case. In the previous slide I described how you can have this relation to find hard instances, the problems don't have to be the same. In the case of the discrete log, they happen to be the same problem, that you can solve on average or solve in the worst case, and that's why it's called random self-reducibility.
 
-# Random self-reducibility
+## Random self-reducibility
 
 <https://www.youtube.com/watch?v=4KVJbEOqB_Q&t=13m>
 
@@ -53,7 +48,7 @@ These are important results beyond lattices. He used lattices as a tool. He coul
 
 It means we know how to pick g and h in the discrete log problem. We know there's a right way to pick g and h to make the problem hard. It's to choose them at random. However, this does not give any guidance about how to choose that group G.
 
-# Discrete log problem versus lattices: The lattice assumption
+## Discrete log problem versus lattices: The lattice assumption
 
 I'll talk about lattices at length, but before we get to lattices, let me talk about this discrete log problem. I think the contrast with lattices illustrates some important points about lattice cryptography. Some of these points are quite relevant to some more recent developments that use lattices.
 
@@ -93,7 +88,7 @@ A: And yes, in discrete log it is not clear. Okay, now I know why people refused
 
 Q: Well maybe can you tell us about lattices?
 
-# Lattices
+## Lattices
 
 Ah yes, it looks like I am not talking about lattices, but I am. So let's consider another classic problem, corresponding to the other method to find hard problems. Take another NP-hard problem, a famous one, the [subset sum problem](https://en.wikipedia.org/wiki/Subset_sum_problem). In subset sum, you are given a sequence of numbers, and a target value b, and you want to find a subset of these numbers that add up to the value b. Now you can map this problem to a lattice problem. Subset sum problems and [knapsack problems](https://en.wikipedia.org/wiki/Knapsack_problem) are essentially the same as lattices. And the way you map it to a lattice is by replacing each number by a vector, and the target also to a vector, in the way that finding a subset of the numbers that add up to the value b, is equivalent to finding a subset of these vectors whose sum is close to some target value t. The reduction is pretty simple. You extend each of these numbers into a vector with an extra coordinate. And then you extend also the target vector, putting 1 1 1 in the extra coordinates. It's not hard to see that there's a lattice point in this lattice, within distance square root of n to the target, if and only if there is a solution to the subset sum problem. The proof is all there. You can take a picture or do it as an exercise. This gives a reduction from subset sum to lattices. But in a sense we have a reduction also in the other direction. The knapsack lattice is in a sense the typical lattice. Solving problems on lattices or solving subset sum are closely related problems.
 
@@ -101,7 +96,7 @@ What about knapsack cryptography? It was already there before Ajtai's result. It
 
 You may think that, so, people kept suggesting other methods to avoid the attack. But they all got broken. Ajtai's result came up at the point when people were finally accepting the idea that subset problem or using knapsack or equivalent NP lattices for cryptography, was just a bad idea. No matter how hard we try, they just get broken. So in this sense, Ajtai's paper was a turning point for the area of cryptography based on subset sum and lattices.
 
-# Ajtai's one-way function
+## Ajtai's one-way function
 
 Ajtai's one-way function is a very simple function. It is a matrix vector multiplication. The key to the function is a random matrix A with elements chosen modulo some small value q. And the input is a short vector x, typically one vector, and the output is just the vector A times x (Ax). Ajtai proved that for an appropriate choice of the parameters,specifically when m > n log q, which corresponds to making the domain of the function bigger than the range, so you get a non-injective function, and most likely it's non-injective at 1. So for this parameter, solving this inversion problem, inverting this function on the average with some positive probability, is at least as hard as solving some lattice problems in the worst case. You can also see that this problem is a knapsack problem. You take the knapsack over the group of n dimensional vectors modulo q. You can think of it as a reduction from the worst case complexity of lattice problems, to a random instance of lattice of subset sum problem. So that's great. It's a great technical result.
 
@@ -181,7 +176,7 @@ A: Today? No, I'm going to move that to today, in the last 30 minutes today.
 
 As we get closer and closer today, I will say less and less, some of these things were said earlier this morning. I'm a little bit out of time. Less than 2/3rds. There were some questions so I feel justified taking more time.
 
-# Efficiency of Ajtai's function
+## Efficiency of Ajtai's function
 
 Let's start with efficiency, one of the two open problems. This problem came in a paper of mine, generalized knapsacks and efficient one-way functions, so what the paper did was to consider a structured version of Ajtai's function. The inefficiency in his function is that you have a 2-dimensional object, and it has a n square storage requirement. If you build a matrix that is structured, you can think of it as a matric with blocks and every block is a ... and every row is a rotation of the previous one. So you can implicitly represent this square matrix with just a vector. So then you get a linear storage requirement matrix. Using FFT and polynomial arithmetic algorithms, you can even compute this function in quasilinear time. You can get a fast function, that matches it in speed by and large. Not only that, what this paper showed is that you an still ... you can get a scaled down version of Ajtai's result. If you can break this ... out of the uniformly random matrices, you can solve .. in the worst case. I showed that if you cna break this problem, a random problem, with a random .. matrix.. then you can solve lattice problems in the worst case, other .. there's a similar restriction, namely cyclic .. and basically rotation of the coordinates. The assumption, any stronger than Ajtai's, it's still worst case assumption, over restrictive but still not the class of lattices. If we believe that lattice problems are hard to solve in the worst case over [cyclic lattices](https://cseweb.ucsd.edu/~daniele/papers/Cyclic.pdf), then we know how to build hard random instances.
 
@@ -243,7 +238,7 @@ Let's modify this a little bit. I'm changing the sign of these integers. This co
 
 The version of the security proof that I used showed that this problem is as hard as the worst case complexity of lattice problems on anti-cyclic lattices. So there's a worst case showing you can't find conditions that do this. And this is related to the polynomial x^(n+1) which corresponded to negating the entries around, is irreducible over the integers when n is a power of 2. So there's a lot of work that was done since then, getting more and more algebra into lattice cryptography, but I don't have time to talk about that.
 
-# Applications other than one-way functions
+## Applications other than one-way functions
 
 I want to say a few more words about getting more applications rather than just one-way functions. It's interesting to think about SIS/LWE as the common vector problem (CVP). In geometric terms as a lattice problem. Multiply x by a is like computing the .. of x... in some version, closes of the direct problem... if the.. lattice, then you get x, the operation of computing the function can be equivalently described as getting your error vector and reducing it to... think of it as cutting your lattice space into parallelograms and putting all of them one on top of another one. Reducing the error in modulo the lattice. Is this function hard and for what values of the parameterS? When the error is less than half the minimum distance of the lattice, the function is injective. If you choose a larger error, at some point it starts intersecting, the function is not injective. If you make it big enough, the function becomes surjective, and you don't need to make it much bigger to make it not only surjective but almost uniform. Here, in the surjective case, different regions have different shades.
 
@@ -251,7 +246,7 @@ So here when you make it bigger, you still have a different shape, but the diffe
 
 Regev 2004, I say implicity because, proves that... it might not have been clear to him that the problem was to prove the hardness of Ajtai's function... he was proposing a new formulation called learning with errors (LWE). Just using the lattice duality, it's easy to show they are different formulations of the same problem. And not only that, but, and the way he did that was more in a surprising way, he could prove a function was hard to invert in the injective setting, using quantum computation. So that's why it seems so out of reach of before, it was still today we don't quite know how to relate these two problems using classical tools. Technically, he used a quantum transform to move it from one lattice to its dual. Beside that, perhaps less surprisingly, he showed that if this function is one-way, then it is also random, in the sense that the output of the function is indistinguishable from a uniformly random value. I said less surprising, because if you formulate it in a knapsack version, there were previous results regarding the sumset sum problem if it is one-way then it is random, we already knew that using that formulation, perhaps it was less clear when using the other fomrulation. And finally, he said it could be used for public key encryption, based on the worst case assumption of the quantum hardness of lattices, so he could potentially sell that and make a lot of money out of it.
 
-# Learning with errors (LWE)
+## Learning with errors (LWE)
 
 So you already saw this in the morning many times (LWE), so I will just skip it. Syntactically, it looks different from the previous SIS functions because of the addition here, but you can rephrase it by taking the duel of A, the terminal complement of A, and use it as a ... and then you get a function that is syntactically similar to Ajtai's, but for different parameters.
 
@@ -301,7 +296,7 @@ Many other papers: MR 2002, PR 2006, LM 2006, SSTX 2009.
 
 ... SIS function, and we have the less efficient and more efficient version versus whether you use structural lattices or not. Ajtai founded this area, of surjective function .. based on general lattices, and Regev 2004 got the more powerful injective version of this, but still inefficient. And still the cyclic lattice work got efficiency but only for surjective and weaker assumptions. And later [RingLWE](https://en.wikipedia.org/wiki/Ideal_lattice_cryptography#Ring-LWE) in LPR 2010 sort of fixed that. Basically combining these two things. So they can do much more than that. And this was pseudorandom, so it brought even more algebraic number theory into the game. There are several other related papers that are technically equally important, one of them is MR 2004, PR 2006, LM 2006, SSTX 2009. The SSTX 2009 paper technically predates the RingLWE paper results. This function was one-way, but we don't show pseudorandomness, so it's technically interesting and nice, but proving the sort of pseudorandomness is what was needed to get it past that for other applications.
 
-# Fully homomorphic encryption
+## Fully homomorphic encryption
 
 Let me close with FHE, fully homomorphic encryption, which I mentioned in the title. I'm not going ot say a lot about it. It's already history. Gentry 2009. You heard about it earlier this morning. Craig Gentry in 2009 did something really amazing. I think even more than solving the problem, what he did was convince people that the problem could be solved. Similarly to taking the knapsack problem which everyone was throwing away, and then saying no here's something you could do; and suddenly everyone in cryptography starts thinking "oh yes it could be solved". And now after some time, I think we can finally setup fully homomorphic encryption. The wrong reason is that the reason why he was using lattices was very different from Ajtai. He was using a lot of ad hoc assumptions. I'ts not as clear about how confident we can be. On top of that, there were some efficiency issues. I think there are some other papers about this about better ways to do fully homomorphic encryptions based on problems that are essentially LWE.
 

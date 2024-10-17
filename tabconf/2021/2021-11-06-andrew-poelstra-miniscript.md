@@ -1,9 +1,10 @@
 ---
-title: "Miniscript - Custody, Computable, Composable"
+title: Miniscript - Custody, Computable, Composable
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['miniscript']
-speakers: ['Andrew Poelstra']
+tags:
+  - miniscript
+speakers:
+  - Andrew Poelstra
 date: 2021-11-06
 media: https://www.youtube.com/watch?v=mVihRFrbsbc&t=6470s
 ---

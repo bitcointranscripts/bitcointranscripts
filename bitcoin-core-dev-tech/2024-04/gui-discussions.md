@@ -1,7 +1,8 @@
 ---
 title: GUI Discussions
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'ux']
+tags:
+  - bitcoin-core
+  - ux
 date: 2024-04-10
 ---
 ## QML GUI

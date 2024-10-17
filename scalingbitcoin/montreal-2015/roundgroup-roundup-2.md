@@ -1,9 +1,7 @@
 ---
 title: Roundgroup Roundup 2
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
-
 # Communicating without official structures
 
 Roundgroup roundup day 2

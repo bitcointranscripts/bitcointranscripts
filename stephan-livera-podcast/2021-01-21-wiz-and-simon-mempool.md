@@ -1,8 +1,9 @@
 ---
 title: Mempool-space – helping Bitcoin migrate to a multi-layer ecosystem
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Wiz', 'Simon']
+speakers:
+  - Wiz
+  - Simon
 date: 2021-01-21
 media: https://www.youtube.com/watch?v=JZE_UlvBBBk
 ---

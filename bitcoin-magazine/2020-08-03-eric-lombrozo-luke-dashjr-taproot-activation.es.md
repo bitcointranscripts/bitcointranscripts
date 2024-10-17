@@ -1,11 +1,14 @@
 ---
-title: "Cómo activar un nuevo Soft Fork"
+title: Cómo activar un nuevo Soft Fork
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['podcast']
-tags: ['taproot', 'soft-fork-activation']
+tags:
+  - taproot
+  - soft-fork-activation
 date: 2020-08-03
-speakers: ['Eric Lombrozo', 'Luke Dashjr']
+speakers:
+  - Eric Lombrozo
+  - Luke Dashjr
 media: https://www.youtube.com/watch?v=yQZb0RDyFCQ
 ---
 Location: Bitcoin Magazine (en línea)

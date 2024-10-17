@@ -1,11 +1,10 @@
 ---
 title: Bitcoin Vaults and Custody
 transcript_by: Michael Folkson
-categories: ['podcast']
-speakers: ['Bryan Bishop']
+speakers:
+  - Bryan Bishop
 date: 2019-09-22
 ---
-
 Stephan Livera Podcast with Bryan Bishop - September 22nd 2019
 
 Podcast: https://stephanlivera.com/episode/108/

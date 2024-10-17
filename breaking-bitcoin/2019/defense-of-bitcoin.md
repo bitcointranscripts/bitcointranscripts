@@ -1,9 +1,10 @@
 ---
-title: "Five Insights into the Defense of Bitcoin"
+title: Five Insights into the Defense of Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
-speakers: ['Warren Togami']
+tags:
+  - security
+speakers:
+  - Warren Togami
 media: https://www.youtube.com/watch?v=n5xS9liL8Sk
 ---
 <https://twitter.com/kanzure/status/1137389045355614208>

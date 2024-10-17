@@ -1,13 +1,14 @@
 ---
 title: Hardware Wallets
-speakers: ['Stepan Snigirev']
+speakers:
+  - Stepan Snigirev
 date: 2019-06-29
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['hardware-wallet', 'security-problems']
+tags:
+  - hardware-wallet
+  - security-problems
 media: https://www.youtube.com/watch?v=rK0jUeHeDf0
 ---
-
 <https://twitter.com/kanzure/status/1145019634547978240>
 
 see also:

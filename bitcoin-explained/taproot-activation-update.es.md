@@ -2,15 +2,17 @@
 title: Actualización de la activación de Taproot
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['podcast']
-tags: ['taproot']
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+tags:
+  - taproot
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-04-23
 episode: 36
 media: https://www.youtube.com/watch?v=SHmEXPvN6t4
-aliases: ['/es/bitcoin-magazine/2021-04-23-taproot-activation-update']
+aliases:
+  - /es/bitcoin-magazine/2021-04-23-taproot-activation-update
 ---
-
 Tema: Actualización de la activación de Taproot: Speedy Trial y el cliente LOT=true
 
 Ubicación: Bitcoin Magazine (en línea)

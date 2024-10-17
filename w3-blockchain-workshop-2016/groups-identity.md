@@ -1,10 +1,7 @@
 ---
 title: Groups Identity
 transcript_by: Bryan Bishop
-categories: ['workshop']
 ---
-
-
 The topic that we have been working on is identity for everyone. In terms of trusted set of parties if you will, that can potentially provide some level of attestation to the identity and that can be provided in a digitized manner as to what levels of service an be provided to that level of identity as well.
 
 ...

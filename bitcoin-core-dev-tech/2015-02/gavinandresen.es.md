@@ -2,9 +2,7 @@
 title: Gavin Andresen
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
 ---
-
 <http://blog.circle.com/2015/02/10/devcore-livestream/>
 
 El tiempo de transacción instantánea... ya sabes, me acerco a una caja registradora, pongo mi teléfono ahí, y en un segundo o dos la transacción está confirmada y me voy con mi café. Cualquier cosa más allá de eso, 10 minutos frente a 1 minuto no importa. Hay un montón de ideas sobre esto, como un tercero de confianza que promete no duplicar el gasto, tener algunas monedas encerradas en un monedero multisig como Green Address. Hay ideas sobre la evaluación de riesgos de las transacciones no confirmadas, como la difusión y luego tener una idea de qué parte de la red lo ha visto y si alguien ha visto un doble gasto, hacer algunas suposiciones acerca de la probabilidad de que sea un doble gasto, si es lo suficientemente bajo y la cantidad es lo suficientemente baja, entonces se toma el riesgo y se procede. No sé cómo funcionará, no sé cómo se resolverá, cuál de estos enfoques funcionará.

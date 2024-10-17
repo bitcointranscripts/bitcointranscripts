@@ -1,16 +1,11 @@
 ---
 title: Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['fee-management', 'dual-funding']
+tags:
+  - fee-management
+  - dual-funding
 date: 2020-05-19
 ---
-Topic: Agenda in Google Doc below
-
-Location: Bitcoin Sydney (online)
-
-Video: No video posted online
-
 Google Doc of the resources discussed: https://docs.google.com/document/d/1hCTlQdt_dK6HerKNt0kl6X8HAeRh16VSAaEtrqcBvlw/
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.

@@ -1,8 +1,8 @@
 ---
-title: "Why Bitcoin Needs A Measured Approach To Scaling"
+title: Why Bitcoin Needs A Measured Approach To Scaling
 transcript_by: Bryan Bishop
-categories: ['podcast']
-speakers: ['Adam Back']
+speakers:
+  - Adam Back
 date: 2015-09-07
 media: https://youtube.com/watch?v=wYHyR2E5Pic
 ---

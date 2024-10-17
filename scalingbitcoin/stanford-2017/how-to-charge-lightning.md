@@ -1,9 +1,10 @@
 ---
 title: How To Charge Lightning
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Aviv Zohar']
+tags:
+  - lightning
+speakers:
+  - Aviv Zohar
 date: 2017-11-05
 media: https://www.youtube.com/watch?v=3pd6xHjLbhs&t=3785s
 ---

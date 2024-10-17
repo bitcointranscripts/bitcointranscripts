@@ -1,11 +1,11 @@
 ---
 title: Texas Energy Market
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Gideon Powell']
+tags:
+  - mining
+speakers:
+  - Gideon Powell
 ---
-
 Bitcoin mining
 
 Bitcoin has been one of the most interesting rides of my life. I come from an oil/gas family. I lived in Midland after college. I became very interested in monetary policy, inflation and its effects on the world. Through that, really discovered bitcoin and what it is capable of doing. I come from the energy perspective and Austrian school of economics.

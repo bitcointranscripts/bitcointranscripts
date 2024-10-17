@@ -1,13 +1,13 @@
 ---
 title: Bulletproofs
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['proof-systems']
-speakers: ['Andrew Poelstra']
+tags:
+  - proof-systems
+speakers:
+  - Andrew Poelstra
 date: 2018-02-02
 media: https://www.pscp.tv/w/1mnxerNaNkLKX
 ---
-
 49th Milan Bitcoin meetup
 
 <https://twitter.com/kanzure/status/962326126969442304>

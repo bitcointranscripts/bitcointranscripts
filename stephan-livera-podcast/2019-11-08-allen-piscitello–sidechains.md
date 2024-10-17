@@ -1,8 +1,8 @@
 ---
 title: Sidechains & Blockstream Liquid
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Allen Piscitello']
+speakers:
+  - Allen Piscitello
 date: 2019-11-08
 media: https://stephanlivera.com/download-episode/1614/123.mp3
 ---

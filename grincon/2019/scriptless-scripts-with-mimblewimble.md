@@ -1,9 +1,10 @@
 ---
 title: Scriptless Scripts With Mimblewimble
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['adaptor-signatures']
-speakers: ['Andrew Poelstra']
+tags:
+  - adaptor-signatures
+speakers:
+  - Andrew Poelstra
 ---
 ## Introduction
 

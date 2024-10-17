@@ -1,11 +1,12 @@
 ---
 title: Coinscope
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Andrew Miller', 'Dave Levin']
+tags:
+  - mining
+speakers:
+  - Andrew Miller
+  - Dave Levin
 ---
-
 <http://cs.umd.edu/projects/coinscope/>
 
 I am going to talk about a pair of tools, one is a simulator and another one is a measurement station for the bitcoin network. So let me start with the bitcoin simulator framework. The easiest approach is to create a customized model that is a simplified abstraction of what you care about- which is like simbit, to show off how selfish-mining works. What you put in is what you get, so the model is actually different from the actual behavior of the bitcoin network means that you don't learn anything really. You can have a local private network where you see the real bitcoin code. You don't then don't have as full control over the network; perhaps race conditions are hard to repeat. And you need a very powerful computing system, so you need as many cores as you have nodes. The approach I am going to talk about is a cross between simulation and emulation, running on an entirely simulated network, but everything is emulated. This decouples the virtual simulation time from the real world time.

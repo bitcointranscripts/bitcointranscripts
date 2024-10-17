@@ -1,9 +1,10 @@
 ---
-title: "Fraud Proofs and Modularized Validation"
+title: Fraud Proofs and Modularized Validation
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightweight-client']
-speakers: ['Peter Todd']
+tags:
+  - lightweight-client
+speakers:
+  - Peter Todd
 media: https://www.youtube.com/watch?v=UVuUZm4l-ss&t=4h29m10s
 ---
 In Bitcoin we have made this tradeoff where we don't have everyone running full nodes. Not everyone is participating equally. If you have a full node, you have lots of gigs of hard drive space, but if you do that, you only get a few transactions per second. Modularizing validation an argument for this is how to improve on this situation.

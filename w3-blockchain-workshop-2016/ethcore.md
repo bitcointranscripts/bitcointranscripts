@@ -1,10 +1,9 @@
 ---
 title: Ethcore
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['ethereum']
+tags:
+  - ethereum
 ---
-
 ethcore
 
 At ethcore, we are building the infrastructure for the future of the decentralized web. Unless we get distracted by TheDAO and soft-forks and hard-forks. Maybe decentralization is not the most important thing. We want to build a p2p secure serverless web. Why is decentralization such an important notion? There's no intrinsic value in being decentralized. There's intrinsic value in being utilized and secure by people.

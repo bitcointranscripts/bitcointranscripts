@@ -1,16 +1,14 @@
 ---
-title: "Secure Signatures: Harder Than You Think"
-transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['schnorr-signatures']
-speakers: ['Andrew Poelstra']
+title: 'Secure Signatures: Harder Than You Think'
+transcript_by: Bryan Bishop, Michael Folkson
+tags:
+  - schnorr-signatures
+speakers:
+  - Andrew Poelstra
 date: 2019-03-09
 media: https://www.youtube.com/watch?v=0gc1DSk8wlw
 ---
 Twitter announcement: <https://twitter.com/kanzure/status/1104399812147916800>
-
-Transcript completed by: Bryan Bishop Edited by: Michael Folkson
-
 ## Introduction
 
 Hi everyone. Can you hear me alright? Is my mic? Okay, cool. I was scheduled to talk about the history of Schnorr signatures in Bitcoin. I wanted to do that but then I realized I’ve only got 20-30 minutes to talk here. Instead I am going to focus on one particular piece of that history, which is the security model surrounding not just Schnorr signatures but extensions to Schnorr signatures we really care about. I'm just going to focus on the security model evolved as we started doing this.

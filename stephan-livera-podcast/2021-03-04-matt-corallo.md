@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Soft Fork Activation, Taproot, and Playing Chicken
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Matt Corallo']
+speakers:
+  - Matt Corallo
 date: 2021-03-04
 media: https://www.youtube.com/watch?v=SY-v2chnS9s
 ---

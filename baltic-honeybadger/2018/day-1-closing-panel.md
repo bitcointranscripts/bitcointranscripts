@@ -1,11 +1,16 @@
 ---
 title: Day 1 Closing Panel
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Elizabeth Stark', 'Peter Todd', 'Jameson Lopp', 'Eric Voskuil', 'Alex Petrov', 'Roman Snitko']
+tags:
+  - lightning
+speakers:
+  - Elizabeth Stark
+  - Peter Todd
+  - Jameson Lopp
+  - Eric Voskuil
+  - Alex Petrov
+  - Roman Snitko
 ---
-
 Closing panel
 
 <https://twitter.com/kanzure/status/1043517333640241152>

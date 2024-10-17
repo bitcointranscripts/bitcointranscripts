@@ -1,12 +1,8 @@
 ---
 title: Communication With Regulators
 transcript_by: Bryan Bishop
-categories: ['workshop']
 date: 2020-02-18
 ---
-
-Communication with regulators
-
 <https://twitter.com/kanzure/status/1229856579324760064>
 
 # Backgrounds

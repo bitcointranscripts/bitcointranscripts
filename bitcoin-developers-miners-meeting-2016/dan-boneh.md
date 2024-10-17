@@ -1,14 +1,13 @@
 ---
-title: Dan Boneh
+title: A Conversation with Dan Boneh
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['research', 'ethereum']
-speakers: ['Dan Boneh']
+tags:
+  - research
+  - ethereum
+speakers:
+  - Dan Boneh
 date: 2016-08-01
 ---
-
-A conversation with Dan Boneh
-
 Part of the challenge was that the Google Maps directions in the email were going down some roads that had construction.... been here 10 minutes, and some arriving in another 10 minutes. They are building a new biology building. Large campus here. In whatever direction you walk, there are buildings and more buildings. In two years there will be a new biology building, and two years later there will be a new computer science building.
 
 How many users at Stanford? 5000 grads. Really small school, considering the surface area. It's mostly a research university.

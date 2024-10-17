@@ -1,13 +1,13 @@
 ---
 title: Signet Workshop
-speakers: ['Kalle Alm']
+speakers:
+  - Kalle Alm
 date: 2020-02-07
 transcript_by: Michael Folkson
-categories: ['workshop']
-tags: ['taproot', 'signet']
+tags:
+  - taproot
+  - signet
 ---
-Video: No video posted online
-
 ## Let’s prepare
 
 ```

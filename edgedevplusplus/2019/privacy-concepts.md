@@ -1,11 +1,14 @@
 ---
-title: "Privacy Concepts for Bitcoin application developers"
+title: Privacy Concepts for Bitcoin application developers
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy-enhancements', 'privacy-problems']
-speakers: ['Udi Wertheimer']
+tags:
+  - privacy-enhancements
+  - privacy-problems
+speakers:
+  - Udi Wertheimer
 date: 2019-09-09
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/privacy-concepts]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/privacy-concepts
 ---
 <https://twitter.com/kanzure/status/1171036497044267008>
 

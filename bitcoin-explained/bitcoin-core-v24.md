@@ -1,13 +1,20 @@
 ---
-title: "Bitcoin Core 24.0"
+title: Bitcoin Core 24.0
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=3UfrB7_ZOx0
-tags: ["bitcoin-core", "rbf", "coin-selection", "descriptors", "miniscript"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - rbf
+  - coin-selection
+  - descriptors
+  - miniscript
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2022-10-07
 episode: 65
-aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v24']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/bitcoin-core-v24
 ---
 ## Intro
 

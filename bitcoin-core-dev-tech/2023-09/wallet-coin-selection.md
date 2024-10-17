@@ -1,10 +1,10 @@
 ---
 title: Discussion on open Coin Selection matters
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'coin selection']
+tags:
+  - bitcoin-core
+  - coin-selection
 date: 2023-09-19
 ---
-
 * **Topic: review of https://github.com/bitcoin/bitcoin/pull/27601**
     * Problem statement: when doing manual RBF (without using bumpfee RPC) we treat previous change output as a receiver and thus create two outputs to the same address
     * Proposal: combine amount on outputs to the same address

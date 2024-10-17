@@ -1,9 +1,12 @@
 ---
 title: Attacking Bitcoin Core
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['bitcoin-core', 'p2p', 'eclipse-attacks']
-speakers: ['Amiti Uttarwar']
+tags:
+  - bitcoin-core
+  - p2p
+  - eclipse-attacks
+speakers:
+  - Amiti Uttarwar
 date: 2020-04-16
 media: https://www.youtube.com/watch?v=8TaY730YlMg
 ---

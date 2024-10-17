@@ -1,8 +1,8 @@
 ---
 title: BTCPayServer architecture and BTC transmuter
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Kukks']
+speakers:
+  - Kukks
 date: 2019-01-20
 media: https://stephanlivera.com/download-episode/1276/91.mp3
 ---

@@ -1,14 +1,14 @@
 ---
 title: Transaction Relay Policy
-speakers: ['Gloria Zhao']
+speakers:
+  - Gloria Zhao
 date: 2021-11-16
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['transaction-relay-policy']
+tags:
+  - transaction-relay-policy
 media: https://www.youtube.com/watch?v=fbWSQvJjKFs
 translation_by: Ajian
 ---
-
 主题：L2 开发者须知的交易转发规则
 
 位置：Adopting Bitcoin

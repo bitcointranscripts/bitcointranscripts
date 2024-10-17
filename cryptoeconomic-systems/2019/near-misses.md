@@ -1,11 +1,12 @@
 ---
 title: Near Misses
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'research']
-speakers: ['Ethan Heilman']
+tags:
+  - security
+  - research
+speakers:
+  - Ethan Heilman
 ---
-
 Near misses: What could have gone wrong
 
 # Introduction

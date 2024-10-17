@@ -1,13 +1,13 @@
 ---
-title: A Wishlist For Verifiable Computation
+title: 'A Wishlist for Verifiable Computation: An Applied CS Perspective'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Michael Walfish']
+tags:
+  - research
+speakers:
+  - Michael Walfish
+date: 2015-06-10
+media: https://www.youtube.com/watch?v=Z4jzA6ts2j4
 ---
-
-A wishlist for verifiable computation: An applied computer science perspective
-
 * <http://www.pepper-project.org/>
 * <https://www.youtube.com/watch?v=Z4jzA6ts2j4>
 * <http://simons.berkeley.edu/talks/mike-walfish-2015-06-10>

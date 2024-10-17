@@ -1,15 +1,14 @@
 ---
 title: Revault - A Multiparty Vault Architecture
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['covenants']
+tags:
+  - covenants
 date: 2020-05-26
-speakers: ['Kevin Loaec', 'Antoine Poinsot']
+speakers:
+  - Kevin Loaec
+  - Antoine Poinsot
 media: https://www.youtube.com/watch?v=7CE4aiFxh10
 ---
-
-Location: London Bitcoin Devs (online)
-
 Kevin slides: https://www.dropbox.com/s/rj45ebnic2m0q2m/kevin%20loaec%20revault%20slides.pdf?dl=0
 
 Antoine slides: https://www.dropbox.com/s/xaoior0goo37247/Antoine%20Poinsot%20Revault%20slides.odp?dl=0

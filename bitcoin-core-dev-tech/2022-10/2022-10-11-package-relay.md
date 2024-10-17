@@ -1,12 +1,13 @@
 ---
 title: Package Relay BIP, implementation, V3, and package RBF proposals
 transcript_by: Gloria Zhao
-categories: ['core-dev-tech']
-tags: ['package relay', 'bitcoin core']
+tags:
+  - package-relay
+  - bitcoin-core
 date: 2022-10-11
-aliases: ['/bitcoin-core-dev-tech/2022-10-11-package-relay/']
+aliases:
+  - /bitcoin-core-dev-tech/2022-10-11-package-relay/
 ---
-
 Notes on Package Relay BIP, implementation, V3, and package RBF proposals from Core Dev in Atlanta.
 
 Also at <https://gist.github.com/glozow/8469dc9c3a003c7046033a92dd504329>.

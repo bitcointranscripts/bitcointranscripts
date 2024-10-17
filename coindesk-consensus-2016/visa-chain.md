@@ -1,10 +1,11 @@
 ---
-title: Visa Chain
+title: 'Visa & Chain'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Adam Ludwin']
+tags:
+  - altcoins
+speakers:
+  - Adam Ludwin
 ---
-
 Preliminary notes:
 
 

@@ -1,8 +1,8 @@
 ---
-title: "Fiat Money & Fiat Food"
+title: Fiat Money & Fiat Food
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Saifedean Ammous']
+speakers:
+  - Saifedean Ammous
 media: https://www.youtube.com/watch?v=ZnvAYDEUVlg
 ---
 <https://twitter.com/kanzure/status/1162734566479728641>

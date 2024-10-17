@@ -1,9 +1,11 @@
 ---
-title: "Jute: New Braiding Techniques to Achieve Significant Scaling Gains"
+title: 'Jute: New Braiding Techniques to Achieve Significant Scaling Gains'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'mining']
-speakers: ['David Vorick']
+tags:
+  - research
+  - mining
+speakers:
+  - David Vorick
 media: https://www.youtube.com/watch?v=uO-1rQbdZuk&t=4575s
 ---
 <https://twitter.com/kanzure/status/785116246257856512>

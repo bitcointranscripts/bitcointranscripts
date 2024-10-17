@@ -1,9 +1,12 @@
 ---
-title: "The State of Atomic Swaps"
+title: The State of Atomic Swaps
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'htlc', 'adaptor-signatures']
-speakers: ['Thomas Eizinger']
+tags:
+  - research
+  - htlc
+  - adaptor-signatures
+speakers:
+  - Thomas Eizinger
 date: 2018-10-07
 media: https://www.youtube.com/watch?v=FI9cwksTrQs&t=1025s
 ---

@@ -1,12 +1,13 @@
 ---
 title: Taproot, Graftroot, Etc
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['contract-protocols', 'taproot']
+tags:
+  - contract-protocols
+  - taproot
 date: 2018-03-06
-aliases: ['/bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-03-06-taproot-graftroot-etc/
 ---
-
 <https://twitter.com/kanzure/status/972468121046061056>
 
 ## Graftroot

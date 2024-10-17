@@ -1,10 +1,11 @@
 ---
-title: "Weighing Transactions, The Witness Discount"
+title: Weighing Transactions, The Witness Discount
 transcript_by: philmartin2525 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=xmvxR0FTrVE
-tags: ["segwit"]
-speakers: ["Mark Erhardt"]
-categories: ["conference"]
+tags:
+  - segwit
+speakers:
+  - Mark Erhardt
 date: 2022-10-14
 ---
 ## In this talk

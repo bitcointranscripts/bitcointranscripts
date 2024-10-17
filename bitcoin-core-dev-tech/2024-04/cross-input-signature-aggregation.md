@@ -1,10 +1,10 @@
 ---
 title: Cross Input Signature Aggregation
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'cisa']
+tags:
+  - bitcoin-core
+  - cisa
 date: 2024-04-08
 ---
-
 - cisaresearch.org, put together by fjahr
   - Documents progress of half and full agg (theory, implementation and deployment)
   - Provides collection of CISA-related resources (ML posts, papers, videos/podcasts,

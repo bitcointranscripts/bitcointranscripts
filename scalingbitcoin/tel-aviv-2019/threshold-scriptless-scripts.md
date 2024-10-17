@@ -1,12 +1,13 @@
 ---
 title: Threshold Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'adaptor-signatures', 'threshold-signature']
-speakers: ['Omer Shlomovits']
+tags:
+  - research
+  - adaptor-signatures
+  - threshold-signature
+speakers:
+  - Omer Shlomovits
 ---
-Omer Shlomovits (KZen Research) (omershlomovits, zengo)
-
 <https://twitter.com/kanzure/status/1171690582445580288>
 
 ## Scriptless scripts

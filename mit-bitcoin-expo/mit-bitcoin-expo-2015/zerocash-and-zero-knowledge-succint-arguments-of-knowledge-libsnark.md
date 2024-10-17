@@ -1,9 +1,10 @@
 ---
-title: "Zerocash: Zero knowledge proofs and SNARKs and libsnark"
+title: 'Zerocash: Zero knowledge proofs and SNARKs and libsnark'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Madars Virza']
+tags:
+  - proof-systems
+speakers:
+  - Madars Virza
 date: 2015-03-08
 media: https://www.youtube.com/watch?v=96ULlHhia_Q&t=15308
 ---

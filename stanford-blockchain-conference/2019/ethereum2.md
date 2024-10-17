@@ -1,11 +1,12 @@
 ---
 title: Ethereum 2.0 and beyond
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'ethereum']
-speakers: ['Vitalik Buterin']
+tags:
+  - research
+  - ethereum
+speakers:
+  - Vitalik Buterin
 ---
-
 Please welcome Vitalik who needs no introduction.
 
 ## Introduction

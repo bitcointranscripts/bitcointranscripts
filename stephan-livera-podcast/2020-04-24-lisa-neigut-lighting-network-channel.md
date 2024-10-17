@@ -1,8 +1,8 @@
 ---
 title: Lightning Network Channel Accounting and Dual Funded Channels
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Lisa Neigut']
+speakers:
+  - Lisa Neigut
 date: 2020-04-24
 media: https://stephanlivera.com/download-episode/1969/168.mp3
 ---

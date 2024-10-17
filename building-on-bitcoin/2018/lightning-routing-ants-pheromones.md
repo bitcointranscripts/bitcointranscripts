@@ -1,13 +1,14 @@
 ---
 title: Ant routing for the Lightning Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'routing']
-speakers: ['Ricardo Perez-Marco']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Ricardo Perez-Marco
 date: 2018-07-04
 media: https://www.youtube.com/watch?v=nmqniwbwCg0
 ---
-
 Decentralized anonymous routing algorithm for LN
 
 <https://twitter.com/kanzure/status/1014530761398145025>

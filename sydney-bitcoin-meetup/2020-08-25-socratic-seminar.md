@@ -1,18 +1,8 @@
 ---
 title: Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
 date: 2020-08-25
 ---
-
-Name: Socratic Seminar
-
-Topic: Agenda in Google Doc below
-
-Location: Bitcoin Sydney (online)
-
-Video: No video posted online
-
 Last month’s Sydney Socratic: https://diyhpl.us/wiki/transcripts/sydney-bitcoin-meetup/2020-07-21-socratic-seminar/
 
 Google Doc of the resources discussed: https://docs.google.com/document/d/1rJxVznWaFHKe88s5GyrxOW-RFGTeD_GKdFzHNvhrq-c/

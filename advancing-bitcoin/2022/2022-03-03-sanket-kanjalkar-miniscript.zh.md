@@ -2,9 +2,10 @@
 title: Miniscript
 transcript_by: Michael Folkson
 translation_by: Ajian
-categories: ['conference']
-tags: ['miniscript']
-speakers: ['Sanket Kanjalkar']
+tags:
+  - miniscript
+speakers:
+  - Sanket Kanjalkar
 date: 2022-03-03
 media: https://www.youtube.com/watch?v=Bn1CWsqt3VQ
 ---

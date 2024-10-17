@@ -1,13 +1,14 @@
 ---
 title: Mempool Analysis & Simulation
 transcript_by: Bryan Bishop
-speakers: ['Kalle Alm']
-categories: ['conference']
-tags: ['transaction-relay-policy', 'developer-tools']
+speakers:
+  - Kalle Alm
+tags:
+  - transaction-relay-policy
+  - developer-tools
 date: 2019-06-08
 media: https://www.youtube.com/watch?v=Mznn1uVyTUQ
 ---
-
 <https://twitter.com/kanzure/status/1137342023063744512>
 
 slides: <https://breaking-bitcoin.com/docs/slides/2019/mempoolAnalysis.pdf>

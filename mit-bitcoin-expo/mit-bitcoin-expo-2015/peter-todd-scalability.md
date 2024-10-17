@@ -1,11 +1,11 @@
 ---
 title: Scalability
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['scalability']
-speakers: ['Peter Todd']
+tags:
+  - scalability
+speakers:
+  - Peter Todd
 ---
-
 There we go. Yeah. Looks good. Thank you.
 
 So I wanted to talk about scalability and I wanted to give two opposing views of it. The first is really, scaling Bitcoin up is really really easy. The underlying architecture of Bitcoin is designed in a way that makes it easy to scale. You have your blockchain, and you have your blocks at the top which are 80 bytes data structures. They form a massive long chain all the way back to the genesis block when Bitcoin was created. For each block, those blocks commit to transactions in a structure called a merkle tree. Some data is pointing to another data structure by hash.

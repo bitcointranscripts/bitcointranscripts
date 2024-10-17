@@ -1,17 +1,15 @@
 ---
-title: Laolu, Joost, Oliver - Lnd0.10
+title: Introducing LND 0.10
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['lnd']
+tags:
+  - lnd
 date: 2020-04-18
-speakers: ['Olaoluwa Osuntokun', 'Joost Jager', 'Oliver Gugger']
+speakers:
+  - Olaoluwa Osuntokun
+  - Joost Jager
+  - Oliver Gugger
 media: https://www.youtube.com/watch?v=h34fUGuDjMg
 ---
-
-Topic: lnd v0.10
-
-Location: Virtual Reality (VR Bitcoin)
-
 # Intro (Laolu Osuntokun)
 
 Thanks everyone for coming. This is my first time doing a VR presentation, really cool. I am going to be talking about lnd 0.10. Right now we are on rc2, the next major lnd release, it has a bunch of cool features, bug fixes, optimizations. I am going to talk about some big ticket features in 0.10. There are a bunch of other features that you are going to want to check out in the release notes. We will have a blog post talking about the release.

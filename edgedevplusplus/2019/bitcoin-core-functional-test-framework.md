@@ -1,17 +1,17 @@
 ---
 title: Bitcoin Core Functional Test Framework
-transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Fabian Jahr']
+transcript_by: Bryan Bishop, Michael Folkson
+speakers:
+  - Fabian Jahr
 date: 2019-09-10
-tags: ['bitcoin-core', 'developer-tools']
+tags:
+  - bitcoin-core
+  - developer-tools
 media: https://www.youtube.com/watch?v=gr75ubfNQ20
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/bitcoin-core-functional-test-framework]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/bitcoin-core-functional-test-framework
 ---
-
 Slides: https://telaviv2019.bitcoinedge.org/files/test-framework-in-bitcoin-core.pdf
-
-Transcript completed by: Bryan Bishop Edited by: Michael Folkson
 
 https://twitter.com/kanzure/status/1171357556519952385
 

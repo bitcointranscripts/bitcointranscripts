@@ -1,10 +1,10 @@
 ---
 title: P2P working session
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'p2p']
+tags:
+  - bitcoin-core
+  - p2p
 date: 2023-09-19
 ---
-
 ## Erlay
 
 - Gleb is active and ready to move forward - [#21515](https://github.com/bitcoin/bitcoin/pull/21515)

@@ -1,10 +1,14 @@
 ---
-title: "Socratic Seminar - BBIP Schnorr (BIP 340)"
+title: Socratic Seminar - BBIP Schnorr (BIP 340)
 transcript_by: Michael Folkson
-categories: ['meetup']
 date: 2020-06-16
-tags: ['schnorr-signatures']
-speakers: ['Pieter Wuille', 'Adam Gibson', 'Elichai Turkel', 'Tim Ruffing']
+tags:
+  - schnorr-signatures
+speakers:
+  - Pieter Wuille
+  - Adam Gibson
+  - Elichai Turkel
+  - Tim Ruffing
 media: https://www.youtube.com/watch?v=uE3lLsf38O4
 ---
 Pastebin of the resources discussed: https://pastebin.com/uyktht33

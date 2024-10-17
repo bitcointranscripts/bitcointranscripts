@@ -1,9 +1,11 @@
 ---
-title: "The Quest for Practical Threshold Schnorr Signatures"
+title: The Quest for Practical Threshold Schnorr Signatures
 transcript_by: Bryan Bishop, Michael Folkson
-categories: ['conference']
-tags: ['research', 'threshold-signature']
-speakers: ['Tim Ruffing']
+tags:
+  - research
+  - threshold-signature
+speakers:
+  - Tim Ruffing
 date: 2019-10-06
 media: https://www.youtube.com/watch?v=Wy5jpgmmqAg
 ---

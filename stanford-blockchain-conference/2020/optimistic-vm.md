@@ -1,9 +1,11 @@
 ---
-title: "The optimistic VM"
+title: The optimistic VM
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'ethereum']
-speakers: ['Karl Floersch']
+tags:
+  - research
+  - ethereum
+speakers:
+  - Karl Floersch
 ---
 <https://twitter.com/kanzure/status/1230974707249233921>
 

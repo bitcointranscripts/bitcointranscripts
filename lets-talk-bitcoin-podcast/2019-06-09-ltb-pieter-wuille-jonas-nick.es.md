@@ -1,14 +1,14 @@
 ---
 title: The Tools and The Work
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['taproot', 'schnorr-signatures']
-speakers: ['Pieter Wuille', 'Jonas Nick']
+tags:
+  - taproot
+  - schnorr-signatures
+speakers:
+  - Pieter Wuille
+  - Jonas Nick
 date: 2019-06-09
 ---
-
-Hablemos de Bitcoin con Pieter Wuille y Jonas Nick – 9 de Junio de 2019 ("Let's Talk Bitcoin")
-
 <https://twitter.com/kanzure/status/1155851797568917504>
 
 Parte 1: <https://letstalkbitcoin.com/blog/post/lets-talk-bitcoin-400-the-tools-and-the-work>

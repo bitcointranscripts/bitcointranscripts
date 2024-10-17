@@ -2,18 +2,13 @@
 title: Covenants
 transcript_by: Jeremy Rubin
 translation_by: Ajian
-categories: ['conference']
-tags: ['covenants']
+tags:
+  - covenants
 date: 2021-11-05
-speakers: ['Jeremy Rubin', 'Andrew Poelstra']
+speakers:
+  - Jeremy Rubin
+  - Andrew Poelstra
 ---
-
-主题：Covenants
-
-场合：TABConf (The Atlanta Bitcoin Conference)
-
-视频：互联网上无视频放出。
-
 根据 “苏格拉底村” 规则，（除了演讲者之外）所有与会者都使用了假名；音频也不会公开，以保护提问者的匿名。
 
 # 限制条款的概念

@@ -1,19 +1,14 @@
 ---
 title: Taller Signet
-speakers: ['Kalle Alm']
+speakers:
+  - Kalle Alm
 date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['taller']
-tags: ['taproot', 'signet']
+tags:
+  - taproot
+  - signet
 ---
-
-Tema: Taller Signet
-
-Localización: El avance de Bitcoin
-
-Vídeo: No se ha publicado ningún vídeo en línea
-
 # Preparémonos
 
 ```

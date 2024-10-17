@@ -1,13 +1,16 @@
 ---
-title: "Tooling Panel"
+title: Tooling Panel
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['developer-tools']
-speakers: ['Eric Voskuil', 'Nicolas Dorier', 'Kevin Loaec', 'Lawrence Nahum']
+tags:
+  - developer-tools
+speakers:
+  - Eric Voskuil
+  - Nicolas Dorier
+  - Kevin Loaec
+  - Lawrence Nahum
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=fjtmyaH6MG8
 ---
-
 <https://twitter.com/kanzure/status/1014167542422822913>
 
 What kind of tools do we need to create, in order to facilitate building on bitcoin? We are going to open questions to the floor. The guys will be there to get your questions. The panel will be about 20 minutes long, and then we will go for food.

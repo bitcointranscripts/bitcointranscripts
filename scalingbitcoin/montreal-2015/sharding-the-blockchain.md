@@ -1,9 +1,11 @@
 ---
-title: "Sharding the Blockchain"
+title: Sharding the Blockchain
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-systems']
-speakers: ['Vlad Zamfir']
+tags:
+  - research
+  - proof-systems
+speakers:
+  - Vlad Zamfir
 date: 2015-09-13
 media: https://www.youtube.com/watch?v=TgjrS-BPWDQ&t=10110s
 ---

@@ -1,12 +1,12 @@
 ---
 title: Plasma Cash
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['ethereum']
-speakers: ['Georgios Konstantopoulos']
+tags:
+  - ethereum
+speakers:
+  - Georgios Konstantopoulos
 date: 2019-01-20
 ---
-
 Plasma Cash: Towards more efficient Plasma constructions
 
 <https://twitter.com/kanzure/status/1090691501561020416>

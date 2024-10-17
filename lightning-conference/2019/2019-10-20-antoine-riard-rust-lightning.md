@@ -1,13 +1,13 @@
 ---
 title: Rust Lightning
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Antoine Riard']
+tags:
+  - lightning
+speakers:
+  - Antoine Riard
 date: 2019-10-20
 media: https://www.youtube.com/watch?v=q6a1On5pirk
 ---
-
 Deploying rust-lightning in the wild
 
 The Lightning Conference Day 2 (Stage 2)

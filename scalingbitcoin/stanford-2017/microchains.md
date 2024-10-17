@@ -1,9 +1,10 @@
 ---
 title: Microchains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['sidechains']
-speakers: ['David Vorick']
+tags:
+  - sidechains
+speakers:
+  - David Vorick
 date: 2017-11-05
 media: https://www.youtube.com/watch?v=3pd6xHjLbhs&t=8351s
 ---

@@ -1,10 +1,11 @@
 ---
 title: Merkleized Abstract Syntax Trees
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['mast']
+tags:
+  - mast
 date: 2017-09-07
-aliases: ['/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/']
+aliases:
+  - /bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/
 ---
 <https://twitter.com/kanzure/status/907075529534328832>
 

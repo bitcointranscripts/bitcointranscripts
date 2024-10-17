@@ -1,12 +1,9 @@
 ---
 title: Some Questions For Bitcoiners
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Joi Ito']
+speakers:
+  - Joi Ito
 ---
-
-Joi Ito
-
 He is the director of the MIT Media Lab. He served as the chairman of the Creative Commons and is on the board of the Mozilla Foundation.
 
 Just so that I can get a sense of the room, how many people here would say that you are technical? Most of you. How many of you were on the cypherpunks mailing list? How many of you have been threatened by Timothy May? How many of you know Timothy May? Okay.

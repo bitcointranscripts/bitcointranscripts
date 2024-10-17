@@ -1,9 +1,11 @@
 ---
 title: MuSig, MuSig-DN and MuSig2
 transcript_by: Michael Folkson
-speakers: ['Jonas Nick', 'Tim Ruffing']
-categories: ['podcast']
-tags: ['musig']
+speakers:
+  - Jonas Nick
+  - Tim Ruffing
+tags:
+  - musig
 date: 2020-10-27
 media: https://stephanlivera.com/episode/222/
 ---

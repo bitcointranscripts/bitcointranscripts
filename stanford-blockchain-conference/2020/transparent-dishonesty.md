@@ -1,9 +1,12 @@
 ---
-title: "Transparent Dishonesty: front-running attacks on Blockchain "
+title: 'Transparent Dishonesty: front-running attacks on Blockchain '
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'security-problems', 'altcoins']
-speakers: ['Shayan Eskandari']
+tags:
+  - research
+  - security-problems
+  - altcoins
+speakers:
+  - Shayan Eskandari
 ---
 <https://twitter.com/kanzure/status/1231005309310627841>
 

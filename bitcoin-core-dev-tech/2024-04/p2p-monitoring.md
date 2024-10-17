@@ -1,7 +1,9 @@
 ---
 title: P2P Monitoring
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'p2p', 'developer-tools']
+tags:
+  - bitcoin-core
+  - p2p
+  - developer-tools
 date: 2024-04-09
 ---
 [Slides](https://github.com/kouloumos/bitcointranscripts/blob/temp_core_dev_slides/bitcoin-core-dev-tech/2024-04/files/2024-04-Peer-observer-CoreDev-Berlin-2024.pdf)

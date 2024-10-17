@@ -1,9 +1,10 @@
 ---
 title: Lightning Multi Part Payments
 transcript_by: Stephan Livera
-categories: ['podcast']
-tags: ['multipath-payments']
-speakers: ['Rusty Russell']
+tags:
+  - multipath-payments
+speakers:
+  - Rusty Russell
 date: 2019-12-16
 media: https://stephanlivera.com/download-episode/1685/134.mp3
 ---

@@ -1,14 +1,15 @@
 ---
 title: Coin Selection
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['coin-selection']
-speakers: ['Kalle Alm']
+tags:
+  - coin-selection
+speakers:
+  - Kalle Alm
 media: https://www.youtube.com/watch?v=ZMzVIi1lgyw
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/coin-selection]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/coin-selection
 ---
-
 <https://twitter.com/kanzure/status/1047708247333859328>
 
 # Introduction

@@ -1,10 +1,10 @@
 ---
 title: Private tx broadcast
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'p2p']
+tags:
+  - bitcoin-core
+  - p2p
 date: 2024-04-08
 ---
-
 Updates:
 
 - TX is validated before broadcast (using mempool test).

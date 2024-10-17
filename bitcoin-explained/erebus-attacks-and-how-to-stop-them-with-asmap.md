@@ -2,12 +2,16 @@
 title: Erebus Attacks And How To Stop Them With ASMAP
 transcript_by: adamjonas via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=I2ZmAPI3ebQ
-tags: ["security-enhancements", "security-problems"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["Podcast"]
+tags:
+  - security-enhancements
+  - security-problems
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2020-11-19
 episode: 18
-aliases: ['/bitcoin-magazine/bitcoin-explained/erebus-attacks-and-how-to-stop-them-with-asmap']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/erebus-attacks-and-how-to-stop-them-with-asmap
 ---
 Aaron van Wirdum: 00:00:07
 

@@ -1,12 +1,9 @@
 ---
-title: Open source - Beyond Bitcoin Core
+title: 'Open source: Beyond Bitcoin Core'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Eric Martindale']
+speakers:
+  - Eric Martindale
 ---
-
-Open source: Beyond Bitcoin Core
-
 He is at Bitpay, working on copay, bitcore, foxtrot, and their blockchain explorer.
 
 First of all, a little bit about Bitpay. We were actually founded in May 2011. We have been around for some time. At the time, MtGox was actually still a viable exchange. The Bitcoin price was down at about $1 or a little more. And we had a grand total of two merchants.
