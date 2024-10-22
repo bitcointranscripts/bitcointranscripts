@@ -8,7 +8,6 @@ tags:
   - 'privacy'
 speakers:
   - 'Sergi Delgado'
-  - 'Mark Erhardt'
 categories:
   - 'podcast'
 ---
@@ -19,7 +18,7 @@ I discover more things that I love by doing so.
 And again, these are not feelings, but they are feelings related to research.
 Sorry, failing time.
 
-Speaker 1: 00:00:12
+Adam Jonas: 00:00:12
 
 We're going to make sure our editor takes out the love word.
 We are back in the studio.
@@ -28,11 +27,11 @@ Mark Erhardt: 00:00:15
 
 We are.
 
-Speaker 1: 00:00:24
+Adam Jonas: 00:00:24
 
 And today we're going to be joined by Sergi Delgado.
 
-Speaker 1: 00:00:27
+Adam Jonas: 00:00:27
 
 Yeah, we're going to talk about Watchtowers.
 We're going to talk about some of his prior work.
@@ -42,7 +41,7 @@ Mark Erhardt: 00:00:31
 Sergi is a former academic researcher.
 He did his PhD and worked as a postdoc for a while, and now he's a Spiral grantee and works on the Eye of Satoshi.
 
-Speaker 1: 00:00:42
+Adam Jonas: 00:00:42
 
 Yeah, he's pretty privacy-focused, and it's really interesting to watch a researcher sort of move over and do implementation for now.
 I don't know, it's been like three years he's been working on this.
@@ -56,7 +55,7 @@ Sergi Delgado: 00:01:06
 Thank you.
 It's been amazing, but we don't talk about feelings here.
 
-Speaker 1: 00:01:10
+Adam Jonas: 00:01:10
 
 You're clearly a dedicated listener if you know that.
 Yeah, we're going to talk about TxProbe because I think I saw you speak at Scaling in Tel Aviv.
@@ -68,7 +67,7 @@ Sergi Delgado: 00:01:35
 
 That was interesting.
 
-Speaker 1: 00:01:36
+Adam Jonas: 00:01:36
 
 Tell us about that project.
 
@@ -78,7 +77,7 @@ It started back in 2017, if I remember correctly.
 That was the last year of my PhD.
 I came to the States for the first time, those are not feelings, those are facts, to work with Andrew Miller, which is a quite renowned researcher for peer-to-peer in Bitcoin.
 
-Speaker 1: 00:01:58
+Adam Jonas: 00:01:58
 
 But now doing mostly other stuff.
 We've lost him to other kinds of projects.
@@ -154,7 +153,7 @@ Peter told me about that.
 They were like flooding the network with thousands of IP addresses.
 Interesting.
 
-Speaker 1: 00:05:09
+Adam Jonas: 00:05:09
 
 You did that project, and I thought it was pretty clever in terms of how you used Orvin transactions to fingerprint nodes.
 And so you get to the other side of that, the results were pretty striking.
@@ -203,7 +202,7 @@ And that was part of a countermeasure against topology inferring using transacti
 Because now, some of the information that you may be propagating through the connections on block, sorry, transactions on block connections, like the normal connections, may beat you back in the ass using the block-only relay connections.
 So you may not be able to use similar techniques to infer the topology.
 
-Speaker 1: 00:08:05
+Adam Jonas: 00:08:05
 
 Yeah, I mean, the genius of that too, of course, is given the combination, you're also saving bandwidth.
 Like it's not that much overhead to add blocks only.
@@ -220,7 +219,7 @@ I discovered a whole more things that I love by doing so.
 And again, these are not feelings, but related to research.
 Sorry, filling time.
 
-Speaker 1: 00:08:54
+Adam Jonas: 00:08:54
 
 We'll make sure our editor takes out the love word.
 
@@ -258,7 +257,7 @@ Lightning at the end of the day is routing.
 I mean, it's routing payment, so it's as much as a peer-to-peer network as anything else could be, right?
 So, yeah, I think that that was the way, like trying to understand how it works, trying to see if anything doesn't work as supposedly or what are the gaps in between, I guess.
 
-Speaker 1: 00:11:16
+Adam Jonas: 00:11:16
 
 And was it the same sort of process?
 Like, did you feel like you needed to disclose this before it was published?
@@ -283,7 +282,7 @@ So again, it was called empirical analysis on privacy in the Lightning Network.
 It was not just about probing.
 But bhey did most of the disclosure instead of me.
 
-Speaker 1: 00:12:47
+Adam Jonas: 00:12:47
 
 And just for our listeners, so that they have a better understanding, there's sort of the balanced discovery piece, which is, if you're interested in that, you should listen to Sergei's episode because we talk about it in a fair bit of detail.
 There's payment discovery and there's path discovery.
@@ -317,7 +316,7 @@ Sergi Delgado: 00:14:18
 
 It gets back to the point where all the debate about should we be paying for data relay inside the Lightning Network even if a payment hasn't succeeded or not.
 
-Speaker 1: 00:14:30
+Adam Jonas: 00:14:30
 
 What do you think?
 
@@ -333,7 +332,7 @@ It just feels like no one has bloated the network with it.
 But you can, you definitely can.
 It's there to be used.
 
-Speaker 1: 00:15:08
+Adam Jonas: 00:15:08
 
 We just need a Satoshi's dice to make it useful.
 
@@ -372,7 +371,7 @@ That's taking some of your opportunity cost for that to be used for routing or f
 
 ## Is Lightning flawed when it comes to privacy?
 
-Speaker 1: 00:16:31
+Adam Jonas: 00:16:31
 
 And so is just, is Lightning just fundamentally flawed and we should give up?
 
@@ -395,7 +394,7 @@ Sergi Delgado: 00:17:43
 
 If you do, then it means that you have to like start front-charging or making the user do something.
 
-Speaker 1: 00:17:51
+Adam Jonas: 00:17:51
 
 Reputation-based stuff, too.
 
@@ -404,7 +403,7 @@ Sergi Delgado: 00:17:53
 For example.
 That's something that already exists in Lightning, for fail payments in some implementation, at least.
 
-Speaker 1: 00:18:00
+Adam Jonas: 00:18:00
 
 Let's transition a little bit.
 We've been talking about your research and your prior work and haven't delved too much into what you're doing these days.
@@ -427,7 +426,7 @@ I mean, by touch at the beginning, and then some more people pick it up.
 There's been multiple implementations of it, so it's not like I'm the first one with it.
 I've never tried to claim, hey, this is something I've done.
 
-Speaker 1: 00:19:28
+Adam Jonas: 00:19:28
 
 Who else has done it before you?
 
@@ -476,7 +475,7 @@ The support for Bitcoin in Python could be better.
 I mean, the only mature and good project, let's say, or robust project I know that builds on Python in Bitcoin is Electrum.
 There's no good tooling.
 
-Speaker 1: 00:22:48
+Adam Jonas: 00:22:48
 
 Not that they don't have their own problems though.
 
@@ -489,7 +488,7 @@ Especially if you don't have a good community around the language you're using, 
 And that's not ideal.
 It's far from ideal.
 
-Speaker 1: 00:23:12
+Adam Jonas: 00:23:12
 
 It's not that you don't have a good community.
 I mean, everybody writes Python.
@@ -572,7 +571,7 @@ And it's not, in the end you're going to probably have more than that, but you d
 I've been running a tower for months now, and I didn't even have a gig of like tower data with multiple users connected.
 I guess you learn things.
 
-Speaker 1: 00:28:08
+Adam Jonas: 00:28:08
 
 Yeah, tell me more about your current status in terms of having users actually use the software and have you actually caught any breaches?
 Is it doing its job?
@@ -668,7 +667,7 @@ I mean, if you're offering it for free, you know that you have DOS at vector ope
 And that's something that the user should know.
 I mean, if you don't, you know now.
 
-Speaker 1: 00:33:31
+Adam Jonas: 00:33:31
 
 Yeah, it's just a file.
 You can also just make it like a file sharing service.
@@ -684,7 +683,7 @@ It was kind of like a general-purpose watchtower that ended up being implemented
 
 ## More privacy considerations in Lightning
 
-Speaker 1: 00:34:11
+Adam Jonas: 00:34:11
 
 And what kind of privacy considerations did you think about as you were building this out and sort of thinking about the trade-offs?
 
@@ -727,7 +726,7 @@ They have been for years because LND has been doing it in that way.
 I'm just saying that you choose your communication channel.
 You can use whatever you want at the end of the day.
 
-Speaker 1: 00:37:23
+Adam Jonas: 00:37:23
 
 Maybe we cut this bit, but if you're constantly getting fed data and you're also a member of the communication channels and you can do things like balance discovery, path discovery, payment discovery, combining that with your like sitting on a wealth of data.
 I mean, are there serious concerns about these watchtowers becoming all seeing?
@@ -747,7 +746,7 @@ So I may know that you are actually backing up the information with me.
 I don't know if you're using any other watchtower.
 So, like, if I assume that, you're using my tower as your protection service, and you are connected to me, and I know that you may be offline because, I'm not being able to...
 
-Speaker 1: 00:38:45
+Adam Jonas: 00:38:45
 
 Hey, I might roll the dice.
 But beyond that, I'm also identifying myself with how related transactions, aren't I?
@@ -760,7 +759,7 @@ I can roll out the frequency of my own channel.
 I may know other channels you have open because I know your node ID.
 I may know about your private channels.
 
-Speaker 1: 00:39:12
+Adam Jonas: 00:39:12
 
 So I would still not be able to tie the commitment transaction IDs to the other channels.
 
@@ -769,7 +768,7 @@ Sergi Delgado: 00:39:17
 You may not be able to know where they come from.
 You may be able to know the frequency that nodes are receiving payments, not from where.
 
-Speaker 1: 00:39:23
+Adam Jonas: 00:39:23
 
 You wouldn't even be able to know whether it's the same node or another node, right?
 It could be a second node that your channel partner's running.
@@ -780,7 +779,7 @@ We could be sharing the same subscription.
 I mean, theoretically, a lot of those things can happen.
 So like Murch and Me can just like pay for one subscription and use the same key to sign and send that information to the tower.
 
-Speaker 1: 00:39:40
+Adam Jonas: 00:39:40
 
 Yeah, I understand there's probably some, there's maybe not certainty in a lot of these things, but there's probably some useful heuristics you'd be picking up.
 And for the Umbrella user running on a Raspberry Pi in their home, you can make some pretty solid assumptions.
@@ -807,7 +806,7 @@ Sergi Delgado: 00:41:09
 No, I thought about that, of course.
 In the same way that routing nodes could be run by chain analytic companies and like offer low fee channels so you end up running through them and they may end up like learning or potentially learning something about you.
 
-Speaker 1: 00:41:25
+Adam Jonas: 00:41:25
 
 Well if Async and LNBig you know spin up theirs then It gives them a pretty nice competitive advantage.
 
@@ -823,7 +822,7 @@ I'm not saying they are.
 I'm just saying that the moment you are a big actor in a network, it gives you the potential of doing nasty stuff.
 And that's one of the reasons why you should design.
 
-Speaker 1: 00:41:50
+Adam Jonas: 00:41:50
 
 It becomes very interesting in this hub-and-spoke topology that's continuing to cement itself.
 
@@ -837,7 +836,7 @@ And as long as I'm not able to do it, then I minimize the attack surface of what
 That's why all the information is encrypted, that's why we don't keep like much information about users, or we use like ephemeral IDs.
 That's where all that came from.
 
-Speaker 1: 00:42:23
+Adam Jonas: 00:42:23
 
 You mentioned earlier that you don't know if you'd be using other towers.
 So there's a couple ways that professional towers might be compensated.
@@ -920,7 +919,7 @@ For example, I mean that could be a solution but yeah that's mainly what I'm say
 You could watch and notify either the tower, the node admin or the application or whatever about, hey, your channel is in danger.
 And If you just come back online, you're going to be able to do whatever you're supposed to do.
 
-Speaker 1: 00:47:19
+Adam Jonas: 00:47:19
 
 Maybe send a letter because there are probably already offline, right?
 
@@ -960,14 +959,14 @@ It's like the true power is in the node side, and we are assuming that the node 
 I know that's something that has been around my mind for more than a year.
 I've never worked on it, but I think that that could be a better solution or a more useful or used solution than what we have right now.
 
-Speaker 1: 00:50:01
+Adam Jonas: 00:50:01
 
 Another thing you've mentioned a couple times is storage.
 And one of the things on the horizon, of course, is L2.
 
 ## Storage and Eltoo
 
-Speaker 1: 00:50:06
+Adam Jonas: 00:50:06
 
 Is that something you're really hoping for in terms of helping with adoption?
 I mean, I've seen that cited as one of the more useful gains from doing L2 is the storage component.
@@ -977,7 +976,7 @@ Mark Erhardt: 00:50:23
 
 Not just for watchtowers, but...
 
-Speaker 1: 00:50:25
+Adam Jonas: 00:50:25
 
 Of course, for the nodes themselves.
 But I mean, obviously with the amount of data that you're going to have to be plugging somewhere.
@@ -1018,7 +1017,7 @@ Mark Erhardt: 00:52:52
 
 Of your channel updates.
 
-Speaker 1: 00:52:53
+Adam Jonas: 00:52:53
 
 And a delete request doesn't mean it's actually deleted, it just means you could maybe open up slots or something on your account.
 
@@ -1078,7 +1077,7 @@ grouping it would be much cleaner, because for the LN penalty, you would actuall
 But with L2, like You could stagger it out, you could subscribe to three watchtowers and only give each one third and you'd always be covered but none of them would see your whole frequency.
 So L2 would make privacy and storage much better.
 
-Speaker 1: 00:55:57
+Adam Jonas: 00:55:57
 
 Ooh, but that becomes very interesting when there's a breach. They all try to grab it.
 
@@ -1092,7 +1091,7 @@ Sergi Delgado: 00:56:04
 They actually cannot overwrite.
 Well, that's what I wanted to say.
 
-Speaker 1: 00:56:07
+Adam Jonas: 00:56:07
 
 They can't overwrite each other.
 
@@ -1110,7 +1109,7 @@ If you do it roulette style, it's whoever.
 Only one of them can overwrite the others.
 Two of them can overwrite the third.
 
-Speaker 1: 00:56:19
+Adam Jonas: 00:56:19
 
 Some very angry towers out there.
 
@@ -1171,7 +1170,7 @@ Mark Erhardt: 00:57:20
 
 So the miner could actually collect all three transactions, as long as they order them in the right order.
 
-Speaker 1: 00:57:24
+Adam Jonas: 00:57:24
 
 It's any of the Prevout.
 
@@ -1188,7 +1187,7 @@ Sergi Delgado: 00:57:39
 
 Yeah, being honest, I haven't put that much thought into L2 mainly because, if towers were early, imagine building on L2 towers, which have no release date.
 
-Speaker 1: 00:57:53
+Adam Jonas: 00:57:53
 
 Well, enjoyed the conversation about watchtowers and...
 
@@ -1201,7 +1200,7 @@ Mark Erhardt: 00:58:01
 
 It's over.
 
-Speaker 1: 00:58:04
+Adam Jonas: 00:58:04
 
 Feeling time is over.
 Thanks for joining us.
@@ -1211,7 +1210,7 @@ Sergi Delgado: 00:58:09
 
 Thank you for inviting me.
 
-Speaker 1: 00:58:20
+Adam Jonas: 00:58:20
 
 Merch, what did you think of that?
 
@@ -1220,7 +1219,7 @@ Mark Erhardt: 00:58:22
 I think we covered all of it.
 Eight years worth of Bitcoining.
 
-Speaker 1: 00:58:26
+Adam Jonas: 00:58:26
 
 That's a lot of going back to the original idea of watchtowers and the incentives of the network.
 It's interesting to think about how watchtowers factor into how Lightning functions properly.
@@ -1230,6 +1229,6 @@ Mark Erhardt: 00:58:42
 I think, especially in the context of mobile wallets getting more powerful, getting more capability with having work on HODL invoices.
 I think it sounds pretty much sure Watchtower implementation will make a mobile lightning wallet environment a lot more doable.
 
-Speaker 1: 00:59:02
+Adam Jonas: 00:59:02
 
 Anyway, enjoyed having him around in the office and hope you enjoyed the episode and we'll have another one out shortly.
