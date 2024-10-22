@@ -16,7 +16,7 @@ Sergi Delgado: 00:00:00
 I came into Bitcoin because I like peer-to-peer.
 I discover more things that I love by doing so.
 And again, these are not feelings, but they are feelings related to research.
-Sorry, failing time.
+Sorry, feeling time.
 
 Adam Jonas: 00:00:12
 
@@ -155,7 +155,7 @@ Interesting.
 
 Adam Jonas: 00:05:09
 
-You did that project, and I thought it was pretty clever in terms of how you used Orvin transactions to fingerprint nodes.
+You did that project, and I thought it was pretty clever in terms of how you used orhpaned transactions to fingerprint nodes.
 And so you get to the other side of that, the results were pretty striking.
 And what happens?
 You deliver that.
@@ -183,7 +183,7 @@ Peter said that some of that was partially known, that they were aware of it, an
 Some of the ones that were literally specified in the paper.
 For example, how orphan pool eviction was completely broken.
 That was like patched straight away.
-That and also in-blogging, which was one of the techniques we used.
+That and also `invblock`-ing, which was one of the techniques we used.
 Those two things were almost immediately patched by Peter before we got a chance of presenting that publicly, which happened like maybe four or five months later.
 Years after, or months after, I'm like completely lost on the timing here.
 I've learned some of that actually today, because I remember like seeing a PR later on about adding additional connections to Bitcoin Core, the ones that some of the audience may now know, the two additional ones, the ninth and the tenth outgoing connections.
@@ -199,7 +199,7 @@ Sergi Delgado: 00:07:32
 Blocks only connections, yeah.
 And that was proposed by Suhas, which I knew that someone proposed that, I didn't know it was Suhas.
 And that was part of a countermeasure against topology inferring using transaction propagation data.
-Because now, some of the information that you may be propagating through the connections on block, sorry, transactions on block connections, like the normal connections, may beat you back in the ass using the block-only relay connections.
+Because now, some of the information that you may be propagating through the transactions on block connections, like the normal connections, may beat you back in the ass using the block-only relay connections.
 So you may not be able to use similar techniques to infer the topology.
 
 Adam Jonas: 00:08:05
@@ -217,7 +217,7 @@ I think it was kind of the same approach I used for Bitcoin.
 So I came into Bitcoin because I liked peer-to-peer.
 I discovered a whole more things that I love by doing so.
 And again, these are not feelings, but related to research.
-Sorry, filling time.
+Sorry, feeling time.
 
 Adam Jonas: 00:08:54
 
@@ -226,13 +226,13 @@ We'll make sure our editor takes out the love word.
 Sergi Delgado: 00:08:58
 
 But I use that as a way of learning how things work.
-So for me, being able to work on TxProbe was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the in-message, the get-out-of-message, everything that goes in between, right?
+So for me, being able to work on TxProbe was kind of like a result of learning how a lot of the things on Bitcoin work, from transaction building to propagation to networking to the `inv` message, the `getdata` message, everything that goes in between, right?
 
 ## An Empirical Analysis of Privacy in the Lightning Network
 
 Sergi Delgado: 00:09:18
 
-At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah McGill-John, and they were quite focused on privacy, right?
+At some point, when I finished the PhD, I got the opportunity to go to work at UCL, that's where that paper started, with Sarah Meiklejohn, and they were quite focused on privacy, right?
 They are pretty well known for some of the chain analysis stuff.
 So like some chain analysis actually was built based on one of the papers from Sarah back in 2014, 2015, or I don't even remember anymore.
 But they are like quite privacy focused, right?
