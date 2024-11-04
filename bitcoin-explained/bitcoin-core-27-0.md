@@ -107,11 +107,11 @@ So people who would like to test it, they can.
 
 Aaron Van Wirdum: 00:01:59
 
-For any new listeners, Sjors, what does it mean that there's a new Bitcion Core release?
+For any new listeners, Sjors, what does it mean that there's a new Bitcoin Core release?
 
 Sjors Provoost: 00:02:04
 
-It kind of means nothing, because in Bitcion Core there is a new release roughly every six months, regardless of what is finished.
+It kind of means nothing, because in Bitcoin Core there is a new release roughly every six months, regardless of what is finished.
 So whatever is finished goes into the release, what is not finished does not go into the release.
 It is not that special, I guess.
 
@@ -156,7 +156,8 @@ Yeah, so what happens is there's a couple of phases to the release.
 The first phase is the so-called bug fix time.
 So there's a master branch where all the changes go that Bitcoin Core makes, and everything in the master branch should be bug free, but sometimes it's not.
 And the idea is that a few weeks before the branch off point, which I'll explain in a bit.
-People stop merging, or maintainers stop merging their features and try to merge only somewhat more conservative bug fixes type of changes, that sort of stuf. To reduce the chance of having any bugs on that master branch in the first place.
+People stop merging, or maintainers stop merging their features and try to merge only somewhat more conservative bug fixes type of changes, that sort of stuff. 
+To reduce the chance of having any bugs on that master branch in the first place.
 And then what happens is this branch off, which is where a separate Git branch is created, where all the changes, which only has bug fixes.
 So to understand what that means is there is still the master branch and people are still developing on that, but anything that goes onto the master branch will not go into the release.
 
@@ -219,7 +220,8 @@ Hence the need to not have bugs in the master branch.
 
 Aaron Van Wirdum: 00:06:03
 
-Right. Anyways, as soon as there's no bugs in the release candidate, we have a new Bitcoin Core release, which in this case will be Bitcoin Core 27.
+Right. 
+Anyways, as soon as there's no bugs in the release candidate, we have a new Bitcoin Core release, which in this case will be Bitcoin Core 27.
 
 Sjors Provoost: 00:06:10
 
@@ -274,7 +276,8 @@ And why is it going away?
 
 Sjors Provoost: 00:07:24
 
-So in the early days, there was a demand or a desire to have the core functionality of Bitcoin Core. So the part that checks the consensus rules, to somehow split that off from the rest so that other people can make their own node software or do other things and don't care about all the whistles and bells that are in Bitcoin Core.
+So in the early days, there was a demand or a desire to have the core functionality of Bitcoin Core. 
+So the part that checks the consensus rules, to somehow split that off from the rest so that other people can make their own node software or do other things and don't care about all the whistles and bells that are in Bitcoin Core.
 So they don't want a GUI, they don't want...
 
 Aaron Van Wirdum: 00:07:49
@@ -285,7 +288,8 @@ That's really the core consensus rules?
 Sjors Provoost: 00:07:57
 
 Well, the question is, what is exactly the core consensus rules?
-That's an open question still. But at the time, this library, this libbitcoin-consensus, was limited to, I believe, things that can check signatures.
+That's an open question still.
+But at the time, this library, this libbitcoin-consensus, was limited to, I believe, things that can check signatures.
 It wasn't even fully checking a block, it could just verify individual transactions and signatures.
 Okay.
 So it was a very limited subset of what we consider the validity.
@@ -312,13 +316,15 @@ And now we have the kernel project, which tries it again and uses a different ap
 
 Aaron Van Wirdum: 00:08:47
 
-From what I understand or what I remember, at least years ago when I heard about the Bitcoin Core, at least as it was then and probably still, or at least as Satoshi released, it was kind of Spaghetti code. Spaghetti code where everything sort of refers to everything else and some of it was consensus and some of it was not.
+From what I understand or what I remember, at least years ago when I heard about Bitcoin Core, at least as it was then and probably still, or at least as Satoshi released, it was kind of Spaghetti code.
+Spaghetti code where everything sort of refers to everything else and some of it was consensus and some of it was not.
 So it was very hard to sort of derive from that mess what actually was consensus.
 And that sort of was the big challenge to getting this done.
 So it sounds like this project was started, I think especially Jorge Timon was working on this.
 And it sounds like he kind of went away and probably people sort of stopped caring about this project.
 And now Bitcoin Core Devs said, Let's just get rid of this thing.
-Let's start over. Let's start fresh.
+Let's start over.
+Let's start fresh.
 
 Sjors Provoost: 00:09:34
 
@@ -410,7 +416,7 @@ So, when you restart Bitcoin Core it helps you to verify all those new blocks th
 
 Aaron Van Wirdum: 00:12:12
 
-Right okay so yeah I have a Bitcoin Core node and the mempool if when I shut down my computer, my entire mempool is just saved on disk and then I start the computer again and Bitcoin Core starts up and it remembers what was in the mempool.
+Yeah, I have a Bitcoin Core node and the mempool if when I shut down my computer, my entire mempool is just saved on disk and then I start the computer again and Bitcoin Core starts up and it remembers what was in the mempool.
 
 Sjors Provoost: 00:12:26
 
@@ -570,7 +576,9 @@ But they'll just start a new one, so it's not a big deal.
 
 Aaron Van Wirdum: 00:17:15
 
-Okay, next one. `BIP324`, we made an episode on that. That's network encryption.
+Okay, next one.
+`BIP324`, we made an episode on that.
+That's network encryption.
 And that's now on by default.
 So it was already an option in the previous Bitcoin Core release?
 
@@ -658,7 +666,7 @@ Okay, so far we talked about something that was removed, something that's a very
 
 Sjors Provoost: 00:20:02
 
-Not niche if you use Windows. But...
+Not niche if you use Windows.
 
 Aaron Van Wirdum: 00:20:07
 
@@ -980,7 +988,7 @@ Aaron Van Wirdum: 00:27:43
 
 Okay.
 The last part, we have one more, and that one is actually kind of interesting, I think.
-So this is about UTXO selection in the wallet and there's a new algorithm, as I understand it, called CoinGrinder.
+So this is about UTXO selection in the wallet and there's a new algorithm, as I understand it's called CoinGrinder.
 Is it a new algorithm?
 
 Sjors Provoost: 00:28:01
