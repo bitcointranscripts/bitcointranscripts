@@ -1,5 +1,5 @@
 ---
-title: Mit Bitcoin Expo 2018
+title: MIT Bitcoin Expo 2018
 types:
   - conference
 ---

@@ -1,5 +1,5 @@
 ---
-title: Mit Bitcoin Expo 2016
+title: MIT Bitcoin Expo 2016
 website: http://web.archive.org/web/20160403090248/http://mitbitcoinexpo.org:80/
 additional_resources:
   - title: Live Stream (Day 1)
