@@ -362,7 +362,7 @@ You are saying that you look at just the part that is in the next block and then
 
 No. The code that we would use for RBF on the relaying nodes would not be the exact same code as what the miners would do.
 
-Russell O’Connor’s [proposal](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015717.html) from 2018 is still the best in my opinion.
+Russell O’Connor’s [proposal](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015717.html) from 2018 is still the best in my opinion.
 
 If a Bitcoin Core node is making decisions that are different from what is being mined you are denial of service attacking yourself. Fundamentally by relaying and by validating and doing all the work you are spending time doing something. If that transaction is something that the creator of that transaction knows will never get mined then they know they can do this all day long.
 
@@ -390,5 +390,5 @@ That is something that should be easy to compute. I can try to have a look at it
 
 I will start to review Eugene’s zero conf thing. People can ping on the issue once they have that ready for interop. Then maybe by a meeting or two from now I will have some Taproot PTLC stuff ready and make t-bast’s [gist](https://github.com/t-bast/lightning-docs/blob/master/taproot-updates.md) a little more concrete.
 
-I don’t know if anyone replied to the [gossip thing](https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html) I threw out there. I did promise last meeting I’d put some meat on that proposal. It is still way off.
+I don’t know if anyone replied to the [gossip thing](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-February/003470.html) I threw out there. I did promise last meeting I’d put some meat on that proposal. It is still way off.
 

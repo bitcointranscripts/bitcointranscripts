@@ -25,13 +25,13 @@ additional_resources:
   - title: 'T-Bast''s pinning attack summary'
     url: 'https://github.com/t-bast/lightning-docs/blob/master/pinning-attacks.md'
   - title: 'Package relay RBF'
-    url: 'https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html'
+    url: 'https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html'
   - title: 'PR'
     url: 'https://github.com/bitcoin/bitcoin/pull/26265'
   - title: 'Daric: A Storage Efficient Payment Channel With Penalization Mechanism'
     url: 'https://eprint.iacr.org/2022/1295'
   - title: 'Two-party eltoo w/ punishment by AJ Towns'
-    url: 'https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003788.html'
+    url: 'https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2022-December/003788.html'
   - title: 'BIP118'
     url: 'https://github.com/bitcoin/bips/blob/master/bip-0118.mediawiki'
   - title: 'SIGHASH_NOINPUT'
@@ -39,7 +39,7 @@ additional_resources:
   - title: 'Ephemeral anchors'
     url: 'https://bitcoinops.org/en/topics/ephemeral-anchors/'
   - title: 'op_2 email by Luke'
-    url: 'https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015945.html'
+    url: 'https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015945.html'
 ---
 Greg: 00:00:00
 

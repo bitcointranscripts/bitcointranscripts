@@ -10,7 +10,7 @@ speakers: ['Sjors Provoost', 'Aaron van Wirdum']
 media: https://www.youtube.com/watch?v=oCPrjaw3YVI
 aliases: ['/es/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial']
 ---
-Propuesta Speedy Trial: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
+Propuesta Speedy Trial: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 ## Introducción
 
 Aaron van Wirdum (AvW): En directo desde Utrecht este es el van Wirdum Sjorsnado. Sjors, ¿cuál es tu juego de palabras de la semana?
@@ -31,9 +31,9 @@ SP: Así es.
 
 ## Propuesta de Speedy Trial
 
-Propuesta de Speedy Trial: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
+Propuesta de Speedy Trial: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 
-Propuesta de calendario: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html
+Propuesta de calendario: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html
 
 AvW: ¿Empezamos con Speedy Trial, qué es Speedy Trial Sjors?
 
@@ -41,7 +41,7 @@ SP: Creo que es una buena idea. Con las propuestas de las que hablamos la últim
 
 AvW: Eso era LOT=true o LOT=false. El debate era sobre si debía terminar con la señalización forzosa o no. Eso es lo de LOT=true, LOT=false.
 
-SP: Lo que hay que tener en cuenta es que la primera señalización, pasaría un tiempo antes de que empiece a suceder. Hasta ese momento realmente no sabemos esencialmente. Lo que propone el Speedy Trial es decir "En lugar de discutir si va a haber o no señalización y tener muchas discusiones al respecto, vamos a probarlo muy rápidamente". En lugar de eso, habría un lanzamiento tal vez alrededor de abril, por supuesto no hay nadie a cargo de los plazos reales. En ese caso la señalización [comenzaría](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html) mucho antes, no estoy del todo seguro de cuándo, tal vez en mayo o bastante temprano. La señalización sólo duraría 3 meses. Al final de los 3 meses se abandonaría.
+SP: Lo que hay que tener en cuenta es que la primera señalización, pasaría un tiempo antes de que empiece a suceder. Hasta ese momento realmente no sabemos esencialmente. Lo que propone el Speedy Trial es decir "En lugar de discutir si va a haber o no señalización y tener muchas discusiones al respecto, vamos a probarlo muy rápidamente". En lugar de eso, habría un lanzamiento tal vez alrededor de abril, por supuesto no hay nadie a cargo de los plazos reales. En ese caso la señalización [comenzaría](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html) mucho antes, no estoy del todo seguro de cuándo, tal vez en mayo o bastante temprano. La señalización sólo duraría 3 meses. Al final de los 3 meses se abandonaría.
 
 AvW: Terminaría en LOT=false básicamente.
 

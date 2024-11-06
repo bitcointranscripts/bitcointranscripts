@@ -35,7 +35,7 @@ translation_by: Ajian
 
 ## 交易池
 
-交易转发策略的真正关键的地方在于：每个参与交易转发的人都维护着一个交易池（mempool）。如果你想知道 “交易池” 的定义，我这里有一个：它是 “未确认的交易（unconfirmed transactions）” 的缓存（cache），并且是为了选出最为激励兼容（也即手续费率最高）的交易集合而专门优化的。这个优化方向不论对矿工还是非矿工都有意义，它帮助我们优雅地重组（re-org）、允许我们以更私密的方式设计交易转发策略，因为我们希望它比 “只懂 接受-转发” 更聪明一些。这是非常有用的，我在这个主题上写了[许多东西](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html)。
+交易转发策略的真正关键的地方在于：每个参与交易转发的人都维护着一个交易池（mempool）。如果你想知道 “交易池” 的定义，我这里有一个：它是 “未确认的交易（unconfirmed transactions）” 的缓存（cache），并且是为了选出最为激励兼容（也即手续费率最高）的交易集合而专门优化的。这个优化方向不论对矿工还是非矿工都有意义，它帮助我们优雅地重组（re-org）、允许我们以更私密的方式设计交易转发策略，因为我们希望它比 “只懂 接受-转发” 更聪明一些。这是非常有用的，我在这个主题上写了[许多东西](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html)。
 
 ## 交易池规则
 
@@ -129,7 +129,7 @@ translation_by: Ajian
 
 答：是的。
 
-问：你跟 Lisa 的 “[death to the mempool](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html)” 是怎么回事？
+问：你跟 Lisa 的 “[death to the mempool](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html)” 是怎么回事？
 
 答：我很开心能在线下讨论这个事。Lisa 和我讨论了我们有分歧的地方。她在自己的 bitcoin-dev 帖子里点名了我。人们以为我们是一致的，但实际上我们有分歧 —— 我认为这就是大家觉得困惑的地方。
 

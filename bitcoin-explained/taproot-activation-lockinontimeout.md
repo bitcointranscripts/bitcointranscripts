@@ -12,9 +12,9 @@ aliases: ['/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout']
 ---
 BIP 8: https://github.com/bitcoin/bips/blob/master/bip-0008.mediawiki
 
-Arguments for LOT=true and LOT=false (T1-T6 and F1-F6): https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
+Arguments for LOT=true and LOT=false (T1-T6 and F1-F6): https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018380.html
 
-Additional argument for LOT=false (F7): https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018415.html
+Additional argument for LOT=false (F7): https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-February/018415.html
 
 Aaron van Wirdum article on LOT=true or LOT=false: https://bitcoinmagazine.com/articles/lottrue-or-lotfalse-this-is-the-last-hurdle-before-taproot-activation
 

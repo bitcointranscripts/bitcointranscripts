@@ -10,9 +10,9 @@ date: 2022-05-24
 episode: 21
 additional_resources:
   - title: 'Mailing List: Package Relay Proposal'
-    url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
+    url: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html
   - title: 'Mailing List: Package Mempool Accept and Package RBF'
-    url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
+    url: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html
   - title: 'Brink Podcast: Ep1 Mempool Policy'
     url: https://brink.dev/podcast/1-mempool-policy/
   - title: 'Censorship and DoS Attacks: An intro to Mempool Policy'
@@ -91,7 +91,7 @@ Yes.
 
 Adam Jonas: 00:01:01
 
-And you [proposed package relay](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html).
+And you [proposed package relay](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-May/020493.html).
 What's package relay?
 
 Gloria Zhao: 00:01:05
@@ -258,7 +258,7 @@ Gloria Zhao: 00:09:36
 
 Yeah, I think that that's my approach.
 Not to make it more spaghetti, and also I think refactoring helps clarify the interface for everyone.
-So for example, part of [Package RBF](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html) was modularizing and documenting our current Replace-by-Fee policy and pushing that into its own module.
+So for example, part of [Package RBF](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html) was modularizing and documenting our current Replace-by-Fee policy and pushing that into its own module.
 Now it's just five helper functions and Package RBF, as I've implemented it now, is just calling those same functions with a few different arguments.
 So that's nice, and now we hopefully understand RBF better.
 But that kind of also opened a can of worms, and now people want all of the RBF pinning attacks to be solved.

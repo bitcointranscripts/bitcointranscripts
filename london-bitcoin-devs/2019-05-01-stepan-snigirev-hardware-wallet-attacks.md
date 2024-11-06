@@ -9,7 +9,7 @@ media: https://www.youtube.com/watch?v=P5PI5MZ_2yo
 ---
 Slides: <https://www.dropbox.com/s/64s3mtmt3efijxo/Stepan%20Snigirev%20on%20hardware%20wallet%20attacks.pdf>
 
-Pieter Wuille on anti covert channel signing techniques: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html>
+Pieter Wuille on anti covert channel signing techniques: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-March/017667.html>
 
 ## Introduction
 
