@@ -133,7 +133,7 @@ AvW: También quiero aclarar. Todavía no sabemos cómo va a ser. Eso habrá que
 
 # Alternativa a Bitcoin Core (Cliente Taproot basado en Bitcoin Core 0.21.0)
 
-Actualización de las versiones de activación de Taproot: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
+Actualización de las versiones de activación de Taproot: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
 
 AvW: También se lanzó otro cliente. Hay mucho debate sobre el nombre. Vamos a llamarlo cliente LOT=true.
 

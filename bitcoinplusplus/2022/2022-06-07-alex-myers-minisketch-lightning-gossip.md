@@ -12,7 +12,7 @@ Location: Bitcoin++
 
 Slides: <https://endothermic.dev/presentations/magical-minisketch>
 
-Rusty Russell on using Minisketch for Lightning gossip: <https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html>
+Rusty Russell on using Minisketch for Lightning gossip: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html>
 
 Minisketch library: <https://github.com/sipa/minisketch>
 

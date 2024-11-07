@@ -9,7 +9,7 @@ speakers: ['Ruben Somsen']
 ---
 <https://twitter.com/kanzure/status/1136992734953299970>
 
-Formalización de Blind Statechains como servidor de firma ciega minimalista <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017005.html>
+Formalización de Blind Statechains como servidor de firma ciega minimalista <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017005.html>
 
 Visión General: <https://medium.com/@RubenSomsen/statechains-non-custodial-off-chain-bitcoin-transfer-1ae4845a4a39>
 

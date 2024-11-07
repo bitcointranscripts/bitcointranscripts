@@ -12,7 +12,7 @@ aliases: ['/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees.es
 
 # Árboles de sintaxis abstracta merkleizados (MAST)
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014932.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014932.html>
 
 Voy a hablar del esquema que publiqué ayer en la lista de correo, que consiste en implementar MAST (árboles de sintaxis abstracta merkleizados) en bitcoin de la forma menos invasiva posible. Está dividido en dos grandes rasgos de consenso que juntos nos dan MAST. Empezaré con el último BIP.
 
@@ -42,7 +42,7 @@ La recursividad de cola como modelo de manejo de la recursividad general en los 
 
 Si no te importa la explosión exponencial, entonces todo se reduce a "una larga lista de formas de desbloquear esto, elige una". El aumento exponencial de un árbol de merkle se convierte en un aumento lineal de las formas de desbloquear las cosas, pero sigue siendo un trabajo exponencial para construirlo.
 
-Una de las ventajas de esto sobre <a href="https://github.com/bitcoin/bips/blob/775f26c02696e772dac4060aa092d35dedbc647c/bip-0114.mediawiki">bip114 original de jl2012</a> ((pero <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014963.html">ver también</a>) es que, además de estar descompuesto en dos componentes más simples... ir a buscar pubkeys de un árbol, luego tener firmas de árboles clave, también te ayuda a lidiar con el blow-up exponencial cuando empiezas a golpear esos límites, podrías poner más lógica en el script de nivel superior. ¿Qué tan difícil es hacer esto ... sacar varias cosas del árbol a la vez, porque hay que compartir. Sí, ese fue uno de los comentarios, es factible, y usted tiene que trabajar en la estructura de la prueba, ya que está destinado a las salidas individuales. En la raíz puedes tener n, que es el número de elementos a sacar. Así que podría ser la prueba de 3 hojas de la raíz. Pero sin saber qué era ese n, básicamente tienes que usarlo como una constante en tu script, la raíz es una constante. Creo que sería interesante tener un n fijo aquí.)
+Una de las ventajas de esto sobre <a href="https://github.com/bitcoin/bips/blob/775f26c02696e772dac4060aa092d35dedbc647c/bip-0114.mediawiki">bip114 original de jl2012</a> ((pero <a href="https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014963.html">ver también</a>) es que, además de estar descompuesto en dos componentes más simples... ir a buscar pubkeys de un árbol, luego tener firmas de árboles clave, también te ayuda a lidiar con el blow-up exponencial cuando empiezas a golpear esos límites, podrías poner más lógica en el script de nivel superior. ¿Qué tan difícil es hacer esto ... sacar varias cosas del árbol a la vez, porque hay que compartir. Sí, ese fue uno de los comentarios, es factible, y usted tiene que trabajar en la estructura de la prueba, ya que está destinado a las salidas individuales. En la raíz puedes tener n, que es el número de elementos a sacar. Así que podría ser la prueba de 3 hojas de la raíz. Pero sin saber qué era ese n, básicamente tienes que usarlo como una constante en tu script, la raíz es una constante. Creo que sería interesante tener un n fijo aquí.)
 
 La versión externa es el tipo de hash o explicar lo que los hash son. Así que la historia detrás de esto es que en algún momento estábamos pensando en estos ... hashes recuperables que no creo que nadie está considerando seriamente en este momento, pero históricamente la razón para ampliar el tamaño ... Creo que mi idea en el momento en que surgió este versionado de testigos, sólo necesitamos 16 versiones allí porque sólo necesitamos el número de versión para qué esquema de hashing utilizar. No quieres poner la versión de hashing dentro del testigo que está limitado por ese hash en sí mismo porque ahora alguien encuentra un error y escribe ripemd160 y ahora hay un ataque de preimagen allí y ahora alguien puede tomar un programa testigo pero reclamar que es un hash ripemd160 y gastarlo de esa manera. Así que, como mínimo, el esquema de hash en sí debería especificarse fuera del testigo. Pero casi todo lo demás puede estar dentro, y no sé qué estructura debería tener, como tal vez un campo de bits de características (no hablo en serio), pero podría haber un campo de bits que tiene los dos últimos se hash, en el programa.
 
@@ -80,20 +80,20 @@ La versión de merklebranchverify en el enlace está encima de Core y eso es un 
 
 Así que merklebranchverify tal vez debería ser desplegado con la versión no-SegWit.. pero tal vez eso enviaría un mensaje conflictivo a los usuarios de bitcoin. La regla cleanstack de Segwit nos impide hacer esto inmediatamente. Sólo en la v0.
 
-Necesitamos algunos candidatos a soft-forks que sean muy deseados por los usuarios. Tal vez la agregación de firmas, tal vez la sugerencia de luke-jr anti-replay por <a href="https://github.com/bitcoin/bips/blob/master/bip-0115.mediawiki">OP_CHECKBLOCKATHEIGHT</a> <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013161.html">propuesta</a>. Sin embargo, tiene que ser muy deseable para el usuario para que se pueda aplicar en este caso concreto. Tiene que ser un pequeño cambio, así que tal vez no la agregación de firmas, pero sí la agregación de firmas, ya que sigue siendo muy deseable.
+Necesitamos algunos candidatos a soft-forks que sean muy deseados por los usuarios. Tal vez la agregación de firmas, tal vez la sugerencia de luke-jr anti-replay por <a href="https://github.com/bitcoin/bips/blob/master/bip-0115.mediawiki">OP_CHECKBLOCKATHEIGHT</a> <a href="https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013161.html">propuesta</a>. Sin embargo, tiene que ser muy deseable para el usuario para que se pueda aplicar en este caso concreto. Tiene que ser un pequeño cambio, así que tal vez no la agregación de firmas, pero sí la agregación de firmas, ya que sigue siendo muy deseable.
 
 Pueden romper un CHECKSIGFROMSTACK... en un hard-fork. CHECKBLOCKHASH tiene otras implicaciones, como que las transacciones no son... en el bloque inmediatamente anterior, no se puede reinsertar la transacción, no es reorg-safe. Debería restringirse a unos 100 bloques atrás por lo menos.
 [a]Apruebo esta violación de la regla de la casa de Chatham
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014932.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014932.html>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014979.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014979.html>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015022.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015022.html>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014963.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014963.html>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014960.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/014960.html>
 
 <https://www.reddit.com/r/Bitcoin/comments/7p61xq/the_first_mast_pull_requests_just_hit_the_bitcoin/>
 

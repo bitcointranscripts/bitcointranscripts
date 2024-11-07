@@ -9,7 +9,7 @@ media: https://www.youtube.com/watch?v=3mJURLD2XS8&t=3623s
 ---
 <https://twitter.com/kanzure/status/1048483254087573504>
 
-maybe <https://eprint.iacr.org/2018/472.pdf> and <https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001221.html>
+maybe <https://eprint.iacr.org/2018/472.pdf> and <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-April/001221.html>
 
 ## Introduction
 

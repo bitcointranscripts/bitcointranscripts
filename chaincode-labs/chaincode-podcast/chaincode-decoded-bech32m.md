@@ -10,7 +10,7 @@ episode: 11
 date: 2021-04-16
 additional_resources:
   - title: mailing list post
-    url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html
+    url: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html
   - title: BIP350
     url: https://github.com/bitcoin/bips/blob/master/bip-0350.mediawiki
   - title: 'Pieter Wuille: New Address Type for SegWit Addresses (presentation)'
@@ -193,7 +193,7 @@ The way that taproot is proposed, it will also just have a 32 byte hash, so they
 If they were using the same address format, other than the version zero and version one, there's no difference between the space that they're allowed to be in.
 By downgrading to v0, they would essentially be creating a valid output type that is to be interpreted as a P2WSH output, but it cannot be resolved as such because there's no script hash that resolves to it, because taproot uses a pubkey.
 That's not compatible.
-People wanted to prevent that from happening on the one hand, and on the other hand, about a year or two years ago, someone discovered that `bech32` actually had a [length extension mutation weakness](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html).
+People wanted to prevent that from happening on the one hand, and on the other hand, about a year or two years ago, someone discovered that `bech32` actually had a [length extension mutation weakness](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017443.html).
 
 ## Bech32 length extension mutation weakness
 

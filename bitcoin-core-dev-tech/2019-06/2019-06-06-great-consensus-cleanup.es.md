@@ -8,7 +8,7 @@ date: 2019-06-06
 speakers: ['Matt Corallo']
 ---
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016714.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016714.html>
 
 <https://twitter.com/kanzure/status/1136591286012698626>
 
