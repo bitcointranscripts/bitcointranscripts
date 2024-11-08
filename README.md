@@ -32,14 +32,13 @@ Each directory requires an `_index.md` file with front matter that will reflect 
 
 The file name will ideally be prefixed by the date (e.g. `2021-03-30-example-file.md`)
 
-Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. You can optionally add the `speakers`' names, `categories` and `tags` as strings in an array as well as `date`(YYYY-MM-DD) and the video/audio link as `media` if available. For example:
+Each transcript is a markdown file, which requires to include the `title` and `transcript_by` in the file front matter. You can optionally add the `speakers`' names and `tags` as strings in an array as well as `date`(YYYY-MM-DD) and the video/audio link as `media` if available. For example:
 
 ```
 ---
 title: Reproducible Builds
 transcript_by: Bryan Bishop
 speakers: ['Carl Dong']
-categories: ['podcast']
 tags: ['build systems']
 date: 2020-11-30
 media: https://www.youtube.com/watch?v=L_sI_tXmy2U
@@ -79,7 +78,6 @@ title: Firmas Schnorr
 transcript_by: Michael Folkson
 translation_by: Blue Moon
 speakers: ['Andreas Antonopoulos']
-categories: ['podcast']
 tags: ['schnorr-signatures']
 date: 2018-10-07
 media: https://www.youtube.com/watch?v=8TaY730YlMg
