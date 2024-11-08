@@ -1,10 +1,11 @@
 ---
-title: More Core Devs
+title: 'How can we get 10x the number of "core" contributors?'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['bitcoin-core']
+tags:
+  - bitcoin-core
+  - career
+date: 2015-09-13
 ---
-
 10x the number of core devs
 
 Objectives:

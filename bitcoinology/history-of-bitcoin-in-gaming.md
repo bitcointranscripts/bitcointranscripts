@@ -1,10 +1,11 @@
 ---
-title: "History of Bitcoin in GAMING"
+title: History of Bitcoin in GAMING
 transcript_by: masud-abdulkadir via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=CB7HM-Hqi4o
-tags: ["lightning"]
-speakers: ["Christian Moss"]
-categories: ["meetup"]
+tags:
+  - lightning
+speakers:
+  - Christian Moss
 date: 2022-03-27
 ---
 ## Intro

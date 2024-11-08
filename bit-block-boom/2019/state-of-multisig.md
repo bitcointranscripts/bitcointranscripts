@@ -1,12 +1,12 @@
 ---
 title: State Of Multisig
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['psbt']
-speakers: ['Justin Moon']
+tags:
+  - psbt
+speakers:
+  - Justin Moon
 media: https://www.youtube.com/watch?v=xrReq7V7oJU
 ---
-
 State of multisig for bitcoin hodlers: Better wallets with PSBT
 
 <https://twitter.com/kanzure/status/1162769521993834496>

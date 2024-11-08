@@ -1,18 +1,25 @@
 ---
-title: 'Burying Soft Forks'
-transcript_by: 'Ringoz1 via review.btctranscripts.com'
-media: 'https://www.youtube.com/watch?v=C7wG2ngayy8'
+title: Burying Soft Forks
+transcript_by: Ringoz1 via review.btctranscripts.com
+media: https://www.youtube.com/watch?v=C7wG2ngayy8
 date: '2022-02-25'
 tags:
-  - 'security'
-  - 'taproot'
+  - security
+  - taproot
 speakers:
-  - 'Sjors Provoost'
-  - 'Aaron van Wirdum'
-categories:
-  - 'podcast'
+  - Sjors Provoost
+  - Aaron van Wirdum
 episode: 54
-summary: "In this episode of Bitcoin, Explained, hosts Aaron van Wirdum and Sjors Provoost revisit the Taproot activation saga, this time to discuss burying of soft forks.\n\nTaproot, the last soft fork to have been deployed on the Bitcoin network, activated in late 2021. Now, Bitcoin Core developers are considering to 'bury' the soft fork, which means that future Bitcoin Core releases will treat Taproot as if the rule change has been active since Bitcoin's very beginning. (With the exception of one block mined in 2021 that breached the Taproot rules which have since been added to the protocol.)\n\nIn the episode, Sjors explains what the benefits are of burying a soft fork, in particular pointing out how it helps developers when they review the Bitcoin Core codebase or when they perform tests on it.\n\nAfter that, Aaron and Sjors outline a potential edge case scenario where burying soft forks could, in a worst-case scenario, split the Bitcoin blockchain between upgraded and non-upgraded nodes. Bitcoin Core developers generally don't consider this edge case - a very long block re-org - to be a realistic problem and/or believe that this would be such a big problem that a buried soft fork would be a minor concern comparatively. However, they explain, not everyone agrees with this assessment entirely.\n\nFinally, Aaron and Sjors touch on issues like whether soft fork activation logic should itself be considered a soft fork, and whether soft fork burying logic should be considered a consensus change and/or require a Bitcoin Improvement Proposal (BIP)."
+summary: |-
+  In this episode of Bitcoin, Explained, hosts Aaron van Wirdum and Sjors Provoost revisit the Taproot activation saga, this time to discuss burying of soft forks.
+
+  Taproot, the last soft fork to have been deployed on the Bitcoin network, activated in late 2021. Now, Bitcoin Core developers are considering to 'bury' the soft fork, which means that future Bitcoin Core releases will treat Taproot as if the rule change has been active since Bitcoin's very beginning. (With the exception of one block mined in 2021 that breached the Taproot rules which have since been added to the protocol.)
+
+  In the episode, Sjors explains what the benefits are of burying a soft fork, in particular pointing out how it helps developers when they review the Bitcoin Core codebase or when they perform tests on it.
+
+  After that, Aaron and Sjors outline a potential edge case scenario where burying soft forks could, in a worst-case scenario, split the Bitcoin blockchain between upgraded and non-upgraded nodes. Bitcoin Core developers generally don't consider this edge case - a very long block re-org - to be a realistic problem and/or believe that this would be such a big problem that a buried soft fork would be a minor concern comparatively. However, they explain, not everyone agrees with this assessment entirely.
+
+  Finally, Aaron and Sjors touch on issues like whether soft fork activation logic should itself be considered a soft fork, and whether soft fork burying logic should be considered a consensus change and/or require a Bitcoin Improvement Proposal (BIP).
 ---
 ## Intro
 

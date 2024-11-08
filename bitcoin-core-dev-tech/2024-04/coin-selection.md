@@ -1,10 +1,10 @@
 ---
 title: Coin Selection
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'coin selection']
+tags:
+  - bitcoin-core
+  - coin-selection
 date: 2024-04-08
 ---
-
 - Todo: Overview PR that states goal of replacing Knapsack
 - Introduce Sand Compactor
 - Demonstrate via Simulations that situation is improved vs Knapsack

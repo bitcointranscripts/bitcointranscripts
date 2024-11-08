@@ -1,12 +1,11 @@
 ---
 title: Decentralization Through Game Theory
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Andreas Antonopoulos']
+tags:
+  - mining
+speakers:
+  - Andreas Antonopoulos
 ---
-
-
 Thank you Charlie, let's have another round of applause. Up next, we have Andreas Antonopoulos.
 
 So I may make this a bit difficult for the camera because I hate standing behind the podium. Welcome everyone. How are you, thank you for coming. How many people in this audience own Bitcoin?

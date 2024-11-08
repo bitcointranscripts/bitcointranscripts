@@ -1,8 +1,8 @@
 ---
 title: How To Mine Bitcoin Profitably
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
+tags:
+  - mining
 ---
 Minting money with megawatts
 

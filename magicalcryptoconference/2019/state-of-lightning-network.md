@@ -1,17 +1,15 @@
 ---
-title: State Of Lightning Network
+title: The State of the Lightning Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Stacy Herbert', 'Elizabeth Stark']
+tags:
+  - lightning
+speakers:
+  - Stacy Herbert
+  - Elizabeth Stark
 date: 2019-05-11
 media: https://youtu.be/kk2dUD6QXgw
+summary: Keiser Report's Stacy Herbert and Lightning Labs' Elizabeth Stark chat about the Lightning Network.
 ---
-
-Fireside chat on the state of the lightning network
-
-# Introduction
-
 WP: We have a fireside chat with Stacy Herbert from Kaiser Report and Elizabeth Stark. Some people say she is the CEO of Lightning Network, but she is the CEO of Lightning Labs. Let's invite them on stage.
 
 SH: Did anyone notice the bitcoin price today? How many here are reckless? How many of you have used lightning? Alright, how many are torchbearers? Wow, not very many. How many are running lightning nodes? Yeah. Alright. Okay. I have some questions here. I want to start here- Elizabeth Stark doesn't need an introduction, she is the most famous lightning person. She didn't tell me to say that. I wanted to start with a basic question- what is lightning to you, and why lightning? Why do you work on lightning?

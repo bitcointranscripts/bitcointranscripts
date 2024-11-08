@@ -1,9 +1,7 @@
 ---
 title: Physical Assets
 transcript_by: Bryan Bishop
-categories: ['workshop']
 ---
-
 Physical assets, archival science
 
 We are going to spend 20 minutes talkign about the topics. Then we will spend 10 minutes getting summaries. Then we will spend 20 minutes summarizing everything.

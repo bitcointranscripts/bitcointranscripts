@@ -1,9 +1,11 @@
 ---
-title: "BlockSci: a Platform for Blockchain Science and Exploration"
+title: 'BlockSci: a Platform for Blockchain Science and Exploration'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'developer-tools']
-speakers: ['Harry Kalodner']
+tags:
+  - research
+  - developer-tools
+speakers:
+  - Harry Kalodner
 date: 2017-11-04
 media: https://www.youtube.com/watch?v=BPNs9EVxWrA&t=12082s
 ---

@@ -1,15 +1,16 @@
 ---
 title: Bulletproofs
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography']
-speakers: ['Kalle Alm']
+tags:
+  - cryptography
+speakers:
+  - Kalle Alm
 media: https://www.youtube.com/watch?v=YslQUkiEMXc
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/bulletproofs]
-summary: "Overview of Bullet Proofs - a new zero-knowledge cryptographical solution for confidential transactions"
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/bulletproofs
+summary: Overview of Bullet Proofs - a new zero-knowledge cryptographical solution for confidential transactions
 ---
-
 # Bulletproofs
 
 <https://twitter.com/kanzure/status/1047740138824945664>

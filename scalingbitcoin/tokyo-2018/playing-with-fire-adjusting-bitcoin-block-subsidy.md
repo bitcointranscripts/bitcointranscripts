@@ -1,9 +1,10 @@
 ---
-title: "Playing With Fire: Adjusting Bitcoin Block Subsidy"
+title: 'Playing With Fire: Adjusting Bitcoin Block Subsidy'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Anthony Towns']
+tags:
+  - mining
+speakers:
+  - Anthony Towns
 media: https://www.youtube.com/watch?v=y8hJ0VTPE34&t=13s
 ---
 slides: <https://github.com/ajtowns/sc-btc-2018>

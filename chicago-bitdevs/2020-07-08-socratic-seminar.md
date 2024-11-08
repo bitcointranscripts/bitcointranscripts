@@ -1,14 +1,8 @@
 ---
 title: Socratic Seminar 10
 transcript_by: Michael Folkson
-categories: ['meetup']
 date: 2020-07-08
 ---
-
-Location: Chicago BitDevs (online)
-
-Video: No video posted online
-
 Reddit link of the resources discussed: https://old.reddit.com/r/chibitdevs/
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.

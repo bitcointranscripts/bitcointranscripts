@@ -1,9 +1,10 @@
 ---
-title: "Why you need threshold signatures to protect your wallet"
+title: Why you need threshold signatures to protect your wallet
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['threshold-signature']
-speakers: ['Arvind Narayanan']
+tags:
+  - threshold-signature
+speakers:
+  - Arvind Narayanan
 media: https://www.youtube.com/watch?v=96ULlHhia_Q&t=5037
 ---
 I want to tell you what threshold signatures are and I want to convince you that threshold signatures are a technology you need. This is collaborative work.

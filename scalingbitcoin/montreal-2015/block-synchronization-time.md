@@ -1,8 +1,8 @@
 ---
-title: "Initial Block Synchronization is Quadratic Time Complexity"
+title: Initial Block Synchronization is Quadratic Time Complexity
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Patrick Strateman']
+speakers:
+  - Patrick Strateman
 date: 2015-09-13
 media: http://youtube.com/watch?v=TgjrS-BPWDQ&t=2h02m06s
 ---

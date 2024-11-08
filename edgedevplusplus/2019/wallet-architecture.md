@@ -1,11 +1,15 @@
 ---
 title: Wallet Architecture in Bitcoin Core
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['bip32', 'wallet', 'bitcoin-core']
-speakers: ['John Newbery']
+tags:
+  - bip32
+  - wallet
+  - bitcoin-core
+speakers:
+  - John Newbery
 date: 2019-09-09
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/wallet-architecture]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/wallet-architecture
 ---
 <https://twitter.com/kanzure/status/1171018684816605185>
 

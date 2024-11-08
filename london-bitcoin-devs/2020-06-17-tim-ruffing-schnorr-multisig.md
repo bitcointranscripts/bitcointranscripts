@@ -1,14 +1,14 @@
 ---
-title: "Taproot and Schnorr Multisignatures"
+title: Taproot and Schnorr Multisignatures
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['schnorr-signatures', 'musig']
+tags:
+  - schnorr-signatures
+  - musig
 date: 2020-06-17
-speakers: ['Tim Ruffing']
+speakers:
+  - Tim Ruffing
 media: https://www.youtube.com/watch?v=8Op0Glp9Eoo
 ---
-Location: London Bitcoin Devs (online)
-
 Slides: https://slides.com/real-or-random/taproot-and-schnorr-multisig
 
 Transcript of the previous day’s Socratic Seminar on BIP-Schnorr: https://diyhpl.us/wiki/transcripts/london-bitcoin-devs/2020-06-16-socratic-seminar-bip-schnorr/

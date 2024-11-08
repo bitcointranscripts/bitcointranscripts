@@ -1,8 +1,8 @@
 ---
 title: Accumulating Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Pierre Rochard']
+speakers:
+  - Pierre Rochard
 media: https://www.youtube.com/watch?v=eDsK4OpB69Q
 ---
 ## Introduction

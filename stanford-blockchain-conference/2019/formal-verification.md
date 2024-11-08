@@ -1,9 +1,12 @@
 ---
-title: "Formal verification: the road to complete security of smart contracts"
+title: 'Formal verification: the road to complete security of smart contracts'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'security', 'contract-protocols']
-speakers: ['Martin Lundfall']
+tags:
+  - research
+  - security
+  - contract-protocols
+speakers:
+  - Martin Lundfall
 media: https://www.youtube.com/watch?v=B-3eZiZ5HPE
 ---
 slides: <https://twitter.com/MartinLundfall/status/1091119463276064769>

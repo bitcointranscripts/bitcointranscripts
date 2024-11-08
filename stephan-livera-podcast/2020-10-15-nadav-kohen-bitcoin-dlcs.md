@@ -1,8 +1,8 @@
 ---
 title: What You Should Know About Bitcoin DLCs
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Nadav Kohen']
+speakers:
+  - Nadav Kohen
 date: 2020-10-15
 media: https://stephanlivera.com/download-episode/2559/219.mp3
 ---

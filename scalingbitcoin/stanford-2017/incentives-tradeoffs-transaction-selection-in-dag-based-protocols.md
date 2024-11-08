@@ -1,9 +1,11 @@
 ---
-title: "Incentives and Trade-offs in Transaction Selection in DAG-based Protocols"
+title: Incentives and Trade-offs in Transaction Selection in DAG-based Protocols
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'mining']
-speakers: ['Yonatan Sompolinsky']
+tags:
+  - research
+  - mining
+speakers:
+  - Yonatan Sompolinsky
 date: 2017-11-05
 media: https://www.youtube.com/watch?v=3pd6xHjLbhs&t=10020s
 ---

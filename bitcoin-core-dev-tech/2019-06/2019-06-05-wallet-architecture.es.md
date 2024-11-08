@@ -2,13 +2,16 @@
 title: Arquitecturas de las wallets
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['wallet', 'bitcoin-core']
-speakers: ['Andrew Chow']
+tags:
+  - wallet
+  - bitcoin-core
+  - descriptors
+speakers:
+  - Andrew Chow
 date: 2019-06-05
-aliases: ['/bitcoin-core-dev-tech/2019-06-05-wallet-architecture.es/']
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-05-wallet-architecture.es/
 ---
-
 Arquitectura de la wallet de Bitcoin Core + descriptores
 
 <https://twitter.com/kanzure/status/1136282460675878915>

@@ -1,13 +1,14 @@
 ---
 title: Interview Adam Back Elizabeth Stark
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Adam Back', 'Elizabeth Stark']
+tags:
+  - lightning
+speakers:
+  - Adam Back
+  - Elizabeth Stark
 date: 2017-09-10
 media: https://www.youtube.com/watch?v=0WCaoGiAOHE&t=1h58m3s
 ---
-
 <https://twitter.com/kanzure/status/1005842855271784449>
 
 stark: Thank you Giacomo. Who here had too much fun at the party last night? My voice is going. Hopefully it will stay for this interview. We are lucky to have Adam Back here today, co-founder of <a href="https://blockstream.com/">Blockstream</a> and inventor of <a href="http://hashcash.org/">Hashcash</a> (<a href="https://bitcoinmagazine.com/articles/genesis-files-hashcash-or-how-adam-back-designed-bitcoins-motor-block/">history</a>). He just happened to appear and there was an available spot. Thank you for making this work.

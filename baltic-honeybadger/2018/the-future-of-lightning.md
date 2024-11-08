@@ -1,11 +1,11 @@
 ---
 title: The Future Of Lightning
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Elizabeth Stark']
+tags:
+  - lightning
+speakers:
+  - Elizabeth Stark
 ---
-
 The future of lightning
 
 The year of #craeful and the future of lightning

@@ -2,7 +2,6 @@
 title: Code Review
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
 date: 2019-06-05
 ---
 

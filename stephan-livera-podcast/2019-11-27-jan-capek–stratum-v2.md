@@ -1,8 +1,8 @@
 ---
 title: Stratum v2 Bitcoin Mining Protocol
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Jan Čapek']
+speakers:
+  - Jan Čapek
 date: 2019-11-27
 media: https://stephanlivera.com/download-episode/1649/128.mp3
 ---

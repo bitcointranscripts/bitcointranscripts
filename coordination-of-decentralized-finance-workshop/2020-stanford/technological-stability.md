@@ -1,11 +1,10 @@
 ---
 title: Technological Stability
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['regulation']
+tags:
+  - regulation
 date: 2020-02-18
 ---
-
 <https://twitter.com/kanzure/status/1229891596688052226>
 
 Controversial thesis: the primary source of economic instability is unreasonable demands (from regulators, but really from the general public) for violating certain cryptocurrency tech design principles, like on sound money- privacy and confidentiality (like confidential transactions and confidential assets), monetary policy (like scarcity economics), identity vs anonymity, AML/KYC requirements, censorship, sanctions requirements and discrimination (e.g. denying money to certain parties), and issues of fungibility (like mixing and history-indistinguishability).

@@ -1,13 +1,17 @@
 ---
-title: "Bitcoin Was Under ATTACK!"
+title: Bitcoin Was Under ATTACK!
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=XmKfOCUdH8k
-tags: ["bitcoin-core", "security-problems", "p2p"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - security-problems
+  - p2p
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-11-11
 episode: 49
-summary: "Hosts Aaron van Wirdum and Sjors Provoost finally met in Utrecht again to record Bitcoin, Explained. In this episode, they discuss a recent attack on the Bitcoin network, where some nodes were flooding peers with fake IP-addresses.\n \nAs previously discussed in episode 13, Bitcoin nodes connect to peers on the network through IP-addresses, which they learn from their existing peers. Nodes on the network essentially share the IP-addresses of other nodes.\n \nRecently, however, some Bitcoin nodes shared large amounts of IP-addresses that weren\u2019t associated with real Bitcoin nodes at all. While this attack did not do very much damage, it did waste resources from nodes on the network. On top of that, Aaron and Sjors explain, the attack could offer the attacker insight into Bitcoin\u2019s network topology by analyzing how the fake IP-addresses spread through the network.\n \nFinally, Aaron and Sjors discuss how the attack was solved by rate limiting the amount of IP-addresses than any node will allow its peers to be shared. Further, they consider how in free and open source software development, fixing problems is not always as straightforward as it may seem\u2026"
+summary: "Hosts Aaron van Wirdum and Sjors Provoost finally met in Utrecht again to record Bitcoin, Explained. In this episode, they discuss a recent attack on the Bitcoin network, where some nodes were flooding peers with fake IP-addresses.\n \nAs previously discussed in episode 13, Bitcoin nodes connect to peers on the network through IP-addresses, which they learn from their existing peers. Nodes on the network essentially share the IP-addresses of other nodes.\n \nRecently, however, some Bitcoin nodes shared large amounts of IP-addresses that weren’t associated with real Bitcoin nodes at all. While this attack did not do very much damage, it did waste resources from nodes on the network. On top of that, Aaron and Sjors explain, the attack could offer the attacker insight into Bitcoin’s network topology by analyzing how the fake IP-addresses spread through the network.\n \nFinally, Aaron and Sjors discuss how the attack was solved by rate limiting the amount of IP-addresses than any node will allow its peers to be shared. Further, they consider how in free and open source software development, fixing problems is not always as straightforward as it may seem…"
 ---
 Sjors Provoost:
 

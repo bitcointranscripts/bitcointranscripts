@@ -1,9 +1,11 @@
 ---
 title: Taproot on hardware wallets
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['taproot', 'hardware-wallet']
-speakers: ['Stepan Snigirev']
+tags:
+  - taproot
+  - hardware-wallet
+speakers:
+  - Stepan Snigirev
 date: 2022-03-03
 media: https://www.youtube.com/watch?v=8uM-v1pSFgs
 ---

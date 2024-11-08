@@ -1,12 +1,13 @@
 ---
 title: Safecurves - Choosing Safe Curves For Elliptic Curve Cryptography (2014)
 transcript_by: Bryan Bishop
-tags: ['security', 'cryptography']
-categories: ['conference']
-speakers: ['Daniel J. Bernstein']
+tags:
+  - security
+  - cryptography
+speakers:
+  - Daniel J. Bernstein
 media: https://www.youtube.com/watch?v=dFUJmzcj0iw&list=PLgO7JBj821uGZTXEXBLckChu70kl7Celh&index=15
 ---
-
 [Daniel J. Bernstein (djb)](https://en.wikipedia.org/wiki/Daniel_J._Bernstein) and [Tanja Lange](http://www.hyperelliptic.org/tanja/)
 
 SchmooCon 2014

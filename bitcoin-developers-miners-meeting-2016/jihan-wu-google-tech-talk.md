@@ -1,11 +1,11 @@
 ---
 title: Google Tech Talk (2016)
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['mining']
-speakers: ['Jihan Wu']
+tags:
+  - mining
+speakers:
+  - Jihan Wu
 ---
-
 Bitcoin
 
 Google Tech Talk

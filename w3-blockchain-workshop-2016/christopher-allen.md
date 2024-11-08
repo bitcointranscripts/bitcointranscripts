@@ -1,10 +1,9 @@
 ---
 title: Christopher Allen
 transcript_by: Bryan Bishop
-categories: ['workshop']
-speakers: ['Christopher Allen']
+speakers:
+  - Christopher Allen
 ---
-
 Whta makes for a great wonderful magical calliberation? Collaboration? Grab one card randomly. Keep it with you. What is this particular pattern of greatness? See if you can't embody it or can't recommend it ofr find it in the next two days. I would like each of you to tell a story about a collaboration that was really meaningful to you. It could be a business effort, it could be another team in your company, or it could be a personal collaboration that you found really powerful. Please share three minutes about a story of collaboration that you found very powerful. The time is now 9:23. Let's do this for 15 minutes. It's a 5 person table, then 3 minutes each.
 
 ..

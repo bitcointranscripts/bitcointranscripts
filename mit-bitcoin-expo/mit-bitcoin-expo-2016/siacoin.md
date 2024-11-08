@@ -1,9 +1,11 @@
 ---
 title: Siacoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['cryptography', 'altcoins']
-speakers: ['David Vorick']
+tags:
+  - cryptography
+  - altcoins
+speakers:
+  - David Vorick
 ---
 I have been working on a decentralized cloud storage platform. Before I go into that, I wanted to mention that I have been working on Bitcoin since 2011. Since 2013 I have been in the wizards channel. In 2014 a friend and myself founded a company to build Siacoin. The team has grown to 3 people. Sia is the name of our decentralized storage protocol. We are trying to emulate Amazon S3. You give your data to Amazon, and then they hold it for you. We want low latency high throughput.
 

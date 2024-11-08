@@ -1,8 +1,8 @@
 ---
 title: ANYPREVOUT, MPP, Mitigating LN Attacks
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Christian Decker']
+speakers:
+  - Christian Decker
 date: 2020-08-13
 media: https://stephanlivera.com/download-episode/2396/200.mp3
 ---

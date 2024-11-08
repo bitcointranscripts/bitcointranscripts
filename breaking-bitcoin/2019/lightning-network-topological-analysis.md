@@ -1,15 +1,16 @@
 ---
-title: "Topological Analysis of the Lightning Network"
+title: Topological Analysis of the Lightning Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'security-problems', 'topology', 'lightning']
-speakers: ['Istvan Andras Seres']
+tags:
+  - research
+  - security-problems
+  - topology
+  - lightning
+speakers:
+  - Istvan Andras Seres
 date: 2019-01-15
 media: https://www.youtube.com/watch?v=1iAfJnlGJ6c
 ---
-
-Topological analysis of the lightning network
-
 paper: <https://arxiv.org/abs/1901.04972>
 
 <https://github.com/seresistvanandras/LNTopology>

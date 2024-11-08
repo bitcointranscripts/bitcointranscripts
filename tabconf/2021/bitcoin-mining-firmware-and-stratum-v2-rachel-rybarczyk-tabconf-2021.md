@@ -2,9 +2,10 @@
 title: Bitcoin Mining Firmware and Stratum v2
 transcript_by: aphilg via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=xrdhtQPHg2o
-tags: ["mining"]
-speakers: ["Rachel Rybarczyk"]
-categories: ["conference"]
+tags:
+  - mining
+speakers:
+  - Rachel Rybarczyk
 date: 2021-11-04
 ---
 ## Introduction

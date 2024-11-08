@@ -1,9 +1,11 @@
 ---
 title: CMake Update
-categories: ['core-dev-tech']
-tags: ['bitcoin-core', 'build-system']
+tags:
+  - bitcoin-core
+  - build-system
 date: 2023-09-21
-speakers: ['Cory Fields']
+speakers:
+  - Cory Fields
 ---
 ## Update
 

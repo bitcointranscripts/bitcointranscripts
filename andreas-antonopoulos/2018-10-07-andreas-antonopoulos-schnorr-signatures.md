@@ -1,10 +1,11 @@
 ---
 title: Schnorr Signatures
-speakers: ['Andreas Antonopoulos']
+speakers:
+  - Andreas Antonopoulos
 date: 2018-10-07
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['schnorr-signatures']
+tags:
+  - schnorr-signatures
 ---
 LTB Episode 378 - The Petro inside Venezuela & Schnorr Signatures
 

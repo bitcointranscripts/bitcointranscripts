@@ -1,9 +1,11 @@
 ---
-title: "Lessons Learned with Segwit in Bitcoin"
+title: Lessons Learned with Segwit in Bitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['segwit', 'soft-fork-activation']
-speakers: ['Greg Sanders']
+tags:
+  - segwit
+  - soft-fork-activation
+speakers:
+  - Greg Sanders
 date: 2016-10-09
 media: https://www.youtube.com/watch?v=_Z0ID-0DOnc&t=863
 ---

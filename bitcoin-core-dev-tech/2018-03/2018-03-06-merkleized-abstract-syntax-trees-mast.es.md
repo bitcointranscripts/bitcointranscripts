@@ -2,12 +2,14 @@
 title: Árboles de sintaxis abstracta merkleizados - MAST
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['taproot', 'covenios', 'validación']
+tags:
+  - taproot
+  - covenants
+  - mast
 date: 2018-03-06
-aliases: ['/es/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2018-03-06-merkleized-abstract-syntax-trees-mast/
 ---
-
 <https://twitter.com/kanzure/status/972120890279432192>
 
 Ver también <http://diyhpl.us/wiki/transcripts/bitcoin-core-dev-tech/2017-09-07-merkleized-abstract-syntax-trees/>

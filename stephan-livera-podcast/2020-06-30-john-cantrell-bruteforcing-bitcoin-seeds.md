@@ -1,8 +1,8 @@
 ---
 title: Bruteforcing Bitcoin Seeds
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['John Cantrell']
+speakers:
+  - John Cantrell
 date: 2020-06-30
 media: https://www.youtube.com/watch?v=wzYqkxBoNhw
 ---

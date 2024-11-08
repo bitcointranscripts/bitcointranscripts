@@ -1,14 +1,15 @@
 ---
-title: "Scripts (general & simple)"
+title: Scripts (general & simple)
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['scripts-addresses']
-speakers: ['John Newbery']
+tags:
+  - scripts-addresses
+speakers:
+  - John Newbery
 media: https://www.youtube.com/watch?v=np-SCwkqVy4
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/scripts-general-and-simple]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/scripts-general-and-simple
 ---
-
 <https://twitter.com/kanzure/status/1047679223115083777>
 
 ## Introduction

@@ -3,7 +3,6 @@ title: "Lightning Specification Meeting - Agenda 1142"
 transcript_by: Gurwinder Sahota via tstbtc v1.0.0
 tags: ['lightning']
 speakers: []
-categories: []
 date: 2024-02-26
 ---
 Agenda: <https://github.com/lightning/bolts/issues/1142>

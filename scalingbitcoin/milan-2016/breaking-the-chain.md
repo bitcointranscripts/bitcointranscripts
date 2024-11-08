@@ -1,11 +1,13 @@
 ---
 title: Breaking The Chain
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining', 'proof-systems']
-speakers: ['Bob McElrath', 'Peter Todd']
+tags:
+  - mining
+  - proof-systems
+speakers:
+  - Bob McElrath
+  - Peter Todd
 ---
-
 <https://twitter.com/kanzure/status/785144266683195392>
 
 <http://dpaste.com/1ZYW028>

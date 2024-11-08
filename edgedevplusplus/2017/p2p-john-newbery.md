@@ -1,14 +1,16 @@
 ---
 title: Bitcoin Peer-to-Peer Network and Mempool
 transcript_by: Caralie Chrisco
-categories: ['conference']
-tags: ['p2p', 'transaction-relay-policy']
+tags:
+  - p2p
+  - transaction-relay-policy
 media: https://youtu.be/eVerdR2hOMw
-speakers: ["John Newbery"]
-aliases: [/scalingbitcoin/stanford-2017/edgeplusplus/p2p-john-newberry]
-summary: "John Newbery covers the primitives and functionality that comprises Bitcoin peer-to-peer network. This includes types of nodes that comprise the network, message format, control messages, transaction and block propagation, mempool, fee estimation, compact blocks etc."
+speakers:
+  - John Newbery
+aliases:
+  - /scalingbitcoin/stanford-2017/edgeplusplus/p2p-john-newberry
+summary: John Newbery covers the primitives and functionality that comprises Bitcoin peer-to-peer network. This includes types of nodes that comprise the network, message format, control messages, transaction and block propagation, mempool, fee estimation, compact blocks etc.
 ---
-
 Slides: <https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/p2p.pdf> & <https://johnnewbery.com/presentation/2017/11/02/dev-plus-plus-stanford/mempool.pdf>
 
 

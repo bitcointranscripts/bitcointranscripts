@@ -1,15 +1,14 @@
 ---
-title: Misconceptions about segwit vbytes
+title: 'Weighing transactions: The witness discount'
 transcript_by: Bryan Bishop
 translation_by: Ajian
-categories: ['conference']
-tags: ['segwit', 'fee-management']
-speakers: ['Mark Erhardt']
+tags:
+  - segwit
+  - fee-management
+speakers:
+  - Mark Erhardt
 date: 2022-10-15
 ---
-
-## 度量交易的重量：见证数据的折扣
-
 你应该已经从别人那里听到了，我的演讲会有更多个互动。我可能不会讲完我准备的所有内容。如果你在听的过程中有所疑惑，欢迎举手，这样我们就可以立即解决问题。我准备带各位了解一下非隔离见证交易和隔离见证交易的序列化。希望演讲结束之后，你可以理解交易的重量（weight） 是如何计算的，以及见证数据的折扣是如何适用的。最后，我们应该会看看一些不同的输出类型。
 
 ## 隔离见证以前

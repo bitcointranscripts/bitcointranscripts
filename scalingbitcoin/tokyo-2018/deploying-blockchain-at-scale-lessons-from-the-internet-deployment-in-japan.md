@@ -1,14 +1,9 @@
 ---
-title: Deploying Blockchain At Scale Lessons From The Internet Deployment In Japan
+title: 'Deploying Blockchain at Scale: Lessons from the Internet deployment In Japan'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jun Muai']
+speakers:
+  - Jun Muai
 ---
-
-Deploying blockchain at scale: Lessons learned from the Internet deployment in Japan
-
-Jun Muai (Keio University)
-
 <https://twitter.com/kanzure/status/1048373339826188288>
 
 Okay. Good morning everybody. Good morning? I am from Keio University. Welcome to Keio University.

@@ -1,8 +1,8 @@
 ---
 title: Intro to W3C standards
 transcript_by: Bryan Bishop
-categories: ['workshop']
-speakers: ['Wendy Seltzer']
+speakers:
+  - Wendy Seltzer
 ---
 https://goo.gl/3ZqAuo
 

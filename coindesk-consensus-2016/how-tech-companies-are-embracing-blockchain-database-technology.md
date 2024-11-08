@@ -1,10 +1,12 @@
 ---
 title: How Tech Companies Are Embracing Blockchain Database Technology
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jerry Cuomo', 'Austin Hill', 'Yorke Rhodes', 'Lata Varghese']
+speakers:
+  - Jerry Cuomo
+  - Austin Hill
+  - Yorke Rhodes
+  - Lata Varghese
 ---
-
 Preliminary notes:
 
 

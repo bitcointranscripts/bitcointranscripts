@@ -1,9 +1,10 @@
 ---
 title: Redesigning Bitcoin Fee Market
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['fee-management']
-speakers: ['Or Sattath']
+tags:
+  - fee-management
+speakers:
+  - Or Sattath
 ---
 <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-September/015093.html>
 

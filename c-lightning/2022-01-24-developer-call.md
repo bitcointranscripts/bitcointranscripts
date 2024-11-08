@@ -1,11 +1,11 @@
 ---
 title: c-lightning developer call
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['lightning', 'c-lightning']
+tags:
+  - lightning
+  - c-lightning
 date: 2022-01-24
 ---
-
 Name: c-lightning developer call
 
 Topic: Various topics

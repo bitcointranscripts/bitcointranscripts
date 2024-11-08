@@ -1,8 +1,8 @@
 ---
 title: BTCPayServer documentation, translation & Newbie tips
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Britt Kelly']
+speakers:
+  - Britt Kelly
 date: 2019-07-25
 media: https://stephanlivera.com/download-episode/1289/92.mp3
 ---

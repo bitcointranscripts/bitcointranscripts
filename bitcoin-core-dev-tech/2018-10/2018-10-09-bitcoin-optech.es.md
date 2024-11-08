@@ -2,8 +2,9 @@
 title: Bitcoin Optech
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['lightning', 'segwit']
+tags:
+  - lightning
+  - segwit
 date: 2018-10-09
 ---
 <https://twitter.com/kanzure/status/1049527415767101440>

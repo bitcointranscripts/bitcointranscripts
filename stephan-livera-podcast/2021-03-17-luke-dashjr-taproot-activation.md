@@ -1,9 +1,11 @@
 ---
-title: "How Bitcoin UASF went down, Taproot LOT=true, Speedy Trial, Small Blocks"
+title: How Bitcoin UASF went down, Taproot LOT=true, Speedy Trial, Small Blocks
 transcript_by: Stephan Livera
-categories: ['podcast']
-tags: ['taproot', 'soft-fork-activation']
-speakers: ['Luke Dashjr']
+tags:
+  - taproot
+  - soft-fork-activation
+speakers:
+  - Luke Dashjr
 date: 2021-03-17
 media: https://stephanlivera.com/episode/260/
 ---

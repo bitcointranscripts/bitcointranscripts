@@ -1,10 +1,14 @@
 ---
 title: Internal Approaches Blockchain Database Technology Strategies
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['William Mougayar', 'Edward Budd', 'Ian Lee', 'Scott Manuel', 'Bart Suichies', 'Jeremy Wilson']
+speakers:
+  - William Mougayar
+  - Edward Budd
+  - Ian Lee
+  - Scott Manuel
+  - Bart Suichies
+  - Jeremy Wilson
 ---
-
 Preliminary notes:
 
 

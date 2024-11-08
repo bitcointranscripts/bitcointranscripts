@@ -1,9 +1,7 @@
 ---
 title: Ipfs
 transcript_by: Bryan Bishop
-categories: ['workshop']
 ---
-
 I will not have time to describe IPFS. We have multiformats that allow protocol agility, interop and avoid lock-in. Multihash, multiaddr, multibase, multicodec, multistream, multikey. What do you do with cryptographic hashes? When you have four different hashes all the same length that happen to be coming from different functions, what are those functions? sha256? sha512? sha3? blake2b? How do you know which hash type it is?
 
 The problem is that the values aren't self-describing. There's usually no way to pack the values out of band when they were not designed for that. Think about what git is going to have to do to switch from sha1 to sha2. So you need some encoding to prove something about the hash itself.

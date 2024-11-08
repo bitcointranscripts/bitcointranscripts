@@ -1,12 +1,14 @@
 ---
-title: "Partially Signed Bitcoin Transactions (BIP174)"
+title: Partially Signed Bitcoin Transactions (BIP174)
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['psbt']
-speakers: ['Greg Sanders']
+tags:
+  - psbt
+speakers:
+  - Greg Sanders
 media: https://www.youtube.com/watch?v=iJR9Lg1jyJg
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/partially-signed-bitcoin-transactions-bip174]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/partially-signed-bitcoin-transactions-bip174
 ---
 <https://twitter.com/kanzure/status/1047730297242935296>
 

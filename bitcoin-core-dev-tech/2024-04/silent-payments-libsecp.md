@@ -1,10 +1,11 @@
 ---
 title: Silent Payments Libsecp Module
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'silent payments', 'libsecp256k1']
+tags:
+  - bitcoin-core
+  - silent payments
+  - libsecp256k1
 date: 2024-04-08
 ---
-
 - High level vs low level API:
     - Low level API could be more useful for multi-party SP implementation 
     - High level API is safer as it avoid managing SP state and staging secret data

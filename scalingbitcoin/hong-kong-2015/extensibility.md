@@ -1,11 +1,11 @@
 ---
 title: Extensibility
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
-speakers: ['Eric Lombrozo']
+tags:
+  - security
+speakers:
+  - Eric Lombrozo
 ---
-
 Extensibility, fraud proofs, and security models
 
 Eric Lombrozo (CodeShark)

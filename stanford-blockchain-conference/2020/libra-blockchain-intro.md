@@ -1,9 +1,10 @@
 ---
-title: "The Libra Blockchain & Move: A technical introduction"
+title: 'The Libra Blockchain & Move: A technical introduction'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['altcoins']
-speakers: ['Ben Maurer']
+tags:
+  - altcoins
+speakers:
+  - Ben Maurer
 ---
 <https://twitter.com/kanzure/status/1230248685319024641>
 

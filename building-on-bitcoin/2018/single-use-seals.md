@@ -1,13 +1,13 @@
 ---
 title: Single Use Seals
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Peter Todd']
+tags:
+  - proof-systems
+speakers:
+  - Peter Todd
 date: 2018-07-03
 media: https://www.youtube.com/watch?v=1U-1xkhJeEo
 ---
-
 <https://twitter.com/kanzure/status/1014168068447195136>
 
 I am going to talk about single use seals and ways to use them. They are a concept of building consensus applications and things that need consensus. I want to mention why that matters. What problem are we trying to solve? Imagine my cell phone and I open up my banking app or the banking app or lightning app... I want to make sure that what I see on my screen is the same as what you see on your screen. We're trying to achieve consensus. For a given state, everyone in possession of it, needs to see the same thing.

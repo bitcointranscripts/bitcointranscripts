@@ -1,14 +1,15 @@
 ---
-title: "Lightning Overview, Channel Factories, Discreet Log Contracts"
+title: Lightning Overview, Channel Factories, Discreet Log Contracts
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Tadge Dryja']
+tags:
+  - lightning
+speakers:
+  - Tadge Dryja
 media: https://www.youtube.com/watch?v=6J5jd7wf6aI
 date: 2018-10-05
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/lightning-network]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/lightning-network
 ---
-
 <https://twitter.com/kanzure/status/1048039589837852672>
 
 # Introduction

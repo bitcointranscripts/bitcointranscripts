@@ -1,10 +1,12 @@
 ---
-title: "Acumuladores UTXO, compromisos UTXO y Utreexo"
+title: Acumuladores UTXO, compromisos UTXO y Utreexo
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['proof-systems', 'utreexo']
-speakers: ['Tadge Dryja']
+tags:
+  - proof-systems
+  - utreexo
+speakers:
+  - Tadge Dryja
 date: 2018-10-08
 ---
 <https://twitter.com/kanzure/status/1049112390413897728>

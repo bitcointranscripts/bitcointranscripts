@@ -2,7 +2,6 @@
 title: "Cadenas de estado ciegas: Transferencia de UTXO con un servidor de firmas ciegas"
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
 tags: ['statechains', 'eltoo', 'channel-factories']
 date: 2019-06-07
 speakers: ['Ruben Somsen']

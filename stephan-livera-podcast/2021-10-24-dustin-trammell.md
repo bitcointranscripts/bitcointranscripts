@@ -1,8 +1,8 @@
 ---
 title: The 2nd Node On The Bitcoin Network? The Early Days of Bitcoin
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Dustin Trammell']
+speakers:
+  - Dustin Trammell
 date: 2021-10-24
 media: https://www.youtube.com/watch?v=rWdUOB_NgOo
 ---

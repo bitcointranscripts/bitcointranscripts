@@ -1,9 +1,11 @@
 ---
-title: "SybilQuorum: Open Distributed Ledgers Through Trust Networks"
+title: 'SybilQuorum: Open Distributed Ledgers Through Trust Networks'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-of-stake']
-speakers: ['Alberto Sonnino']
+tags:
+  - research
+  - proof-of-stake
+speakers:
+  - Alberto Sonnino
 date: 2019-01-30
 media: https://www.youtube.com/watch?v=MTSwKzmMTbk
 ---

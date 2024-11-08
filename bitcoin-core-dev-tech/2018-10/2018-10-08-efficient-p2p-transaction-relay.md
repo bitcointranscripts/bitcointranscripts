@@ -1,10 +1,14 @@
 ---
 title: Efficient P2P Transaction Relay
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['P2P']
+tags:
+  - erlay
+speakers:
+  - Gleb Naumenko
+  - Pieter Wuille
 date: 2018-10-08
-aliases: ['/bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-10-08-efficient-p2p-transaction-relay/
 ---
 ## p2p transaction relay protocol improvements with set reconciliation
 

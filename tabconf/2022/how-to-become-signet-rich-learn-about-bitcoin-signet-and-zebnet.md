@@ -1,13 +1,15 @@
 ---
-title: "How to become Signet Rich: Learn about Bitcoin Signet and Zebnet"
+title: 'How to become Signet Rich: Learn about Bitcoin Signet and Zebnet'
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=CFsUpyrS51k
-tags: ["signet", "lightning", "lnd"]
-speakers: ["Richard Safier"]
-categories: ["conference"]
+tags:
+  - signet
+  - lightning
+  - lnd
+speakers:
+  - Richard Safier
 date: 2022-10-13
 ---
-
 **Richard**: So today we are going to talk about Signet Lightning,  PlebNet Playground, which was the first evolution of me playing with custom Signets,  and eventually ZebNet Adventures.  This is how you can become Signet-rich.
 
 First, we should probably do an overview of the various network types.  Everybody knows about Mainnet.  This is what we use day to day, but there's a few other testing networks.  RegTest, or SimNet, if you are running BTCD, is a local unit testing framework.  And this is really useful for unit testing, but it has some disadvantages.  Primarily, anybody can build a block.  So if you're trying to share this publicly, this can be a problem.  You'll end up having some external participant potentially take over your network,  and that might not be useful.  Then you have TestNet itself, which is a public TestNet,  but you need mining hardware.  Anybody can mine blocks.  And one of the issues is that block production is incredibly inconsistent.  Sometimes you'll have blocks coming every minute--sometimes you will wait hours.  And so if you're trying to simulate a Mainnet network, it is not super conducive to that.  And then finally, Signets, which surprisingly few people seem to still know about.  It's been around since sometime in 2018, I believe.  And there's both a public Signet, which is similar to TestNet, or you have the option to build custom Signets. Effectively, Signets still has proof of work on it,  but it also has this signature block section, which you can lock down who is authorized to build blocks.

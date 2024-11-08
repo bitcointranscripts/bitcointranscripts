@@ -1,10 +1,11 @@
 ---
-title: "MuSig2: Simple Two-Round Schnorr Multi-Signatures"
+title: 'MuSig2: Simple Two-Round Schnorr Multi-Signatures'
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['musig']
+tags:
+  - musig
 date: 2021-01-12
-speakers: ['Tim Ruffing']
+speakers:
+  - Tim Ruffing
 media: https://www.youtube.com/watch?v=DRzDDFetS3E
 ---
 MuSig2 paper: <https://eprint.iacr.org/2020/1261.pdf>

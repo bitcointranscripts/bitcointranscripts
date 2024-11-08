@@ -1,8 +1,8 @@
 ---
 title: What Do Bitcoin Core Maintainers Do?
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Gloria Zhao']
+speakers:
+  - Gloria Zhao
 date: 2022-08-11
 media: https://www.youtube.com/watch?v=a61lUwlOF80
 ---

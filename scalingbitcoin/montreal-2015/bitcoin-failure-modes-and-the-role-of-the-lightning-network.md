@@ -1,11 +1,12 @@
 ---
 title: Bitcoin Failure Modes And The Role Of The Lightning Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Tadge Dryja', 'Joseph Poon']
+tags:
+  - lightning
+speakers:
+  - Tadge Dryja
+  - Joseph Poon
 ---
-
 I am going to be talking about bitcoin failure modes, and Joseph will talk about how the lightning network can help. I'll start. We'll start off by saying that bitcoin is working, which is really cool. Blocks starts with lots of zeroes, coins stay put, they move when you tell them to. That's really cool and it works. That's great. This is a good starting place. We should acknowledge that bitcoin can fail. But it's anti-fragile, right? What's the blockheight of the final block? There are fates maybe worse than final block.
 
 There's this goldilocks zone, or middle of the bath tub, there's a good place in the middle. So the block size bathtub, we can take the extreme numbers where we agree everything is crazy. What would bitcoin be like with 1 kilobyte blocks? You could maybe talk the blockchain over the phone. What about 1 petabyte blocks? We could both agree that both sides are a failure there. In both of these failure modes, we agree that every human on planet earth would want to use bitcoin. This is not a pessimistic view of failure, because most people don't know about bitcoin.

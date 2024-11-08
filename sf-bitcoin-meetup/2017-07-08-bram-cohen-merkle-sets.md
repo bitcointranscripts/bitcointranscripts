@@ -1,9 +1,10 @@
 ---
-title: "Merkle Set Data Structures for Scaling Bitcoin"
+title: Merkle Set Data Structures for Scaling Bitcoin
 transcript_by: Bryan Bishop
-categories: ['meetup']
-speakers: ['Bram Cohen']
-tags: ['cryptography']
+speakers:
+  - Bram Cohen
+tags:
+  - cryptography
 date: 2017-07-08
 media: https://www.youtube.com/watch?v=52FVkHlCh7Y
 ---

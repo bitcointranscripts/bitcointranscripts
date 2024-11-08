@@ -1,12 +1,14 @@
 ---
-title: "Federated Chains, Sidechains"
+title: Federated Chains, Sidechains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['sidechains']
-speakers: ['Greg Sanders']
+tags:
+  - sidechains
+speakers:
+  - Greg Sanders
 media: https://www.youtube.com/watch?v=WbSaGEfuRlw
 date: 2018-10-05
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/sidechains-and-federation-models]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/sidechains-and-federation-models
 ---
 <https://twitter.com/kanzure/status/1048008467871666178>
 

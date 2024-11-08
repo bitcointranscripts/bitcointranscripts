@@ -1,16 +1,13 @@
 ---
-title: Sydney Socratic Seminar
+title: Sydney Socratic Seminar - FROST
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['threshold-signature']
-speakers: ['Jesse Posner']
+tags:
+  - threshold-signature
+speakers:
+  - Jesse Posner
 date: 2022-03-29
 media: https://rumble.com/vz3i3u-frost-the-future-of-schnorr-multisignatures-on-bitcoin.html
 ---
-Topic: FROST
-
-Location: Bitcoin Sydney (online)
-
 FROST paper: <https://eprint.iacr.org/2020/852.pdf>
 
 secp256k1-zkp PR: <https://github.com/ElementsProject/secp256k1-zkp/pull/138>

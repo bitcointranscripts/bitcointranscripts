@@ -1,13 +1,17 @@
 ---
-title: "Explaining RGB Tokens"
+title: Explaining RGB Tokens
 transcript_by: AV7OM471K via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=JoGYnAS_j0g
-tags: ["client-side-validation"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
-categories: ["podcast"]
+tags:
+  - client-side-validation
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
+  - Ruben Somsen
 date: 2021-03-26
 episode: 33
-aliases: ['/bitcoin-magazine/bitcoin-explained/explaining-rgb-tokens']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/explaining-rgb-tokens
 ---
 ## Intro
 

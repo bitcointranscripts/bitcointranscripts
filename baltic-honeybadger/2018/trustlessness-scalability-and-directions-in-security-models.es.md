@@ -2,11 +2,12 @@
 title: Escalabilidad y orientación de los modelos de seguridad
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['conferencia']
-tags: ['seguridad', 'scalabilidad']
-speakers: ['Matt Corallo']
+tags:
+  - security
+  - scalability
+speakers:
+  - Matt Corallo
 ---
-
 Escalabilidad y orientación de los modelos de seguridad
 
 <https://twitter.com/kanzure/status/1043397023846883329>

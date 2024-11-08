@@ -1,11 +1,11 @@
 ---
 title: Htlcs Considered Harmful
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Daniel Robinson']
+tags:
+  - lightning
+speakers:
+  - Daniel Robinson
 ---
-
 <https://twitter.com/kanzure/status/1091033955824881664>
 
 # Introduction

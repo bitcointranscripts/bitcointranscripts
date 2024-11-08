@@ -1,9 +1,11 @@
 ---
 title: Self Reproducing Coins As Universal Turing Machine
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'contract-protocols']
-speakers: ['Alexander Chepurnoy']
+tags:
+  - research
+  - contract-protocols
+speakers:
+  - Alexander Chepurnoy
 ---
 paper: <https://arxiv.org/abs/1806.10116>
 

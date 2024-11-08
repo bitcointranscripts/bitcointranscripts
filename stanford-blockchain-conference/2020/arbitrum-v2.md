@@ -1,9 +1,10 @@
 ---
-title: "Arbitrum 2.0: Faster Off-Chain Contracts with On-Chain Security"
+title: 'Arbitrum 2.0: Faster Off-Chain Contracts with On-Chain Security'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['altcoins']
-speakers: ['Ed Felten']
+tags:
+  - altcoins
+speakers:
+  - Ed Felten
 ---
 <https://twitter.com/kanzure/status/1230191734375628802>
 

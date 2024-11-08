@@ -1,10 +1,10 @@
 ---
 title: Libsecp256k1 Meeting
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'libsecp256k1']
+tags:
+  - bitcoin-core
+  - libsecp256k1
 date: 2023-09-20
 ---
-
 - Topics: Scope, Priorities
 - Next release Dec 16th
 - Scope: Informal agreeement currently

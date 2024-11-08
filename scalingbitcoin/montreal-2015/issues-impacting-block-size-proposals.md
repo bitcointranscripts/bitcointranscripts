@@ -1,15 +1,11 @@
 ---
 title: Issues Impacting Block Size Proposals
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['P2P']
-speakers: ['Jeff Garzik']
+tags:
+  - P2P
+speakers:
+  - Jeff Garzik
 ---
-
-Issues impacting block size proposals
-
-Jeff Garzik (jgarzik)
-
 Bitcoin was introduced as a p2p electronic cash system. That's what it says in the whitepaper. That's what the users were exposed to. The 1 MB block size was set for anti-spam purposes. Otherwise when bitcoin value is low, it's trivial to DOS the network with large blocks.
 
 Moving on to some observations. The process of finding distributed ocnsensus takes time; it's a settlement system. The core service that bitcoin provides is censorship resistance. If you don't have censorship resistance, you don't have a stable timeline. You don't have a permissionless entry and exit into the system. That censorship resistance in term comes from a large network of decentralized nodes and validators etc.

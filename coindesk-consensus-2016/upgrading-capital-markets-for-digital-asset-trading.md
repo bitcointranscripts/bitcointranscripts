@@ -1,10 +1,13 @@
 ---
 title: Upgrading Capital Markets For Digital Asset Trading
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Brian Kelly', 'Juthica Chou', 'Bobby Lee', 'Michael More', 'Barry Silbert']
+speakers:
+  - Brian Kelly
+  - Juthica Chou
+  - Bobby Lee
+  - Michael More
+  - Barry Silbert
 ---
-
 Preliminary notes:
 
 

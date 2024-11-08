@@ -1,9 +1,10 @@
 ---
-title: "Post’s Theorem and Blockchain Languages: A Short Course in the Theory of Computation"
+title: 'Post’s Theorem and Blockchain Languages: A Short Course in the Theory of Computation'
 transcript_by: Michael Folkson
-categories: ['conference']
-speakers: ['Russell O’Connor']
-tags: ['cryptography']
+speakers:
+  - Russell O’Connor
+tags:
+  - cryptography
 date: 2017-01-26
 media: https://www.youtube.com/watch?v=TGE6jrVmt_I
 ---

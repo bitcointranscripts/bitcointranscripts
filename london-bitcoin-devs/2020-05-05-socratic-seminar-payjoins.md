@@ -1,9 +1,10 @@
 ---
-title: "Socratic Seminar Payjoins - Bitcoin privacy (Payjoin/P2EP)"
+title: Socratic Seminar Payjoins - Bitcoin privacy (Payjoin/P2EP)
 transcript_by: Michael Folkson
-categories: ['meetup']
-speakers: ['Adam Gibson']
-tags: ['payjoin']
+speakers:
+  - Adam Gibson
+tags:
+  - payjoin
 date: 2020-05-05
 media: https://www.youtube.com/watch?v=hX86rKyNB8I
 ---

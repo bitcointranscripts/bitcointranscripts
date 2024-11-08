@@ -2,10 +2,11 @@
 title: Gran limpieza de consenso
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['consensus-cleanup']
+tags:
+  - consensus-cleanup
 date: 2019-06-06
-speakers: ['Matt Corallo']
+speakers:
+  - Matt Corallo
 ---
 
 <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016714.html>

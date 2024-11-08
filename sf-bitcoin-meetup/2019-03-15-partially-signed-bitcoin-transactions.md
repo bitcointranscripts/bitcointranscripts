@@ -1,18 +1,14 @@
 ---
 title: Partially Signed Bitcoin Transactions
 transcript_by: Caralie Chrisco
-categories: ['meetup']
-tags: ['PSBT']
+tags:
+  - PSBT
 date: 2019-03-15
-speakers: ['Andrew Chow']
+speakers:
+  - Andrew Chow
 media: https://www.youtube.com/watch?v=H6xZSRDXUiU&feature=youtu.be
 ---
-
-Topic: PSBT
-
-Location: SF Bitcoin Devs
-
-# Introduction
+## Introduction
 
 Andrew: So as Mark said I'm Andrew Chow and today I'm going to be talking about BIP 174, partially signed Bitcoin transactions, also known as PSBT. Today I'm going to be talking a bit about why we need PSBTs, or Partially Signed Bitcoin Transactions, what they are, and the actual format of the transaction itself and how to use a PSBT and the workflows around that.
 
@@ -20,7 +16,7 @@ A quick story, around this time last year there was a fork of Bitcoin and I had 
 
 Back to this story, Electrum says this transaction was not related to my wallet. It definitely was. I assure you this transaction was related to my wallet. It also says the transaction is signed but according to Core that's definitely not signed. The scriptSig is completely empty. I spent a long time trying to figure this out, many hours reading through some documentation that wasn't very clear and reverse-engineering Electrum's transaction format. I finally figured out what the problem was.
 
-## The Problem
+### The Problem
 
 Bitcoin Core will create a transaction that does not have anything in the input scripts but Electrum expects to see things in these input scripts. It actually expects to see public keys. That's how it identifies whether a transaction is in that wallet so that I can sign. Obviously the transaction I gave it from Core did not have this information and the result was that electrum and Bitcoin Core were completely incompatible with each other if you try to do raw transactions and that is really the only way you can even try to interact these two together. There was this problem and there were some other problems with doing raw transactions.
 
@@ -36,7 +32,7 @@ Andrew: I make a lot of JSON errors.
 
 You can see highlighted, that's the extra data that we have to provide: it's the previous transaction the scriptPub key which is the output script in the amount and if this was P2SH we'd also have to provide the redeem script. I found this to be a problem. It’s annoying to take things across wallets and we obviously need more data than just these raw transactions. So I decided I was going to create yet another standard.
 
-## Another Standard
+### Another Standard
 
 Now this is not quite just another standard. It's actually I would say the first standard for having a transaction format that contains everything that's needed for signing. This is actually well specified unlike the current formats that are used and it solves a problem of the incompatibility because it's a standard, obviously. It's also actually being used by some other software already. Of course this standard is Partially Signed Bitcoin Transactions.
 
@@ -56,7 +52,7 @@ For outputs we have redeem script necessary to spend the output and public keys 
 
 So for these unknown things, those unknown things are so that we can easily extend PSBT in the future. Because the PSBT is a set of typed key value pairs we can add new types for new key value pairs and the unknowns that we have is because we can view a set of key value pairs as a map, we just have a map of keys to values of things that when we do serialize we don't know what their type is. Not everything needs to understand all the types that are available. You can ignore some of them and still understand and even some roles that we'll get to later don't have to understand types at all. So a signer also doesn't need to understand some types because they can still produce a valid signature using the information that they know and at worst a signature will just be invalid and you can't use it. Those are the unknowns highlighted for each of the different scopes.
 
-# Roles
+## Roles
 
 Here's an example using a 3-3 multi-sig. For those of you who don't know what a 3-3 is, you have three people and all three of them must sign the transaction in order for it to be valid. So let's say in our 3-3 we've got Alice, Bob, and Carol, which in my slides they will be color-coded. Alice is red, Bob is grey, and Carol is green. Let's say Alice wants to make a transaction, so she'll talk to Bob and Carol and figure out what inputs to spend and what outputs they want to create and she will create a PSBT. This will be completely blank. It just has the raw unsigned transaction and empty maps for the inputs and the outputs.
 
@@ -68,7 +64,7 @@ Alice, Bob, and Carol didn't really have to input anything extra except their pr
 
 So in this example our first role is the creator. In this case the creator was Alice because she created the transaction obviously. The next role is the updater and in this case this was both Alice and Bob because they updated the transaction with new information. They updated it with the metadata needed to sign. The updater, it could be split like this, you can have multiple, or it can be just one person that happens to know everything. Then we have signers who sign the transaction and this was Alice, Bob, and Carol. They all performed signing. Then we have the combiner which was Carol. The combiner is very simple actually as I mentioned earlier. The combiner doesn't need to understand all the types, it just needs to merge all the maps together and make sure there aren't there aren't any duplicates. You can just shove everything back together. Then we have the finalizar which produces the final scriptSigs that will eventually go into the final transaction and we have the extractor who takes those final scriptSigs and produces the final transaction and kind of looks like it's extracting the transaction out of the PSBT. The extractor is also the one who likely broadcasts the transaction to the network.
 
-# Other Use Cases
+## Other Use Cases
 
 So there are other use cases besides multistage. We can use this for CoinJoin, we can use it for hardware wallets and we can use it for offline wallets as I mentioned earlier.
 
@@ -78,7 +74,7 @@ In the first step of the CoinJoin you're going to do some CoinJoin protocol. Thi
 
 In this example Alice, Bob, and Carol don't actually see the input information from the other participants in this CoinJoin. But using PSBT if one of them has a hardware wallet or an offline signer after they update the PSBT they can take it to their offline signer, sign it there and bring it back without having to enter any additional information. Once this is signed, then they'll send it all to Alice again and Alice is going to combine everything. Once Alice combines the PSBT she will also finalize it and then extract it using the same process that I described earlier and eventually the transaction is broadcast by Alice to the Bitcoin network.
 
-# Where Can I Use PSBT?
+## Where Can I Use PSBT?
 
 Lastly - where can we use PSBT? Well right now PSBT isn't really in production but it has been merged into Bitcoin Core 0.17 which is going to be released hopefully in September. There you'll be able to use PSBT with a variety of RPC commands that have been implemented into it. PSBT has also been implemented into the ColdCard hardware wallet created by CoinKite and they use PSBT natively where its whole communication thing is based around passing back and forth PSBTs from your computer to their hardware wallet. They currently have a simulator I think they're shipping soon. Of course there are libraries and other wallets that are implementing PSBT. There are a few libraries and wallets that are in the process or are very close to finishing their implementations of PSBT.
 
@@ -86,7 +82,7 @@ That's it. Any questions?
 
 [Applause]
 
-# Q&A
+## Q&A
 
 Audience Member: Since Electrum implements their own little thing using Bitcoin transactions like you mentioned before, have you heard any feedback from them if they're planning on supporting this yet?
 

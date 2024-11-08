@@ -1,14 +1,13 @@
 ---
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['research', 'covenants', 'op-checktemplateverify', 'taproot']
+tags:
+  - research
+  - covenants
+  - op-checktemplateverify
+  - taproot
 date: 2021-06-01
 ---
-Topic: Agenda in Google Doc below
-
-Video: No video posted online
-
 Google Doc of the resources discussed: <https://docs.google.com/document/d/1E9mzB7fmzPxZ74WZg0PsJfLwjpVZ7OClmRdGQQFlzoY/>
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.

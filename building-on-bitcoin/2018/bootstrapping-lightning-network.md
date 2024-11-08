@@ -1,14 +1,12 @@
 ---
-title: "Bootstrapping LN: What have we learned?"
+title: 'Bootstrapping LN: What have we learned?'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Fabrice Drouin']
+tags:
+  - lightning
+speakers:
+  - Fabrice Drouin
 date: 2018-07-04
 ---
-
-acinq
-
 <https://twitter.com/kanzure/status/1014531050503065601>
 
 My name is Fabrice Drouin. I work with ACINQ. We are a comapny working on printing LN. I am going to talk about what happens, what was the process of bootstrapping and developing lightning and what happened on mainnet.

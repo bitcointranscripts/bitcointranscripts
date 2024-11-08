@@ -1,10 +1,8 @@
 ---
 title: Socratic Seminar 20
 transcript_by: Bryan Bishop
-categories: ['meetup']
 date: 2020-11-30
 ---
-
 SF Bitcoin Devs socratic seminar #20
 
 ((Names anonymized.))
@@ -29,7 +27,7 @@ XX01: There's an agenda published. It's also linked in the chat.
 
 <https://www.sfbitcoindevs.org/socratic/2020/11/30/socratic-20.html>
 
-# Ground rules
+## Ground rules
 
 XX01: I think I'm going to screenshare my screen. Then we'll go through the topics. I think the best way to run this is for people to raise their hand. Can someone test raising their hand right now? Okay, great. I'll kickstart each topic.
 
@@ -47,11 +45,11 @@ XX01: Can everyone see my screen?
 
 XX01: Weclome everyone .I think all of you were here when we went over the rules. Let's get started. We'll go over news, statistics, pull requests, lightning pull requests, etc.
 
-# GLV patent expired
+## GLV patent expired
 
 <https://twitter.com/pwuille/status/1309707188575694849>
 
-# Brink
+## Brink
 
 <https://brink.dev/>
 
@@ -65,13 +63,13 @@ XX05: It's a one-year program. It seems long. That's also good, because it can b
 
 XX08: You're right, it's a year. Brink has both the mentorship program which they are calling Fellowships and more traditional grants too. They will be funding established developers through regular grants, as well as the fellowships. It's more substantial than a few weeks. They have already signed up several funders not listed on their page, like Square Crypto, Kraken, and one more. Gemini and Human Rights Foundation (HRF).
 
-# Bitcoin Core wallet 0.21 what's new
+## Bitcoin Core wallet 0.21 what's new
 
 <https://achow101.com/2020/10/0.21-wallets>
 
 XX01: Bitcoin Core v0.21 is-- the most recent release; it has a number of awesome features raised in the wallet itself including wallet descriptors, sqlite database backend, and achow101 has a nice writeup on his site. We'll go into the details of these pull requests a little bit later on tonight. I just wanted to give a little taste.
 
-# Lightning pool
+## Lightning pool
 
 <https://lightning.engineering/pool/>
 
@@ -93,7 +91,7 @@ XX11: Between 5 and 8% APR. Loalu doesn't like that wording though. It's not com
 
 XX01: Any questions? Steve? Your hand is up. This is working better than I expected to be honest.
 
-# bitcoin-core-pr-review-club
+## bitcoin-core-pr-review-club
 
 <https://bitcoincore.reviews/>
 
@@ -107,7 +105,7 @@ XX01: Did I miss it? Was there always a website for it?
 
 XX01: Wow, I missed that then. It's pretty cool.
 
-# Crypto Open Patent Alliance
+## Crypto Open Patent Alliance
 
 <https://open-patent.org/>
 
@@ -117,7 +115,7 @@ XX08: Technically, it's Square not Square Crypto. It's a Square initiative. They
 
 XX08: We'll soon be announcing some major companies that will be joining. I think Blockstream is on the public record saying they are going to join. It's a good way to fend off potential problems in the future.
 
-# Bitcoin design grants
+## Bitcoin design grants
 
 <https://medium.com/@squarecrypto/square-crypto-designer-grants-a9a3982c1921>
 
@@ -125,7 +123,7 @@ XX01: In the design world, there's some attempts to bring more designers into th
 
 XX08: The initial thinking of Square Crypto was that we would hire a full-time designer to contribute. After speaking with 50-60 designers around the world, it was clear that there were many designers quite interested in bitcoin but they were off in their own little island and they just really needed a community to participate in and get to know each other. So this summer we announced an open-source bitcoin design community with now 750 people that are parto f that. There's about 30-40 who are fairly active and contributors. We have given out 7 or 8 grants so far to both designers and user-experience researchers. The primary work product or outcome we hope from this community to get developed is an open source design guidelines that will help any wallet or application designers to not start from scratch. Any new designer to this space or frankly anyone new to bitcoin finds bitcoin quite counterintuitive when you have to build a non-custodial wallet and those challenges. Building mobile apps that are client-server based, it doesn't help so much. So hopefully the design guide will help with that. A number of people we've been giving grants to are helping specific projects in the space improve their design. There are volunteers who don't have Square Crypto grants who are more engaged on Bitcoin Core now and trying to help the Bitcoin Core GUI. Square Crypto helped kick it off, but it's intended to be a public good and open-source bitcoin thing. There's no.... Square does not want any specific control over this. We'd like to see other companies fund designers and researchers as well.
 
-# Bitcoin treasuries
+## Bitcoin treasuries
 
 <https://bitcointreasuries.org/>
 
@@ -133,7 +131,7 @@ XX01: Bitcoin has seem large adoption in corporate treasuries making allocations
 
 ((isn't there an accounting reason why this doesn't work for companies?))
 
-# GLV patent has expired
+## GLV patent has expired
 
 <https://twitter.com/pwuille/status/1309707188575694849>
 
@@ -159,7 +157,7 @@ XX04: This was originally a Certicom patent, and then they got acquired by RIM, 
 
 XX01: Okay, let's move on from news to statistics.
 
-# Segwit adoption
+## Segwit adoption
 
 <https://charts.woobull.com/bitcoin-segwit-adoption/>
 
@@ -189,7 +187,7 @@ XX03: Witness scripthash.
 
 XX01: We use multisig segwit deposit addresses, sometimes they're too long for certain wallets to send to. For those of you who don't know, I can pull it up here, there's a compatibility table on bitcoinoptech for who supports what.
 
-# Mining stats
+## Mining stats
 
 <https://bitaps.com/blocks>
 
@@ -225,7 +223,7 @@ XX01: The financialization of this industry is still in its infancy. There's goi
 
 XX01: One other thing. I know there's increasing popularity on the financialization trend or professionalization around this-- Matrixport is doing well with miners in China, derivatives, things to help them hedge. It's an interesting trend worth keeping an eye on.
 
-# Taproot activation
+## Taproot activation
 
 <https://taprootactivation.com/>
 
@@ -255,7 +253,7 @@ XX04: I think this goes a long way towards resolving that question. The question
 
 XX06: Also, we can always start with the least aggressive and as we build raporte we can commit a level further and ramp it up.
 
-# Revisiting squaredness tiebreaker for R point in bip340
+## Revisiting squaredness tiebreaker for R point in bip340
 
 <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html>
 
@@ -267,7 +265,7 @@ XX01: For those of you who might be out of the loop--- a public key is a point o
 
 XX03: This isn't just public keys, but also the public nonce inside the signature, which is what this was actually about.
 
-# Bitcoin archaeology
+## Bitcoin archaeology
 
 <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-November/018269.html>
 
@@ -282,7 +280,7 @@ XX03: If you go further back, the problem is v0.2.9 which didn't have the checks
 XX01: That's a pretty interesting project. I like that.
 
 
-# bech32 updates
+## bech32 updates
 
 <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-October/018236.html>
 
@@ -314,7 +312,7 @@ XX03: Another angle that might have caused the problem, mainly.... OP\_0 is diff
 
 <https://garethrees.org/2013/06/12/archaeology/>
 
-# Hold fees
+## Hold fees
 
 <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2020-October/002826.html>
 
@@ -338,7 +336,7 @@ XX01: Another post by gleb was around "Mitigating channel jamming with stake cer
 
 XX05: This is related to what kanzure and gmax talked about with respect to proof-of-burn to prevent spam. This is about proving to you that you have an output locked up for 30 days, and my proof is unique to you at a particular time. You would be able to attribute who is routing towards you; so nodes are able to quanitfy their relative risk. This problem has a lot of sub problems. What about separating spam from the griefings and everythign? This can solve one of them.
 
-# Bitcoin dev kit
+## Bitcoin dev kit
 
 <https://bitcoindevkit.org/>
 
@@ -358,7 +356,7 @@ XX06: There were two multisig wallets that appeared recently; Spectre and Nunchu
 
 XX01: I am excited to try out Foundation Devices.
 
-# bolt12 and reusable invoices
+## bolt12 and reusable invoices
 
 <https://twitter.com/rusty_twit/status/1328826839024865281>
 
@@ -380,7 +378,7 @@ XX10: Spontaneous payments are really cool. Being able to tip someone without ha
 
 XX05: Spontaneous payments... using something like d-log based thing like HTLCs, does allow a secret to be... one thing we realized is that we can't probe a window-sized payment because the .... not really sure how to... the entire flow. .... do that aggressively by not giving them the last transaction; so to probe across many channels, you have to do something like this. Once you have a ... you can do the best of both worlds and I think they both work in those use cases. We have seen some people rolll other solutiosn we have seen in the past.
 
-# Signet merged
+## Signet merged
 
 <https://bitcoincore.reviews/18267>
 
@@ -398,7 +396,7 @@ XX03: I think there's a faucet, or even a tool that lets you request coins autom
 
 XX01: That was a pull request we followed from beginning to end. Yes, there's a bitcoin review club that went over it. There's a link in the doc for that.
 
-# bip 340-342
+## bip 340-342
 
 <https://github.com/bitcoin/bitcoin/pull/19953>
 
@@ -450,13 +448,13 @@ XX03: I should also mention that this is not yet in Musig2 paper... but Musig2 i
 
 ....
 
-# Use wtxid for transaction relay
+## Use wtxid for transaction relay
 
 <https://github.com/bitcoin/bitcoin/pull/18044>
 
 XX03: The lingering issue that existed after segwit was that transactions are announced and requested on the protocol using txids. In segwit, the txid does not fully commit to all the data you use to verify a transaction, in particular the witness. If someone gives you a segwit transaction with an invalid witness, you can't blacklist that txid for denial of service protection because you don't know the txid is invalid because you only know that particular witness is invalid. This has some effects on potential bandwidth where you request the same transaction multiple times. When nodes disagree on what the policy is on the network, then you could have the same transactions announced over and over again and it could be retrieved from nodes over and over again. This problem specifically has been addressed using some much simpler change as well. This was a fundamental improvement where nodes can negotiate-- just using wtxids instead of txiss for announcements and pull requests. It's in, it works.
 
-# TORv3
+## TORv3
 
 XX01: The previous version of advertising node location did not support longer torv3 address limit, because there was a length limit, and thias been updated and been emrged into core and will be shipped in the v0.21 release?
 
@@ -470,13 +468,13 @@ XX04: The reason why the Tor network changed is because they did a substantial r
 
 XX03: Yes, public keys should be public.
 
-# GLV commit
+## GLV commit
 
 <https://github.com/bitcoin-core/secp256k1/commit/949bea92624fbd65bfb21d773f1df6a115af71ff>
 
 XX01: This goes back to 2013. This was just now flagged as default in Bitcoin Core due to this patent expiration. So that's cool.
 
-# sqlite as a new wallet database for Bitcoin Core
+## sqlite as a new wallet database for Bitcoin Core
 
 <https://github.com/bitcoin/bitcoin/pull/19077>
 
@@ -510,13 +508,13 @@ XX02: leveldb is more similar to bdb. One of the major pain points with bdb was 
 
 XX03: .... has a history of corruption crashes. sqlite is known to be extraordinarily resilient to that sort of stuff. It's of course annoying wherever something like that happesn, but for something that stores private keys, you want to use the most stable thing out there.
 
-# Native descriptor wallets
+## Native descriptor wallets
 
 <https://github.com/bitcoin/bitcoin/pull/16528>
 
 XX02: It changes the concept of the wallet from something that is key-based to something that is script based. This is backwards incompatible with previous versions of Bitcoin Core. We disabled a bunch of RPCs that no longer make sense in a descriptor wallet world. hdseed no longer makes sense. The descriptor wallet doesn't have a global wallet seed anymore. Everythign is based around the descriptor now, at least for address generation and all that. To most users, when you use a descriptor wallet, unless you're doing something with multisigs, or with watch-only, you won't feel anything different. So it stores addresses in the same way;y ou still sign transactions, you still use the rawtransaction API, you still use PSBT, the whole--- not even this PR, but the 5 PRs before it, was refactors to make an interface where we could do this without having the user feel anything different from this change. So if you do multisig stuff, or watchonly things, it's now all under a single RPC descriptors and you just import a descriptor and it deals with it magically.
 
-# Multiprocess bitcoin
+## Multiprocess bitcoin
 
 <https://github.com/bitcoin/bitcoin/pull/10102>
 
@@ -524,7 +522,7 @@ XX01: This is potentially the longest running open effort in Bitcoin Core that I
 
 XX02: I think something was merged that enables this as a build option, I think. You can try that out if you want.
 
-# ZMQ: Create "sequence" notifier, enabling client-side mempool tracking
+## ZMQ: Create "sequence" notifier, enabling client-side mempool tracking
 
 <https://github.com/bitcoin/bitcoin/pull/19572>
 
@@ -532,11 +530,11 @@ XX03: I thought it was cool that if your'e consuming mempool stuff from bitcoind
 
 XX03: With zeromq, you still have to poll. No deliverability guarantees. But yeah, I'm sure it's easier.
 
-# Lightning pull requests
+## Lightning pull requests
 
 We'll go over some lightning pull requests.
 
-# Lightning pull requests
+## Lightning pull requests
 
 We'll go over some lightning pull requests.
 

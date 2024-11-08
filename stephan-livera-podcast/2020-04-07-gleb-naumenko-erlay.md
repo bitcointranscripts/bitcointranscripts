@@ -1,8 +1,8 @@
 ---
 title: erlay Bitcoin transaction relay
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Gleb Naumenko']
+speakers:
+  - Gleb Naumenko
 date: 2020-04-07
 media: https://stephanlivera.com/download-episode/1909/164.mp3
 ---

@@ -1,17 +1,11 @@
 ---
 title: Delaware Initiative
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['regulation']
-speakers: ['Marco Santori']
+tags:
+  - regulation
+speakers:
+  - Marco Santori
 ---
-
-Preliminary notes:
-
-Contact me- <https://twitter.com/kanzure>
-
-Delaware initiative
-
 It's good to see so many friendly audiences in the audience. I am at Pillsbury Wintrhop Shaw Pittman. We are focusing on distinct areas of law as it applies to blockchain tech. We have been in the space as early as 2011 so we were trying to do the land grab. My team has been asked by the State of Delaware to serve as legal ambassadors to the blockchain industry. We couldn't be more honored to serve in this role.
 
 When Delaware approached me to setup their strategy, they were way out ahead of this issue. They weren't coming to me asking who is the CEO of Bitcoin. They weren't asking me "how does mining work?". Their questions were far more sophisticated.  They wanted to know if proof-of-work could be supplanted reliably. They wanted to know could private and public databases act together to serve the same transaction? They even paid us for a long time, they have been looking at this closely, so far in the brief history of blockchain tech, it has been highly theoretical except for Bitcoin. Evangelists have been giving us the promise of democracy incorrectly; advocates of blockchain tech have pitched blockchain as a panacea for every capital market imaginable. In fact, there has been so much talk on the potential of database tech, that those turning those energy into something more kinetic, are too few and too far between.

@@ -1,8 +1,8 @@
 ---
 title: Unwinding Bitcoin Coinjoins - Tumblers, Wasabi, JoinMarket
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Ergo']
+speakers:
+  - Ergo
 date: 2020-06-09
 media: https://stephanlivera.com/download-episode/2153/179.mp3
 ---

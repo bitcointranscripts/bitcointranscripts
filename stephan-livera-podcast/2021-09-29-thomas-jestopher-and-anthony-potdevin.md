@@ -1,8 +1,9 @@
 ---
 title: Becoming A Lightning Routing Node Operator
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Thomas Jestopher', 'Anthony Potdevin']
+speakers:
+  - Thomas Jestopher
+  - Anthony Potdevin
 date: 2021-09-29
 media: https://stephanlivera.com/download-episode/3793/307.mp3
 ---

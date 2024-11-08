@@ -2,10 +2,10 @@
 title: Socratic Seminar 2
 date: 2019-08-22
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['research', 'hardware wallet']
+tags:
+  - research
+  - hardware-wallet
 ---
-
 <https://twitter.com/kanzure/status/1164710800910692353>
 
 ## Introduction

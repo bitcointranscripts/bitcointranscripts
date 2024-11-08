@@ -1,8 +1,8 @@
 ---
 title: Bcoin
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['consensus-enforcement']
+tags:
+  - consensus-enforcement
 date: 2016-09-28
 media: https://www.youtube.com/watch?v=MGm54LZ1T50
 ---

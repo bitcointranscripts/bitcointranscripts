@@ -1,18 +1,17 @@
 ---
-title: Lightning Network Panel
+title: The Lightning Network in 2022
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['lightning']
+tags:
+  - lightning
 date: 2022-03-01
-speakers: ['Christian Decker', 'Bastien Teinturier', 'Oliver Gugger', 'Michael Folkson']
+speakers:
+  - Christian Decker
+  - Bastien Teinturier
+  - Oliver Gugger
+  - Michael Folkson
 media: https://www.youtube.com/watch?v=fqhioVxqmig
 ---
-
-Topic: The Lightning Network in 2022
-
-Location: London Bitcoin Devs
-
-# Introductions
+## Introductions
 
 Ali Taylor-Cipolla (ATC): Ali coming in from Coinbase Recruiting. I’d like to introduce to my friend Tiago who is on the Europe side.
 
@@ -24,7 +23,7 @@ ATC: Sure are. I have one more friend.
 
 Trent Fuenmayor (TF): I’m Trent from Coinbase Giving. We have [developer grants](https://blog.coinbase.com/2022-developer-grants-call-for-applications-461ca9903122) available for people in the community doing Bitcoin Core development, blockchain agnostic. We have four themes, you can read more about them by grabbing one of these flyers over here. If you are looking for money to do some Core development please apply to us, if you are looking for a full time gig please apply to us, if you just want to enjoy the drink and food enjoy it.
 
-# Greenlight demo (Christian Decker)
+## Greenlight demo (Christian Decker)
 
 Blog post: <https://blog.blockstream.com/en-greenlight-by-blockstream-lightning-made-easy/>
 
@@ -66,7 +65,7 @@ Q - You will expand the HWI library perhaps?
 
 A - The HWI might not be sufficient in this case for us. It would require quite a bit more state management on the hardware itself to get this working in a reliable way and make sure that we can verify the full context of whatever we are signing.
 
-# Contrasting the different Lightning implementations
+## Contrasting the different Lightning implementations
 
 MF: So we’ll start the panel. I can see a lot of familiar faces. For anyone who is new to the Lightning Network I’ll just give the basics. The Lightning Network is a network built on top of the Bitcoin network. It allows for a lot of transaction throughput that doesn’t touch the chain. There are various implementations that try to stay compatible using the spec process. Today we have three representatives of three implementations. We have a representative of a fourth implementation at the back so for any LDK questions we’ll try to get a mic to the back. We have Christian representing c-lightning, Bastien representing eclair and Oliver representing LND. I thought to start, something that might be quite fun to do, a short sales pitch for your implementation and also an anti sales pitch, what you think your implementation is currently bad at doing.
 
@@ -154,7 +153,7 @@ BT: I think you mean a mobile wallet for someone who understands the technical d
 
 CD: Channels, it’s complicated should be Lightning’s slogan actually.
 
-# Priorities in the coming year for each implementation
+## Priorities in the coming year for each implementation
 
 MF: Before we move onto the network as a whole and spec stuff, anything to add on priorities for your implementation in the coming year? I suppose it kind of links to the anti sales pitch, anything in addition that you want to be focusing on this year on your implementation?
 
@@ -164,7 +163,7 @@ BT: On the eclair side I would say that our first focus is going to be continuin
 
 OG: Our main focus is of course stability, scalability and reliability. Payment failures are never fun. These are the biggest things to look at. If we want to get Lightning in as many hands as possible then we will experience these scaling issues. The next step will be Taproot on the wallet level and of course on the spec level. We want to push for everything that is needed to get Lightning upgraded with Taproot but also in our products and services. With Loop and Pool we can take advantage of some of the privacy and scalability things. I personally think we should take a close look at some of the privacy features such as route blinding and what is proposed in offers. I think we should do more on that side.
 
-# Security of the network
+## Security of the network
 
 MF: That was the implementations. We’ll move onto the network as a whole now. I thought we’d start with security. You can give me your view on whether this is a good split but I kind of see three security vectors here. There is the DoS vector, the interaction with the P2P layer of Bitcoin itself and then there are bugs that crop up. Perhaps we’ll start with Christian on the history so far on the Lightning Network of bugs that have cropped up. The most serious [one](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2019-September/002174.html) that I remember is the one where you would be tricked into entering into a channel without actually committing any funds onchain. That seemed like a scary bug. Christian can’t remember that one. Let’s start with the bugs that people can remember and then we’ll go onto those other two categories.
 
@@ -208,7 +207,7 @@ Q - I was less worried about the privacy side of it and more the 95 percent of p
 
 CD: The one downside I can see with a huge amount of probes going through a node is that it may end up bloating your database. Every time we add or remove a HTLC to a channel we have to flush that to disk, otherwise we might incur losses there. There is work you have to do even for probes. There are ways we could replace those probes with more lightweight probes that do not have this property. You could have lightweight probes that don’t add to your database but still give you some information about how the liquidity situation is in parts of the network and provide that kind of cover traffic. It is not exactly free because yes you are storing a couple of bytes for each failed probe. Over time that might accumulate but I think in many cases the upsides outweigh the downsides. Apparently I’m the only probing so sorry for those extra bytes. I’ll buy you a USB stick.
 
-# Tensions in the BOLT spec process
+## Tensions in the BOLT spec process
 
 MF: So we’ve left the slight controversy until the end. The spec process and the BOLTs. Alex Bosworth put the cat amongst the pigeons with a few comments in an email that was shared on [Twitter](https://twitter.com/fiatjaf/status/1496544090992881668?s=20&t=fVfqg05OgftH_92sfTwRwg). I’ll read out a couple of the quotes. Obviously he’s not a fan of BOLT 12 but there were some specific comments on the BOLT process itself. To clarify, Alex is speaking for himself and not speaking for Lightning Labs. I think roasbeef and other people clarified that, it is just his personal opinion. “The way the BOLTs are standardized is arbitrary” and “if your side produces Lightning software that only 1 or 2 percent of the network uses, you still get to set the standard for the remaining 98 or 99 percent”. I guess with any spec process or any standardization process there are always going to be tensions. I haven’t followed any others so this is quite new to me. Obviously with different priorities and different business models and different wishes for the direction in which the spec goes it is almost inevitable there are going to be these tensions. Firstly thoughts on Alex’s comments, thoughts on how the spec process has evolved? Is there anything we can improve or is this just an inevitable side effect of having a standardization process with lots of different players, lots of different competing interests.
 
@@ -264,7 +263,7 @@ BT: I  think the main consideration is developer time. We have done all the simp
 
 CD: All 3 or 4 proposals that you mentioned…. Trampoline isn’t that big but dual funding is quite big, splicing is quite big, liquidity ads is quite big, offers is quite big. It is only natural that it takes time to review them, hammer out all the fine details and that requires setting aside resources to do so. We are all small teams. It comes down to the priorities of the individual team, how much you want to dedicate to the specification effort. c-lightning has always made an effort to have all of its developers on the specification process as have other teams as well. But it is a small community, we sometimes get frustrated if our own pet project doesn’t make it through the process as quickly as we’d like it to.
 
-# The far future of the Lightning Network
+## The far future of the Lightning Network
 
 MF: So we’ll end with when you dream about what the Lightning Network looks like in 5 years what does that look like? I know Christian has previously talked about channel factories. As the months go on everything seems further away. The more work you do, the more progress you make the further you are away from it almost. Certainly with Taproot, perhaps Oliver can talk about some of the stuff he’d like to get with Taproot’d Lightning. What do you hope to get and in which direction do you want to go in in the next few years?
 
@@ -274,7 +273,7 @@ BT: I don’t have anything to add, that’s perfect.
 
 OG: I’m just going to be bold and say I’d like to see a billion users or a billion people actually using Lighting in one way or another. Hopefully as non-custodial as possible but number of users go up.
 
-# Q&A
+## Q&A
 
 MF: So final audience questions. Rene (Pickhardt) had one on [Twitter](https://twitter.com/renepickhardt/status/1496534881953886208?s=20&t=ezxDGUuBdx2KlcklpJOAZQ). How should we proceed with the zero base fee situation? Should LN devs do nothing? Should we have a default zero recommendation in the spec and/or implementations? Should we deprecate the base fee? Something else? Any thoughts on zero base fee?
 

@@ -1,10 +1,9 @@
 ---
 title: Bitcoin Payment Economic Analysis
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jacob Leshno']
+speakers:
+  - Jacob Leshno
 ---
-
 Economic analysis of the bitcoin payment system
 
 <https://twitter.com/kanzure/status/1091133843518582787>

@@ -1,10 +1,10 @@
 ---
 title: P2P Design Goals
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'p2p']
+tags:
+  - bitcoin-core
+  - p2p
 date: 2023-09-20
 ---
-
 ## Guiding Questions
 
 - _What are we trying to achieve?_

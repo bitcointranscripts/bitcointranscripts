@@ -1,11 +1,10 @@
 ---
 title: Lightning Specification Meeting - Agenda 1055
 transcript_by: Generated, Human-Verified by Carla Kirk-Cohen
-categories: ['meeting']
-tags: ['lightning']
+tags:
+  - lightning
 date: 2023-02-13
 ---
-
 Name: Lightning specification call
 
 Topic: Agenda below

@@ -1,8 +1,8 @@
 ---
 title: What Bitcoin Specialises in
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Matt Corallo']
+speakers:
+  - Matt Corallo
 date: 2023-02-23
 media: https://stephanlivera.com/download-episode/6025/461.mp3
 ---

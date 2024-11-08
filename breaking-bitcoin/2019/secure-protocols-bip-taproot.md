@@ -1,13 +1,16 @@
 ---
-title: "Secure protocols on BIP taproot"
+title: Secure protocols on BIP taproot
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['taproot', 'tapscript', 'musig', 'adaptor-signatures']
-speakers: ['Jonas Nick']
+tags:
+  - taproot
+  - tapscript
+  - musig
+  - adaptor-signatures
+speakers:
+  - Jonas Nick
 date: 2019-06-06
 media: https://www.youtube.com/watch?v=JdvVKRTMwz8
 ---
-
 36C7 1A37 C9D9 88BD E825 08D9 B1A7 0E4F 8DCD 0366
 
 <https://twitter.com/kanzure/status/1137358557584793600>

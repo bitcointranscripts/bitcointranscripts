@@ -1,9 +1,10 @@
 ---
 title: Systematizing Knowledge
 transcript_by: Bryan Bishop
-categories: ['conference', 'developer-tools']
-tags: ['research']
-speakers: ['Andrew Miller']
+tags:
+  - research
+speakers:
+  - Andrew Miller
 date: 2015-09-13
 ---
 There should be a SNARK wiki. Any website that is better than someone saying "you know, check the June July 2014 bitcoin-wizard logs". We need to research gmaxwell scalability. We should probably fix that.

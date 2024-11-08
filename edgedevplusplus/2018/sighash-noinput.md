@@ -1,14 +1,15 @@
 ---
-title: "SIGHASH_NOINPUT (BIP118)"
+title: SIGHASH_NOINPUT (BIP118)
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['bitcoin core']
-speakers: ['Bryan Bishop']
+tags:
+  - bitcoin-core
+speakers:
+  - Bryan Bishop
 media: https://www.youtube.com/watch?v=nNKP6lxo1RA
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/sighash-noinput]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/sighash-noinput
 ---
-
 SIGHASH\_NOINPUT (BIP118)
 
 <https://twitter.com/kanzure/status/1049510702384173057>

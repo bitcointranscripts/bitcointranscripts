@@ -1,14 +1,14 @@
 ---
 title: Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['p2p', 'research', 'threshold-signature', 'sighash-anyprevout', 'altcoins']
+tags:
+  - p2p
+  - research
+  - threshold-signature
+  - sighash-anyprevout
+  - altcoins
 date: 2020-08-12
 ---
-Topic: Agenda below
-
-Video: No video posted online
-
 BitDevs Solo Socratic 4 agenda: https://bitdevs.org/2020-07-31-solo-socratic-4
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.

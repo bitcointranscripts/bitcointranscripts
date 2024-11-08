@@ -1,9 +1,10 @@
 ---
-title: "Instantiating (Scriptless) 2P-ECDSA: Fungible 2-of-2 MultiSigs for Today's Bitcoin"
+title: 'Instantiating (Scriptless) 2P-ECDSA: Fungible 2-of-2 MultiSigs for Today''s Bitcoin'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['multisignature']
-speakers: ['Conner Fromknecht']
+tags:
+  - multisignature
+speakers:
+  - Conner Fromknecht
 date: 2018-10-06
 media: https://www.youtube.com/watch?v=3mJURLD2XS8&t=3623s
 ---

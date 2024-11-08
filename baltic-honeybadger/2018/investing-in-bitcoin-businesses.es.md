@@ -2,10 +2,10 @@
 title: Invertir en negocios de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['conferencia']
-speakers: ['Nic Carter', 'Florian Maier']
+speakers:
+  - Nic Carter
+  - Florian Maier
 ---
-
 1 a 1: Invertir en negocios de bitcoin
 
 Matthew Mezinskis (crypto\_voices) (moderador)

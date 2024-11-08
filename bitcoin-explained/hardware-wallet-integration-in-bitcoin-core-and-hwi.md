@@ -1,13 +1,18 @@
 ---
-title: "Hardware Wallet Integration in Bitcoin Core and HWI"
+title: Hardware Wallet Integration in Bitcoin Core and HWI
 transcript_by: NeroCherubino via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=TXyi-G1Snx4
-tags: ["bitcoin-core", "hardware wallet", "hwi"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - hardware wallet
+  - hwi
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-03-05
 episode: 30
-aliases: ['/bitcoin-magazine/bitcoin-explained/hardware-wallet-integration-in-bitcoin-core-and-hwi']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/hardware-wallet-integration-in-bitcoin-core-and-hwi
 ---
 Aaron van Wirdum: 00:01:46
 

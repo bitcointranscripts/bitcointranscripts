@@ -2,11 +2,11 @@
 title: Descriptores de guiones (2018-10-08)
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['wallet']
-aliases: ['/es/bitcoin-core-dev-tech/2018-10-08-script-descriptors/']
+tags:
+  - wallet
+aliases:
+  - /es/bitcoin-core-dev-tech/2018-10-08-script-descriptors/
 ---
-
 2018-10-08
 
 # Descriptores de guiones

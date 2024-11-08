@@ -1,8 +1,8 @@
 ---
 title: Maintaining Bitcoin Core-Contributions, Consensus, Conflict
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Jonas Schnelli']
+speakers:
+  - Jonas Schnelli
 date: 2021-01-14
 media: https://stephanlivera.com/download-episode/2832/242.mp3
 ---

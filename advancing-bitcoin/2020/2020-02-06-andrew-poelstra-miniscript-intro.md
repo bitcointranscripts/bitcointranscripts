@@ -1,10 +1,11 @@
 ---
-title: "Introduction to Miniscript"
-speakers: ['Andrew Poelstra']
+title: Introduction to Miniscript
+speakers:
+  - Andrew Poelstra
 date: 2020-02-06
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['miniscript']
+tags:
+  - miniscript
 media: https://www.youtube.com/watch?v=eTUuwASdUBE
 ---
 Slides: https://www.dropbox.com/s/vgh5vaooqqbgg1v/andrew-poelstra.pdf

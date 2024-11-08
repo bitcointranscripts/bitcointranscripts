@@ -1,8 +1,8 @@
 ---
 title: What is Check Template Verify?
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Jeremy Rubin']
+speakers:
+  - Jeremy Rubin
 date: 2022-01-17
 media: https://www.youtube.com/watch?v=0D4nvailvWc
 ---

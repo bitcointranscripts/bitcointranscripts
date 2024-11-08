@@ -1,12 +1,12 @@
 ---
 title: Segregated Witness And Its Impact On Scalability
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['segwit']
-speakers: ['Pieter Wuille']
+tags:
+  - segwit
+speakers:
+  - Pieter Wuille
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=36m
 ---
-
 slides: <https://prezi.com/lyghixkrguao/segregated-witness-and-deploying-it-for-bitcoin/>
 
 code: <https://github.com/sipa/bitcoin/commits/segwit>

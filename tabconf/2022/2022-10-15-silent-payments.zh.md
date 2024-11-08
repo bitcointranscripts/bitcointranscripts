@@ -2,12 +2,13 @@
 title: Silent Payments and Alternatives
 transcript_by: Bryan Bishop
 translation_by: Ajian
-categories: ['core-dev-tech']
-speakers: ['Ruben Somsen']
-tags: ['privacy-enhancements', 'silent-payments']
+speakers:
+  - Ruben Somsen
+tags:
+  - privacy-enhancements
+  - silent-payments
 date: 2022-10-15
 ---
-
 # 引言
 
 我希望谈谈 “静默支付”，以及让你可以非交互地给他人支付的多种构造。在比特币的世界里，有许多常见的支付方式，发起支付是稀松平常的事。我们当前拥有的另类选择是，你可以生成一个地址然后放到你的 Twitter 介绍里，然后所有人都可以直接给你支付了，但这就没有隐私。所以，要么你需要在接收支付时跟发送者互动，要么你可以持续复用相同的地址，但要接受隐私性上的牺牲。
