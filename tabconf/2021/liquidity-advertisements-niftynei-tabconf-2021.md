@@ -3,7 +3,7 @@ title: Liquidity Advertisements
 transcript_by: natan-del-prado via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yXemwW73W5Q
 tags:
-  -lightning
+  - lightning
 speakers:
   - Lisa Neigut
 date: 2021-11-06
