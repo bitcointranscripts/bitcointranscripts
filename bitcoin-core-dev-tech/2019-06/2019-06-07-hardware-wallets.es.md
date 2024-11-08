@@ -2,7 +2,6 @@
 title: Hardware Wallets
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
 tags: ['hardware-wallet', 'hwi']
 speakers: ['Sjors Provoost', 'Jonas Schnelli', 'Andrew Chow']
 date: 2019-06-07
