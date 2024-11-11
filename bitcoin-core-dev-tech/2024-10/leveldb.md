@@ -1,0 +1,51 @@
+---
+title: LevelDB Benchmarking & IBD performance
+tags:
+  - bitcoin-core
+date: 2024-10-15
+---
+
+- Interested in benchmarking because interested in replacing leveldb to allow reading from other processes, need reliable way to benchmark changes like this.
+- So far been benchmarking using hyperfine, investigating IBD
+- Problem was that IBD takes a long time, wanted faster iteration cycles
+- To support this, using patch adding flag that pauses background download when assumeutxo snapshots loaded
+- Found MDBX outperformed leveldb processing new blocks after snapshot, and outperformed it overall, but leveldb was faster than MDBX processing old blocks
+- Want to figure out why behavior changed between old / new blocks, maybe transactions longer lived previously
+- MDBX is more efficient for reads, less efficient for writes compared to leveldb
+- Also experimented with newer upstream leveldb version and with rocksdb (facebook fork of leveldb)
+  - Rocksdb has many more parameters which could be drawback but has option groups to simplify
+- Is database bottleneck for IDB? flamegraph shows
+  - 30-40% time spent in CheckTxInputs looking up transaction inputs, so significant
+    - especially because leveldb can't handle batch reads, each cache miss is read from disk
+  - also large time in background compaction leveldb
+    - increasing file size helps this, also implemented other optimization [notes missing]
+  - IDB is i/o bound, not cpu bound. main part CPU bound is chacha20
+    - i/o bound even though using nvme and syncing between two nodes on localhost
+  - Perf impact of flushing is relatively small. only 6.7% samples in flush
+- Also experimented background compaction thread option
+- Want standard benchmarks we can run to test optimizations and database changes, catch bugs earlier like windows XOR regression
+- Maybe there are improvements we can make while keeping leveldb
+  - Can upgrade leveldb, revert no longer needed leveldb windows changes. Need to keep memory mapped file changes
+  - Maybe can port background compaction thread optimization
+- Would like to resurrect jamesob project nightly benchmarking sync from snapshot, weekly benchmarking sync from genesis
+  - Might have caught recent windows XOR regression sooner
+- There is github gist describing new experimental benchmarking infrastructure using hyperfine
+  - Doesn't use bitcoin-perf, might be hard to reconcile
+- Would like more systematic way to organize information
+  - 5 year old PR porting to LMDB had useful information
+- Discussion about ways to improve performance
+  - At extremes or either 0 cache or giant cache, choice of database did not show difference in benchmarks.
+  - Leveldb optimized for spinning disks / sequential reads, so could be less relevant today
+  - Old but never implemented performance idea: continuous background flushing
+    - Hard to reconcile with freshness cutthrough operation, but probably possible
+    - Would need to record start and end blocks or cache in database
+  - Question about why need cache at all, main reason is freshness cuthrough optimization
+    - cutthrough works best if delay writes as long as possible
+    - downsides of delaying writes: data loss on crash, no multiple readers
+  - Maybe should have different modes depending on whether in IDB or not
+    - Same node can be in and out of IDB, e.g. if offline for a month
+  - Maybe should change dbcache default size, maybe chosen automatically based on amount of ram, maybe just flush when memory is getting full
+  - Maybe could add -fastidb flag to max out cache size, number of verfication threads. Could generalize with multiple presets, old idea
+  - One issue switching to LMDB is random writes slow, but sorted writes would be faster
+  - One issue MDBX might be not as good prefix compression which per-txout change in 0.15 assumed
+    - per-txout change is important for preventing DOS, where could create transactions with lots of outputs, and spend all but one but all stored
