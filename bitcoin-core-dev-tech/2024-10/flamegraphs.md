@@ -2,6 +2,7 @@
 title: Flamegraphs
 tags:
   - bitcoin-core
+  - developer-tools
 date: 2024-10-17
 ---
 Demo'ed a new (~4 years old) script available in the Linux kernel's perf tool
