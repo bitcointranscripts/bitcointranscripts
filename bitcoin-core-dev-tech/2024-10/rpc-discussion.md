@@ -4,6 +4,11 @@ tags:
   - bitcoin-core
   - rpc
 date: 2024-10-16
+additional_resources:
+  - title: 'Issue #29912'
+    url: https://github.com/bitcoin/bitcoin/issues/29912
+  - title: 'PR #31065'
+    url: https://github.com/bitcoin/bitcoin/pull/31065
 ---
 ## Spec
 

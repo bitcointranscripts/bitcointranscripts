@@ -3,6 +3,9 @@ title: Block Stalling
 tags:
   - bitcoin-core
 date: 2024-10-15
+additional_resources:
+  - title: 'PR #29664'
+    url: https://github.com/bitcoin/bitcoin/pull/29664
 ---
 [https://github.com/bitcoin/bitcoin/pull/29664](https://github.com/bitcoin/bitcoin/pull/29664)
 

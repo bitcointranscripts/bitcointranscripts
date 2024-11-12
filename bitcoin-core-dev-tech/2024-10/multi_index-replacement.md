@@ -3,6 +3,9 @@ title: Multi_index Replacement
 tags:
   - bitcoin-core
 date: 2024-10-17
+additional_resources:
+  - title: 'tmi: Tiny Multi-Index'
+    url: https://github.com/theuni/tmi/
 ---
 Mostly looking for concept ACKs/NACKs
 

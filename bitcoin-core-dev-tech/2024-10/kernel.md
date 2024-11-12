@@ -4,6 +4,9 @@ tags:
   - bitcoin-core
   - build-system
 date: 2024-10-15
+additional_resources:
+  - title: 'Block-linearizer branch'
+    url: https://github.com/TheCharlatan/bitcoin/tree/kernelLinearize
 ---
 ## STATUS
 

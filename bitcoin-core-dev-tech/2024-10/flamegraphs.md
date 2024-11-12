@@ -4,6 +4,9 @@ tags:
   - bitcoin-core
   - developer-tools
 date: 2024-10-17
+additional_resources:
+  - title: 'Updated version of the flamegraph guide'
+    url: https://github.com/davidgumberg/prnotes/blob/master/profiling/flamegraphs.md
 ---
 Demo'ed a new (~4 years old) script available in the Linux kernel's perf tool
 for easily recording and generating flamegraphs in a single shot. (`perf script

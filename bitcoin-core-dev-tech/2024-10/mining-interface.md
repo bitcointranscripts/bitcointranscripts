@@ -5,6 +5,11 @@ tags:
   - stratum-v2
   - mining
 date: 2024-10-15
+additional_resources:
+  - title: 'PR #31003'
+    url: https://github.com/bitcoin/bitcoin/pull/31003
+  - title: 'Issue #31002'
+    url: https://github.com/bitcoin/bitcoin/issues/31002
 ---
 Main use case is a Stratum v2 client connecting over IPC.
 

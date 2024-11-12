@@ -4,6 +4,9 @@ tags:
   - bitcoin-core
   - stratum-v2
 date: 2024-10-17
+additional_resources:
+  - title: 'Issue #31098'
+    url: https://github.com/bitcoin/bitcoin/issues/31098
 ---
 Overall question: Do we include it in Bitcoin Core or do we have it maintained separately as an IPC mining interface (multi-process approach)?
 
