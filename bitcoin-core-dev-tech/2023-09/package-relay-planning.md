@@ -2,7 +2,7 @@
 title: Package Relay Planning
 tags:
   - bitcoin-core
-  - package relay
+  - package-relay
 date: 2023-09-20
 speakers:
   - Gloria Zhao

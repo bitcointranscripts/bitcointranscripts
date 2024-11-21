@@ -2,7 +2,7 @@
 title: AssumeUTXO Update
 tags:
   - bitcoin-core
-  - assumeUTXO
+  - assumeutxo
 date: 2023-09-20
 ---
 - One remaining PR

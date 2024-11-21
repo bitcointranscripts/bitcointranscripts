@@ -2,7 +2,7 @@
 title: The Future of Hardware Wallets
 transcript_by: Bryan Bishop
 tags:
-  - hardware wallet
+  - hardware-wallet
 speakers:
   - Stepan Snigirev
 media: https://www.youtube.com/watch?v=OxX_LFgdYa0

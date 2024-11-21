@@ -2,7 +2,7 @@
 title: Silent Payments Libsecp Module
 tags:
   - bitcoin-core
-  - silent payments
+  - silent-payments
   - libsecp256k1
 date: 2024-04-08
 ---

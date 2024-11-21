@@ -2,7 +2,7 @@
 title: Celo Ultralight Client
 transcript_by: Bryan Bishop
 tags:
-  - altcoin
+  - altcoins
 speakers:
   - Marek Olszewski
   - Michael Straka

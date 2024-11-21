@@ -2,7 +2,7 @@
 title: 'Sapio: Stateful Smart Contracts for Bitcoin with OP_CTV'
 transcript_by: Michael Folkson
 tags:
-  - op_checktemplateverify
+  - op-checktemplateverify
 speakers:
   - Jeremy Rubin
 date: 2020-07-11

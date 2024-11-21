@@ -4,7 +4,7 @@ transcript_by: Stephan Livera
 speakers:
   - Gloria Zhao
 tags:
-  - bitcoin core
+  - bitcoin-core
 date: 2020-10-02
 media: https://stephanlivera.com/download-episode/2526/216.mp3
 ---

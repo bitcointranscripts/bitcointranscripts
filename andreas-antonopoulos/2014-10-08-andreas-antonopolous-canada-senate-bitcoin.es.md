@@ -4,7 +4,7 @@ speakers: ['Andreas Antonopoulos']
 date: 2014-10-08
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-tags: ['seguridad']
+tags: ['security']
 ---
 
 Esta es una transcripción de las pruebas presentadas ante el Comité del Senado de Canadá sobre Banca, Comercio y Economía. Aquí hay un [video](https://www.youtube.com/watch?v=xUNGFZDO8mM&t=3m10s). El discurso de apertura se puede encontrar [aquí](http://antonopoulos.com/2014/10/09/canadian-senate-hearings-my-opening-remarks/).

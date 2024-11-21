@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 speakers:
   - James O'Beirne
 tags:
-  - bitcoin core
+  - bitcoin-core
 media: https://www.youtube.com/watch?v=L_sI_tXmy2U
 date: 2018-10-05
 aliases:

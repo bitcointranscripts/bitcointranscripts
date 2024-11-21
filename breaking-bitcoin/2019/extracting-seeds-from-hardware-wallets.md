@@ -3,7 +3,7 @@ title: Extracting Seeds From Hardware Wallets
 transcript_by: Bryan Bishop
 tags:
   - security-problems
-  - hardware wallet
+  - hardware-wallet
 speakers:
   - Charles Guillemet
 media: https://www.youtube.com/watch?v=wiA1bT4ObVo

@@ -4,7 +4,7 @@ transcript_by: NeroCherubino via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=TXyi-G1Snx4
 tags:
   - bitcoin-core
-  - hardware wallet
+  - hardware-wallet
   - hwi
 speakers:
   - Sjors Provoost

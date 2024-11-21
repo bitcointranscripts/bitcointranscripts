@@ -3,7 +3,7 @@ title: AssumeUTXO
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 tags:
-  - assumeUTXO
+  - assumeutxo
   - bitcoin-core
 date: 2019-06-07
 speakers:

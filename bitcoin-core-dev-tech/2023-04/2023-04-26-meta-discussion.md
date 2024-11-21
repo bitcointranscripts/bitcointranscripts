@@ -1,7 +1,7 @@
 ---
 title: Project Meta Discussion
 tags:
-  - bitcoin core
+  - bitcoin-core
 date: 2023-04-26
 aliases:
   - /bitcoin-core-dev-tech/2023-04-26-meta-discussion/

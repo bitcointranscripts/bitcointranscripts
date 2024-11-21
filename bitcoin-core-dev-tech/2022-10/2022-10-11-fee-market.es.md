@@ -4,7 +4,7 @@ transcript_by: Bryan Bishop
 translation_by: Blue Moon
 tags:
   - fee-management
-  - bitcoin core
+  - bitcoin-core
 date: 2022-10-11
 aliases:
   - /es/bitcoin-core-dev-tech/2022-10-11-fee-market/

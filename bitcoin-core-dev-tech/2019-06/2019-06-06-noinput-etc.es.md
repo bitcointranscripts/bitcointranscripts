@@ -3,9 +3,9 @@ title: Discusión general sobre SIGHASH_NOINPUT, OP_CHECKSIGFROMSTACK, and OP_SE
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 tags:
-  - sighash_anyprevout
-  - op_checksigfromstack
-  - op_checktemplateverify
+  - sighash-anyprevout
+  - op-checksigfromstack
+  - op-checktemplateverify
 date: 2019-06-06
 speakers:
   - Olaoluwa Osuntokun

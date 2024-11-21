@@ -4,7 +4,7 @@ speakers: ['Andreas Antonopoulos']
 date: 2020-04-08
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-tags: ['cartera', 'seguridad']
+tags: ['bip32', 'security-problems']
 media: <https://www.youtube.com/watch?v=p5nSibpfHYE>
 ---
 

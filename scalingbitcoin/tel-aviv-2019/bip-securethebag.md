@@ -3,7 +3,7 @@ title: 'BIP: OP_SECURETHEBAG'
 transcript_by: Bryan Bishop
 tags:
   - research
-  - op_checktemplateverify
+  - op-checktemplateverify
 speakers:
   - Jeremy Rubin
 date: 2019-09-11

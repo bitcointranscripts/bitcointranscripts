@@ -2,7 +2,7 @@
 title: A hardCORE workout
 transcript_by: Michael Folkson
 tags:
-  - bitcoin core
+  - bitcoin-core
   - career
 speakers:
   - Jeremy Rubin

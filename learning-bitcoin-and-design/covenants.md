@@ -5,7 +5,7 @@ media: https://www.youtube.com/watch?v=rCQKqe2XCqI
 tags:
   - covenants
   - ux
-  - op_checktemplateverify
+  - op-checktemplateverify
 speakers:
   - Christoph Ono
   - Michael Haase

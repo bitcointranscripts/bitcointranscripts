@@ -3,7 +3,7 @@ title: Bridging Off-Chain and On-Chain with Submarine Swaps
 transcript_by: Bryan Bishop
 tags:
   - lightning
-  - submarine swaps
+  - submarine-swaps
 speakers:
   - Alex Bosworth
 date: 2019-05-11

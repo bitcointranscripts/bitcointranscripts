@@ -5,6 +5,7 @@ media: https://podcasters.spotify.com/pod/show/chaincode/episodes/Sergi-Delgado-
 tags:
   - lightning
   - privacy
+  - watchtowers
 speakers:
   - Sergi Delgado
 date: 2023-02-02

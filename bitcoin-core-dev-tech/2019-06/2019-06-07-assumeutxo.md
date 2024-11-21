@@ -2,7 +2,7 @@
 title: AssumeUTXO
 transcript_by: Bryan Bishop
 tags:
-  - assumeUTXO
+  - assumeutxo
   - bitcoin-core
 date: 2019-06-07
 aliases:

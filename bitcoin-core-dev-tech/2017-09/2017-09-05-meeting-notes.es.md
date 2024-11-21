@@ -2,8 +2,6 @@
 title: Notas de la reunión
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-tags:
-  - privacidad
 date: 2017-09-05
 aliases:
   - /es/bitcoin-core-dev-tech/2017-09-05-meeting-notes/

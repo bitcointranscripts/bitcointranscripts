@@ -3,7 +3,7 @@ title: The evolution of bitcoin scripting
 transcript_by: Bryan Bishop
 tags:
   - scripts-addresses
-  - op_checksigfromstack
+  - op-checksigfromstack
 speakers:
   - Olaoluwa Osuntokun
 ---

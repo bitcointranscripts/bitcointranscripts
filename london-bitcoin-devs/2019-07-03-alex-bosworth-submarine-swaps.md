@@ -2,7 +2,7 @@
 title: Submarine Swaps and Loop
 transcript_by: Michael Folkson
 tags:
-  - submarine swaps
+  - submarine-swaps
 speakers:
   - Alex Bosworth
 date: 2019-07-03

@@ -3,7 +3,7 @@ title: Fee Market
 transcript_by: Bryan Bishop
 tags:
   - fee-management
-  - bitcoin core
+  - bitcoin-core
 date: 2022-10-11
 aliases:
   - /bitcoin-core-dev-tech/2022-10-11-fee-market/

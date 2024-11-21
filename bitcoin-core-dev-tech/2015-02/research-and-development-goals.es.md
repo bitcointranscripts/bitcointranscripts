@@ -1,16 +1,15 @@
 ---
-title: Research And Development Goals
+title: R&D Goals & Challenges
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 tags:
-  - consensus
+  - research
+  - bitcoin-core
 speakers:
   - Patrick Murck
   - Gavin Andresen
   - Cory Fields
 ---
-Objetivos y retos de R&D 
-
 A menudo vemos gente diciendo que están probando las aguas, que han corregido un error tipográfico, que han hecho una pequeña corrección que no tiene mucho impacto, que se están acostumbrando al proceso. Se están dando cuenta de que es muy fácil contribuir a Bitcoin Core. Codificas tus cambios, envías tus cambios, no hay mucho que hacer.
 
 Hay una diferencia, y las líneas son difusas e indefinidas, y puedes hacer un cambio en Core que cambie un error ortográfico o un cambio en la política o en las reglas de consenso, para esas cosas de alto nivel, para las cosas a nivel de ecosistema, hay varias listas de correo, la lista de desarrollo es la que tiene más tráfico. Las cosas se debaten allí, se debaten en las redes sociales. Así que todo se reduce a qué cambios buscas, así que si estás añadiendo funcionalidad al propio programa es fácil hacerlo siempre que no sea controvertido.

@@ -4,7 +4,7 @@ transcript_by: Lucas de C. Ferreira, Ben Knáb
 tags:
   - lightning
   - multiparty channel
-  - channel factory
+  - channel-factories
 speakers:
   - Christian Decker
 date: 2019-06-28

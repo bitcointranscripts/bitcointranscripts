@@ -2,7 +2,7 @@
 title: Simplicity
 transcript_by: Michael Folkson
 tags:
-  - simplicity'
+  - simplicity
 speakers:
   - Russell O’Connor
 date: 2019-10-15

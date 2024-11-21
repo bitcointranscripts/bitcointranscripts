@@ -2,7 +2,7 @@
 title: Socratic Seminar - AssumeUTXO
 transcript_by: Michael Folkson
 tags:
-  - assumeUTXO
+  - assumeutxo
   - utreexo
 speakers:
   - James O'Beirne

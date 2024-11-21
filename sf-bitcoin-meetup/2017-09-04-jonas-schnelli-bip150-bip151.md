@@ -6,7 +6,7 @@ date: 2017-09-04
 transcript_by: Bryan Bishop
 tags:
   - v2-p2p-transport
-  - bitcoin core
+  - bitcoin-core
 ---
 bip150 and bip151: Bitcoin p2p network encryption and authentication
 

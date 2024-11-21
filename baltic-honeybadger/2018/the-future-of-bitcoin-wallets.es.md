@@ -3,8 +3,7 @@ title: El futuro de los monederos de Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
 tags:
-  - cartera hardware
-  - cartera
+  - hardware-wallet
 speakers:
   - Pavol Rusnak
   - Lawrence Nahum

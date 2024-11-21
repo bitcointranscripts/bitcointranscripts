@@ -2,7 +2,7 @@
 title: Signature Aggregation Update
 tags:
   - bitcoin-core
-  - signature aggregation
+  - signature-aggregation
 date: 2023-09-21
 ---
 ## The status of the Half-Agg BIP?

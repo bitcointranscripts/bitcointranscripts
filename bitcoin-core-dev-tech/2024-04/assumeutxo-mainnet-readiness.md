@@ -1,8 +1,8 @@
 ---
 title: assumeUTXO Mainnet Readiness
 tags:
-  - bitcoin core
-  - assumeUTXO
+  - bitcoin-core
+  - assumeutxo
 date: 2024-04-10
 ---
 - Conceptual discussion about the point raised by Sjors in the Tracking issue: [https://github.com/bitcoin/bitcoin/issues/29616#issuecomment-1988390944](https://github.com/bitcoin/bitcoin/issues/29616#issuecomment-1988390944)

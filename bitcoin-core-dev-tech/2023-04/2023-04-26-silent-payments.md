@@ -2,7 +2,7 @@
 title: Silent Payments
 tags:
   - bitcoin-core
-  - silent payments
+  - silent-payments
 date: 2023-04-25
 aliases:
   - /bitcoin-core-dev-tech/2023-04-26-silent-payments/

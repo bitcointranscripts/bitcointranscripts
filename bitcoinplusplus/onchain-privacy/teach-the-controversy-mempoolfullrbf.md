@@ -3,7 +3,7 @@ title: 'Teach the Controversy: mempoolfullrbf'
 transcript_by: nillawafa via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=F6qPuhsM5Ng
 tags:
-  - RBF
+  - rbf
   - transaction-pinning
 speakers:
   - Peter Todd

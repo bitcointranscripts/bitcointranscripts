@@ -2,8 +2,8 @@
 title: Using Bitcoin Core with hardware wallets
 transcript_by: Michael Folkson
 tags:
-  - hardware wallet
-  - bitcoin core
+  - hardware-wallet
+  - bitcoin-core
 speakers:
   - Sjors Provoost
 date: 2018-09-19
