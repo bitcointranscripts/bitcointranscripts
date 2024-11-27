@@ -1,9 +1,10 @@
 ---
 title: Bitcoin Custody
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['regulation']
-speakers: ['Bryan Bishop']
+tags:
+  - regulation
+speakers:
+  - Bryan Bishop
 date: 2018-09-23
 media: https://www.youtube.com/watch?v=D2WXxgZ8h-0&t=22160s
 ---

@@ -1,15 +1,13 @@
 ---
 title: New Address Type For Segwit Addresses
-transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['bech32']
+transcript_by: Bryan Bishop, Michael Folkson
+tags:
+  - bech32
 date: 2017-03-29
-speakers: ['Pieter Wuille']
+speakers:
+  - Pieter Wuille
 media: https://www.youtube.com/watch?v=NqiN9VFE4CU
 ---
-
-Topic: Bech32 addresses for Bitcoin
-
 Slides: <https://prezi.com/gwnjkqjqjjbz/bech32-a-base32-address-format/>
 
 Proposal: <https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki>
@@ -18,11 +16,9 @@ Demo website: <http://bitcoin.sipa.be/bech32/demo/demo.html>
 
 Twitter announcement: <https://twitter.com/kanzure/status/847569047902273536>
 
-Transcript completed by: Bryan Bishop Edited by: Michael Folkson
-
 ## Intro
 
-Can everyone hear me fine through this microphone? Anyone who can't hear me please raise your hand. Oh wait. All good now? Tonight I will be speaking on a project I've been working on on and off for the past year or so, which is the question of what kind of addresses we will be using in Bitcoin in the future. Recently I proposed a [BIP](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html) after several long discussions among some people. I think we have a great proposal. So today I will be talking about the proposal itself and how it came to be. This was joint work with several people, in particular Greg Maxwell who is here as well, and my colleagues at Blockstream. Most of this work was done thanks to the computation power of their computers. I'll talk about that more. So this is the outline of my talk. First I'll talk about why we need a new address type going forward. The decision to use [base32](https://en.wikipedia.org/wiki/Base32>) rather than [base58](https://en.bitcoin.it/wiki/Base58Check_encoding) as has been used historically. Once the choice for base32 has been made, there are a bunch of open design questions like what checksum to use, what character set to use, and what the address structure looks like. Optimal character set depends on optimal choice of checksum, which may be surprising. And then combining this into a new format, which I am calling [bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
+Can everyone hear me fine through this microphone? Anyone who can't hear me please raise your hand. Oh wait. All good now? Tonight I will be speaking on a project I've been working on on and off for the past year or so, which is the question of what kind of addresses we will be using in Bitcoin in the future. Recently I proposed a [BIP](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2017-March/013749.html) after several long discussions among some people. I think we have a great proposal. So today I will be talking about the proposal itself and how it came to be. This was joint work with several people, in particular Greg Maxwell who is here as well, and my colleagues at Blockstream. Most of this work was done thanks to the computation power of their computers. I'll talk about that more. So this is the outline of my talk. First I'll talk about why we need a new address type going forward. The decision to use [base32](https://en.wikipedia.org/wiki/Base32>) rather than [base58](https://en.bitcoin.it/wiki/Base58Check_encoding) as has been used historically. Once the choice for base32 has been made, there are a bunch of open design questions like what checksum to use, what character set to use, and what the address structure looks like. Optimal character set depends on optimal choice of checksum, which may be surprising. And then combining this into a new format, which I am calling [bech32](https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki)
 
 ## Why?
 

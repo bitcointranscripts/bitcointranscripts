@@ -1,9 +1,10 @@
 ---
-title: "Cryptography for Blockchains beyond ECDSA and sha256: Signatures and Zero-Knowledge Proofs"
+title: 'Cryptography for Blockchains beyond ECDSA and sha256: Signatures and Zero-Knowledge Proofs'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Benedikt Bünz']
+tags:
+  - proof-systems
+speakers:
+  - Benedikt Bünz
 media: https://www.youtube.com/watch?v=LDF8bOEqXt4&t=10570s
 ---
 Am going to talk about cryptography relevant to blockchains. I'll talk about signatures and zero-knowledge proofs. It has a lot of applications to bitcoin. It turns out that bitcoin is pretty simple in terms of cryptography. It just uses a hash function (sha256) and,separately, ECDSA for signatures. I will be mentioning some other cryptography that bitcoin could use.

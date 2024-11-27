@@ -1,10 +1,12 @@
 ---
 title: Trading Panel
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Florian Maier', 'Tone Vays', 'Whalepanda', 'Matthew Mezinskis']
+speakers:
+  - Florian Maier
+  - Tone Vays
+  - Whalepanda
+  - Matthew Mezinskis
 ---
-
 MM: As Trace Mayer says, it's chasing the rabbit. Why not introduce ourselves?
 
 TV: My name is Tone Vays. I come from the traditional Wall Street trading environment. I joined the crypto space in 2013. I spoke at my first conference and wrote my first article in Q1 2014. I was doing some trading. With the popularity of the youtube channel and going to conferences, I went back to trading options in traditional markets. I'll get back to trading crypto soon, but I have plenty of experience.

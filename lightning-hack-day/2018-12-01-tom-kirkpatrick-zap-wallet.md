@@ -1,9 +1,10 @@
 ---
-title: "Zap Desktop: A look under the hood"
+title: 'Zap Desktop: A look under the hood'
 transcript_by: Michael Folkson
-categories: ['hackathon']
-tags: ['lightning']
-speakers: ['Tom Kirkpatrick']
+tags:
+  - lightning
+speakers:
+  - Tom Kirkpatrick
 date: 2018-12-01
 media: https://www.youtube.com/watch?v=OhRPZs0cWwQ
 ---

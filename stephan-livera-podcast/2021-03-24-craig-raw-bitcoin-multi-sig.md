@@ -1,8 +1,8 @@
 ---
 title: Bitcoin Multi Sig With Sparrow Wallet
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Craig Raw']
+speakers:
+  - Craig Raw
 date: 2021-03-24
 media: https://www.youtube.com/watch?v=xxxEST18_p0
 ---

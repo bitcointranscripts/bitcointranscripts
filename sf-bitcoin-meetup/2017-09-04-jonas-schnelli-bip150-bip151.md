@@ -1,12 +1,13 @@
 ---
 title: Bip150 Bip151
-speakers: ['Jonas Schnelli']
+speakers:
+  - Jonas Schnelli
 date: 2017-09-04
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['P2P', 'bitcoin core']
+tags:
+  - v2-p2p-transport
+  - bitcoin-core
 ---
-
 bip150 and bip151: Bitcoin p2p network encryption and authentication
 
 <https://github.com/bitcoin/bips/blob/master/bip-0150.mediawiki>
@@ -15,7 +16,7 @@ bip150 and bip151: Bitcoin p2p network encryption and authentication
 
 https://btctranscripts.com/scalingbitcoin/milan-2016/bip151-peer-encryption/
 
-# Introduction
+## Introduction
 
 Alright guys.. take a seat. ((various mumblings)) Want to thank our sponsors, Digital Garage (applause). Second order of business, if you guys could... trash away.. that would be awesome. There are trash cans in the back and right there and right next to the drinks. So at the end of the night, that would be great. Jonas Schnelli is a bitcoin core developer and he is here to talk about bitcoin encryption and authentication on the p2p network.
 
@@ -46,7 +47,7 @@ So if we are talking about passive interception where you don't know if they are
 
 So yeah we know what SPV means for the user... you're going to lose a lot of privacy and information.
 
-# bip151
+## bip151
 
 bip151 was proposed to create secure channels between peers. It doesn't allow you to have full man in the middle protection. If a peer is malicious, then you don't know. But at least network authority is no longer albe to manipulate the content of messages.
 
@@ -56,7 +57,7 @@ And you know probably that there's still a possibility of an active MiTM where a
 
 A very important differetiation is that this is detectable in this scenario. Imagine peer A could call peer B which it planned to connect to, and ask what's the session id? If the session id is not identiticle, then you know there's a peer in the middle. If something is detectable in surveillance territory, then it's quite not ideal to intercept those connections.
 
-# TOFU?
+## TOFU?
 
 A good example is how ssh does this. When you connect to a host the first time, it remembers and shows you the fingerprint and it asks you to verify the fingerprint-- but nobody does that. Well, do any of you? Oh, that's good. That's my host. And then once you connect to the host, it stores the fingerprint in the `known_hosts` file. And then if the fingerprint changes, you get a big warning, and then you delete the line and everything is good again... this is called TOFU, trust on first use. So if your first connection is MITM then you're going to trust that. You need to login over an existing secure channel and verify the fingerprint. bip151 does not have a TOFU concept, but maybe one could be added. I think it's good that it does not have one, though.
 
@@ -72,11 +73,11 @@ Once we have a shared secret, we can use HKDF to do key derivation from the secr
 
 And the big thing that I really like is that we can have a new message structure. If you're familiar with the bitcoin p2p protocol, then you know about the 4 byte magic that indicates what netwrok you're on. And there's 12 byte fixed length in block headers. And there's the length of the payload and then the checksum which is very important. And then the payload itself. Once we establish encryption, we can use whatever we want. So the idea is to have the encrypted length, encrypt the payload, the MAC tag, and then in the encrypted payload we can have multiple packages, whih have a slightly different form... This is an example of a new INV message. Before, we had the magic and 12-byte comment, and also we had ... as some clients filled up the some random data from these private keys. And then there is a length, a checksum so that it comes out to roughly 61 bytes. With encryption we can drop the magic and the checksum. And then with the MAC tag we come down to roughly 65 bytes. It's not much larger. So we might say what about ... as long as.. slows you down? But no, I don't think so. I took the crypto++ benchmark. Here we can see, maybe before that, ... does the two round sha256 on old packet in order to get you a 4-byte checksum. It's quite expensive. The crypto++ benchmark says 13.4 cycles/byte.... I think these numbers are quite optimistic, but it shows us that it wont be much slower, it may even be faster to do it in the encrypted fashion.
 
-# Downsides of bip151
+## Downsides of bip151
 
 Well, we have to know that it's still a proposal. secp256k1 Diffie-Hellman (ECDH) is not quantum crypto safe. Lamport and merkle signatures could help. We know that secp256k1 is not quantum-safe. There are proposals to do so.
 
-# Criticism
+## Criticism
 
 Not sure if it's just one or some, some people said false sense of security which yeah I kind of agree if you say it's encrypted is it really encrypted. But let me go back to this to show you an example. The sense of security, if you say well it's end-to-end encrypted... we use signal because it's end-to-end encrypted. But what does this mean? What is an end? What if an end sn't safe? There's lcear evidence that android on my phone isn't safe. So it should always be known that end-to-end encryption never means that the end is safe. It's only for in-flight.
 
@@ -86,7 +87,7 @@ Some people said that there is no private information in traffic between peers. 
 
 Some people say that the needs of p2p protocol should not drive the needs of a client-server system. Say you want to connect your phone to your node at home. Well, without encryption it's sort of impossible to do that safely. But some people say that we should not extend the p2p protocol to do that. But I disagree there too. If it's possible to do bitcoin p2p protocol in a secure way, why not do it in same way to allow client-server connection. I think it is more practical to just use the same bitcoin p2p protocol. It's not scalable to setup other protocols.
 
-# Advantages
+## Advantages
 
 * Eliminate passive inception.
 * Eliminates undetectable packet manipulation.
@@ -95,13 +96,13 @@ Some people say that the needs of p2p protocol should not drive the needs of a c
 
 So yeah all these sorts of channel connections... yeah, we need this. There's no guarantee that people are connecting to the nodes peers.
 
-# Other options
+## Other options
 
 * Openssl: So people asked, why not use openssl? It's there and it works. It's kind of a joke really. This is the vulnerability list for openssl. Really small slider on the right of this browser screenshot. Also what's in there is way too much for bitcoin. And we had good experience with using well-known crypto in its own dependency chain or in its own source code base.
 * Tor: Tor was not designed for this.
 * Stunnel: Cumbersome setup... maybe you can set this up on your smartphone if you're an expert.
 
-# bip150: Authentication
+## bip150: Authentication
 
 This is the proposal to build in authentication with peers. This avoids the active man-in-the-middle attack. It allows for whitelisting peers. It would allow private p2p extensions, like my peer wants to serve fee estimations.. that's a client-server thing, maybe controversial but we don't know yet.
 
@@ -115,17 +116,17 @@ If you connect the peer, you will first only show them a hash of who you think t
 
 Here we have the whole chain, which is probably not visible in the audience. The connecting peer sends you a hash of the encryption session, which is the thing I showed you before where you can have a landline call and verify the session id and then you add the remote expected identity key in a hash. So the remote peer can verify if the connected peer really knows me already, and if so they give you back a signature, and the signature is fingerprintable, but it only happens if the connecting peer has already proven they know you. And same on the other side--- and at the end, you have a state where you know the peer that you connected to, or you have an assurance that the peer you are connecting to is the one with the pre-shared key, and the same on the other side.
 
-# These are optional
+## These are optional
 
 These are optional proposals. They are not consensus-critical. You don't need to use it. Authentication is already happening maybe in whitebind, tor, FIBRE. There's already kind of fixed channels being built on top of the peer network in those contexts.
 
-# Next steps
+## Next steps
 
 Implementation, hopefully. There's some work on this in the network library refactoring. Once that is settled, we can move on to implementing these things. Some guys in the front row have already signaled that maybe that network refactoring work is done? Hopefully.
 
 And there are other things that may be critical for overall security in terms of partitioning attack protection. DNSSEC? First time you start up a bitcoin core node, it will get IPs over a DNS channel and this is also easy to tamper with, so somebody could partition you at the edge of the network, and perhaps this deserves some form of authentication. This is another piece of the puzzle.
 
-# Q&A
+## Q&A
 
 Yeah that was pretty quick. I hope you have some questions.
 

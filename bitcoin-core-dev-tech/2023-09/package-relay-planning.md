@@ -1,11 +1,12 @@
 ---
 title: Package Relay Planning
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'package relay']
+tags:
+  - bitcoin-core
+  - package-relay
 date: 2023-09-20
-speakers: ['Gloria Zhao']
+speakers:
+  - Gloria Zhao
 ---
-
 ## Package Relay Planning
 
 What can we do better, keep doing?

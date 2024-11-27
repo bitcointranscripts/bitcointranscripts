@@ -1,11 +1,12 @@
 ---
 title: Unlinkable Outsourced Channel Monitoring
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'watchtowers']
-speakers: ['Tadge Dryja']
+tags:
+  - lightning
+  - watchtowers
+speakers:
+  - Tadge Dryja
 ---
-
 <http://lightning.network/>
 
 <https://twitter.com/kanzure/status/784752625074012160>

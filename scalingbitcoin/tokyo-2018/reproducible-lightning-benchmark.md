@@ -1,13 +1,12 @@
 ---
 title: Reproducible Lightning Benchmark
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Nicolas Dorier']
+tags:
+  - lightning
+  - developer-tools
+speakers:
+  - Nicolas Dorier
 ---
-
-Reproducible lightning benchmark
-
 <https://github.com/dgarage/LightningBenchmarks>
 
 <https://twitter.com/kanzure/status/1048760545699016705>

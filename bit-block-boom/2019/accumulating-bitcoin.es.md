@@ -2,8 +2,8 @@
 title: Acumular Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['conferencia']
-speakers: ['Pierre Rochard']
+speakers:
+  - Pierre Rochard
 media: https://www.youtube.com/watch?v=eDsK4OpB69Q
 ---
 ## Introducción

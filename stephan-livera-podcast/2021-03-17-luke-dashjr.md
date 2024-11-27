@@ -1,8 +1,8 @@
 ---
 title: How Bitcoin UASF Went Down, Taproot LOT=True, Speedy Trial, Small Blocks
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Luke Dashjr']
+speakers:
+  - Luke Dashjr
 date: 2021-03-17
 media: https://www.youtube.com/watch?v=rspXF6Gp3-g
 ---

@@ -1,8 +1,11 @@
 ---
-title: "FUD (Perceived Vs RealRisks in Bitcoin)"
+title: FUD (Perceived Vs RealRisks in Bitcoin)
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Aaron van Wirdum', 'Eric Voskuil', 'Jimmy Song', 'Rodolfo Novak']
+speakers:
+  - Aaron van Wirdum
+  - Eric Voskuil
+  - Jimmy Song
+  - Rodolfo Novak
 media: https://www.youtube.com/watch?v=LA_nPzX1Mz8
 ---
 <https://twitter.com/kanzure/status/1137285873534492672>

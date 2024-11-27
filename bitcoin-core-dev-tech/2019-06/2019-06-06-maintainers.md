@@ -1,12 +1,13 @@
 ---
 title: Maintainers view of the Bitcoin Core project
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
 date: 2019-06-06
-aliases: ['/bitcoin-core-dev-tech/2019-06-06-maintainers/']
-speakers: ['Michael Ford', 'Wladimir van der Laan']
+aliases:
+  - /bitcoin-core-dev-tech/2019-06-06-maintainers/
+speakers:
+  - Michael Ford
+  - Wladimir van der Laan
 ---
-
 <https://twitter.com/kanzure/status/1136568307992158208>
 
 How do the maintainers think or feel everything is going? Are there any frustrations? Could contributors help eliminate these frustrations? That's all I have.

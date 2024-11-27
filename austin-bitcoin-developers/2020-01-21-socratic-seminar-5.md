@@ -2,10 +2,9 @@
 title: Socratic Seminar 5
 date: 2020-01-21
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['lightning']
+tags:
+  - lightning
 ---
-
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/267941700/>
 
 <https://bitdevs.org/2019-12-03-socratic-seminar-99>
@@ -82,7 +81,7 @@ We missed a month because we had the taproot workshop last month. BitDevsNYC is 
 
 ## OP\_CHECKTEMPLATEVERIFY
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017494.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017494.html>
 
 This is Jeremy Rubin's work. The idea is that it's a covenant proposal for bitcoin. The idea is that the UTXO can only... ((bryan took this one)). This workshop is going to be at the end of the month. Says he is going to sponsor people so if you're into this then consider it. Because it can be self-referential, you can have accidental turing completeness. The initial version had this problem. It might also be used by exchanges on withdrawal transactions to prevent or blacklist your future transactions.
 

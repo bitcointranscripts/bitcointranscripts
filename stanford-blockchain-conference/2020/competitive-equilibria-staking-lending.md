@@ -1,9 +1,11 @@
 ---
-title: "Competitive equilibria between staking and on-chain lending"
+title: Competitive equilibria between staking and on-chain lending
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'proof-of-stake']
-speakers: ['Tarun Chitra']
+tags:
+  - research
+  - proof-of-stake
+speakers:
+  - Tarun Chitra
 date: 2020-02-20
 ---
 <https://twitter.com/kanzure/status/1230581977289379840>

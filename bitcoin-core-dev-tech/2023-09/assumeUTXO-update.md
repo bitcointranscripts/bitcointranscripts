@@ -1,10 +1,10 @@
 ---
 title: AssumeUTXO Update
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'assumeUTXO']
+tags:
+  - bitcoin-core
+  - assumeutxo
 date: 2023-09-20
 ---
-
 - One remaining PR
   - [#27596](https://github.com/bitcoin/bitcoin/pull/27596)
   - Adds loadtxoutset and getchainstate RPC, documentation, scripts, tests

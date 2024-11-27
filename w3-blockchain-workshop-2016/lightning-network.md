@@ -1,9 +1,10 @@
 ---
 title: Lightning Network
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['lightning']
-speakers: ['Tadge Dryja']
+tags:
+  - lightning
+speakers:
+  - Tadge Dryja
 date: 2016-06-30
 ---
 I am going to talk about blockchain scalability using payment channel networks. I am working on Lightning Network. It's currently being built in bitcoin but it can support other things. One of the fundamental problems with blockchain is scalability. How can you have millions of users and rapid transactions?

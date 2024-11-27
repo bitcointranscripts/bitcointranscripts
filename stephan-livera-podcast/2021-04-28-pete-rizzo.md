@@ -1,8 +1,8 @@
 ---
 title: When Satoshi Disappeared
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Pete Rizzo']
+speakers:
+  - Pete Rizzo
 date: 2021-04-28
 media: https://www.youtube.com/watch?v=RRkiSbHyGvQ
 ---

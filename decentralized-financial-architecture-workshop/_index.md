@@ -1,6 +1,7 @@
 ---
 title: Decentralized Financial Architecture Workshop
+website: https://dfa2019.bitcoinedge.org/
+types:
+  - workshop
 ---
-https://dfa2019.bitcoinedge.org/
-
 {{< childpages >}}

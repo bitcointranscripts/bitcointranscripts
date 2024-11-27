@@ -1,11 +1,12 @@
 ---
 title: Firmas Schnorr
-speakers: ['Andreas Antonopoulos']
+speakers:
+  - Andreas Antonopoulos
 date: 2018-10-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['podcast']
-tags: ['schnorr-signatures']
+tags:
+  - schnorr-signatures
 ---
 LTB Episodio 378 - El Petro dentro de Venezuela y las firmas Schnorr
 

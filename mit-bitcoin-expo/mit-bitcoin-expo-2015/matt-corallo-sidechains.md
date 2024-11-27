@@ -1,9 +1,11 @@
 ---
 title: Sidechains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security', 'sidechains']
-speakers: ['Matt Corallo']
+tags:
+  - security
+  - sidechains
+speakers:
+  - Matt Corallo
 ---
 One second. Technical difficulties. Okay, sorry about that. Okay. Hi. I am Matt or BlueMatt for those of you know me. I swear it's not related to my hair. Nobody believes me.
 

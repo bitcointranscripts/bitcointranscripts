@@ -1,9 +1,10 @@
 ---
 title: The Label, Bitcoin Dev & Consulting
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Gleb Naumenko']
-tags: ['lightning']
+speakers:
+  - Gleb Naumenko
+tags:
+  - lightning
 date: 2021-02-26
 media: https://www.youtube.com/watch?v=gqDB0e5irdQ
 ---

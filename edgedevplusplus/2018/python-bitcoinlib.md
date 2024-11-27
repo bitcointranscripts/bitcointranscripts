@@ -1,13 +1,13 @@
 ---
 title: Interfacing with Python via python-bitcoinlib
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Bryan Bishop']
+speakers:
+  - Bryan Bishop
 date: 2018-10-05
 media: https://www.youtube.com/watch?v=JnBOO1zjm4I
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/python-bitcoinlib]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/python-bitcoinlib
 ---
-
 python-bitcoinlib repo: https://github.com/petertodd/python-bitcoinlib
 
 Bitcoin Edge schedule: https://keio-devplusplus-2018.bitcoinedge.org/#schedule

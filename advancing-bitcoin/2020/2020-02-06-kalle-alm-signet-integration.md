@@ -1,10 +1,12 @@
 ---
 title: Signet Integration
-speakers: ['Kalle Alm']
+speakers:
+  - Kalle Alm
 date: 2020-02-06
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['taproot', 'signet']
+tags:
+  - taproot
+  - signet
 media: https://www.advancingbitcoin.com/video/signet-in-practice-integrating-signet-into-your-software,5/
 ---
 Slides: https://www.dropbox.com/s/6fqwhx7ugr3ppsg/Signet%20Integration%20V2.pdf
@@ -13,7 +15,7 @@ BIP 325: https://github.com/bitcoin/bips/blob/master/bip-0325.mediawiki
 
 Signet on Bitcoin Wiki: https://en.bitcoin.it/wiki/Signet
 
-Bitcoin dev mailing list: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016734.html
+Bitcoin dev mailing list: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-March/016734.html
 
 Bitcoin Core PR 16411 (closed): https://github.com/bitcoin/bitcoin/pull/16411
 

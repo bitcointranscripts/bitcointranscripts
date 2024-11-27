@@ -2,14 +2,10 @@
 title: Notas de la reunión
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['privacidad']
 date: 2017-09-05
-aliases: ['/es/bitcoin-core-dev-tech/2017-09-05-meeting-notes/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2017-09-05-meeting-notes/
 ---
-
-coredev.tech septiembre 2017
-
 <https://twitter.com/kanzure/status/907233490919464960>
 
 ((Como siempre, cualquier error es probablemente mío, etc.))

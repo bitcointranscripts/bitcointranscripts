@@ -1,8 +1,10 @@
 ---
 title: Day 1 Group Summaries
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'privacy-enhancements', 'mining']
+tags:
+  - lightning
+  - privacy-enhancements
+  - mining
 ---
 We need two to three minute report backs from each session. Also, note takers. Please email your notes to contact@scalingbitcoin.org so that we can add notes to the wiki. Come join us. Okay, so.
 

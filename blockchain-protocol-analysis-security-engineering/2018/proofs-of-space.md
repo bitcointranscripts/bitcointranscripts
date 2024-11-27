@@ -1,12 +1,13 @@
 ---
-title: Proofs Of Space
+title: Beyond Hellman’s Time-Memory Trade-Offs with Applications to Proofs of Space
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Bram Cohen']
+tags:
+  - research
+speakers:
+  - Bram Cohen
 date: 2018-01-31
 media: https://www.youtube.com/watch?v=iqxkO7C-cyk
 ---
-
 Beyond Hellman's time-memory trade-offs with applications to proofs of space
 
 <https://twitter.com/kanzure/status/962378701278208000>

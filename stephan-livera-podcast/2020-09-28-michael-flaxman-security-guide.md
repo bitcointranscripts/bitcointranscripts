@@ -1,10 +1,11 @@
 ---
-title: "10x your Bitcoin Security with Multisig"
+title: 10x your Bitcoin Security with Multisig
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['security']
+tags:
+  - security
 date: 2020-09-28
-speakers: ['Michael Flaxman']
+speakers:
+  - Michael Flaxman
 media: https://stephanlivera.com/episode/215/
 ---
 Previous SLP episode with Michael Flaxman: https://diyhpl.us/wiki/transcripts/stephan-livera-podcast/2019-08-08-michael-flaxman/

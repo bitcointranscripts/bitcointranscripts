@@ -1,13 +1,16 @@
 ---
-title: "What Is Utreexo?"
+title: What Is Utreexo?
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=sWK7aqPjQLI
-tags: ["utreexo"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum", "Ruben Somsen"]
-categories: ["podcast"]
+tags:
+  - utreexo
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
+  - Ruben Somsen
 date: 2020-10-30
 episode: 15
-summary: "The discussion revolves around Utreexo, a novel proposal aimed at enhancing Bitcoin's scalability by optimizing the UTXO set storage through a compact, Merkle tree-based structure. Utreexo seeks to address the challenges of node synchronization speeds and RAM usage by allowing nodes to store a much smaller representation of the UTXO set, thus potentially accelerating the syncing process and making the network more efficient. The conversation delves into the technical mechanisms of Utreexo, its implementation challenges, and the practical benefits it offers, including reduced memory requirements and the facilitation of faster node operations. While acknowledging Utreexo's promising advantages for Bitcoin's scalability, the participants also weigh its potential downsides, such as increased bandwidth for block transmission and the necessity for significant network adoption to realize its full benefits."
+summary: The discussion revolves around Utreexo, a novel proposal aimed at enhancing Bitcoin's scalability by optimizing the UTXO set storage through a compact, Merkle tree-based structure. Utreexo seeks to address the challenges of node synchronization speeds and RAM usage by allowing nodes to store a much smaller representation of the UTXO set, thus potentially accelerating the syncing process and making the network more efficient. The conversation delves into the technical mechanisms of Utreexo, its implementation challenges, and the practical benefits it offers, including reduced memory requirements and the facilitation of faster node operations. While acknowledging Utreexo's promising advantages for Bitcoin's scalability, the participants also weigh its potential downsides, such as increased bandwidth for block transmission and the necessity for significant network adoption to realize its full benefits.
 ---
 ## Introduction
 

@@ -1,9 +1,10 @@
 ---
-title: "Scalable and Accountable Timestamping"
+title: Scalable and Accountable Timestamping
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Riccardo Casatta']
+tags:
+  - proof-systems
+speakers:
+  - Riccardo Casatta
 ---
 slides <https://scalingbitcoin.org/milan2016/presentations/D1%20-%20A%20-%20Riccardo.pdf>
 

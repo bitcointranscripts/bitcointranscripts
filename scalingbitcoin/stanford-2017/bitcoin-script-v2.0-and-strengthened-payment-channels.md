@@ -1,9 +1,12 @@
 ---
-title: "Bitcoin Script 2.0 And Strengthened Payment Channels"
+title: Bitcoin Script 2.0 And Strengthened Payment Channels
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'scripts-addresses']
-speakers: ['Olaoluwa Osuntokun', 'Johnson Lau']
+tags:
+  - lightning
+  - scripts-addresses
+speakers:
+  - Olaoluwa Osuntokun
+  - Johnson Lau
 date: 2017-11-04
 media: https://www.youtube.com/watch?v=LDF8bOEqXt4&t=8612s
 ---

@@ -1,8 +1,8 @@
 ---
 title: Submarine Swaps, Lightning Loop, Hyperloop
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Alex Bosworth']
+speakers:
+  - Alex Bosworth
 date: 2019-10-24
 media: https://stephanlivera.com/download-episode/1595/119.mp3
 ---

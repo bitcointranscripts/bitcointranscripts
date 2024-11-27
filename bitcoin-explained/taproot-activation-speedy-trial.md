@@ -1,16 +1,25 @@
 ---
 title: Taproot Activation with Speedy Trial
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['taproot', 'soft-fork-activation']
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+tags:
+  - taproot
+  - soft-fork-activation
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-03-12
 episode: 31
 media: https://www.youtube.com/watch?v=oCPrjaw3YVI
-summary: "In this episode of \"The Van Wirdum Sjorsnado, \" hosts Aaron van Wirdum and Sjors Provoost discussed Speedy Trial, the proposed Taproot activation mechanism that has been gaining traction in recent weeks.\n\nThey explained that Speedy Trial would give miners three months to signal support for the Taproot upgrade with their hash power. If a supermajority of miners signals support for the upgrade within these three months, Taproot will activate a couple of months later: six months since the release of the software client that includes the activation logic. If miners don't signal support within three months, the upgrade will expire and a new upgrade path can be considered. (It is, as of yet, not defined what the potential alternative upgrade path would look like).\n\nVan Wirdum explained that Speedy Trial was born out of a compromise between developers and users who preferred different upgrade mechanisms for the Taproot soft fork, while Provoost detailed what some of the more technical implementation considerations of Speedy Trial are, like the benefits of using block heights instead of timestamps, and the extended delay between signaling and enforcement. Finally, the hosts discussed some of the downsides and risks of Speedy Trial."
-aliases: ['/bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial']
+summary: |-
+  In this episode of "The Van Wirdum Sjorsnado, " hosts Aaron van Wirdum and Sjors Provoost discussed Speedy Trial, the proposed Taproot activation mechanism that has been gaining traction in recent weeks.
+
+  They explained that Speedy Trial would give miners three months to signal support for the Taproot upgrade with their hash power. If a supermajority of miners signals support for the upgrade within these three months, Taproot will activate a couple of months later: six months since the release of the software client that includes the activation logic. If miners don't signal support within three months, the upgrade will expire and a new upgrade path can be considered. (It is, as of yet, not defined what the potential alternative upgrade path would look like).
+
+  Van Wirdum explained that Speedy Trial was born out of a compromise between developers and users who preferred different upgrade mechanisms for the Taproot soft fork, while Provoost detailed what some of the more technical implementation considerations of Speedy Trial are, like the benefits of using block heights instead of timestamps, and the extended delay between signaling and enforcement. Finally, the hosts discussed some of the downsides and risks of Speedy Trial.
+aliases:
+  - /bitcoin-magazine/2021-03-12-taproot-activation-speedy-trial
 ---
-Speedy Trial proposal: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
+Speedy Trial proposal: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 ## Intro
 
 Aaron van Wirdum (AvW): Live from Utrecht this is the van Wirdum Sjorsnado. Sjors, what is your pun of the week?
@@ -31,9 +40,9 @@ SP: That’s right.
 
 ## Speedy Trial proposal
 
-Speedy Trial proposal: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
+Speedy Trial proposal: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html
 
-Proposed timeline: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html
+Proposed timeline: https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html
 
 AvW: Should we begin with Speedy Trial, what is Speedy Trial Sjors?
 
@@ -41,7 +50,7 @@ SP: I think that is a good idea to do. With the proposals that we talked about l
 
 AvW: That was LOT=true or LOT=false. The debate was on whether or not it should end with forced signaling or not. That’s the LOT=true, LOT=false thing.
 
-SP: The thing to keep in mind is that the first signaling, it would be a while before that starts happening. Until that time we really don’t know essentially. What Speedy Trial proposes is to say “Rather than discussing whether or not there is going to be signaling and having lots of arguments about it, let’s just try that really quickly.” Instead there would be a release maybe around April, of course there’s nobody in charge of actual timelines. In that case the signaling would [start](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html) much earlier, I’m not entirely sure when, maybe in May or pretty early. The signaling would only be for 3 months. At the end of 3 months it would give up.
+SP: The thing to keep in mind is that the first signaling, it would be a while before that starts happening. Until that time we really don’t know essentially. What Speedy Trial proposes is to say “Rather than discussing whether or not there is going to be signaling and having lots of arguments about it, let’s just try that really quickly.” Instead there would be a release maybe around April, of course there’s nobody in charge of actual timelines. In that case the signaling would [start](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018594.html) much earlier, I’m not entirely sure when, maybe in May or pretty early. The signaling would only be for 3 months. At the end of 3 months it would give up.
 
 AvW: It would end on LOT=false basically.
 

@@ -1,8 +1,8 @@
 ---
-title: "Lightning work group session"
+title: Lightning work group session
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
+tags:
+  - lightning
 date: 2016-10-08
 ---
 <https://twitter.com/kanzure/status/784783992478466049>

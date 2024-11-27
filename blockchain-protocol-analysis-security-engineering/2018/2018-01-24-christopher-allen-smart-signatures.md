@@ -1,10 +1,12 @@
 ---
-title: "Smart Signatures: Experiments in Authorization"
+title: 'Smart Signatures: Experiments in Authorization'
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['cryptography', 'simplicity']
+tags:
+  - cryptography
+  - simplicity
 date: 2018-01-24
-speakers: ['Christopher Allen']
+speakers:
+  - Christopher Allen
 media: https://www.youtube.com/watch?v=E9sbWKbfyJU
 ---
 Slides: https://www.slideshare.net/ChristopherA/smart-signaturesexperiments-in-authentication-stanford-bpase-2018-final

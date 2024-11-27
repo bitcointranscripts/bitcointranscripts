@@ -1,10 +1,11 @@
 ---
 title: Bitcoin Payment Processing And Merchants
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Sergej Kotliar', 'Alena Vranova', 'Vortex']
+speakers:
+  - Sergej Kotliar
+  - Alena Vranova
+  - Vortex
 ---
-
 1 on 1: Bitcoin payment processing and merchants
 
 <https://twitter.com/kanzure/status/1043476967918592003>

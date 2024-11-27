@@ -2,11 +2,14 @@
 title: Dual Funded Channels
 transcript_by: ubbabeck via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=i_GxmNZjwhk
-tags: ["dual-funding", "c-lightning"]
-speakers: ["Lisa Neigut"]
-categories: ["Workshop"]
+tags:
+  - dual-funding
+  - c-lightning
+speakers:
+  - Lisa Neigut
 date: 2021-03-25
-aliases: ['/c-lightning/dual-funded-channels/']
+aliases:
+  - /c-lightning/dual-funded-channels/
 ---
 ## Dual Funding channels explainer + demo
 

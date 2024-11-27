@@ -1,10 +1,11 @@
 ---
-title: "Schnorr Signatures"
+title: Schnorr Signatures
 transcript_by: Shourya742 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=Ubp29_DJ5rM
-tags: ["schnorr-signatures"]
-speakers: ["Jimmy Song"]
-categories: ["conference"]
+tags:
+  - schnorr-signatures
+speakers:
+  - Jimmy Song
 date: 2021-11-07
 ---
 ## Introduction

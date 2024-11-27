@@ -1,17 +1,15 @@
 ---
 title: Laolu Osuntokun - Stephan Livera
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['lightning']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - lightning
+speakers:
+  - Olaoluwa Osuntokun
 date: 2018-12-11
+media: https://stephanlivera.com/episode/39
+source_file: https://stephanlivera.com/download-episode/901/39.mp3
 ---
-
-Stephan Livera podcast with Laolu Osuntokun - December 11th 2018
-
 <https://twitter.com/kanzure/status/1090640881873387525>
-
-Podcast: https://stephanlivera.com/episode/39
 
 Stephan: Hi Laolu. Thank you very much for coming on the show.
 

@@ -1,9 +1,10 @@
 ---
-title: "Security Analysis of the Lightning Network"
+title: Security Analysis of the Lightning Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - lightning
+speakers:
+  - Olaoluwa Osuntokun
 date: 2017-02-03
 media: https://www.youtube.com/watch?v=Eq_eY8iWrKI
 ---

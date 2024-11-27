@@ -1,9 +1,10 @@
 ---
 title: Braidpool
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mining']
-speakers: ['Bob McElrath']
+tags:
+  - mining
+speakers:
+  - Bob McElrath
 date: 2022-10-15
 ---
 ## Introduction

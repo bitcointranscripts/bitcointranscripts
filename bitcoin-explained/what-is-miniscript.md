@@ -1,13 +1,16 @@
 ---
-title: "What is Miniscript"
+title: What is Miniscript
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=z84_5yhy8fs
-tags: ["bitcoin-core", "miniscript"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - miniscript
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2020-07-31
 episode: 4
-summary: "The podcast episode \"What is Miniscript\" delves into Miniscript, a simplified version of Bitcoin Script developed by Pieter Wuille, Andrew Poelstra, and Sanket Kanjalkar from Blockstream. Miniscript is described as a template of Bitcoin Script, aimed at making it easier to write, analyze, and reason about Bitcoin smart contracts. The discussion covers the basics of Bitcoin Script, its problems such as complexity and potential for errors, and how Miniscript addresses these issues by providing a standardized way to use a subset of Bitcoin Script's functionality. The episode also introduces the concept of a policy language, a higher-level programming language that can be compiled into Miniscript, facilitating even easier script creation for developers. Additionally, the limitations of Miniscript and its place within the Bitcoin ecosystem are discussed, highlighting its role as a tool for developers rather than a consensus change."
+summary: The podcast episode "What is Miniscript" delves into Miniscript, a simplified version of Bitcoin Script developed by Pieter Wuille, Andrew Poelstra, and Sanket Kanjalkar from Blockstream. Miniscript is described as a template of Bitcoin Script, aimed at making it easier to write, analyze, and reason about Bitcoin smart contracts. The discussion covers the basics of Bitcoin Script, its problems such as complexity and potential for errors, and how Miniscript addresses these issues by providing a standardized way to use a subset of Bitcoin Script's functionality. The episode also introduces the concept of a policy language, a higher-level programming language that can be compiled into Miniscript, facilitating even easier script creation for developers. Additionally, the limitations of Miniscript and its place within the Bitcoin ecosystem are discussed, highlighting its role as a tool for developers rather than a consensus change.
 ---
 Aaron van Wirdum:
 

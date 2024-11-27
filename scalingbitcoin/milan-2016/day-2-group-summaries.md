@@ -1,7 +1,6 @@
 ---
 title: Day 2 Group Summaries
 transcript_by: Bryan Bishop
-categories: ['conference']
 ---
 <https://twitter.com/kanzure/status/785151245883412480>
 

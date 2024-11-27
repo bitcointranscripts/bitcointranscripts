@@ -1,8 +1,8 @@
 ---
 title: Output Script Descriptors for Bitcoin
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Andrew Chow']
+speakers:
+  - Andrew Chow
 date: 2021-07-17
 media: https://www.youtube.com/watch?v=kGM3DNtd_iw
 ---

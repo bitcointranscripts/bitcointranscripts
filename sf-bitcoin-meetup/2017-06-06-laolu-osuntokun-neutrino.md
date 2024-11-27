@@ -1,9 +1,11 @@
 ---
-title: "Neutrino: The Privacy Preserving Bitcoin Light Client"
+title: 'Neutrino: The Privacy Preserving Bitcoin Light Client'
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['lightning', 'compact-block-filters']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - lightning
+  - compact-block-filters
+speakers:
+  - Olaoluwa Osuntokun
 date: 2017-06-06
 media: https://www.youtube.com/watch?v=7FWKc8lM4Ek
 ---

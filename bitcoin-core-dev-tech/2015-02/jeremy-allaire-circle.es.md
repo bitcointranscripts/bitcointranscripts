@@ -2,10 +2,10 @@
 title: Charla de los fundadores de Circle
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-speakers: ['Jeremy Allaire', 'Sean Neville']
+speakers:
+  - Jeremy Allaire
+  - Sean Neville
 ---
-
 Estamos encantados de estar aquí y de patrocinar este evento. Nuestra experiencia en herramientas para desarrolladores se remonta a los primeros días de algo.
 
 ¿Cómo maduramos el desarrollo del propio Bitcoin Core? Una de las cosas útiles es identificar los componentes clave. En un estándar tienes una especificación, podría ser un libro blanco, y luego tienes una implementación de referencia, y luego un conjunto de pruebas que hace cumplir la interoperabilidad. El conjunto de pruebas es lo que hace cumplir la norma. No es el texto del libro blanco el que dice cuál es el estándar... Si hay alguien que puede satisfacer cuántos cientos de miles de pruebas, si puede escribir software que pueda satisfacer estas pruebas ha escrito una implementación interoperable. El código C++ existente, está el libro blanco de Satoshi, pero realmente el código fuente en sí mismo es la especificación. La RI es importante. Están explícitamente vinculadas. No estoy hablando de pruebas de certificación o de marca o de licencias... si alguien estuviera lo suficientemente loco como para reimplementar este libro mayor y el conjunto de protocolos, que sea realmente interoperable con lo que se ha construido en Bitcoin Core, no hay un conjunto de pruebas para eso hoy en día... ¿Cómo maduramos el proceso? Si yo fuera un desarrollador, ¿cuál sería el primer pull request que podría enviar? Empezaría por el área de pruebas. Y entonces lo haría con el pensamiento de que en última instancia lo que tiene que suceder es que debe haber algún tipo de conjunto de pruebas que garantice que cuando se introducen nuevas variaciones que hay acuerdo en que lo que el interop parece. Y entonces eso permite que otras personas se conecten al proceso, no hay un gran comité que se reúna, no hay empresas de software gigantes que tengan voz, es más una meritocracia que creo que está bien hasta hoy, pero a veces cuando los proyectos maduran se hace difícil para las personas que no necesariamente encajan dentro de esa cultura de comunicación en esta lista de correo electrónico dev particular o en el IRC, las personas que no tienen nada que añadir realmente no encajan en el desarrollo de software. Así que se trata más bien de cómo atraer a la gente a este sistema, cómo hacer que las empresas de software entren en él. ¿Cuál es el formato adecuado sin complicarnos demasiado? ¿Cómo permitimos que la gente se conecte a este sistema? ¿Cómo facilitamos que la gente escriba código e innove en lo que estamos construyendo colectivamente?

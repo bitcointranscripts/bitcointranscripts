@@ -1,13 +1,14 @@
 ---
 title: Taproot on hardware wallets
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['taproot', 'hardware-wallet']
-speakers: ['Stepan Snigirev']
+tags:
+  - taproot
+  - hardware-wallet
+speakers:
+  - Stepan Snigirev
 date: 2022-03-03
 media: https://www.youtube.com/watch?v=8uM-v1pSFgs
 ---
-
 ## 开场（Jeff Gallas）
 
 我非常高兴地宣布我们今天的第一位演讲者，来自 Specter 的 Stepan Snigirev，他是 Specter Solutions 的 CTO，有 3 年的开发比特币软件钱包（soft wallets）和硬件签名器（hard wallets）的经历。欢迎 Stepan。

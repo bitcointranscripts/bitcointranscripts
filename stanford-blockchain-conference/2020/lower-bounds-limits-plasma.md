@@ -1,9 +1,11 @@
 ---
-title: "Lower Bounds for Off-Chain Protocols: Exploring the Limits of Plasma"
+title: 'Lower Bounds for Off-Chain Protocols: Exploring the Limits of Plasma'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'sidechains']
-speakers: ['Stefan Dziembowski']
+tags:
+  - research
+  - sidechains
+speakers:
+  - Stefan Dziembowski
 ---
 <https://twitter.com/kanzure/status/1230183338746335233>
 

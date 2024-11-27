@@ -1,10 +1,9 @@
 ---
 title: Privacy Anonymity And Identity Group
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['security']
+tags:
+  - security
 ---
-
 Anonymous identity
 
 Another part of it is that all of those IoT things have firmware that can update. The moment that someone gets a key to update this, you can hack the grid by making rapid changes on power usage which actually destroys the .... do the standards make things less secure? It should be illegal to design broken cryptosystems. Engineers should go to jail. It's too dangerous. Do you think there should be smart grids at all?

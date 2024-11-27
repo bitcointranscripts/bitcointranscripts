@@ -1,9 +1,11 @@
 ---
-title: "Mimblewimble: Private, Massively-Prunable Blockchains"
+title: 'Mimblewimble: Private, Massively-Prunable Blockchains'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Andrew Poelstra']
-tags: ['adaptor-signatures', 'sidechains']
+speakers:
+  - Andrew Poelstra
+tags:
+  - adaptor-signatures
+  - sidechains
 date: 2016-10-08
 media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=5368s
 ---
@@ -72,7 +74,7 @@ original mimblewimble paper <http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimbl
 
 mimblewimble podcast <http://diyhpl.us/wiki/transcripts/mimblewimble-podcast/>
 
-other mimblewimble follow-up <https://www.reddit.com/r/Bitcoin/comments/4vub3y/mimblewimble_noninteractive_coinjoin_and_better/> and <https://www.reddit.com/r/Bitcoin/comments/4woyc0/mimblewimble_interview_with_andrew_poelstra_and/> and <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/012927.html>
+other mimblewimble follow-up <https://www.reddit.com/r/Bitcoin/comments/4vub3y/mimblewimble_noninteractive_coinjoin_and_better/> and <https://www.reddit.com/r/Bitcoin/comments/4woyc0/mimblewimble_interview_with_andrew_poelstra_and/> and <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-August/012927.html>
 
 and <https://www.reddit.com/r/Bitcoin/comments/4xge51/mimblewimble_how_a_strippeddown_version_of/>
 

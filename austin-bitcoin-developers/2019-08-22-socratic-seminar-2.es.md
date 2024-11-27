@@ -3,11 +3,10 @@ title: Seminario Socrático 2
 date: 2019-08-22
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['reunión']
-tags: ['research', 'hardware wallet']
+tags:
+  - research
+  - hardware-wallet
 ---
-
-
 <https://twitter.com/kanzure/status/1164710800910692353>
 
 # Introducción
@@ -24,7 +23,7 @@ No tengo nada preparado, pero podemos abrir algunos de estos enlaces y presentar
 
 <https://bitcoinops.org/en/newsletters/2019/07/31/>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017169.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017169.html>
 
 Bonos de fidelidad para proporcionar resistencia sibilina a joinmarket. ¿Alguien ha utilizado joinmarket antes? ¿No? ¿Nadie? Buen intento... Bien. Así que, joinmarket es un monedero que está diseñado específicamente para hacer coinjoins. Un coinjoin es una manera de hacer un poco de mezcla o volteo de monedas para aumentar la privacidad o fungibilidad de sus monedas. Hay algunas opciones diferentes para ello. Esencialmente utiliza chatbots de IRC para solicitar creadores y tomadores. Así que si realmente quieres mezclar tus monedas, eres un tomador, y un creador en el otro lado pone fondos para mezclar con tus fondos. Así que hay este modelo de creador/tomador que es interesante. No lo he usado, pero parece ser facilitado por el chat IRC. El creador, la persona que pone el dinero, no necesariamente necesita privacidad, gana un pequeño porcentaje de su bitcoin. Todo se hace con contratos inteligentes, y sus monedas no corren peligro en ningún momento, salvo en la medida en que se almacenan en un monedero caliente para interactuar con el protocolo. La resistencia sibilina que están hablando aquí es que, por lo que, Chris Belcher tiene una gran entrada de privacidad en el wiki bitcoin así que echa un vistazo a eso en algún momento. Él es uno de los desarrolladores de joinmarket. Se da cuenta de que cuesta muy poco inundar la red con un montón de creadores si eres un actor malicioso, y esto rompe la privacidad porque las posibilidades de que te encuentres con una empresa maliciosa o fraudulenta del tipo chainalysis, no es que puedan tomar tus monedas, pero estarían invadiendo tu privacidad. El coste de que lo hagan es bastante bajo, por lo que las posibilidades de que lo hagan son bastante altas.
 
@@ -44,7 +43,7 @@ Todo lo que puedes hacer con la firma es demostrar que en algún momento tuviste
 
 # Boletín 57: debate sobre el filtro Bloom
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-July/017145.html>
 
 <https://github.com/bitcoin/bitcoin/issues/16152>
 
@@ -186,7 +185,7 @@ R: Estuve hablando con instagibbs que ha estado trabajando en HWI. Él dice que 
 
 Genial, gracias por describirlo.
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html>
 
 <https://www.coindesk.com/the-vault-is-back-bitcoin-coder-to-revive-plan-to-shield-wallets-from-theft>
 

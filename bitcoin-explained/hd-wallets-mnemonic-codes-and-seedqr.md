@@ -1,13 +1,17 @@
 ---
-title: "HD Wallets, Mnemonic codes and SeedQR"
+title: HD Wallets, Mnemonic codes and SeedQR
 transcript_by: QureshiFaisal via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=s8dCyjpfS5E
-tags: ["hardware-wallet", "bip32"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - hardware-wallet
+  - bip32
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2022-09-17
 episode: 64
-aliases: ['/bitcoin-magazine/bitcoin-explained/hd-wallets-mnemonic-codes-and-seedqr']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/hd-wallets-mnemonic-codes-and-seedqr
 ---
 Aaron van Wirdum: 00:00:19
 

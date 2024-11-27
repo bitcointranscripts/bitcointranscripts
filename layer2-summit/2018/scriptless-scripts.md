@@ -1,19 +1,20 @@
 ---
 title: Scriptless Scripts
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Andrew Poelstra']
+tags:
+  - adaptor-signatures
+speakers:
+  - Andrew Poelstra
 date: 2018-05-25
 media: https://www.youtube.com/watch?v=jzoS0tPUAiQ&t=3h36m
 ---
-
 <https://twitter.com/kanzure/status/1017881177355640833>
 
-# Introduction
+## Introduction
 
 I am here to talk about scriptless scripts today. Scriptless scripts are related to <a href="http://diyhpl.us/wiki/transcripts/sf-bitcoin-meetup/2016-11-21-mimblewimble/">mimblewimble</a>, which is the other thing I was going to talk about. For time constraints, I will only talk about scriptles scripts. I'll give a brief historical background, and then I will say what scriptless scripts are, what we can do with them, and give some examples.
 
-# History
+## History
 
 In 2016, there was a <a href="http://diyhpl.us/~bryan/papers2/bitcoin/mimblewimble.txt">mysterious paper</a> dead-dropped on an IRC channel that I frequent called #bitcoin-wizards. The paper was written by somebody called <a href="http://fr.harrypotter.wikia.com/wiki/Tom_Jedusor">Tom Elvis Jedusor</a> which is the name of Voldemort in the French Harry Potter books. This was a text document written in broken English describing a blockchain design called mimblewimble in which all the scripts are removed in favor of transactions which only have inputs and output amounts. The way that things are authenticated is that amounts rathe rthan being exposed were hidden behind homomorphic commitments.
 
@@ -25,11 +26,11 @@ The question presented in the paper was what kinds of scripts could be given in 
 
 Over the most of 2017 to now, we have been working on scriptless scripts as an answer to that question.
 
-# Scriptless scripts
+## Scriptless scripts
 
 <a href="http://diyhpl.us/wiki/transcripts/realworldcrypto/2018/mimblewimble-and-scriptless-scripts/">Scriptless scripts</a> are a way to encode smart contracts into digital signatures. This has applications way beyond mimblewimble. The entire purpose is to do things without any scripts. Scriptless scripts are completely agnostic to which blockchain they are on, but they do require some sort of digital signature support. This was kind of hinted at during the panel earlier today. What we're doing here is removing these hash preimages, removing these various different script tricks that people use to get atomicity between chains and transactions, and moving those into signatures so that you get something smaller, more efficient, more scalable, more private, and also it's inherently interoperable.
 
-# Not just mimblewimble
+## Not just mimblewimble
 
 Let me review just what Script is. We know what Script is. Let me review why Script sucks.
 
@@ -43,7 +44,7 @@ They all look like public keys, and they might look like locktimes in some cases
 
 So it gets us pretty close to perfect fungibility in temrs of how outputs are labeled.
 
-# Adaptor signatures
+## Adaptor signatures
 
 The basic building block is an adaptor signature. Tadge has gone into this with his <a href="http://diyhpl.us/wiki/transcripts/discreet-log-contracts/">discreet log contracts</a>. One way to think about the relationship between these two is that discreet log contracts are a way to do alchemy with public keys, and scriptless scripts is a way to do alchemy with signatures.
 
@@ -61,7 +62,7 @@ If you use this partial signature and you have that algebraic property-- well, y
 
 Given an adaptor signature, if someone later reveals some secret to you, you will learn the real secret if you subtract them. If someone later reveals the other data, you can learn the secret. So we can use this in two directions.
 
-# Atomic cross-chain swaps
+## Atomic cross-chain swaps
 
 <https://www.youtube.com/watch?v=jzoS0tPUAiQ&t=3h44m53s>
 
@@ -83,7 +84,7 @@ There's a more straightforward way to do this, but I wanted to do this with adap
 
 There's a public key on both sides, both belonging to me and Tadge, and then there's some signatures that are produced by us. It looks like one public key and one signature and no relationship from them. Someone could download those two signatures and imagine some value and show they are related... anyone could do that for any pair of signatures. Everything done here in public is independently uniformly randomly. Before I produced any signatures, I gave Tadge some partial adaptor signatures. The crux is just the ordering of the data that we exchanged. After the fact, neither of us can prove that we did any such protocol.
 
-# Blind atomic swaps (Jonas Nick)
+## Blind atomic swaps (Jonas Nick)
 
 <https://www.youtube.com/watch?v=jzoS0tPUAiQ&t=3h49m35s>
 
@@ -99,7 +100,7 @@ The result is that-- suppose I'm a tumbler, and I'm executing these blind swaps.
 
 So that's blind swaps.
 
-# Zero knowledge contingent payments (Maxwell 2011)
+## Zero knowledge contingent payments (Maxwell 2011)
 
 <https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/>
 
@@ -113,7 +114,7 @@ They use hash preimage reveals to do this. Sean thought of some random number, h
 
 They could have used adaptor signatures. The way this would have worked is that Sean rathe rthan giving a hash that gmaxwell would have had to put on a blockchain, Sean would have given him a commitment to some value. And then Sean would have provided a -- would have done a multisig protocol and provided an adaptor signature to the secret half of that value. If Sean completed the multisig protocol and took the coins, then he would complete it, and he would provide a zero-knowledge proof that the signature is offset by some secret value which is some pile of data which is the solution to some NP problem. Maybe it's some other signature, like some other blockchain validation maybe. In principle, you could do all sorts of things with zero-knowledge proofs, even though zk proofs are difficult to verify. In principle, you can do pretty much anything this way. You could make anything atomic with anything else as long as the anything else is somehow verifiable in NP.
 
-# Features of adaptor signatures
+## Features of adaptor signatures
 
 As I hinted, you can do zero-knowledge proofs with these, rather than directrly selling a solution to an arbitrary statement. You could prove the commitment is some part of some other protocol. There are all kinds of cool interactive protocols involving discrete logarithms and you can attach monetary value to it with adaptor signature sor zero-knowledge proofs. This is cool. There are many protocols out there that are "semi-honest" where as long as people follow the protocol then things are okay. If people abort or lie about which values they commit to, then maybe it doesn't work, and then you need to add zero-knowledge proofs and checksums and stuff. But using this, you can attach a monetary value to doing the protocol properly, which is cool and might be a general construction.
 
@@ -125,9 +126,9 @@ Unlike hash preimages where the preimage is published on the blockchain and reve
 
 Because I am encoding all of these semantics into signatures themselves at the time that signatures are produced, I don't have ot put anything into the blockchain except possibly some locktimes. If I have any multisig output laying around with someone, maybe Ethan and I have a 2-of-2 output because maybe one or both of us was trying to want a multisig wallet with each other... we could reuse that and say whoops we left these coins there several years ago, let's make a payment channel with this, we could do the adaptor signature trick to do this.
 
-# New developments
+## New developments
 
-<a href="https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001031.html">Lightning with scriptless scripts</a>-- getting that into lightning protocol is quite difficult. ajtowns has decided that he is doing it. He posted a message to lightning-dev, and he's doing it. That's awesome.
+<a href="https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/001031.html">Lightning with scriptless scripts</a>-- getting that into lightning protocol is quite difficult. ajtowns has decided that he is doing it. He posted a message to lightning-dev, and he's doing it. That's awesome.
 
 Doing <a href="http://diyhpl.us/~bryan/papers2/bitcoin/Scriptless%20scripts%20with%20ECDSA%20-%202018-04-26.pdf">scriptless scripts with ECDSA</a> would be interesting today. Monero maybe-- doesn't have refund support. None of this works unless you have ECDSA. It turns out there was a paper dropped on lightning-dev about this. There's some groups working on implementing this multi-party ECDSA protocol which is exciting. This could be happening today. People could be doing it today, there's no evidence on the blockchain. You have no idea how many people were involved or what kind of smart contract they were involved. And if you are working for a Chainalysis company then you are lying to yourself and others.
 

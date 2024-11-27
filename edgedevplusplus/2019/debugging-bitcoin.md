@@ -1,18 +1,18 @@
 ---
 title: Debugging Bitcoin
-transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Fabian Jahr']
+transcript_by: Bryan Bishop, Michael Folkson
+tags:
+  - developer-tools
+speakers:
+  - Fabian Jahr
 media: https://www.youtube.com/watch?v=8bea0bdoFG0
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin
 ---
-
 Slides: https://telaviv2019.bitcoinedge.org/files/debugging-tools-for-bitcoin-core.pdf
 
 Debugging Bitcoin Core: https://github.com/fjahr/debugging_bitcoin
-
-Transcript completed by: Bryan Bishop Edited by: Michael Folkson
 
 https://twitter.com/kanzure/status/1171024515490562048
 

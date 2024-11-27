@@ -1,13 +1,16 @@
 ---
-title: "Bitcoin Core 24.0 Bug"
+title: Bitcoin Core 24.0 Bug
 transcript_by: jeffreyweier via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=66W6_AVSxME
-tags: ["bitcoin-core"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2022-12-29
 episode: 70
-aliases: ['/bitcoin-magazine/bitcoin-explained/bitcoin-core-v24-bug']
+aliases:
+  - /bitcoin-magazine/bitcoin-explained/bitcoin-core-v24-bug
 ---
 ## Introduction
 

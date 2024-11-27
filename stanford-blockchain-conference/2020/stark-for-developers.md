@@ -1,9 +1,10 @@
 ---
-title: "STARK For Developers"
+title: STARK For Developers
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['proof-systems']
-speakers: ['Eli Ben-Sasson']
+tags:
+  - proof-systems
+speakers:
+  - Eli Ben-Sasson
 ---
 <https://twitter.com/kanzure/status/1230279740570783744>
 ## Introduction

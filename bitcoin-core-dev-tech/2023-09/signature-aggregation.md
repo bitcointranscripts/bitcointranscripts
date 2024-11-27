@@ -1,10 +1,10 @@
 ---
 title: Signature Aggregation Update
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'signature aggregation']
+tags:
+  - bitcoin-core
+  - signature-aggregation
 date: 2023-09-21
 ---
-
 ## The status of the Half-Agg BIP?
 
 TODOs but also no use cases upcoming so adding it to the BIP repo doesn't seem useful

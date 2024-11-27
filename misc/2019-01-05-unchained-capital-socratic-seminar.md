@@ -1,11 +1,11 @@
 ---
 title: Unchained Capital Socratic Seminar
 transcript_by: Bryan Bishop
-categories: ['meetup']
-tags: ['research', 'taproot']
+tags:
+  - research
+  - taproot
 date: 2019-01-05
 ---
-
 Unchained Capital Bitcoin Socratic Seminar
 
 Socratic Seminar 87 at BitDevs NYC has all of the links on meetup.com available.
@@ -259,11 +259,11 @@ Optech Newsletters:
 * <https://bitcoinops.org/en/newsletters/2018/12/04/>
 * <https://bitcoinops.org/en/newsletters/2018/12/11/>
 
-[bitcoin-dev] Schnorr and taproot (etc) upgrade <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html>
+[bitcoin-dev] Schnorr and taproot (etc) upgrade <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-December/016556.html>
 
-[bitcoin-dev] CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning) <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html>
+[bitcoin-dev] CPFP Carve-Out for Fee-Prediction Issues in Contracting Applications (eg Lightning) <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016518.html>
 
-[bitcoin-dev] Safer sighashes and more granular SIGHASH\_NOINPUT <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016488.html>
+[bitcoin-dev] Safer sighashes and more granular SIGHASH\_NOINPUT <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-November/016488.html>
 
 Minisketch: an optimized library for BCH-based set reconciliation <https://github.com/sipa/minisketch>
 

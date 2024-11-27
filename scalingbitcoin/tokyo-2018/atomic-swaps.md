@@ -1,9 +1,12 @@
 ---
-title: "The State of Atomic Swaps"
+title: The State of Atomic Swaps
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'htlc', 'adaptor-signatures']
-speakers: ['Thomas Eizinger']
+tags:
+  - research
+  - htlc
+  - adaptor-signatures
+speakers:
+  - Thomas Eizinger
 date: 2018-10-07
 media: https://www.youtube.com/watch?v=FI9cwksTrQs&t=1025s
 ---
@@ -84,4 +87,4 @@ How can we construct HTLCs or conditional payments in general without knowing th
 * <https://diyhpl.us/wiki/transcripts/realworldcrypto/2018/mimblewimble-and-scriptless-scripts/>
 * zero-knowledge contingent payments: <https://bitcoincore.org/en/2016/02/26/zero-knowledge-contingent-payments-announcement/>
 * Equivalent secret values across curves: <https://0bin.net/paste/Q5perGCU3+QMVnhz#fNpHXjX0me3Wa-UBItl4hTeK7wjBkl8JlFAmsbTlZVA>
-* <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017245.html>
+* <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017245.html>

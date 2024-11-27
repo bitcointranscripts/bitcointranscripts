@@ -1,9 +1,11 @@
 ---
-title: "Weak-Signal Radio Communications For Bitcoin Network Resilience"
+title: Weak-Signal Radio Communications For Bitcoin Network Resilience
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Nick Szabo', 'Elaine Ou']
+tags:
+  - research
+speakers:
+  - Nick Szabo
+  - Elaine Ou
 date: 2017-11-05
 media: https://www.youtube.com/watch?v=QkYXPJMqBNk&t=4965s
 ---

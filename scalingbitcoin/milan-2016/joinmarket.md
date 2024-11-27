@@ -1,13 +1,13 @@
 ---
 title: Joinmarket
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['coinjoin']
-speakers: ['Adlai Chandrasekhar']
+tags:
+  - coinjoin
+speakers:
+  - Adlai Chandrasekhar
 date: 2016-10-08
 media: https://www.youtube.com/watch?v=8BLWUUPfh2Q&t=2196s
 ---
-
 <https://twitter.com/kanzure/status/784681036504522752>
 
 slides: <https://scalingbitcoin.org/milan2016/presentations/D1%20-%202%20-%20Adlai%20Chandrasekhar.pdf>

@@ -1,10 +1,9 @@
 ---
 title: Coin Selection
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Mark Erhardt']
+speakers:
+  - Mark Erhardt
 ---
-
 Simulation-based evaluation of coin selection strategies
 
 <https://twitter.com/kanzure/status/785061222316113920>
@@ -127,7 +126,7 @@ A: Pieter suggested that a few weeks ago. I ran the numbers with P2WPKH for witn
 
 # References
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013131.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-September/013131.html>
 
 paper <http://murch.one/wp-content/uploads/2016/09/CoinSelection.pdf>
 

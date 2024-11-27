@@ -1,12 +1,12 @@
 ---
-title: "Libbitcoin: A practical introduction"
+title: 'Libbitcoin: A practical introduction'
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['James Chiang']
+speakers:
+  - James Chiang
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/libbitcoin]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/libbitcoin
 ---
-
 or: libbitcoin's bx tool: Constructing a raw transaction
 
 <https://twitter.com/kanzure/status/1171352496247365633>

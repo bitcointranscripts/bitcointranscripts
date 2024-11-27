@@ -1,13 +1,13 @@
 ---
-title: "Building your own bank or... Constructing Crypto Castles"
+title: Building your own bank or... Constructing Crypto Castles
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['security']
-speakers: ['Jameson Lopp']
+tags:
+  - security
+speakers:
+  - Jameson Lopp
 date: 2018-07-04
 media: https://www.youtube.com/watch?v=gXDR4tjaGQc
 ---
-
 <https://twitter.com/kanzure/status/1014483571946508288>
 
 I am going to do a brain dump of basically anything that people who are building systems protecting private keys are thinking about. Hopefully you can ingest this for when you decide to build one of these systems.

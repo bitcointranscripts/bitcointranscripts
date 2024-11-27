@@ -1,14 +1,9 @@
 ---
-title: Stroem Payment Channels
+title: Stroem - A Protocol for Microtransactions
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Jarl Fransson']
+speakers:
+  - Jarl Fransson
 ---
-
-Stroem
-
-Jarl Fransson (Strawpay)
-
 7 transactions per second, or is it 3? That's about what we can do with bitcoin. What if you need 100,000 transactions per second? I come from Strawpay, we've been looking into bitcoin for a long time. When we learned about scripting and the power of contracts, like payment channels, we thought maybe it's time to do micropayments and microtransactions. To give you some perspective on scale, let's say that 1 billion people make 25 transactions per day. That's maybe 1/5th of your average page views that people did today on the internet. So a user would only spend maybe $1-3 USD/day. On average this is about 300,000 transactions/second.
 
 We had three design requirements when we started on this. The first one was to focus on the user. Maybe the bitcoin community hasn't always done this. Users need a really simple way to buy, and they don't want to wait, they don't want to login, they don't want to register, and it must work on mobile devices. The second requirement was efficiency. The scale of the system needs a high-level of efficiency. You need a really low transaction cost. The third requirement is that it has to work in a larger economy. Inside of a community we maybe forget this sometime. Merchants want to get paid in local currencies. Consumers are fine with using bitcoin, but they don't want to hold BTC. So they need a way to trade in and out of bitcoin, and maybe they don't even have to know they are using bitcoin.

@@ -1,13 +1,16 @@
 ---
-title: "Scaling to Billions of Users"
+title: Scaling to Billions of Users
 transcript_by: tijuan1 via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=5yPVp6vNHiY
-tags: ["scalability", "sidechains"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - scalability
+  - sidechains
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2023-07-10
 episode: 82
-summary: "In this episode, Aaron and Sjors discuss a recent blog post by Bitcoin Core developer Anthony Towns, \u201CPutting the B in BTC\u201D, in which he outlines a vision for scaling Bitcoin to facilitate billions of users. As Aaron and Sjors walk through the article, they explain what some of Towns\u2019 proposed solutions are, and which tradeoffs they entail."
+summary: In this episode, Aaron and Sjors discuss a recent blog post by Bitcoin Core developer Anthony Towns, “Putting the B in BTC”, in which he outlines a vision for scaling Bitcoin to facilitate billions of users. As Aaron and Sjors walk through the article, they explain what some of Towns’ proposed solutions are, and which tradeoffs they entail.
 ---
 ## Introduction
 

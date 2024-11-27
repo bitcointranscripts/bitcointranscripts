@@ -1,7 +1,8 @@
 ---
 title: Bitcoin Core Dev Tech 2024 (Apr)
+types:
+  - workshop
 ---
-
 {{< childpages >}}
 
 Additional presentations, code reviews, working groups, or other sessions

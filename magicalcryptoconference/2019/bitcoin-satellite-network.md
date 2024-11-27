@@ -1,12 +1,11 @@
 ---
 title: Bitcoin Satellite Network
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Adam Back']
+speakers:
+  - Adam Back
 date: 2019-05-11
 media: https://youtu.be/tJOI2i6h3HM
 ---
-
 # Bitcoin in Spaaace!
 
 I am going to be talking about the bitcoin satellite service that Blockstream has been offering for a few years now. I am going to talk about what it does and why that's interesting to users.

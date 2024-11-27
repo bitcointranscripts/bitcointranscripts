@@ -1,8 +1,8 @@
 ---
 title: Coordinating Bitcoin Upgrades With Mining Pools
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Alejandro De La Torre']
+speakers:
+  - Alejandro De La Torre
 date: 2021-05-24
 media: https://www.youtube.com/watch?v=u-W1wz6UNms
 ---

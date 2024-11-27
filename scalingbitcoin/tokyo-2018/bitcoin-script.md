@@ -1,9 +1,11 @@
 ---
-title: "The evolution of bitcoin scripting"
+title: The evolution of bitcoin scripting
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['scripts-addresses', 'op-checksigfromstack']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - scripts-addresses
+  - op-checksigfromstack
+speakers:
+  - Olaoluwa Osuntokun
 ---
 ## Agenda
 

@@ -1,9 +1,10 @@
 ---
-title: "MuSig2: Simple Two-Round Schnorr Multi-Signatures"
+title: 'MuSig2: Simple Two-Round Schnorr Multi-Signatures'
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['musig']
-speakers: ['Jonas Nick']
+tags:
+  - musig
+speakers:
+  - Jonas Nick
 date: 2021-08-16
 media: https://www.youtube.com/watch?v=Dzqj236cVHk
 ---

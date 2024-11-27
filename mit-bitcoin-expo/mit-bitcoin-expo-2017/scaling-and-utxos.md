@@ -1,12 +1,11 @@
 ---
 title: Scaling and UTXO commitments
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Peter Todd']
+speakers:
+  - Peter Todd
 date: 2017-03-04
 media: https://www.youtube.com/watch?v=0mVOq1jaR1U&feature=youtu.be&t=1h20m
 ---
-
 <https://twitter.com/kanzure/status/838481311992012800>
 
 Thank you. I'll admit the last one was probably the most fun other than. On the schedule, it said scaling and UTXO and I threw something together. <a href="https://petertodd.org/2016/delayed-txo-commitments">TXO commitments</a> were a bold idea but recently there were some observations that make it more interesting. I thought I would start by going through what problem they are actually solving.
@@ -41,10 +40,10 @@ I setup some nodes on scaleway and it took about 5 days for them to get started.
 
 <http://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2016/fraud-proofs-petertodd/>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012715.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2016-May/012715.html>
 
 <https://s3.amazonaws.com/peter.todd/bitcoin-wizards-13-10-17.log>
 
-<http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003714.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2013-November/003714.html>
 
 <http://gnusha.org/bitcoin-wizards/2015-09-18.log>

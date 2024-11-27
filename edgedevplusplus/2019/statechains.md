@@ -1,13 +1,14 @@
 ---
 title: Statechains
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['sidechains']
-speakers: ['Ruben Somsen']
+tags:
+  - sidechains
+speakers:
+  - Ruben Somsen
 date: 2019-09-10
-aliases: [/scalingbitcoin/tel-aviv-2019/edgedevplusplus/statechains]
+aliases:
+  - /scalingbitcoin/tel-aviv-2019/edgedevplusplus/statechains
 ---
-
 Schnorr signatures, adaptor signatures and statechains
 
 <https://twitter.com/kanzure/status/1171345418237685760>
@@ -58,4 +59,4 @@ How do you prove to somebody that you know a private key? You sign a message and
 
 <https://diyhpl.us/wiki/transcripts/scalingbitcoin/tokyo-2018/statechains/>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017005.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-June/017005.html>

@@ -1,10 +1,11 @@
 ---
 title: Wallet Stuff
 transcript_by: Bryan Bishop
-categories: ['core-dev-tech']
-tags: ['wallet']
+tags:
+  - wallet
 date: 2018-10-09
-aliases: ['/bitcoin-core-dev-tech/2018-10-09-wallet-stuff/']
+aliases:
+  - /bitcoin-core-dev-tech/2018-10-09-wallet-stuff/
 ---
 <https://twitter.com/kanzure/status/1049526667079643136>
 

@@ -2,15 +2,17 @@
 title: Actualización de la activación de Taproot
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['podcast']
-tags: ['taproot']
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+tags:
+  - taproot
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-04-23
 episode: 36
 media: https://www.youtube.com/watch?v=SHmEXPvN6t4
-aliases: ['/es/bitcoin-magazine/2021-04-23-taproot-activation-update']
+aliases:
+  - /es/bitcoin-magazine/2021-04-23-taproot-activation-update
 ---
-
 Tema: Actualización de la activación de Taproot: Speedy Trial y el cliente LOT=true
 
 Ubicación: Bitcoin Magazine (en línea)
@@ -133,7 +135,7 @@ AvW: También quiero aclarar. Todavía no sabemos cómo va a ser. Eso habrá que
 
 # Alternativa a Bitcoin Core (Cliente Taproot basado en Bitcoin Core 0.21.0)
 
-Actualización de las versiones de activación de Taproot: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
+Actualización de las versiones de activación de Taproot: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
 
 AvW: También se lanzó otro cliente. Hay mucho debate sobre el nombre. Vamos a llamarlo cliente LOT=true.
 

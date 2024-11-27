@@ -1,9 +1,12 @@
 ---
-title: "Invertible Bloom Lookup Tables (IBLT) and weak block propagation performance"
+title: Invertible Bloom Lookup Tables (IBLT) and weak block propagation performance
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'bandwidth-reduction']
-speakers: ['Kalle Rosenbaum', 'Rusty Russell']
+tags:
+  - research
+  - bandwidth-reduction
+speakers:
+  - Kalle Rosenbaum
+  - Rusty Russell
 date: 2015-12-06
 media: https://www.youtube.com/watch?v=ivgxcEOyWNs&t=1h40m20s
 ---
@@ -89,6 +92,6 @@ gavinandresen IBLT proposal <https://gist.github.com/gavinandresen/e20c3b5a1d4b9
 
 IBLT stuff from montreal workshop <http://diyhpl.us/wiki/transcripts/scalingbitcoin/bitcoin-block-propagation-iblt-rusty-russell/>
 
-weak blocks proposal <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011707.html> and some minor follow-up at <http://gnusha.org/bitcoin-wizards/2015-12-02.log>
+weak blocks proposal <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011707.html> and some minor follow-up at <http://gnusha.org/bitcoin-wizards/2015-12-02.log>
 
-various links about weak blocks <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011158.html>
+various links about weak blocks <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-September/011158.html>

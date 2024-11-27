@@ -2,9 +2,17 @@
 title: Libsec Panel
 transcript_by: fjahr via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=8Z79CeBw3Nc
-tags: ["libsecp256k1", "schnorr-signatures", "threshold-signature"]
-speakers: ["Jonas Nick", "Tim Ruffing", "Lloyd Fournier", "Jesse Posner", "Rijndael", "NVK"]
-categories: ["Podcast"]
+tags:
+  - libsecp256k1
+  - schnorr-signatures
+  - threshold-signature
+speakers:
+  - Jonas Nick
+  - Tim Ruffing
+  - Lloyd Fournier
+  - Jesse Posner
+  - Rijndael
+  - NVK
 date: 2023-09-08
 ---
 ## Intros

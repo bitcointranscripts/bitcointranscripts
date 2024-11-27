@@ -1,18 +1,14 @@
 ---
-title: Carteras de descriptores
-speakers: ['Andrew Chow']
+title: 'Repensar la arquitectura de las carteras: Carteras de descriptores nativos'
+speakers:
+  - Andrew Chow
 date: 2020-02-06
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['taller']
-tags: ['cartera']
+tags:
+  - wallet
 media: https://www.youtube.com/watch?v=xC25NzIjzog
 ---
-
-Tema: Repensar la arquitectura de las carteras: Carteras de descriptores nativos
-
-Ubicación: El avance de Bitcoin
-
 Diapositivas: https://www.dropbox.com/s/142b4o4lrbkvqnh/Rethinking%20Wallet%20Architecture_%20Native%20Descriptor%20Wallets.pptx
 
 Soporte para descriptores de salida en Bitcoin Core: https://github.com/bitcoin/bitcoin/blob/master/doc/descriptors.md

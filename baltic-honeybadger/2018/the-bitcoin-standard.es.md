@@ -2,10 +2,9 @@
 title: El estándar Bitcoin
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['conferencia']
-speakers: ['Saifedean Ammous']
+speakers:
+  - Saifedean Ammous
 ---
-
 El estándar bitcoin como solución de escalado por capas
 
 <https://twitter.com/kanzure/status/1043425514801844224>

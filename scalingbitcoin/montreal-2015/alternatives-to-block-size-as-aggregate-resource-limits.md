@@ -1,11 +1,11 @@
 ---
 title: Alternatives To Block Size As Aggregate Resource Limits
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research']
-speakers: ['Mark Friedenbach']
+tags:
+  - research
+speakers:
+  - Mark Friedenbach
 ---
-
 I am talking about block size, but not any particular proposal. Why do we have the block size limit and is it a good thing in the first place? The block size exists as a denial-of-service limiter. It limits the amount of resources that a node validating the blockchain can exhaust when validating a block. We want to do this because in the early days of bitcoin there are often certain kinds of transactions there are ways to slow down a validator by using a non-standard transaction or filling up a block with tons of spam. As we have seen in the talks today and yesterday, if you can increase the validation cost of a node, there are great centralizing pressure from being able to deny service to the network in this way.
 
 There's also an engineering concern here as well; originally there was no block size limit, you couldn't validate a block more than 32 MB because of the maximum network message size. There has to be engineering consideration about what the max block size is, just by testing. There are also aggregate limits for blocks as well, like the number of sigops that can be included. These are derived directly from the maximum block size.

@@ -1,30 +1,21 @@
 ---
 title: Sydney Socratic Seminar
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['package-relay']
+tags:
+  - package-relay
 date: 2021-11-02
 ---
-
-Name: Socratic Seminar
-
-Topic: Package relay
-
-Location: Bitcoin Sydney (online)
-
-Video: No video posted online
-
 The conversation has been anonymized by default to protect the identities of the participants. Those who have expressed a preference for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 
 Agenda: <https://github.com/bitcoin-sydney/socratic/blob/master/README.md#2021-11>
 
-Package Mempool Accept and Package RBF: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html>
+Package Mempool Accept and Package RBF: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html>
 
 With illustrations: <https://gist.github.com/glozow/dc4e9d5c5b14ade7cdfac40f43adb18a>
 
 ## Intro
 
-I think the best thing for me to do is go through Gloria’s [mailing list post](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html). We’ll go through the package relay acceptance rules and look at how they differ from the existing BIP 125 rules which we had a whole [Socratic](https://btctranscripts.com/sydney-bitcoin-meetup/2021-07-06-socratic-seminar/) about a few months ago with Antoine Riard. Gloria can interject whenever she feels like talking about anything in particular. We are going to go through this excellent mailing list post that Gloria made with all these awesome pictures. We’ll talk about how the package relay rules may differ from [BIP 125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki) replace-by-fee rules. These are the existing rules you apply when you get a transaction to see if you are going to include it in your mempool or not and whether you are going to pass it onto other nodes. With packages, which are single transactions relaying multiple transactions you need variations in these rules. They are really carefully thought out here and explained. A really valuable post. Let’s start going through them.
+I think the best thing for me to do is go through Gloria’s [mailing list post](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html). We’ll go through the package relay acceptance rules and look at how they differ from the existing BIP 125 rules which we had a whole [Socratic](https://btctranscripts.com/sydney-bitcoin-meetup/2021-07-06-socratic-seminar/) about a few months ago with Antoine Riard. Gloria can interject whenever she feels like talking about anything in particular. We are going to go through this excellent mailing list post that Gloria made with all these awesome pictures. We’ll talk about how the package relay rules may differ from [BIP 125](https://github.com/bitcoin/bips/blob/master/bip-0125.mediawiki) replace-by-fee rules. These are the existing rules you apply when you get a transaction to see if you are going to include it in your mempool or not and whether you are going to pass it onto other nodes. With packages, which are single transactions relaying multiple transactions you need variations in these rules. They are really carefully thought out here and explained. A really valuable post. Let’s start going through them.
 
 ## Existing package rules
 

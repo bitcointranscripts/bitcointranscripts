@@ -1,12 +1,13 @@
 ---
-title: Blockchain Testbed
+title: A Testbed for Bitcoin Scaling
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'developer-tools']
-speakers: ['Ittay Eyal', 'Emin Gun Sirer']
+tags:
+  - research
+  - developer-tools
+speakers:
+  - Ittay Eyal
+  - Emin Gun Sirer
 ---
-A testbed for bitcoin scaling
-
 I want to talk today about how to scale bitcoin. We want lower latency, we want higher throughput, more bandwidth and more transactions per second, and we want security. We can try to tune the parameters. In all of the plots, I have time going from left to right and these are blocks in rectangles. We have larger blocks which might give us more throughput. We could have shorter block length, and transactions would come faster on the chain and we have better throughput but we get forks and orphans when that happens. We have unfairness, smaller miners get less revenue and leads to centralization and I will talk about that. We have a longer time to convergence because of these orphans and forks.
 
 We need proper evaluation. We need a scientific way to realize what we are achieving and how to evaluate which proposal is better. We need a clear way to realize which way is best.
@@ -52,6 +53,6 @@ You need clear metrics, you need to run the actual code, you need to emulate the
 Adem Efe Gencer, Emin Gun Sirer, Robbert Van Renesse, Ittay Eyal.
 
 
-bitcoin-ng criticism <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011528.html>
+bitcoin-ng criticism <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-October/011528.html>
 
 see also <http://gnusha.org/bitcoin-wizards/2015-10-14.log> and <http://gnusha.org/bitcoin-wizards/2015-09-19.log>

@@ -1,15 +1,14 @@
 ---
 title: Current state of P2P research in Bitcoin /Erlay
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['research', 'P2P']
-speakers: ['Gleb Naumenko']
+tags:
+  - research
+  - P2P
+speakers:
+  - Gleb Naumenko
 date: 2019-11-13
 media: https://www.youtube.com/watch?v=ZUWs00Anpaw
 ---
-
-London Bitcoin Devs
-
 <https://twitter.com/kanzure/status/1201861687097352198>
 
 # Introduction

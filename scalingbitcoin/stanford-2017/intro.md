@@ -1,8 +1,8 @@
 ---
 title: Introduction
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Anton Yemelyanov']
+speakers:
+  - Anton Yemelyanov
 ---
 <https://scalingbitcoin.org/>
 

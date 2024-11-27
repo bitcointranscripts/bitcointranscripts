@@ -2,12 +2,13 @@
 title: Cifrado P2P
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['P2P']
+tags:
+  - v2-p2p-transport
+  - bitcoin-core
 date: 2019-06-07
-aliases: ['/es/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2019-06-07-p2p-encryption/
 ---
-
 Cifrado p2p
 
 <https://twitter.com/kanzure/status/1136939003666685952>

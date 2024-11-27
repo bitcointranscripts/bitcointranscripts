@@ -1,8 +1,10 @@
 ---
-title: "Applying Private Information Retrieval to Lightweight Bitcoin Clients"
+title: Applying Private Information Retrieval to Lightweight Bitcoin Clients
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'lightweight-client', 'privacy-enhancements']
+tags:
+  - research
+  - lightweight-client
+  - privacy-enhancements
 date: 2019-09-11
 media: https://www.youtube.com/watch?v=YxsjdIl0034&t=8723s
 ---

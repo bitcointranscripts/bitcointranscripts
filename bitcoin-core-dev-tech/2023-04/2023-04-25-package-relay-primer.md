@@ -1,12 +1,15 @@
 ---
 title: Package Relay Primer
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'package relay', 'p2p']
+tags:
+  - bitcoin-core
+  - package-relay
+  - p2p
 date: 2023-04-25
-aliases: ['/bitcoin-core-dev-tech/2023-04-25-package-relay-primer/']
-speakers: ['Gloria Zhao']
+aliases:
+  - /bitcoin-core-dev-tech/2023-04-25-package-relay-primer/
+speakers:
+  - Gloria Zhao
 ---
-
 Slides: <https://docs.google.com/presentation/d/12YPlmmaCiNNL83b3FDmYwa7FKHP7yD0krzkEzM-tkTM>
 
 ## Problems

@@ -1,9 +1,12 @@
 ---
 title: Breaking Bitcoin Privacy
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['privacy-problems', 'privacy-enhancements', 'output-linking']
-speakers: ['Chris Belcher']
+tags:
+  - privacy-problems
+  - privacy-enhancements
+  - output-linking
+speakers:
+  - Chris Belcher
 media: https://www.youtube.com/watch?v=9mvm-tdxv7o
 ---
 0A8B 038F 5E10 CC27 89BF CFFF EF73 4EA6 77F3 1129

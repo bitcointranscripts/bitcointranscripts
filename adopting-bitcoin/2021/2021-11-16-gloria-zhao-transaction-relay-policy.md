@@ -1,10 +1,11 @@
 ---
-title: "Transaction Relay Policy for L2 Developers"
-speakers: ['Gloria Zhao']
+title: Transaction Relay Policy for L2 Developers
+speakers:
+  - Gloria Zhao
 date: 2021-11-16
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['transaction-relay-policy']
+tags:
+  - transaction-relay-policy
 media: https://www.youtube.com/watch?v=fbWSQvJjKFs
 ---
 Slides: <https://github.com/glozow/bitcoin-notes/blob/master/Tx%20Relay%20Policy%20for%20L2%20Devs%20-%20Adopting%20Bitcoin%202021.pdf>
@@ -23,7 +24,7 @@ Hopefully this has not come as a surprise to you but the way that we deal with t
 
 ## Mempools
 
-One really key part of transaction relay is everyone who participates in transaction relay keeps a mempool. I’ll define what a mempool is for those of who want it defined. It is a cache of unconfirmed transactions and it is highly optimized to help pick the sets of transactions that are most incentive compatible aka highest fee rates. This is helpful for both miners and non-miners. This helps us gracefully re-org, it allows us to design transaction relay in a more private way because we are doing something smarter than just accept and then forward. It is useful. I have [written](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html) extensively on why mempools are useful if anyone wants to read more.
+One really key part of transaction relay is everyone who participates in transaction relay keeps a mempool. I’ll define what a mempool is for those of who want it defined. It is a cache of unconfirmed transactions and it is highly optimized to help pick the sets of transactions that are most incentive compatible aka highest fee rates. This is helpful for both miners and non-miners. This helps us gracefully re-org, it allows us to design transaction relay in a more private way because we are doing something smarter than just accept and then forward. It is useful. I have [written](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html) extensively on why mempools are useful if anyone wants to read more.
 
 ## Mempool Policy
 
@@ -51,7 +52,7 @@ It is now worthy to mention the CPFP carve out exemption which was shoehorned in
 
 Speaking of fee bumping, I do want to mention some examples of policies that people might like. These fee bumping primitives are all brought to you by mempool policy. The first one is RBF and this comes from a behavior in our mempool where if we see a transaction that conflicts with something in our mempool we’re not just going to say “We don’t want that”. We will actually consider that new transaction and if it pays significantly higher in fees we might replace the one in our mempool. This is good for users because for incentive compatibility it aligns and it allows users to fee bump their transactions. The other one is the mempool is aware of ancestor and descendant packages so when we are including transactions in a block we will go by ancestor fee rate. This allows a child to pay for a parent or CPFP. And when we are evicting transactions from the mempool we are not going to evict something that has a low fee rate if it has a high fee child. Again this is incentive compatible but it also helps users.
 
-I am going to shill my work really quickly. [Package RBF](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html) is the combination of RBF and CPFP such that you can have a child paying for both of its parents and RBFing the conflicts of its parents. It is pretty cool, you should check it out.
+I am going to shill my work really quickly. [Package RBF](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-September/019464.html) is the combination of RBF and CPFP such that you can have a child paying for both of its parents and RBFing the conflicts of its parents. It is pretty cool, you should check it out.
 
 ## Mempool Policy
 
@@ -101,7 +102,7 @@ Q - Even then it will be a monitoring of the entire mempool of the network which
 
 A - Right.
 
-Q - What’s the story on you and Lisa with the [death to the mempool](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html) thing?
+Q - What’s the story on you and Lisa with the [death to the mempool](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-October/019579.html) thing?
 
 A - I am happy to talk about this offline. Lisa and I had a discussion about it where we disagreed with each other. She tagged me in her post to the bitcoin-dev mailing list. I think people were under the impression that our discussion was us being in agreement when actually we didn’t agree. I think that is where most of the confusion comes from.
 

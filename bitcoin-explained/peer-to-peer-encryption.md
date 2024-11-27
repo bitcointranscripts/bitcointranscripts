@@ -1,15 +1,17 @@
 ---
-title: "Peer-to-peer Encryption"
+title: Peer-to-peer Encryption
 transcript_by: Sjors, edilmedeiros
 media: https://www.youtube.com/watch?v=jvFdPwssv_E
-tags: ["bitcoin-core", "v2-p2p-transport"]
-speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - v2-p2p-transport
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2023-04-24
 episode: 77
-summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss BIP 324, the proposal by Dhruv, Pieter Wuille and Tim Ruffing to add peer-to-peer (P2P) encryption to the Bitcoin protocol. They explain why this is needed, how it would work, and which problems it would, and wouldn\u2019t solve."
+summary: In this episode of Bitcoin, Explained, Aaron and Sjors discuss BIP 324, the proposal by Dhruv, Pieter Wuille and Tim Ruffing to add peer-to-peer (P2P) encryption to the Bitcoin protocol. They explain why this is needed, how it would work, and which problems it would, and wouldn’t solve.
 ---
-
 Aaron van Wirdum: 
 
 Sjros, you were just telling me that one of the reasons you came up with the topic for this episode, which is BIP324, a peer-to-peer encryption, is because you had a call with other Bitcoin developers about this.

@@ -1,8 +1,8 @@
 ---
 title: Ledger’s New Bitcoin App- PSBT, Taproot, Descriptors, Multi-Sig
 transcript_by: Stephan Livera
-categories: ['podcast']
-speakers: ['Salvatore Ingala']
+speakers:
+  - Salvatore Ingala
 date: 2022-01-11
 media: https://www.youtube.com/watch?v=pi64CNFu8h4
 ---

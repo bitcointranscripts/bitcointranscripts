@@ -1,15 +1,9 @@
 ---
 title: Cory Fields
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Cory Fields']
+speakers:
+  - Cory Fields
 ---
-
-MIT Bitcoin Expo 2016 transcript
-
-last year- http://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2015/
-this year- http://diyhpl.us/wiki/transcripts/mit-bitcoin-expo-2016/
-
 Welcome everyone to MIT Bitcoin Expo 2016. If you haven't heard of Bitcoin by now, then I am not sure how you got here. My name is nchinda. I am the reigning Bitcoin club president. I am going to have some fun. The club is hijacking the #mit-dci IRC channel. You can twitter with #mitbitcoinexpo. There's a link up on our website for livestreaming. You can refer anyone who is not here to the club's youtube channel.
 
 We are going to begin day 1, the technical day of the expo. We are going to start with Cory Fields, a Bitcoin developer, he works here at the MIT Media Lab. (applause)

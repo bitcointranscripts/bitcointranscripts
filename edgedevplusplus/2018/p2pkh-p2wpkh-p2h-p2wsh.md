@@ -1,12 +1,14 @@
 ---
-title: "P2PKH, P2WPKH, P2SH, P2WSH"
+title: P2PKH, P2WPKH, P2SH, P2WSH
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['scripts-addresses']
-speakers: ['Greg Sanders']
+tags:
+  - scripts-addresses
+speakers:
+  - Greg Sanders
 media: https://www.youtube.com/watch?v=nrYOMjVmqi8
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/p2pkh-p2wpkh-p2h-p2wsh]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/p2pkh-p2wpkh-p2h-p2wsh
 ---
 <https://twitter.com/kanzure/status/1047697572444270592>
 

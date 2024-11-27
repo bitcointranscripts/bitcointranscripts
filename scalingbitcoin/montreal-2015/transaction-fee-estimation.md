@@ -1,9 +1,10 @@
 ---
-title: "How Wallets Can Handle Real Transaction Fees"
+title: How Wallets Can Handle Real Transaction Fees
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['fee-management']
-speakers: ['Bram Cohen']
+tags:
+  - fee-management
+speakers:
+  - Bram Cohen
 date: 2015-09-12
 media: https://www.youtube.com/watch?v=iKDC2DpzNbw&t=770s
 ---
@@ -34,7 +35,7 @@ That's basically my answer to what should be done, it's conservative, it's easil
 
 That's the basics of how I think wallets should handle transaction fees.
 
-<http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011685.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011685.html>
 
 <https://medium.com/@bramcohen/how-wallets-can-handle-transaction-fees-ff5d020d14fb>
 

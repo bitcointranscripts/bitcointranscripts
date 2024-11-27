@@ -2,9 +2,13 @@
 title: Lightning Payment Pathfinding for Reliability
 transcript_by: gurwindersahota via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=p8toOF-imk4
-tags: ["pathfinding", "lightning", "routing", "lnd"]
-speakers: ["Joost Jager"]
-categories: ["conference"]
+tags:
+  - pathfinding
+  - lightning
+  - routing
+  - lnd
+speakers:
+  - Joost Jager
 date: 2019-10-18
 ---
 ## Introduction

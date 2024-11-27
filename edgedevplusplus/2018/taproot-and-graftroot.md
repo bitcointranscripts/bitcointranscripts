@@ -1,12 +1,16 @@
 ---
 title: Taproot and Graftroot
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['mast', 'p2c', 'taproot']
-speakers: ['Greg Sanders']
+tags:
+  - mast
+  - p2c
+  - taproot
+speakers:
+  - Greg Sanders
 media: https://www.youtube.com/watch?v=h2bvOal1u5k
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/taproot-and-graftroot]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/taproot-and-graftroot
 ---
 <https://twitter.com/kanzure/status/1047764770265284608>
 
@@ -64,9 +68,9 @@ When it comes to script, if you add expressability, it tends to lower privacy as
 
 ## References
 
-* taproot: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html>
+* taproot: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-January/015614.html>
 
-* graftroot <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html>
+* graftroot <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-February/015700.html>
 
 * <https://github.com/Blockstream/contracthashtool>
 

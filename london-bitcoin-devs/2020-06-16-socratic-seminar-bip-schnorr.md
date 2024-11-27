@@ -1,15 +1,19 @@
 ---
-title: "Socratic Seminar - BBIP Schnorr (BIP 340)"
+title: Socratic Seminar - BBIP Schnorr (BIP 340)
 transcript_by: Michael Folkson
-categories: ['meetup']
 date: 2020-06-16
-tags: ['schnorr-signatures']
-speakers: ['Pieter Wuille', 'Adam Gibson', 'Elichai Turkel', 'Tim Ruffing']
+tags:
+  - schnorr-signatures
+speakers:
+  - Pieter Wuille
+  - Adam Gibson
+  - Elichai Turkel
+  - Tim Ruffing
 media: https://www.youtube.com/watch?v=uE3lLsf38O4
 ---
 Pastebin of the resources discussed: https://pastebin.com/uyktht33
 
-August 2020 update: Since this Socratic on BIP Schnorr there has been a proposed [change](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html) to the BIP revisting the squaredness tiebreaker for the R point.
+August 2020 update: Since this Socratic on BIP Schnorr there has been a proposed [change](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-August/018081.html) to the BIP revisting the squaredness tiebreaker for the R point.
 
 The conversation has been anonymized by default to protect the identities of the participants. Those who have given permission for their comments to be attributed are attributed. If you were a participant and would like your comments to be attributed please get in touch.
 

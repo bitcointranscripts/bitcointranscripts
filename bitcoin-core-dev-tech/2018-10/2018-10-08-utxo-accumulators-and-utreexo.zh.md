@@ -1,10 +1,12 @@
 ---
-title: "UTXO accumulators, UTXO commitments, and Utreexo"
+title: UTXO accumulators, UTXO commitments, and Utreexo
 transcript_by: Bryan Bishop
 translation_by: Ajian
-categories: ['core-dev-tech']
-tags: ['proof-systems', 'utreexo']
-speakers: ['Tadge Dryja']
+tags:
+  - proof-systems
+  - utreexo
+speakers:
+  - Tadge Dryja
 date: 2018-10-08
 ---
 UTXO 累加器、UTXO 承诺与 Utreexo

@@ -1,14 +1,17 @@
 ---
-title: "Bitcoin Toolchain, Unit Testing And Deterministic Builds"
+title: Bitcoin Toolchain, Unit Testing And Deterministic Builds
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['bitcoin-core', 'build-system', 'reproducible-builds']
-speakers: ['Marco Falke']
+tags:
+  - bitcoin-core
+  - build-system
+  - reproducible-builds
+speakers:
+  - Marco Falke
 media: https://www.youtube.com/watch?v=ZJ2t84trKVo
 date: 2018-10-05
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/bitcoin-toolchain-unit-testing-and-deterministic-builds]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/bitcoin-toolchain-unit-testing-and-deterministic-builds
 ---
-
 <https://twitter.com/kanzure/status/1048103693885759489>
 
 ## Introduction

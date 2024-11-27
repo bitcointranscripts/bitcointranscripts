@@ -1,9 +1,11 @@
 ---
-title: "Quisquis: A New Design for Anonymous Cryptocurrencies"
+title: 'Quisquis: A New Design for Anonymous Cryptocurrencies'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'altcoins']
-speakers: ['Prastudy Fauzi']
+tags:
+  - research
+  - altcoins
+speakers:
+  - Prastudy Fauzi
 date: 2019-01-30
 media: https://www.youtube.com/watch?v=QAqBRbbbMSw
 ---

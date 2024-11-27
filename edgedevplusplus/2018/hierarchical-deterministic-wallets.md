@@ -1,14 +1,15 @@
 ---
 title: Hierarchical Deterministic Wallets
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['bip32']
-speakers: ['James Chiang']
+tags:
+  - bip32
+speakers:
+  - James Chiang
 media: https://www.youtube.com/watch?v=OVvue2dXkJo
 date: 2018-10-04
-aliases: [/scalingbitcoin/tokyo-2018/edgedevplusplus/hierarchical-deterministic-wallets]
+aliases:
+  - /scalingbitcoin/tokyo-2018/edgedevplusplus/hierarchical-deterministic-wallets
 ---
-
 <https://twitter.com/kanzure/status/1047714436889235456>
 
 <https://teachbitcoin.io/presentations/wallets.html>

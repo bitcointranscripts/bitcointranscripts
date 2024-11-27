@@ -1,17 +1,13 @@
 ---
-title: Submarine Swaps
+title: Submarine Swaps and Loop
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['submarine swaps']
-speakers: ['Alex Bosworth']
+tags:
+  - submarine-swaps
+speakers:
+  - Alex Bosworth
 date: 2019-07-03
 media: https://www.youtube.com/watch?v=eB_HkYb7Y2M
 ---
-
-London Bitcoin Devs
-
-Submarine Swaps and Loop
-
 Slides: <https://www.dropbox.com/s/cyh97jv81hrz8tf/alex-bosworth-submarine-swaps-loop.pdf?dl=0>
 
 <https://twitter.com/kanzure/status/1151158631527849985>

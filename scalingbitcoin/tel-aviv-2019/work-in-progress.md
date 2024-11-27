@@ -1,8 +1,11 @@
 ---
-title: "Work In Progress Sessions"
+title: Work In Progress Sessions
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Mikael Dubrovsky', 'Yoshinori Hashimoto', 'Daniel Marquez', 'Thomas Eizinger']
+speakers:
+  - Mikael Dubrovsky
+  - Yoshinori Hashimoto
+  - Daniel Marquez
+  - Thomas Eizinger
 ---
 ((this needs to break into individual transcripts))
 
@@ -194,7 +197,7 @@ oh wait that's me (who types for the typer?)
 
 <https://www.coindesk.com/the-vault-is-back-bitcoin-coder-to-revive-plan-to-shield-wallets-from-theft>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017229.html>
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-August/017231.html>
 

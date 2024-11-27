@@ -1,14 +1,12 @@
 ---
 title: Opening Remarks
 transcript_by: Bryan Bishop
-categories: ['workshop']
-tags: ['research']
-speakers: ["Shin'ichiro Matsuo"]
+tags:
+  - research
+speakers:
+  - Shin'ichiro Matsuo
 date: 2020-02-18
 ---
-
-Opening remarks
-
 <http://bsafe.network/events/codefi_stanford_2020/>
 
 <https://diyhpl.us/wiki/transcripts/coordination-of-decentralized-finance-workshop/2020-stanford/>

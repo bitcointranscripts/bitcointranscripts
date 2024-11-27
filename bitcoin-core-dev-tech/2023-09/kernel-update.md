@@ -1,11 +1,12 @@
 ---
 title: Kernel Update
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'build-system']
+tags:
+  - bitcoin-core
+  - build-system
 date: 2023-09-18
-speakers: [thecharlatan]
+speakers:
+  - thecharlatan
 ---
-
 Original roadmap decided by carl was:
 
 - Stage 1

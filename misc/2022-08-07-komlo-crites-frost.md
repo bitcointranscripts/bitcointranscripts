@@ -1,9 +1,11 @@
 ---
 title: FROST
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['threshold-signature']
-speakers: ['Chelsea Komlo', 'Elizabeth Crites']
+tags:
+  - threshold-signature
+speakers:
+  - Chelsea Komlo
+  - Elizabeth Crites
 date: 2022-08-07
 media: https://youtu.be/tWopcFzSTas?t=11604
 ---

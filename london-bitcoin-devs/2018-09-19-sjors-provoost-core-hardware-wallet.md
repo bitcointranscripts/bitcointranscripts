@@ -1,17 +1,14 @@
 ---
-title: Bitcoin Core and hardware wallets
+title: Using Bitcoin Core with hardware wallets
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['hardware wallet', 'bitcoin core']
-speakers: ['Sjors Provoost']
+tags:
+  - hardware-wallet
+  - bitcoin-core
+speakers:
+  - Sjors Provoost
 date: 2018-09-19
 media: https://www.youtube.com/watch?v=SUDkYbkcTsQ
 ---
-
-Topic: Using Bitcoin Core with hardware wallets
-
-Location: London Bitcoin Devs
-
 Slides: <https://github.com/Sjors/presentations/blob/master/2018-09-19%20London%20Bitcoin%20Devs/2018-09%20London%20Bitcoin%20Devs%200.5.pdf>
 
 Core, HWI docs: <https://hwi.readthedocs.io/en/latest/examples/bitcoin-core-usage.html>

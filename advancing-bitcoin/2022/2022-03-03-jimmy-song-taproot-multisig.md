@@ -1,9 +1,12 @@
 ---
 title: Taproot multisig
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['taproot', 'tapscript', 'musig']
-speakers: ['Jimmy Song']
+tags:
+  - taproot
+  - tapscript
+  - musig
+speakers:
+  - Jimmy Song
 date: 2022-03-03
 media: https://www.youtube.com/watch?v=Uo3uzofPlX0
 ---

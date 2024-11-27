@@ -1,18 +1,17 @@
 ---
-title: JSON Interface
+title: JSON Interface with c-lightning and Writing Extensions
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['lightning', 'c-lightning']
-speakers: ['Rusty Russell']
+tags:
+  - lightning
+  - c-lightning
+speakers:
+  - Rusty Russell
 date: 2019-04-06
 media: https://www.youtube.com/watch?v=sNB1N7FyMHA
 ---
-
-JSON Interface with c-lightning and Writing Extensions
-
 <https://twitter.com/kanzure/status/1230892247345852416>
 
-# Intro
+## Intro
 
 Ok I have `top` running. We have a plan and we’re going to start from zero. We’re going to clone c-lightning, we’re going to compile it, we’re going to set up a test node. I’m assuming Bitcoin is already installed. We’re going to talk a little about configuring it and stuff like that. All this stuff is useful to see somebody else do. It is documented but it is nice to see someone actually go through it. Then we’re basically going to create a little project. We’re going to create two of these nodes, we’re going to get them to talk to each other so we’ve got a play area to play with. We’re going to stumble across a bug and show you what to do when you hit a bug in c-lightning. We’re going to deep dive into that. We’re going to talk a little bit about JSON and stuff like that. That’s the first half. It is all that infrastructure stuff and setting up and how things work. Then we’re going to write our plugin, the world’s stupidest plugin. Once we’ve got as far as we can with the world’s dumbest plugin and we have an idea of how plugins work, we’re going to step up and write a real plugin, deliberately leaving it a bit unfinished so you get an idea of things that you could do with plugins. I would encourage you to ask questions on the way through particularly if I go through something too fast. We’ve got fifty minutes so hopefully we can get through most of this. I’m going to go into my temp directory.
 
@@ -356,7 +355,7 @@ There we go. It is complete.
 
 We see our invoice. You can see an earlier one that I made in testing. This invoice is paid, the amount, description, everything we want to know about it. What I wanted to do with this was something more interesting. We are pretty much on our time limit. So instead of showing you I will upload this. I’ll tweet out the URL. I actually extended it to rather than just producing an invoice for 24 millisatoshis, it actually embedded in the payment preimage 24 bytes of text directly paying for 24 bytes of text. The way payments work is the invoice promises them to give them a secret if they pay. That secret is normally a random number. In this case I used 8 bytes of randomness and the other 24 bytes, it is a 32 byte secret, I actually put a text field in there. This is a cute way of rather than having to separately deliver something you can deliver it as part of the invoice flow. Now 32 bytes is enough to hold a secret key for example. It could be that you give them a file and when they pay they will get the decryption key. The decryption key will be the preimage, that secret that you promised them. In this case I used 8 bytes of randomness to make it harder to guess and then 24 bytes of some text. That could be done for some kind of pay to reveal text kind of thing. In fact I wrote a plugin to do that for you, to do the URL query so it added a getword, you just did `blah l2 getword`. The plugin itself then reached out to the URL that you gave it, fetched the invoice, checked it was a sane amount and paid it. I can upload those plugins somewhere if people want. I think we’ve hit time. Did anyone want to ask any specific questions before we wrap up?
 
-# Q&A
+## Q&A
 
 Q - What languages are supported to write plugins in? Shell scripts or Python?
 
@@ -364,7 +363,7 @@ A - Do not write them in shell, no. Python is good. The pay plugin is written in
 
 Q - C\#?
 
-A - If somebody wants to go and do C\#. The problem is that c-lightning itself runs on UNIX based systems only so we don’t have any Windows support so C\# is not exactly top of our list.
+A - If somebody wants to go and do C\#. The problem is that c-lightning itself runs on UNIX based systems only so we don’t have any Windows support so C\## is not exactly top of our list.
 
 Q - It is possible to do something like HODL invoices in c-lightning using the plugin infrastructure today?
 
@@ -372,7 +371,7 @@ A - Yes. This was always something that we wanted to do. For those not familiar,
 
 Q - .NET Core run on Linux?
 
-A - Yes. .NET Core can definitely run on Linux. You could do C\# on Linux. It is just a question of it wasn’t the most popular language for people to use on Linux. That is why there’s no C\# plugin. It would be pretty easy to write. If you can speak JSON you handle those bits, you handle the registration for them and it is pretty easy. It is pretty easy to write in any language natively but it is nice if you’ve got a library that does all that infrastructure for you and registers your options and does all that stuff rather than having to do it manually.
+A - Yes. .NET Core can definitely run on Linux. You could do C\## on Linux. It is just a question of it wasn’t the most popular language for people to use on Linux. That is why there’s no C\## plugin. It would be pretty easy to write. If you can speak JSON you handle those bits, you handle the registration for them and it is pretty easy. It is pretty easy to write in any language natively but it is nice if you’ve got a library that does all that infrastructure for you and registers your options and does all that stuff rather than having to do it manually.
 
 Q - Thank you so much Rusty. This was fantastic. If people want to reach out to you and ask you more questions where they can find you?
 

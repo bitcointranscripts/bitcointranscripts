@@ -1,29 +1,29 @@
 ---
 title: Taller de depuración de Bitcoin Core
-speakers: ['Fabian Jahr']
+speakers:
+  - Fabian Jahr
 date: 2020-02-07
 transcript_by: Michael Folkson
 translation_by: Blue Moon
-categories: ['taller']
-tags: ['bitcoin-core', 'developer-tools']
+tags:
+  - bitcoin-core
+  - developer-tools
 ---
-Vídeo: No se ha publicado ningún vídeo en Internet
-
 Presentación de Fabian en el Bitcoin Edge Dev++ 2019: https://btctranscripts.com/scalingbitcoin/tel-aviv-2019/edgedevplusplus/debugging-bitcoin/
 
 Depuración de Bitcoin Core doc: https://github.com/fjahr/debugging_bitcoin
 
 Taller de depuración de Bitcoin Core: https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386
 
-# Introducción
+## Introducción
 
 En primer lugar bienvenido al taller de depuración de Bitcoin Core. Todo lo que sé más o menos sobre el uso de un depurador para aprender de Bitcoin Core y para solucionar problemas en Bitcoin Core. No he ido con diapositivas tradicionales porque quiero enseñarte a usar esta herramienta, el depurador, en el contexto de Bitcoin Core. Puede que no lo necesites en la próxima semana pero quizás lo necesites en tres semanas. Si has olvidado lo que hicimos aquí espero que puedas volver a este documento, mirarlo y usar estas instrucciones de nuevo. Por eso lo he estructurado como un gist. [Este](https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386) se mantendrá y será algo que podrás utilizar más adelante. Aprenderemos a usar estas herramientas. Personalmente estoy usando lldb porque estoy en MacOS. La gente en Linux puede instalar lldb pero puede que no sea tan bueno. gdb también está disponible, ha existido mucho más tiempo que lldb. Se supone que es una versión mejorada de éste. Estoy mostrando diferentes versiones de los comandos para que puedas seguir usando gdb de la misma manera. Yo estoy usando lldb pero si estás usando gdb y te encuentras con algún problema me acercaré y te ayudaré. Intentaremos solucionarlo. Te mostraré algunos comandos básicos y cómo usarlos en el contexto de Bitcoin Core. Luego tengo ejercicios. Estos ejercicios son más bien simulacros, no son súper emocionantes. El punto es que estás usando las herramientas. Te voy a dar un ejercicio en el que podrías encontrar la respuesta a este ejercicio con sólo mirar el archivo en el código. Pensé que si edito el código y te doy una versión específica que tienes que arreglar estaríamos todos sentados y compilando mucho. Realmente no quería hacer eso porque es normalmente donde el taller se rompe y todo el mundo está sentado compilando, diferentes cosas pasan para diferentes personas. Todos haremos esto en el master y miraremos el código. Al mismo tiempo, si tienes algo que crees que es más interesante que el ejercicio que te doy, si tienes algo que quieres depurar, una parte diferente del código, por favor sigue adelante y explora. Yo seguiré viniendo y ayudándote si tienes algún problema. He estructurado para esto dos horas. Ahora tenemos tres horas, así que hay mucho más tiempo para cavar en las cosas tanto como quieras. Nos mantenemos en un nivel alto. Puedes usar depuradores para profundizar mucho más en el código.
 
-# ¿Por qué depurar con lldb y gdb?
+## ¿Por qué depurar con lldb y gdb?
 
 En primer lugar, ¿qué es un depurador? Un depurador es una aplicación que se utiliza para depurar otra aplicación. Realmente no hay mucho más que eso. Se trata de recorrer el código. Lo haces estableciendo puntos de interrupción en los que se detiene la ejecución del programa. Entonces puedes ir a través de la ejecución del programa paso a paso. Usted puede evaluar las cosas que están sucediendo. Puedes mirar las variables, cuál es su contenido. Puedes ejecutar expresiones, añadir variables si quieres. Puedes mirar a través del backtrace, el backtrace es el conjunto de funciones que se están ejecutando en ese momento. ¿Por qué me importa esto? Vengo de lenguajes de programación de mayor nivel que C++. Mi primer trabajo profesional como programador fue usando Ruby. Allí era típico saltar a pry. Pry era el depurador. También tienes que interactuar con el shell interactivo de Ruby. pdb es la herramienta comparable en Python. Lo usaba casi todos los días mientras averiguaba cosas en Ruby. Cuando entré en C++, principalmente motivado por Bitcoin Core, sentí que no había ninguna herramienta. Entonces descubrí gdb y lldb. La mayoría de la gente no está usando eso en la medida que yo hubiera pensado en el desarrollo de Bitcoin Core. He conocido a bastantes personas que están contribuyendo a Bitcoin Core y piensan que es demasiado trabajo usar estas herramientas. No las usan muy a menudo. Prefieren confiar en las declaraciones de impresión o algo así. O se quedan mirando el código hasta que se renderiza. Eso es válido, estas personas siguen siendo productivas, pero para mí quería tener esta herramienta en mi cadena de herramientas. No es algo que use todos los días, pero lo uso con bastante frecuencia, sobre todo cuando me quedo atascado. Si puedo resolver un problema en pocos minutos mirando el código y leyendo a través de él, pero a menudo me quedo confundido sobre el código. Saltar al depurador es otra forma de explorarlo y entender mejor lo que está pasando. Por eso es una herramienta muy útil. Definitivamente me ha ayudado en diferentes situaciones. Tanto si eres un completo principiante, como si nunca has contribuido con código a Bitcoin Core o si ya tienes algunas contribuciones pero no utilizas un depurador muy a menudo, esto te ayudará a adoptarlo.
 
-# ¿Por qué utilizar la interfaz CLI simple?
+## ¿Por qué utilizar la interfaz CLI simple?
 
 Utilizaremos lldb y gdb con la interfaz CLI simple. Yo personalmente también hago esto. La razón de esto es que generalmente me gusta estar en la línea de comandos. También trato de mantener mi configuración lo más simple posible. Me gusta que sea portátil. Si estoy en una máquina que no he configurado yo mismo y que he personalizado mucho, normalmente podré encontrar mi camino. También uso Vim, que está en casi todas las máquinas. Tengo algunos comandos personalizados pero intento mantenerlos al mínimo porque me gusta poder saltar a la máquina de otras personas y me gusta la programación en pareja. Cuando tengo la oportunidad de colaborar con alguien, usando su teclado, todavía es posible. Hay algunos GUIs para lldb y gdb que presentan el contenido de una forma más agradable. He mirado en estos pero no había ninguna primera opción obvia que saltó a mí. La mayoría de los productos que vi allí, no había commits para varios años. Pensé que me quedaría con la versión más simple que se me ocurrió. Eso es lo que vamos a utilizar hoy. Sin embargo fuera de la caja lldb y gdb también ofrecen un modo GUI. Este muestra las cosas de manera un poco diferente. No puedes ejecutar los mismos comandos allí. Hay una visión general de la información que se esconde detrás de los comandos. Lo mostraré brevemente y puedes jugar con él también. En lldb sólo tienes que escribir `gui`. Lo mostraré pero no me ha sido tan útil. Los preparativos que espero que todo el mundo haya hecho ya.
 
@@ -31,7 +31,7 @@ Utilizaremos lldb y gdb con la interfaz CLI simple. Yo personalmente también ha
 
 Usted construye Bitcoin Core de la misma manera que se describe en la documentación. Pero tienes que configurar con esta opción `--enable-debug`. Lo que esto significa es que pasas las banderas `-O0` y `-ggdb3` al compilador. No hay optimizaciones. `-O0` significa dejar fuera las optimizaciones. Típicamente se compila con `-O2` creo. ¿Por qué no queremos optimizaciones? Porque el compilador elimina información del código y también reestructura el código de una manera que hace más eficiente su ejecución en un sentido general. Si ejecutaras este `--enable-debug` como un nodo completo verías un rendimiento degradado. Lo que queremos hacer es mirar el código. Por eso quieres tener tanta información disponible como sea posible. Ponemos las optimizaciones a cero y esta otra instrucción mantiene alrededor alguna información adicional a la que puedes acceder cuando estás haciendo la depuración.
 
-# Comandos útiles
+## Comandos útiles
 
 https://gist.github.com/fjahr/5bf65daaf9ff189a0993196195005386#useful-commands
 
@@ -71,11 +71,11 @@ R - El resto es sólo una explicación de lo que significa. Lo que hace `enable-
 
 Puede imprimir variables, que es una de las principales cosas que probablemente va a hacer cuando está utilizando un depurador. En lldb tienes que hacer una distinción entre una variable de marco de pila y una variable global. Mientras que con gdb no hay distinción. Usas `p` para ambas. Puedes interactuar con variables de entorno, yo no lo he usado mucho. Puedes evaluar expresiones. Esto es algo que uso mucho. Si quieres ejecutar una función y ver lo que la función devuelve o si quieres establecer una variable a un valor específico eso es lo que haces con `expr`. Significa que ejecutas esta línea de código ahora mismo y luego sigues. También puedes buscar información de símbolos si tienes problemas con variables que vienen de otras bibliotecas.
 
-# Varios consejos
+## Varios consejos
 
 Luego tengo algunos consejos generales. Si está ejecutando lldb y encuentra que estos comandos son un poco demasiado para escribir, puede abreviarlos y efectivamente hacer una coincidencia regex en él. La coincidencia más corta con estos comandos puede ser la que usted desee. Si quieres establecer un punto de interrupción también puedes hacer `br s` y hará lo mismo. Me gusta escribirlos pero si quieres optimizar tu flujo de trabajo y no escribir tanto puedes hacer esto. Puedes poner un archivo `/.lldbinit` si quieres. Así es como se personaliza el entorno. Por ejemplo puedes personalizar como se imprimen las variables. No lo he usado todavía pero es algo que puedes investigar si te encuentras usando el depurador cada vez más y quieres personalizar tu entorno. Un detalle que me irritó cuando empecé a usar el depurador es que si entras en un bucle y el bucle es muy largo no hay instrucciones claras de cómo salir de ese bucle. No hay un comando de salida de bucle en lldb o gdb. La forma en que resolvemos esto es que si tienes un punto de interrupción en ese bucle, primero estableces un punto de interrupción detrás de ese bucle y luego sales de ese punto de interrupción.
 
-# Ejercicios
+## Ejercicios
 
 Ahora estamos finalmente en los ejercicios. Haré una pequeña demostración de cómo iniciar un depurador para este primer ejercicio. Puedes explorar esto tanto como quieras. Luego, después de algún tiempo, caminaré por ahí. Luego haremos la segunda parte que es donde usamos el depurador con pruebas funcionales.
 
@@ -129,11 +129,11 @@ R - `target variable` es para las globales y `frame variable` es para el marco d
 
 Así que esto es bastante básico lo que hemos hecho hasta ahora. Manejando el bitcoind a través de interacciones con bitcoin-cli. Hay muy pocos casos en los que haría esto porque suelen ser cosas muy básicas que están sucediendo. Se pone mucho más interesante si usted está utilizando las pruebas y desea inspeccionar lo que está pasando.
 
-# Uso de la depuración con pruebas unitarias
+## Uso de la depuración con pruebas unitarias
 
 Las pruebas unitarias funcionan básicamente de la misma manera en cuanto al uso del depurador. Pero con las pruebas funcionales es mucho más interesante. Con las pruebas unitarias inicias el depurador de la misma manera que lo hacías aquí arriba con el CLI. Lo único que hay que tener en cuenta es que los tests tienen su propio ejecutable. En lugar de bitcoind tienes que proporcionar este archivo `test_bitcoin`. Ahí es donde se construyen las pruebas unitarias. Puedes establecer puntos de interrupción en cualquier parte de las pruebas unitarias exactamente igual que lo hacías con bitcoind. Las pruebas se ejecutarán. Si quieres ejecutar una prueba específica, que suele ser el caso, puedes certificarlo con este parámetro `--log_level=all --run_test=*/lthash_tests`. Puedes ir a la [documentación de las pruebas unitarias](https://github.com/bitcoin/bitcoin/tree/master/src/test) sobre cómo ejecutar las pruebas. No es tan diferente de bitcoind e interactuar con el CLI.
 
-# Uso de la depuración con pruebas funcionales
+## Uso de la depuración con pruebas funcionales
 
 Lo que es mucho más interesante son las pruebas funcionales, lo que estoy depurando con más frecuencia. Por lo general, cuando estás investigando cosas en Bitcoin no son sólo cosas que son muy simples es que hay pasos muy complejos que sucedieron antes y se llega a un estado que se quiere investigar. Miramos el regtest y generamos 100 bloques, eso no es tan interesante. Lo que es mucho más interesante es si tienes una gran red P2P y quieres ver cómo los nodos están interactuando entre sí. Si tienes un mempool lleno y las transacciones son desalojadas del mempool no quieres tener que escribir un script para que tu nodo Bitcoin llegue a su punto. Por suerte ya hay pruebas funcionales que hacen eso por ti. Si quieres inspeccionar el estado del sistema entonces te recomendaría que encontraras la prueba funcional que está llevando al sistema a ese punto y luego inspeccionar el sistema cuando está siendo ejecutado por esa prueba funcional.
 

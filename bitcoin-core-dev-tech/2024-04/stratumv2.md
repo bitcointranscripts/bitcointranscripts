@@ -1,10 +1,10 @@
 ---
 title: Stratum v2
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'stratum-v2']
+tags:
+  - bitcoin-core
+  - stratum-v2
 date: 2024-04-08
 ---
-
 I explained the various stratum v2 roles described in the images here:
 [https://stratumprotocol.org](https://stratumprotocol.org)
 

@@ -1,18 +1,19 @@
 ---
 title: Minisketch and Lightning gossip
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: ['lightning', 'P2P']
-speakers: ['Alex Myers']
+tags:
+  - lightning
+  - P2P
+speakers:
+  - Alex Myers
 date: 2022-06-07
 media: https://www.youtube.com/watch?v=e0u59hSsmio
 ---
-
 Location: Bitcoin++
 
 Slides: <https://endothermic.dev/presentations/magical-minisketch>
 
-Rusty Russell on using Minisketch for Lightning gossip: <https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html>
+Rusty Russell on using Minisketch for Lightning gossip: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-December/001741.html>
 
 Minisketch library: <https://github.com/sipa/minisketch>
 

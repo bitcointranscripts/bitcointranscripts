@@ -1,13 +1,13 @@
 ---
 title: Bitcoin Scaling Tradeoffs
 transcript_by: Bryan Bishop
-tags: ['scalability']
-speakers: ['Adam Back']
-categories: ['conference']
+tags:
+  - scalability
+speakers:
+  - Adam Back
 date: 2016-04-05
 media: https://www.youtube.com/watch?v=HEZAlNBJjA0
 ---
-
 Bitcoin scaling tradeoffs with Adam Back (adam3us) at Paralelni Polis
 
 Institute of Cryptoanarchy <http://www.paralelnipolis.cz/>
@@ -72,7 +72,7 @@ Next I wanted to talk about upgrade methods. There are a number of different tec
 
 <https://github.com/bitcoin/bips/blob/master/bip-0099.mediawiki>
 
-But let's have that discussion now anyway. People are probably familiar with soft-forks and hard-forks. There are [some different bitcoin upgrade method variants](http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012173.html) and some have had more recent analysis to talk about. People are still learning new things about bitcoin. There are people who understand code, but the implications of the protocol and the ways that you can extend it and upgrade it, are still new realizations and understandings are being found. That's the topic of ongoing learning even amongst Bitcoin developers and so on.
+But let's have that discussion now anyway. People are probably familiar with soft-forks and hard-forks. There are [some different bitcoin upgrade method variants](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/012173.html) and some have had more recent analysis to talk about. People are still learning new things about bitcoin. There are people who understand code, but the implications of the protocol and the ways that you can extend it and upgrade it, are still new realizations and understandings are being found. That's the topic of ongoing learning even amongst Bitcoin developers and so on.
 
 An example of that is a "firm fork" or "soft hard-fork", which has been talked about recently. It was quite obscure or not widely understood or known before. Let's talk about the tradeoffs. Backwards compatibility meaning that the existing bitcoin wallets that are in use today will they be able to still send transactions after the upgrade? One of the texts is wrong, this is should be a tic not a cross. A soft-fork is backwards compatible because existing wallets can pay to new wallets and new wallets can pay to old wallets. Full hard-forks are not backwards compatible, by design they change the formats to improve something fundamental. All clients, even smartphone clients, even full node clients, have to upgrade after a full hard-fork. A simple hard-fork is a restricted hard-fork that smartphone clients don't have to upgrade with. The firm hard-fork is a kind of hybrid between the two, which we will talk about in a moment.
 
@@ -152,7 +152,7 @@ Another thing is a more extensible script system, which allows for exmaple [Schn
 
 <https://www.youtube.com/watch?v=HEZAlNBJjA0&t=1h>
 
-At the beginning, this is coming full circle back to the requirements in the beginning. These are the requirements that we were talking about, to double the transactions per second for three years in a row or something, and in parallel have Lightning scalability as well. This is a sketch of a sequence of upgrades which should be able to easily achieve that throughput. This is my opinion. Things can be done in a different sequence, or different developers might think that [IBLT](http://diyhpl.us/wiki/transcripts/scalingbitcoin/bitcoin-block-propagation-iblt-rusty-russell/) should happen before Schnorr or in parallel or afterwards or something, these details can get worked out. This is my sketch of what I think is reasonably realistic, using the [scalability roadmap](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html) ([FAQ](https://bitcoin.org/en/bitcoin-core/capacity-increases-faq)) as an outline.
+At the beginning, this is coming full circle back to the requirements in the beginning. These are the requirements that we were talking about, to double the transactions per second for three years in a row or something, and in parallel have Lightning scalability as well. This is a sketch of a sequence of upgrades which should be able to easily achieve that throughput. This is my opinion. Things can be done in a different sequence, or different developers might think that [IBLT](http://diyhpl.us/wiki/transcripts/scalingbitcoin/bitcoin-block-propagation-iblt-rusty-russell/) should happen before Schnorr or in parallel or afterwards or something, these details can get worked out. This is my sketch of what I think is reasonably realistic, using the [scalability roadmap](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-December/011865.html) ([FAQ](https://bitcoin.org/en/bitcoin-core/capacity-increases-faq)) as an outline.
 
 If we start with the segregated witness soft-fork, we can get approximately 2 MB as wallets and companies opt-in, and that's in current late-stage testing. The last testnet before production is running right now, I think segnet4. That should be relatively soon if the ecosystem wants to activate it and opt-in and start adopting it to achieve scale and the other fixes it comes with.
 

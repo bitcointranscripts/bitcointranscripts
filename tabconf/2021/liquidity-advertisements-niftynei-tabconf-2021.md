@@ -1,13 +1,13 @@
 ---
-title: Liquidity Advertisements - niftynei - TABConf 2021
+title: Liquidity Advertisements
 transcript_by: natan-del-prado via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=yXemwW73W5Q
-tags: ["Lightning"]
-speakers: ["Lisa Neigut"]
-categories: ["conference"]
+tags:
+  - lightning
+speakers:
+  - Lisa Neigut
 date: 2021-11-06
 ---
-
 ## Introduction
 
 Again, my name is Lisa Neigut. I work at Blockstream. I'm here today to talk to you about the spec proposal that we've added to c-lightning and hoping to get into more Lightning implementation soon to make it standard. This is about liquidity advertisements. So today I'm going to be talking to you about what a liquidity ad is, how they work, kind of explain how data gets passed around Lightning Network just in general, and maybe get some of you excited about using them.

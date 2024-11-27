@@ -1,13 +1,14 @@
 ---
 title: Onion Routing In Lightning
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning', 'routing']
-speakers: ['Olaoluwa Osuntokun']
+tags:
+  - lightning
+  - routing
+speakers:
+  - Olaoluwa Osuntokun
 date: 2016-10-08
 media: https://www.youtube.com/watch?v=Gzg_u9gHc5Q&t=164s
 ---
-
 <http://lightning.network/>
 
 <https://twitter.com/kanzure/status/784742298089299969>
@@ -88,7 +89,7 @@ A: For the payment network problems, we could say all payments in lightning are 
 
 
 
-onion routing specification <https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-July/000557.html>
+onion routing specification <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2016-July/000557.html>
 
 onion routing protocol for lightning <https://github.com/cdecker/lightning-rfc/blob/master/bolts/onion-protocol.md>
 

@@ -1,10 +1,12 @@
 ---
 title: AssumeUTXO update
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'assumeutxo']
+tags:
+  - bitcoin-core
+  - assumeutxo
 date: 2023-04-27
-speakers: ["James O'Beirne"]
+speakers:
+  - James O'Beirne
 ---
 ## Objetivos
 

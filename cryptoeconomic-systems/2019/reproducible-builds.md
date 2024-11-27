@@ -1,11 +1,11 @@
 ---
 title: Reproducible Builds
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['build systems']
-speakers: ['Carl Dong']
+tags:
+  - build-systems
+speakers:
+  - Carl Dong
 ---
-
 Reproducible builds, binaries and trust
 
 Carl Dong (Chaincode Labs)

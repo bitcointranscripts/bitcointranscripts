@@ -1,9 +1,14 @@
 ---
-title: "Taproot, Schnorr, and the next soft-fork"
+title: Taproot, Schnorr, and the next soft-fork
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['schnorr-signatures', 'taproot', 'soft-fork-activation', 'musig', 'adaptor-signatures']
-speakers: ['Mike Schmidt']
+tags:
+  - schnorr-signatures
+  - taproot
+  - soft-fork-activation
+  - musig
+  - adaptor-signatures
+speakers:
+  - Mike Schmidt
 media: https://www.youtube.com/watch?v=yWEbIkytDJs
 ---
 <https://twitter.com/kanzure/status/1162839000811548672>

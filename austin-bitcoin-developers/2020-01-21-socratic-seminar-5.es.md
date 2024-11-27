@@ -3,10 +3,9 @@ title: Seminario Socrático 5
 date: 2020-01-21
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['reunión']
-tags: ['lightning']
+tags:
+  - lightning
 ---
-
 <https://www.meetup.com/Austin-Bitcoin-Developers/events/267941700/>
 
 <https://bitdevs.org/2019-12-03-socratic-seminar-99>
@@ -83,7 +82,7 @@ Nos perdimos un mes porque tuvimos el taller de taproot el mes pasado. BitDevsNY
 
 ## OP\_CHECKTEMPLATEVERIFY
 
-<https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017494.html>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-November/017494.html>
 
 Este es el trabajo de Jeremy Rubin. La idea es que es una propuesta de pacto para bitcoin. La idea es que el UTXO sólo puede... ((bryan tomó esta)). Este taller va a ser a finales de mes. Dice que va a patrocinar a la gente, así que si estás en esto entonces considéralo. Debido a que puede ser auto-referencial, puedes tener una completitud de turing accidental. La versión inicial tenía este problema. También podría ser utilizado por los intercambios en las transacciones de retiro para prevenir o lista negra de sus futuras transacciones.
 

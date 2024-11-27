@@ -1,9 +1,7 @@
 ---
 title: Archival Science
 transcript_by: Bryan Bishop
-categories: ['workshop']
 ---
-
 Blockchain is a memory transfer sytsem. These memories are moving through space and time. This is something that I recognized. As a type of record, a ledger is a type of record traditionally. There are a number of international standards. One of them is ISO 15489, international records amangemetn. You will see this idea of memory of transactions as evidence. You will see something like "proofs on the blockchain". This is information received and created and maintained. In pursuance of legal obligations or the transaction of business.
 
 As an archival scientist concerned with record keeping, I am fascinated by blockchain.

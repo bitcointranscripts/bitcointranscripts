@@ -1,12 +1,15 @@
 ---
-title: "Building Trustless Bridges"
+title: Building Trustless Bridges
 transcript_by: markon1-a via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=M40yzuv6DNY
-tags: ["scalability", "sidechains", "statechains"]
-speakers: ["John Light"]
-categories: ["conference"]
+tags:
+  - scalability
+  - sidechains
+  - statechains
+speakers:
+  - John Light
 date: 2023-04-29
-summary: "Many mechanisms have been created that enable users to lock BTC on the mainchain, transfer a claim on the BTC in some offchain system, and then later redeem the claim and take ownership of the underlying BTC. Colloquially known as \"bridges\", these mechanisms offer a diverse range of security and usability properties for users to choose from depending on their risk tolerance and cost preferences. This talk will give an overview of the different types of BTC bridges that exist, how they work, and how they can be improved."
+summary: Many mechanisms have been created that enable users to lock BTC on the mainchain, transfer a claim on the BTC in some offchain system, and then later redeem the claim and take ownership of the underlying BTC. Colloquially known as "bridges", these mechanisms offer a diverse range of security and usability properties for users to choose from depending on their risk tolerance and cost preferences. This talk will give an overview of the different types of BTC bridges that exist, how they work, and how they can be improved.
 ---
 Thank you all for coming to my talk.
 As is titled, I'll be talking about how we can build trustless bridges for Bitcoin.

@@ -1,9 +1,11 @@
 ---
-title: "Jute: New Braiding Techniques to Achieve Significant Scaling Gains"
+title: 'Jute: New Braiding Techniques to Achieve Significant Scaling Gains'
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['research', 'mining']
-speakers: ['David Vorick']
+tags:
+  - research
+  - mining
+speakers:
+  - David Vorick
 media: https://www.youtube.com/watch?v=uO-1rQbdZuk&t=4575s
 ---
 <https://twitter.com/kanzure/status/785116246257856512>
@@ -106,7 +108,7 @@ A: ... miners can randomly select transactions and not have conflicts. Your tran
 
 jute <https://gist.github.com/Taek42/3e4f029261b5719e4587fe4972fb904a>
 
-weak blocks <http://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011707.html>
+weak blocks <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2015-November/011707.html>
 
 <http://blog.sia.tech/2016/05/14/towards-a-sub-second-block-size/>
 

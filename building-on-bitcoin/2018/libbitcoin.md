@@ -1,12 +1,11 @@
 ---
 title: Libbitcoin
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Eric Voskuil']
+speakers:
+  - Eric Voskuil
 date: 2018-07-04
 media: https://www.youtube.com/watch?v=QtB4YUneiEE
 ---
-
 <https://twitter.com/kanzure/status/1014483126817521665>
 
 This is me. When I first suggested giving a talk here on libbitcoin, ....  one of the pieces of feedback I got was that bitcoin is libbitcoin, what are you building on bitcoin? libbitcoin is actually more. I will also talk about what it is going on underneath. It's an implementation of bitcoin as well.

@@ -1,10 +1,17 @@
 ---
-title: "OP_VAULT for Bitcoin Covenants Panel"
+title: OP_VAULT for Bitcoin Covenants Panel
 transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://www.youtube.com/watch?v=LC3lZ9dMRoA
-tags: ['covenants', 'vaults', 'fee-management']
-speakers: ['NVK', 'Rijndael', 'Antoine Poinsot', "James O'Beirne", 'Ben Carman']
-categories: ['podcast']
+tags:
+  - covenants
+  - vaults
+  - fee-management
+speakers:
+  - NVK
+  - Rijndael
+  - Antoine Poinsot
+  - James O'Beirne
+  - Ben Carman
 date: 2023-02-11
 ---
 Speaker 0: 00:00:45

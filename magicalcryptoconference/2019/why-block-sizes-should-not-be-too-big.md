@@ -1,12 +1,10 @@
 ---
-title: Why Block Sizes Should Not Be Too Big
+title: Briefly, Why Blocksizes Shouldn't Be Too Big
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Luke Dashjr']
+speakers:
+  - Luke Dashjr
 media: https://youtu.be/JJF5Gnro1GU
 ---
-Briefly, why block sizes shouldn't be too big
-
 slides: <https://luke.dashjr.org/tmp/code/block-sizes-mcc.pdf>
 
 I am luke-jr. I am going to go over why block size shouldn't be too big.

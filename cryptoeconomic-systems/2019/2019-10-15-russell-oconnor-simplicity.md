@@ -1,14 +1,13 @@
 ---
 title: Simplicity
 transcript_by: Michael Folkson
-categories: ['conference']
-tags: [simplicity']
-speakers: ['Russell O’Connor']
+tags:
+  - simplicity
+speakers:
+  - Russell O’Connor
 date: 2019-10-15
 media: https://www.youtube.com/watch?v=Pn5rySgyTQ0
 ---
-Location: CES Summit 2019
-
 Slides: https://drive.google.com/file/d/1FivYGQzOYfM0JGl4SS3VR1UGKsyMn_L5/
 
 Simplicity white paper: https://blockstream.com/simplicity.pdf

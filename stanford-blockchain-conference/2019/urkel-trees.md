@@ -1,10 +1,9 @@
 ---
 title: Urkel Trees
 transcript_by: Bryan Bishop
-categories: ['conference']
-speakers: ['Boyma Fahnbulleh']
+speakers:
+  - Boyma Fahnbulleh
 ---
-
 Urkel trees: An optimized and cryptographically provable key-value store for decentralized naming
 
 Boyma Fahnbulleh (Handshake) (boymanjor)

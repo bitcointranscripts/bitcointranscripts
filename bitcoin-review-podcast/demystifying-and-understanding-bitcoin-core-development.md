@@ -1,10 +1,16 @@
 ---
-title: "Demystifying and Understanding Bitcoin Core Development"
+title: Demystifying and Understanding Bitcoin Core Development
 transcript_by: realdezzy via review.btctranscripts.com
 media: https://www.youtube.com/watch?v=uOhkN4nefpI
-tags: ["bitcoin-core", "developer-tools", "soft-fork-activation"]
-speakers: ["Sjors Provoost", "Mike Schmidt", "James O'Beirne", "Rodolfo Novak"]
-categories: ["podcast"]
+tags:
+  - bitcoin-core
+  - developer-tools
+  - soft-fork-activation
+speakers:
+  - Sjors Provoost
+  - Mike Schmidt
+  - James O'Beirne
+  - Rodolfo Novak
 date: 2023-02-22
 ---
 ## Intro

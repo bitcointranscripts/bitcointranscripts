@@ -1,12 +1,12 @@
 ---
-title: "Overview Of BIPs Necessary For Lightning"
+title: Overview Of BIPs Necessary For Lightning
 transcript_by: Bryan Bishop
-categories: ['conference']
-tags: ['lightning']
-speakers: ['Tadge Dryja']
+tags:
+  - lightning
+speakers:
+  - Tadge Dryja
 media: https://www.youtube.com/watch?v=fst1IK_mrng&t=1h5m50s
 ---
-
 Scalability of Lightning with different BIPs and some back-of-the-envelope calculations.
 
 slides: <https://scalingbitcoin.org/hongkong2015/presentations/DAY2/1_layer2_2_dryja.pdf>
@@ -17,7 +17,7 @@ I think that's a good tradeoff.
 
 But how much can this get us? What do we need in order to get this? Can Lightning work today? Well, check back nextweek. [bip65](https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki) is going to be active pretty soon. bip65 is not sufficient, but it's necessary. We need relative timelocks, and the ability to reliably spend from an unconfirmed transaction, which segregated witness allows. OP\_CLTV is almost active. OP\_CSV ([bip112](https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki)) is maybe soon.
 
-There are levels of lightning that we are prepared to accept. If we never get segregated witness, if we never get checksequenceverify, we can still use lightning, it just wont be as good. Channels can work with only OP\_CLTV (checklocktimeverify), but it's much less efficient ((see [here](http://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000310.html) for why segregated witness is useful for lightning)). This could be ready to go next week.
+There are levels of lightning that we are prepared to accept. If we never get segregated witness, if we never get checksequenceverify, we can still use lightning, it just wont be as good. Channels can work with only OP\_CLTV (checklocktimeverify), but it's much less efficient ((see [here](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/lightning-dev/2015-November/000310.html) for why segregated witness is useful for lightning)). This could be ready to go next week.
 
 With Lightning Network level 1, you need 1.25 MB/user/year. With Lightning Network level 3, you need 3 KB/user/year.
 
@@ -101,6 +101,6 @@ slides re: time and bitcoin <http://lightning.network/lightning-network-presenta
 
 <https://github.com/ElementsProject/lightning>
 
-<https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev>
+<https://gnusha.org/url/https://lists.linuxfoundation.org/mailman/listinfo/lightning-dev>
 
 irc.freenode.net #lightning-dev

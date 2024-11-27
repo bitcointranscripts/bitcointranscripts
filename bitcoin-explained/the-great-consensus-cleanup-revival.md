@@ -4,7 +4,6 @@ transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
 media: https://bitcoinexplainedpodcast.com/@nado/episodes/episode-93-the-great-consensus-cleanup-revival-and-an-update-on-the-tornado-cash-and-samourai-wallet-arrests-5bbxi
 tags: ['wallet', 'consensus-cleanup']
 speakers: ["Sjors Provoost", "Aaron van Wirdum"]
-categories: []
 summary: "In this episode of Bitcoin, Explained, Aaron and Sjors discuss the Great Consensus Cleanup Revival soft fork(s). This proposal would fix some known bugs in the Bitcoin protocol, specifically the timewarp vulnerability, large block validation times, 64 byte transactions and BIP 30 verification."
 episode: 93
 date: 2024-05-29

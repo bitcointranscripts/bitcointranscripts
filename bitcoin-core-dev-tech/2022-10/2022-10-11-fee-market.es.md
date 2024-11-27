@@ -2,10 +2,12 @@
 title: Mercado de tarifas
 transcript_by: Bryan Bishop
 translation_by: Blue Moon
-categories: ['core-dev-tech']
-tags: ['fee-management', 'bitcoin core']
+tags:
+  - fee-management
+  - bitcoin-core
 date: 2022-10-11
-aliases: ['/es/bitcoin-core-dev-tech/2022-10-11-fee-market/']
+aliases:
+  - /es/bitcoin-core-dev-tech/2022-10-11-fee-market/
 ---
 Hay dos momentos en los que hemos tenido tasas sostenidas: a finales de 2017 y a principios de 2021. A finales de 2017 vimos que muchas cosas se rompían porque la gente no había escrito un software para hacer frente a las tasas variables o algo así. No sé si eso fue un problema tan grande en 2021. Lo que sí me preocupa es que esto empiece a ser una cosa. Si no hay un mercado de tarifas variables y se puede poner `1` sat/vbyte durante varios años, entonces funcionará hasta que no funcione. Así que ahora mismo los desarrolladores no tienen que preocuparse por ello. Puede ser realmente complejo con los lightning y el RBF (replace-by-fee). Muchas empresas no hacen un seguimiento de los RBF.
 

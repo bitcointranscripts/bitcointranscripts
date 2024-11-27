@@ -1,12 +1,14 @@
 ---
 title: AssumeUTXO update
-categories: ['core-dev-tech']
-tags: ['bitcoin core', 'assumeutxo']
+tags:
+  - bitcoin-core
+  - assumeutxo
 date: 2023-04-27
-aliases: ['/bitcoin-core-dev-tech/2023-04-27-assumeutxo/']
-speakers: ["James O'Beirne"]
+aliases:
+  - /bitcoin-core-dev-tech/2023-04-27-assumeutxo/
+speakers:
+  - James O'Beirne
 ---
-
 ## Goals
 
 - allow nodes to get a utxo set quickly (1h)

@@ -6,7 +6,6 @@ date: '2024-06-11'
 tags: []
 speakers:
   - 'Christian Decker'
-categories: []
 ---
 ## Introduction and Rusty's Proposal
 

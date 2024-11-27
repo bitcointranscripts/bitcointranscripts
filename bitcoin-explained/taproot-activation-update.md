@@ -1,14 +1,20 @@
 ---
-title: "Taproot Activation Update: Speedy Trial And The LOT=True Client"
+title: 'Taproot Activation Update: Speedy Trial And The LOT=True Client'
 transcript_by: Michael Folkson
-categories: ['podcast']
-tags: ['taproot']
-speakers: ['Sjors Provoost', 'Aaron van Wirdum']
+tags:
+  - taproot
+speakers:
+  - Sjors Provoost
+  - Aaron van Wirdum
 date: 2021-04-23
 episode: 36
 media: https://www.youtube.com/watch?v=SHmEXPvN6t4
-summary: "In this episode of \"The Van Wirdum Sjorsnado\" hosts Aaron van Wirdum and Sjors Provoost discussed the final implementation details of Speedy Trial, the Taproot activation mechanism included in Bitcoin Core 0.21.1. Van Wirdum and Provoost also compared Speedy Trial to the alternative BIP 8 LOT=true activation client.\n\nAfter more than a year of deliberation, the Bitcoin Core project has merged Speedy Trial as the (first) activation mechanism for the Taproot protocol upgrade. Although van Wirdum and Provoost had already covered Taproot, the different possible activation mechanisms and Speedy Trial specifically in previous episodes, in this episode they laid out the final implementation details of Speedy Trial."
-aliases: ['/bitcoin-magazine/2021-04-23-taproot-activation-update']
+summary: |-
+  In this episode of "The Van Wirdum Sjorsnado" hosts Aaron van Wirdum and Sjors Provoost discussed the final implementation details of Speedy Trial, the Taproot activation mechanism included in Bitcoin Core 0.21.1. Van Wirdum and Provoost also compared Speedy Trial to the alternative BIP 8 LOT=true activation client.
+
+  After more than a year of deliberation, the Bitcoin Core project has merged Speedy Trial as the (first) activation mechanism for the Taproot protocol upgrade. Although van Wirdum and Provoost had already covered Taproot, the different possible activation mechanisms and Speedy Trial specifically in previous episodes, in this episode they laid out the final implementation details of Speedy Trial.
+aliases:
+  - /bitcoin-magazine/2021-04-23-taproot-activation-update
 ---
 Previous episode on lockinontimeout (LOT): <https://btctranscripts.com/bitcoin-magazine/2021-02-26-taproot-activation-lockinontimeout/>
 
@@ -123,7 +129,7 @@ AvW: I also want to clarify. We don’t know what it is going to look like yet. 
 
 ## Alternative to Bitcoin Core (Bitcoin Core 0.21.0-based Taproot Client)
 
-Update on Taproot activation releases: <https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
+Update on Taproot activation releases: <https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-April/018790.html>
 
 AvW: Another client was also launched. There is a lot of debate on the name. We are going to call it the LOT=true client.
 

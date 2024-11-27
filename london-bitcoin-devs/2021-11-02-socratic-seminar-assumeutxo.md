@@ -1,9 +1,13 @@
 ---
-title: "Socratic Seminar - AssumeUTXO"
+title: Socratic Seminar - AssumeUTXO
 transcript_by: Michael Folkson
-categories: ['meetup']
-tags: ['assumeUTXO', 'utreexo']
-speakers: ["James O'Beirne", "Calvin Kim", "Tadge Dryja"]
+tags:
+  - assumeutxo
+  - utreexo
+speakers:
+  - James O'Beirne
+  - Calvin Kim
+  - Tadge Dryja
 date: 2021-11-02
 media: https://www.youtube.com/watch?v=JottwT-kEdg
 ---
@@ -249,7 +253,7 @@ MF: There were a couple more that were interesting. I don’t know if James or a
 
 JOB: I haven’t really looked at this in depth.
 
-MF: The other one was the UHS, I don’t know what UHS stands for but that was a [post](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html) from Cory Fields back in 2018.
+MF: The other one was the UHS, I don’t know what UHS stands for but that was a [post](https://gnusha.org/url/https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2018-May/015967.html) from Cory Fields back in 2018.
 
 TD: Unspent hash set I think.
 
