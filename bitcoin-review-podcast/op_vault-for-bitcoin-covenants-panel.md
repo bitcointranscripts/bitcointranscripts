@@ -1,18 +1,18 @@
 ---
-title: OP_VAULT for Bitcoin Covenants Panel
-transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
-media: https://www.youtube.com/watch?v=LC3lZ9dMRoA
+title: 'OP_VAULT for Bitcoin Covenants Panel'
+transcript_by: 'cedveee via review.btctranscripts.com'
+media: 'https://www.youtube.com/watch?v=LC3lZ9dMRoA'
+date: '2023-02-11'
 tags:
-  - covenants
-  - vaults
-  - fee-management
+  - 'covenants'
+  - 'vaults'
+  - 'fee-management'
 speakers:
-  - NVK
-  - Rijndael
-  - Antoine Poinsot
-  - James O'Beirne
-  - Ben Carman
-date: 2023-02-11
+  - 'NVK'
+  - 'Rijndael'
+  - 'Antoine Poinsot'
+  - 'James O''Beirne'
+  - 'Ben Carman'
 ---
 Speaker 0: 00:00:45
 
@@ -126,7 +126,7 @@ But if somebody breaks into my house, steals my hardware wallet and tries to swe
 And maybe that somewhere else is like a crazy five of nine multi-sig, maybe I'm going to sweep it to my Aunt Betsy's wallet.
 Whatever makes sense to me, it's a way to have a holding period on the withdrawal of my coins.
 And during that holding period, I can revoke that action.
-I think that's generally what vaults give you and I'm sure we're going to talk about how you can scale that up to more sophisticated institutional setups like what folks at Revault are doing.
+I think that's generally what vaults give you and I'm sure we're going to talk about how you can scale that up to more sophisticated institutional setups like what folks at Revolut are doing.
 Or you can scale that down to just I'm a, you know, single hodler.
 I've got my stash in cold storage and I just want to have really good security for when I take my money out.
 
@@ -140,17 +140,17 @@ And how does that get triggered?
 
 Speaker 4: 00:08:17
 
-Yeah, so NVK, to get back to the example you brought up earlier, which is this idea of kind of like thresholding some kind of transfer rate, I just want to be clear that OpVault doesn't actually get into specifying things like thresholds because that gets really, really complicated.
-And Antoine can probably talk about that because Revault is a way of basically enabling very fine grained thresholding and spending conditions kind of at a higher layer with multi-sig.
+Yeah, so NVK, to get back to the example you brought up earlier, which is this idea of kind of like thresholding some kind of transfer rate, I just want to be clear that Op Vault doesn't actually get into specifying things like thresholds because that gets really, really complicated.
+And Antoine can probably talk about that because Revolut is a way of basically enabling very fine grained thresholding and spending conditions kind of at a higher layer with multi-sig.
 Now, Re-Vault could probably make use of Op-Vault almost certainly.
-And actually, if you wanted to do the scheme that you were talking about where you're thresholding some transfer amount sort of per block, It's possible you could like tranche up your coins into different OpVault invocations, but I'm not as sure about that.
-But OpVault is a much more kind of simple mechanism than Specimen Exertion.
+And actually, if you wanted to do the scheme that you were talking about where you're thresholding some transfer amount sort of per block, It's possible you could like tranche up your coins into different Op Vault invocations, but I'm not as sure about that.
+But Op Vault is a much more kind of simple mechanism than Specimen Exertion.
 
 Speaker 2: 00:09:15
 
-Yeah, Maybe something that might help explain OpVault is maybe we can spend a few minutes talking about how you would do a system like this today with just multi-sig and ephemeral keys and pre-signed transactions.
+Yeah, Maybe something that might help explain Op Vault is maybe we can spend a few minutes talking about how you would do a system like this today with just multi-sig and ephemeral keys and pre-signed transactions.
 Because all of these use cases that we're talking about, you could actually do today, but there's some real trade-offs in terms of liveliness, availability, and security of funds.
-And I think what James' OpVault proposal does, or NVK, if I can say the C word on your show, what other Covenant proposals enable, is letting you get rid of some of those trade-offs by having consensus rules encoded.
+And I think what James' Op Vault proposal does, or NVK, if I can say the C word on your show, what other Covenant proposals enable, is letting you get rid of some of those trade-offs by having consensus rules encoded.
 
 Speaker 0: 00:09:52
 
@@ -180,19 +180,19 @@ And so after you've sent the coins into those transactions that are controlled b
 The other thing that you can do is kind of like the way that Revolt works, where you have sort of a big array, like a big multi-sig setup.
 And some of those keys are controlled by computers that will just kind of auto sign on the basis of certain conditions.
 And you know so I think in the in the pre-signed transaction ephemeral key thing it's tricky because like you say key deletion is really tough and you have to kind of like, you're locked into all the parameters that you choose when you're creating the vault, like what key it's going to get transferred to, you know, what amount, who's managing the fees, and you have to keep track of all that transaction information.
-And then if you're going to go with the more like sort of flexible revault implementation, you know, there's a big infrastructure burden, or I mean, bigger infrastructure burden in terms of like running all those auto signers and making sure everything's online and available and all that.
+And then if you're going to go with the more like sort of flexible revolut implementation, you know, there's a big infrastructure burden, or I mean, bigger infrastructure burden in terms of like running all those auto signers and making sure everything's online and available and all that.
 
 Speaker 3: 00:11:59
 
 And also the introduction of new assumptions with regards to having pre-signed transactions because if you're running let's say a network monitor, watchtower as it's called in lightning world, that would enforce your spending policies.
-Let's say with Reibolt basically you have a large multisig and you're delegating funds to a lower multisig.
+Let's say with Revolut basically you have a large multisig and you're delegating funds to a lower multisig.
 So the covenant let's say is enforced by the fact that the lower threshold multisig does not have access to the keys of the N of N that is at the root.
-So they are stuck with using an N-Vault transaction that is basically what's enforced on-chain with an open vault in more complex ways because then you have multiple keys and to this N-Vault is presigned to cancel transactions and so the N-Vault basically sends the coins either immediately to a transaction set is clawed back to the initial line of N or after a delay to some funds managers that can then use them.
-In the meantime, a spending policy can be enforced by just broadcasting the canceled transaction.
-And it comes back to your initial question about how these spending policies can be enforced under Blackchain.
+So they are stuck with using an N-Vault transaction that is basically what's enforced on-chain with an open vault in more complex ways because then you have multiple keys and to this N-Vault is preassigned to cancel transactions and so the N-Vault basically sends the coins either immediately to a transaction set is clawed back to the initial line of N or after a delay to some funds managers that can then use them.
+In the meantime, a spending policy can be enforced by just broadcasting the cancelled transaction.
+And it comes back to your initial question about how these spending policies can be enforced under Blockchain.
 The answer is that we don't.
 We just let it delay with the pre-signed transaction or a covenant where we can enforce basically any spending policy whether it is a 2FA, whether it is a limited amount that can be spent per day, a whitelist, anything.
-And what's very limiting with using pre-signed transactions here is that you need to know that all your watchtowers that are enforcing your policies get your pre-signed transactions before you actually sign the unvault transaction, before you actually commit to being able to get the funds out of the vault, you need to know that you are going to have a way to get them back with the cash transactions.
+And what's very limiting with using pre-signed transactions here is that you need to know that all your watchtowers that are enforcing your policies get your pre-signed transactions before you actually sign the un vault transaction, before you actually commit to being able to get the funds out of the vault, you need to know that you are going to have a way to get them back with the cash transactions.
 And usually in Bitcoin we assume, and especially with the SAMs, we assume that the laptop is compromised.
 But basically with pre-signed transactions, you would store them on computers and had servers and you would not be able to, it's stateful.
 So you would not be able to check on your signing device and only have the signing device as a rate of trust that you can always get back your funds.
@@ -239,10 +239,10 @@ Do you want to give us like a quick Brief on that?
 Speaker 4: 00:15:15
 
 Yeah, yeah, yeah, sure.
-So basically in OpVault, you have to make a decision about whether your recovery path is authenticated or not.
+So basically in Op Vault, you have to make a decision about whether your recovery path is authenticated or not.
 And what I mean by that is so when you create the vault, you have to declare like where the funds can be recovered to.
-In OpVault, you can optionally specify an additional script that has to be satisfied to even trigger that recovery.
-And so the reason originally that we needed anchors for fee management in OpVault was if you're doing what I call an unauthenticated recovery, which is basically just like, if someone knows your recovery path, the way that OutVault works is when you create the vault, you hash the recovery path, and then you add that as a parameter.
+In Op Vault, you can optionally specify an additional script that has to be satisfied to even trigger that recovery.
+And so the reason originally that we needed anchors for fee management in Op Vault was if you're doing what I call an unauthenticated recovery, which is basically just like, if someone knows your recovery path, the way that Out Vault works is when you create the vault, you hash the recovery path, and then you add that as a parameter.
 So basically like the ability to recover is correlated with the ability to reveal that pre-image.
 So if you do that you can sweep.
 So it's sort of like you're not to get really technical you're not signing it with Sighash all and so there's some like pinning problems that can happen.
