@@ -13,6 +13,8 @@ speakers:
   - 'Antoine Poinsot'
   - 'James O''Beirne'
   - 'Ben Carman'
+categories:
+  - 'podcast'
 ---
 Speaker 0: 00:00:45
 
