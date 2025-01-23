@@ -1,0 +1,478 @@
+---
+title: Open Source Mining
+speakers:
+  - Kulpreet Singh
+  - Matt Corallo
+  - Skot 9000
+  - Mark Erhart
+tags:
+  - mining
+source_file: https://www.youtube.com/watch?v=iUmacjDTrCU
+media: https://www.youtube.com/watch?v=iUmacjDTrCU
+categories: null
+date: '2024-08-09'
+youtube:
+  description: "Explore the cutting-edge of Bitcoin mining in this insightful panel\
+    \ discussion featuring industry experts. Dive deep into the challenges of mining\
+    \ centralization and discover innovative solutions like Stratum V2, Braid Pool,\
+    \ and open-source hardware projects like Bitx. Learn how these advancements are\
+    \ shaping the future of Bitcoin mining.\n\nJoin us as we uncover the importance\
+    \ of decentralization in mining, the role of mining pools, and the potential of\
+    \ open-source development in the Bitcoin ecosystem. Whether you're a seasoned\
+    \ miner or a Bitcoin enthusiast, this video offers valuable insights into the\
+    \ evolving landscape of cryptocurrency mining.\n\nSpeakers: Kulpreet Singh - Independent,\
+    \ Matt Corallo  - Block / Spiral, Skot 9000 - Bitaxe and Murch   - Chaincode Labs\n\
+    \nLower your time preference and lock-in your Bitcoin 2025 conference tickets\
+    \ today!!! Use promo code BM10 for 10% off your tickets today! \nClick Here: http://b.tc/conference/2025\n\
+    \n#BitcoinMining #Decentralization #StratumV2 #BraidPool #OpenSourceHardware #Bitx\
+    \ #MiningPools #SoloMining #Cryptocurrency #Blockchain #BitcoinDevelopment #MiningCentralization\
+    \ #P2Pool #CKPool #MiningSoftware #BitcoinInfrastructure #ASICMiners #BitcoinNetwork\
+    \ #MiningRewards #BitcoinEcosystem #OpenSourceMining #BitcoinTechnology #CryptoMining\
+    \ #BlockReward #MiningHardware"
+  tags:
+    - bitcoin magazine
+    - Bitcoin News
+    - Bitcoin Price
+    - Bitcoin Journalism
+    - Bitcoin Culture
+    - Bitcoiners
+    - Bitcoin Talk
+    - Cryptocurrency
+    - Stacking Sats
+    - Satoshi
+    - Bitcoin History
+    - Bitcoin mining
+    - decentralization
+    - Stratum V2
+    - Braid Pool
+    - open-source hardware
+    - Bitx
+    - mining pools
+    - solo mining
+    - cryptocurrency
+    - blockchain
+    - Bitcoin development
+    - mining centralization
+    - P2Pool
+    - CK Pool
+    - mining software
+    - Bitcoin infrastructure
+    - ASIC miners
+    - Bitcoin network
+    - mining rewards
+    - Bitcoin ecosystem
+  categories:
+    - Entertainment
+transcript_by: kouloumos via tstbtc v1.0.0 --needs-review
+---
+
+Speaker 0: 00:00:00
+
+We're talking a lot about decentralization pressures on mining.
+And if you want to decentralize mining, it kind of implies that anybody can come along and start running a component of the decentralized ecosystem, right?
+Could it be the shared accounting system or whatever?
+And I think Stratum B2 is making great steps in that there are components that people can start running on their own.
+So as long as you and the only way you can do that essentially is with an open source component.
+Otherwise you're just getting a Oracle license from Oracle, which just doesn't make sense in Bitcoin, right?
+
+Speaker 1: 00:00:38
+
+Yeah, so one of the pressures that definitely has made software more proprietary is that mining is mostly organized into mining pools.
+This happens, of course, because the miners want to have some sort of measurable or plannable income and have plannable costs, so they don't want to do lottery mining.
+It's my understanding that you've been working on Braidpool.
+How does that interface with the idea of a mining pool?
+
+Speaker 0: 00:01:12
+
+The Bittex part?
+Or which part, sorry?
+
+Speaker 1: 00:01:14
+
+Braidpool.
+
+Speaker 0: 00:01:15
+
+No, so what interfaces with Braidpool?
+
+Speaker 1: 00:01:17
+
+My understanding is that Braidpool especially would be something that solves the problem that people that mine on their own get very random income and Do you want to talk a little bit about braid pool?
+
+Speaker 2: 00:01:32
+
+What is braid pool?
+
+Speaker 0: 00:01:34
+
+Okay, So I don't know if people remember what P2P pool was, right?
+So the whole effort was that people can start mining and do share accounting and reward distribution without a centralized service running a proprietary stack.
+So people could run the components of the P2P pool in their home, and there were people who were just running the components of P2P pool and not mining.
+But Whatever combination was happening, it was all voluntary.
+People could run just the miner, people could run the Peter Poole component next to their mining setups, and so on and so forth.
+But it kind of died for a number of reasons, right, which are historical, and we can get into the technical details some other time, but.
+
+Speaker 2: 00:02:17
+
+Bitmain killed it.
+Yeah.
+
+Speaker 0: 00:02:20
+
+Well, thanks Matt.
+But, so what we'd want to do in Braidpool is to leverage the advances in Bitcoin that have happened over the last 10 years, I guess, since P2P will kind of stop being popular, and bring the spirit back of mining being decentralized, where a miner does not have to depend just on a centralized service provider to be able to reduce their variance and get payouts more regularly.
+So that's kind of the ethos and the motivation of Braidpool.
+And interestingly, to solve some of the problems that P2P pool had, we have been forced to make some very complicated decisions, and this is what's being kind of in the churn at the moment.
+We're writing some code, but some parts I think we'll discuss.
+So that's kind of the goal of Great Pool at the moment, and there's some challenges as well.
+
+Speaker 1: 00:03:17
+
+Matt, why is it a big problem if there's only a few mining pools and why is that a dynamic?
+Why do small mining pools have such a hard stand?
+
+Speaker 2: 00:03:30
+
+Yeah, so obviously the point of a mining pool is that it reduces variance.
+If you're solo mining and you're a small miner, you're going to find a block once a year and you're going to go out of business trying to pay your power bill before you get that far.
+So mining pools solve a very important problem in the mining ecosystem.
+They pay miners a consistent amount of money and allow them to bunch of miners to group together and build a pool and get consistent payouts.
+This naturally has a very strong centralizing effect because you have to be a large pool in order to pay consistent payouts.
+You have to be of a certain size, a certain percentage of network hash power, probably at least double digits, before miners get a really consistent payout that they want.
+That's your primary service offering.
+So there can only be 10-something traditional large mining pools.
+This is obviously really bad for Bitcoin.
+The whole point of Bitcoin mining is to be decentralized, to provide many different parties who can mine transactions so that there's no single party that can censor transactions.
+So this mining game is really problematic.
+This pool game, there can only be so many pools, and at the same time the whole point of mining is to be decentralized, and so this centralized pool, this individual large company pool, is very much antithetical to Bitcoin.
+But at the same time, we need it.
+Miners couldn't possibly operate without it.
+This is why things like Braidpool, hopefully reviving the P2P game, are really, really critical.
+But also even in the short term.
+So, Kulpreet mentioned, obviously, Braidpool has a lot of complexity to it.
+P2Pool was itself already fairly complex, but died off because it didn't have answers to some very important problems.
+And Fixing those is doable, but adds even more complexity.
+So Braidpool's a little ways off, and having Braidpool not only exist, but then also have miners be comfortable running it, you know, some of these large public miners getting comfortable running it, is probably a ways off.
+In the short term, though, we can still do better, right?
+So this problem of pools being centralized is all about the Bitcoin side of the pool, right?
+The pool does all the share accounting and money handling and whatever, but the Bitcoin side of it, where they're running a Bitcoin node, selecting transactions, and selecting which block to mine on is what matters for centralization and what matters for Bitcoin.
+It's the mining part of Bitcoin mining.
+And that part doesn't have to be done by the pool.
+There's nothing inherent about this desire to have a central party handling this reward distribution and flattening out the variance be, require that mining be done on the pool.
+And so ShredMV2 is about changing this and having the end miner actually run the full node, select the block, do all of that work, all of the stuff that matters for Bitcoin, but then also still pay the pool and have the centralized pool operate and manage that reward and then split it across all the constituent miners.
+
+Speaker 1: 00:06:35
+
+Scott, you're sort of on the whole other end of this.
+You're basically approaching this as a distribution problem on the hardware side also.
+So you instigated the Bidax project.
+My understanding is that it's a open source hardware miner that you can run at home if you have some electricity left over if you want to spend the time setting it all up.
+How do people go about, how do they get excited about this project and how do they fit into this mining pool world?
+
+Speaker 3: 00:07:15
+
+Well, I guess I'm pretty excited about it already, but if you're at all interested in mining and maybe kind of put off by the high costs or power usage or temperature, noise, all that thing of sort of the large miners, you want to try Bitcoin mining.
+The BitAx is like 150 bucks.
+You can get it, plug it in at your house, forget about it, or you can kind of go down this rabbit hole of learning a ton about mining.
+Because everything about it is open source, From the firmware that actually runs on the device to the hardware and all the software.
+Everything, the whole stack is totally open source.
+So any part of it you have question like how exactly does this work, you can dig into it.
+And That's pretty exciting.
+I think for people that are in the mining world or people that want to be in the mining world That's pretty exciting and I think that that is you know, I If if Satoshi hadn't open-sourced Bitcoin in the beginning like that was one of the like fundamental concepts And I'm pretty sure if it wasn't open source, we wouldn't all be here.
+Bitcoin seems very unlikely to have succeeded had it not been open source to draw in all these other developers to take it and bring it where it is today.
+If there was a company backing it, it was proprietary, it just, it doesn't seem likely.
+So I want to bring that kind of development energy and excitement to Bitcoin mining, where anyone can just start screwing around with it and see what they come up with.
+And through the BidX project, I think a lot of people have.
+We have a forum called the Open Source Miners United that has a ton of members.
+And people are just screwing around.
+Like, they're just building things.
+They're just running them.
+They're burning them up.
+They're exploding them.
+But this is how we accelerate development in this space and do it in a decentralized way.
+I'm talking about the hardware and firmware side of things.
+
+Speaker 1: 00:09:15
+
+I heard that this week something very exciting happened and a bit axe found a block for the first time Oh my god,
+
+Speaker 3: 00:09:23
+
+that's more details I Cannot believe it happened.
+I was at the day before yesterday.
+I I was sitting there someone just tapped me on the shoulder and showed me a tweet and I was like, no way.
+We have single digit peta hashes worth of BidAx hash rate out there.
+So it should be years before a BidAx would solve a block.
+But it happened.
+A solo miner on CKpool solved a block on a BidX, right?
+Getting that full block reward for themselves.
+And so it's incredibly exciting.
+It proves that it can work if you're extremely lucky, but it also kind of verified the whole tech stack that it can indeed submit a share of the highest difficulty.
+
+Speaker 2: 00:10:07
+
+Software doesn't have bugs.
+
+Speaker 3: 00:10:08
+
+Yes, ship it.
+Actually, it was kind of cool.
+The network difficulty is like 82 trillion, And this obviously doesn't really matter, but apparently the share that was found was 300 trillion difficulties.
+So not only that they solved it, but they knocked it out of the park.
+So that's really exciting and I hope that that just gets the message out there that like, You know, it's kind of a novelty, but it's a real miner.
+
+Speaker 1: 00:10:35
+
+Maybe we can very briefly appreciate how weird it is that we actually know who mined every single block.
+Because there's not really a reason that blocks are labeled by miners.
+I think originally nobody had an idea who mined which block.
+So in a way, of course, that's also part of the dynamic with the mining pools, that the mining pool participants want to know how much money a mining pool made and whether they got paid fair.
+Anyone got thoughts on how we can get away from where anyone knows what pool mined a block or...
+
+Speaker 2: 00:11:15
+
+First of all, how do we know that a BidAx mined the block?
+This is actually kind of...
+The guy who ran it just announced it?
+
+Speaker 3: 00:11:22
+
+No one that I know of has come forward and claimed that they did it.
+So the cool thing is that we don't actually know for 100% sure that it was a BidAx. We would have no way of knowing.
+The only indication that we got was this is on CKpool and someone found it but CKpool you can see the stats for any worker.
+
+Speaker 1: 00:11:43
+
+Could you maybe say what CKpool is?
+
+Speaker 3: 00:11:45
+
+Oh sorry yeah good point.
+CKpool is a very long-running solo mining pool, which is a strange concept, but basically they're just running the stratum server for you.
+In fact, I think a number of people would be mad at me for saying solo mining pool because that's like an oxymoron or something.
+But they run the stratum for you.
+You can connect to it.
+You can get templates from them.
+So you're not making your own templates.
+Kind of a bummer.
+But you get templates from them.
+It's super easy to connect and start solar mining.
+And for that service, they take 2% of your potential block award.
+What were we talking about before that?
+
+Speaker 2: 00:12:20
+
+So we learned that it's a BidAx because somebody was looking at the stats on that user who found it?
+
+Speaker 3: 00:12:26
+
+Someone was looking at the stats on that user and they had, you know, the way it works for solar mining pools is you put in your wallet address that you want to mine to and then like dot and a worker name.
+The worker name was Bidax.
+It's kind of a, it's a clue.
+Obviously you could put that for any miner.
+The hash rate was also a half terahash which is the hash rate of a single BitAx of our previous generation.
+So another clue.
+
+Speaker 0: 00:12:50
+
+I wonder if a next step for a BitAx kind of device is to instead talk to a Stratum server, if they could directly talk to a Bitcoin D server and the template, you know, all that other stuff is happening directly on BidX.
+I wonder if that is even feasible.
+I don't know if you've thought, given it a thought at all or...
+
+Speaker 3: 00:13:12
+
+I mean, the way the BidX works right now is It's just a vanilla Stratum client, so you can connect to anything.
+And that's the lowest common denominator, so we can connect to anything.
+I think that would be cool to do, so it's just, you don't have to install any additional software.
+As far as I understand it, there's some problems with BitcoinD, in that you need to get block template and...
+
+Speaker 2: 00:13:35
+
+Yeah, the Bitcoin D interface for getting block templates is horrendously inefficient for this kind of thing.
+It gives you the whole, not only all the transactions, but you know, full transaction serialized out in hex.
+
+Speaker 1: 00:13:47
+
+So you get the whole block data every time you want to download it which would and probably be a little problematic for and I think we could also mention here that I think stratum the stratum protocol is not specified anywhere there's no full write-up of the original stratum protocol I think there was a bit number reserved for it but it was never written up.
+So actually with Stratum v2 which is way better documented, it's being developed.
+I think there's clients out there now that are done and you can just get your Stratum V2 software and the protocol is fully specified.
+So that's also a big step up in just, well, mining infrastructure that is code in this case.
+
+Speaker 3: 00:14:30
+
+It's kind of cool with, I mean, how Stratum V1 came about, right?
+It's permissionless, decentralized, Wild West.
+Someone's like, I'm going to just do this, and they just did it.
+And that's why we don't have a spec.
+
+Speaker 2: 00:14:40
+
+And now anyone who wants to reimplement it has to guess and fiddle with it for hours before they get it to work because no one knows how this thing works.
+No one will write it down.
+
+Speaker 3: 00:14:49
+
+Yes, every server and client is a special snowflake.
+It's a real treat.
+
+Speaker 2: 00:14:56
+
+Yeah, so yeah, I mean, I think hopefully one day, Bitcoin Core starts speaking stratum v2 and starts offering some parts of that spec and then we can have Things like bid axe connect directly to it and we can really make that solo mining world way easier for people to do if they really want to because there are a lot of people who want to Heat their pools with extra energy with you know an s9 or run a bid axe in their closet because they think it's cool And they want to contribute to Bitcoin and that's awesome and like we should encourage that sure they might only find a block once Every year or once every four years or whatever But we should encourage that if one block manned by a random person in their closet once every four years is better than none.
+
+Speaker 3: 00:15:40
+
+It sets the stage, the precedent for it's open, you can do this, it's cool to screw around with it, and who knows what the next iterative project could be.
+
+Speaker 0: 00:15:50
+
+I also kind of weirdly see BitAx as that last line of defense, if you might call it.
+Devices like BitAx, right?
+Like large mining farms can be easily spotted.
+Even if you're running a few A6 machines out in Europe where I live, I think the power consumption is much higher than a normal household.
+So these kind of small devices are good old CPUs. Are kind of the last line of defense.
+So we need to keep this alive.
+So I really admire the project that you're doing there, man.
+
+Speaker 2: 00:16:20
+
+Yeah, we need to keep it alive, and we need to keep it open so that people can really, truly own what they're doing.
+If you're running proprietary software, I mean, I'm going to sound like Stallman up here, but if you're running proprietary software, you don't own the device.
+You don't own what the thing is doing, you don't control what it's doing, and you can't make it do whatever you want.
+And so as long as part of that stack is closed source and proprietary, you don't own it.
+
+Speaker 0: 00:16:45
+
+If it's your compute, you do it yourself.
+
+Speaker 1: 00:16:48
+
+So we're on the mining stage here, and presumably there's some people here that work at mining companies.
+If you had a moment to tell people something that they absolutely should know about mining and should talk to you more about.
+Is there something that you would like to bring up now?
+
+Speaker 3: 00:17:08
+
+I think you should find a way to open source at least a part of your product offering.
+And I think you can do that without sacrificing profits.
+Being open source is not a vow of poverty.
+We've seen some very successful open source projects in the past.
+I'm thinking Linux.
+Bitcoin.
+Bitcoin.
+You know, Just to name a couple small ones.
+It creates exponential growth.
+There is going to be an ecosystem that springs up around your product.
+People are gonna come in, passionate people are gonna come in and they're gonna work on essentially your product for free.
+And once that sort of, that momentum starts, standards start to come about based on this work.
+So now, your product is kind of the center of what could be a standard.
+And so the whole ecosystem comes up around it based on those standards.
+And it can be incredibly successful.
+So I think, obviously, we're very early in this whole mining hardware train of progress.
+But doing it open source is just going to make it happen better and faster.
+It starts slow, but it will be for the best.
+
+Speaker 2: 00:18:25
+
+To again quote someone I often disagree with, go read Mark Zuckerberg's recent post when they announced the Lama open AI model.
+He wrote a long post, I guess it was last week or maybe even this week, talking about why they're doing it open, how much value they've gotten out of open sourcing their AI models and having an entire community build around their tooling and their software and contribute ideas that they've been able to take back and incorporate in the next generation of their models that's helped them get a ton of free development resources.
+But to answer the question, yeah, I mean, look, if you're in the mining world, I get it.
+There's a lot of competition.
+There's a lot of stress on your business.
+And taking the time to do things like open sourcing, taking the time to do things like, you know, experimenting with Stratum V2, or trying to give in or your pool building out Stratum V2 logic, taking the time to eventually when when Braidpool ships, you know, experiment and try stuff like that, contribute, add feedback, and eventually use it is a big ask and is something you often don't have time for but it's also what matters to Bitcoin.
+Ultimately, Bitcoin will not succeed as long as we have all these centralized, closed, proprietary mining stack across the entire ecosystem.
+This is not a sustainable Bitcoin.
+This is something that we've gotten away with for now, but we've also become complacent about because it's the world we have.
+And so we need to start making progress on these fronts.
+We need to start opening up that stack, we need to start decentralizing that stack, and that requires everyone in that world to just spend a little bit of time doing it.
+Stratum, I didn't work on it, but the Stratum reference implementation, the Stratum V2 implementation is now in beta, so people should be playing with it, providing feedback, reporting bugs, hopefully contributing.
+And we have to get these things off zero and we have to start making progress so that we set ourselves up for a successful Bitcoin in a decade because that's not what we're doing right now.
+
+Speaker 0: 00:20:30
+
+That's a lot of optimism from these two guys here, but I've got a bit of pessimism.
+It's like, how do you know if you're running a mining operation and you're not a large miner, how do you know that you've been paid fairly for the work that you've submitted to the pool?
+It's very difficult to know that.
+Some pools are doing it and we applaud them, but a lot of other pools are not.
+So you basically just blindly sending your work over and then getting some reward which you can't verify if it's correct or not, which is a bit nuts.
+
+Speaker 1: 00:21:02
+
+I think I would like to reference something that came up in a panel yesterday that I attended and that is miners and mining industry is such a big shareholder in our ecosystem and it often feels that they That there is little participation in the broader discussions of the Bitcoin ecosystem It felt to me often that miners treated more as an operations research problem money in electricity in space and hardware in and profit out and some projections but we'd also love to have more conversations with you about what matters to you from the open source development side.
+Do you have opinions on development or soft fork proposals or stuff that ultimately will affect you or you'll perhaps be helping to signal activation readiness for?
+So if you all want to be more in this conversation, for example the Bitcoin Uptech group has for many years tried to sort of be a bridge between the open source development scene and the industry.
+I think it works to some degree with exchanges and brokerages and so on.
+But also, I'd like to invite you miners to come join this conversation.
+I think from our side, I help contribute to the Uptech newsletter every week.
+We write about Bitcoin development.
+But we'd love to have more mining-relevant content if we can find people that want to have that conversation with us.
+Sorry, I guess...
+Did you all have closing words?
+
+Speaker 3: 00:22:57
+
+Okay.
+Quick.
+
+Speaker 2: 00:22:58
+
+We've got a minute.
+We've got a minute after that stop.
+
+Speaker 3: 00:23:01
+
+Oh, OK.
+All right.
+
+Speaker 2: 00:23:03
+
+We're good.
+
+Speaker 3: 00:23:03
+
+Yeah, we're good.
+This is great.
+Yeah, I think it can be, if you're a company that's making hardware, it can be really difficult and overwhelming.
+And maybe you don't have the people to sort of dive into the technical details of Bitcoin development, right?
+It's really, really confusing.
+And it is interesting.
+You go to mining conferences and then you go to Bitcoin conferences and there isn't a big mix between the developers on both sides.
+It's kind of like they just see each other as off doing their own thing.
+Mining is an incredibly important part of Bitcoin.
+And so it would be cool to see those factions come together.
+I think open sourcing part of your products is that gesture of we want to be a part of Bitcoin.
+And that will help, like, unite the factions.
+And I think it's going to be better.
+Like, maybe at first, you know, you're going to open source it and someone's just going to, like, rip it off and take, you know, take what you wrote and do something, a competitor is going to do something.
+That happens, but I think in the long run, they're going to fade away and the progress that you're going to be making is so much faster and growing so much faster that you don't even have to worry about that.
+
+Speaker 2: 00:24:18
+
+Yeah, I don't think I mean, yeah, yes.
+Yes, yes, yes.
+All right.
+And also to echo what Mark said, get involved in OpTec.
+It's an easy way to follow what's going on in the Bitcoin development scene, and they do a great job there too.
+
+Speaker 0: 00:24:34
+
+And Cypherpunks write code and share their code.
+That's it.
+
+Speaker 1: 00:24:39
+
+Yeah.
+
+Speaker 3: 00:24:39
+
+Yeah.
+And hardware too.
+
+Speaker 1: 00:24:40
+
+Thank you for taking your time here.
+
+Speaker 4: 00:25:05
+
+Next year, we are bringing the Bitcoin conference to the American West, Las Vegas.
+The brightest minds in the world will converge to deliver Bitcoin history.
+Buy your tickets now at b.tc slash conference slash 2025 You
