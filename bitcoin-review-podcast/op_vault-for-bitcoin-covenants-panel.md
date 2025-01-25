@@ -301,7 +301,7 @@ Because multisig is a shitcoin.
 So, okay.
 So, you know, like we have a way now to, to handle the fees.
 Maybe it's, there is an `OP_VAULT` for the `OP_VAULT`.
-Like maybe there's a simpler op vault that you built that just handles fees in case you need more fees, right?
+Like maybe there's a simpler `OP_VAULT` that you built that just handles fees in case you need more fees, right?
 That's like your fee wallet.
 
 Rijndael: 00:19:58
