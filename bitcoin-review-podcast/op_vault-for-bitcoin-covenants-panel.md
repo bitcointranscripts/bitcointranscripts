@@ -2,7 +2,7 @@
 title: 'OP_VAULT for Bitcoin Covenants Panel'
 transcript_by: 'kunebtc via review.btctranscripts.com'
 media: 'https://www.youtube.com/watch?v=LC3lZ9dMRoA'
-date: '2023-02-11'
+date: '2023-02-01'
 tags:
   - 'covenants'
   - 'vaults'
