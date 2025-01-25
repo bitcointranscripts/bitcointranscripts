@@ -39,7 +39,7 @@ We have Ben Carman, return guest.
 Ben: 00:01:26
 
 Hey, thanks for having me on again.
-I'm guessing I'm here because I posted to the mailing list about how you could do like the CTV optimization with, for DLCs you can optimize them with covenants and I showed how you could do it with the `OP_VAULTs`s as well.
+I'm guessing I'm here because I posted to the mailing list about how you could do like the CTV optimization with, for DLCs you can optimize them with covenants and I showed how you could do it with the `OP_VAULT`s as well.
 
 NVK: 00:01:42
 
