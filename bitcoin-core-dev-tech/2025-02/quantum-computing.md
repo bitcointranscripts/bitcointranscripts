@@ -18,7 +18,7 @@ how do we know that any of these are resistant? once we have QC its too late EC
 might even be safe, just because you have QC doesn't mean you can get the actual
 information out, it might still be exponential
 
-concern about hash mining, double qubits doesnt double hashrate "progress
+concern about hash mining, double qubits doesn't double hashrate "progress
 freenes" - hit a probablity field instead of just try and fail changes the
 incentives at the tip, ie block witholding
 

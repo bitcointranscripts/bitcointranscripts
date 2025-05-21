@@ -84,7 +84,7 @@ tail of 20 years of bugs, so really uncommon to implement this yourself.
 
 Big libs are libevent, libev, and libuv, and most projects use one of those,
 presenter is of the opinion that attempting to reuse our own socket code is a
-bad idea because it's not great code and it's tailoured to all of our old use
+bad idea because it's not great code and it's tailored to all of our old use
 cases and not necessarily our future ones, it would be ideal to replace with one
 of the implementations that's maintained and well-implemented.
 

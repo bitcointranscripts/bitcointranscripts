@@ -14,8 +14,8 @@ Yes, but the projects infra setup and ongoing work is essentially subsidized for
 the wallet and GUI now. So a separation would simply bring that to light and
 alleviate non GUI/wallet devs.
 
-Discussion of wallet / GUI funding: If there isnt funding for wallet or GUI,
-doesnt that say something? But there is funding, it just goes mostly into
+Discussion of wallet / GUI funding: If there isn't funding for wallet or GUI,
+doesn't that say something? But there is funding, it just goes mostly into
 non-Core wallets GUI has funding but not sure what tangible other show for it? A
 separation could allow for more contributors, faster iterations, showing more
 progress to garner more funding

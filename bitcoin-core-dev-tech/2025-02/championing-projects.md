@@ -27,7 +27,7 @@ How to lead them?
   implementation work yet.
 - For multiprocess, people flew to meet in person. Had discussions there, was
   useful.
-- Having a goal is important. Leadering is repeating the goal over and over
+- Having a goal is important. Leadership is repeating the goal over and over
   again.
 - For multiprocess, it lingered for years. But it seems to have changed, Sv2
   stuff is recent.

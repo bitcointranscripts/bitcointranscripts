@@ -65,7 +65,7 @@ Idea is to speed up IBD by giving "hints" to whoever does it
   parallelizable
 - Maybe similar to XYZ idea where you have utxo set where it just stores the
   hash of utxo, at spending time you change the block format to express which
-  utxo you are spending. you cant do script validation statically. disentangle
+  utxo you are spending. you can't do script validation statically. disentangle
   the utxo creation and removal. if you process things out of order you can
   store the hash of the utxo being spent as a spent-but-not-created-yet. utxo
   set contains both created but unspent output hashes but also spent but not yet

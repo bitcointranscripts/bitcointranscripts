@@ -44,7 +44,7 @@ date: 2025-02-26
 - the best experiences ive had are when I've had the confidence to be wrong
 - often times i realise this in reflection, wish I would speak up sooner and
   push through the fear of being wrong in public
-- understanding being wrong isnt necessarily a bad thing, and being wrong sooner
+- understanding being wrong isn't necessarily a bad thing, and being wrong sooner
   is better
 - we should document better bad ideas
 - being comfortable being wrong is a benefit to the person and benefit to

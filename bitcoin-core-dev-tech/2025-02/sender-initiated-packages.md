@@ -9,7 +9,7 @@ date: 2025-02-26
 * Goal: Make 1p1c more reliable
     * In worst case currently is ability to protect 24 packages
     * TRUC only? We know its 1p1c and also ~small child
-* The whole idea is that sender initiated doesnt relay on the orphanage
+* The whole idea is that sender initiated doesn't relay on the orphanage
     * “If we can avoid the orphanage, we should. If we can avoid it we have
       better propagation properties”
     * Orphanage is less load bearing, less churn

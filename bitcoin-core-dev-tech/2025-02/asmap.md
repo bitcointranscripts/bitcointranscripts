@@ -25,7 +25,7 @@ How often should you refresh it?
 - /16 is slighly better than random
 - there is a healthcheck in the debug logs
 
-in the asmap-data repo we do a collarborative lauch multiple people join in does
+in the asmap-data repo we do a collaborative launch multiple people join in does
 not make it fully deterministic, but getting close to very good results there is
 a tool to diff the results, but hard part is to interpret the diff
 
