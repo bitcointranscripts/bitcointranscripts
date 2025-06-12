@@ -17,7 +17,7 @@ TxOrphanage has 2 goals:
 Today, we perform well on 1) and poorly on 2). The current TxOrphanage efforts
 aim to improve 2) while keeping 1).
 
-### Terminology
+## Terminology
 
 - `count limit`: number of orphans
 - `announcement limit`: # of unique {orphan, peer} pairs
@@ -51,7 +51,7 @@ Question:
 Yes, using weight as a proxy was a shortcut to get it implemented faster (in
 v29), but this may be reconsidered.
 
-### Limits
+## Limits
 
 **Constant limits** (i.e. independent of number of peers):
 
@@ -79,7 +79,7 @@ Terminology: per-peer limits aren't really limits in the strict sense, because
 peers can exceed their per-peer allowance. The "limits" only apply when the
 global limits are reached.
 
-### Pathological case
+## Pathological case
 
 If all your peers are attackers, and all send you the same transaction, each in
 a different order, so you're just under the global limits. Then one honest peer

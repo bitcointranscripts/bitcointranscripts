@@ -5,7 +5,7 @@ tags:
 date: 2025-02-28
 ---
 
-What are the goals of the review club?
+## What are the goals of the review club?
 
 1) Helping newcomers learn, beyond the conceptual/protocol knowledge
 2) We all have PRs that we all want to review, and having people to bounce

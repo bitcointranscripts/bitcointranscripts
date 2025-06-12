@@ -8,7 +8,7 @@ media: https://antoinep.com/presentations/coredev_2025_scope.pdf
 
 _Note: this summary was drafted after the event on 2025-03-06_
 
-Duplication of project infrastructure?
+## Duplication of project infrastructure?
 
 Yes, but the projects infra setup and ongoing work is essentially subsidized for
 the wallet and GUI now. So a separation would simply bring that to light and

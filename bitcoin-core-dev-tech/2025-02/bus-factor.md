@@ -19,7 +19,7 @@ Some people look at all things.
 
 Out of band with OGs.
 
-Examples
+## Examples
   
 - Header sync (?)
   - New steps added recently, but nobody has big picture.
@@ -36,7 +36,7 @@ When people disappear those areas of code and functionality freeze.
 
 Competitor client, which might be good, unless it sneaks in an evil softfork.
 
-Solutions:
+## Solutions:
 
 - backup meta data
 - education

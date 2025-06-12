@@ -6,7 +6,7 @@ tags:
 date: 2025-02-25
 ---
 
-There were two sessions about IBD, these notes arefrom the first of the two
+There were two sessions about IBD, these notes are from the first of the two
 sessions.
 
 Summary of what the facilitator presented:

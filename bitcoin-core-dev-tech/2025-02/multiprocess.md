@@ -7,7 +7,7 @@ date: 2025-02-27
 
 Think of multiprocess in terms of the features it provides.
 
-### Multiprocess Features
+## Multiprocess Features
 
 The first main feature is modularization. Having a separate binary for gui,
 wallet, node, that prevent lockups between processes. This also allows to e.g.
@@ -31,7 +31,7 @@ that, by providing a subclass for each of those interfaces. When you want to
 access an interface in a different process, you just use the subclass instead of
 the usual interface.
 
-### IPC Features
+## IPC Features
 
 Cap'n Proto is in some ways more helpful than gRPC would be because it can track
 objects with state. E.g. mining interface can return a reference to a
@@ -42,7 +42,7 @@ the sv2 client holds a reference to it, behaving a bit like a shared_ptr.
 CaPnP supports multiple languages, so we can use different languages for
 different processes.
 
-### Libmultiprocess
+## Libmultiprocess
 
 What exactly does libmultiprocess add over CaPnP? It does a lot of different
 things:

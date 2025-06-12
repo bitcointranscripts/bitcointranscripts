@@ -6,7 +6,7 @@ tags:
 date: 2025-02-27
 ---
 
-### `BlockManager`, `Chainstate`, `ChainstateManager`
+## `BlockManager`, `Chainstate`, `ChainstateManager`
 
 `Chainstate` keeps their own `CChain` class for keeping track of their chain of
 blocks, which is basically just BlockIndex entries, and manages the UTXO set.
@@ -30,7 +30,7 @@ is going to be a lot more work and delay the kernel API. Part of the difficulty
 comes from pruning functionality, which we also could not include in the kernel
 initially and then expose as an API feature later on.
 
-### Parallel block reading
+## Parallel block reading
 
 Kernel library cannot currently read blocks while bitcoind is running, because
 LevelDB can only be used by a single process.
@@ -55,7 +55,7 @@ Question:
 
 -> No idea
 
-### Directory locks
+## Directory locks
 
 If kernel and bitcoind both run on the same blockdirectory, you want to present
 the user with a nice indication that another process is already using the
@@ -76,7 +76,7 @@ still need to make sure that e.g. no 2 bitcoind instances are running on the
 same directory, so we'll end up needing a directory-level application lock (as
 is currently the case) in addition to the file-level locks.
 
-### Block headers
+## Block headers
 
 One of the key things left out of the current API is handling block headers.
 Should we expand the scope of the initial API and add it in? It seems to be
@@ -92,7 +92,7 @@ we expect to not change too often.
 Conclusion seems to be that: because there are no conflicts, it can easily be
 added in later, so there is no point increasin the PR size now.
 
-### Ideas
+## Ideas
 
 Maybe a lot of the current C API code can be automatically generated (e.g.
 through SWIG) by annotating existing code. There were also concerns raised about
@@ -102,7 +102,7 @@ gets too big for non-WG contributors to review it.
 Signal seems to autogenerate a huge C library, perhaps that's relevant to us?
 https://github.com/signalapp/libsignal/blob/main/swift/Sources/SignalFfi/signal_ffi.h
 
-### Shipping
+## Shipping
 
 What is the view for shipping kernel? Not sure yet, perhaps the first version
 could get merged before v30, but whether or not we'll ship the compiled library

@@ -28,7 +28,7 @@ flamegraphs to measure the issue....
 
 The nice thing about libevent is how cross platform the api's it supports.
 
-## Sumamry of multi-plexing io
+## Summary of multi-plexing io
 
 Generally for sockets and files you can do async or sync, e.g. tcp you are
 sending a bunch of data, like 1gb 64k at tim, every call to write is blocking,
@@ -91,7 +91,7 @@ of the implementations that's maintained and well-implemented.
 sockman is very opinionated, operated on these old consturcts (select,
 single-thread etc)
 
-Questions
+### Questions
 
 1. How to replace libevent for our httpserver,
     - One participant points out that http server has two parts:

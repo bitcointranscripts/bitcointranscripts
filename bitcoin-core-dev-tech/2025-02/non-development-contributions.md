@@ -5,7 +5,7 @@ tags:
 date: 2025-02-26
 ---
 
-Education / Outreach
+## Education / Outreach
 
 * Optech
 * Conference
@@ -13,19 +13,19 @@ Education / Outreach
 * Fundraising
 * Bitdevs
 
-User feedback
+## User feedback
 
 * Reproducing issues
 * Priorities?
 
-Security
+## Security
 
 * Dep auditing
 * CVE disclosure
 * Mailing list
 * Pen testing
 
-Dev Tooling
+## Dev Tooling
 
 * CI
 * Signet
@@ -34,12 +34,12 @@ Dev Tooling
 * Corecheck,dev
 * Bitcoin dev wiki
 
-Mentoring
+## Mentoring
 
 * Developer hubs
 * Review clubs
 
-Release Process
+## Release Process
 
 * Testing guide
 * Building binaries
@@ -47,20 +47,20 @@ Release Process
 * translations
 * Packaging for distro
 
-Monitoring
+## Monitoring
 
 * b10c stuff etc
 
-Standardization
+## Standardization
 
 * BIPs
 * Bolts etc
 
-Events
+## Events
 
 * Coredev
 
-Online communication channels
+## Online communication channels
 
 * Mailing list
 * Delving
@@ -70,22 +70,22 @@ Online communication channels
 * bitcoincore.org
 * Backups of stuff
 
-Dev Infrastructure
+## Dev Infrastructure
 
 * Fuzzing
 * Devops stuff
 * Dns seeds
 
-User feedback
+## User feedback
 
 * Outward
 * Talk to miners? Exchanges? Sruveys
 
-Research
+## Research
 
 * BRW
 
-Janitor work
+## Janitor work
 
 Reproducing
 

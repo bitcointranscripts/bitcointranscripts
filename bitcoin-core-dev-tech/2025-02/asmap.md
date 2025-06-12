@@ -5,18 +5,18 @@ date: 2025-02-28
 media: https://gist.github.com/fjahr/1cc55d7a5a2f9cf2ac09978ceea2ee5f
 ---
 
-Scribe 1:
+## Scribe 1:
 
 PR 23792: is the only PR that's left for ASMAP (needs cmake changes first) -
 hope to get this into v30.0
 
-How does ASMAP ends up in a Asmap file?
+### How does ASMAP ends up in a Asmap file?
 
 - Kartograph tool, based on rpki-client-nix ()
 - use tool from bitcoin Core encode and compress it
 - multiple people will run the Kartograph tool
 
-How often should you refresh it?
+### How often should you refresh it?
 
 - using an old one should be better than /16
 - but using a fresh asmap is better
@@ -37,7 +37,7 @@ into this. This would make it smaller. using option `-f`
 
 Urraca joined and is helping out. Speedups and testcoverage.
 
-Why is the PR still open, why is this not in the upcoming v29 release?
+### Why is the PR still open, why is this not in the upcoming v29 release?
 
 - Still open questions?
 - Might need more research and data
@@ -46,9 +46,9 @@ Why is the PR still open, why is this not in the upcoming v29 release?
 - concern about decay. How can you show this?
 - tool that compares the asmap health scores?
 
-Communication on IRC channel
+### Communication on IRC channel
 
-Virtus concerns open?
+### Virtus concerns open?
 
 - can be addresses before we turn it on by default
 - "this might have a big impact on the network": yes this the goal
@@ -56,12 +56,12 @@ Virtus concerns open?
   this might help
 - for block download you can connect all peers, and do it differently after IBD
 
-Are people fine with the distribution method?
+### Are people fine with the distribution method?
 
 - we discussed the a couple of different approaches
 - the current on the the favored approach. but needs more review
 
-Scribe 2:
+## Scribe 2:
 
 - New contributor to asmap tooling: Julien Urraca
 - asmap Github org

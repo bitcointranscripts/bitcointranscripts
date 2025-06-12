@@ -5,7 +5,7 @@ tags:
 date: 2025-02-26
 ---
 
-How to lead them?
+## How to lead them?
 
 - What makes people shy away from the topic? It shouldn't be about command, it
   should be more about setting goals, provide space for people to contribute.

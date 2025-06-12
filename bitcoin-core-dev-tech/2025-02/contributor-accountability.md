@@ -5,7 +5,7 @@ tags:
 date: 2025-02-26
 ---
 
-What is accountability?
+## What is accountability?
 
 * Do what you say you're going to do
 * Accountable to who funds you
@@ -30,7 +30,7 @@ this is as simple as the leader of the working group.
 But having some sort of title doesn't work without some agreement on what is
 required of such a role. So coming up with a list could be helpful.
 
-Accountability list:
+## Accountability list:
 
 * Setting goals and scope
 * What is in the release
@@ -41,7 +41,7 @@ Accountability list:
 Accountability doesn't mean you have to be the person executing on all the work.
 You can find other resources, ask for help, etc.
 
-Enforcement?:
+## Enforcement?:
 
 * The title itself helps socially enforce accountability
 * But in open source it’s hard to call out lack of accountability
