@@ -1,0 +1,118 @@
+name: Build Transcripts Preview Site
+
+on:
+  pull_request:
+    paths:
+      - '**' 
+  workflow_dispatch:
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Checkout for Bitcoin Transcripts
+        uses: actions/checkout@v4
+        with:
+          path: transcripts
+        
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Clone Registry Repo
+        run: git clone https://github.com/bitcointranscripts/registry.git
+
+      - name: Replace public/bitcoin-transcript in Registry with contents of Bitcoin Transcripts
+        working-directory: transcripts
+        run: |
+          rm -rf ../registry/public/bitcoin-transcript
+          mkdir -p ../registry/public/bitcoin-transcript
+          cp -r * ../registry/public/bitcoin-transcript/
+
+      - name: Install dependencies
+        working-directory: registry
+        run: |
+          npm install
+        
+      - name: Run Next.js build only
+        working-directory: registry
+        env:
+            API_KEY: ${{ secrets.API_KEY }}
+            CLOUD_ID: ${{ secrets.CLOUD_ID }}
+            INDEX: ${{ secrets.INDEX }}
+        
+        run: |
+          npm run fetch-topics
+          npm run fetch-reviewers
+          npx next build
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Add vercel.json with custom build-only command
+        working-directory: registry
+        run: |
+          cat <<EOF > vercel.json
+          {
+            "buildCommand": "npm run fetch-topics && npm run fetch-reviewers && npx next build"
+          }
+          EOF
+
+      - name: Pull Vercel project settings
+        working-directory: registry
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: vercel pull --yes --token=$VERCEL_TOKEN
+        
+      - name: Build with Vercel CLI
+        working-directory: registry
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          API_KEY: ${{ secrets.API_KEY }}
+          CLOUD_ID: ${{ secrets.CLOUD_ID }}
+          INDEX: ${{ secrets.INDEX }}
+        run: vercel build --token=$VERCEL_TOKEN
+
+      - name: Deploy to Vercel  
+        working-directory: registry
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          vercel deploy --prebuilt --token=$VERCEL_TOKEN  --archive=tgz --yes > ../vercel-preview-url.txt       
+      
+      - name: Store Top-Level Folders
+        working-directory: transcripts
+        run: |
+            git remote add upstream https://github.com/bitcointranscripts/bitcointranscripts.git
+            git fetch upstream
+            top_level_folders=$(git diff --name-only upstream/master)
+            echo $top_level_folders > ../top_level_folders.txt
+  
+      - name: Comment PR with Preview URL
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_ACCESS_TOKEN }}
+          script: |
+              const fs = require('fs');
+              const url = fs.readFileSync('vercel-preview-url.txt', 'utf8').trim();
+              const top_level_folders = fs.readFileSync('top_level_folders.txt', 'utf8').trim();
+              const dirs = top_level_folders.split(' ');
+              let commentBody = `Your Transcript Preview is ready:\n`;
+              if (dirs.length >= 1) {
+                for (const dir of dirs) {
+                  if(dir.includes(".md")) {
+                    let dir_name = dir.replace(".md", "");
+                    commentBody += `- [${dir_name}](${url}/${dir_name})\n`;
+                  }
+                }
+                  commentBody += `- [View All Sources](${url}/sources)\n`;
+              }
+       
+              github.rest.issues.createComment({          
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: commentBody
+              });
