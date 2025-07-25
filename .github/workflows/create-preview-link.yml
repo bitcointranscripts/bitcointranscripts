@@ -1,10 +1,13 @@
 name: Build Transcripts Preview Site
-
+permissions:
+  contents: read
+  pull-requests: write
 on:
   pull_request:
     paths:
       - '**' 
   workflow_dispatch:
+    
 jobs:
   build-preview:
     runs-on: ubuntu-latest
@@ -107,7 +110,7 @@ jobs:
                     commentBody += `- [${dir_name}](${url}/${dir_name})\n`;
                   }
                 }
-                  commentBody += `- [View All Sources](${url}/sources)\n`;
+                  commentBody += `- [View All Transcript Sources](${url}/sources)\n`;
               }
        
               github.rest.issues.createComment({          
