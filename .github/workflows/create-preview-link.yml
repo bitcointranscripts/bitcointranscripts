@@ -1,10 +1,13 @@
 name: Build Transcripts Preview Site
-
+permissions:
+  contents: read
+  pull-requests: write
 on:
   pull_request:
     paths:
       - '**' 
   workflow_dispatch:
+    
 jobs:
   build-preview:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
       - name: Clone Registry Repo
         run: git clone https://github.com/bitcointranscripts/registry.git
 
-      - name: Replace public/bitcoin-transcript in Registry with contents of Bitcoin Transcripts
+      - name: Replace the public/bitcoin-transcript submodule in Registry with contents of this current branch
         working-directory: transcripts
         run: |
           rm -rf ../registry/public/bitcoin-transcript
@@ -93,7 +96,7 @@ jobs:
       - name: Comment PR with Preview URL
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GH_ACCESS_TOKEN }}
+       
           script: |
               const fs = require('fs');
               const url = fs.readFileSync('vercel-preview-url.txt', 'utf8').trim();
@@ -107,7 +110,7 @@ jobs:
                     commentBody += `- [${dir_name}](${url}/${dir_name})\n`;
                   }
                 }
-                  commentBody += `- [View All Sources](${url}/sources)\n`;
+                  commentBody += `- [View All Transcript Sources](${url}/sources)\n`;
               }
        
               github.rest.issues.createComment({          
