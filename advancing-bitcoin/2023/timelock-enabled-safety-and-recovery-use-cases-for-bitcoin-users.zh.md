@@ -3,14 +3,13 @@ title: 基于时间锁的安全保管及钱包复原
 transcript_by: pgsdesign via review.btctranscripts.com
 translation_by: Ajian
 media: https://www.youtube.com/watch?v=4jO-FDiFw4U
-tags: ["timelocks", "miniscript"]
-speakers: ["Kevin Loaec"]
-categories: ["conference"]
+tags:
+  - timelocks
+  - miniscript
+speakers:
+  - Kevin Loaec
 date: 2023-03-01
 ---
-## Introduction
-
- Can we give a round of applause for Kevin, and welcome him to the stage. Thank you. Alright, yeah, so I'm going to do a talk around Timelocks in Bitcoin. I'm going to start with a pretty quick introduction on the different types of Timelocks over time in Bitcoin, and where we're at today. Also, a little bit, very, very quickly talking about what we're using Timelocks for in Bitcoin today. And also all the very exciting stuff that's happening on Bitcoin in the past few months that is going to completely change the game over how we use Timelocks. And by the end of this talk, I hope I will have convinced you all that the future of Bitcoin is pretty much having Timelocks everywhere. So yeah, that's the idea.
 
 主持：让我们鼓掌欢迎 Kevin 来到我们的舞台！
 
@@ -38,7 +37,7 @@ date: 2023-03-01
 
 好了，这就是非常、非常简单的介绍。你可能已经听过这些东西了。我猜我这里的数字都是对的，但我也不是非常确定。如果我哪里说错了，不要客气，请纠正我。不过我觉得我应该不会差得太远。
 
-不过，的确有一些关于时间锁的 FUD（害怕、犹豫和怀疑）。我的意思是，一直都有这样一种 FUD：你不该使用时间锁，因为你会让自己的钱永远锁死。没错，事实上确实是可以做到的，如果你做了非常愚蠢的事情的话，但总会有一些相对安全的用法，对不对？假设你实使用 OP_CSV，你可以锁定自己的资金的时间是有一个上限的。如果你以区块数量为单位，那么大概是一年多的时间，455 天。如果你用秒数为单位，那么最长只能锁定 388 天。所以，如果你使用的是 CSV ，即使你犯了非常严重的错误，也没什么大问题。比起你使用 nLocktime、让自己的钱锁定 9500 年以上，那是好得多了。在你做这些事的时候，你可能并不清楚它的后果，但你知道了，就没问题了。我的意思是，用什么方式来触发它并不重要，它总是有限制的。如果是 5 亿及以上的数值，它会被解释成 Unix 时间；而如果是小于 5 亿的数值，则会解释成区块数量。这就是为什么绝对时间锁可以如此之长，因为我们离 5 亿的区块高度还遥远得很。而在 sequence 中，会稍微复杂一些。因为不同的比特有不同的含义。如果设置了比特 22，那么时间锁的长度就是这个数值乘以 512 秒。如果没有设置这个比特，那么数值就会被解释成区块的数量。实际时间长度差不多，但你也知道，512 秒并不等于 10 分钟。
+不过，的确有一些关于时间锁的 FUD（害怕、犹豫和怀疑）。我的意思是，一直都有这样一种 FUD：你不该使用时间锁，因为你会让自己的钱永远锁死。没错，事实上确实是可以做到的，如果你做了非常愚蠢的事情的话，但总会有一些相对安全的用法，对不对？假设你使用 OP_CSV，你可以锁定自己的资金的时间是有一个上限的。如果你以区块数量为单位，那么大概是一年多的时间，455 天。如果你用秒数为单位，那么最长只能锁定 388 天。所以，如果你使用的是 CSV ，即使你犯了非常严重的错误，也没什么大问题。比起你使用 nLocktime、让自己的钱锁定 9500 年以上，那是好得多了。在你做这些事的时候，你可能并不清楚它的后果，但你知道了，就没问题了。我的意思是，用什么方式来触发它并不重要，它总是有限制的。如果是 5 亿及以上的数值，它会被解释成 Unix 时间；而如果是小于 5 亿的数值，则会解释成区块数量。这就是为什么绝对时间锁可以如此之长，因为我们离 5 亿的区块高度还遥远得很。而在 sequence 中，会稍微复杂一些。因为不同的比特有不同的含义。如果设置了比特 22，那么时间锁的长度就是这个数值乘以 512 秒。如果没有设置这个比特，那么数值就会被解释成区块的数量。实际时间长度差不多，但你也知道，512 秒并不等于 10 分钟。
 
 ## 为什么要使用时间锁
 
